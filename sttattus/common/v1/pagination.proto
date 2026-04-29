@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package sttattus.common.v1;
+
+// Standard cursor-based pagination.
+// Follows Google AIP-158: https://google.aip.dev/158
+message PageRequest {
+  // Maximum number of items to return. Server may cap this.
+  int32 page_size = 1;
+
+  // Token returned by the previous PageResponse.next_page_token. Empty for the
+  // first page.
+  string page_token = 2;
+}
+
+message PageResponse {
+  // Token to pass to the next PageRequest. Empty when there are no more pages.
+  string next_page_token = 1;
+
+  // Total count, when known. -1 means "unknown" (server skipped the count for
+  // performance).
+  int64 total_size = 2;
+}

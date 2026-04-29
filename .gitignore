@@ -1,0 +1,12 @@
+# Buf cache
+.buf-cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Generated code is intentionally committed (see README) — do NOT ignore gen/

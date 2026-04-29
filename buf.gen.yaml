@@ -1,0 +1,28 @@
+version: v2
+clean: true
+plugins:
+  # Go — for backend_go
+  - remote: buf.build/protocolbuffers/go
+    out: gen/go
+    opt:
+      - paths=source_relative
+  - remote: buf.build/grpc/go
+    out: gen/go
+    opt:
+      - paths=source_relative
+
+  # TypeScript (Connect-ES) — for admin
+  - remote: buf.build/bufbuild/es
+    out: gen/ts
+    opt:
+      - target=ts
+  - remote: buf.build/connectrpc/es
+    out: gen/ts
+    opt:
+      - target=ts
+
+  # Dart — for every app_*
+  - remote: buf.build/protocolbuffers/dart
+    out: gen/dart
+  - remote: buf.build/grpc/dart
+    out: gen/dart

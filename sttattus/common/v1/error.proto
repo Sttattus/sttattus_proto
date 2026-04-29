@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package sttattus.common.v1;
+
+// Stable, machine-readable reason codes. Returned in google.rpc.ErrorInfo.reason
+// alongside the gRPC status code. Add new values; never repurpose existing ones.
+enum ErrorReason {
+  ERROR_REASON_UNSPECIFIED = 0;
+
+  // Auth — paired with UNAUTHENTICATED or PERMISSION_DENIED
+  ERROR_REASON_AUTH_INVALID_CREDENTIALS = 1;
+  ERROR_REASON_AUTH_TOKEN_EXPIRED = 2;
+  ERROR_REASON_AUTH_TOKEN_INVALID = 3;
+  ERROR_REASON_AUTH_REFRESH_REUSED = 4;
+  ERROR_REASON_AUTH_EMAIL_TAKEN = 5;
+  ERROR_REASON_AUTH_WEAK_PASSWORD = 6;
+  ERROR_REASON_AUTH_RATE_LIMITED = 7;
+
+  // Resource — paired with NOT_FOUND or ALREADY_EXISTS
+  ERROR_REASON_RESOURCE_NOT_FOUND = 100;
+  ERROR_REASON_RESOURCE_ALREADY_EXISTS = 101;
+  ERROR_REASON_RESOURCE_CONFLICT = 102;
+
+  // Validation — paired with INVALID_ARGUMENT (details carry field info)
+  ERROR_REASON_VALIDATION_FAILED = 200;
+
+  // Quota / limits — paired with RESOURCE_EXHAUSTED
+  ERROR_REASON_QUOTA_EXCEEDED = 300;
+
+  // Admin / authorization — paired with PERMISSION_DENIED
+  ERROR_REASON_ADMIN_ROLE_REQUIRED = 400;
+  ERROR_REASON_ACCOUNT_BANNED = 401;
+}
