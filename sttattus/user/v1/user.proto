@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package sttattus.user.v1;
+
+import "sttattus/auth/v1/auth.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/user/v1;userv1";
+
+message UserProfile {
+  string id = 1;
+  string email = 2;
+  string name = 3;
+  string avatar_url = 4;
+  int32 role = 5; // 0 = admin, 1 = user
+  int64 created_at = 6; // unix seconds
+  int64 last_login_at = 7; // unix seconds, 0 if never
+  bool banned = 8;
+}
+
+message AppAccess {
+  sttattus.auth.v1.AppCode app_code = 1;
+  int64 granted_at = 2;
+  int64 last_active_at = 3;
+}
+
+message GetMeRequest {}
+message GetMeResponse {
+  UserProfile profile = 1;
+}
+
+message UpdateMeRequest {
+  string name = 1;
+  string avatar_url = 2;
+}
+message UpdateMeResponse {
+  UserProfile profile = 1;
+}
+
+message ListAppAccessRequest {}
+message ListAppAccessResponse {
+  repeated AppAccess apps = 1;
+}
+
+message GrantAppRequest {
+  sttattus.auth.v1.AppCode app_code = 1;
+}
+message GrantAppResponse {
+  AppAccess app = 1;
+}
+
+service UserService {
+  rpc GetMe(GetMeRequest) returns (GetMeResponse);
+  rpc UpdateMe(UpdateMeRequest) returns (UpdateMeResponse);
+  rpc ListAppAccess(ListAppAccessRequest) returns (ListAppAccessResponse);
+  rpc GrantApp(GrantAppRequest) returns (GrantAppResponse);
+}

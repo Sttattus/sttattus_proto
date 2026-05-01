@@ -1,0 +1,111 @@
+syntax = "proto3";
+
+package sttattus.workout.v1;
+
+import "sttattus/common/v1/pagination.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/workout/v1;workoutv1";
+
+message Tag {
+  string id = 1;
+  string label = 2;
+  string slug = 3;
+}
+
+message Workout {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string image_url = 4;
+  repeated Tag tags = 5;
+  int64 created_at = 6;
+}
+
+message Series {
+  int32 set_index = 1;
+  double weight = 2;
+  int32 reps = 3;
+  string unit = 4; // "kg" | "lb"
+}
+
+message DayWorkout {
+  string id = 1;
+  string user_id = 2;
+  Workout workout = 3;
+  int64 performed_at = 4;
+  string notes = 5;
+  repeated Series series = 6;
+}
+
+message ForgeStats {
+  string user_id = 1;
+  int32 power = 2;
+  int32 agility = 3;
+  int32 grit = 4;
+  int64 experience = 5;
+  string rank = 6;
+}
+
+// ===== Workouts =====
+message ListWorkoutsRequest {
+  sttattus.common.v1.PageRequest page = 1;
+  string search = 2;
+  repeated string tag_slugs = 3;
+}
+message ListWorkoutsResponse {
+  repeated Workout workouts = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+message GetWorkoutRequest {
+  string id = 1;
+}
+message GetWorkoutResponse {
+  Workout workout = 1;
+}
+
+// ===== Logs =====
+message LogDayWorkoutRequest {
+  string workout_id = 1;
+  int64 performed_at = 2;
+  string notes = 3;
+  repeated Series series = 4;
+}
+
+// LogDayWorkoutResponse includes the *new* forge stats, so the client doesn't
+// need a second round-trip after logging. The Rust scoring service computes
+// the experience delta during this call.
+message LogDayWorkoutResponse {
+  DayWorkout day_workout = 1;
+  ForgeStats stats = 2;
+  int64 experience_delta = 3;
+}
+
+message ListHistoryRequest {
+  sttattus.common.v1.PageRequest page = 1;
+}
+message ListHistoryResponse {
+  repeated DayWorkout entries = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+message GetForgeStatsRequest {}
+message GetForgeStatsResponse {
+  ForgeStats stats = 1;
+}
+
+message SubmitFeedbackRequest {
+  string body = 1;
+}
+message SubmitFeedbackResponse {
+  string id = 1;
+}
+
+service WorkoutService {
+  rpc ListWorkouts(ListWorkoutsRequest) returns (ListWorkoutsResponse);
+  rpc GetWorkout(GetWorkoutRequest) returns (GetWorkoutResponse);
+  rpc LogDayWorkout(LogDayWorkoutRequest) returns (LogDayWorkoutResponse);
+  rpc ListHistory(ListHistoryRequest) returns (ListHistoryResponse);
+  rpc GetForgeStats(GetForgeStatsRequest) returns (GetForgeStatsResponse);
+  rpc SubmitFeedback(SubmitFeedbackRequest) returns (SubmitFeedbackResponse);
+}

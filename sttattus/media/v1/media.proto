@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package sttattus.media.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/media/v1;mediav1";
+
+enum ProcessingStatus {
+  PROCESSING_STATUS_UNSPECIFIED = 0;
+  PROCESSING_STATUS_PENDING = 1;
+  PROCESSING_STATUS_PROCESSING = 2;
+  PROCESSING_STATUS_READY = 3;
+  PROCESSING_STATUS_FAILED = 4;
+}
+
+message MediaAsset {
+  string id = 1;
+  string owner_id = 2;
+  string url = 3;
+  string mime = 4;
+  int64 size = 5;
+  int32 width = 6;
+  int32 height = 7;
+  ProcessingStatus status = 8;
+  int64 created_at = 9;
+  int64 processed_at = 10;
+}
+
+message RequestUploadRequest {
+  string mime = 1;
+  int64 size = 2;
+}
+message RequestUploadResponse {
+  string media_asset_id = 1;
+  string upload_url = 2; // presigned PUT URL
+  string public_url = 3; // final URL after upload completes
+  int64 expires_at = 4;
+}
+
+message MarkProcessedRequest {
+  string media_asset_id = 1;
+  int32 width = 2;
+  int32 height = 3;
+}
+message MarkProcessedResponse {
+  MediaAsset asset = 1;
+}
+
+service MediaService {
+  rpc RequestUpload(RequestUploadRequest) returns (RequestUploadResponse);
+  rpc MarkProcessed(MarkProcessedRequest) returns (MarkProcessedResponse);
+}
+
+// === Rust imageproc service (called by Go, never by clients directly) ===
+
+message ResizeRequest {
+  string media_asset_id = 1;
+  string source_url = 2;
+  int32 max_width = 3;
+  int32 max_height = 4;
+}
+message ResizeResponse {
+  string thumbnail_url = 1;
+  int32 width = 2;
+  int32 height = 3;
+}
+
+message ExtractDominantColorsRequest {
+  string source_url = 1;
+  int32 sample_count = 2;
+}
+message ExtractDominantColorsResponse {
+  repeated string hex_colors = 1; // strongest first
+}
+
+service ImageProcService {
+  rpc Resize(ResizeRequest) returns (ResizeResponse);
+  rpc ExtractDominantColors(ExtractDominantColorsRequest) returns (ExtractDominantColorsResponse);
+}

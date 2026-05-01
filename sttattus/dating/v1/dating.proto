@@ -1,0 +1,129 @@
+syntax = "proto3";
+
+package sttattus.dating.v1;
+
+import "sttattus/common/v1/pagination.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
+
+enum SwipeDirection {
+  SWIPE_DIRECTION_UNSPECIFIED = 0;
+  SWIPE_DIRECTION_PASS = 1;
+  SWIPE_DIRECTION_LIKE = 2;
+  SWIPE_DIRECTION_SUPER = 3;
+}
+
+enum DatingIntent {
+  DATING_INTENT_UNSPECIFIED = 0;
+  DATING_INTENT_CASUAL = 1;
+  DATING_INTENT_RELATIONSHIP = 2;
+  DATING_INTENT_FRIENDS = 3;
+  DATING_INTENT_NETWORKING = 4;
+}
+
+message Vec3 {
+  double x = 1;
+  double y = 2;
+  double z = 3;
+}
+
+message DatingProfile {
+  string user_id = 1;
+  string name = 2;
+  string bio = 3;
+  DatingIntent intent = 4;
+  int32 behavioral_score = 5;
+  string tier = 6;
+  double luminance = 7;
+  Vec3 position = 8;
+  int32 intellectual_pace = 9;
+  int32 emotional_granularity = 10;
+  int32 physical_drive = 11;
+  int32 social_battery = 12;
+  repeated string photo_urls = 13;
+}
+
+message Candidate {
+  DatingProfile profile = 1;
+  double match_score = 2; // computed by Rust scoring
+}
+
+message Match {
+  string id = 1;
+  DatingProfile other = 2;
+  int64 created_at = 3;
+  int64 last_message_at = 4;
+}
+
+message Message {
+  string id = 1;
+  string match_id = 2;
+  string sender_id = 3;
+  string body = 4;
+  int32 tension_level = 5;
+  int64 created_at = 6;
+  int64 read_at = 7;
+}
+
+message GetProfileRequest {
+  string user_id = 1; // empty = current user
+}
+message GetProfileResponse {
+  DatingProfile profile = 1;
+}
+
+message UpdateProfileRequest {
+  DatingProfile profile = 1;
+}
+message UpdateProfileResponse {
+  DatingProfile profile = 1;
+}
+
+message StreamDiscoveryRequest {
+  int32 batch_size = 1;
+}
+message StreamDiscoveryResponse {
+  Candidate candidate = 1;
+}
+
+message SwipeRequest {
+  string target_user_id = 1;
+  SwipeDirection direction = 2;
+}
+message SwipeResponse {
+  bool is_match = 1;
+  Match match = 2; // populated when is_match
+}
+
+message ListMatchesRequest {
+  sttattus.common.v1.PageRequest page = 1;
+}
+message ListMatchesResponse {
+  repeated Match matches = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+message StreamMessagesRequest {
+  string match_id = 1;
+}
+message StreamMessagesResponse {
+  Message message = 1;
+}
+
+message SendMessageRequest {
+  string match_id = 1;
+  string body = 2;
+}
+message SendMessageResponse {
+  Message message = 1;
+}
+
+service DatingService {
+  rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
+  rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
+  rpc StreamDiscovery(StreamDiscoveryRequest) returns (stream StreamDiscoveryResponse);
+  rpc Swipe(SwipeRequest) returns (SwipeResponse);
+  rpc ListMatches(ListMatchesRequest) returns (ListMatchesResponse);
+  rpc StreamMessages(StreamMessagesRequest) returns (stream StreamMessagesResponse);
+  rpc SendMessage(SendMessageRequest) returns (SendMessageResponse);
+}

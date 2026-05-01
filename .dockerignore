@@ -1,0 +1,6 @@
+.git/
+.idea/
+.vscode/
+gen/dart/.dart_tool/
+gen/dart/build/
+.buf-cache/

@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package sttattus.admin.v1;
+
+import "sttattus/auth/v1/auth.proto";
+import "sttattus/common/v1/pagination.proto";
+import "sttattus/user/v1/user.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/admin/v1;adminv1";
+
+message AdminUserRow {
+  sttattus.user.v1.UserProfile profile = 1;
+  repeated sttattus.user.v1.AppAccess apps = 2;
+}
+
+message ListUsersRequest {
+  sttattus.common.v1.PageRequest page = 1;
+  string search = 2; // matches email or name (substring, case-insensitive)
+  sttattus.auth.v1.AppCode filter_by_app = 3;
+  bool only_banned = 4;
+  bool only_admins = 5;
+}
+message ListUsersResponse {
+  repeated AdminUserRow rows = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+message GetUserRequest {
+  string user_id = 1;
+}
+message GetUserResponse {
+  AdminUserRow row = 1;
+}
+
+message BanUserRequest {
+  string user_id = 1;
+  string reason = 2;
+  bool unban = 3; // true = lift the ban
+}
+message BanUserResponse {
+  AdminUserRow row = 1;
+}
+
+enum BulkAction {
+  BULK_ACTION_UNSPECIFIED = 0;
+  BULK_ACTION_BAN = 1;
+  BULK_ACTION_UNBAN = 2;
+  BULK_ACTION_REVOKE_APP = 3;
+}
+
+message BulkActionRequest {
+  repeated string user_ids = 1;
+  BulkAction action = 2;
+  sttattus.auth.v1.AppCode app_code = 3; // for REVOKE_APP
+  string reason = 4;
+}
+message BulkActionResponse {
+  int32 affected = 1;
+}
+
+message AuditLogEntry {
+  string id = 1;
+  string actor_id = 2;
+  string actor_email = 3;
+  string target_user_id = 4;
+  string action = 5;
+  string payload_json = 6;
+  string ip = 7;
+  int64 created_at = 8;
+}
+
+message ListAuditLogsRequest {
+  sttattus.common.v1.PageRequest page = 1;
+  string actor_id = 2;
+  string target_user_id = 3;
+  string action = 4;
+}
+message ListAuditLogsResponse {
+  repeated AuditLogEntry entries = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+service AdminService {
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+  rpc BanUser(BanUserRequest) returns (BanUserResponse);
+  rpc BulkAction(BulkActionRequest) returns (BulkActionResponse);
+  rpc ListAuditLogs(ListAuditLogsRequest) returns (ListAuditLogsResponse);
+}

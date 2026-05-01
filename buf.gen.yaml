@@ -1,5 +1,8 @@
 version: v2
-clean: true
+# clean is disabled because the TS gen dir hosts a hand-written
+# package.json + index.ts (so admin can consume it as a path package).
+# Per-language subdirs are still recreated by each plugin run.
+clean: false
 plugins:
   # Go — for backend_go
   - remote: buf.build/protocolbuffers/go
@@ -11,18 +14,23 @@ plugins:
     opt:
       - paths=source_relative
 
-  # TypeScript (Connect-ES) — for admin
-  - remote: buf.build/bufbuild/es
+  # TypeScript (Connect-ES) — for admin.
+  # Pinned to v1 because protoc-gen-connect-es is on v1.x; pairing it with
+  # protoc-gen-es v2 emits imports from `@bufbuild/protobuf/codegenv2` that
+  # the v1 protobuf package doesn't export. When connect-es v2 ships, bump
+  # both pins together.
+  - remote: buf.build/bufbuild/es:v1.10.0
     out: gen/ts
     opt:
       - target=ts
-  - remote: buf.build/connectrpc/es
+  - remote: buf.build/connectrpc/es:v1.6.1
     out: gen/ts
     opt:
       - target=ts
 
   # Dart — for every app_*
+  # (Dart gRPC plugin is generated via local protoc + protoc-gen-dart-grpc
+  # in scripts/generate-dart.sh, since the buf.build/grpc/dart remote plugin
+  # is not currently published.)
   - remote: buf.build/protocolbuffers/dart
-    out: gen/dart
-  - remote: buf.build/grpc/dart
     out: gen/dart

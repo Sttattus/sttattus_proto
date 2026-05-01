@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package sttattus.common.v1;
 
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/common/v1;commonv1";
+
 // Stable, machine-readable reason codes. Returned in google.rpc.ErrorInfo.reason
 // alongside the gRPC status code. Add new values; never repurpose existing ones.
 enum ErrorReason {

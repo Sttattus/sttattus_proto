@@ -1,0 +1,51 @@
+{
+  "name": "@sttattus/proto-ts",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Generated Connect-ES + protobuf-es bindings for sttattus services. Consumed via a relative file: dep from admin/.",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./auth": {
+      "types": "./sttattus/auth/v1/auth_connect.ts",
+      "default": "./sttattus/auth/v1/auth_connect.ts"
+    },
+    "./auth-pb": {
+      "types": "./sttattus/auth/v1/auth_pb.ts",
+      "default": "./sttattus/auth/v1/auth_pb.ts"
+    },
+    "./user": {
+      "types": "./sttattus/user/v1/user_connect.ts",
+      "default": "./sttattus/user/v1/user_connect.ts"
+    },
+    "./workout": {
+      "types": "./sttattus/workout/v1/workout_connect.ts",
+      "default": "./sttattus/workout/v1/workout_connect.ts"
+    },
+    "./languages": {
+      "types": "./sttattus/languages/v1/languages_connect.ts",
+      "default": "./sttattus/languages/v1/languages_connect.ts"
+    },
+    "./travel": {
+      "types": "./sttattus/travel/v1/travel_connect.ts",
+      "default": "./sttattus/travel/v1/travel_connect.ts"
+    },
+    "./dating": {
+      "types": "./sttattus/dating/v1/dating_connect.ts",
+      "default": "./sttattus/dating/v1/dating_connect.ts"
+    },
+    "./media": {
+      "types": "./sttattus/media/v1/media_connect.ts",
+      "default": "./sttattus/media/v1/media_connect.ts"
+    }
+  },
+  "peerDependencies": {
+    "@bufbuild/protobuf": "^1.10.0",
+    "@connectrpc/connect": "^1.6.0"
+  }
+}

@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+package sttattus.travel.v1;
+
+import "sttattus/common/v1/pagination.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/travel/v1;travelv1";
+
+message NomadStats {
+  string user_id = 1;
+  int32 exploration_score = 2;
+  int32 countries_visited_count = 3;
+  string nomad_rank = 4;
+  int32 completed_milestones = 5;
+}
+
+message Milestone {
+  string id = 1;
+  string user_id = 2;
+  string country_code = 3;
+  string city = 4;
+  string photo_url = 5;
+  string thumbnail_url = 6; // produced by Rust imageproc
+  string accent_color_hex = 7; // produced by Rust imageproc
+  string story = 8;
+  int64 achieved_at = 9;
+}
+
+message FeedPost {
+  string id = 1;
+  string user_id = 2;
+  string author_name = 3;
+  string author_avatar = 4;
+  string milestone_id = 5;
+  string body = 6;
+  repeated string media_urls = 7;
+  int64 created_at = 8;
+  int32 likes_count = 9;
+  bool liked_by_me = 10;
+}
+
+message ListMilestonesRequest {
+  string user_id = 1; // empty = current user
+  sttattus.common.v1.PageRequest page = 2;
+}
+message ListMilestonesResponse {
+  repeated Milestone milestones = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+message CreateMilestoneRequest {
+  string country_code = 1;
+  string city = 2;
+  // Caller already uploaded the original photo via MediaService.RequestUpload
+  // and the resulting media_asset_id is passed here. The TravelService will
+  // call Rust imageproc to produce the thumbnail + accent color.
+  string media_asset_id = 3;
+  string story = 4;
+  int64 achieved_at = 5;
+}
+message CreateMilestoneResponse {
+  Milestone milestone = 1;
+  NomadStats stats = 2;
+}
+
+message GetNomadStatsRequest {
+  string user_id = 1; // empty = current user
+}
+message GetNomadStatsResponse {
+  NomadStats stats = 1;
+}
+
+message ListFeedRequest {
+  sttattus.common.v1.PageRequest page = 1;
+}
+message ListFeedResponse {
+  repeated FeedPost posts = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+message LikePostRequest {
+  string post_id = 1;
+  bool like = 2; // false = unlike
+}
+message LikePostResponse {
+  int32 likes_count = 1;
+  bool liked_by_me = 2;
+}
+
+service TravelService {
+  rpc ListMilestones(ListMilestonesRequest) returns (ListMilestonesResponse);
+  rpc CreateMilestone(CreateMilestoneRequest) returns (CreateMilestoneResponse);
+  rpc GetNomadStats(GetNomadStatsRequest) returns (GetNomadStatsResponse);
+  rpc ListFeed(ListFeedRequest) returns (ListFeedResponse);
+  rpc LikePost(LikePostRequest) returns (LikePostResponse);
+}

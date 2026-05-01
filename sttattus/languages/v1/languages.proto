@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package sttattus.languages.v1;
+
+import "sttattus/common/v1/pagination.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1";
+
+message Category {
+  string id = 1;
+  string label_json = 2; // JSON string: i18n labels keyed by locale
+  int32 sort_order = 3;
+}
+
+message Word {
+  string id = 1;
+  string category_id = 2;
+  string payload_json = 3; // JSON: term, definition, examples, etc.
+  repeated int32 levels = 4;
+}
+
+message Progress {
+  string user_id = 1;
+  string word_id = 2;
+  int32 score = 3;
+  int64 last_reviewed_at = 4;
+  int64 mastered_at = 5;
+}
+
+message LinguistStats {
+  string user_id = 1;
+  int32 eloquence = 2;
+  int32 lexical_depth = 3;
+  int32 immersion_days = 4;
+  string mastery_rank = 5;
+}
+
+message ListCategoriesRequest {}
+message ListCategoriesResponse {
+  repeated Category categories = 1;
+}
+
+message ListWordsRequest {
+  string category_id = 1;
+  int32 level = 2;
+  sttattus.common.v1.PageRequest page = 3;
+}
+message ListWordsResponse {
+  repeated Word words = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+message UpdateProgressRequest {
+  string word_id = 1;
+  int32 score_delta = 2;
+  bool mastered = 3;
+}
+message UpdateProgressResponse {
+  Progress progress = 1;
+  LinguistStats stats = 2;
+  int32 eloquence_delta = 3;
+}
+
+message GetLinguistStatsRequest {}
+message GetLinguistStatsResponse {
+  LinguistStats stats = 1;
+}
+
+message SubmitFeedbackRequest {
+  string body = 1;
+}
+message SubmitFeedbackResponse {
+  string id = 1;
+}
+
+service LanguagesService {
+  rpc ListCategories(ListCategoriesRequest) returns (ListCategoriesResponse);
+  rpc ListWords(ListWordsRequest) returns (ListWordsResponse);
+  rpc UpdateProgress(UpdateProgressRequest) returns (UpdateProgressResponse);
+  rpc GetLinguistStats(GetLinguistStatsRequest) returns (GetLinguistStatsResponse);
+  rpc SubmitFeedback(SubmitFeedbackRequest) returns (SubmitFeedbackResponse);
+}

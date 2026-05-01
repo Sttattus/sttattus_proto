@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package sttattus.common.v1;
 
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/common/v1;commonv1";
+
 // Standard cursor-based pagination.
 // Follows Google AIP-158: https://google.aip.dev/158
 message PageRequest {

@@ -1,0 +1,117 @@
+syntax = "proto3";
+
+package sttattus.auth.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/auth/v1;authv1";
+
+// Which app a credential is being used in. Drives `app_grants` so the admin can
+// see "this user uses workout + dating" and so cross-app linking can record the
+// new app the user just joined.
+enum AppCode {
+  APP_CODE_UNSPECIFIED = 0;
+  APP_CODE_WORKOUT = 1;
+  APP_CODE_LANGUAGES = 2;
+  APP_CODE_TRAVEL = 3;
+  APP_CODE_DATING = 4;
+}
+
+message TokenPair {
+  string access_token = 1;
+  string refresh_token = 2;
+  int64 access_expires_at = 3; // unix seconds
+  int64 refresh_expires_at = 4; // unix seconds
+}
+
+// Lightweight profile snapshot the client renders in the "we found your
+// profile" linking UI. Never contains the password hash or anything secret.
+message ProfileHint {
+  string user_id = 1;
+  string email = 2;
+  string name = 3;
+  string avatar_url = 4;
+  repeated AppCode linked_apps = 5;
+}
+
+// ===== Register =====
+message RegisterRequest {
+  string email = 1;
+  string password = 2;
+  string name = 3;
+  AppCode app_code = 4;
+}
+
+message RegisterResponse {
+  // Populated when registration succeeded.
+  string user_id = 1;
+  TokenPair tokens = 2;
+
+  // Populated when the email already exists in the ecosystem and the client
+  // should switch into the link-app flow. When this is set, `user_id` and
+  // `tokens` are empty and the gRPC status is OK (the *call* succeeded; the
+  // outcome is "needs linking"). Allows the client to render the linking UI
+  // without crashing on an error.
+  ProfileHint existing_profile = 3;
+}
+
+// ===== Login =====
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+  AppCode app_code = 3;
+}
+
+message LoginResponse {
+  string user_id = 1;
+  TokenPair tokens = 2;
+}
+
+// ===== CheckEmail =====
+// Idempotent lookup so the client can render the "we found your profile" hint
+// before the user submits the registration form.
+message CheckEmailRequest {
+  string email = 1;
+}
+
+message CheckEmailResponse {
+  bool exists = 1;
+  ProfileHint hint = 2;
+}
+
+// ===== LinkApp =====
+// The cross-app linking RPC. Verifies the existing password and adds an
+// app_grants row.
+message LinkAppRequest {
+  string email = 1;
+  string password = 2;
+  AppCode app_code = 3;
+}
+
+message LinkAppResponse {
+  string user_id = 1;
+  TokenPair tokens = 2;
+}
+
+// ===== Refresh =====
+message RefreshRequest {
+  string refresh_token = 1;
+}
+
+message RefreshResponse {
+  TokenPair tokens = 1;
+}
+
+// ===== Logout =====
+message LogoutRequest {
+  string refresh_token = 1;
+}
+
+message LogoutResponse {}
+
+service AuthService {
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc CheckEmail(CheckEmailRequest) returns (CheckEmailResponse);
+  rpc LinkApp(LinkAppRequest) returns (LinkAppResponse);
+  rpc Refresh(RefreshRequest) returns (RefreshResponse);
+  rpc Logout(LogoutRequest) returns (LogoutResponse);
+}

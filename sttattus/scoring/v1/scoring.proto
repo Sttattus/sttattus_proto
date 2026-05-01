@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package sttattus.scoring.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/scoring/v1;scoringv1";
+
+// Rust scoring service. Called by Go to compute deltas during writes —
+// LogDayWorkout / UpdateProgress / Swipe all hit this service so Rust is
+// visibly involved in the user's normal flow.
+
+message WorkoutSeriesInput {
+  int32 set_index = 1;
+  double weight = 2;
+  int32 reps = 3;
+  string unit = 4;
+}
+
+message ScoreWorkoutRequest {
+  string user_id = 1;
+  repeated WorkoutSeriesInput series = 2;
+  // Existing forge stats so the service can decide whether the user is
+  // setting a new PR.
+  int32 current_power = 3;
+  int32 current_agility = 4;
+  int32 current_grit = 5;
+}
+message ScoreWorkoutResponse {
+  int64 experience_delta = 1;
+  int32 power_delta = 2;
+  int32 agility_delta = 3;
+  int32 grit_delta = 4;
+}
+
+message ScoreLexicalProgressRequest {
+  string user_id = 1;
+  string word_id = 2;
+  int32 score_delta = 3;
+  bool mastered = 4;
+  int32 current_eloquence = 5;
+  int32 current_lexical_depth = 6;
+}
+message ScoreLexicalProgressResponse {
+  int32 eloquence_delta = 1;
+  int32 lexical_depth_delta = 2;
+}
+
+message ScoreMatchRequest {
+  string swiper_user_id = 1;
+  string target_user_id = 2;
+  // Subset of dating_profiles fields needed to compute compatibility. Sent
+  // explicitly so the Rust service stays stateless and doesn't need DB access.
+  int32 swiper_intellectual_pace = 3;
+  int32 swiper_emotional_granularity = 4;
+  int32 swiper_physical_drive = 5;
+  int32 swiper_social_battery = 6;
+  int32 target_intellectual_pace = 7;
+  int32 target_emotional_granularity = 8;
+  int32 target_physical_drive = 9;
+  int32 target_social_battery = 10;
+}
+message ScoreMatchResponse {
+  double compatibility = 1; // 0.0 - 1.0
+  double tension_baseline = 2;
+}
+
+service ScoringService {
+  rpc ScoreWorkout(ScoreWorkoutRequest) returns (ScoreWorkoutResponse);
+  rpc ScoreLexicalProgress(ScoreLexicalProgressRequest) returns (ScoreLexicalProgressResponse);
+  rpc ScoreMatch(ScoreMatchRequest) returns (ScoreMatchResponse);
+}
