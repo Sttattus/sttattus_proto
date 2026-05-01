@@ -1,0 +1,65 @@
+# Normalize all text files to LF in the repo AND on checkout.
+# Anything matched by the binary= rules below is kept untouched.
+* text=auto eol=lf
+
+# Source files — explicit so future devs see intent
+*.dart       text eol=lf
+*.go         text eol=lf
+*.rs         text eol=lf
+*.ts         text eol=lf
+*.tsx        text eol=lf
+*.js         text eol=lf
+*.jsx        text eol=lf
+*.mjs        text eol=lf
+*.cjs        text eol=lf
+*.json       text eol=lf
+*.yaml       text eol=lf
+*.yml        text eol=lf
+*.toml       text eol=lf
+*.proto      text eol=lf
+*.sql        text eol=lf
+*.md         text eol=lf
+*.sh         text eol=lf
+*.kts        text eol=lf
+*.gradle     text eol=lf
+*.html       text eol=lf
+*.css        text eol=lf
+*.scss       text eol=lf
+*.svg        text eol=lf
+Dockerfile   text eol=lf
+*.lock       text eol=lf
+
+# Binary file types — never touched by Git's line-ending logic
+*.png        binary
+*.jpg        binary
+*.jpeg       binary
+*.gif        binary
+*.ico        binary
+*.webp       binary
+*.bmp        binary
+*.tiff       binary
+*.heic       binary
+*.ttf        binary
+*.otf        binary
+*.woff       binary
+*.woff2      binary
+*.eot        binary
+*.pdf        binary
+*.mp3        binary
+*.mp4        binary
+*.mov        binary
+*.webm       binary
+*.zip        binary
+*.gz         binary
+*.tar        binary
+*.7z         binary
+*.jar        binary
+*.so         binary
+*.dylib      binary
+*.dll        binary
+*.exe        binary
+*.bin        binary
+*.keystore   binary
+*.jks        binary
+*.aar        binary
+*.apk        binary
