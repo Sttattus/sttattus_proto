@@ -1,0 +1,7 @@
+analyzer:
+  exclude:
+    - "**/*.pb.dart"
+    - "**/*.pbenum.dart"
+    - "**/*.pbgrpc.dart"
+    - "**/*.pbjson.dart"
+    - "**/*.pbserver.dart"

@@ -1,0 +1,12 @@
+name: sttattus_proto
+description: Generated Dart bindings (messages + gRPC clients) for sttattus services. Path-consumed by app_*/pubspec.yaml.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  protobuf: ^4.0.0
+  grpc: ^4.0.0
+  fixnum: ^1.1.0
