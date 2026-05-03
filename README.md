@@ -1,3 +1,5 @@
+![ci](https://github.com/Sttattus/sttattus_proto/actions/workflows/ci.yml/badge.svg)
+
 # sttattus/proto
 
 Single source of truth for all gRPC contracts in the sttattus ecosystem.
