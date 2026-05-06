@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package sttattus.zenith.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/zenith/v1;zenithv1";
+
+message Session {
+  int32 duration_minutes = 1;
+  double focus_score = 2;
+}
+
+message LogFocusSessionRequest {
+  Session session = 1;
+}
+
+message LogFocusSessionResponse {
+  double current_zenith_score = 1;
+}
+
+service ZenithService {
+  rpc LogFocusSession(LogFocusSessionRequest) returns (LogFocusSessionResponse);
+}

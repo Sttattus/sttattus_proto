@@ -541,6 +541,303 @@ func (x *ScoreMatchResponse) GetTensionBaseline() float64 {
 	return 0
 }
 
+type ScoreEmpireRequest struct {
+	state  protoimpl.MessageState `protogen:"open.v1"`
+	UserId string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	// All 12 raw metrics
+	ForgeExp           float64 `protobuf:"fixed64,2,opt,name=forge_exp,json=forgeExp,proto3" json:"forge_exp,omitempty"`
+	LexiconEloquence   float64 `protobuf:"fixed64,3,opt,name=lexicon_eloquence,json=lexiconEloquence,proto3" json:"lexicon_eloquence,omitempty"`
+	NomadExploration   float64 `protobuf:"fixed64,4,opt,name=nomad_exploration,json=nomadExploration,proto3" json:"nomad_exploration,omitempty"`
+	AtlasBehavioral    float64 `protobuf:"fixed64,5,opt,name=atlas_behavioral,json=atlasBehavioral,proto3" json:"atlas_behavioral,omitempty"`
+	VaultWealth        float64 `protobuf:"fixed64,6,opt,name=vault_wealth,json=vaultWealth,proto3" json:"vault_wealth,omitempty"`
+	ApexBiomarkers     float64 `protobuf:"fixed64,7,opt,name=apex_biomarkers,json=apexBiomarkers,proto3" json:"apex_biomarkers,omitempty"`
+	OracleIntelligence float64 `protobuf:"fixed64,8,opt,name=oracle_intelligence,json=oracleIntelligence,proto3" json:"oracle_intelligence,omitempty"`
+	DominionEstate     float64 `protobuf:"fixed64,9,opt,name=dominion_estate,json=dominionEstate,proto3" json:"dominion_estate,omitempty"`
+	LegacyHeritage     float64 `protobuf:"fixed64,10,opt,name=legacy_heritage,json=legacyHeritage,proto3" json:"legacy_heritage,omitempty"`
+	ZenithFocus        float64 `protobuf:"fixed64,11,opt,name=zenith_focus,json=zenithFocus,proto3" json:"zenith_focus,omitempty"`
+	OnyxExclusivity    float64 `protobuf:"fixed64,12,opt,name=onyx_exclusivity,json=onyxExclusivity,proto3" json:"onyx_exclusivity,omitempty"`
+	EmpireReputation   float64 `protobuf:"fixed64,13,opt,name=empire_reputation,json=empireReputation,proto3" json:"empire_reputation,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *ScoreEmpireRequest) Reset() {
+	*x = ScoreEmpireRequest{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreEmpireRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreEmpireRequest) ProtoMessage() {}
+
+func (x *ScoreEmpireRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreEmpireRequest.ProtoReflect.Descriptor instead.
+func (*ScoreEmpireRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *ScoreEmpireRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ScoreEmpireRequest) GetForgeExp() float64 {
+	if x != nil {
+		return x.ForgeExp
+	}
+	return 0
+}
+
+func (x *ScoreEmpireRequest) GetLexiconEloquence() float64 {
+	if x != nil {
+		return x.LexiconEloquence
+	}
+	return 0
+}
+
+func (x *ScoreEmpireRequest) GetNomadExploration() float64 {
+	if x != nil {
+		return x.NomadExploration
+	}
+	return 0
+}
+
+func (x *ScoreEmpireRequest) GetAtlasBehavioral() float64 {
+	if x != nil {
+		return x.AtlasBehavioral
+	}
+	return 0
+}
+
+func (x *ScoreEmpireRequest) GetVaultWealth() float64 {
+	if x != nil {
+		return x.VaultWealth
+	}
+	return 0
+}
+
+func (x *ScoreEmpireRequest) GetApexBiomarkers() float64 {
+	if x != nil {
+		return x.ApexBiomarkers
+	}
+	return 0
+}
+
+func (x *ScoreEmpireRequest) GetOracleIntelligence() float64 {
+	if x != nil {
+		return x.OracleIntelligence
+	}
+	return 0
+}
+
+func (x *ScoreEmpireRequest) GetDominionEstate() float64 {
+	if x != nil {
+		return x.DominionEstate
+	}
+	return 0
+}
+
+func (x *ScoreEmpireRequest) GetLegacyHeritage() float64 {
+	if x != nil {
+		return x.LegacyHeritage
+	}
+	return 0
+}
+
+func (x *ScoreEmpireRequest) GetZenithFocus() float64 {
+	if x != nil {
+		return x.ZenithFocus
+	}
+	return 0
+}
+
+func (x *ScoreEmpireRequest) GetOnyxExclusivity() float64 {
+	if x != nil {
+		return x.OnyxExclusivity
+	}
+	return 0
+}
+
+func (x *ScoreEmpireRequest) GetEmpireReputation() float64 {
+	if x != nil {
+		return x.EmpireReputation
+	}
+	return 0
+}
+
+type ScoreEmpireResponse struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	SttattusScore   float64                `protobuf:"fixed64,1,opt,name=sttattus_score,json=sttattusScore,proto3" json:"sttattus_score,omitempty"`
+	RecommendedTier string                 `protobuf:"bytes,2,opt,name=recommended_tier,json=recommendedTier,proto3" json:"recommended_tier,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ScoreEmpireResponse) Reset() {
+	*x = ScoreEmpireResponse{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreEmpireResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreEmpireResponse) ProtoMessage() {}
+
+func (x *ScoreEmpireResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreEmpireResponse.ProtoReflect.Descriptor instead.
+func (*ScoreEmpireResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *ScoreEmpireResponse) GetSttattusScore() float64 {
+	if x != nil {
+		return x.SttattusScore
+	}
+	return 0
+}
+
+func (x *ScoreEmpireResponse) GetRecommendedTier() string {
+	if x != nil {
+		return x.RecommendedTier
+	}
+	return ""
+}
+
+type ApplyDecayRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	CurrentScore  float64                `protobuf:"fixed64,1,opt,name=current_score,json=currentScore,proto3" json:"current_score,omitempty"`
+	DecayRate     float64                `protobuf:"fixed64,2,opt,name=decay_rate,json=decayRate,proto3" json:"decay_rate,omitempty"`
+	DaysInactive  int32                  `protobuf:"varint,3,opt,name=days_inactive,json=daysInactive,proto3" json:"days_inactive,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApplyDecayRequest) Reset() {
+	*x = ApplyDecayRequest{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApplyDecayRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApplyDecayRequest) ProtoMessage() {}
+
+func (x *ApplyDecayRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApplyDecayRequest.ProtoReflect.Descriptor instead.
+func (*ApplyDecayRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *ApplyDecayRequest) GetCurrentScore() float64 {
+	if x != nil {
+		return x.CurrentScore
+	}
+	return 0
+}
+
+func (x *ApplyDecayRequest) GetDecayRate() float64 {
+	if x != nil {
+		return x.DecayRate
+	}
+	return 0
+}
+
+func (x *ApplyDecayRequest) GetDaysInactive() int32 {
+	if x != nil {
+		return x.DaysInactive
+	}
+	return 0
+}
+
+type ApplyDecayResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	DecayedScore  float64                `protobuf:"fixed64,1,opt,name=decayed_score,json=decayedScore,proto3" json:"decayed_score,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApplyDecayResponse) Reset() {
+	*x = ApplyDecayResponse{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApplyDecayResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApplyDecayResponse) ProtoMessage() {}
+
+func (x *ApplyDecayResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApplyDecayResponse.ProtoReflect.Descriptor instead.
+func (*ApplyDecayResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *ApplyDecayResponse) GetDecayedScore() float64 {
+	if x != nil {
+		return x.DecayedScore
+	}
+	return 0
+}
+
 var File_sttattus_scoring_v1_scoring_proto protoreflect.FileDescriptor
 
 const file_sttattus_scoring_v1_scoring_proto_rawDesc = "" +
@@ -589,12 +886,40 @@ const file_sttattus_scoring_v1_scoring_proto_rawDesc = "" +
 	" \x01(\x05R\x13targetSocialBattery\"e\n" +
 	"\x12ScoreMatchResponse\x12$\n" +
 	"\rcompatibility\x18\x01 \x01(\x01R\rcompatibility\x12)\n" +
-	"\x10tension_baseline\x18\x02 \x01(\x01R\x0ftensionBaseline2\xd1\x02\n" +
+	"\x10tension_baseline\x18\x02 \x01(\x01R\x0ftensionBaseline\"\x99\x04\n" +
+	"\x12ScoreEmpireRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1b\n" +
+	"\tforge_exp\x18\x02 \x01(\x01R\bforgeExp\x12+\n" +
+	"\x11lexicon_eloquence\x18\x03 \x01(\x01R\x10lexiconEloquence\x12+\n" +
+	"\x11nomad_exploration\x18\x04 \x01(\x01R\x10nomadExploration\x12)\n" +
+	"\x10atlas_behavioral\x18\x05 \x01(\x01R\x0fatlasBehavioral\x12!\n" +
+	"\fvault_wealth\x18\x06 \x01(\x01R\vvaultWealth\x12'\n" +
+	"\x0fapex_biomarkers\x18\a \x01(\x01R\x0eapexBiomarkers\x12/\n" +
+	"\x13oracle_intelligence\x18\b \x01(\x01R\x12oracleIntelligence\x12'\n" +
+	"\x0fdominion_estate\x18\t \x01(\x01R\x0edominionEstate\x12'\n" +
+	"\x0flegacy_heritage\x18\n" +
+	" \x01(\x01R\x0elegacyHeritage\x12!\n" +
+	"\fzenith_focus\x18\v \x01(\x01R\vzenithFocus\x12)\n" +
+	"\x10onyx_exclusivity\x18\f \x01(\x01R\x0fonyxExclusivity\x12+\n" +
+	"\x11empire_reputation\x18\r \x01(\x01R\x10empireReputation\"g\n" +
+	"\x13ScoreEmpireResponse\x12%\n" +
+	"\x0esttattus_score\x18\x01 \x01(\x01R\rsttattusScore\x12)\n" +
+	"\x10recommended_tier\x18\x02 \x01(\tR\x0frecommendedTier\"|\n" +
+	"\x11ApplyDecayRequest\x12#\n" +
+	"\rcurrent_score\x18\x01 \x01(\x01R\fcurrentScore\x12\x1d\n" +
+	"\n" +
+	"decay_rate\x18\x02 \x01(\x01R\tdecayRate\x12#\n" +
+	"\rdays_inactive\x18\x03 \x01(\x05R\fdaysInactive\"9\n" +
+	"\x12ApplyDecayResponse\x12#\n" +
+	"\rdecayed_score\x18\x01 \x01(\x01R\fdecayedScore2\x92\x04\n" +
 	"\x0eScoringService\x12c\n" +
 	"\fScoreWorkout\x12(.sttattus.scoring.v1.ScoreWorkoutRequest\x1a).sttattus.scoring.v1.ScoreWorkoutResponse\x12{\n" +
 	"\x14ScoreLexicalProgress\x120.sttattus.scoring.v1.ScoreLexicalProgressRequest\x1a1.sttattus.scoring.v1.ScoreLexicalProgressResponse\x12]\n" +
 	"\n" +
-	"ScoreMatch\x12&.sttattus.scoring.v1.ScoreMatchRequest\x1a'.sttattus.scoring.v1.ScoreMatchResponseB@Z>github.com/sttattus/proto/gen/go/sttattus/scoring/v1;scoringv1b\x06proto3"
+	"ScoreMatch\x12&.sttattus.scoring.v1.ScoreMatchRequest\x1a'.sttattus.scoring.v1.ScoreMatchResponse\x12`\n" +
+	"\vScoreEmpire\x12'.sttattus.scoring.v1.ScoreEmpireRequest\x1a(.sttattus.scoring.v1.ScoreEmpireResponse\x12]\n" +
+	"\n" +
+	"ApplyDecay\x12&.sttattus.scoring.v1.ApplyDecayRequest\x1a'.sttattus.scoring.v1.ApplyDecayResponseB@Z>github.com/sttattus/proto/gen/go/sttattus/scoring/v1;scoringv1b\x06proto3"
 
 var (
 	file_sttattus_scoring_v1_scoring_proto_rawDescOnce sync.Once
@@ -608,7 +933,7 @@ func file_sttattus_scoring_v1_scoring_proto_rawDescGZIP() []byte {
 	return file_sttattus_scoring_v1_scoring_proto_rawDescData
 }
 
-var file_sttattus_scoring_v1_scoring_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_sttattus_scoring_v1_scoring_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_sttattus_scoring_v1_scoring_proto_goTypes = []any{
 	(*WorkoutSeriesInput)(nil),           // 0: sttattus.scoring.v1.WorkoutSeriesInput
 	(*ScoreWorkoutRequest)(nil),          // 1: sttattus.scoring.v1.ScoreWorkoutRequest
@@ -617,20 +942,28 @@ var file_sttattus_scoring_v1_scoring_proto_goTypes = []any{
 	(*ScoreLexicalProgressResponse)(nil), // 4: sttattus.scoring.v1.ScoreLexicalProgressResponse
 	(*ScoreMatchRequest)(nil),            // 5: sttattus.scoring.v1.ScoreMatchRequest
 	(*ScoreMatchResponse)(nil),           // 6: sttattus.scoring.v1.ScoreMatchResponse
+	(*ScoreEmpireRequest)(nil),           // 7: sttattus.scoring.v1.ScoreEmpireRequest
+	(*ScoreEmpireResponse)(nil),          // 8: sttattus.scoring.v1.ScoreEmpireResponse
+	(*ApplyDecayRequest)(nil),            // 9: sttattus.scoring.v1.ApplyDecayRequest
+	(*ApplyDecayResponse)(nil),           // 10: sttattus.scoring.v1.ApplyDecayResponse
 }
 var file_sttattus_scoring_v1_scoring_proto_depIdxs = []int32{
-	0, // 0: sttattus.scoring.v1.ScoreWorkoutRequest.series:type_name -> sttattus.scoring.v1.WorkoutSeriesInput
-	1, // 1: sttattus.scoring.v1.ScoringService.ScoreWorkout:input_type -> sttattus.scoring.v1.ScoreWorkoutRequest
-	3, // 2: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:input_type -> sttattus.scoring.v1.ScoreLexicalProgressRequest
-	5, // 3: sttattus.scoring.v1.ScoringService.ScoreMatch:input_type -> sttattus.scoring.v1.ScoreMatchRequest
-	2, // 4: sttattus.scoring.v1.ScoringService.ScoreWorkout:output_type -> sttattus.scoring.v1.ScoreWorkoutResponse
-	4, // 5: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:output_type -> sttattus.scoring.v1.ScoreLexicalProgressResponse
-	6, // 6: sttattus.scoring.v1.ScoringService.ScoreMatch:output_type -> sttattus.scoring.v1.ScoreMatchResponse
-	4, // [4:7] is the sub-list for method output_type
-	1, // [1:4] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0,  // 0: sttattus.scoring.v1.ScoreWorkoutRequest.series:type_name -> sttattus.scoring.v1.WorkoutSeriesInput
+	1,  // 1: sttattus.scoring.v1.ScoringService.ScoreWorkout:input_type -> sttattus.scoring.v1.ScoreWorkoutRequest
+	3,  // 2: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:input_type -> sttattus.scoring.v1.ScoreLexicalProgressRequest
+	5,  // 3: sttattus.scoring.v1.ScoringService.ScoreMatch:input_type -> sttattus.scoring.v1.ScoreMatchRequest
+	7,  // 4: sttattus.scoring.v1.ScoringService.ScoreEmpire:input_type -> sttattus.scoring.v1.ScoreEmpireRequest
+	9,  // 5: sttattus.scoring.v1.ScoringService.ApplyDecay:input_type -> sttattus.scoring.v1.ApplyDecayRequest
+	2,  // 6: sttattus.scoring.v1.ScoringService.ScoreWorkout:output_type -> sttattus.scoring.v1.ScoreWorkoutResponse
+	4,  // 7: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:output_type -> sttattus.scoring.v1.ScoreLexicalProgressResponse
+	6,  // 8: sttattus.scoring.v1.ScoringService.ScoreMatch:output_type -> sttattus.scoring.v1.ScoreMatchResponse
+	8,  // 9: sttattus.scoring.v1.ScoringService.ScoreEmpire:output_type -> sttattus.scoring.v1.ScoreEmpireResponse
+	10, // 10: sttattus.scoring.v1.ScoringService.ApplyDecay:output_type -> sttattus.scoring.v1.ApplyDecayResponse
+	6,  // [6:11] is the sub-list for method output_type
+	1,  // [1:6] is the sub-list for method input_type
+	1,  // [1:1] is the sub-list for extension type_name
+	1,  // [1:1] is the sub-list for extension extendee
+	0,  // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_scoring_v1_scoring_proto_init() }
@@ -644,7 +977,7 @@ func file_sttattus_scoring_v1_scoring_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_scoring_v1_scoring_proto_rawDesc), len(file_sttattus_scoring_v1_scoring_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   7,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

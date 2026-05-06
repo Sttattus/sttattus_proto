@@ -29,6 +29,11 @@ class UserProfile extends $pb.GeneratedMessage {
     $fixnum.Int64? createdAt,
     $fixnum.Int64? lastLoginAt,
     $core.bool? banned,
+    $core.double? sttattusScore,
+    $core.int? globalRank,
+    $core.double? globalPercentile,
+    $core.String? tier,
+    $core.String? auraColor,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -39,6 +44,11 @@ class UserProfile extends $pb.GeneratedMessage {
     if (createdAt != null) result.createdAt = createdAt;
     if (lastLoginAt != null) result.lastLoginAt = lastLoginAt;
     if (banned != null) result.banned = banned;
+    if (sttattusScore != null) result.sttattusScore = sttattusScore;
+    if (globalRank != null) result.globalRank = globalRank;
+    if (globalPercentile != null) result.globalPercentile = globalPercentile;
+    if (tier != null) result.tier = tier;
+    if (auraColor != null) result.auraColor = auraColor;
     return result;
   }
 
@@ -56,6 +66,11 @@ class UserProfile extends $pb.GeneratedMessage {
     ..aInt64(6, _omitFieldNames ? '' : 'createdAt')
     ..aInt64(7, _omitFieldNames ? '' : 'lastLoginAt')
     ..aOB(8, _omitFieldNames ? '' : 'banned')
+    ..a<$core.double>(9, _omitFieldNames ? '' : 'sttattusScore', $pb.PbFieldType.OD)
+    ..a<$core.int>(10, _omitFieldNames ? '' : 'globalRank', $pb.PbFieldType.O3)
+    ..a<$core.double>(11, _omitFieldNames ? '' : 'globalPercentile', $pb.PbFieldType.OD)
+    ..aOS(12, _omitFieldNames ? '' : 'tier')
+    ..aOS(13, _omitFieldNames ? '' : 'auraColor')
     ..hasRequiredFields = false
   ;
 
@@ -147,6 +162,52 @@ class UserProfile extends $pb.GeneratedMessage {
   $core.bool hasBanned() => $_has(7);
   @$pb.TagNumber(8)
   void clearBanned() => $_clearField(8);
+
+  /// Empire Sttattus Fields
+  @$pb.TagNumber(9)
+  $core.double get sttattusScore => $_getN(8);
+  @$pb.TagNumber(9)
+  set sttattusScore($core.double value) => $_setDouble(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSttattusScore() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSttattusScore() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get globalRank => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set globalRank($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasGlobalRank() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearGlobalRank() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.double get globalPercentile => $_getN(10);
+  @$pb.TagNumber(11)
+  set globalPercentile($core.double value) => $_setDouble(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasGlobalPercentile() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearGlobalPercentile() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get tier => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set tier($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasTier() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearTier() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get auraColor => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set auraColor($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasAuraColor() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearAuraColor() => $_clearField(13);
 }
 
 class AppAccess extends $pb.GeneratedMessage {
@@ -565,6 +626,530 @@ class GrantAppResponse extends $pb.GeneratedMessage {
   void clearApp() => $_clearField(1);
   @$pb.TagNumber(1)
   AppAccess ensureApp() => $_ensure(0);
+}
+
+class SttattusBreakdown extends $pb.GeneratedMessage {
+  factory SttattusBreakdown({
+    $core.double? forgeScore,
+    $core.double? lexiconScore,
+    $core.double? nomadScore,
+    $core.double? atlasScore,
+    $core.double? vaultScore,
+    $core.double? apexScore,
+    $core.double? oracleScore,
+    $core.double? dominionScore,
+    $core.double? legacyScore,
+    $core.double? zenithScore,
+    $core.double? onyxScore,
+    $core.double? empireScore,
+  }) {
+    final result = create();
+    if (forgeScore != null) result.forgeScore = forgeScore;
+    if (lexiconScore != null) result.lexiconScore = lexiconScore;
+    if (nomadScore != null) result.nomadScore = nomadScore;
+    if (atlasScore != null) result.atlasScore = atlasScore;
+    if (vaultScore != null) result.vaultScore = vaultScore;
+    if (apexScore != null) result.apexScore = apexScore;
+    if (oracleScore != null) result.oracleScore = oracleScore;
+    if (dominionScore != null) result.dominionScore = dominionScore;
+    if (legacyScore != null) result.legacyScore = legacyScore;
+    if (zenithScore != null) result.zenithScore = zenithScore;
+    if (onyxScore != null) result.onyxScore = onyxScore;
+    if (empireScore != null) result.empireScore = empireScore;
+    return result;
+  }
+
+  SttattusBreakdown._();
+
+  factory SttattusBreakdown.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SttattusBreakdown.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SttattusBreakdown', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.user.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'forgeScore', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'lexiconScore', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'nomadScore', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'atlasScore', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'vaultScore', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'apexScore', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'oracleScore', $pb.PbFieldType.OD)
+    ..a<$core.double>(8, _omitFieldNames ? '' : 'dominionScore', $pb.PbFieldType.OD)
+    ..a<$core.double>(9, _omitFieldNames ? '' : 'legacyScore', $pb.PbFieldType.OD)
+    ..a<$core.double>(10, _omitFieldNames ? '' : 'zenithScore', $pb.PbFieldType.OD)
+    ..a<$core.double>(11, _omitFieldNames ? '' : 'onyxScore', $pb.PbFieldType.OD)
+    ..a<$core.double>(12, _omitFieldNames ? '' : 'empireScore', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SttattusBreakdown clone() => SttattusBreakdown()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SttattusBreakdown copyWith(void Function(SttattusBreakdown) updates) => super.copyWith((message) => updates(message as SttattusBreakdown)) as SttattusBreakdown;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SttattusBreakdown create() => SttattusBreakdown._();
+  @$core.override
+  SttattusBreakdown createEmptyInstance() => create();
+  static $pb.PbList<SttattusBreakdown> createRepeated() => $pb.PbList<SttattusBreakdown>();
+  @$core.pragma('dart2js:noInline')
+  static SttattusBreakdown getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SttattusBreakdown>(create);
+  static SttattusBreakdown? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get forgeScore => $_getN(0);
+  @$pb.TagNumber(1)
+  set forgeScore($core.double value) => $_setDouble(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasForgeScore() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearForgeScore() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get lexiconScore => $_getN(1);
+  @$pb.TagNumber(2)
+  set lexiconScore($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLexiconScore() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLexiconScore() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get nomadScore => $_getN(2);
+  @$pb.TagNumber(3)
+  set nomadScore($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNomadScore() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNomadScore() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get atlasScore => $_getN(3);
+  @$pb.TagNumber(4)
+  set atlasScore($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAtlasScore() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAtlasScore() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get vaultScore => $_getN(4);
+  @$pb.TagNumber(5)
+  set vaultScore($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasVaultScore() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearVaultScore() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get apexScore => $_getN(5);
+  @$pb.TagNumber(6)
+  set apexScore($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasApexScore() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearApexScore() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get oracleScore => $_getN(6);
+  @$pb.TagNumber(7)
+  set oracleScore($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasOracleScore() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearOracleScore() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.double get dominionScore => $_getN(7);
+  @$pb.TagNumber(8)
+  set dominionScore($core.double value) => $_setDouble(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasDominionScore() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDominionScore() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.double get legacyScore => $_getN(8);
+  @$pb.TagNumber(9)
+  set legacyScore($core.double value) => $_setDouble(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasLegacyScore() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearLegacyScore() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.double get zenithScore => $_getN(9);
+  @$pb.TagNumber(10)
+  set zenithScore($core.double value) => $_setDouble(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasZenithScore() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearZenithScore() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.double get onyxScore => $_getN(10);
+  @$pb.TagNumber(11)
+  set onyxScore($core.double value) => $_setDouble(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasOnyxScore() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearOnyxScore() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.double get empireScore => $_getN(11);
+  @$pb.TagNumber(12)
+  set empireScore($core.double value) => $_setDouble(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasEmpireScore() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearEmpireScore() => $_clearField(12);
+}
+
+class GetSttattusRequest extends $pb.GeneratedMessage {
+  factory GetSttattusRequest({
+    $core.String? userId,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    return result;
+  }
+
+  GetSttattusRequest._();
+
+  factory GetSttattusRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetSttattusRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSttattusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.user.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSttattusRequest clone() => GetSttattusRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSttattusRequest copyWith(void Function(GetSttattusRequest) updates) => super.copyWith((message) => updates(message as GetSttattusRequest)) as GetSttattusRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSttattusRequest create() => GetSttattusRequest._();
+  @$core.override
+  GetSttattusRequest createEmptyInstance() => create();
+  static $pb.PbList<GetSttattusRequest> createRepeated() => $pb.PbList<GetSttattusRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetSttattusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSttattusRequest>(create);
+  static GetSttattusRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+}
+
+class GetSttattusResponse extends $pb.GeneratedMessage {
+  factory GetSttattusResponse({
+    $core.double? sttattusScore,
+    $core.int? globalRank,
+    $core.double? globalPercentile,
+    $core.String? tier,
+    $core.String? auraColor,
+    SttattusBreakdown? breakdown,
+  }) {
+    final result = create();
+    if (sttattusScore != null) result.sttattusScore = sttattusScore;
+    if (globalRank != null) result.globalRank = globalRank;
+    if (globalPercentile != null) result.globalPercentile = globalPercentile;
+    if (tier != null) result.tier = tier;
+    if (auraColor != null) result.auraColor = auraColor;
+    if (breakdown != null) result.breakdown = breakdown;
+    return result;
+  }
+
+  GetSttattusResponse._();
+
+  factory GetSttattusResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetSttattusResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSttattusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.user.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'sttattusScore', $pb.PbFieldType.OD)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'globalRank', $pb.PbFieldType.O3)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'globalPercentile', $pb.PbFieldType.OD)
+    ..aOS(4, _omitFieldNames ? '' : 'tier')
+    ..aOS(5, _omitFieldNames ? '' : 'auraColor')
+    ..aOM<SttattusBreakdown>(6, _omitFieldNames ? '' : 'breakdown', subBuilder: SttattusBreakdown.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSttattusResponse clone() => GetSttattusResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSttattusResponse copyWith(void Function(GetSttattusResponse) updates) => super.copyWith((message) => updates(message as GetSttattusResponse)) as GetSttattusResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSttattusResponse create() => GetSttattusResponse._();
+  @$core.override
+  GetSttattusResponse createEmptyInstance() => create();
+  static $pb.PbList<GetSttattusResponse> createRepeated() => $pb.PbList<GetSttattusResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetSttattusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSttattusResponse>(create);
+  static GetSttattusResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get sttattusScore => $_getN(0);
+  @$pb.TagNumber(1)
+  set sttattusScore($core.double value) => $_setDouble(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSttattusScore() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSttattusScore() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get globalRank => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set globalRank($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGlobalRank() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGlobalRank() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get globalPercentile => $_getN(2);
+  @$pb.TagNumber(3)
+  set globalPercentile($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGlobalPercentile() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGlobalPercentile() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get tier => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set tier($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTier() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTier() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get auraColor => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set auraColor($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAuraColor() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAuraColor() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  SttattusBreakdown get breakdown => $_getN(5);
+  @$pb.TagNumber(6)
+  set breakdown(SttattusBreakdown value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasBreakdown() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearBreakdown() => $_clearField(6);
+  @$pb.TagNumber(6)
+  SttattusBreakdown ensureBreakdown() => $_ensure(5);
+}
+
+class ListLeaderboardRequest extends $pb.GeneratedMessage {
+  factory ListLeaderboardRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListLeaderboardRequest._();
+
+  factory ListLeaderboardRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLeaderboardRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLeaderboardRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.user.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLeaderboardRequest clone() => ListLeaderboardRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLeaderboardRequest copyWith(void Function(ListLeaderboardRequest) updates) => super.copyWith((message) => updates(message as ListLeaderboardRequest)) as ListLeaderboardRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLeaderboardRequest create() => ListLeaderboardRequest._();
+  @$core.override
+  ListLeaderboardRequest createEmptyInstance() => create();
+  static $pb.PbList<ListLeaderboardRequest> createRepeated() => $pb.PbList<ListLeaderboardRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListLeaderboardRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLeaderboardRequest>(create);
+  static ListLeaderboardRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class ListLeaderboardResponse_LeaderboardEntry extends $pb.GeneratedMessage {
+  factory ListLeaderboardResponse_LeaderboardEntry({
+    $core.String? id,
+    $core.String? name,
+    $core.double? sttattusScore,
+    $core.int? globalRank,
+    $core.String? tier,
+    $core.String? auraColor,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (sttattusScore != null) result.sttattusScore = sttattusScore;
+    if (globalRank != null) result.globalRank = globalRank;
+    if (tier != null) result.tier = tier;
+    if (auraColor != null) result.auraColor = auraColor;
+    return result;
+  }
+
+  ListLeaderboardResponse_LeaderboardEntry._();
+
+  factory ListLeaderboardResponse_LeaderboardEntry.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLeaderboardResponse_LeaderboardEntry.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLeaderboardResponse.LeaderboardEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.user.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'sttattusScore', $pb.PbFieldType.OD)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'globalRank', $pb.PbFieldType.O3)
+    ..aOS(5, _omitFieldNames ? '' : 'tier')
+    ..aOS(6, _omitFieldNames ? '' : 'auraColor')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLeaderboardResponse_LeaderboardEntry clone() => ListLeaderboardResponse_LeaderboardEntry()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLeaderboardResponse_LeaderboardEntry copyWith(void Function(ListLeaderboardResponse_LeaderboardEntry) updates) => super.copyWith((message) => updates(message as ListLeaderboardResponse_LeaderboardEntry)) as ListLeaderboardResponse_LeaderboardEntry;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLeaderboardResponse_LeaderboardEntry create() => ListLeaderboardResponse_LeaderboardEntry._();
+  @$core.override
+  ListLeaderboardResponse_LeaderboardEntry createEmptyInstance() => create();
+  static $pb.PbList<ListLeaderboardResponse_LeaderboardEntry> createRepeated() => $pb.PbList<ListLeaderboardResponse_LeaderboardEntry>();
+  @$core.pragma('dart2js:noInline')
+  static ListLeaderboardResponse_LeaderboardEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLeaderboardResponse_LeaderboardEntry>(create);
+  static ListLeaderboardResponse_LeaderboardEntry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get sttattusScore => $_getN(2);
+  @$pb.TagNumber(3)
+  set sttattusScore($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSttattusScore() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSttattusScore() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get globalRank => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set globalRank($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGlobalRank() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGlobalRank() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get tier => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set tier($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTier() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTier() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get auraColor => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set auraColor($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAuraColor() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAuraColor() => $_clearField(6);
+}
+
+class ListLeaderboardResponse extends $pb.GeneratedMessage {
+  factory ListLeaderboardResponse({
+    $core.Iterable<ListLeaderboardResponse_LeaderboardEntry>? entries,
+  }) {
+    final result = create();
+    if (entries != null) result.entries.addAll(entries);
+    return result;
+  }
+
+  ListLeaderboardResponse._();
+
+  factory ListLeaderboardResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLeaderboardResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLeaderboardResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.user.v1'), createEmptyInstance: create)
+    ..pc<ListLeaderboardResponse_LeaderboardEntry>(1, _omitFieldNames ? '' : 'entries', $pb.PbFieldType.PM, subBuilder: ListLeaderboardResponse_LeaderboardEntry.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLeaderboardResponse clone() => ListLeaderboardResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLeaderboardResponse copyWith(void Function(ListLeaderboardResponse) updates) => super.copyWith((message) => updates(message as ListLeaderboardResponse)) as ListLeaderboardResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLeaderboardResponse create() => ListLeaderboardResponse._();
+  @$core.override
+  ListLeaderboardResponse createEmptyInstance() => create();
+  static $pb.PbList<ListLeaderboardResponse> createRepeated() => $pb.PbList<ListLeaderboardResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListLeaderboardResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLeaderboardResponse>(create);
+  static ListLeaderboardResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ListLeaderboardResponse_LeaderboardEntry> get entries => $_getList(0);
 }
 
 

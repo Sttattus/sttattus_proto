@@ -63,8 +63,42 @@ message ScoreMatchResponse {
   double tension_baseline = 2;
 }
 
+message ScoreEmpireRequest {
+  string user_id = 1;
+  // All 12 raw metrics
+  double forge_exp = 2;
+  double lexicon_eloquence = 3;
+  double nomad_exploration = 4;
+  double atlas_behavioral = 5;
+  double vault_wealth = 6;
+  double apex_biomarkers = 7;
+  double oracle_intelligence = 8;
+  double dominion_estate = 9;
+  double legacy_heritage = 10;
+  double zenith_focus = 11;
+  double onyx_exclusivity = 12;
+  double empire_reputation = 13;
+}
+message ScoreEmpireResponse {
+  double sttattus_score = 1;
+  string recommended_tier = 2;
+}
+
+message ApplyDecayRequest {
+  double current_score = 1;
+  double decay_rate = 2;
+  int32 days_inactive = 3;
+}
+message ApplyDecayResponse {
+  double decayed_score = 1;
+}
+
 service ScoringService {
   rpc ScoreWorkout(ScoreWorkoutRequest) returns (ScoreWorkoutResponse);
   rpc ScoreLexicalProgress(ScoreLexicalProgressRequest) returns (ScoreLexicalProgressResponse);
   rpc ScoreMatch(ScoreMatchRequest) returns (ScoreMatchResponse);
+  
+  // High-Stakes Monolith Logic (Rust Offloaded)
+  rpc ScoreEmpire(ScoreEmpireRequest) returns (ScoreEmpireResponse);
+  rpc ApplyDecay(ApplyDecayRequest) returns (ApplyDecayResponse);
 }

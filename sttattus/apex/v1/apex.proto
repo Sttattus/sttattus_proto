@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package sttattus.apex.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/apex/v1;apexv1";
+
+message BioMetric {
+  string code = 1; // e.g., 'HRV', 'RE_SLEEP', 'BLOOD_GLUCOSE'
+  double value = 2;
+  int64 recorded_at = 3;
+}
+
+message SyncVitalsRequest {
+  repeated BioMetric metrics = 1;
+}
+
+message SyncVitalsResponse {
+  double biological_age = 1;
+  double current_apex_score = 2;
+}
+
+service ApexService {
+  rpc SyncVitals(SyncVitalsRequest) returns (SyncVitalsResponse);
+}

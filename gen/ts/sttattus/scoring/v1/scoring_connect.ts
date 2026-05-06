@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ScoreLexicalProgressRequest, ScoreLexicalProgressResponse, ScoreMatchRequest, ScoreMatchResponse, ScoreWorkoutRequest, ScoreWorkoutResponse } from "./scoring_pb.js";
+import { ApplyDecayRequest, ApplyDecayResponse, ScoreEmpireRequest, ScoreEmpireResponse, ScoreLexicalProgressRequest, ScoreLexicalProgressResponse, ScoreMatchRequest, ScoreMatchResponse, ScoreWorkoutRequest, ScoreWorkoutResponse } from "./scoring_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -37,6 +37,26 @@ export const ScoringService = {
       name: "ScoreMatch",
       I: ScoreMatchRequest,
       O: ScoreMatchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * High-Stakes Monolith Logic (Rust Offloaded)
+     *
+     * @generated from rpc sttattus.scoring.v1.ScoringService.ScoreEmpire
+     */
+    scoreEmpire: {
+      name: "ScoreEmpire",
+      I: ScoreEmpireRequest,
+      O: ScoreEmpireResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.scoring.v1.ScoringService.ApplyDecay
+     */
+    applyDecay: {
+      name: "ApplyDecay",
+      I: ApplyDecayRequest,
+      O: ApplyDecayResponse,
       kind: MethodKind.Unary,
     },
   }

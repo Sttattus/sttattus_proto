@@ -15,6 +15,13 @@ message UserProfile {
   int64 created_at = 6; // unix seconds
   int64 last_login_at = 7; // unix seconds, 0 if never
   bool banned = 8;
+  
+  // Empire Sttattus Fields
+  double sttattus_score = 9;
+  int32 global_rank = 10;
+  double global_percentile = 11;
+  string tier = 12; // sovereign, platinum, gold, silver, bronze, unranked
+  string aura_color = 13;
 }
 
 message AppAccess {
@@ -48,9 +55,55 @@ message GrantAppResponse {
   AppAccess app = 1;
 }
 
+message SttattusBreakdown {
+  double forge_score = 1;
+  double lexicon_score = 2;
+  double nomad_score = 3;
+  double atlas_score = 4;
+  double vault_score = 5;
+  double apex_score = 6;
+  double oracle_score = 7;
+  double dominion_score = 8;
+  double legacy_score = 9;
+  double zenith_score = 10;
+  double onyx_score = 11;
+  double empire_score = 12;
+}
+
+message GetSttattusRequest {
+  string user_id = 1; // if empty, get self
+}
+message GetSttattusResponse {
+  double sttattus_score = 1;
+  int32 global_rank = 2;
+  double global_percentile = 3;
+  string tier = 4;
+  string aura_color = 5;
+  SttattusBreakdown breakdown = 6;
+}
+
+message ListLeaderboardRequest {
+  int32 limit = 1;
+}
+message ListLeaderboardResponse {
+  message LeaderboardEntry {
+    string id = 1;
+    string name = 2;
+    double sttattus_score = 3;
+    int32 global_rank = 4;
+    string tier = 5;
+    string aura_color = 6;
+  }
+  repeated LeaderboardEntry entries = 1;
+}
+
 service UserService {
   rpc GetMe(GetMeRequest) returns (GetMeResponse);
   rpc UpdateMe(UpdateMeRequest) returns (UpdateMeResponse);
   rpc ListAppAccess(ListAppAccessRequest) returns (ListAppAccessResponse);
   rpc GrantApp(GrantAppRequest) returns (GrantAppResponse);
+
+  // Empire Sttattus RPCs
+  rpc GetSttattus(GetSttattusRequest) returns (GetSttattusResponse);
+  rpc ListLeaderboard(ListLeaderboardRequest) returns (ListLeaderboardResponse);
 }

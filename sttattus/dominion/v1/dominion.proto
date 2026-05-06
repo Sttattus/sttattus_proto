@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package sttattus.dominion.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/dominion/v1;dominionv1";
+
+message Property {
+  string id = 1;
+  string name = 2;
+  string location_lat_lng = 3;
+}
+
+message ListTerritoriesRequest {}
+message ListTerritoriesResponse {
+  repeated Property properties = 1;
+}
+
+service DominionService {
+  rpc ListTerritories(ListTerritoriesRequest) returns (ListTerritoriesResponse);
+}

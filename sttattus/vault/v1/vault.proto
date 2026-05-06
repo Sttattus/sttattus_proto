@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package sttattus.vault.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1";
+
+message Asset {
+  string id = 1;
+  string name = 2;
+  string type = 3; // currency, crypto, metal, collectible
+  double value_usd = 4;
+}
+
+message SyncWealthRequest {
+  repeated Asset assets = 1;
+  double net_worth_override = 2;
+}
+
+message SyncWealthResponse {
+  double current_vault_score = 1;
+  double global_percentile = 2;
+}
+
+service VaultService {
+  rpc SyncWealth(SyncWealthRequest) returns (SyncWealthResponse);
+}

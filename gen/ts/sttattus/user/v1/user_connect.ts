@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetMeRequest, GetMeResponse, GrantAppRequest, GrantAppResponse, ListAppAccessRequest, ListAppAccessResponse, UpdateMeRequest, UpdateMeResponse } from "./user_pb.js";
+import { GetMeRequest, GetMeResponse, GetSttattusRequest, GetSttattusResponse, GrantAppRequest, GrantAppResponse, ListAppAccessRequest, ListAppAccessResponse, ListLeaderboardRequest, ListLeaderboardResponse, UpdateMeRequest, UpdateMeResponse } from "./user_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -46,6 +46,26 @@ export const UserService = {
       name: "GrantApp",
       I: GrantAppRequest,
       O: GrantAppResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Empire Sttattus RPCs
+     *
+     * @generated from rpc sttattus.user.v1.UserService.GetSttattus
+     */
+    getSttattus: {
+      name: "GetSttattus",
+      I: GetSttattusRequest,
+      O: GetSttattusResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.user.v1.UserService.ListLeaderboard
+     */
+    listLeaderboard: {
+      name: "ListLeaderboard",
+      I: ListLeaderboardRequest,
+      O: ListLeaderboardResponse,
       kind: MethodKind.Unary,
     },
   }

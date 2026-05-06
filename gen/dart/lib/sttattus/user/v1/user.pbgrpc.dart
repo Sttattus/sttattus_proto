@@ -48,6 +48,15 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$grantApp, request, options: options);
   }
 
+  /// Empire Sttattus RPCs
+  $grpc.ResponseFuture<$0.GetSttattusResponse> getSttattus($0.GetSttattusRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getSttattus, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListLeaderboardResponse> listLeaderboard($0.ListLeaderboardRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listLeaderboard, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getMe = $grpc.ClientMethod<$0.GetMeRequest, $0.GetMeResponse>(
@@ -66,6 +75,14 @@ class UserServiceClient extends $grpc.Client {
       '/sttattus.user.v1.UserService/GrantApp',
       ($0.GrantAppRequest value) => value.writeToBuffer(),
       $0.GrantAppResponse.fromBuffer);
+  static final _$getSttattus = $grpc.ClientMethod<$0.GetSttattusRequest, $0.GetSttattusResponse>(
+      '/sttattus.user.v1.UserService/GetSttattus',
+      ($0.GetSttattusRequest value) => value.writeToBuffer(),
+      $0.GetSttattusResponse.fromBuffer);
+  static final _$listLeaderboard = $grpc.ClientMethod<$0.ListLeaderboardRequest, $0.ListLeaderboardResponse>(
+      '/sttattus.user.v1.UserService/ListLeaderboard',
+      ($0.ListLeaderboardRequest value) => value.writeToBuffer(),
+      $0.ListLeaderboardResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.user.v1.UserService')
@@ -101,6 +118,20 @@ abstract class UserServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GrantAppRequest.fromBuffer(value),
         ($0.GrantAppResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetSttattusRequest, $0.GetSttattusResponse>(
+        'GetSttattus',
+        getSttattus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetSttattusRequest.fromBuffer(value),
+        ($0.GetSttattusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListLeaderboardRequest, $0.ListLeaderboardResponse>(
+        'ListLeaderboard',
+        listLeaderboard_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListLeaderboardRequest.fromBuffer(value),
+        ($0.ListLeaderboardResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetMeResponse> getMe_Pre($grpc.ServiceCall $call, $async.Future<$0.GetMeRequest> $request) async {
@@ -126,5 +157,17 @@ abstract class UserServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GrantAppResponse> grantApp($grpc.ServiceCall call, $0.GrantAppRequest request);
+
+  $async.Future<$0.GetSttattusResponse> getSttattus_Pre($grpc.ServiceCall $call, $async.Future<$0.GetSttattusRequest> $request) async {
+    return getSttattus($call, await $request);
+  }
+
+  $async.Future<$0.GetSttattusResponse> getSttattus($grpc.ServiceCall call, $0.GetSttattusRequest request);
+
+  $async.Future<$0.ListLeaderboardResponse> listLeaderboard_Pre($grpc.ServiceCall $call, $async.Future<$0.ListLeaderboardRequest> $request) async {
+    return listLeaderboard($call, await $request);
+  }
+
+  $async.Future<$0.ListLeaderboardResponse> listLeaderboard($grpc.ServiceCall call, $0.ListLeaderboardRequest request);
 
 }

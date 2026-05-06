@@ -23,6 +23,8 @@ class AppCode extends $pb.ProtobufEnum {
   static const AppCode APP_CODE_LANGUAGES = AppCode._(2, _omitEnumNames ? '' : 'APP_CODE_LANGUAGES');
   static const AppCode APP_CODE_TRAVEL = AppCode._(3, _omitEnumNames ? '' : 'APP_CODE_TRAVEL');
   static const AppCode APP_CODE_DATING = AppCode._(4, _omitEnumNames ? '' : 'APP_CODE_DATING');
+  static const AppCode APP_CODE_EMPIRE = AppCode._(5, _omitEnumNames ? '' : 'APP_CODE_EMPIRE');
+  static const AppCode APP_CODE_ONYX = AppCode._(6, _omitEnumNames ? '' : 'APP_CODE_ONYX');
 
   static const $core.List<AppCode> values = <AppCode> [
     APP_CODE_UNSPECIFIED,
@@ -30,9 +32,11 @@ class AppCode extends $pb.ProtobufEnum {
     APP_CODE_LANGUAGES,
     APP_CODE_TRAVEL,
     APP_CODE_DATING,
+    APP_CODE_EMPIRE,
+    APP_CODE_ONYX,
   ];
 
-  static final $core.List<AppCode?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 4);
+  static final $core.List<AppCode?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 6);
   static AppCode? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
   const AppCode._(super.value, super.name);

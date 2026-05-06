@@ -32,6 +32,8 @@ const (
 	AppCode_APP_CODE_LANGUAGES   AppCode = 2
 	AppCode_APP_CODE_TRAVEL      AppCode = 3
 	AppCode_APP_CODE_DATING      AppCode = 4
+	AppCode_APP_CODE_EMPIRE      AppCode = 5
+	AppCode_APP_CODE_ONYX        AppCode = 6
 )
 
 // Enum value maps for AppCode.
@@ -42,6 +44,8 @@ var (
 		2: "APP_CODE_LANGUAGES",
 		3: "APP_CODE_TRAVEL",
 		4: "APP_CODE_DATING",
+		5: "APP_CODE_EMPIRE",
+		6: "APP_CODE_ONYX",
 	}
 	AppCode_value = map[string]int32{
 		"APP_CODE_UNSPECIFIED": 0,
@@ -49,6 +53,8 @@ var (
 		"APP_CODE_LANGUAGES":   2,
 		"APP_CODE_TRAVEL":      3,
 		"APP_CODE_DATING":      4,
+		"APP_CODE_EMPIRE":      5,
+		"APP_CODE_ONYX":        6,
 	}
 )
 
@@ -909,13 +915,15 @@ const file_sttattus_auth_v1_auth_proto_rawDesc = "" +
 	"\x06tokens\x18\x01 \x01(\v2\x1b.sttattus.auth.v1.TokenPairR\x06tokens\"4\n" +
 	"\rLogoutRequest\x12#\n" +
 	"\rrefresh_token\x18\x01 \x01(\tR\frefreshToken\"\x10\n" +
-	"\x0eLogoutResponse*{\n" +
+	"\x0eLogoutResponse*\xa3\x01\n" +
 	"\aAppCode\x12\x18\n" +
 	"\x14APP_CODE_UNSPECIFIED\x10\x00\x12\x14\n" +
 	"\x10APP_CODE_WORKOUT\x10\x01\x12\x16\n" +
 	"\x12APP_CODE_LANGUAGES\x10\x02\x12\x13\n" +
 	"\x0fAPP_CODE_TRAVEL\x10\x03\x12\x13\n" +
-	"\x0fAPP_CODE_DATING\x10\x042\xf0\x03\n" +
+	"\x0fAPP_CODE_DATING\x10\x04\x12\x13\n" +
+	"\x0fAPP_CODE_EMPIRE\x10\x05\x12\x11\n" +
+	"\rAPP_CODE_ONYX\x10\x062\xf0\x03\n" +
 	"\vAuthService\x12Q\n" +
 	"\bRegister\x12!.sttattus.auth.v1.RegisterRequest\x1a\".sttattus.auth.v1.RegisterResponse\x12H\n" +
 	"\x05Login\x12\x1e.sttattus.auth.v1.LoginRequest\x1a\x1f.sttattus.auth.v1.LoginResponse\x12W\n" +

@@ -429,3 +429,243 @@ export class ScoreMatchResponse extends Message<ScoreMatchResponse> {
   }
 }
 
+/**
+ * @generated from message sttattus.scoring.v1.ScoreEmpireRequest
+ */
+export class ScoreEmpireRequest extends Message<ScoreEmpireRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * All 12 raw metrics
+   *
+   * @generated from field: double forge_exp = 2;
+   */
+  forgeExp = 0;
+
+  /**
+   * @generated from field: double lexicon_eloquence = 3;
+   */
+  lexiconEloquence = 0;
+
+  /**
+   * @generated from field: double nomad_exploration = 4;
+   */
+  nomadExploration = 0;
+
+  /**
+   * @generated from field: double atlas_behavioral = 5;
+   */
+  atlasBehavioral = 0;
+
+  /**
+   * @generated from field: double vault_wealth = 6;
+   */
+  vaultWealth = 0;
+
+  /**
+   * @generated from field: double apex_biomarkers = 7;
+   */
+  apexBiomarkers = 0;
+
+  /**
+   * @generated from field: double oracle_intelligence = 8;
+   */
+  oracleIntelligence = 0;
+
+  /**
+   * @generated from field: double dominion_estate = 9;
+   */
+  dominionEstate = 0;
+
+  /**
+   * @generated from field: double legacy_heritage = 10;
+   */
+  legacyHeritage = 0;
+
+  /**
+   * @generated from field: double zenith_focus = 11;
+   */
+  zenithFocus = 0;
+
+  /**
+   * @generated from field: double onyx_exclusivity = 12;
+   */
+  onyxExclusivity = 0;
+
+  /**
+   * @generated from field: double empire_reputation = 13;
+   */
+  empireReputation = 0;
+
+  constructor(data?: PartialMessage<ScoreEmpireRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreEmpireRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "forge_exp", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "lexicon_eloquence", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "nomad_exploration", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "atlas_behavioral", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "vault_wealth", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "apex_biomarkers", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "oracle_intelligence", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 9, name: "dominion_estate", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 10, name: "legacy_heritage", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 11, name: "zenith_focus", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 12, name: "onyx_exclusivity", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 13, name: "empire_reputation", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreEmpireRequest {
+    return new ScoreEmpireRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreEmpireRequest {
+    return new ScoreEmpireRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreEmpireRequest {
+    return new ScoreEmpireRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreEmpireRequest | PlainMessage<ScoreEmpireRequest> | undefined, b: ScoreEmpireRequest | PlainMessage<ScoreEmpireRequest> | undefined): boolean {
+    return proto3.util.equals(ScoreEmpireRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreEmpireResponse
+ */
+export class ScoreEmpireResponse extends Message<ScoreEmpireResponse> {
+  /**
+   * @generated from field: double sttattus_score = 1;
+   */
+  sttattusScore = 0;
+
+  /**
+   * @generated from field: string recommended_tier = 2;
+   */
+  recommendedTier = "";
+
+  constructor(data?: PartialMessage<ScoreEmpireResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreEmpireResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sttattus_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "recommended_tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreEmpireResponse {
+    return new ScoreEmpireResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreEmpireResponse {
+    return new ScoreEmpireResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreEmpireResponse {
+    return new ScoreEmpireResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreEmpireResponse | PlainMessage<ScoreEmpireResponse> | undefined, b: ScoreEmpireResponse | PlainMessage<ScoreEmpireResponse> | undefined): boolean {
+    return proto3.util.equals(ScoreEmpireResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ApplyDecayRequest
+ */
+export class ApplyDecayRequest extends Message<ApplyDecayRequest> {
+  /**
+   * @generated from field: double current_score = 1;
+   */
+  currentScore = 0;
+
+  /**
+   * @generated from field: double decay_rate = 2;
+   */
+  decayRate = 0;
+
+  /**
+   * @generated from field: int32 days_inactive = 3;
+   */
+  daysInactive = 0;
+
+  constructor(data?: PartialMessage<ApplyDecayRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ApplyDecayRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "current_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "decay_rate", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "days_inactive", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApplyDecayRequest {
+    return new ApplyDecayRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApplyDecayRequest {
+    return new ApplyDecayRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApplyDecayRequest {
+    return new ApplyDecayRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApplyDecayRequest | PlainMessage<ApplyDecayRequest> | undefined, b: ApplyDecayRequest | PlainMessage<ApplyDecayRequest> | undefined): boolean {
+    return proto3.util.equals(ApplyDecayRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ApplyDecayResponse
+ */
+export class ApplyDecayResponse extends Message<ApplyDecayResponse> {
+  /**
+   * @generated from field: double decayed_score = 1;
+   */
+  decayedScore = 0;
+
+  constructor(data?: PartialMessage<ApplyDecayResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ApplyDecayResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "decayed_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApplyDecayResponse {
+    return new ApplyDecayResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApplyDecayResponse {
+    return new ApplyDecayResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApplyDecayResponse {
+    return new ApplyDecayResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApplyDecayResponse | PlainMessage<ApplyDecayResponse> | undefined, b: ApplyDecayResponse | PlainMessage<ApplyDecayResponse> | undefined): boolean {
+    return proto3.util.equals(ApplyDecayResponse, a, b);
+  }
+}
+

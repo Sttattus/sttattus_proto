@@ -13,6 +13,8 @@ enum AppCode {
   APP_CODE_LANGUAGES = 2;
   APP_CODE_TRAVEL = 3;
   APP_CODE_DATING = 4;
+  APP_CODE_EMPIRE = 5;
+  APP_CODE_ONYX = 6;
 }
 
 message TokenPair {

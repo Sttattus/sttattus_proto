@@ -23,6 +23,8 @@ const AppCode$json = {
     {'1': 'APP_CODE_LANGUAGES', '2': 2},
     {'1': 'APP_CODE_TRAVEL', '2': 3},
     {'1': 'APP_CODE_DATING', '2': 4},
+    {'1': 'APP_CODE_EMPIRE', '2': 5},
+    {'1': 'APP_CODE_ONYX', '2': 6},
   ],
 };
 
@@ -30,7 +32,7 @@ const AppCode$json = {
 final $typed_data.Uint8List appCodeDescriptor = $convert.base64Decode(
     'CgdBcHBDb2RlEhgKFEFQUF9DT0RFX1VOU1BFQ0lGSUVEEAASFAoQQVBQX0NPREVfV09SS09VVB'
     'ABEhYKEkFQUF9DT0RFX0xBTkdVQUdFUxACEhMKD0FQUF9DT0RFX1RSQVZFTBADEhMKD0FQUF9D'
-    'T0RFX0RBVElORxAE');
+    'T0RFX0RBVElORxAEEhMKD0FQUF9DT0RFX0VNUElSRRAFEhEKDUFQUF9DT0RFX09OWVgQBg==');
 
 @$core.Deprecated('Use tokenPairDescriptor instead')
 const TokenPair$json = {

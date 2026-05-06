@@ -19,10 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	UserService_GetMe_FullMethodName         = "/sttattus.user.v1.UserService/GetMe"
-	UserService_UpdateMe_FullMethodName      = "/sttattus.user.v1.UserService/UpdateMe"
-	UserService_ListAppAccess_FullMethodName = "/sttattus.user.v1.UserService/ListAppAccess"
-	UserService_GrantApp_FullMethodName      = "/sttattus.user.v1.UserService/GrantApp"
+	UserService_GetMe_FullMethodName           = "/sttattus.user.v1.UserService/GetMe"
+	UserService_UpdateMe_FullMethodName        = "/sttattus.user.v1.UserService/UpdateMe"
+	UserService_ListAppAccess_FullMethodName   = "/sttattus.user.v1.UserService/ListAppAccess"
+	UserService_GrantApp_FullMethodName        = "/sttattus.user.v1.UserService/GrantApp"
+	UserService_GetSttattus_FullMethodName     = "/sttattus.user.v1.UserService/GetSttattus"
+	UserService_ListLeaderboard_FullMethodName = "/sttattus.user.v1.UserService/ListLeaderboard"
 )
 
 // UserServiceClient is the client API for UserService service.
@@ -33,6 +35,9 @@ type UserServiceClient interface {
 	UpdateMe(ctx context.Context, in *UpdateMeRequest, opts ...grpc.CallOption) (*UpdateMeResponse, error)
 	ListAppAccess(ctx context.Context, in *ListAppAccessRequest, opts ...grpc.CallOption) (*ListAppAccessResponse, error)
 	GrantApp(ctx context.Context, in *GrantAppRequest, opts ...grpc.CallOption) (*GrantAppResponse, error)
+	// Empire Sttattus RPCs
+	GetSttattus(ctx context.Context, in *GetSttattusRequest, opts ...grpc.CallOption) (*GetSttattusResponse, error)
+	ListLeaderboard(ctx context.Context, in *ListLeaderboardRequest, opts ...grpc.CallOption) (*ListLeaderboardResponse, error)
 }
 
 type userServiceClient struct {
@@ -83,6 +88,26 @@ func (c *userServiceClient) GrantApp(ctx context.Context, in *GrantAppRequest, o
 	return out, nil
 }
 
+func (c *userServiceClient) GetSttattus(ctx context.Context, in *GetSttattusRequest, opts ...grpc.CallOption) (*GetSttattusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSttattusResponse)
+	err := c.cc.Invoke(ctx, UserService_GetSttattus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) ListLeaderboard(ctx context.Context, in *ListLeaderboardRequest, opts ...grpc.CallOption) (*ListLeaderboardResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLeaderboardResponse)
+	err := c.cc.Invoke(ctx, UserService_ListLeaderboard_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServiceServer is the server API for UserService service.
 // All implementations must embed UnimplementedUserServiceServer
 // for forward compatibility.
@@ -91,6 +116,9 @@ type UserServiceServer interface {
 	UpdateMe(context.Context, *UpdateMeRequest) (*UpdateMeResponse, error)
 	ListAppAccess(context.Context, *ListAppAccessRequest) (*ListAppAccessResponse, error)
 	GrantApp(context.Context, *GrantAppRequest) (*GrantAppResponse, error)
+	// Empire Sttattus RPCs
+	GetSttattus(context.Context, *GetSttattusRequest) (*GetSttattusResponse, error)
+	ListLeaderboard(context.Context, *ListLeaderboardRequest) (*ListLeaderboardResponse, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
@@ -112,6 +140,12 @@ func (UnimplementedUserServiceServer) ListAppAccess(context.Context, *ListAppAcc
 }
 func (UnimplementedUserServiceServer) GrantApp(context.Context, *GrantAppRequest) (*GrantAppResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GrantApp not implemented")
+}
+func (UnimplementedUserServiceServer) GetSttattus(context.Context, *GetSttattusRequest) (*GetSttattusResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSttattus not implemented")
+}
+func (UnimplementedUserServiceServer) ListLeaderboard(context.Context, *ListLeaderboardRequest) (*ListLeaderboardResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLeaderboard not implemented")
 }
 func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
 func (UnimplementedUserServiceServer) testEmbeddedByValue()                     {}
@@ -206,6 +240,42 @@ func _UserService_GrantApp_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_GetSttattus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSttattusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).GetSttattus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_GetSttattus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).GetSttattus(ctx, req.(*GetSttattusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_ListLeaderboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLeaderboardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).ListLeaderboard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_ListLeaderboard_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).ListLeaderboard(ctx, req.(*ListLeaderboardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // UserService_ServiceDesc is the grpc.ServiceDesc for UserService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -228,6 +298,14 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GrantApp",
 			Handler:    _UserService_GrantApp_Handler,
+		},
+		{
+			MethodName: "GetSttattus",
+			Handler:    _UserService_GetSttattus_Handler,
+		},
+		{
+			MethodName: "ListLeaderboard",
+			Handler:    _UserService_ListLeaderboard_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

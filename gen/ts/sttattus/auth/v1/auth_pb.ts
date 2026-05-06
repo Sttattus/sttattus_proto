@@ -38,6 +38,16 @@ export enum AppCode {
    * @generated from enum value: APP_CODE_DATING = 4;
    */
   DATING = 4,
+
+  /**
+   * @generated from enum value: APP_CODE_EMPIRE = 5;
+   */
+  EMPIRE = 5,
+
+  /**
+   * @generated from enum value: APP_CODE_ONYX = 6;
+   */
+  ONYX = 6,
 }
 // Retrieve enum metadata with: proto3.getEnumType(AppCode)
 proto3.util.setEnumType(AppCode, "sttattus.auth.v1.AppCode", [
@@ -46,6 +56,8 @@ proto3.util.setEnumType(AppCode, "sttattus.auth.v1.AppCode", [
   { no: 2, name: "APP_CODE_LANGUAGES" },
   { no: 3, name: "APP_CODE_TRAVEL" },
   { no: 4, name: "APP_CODE_DATING" },
+  { no: 5, name: "APP_CODE_EMPIRE" },
+  { no: 6, name: "APP_CODE_ONYX" },
 ]);
 
 /**

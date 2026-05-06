@@ -22,6 +22,8 @@ const (
 	ScoringService_ScoreWorkout_FullMethodName         = "/sttattus.scoring.v1.ScoringService/ScoreWorkout"
 	ScoringService_ScoreLexicalProgress_FullMethodName = "/sttattus.scoring.v1.ScoringService/ScoreLexicalProgress"
 	ScoringService_ScoreMatch_FullMethodName           = "/sttattus.scoring.v1.ScoringService/ScoreMatch"
+	ScoringService_ScoreEmpire_FullMethodName          = "/sttattus.scoring.v1.ScoringService/ScoreEmpire"
+	ScoringService_ApplyDecay_FullMethodName           = "/sttattus.scoring.v1.ScoringService/ApplyDecay"
 )
 
 // ScoringServiceClient is the client API for ScoringService service.
@@ -31,6 +33,9 @@ type ScoringServiceClient interface {
 	ScoreWorkout(ctx context.Context, in *ScoreWorkoutRequest, opts ...grpc.CallOption) (*ScoreWorkoutResponse, error)
 	ScoreLexicalProgress(ctx context.Context, in *ScoreLexicalProgressRequest, opts ...grpc.CallOption) (*ScoreLexicalProgressResponse, error)
 	ScoreMatch(ctx context.Context, in *ScoreMatchRequest, opts ...grpc.CallOption) (*ScoreMatchResponse, error)
+	// High-Stakes Monolith Logic (Rust Offloaded)
+	ScoreEmpire(ctx context.Context, in *ScoreEmpireRequest, opts ...grpc.CallOption) (*ScoreEmpireResponse, error)
+	ApplyDecay(ctx context.Context, in *ApplyDecayRequest, opts ...grpc.CallOption) (*ApplyDecayResponse, error)
 }
 
 type scoringServiceClient struct {
@@ -71,6 +76,26 @@ func (c *scoringServiceClient) ScoreMatch(ctx context.Context, in *ScoreMatchReq
 	return out, nil
 }
 
+func (c *scoringServiceClient) ScoreEmpire(ctx context.Context, in *ScoreEmpireRequest, opts ...grpc.CallOption) (*ScoreEmpireResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ScoreEmpireResponse)
+	err := c.cc.Invoke(ctx, ScoringService_ScoreEmpire_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *scoringServiceClient) ApplyDecay(ctx context.Context, in *ApplyDecayRequest, opts ...grpc.CallOption) (*ApplyDecayResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ApplyDecayResponse)
+	err := c.cc.Invoke(ctx, ScoringService_ApplyDecay_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ScoringServiceServer is the server API for ScoringService service.
 // All implementations must embed UnimplementedScoringServiceServer
 // for forward compatibility.
@@ -78,6 +103,9 @@ type ScoringServiceServer interface {
 	ScoreWorkout(context.Context, *ScoreWorkoutRequest) (*ScoreWorkoutResponse, error)
 	ScoreLexicalProgress(context.Context, *ScoreLexicalProgressRequest) (*ScoreLexicalProgressResponse, error)
 	ScoreMatch(context.Context, *ScoreMatchRequest) (*ScoreMatchResponse, error)
+	// High-Stakes Monolith Logic (Rust Offloaded)
+	ScoreEmpire(context.Context, *ScoreEmpireRequest) (*ScoreEmpireResponse, error)
+	ApplyDecay(context.Context, *ApplyDecayRequest) (*ApplyDecayResponse, error)
 	mustEmbedUnimplementedScoringServiceServer()
 }
 
@@ -96,6 +124,12 @@ func (UnimplementedScoringServiceServer) ScoreLexicalProgress(context.Context, *
 }
 func (UnimplementedScoringServiceServer) ScoreMatch(context.Context, *ScoreMatchRequest) (*ScoreMatchResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ScoreMatch not implemented")
+}
+func (UnimplementedScoringServiceServer) ScoreEmpire(context.Context, *ScoreEmpireRequest) (*ScoreEmpireResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ScoreEmpire not implemented")
+}
+func (UnimplementedScoringServiceServer) ApplyDecay(context.Context, *ApplyDecayRequest) (*ApplyDecayResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ApplyDecay not implemented")
 }
 func (UnimplementedScoringServiceServer) mustEmbedUnimplementedScoringServiceServer() {}
 func (UnimplementedScoringServiceServer) testEmbeddedByValue()                        {}
@@ -172,6 +206,42 @@ func _ScoringService_ScoreMatch_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ScoringService_ScoreEmpire_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ScoreEmpireRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScoringServiceServer).ScoreEmpire(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ScoringService_ScoreEmpire_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScoringServiceServer).ScoreEmpire(ctx, req.(*ScoreEmpireRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ScoringService_ApplyDecay_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ApplyDecayRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScoringServiceServer).ApplyDecay(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ScoringService_ApplyDecay_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScoringServiceServer).ApplyDecay(ctx, req.(*ApplyDecayRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ScoringService_ServiceDesc is the grpc.ServiceDesc for ScoringService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -190,6 +260,14 @@ var ScoringService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ScoreMatch",
 			Handler:    _ScoringService_ScoreMatch_Handler,
+		},
+		{
+			MethodName: "ScoreEmpire",
+			Handler:    _ScoringService_ScoreEmpire_Handler,
+		},
+		{
+			MethodName: "ApplyDecay",
+			Handler:    _ScoringService_ApplyDecay_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

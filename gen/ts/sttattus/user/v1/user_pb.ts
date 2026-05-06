@@ -57,6 +57,35 @@ export class UserProfile extends Message<UserProfile> {
    */
   banned = false;
 
+  /**
+   * Empire Sttattus Fields
+   *
+   * @generated from field: double sttattus_score = 9;
+   */
+  sttattusScore = 0;
+
+  /**
+   * @generated from field: int32 global_rank = 10;
+   */
+  globalRank = 0;
+
+  /**
+   * @generated from field: double global_percentile = 11;
+   */
+  globalPercentile = 0;
+
+  /**
+   * sovereign, platinum, gold, silver, bronze, unranked
+   *
+   * @generated from field: string tier = 12;
+   */
+  tier = "";
+
+  /**
+   * @generated from field: string aura_color = 13;
+   */
+  auraColor = "";
+
   constructor(data?: PartialMessage<UserProfile>) {
     super();
     proto3.util.initPartial(data, this);
@@ -73,6 +102,11 @@ export class UserProfile extends Message<UserProfile> {
     { no: 6, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 7, name: "last_login_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 8, name: "banned", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "sttattus_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 10, name: "global_rank", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "global_percentile", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 12, name: "tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "aura_color", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserProfile {
@@ -428,6 +462,356 @@ export class GrantAppResponse extends Message<GrantAppResponse> {
 
   static equals(a: GrantAppResponse | PlainMessage<GrantAppResponse> | undefined, b: GrantAppResponse | PlainMessage<GrantAppResponse> | undefined): boolean {
     return proto3.util.equals(GrantAppResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.user.v1.SttattusBreakdown
+ */
+export class SttattusBreakdown extends Message<SttattusBreakdown> {
+  /**
+   * @generated from field: double forge_score = 1;
+   */
+  forgeScore = 0;
+
+  /**
+   * @generated from field: double lexicon_score = 2;
+   */
+  lexiconScore = 0;
+
+  /**
+   * @generated from field: double nomad_score = 3;
+   */
+  nomadScore = 0;
+
+  /**
+   * @generated from field: double atlas_score = 4;
+   */
+  atlasScore = 0;
+
+  /**
+   * @generated from field: double vault_score = 5;
+   */
+  vaultScore = 0;
+
+  /**
+   * @generated from field: double apex_score = 6;
+   */
+  apexScore = 0;
+
+  /**
+   * @generated from field: double oracle_score = 7;
+   */
+  oracleScore = 0;
+
+  /**
+   * @generated from field: double dominion_score = 8;
+   */
+  dominionScore = 0;
+
+  /**
+   * @generated from field: double legacy_score = 9;
+   */
+  legacyScore = 0;
+
+  /**
+   * @generated from field: double zenith_score = 10;
+   */
+  zenithScore = 0;
+
+  /**
+   * @generated from field: double onyx_score = 11;
+   */
+  onyxScore = 0;
+
+  /**
+   * @generated from field: double empire_score = 12;
+   */
+  empireScore = 0;
+
+  constructor(data?: PartialMessage<SttattusBreakdown>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.user.v1.SttattusBreakdown";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "forge_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "lexicon_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "nomad_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "atlas_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "vault_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "apex_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "oracle_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "dominion_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 9, name: "legacy_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 10, name: "zenith_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 11, name: "onyx_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 12, name: "empire_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SttattusBreakdown {
+    return new SttattusBreakdown().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SttattusBreakdown {
+    return new SttattusBreakdown().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SttattusBreakdown {
+    return new SttattusBreakdown().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SttattusBreakdown | PlainMessage<SttattusBreakdown> | undefined, b: SttattusBreakdown | PlainMessage<SttattusBreakdown> | undefined): boolean {
+    return proto3.util.equals(SttattusBreakdown, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.user.v1.GetSttattusRequest
+ */
+export class GetSttattusRequest extends Message<GetSttattusRequest> {
+  /**
+   * if empty, get self
+   *
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetSttattusRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.user.v1.GetSttattusRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSttattusRequest {
+    return new GetSttattusRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetSttattusRequest {
+    return new GetSttattusRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSttattusRequest {
+    return new GetSttattusRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetSttattusRequest | PlainMessage<GetSttattusRequest> | undefined, b: GetSttattusRequest | PlainMessage<GetSttattusRequest> | undefined): boolean {
+    return proto3.util.equals(GetSttattusRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.user.v1.GetSttattusResponse
+ */
+export class GetSttattusResponse extends Message<GetSttattusResponse> {
+  /**
+   * @generated from field: double sttattus_score = 1;
+   */
+  sttattusScore = 0;
+
+  /**
+   * @generated from field: int32 global_rank = 2;
+   */
+  globalRank = 0;
+
+  /**
+   * @generated from field: double global_percentile = 3;
+   */
+  globalPercentile = 0;
+
+  /**
+   * @generated from field: string tier = 4;
+   */
+  tier = "";
+
+  /**
+   * @generated from field: string aura_color = 5;
+   */
+  auraColor = "";
+
+  /**
+   * @generated from field: sttattus.user.v1.SttattusBreakdown breakdown = 6;
+   */
+  breakdown?: SttattusBreakdown;
+
+  constructor(data?: PartialMessage<GetSttattusResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.user.v1.GetSttattusResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sttattus_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "global_rank", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "global_percentile", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "aura_color", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "breakdown", kind: "message", T: SttattusBreakdown },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSttattusResponse {
+    return new GetSttattusResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetSttattusResponse {
+    return new GetSttattusResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSttattusResponse {
+    return new GetSttattusResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetSttattusResponse | PlainMessage<GetSttattusResponse> | undefined, b: GetSttattusResponse | PlainMessage<GetSttattusResponse> | undefined): boolean {
+    return proto3.util.equals(GetSttattusResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.user.v1.ListLeaderboardRequest
+ */
+export class ListLeaderboardRequest extends Message<ListLeaderboardRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListLeaderboardRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.user.v1.ListLeaderboardRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLeaderboardRequest {
+    return new ListLeaderboardRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLeaderboardRequest {
+    return new ListLeaderboardRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLeaderboardRequest {
+    return new ListLeaderboardRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLeaderboardRequest | PlainMessage<ListLeaderboardRequest> | undefined, b: ListLeaderboardRequest | PlainMessage<ListLeaderboardRequest> | undefined): boolean {
+    return proto3.util.equals(ListLeaderboardRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.user.v1.ListLeaderboardResponse
+ */
+export class ListLeaderboardResponse extends Message<ListLeaderboardResponse> {
+  /**
+   * @generated from field: repeated sttattus.user.v1.ListLeaderboardResponse.LeaderboardEntry entries = 1;
+   */
+  entries: ListLeaderboardResponse_LeaderboardEntry[] = [];
+
+  constructor(data?: PartialMessage<ListLeaderboardResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.user.v1.ListLeaderboardResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entries", kind: "message", T: ListLeaderboardResponse_LeaderboardEntry, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLeaderboardResponse {
+    return new ListLeaderboardResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLeaderboardResponse {
+    return new ListLeaderboardResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLeaderboardResponse {
+    return new ListLeaderboardResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLeaderboardResponse | PlainMessage<ListLeaderboardResponse> | undefined, b: ListLeaderboardResponse | PlainMessage<ListLeaderboardResponse> | undefined): boolean {
+    return proto3.util.equals(ListLeaderboardResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.user.v1.ListLeaderboardResponse.LeaderboardEntry
+ */
+export class ListLeaderboardResponse_LeaderboardEntry extends Message<ListLeaderboardResponse_LeaderboardEntry> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: double sttattus_score = 3;
+   */
+  sttattusScore = 0;
+
+  /**
+   * @generated from field: int32 global_rank = 4;
+   */
+  globalRank = 0;
+
+  /**
+   * @generated from field: string tier = 5;
+   */
+  tier = "";
+
+  /**
+   * @generated from field: string aura_color = 6;
+   */
+  auraColor = "";
+
+  constructor(data?: PartialMessage<ListLeaderboardResponse_LeaderboardEntry>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.user.v1.ListLeaderboardResponse.LeaderboardEntry";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "sttattus_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "global_rank", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "aura_color", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLeaderboardResponse_LeaderboardEntry {
+    return new ListLeaderboardResponse_LeaderboardEntry().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLeaderboardResponse_LeaderboardEntry {
+    return new ListLeaderboardResponse_LeaderboardEntry().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLeaderboardResponse_LeaderboardEntry {
+    return new ListLeaderboardResponse_LeaderboardEntry().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLeaderboardResponse_LeaderboardEntry | PlainMessage<ListLeaderboardResponse_LeaderboardEntry> | undefined, b: ListLeaderboardResponse_LeaderboardEntry | PlainMessage<ListLeaderboardResponse_LeaderboardEntry> | undefined): boolean {
+    return proto3.util.equals(ListLeaderboardResponse_LeaderboardEntry, a, b);
   }
 }
 
