@@ -65,6 +65,24 @@ final $typed_data.Uint8List seriesDescriptor = $convert.base64Decode(
     'CgZTZXJpZXMSGwoJc2V0X2luZGV4GAEgASgFUghzZXRJbmRleBIWCgZ3ZWlnaHQYAiABKAFSBn'
     'dlaWdodBISCgRyZXBzGAMgASgFUgRyZXBzEhIKBHVuaXQYBCABKAlSBHVuaXQ=');
 
+@$core.Deprecated('Use strainMetricsDescriptor instead')
+const StrainMetrics$json = {
+  '1': 'StrainMetrics',
+  '2': [
+    {'1': 'avg_heart_rate', '3': 1, '4': 1, '5': 1, '10': 'avgHeartRate'},
+    {'1': 'max_heart_rate', '3': 2, '4': 1, '5': 1, '10': 'maxHeartRate'},
+    {'1': 'active_energy_kcal', '3': 3, '4': 1, '5': 1, '10': 'activeEnergyKcal'},
+    {'1': 'recovery_impact', '3': 4, '4': 1, '5': 1, '10': 'recoveryImpact'},
+  ],
+};
+
+/// Descriptor for `StrainMetrics`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List strainMetricsDescriptor = $convert.base64Decode(
+    'Cg1TdHJhaW5NZXRyaWNzEiQKDmF2Z19oZWFydF9yYXRlGAEgASgBUgxhdmdIZWFydFJhdGUSJA'
+    'oObWF4X2hlYXJ0X3JhdGUYAiABKAFSDG1heEhlYXJ0UmF0ZRIsChJhY3RpdmVfZW5lcmd5X2tj'
+    'YWwYAyABKAFSEGFjdGl2ZUVuZXJneUtjYWwSJwoPcmVjb3ZlcnlfaW1wYWN0GAQgASgBUg5yZW'
+    'NvdmVyeUltcGFjdA==');
+
 @$core.Deprecated('Use dayWorkoutDescriptor instead')
 const DayWorkout$json = {
   '1': 'DayWorkout',
@@ -75,6 +93,8 @@ const DayWorkout$json = {
     {'1': 'performed_at', '3': 4, '4': 1, '5': 3, '10': 'performedAt'},
     {'1': 'notes', '3': 5, '4': 1, '5': 9, '10': 'notes'},
     {'1': 'series', '3': 6, '4': 3, '5': 11, '6': '.sttattus.workout.v1.Series', '10': 'series'},
+    {'1': 'strain', '3': 7, '4': 1, '5': 11, '6': '.sttattus.workout.v1.StrainMetrics', '10': 'strain'},
+    {'1': 'is_verified', '3': 8, '4': 1, '5': 8, '10': 'isVerified'},
   ],
 };
 
@@ -83,7 +103,9 @@ final $typed_data.Uint8List dayWorkoutDescriptor = $convert.base64Decode(
     'CgpEYXlXb3Jrb3V0Eg4KAmlkGAEgASgJUgJpZBIXCgd1c2VyX2lkGAIgASgJUgZ1c2VySWQSNg'
     'oHd29ya291dBgDIAEoCzIcLnN0dGF0dHVzLndvcmtvdXQudjEuV29ya291dFIHd29ya291dBIh'
     'CgxwZXJmb3JtZWRfYXQYBCABKANSC3BlcmZvcm1lZEF0EhQKBW5vdGVzGAUgASgJUgVub3Rlcx'
-    'IzCgZzZXJpZXMYBiADKAsyGy5zdHRhdHR1cy53b3Jrb3V0LnYxLlNlcmllc1IGc2VyaWVz');
+    'IzCgZzZXJpZXMYBiADKAsyGy5zdHRhdHR1cy53b3Jrb3V0LnYxLlNlcmllc1IGc2VyaWVzEjoK'
+    'BnN0cmFpbhgHIAEoCzIiLnN0dGF0dHVzLndvcmtvdXQudjEuU3RyYWluTWV0cmljc1IGc3RyYW'
+    'luEh8KC2lzX3ZlcmlmaWVkGAggASgIUgppc1ZlcmlmaWVk');
 
 @$core.Deprecated('Use forgeStatsDescriptor instead')
 const ForgeStats$json = {
@@ -95,6 +117,7 @@ const ForgeStats$json = {
     {'1': 'grit', '3': 4, '4': 1, '5': 5, '10': 'grit'},
     {'1': 'experience', '3': 5, '4': 1, '5': 3, '10': 'experience'},
     {'1': 'rank', '3': 6, '4': 1, '5': 9, '10': 'rank'},
+    {'1': 'forge_rank', '3': 7, '4': 1, '5': 1, '10': 'forgeRank'},
   ],
 };
 
@@ -102,7 +125,8 @@ const ForgeStats$json = {
 final $typed_data.Uint8List forgeStatsDescriptor = $convert.base64Decode(
     'CgpGb3JnZVN0YXRzEhcKB3VzZXJfaWQYASABKAlSBnVzZXJJZBIUCgVwb3dlchgCIAEoBVIFcG'
     '93ZXISGAoHYWdpbGl0eRgDIAEoBVIHYWdpbGl0eRISCgRncml0GAQgASgFUgRncml0Eh4KCmV4'
-    'cGVyaWVuY2UYBSABKANSCmV4cGVyaWVuY2USEgoEcmFuaxgGIAEoCVIEcmFuaw==');
+    'cGVyaWVuY2UYBSABKANSCmV4cGVyaWVuY2USEgoEcmFuaxgGIAEoCVIEcmFuaxIdCgpmb3JnZV'
+    '9yYW5rGAcgASgBUglmb3JnZVJhbms=');
 
 @$core.Deprecated('Use listWorkoutsRequestDescriptor instead')
 const ListWorkoutsRequest$json = {
@@ -168,6 +192,8 @@ const LogDayWorkoutRequest$json = {
     {'1': 'performed_at', '3': 2, '4': 1, '5': 3, '10': 'performedAt'},
     {'1': 'notes', '3': 3, '4': 1, '5': 9, '10': 'notes'},
     {'1': 'series', '3': 4, '4': 3, '5': 11, '6': '.sttattus.workout.v1.Series', '10': 'series'},
+    {'1': 'strain', '3': 5, '4': 1, '5': 11, '6': '.sttattus.workout.v1.StrainMetrics', '10': 'strain'},
+    {'1': 'is_verified', '3': 6, '4': 1, '5': 8, '10': 'isVerified'},
   ],
 };
 
@@ -175,7 +201,9 @@ const LogDayWorkoutRequest$json = {
 final $typed_data.Uint8List logDayWorkoutRequestDescriptor = $convert.base64Decode(
     'ChRMb2dEYXlXb3Jrb3V0UmVxdWVzdBIdCgp3b3Jrb3V0X2lkGAEgASgJUgl3b3Jrb3V0SWQSIQ'
     'oMcGVyZm9ybWVkX2F0GAIgASgDUgtwZXJmb3JtZWRBdBIUCgVub3RlcxgDIAEoCVIFbm90ZXMS'
-    'MwoGc2VyaWVzGAQgAygLMhsuc3R0YXR0dXMud29ya291dC52MS5TZXJpZXNSBnNlcmllcw==');
+    'MwoGc2VyaWVzGAQgAygLMhsuc3R0YXR0dXMud29ya291dC52MS5TZXJpZXNSBnNlcmllcxI6Cg'
+    'ZzdHJhaW4YBSABKAsyIi5zdHRhdHR1cy53b3Jrb3V0LnYxLlN0cmFpbk1ldHJpY3NSBnN0cmFp'
+    'bhIfCgtpc192ZXJpZmllZBgGIAEoCFIKaXNWZXJpZmllZA==');
 
 @$core.Deprecated('Use logDayWorkoutResponseDescriptor instead')
 const LogDayWorkoutResponse$json = {

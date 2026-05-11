@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateMilestoneRequest, CreateMilestoneResponse, GetNomadStatsRequest, GetNomadStatsResponse, LikePostRequest, LikePostResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse } from "./travel_pb.js";
+import { CreateMilestoneRequest, CreateMilestoneResponse, GetNomadStatsRequest, GetNomadStatsResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse } from "./travel_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -46,15 +46,6 @@ export const TravelService = {
       name: "ListFeed",
       I: ListFeedRequest,
       O: ListFeedResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc sttattus.travel.v1.TravelService.LikePost
-     */
-    likePost: {
-      name: "LikePost",
-      I: LikePostRequest,
-      O: LikePostResponse,
       kind: MethodKind.Unary,
     },
   }

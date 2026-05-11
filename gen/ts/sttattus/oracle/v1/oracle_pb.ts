@@ -4,9 +4,252 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
+import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
 
 /**
+ * StrategicDomain defines the elite intellectual field.
+ *
+ * @generated from enum sttattus.oracle.v1.StrategicDomain
+ */
+export enum StrategicDomain {
+  /**
+   * @generated from enum value: STRATEGIC_DOMAIN_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: STRATEGIC_DOMAIN_GEOPOLITICS = 1;
+   */
+  GEOPOLITICS = 1,
+
+  /**
+   * @generated from enum value: STRATEGIC_DOMAIN_MACRO_ECONOMICS = 2;
+   */
+  MACRO_ECONOMICS = 2,
+
+  /**
+   * @generated from enum value: STRATEGIC_DOMAIN_BIO_ETHICS = 3;
+   */
+  BIO_ETHICS = 3,
+
+  /**
+   * @generated from enum value: STRATEGIC_DOMAIN_VENTURE_ENGINEERING = 4;
+   */
+  VENTURE_ENGINEERING = 4,
+}
+// Retrieve enum metadata with: proto3.getEnumType(StrategicDomain)
+proto3.util.setEnumType(StrategicDomain, "sttattus.oracle.v1.StrategicDomain", [
+  { no: 0, name: "STRATEGIC_DOMAIN_UNSPECIFIED" },
+  { no: 1, name: "STRATEGIC_DOMAIN_GEOPOLITICS" },
+  { no: 2, name: "STRATEGIC_DOMAIN_MACRO_ECONOMICS" },
+  { no: 3, name: "STRATEGIC_DOMAIN_BIO_ETHICS" },
+  { no: 4, name: "STRATEGIC_DOMAIN_VENTURE_ENGINEERING" },
+]);
+
+/**
+ * DepthGrading represents the AI-verified quality of an intellectual inquiry.
+ *
+ * @generated from message sttattus.oracle.v1.DepthGrading
+ */
+export class DepthGrading extends Message<DepthGrading> {
+  /**
+   * 0.0 - 1.0 (Structural complexity)
+   *
+   * @generated from field: double complexity_score = 1;
+   */
+  complexityScore = 0;
+
+  /**
+   * 0.0 - 1.0 (Cross-pillar integration)
+   *
+   * @generated from field: double synthesis_score = 2;
+   */
+  synthesisScore = 0;
+
+  /**
+   * 0.0 - 1.0 (Strategic anticipation)
+   *
+   * @generated from field: double foresight_score = 3;
+   */
+  foresightScore = 0;
+
+  /**
+   * AI feedback on inquiry quality
+   *
+   * @generated from field: string feedback_summary = 4;
+   */
+  feedbackSummary = "";
+
+  constructor(data?: PartialMessage<DepthGrading>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.DepthGrading";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "complexity_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "synthesis_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "foresight_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "feedback_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DepthGrading {
+    return new DepthGrading().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DepthGrading {
+    return new DepthGrading().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DepthGrading {
+    return new DepthGrading().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DepthGrading | PlainMessage<DepthGrading> | undefined, b: DepthGrading | PlainMessage<DepthGrading> | undefined): boolean {
+    return proto3.util.equals(DepthGrading, a, b);
+  }
+}
+
+/**
+ * StrategicInsight represents a high-value piece of intelligence.
+ *
+ * @generated from message sttattus.oracle.v1.StrategicInsight
+ */
+export class StrategicInsight extends Message<StrategicInsight> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string content = 3;
+   */
+  content = "";
+
+  /**
+   * @generated from field: sttattus.oracle.v1.StrategicDomain domain = 4;
+   */
+  domain = StrategicDomain.UNSPECIFIED;
+
+  /**
+   * @generated from field: sttattus.oracle.v1.DepthGrading grading = 5;
+   */
+  grading?: DepthGrading;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp discovered_at = 6;
+   */
+  discoveredAt?: Timestamp;
+
+  constructor(data?: PartialMessage<StrategicInsight>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.StrategicInsight";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "domain", kind: "enum", T: proto3.getEnumType(StrategicDomain) },
+    { no: 5, name: "grading", kind: "message", T: DepthGrading },
+    { no: 6, name: "discovered_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StrategicInsight {
+    return new StrategicInsight().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StrategicInsight {
+    return new StrategicInsight().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StrategicInsight {
+    return new StrategicInsight().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: StrategicInsight | PlainMessage<StrategicInsight> | undefined, b: StrategicInsight | PlainMessage<StrategicInsight> | undefined): boolean {
+    return proto3.util.equals(StrategicInsight, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleStats
+ */
+export class OracleStats extends Message<OracleStats> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * 1-100 normalized
+   *
+   * @generated from field: double intellectual_rank = 2;
+   */
+  intellectualRank = 0;
+
+  /**
+   * e.g., 'Analyst', 'Strategist', 'Sovereign Oracle'
+   *
+   * @generated from field: string rank_label = 3;
+   */
+  rankLabel = "";
+
+  /**
+   * @generated from field: int32 total_clout_earned = 4;
+   */
+  totalCloutEarned = 0;
+
+  /**
+   * StrategicDomain (as int) -> Mastery %
+   *
+   * @generated from field: map<int32, double> domain_mastery = 5;
+   */
+  domainMastery: { [key: number]: number } = {};
+
+  constructor(data?: PartialMessage<OracleStats>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleStats";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "intellectual_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "rank_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "total_clout_earned", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "domain_mastery", kind: "map", K: 5 /* ScalarType.INT32 */, V: {kind: "scalar", T: 1 /* ScalarType.DOUBLE */} },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleStats {
+    return new OracleStats().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleStats {
+    return new OracleStats().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleStats {
+    return new OracleStats().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleStats | PlainMessage<OracleStats> | undefined, b: OracleStats | PlainMessage<OracleStats> | undefined): boolean {
+    return proto3.util.equals(OracleStats, a, b);
+  }
+}
+
+/**
+ * REQ/RES
+ *
  * @generated from message sttattus.oracle.v1.QueryRequest
  */
 export class QueryRequest extends Message<QueryRequest> {
@@ -14,6 +257,13 @@ export class QueryRequest extends Message<QueryRequest> {
    * @generated from field: string prompt = 1;
    */
   prompt = "";
+
+  /**
+   * If true, AI attempts to cross-reference all 12 pillars
+   *
+   * @generated from field: bool enable_synthesis = 2;
+   */
+  enableSynthesis = false;
 
   constructor(data?: PartialMessage<QueryRequest>) {
     super();
@@ -24,6 +274,7 @@ export class QueryRequest extends Message<QueryRequest> {
   static readonly typeName = "sttattus.oracle.v1.QueryRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "enable_synthesis", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryRequest {
@@ -53,9 +304,14 @@ export class QueryResponse extends Message<QueryResponse> {
   response = "";
 
   /**
-   * @generated from field: double confidence = 2;
+   * @generated from field: sttattus.oracle.v1.StrategicInsight insight = 2;
    */
-  confidence = 0;
+  insight?: StrategicInsight;
+
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleStats stats = 3;
+   */
+  stats?: OracleStats;
 
   constructor(data?: PartialMessage<QueryResponse>) {
     super();
@@ -66,7 +322,8 @@ export class QueryResponse extends Message<QueryResponse> {
   static readonly typeName = "sttattus.oracle.v1.QueryResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "response", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "confidence", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "insight", kind: "message", T: StrategicInsight },
+    { no: 3, name: "stats", kind: "message", T: OracleStats },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryResponse {
@@ -83,6 +340,80 @@ export class QueryResponse extends Message<QueryResponse> {
 
   static equals(a: QueryResponse | PlainMessage<QueryResponse> | undefined, b: QueryResponse | PlainMessage<QueryResponse> | undefined): boolean {
     return proto3.util.equals(QueryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetOracleStatsRequest
+ */
+export class GetOracleStatsRequest extends Message<GetOracleStatsRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetOracleStatsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetOracleStatsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOracleStatsRequest {
+    return new GetOracleStatsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOracleStatsRequest {
+    return new GetOracleStatsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOracleStatsRequest {
+    return new GetOracleStatsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetOracleStatsRequest | PlainMessage<GetOracleStatsRequest> | undefined, b: GetOracleStatsRequest | PlainMessage<GetOracleStatsRequest> | undefined): boolean {
+    return proto3.util.equals(GetOracleStatsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetOracleStatsResponse
+ */
+export class GetOracleStatsResponse extends Message<GetOracleStatsResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleStats stats = 1;
+   */
+  stats?: OracleStats;
+
+  constructor(data?: PartialMessage<GetOracleStatsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetOracleStatsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "stats", kind: "message", T: OracleStats },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOracleStatsResponse {
+    return new GetOracleStatsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOracleStatsResponse {
+    return new GetOracleStatsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOracleStatsResponse {
+    return new GetOracleStatsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetOracleStatsResponse | PlainMessage<GetOracleStatsResponse> | undefined, b: GetOracleStatsResponse | PlainMessage<GetOracleStatsResponse> | undefined): boolean {
+    return proto3.util.equals(GetOracleStatsResponse, a, b);
   }
 }
 

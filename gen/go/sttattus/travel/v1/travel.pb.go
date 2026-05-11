@@ -10,6 +10,7 @@ import (
 	v1 "github.com/sttattus/proto/gen/go/sttattus/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -27,8 +28,9 @@ type NomadStats struct {
 	UserId                string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	ExplorationScore      int32                  `protobuf:"varint,2,opt,name=exploration_score,json=explorationScore,proto3" json:"exploration_score,omitempty"`
 	CountriesVisitedCount int32                  `protobuf:"varint,3,opt,name=countries_visited_count,json=countriesVisitedCount,proto3" json:"countries_visited_count,omitempty"`
-	NomadRank             string                 `protobuf:"bytes,4,opt,name=nomad_rank,json=nomadRank,proto3" json:"nomad_rank,omitempty"`
-	CompletedMilestones   int32                  `protobuf:"varint,5,opt,name=completed_milestones,json=completedMilestones,proto3" json:"completed_milestones,omitempty"`
+	NomadRankLabel        string                 `protobuf:"bytes,4,opt,name=nomad_rank_label,json=nomadRankLabel,proto3" json:"nomad_rank_label,omitempty"` // e.g., 'Voyager'
+	NomadRank             float64                `protobuf:"fixed64,5,opt,name=nomad_rank,json=nomadRank,proto3" json:"nomad_rank,omitempty"`                // Normalized 1-100 status signal
+	VerifiedCheckinsCount int32                  `protobuf:"varint,6,opt,name=verified_checkins_count,json=verifiedCheckinsCount,proto3" json:"verified_checkins_count,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -84,16 +86,23 @@ func (x *NomadStats) GetCountriesVisitedCount() int32 {
 	return 0
 }
 
-func (x *NomadStats) GetNomadRank() string {
+func (x *NomadStats) GetNomadRankLabel() string {
 	if x != nil {
-		return x.NomadRank
+		return x.NomadRankLabel
 	}
 	return ""
 }
 
-func (x *NomadStats) GetCompletedMilestones() int32 {
+func (x *NomadStats) GetNomadRank() float64 {
 	if x != nil {
-		return x.CompletedMilestones
+		return x.NomadRank
+	}
+	return 0
+}
+
+func (x *NomadStats) GetVerifiedCheckinsCount() int32 {
+	if x != nil {
+		return x.VerifiedCheckinsCount
 	}
 	return 0
 }
@@ -105,10 +114,12 @@ type Milestone struct {
 	CountryCode    string                 `protobuf:"bytes,3,opt,name=country_code,json=countryCode,proto3" json:"country_code,omitempty"`
 	City           string                 `protobuf:"bytes,4,opt,name=city,proto3" json:"city,omitempty"`
 	PhotoUrl       string                 `protobuf:"bytes,5,opt,name=photo_url,json=photoUrl,proto3" json:"photo_url,omitempty"`
-	ThumbnailUrl   string                 `protobuf:"bytes,6,opt,name=thumbnail_url,json=thumbnailUrl,proto3" json:"thumbnail_url,omitempty"`         // produced by Rust imageproc
-	AccentColorHex string                 `protobuf:"bytes,7,opt,name=accent_color_hex,json=accentColorHex,proto3" json:"accent_color_hex,omitempty"` // produced by Rust imageproc
+	ThumbnailUrl   string                 `protobuf:"bytes,6,opt,name=thumbnail_url,json=thumbnailUrl,proto3" json:"thumbnail_url,omitempty"`
+	AccentColorHex string                 `protobuf:"bytes,7,opt,name=accent_color_hex,json=accentColorHex,proto3" json:"accent_color_hex,omitempty"`
 	Story          string                 `protobuf:"bytes,8,opt,name=story,proto3" json:"story,omitempty"`
 	AchievedAt     int64                  `protobuf:"varint,9,opt,name=achieved_at,json=achievedAt,proto3" json:"achieved_at,omitempty"`
+	IsVerified     bool                   `protobuf:"varint,10,opt,name=is_verified,json=isVerified,proto3" json:"is_verified,omitempty"`
+	Checkin        *CheckIn               `protobuf:"bytes,11,opt,name=checkin,proto3" json:"checkin,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -206,36 +217,50 @@ func (x *Milestone) GetAchievedAt() int64 {
 	return 0
 }
 
-type FeedPost struct {
+func (x *Milestone) GetIsVerified() bool {
+	if x != nil {
+		return x.IsVerified
+	}
+	return false
+}
+
+func (x *Milestone) GetCheckin() *CheckIn {
+	if x != nil {
+		return x.Checkin
+	}
+	return nil
+}
+
+// CheckIn represents a verified presence event.
+type CheckIn struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	UserId        string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	AuthorName    string                 `protobuf:"bytes,3,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
-	AuthorAvatar  string                 `protobuf:"bytes,4,opt,name=author_avatar,json=authorAvatar,proto3" json:"author_avatar,omitempty"`
-	MilestoneId   string                 `protobuf:"bytes,5,opt,name=milestone_id,json=milestoneId,proto3" json:"milestone_id,omitempty"`
-	Body          string                 `protobuf:"bytes,6,opt,name=body,proto3" json:"body,omitempty"`
-	MediaUrls     []string               `protobuf:"bytes,7,rep,name=media_urls,json=mediaUrls,proto3" json:"media_urls,omitempty"`
-	CreatedAt     int64                  `protobuf:"varint,8,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	LikesCount    int32                  `protobuf:"varint,9,opt,name=likes_count,json=likesCount,proto3" json:"likes_count,omitempty"`
-	LikedByMe     bool                   `protobuf:"varint,10,opt,name=liked_by_me,json=likedByMe,proto3" json:"liked_by_me,omitempty"`
+	Latitude      float64                `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty"`
+	Longitude     float64                `protobuf:"fixed64,3,opt,name=longitude,proto3" json:"longitude,omitempty"`
+	IpAddress     string                 `protobuf:"bytes,4,opt,name=ip_address,json=ipAddress,proto3" json:"ip_address,omitempty"`
+	City          string                 `protobuf:"bytes,5,opt,name=city,proto3" json:"city,omitempty"`
+	Region        string                 `protobuf:"bytes,6,opt,name=region,proto3" json:"region,omitempty"`
+	CountryCode   string                 `protobuf:"bytes,7,opt,name=country_code,json=countryCode,proto3" json:"country_code,omitempty"`
+	VerifiedAt    *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=verified_at,json=verifiedAt,proto3" json:"verified_at,omitempty"`
+	IsEliteHub    bool                   `protobuf:"varint,9,opt,name=is_elite_hub,json=isEliteHub,proto3" json:"is_elite_hub,omitempty"` // True if this location is in the Jetset Registry
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *FeedPost) Reset() {
-	*x = FeedPost{}
+func (x *CheckIn) Reset() {
+	*x = CheckIn{}
 	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *FeedPost) String() string {
+func (x *CheckIn) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*FeedPost) ProtoMessage() {}
+func (*CheckIn) ProtoMessage() {}
 
-func (x *FeedPost) ProtoReflect() protoreflect.Message {
+func (x *CheckIn) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -247,84 +272,78 @@ func (x *FeedPost) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use FeedPost.ProtoReflect.Descriptor instead.
-func (*FeedPost) Descriptor() ([]byte, []int) {
+// Deprecated: Use CheckIn.ProtoReflect.Descriptor instead.
+func (*CheckIn) Descriptor() ([]byte, []int) {
 	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *FeedPost) GetId() string {
+func (x *CheckIn) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *FeedPost) GetUserId() string {
+func (x *CheckIn) GetLatitude() float64 {
 	if x != nil {
-		return x.UserId
+		return x.Latitude
+	}
+	return 0
+}
+
+func (x *CheckIn) GetLongitude() float64 {
+	if x != nil {
+		return x.Longitude
+	}
+	return 0
+}
+
+func (x *CheckIn) GetIpAddress() string {
+	if x != nil {
+		return x.IpAddress
 	}
 	return ""
 }
 
-func (x *FeedPost) GetAuthorName() string {
+func (x *CheckIn) GetCity() string {
 	if x != nil {
-		return x.AuthorName
+		return x.City
 	}
 	return ""
 }
 
-func (x *FeedPost) GetAuthorAvatar() string {
+func (x *CheckIn) GetRegion() string {
 	if x != nil {
-		return x.AuthorAvatar
+		return x.Region
 	}
 	return ""
 }
 
-func (x *FeedPost) GetMilestoneId() string {
+func (x *CheckIn) GetCountryCode() string {
 	if x != nil {
-		return x.MilestoneId
+		return x.CountryCode
 	}
 	return ""
 }
 
-func (x *FeedPost) GetBody() string {
+func (x *CheckIn) GetVerifiedAt() *timestamppb.Timestamp {
 	if x != nil {
-		return x.Body
-	}
-	return ""
-}
-
-func (x *FeedPost) GetMediaUrls() []string {
-	if x != nil {
-		return x.MediaUrls
+		return x.VerifiedAt
 	}
 	return nil
 }
 
-func (x *FeedPost) GetCreatedAt() int64 {
+func (x *CheckIn) GetIsEliteHub() bool {
 	if x != nil {
-		return x.CreatedAt
-	}
-	return 0
-}
-
-func (x *FeedPost) GetLikesCount() int32 {
-	if x != nil {
-		return x.LikesCount
-	}
-	return 0
-}
-
-func (x *FeedPost) GetLikedByMe() bool {
-	if x != nil {
-		return x.LikedByMe
+		return x.IsEliteHub
 	}
 	return false
 }
 
+// REQ/RES
 type ListMilestonesRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"` // empty = current user
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Page          *v1.PageRequest        `protobuf:"bytes,2,opt,name=page,proto3" json:"page,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -427,15 +446,13 @@ func (x *ListMilestonesResponse) GetPage() *v1.PageResponse {
 }
 
 type CreateMilestoneRequest struct {
-	state       protoimpl.MessageState `protogen:"open.v1"`
-	CountryCode string                 `protobuf:"bytes,1,opt,name=country_code,json=countryCode,proto3" json:"country_code,omitempty"`
-	City        string                 `protobuf:"bytes,2,opt,name=city,proto3" json:"city,omitempty"`
-	// Caller already uploaded the original photo via MediaService.RequestUpload
-	// and the resulting media_asset_id is passed here. The TravelService will
-	// call Rust imageproc to produce the thumbnail + accent color.
-	MediaAssetId  string `protobuf:"bytes,3,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
-	Story         string `protobuf:"bytes,4,opt,name=story,proto3" json:"story,omitempty"`
-	AchievedAt    int64  `protobuf:"varint,5,opt,name=achieved_at,json=achievedAt,proto3" json:"achieved_at,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	CountryCode   string                 `protobuf:"bytes,1,opt,name=country_code,json=countryCode,proto3" json:"country_code,omitempty"`
+	City          string                 `protobuf:"bytes,2,opt,name=city,proto3" json:"city,omitempty"`
+	MediaAssetId  string                 `protobuf:"bytes,3,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
+	Story         string                 `protobuf:"bytes,4,opt,name=story,proto3" json:"story,omitempty"`
+	AchievedAt    int64                  `protobuf:"varint,5,opt,name=achieved_at,json=achievedAt,proto3" json:"achieved_at,omitempty"`
+	Checkin       *CheckIn               `protobuf:"bytes,6,opt,name=checkin,proto3" json:"checkin,omitempty"` // Optional: provided if location is available
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -505,6 +522,13 @@ func (x *CreateMilestoneRequest) GetAchievedAt() int64 {
 	return 0
 }
 
+func (x *CreateMilestoneRequest) GetCheckin() *CheckIn {
+	if x != nil {
+		return x.Checkin
+	}
+	return nil
+}
+
 type CreateMilestoneResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Milestone     *Milestone             `protobuf:"bytes,1,opt,name=milestone,proto3" json:"milestone,omitempty"`
@@ -559,7 +583,7 @@ func (x *CreateMilestoneResponse) GetStats() *NomadStats {
 
 type GetNomadStatsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"` // empty = current user
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -691,7 +715,7 @@ func (x *ListFeedRequest) GetPage() *v1.PageRequest {
 
 type ListFeedResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Posts         []*FeedPost            `protobuf:"bytes,1,rep,name=posts,proto3" json:"posts,omitempty"`
+	Milestones    []*Milestone           `protobuf:"bytes,1,rep,name=milestones,proto3" json:"milestones,omitempty"` // Reusing milestones for the feed for simplicity
 	Page          *v1.PageResponse       `protobuf:"bytes,2,opt,name=page,proto3" json:"page,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -727,9 +751,9 @@ func (*ListFeedResponse) Descriptor() ([]byte, []int) {
 	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *ListFeedResponse) GetPosts() []*FeedPost {
+func (x *ListFeedResponse) GetMilestones() []*Milestone {
 	if x != nil {
-		return x.Posts
+		return x.Milestones
 	}
 	return nil
 }
@@ -741,123 +765,20 @@ func (x *ListFeedResponse) GetPage() *v1.PageResponse {
 	return nil
 }
 
-type LikePostRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	PostId        string                 `protobuf:"bytes,1,opt,name=post_id,json=postId,proto3" json:"post_id,omitempty"`
-	Like          bool                   `protobuf:"varint,2,opt,name=like,proto3" json:"like,omitempty"` // false = unlike
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *LikePostRequest) Reset() {
-	*x = LikePostRequest{}
-	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[11]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *LikePostRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*LikePostRequest) ProtoMessage() {}
-
-func (x *LikePostRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[11]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use LikePostRequest.ProtoReflect.Descriptor instead.
-func (*LikePostRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{11}
-}
-
-func (x *LikePostRequest) GetPostId() string {
-	if x != nil {
-		return x.PostId
-	}
-	return ""
-}
-
-func (x *LikePostRequest) GetLike() bool {
-	if x != nil {
-		return x.Like
-	}
-	return false
-}
-
-type LikePostResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	LikesCount    int32                  `protobuf:"varint,1,opt,name=likes_count,json=likesCount,proto3" json:"likes_count,omitempty"`
-	LikedByMe     bool                   `protobuf:"varint,2,opt,name=liked_by_me,json=likedByMe,proto3" json:"liked_by_me,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *LikePostResponse) Reset() {
-	*x = LikePostResponse{}
-	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[12]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *LikePostResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*LikePostResponse) ProtoMessage() {}
-
-func (x *LikePostResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[12]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use LikePostResponse.ProtoReflect.Descriptor instead.
-func (*LikePostResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{12}
-}
-
-func (x *LikePostResponse) GetLikesCount() int32 {
-	if x != nil {
-		return x.LikesCount
-	}
-	return 0
-}
-
-func (x *LikePostResponse) GetLikedByMe() bool {
-	if x != nil {
-		return x.LikedByMe
-	}
-	return false
-}
-
 var File_sttattus_travel_v1_travel_proto protoreflect.FileDescriptor
 
 const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	"\n" +
-	"\x1fsttattus/travel/v1/travel.proto\x12\x12sttattus.travel.v1\x1a#sttattus/common/v1/pagination.proto\"\xdc\x01\n" +
+	"\x1fsttattus/travel/v1/travel.proto\x12\x12sttattus.travel.v1\x1a#sttattus/common/v1/pagination.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8b\x02\n" +
 	"\n" +
 	"NomadStats\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12+\n" +
 	"\x11exploration_score\x18\x02 \x01(\x05R\x10explorationScore\x126\n" +
-	"\x17countries_visited_count\x18\x03 \x01(\x05R\x15countriesVisitedCount\x12\x1d\n" +
+	"\x17countries_visited_count\x18\x03 \x01(\x05R\x15countriesVisitedCount\x12(\n" +
+	"\x10nomad_rank_label\x18\x04 \x01(\tR\x0enomadRankLabel\x12\x1d\n" +
 	"\n" +
-	"nomad_rank\x18\x04 \x01(\tR\tnomadRank\x121\n" +
-	"\x14completed_milestones\x18\x05 \x01(\x05R\x13completedMilestones\"\x8e\x02\n" +
+	"nomad_rank\x18\x05 \x01(\x01R\tnomadRank\x126\n" +
+	"\x17verified_checkins_count\x18\x06 \x01(\x05R\x15verifiedCheckinsCount\"\xe6\x02\n" +
 	"\tMilestone\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
@@ -868,23 +789,24 @@ const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	"\x10accent_color_hex\x18\a \x01(\tR\x0eaccentColorHex\x12\x14\n" +
 	"\x05story\x18\b \x01(\tR\x05story\x12\x1f\n" +
 	"\vachieved_at\x18\t \x01(\x03R\n" +
-	"achievedAt\"\xaf\x02\n" +
-	"\bFeedPost\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1f\n" +
-	"\vauthor_name\x18\x03 \x01(\tR\n" +
-	"authorName\x12#\n" +
-	"\rauthor_avatar\x18\x04 \x01(\tR\fauthorAvatar\x12!\n" +
-	"\fmilestone_id\x18\x05 \x01(\tR\vmilestoneId\x12\x12\n" +
-	"\x04body\x18\x06 \x01(\tR\x04body\x12\x1d\n" +
+	"achievedAt\x12\x1f\n" +
+	"\vis_verified\x18\n" +
+	" \x01(\bR\n" +
+	"isVerified\x125\n" +
+	"\acheckin\x18\v \x01(\v2\x1b.sttattus.travel.v1.CheckInR\acheckin\"\xa0\x02\n" +
+	"\aCheckIn\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
+	"\blatitude\x18\x02 \x01(\x01R\blatitude\x12\x1c\n" +
+	"\tlongitude\x18\x03 \x01(\x01R\tlongitude\x12\x1d\n" +
 	"\n" +
-	"media_urls\x18\a \x03(\tR\tmediaUrls\x12\x1d\n" +
-	"\n" +
-	"created_at\x18\b \x01(\x03R\tcreatedAt\x12\x1f\n" +
-	"\vlikes_count\x18\t \x01(\x05R\n" +
-	"likesCount\x12\x1e\n" +
-	"\vliked_by_me\x18\n" +
-	" \x01(\bR\tlikedByMe\"e\n" +
+	"ip_address\x18\x04 \x01(\tR\tipAddress\x12\x12\n" +
+	"\x04city\x18\x05 \x01(\tR\x04city\x12\x16\n" +
+	"\x06region\x18\x06 \x01(\tR\x06region\x12!\n" +
+	"\fcountry_code\x18\a \x01(\tR\vcountryCode\x12;\n" +
+	"\vverified_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"verifiedAt\x12 \n" +
+	"\fis_elite_hub\x18\t \x01(\bR\n" +
+	"isEliteHub\"e\n" +
 	"\x15ListMilestonesRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x123\n" +
 	"\x04page\x18\x02 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"\x8d\x01\n" +
@@ -892,14 +814,15 @@ const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	"\n" +
 	"milestones\x18\x01 \x03(\v2\x1d.sttattus.travel.v1.MilestoneR\n" +
 	"milestones\x124\n" +
-	"\x04page\x18\x02 \x01(\v2 .sttattus.common.v1.PageResponseR\x04page\"\xac\x01\n" +
+	"\x04page\x18\x02 \x01(\v2 .sttattus.common.v1.PageResponseR\x04page\"\xe3\x01\n" +
 	"\x16CreateMilestoneRequest\x12!\n" +
 	"\fcountry_code\x18\x01 \x01(\tR\vcountryCode\x12\x12\n" +
 	"\x04city\x18\x02 \x01(\tR\x04city\x12$\n" +
 	"\x0emedia_asset_id\x18\x03 \x01(\tR\fmediaAssetId\x12\x14\n" +
 	"\x05story\x18\x04 \x01(\tR\x05story\x12\x1f\n" +
 	"\vachieved_at\x18\x05 \x01(\x03R\n" +
-	"achievedAt\"\x8c\x01\n" +
+	"achievedAt\x125\n" +
+	"\acheckin\x18\x06 \x01(\v2\x1b.sttattus.travel.v1.CheckInR\acheckin\"\x8c\x01\n" +
 	"\x17CreateMilestoneResponse\x12;\n" +
 	"\tmilestone\x18\x01 \x01(\v2\x1d.sttattus.travel.v1.MilestoneR\tmilestone\x124\n" +
 	"\x05stats\x18\x02 \x01(\v2\x1e.sttattus.travel.v1.NomadStatsR\x05stats\"/\n" +
@@ -908,23 +831,17 @@ const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	"\x15GetNomadStatsResponse\x124\n" +
 	"\x05stats\x18\x01 \x01(\v2\x1e.sttattus.travel.v1.NomadStatsR\x05stats\"F\n" +
 	"\x0fListFeedRequest\x123\n" +
-	"\x04page\x18\x01 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"|\n" +
-	"\x10ListFeedResponse\x122\n" +
-	"\x05posts\x18\x01 \x03(\v2\x1c.sttattus.travel.v1.FeedPostR\x05posts\x124\n" +
-	"\x04page\x18\x02 \x01(\v2 .sttattus.common.v1.PageResponseR\x04page\">\n" +
-	"\x0fLikePostRequest\x12\x17\n" +
-	"\apost_id\x18\x01 \x01(\tR\x06postId\x12\x12\n" +
-	"\x04like\x18\x02 \x01(\bR\x04like\"S\n" +
-	"\x10LikePostResponse\x12\x1f\n" +
-	"\vlikes_count\x18\x01 \x01(\x05R\n" +
-	"likesCount\x12\x1e\n" +
-	"\vliked_by_me\x18\x02 \x01(\bR\tlikedByMe2\xf8\x03\n" +
+	"\x04page\x18\x01 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"\x87\x01\n" +
+	"\x10ListFeedResponse\x12=\n" +
+	"\n" +
+	"milestones\x18\x01 \x03(\v2\x1d.sttattus.travel.v1.MilestoneR\n" +
+	"milestones\x124\n" +
+	"\x04page\x18\x02 \x01(\v2 .sttattus.common.v1.PageResponseR\x04page2\xa1\x03\n" +
 	"\rTravelService\x12g\n" +
 	"\x0eListMilestones\x12).sttattus.travel.v1.ListMilestonesRequest\x1a*.sttattus.travel.v1.ListMilestonesResponse\x12j\n" +
 	"\x0fCreateMilestone\x12*.sttattus.travel.v1.CreateMilestoneRequest\x1a+.sttattus.travel.v1.CreateMilestoneResponse\x12d\n" +
 	"\rGetNomadStats\x12(.sttattus.travel.v1.GetNomadStatsRequest\x1a).sttattus.travel.v1.GetNomadStatsResponse\x12U\n" +
-	"\bListFeed\x12#.sttattus.travel.v1.ListFeedRequest\x1a$.sttattus.travel.v1.ListFeedResponse\x12U\n" +
-	"\bLikePost\x12#.sttattus.travel.v1.LikePostRequest\x1a$.sttattus.travel.v1.LikePostResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/travel/v1;travelv1b\x06proto3"
+	"\bListFeed\x12#.sttattus.travel.v1.ListFeedRequest\x1a$.sttattus.travel.v1.ListFeedResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/travel/v1;travelv1b\x06proto3"
 
 var (
 	file_sttattus_travel_v1_travel_proto_rawDescOnce sync.Once
@@ -938,11 +855,11 @@ func file_sttattus_travel_v1_travel_proto_rawDescGZIP() []byte {
 	return file_sttattus_travel_v1_travel_proto_rawDescData
 }
 
-var file_sttattus_travel_v1_travel_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_sttattus_travel_v1_travel_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_sttattus_travel_v1_travel_proto_goTypes = []any{
 	(*NomadStats)(nil),              // 0: sttattus.travel.v1.NomadStats
 	(*Milestone)(nil),               // 1: sttattus.travel.v1.Milestone
-	(*FeedPost)(nil),                // 2: sttattus.travel.v1.FeedPost
+	(*CheckIn)(nil),                 // 2: sttattus.travel.v1.CheckIn
 	(*ListMilestonesRequest)(nil),   // 3: sttattus.travel.v1.ListMilestonesRequest
 	(*ListMilestonesResponse)(nil),  // 4: sttattus.travel.v1.ListMilestonesResponse
 	(*CreateMilestoneRequest)(nil),  // 5: sttattus.travel.v1.CreateMilestoneRequest
@@ -951,36 +868,36 @@ var file_sttattus_travel_v1_travel_proto_goTypes = []any{
 	(*GetNomadStatsResponse)(nil),   // 8: sttattus.travel.v1.GetNomadStatsResponse
 	(*ListFeedRequest)(nil),         // 9: sttattus.travel.v1.ListFeedRequest
 	(*ListFeedResponse)(nil),        // 10: sttattus.travel.v1.ListFeedResponse
-	(*LikePostRequest)(nil),         // 11: sttattus.travel.v1.LikePostRequest
-	(*LikePostResponse)(nil),        // 12: sttattus.travel.v1.LikePostResponse
-	(*v1.PageRequest)(nil),          // 13: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),         // 14: sttattus.common.v1.PageResponse
+	(*timestamppb.Timestamp)(nil),   // 11: google.protobuf.Timestamp
+	(*v1.PageRequest)(nil),          // 12: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),         // 13: sttattus.common.v1.PageResponse
 }
 var file_sttattus_travel_v1_travel_proto_depIdxs = []int32{
-	13, // 0: sttattus.travel.v1.ListMilestonesRequest.page:type_name -> sttattus.common.v1.PageRequest
-	1,  // 1: sttattus.travel.v1.ListMilestonesResponse.milestones:type_name -> sttattus.travel.v1.Milestone
-	14, // 2: sttattus.travel.v1.ListMilestonesResponse.page:type_name -> sttattus.common.v1.PageResponse
-	1,  // 3: sttattus.travel.v1.CreateMilestoneResponse.milestone:type_name -> sttattus.travel.v1.Milestone
-	0,  // 4: sttattus.travel.v1.CreateMilestoneResponse.stats:type_name -> sttattus.travel.v1.NomadStats
-	0,  // 5: sttattus.travel.v1.GetNomadStatsResponse.stats:type_name -> sttattus.travel.v1.NomadStats
-	13, // 6: sttattus.travel.v1.ListFeedRequest.page:type_name -> sttattus.common.v1.PageRequest
-	2,  // 7: sttattus.travel.v1.ListFeedResponse.posts:type_name -> sttattus.travel.v1.FeedPost
-	14, // 8: sttattus.travel.v1.ListFeedResponse.page:type_name -> sttattus.common.v1.PageResponse
-	3,  // 9: sttattus.travel.v1.TravelService.ListMilestones:input_type -> sttattus.travel.v1.ListMilestonesRequest
-	5,  // 10: sttattus.travel.v1.TravelService.CreateMilestone:input_type -> sttattus.travel.v1.CreateMilestoneRequest
-	7,  // 11: sttattus.travel.v1.TravelService.GetNomadStats:input_type -> sttattus.travel.v1.GetNomadStatsRequest
-	9,  // 12: sttattus.travel.v1.TravelService.ListFeed:input_type -> sttattus.travel.v1.ListFeedRequest
-	11, // 13: sttattus.travel.v1.TravelService.LikePost:input_type -> sttattus.travel.v1.LikePostRequest
-	4,  // 14: sttattus.travel.v1.TravelService.ListMilestones:output_type -> sttattus.travel.v1.ListMilestonesResponse
-	6,  // 15: sttattus.travel.v1.TravelService.CreateMilestone:output_type -> sttattus.travel.v1.CreateMilestoneResponse
-	8,  // 16: sttattus.travel.v1.TravelService.GetNomadStats:output_type -> sttattus.travel.v1.GetNomadStatsResponse
-	10, // 17: sttattus.travel.v1.TravelService.ListFeed:output_type -> sttattus.travel.v1.ListFeedResponse
-	12, // 18: sttattus.travel.v1.TravelService.LikePost:output_type -> sttattus.travel.v1.LikePostResponse
-	14, // [14:19] is the sub-list for method output_type
-	9,  // [9:14] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	2,  // 0: sttattus.travel.v1.Milestone.checkin:type_name -> sttattus.travel.v1.CheckIn
+	11, // 1: sttattus.travel.v1.CheckIn.verified_at:type_name -> google.protobuf.Timestamp
+	12, // 2: sttattus.travel.v1.ListMilestonesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	1,  // 3: sttattus.travel.v1.ListMilestonesResponse.milestones:type_name -> sttattus.travel.v1.Milestone
+	13, // 4: sttattus.travel.v1.ListMilestonesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	2,  // 5: sttattus.travel.v1.CreateMilestoneRequest.checkin:type_name -> sttattus.travel.v1.CheckIn
+	1,  // 6: sttattus.travel.v1.CreateMilestoneResponse.milestone:type_name -> sttattus.travel.v1.Milestone
+	0,  // 7: sttattus.travel.v1.CreateMilestoneResponse.stats:type_name -> sttattus.travel.v1.NomadStats
+	0,  // 8: sttattus.travel.v1.GetNomadStatsResponse.stats:type_name -> sttattus.travel.v1.NomadStats
+	12, // 9: sttattus.travel.v1.ListFeedRequest.page:type_name -> sttattus.common.v1.PageRequest
+	1,  // 10: sttattus.travel.v1.ListFeedResponse.milestones:type_name -> sttattus.travel.v1.Milestone
+	13, // 11: sttattus.travel.v1.ListFeedResponse.page:type_name -> sttattus.common.v1.PageResponse
+	3,  // 12: sttattus.travel.v1.TravelService.ListMilestones:input_type -> sttattus.travel.v1.ListMilestonesRequest
+	5,  // 13: sttattus.travel.v1.TravelService.CreateMilestone:input_type -> sttattus.travel.v1.CreateMilestoneRequest
+	7,  // 14: sttattus.travel.v1.TravelService.GetNomadStats:input_type -> sttattus.travel.v1.GetNomadStatsRequest
+	9,  // 15: sttattus.travel.v1.TravelService.ListFeed:input_type -> sttattus.travel.v1.ListFeedRequest
+	4,  // 16: sttattus.travel.v1.TravelService.ListMilestones:output_type -> sttattus.travel.v1.ListMilestonesResponse
+	6,  // 17: sttattus.travel.v1.TravelService.CreateMilestone:output_type -> sttattus.travel.v1.CreateMilestoneResponse
+	8,  // 18: sttattus.travel.v1.TravelService.GetNomadStats:output_type -> sttattus.travel.v1.GetNomadStatsResponse
+	10, // 19: sttattus.travel.v1.TravelService.ListFeed:output_type -> sttattus.travel.v1.ListFeedResponse
+	16, // [16:20] is the sub-list for method output_type
+	12, // [12:16] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	12, // [12:12] is the sub-list for extension extendee
+	0,  // [0:12] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_travel_v1_travel_proto_init() }
@@ -994,7 +911,7 @@ func file_sttattus_travel_v1_travel_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_travel_v1_travel_proto_rawDesc), len(file_sttattus_travel_v1_travel_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   13,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

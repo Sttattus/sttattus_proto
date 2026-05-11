@@ -86,6 +86,21 @@ export class UserProfile extends Message<UserProfile> {
    */
   auraColor = "";
 
+  /**
+   * @generated from field: double vault_rank = 14;
+   */
+  vaultRank = 0;
+
+  /**
+   * @generated from field: double apex_rank = 15;
+   */
+  apexRank = 0;
+
+  /**
+   * @generated from field: double cultural_capital = 16;
+   */
+  culturalCapital = 0;
+
   constructor(data?: PartialMessage<UserProfile>) {
     super();
     proto3.util.initPartial(data, this);
@@ -107,6 +122,9 @@ export class UserProfile extends Message<UserProfile> {
     { no: 11, name: "global_percentile", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 12, name: "tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 13, name: "aura_color", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "vault_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 15, name: "apex_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 16, name: "cultural_capital", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserProfile {

@@ -34,6 +34,9 @@ class UserProfile extends $pb.GeneratedMessage {
     $core.double? globalPercentile,
     $core.String? tier,
     $core.String? auraColor,
+    $core.double? vaultRank,
+    $core.double? apexRank,
+    $core.double? culturalCapital,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -49,6 +52,9 @@ class UserProfile extends $pb.GeneratedMessage {
     if (globalPercentile != null) result.globalPercentile = globalPercentile;
     if (tier != null) result.tier = tier;
     if (auraColor != null) result.auraColor = auraColor;
+    if (vaultRank != null) result.vaultRank = vaultRank;
+    if (apexRank != null) result.apexRank = apexRank;
+    if (culturalCapital != null) result.culturalCapital = culturalCapital;
     return result;
   }
 
@@ -71,6 +77,9 @@ class UserProfile extends $pb.GeneratedMessage {
     ..a<$core.double>(11, _omitFieldNames ? '' : 'globalPercentile', $pb.PbFieldType.OD)
     ..aOS(12, _omitFieldNames ? '' : 'tier')
     ..aOS(13, _omitFieldNames ? '' : 'auraColor')
+    ..a<$core.double>(14, _omitFieldNames ? '' : 'vaultRank', $pb.PbFieldType.OD)
+    ..a<$core.double>(15, _omitFieldNames ? '' : 'apexRank', $pb.PbFieldType.OD)
+    ..a<$core.double>(16, _omitFieldNames ? '' : 'culturalCapital', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -208,6 +217,33 @@ class UserProfile extends $pb.GeneratedMessage {
   $core.bool hasAuraColor() => $_has(12);
   @$pb.TagNumber(13)
   void clearAuraColor() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.double get vaultRank => $_getN(13);
+  @$pb.TagNumber(14)
+  set vaultRank($core.double value) => $_setDouble(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasVaultRank() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearVaultRank() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.double get apexRank => $_getN(14);
+  @$pb.TagNumber(15)
+  set apexRank($core.double value) => $_setDouble(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasApexRank() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearApexRank() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.double get culturalCapital => $_getN(15);
+  @$pb.TagNumber(16)
+  set culturalCapital($core.double value) => $_setDouble(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasCulturalCapital() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearCulturalCapital() => $_clearField(16);
 }
 
 class AppAccess extends $pb.GeneratedMessage {

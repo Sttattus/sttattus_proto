@@ -181,6 +181,65 @@ export class Series extends Message<Series> {
 }
 
 /**
+ * StrainMetrics captures physiological intensity from wearables.
+ *
+ * @generated from message sttattus.workout.v1.StrainMetrics
+ */
+export class StrainMetrics extends Message<StrainMetrics> {
+  /**
+   * @generated from field: double avg_heart_rate = 1;
+   */
+  avgHeartRate = 0;
+
+  /**
+   * @generated from field: double max_heart_rate = 2;
+   */
+  maxHeartRate = 0;
+
+  /**
+   * @generated from field: double active_energy_kcal = 3;
+   */
+  activeEnergyKcal = 0;
+
+  /**
+   * Normalized impact on HRV/Recovery
+   *
+   * @generated from field: double recovery_impact = 4;
+   */
+  recoveryImpact = 0;
+
+  constructor(data?: PartialMessage<StrainMetrics>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.StrainMetrics";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "avg_heart_rate", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "max_heart_rate", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "active_energy_kcal", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "recovery_impact", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StrainMetrics {
+    return new StrainMetrics().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StrainMetrics {
+    return new StrainMetrics().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StrainMetrics {
+    return new StrainMetrics().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: StrainMetrics | PlainMessage<StrainMetrics> | undefined, b: StrainMetrics | PlainMessage<StrainMetrics> | undefined): boolean {
+    return proto3.util.equals(StrainMetrics, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.workout.v1.DayWorkout
  */
 export class DayWorkout extends Message<DayWorkout> {
@@ -214,6 +273,18 @@ export class DayWorkout extends Message<DayWorkout> {
    */
   series: Series[] = [];
 
+  /**
+   * @generated from field: sttattus.workout.v1.StrainMetrics strain = 7;
+   */
+  strain?: StrainMetrics;
+
+  /**
+   * True if backed by sensor data
+   *
+   * @generated from field: bool is_verified = 8;
+   */
+  isVerified = false;
+
   constructor(data?: PartialMessage<DayWorkout>) {
     super();
     proto3.util.initPartial(data, this);
@@ -228,6 +299,8 @@ export class DayWorkout extends Message<DayWorkout> {
     { no: 4, name: "performed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 5, name: "notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "series", kind: "message", T: Series, repeated: true },
+    { no: 7, name: "strain", kind: "message", T: StrainMetrics },
+    { no: 8, name: "is_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DayWorkout {
@@ -277,9 +350,18 @@ export class ForgeStats extends Message<ForgeStats> {
   experience = protoInt64.zero;
 
   /**
+   * Text label (e.g., 'Mythic')
+   *
    * @generated from field: string rank = 6;
    */
   rank = "";
+
+  /**
+   * Normalized 1-100 status signal
+   *
+   * @generated from field: double forge_rank = 7;
+   */
+  forgeRank = 0;
 
   constructor(data?: PartialMessage<ForgeStats>) {
     super();
@@ -295,6 +377,7 @@ export class ForgeStats extends Message<ForgeStats> {
     { no: 4, name: "grit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 5, name: "experience", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 6, name: "rank", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "forge_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ForgeStats {
@@ -508,6 +591,16 @@ export class LogDayWorkoutRequest extends Message<LogDayWorkoutRequest> {
    */
   series: Series[] = [];
 
+  /**
+   * @generated from field: sttattus.workout.v1.StrainMetrics strain = 5;
+   */
+  strain?: StrainMetrics;
+
+  /**
+   * @generated from field: bool is_verified = 6;
+   */
+  isVerified = false;
+
   constructor(data?: PartialMessage<LogDayWorkoutRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -520,6 +613,8 @@ export class LogDayWorkoutRequest extends Message<LogDayWorkoutRequest> {
     { no: 2, name: "performed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "series", kind: "message", T: Series, repeated: true },
+    { no: 5, name: "strain", kind: "message", T: StrainMetrics },
+    { no: 6, name: "is_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LogDayWorkoutRequest {

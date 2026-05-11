@@ -2,17 +2,68 @@ syntax = "proto3";
 
 package sttattus.oracle.v1;
 
+import "google/protobuf/timestamp.proto";
+
 option go_package = "github.com/sttattus/proto/gen/go/sttattus/oracle/v1;oraclev1";
 
+// StrategicDomain defines the elite intellectual field.
+enum StrategicDomain {
+  STRATEGIC_DOMAIN_UNSPECIFIED = 0;
+  STRATEGIC_DOMAIN_GEOPOLITICS = 1;
+  STRATEGIC_DOMAIN_MACRO_ECONOMICS = 2;
+  STRATEGIC_DOMAIN_BIO_ETHICS = 3;
+  STRATEGIC_DOMAIN_VENTURE_ENGINEERING = 4;
+}
+
+// DepthGrading represents the AI-verified quality of an intellectual inquiry.
+message DepthGrading {
+  double complexity_score = 1; // 0.0 - 1.0 (Structural complexity)
+  double synthesis_score = 2;  // 0.0 - 1.0 (Cross-pillar integration)
+  double foresight_score = 3;  // 0.0 - 1.0 (Strategic anticipation)
+  string feedback_summary = 4; // AI feedback on inquiry quality
+}
+
+// StrategicInsight represents a high-value piece of intelligence.
+message StrategicInsight {
+  string id = 1;
+  string title = 2;
+  string content = 3;
+  StrategicDomain domain = 4;
+  DepthGrading grading = 5;
+  google.protobuf.Timestamp discovered_at = 6;
+}
+
+message OracleStats {
+  string user_id = 1;
+  double intellectual_rank = 2; // 1-100 normalized
+  string rank_label = 3;        // e.g., 'Analyst', 'Strategist', 'Sovereign Oracle'
+  int32 total_clout_earned = 4;
+  map<int32, double> domain_mastery = 5; // StrategicDomain (as int) -> Mastery %
+}
+
+// REQ/RES
 message QueryRequest {
   string prompt = 1;
+  bool enable_synthesis = 2; // If true, AI attempts to cross-reference all 12 pillars
 }
 
 message QueryResponse {
   string response = 1;
-  double confidence = 2;
+  StrategicInsight insight = 2;
+  OracleStats stats = 3;
+}
+
+message GetOracleStatsRequest {
+  string user_id = 1;
+}
+message GetOracleStatsResponse {
+  OracleStats stats = 1;
 }
 
 service OracleService {
+  // Query handles strategic inquiry and rewards verified depth.
   rpc Query(QueryRequest) returns (QueryResponse);
+  
+  // Status
+  rpc GetOracleStats(GetOracleStatsRequest) returns (GetOracleStatsResponse);
 }

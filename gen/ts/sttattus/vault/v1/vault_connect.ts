@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
+import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -13,12 +13,85 @@ export const VaultService = {
   typeName: "sttattus.vault.v1.VaultService",
   methods: {
     /**
+     * Client Methods
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.SubmitAsset
+     */
+    submitAsset: {
+      name: "SubmitAsset",
+      I: SubmitAssetRequest,
+      O: SubmitAssetResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.GetPortfolio
+     */
+    getPortfolio: {
+      name: "GetPortfolio",
+      I: GetPortfolioRequest,
+      O: GetPortfolioResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Web3 Methods
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetWalletChallenge
+     */
+    getWalletChallenge: {
+      name: "GetWalletChallenge",
+      I: GetWalletChallengeRequest,
+      O: GetWalletChallengeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.LinkWallet
+     */
+    linkWallet: {
+      name: "LinkWallet",
+      I: LinkWalletRequest,
+      O: LinkWalletResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Plaid Methods
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.CreatePlaidLinkToken
+     */
+    createPlaidLinkToken: {
+      name: "CreatePlaidLinkToken",
+      I: CreatePlaidLinkTokenRequest,
+      O: CreatePlaidLinkTokenResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.ExchangePlaidPublicToken
+     */
+    exchangePlaidPublicToken: {
+      name: "ExchangePlaidPublicToken",
+      I: ExchangePlaidPublicTokenRequest,
+      O: ExchangePlaidPublicTokenResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Legacy Methods (Deprecated)
+     *
      * @generated from rpc sttattus.vault.v1.VaultService.SyncWealth
      */
     syncWealth: {
       name: "SyncWealth",
       I: SyncWealthRequest,
       O: SyncWealthResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Admin Methods (Gated by Admin Middleware)
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.AdminVerifyAsset
+     */
+    adminVerifyAsset: {
+      name: "AdminVerifyAsset",
+      I: AdminVerifyAssetRequest,
+      O: AdminVerifyAssetResponse,
       kind: MethodKind.Unary,
     },
   }

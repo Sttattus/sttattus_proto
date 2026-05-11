@@ -23,7 +23,6 @@ const (
 	TravelService_CreateMilestone_FullMethodName = "/sttattus.travel.v1.TravelService/CreateMilestone"
 	TravelService_GetNomadStats_FullMethodName   = "/sttattus.travel.v1.TravelService/GetNomadStats"
 	TravelService_ListFeed_FullMethodName        = "/sttattus.travel.v1.TravelService/ListFeed"
-	TravelService_LikePost_FullMethodName        = "/sttattus.travel.v1.TravelService/LikePost"
 )
 
 // TravelServiceClient is the client API for TravelService service.
@@ -34,7 +33,6 @@ type TravelServiceClient interface {
 	CreateMilestone(ctx context.Context, in *CreateMilestoneRequest, opts ...grpc.CallOption) (*CreateMilestoneResponse, error)
 	GetNomadStats(ctx context.Context, in *GetNomadStatsRequest, opts ...grpc.CallOption) (*GetNomadStatsResponse, error)
 	ListFeed(ctx context.Context, in *ListFeedRequest, opts ...grpc.CallOption) (*ListFeedResponse, error)
-	LikePost(ctx context.Context, in *LikePostRequest, opts ...grpc.CallOption) (*LikePostResponse, error)
 }
 
 type travelServiceClient struct {
@@ -85,16 +83,6 @@ func (c *travelServiceClient) ListFeed(ctx context.Context, in *ListFeedRequest,
 	return out, nil
 }
 
-func (c *travelServiceClient) LikePost(ctx context.Context, in *LikePostRequest, opts ...grpc.CallOption) (*LikePostResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(LikePostResponse)
-	err := c.cc.Invoke(ctx, TravelService_LikePost_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // TravelServiceServer is the server API for TravelService service.
 // All implementations must embed UnimplementedTravelServiceServer
 // for forward compatibility.
@@ -103,7 +91,6 @@ type TravelServiceServer interface {
 	CreateMilestone(context.Context, *CreateMilestoneRequest) (*CreateMilestoneResponse, error)
 	GetNomadStats(context.Context, *GetNomadStatsRequest) (*GetNomadStatsResponse, error)
 	ListFeed(context.Context, *ListFeedRequest) (*ListFeedResponse, error)
-	LikePost(context.Context, *LikePostRequest) (*LikePostResponse, error)
 	mustEmbedUnimplementedTravelServiceServer()
 }
 
@@ -125,9 +112,6 @@ func (UnimplementedTravelServiceServer) GetNomadStats(context.Context, *GetNomad
 }
 func (UnimplementedTravelServiceServer) ListFeed(context.Context, *ListFeedRequest) (*ListFeedResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListFeed not implemented")
-}
-func (UnimplementedTravelServiceServer) LikePost(context.Context, *LikePostRequest) (*LikePostResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method LikePost not implemented")
 }
 func (UnimplementedTravelServiceServer) mustEmbedUnimplementedTravelServiceServer() {}
 func (UnimplementedTravelServiceServer) testEmbeddedByValue()                       {}
@@ -222,24 +206,6 @@ func _TravelService_ListFeed_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TravelService_LikePost_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(LikePostRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(TravelServiceServer).LikePost(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: TravelService_LikePost_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TravelServiceServer).LikePost(ctx, req.(*LikePostRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // TravelService_ServiceDesc is the grpc.ServiceDesc for TravelService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -262,10 +228,6 @@ var TravelService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListFeed",
 			Handler:    _TravelService_ListFeed_Handler,
-		},
-		{
-			MethodName: "LikePost",
-			Handler:    _TravelService_LikePost_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

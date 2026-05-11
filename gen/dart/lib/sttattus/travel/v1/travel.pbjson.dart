@@ -21,8 +21,9 @@ const NomadStats$json = {
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
     {'1': 'exploration_score', '3': 2, '4': 1, '5': 5, '10': 'explorationScore'},
     {'1': 'countries_visited_count', '3': 3, '4': 1, '5': 5, '10': 'countriesVisitedCount'},
-    {'1': 'nomad_rank', '3': 4, '4': 1, '5': 9, '10': 'nomadRank'},
-    {'1': 'completed_milestones', '3': 5, '4': 1, '5': 5, '10': 'completedMilestones'},
+    {'1': 'nomad_rank_label', '3': 4, '4': 1, '5': 9, '10': 'nomadRankLabel'},
+    {'1': 'nomad_rank', '3': 5, '4': 1, '5': 1, '10': 'nomadRank'},
+    {'1': 'verified_checkins_count', '3': 6, '4': 1, '5': 5, '10': 'verifiedCheckinsCount'},
   ],
 };
 
@@ -30,8 +31,9 @@ const NomadStats$json = {
 final $typed_data.Uint8List nomadStatsDescriptor = $convert.base64Decode(
     'CgpOb21hZFN0YXRzEhcKB3VzZXJfaWQYASABKAlSBnVzZXJJZBIrChFleHBsb3JhdGlvbl9zY2'
     '9yZRgCIAEoBVIQZXhwbG9yYXRpb25TY29yZRI2Chdjb3VudHJpZXNfdmlzaXRlZF9jb3VudBgD'
-    'IAEoBVIVY291bnRyaWVzVmlzaXRlZENvdW50Eh0KCm5vbWFkX3JhbmsYBCABKAlSCW5vbWFkUm'
-    'FuaxIxChRjb21wbGV0ZWRfbWlsZXN0b25lcxgFIAEoBVITY29tcGxldGVkTWlsZXN0b25lcw==');
+    'IAEoBVIVY291bnRyaWVzVmlzaXRlZENvdW50EigKEG5vbWFkX3JhbmtfbGFiZWwYBCABKAlSDm'
+    '5vbWFkUmFua0xhYmVsEh0KCm5vbWFkX3JhbmsYBSABKAFSCW5vbWFkUmFuaxI2Chd2ZXJpZmll'
+    'ZF9jaGVja2luc19jb3VudBgGIAEoBVIVdmVyaWZpZWRDaGVja2luc0NvdW50');
 
 @$core.Deprecated('Use milestoneDescriptor instead')
 const Milestone$json = {
@@ -46,6 +48,8 @@ const Milestone$json = {
     {'1': 'accent_color_hex', '3': 7, '4': 1, '5': 9, '10': 'accentColorHex'},
     {'1': 'story', '3': 8, '4': 1, '5': 9, '10': 'story'},
     {'1': 'achieved_at', '3': 9, '4': 1, '5': 3, '10': 'achievedAt'},
+    {'1': 'is_verified', '3': 10, '4': 1, '5': 8, '10': 'isVerified'},
+    {'1': 'checkin', '3': 11, '4': 1, '5': 11, '6': '.sttattus.travel.v1.CheckIn', '10': 'checkin'},
   ],
 };
 
@@ -55,33 +59,34 @@ final $typed_data.Uint8List milestoneDescriptor = $convert.base64Decode(
     'xjb3VudHJ5X2NvZGUYAyABKAlSC2NvdW50cnlDb2RlEhIKBGNpdHkYBCABKAlSBGNpdHkSGwoJ'
     'cGhvdG9fdXJsGAUgASgJUghwaG90b1VybBIjCg10aHVtYm5haWxfdXJsGAYgASgJUgx0aHVtYm'
     '5haWxVcmwSKAoQYWNjZW50X2NvbG9yX2hleBgHIAEoCVIOYWNjZW50Q29sb3JIZXgSFAoFc3Rv'
-    'cnkYCCABKAlSBXN0b3J5Eh8KC2FjaGlldmVkX2F0GAkgASgDUgphY2hpZXZlZEF0');
+    'cnkYCCABKAlSBXN0b3J5Eh8KC2FjaGlldmVkX2F0GAkgASgDUgphY2hpZXZlZEF0Eh8KC2lzX3'
+    'ZlcmlmaWVkGAogASgIUgppc1ZlcmlmaWVkEjUKB2NoZWNraW4YCyABKAsyGy5zdHRhdHR1cy50'
+    'cmF2ZWwudjEuQ2hlY2tJblIHY2hlY2tpbg==');
 
-@$core.Deprecated('Use feedPostDescriptor instead')
-const FeedPost$json = {
-  '1': 'FeedPost',
+@$core.Deprecated('Use checkInDescriptor instead')
+const CheckIn$json = {
+  '1': 'CheckIn',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
-    {'1': 'author_name', '3': 3, '4': 1, '5': 9, '10': 'authorName'},
-    {'1': 'author_avatar', '3': 4, '4': 1, '5': 9, '10': 'authorAvatar'},
-    {'1': 'milestone_id', '3': 5, '4': 1, '5': 9, '10': 'milestoneId'},
-    {'1': 'body', '3': 6, '4': 1, '5': 9, '10': 'body'},
-    {'1': 'media_urls', '3': 7, '4': 3, '5': 9, '10': 'mediaUrls'},
-    {'1': 'created_at', '3': 8, '4': 1, '5': 3, '10': 'createdAt'},
-    {'1': 'likes_count', '3': 9, '4': 1, '5': 5, '10': 'likesCount'},
-    {'1': 'liked_by_me', '3': 10, '4': 1, '5': 8, '10': 'likedByMe'},
+    {'1': 'latitude', '3': 2, '4': 1, '5': 1, '10': 'latitude'},
+    {'1': 'longitude', '3': 3, '4': 1, '5': 1, '10': 'longitude'},
+    {'1': 'ip_address', '3': 4, '4': 1, '5': 9, '10': 'ipAddress'},
+    {'1': 'city', '3': 5, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'region', '3': 6, '4': 1, '5': 9, '10': 'region'},
+    {'1': 'country_code', '3': 7, '4': 1, '5': 9, '10': 'countryCode'},
+    {'1': 'verified_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'verifiedAt'},
+    {'1': 'is_elite_hub', '3': 9, '4': 1, '5': 8, '10': 'isEliteHub'},
   ],
 };
 
-/// Descriptor for `FeedPost`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List feedPostDescriptor = $convert.base64Decode(
-    'CghGZWVkUG9zdBIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEh8KC2'
-    'F1dGhvcl9uYW1lGAMgASgJUgphdXRob3JOYW1lEiMKDWF1dGhvcl9hdmF0YXIYBCABKAlSDGF1'
-    'dGhvckF2YXRhchIhCgxtaWxlc3RvbmVfaWQYBSABKAlSC21pbGVzdG9uZUlkEhIKBGJvZHkYBi'
-    'ABKAlSBGJvZHkSHQoKbWVkaWFfdXJscxgHIAMoCVIJbWVkaWFVcmxzEh0KCmNyZWF0ZWRfYXQY'
-    'CCABKANSCWNyZWF0ZWRBdBIfCgtsaWtlc19jb3VudBgJIAEoBVIKbGlrZXNDb3VudBIeCgtsaW'
-    'tlZF9ieV9tZRgKIAEoCFIJbGlrZWRCeU1l');
+/// Descriptor for `CheckIn`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List checkInDescriptor = $convert.base64Decode(
+    'CgdDaGVja0luEg4KAmlkGAEgASgJUgJpZBIaCghsYXRpdHVkZRgCIAEoAVIIbGF0aXR1ZGUSHA'
+    'oJbG9uZ2l0dWRlGAMgASgBUglsb25naXR1ZGUSHQoKaXBfYWRkcmVzcxgEIAEoCVIJaXBBZGRy'
+    'ZXNzEhIKBGNpdHkYBSABKAlSBGNpdHkSFgoGcmVnaW9uGAYgASgJUgZyZWdpb24SIQoMY291bn'
+    'RyeV9jb2RlGAcgASgJUgtjb3VudHJ5Q29kZRI7Cgt2ZXJpZmllZF9hdBgIIAEoCzIaLmdvb2ds'
+    'ZS5wcm90b2J1Zi5UaW1lc3RhbXBSCnZlcmlmaWVkQXQSIAoMaXNfZWxpdGVfaHViGAkgASgIUg'
+    'ppc0VsaXRlSHVi');
 
 @$core.Deprecated('Use listMilestonesRequestDescriptor instead')
 const ListMilestonesRequest$json = {
@@ -121,6 +126,7 @@ const CreateMilestoneRequest$json = {
     {'1': 'media_asset_id', '3': 3, '4': 1, '5': 9, '10': 'mediaAssetId'},
     {'1': 'story', '3': 4, '4': 1, '5': 9, '10': 'story'},
     {'1': 'achieved_at', '3': 5, '4': 1, '5': 3, '10': 'achievedAt'},
+    {'1': 'checkin', '3': 6, '4': 1, '5': 11, '6': '.sttattus.travel.v1.CheckIn', '10': 'checkin'},
   ],
 };
 
@@ -129,7 +135,8 @@ final $typed_data.Uint8List createMilestoneRequestDescriptor = $convert.base64De
     'ChZDcmVhdGVNaWxlc3RvbmVSZXF1ZXN0EiEKDGNvdW50cnlfY29kZRgBIAEoCVILY291bnRyeU'
     'NvZGUSEgoEY2l0eRgCIAEoCVIEY2l0eRIkCg5tZWRpYV9hc3NldF9pZBgDIAEoCVIMbWVkaWFB'
     'c3NldElkEhQKBXN0b3J5GAQgASgJUgVzdG9yeRIfCgthY2hpZXZlZF9hdBgFIAEoA1IKYWNoaW'
-    'V2ZWRBdA==');
+    'V2ZWRBdBI1CgdjaGVja2luGAYgASgLMhsuc3R0YXR0dXMudHJhdmVsLnYxLkNoZWNrSW5SB2No'
+    'ZWNraW4=');
 
 @$core.Deprecated('Use createMilestoneResponseDescriptor instead')
 const CreateMilestoneResponse$json = {
@@ -188,42 +195,14 @@ final $typed_data.Uint8List listFeedRequestDescriptor = $convert.base64Decode(
 const ListFeedResponse$json = {
   '1': 'ListFeedResponse',
   '2': [
-    {'1': 'posts', '3': 1, '4': 3, '5': 11, '6': '.sttattus.travel.v1.FeedPost', '10': 'posts'},
+    {'1': 'milestones', '3': 1, '4': 3, '5': 11, '6': '.sttattus.travel.v1.Milestone', '10': 'milestones'},
     {'1': 'page', '3': 2, '4': 1, '5': 11, '6': '.sttattus.common.v1.PageResponse', '10': 'page'},
   ],
 };
 
 /// Descriptor for `ListFeedResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listFeedResponseDescriptor = $convert.base64Decode(
-    'ChBMaXN0RmVlZFJlc3BvbnNlEjIKBXBvc3RzGAEgAygLMhwuc3R0YXR0dXMudHJhdmVsLnYxLk'
-    'ZlZWRQb3N0UgVwb3N0cxI0CgRwYWdlGAIgASgLMiAuc3R0YXR0dXMuY29tbW9uLnYxLlBhZ2VS'
-    'ZXNwb25zZVIEcGFnZQ==');
-
-@$core.Deprecated('Use likePostRequestDescriptor instead')
-const LikePostRequest$json = {
-  '1': 'LikePostRequest',
-  '2': [
-    {'1': 'post_id', '3': 1, '4': 1, '5': 9, '10': 'postId'},
-    {'1': 'like', '3': 2, '4': 1, '5': 8, '10': 'like'},
-  ],
-};
-
-/// Descriptor for `LikePostRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List likePostRequestDescriptor = $convert.base64Decode(
-    'Cg9MaWtlUG9zdFJlcXVlc3QSFwoHcG9zdF9pZBgBIAEoCVIGcG9zdElkEhIKBGxpa2UYAiABKA'
-    'hSBGxpa2U=');
-
-@$core.Deprecated('Use likePostResponseDescriptor instead')
-const LikePostResponse$json = {
-  '1': 'LikePostResponse',
-  '2': [
-    {'1': 'likes_count', '3': 1, '4': 1, '5': 5, '10': 'likesCount'},
-    {'1': 'liked_by_me', '3': 2, '4': 1, '5': 8, '10': 'likedByMe'},
-  ],
-};
-
-/// Descriptor for `LikePostResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List likePostResponseDescriptor = $convert.base64Decode(
-    'ChBMaWtlUG9zdFJlc3BvbnNlEh8KC2xpa2VzX2NvdW50GAEgASgFUgpsaWtlc0NvdW50Eh4KC2'
-    'xpa2VkX2J5X21lGAIgASgIUglsaWtlZEJ5TWU=');
+    'ChBMaXN0RmVlZFJlc3BvbnNlEj0KCm1pbGVzdG9uZXMYASADKAsyHS5zdHRhdHR1cy50cmF2ZW'
+    'wudjEuTWlsZXN0b25lUgptaWxlc3RvbmVzEjQKBHBhZ2UYAiABKAsyIC5zdHRhdHR1cy5jb21t'
+    'b24udjEuUGFnZVJlc3BvbnNlUgRwYWdl');
 

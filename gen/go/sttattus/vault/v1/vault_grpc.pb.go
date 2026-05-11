@@ -19,14 +19,33 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	VaultService_SyncWealth_FullMethodName = "/sttattus.vault.v1.VaultService/SyncWealth"
+	VaultService_SubmitAsset_FullMethodName              = "/sttattus.vault.v1.VaultService/SubmitAsset"
+	VaultService_GetPortfolio_FullMethodName             = "/sttattus.vault.v1.VaultService/GetPortfolio"
+	VaultService_GetWalletChallenge_FullMethodName       = "/sttattus.vault.v1.VaultService/GetWalletChallenge"
+	VaultService_LinkWallet_FullMethodName               = "/sttattus.vault.v1.VaultService/LinkWallet"
+	VaultService_CreatePlaidLinkToken_FullMethodName     = "/sttattus.vault.v1.VaultService/CreatePlaidLinkToken"
+	VaultService_ExchangePlaidPublicToken_FullMethodName = "/sttattus.vault.v1.VaultService/ExchangePlaidPublicToken"
+	VaultService_SyncWealth_FullMethodName               = "/sttattus.vault.v1.VaultService/SyncWealth"
+	VaultService_AdminVerifyAsset_FullMethodName         = "/sttattus.vault.v1.VaultService/AdminVerifyAsset"
 )
 
 // VaultServiceClient is the client API for VaultService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type VaultServiceClient interface {
+	// Client Methods
+	SubmitAsset(ctx context.Context, in *SubmitAssetRequest, opts ...grpc.CallOption) (*SubmitAssetResponse, error)
+	GetPortfolio(ctx context.Context, in *GetPortfolioRequest, opts ...grpc.CallOption) (*GetPortfolioResponse, error)
+	// Web3 Methods
+	GetWalletChallenge(ctx context.Context, in *GetWalletChallengeRequest, opts ...grpc.CallOption) (*GetWalletChallengeResponse, error)
+	LinkWallet(ctx context.Context, in *LinkWalletRequest, opts ...grpc.CallOption) (*LinkWalletResponse, error)
+	// Plaid Methods
+	CreatePlaidLinkToken(ctx context.Context, in *CreatePlaidLinkTokenRequest, opts ...grpc.CallOption) (*CreatePlaidLinkTokenResponse, error)
+	ExchangePlaidPublicToken(ctx context.Context, in *ExchangePlaidPublicTokenRequest, opts ...grpc.CallOption) (*ExchangePlaidPublicTokenResponse, error)
+	// Legacy Methods (Deprecated)
 	SyncWealth(ctx context.Context, in *SyncWealthRequest, opts ...grpc.CallOption) (*SyncWealthResponse, error)
+	// Admin Methods (Gated by Admin Middleware)
+	AdminVerifyAsset(ctx context.Context, in *AdminVerifyAssetRequest, opts ...grpc.CallOption) (*AdminVerifyAssetResponse, error)
 }
 
 type vaultServiceClient struct {
@@ -35,6 +54,66 @@ type vaultServiceClient struct {
 
 func NewVaultServiceClient(cc grpc.ClientConnInterface) VaultServiceClient {
 	return &vaultServiceClient{cc}
+}
+
+func (c *vaultServiceClient) SubmitAsset(ctx context.Context, in *SubmitAssetRequest, opts ...grpc.CallOption) (*SubmitAssetResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitAssetResponse)
+	err := c.cc.Invoke(ctx, VaultService_SubmitAsset_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetPortfolio(ctx context.Context, in *GetPortfolioRequest, opts ...grpc.CallOption) (*GetPortfolioResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPortfolioResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetPortfolio_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetWalletChallenge(ctx context.Context, in *GetWalletChallengeRequest, opts ...grpc.CallOption) (*GetWalletChallengeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetWalletChallengeResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetWalletChallenge_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) LinkWallet(ctx context.Context, in *LinkWalletRequest, opts ...grpc.CallOption) (*LinkWalletResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LinkWalletResponse)
+	err := c.cc.Invoke(ctx, VaultService_LinkWallet_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) CreatePlaidLinkToken(ctx context.Context, in *CreatePlaidLinkTokenRequest, opts ...grpc.CallOption) (*CreatePlaidLinkTokenResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreatePlaidLinkTokenResponse)
+	err := c.cc.Invoke(ctx, VaultService_CreatePlaidLinkToken_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) ExchangePlaidPublicToken(ctx context.Context, in *ExchangePlaidPublicTokenRequest, opts ...grpc.CallOption) (*ExchangePlaidPublicTokenResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExchangePlaidPublicTokenResponse)
+	err := c.cc.Invoke(ctx, VaultService_ExchangePlaidPublicToken_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *vaultServiceClient) SyncWealth(ctx context.Context, in *SyncWealthRequest, opts ...grpc.CallOption) (*SyncWealthResponse, error) {
@@ -47,11 +126,33 @@ func (c *vaultServiceClient) SyncWealth(ctx context.Context, in *SyncWealthReque
 	return out, nil
 }
 
+func (c *vaultServiceClient) AdminVerifyAsset(ctx context.Context, in *AdminVerifyAssetRequest, opts ...grpc.CallOption) (*AdminVerifyAssetResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminVerifyAssetResponse)
+	err := c.cc.Invoke(ctx, VaultService_AdminVerifyAsset_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultServiceServer is the server API for VaultService service.
 // All implementations must embed UnimplementedVaultServiceServer
 // for forward compatibility.
 type VaultServiceServer interface {
+	// Client Methods
+	SubmitAsset(context.Context, *SubmitAssetRequest) (*SubmitAssetResponse, error)
+	GetPortfolio(context.Context, *GetPortfolioRequest) (*GetPortfolioResponse, error)
+	// Web3 Methods
+	GetWalletChallenge(context.Context, *GetWalletChallengeRequest) (*GetWalletChallengeResponse, error)
+	LinkWallet(context.Context, *LinkWalletRequest) (*LinkWalletResponse, error)
+	// Plaid Methods
+	CreatePlaidLinkToken(context.Context, *CreatePlaidLinkTokenRequest) (*CreatePlaidLinkTokenResponse, error)
+	ExchangePlaidPublicToken(context.Context, *ExchangePlaidPublicTokenRequest) (*ExchangePlaidPublicTokenResponse, error)
+	// Legacy Methods (Deprecated)
 	SyncWealth(context.Context, *SyncWealthRequest) (*SyncWealthResponse, error)
+	// Admin Methods (Gated by Admin Middleware)
+	AdminVerifyAsset(context.Context, *AdminVerifyAssetRequest) (*AdminVerifyAssetResponse, error)
 	mustEmbedUnimplementedVaultServiceServer()
 }
 
@@ -62,8 +163,29 @@ type VaultServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedVaultServiceServer struct{}
 
+func (UnimplementedVaultServiceServer) SubmitAsset(context.Context, *SubmitAssetRequest) (*SubmitAssetResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitAsset not implemented")
+}
+func (UnimplementedVaultServiceServer) GetPortfolio(context.Context, *GetPortfolioRequest) (*GetPortfolioResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPortfolio not implemented")
+}
+func (UnimplementedVaultServiceServer) GetWalletChallenge(context.Context, *GetWalletChallengeRequest) (*GetWalletChallengeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetWalletChallenge not implemented")
+}
+func (UnimplementedVaultServiceServer) LinkWallet(context.Context, *LinkWalletRequest) (*LinkWalletResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LinkWallet not implemented")
+}
+func (UnimplementedVaultServiceServer) CreatePlaidLinkToken(context.Context, *CreatePlaidLinkTokenRequest) (*CreatePlaidLinkTokenResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreatePlaidLinkToken not implemented")
+}
+func (UnimplementedVaultServiceServer) ExchangePlaidPublicToken(context.Context, *ExchangePlaidPublicTokenRequest) (*ExchangePlaidPublicTokenResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExchangePlaidPublicToken not implemented")
+}
 func (UnimplementedVaultServiceServer) SyncWealth(context.Context, *SyncWealthRequest) (*SyncWealthResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SyncWealth not implemented")
+}
+func (UnimplementedVaultServiceServer) AdminVerifyAsset(context.Context, *AdminVerifyAssetRequest) (*AdminVerifyAssetResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminVerifyAsset not implemented")
 }
 func (UnimplementedVaultServiceServer) mustEmbedUnimplementedVaultServiceServer() {}
 func (UnimplementedVaultServiceServer) testEmbeddedByValue()                      {}
@@ -86,6 +208,114 @@ func RegisterVaultServiceServer(s grpc.ServiceRegistrar, srv VaultServiceServer)
 	s.RegisterService(&VaultService_ServiceDesc, srv)
 }
 
+func _VaultService_SubmitAsset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitAssetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SubmitAsset(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SubmitAsset_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SubmitAsset(ctx, req.(*SubmitAssetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetPortfolio_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPortfolioRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetPortfolio(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetPortfolio_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetPortfolio(ctx, req.(*GetPortfolioRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetWalletChallenge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWalletChallengeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetWalletChallenge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetWalletChallenge_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetWalletChallenge(ctx, req.(*GetWalletChallengeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_LinkWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LinkWalletRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).LinkWallet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_LinkWallet_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).LinkWallet(ctx, req.(*LinkWalletRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_CreatePlaidLinkToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreatePlaidLinkTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).CreatePlaidLinkToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_CreatePlaidLinkToken_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).CreatePlaidLinkToken(ctx, req.(*CreatePlaidLinkTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_ExchangePlaidPublicToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExchangePlaidPublicTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ExchangePlaidPublicToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ExchangePlaidPublicToken_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ExchangePlaidPublicToken(ctx, req.(*ExchangePlaidPublicTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _VaultService_SyncWealth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SyncWealthRequest)
 	if err := dec(in); err != nil {
@@ -104,6 +334,24 @@ func _VaultService_SyncWealth_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultService_AdminVerifyAsset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminVerifyAssetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).AdminVerifyAsset(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_AdminVerifyAsset_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).AdminVerifyAsset(ctx, req.(*AdminVerifyAssetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultService_ServiceDesc is the grpc.ServiceDesc for VaultService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -112,8 +360,36 @@ var VaultService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*VaultServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
+			MethodName: "SubmitAsset",
+			Handler:    _VaultService_SubmitAsset_Handler,
+		},
+		{
+			MethodName: "GetPortfolio",
+			Handler:    _VaultService_GetPortfolio_Handler,
+		},
+		{
+			MethodName: "GetWalletChallenge",
+			Handler:    _VaultService_GetWalletChallenge_Handler,
+		},
+		{
+			MethodName: "LinkWallet",
+			Handler:    _VaultService_LinkWallet_Handler,
+		},
+		{
+			MethodName: "CreatePlaidLinkToken",
+			Handler:    _VaultService_CreatePlaidLinkToken_Handler,
+		},
+		{
+			MethodName: "ExchangePlaidPublicToken",
+			Handler:    _VaultService_ExchangePlaidPublicToken_Handler,
+		},
+		{
 			MethodName: "SyncWealth",
 			Handler:    _VaultService_SyncWealth_Handler,
+		},
+		{
+			MethodName: "AdminVerifyAsset",
+			Handler:    _VaultService_AdminVerifyAsset_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

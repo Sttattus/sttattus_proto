@@ -22,6 +22,9 @@ message UserProfile {
   double global_percentile = 11;
   string tier = 12; // sovereign, platinum, gold, silver, bronze, unranked
   string aura_color = 13;
+  double vault_rank = 14;
+  double apex_rank = 15;
+  double cultural_capital = 16;
 }
 
 message AppAccess {

@@ -10,6 +10,7 @@ import (
 	v1 "github.com/sttattus/proto/gen/go/sttattus/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -22,29 +23,87 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type Category struct {
+// CulturalCategory defines the elite domain of knowledge.
+type CulturalCategory int32
+
+const (
+	CulturalCategory_CULTURAL_CATEGORY_UNSPECIFIED   CulturalCategory = 0
+	CulturalCategory_CULTURAL_CATEGORY_DIPLOMACY     CulturalCategory = 1 // International relations, etiquette
+	CulturalCategory_CULTURAL_CATEGORY_LUXURY_ASSETS CulturalCategory = 2 // Art, Watches, Real Estate
+	CulturalCategory_CULTURAL_CATEGORY_GASTRONOMY    CulturalCategory = 3 // Wine, Fine Dining
+	CulturalCategory_CULTURAL_CATEGORY_PHILANTHROPY  CulturalCategory = 4 // Foundations, Social Impact
+)
+
+// Enum value maps for CulturalCategory.
+var (
+	CulturalCategory_name = map[int32]string{
+		0: "CULTURAL_CATEGORY_UNSPECIFIED",
+		1: "CULTURAL_CATEGORY_DIPLOMACY",
+		2: "CULTURAL_CATEGORY_LUXURY_ASSETS",
+		3: "CULTURAL_CATEGORY_GASTRONOMY",
+		4: "CULTURAL_CATEGORY_PHILANTHROPY",
+	}
+	CulturalCategory_value = map[string]int32{
+		"CULTURAL_CATEGORY_UNSPECIFIED":   0,
+		"CULTURAL_CATEGORY_DIPLOMACY":     1,
+		"CULTURAL_CATEGORY_LUXURY_ASSETS": 2,
+		"CULTURAL_CATEGORY_GASTRONOMY":    3,
+		"CULTURAL_CATEGORY_PHILANTHROPY":  4,
+	}
+)
+
+func (x CulturalCategory) Enum() *CulturalCategory {
+	p := new(CulturalCategory)
+	*p = x
+	return p
+}
+
+func (x CulturalCategory) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CulturalCategory) Descriptor() protoreflect.EnumDescriptor {
+	return file_sttattus_languages_v1_languages_proto_enumTypes[0].Descriptor()
+}
+
+func (CulturalCategory) Type() protoreflect.EnumType {
+	return &file_sttattus_languages_v1_languages_proto_enumTypes[0]
+}
+
+func (x CulturalCategory) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use CulturalCategory.Descriptor instead.
+func (CulturalCategory) EnumDescriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{0}
+}
+
+// CulturalNuance represents a specific rule of social grace or etiquette.
+type CulturalNuance struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	LabelJson     string                 `protobuf:"bytes,2,opt,name=label_json,json=labelJson,proto3" json:"label_json,omitempty"` // JSON string: i18n labels keyed by locale
-	SortOrder     int32                  `protobuf:"varint,3,opt,name=sort_order,json=sortOrder,proto3" json:"sort_order,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	StatusWeight  int32                  `protobuf:"varint,4,opt,name=status_weight,json=statusWeight,proto3" json:"status_weight,omitempty"` // How much this impacts Cultural Capital
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *Category) Reset() {
-	*x = Category{}
+func (x *CulturalNuance) Reset() {
+	*x = CulturalNuance{}
 	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *Category) String() string {
+func (x *CulturalNuance) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Category) ProtoMessage() {}
+func (*CulturalNuance) ProtoMessage() {}
 
-func (x *Category) ProtoReflect() protoreflect.Message {
+func (x *CulturalNuance) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -56,56 +115,67 @@ func (x *Category) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Category.ProtoReflect.Descriptor instead.
-func (*Category) Descriptor() ([]byte, []int) {
+// Deprecated: Use CulturalNuance.ProtoReflect.Descriptor instead.
+func (*CulturalNuance) Descriptor() ([]byte, []int) {
 	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *Category) GetId() string {
+func (x *CulturalNuance) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *Category) GetLabelJson() string {
+func (x *CulturalNuance) GetTitle() string {
 	if x != nil {
-		return x.LabelJson
+		return x.Title
 	}
 	return ""
 }
 
-func (x *Category) GetSortOrder() int32 {
+func (x *CulturalNuance) GetDescription() string {
 	if x != nil {
-		return x.SortOrder
+		return x.Description
+	}
+	return ""
+}
+
+func (x *CulturalNuance) GetStatusWeight() int32 {
+	if x != nil {
+		return x.StatusWeight
 	}
 	return 0
 }
 
-type Word struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	CategoryId    string                 `protobuf:"bytes,2,opt,name=category_id,json=categoryId,proto3" json:"category_id,omitempty"`
-	PayloadJson   string                 `protobuf:"bytes,3,opt,name=payload_json,json=payloadJson,proto3" json:"payload_json,omitempty"` // JSON: term, definition, examples, etc.
-	Levels        []int32                `protobuf:"varint,4,rep,packed,name=levels,proto3" json:"levels,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+// Scenario represents a "Social Blueprint" interaction.
+type Scenario struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title              string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	ContextDescription string                 `protobuf:"bytes,3,opt,name=context_description,json=contextDescription,proto3" json:"context_description,omitempty"`
+	Category           CulturalCategory       `protobuf:"varint,4,opt,name=category,proto3,enum=sttattus.languages.v1.CulturalCategory" json:"category,omitempty"`
+	Locale             string                 `protobuf:"bytes,5,opt,name=locale,proto3" json:"locale,omitempty"` // e.g., 'fr', 'jp'
+	Nodes              []*DialogueNode        `protobuf:"bytes,6,rep,name=nodes,proto3" json:"nodes,omitempty"`
+	MinSttattusScore   float64                `protobuf:"fixed64,7,opt,name=min_sttattus_score,json=minSttattusScore,proto3" json:"min_sttattus_score,omitempty"` // Gating requirement
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
-func (x *Word) Reset() {
-	*x = Word{}
+func (x *Scenario) Reset() {
+	*x = Scenario{}
 	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *Word) String() string {
+func (x *Scenario) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Word) ProtoMessage() {}
+func (*Scenario) ProtoMessage() {}
 
-func (x *Word) ProtoReflect() protoreflect.Message {
+func (x *Scenario) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -117,53 +187,227 @@ func (x *Word) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Word.ProtoReflect.Descriptor instead.
-func (*Word) Descriptor() ([]byte, []int) {
+// Deprecated: Use Scenario.ProtoReflect.Descriptor instead.
+func (*Scenario) Descriptor() ([]byte, []int) {
 	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *Word) GetId() string {
+func (x *Scenario) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *Word) GetCategoryId() string {
+func (x *Scenario) GetTitle() string {
 	if x != nil {
-		return x.CategoryId
+		return x.Title
 	}
 	return ""
 }
 
-func (x *Word) GetPayloadJson() string {
+func (x *Scenario) GetContextDescription() string {
 	if x != nil {
-		return x.PayloadJson
+		return x.ContextDescription
 	}
 	return ""
 }
 
-func (x *Word) GetLevels() []int32 {
+func (x *Scenario) GetCategory() CulturalCategory {
 	if x != nil {
-		return x.Levels
+		return x.Category
+	}
+	return CulturalCategory_CULTURAL_CATEGORY_UNSPECIFIED
+}
+
+func (x *Scenario) GetLocale() string {
+	if x != nil {
+		return x.Locale
+	}
+	return ""
+}
+
+func (x *Scenario) GetNodes() []*DialogueNode {
+	if x != nil {
+		return x.Nodes
 	}
 	return nil
 }
 
+func (x *Scenario) GetMinSttattusScore() float64 {
+	if x != nil {
+		return x.MinSttattusScore
+	}
+	return 0
+}
+
+// DialogueNode is a single step in a social interaction script.
+type DialogueNode struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Speaker            string                 `protobuf:"bytes,2,opt,name=speaker,proto3" json:"speaker,omitempty"`
+	Content            string                 `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"` // The specific linguistic phrasing
+	LiteralTranslation string                 `protobuf:"bytes,4,opt,name=literal_translation,json=literalTranslation,proto3" json:"literal_translation,omitempty"`
+	CulturalInsight    string                 `protobuf:"bytes,5,opt,name=cultural_insight,json=culturalInsight,proto3" json:"cultural_insight,omitempty"` // Explanation of WHY this phrasing is high-status
+	Options            []*DialogueOption      `protobuf:"bytes,6,rep,name=options,proto3" json:"options,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *DialogueNode) Reset() {
+	*x = DialogueNode{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DialogueNode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DialogueNode) ProtoMessage() {}
+
+func (x *DialogueNode) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DialogueNode.ProtoReflect.Descriptor instead.
+func (*DialogueNode) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *DialogueNode) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DialogueNode) GetSpeaker() string {
+	if x != nil {
+		return x.Speaker
+	}
+	return ""
+}
+
+func (x *DialogueNode) GetContent() string {
+	if x != nil {
+		return x.Content
+	}
+	return ""
+}
+
+func (x *DialogueNode) GetLiteralTranslation() string {
+	if x != nil {
+		return x.LiteralTranslation
+	}
+	return ""
+}
+
+func (x *DialogueNode) GetCulturalInsight() string {
+	if x != nil {
+		return x.CulturalInsight
+	}
+	return ""
+}
+
+func (x *DialogueNode) GetOptions() []*DialogueOption {
+	if x != nil {
+		return x.Options
+	}
+	return nil
+}
+
+type DialogueOption struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Content       string                 `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"`
+	IsOptimal     bool                   `protobuf:"varint,3,opt,name=is_optimal,json=isOptimal,proto3" json:"is_optimal,omitempty"` // The "Socially Gracious" path
+	GraceBonus    int32                  `protobuf:"varint,4,opt,name=grace_bonus,json=graceBonus,proto3" json:"grace_bonus,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DialogueOption) Reset() {
+	*x = DialogueOption{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DialogueOption) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DialogueOption) ProtoMessage() {}
+
+func (x *DialogueOption) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DialogueOption.ProtoReflect.Descriptor instead.
+func (*DialogueOption) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *DialogueOption) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DialogueOption) GetContent() string {
+	if x != nil {
+		return x.Content
+	}
+	return ""
+}
+
+func (x *DialogueOption) GetIsOptimal() bool {
+	if x != nil {
+		return x.IsOptimal
+	}
+	return false
+}
+
+func (x *DialogueOption) GetGraceBonus() int32 {
+	if x != nil {
+		return x.GraceBonus
+	}
+	return 0
+}
+
 type Progress struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	UserId         string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	WordId         string                 `protobuf:"bytes,2,opt,name=word_id,json=wordId,proto3" json:"word_id,omitempty"`
-	Score          int32                  `protobuf:"varint,3,opt,name=score,proto3" json:"score,omitempty"`
-	LastReviewedAt int64                  `protobuf:"varint,4,opt,name=last_reviewed_at,json=lastReviewedAt,proto3" json:"last_reviewed_at,omitempty"`
-	MasteredAt     int64                  `protobuf:"varint,5,opt,name=mastered_at,json=masteredAt,proto3" json:"mastered_at,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	UserId              string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ScenarioId          string                 `protobuf:"bytes,2,opt,name=scenario_id,json=scenarioId,proto3" json:"scenario_id,omitempty"`
+	MasteryLevel        int32                  `protobuf:"varint,3,opt,name=mastery_level,json=masteryLevel,proto3" json:"mastery_level,omitempty"` // 1-100
+	CulturalCapitalGain int32                  `protobuf:"varint,4,opt,name=cultural_capital_gain,json=culturalCapitalGain,proto3" json:"cultural_capital_gain,omitempty"`
+	LastRefinedAt       *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=last_refined_at,json=lastRefinedAt,proto3" json:"last_refined_at,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
 func (x *Progress) Reset() {
 	*x = Progress{}
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[2]
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -175,7 +419,7 @@ func (x *Progress) String() string {
 func (*Progress) ProtoMessage() {}
 
 func (x *Progress) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[2]
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -188,7 +432,7 @@ func (x *Progress) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Progress.ProtoReflect.Descriptor instead.
 func (*Progress) Descriptor() ([]byte, []int) {
-	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{2}
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Progress) GetUserId() string {
@@ -198,48 +442,48 @@ func (x *Progress) GetUserId() string {
 	return ""
 }
 
-func (x *Progress) GetWordId() string {
+func (x *Progress) GetScenarioId() string {
 	if x != nil {
-		return x.WordId
+		return x.ScenarioId
 	}
 	return ""
 }
 
-func (x *Progress) GetScore() int32 {
+func (x *Progress) GetMasteryLevel() int32 {
 	if x != nil {
-		return x.Score
+		return x.MasteryLevel
 	}
 	return 0
 }
 
-func (x *Progress) GetLastReviewedAt() int64 {
+func (x *Progress) GetCulturalCapitalGain() int32 {
 	if x != nil {
-		return x.LastReviewedAt
+		return x.CulturalCapitalGain
 	}
 	return 0
 }
 
-func (x *Progress) GetMasteredAt() int64 {
+func (x *Progress) GetLastRefinedAt() *timestamppb.Timestamp {
 	if x != nil {
-		return x.MasteredAt
+		return x.LastRefinedAt
 	}
-	return 0
+	return nil
 }
 
 type LinguistStats struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Eloquence     int32                  `protobuf:"varint,2,opt,name=eloquence,proto3" json:"eloquence,omitempty"`
-	LexicalDepth  int32                  `protobuf:"varint,3,opt,name=lexical_depth,json=lexicalDepth,proto3" json:"lexical_depth,omitempty"`
-	ImmersionDays int32                  `protobuf:"varint,4,opt,name=immersion_days,json=immersionDays,proto3" json:"immersion_days,omitempty"`
-	MasteryRank   string                 `protobuf:"bytes,5,opt,name=mastery_rank,json=masteryRank,proto3" json:"mastery_rank,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	UserId          string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Eloquence       int32                  `protobuf:"varint,2,opt,name=eloquence,proto3" json:"eloquence,omitempty"`                                    // Vocabulary & Precision
+	SocialGrace     int32                  `protobuf:"varint,3,opt,name=social_grace,json=socialGrace,proto3" json:"social_grace,omitempty"`             // Interaction & Etiquette
+	CulturalCapital int32                  `protobuf:"varint,4,opt,name=cultural_capital,json=culturalCapital,proto3" json:"cultural_capital,omitempty"` // Aggregated "Soft Status"
+	MasteryRank     string                 `protobuf:"bytes,5,opt,name=mastery_rank,json=masteryRank,proto3" json:"mastery_rank,omitempty"`              // e.g., 'Diplomat', 'Sovereign Orator'
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *LinguistStats) Reset() {
 	*x = LinguistStats{}
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[3]
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -251,7 +495,7 @@ func (x *LinguistStats) String() string {
 func (*LinguistStats) ProtoMessage() {}
 
 func (x *LinguistStats) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[3]
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -264,7 +508,7 @@ func (x *LinguistStats) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LinguistStats.ProtoReflect.Descriptor instead.
 func (*LinguistStats) Descriptor() ([]byte, []int) {
-	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{3}
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *LinguistStats) GetUserId() string {
@@ -281,16 +525,16 @@ func (x *LinguistStats) GetEloquence() int32 {
 	return 0
 }
 
-func (x *LinguistStats) GetLexicalDepth() int32 {
+func (x *LinguistStats) GetSocialGrace() int32 {
 	if x != nil {
-		return x.LexicalDepth
+		return x.SocialGrace
 	}
 	return 0
 }
 
-func (x *LinguistStats) GetImmersionDays() int32 {
+func (x *LinguistStats) GetCulturalCapital() int32 {
 	if x != nil {
-		return x.ImmersionDays
+		return x.CulturalCapital
 	}
 	return 0
 }
@@ -302,109 +546,29 @@ func (x *LinguistStats) GetMasteryRank() string {
 	return ""
 }
 
-type ListCategoriesRequest struct {
+// REQ/RES
+type ListScenariosRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
+	Category      CulturalCategory       `protobuf:"varint,1,opt,name=category,proto3,enum=sttattus.languages.v1.CulturalCategory" json:"category,omitempty"`
+	Page          *v1.PageRequest        `protobuf:"bytes,2,opt,name=page,proto3" json:"page,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListCategoriesRequest) Reset() {
-	*x = ListCategoriesRequest{}
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ListCategoriesRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ListCategoriesRequest) ProtoMessage() {}
-
-func (x *ListCategoriesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ListCategoriesRequest.ProtoReflect.Descriptor instead.
-func (*ListCategoriesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{4}
-}
-
-type ListCategoriesResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Categories    []*Category            `protobuf:"bytes,1,rep,name=categories,proto3" json:"categories,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ListCategoriesResponse) Reset() {
-	*x = ListCategoriesResponse{}
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[5]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ListCategoriesResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ListCategoriesResponse) ProtoMessage() {}
-
-func (x *ListCategoriesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[5]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ListCategoriesResponse.ProtoReflect.Descriptor instead.
-func (*ListCategoriesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *ListCategoriesResponse) GetCategories() []*Category {
-	if x != nil {
-		return x.Categories
-	}
-	return nil
-}
-
-type ListWordsRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	CategoryId    string                 `protobuf:"bytes,1,opt,name=category_id,json=categoryId,proto3" json:"category_id,omitempty"`
-	Level         int32                  `protobuf:"varint,2,opt,name=level,proto3" json:"level,omitempty"`
-	Page          *v1.PageRequest        `protobuf:"bytes,3,opt,name=page,proto3" json:"page,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ListWordsRequest) Reset() {
-	*x = ListWordsRequest{}
+func (x *ListScenariosRequest) Reset() {
+	*x = ListScenariosRequest{}
 	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListWordsRequest) String() string {
+func (x *ListScenariosRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListWordsRequest) ProtoMessage() {}
+func (*ListScenariosRequest) ProtoMessage() {}
 
-func (x *ListWordsRequest) ProtoReflect() protoreflect.Message {
+func (x *ListScenariosRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -416,54 +580,47 @@ func (x *ListWordsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListWordsRequest.ProtoReflect.Descriptor instead.
-func (*ListWordsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListScenariosRequest.ProtoReflect.Descriptor instead.
+func (*ListScenariosRequest) Descriptor() ([]byte, []int) {
 	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *ListWordsRequest) GetCategoryId() string {
+func (x *ListScenariosRequest) GetCategory() CulturalCategory {
 	if x != nil {
-		return x.CategoryId
+		return x.Category
 	}
-	return ""
+	return CulturalCategory_CULTURAL_CATEGORY_UNSPECIFIED
 }
 
-func (x *ListWordsRequest) GetLevel() int32 {
-	if x != nil {
-		return x.Level
-	}
-	return 0
-}
-
-func (x *ListWordsRequest) GetPage() *v1.PageRequest {
+func (x *ListScenariosRequest) GetPage() *v1.PageRequest {
 	if x != nil {
 		return x.Page
 	}
 	return nil
 }
 
-type ListWordsResponse struct {
+type ListScenariosResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Words         []*Word                `protobuf:"bytes,1,rep,name=words,proto3" json:"words,omitempty"`
+	Scenarios     []*Scenario            `protobuf:"bytes,1,rep,name=scenarios,proto3" json:"scenarios,omitempty"`
 	Page          *v1.PageResponse       `protobuf:"bytes,2,opt,name=page,proto3" json:"page,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListWordsResponse) Reset() {
-	*x = ListWordsResponse{}
+func (x *ListScenariosResponse) Reset() {
+	*x = ListScenariosResponse{}
 	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListWordsResponse) String() string {
+func (x *ListScenariosResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListWordsResponse) ProtoMessage() {}
+func (*ListScenariosResponse) ProtoMessage() {}
 
-func (x *ListWordsResponse) ProtoReflect() protoreflect.Message {
+func (x *ListScenariosResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -475,48 +632,49 @@ func (x *ListWordsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListWordsResponse.ProtoReflect.Descriptor instead.
-func (*ListWordsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListScenariosResponse.ProtoReflect.Descriptor instead.
+func (*ListScenariosResponse) Descriptor() ([]byte, []int) {
 	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *ListWordsResponse) GetWords() []*Word {
+func (x *ListScenariosResponse) GetScenarios() []*Scenario {
 	if x != nil {
-		return x.Words
+		return x.Scenarios
 	}
 	return nil
 }
 
-func (x *ListWordsResponse) GetPage() *v1.PageResponse {
+func (x *ListScenariosResponse) GetPage() *v1.PageResponse {
 	if x != nil {
 		return x.Page
 	}
 	return nil
 }
 
-type UpdateProgressRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	WordId        string                 `protobuf:"bytes,1,opt,name=word_id,json=wordId,proto3" json:"word_id,omitempty"`
-	ScoreDelta    int32                  `protobuf:"varint,2,opt,name=score_delta,json=scoreDelta,proto3" json:"score_delta,omitempty"`
-	Mastered      bool                   `protobuf:"varint,3,opt,name=mastered,proto3" json:"mastered,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+type CompleteInteractionRequest struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	ScenarioId         string                 `protobuf:"bytes,1,opt,name=scenario_id,json=scenarioId,proto3" json:"scenario_id,omitempty"`
+	TotalGraceEarned   int32                  `protobuf:"varint,2,opt,name=total_grace_earned,json=totalGraceEarned,proto3" json:"total_grace_earned,omitempty"`
+	CompletedOptimally bool                   `protobuf:"varint,3,opt,name=completed_optimally,json=completedOptimally,proto3" json:"completed_optimally,omitempty"`
+	ResponseTimeMs     int32                  `protobuf:"varint,4,opt,name=response_time_ms,json=responseTimeMs,proto3" json:"response_time_ms,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
-func (x *UpdateProgressRequest) Reset() {
-	*x = UpdateProgressRequest{}
+func (x *CompleteInteractionRequest) Reset() {
+	*x = CompleteInteractionRequest{}
 	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UpdateProgressRequest) String() string {
+func (x *CompleteInteractionRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateProgressRequest) ProtoMessage() {}
+func (*CompleteInteractionRequest) ProtoMessage() {}
 
-func (x *UpdateProgressRequest) ProtoReflect() protoreflect.Message {
+func (x *CompleteInteractionRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -528,55 +686,61 @@ func (x *UpdateProgressRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateProgressRequest.ProtoReflect.Descriptor instead.
-func (*UpdateProgressRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CompleteInteractionRequest.ProtoReflect.Descriptor instead.
+func (*CompleteInteractionRequest) Descriptor() ([]byte, []int) {
 	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *UpdateProgressRequest) GetWordId() string {
+func (x *CompleteInteractionRequest) GetScenarioId() string {
 	if x != nil {
-		return x.WordId
+		return x.ScenarioId
 	}
 	return ""
 }
 
-func (x *UpdateProgressRequest) GetScoreDelta() int32 {
+func (x *CompleteInteractionRequest) GetTotalGraceEarned() int32 {
 	if x != nil {
-		return x.ScoreDelta
+		return x.TotalGraceEarned
 	}
 	return 0
 }
 
-func (x *UpdateProgressRequest) GetMastered() bool {
+func (x *CompleteInteractionRequest) GetCompletedOptimally() bool {
 	if x != nil {
-		return x.Mastered
+		return x.CompletedOptimally
 	}
 	return false
 }
 
-type UpdateProgressResponse struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	Progress       *Progress              `protobuf:"bytes,1,opt,name=progress,proto3" json:"progress,omitempty"`
-	Stats          *LinguistStats         `protobuf:"bytes,2,opt,name=stats,proto3" json:"stats,omitempty"`
-	EloquenceDelta int32                  `protobuf:"varint,3,opt,name=eloquence_delta,json=eloquenceDelta,proto3" json:"eloquence_delta,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+func (x *CompleteInteractionRequest) GetResponseTimeMs() int32 {
+	if x != nil {
+		return x.ResponseTimeMs
+	}
+	return 0
 }
 
-func (x *UpdateProgressResponse) Reset() {
-	*x = UpdateProgressResponse{}
+type CompleteInteractionResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Progress      *Progress              `protobuf:"bytes,1,opt,name=progress,proto3" json:"progress,omitempty"`
+	Stats         *LinguistStats         `protobuf:"bytes,2,opt,name=stats,proto3" json:"stats,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CompleteInteractionResponse) Reset() {
+	*x = CompleteInteractionResponse{}
 	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UpdateProgressResponse) String() string {
+func (x *CompleteInteractionResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateProgressResponse) ProtoMessage() {}
+func (*CompleteInteractionResponse) ProtoMessage() {}
 
-func (x *UpdateProgressResponse) ProtoReflect() protoreflect.Message {
+func (x *CompleteInteractionResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -588,30 +752,23 @@ func (x *UpdateProgressResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateProgressResponse.ProtoReflect.Descriptor instead.
-func (*UpdateProgressResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use CompleteInteractionResponse.ProtoReflect.Descriptor instead.
+func (*CompleteInteractionResponse) Descriptor() ([]byte, []int) {
 	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *UpdateProgressResponse) GetProgress() *Progress {
+func (x *CompleteInteractionResponse) GetProgress() *Progress {
 	if x != nil {
 		return x.Progress
 	}
 	return nil
 }
 
-func (x *UpdateProgressResponse) GetStats() *LinguistStats {
+func (x *CompleteInteractionResponse) GetStats() *LinguistStats {
 	if x != nil {
 		return x.Stats
 	}
 	return nil
-}
-
-func (x *UpdateProgressResponse) GetEloquenceDelta() int32 {
-	if x != nil {
-		return x.EloquenceDelta
-	}
-	return 0
 }
 
 type GetLinguistStatsRequest struct {
@@ -694,27 +851,29 @@ func (x *GetLinguistStatsResponse) GetStats() *LinguistStats {
 	return nil
 }
 
-type SubmitFeedbackRequest struct {
+// Deprecated Word-based messages (for transition)
+type Word struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Body          string                 `protobuf:"bytes,1,opt,name=body,proto3" json:"body,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	PayloadJson   string                 `protobuf:"bytes,2,opt,name=payload_json,json=payloadJson,proto3" json:"payload_json,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *SubmitFeedbackRequest) Reset() {
-	*x = SubmitFeedbackRequest{}
+func (x *Word) Reset() {
+	*x = Word{}
 	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *SubmitFeedbackRequest) String() string {
+func (x *Word) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SubmitFeedbackRequest) ProtoMessage() {}
+func (*Word) ProtoMessage() {}
 
-func (x *SubmitFeedbackRequest) ProtoReflect() protoreflect.Message {
+func (x *Word) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -726,127 +885,194 @@ func (x *SubmitFeedbackRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SubmitFeedbackRequest.ProtoReflect.Descriptor instead.
-func (*SubmitFeedbackRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Word.ProtoReflect.Descriptor instead.
+func (*Word) Descriptor() ([]byte, []int) {
 	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *SubmitFeedbackRequest) GetBody() string {
-	if x != nil {
-		return x.Body
-	}
-	return ""
-}
-
-type SubmitFeedbackResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *SubmitFeedbackResponse) Reset() {
-	*x = SubmitFeedbackResponse{}
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[13]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *SubmitFeedbackResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*SubmitFeedbackResponse) ProtoMessage() {}
-
-func (x *SubmitFeedbackResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[13]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use SubmitFeedbackResponse.ProtoReflect.Descriptor instead.
-func (*SubmitFeedbackResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{13}
-}
-
-func (x *SubmitFeedbackResponse) GetId() string {
+func (x *Word) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
+func (x *Word) GetPayloadJson() string {
+	if x != nil {
+		return x.PayloadJson
+	}
+	return ""
+}
+
+type ListWordsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Page          *v1.PageRequest        `protobuf:"bytes,1,opt,name=page,proto3" json:"page,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListWordsRequest) Reset() {
+	*x = ListWordsRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListWordsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListWordsRequest) ProtoMessage() {}
+
+func (x *ListWordsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListWordsRequest.ProtoReflect.Descriptor instead.
+func (*ListWordsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *ListWordsRequest) GetPage() *v1.PageRequest {
+	if x != nil {
+		return x.Page
+	}
+	return nil
+}
+
+type ListWordsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Words         []*Word                `protobuf:"bytes,1,rep,name=words,proto3" json:"words,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListWordsResponse) Reset() {
+	*x = ListWordsResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListWordsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListWordsResponse) ProtoMessage() {}
+
+func (x *ListWordsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListWordsResponse.ProtoReflect.Descriptor instead.
+func (*ListWordsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *ListWordsResponse) GetWords() []*Word {
+	if x != nil {
+		return x.Words
+	}
+	return nil
+}
+
 var File_sttattus_languages_v1_languages_proto protoreflect.FileDescriptor
 
 const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\n" +
-	"%sttattus/languages/v1/languages.proto\x12\x15sttattus.languages.v1\x1a#sttattus/common/v1/pagination.proto\"X\n" +
-	"\bCategory\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"%sttattus/languages/v1/languages.proto\x12\x15sttattus.languages.v1\x1a#sttattus/common/v1/pagination.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"}\n" +
+	"\x0eCulturalNuance\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12 \n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\x12#\n" +
+	"\rstatus_weight\x18\x04 \x01(\x05R\fstatusWeight\"\xa7\x02\n" +
+	"\bScenario\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12/\n" +
+	"\x13context_description\x18\x03 \x01(\tR\x12contextDescription\x12C\n" +
+	"\bcategory\x18\x04 \x01(\x0e2'.sttattus.languages.v1.CulturalCategoryR\bcategory\x12\x16\n" +
+	"\x06locale\x18\x05 \x01(\tR\x06locale\x129\n" +
+	"\x05nodes\x18\x06 \x03(\v2#.sttattus.languages.v1.DialogueNodeR\x05nodes\x12,\n" +
+	"\x12min_sttattus_score\x18\a \x01(\x01R\x10minSttattusScore\"\xef\x01\n" +
+	"\fDialogueNode\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
+	"\aspeaker\x18\x02 \x01(\tR\aspeaker\x12\x18\n" +
+	"\acontent\x18\x03 \x01(\tR\acontent\x12/\n" +
+	"\x13literal_translation\x18\x04 \x01(\tR\x12literalTranslation\x12)\n" +
+	"\x10cultural_insight\x18\x05 \x01(\tR\x0fculturalInsight\x12?\n" +
+	"\aoptions\x18\x06 \x03(\v2%.sttattus.languages.v1.DialogueOptionR\aoptions\"z\n" +
+	"\x0eDialogueOption\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
+	"\acontent\x18\x02 \x01(\tR\acontent\x12\x1d\n" +
 	"\n" +
-	"label_json\x18\x02 \x01(\tR\tlabelJson\x12\x1d\n" +
-	"\n" +
-	"sort_order\x18\x03 \x01(\x05R\tsortOrder\"r\n" +
-	"\x04Word\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
-	"\vcategory_id\x18\x02 \x01(\tR\n" +
-	"categoryId\x12!\n" +
-	"\fpayload_json\x18\x03 \x01(\tR\vpayloadJson\x12\x16\n" +
-	"\x06levels\x18\x04 \x03(\x05R\x06levels\"\x9d\x01\n" +
+	"is_optimal\x18\x03 \x01(\bR\tisOptimal\x12\x1f\n" +
+	"\vgrace_bonus\x18\x04 \x01(\x05R\n" +
+	"graceBonus\"\xe1\x01\n" +
 	"\bProgress\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x17\n" +
-	"\aword_id\x18\x02 \x01(\tR\x06wordId\x12\x14\n" +
-	"\x05score\x18\x03 \x01(\x05R\x05score\x12(\n" +
-	"\x10last_reviewed_at\x18\x04 \x01(\x03R\x0elastReviewedAt\x12\x1f\n" +
-	"\vmastered_at\x18\x05 \x01(\x03R\n" +
-	"masteredAt\"\xb5\x01\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vscenario_id\x18\x02 \x01(\tR\n" +
+	"scenarioId\x12#\n" +
+	"\rmastery_level\x18\x03 \x01(\x05R\fmasteryLevel\x122\n" +
+	"\x15cultural_capital_gain\x18\x04 \x01(\x05R\x13culturalCapitalGain\x12B\n" +
+	"\x0flast_refined_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\rlastRefinedAt\"\xb7\x01\n" +
 	"\rLinguistStats\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1c\n" +
-	"\teloquence\x18\x02 \x01(\x05R\teloquence\x12#\n" +
-	"\rlexical_depth\x18\x03 \x01(\x05R\flexicalDepth\x12%\n" +
-	"\x0eimmersion_days\x18\x04 \x01(\x05R\rimmersionDays\x12!\n" +
-	"\fmastery_rank\x18\x05 \x01(\tR\vmasteryRank\"\x17\n" +
-	"\x15ListCategoriesRequest\"Y\n" +
-	"\x16ListCategoriesResponse\x12?\n" +
-	"\n" +
-	"categories\x18\x01 \x03(\v2\x1f.sttattus.languages.v1.CategoryR\n" +
-	"categories\"~\n" +
-	"\x10ListWordsRequest\x12\x1f\n" +
-	"\vcategory_id\x18\x01 \x01(\tR\n" +
-	"categoryId\x12\x14\n" +
-	"\x05level\x18\x02 \x01(\x05R\x05level\x123\n" +
-	"\x04page\x18\x03 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"|\n" +
-	"\x11ListWordsResponse\x121\n" +
-	"\x05words\x18\x01 \x03(\v2\x1b.sttattus.languages.v1.WordR\x05words\x124\n" +
-	"\x04page\x18\x02 \x01(\v2 .sttattus.common.v1.PageResponseR\x04page\"m\n" +
-	"\x15UpdateProgressRequest\x12\x17\n" +
-	"\aword_id\x18\x01 \x01(\tR\x06wordId\x12\x1f\n" +
-	"\vscore_delta\x18\x02 \x01(\x05R\n" +
-	"scoreDelta\x12\x1a\n" +
-	"\bmastered\x18\x03 \x01(\bR\bmastered\"\xba\x01\n" +
-	"\x16UpdateProgressResponse\x12;\n" +
+	"\teloquence\x18\x02 \x01(\x05R\teloquence\x12!\n" +
+	"\fsocial_grace\x18\x03 \x01(\x05R\vsocialGrace\x12)\n" +
+	"\x10cultural_capital\x18\x04 \x01(\x05R\x0fculturalCapital\x12!\n" +
+	"\fmastery_rank\x18\x05 \x01(\tR\vmasteryRank\"\x90\x01\n" +
+	"\x14ListScenariosRequest\x12C\n" +
+	"\bcategory\x18\x01 \x01(\x0e2'.sttattus.languages.v1.CulturalCategoryR\bcategory\x123\n" +
+	"\x04page\x18\x02 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"\x8c\x01\n" +
+	"\x15ListScenariosResponse\x12=\n" +
+	"\tscenarios\x18\x01 \x03(\v2\x1f.sttattus.languages.v1.ScenarioR\tscenarios\x124\n" +
+	"\x04page\x18\x02 \x01(\v2 .sttattus.common.v1.PageResponseR\x04page\"\xc6\x01\n" +
+	"\x1aCompleteInteractionRequest\x12\x1f\n" +
+	"\vscenario_id\x18\x01 \x01(\tR\n" +
+	"scenarioId\x12,\n" +
+	"\x12total_grace_earned\x18\x02 \x01(\x05R\x10totalGraceEarned\x12/\n" +
+	"\x13completed_optimally\x18\x03 \x01(\bR\x12completedOptimally\x12(\n" +
+	"\x10response_time_ms\x18\x04 \x01(\x05R\x0eresponseTimeMs\"\x96\x01\n" +
+	"\x1bCompleteInteractionResponse\x12;\n" +
 	"\bprogress\x18\x01 \x01(\v2\x1f.sttattus.languages.v1.ProgressR\bprogress\x12:\n" +
-	"\x05stats\x18\x02 \x01(\v2$.sttattus.languages.v1.LinguistStatsR\x05stats\x12'\n" +
-	"\x0feloquence_delta\x18\x03 \x01(\x05R\x0eeloquenceDelta\"\x19\n" +
+	"\x05stats\x18\x02 \x01(\v2$.sttattus.languages.v1.LinguistStatsR\x05stats\"\x19\n" +
 	"\x17GetLinguistStatsRequest\"V\n" +
 	"\x18GetLinguistStatsResponse\x12:\n" +
-	"\x05stats\x18\x01 \x01(\v2$.sttattus.languages.v1.LinguistStatsR\x05stats\"+\n" +
-	"\x15SubmitFeedbackRequest\x12\x12\n" +
-	"\x04body\x18\x01 \x01(\tR\x04body\"(\n" +
-	"\x16SubmitFeedbackResponse\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id2\xb4\x04\n" +
-	"\x10LanguagesService\x12m\n" +
-	"\x0eListCategories\x12,.sttattus.languages.v1.ListCategoriesRequest\x1a-.sttattus.languages.v1.ListCategoriesResponse\x12^\n" +
-	"\tListWords\x12'.sttattus.languages.v1.ListWordsRequest\x1a(.sttattus.languages.v1.ListWordsResponse\x12m\n" +
-	"\x0eUpdateProgress\x12,.sttattus.languages.v1.UpdateProgressRequest\x1a-.sttattus.languages.v1.UpdateProgressResponse\x12s\n" +
-	"\x10GetLinguistStats\x12..sttattus.languages.v1.GetLinguistStatsRequest\x1a/.sttattus.languages.v1.GetLinguistStatsResponse\x12m\n" +
-	"\x0eSubmitFeedback\x12,.sttattus.languages.v1.SubmitFeedbackRequest\x1a-.sttattus.languages.v1.SubmitFeedbackResponseBDZBgithub.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1b\x06proto3"
+	"\x05stats\x18\x01 \x01(\v2$.sttattus.languages.v1.LinguistStatsR\x05stats\"9\n" +
+	"\x04Word\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
+	"\fpayload_json\x18\x02 \x01(\tR\vpayloadJson\"G\n" +
+	"\x10ListWordsRequest\x123\n" +
+	"\x04page\x18\x01 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"F\n" +
+	"\x11ListWordsResponse\x121\n" +
+	"\x05words\x18\x01 \x03(\v2\x1b.sttattus.languages.v1.WordR\x05words*\xc1\x01\n" +
+	"\x10CulturalCategory\x12!\n" +
+	"\x1dCULTURAL_CATEGORY_UNSPECIFIED\x10\x00\x12\x1f\n" +
+	"\x1bCULTURAL_CATEGORY_DIPLOMACY\x10\x01\x12#\n" +
+	"\x1fCULTURAL_CATEGORY_LUXURY_ASSETS\x10\x02\x12 \n" +
+	"\x1cCULTURAL_CATEGORY_GASTRONOMY\x10\x03\x12\"\n" +
+	"\x1eCULTURAL_CATEGORY_PHILANTHROPY\x10\x042\xd1\x03\n" +
+	"\x10LanguagesService\x12j\n" +
+	"\rListScenarios\x12+.sttattus.languages.v1.ListScenariosRequest\x1a,.sttattus.languages.v1.ListScenariosResponse\x12|\n" +
+	"\x13CompleteInteraction\x121.sttattus.languages.v1.CompleteInteractionRequest\x1a2.sttattus.languages.v1.CompleteInteractionResponse\x12s\n" +
+	"\x10GetLinguistStats\x12..sttattus.languages.v1.GetLinguistStatsRequest\x1a/.sttattus.languages.v1.GetLinguistStatsResponse\x12^\n" +
+	"\tListWords\x12'.sttattus.languages.v1.ListWordsRequest\x1a(.sttattus.languages.v1.ListWordsResponseBDZBgithub.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1b\x06proto3"
 
 var (
 	file_sttattus_languages_v1_languages_proto_rawDescOnce sync.Once
@@ -860,48 +1086,56 @@ func file_sttattus_languages_v1_languages_proto_rawDescGZIP() []byte {
 	return file_sttattus_languages_v1_languages_proto_rawDescData
 }
 
-var file_sttattus_languages_v1_languages_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_sttattus_languages_v1_languages_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_sttattus_languages_v1_languages_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_sttattus_languages_v1_languages_proto_goTypes = []any{
-	(*Category)(nil),                 // 0: sttattus.languages.v1.Category
-	(*Word)(nil),                     // 1: sttattus.languages.v1.Word
-	(*Progress)(nil),                 // 2: sttattus.languages.v1.Progress
-	(*LinguistStats)(nil),            // 3: sttattus.languages.v1.LinguistStats
-	(*ListCategoriesRequest)(nil),    // 4: sttattus.languages.v1.ListCategoriesRequest
-	(*ListCategoriesResponse)(nil),   // 5: sttattus.languages.v1.ListCategoriesResponse
-	(*ListWordsRequest)(nil),         // 6: sttattus.languages.v1.ListWordsRequest
-	(*ListWordsResponse)(nil),        // 7: sttattus.languages.v1.ListWordsResponse
-	(*UpdateProgressRequest)(nil),    // 8: sttattus.languages.v1.UpdateProgressRequest
-	(*UpdateProgressResponse)(nil),   // 9: sttattus.languages.v1.UpdateProgressResponse
-	(*GetLinguistStatsRequest)(nil),  // 10: sttattus.languages.v1.GetLinguistStatsRequest
-	(*GetLinguistStatsResponse)(nil), // 11: sttattus.languages.v1.GetLinguistStatsResponse
-	(*SubmitFeedbackRequest)(nil),    // 12: sttattus.languages.v1.SubmitFeedbackRequest
-	(*SubmitFeedbackResponse)(nil),   // 13: sttattus.languages.v1.SubmitFeedbackResponse
-	(*v1.PageRequest)(nil),           // 14: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),          // 15: sttattus.common.v1.PageResponse
+	(CulturalCategory)(0),               // 0: sttattus.languages.v1.CulturalCategory
+	(*CulturalNuance)(nil),              // 1: sttattus.languages.v1.CulturalNuance
+	(*Scenario)(nil),                    // 2: sttattus.languages.v1.Scenario
+	(*DialogueNode)(nil),                // 3: sttattus.languages.v1.DialogueNode
+	(*DialogueOption)(nil),              // 4: sttattus.languages.v1.DialogueOption
+	(*Progress)(nil),                    // 5: sttattus.languages.v1.Progress
+	(*LinguistStats)(nil),               // 6: sttattus.languages.v1.LinguistStats
+	(*ListScenariosRequest)(nil),        // 7: sttattus.languages.v1.ListScenariosRequest
+	(*ListScenariosResponse)(nil),       // 8: sttattus.languages.v1.ListScenariosResponse
+	(*CompleteInteractionRequest)(nil),  // 9: sttattus.languages.v1.CompleteInteractionRequest
+	(*CompleteInteractionResponse)(nil), // 10: sttattus.languages.v1.CompleteInteractionResponse
+	(*GetLinguistStatsRequest)(nil),     // 11: sttattus.languages.v1.GetLinguistStatsRequest
+	(*GetLinguistStatsResponse)(nil),    // 12: sttattus.languages.v1.GetLinguistStatsResponse
+	(*Word)(nil),                        // 13: sttattus.languages.v1.Word
+	(*ListWordsRequest)(nil),            // 14: sttattus.languages.v1.ListWordsRequest
+	(*ListWordsResponse)(nil),           // 15: sttattus.languages.v1.ListWordsResponse
+	(*timestamppb.Timestamp)(nil),       // 16: google.protobuf.Timestamp
+	(*v1.PageRequest)(nil),              // 17: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),             // 18: sttattus.common.v1.PageResponse
 }
 var file_sttattus_languages_v1_languages_proto_depIdxs = []int32{
-	0,  // 0: sttattus.languages.v1.ListCategoriesResponse.categories:type_name -> sttattus.languages.v1.Category
-	14, // 1: sttattus.languages.v1.ListWordsRequest.page:type_name -> sttattus.common.v1.PageRequest
-	1,  // 2: sttattus.languages.v1.ListWordsResponse.words:type_name -> sttattus.languages.v1.Word
-	15, // 3: sttattus.languages.v1.ListWordsResponse.page:type_name -> sttattus.common.v1.PageResponse
-	2,  // 4: sttattus.languages.v1.UpdateProgressResponse.progress:type_name -> sttattus.languages.v1.Progress
-	3,  // 5: sttattus.languages.v1.UpdateProgressResponse.stats:type_name -> sttattus.languages.v1.LinguistStats
-	3,  // 6: sttattus.languages.v1.GetLinguistStatsResponse.stats:type_name -> sttattus.languages.v1.LinguistStats
-	4,  // 7: sttattus.languages.v1.LanguagesService.ListCategories:input_type -> sttattus.languages.v1.ListCategoriesRequest
-	6,  // 8: sttattus.languages.v1.LanguagesService.ListWords:input_type -> sttattus.languages.v1.ListWordsRequest
-	8,  // 9: sttattus.languages.v1.LanguagesService.UpdateProgress:input_type -> sttattus.languages.v1.UpdateProgressRequest
-	10, // 10: sttattus.languages.v1.LanguagesService.GetLinguistStats:input_type -> sttattus.languages.v1.GetLinguistStatsRequest
-	12, // 11: sttattus.languages.v1.LanguagesService.SubmitFeedback:input_type -> sttattus.languages.v1.SubmitFeedbackRequest
-	5,  // 12: sttattus.languages.v1.LanguagesService.ListCategories:output_type -> sttattus.languages.v1.ListCategoriesResponse
-	7,  // 13: sttattus.languages.v1.LanguagesService.ListWords:output_type -> sttattus.languages.v1.ListWordsResponse
-	9,  // 14: sttattus.languages.v1.LanguagesService.UpdateProgress:output_type -> sttattus.languages.v1.UpdateProgressResponse
-	11, // 15: sttattus.languages.v1.LanguagesService.GetLinguistStats:output_type -> sttattus.languages.v1.GetLinguistStatsResponse
-	13, // 16: sttattus.languages.v1.LanguagesService.SubmitFeedback:output_type -> sttattus.languages.v1.SubmitFeedbackResponse
-	12, // [12:17] is the sub-list for method output_type
-	7,  // [7:12] is the sub-list for method input_type
-	7,  // [7:7] is the sub-list for extension type_name
-	7,  // [7:7] is the sub-list for extension extendee
-	0,  // [0:7] is the sub-list for field type_name
+	0,  // 0: sttattus.languages.v1.Scenario.category:type_name -> sttattus.languages.v1.CulturalCategory
+	3,  // 1: sttattus.languages.v1.Scenario.nodes:type_name -> sttattus.languages.v1.DialogueNode
+	4,  // 2: sttattus.languages.v1.DialogueNode.options:type_name -> sttattus.languages.v1.DialogueOption
+	16, // 3: sttattus.languages.v1.Progress.last_refined_at:type_name -> google.protobuf.Timestamp
+	0,  // 4: sttattus.languages.v1.ListScenariosRequest.category:type_name -> sttattus.languages.v1.CulturalCategory
+	17, // 5: sttattus.languages.v1.ListScenariosRequest.page:type_name -> sttattus.common.v1.PageRequest
+	2,  // 6: sttattus.languages.v1.ListScenariosResponse.scenarios:type_name -> sttattus.languages.v1.Scenario
+	18, // 7: sttattus.languages.v1.ListScenariosResponse.page:type_name -> sttattus.common.v1.PageResponse
+	5,  // 8: sttattus.languages.v1.CompleteInteractionResponse.progress:type_name -> sttattus.languages.v1.Progress
+	6,  // 9: sttattus.languages.v1.CompleteInteractionResponse.stats:type_name -> sttattus.languages.v1.LinguistStats
+	6,  // 10: sttattus.languages.v1.GetLinguistStatsResponse.stats:type_name -> sttattus.languages.v1.LinguistStats
+	17, // 11: sttattus.languages.v1.ListWordsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	13, // 12: sttattus.languages.v1.ListWordsResponse.words:type_name -> sttattus.languages.v1.Word
+	7,  // 13: sttattus.languages.v1.LanguagesService.ListScenarios:input_type -> sttattus.languages.v1.ListScenariosRequest
+	9,  // 14: sttattus.languages.v1.LanguagesService.CompleteInteraction:input_type -> sttattus.languages.v1.CompleteInteractionRequest
+	11, // 15: sttattus.languages.v1.LanguagesService.GetLinguistStats:input_type -> sttattus.languages.v1.GetLinguistStatsRequest
+	14, // 16: sttattus.languages.v1.LanguagesService.ListWords:input_type -> sttattus.languages.v1.ListWordsRequest
+	8,  // 17: sttattus.languages.v1.LanguagesService.ListScenarios:output_type -> sttattus.languages.v1.ListScenariosResponse
+	10, // 18: sttattus.languages.v1.LanguagesService.CompleteInteraction:output_type -> sttattus.languages.v1.CompleteInteractionResponse
+	12, // 19: sttattus.languages.v1.LanguagesService.GetLinguistStats:output_type -> sttattus.languages.v1.GetLinguistStatsResponse
+	15, // 20: sttattus.languages.v1.LanguagesService.ListWords:output_type -> sttattus.languages.v1.ListWordsResponse
+	17, // [17:21] is the sub-list for method output_type
+	13, // [13:17] is the sub-list for method input_type
+	13, // [13:13] is the sub-list for extension type_name
+	13, // [13:13] is the sub-list for extension extendee
+	0,  // [0:13] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_languages_v1_languages_proto_init() }
@@ -914,13 +1148,14 @@ func file_sttattus_languages_v1_languages_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_languages_v1_languages_proto_rawDesc), len(file_sttattus_languages_v1_languages_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   14,
+			NumEnums:      1,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
 		GoTypes:           file_sttattus_languages_v1_languages_proto_goTypes,
 		DependencyIndexes: file_sttattus_languages_v1_languages_proto_depIdxs,
+		EnumInfos:         file_sttattus_languages_v1_languages_proto_enumTypes,
 		MessageInfos:      file_sttattus_languages_v1_languages_proto_msgTypes,
 	}.Build()
 	File_sttattus_languages_v1_languages_proto = out.File

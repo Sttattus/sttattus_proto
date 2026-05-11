@@ -375,16 +375,22 @@ type ScoreMatchRequest struct {
 	state        protoimpl.MessageState `protogen:"open.v1"`
 	SwiperUserId string                 `protobuf:"bytes,1,opt,name=swiper_user_id,json=swiperUserId,proto3" json:"swiper_user_id,omitempty"`
 	TargetUserId string                 `protobuf:"bytes,2,opt,name=target_user_id,json=targetUserId,proto3" json:"target_user_id,omitempty"`
-	// Subset of dating_profiles fields needed to compute compatibility. Sent
-	// explicitly so the Rust service stays stateless and doesn't need DB access.
-	SwiperIntellectualPace     int32 `protobuf:"varint,3,opt,name=swiper_intellectual_pace,json=swiperIntellectualPace,proto3" json:"swiper_intellectual_pace,omitempty"`
-	SwiperEmotionalGranularity int32 `protobuf:"varint,4,opt,name=swiper_emotional_granularity,json=swiperEmotionalGranularity,proto3" json:"swiper_emotional_granularity,omitempty"`
-	SwiperPhysicalDrive        int32 `protobuf:"varint,5,opt,name=swiper_physical_drive,json=swiperPhysicalDrive,proto3" json:"swiper_physical_drive,omitempty"`
-	SwiperSocialBattery        int32 `protobuf:"varint,6,opt,name=swiper_social_battery,json=swiperSocialBattery,proto3" json:"swiper_social_battery,omitempty"`
-	TargetIntellectualPace     int32 `protobuf:"varint,7,opt,name=target_intellectual_pace,json=targetIntellectualPace,proto3" json:"target_intellectual_pace,omitempty"`
-	TargetEmotionalGranularity int32 `protobuf:"varint,8,opt,name=target_emotional_granularity,json=targetEmotionalGranularity,proto3" json:"target_emotional_granularity,omitempty"`
-	TargetPhysicalDrive        int32 `protobuf:"varint,9,opt,name=target_physical_drive,json=targetPhysicalDrive,proto3" json:"target_physical_drive,omitempty"`
-	TargetSocialBattery        int32 `protobuf:"varint,10,opt,name=target_social_battery,json=targetSocialBattery,proto3" json:"target_social_battery,omitempty"`
+	// Swiper 12-Factor Profile
+	SwiperVaultRank            float64 `protobuf:"fixed64,3,opt,name=swiper_vault_rank,json=swiperVaultRank,proto3" json:"swiper_vault_rank,omitempty"`
+	SwiperApexRank             float64 `protobuf:"fixed64,4,opt,name=swiper_apex_rank,json=swiperApexRank,proto3" json:"swiper_apex_rank,omitempty"`
+	SwiperForgeRank            float64 `protobuf:"fixed64,5,opt,name=swiper_forge_rank,json=swiperForgeRank,proto3" json:"swiper_forge_rank,omitempty"`
+	SwiperIntellectualPace     int32   `protobuf:"varint,6,opt,name=swiper_intellectual_pace,json=swiperIntellectualPace,proto3" json:"swiper_intellectual_pace,omitempty"`
+	SwiperEmotionalGranularity int32   `protobuf:"varint,7,opt,name=swiper_emotional_granularity,json=swiperEmotionalGranularity,proto3" json:"swiper_emotional_granularity,omitempty"`
+	SwiperPhysicalDrive        int32   `protobuf:"varint,8,opt,name=swiper_physical_drive,json=swiperPhysicalDrive,proto3" json:"swiper_physical_drive,omitempty"`
+	SwiperSocialBattery        int32   `protobuf:"varint,9,opt,name=swiper_social_battery,json=swiperSocialBattery,proto3" json:"swiper_social_battery,omitempty"`
+	// Target 12-Factor Profile
+	TargetVaultRank            float64 `protobuf:"fixed64,10,opt,name=target_vault_rank,json=targetVaultRank,proto3" json:"target_vault_rank,omitempty"`
+	TargetApexRank             float64 `protobuf:"fixed64,11,opt,name=target_apex_rank,json=targetApexRank,proto3" json:"target_apex_rank,omitempty"`
+	TargetForgeRank            float64 `protobuf:"fixed64,12,opt,name=target_forge_rank,json=targetForgeRank,proto3" json:"target_forge_rank,omitempty"`
+	TargetIntellectualPace     int32   `protobuf:"varint,13,opt,name=target_intellectual_pace,json=targetIntellectualPace,proto3" json:"target_intellectual_pace,omitempty"`
+	TargetEmotionalGranularity int32   `protobuf:"varint,14,opt,name=target_emotional_granularity,json=targetEmotionalGranularity,proto3" json:"target_emotional_granularity,omitempty"`
+	TargetPhysicalDrive        int32   `protobuf:"varint,15,opt,name=target_physical_drive,json=targetPhysicalDrive,proto3" json:"target_physical_drive,omitempty"`
+	TargetSocialBattery        int32   `protobuf:"varint,16,opt,name=target_social_battery,json=targetSocialBattery,proto3" json:"target_social_battery,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -433,6 +439,27 @@ func (x *ScoreMatchRequest) GetTargetUserId() string {
 	return ""
 }
 
+func (x *ScoreMatchRequest) GetSwiperVaultRank() float64 {
+	if x != nil {
+		return x.SwiperVaultRank
+	}
+	return 0
+}
+
+func (x *ScoreMatchRequest) GetSwiperApexRank() float64 {
+	if x != nil {
+		return x.SwiperApexRank
+	}
+	return 0
+}
+
+func (x *ScoreMatchRequest) GetSwiperForgeRank() float64 {
+	if x != nil {
+		return x.SwiperForgeRank
+	}
+	return 0
+}
+
 func (x *ScoreMatchRequest) GetSwiperIntellectualPace() int32 {
 	if x != nil {
 		return x.SwiperIntellectualPace
@@ -457,6 +484,27 @@ func (x *ScoreMatchRequest) GetSwiperPhysicalDrive() int32 {
 func (x *ScoreMatchRequest) GetSwiperSocialBattery() int32 {
 	if x != nil {
 		return x.SwiperSocialBattery
+	}
+	return 0
+}
+
+func (x *ScoreMatchRequest) GetTargetVaultRank() float64 {
+	if x != nil {
+		return x.TargetVaultRank
+	}
+	return 0
+}
+
+func (x *ScoreMatchRequest) GetTargetApexRank() float64 {
+	if x != nil {
+		return x.TargetApexRank
+	}
+	return 0
+}
+
+func (x *ScoreMatchRequest) GetTargetForgeRank() float64 {
+	if x != nil {
+		return x.TargetForgeRank
 	}
 	return 0
 }
@@ -838,6 +886,999 @@ func (x *ApplyDecayResponse) GetDecayedScore() float64 {
 	return 0
 }
 
+type ScoreForgeRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	UserId           string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Series           []*WorkoutSeriesInput  `protobuf:"bytes,2,rep,name=series,proto3" json:"series,omitempty"`
+	AvgHeartRate     float64                `protobuf:"fixed64,3,opt,name=avg_heart_rate,json=avgHeartRate,proto3" json:"avg_heart_rate,omitempty"`
+	MaxHeartRate     float64                `protobuf:"fixed64,4,opt,name=max_heart_rate,json=maxHeartRate,proto3" json:"max_heart_rate,omitempty"`
+	ActiveEnergyKcal float64                `protobuf:"fixed64,5,opt,name=active_energy_kcal,json=activeEnergyKcal,proto3" json:"active_energy_kcal,omitempty"`
+	RecoveryImpact   float64                `protobuf:"fixed64,6,opt,name=recovery_impact,json=recoveryImpact,proto3" json:"recovery_impact,omitempty"`
+	IsVerified       bool                   `protobuf:"varint,7,opt,name=is_verified,json=isVerified,proto3" json:"is_verified,omitempty"`
+	// Existing stats for compounding logic
+	CurrentExperience int64   `protobuf:"varint,8,opt,name=current_experience,json=currentExperience,proto3" json:"current_experience,omitempty"`
+	CurrentForgeRank  float64 `protobuf:"fixed64,9,opt,name=current_forge_rank,json=currentForgeRank,proto3" json:"current_forge_rank,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *ScoreForgeRequest) Reset() {
+	*x = ScoreForgeRequest{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreForgeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreForgeRequest) ProtoMessage() {}
+
+func (x *ScoreForgeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreForgeRequest.ProtoReflect.Descriptor instead.
+func (*ScoreForgeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *ScoreForgeRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ScoreForgeRequest) GetSeries() []*WorkoutSeriesInput {
+	if x != nil {
+		return x.Series
+	}
+	return nil
+}
+
+func (x *ScoreForgeRequest) GetAvgHeartRate() float64 {
+	if x != nil {
+		return x.AvgHeartRate
+	}
+	return 0
+}
+
+func (x *ScoreForgeRequest) GetMaxHeartRate() float64 {
+	if x != nil {
+		return x.MaxHeartRate
+	}
+	return 0
+}
+
+func (x *ScoreForgeRequest) GetActiveEnergyKcal() float64 {
+	if x != nil {
+		return x.ActiveEnergyKcal
+	}
+	return 0
+}
+
+func (x *ScoreForgeRequest) GetRecoveryImpact() float64 {
+	if x != nil {
+		return x.RecoveryImpact
+	}
+	return 0
+}
+
+func (x *ScoreForgeRequest) GetIsVerified() bool {
+	if x != nil {
+		return x.IsVerified
+	}
+	return false
+}
+
+func (x *ScoreForgeRequest) GetCurrentExperience() int64 {
+	if x != nil {
+		return x.CurrentExperience
+	}
+	return 0
+}
+
+func (x *ScoreForgeRequest) GetCurrentForgeRank() float64 {
+	if x != nil {
+		return x.CurrentForgeRank
+	}
+	return 0
+}
+
+type ScoreForgeResponse struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ExperienceDelta int64                  `protobuf:"varint,1,opt,name=experience_delta,json=experienceDelta,proto3" json:"experience_delta,omitempty"`
+	NewForgeRank    float64                `protobuf:"fixed64,2,opt,name=new_forge_rank,json=newForgeRank,proto3" json:"new_forge_rank,omitempty"` // 1-100 normalized
+	PowerDelta      int32                  `protobuf:"varint,3,opt,name=power_delta,json=powerDelta,proto3" json:"power_delta,omitempty"`
+	AgilityDelta    int32                  `protobuf:"varint,4,opt,name=agility_delta,json=agilityDelta,proto3" json:"agility_delta,omitempty"`
+	GritDelta       int32                  `protobuf:"varint,5,opt,name=grit_delta,json=gritDelta,proto3" json:"grit_delta,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ScoreForgeResponse) Reset() {
+	*x = ScoreForgeResponse{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreForgeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreForgeResponse) ProtoMessage() {}
+
+func (x *ScoreForgeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreForgeResponse.ProtoReflect.Descriptor instead.
+func (*ScoreForgeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *ScoreForgeResponse) GetExperienceDelta() int64 {
+	if x != nil {
+		return x.ExperienceDelta
+	}
+	return 0
+}
+
+func (x *ScoreForgeResponse) GetNewForgeRank() float64 {
+	if x != nil {
+		return x.NewForgeRank
+	}
+	return 0
+}
+
+func (x *ScoreForgeResponse) GetPowerDelta() int32 {
+	if x != nil {
+		return x.PowerDelta
+	}
+	return 0
+}
+
+func (x *ScoreForgeResponse) GetAgilityDelta() int32 {
+	if x != nil {
+		return x.AgilityDelta
+	}
+	return 0
+}
+
+func (x *ScoreForgeResponse) GetGritDelta() int32 {
+	if x != nil {
+		return x.GritDelta
+	}
+	return 0
+}
+
+type ScoreCognitiveMasteryRequest struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	UserId             string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ScenarioId         string                 `protobuf:"bytes,2,opt,name=scenario_id,json=scenarioId,proto3" json:"scenario_id,omitempty"`
+	ResponseTimeMs     int32                  `protobuf:"varint,3,opt,name=response_time_ms,json=responseTimeMs,proto3" json:"response_time_ms,omitempty"` // Speed of decision indicates mastery
+	WasOptimal         bool                   `protobuf:"varint,4,opt,name=was_optimal,json=wasOptimal,proto3" json:"was_optimal,omitempty"`
+	SessionDurationSec int32                  `protobuf:"varint,5,opt,name=session_duration_sec,json=sessionDurationSec,proto3" json:"session_duration_sec,omitempty"`
+	CurrentEloquence   float64                `protobuf:"fixed64,6,opt,name=current_eloquence,json=currentEloquence,proto3" json:"current_eloquence,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *ScoreCognitiveMasteryRequest) Reset() {
+	*x = ScoreCognitiveMasteryRequest{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreCognitiveMasteryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreCognitiveMasteryRequest) ProtoMessage() {}
+
+func (x *ScoreCognitiveMasteryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreCognitiveMasteryRequest.ProtoReflect.Descriptor instead.
+func (*ScoreCognitiveMasteryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *ScoreCognitiveMasteryRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ScoreCognitiveMasteryRequest) GetScenarioId() string {
+	if x != nil {
+		return x.ScenarioId
+	}
+	return ""
+}
+
+func (x *ScoreCognitiveMasteryRequest) GetResponseTimeMs() int32 {
+	if x != nil {
+		return x.ResponseTimeMs
+	}
+	return 0
+}
+
+func (x *ScoreCognitiveMasteryRequest) GetWasOptimal() bool {
+	if x != nil {
+		return x.WasOptimal
+	}
+	return false
+}
+
+func (x *ScoreCognitiveMasteryRequest) GetSessionDurationSec() int32 {
+	if x != nil {
+		return x.SessionDurationSec
+	}
+	return 0
+}
+
+func (x *ScoreCognitiveMasteryRequest) GetCurrentEloquence() float64 {
+	if x != nil {
+		return x.CurrentEloquence
+	}
+	return 0
+}
+
+type ScoreCognitiveMasteryResponse struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	CognitiveLoadIndex int32                  `protobuf:"varint,1,opt,name=cognitive_load_index,json=cognitiveLoadIndex,proto3" json:"cognitive_load_index,omitempty"` // 1-100
+	NextReviewDays     int32                  `protobuf:"varint,2,opt,name=next_review_days,json=nextReviewDays,proto3" json:"next_review_days,omitempty"`             // Calculated SRS interval
+	EloquenceDelta     float64                `protobuf:"fixed64,3,opt,name=eloquence_delta,json=eloquenceDelta,proto3" json:"eloquence_delta,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *ScoreCognitiveMasteryResponse) Reset() {
+	*x = ScoreCognitiveMasteryResponse{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreCognitiveMasteryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreCognitiveMasteryResponse) ProtoMessage() {}
+
+func (x *ScoreCognitiveMasteryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreCognitiveMasteryResponse.ProtoReflect.Descriptor instead.
+func (*ScoreCognitiveMasteryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *ScoreCognitiveMasteryResponse) GetCognitiveLoadIndex() int32 {
+	if x != nil {
+		return x.CognitiveLoadIndex
+	}
+	return 0
+}
+
+func (x *ScoreCognitiveMasteryResponse) GetNextReviewDays() int32 {
+	if x != nil {
+		return x.NextReviewDays
+	}
+	return 0
+}
+
+func (x *ScoreCognitiveMasteryResponse) GetEloquenceDelta() float64 {
+	if x != nil {
+		return x.EloquenceDelta
+	}
+	return 0
+}
+
+type ScoreNomadRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	UserId           string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	CountriesVisited int32                  `protobuf:"varint,2,opt,name=countries_visited,json=countriesVisited,proto3" json:"countries_visited,omitempty"`
+	VerifiedCheckins int32                  `protobuf:"varint,3,opt,name=verified_checkins,json=verifiedCheckins,proto3" json:"verified_checkins,omitempty"`
+	EliteHubsVisited int32                  `protobuf:"varint,4,opt,name=elite_hubs_visited,json=eliteHubsVisited,proto3" json:"elite_hubs_visited,omitempty"`
+	CurrentNomadRank float64                `protobuf:"fixed64,5,opt,name=current_nomad_rank,json=currentNomadRank,proto3" json:"current_nomad_rank,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *ScoreNomadRequest) Reset() {
+	*x = ScoreNomadRequest{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreNomadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreNomadRequest) ProtoMessage() {}
+
+func (x *ScoreNomadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreNomadRequest.ProtoReflect.Descriptor instead.
+func (*ScoreNomadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *ScoreNomadRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ScoreNomadRequest) GetCountriesVisited() int32 {
+	if x != nil {
+		return x.CountriesVisited
+	}
+	return 0
+}
+
+func (x *ScoreNomadRequest) GetVerifiedCheckins() int32 {
+	if x != nil {
+		return x.VerifiedCheckins
+	}
+	return 0
+}
+
+func (x *ScoreNomadRequest) GetEliteHubsVisited() int32 {
+	if x != nil {
+		return x.EliteHubsVisited
+	}
+	return 0
+}
+
+func (x *ScoreNomadRequest) GetCurrentNomadRank() float64 {
+	if x != nil {
+		return x.CurrentNomadRank
+	}
+	return 0
+}
+
+type ScoreNomadResponse struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	NewNomadRank     float64                `protobuf:"fixed64,1,opt,name=new_nomad_rank,json=newNomadRank,proto3" json:"new_nomad_rank,omitempty"` // 1-100 normalized
+	ExplorationDelta int32                  `protobuf:"varint,2,opt,name=exploration_delta,json=explorationDelta,proto3" json:"exploration_delta,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *ScoreNomadResponse) Reset() {
+	*x = ScoreNomadResponse{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreNomadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreNomadResponse) ProtoMessage() {}
+
+func (x *ScoreNomadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreNomadResponse.ProtoReflect.Descriptor instead.
+func (*ScoreNomadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *ScoreNomadResponse) GetNewNomadRank() float64 {
+	if x != nil {
+		return x.NewNomadRank
+	}
+	return 0
+}
+
+func (x *ScoreNomadResponse) GetExplorationDelta() int32 {
+	if x != nil {
+		return x.ExplorationDelta
+	}
+	return 0
+}
+
+type ScoreOracleRequest struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	UserId                  string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AverageComplexity       float64                `protobuf:"fixed64,2,opt,name=average_complexity,json=averageComplexity,proto3" json:"average_complexity,omitempty"`
+	AverageSynthesis        float64                `protobuf:"fixed64,3,opt,name=average_synthesis,json=averageSynthesis,proto3" json:"average_synthesis,omitempty"`
+	AverageForesight        float64                `protobuf:"fixed64,4,opt,name=average_foresight,json=averageForesight,proto3" json:"average_foresight,omitempty"`
+	UniqueDomainsVisited    int32                  `protobuf:"varint,5,opt,name=unique_domains_visited,json=uniqueDomainsVisited,proto3" json:"unique_domains_visited,omitempty"`
+	CurrentIntellectualRank float64                `protobuf:"fixed64,6,opt,name=current_intellectual_rank,json=currentIntellectualRank,proto3" json:"current_intellectual_rank,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *ScoreOracleRequest) Reset() {
+	*x = ScoreOracleRequest{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreOracleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreOracleRequest) ProtoMessage() {}
+
+func (x *ScoreOracleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreOracleRequest.ProtoReflect.Descriptor instead.
+func (*ScoreOracleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *ScoreOracleRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ScoreOracleRequest) GetAverageComplexity() float64 {
+	if x != nil {
+		return x.AverageComplexity
+	}
+	return 0
+}
+
+func (x *ScoreOracleRequest) GetAverageSynthesis() float64 {
+	if x != nil {
+		return x.AverageSynthesis
+	}
+	return 0
+}
+
+func (x *ScoreOracleRequest) GetAverageForesight() float64 {
+	if x != nil {
+		return x.AverageForesight
+	}
+	return 0
+}
+
+func (x *ScoreOracleRequest) GetUniqueDomainsVisited() int32 {
+	if x != nil {
+		return x.UniqueDomainsVisited
+	}
+	return 0
+}
+
+func (x *ScoreOracleRequest) GetCurrentIntellectualRank() float64 {
+	if x != nil {
+		return x.CurrentIntellectualRank
+	}
+	return 0
+}
+
+type ScoreOracleResponse struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	NewIntellectualRank float64                `protobuf:"fixed64,1,opt,name=new_intellectual_rank,json=newIntellectualRank,proto3" json:"new_intellectual_rank,omitempty"` // 1-100 normalized
+	CloutDelta          float64                `protobuf:"fixed64,2,opt,name=clout_delta,json=cloutDelta,proto3" json:"clout_delta,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *ScoreOracleResponse) Reset() {
+	*x = ScoreOracleResponse{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreOracleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreOracleResponse) ProtoMessage() {}
+
+func (x *ScoreOracleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreOracleResponse.ProtoReflect.Descriptor instead.
+func (*ScoreOracleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *ScoreOracleResponse) GetNewIntellectualRank() float64 {
+	if x != nil {
+		return x.NewIntellectualRank
+	}
+	return 0
+}
+
+func (x *ScoreOracleResponse) GetCloutDelta() float64 {
+	if x != nil {
+		return x.CloutDelta
+	}
+	return 0
+}
+
+type ScoreZenithRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	UserId               string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	SessionDurationMins  int32                  `protobuf:"varint,2,opt,name=session_duration_mins,json=sessionDurationMins,proto3" json:"session_duration_mins,omitempty"`
+	FocusScore           float64                `protobuf:"fixed64,3,opt,name=focus_score,json=focusScore,proto3" json:"focus_score,omitempty"`
+	IsVerified           bool                   `protobuf:"varint,4,opt,name=is_verified,json=isVerified,proto3" json:"is_verified,omitempty"`
+	AvgHeartRate         float64                `protobuf:"fixed64,5,opt,name=avg_heart_rate,json=avgHeartRate,proto3" json:"avg_heart_rate,omitempty"`
+	HrvDelta             float64                `protobuf:"fixed64,6,opt,name=hrv_delta,json=hrvDelta,proto3" json:"hrv_delta,omitempty"`
+	CurrentFortitudeRank float64                `protobuf:"fixed64,7,opt,name=current_fortitude_rank,json=currentFortitudeRank,proto3" json:"current_fortitude_rank,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *ScoreZenithRequest) Reset() {
+	*x = ScoreZenithRequest{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreZenithRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreZenithRequest) ProtoMessage() {}
+
+func (x *ScoreZenithRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreZenithRequest.ProtoReflect.Descriptor instead.
+func (*ScoreZenithRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *ScoreZenithRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ScoreZenithRequest) GetSessionDurationMins() int32 {
+	if x != nil {
+		return x.SessionDurationMins
+	}
+	return 0
+}
+
+func (x *ScoreZenithRequest) GetFocusScore() float64 {
+	if x != nil {
+		return x.FocusScore
+	}
+	return 0
+}
+
+func (x *ScoreZenithRequest) GetIsVerified() bool {
+	if x != nil {
+		return x.IsVerified
+	}
+	return false
+}
+
+func (x *ScoreZenithRequest) GetAvgHeartRate() float64 {
+	if x != nil {
+		return x.AvgHeartRate
+	}
+	return 0
+}
+
+func (x *ScoreZenithRequest) GetHrvDelta() float64 {
+	if x != nil {
+		return x.HrvDelta
+	}
+	return 0
+}
+
+func (x *ScoreZenithRequest) GetCurrentFortitudeRank() float64 {
+	if x != nil {
+		return x.CurrentFortitudeRank
+	}
+	return 0
+}
+
+type ScoreZenithResponse struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	NewFortitudeRank  float64                `protobuf:"fixed64,1,opt,name=new_fortitude_rank,json=newFortitudeRank,proto3" json:"new_fortitude_rank,omitempty"` // 1-100 normalized
+	FocusMinutesDelta int32                  `protobuf:"varint,2,opt,name=focus_minutes_delta,json=focusMinutesDelta,proto3" json:"focus_minutes_delta,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *ScoreZenithResponse) Reset() {
+	*x = ScoreZenithResponse{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreZenithResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreZenithResponse) ProtoMessage() {}
+
+func (x *ScoreZenithResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreZenithResponse.ProtoReflect.Descriptor instead.
+func (*ScoreZenithResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *ScoreZenithResponse) GetNewFortitudeRank() float64 {
+	if x != nil {
+		return x.NewFortitudeRank
+	}
+	return 0
+}
+
+func (x *ScoreZenithResponse) GetFocusMinutesDelta() int32 {
+	if x != nil {
+		return x.FocusMinutesDelta
+	}
+	return 0
+}
+
+type ScoreLegacyRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	UserId               string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	VerifiedAssetsCount  int32                  `protobuf:"varint,2,opt,name=verified_assets_count,json=verifiedAssetsCount,proto3" json:"verified_assets_count,omitempty"`
+	TotalIpValuation     float64                `protobuf:"fixed64,3,opt,name=total_ip_valuation,json=totalIpValuation,proto3" json:"total_ip_valuation,omitempty"`
+	UniqueJurisdictions  int32                  `protobuf:"varint,4,opt,name=unique_jurisdictions,json=uniqueJurisdictions,proto3" json:"unique_jurisdictions,omitempty"`
+	CurrentInfluenceRank float64                `protobuf:"fixed64,5,opt,name=current_influence_rank,json=currentInfluenceRank,proto3" json:"current_influence_rank,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *ScoreLegacyRequest) Reset() {
+	*x = ScoreLegacyRequest{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreLegacyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreLegacyRequest) ProtoMessage() {}
+
+func (x *ScoreLegacyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreLegacyRequest.ProtoReflect.Descriptor instead.
+func (*ScoreLegacyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *ScoreLegacyRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ScoreLegacyRequest) GetVerifiedAssetsCount() int32 {
+	if x != nil {
+		return x.VerifiedAssetsCount
+	}
+	return 0
+}
+
+func (x *ScoreLegacyRequest) GetTotalIpValuation() float64 {
+	if x != nil {
+		return x.TotalIpValuation
+	}
+	return 0
+}
+
+func (x *ScoreLegacyRequest) GetUniqueJurisdictions() int32 {
+	if x != nil {
+		return x.UniqueJurisdictions
+	}
+	return 0
+}
+
+func (x *ScoreLegacyRequest) GetCurrentInfluenceRank() float64 {
+	if x != nil {
+		return x.CurrentInfluenceRank
+	}
+	return 0
+}
+
+type ScoreLegacyResponse struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	NewInfluenceRank float64                `protobuf:"fixed64,1,opt,name=new_influence_rank,json=newInfluenceRank,proto3" json:"new_influence_rank,omitempty"` // 1-100 normalized
+	InfluenceDelta   float64                `protobuf:"fixed64,2,opt,name=influence_delta,json=influenceDelta,proto3" json:"influence_delta,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *ScoreLegacyResponse) Reset() {
+	*x = ScoreLegacyResponse{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreLegacyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreLegacyResponse) ProtoMessage() {}
+
+func (x *ScoreLegacyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreLegacyResponse.ProtoReflect.Descriptor instead.
+func (*ScoreLegacyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *ScoreLegacyResponse) GetNewInfluenceRank() float64 {
+	if x != nil {
+		return x.NewInfluenceRank
+	}
+	return 0
+}
+
+func (x *ScoreLegacyResponse) GetInfluenceDelta() float64 {
+	if x != nil {
+		return x.InfluenceDelta
+	}
+	return 0
+}
+
+type ScoreDominionRequest struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	UserId                  string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	VerifiedPropertiesCount int32                  `protobuf:"varint,2,opt,name=verified_properties_count,json=verifiedPropertiesCount,proto3" json:"verified_properties_count,omitempty"`
+	TotalPortfolioValuation float64                `protobuf:"fixed64,3,opt,name=total_portfolio_valuation,json=totalPortfolioValuation,proto3" json:"total_portfolio_valuation,omitempty"`
+	UniqueRegionsCount      int32                  `protobuf:"varint,4,opt,name=unique_regions_count,json=uniqueRegionsCount,proto3" json:"unique_regions_count,omitempty"`
+	CurrentDominionRank     float64                `protobuf:"fixed64,5,opt,name=current_dominion_rank,json=currentDominionRank,proto3" json:"current_dominion_rank,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *ScoreDominionRequest) Reset() {
+	*x = ScoreDominionRequest{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreDominionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreDominionRequest) ProtoMessage() {}
+
+func (x *ScoreDominionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreDominionRequest.ProtoReflect.Descriptor instead.
+func (*ScoreDominionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *ScoreDominionRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ScoreDominionRequest) GetVerifiedPropertiesCount() int32 {
+	if x != nil {
+		return x.VerifiedPropertiesCount
+	}
+	return 0
+}
+
+func (x *ScoreDominionRequest) GetTotalPortfolioValuation() float64 {
+	if x != nil {
+		return x.TotalPortfolioValuation
+	}
+	return 0
+}
+
+func (x *ScoreDominionRequest) GetUniqueRegionsCount() int32 {
+	if x != nil {
+		return x.UniqueRegionsCount
+	}
+	return 0
+}
+
+func (x *ScoreDominionRequest) GetCurrentDominionRank() float64 {
+	if x != nil {
+		return x.CurrentDominionRank
+	}
+	return 0
+}
+
+type ScoreDominionResponse struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	NewDominionRank float64                `protobuf:"fixed64,1,opt,name=new_dominion_rank,json=newDominionRank,proto3" json:"new_dominion_rank,omitempty"` // 1-100 normalized
+	DominionDelta   float64                `protobuf:"fixed64,2,opt,name=dominion_delta,json=dominionDelta,proto3" json:"dominion_delta,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ScoreDominionResponse) Reset() {
+	*x = ScoreDominionResponse{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreDominionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreDominionResponse) ProtoMessage() {}
+
+func (x *ScoreDominionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreDominionResponse.ProtoReflect.Descriptor instead.
+func (*ScoreDominionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *ScoreDominionResponse) GetNewDominionRank() float64 {
+	if x != nil {
+		return x.NewDominionRank
+	}
+	return 0
+}
+
+func (x *ScoreDominionResponse) GetDominionDelta() float64 {
+	if x != nil {
+		return x.DominionDelta
+	}
+	return 0
+}
+
 var File_sttattus_scoring_v1_scoring_proto protoreflect.FileDescriptor
 
 const file_sttattus_scoring_v1_scoring_proto_rawDesc = "" +
@@ -871,19 +1912,25 @@ const file_sttattus_scoring_v1_scoring_proto_rawDesc = "" +
 	"\x15current_lexical_depth\x18\x06 \x01(\x05R\x13currentLexicalDepth\"w\n" +
 	"\x1cScoreLexicalProgressResponse\x12'\n" +
 	"\x0feloquence_delta\x18\x01 \x01(\x05R\x0eeloquenceDelta\x12.\n" +
-	"\x13lexical_depth_delta\x18\x02 \x01(\x05R\x11lexicalDepthDelta\"\xa7\x04\n" +
+	"\x13lexical_depth_delta\x18\x02 \x01(\x05R\x11lexicalDepthDelta\"\xab\x06\n" +
 	"\x11ScoreMatchRequest\x12$\n" +
 	"\x0eswiper_user_id\x18\x01 \x01(\tR\fswiperUserId\x12$\n" +
-	"\x0etarget_user_id\x18\x02 \x01(\tR\ftargetUserId\x128\n" +
-	"\x18swiper_intellectual_pace\x18\x03 \x01(\x05R\x16swiperIntellectualPace\x12@\n" +
-	"\x1cswiper_emotional_granularity\x18\x04 \x01(\x05R\x1aswiperEmotionalGranularity\x122\n" +
-	"\x15swiper_physical_drive\x18\x05 \x01(\x05R\x13swiperPhysicalDrive\x122\n" +
-	"\x15swiper_social_battery\x18\x06 \x01(\x05R\x13swiperSocialBattery\x128\n" +
-	"\x18target_intellectual_pace\x18\a \x01(\x05R\x16targetIntellectualPace\x12@\n" +
-	"\x1ctarget_emotional_granularity\x18\b \x01(\x05R\x1atargetEmotionalGranularity\x122\n" +
-	"\x15target_physical_drive\x18\t \x01(\x05R\x13targetPhysicalDrive\x122\n" +
-	"\x15target_social_battery\x18\n" +
-	" \x01(\x05R\x13targetSocialBattery\"e\n" +
+	"\x0etarget_user_id\x18\x02 \x01(\tR\ftargetUserId\x12*\n" +
+	"\x11swiper_vault_rank\x18\x03 \x01(\x01R\x0fswiperVaultRank\x12(\n" +
+	"\x10swiper_apex_rank\x18\x04 \x01(\x01R\x0eswiperApexRank\x12*\n" +
+	"\x11swiper_forge_rank\x18\x05 \x01(\x01R\x0fswiperForgeRank\x128\n" +
+	"\x18swiper_intellectual_pace\x18\x06 \x01(\x05R\x16swiperIntellectualPace\x12@\n" +
+	"\x1cswiper_emotional_granularity\x18\a \x01(\x05R\x1aswiperEmotionalGranularity\x122\n" +
+	"\x15swiper_physical_drive\x18\b \x01(\x05R\x13swiperPhysicalDrive\x122\n" +
+	"\x15swiper_social_battery\x18\t \x01(\x05R\x13swiperSocialBattery\x12*\n" +
+	"\x11target_vault_rank\x18\n" +
+	" \x01(\x01R\x0ftargetVaultRank\x12(\n" +
+	"\x10target_apex_rank\x18\v \x01(\x01R\x0etargetApexRank\x12*\n" +
+	"\x11target_forge_rank\x18\f \x01(\x01R\x0ftargetForgeRank\x128\n" +
+	"\x18target_intellectual_pace\x18\r \x01(\x05R\x16targetIntellectualPace\x12@\n" +
+	"\x1ctarget_emotional_granularity\x18\x0e \x01(\x05R\x1atargetEmotionalGranularity\x122\n" +
+	"\x15target_physical_drive\x18\x0f \x01(\x05R\x13targetPhysicalDrive\x122\n" +
+	"\x15target_social_battery\x18\x10 \x01(\x05R\x13targetSocialBattery\"e\n" +
 	"\x12ScoreMatchResponse\x12$\n" +
 	"\rcompatibility\x18\x01 \x01(\x01R\rcompatibility\x12)\n" +
 	"\x10tension_baseline\x18\x02 \x01(\x01R\x0ftensionBaseline\"\x99\x04\n" +
@@ -911,10 +1958,102 @@ const file_sttattus_scoring_v1_scoring_proto_rawDesc = "" +
 	"decay_rate\x18\x02 \x01(\x01R\tdecayRate\x12#\n" +
 	"\rdays_inactive\x18\x03 \x01(\x05R\fdaysInactive\"9\n" +
 	"\x12ApplyDecayResponse\x12#\n" +
-	"\rdecayed_score\x18\x01 \x01(\x01R\fdecayedScore2\x92\x04\n" +
+	"\rdecayed_score\x18\x01 \x01(\x01R\fdecayedScore\"\x8e\x03\n" +
+	"\x11ScoreForgeRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12?\n" +
+	"\x06series\x18\x02 \x03(\v2'.sttattus.scoring.v1.WorkoutSeriesInputR\x06series\x12$\n" +
+	"\x0eavg_heart_rate\x18\x03 \x01(\x01R\favgHeartRate\x12$\n" +
+	"\x0emax_heart_rate\x18\x04 \x01(\x01R\fmaxHeartRate\x12,\n" +
+	"\x12active_energy_kcal\x18\x05 \x01(\x01R\x10activeEnergyKcal\x12'\n" +
+	"\x0frecovery_impact\x18\x06 \x01(\x01R\x0erecoveryImpact\x12\x1f\n" +
+	"\vis_verified\x18\a \x01(\bR\n" +
+	"isVerified\x12-\n" +
+	"\x12current_experience\x18\b \x01(\x03R\x11currentExperience\x12,\n" +
+	"\x12current_forge_rank\x18\t \x01(\x01R\x10currentForgeRank\"\xca\x01\n" +
+	"\x12ScoreForgeResponse\x12)\n" +
+	"\x10experience_delta\x18\x01 \x01(\x03R\x0fexperienceDelta\x12$\n" +
+	"\x0enew_forge_rank\x18\x02 \x01(\x01R\fnewForgeRank\x12\x1f\n" +
+	"\vpower_delta\x18\x03 \x01(\x05R\n" +
+	"powerDelta\x12#\n" +
+	"\ragility_delta\x18\x04 \x01(\x05R\fagilityDelta\x12\x1d\n" +
+	"\n" +
+	"grit_delta\x18\x05 \x01(\x05R\tgritDelta\"\x82\x02\n" +
+	"\x1cScoreCognitiveMasteryRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vscenario_id\x18\x02 \x01(\tR\n" +
+	"scenarioId\x12(\n" +
+	"\x10response_time_ms\x18\x03 \x01(\x05R\x0eresponseTimeMs\x12\x1f\n" +
+	"\vwas_optimal\x18\x04 \x01(\bR\n" +
+	"wasOptimal\x120\n" +
+	"\x14session_duration_sec\x18\x05 \x01(\x05R\x12sessionDurationSec\x12+\n" +
+	"\x11current_eloquence\x18\x06 \x01(\x01R\x10currentEloquence\"\xa4\x01\n" +
+	"\x1dScoreCognitiveMasteryResponse\x120\n" +
+	"\x14cognitive_load_index\x18\x01 \x01(\x05R\x12cognitiveLoadIndex\x12(\n" +
+	"\x10next_review_days\x18\x02 \x01(\x05R\x0enextReviewDays\x12'\n" +
+	"\x0feloquence_delta\x18\x03 \x01(\x01R\x0eeloquenceDelta\"\xe2\x01\n" +
+	"\x11ScoreNomadRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12+\n" +
+	"\x11countries_visited\x18\x02 \x01(\x05R\x10countriesVisited\x12+\n" +
+	"\x11verified_checkins\x18\x03 \x01(\x05R\x10verifiedCheckins\x12,\n" +
+	"\x12elite_hubs_visited\x18\x04 \x01(\x05R\x10eliteHubsVisited\x12,\n" +
+	"\x12current_nomad_rank\x18\x05 \x01(\x01R\x10currentNomadRank\"g\n" +
+	"\x12ScoreNomadResponse\x12$\n" +
+	"\x0enew_nomad_rank\x18\x01 \x01(\x01R\fnewNomadRank\x12+\n" +
+	"\x11exploration_delta\x18\x02 \x01(\x05R\x10explorationDelta\"\xa8\x02\n" +
+	"\x12ScoreOracleRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12-\n" +
+	"\x12average_complexity\x18\x02 \x01(\x01R\x11averageComplexity\x12+\n" +
+	"\x11average_synthesis\x18\x03 \x01(\x01R\x10averageSynthesis\x12+\n" +
+	"\x11average_foresight\x18\x04 \x01(\x01R\x10averageForesight\x124\n" +
+	"\x16unique_domains_visited\x18\x05 \x01(\x05R\x14uniqueDomainsVisited\x12:\n" +
+	"\x19current_intellectual_rank\x18\x06 \x01(\x01R\x17currentIntellectualRank\"j\n" +
+	"\x13ScoreOracleResponse\x122\n" +
+	"\x15new_intellectual_rank\x18\x01 \x01(\x01R\x13newIntellectualRank\x12\x1f\n" +
+	"\vclout_delta\x18\x02 \x01(\x01R\n" +
+	"cloutDelta\"\x9c\x02\n" +
+	"\x12ScoreZenithRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x122\n" +
+	"\x15session_duration_mins\x18\x02 \x01(\x05R\x13sessionDurationMins\x12\x1f\n" +
+	"\vfocus_score\x18\x03 \x01(\x01R\n" +
+	"focusScore\x12\x1f\n" +
+	"\vis_verified\x18\x04 \x01(\bR\n" +
+	"isVerified\x12$\n" +
+	"\x0eavg_heart_rate\x18\x05 \x01(\x01R\favgHeartRate\x12\x1b\n" +
+	"\thrv_delta\x18\x06 \x01(\x01R\bhrvDelta\x124\n" +
+	"\x16current_fortitude_rank\x18\a \x01(\x01R\x14currentFortitudeRank\"s\n" +
+	"\x13ScoreZenithResponse\x12,\n" +
+	"\x12new_fortitude_rank\x18\x01 \x01(\x01R\x10newFortitudeRank\x12.\n" +
+	"\x13focus_minutes_delta\x18\x02 \x01(\x05R\x11focusMinutesDelta\"\xf8\x01\n" +
+	"\x12ScoreLegacyRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x122\n" +
+	"\x15verified_assets_count\x18\x02 \x01(\x05R\x13verifiedAssetsCount\x12,\n" +
+	"\x12total_ip_valuation\x18\x03 \x01(\x01R\x10totalIpValuation\x121\n" +
+	"\x14unique_jurisdictions\x18\x04 \x01(\x05R\x13uniqueJurisdictions\x124\n" +
+	"\x16current_influence_rank\x18\x05 \x01(\x01R\x14currentInfluenceRank\"l\n" +
+	"\x13ScoreLegacyResponse\x12,\n" +
+	"\x12new_influence_rank\x18\x01 \x01(\x01R\x10newInfluenceRank\x12'\n" +
+	"\x0finfluence_delta\x18\x02 \x01(\x01R\x0einfluenceDelta\"\x8d\x02\n" +
+	"\x14ScoreDominionRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12:\n" +
+	"\x19verified_properties_count\x18\x02 \x01(\x05R\x17verifiedPropertiesCount\x12:\n" +
+	"\x19total_portfolio_valuation\x18\x03 \x01(\x01R\x17totalPortfolioValuation\x120\n" +
+	"\x14unique_regions_count\x18\x04 \x01(\x05R\x12uniqueRegionsCount\x122\n" +
+	"\x15current_dominion_rank\x18\x05 \x01(\x01R\x13currentDominionRank\"j\n" +
+	"\x15ScoreDominionResponse\x12*\n" +
+	"\x11new_dominion_rank\x18\x01 \x01(\x01R\x0fnewDominionRank\x12%\n" +
+	"\x0edominion_delta\x18\x02 \x01(\x01R\rdominionDelta2\xde\t\n" +
 	"\x0eScoringService\x12c\n" +
-	"\fScoreWorkout\x12(.sttattus.scoring.v1.ScoreWorkoutRequest\x1a).sttattus.scoring.v1.ScoreWorkoutResponse\x12{\n" +
-	"\x14ScoreLexicalProgress\x120.sttattus.scoring.v1.ScoreLexicalProgressRequest\x1a1.sttattus.scoring.v1.ScoreLexicalProgressResponse\x12]\n" +
+	"\fScoreWorkout\x12(.sttattus.scoring.v1.ScoreWorkoutRequest\x1a).sttattus.scoring.v1.ScoreWorkoutResponse\x12]\n" +
+	"\n" +
+	"ScoreForge\x12&.sttattus.scoring.v1.ScoreForgeRequest\x1a'.sttattus.scoring.v1.ScoreForgeResponse\x12{\n" +
+	"\x14ScoreLexicalProgress\x120.sttattus.scoring.v1.ScoreLexicalProgressRequest\x1a1.sttattus.scoring.v1.ScoreLexicalProgressResponse\x12~\n" +
+	"\x15ScoreCognitiveMastery\x121.sttattus.scoring.v1.ScoreCognitiveMasteryRequest\x1a2.sttattus.scoring.v1.ScoreCognitiveMasteryResponse\x12]\n" +
+	"\n" +
+	"ScoreNomad\x12&.sttattus.scoring.v1.ScoreNomadRequest\x1a'.sttattus.scoring.v1.ScoreNomadResponse\x12`\n" +
+	"\vScoreOracle\x12'.sttattus.scoring.v1.ScoreOracleRequest\x1a(.sttattus.scoring.v1.ScoreOracleResponse\x12`\n" +
+	"\vScoreZenith\x12'.sttattus.scoring.v1.ScoreZenithRequest\x1a(.sttattus.scoring.v1.ScoreZenithResponse\x12`\n" +
+	"\vScoreLegacy\x12'.sttattus.scoring.v1.ScoreLegacyRequest\x1a(.sttattus.scoring.v1.ScoreLegacyResponse\x12f\n" +
+	"\rScoreDominion\x12).sttattus.scoring.v1.ScoreDominionRequest\x1a*.sttattus.scoring.v1.ScoreDominionResponse\x12]\n" +
 	"\n" +
 	"ScoreMatch\x12&.sttattus.scoring.v1.ScoreMatchRequest\x1a'.sttattus.scoring.v1.ScoreMatchResponse\x12`\n" +
 	"\vScoreEmpire\x12'.sttattus.scoring.v1.ScoreEmpireRequest\x1a(.sttattus.scoring.v1.ScoreEmpireResponse\x12]\n" +
@@ -933,37 +2072,66 @@ func file_sttattus_scoring_v1_scoring_proto_rawDescGZIP() []byte {
 	return file_sttattus_scoring_v1_scoring_proto_rawDescData
 }
 
-var file_sttattus_scoring_v1_scoring_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_sttattus_scoring_v1_scoring_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
 var file_sttattus_scoring_v1_scoring_proto_goTypes = []any{
-	(*WorkoutSeriesInput)(nil),           // 0: sttattus.scoring.v1.WorkoutSeriesInput
-	(*ScoreWorkoutRequest)(nil),          // 1: sttattus.scoring.v1.ScoreWorkoutRequest
-	(*ScoreWorkoutResponse)(nil),         // 2: sttattus.scoring.v1.ScoreWorkoutResponse
-	(*ScoreLexicalProgressRequest)(nil),  // 3: sttattus.scoring.v1.ScoreLexicalProgressRequest
-	(*ScoreLexicalProgressResponse)(nil), // 4: sttattus.scoring.v1.ScoreLexicalProgressResponse
-	(*ScoreMatchRequest)(nil),            // 5: sttattus.scoring.v1.ScoreMatchRequest
-	(*ScoreMatchResponse)(nil),           // 6: sttattus.scoring.v1.ScoreMatchResponse
-	(*ScoreEmpireRequest)(nil),           // 7: sttattus.scoring.v1.ScoreEmpireRequest
-	(*ScoreEmpireResponse)(nil),          // 8: sttattus.scoring.v1.ScoreEmpireResponse
-	(*ApplyDecayRequest)(nil),            // 9: sttattus.scoring.v1.ApplyDecayRequest
-	(*ApplyDecayResponse)(nil),           // 10: sttattus.scoring.v1.ApplyDecayResponse
+	(*WorkoutSeriesInput)(nil),            // 0: sttattus.scoring.v1.WorkoutSeriesInput
+	(*ScoreWorkoutRequest)(nil),           // 1: sttattus.scoring.v1.ScoreWorkoutRequest
+	(*ScoreWorkoutResponse)(nil),          // 2: sttattus.scoring.v1.ScoreWorkoutResponse
+	(*ScoreLexicalProgressRequest)(nil),   // 3: sttattus.scoring.v1.ScoreLexicalProgressRequest
+	(*ScoreLexicalProgressResponse)(nil),  // 4: sttattus.scoring.v1.ScoreLexicalProgressResponse
+	(*ScoreMatchRequest)(nil),             // 5: sttattus.scoring.v1.ScoreMatchRequest
+	(*ScoreMatchResponse)(nil),            // 6: sttattus.scoring.v1.ScoreMatchResponse
+	(*ScoreEmpireRequest)(nil),            // 7: sttattus.scoring.v1.ScoreEmpireRequest
+	(*ScoreEmpireResponse)(nil),           // 8: sttattus.scoring.v1.ScoreEmpireResponse
+	(*ApplyDecayRequest)(nil),             // 9: sttattus.scoring.v1.ApplyDecayRequest
+	(*ApplyDecayResponse)(nil),            // 10: sttattus.scoring.v1.ApplyDecayResponse
+	(*ScoreForgeRequest)(nil),             // 11: sttattus.scoring.v1.ScoreForgeRequest
+	(*ScoreForgeResponse)(nil),            // 12: sttattus.scoring.v1.ScoreForgeResponse
+	(*ScoreCognitiveMasteryRequest)(nil),  // 13: sttattus.scoring.v1.ScoreCognitiveMasteryRequest
+	(*ScoreCognitiveMasteryResponse)(nil), // 14: sttattus.scoring.v1.ScoreCognitiveMasteryResponse
+	(*ScoreNomadRequest)(nil),             // 15: sttattus.scoring.v1.ScoreNomadRequest
+	(*ScoreNomadResponse)(nil),            // 16: sttattus.scoring.v1.ScoreNomadResponse
+	(*ScoreOracleRequest)(nil),            // 17: sttattus.scoring.v1.ScoreOracleRequest
+	(*ScoreOracleResponse)(nil),           // 18: sttattus.scoring.v1.ScoreOracleResponse
+	(*ScoreZenithRequest)(nil),            // 19: sttattus.scoring.v1.ScoreZenithRequest
+	(*ScoreZenithResponse)(nil),           // 20: sttattus.scoring.v1.ScoreZenithResponse
+	(*ScoreLegacyRequest)(nil),            // 21: sttattus.scoring.v1.ScoreLegacyRequest
+	(*ScoreLegacyResponse)(nil),           // 22: sttattus.scoring.v1.ScoreLegacyResponse
+	(*ScoreDominionRequest)(nil),          // 23: sttattus.scoring.v1.ScoreDominionRequest
+	(*ScoreDominionResponse)(nil),         // 24: sttattus.scoring.v1.ScoreDominionResponse
 }
 var file_sttattus_scoring_v1_scoring_proto_depIdxs = []int32{
 	0,  // 0: sttattus.scoring.v1.ScoreWorkoutRequest.series:type_name -> sttattus.scoring.v1.WorkoutSeriesInput
-	1,  // 1: sttattus.scoring.v1.ScoringService.ScoreWorkout:input_type -> sttattus.scoring.v1.ScoreWorkoutRequest
-	3,  // 2: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:input_type -> sttattus.scoring.v1.ScoreLexicalProgressRequest
-	5,  // 3: sttattus.scoring.v1.ScoringService.ScoreMatch:input_type -> sttattus.scoring.v1.ScoreMatchRequest
-	7,  // 4: sttattus.scoring.v1.ScoringService.ScoreEmpire:input_type -> sttattus.scoring.v1.ScoreEmpireRequest
-	9,  // 5: sttattus.scoring.v1.ScoringService.ApplyDecay:input_type -> sttattus.scoring.v1.ApplyDecayRequest
-	2,  // 6: sttattus.scoring.v1.ScoringService.ScoreWorkout:output_type -> sttattus.scoring.v1.ScoreWorkoutResponse
-	4,  // 7: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:output_type -> sttattus.scoring.v1.ScoreLexicalProgressResponse
-	6,  // 8: sttattus.scoring.v1.ScoringService.ScoreMatch:output_type -> sttattus.scoring.v1.ScoreMatchResponse
-	8,  // 9: sttattus.scoring.v1.ScoringService.ScoreEmpire:output_type -> sttattus.scoring.v1.ScoreEmpireResponse
-	10, // 10: sttattus.scoring.v1.ScoringService.ApplyDecay:output_type -> sttattus.scoring.v1.ApplyDecayResponse
-	6,  // [6:11] is the sub-list for method output_type
-	1,  // [1:6] is the sub-list for method input_type
-	1,  // [1:1] is the sub-list for extension type_name
-	1,  // [1:1] is the sub-list for extension extendee
-	0,  // [0:1] is the sub-list for field type_name
+	0,  // 1: sttattus.scoring.v1.ScoreForgeRequest.series:type_name -> sttattus.scoring.v1.WorkoutSeriesInput
+	1,  // 2: sttattus.scoring.v1.ScoringService.ScoreWorkout:input_type -> sttattus.scoring.v1.ScoreWorkoutRequest
+	11, // 3: sttattus.scoring.v1.ScoringService.ScoreForge:input_type -> sttattus.scoring.v1.ScoreForgeRequest
+	3,  // 4: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:input_type -> sttattus.scoring.v1.ScoreLexicalProgressRequest
+	13, // 5: sttattus.scoring.v1.ScoringService.ScoreCognitiveMastery:input_type -> sttattus.scoring.v1.ScoreCognitiveMasteryRequest
+	15, // 6: sttattus.scoring.v1.ScoringService.ScoreNomad:input_type -> sttattus.scoring.v1.ScoreNomadRequest
+	17, // 7: sttattus.scoring.v1.ScoringService.ScoreOracle:input_type -> sttattus.scoring.v1.ScoreOracleRequest
+	19, // 8: sttattus.scoring.v1.ScoringService.ScoreZenith:input_type -> sttattus.scoring.v1.ScoreZenithRequest
+	21, // 9: sttattus.scoring.v1.ScoringService.ScoreLegacy:input_type -> sttattus.scoring.v1.ScoreLegacyRequest
+	23, // 10: sttattus.scoring.v1.ScoringService.ScoreDominion:input_type -> sttattus.scoring.v1.ScoreDominionRequest
+	5,  // 11: sttattus.scoring.v1.ScoringService.ScoreMatch:input_type -> sttattus.scoring.v1.ScoreMatchRequest
+	7,  // 12: sttattus.scoring.v1.ScoringService.ScoreEmpire:input_type -> sttattus.scoring.v1.ScoreEmpireRequest
+	9,  // 13: sttattus.scoring.v1.ScoringService.ApplyDecay:input_type -> sttattus.scoring.v1.ApplyDecayRequest
+	2,  // 14: sttattus.scoring.v1.ScoringService.ScoreWorkout:output_type -> sttattus.scoring.v1.ScoreWorkoutResponse
+	12, // 15: sttattus.scoring.v1.ScoringService.ScoreForge:output_type -> sttattus.scoring.v1.ScoreForgeResponse
+	4,  // 16: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:output_type -> sttattus.scoring.v1.ScoreLexicalProgressResponse
+	14, // 17: sttattus.scoring.v1.ScoringService.ScoreCognitiveMastery:output_type -> sttattus.scoring.v1.ScoreCognitiveMasteryResponse
+	16, // 18: sttattus.scoring.v1.ScoringService.ScoreNomad:output_type -> sttattus.scoring.v1.ScoreNomadResponse
+	18, // 19: sttattus.scoring.v1.ScoringService.ScoreOracle:output_type -> sttattus.scoring.v1.ScoreOracleResponse
+	20, // 20: sttattus.scoring.v1.ScoringService.ScoreZenith:output_type -> sttattus.scoring.v1.ScoreZenithResponse
+	22, // 21: sttattus.scoring.v1.ScoringService.ScoreLegacy:output_type -> sttattus.scoring.v1.ScoreLegacyResponse
+	24, // 22: sttattus.scoring.v1.ScoringService.ScoreDominion:output_type -> sttattus.scoring.v1.ScoreDominionResponse
+	6,  // 23: sttattus.scoring.v1.ScoringService.ScoreMatch:output_type -> sttattus.scoring.v1.ScoreMatchResponse
+	8,  // 24: sttattus.scoring.v1.ScoringService.ScoreEmpire:output_type -> sttattus.scoring.v1.ScoreEmpireResponse
+	10, // 25: sttattus.scoring.v1.ScoringService.ApplyDecay:output_type -> sttattus.scoring.v1.ApplyDecayResponse
+	14, // [14:26] is the sub-list for method output_type
+	2,  // [2:14] is the sub-list for method input_type
+	2,  // [2:2] is the sub-list for extension type_name
+	2,  // [2:2] is the sub-list for extension extendee
+	0,  // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_scoring_v1_scoring_proto_init() }
@@ -977,7 +2145,7 @@ func file_sttattus_scoring_v1_scoring_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_scoring_v1_scoring_proto_rawDesc), len(file_sttattus_scoring_v1_scoring_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   11,
+			NumMessages:   25,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

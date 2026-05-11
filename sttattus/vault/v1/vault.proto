@@ -2,13 +2,95 @@ syntax = "proto3";
 
 package sttattus.vault.v1;
 
+import "google/protobuf/timestamp.proto";
+
 option go_package = "github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1";
 
+// AssetCategory defines the broad classification of wealth.
+enum AssetCategory {
+  ASSET_CATEGORY_UNSPECIFIED = 0;
+  ASSET_CATEGORY_FIAT = 1;         // Cash, Bank Accounts
+  ASSET_CATEGORY_CRYPTO = 2;       // BTC, ETH, Tokens
+  ASSET_CATEGORY_RARE_ASSET = 3;   // Watches, Cars, Art (The Concierge)
+  ASSET_CATEGORY_METAL = 4;        // Gold, Silver
+}
+
+// VerificationStatus tracks the manual verification lifecycle for Rare Assets.
+enum VerificationStatus {
+  VERIFICATION_STATUS_UNSPECIFIED = 0;
+  VERIFICATION_STATUS_PENDING = 1;
+  VERIFICATION_STATUS_APPROVED = 2;
+  VERIFICATION_STATUS_REJECTED = 3;
+}
+
+// Asset represents a single item of wealth.
 message Asset {
   string id = 1;
   string name = 2;
-  string type = 3; // currency, crypto, metal, collectible
-  double value_usd = 4;
+  AssetCategory category = 3;
+  double valuation_usd = 4;
+  VerificationStatus status = 5;
+  string image_url = 6;           // For Rare Assets
+  google.protobuf.Timestamp last_updated = 7;
+  map<string, string> metadata = 8; // e.g., "serial_number": "123", "wallet_address": "0x..."
+}
+
+// Portfolio is the aggregated view of a user's wealth.
+message Portfolio {
+  string user_id = 1;
+  double total_net_worth_usd = 2;
+  repeated Asset assets = 3;
+  double vault_rank = 4;          // 1-100 calculated score
+  google.protobuf.Timestamp calculated_at = 5;
+}
+
+message SubmitAssetRequest {
+  string name = 1;
+  AssetCategory category = 2;
+  double estimated_value_usd = 3;
+  string image_url = 4;           // From shared_uploader
+  map<string, string> metadata = 5;
+}
+
+message SubmitAssetResponse {
+  Asset asset = 1;
+}
+
+message GetPortfolioRequest {}
+
+message GetPortfolioResponse {
+  Portfolio portfolio = 1;
+}
+
+message AdminVerifyAssetRequest {
+  string asset_id = 1;
+  VerificationStatus status = 2;
+  double final_valuation_usd = 3; // Admin can override/set official value
+  string admin_note = 4;
+}
+
+message AdminVerifyAssetResponse {
+  Asset asset = 1;
+}
+
+service VaultService {
+  // Client Methods
+  rpc SubmitAsset(SubmitAssetRequest) returns (SubmitAssetResponse);
+  rpc GetPortfolio(GetPortfolioRequest) returns (GetPortfolioResponse);
+
+  // Web3 Methods
+  rpc GetWalletChallenge(GetWalletChallengeRequest) returns (GetWalletChallengeResponse);
+  rpc LinkWallet(LinkWalletRequest) returns (LinkWalletResponse);
+
+  // Plaid Methods
+  rpc CreatePlaidLinkToken(CreatePlaidLinkTokenRequest) returns (CreatePlaidLinkTokenResponse);
+  rpc ExchangePlaidPublicToken(ExchangePlaidPublicTokenRequest) returns (ExchangePlaidPublicTokenResponse);
+
+  // Legacy Methods (Deprecated)
+  rpc SyncWealth(SyncWealthRequest) returns (SyncWealthResponse);
+
+  // Admin Methods (Gated by Admin Middleware)
+  rpc AdminVerifyAsset(AdminVerifyAssetRequest) returns (AdminVerifyAssetResponse);
 }
 
 message SyncWealthRequest {
@@ -21,6 +103,35 @@ message SyncWealthResponse {
   double global_percentile = 2;
 }
 
-service VaultService {
-  rpc SyncWealth(SyncWealthRequest) returns (SyncWealthResponse);
+message GetWalletChallengeRequest {
+  string address = 1;
+}
+
+message GetWalletChallengeResponse {
+  string challenge = 1; // Unique nonce to be signed
+}
+
+message LinkWalletRequest {
+  string address = 1;
+  string signature = 2; // Signed challenge
+  string chain = 3;     // e.g., "ethereum", "solana"
+}
+
+message LinkWalletResponse {
+  bool success = 1;
+  Asset asset = 2; // Returns the newly created "Crypto" asset representation
+}
+
+message CreatePlaidLinkTokenRequest {}
+
+message CreatePlaidLinkTokenResponse {
+  string link_token = 1;
+}
+
+message ExchangePlaidPublicTokenRequest {
+  string public_token = 1;
+}
+
+message ExchangePlaidPublicTokenResponse {
+  bool success = 1;
 }

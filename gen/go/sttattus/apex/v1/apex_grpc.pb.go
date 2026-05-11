@@ -19,14 +19,23 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ApexService_SyncVitals_FullMethodName = "/sttattus.apex.v1.ApexService/SyncVitals"
+	ApexService_SyncVitals_FullMethodName      = "/sttattus.apex.v1.ApexService/SyncVitals"
+	ApexService_SubmitLabReport_FullMethodName = "/sttattus.apex.v1.ApexService/SubmitLabReport"
+	ApexService_ListLabReports_FullMethodName  = "/sttattus.apex.v1.ApexService/ListLabReports"
+	ApexService_AdminVerifyLab_FullMethodName  = "/sttattus.apex.v1.ApexService/AdminVerifyLab"
 )
 
 // ApexServiceClient is the client API for ApexService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ApexServiceClient interface {
+	// Wearable/Manual Sync
 	SyncVitals(ctx context.Context, in *SyncVitalsRequest, opts ...grpc.CallOption) (*SyncVitalsResponse, error)
+	// The Lab: Clinical Data
+	SubmitLabReport(ctx context.Context, in *SubmitLabReportRequest, opts ...grpc.CallOption) (*SubmitLabReportResponse, error)
+	ListLabReports(ctx context.Context, in *ListLabReportsRequest, opts ...grpc.CallOption) (*ListLabReportsResponse, error)
+	// Admin Methods (Gated by Admin Middleware)
+	AdminVerifyLab(ctx context.Context, in *AdminVerifyLabRequest, opts ...grpc.CallOption) (*AdminVerifyLabResponse, error)
 }
 
 type apexServiceClient struct {
@@ -47,11 +56,47 @@ func (c *apexServiceClient) SyncVitals(ctx context.Context, in *SyncVitalsReques
 	return out, nil
 }
 
+func (c *apexServiceClient) SubmitLabReport(ctx context.Context, in *SubmitLabReportRequest, opts ...grpc.CallOption) (*SubmitLabReportResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitLabReportResponse)
+	err := c.cc.Invoke(ctx, ApexService_SubmitLabReport_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListLabReports(ctx context.Context, in *ListLabReportsRequest, opts ...grpc.CallOption) (*ListLabReportsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLabReportsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListLabReports_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) AdminVerifyLab(ctx context.Context, in *AdminVerifyLabRequest, opts ...grpc.CallOption) (*AdminVerifyLabResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminVerifyLabResponse)
+	err := c.cc.Invoke(ctx, ApexService_AdminVerifyLab_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ApexServiceServer is the server API for ApexService service.
 // All implementations must embed UnimplementedApexServiceServer
 // for forward compatibility.
 type ApexServiceServer interface {
+	// Wearable/Manual Sync
 	SyncVitals(context.Context, *SyncVitalsRequest) (*SyncVitalsResponse, error)
+	// The Lab: Clinical Data
+	SubmitLabReport(context.Context, *SubmitLabReportRequest) (*SubmitLabReportResponse, error)
+	ListLabReports(context.Context, *ListLabReportsRequest) (*ListLabReportsResponse, error)
+	// Admin Methods (Gated by Admin Middleware)
+	AdminVerifyLab(context.Context, *AdminVerifyLabRequest) (*AdminVerifyLabResponse, error)
 	mustEmbedUnimplementedApexServiceServer()
 }
 
@@ -64,6 +109,15 @@ type UnimplementedApexServiceServer struct{}
 
 func (UnimplementedApexServiceServer) SyncVitals(context.Context, *SyncVitalsRequest) (*SyncVitalsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SyncVitals not implemented")
+}
+func (UnimplementedApexServiceServer) SubmitLabReport(context.Context, *SubmitLabReportRequest) (*SubmitLabReportResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitLabReport not implemented")
+}
+func (UnimplementedApexServiceServer) ListLabReports(context.Context, *ListLabReportsRequest) (*ListLabReportsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLabReports not implemented")
+}
+func (UnimplementedApexServiceServer) AdminVerifyLab(context.Context, *AdminVerifyLabRequest) (*AdminVerifyLabResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminVerifyLab not implemented")
 }
 func (UnimplementedApexServiceServer) mustEmbedUnimplementedApexServiceServer() {}
 func (UnimplementedApexServiceServer) testEmbeddedByValue()                     {}
@@ -104,6 +158,60 @@ func _ApexService_SyncVitals_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ApexService_SubmitLabReport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitLabReportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).SubmitLabReport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_SubmitLabReport_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).SubmitLabReport(ctx, req.(*SubmitLabReportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListLabReports_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLabReportsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListLabReports(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListLabReports_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListLabReports(ctx, req.(*ListLabReportsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_AdminVerifyLab_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminVerifyLabRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).AdminVerifyLab(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_AdminVerifyLab_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).AdminVerifyLab(ctx, req.(*AdminVerifyLabRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ApexService_ServiceDesc is the grpc.ServiceDesc for ApexService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -114,6 +222,18 @@ var ApexService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SyncVitals",
 			Handler:    _ApexService_SyncVitals_Handler,
+		},
+		{
+			MethodName: "SubmitLabReport",
+			Handler:    _ApexService_SubmitLabReport_Handler,
+		},
+		{
+			MethodName: "ListLabReports",
+			Handler:    _ApexService_ListLabReports_Handler,
+		},
+		{
+			MethodName: "AdminVerifyLab",
+			Handler:    _ApexService_AdminVerifyLab_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { QueryRequest, QueryResponse } from "./oracle_pb.js";
+import { GetOracleStatsRequest, GetOracleStatsResponse, QueryRequest, QueryResponse } from "./oracle_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -13,12 +13,25 @@ export const OracleService = {
   typeName: "sttattus.oracle.v1.OracleService",
   methods: {
     /**
+     * Query handles strategic inquiry and rewards verified depth.
+     *
      * @generated from rpc sttattus.oracle.v1.OracleService.Query
      */
     query: {
       name: "Query",
       I: QueryRequest,
       O: QueryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Status
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetOracleStats
+     */
+    getOracleStats: {
+      name: "GetOracleStats",
+      I: GetOracleStatsRequest,
+      O: GetOracleStatsResponse,
       kind: MethodKind.Unary,
     },
   }

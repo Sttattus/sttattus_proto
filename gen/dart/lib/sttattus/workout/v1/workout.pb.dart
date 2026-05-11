@@ -271,6 +271,89 @@ class Series extends $pb.GeneratedMessage {
   void clearUnit() => $_clearField(4);
 }
 
+/// StrainMetrics captures physiological intensity from wearables.
+class StrainMetrics extends $pb.GeneratedMessage {
+  factory StrainMetrics({
+    $core.double? avgHeartRate,
+    $core.double? maxHeartRate,
+    $core.double? activeEnergyKcal,
+    $core.double? recoveryImpact,
+  }) {
+    final result = create();
+    if (avgHeartRate != null) result.avgHeartRate = avgHeartRate;
+    if (maxHeartRate != null) result.maxHeartRate = maxHeartRate;
+    if (activeEnergyKcal != null) result.activeEnergyKcal = activeEnergyKcal;
+    if (recoveryImpact != null) result.recoveryImpact = recoveryImpact;
+    return result;
+  }
+
+  StrainMetrics._();
+
+  factory StrainMetrics.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory StrainMetrics.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StrainMetrics', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'avgHeartRate', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'maxHeartRate', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'activeEnergyKcal', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'recoveryImpact', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StrainMetrics clone() => StrainMetrics()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StrainMetrics copyWith(void Function(StrainMetrics) updates) => super.copyWith((message) => updates(message as StrainMetrics)) as StrainMetrics;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StrainMetrics create() => StrainMetrics._();
+  @$core.override
+  StrainMetrics createEmptyInstance() => create();
+  static $pb.PbList<StrainMetrics> createRepeated() => $pb.PbList<StrainMetrics>();
+  @$core.pragma('dart2js:noInline')
+  static StrainMetrics getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StrainMetrics>(create);
+  static StrainMetrics? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get avgHeartRate => $_getN(0);
+  @$pb.TagNumber(1)
+  set avgHeartRate($core.double value) => $_setDouble(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAvgHeartRate() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAvgHeartRate() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get maxHeartRate => $_getN(1);
+  @$pb.TagNumber(2)
+  set maxHeartRate($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMaxHeartRate() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMaxHeartRate() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get activeEnergyKcal => $_getN(2);
+  @$pb.TagNumber(3)
+  set activeEnergyKcal($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasActiveEnergyKcal() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearActiveEnergyKcal() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get recoveryImpact => $_getN(3);
+  @$pb.TagNumber(4)
+  set recoveryImpact($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRecoveryImpact() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRecoveryImpact() => $_clearField(4);
+}
+
 class DayWorkout extends $pb.GeneratedMessage {
   factory DayWorkout({
     $core.String? id,
@@ -279,6 +362,8 @@ class DayWorkout extends $pb.GeneratedMessage {
     $fixnum.Int64? performedAt,
     $core.String? notes,
     $core.Iterable<Series>? series,
+    StrainMetrics? strain,
+    $core.bool? isVerified,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -287,6 +372,8 @@ class DayWorkout extends $pb.GeneratedMessage {
     if (performedAt != null) result.performedAt = performedAt;
     if (notes != null) result.notes = notes;
     if (series != null) result.series.addAll(series);
+    if (strain != null) result.strain = strain;
+    if (isVerified != null) result.isVerified = isVerified;
     return result;
   }
 
@@ -302,6 +389,8 @@ class DayWorkout extends $pb.GeneratedMessage {
     ..aInt64(4, _omitFieldNames ? '' : 'performedAt')
     ..aOS(5, _omitFieldNames ? '' : 'notes')
     ..pc<Series>(6, _omitFieldNames ? '' : 'series', $pb.PbFieldType.PM, subBuilder: Series.create)
+    ..aOM<StrainMetrics>(7, _omitFieldNames ? '' : 'strain', subBuilder: StrainMetrics.create)
+    ..aOB(8, _omitFieldNames ? '' : 'isVerified')
     ..hasRequiredFields = false
   ;
 
@@ -371,6 +460,26 @@ class DayWorkout extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $pb.PbList<Series> get series => $_getList(5);
+
+  @$pb.TagNumber(7)
+  StrainMetrics get strain => $_getN(6);
+  @$pb.TagNumber(7)
+  set strain(StrainMetrics value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasStrain() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStrain() => $_clearField(7);
+  @$pb.TagNumber(7)
+  StrainMetrics ensureStrain() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $core.bool get isVerified => $_getBF(7);
+  @$pb.TagNumber(8)
+  set isVerified($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasIsVerified() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIsVerified() => $_clearField(8);
 }
 
 class ForgeStats extends $pb.GeneratedMessage {
@@ -381,6 +490,7 @@ class ForgeStats extends $pb.GeneratedMessage {
     $core.int? grit,
     $fixnum.Int64? experience,
     $core.String? rank,
+    $core.double? forgeRank,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
@@ -389,6 +499,7 @@ class ForgeStats extends $pb.GeneratedMessage {
     if (grit != null) result.grit = grit;
     if (experience != null) result.experience = experience;
     if (rank != null) result.rank = rank;
+    if (forgeRank != null) result.forgeRank = forgeRank;
     return result;
   }
 
@@ -404,6 +515,7 @@ class ForgeStats extends $pb.GeneratedMessage {
     ..a<$core.int>(4, _omitFieldNames ? '' : 'grit', $pb.PbFieldType.O3)
     ..aInt64(5, _omitFieldNames ? '' : 'experience')
     ..aOS(6, _omitFieldNames ? '' : 'rank')
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'forgeRank', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -477,6 +589,15 @@ class ForgeStats extends $pb.GeneratedMessage {
   $core.bool hasRank() => $_has(5);
   @$pb.TagNumber(6)
   void clearRank() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get forgeRank => $_getN(6);
+  @$pb.TagNumber(7)
+  set forgeRank($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasForgeRank() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearForgeRank() => $_clearField(7);
 }
 
 /// ===== Workouts =====
@@ -701,12 +822,16 @@ class LogDayWorkoutRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? performedAt,
     $core.String? notes,
     $core.Iterable<Series>? series,
+    StrainMetrics? strain,
+    $core.bool? isVerified,
   }) {
     final result = create();
     if (workoutId != null) result.workoutId = workoutId;
     if (performedAt != null) result.performedAt = performedAt;
     if (notes != null) result.notes = notes;
     if (series != null) result.series.addAll(series);
+    if (strain != null) result.strain = strain;
+    if (isVerified != null) result.isVerified = isVerified;
     return result;
   }
 
@@ -720,6 +845,8 @@ class LogDayWorkoutRequest extends $pb.GeneratedMessage {
     ..aInt64(2, _omitFieldNames ? '' : 'performedAt')
     ..aOS(3, _omitFieldNames ? '' : 'notes')
     ..pc<Series>(4, _omitFieldNames ? '' : 'series', $pb.PbFieldType.PM, subBuilder: Series.create)
+    ..aOM<StrainMetrics>(5, _omitFieldNames ? '' : 'strain', subBuilder: StrainMetrics.create)
+    ..aOB(6, _omitFieldNames ? '' : 'isVerified')
     ..hasRequiredFields = false
   ;
 
@@ -769,6 +896,26 @@ class LogDayWorkoutRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(4)
   $pb.PbList<Series> get series => $_getList(3);
+
+  @$pb.TagNumber(5)
+  StrainMetrics get strain => $_getN(4);
+  @$pb.TagNumber(5)
+  set strain(StrainMetrics value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStrain() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStrain() => $_clearField(5);
+  @$pb.TagNumber(5)
+  StrainMetrics ensureStrain() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.bool get isVerified => $_getBF(5);
+  @$pb.TagNumber(6)
+  set isVerified($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasIsVerified() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearIsVerified() => $_clearField(6);
 }
 
 /// LogDayWorkoutResponse includes the *new* forge stats, so the client doesn't

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ApplyDecayRequest, ApplyDecayResponse, ScoreEmpireRequest, ScoreEmpireResponse, ScoreLexicalProgressRequest, ScoreLexicalProgressResponse, ScoreMatchRequest, ScoreMatchResponse, ScoreWorkoutRequest, ScoreWorkoutResponse } from "./scoring_pb.js";
+import { ApplyDecayRequest, ApplyDecayResponse, ScoreCognitiveMasteryRequest, ScoreCognitiveMasteryResponse, ScoreDominionRequest, ScoreDominionResponse, ScoreEmpireRequest, ScoreEmpireResponse, ScoreForgeRequest, ScoreForgeResponse, ScoreLegacyRequest, ScoreLegacyResponse, ScoreLexicalProgressRequest, ScoreLexicalProgressResponse, ScoreMatchRequest, ScoreMatchResponse, ScoreNomadRequest, ScoreNomadResponse, ScoreOracleRequest, ScoreOracleResponse, ScoreWorkoutRequest, ScoreWorkoutResponse, ScoreZenithRequest, ScoreZenithResponse } from "./scoring_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -22,12 +22,75 @@ export const ScoringService = {
       kind: MethodKind.Unary,
     },
     /**
+     * @generated from rpc sttattus.scoring.v1.ScoringService.ScoreForge
+     */
+    scoreForge: {
+      name: "ScoreForge",
+      I: ScoreForgeRequest,
+      O: ScoreForgeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * @generated from rpc sttattus.scoring.v1.ScoringService.ScoreLexicalProgress
      */
     scoreLexicalProgress: {
       name: "ScoreLexicalProgress",
       I: ScoreLexicalProgressRequest,
       O: ScoreLexicalProgressResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.scoring.v1.ScoringService.ScoreCognitiveMastery
+     */
+    scoreCognitiveMastery: {
+      name: "ScoreCognitiveMastery",
+      I: ScoreCognitiveMasteryRequest,
+      O: ScoreCognitiveMasteryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.scoring.v1.ScoringService.ScoreNomad
+     */
+    scoreNomad: {
+      name: "ScoreNomad",
+      I: ScoreNomadRequest,
+      O: ScoreNomadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.scoring.v1.ScoringService.ScoreOracle
+     */
+    scoreOracle: {
+      name: "ScoreOracle",
+      I: ScoreOracleRequest,
+      O: ScoreOracleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.scoring.v1.ScoringService.ScoreZenith
+     */
+    scoreZenith: {
+      name: "ScoreZenith",
+      I: ScoreZenithRequest,
+      O: ScoreZenithResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.scoring.v1.ScoringService.ScoreLegacy
+     */
+    scoreLegacy: {
+      name: "ScoreLegacy",
+      I: ScoreLegacyRequest,
+      O: ScoreLegacyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.scoring.v1.ScoringService.ScoreDominion
+     */
+    scoreDominion: {
+      name: "ScoreDominion",
+      I: ScoreDominionRequest,
+      O: ScoreDominionResponse,
       kind: MethodKind.Unary,
     },
     /**

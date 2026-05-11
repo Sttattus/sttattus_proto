@@ -12,54 +12,61 @@
 
 import 'dart:core' as $core;
 
-import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../common/v1/pagination.pb.dart' as $1;
+import '../../../google/protobuf/timestamp.pb.dart' as $1;
+import '../../common/v1/pagination.pb.dart' as $2;
+import 'languages.pbenum.dart';
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
-class Category extends $pb.GeneratedMessage {
-  factory Category({
+export 'languages.pbenum.dart';
+
+/// CulturalNuance represents a specific rule of social grace or etiquette.
+class CulturalNuance extends $pb.GeneratedMessage {
+  factory CulturalNuance({
     $core.String? id,
-    $core.String? labelJson,
-    $core.int? sortOrder,
+    $core.String? title,
+    $core.String? description,
+    $core.int? statusWeight,
   }) {
     final result = create();
     if (id != null) result.id = id;
-    if (labelJson != null) result.labelJson = labelJson;
-    if (sortOrder != null) result.sortOrder = sortOrder;
+    if (title != null) result.title = title;
+    if (description != null) result.description = description;
+    if (statusWeight != null) result.statusWeight = statusWeight;
     return result;
   }
 
-  Category._();
+  CulturalNuance._();
 
-  factory Category.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory Category.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CulturalNuance.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CulturalNuance.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Category', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CulturalNuance', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOS(2, _omitFieldNames ? '' : 'labelJson')
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'sortOrder', $pb.PbFieldType.O3)
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'statusWeight', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Category clone() => Category()..mergeFromMessage(this);
+  CulturalNuance clone() => CulturalNuance()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Category copyWith(void Function(Category) updates) => super.copyWith((message) => updates(message as Category)) as Category;
+  CulturalNuance copyWith(void Function(CulturalNuance) updates) => super.copyWith((message) => updates(message as CulturalNuance)) as CulturalNuance;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static Category create() => Category._();
+  static CulturalNuance create() => CulturalNuance._();
   @$core.override
-  Category createEmptyInstance() => create();
-  static $pb.PbList<Category> createRepeated() => $pb.PbList<Category>();
+  CulturalNuance createEmptyInstance() => create();
+  static $pb.PbList<CulturalNuance> createRepeated() => $pb.PbList<CulturalNuance>();
   @$core.pragma('dart2js:noInline')
-  static Category getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Category>(create);
-  static Category? _defaultInstance;
+  static CulturalNuance getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CulturalNuance>(create);
+  static CulturalNuance? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
@@ -71,114 +78,343 @@ class Category extends $pb.GeneratedMessage {
   void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get labelJson => $_getSZ(1);
+  $core.String get title => $_getSZ(1);
   @$pb.TagNumber(2)
-  set labelJson($core.String value) => $_setString(1, value);
+  set title($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
-  $core.bool hasLabelJson() => $_has(1);
+  $core.bool hasTitle() => $_has(1);
   @$pb.TagNumber(2)
-  void clearLabelJson() => $_clearField(2);
+  void clearTitle() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.int get sortOrder => $_getIZ(2);
+  $core.String get description => $_getSZ(2);
   @$pb.TagNumber(3)
-  set sortOrder($core.int value) => $_setSignedInt32(2, value);
+  set description($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
-  $core.bool hasSortOrder() => $_has(2);
+  $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSortOrder() => $_clearField(3);
-}
-
-class Word extends $pb.GeneratedMessage {
-  factory Word({
-    $core.String? id,
-    $core.String? categoryId,
-    $core.String? payloadJson,
-    $core.Iterable<$core.int>? levels,
-  }) {
-    final result = create();
-    if (id != null) result.id = id;
-    if (categoryId != null) result.categoryId = categoryId;
-    if (payloadJson != null) result.payloadJson = payloadJson;
-    if (levels != null) result.levels.addAll(levels);
-    return result;
-  }
-
-  Word._();
-
-  factory Word.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory Word.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Word', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOS(2, _omitFieldNames ? '' : 'categoryId')
-    ..aOS(3, _omitFieldNames ? '' : 'payloadJson')
-    ..p<$core.int>(4, _omitFieldNames ? '' : 'levels', $pb.PbFieldType.K3)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Word clone() => Word()..mergeFromMessage(this);
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Word copyWith(void Function(Word) updates) => super.copyWith((message) => updates(message as Word)) as Word;
-
-  @$core.override
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static Word create() => Word._();
-  @$core.override
-  Word createEmptyInstance() => create();
-  static $pb.PbList<Word> createRepeated() => $pb.PbList<Word>();
-  @$core.pragma('dart2js:noInline')
-  static Word getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Word>(create);
-  static Word? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get id => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set id($core.String value) => $_setString(0, value);
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => $_clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get categoryId => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set categoryId($core.String value) => $_setString(1, value);
-  @$pb.TagNumber(2)
-  $core.bool hasCategoryId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearCategoryId() => $_clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get payloadJson => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set payloadJson($core.String value) => $_setString(2, value);
-  @$pb.TagNumber(3)
-  $core.bool hasPayloadJson() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearPayloadJson() => $_clearField(3);
+  void clearDescription() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $pb.PbList<$core.int> get levels => $_getList(3);
+  $core.int get statusWeight => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set statusWeight($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatusWeight() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatusWeight() => $_clearField(4);
+}
+
+/// Scenario represents a "Social Blueprint" interaction.
+class Scenario extends $pb.GeneratedMessage {
+  factory Scenario({
+    $core.String? id,
+    $core.String? title,
+    $core.String? contextDescription,
+    CulturalCategory? category,
+    $core.String? locale,
+    $core.Iterable<DialogueNode>? nodes,
+    $core.double? minSttattusScore,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (title != null) result.title = title;
+    if (contextDescription != null) result.contextDescription = contextDescription;
+    if (category != null) result.category = category;
+    if (locale != null) result.locale = locale;
+    if (nodes != null) result.nodes.addAll(nodes);
+    if (minSttattusScore != null) result.minSttattusScore = minSttattusScore;
+    return result;
+  }
+
+  Scenario._();
+
+  factory Scenario.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Scenario.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Scenario', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'contextDescription')
+    ..e<CulturalCategory>(4, _omitFieldNames ? '' : 'category', $pb.PbFieldType.OE, defaultOrMaker: CulturalCategory.CULTURAL_CATEGORY_UNSPECIFIED, valueOf: CulturalCategory.valueOf, enumValues: CulturalCategory.values)
+    ..aOS(5, _omitFieldNames ? '' : 'locale')
+    ..pc<DialogueNode>(6, _omitFieldNames ? '' : 'nodes', $pb.PbFieldType.PM, subBuilder: DialogueNode.create)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'minSttattusScore', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Scenario clone() => Scenario()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Scenario copyWith(void Function(Scenario) updates) => super.copyWith((message) => updates(message as Scenario)) as Scenario;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Scenario create() => Scenario._();
+  @$core.override
+  Scenario createEmptyInstance() => create();
+  static $pb.PbList<Scenario> createRepeated() => $pb.PbList<Scenario>();
+  @$core.pragma('dart2js:noInline')
+  static Scenario getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Scenario>(create);
+  static Scenario? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get contextDescription => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set contextDescription($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContextDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContextDescription() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  CulturalCategory get category => $_getN(3);
+  @$pb.TagNumber(4)
+  set category(CulturalCategory value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCategory() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCategory() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get locale => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set locale($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLocale() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLocale() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<DialogueNode> get nodes => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.double get minSttattusScore => $_getN(6);
+  @$pb.TagNumber(7)
+  set minSttattusScore($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMinSttattusScore() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMinSttattusScore() => $_clearField(7);
+}
+
+/// DialogueNode is a single step in a social interaction script.
+class DialogueNode extends $pb.GeneratedMessage {
+  factory DialogueNode({
+    $core.String? id,
+    $core.String? speaker,
+    $core.String? content,
+    $core.String? literalTranslation,
+    $core.String? culturalInsight,
+    $core.Iterable<DialogueOption>? options,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (speaker != null) result.speaker = speaker;
+    if (content != null) result.content = content;
+    if (literalTranslation != null) result.literalTranslation = literalTranslation;
+    if (culturalInsight != null) result.culturalInsight = culturalInsight;
+    if (options != null) result.options.addAll(options);
+    return result;
+  }
+
+  DialogueNode._();
+
+  factory DialogueNode.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DialogueNode.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DialogueNode', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'speaker')
+    ..aOS(3, _omitFieldNames ? '' : 'content')
+    ..aOS(4, _omitFieldNames ? '' : 'literalTranslation')
+    ..aOS(5, _omitFieldNames ? '' : 'culturalInsight')
+    ..pc<DialogueOption>(6, _omitFieldNames ? '' : 'options', $pb.PbFieldType.PM, subBuilder: DialogueOption.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DialogueNode clone() => DialogueNode()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DialogueNode copyWith(void Function(DialogueNode) updates) => super.copyWith((message) => updates(message as DialogueNode)) as DialogueNode;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DialogueNode create() => DialogueNode._();
+  @$core.override
+  DialogueNode createEmptyInstance() => create();
+  static $pb.PbList<DialogueNode> createRepeated() => $pb.PbList<DialogueNode>();
+  @$core.pragma('dart2js:noInline')
+  static DialogueNode getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DialogueNode>(create);
+  static DialogueNode? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get speaker => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set speaker($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSpeaker() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSpeaker() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get content => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set content($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContent() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContent() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get literalTranslation => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set literalTranslation($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLiteralTranslation() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLiteralTranslation() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get culturalInsight => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set culturalInsight($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCulturalInsight() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCulturalInsight() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<DialogueOption> get options => $_getList(5);
+}
+
+class DialogueOption extends $pb.GeneratedMessage {
+  factory DialogueOption({
+    $core.String? id,
+    $core.String? content,
+    $core.bool? isOptimal,
+    $core.int? graceBonus,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (content != null) result.content = content;
+    if (isOptimal != null) result.isOptimal = isOptimal;
+    if (graceBonus != null) result.graceBonus = graceBonus;
+    return result;
+  }
+
+  DialogueOption._();
+
+  factory DialogueOption.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DialogueOption.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DialogueOption', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'content')
+    ..aOB(3, _omitFieldNames ? '' : 'isOptimal')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'graceBonus', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DialogueOption clone() => DialogueOption()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DialogueOption copyWith(void Function(DialogueOption) updates) => super.copyWith((message) => updates(message as DialogueOption)) as DialogueOption;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DialogueOption create() => DialogueOption._();
+  @$core.override
+  DialogueOption createEmptyInstance() => create();
+  static $pb.PbList<DialogueOption> createRepeated() => $pb.PbList<DialogueOption>();
+  @$core.pragma('dart2js:noInline')
+  static DialogueOption getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DialogueOption>(create);
+  static DialogueOption? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get content => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set content($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContent() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContent() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get isOptimal => $_getBF(2);
+  @$pb.TagNumber(3)
+  set isOptimal($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasIsOptimal() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIsOptimal() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get graceBonus => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set graceBonus($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGraceBonus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGraceBonus() => $_clearField(4);
 }
 
 class Progress extends $pb.GeneratedMessage {
   factory Progress({
     $core.String? userId,
-    $core.String? wordId,
-    $core.int? score,
-    $fixnum.Int64? lastReviewedAt,
-    $fixnum.Int64? masteredAt,
+    $core.String? scenarioId,
+    $core.int? masteryLevel,
+    $core.int? culturalCapitalGain,
+    $1.Timestamp? lastRefinedAt,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
-    if (wordId != null) result.wordId = wordId;
-    if (score != null) result.score = score;
-    if (lastReviewedAt != null) result.lastReviewedAt = lastReviewedAt;
-    if (masteredAt != null) result.masteredAt = masteredAt;
+    if (scenarioId != null) result.scenarioId = scenarioId;
+    if (masteryLevel != null) result.masteryLevel = masteryLevel;
+    if (culturalCapitalGain != null) result.culturalCapitalGain = culturalCapitalGain;
+    if (lastRefinedAt != null) result.lastRefinedAt = lastRefinedAt;
     return result;
   }
 
@@ -189,10 +425,10 @@ class Progress extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Progress', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..aOS(2, _omitFieldNames ? '' : 'wordId')
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'score', $pb.PbFieldType.O3)
-    ..aInt64(4, _omitFieldNames ? '' : 'lastReviewedAt')
-    ..aInt64(5, _omitFieldNames ? '' : 'masteredAt')
+    ..aOS(2, _omitFieldNames ? '' : 'scenarioId')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'masteryLevel', $pb.PbFieldType.O3)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'culturalCapitalGain', $pb.PbFieldType.O3)
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'lastRefinedAt', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -223,55 +459,57 @@ class Progress extends $pb.GeneratedMessage {
   void clearUserId() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get wordId => $_getSZ(1);
+  $core.String get scenarioId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set wordId($core.String value) => $_setString(1, value);
+  set scenarioId($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
-  $core.bool hasWordId() => $_has(1);
+  $core.bool hasScenarioId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearWordId() => $_clearField(2);
+  void clearScenarioId() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.int get score => $_getIZ(2);
+  $core.int get masteryLevel => $_getIZ(2);
   @$pb.TagNumber(3)
-  set score($core.int value) => $_setSignedInt32(2, value);
+  set masteryLevel($core.int value) => $_setSignedInt32(2, value);
   @$pb.TagNumber(3)
-  $core.bool hasScore() => $_has(2);
+  $core.bool hasMasteryLevel() => $_has(2);
   @$pb.TagNumber(3)
-  void clearScore() => $_clearField(3);
+  void clearMasteryLevel() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $fixnum.Int64 get lastReviewedAt => $_getI64(3);
+  $core.int get culturalCapitalGain => $_getIZ(3);
   @$pb.TagNumber(4)
-  set lastReviewedAt($fixnum.Int64 value) => $_setInt64(3, value);
+  set culturalCapitalGain($core.int value) => $_setSignedInt32(3, value);
   @$pb.TagNumber(4)
-  $core.bool hasLastReviewedAt() => $_has(3);
+  $core.bool hasCulturalCapitalGain() => $_has(3);
   @$pb.TagNumber(4)
-  void clearLastReviewedAt() => $_clearField(4);
+  void clearCulturalCapitalGain() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $fixnum.Int64 get masteredAt => $_getI64(4);
+  $1.Timestamp get lastRefinedAt => $_getN(4);
   @$pb.TagNumber(5)
-  set masteredAt($fixnum.Int64 value) => $_setInt64(4, value);
+  set lastRefinedAt($1.Timestamp value) => $_setField(5, value);
   @$pb.TagNumber(5)
-  $core.bool hasMasteredAt() => $_has(4);
+  $core.bool hasLastRefinedAt() => $_has(4);
   @$pb.TagNumber(5)
-  void clearMasteredAt() => $_clearField(5);
+  void clearLastRefinedAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureLastRefinedAt() => $_ensure(4);
 }
 
 class LinguistStats extends $pb.GeneratedMessage {
   factory LinguistStats({
     $core.String? userId,
     $core.int? eloquence,
-    $core.int? lexicalDepth,
-    $core.int? immersionDays,
+    $core.int? socialGrace,
+    $core.int? culturalCapital,
     $core.String? masteryRank,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
     if (eloquence != null) result.eloquence = eloquence;
-    if (lexicalDepth != null) result.lexicalDepth = lexicalDepth;
-    if (immersionDays != null) result.immersionDays = immersionDays;
+    if (socialGrace != null) result.socialGrace = socialGrace;
+    if (culturalCapital != null) result.culturalCapital = culturalCapital;
     if (masteryRank != null) result.masteryRank = masteryRank;
     return result;
   }
@@ -284,8 +522,8 @@ class LinguistStats extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LinguistStats', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
     ..a<$core.int>(2, _omitFieldNames ? '' : 'eloquence', $pb.PbFieldType.O3)
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'lexicalDepth', $pb.PbFieldType.O3)
-    ..a<$core.int>(4, _omitFieldNames ? '' : 'immersionDays', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'socialGrace', $pb.PbFieldType.O3)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'culturalCapital', $pb.PbFieldType.O3)
     ..aOS(5, _omitFieldNames ? '' : 'masteryRank')
     ..hasRequiredFields = false
   ;
@@ -326,22 +564,22 @@ class LinguistStats extends $pb.GeneratedMessage {
   void clearEloquence() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.int get lexicalDepth => $_getIZ(2);
+  $core.int get socialGrace => $_getIZ(2);
   @$pb.TagNumber(3)
-  set lexicalDepth($core.int value) => $_setSignedInt32(2, value);
+  set socialGrace($core.int value) => $_setSignedInt32(2, value);
   @$pb.TagNumber(3)
-  $core.bool hasLexicalDepth() => $_has(2);
+  $core.bool hasSocialGrace() => $_has(2);
   @$pb.TagNumber(3)
-  void clearLexicalDepth() => $_clearField(3);
+  void clearSocialGrace() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.int get immersionDays => $_getIZ(3);
+  $core.int get culturalCapital => $_getIZ(3);
   @$pb.TagNumber(4)
-  set immersionDays($core.int value) => $_setSignedInt32(3, value);
+  set culturalCapital($core.int value) => $_setSignedInt32(3, value);
   @$pb.TagNumber(4)
-  $core.bool hasImmersionDays() => $_has(3);
+  $core.bool hasCulturalCapital() => $_has(3);
   @$pb.TagNumber(4)
-  void clearImmersionDays() => $_clearField(4);
+  void clearCulturalCapital() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get masteryRank => $_getSZ(4);
@@ -353,313 +591,241 @@ class LinguistStats extends $pb.GeneratedMessage {
   void clearMasteryRank() => $_clearField(5);
 }
 
-class ListCategoriesRequest extends $pb.GeneratedMessage {
-  factory ListCategoriesRequest() => create();
-
-  ListCategoriesRequest._();
-
-  factory ListCategoriesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListCategoriesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCategoriesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListCategoriesRequest clone() => ListCategoriesRequest()..mergeFromMessage(this);
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListCategoriesRequest copyWith(void Function(ListCategoriesRequest) updates) => super.copyWith((message) => updates(message as ListCategoriesRequest)) as ListCategoriesRequest;
-
-  @$core.override
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static ListCategoriesRequest create() => ListCategoriesRequest._();
-  @$core.override
-  ListCategoriesRequest createEmptyInstance() => create();
-  static $pb.PbList<ListCategoriesRequest> createRepeated() => $pb.PbList<ListCategoriesRequest>();
-  @$core.pragma('dart2js:noInline')
-  static ListCategoriesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListCategoriesRequest>(create);
-  static ListCategoriesRequest? _defaultInstance;
-}
-
-class ListCategoriesResponse extends $pb.GeneratedMessage {
-  factory ListCategoriesResponse({
-    $core.Iterable<Category>? categories,
+/// REQ/RES
+class ListScenariosRequest extends $pb.GeneratedMessage {
+  factory ListScenariosRequest({
+    CulturalCategory? category,
+    $2.PageRequest? page,
   }) {
     final result = create();
-    if (categories != null) result.categories.addAll(categories);
-    return result;
-  }
-
-  ListCategoriesResponse._();
-
-  factory ListCategoriesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListCategoriesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCategoriesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
-    ..pc<Category>(1, _omitFieldNames ? '' : 'categories', $pb.PbFieldType.PM, subBuilder: Category.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListCategoriesResponse clone() => ListCategoriesResponse()..mergeFromMessage(this);
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListCategoriesResponse copyWith(void Function(ListCategoriesResponse) updates) => super.copyWith((message) => updates(message as ListCategoriesResponse)) as ListCategoriesResponse;
-
-  @$core.override
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static ListCategoriesResponse create() => ListCategoriesResponse._();
-  @$core.override
-  ListCategoriesResponse createEmptyInstance() => create();
-  static $pb.PbList<ListCategoriesResponse> createRepeated() => $pb.PbList<ListCategoriesResponse>();
-  @$core.pragma('dart2js:noInline')
-  static ListCategoriesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListCategoriesResponse>(create);
-  static ListCategoriesResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $pb.PbList<Category> get categories => $_getList(0);
-}
-
-class ListWordsRequest extends $pb.GeneratedMessage {
-  factory ListWordsRequest({
-    $core.String? categoryId,
-    $core.int? level,
-    $1.PageRequest? page,
-  }) {
-    final result = create();
-    if (categoryId != null) result.categoryId = categoryId;
-    if (level != null) result.level = level;
+    if (category != null) result.category = category;
     if (page != null) result.page = page;
     return result;
   }
 
-  ListWordsRequest._();
+  ListScenariosRequest._();
 
-  factory ListWordsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListWordsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListScenariosRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListScenariosRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListWordsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'categoryId')
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'level', $pb.PbFieldType.O3)
-    ..aOM<$1.PageRequest>(3, _omitFieldNames ? '' : 'page', subBuilder: $1.PageRequest.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListScenariosRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..e<CulturalCategory>(1, _omitFieldNames ? '' : 'category', $pb.PbFieldType.OE, defaultOrMaker: CulturalCategory.CULTURAL_CATEGORY_UNSPECIFIED, valueOf: CulturalCategory.valueOf, enumValues: CulturalCategory.values)
+    ..aOM<$2.PageRequest>(2, _omitFieldNames ? '' : 'page', subBuilder: $2.PageRequest.create)
     ..hasRequiredFields = false
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListWordsRequest clone() => ListWordsRequest()..mergeFromMessage(this);
+  ListScenariosRequest clone() => ListScenariosRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListWordsRequest copyWith(void Function(ListWordsRequest) updates) => super.copyWith((message) => updates(message as ListWordsRequest)) as ListWordsRequest;
+  ListScenariosRequest copyWith(void Function(ListScenariosRequest) updates) => super.copyWith((message) => updates(message as ListScenariosRequest)) as ListScenariosRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListWordsRequest create() => ListWordsRequest._();
+  static ListScenariosRequest create() => ListScenariosRequest._();
   @$core.override
-  ListWordsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListWordsRequest> createRepeated() => $pb.PbList<ListWordsRequest>();
+  ListScenariosRequest createEmptyInstance() => create();
+  static $pb.PbList<ListScenariosRequest> createRepeated() => $pb.PbList<ListScenariosRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListWordsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListWordsRequest>(create);
-  static ListWordsRequest? _defaultInstance;
+  static ListScenariosRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListScenariosRequest>(create);
+  static ListScenariosRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get categoryId => $_getSZ(0);
+  CulturalCategory get category => $_getN(0);
   @$pb.TagNumber(1)
-  set categoryId($core.String value) => $_setString(0, value);
+  set category(CulturalCategory value) => $_setField(1, value);
   @$pb.TagNumber(1)
-  $core.bool hasCategoryId() => $_has(0);
+  $core.bool hasCategory() => $_has(0);
   @$pb.TagNumber(1)
-  void clearCategoryId() => $_clearField(1);
+  void clearCategory() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  $core.int get level => $_getIZ(1);
+  $2.PageRequest get page => $_getN(1);
   @$pb.TagNumber(2)
-  set level($core.int value) => $_setSignedInt32(1, value);
-  @$pb.TagNumber(2)
-  $core.bool hasLevel() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearLevel() => $_clearField(2);
-
-  @$pb.TagNumber(3)
-  $1.PageRequest get page => $_getN(2);
-  @$pb.TagNumber(3)
-  set page($1.PageRequest value) => $_setField(3, value);
-  @$pb.TagNumber(3)
-  $core.bool hasPage() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearPage() => $_clearField(3);
-  @$pb.TagNumber(3)
-  $1.PageRequest ensurePage() => $_ensure(2);
-}
-
-class ListWordsResponse extends $pb.GeneratedMessage {
-  factory ListWordsResponse({
-    $core.Iterable<Word>? words,
-    $1.PageResponse? page,
-  }) {
-    final result = create();
-    if (words != null) result.words.addAll(words);
-    if (page != null) result.page = page;
-    return result;
-  }
-
-  ListWordsResponse._();
-
-  factory ListWordsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListWordsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListWordsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
-    ..pc<Word>(1, _omitFieldNames ? '' : 'words', $pb.PbFieldType.PM, subBuilder: Word.create)
-    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'page', subBuilder: $1.PageResponse.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListWordsResponse clone() => ListWordsResponse()..mergeFromMessage(this);
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListWordsResponse copyWith(void Function(ListWordsResponse) updates) => super.copyWith((message) => updates(message as ListWordsResponse)) as ListWordsResponse;
-
-  @$core.override
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static ListWordsResponse create() => ListWordsResponse._();
-  @$core.override
-  ListWordsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListWordsResponse> createRepeated() => $pb.PbList<ListWordsResponse>();
-  @$core.pragma('dart2js:noInline')
-  static ListWordsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListWordsResponse>(create);
-  static ListWordsResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $pb.PbList<Word> get words => $_getList(0);
-
-  @$pb.TagNumber(2)
-  $1.PageResponse get page => $_getN(1);
-  @$pb.TagNumber(2)
-  set page($1.PageResponse value) => $_setField(2, value);
+  set page($2.PageRequest value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasPage() => $_has(1);
   @$pb.TagNumber(2)
   void clearPage() => $_clearField(2);
   @$pb.TagNumber(2)
-  $1.PageResponse ensurePage() => $_ensure(1);
+  $2.PageRequest ensurePage() => $_ensure(1);
 }
 
-class UpdateProgressRequest extends $pb.GeneratedMessage {
-  factory UpdateProgressRequest({
-    $core.String? wordId,
-    $core.int? scoreDelta,
-    $core.bool? mastered,
+class ListScenariosResponse extends $pb.GeneratedMessage {
+  factory ListScenariosResponse({
+    $core.Iterable<Scenario>? scenarios,
+    $2.PageResponse? page,
   }) {
     final result = create();
-    if (wordId != null) result.wordId = wordId;
-    if (scoreDelta != null) result.scoreDelta = scoreDelta;
-    if (mastered != null) result.mastered = mastered;
+    if (scenarios != null) result.scenarios.addAll(scenarios);
+    if (page != null) result.page = page;
     return result;
   }
 
-  UpdateProgressRequest._();
+  ListScenariosResponse._();
 
-  factory UpdateProgressRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory UpdateProgressRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListScenariosResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListScenariosResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateProgressRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'wordId')
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'scoreDelta', $pb.PbFieldType.O3)
-    ..aOB(3, _omitFieldNames ? '' : 'mastered')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListScenariosResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<Scenario>(1, _omitFieldNames ? '' : 'scenarios', $pb.PbFieldType.PM, subBuilder: Scenario.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'page', subBuilder: $2.PageResponse.create)
     ..hasRequiredFields = false
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateProgressRequest clone() => UpdateProgressRequest()..mergeFromMessage(this);
+  ListScenariosResponse clone() => ListScenariosResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateProgressRequest copyWith(void Function(UpdateProgressRequest) updates) => super.copyWith((message) => updates(message as UpdateProgressRequest)) as UpdateProgressRequest;
+  ListScenariosResponse copyWith(void Function(ListScenariosResponse) updates) => super.copyWith((message) => updates(message as ListScenariosResponse)) as ListScenariosResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static UpdateProgressRequest create() => UpdateProgressRequest._();
+  static ListScenariosResponse create() => ListScenariosResponse._();
   @$core.override
-  UpdateProgressRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateProgressRequest> createRepeated() => $pb.PbList<UpdateProgressRequest>();
+  ListScenariosResponse createEmptyInstance() => create();
+  static $pb.PbList<ListScenariosResponse> createRepeated() => $pb.PbList<ListScenariosResponse>();
   @$core.pragma('dart2js:noInline')
-  static UpdateProgressRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateProgressRequest>(create);
-  static UpdateProgressRequest? _defaultInstance;
+  static ListScenariosResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListScenariosResponse>(create);
+  static ListScenariosResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get wordId => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set wordId($core.String value) => $_setString(0, value);
-  @$pb.TagNumber(1)
-  $core.bool hasWordId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearWordId() => $_clearField(1);
+  $pb.PbList<Scenario> get scenarios => $_getList(0);
 
   @$pb.TagNumber(2)
-  $core.int get scoreDelta => $_getIZ(1);
+  $2.PageResponse get page => $_getN(1);
   @$pb.TagNumber(2)
-  set scoreDelta($core.int value) => $_setSignedInt32(1, value);
+  set page($2.PageResponse value) => $_setField(2, value);
   @$pb.TagNumber(2)
-  $core.bool hasScoreDelta() => $_has(1);
+  $core.bool hasPage() => $_has(1);
   @$pb.TagNumber(2)
-  void clearScoreDelta() => $_clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.bool get mastered => $_getBF(2);
-  @$pb.TagNumber(3)
-  set mastered($core.bool value) => $_setBool(2, value);
-  @$pb.TagNumber(3)
-  $core.bool hasMastered() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearMastered() => $_clearField(3);
+  void clearPage() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $2.PageResponse ensurePage() => $_ensure(1);
 }
 
-class UpdateProgressResponse extends $pb.GeneratedMessage {
-  factory UpdateProgressResponse({
+class CompleteInteractionRequest extends $pb.GeneratedMessage {
+  factory CompleteInteractionRequest({
+    $core.String? scenarioId,
+    $core.int? totalGraceEarned,
+    $core.bool? completedOptimally,
+    $core.int? responseTimeMs,
+  }) {
+    final result = create();
+    if (scenarioId != null) result.scenarioId = scenarioId;
+    if (totalGraceEarned != null) result.totalGraceEarned = totalGraceEarned;
+    if (completedOptimally != null) result.completedOptimally = completedOptimally;
+    if (responseTimeMs != null) result.responseTimeMs = responseTimeMs;
+    return result;
+  }
+
+  CompleteInteractionRequest._();
+
+  factory CompleteInteractionRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CompleteInteractionRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompleteInteractionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'scenarioId')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'totalGraceEarned', $pb.PbFieldType.O3)
+    ..aOB(3, _omitFieldNames ? '' : 'completedOptimally')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'responseTimeMs', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompleteInteractionRequest clone() => CompleteInteractionRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompleteInteractionRequest copyWith(void Function(CompleteInteractionRequest) updates) => super.copyWith((message) => updates(message as CompleteInteractionRequest)) as CompleteInteractionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CompleteInteractionRequest create() => CompleteInteractionRequest._();
+  @$core.override
+  CompleteInteractionRequest createEmptyInstance() => create();
+  static $pb.PbList<CompleteInteractionRequest> createRepeated() => $pb.PbList<CompleteInteractionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CompleteInteractionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompleteInteractionRequest>(create);
+  static CompleteInteractionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get scenarioId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set scenarioId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasScenarioId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearScenarioId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get totalGraceEarned => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set totalGraceEarned($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTotalGraceEarned() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotalGraceEarned() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get completedOptimally => $_getBF(2);
+  @$pb.TagNumber(3)
+  set completedOptimally($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCompletedOptimally() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCompletedOptimally() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get responseTimeMs => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set responseTimeMs($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasResponseTimeMs() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearResponseTimeMs() => $_clearField(4);
+}
+
+class CompleteInteractionResponse extends $pb.GeneratedMessage {
+  factory CompleteInteractionResponse({
     Progress? progress,
     LinguistStats? stats,
-    $core.int? eloquenceDelta,
   }) {
     final result = create();
     if (progress != null) result.progress = progress;
     if (stats != null) result.stats = stats;
-    if (eloquenceDelta != null) result.eloquenceDelta = eloquenceDelta;
     return result;
   }
 
-  UpdateProgressResponse._();
+  CompleteInteractionResponse._();
 
-  factory UpdateProgressResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory UpdateProgressResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CompleteInteractionResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CompleteInteractionResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateProgressResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompleteInteractionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
     ..aOM<Progress>(1, _omitFieldNames ? '' : 'progress', subBuilder: Progress.create)
     ..aOM<LinguistStats>(2, _omitFieldNames ? '' : 'stats', subBuilder: LinguistStats.create)
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'eloquenceDelta', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateProgressResponse clone() => UpdateProgressResponse()..mergeFromMessage(this);
+  CompleteInteractionResponse clone() => CompleteInteractionResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateProgressResponse copyWith(void Function(UpdateProgressResponse) updates) => super.copyWith((message) => updates(message as UpdateProgressResponse)) as UpdateProgressResponse;
+  CompleteInteractionResponse copyWith(void Function(CompleteInteractionResponse) updates) => super.copyWith((message) => updates(message as CompleteInteractionResponse)) as CompleteInteractionResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static UpdateProgressResponse create() => UpdateProgressResponse._();
+  static CompleteInteractionResponse create() => CompleteInteractionResponse._();
   @$core.override
-  UpdateProgressResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdateProgressResponse> createRepeated() => $pb.PbList<UpdateProgressResponse>();
+  CompleteInteractionResponse createEmptyInstance() => create();
+  static $pb.PbList<CompleteInteractionResponse> createRepeated() => $pb.PbList<CompleteInteractionResponse>();
   @$core.pragma('dart2js:noInline')
-  static UpdateProgressResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateProgressResponse>(create);
-  static UpdateProgressResponse? _defaultInstance;
+  static CompleteInteractionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompleteInteractionResponse>(create);
+  static CompleteInteractionResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   Progress get progress => $_getN(0);
@@ -682,15 +848,6 @@ class UpdateProgressResponse extends $pb.GeneratedMessage {
   void clearStats() => $_clearField(2);
   @$pb.TagNumber(2)
   LinguistStats ensureStats() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  $core.int get eloquenceDelta => $_getIZ(2);
-  @$pb.TagNumber(3)
-  set eloquenceDelta($core.int value) => $_setSignedInt32(2, value);
-  @$pb.TagNumber(3)
-  $core.bool hasEloquenceDelta() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearEloquenceDelta() => $_clearField(3);
 }
 
 class GetLinguistStatsRequest extends $pb.GeneratedMessage {
@@ -771,87 +928,45 @@ class GetLinguistStatsResponse extends $pb.GeneratedMessage {
   LinguistStats ensureStats() => $_ensure(0);
 }
 
-class SubmitFeedbackRequest extends $pb.GeneratedMessage {
-  factory SubmitFeedbackRequest({
-    $core.String? body,
-  }) {
-    final result = create();
-    if (body != null) result.body = body;
-    return result;
-  }
-
-  SubmitFeedbackRequest._();
-
-  factory SubmitFeedbackRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SubmitFeedbackRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitFeedbackRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'body')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SubmitFeedbackRequest clone() => SubmitFeedbackRequest()..mergeFromMessage(this);
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SubmitFeedbackRequest copyWith(void Function(SubmitFeedbackRequest) updates) => super.copyWith((message) => updates(message as SubmitFeedbackRequest)) as SubmitFeedbackRequest;
-
-  @$core.override
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static SubmitFeedbackRequest create() => SubmitFeedbackRequest._();
-  @$core.override
-  SubmitFeedbackRequest createEmptyInstance() => create();
-  static $pb.PbList<SubmitFeedbackRequest> createRepeated() => $pb.PbList<SubmitFeedbackRequest>();
-  @$core.pragma('dart2js:noInline')
-  static SubmitFeedbackRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitFeedbackRequest>(create);
-  static SubmitFeedbackRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get body => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set body($core.String value) => $_setString(0, value);
-  @$pb.TagNumber(1)
-  $core.bool hasBody() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearBody() => $_clearField(1);
-}
-
-class SubmitFeedbackResponse extends $pb.GeneratedMessage {
-  factory SubmitFeedbackResponse({
+/// Deprecated Word-based messages (for transition)
+class Word extends $pb.GeneratedMessage {
+  factory Word({
     $core.String? id,
+    $core.String? payloadJson,
   }) {
     final result = create();
     if (id != null) result.id = id;
+    if (payloadJson != null) result.payloadJson = payloadJson;
     return result;
   }
 
-  SubmitFeedbackResponse._();
+  Word._();
 
-  factory SubmitFeedbackResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SubmitFeedbackResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory Word.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Word.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitFeedbackResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Word', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'payloadJson')
     ..hasRequiredFields = false
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SubmitFeedbackResponse clone() => SubmitFeedbackResponse()..mergeFromMessage(this);
+  Word clone() => Word()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SubmitFeedbackResponse copyWith(void Function(SubmitFeedbackResponse) updates) => super.copyWith((message) => updates(message as SubmitFeedbackResponse)) as SubmitFeedbackResponse;
+  Word copyWith(void Function(Word) updates) => super.copyWith((message) => updates(message as Word)) as Word;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static SubmitFeedbackResponse create() => SubmitFeedbackResponse._();
+  static Word create() => Word._();
   @$core.override
-  SubmitFeedbackResponse createEmptyInstance() => create();
-  static $pb.PbList<SubmitFeedbackResponse> createRepeated() => $pb.PbList<SubmitFeedbackResponse>();
+  Word createEmptyInstance() => create();
+  static $pb.PbList<Word> createRepeated() => $pb.PbList<Word>();
   @$core.pragma('dart2js:noInline')
-  static SubmitFeedbackResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitFeedbackResponse>(create);
-  static SubmitFeedbackResponse? _defaultInstance;
+  static Word getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Word>(create);
+  static Word? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
@@ -861,6 +976,103 @@ class SubmitFeedbackResponse extends $pb.GeneratedMessage {
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get payloadJson => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set payloadJson($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPayloadJson() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPayloadJson() => $_clearField(2);
+}
+
+class ListWordsRequest extends $pb.GeneratedMessage {
+  factory ListWordsRequest({
+    $2.PageRequest? page,
+  }) {
+    final result = create();
+    if (page != null) result.page = page;
+    return result;
+  }
+
+  ListWordsRequest._();
+
+  factory ListWordsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListWordsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListWordsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<$2.PageRequest>(1, _omitFieldNames ? '' : 'page', subBuilder: $2.PageRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWordsRequest clone() => ListWordsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWordsRequest copyWith(void Function(ListWordsRequest) updates) => super.copyWith((message) => updates(message as ListWordsRequest)) as ListWordsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListWordsRequest create() => ListWordsRequest._();
+  @$core.override
+  ListWordsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListWordsRequest> createRepeated() => $pb.PbList<ListWordsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListWordsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListWordsRequest>(create);
+  static ListWordsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.PageRequest get page => $_getN(0);
+  @$pb.TagNumber(1)
+  set page($2.PageRequest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPage() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $2.PageRequest ensurePage() => $_ensure(0);
+}
+
+class ListWordsResponse extends $pb.GeneratedMessage {
+  factory ListWordsResponse({
+    $core.Iterable<Word>? words,
+  }) {
+    final result = create();
+    if (words != null) result.words.addAll(words);
+    return result;
+  }
+
+  ListWordsResponse._();
+
+  factory ListWordsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListWordsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListWordsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<Word>(1, _omitFieldNames ? '' : 'words', $pb.PbFieldType.PM, subBuilder: Word.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWordsResponse clone() => ListWordsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWordsResponse copyWith(void Function(ListWordsResponse) updates) => super.copyWith((message) => updates(message as ListWordsResponse)) as ListWordsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListWordsResponse create() => ListWordsResponse._();
+  @$core.override
+  ListWordsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListWordsResponse> createRepeated() => $pb.PbList<ListWordsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListWordsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListWordsResponse>(create);
+  static ListWordsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Word> get words => $_getList(0);
 }
 
 

@@ -2,19 +2,84 @@ syntax = "proto3";
 
 package sttattus.dominion.v1;
 
+import "google/protobuf/timestamp.proto";
+
 option go_package = "github.com/sttattus/proto/gen/go/sttattus/dominion/v1;dominionv1";
 
+// EstateCategory defines the strategic type of property.
+enum EstateCategory {
+  ESTATE_CATEGORY_UNSPECIFIED = 0;
+  ESTATE_CATEGORY_PRIMARY_RESIDENCE = 1;
+  ESTATE_CATEGORY_COMMERCIAL_NODE = 2;
+  ESTATE_CATEGORY_REMOTE_OUTPOST = 3;
+  ESTATE_CATEGORY_STRATEGIC_LAND = 4;
+}
+
+enum VerificationStatus {
+  VERIFICATION_STATUS_UNSPECIFIED = 0;
+  VERIFICATION_STATUS_PENDING = 1;
+  VERIFICATION_STATUS_APPROVED = 2;
+  VERIFICATION_STATUS_REJECTED = 3;
+}
+
+// Property represents a verified unit of territorial sovereignty.
 message Property {
   string id = 1;
   string name = 2;
   string location_lat_lng = 3;
+  string city = 4;
+  string region_code = 5;       // e.g., 'FR', 'AE', 'US-NY'
+  EstateCategory category = 6;
+  double valuation_usd = 7;
+  VerificationStatus status = 8;
+  google.protobuf.Timestamp acquired_at = 9;
 }
 
-message ListTerritoriesRequest {}
+message DominionStats {
+  string user_id = 1;
+  double dominion_rank = 2;     // 1-100 normalized
+  string rank_label = 3;         // e.g., 'Landlord', 'Governor', 'Territorial Sovereign'
+  int32 verified_properties_count = 4;
+  double total_portfolio_value = 5;
+}
+
+// REQ/RES
+message SyncPropertiesRequest {
+  repeated Property properties = 1;
+}
+message SyncPropertiesResponse {
+  double current_dominion_score = 1;
+  DominionStats stats = 2;
+}
+
+message ListTerritoriesRequest {
+  string user_id = 1;
+}
 message ListTerritoriesResponse {
   repeated Property properties = 1;
 }
 
+message GetDominionStatsRequest {
+  string user_id = 1;
+}
+message GetDominionStatsResponse {
+  DominionStats stats = 1;
+}
+
+message GetLoungeKeyRequest {
+  string city = 1; // Optional: requested city lounge
+}
+message GetLoungeKeyResponse {
+  string lounge_key_jwt = 1; // Verified access credential
+  google.protobuf.Timestamp expires_at = 2;
+}
+
 service DominionService {
+  // Sovereignty Protocol: Verified Territorial Control
+  rpc SyncProperties(SyncPropertiesRequest) returns (SyncPropertiesResponse);
   rpc ListTerritories(ListTerritoriesRequest) returns (ListTerritoriesResponse);
+  rpc GetDominionStats(GetDominionStatsRequest) returns (GetDominionStatsResponse);
+
+  // Hard Perks
+  rpc GetLoungeKey(GetLoungeKeyRequest) returns (GetLoungeKeyResponse);
 }

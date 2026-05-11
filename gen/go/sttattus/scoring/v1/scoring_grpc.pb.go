@@ -19,11 +19,18 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ScoringService_ScoreWorkout_FullMethodName         = "/sttattus.scoring.v1.ScoringService/ScoreWorkout"
-	ScoringService_ScoreLexicalProgress_FullMethodName = "/sttattus.scoring.v1.ScoringService/ScoreLexicalProgress"
-	ScoringService_ScoreMatch_FullMethodName           = "/sttattus.scoring.v1.ScoringService/ScoreMatch"
-	ScoringService_ScoreEmpire_FullMethodName          = "/sttattus.scoring.v1.ScoringService/ScoreEmpire"
-	ScoringService_ApplyDecay_FullMethodName           = "/sttattus.scoring.v1.ScoringService/ApplyDecay"
+	ScoringService_ScoreWorkout_FullMethodName          = "/sttattus.scoring.v1.ScoringService/ScoreWorkout"
+	ScoringService_ScoreForge_FullMethodName            = "/sttattus.scoring.v1.ScoringService/ScoreForge"
+	ScoringService_ScoreLexicalProgress_FullMethodName  = "/sttattus.scoring.v1.ScoringService/ScoreLexicalProgress"
+	ScoringService_ScoreCognitiveMastery_FullMethodName = "/sttattus.scoring.v1.ScoringService/ScoreCognitiveMastery"
+	ScoringService_ScoreNomad_FullMethodName            = "/sttattus.scoring.v1.ScoringService/ScoreNomad"
+	ScoringService_ScoreOracle_FullMethodName           = "/sttattus.scoring.v1.ScoringService/ScoreOracle"
+	ScoringService_ScoreZenith_FullMethodName           = "/sttattus.scoring.v1.ScoringService/ScoreZenith"
+	ScoringService_ScoreLegacy_FullMethodName           = "/sttattus.scoring.v1.ScoringService/ScoreLegacy"
+	ScoringService_ScoreDominion_FullMethodName         = "/sttattus.scoring.v1.ScoringService/ScoreDominion"
+	ScoringService_ScoreMatch_FullMethodName            = "/sttattus.scoring.v1.ScoringService/ScoreMatch"
+	ScoringService_ScoreEmpire_FullMethodName           = "/sttattus.scoring.v1.ScoringService/ScoreEmpire"
+	ScoringService_ApplyDecay_FullMethodName            = "/sttattus.scoring.v1.ScoringService/ApplyDecay"
 )
 
 // ScoringServiceClient is the client API for ScoringService service.
@@ -31,7 +38,14 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ScoringServiceClient interface {
 	ScoreWorkout(ctx context.Context, in *ScoreWorkoutRequest, opts ...grpc.CallOption) (*ScoreWorkoutResponse, error)
+	ScoreForge(ctx context.Context, in *ScoreForgeRequest, opts ...grpc.CallOption) (*ScoreForgeResponse, error)
 	ScoreLexicalProgress(ctx context.Context, in *ScoreLexicalProgressRequest, opts ...grpc.CallOption) (*ScoreLexicalProgressResponse, error)
+	ScoreCognitiveMastery(ctx context.Context, in *ScoreCognitiveMasteryRequest, opts ...grpc.CallOption) (*ScoreCognitiveMasteryResponse, error)
+	ScoreNomad(ctx context.Context, in *ScoreNomadRequest, opts ...grpc.CallOption) (*ScoreNomadResponse, error)
+	ScoreOracle(ctx context.Context, in *ScoreOracleRequest, opts ...grpc.CallOption) (*ScoreOracleResponse, error)
+	ScoreZenith(ctx context.Context, in *ScoreZenithRequest, opts ...grpc.CallOption) (*ScoreZenithResponse, error)
+	ScoreLegacy(ctx context.Context, in *ScoreLegacyRequest, opts ...grpc.CallOption) (*ScoreLegacyResponse, error)
+	ScoreDominion(ctx context.Context, in *ScoreDominionRequest, opts ...grpc.CallOption) (*ScoreDominionResponse, error)
 	ScoreMatch(ctx context.Context, in *ScoreMatchRequest, opts ...grpc.CallOption) (*ScoreMatchResponse, error)
 	// High-Stakes Monolith Logic (Rust Offloaded)
 	ScoreEmpire(ctx context.Context, in *ScoreEmpireRequest, opts ...grpc.CallOption) (*ScoreEmpireResponse, error)
@@ -56,10 +70,80 @@ func (c *scoringServiceClient) ScoreWorkout(ctx context.Context, in *ScoreWorkou
 	return out, nil
 }
 
+func (c *scoringServiceClient) ScoreForge(ctx context.Context, in *ScoreForgeRequest, opts ...grpc.CallOption) (*ScoreForgeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ScoreForgeResponse)
+	err := c.cc.Invoke(ctx, ScoringService_ScoreForge_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *scoringServiceClient) ScoreLexicalProgress(ctx context.Context, in *ScoreLexicalProgressRequest, opts ...grpc.CallOption) (*ScoreLexicalProgressResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ScoreLexicalProgressResponse)
 	err := c.cc.Invoke(ctx, ScoringService_ScoreLexicalProgress_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *scoringServiceClient) ScoreCognitiveMastery(ctx context.Context, in *ScoreCognitiveMasteryRequest, opts ...grpc.CallOption) (*ScoreCognitiveMasteryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ScoreCognitiveMasteryResponse)
+	err := c.cc.Invoke(ctx, ScoringService_ScoreCognitiveMastery_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *scoringServiceClient) ScoreNomad(ctx context.Context, in *ScoreNomadRequest, opts ...grpc.CallOption) (*ScoreNomadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ScoreNomadResponse)
+	err := c.cc.Invoke(ctx, ScoringService_ScoreNomad_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *scoringServiceClient) ScoreOracle(ctx context.Context, in *ScoreOracleRequest, opts ...grpc.CallOption) (*ScoreOracleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ScoreOracleResponse)
+	err := c.cc.Invoke(ctx, ScoringService_ScoreOracle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *scoringServiceClient) ScoreZenith(ctx context.Context, in *ScoreZenithRequest, opts ...grpc.CallOption) (*ScoreZenithResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ScoreZenithResponse)
+	err := c.cc.Invoke(ctx, ScoringService_ScoreZenith_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *scoringServiceClient) ScoreLegacy(ctx context.Context, in *ScoreLegacyRequest, opts ...grpc.CallOption) (*ScoreLegacyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ScoreLegacyResponse)
+	err := c.cc.Invoke(ctx, ScoringService_ScoreLegacy_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *scoringServiceClient) ScoreDominion(ctx context.Context, in *ScoreDominionRequest, opts ...grpc.CallOption) (*ScoreDominionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ScoreDominionResponse)
+	err := c.cc.Invoke(ctx, ScoringService_ScoreDominion_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -101,7 +185,14 @@ func (c *scoringServiceClient) ApplyDecay(ctx context.Context, in *ApplyDecayReq
 // for forward compatibility.
 type ScoringServiceServer interface {
 	ScoreWorkout(context.Context, *ScoreWorkoutRequest) (*ScoreWorkoutResponse, error)
+	ScoreForge(context.Context, *ScoreForgeRequest) (*ScoreForgeResponse, error)
 	ScoreLexicalProgress(context.Context, *ScoreLexicalProgressRequest) (*ScoreLexicalProgressResponse, error)
+	ScoreCognitiveMastery(context.Context, *ScoreCognitiveMasteryRequest) (*ScoreCognitiveMasteryResponse, error)
+	ScoreNomad(context.Context, *ScoreNomadRequest) (*ScoreNomadResponse, error)
+	ScoreOracle(context.Context, *ScoreOracleRequest) (*ScoreOracleResponse, error)
+	ScoreZenith(context.Context, *ScoreZenithRequest) (*ScoreZenithResponse, error)
+	ScoreLegacy(context.Context, *ScoreLegacyRequest) (*ScoreLegacyResponse, error)
+	ScoreDominion(context.Context, *ScoreDominionRequest) (*ScoreDominionResponse, error)
 	ScoreMatch(context.Context, *ScoreMatchRequest) (*ScoreMatchResponse, error)
 	// High-Stakes Monolith Logic (Rust Offloaded)
 	ScoreEmpire(context.Context, *ScoreEmpireRequest) (*ScoreEmpireResponse, error)
@@ -119,8 +210,29 @@ type UnimplementedScoringServiceServer struct{}
 func (UnimplementedScoringServiceServer) ScoreWorkout(context.Context, *ScoreWorkoutRequest) (*ScoreWorkoutResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ScoreWorkout not implemented")
 }
+func (UnimplementedScoringServiceServer) ScoreForge(context.Context, *ScoreForgeRequest) (*ScoreForgeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ScoreForge not implemented")
+}
 func (UnimplementedScoringServiceServer) ScoreLexicalProgress(context.Context, *ScoreLexicalProgressRequest) (*ScoreLexicalProgressResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ScoreLexicalProgress not implemented")
+}
+func (UnimplementedScoringServiceServer) ScoreCognitiveMastery(context.Context, *ScoreCognitiveMasteryRequest) (*ScoreCognitiveMasteryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ScoreCognitiveMastery not implemented")
+}
+func (UnimplementedScoringServiceServer) ScoreNomad(context.Context, *ScoreNomadRequest) (*ScoreNomadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ScoreNomad not implemented")
+}
+func (UnimplementedScoringServiceServer) ScoreOracle(context.Context, *ScoreOracleRequest) (*ScoreOracleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ScoreOracle not implemented")
+}
+func (UnimplementedScoringServiceServer) ScoreZenith(context.Context, *ScoreZenithRequest) (*ScoreZenithResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ScoreZenith not implemented")
+}
+func (UnimplementedScoringServiceServer) ScoreLegacy(context.Context, *ScoreLegacyRequest) (*ScoreLegacyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ScoreLegacy not implemented")
+}
+func (UnimplementedScoringServiceServer) ScoreDominion(context.Context, *ScoreDominionRequest) (*ScoreDominionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ScoreDominion not implemented")
 }
 func (UnimplementedScoringServiceServer) ScoreMatch(context.Context, *ScoreMatchRequest) (*ScoreMatchResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ScoreMatch not implemented")
@@ -170,6 +282,24 @@ func _ScoringService_ScoreWorkout_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ScoringService_ScoreForge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ScoreForgeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScoringServiceServer).ScoreForge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ScoringService_ScoreForge_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScoringServiceServer).ScoreForge(ctx, req.(*ScoreForgeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ScoringService_ScoreLexicalProgress_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ScoreLexicalProgressRequest)
 	if err := dec(in); err != nil {
@@ -184,6 +314,114 @@ func _ScoringService_ScoreLexicalProgress_Handler(srv interface{}, ctx context.C
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ScoringServiceServer).ScoreLexicalProgress(ctx, req.(*ScoreLexicalProgressRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ScoringService_ScoreCognitiveMastery_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ScoreCognitiveMasteryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScoringServiceServer).ScoreCognitiveMastery(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ScoringService_ScoreCognitiveMastery_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScoringServiceServer).ScoreCognitiveMastery(ctx, req.(*ScoreCognitiveMasteryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ScoringService_ScoreNomad_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ScoreNomadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScoringServiceServer).ScoreNomad(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ScoringService_ScoreNomad_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScoringServiceServer).ScoreNomad(ctx, req.(*ScoreNomadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ScoringService_ScoreOracle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ScoreOracleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScoringServiceServer).ScoreOracle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ScoringService_ScoreOracle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScoringServiceServer).ScoreOracle(ctx, req.(*ScoreOracleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ScoringService_ScoreZenith_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ScoreZenithRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScoringServiceServer).ScoreZenith(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ScoringService_ScoreZenith_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScoringServiceServer).ScoreZenith(ctx, req.(*ScoreZenithRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ScoringService_ScoreLegacy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ScoreLegacyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScoringServiceServer).ScoreLegacy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ScoringService_ScoreLegacy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScoringServiceServer).ScoreLegacy(ctx, req.(*ScoreLegacyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ScoringService_ScoreDominion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ScoreDominionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScoringServiceServer).ScoreDominion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ScoringService_ScoreDominion_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScoringServiceServer).ScoreDominion(ctx, req.(*ScoreDominionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -254,8 +492,36 @@ var ScoringService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ScoringService_ScoreWorkout_Handler,
 		},
 		{
+			MethodName: "ScoreForge",
+			Handler:    _ScoringService_ScoreForge_Handler,
+		},
+		{
 			MethodName: "ScoreLexicalProgress",
 			Handler:    _ScoringService_ScoreLexicalProgress_Handler,
+		},
+		{
+			MethodName: "ScoreCognitiveMastery",
+			Handler:    _ScoringService_ScoreCognitiveMastery_Handler,
+		},
+		{
+			MethodName: "ScoreNomad",
+			Handler:    _ScoringService_ScoreNomad_Handler,
+		},
+		{
+			MethodName: "ScoreOracle",
+			Handler:    _ScoringService_ScoreOracle_Handler,
+		},
+		{
+			MethodName: "ScoreZenith",
+			Handler:    _ScoringService_ScoreZenith_Handler,
+		},
+		{
+			MethodName: "ScoreLegacy",
+			Handler:    _ScoringService_ScoreLegacy_Handler,
+		},
+		{
+			MethodName: "ScoreDominion",
+			Handler:    _ScoringService_ScoreDominion_Handler,
 		},
 		{
 			MethodName: "ScoreMatch",

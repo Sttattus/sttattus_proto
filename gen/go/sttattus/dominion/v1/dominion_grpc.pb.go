@@ -19,14 +19,22 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	DominionService_ListTerritories_FullMethodName = "/sttattus.dominion.v1.DominionService/ListTerritories"
+	DominionService_SyncProperties_FullMethodName   = "/sttattus.dominion.v1.DominionService/SyncProperties"
+	DominionService_ListTerritories_FullMethodName  = "/sttattus.dominion.v1.DominionService/ListTerritories"
+	DominionService_GetDominionStats_FullMethodName = "/sttattus.dominion.v1.DominionService/GetDominionStats"
+	DominionService_GetLoungeKey_FullMethodName     = "/sttattus.dominion.v1.DominionService/GetLoungeKey"
 )
 
 // DominionServiceClient is the client API for DominionService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type DominionServiceClient interface {
+	// Sovereignty Protocol: Verified Territorial Control
+	SyncProperties(ctx context.Context, in *SyncPropertiesRequest, opts ...grpc.CallOption) (*SyncPropertiesResponse, error)
 	ListTerritories(ctx context.Context, in *ListTerritoriesRequest, opts ...grpc.CallOption) (*ListTerritoriesResponse, error)
+	GetDominionStats(ctx context.Context, in *GetDominionStatsRequest, opts ...grpc.CallOption) (*GetDominionStatsResponse, error)
+	// Hard Perks
+	GetLoungeKey(ctx context.Context, in *GetLoungeKeyRequest, opts ...grpc.CallOption) (*GetLoungeKeyResponse, error)
 }
 
 type dominionServiceClient struct {
@@ -35,6 +43,16 @@ type dominionServiceClient struct {
 
 func NewDominionServiceClient(cc grpc.ClientConnInterface) DominionServiceClient {
 	return &dominionServiceClient{cc}
+}
+
+func (c *dominionServiceClient) SyncProperties(ctx context.Context, in *SyncPropertiesRequest, opts ...grpc.CallOption) (*SyncPropertiesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SyncPropertiesResponse)
+	err := c.cc.Invoke(ctx, DominionService_SyncProperties_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *dominionServiceClient) ListTerritories(ctx context.Context, in *ListTerritoriesRequest, opts ...grpc.CallOption) (*ListTerritoriesResponse, error) {
@@ -47,11 +65,36 @@ func (c *dominionServiceClient) ListTerritories(ctx context.Context, in *ListTer
 	return out, nil
 }
 
+func (c *dominionServiceClient) GetDominionStats(ctx context.Context, in *GetDominionStatsRequest, opts ...grpc.CallOption) (*GetDominionStatsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDominionStatsResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetDominionStats_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetLoungeKey(ctx context.Context, in *GetLoungeKeyRequest, opts ...grpc.CallOption) (*GetLoungeKeyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLoungeKeyResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetLoungeKey_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DominionServiceServer is the server API for DominionService service.
 // All implementations must embed UnimplementedDominionServiceServer
 // for forward compatibility.
 type DominionServiceServer interface {
+	// Sovereignty Protocol: Verified Territorial Control
+	SyncProperties(context.Context, *SyncPropertiesRequest) (*SyncPropertiesResponse, error)
 	ListTerritories(context.Context, *ListTerritoriesRequest) (*ListTerritoriesResponse, error)
+	GetDominionStats(context.Context, *GetDominionStatsRequest) (*GetDominionStatsResponse, error)
+	// Hard Perks
+	GetLoungeKey(context.Context, *GetLoungeKeyRequest) (*GetLoungeKeyResponse, error)
 	mustEmbedUnimplementedDominionServiceServer()
 }
 
@@ -62,8 +105,17 @@ type DominionServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedDominionServiceServer struct{}
 
+func (UnimplementedDominionServiceServer) SyncProperties(context.Context, *SyncPropertiesRequest) (*SyncPropertiesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SyncProperties not implemented")
+}
 func (UnimplementedDominionServiceServer) ListTerritories(context.Context, *ListTerritoriesRequest) (*ListTerritoriesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListTerritories not implemented")
+}
+func (UnimplementedDominionServiceServer) GetDominionStats(context.Context, *GetDominionStatsRequest) (*GetDominionStatsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDominionStats not implemented")
+}
+func (UnimplementedDominionServiceServer) GetLoungeKey(context.Context, *GetLoungeKeyRequest) (*GetLoungeKeyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLoungeKey not implemented")
 }
 func (UnimplementedDominionServiceServer) mustEmbedUnimplementedDominionServiceServer() {}
 func (UnimplementedDominionServiceServer) testEmbeddedByValue()                         {}
@@ -86,6 +138,24 @@ func RegisterDominionServiceServer(s grpc.ServiceRegistrar, srv DominionServiceS
 	s.RegisterService(&DominionService_ServiceDesc, srv)
 }
 
+func _DominionService_SyncProperties_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SyncPropertiesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).SyncProperties(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_SyncProperties_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).SyncProperties(ctx, req.(*SyncPropertiesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _DominionService_ListTerritories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListTerritoriesRequest)
 	if err := dec(in); err != nil {
@@ -104,6 +174,42 @@ func _DominionService_ListTerritories_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DominionService_GetDominionStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDominionStatsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetDominionStats(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetDominionStats_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetDominionStats(ctx, req.(*GetDominionStatsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetLoungeKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLoungeKeyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetLoungeKey(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetLoungeKey_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetLoungeKey(ctx, req.(*GetLoungeKeyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DominionService_ServiceDesc is the grpc.ServiceDesc for DominionService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -112,8 +218,20 @@ var DominionService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*DominionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
+			MethodName: "SyncProperties",
+			Handler:    _DominionService_SyncProperties_Handler,
+		},
+		{
 			MethodName: "ListTerritories",
 			Handler:    _DominionService_ListTerritories_Handler,
+		},
+		{
+			MethodName: "GetDominionStats",
+			Handler:    _DominionService_GetDominionStats_Handler,
+		},
+		{
+			MethodName: "GetLoungeKey",
+			Handler:    _DominionService_GetLoungeKey_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

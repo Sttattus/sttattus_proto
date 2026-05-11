@@ -204,6 +204,9 @@ type DatingProfile struct {
 	PhysicalDrive        int32                  `protobuf:"varint,11,opt,name=physical_drive,json=physicalDrive,proto3" json:"physical_drive,omitempty"`
 	SocialBattery        int32                  `protobuf:"varint,12,opt,name=social_battery,json=socialBattery,proto3" json:"social_battery,omitempty"`
 	PhotoUrls            []string               `protobuf:"bytes,13,rep,name=photo_urls,json=photoUrls,proto3" json:"photo_urls,omitempty"`
+	VaultRank            float64                `protobuf:"fixed64,14,opt,name=vault_rank,json=vaultRank,proto3" json:"vault_rank,omitempty"`
+	ApexRank             float64                `protobuf:"fixed64,15,opt,name=apex_rank,json=apexRank,proto3" json:"apex_rank,omitempty"`
+	ForgeRank            float64                `protobuf:"fixed64,16,opt,name=forge_rank,json=forgeRank,proto3" json:"forge_rank,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -327,6 +330,27 @@ func (x *DatingProfile) GetPhotoUrls() []string {
 		return x.PhotoUrls
 	}
 	return nil
+}
+
+func (x *DatingProfile) GetVaultRank() float64 {
+	if x != nil {
+		return x.VaultRank
+	}
+	return 0
+}
+
+func (x *DatingProfile) GetApexRank() float64 {
+	if x != nil {
+		return x.ApexRank
+	}
+	return 0
+}
+
+func (x *DatingProfile) GetForgeRank() float64 {
+	if x != nil {
+		return x.ForgeRank
+	}
+	return 0
 }
 
 type Candidate struct {
@@ -1197,7 +1221,7 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x04Vec3\x12\f\n" +
 	"\x01x\x18\x01 \x01(\x01R\x01x\x12\f\n" +
 	"\x01y\x18\x02 \x01(\x01R\x01y\x12\f\n" +
-	"\x01z\x18\x03 \x01(\x01R\x01z\"\xea\x03\n" +
+	"\x01z\x18\x03 \x01(\x01R\x01z\"\xc5\x04\n" +
 	"\rDatingProfile\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x10\n" +
@@ -1213,7 +1237,12 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x0ephysical_drive\x18\v \x01(\x05R\rphysicalDrive\x12%\n" +
 	"\x0esocial_battery\x18\f \x01(\x05R\rsocialBattery\x12\x1d\n" +
 	"\n" +
-	"photo_urls\x18\r \x03(\tR\tphotoUrls\"i\n" +
+	"photo_urls\x18\r \x03(\tR\tphotoUrls\x12\x1d\n" +
+	"\n" +
+	"vault_rank\x18\x0e \x01(\x01R\tvaultRank\x12\x1b\n" +
+	"\tapex_rank\x18\x0f \x01(\x01R\bapexRank\x12\x1d\n" +
+	"\n" +
+	"forge_rank\x18\x10 \x01(\x01R\tforgeRank\"i\n" +
 	"\tCandidate\x12;\n" +
 	"\aprofile\x18\x01 \x01(\v2!.sttattus.dating.v1.DatingProfileR\aprofile\x12\x1f\n" +
 	"\vmatch_score\x18\x02 \x01(\x01R\n" +

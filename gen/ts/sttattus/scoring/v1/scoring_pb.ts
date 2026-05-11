@@ -305,45 +305,76 @@ export class ScoreMatchRequest extends Message<ScoreMatchRequest> {
   targetUserId = "";
 
   /**
-   * Subset of dating_profiles fields needed to compute compatibility. Sent
-   * explicitly so the Rust service stays stateless and doesn't need DB access.
+   * Swiper 12-Factor Profile
    *
-   * @generated from field: int32 swiper_intellectual_pace = 3;
+   * @generated from field: double swiper_vault_rank = 3;
+   */
+  swiperVaultRank = 0;
+
+  /**
+   * @generated from field: double swiper_apex_rank = 4;
+   */
+  swiperApexRank = 0;
+
+  /**
+   * @generated from field: double swiper_forge_rank = 5;
+   */
+  swiperForgeRank = 0;
+
+  /**
+   * @generated from field: int32 swiper_intellectual_pace = 6;
    */
   swiperIntellectualPace = 0;
 
   /**
-   * @generated from field: int32 swiper_emotional_granularity = 4;
+   * @generated from field: int32 swiper_emotional_granularity = 7;
    */
   swiperEmotionalGranularity = 0;
 
   /**
-   * @generated from field: int32 swiper_physical_drive = 5;
+   * @generated from field: int32 swiper_physical_drive = 8;
    */
   swiperPhysicalDrive = 0;
 
   /**
-   * @generated from field: int32 swiper_social_battery = 6;
+   * @generated from field: int32 swiper_social_battery = 9;
    */
   swiperSocialBattery = 0;
 
   /**
-   * @generated from field: int32 target_intellectual_pace = 7;
+   * Target 12-Factor Profile
+   *
+   * @generated from field: double target_vault_rank = 10;
+   */
+  targetVaultRank = 0;
+
+  /**
+   * @generated from field: double target_apex_rank = 11;
+   */
+  targetApexRank = 0;
+
+  /**
+   * @generated from field: double target_forge_rank = 12;
+   */
+  targetForgeRank = 0;
+
+  /**
+   * @generated from field: int32 target_intellectual_pace = 13;
    */
   targetIntellectualPace = 0;
 
   /**
-   * @generated from field: int32 target_emotional_granularity = 8;
+   * @generated from field: int32 target_emotional_granularity = 14;
    */
   targetEmotionalGranularity = 0;
 
   /**
-   * @generated from field: int32 target_physical_drive = 9;
+   * @generated from field: int32 target_physical_drive = 15;
    */
   targetPhysicalDrive = 0;
 
   /**
-   * @generated from field: int32 target_social_battery = 10;
+   * @generated from field: int32 target_social_battery = 16;
    */
   targetSocialBattery = 0;
 
@@ -357,14 +388,20 @@ export class ScoreMatchRequest extends Message<ScoreMatchRequest> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "swiper_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "swiper_intellectual_pace", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 4, name: "swiper_emotional_granularity", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 5, name: "swiper_physical_drive", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 6, name: "swiper_social_battery", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 7, name: "target_intellectual_pace", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 8, name: "target_emotional_granularity", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 9, name: "target_physical_drive", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 10, name: "target_social_battery", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "swiper_vault_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "swiper_apex_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "swiper_forge_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "swiper_intellectual_pace", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "swiper_emotional_granularity", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "swiper_physical_drive", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "swiper_social_battery", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "target_vault_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 11, name: "target_apex_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 12, name: "target_forge_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 13, name: "target_intellectual_pace", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 14, name: "target_emotional_granularity", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 15, name: "target_physical_drive", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 16, name: "target_social_battery", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreMatchRequest {
@@ -666,6 +703,826 @@ export class ApplyDecayResponse extends Message<ApplyDecayResponse> {
 
   static equals(a: ApplyDecayResponse | PlainMessage<ApplyDecayResponse> | undefined, b: ApplyDecayResponse | PlainMessage<ApplyDecayResponse> | undefined): boolean {
     return proto3.util.equals(ApplyDecayResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreForgeRequest
+ */
+export class ScoreForgeRequest extends Message<ScoreForgeRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: repeated sttattus.scoring.v1.WorkoutSeriesInput series = 2;
+   */
+  series: WorkoutSeriesInput[] = [];
+
+  /**
+   * @generated from field: double avg_heart_rate = 3;
+   */
+  avgHeartRate = 0;
+
+  /**
+   * @generated from field: double max_heart_rate = 4;
+   */
+  maxHeartRate = 0;
+
+  /**
+   * @generated from field: double active_energy_kcal = 5;
+   */
+  activeEnergyKcal = 0;
+
+  /**
+   * @generated from field: double recovery_impact = 6;
+   */
+  recoveryImpact = 0;
+
+  /**
+   * @generated from field: bool is_verified = 7;
+   */
+  isVerified = false;
+
+  /**
+   * Existing stats for compounding logic
+   *
+   * @generated from field: int64 current_experience = 8;
+   */
+  currentExperience = protoInt64.zero;
+
+  /**
+   * @generated from field: double current_forge_rank = 9;
+   */
+  currentForgeRank = 0;
+
+  constructor(data?: PartialMessage<ScoreForgeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreForgeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "series", kind: "message", T: WorkoutSeriesInput, repeated: true },
+    { no: 3, name: "avg_heart_rate", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "max_heart_rate", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "active_energy_kcal", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "recovery_impact", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "is_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "current_experience", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "current_forge_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreForgeRequest {
+    return new ScoreForgeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreForgeRequest {
+    return new ScoreForgeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreForgeRequest {
+    return new ScoreForgeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreForgeRequest | PlainMessage<ScoreForgeRequest> | undefined, b: ScoreForgeRequest | PlainMessage<ScoreForgeRequest> | undefined): boolean {
+    return proto3.util.equals(ScoreForgeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreForgeResponse
+ */
+export class ScoreForgeResponse extends Message<ScoreForgeResponse> {
+  /**
+   * @generated from field: int64 experience_delta = 1;
+   */
+  experienceDelta = protoInt64.zero;
+
+  /**
+   * 1-100 normalized
+   *
+   * @generated from field: double new_forge_rank = 2;
+   */
+  newForgeRank = 0;
+
+  /**
+   * @generated from field: int32 power_delta = 3;
+   */
+  powerDelta = 0;
+
+  /**
+   * @generated from field: int32 agility_delta = 4;
+   */
+  agilityDelta = 0;
+
+  /**
+   * @generated from field: int32 grit_delta = 5;
+   */
+  gritDelta = 0;
+
+  constructor(data?: PartialMessage<ScoreForgeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreForgeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "experience_delta", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "new_forge_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "power_delta", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "agility_delta", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "grit_delta", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreForgeResponse {
+    return new ScoreForgeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreForgeResponse {
+    return new ScoreForgeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreForgeResponse {
+    return new ScoreForgeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreForgeResponse | PlainMessage<ScoreForgeResponse> | undefined, b: ScoreForgeResponse | PlainMessage<ScoreForgeResponse> | undefined): boolean {
+    return proto3.util.equals(ScoreForgeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreCognitiveMasteryRequest
+ */
+export class ScoreCognitiveMasteryRequest extends Message<ScoreCognitiveMasteryRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string scenario_id = 2;
+   */
+  scenarioId = "";
+
+  /**
+   * Speed of decision indicates mastery
+   *
+   * @generated from field: int32 response_time_ms = 3;
+   */
+  responseTimeMs = 0;
+
+  /**
+   * @generated from field: bool was_optimal = 4;
+   */
+  wasOptimal = false;
+
+  /**
+   * @generated from field: int32 session_duration_sec = 5;
+   */
+  sessionDurationSec = 0;
+
+  /**
+   * @generated from field: double current_eloquence = 6;
+   */
+  currentEloquence = 0;
+
+  constructor(data?: PartialMessage<ScoreCognitiveMasteryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreCognitiveMasteryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "scenario_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "response_time_ms", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "was_optimal", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "session_duration_sec", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "current_eloquence", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreCognitiveMasteryRequest {
+    return new ScoreCognitiveMasteryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreCognitiveMasteryRequest {
+    return new ScoreCognitiveMasteryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreCognitiveMasteryRequest {
+    return new ScoreCognitiveMasteryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreCognitiveMasteryRequest | PlainMessage<ScoreCognitiveMasteryRequest> | undefined, b: ScoreCognitiveMasteryRequest | PlainMessage<ScoreCognitiveMasteryRequest> | undefined): boolean {
+    return proto3.util.equals(ScoreCognitiveMasteryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreCognitiveMasteryResponse
+ */
+export class ScoreCognitiveMasteryResponse extends Message<ScoreCognitiveMasteryResponse> {
+  /**
+   * 1-100
+   *
+   * @generated from field: int32 cognitive_load_index = 1;
+   */
+  cognitiveLoadIndex = 0;
+
+  /**
+   * Calculated SRS interval
+   *
+   * @generated from field: int32 next_review_days = 2;
+   */
+  nextReviewDays = 0;
+
+  /**
+   * @generated from field: double eloquence_delta = 3;
+   */
+  eloquenceDelta = 0;
+
+  constructor(data?: PartialMessage<ScoreCognitiveMasteryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreCognitiveMasteryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "cognitive_load_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "next_review_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "eloquence_delta", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreCognitiveMasteryResponse {
+    return new ScoreCognitiveMasteryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreCognitiveMasteryResponse {
+    return new ScoreCognitiveMasteryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreCognitiveMasteryResponse {
+    return new ScoreCognitiveMasteryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreCognitiveMasteryResponse | PlainMessage<ScoreCognitiveMasteryResponse> | undefined, b: ScoreCognitiveMasteryResponse | PlainMessage<ScoreCognitiveMasteryResponse> | undefined): boolean {
+    return proto3.util.equals(ScoreCognitiveMasteryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreNomadRequest
+ */
+export class ScoreNomadRequest extends Message<ScoreNomadRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: int32 countries_visited = 2;
+   */
+  countriesVisited = 0;
+
+  /**
+   * @generated from field: int32 verified_checkins = 3;
+   */
+  verifiedCheckins = 0;
+
+  /**
+   * @generated from field: int32 elite_hubs_visited = 4;
+   */
+  eliteHubsVisited = 0;
+
+  /**
+   * @generated from field: double current_nomad_rank = 5;
+   */
+  currentNomadRank = 0;
+
+  constructor(data?: PartialMessage<ScoreNomadRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreNomadRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "countries_visited", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "verified_checkins", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "elite_hubs_visited", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "current_nomad_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreNomadRequest {
+    return new ScoreNomadRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreNomadRequest {
+    return new ScoreNomadRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreNomadRequest {
+    return new ScoreNomadRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreNomadRequest | PlainMessage<ScoreNomadRequest> | undefined, b: ScoreNomadRequest | PlainMessage<ScoreNomadRequest> | undefined): boolean {
+    return proto3.util.equals(ScoreNomadRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreNomadResponse
+ */
+export class ScoreNomadResponse extends Message<ScoreNomadResponse> {
+  /**
+   * 1-100 normalized
+   *
+   * @generated from field: double new_nomad_rank = 1;
+   */
+  newNomadRank = 0;
+
+  /**
+   * @generated from field: int32 exploration_delta = 2;
+   */
+  explorationDelta = 0;
+
+  constructor(data?: PartialMessage<ScoreNomadResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreNomadResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "new_nomad_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "exploration_delta", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreNomadResponse {
+    return new ScoreNomadResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreNomadResponse {
+    return new ScoreNomadResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreNomadResponse {
+    return new ScoreNomadResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreNomadResponse | PlainMessage<ScoreNomadResponse> | undefined, b: ScoreNomadResponse | PlainMessage<ScoreNomadResponse> | undefined): boolean {
+    return proto3.util.equals(ScoreNomadResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreOracleRequest
+ */
+export class ScoreOracleRequest extends Message<ScoreOracleRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: double average_complexity = 2;
+   */
+  averageComplexity = 0;
+
+  /**
+   * @generated from field: double average_synthesis = 3;
+   */
+  averageSynthesis = 0;
+
+  /**
+   * @generated from field: double average_foresight = 4;
+   */
+  averageForesight = 0;
+
+  /**
+   * @generated from field: int32 unique_domains_visited = 5;
+   */
+  uniqueDomainsVisited = 0;
+
+  /**
+   * @generated from field: double current_intellectual_rank = 6;
+   */
+  currentIntellectualRank = 0;
+
+  constructor(data?: PartialMessage<ScoreOracleRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreOracleRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "average_complexity", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "average_synthesis", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "average_foresight", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "unique_domains_visited", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "current_intellectual_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreOracleRequest {
+    return new ScoreOracleRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreOracleRequest {
+    return new ScoreOracleRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreOracleRequest {
+    return new ScoreOracleRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreOracleRequest | PlainMessage<ScoreOracleRequest> | undefined, b: ScoreOracleRequest | PlainMessage<ScoreOracleRequest> | undefined): boolean {
+    return proto3.util.equals(ScoreOracleRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreOracleResponse
+ */
+export class ScoreOracleResponse extends Message<ScoreOracleResponse> {
+  /**
+   * 1-100 normalized
+   *
+   * @generated from field: double new_intellectual_rank = 1;
+   */
+  newIntellectualRank = 0;
+
+  /**
+   * @generated from field: double clout_delta = 2;
+   */
+  cloutDelta = 0;
+
+  constructor(data?: PartialMessage<ScoreOracleResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreOracleResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "new_intellectual_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "clout_delta", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreOracleResponse {
+    return new ScoreOracleResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreOracleResponse {
+    return new ScoreOracleResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreOracleResponse {
+    return new ScoreOracleResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreOracleResponse | PlainMessage<ScoreOracleResponse> | undefined, b: ScoreOracleResponse | PlainMessage<ScoreOracleResponse> | undefined): boolean {
+    return proto3.util.equals(ScoreOracleResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreZenithRequest
+ */
+export class ScoreZenithRequest extends Message<ScoreZenithRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: int32 session_duration_mins = 2;
+   */
+  sessionDurationMins = 0;
+
+  /**
+   * @generated from field: double focus_score = 3;
+   */
+  focusScore = 0;
+
+  /**
+   * @generated from field: bool is_verified = 4;
+   */
+  isVerified = false;
+
+  /**
+   * @generated from field: double avg_heart_rate = 5;
+   */
+  avgHeartRate = 0;
+
+  /**
+   * @generated from field: double hrv_delta = 6;
+   */
+  hrvDelta = 0;
+
+  /**
+   * @generated from field: double current_fortitude_rank = 7;
+   */
+  currentFortitudeRank = 0;
+
+  constructor(data?: PartialMessage<ScoreZenithRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreZenithRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "session_duration_mins", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "focus_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "is_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "avg_heart_rate", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "hrv_delta", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "current_fortitude_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreZenithRequest {
+    return new ScoreZenithRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreZenithRequest {
+    return new ScoreZenithRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreZenithRequest {
+    return new ScoreZenithRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreZenithRequest | PlainMessage<ScoreZenithRequest> | undefined, b: ScoreZenithRequest | PlainMessage<ScoreZenithRequest> | undefined): boolean {
+    return proto3.util.equals(ScoreZenithRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreZenithResponse
+ */
+export class ScoreZenithResponse extends Message<ScoreZenithResponse> {
+  /**
+   * 1-100 normalized
+   *
+   * @generated from field: double new_fortitude_rank = 1;
+   */
+  newFortitudeRank = 0;
+
+  /**
+   * @generated from field: int32 focus_minutes_delta = 2;
+   */
+  focusMinutesDelta = 0;
+
+  constructor(data?: PartialMessage<ScoreZenithResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreZenithResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "new_fortitude_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "focus_minutes_delta", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreZenithResponse {
+    return new ScoreZenithResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreZenithResponse {
+    return new ScoreZenithResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreZenithResponse {
+    return new ScoreZenithResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreZenithResponse | PlainMessage<ScoreZenithResponse> | undefined, b: ScoreZenithResponse | PlainMessage<ScoreZenithResponse> | undefined): boolean {
+    return proto3.util.equals(ScoreZenithResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreLegacyRequest
+ */
+export class ScoreLegacyRequest extends Message<ScoreLegacyRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: int32 verified_assets_count = 2;
+   */
+  verifiedAssetsCount = 0;
+
+  /**
+   * @generated from field: double total_ip_valuation = 3;
+   */
+  totalIpValuation = 0;
+
+  /**
+   * @generated from field: int32 unique_jurisdictions = 4;
+   */
+  uniqueJurisdictions = 0;
+
+  /**
+   * @generated from field: double current_influence_rank = 5;
+   */
+  currentInfluenceRank = 0;
+
+  constructor(data?: PartialMessage<ScoreLegacyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreLegacyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "verified_assets_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "total_ip_valuation", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "unique_jurisdictions", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "current_influence_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreLegacyRequest {
+    return new ScoreLegacyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreLegacyRequest {
+    return new ScoreLegacyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreLegacyRequest {
+    return new ScoreLegacyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreLegacyRequest | PlainMessage<ScoreLegacyRequest> | undefined, b: ScoreLegacyRequest | PlainMessage<ScoreLegacyRequest> | undefined): boolean {
+    return proto3.util.equals(ScoreLegacyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreLegacyResponse
+ */
+export class ScoreLegacyResponse extends Message<ScoreLegacyResponse> {
+  /**
+   * 1-100 normalized
+   *
+   * @generated from field: double new_influence_rank = 1;
+   */
+  newInfluenceRank = 0;
+
+  /**
+   * @generated from field: double influence_delta = 2;
+   */
+  influenceDelta = 0;
+
+  constructor(data?: PartialMessage<ScoreLegacyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreLegacyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "new_influence_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "influence_delta", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreLegacyResponse {
+    return new ScoreLegacyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreLegacyResponse {
+    return new ScoreLegacyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreLegacyResponse {
+    return new ScoreLegacyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreLegacyResponse | PlainMessage<ScoreLegacyResponse> | undefined, b: ScoreLegacyResponse | PlainMessage<ScoreLegacyResponse> | undefined): boolean {
+    return proto3.util.equals(ScoreLegacyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreDominionRequest
+ */
+export class ScoreDominionRequest extends Message<ScoreDominionRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: int32 verified_properties_count = 2;
+   */
+  verifiedPropertiesCount = 0;
+
+  /**
+   * @generated from field: double total_portfolio_valuation = 3;
+   */
+  totalPortfolioValuation = 0;
+
+  /**
+   * @generated from field: int32 unique_regions_count = 4;
+   */
+  uniqueRegionsCount = 0;
+
+  /**
+   * @generated from field: double current_dominion_rank = 5;
+   */
+  currentDominionRank = 0;
+
+  constructor(data?: PartialMessage<ScoreDominionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreDominionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "verified_properties_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "total_portfolio_valuation", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "unique_regions_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "current_dominion_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreDominionRequest {
+    return new ScoreDominionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreDominionRequest {
+    return new ScoreDominionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreDominionRequest {
+    return new ScoreDominionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreDominionRequest | PlainMessage<ScoreDominionRequest> | undefined, b: ScoreDominionRequest | PlainMessage<ScoreDominionRequest> | undefined): boolean {
+    return proto3.util.equals(ScoreDominionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreDominionResponse
+ */
+export class ScoreDominionResponse extends Message<ScoreDominionResponse> {
+  /**
+   * 1-100 normalized
+   *
+   * @generated from field: double new_dominion_rank = 1;
+   */
+  newDominionRank = 0;
+
+  /**
+   * @generated from field: double dominion_delta = 2;
+   */
+  dominionDelta = 0;
+
+  constructor(data?: PartialMessage<ScoreDominionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreDominionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "new_dominion_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "dominion_delta", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreDominionResponse {
+    return new ScoreDominionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreDominionResponse {
+    return new ScoreDominionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreDominionResponse {
+    return new ScoreDominionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreDominionResponse | PlainMessage<ScoreDominionResponse> | undefined, b: ScoreDominionResponse | PlainMessage<ScoreDominionResponse> | undefined): boolean {
+    return proto3.util.equals(ScoreDominionResponse, a, b);
   }
 }
 

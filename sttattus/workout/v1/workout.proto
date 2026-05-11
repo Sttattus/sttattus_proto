@@ -28,6 +28,14 @@ message Series {
   string unit = 4; // "kg" | "lb"
 }
 
+// StrainMetrics captures physiological intensity from wearables.
+message StrainMetrics {
+  double avg_heart_rate = 1;
+  double max_heart_rate = 2;
+  double active_energy_kcal = 3;
+  double recovery_impact = 4; // Normalized impact on HRV/Recovery
+}
+
 message DayWorkout {
   string id = 1;
   string user_id = 2;
@@ -35,6 +43,8 @@ message DayWorkout {
   int64 performed_at = 4;
   string notes = 5;
   repeated Series series = 6;
+  StrainMetrics strain = 7;
+  bool is_verified = 8;      // True if backed by sensor data
 }
 
 message ForgeStats {
@@ -43,7 +53,8 @@ message ForgeStats {
   int32 agility = 3;
   int32 grit = 4;
   int64 experience = 5;
-  string rank = 6;
+  string rank = 6;           // Text label (e.g., 'Mythic')
+  double forge_rank = 7;     // Normalized 1-100 status signal
 }
 
 // ===== Workouts =====
@@ -70,6 +81,8 @@ message LogDayWorkoutRequest {
   int64 performed_at = 2;
   string notes = 3;
   repeated Series series = 4;
+  StrainMetrics strain = 5;
+  bool is_verified = 6;
 }
 
 // LogDayWorkoutResponse includes the *new* forge stats, so the client doesn't

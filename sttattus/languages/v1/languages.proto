@@ -3,62 +3,90 @@ syntax = "proto3";
 package sttattus.languages.v1;
 
 import "sttattus/common/v1/pagination.proto";
+import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1";
 
-message Category {
-  string id = 1;
-  string label_json = 2; // JSON string: i18n labels keyed by locale
-  int32 sort_order = 3;
+// CulturalCategory defines the elite domain of knowledge.
+enum CulturalCategory {
+  CULTURAL_CATEGORY_UNSPECIFIED = 0;
+  CULTURAL_CATEGORY_DIPLOMACY = 1;     // International relations, etiquette
+  CULTURAL_CATEGORY_LUXURY_ASSETS = 2; // Art, Watches, Real Estate
+  CULTURAL_CATEGORY_GASTRONOMY = 3;    // Wine, Fine Dining
+  CULTURAL_CATEGORY_PHILANTHROPY = 4;  // Foundations, Social Impact
 }
 
-message Word {
+// CulturalNuance represents a specific rule of social grace or etiquette.
+message CulturalNuance {
   string id = 1;
-  string category_id = 2;
-  string payload_json = 3; // JSON: term, definition, examples, etc.
-  repeated int32 levels = 4;
+  string title = 2;
+  string description = 3;
+  int32 status_weight = 4; // How much this impacts Cultural Capital
+}
+
+// Scenario represents a "Social Blueprint" interaction.
+message Scenario {
+  string id = 1;
+  string title = 2;
+  string context_description = 3;
+  CulturalCategory category = 4;
+  string locale = 5;               // e.g., 'fr', 'jp'
+  repeated DialogueNode nodes = 6;
+  double min_sttattus_score = 7;   // Gating requirement
+}
+
+// DialogueNode is a single step in a social interaction script.
+message DialogueNode {
+  string id = 1;
+  string speaker = 2;
+  string content = 3;              // The specific linguistic phrasing
+  string literal_translation = 4;
+  string cultural_insight = 5;     // Explanation of WHY this phrasing is high-status
+  repeated DialogueOption options = 6;
+}
+
+message DialogueOption {
+  string id = 1;
+  string content = 2;
+  bool is_optimal = 3;             // The "Socially Gracious" path
+  int32 grace_bonus = 4;
 }
 
 message Progress {
   string user_id = 1;
-  string word_id = 2;
-  int32 score = 3;
-  int64 last_reviewed_at = 4;
-  int64 mastered_at = 5;
+  string scenario_id = 2;
+  int32 mastery_level = 3;         // 1-100
+  int32 cultural_capital_gain = 4;
+  google.protobuf.Timestamp last_refined_at = 5;
 }
 
 message LinguistStats {
   string user_id = 1;
-  int32 eloquence = 2;
-  int32 lexical_depth = 3;
-  int32 immersion_days = 4;
-  string mastery_rank = 5;
+  int32 eloquence = 2;             // Vocabulary & Precision
+  int32 social_grace = 3;          // Interaction & Etiquette
+  int32 cultural_capital = 4;      // Aggregated "Soft Status"
+  string mastery_rank = 5;         // e.g., 'Diplomat', 'Sovereign Orator'
 }
 
-message ListCategoriesRequest {}
-message ListCategoriesResponse {
-  repeated Category categories = 1;
+// REQ/RES
+message ListScenariosRequest {
+  CulturalCategory category = 1;
+  sttattus.common.v1.PageRequest page = 2;
 }
-
-message ListWordsRequest {
-  string category_id = 1;
-  int32 level = 2;
-  sttattus.common.v1.PageRequest page = 3;
-}
-message ListWordsResponse {
-  repeated Word words = 1;
+message ListScenariosResponse {
+  repeated Scenario scenarios = 1;
   sttattus.common.v1.PageResponse page = 2;
 }
 
-message UpdateProgressRequest {
-  string word_id = 1;
-  int32 score_delta = 2;
-  bool mastered = 3;
+message CompleteInteractionRequest {
+  string scenario_id = 1;
+  int32 total_grace_earned = 2;
+  bool completed_optimally = 3;
+  int32 response_time_ms = 4;
 }
-message UpdateProgressResponse {
+message CompleteInteractionResponse {
   Progress progress = 1;
   LinguistStats stats = 2;
-  int32 eloquence_delta = 3;
 }
 
 message GetLinguistStatsRequest {}
@@ -66,17 +94,26 @@ message GetLinguistStatsResponse {
   LinguistStats stats = 1;
 }
 
-message SubmitFeedbackRequest {
-  string body = 1;
-}
-message SubmitFeedbackResponse {
-  string id = 1;
+service LanguagesService {
+  // The Protocol: Scenario-based learning
+  rpc ListScenarios(ListScenariosRequest) returns (ListScenariosResponse);
+  rpc CompleteInteraction(CompleteInteractionRequest) returns (CompleteInteractionResponse);
+  
+  // Status
+  rpc GetLinguistStats(GetLinguistStatsRequest) returns (GetLinguistStatsResponse);
+
+  // Legacy (Deprecated but kept for bridge)
+  rpc ListWords(ListWordsRequest) returns (ListWordsResponse);
 }
 
-service LanguagesService {
-  rpc ListCategories(ListCategoriesRequest) returns (ListCategoriesResponse);
-  rpc ListWords(ListWordsRequest) returns (ListWordsResponse);
-  rpc UpdateProgress(UpdateProgressRequest) returns (UpdateProgressResponse);
-  rpc GetLinguistStats(GetLinguistStatsRequest) returns (GetLinguistStatsResponse);
-  rpc SubmitFeedback(SubmitFeedbackRequest) returns (SubmitFeedbackResponse);
+// Deprecated Word-based messages (for transition)
+message Word {
+  string id = 1;
+  string payload_json = 2;
+}
+message ListWordsRequest {
+  sttattus.common.v1.PageRequest page = 1;
+}
+message ListWordsResponse {
+  repeated Word words = 1;
 }

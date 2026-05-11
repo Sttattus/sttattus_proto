@@ -107,6 +107,9 @@ class DatingProfile extends $pb.GeneratedMessage {
     $core.int? physicalDrive,
     $core.int? socialBattery,
     $core.Iterable<$core.String>? photoUrls,
+    $core.double? vaultRank,
+    $core.double? apexRank,
+    $core.double? forgeRank,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
@@ -122,6 +125,9 @@ class DatingProfile extends $pb.GeneratedMessage {
     if (physicalDrive != null) result.physicalDrive = physicalDrive;
     if (socialBattery != null) result.socialBattery = socialBattery;
     if (photoUrls != null) result.photoUrls.addAll(photoUrls);
+    if (vaultRank != null) result.vaultRank = vaultRank;
+    if (apexRank != null) result.apexRank = apexRank;
+    if (forgeRank != null) result.forgeRank = forgeRank;
     return result;
   }
 
@@ -144,6 +150,9 @@ class DatingProfile extends $pb.GeneratedMessage {
     ..a<$core.int>(11, _omitFieldNames ? '' : 'physicalDrive', $pb.PbFieldType.O3)
     ..a<$core.int>(12, _omitFieldNames ? '' : 'socialBattery', $pb.PbFieldType.O3)
     ..pPS(13, _omitFieldNames ? '' : 'photoUrls')
+    ..a<$core.double>(14, _omitFieldNames ? '' : 'vaultRank', $pb.PbFieldType.OD)
+    ..a<$core.double>(15, _omitFieldNames ? '' : 'apexRank', $pb.PbFieldType.OD)
+    ..a<$core.double>(16, _omitFieldNames ? '' : 'forgeRank', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -276,6 +285,33 @@ class DatingProfile extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(13)
   $pb.PbList<$core.String> get photoUrls => $_getList(12);
+
+  @$pb.TagNumber(14)
+  $core.double get vaultRank => $_getN(13);
+  @$pb.TagNumber(14)
+  set vaultRank($core.double value) => $_setDouble(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasVaultRank() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearVaultRank() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.double get apexRank => $_getN(14);
+  @$pb.TagNumber(15)
+  set apexRank($core.double value) => $_setDouble(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasApexRank() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearApexRank() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.double get forgeRank => $_getN(15);
+  @$pb.TagNumber(16)
+  set forgeRank($core.double value) => $_setDouble(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasForgeRank() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearForgeRank() => $_clearField(16);
 }
 
 class Candidate extends $pb.GeneratedMessage {

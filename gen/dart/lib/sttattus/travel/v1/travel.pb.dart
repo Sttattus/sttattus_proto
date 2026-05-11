@@ -15,7 +15,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../common/v1/pagination.pb.dart' as $1;
+import '../../../google/protobuf/timestamp.pb.dart' as $1;
+import '../../common/v1/pagination.pb.dart' as $2;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -24,15 +25,17 @@ class NomadStats extends $pb.GeneratedMessage {
     $core.String? userId,
     $core.int? explorationScore,
     $core.int? countriesVisitedCount,
-    $core.String? nomadRank,
-    $core.int? completedMilestones,
+    $core.String? nomadRankLabel,
+    $core.double? nomadRank,
+    $core.int? verifiedCheckinsCount,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
     if (explorationScore != null) result.explorationScore = explorationScore;
     if (countriesVisitedCount != null) result.countriesVisitedCount = countriesVisitedCount;
+    if (nomadRankLabel != null) result.nomadRankLabel = nomadRankLabel;
     if (nomadRank != null) result.nomadRank = nomadRank;
-    if (completedMilestones != null) result.completedMilestones = completedMilestones;
+    if (verifiedCheckinsCount != null) result.verifiedCheckinsCount = verifiedCheckinsCount;
     return result;
   }
 
@@ -45,8 +48,9 @@ class NomadStats extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'userId')
     ..a<$core.int>(2, _omitFieldNames ? '' : 'explorationScore', $pb.PbFieldType.O3)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'countriesVisitedCount', $pb.PbFieldType.O3)
-    ..aOS(4, _omitFieldNames ? '' : 'nomadRank')
-    ..a<$core.int>(5, _omitFieldNames ? '' : 'completedMilestones', $pb.PbFieldType.O3)
+    ..aOS(4, _omitFieldNames ? '' : 'nomadRankLabel')
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'nomadRank', $pb.PbFieldType.OD)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'verifiedCheckinsCount', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -95,22 +99,31 @@ class NomadStats extends $pb.GeneratedMessage {
   void clearCountriesVisitedCount() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get nomadRank => $_getSZ(3);
+  $core.String get nomadRankLabel => $_getSZ(3);
   @$pb.TagNumber(4)
-  set nomadRank($core.String value) => $_setString(3, value);
+  set nomadRankLabel($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
-  $core.bool hasNomadRank() => $_has(3);
+  $core.bool hasNomadRankLabel() => $_has(3);
   @$pb.TagNumber(4)
-  void clearNomadRank() => $_clearField(4);
+  void clearNomadRankLabel() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $core.int get completedMilestones => $_getIZ(4);
+  $core.double get nomadRank => $_getN(4);
   @$pb.TagNumber(5)
-  set completedMilestones($core.int value) => $_setSignedInt32(4, value);
+  set nomadRank($core.double value) => $_setDouble(4, value);
   @$pb.TagNumber(5)
-  $core.bool hasCompletedMilestones() => $_has(4);
+  $core.bool hasNomadRank() => $_has(4);
   @$pb.TagNumber(5)
-  void clearCompletedMilestones() => $_clearField(5);
+  void clearNomadRank() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get verifiedCheckinsCount => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set verifiedCheckinsCount($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasVerifiedCheckinsCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearVerifiedCheckinsCount() => $_clearField(6);
 }
 
 class Milestone extends $pb.GeneratedMessage {
@@ -124,6 +137,8 @@ class Milestone extends $pb.GeneratedMessage {
     $core.String? accentColorHex,
     $core.String? story,
     $fixnum.Int64? achievedAt,
+    $core.bool? isVerified,
+    CheckIn? checkin,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -135,6 +150,8 @@ class Milestone extends $pb.GeneratedMessage {
     if (accentColorHex != null) result.accentColorHex = accentColorHex;
     if (story != null) result.story = story;
     if (achievedAt != null) result.achievedAt = achievedAt;
+    if (isVerified != null) result.isVerified = isVerified;
+    if (checkin != null) result.checkin = checkin;
     return result;
   }
 
@@ -153,6 +170,8 @@ class Milestone extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'accentColorHex')
     ..aOS(8, _omitFieldNames ? '' : 'story')
     ..aInt64(9, _omitFieldNames ? '' : 'achievedAt')
+    ..aOB(10, _omitFieldNames ? '' : 'isVerified')
+    ..aOM<CheckIn>(11, _omitFieldNames ? '' : 'checkin', subBuilder: CheckIn.create)
     ..hasRequiredFields = false
   ;
 
@@ -253,70 +272,88 @@ class Milestone extends $pb.GeneratedMessage {
   $core.bool hasAchievedAt() => $_has(8);
   @$pb.TagNumber(9)
   void clearAchievedAt() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get isVerified => $_getBF(9);
+  @$pb.TagNumber(10)
+  set isVerified($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasIsVerified() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearIsVerified() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  CheckIn get checkin => $_getN(10);
+  @$pb.TagNumber(11)
+  set checkin(CheckIn value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCheckin() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCheckin() => $_clearField(11);
+  @$pb.TagNumber(11)
+  CheckIn ensureCheckin() => $_ensure(10);
 }
 
-class FeedPost extends $pb.GeneratedMessage {
-  factory FeedPost({
+/// CheckIn represents a verified presence event.
+class CheckIn extends $pb.GeneratedMessage {
+  factory CheckIn({
     $core.String? id,
-    $core.String? userId,
-    $core.String? authorName,
-    $core.String? authorAvatar,
-    $core.String? milestoneId,
-    $core.String? body,
-    $core.Iterable<$core.String>? mediaUrls,
-    $fixnum.Int64? createdAt,
-    $core.int? likesCount,
-    $core.bool? likedByMe,
+    $core.double? latitude,
+    $core.double? longitude,
+    $core.String? ipAddress,
+    $core.String? city,
+    $core.String? region,
+    $core.String? countryCode,
+    $1.Timestamp? verifiedAt,
+    $core.bool? isEliteHub,
   }) {
     final result = create();
     if (id != null) result.id = id;
-    if (userId != null) result.userId = userId;
-    if (authorName != null) result.authorName = authorName;
-    if (authorAvatar != null) result.authorAvatar = authorAvatar;
-    if (milestoneId != null) result.milestoneId = milestoneId;
-    if (body != null) result.body = body;
-    if (mediaUrls != null) result.mediaUrls.addAll(mediaUrls);
-    if (createdAt != null) result.createdAt = createdAt;
-    if (likesCount != null) result.likesCount = likesCount;
-    if (likedByMe != null) result.likedByMe = likedByMe;
+    if (latitude != null) result.latitude = latitude;
+    if (longitude != null) result.longitude = longitude;
+    if (ipAddress != null) result.ipAddress = ipAddress;
+    if (city != null) result.city = city;
+    if (region != null) result.region = region;
+    if (countryCode != null) result.countryCode = countryCode;
+    if (verifiedAt != null) result.verifiedAt = verifiedAt;
+    if (isEliteHub != null) result.isEliteHub = isEliteHub;
     return result;
   }
 
-  FeedPost._();
+  CheckIn._();
 
-  factory FeedPost.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory FeedPost.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CheckIn.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CheckIn.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedPost', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CheckIn', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOS(2, _omitFieldNames ? '' : 'userId')
-    ..aOS(3, _omitFieldNames ? '' : 'authorName')
-    ..aOS(4, _omitFieldNames ? '' : 'authorAvatar')
-    ..aOS(5, _omitFieldNames ? '' : 'milestoneId')
-    ..aOS(6, _omitFieldNames ? '' : 'body')
-    ..pPS(7, _omitFieldNames ? '' : 'mediaUrls')
-    ..aInt64(8, _omitFieldNames ? '' : 'createdAt')
-    ..a<$core.int>(9, _omitFieldNames ? '' : 'likesCount', $pb.PbFieldType.O3)
-    ..aOB(10, _omitFieldNames ? '' : 'likedByMe')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'latitude', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'longitude', $pb.PbFieldType.OD)
+    ..aOS(4, _omitFieldNames ? '' : 'ipAddress')
+    ..aOS(5, _omitFieldNames ? '' : 'city')
+    ..aOS(6, _omitFieldNames ? '' : 'region')
+    ..aOS(7, _omitFieldNames ? '' : 'countryCode')
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'verifiedAt', subBuilder: $1.Timestamp.create)
+    ..aOB(9, _omitFieldNames ? '' : 'isEliteHub')
     ..hasRequiredFields = false
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FeedPost clone() => FeedPost()..mergeFromMessage(this);
+  CheckIn clone() => CheckIn()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FeedPost copyWith(void Function(FeedPost) updates) => super.copyWith((message) => updates(message as FeedPost)) as FeedPost;
+  CheckIn copyWith(void Function(CheckIn) updates) => super.copyWith((message) => updates(message as CheckIn)) as CheckIn;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static FeedPost create() => FeedPost._();
+  static CheckIn create() => CheckIn._();
   @$core.override
-  FeedPost createEmptyInstance() => create();
-  static $pb.PbList<FeedPost> createRepeated() => $pb.PbList<FeedPost>();
+  CheckIn createEmptyInstance() => create();
+  static $pb.PbList<CheckIn> createRepeated() => $pb.PbList<CheckIn>();
   @$core.pragma('dart2js:noInline')
-  static FeedPost getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeedPost>(create);
-  static FeedPost? _defaultInstance;
+  static CheckIn getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CheckIn>(create);
+  static CheckIn? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
@@ -328,85 +365,85 @@ class FeedPost extends $pb.GeneratedMessage {
   void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get userId => $_getSZ(1);
+  $core.double get latitude => $_getN(1);
   @$pb.TagNumber(2)
-  set userId($core.String value) => $_setString(1, value);
+  set latitude($core.double value) => $_setDouble(1, value);
   @$pb.TagNumber(2)
-  $core.bool hasUserId() => $_has(1);
+  $core.bool hasLatitude() => $_has(1);
   @$pb.TagNumber(2)
-  void clearUserId() => $_clearField(2);
+  void clearLatitude() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get authorName => $_getSZ(2);
+  $core.double get longitude => $_getN(2);
   @$pb.TagNumber(3)
-  set authorName($core.String value) => $_setString(2, value);
+  set longitude($core.double value) => $_setDouble(2, value);
   @$pb.TagNumber(3)
-  $core.bool hasAuthorName() => $_has(2);
+  $core.bool hasLongitude() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAuthorName() => $_clearField(3);
+  void clearLongitude() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get authorAvatar => $_getSZ(3);
+  $core.String get ipAddress => $_getSZ(3);
   @$pb.TagNumber(4)
-  set authorAvatar($core.String value) => $_setString(3, value);
+  set ipAddress($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
-  $core.bool hasAuthorAvatar() => $_has(3);
+  $core.bool hasIpAddress() => $_has(3);
   @$pb.TagNumber(4)
-  void clearAuthorAvatar() => $_clearField(4);
+  void clearIpAddress() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get milestoneId => $_getSZ(4);
+  $core.String get city => $_getSZ(4);
   @$pb.TagNumber(5)
-  set milestoneId($core.String value) => $_setString(4, value);
+  set city($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
-  $core.bool hasMilestoneId() => $_has(4);
+  $core.bool hasCity() => $_has(4);
   @$pb.TagNumber(5)
-  void clearMilestoneId() => $_clearField(5);
+  void clearCity() => $_clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get body => $_getSZ(5);
+  $core.String get region => $_getSZ(5);
   @$pb.TagNumber(6)
-  set body($core.String value) => $_setString(5, value);
+  set region($core.String value) => $_setString(5, value);
   @$pb.TagNumber(6)
-  $core.bool hasBody() => $_has(5);
+  $core.bool hasRegion() => $_has(5);
   @$pb.TagNumber(6)
-  void clearBody() => $_clearField(6);
+  void clearRegion() => $_clearField(6);
 
   @$pb.TagNumber(7)
-  $pb.PbList<$core.String> get mediaUrls => $_getList(6);
+  $core.String get countryCode => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set countryCode($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCountryCode() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCountryCode() => $_clearField(7);
 
   @$pb.TagNumber(8)
-  $fixnum.Int64 get createdAt => $_getI64(7);
+  $1.Timestamp get verifiedAt => $_getN(7);
   @$pb.TagNumber(8)
-  set createdAt($fixnum.Int64 value) => $_setInt64(7, value);
+  set verifiedAt($1.Timestamp value) => $_setField(8, value);
   @$pb.TagNumber(8)
-  $core.bool hasCreatedAt() => $_has(7);
+  $core.bool hasVerifiedAt() => $_has(7);
   @$pb.TagNumber(8)
-  void clearCreatedAt() => $_clearField(8);
+  void clearVerifiedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureVerifiedAt() => $_ensure(7);
 
   @$pb.TagNumber(9)
-  $core.int get likesCount => $_getIZ(8);
+  $core.bool get isEliteHub => $_getBF(8);
   @$pb.TagNumber(9)
-  set likesCount($core.int value) => $_setSignedInt32(8, value);
+  set isEliteHub($core.bool value) => $_setBool(8, value);
   @$pb.TagNumber(9)
-  $core.bool hasLikesCount() => $_has(8);
+  $core.bool hasIsEliteHub() => $_has(8);
   @$pb.TagNumber(9)
-  void clearLikesCount() => $_clearField(9);
-
-  @$pb.TagNumber(10)
-  $core.bool get likedByMe => $_getBF(9);
-  @$pb.TagNumber(10)
-  set likedByMe($core.bool value) => $_setBool(9, value);
-  @$pb.TagNumber(10)
-  $core.bool hasLikedByMe() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearLikedByMe() => $_clearField(10);
+  void clearIsEliteHub() => $_clearField(9);
 }
 
+/// REQ/RES
 class ListMilestonesRequest extends $pb.GeneratedMessage {
   factory ListMilestonesRequest({
     $core.String? userId,
-    $1.PageRequest? page,
+    $2.PageRequest? page,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
@@ -421,7 +458,7 @@ class ListMilestonesRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMilestonesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..aOM<$1.PageRequest>(2, _omitFieldNames ? '' : 'page', subBuilder: $1.PageRequest.create)
+    ..aOM<$2.PageRequest>(2, _omitFieldNames ? '' : 'page', subBuilder: $2.PageRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -452,21 +489,21 @@ class ListMilestonesRequest extends $pb.GeneratedMessage {
   void clearUserId() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  $1.PageRequest get page => $_getN(1);
+  $2.PageRequest get page => $_getN(1);
   @$pb.TagNumber(2)
-  set page($1.PageRequest value) => $_setField(2, value);
+  set page($2.PageRequest value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasPage() => $_has(1);
   @$pb.TagNumber(2)
   void clearPage() => $_clearField(2);
   @$pb.TagNumber(2)
-  $1.PageRequest ensurePage() => $_ensure(1);
+  $2.PageRequest ensurePage() => $_ensure(1);
 }
 
 class ListMilestonesResponse extends $pb.GeneratedMessage {
   factory ListMilestonesResponse({
     $core.Iterable<Milestone>? milestones,
-    $1.PageResponse? page,
+    $2.PageResponse? page,
   }) {
     final result = create();
     if (milestones != null) result.milestones.addAll(milestones);
@@ -481,7 +518,7 @@ class ListMilestonesResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMilestonesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
     ..pc<Milestone>(1, _omitFieldNames ? '' : 'milestones', $pb.PbFieldType.PM, subBuilder: Milestone.create)
-    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'page', subBuilder: $1.PageResponse.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'page', subBuilder: $2.PageResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -506,15 +543,15 @@ class ListMilestonesResponse extends $pb.GeneratedMessage {
   $pb.PbList<Milestone> get milestones => $_getList(0);
 
   @$pb.TagNumber(2)
-  $1.PageResponse get page => $_getN(1);
+  $2.PageResponse get page => $_getN(1);
   @$pb.TagNumber(2)
-  set page($1.PageResponse value) => $_setField(2, value);
+  set page($2.PageResponse value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasPage() => $_has(1);
   @$pb.TagNumber(2)
   void clearPage() => $_clearField(2);
   @$pb.TagNumber(2)
-  $1.PageResponse ensurePage() => $_ensure(1);
+  $2.PageResponse ensurePage() => $_ensure(1);
 }
 
 class CreateMilestoneRequest extends $pb.GeneratedMessage {
@@ -524,6 +561,7 @@ class CreateMilestoneRequest extends $pb.GeneratedMessage {
     $core.String? mediaAssetId,
     $core.String? story,
     $fixnum.Int64? achievedAt,
+    CheckIn? checkin,
   }) {
     final result = create();
     if (countryCode != null) result.countryCode = countryCode;
@@ -531,6 +569,7 @@ class CreateMilestoneRequest extends $pb.GeneratedMessage {
     if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
     if (story != null) result.story = story;
     if (achievedAt != null) result.achievedAt = achievedAt;
+    if (checkin != null) result.checkin = checkin;
     return result;
   }
 
@@ -545,6 +584,7 @@ class CreateMilestoneRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'mediaAssetId')
     ..aOS(4, _omitFieldNames ? '' : 'story')
     ..aInt64(5, _omitFieldNames ? '' : 'achievedAt')
+    ..aOM<CheckIn>(6, _omitFieldNames ? '' : 'checkin', subBuilder: CheckIn.create)
     ..hasRequiredFields = false
   ;
 
@@ -583,9 +623,6 @@ class CreateMilestoneRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearCity() => $_clearField(2);
 
-  /// Caller already uploaded the original photo via MediaService.RequestUpload
-  /// and the resulting media_asset_id is passed here. The TravelService will
-  /// call Rust imageproc to produce the thumbnail + accent color.
   @$pb.TagNumber(3)
   $core.String get mediaAssetId => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -612,6 +649,17 @@ class CreateMilestoneRequest extends $pb.GeneratedMessage {
   $core.bool hasAchievedAt() => $_has(4);
   @$pb.TagNumber(5)
   void clearAchievedAt() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  CheckIn get checkin => $_getN(5);
+  @$pb.TagNumber(6)
+  set checkin(CheckIn value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCheckin() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCheckin() => $_clearField(6);
+  @$pb.TagNumber(6)
+  CheckIn ensureCheckin() => $_ensure(5);
 }
 
 class CreateMilestoneResponse extends $pb.GeneratedMessage {
@@ -772,7 +820,7 @@ class GetNomadStatsResponse extends $pb.GeneratedMessage {
 
 class ListFeedRequest extends $pb.GeneratedMessage {
   factory ListFeedRequest({
-    $1.PageRequest? page,
+    $2.PageRequest? page,
   }) {
     final result = create();
     if (page != null) result.page = page;
@@ -785,7 +833,7 @@ class ListFeedRequest extends $pb.GeneratedMessage {
   factory ListFeedRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
-    ..aOM<$1.PageRequest>(1, _omitFieldNames ? '' : 'page', subBuilder: $1.PageRequest.create)
+    ..aOM<$2.PageRequest>(1, _omitFieldNames ? '' : 'page', subBuilder: $2.PageRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -807,24 +855,24 @@ class ListFeedRequest extends $pb.GeneratedMessage {
   static ListFeedRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.PageRequest get page => $_getN(0);
+  $2.PageRequest get page => $_getN(0);
   @$pb.TagNumber(1)
-  set page($1.PageRequest value) => $_setField(1, value);
+  set page($2.PageRequest value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasPage() => $_has(0);
   @$pb.TagNumber(1)
   void clearPage() => $_clearField(1);
   @$pb.TagNumber(1)
-  $1.PageRequest ensurePage() => $_ensure(0);
+  $2.PageRequest ensurePage() => $_ensure(0);
 }
 
 class ListFeedResponse extends $pb.GeneratedMessage {
   factory ListFeedResponse({
-    $core.Iterable<FeedPost>? posts,
-    $1.PageResponse? page,
+    $core.Iterable<Milestone>? milestones,
+    $2.PageResponse? page,
   }) {
     final result = create();
-    if (posts != null) result.posts.addAll(posts);
+    if (milestones != null) result.milestones.addAll(milestones);
     if (page != null) result.page = page;
     return result;
   }
@@ -835,8 +883,8 @@ class ListFeedResponse extends $pb.GeneratedMessage {
   factory ListFeedResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
-    ..pc<FeedPost>(1, _omitFieldNames ? '' : 'posts', $pb.PbFieldType.PM, subBuilder: FeedPost.create)
-    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'page', subBuilder: $1.PageResponse.create)
+    ..pc<Milestone>(1, _omitFieldNames ? '' : 'milestones', $pb.PbFieldType.PM, subBuilder: Milestone.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'page', subBuilder: $2.PageResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -858,134 +906,18 @@ class ListFeedResponse extends $pb.GeneratedMessage {
   static ListFeedResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $pb.PbList<FeedPost> get posts => $_getList(0);
+  $pb.PbList<Milestone> get milestones => $_getList(0);
 
   @$pb.TagNumber(2)
-  $1.PageResponse get page => $_getN(1);
+  $2.PageResponse get page => $_getN(1);
   @$pb.TagNumber(2)
-  set page($1.PageResponse value) => $_setField(2, value);
+  set page($2.PageResponse value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasPage() => $_has(1);
   @$pb.TagNumber(2)
   void clearPage() => $_clearField(2);
   @$pb.TagNumber(2)
-  $1.PageResponse ensurePage() => $_ensure(1);
-}
-
-class LikePostRequest extends $pb.GeneratedMessage {
-  factory LikePostRequest({
-    $core.String? postId,
-    $core.bool? like,
-  }) {
-    final result = create();
-    if (postId != null) result.postId = postId;
-    if (like != null) result.like = like;
-    return result;
-  }
-
-  LikePostRequest._();
-
-  factory LikePostRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory LikePostRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LikePostRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'postId')
-    ..aOB(2, _omitFieldNames ? '' : 'like')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LikePostRequest clone() => LikePostRequest()..mergeFromMessage(this);
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LikePostRequest copyWith(void Function(LikePostRequest) updates) => super.copyWith((message) => updates(message as LikePostRequest)) as LikePostRequest;
-
-  @$core.override
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static LikePostRequest create() => LikePostRequest._();
-  @$core.override
-  LikePostRequest createEmptyInstance() => create();
-  static $pb.PbList<LikePostRequest> createRepeated() => $pb.PbList<LikePostRequest>();
-  @$core.pragma('dart2js:noInline')
-  static LikePostRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LikePostRequest>(create);
-  static LikePostRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get postId => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set postId($core.String value) => $_setString(0, value);
-  @$pb.TagNumber(1)
-  $core.bool hasPostId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearPostId() => $_clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.bool get like => $_getBF(1);
-  @$pb.TagNumber(2)
-  set like($core.bool value) => $_setBool(1, value);
-  @$pb.TagNumber(2)
-  $core.bool hasLike() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearLike() => $_clearField(2);
-}
-
-class LikePostResponse extends $pb.GeneratedMessage {
-  factory LikePostResponse({
-    $core.int? likesCount,
-    $core.bool? likedByMe,
-  }) {
-    final result = create();
-    if (likesCount != null) result.likesCount = likesCount;
-    if (likedByMe != null) result.likedByMe = likedByMe;
-    return result;
-  }
-
-  LikePostResponse._();
-
-  factory LikePostResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory LikePostResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LikePostResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'likesCount', $pb.PbFieldType.O3)
-    ..aOB(2, _omitFieldNames ? '' : 'likedByMe')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LikePostResponse clone() => LikePostResponse()..mergeFromMessage(this);
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LikePostResponse copyWith(void Function(LikePostResponse) updates) => super.copyWith((message) => updates(message as LikePostResponse)) as LikePostResponse;
-
-  @$core.override
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static LikePostResponse create() => LikePostResponse._();
-  @$core.override
-  LikePostResponse createEmptyInstance() => create();
-  static $pb.PbList<LikePostResponse> createRepeated() => $pb.PbList<LikePostResponse>();
-  @$core.pragma('dart2js:noInline')
-  static LikePostResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LikePostResponse>(create);
-  static LikePostResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.int get likesCount => $_getIZ(0);
-  @$pb.TagNumber(1)
-  set likesCount($core.int value) => $_setSignedInt32(0, value);
-  @$pb.TagNumber(1)
-  $core.bool hasLikesCount() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearLikesCount() => $_clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.bool get likedByMe => $_getBF(1);
-  @$pb.TagNumber(2)
-  set likedByMe($core.bool value) => $_setBool(1, value);
-  @$pb.TagNumber(2)
-  $core.bool hasLikedByMe() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearLikedByMe() => $_clearField(2);
+  $2.PageResponse ensurePage() => $_ensure(1);
 }
 
 

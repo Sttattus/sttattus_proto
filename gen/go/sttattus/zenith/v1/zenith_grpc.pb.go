@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion9
 
 const (
 	ZenithService_LogFocusSession_FullMethodName = "/sttattus.zenith.v1.ZenithService/LogFocusSession"
+	ZenithService_GetZenithStats_FullMethodName  = "/sttattus.zenith.v1.ZenithService/GetZenithStats"
 )
 
 // ZenithServiceClient is the client API for ZenithService service.
@@ -27,6 +28,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ZenithServiceClient interface {
 	LogFocusSession(ctx context.Context, in *LogFocusSessionRequest, opts ...grpc.CallOption) (*LogFocusSessionResponse, error)
+	GetZenithStats(ctx context.Context, in *GetZenithStatsRequest, opts ...grpc.CallOption) (*GetZenithStatsResponse, error)
 }
 
 type zenithServiceClient struct {
@@ -47,11 +49,22 @@ func (c *zenithServiceClient) LogFocusSession(ctx context.Context, in *LogFocusS
 	return out, nil
 }
 
+func (c *zenithServiceClient) GetZenithStats(ctx context.Context, in *GetZenithStatsRequest, opts ...grpc.CallOption) (*GetZenithStatsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetZenithStatsResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetZenithStats_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ZenithServiceServer is the server API for ZenithService service.
 // All implementations must embed UnimplementedZenithServiceServer
 // for forward compatibility.
 type ZenithServiceServer interface {
 	LogFocusSession(context.Context, *LogFocusSessionRequest) (*LogFocusSessionResponse, error)
+	GetZenithStats(context.Context, *GetZenithStatsRequest) (*GetZenithStatsResponse, error)
 	mustEmbedUnimplementedZenithServiceServer()
 }
 
@@ -64,6 +77,9 @@ type UnimplementedZenithServiceServer struct{}
 
 func (UnimplementedZenithServiceServer) LogFocusSession(context.Context, *LogFocusSessionRequest) (*LogFocusSessionResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method LogFocusSession not implemented")
+}
+func (UnimplementedZenithServiceServer) GetZenithStats(context.Context, *GetZenithStatsRequest) (*GetZenithStatsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetZenithStats not implemented")
 }
 func (UnimplementedZenithServiceServer) mustEmbedUnimplementedZenithServiceServer() {}
 func (UnimplementedZenithServiceServer) testEmbeddedByValue()                       {}
@@ -104,6 +120,24 @@ func _ZenithService_LogFocusSession_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ZenithService_GetZenithStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetZenithStatsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetZenithStats(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetZenithStats_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetZenithStats(ctx, req.(*GetZenithStatsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ZenithService_ServiceDesc is the grpc.ServiceDesc for ZenithService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -114,6 +148,10 @@ var ZenithService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "LogFocusSession",
 			Handler:    _ZenithService_LogFocusSession_Handler,
+		},
+		{
+			MethodName: "GetZenithStats",
+			Handler:    _ZenithService_GetZenithStats_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

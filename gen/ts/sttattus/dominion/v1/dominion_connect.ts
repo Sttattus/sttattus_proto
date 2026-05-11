@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ListTerritoriesRequest, ListTerritoriesResponse } from "./dominion_pb.js";
+import { GetDominionStatsRequest, GetDominionStatsResponse, GetLoungeKeyRequest, GetLoungeKeyResponse, ListTerritoriesRequest, ListTerritoriesResponse, SyncPropertiesRequest, SyncPropertiesResponse } from "./dominion_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -13,12 +13,43 @@ export const DominionService = {
   typeName: "sttattus.dominion.v1.DominionService",
   methods: {
     /**
+     * Sovereignty Protocol: Verified Territorial Control
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.SyncProperties
+     */
+    syncProperties: {
+      name: "SyncProperties",
+      I: SyncPropertiesRequest,
+      O: SyncPropertiesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * @generated from rpc sttattus.dominion.v1.DominionService.ListTerritories
      */
     listTerritories: {
       name: "ListTerritories",
       I: ListTerritoriesRequest,
       O: ListTerritoriesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetDominionStats
+     */
+    getDominionStats: {
+      name: "GetDominionStats",
+      I: GetDominionStatsRequest,
+      O: GetDominionStatsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Hard Perks
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetLoungeKey
+     */
+    getLoungeKey: {
+      name: "GetLoungeKey",
+      I: GetLoungeKeyRequest,
+      O: GetLoungeKeyResponse,
       kind: MethodKind.Unary,
     },
   }

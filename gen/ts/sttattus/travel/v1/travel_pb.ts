@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
 import { PageRequest, PageResponse } from "../../common/v1/pagination_pb.js";
 
 /**
@@ -27,14 +27,23 @@ export class NomadStats extends Message<NomadStats> {
   countriesVisitedCount = 0;
 
   /**
-   * @generated from field: string nomad_rank = 4;
+   * e.g., 'Voyager'
+   *
+   * @generated from field: string nomad_rank_label = 4;
    */
-  nomadRank = "";
+  nomadRankLabel = "";
 
   /**
-   * @generated from field: int32 completed_milestones = 5;
+   * Normalized 1-100 status signal
+   *
+   * @generated from field: double nomad_rank = 5;
    */
-  completedMilestones = 0;
+  nomadRank = 0;
+
+  /**
+   * @generated from field: int32 verified_checkins_count = 6;
+   */
+  verifiedCheckinsCount = 0;
 
   constructor(data?: PartialMessage<NomadStats>) {
     super();
@@ -47,8 +56,9 @@ export class NomadStats extends Message<NomadStats> {
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "exploration_score", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "countries_visited_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 4, name: "nomad_rank", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "completed_milestones", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "nomad_rank_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "nomad_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "verified_checkins_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): NomadStats {
@@ -98,15 +108,11 @@ export class Milestone extends Message<Milestone> {
   photoUrl = "";
 
   /**
-   * produced by Rust imageproc
-   *
    * @generated from field: string thumbnail_url = 6;
    */
   thumbnailUrl = "";
 
   /**
-   * produced by Rust imageproc
-   *
    * @generated from field: string accent_color_hex = 7;
    */
   accentColorHex = "";
@@ -120,6 +126,16 @@ export class Milestone extends Message<Milestone> {
    * @generated from field: int64 achieved_at = 9;
    */
   achievedAt = protoInt64.zero;
+
+  /**
+   * @generated from field: bool is_verified = 10;
+   */
+  isVerified = false;
+
+  /**
+   * @generated from field: sttattus.travel.v1.CheckIn checkin = 11;
+   */
+  checkin?: CheckIn;
 
   constructor(data?: PartialMessage<Milestone>) {
     super();
@@ -138,6 +154,8 @@ export class Milestone extends Message<Milestone> {
     { no: 7, name: "accent_color_hex", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "story", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "achieved_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: "is_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "checkin", kind: "message", T: CheckIn },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Milestone {
@@ -158,103 +176,101 @@ export class Milestone extends Message<Milestone> {
 }
 
 /**
- * @generated from message sttattus.travel.v1.FeedPost
+ * CheckIn represents a verified presence event.
+ *
+ * @generated from message sttattus.travel.v1.CheckIn
  */
-export class FeedPost extends Message<FeedPost> {
+export class CheckIn extends Message<CheckIn> {
   /**
    * @generated from field: string id = 1;
    */
   id = "";
 
   /**
-   * @generated from field: string user_id = 2;
+   * @generated from field: double latitude = 2;
    */
-  userId = "";
+  latitude = 0;
 
   /**
-   * @generated from field: string author_name = 3;
+   * @generated from field: double longitude = 3;
    */
-  authorName = "";
+  longitude = 0;
 
   /**
-   * @generated from field: string author_avatar = 4;
+   * @generated from field: string ip_address = 4;
    */
-  authorAvatar = "";
+  ipAddress = "";
 
   /**
-   * @generated from field: string milestone_id = 5;
+   * @generated from field: string city = 5;
    */
-  milestoneId = "";
+  city = "";
 
   /**
-   * @generated from field: string body = 6;
+   * @generated from field: string region = 6;
    */
-  body = "";
+  region = "";
 
   /**
-   * @generated from field: repeated string media_urls = 7;
+   * @generated from field: string country_code = 7;
    */
-  mediaUrls: string[] = [];
+  countryCode = "";
 
   /**
-   * @generated from field: int64 created_at = 8;
+   * @generated from field: google.protobuf.Timestamp verified_at = 8;
    */
-  createdAt = protoInt64.zero;
+  verifiedAt?: Timestamp;
 
   /**
-   * @generated from field: int32 likes_count = 9;
+   * True if this location is in the Jetset Registry
+   *
+   * @generated from field: bool is_elite_hub = 9;
    */
-  likesCount = 0;
+  isEliteHub = false;
 
-  /**
-   * @generated from field: bool liked_by_me = 10;
-   */
-  likedByMe = false;
-
-  constructor(data?: PartialMessage<FeedPost>) {
+  constructor(data?: PartialMessage<CheckIn>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sttattus.travel.v1.FeedPost";
+  static readonly typeName = "sttattus.travel.v1.CheckIn";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "author_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "author_avatar", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "milestone_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "media_urls", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 8, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 9, name: "likes_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 10, name: "liked_by_me", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "latitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "longitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "ip_address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "region", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "verified_at", kind: "message", T: Timestamp },
+    { no: 9, name: "is_elite_hub", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FeedPost {
-    return new FeedPost().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CheckIn {
+    return new CheckIn().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FeedPost {
-    return new FeedPost().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CheckIn {
+    return new CheckIn().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FeedPost {
-    return new FeedPost().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CheckIn {
+    return new CheckIn().fromJsonString(jsonString, options);
   }
 
-  static equals(a: FeedPost | PlainMessage<FeedPost> | undefined, b: FeedPost | PlainMessage<FeedPost> | undefined): boolean {
-    return proto3.util.equals(FeedPost, a, b);
+  static equals(a: CheckIn | PlainMessage<CheckIn> | undefined, b: CheckIn | PlainMessage<CheckIn> | undefined): boolean {
+    return proto3.util.equals(CheckIn, a, b);
   }
 }
 
 /**
+ * REQ/RES
+ *
  * @generated from message sttattus.travel.v1.ListMilestonesRequest
  */
 export class ListMilestonesRequest extends Message<ListMilestonesRequest> {
   /**
-   * empty = current user
-   *
    * @generated from field: string user_id = 1;
    */
   userId = "";
@@ -351,10 +367,6 @@ export class CreateMilestoneRequest extends Message<CreateMilestoneRequest> {
   city = "";
 
   /**
-   * Caller already uploaded the original photo via MediaService.RequestUpload
-   * and the resulting media_asset_id is passed here. The TravelService will
-   * call Rust imageproc to produce the thumbnail + accent color.
-   *
    * @generated from field: string media_asset_id = 3;
    */
   mediaAssetId = "";
@@ -369,6 +381,13 @@ export class CreateMilestoneRequest extends Message<CreateMilestoneRequest> {
    */
   achievedAt = protoInt64.zero;
 
+  /**
+   * Optional: provided if location is available
+   *
+   * @generated from field: sttattus.travel.v1.CheckIn checkin = 6;
+   */
+  checkin?: CheckIn;
+
   constructor(data?: PartialMessage<CreateMilestoneRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -382,6 +401,7 @@ export class CreateMilestoneRequest extends Message<CreateMilestoneRequest> {
     { no: 3, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "story", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "achieved_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "checkin", kind: "message", T: CheckIn },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateMilestoneRequest {
@@ -449,8 +469,6 @@ export class CreateMilestoneResponse extends Message<CreateMilestoneResponse> {
  */
 export class GetNomadStatsRequest extends Message<GetNomadStatsRequest> {
   /**
-   * empty = current user
-   *
    * @generated from field: string user_id = 1;
    */
   userId = "";
@@ -562,9 +580,11 @@ export class ListFeedRequest extends Message<ListFeedRequest> {
  */
 export class ListFeedResponse extends Message<ListFeedResponse> {
   /**
-   * @generated from field: repeated sttattus.travel.v1.FeedPost posts = 1;
+   * Reusing milestones for the feed for simplicity
+   *
+   * @generated from field: repeated sttattus.travel.v1.Milestone milestones = 1;
    */
-  posts: FeedPost[] = [];
+  milestones: Milestone[] = [];
 
   /**
    * @generated from field: sttattus.common.v1.PageResponse page = 2;
@@ -579,7 +599,7 @@ export class ListFeedResponse extends Message<ListFeedResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sttattus.travel.v1.ListFeedResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "posts", kind: "message", T: FeedPost, repeated: true },
+    { no: 1, name: "milestones", kind: "message", T: Milestone, repeated: true },
     { no: 2, name: "page", kind: "message", T: PageResponse },
   ]);
 
@@ -597,94 +617,6 @@ export class ListFeedResponse extends Message<ListFeedResponse> {
 
   static equals(a: ListFeedResponse | PlainMessage<ListFeedResponse> | undefined, b: ListFeedResponse | PlainMessage<ListFeedResponse> | undefined): boolean {
     return proto3.util.equals(ListFeedResponse, a, b);
-  }
-}
-
-/**
- * @generated from message sttattus.travel.v1.LikePostRequest
- */
-export class LikePostRequest extends Message<LikePostRequest> {
-  /**
-   * @generated from field: string post_id = 1;
-   */
-  postId = "";
-
-  /**
-   * false = unlike
-   *
-   * @generated from field: bool like = 2;
-   */
-  like = false;
-
-  constructor(data?: PartialMessage<LikePostRequest>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sttattus.travel.v1.LikePostRequest";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "post_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "like", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LikePostRequest {
-    return new LikePostRequest().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LikePostRequest {
-    return new LikePostRequest().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LikePostRequest {
-    return new LikePostRequest().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: LikePostRequest | PlainMessage<LikePostRequest> | undefined, b: LikePostRequest | PlainMessage<LikePostRequest> | undefined): boolean {
-    return proto3.util.equals(LikePostRequest, a, b);
-  }
-}
-
-/**
- * @generated from message sttattus.travel.v1.LikePostResponse
- */
-export class LikePostResponse extends Message<LikePostResponse> {
-  /**
-   * @generated from field: int32 likes_count = 1;
-   */
-  likesCount = 0;
-
-  /**
-   * @generated from field: bool liked_by_me = 2;
-   */
-  likedByMe = false;
-
-  constructor(data?: PartialMessage<LikePostResponse>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sttattus.travel.v1.LikePostResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "likes_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "liked_by_me", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LikePostResponse {
-    return new LikePostResponse().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LikePostResponse {
-    return new LikePostResponse().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LikePostResponse {
-    return new LikePostResponse().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: LikePostResponse | PlainMessage<LikePostResponse> | undefined, b: LikePostResponse | PlainMessage<LikePostResponse> | undefined): boolean {
-    return proto3.util.equals(LikePostResponse, a, b);
   }
 }
 

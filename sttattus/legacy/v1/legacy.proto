@@ -2,23 +2,77 @@ syntax = "proto3";
 
 package sttattus.legacy.v1;
 
+import "google/protobuf/timestamp.proto";
+
 option go_package = "github.com/sttattus/proto/gen/go/sttattus/legacy/v1;legacyv1";
 
-message Document {
+// AssetCategory defines the strategic type of legal standing.
+enum AssetCategory {
+  ASSET_CATEGORY_UNSPECIFIED = 0;
+  ASSET_CATEGORY_INTELLECTUAL_PROPERTY = 1; // Patents, Trademarks, Copyrights
+  ASSET_CATEGORY_CORPORATE_GOVERNANCE = 2;   // Board seats, Executive roles
+  ASSET_CATEGORY_ESTATE_PLANNING = 3;       // Trusts, Wills, Foundations
+  ASSET_CATEGORY_HIGH_STAKES_CONTRACTS = 4; // NDAs, Major Service Agreements
+}
+
+enum VerificationStatus {
+  VERIFICATION_STATUS_UNSPECIFIED = 0;
+  VERIFICATION_STATUS_PENDING = 1;
+  VERIFICATION_STATUS_APPROVED = 2;
+  VERIFICATION_STATUS_REJECTED = 3;
+}
+
+// LegalAsset represents a verified node of influence.
+message LegalAsset {
   string id = 1;
   string title = 2;
-  string content_hash = 3;
+  AssetCategory category = 3;
+  double valuation_usd = 4;        // Strategic or IP valuation
+  string jurisdiction = 5;         // e.g., 'DE', 'CH', 'SG'
+  VerificationStatus status = 6;
+  string content_hash = 7;
+  google.protobuf.Timestamp filed_at = 8;
+  google.protobuf.Timestamp expires_at = 9;
 }
 
+message HeritageStats {
+  string user_id = 1;
+  double influence_rank = 2;       // 1-100 normalized
+  string rank_label = 3;           // e.g., 'Notary', 'Magistrate', 'Sovereign Legator'
+  int32 verified_assets_count = 4;
+  double total_ip_valuation = 5;
+}
+
+// REQ/RES
 message StoreDocumentRequest {
   string title = 1;
-  bytes encrypted_blob = 2;
+  AssetCategory category = 2;
+  string jurisdiction = 3;
+  double valuation_usd = 4;
+  bytes encrypted_blob = 5;
+}
+message StoreDocumentResponse {
+  LegalAsset asset = 1;
+  HeritageStats stats = 2;
 }
 
-message StoreDocumentResponse {
-  string id = 1;
+message GetHeritageStatsRequest {
+  string user_id = 1;
+}
+message GetHeritageStatsResponse {
+  HeritageStats stats = 1;
+}
+
+message ListAssetsRequest {
+  string user_id = 1;
+}
+message ListAssetsResponse {
+  repeated LegalAsset assets = 1;
 }
 
 service LegacyService {
+  // Heritage Protocol: Verified Legal Standing
   rpc StoreDocument(StoreDocumentRequest) returns (StoreDocumentResponse);
+  rpc ListAssets(ListAssetsRequest) returns (ListAssetsResponse);
+  rpc GetHeritageStats(GetHeritageStatsRequest) returns (GetHeritageStatsResponse);
 }

@@ -41,6 +41,9 @@ message DatingProfile {
   int32 physical_drive = 11;
   int32 social_battery = 12;
   repeated string photo_urls = 13;
+  double vault_rank = 14;
+  double apex_rank = 15;
+  double forge_rank = 16;
 }
 
 message Candidate {

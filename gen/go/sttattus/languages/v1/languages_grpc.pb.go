@@ -19,22 +19,23 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	LanguagesService_ListCategories_FullMethodName   = "/sttattus.languages.v1.LanguagesService/ListCategories"
-	LanguagesService_ListWords_FullMethodName        = "/sttattus.languages.v1.LanguagesService/ListWords"
-	LanguagesService_UpdateProgress_FullMethodName   = "/sttattus.languages.v1.LanguagesService/UpdateProgress"
-	LanguagesService_GetLinguistStats_FullMethodName = "/sttattus.languages.v1.LanguagesService/GetLinguistStats"
-	LanguagesService_SubmitFeedback_FullMethodName   = "/sttattus.languages.v1.LanguagesService/SubmitFeedback"
+	LanguagesService_ListScenarios_FullMethodName       = "/sttattus.languages.v1.LanguagesService/ListScenarios"
+	LanguagesService_CompleteInteraction_FullMethodName = "/sttattus.languages.v1.LanguagesService/CompleteInteraction"
+	LanguagesService_GetLinguistStats_FullMethodName    = "/sttattus.languages.v1.LanguagesService/GetLinguistStats"
+	LanguagesService_ListWords_FullMethodName           = "/sttattus.languages.v1.LanguagesService/ListWords"
 )
 
 // LanguagesServiceClient is the client API for LanguagesService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type LanguagesServiceClient interface {
-	ListCategories(ctx context.Context, in *ListCategoriesRequest, opts ...grpc.CallOption) (*ListCategoriesResponse, error)
-	ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error)
-	UpdateProgress(ctx context.Context, in *UpdateProgressRequest, opts ...grpc.CallOption) (*UpdateProgressResponse, error)
+	// The Protocol: Scenario-based learning
+	ListScenarios(ctx context.Context, in *ListScenariosRequest, opts ...grpc.CallOption) (*ListScenariosResponse, error)
+	CompleteInteraction(ctx context.Context, in *CompleteInteractionRequest, opts ...grpc.CallOption) (*CompleteInteractionResponse, error)
+	// Status
 	GetLinguistStats(ctx context.Context, in *GetLinguistStatsRequest, opts ...grpc.CallOption) (*GetLinguistStatsResponse, error)
-	SubmitFeedback(ctx context.Context, in *SubmitFeedbackRequest, opts ...grpc.CallOption) (*SubmitFeedbackResponse, error)
+	// Legacy (Deprecated but kept for bridge)
+	ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error)
 }
 
 type languagesServiceClient struct {
@@ -45,30 +46,20 @@ func NewLanguagesServiceClient(cc grpc.ClientConnInterface) LanguagesServiceClie
 	return &languagesServiceClient{cc}
 }
 
-func (c *languagesServiceClient) ListCategories(ctx context.Context, in *ListCategoriesRequest, opts ...grpc.CallOption) (*ListCategoriesResponse, error) {
+func (c *languagesServiceClient) ListScenarios(ctx context.Context, in *ListScenariosRequest, opts ...grpc.CallOption) (*ListScenariosResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListCategoriesResponse)
-	err := c.cc.Invoke(ctx, LanguagesService_ListCategories_FullMethodName, in, out, cOpts...)
+	out := new(ListScenariosResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListScenarios_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *languagesServiceClient) ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error) {
+func (c *languagesServiceClient) CompleteInteraction(ctx context.Context, in *CompleteInteractionRequest, opts ...grpc.CallOption) (*CompleteInteractionResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListWordsResponse)
-	err := c.cc.Invoke(ctx, LanguagesService_ListWords_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *languagesServiceClient) UpdateProgress(ctx context.Context, in *UpdateProgressRequest, opts ...grpc.CallOption) (*UpdateProgressResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(UpdateProgressResponse)
-	err := c.cc.Invoke(ctx, LanguagesService_UpdateProgress_FullMethodName, in, out, cOpts...)
+	out := new(CompleteInteractionResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_CompleteInteraction_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -85,10 +76,10 @@ func (c *languagesServiceClient) GetLinguistStats(ctx context.Context, in *GetLi
 	return out, nil
 }
 
-func (c *languagesServiceClient) SubmitFeedback(ctx context.Context, in *SubmitFeedbackRequest, opts ...grpc.CallOption) (*SubmitFeedbackResponse, error) {
+func (c *languagesServiceClient) ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(SubmitFeedbackResponse)
-	err := c.cc.Invoke(ctx, LanguagesService_SubmitFeedback_FullMethodName, in, out, cOpts...)
+	out := new(ListWordsResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListWords_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -99,11 +90,13 @@ func (c *languagesServiceClient) SubmitFeedback(ctx context.Context, in *SubmitF
 // All implementations must embed UnimplementedLanguagesServiceServer
 // for forward compatibility.
 type LanguagesServiceServer interface {
-	ListCategories(context.Context, *ListCategoriesRequest) (*ListCategoriesResponse, error)
-	ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error)
-	UpdateProgress(context.Context, *UpdateProgressRequest) (*UpdateProgressResponse, error)
+	// The Protocol: Scenario-based learning
+	ListScenarios(context.Context, *ListScenariosRequest) (*ListScenariosResponse, error)
+	CompleteInteraction(context.Context, *CompleteInteractionRequest) (*CompleteInteractionResponse, error)
+	// Status
 	GetLinguistStats(context.Context, *GetLinguistStatsRequest) (*GetLinguistStatsResponse, error)
-	SubmitFeedback(context.Context, *SubmitFeedbackRequest) (*SubmitFeedbackResponse, error)
+	// Legacy (Deprecated but kept for bridge)
+	ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error)
 	mustEmbedUnimplementedLanguagesServiceServer()
 }
 
@@ -114,20 +107,17 @@ type LanguagesServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedLanguagesServiceServer struct{}
 
-func (UnimplementedLanguagesServiceServer) ListCategories(context.Context, *ListCategoriesRequest) (*ListCategoriesResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method ListCategories not implemented")
+func (UnimplementedLanguagesServiceServer) ListScenarios(context.Context, *ListScenariosRequest) (*ListScenariosResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListScenarios not implemented")
 }
-func (UnimplementedLanguagesServiceServer) ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method ListWords not implemented")
-}
-func (UnimplementedLanguagesServiceServer) UpdateProgress(context.Context, *UpdateProgressRequest) (*UpdateProgressResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method UpdateProgress not implemented")
+func (UnimplementedLanguagesServiceServer) CompleteInteraction(context.Context, *CompleteInteractionRequest) (*CompleteInteractionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CompleteInteraction not implemented")
 }
 func (UnimplementedLanguagesServiceServer) GetLinguistStats(context.Context, *GetLinguistStatsRequest) (*GetLinguistStatsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetLinguistStats not implemented")
 }
-func (UnimplementedLanguagesServiceServer) SubmitFeedback(context.Context, *SubmitFeedbackRequest) (*SubmitFeedbackResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method SubmitFeedback not implemented")
+func (UnimplementedLanguagesServiceServer) ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListWords not implemented")
 }
 func (UnimplementedLanguagesServiceServer) mustEmbedUnimplementedLanguagesServiceServer() {}
 func (UnimplementedLanguagesServiceServer) testEmbeddedByValue()                          {}
@@ -150,56 +140,38 @@ func RegisterLanguagesServiceServer(s grpc.ServiceRegistrar, srv LanguagesServic
 	s.RegisterService(&LanguagesService_ServiceDesc, srv)
 }
 
-func _LanguagesService_ListCategories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListCategoriesRequest)
+func _LanguagesService_ListScenarios_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListScenariosRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LanguagesServiceServer).ListCategories(ctx, in)
+		return srv.(LanguagesServiceServer).ListScenarios(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LanguagesService_ListCategories_FullMethodName,
+		FullMethod: LanguagesService_ListScenarios_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LanguagesServiceServer).ListCategories(ctx, req.(*ListCategoriesRequest))
+		return srv.(LanguagesServiceServer).ListScenarios(ctx, req.(*ListScenariosRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LanguagesService_ListWords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListWordsRequest)
+func _LanguagesService_CompleteInteraction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompleteInteractionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LanguagesServiceServer).ListWords(ctx, in)
+		return srv.(LanguagesServiceServer).CompleteInteraction(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LanguagesService_ListWords_FullMethodName,
+		FullMethod: LanguagesService_CompleteInteraction_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LanguagesServiceServer).ListWords(ctx, req.(*ListWordsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LanguagesService_UpdateProgress_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateProgressRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LanguagesServiceServer).UpdateProgress(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LanguagesService_UpdateProgress_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LanguagesServiceServer).UpdateProgress(ctx, req.(*UpdateProgressRequest))
+		return srv.(LanguagesServiceServer).CompleteInteraction(ctx, req.(*CompleteInteractionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -222,20 +194,20 @@ func _LanguagesService_GetLinguistStats_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LanguagesService_SubmitFeedback_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SubmitFeedbackRequest)
+func _LanguagesService_ListWords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListWordsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LanguagesServiceServer).SubmitFeedback(ctx, in)
+		return srv.(LanguagesServiceServer).ListWords(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LanguagesService_SubmitFeedback_FullMethodName,
+		FullMethod: LanguagesService_ListWords_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LanguagesServiceServer).SubmitFeedback(ctx, req.(*SubmitFeedbackRequest))
+		return srv.(LanguagesServiceServer).ListWords(ctx, req.(*ListWordsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -248,24 +220,20 @@ var LanguagesService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*LanguagesServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "ListCategories",
-			Handler:    _LanguagesService_ListCategories_Handler,
+			MethodName: "ListScenarios",
+			Handler:    _LanguagesService_ListScenarios_Handler,
 		},
 		{
-			MethodName: "ListWords",
-			Handler:    _LanguagesService_ListWords_Handler,
-		},
-		{
-			MethodName: "UpdateProgress",
-			Handler:    _LanguagesService_UpdateProgress_Handler,
+			MethodName: "CompleteInteraction",
+			Handler:    _LanguagesService_CompleteInteraction_Handler,
 		},
 		{
 			MethodName: "GetLinguistStats",
 			Handler:    _LanguagesService_GetLinguistStats_Handler,
 		},
 		{
-			MethodName: "SubmitFeedback",
-			Handler:    _LanguagesService_SubmitFeedback_Handler,
+			MethodName: "ListWords",
+			Handler:    _LanguagesService_ListWords_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

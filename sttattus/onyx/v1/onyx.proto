@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+package sttattus.onyx.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/onyx/v1;onyxv1";
+
+// GatingCriteria defines the status requirements to access content.
+message GatingCriteria {
+  string required_tier = 1;      // e.g., 'gold', 'sovereign'
+  double min_sttattus_score = 2;
+  double min_vault_rank = 3;     // Verified Wealth requirement
+  double min_apex_rank = 4;      // Verified Biological requirement
+}
+
+// OnyxProfile represents a user's identity within the network.
+message OnyxProfile {
+  string user_id = 1;
+  string stage_name = 2;
+  string bio = 3;
+  bool is_creator = 4;
+  double min_entry_score = 5;    // Requirement to view this profile
+  google.protobuf.Timestamp verified_at = 6;
+}
+
+// OnyxContent represents an exclusive media item.
+message OnyxContent {
+  string id = 1;
+  string creator_id = 2;
+  string media_id = 3;           // Link to MediaService asset
+  string title = 4;
+  string caption = 5;
+  GatingCriteria gating = 6;
+  int32 price_points = 7;
+  bool is_locked = 8;            // True if the requesting user doesn't meet gating
+  string signed_url = 9;         // Only populated if is_locked is false
+  google.protobuf.Timestamp created_at = 10;
+  google.protobuf.Timestamp expires_at = 11;
+}
+
+// Subscription represents an exclusive link between user and creator.
+message Subscription {
+  string creator_id = 1;
+  string status = 2;             // 'active', 'expired'
+  google.protobuf.Timestamp granted_at = 3;
+  google.protobuf.Timestamp expires_at = 4;
+}
+
+// REQ/RES
+message CreateOnyxProfileRequest {
+  string stage_name = 1;
+  string bio = 2;
+}
+
+message CreateOnyxProfileResponse {
+  OnyxProfile profile = 1;
+}
+
+message GetOnyxProfileRequest {
+  string user_id = 1;
+}
+
+message GetOnyxProfileResponse {
+  OnyxProfile profile = 1;
+}
+
+message ListContentRequest {
+  string creator_id = 1;         // Optional: filter by creator
+}
+
+message ListContentResponse {
+  repeated OnyxContent content = 1;
+}
+
+message SubscribeRequest {
+  string creator_id = 1;
+}
+
+message SubscribeResponse {
+  Subscription subscription = 1;
+}
+
+service OnyxService {
+  // Profile Management
+  rpc CreateProfile(CreateOnyxProfileRequest) returns (CreateOnyxProfileResponse);
+  rpc GetProfile(GetOnyxProfileRequest) returns (GetOnyxProfileResponse);
+
+  // Content Delivery (Server-Side Gated)
+  rpc ListContent(ListContentRequest) returns (ListContentResponse);
+
+  // Exclusivity Mechanics
+  rpc Subscribe(SubscribeRequest) returns (SubscribeResponse);
+}

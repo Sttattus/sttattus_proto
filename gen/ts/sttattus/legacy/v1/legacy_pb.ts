@@ -4,12 +4,94 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
+import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
 
 /**
- * @generated from message sttattus.legacy.v1.Document
+ * AssetCategory defines the strategic type of legal standing.
+ *
+ * @generated from enum sttattus.legacy.v1.AssetCategory
  */
-export class Document extends Message<Document> {
+export enum AssetCategory {
+  /**
+   * @generated from enum value: ASSET_CATEGORY_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * Patents, Trademarks, Copyrights
+   *
+   * @generated from enum value: ASSET_CATEGORY_INTELLECTUAL_PROPERTY = 1;
+   */
+  INTELLECTUAL_PROPERTY = 1,
+
+  /**
+   * Board seats, Executive roles
+   *
+   * @generated from enum value: ASSET_CATEGORY_CORPORATE_GOVERNANCE = 2;
+   */
+  CORPORATE_GOVERNANCE = 2,
+
+  /**
+   * Trusts, Wills, Foundations
+   *
+   * @generated from enum value: ASSET_CATEGORY_ESTATE_PLANNING = 3;
+   */
+  ESTATE_PLANNING = 3,
+
+  /**
+   * NDAs, Major Service Agreements
+   *
+   * @generated from enum value: ASSET_CATEGORY_HIGH_STAKES_CONTRACTS = 4;
+   */
+  HIGH_STAKES_CONTRACTS = 4,
+}
+// Retrieve enum metadata with: proto3.getEnumType(AssetCategory)
+proto3.util.setEnumType(AssetCategory, "sttattus.legacy.v1.AssetCategory", [
+  { no: 0, name: "ASSET_CATEGORY_UNSPECIFIED" },
+  { no: 1, name: "ASSET_CATEGORY_INTELLECTUAL_PROPERTY" },
+  { no: 2, name: "ASSET_CATEGORY_CORPORATE_GOVERNANCE" },
+  { no: 3, name: "ASSET_CATEGORY_ESTATE_PLANNING" },
+  { no: 4, name: "ASSET_CATEGORY_HIGH_STAKES_CONTRACTS" },
+]);
+
+/**
+ * @generated from enum sttattus.legacy.v1.VerificationStatus
+ */
+export enum VerificationStatus {
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_PENDING = 1;
+   */
+  PENDING = 1,
+
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_APPROVED = 2;
+   */
+  APPROVED = 2,
+
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_REJECTED = 3;
+   */
+  REJECTED = 3,
+}
+// Retrieve enum metadata with: proto3.getEnumType(VerificationStatus)
+proto3.util.setEnumType(VerificationStatus, "sttattus.legacy.v1.VerificationStatus", [
+  { no: 0, name: "VERIFICATION_STATUS_UNSPECIFIED" },
+  { no: 1, name: "VERIFICATION_STATUS_PENDING" },
+  { no: 2, name: "VERIFICATION_STATUS_APPROVED" },
+  { no: 3, name: "VERIFICATION_STATUS_REJECTED" },
+]);
+
+/**
+ * LegalAsset represents a verified node of influence.
+ *
+ * @generated from message sttattus.legacy.v1.LegalAsset
+ */
+export class LegalAsset extends Message<LegalAsset> {
   /**
    * @generated from field: string id = 1;
    */
@@ -21,41 +103,148 @@ export class Document extends Message<Document> {
   title = "";
 
   /**
-   * @generated from field: string content_hash = 3;
+   * @generated from field: sttattus.legacy.v1.AssetCategory category = 3;
+   */
+  category = AssetCategory.UNSPECIFIED;
+
+  /**
+   * Strategic or IP valuation
+   *
+   * @generated from field: double valuation_usd = 4;
+   */
+  valuationUsd = 0;
+
+  /**
+   * e.g., 'DE', 'CH', 'SG'
+   *
+   * @generated from field: string jurisdiction = 5;
+   */
+  jurisdiction = "";
+
+  /**
+   * @generated from field: sttattus.legacy.v1.VerificationStatus status = 6;
+   */
+  status = VerificationStatus.UNSPECIFIED;
+
+  /**
+   * @generated from field: string content_hash = 7;
    */
   contentHash = "";
 
-  constructor(data?: PartialMessage<Document>) {
+  /**
+   * @generated from field: google.protobuf.Timestamp filed_at = 8;
+   */
+  filedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 9;
+   */
+  expiresAt?: Timestamp;
+
+  constructor(data?: PartialMessage<LegalAsset>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sttattus.legacy.v1.Document";
+  static readonly typeName = "sttattus.legacy.v1.LegalAsset";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "content_hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "category", kind: "enum", T: proto3.getEnumType(AssetCategory) },
+    { no: 4, name: "valuation_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "jurisdiction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "status", kind: "enum", T: proto3.getEnumType(VerificationStatus) },
+    { no: 7, name: "content_hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "filed_at", kind: "message", T: Timestamp },
+    { no: 9, name: "expires_at", kind: "message", T: Timestamp },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Document {
-    return new Document().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegalAsset {
+    return new LegalAsset().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Document {
-    return new Document().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LegalAsset {
+    return new LegalAsset().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Document {
-    return new Document().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LegalAsset {
+    return new LegalAsset().fromJsonString(jsonString, options);
   }
 
-  static equals(a: Document | PlainMessage<Document> | undefined, b: Document | PlainMessage<Document> | undefined): boolean {
-    return proto3.util.equals(Document, a, b);
+  static equals(a: LegalAsset | PlainMessage<LegalAsset> | undefined, b: LegalAsset | PlainMessage<LegalAsset> | undefined): boolean {
+    return proto3.util.equals(LegalAsset, a, b);
   }
 }
 
 /**
+ * @generated from message sttattus.legacy.v1.HeritageStats
+ */
+export class HeritageStats extends Message<HeritageStats> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * 1-100 normalized
+   *
+   * @generated from field: double influence_rank = 2;
+   */
+  influenceRank = 0;
+
+  /**
+   * e.g., 'Notary', 'Magistrate', 'Sovereign Legator'
+   *
+   * @generated from field: string rank_label = 3;
+   */
+  rankLabel = "";
+
+  /**
+   * @generated from field: int32 verified_assets_count = 4;
+   */
+  verifiedAssetsCount = 0;
+
+  /**
+   * @generated from field: double total_ip_valuation = 5;
+   */
+  totalIpValuation = 0;
+
+  constructor(data?: PartialMessage<HeritageStats>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.HeritageStats";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "influence_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "rank_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "verified_assets_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "total_ip_valuation", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HeritageStats {
+    return new HeritageStats().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HeritageStats {
+    return new HeritageStats().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HeritageStats {
+    return new HeritageStats().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: HeritageStats | PlainMessage<HeritageStats> | undefined, b: HeritageStats | PlainMessage<HeritageStats> | undefined): boolean {
+    return proto3.util.equals(HeritageStats, a, b);
+  }
+}
+
+/**
+ * REQ/RES
+ *
  * @generated from message sttattus.legacy.v1.StoreDocumentRequest
  */
 export class StoreDocumentRequest extends Message<StoreDocumentRequest> {
@@ -65,7 +254,22 @@ export class StoreDocumentRequest extends Message<StoreDocumentRequest> {
   title = "";
 
   /**
-   * @generated from field: bytes encrypted_blob = 2;
+   * @generated from field: sttattus.legacy.v1.AssetCategory category = 2;
+   */
+  category = AssetCategory.UNSPECIFIED;
+
+  /**
+   * @generated from field: string jurisdiction = 3;
+   */
+  jurisdiction = "";
+
+  /**
+   * @generated from field: double valuation_usd = 4;
+   */
+  valuationUsd = 0;
+
+  /**
+   * @generated from field: bytes encrypted_blob = 5;
    */
   encryptedBlob = new Uint8Array(0);
 
@@ -78,7 +282,10 @@ export class StoreDocumentRequest extends Message<StoreDocumentRequest> {
   static readonly typeName = "sttattus.legacy.v1.StoreDocumentRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "encrypted_blob", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 2, name: "category", kind: "enum", T: proto3.getEnumType(AssetCategory) },
+    { no: 3, name: "jurisdiction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "valuation_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "encrypted_blob", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StoreDocumentRequest {
@@ -103,9 +310,14 @@ export class StoreDocumentRequest extends Message<StoreDocumentRequest> {
  */
 export class StoreDocumentResponse extends Message<StoreDocumentResponse> {
   /**
-   * @generated from field: string id = 1;
+   * @generated from field: sttattus.legacy.v1.LegalAsset asset = 1;
    */
-  id = "";
+  asset?: LegalAsset;
+
+  /**
+   * @generated from field: sttattus.legacy.v1.HeritageStats stats = 2;
+   */
+  stats?: HeritageStats;
 
   constructor(data?: PartialMessage<StoreDocumentResponse>) {
     super();
@@ -115,7 +327,8 @@ export class StoreDocumentResponse extends Message<StoreDocumentResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sttattus.legacy.v1.StoreDocumentResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "asset", kind: "message", T: LegalAsset },
+    { no: 2, name: "stats", kind: "message", T: HeritageStats },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StoreDocumentResponse {
@@ -132,6 +345,154 @@ export class StoreDocumentResponse extends Message<StoreDocumentResponse> {
 
   static equals(a: StoreDocumentResponse | PlainMessage<StoreDocumentResponse> | undefined, b: StoreDocumentResponse | PlainMessage<StoreDocumentResponse> | undefined): boolean {
     return proto3.util.equals(StoreDocumentResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetHeritageStatsRequest
+ */
+export class GetHeritageStatsRequest extends Message<GetHeritageStatsRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetHeritageStatsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetHeritageStatsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetHeritageStatsRequest {
+    return new GetHeritageStatsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetHeritageStatsRequest {
+    return new GetHeritageStatsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetHeritageStatsRequest {
+    return new GetHeritageStatsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetHeritageStatsRequest | PlainMessage<GetHeritageStatsRequest> | undefined, b: GetHeritageStatsRequest | PlainMessage<GetHeritageStatsRequest> | undefined): boolean {
+    return proto3.util.equals(GetHeritageStatsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetHeritageStatsResponse
+ */
+export class GetHeritageStatsResponse extends Message<GetHeritageStatsResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.HeritageStats stats = 1;
+   */
+  stats?: HeritageStats;
+
+  constructor(data?: PartialMessage<GetHeritageStatsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetHeritageStatsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "stats", kind: "message", T: HeritageStats },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetHeritageStatsResponse {
+    return new GetHeritageStatsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetHeritageStatsResponse {
+    return new GetHeritageStatsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetHeritageStatsResponse {
+    return new GetHeritageStatsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetHeritageStatsResponse | PlainMessage<GetHeritageStatsResponse> | undefined, b: GetHeritageStatsResponse | PlainMessage<GetHeritageStatsResponse> | undefined): boolean {
+    return proto3.util.equals(GetHeritageStatsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.ListAssetsRequest
+ */
+export class ListAssetsRequest extends Message<ListAssetsRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<ListAssetsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.ListAssetsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAssetsRequest {
+    return new ListAssetsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAssetsRequest {
+    return new ListAssetsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAssetsRequest {
+    return new ListAssetsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAssetsRequest | PlainMessage<ListAssetsRequest> | undefined, b: ListAssetsRequest | PlainMessage<ListAssetsRequest> | undefined): boolean {
+    return proto3.util.equals(ListAssetsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.ListAssetsResponse
+ */
+export class ListAssetsResponse extends Message<ListAssetsResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegalAsset assets = 1;
+   */
+  assets: LegalAsset[] = [];
+
+  constructor(data?: PartialMessage<ListAssetsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.ListAssetsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "assets", kind: "message", T: LegalAsset, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAssetsResponse {
+    return new ListAssetsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAssetsResponse {
+    return new ListAssetsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAssetsResponse {
+    return new ListAssetsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAssetsResponse | PlainMessage<ListAssetsResponse> | undefined, b: ListAssetsResponse | PlainMessage<ListAssetsResponse> | undefined): boolean {
+    return proto3.util.equals(ListAssetsResponse, a, b);
   }
 }
 

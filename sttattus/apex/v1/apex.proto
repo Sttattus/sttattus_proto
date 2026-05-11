@@ -2,16 +2,55 @@ syntax = "proto3";
 
 package sttattus.apex.v1;
 
+import "google/protobuf/timestamp.proto";
+
 option go_package = "github.com/sttattus/proto/gen/go/sttattus/apex/v1;apexv1";
 
-message BioMetric {
-  string code = 1; // e.g., 'HRV', 'RE_SLEEP', 'BLOOD_GLUCOSE'
-  double value = 2;
-  int64 recorded_at = 3;
+// BiomarkerCategory defines the biological system being measured.
+enum BiomarkerCategory {
+  BIOMARKER_CATEGORY_UNSPECIFIED = 0;
+  BIOMARKER_CATEGORY_LIPIDS = 1;       // ApoB, LDL, HDL
+  BIOMARKER_CATEGORY_METABOLIC = 2;    // HbA1c, Glucose, Insulin
+  BIOMARKER_CATEGORY_HORMONES = 3;     // Testosterone, Cortisol
+  BIOMARKER_CATEGORY_INFLAMMATION = 4; // CRP, Omega-3 Index
+  BIOMARKER_CATEGORY_VITAMINS = 5;     // Vitamin D, B12
+  BIOMARKER_CATEGORY_SENSORS = 6;      // HRV, Sleep (from Wearables)
 }
 
+// VerificationStatus tracks the manual verification of clinical reports.
+enum VerificationStatus {
+  VERIFICATION_STATUS_UNSPECIFIED = 0;
+  VERIFICATION_STATUS_PENDING = 1;
+  VERIFICATION_STATUS_APPROVED = 2;
+  VERIFICATION_STATUS_REJECTED = 3;
+}
+
+// Biomarker represents a single biological measurement.
+message Biomarker {
+  string id = 1;
+  string code = 2;              // e.g., 'APO_B', 'TESTOSTERONE_FREE'
+  BiomarkerCategory category = 3;
+  double value = 4;
+  string unit = 5;              // e.g., 'mg/dL', 'ng/dL'
+  bool verified = 6;            // True if extracted from an approved LabReport
+  google.protobuf.Timestamp recorded_at = 7;
+}
+
+// LabReport represents a clinical document (PDF/Image) submitted by the user.
+message LabReport {
+  string id = 1;
+  string file_url = 2;          // From shared_uploader
+  string clinic_name = 3;
+  VerificationStatus status = 4;
+  string admin_note = 5;
+  google.protobuf.Timestamp report_date = 6;
+  google.protobuf.Timestamp submitted_at = 7;
+  repeated Biomarker extracted_markers = 8;
+}
+
+// REQ/RES
 message SyncVitalsRequest {
-  repeated BioMetric metrics = 1;
+  repeated Biomarker metrics = 1; // Used for wearable/manual data
 }
 
 message SyncVitalsResponse {
@@ -19,6 +58,41 @@ message SyncVitalsResponse {
   double current_apex_score = 2;
 }
 
+message SubmitLabReportRequest {
+  string file_url = 1;
+  string clinic_name = 2;
+  google.protobuf.Timestamp report_date = 3;
+}
+
+message SubmitLabReportResponse {
+  LabReport report = 1;
+}
+
+message ListLabReportsRequest {}
+
+message ListLabReportsResponse {
+  repeated LabReport reports = 1;
+}
+
+message AdminVerifyLabRequest {
+  string report_id = 1;
+  VerificationStatus status = 2;
+  string admin_note = 3;
+  repeated Biomarker verified_markers = 4; // Admin confirms/sets actual values
+}
+
+message AdminVerifyLabResponse {
+  LabReport report = 1;
+}
+
 service ApexService {
+  // Wearable/Manual Sync
   rpc SyncVitals(SyncVitalsRequest) returns (SyncVitalsResponse);
+
+  // The Lab: Clinical Data
+  rpc SubmitLabReport(SubmitLabReportRequest) returns (SubmitLabReportResponse);
+  rpc ListLabReports(ListLabReportsRequest) returns (ListLabReportsResponse);
+
+  // Admin Methods (Gated by Admin Middleware)
+  rpc AdminVerifyLab(AdminVerifyLabRequest) returns (AdminVerifyLabResponse);
 }

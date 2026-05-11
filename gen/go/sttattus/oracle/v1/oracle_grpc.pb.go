@@ -19,14 +19,18 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	OracleService_Query_FullMethodName = "/sttattus.oracle.v1.OracleService/Query"
+	OracleService_Query_FullMethodName          = "/sttattus.oracle.v1.OracleService/Query"
+	OracleService_GetOracleStats_FullMethodName = "/sttattus.oracle.v1.OracleService/GetOracleStats"
 )
 
 // OracleServiceClient is the client API for OracleService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type OracleServiceClient interface {
+	// Query handles strategic inquiry and rewards verified depth.
 	Query(ctx context.Context, in *QueryRequest, opts ...grpc.CallOption) (*QueryResponse, error)
+	// Status
+	GetOracleStats(ctx context.Context, in *GetOracleStatsRequest, opts ...grpc.CallOption) (*GetOracleStatsResponse, error)
 }
 
 type oracleServiceClient struct {
@@ -47,11 +51,24 @@ func (c *oracleServiceClient) Query(ctx context.Context, in *QueryRequest, opts 
 	return out, nil
 }
 
+func (c *oracleServiceClient) GetOracleStats(ctx context.Context, in *GetOracleStatsRequest, opts ...grpc.CallOption) (*GetOracleStatsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetOracleStatsResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetOracleStats_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OracleServiceServer is the server API for OracleService service.
 // All implementations must embed UnimplementedOracleServiceServer
 // for forward compatibility.
 type OracleServiceServer interface {
+	// Query handles strategic inquiry and rewards verified depth.
 	Query(context.Context, *QueryRequest) (*QueryResponse, error)
+	// Status
+	GetOracleStats(context.Context, *GetOracleStatsRequest) (*GetOracleStatsResponse, error)
 	mustEmbedUnimplementedOracleServiceServer()
 }
 
@@ -64,6 +81,9 @@ type UnimplementedOracleServiceServer struct{}
 
 func (UnimplementedOracleServiceServer) Query(context.Context, *QueryRequest) (*QueryResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method Query not implemented")
+}
+func (UnimplementedOracleServiceServer) GetOracleStats(context.Context, *GetOracleStatsRequest) (*GetOracleStatsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetOracleStats not implemented")
 }
 func (UnimplementedOracleServiceServer) mustEmbedUnimplementedOracleServiceServer() {}
 func (UnimplementedOracleServiceServer) testEmbeddedByValue()                       {}
@@ -104,6 +124,24 @@ func _OracleService_Query_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OracleService_GetOracleStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOracleStatsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetOracleStats(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetOracleStats_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetOracleStats(ctx, req.(*GetOracleStatsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OracleService_ServiceDesc is the grpc.ServiceDesc for OracleService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -114,6 +152,10 @@ var OracleService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Query",
 			Handler:    _OracleService_Query_Handler,
+		},
+		{
+			MethodName: "GetOracleStats",
+			Handler:    _OracleService_GetOracleStats_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

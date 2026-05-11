@@ -48,10 +48,6 @@ class TravelServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listFeed, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.LikePostResponse> likePost($0.LikePostRequest request, {$grpc.CallOptions? options,}) {
-    return $createUnaryCall(_$likePost, request, options: options);
-  }
-
     // method descriptors
 
   static final _$listMilestones = $grpc.ClientMethod<$0.ListMilestonesRequest, $0.ListMilestonesResponse>(
@@ -70,10 +66,6 @@ class TravelServiceClient extends $grpc.Client {
       '/sttattus.travel.v1.TravelService/ListFeed',
       ($0.ListFeedRequest value) => value.writeToBuffer(),
       $0.ListFeedResponse.fromBuffer);
-  static final _$likePost = $grpc.ClientMethod<$0.LikePostRequest, $0.LikePostResponse>(
-      '/sttattus.travel.v1.TravelService/LikePost',
-      ($0.LikePostRequest value) => value.writeToBuffer(),
-      $0.LikePostResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.travel.v1.TravelService')
@@ -109,13 +101,6 @@ abstract class TravelServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListFeedRequest.fromBuffer(value),
         ($0.ListFeedResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.LikePostRequest, $0.LikePostResponse>(
-        'LikePost',
-        likePost_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.LikePostRequest.fromBuffer(value),
-        ($0.LikePostResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListMilestonesResponse> listMilestones_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMilestonesRequest> $request) async {
@@ -141,11 +126,5 @@ abstract class TravelServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListFeedResponse> listFeed($grpc.ServiceCall call, $0.ListFeedRequest request);
-
-  $async.Future<$0.LikePostResponse> likePost_Pre($grpc.ServiceCall $call, $async.Future<$0.LikePostRequest> $request) async {
-    return likePost($call, await $request);
-  }
-
-  $async.Future<$0.LikePostResponse> likePost($grpc.ServiceCall call, $0.LikePostRequest request);
 
 }

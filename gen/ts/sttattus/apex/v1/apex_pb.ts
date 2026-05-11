@@ -4,67 +4,282 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
+import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
 
 /**
- * @generated from message sttattus.apex.v1.BioMetric
+ * BiomarkerCategory defines the biological system being measured.
+ *
+ * @generated from enum sttattus.apex.v1.BiomarkerCategory
  */
-export class BioMetric extends Message<BioMetric> {
+export enum BiomarkerCategory {
   /**
-   * e.g., 'HRV', 'RE_SLEEP', 'BLOOD_GLUCOSE'
+   * @generated from enum value: BIOMARKER_CATEGORY_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * ApoB, LDL, HDL
    *
-   * @generated from field: string code = 1;
+   * @generated from enum value: BIOMARKER_CATEGORY_LIPIDS = 1;
+   */
+  LIPIDS = 1,
+
+  /**
+   * HbA1c, Glucose, Insulin
+   *
+   * @generated from enum value: BIOMARKER_CATEGORY_METABOLIC = 2;
+   */
+  METABOLIC = 2,
+
+  /**
+   * Testosterone, Cortisol
+   *
+   * @generated from enum value: BIOMARKER_CATEGORY_HORMONES = 3;
+   */
+  HORMONES = 3,
+
+  /**
+   * CRP, Omega-3 Index
+   *
+   * @generated from enum value: BIOMARKER_CATEGORY_INFLAMMATION = 4;
+   */
+  INFLAMMATION = 4,
+
+  /**
+   * Vitamin D, B12
+   *
+   * @generated from enum value: BIOMARKER_CATEGORY_VITAMINS = 5;
+   */
+  VITAMINS = 5,
+
+  /**
+   * HRV, Sleep (from Wearables)
+   *
+   * @generated from enum value: BIOMARKER_CATEGORY_SENSORS = 6;
+   */
+  SENSORS = 6,
+}
+// Retrieve enum metadata with: proto3.getEnumType(BiomarkerCategory)
+proto3.util.setEnumType(BiomarkerCategory, "sttattus.apex.v1.BiomarkerCategory", [
+  { no: 0, name: "BIOMARKER_CATEGORY_UNSPECIFIED" },
+  { no: 1, name: "BIOMARKER_CATEGORY_LIPIDS" },
+  { no: 2, name: "BIOMARKER_CATEGORY_METABOLIC" },
+  { no: 3, name: "BIOMARKER_CATEGORY_HORMONES" },
+  { no: 4, name: "BIOMARKER_CATEGORY_INFLAMMATION" },
+  { no: 5, name: "BIOMARKER_CATEGORY_VITAMINS" },
+  { no: 6, name: "BIOMARKER_CATEGORY_SENSORS" },
+]);
+
+/**
+ * VerificationStatus tracks the manual verification of clinical reports.
+ *
+ * @generated from enum sttattus.apex.v1.VerificationStatus
+ */
+export enum VerificationStatus {
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_PENDING = 1;
+   */
+  PENDING = 1,
+
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_APPROVED = 2;
+   */
+  APPROVED = 2,
+
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_REJECTED = 3;
+   */
+  REJECTED = 3,
+}
+// Retrieve enum metadata with: proto3.getEnumType(VerificationStatus)
+proto3.util.setEnumType(VerificationStatus, "sttattus.apex.v1.VerificationStatus", [
+  { no: 0, name: "VERIFICATION_STATUS_UNSPECIFIED" },
+  { no: 1, name: "VERIFICATION_STATUS_PENDING" },
+  { no: 2, name: "VERIFICATION_STATUS_APPROVED" },
+  { no: 3, name: "VERIFICATION_STATUS_REJECTED" },
+]);
+
+/**
+ * Biomarker represents a single biological measurement.
+ *
+ * @generated from message sttattus.apex.v1.Biomarker
+ */
+export class Biomarker extends Message<Biomarker> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * e.g., 'APO_B', 'TESTOSTERONE_FREE'
+   *
+   * @generated from field: string code = 2;
    */
   code = "";
 
   /**
-   * @generated from field: double value = 2;
+   * @generated from field: sttattus.apex.v1.BiomarkerCategory category = 3;
+   */
+  category = BiomarkerCategory.UNSPECIFIED;
+
+  /**
+   * @generated from field: double value = 4;
    */
   value = 0;
 
   /**
-   * @generated from field: int64 recorded_at = 3;
+   * e.g., 'mg/dL', 'ng/dL'
+   *
+   * @generated from field: string unit = 5;
    */
-  recordedAt = protoInt64.zero;
+  unit = "";
 
-  constructor(data?: PartialMessage<BioMetric>) {
+  /**
+   * True if extracted from an approved LabReport
+   *
+   * @generated from field: bool verified = 6;
+   */
+  verified = false;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp recorded_at = 7;
+   */
+  recordedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<Biomarker>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sttattus.apex.v1.BioMetric";
+  static readonly typeName = "sttattus.apex.v1.Biomarker";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "value", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
-    { no: 3, name: "recorded_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "category", kind: "enum", T: proto3.getEnumType(BiomarkerCategory) },
+    { no: 4, name: "value", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "unit", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "recorded_at", kind: "message", T: Timestamp },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BioMetric {
-    return new BioMetric().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Biomarker {
+    return new Biomarker().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BioMetric {
-    return new BioMetric().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Biomarker {
+    return new Biomarker().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BioMetric {
-    return new BioMetric().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Biomarker {
+    return new Biomarker().fromJsonString(jsonString, options);
   }
 
-  static equals(a: BioMetric | PlainMessage<BioMetric> | undefined, b: BioMetric | PlainMessage<BioMetric> | undefined): boolean {
-    return proto3.util.equals(BioMetric, a, b);
+  static equals(a: Biomarker | PlainMessage<Biomarker> | undefined, b: Biomarker | PlainMessage<Biomarker> | undefined): boolean {
+    return proto3.util.equals(Biomarker, a, b);
   }
 }
 
 /**
+ * LabReport represents a clinical document (PDF/Image) submitted by the user.
+ *
+ * @generated from message sttattus.apex.v1.LabReport
+ */
+export class LabReport extends Message<LabReport> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * From shared_uploader
+   *
+   * @generated from field: string file_url = 2;
+   */
+  fileUrl = "";
+
+  /**
+   * @generated from field: string clinic_name = 3;
+   */
+  clinicName = "";
+
+  /**
+   * @generated from field: sttattus.apex.v1.VerificationStatus status = 4;
+   */
+  status = VerificationStatus.UNSPECIFIED;
+
+  /**
+   * @generated from field: string admin_note = 5;
+   */
+  adminNote = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp report_date = 6;
+   */
+  reportDate?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp submitted_at = 7;
+   */
+  submittedAt?: Timestamp;
+
+  /**
+   * @generated from field: repeated sttattus.apex.v1.Biomarker extracted_markers = 8;
+   */
+  extractedMarkers: Biomarker[] = [];
+
+  constructor(data?: PartialMessage<LabReport>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.LabReport";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "file_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "clinic_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "status", kind: "enum", T: proto3.getEnumType(VerificationStatus) },
+    { no: 5, name: "admin_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "report_date", kind: "message", T: Timestamp },
+    { no: 7, name: "submitted_at", kind: "message", T: Timestamp },
+    { no: 8, name: "extracted_markers", kind: "message", T: Biomarker, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LabReport {
+    return new LabReport().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LabReport {
+    return new LabReport().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LabReport {
+    return new LabReport().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LabReport | PlainMessage<LabReport> | undefined, b: LabReport | PlainMessage<LabReport> | undefined): boolean {
+    return proto3.util.equals(LabReport, a, b);
+  }
+}
+
+/**
+ * REQ/RES
+ *
  * @generated from message sttattus.apex.v1.SyncVitalsRequest
  */
 export class SyncVitalsRequest extends Message<SyncVitalsRequest> {
   /**
-   * @generated from field: repeated sttattus.apex.v1.BioMetric metrics = 1;
+   * Used for wearable/manual data
+   *
+   * @generated from field: repeated sttattus.apex.v1.Biomarker metrics = 1;
    */
-  metrics: BioMetric[] = [];
+  metrics: Biomarker[] = [];
 
   constructor(data?: PartialMessage<SyncVitalsRequest>) {
     super();
@@ -74,7 +289,7 @@ export class SyncVitalsRequest extends Message<SyncVitalsRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sttattus.apex.v1.SyncVitalsRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "metrics", kind: "message", T: BioMetric, repeated: true },
+    { no: 1, name: "metrics", kind: "message", T: Biomarker, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SyncVitalsRequest {
@@ -134,6 +349,254 @@ export class SyncVitalsResponse extends Message<SyncVitalsResponse> {
 
   static equals(a: SyncVitalsResponse | PlainMessage<SyncVitalsResponse> | undefined, b: SyncVitalsResponse | PlainMessage<SyncVitalsResponse> | undefined): boolean {
     return proto3.util.equals(SyncVitalsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.SubmitLabReportRequest
+ */
+export class SubmitLabReportRequest extends Message<SubmitLabReportRequest> {
+  /**
+   * @generated from field: string file_url = 1;
+   */
+  fileUrl = "";
+
+  /**
+   * @generated from field: string clinic_name = 2;
+   */
+  clinicName = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp report_date = 3;
+   */
+  reportDate?: Timestamp;
+
+  constructor(data?: PartialMessage<SubmitLabReportRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.SubmitLabReportRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "file_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "clinic_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "report_date", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitLabReportRequest {
+    return new SubmitLabReportRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitLabReportRequest {
+    return new SubmitLabReportRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitLabReportRequest {
+    return new SubmitLabReportRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitLabReportRequest | PlainMessage<SubmitLabReportRequest> | undefined, b: SubmitLabReportRequest | PlainMessage<SubmitLabReportRequest> | undefined): boolean {
+    return proto3.util.equals(SubmitLabReportRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.SubmitLabReportResponse
+ */
+export class SubmitLabReportResponse extends Message<SubmitLabReportResponse> {
+  /**
+   * @generated from field: sttattus.apex.v1.LabReport report = 1;
+   */
+  report?: LabReport;
+
+  constructor(data?: PartialMessage<SubmitLabReportResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.SubmitLabReportResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "report", kind: "message", T: LabReport },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitLabReportResponse {
+    return new SubmitLabReportResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitLabReportResponse {
+    return new SubmitLabReportResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitLabReportResponse {
+    return new SubmitLabReportResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitLabReportResponse | PlainMessage<SubmitLabReportResponse> | undefined, b: SubmitLabReportResponse | PlainMessage<SubmitLabReportResponse> | undefined): boolean {
+    return proto3.util.equals(SubmitLabReportResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListLabReportsRequest
+ */
+export class ListLabReportsRequest extends Message<ListLabReportsRequest> {
+  constructor(data?: PartialMessage<ListLabReportsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListLabReportsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLabReportsRequest {
+    return new ListLabReportsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLabReportsRequest {
+    return new ListLabReportsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLabReportsRequest {
+    return new ListLabReportsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLabReportsRequest | PlainMessage<ListLabReportsRequest> | undefined, b: ListLabReportsRequest | PlainMessage<ListLabReportsRequest> | undefined): boolean {
+    return proto3.util.equals(ListLabReportsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListLabReportsResponse
+ */
+export class ListLabReportsResponse extends Message<ListLabReportsResponse> {
+  /**
+   * @generated from field: repeated sttattus.apex.v1.LabReport reports = 1;
+   */
+  reports: LabReport[] = [];
+
+  constructor(data?: PartialMessage<ListLabReportsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListLabReportsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "reports", kind: "message", T: LabReport, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLabReportsResponse {
+    return new ListLabReportsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLabReportsResponse {
+    return new ListLabReportsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLabReportsResponse {
+    return new ListLabReportsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLabReportsResponse | PlainMessage<ListLabReportsResponse> | undefined, b: ListLabReportsResponse | PlainMessage<ListLabReportsResponse> | undefined): boolean {
+    return proto3.util.equals(ListLabReportsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.AdminVerifyLabRequest
+ */
+export class AdminVerifyLabRequest extends Message<AdminVerifyLabRequest> {
+  /**
+   * @generated from field: string report_id = 1;
+   */
+  reportId = "";
+
+  /**
+   * @generated from field: sttattus.apex.v1.VerificationStatus status = 2;
+   */
+  status = VerificationStatus.UNSPECIFIED;
+
+  /**
+   * @generated from field: string admin_note = 3;
+   */
+  adminNote = "";
+
+  /**
+   * Admin confirms/sets actual values
+   *
+   * @generated from field: repeated sttattus.apex.v1.Biomarker verified_markers = 4;
+   */
+  verifiedMarkers: Biomarker[] = [];
+
+  constructor(data?: PartialMessage<AdminVerifyLabRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.AdminVerifyLabRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "report_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "enum", T: proto3.getEnumType(VerificationStatus) },
+    { no: 3, name: "admin_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "verified_markers", kind: "message", T: Biomarker, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminVerifyLabRequest {
+    return new AdminVerifyLabRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminVerifyLabRequest {
+    return new AdminVerifyLabRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminVerifyLabRequest {
+    return new AdminVerifyLabRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminVerifyLabRequest | PlainMessage<AdminVerifyLabRequest> | undefined, b: AdminVerifyLabRequest | PlainMessage<AdminVerifyLabRequest> | undefined): boolean {
+    return proto3.util.equals(AdminVerifyLabRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.AdminVerifyLabResponse
+ */
+export class AdminVerifyLabResponse extends Message<AdminVerifyLabResponse> {
+  /**
+   * @generated from field: sttattus.apex.v1.LabReport report = 1;
+   */
+  report?: LabReport;
+
+  constructor(data?: PartialMessage<AdminVerifyLabResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.AdminVerifyLabResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "report", kind: "message", T: LabReport },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminVerifyLabResponse {
+    return new AdminVerifyLabResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminVerifyLabResponse {
+    return new AdminVerifyLabResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminVerifyLabResponse {
+    return new AdminVerifyLabResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminVerifyLabResponse | PlainMessage<AdminVerifyLabResponse> | undefined, b: AdminVerifyLabResponse | PlainMessage<AdminVerifyLabResponse> | undefined): boolean {
+    return proto3.util.equals(AdminVerifyLabResponse, a, b);
   }
 }
 

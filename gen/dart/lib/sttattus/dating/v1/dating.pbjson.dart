@@ -80,6 +80,9 @@ const DatingProfile$json = {
     {'1': 'physical_drive', '3': 11, '4': 1, '5': 5, '10': 'physicalDrive'},
     {'1': 'social_battery', '3': 12, '4': 1, '5': 5, '10': 'socialBattery'},
     {'1': 'photo_urls', '3': 13, '4': 3, '5': 9, '10': 'photoUrls'},
+    {'1': 'vault_rank', '3': 14, '4': 1, '5': 1, '10': 'vaultRank'},
+    {'1': 'apex_rank', '3': 15, '4': 1, '5': 1, '10': 'apexRank'},
+    {'1': 'forge_rank', '3': 16, '4': 1, '5': 1, '10': 'forgeRank'},
   ],
 };
 
@@ -93,7 +96,9 @@ final $typed_data.Uint8List datingProfileDescriptor = $convert.base64Decode(
     'NpdGlvbhIrChFpbnRlbGxlY3R1YWxfcGFjZRgJIAEoBVIQaW50ZWxsZWN0dWFsUGFjZRIzChVl'
     'bW90aW9uYWxfZ3JhbnVsYXJpdHkYCiABKAVSFGVtb3Rpb25hbEdyYW51bGFyaXR5EiUKDnBoeX'
     'NpY2FsX2RyaXZlGAsgASgFUg1waHlzaWNhbERyaXZlEiUKDnNvY2lhbF9iYXR0ZXJ5GAwgASgF'
-    'Ug1zb2NpYWxCYXR0ZXJ5Eh0KCnBob3RvX3VybHMYDSADKAlSCXBob3RvVXJscw==');
+    'Ug1zb2NpYWxCYXR0ZXJ5Eh0KCnBob3RvX3VybHMYDSADKAlSCXBob3RvVXJscxIdCgp2YXVsdF'
+    '9yYW5rGA4gASgBUgl2YXVsdFJhbmsSGwoJYXBleF9yYW5rGA8gASgBUghhcGV4UmFuaxIdCgpm'
+    'b3JnZV9yYW5rGBAgASgBUglmb3JnZVJhbms=');
 
 @$core.Deprecated('Use candidateDescriptor instead')
 const Candidate$json = {

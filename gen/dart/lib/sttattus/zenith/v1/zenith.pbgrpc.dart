@@ -36,12 +36,20 @@ class ZenithServiceClient extends $grpc.Client {
     return $createUnaryCall(_$logFocusSession, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetZenithStatsResponse> getZenithStats($0.GetZenithStatsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getZenithStats, request, options: options);
+  }
+
     // method descriptors
 
   static final _$logFocusSession = $grpc.ClientMethod<$0.LogFocusSessionRequest, $0.LogFocusSessionResponse>(
       '/sttattus.zenith.v1.ZenithService/LogFocusSession',
       ($0.LogFocusSessionRequest value) => value.writeToBuffer(),
       $0.LogFocusSessionResponse.fromBuffer);
+  static final _$getZenithStats = $grpc.ClientMethod<$0.GetZenithStatsRequest, $0.GetZenithStatsResponse>(
+      '/sttattus.zenith.v1.ZenithService/GetZenithStats',
+      ($0.GetZenithStatsRequest value) => value.writeToBuffer(),
+      $0.GetZenithStatsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.zenith.v1.ZenithService')
@@ -56,6 +64,13 @@ abstract class ZenithServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.LogFocusSessionRequest.fromBuffer(value),
         ($0.LogFocusSessionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetZenithStatsRequest, $0.GetZenithStatsResponse>(
+        'GetZenithStats',
+        getZenithStats_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetZenithStatsRequest.fromBuffer(value),
+        ($0.GetZenithStatsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.LogFocusSessionResponse> logFocusSession_Pre($grpc.ServiceCall $call, $async.Future<$0.LogFocusSessionRequest> $request) async {
@@ -63,5 +78,11 @@ abstract class ZenithServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.LogFocusSessionResponse> logFocusSession($grpc.ServiceCall call, $0.LogFocusSessionRequest request);
+
+  $async.Future<$0.GetZenithStatsResponse> getZenithStats_Pre($grpc.ServiceCall $call, $async.Future<$0.GetZenithStatsRequest> $request) async {
+    return getZenithStats($call, await $request);
+  }
+
+  $async.Future<$0.GetZenithStatsResponse> getZenithStats($grpc.ServiceCall call, $0.GetZenithStatsRequest request);
 
 }

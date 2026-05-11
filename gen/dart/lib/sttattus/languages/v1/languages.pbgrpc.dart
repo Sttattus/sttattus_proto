@@ -32,48 +32,43 @@ class LanguagesServiceClient extends $grpc.Client {
 
   LanguagesServiceClient(super.channel, {super.options, super.interceptors});
 
-  $grpc.ResponseFuture<$0.ListCategoriesResponse> listCategories($0.ListCategoriesRequest request, {$grpc.CallOptions? options,}) {
-    return $createUnaryCall(_$listCategories, request, options: options);
+  /// The Protocol: Scenario-based learning
+  $grpc.ResponseFuture<$0.ListScenariosResponse> listScenarios($0.ListScenariosRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listScenarios, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ListWordsResponse> listWords($0.ListWordsRequest request, {$grpc.CallOptions? options,}) {
-    return $createUnaryCall(_$listWords, request, options: options);
+  $grpc.ResponseFuture<$0.CompleteInteractionResponse> completeInteraction($0.CompleteInteractionRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$completeInteraction, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UpdateProgressResponse> updateProgress($0.UpdateProgressRequest request, {$grpc.CallOptions? options,}) {
-    return $createUnaryCall(_$updateProgress, request, options: options);
-  }
-
+  /// Status
   $grpc.ResponseFuture<$0.GetLinguistStatsResponse> getLinguistStats($0.GetLinguistStatsRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$getLinguistStats, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.SubmitFeedbackResponse> submitFeedback($0.SubmitFeedbackRequest request, {$grpc.CallOptions? options,}) {
-    return $createUnaryCall(_$submitFeedback, request, options: options);
+  /// Legacy (Deprecated but kept for bridge)
+  $grpc.ResponseFuture<$0.ListWordsResponse> listWords($0.ListWordsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listWords, request, options: options);
   }
 
     // method descriptors
 
-  static final _$listCategories = $grpc.ClientMethod<$0.ListCategoriesRequest, $0.ListCategoriesResponse>(
-      '/sttattus.languages.v1.LanguagesService/ListCategories',
-      ($0.ListCategoriesRequest value) => value.writeToBuffer(),
-      $0.ListCategoriesResponse.fromBuffer);
-  static final _$listWords = $grpc.ClientMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
-      '/sttattus.languages.v1.LanguagesService/ListWords',
-      ($0.ListWordsRequest value) => value.writeToBuffer(),
-      $0.ListWordsResponse.fromBuffer);
-  static final _$updateProgress = $grpc.ClientMethod<$0.UpdateProgressRequest, $0.UpdateProgressResponse>(
-      '/sttattus.languages.v1.LanguagesService/UpdateProgress',
-      ($0.UpdateProgressRequest value) => value.writeToBuffer(),
-      $0.UpdateProgressResponse.fromBuffer);
+  static final _$listScenarios = $grpc.ClientMethod<$0.ListScenariosRequest, $0.ListScenariosResponse>(
+      '/sttattus.languages.v1.LanguagesService/ListScenarios',
+      ($0.ListScenariosRequest value) => value.writeToBuffer(),
+      $0.ListScenariosResponse.fromBuffer);
+  static final _$completeInteraction = $grpc.ClientMethod<$0.CompleteInteractionRequest, $0.CompleteInteractionResponse>(
+      '/sttattus.languages.v1.LanguagesService/CompleteInteraction',
+      ($0.CompleteInteractionRequest value) => value.writeToBuffer(),
+      $0.CompleteInteractionResponse.fromBuffer);
   static final _$getLinguistStats = $grpc.ClientMethod<$0.GetLinguistStatsRequest, $0.GetLinguistStatsResponse>(
       '/sttattus.languages.v1.LanguagesService/GetLinguistStats',
       ($0.GetLinguistStatsRequest value) => value.writeToBuffer(),
       $0.GetLinguistStatsResponse.fromBuffer);
-  static final _$submitFeedback = $grpc.ClientMethod<$0.SubmitFeedbackRequest, $0.SubmitFeedbackResponse>(
-      '/sttattus.languages.v1.LanguagesService/SubmitFeedback',
-      ($0.SubmitFeedbackRequest value) => value.writeToBuffer(),
-      $0.SubmitFeedbackResponse.fromBuffer);
+  static final _$listWords = $grpc.ClientMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
+      '/sttattus.languages.v1.LanguagesService/ListWords',
+      ($0.ListWordsRequest value) => value.writeToBuffer(),
+      $0.ListWordsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.languages.v1.LanguagesService')
@@ -81,27 +76,20 @@ abstract class LanguagesServiceBase extends $grpc.Service {
   $core.String get $name => 'sttattus.languages.v1.LanguagesService';
 
   LanguagesServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.ListCategoriesRequest, $0.ListCategoriesResponse>(
-        'ListCategories',
-        listCategories_Pre,
+    $addMethod($grpc.ServiceMethod<$0.ListScenariosRequest, $0.ListScenariosResponse>(
+        'ListScenarios',
+        listScenarios_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.ListCategoriesRequest.fromBuffer(value),
-        ($0.ListCategoriesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
-        'ListWords',
-        listWords_Pre,
+        ($core.List<$core.int> value) => $0.ListScenariosRequest.fromBuffer(value),
+        ($0.ListScenariosResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CompleteInteractionRequest, $0.CompleteInteractionResponse>(
+        'CompleteInteraction',
+        completeInteraction_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.ListWordsRequest.fromBuffer(value),
-        ($0.ListWordsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.UpdateProgressRequest, $0.UpdateProgressResponse>(
-        'UpdateProgress',
-        updateProgress_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.UpdateProgressRequest.fromBuffer(value),
-        ($0.UpdateProgressResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $0.CompleteInteractionRequest.fromBuffer(value),
+        ($0.CompleteInteractionResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetLinguistStatsRequest, $0.GetLinguistStatsResponse>(
         'GetLinguistStats',
         getLinguistStats_Pre,
@@ -109,32 +97,26 @@ abstract class LanguagesServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetLinguistStatsRequest.fromBuffer(value),
         ($0.GetLinguistStatsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.SubmitFeedbackRequest, $0.SubmitFeedbackResponse>(
-        'SubmitFeedback',
-        submitFeedback_Pre,
+    $addMethod($grpc.ServiceMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
+        'ListWords',
+        listWords_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.SubmitFeedbackRequest.fromBuffer(value),
-        ($0.SubmitFeedbackResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $0.ListWordsRequest.fromBuffer(value),
+        ($0.ListWordsResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.ListCategoriesResponse> listCategories_Pre($grpc.ServiceCall $call, $async.Future<$0.ListCategoriesRequest> $request) async {
-    return listCategories($call, await $request);
+  $async.Future<$0.ListScenariosResponse> listScenarios_Pre($grpc.ServiceCall $call, $async.Future<$0.ListScenariosRequest> $request) async {
+    return listScenarios($call, await $request);
   }
 
-  $async.Future<$0.ListCategoriesResponse> listCategories($grpc.ServiceCall call, $0.ListCategoriesRequest request);
+  $async.Future<$0.ListScenariosResponse> listScenarios($grpc.ServiceCall call, $0.ListScenariosRequest request);
 
-  $async.Future<$0.ListWordsResponse> listWords_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWordsRequest> $request) async {
-    return listWords($call, await $request);
+  $async.Future<$0.CompleteInteractionResponse> completeInteraction_Pre($grpc.ServiceCall $call, $async.Future<$0.CompleteInteractionRequest> $request) async {
+    return completeInteraction($call, await $request);
   }
 
-  $async.Future<$0.ListWordsResponse> listWords($grpc.ServiceCall call, $0.ListWordsRequest request);
-
-  $async.Future<$0.UpdateProgressResponse> updateProgress_Pre($grpc.ServiceCall $call, $async.Future<$0.UpdateProgressRequest> $request) async {
-    return updateProgress($call, await $request);
-  }
-
-  $async.Future<$0.UpdateProgressResponse> updateProgress($grpc.ServiceCall call, $0.UpdateProgressRequest request);
+  $async.Future<$0.CompleteInteractionResponse> completeInteraction($grpc.ServiceCall call, $0.CompleteInteractionRequest request);
 
   $async.Future<$0.GetLinguistStatsResponse> getLinguistStats_Pre($grpc.ServiceCall $call, $async.Future<$0.GetLinguistStatsRequest> $request) async {
     return getLinguistStats($call, await $request);
@@ -142,10 +124,10 @@ abstract class LanguagesServiceBase extends $grpc.Service {
 
   $async.Future<$0.GetLinguistStatsResponse> getLinguistStats($grpc.ServiceCall call, $0.GetLinguistStatsRequest request);
 
-  $async.Future<$0.SubmitFeedbackResponse> submitFeedback_Pre($grpc.ServiceCall $call, $async.Future<$0.SubmitFeedbackRequest> $request) async {
-    return submitFeedback($call, await $request);
+  $async.Future<$0.ListWordsResponse> listWords_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWordsRequest> $request) async {
+    return listWords($call, await $request);
   }
 
-  $async.Future<$0.SubmitFeedbackResponse> submitFeedback($grpc.ServiceCall call, $0.SubmitFeedbackRequest request);
+  $async.Future<$0.ListWordsResponse> listWords($grpc.ServiceCall call, $0.ListWordsRequest request);
 
 }

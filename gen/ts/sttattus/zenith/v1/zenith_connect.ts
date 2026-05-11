@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { LogFocusSessionRequest, LogFocusSessionResponse } from "./zenith_pb.js";
+import { GetZenithStatsRequest, GetZenithStatsResponse, LogFocusSessionRequest, LogFocusSessionResponse } from "./zenith_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -19,6 +19,15 @@ export const ZenithService = {
       name: "LogFocusSession",
       I: LogFocusSessionRequest,
       O: LogFocusSessionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetZenithStats
+     */
+    getZenithStats: {
+      name: "GetZenithStats",
+      I: GetZenithStatsRequest,
+      O: GetZenithStatsResponse,
       kind: MethodKind.Unary,
     },
   }

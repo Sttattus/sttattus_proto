@@ -32,8 +32,14 @@ class OracleServiceClient extends $grpc.Client {
 
   OracleServiceClient(super.channel, {super.options, super.interceptors});
 
+  /// Query handles strategic inquiry and rewards verified depth.
   $grpc.ResponseFuture<$0.QueryResponse> query($0.QueryRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$query, request, options: options);
+  }
+
+  /// Status
+  $grpc.ResponseFuture<$0.GetOracleStatsResponse> getOracleStats($0.GetOracleStatsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getOracleStats, request, options: options);
   }
 
     // method descriptors
@@ -42,6 +48,10 @@ class OracleServiceClient extends $grpc.Client {
       '/sttattus.oracle.v1.OracleService/Query',
       ($0.QueryRequest value) => value.writeToBuffer(),
       $0.QueryResponse.fromBuffer);
+  static final _$getOracleStats = $grpc.ClientMethod<$0.GetOracleStatsRequest, $0.GetOracleStatsResponse>(
+      '/sttattus.oracle.v1.OracleService/GetOracleStats',
+      ($0.GetOracleStatsRequest value) => value.writeToBuffer(),
+      $0.GetOracleStatsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.oracle.v1.OracleService')
@@ -56,6 +66,13 @@ abstract class OracleServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.QueryRequest.fromBuffer(value),
         ($0.QueryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetOracleStatsRequest, $0.GetOracleStatsResponse>(
+        'GetOracleStats',
+        getOracleStats_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetOracleStatsRequest.fromBuffer(value),
+        ($0.GetOracleStatsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.QueryResponse> query_Pre($grpc.ServiceCall $call, $async.Future<$0.QueryRequest> $request) async {
@@ -63,5 +80,11 @@ abstract class OracleServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.QueryResponse> query($grpc.ServiceCall call, $0.QueryRequest request);
+
+  $async.Future<$0.GetOracleStatsResponse> getOracleStats_Pre($grpc.ServiceCall $call, $async.Future<$0.GetOracleStatsRequest> $request) async {
+    return getOracleStats($call, await $request);
+  }
+
+  $async.Future<$0.GetOracleStatsResponse> getOracleStats($grpc.ServiceCall call, $0.GetOracleStatsRequest request);
 
 }

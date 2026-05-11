@@ -4,9 +4,93 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
+import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
 
 /**
+ * AssetCategory defines the broad classification of wealth.
+ *
+ * @generated from enum sttattus.vault.v1.AssetCategory
+ */
+export enum AssetCategory {
+  /**
+   * @generated from enum value: ASSET_CATEGORY_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * Cash, Bank Accounts
+   *
+   * @generated from enum value: ASSET_CATEGORY_FIAT = 1;
+   */
+  FIAT = 1,
+
+  /**
+   * BTC, ETH, Tokens
+   *
+   * @generated from enum value: ASSET_CATEGORY_CRYPTO = 2;
+   */
+  CRYPTO = 2,
+
+  /**
+   * Watches, Cars, Art (The Concierge)
+   *
+   * @generated from enum value: ASSET_CATEGORY_RARE_ASSET = 3;
+   */
+  RARE_ASSET = 3,
+
+  /**
+   * Gold, Silver
+   *
+   * @generated from enum value: ASSET_CATEGORY_METAL = 4;
+   */
+  METAL = 4,
+}
+// Retrieve enum metadata with: proto3.getEnumType(AssetCategory)
+proto3.util.setEnumType(AssetCategory, "sttattus.vault.v1.AssetCategory", [
+  { no: 0, name: "ASSET_CATEGORY_UNSPECIFIED" },
+  { no: 1, name: "ASSET_CATEGORY_FIAT" },
+  { no: 2, name: "ASSET_CATEGORY_CRYPTO" },
+  { no: 3, name: "ASSET_CATEGORY_RARE_ASSET" },
+  { no: 4, name: "ASSET_CATEGORY_METAL" },
+]);
+
+/**
+ * VerificationStatus tracks the manual verification lifecycle for Rare Assets.
+ *
+ * @generated from enum sttattus.vault.v1.VerificationStatus
+ */
+export enum VerificationStatus {
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_PENDING = 1;
+   */
+  PENDING = 1,
+
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_APPROVED = 2;
+   */
+  APPROVED = 2,
+
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_REJECTED = 3;
+   */
+  REJECTED = 3,
+}
+// Retrieve enum metadata with: proto3.getEnumType(VerificationStatus)
+proto3.util.setEnumType(VerificationStatus, "sttattus.vault.v1.VerificationStatus", [
+  { no: 0, name: "VERIFICATION_STATUS_UNSPECIFIED" },
+  { no: 1, name: "VERIFICATION_STATUS_PENDING" },
+  { no: 2, name: "VERIFICATION_STATUS_APPROVED" },
+  { no: 3, name: "VERIFICATION_STATUS_REJECTED" },
+]);
+
+/**
+ * Asset represents a single item of wealth.
+ *
  * @generated from message sttattus.vault.v1.Asset
  */
 export class Asset extends Message<Asset> {
@@ -21,16 +105,38 @@ export class Asset extends Message<Asset> {
   name = "";
 
   /**
-   * currency, crypto, metal, collectible
-   *
-   * @generated from field: string type = 3;
+   * @generated from field: sttattus.vault.v1.AssetCategory category = 3;
    */
-  type = "";
+  category = AssetCategory.UNSPECIFIED;
 
   /**
-   * @generated from field: double value_usd = 4;
+   * @generated from field: double valuation_usd = 4;
    */
-  valueUsd = 0;
+  valuationUsd = 0;
+
+  /**
+   * @generated from field: sttattus.vault.v1.VerificationStatus status = 5;
+   */
+  status = VerificationStatus.UNSPECIFIED;
+
+  /**
+   * For Rare Assets
+   *
+   * @generated from field: string image_url = 6;
+   */
+  imageUrl = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_updated = 7;
+   */
+  lastUpdated?: Timestamp;
+
+  /**
+   * e.g., "serial_number": "123", "wallet_address": "0x..."
+   *
+   * @generated from field: map<string, string> metadata = 8;
+   */
+  metadata: { [key: string]: string } = {};
 
   constructor(data?: PartialMessage<Asset>) {
     super();
@@ -42,8 +148,12 @@ export class Asset extends Message<Asset> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "value_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "category", kind: "enum", T: proto3.getEnumType(AssetCategory) },
+    { no: 4, name: "valuation_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "status", kind: "enum", T: proto3.getEnumType(VerificationStatus) },
+    { no: 6, name: "image_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "last_updated", kind: "message", T: Timestamp },
+    { no: 8, name: "metadata", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Asset {
@@ -60,6 +170,333 @@ export class Asset extends Message<Asset> {
 
   static equals(a: Asset | PlainMessage<Asset> | undefined, b: Asset | PlainMessage<Asset> | undefined): boolean {
     return proto3.util.equals(Asset, a, b);
+  }
+}
+
+/**
+ * Portfolio is the aggregated view of a user's wealth.
+ *
+ * @generated from message sttattus.vault.v1.Portfolio
+ */
+export class Portfolio extends Message<Portfolio> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: double total_net_worth_usd = 2;
+   */
+  totalNetWorthUsd = 0;
+
+  /**
+   * @generated from field: repeated sttattus.vault.v1.Asset assets = 3;
+   */
+  assets: Asset[] = [];
+
+  /**
+   * 1-100 calculated score
+   *
+   * @generated from field: double vault_rank = 4;
+   */
+  vaultRank = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp calculated_at = 5;
+   */
+  calculatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<Portfolio>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.Portfolio";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "total_net_worth_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "assets", kind: "message", T: Asset, repeated: true },
+    { no: 4, name: "vault_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "calculated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Portfolio {
+    return new Portfolio().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Portfolio {
+    return new Portfolio().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Portfolio {
+    return new Portfolio().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: Portfolio | PlainMessage<Portfolio> | undefined, b: Portfolio | PlainMessage<Portfolio> | undefined): boolean {
+    return proto3.util.equals(Portfolio, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SubmitAssetRequest
+ */
+export class SubmitAssetRequest extends Message<SubmitAssetRequest> {
+  /**
+   * @generated from field: string name = 1;
+   */
+  name = "";
+
+  /**
+   * @generated from field: sttattus.vault.v1.AssetCategory category = 2;
+   */
+  category = AssetCategory.UNSPECIFIED;
+
+  /**
+   * @generated from field: double estimated_value_usd = 3;
+   */
+  estimatedValueUsd = 0;
+
+  /**
+   * From shared_uploader
+   *
+   * @generated from field: string image_url = 4;
+   */
+  imageUrl = "";
+
+  /**
+   * @generated from field: map<string, string> metadata = 5;
+   */
+  metadata: { [key: string]: string } = {};
+
+  constructor(data?: PartialMessage<SubmitAssetRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SubmitAssetRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "category", kind: "enum", T: proto3.getEnumType(AssetCategory) },
+    { no: 3, name: "estimated_value_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "image_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "metadata", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAssetRequest {
+    return new SubmitAssetRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitAssetRequest {
+    return new SubmitAssetRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitAssetRequest {
+    return new SubmitAssetRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitAssetRequest | PlainMessage<SubmitAssetRequest> | undefined, b: SubmitAssetRequest | PlainMessage<SubmitAssetRequest> | undefined): boolean {
+    return proto3.util.equals(SubmitAssetRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SubmitAssetResponse
+ */
+export class SubmitAssetResponse extends Message<SubmitAssetResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.Asset asset = 1;
+   */
+  asset?: Asset;
+
+  constructor(data?: PartialMessage<SubmitAssetResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SubmitAssetResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "asset", kind: "message", T: Asset },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAssetResponse {
+    return new SubmitAssetResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitAssetResponse {
+    return new SubmitAssetResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitAssetResponse {
+    return new SubmitAssetResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitAssetResponse | PlainMessage<SubmitAssetResponse> | undefined, b: SubmitAssetResponse | PlainMessage<SubmitAssetResponse> | undefined): boolean {
+    return proto3.util.equals(SubmitAssetResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetPortfolioRequest
+ */
+export class GetPortfolioRequest extends Message<GetPortfolioRequest> {
+  constructor(data?: PartialMessage<GetPortfolioRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetPortfolioRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPortfolioRequest {
+    return new GetPortfolioRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPortfolioRequest {
+    return new GetPortfolioRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPortfolioRequest {
+    return new GetPortfolioRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPortfolioRequest | PlainMessage<GetPortfolioRequest> | undefined, b: GetPortfolioRequest | PlainMessage<GetPortfolioRequest> | undefined): boolean {
+    return proto3.util.equals(GetPortfolioRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetPortfolioResponse
+ */
+export class GetPortfolioResponse extends Message<GetPortfolioResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.Portfolio portfolio = 1;
+   */
+  portfolio?: Portfolio;
+
+  constructor(data?: PartialMessage<GetPortfolioResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetPortfolioResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "portfolio", kind: "message", T: Portfolio },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPortfolioResponse {
+    return new GetPortfolioResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPortfolioResponse {
+    return new GetPortfolioResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPortfolioResponse {
+    return new GetPortfolioResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPortfolioResponse | PlainMessage<GetPortfolioResponse> | undefined, b: GetPortfolioResponse | PlainMessage<GetPortfolioResponse> | undefined): boolean {
+    return proto3.util.equals(GetPortfolioResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.AdminVerifyAssetRequest
+ */
+export class AdminVerifyAssetRequest extends Message<AdminVerifyAssetRequest> {
+  /**
+   * @generated from field: string asset_id = 1;
+   */
+  assetId = "";
+
+  /**
+   * @generated from field: sttattus.vault.v1.VerificationStatus status = 2;
+   */
+  status = VerificationStatus.UNSPECIFIED;
+
+  /**
+   * Admin can override/set official value
+   *
+   * @generated from field: double final_valuation_usd = 3;
+   */
+  finalValuationUsd = 0;
+
+  /**
+   * @generated from field: string admin_note = 4;
+   */
+  adminNote = "";
+
+  constructor(data?: PartialMessage<AdminVerifyAssetRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.AdminVerifyAssetRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "enum", T: proto3.getEnumType(VerificationStatus) },
+    { no: 3, name: "final_valuation_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "admin_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminVerifyAssetRequest {
+    return new AdminVerifyAssetRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminVerifyAssetRequest {
+    return new AdminVerifyAssetRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminVerifyAssetRequest {
+    return new AdminVerifyAssetRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminVerifyAssetRequest | PlainMessage<AdminVerifyAssetRequest> | undefined, b: AdminVerifyAssetRequest | PlainMessage<AdminVerifyAssetRequest> | undefined): boolean {
+    return proto3.util.equals(AdminVerifyAssetRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.AdminVerifyAssetResponse
+ */
+export class AdminVerifyAssetResponse extends Message<AdminVerifyAssetResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.Asset asset = 1;
+   */
+  asset?: Asset;
+
+  constructor(data?: PartialMessage<AdminVerifyAssetResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.AdminVerifyAssetResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "asset", kind: "message", T: Asset },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminVerifyAssetResponse {
+    return new AdminVerifyAssetResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminVerifyAssetResponse {
+    return new AdminVerifyAssetResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminVerifyAssetResponse {
+    return new AdminVerifyAssetResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminVerifyAssetResponse | PlainMessage<AdminVerifyAssetResponse> | undefined, b: AdminVerifyAssetResponse | PlainMessage<AdminVerifyAssetResponse> | undefined): boolean {
+    return proto3.util.equals(AdminVerifyAssetResponse, a, b);
   }
 }
 
@@ -146,6 +583,322 @@ export class SyncWealthResponse extends Message<SyncWealthResponse> {
 
   static equals(a: SyncWealthResponse | PlainMessage<SyncWealthResponse> | undefined, b: SyncWealthResponse | PlainMessage<SyncWealthResponse> | undefined): boolean {
     return proto3.util.equals(SyncWealthResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetWalletChallengeRequest
+ */
+export class GetWalletChallengeRequest extends Message<GetWalletChallengeRequest> {
+  /**
+   * @generated from field: string address = 1;
+   */
+  address = "";
+
+  constructor(data?: PartialMessage<GetWalletChallengeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetWalletChallengeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWalletChallengeRequest {
+    return new GetWalletChallengeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWalletChallengeRequest {
+    return new GetWalletChallengeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWalletChallengeRequest {
+    return new GetWalletChallengeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetWalletChallengeRequest | PlainMessage<GetWalletChallengeRequest> | undefined, b: GetWalletChallengeRequest | PlainMessage<GetWalletChallengeRequest> | undefined): boolean {
+    return proto3.util.equals(GetWalletChallengeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetWalletChallengeResponse
+ */
+export class GetWalletChallengeResponse extends Message<GetWalletChallengeResponse> {
+  /**
+   * Unique nonce to be signed
+   *
+   * @generated from field: string challenge = 1;
+   */
+  challenge = "";
+
+  constructor(data?: PartialMessage<GetWalletChallengeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetWalletChallengeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "challenge", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWalletChallengeResponse {
+    return new GetWalletChallengeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWalletChallengeResponse {
+    return new GetWalletChallengeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWalletChallengeResponse {
+    return new GetWalletChallengeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetWalletChallengeResponse | PlainMessage<GetWalletChallengeResponse> | undefined, b: GetWalletChallengeResponse | PlainMessage<GetWalletChallengeResponse> | undefined): boolean {
+    return proto3.util.equals(GetWalletChallengeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.LinkWalletRequest
+ */
+export class LinkWalletRequest extends Message<LinkWalletRequest> {
+  /**
+   * @generated from field: string address = 1;
+   */
+  address = "";
+
+  /**
+   * Signed challenge
+   *
+   * @generated from field: string signature = 2;
+   */
+  signature = "";
+
+  /**
+   * e.g., "ethereum", "solana"
+   *
+   * @generated from field: string chain = 3;
+   */
+  chain = "";
+
+  constructor(data?: PartialMessage<LinkWalletRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.LinkWalletRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "signature", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "chain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LinkWalletRequest {
+    return new LinkWalletRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LinkWalletRequest {
+    return new LinkWalletRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LinkWalletRequest {
+    return new LinkWalletRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LinkWalletRequest | PlainMessage<LinkWalletRequest> | undefined, b: LinkWalletRequest | PlainMessage<LinkWalletRequest> | undefined): boolean {
+    return proto3.util.equals(LinkWalletRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.LinkWalletResponse
+ */
+export class LinkWalletResponse extends Message<LinkWalletResponse> {
+  /**
+   * @generated from field: bool success = 1;
+   */
+  success = false;
+
+  /**
+   * Returns the newly created "Crypto" asset representation
+   *
+   * @generated from field: sttattus.vault.v1.Asset asset = 2;
+   */
+  asset?: Asset;
+
+  constructor(data?: PartialMessage<LinkWalletResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.LinkWalletResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "asset", kind: "message", T: Asset },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LinkWalletResponse {
+    return new LinkWalletResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LinkWalletResponse {
+    return new LinkWalletResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LinkWalletResponse {
+    return new LinkWalletResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LinkWalletResponse | PlainMessage<LinkWalletResponse> | undefined, b: LinkWalletResponse | PlainMessage<LinkWalletResponse> | undefined): boolean {
+    return proto3.util.equals(LinkWalletResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.CreatePlaidLinkTokenRequest
+ */
+export class CreatePlaidLinkTokenRequest extends Message<CreatePlaidLinkTokenRequest> {
+  constructor(data?: PartialMessage<CreatePlaidLinkTokenRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.CreatePlaidLinkTokenRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreatePlaidLinkTokenRequest {
+    return new CreatePlaidLinkTokenRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreatePlaidLinkTokenRequest {
+    return new CreatePlaidLinkTokenRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreatePlaidLinkTokenRequest {
+    return new CreatePlaidLinkTokenRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreatePlaidLinkTokenRequest | PlainMessage<CreatePlaidLinkTokenRequest> | undefined, b: CreatePlaidLinkTokenRequest | PlainMessage<CreatePlaidLinkTokenRequest> | undefined): boolean {
+    return proto3.util.equals(CreatePlaidLinkTokenRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.CreatePlaidLinkTokenResponse
+ */
+export class CreatePlaidLinkTokenResponse extends Message<CreatePlaidLinkTokenResponse> {
+  /**
+   * @generated from field: string link_token = 1;
+   */
+  linkToken = "";
+
+  constructor(data?: PartialMessage<CreatePlaidLinkTokenResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.CreatePlaidLinkTokenResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "link_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreatePlaidLinkTokenResponse {
+    return new CreatePlaidLinkTokenResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreatePlaidLinkTokenResponse {
+    return new CreatePlaidLinkTokenResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreatePlaidLinkTokenResponse {
+    return new CreatePlaidLinkTokenResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreatePlaidLinkTokenResponse | PlainMessage<CreatePlaidLinkTokenResponse> | undefined, b: CreatePlaidLinkTokenResponse | PlainMessage<CreatePlaidLinkTokenResponse> | undefined): boolean {
+    return proto3.util.equals(CreatePlaidLinkTokenResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ExchangePlaidPublicTokenRequest
+ */
+export class ExchangePlaidPublicTokenRequest extends Message<ExchangePlaidPublicTokenRequest> {
+  /**
+   * @generated from field: string public_token = 1;
+   */
+  publicToken = "";
+
+  constructor(data?: PartialMessage<ExchangePlaidPublicTokenRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ExchangePlaidPublicTokenRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "public_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExchangePlaidPublicTokenRequest {
+    return new ExchangePlaidPublicTokenRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExchangePlaidPublicTokenRequest {
+    return new ExchangePlaidPublicTokenRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExchangePlaidPublicTokenRequest {
+    return new ExchangePlaidPublicTokenRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExchangePlaidPublicTokenRequest | PlainMessage<ExchangePlaidPublicTokenRequest> | undefined, b: ExchangePlaidPublicTokenRequest | PlainMessage<ExchangePlaidPublicTokenRequest> | undefined): boolean {
+    return proto3.util.equals(ExchangePlaidPublicTokenRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ExchangePlaidPublicTokenResponse
+ */
+export class ExchangePlaidPublicTokenResponse extends Message<ExchangePlaidPublicTokenResponse> {
+  /**
+   * @generated from field: bool success = 1;
+   */
+  success = false;
+
+  constructor(data?: PartialMessage<ExchangePlaidPublicTokenResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ExchangePlaidPublicTokenResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExchangePlaidPublicTokenResponse {
+    return new ExchangePlaidPublicTokenResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExchangePlaidPublicTokenResponse {
+    return new ExchangePlaidPublicTokenResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExchangePlaidPublicTokenResponse {
+    return new ExchangePlaidPublicTokenResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExchangePlaidPublicTokenResponse | PlainMessage<ExchangePlaidPublicTokenResponse> | undefined, b: ExchangePlaidPublicTokenResponse | PlainMessage<ExchangePlaidPublicTokenResponse> | undefined): boolean {
+    return proto3.util.equals(ExchangePlaidPublicTokenResponse, a, b);
   }
 }
 

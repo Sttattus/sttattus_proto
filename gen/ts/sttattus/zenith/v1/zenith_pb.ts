@@ -4,21 +4,52 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
+import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
 
 /**
  * @generated from message sttattus.zenith.v1.Session
  */
 export class Session extends Message<Session> {
   /**
-   * @generated from field: int32 duration_minutes = 1;
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: int32 duration_minutes = 2;
    */
   durationMinutes = 0;
 
   /**
-   * @generated from field: double focus_score = 2;
+   * 0.0 - 1.0 (Calculated/Verified)
+   *
+   * @generated from field: double focus_score = 3;
    */
   focusScore = 0;
+
+  /**
+   * True if bio-signals were used
+   *
+   * @generated from field: bool is_verified = 4;
+   */
+  isVerified = false;
+
+  /**
+   * @generated from field: double avg_heart_rate = 5;
+   */
+  avgHeartRate = 0;
+
+  /**
+   * HRV change during session
+   *
+   * @generated from field: double hrv_delta = 6;
+   */
+  hrvDelta = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp started_at = 7;
+   */
+  startedAt?: Timestamp;
 
   constructor(data?: PartialMessage<Session>) {
     super();
@@ -28,8 +59,13 @@ export class Session extends Message<Session> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sttattus.zenith.v1.Session";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "duration_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "focus_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "duration_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "focus_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "is_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "avg_heart_rate", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "hrv_delta", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "started_at", kind: "message", T: Timestamp },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Session {
@@ -46,6 +82,71 @@ export class Session extends Message<Session> {
 
   static equals(a: Session | PlainMessage<Session> | undefined, b: Session | PlainMessage<Session> | undefined): boolean {
     return proto3.util.equals(Session, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ZenithStats
+ */
+export class ZenithStats extends Message<ZenithStats> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * 1-100 normalized
+   *
+   * @generated from field: double fortitude_rank = 2;
+   */
+  fortitudeRank = 0;
+
+  /**
+   * e.g., 'Acolyte', 'Focus Master', 'Sovereign Focus'
+   *
+   * @generated from field: string rank_label = 3;
+   */
+  rankLabel = "";
+
+  /**
+   * @generated from field: int32 total_focus_minutes = 4;
+   */
+  totalFocusMinutes = 0;
+
+  /**
+   * @generated from field: int32 verified_sessions_count = 5;
+   */
+  verifiedSessionsCount = 0;
+
+  constructor(data?: PartialMessage<ZenithStats>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ZenithStats";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "fortitude_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "rank_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "total_focus_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "verified_sessions_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ZenithStats {
+    return new ZenithStats().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ZenithStats {
+    return new ZenithStats().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ZenithStats {
+    return new ZenithStats().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ZenithStats | PlainMessage<ZenithStats> | undefined, b: ZenithStats | PlainMessage<ZenithStats> | undefined): boolean {
+    return proto3.util.equals(ZenithStats, a, b);
   }
 }
 
@@ -95,6 +196,11 @@ export class LogFocusSessionResponse extends Message<LogFocusSessionResponse> {
    */
   currentZenithScore = 0;
 
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithStats stats = 2;
+   */
+  stats?: ZenithStats;
+
   constructor(data?: PartialMessage<LogFocusSessionResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -104,6 +210,7 @@ export class LogFocusSessionResponse extends Message<LogFocusSessionResponse> {
   static readonly typeName = "sttattus.zenith.v1.LogFocusSessionResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "current_zenith_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "stats", kind: "message", T: ZenithStats },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LogFocusSessionResponse {
@@ -120,6 +227,80 @@ export class LogFocusSessionResponse extends Message<LogFocusSessionResponse> {
 
   static equals(a: LogFocusSessionResponse | PlainMessage<LogFocusSessionResponse> | undefined, b: LogFocusSessionResponse | PlainMessage<LogFocusSessionResponse> | undefined): boolean {
     return proto3.util.equals(LogFocusSessionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithStatsRequest
+ */
+export class GetZenithStatsRequest extends Message<GetZenithStatsRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetZenithStatsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithStatsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithStatsRequest {
+    return new GetZenithStatsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithStatsRequest {
+    return new GetZenithStatsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithStatsRequest {
+    return new GetZenithStatsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithStatsRequest | PlainMessage<GetZenithStatsRequest> | undefined, b: GetZenithStatsRequest | PlainMessage<GetZenithStatsRequest> | undefined): boolean {
+    return proto3.util.equals(GetZenithStatsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithStatsResponse
+ */
+export class GetZenithStatsResponse extends Message<GetZenithStatsResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithStats stats = 1;
+   */
+  stats?: ZenithStats;
+
+  constructor(data?: PartialMessage<GetZenithStatsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithStatsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "stats", kind: "message", T: ZenithStats },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithStatsResponse {
+    return new GetZenithStatsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithStatsResponse {
+    return new GetZenithStatsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithStatsResponse {
+    return new GetZenithStatsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithStatsResponse | PlainMessage<GetZenithStatsResponse> | undefined, b: GetZenithStatsResponse | PlainMessage<GetZenithStatsResponse> | undefined): boolean {
+    return proto3.util.equals(GetZenithStatsResponse, a, b);
   }
 }
 

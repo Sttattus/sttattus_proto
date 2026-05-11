@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { SyncVitalsRequest, SyncVitalsResponse } from "./apex_pb.js";
+import { AdminVerifyLabRequest, AdminVerifyLabResponse, ListLabReportsRequest, ListLabReportsResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncVitalsRequest, SyncVitalsResponse } from "./apex_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -13,12 +13,45 @@ export const ApexService = {
   typeName: "sttattus.apex.v1.ApexService",
   methods: {
     /**
+     * Wearable/Manual Sync
+     *
      * @generated from rpc sttattus.apex.v1.ApexService.SyncVitals
      */
     syncVitals: {
       name: "SyncVitals",
       I: SyncVitalsRequest,
       O: SyncVitalsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * The Lab: Clinical Data
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.SubmitLabReport
+     */
+    submitLabReport: {
+      name: "SubmitLabReport",
+      I: SubmitLabReportRequest,
+      O: SubmitLabReportResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListLabReports
+     */
+    listLabReports: {
+      name: "ListLabReports",
+      I: ListLabReportsRequest,
+      O: ListLabReportsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Admin Methods (Gated by Admin Middleware)
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.AdminVerifyLab
+     */
+    adminVerifyLab: {
+      name: "AdminVerifyLab",
+      I: AdminVerifyLabRequest,
+      O: AdminVerifyLabResponse,
       kind: MethodKind.Unary,
     },
   }

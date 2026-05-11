@@ -9,6 +9,7 @@ package apexv1
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -21,29 +22,149 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type BioMetric struct {
+// BiomarkerCategory defines the biological system being measured.
+type BiomarkerCategory int32
+
+const (
+	BiomarkerCategory_BIOMARKER_CATEGORY_UNSPECIFIED  BiomarkerCategory = 0
+	BiomarkerCategory_BIOMARKER_CATEGORY_LIPIDS       BiomarkerCategory = 1 // ApoB, LDL, HDL
+	BiomarkerCategory_BIOMARKER_CATEGORY_METABOLIC    BiomarkerCategory = 2 // HbA1c, Glucose, Insulin
+	BiomarkerCategory_BIOMARKER_CATEGORY_HORMONES     BiomarkerCategory = 3 // Testosterone, Cortisol
+	BiomarkerCategory_BIOMARKER_CATEGORY_INFLAMMATION BiomarkerCategory = 4 // CRP, Omega-3 Index
+	BiomarkerCategory_BIOMARKER_CATEGORY_VITAMINS     BiomarkerCategory = 5 // Vitamin D, B12
+	BiomarkerCategory_BIOMARKER_CATEGORY_SENSORS      BiomarkerCategory = 6 // HRV, Sleep (from Wearables)
+)
+
+// Enum value maps for BiomarkerCategory.
+var (
+	BiomarkerCategory_name = map[int32]string{
+		0: "BIOMARKER_CATEGORY_UNSPECIFIED",
+		1: "BIOMARKER_CATEGORY_LIPIDS",
+		2: "BIOMARKER_CATEGORY_METABOLIC",
+		3: "BIOMARKER_CATEGORY_HORMONES",
+		4: "BIOMARKER_CATEGORY_INFLAMMATION",
+		5: "BIOMARKER_CATEGORY_VITAMINS",
+		6: "BIOMARKER_CATEGORY_SENSORS",
+	}
+	BiomarkerCategory_value = map[string]int32{
+		"BIOMARKER_CATEGORY_UNSPECIFIED":  0,
+		"BIOMARKER_CATEGORY_LIPIDS":       1,
+		"BIOMARKER_CATEGORY_METABOLIC":    2,
+		"BIOMARKER_CATEGORY_HORMONES":     3,
+		"BIOMARKER_CATEGORY_INFLAMMATION": 4,
+		"BIOMARKER_CATEGORY_VITAMINS":     5,
+		"BIOMARKER_CATEGORY_SENSORS":      6,
+	}
+)
+
+func (x BiomarkerCategory) Enum() *BiomarkerCategory {
+	p := new(BiomarkerCategory)
+	*p = x
+	return p
+}
+
+func (x BiomarkerCategory) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (BiomarkerCategory) Descriptor() protoreflect.EnumDescriptor {
+	return file_sttattus_apex_v1_apex_proto_enumTypes[0].Descriptor()
+}
+
+func (BiomarkerCategory) Type() protoreflect.EnumType {
+	return &file_sttattus_apex_v1_apex_proto_enumTypes[0]
+}
+
+func (x BiomarkerCategory) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use BiomarkerCategory.Descriptor instead.
+func (BiomarkerCategory) EnumDescriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{0}
+}
+
+// VerificationStatus tracks the manual verification of clinical reports.
+type VerificationStatus int32
+
+const (
+	VerificationStatus_VERIFICATION_STATUS_UNSPECIFIED VerificationStatus = 0
+	VerificationStatus_VERIFICATION_STATUS_PENDING     VerificationStatus = 1
+	VerificationStatus_VERIFICATION_STATUS_APPROVED    VerificationStatus = 2
+	VerificationStatus_VERIFICATION_STATUS_REJECTED    VerificationStatus = 3
+)
+
+// Enum value maps for VerificationStatus.
+var (
+	VerificationStatus_name = map[int32]string{
+		0: "VERIFICATION_STATUS_UNSPECIFIED",
+		1: "VERIFICATION_STATUS_PENDING",
+		2: "VERIFICATION_STATUS_APPROVED",
+		3: "VERIFICATION_STATUS_REJECTED",
+	}
+	VerificationStatus_value = map[string]int32{
+		"VERIFICATION_STATUS_UNSPECIFIED": 0,
+		"VERIFICATION_STATUS_PENDING":     1,
+		"VERIFICATION_STATUS_APPROVED":    2,
+		"VERIFICATION_STATUS_REJECTED":    3,
+	}
+)
+
+func (x VerificationStatus) Enum() *VerificationStatus {
+	p := new(VerificationStatus)
+	*p = x
+	return p
+}
+
+func (x VerificationStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (VerificationStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_sttattus_apex_v1_apex_proto_enumTypes[1].Descriptor()
+}
+
+func (VerificationStatus) Type() protoreflect.EnumType {
+	return &file_sttattus_apex_v1_apex_proto_enumTypes[1]
+}
+
+func (x VerificationStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use VerificationStatus.Descriptor instead.
+func (VerificationStatus) EnumDescriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{1}
+}
+
+// Biomarker represents a single biological measurement.
+type Biomarker struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          string                 `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"` // e.g., 'HRV', 'RE_SLEEP', 'BLOOD_GLUCOSE'
-	Value         float64                `protobuf:"fixed64,2,opt,name=value,proto3" json:"value,omitempty"`
-	RecordedAt    int64                  `protobuf:"varint,3,opt,name=recorded_at,json=recordedAt,proto3" json:"recorded_at,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Code          string                 `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty"` // e.g., 'APO_B', 'TESTOSTERONE_FREE'
+	Category      BiomarkerCategory      `protobuf:"varint,3,opt,name=category,proto3,enum=sttattus.apex.v1.BiomarkerCategory" json:"category,omitempty"`
+	Value         float64                `protobuf:"fixed64,4,opt,name=value,proto3" json:"value,omitempty"`
+	Unit          string                 `protobuf:"bytes,5,opt,name=unit,proto3" json:"unit,omitempty"`          // e.g., 'mg/dL', 'ng/dL'
+	Verified      bool                   `protobuf:"varint,6,opt,name=verified,proto3" json:"verified,omitempty"` // True if extracted from an approved LabReport
+	RecordedAt    *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=recorded_at,json=recordedAt,proto3" json:"recorded_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *BioMetric) Reset() {
-	*x = BioMetric{}
+func (x *Biomarker) Reset() {
+	*x = Biomarker{}
 	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *BioMetric) String() string {
+func (x *Biomarker) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*BioMetric) ProtoMessage() {}
+func (*Biomarker) ProtoMessage() {}
 
-func (x *BioMetric) ProtoReflect() protoreflect.Message {
+func (x *Biomarker) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -55,42 +176,172 @@ func (x *BioMetric) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use BioMetric.ProtoReflect.Descriptor instead.
-func (*BioMetric) Descriptor() ([]byte, []int) {
+// Deprecated: Use Biomarker.ProtoReflect.Descriptor instead.
+func (*Biomarker) Descriptor() ([]byte, []int) {
 	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *BioMetric) GetCode() string {
+func (x *Biomarker) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Biomarker) GetCode() string {
 	if x != nil {
 		return x.Code
 	}
 	return ""
 }
 
-func (x *BioMetric) GetValue() float64 {
+func (x *Biomarker) GetCategory() BiomarkerCategory {
+	if x != nil {
+		return x.Category
+	}
+	return BiomarkerCategory_BIOMARKER_CATEGORY_UNSPECIFIED
+}
+
+func (x *Biomarker) GetValue() float64 {
 	if x != nil {
 		return x.Value
 	}
 	return 0
 }
 
-func (x *BioMetric) GetRecordedAt() int64 {
+func (x *Biomarker) GetUnit() string {
+	if x != nil {
+		return x.Unit
+	}
+	return ""
+}
+
+func (x *Biomarker) GetVerified() bool {
+	if x != nil {
+		return x.Verified
+	}
+	return false
+}
+
+func (x *Biomarker) GetRecordedAt() *timestamppb.Timestamp {
 	if x != nil {
 		return x.RecordedAt
 	}
-	return 0
+	return nil
 }
 
+// LabReport represents a clinical document (PDF/Image) submitted by the user.
+type LabReport struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	FileUrl          string                 `protobuf:"bytes,2,opt,name=file_url,json=fileUrl,proto3" json:"file_url,omitempty"` // From shared_uploader
+	ClinicName       string                 `protobuf:"bytes,3,opt,name=clinic_name,json=clinicName,proto3" json:"clinic_name,omitempty"`
+	Status           VerificationStatus     `protobuf:"varint,4,opt,name=status,proto3,enum=sttattus.apex.v1.VerificationStatus" json:"status,omitempty"`
+	AdminNote        string                 `protobuf:"bytes,5,opt,name=admin_note,json=adminNote,proto3" json:"admin_note,omitempty"`
+	ReportDate       *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=report_date,json=reportDate,proto3" json:"report_date,omitempty"`
+	SubmittedAt      *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=submitted_at,json=submittedAt,proto3" json:"submitted_at,omitempty"`
+	ExtractedMarkers []*Biomarker           `protobuf:"bytes,8,rep,name=extracted_markers,json=extractedMarkers,proto3" json:"extracted_markers,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *LabReport) Reset() {
+	*x = LabReport{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LabReport) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LabReport) ProtoMessage() {}
+
+func (x *LabReport) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LabReport.ProtoReflect.Descriptor instead.
+func (*LabReport) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *LabReport) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LabReport) GetFileUrl() string {
+	if x != nil {
+		return x.FileUrl
+	}
+	return ""
+}
+
+func (x *LabReport) GetClinicName() string {
+	if x != nil {
+		return x.ClinicName
+	}
+	return ""
+}
+
+func (x *LabReport) GetStatus() VerificationStatus {
+	if x != nil {
+		return x.Status
+	}
+	return VerificationStatus_VERIFICATION_STATUS_UNSPECIFIED
+}
+
+func (x *LabReport) GetAdminNote() string {
+	if x != nil {
+		return x.AdminNote
+	}
+	return ""
+}
+
+func (x *LabReport) GetReportDate() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ReportDate
+	}
+	return nil
+}
+
+func (x *LabReport) GetSubmittedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.SubmittedAt
+	}
+	return nil
+}
+
+func (x *LabReport) GetExtractedMarkers() []*Biomarker {
+	if x != nil {
+		return x.ExtractedMarkers
+	}
+	return nil
+}
+
+// REQ/RES
 type SyncVitalsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metrics       []*BioMetric           `protobuf:"bytes,1,rep,name=metrics,proto3" json:"metrics,omitempty"`
+	Metrics       []*Biomarker           `protobuf:"bytes,1,rep,name=metrics,proto3" json:"metrics,omitempty"` // Used for wearable/manual data
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *SyncVitalsRequest) Reset() {
 	*x = SyncVitalsRequest{}
-	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[1]
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -102,7 +353,7 @@ func (x *SyncVitalsRequest) String() string {
 func (*SyncVitalsRequest) ProtoMessage() {}
 
 func (x *SyncVitalsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[1]
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -115,10 +366,10 @@ func (x *SyncVitalsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SyncVitalsRequest.ProtoReflect.Descriptor instead.
 func (*SyncVitalsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{1}
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *SyncVitalsRequest) GetMetrics() []*BioMetric {
+func (x *SyncVitalsRequest) GetMetrics() []*Biomarker {
 	if x != nil {
 		return x.Metrics
 	}
@@ -135,7 +386,7 @@ type SyncVitalsResponse struct {
 
 func (x *SyncVitalsResponse) Reset() {
 	*x = SyncVitalsResponse{}
-	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[2]
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -147,7 +398,7 @@ func (x *SyncVitalsResponse) String() string {
 func (*SyncVitalsResponse) ProtoMessage() {}
 
 func (x *SyncVitalsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[2]
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -160,7 +411,7 @@ func (x *SyncVitalsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SyncVitalsResponse.ProtoReflect.Descriptor instead.
 func (*SyncVitalsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{2}
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *SyncVitalsResponse) GetBiologicalAge() float64 {
@@ -177,24 +428,371 @@ func (x *SyncVitalsResponse) GetCurrentApexScore() float64 {
 	return 0
 }
 
+type SubmitLabReportRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FileUrl       string                 `protobuf:"bytes,1,opt,name=file_url,json=fileUrl,proto3" json:"file_url,omitempty"`
+	ClinicName    string                 `protobuf:"bytes,2,opt,name=clinic_name,json=clinicName,proto3" json:"clinic_name,omitempty"`
+	ReportDate    *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=report_date,json=reportDate,proto3" json:"report_date,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitLabReportRequest) Reset() {
+	*x = SubmitLabReportRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitLabReportRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitLabReportRequest) ProtoMessage() {}
+
+func (x *SubmitLabReportRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitLabReportRequest.ProtoReflect.Descriptor instead.
+func (*SubmitLabReportRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *SubmitLabReportRequest) GetFileUrl() string {
+	if x != nil {
+		return x.FileUrl
+	}
+	return ""
+}
+
+func (x *SubmitLabReportRequest) GetClinicName() string {
+	if x != nil {
+		return x.ClinicName
+	}
+	return ""
+}
+
+func (x *SubmitLabReportRequest) GetReportDate() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ReportDate
+	}
+	return nil
+}
+
+type SubmitLabReportResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Report        *LabReport             `protobuf:"bytes,1,opt,name=report,proto3" json:"report,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitLabReportResponse) Reset() {
+	*x = SubmitLabReportResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitLabReportResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitLabReportResponse) ProtoMessage() {}
+
+func (x *SubmitLabReportResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitLabReportResponse.ProtoReflect.Descriptor instead.
+func (*SubmitLabReportResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *SubmitLabReportResponse) GetReport() *LabReport {
+	if x != nil {
+		return x.Report
+	}
+	return nil
+}
+
+type ListLabReportsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLabReportsRequest) Reset() {
+	*x = ListLabReportsRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLabReportsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLabReportsRequest) ProtoMessage() {}
+
+func (x *ListLabReportsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLabReportsRequest.ProtoReflect.Descriptor instead.
+func (*ListLabReportsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{6}
+}
+
+type ListLabReportsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Reports       []*LabReport           `protobuf:"bytes,1,rep,name=reports,proto3" json:"reports,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLabReportsResponse) Reset() {
+	*x = ListLabReportsResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLabReportsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLabReportsResponse) ProtoMessage() {}
+
+func (x *ListLabReportsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLabReportsResponse.ProtoReflect.Descriptor instead.
+func (*ListLabReportsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *ListLabReportsResponse) GetReports() []*LabReport {
+	if x != nil {
+		return x.Reports
+	}
+	return nil
+}
+
+type AdminVerifyLabRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ReportId        string                 `protobuf:"bytes,1,opt,name=report_id,json=reportId,proto3" json:"report_id,omitempty"`
+	Status          VerificationStatus     `protobuf:"varint,2,opt,name=status,proto3,enum=sttattus.apex.v1.VerificationStatus" json:"status,omitempty"`
+	AdminNote       string                 `protobuf:"bytes,3,opt,name=admin_note,json=adminNote,proto3" json:"admin_note,omitempty"`
+	VerifiedMarkers []*Biomarker           `protobuf:"bytes,4,rep,name=verified_markers,json=verifiedMarkers,proto3" json:"verified_markers,omitempty"` // Admin confirms/sets actual values
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *AdminVerifyLabRequest) Reset() {
+	*x = AdminVerifyLabRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminVerifyLabRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminVerifyLabRequest) ProtoMessage() {}
+
+func (x *AdminVerifyLabRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminVerifyLabRequest.ProtoReflect.Descriptor instead.
+func (*AdminVerifyLabRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *AdminVerifyLabRequest) GetReportId() string {
+	if x != nil {
+		return x.ReportId
+	}
+	return ""
+}
+
+func (x *AdminVerifyLabRequest) GetStatus() VerificationStatus {
+	if x != nil {
+		return x.Status
+	}
+	return VerificationStatus_VERIFICATION_STATUS_UNSPECIFIED
+}
+
+func (x *AdminVerifyLabRequest) GetAdminNote() string {
+	if x != nil {
+		return x.AdminNote
+	}
+	return ""
+}
+
+func (x *AdminVerifyLabRequest) GetVerifiedMarkers() []*Biomarker {
+	if x != nil {
+		return x.VerifiedMarkers
+	}
+	return nil
+}
+
+type AdminVerifyLabResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Report        *LabReport             `protobuf:"bytes,1,opt,name=report,proto3" json:"report,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminVerifyLabResponse) Reset() {
+	*x = AdminVerifyLabResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminVerifyLabResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminVerifyLabResponse) ProtoMessage() {}
+
+func (x *AdminVerifyLabResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminVerifyLabResponse.ProtoReflect.Descriptor instead.
+func (*AdminVerifyLabResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *AdminVerifyLabResponse) GetReport() *LabReport {
+	if x != nil {
+		return x.Report
+	}
+	return nil
+}
+
 var File_sttattus_apex_v1_apex_proto protoreflect.FileDescriptor
 
 const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"\n" +
-	"\x1bsttattus/apex/v1/apex.proto\x12\x10sttattus.apex.v1\"V\n" +
-	"\tBioMetric\x12\x12\n" +
-	"\x04code\x18\x01 \x01(\tR\x04code\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\x01R\x05value\x12\x1f\n" +
-	"\vrecorded_at\x18\x03 \x01(\x03R\n" +
-	"recordedAt\"J\n" +
+	"\x1bsttattus/apex/v1/apex.proto\x12\x10sttattus.apex.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf3\x01\n" +
+	"\tBiomarker\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04code\x18\x02 \x01(\tR\x04code\x12?\n" +
+	"\bcategory\x18\x03 \x01(\x0e2#.sttattus.apex.v1.BiomarkerCategoryR\bcategory\x12\x14\n" +
+	"\x05value\x18\x04 \x01(\x01R\x05value\x12\x12\n" +
+	"\x04unit\x18\x05 \x01(\tR\x04unit\x12\x1a\n" +
+	"\bverified\x18\x06 \x01(\bR\bverified\x12;\n" +
+	"\vrecorded_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"recordedAt\"\xfa\x02\n" +
+	"\tLabReport\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
+	"\bfile_url\x18\x02 \x01(\tR\afileUrl\x12\x1f\n" +
+	"\vclinic_name\x18\x03 \x01(\tR\n" +
+	"clinicName\x12<\n" +
+	"\x06status\x18\x04 \x01(\x0e2$.sttattus.apex.v1.VerificationStatusR\x06status\x12\x1d\n" +
+	"\n" +
+	"admin_note\x18\x05 \x01(\tR\tadminNote\x12;\n" +
+	"\vreport_date\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"reportDate\x12=\n" +
+	"\fsubmitted_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\vsubmittedAt\x12H\n" +
+	"\x11extracted_markers\x18\b \x03(\v2\x1b.sttattus.apex.v1.BiomarkerR\x10extractedMarkers\"J\n" +
 	"\x11SyncVitalsRequest\x125\n" +
-	"\ametrics\x18\x01 \x03(\v2\x1b.sttattus.apex.v1.BioMetricR\ametrics\"i\n" +
+	"\ametrics\x18\x01 \x03(\v2\x1b.sttattus.apex.v1.BiomarkerR\ametrics\"i\n" +
 	"\x12SyncVitalsResponse\x12%\n" +
 	"\x0ebiological_age\x18\x01 \x01(\x01R\rbiologicalAge\x12,\n" +
-	"\x12current_apex_score\x18\x02 \x01(\x01R\x10currentApexScore2f\n" +
+	"\x12current_apex_score\x18\x02 \x01(\x01R\x10currentApexScore\"\x91\x01\n" +
+	"\x16SubmitLabReportRequest\x12\x19\n" +
+	"\bfile_url\x18\x01 \x01(\tR\afileUrl\x12\x1f\n" +
+	"\vclinic_name\x18\x02 \x01(\tR\n" +
+	"clinicName\x12;\n" +
+	"\vreport_date\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"reportDate\"N\n" +
+	"\x17SubmitLabReportResponse\x123\n" +
+	"\x06report\x18\x01 \x01(\v2\x1b.sttattus.apex.v1.LabReportR\x06report\"\x17\n" +
+	"\x15ListLabReportsRequest\"O\n" +
+	"\x16ListLabReportsResponse\x125\n" +
+	"\areports\x18\x01 \x03(\v2\x1b.sttattus.apex.v1.LabReportR\areports\"\xd9\x01\n" +
+	"\x15AdminVerifyLabRequest\x12\x1b\n" +
+	"\treport_id\x18\x01 \x01(\tR\breportId\x12<\n" +
+	"\x06status\x18\x02 \x01(\x0e2$.sttattus.apex.v1.VerificationStatusR\x06status\x12\x1d\n" +
+	"\n" +
+	"admin_note\x18\x03 \x01(\tR\tadminNote\x12F\n" +
+	"\x10verified_markers\x18\x04 \x03(\v2\x1b.sttattus.apex.v1.BiomarkerR\x0fverifiedMarkers\"M\n" +
+	"\x16AdminVerifyLabResponse\x123\n" +
+	"\x06report\x18\x01 \x01(\v2\x1b.sttattus.apex.v1.LabReportR\x06report*\xff\x01\n" +
+	"\x11BiomarkerCategory\x12\"\n" +
+	"\x1eBIOMARKER_CATEGORY_UNSPECIFIED\x10\x00\x12\x1d\n" +
+	"\x19BIOMARKER_CATEGORY_LIPIDS\x10\x01\x12 \n" +
+	"\x1cBIOMARKER_CATEGORY_METABOLIC\x10\x02\x12\x1f\n" +
+	"\x1bBIOMARKER_CATEGORY_HORMONES\x10\x03\x12#\n" +
+	"\x1fBIOMARKER_CATEGORY_INFLAMMATION\x10\x04\x12\x1f\n" +
+	"\x1bBIOMARKER_CATEGORY_VITAMINS\x10\x05\x12\x1e\n" +
+	"\x1aBIOMARKER_CATEGORY_SENSORS\x10\x06*\x9e\x01\n" +
+	"\x12VerificationStatus\x12#\n" +
+	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
+	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
+	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\x98\x03\n" +
 	"\vApexService\x12W\n" +
 	"\n" +
-	"SyncVitals\x12#.sttattus.apex.v1.SyncVitalsRequest\x1a$.sttattus.apex.v1.SyncVitalsResponseB:Z8github.com/sttattus/proto/gen/go/sttattus/apex/v1;apexv1b\x06proto3"
+	"SyncVitals\x12#.sttattus.apex.v1.SyncVitalsRequest\x1a$.sttattus.apex.v1.SyncVitalsResponse\x12f\n" +
+	"\x0fSubmitLabReport\x12(.sttattus.apex.v1.SubmitLabReportRequest\x1a).sttattus.apex.v1.SubmitLabReportResponse\x12c\n" +
+	"\x0eListLabReports\x12'.sttattus.apex.v1.ListLabReportsRequest\x1a(.sttattus.apex.v1.ListLabReportsResponse\x12c\n" +
+	"\x0eAdminVerifyLab\x12'.sttattus.apex.v1.AdminVerifyLabRequest\x1a(.sttattus.apex.v1.AdminVerifyLabResponseB:Z8github.com/sttattus/proto/gen/go/sttattus/apex/v1;apexv1b\x06proto3"
 
 var (
 	file_sttattus_apex_v1_apex_proto_rawDescOnce sync.Once
@@ -208,21 +806,50 @@ func file_sttattus_apex_v1_apex_proto_rawDescGZIP() []byte {
 	return file_sttattus_apex_v1_apex_proto_rawDescData
 }
 
-var file_sttattus_apex_v1_apex_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_sttattus_apex_v1_apex_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_sttattus_apex_v1_apex_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_sttattus_apex_v1_apex_proto_goTypes = []any{
-	(*BioMetric)(nil),          // 0: sttattus.apex.v1.BioMetric
-	(*SyncVitalsRequest)(nil),  // 1: sttattus.apex.v1.SyncVitalsRequest
-	(*SyncVitalsResponse)(nil), // 2: sttattus.apex.v1.SyncVitalsResponse
+	(BiomarkerCategory)(0),          // 0: sttattus.apex.v1.BiomarkerCategory
+	(VerificationStatus)(0),         // 1: sttattus.apex.v1.VerificationStatus
+	(*Biomarker)(nil),               // 2: sttattus.apex.v1.Biomarker
+	(*LabReport)(nil),               // 3: sttattus.apex.v1.LabReport
+	(*SyncVitalsRequest)(nil),       // 4: sttattus.apex.v1.SyncVitalsRequest
+	(*SyncVitalsResponse)(nil),      // 5: sttattus.apex.v1.SyncVitalsResponse
+	(*SubmitLabReportRequest)(nil),  // 6: sttattus.apex.v1.SubmitLabReportRequest
+	(*SubmitLabReportResponse)(nil), // 7: sttattus.apex.v1.SubmitLabReportResponse
+	(*ListLabReportsRequest)(nil),   // 8: sttattus.apex.v1.ListLabReportsRequest
+	(*ListLabReportsResponse)(nil),  // 9: sttattus.apex.v1.ListLabReportsResponse
+	(*AdminVerifyLabRequest)(nil),   // 10: sttattus.apex.v1.AdminVerifyLabRequest
+	(*AdminVerifyLabResponse)(nil),  // 11: sttattus.apex.v1.AdminVerifyLabResponse
+	(*timestamppb.Timestamp)(nil),   // 12: google.protobuf.Timestamp
 }
 var file_sttattus_apex_v1_apex_proto_depIdxs = []int32{
-	0, // 0: sttattus.apex.v1.SyncVitalsRequest.metrics:type_name -> sttattus.apex.v1.BioMetric
-	1, // 1: sttattus.apex.v1.ApexService.SyncVitals:input_type -> sttattus.apex.v1.SyncVitalsRequest
-	2, // 2: sttattus.apex.v1.ApexService.SyncVitals:output_type -> sttattus.apex.v1.SyncVitalsResponse
-	2, // [2:3] is the sub-list for method output_type
-	1, // [1:2] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0,  // 0: sttattus.apex.v1.Biomarker.category:type_name -> sttattus.apex.v1.BiomarkerCategory
+	12, // 1: sttattus.apex.v1.Biomarker.recorded_at:type_name -> google.protobuf.Timestamp
+	1,  // 2: sttattus.apex.v1.LabReport.status:type_name -> sttattus.apex.v1.VerificationStatus
+	12, // 3: sttattus.apex.v1.LabReport.report_date:type_name -> google.protobuf.Timestamp
+	12, // 4: sttattus.apex.v1.LabReport.submitted_at:type_name -> google.protobuf.Timestamp
+	2,  // 5: sttattus.apex.v1.LabReport.extracted_markers:type_name -> sttattus.apex.v1.Biomarker
+	2,  // 6: sttattus.apex.v1.SyncVitalsRequest.metrics:type_name -> sttattus.apex.v1.Biomarker
+	12, // 7: sttattus.apex.v1.SubmitLabReportRequest.report_date:type_name -> google.protobuf.Timestamp
+	3,  // 8: sttattus.apex.v1.SubmitLabReportResponse.report:type_name -> sttattus.apex.v1.LabReport
+	3,  // 9: sttattus.apex.v1.ListLabReportsResponse.reports:type_name -> sttattus.apex.v1.LabReport
+	1,  // 10: sttattus.apex.v1.AdminVerifyLabRequest.status:type_name -> sttattus.apex.v1.VerificationStatus
+	2,  // 11: sttattus.apex.v1.AdminVerifyLabRequest.verified_markers:type_name -> sttattus.apex.v1.Biomarker
+	3,  // 12: sttattus.apex.v1.AdminVerifyLabResponse.report:type_name -> sttattus.apex.v1.LabReport
+	4,  // 13: sttattus.apex.v1.ApexService.SyncVitals:input_type -> sttattus.apex.v1.SyncVitalsRequest
+	6,  // 14: sttattus.apex.v1.ApexService.SubmitLabReport:input_type -> sttattus.apex.v1.SubmitLabReportRequest
+	8,  // 15: sttattus.apex.v1.ApexService.ListLabReports:input_type -> sttattus.apex.v1.ListLabReportsRequest
+	10, // 16: sttattus.apex.v1.ApexService.AdminVerifyLab:input_type -> sttattus.apex.v1.AdminVerifyLabRequest
+	5,  // 17: sttattus.apex.v1.ApexService.SyncVitals:output_type -> sttattus.apex.v1.SyncVitalsResponse
+	7,  // 18: sttattus.apex.v1.ApexService.SubmitLabReport:output_type -> sttattus.apex.v1.SubmitLabReportResponse
+	9,  // 19: sttattus.apex.v1.ApexService.ListLabReports:output_type -> sttattus.apex.v1.ListLabReportsResponse
+	11, // 20: sttattus.apex.v1.ApexService.AdminVerifyLab:output_type -> sttattus.apex.v1.AdminVerifyLabResponse
+	17, // [17:21] is the sub-list for method output_type
+	13, // [13:17] is the sub-list for method input_type
+	13, // [13:13] is the sub-list for extension type_name
+	13, // [13:13] is the sub-list for extension extendee
+	0,  // [0:13] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_apex_v1_apex_proto_init() }
@@ -235,13 +862,14 @@ func file_sttattus_apex_v1_apex_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_apex_v1_apex_proto_rawDesc), len(file_sttattus_apex_v1_apex_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   3,
+			NumEnums:      2,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
 		GoTypes:           file_sttattus_apex_v1_apex_proto_goTypes,
 		DependencyIndexes: file_sttattus_apex_v1_apex_proto_depIdxs,
+		EnumInfos:         file_sttattus_apex_v1_apex_proto_enumTypes,
 		MessageInfos:      file_sttattus_apex_v1_apex_proto_msgTypes,
 	}.Build()
 	File_sttattus_apex_v1_apex_proto = out.File

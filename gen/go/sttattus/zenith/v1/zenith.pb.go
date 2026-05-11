@@ -9,6 +9,7 @@ package zenithv1
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -23,8 +24,13 @@ const (
 
 type Session struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	DurationMinutes int32                  `protobuf:"varint,1,opt,name=duration_minutes,json=durationMinutes,proto3" json:"duration_minutes,omitempty"`
-	FocusScore      float64                `protobuf:"fixed64,2,opt,name=focus_score,json=focusScore,proto3" json:"focus_score,omitempty"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	DurationMinutes int32                  `protobuf:"varint,2,opt,name=duration_minutes,json=durationMinutes,proto3" json:"duration_minutes,omitempty"`
+	FocusScore      float64                `protobuf:"fixed64,3,opt,name=focus_score,json=focusScore,proto3" json:"focus_score,omitempty"` // 0.0 - 1.0 (Calculated/Verified)
+	IsVerified      bool                   `protobuf:"varint,4,opt,name=is_verified,json=isVerified,proto3" json:"is_verified,omitempty"`  // True if bio-signals were used
+	AvgHeartRate    float64                `protobuf:"fixed64,5,opt,name=avg_heart_rate,json=avgHeartRate,proto3" json:"avg_heart_rate,omitempty"`
+	HrvDelta        float64                `protobuf:"fixed64,6,opt,name=hrv_delta,json=hrvDelta,proto3" json:"hrv_delta,omitempty"` // HRV change during session
+	StartedAt       *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -59,6 +65,13 @@ func (*Session) Descriptor() ([]byte, []int) {
 	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{0}
 }
 
+func (x *Session) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
 func (x *Session) GetDurationMinutes() int32 {
 	if x != nil {
 		return x.DurationMinutes
@@ -73,6 +86,110 @@ func (x *Session) GetFocusScore() float64 {
 	return 0
 }
 
+func (x *Session) GetIsVerified() bool {
+	if x != nil {
+		return x.IsVerified
+	}
+	return false
+}
+
+func (x *Session) GetAvgHeartRate() float64 {
+	if x != nil {
+		return x.AvgHeartRate
+	}
+	return 0
+}
+
+func (x *Session) GetHrvDelta() float64 {
+	if x != nil {
+		return x.HrvDelta
+	}
+	return 0
+}
+
+func (x *Session) GetStartedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.StartedAt
+	}
+	return nil
+}
+
+type ZenithStats struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	UserId                string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	FortitudeRank         float64                `protobuf:"fixed64,2,opt,name=fortitude_rank,json=fortitudeRank,proto3" json:"fortitude_rank,omitempty"` // 1-100 normalized
+	RankLabel             string                 `protobuf:"bytes,3,opt,name=rank_label,json=rankLabel,proto3" json:"rank_label,omitempty"`               // e.g., 'Acolyte', 'Focus Master', 'Sovereign Focus'
+	TotalFocusMinutes     int32                  `protobuf:"varint,4,opt,name=total_focus_minutes,json=totalFocusMinutes,proto3" json:"total_focus_minutes,omitempty"`
+	VerifiedSessionsCount int32                  `protobuf:"varint,5,opt,name=verified_sessions_count,json=verifiedSessionsCount,proto3" json:"verified_sessions_count,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *ZenithStats) Reset() {
+	*x = ZenithStats{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZenithStats) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZenithStats) ProtoMessage() {}
+
+func (x *ZenithStats) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZenithStats.ProtoReflect.Descriptor instead.
+func (*ZenithStats) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ZenithStats) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ZenithStats) GetFortitudeRank() float64 {
+	if x != nil {
+		return x.FortitudeRank
+	}
+	return 0
+}
+
+func (x *ZenithStats) GetRankLabel() string {
+	if x != nil {
+		return x.RankLabel
+	}
+	return ""
+}
+
+func (x *ZenithStats) GetTotalFocusMinutes() int32 {
+	if x != nil {
+		return x.TotalFocusMinutes
+	}
+	return 0
+}
+
+func (x *ZenithStats) GetVerifiedSessionsCount() int32 {
+	if x != nil {
+		return x.VerifiedSessionsCount
+	}
+	return 0
+}
+
 type LogFocusSessionRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Session       *Session               `protobuf:"bytes,1,opt,name=session,proto3" json:"session,omitempty"`
@@ -82,7 +199,7 @@ type LogFocusSessionRequest struct {
 
 func (x *LogFocusSessionRequest) Reset() {
 	*x = LogFocusSessionRequest{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[1]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -94,7 +211,7 @@ func (x *LogFocusSessionRequest) String() string {
 func (*LogFocusSessionRequest) ProtoMessage() {}
 
 func (x *LogFocusSessionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[1]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -107,7 +224,7 @@ func (x *LogFocusSessionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogFocusSessionRequest.ProtoReflect.Descriptor instead.
 func (*LogFocusSessionRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{1}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *LogFocusSessionRequest) GetSession() *Session {
@@ -120,13 +237,14 @@ func (x *LogFocusSessionRequest) GetSession() *Session {
 type LogFocusSessionResponse struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
 	CurrentZenithScore float64                `protobuf:"fixed64,1,opt,name=current_zenith_score,json=currentZenithScore,proto3" json:"current_zenith_score,omitempty"`
+	Stats              *ZenithStats           `protobuf:"bytes,2,opt,name=stats,proto3" json:"stats,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
 
 func (x *LogFocusSessionResponse) Reset() {
 	*x = LogFocusSessionResponse{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[2]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -138,7 +256,7 @@ func (x *LogFocusSessionResponse) String() string {
 func (*LogFocusSessionResponse) ProtoMessage() {}
 
 func (x *LogFocusSessionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[2]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -151,7 +269,7 @@ func (x *LogFocusSessionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogFocusSessionResponse.ProtoReflect.Descriptor instead.
 func (*LogFocusSessionResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{2}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *LogFocusSessionResponse) GetCurrentZenithScore() float64 {
@@ -161,21 +279,136 @@ func (x *LogFocusSessionResponse) GetCurrentZenithScore() float64 {
 	return 0
 }
 
+func (x *LogFocusSessionResponse) GetStats() *ZenithStats {
+	if x != nil {
+		return x.Stats
+	}
+	return nil
+}
+
+type GetZenithStatsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetZenithStatsRequest) Reset() {
+	*x = GetZenithStatsRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithStatsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithStatsRequest) ProtoMessage() {}
+
+func (x *GetZenithStatsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithStatsRequest.ProtoReflect.Descriptor instead.
+func (*GetZenithStatsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *GetZenithStatsRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetZenithStatsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Stats         *ZenithStats           `protobuf:"bytes,1,opt,name=stats,proto3" json:"stats,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetZenithStatsResponse) Reset() {
+	*x = GetZenithStatsResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithStatsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithStatsResponse) ProtoMessage() {}
+
+func (x *GetZenithStatsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithStatsResponse.ProtoReflect.Descriptor instead.
+func (*GetZenithStatsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *GetZenithStatsResponse) GetStats() *ZenithStats {
+	if x != nil {
+		return x.Stats
+	}
+	return nil
+}
+
 var File_sttattus_zenith_v1_zenith_proto protoreflect.FileDescriptor
 
 const file_sttattus_zenith_v1_zenith_proto_rawDesc = "" +
 	"\n" +
-	"\x1fsttattus/zenith/v1/zenith.proto\x12\x12sttattus.zenith.v1\"U\n" +
-	"\aSession\x12)\n" +
-	"\x10duration_minutes\x18\x01 \x01(\x05R\x0fdurationMinutes\x12\x1f\n" +
-	"\vfocus_score\x18\x02 \x01(\x01R\n" +
-	"focusScore\"O\n" +
+	"\x1fsttattus/zenith/v1/zenith.proto\x12\x12sttattus.zenith.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x84\x02\n" +
+	"\aSession\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12)\n" +
+	"\x10duration_minutes\x18\x02 \x01(\x05R\x0fdurationMinutes\x12\x1f\n" +
+	"\vfocus_score\x18\x03 \x01(\x01R\n" +
+	"focusScore\x12\x1f\n" +
+	"\vis_verified\x18\x04 \x01(\bR\n" +
+	"isVerified\x12$\n" +
+	"\x0eavg_heart_rate\x18\x05 \x01(\x01R\favgHeartRate\x12\x1b\n" +
+	"\thrv_delta\x18\x06 \x01(\x01R\bhrvDelta\x129\n" +
+	"\n" +
+	"started_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tstartedAt\"\xd4\x01\n" +
+	"\vZenithStats\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12%\n" +
+	"\x0efortitude_rank\x18\x02 \x01(\x01R\rfortitudeRank\x12\x1d\n" +
+	"\n" +
+	"rank_label\x18\x03 \x01(\tR\trankLabel\x12.\n" +
+	"\x13total_focus_minutes\x18\x04 \x01(\x05R\x11totalFocusMinutes\x126\n" +
+	"\x17verified_sessions_count\x18\x05 \x01(\x05R\x15verifiedSessionsCount\"O\n" +
 	"\x16LogFocusSessionRequest\x125\n" +
-	"\asession\x18\x01 \x01(\v2\x1b.sttattus.zenith.v1.SessionR\asession\"K\n" +
+	"\asession\x18\x01 \x01(\v2\x1b.sttattus.zenith.v1.SessionR\asession\"\x82\x01\n" +
 	"\x17LogFocusSessionResponse\x120\n" +
-	"\x14current_zenith_score\x18\x01 \x01(\x01R\x12currentZenithScore2{\n" +
+	"\x14current_zenith_score\x18\x01 \x01(\x01R\x12currentZenithScore\x125\n" +
+	"\x05stats\x18\x02 \x01(\v2\x1f.sttattus.zenith.v1.ZenithStatsR\x05stats\"0\n" +
+	"\x15GetZenithStatsRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"O\n" +
+	"\x16GetZenithStatsResponse\x125\n" +
+	"\x05stats\x18\x01 \x01(\v2\x1f.sttattus.zenith.v1.ZenithStatsR\x05stats2\xe4\x01\n" +
 	"\rZenithService\x12j\n" +
-	"\x0fLogFocusSession\x12*.sttattus.zenith.v1.LogFocusSessionRequest\x1a+.sttattus.zenith.v1.LogFocusSessionResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/zenith/v1;zenithv1b\x06proto3"
+	"\x0fLogFocusSession\x12*.sttattus.zenith.v1.LogFocusSessionRequest\x1a+.sttattus.zenith.v1.LogFocusSessionResponse\x12g\n" +
+	"\x0eGetZenithStats\x12).sttattus.zenith.v1.GetZenithStatsRequest\x1a*.sttattus.zenith.v1.GetZenithStatsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/zenith/v1;zenithv1b\x06proto3"
 
 var (
 	file_sttattus_zenith_v1_zenith_proto_rawDescOnce sync.Once
@@ -189,21 +422,30 @@ func file_sttattus_zenith_v1_zenith_proto_rawDescGZIP() []byte {
 	return file_sttattus_zenith_v1_zenith_proto_rawDescData
 }
 
-var file_sttattus_zenith_v1_zenith_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_sttattus_zenith_v1_zenith_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_sttattus_zenith_v1_zenith_proto_goTypes = []any{
 	(*Session)(nil),                 // 0: sttattus.zenith.v1.Session
-	(*LogFocusSessionRequest)(nil),  // 1: sttattus.zenith.v1.LogFocusSessionRequest
-	(*LogFocusSessionResponse)(nil), // 2: sttattus.zenith.v1.LogFocusSessionResponse
+	(*ZenithStats)(nil),             // 1: sttattus.zenith.v1.ZenithStats
+	(*LogFocusSessionRequest)(nil),  // 2: sttattus.zenith.v1.LogFocusSessionRequest
+	(*LogFocusSessionResponse)(nil), // 3: sttattus.zenith.v1.LogFocusSessionResponse
+	(*GetZenithStatsRequest)(nil),   // 4: sttattus.zenith.v1.GetZenithStatsRequest
+	(*GetZenithStatsResponse)(nil),  // 5: sttattus.zenith.v1.GetZenithStatsResponse
+	(*timestamppb.Timestamp)(nil),   // 6: google.protobuf.Timestamp
 }
 var file_sttattus_zenith_v1_zenith_proto_depIdxs = []int32{
-	0, // 0: sttattus.zenith.v1.LogFocusSessionRequest.session:type_name -> sttattus.zenith.v1.Session
-	1, // 1: sttattus.zenith.v1.ZenithService.LogFocusSession:input_type -> sttattus.zenith.v1.LogFocusSessionRequest
-	2, // 2: sttattus.zenith.v1.ZenithService.LogFocusSession:output_type -> sttattus.zenith.v1.LogFocusSessionResponse
-	2, // [2:3] is the sub-list for method output_type
-	1, // [1:2] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	6, // 0: sttattus.zenith.v1.Session.started_at:type_name -> google.protobuf.Timestamp
+	0, // 1: sttattus.zenith.v1.LogFocusSessionRequest.session:type_name -> sttattus.zenith.v1.Session
+	1, // 2: sttattus.zenith.v1.LogFocusSessionResponse.stats:type_name -> sttattus.zenith.v1.ZenithStats
+	1, // 3: sttattus.zenith.v1.GetZenithStatsResponse.stats:type_name -> sttattus.zenith.v1.ZenithStats
+	2, // 4: sttattus.zenith.v1.ZenithService.LogFocusSession:input_type -> sttattus.zenith.v1.LogFocusSessionRequest
+	4, // 5: sttattus.zenith.v1.ZenithService.GetZenithStats:input_type -> sttattus.zenith.v1.GetZenithStatsRequest
+	3, // 6: sttattus.zenith.v1.ZenithService.LogFocusSession:output_type -> sttattus.zenith.v1.LogFocusSessionResponse
+	5, // 7: sttattus.zenith.v1.ZenithService.GetZenithStats:output_type -> sttattus.zenith.v1.GetZenithStatsResponse
+	6, // [6:8] is the sub-list for method output_type
+	4, // [4:6] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_zenith_v1_zenith_proto_init() }
@@ -217,7 +459,7 @@ func file_sttattus_zenith_v1_zenith_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_zenith_v1_zenith_proto_rawDesc), len(file_sttattus_zenith_v1_zenith_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

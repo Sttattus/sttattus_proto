@@ -9,6 +9,7 @@ package oraclev1
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -21,16 +22,304 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type QueryRequest struct {
+// StrategicDomain defines the elite intellectual field.
+type StrategicDomain int32
+
+const (
+	StrategicDomain_STRATEGIC_DOMAIN_UNSPECIFIED         StrategicDomain = 0
+	StrategicDomain_STRATEGIC_DOMAIN_GEOPOLITICS         StrategicDomain = 1
+	StrategicDomain_STRATEGIC_DOMAIN_MACRO_ECONOMICS     StrategicDomain = 2
+	StrategicDomain_STRATEGIC_DOMAIN_BIO_ETHICS          StrategicDomain = 3
+	StrategicDomain_STRATEGIC_DOMAIN_VENTURE_ENGINEERING StrategicDomain = 4
+)
+
+// Enum value maps for StrategicDomain.
+var (
+	StrategicDomain_name = map[int32]string{
+		0: "STRATEGIC_DOMAIN_UNSPECIFIED",
+		1: "STRATEGIC_DOMAIN_GEOPOLITICS",
+		2: "STRATEGIC_DOMAIN_MACRO_ECONOMICS",
+		3: "STRATEGIC_DOMAIN_BIO_ETHICS",
+		4: "STRATEGIC_DOMAIN_VENTURE_ENGINEERING",
+	}
+	StrategicDomain_value = map[string]int32{
+		"STRATEGIC_DOMAIN_UNSPECIFIED":         0,
+		"STRATEGIC_DOMAIN_GEOPOLITICS":         1,
+		"STRATEGIC_DOMAIN_MACRO_ECONOMICS":     2,
+		"STRATEGIC_DOMAIN_BIO_ETHICS":          3,
+		"STRATEGIC_DOMAIN_VENTURE_ENGINEERING": 4,
+	}
+)
+
+func (x StrategicDomain) Enum() *StrategicDomain {
+	p := new(StrategicDomain)
+	*p = x
+	return p
+}
+
+func (x StrategicDomain) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (StrategicDomain) Descriptor() protoreflect.EnumDescriptor {
+	return file_sttattus_oracle_v1_oracle_proto_enumTypes[0].Descriptor()
+}
+
+func (StrategicDomain) Type() protoreflect.EnumType {
+	return &file_sttattus_oracle_v1_oracle_proto_enumTypes[0]
+}
+
+func (x StrategicDomain) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use StrategicDomain.Descriptor instead.
+func (StrategicDomain) EnumDescriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{0}
+}
+
+// DepthGrading represents the AI-verified quality of an intellectual inquiry.
+type DepthGrading struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ComplexityScore float64                `protobuf:"fixed64,1,opt,name=complexity_score,json=complexityScore,proto3" json:"complexity_score,omitempty"` // 0.0 - 1.0 (Structural complexity)
+	SynthesisScore  float64                `protobuf:"fixed64,2,opt,name=synthesis_score,json=synthesisScore,proto3" json:"synthesis_score,omitempty"`    // 0.0 - 1.0 (Cross-pillar integration)
+	ForesightScore  float64                `protobuf:"fixed64,3,opt,name=foresight_score,json=foresightScore,proto3" json:"foresight_score,omitempty"`    // 0.0 - 1.0 (Strategic anticipation)
+	FeedbackSummary string                 `protobuf:"bytes,4,opt,name=feedback_summary,json=feedbackSummary,proto3" json:"feedback_summary,omitempty"`   // AI feedback on inquiry quality
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *DepthGrading) Reset() {
+	*x = DepthGrading{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DepthGrading) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DepthGrading) ProtoMessage() {}
+
+func (x *DepthGrading) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DepthGrading.ProtoReflect.Descriptor instead.
+func (*DepthGrading) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *DepthGrading) GetComplexityScore() float64 {
+	if x != nil {
+		return x.ComplexityScore
+	}
+	return 0
+}
+
+func (x *DepthGrading) GetSynthesisScore() float64 {
+	if x != nil {
+		return x.SynthesisScore
+	}
+	return 0
+}
+
+func (x *DepthGrading) GetForesightScore() float64 {
+	if x != nil {
+		return x.ForesightScore
+	}
+	return 0
+}
+
+func (x *DepthGrading) GetFeedbackSummary() string {
+	if x != nil {
+		return x.FeedbackSummary
+	}
+	return ""
+}
+
+// StrategicInsight represents a high-value piece of intelligence.
+type StrategicInsight struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Prompt        string                 `protobuf:"bytes,1,opt,name=prompt,proto3" json:"prompt,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Content       string                 `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
+	Domain        StrategicDomain        `protobuf:"varint,4,opt,name=domain,proto3,enum=sttattus.oracle.v1.StrategicDomain" json:"domain,omitempty"`
+	Grading       *DepthGrading          `protobuf:"bytes,5,opt,name=grading,proto3" json:"grading,omitempty"`
+	DiscoveredAt  *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=discovered_at,json=discoveredAt,proto3" json:"discovered_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
+func (x *StrategicInsight) Reset() {
+	*x = StrategicInsight{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StrategicInsight) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StrategicInsight) ProtoMessage() {}
+
+func (x *StrategicInsight) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StrategicInsight.ProtoReflect.Descriptor instead.
+func (*StrategicInsight) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *StrategicInsight) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *StrategicInsight) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *StrategicInsight) GetContent() string {
+	if x != nil {
+		return x.Content
+	}
+	return ""
+}
+
+func (x *StrategicInsight) GetDomain() StrategicDomain {
+	if x != nil {
+		return x.Domain
+	}
+	return StrategicDomain_STRATEGIC_DOMAIN_UNSPECIFIED
+}
+
+func (x *StrategicInsight) GetGrading() *DepthGrading {
+	if x != nil {
+		return x.Grading
+	}
+	return nil
+}
+
+func (x *StrategicInsight) GetDiscoveredAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.DiscoveredAt
+	}
+	return nil
+}
+
+type OracleStats struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	UserId           string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	IntellectualRank float64                `protobuf:"fixed64,2,opt,name=intellectual_rank,json=intellectualRank,proto3" json:"intellectual_rank,omitempty"` // 1-100 normalized
+	RankLabel        string                 `protobuf:"bytes,3,opt,name=rank_label,json=rankLabel,proto3" json:"rank_label,omitempty"`                        // e.g., 'Analyst', 'Strategist', 'Sovereign Oracle'
+	TotalCloutEarned int32                  `protobuf:"varint,4,opt,name=total_clout_earned,json=totalCloutEarned,proto3" json:"total_clout_earned,omitempty"`
+	DomainMastery    map[int32]float64      `protobuf:"bytes,5,rep,name=domain_mastery,json=domainMastery,proto3" json:"domain_mastery,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"fixed64,2,opt,name=value"` // StrategicDomain (as int) -> Mastery %
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *OracleStats) Reset() {
+	*x = OracleStats{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleStats) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleStats) ProtoMessage() {}
+
+func (x *OracleStats) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleStats.ProtoReflect.Descriptor instead.
+func (*OracleStats) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *OracleStats) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleStats) GetIntellectualRank() float64 {
+	if x != nil {
+		return x.IntellectualRank
+	}
+	return 0
+}
+
+func (x *OracleStats) GetRankLabel() string {
+	if x != nil {
+		return x.RankLabel
+	}
+	return ""
+}
+
+func (x *OracleStats) GetTotalCloutEarned() int32 {
+	if x != nil {
+		return x.TotalCloutEarned
+	}
+	return 0
+}
+
+func (x *OracleStats) GetDomainMastery() map[int32]float64 {
+	if x != nil {
+		return x.DomainMastery
+	}
+	return nil
+}
+
+// REQ/RES
+type QueryRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Prompt          string                 `protobuf:"bytes,1,opt,name=prompt,proto3" json:"prompt,omitempty"`
+	EnableSynthesis bool                   `protobuf:"varint,2,opt,name=enable_synthesis,json=enableSynthesis,proto3" json:"enable_synthesis,omitempty"` // If true, AI attempts to cross-reference all 12 pillars
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
 func (x *QueryRequest) Reset() {
 	*x = QueryRequest{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[0]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42,7 +331,7 @@ func (x *QueryRequest) String() string {
 func (*QueryRequest) ProtoMessage() {}
 
 func (x *QueryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[0]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -55,7 +344,7 @@ func (x *QueryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QueryRequest.ProtoReflect.Descriptor instead.
 func (*QueryRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{0}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *QueryRequest) GetPrompt() string {
@@ -65,17 +354,25 @@ func (x *QueryRequest) GetPrompt() string {
 	return ""
 }
 
+func (x *QueryRequest) GetEnableSynthesis() bool {
+	if x != nil {
+		return x.EnableSynthesis
+	}
+	return false
+}
+
 type QueryResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Response      string                 `protobuf:"bytes,1,opt,name=response,proto3" json:"response,omitempty"`
-	Confidence    float64                `protobuf:"fixed64,2,opt,name=confidence,proto3" json:"confidence,omitempty"`
+	Insight       *StrategicInsight      `protobuf:"bytes,2,opt,name=insight,proto3" json:"insight,omitempty"`
+	Stats         *OracleStats           `protobuf:"bytes,3,opt,name=stats,proto3" json:"stats,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *QueryResponse) Reset() {
 	*x = QueryResponse{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[1]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -87,7 +384,7 @@ func (x *QueryResponse) String() string {
 func (*QueryResponse) ProtoMessage() {}
 
 func (x *QueryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[1]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -100,7 +397,7 @@ func (x *QueryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QueryResponse.ProtoReflect.Descriptor instead.
 func (*QueryResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{1}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *QueryResponse) GetResponse() string {
@@ -110,27 +407,155 @@ func (x *QueryResponse) GetResponse() string {
 	return ""
 }
 
-func (x *QueryResponse) GetConfidence() float64 {
+func (x *QueryResponse) GetInsight() *StrategicInsight {
 	if x != nil {
-		return x.Confidence
+		return x.Insight
 	}
-	return 0
+	return nil
+}
+
+func (x *QueryResponse) GetStats() *OracleStats {
+	if x != nil {
+		return x.Stats
+	}
+	return nil
+}
+
+type GetOracleStatsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetOracleStatsRequest) Reset() {
+	*x = GetOracleStatsRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetOracleStatsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetOracleStatsRequest) ProtoMessage() {}
+
+func (x *GetOracleStatsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetOracleStatsRequest.ProtoReflect.Descriptor instead.
+func (*GetOracleStatsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *GetOracleStatsRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetOracleStatsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Stats         *OracleStats           `protobuf:"bytes,1,opt,name=stats,proto3" json:"stats,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetOracleStatsResponse) Reset() {
+	*x = GetOracleStatsResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetOracleStatsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetOracleStatsResponse) ProtoMessage() {}
+
+func (x *GetOracleStatsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetOracleStatsResponse.ProtoReflect.Descriptor instead.
+func (*GetOracleStatsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *GetOracleStatsResponse) GetStats() *OracleStats {
+	if x != nil {
+		return x.Stats
+	}
+	return nil
 }
 
 var File_sttattus_oracle_v1_oracle_proto protoreflect.FileDescriptor
 
 const file_sttattus_oracle_v1_oracle_proto_rawDesc = "" +
 	"\n" +
-	"\x1fsttattus/oracle/v1/oracle.proto\x12\x12sttattus.oracle.v1\"&\n" +
-	"\fQueryRequest\x12\x16\n" +
-	"\x06prompt\x18\x01 \x01(\tR\x06prompt\"K\n" +
-	"\rQueryResponse\x12\x1a\n" +
-	"\bresponse\x18\x01 \x01(\tR\bresponse\x12\x1e\n" +
+	"\x1fsttattus/oracle/v1/oracle.proto\x12\x12sttattus.oracle.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb6\x01\n" +
+	"\fDepthGrading\x12)\n" +
+	"\x10complexity_score\x18\x01 \x01(\x01R\x0fcomplexityScore\x12'\n" +
+	"\x0fsynthesis_score\x18\x02 \x01(\x01R\x0esynthesisScore\x12'\n" +
+	"\x0fforesight_score\x18\x03 \x01(\x01R\x0eforesightScore\x12)\n" +
+	"\x10feedback_summary\x18\x04 \x01(\tR\x0ffeedbackSummary\"\x8c\x02\n" +
+	"\x10StrategicInsight\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x18\n" +
+	"\acontent\x18\x03 \x01(\tR\acontent\x12;\n" +
+	"\x06domain\x18\x04 \x01(\x0e2#.sttattus.oracle.v1.StrategicDomainR\x06domain\x12:\n" +
+	"\agrading\x18\x05 \x01(\v2 .sttattus.oracle.v1.DepthGradingR\agrading\x12?\n" +
+	"\rdiscovered_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\fdiscoveredAt\"\xbd\x02\n" +
+	"\vOracleStats\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12+\n" +
+	"\x11intellectual_rank\x18\x02 \x01(\x01R\x10intellectualRank\x12\x1d\n" +
 	"\n" +
-	"confidence\x18\x02 \x01(\x01R\n" +
-	"confidence2]\n" +
+	"rank_label\x18\x03 \x01(\tR\trankLabel\x12,\n" +
+	"\x12total_clout_earned\x18\x04 \x01(\x05R\x10totalCloutEarned\x12Y\n" +
+	"\x0edomain_mastery\x18\x05 \x03(\v22.sttattus.oracle.v1.OracleStats.DomainMasteryEntryR\rdomainMastery\x1a@\n" +
+	"\x12DomainMasteryEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\x05R\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\x01R\x05value:\x028\x01\"Q\n" +
+	"\fQueryRequest\x12\x16\n" +
+	"\x06prompt\x18\x01 \x01(\tR\x06prompt\x12)\n" +
+	"\x10enable_synthesis\x18\x02 \x01(\bR\x0fenableSynthesis\"\xa2\x01\n" +
+	"\rQueryResponse\x12\x1a\n" +
+	"\bresponse\x18\x01 \x01(\tR\bresponse\x12>\n" +
+	"\ainsight\x18\x02 \x01(\v2$.sttattus.oracle.v1.StrategicInsightR\ainsight\x125\n" +
+	"\x05stats\x18\x03 \x01(\v2\x1f.sttattus.oracle.v1.OracleStatsR\x05stats\"0\n" +
+	"\x15GetOracleStatsRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"O\n" +
+	"\x16GetOracleStatsResponse\x125\n" +
+	"\x05stats\x18\x01 \x01(\v2\x1f.sttattus.oracle.v1.OracleStatsR\x05stats*\xc6\x01\n" +
+	"\x0fStrategicDomain\x12 \n" +
+	"\x1cSTRATEGIC_DOMAIN_UNSPECIFIED\x10\x00\x12 \n" +
+	"\x1cSTRATEGIC_DOMAIN_GEOPOLITICS\x10\x01\x12$\n" +
+	" STRATEGIC_DOMAIN_MACRO_ECONOMICS\x10\x02\x12\x1f\n" +
+	"\x1bSTRATEGIC_DOMAIN_BIO_ETHICS\x10\x03\x12(\n" +
+	"$STRATEGIC_DOMAIN_VENTURE_ENGINEERING\x10\x042\xc6\x01\n" +
 	"\rOracleService\x12L\n" +
-	"\x05Query\x12 .sttattus.oracle.v1.QueryRequest\x1a!.sttattus.oracle.v1.QueryResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/oracle/v1;oraclev1b\x06proto3"
+	"\x05Query\x12 .sttattus.oracle.v1.QueryRequest\x1a!.sttattus.oracle.v1.QueryResponse\x12g\n" +
+	"\x0eGetOracleStats\x12).sttattus.oracle.v1.GetOracleStatsRequest\x1a*.sttattus.oracle.v1.GetOracleStatsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/oracle/v1;oraclev1b\x06proto3"
 
 var (
 	file_sttattus_oracle_v1_oracle_proto_rawDescOnce sync.Once
@@ -144,19 +569,37 @@ func file_sttattus_oracle_v1_oracle_proto_rawDescGZIP() []byte {
 	return file_sttattus_oracle_v1_oracle_proto_rawDescData
 }
 
-var file_sttattus_oracle_v1_oracle_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_sttattus_oracle_v1_oracle_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_sttattus_oracle_v1_oracle_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_sttattus_oracle_v1_oracle_proto_goTypes = []any{
-	(*QueryRequest)(nil),  // 0: sttattus.oracle.v1.QueryRequest
-	(*QueryResponse)(nil), // 1: sttattus.oracle.v1.QueryResponse
+	(StrategicDomain)(0),           // 0: sttattus.oracle.v1.StrategicDomain
+	(*DepthGrading)(nil),           // 1: sttattus.oracle.v1.DepthGrading
+	(*StrategicInsight)(nil),       // 2: sttattus.oracle.v1.StrategicInsight
+	(*OracleStats)(nil),            // 3: sttattus.oracle.v1.OracleStats
+	(*QueryRequest)(nil),           // 4: sttattus.oracle.v1.QueryRequest
+	(*QueryResponse)(nil),          // 5: sttattus.oracle.v1.QueryResponse
+	(*GetOracleStatsRequest)(nil),  // 6: sttattus.oracle.v1.GetOracleStatsRequest
+	(*GetOracleStatsResponse)(nil), // 7: sttattus.oracle.v1.GetOracleStatsResponse
+	nil,                            // 8: sttattus.oracle.v1.OracleStats.DomainMasteryEntry
+	(*timestamppb.Timestamp)(nil),  // 9: google.protobuf.Timestamp
 }
 var file_sttattus_oracle_v1_oracle_proto_depIdxs = []int32{
-	0, // 0: sttattus.oracle.v1.OracleService.Query:input_type -> sttattus.oracle.v1.QueryRequest
-	1, // 1: sttattus.oracle.v1.OracleService.Query:output_type -> sttattus.oracle.v1.QueryResponse
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0, // 0: sttattus.oracle.v1.StrategicInsight.domain:type_name -> sttattus.oracle.v1.StrategicDomain
+	1, // 1: sttattus.oracle.v1.StrategicInsight.grading:type_name -> sttattus.oracle.v1.DepthGrading
+	9, // 2: sttattus.oracle.v1.StrategicInsight.discovered_at:type_name -> google.protobuf.Timestamp
+	8, // 3: sttattus.oracle.v1.OracleStats.domain_mastery:type_name -> sttattus.oracle.v1.OracleStats.DomainMasteryEntry
+	2, // 4: sttattus.oracle.v1.QueryResponse.insight:type_name -> sttattus.oracle.v1.StrategicInsight
+	3, // 5: sttattus.oracle.v1.QueryResponse.stats:type_name -> sttattus.oracle.v1.OracleStats
+	3, // 6: sttattus.oracle.v1.GetOracleStatsResponse.stats:type_name -> sttattus.oracle.v1.OracleStats
+	4, // 7: sttattus.oracle.v1.OracleService.Query:input_type -> sttattus.oracle.v1.QueryRequest
+	6, // 8: sttattus.oracle.v1.OracleService.GetOracleStats:input_type -> sttattus.oracle.v1.GetOracleStatsRequest
+	5, // 9: sttattus.oracle.v1.OracleService.Query:output_type -> sttattus.oracle.v1.QueryResponse
+	7, // 10: sttattus.oracle.v1.OracleService.GetOracleStats:output_type -> sttattus.oracle.v1.GetOracleStatsResponse
+	9, // [9:11] is the sub-list for method output_type
+	7, // [7:9] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_oracle_v1_oracle_proto_init() }
@@ -169,13 +612,14 @@ func file_sttattus_oracle_v1_oracle_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_oracle_v1_oracle_proto_rawDesc), len(file_sttattus_oracle_v1_oracle_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   2,
+			NumEnums:      1,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
 		GoTypes:           file_sttattus_oracle_v1_oracle_proto_goTypes,
 		DependencyIndexes: file_sttattus_oracle_v1_oracle_proto_depIdxs,
+		EnumInfos:         file_sttattus_oracle_v1_oracle_proto_enumTypes,
 		MessageInfos:      file_sttattus_oracle_v1_oracle_proto_msgTypes,
 	}.Build()
 	File_sttattus_oracle_v1_oracle_proto = out.File

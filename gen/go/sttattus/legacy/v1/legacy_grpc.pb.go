@@ -19,14 +19,19 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	LegacyService_StoreDocument_FullMethodName = "/sttattus.legacy.v1.LegacyService/StoreDocument"
+	LegacyService_StoreDocument_FullMethodName    = "/sttattus.legacy.v1.LegacyService/StoreDocument"
+	LegacyService_ListAssets_FullMethodName       = "/sttattus.legacy.v1.LegacyService/ListAssets"
+	LegacyService_GetHeritageStats_FullMethodName = "/sttattus.legacy.v1.LegacyService/GetHeritageStats"
 )
 
 // LegacyServiceClient is the client API for LegacyService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type LegacyServiceClient interface {
+	// Heritage Protocol: Verified Legal Standing
 	StoreDocument(ctx context.Context, in *StoreDocumentRequest, opts ...grpc.CallOption) (*StoreDocumentResponse, error)
+	ListAssets(ctx context.Context, in *ListAssetsRequest, opts ...grpc.CallOption) (*ListAssetsResponse, error)
+	GetHeritageStats(ctx context.Context, in *GetHeritageStatsRequest, opts ...grpc.CallOption) (*GetHeritageStatsResponse, error)
 }
 
 type legacyServiceClient struct {
@@ -47,11 +52,34 @@ func (c *legacyServiceClient) StoreDocument(ctx context.Context, in *StoreDocume
 	return out, nil
 }
 
+func (c *legacyServiceClient) ListAssets(ctx context.Context, in *ListAssetsRequest, opts ...grpc.CallOption) (*ListAssetsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAssetsResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListAssets_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetHeritageStats(ctx context.Context, in *GetHeritageStatsRequest, opts ...grpc.CallOption) (*GetHeritageStatsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetHeritageStatsResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetHeritageStats_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LegacyServiceServer is the server API for LegacyService service.
 // All implementations must embed UnimplementedLegacyServiceServer
 // for forward compatibility.
 type LegacyServiceServer interface {
+	// Heritage Protocol: Verified Legal Standing
 	StoreDocument(context.Context, *StoreDocumentRequest) (*StoreDocumentResponse, error)
+	ListAssets(context.Context, *ListAssetsRequest) (*ListAssetsResponse, error)
+	GetHeritageStats(context.Context, *GetHeritageStatsRequest) (*GetHeritageStatsResponse, error)
 	mustEmbedUnimplementedLegacyServiceServer()
 }
 
@@ -64,6 +92,12 @@ type UnimplementedLegacyServiceServer struct{}
 
 func (UnimplementedLegacyServiceServer) StoreDocument(context.Context, *StoreDocumentRequest) (*StoreDocumentResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method StoreDocument not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListAssets(context.Context, *ListAssetsRequest) (*ListAssetsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAssets not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetHeritageStats(context.Context, *GetHeritageStatsRequest) (*GetHeritageStatsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetHeritageStats not implemented")
 }
 func (UnimplementedLegacyServiceServer) mustEmbedUnimplementedLegacyServiceServer() {}
 func (UnimplementedLegacyServiceServer) testEmbeddedByValue()                       {}
@@ -104,6 +138,42 @@ func _LegacyService_StoreDocument_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LegacyService_ListAssets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAssetsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListAssets(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListAssets_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListAssets(ctx, req.(*ListAssetsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetHeritageStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetHeritageStatsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetHeritageStats(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetHeritageStats_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetHeritageStats(ctx, req.(*GetHeritageStatsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LegacyService_ServiceDesc is the grpc.ServiceDesc for LegacyService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -114,6 +184,14 @@ var LegacyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "StoreDocument",
 			Handler:    _LegacyService_StoreDocument_Handler,
+		},
+		{
+			MethodName: "ListAssets",
+			Handler:    _LegacyService_ListAssets_Handler,
+		},
+		{
+			MethodName: "GetHeritageStats",
+			Handler:    _LegacyService_GetHeritageStats_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

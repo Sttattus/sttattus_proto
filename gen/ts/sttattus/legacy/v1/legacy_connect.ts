@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { StoreDocumentRequest, StoreDocumentResponse } from "./legacy_pb.js";
+import { GetHeritageStatsRequest, GetHeritageStatsResponse, ListAssetsRequest, ListAssetsResponse, StoreDocumentRequest, StoreDocumentResponse } from "./legacy_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -13,12 +13,32 @@ export const LegacyService = {
   typeName: "sttattus.legacy.v1.LegacyService",
   methods: {
     /**
+     * Heritage Protocol: Verified Legal Standing
+     *
      * @generated from rpc sttattus.legacy.v1.LegacyService.StoreDocument
      */
     storeDocument: {
       name: "StoreDocument",
       I: StoreDocumentRequest,
       O: StoreDocumentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListAssets
+     */
+    listAssets: {
+      name: "ListAssets",
+      I: ListAssetsRequest,
+      O: ListAssetsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetHeritageStats
+     */
+    getHeritageStats: {
+      name: "GetHeritageStats",
+      I: GetHeritageStatsRequest,
+      O: GetHeritageStatsResponse,
       kind: MethodKind.Unary,
     },
   }

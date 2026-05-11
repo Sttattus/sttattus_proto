@@ -195,6 +195,21 @@ export class DatingProfile extends Message$1<DatingProfile> {
    */
   photoUrls: string[] = [];
 
+  /**
+   * @generated from field: double vault_rank = 14;
+   */
+  vaultRank = 0;
+
+  /**
+   * @generated from field: double apex_rank = 15;
+   */
+  apexRank = 0;
+
+  /**
+   * @generated from field: double forge_rank = 16;
+   */
+  forgeRank = 0;
+
   constructor(data?: PartialMessage<DatingProfile>) {
     super();
     proto3.util.initPartial(data, this);
@@ -216,6 +231,9 @@ export class DatingProfile extends Message$1<DatingProfile> {
     { no: 11, name: "physical_drive", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 12, name: "social_battery", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 13, name: "photo_urls", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 14, name: "vault_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 15, name: "apex_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 16, name: "forge_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DatingProfile {

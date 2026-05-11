@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetLinguistStatsRequest, GetLinguistStatsResponse, ListCategoriesRequest, ListCategoriesResponse, ListWordsRequest, ListWordsResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateProgressRequest, UpdateProgressResponse } from "./languages_pb.js";
+import { CompleteInteractionRequest, CompleteInteractionResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, ListScenariosRequest, ListScenariosResponse, ListWordsRequest, ListWordsResponse } from "./languages_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -13,33 +13,28 @@ export const LanguagesService = {
   typeName: "sttattus.languages.v1.LanguagesService",
   methods: {
     /**
-     * @generated from rpc sttattus.languages.v1.LanguagesService.ListCategories
+     * The Protocol: Scenario-based learning
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListScenarios
      */
-    listCategories: {
-      name: "ListCategories",
-      I: ListCategoriesRequest,
-      O: ListCategoriesResponse,
+    listScenarios: {
+      name: "ListScenarios",
+      I: ListScenariosRequest,
+      O: ListScenariosResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc sttattus.languages.v1.LanguagesService.ListWords
+     * @generated from rpc sttattus.languages.v1.LanguagesService.CompleteInteraction
      */
-    listWords: {
-      name: "ListWords",
-      I: ListWordsRequest,
-      O: ListWordsResponse,
+    completeInteraction: {
+      name: "CompleteInteraction",
+      I: CompleteInteractionRequest,
+      O: CompleteInteractionResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc sttattus.languages.v1.LanguagesService.UpdateProgress
-     */
-    updateProgress: {
-      name: "UpdateProgress",
-      I: UpdateProgressRequest,
-      O: UpdateProgressResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
+     * Status
+     *
      * @generated from rpc sttattus.languages.v1.LanguagesService.GetLinguistStats
      */
     getLinguistStats: {
@@ -49,12 +44,14 @@ export const LanguagesService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc sttattus.languages.v1.LanguagesService.SubmitFeedback
+     * Legacy (Deprecated but kept for bridge)
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListWords
      */
-    submitFeedback: {
-      name: "SubmitFeedback",
-      I: SubmitFeedbackRequest,
-      O: SubmitFeedbackResponse,
+    listWords: {
+      name: "ListWords",
+      I: ListWordsRequest,
+      O: ListWordsResponse,
       kind: MethodKind.Unary,
     },
   }

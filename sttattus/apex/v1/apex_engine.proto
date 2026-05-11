@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package sttattus.apex.v1;
+
+import "sttattus/apex/v1/apex.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/apex/v1;apexv1";
+
+service ApexEngineService {
+  // Calculates the comprehensive Bio-Rank based on available biomarkers.
+  rpc CalculateBioRank(CalculateBioRankRequest) returns (CalculateBioRankResponse);
+}
+
+message CalculateBioRankRequest {
+  string user_id = 1;
+  repeated Biomarker biomarkers = 2;
+}
+
+message CalculateBioRankResponse {
+  double bio_rank = 1;        // 1-100 normalized status signal
+  double biological_age = 2;   // Calculated epigenetic/phenotypic age
+  map<string, double> system_scores = 3; // e.g., "cardiovascular": 85.0, "metabolic": 92.0
+}
