@@ -9,10 +9,10 @@ option go_package = "github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1"
 // AssetCategory defines the broad classification of wealth.
 enum AssetCategory {
   ASSET_CATEGORY_UNSPECIFIED = 0;
-  ASSET_CATEGORY_FIAT = 1;         // Cash, Bank Accounts
-  ASSET_CATEGORY_CRYPTO = 2;       // BTC, ETH, Tokens
-  ASSET_CATEGORY_RARE_ASSET = 3;   // Watches, Cars, Art (The Concierge)
-  ASSET_CATEGORY_METAL = 4;        // Gold, Silver
+  ASSET_CATEGORY_FIAT = 1; // Cash, Bank Accounts
+  ASSET_CATEGORY_CRYPTO = 2; // BTC, ETH, Tokens
+  ASSET_CATEGORY_RARE_ASSET = 3; // Watches, Cars, Art (The Concierge)
+  ASSET_CATEGORY_METAL = 4; // Gold, Silver
 }
 
 // VerificationStatus tracks the manual verification lifecycle for Rare Assets.
@@ -30,7 +30,7 @@ message Asset {
   AssetCategory category = 3;
   double valuation_usd = 4;
   VerificationStatus status = 5;
-  string image_url = 6;           // For Rare Assets
+  string image_url = 6; // For Rare Assets
   google.protobuf.Timestamp last_updated = 7;
   map<string, string> metadata = 8; // e.g., "serial_number": "123", "wallet_address": "0x..."
 }
@@ -40,7 +40,7 @@ message Portfolio {
   string user_id = 1;
   double total_net_worth_usd = 2;
   repeated Asset assets = 3;
-  double vault_rank = 4;          // 1-100 calculated score
+  double vault_rank = 4; // 1-100 calculated score
   google.protobuf.Timestamp calculated_at = 5;
 }
 
@@ -48,7 +48,7 @@ message SubmitAssetRequest {
   string name = 1;
   AssetCategory category = 2;
   double estimated_value_usd = 3;
-  string image_url = 4;           // From shared_uploader
+  string image_url = 4; // From shared_uploader
   map<string, string> metadata = 5;
 }
 
@@ -114,7 +114,7 @@ message GetWalletChallengeResponse {
 message LinkWalletRequest {
   string address = 1;
   string signature = 2; // Signed challenge
-  string chain = 3;     // e.g., "ethereum", "solana"
+  string chain = 3; // e.g., "ethereum", "solana"
 }
 
 message LinkWalletResponse {

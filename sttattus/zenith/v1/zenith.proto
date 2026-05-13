@@ -9,17 +9,17 @@ option go_package = "github.com/sttattus/proto/gen/go/sttattus/zenith/v1;zenithv
 message Session {
   string id = 1;
   int32 duration_minutes = 2;
-  double focus_score = 3;      // 0.0 - 1.0 (Calculated/Verified)
-  bool is_verified = 4;        // True if bio-signals were used
+  double focus_score = 3; // 0.0 - 1.0 (Calculated/Verified)
+  bool is_verified = 4; // True if bio-signals were used
   double avg_heart_rate = 5;
-  double hrv_delta = 6;        // HRV change during session
+  double hrv_delta = 6; // HRV change during session
   google.protobuf.Timestamp started_at = 7;
 }
 
 message ZenithStats {
   string user_id = 1;
-  double fortitude_rank = 2;   // 1-100 normalized
-  string rank_label = 3;       // e.g., 'Acolyte', 'Focus Master', 'Sovereign Focus'
+  double fortitude_rank = 2; // 1-100 normalized
+  string rank_label = 3; // e.g., 'Acolyte', 'Focus Master', 'Sovereign Focus'
   int32 total_focus_minutes = 4;
   int32 verified_sessions_count = 5;
 }

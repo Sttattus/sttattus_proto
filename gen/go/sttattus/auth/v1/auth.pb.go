@@ -34,18 +34,30 @@ const (
 	AppCode_APP_CODE_DATING      AppCode = 4
 	AppCode_APP_CODE_EMPIRE      AppCode = 5
 	AppCode_APP_CODE_ONYX        AppCode = 6
+	AppCode_APP_CODE_APEX        AppCode = 7
+	AppCode_APP_CODE_VAULT       AppCode = 8
+	AppCode_APP_CODE_DOMINION    AppCode = 9
+	AppCode_APP_CODE_ORACLE      AppCode = 10
+	AppCode_APP_CODE_LEGACY      AppCode = 11
+	AppCode_APP_CODE_ZENITH      AppCode = 12
 )
 
 // Enum value maps for AppCode.
 var (
 	AppCode_name = map[int32]string{
-		0: "APP_CODE_UNSPECIFIED",
-		1: "APP_CODE_WORKOUT",
-		2: "APP_CODE_LANGUAGES",
-		3: "APP_CODE_TRAVEL",
-		4: "APP_CODE_DATING",
-		5: "APP_CODE_EMPIRE",
-		6: "APP_CODE_ONYX",
+		0:  "APP_CODE_UNSPECIFIED",
+		1:  "APP_CODE_WORKOUT",
+		2:  "APP_CODE_LANGUAGES",
+		3:  "APP_CODE_TRAVEL",
+		4:  "APP_CODE_DATING",
+		5:  "APP_CODE_EMPIRE",
+		6:  "APP_CODE_ONYX",
+		7:  "APP_CODE_APEX",
+		8:  "APP_CODE_VAULT",
+		9:  "APP_CODE_DOMINION",
+		10: "APP_CODE_ORACLE",
+		11: "APP_CODE_LEGACY",
+		12: "APP_CODE_ZENITH",
 	}
 	AppCode_value = map[string]int32{
 		"APP_CODE_UNSPECIFIED": 0,
@@ -55,6 +67,12 @@ var (
 		"APP_CODE_DATING":      4,
 		"APP_CODE_EMPIRE":      5,
 		"APP_CODE_ONYX":        6,
+		"APP_CODE_APEX":        7,
+		"APP_CODE_VAULT":       8,
+		"APP_CODE_DOMINION":    9,
+		"APP_CODE_ORACLE":      10,
+		"APP_CODE_LEGACY":      11,
+		"APP_CODE_ZENITH":      12,
 	}
 )
 
@@ -915,7 +933,7 @@ const file_sttattus_auth_v1_auth_proto_rawDesc = "" +
 	"\x06tokens\x18\x01 \x01(\v2\x1b.sttattus.auth.v1.TokenPairR\x06tokens\"4\n" +
 	"\rLogoutRequest\x12#\n" +
 	"\rrefresh_token\x18\x01 \x01(\tR\frefreshToken\"\x10\n" +
-	"\x0eLogoutResponse*\xa3\x01\n" +
+	"\x0eLogoutResponse*\xa0\x02\n" +
 	"\aAppCode\x12\x18\n" +
 	"\x14APP_CODE_UNSPECIFIED\x10\x00\x12\x14\n" +
 	"\x10APP_CODE_WORKOUT\x10\x01\x12\x16\n" +
@@ -923,7 +941,14 @@ const file_sttattus_auth_v1_auth_proto_rawDesc = "" +
 	"\x0fAPP_CODE_TRAVEL\x10\x03\x12\x13\n" +
 	"\x0fAPP_CODE_DATING\x10\x04\x12\x13\n" +
 	"\x0fAPP_CODE_EMPIRE\x10\x05\x12\x11\n" +
-	"\rAPP_CODE_ONYX\x10\x062\xf0\x03\n" +
+	"\rAPP_CODE_ONYX\x10\x06\x12\x11\n" +
+	"\rAPP_CODE_APEX\x10\a\x12\x12\n" +
+	"\x0eAPP_CODE_VAULT\x10\b\x12\x15\n" +
+	"\x11APP_CODE_DOMINION\x10\t\x12\x13\n" +
+	"\x0fAPP_CODE_ORACLE\x10\n" +
+	"\x12\x13\n" +
+	"\x0fAPP_CODE_LEGACY\x10\v\x12\x13\n" +
+	"\x0fAPP_CODE_ZENITH\x10\f2\xf0\x03\n" +
 	"\vAuthService\x12Q\n" +
 	"\bRegister\x12!.sttattus.auth.v1.RegisterRequest\x1a\".sttattus.auth.v1.RegisterResponse\x12H\n" +
 	"\x05Login\x12\x1e.sttattus.auth.v1.LoginRequest\x1a\x1f.sttattus.auth.v1.LoginResponse\x12W\n" +

@@ -18,8 +18,8 @@ enum StrategicDomain {
 // DepthGrading represents the AI-verified quality of an intellectual inquiry.
 message DepthGrading {
   double complexity_score = 1; // 0.0 - 1.0 (Structural complexity)
-  double synthesis_score = 2;  // 0.0 - 1.0 (Cross-pillar integration)
-  double foresight_score = 3;  // 0.0 - 1.0 (Strategic anticipation)
+  double synthesis_score = 2; // 0.0 - 1.0 (Cross-pillar integration)
+  double foresight_score = 3; // 0.0 - 1.0 (Strategic anticipation)
   string feedback_summary = 4; // AI feedback on inquiry quality
 }
 
@@ -36,7 +36,7 @@ message StrategicInsight {
 message OracleStats {
   string user_id = 1;
   double intellectual_rank = 2; // 1-100 normalized
-  string rank_label = 3;        // e.g., 'Analyst', 'Strategist', 'Sovereign Oracle'
+  string rank_label = 3; // e.g., 'Analyst', 'Strategist', 'Sovereign Oracle'
   int32 total_clout_earned = 4;
   map<int32, double> domain_mastery = 5; // StrategicDomain (as int) -> Mastery %
 }
@@ -63,7 +63,7 @@ message GetOracleStatsResponse {
 service OracleService {
   // Query handles strategic inquiry and rewards verified depth.
   rpc Query(QueryRequest) returns (QueryResponse);
-  
+
   // Status
   rpc GetOracleStats(GetOracleStatsRequest) returns (GetOracleStatsResponse);
 }

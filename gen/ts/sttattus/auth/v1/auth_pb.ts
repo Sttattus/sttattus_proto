@@ -48,6 +48,36 @@ export enum AppCode {
    * @generated from enum value: APP_CODE_ONYX = 6;
    */
   ONYX = 6,
+
+  /**
+   * @generated from enum value: APP_CODE_APEX = 7;
+   */
+  APEX = 7,
+
+  /**
+   * @generated from enum value: APP_CODE_VAULT = 8;
+   */
+  VAULT = 8,
+
+  /**
+   * @generated from enum value: APP_CODE_DOMINION = 9;
+   */
+  DOMINION = 9,
+
+  /**
+   * @generated from enum value: APP_CODE_ORACLE = 10;
+   */
+  ORACLE = 10,
+
+  /**
+   * @generated from enum value: APP_CODE_LEGACY = 11;
+   */
+  LEGACY = 11,
+
+  /**
+   * @generated from enum value: APP_CODE_ZENITH = 12;
+   */
+  ZENITH = 12,
 }
 // Retrieve enum metadata with: proto3.getEnumType(AppCode)
 proto3.util.setEnumType(AppCode, "sttattus.auth.v1.AppCode", [
@@ -58,6 +88,12 @@ proto3.util.setEnumType(AppCode, "sttattus.auth.v1.AppCode", [
   { no: 4, name: "APP_CODE_DATING" },
   { no: 5, name: "APP_CODE_EMPIRE" },
   { no: 6, name: "APP_CODE_ONYX" },
+  { no: 7, name: "APP_CODE_APEX" },
+  { no: 8, name: "APP_CODE_VAULT" },
+  { no: 9, name: "APP_CODE_DOMINION" },
+  { no: 10, name: "APP_CODE_ORACLE" },
+  { no: 11, name: "APP_CODE_LEGACY" },
+  { no: 12, name: "APP_CODE_ZENITH" },
 ]);
 
 /**

@@ -939,6 +939,114 @@ func (x *ListLeaderboardResponse) GetEntries() []*ListLeaderboardResponse_Leader
 	return nil
 }
 
+// Heartbeat: the calling app announces it just opened. Idempotent —
+// bumps app_grants.last_active_at, and creates the row if it didn't
+// exist (so admins can see "app X is installed" even before the user
+// performs any feature action).
+type AppHeartbeatRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AppCode       v1.AppCode             `protobuf:"varint,1,opt,name=app_code,json=appCode,proto3,enum=sttattus.auth.v1.AppCode" json:"app_code,omitempty"`
+	Platform      string                 `protobuf:"bytes,2,opt,name=platform,proto3" json:"platform,omitempty"` // "ios" | "android" | "web" | "macos" | "windows" | "linux"
+	Version       string                 `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`   // free-form, e.g. "1.0.0+12"
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AppHeartbeatRequest) Reset() {
+	*x = AppHeartbeatRequest{}
+	mi := &file_sttattus_user_v1_user_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AppHeartbeatRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AppHeartbeatRequest) ProtoMessage() {}
+
+func (x *AppHeartbeatRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_user_v1_user_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AppHeartbeatRequest.ProtoReflect.Descriptor instead.
+func (*AppHeartbeatRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_user_v1_user_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *AppHeartbeatRequest) GetAppCode() v1.AppCode {
+	if x != nil {
+		return x.AppCode
+	}
+	return v1.AppCode(0)
+}
+
+func (x *AppHeartbeatRequest) GetPlatform() string {
+	if x != nil {
+		return x.Platform
+	}
+	return ""
+}
+
+func (x *AppHeartbeatRequest) GetVersion() string {
+	if x != nil {
+		return x.Version
+	}
+	return ""
+}
+
+type AppHeartbeatResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	App           *AppAccess             `protobuf:"bytes,1,opt,name=app,proto3" json:"app,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AppHeartbeatResponse) Reset() {
+	*x = AppHeartbeatResponse{}
+	mi := &file_sttattus_user_v1_user_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AppHeartbeatResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AppHeartbeatResponse) ProtoMessage() {}
+
+func (x *AppHeartbeatResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_user_v1_user_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AppHeartbeatResponse.ProtoReflect.Descriptor instead.
+func (*AppHeartbeatResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_user_v1_user_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *AppHeartbeatResponse) GetApp() *AppAccess {
+	if x != nil {
+		return x.App
+	}
+	return nil
+}
+
 type ListLeaderboardResponse_LeaderboardEntry struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -953,7 +1061,7 @@ type ListLeaderboardResponse_LeaderboardEntry struct {
 
 func (x *ListLeaderboardResponse_LeaderboardEntry) Reset() {
 	*x = ListLeaderboardResponse_LeaderboardEntry{}
-	mi := &file_sttattus_user_v1_user_proto_msgTypes[15]
+	mi := &file_sttattus_user_v1_user_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -965,7 +1073,7 @@ func (x *ListLeaderboardResponse_LeaderboardEntry) String() string {
 func (*ListLeaderboardResponse_LeaderboardEntry) ProtoMessage() {}
 
 func (x *ListLeaderboardResponse_LeaderboardEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_user_v1_user_proto_msgTypes[15]
+	mi := &file_sttattus_user_v1_user_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1115,12 +1223,19 @@ const file_sttattus_user_v1_user_proto_rawDesc = "" +
 	"globalRank\x12\x12\n" +
 	"\x04tier\x18\x05 \x01(\tR\x04tier\x12\x1d\n" +
 	"\n" +
-	"aura_color\x18\x06 \x01(\tR\tauraColor2\xa3\x04\n" +
+	"aura_color\x18\x06 \x01(\tR\tauraColor\"\x81\x01\n" +
+	"\x13AppHeartbeatRequest\x124\n" +
+	"\bapp_code\x18\x01 \x01(\x0e2\x19.sttattus.auth.v1.AppCodeR\aappCode\x12\x1a\n" +
+	"\bplatform\x18\x02 \x01(\tR\bplatform\x12\x18\n" +
+	"\aversion\x18\x03 \x01(\tR\aversion\"E\n" +
+	"\x14AppHeartbeatResponse\x12-\n" +
+	"\x03app\x18\x01 \x01(\v2\x1b.sttattus.user.v1.AppAccessR\x03app2\x82\x05\n" +
 	"\vUserService\x12H\n" +
 	"\x05GetMe\x12\x1e.sttattus.user.v1.GetMeRequest\x1a\x1f.sttattus.user.v1.GetMeResponse\x12Q\n" +
 	"\bUpdateMe\x12!.sttattus.user.v1.UpdateMeRequest\x1a\".sttattus.user.v1.UpdateMeResponse\x12`\n" +
 	"\rListAppAccess\x12&.sttattus.user.v1.ListAppAccessRequest\x1a'.sttattus.user.v1.ListAppAccessResponse\x12Q\n" +
-	"\bGrantApp\x12!.sttattus.user.v1.GrantAppRequest\x1a\".sttattus.user.v1.GrantAppResponse\x12Z\n" +
+	"\bGrantApp\x12!.sttattus.user.v1.GrantAppRequest\x1a\".sttattus.user.v1.GrantAppResponse\x12]\n" +
+	"\fAppHeartbeat\x12%.sttattus.user.v1.AppHeartbeatRequest\x1a&.sttattus.user.v1.AppHeartbeatResponse\x12Z\n" +
 	"\vGetSttattus\x12$.sttattus.user.v1.GetSttattusRequest\x1a%.sttattus.user.v1.GetSttattusResponse\x12f\n" +
 	"\x0fListLeaderboard\x12(.sttattus.user.v1.ListLeaderboardRequest\x1a).sttattus.user.v1.ListLeaderboardResponseB:Z8github.com/sttattus/proto/gen/go/sttattus/user/v1;userv1b\x06proto3"
 
@@ -1136,7 +1251,7 @@ func file_sttattus_user_v1_user_proto_rawDescGZIP() []byte {
 	return file_sttattus_user_v1_user_proto_rawDescData
 }
 
-var file_sttattus_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 16)
+var file_sttattus_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
 var file_sttattus_user_v1_user_proto_goTypes = []any{
 	(*UserProfile)(nil),                              // 0: sttattus.user.v1.UserProfile
 	(*AppAccess)(nil),                                // 1: sttattus.user.v1.AppAccess
@@ -1153,35 +1268,41 @@ var file_sttattus_user_v1_user_proto_goTypes = []any{
 	(*GetSttattusResponse)(nil),                      // 12: sttattus.user.v1.GetSttattusResponse
 	(*ListLeaderboardRequest)(nil),                   // 13: sttattus.user.v1.ListLeaderboardRequest
 	(*ListLeaderboardResponse)(nil),                  // 14: sttattus.user.v1.ListLeaderboardResponse
-	(*ListLeaderboardResponse_LeaderboardEntry)(nil), // 15: sttattus.user.v1.ListLeaderboardResponse.LeaderboardEntry
-	(v1.AppCode)(0),                                  // 16: sttattus.auth.v1.AppCode
+	(*AppHeartbeatRequest)(nil),                      // 15: sttattus.user.v1.AppHeartbeatRequest
+	(*AppHeartbeatResponse)(nil),                     // 16: sttattus.user.v1.AppHeartbeatResponse
+	(*ListLeaderboardResponse_LeaderboardEntry)(nil), // 17: sttattus.user.v1.ListLeaderboardResponse.LeaderboardEntry
+	(v1.AppCode)(0),                                  // 18: sttattus.auth.v1.AppCode
 }
 var file_sttattus_user_v1_user_proto_depIdxs = []int32{
-	16, // 0: sttattus.user.v1.AppAccess.app_code:type_name -> sttattus.auth.v1.AppCode
+	18, // 0: sttattus.user.v1.AppAccess.app_code:type_name -> sttattus.auth.v1.AppCode
 	0,  // 1: sttattus.user.v1.GetMeResponse.profile:type_name -> sttattus.user.v1.UserProfile
 	0,  // 2: sttattus.user.v1.UpdateMeResponse.profile:type_name -> sttattus.user.v1.UserProfile
 	1,  // 3: sttattus.user.v1.ListAppAccessResponse.apps:type_name -> sttattus.user.v1.AppAccess
-	16, // 4: sttattus.user.v1.GrantAppRequest.app_code:type_name -> sttattus.auth.v1.AppCode
+	18, // 4: sttattus.user.v1.GrantAppRequest.app_code:type_name -> sttattus.auth.v1.AppCode
 	1,  // 5: sttattus.user.v1.GrantAppResponse.app:type_name -> sttattus.user.v1.AppAccess
 	10, // 6: sttattus.user.v1.GetSttattusResponse.breakdown:type_name -> sttattus.user.v1.SttattusBreakdown
-	15, // 7: sttattus.user.v1.ListLeaderboardResponse.entries:type_name -> sttattus.user.v1.ListLeaderboardResponse.LeaderboardEntry
-	2,  // 8: sttattus.user.v1.UserService.GetMe:input_type -> sttattus.user.v1.GetMeRequest
-	4,  // 9: sttattus.user.v1.UserService.UpdateMe:input_type -> sttattus.user.v1.UpdateMeRequest
-	6,  // 10: sttattus.user.v1.UserService.ListAppAccess:input_type -> sttattus.user.v1.ListAppAccessRequest
-	8,  // 11: sttattus.user.v1.UserService.GrantApp:input_type -> sttattus.user.v1.GrantAppRequest
-	11, // 12: sttattus.user.v1.UserService.GetSttattus:input_type -> sttattus.user.v1.GetSttattusRequest
-	13, // 13: sttattus.user.v1.UserService.ListLeaderboard:input_type -> sttattus.user.v1.ListLeaderboardRequest
-	3,  // 14: sttattus.user.v1.UserService.GetMe:output_type -> sttattus.user.v1.GetMeResponse
-	5,  // 15: sttattus.user.v1.UserService.UpdateMe:output_type -> sttattus.user.v1.UpdateMeResponse
-	7,  // 16: sttattus.user.v1.UserService.ListAppAccess:output_type -> sttattus.user.v1.ListAppAccessResponse
-	9,  // 17: sttattus.user.v1.UserService.GrantApp:output_type -> sttattus.user.v1.GrantAppResponse
-	12, // 18: sttattus.user.v1.UserService.GetSttattus:output_type -> sttattus.user.v1.GetSttattusResponse
-	14, // 19: sttattus.user.v1.UserService.ListLeaderboard:output_type -> sttattus.user.v1.ListLeaderboardResponse
-	14, // [14:20] is the sub-list for method output_type
-	8,  // [8:14] is the sub-list for method input_type
-	8,  // [8:8] is the sub-list for extension type_name
-	8,  // [8:8] is the sub-list for extension extendee
-	0,  // [0:8] is the sub-list for field type_name
+	17, // 7: sttattus.user.v1.ListLeaderboardResponse.entries:type_name -> sttattus.user.v1.ListLeaderboardResponse.LeaderboardEntry
+	18, // 8: sttattus.user.v1.AppHeartbeatRequest.app_code:type_name -> sttattus.auth.v1.AppCode
+	1,  // 9: sttattus.user.v1.AppHeartbeatResponse.app:type_name -> sttattus.user.v1.AppAccess
+	2,  // 10: sttattus.user.v1.UserService.GetMe:input_type -> sttattus.user.v1.GetMeRequest
+	4,  // 11: sttattus.user.v1.UserService.UpdateMe:input_type -> sttattus.user.v1.UpdateMeRequest
+	6,  // 12: sttattus.user.v1.UserService.ListAppAccess:input_type -> sttattus.user.v1.ListAppAccessRequest
+	8,  // 13: sttattus.user.v1.UserService.GrantApp:input_type -> sttattus.user.v1.GrantAppRequest
+	15, // 14: sttattus.user.v1.UserService.AppHeartbeat:input_type -> sttattus.user.v1.AppHeartbeatRequest
+	11, // 15: sttattus.user.v1.UserService.GetSttattus:input_type -> sttattus.user.v1.GetSttattusRequest
+	13, // 16: sttattus.user.v1.UserService.ListLeaderboard:input_type -> sttattus.user.v1.ListLeaderboardRequest
+	3,  // 17: sttattus.user.v1.UserService.GetMe:output_type -> sttattus.user.v1.GetMeResponse
+	5,  // 18: sttattus.user.v1.UserService.UpdateMe:output_type -> sttattus.user.v1.UpdateMeResponse
+	7,  // 19: sttattus.user.v1.UserService.ListAppAccess:output_type -> sttattus.user.v1.ListAppAccessResponse
+	9,  // 20: sttattus.user.v1.UserService.GrantApp:output_type -> sttattus.user.v1.GrantAppResponse
+	16, // 21: sttattus.user.v1.UserService.AppHeartbeat:output_type -> sttattus.user.v1.AppHeartbeatResponse
+	12, // 22: sttattus.user.v1.UserService.GetSttattus:output_type -> sttattus.user.v1.GetSttattusResponse
+	14, // 23: sttattus.user.v1.UserService.ListLeaderboard:output_type -> sttattus.user.v1.ListLeaderboardResponse
+	17, // [17:24] is the sub-list for method output_type
+	10, // [10:17] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_user_v1_user_proto_init() }
@@ -1195,7 +1316,7 @@ func file_sttattus_user_v1_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_user_v1_user_proto_rawDesc), len(file_sttattus_user_v1_user_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   16,
+			NumMessages:   18,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

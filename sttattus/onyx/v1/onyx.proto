@@ -8,10 +8,10 @@ option go_package = "github.com/sttattus/proto/gen/go/sttattus/onyx/v1;onyxv1";
 
 // GatingCriteria defines the status requirements to access content.
 message GatingCriteria {
-  string required_tier = 1;      // e.g., 'gold', 'sovereign'
+  string required_tier = 1; // e.g., 'gold', 'sovereign'
   double min_sttattus_score = 2;
-  double min_vault_rank = 3;     // Verified Wealth requirement
-  double min_apex_rank = 4;      // Verified Biological requirement
+  double min_vault_rank = 3; // Verified Wealth requirement
+  double min_apex_rank = 4; // Verified Biological requirement
 }
 
 // OnyxProfile represents a user's identity within the network.
@@ -20,7 +20,7 @@ message OnyxProfile {
   string stage_name = 2;
   string bio = 3;
   bool is_creator = 4;
-  double min_entry_score = 5;    // Requirement to view this profile
+  double min_entry_score = 5; // Requirement to view this profile
   google.protobuf.Timestamp verified_at = 6;
 }
 
@@ -28,13 +28,13 @@ message OnyxProfile {
 message OnyxContent {
   string id = 1;
   string creator_id = 2;
-  string media_id = 3;           // Link to MediaService asset
+  string media_id = 3; // Link to MediaService asset
   string title = 4;
   string caption = 5;
   GatingCriteria gating = 6;
   int32 price_points = 7;
-  bool is_locked = 8;            // True if the requesting user doesn't meet gating
-  string signed_url = 9;         // Only populated if is_locked is false
+  bool is_locked = 8; // True if the requesting user doesn't meet gating
+  string signed_url = 9; // Only populated if is_locked is false
   google.protobuf.Timestamp created_at = 10;
   google.protobuf.Timestamp expires_at = 11;
 }
@@ -42,7 +42,7 @@ message OnyxContent {
 // Subscription represents an exclusive link between user and creator.
 message Subscription {
   string creator_id = 1;
-  string status = 2;             // 'active', 'expired'
+  string status = 2; // 'active', 'expired'
   google.protobuf.Timestamp granted_at = 3;
   google.protobuf.Timestamp expires_at = 4;
 }
@@ -66,7 +66,7 @@ message GetOnyxProfileResponse {
 }
 
 message ListContentRequest {
-  string creator_id = 1;         // Optional: filter by creator
+  string creator_id = 1; // Optional: filter by creator
 }
 
 message ListContentResponse {

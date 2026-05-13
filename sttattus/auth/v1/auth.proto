@@ -15,6 +15,12 @@ enum AppCode {
   APP_CODE_DATING = 4;
   APP_CODE_EMPIRE = 5;
   APP_CODE_ONYX = 6;
+  APP_CODE_APEX = 7;
+  APP_CODE_VAULT = 8;
+  APP_CODE_DOMINION = 9;
+  APP_CODE_ORACLE = 10;
+  APP_CODE_LEGACY = 11;
+  APP_CODE_ZENITH = 12;
 }
 
 message TokenPair {

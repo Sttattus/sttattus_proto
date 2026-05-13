@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package sttattus.travel.v1;
 
-import "sttattus/common/v1/pagination.proto";
 import "google/protobuf/timestamp.proto";
+import "sttattus/common/v1/pagination.proto";
 
 option go_package = "github.com/sttattus/proto/gen/go/sttattus/travel/v1;travelv1";
 
@@ -12,7 +12,7 @@ message NomadStats {
   int32 exploration_score = 2;
   int32 countries_visited_count = 3;
   string nomad_rank_label = 4; // e.g., 'Voyager'
-  double nomad_rank = 5;       // Normalized 1-100 status signal
+  double nomad_rank = 5; // Normalized 1-100 status signal
   int32 verified_checkins_count = 6;
 }
 
@@ -22,8 +22,8 @@ message Milestone {
   string country_code = 3;
   string city = 4;
   string photo_url = 5;
-  string thumbnail_url = 6; 
-  string accent_color_hex = 7; 
+  string thumbnail_url = 6;
+  string accent_color_hex = 7;
   string story = 8;
   int64 achieved_at = 9;
   bool is_verified = 10;
@@ -45,7 +45,7 @@ message CheckIn {
 
 // REQ/RES
 message ListMilestonesRequest {
-  string user_id = 1; 
+  string user_id = 1;
   sttattus.common.v1.PageRequest page = 2;
 }
 message ListMilestonesResponse {

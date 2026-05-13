@@ -833,3 +833,98 @@ export class ListLeaderboardResponse_LeaderboardEntry extends Message<ListLeader
   }
 }
 
+/**
+ * Heartbeat: the calling app announces it just opened. Idempotent —
+ * bumps app_grants.last_active_at, and creates the row if it didn't
+ * exist (so admins can see "app X is installed" even before the user
+ * performs any feature action).
+ *
+ * @generated from message sttattus.user.v1.AppHeartbeatRequest
+ */
+export class AppHeartbeatRequest extends Message<AppHeartbeatRequest> {
+  /**
+   * @generated from field: sttattus.auth.v1.AppCode app_code = 1;
+   */
+  appCode = AppCode.UNSPECIFIED;
+
+  /**
+   * "ios" | "android" | "web" | "macos" | "windows" | "linux"
+   *
+   * @generated from field: string platform = 2;
+   */
+  platform = "";
+
+  /**
+   * free-form, e.g. "1.0.0+12"
+   *
+   * @generated from field: string version = 3;
+   */
+  version = "";
+
+  constructor(data?: PartialMessage<AppHeartbeatRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.user.v1.AppHeartbeatRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "app_code", kind: "enum", T: proto3.getEnumType(AppCode) },
+    { no: 2, name: "platform", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AppHeartbeatRequest {
+    return new AppHeartbeatRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AppHeartbeatRequest {
+    return new AppHeartbeatRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AppHeartbeatRequest {
+    return new AppHeartbeatRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AppHeartbeatRequest | PlainMessage<AppHeartbeatRequest> | undefined, b: AppHeartbeatRequest | PlainMessage<AppHeartbeatRequest> | undefined): boolean {
+    return proto3.util.equals(AppHeartbeatRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.user.v1.AppHeartbeatResponse
+ */
+export class AppHeartbeatResponse extends Message<AppHeartbeatResponse> {
+  /**
+   * @generated from field: sttattus.user.v1.AppAccess app = 1;
+   */
+  app?: AppAccess;
+
+  constructor(data?: PartialMessage<AppHeartbeatResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.user.v1.AppHeartbeatResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "app", kind: "message", T: AppAccess },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AppHeartbeatResponse {
+    return new AppHeartbeatResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AppHeartbeatResponse {
+    return new AppHeartbeatResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AppHeartbeatResponse {
+    return new AppHeartbeatResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AppHeartbeatResponse | PlainMessage<AppHeartbeatResponse> | undefined, b: AppHeartbeatResponse | PlainMessage<AppHeartbeatResponse> | undefined): boolean {
+    return proto3.util.equals(AppHeartbeatResponse, a, b);
+  }
+}
+

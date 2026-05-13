@@ -48,6 +48,10 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$grantApp, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.AppHeartbeatResponse> appHeartbeat($0.AppHeartbeatRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$appHeartbeat, request, options: options);
+  }
+
   /// Empire Sttattus RPCs
   $grpc.ResponseFuture<$0.GetSttattusResponse> getSttattus($0.GetSttattusRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$getSttattus, request, options: options);
@@ -75,6 +79,10 @@ class UserServiceClient extends $grpc.Client {
       '/sttattus.user.v1.UserService/GrantApp',
       ($0.GrantAppRequest value) => value.writeToBuffer(),
       $0.GrantAppResponse.fromBuffer);
+  static final _$appHeartbeat = $grpc.ClientMethod<$0.AppHeartbeatRequest, $0.AppHeartbeatResponse>(
+      '/sttattus.user.v1.UserService/AppHeartbeat',
+      ($0.AppHeartbeatRequest value) => value.writeToBuffer(),
+      $0.AppHeartbeatResponse.fromBuffer);
   static final _$getSttattus = $grpc.ClientMethod<$0.GetSttattusRequest, $0.GetSttattusResponse>(
       '/sttattus.user.v1.UserService/GetSttattus',
       ($0.GetSttattusRequest value) => value.writeToBuffer(),
@@ -118,6 +126,13 @@ abstract class UserServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GrantAppRequest.fromBuffer(value),
         ($0.GrantAppResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AppHeartbeatRequest, $0.AppHeartbeatResponse>(
+        'AppHeartbeat',
+        appHeartbeat_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.AppHeartbeatRequest.fromBuffer(value),
+        ($0.AppHeartbeatResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetSttattusRequest, $0.GetSttattusResponse>(
         'GetSttattus',
         getSttattus_Pre,
@@ -157,6 +172,12 @@ abstract class UserServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GrantAppResponse> grantApp($grpc.ServiceCall call, $0.GrantAppRequest request);
+
+  $async.Future<$0.AppHeartbeatResponse> appHeartbeat_Pre($grpc.ServiceCall $call, $async.Future<$0.AppHeartbeatRequest> $request) async {
+    return appHeartbeat($call, await $request);
+  }
+
+  $async.Future<$0.AppHeartbeatResponse> appHeartbeat($grpc.ServiceCall call, $0.AppHeartbeatRequest request);
 
   $async.Future<$0.GetSttattusResponse> getSttattus_Pre($grpc.ServiceCall $call, $async.Future<$0.GetSttattusRequest> $request) async {
     return getSttattus($call, await $request);

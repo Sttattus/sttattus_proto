@@ -769,7 +769,7 @@ var File_sttattus_travel_v1_travel_proto protoreflect.FileDescriptor
 
 const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	"\n" +
-	"\x1fsttattus/travel/v1/travel.proto\x12\x12sttattus.travel.v1\x1a#sttattus/common/v1/pagination.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8b\x02\n" +
+	"\x1fsttattus/travel/v1/travel.proto\x12\x12sttattus.travel.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a#sttattus/common/v1/pagination.proto\"\x8b\x02\n" +
 	"\n" +
 	"NomadStats\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12+\n" +

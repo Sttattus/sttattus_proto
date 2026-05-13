@@ -10,8 +10,8 @@ option go_package = "github.com/sttattus/proto/gen/go/sttattus/legacy/v1;legacyv
 enum AssetCategory {
   ASSET_CATEGORY_UNSPECIFIED = 0;
   ASSET_CATEGORY_INTELLECTUAL_PROPERTY = 1; // Patents, Trademarks, Copyrights
-  ASSET_CATEGORY_CORPORATE_GOVERNANCE = 2;   // Board seats, Executive roles
-  ASSET_CATEGORY_ESTATE_PLANNING = 3;       // Trusts, Wills, Foundations
+  ASSET_CATEGORY_CORPORATE_GOVERNANCE = 2; // Board seats, Executive roles
+  ASSET_CATEGORY_ESTATE_PLANNING = 3; // Trusts, Wills, Foundations
   ASSET_CATEGORY_HIGH_STAKES_CONTRACTS = 4; // NDAs, Major Service Agreements
 }
 
@@ -27,8 +27,8 @@ message LegalAsset {
   string id = 1;
   string title = 2;
   AssetCategory category = 3;
-  double valuation_usd = 4;        // Strategic or IP valuation
-  string jurisdiction = 5;         // e.g., 'DE', 'CH', 'SG'
+  double valuation_usd = 4; // Strategic or IP valuation
+  string jurisdiction = 5; // e.g., 'DE', 'CH', 'SG'
   VerificationStatus status = 6;
   string content_hash = 7;
   google.protobuf.Timestamp filed_at = 8;
@@ -37,8 +37,8 @@ message LegalAsset {
 
 message HeritageStats {
   string user_id = 1;
-  double influence_rank = 2;       // 1-100 normalized
-  string rank_label = 3;           // e.g., 'Notary', 'Magistrate', 'Sovereign Legator'
+  double influence_rank = 2; // 1-100 normalized
+  string rank_label = 3; // e.g., 'Notary', 'Magistrate', 'Sovereign Legator'
   int32 verified_assets_count = 4;
   double total_ip_valuation = 5;
 }

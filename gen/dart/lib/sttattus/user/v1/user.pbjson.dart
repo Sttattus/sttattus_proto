@@ -268,3 +268,32 @@ final $typed_data.Uint8List listLeaderboardResponseDescriptor = $convert.base64D
     'GAQgASgFUgpnbG9iYWxSYW5rEhIKBHRpZXIYBSABKAlSBHRpZXISHQoKYXVyYV9jb2xvchgGIA'
     'EoCVIJYXVyYUNvbG9y');
 
+@$core.Deprecated('Use appHeartbeatRequestDescriptor instead')
+const AppHeartbeatRequest$json = {
+  '1': 'AppHeartbeatRequest',
+  '2': [
+    {'1': 'app_code', '3': 1, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'appCode'},
+    {'1': 'platform', '3': 2, '4': 1, '5': 9, '10': 'platform'},
+    {'1': 'version', '3': 3, '4': 1, '5': 9, '10': 'version'},
+  ],
+};
+
+/// Descriptor for `AppHeartbeatRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List appHeartbeatRequestDescriptor = $convert.base64Decode(
+    'ChNBcHBIZWFydGJlYXRSZXF1ZXN0EjQKCGFwcF9jb2RlGAEgASgOMhkuc3R0YXR0dXMuYXV0aC'
+    '52MS5BcHBDb2RlUgdhcHBDb2RlEhoKCHBsYXRmb3JtGAIgASgJUghwbGF0Zm9ybRIYCgd2ZXJz'
+    'aW9uGAMgASgJUgd2ZXJzaW9u');
+
+@$core.Deprecated('Use appHeartbeatResponseDescriptor instead')
+const AppHeartbeatResponse$json = {
+  '1': 'AppHeartbeatResponse',
+  '2': [
+    {'1': 'app', '3': 1, '4': 1, '5': 11, '6': '.sttattus.user.v1.AppAccess', '10': 'app'},
+  ],
+};
+
+/// Descriptor for `AppHeartbeatResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List appHeartbeatResponseDescriptor = $convert.base64Decode(
+    'ChRBcHBIZWFydGJlYXRSZXNwb25zZRItCgNhcHAYASABKAsyGy5zdHRhdHR1cy51c2VyLnYxLk'
+    'FwcEFjY2Vzc1IDYXBw');
+

@@ -2,18 +2,18 @@ syntax = "proto3";
 
 package sttattus.languages.v1;
 
-import "sttattus/common/v1/pagination.proto";
 import "google/protobuf/timestamp.proto";
+import "sttattus/common/v1/pagination.proto";
 
 option go_package = "github.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1";
 
 // CulturalCategory defines the elite domain of knowledge.
 enum CulturalCategory {
   CULTURAL_CATEGORY_UNSPECIFIED = 0;
-  CULTURAL_CATEGORY_DIPLOMACY = 1;     // International relations, etiquette
+  CULTURAL_CATEGORY_DIPLOMACY = 1; // International relations, etiquette
   CULTURAL_CATEGORY_LUXURY_ASSETS = 2; // Art, Watches, Real Estate
-  CULTURAL_CATEGORY_GASTRONOMY = 3;    // Wine, Fine Dining
-  CULTURAL_CATEGORY_PHILANTHROPY = 4;  // Foundations, Social Impact
+  CULTURAL_CATEGORY_GASTRONOMY = 3; // Wine, Fine Dining
+  CULTURAL_CATEGORY_PHILANTHROPY = 4; // Foundations, Social Impact
 }
 
 // CulturalNuance represents a specific rule of social grace or etiquette.
@@ -30,42 +30,42 @@ message Scenario {
   string title = 2;
   string context_description = 3;
   CulturalCategory category = 4;
-  string locale = 5;               // e.g., 'fr', 'jp'
+  string locale = 5; // e.g., 'fr', 'jp'
   repeated DialogueNode nodes = 6;
-  double min_sttattus_score = 7;   // Gating requirement
+  double min_sttattus_score = 7; // Gating requirement
 }
 
 // DialogueNode is a single step in a social interaction script.
 message DialogueNode {
   string id = 1;
   string speaker = 2;
-  string content = 3;              // The specific linguistic phrasing
+  string content = 3; // The specific linguistic phrasing
   string literal_translation = 4;
-  string cultural_insight = 5;     // Explanation of WHY this phrasing is high-status
+  string cultural_insight = 5; // Explanation of WHY this phrasing is high-status
   repeated DialogueOption options = 6;
 }
 
 message DialogueOption {
   string id = 1;
   string content = 2;
-  bool is_optimal = 3;             // The "Socially Gracious" path
+  bool is_optimal = 3; // The "Socially Gracious" path
   int32 grace_bonus = 4;
 }
 
 message Progress {
   string user_id = 1;
   string scenario_id = 2;
-  int32 mastery_level = 3;         // 1-100
+  int32 mastery_level = 3; // 1-100
   int32 cultural_capital_gain = 4;
   google.protobuf.Timestamp last_refined_at = 5;
 }
 
 message LinguistStats {
   string user_id = 1;
-  int32 eloquence = 2;             // Vocabulary & Precision
-  int32 social_grace = 3;          // Interaction & Etiquette
-  int32 cultural_capital = 4;      // Aggregated "Soft Status"
-  string mastery_rank = 5;         // e.g., 'Diplomat', 'Sovereign Orator'
+  int32 eloquence = 2; // Vocabulary & Precision
+  int32 social_grace = 3; // Interaction & Etiquette
+  int32 cultural_capital = 4; // Aggregated "Soft Status"
+  string mastery_rank = 5; // e.g., 'Diplomat', 'Sovereign Orator'
 }
 
 // REQ/RES
@@ -98,7 +98,7 @@ service LanguagesService {
   // The Protocol: Scenario-based learning
   rpc ListScenarios(ListScenariosRequest) returns (ListScenariosResponse);
   rpc CompleteInteraction(CompleteInteractionRequest) returns (CompleteInteractionResponse);
-  
+
   // Status
   rpc GetLinguistStats(GetLinguistStatsRequest) returns (GetLinguistStatsResponse);
 

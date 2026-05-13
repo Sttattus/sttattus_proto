@@ -7,7 +7,7 @@ option go_package = "github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1"
 service VaultSyncService {
   // Verifies an EVM or Solana signature against a challenge.
   rpc VerifySignature(VerifySignatureRequest) returns (VerifySignatureResponse);
-  
+
   // Fetches the total USD value of a wallet across all supported chains via Moralis.
   rpc GetWalletValue(GetWalletValueRequest) returns (GetWalletValueResponse);
 }

@@ -25,6 +25,12 @@ class AppCode extends $pb.ProtobufEnum {
   static const AppCode APP_CODE_DATING = AppCode._(4, _omitEnumNames ? '' : 'APP_CODE_DATING');
   static const AppCode APP_CODE_EMPIRE = AppCode._(5, _omitEnumNames ? '' : 'APP_CODE_EMPIRE');
   static const AppCode APP_CODE_ONYX = AppCode._(6, _omitEnumNames ? '' : 'APP_CODE_ONYX');
+  static const AppCode APP_CODE_APEX = AppCode._(7, _omitEnumNames ? '' : 'APP_CODE_APEX');
+  static const AppCode APP_CODE_VAULT = AppCode._(8, _omitEnumNames ? '' : 'APP_CODE_VAULT');
+  static const AppCode APP_CODE_DOMINION = AppCode._(9, _omitEnumNames ? '' : 'APP_CODE_DOMINION');
+  static const AppCode APP_CODE_ORACLE = AppCode._(10, _omitEnumNames ? '' : 'APP_CODE_ORACLE');
+  static const AppCode APP_CODE_LEGACY = AppCode._(11, _omitEnumNames ? '' : 'APP_CODE_LEGACY');
+  static const AppCode APP_CODE_ZENITH = AppCode._(12, _omitEnumNames ? '' : 'APP_CODE_ZENITH');
 
   static const $core.List<AppCode> values = <AppCode> [
     APP_CODE_UNSPECIFIED,
@@ -34,9 +40,15 @@ class AppCode extends $pb.ProtobufEnum {
     APP_CODE_DATING,
     APP_CODE_EMPIRE,
     APP_CODE_ONYX,
+    APP_CODE_APEX,
+    APP_CODE_VAULT,
+    APP_CODE_DOMINION,
+    APP_CODE_ORACLE,
+    APP_CODE_LEGACY,
+    APP_CODE_ZENITH,
   ];
 
-  static final $core.List<AppCode?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 6);
+  static final $core.List<AppCode?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 12);
   static AppCode? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
   const AppCode._(super.value, super.name);

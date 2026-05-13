@@ -17,7 +17,7 @@ message CalculateBioRankRequest {
 }
 
 message CalculateBioRankResponse {
-  double bio_rank = 1;        // 1-100 normalized status signal
-  double biological_age = 2;   // Calculated epigenetic/phenotypic age
+  double bio_rank = 1; // 1-100 normalized status signal
+  double biological_age = 2; // Calculated epigenetic/phenotypic age
   map<string, double> system_scores = 3; // e.g., "cardiovascular": 85.0, "metabolic": 92.0
 }

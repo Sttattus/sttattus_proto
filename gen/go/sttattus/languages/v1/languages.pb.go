@@ -996,7 +996,7 @@ var File_sttattus_languages_v1_languages_proto protoreflect.FileDescriptor
 
 const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\n" +
-	"%sttattus/languages/v1/languages.proto\x12\x15sttattus.languages.v1\x1a#sttattus/common/v1/pagination.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"}\n" +
+	"%sttattus/languages/v1/languages.proto\x12\x15sttattus.languages.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a#sttattus/common/v1/pagination.proto\"}\n" +
 	"\x0eCulturalNuance\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12 \n" +

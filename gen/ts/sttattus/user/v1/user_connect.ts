@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetMeRequest, GetMeResponse, GetSttattusRequest, GetSttattusResponse, GrantAppRequest, GrantAppResponse, ListAppAccessRequest, ListAppAccessResponse, ListLeaderboardRequest, ListLeaderboardResponse, UpdateMeRequest, UpdateMeResponse } from "./user_pb.js";
+import { AppHeartbeatRequest, AppHeartbeatResponse, GetMeRequest, GetMeResponse, GetSttattusRequest, GetSttattusResponse, GrantAppRequest, GrantAppResponse, ListAppAccessRequest, ListAppAccessResponse, ListLeaderboardRequest, ListLeaderboardResponse, UpdateMeRequest, UpdateMeResponse } from "./user_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -46,6 +46,15 @@ export const UserService = {
       name: "GrantApp",
       I: GrantAppRequest,
       O: GrantAppResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.user.v1.UserService.AppHeartbeat
+     */
+    appHeartbeat: {
+      name: "AppHeartbeat",
+      I: AppHeartbeatRequest,
+      O: AppHeartbeatResponse,
       kind: MethodKind.Unary,
     },
     /**

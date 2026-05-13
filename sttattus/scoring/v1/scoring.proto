@@ -47,7 +47,7 @@ message ScoreLexicalProgressResponse {
 message ScoreMatchRequest {
   string swiper_user_id = 1;
   string target_user_id = 2;
-  
+
   // Swiper 12-Factor Profile
   double swiper_vault_rank = 3;
   double swiper_apex_rank = 4;
@@ -125,7 +125,7 @@ message ScoreForgeResponse {
 message ScoreCognitiveMasteryRequest {
   string user_id = 1;
   string scenario_id = 2;
-  int32 response_time_ms = 3;   // Speed of decision indicates mastery
+  int32 response_time_ms = 3; // Speed of decision indicates mastery
   bool was_optimal = 4;
   int32 session_duration_sec = 5;
   double current_eloquence = 6;
@@ -133,7 +133,7 @@ message ScoreCognitiveMasteryRequest {
 
 message ScoreCognitiveMasteryResponse {
   int32 cognitive_load_index = 1; // 1-100
-  int32 next_review_days = 2;     // Calculated SRS interval
+  int32 next_review_days = 2; // Calculated SRS interval
   double eloquence_delta = 3;
 }
 
@@ -216,7 +216,7 @@ service ScoringService {
   rpc ScoreLegacy(ScoreLegacyRequest) returns (ScoreLegacyResponse);
   rpc ScoreDominion(ScoreDominionRequest) returns (ScoreDominionResponse);
   rpc ScoreMatch(ScoreMatchRequest) returns (ScoreMatchResponse);
-  
+
   // High-Stakes Monolith Logic (Rust Offloaded)
   rpc ScoreEmpire(ScoreEmpireRequest) returns (ScoreEmpireResponse);
   rpc ApplyDecay(ApplyDecayRequest) returns (ApplyDecayResponse);

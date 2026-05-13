@@ -44,7 +44,7 @@ message DayWorkout {
   string notes = 5;
   repeated Series series = 6;
   StrainMetrics strain = 7;
-  bool is_verified = 8;      // True if backed by sensor data
+  bool is_verified = 8; // True if backed by sensor data
 }
 
 message ForgeStats {
@@ -53,8 +53,8 @@ message ForgeStats {
   int32 agility = 3;
   int32 grit = 4;
   int64 experience = 5;
-  string rank = 6;           // Text label (e.g., 'Mythic')
-  double forge_rank = 7;     // Normalized 1-100 status signal
+  string rank = 6; // Text label (e.g., 'Mythic')
+  double forge_rank = 7; // Normalized 1-100 status signal
 }
 
 // ===== Workouts =====

@@ -15,7 +15,7 @@ message UserProfile {
   int64 created_at = 6; // unix seconds
   int64 last_login_at = 7; // unix seconds, 0 if never
   bool banned = 8;
-  
+
   // Empire Sttattus Fields
   double sttattus_score = 9;
   int32 global_rank = 10;
@@ -100,11 +100,25 @@ message ListLeaderboardResponse {
   repeated LeaderboardEntry entries = 1;
 }
 
+// Heartbeat: the calling app announces it just opened. Idempotent —
+// bumps app_grants.last_active_at, and creates the row if it didn't
+// exist (so admins can see "app X is installed" even before the user
+// performs any feature action).
+message AppHeartbeatRequest {
+  sttattus.auth.v1.AppCode app_code = 1;
+  string platform = 2; // "ios" | "android" | "web" | "macos" | "windows" | "linux"
+  string version = 3; // free-form, e.g. "1.0.0+12"
+}
+message AppHeartbeatResponse {
+  AppAccess app = 1;
+}
+
 service UserService {
   rpc GetMe(GetMeRequest) returns (GetMeResponse);
   rpc UpdateMe(UpdateMeRequest) returns (UpdateMeResponse);
   rpc ListAppAccess(ListAppAccessRequest) returns (ListAppAccessResponse);
   rpc GrantApp(GrantAppRequest) returns (GrantAppResponse);
+  rpc AppHeartbeat(AppHeartbeatRequest) returns (AppHeartbeatResponse);
 
   // Empire Sttattus RPCs
   rpc GetSttattus(GetSttattusRequest) returns (GetSttattusResponse);

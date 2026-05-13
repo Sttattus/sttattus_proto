@@ -28,7 +28,7 @@ message Property {
   string name = 2;
   string location_lat_lng = 3;
   string city = 4;
-  string region_code = 5;       // e.g., 'FR', 'AE', 'US-NY'
+  string region_code = 5; // e.g., 'FR', 'AE', 'US-NY'
   EstateCategory category = 6;
   double valuation_usd = 7;
   VerificationStatus status = 8;
@@ -37,8 +37,8 @@ message Property {
 
 message DominionStats {
   string user_id = 1;
-  double dominion_rank = 2;     // 1-100 normalized
-  string rank_label = 3;         // e.g., 'Landlord', 'Governor', 'Territorial Sovereign'
+  double dominion_rank = 2; // 1-100 normalized
+  string rank_label = 3; // e.g., 'Landlord', 'Governor', 'Territorial Sovereign'
   int32 verified_properties_count = 4;
   double total_portfolio_value = 5;
 }

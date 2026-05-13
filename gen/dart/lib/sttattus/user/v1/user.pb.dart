@@ -1188,6 +1188,128 @@ class ListLeaderboardResponse extends $pb.GeneratedMessage {
   $pb.PbList<ListLeaderboardResponse_LeaderboardEntry> get entries => $_getList(0);
 }
 
+/// Heartbeat: the calling app announces it just opened. Idempotent —
+/// bumps app_grants.last_active_at, and creates the row if it didn't
+/// exist (so admins can see "app X is installed" even before the user
+/// performs any feature action).
+class AppHeartbeatRequest extends $pb.GeneratedMessage {
+  factory AppHeartbeatRequest({
+    $1.AppCode? appCode,
+    $core.String? platform,
+    $core.String? version,
+  }) {
+    final result = create();
+    if (appCode != null) result.appCode = appCode;
+    if (platform != null) result.platform = platform;
+    if (version != null) result.version = version;
+    return result;
+  }
+
+  AppHeartbeatRequest._();
+
+  factory AppHeartbeatRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AppHeartbeatRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppHeartbeatRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.user.v1'), createEmptyInstance: create)
+    ..e<$1.AppCode>(1, _omitFieldNames ? '' : 'appCode', $pb.PbFieldType.OE, defaultOrMaker: $1.AppCode.APP_CODE_UNSPECIFIED, valueOf: $1.AppCode.valueOf, enumValues: $1.AppCode.values)
+    ..aOS(2, _omitFieldNames ? '' : 'platform')
+    ..aOS(3, _omitFieldNames ? '' : 'version')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AppHeartbeatRequest clone() => AppHeartbeatRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AppHeartbeatRequest copyWith(void Function(AppHeartbeatRequest) updates) => super.copyWith((message) => updates(message as AppHeartbeatRequest)) as AppHeartbeatRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AppHeartbeatRequest create() => AppHeartbeatRequest._();
+  @$core.override
+  AppHeartbeatRequest createEmptyInstance() => create();
+  static $pb.PbList<AppHeartbeatRequest> createRepeated() => $pb.PbList<AppHeartbeatRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AppHeartbeatRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppHeartbeatRequest>(create);
+  static AppHeartbeatRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.AppCode get appCode => $_getN(0);
+  @$pb.TagNumber(1)
+  set appCode($1.AppCode value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAppCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get platform => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set platform($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPlatform() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPlatform() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get version => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set version($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVersion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVersion() => $_clearField(3);
+}
+
+class AppHeartbeatResponse extends $pb.GeneratedMessage {
+  factory AppHeartbeatResponse({
+    AppAccess? app,
+  }) {
+    final result = create();
+    if (app != null) result.app = app;
+    return result;
+  }
+
+  AppHeartbeatResponse._();
+
+  factory AppHeartbeatResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AppHeartbeatResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppHeartbeatResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.user.v1'), createEmptyInstance: create)
+    ..aOM<AppAccess>(1, _omitFieldNames ? '' : 'app', subBuilder: AppAccess.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AppHeartbeatResponse clone() => AppHeartbeatResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AppHeartbeatResponse copyWith(void Function(AppHeartbeatResponse) updates) => super.copyWith((message) => updates(message as AppHeartbeatResponse)) as AppHeartbeatResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AppHeartbeatResponse create() => AppHeartbeatResponse._();
+  @$core.override
+  AppHeartbeatResponse createEmptyInstance() => create();
+  static $pb.PbList<AppHeartbeatResponse> createRepeated() => $pb.PbList<AppHeartbeatResponse>();
+  @$core.pragma('dart2js:noInline')
+  static AppHeartbeatResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppHeartbeatResponse>(create);
+  static AppHeartbeatResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AppAccess get app => $_getN(0);
+  @$pb.TagNumber(1)
+  set app(AppAccess value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasApp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearApp() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AppAccess ensureApp() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
