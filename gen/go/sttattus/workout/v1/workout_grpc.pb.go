@@ -34,6 +34,7 @@ const (
 	WorkoutService_ListSessions_FullMethodName        = "/sttattus.workout.v1.WorkoutService/ListSessions"
 	WorkoutService_UpdateSessionStatus_FullMethodName = "/sttattus.workout.v1.WorkoutService/UpdateSessionStatus"
 	WorkoutService_LogSet_FullMethodName              = "/sttattus.workout.v1.WorkoutService/LogSet"
+	WorkoutService_GetForgeStreak_FullMethodName      = "/sttattus.workout.v1.WorkoutService/GetForgeStreak"
 )
 
 // WorkoutServiceClient is the client API for WorkoutService service.
@@ -58,6 +59,10 @@ type WorkoutServiceClient interface {
 	ListSessions(ctx context.Context, in *ListSessionsRequest, opts ...grpc.CallOption) (*ListSessionsResponse, error)
 	UpdateSessionStatus(ctx context.Context, in *UpdateSessionStatusRequest, opts ...grpc.CallOption) (*UpdateSessionStatusResponse, error)
 	LogSet(ctx context.Context, in *LogSetRequest, opts ...grpc.CallOption) (*LogSetResponse, error)
+	// F7.5 — streak ledger with weekly grace day. The Today snapshot
+	// already embeds the streak; this RPC is for a dedicated detail
+	// surface and for forced refresh after session completion.
+	GetForgeStreak(ctx context.Context, in *GetForgeStreakRequest, opts ...grpc.CallOption) (*GetForgeStreakResponse, error)
 }
 
 type workoutServiceClient struct {
@@ -218,6 +223,16 @@ func (c *workoutServiceClient) LogSet(ctx context.Context, in *LogSetRequest, op
 	return out, nil
 }
 
+func (c *workoutServiceClient) GetForgeStreak(ctx context.Context, in *GetForgeStreakRequest, opts ...grpc.CallOption) (*GetForgeStreakResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetForgeStreakResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetForgeStreak_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WorkoutServiceServer is the server API for WorkoutService service.
 // All implementations must embed UnimplementedWorkoutServiceServer
 // for forward compatibility.
@@ -240,6 +255,10 @@ type WorkoutServiceServer interface {
 	ListSessions(context.Context, *ListSessionsRequest) (*ListSessionsResponse, error)
 	UpdateSessionStatus(context.Context, *UpdateSessionStatusRequest) (*UpdateSessionStatusResponse, error)
 	LogSet(context.Context, *LogSetRequest) (*LogSetResponse, error)
+	// F7.5 — streak ledger with weekly grace day. The Today snapshot
+	// already embeds the streak; this RPC is for a dedicated detail
+	// surface and for forced refresh after session completion.
+	GetForgeStreak(context.Context, *GetForgeStreakRequest) (*GetForgeStreakResponse, error)
 	mustEmbedUnimplementedWorkoutServiceServer()
 }
 
@@ -294,6 +313,9 @@ func (UnimplementedWorkoutServiceServer) UpdateSessionStatus(context.Context, *U
 }
 func (UnimplementedWorkoutServiceServer) LogSet(context.Context, *LogSetRequest) (*LogSetResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method LogSet not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetForgeStreak(context.Context, *GetForgeStreakRequest) (*GetForgeStreakResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetForgeStreak not implemented")
 }
 func (UnimplementedWorkoutServiceServer) mustEmbedUnimplementedWorkoutServiceServer() {}
 func (UnimplementedWorkoutServiceServer) testEmbeddedByValue()                        {}
@@ -586,6 +608,24 @@ func _WorkoutService_LogSet_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WorkoutService_GetForgeStreak_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetForgeStreakRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetForgeStreak(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetForgeStreak_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetForgeStreak(ctx, req.(*GetForgeStreakRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // WorkoutService_ServiceDesc is the grpc.ServiceDesc for WorkoutService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -652,6 +692,10 @@ var WorkoutService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "LogSet",
 			Handler:    _WorkoutService_LogSet_Handler,
+		},
+		{
+			MethodName: "GetForgeStreak",
+			Handler:    _WorkoutService_GetForgeStreak_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

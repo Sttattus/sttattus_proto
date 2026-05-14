@@ -2978,7 +2978,8 @@ class GetRankLadderResponse extends $pb.GeneratedMessage {
 }
 
 /// TodaySnapshot is everything the redesigned Today screen renders:
-/// a readiness ring, the session in focus, and the rank delta.
+/// a readiness ring, the session in focus, the rank delta, and the
+/// daily streak (F7.5).
 class TodaySnapshot extends $pb.GeneratedMessage {
   factory TodaySnapshot({
     $core.int? readiness,
@@ -2987,6 +2988,7 @@ class TodaySnapshot extends $pb.GeneratedMessage {
     $core.double? forgeRank,
     $core.String? rankLabel,
     $core.double? rankDelta7d,
+    ForgeStreak? streak,
   }) {
     final result = create();
     if (readiness != null) result.readiness = readiness;
@@ -2995,6 +2997,7 @@ class TodaySnapshot extends $pb.GeneratedMessage {
     if (forgeRank != null) result.forgeRank = forgeRank;
     if (rankLabel != null) result.rankLabel = rankLabel;
     if (rankDelta7d != null) result.rankDelta7d = rankDelta7d;
+    if (streak != null) result.streak = streak;
     return result;
   }
 
@@ -3010,6 +3013,7 @@ class TodaySnapshot extends $pb.GeneratedMessage {
     ..a<$core.double>(4, _omitFieldNames ? '' : 'forgeRank', $pb.PbFieldType.OD)
     ..aOS(5, _omitFieldNames ? '' : 'rankLabel')
     ..a<$core.double>(6, _omitFieldNames ? '' : 'rankDelta7d', $pb.PbFieldType.OD, protoName: 'rank_delta_7d')
+    ..aOM<ForgeStreak>(7, _omitFieldNames ? '' : 'streak', subBuilder: ForgeStreak.create)
     ..hasRequiredFields = false
   ;
 
@@ -3092,6 +3096,20 @@ class TodaySnapshot extends $pb.GeneratedMessage {
   $core.bool hasRankDelta7d() => $_has(5);
   @$pb.TagNumber(6)
   void clearRankDelta7d() => $_clearField(6);
+
+  /// The lifter's training-day streak (F7.5). Always populated; a
+  /// zero current_streak with empty last_trained_date_iso means "no
+  /// history yet."
+  @$pb.TagNumber(7)
+  ForgeStreak get streak => $_getN(6);
+  @$pb.TagNumber(7)
+  set streak(ForgeStreak value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasStreak() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStreak() => $_clearField(7);
+  @$pb.TagNumber(7)
+  ForgeStreak ensureStreak() => $_ensure(6);
 }
 
 class GetTodayRequest extends $pb.GeneratedMessage {
@@ -3170,6 +3188,189 @@ class GetTodayResponse extends $pb.GeneratedMessage {
   void clearToday() => $_clearField(1);
   @$pb.TagNumber(1)
   TodaySnapshot ensureToday() => $_ensure(0);
+}
+
+/// ForgeStreak is the lifter's training-day streak with a weekly
+/// grace day. A streak counts consecutive calendar days with a
+/// completed session, but a single missed day per ISO-week may be
+/// "graced" so the streak survives one slip — honest streaks beat
+/// brittle ones, per the audit's daily-open mechanic.
+class ForgeStreak extends $pb.GeneratedMessage {
+  factory ForgeStreak({
+    $core.int? currentStreak,
+    $core.int? longestStreak,
+    $core.String? lastTrainedDateIso,
+    $core.bool? graceUsedThisWeek,
+    $core.String? weekAnchorIso,
+  }) {
+    final result = create();
+    if (currentStreak != null) result.currentStreak = currentStreak;
+    if (longestStreak != null) result.longestStreak = longestStreak;
+    if (lastTrainedDateIso != null) result.lastTrainedDateIso = lastTrainedDateIso;
+    if (graceUsedThisWeek != null) result.graceUsedThisWeek = graceUsedThisWeek;
+    if (weekAnchorIso != null) result.weekAnchorIso = weekAnchorIso;
+    return result;
+  }
+
+  ForgeStreak._();
+
+  factory ForgeStreak.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ForgeStreak.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ForgeStreak', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'currentStreak', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'longestStreak', $pb.PbFieldType.O3)
+    ..aOS(3, _omitFieldNames ? '' : 'lastTrainedDateIso')
+    ..aOB(4, _omitFieldNames ? '' : 'graceUsedThisWeek')
+    ..aOS(5, _omitFieldNames ? '' : 'weekAnchorIso')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ForgeStreak clone() => ForgeStreak()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ForgeStreak copyWith(void Function(ForgeStreak) updates) => super.copyWith((message) => updates(message as ForgeStreak)) as ForgeStreak;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ForgeStreak create() => ForgeStreak._();
+  @$core.override
+  ForgeStreak createEmptyInstance() => create();
+  static $pb.PbList<ForgeStreak> createRepeated() => $pb.PbList<ForgeStreak>();
+  @$core.pragma('dart2js:noInline')
+  static ForgeStreak getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ForgeStreak>(create);
+  static ForgeStreak? _defaultInstance;
+
+  /// Consecutive days currently held.
+  @$pb.TagNumber(1)
+  $core.int get currentStreak => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set currentStreak($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCurrentStreak() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCurrentStreak() => $_clearField(1);
+
+  /// All-time best.
+  @$pb.TagNumber(2)
+  $core.int get longestStreak => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set longestStreak($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLongestStreak() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLongestStreak() => $_clearField(2);
+
+  /// YYYY-MM-DD UTC, empty when no session has ever been completed.
+  @$pb.TagNumber(3)
+  $core.String get lastTrainedDateIso => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set lastTrainedDateIso($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLastTrainedDateIso() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLastTrainedDateIso() => $_clearField(3);
+
+  /// True once the grace day has been spent this ISO-week.
+  @$pb.TagNumber(4)
+  $core.bool get graceUsedThisWeek => $_getBF(3);
+  @$pb.TagNumber(4)
+  set graceUsedThisWeek($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGraceUsedThisWeek() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGraceUsedThisWeek() => $_clearField(4);
+
+  /// YYYY-MM-DD UTC of the Monday this week's grace allowance is
+  /// anchored to. Empty when never set.
+  @$pb.TagNumber(5)
+  $core.String get weekAnchorIso => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set weekAnchorIso($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWeekAnchorIso() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWeekAnchorIso() => $_clearField(5);
+}
+
+class GetForgeStreakRequest extends $pb.GeneratedMessage {
+  factory GetForgeStreakRequest() => create();
+
+  GetForgeStreakRequest._();
+
+  factory GetForgeStreakRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetForgeStreakRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetForgeStreakRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForgeStreakRequest clone() => GetForgeStreakRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForgeStreakRequest copyWith(void Function(GetForgeStreakRequest) updates) => super.copyWith((message) => updates(message as GetForgeStreakRequest)) as GetForgeStreakRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetForgeStreakRequest create() => GetForgeStreakRequest._();
+  @$core.override
+  GetForgeStreakRequest createEmptyInstance() => create();
+  static $pb.PbList<GetForgeStreakRequest> createRepeated() => $pb.PbList<GetForgeStreakRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetForgeStreakRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetForgeStreakRequest>(create);
+  static GetForgeStreakRequest? _defaultInstance;
+}
+
+class GetForgeStreakResponse extends $pb.GeneratedMessage {
+  factory GetForgeStreakResponse({
+    ForgeStreak? streak,
+  }) {
+    final result = create();
+    if (streak != null) result.streak = streak;
+    return result;
+  }
+
+  GetForgeStreakResponse._();
+
+  factory GetForgeStreakResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetForgeStreakResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetForgeStreakResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<ForgeStreak>(1, _omitFieldNames ? '' : 'streak', subBuilder: ForgeStreak.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForgeStreakResponse clone() => GetForgeStreakResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForgeStreakResponse copyWith(void Function(GetForgeStreakResponse) updates) => super.copyWith((message) => updates(message as GetForgeStreakResponse)) as GetForgeStreakResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetForgeStreakResponse create() => GetForgeStreakResponse._();
+  @$core.override
+  GetForgeStreakResponse createEmptyInstance() => create();
+  static $pb.PbList<GetForgeStreakResponse> createRepeated() => $pb.PbList<GetForgeStreakResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetForgeStreakResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetForgeStreakResponse>(create);
+  static GetForgeStreakResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ForgeStreak get streak => $_getN(0);
+  @$pb.TagNumber(1)
+  set streak(ForgeStreak value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasStreak() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStreak() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ForgeStreak ensureStreak() => $_ensure(0);
 }
 
 

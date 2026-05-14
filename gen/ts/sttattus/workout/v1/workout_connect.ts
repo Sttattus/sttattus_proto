@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateSessionRequest, CreateSessionResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetRankLadderRequest, GetRankLadderResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse } from "./workout_pb.js";
+import { CreateSessionRequest, CreateSessionResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetRankLadderRequest, GetRankLadderResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse } from "./workout_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -151,6 +151,19 @@ export const WorkoutService = {
       name: "LogSet",
       I: LogSetRequest,
       O: LogSetResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7.5 — streak ledger with weekly grace day. The Today snapshot
+     * already embeds the streak; this RPC is for a dedicated detail
+     * surface and for forced refresh after session completion.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetForgeStreak
+     */
+    getForgeStreak: {
+      name: "GetForgeStreak",
+      I: GetForgeStreakRequest,
+      O: GetForgeStreakResponse,
       kind: MethodKind.Unary,
     },
   }

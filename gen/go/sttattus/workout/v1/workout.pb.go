@@ -2569,7 +2569,8 @@ func (x *GetRankLadderResponse) GetGrit() int32 {
 }
 
 // TodaySnapshot is everything the redesigned Today screen renders:
-// a readiness ring, the session in focus, and the rank delta.
+// a readiness ring, the session in focus, the rank delta, and the
+// daily streak (F7.5).
 type TodaySnapshot struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 0-100 readiness, with a one-line plain-language basis. Phase 1 is
@@ -2582,9 +2583,13 @@ type TodaySnapshot struct {
 	FocusSession *ForgeSession `protobuf:"bytes,3,opt,name=focus_session,json=focusSession,proto3" json:"focus_session,omitempty"`
 	// Current forge rank (1-100), its label, and the change over the
 	// trailing 7 days (0 when there is no prior snapshot).
-	ForgeRank     float64 `protobuf:"fixed64,4,opt,name=forge_rank,json=forgeRank,proto3" json:"forge_rank,omitempty"`
-	RankLabel     string  `protobuf:"bytes,5,opt,name=rank_label,json=rankLabel,proto3" json:"rank_label,omitempty"`
-	RankDelta_7D  float64 `protobuf:"fixed64,6,opt,name=rank_delta_7d,json=rankDelta7d,proto3" json:"rank_delta_7d,omitempty"`
+	ForgeRank    float64 `protobuf:"fixed64,4,opt,name=forge_rank,json=forgeRank,proto3" json:"forge_rank,omitempty"`
+	RankLabel    string  `protobuf:"bytes,5,opt,name=rank_label,json=rankLabel,proto3" json:"rank_label,omitempty"`
+	RankDelta_7D float64 `protobuf:"fixed64,6,opt,name=rank_delta_7d,json=rankDelta7d,proto3" json:"rank_delta_7d,omitempty"`
+	// The lifter's training-day streak (F7.5). Always populated; a
+	// zero current_streak with empty last_trained_date_iso means "no
+	// history yet."
+	Streak        *ForgeStreak `protobuf:"bytes,7,opt,name=streak,proto3" json:"streak,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2659,6 +2664,13 @@ func (x *TodaySnapshot) GetRankDelta_7D() float64 {
 		return x.RankDelta_7D
 	}
 	return 0
+}
+
+func (x *TodaySnapshot) GetStreak() *ForgeStreak {
+	if x != nil {
+		return x.Streak
+	}
+	return nil
 }
 
 type GetTodayRequest struct {
@@ -2737,6 +2749,173 @@ func (*GetTodayResponse) Descriptor() ([]byte, []int) {
 func (x *GetTodayResponse) GetToday() *TodaySnapshot {
 	if x != nil {
 		return x.Today
+	}
+	return nil
+}
+
+// ForgeStreak is the lifter's training-day streak with a weekly
+// grace day. A streak counts consecutive calendar days with a
+// completed session, but a single missed day per ISO-week may be
+// "graced" so the streak survives one slip — honest streaks beat
+// brittle ones, per the audit's daily-open mechanic.
+type ForgeStreak struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Consecutive days currently held.
+	CurrentStreak int32 `protobuf:"varint,1,opt,name=current_streak,json=currentStreak,proto3" json:"current_streak,omitempty"`
+	// All-time best.
+	LongestStreak int32 `protobuf:"varint,2,opt,name=longest_streak,json=longestStreak,proto3" json:"longest_streak,omitempty"`
+	// YYYY-MM-DD UTC, empty when no session has ever been completed.
+	LastTrainedDateIso string `protobuf:"bytes,3,opt,name=last_trained_date_iso,json=lastTrainedDateIso,proto3" json:"last_trained_date_iso,omitempty"`
+	// True once the grace day has been spent this ISO-week.
+	GraceUsedThisWeek bool `protobuf:"varint,4,opt,name=grace_used_this_week,json=graceUsedThisWeek,proto3" json:"grace_used_this_week,omitempty"`
+	// YYYY-MM-DD UTC of the Monday this week's grace allowance is
+	// anchored to. Empty when never set.
+	WeekAnchorIso string `protobuf:"bytes,5,opt,name=week_anchor_iso,json=weekAnchorIso,proto3" json:"week_anchor_iso,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ForgeStreak) Reset() {
+	*x = ForgeStreak{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[43]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ForgeStreak) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ForgeStreak) ProtoMessage() {}
+
+func (x *ForgeStreak) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[43]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ForgeStreak.ProtoReflect.Descriptor instead.
+func (*ForgeStreak) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *ForgeStreak) GetCurrentStreak() int32 {
+	if x != nil {
+		return x.CurrentStreak
+	}
+	return 0
+}
+
+func (x *ForgeStreak) GetLongestStreak() int32 {
+	if x != nil {
+		return x.LongestStreak
+	}
+	return 0
+}
+
+func (x *ForgeStreak) GetLastTrainedDateIso() string {
+	if x != nil {
+		return x.LastTrainedDateIso
+	}
+	return ""
+}
+
+func (x *ForgeStreak) GetGraceUsedThisWeek() bool {
+	if x != nil {
+		return x.GraceUsedThisWeek
+	}
+	return false
+}
+
+func (x *ForgeStreak) GetWeekAnchorIso() string {
+	if x != nil {
+		return x.WeekAnchorIso
+	}
+	return ""
+}
+
+type GetForgeStreakRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetForgeStreakRequest) Reset() {
+	*x = GetForgeStreakRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[44]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetForgeStreakRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetForgeStreakRequest) ProtoMessage() {}
+
+func (x *GetForgeStreakRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[44]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetForgeStreakRequest.ProtoReflect.Descriptor instead.
+func (*GetForgeStreakRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{44}
+}
+
+type GetForgeStreakResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Streak        *ForgeStreak           `protobuf:"bytes,1,opt,name=streak,proto3" json:"streak,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetForgeStreakResponse) Reset() {
+	*x = GetForgeStreakResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[45]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetForgeStreakResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetForgeStreakResponse) ProtoMessage() {}
+
+func (x *GetForgeStreakResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[45]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetForgeStreakResponse.ProtoReflect.Descriptor instead.
+func (*GetForgeStreakResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{45}
+}
+
+func (x *GetForgeStreakResponse) GetStreak() *ForgeStreak {
+	if x != nil {
+		return x.Streak
 	}
 	return nil
 }
@@ -2943,7 +3122,7 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\fcurrent_rank\x18\x03 \x01(\tR\vcurrentRank\x12\x14\n" +
 	"\x05power\x18\x04 \x01(\x05R\x05power\x12\x18\n" +
 	"\aagility\x18\x05 \x01(\x05R\aagility\x12\x12\n" +
-	"\x04grit\x18\x06 \x01(\x05R\x04grit\"\x80\x02\n" +
+	"\x04grit\x18\x06 \x01(\x05R\x04grit\"\xba\x02\n" +
 	"\rTodaySnapshot\x12\x1c\n" +
 	"\treadiness\x18\x01 \x01(\x05R\treadiness\x12'\n" +
 	"\x0freadiness_basis\x18\x02 \x01(\tR\x0ereadinessBasis\x12F\n" +
@@ -2952,10 +3131,20 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"forge_rank\x18\x04 \x01(\x01R\tforgeRank\x12\x1d\n" +
 	"\n" +
 	"rank_label\x18\x05 \x01(\tR\trankLabel\x12\"\n" +
-	"\rrank_delta_7d\x18\x06 \x01(\x01R\vrankDelta7d\"\x11\n" +
+	"\rrank_delta_7d\x18\x06 \x01(\x01R\vrankDelta7d\x128\n" +
+	"\x06streak\x18\a \x01(\v2 .sttattus.workout.v1.ForgeStreakR\x06streak\"\x11\n" +
 	"\x0fGetTodayRequest\"L\n" +
 	"\x10GetTodayResponse\x128\n" +
-	"\x05today\x18\x01 \x01(\v2\".sttattus.workout.v1.TodaySnapshotR\x05today2\x84\f\n" +
+	"\x05today\x18\x01 \x01(\v2\".sttattus.workout.v1.TodaySnapshotR\x05today\"\xe7\x01\n" +
+	"\vForgeStreak\x12%\n" +
+	"\x0ecurrent_streak\x18\x01 \x01(\x05R\rcurrentStreak\x12%\n" +
+	"\x0elongest_streak\x18\x02 \x01(\x05R\rlongestStreak\x121\n" +
+	"\x15last_trained_date_iso\x18\x03 \x01(\tR\x12lastTrainedDateIso\x12/\n" +
+	"\x14grace_used_this_week\x18\x04 \x01(\bR\x11graceUsedThisWeek\x12&\n" +
+	"\x0fweek_anchor_iso\x18\x05 \x01(\tR\rweekAnchorIso\"\x17\n" +
+	"\x15GetForgeStreakRequest\"R\n" +
+	"\x16GetForgeStreakResponse\x128\n" +
+	"\x06streak\x18\x01 \x01(\v2 .sttattus.workout.v1.ForgeStreakR\x06streak2\xef\f\n" +
 	"\x0eWorkoutService\x12c\n" +
 	"\fListWorkouts\x12(.sttattus.workout.v1.ListWorkoutsRequest\x1a).sttattus.workout.v1.ListWorkoutsResponse\x12]\n" +
 	"\n" +
@@ -2973,7 +3162,8 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x10GetActiveSession\x12,.sttattus.workout.v1.GetActiveSessionRequest\x1a-.sttattus.workout.v1.GetActiveSessionResponse\x12c\n" +
 	"\fListSessions\x12(.sttattus.workout.v1.ListSessionsRequest\x1a).sttattus.workout.v1.ListSessionsResponse\x12x\n" +
 	"\x13UpdateSessionStatus\x12/.sttattus.workout.v1.UpdateSessionStatusRequest\x1a0.sttattus.workout.v1.UpdateSessionStatusResponse\x12Q\n" +
-	"\x06LogSet\x12\".sttattus.workout.v1.LogSetRequest\x1a#.sttattus.workout.v1.LogSetResponseB@Z>github.com/sttattus/proto/gen/go/sttattus/workout/v1;workoutv1b\x06proto3"
+	"\x06LogSet\x12\".sttattus.workout.v1.LogSetRequest\x1a#.sttattus.workout.v1.LogSetResponse\x12i\n" +
+	"\x0eGetForgeStreak\x12*.sttattus.workout.v1.GetForgeStreakRequest\x1a+.sttattus.workout.v1.GetForgeStreakResponseB@Z>github.com/sttattus/proto/gen/go/sttattus/workout/v1;workoutv1b\x06proto3"
 
 var (
 	file_sttattus_workout_v1_workout_proto_rawDescOnce sync.Once
@@ -2987,7 +3177,7 @@ func file_sttattus_workout_v1_workout_proto_rawDescGZIP() []byte {
 	return file_sttattus_workout_v1_workout_proto_rawDescData
 }
 
-var file_sttattus_workout_v1_workout_proto_msgTypes = make([]protoimpl.MessageInfo, 43)
+var file_sttattus_workout_v1_workout_proto_msgTypes = make([]protoimpl.MessageInfo, 46)
 var file_sttattus_workout_v1_workout_proto_goTypes = []any{
 	(*Tag)(nil),                         // 0: sttattus.workout.v1.Tag
 	(*Workout)(nil),                     // 1: sttattus.workout.v1.Workout
@@ -3032,76 +3222,83 @@ var file_sttattus_workout_v1_workout_proto_goTypes = []any{
 	(*TodaySnapshot)(nil),               // 40: sttattus.workout.v1.TodaySnapshot
 	(*GetTodayRequest)(nil),             // 41: sttattus.workout.v1.GetTodayRequest
 	(*GetTodayResponse)(nil),            // 42: sttattus.workout.v1.GetTodayResponse
-	(*v1.PageRequest)(nil),              // 43: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),             // 44: sttattus.common.v1.PageResponse
+	(*ForgeStreak)(nil),                 // 43: sttattus.workout.v1.ForgeStreak
+	(*GetForgeStreakRequest)(nil),       // 44: sttattus.workout.v1.GetForgeStreakRequest
+	(*GetForgeStreakResponse)(nil),      // 45: sttattus.workout.v1.GetForgeStreakResponse
+	(*v1.PageRequest)(nil),              // 46: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),             // 47: sttattus.common.v1.PageResponse
 }
 var file_sttattus_workout_v1_workout_proto_depIdxs = []int32{
 	0,  // 0: sttattus.workout.v1.Workout.tags:type_name -> sttattus.workout.v1.Tag
 	1,  // 1: sttattus.workout.v1.DayWorkout.workout:type_name -> sttattus.workout.v1.Workout
 	2,  // 2: sttattus.workout.v1.DayWorkout.series:type_name -> sttattus.workout.v1.Series
 	3,  // 3: sttattus.workout.v1.DayWorkout.strain:type_name -> sttattus.workout.v1.StrainMetrics
-	43, // 4: sttattus.workout.v1.ListWorkoutsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	46, // 4: sttattus.workout.v1.ListWorkoutsRequest.page:type_name -> sttattus.common.v1.PageRequest
 	1,  // 5: sttattus.workout.v1.ListWorkoutsResponse.workouts:type_name -> sttattus.workout.v1.Workout
-	44, // 6: sttattus.workout.v1.ListWorkoutsResponse.page:type_name -> sttattus.common.v1.PageResponse
+	47, // 6: sttattus.workout.v1.ListWorkoutsResponse.page:type_name -> sttattus.common.v1.PageResponse
 	1,  // 7: sttattus.workout.v1.GetWorkoutResponse.workout:type_name -> sttattus.workout.v1.Workout
 	2,  // 8: sttattus.workout.v1.LogDayWorkoutRequest.series:type_name -> sttattus.workout.v1.Series
 	3,  // 9: sttattus.workout.v1.LogDayWorkoutRequest.strain:type_name -> sttattus.workout.v1.StrainMetrics
 	4,  // 10: sttattus.workout.v1.LogDayWorkoutResponse.day_workout:type_name -> sttattus.workout.v1.DayWorkout
 	5,  // 11: sttattus.workout.v1.LogDayWorkoutResponse.stats:type_name -> sttattus.workout.v1.ForgeStats
-	43, // 12: sttattus.workout.v1.ListHistoryRequest.page:type_name -> sttattus.common.v1.PageRequest
+	46, // 12: sttattus.workout.v1.ListHistoryRequest.page:type_name -> sttattus.common.v1.PageRequest
 	4,  // 13: sttattus.workout.v1.ListHistoryResponse.entries:type_name -> sttattus.workout.v1.DayWorkout
-	44, // 14: sttattus.workout.v1.ListHistoryResponse.page:type_name -> sttattus.common.v1.PageResponse
+	47, // 14: sttattus.workout.v1.ListHistoryResponse.page:type_name -> sttattus.common.v1.PageResponse
 	5,  // 15: sttattus.workout.v1.GetForgeStatsResponse.stats:type_name -> sttattus.workout.v1.ForgeStats
 	19, // 16: sttattus.workout.v1.SessionExercise.sets:type_name -> sttattus.workout.v1.SessionSet
 	20, // 17: sttattus.workout.v1.ForgeSession.exercises:type_name -> sttattus.workout.v1.SessionExercise
-	43, // 18: sttattus.workout.v1.ListExercisesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	46, // 18: sttattus.workout.v1.ListExercisesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	18, // 19: sttattus.workout.v1.ListExercisesResponse.exercises:type_name -> sttattus.workout.v1.Exercise
 	22, // 20: sttattus.workout.v1.CreateSessionRequest.exercises:type_name -> sttattus.workout.v1.PlannedExercise
 	21, // 21: sttattus.workout.v1.CreateSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
 	21, // 22: sttattus.workout.v1.GetSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
 	21, // 23: sttattus.workout.v1.GetActiveSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
-	43, // 24: sttattus.workout.v1.ListSessionsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	46, // 24: sttattus.workout.v1.ListSessionsRequest.page:type_name -> sttattus.common.v1.PageRequest
 	21, // 25: sttattus.workout.v1.ListSessionsResponse.sessions:type_name -> sttattus.workout.v1.ForgeSession
 	21, // 26: sttattus.workout.v1.UpdateSessionStatusResponse.session:type_name -> sttattus.workout.v1.ForgeSession
 	19, // 27: sttattus.workout.v1.LogSetResponse.set:type_name -> sttattus.workout.v1.SessionSet
 	37, // 28: sttattus.workout.v1.GetRankLadderResponse.bands:type_name -> sttattus.workout.v1.RankBand
 	21, // 29: sttattus.workout.v1.TodaySnapshot.focus_session:type_name -> sttattus.workout.v1.ForgeSession
-	40, // 30: sttattus.workout.v1.GetTodayResponse.today:type_name -> sttattus.workout.v1.TodaySnapshot
-	6,  // 31: sttattus.workout.v1.WorkoutService.ListWorkouts:input_type -> sttattus.workout.v1.ListWorkoutsRequest
-	8,  // 32: sttattus.workout.v1.WorkoutService.GetWorkout:input_type -> sttattus.workout.v1.GetWorkoutRequest
-	10, // 33: sttattus.workout.v1.WorkoutService.LogDayWorkout:input_type -> sttattus.workout.v1.LogDayWorkoutRequest
-	12, // 34: sttattus.workout.v1.WorkoutService.ListHistory:input_type -> sttattus.workout.v1.ListHistoryRequest
-	14, // 35: sttattus.workout.v1.WorkoutService.GetForgeStats:input_type -> sttattus.workout.v1.GetForgeStatsRequest
-	16, // 36: sttattus.workout.v1.WorkoutService.SubmitFeedback:input_type -> sttattus.workout.v1.SubmitFeedbackRequest
-	41, // 37: sttattus.workout.v1.WorkoutService.GetToday:input_type -> sttattus.workout.v1.GetTodayRequest
-	38, // 38: sttattus.workout.v1.WorkoutService.GetRankLadder:input_type -> sttattus.workout.v1.GetRankLadderRequest
-	23, // 39: sttattus.workout.v1.WorkoutService.ListExercises:input_type -> sttattus.workout.v1.ListExercisesRequest
-	25, // 40: sttattus.workout.v1.WorkoutService.CreateSession:input_type -> sttattus.workout.v1.CreateSessionRequest
-	27, // 41: sttattus.workout.v1.WorkoutService.GetSession:input_type -> sttattus.workout.v1.GetSessionRequest
-	29, // 42: sttattus.workout.v1.WorkoutService.GetActiveSession:input_type -> sttattus.workout.v1.GetActiveSessionRequest
-	31, // 43: sttattus.workout.v1.WorkoutService.ListSessions:input_type -> sttattus.workout.v1.ListSessionsRequest
-	33, // 44: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:input_type -> sttattus.workout.v1.UpdateSessionStatusRequest
-	35, // 45: sttattus.workout.v1.WorkoutService.LogSet:input_type -> sttattus.workout.v1.LogSetRequest
-	7,  // 46: sttattus.workout.v1.WorkoutService.ListWorkouts:output_type -> sttattus.workout.v1.ListWorkoutsResponse
-	9,  // 47: sttattus.workout.v1.WorkoutService.GetWorkout:output_type -> sttattus.workout.v1.GetWorkoutResponse
-	11, // 48: sttattus.workout.v1.WorkoutService.LogDayWorkout:output_type -> sttattus.workout.v1.LogDayWorkoutResponse
-	13, // 49: sttattus.workout.v1.WorkoutService.ListHistory:output_type -> sttattus.workout.v1.ListHistoryResponse
-	15, // 50: sttattus.workout.v1.WorkoutService.GetForgeStats:output_type -> sttattus.workout.v1.GetForgeStatsResponse
-	17, // 51: sttattus.workout.v1.WorkoutService.SubmitFeedback:output_type -> sttattus.workout.v1.SubmitFeedbackResponse
-	42, // 52: sttattus.workout.v1.WorkoutService.GetToday:output_type -> sttattus.workout.v1.GetTodayResponse
-	39, // 53: sttattus.workout.v1.WorkoutService.GetRankLadder:output_type -> sttattus.workout.v1.GetRankLadderResponse
-	24, // 54: sttattus.workout.v1.WorkoutService.ListExercises:output_type -> sttattus.workout.v1.ListExercisesResponse
-	26, // 55: sttattus.workout.v1.WorkoutService.CreateSession:output_type -> sttattus.workout.v1.CreateSessionResponse
-	28, // 56: sttattus.workout.v1.WorkoutService.GetSession:output_type -> sttattus.workout.v1.GetSessionResponse
-	30, // 57: sttattus.workout.v1.WorkoutService.GetActiveSession:output_type -> sttattus.workout.v1.GetActiveSessionResponse
-	32, // 58: sttattus.workout.v1.WorkoutService.ListSessions:output_type -> sttattus.workout.v1.ListSessionsResponse
-	34, // 59: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:output_type -> sttattus.workout.v1.UpdateSessionStatusResponse
-	36, // 60: sttattus.workout.v1.WorkoutService.LogSet:output_type -> sttattus.workout.v1.LogSetResponse
-	46, // [46:61] is the sub-list for method output_type
-	31, // [31:46] is the sub-list for method input_type
-	31, // [31:31] is the sub-list for extension type_name
-	31, // [31:31] is the sub-list for extension extendee
-	0,  // [0:31] is the sub-list for field type_name
+	43, // 30: sttattus.workout.v1.TodaySnapshot.streak:type_name -> sttattus.workout.v1.ForgeStreak
+	40, // 31: sttattus.workout.v1.GetTodayResponse.today:type_name -> sttattus.workout.v1.TodaySnapshot
+	43, // 32: sttattus.workout.v1.GetForgeStreakResponse.streak:type_name -> sttattus.workout.v1.ForgeStreak
+	6,  // 33: sttattus.workout.v1.WorkoutService.ListWorkouts:input_type -> sttattus.workout.v1.ListWorkoutsRequest
+	8,  // 34: sttattus.workout.v1.WorkoutService.GetWorkout:input_type -> sttattus.workout.v1.GetWorkoutRequest
+	10, // 35: sttattus.workout.v1.WorkoutService.LogDayWorkout:input_type -> sttattus.workout.v1.LogDayWorkoutRequest
+	12, // 36: sttattus.workout.v1.WorkoutService.ListHistory:input_type -> sttattus.workout.v1.ListHistoryRequest
+	14, // 37: sttattus.workout.v1.WorkoutService.GetForgeStats:input_type -> sttattus.workout.v1.GetForgeStatsRequest
+	16, // 38: sttattus.workout.v1.WorkoutService.SubmitFeedback:input_type -> sttattus.workout.v1.SubmitFeedbackRequest
+	41, // 39: sttattus.workout.v1.WorkoutService.GetToday:input_type -> sttattus.workout.v1.GetTodayRequest
+	38, // 40: sttattus.workout.v1.WorkoutService.GetRankLadder:input_type -> sttattus.workout.v1.GetRankLadderRequest
+	23, // 41: sttattus.workout.v1.WorkoutService.ListExercises:input_type -> sttattus.workout.v1.ListExercisesRequest
+	25, // 42: sttattus.workout.v1.WorkoutService.CreateSession:input_type -> sttattus.workout.v1.CreateSessionRequest
+	27, // 43: sttattus.workout.v1.WorkoutService.GetSession:input_type -> sttattus.workout.v1.GetSessionRequest
+	29, // 44: sttattus.workout.v1.WorkoutService.GetActiveSession:input_type -> sttattus.workout.v1.GetActiveSessionRequest
+	31, // 45: sttattus.workout.v1.WorkoutService.ListSessions:input_type -> sttattus.workout.v1.ListSessionsRequest
+	33, // 46: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:input_type -> sttattus.workout.v1.UpdateSessionStatusRequest
+	35, // 47: sttattus.workout.v1.WorkoutService.LogSet:input_type -> sttattus.workout.v1.LogSetRequest
+	44, // 48: sttattus.workout.v1.WorkoutService.GetForgeStreak:input_type -> sttattus.workout.v1.GetForgeStreakRequest
+	7,  // 49: sttattus.workout.v1.WorkoutService.ListWorkouts:output_type -> sttattus.workout.v1.ListWorkoutsResponse
+	9,  // 50: sttattus.workout.v1.WorkoutService.GetWorkout:output_type -> sttattus.workout.v1.GetWorkoutResponse
+	11, // 51: sttattus.workout.v1.WorkoutService.LogDayWorkout:output_type -> sttattus.workout.v1.LogDayWorkoutResponse
+	13, // 52: sttattus.workout.v1.WorkoutService.ListHistory:output_type -> sttattus.workout.v1.ListHistoryResponse
+	15, // 53: sttattus.workout.v1.WorkoutService.GetForgeStats:output_type -> sttattus.workout.v1.GetForgeStatsResponse
+	17, // 54: sttattus.workout.v1.WorkoutService.SubmitFeedback:output_type -> sttattus.workout.v1.SubmitFeedbackResponse
+	42, // 55: sttattus.workout.v1.WorkoutService.GetToday:output_type -> sttattus.workout.v1.GetTodayResponse
+	39, // 56: sttattus.workout.v1.WorkoutService.GetRankLadder:output_type -> sttattus.workout.v1.GetRankLadderResponse
+	24, // 57: sttattus.workout.v1.WorkoutService.ListExercises:output_type -> sttattus.workout.v1.ListExercisesResponse
+	26, // 58: sttattus.workout.v1.WorkoutService.CreateSession:output_type -> sttattus.workout.v1.CreateSessionResponse
+	28, // 59: sttattus.workout.v1.WorkoutService.GetSession:output_type -> sttattus.workout.v1.GetSessionResponse
+	30, // 60: sttattus.workout.v1.WorkoutService.GetActiveSession:output_type -> sttattus.workout.v1.GetActiveSessionResponse
+	32, // 61: sttattus.workout.v1.WorkoutService.ListSessions:output_type -> sttattus.workout.v1.ListSessionsResponse
+	34, // 62: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:output_type -> sttattus.workout.v1.UpdateSessionStatusResponse
+	36, // 63: sttattus.workout.v1.WorkoutService.LogSet:output_type -> sttattus.workout.v1.LogSetResponse
+	45, // 64: sttattus.workout.v1.WorkoutService.GetForgeStreak:output_type -> sttattus.workout.v1.GetForgeStreakResponse
+	49, // [49:65] is the sub-list for method output_type
+	33, // [33:49] is the sub-list for method input_type
+	33, // [33:33] is the sub-list for extension type_name
+	33, // [33:33] is the sub-list for extension extendee
+	0,  // [0:33] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_workout_v1_workout_proto_init() }
@@ -3115,7 +3312,7 @@ func file_sttattus_workout_v1_workout_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_workout_v1_workout_proto_rawDesc), len(file_sttattus_workout_v1_workout_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   43,
+			NumMessages:   46,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

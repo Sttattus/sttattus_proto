@@ -669,6 +669,7 @@ const TodaySnapshot$json = {
     {'1': 'forge_rank', '3': 4, '4': 1, '5': 1, '10': 'forgeRank'},
     {'1': 'rank_label', '3': 5, '4': 1, '5': 9, '10': 'rankLabel'},
     {'1': 'rank_delta_7d', '3': 6, '4': 1, '5': 1, '10': 'rankDelta7d'},
+    {'1': 'streak', '3': 7, '4': 1, '5': 11, '6': '.sttattus.workout.v1.ForgeStreak', '10': 'streak'},
   ],
 };
 
@@ -678,7 +679,8 @@ final $typed_data.Uint8List todaySnapshotDescriptor = $convert.base64Decode(
     'Vzc19iYXNpcxgCIAEoCVIOcmVhZGluZXNzQmFzaXMSRgoNZm9jdXNfc2Vzc2lvbhgDIAEoCzIh'
     'LnN0dGF0dHVzLndvcmtvdXQudjEuRm9yZ2VTZXNzaW9uUgxmb2N1c1Nlc3Npb24SHQoKZm9yZ2'
     'VfcmFuaxgEIAEoAVIJZm9yZ2VSYW5rEh0KCnJhbmtfbGFiZWwYBSABKAlSCXJhbmtMYWJlbBIi'
-    'Cg1yYW5rX2RlbHRhXzdkGAYgASgBUgtyYW5rRGVsdGE3ZA==');
+    'Cg1yYW5rX2RlbHRhXzdkGAYgASgBUgtyYW5rRGVsdGE3ZBI4CgZzdHJlYWsYByABKAsyIC5zdH'
+    'RhdHR1cy53b3Jrb3V0LnYxLkZvcmdlU3RyZWFrUgZzdHJlYWs=');
 
 @$core.Deprecated('Use getTodayRequestDescriptor instead')
 const GetTodayRequest$json = {
@@ -701,4 +703,46 @@ const GetTodayResponse$json = {
 final $typed_data.Uint8List getTodayResponseDescriptor = $convert.base64Decode(
     'ChBHZXRUb2RheVJlc3BvbnNlEjgKBXRvZGF5GAEgASgLMiIuc3R0YXR0dXMud29ya291dC52MS'
     '5Ub2RheVNuYXBzaG90UgV0b2RheQ==');
+
+@$core.Deprecated('Use forgeStreakDescriptor instead')
+const ForgeStreak$json = {
+  '1': 'ForgeStreak',
+  '2': [
+    {'1': 'current_streak', '3': 1, '4': 1, '5': 5, '10': 'currentStreak'},
+    {'1': 'longest_streak', '3': 2, '4': 1, '5': 5, '10': 'longestStreak'},
+    {'1': 'last_trained_date_iso', '3': 3, '4': 1, '5': 9, '10': 'lastTrainedDateIso'},
+    {'1': 'grace_used_this_week', '3': 4, '4': 1, '5': 8, '10': 'graceUsedThisWeek'},
+    {'1': 'week_anchor_iso', '3': 5, '4': 1, '5': 9, '10': 'weekAnchorIso'},
+  ],
+};
+
+/// Descriptor for `ForgeStreak`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List forgeStreakDescriptor = $convert.base64Decode(
+    'CgtGb3JnZVN0cmVhaxIlCg5jdXJyZW50X3N0cmVhaxgBIAEoBVINY3VycmVudFN0cmVhaxIlCg'
+    '5sb25nZXN0X3N0cmVhaxgCIAEoBVINbG9uZ2VzdFN0cmVhaxIxChVsYXN0X3RyYWluZWRfZGF0'
+    'ZV9pc28YAyABKAlSEmxhc3RUcmFpbmVkRGF0ZUlzbxIvChRncmFjZV91c2VkX3RoaXNfd2Vlax'
+    'gEIAEoCFIRZ3JhY2VVc2VkVGhpc1dlZWsSJgoPd2Vla19hbmNob3JfaXNvGAUgASgJUg13ZWVr'
+    'QW5jaG9ySXNv');
+
+@$core.Deprecated('Use getForgeStreakRequestDescriptor instead')
+const GetForgeStreakRequest$json = {
+  '1': 'GetForgeStreakRequest',
+};
+
+/// Descriptor for `GetForgeStreakRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getForgeStreakRequestDescriptor = $convert.base64Decode(
+    'ChVHZXRGb3JnZVN0cmVha1JlcXVlc3Q=');
+
+@$core.Deprecated('Use getForgeStreakResponseDescriptor instead')
+const GetForgeStreakResponse$json = {
+  '1': 'GetForgeStreakResponse',
+  '2': [
+    {'1': 'streak', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.ForgeStreak', '10': 'streak'},
+  ],
+};
+
+/// Descriptor for `GetForgeStreakResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getForgeStreakResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRGb3JnZVN0cmVha1Jlc3BvbnNlEjgKBnN0cmVhaxgBIAEoCzIgLnN0dGF0dHVzLndvcm'
+    'tvdXQudjEuRm9yZ2VTdHJlYWtSBnN0cmVhaw==');
 

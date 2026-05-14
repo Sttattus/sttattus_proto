@@ -15,18 +15,18 @@ option go_package = "github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev
 
 message PillarScores {
   // Each field is a 0..100 quality signal from one pillar.
-  double forge_exp = 1;            // Forge (workout)
-  double lexicon_eloquence = 2;    // Lexicon
-  double nomad_exploration = 3;    // Nomad
-  double atlas_behavioral = 4;     // Atlas (dating)
-  double vault_wealth = 5;         // Vault
-  double apex_biomarkers = 6;      // Apex
-  double oracle_intelligence = 7;  // Oracle
-  double dominion_estate = 8;      // Dominion
-  double legacy_heritage = 9;      // Legacy
-  double zenith_focus = 10;        // Zenith
-  double onyx_exclusivity = 11;    // Onyx
-  double empire_reputation = 12;   // Empire (this layer itself)
+  double forge_exp = 1; // Forge (workout)
+  double lexicon_eloquence = 2; // Lexicon
+  double nomad_exploration = 3; // Nomad
+  double atlas_behavioral = 4; // Atlas (dating)
+  double vault_wealth = 5; // Vault
+  double apex_biomarkers = 6; // Apex
+  double oracle_intelligence = 7; // Oracle
+  double dominion_estate = 8; // Dominion
+  double legacy_heritage = 9; // Legacy
+  double zenith_focus = 10; // Zenith
+  double onyx_exclusivity = 11; // Onyx
+  double empire_reputation = 12; // Empire (this layer itself)
 }
 
 message ComputeSttattusScoreRequest {
@@ -73,9 +73,9 @@ message TaxRule {
 message ComputeTaxRequest {
   string user_id = 1;
   string tier = 2;
-  int64 subtotal = 3;       // cents
-  string currency = 4;      // ISO-4217
-  string partner_id = 5;    // optional
+  int64 subtotal = 3; // cents
+  string currency = 4; // ISO-4217
+  string partner_id = 5; // optional
   // Active rules the caller (backend_go) already loaded from
   // tax_rules. Passing them in keeps empire_engine stateless — the
   // database stays in one place.
@@ -102,7 +102,7 @@ message ComputeTaxResponse {
 message RecordPointsLedgerRequest {
   string user_id = 1;
   int64 current_balance = 2;
-  int64 delta = 3;          // may be negative (spend / decay)
+  int64 delta = 3; // may be negative (spend / decay)
   string reason = 4;
   // Optional cap; if non-zero the engine clamps the resulting balance
   // at [0, balance_cap].
@@ -111,7 +111,7 @@ message RecordPointsLedgerRequest {
 
 message RecordPointsLedgerResponse {
   int64 new_balance = 1;
-  int64 applied_delta = 2;  // post-clamp
+  int64 applied_delta = 2; // post-clamp
   bool clamped = 3;
 }
 

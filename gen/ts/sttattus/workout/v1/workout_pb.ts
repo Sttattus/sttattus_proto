@@ -2129,7 +2129,8 @@ export class GetRankLadderResponse extends Message<GetRankLadderResponse> {
 
 /**
  * TodaySnapshot is everything the redesigned Today screen renders:
- * a readiness ring, the session in focus, and the rank delta.
+ * a readiness ring, the session in focus, the rank delta, and the
+ * daily streak (F7.5).
  *
  * @generated from message sttattus.workout.v1.TodaySnapshot
  */
@@ -2174,6 +2175,15 @@ export class TodaySnapshot extends Message<TodaySnapshot> {
    */
   rankDelta7d = 0;
 
+  /**
+   * The lifter's training-day streak (F7.5). Always populated; a
+   * zero current_streak with empty last_trained_date_iso means "no
+   * history yet."
+   *
+   * @generated from field: sttattus.workout.v1.ForgeStreak streak = 7;
+   */
+  streak?: ForgeStreak;
+
   constructor(data?: PartialMessage<TodaySnapshot>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2188,6 +2198,7 @@ export class TodaySnapshot extends Message<TodaySnapshot> {
     { no: 4, name: "forge_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 5, name: "rank_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "rank_delta_7d", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "streak", kind: "message", T: ForgeStreak },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TodaySnapshot {
@@ -2272,6 +2283,152 @@ export class GetTodayResponse extends Message<GetTodayResponse> {
 
   static equals(a: GetTodayResponse | PlainMessage<GetTodayResponse> | undefined, b: GetTodayResponse | PlainMessage<GetTodayResponse> | undefined): boolean {
     return proto3.util.equals(GetTodayResponse, a, b);
+  }
+}
+
+/**
+ * ForgeStreak is the lifter's training-day streak with a weekly
+ * grace day. A streak counts consecutive calendar days with a
+ * completed session, but a single missed day per ISO-week may be
+ * "graced" so the streak survives one slip — honest streaks beat
+ * brittle ones, per the audit's daily-open mechanic.
+ *
+ * @generated from message sttattus.workout.v1.ForgeStreak
+ */
+export class ForgeStreak extends Message<ForgeStreak> {
+  /**
+   * Consecutive days currently held.
+   *
+   * @generated from field: int32 current_streak = 1;
+   */
+  currentStreak = 0;
+
+  /**
+   * All-time best.
+   *
+   * @generated from field: int32 longest_streak = 2;
+   */
+  longestStreak = 0;
+
+  /**
+   * YYYY-MM-DD UTC, empty when no session has ever been completed.
+   *
+   * @generated from field: string last_trained_date_iso = 3;
+   */
+  lastTrainedDateIso = "";
+
+  /**
+   * True once the grace day has been spent this ISO-week.
+   *
+   * @generated from field: bool grace_used_this_week = 4;
+   */
+  graceUsedThisWeek = false;
+
+  /**
+   * YYYY-MM-DD UTC of the Monday this week's grace allowance is
+   * anchored to. Empty when never set.
+   *
+   * @generated from field: string week_anchor_iso = 5;
+   */
+  weekAnchorIso = "";
+
+  constructor(data?: PartialMessage<ForgeStreak>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ForgeStreak";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "current_streak", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "longest_streak", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "last_trained_date_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "grace_used_this_week", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "week_anchor_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ForgeStreak {
+    return new ForgeStreak().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ForgeStreak {
+    return new ForgeStreak().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ForgeStreak {
+    return new ForgeStreak().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ForgeStreak | PlainMessage<ForgeStreak> | undefined, b: ForgeStreak | PlainMessage<ForgeStreak> | undefined): boolean {
+    return proto3.util.equals(ForgeStreak, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.GetForgeStreakRequest
+ */
+export class GetForgeStreakRequest extends Message<GetForgeStreakRequest> {
+  constructor(data?: PartialMessage<GetForgeStreakRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.GetForgeStreakRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetForgeStreakRequest {
+    return new GetForgeStreakRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetForgeStreakRequest {
+    return new GetForgeStreakRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetForgeStreakRequest {
+    return new GetForgeStreakRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetForgeStreakRequest | PlainMessage<GetForgeStreakRequest> | undefined, b: GetForgeStreakRequest | PlainMessage<GetForgeStreakRequest> | undefined): boolean {
+    return proto3.util.equals(GetForgeStreakRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.GetForgeStreakResponse
+ */
+export class GetForgeStreakResponse extends Message<GetForgeStreakResponse> {
+  /**
+   * @generated from field: sttattus.workout.v1.ForgeStreak streak = 1;
+   */
+  streak?: ForgeStreak;
+
+  constructor(data?: PartialMessage<GetForgeStreakResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.GetForgeStreakResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "streak", kind: "message", T: ForgeStreak },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetForgeStreakResponse {
+    return new GetForgeStreakResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetForgeStreakResponse {
+    return new GetForgeStreakResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetForgeStreakResponse {
+    return new GetForgeStreakResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetForgeStreakResponse | PlainMessage<GetForgeStreakResponse> | undefined, b: GetForgeStreakResponse | PlainMessage<GetForgeStreakResponse> | undefined): boolean {
+    return proto3.util.equals(GetForgeStreakResponse, a, b);
   }
 }
 

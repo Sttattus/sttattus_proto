@@ -95,6 +95,13 @@ class WorkoutServiceClient extends $grpc.Client {
     return $createUnaryCall(_$logSet, request, options: options);
   }
 
+  /// F7.5 — streak ledger with weekly grace day. The Today snapshot
+  /// already embeds the streak; this RPC is for a dedicated detail
+  /// surface and for forced refresh after session completion.
+  $grpc.ResponseFuture<$0.GetForgeStreakResponse> getForgeStreak($0.GetForgeStreakRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getForgeStreak, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listWorkouts = $grpc.ClientMethod<$0.ListWorkoutsRequest, $0.ListWorkoutsResponse>(
@@ -157,6 +164,10 @@ class WorkoutServiceClient extends $grpc.Client {
       '/sttattus.workout.v1.WorkoutService/LogSet',
       ($0.LogSetRequest value) => value.writeToBuffer(),
       $0.LogSetResponse.fromBuffer);
+  static final _$getForgeStreak = $grpc.ClientMethod<$0.GetForgeStreakRequest, $0.GetForgeStreakResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetForgeStreak',
+      ($0.GetForgeStreakRequest value) => value.writeToBuffer(),
+      $0.GetForgeStreakResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.workout.v1.WorkoutService')
@@ -269,6 +280,13 @@ abstract class WorkoutServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.LogSetRequest.fromBuffer(value),
         ($0.LogSetResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetForgeStreakRequest, $0.GetForgeStreakResponse>(
+        'GetForgeStreak',
+        getForgeStreak_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetForgeStreakRequest.fromBuffer(value),
+        ($0.GetForgeStreakResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListWorkoutsResponse> listWorkouts_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWorkoutsRequest> $request) async {
@@ -360,5 +378,11 @@ abstract class WorkoutServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.LogSetResponse> logSet($grpc.ServiceCall call, $0.LogSetRequest request);
+
+  $async.Future<$0.GetForgeStreakResponse> getForgeStreak_Pre($grpc.ServiceCall $call, $async.Future<$0.GetForgeStreakRequest> $request) async {
+    return getForgeStreak($call, await $request);
+  }
+
+  $async.Future<$0.GetForgeStreakResponse> getForgeStreak($grpc.ServiceCall call, $0.GetForgeStreakRequest request);
 
 }

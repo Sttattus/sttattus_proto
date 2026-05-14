@@ -173,7 +173,7 @@ message ForgeSession {
   // planned | active | completed | abandoned.
   string status = 3;
   string notes = 4;
-  int64 started_at = 5;   // unix seconds, 0 if not started
+  int64 started_at = 5; // unix seconds, 0 if not started
   int64 completed_at = 6; // unix seconds, 0 if not completed
   int64 created_at = 7;
   repeated SessionExercise exercises = 8;
@@ -189,9 +189,9 @@ message PlannedExercise {
 message ListExercisesRequest {
   sttattus.common.v1.PageRequest page = 1;
   // F7.4 — optional filters. Empty string = unfiltered.
-  string search = 2;     // case-insensitive name substring
-  string muscle = 3;     // primary_muscle exact match
-  string equipment = 4;  // equipment exact match
+  string search = 2; // case-insensitive name substring
+  string muscle = 3; // primary_muscle exact match
+  string equipment = 4; // equipment exact match
 }
 message ListExercisesResponse {
   repeated Exercise exercises = 1;
@@ -281,7 +281,8 @@ message GetRankLadderResponse {
 // ===== Today screen (F7.2) =====
 
 // TodaySnapshot is everything the redesigned Today screen renders:
-// a readiness ring, the session in focus, and the rank delta.
+// a readiness ring, the session in focus, the rank delta, and the
+// daily streak (F7.5).
 message TodaySnapshot {
   // 0-100 readiness, with a one-line plain-language basis. Phase 1 is
   // a recency/load heuristic; F7.11 wearables feed real HRV readiness.
@@ -296,11 +297,41 @@ message TodaySnapshot {
   double forge_rank = 4;
   string rank_label = 5;
   double rank_delta_7d = 6;
+  // The lifter's training-day streak (F7.5). Always populated; a
+  // zero current_streak with empty last_trained_date_iso means "no
+  // history yet."
+  ForgeStreak streak = 7;
 }
 
 message GetTodayRequest {}
 message GetTodayResponse {
   TodaySnapshot today = 1;
+}
+
+// ===== Streak (F7.5) =====
+
+// ForgeStreak is the lifter's training-day streak with a weekly
+// grace day. A streak counts consecutive calendar days with a
+// completed session, but a single missed day per ISO-week may be
+// "graced" so the streak survives one slip — honest streaks beat
+// brittle ones, per the audit's daily-open mechanic.
+message ForgeStreak {
+  // Consecutive days currently held.
+  int32 current_streak = 1;
+  // All-time best.
+  int32 longest_streak = 2;
+  // YYYY-MM-DD UTC, empty when no session has ever been completed.
+  string last_trained_date_iso = 3;
+  // True once the grace day has been spent this ISO-week.
+  bool grace_used_this_week = 4;
+  // YYYY-MM-DD UTC of the Monday this week's grace allowance is
+  // anchored to. Empty when never set.
+  string week_anchor_iso = 5;
+}
+
+message GetForgeStreakRequest {}
+message GetForgeStreakResponse {
+  ForgeStreak streak = 1;
 }
 
 service WorkoutService {
@@ -324,4 +355,9 @@ service WorkoutService {
   rpc ListSessions(ListSessionsRequest) returns (ListSessionsResponse);
   rpc UpdateSessionStatus(UpdateSessionStatusRequest) returns (UpdateSessionStatusResponse);
   rpc LogSet(LogSetRequest) returns (LogSetResponse);
+
+  // F7.5 — streak ledger with weekly grace day. The Today snapshot
+  // already embeds the streak; this RPC is for a dedicated detail
+  // surface and for forced refresh after session completion.
+  rpc GetForgeStreak(GetForgeStreakRequest) returns (GetForgeStreakResponse);
 }
