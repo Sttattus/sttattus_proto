@@ -1277,6 +1277,491 @@ func (x *UpdatePublicProfileResponse) GetBio() string {
 	return ""
 }
 
+// FriendSummary is the public slice of one friend (or pending invite
+// counterparty). Renders in directory rows + invite cards.
+type FriendSummary struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FriendshipId  string                 `protobuf:"bytes,1,opt,name=friendship_id,json=friendshipId,proto3" json:"friendship_id,omitempty"`
+	UserId        string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Handle        string                 `protobuf:"bytes,4,opt,name=handle,proto3" json:"handle,omitempty"`
+	AvatarUrl     string                 `protobuf:"bytes,5,opt,name=avatar_url,json=avatarUrl,proto3" json:"avatar_url,omitempty"`
+	SttattusScore float64                `protobuf:"fixed64,6,opt,name=sttattus_score,json=sttattusScore,proto3" json:"sttattus_score,omitempty"`
+	Tier          string                 `protobuf:"bytes,7,opt,name=tier,proto3" json:"tier,omitempty"`
+	// RFC-3339 UTC of the relevant moment — accepted_at for confirmed
+	// friends, created_at for pending invites.
+	Since         string `protobuf:"bytes,8,opt,name=since,proto3" json:"since,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FriendSummary) Reset() {
+	*x = FriendSummary{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FriendSummary) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FriendSummary) ProtoMessage() {}
+
+func (x *FriendSummary) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FriendSummary.ProtoReflect.Descriptor instead.
+func (*FriendSummary) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *FriendSummary) GetFriendshipId() string {
+	if x != nil {
+		return x.FriendshipId
+	}
+	return ""
+}
+
+func (x *FriendSummary) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *FriendSummary) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *FriendSummary) GetHandle() string {
+	if x != nil {
+		return x.Handle
+	}
+	return ""
+}
+
+func (x *FriendSummary) GetAvatarUrl() string {
+	if x != nil {
+		return x.AvatarUrl
+	}
+	return ""
+}
+
+func (x *FriendSummary) GetSttattusScore() float64 {
+	if x != nil {
+		return x.SttattusScore
+	}
+	return 0
+}
+
+func (x *FriendSummary) GetTier() string {
+	if x != nil {
+		return x.Tier
+	}
+	return ""
+}
+
+func (x *FriendSummary) GetSince() string {
+	if x != nil {
+		return x.Since
+	}
+	return ""
+}
+
+type ListFriendsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListFriendsRequest) Reset() {
+	*x = ListFriendsRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListFriendsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListFriendsRequest) ProtoMessage() {}
+
+func (x *ListFriendsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListFriendsRequest.ProtoReflect.Descriptor instead.
+func (*ListFriendsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{21}
+}
+
+type ListFriendsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Friends       []*FriendSummary       `protobuf:"bytes,1,rep,name=friends,proto3" json:"friends,omitempty"`
+	Incoming      []*FriendSummary       `protobuf:"bytes,2,rep,name=incoming,proto3" json:"incoming,omitempty"`
+	Outgoing      []*FriendSummary       `protobuf:"bytes,3,rep,name=outgoing,proto3" json:"outgoing,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListFriendsResponse) Reset() {
+	*x = ListFriendsResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListFriendsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListFriendsResponse) ProtoMessage() {}
+
+func (x *ListFriendsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListFriendsResponse.ProtoReflect.Descriptor instead.
+func (*ListFriendsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *ListFriendsResponse) GetFriends() []*FriendSummary {
+	if x != nil {
+		return x.Friends
+	}
+	return nil
+}
+
+func (x *ListFriendsResponse) GetIncoming() []*FriendSummary {
+	if x != nil {
+		return x.Incoming
+	}
+	return nil
+}
+
+func (x *ListFriendsResponse) GetOutgoing() []*FriendSummary {
+	if x != nil {
+		return x.Outgoing
+	}
+	return nil
+}
+
+type SendInviteRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Target's handle (the way one member finds another in this surface).
+	Handle        string `protobuf:"bytes,1,opt,name=handle,proto3" json:"handle,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SendInviteRequest) Reset() {
+	*x = SendInviteRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SendInviteRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SendInviteRequest) ProtoMessage() {}
+
+func (x *SendInviteRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SendInviteRequest.ProtoReflect.Descriptor instead.
+func (*SendInviteRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *SendInviteRequest) GetHandle() string {
+	if x != nil {
+		return x.Handle
+	}
+	return ""
+}
+
+type SendInviteResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FriendshipId  string                 `protobuf:"bytes,1,opt,name=friendship_id,json=friendshipId,proto3" json:"friendship_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SendInviteResponse) Reset() {
+	*x = SendInviteResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SendInviteResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SendInviteResponse) ProtoMessage() {}
+
+func (x *SendInviteResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SendInviteResponse.ProtoReflect.Descriptor instead.
+func (*SendInviteResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *SendInviteResponse) GetFriendshipId() string {
+	if x != nil {
+		return x.FriendshipId
+	}
+	return ""
+}
+
+type RespondInviteRequest struct {
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	FriendshipId string                 `protobuf:"bytes,1,opt,name=friendship_id,json=friendshipId,proto3" json:"friendship_id,omitempty"`
+	// true → accept, false → decline.
+	Accept        bool `protobuf:"varint,2,opt,name=accept,proto3" json:"accept,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RespondInviteRequest) Reset() {
+	*x = RespondInviteRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RespondInviteRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RespondInviteRequest) ProtoMessage() {}
+
+func (x *RespondInviteRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RespondInviteRequest.ProtoReflect.Descriptor instead.
+func (*RespondInviteRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *RespondInviteRequest) GetFriendshipId() string {
+	if x != nil {
+		return x.FriendshipId
+	}
+	return ""
+}
+
+func (x *RespondInviteRequest) GetAccept() bool {
+	if x != nil {
+		return x.Accept
+	}
+	return false
+}
+
+type RespondInviteResponse struct {
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	FriendshipId string                 `protobuf:"bytes,1,opt,name=friendship_id,json=friendshipId,proto3" json:"friendship_id,omitempty"`
+	// "accepted" | "declined".
+	Status        string `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RespondInviteResponse) Reset() {
+	*x = RespondInviteResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RespondInviteResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RespondInviteResponse) ProtoMessage() {}
+
+func (x *RespondInviteResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RespondInviteResponse.ProtoReflect.Descriptor instead.
+func (*RespondInviteResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *RespondInviteResponse) GetFriendshipId() string {
+	if x != nil {
+		return x.FriendshipId
+	}
+	return ""
+}
+
+func (x *RespondInviteResponse) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+type RemoveFriendRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Either an active pending invite (withdraws) or an accepted edge
+	// (severs).
+	FriendshipId  string `protobuf:"bytes,1,opt,name=friendship_id,json=friendshipId,proto3" json:"friendship_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemoveFriendRequest) Reset() {
+	*x = RemoveFriendRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveFriendRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveFriendRequest) ProtoMessage() {}
+
+func (x *RemoveFriendRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveFriendRequest.ProtoReflect.Descriptor instead.
+func (*RemoveFriendRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *RemoveFriendRequest) GetFriendshipId() string {
+	if x != nil {
+		return x.FriendshipId
+	}
+	return ""
+}
+
+type RemoveFriendResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FriendshipId  string                 `protobuf:"bytes,1,opt,name=friendship_id,json=friendshipId,proto3" json:"friendship_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemoveFriendResponse) Reset() {
+	*x = RemoveFriendResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveFriendResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveFriendResponse) ProtoMessage() {}
+
+func (x *RemoveFriendResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveFriendResponse.ProtoReflect.Descriptor instead.
+func (*RemoveFriendResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *RemoveFriendResponse) GetFriendshipId() string {
+	if x != nil {
+		return x.FriendshipId
+	}
+	return ""
+}
+
 var File_sttattus_empire_v1_empire_proto protoreflect.FileDescriptor
 
 const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
@@ -1367,7 +1852,36 @@ const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\x03bio\x18\x02 \x01(\tR\x03bio\"I\n" +
 	"\x1bUpdatePublicProfileResponse\x12\x18\n" +
 	"\atagline\x18\x01 \x01(\tR\atagline\x12\x10\n" +
-	"\x03bio\x18\x02 \x01(\tR\x03bio2\xe6\x06\n" +
+	"\x03bio\x18\x02 \x01(\tR\x03bio\"\xe9\x01\n" +
+	"\rFriendSummary\x12#\n" +
+	"\rfriendship_id\x18\x01 \x01(\tR\ffriendshipId\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12\x16\n" +
+	"\x06handle\x18\x04 \x01(\tR\x06handle\x12\x1d\n" +
+	"\n" +
+	"avatar_url\x18\x05 \x01(\tR\tavatarUrl\x12%\n" +
+	"\x0esttattus_score\x18\x06 \x01(\x01R\rsttattusScore\x12\x12\n" +
+	"\x04tier\x18\a \x01(\tR\x04tier\x12\x14\n" +
+	"\x05since\x18\b \x01(\tR\x05since\"\x14\n" +
+	"\x12ListFriendsRequest\"\xd0\x01\n" +
+	"\x13ListFriendsResponse\x12;\n" +
+	"\afriends\x18\x01 \x03(\v2!.sttattus.empire.v1.FriendSummaryR\afriends\x12=\n" +
+	"\bincoming\x18\x02 \x03(\v2!.sttattus.empire.v1.FriendSummaryR\bincoming\x12=\n" +
+	"\boutgoing\x18\x03 \x03(\v2!.sttattus.empire.v1.FriendSummaryR\boutgoing\"+\n" +
+	"\x11SendInviteRequest\x12\x16\n" +
+	"\x06handle\x18\x01 \x01(\tR\x06handle\"9\n" +
+	"\x12SendInviteResponse\x12#\n" +
+	"\rfriendship_id\x18\x01 \x01(\tR\ffriendshipId\"S\n" +
+	"\x14RespondInviteRequest\x12#\n" +
+	"\rfriendship_id\x18\x01 \x01(\tR\ffriendshipId\x12\x16\n" +
+	"\x06accept\x18\x02 \x01(\bR\x06accept\"T\n" +
+	"\x15RespondInviteResponse\x12#\n" +
+	"\rfriendship_id\x18\x01 \x01(\tR\ffriendshipId\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\":\n" +
+	"\x13RemoveFriendRequest\x12#\n" +
+	"\rfriendship_id\x18\x01 \x01(\tR\ffriendshipId\";\n" +
+	"\x14RemoveFriendResponse\x12#\n" +
+	"\rfriendship_id\x18\x01 \x01(\tR\ffriendshipId2\xec\t\n" +
 	"\rEmpireService\x12p\n" +
 	"\x11GetScoreBreakdown\x12,.sttattus.empire.v1.GetScoreBreakdownRequest\x1a-.sttattus.empire.v1.GetScoreBreakdownResponse\x12d\n" +
 	"\rGetTierLadder\x12(.sttattus.empire.v1.GetTierLadderRequest\x1a).sttattus.empire.v1.GetTierLadderResponse\x12X\n" +
@@ -1376,7 +1890,12 @@ const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\x0fGetTaxStatement\x12*.sttattus.empire.v1.GetTaxStatementRequest\x1a+.sttattus.empire.v1.GetTaxStatementResponse\x12m\n" +
 	"\x10GetPublicProfile\x12+.sttattus.empire.v1.GetPublicProfileRequest\x1a,.sttattus.empire.v1.GetPublicProfileResponse\x12^\n" +
 	"\vClaimHandle\x12&.sttattus.empire.v1.ClaimHandleRequest\x1a'.sttattus.empire.v1.ClaimHandleResponse\x12v\n" +
-	"\x13UpdatePublicProfile\x12..sttattus.empire.v1.UpdatePublicProfileRequest\x1a/.sttattus.empire.v1.UpdatePublicProfileResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1b\x06proto3"
+	"\x13UpdatePublicProfile\x12..sttattus.empire.v1.UpdatePublicProfileRequest\x1a/.sttattus.empire.v1.UpdatePublicProfileResponse\x12^\n" +
+	"\vListFriends\x12&.sttattus.empire.v1.ListFriendsRequest\x1a'.sttattus.empire.v1.ListFriendsResponse\x12[\n" +
+	"\n" +
+	"SendInvite\x12%.sttattus.empire.v1.SendInviteRequest\x1a&.sttattus.empire.v1.SendInviteResponse\x12d\n" +
+	"\rRespondInvite\x12(.sttattus.empire.v1.RespondInviteRequest\x1a).sttattus.empire.v1.RespondInviteResponse\x12a\n" +
+	"\fRemoveFriend\x12'.sttattus.empire.v1.RemoveFriendRequest\x1a(.sttattus.empire.v1.RemoveFriendResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1b\x06proto3"
 
 var (
 	file_sttattus_empire_v1_empire_proto_rawDescOnce sync.Once
@@ -1390,7 +1909,7 @@ func file_sttattus_empire_v1_empire_proto_rawDescGZIP() []byte {
 	return file_sttattus_empire_v1_empire_proto_rawDescData
 }
 
-var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 20)
+var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 29)
 var file_sttattus_empire_v1_empire_proto_goTypes = []any{
 	(*GetScoreBreakdownRequest)(nil),    // 0: sttattus.empire.v1.GetScoreBreakdownRequest
 	(*GetScoreBreakdownResponse)(nil),   // 1: sttattus.empire.v1.GetScoreBreakdownResponse
@@ -1412,33 +1931,53 @@ var file_sttattus_empire_v1_empire_proto_goTypes = []any{
 	(*ClaimHandleResponse)(nil),         // 17: sttattus.empire.v1.ClaimHandleResponse
 	(*UpdatePublicProfileRequest)(nil),  // 18: sttattus.empire.v1.UpdatePublicProfileRequest
 	(*UpdatePublicProfileResponse)(nil), // 19: sttattus.empire.v1.UpdatePublicProfileResponse
+	(*FriendSummary)(nil),               // 20: sttattus.empire.v1.FriendSummary
+	(*ListFriendsRequest)(nil),          // 21: sttattus.empire.v1.ListFriendsRequest
+	(*ListFriendsResponse)(nil),         // 22: sttattus.empire.v1.ListFriendsResponse
+	(*SendInviteRequest)(nil),           // 23: sttattus.empire.v1.SendInviteRequest
+	(*SendInviteResponse)(nil),          // 24: sttattus.empire.v1.SendInviteResponse
+	(*RespondInviteRequest)(nil),        // 25: sttattus.empire.v1.RespondInviteRequest
+	(*RespondInviteResponse)(nil),       // 26: sttattus.empire.v1.RespondInviteResponse
+	(*RemoveFriendRequest)(nil),         // 27: sttattus.empire.v1.RemoveFriendRequest
+	(*RemoveFriendResponse)(nil),        // 28: sttattus.empire.v1.RemoveFriendResponse
 }
 var file_sttattus_empire_v1_empire_proto_depIdxs = []int32{
 	3,  // 0: sttattus.empire.v1.GetTierLadderResponse.bands:type_name -> sttattus.empire.v1.TierBand
 	6,  // 1: sttattus.empire.v1.GetWalletResponse.by_pillar:type_name -> sttattus.empire.v1.PillarPoints
 	9,  // 2: sttattus.empire.v1.ListLedgerEntriesResponse.entries:type_name -> sttattus.empire.v1.LedgerEntry
 	12, // 3: sttattus.empire.v1.GetTaxStatementResponse.active_rules:type_name -> sttattus.empire.v1.TaxRuleSummary
-	0,  // 4: sttattus.empire.v1.EmpireService.GetScoreBreakdown:input_type -> sttattus.empire.v1.GetScoreBreakdownRequest
-	2,  // 5: sttattus.empire.v1.EmpireService.GetTierLadder:input_type -> sttattus.empire.v1.GetTierLadderRequest
-	5,  // 6: sttattus.empire.v1.EmpireService.GetWallet:input_type -> sttattus.empire.v1.GetWalletRequest
-	8,  // 7: sttattus.empire.v1.EmpireService.ListLedgerEntries:input_type -> sttattus.empire.v1.ListLedgerEntriesRequest
-	11, // 8: sttattus.empire.v1.EmpireService.GetTaxStatement:input_type -> sttattus.empire.v1.GetTaxStatementRequest
-	14, // 9: sttattus.empire.v1.EmpireService.GetPublicProfile:input_type -> sttattus.empire.v1.GetPublicProfileRequest
-	16, // 10: sttattus.empire.v1.EmpireService.ClaimHandle:input_type -> sttattus.empire.v1.ClaimHandleRequest
-	18, // 11: sttattus.empire.v1.EmpireService.UpdatePublicProfile:input_type -> sttattus.empire.v1.UpdatePublicProfileRequest
-	1,  // 12: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
-	4,  // 13: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
-	7,  // 14: sttattus.empire.v1.EmpireService.GetWallet:output_type -> sttattus.empire.v1.GetWalletResponse
-	10, // 15: sttattus.empire.v1.EmpireService.ListLedgerEntries:output_type -> sttattus.empire.v1.ListLedgerEntriesResponse
-	13, // 16: sttattus.empire.v1.EmpireService.GetTaxStatement:output_type -> sttattus.empire.v1.GetTaxStatementResponse
-	15, // 17: sttattus.empire.v1.EmpireService.GetPublicProfile:output_type -> sttattus.empire.v1.GetPublicProfileResponse
-	17, // 18: sttattus.empire.v1.EmpireService.ClaimHandle:output_type -> sttattus.empire.v1.ClaimHandleResponse
-	19, // 19: sttattus.empire.v1.EmpireService.UpdatePublicProfile:output_type -> sttattus.empire.v1.UpdatePublicProfileResponse
-	12, // [12:20] is the sub-list for method output_type
-	4,  // [4:12] is the sub-list for method input_type
-	4,  // [4:4] is the sub-list for extension type_name
-	4,  // [4:4] is the sub-list for extension extendee
-	0,  // [0:4] is the sub-list for field type_name
+	20, // 4: sttattus.empire.v1.ListFriendsResponse.friends:type_name -> sttattus.empire.v1.FriendSummary
+	20, // 5: sttattus.empire.v1.ListFriendsResponse.incoming:type_name -> sttattus.empire.v1.FriendSummary
+	20, // 6: sttattus.empire.v1.ListFriendsResponse.outgoing:type_name -> sttattus.empire.v1.FriendSummary
+	0,  // 7: sttattus.empire.v1.EmpireService.GetScoreBreakdown:input_type -> sttattus.empire.v1.GetScoreBreakdownRequest
+	2,  // 8: sttattus.empire.v1.EmpireService.GetTierLadder:input_type -> sttattus.empire.v1.GetTierLadderRequest
+	5,  // 9: sttattus.empire.v1.EmpireService.GetWallet:input_type -> sttattus.empire.v1.GetWalletRequest
+	8,  // 10: sttattus.empire.v1.EmpireService.ListLedgerEntries:input_type -> sttattus.empire.v1.ListLedgerEntriesRequest
+	11, // 11: sttattus.empire.v1.EmpireService.GetTaxStatement:input_type -> sttattus.empire.v1.GetTaxStatementRequest
+	14, // 12: sttattus.empire.v1.EmpireService.GetPublicProfile:input_type -> sttattus.empire.v1.GetPublicProfileRequest
+	16, // 13: sttattus.empire.v1.EmpireService.ClaimHandle:input_type -> sttattus.empire.v1.ClaimHandleRequest
+	18, // 14: sttattus.empire.v1.EmpireService.UpdatePublicProfile:input_type -> sttattus.empire.v1.UpdatePublicProfileRequest
+	21, // 15: sttattus.empire.v1.EmpireService.ListFriends:input_type -> sttattus.empire.v1.ListFriendsRequest
+	23, // 16: sttattus.empire.v1.EmpireService.SendInvite:input_type -> sttattus.empire.v1.SendInviteRequest
+	25, // 17: sttattus.empire.v1.EmpireService.RespondInvite:input_type -> sttattus.empire.v1.RespondInviteRequest
+	27, // 18: sttattus.empire.v1.EmpireService.RemoveFriend:input_type -> sttattus.empire.v1.RemoveFriendRequest
+	1,  // 19: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
+	4,  // 20: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
+	7,  // 21: sttattus.empire.v1.EmpireService.GetWallet:output_type -> sttattus.empire.v1.GetWalletResponse
+	10, // 22: sttattus.empire.v1.EmpireService.ListLedgerEntries:output_type -> sttattus.empire.v1.ListLedgerEntriesResponse
+	13, // 23: sttattus.empire.v1.EmpireService.GetTaxStatement:output_type -> sttattus.empire.v1.GetTaxStatementResponse
+	15, // 24: sttattus.empire.v1.EmpireService.GetPublicProfile:output_type -> sttattus.empire.v1.GetPublicProfileResponse
+	17, // 25: sttattus.empire.v1.EmpireService.ClaimHandle:output_type -> sttattus.empire.v1.ClaimHandleResponse
+	19, // 26: sttattus.empire.v1.EmpireService.UpdatePublicProfile:output_type -> sttattus.empire.v1.UpdatePublicProfileResponse
+	22, // 27: sttattus.empire.v1.EmpireService.ListFriends:output_type -> sttattus.empire.v1.ListFriendsResponse
+	24, // 28: sttattus.empire.v1.EmpireService.SendInvite:output_type -> sttattus.empire.v1.SendInviteResponse
+	26, // 29: sttattus.empire.v1.EmpireService.RespondInvite:output_type -> sttattus.empire.v1.RespondInviteResponse
+	28, // 30: sttattus.empire.v1.EmpireService.RemoveFriend:output_type -> sttattus.empire.v1.RemoveFriendResponse
+	19, // [19:31] is the sub-list for method output_type
+	7,  // [7:19] is the sub-list for method input_type
+	7,  // [7:7] is the sub-list for extension type_name
+	7,  // [7:7] is the sub-list for extension extendee
+	0,  // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_empire_v1_empire_proto_init() }
@@ -1452,7 +1991,7 @@ func file_sttattus_empire_v1_empire_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_empire_v1_empire_proto_rawDesc), len(file_sttattus_empire_v1_empire_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   20,
+			NumMessages:   29,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -1441,6 +1441,527 @@ class UpdatePublicProfileResponse extends $pb.GeneratedMessage {
   void clearBio() => $_clearField(2);
 }
 
+/// FriendSummary is the public slice of one friend (or pending invite
+/// counterparty). Renders in directory rows + invite cards.
+class FriendSummary extends $pb.GeneratedMessage {
+  factory FriendSummary({
+    $core.String? friendshipId,
+    $core.String? userId,
+    $core.String? name,
+    $core.String? handle,
+    $core.String? avatarUrl,
+    $core.double? sttattusScore,
+    $core.String? tier,
+    $core.String? since,
+  }) {
+    final result = create();
+    if (friendshipId != null) result.friendshipId = friendshipId;
+    if (userId != null) result.userId = userId;
+    if (name != null) result.name = name;
+    if (handle != null) result.handle = handle;
+    if (avatarUrl != null) result.avatarUrl = avatarUrl;
+    if (sttattusScore != null) result.sttattusScore = sttattusScore;
+    if (tier != null) result.tier = tier;
+    if (since != null) result.since = since;
+    return result;
+  }
+
+  FriendSummary._();
+
+  factory FriendSummary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory FriendSummary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FriendSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'friendshipId')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOS(4, _omitFieldNames ? '' : 'handle')
+    ..aOS(5, _omitFieldNames ? '' : 'avatarUrl')
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'sttattusScore', $pb.PbFieldType.OD)
+    ..aOS(7, _omitFieldNames ? '' : 'tier')
+    ..aOS(8, _omitFieldNames ? '' : 'since')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FriendSummary clone() => FriendSummary()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FriendSummary copyWith(void Function(FriendSummary) updates) => super.copyWith((message) => updates(message as FriendSummary)) as FriendSummary;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FriendSummary create() => FriendSummary._();
+  @$core.override
+  FriendSummary createEmptyInstance() => create();
+  static $pb.PbList<FriendSummary> createRepeated() => $pb.PbList<FriendSummary>();
+  @$core.pragma('dart2js:noInline')
+  static FriendSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FriendSummary>(create);
+  static FriendSummary? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get friendshipId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set friendshipId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFriendshipId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFriendshipId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get handle => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set handle($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasHandle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearHandle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get avatarUrl => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set avatarUrl($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAvatarUrl() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAvatarUrl() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get sttattusScore => $_getN(5);
+  @$pb.TagNumber(6)
+  set sttattusScore($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSttattusScore() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSttattusScore() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get tier => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set tier($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasTier() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTier() => $_clearField(7);
+
+  /// RFC-3339 UTC of the relevant moment — accepted_at for confirmed
+  /// friends, created_at for pending invites.
+  @$pb.TagNumber(8)
+  $core.String get since => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set since($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSince() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSince() => $_clearField(8);
+}
+
+class ListFriendsRequest extends $pb.GeneratedMessage {
+  factory ListFriendsRequest() => create();
+
+  ListFriendsRequest._();
+
+  factory ListFriendsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListFriendsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFriendsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListFriendsRequest clone() => ListFriendsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListFriendsRequest copyWith(void Function(ListFriendsRequest) updates) => super.copyWith((message) => updates(message as ListFriendsRequest)) as ListFriendsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListFriendsRequest create() => ListFriendsRequest._();
+  @$core.override
+  ListFriendsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListFriendsRequest> createRepeated() => $pb.PbList<ListFriendsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListFriendsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFriendsRequest>(create);
+  static ListFriendsRequest? _defaultInstance;
+}
+
+class ListFriendsResponse extends $pb.GeneratedMessage {
+  factory ListFriendsResponse({
+    $core.Iterable<FriendSummary>? friends,
+    $core.Iterable<FriendSummary>? incoming,
+    $core.Iterable<FriendSummary>? outgoing,
+  }) {
+    final result = create();
+    if (friends != null) result.friends.addAll(friends);
+    if (incoming != null) result.incoming.addAll(incoming);
+    if (outgoing != null) result.outgoing.addAll(outgoing);
+    return result;
+  }
+
+  ListFriendsResponse._();
+
+  factory ListFriendsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListFriendsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFriendsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..pc<FriendSummary>(1, _omitFieldNames ? '' : 'friends', $pb.PbFieldType.PM, subBuilder: FriendSummary.create)
+    ..pc<FriendSummary>(2, _omitFieldNames ? '' : 'incoming', $pb.PbFieldType.PM, subBuilder: FriendSummary.create)
+    ..pc<FriendSummary>(3, _omitFieldNames ? '' : 'outgoing', $pb.PbFieldType.PM, subBuilder: FriendSummary.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListFriendsResponse clone() => ListFriendsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListFriendsResponse copyWith(void Function(ListFriendsResponse) updates) => super.copyWith((message) => updates(message as ListFriendsResponse)) as ListFriendsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListFriendsResponse create() => ListFriendsResponse._();
+  @$core.override
+  ListFriendsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListFriendsResponse> createRepeated() => $pb.PbList<ListFriendsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListFriendsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFriendsResponse>(create);
+  static ListFriendsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<FriendSummary> get friends => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<FriendSummary> get incoming => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<FriendSummary> get outgoing => $_getList(2);
+}
+
+class SendInviteRequest extends $pb.GeneratedMessage {
+  factory SendInviteRequest({
+    $core.String? handle,
+  }) {
+    final result = create();
+    if (handle != null) result.handle = handle;
+    return result;
+  }
+
+  SendInviteRequest._();
+
+  factory SendInviteRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SendInviteRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SendInviteRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'handle')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SendInviteRequest clone() => SendInviteRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SendInviteRequest copyWith(void Function(SendInviteRequest) updates) => super.copyWith((message) => updates(message as SendInviteRequest)) as SendInviteRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SendInviteRequest create() => SendInviteRequest._();
+  @$core.override
+  SendInviteRequest createEmptyInstance() => create();
+  static $pb.PbList<SendInviteRequest> createRepeated() => $pb.PbList<SendInviteRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SendInviteRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendInviteRequest>(create);
+  static SendInviteRequest? _defaultInstance;
+
+  /// Target's handle (the way one member finds another in this surface).
+  @$pb.TagNumber(1)
+  $core.String get handle => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set handle($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasHandle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHandle() => $_clearField(1);
+}
+
+class SendInviteResponse extends $pb.GeneratedMessage {
+  factory SendInviteResponse({
+    $core.String? friendshipId,
+  }) {
+    final result = create();
+    if (friendshipId != null) result.friendshipId = friendshipId;
+    return result;
+  }
+
+  SendInviteResponse._();
+
+  factory SendInviteResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SendInviteResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SendInviteResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'friendshipId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SendInviteResponse clone() => SendInviteResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SendInviteResponse copyWith(void Function(SendInviteResponse) updates) => super.copyWith((message) => updates(message as SendInviteResponse)) as SendInviteResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SendInviteResponse create() => SendInviteResponse._();
+  @$core.override
+  SendInviteResponse createEmptyInstance() => create();
+  static $pb.PbList<SendInviteResponse> createRepeated() => $pb.PbList<SendInviteResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SendInviteResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendInviteResponse>(create);
+  static SendInviteResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get friendshipId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set friendshipId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFriendshipId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFriendshipId() => $_clearField(1);
+}
+
+class RespondInviteRequest extends $pb.GeneratedMessage {
+  factory RespondInviteRequest({
+    $core.String? friendshipId,
+    $core.bool? accept,
+  }) {
+    final result = create();
+    if (friendshipId != null) result.friendshipId = friendshipId;
+    if (accept != null) result.accept = accept;
+    return result;
+  }
+
+  RespondInviteRequest._();
+
+  factory RespondInviteRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RespondInviteRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RespondInviteRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'friendshipId')
+    ..aOB(2, _omitFieldNames ? '' : 'accept')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RespondInviteRequest clone() => RespondInviteRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RespondInviteRequest copyWith(void Function(RespondInviteRequest) updates) => super.copyWith((message) => updates(message as RespondInviteRequest)) as RespondInviteRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RespondInviteRequest create() => RespondInviteRequest._();
+  @$core.override
+  RespondInviteRequest createEmptyInstance() => create();
+  static $pb.PbList<RespondInviteRequest> createRepeated() => $pb.PbList<RespondInviteRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RespondInviteRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RespondInviteRequest>(create);
+  static RespondInviteRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get friendshipId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set friendshipId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFriendshipId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFriendshipId() => $_clearField(1);
+
+  /// true → accept, false → decline.
+  @$pb.TagNumber(2)
+  $core.bool get accept => $_getBF(1);
+  @$pb.TagNumber(2)
+  set accept($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAccept() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccept() => $_clearField(2);
+}
+
+class RespondInviteResponse extends $pb.GeneratedMessage {
+  factory RespondInviteResponse({
+    $core.String? friendshipId,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (friendshipId != null) result.friendshipId = friendshipId;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  RespondInviteResponse._();
+
+  factory RespondInviteResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RespondInviteResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RespondInviteResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'friendshipId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RespondInviteResponse clone() => RespondInviteResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RespondInviteResponse copyWith(void Function(RespondInviteResponse) updates) => super.copyWith((message) => updates(message as RespondInviteResponse)) as RespondInviteResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RespondInviteResponse create() => RespondInviteResponse._();
+  @$core.override
+  RespondInviteResponse createEmptyInstance() => create();
+  static $pb.PbList<RespondInviteResponse> createRepeated() => $pb.PbList<RespondInviteResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RespondInviteResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RespondInviteResponse>(create);
+  static RespondInviteResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get friendshipId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set friendshipId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFriendshipId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFriendshipId() => $_clearField(1);
+
+  /// "accepted" | "declined".
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+}
+
+class RemoveFriendRequest extends $pb.GeneratedMessage {
+  factory RemoveFriendRequest({
+    $core.String? friendshipId,
+  }) {
+    final result = create();
+    if (friendshipId != null) result.friendshipId = friendshipId;
+    return result;
+  }
+
+  RemoveFriendRequest._();
+
+  factory RemoveFriendRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RemoveFriendRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveFriendRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'friendshipId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveFriendRequest clone() => RemoveFriendRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveFriendRequest copyWith(void Function(RemoveFriendRequest) updates) => super.copyWith((message) => updates(message as RemoveFriendRequest)) as RemoveFriendRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveFriendRequest create() => RemoveFriendRequest._();
+  @$core.override
+  RemoveFriendRequest createEmptyInstance() => create();
+  static $pb.PbList<RemoveFriendRequest> createRepeated() => $pb.PbList<RemoveFriendRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveFriendRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveFriendRequest>(create);
+  static RemoveFriendRequest? _defaultInstance;
+
+  /// Either an active pending invite (withdraws) or an accepted edge
+  /// (severs).
+  @$pb.TagNumber(1)
+  $core.String get friendshipId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set friendshipId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFriendshipId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFriendshipId() => $_clearField(1);
+}
+
+class RemoveFriendResponse extends $pb.GeneratedMessage {
+  factory RemoveFriendResponse({
+    $core.String? friendshipId,
+  }) {
+    final result = create();
+    if (friendshipId != null) result.friendshipId = friendshipId;
+    return result;
+  }
+
+  RemoveFriendResponse._();
+
+  factory RemoveFriendResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RemoveFriendResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveFriendResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'friendshipId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveFriendResponse clone() => RemoveFriendResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveFriendResponse copyWith(void Function(RemoveFriendResponse) updates) => super.copyWith((message) => updates(message as RemoveFriendResponse)) as RemoveFriendResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveFriendResponse create() => RemoveFriendResponse._();
+  @$core.override
+  RemoveFriendResponse createEmptyInstance() => create();
+  static $pb.PbList<RemoveFriendResponse> createRepeated() => $pb.PbList<RemoveFriendResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveFriendResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveFriendResponse>(create);
+  static RemoveFriendResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get friendshipId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set friendshipId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFriendshipId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFriendshipId() => $_clearField(1);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

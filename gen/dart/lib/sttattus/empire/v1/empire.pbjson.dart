@@ -323,3 +323,131 @@ final $typed_data.Uint8List updatePublicProfileResponseDescriptor = $convert.bas
     'ChtVcGRhdGVQdWJsaWNQcm9maWxlUmVzcG9uc2USGAoHdGFnbGluZRgBIAEoCVIHdGFnbGluZR'
     'IQCgNiaW8YAiABKAlSA2Jpbw==');
 
+@$core.Deprecated('Use friendSummaryDescriptor instead')
+const FriendSummary$json = {
+  '1': 'FriendSummary',
+  '2': [
+    {'1': 'friendship_id', '3': 1, '4': 1, '5': 9, '10': 'friendshipId'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'handle', '3': 4, '4': 1, '5': 9, '10': 'handle'},
+    {'1': 'avatar_url', '3': 5, '4': 1, '5': 9, '10': 'avatarUrl'},
+    {'1': 'sttattus_score', '3': 6, '4': 1, '5': 1, '10': 'sttattusScore'},
+    {'1': 'tier', '3': 7, '4': 1, '5': 9, '10': 'tier'},
+    {'1': 'since', '3': 8, '4': 1, '5': 9, '10': 'since'},
+  ],
+};
+
+/// Descriptor for `FriendSummary`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List friendSummaryDescriptor = $convert.base64Decode(
+    'Cg1GcmllbmRTdW1tYXJ5EiMKDWZyaWVuZHNoaXBfaWQYASABKAlSDGZyaWVuZHNoaXBJZBIXCg'
+    'd1c2VyX2lkGAIgASgJUgZ1c2VySWQSEgoEbmFtZRgDIAEoCVIEbmFtZRIWCgZoYW5kbGUYBCAB'
+    'KAlSBmhhbmRsZRIdCgphdmF0YXJfdXJsGAUgASgJUglhdmF0YXJVcmwSJQoOc3R0YXR0dXNfc2'
+    'NvcmUYBiABKAFSDXN0dGF0dHVzU2NvcmUSEgoEdGllchgHIAEoCVIEdGllchIUCgVzaW5jZRgI'
+    'IAEoCVIFc2luY2U=');
+
+@$core.Deprecated('Use listFriendsRequestDescriptor instead')
+const ListFriendsRequest$json = {
+  '1': 'ListFriendsRequest',
+};
+
+/// Descriptor for `ListFriendsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listFriendsRequestDescriptor = $convert.base64Decode(
+    'ChJMaXN0RnJpZW5kc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listFriendsResponseDescriptor instead')
+const ListFriendsResponse$json = {
+  '1': 'ListFriendsResponse',
+  '2': [
+    {'1': 'friends', '3': 1, '4': 3, '5': 11, '6': '.sttattus.empire.v1.FriendSummary', '10': 'friends'},
+    {'1': 'incoming', '3': 2, '4': 3, '5': 11, '6': '.sttattus.empire.v1.FriendSummary', '10': 'incoming'},
+    {'1': 'outgoing', '3': 3, '4': 3, '5': 11, '6': '.sttattus.empire.v1.FriendSummary', '10': 'outgoing'},
+  ],
+};
+
+/// Descriptor for `ListFriendsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listFriendsResponseDescriptor = $convert.base64Decode(
+    'ChNMaXN0RnJpZW5kc1Jlc3BvbnNlEjsKB2ZyaWVuZHMYASADKAsyIS5zdHRhdHR1cy5lbXBpcm'
+    'UudjEuRnJpZW5kU3VtbWFyeVIHZnJpZW5kcxI9CghpbmNvbWluZxgCIAMoCzIhLnN0dGF0dHVz'
+    'LmVtcGlyZS52MS5GcmllbmRTdW1tYXJ5UghpbmNvbWluZxI9CghvdXRnb2luZxgDIAMoCzIhLn'
+    'N0dGF0dHVzLmVtcGlyZS52MS5GcmllbmRTdW1tYXJ5UghvdXRnb2luZw==');
+
+@$core.Deprecated('Use sendInviteRequestDescriptor instead')
+const SendInviteRequest$json = {
+  '1': 'SendInviteRequest',
+  '2': [
+    {'1': 'handle', '3': 1, '4': 1, '5': 9, '10': 'handle'},
+  ],
+};
+
+/// Descriptor for `SendInviteRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sendInviteRequestDescriptor = $convert.base64Decode(
+    'ChFTZW5kSW52aXRlUmVxdWVzdBIWCgZoYW5kbGUYASABKAlSBmhhbmRsZQ==');
+
+@$core.Deprecated('Use sendInviteResponseDescriptor instead')
+const SendInviteResponse$json = {
+  '1': 'SendInviteResponse',
+  '2': [
+    {'1': 'friendship_id', '3': 1, '4': 1, '5': 9, '10': 'friendshipId'},
+  ],
+};
+
+/// Descriptor for `SendInviteResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sendInviteResponseDescriptor = $convert.base64Decode(
+    'ChJTZW5kSW52aXRlUmVzcG9uc2USIwoNZnJpZW5kc2hpcF9pZBgBIAEoCVIMZnJpZW5kc2hpcE'
+    'lk');
+
+@$core.Deprecated('Use respondInviteRequestDescriptor instead')
+const RespondInviteRequest$json = {
+  '1': 'RespondInviteRequest',
+  '2': [
+    {'1': 'friendship_id', '3': 1, '4': 1, '5': 9, '10': 'friendshipId'},
+    {'1': 'accept', '3': 2, '4': 1, '5': 8, '10': 'accept'},
+  ],
+};
+
+/// Descriptor for `RespondInviteRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List respondInviteRequestDescriptor = $convert.base64Decode(
+    'ChRSZXNwb25kSW52aXRlUmVxdWVzdBIjCg1mcmllbmRzaGlwX2lkGAEgASgJUgxmcmllbmRzaG'
+    'lwSWQSFgoGYWNjZXB0GAIgASgIUgZhY2NlcHQ=');
+
+@$core.Deprecated('Use respondInviteResponseDescriptor instead')
+const RespondInviteResponse$json = {
+  '1': 'RespondInviteResponse',
+  '2': [
+    {'1': 'friendship_id', '3': 1, '4': 1, '5': 9, '10': 'friendshipId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `RespondInviteResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List respondInviteResponseDescriptor = $convert.base64Decode(
+    'ChVSZXNwb25kSW52aXRlUmVzcG9uc2USIwoNZnJpZW5kc2hpcF9pZBgBIAEoCVIMZnJpZW5kc2'
+    'hpcElkEhYKBnN0YXR1cxgCIAEoCVIGc3RhdHVz');
+
+@$core.Deprecated('Use removeFriendRequestDescriptor instead')
+const RemoveFriendRequest$json = {
+  '1': 'RemoveFriendRequest',
+  '2': [
+    {'1': 'friendship_id', '3': 1, '4': 1, '5': 9, '10': 'friendshipId'},
+  ],
+};
+
+/// Descriptor for `RemoveFriendRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeFriendRequestDescriptor = $convert.base64Decode(
+    'ChNSZW1vdmVGcmllbmRSZXF1ZXN0EiMKDWZyaWVuZHNoaXBfaWQYASABKAlSDGZyaWVuZHNoaX'
+    'BJZA==');
+
+@$core.Deprecated('Use removeFriendResponseDescriptor instead')
+const RemoveFriendResponse$json = {
+  '1': 'RemoveFriendResponse',
+  '2': [
+    {'1': 'friendship_id', '3': 1, '4': 1, '5': 9, '10': 'friendshipId'},
+  ],
+};
+
+/// Descriptor for `RemoveFriendResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeFriendResponseDescriptor = $convert.base64Decode(
+    'ChRSZW1vdmVGcmllbmRSZXNwb25zZRIjCg1mcmllbmRzaGlwX2lkGAEgASgJUgxmcmllbmRzaG'
+    'lwSWQ=');
+

@@ -27,6 +27,10 @@ const (
 	EmpireService_GetPublicProfile_FullMethodName    = "/sttattus.empire.v1.EmpireService/GetPublicProfile"
 	EmpireService_ClaimHandle_FullMethodName         = "/sttattus.empire.v1.EmpireService/ClaimHandle"
 	EmpireService_UpdatePublicProfile_FullMethodName = "/sttattus.empire.v1.EmpireService/UpdatePublicProfile"
+	EmpireService_ListFriends_FullMethodName         = "/sttattus.empire.v1.EmpireService/ListFriends"
+	EmpireService_SendInvite_FullMethodName          = "/sttattus.empire.v1.EmpireService/SendInvite"
+	EmpireService_RespondInvite_FullMethodName       = "/sttattus.empire.v1.EmpireService/RespondInvite"
+	EmpireService_RemoveFriend_FullMethodName        = "/sttattus.empire.v1.EmpireService/RemoveFriend"
 )
 
 // EmpireServiceClient is the client API for EmpireService service.
@@ -61,6 +65,21 @@ type EmpireServiceClient interface {
 	// UpdatePublicProfile updates the caller's tagline + bio. Empty
 	// fields are left alone; a single space clears.
 	UpdatePublicProfile(ctx context.Context, in *UpdatePublicProfileRequest, opts ...grpc.CallOption) (*UpdatePublicProfileResponse, error)
+	// ListFriends returns the caller's accepted friends, plus incoming
+	// and outgoing pending invites — the three buckets the members tab
+	// renders.
+	ListFriends(ctx context.Context, in *ListFriendsRequest, opts ...grpc.CallOption) (*ListFriendsResponse, error)
+	// SendInvite opens a pending friendship to the user behind the
+	// supplied handle. Returns AlreadyExists if an active edge (pending
+	// or accepted) already sits between the two parties in either
+	// direction.
+	SendInvite(ctx context.Context, in *SendInviteRequest, opts ...grpc.CallOption) (*SendInviteResponse, error)
+	// RespondInvite accepts (mutual confirmation) or declines a pending
+	// invite. Only the target may call.
+	RespondInvite(ctx context.Context, in *RespondInviteRequest, opts ...grpc.CallOption) (*RespondInviteResponse, error)
+	// RemoveFriend severs an accepted edge, or withdraws a pending one.
+	// Either side may call.
+	RemoveFriend(ctx context.Context, in *RemoveFriendRequest, opts ...grpc.CallOption) (*RemoveFriendResponse, error)
 }
 
 type empireServiceClient struct {
@@ -151,6 +170,46 @@ func (c *empireServiceClient) UpdatePublicProfile(ctx context.Context, in *Updat
 	return out, nil
 }
 
+func (c *empireServiceClient) ListFriends(ctx context.Context, in *ListFriendsRequest, opts ...grpc.CallOption) (*ListFriendsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListFriendsResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ListFriends_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) SendInvite(ctx context.Context, in *SendInviteRequest, opts ...grpc.CallOption) (*SendInviteResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SendInviteResponse)
+	err := c.cc.Invoke(ctx, EmpireService_SendInvite_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) RespondInvite(ctx context.Context, in *RespondInviteRequest, opts ...grpc.CallOption) (*RespondInviteResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RespondInviteResponse)
+	err := c.cc.Invoke(ctx, EmpireService_RespondInvite_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) RemoveFriend(ctx context.Context, in *RemoveFriendRequest, opts ...grpc.CallOption) (*RemoveFriendResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RemoveFriendResponse)
+	err := c.cc.Invoke(ctx, EmpireService_RemoveFriend_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmpireServiceServer is the server API for EmpireService service.
 // All implementations must embed UnimplementedEmpireServiceServer
 // for forward compatibility.
@@ -183,6 +242,21 @@ type EmpireServiceServer interface {
 	// UpdatePublicProfile updates the caller's tagline + bio. Empty
 	// fields are left alone; a single space clears.
 	UpdatePublicProfile(context.Context, *UpdatePublicProfileRequest) (*UpdatePublicProfileResponse, error)
+	// ListFriends returns the caller's accepted friends, plus incoming
+	// and outgoing pending invites — the three buckets the members tab
+	// renders.
+	ListFriends(context.Context, *ListFriendsRequest) (*ListFriendsResponse, error)
+	// SendInvite opens a pending friendship to the user behind the
+	// supplied handle. Returns AlreadyExists if an active edge (pending
+	// or accepted) already sits between the two parties in either
+	// direction.
+	SendInvite(context.Context, *SendInviteRequest) (*SendInviteResponse, error)
+	// RespondInvite accepts (mutual confirmation) or declines a pending
+	// invite. Only the target may call.
+	RespondInvite(context.Context, *RespondInviteRequest) (*RespondInviteResponse, error)
+	// RemoveFriend severs an accepted edge, or withdraws a pending one.
+	// Either side may call.
+	RemoveFriend(context.Context, *RemoveFriendRequest) (*RemoveFriendResponse, error)
 	mustEmbedUnimplementedEmpireServiceServer()
 }
 
@@ -216,6 +290,18 @@ func (UnimplementedEmpireServiceServer) ClaimHandle(context.Context, *ClaimHandl
 }
 func (UnimplementedEmpireServiceServer) UpdatePublicProfile(context.Context, *UpdatePublicProfileRequest) (*UpdatePublicProfileResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method UpdatePublicProfile not implemented")
+}
+func (UnimplementedEmpireServiceServer) ListFriends(context.Context, *ListFriendsRequest) (*ListFriendsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListFriends not implemented")
+}
+func (UnimplementedEmpireServiceServer) SendInvite(context.Context, *SendInviteRequest) (*SendInviteResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SendInvite not implemented")
+}
+func (UnimplementedEmpireServiceServer) RespondInvite(context.Context, *RespondInviteRequest) (*RespondInviteResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RespondInvite not implemented")
+}
+func (UnimplementedEmpireServiceServer) RemoveFriend(context.Context, *RemoveFriendRequest) (*RemoveFriendResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RemoveFriend not implemented")
 }
 func (UnimplementedEmpireServiceServer) mustEmbedUnimplementedEmpireServiceServer() {}
 func (UnimplementedEmpireServiceServer) testEmbeddedByValue()                       {}
@@ -382,6 +468,78 @@ func _EmpireService_UpdatePublicProfile_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmpireService_ListFriends_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListFriendsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ListFriends(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ListFriends_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ListFriends(ctx, req.(*ListFriendsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_SendInvite_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SendInviteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).SendInvite(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_SendInvite_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).SendInvite(ctx, req.(*SendInviteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_RespondInvite_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RespondInviteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).RespondInvite(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_RespondInvite_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).RespondInvite(ctx, req.(*RespondInviteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_RemoveFriend_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveFriendRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).RemoveFriend(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_RemoveFriend_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).RemoveFriend(ctx, req.(*RemoveFriendRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EmpireService_ServiceDesc is the grpc.ServiceDesc for EmpireService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -420,6 +578,22 @@ var EmpireService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdatePublicProfile",
 			Handler:    _EmpireService_UpdatePublicProfile_Handler,
+		},
+		{
+			MethodName: "ListFriends",
+			Handler:    _EmpireService_ListFriends_Handler,
+		},
+		{
+			MethodName: "SendInvite",
+			Handler:    _EmpireService_SendInvite_Handler,
+		},
+		{
+			MethodName: "RespondInvite",
+			Handler:    _EmpireService_RespondInvite_Handler,
+		},
+		{
+			MethodName: "RemoveFriend",
+			Handler:    _EmpireService_RemoveFriend_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

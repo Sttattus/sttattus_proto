@@ -1076,3 +1076,411 @@ export class UpdatePublicProfileResponse extends Message<UpdatePublicProfileResp
   }
 }
 
+/**
+ * FriendSummary is the public slice of one friend (or pending invite
+ * counterparty). Renders in directory rows + invite cards.
+ *
+ * @generated from message sttattus.empire.v1.FriendSummary
+ */
+export class FriendSummary extends Message<FriendSummary> {
+  /**
+   * @generated from field: string friendship_id = 1;
+   */
+  friendshipId = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string handle = 4;
+   */
+  handle = "";
+
+  /**
+   * @generated from field: string avatar_url = 5;
+   */
+  avatarUrl = "";
+
+  /**
+   * @generated from field: double sttattus_score = 6;
+   */
+  sttattusScore = 0;
+
+  /**
+   * @generated from field: string tier = 7;
+   */
+  tier = "";
+
+  /**
+   * RFC-3339 UTC of the relevant moment — accepted_at for confirmed
+   * friends, created_at for pending invites.
+   *
+   * @generated from field: string since = 8;
+   */
+  since = "";
+
+  constructor(data?: PartialMessage<FriendSummary>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.FriendSummary";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "friendship_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "handle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "avatar_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "sttattus_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "since", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FriendSummary {
+    return new FriendSummary().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FriendSummary {
+    return new FriendSummary().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FriendSummary {
+    return new FriendSummary().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: FriendSummary | PlainMessage<FriendSummary> | undefined, b: FriendSummary | PlainMessage<FriendSummary> | undefined): boolean {
+    return proto3.util.equals(FriendSummary, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListFriendsRequest
+ */
+export class ListFriendsRequest extends Message<ListFriendsRequest> {
+  constructor(data?: PartialMessage<ListFriendsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListFriendsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFriendsRequest {
+    return new ListFriendsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFriendsRequest {
+    return new ListFriendsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFriendsRequest {
+    return new ListFriendsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListFriendsRequest | PlainMessage<ListFriendsRequest> | undefined, b: ListFriendsRequest | PlainMessage<ListFriendsRequest> | undefined): boolean {
+    return proto3.util.equals(ListFriendsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListFriendsResponse
+ */
+export class ListFriendsResponse extends Message<ListFriendsResponse> {
+  /**
+   * @generated from field: repeated sttattus.empire.v1.FriendSummary friends = 1;
+   */
+  friends: FriendSummary[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.empire.v1.FriendSummary incoming = 2;
+   */
+  incoming: FriendSummary[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.empire.v1.FriendSummary outgoing = 3;
+   */
+  outgoing: FriendSummary[] = [];
+
+  constructor(data?: PartialMessage<ListFriendsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListFriendsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "friends", kind: "message", T: FriendSummary, repeated: true },
+    { no: 2, name: "incoming", kind: "message", T: FriendSummary, repeated: true },
+    { no: 3, name: "outgoing", kind: "message", T: FriendSummary, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFriendsResponse {
+    return new ListFriendsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFriendsResponse {
+    return new ListFriendsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFriendsResponse {
+    return new ListFriendsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListFriendsResponse | PlainMessage<ListFriendsResponse> | undefined, b: ListFriendsResponse | PlainMessage<ListFriendsResponse> | undefined): boolean {
+    return proto3.util.equals(ListFriendsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.SendInviteRequest
+ */
+export class SendInviteRequest extends Message<SendInviteRequest> {
+  /**
+   * Target's handle (the way one member finds another in this surface).
+   *
+   * @generated from field: string handle = 1;
+   */
+  handle = "";
+
+  constructor(data?: PartialMessage<SendInviteRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.SendInviteRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "handle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendInviteRequest {
+    return new SendInviteRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SendInviteRequest {
+    return new SendInviteRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SendInviteRequest {
+    return new SendInviteRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SendInviteRequest | PlainMessage<SendInviteRequest> | undefined, b: SendInviteRequest | PlainMessage<SendInviteRequest> | undefined): boolean {
+    return proto3.util.equals(SendInviteRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.SendInviteResponse
+ */
+export class SendInviteResponse extends Message<SendInviteResponse> {
+  /**
+   * @generated from field: string friendship_id = 1;
+   */
+  friendshipId = "";
+
+  constructor(data?: PartialMessage<SendInviteResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.SendInviteResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "friendship_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendInviteResponse {
+    return new SendInviteResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SendInviteResponse {
+    return new SendInviteResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SendInviteResponse {
+    return new SendInviteResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SendInviteResponse | PlainMessage<SendInviteResponse> | undefined, b: SendInviteResponse | PlainMessage<SendInviteResponse> | undefined): boolean {
+    return proto3.util.equals(SendInviteResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.RespondInviteRequest
+ */
+export class RespondInviteRequest extends Message<RespondInviteRequest> {
+  /**
+   * @generated from field: string friendship_id = 1;
+   */
+  friendshipId = "";
+
+  /**
+   * true → accept, false → decline.
+   *
+   * @generated from field: bool accept = 2;
+   */
+  accept = false;
+
+  constructor(data?: PartialMessage<RespondInviteRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.RespondInviteRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "friendship_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "accept", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RespondInviteRequest {
+    return new RespondInviteRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RespondInviteRequest {
+    return new RespondInviteRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RespondInviteRequest {
+    return new RespondInviteRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RespondInviteRequest | PlainMessage<RespondInviteRequest> | undefined, b: RespondInviteRequest | PlainMessage<RespondInviteRequest> | undefined): boolean {
+    return proto3.util.equals(RespondInviteRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.RespondInviteResponse
+ */
+export class RespondInviteResponse extends Message<RespondInviteResponse> {
+  /**
+   * @generated from field: string friendship_id = 1;
+   */
+  friendshipId = "";
+
+  /**
+   * "accepted" | "declined".
+   *
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<RespondInviteResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.RespondInviteResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "friendship_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RespondInviteResponse {
+    return new RespondInviteResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RespondInviteResponse {
+    return new RespondInviteResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RespondInviteResponse {
+    return new RespondInviteResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RespondInviteResponse | PlainMessage<RespondInviteResponse> | undefined, b: RespondInviteResponse | PlainMessage<RespondInviteResponse> | undefined): boolean {
+    return proto3.util.equals(RespondInviteResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.RemoveFriendRequest
+ */
+export class RemoveFriendRequest extends Message<RemoveFriendRequest> {
+  /**
+   * Either an active pending invite (withdraws) or an accepted edge
+   * (severs).
+   *
+   * @generated from field: string friendship_id = 1;
+   */
+  friendshipId = "";
+
+  constructor(data?: PartialMessage<RemoveFriendRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.RemoveFriendRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "friendship_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveFriendRequest {
+    return new RemoveFriendRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveFriendRequest {
+    return new RemoveFriendRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveFriendRequest {
+    return new RemoveFriendRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RemoveFriendRequest | PlainMessage<RemoveFriendRequest> | undefined, b: RemoveFriendRequest | PlainMessage<RemoveFriendRequest> | undefined): boolean {
+    return proto3.util.equals(RemoveFriendRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.RemoveFriendResponse
+ */
+export class RemoveFriendResponse extends Message<RemoveFriendResponse> {
+  /**
+   * @generated from field: string friendship_id = 1;
+   */
+  friendshipId = "";
+
+  constructor(data?: PartialMessage<RemoveFriendResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.RemoveFriendResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "friendship_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveFriendResponse {
+    return new RemoveFriendResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveFriendResponse {
+    return new RemoveFriendResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveFriendResponse {
+    return new RemoveFriendResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RemoveFriendResponse | PlainMessage<RemoveFriendResponse> | undefined, b: RemoveFriendResponse | PlainMessage<RemoveFriendResponse> | undefined): boolean {
+    return proto3.util.equals(RemoveFriendResponse, a, b);
+  }
+}
+

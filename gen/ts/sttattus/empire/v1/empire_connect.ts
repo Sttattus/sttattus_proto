@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ClaimHandleRequest, ClaimHandleResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse } from "./empire_pb.js";
+import { ClaimHandleRequest, ClaimHandleResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse } from "./empire_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -110,6 +110,57 @@ export const EmpireService = {
       name: "UpdatePublicProfile",
       I: UpdatePublicProfileRequest,
       O: UpdatePublicProfileResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListFriends returns the caller's accepted friends, plus incoming
+     * and outgoing pending invites — the three buckets the members tab
+     * renders.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ListFriends
+     */
+    listFriends: {
+      name: "ListFriends",
+      I: ListFriendsRequest,
+      O: ListFriendsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * SendInvite opens a pending friendship to the user behind the
+     * supplied handle. Returns AlreadyExists if an active edge (pending
+     * or accepted) already sits between the two parties in either
+     * direction.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.SendInvite
+     */
+    sendInvite: {
+      name: "SendInvite",
+      I: SendInviteRequest,
+      O: SendInviteResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * RespondInvite accepts (mutual confirmation) or declines a pending
+     * invite. Only the target may call.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.RespondInvite
+     */
+    respondInvite: {
+      name: "RespondInvite",
+      I: RespondInviteRequest,
+      O: RespondInviteResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * RemoveFriend severs an accepted edge, or withdraws a pending one.
+     * Either side may call.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.RemoveFriend
+     */
+    removeFriend: {
+      name: "RemoveFriend",
+      I: RemoveFriendRequest,
+      O: RemoveFriendResponse,
       kind: MethodKind.Unary,
     },
   }

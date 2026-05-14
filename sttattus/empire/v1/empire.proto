@@ -190,6 +190,62 @@ message UpdatePublicProfileResponse {
   string bio = 2;
 }
 
+// === Friend graph (P5.7) ===
+
+// FriendSummary is the public slice of one friend (or pending invite
+// counterparty). Renders in directory rows + invite cards.
+message FriendSummary {
+  string friendship_id = 1;
+  string user_id = 2;
+  string name = 3;
+  string handle = 4;
+  string avatar_url = 5;
+  double sttattus_score = 6;
+  string tier = 7;
+  // RFC-3339 UTC of the relevant moment — accepted_at for confirmed
+  // friends, created_at for pending invites.
+  string since = 8;
+}
+
+message ListFriendsRequest {}
+
+message ListFriendsResponse {
+  repeated FriendSummary friends = 1;
+  repeated FriendSummary incoming = 2;
+  repeated FriendSummary outgoing = 3;
+}
+
+message SendInviteRequest {
+  // Target's handle (the way one member finds another in this surface).
+  string handle = 1;
+}
+
+message SendInviteResponse {
+  string friendship_id = 1;
+}
+
+message RespondInviteRequest {
+  string friendship_id = 1;
+  // true → accept, false → decline.
+  bool accept = 2;
+}
+
+message RespondInviteResponse {
+  string friendship_id = 1;
+  // "accepted" | "declined".
+  string status = 2;
+}
+
+message RemoveFriendRequest {
+  // Either an active pending invite (withdraws) or an accepted edge
+  // (severs).
+  string friendship_id = 1;
+}
+
+message RemoveFriendResponse {
+  string friendship_id = 1;
+}
+
 service EmpireService {
   // GetScoreBreakdown returns the caller's Sttattus Score with the
   // four weighted-bucket components — the glass-box the audit asks for.
@@ -226,4 +282,23 @@ service EmpireService {
   // UpdatePublicProfile updates the caller's tagline + bio. Empty
   // fields are left alone; a single space clears.
   rpc UpdatePublicProfile(UpdatePublicProfileRequest) returns (UpdatePublicProfileResponse);
+
+  // ListFriends returns the caller's accepted friends, plus incoming
+  // and outgoing pending invites — the three buckets the members tab
+  // renders.
+  rpc ListFriends(ListFriendsRequest) returns (ListFriendsResponse);
+
+  // SendInvite opens a pending friendship to the user behind the
+  // supplied handle. Returns AlreadyExists if an active edge (pending
+  // or accepted) already sits between the two parties in either
+  // direction.
+  rpc SendInvite(SendInviteRequest) returns (SendInviteResponse);
+
+  // RespondInvite accepts (mutual confirmation) or declines a pending
+  // invite. Only the target may call.
+  rpc RespondInvite(RespondInviteRequest) returns (RespondInviteResponse);
+
+  // RemoveFriend severs an accepted edge, or withdraws a pending one.
+  // Either side may call.
+  rpc RemoveFriend(RemoveFriendRequest) returns (RemoveFriendResponse);
 }

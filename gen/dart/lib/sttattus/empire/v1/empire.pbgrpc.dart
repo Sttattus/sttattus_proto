@@ -84,6 +84,33 @@ class EmpireServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updatePublicProfile, request, options: options);
   }
 
+  /// ListFriends returns the caller's accepted friends, plus incoming
+  /// and outgoing pending invites — the three buckets the members tab
+  /// renders.
+  $grpc.ResponseFuture<$0.ListFriendsResponse> listFriends($0.ListFriendsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listFriends, request, options: options);
+  }
+
+  /// SendInvite opens a pending friendship to the user behind the
+  /// supplied handle. Returns AlreadyExists if an active edge (pending
+  /// or accepted) already sits between the two parties in either
+  /// direction.
+  $grpc.ResponseFuture<$0.SendInviteResponse> sendInvite($0.SendInviteRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$sendInvite, request, options: options);
+  }
+
+  /// RespondInvite accepts (mutual confirmation) or declines a pending
+  /// invite. Only the target may call.
+  $grpc.ResponseFuture<$0.RespondInviteResponse> respondInvite($0.RespondInviteRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$respondInvite, request, options: options);
+  }
+
+  /// RemoveFriend severs an accepted edge, or withdraws a pending one.
+  /// Either side may call.
+  $grpc.ResponseFuture<$0.RemoveFriendResponse> removeFriend($0.RemoveFriendRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$removeFriend, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getScoreBreakdown = $grpc.ClientMethod<$0.GetScoreBreakdownRequest, $0.GetScoreBreakdownResponse>(
@@ -118,6 +145,22 @@ class EmpireServiceClient extends $grpc.Client {
       '/sttattus.empire.v1.EmpireService/UpdatePublicProfile',
       ($0.UpdatePublicProfileRequest value) => value.writeToBuffer(),
       $0.UpdatePublicProfileResponse.fromBuffer);
+  static final _$listFriends = $grpc.ClientMethod<$0.ListFriendsRequest, $0.ListFriendsResponse>(
+      '/sttattus.empire.v1.EmpireService/ListFriends',
+      ($0.ListFriendsRequest value) => value.writeToBuffer(),
+      $0.ListFriendsResponse.fromBuffer);
+  static final _$sendInvite = $grpc.ClientMethod<$0.SendInviteRequest, $0.SendInviteResponse>(
+      '/sttattus.empire.v1.EmpireService/SendInvite',
+      ($0.SendInviteRequest value) => value.writeToBuffer(),
+      $0.SendInviteResponse.fromBuffer);
+  static final _$respondInvite = $grpc.ClientMethod<$0.RespondInviteRequest, $0.RespondInviteResponse>(
+      '/sttattus.empire.v1.EmpireService/RespondInvite',
+      ($0.RespondInviteRequest value) => value.writeToBuffer(),
+      $0.RespondInviteResponse.fromBuffer);
+  static final _$removeFriend = $grpc.ClientMethod<$0.RemoveFriendRequest, $0.RemoveFriendResponse>(
+      '/sttattus.empire.v1.EmpireService/RemoveFriend',
+      ($0.RemoveFriendRequest value) => value.writeToBuffer(),
+      $0.RemoveFriendResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.empire.v1.EmpireService')
@@ -181,6 +224,34 @@ abstract class EmpireServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UpdatePublicProfileRequest.fromBuffer(value),
         ($0.UpdatePublicProfileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListFriendsRequest, $0.ListFriendsResponse>(
+        'ListFriends',
+        listFriends_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListFriendsRequest.fromBuffer(value),
+        ($0.ListFriendsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SendInviteRequest, $0.SendInviteResponse>(
+        'SendInvite',
+        sendInvite_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SendInviteRequest.fromBuffer(value),
+        ($0.SendInviteResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RespondInviteRequest, $0.RespondInviteResponse>(
+        'RespondInvite',
+        respondInvite_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RespondInviteRequest.fromBuffer(value),
+        ($0.RespondInviteResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RemoveFriendRequest, $0.RemoveFriendResponse>(
+        'RemoveFriend',
+        removeFriend_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RemoveFriendRequest.fromBuffer(value),
+        ($0.RemoveFriendResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetScoreBreakdownResponse> getScoreBreakdown_Pre($grpc.ServiceCall $call, $async.Future<$0.GetScoreBreakdownRequest> $request) async {
@@ -230,5 +301,29 @@ abstract class EmpireServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.UpdatePublicProfileResponse> updatePublicProfile($grpc.ServiceCall call, $0.UpdatePublicProfileRequest request);
+
+  $async.Future<$0.ListFriendsResponse> listFriends_Pre($grpc.ServiceCall $call, $async.Future<$0.ListFriendsRequest> $request) async {
+    return listFriends($call, await $request);
+  }
+
+  $async.Future<$0.ListFriendsResponse> listFriends($grpc.ServiceCall call, $0.ListFriendsRequest request);
+
+  $async.Future<$0.SendInviteResponse> sendInvite_Pre($grpc.ServiceCall $call, $async.Future<$0.SendInviteRequest> $request) async {
+    return sendInvite($call, await $request);
+  }
+
+  $async.Future<$0.SendInviteResponse> sendInvite($grpc.ServiceCall call, $0.SendInviteRequest request);
+
+  $async.Future<$0.RespondInviteResponse> respondInvite_Pre($grpc.ServiceCall $call, $async.Future<$0.RespondInviteRequest> $request) async {
+    return respondInvite($call, await $request);
+  }
+
+  $async.Future<$0.RespondInviteResponse> respondInvite($grpc.ServiceCall call, $0.RespondInviteRequest request);
+
+  $async.Future<$0.RemoveFriendResponse> removeFriend_Pre($grpc.ServiceCall $call, $async.Future<$0.RemoveFriendRequest> $request) async {
+    return removeFriend($call, await $request);
+  }
+
+  $async.Future<$0.RemoveFriendResponse> removeFriend($grpc.ServiceCall call, $0.RemoveFriendRequest request);
 
 }
