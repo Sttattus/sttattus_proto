@@ -1441,6 +1441,222 @@ class UpdatePublicProfileResponse extends $pb.GeneratedMessage {
   void clearBio() => $_clearField(2);
 }
 
+class GetLatestCloutDropRequest extends $pb.GeneratedMessage {
+  factory GetLatestCloutDropRequest() => create();
+
+  GetLatestCloutDropRequest._();
+
+  factory GetLatestCloutDropRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetLatestCloutDropRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLatestCloutDropRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLatestCloutDropRequest clone() => GetLatestCloutDropRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLatestCloutDropRequest copyWith(void Function(GetLatestCloutDropRequest) updates) => super.copyWith((message) => updates(message as GetLatestCloutDropRequest)) as GetLatestCloutDropRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLatestCloutDropRequest create() => GetLatestCloutDropRequest._();
+  @$core.override
+  GetLatestCloutDropRequest createEmptyInstance() => create();
+  static $pb.PbList<GetLatestCloutDropRequest> createRepeated() => $pb.PbList<GetLatestCloutDropRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetLatestCloutDropRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestCloutDropRequest>(create);
+  static GetLatestCloutDropRequest? _defaultInstance;
+}
+
+/// CloutDropEntry is one (pillar, rank) cell of the drop.
+class CloutDropEntry extends $pb.GeneratedMessage {
+  factory CloutDropEntry({
+    $core.String? pillarCode,
+    $core.int? rank,
+    $core.double? score,
+    $core.String? userId,
+    $core.String? name,
+    $core.String? handle,
+    $core.String? avatarUrl,
+    $core.String? tier,
+  }) {
+    final result = create();
+    if (pillarCode != null) result.pillarCode = pillarCode;
+    if (rank != null) result.rank = rank;
+    if (score != null) result.score = score;
+    if (userId != null) result.userId = userId;
+    if (name != null) result.name = name;
+    if (handle != null) result.handle = handle;
+    if (avatarUrl != null) result.avatarUrl = avatarUrl;
+    if (tier != null) result.tier = tier;
+    return result;
+  }
+
+  CloutDropEntry._();
+
+  factory CloutDropEntry.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CloutDropEntry.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CloutDropEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'pillarCode')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'rank', $pb.PbFieldType.O3)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'score', $pb.PbFieldType.OD)
+    ..aOS(4, _omitFieldNames ? '' : 'userId')
+    ..aOS(5, _omitFieldNames ? '' : 'name')
+    ..aOS(6, _omitFieldNames ? '' : 'handle')
+    ..aOS(7, _omitFieldNames ? '' : 'avatarUrl')
+    ..aOS(8, _omitFieldNames ? '' : 'tier')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CloutDropEntry clone() => CloutDropEntry()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CloutDropEntry copyWith(void Function(CloutDropEntry) updates) => super.copyWith((message) => updates(message as CloutDropEntry)) as CloutDropEntry;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CloutDropEntry create() => CloutDropEntry._();
+  @$core.override
+  CloutDropEntry createEmptyInstance() => create();
+  static $pb.PbList<CloutDropEntry> createRepeated() => $pb.PbList<CloutDropEntry>();
+  @$core.pragma('dart2js:noInline')
+  static CloutDropEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CloutDropEntry>(create);
+  static CloutDropEntry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get pillarCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set pillarCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPillarCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPillarCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get rank => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set rank($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRank() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRank() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get score => $_getN(2);
+  @$pb.TagNumber(3)
+  set score($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasScore() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearScore() => $_clearField(3);
+
+  /// Public profile slice.
+  @$pb.TagNumber(4)
+  $core.String get userId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set userId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasUserId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUserId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get name => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set name($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearName() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get handle => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set handle($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasHandle() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearHandle() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get avatarUrl => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set avatarUrl($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAvatarUrl() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAvatarUrl() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get tier => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set tier($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTier() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTier() => $_clearField(8);
+}
+
+class GetLatestCloutDropResponse extends $pb.GeneratedMessage {
+  factory GetLatestCloutDropResponse({
+    $core.String? weekStart,
+    $core.Iterable<CloutDropEntry>? entries,
+  }) {
+    final result = create();
+    if (weekStart != null) result.weekStart = weekStart;
+    if (entries != null) result.entries.addAll(entries);
+    return result;
+  }
+
+  GetLatestCloutDropResponse._();
+
+  factory GetLatestCloutDropResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetLatestCloutDropResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLatestCloutDropResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'weekStart')
+    ..pc<CloutDropEntry>(2, _omitFieldNames ? '' : 'entries', $pb.PbFieldType.PM, subBuilder: CloutDropEntry.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLatestCloutDropResponse clone() => GetLatestCloutDropResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLatestCloutDropResponse copyWith(void Function(GetLatestCloutDropResponse) updates) => super.copyWith((message) => updates(message as GetLatestCloutDropResponse)) as GetLatestCloutDropResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLatestCloutDropResponse create() => GetLatestCloutDropResponse._();
+  @$core.override
+  GetLatestCloutDropResponse createEmptyInstance() => create();
+  static $pb.PbList<GetLatestCloutDropResponse> createRepeated() => $pb.PbList<GetLatestCloutDropResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetLatestCloutDropResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestCloutDropResponse>(create);
+  static GetLatestCloutDropResponse? _defaultInstance;
+
+  /// The Sunday this drop covers, formatted YYYY-MM-DD UTC. Empty when
+  /// no drop exists yet (fresh DB or pre-first-Sunday).
+  @$pb.TagNumber(1)
+  $core.String get weekStart => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set weekStart($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWeekStart() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWeekStart() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<CloutDropEntry> get entries => $_getList(1);
+}
+
 class ListMyAuditLogRequest extends $pb.GeneratedMessage {
   factory ListMyAuditLogRequest({
     $core.int? limit,

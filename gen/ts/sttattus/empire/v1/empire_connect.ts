@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ClaimHandleRequest, ClaimHandleResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse } from "./empire_pb.js";
+import { ClaimHandleRequest, ClaimHandleResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse } from "./empire_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -174,6 +174,19 @@ export const EmpireService = {
       name: "ListMyAuditLog",
       I: ListMyAuditLogRequest,
       O: ListMyAuditLogResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetLatestCloutDrop returns the most recent Sunday clout drop the
+     * server has computed — every pillar's top entries flattened into
+     * one list, ordered by pillar then rank.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetLatestCloutDrop
+     */
+    getLatestCloutDrop: {
+      name: "GetLatestCloutDrop",
+      I: GetLatestCloutDropRequest,
+      O: GetLatestCloutDropResponse,
       kind: MethodKind.Unary,
     },
   }

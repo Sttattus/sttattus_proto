@@ -32,6 +32,7 @@ const (
 	EmpireService_RespondInvite_FullMethodName       = "/sttattus.empire.v1.EmpireService/RespondInvite"
 	EmpireService_RemoveFriend_FullMethodName        = "/sttattus.empire.v1.EmpireService/RemoveFriend"
 	EmpireService_ListMyAuditLog_FullMethodName      = "/sttattus.empire.v1.EmpireService/ListMyAuditLog"
+	EmpireService_GetLatestCloutDrop_FullMethodName  = "/sttattus.empire.v1.EmpireService/GetLatestCloutDrop"
 )
 
 // EmpireServiceClient is the client API for EmpireService service.
@@ -85,6 +86,10 @@ type EmpireServiceClient interface {
 	// the actor or the target, newest first. The glass-box for "who
 	// touched my account."
 	ListMyAuditLog(ctx context.Context, in *ListMyAuditLogRequest, opts ...grpc.CallOption) (*ListMyAuditLogResponse, error)
+	// GetLatestCloutDrop returns the most recent Sunday clout drop the
+	// server has computed — every pillar's top entries flattened into
+	// one list, ordered by pillar then rank.
+	GetLatestCloutDrop(ctx context.Context, in *GetLatestCloutDropRequest, opts ...grpc.CallOption) (*GetLatestCloutDropResponse, error)
 }
 
 type empireServiceClient struct {
@@ -225,6 +230,16 @@ func (c *empireServiceClient) ListMyAuditLog(ctx context.Context, in *ListMyAudi
 	return out, nil
 }
 
+func (c *empireServiceClient) GetLatestCloutDrop(ctx context.Context, in *GetLatestCloutDropRequest, opts ...grpc.CallOption) (*GetLatestCloutDropResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLatestCloutDropResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetLatestCloutDrop_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmpireServiceServer is the server API for EmpireService service.
 // All implementations must embed UnimplementedEmpireServiceServer
 // for forward compatibility.
@@ -276,6 +291,10 @@ type EmpireServiceServer interface {
 	// the actor or the target, newest first. The glass-box for "who
 	// touched my account."
 	ListMyAuditLog(context.Context, *ListMyAuditLogRequest) (*ListMyAuditLogResponse, error)
+	// GetLatestCloutDrop returns the most recent Sunday clout drop the
+	// server has computed — every pillar's top entries flattened into
+	// one list, ordered by pillar then rank.
+	GetLatestCloutDrop(context.Context, *GetLatestCloutDropRequest) (*GetLatestCloutDropResponse, error)
 	mustEmbedUnimplementedEmpireServiceServer()
 }
 
@@ -324,6 +343,9 @@ func (UnimplementedEmpireServiceServer) RemoveFriend(context.Context, *RemoveFri
 }
 func (UnimplementedEmpireServiceServer) ListMyAuditLog(context.Context, *ListMyAuditLogRequest) (*ListMyAuditLogResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMyAuditLog not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetLatestCloutDrop(context.Context, *GetLatestCloutDropRequest) (*GetLatestCloutDropResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLatestCloutDrop not implemented")
 }
 func (UnimplementedEmpireServiceServer) mustEmbedUnimplementedEmpireServiceServer() {}
 func (UnimplementedEmpireServiceServer) testEmbeddedByValue()                       {}
@@ -580,6 +602,24 @@ func _EmpireService_ListMyAuditLog_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmpireService_GetLatestCloutDrop_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLatestCloutDropRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetLatestCloutDrop(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetLatestCloutDrop_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetLatestCloutDrop(ctx, req.(*GetLatestCloutDropRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EmpireService_ServiceDesc is the grpc.ServiceDesc for EmpireService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -638,6 +678,10 @@ var EmpireService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListMyAuditLog",
 			Handler:    _EmpireService_ListMyAuditLog_Handler,
+		},
+		{
+			MethodName: "GetLatestCloutDrop",
+			Handler:    _EmpireService_GetLatestCloutDrop_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

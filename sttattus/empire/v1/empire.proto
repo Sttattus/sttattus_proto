@@ -190,6 +190,30 @@ message UpdatePublicProfileResponse {
   string bio = 2;
 }
 
+// === Sunday clout drop (P5.9) ===
+
+message GetLatestCloutDropRequest {}
+
+// CloutDropEntry is one (pillar, rank) cell of the drop.
+message CloutDropEntry {
+  string pillar_code = 1;
+  int32 rank = 2;
+  double score = 3;
+  // Public profile slice.
+  string user_id = 4;
+  string name = 5;
+  string handle = 6;
+  string avatar_url = 7;
+  string tier = 8;
+}
+
+message GetLatestCloutDropResponse {
+  // The Sunday this drop covers, formatted YYYY-MM-DD UTC. Empty when
+  // no drop exists yet (fresh DB or pre-first-Sunday).
+  string week_start = 1;
+  repeated CloutDropEntry entries = 2;
+}
+
 // === Member-facing audit log (P5.8) ===
 
 message ListMyAuditLogRequest {
@@ -330,4 +354,9 @@ service EmpireService {
   // the actor or the target, newest first. The glass-box for "who
   // touched my account."
   rpc ListMyAuditLog(ListMyAuditLogRequest) returns (ListMyAuditLogResponse);
+
+  // GetLatestCloutDrop returns the most recent Sunday clout drop the
+  // server has computed — every pillar's top entries flattened into
+  // one list, ordered by pillar then rank.
+  rpc GetLatestCloutDrop(GetLatestCloutDropRequest) returns (GetLatestCloutDropResponse);
 }

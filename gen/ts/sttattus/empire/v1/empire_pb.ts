@@ -1077,6 +1077,166 @@ export class UpdatePublicProfileResponse extends Message<UpdatePublicProfileResp
 }
 
 /**
+ * @generated from message sttattus.empire.v1.GetLatestCloutDropRequest
+ */
+export class GetLatestCloutDropRequest extends Message<GetLatestCloutDropRequest> {
+  constructor(data?: PartialMessage<GetLatestCloutDropRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.GetLatestCloutDropRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLatestCloutDropRequest {
+    return new GetLatestCloutDropRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLatestCloutDropRequest {
+    return new GetLatestCloutDropRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLatestCloutDropRequest {
+    return new GetLatestCloutDropRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLatestCloutDropRequest | PlainMessage<GetLatestCloutDropRequest> | undefined, b: GetLatestCloutDropRequest | PlainMessage<GetLatestCloutDropRequest> | undefined): boolean {
+    return proto3.util.equals(GetLatestCloutDropRequest, a, b);
+  }
+}
+
+/**
+ * CloutDropEntry is one (pillar, rank) cell of the drop.
+ *
+ * @generated from message sttattus.empire.v1.CloutDropEntry
+ */
+export class CloutDropEntry extends Message<CloutDropEntry> {
+  /**
+   * @generated from field: string pillar_code = 1;
+   */
+  pillarCode = "";
+
+  /**
+   * @generated from field: int32 rank = 2;
+   */
+  rank = 0;
+
+  /**
+   * @generated from field: double score = 3;
+   */
+  score = 0;
+
+  /**
+   * Public profile slice.
+   *
+   * @generated from field: string user_id = 4;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string name = 5;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string handle = 6;
+   */
+  handle = "";
+
+  /**
+   * @generated from field: string avatar_url = 7;
+   */
+  avatarUrl = "";
+
+  /**
+   * @generated from field: string tier = 8;
+   */
+  tier = "";
+
+  constructor(data?: PartialMessage<CloutDropEntry>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.CloutDropEntry";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pillar_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "rank", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "handle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "avatar_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CloutDropEntry {
+    return new CloutDropEntry().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CloutDropEntry {
+    return new CloutDropEntry().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CloutDropEntry {
+    return new CloutDropEntry().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CloutDropEntry | PlainMessage<CloutDropEntry> | undefined, b: CloutDropEntry | PlainMessage<CloutDropEntry> | undefined): boolean {
+    return proto3.util.equals(CloutDropEntry, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.GetLatestCloutDropResponse
+ */
+export class GetLatestCloutDropResponse extends Message<GetLatestCloutDropResponse> {
+  /**
+   * The Sunday this drop covers, formatted YYYY-MM-DD UTC. Empty when
+   * no drop exists yet (fresh DB or pre-first-Sunday).
+   *
+   * @generated from field: string week_start = 1;
+   */
+  weekStart = "";
+
+  /**
+   * @generated from field: repeated sttattus.empire.v1.CloutDropEntry entries = 2;
+   */
+  entries: CloutDropEntry[] = [];
+
+  constructor(data?: PartialMessage<GetLatestCloutDropResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.GetLatestCloutDropResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "week_start", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "entries", kind: "message", T: CloutDropEntry, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLatestCloutDropResponse {
+    return new GetLatestCloutDropResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLatestCloutDropResponse {
+    return new GetLatestCloutDropResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLatestCloutDropResponse {
+    return new GetLatestCloutDropResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLatestCloutDropResponse | PlainMessage<GetLatestCloutDropResponse> | undefined, b: GetLatestCloutDropResponse | PlainMessage<GetLatestCloutDropResponse> | undefined): boolean {
+    return proto3.util.equals(GetLatestCloutDropResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.empire.v1.ListMyAuditLogRequest
  */
 export class ListMyAuditLogRequest extends Message<ListMyAuditLogRequest> {

@@ -323,6 +323,52 @@ final $typed_data.Uint8List updatePublicProfileResponseDescriptor = $convert.bas
     'ChtVcGRhdGVQdWJsaWNQcm9maWxlUmVzcG9uc2USGAoHdGFnbGluZRgBIAEoCVIHdGFnbGluZR'
     'IQCgNiaW8YAiABKAlSA2Jpbw==');
 
+@$core.Deprecated('Use getLatestCloutDropRequestDescriptor instead')
+const GetLatestCloutDropRequest$json = {
+  '1': 'GetLatestCloutDropRequest',
+};
+
+/// Descriptor for `GetLatestCloutDropRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLatestCloutDropRequestDescriptor = $convert.base64Decode(
+    'ChlHZXRMYXRlc3RDbG91dERyb3BSZXF1ZXN0');
+
+@$core.Deprecated('Use cloutDropEntryDescriptor instead')
+const CloutDropEntry$json = {
+  '1': 'CloutDropEntry',
+  '2': [
+    {'1': 'pillar_code', '3': 1, '4': 1, '5': 9, '10': 'pillarCode'},
+    {'1': 'rank', '3': 2, '4': 1, '5': 5, '10': 'rank'},
+    {'1': 'score', '3': 3, '4': 1, '5': 1, '10': 'score'},
+    {'1': 'user_id', '3': 4, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'name', '3': 5, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'handle', '3': 6, '4': 1, '5': 9, '10': 'handle'},
+    {'1': 'avatar_url', '3': 7, '4': 1, '5': 9, '10': 'avatarUrl'},
+    {'1': 'tier', '3': 8, '4': 1, '5': 9, '10': 'tier'},
+  ],
+};
+
+/// Descriptor for `CloutDropEntry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cloutDropEntryDescriptor = $convert.base64Decode(
+    'Cg5DbG91dERyb3BFbnRyeRIfCgtwaWxsYXJfY29kZRgBIAEoCVIKcGlsbGFyQ29kZRISCgRyYW'
+    '5rGAIgASgFUgRyYW5rEhQKBXNjb3JlGAMgASgBUgVzY29yZRIXCgd1c2VyX2lkGAQgASgJUgZ1'
+    'c2VySWQSEgoEbmFtZRgFIAEoCVIEbmFtZRIWCgZoYW5kbGUYBiABKAlSBmhhbmRsZRIdCgphdm'
+    'F0YXJfdXJsGAcgASgJUglhdmF0YXJVcmwSEgoEdGllchgIIAEoCVIEdGllcg==');
+
+@$core.Deprecated('Use getLatestCloutDropResponseDescriptor instead')
+const GetLatestCloutDropResponse$json = {
+  '1': 'GetLatestCloutDropResponse',
+  '2': [
+    {'1': 'week_start', '3': 1, '4': 1, '5': 9, '10': 'weekStart'},
+    {'1': 'entries', '3': 2, '4': 3, '5': 11, '6': '.sttattus.empire.v1.CloutDropEntry', '10': 'entries'},
+  ],
+};
+
+/// Descriptor for `GetLatestCloutDropResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLatestCloutDropResponseDescriptor = $convert.base64Decode(
+    'ChpHZXRMYXRlc3RDbG91dERyb3BSZXNwb25zZRIdCgp3ZWVrX3N0YXJ0GAEgASgJUgl3ZWVrU3'
+    'RhcnQSPAoHZW50cmllcxgCIAMoCzIiLnN0dGF0dHVzLmVtcGlyZS52MS5DbG91dERyb3BFbnRy'
+    'eVIHZW50cmllcw==');
+
 @$core.Deprecated('Use listMyAuditLogRequestDescriptor instead')
 const ListMyAuditLogRequest$json = {
   '1': 'ListMyAuditLogRequest',

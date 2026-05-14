@@ -118,6 +118,13 @@ class EmpireServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listMyAuditLog, request, options: options);
   }
 
+  /// GetLatestCloutDrop returns the most recent Sunday clout drop the
+  /// server has computed — every pillar's top entries flattened into
+  /// one list, ordered by pillar then rank.
+  $grpc.ResponseFuture<$0.GetLatestCloutDropResponse> getLatestCloutDrop($0.GetLatestCloutDropRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getLatestCloutDrop, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getScoreBreakdown = $grpc.ClientMethod<$0.GetScoreBreakdownRequest, $0.GetScoreBreakdownResponse>(
@@ -172,6 +179,10 @@ class EmpireServiceClient extends $grpc.Client {
       '/sttattus.empire.v1.EmpireService/ListMyAuditLog',
       ($0.ListMyAuditLogRequest value) => value.writeToBuffer(),
       $0.ListMyAuditLogResponse.fromBuffer);
+  static final _$getLatestCloutDrop = $grpc.ClientMethod<$0.GetLatestCloutDropRequest, $0.GetLatestCloutDropResponse>(
+      '/sttattus.empire.v1.EmpireService/GetLatestCloutDrop',
+      ($0.GetLatestCloutDropRequest value) => value.writeToBuffer(),
+      $0.GetLatestCloutDropResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.empire.v1.EmpireService')
@@ -270,6 +281,13 @@ abstract class EmpireServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListMyAuditLogRequest.fromBuffer(value),
         ($0.ListMyAuditLogResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetLatestCloutDropRequest, $0.GetLatestCloutDropResponse>(
+        'GetLatestCloutDrop',
+        getLatestCloutDrop_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetLatestCloutDropRequest.fromBuffer(value),
+        ($0.GetLatestCloutDropResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetScoreBreakdownResponse> getScoreBreakdown_Pre($grpc.ServiceCall $call, $async.Future<$0.GetScoreBreakdownRequest> $request) async {
@@ -349,5 +367,11 @@ abstract class EmpireServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListMyAuditLogResponse> listMyAuditLog($grpc.ServiceCall call, $0.ListMyAuditLogRequest request);
+
+  $async.Future<$0.GetLatestCloutDropResponse> getLatestCloutDrop_Pre($grpc.ServiceCall $call, $async.Future<$0.GetLatestCloutDropRequest> $request) async {
+    return getLatestCloutDrop($call, await $request);
+  }
+
+  $async.Future<$0.GetLatestCloutDropResponse> getLatestCloutDrop($grpc.ServiceCall call, $0.GetLatestCloutDropRequest request);
 
 }
