@@ -888,3 +888,200 @@ final $typed_data.Uint8List updateFormVideoStatusResponseDescriptor = $convert.b
     'Ch1VcGRhdGVGb3JtVmlkZW9TdGF0dXNSZXNwb25zZRI0CgV2aWRlbxgBIAEoCzIeLnN0dGF0dH'
     'VzLndvcmtvdXQudjEuRm9ybVZpZGVvUgV2aWRlbw==');
 
+@$core.Deprecated('Use programmeDescriptor instead')
+const Programme$json = {
+  '1': 'Programme',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slug', '3': 2, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'author', '3': 4, '4': 1, '5': 9, '10': 'author'},
+    {'1': 'summary', '3': 5, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'description', '3': 6, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'goal_class', '3': 7, '4': 1, '5': 9, '10': 'goalClass'},
+    {'1': 'weeks', '3': 8, '4': 1, '5': 5, '10': 'weeks'},
+    {'1': 'sessions_per_week', '3': 9, '4': 1, '5': 5, '10': 'sessionsPerWeek'},
+    {'1': 'sovereign_only', '3': 10, '4': 1, '5': 8, '10': 'sovereignOnly'},
+    {'1': 'image_url', '3': 11, '4': 1, '5': 9, '10': 'imageUrl'},
+  ],
+};
+
+/// Descriptor for `Programme`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List programmeDescriptor = $convert.base64Decode(
+    'CglQcm9ncmFtbWUSDgoCaWQYASABKAlSAmlkEhIKBHNsdWcYAiABKAlSBHNsdWcSEgoEbmFtZR'
+    'gDIAEoCVIEbmFtZRIWCgZhdXRob3IYBCABKAlSBmF1dGhvchIYCgdzdW1tYXJ5GAUgASgJUgdz'
+    'dW1tYXJ5EiAKC2Rlc2NyaXB0aW9uGAYgASgJUgtkZXNjcmlwdGlvbhIdCgpnb2FsX2NsYXNzGA'
+    'cgASgJUglnb2FsQ2xhc3MSFAoFd2Vla3MYCCABKAVSBXdlZWtzEioKEXNlc3Npb25zX3Blcl93'
+    'ZWVrGAkgASgFUg9zZXNzaW9uc1BlcldlZWsSJQoOc292ZXJlaWduX29ubHkYCiABKAhSDXNvdm'
+    'VyZWlnbk9ubHkSGwoJaW1hZ2VfdXJsGAsgASgJUghpbWFnZVVybA==');
+
+@$core.Deprecated('Use programmeEnrolmentDescriptor instead')
+const ProgrammeEnrolment$json = {
+  '1': 'ProgrammeEnrolment',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'programme', '3': 2, '4': 1, '5': 11, '6': '.sttattus.workout.v1.Programme', '10': 'programme'},
+    {'1': 'current_week', '3': 3, '4': 1, '5': 5, '10': 'currentWeek'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'started_at', '3': 5, '4': 1, '5': 3, '10': 'startedAt'},
+    {'1': 'finished_at', '3': 6, '4': 1, '5': 3, '10': 'finishedAt'},
+  ],
+};
+
+/// Descriptor for `ProgrammeEnrolment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List programmeEnrolmentDescriptor = $convert.base64Decode(
+    'ChJQcm9ncmFtbWVFbnJvbG1lbnQSDgoCaWQYASABKAlSAmlkEjwKCXByb2dyYW1tZRgCIAEoCz'
+    'IeLnN0dGF0dHVzLndvcmtvdXQudjEuUHJvZ3JhbW1lUglwcm9ncmFtbWUSIQoMY3VycmVudF93'
+    'ZWVrGAMgASgFUgtjdXJyZW50V2VlaxIWCgZzdGF0dXMYBCABKAlSBnN0YXR1cxIdCgpzdGFydG'
+    'VkX2F0GAUgASgDUglzdGFydGVkQXQSHwoLZmluaXNoZWRfYXQYBiABKANSCmZpbmlzaGVkQXQ=');
+
+@$core.Deprecated('Use listProgrammesRequestDescriptor instead')
+const ListProgrammesRequest$json = {
+  '1': 'ListProgrammesRequest',
+  '2': [
+    {'1': 'goal_class', '3': 1, '4': 1, '5': 9, '10': 'goalClass'},
+    {'1': 'include_sovereign', '3': 2, '4': 1, '5': 8, '10': 'includeSovereign'},
+  ],
+};
+
+/// Descriptor for `ListProgrammesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listProgrammesRequestDescriptor = $convert.base64Decode(
+    'ChVMaXN0UHJvZ3JhbW1lc1JlcXVlc3QSHQoKZ29hbF9jbGFzcxgBIAEoCVIJZ29hbENsYXNzEi'
+    'sKEWluY2x1ZGVfc292ZXJlaWduGAIgASgIUhBpbmNsdWRlU292ZXJlaWdu');
+
+@$core.Deprecated('Use listProgrammesResponseDescriptor instead')
+const ListProgrammesResponse$json = {
+  '1': 'ListProgrammesResponse',
+  '2': [
+    {'1': 'programmes', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.Programme', '10': 'programmes'},
+  ],
+};
+
+/// Descriptor for `ListProgrammesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listProgrammesResponseDescriptor = $convert.base64Decode(
+    'ChZMaXN0UHJvZ3JhbW1lc1Jlc3BvbnNlEj4KCnByb2dyYW1tZXMYASADKAsyHi5zdHRhdHR1cy'
+    '53b3Jrb3V0LnYxLlByb2dyYW1tZVIKcHJvZ3JhbW1lcw==');
+
+@$core.Deprecated('Use getProgrammeRequestDescriptor instead')
+const GetProgrammeRequest$json = {
+  '1': 'GetProgrammeRequest',
+  '2': [
+    {'1': 'slug', '3': 1, '4': 1, '5': 9, '10': 'slug'},
+  ],
+};
+
+/// Descriptor for `GetProgrammeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getProgrammeRequestDescriptor = $convert.base64Decode(
+    'ChNHZXRQcm9ncmFtbWVSZXF1ZXN0EhIKBHNsdWcYASABKAlSBHNsdWc=');
+
+@$core.Deprecated('Use getProgrammeResponseDescriptor instead')
+const GetProgrammeResponse$json = {
+  '1': 'GetProgrammeResponse',
+  '2': [
+    {'1': 'programme', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.Programme', '10': 'programme'},
+  ],
+};
+
+/// Descriptor for `GetProgrammeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getProgrammeResponseDescriptor = $convert.base64Decode(
+    'ChRHZXRQcm9ncmFtbWVSZXNwb25zZRI8Cglwcm9ncmFtbWUYASABKAsyHi5zdHRhdHR1cy53b3'
+    'Jrb3V0LnYxLlByb2dyYW1tZVIJcHJvZ3JhbW1l');
+
+@$core.Deprecated('Use enrolInProgrammeRequestDescriptor instead')
+const EnrolInProgrammeRequest$json = {
+  '1': 'EnrolInProgrammeRequest',
+  '2': [
+    {'1': 'programme_id', '3': 1, '4': 1, '5': 9, '10': 'programmeId'},
+  ],
+};
+
+/// Descriptor for `EnrolInProgrammeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List enrolInProgrammeRequestDescriptor = $convert.base64Decode(
+    'ChdFbnJvbEluUHJvZ3JhbW1lUmVxdWVzdBIhCgxwcm9ncmFtbWVfaWQYASABKAlSC3Byb2dyYW'
+    '1tZUlk');
+
+@$core.Deprecated('Use enrolInProgrammeResponseDescriptor instead')
+const EnrolInProgrammeResponse$json = {
+  '1': 'EnrolInProgrammeResponse',
+  '2': [
+    {'1': 'enrolment', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.ProgrammeEnrolment', '10': 'enrolment'},
+  ],
+};
+
+/// Descriptor for `EnrolInProgrammeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List enrolInProgrammeResponseDescriptor = $convert.base64Decode(
+    'ChhFbnJvbEluUHJvZ3JhbW1lUmVzcG9uc2USRQoJZW5yb2xtZW50GAEgASgLMicuc3R0YXR0dX'
+    'Mud29ya291dC52MS5Qcm9ncmFtbWVFbnJvbG1lbnRSCWVucm9sbWVudA==');
+
+@$core.Deprecated('Use getActiveEnrolmentRequestDescriptor instead')
+const GetActiveEnrolmentRequest$json = {
+  '1': 'GetActiveEnrolmentRequest',
+};
+
+/// Descriptor for `GetActiveEnrolmentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getActiveEnrolmentRequestDescriptor = $convert.base64Decode(
+    'ChlHZXRBY3RpdmVFbnJvbG1lbnRSZXF1ZXN0');
+
+@$core.Deprecated('Use getActiveEnrolmentResponseDescriptor instead')
+const GetActiveEnrolmentResponse$json = {
+  '1': 'GetActiveEnrolmentResponse',
+  '2': [
+    {'1': 'enrolment', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.ProgrammeEnrolment', '10': 'enrolment'},
+  ],
+};
+
+/// Descriptor for `GetActiveEnrolmentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getActiveEnrolmentResponseDescriptor = $convert.base64Decode(
+    'ChpHZXRBY3RpdmVFbnJvbG1lbnRSZXNwb25zZRJFCgllbnJvbG1lbnQYASABKAsyJy5zdHRhdH'
+    'R1cy53b3Jrb3V0LnYxLlByb2dyYW1tZUVucm9sbWVudFIJZW5yb2xtZW50');
+
+@$core.Deprecated('Use listMyEnrolmentsRequestDescriptor instead')
+const ListMyEnrolmentsRequest$json = {
+  '1': 'ListMyEnrolmentsRequest',
+};
+
+/// Descriptor for `ListMyEnrolmentsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyEnrolmentsRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0TXlFbnJvbG1lbnRzUmVxdWVzdA==');
+
+@$core.Deprecated('Use listMyEnrolmentsResponseDescriptor instead')
+const ListMyEnrolmentsResponse$json = {
+  '1': 'ListMyEnrolmentsResponse',
+  '2': [
+    {'1': 'enrolments', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.ProgrammeEnrolment', '10': 'enrolments'},
+  ],
+};
+
+/// Descriptor for `ListMyEnrolmentsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyEnrolmentsResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0TXlFbnJvbG1lbnRzUmVzcG9uc2USRwoKZW5yb2xtZW50cxgBIAMoCzInLnN0dGF0dH'
+    'VzLndvcmtvdXQudjEuUHJvZ3JhbW1lRW5yb2xtZW50UgplbnJvbG1lbnRz');
+
+@$core.Deprecated('Use updateEnrolmentRequestDescriptor instead')
+const UpdateEnrolmentRequest$json = {
+  '1': 'UpdateEnrolmentRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'current_week', '3': 2, '4': 1, '5': 5, '10': 'currentWeek'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `UpdateEnrolmentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateEnrolmentRequestDescriptor = $convert.base64Decode(
+    'ChZVcGRhdGVFbnJvbG1lbnRSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIhCgxjdXJyZW50X3dlZW'
+    'sYAiABKAVSC2N1cnJlbnRXZWVrEhYKBnN0YXR1cxgDIAEoCVIGc3RhdHVz');
+
+@$core.Deprecated('Use updateEnrolmentResponseDescriptor instead')
+const UpdateEnrolmentResponse$json = {
+  '1': 'UpdateEnrolmentResponse',
+  '2': [
+    {'1': 'enrolment', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.ProgrammeEnrolment', '10': 'enrolment'},
+  ],
+};
+
+/// Descriptor for `UpdateEnrolmentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateEnrolmentResponseDescriptor = $convert.base64Decode(
+    'ChdVcGRhdGVFbnJvbG1lbnRSZXNwb25zZRJFCgllbnJvbG1lbnQYASABKAsyJy5zdHRhdHR1cy'
+    '53b3Jrb3V0LnYxLlByb2dyYW1tZUVucm9sbWVudFIJZW5yb2xtZW50');
+

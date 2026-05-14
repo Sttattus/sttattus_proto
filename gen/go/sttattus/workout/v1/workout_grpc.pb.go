@@ -39,6 +39,12 @@ const (
 	WorkoutService_ListMyFormVideos_FullMethodName      = "/sttattus.workout.v1.WorkoutService/ListMyFormVideos"
 	WorkoutService_DeleteFormVideo_FullMethodName       = "/sttattus.workout.v1.WorkoutService/DeleteFormVideo"
 	WorkoutService_UpdateFormVideoStatus_FullMethodName = "/sttattus.workout.v1.WorkoutService/UpdateFormVideoStatus"
+	WorkoutService_ListProgrammes_FullMethodName        = "/sttattus.workout.v1.WorkoutService/ListProgrammes"
+	WorkoutService_GetProgramme_FullMethodName          = "/sttattus.workout.v1.WorkoutService/GetProgramme"
+	WorkoutService_EnrolInProgramme_FullMethodName      = "/sttattus.workout.v1.WorkoutService/EnrolInProgramme"
+	WorkoutService_GetActiveEnrolment_FullMethodName    = "/sttattus.workout.v1.WorkoutService/GetActiveEnrolment"
+	WorkoutService_ListMyEnrolments_FullMethodName      = "/sttattus.workout.v1.WorkoutService/ListMyEnrolments"
+	WorkoutService_UpdateEnrolment_FullMethodName       = "/sttattus.workout.v1.WorkoutService/UpdateEnrolment"
 )
 
 // WorkoutServiceClient is the client API for WorkoutService service.
@@ -75,6 +81,14 @@ type WorkoutServiceClient interface {
 	ListMyFormVideos(ctx context.Context, in *ListMyFormVideosRequest, opts ...grpc.CallOption) (*ListMyFormVideosResponse, error)
 	DeleteFormVideo(ctx context.Context, in *DeleteFormVideoRequest, opts ...grpc.CallOption) (*DeleteFormVideoResponse, error)
 	UpdateFormVideoStatus(ctx context.Context, in *UpdateFormVideoStatusRequest, opts ...grpc.CallOption) (*UpdateFormVideoStatusResponse, error)
+	// F7P2.1 — programme browser, enrolment ledger, and the manual
+	// week-advance the Phase 2 surface uses.
+	ListProgrammes(ctx context.Context, in *ListProgrammesRequest, opts ...grpc.CallOption) (*ListProgrammesResponse, error)
+	GetProgramme(ctx context.Context, in *GetProgrammeRequest, opts ...grpc.CallOption) (*GetProgrammeResponse, error)
+	EnrolInProgramme(ctx context.Context, in *EnrolInProgrammeRequest, opts ...grpc.CallOption) (*EnrolInProgrammeResponse, error)
+	GetActiveEnrolment(ctx context.Context, in *GetActiveEnrolmentRequest, opts ...grpc.CallOption) (*GetActiveEnrolmentResponse, error)
+	ListMyEnrolments(ctx context.Context, in *ListMyEnrolmentsRequest, opts ...grpc.CallOption) (*ListMyEnrolmentsResponse, error)
+	UpdateEnrolment(ctx context.Context, in *UpdateEnrolmentRequest, opts ...grpc.CallOption) (*UpdateEnrolmentResponse, error)
 }
 
 type workoutServiceClient struct {
@@ -285,6 +299,66 @@ func (c *workoutServiceClient) UpdateFormVideoStatus(ctx context.Context, in *Up
 	return out, nil
 }
 
+func (c *workoutServiceClient) ListProgrammes(ctx context.Context, in *ListProgrammesRequest, opts ...grpc.CallOption) (*ListProgrammesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListProgrammesResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListProgrammes_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetProgramme(ctx context.Context, in *GetProgrammeRequest, opts ...grpc.CallOption) (*GetProgrammeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetProgrammeResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetProgramme_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) EnrolInProgramme(ctx context.Context, in *EnrolInProgrammeRequest, opts ...grpc.CallOption) (*EnrolInProgrammeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EnrolInProgrammeResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_EnrolInProgramme_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetActiveEnrolment(ctx context.Context, in *GetActiveEnrolmentRequest, opts ...grpc.CallOption) (*GetActiveEnrolmentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetActiveEnrolmentResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetActiveEnrolment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ListMyEnrolments(ctx context.Context, in *ListMyEnrolmentsRequest, opts ...grpc.CallOption) (*ListMyEnrolmentsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyEnrolmentsResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListMyEnrolments_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpdateEnrolment(ctx context.Context, in *UpdateEnrolmentRequest, opts ...grpc.CallOption) (*UpdateEnrolmentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateEnrolmentResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpdateEnrolment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WorkoutServiceServer is the server API for WorkoutService service.
 // All implementations must embed UnimplementedWorkoutServiceServer
 // for forward compatibility.
@@ -319,6 +393,14 @@ type WorkoutServiceServer interface {
 	ListMyFormVideos(context.Context, *ListMyFormVideosRequest) (*ListMyFormVideosResponse, error)
 	DeleteFormVideo(context.Context, *DeleteFormVideoRequest) (*DeleteFormVideoResponse, error)
 	UpdateFormVideoStatus(context.Context, *UpdateFormVideoStatusRequest) (*UpdateFormVideoStatusResponse, error)
+	// F7P2.1 — programme browser, enrolment ledger, and the manual
+	// week-advance the Phase 2 surface uses.
+	ListProgrammes(context.Context, *ListProgrammesRequest) (*ListProgrammesResponse, error)
+	GetProgramme(context.Context, *GetProgrammeRequest) (*GetProgrammeResponse, error)
+	EnrolInProgramme(context.Context, *EnrolInProgrammeRequest) (*EnrolInProgrammeResponse, error)
+	GetActiveEnrolment(context.Context, *GetActiveEnrolmentRequest) (*GetActiveEnrolmentResponse, error)
+	ListMyEnrolments(context.Context, *ListMyEnrolmentsRequest) (*ListMyEnrolmentsResponse, error)
+	UpdateEnrolment(context.Context, *UpdateEnrolmentRequest) (*UpdateEnrolmentResponse, error)
 	mustEmbedUnimplementedWorkoutServiceServer()
 }
 
@@ -388,6 +470,24 @@ func (UnimplementedWorkoutServiceServer) DeleteFormVideo(context.Context, *Delet
 }
 func (UnimplementedWorkoutServiceServer) UpdateFormVideoStatus(context.Context, *UpdateFormVideoStatusRequest) (*UpdateFormVideoStatusResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method UpdateFormVideoStatus not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListProgrammes(context.Context, *ListProgrammesRequest) (*ListProgrammesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListProgrammes not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetProgramme(context.Context, *GetProgrammeRequest) (*GetProgrammeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetProgramme not implemented")
+}
+func (UnimplementedWorkoutServiceServer) EnrolInProgramme(context.Context, *EnrolInProgrammeRequest) (*EnrolInProgrammeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EnrolInProgramme not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetActiveEnrolment(context.Context, *GetActiveEnrolmentRequest) (*GetActiveEnrolmentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetActiveEnrolment not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListMyEnrolments(context.Context, *ListMyEnrolmentsRequest) (*ListMyEnrolmentsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyEnrolments not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpdateEnrolment(context.Context, *UpdateEnrolmentRequest) (*UpdateEnrolmentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateEnrolment not implemented")
 }
 func (UnimplementedWorkoutServiceServer) mustEmbedUnimplementedWorkoutServiceServer() {}
 func (UnimplementedWorkoutServiceServer) testEmbeddedByValue()                        {}
@@ -770,6 +870,114 @@ func _WorkoutService_UpdateFormVideoStatus_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WorkoutService_ListProgrammes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListProgrammesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListProgrammes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListProgrammes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListProgrammes(ctx, req.(*ListProgrammesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetProgramme_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetProgrammeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetProgramme(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetProgramme_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetProgramme(ctx, req.(*GetProgrammeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_EnrolInProgramme_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EnrolInProgrammeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).EnrolInProgramme(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_EnrolInProgramme_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).EnrolInProgramme(ctx, req.(*EnrolInProgrammeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetActiveEnrolment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetActiveEnrolmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetActiveEnrolment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetActiveEnrolment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetActiveEnrolment(ctx, req.(*GetActiveEnrolmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ListMyEnrolments_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyEnrolmentsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListMyEnrolments(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListMyEnrolments_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListMyEnrolments(ctx, req.(*ListMyEnrolmentsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpdateEnrolment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateEnrolmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpdateEnrolment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpdateEnrolment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpdateEnrolment(ctx, req.(*UpdateEnrolmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // WorkoutService_ServiceDesc is the grpc.ServiceDesc for WorkoutService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -856,6 +1064,30 @@ var WorkoutService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateFormVideoStatus",
 			Handler:    _WorkoutService_UpdateFormVideoStatus_Handler,
+		},
+		{
+			MethodName: "ListProgrammes",
+			Handler:    _WorkoutService_ListProgrammes_Handler,
+		},
+		{
+			MethodName: "GetProgramme",
+			Handler:    _WorkoutService_GetProgramme_Handler,
+		},
+		{
+			MethodName: "EnrolInProgramme",
+			Handler:    _WorkoutService_EnrolInProgramme_Handler,
+		},
+		{
+			MethodName: "GetActiveEnrolment",
+			Handler:    _WorkoutService_GetActiveEnrolment_Handler,
+		},
+		{
+			MethodName: "ListMyEnrolments",
+			Handler:    _WorkoutService_ListMyEnrolments_Handler,
+		},
+		{
+			MethodName: "UpdateEnrolment",
+			Handler:    _WorkoutService_UpdateEnrolment_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

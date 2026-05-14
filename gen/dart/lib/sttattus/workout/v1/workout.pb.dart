@@ -4037,6 +4037,847 @@ class UpdateFormVideoStatusResponse extends $pb.GeneratedMessage {
   FormVideo ensureVideo() => $_ensure(0);
 }
 
+/// Programme is one editorial card in the browser. Authors are either
+/// 'template' (community-known protocols like 5/3/1) or a coach
+/// handle ('coach-romaniello', 'coach-helms').
+class Programme extends $pb.GeneratedMessage {
+  factory Programme({
+    $core.String? id,
+    $core.String? slug,
+    $core.String? name,
+    $core.String? author,
+    $core.String? summary,
+    $core.String? description,
+    $core.String? goalClass,
+    $core.int? weeks,
+    $core.int? sessionsPerWeek,
+    $core.bool? sovereignOnly,
+    $core.String? imageUrl,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (slug != null) result.slug = slug;
+    if (name != null) result.name = name;
+    if (author != null) result.author = author;
+    if (summary != null) result.summary = summary;
+    if (description != null) result.description = description;
+    if (goalClass != null) result.goalClass = goalClass;
+    if (weeks != null) result.weeks = weeks;
+    if (sessionsPerWeek != null) result.sessionsPerWeek = sessionsPerWeek;
+    if (sovereignOnly != null) result.sovereignOnly = sovereignOnly;
+    if (imageUrl != null) result.imageUrl = imageUrl;
+    return result;
+  }
+
+  Programme._();
+
+  factory Programme.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Programme.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Programme', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'slug')
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOS(4, _omitFieldNames ? '' : 'author')
+    ..aOS(5, _omitFieldNames ? '' : 'summary')
+    ..aOS(6, _omitFieldNames ? '' : 'description')
+    ..aOS(7, _omitFieldNames ? '' : 'goalClass')
+    ..a<$core.int>(8, _omitFieldNames ? '' : 'weeks', $pb.PbFieldType.O3)
+    ..a<$core.int>(9, _omitFieldNames ? '' : 'sessionsPerWeek', $pb.PbFieldType.O3)
+    ..aOB(10, _omitFieldNames ? '' : 'sovereignOnly')
+    ..aOS(11, _omitFieldNames ? '' : 'imageUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Programme clone() => Programme()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Programme copyWith(void Function(Programme) updates) => super.copyWith((message) => updates(message as Programme)) as Programme;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Programme create() => Programme._();
+  @$core.override
+  Programme createEmptyInstance() => create();
+  static $pb.PbList<Programme> createRepeated() => $pb.PbList<Programme>();
+  @$core.pragma('dart2js:noInline')
+  static Programme getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Programme>(create);
+  static Programme? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get slug => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set slug($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSlug() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSlug() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get author => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set author($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAuthor() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAuthor() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get summary => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set summary($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSummary() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSummary() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get description => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set description($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDescription() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDescription() => $_clearField(6);
+
+  /// strength | hypertrophy | tactical | endurance | hybrid
+  @$pb.TagNumber(7)
+  $core.String get goalClass => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set goalClass($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGoalClass() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGoalClass() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get weeks => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set weeks($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasWeeks() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearWeeks() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get sessionsPerWeek => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set sessionsPerWeek($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSessionsPerWeek() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSessionsPerWeek() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get sovereignOnly => $_getBF(9);
+  @$pb.TagNumber(10)
+  set sovereignOnly($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSovereignOnly() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSovereignOnly() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get imageUrl => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set imageUrl($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasImageUrl() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearImageUrl() => $_clearField(11);
+}
+
+/// ProgrammeEnrolment hydrates the lifter's enrolment with the
+/// programme card so the home screen renders without a second
+/// round-trip.
+class ProgrammeEnrolment extends $pb.GeneratedMessage {
+  factory ProgrammeEnrolment({
+    $core.String? id,
+    Programme? programme,
+    $core.int? currentWeek,
+    $core.String? status,
+    $fixnum.Int64? startedAt,
+    $fixnum.Int64? finishedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (programme != null) result.programme = programme;
+    if (currentWeek != null) result.currentWeek = currentWeek;
+    if (status != null) result.status = status;
+    if (startedAt != null) result.startedAt = startedAt;
+    if (finishedAt != null) result.finishedAt = finishedAt;
+    return result;
+  }
+
+  ProgrammeEnrolment._();
+
+  factory ProgrammeEnrolment.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ProgrammeEnrolment.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProgrammeEnrolment', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOM<Programme>(2, _omitFieldNames ? '' : 'programme', subBuilder: Programme.create)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'currentWeek', $pb.PbFieldType.O3)
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aInt64(5, _omitFieldNames ? '' : 'startedAt')
+    ..aInt64(6, _omitFieldNames ? '' : 'finishedAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ProgrammeEnrolment clone() => ProgrammeEnrolment()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ProgrammeEnrolment copyWith(void Function(ProgrammeEnrolment) updates) => super.copyWith((message) => updates(message as ProgrammeEnrolment)) as ProgrammeEnrolment;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ProgrammeEnrolment create() => ProgrammeEnrolment._();
+  @$core.override
+  ProgrammeEnrolment createEmptyInstance() => create();
+  static $pb.PbList<ProgrammeEnrolment> createRepeated() => $pb.PbList<ProgrammeEnrolment>();
+  @$core.pragma('dart2js:noInline')
+  static ProgrammeEnrolment getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProgrammeEnrolment>(create);
+  static ProgrammeEnrolment? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  Programme get programme => $_getN(1);
+  @$pb.TagNumber(2)
+  set programme(Programme value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasProgramme() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProgramme() => $_clearField(2);
+  @$pb.TagNumber(2)
+  Programme ensureProgramme() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.int get currentWeek => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set currentWeek($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCurrentWeek() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCurrentWeek() => $_clearField(3);
+
+  /// active | paused | finished | abandoned
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get startedAt => $_getI64(4);
+  @$pb.TagNumber(5)
+  set startedAt($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStartedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStartedAt() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get finishedAt => $_getI64(5);
+  @$pb.TagNumber(6)
+  set finishedAt($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasFinishedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFinishedAt() => $_clearField(6);
+}
+
+class ListProgrammesRequest extends $pb.GeneratedMessage {
+  factory ListProgrammesRequest({
+    $core.String? goalClass,
+    $core.bool? includeSovereign,
+  }) {
+    final result = create();
+    if (goalClass != null) result.goalClass = goalClass;
+    if (includeSovereign != null) result.includeSovereign = includeSovereign;
+    return result;
+  }
+
+  ListProgrammesRequest._();
+
+  factory ListProgrammesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListProgrammesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListProgrammesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'goalClass')
+    ..aOB(2, _omitFieldNames ? '' : 'includeSovereign')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListProgrammesRequest clone() => ListProgrammesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListProgrammesRequest copyWith(void Function(ListProgrammesRequest) updates) => super.copyWith((message) => updates(message as ListProgrammesRequest)) as ListProgrammesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListProgrammesRequest create() => ListProgrammesRequest._();
+  @$core.override
+  ListProgrammesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListProgrammesRequest> createRepeated() => $pb.PbList<ListProgrammesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListProgrammesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListProgrammesRequest>(create);
+  static ListProgrammesRequest? _defaultInstance;
+
+  /// Optional filter. Empty / unset returns every goal class.
+  @$pb.TagNumber(1)
+  $core.String get goalClass => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set goalClass($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGoalClass() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGoalClass() => $_clearField(1);
+
+  /// When true, includes Sovereign-only programmes. Phase 2
+  /// callers pass false; the Sovereign gate is enforced server-side
+  /// in Phase 3 along with the tier check.
+  @$pb.TagNumber(2)
+  $core.bool get includeSovereign => $_getBF(1);
+  @$pb.TagNumber(2)
+  set includeSovereign($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIncludeSovereign() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIncludeSovereign() => $_clearField(2);
+}
+
+class ListProgrammesResponse extends $pb.GeneratedMessage {
+  factory ListProgrammesResponse({
+    $core.Iterable<Programme>? programmes,
+  }) {
+    final result = create();
+    if (programmes != null) result.programmes.addAll(programmes);
+    return result;
+  }
+
+  ListProgrammesResponse._();
+
+  factory ListProgrammesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListProgrammesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListProgrammesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..pc<Programme>(1, _omitFieldNames ? '' : 'programmes', $pb.PbFieldType.PM, subBuilder: Programme.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListProgrammesResponse clone() => ListProgrammesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListProgrammesResponse copyWith(void Function(ListProgrammesResponse) updates) => super.copyWith((message) => updates(message as ListProgrammesResponse)) as ListProgrammesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListProgrammesResponse create() => ListProgrammesResponse._();
+  @$core.override
+  ListProgrammesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListProgrammesResponse> createRepeated() => $pb.PbList<ListProgrammesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListProgrammesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListProgrammesResponse>(create);
+  static ListProgrammesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Programme> get programmes => $_getList(0);
+}
+
+class GetProgrammeRequest extends $pb.GeneratedMessage {
+  factory GetProgrammeRequest({
+    $core.String? slug,
+  }) {
+    final result = create();
+    if (slug != null) result.slug = slug;
+    return result;
+  }
+
+  GetProgrammeRequest._();
+
+  factory GetProgrammeRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetProgrammeRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetProgrammeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'slug')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProgrammeRequest clone() => GetProgrammeRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProgrammeRequest copyWith(void Function(GetProgrammeRequest) updates) => super.copyWith((message) => updates(message as GetProgrammeRequest)) as GetProgrammeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetProgrammeRequest create() => GetProgrammeRequest._();
+  @$core.override
+  GetProgrammeRequest createEmptyInstance() => create();
+  static $pb.PbList<GetProgrammeRequest> createRepeated() => $pb.PbList<GetProgrammeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetProgrammeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetProgrammeRequest>(create);
+  static GetProgrammeRequest? _defaultInstance;
+
+  /// Lookup by slug — stable identifier the URL can carry.
+  @$pb.TagNumber(1)
+  $core.String get slug => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set slug($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSlug() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSlug() => $_clearField(1);
+}
+
+class GetProgrammeResponse extends $pb.GeneratedMessage {
+  factory GetProgrammeResponse({
+    Programme? programme,
+  }) {
+    final result = create();
+    if (programme != null) result.programme = programme;
+    return result;
+  }
+
+  GetProgrammeResponse._();
+
+  factory GetProgrammeResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetProgrammeResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetProgrammeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<Programme>(1, _omitFieldNames ? '' : 'programme', subBuilder: Programme.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProgrammeResponse clone() => GetProgrammeResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProgrammeResponse copyWith(void Function(GetProgrammeResponse) updates) => super.copyWith((message) => updates(message as GetProgrammeResponse)) as GetProgrammeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetProgrammeResponse create() => GetProgrammeResponse._();
+  @$core.override
+  GetProgrammeResponse createEmptyInstance() => create();
+  static $pb.PbList<GetProgrammeResponse> createRepeated() => $pb.PbList<GetProgrammeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetProgrammeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetProgrammeResponse>(create);
+  static GetProgrammeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Programme get programme => $_getN(0);
+  @$pb.TagNumber(1)
+  set programme(Programme value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProgramme() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProgramme() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Programme ensureProgramme() => $_ensure(0);
+}
+
+class EnrolInProgrammeRequest extends $pb.GeneratedMessage {
+  factory EnrolInProgrammeRequest({
+    $core.String? programmeId,
+  }) {
+    final result = create();
+    if (programmeId != null) result.programmeId = programmeId;
+    return result;
+  }
+
+  EnrolInProgrammeRequest._();
+
+  factory EnrolInProgrammeRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EnrolInProgrammeRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnrolInProgrammeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'programmeId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EnrolInProgrammeRequest clone() => EnrolInProgrammeRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EnrolInProgrammeRequest copyWith(void Function(EnrolInProgrammeRequest) updates) => super.copyWith((message) => updates(message as EnrolInProgrammeRequest)) as EnrolInProgrammeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EnrolInProgrammeRequest create() => EnrolInProgrammeRequest._();
+  @$core.override
+  EnrolInProgrammeRequest createEmptyInstance() => create();
+  static $pb.PbList<EnrolInProgrammeRequest> createRepeated() => $pb.PbList<EnrolInProgrammeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static EnrolInProgrammeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EnrolInProgrammeRequest>(create);
+  static EnrolInProgrammeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get programmeId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set programmeId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProgrammeId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProgrammeId() => $_clearField(1);
+}
+
+class EnrolInProgrammeResponse extends $pb.GeneratedMessage {
+  factory EnrolInProgrammeResponse({
+    ProgrammeEnrolment? enrolment,
+  }) {
+    final result = create();
+    if (enrolment != null) result.enrolment = enrolment;
+    return result;
+  }
+
+  EnrolInProgrammeResponse._();
+
+  factory EnrolInProgrammeResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EnrolInProgrammeResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnrolInProgrammeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<ProgrammeEnrolment>(1, _omitFieldNames ? '' : 'enrolment', subBuilder: ProgrammeEnrolment.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EnrolInProgrammeResponse clone() => EnrolInProgrammeResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EnrolInProgrammeResponse copyWith(void Function(EnrolInProgrammeResponse) updates) => super.copyWith((message) => updates(message as EnrolInProgrammeResponse)) as EnrolInProgrammeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EnrolInProgrammeResponse create() => EnrolInProgrammeResponse._();
+  @$core.override
+  EnrolInProgrammeResponse createEmptyInstance() => create();
+  static $pb.PbList<EnrolInProgrammeResponse> createRepeated() => $pb.PbList<EnrolInProgrammeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static EnrolInProgrammeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EnrolInProgrammeResponse>(create);
+  static EnrolInProgrammeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ProgrammeEnrolment get enrolment => $_getN(0);
+  @$pb.TagNumber(1)
+  set enrolment(ProgrammeEnrolment value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEnrolment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEnrolment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ProgrammeEnrolment ensureEnrolment() => $_ensure(0);
+}
+
+class GetActiveEnrolmentRequest extends $pb.GeneratedMessage {
+  factory GetActiveEnrolmentRequest() => create();
+
+  GetActiveEnrolmentRequest._();
+
+  factory GetActiveEnrolmentRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetActiveEnrolmentRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetActiveEnrolmentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetActiveEnrolmentRequest clone() => GetActiveEnrolmentRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetActiveEnrolmentRequest copyWith(void Function(GetActiveEnrolmentRequest) updates) => super.copyWith((message) => updates(message as GetActiveEnrolmentRequest)) as GetActiveEnrolmentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetActiveEnrolmentRequest create() => GetActiveEnrolmentRequest._();
+  @$core.override
+  GetActiveEnrolmentRequest createEmptyInstance() => create();
+  static $pb.PbList<GetActiveEnrolmentRequest> createRepeated() => $pb.PbList<GetActiveEnrolmentRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetActiveEnrolmentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetActiveEnrolmentRequest>(create);
+  static GetActiveEnrolmentRequest? _defaultInstance;
+}
+
+class GetActiveEnrolmentResponse extends $pb.GeneratedMessage {
+  factory GetActiveEnrolmentResponse({
+    ProgrammeEnrolment? enrolment,
+  }) {
+    final result = create();
+    if (enrolment != null) result.enrolment = enrolment;
+    return result;
+  }
+
+  GetActiveEnrolmentResponse._();
+
+  factory GetActiveEnrolmentResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetActiveEnrolmentResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetActiveEnrolmentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<ProgrammeEnrolment>(1, _omitFieldNames ? '' : 'enrolment', subBuilder: ProgrammeEnrolment.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetActiveEnrolmentResponse clone() => GetActiveEnrolmentResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetActiveEnrolmentResponse copyWith(void Function(GetActiveEnrolmentResponse) updates) => super.copyWith((message) => updates(message as GetActiveEnrolmentResponse)) as GetActiveEnrolmentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetActiveEnrolmentResponse create() => GetActiveEnrolmentResponse._();
+  @$core.override
+  GetActiveEnrolmentResponse createEmptyInstance() => create();
+  static $pb.PbList<GetActiveEnrolmentResponse> createRepeated() => $pb.PbList<GetActiveEnrolmentResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetActiveEnrolmentResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetActiveEnrolmentResponse>(create);
+  static GetActiveEnrolmentResponse? _defaultInstance;
+
+  /// enrolment.id is empty when the caller has no active enrolment.
+  @$pb.TagNumber(1)
+  ProgrammeEnrolment get enrolment => $_getN(0);
+  @$pb.TagNumber(1)
+  set enrolment(ProgrammeEnrolment value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEnrolment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEnrolment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ProgrammeEnrolment ensureEnrolment() => $_ensure(0);
+}
+
+class ListMyEnrolmentsRequest extends $pb.GeneratedMessage {
+  factory ListMyEnrolmentsRequest() => create();
+
+  ListMyEnrolmentsRequest._();
+
+  factory ListMyEnrolmentsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyEnrolmentsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyEnrolmentsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEnrolmentsRequest clone() => ListMyEnrolmentsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEnrolmentsRequest copyWith(void Function(ListMyEnrolmentsRequest) updates) => super.copyWith((message) => updates(message as ListMyEnrolmentsRequest)) as ListMyEnrolmentsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyEnrolmentsRequest create() => ListMyEnrolmentsRequest._();
+  @$core.override
+  ListMyEnrolmentsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyEnrolmentsRequest> createRepeated() => $pb.PbList<ListMyEnrolmentsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyEnrolmentsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyEnrolmentsRequest>(create);
+  static ListMyEnrolmentsRequest? _defaultInstance;
+}
+
+class ListMyEnrolmentsResponse extends $pb.GeneratedMessage {
+  factory ListMyEnrolmentsResponse({
+    $core.Iterable<ProgrammeEnrolment>? enrolments,
+  }) {
+    final result = create();
+    if (enrolments != null) result.enrolments.addAll(enrolments);
+    return result;
+  }
+
+  ListMyEnrolmentsResponse._();
+
+  factory ListMyEnrolmentsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyEnrolmentsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyEnrolmentsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..pc<ProgrammeEnrolment>(1, _omitFieldNames ? '' : 'enrolments', $pb.PbFieldType.PM, subBuilder: ProgrammeEnrolment.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEnrolmentsResponse clone() => ListMyEnrolmentsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEnrolmentsResponse copyWith(void Function(ListMyEnrolmentsResponse) updates) => super.copyWith((message) => updates(message as ListMyEnrolmentsResponse)) as ListMyEnrolmentsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyEnrolmentsResponse create() => ListMyEnrolmentsResponse._();
+  @$core.override
+  ListMyEnrolmentsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyEnrolmentsResponse> createRepeated() => $pb.PbList<ListMyEnrolmentsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyEnrolmentsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyEnrolmentsResponse>(create);
+  static ListMyEnrolmentsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ProgrammeEnrolment> get enrolments => $_getList(0);
+}
+
+class UpdateEnrolmentRequest extends $pb.GeneratedMessage {
+  factory UpdateEnrolmentRequest({
+    $core.String? id,
+    $core.int? currentWeek,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (currentWeek != null) result.currentWeek = currentWeek;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  UpdateEnrolmentRequest._();
+
+  factory UpdateEnrolmentRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateEnrolmentRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateEnrolmentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'currentWeek', $pb.PbFieldType.O3)
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateEnrolmentRequest clone() => UpdateEnrolmentRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateEnrolmentRequest copyWith(void Function(UpdateEnrolmentRequest) updates) => super.copyWith((message) => updates(message as UpdateEnrolmentRequest)) as UpdateEnrolmentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateEnrolmentRequest create() => UpdateEnrolmentRequest._();
+  @$core.override
+  UpdateEnrolmentRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateEnrolmentRequest> createRepeated() => $pb.PbList<UpdateEnrolmentRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateEnrolmentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateEnrolmentRequest>(create);
+  static UpdateEnrolmentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get currentWeek => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set currentWeek($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCurrentWeek() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCurrentWeek() => $_clearField(2);
+
+  /// active | paused | finished | abandoned
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+}
+
+class UpdateEnrolmentResponse extends $pb.GeneratedMessage {
+  factory UpdateEnrolmentResponse({
+    ProgrammeEnrolment? enrolment,
+  }) {
+    final result = create();
+    if (enrolment != null) result.enrolment = enrolment;
+    return result;
+  }
+
+  UpdateEnrolmentResponse._();
+
+  factory UpdateEnrolmentResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateEnrolmentResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateEnrolmentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<ProgrammeEnrolment>(1, _omitFieldNames ? '' : 'enrolment', subBuilder: ProgrammeEnrolment.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateEnrolmentResponse clone() => UpdateEnrolmentResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateEnrolmentResponse copyWith(void Function(UpdateEnrolmentResponse) updates) => super.copyWith((message) => updates(message as UpdateEnrolmentResponse)) as UpdateEnrolmentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateEnrolmentResponse create() => UpdateEnrolmentResponse._();
+  @$core.override
+  UpdateEnrolmentResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateEnrolmentResponse> createRepeated() => $pb.PbList<UpdateEnrolmentResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateEnrolmentResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateEnrolmentResponse>(create);
+  static UpdateEnrolmentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ProgrammeEnrolment get enrolment => $_getN(0);
+  @$pb.TagNumber(1)
+  set enrolment(ProgrammeEnrolment value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEnrolment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEnrolment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ProgrammeEnrolment ensureEnrolment() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

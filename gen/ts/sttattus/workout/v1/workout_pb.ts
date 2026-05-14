@@ -2909,3 +2909,641 @@ export class UpdateFormVideoStatusResponse extends Message<UpdateFormVideoStatus
   }
 }
 
+/**
+ * Programme is one editorial card in the browser. Authors are either
+ * 'template' (community-known protocols like 5/3/1) or a coach
+ * handle ('coach-romaniello', 'coach-helms').
+ *
+ * @generated from message sttattus.workout.v1.Programme
+ */
+export class Programme extends Message<Programme> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string slug = 2;
+   */
+  slug = "";
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string author = 4;
+   */
+  author = "";
+
+  /**
+   * @generated from field: string summary = 5;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string description = 6;
+   */
+  description = "";
+
+  /**
+   * strength | hypertrophy | tactical | endurance | hybrid
+   *
+   * @generated from field: string goal_class = 7;
+   */
+  goalClass = "";
+
+  /**
+   * @generated from field: int32 weeks = 8;
+   */
+  weeks = 0;
+
+  /**
+   * @generated from field: int32 sessions_per_week = 9;
+   */
+  sessionsPerWeek = 0;
+
+  /**
+   * @generated from field: bool sovereign_only = 10;
+   */
+  sovereignOnly = false;
+
+  /**
+   * @generated from field: string image_url = 11;
+   */
+  imageUrl = "";
+
+  constructor(data?: PartialMessage<Programme>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.Programme";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "author", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "goal_class", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "weeks", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "sessions_per_week", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "sovereign_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "image_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Programme {
+    return new Programme().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Programme {
+    return new Programme().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Programme {
+    return new Programme().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: Programme | PlainMessage<Programme> | undefined, b: Programme | PlainMessage<Programme> | undefined): boolean {
+    return proto3.util.equals(Programme, a, b);
+  }
+}
+
+/**
+ * ProgrammeEnrolment hydrates the lifter's enrolment with the
+ * programme card so the home screen renders without a second
+ * round-trip.
+ *
+ * @generated from message sttattus.workout.v1.ProgrammeEnrolment
+ */
+export class ProgrammeEnrolment extends Message<ProgrammeEnrolment> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: sttattus.workout.v1.Programme programme = 2;
+   */
+  programme?: Programme;
+
+  /**
+   * @generated from field: int32 current_week = 3;
+   */
+  currentWeek = 0;
+
+  /**
+   * active | paused | finished | abandoned
+   *
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int64 started_at = 5;
+   */
+  startedAt = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 finished_at = 6;
+   */
+  finishedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<ProgrammeEnrolment>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ProgrammeEnrolment";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "programme", kind: "message", T: Programme },
+    { no: 3, name: "current_week", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "started_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "finished_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProgrammeEnrolment {
+    return new ProgrammeEnrolment().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ProgrammeEnrolment {
+    return new ProgrammeEnrolment().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ProgrammeEnrolment {
+    return new ProgrammeEnrolment().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ProgrammeEnrolment | PlainMessage<ProgrammeEnrolment> | undefined, b: ProgrammeEnrolment | PlainMessage<ProgrammeEnrolment> | undefined): boolean {
+    return proto3.util.equals(ProgrammeEnrolment, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ListProgrammesRequest
+ */
+export class ListProgrammesRequest extends Message<ListProgrammesRequest> {
+  /**
+   * Optional filter. Empty / unset returns every goal class.
+   *
+   * @generated from field: string goal_class = 1;
+   */
+  goalClass = "";
+
+  /**
+   * When true, includes Sovereign-only programmes. Phase 2
+   * callers pass false; the Sovereign gate is enforced server-side
+   * in Phase 3 along with the tier check.
+   *
+   * @generated from field: bool include_sovereign = 2;
+   */
+  includeSovereign = false;
+
+  constructor(data?: PartialMessage<ListProgrammesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ListProgrammesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "goal_class", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "include_sovereign", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListProgrammesRequest {
+    return new ListProgrammesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListProgrammesRequest {
+    return new ListProgrammesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListProgrammesRequest {
+    return new ListProgrammesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListProgrammesRequest | PlainMessage<ListProgrammesRequest> | undefined, b: ListProgrammesRequest | PlainMessage<ListProgrammesRequest> | undefined): boolean {
+    return proto3.util.equals(ListProgrammesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ListProgrammesResponse
+ */
+export class ListProgrammesResponse extends Message<ListProgrammesResponse> {
+  /**
+   * @generated from field: repeated sttattus.workout.v1.Programme programmes = 1;
+   */
+  programmes: Programme[] = [];
+
+  constructor(data?: PartialMessage<ListProgrammesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ListProgrammesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "programmes", kind: "message", T: Programme, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListProgrammesResponse {
+    return new ListProgrammesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListProgrammesResponse {
+    return new ListProgrammesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListProgrammesResponse {
+    return new ListProgrammesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListProgrammesResponse | PlainMessage<ListProgrammesResponse> | undefined, b: ListProgrammesResponse | PlainMessage<ListProgrammesResponse> | undefined): boolean {
+    return proto3.util.equals(ListProgrammesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.GetProgrammeRequest
+ */
+export class GetProgrammeRequest extends Message<GetProgrammeRequest> {
+  /**
+   * Lookup by slug — stable identifier the URL can carry.
+   *
+   * @generated from field: string slug = 1;
+   */
+  slug = "";
+
+  constructor(data?: PartialMessage<GetProgrammeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.GetProgrammeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetProgrammeRequest {
+    return new GetProgrammeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetProgrammeRequest {
+    return new GetProgrammeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetProgrammeRequest {
+    return new GetProgrammeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetProgrammeRequest | PlainMessage<GetProgrammeRequest> | undefined, b: GetProgrammeRequest | PlainMessage<GetProgrammeRequest> | undefined): boolean {
+    return proto3.util.equals(GetProgrammeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.GetProgrammeResponse
+ */
+export class GetProgrammeResponse extends Message<GetProgrammeResponse> {
+  /**
+   * @generated from field: sttattus.workout.v1.Programme programme = 1;
+   */
+  programme?: Programme;
+
+  constructor(data?: PartialMessage<GetProgrammeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.GetProgrammeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "programme", kind: "message", T: Programme },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetProgrammeResponse {
+    return new GetProgrammeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetProgrammeResponse {
+    return new GetProgrammeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetProgrammeResponse {
+    return new GetProgrammeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetProgrammeResponse | PlainMessage<GetProgrammeResponse> | undefined, b: GetProgrammeResponse | PlainMessage<GetProgrammeResponse> | undefined): boolean {
+    return proto3.util.equals(GetProgrammeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.EnrolInProgrammeRequest
+ */
+export class EnrolInProgrammeRequest extends Message<EnrolInProgrammeRequest> {
+  /**
+   * @generated from field: string programme_id = 1;
+   */
+  programmeId = "";
+
+  constructor(data?: PartialMessage<EnrolInProgrammeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.EnrolInProgrammeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "programme_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnrolInProgrammeRequest {
+    return new EnrolInProgrammeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnrolInProgrammeRequest {
+    return new EnrolInProgrammeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnrolInProgrammeRequest {
+    return new EnrolInProgrammeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EnrolInProgrammeRequest | PlainMessage<EnrolInProgrammeRequest> | undefined, b: EnrolInProgrammeRequest | PlainMessage<EnrolInProgrammeRequest> | undefined): boolean {
+    return proto3.util.equals(EnrolInProgrammeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.EnrolInProgrammeResponse
+ */
+export class EnrolInProgrammeResponse extends Message<EnrolInProgrammeResponse> {
+  /**
+   * @generated from field: sttattus.workout.v1.ProgrammeEnrolment enrolment = 1;
+   */
+  enrolment?: ProgrammeEnrolment;
+
+  constructor(data?: PartialMessage<EnrolInProgrammeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.EnrolInProgrammeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "enrolment", kind: "message", T: ProgrammeEnrolment },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnrolInProgrammeResponse {
+    return new EnrolInProgrammeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnrolInProgrammeResponse {
+    return new EnrolInProgrammeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnrolInProgrammeResponse {
+    return new EnrolInProgrammeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EnrolInProgrammeResponse | PlainMessage<EnrolInProgrammeResponse> | undefined, b: EnrolInProgrammeResponse | PlainMessage<EnrolInProgrammeResponse> | undefined): boolean {
+    return proto3.util.equals(EnrolInProgrammeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.GetActiveEnrolmentRequest
+ */
+export class GetActiveEnrolmentRequest extends Message<GetActiveEnrolmentRequest> {
+  constructor(data?: PartialMessage<GetActiveEnrolmentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.GetActiveEnrolmentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetActiveEnrolmentRequest {
+    return new GetActiveEnrolmentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetActiveEnrolmentRequest {
+    return new GetActiveEnrolmentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetActiveEnrolmentRequest {
+    return new GetActiveEnrolmentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetActiveEnrolmentRequest | PlainMessage<GetActiveEnrolmentRequest> | undefined, b: GetActiveEnrolmentRequest | PlainMessage<GetActiveEnrolmentRequest> | undefined): boolean {
+    return proto3.util.equals(GetActiveEnrolmentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.GetActiveEnrolmentResponse
+ */
+export class GetActiveEnrolmentResponse extends Message<GetActiveEnrolmentResponse> {
+  /**
+   * enrolment.id is empty when the caller has no active enrolment.
+   *
+   * @generated from field: sttattus.workout.v1.ProgrammeEnrolment enrolment = 1;
+   */
+  enrolment?: ProgrammeEnrolment;
+
+  constructor(data?: PartialMessage<GetActiveEnrolmentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.GetActiveEnrolmentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "enrolment", kind: "message", T: ProgrammeEnrolment },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetActiveEnrolmentResponse {
+    return new GetActiveEnrolmentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetActiveEnrolmentResponse {
+    return new GetActiveEnrolmentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetActiveEnrolmentResponse {
+    return new GetActiveEnrolmentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetActiveEnrolmentResponse | PlainMessage<GetActiveEnrolmentResponse> | undefined, b: GetActiveEnrolmentResponse | PlainMessage<GetActiveEnrolmentResponse> | undefined): boolean {
+    return proto3.util.equals(GetActiveEnrolmentResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ListMyEnrolmentsRequest
+ */
+export class ListMyEnrolmentsRequest extends Message<ListMyEnrolmentsRequest> {
+  constructor(data?: PartialMessage<ListMyEnrolmentsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ListMyEnrolmentsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyEnrolmentsRequest {
+    return new ListMyEnrolmentsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyEnrolmentsRequest {
+    return new ListMyEnrolmentsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyEnrolmentsRequest {
+    return new ListMyEnrolmentsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyEnrolmentsRequest | PlainMessage<ListMyEnrolmentsRequest> | undefined, b: ListMyEnrolmentsRequest | PlainMessage<ListMyEnrolmentsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyEnrolmentsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ListMyEnrolmentsResponse
+ */
+export class ListMyEnrolmentsResponse extends Message<ListMyEnrolmentsResponse> {
+  /**
+   * @generated from field: repeated sttattus.workout.v1.ProgrammeEnrolment enrolments = 1;
+   */
+  enrolments: ProgrammeEnrolment[] = [];
+
+  constructor(data?: PartialMessage<ListMyEnrolmentsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ListMyEnrolmentsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "enrolments", kind: "message", T: ProgrammeEnrolment, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyEnrolmentsResponse {
+    return new ListMyEnrolmentsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyEnrolmentsResponse {
+    return new ListMyEnrolmentsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyEnrolmentsResponse {
+    return new ListMyEnrolmentsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyEnrolmentsResponse | PlainMessage<ListMyEnrolmentsResponse> | undefined, b: ListMyEnrolmentsResponse | PlainMessage<ListMyEnrolmentsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyEnrolmentsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.UpdateEnrolmentRequest
+ */
+export class UpdateEnrolmentRequest extends Message<UpdateEnrolmentRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: int32 current_week = 2;
+   */
+  currentWeek = 0;
+
+  /**
+   * active | paused | finished | abandoned
+   *
+   * @generated from field: string status = 3;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<UpdateEnrolmentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.UpdateEnrolmentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "current_week", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateEnrolmentRequest {
+    return new UpdateEnrolmentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateEnrolmentRequest {
+    return new UpdateEnrolmentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateEnrolmentRequest {
+    return new UpdateEnrolmentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateEnrolmentRequest | PlainMessage<UpdateEnrolmentRequest> | undefined, b: UpdateEnrolmentRequest | PlainMessage<UpdateEnrolmentRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateEnrolmentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.UpdateEnrolmentResponse
+ */
+export class UpdateEnrolmentResponse extends Message<UpdateEnrolmentResponse> {
+  /**
+   * @generated from field: sttattus.workout.v1.ProgrammeEnrolment enrolment = 1;
+   */
+  enrolment?: ProgrammeEnrolment;
+
+  constructor(data?: PartialMessage<UpdateEnrolmentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.UpdateEnrolmentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "enrolment", kind: "message", T: ProgrammeEnrolment },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateEnrolmentResponse {
+    return new UpdateEnrolmentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateEnrolmentResponse {
+    return new UpdateEnrolmentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateEnrolmentResponse {
+    return new UpdateEnrolmentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateEnrolmentResponse | PlainMessage<UpdateEnrolmentResponse> | undefined, b: UpdateEnrolmentResponse | PlainMessage<UpdateEnrolmentResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateEnrolmentResponse, a, b);
+  }
+}
+

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateFormVideoRequest, CreateFormVideoResponse, CreateSessionRequest, CreateSessionResponse, DeleteFormVideoRequest, DeleteFormVideoResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetRankLadderRequest, GetRankLadderResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListMyFormVideosRequest, ListMyFormVideosResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateFormVideoStatusRequest, UpdateFormVideoStatusResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse } from "./workout_pb.js";
+import { CreateFormVideoRequest, CreateFormVideoResponse, CreateSessionRequest, CreateSessionResponse, DeleteFormVideoRequest, DeleteFormVideoResponse, EnrolInProgrammeRequest, EnrolInProgrammeResponse, GetActiveEnrolmentRequest, GetActiveEnrolmentResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetProgrammeRequest, GetProgrammeResponse, GetRankLadderRequest, GetRankLadderResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListMyEnrolmentsRequest, ListMyEnrolmentsResponse, ListMyFormVideosRequest, ListMyFormVideosResponse, ListProgrammesRequest, ListProgrammesResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateEnrolmentRequest, UpdateEnrolmentResponse, UpdateFormVideoStatusRequest, UpdateFormVideoStatusResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse } from "./workout_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -205,6 +205,63 @@ export const WorkoutService = {
       name: "UpdateFormVideoStatus",
       I: UpdateFormVideoStatusRequest,
       O: UpdateFormVideoStatusResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P2.1 — programme browser, enrolment ledger, and the manual
+     * week-advance the Phase 2 surface uses.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListProgrammes
+     */
+    listProgrammes: {
+      name: "ListProgrammes",
+      I: ListProgrammesRequest,
+      O: ListProgrammesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetProgramme
+     */
+    getProgramme: {
+      name: "GetProgramme",
+      I: GetProgrammeRequest,
+      O: GetProgrammeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.EnrolInProgramme
+     */
+    enrolInProgramme: {
+      name: "EnrolInProgramme",
+      I: EnrolInProgrammeRequest,
+      O: EnrolInProgrammeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetActiveEnrolment
+     */
+    getActiveEnrolment: {
+      name: "GetActiveEnrolment",
+      I: GetActiveEnrolmentRequest,
+      O: GetActiveEnrolmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListMyEnrolments
+     */
+    listMyEnrolments: {
+      name: "ListMyEnrolments",
+      I: ListMyEnrolmentsRequest,
+      O: ListMyEnrolmentsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpdateEnrolment
+     */
+    updateEnrolment: {
+      name: "UpdateEnrolment",
+      I: UpdateEnrolmentRequest,
+      O: UpdateEnrolmentResponse,
       kind: MethodKind.Unary,
     },
   }

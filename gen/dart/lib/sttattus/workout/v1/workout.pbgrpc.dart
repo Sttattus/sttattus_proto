@@ -122,6 +122,32 @@ class WorkoutServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateFormVideoStatus, request, options: options);
   }
 
+  /// F7P2.1 — programme browser, enrolment ledger, and the manual
+  /// week-advance the Phase 2 surface uses.
+  $grpc.ResponseFuture<$0.ListProgrammesResponse> listProgrammes($0.ListProgrammesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listProgrammes, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetProgrammeResponse> getProgramme($0.GetProgrammeRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getProgramme, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EnrolInProgrammeResponse> enrolInProgramme($0.EnrolInProgrammeRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$enrolInProgramme, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetActiveEnrolmentResponse> getActiveEnrolment($0.GetActiveEnrolmentRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getActiveEnrolment, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyEnrolmentsResponse> listMyEnrolments($0.ListMyEnrolmentsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyEnrolments, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateEnrolmentResponse> updateEnrolment($0.UpdateEnrolmentRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$updateEnrolment, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listWorkouts = $grpc.ClientMethod<$0.ListWorkoutsRequest, $0.ListWorkoutsResponse>(
@@ -204,6 +230,30 @@ class WorkoutServiceClient extends $grpc.Client {
       '/sttattus.workout.v1.WorkoutService/UpdateFormVideoStatus',
       ($0.UpdateFormVideoStatusRequest value) => value.writeToBuffer(),
       $0.UpdateFormVideoStatusResponse.fromBuffer);
+  static final _$listProgrammes = $grpc.ClientMethod<$0.ListProgrammesRequest, $0.ListProgrammesResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListProgrammes',
+      ($0.ListProgrammesRequest value) => value.writeToBuffer(),
+      $0.ListProgrammesResponse.fromBuffer);
+  static final _$getProgramme = $grpc.ClientMethod<$0.GetProgrammeRequest, $0.GetProgrammeResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetProgramme',
+      ($0.GetProgrammeRequest value) => value.writeToBuffer(),
+      $0.GetProgrammeResponse.fromBuffer);
+  static final _$enrolInProgramme = $grpc.ClientMethod<$0.EnrolInProgrammeRequest, $0.EnrolInProgrammeResponse>(
+      '/sttattus.workout.v1.WorkoutService/EnrolInProgramme',
+      ($0.EnrolInProgrammeRequest value) => value.writeToBuffer(),
+      $0.EnrolInProgrammeResponse.fromBuffer);
+  static final _$getActiveEnrolment = $grpc.ClientMethod<$0.GetActiveEnrolmentRequest, $0.GetActiveEnrolmentResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetActiveEnrolment',
+      ($0.GetActiveEnrolmentRequest value) => value.writeToBuffer(),
+      $0.GetActiveEnrolmentResponse.fromBuffer);
+  static final _$listMyEnrolments = $grpc.ClientMethod<$0.ListMyEnrolmentsRequest, $0.ListMyEnrolmentsResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListMyEnrolments',
+      ($0.ListMyEnrolmentsRequest value) => value.writeToBuffer(),
+      $0.ListMyEnrolmentsResponse.fromBuffer);
+  static final _$updateEnrolment = $grpc.ClientMethod<$0.UpdateEnrolmentRequest, $0.UpdateEnrolmentResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpdateEnrolment',
+      ($0.UpdateEnrolmentRequest value) => value.writeToBuffer(),
+      $0.UpdateEnrolmentResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.workout.v1.WorkoutService')
@@ -351,6 +401,48 @@ abstract class WorkoutServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UpdateFormVideoStatusRequest.fromBuffer(value),
         ($0.UpdateFormVideoStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListProgrammesRequest, $0.ListProgrammesResponse>(
+        'ListProgrammes',
+        listProgrammes_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListProgrammesRequest.fromBuffer(value),
+        ($0.ListProgrammesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetProgrammeRequest, $0.GetProgrammeResponse>(
+        'GetProgramme',
+        getProgramme_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetProgrammeRequest.fromBuffer(value),
+        ($0.GetProgrammeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EnrolInProgrammeRequest, $0.EnrolInProgrammeResponse>(
+        'EnrolInProgramme',
+        enrolInProgramme_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.EnrolInProgrammeRequest.fromBuffer(value),
+        ($0.EnrolInProgrammeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetActiveEnrolmentRequest, $0.GetActiveEnrolmentResponse>(
+        'GetActiveEnrolment',
+        getActiveEnrolment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetActiveEnrolmentRequest.fromBuffer(value),
+        ($0.GetActiveEnrolmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyEnrolmentsRequest, $0.ListMyEnrolmentsResponse>(
+        'ListMyEnrolments',
+        listMyEnrolments_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyEnrolmentsRequest.fromBuffer(value),
+        ($0.ListMyEnrolmentsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateEnrolmentRequest, $0.UpdateEnrolmentResponse>(
+        'UpdateEnrolment',
+        updateEnrolment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpdateEnrolmentRequest.fromBuffer(value),
+        ($0.UpdateEnrolmentResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListWorkoutsResponse> listWorkouts_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWorkoutsRequest> $request) async {
@@ -472,5 +564,41 @@ abstract class WorkoutServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.UpdateFormVideoStatusResponse> updateFormVideoStatus($grpc.ServiceCall call, $0.UpdateFormVideoStatusRequest request);
+
+  $async.Future<$0.ListProgrammesResponse> listProgrammes_Pre($grpc.ServiceCall $call, $async.Future<$0.ListProgrammesRequest> $request) async {
+    return listProgrammes($call, await $request);
+  }
+
+  $async.Future<$0.ListProgrammesResponse> listProgrammes($grpc.ServiceCall call, $0.ListProgrammesRequest request);
+
+  $async.Future<$0.GetProgrammeResponse> getProgramme_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProgrammeRequest> $request) async {
+    return getProgramme($call, await $request);
+  }
+
+  $async.Future<$0.GetProgrammeResponse> getProgramme($grpc.ServiceCall call, $0.GetProgrammeRequest request);
+
+  $async.Future<$0.EnrolInProgrammeResponse> enrolInProgramme_Pre($grpc.ServiceCall $call, $async.Future<$0.EnrolInProgrammeRequest> $request) async {
+    return enrolInProgramme($call, await $request);
+  }
+
+  $async.Future<$0.EnrolInProgrammeResponse> enrolInProgramme($grpc.ServiceCall call, $0.EnrolInProgrammeRequest request);
+
+  $async.Future<$0.GetActiveEnrolmentResponse> getActiveEnrolment_Pre($grpc.ServiceCall $call, $async.Future<$0.GetActiveEnrolmentRequest> $request) async {
+    return getActiveEnrolment($call, await $request);
+  }
+
+  $async.Future<$0.GetActiveEnrolmentResponse> getActiveEnrolment($grpc.ServiceCall call, $0.GetActiveEnrolmentRequest request);
+
+  $async.Future<$0.ListMyEnrolmentsResponse> listMyEnrolments_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyEnrolmentsRequest> $request) async {
+    return listMyEnrolments($call, await $request);
+  }
+
+  $async.Future<$0.ListMyEnrolmentsResponse> listMyEnrolments($grpc.ServiceCall call, $0.ListMyEnrolmentsRequest request);
+
+  $async.Future<$0.UpdateEnrolmentResponse> updateEnrolment_Pre($grpc.ServiceCall $call, $async.Future<$0.UpdateEnrolmentRequest> $request) async {
+    return updateEnrolment($call, await $request);
+  }
+
+  $async.Future<$0.UpdateEnrolmentResponse> updateEnrolment($grpc.ServiceCall call, $0.UpdateEnrolmentRequest request);
 
 }
