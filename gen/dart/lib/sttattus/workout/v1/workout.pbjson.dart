@@ -602,6 +602,59 @@ final $typed_data.Uint8List logSetResponseDescriptor = $convert.base64Decode(
     'Cg5Mb2dTZXRSZXNwb25zZRIxCgNzZXQYASABKAsyHy5zdHRhdHR1cy53b3Jrb3V0LnYxLlNlc3'
     'Npb25TZXRSA3NldA==');
 
+@$core.Deprecated('Use rankBandDescriptor instead')
+const RankBand$json = {
+  '1': 'RankBand',
+  '2': [
+    {'1': 'code', '3': 1, '4': 1, '5': 9, '10': 'code'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'lower_bound', '3': 3, '4': 1, '5': 1, '10': 'lowerBound'},
+    {'1': 'upper_bound', '3': 4, '4': 1, '5': 1, '10': 'upperBound'},
+    {'1': 'min_power', '3': 5, '4': 1, '5': 5, '10': 'minPower'},
+    {'1': 'min_agility', '3': 6, '4': 1, '5': 5, '10': 'minAgility'},
+    {'1': 'min_grit', '3': 7, '4': 1, '5': 5, '10': 'minGrit'},
+    {'1': 'benefit', '3': 8, '4': 1, '5': 9, '10': 'benefit'},
+    {'1': 'current', '3': 9, '4': 1, '5': 8, '10': 'current'},
+  ],
+};
+
+/// Descriptor for `RankBand`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List rankBandDescriptor = $convert.base64Decode(
+    'CghSYW5rQmFuZBISCgRjb2RlGAEgASgJUgRjb2RlEhIKBG5hbWUYAiABKAlSBG5hbWUSHwoLbG'
+    '93ZXJfYm91bmQYAyABKAFSCmxvd2VyQm91bmQSHwoLdXBwZXJfYm91bmQYBCABKAFSCnVwcGVy'
+    'Qm91bmQSGwoJbWluX3Bvd2VyGAUgASgFUghtaW5Qb3dlchIfCgttaW5fYWdpbGl0eRgGIAEoBV'
+    'IKbWluQWdpbGl0eRIZCghtaW5fZ3JpdBgHIAEoBVIHbWluR3JpdBIYCgdiZW5lZml0GAggASgJ'
+    'UgdiZW5lZml0EhgKB2N1cnJlbnQYCSABKAhSB2N1cnJlbnQ=');
+
+@$core.Deprecated('Use getRankLadderRequestDescriptor instead')
+const GetRankLadderRequest$json = {
+  '1': 'GetRankLadderRequest',
+};
+
+/// Descriptor for `GetRankLadderRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRankLadderRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRSYW5rTGFkZGVyUmVxdWVzdA==');
+
+@$core.Deprecated('Use getRankLadderResponseDescriptor instead')
+const GetRankLadderResponse$json = {
+  '1': 'GetRankLadderResponse',
+  '2': [
+    {'1': 'bands', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.RankBand', '10': 'bands'},
+    {'1': 'forge_rank', '3': 2, '4': 1, '5': 1, '10': 'forgeRank'},
+    {'1': 'current_rank', '3': 3, '4': 1, '5': 9, '10': 'currentRank'},
+    {'1': 'power', '3': 4, '4': 1, '5': 5, '10': 'power'},
+    {'1': 'agility', '3': 5, '4': 1, '5': 5, '10': 'agility'},
+    {'1': 'grit', '3': 6, '4': 1, '5': 5, '10': 'grit'},
+  ],
+};
+
+/// Descriptor for `GetRankLadderResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRankLadderResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRSYW5rTGFkZGVyUmVzcG9uc2USMwoFYmFuZHMYASADKAsyHS5zdHRhdHR1cy53b3Jrb3'
+    'V0LnYxLlJhbmtCYW5kUgViYW5kcxIdCgpmb3JnZV9yYW5rGAIgASgBUglmb3JnZVJhbmsSIQoM'
+    'Y3VycmVudF9yYW5rGAMgASgJUgtjdXJyZW50UmFuaxIUCgVwb3dlchgEIAEoBVIFcG93ZXISGA'
+    'oHYWdpbGl0eRgFIAEoBVIHYWdpbGl0eRISCgRncml0GAYgASgFUgRncml0');
+
 @$core.Deprecated('Use todaySnapshotDescriptor instead')
 const TodaySnapshot$json = {
   '1': 'TodaySnapshot',

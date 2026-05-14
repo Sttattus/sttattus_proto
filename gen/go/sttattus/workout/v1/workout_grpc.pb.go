@@ -26,6 +26,7 @@ const (
 	WorkoutService_GetForgeStats_FullMethodName       = "/sttattus.workout.v1.WorkoutService/GetForgeStats"
 	WorkoutService_SubmitFeedback_FullMethodName      = "/sttattus.workout.v1.WorkoutService/SubmitFeedback"
 	WorkoutService_GetToday_FullMethodName            = "/sttattus.workout.v1.WorkoutService/GetToday"
+	WorkoutService_GetRankLadder_FullMethodName       = "/sttattus.workout.v1.WorkoutService/GetRankLadder"
 	WorkoutService_ListExercises_FullMethodName       = "/sttattus.workout.v1.WorkoutService/ListExercises"
 	WorkoutService_CreateSession_FullMethodName       = "/sttattus.workout.v1.WorkoutService/CreateSession"
 	WorkoutService_GetSession_FullMethodName          = "/sttattus.workout.v1.WorkoutService/GetSession"
@@ -47,6 +48,8 @@ type WorkoutServiceClient interface {
 	SubmitFeedback(ctx context.Context, in *SubmitFeedbackRequest, opts ...grpc.CallOption) (*SubmitFeedbackResponse, error)
 	// F7.2 — the Today screen snapshot.
 	GetToday(ctx context.Context, in *GetTodayRequest, opts ...grpc.CallOption) (*GetTodayResponse, error)
+	// F7.3 — the forge rank ladder with metric requirements.
+	GetRankLadder(ctx context.Context, in *GetRankLadderRequest, opts ...grpc.CallOption) (*GetRankLadderResponse, error)
 	// F7.1 — movement library + session builder + live session.
 	ListExercises(ctx context.Context, in *ListExercisesRequest, opts ...grpc.CallOption) (*ListExercisesResponse, error)
 	CreateSession(ctx context.Context, in *CreateSessionRequest, opts ...grpc.CallOption) (*CreateSessionResponse, error)
@@ -135,6 +138,16 @@ func (c *workoutServiceClient) GetToday(ctx context.Context, in *GetTodayRequest
 	return out, nil
 }
 
+func (c *workoutServiceClient) GetRankLadder(ctx context.Context, in *GetRankLadderRequest, opts ...grpc.CallOption) (*GetRankLadderResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetRankLadderResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetRankLadder_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *workoutServiceClient) ListExercises(ctx context.Context, in *ListExercisesRequest, opts ...grpc.CallOption) (*ListExercisesResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListExercisesResponse)
@@ -217,6 +230,8 @@ type WorkoutServiceServer interface {
 	SubmitFeedback(context.Context, *SubmitFeedbackRequest) (*SubmitFeedbackResponse, error)
 	// F7.2 — the Today screen snapshot.
 	GetToday(context.Context, *GetTodayRequest) (*GetTodayResponse, error)
+	// F7.3 — the forge rank ladder with metric requirements.
+	GetRankLadder(context.Context, *GetRankLadderRequest) (*GetRankLadderResponse, error)
 	// F7.1 — movement library + session builder + live session.
 	ListExercises(context.Context, *ListExercisesRequest) (*ListExercisesResponse, error)
 	CreateSession(context.Context, *CreateSessionRequest) (*CreateSessionResponse, error)
@@ -255,6 +270,9 @@ func (UnimplementedWorkoutServiceServer) SubmitFeedback(context.Context, *Submit
 }
 func (UnimplementedWorkoutServiceServer) GetToday(context.Context, *GetTodayRequest) (*GetTodayResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetToday not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetRankLadder(context.Context, *GetRankLadderRequest) (*GetRankLadderResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetRankLadder not implemented")
 }
 func (UnimplementedWorkoutServiceServer) ListExercises(context.Context, *ListExercisesRequest) (*ListExercisesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListExercises not implemented")
@@ -424,6 +442,24 @@ func _WorkoutService_GetToday_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WorkoutService_GetRankLadder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRankLadderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetRankLadder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetRankLadder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetRankLadder(ctx, req.(*GetRankLadderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _WorkoutService_ListExercises_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListExercisesRequest)
 	if err := dec(in); err != nil {
@@ -584,6 +620,10 @@ var WorkoutService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetToday",
 			Handler:    _WorkoutService_GetToday_Handler,
+		},
+		{
+			MethodName: "GetRankLadder",
+			Handler:    _WorkoutService_GetRankLadder_Handler,
 		},
 		{
 			MethodName: "ListExercises",

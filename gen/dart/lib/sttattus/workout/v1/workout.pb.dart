@@ -2662,6 +2662,284 @@ class LogSetResponse extends $pb.GeneratedMessage {
   SessionSet ensureSet() => $_ensure(0);
 }
 
+/// RankBand is one rung of the forge rank ladder, with the metric
+/// thresholds it asks for — the central engagement loop made legible.
+class RankBand extends $pb.GeneratedMessage {
+  factory RankBand({
+    $core.String? code,
+    $core.String? name,
+    $core.double? lowerBound,
+    $core.double? upperBound,
+    $core.int? minPower,
+    $core.int? minAgility,
+    $core.int? minGrit,
+    $core.String? benefit,
+    $core.bool? current,
+  }) {
+    final result = create();
+    if (code != null) result.code = code;
+    if (name != null) result.name = name;
+    if (lowerBound != null) result.lowerBound = lowerBound;
+    if (upperBound != null) result.upperBound = upperBound;
+    if (minPower != null) result.minPower = minPower;
+    if (minAgility != null) result.minAgility = minAgility;
+    if (minGrit != null) result.minGrit = minGrit;
+    if (benefit != null) result.benefit = benefit;
+    if (current != null) result.current = current;
+    return result;
+  }
+
+  RankBand._();
+
+  factory RankBand.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RankBand.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RankBand', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'code')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'lowerBound', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'upperBound', $pb.PbFieldType.OD)
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'minPower', $pb.PbFieldType.O3)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'minAgility', $pb.PbFieldType.O3)
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'minGrit', $pb.PbFieldType.O3)
+    ..aOS(8, _omitFieldNames ? '' : 'benefit')
+    ..aOB(9, _omitFieldNames ? '' : 'current')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RankBand clone() => RankBand()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RankBand copyWith(void Function(RankBand) updates) => super.copyWith((message) => updates(message as RankBand)) as RankBand;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RankBand create() => RankBand._();
+  @$core.override
+  RankBand createEmptyInstance() => create();
+  static $pb.PbList<RankBand> createRepeated() => $pb.PbList<RankBand>();
+  @$core.pragma('dart2js:noInline')
+  static RankBand getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RankBand>(create);
+  static RankBand? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get code => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set code($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  /// Inclusive lower / exclusive upper forge_rank bound (1-100).
+  @$pb.TagNumber(3)
+  $core.double get lowerBound => $_getN(2);
+  @$pb.TagNumber(3)
+  set lowerBound($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLowerBound() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLowerBound() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get upperBound => $_getN(3);
+  @$pb.TagNumber(4)
+  set upperBound($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasUpperBound() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUpperBound() => $_clearField(4);
+
+  /// Stat minimums to be considered solidly in this band.
+  @$pb.TagNumber(5)
+  $core.int get minPower => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set minPower($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMinPower() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMinPower() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get minAgility => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set minAgility($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMinAgility() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMinAgility() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get minGrit => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set minGrit($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMinGrit() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMinGrit() => $_clearField(7);
+
+  /// Editorial one-liner on what the band represents.
+  @$pb.TagNumber(8)
+  $core.String get benefit => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set benefit($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasBenefit() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearBenefit() => $_clearField(8);
+
+  /// True for the band the lifter currently sits in.
+  @$pb.TagNumber(9)
+  $core.bool get current => $_getBF(8);
+  @$pb.TagNumber(9)
+  set current($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCurrent() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCurrent() => $_clearField(9);
+}
+
+class GetRankLadderRequest extends $pb.GeneratedMessage {
+  factory GetRankLadderRequest() => create();
+
+  GetRankLadderRequest._();
+
+  factory GetRankLadderRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetRankLadderRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRankLadderRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRankLadderRequest clone() => GetRankLadderRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRankLadderRequest copyWith(void Function(GetRankLadderRequest) updates) => super.copyWith((message) => updates(message as GetRankLadderRequest)) as GetRankLadderRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRankLadderRequest create() => GetRankLadderRequest._();
+  @$core.override
+  GetRankLadderRequest createEmptyInstance() => create();
+  static $pb.PbList<GetRankLadderRequest> createRepeated() => $pb.PbList<GetRankLadderRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetRankLadderRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetRankLadderRequest>(create);
+  static GetRankLadderRequest? _defaultInstance;
+}
+
+class GetRankLadderResponse extends $pb.GeneratedMessage {
+  factory GetRankLadderResponse({
+    $core.Iterable<RankBand>? bands,
+    $core.double? forgeRank,
+    $core.String? currentRank,
+    $core.int? power,
+    $core.int? agility,
+    $core.int? grit,
+  }) {
+    final result = create();
+    if (bands != null) result.bands.addAll(bands);
+    if (forgeRank != null) result.forgeRank = forgeRank;
+    if (currentRank != null) result.currentRank = currentRank;
+    if (power != null) result.power = power;
+    if (agility != null) result.agility = agility;
+    if (grit != null) result.grit = grit;
+    return result;
+  }
+
+  GetRankLadderResponse._();
+
+  factory GetRankLadderResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetRankLadderResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRankLadderResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..pc<RankBand>(1, _omitFieldNames ? '' : 'bands', $pb.PbFieldType.PM, subBuilder: RankBand.create)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'forgeRank', $pb.PbFieldType.OD)
+    ..aOS(3, _omitFieldNames ? '' : 'currentRank')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'power', $pb.PbFieldType.O3)
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'agility', $pb.PbFieldType.O3)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'grit', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRankLadderResponse clone() => GetRankLadderResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRankLadderResponse copyWith(void Function(GetRankLadderResponse) updates) => super.copyWith((message) => updates(message as GetRankLadderResponse)) as GetRankLadderResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRankLadderResponse create() => GetRankLadderResponse._();
+  @$core.override
+  GetRankLadderResponse createEmptyInstance() => create();
+  static $pb.PbList<GetRankLadderResponse> createRepeated() => $pb.PbList<GetRankLadderResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetRankLadderResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetRankLadderResponse>(create);
+  static GetRankLadderResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<RankBand> get bands => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.double get forgeRank => $_getN(1);
+  @$pb.TagNumber(2)
+  set forgeRank($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasForgeRank() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearForgeRank() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get currentRank => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set currentRank($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCurrentRank() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCurrentRank() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get power => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set power($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPower() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPower() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get agility => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set agility($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAgility() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAgility() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get grit => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set grit($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasGrit() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearGrit() => $_clearField(6);
+}
+
 /// TodaySnapshot is everything the redesigned Today screen renders:
 /// a readiness ring, the session in focus, and the rank delta.
 class TodaySnapshot extends $pb.GeneratedMessage {

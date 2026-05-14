@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateSessionRequest, CreateSessionResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse } from "./workout_pb.js";
+import { CreateSessionRequest, CreateSessionResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetRankLadderRequest, GetRankLadderResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse } from "./workout_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -75,6 +75,17 @@ export const WorkoutService = {
       name: "GetToday",
       I: GetTodayRequest,
       O: GetTodayResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7.3 — the forge rank ladder with metric requirements.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetRankLadder
+     */
+    getRankLadder: {
+      name: "GetRankLadder",
+      I: GetRankLadderRequest,
+      O: GetRankLadderResponse,
       kind: MethodKind.Unary,
     },
     /**

@@ -244,6 +244,36 @@ message LogSetResponse {
   SessionSet set = 1;
 }
 
+// ===== Rank ladder (F7.3) =====
+
+// RankBand is one rung of the forge rank ladder, with the metric
+// thresholds it asks for — the central engagement loop made legible.
+message RankBand {
+  string code = 1;
+  string name = 2;
+  // Inclusive lower / exclusive upper forge_rank bound (1-100).
+  double lower_bound = 3;
+  double upper_bound = 4;
+  // Stat minimums to be considered solidly in this band.
+  int32 min_power = 5;
+  int32 min_agility = 6;
+  int32 min_grit = 7;
+  // Editorial one-liner on what the band represents.
+  string benefit = 8;
+  // True for the band the lifter currently sits in.
+  bool current = 9;
+}
+
+message GetRankLadderRequest {}
+message GetRankLadderResponse {
+  repeated RankBand bands = 1;
+  double forge_rank = 2;
+  string current_rank = 3;
+  int32 power = 4;
+  int32 agility = 5;
+  int32 grit = 6;
+}
+
 // ===== Today screen (F7.2) =====
 
 // TodaySnapshot is everything the redesigned Today screen renders:
@@ -279,6 +309,8 @@ service WorkoutService {
 
   // F7.2 — the Today screen snapshot.
   rpc GetToday(GetTodayRequest) returns (GetTodayResponse);
+  // F7.3 — the forge rank ladder with metric requirements.
+  rpc GetRankLadder(GetRankLadderRequest) returns (GetRankLadderResponse);
 
   // F7.1 — movement library + session builder + live session.
   rpc ListExercises(ListExercisesRequest) returns (ListExercisesResponse);

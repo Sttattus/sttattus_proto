@@ -1908,6 +1908,200 @@ export class LogSetResponse extends Message<LogSetResponse> {
 }
 
 /**
+ * RankBand is one rung of the forge rank ladder, with the metric
+ * thresholds it asks for — the central engagement loop made legible.
+ *
+ * @generated from message sttattus.workout.v1.RankBand
+ */
+export class RankBand extends Message<RankBand> {
+  /**
+   * @generated from field: string code = 1;
+   */
+  code = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * Inclusive lower / exclusive upper forge_rank bound (1-100).
+   *
+   * @generated from field: double lower_bound = 3;
+   */
+  lowerBound = 0;
+
+  /**
+   * @generated from field: double upper_bound = 4;
+   */
+  upperBound = 0;
+
+  /**
+   * Stat minimums to be considered solidly in this band.
+   *
+   * @generated from field: int32 min_power = 5;
+   */
+  minPower = 0;
+
+  /**
+   * @generated from field: int32 min_agility = 6;
+   */
+  minAgility = 0;
+
+  /**
+   * @generated from field: int32 min_grit = 7;
+   */
+  minGrit = 0;
+
+  /**
+   * Editorial one-liner on what the band represents.
+   *
+   * @generated from field: string benefit = 8;
+   */
+  benefit = "";
+
+  /**
+   * True for the band the lifter currently sits in.
+   *
+   * @generated from field: bool current = 9;
+   */
+  current = false;
+
+  constructor(data?: PartialMessage<RankBand>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.RankBand";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "lower_bound", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "upper_bound", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "min_power", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "min_agility", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "min_grit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "benefit", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "current", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RankBand {
+    return new RankBand().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RankBand {
+    return new RankBand().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RankBand {
+    return new RankBand().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RankBand | PlainMessage<RankBand> | undefined, b: RankBand | PlainMessage<RankBand> | undefined): boolean {
+    return proto3.util.equals(RankBand, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.GetRankLadderRequest
+ */
+export class GetRankLadderRequest extends Message<GetRankLadderRequest> {
+  constructor(data?: PartialMessage<GetRankLadderRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.GetRankLadderRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRankLadderRequest {
+    return new GetRankLadderRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRankLadderRequest {
+    return new GetRankLadderRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRankLadderRequest {
+    return new GetRankLadderRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetRankLadderRequest | PlainMessage<GetRankLadderRequest> | undefined, b: GetRankLadderRequest | PlainMessage<GetRankLadderRequest> | undefined): boolean {
+    return proto3.util.equals(GetRankLadderRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.GetRankLadderResponse
+ */
+export class GetRankLadderResponse extends Message<GetRankLadderResponse> {
+  /**
+   * @generated from field: repeated sttattus.workout.v1.RankBand bands = 1;
+   */
+  bands: RankBand[] = [];
+
+  /**
+   * @generated from field: double forge_rank = 2;
+   */
+  forgeRank = 0;
+
+  /**
+   * @generated from field: string current_rank = 3;
+   */
+  currentRank = "";
+
+  /**
+   * @generated from field: int32 power = 4;
+   */
+  power = 0;
+
+  /**
+   * @generated from field: int32 agility = 5;
+   */
+  agility = 0;
+
+  /**
+   * @generated from field: int32 grit = 6;
+   */
+  grit = 0;
+
+  constructor(data?: PartialMessage<GetRankLadderResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.GetRankLadderResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "bands", kind: "message", T: RankBand, repeated: true },
+    { no: 2, name: "forge_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "current_rank", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "power", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "agility", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "grit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRankLadderResponse {
+    return new GetRankLadderResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRankLadderResponse {
+    return new GetRankLadderResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRankLadderResponse {
+    return new GetRankLadderResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetRankLadderResponse | PlainMessage<GetRankLadderResponse> | undefined, b: GetRankLadderResponse | PlainMessage<GetRankLadderResponse> | undefined): boolean {
+    return proto3.util.equals(GetRankLadderResponse, a, b);
+  }
+}
+
+/**
  * TodaySnapshot is everything the redesigned Today screen renders:
  * a readiness ring, the session in focus, and the rank delta.
  *
