@@ -60,6 +60,55 @@ message GetTierLadderResponse {
   string current_tier = 3;
 }
 
+// === Points wallet (P5.4) ===
+
+message GetWalletRequest {}
+
+// PillarPoints is one pillar's contribution to the points economy —
+// keyed by the app_code written into hub_points_events.
+message PillarPoints {
+  string app_code = 1;
+  int64 earned = 2;
+  int64 spent = 3;
+}
+
+message GetWalletResponse {
+  // Live spendable balance.
+  int64 balance = 1;
+  // Total ever earned (spends never decrement this).
+  int64 lifetime_earned = 2;
+  // Total ever spent (sum of the negative ledger entries, as a
+  // positive number).
+  int64 lifetime_spent = 3;
+  // Per-pillar earned/spent split, so the wallet can show where the
+  // economy is coming from.
+  repeated PillarPoints by_pillar = 4;
+}
+
+message ListLedgerEntriesRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+}
+
+// LedgerEntry mirrors one append-only row of hub_points_events.
+message LedgerEntry {
+  string id = 1;
+  // Empty when the event was not attributed to a specific pillar app.
+  string app_code = 2;
+  // earn | spend | decay | bonus | redemption — free-form, set by the
+  // crediting service.
+  string kind = 3;
+  // Signed: positive for earns, negative for spends/decay.
+  int64 amount = 4;
+  string description = 5;
+  // RFC-3339 UTC.
+  string created_at = 6;
+}
+
+message ListLedgerEntriesResponse {
+  repeated LedgerEntry entries = 1;
+}
+
 service EmpireService {
   // GetScoreBreakdown returns the caller's Sttattus Score with the
   // four weighted-bucket components — the glass-box the audit asks for.
@@ -69,4 +118,12 @@ service EmpireService {
   // benefits, marking the caller's current band. Bounds are confirmed
   // against empire_engine.GetTier.
   rpc GetTierLadder(GetTierLadderRequest) returns (GetTierLadderResponse);
+
+  // GetWallet returns the caller's points balance, lifetime totals, and
+  // per-pillar earned/spent breakdown — the wallet headline.
+  rpc GetWallet(GetWalletRequest) returns (GetWalletResponse);
+
+  // ListLedgerEntries returns the append-only points ledger, newest
+  // first, paginated.
+  rpc ListLedgerEntries(ListLedgerEntriesRequest) returns (ListLedgerEntriesResponse);
 }

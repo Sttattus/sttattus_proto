@@ -21,6 +21,8 @@ const _ = grpc.SupportPackageIsVersion9
 const (
 	EmpireService_GetScoreBreakdown_FullMethodName = "/sttattus.empire.v1.EmpireService/GetScoreBreakdown"
 	EmpireService_GetTierLadder_FullMethodName     = "/sttattus.empire.v1.EmpireService/GetTierLadder"
+	EmpireService_GetWallet_FullMethodName         = "/sttattus.empire.v1.EmpireService/GetWallet"
+	EmpireService_ListLedgerEntries_FullMethodName = "/sttattus.empire.v1.EmpireService/ListLedgerEntries"
 )
 
 // EmpireServiceClient is the client API for EmpireService service.
@@ -34,6 +36,12 @@ type EmpireServiceClient interface {
 	// benefits, marking the caller's current band. Bounds are confirmed
 	// against empire_engine.GetTier.
 	GetTierLadder(ctx context.Context, in *GetTierLadderRequest, opts ...grpc.CallOption) (*GetTierLadderResponse, error)
+	// GetWallet returns the caller's points balance, lifetime totals, and
+	// per-pillar earned/spent breakdown — the wallet headline.
+	GetWallet(ctx context.Context, in *GetWalletRequest, opts ...grpc.CallOption) (*GetWalletResponse, error)
+	// ListLedgerEntries returns the append-only points ledger, newest
+	// first, paginated.
+	ListLedgerEntries(ctx context.Context, in *ListLedgerEntriesRequest, opts ...grpc.CallOption) (*ListLedgerEntriesResponse, error)
 }
 
 type empireServiceClient struct {
@@ -64,6 +72,26 @@ func (c *empireServiceClient) GetTierLadder(ctx context.Context, in *GetTierLadd
 	return out, nil
 }
 
+func (c *empireServiceClient) GetWallet(ctx context.Context, in *GetWalletRequest, opts ...grpc.CallOption) (*GetWalletResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetWalletResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetWallet_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ListLedgerEntries(ctx context.Context, in *ListLedgerEntriesRequest, opts ...grpc.CallOption) (*ListLedgerEntriesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLedgerEntriesResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ListLedgerEntries_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmpireServiceServer is the server API for EmpireService service.
 // All implementations must embed UnimplementedEmpireServiceServer
 // for forward compatibility.
@@ -75,6 +103,12 @@ type EmpireServiceServer interface {
 	// benefits, marking the caller's current band. Bounds are confirmed
 	// against empire_engine.GetTier.
 	GetTierLadder(context.Context, *GetTierLadderRequest) (*GetTierLadderResponse, error)
+	// GetWallet returns the caller's points balance, lifetime totals, and
+	// per-pillar earned/spent breakdown — the wallet headline.
+	GetWallet(context.Context, *GetWalletRequest) (*GetWalletResponse, error)
+	// ListLedgerEntries returns the append-only points ledger, newest
+	// first, paginated.
+	ListLedgerEntries(context.Context, *ListLedgerEntriesRequest) (*ListLedgerEntriesResponse, error)
 	mustEmbedUnimplementedEmpireServiceServer()
 }
 
@@ -90,6 +124,12 @@ func (UnimplementedEmpireServiceServer) GetScoreBreakdown(context.Context, *GetS
 }
 func (UnimplementedEmpireServiceServer) GetTierLadder(context.Context, *GetTierLadderRequest) (*GetTierLadderResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetTierLadder not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetWallet(context.Context, *GetWalletRequest) (*GetWalletResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetWallet not implemented")
+}
+func (UnimplementedEmpireServiceServer) ListLedgerEntries(context.Context, *ListLedgerEntriesRequest) (*ListLedgerEntriesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLedgerEntries not implemented")
 }
 func (UnimplementedEmpireServiceServer) mustEmbedUnimplementedEmpireServiceServer() {}
 func (UnimplementedEmpireServiceServer) testEmbeddedByValue()                       {}
@@ -148,6 +188,42 @@ func _EmpireService_GetTierLadder_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmpireService_GetWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWalletRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetWallet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetWallet_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetWallet(ctx, req.(*GetWalletRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ListLedgerEntries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLedgerEntriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ListLedgerEntries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ListLedgerEntries_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ListLedgerEntries(ctx, req.(*ListLedgerEntriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EmpireService_ServiceDesc is the grpc.ServiceDesc for EmpireService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -162,6 +238,14 @@ var EmpireService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTierLadder",
 			Handler:    _EmpireService_GetTierLadder_Handler,
+		},
+		{
+			MethodName: "GetWallet",
+			Handler:    _EmpireService_GetWallet_Handler,
+		},
+		{
+			MethodName: "ListLedgerEntries",
+			Handler:    _EmpireService_ListLedgerEntries_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

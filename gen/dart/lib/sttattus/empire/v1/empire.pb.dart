@@ -12,6 +12,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
@@ -386,6 +387,400 @@ class GetTierLadderResponse extends $pb.GeneratedMessage {
   $core.bool hasCurrentTier() => $_has(2);
   @$pb.TagNumber(3)
   void clearCurrentTier() => $_clearField(3);
+}
+
+class GetWalletRequest extends $pb.GeneratedMessage {
+  factory GetWalletRequest() => create();
+
+  GetWalletRequest._();
+
+  factory GetWalletRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetWalletRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetWalletRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWalletRequest clone() => GetWalletRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWalletRequest copyWith(void Function(GetWalletRequest) updates) => super.copyWith((message) => updates(message as GetWalletRequest)) as GetWalletRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetWalletRequest create() => GetWalletRequest._();
+  @$core.override
+  GetWalletRequest createEmptyInstance() => create();
+  static $pb.PbList<GetWalletRequest> createRepeated() => $pb.PbList<GetWalletRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetWalletRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetWalletRequest>(create);
+  static GetWalletRequest? _defaultInstance;
+}
+
+/// PillarPoints is one pillar's contribution to the points economy —
+/// keyed by the app_code written into hub_points_events.
+class PillarPoints extends $pb.GeneratedMessage {
+  factory PillarPoints({
+    $core.String? appCode,
+    $fixnum.Int64? earned,
+    $fixnum.Int64? spent,
+  }) {
+    final result = create();
+    if (appCode != null) result.appCode = appCode;
+    if (earned != null) result.earned = earned;
+    if (spent != null) result.spent = spent;
+    return result;
+  }
+
+  PillarPoints._();
+
+  factory PillarPoints.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PillarPoints.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PillarPoints', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'appCode')
+    ..aInt64(2, _omitFieldNames ? '' : 'earned')
+    ..aInt64(3, _omitFieldNames ? '' : 'spent')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PillarPoints clone() => PillarPoints()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PillarPoints copyWith(void Function(PillarPoints) updates) => super.copyWith((message) => updates(message as PillarPoints)) as PillarPoints;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PillarPoints create() => PillarPoints._();
+  @$core.override
+  PillarPoints createEmptyInstance() => create();
+  static $pb.PbList<PillarPoints> createRepeated() => $pb.PbList<PillarPoints>();
+  @$core.pragma('dart2js:noInline')
+  static PillarPoints getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PillarPoints>(create);
+  static PillarPoints? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAppCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get earned => $_getI64(1);
+  @$pb.TagNumber(2)
+  set earned($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEarned() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEarned() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get spent => $_getI64(2);
+  @$pb.TagNumber(3)
+  set spent($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSpent() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSpent() => $_clearField(3);
+}
+
+class GetWalletResponse extends $pb.GeneratedMessage {
+  factory GetWalletResponse({
+    $fixnum.Int64? balance,
+    $fixnum.Int64? lifetimeEarned,
+    $fixnum.Int64? lifetimeSpent,
+    $core.Iterable<PillarPoints>? byPillar,
+  }) {
+    final result = create();
+    if (balance != null) result.balance = balance;
+    if (lifetimeEarned != null) result.lifetimeEarned = lifetimeEarned;
+    if (lifetimeSpent != null) result.lifetimeSpent = lifetimeSpent;
+    if (byPillar != null) result.byPillar.addAll(byPillar);
+    return result;
+  }
+
+  GetWalletResponse._();
+
+  factory GetWalletResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetWalletResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetWalletResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'balance')
+    ..aInt64(2, _omitFieldNames ? '' : 'lifetimeEarned')
+    ..aInt64(3, _omitFieldNames ? '' : 'lifetimeSpent')
+    ..pc<PillarPoints>(4, _omitFieldNames ? '' : 'byPillar', $pb.PbFieldType.PM, subBuilder: PillarPoints.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWalletResponse clone() => GetWalletResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWalletResponse copyWith(void Function(GetWalletResponse) updates) => super.copyWith((message) => updates(message as GetWalletResponse)) as GetWalletResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetWalletResponse create() => GetWalletResponse._();
+  @$core.override
+  GetWalletResponse createEmptyInstance() => create();
+  static $pb.PbList<GetWalletResponse> createRepeated() => $pb.PbList<GetWalletResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetWalletResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetWalletResponse>(create);
+  static GetWalletResponse? _defaultInstance;
+
+  /// Live spendable balance.
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get balance => $_getI64(0);
+  @$pb.TagNumber(1)
+  set balance($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBalance() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBalance() => $_clearField(1);
+
+  /// Total ever earned (spends never decrement this).
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get lifetimeEarned => $_getI64(1);
+  @$pb.TagNumber(2)
+  set lifetimeEarned($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLifetimeEarned() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLifetimeEarned() => $_clearField(2);
+
+  /// Total ever spent (sum of the negative ledger entries, as a
+  /// positive number).
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get lifetimeSpent => $_getI64(2);
+  @$pb.TagNumber(3)
+  set lifetimeSpent($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLifetimeSpent() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLifetimeSpent() => $_clearField(3);
+
+  /// Per-pillar earned/spent split, so the wallet can show where the
+  /// economy is coming from.
+  @$pb.TagNumber(4)
+  $pb.PbList<PillarPoints> get byPillar => $_getList(3);
+}
+
+class ListLedgerEntriesRequest extends $pb.GeneratedMessage {
+  factory ListLedgerEntriesRequest({
+    $core.int? limit,
+    $core.int? offset,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    if (offset != null) result.offset = offset;
+    return result;
+  }
+
+  ListLedgerEntriesRequest._();
+
+  factory ListLedgerEntriesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLedgerEntriesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLedgerEntriesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'offset', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLedgerEntriesRequest clone() => ListLedgerEntriesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLedgerEntriesRequest copyWith(void Function(ListLedgerEntriesRequest) updates) => super.copyWith((message) => updates(message as ListLedgerEntriesRequest)) as ListLedgerEntriesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLedgerEntriesRequest create() => ListLedgerEntriesRequest._();
+  @$core.override
+  ListLedgerEntriesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListLedgerEntriesRequest> createRepeated() => $pb.PbList<ListLedgerEntriesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListLedgerEntriesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLedgerEntriesRequest>(create);
+  static ListLedgerEntriesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get offset => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set offset($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOffset() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOffset() => $_clearField(2);
+}
+
+/// LedgerEntry mirrors one append-only row of hub_points_events.
+class LedgerEntry extends $pb.GeneratedMessage {
+  factory LedgerEntry({
+    $core.String? id,
+    $core.String? appCode,
+    $core.String? kind,
+    $fixnum.Int64? amount,
+    $core.String? description,
+    $core.String? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (appCode != null) result.appCode = appCode;
+    if (kind != null) result.kind = kind;
+    if (amount != null) result.amount = amount;
+    if (description != null) result.description = description;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  LedgerEntry._();
+
+  factory LedgerEntry.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory LedgerEntry.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LedgerEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'appCode')
+    ..aOS(3, _omitFieldNames ? '' : 'kind')
+    ..aInt64(4, _omitFieldNames ? '' : 'amount')
+    ..aOS(5, _omitFieldNames ? '' : 'description')
+    ..aOS(6, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LedgerEntry clone() => LedgerEntry()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LedgerEntry copyWith(void Function(LedgerEntry) updates) => super.copyWith((message) => updates(message as LedgerEntry)) as LedgerEntry;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LedgerEntry create() => LedgerEntry._();
+  @$core.override
+  LedgerEntry createEmptyInstance() => create();
+  static $pb.PbList<LedgerEntry> createRepeated() => $pb.PbList<LedgerEntry>();
+  @$core.pragma('dart2js:noInline')
+  static LedgerEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LedgerEntry>(create);
+  static LedgerEntry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  /// Empty when the event was not attributed to a specific pillar app.
+  @$pb.TagNumber(2)
+  $core.String get appCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set appCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAppCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAppCode() => $_clearField(2);
+
+  /// earn | spend | decay | bonus | redemption — free-form, set by the
+  /// crediting service.
+  @$pb.TagNumber(3)
+  $core.String get kind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set kind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearKind() => $_clearField(3);
+
+  /// Signed: positive for earns, negative for spends/decay.
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get amount => $_getI64(3);
+  @$pb.TagNumber(4)
+  set amount($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAmount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAmount() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get description => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set description($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDescription() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDescription() => $_clearField(5);
+
+  /// RFC-3339 UTC.
+  @$pb.TagNumber(6)
+  $core.String get createdAt => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set createdAt($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedAt() => $_clearField(6);
+}
+
+class ListLedgerEntriesResponse extends $pb.GeneratedMessage {
+  factory ListLedgerEntriesResponse({
+    $core.Iterable<LedgerEntry>? entries,
+  }) {
+    final result = create();
+    if (entries != null) result.entries.addAll(entries);
+    return result;
+  }
+
+  ListLedgerEntriesResponse._();
+
+  factory ListLedgerEntriesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLedgerEntriesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLedgerEntriesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..pc<LedgerEntry>(1, _omitFieldNames ? '' : 'entries', $pb.PbFieldType.PM, subBuilder: LedgerEntry.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLedgerEntriesResponse clone() => ListLedgerEntriesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLedgerEntriesResponse copyWith(void Function(ListLedgerEntriesResponse) updates) => super.copyWith((message) => updates(message as ListLedgerEntriesResponse)) as ListLedgerEntriesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLedgerEntriesResponse create() => ListLedgerEntriesResponse._();
+  @$core.override
+  ListLedgerEntriesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListLedgerEntriesResponse> createRepeated() => $pb.PbList<ListLedgerEntriesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListLedgerEntriesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLedgerEntriesResponse>(create);
+  static ListLedgerEntriesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LedgerEntry> get entries => $_getList(0);
 }
 
 

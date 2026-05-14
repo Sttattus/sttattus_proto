@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 
 /**
  * @generated from message sttattus.empire.v1.GetScoreBreakdownRequest
@@ -282,6 +282,312 @@ export class GetTierLadderResponse extends Message<GetTierLadderResponse> {
 
   static equals(a: GetTierLadderResponse | PlainMessage<GetTierLadderResponse> | undefined, b: GetTierLadderResponse | PlainMessage<GetTierLadderResponse> | undefined): boolean {
     return proto3.util.equals(GetTierLadderResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.GetWalletRequest
+ */
+export class GetWalletRequest extends Message<GetWalletRequest> {
+  constructor(data?: PartialMessage<GetWalletRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.GetWalletRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWalletRequest {
+    return new GetWalletRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWalletRequest {
+    return new GetWalletRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWalletRequest {
+    return new GetWalletRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetWalletRequest | PlainMessage<GetWalletRequest> | undefined, b: GetWalletRequest | PlainMessage<GetWalletRequest> | undefined): boolean {
+    return proto3.util.equals(GetWalletRequest, a, b);
+  }
+}
+
+/**
+ * PillarPoints is one pillar's contribution to the points economy —
+ * keyed by the app_code written into hub_points_events.
+ *
+ * @generated from message sttattus.empire.v1.PillarPoints
+ */
+export class PillarPoints extends Message<PillarPoints> {
+  /**
+   * @generated from field: string app_code = 1;
+   */
+  appCode = "";
+
+  /**
+   * @generated from field: int64 earned = 2;
+   */
+  earned = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 spent = 3;
+   */
+  spent = protoInt64.zero;
+
+  constructor(data?: PartialMessage<PillarPoints>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.PillarPoints";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "app_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "earned", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "spent", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PillarPoints {
+    return new PillarPoints().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PillarPoints {
+    return new PillarPoints().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PillarPoints {
+    return new PillarPoints().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PillarPoints | PlainMessage<PillarPoints> | undefined, b: PillarPoints | PlainMessage<PillarPoints> | undefined): boolean {
+    return proto3.util.equals(PillarPoints, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.GetWalletResponse
+ */
+export class GetWalletResponse extends Message<GetWalletResponse> {
+  /**
+   * Live spendable balance.
+   *
+   * @generated from field: int64 balance = 1;
+   */
+  balance = protoInt64.zero;
+
+  /**
+   * Total ever earned (spends never decrement this).
+   *
+   * @generated from field: int64 lifetime_earned = 2;
+   */
+  lifetimeEarned = protoInt64.zero;
+
+  /**
+   * Total ever spent (sum of the negative ledger entries, as a
+   * positive number).
+   *
+   * @generated from field: int64 lifetime_spent = 3;
+   */
+  lifetimeSpent = protoInt64.zero;
+
+  /**
+   * Per-pillar earned/spent split, so the wallet can show where the
+   * economy is coming from.
+   *
+   * @generated from field: repeated sttattus.empire.v1.PillarPoints by_pillar = 4;
+   */
+  byPillar: PillarPoints[] = [];
+
+  constructor(data?: PartialMessage<GetWalletResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.GetWalletResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "balance", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "lifetime_earned", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "lifetime_spent", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "by_pillar", kind: "message", T: PillarPoints, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWalletResponse {
+    return new GetWalletResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWalletResponse {
+    return new GetWalletResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWalletResponse {
+    return new GetWalletResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetWalletResponse | PlainMessage<GetWalletResponse> | undefined, b: GetWalletResponse | PlainMessage<GetWalletResponse> | undefined): boolean {
+    return proto3.util.equals(GetWalletResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListLedgerEntriesRequest
+ */
+export class ListLedgerEntriesRequest extends Message<ListLedgerEntriesRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  /**
+   * @generated from field: int32 offset = 2;
+   */
+  offset = 0;
+
+  constructor(data?: PartialMessage<ListLedgerEntriesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListLedgerEntriesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLedgerEntriesRequest {
+    return new ListLedgerEntriesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLedgerEntriesRequest {
+    return new ListLedgerEntriesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLedgerEntriesRequest {
+    return new ListLedgerEntriesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLedgerEntriesRequest | PlainMessage<ListLedgerEntriesRequest> | undefined, b: ListLedgerEntriesRequest | PlainMessage<ListLedgerEntriesRequest> | undefined): boolean {
+    return proto3.util.equals(ListLedgerEntriesRequest, a, b);
+  }
+}
+
+/**
+ * LedgerEntry mirrors one append-only row of hub_points_events.
+ *
+ * @generated from message sttattus.empire.v1.LedgerEntry
+ */
+export class LedgerEntry extends Message<LedgerEntry> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * Empty when the event was not attributed to a specific pillar app.
+   *
+   * @generated from field: string app_code = 2;
+   */
+  appCode = "";
+
+  /**
+   * earn | spend | decay | bonus | redemption — free-form, set by the
+   * crediting service.
+   *
+   * @generated from field: string kind = 3;
+   */
+  kind = "";
+
+  /**
+   * Signed: positive for earns, negative for spends/decay.
+   *
+   * @generated from field: int64 amount = 4;
+   */
+  amount = protoInt64.zero;
+
+  /**
+   * @generated from field: string description = 5;
+   */
+  description = "";
+
+  /**
+   * RFC-3339 UTC.
+   *
+   * @generated from field: string created_at = 6;
+   */
+  createdAt = "";
+
+  constructor(data?: PartialMessage<LedgerEntry>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.LedgerEntry";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "app_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "amount", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "created_at", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LedgerEntry {
+    return new LedgerEntry().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LedgerEntry {
+    return new LedgerEntry().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LedgerEntry {
+    return new LedgerEntry().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LedgerEntry | PlainMessage<LedgerEntry> | undefined, b: LedgerEntry | PlainMessage<LedgerEntry> | undefined): boolean {
+    return proto3.util.equals(LedgerEntry, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListLedgerEntriesResponse
+ */
+export class ListLedgerEntriesResponse extends Message<ListLedgerEntriesResponse> {
+  /**
+   * @generated from field: repeated sttattus.empire.v1.LedgerEntry entries = 1;
+   */
+  entries: LedgerEntry[] = [];
+
+  constructor(data?: PartialMessage<ListLedgerEntriesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListLedgerEntriesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entries", kind: "message", T: LedgerEntry, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLedgerEntriesResponse {
+    return new ListLedgerEntriesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLedgerEntriesResponse {
+    return new ListLedgerEntriesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLedgerEntriesResponse {
+    return new ListLedgerEntriesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLedgerEntriesResponse | PlainMessage<ListLedgerEntriesResponse> | undefined, b: ListLedgerEntriesResponse | PlainMessage<ListLedgerEntriesResponse> | undefined): boolean {
+    return proto3.util.equals(ListLedgerEntriesResponse, a, b);
   }
 }
 

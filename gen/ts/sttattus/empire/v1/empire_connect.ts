@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTierLadderRequest, GetTierLadderResponse } from "./empire_pb.js";
+import { GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse } from "./empire_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -35,6 +35,30 @@ export const EmpireService = {
       name: "GetTierLadder",
       I: GetTierLadderRequest,
       O: GetTierLadderResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetWallet returns the caller's points balance, lifetime totals, and
+     * per-pillar earned/spent breakdown — the wallet headline.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetWallet
+     */
+    getWallet: {
+      name: "GetWallet",
+      I: GetWalletRequest,
+      O: GetWalletResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListLedgerEntries returns the append-only points ledger, newest
+     * first, paginated.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ListLedgerEntries
+     */
+    listLedgerEntries: {
+      name: "ListLedgerEntries",
+      I: ListLedgerEntriesRequest,
+      O: ListLedgerEntriesResponse,
       kind: MethodKind.Unary,
     },
   }

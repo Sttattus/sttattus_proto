@@ -349,6 +349,364 @@ func (x *GetTierLadderResponse) GetCurrentTier() string {
 	return ""
 }
 
+type GetWalletRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetWalletRequest) Reset() {
+	*x = GetWalletRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetWalletRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetWalletRequest) ProtoMessage() {}
+
+func (x *GetWalletRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetWalletRequest.ProtoReflect.Descriptor instead.
+func (*GetWalletRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{5}
+}
+
+// PillarPoints is one pillar's contribution to the points economy —
+// keyed by the app_code written into hub_points_events.
+type PillarPoints struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AppCode       string                 `protobuf:"bytes,1,opt,name=app_code,json=appCode,proto3" json:"app_code,omitempty"`
+	Earned        int64                  `protobuf:"varint,2,opt,name=earned,proto3" json:"earned,omitempty"`
+	Spent         int64                  `protobuf:"varint,3,opt,name=spent,proto3" json:"spent,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PillarPoints) Reset() {
+	*x = PillarPoints{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PillarPoints) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PillarPoints) ProtoMessage() {}
+
+func (x *PillarPoints) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PillarPoints.ProtoReflect.Descriptor instead.
+func (*PillarPoints) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *PillarPoints) GetAppCode() string {
+	if x != nil {
+		return x.AppCode
+	}
+	return ""
+}
+
+func (x *PillarPoints) GetEarned() int64 {
+	if x != nil {
+		return x.Earned
+	}
+	return 0
+}
+
+func (x *PillarPoints) GetSpent() int64 {
+	if x != nil {
+		return x.Spent
+	}
+	return 0
+}
+
+type GetWalletResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Live spendable balance.
+	Balance int64 `protobuf:"varint,1,opt,name=balance,proto3" json:"balance,omitempty"`
+	// Total ever earned (spends never decrement this).
+	LifetimeEarned int64 `protobuf:"varint,2,opt,name=lifetime_earned,json=lifetimeEarned,proto3" json:"lifetime_earned,omitempty"`
+	// Total ever spent (sum of the negative ledger entries, as a
+	// positive number).
+	LifetimeSpent int64 `protobuf:"varint,3,opt,name=lifetime_spent,json=lifetimeSpent,proto3" json:"lifetime_spent,omitempty"`
+	// Per-pillar earned/spent split, so the wallet can show where the
+	// economy is coming from.
+	ByPillar      []*PillarPoints `protobuf:"bytes,4,rep,name=by_pillar,json=byPillar,proto3" json:"by_pillar,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetWalletResponse) Reset() {
+	*x = GetWalletResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetWalletResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetWalletResponse) ProtoMessage() {}
+
+func (x *GetWalletResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetWalletResponse.ProtoReflect.Descriptor instead.
+func (*GetWalletResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *GetWalletResponse) GetBalance() int64 {
+	if x != nil {
+		return x.Balance
+	}
+	return 0
+}
+
+func (x *GetWalletResponse) GetLifetimeEarned() int64 {
+	if x != nil {
+		return x.LifetimeEarned
+	}
+	return 0
+}
+
+func (x *GetWalletResponse) GetLifetimeSpent() int64 {
+	if x != nil {
+		return x.LifetimeSpent
+	}
+	return 0
+}
+
+func (x *GetWalletResponse) GetByPillar() []*PillarPoints {
+	if x != nil {
+		return x.ByPillar
+	}
+	return nil
+}
+
+type ListLedgerEntriesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLedgerEntriesRequest) Reset() {
+	*x = ListLedgerEntriesRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLedgerEntriesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLedgerEntriesRequest) ProtoMessage() {}
+
+func (x *ListLedgerEntriesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLedgerEntriesRequest.ProtoReflect.Descriptor instead.
+func (*ListLedgerEntriesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *ListLedgerEntriesRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListLedgerEntriesRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+// LedgerEntry mirrors one append-only row of hub_points_events.
+type LedgerEntry struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// Empty when the event was not attributed to a specific pillar app.
+	AppCode string `protobuf:"bytes,2,opt,name=app_code,json=appCode,proto3" json:"app_code,omitempty"`
+	// earn | spend | decay | bonus | redemption — free-form, set by the
+	// crediting service.
+	Kind string `protobuf:"bytes,3,opt,name=kind,proto3" json:"kind,omitempty"`
+	// Signed: positive for earns, negative for spends/decay.
+	Amount      int64  `protobuf:"varint,4,opt,name=amount,proto3" json:"amount,omitempty"`
+	Description string `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
+	// RFC-3339 UTC.
+	CreatedAt     string `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LedgerEntry) Reset() {
+	*x = LedgerEntry{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LedgerEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LedgerEntry) ProtoMessage() {}
+
+func (x *LedgerEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LedgerEntry.ProtoReflect.Descriptor instead.
+func (*LedgerEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *LedgerEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LedgerEntry) GetAppCode() string {
+	if x != nil {
+		return x.AppCode
+	}
+	return ""
+}
+
+func (x *LedgerEntry) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *LedgerEntry) GetAmount() int64 {
+	if x != nil {
+		return x.Amount
+	}
+	return 0
+}
+
+func (x *LedgerEntry) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *LedgerEntry) GetCreatedAt() string {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return ""
+}
+
+type ListLedgerEntriesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Entries       []*LedgerEntry         `protobuf:"bytes,1,rep,name=entries,proto3" json:"entries,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLedgerEntriesResponse) Reset() {
+	*x = ListLedgerEntriesResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLedgerEntriesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLedgerEntriesResponse) ProtoMessage() {}
+
+func (x *ListLedgerEntriesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLedgerEntriesResponse.ProtoReflect.Descriptor instead.
+func (*ListLedgerEntriesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *ListLedgerEntriesResponse) GetEntries() []*LedgerEntry {
+	if x != nil {
+		return x.Entries
+	}
+	return nil
+}
+
 var File_sttattus_empire_v1_empire_proto protoreflect.FileDescriptor
 
 const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
@@ -378,10 +736,35 @@ const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\x15GetTierLadderResponse\x122\n" +
 	"\x05bands\x18\x01 \x03(\v2\x1c.sttattus.empire.v1.TierBandR\x05bands\x12%\n" +
 	"\x0esttattus_score\x18\x02 \x01(\x01R\rsttattusScore\x12!\n" +
-	"\fcurrent_tier\x18\x03 \x01(\tR\vcurrentTier2\xe7\x01\n" +
+	"\fcurrent_tier\x18\x03 \x01(\tR\vcurrentTier\"\x12\n" +
+	"\x10GetWalletRequest\"W\n" +
+	"\fPillarPoints\x12\x19\n" +
+	"\bapp_code\x18\x01 \x01(\tR\aappCode\x12\x16\n" +
+	"\x06earned\x18\x02 \x01(\x03R\x06earned\x12\x14\n" +
+	"\x05spent\x18\x03 \x01(\x03R\x05spent\"\xbc\x01\n" +
+	"\x11GetWalletResponse\x12\x18\n" +
+	"\abalance\x18\x01 \x01(\x03R\abalance\x12'\n" +
+	"\x0flifetime_earned\x18\x02 \x01(\x03R\x0elifetimeEarned\x12%\n" +
+	"\x0elifetime_spent\x18\x03 \x01(\x03R\rlifetimeSpent\x12=\n" +
+	"\tby_pillar\x18\x04 \x03(\v2 .sttattus.empire.v1.PillarPointsR\bbyPillar\"H\n" +
+	"\x18ListLedgerEntriesRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\"\xa5\x01\n" +
+	"\vLedgerEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
+	"\bapp_code\x18\x02 \x01(\tR\aappCode\x12\x12\n" +
+	"\x04kind\x18\x03 \x01(\tR\x04kind\x12\x16\n" +
+	"\x06amount\x18\x04 \x01(\x03R\x06amount\x12 \n" +
+	"\vdescription\x18\x05 \x01(\tR\vdescription\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\x06 \x01(\tR\tcreatedAt\"V\n" +
+	"\x19ListLedgerEntriesResponse\x129\n" +
+	"\aentries\x18\x01 \x03(\v2\x1f.sttattus.empire.v1.LedgerEntryR\aentries2\xb3\x03\n" +
 	"\rEmpireService\x12p\n" +
 	"\x11GetScoreBreakdown\x12,.sttattus.empire.v1.GetScoreBreakdownRequest\x1a-.sttattus.empire.v1.GetScoreBreakdownResponse\x12d\n" +
-	"\rGetTierLadder\x12(.sttattus.empire.v1.GetTierLadderRequest\x1a).sttattus.empire.v1.GetTierLadderResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1b\x06proto3"
+	"\rGetTierLadder\x12(.sttattus.empire.v1.GetTierLadderRequest\x1a).sttattus.empire.v1.GetTierLadderResponse\x12X\n" +
+	"\tGetWallet\x12$.sttattus.empire.v1.GetWalletRequest\x1a%.sttattus.empire.v1.GetWalletResponse\x12p\n" +
+	"\x11ListLedgerEntries\x12,.sttattus.empire.v1.ListLedgerEntriesRequest\x1a-.sttattus.empire.v1.ListLedgerEntriesResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1b\x06proto3"
 
 var (
 	file_sttattus_empire_v1_empire_proto_rawDescOnce sync.Once
@@ -395,25 +778,37 @@ func file_sttattus_empire_v1_empire_proto_rawDescGZIP() []byte {
 	return file_sttattus_empire_v1_empire_proto_rawDescData
 }
 
-var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_sttattus_empire_v1_empire_proto_goTypes = []any{
 	(*GetScoreBreakdownRequest)(nil),  // 0: sttattus.empire.v1.GetScoreBreakdownRequest
 	(*GetScoreBreakdownResponse)(nil), // 1: sttattus.empire.v1.GetScoreBreakdownResponse
 	(*GetTierLadderRequest)(nil),      // 2: sttattus.empire.v1.GetTierLadderRequest
 	(*TierBand)(nil),                  // 3: sttattus.empire.v1.TierBand
 	(*GetTierLadderResponse)(nil),     // 4: sttattus.empire.v1.GetTierLadderResponse
+	(*GetWalletRequest)(nil),          // 5: sttattus.empire.v1.GetWalletRequest
+	(*PillarPoints)(nil),              // 6: sttattus.empire.v1.PillarPoints
+	(*GetWalletResponse)(nil),         // 7: sttattus.empire.v1.GetWalletResponse
+	(*ListLedgerEntriesRequest)(nil),  // 8: sttattus.empire.v1.ListLedgerEntriesRequest
+	(*LedgerEntry)(nil),               // 9: sttattus.empire.v1.LedgerEntry
+	(*ListLedgerEntriesResponse)(nil), // 10: sttattus.empire.v1.ListLedgerEntriesResponse
 }
 var file_sttattus_empire_v1_empire_proto_depIdxs = []int32{
-	3, // 0: sttattus.empire.v1.GetTierLadderResponse.bands:type_name -> sttattus.empire.v1.TierBand
-	0, // 1: sttattus.empire.v1.EmpireService.GetScoreBreakdown:input_type -> sttattus.empire.v1.GetScoreBreakdownRequest
-	2, // 2: sttattus.empire.v1.EmpireService.GetTierLadder:input_type -> sttattus.empire.v1.GetTierLadderRequest
-	1, // 3: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
-	4, // 4: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
-	3, // [3:5] is the sub-list for method output_type
-	1, // [1:3] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	3,  // 0: sttattus.empire.v1.GetTierLadderResponse.bands:type_name -> sttattus.empire.v1.TierBand
+	6,  // 1: sttattus.empire.v1.GetWalletResponse.by_pillar:type_name -> sttattus.empire.v1.PillarPoints
+	9,  // 2: sttattus.empire.v1.ListLedgerEntriesResponse.entries:type_name -> sttattus.empire.v1.LedgerEntry
+	0,  // 3: sttattus.empire.v1.EmpireService.GetScoreBreakdown:input_type -> sttattus.empire.v1.GetScoreBreakdownRequest
+	2,  // 4: sttattus.empire.v1.EmpireService.GetTierLadder:input_type -> sttattus.empire.v1.GetTierLadderRequest
+	5,  // 5: sttattus.empire.v1.EmpireService.GetWallet:input_type -> sttattus.empire.v1.GetWalletRequest
+	8,  // 6: sttattus.empire.v1.EmpireService.ListLedgerEntries:input_type -> sttattus.empire.v1.ListLedgerEntriesRequest
+	1,  // 7: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
+	4,  // 8: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
+	7,  // 9: sttattus.empire.v1.EmpireService.GetWallet:output_type -> sttattus.empire.v1.GetWalletResponse
+	10, // 10: sttattus.empire.v1.EmpireService.ListLedgerEntries:output_type -> sttattus.empire.v1.ListLedgerEntriesResponse
+	7,  // [7:11] is the sub-list for method output_type
+	3,  // [3:7] is the sub-list for method input_type
+	3,  // [3:3] is the sub-list for extension type_name
+	3,  // [3:3] is the sub-list for extension extendee
+	0,  // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_empire_v1_empire_proto_init() }
@@ -427,7 +822,7 @@ func file_sttattus_empire_v1_empire_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_empire_v1_empire_proto_rawDesc), len(file_sttattus_empire_v1_empire_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
