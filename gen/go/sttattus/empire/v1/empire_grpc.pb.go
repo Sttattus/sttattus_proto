@@ -23,6 +23,7 @@ const (
 	EmpireService_GetTierLadder_FullMethodName     = "/sttattus.empire.v1.EmpireService/GetTierLadder"
 	EmpireService_GetWallet_FullMethodName         = "/sttattus.empire.v1.EmpireService/GetWallet"
 	EmpireService_ListLedgerEntries_FullMethodName = "/sttattus.empire.v1.EmpireService/ListLedgerEntries"
+	EmpireService_GetTaxStatement_FullMethodName   = "/sttattus.empire.v1.EmpireService/GetTaxStatement"
 )
 
 // EmpireServiceClient is the client API for EmpireService service.
@@ -42,6 +43,10 @@ type EmpireServiceClient interface {
 	// ListLedgerEntries returns the append-only points ledger, newest
 	// first, paginated.
 	ListLedgerEntries(ctx context.Context, in *ListLedgerEntriesRequest, opts ...grpc.CallOption) (*ListLedgerEntriesResponse, error)
+	// GetTaxStatement returns the member's Sttattus Tax position — their
+	// tier's discount fabric and a savings projection computed by the
+	// real Tax engine.
+	GetTaxStatement(ctx context.Context, in *GetTaxStatementRequest, opts ...grpc.CallOption) (*GetTaxStatementResponse, error)
 }
 
 type empireServiceClient struct {
@@ -92,6 +97,16 @@ func (c *empireServiceClient) ListLedgerEntries(ctx context.Context, in *ListLed
 	return out, nil
 }
 
+func (c *empireServiceClient) GetTaxStatement(ctx context.Context, in *GetTaxStatementRequest, opts ...grpc.CallOption) (*GetTaxStatementResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTaxStatementResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetTaxStatement_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmpireServiceServer is the server API for EmpireService service.
 // All implementations must embed UnimplementedEmpireServiceServer
 // for forward compatibility.
@@ -109,6 +124,10 @@ type EmpireServiceServer interface {
 	// ListLedgerEntries returns the append-only points ledger, newest
 	// first, paginated.
 	ListLedgerEntries(context.Context, *ListLedgerEntriesRequest) (*ListLedgerEntriesResponse, error)
+	// GetTaxStatement returns the member's Sttattus Tax position — their
+	// tier's discount fabric and a savings projection computed by the
+	// real Tax engine.
+	GetTaxStatement(context.Context, *GetTaxStatementRequest) (*GetTaxStatementResponse, error)
 	mustEmbedUnimplementedEmpireServiceServer()
 }
 
@@ -130,6 +149,9 @@ func (UnimplementedEmpireServiceServer) GetWallet(context.Context, *GetWalletReq
 }
 func (UnimplementedEmpireServiceServer) ListLedgerEntries(context.Context, *ListLedgerEntriesRequest) (*ListLedgerEntriesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListLedgerEntries not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetTaxStatement(context.Context, *GetTaxStatementRequest) (*GetTaxStatementResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTaxStatement not implemented")
 }
 func (UnimplementedEmpireServiceServer) mustEmbedUnimplementedEmpireServiceServer() {}
 func (UnimplementedEmpireServiceServer) testEmbeddedByValue()                       {}
@@ -224,6 +246,24 @@ func _EmpireService_ListLedgerEntries_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmpireService_GetTaxStatement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTaxStatementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetTaxStatement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetTaxStatement_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetTaxStatement(ctx, req.(*GetTaxStatementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EmpireService_ServiceDesc is the grpc.ServiceDesc for EmpireService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -246,6 +286,10 @@ var EmpireService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListLedgerEntries",
 			Handler:    _EmpireService_ListLedgerEntries_Handler,
+		},
+		{
+			MethodName: "GetTaxStatement",
+			Handler:    _EmpireService_GetTaxStatement_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

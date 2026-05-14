@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse } from "./empire_pb.js";
+import { GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse } from "./empire_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -59,6 +59,19 @@ export const EmpireService = {
       name: "ListLedgerEntries",
       I: ListLedgerEntriesRequest,
       O: ListLedgerEntriesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetTaxStatement returns the member's Sttattus Tax position — their
+     * tier's discount fabric and a savings projection computed by the
+     * real Tax engine.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetTaxStatement
+     */
+    getTaxStatement: {
+      name: "GetTaxStatement",
+      I: GetTaxStatementRequest,
+      O: GetTaxStatementResponse,
       kind: MethodKind.Unary,
     },
   }

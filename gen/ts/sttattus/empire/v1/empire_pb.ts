@@ -591,3 +591,196 @@ export class ListLedgerEntriesResponse extends Message<ListLedgerEntriesResponse
   }
 }
 
+/**
+ * @generated from message sttattus.empire.v1.GetTaxStatementRequest
+ */
+export class GetTaxStatementRequest extends Message<GetTaxStatementRequest> {
+  /**
+   * The annual cross-pillar spend to project savings against, in the
+   * minor unit (cents). Zero falls back to a reference basket so the
+   * statement is never empty.
+   *
+   * @generated from field: int64 annual_spend = 1;
+   */
+  annualSpend = protoInt64.zero;
+
+  /**
+   * ISO-4217. Empty defaults to USD.
+   *
+   * @generated from field: string currency = 2;
+   */
+  currency = "";
+
+  constructor(data?: PartialMessage<GetTaxStatementRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.GetTaxStatementRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "annual_spend", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "currency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTaxStatementRequest {
+    return new GetTaxStatementRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTaxStatementRequest {
+    return new GetTaxStatementRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTaxStatementRequest {
+    return new GetTaxStatementRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTaxStatementRequest | PlainMessage<GetTaxStatementRequest> | undefined, b: GetTaxStatementRequest | PlainMessage<GetTaxStatementRequest> | undefined): boolean {
+    return proto3.util.equals(GetTaxStatementRequest, a, b);
+  }
+}
+
+/**
+ * TaxRuleSummary is one active rule in the member's discount fabric.
+ *
+ * @generated from message sttattus.empire.v1.TaxRuleSummary
+ */
+export class TaxRuleSummary extends Message<TaxRuleSummary> {
+  /**
+   * @generated from field: string rule_id = 1;
+   */
+  ruleId = "";
+
+  /**
+   * @generated from field: int32 discount_basis_points = 2;
+   */
+  discountBasisPoints = 0;
+
+  /**
+   * @generated from field: string description = 3;
+   */
+  description = "";
+
+  constructor(data?: PartialMessage<TaxRuleSummary>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.TaxRuleSummary";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "rule_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "discount_basis_points", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TaxRuleSummary {
+    return new TaxRuleSummary().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TaxRuleSummary {
+    return new TaxRuleSummary().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TaxRuleSummary {
+    return new TaxRuleSummary().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TaxRuleSummary | PlainMessage<TaxRuleSummary> | undefined, b: TaxRuleSummary | PlainMessage<TaxRuleSummary> | undefined): boolean {
+    return proto3.util.equals(TaxRuleSummary, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.GetTaxStatementResponse
+ */
+export class GetTaxStatementResponse extends Message<GetTaxStatementResponse> {
+  /**
+   * The tier whose discount fabric this statement reflects.
+   *
+   * @generated from field: string tier = 1;
+   */
+  tier = "";
+
+  /**
+   * The best effective discount, in basis points, the engine applied.
+   *
+   * @generated from field: int32 effective_basis_points = 2;
+   */
+  effectiveBasisPoints = 0;
+
+  /**
+   * The full set of rules the member's tier currently qualifies for.
+   *
+   * @generated from field: repeated sttattus.empire.v1.TaxRuleSummary active_rules = 3;
+   */
+  activeRules: TaxRuleSummary[] = [];
+
+  /**
+   * The spend the projection was run against (echoes the request, or
+   * the reference basket when the request was zero).
+   *
+   * @generated from field: int64 annual_spend = 4;
+   */
+  annualSpend = protoInt64.zero;
+
+  /**
+   * Projected savings on annual_spend, computed by the real Tax engine.
+   *
+   * @generated from field: int64 annual_savings = 5;
+   */
+  annualSavings = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 monthly_savings = 6;
+   */
+  monthlySavings = protoInt64.zero;
+
+  /**
+   * @generated from field: string currency = 7;
+   */
+  currency = "";
+
+  /**
+   * True when annual_spend was a reference basket, not caller-supplied —
+   * so the UI can label the projection as illustrative.
+   *
+   * @generated from field: bool illustrative = 8;
+   */
+  illustrative = false;
+
+  constructor(data?: PartialMessage<GetTaxStatementResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.GetTaxStatementResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "effective_basis_points", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "active_rules", kind: "message", T: TaxRuleSummary, repeated: true },
+    { no: 4, name: "annual_spend", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "annual_savings", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "monthly_savings", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "currency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "illustrative", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTaxStatementResponse {
+    return new GetTaxStatementResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTaxStatementResponse {
+    return new GetTaxStatementResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTaxStatementResponse {
+    return new GetTaxStatementResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTaxStatementResponse | PlainMessage<GetTaxStatementResponse> | undefined, b: GetTaxStatementResponse | PlainMessage<GetTaxStatementResponse> | undefined): boolean {
+    return proto3.util.equals(GetTaxStatementResponse, a, b);
+  }
+}
+

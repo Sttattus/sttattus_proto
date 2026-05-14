@@ -181,3 +181,58 @@ final $typed_data.Uint8List listLedgerEntriesResponseDescriptor = $convert.base6
     'ChlMaXN0TGVkZ2VyRW50cmllc1Jlc3BvbnNlEjkKB2VudHJpZXMYASADKAsyHy5zdHRhdHR1cy'
     '5lbXBpcmUudjEuTGVkZ2VyRW50cnlSB2VudHJpZXM=');
 
+@$core.Deprecated('Use getTaxStatementRequestDescriptor instead')
+const GetTaxStatementRequest$json = {
+  '1': 'GetTaxStatementRequest',
+  '2': [
+    {'1': 'annual_spend', '3': 1, '4': 1, '5': 3, '10': 'annualSpend'},
+    {'1': 'currency', '3': 2, '4': 1, '5': 9, '10': 'currency'},
+  ],
+};
+
+/// Descriptor for `GetTaxStatementRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTaxStatementRequestDescriptor = $convert.base64Decode(
+    'ChZHZXRUYXhTdGF0ZW1lbnRSZXF1ZXN0EiEKDGFubnVhbF9zcGVuZBgBIAEoA1ILYW5udWFsU3'
+    'BlbmQSGgoIY3VycmVuY3kYAiABKAlSCGN1cnJlbmN5');
+
+@$core.Deprecated('Use taxRuleSummaryDescriptor instead')
+const TaxRuleSummary$json = {
+  '1': 'TaxRuleSummary',
+  '2': [
+    {'1': 'rule_id', '3': 1, '4': 1, '5': 9, '10': 'ruleId'},
+    {'1': 'discount_basis_points', '3': 2, '4': 1, '5': 5, '10': 'discountBasisPoints'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+  ],
+};
+
+/// Descriptor for `TaxRuleSummary`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List taxRuleSummaryDescriptor = $convert.base64Decode(
+    'Cg5UYXhSdWxlU3VtbWFyeRIXCgdydWxlX2lkGAEgASgJUgZydWxlSWQSMgoVZGlzY291bnRfYm'
+    'FzaXNfcG9pbnRzGAIgASgFUhNkaXNjb3VudEJhc2lzUG9pbnRzEiAKC2Rlc2NyaXB0aW9uGAMg'
+    'ASgJUgtkZXNjcmlwdGlvbg==');
+
+@$core.Deprecated('Use getTaxStatementResponseDescriptor instead')
+const GetTaxStatementResponse$json = {
+  '1': 'GetTaxStatementResponse',
+  '2': [
+    {'1': 'tier', '3': 1, '4': 1, '5': 9, '10': 'tier'},
+    {'1': 'effective_basis_points', '3': 2, '4': 1, '5': 5, '10': 'effectiveBasisPoints'},
+    {'1': 'active_rules', '3': 3, '4': 3, '5': 11, '6': '.sttattus.empire.v1.TaxRuleSummary', '10': 'activeRules'},
+    {'1': 'annual_spend', '3': 4, '4': 1, '5': 3, '10': 'annualSpend'},
+    {'1': 'annual_savings', '3': 5, '4': 1, '5': 3, '10': 'annualSavings'},
+    {'1': 'monthly_savings', '3': 6, '4': 1, '5': 3, '10': 'monthlySavings'},
+    {'1': 'currency', '3': 7, '4': 1, '5': 9, '10': 'currency'},
+    {'1': 'illustrative', '3': 8, '4': 1, '5': 8, '10': 'illustrative'},
+  ],
+};
+
+/// Descriptor for `GetTaxStatementResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTaxStatementResponseDescriptor = $convert.base64Decode(
+    'ChdHZXRUYXhTdGF0ZW1lbnRSZXNwb25zZRISCgR0aWVyGAEgASgJUgR0aWVyEjQKFmVmZmVjdG'
+    'l2ZV9iYXNpc19wb2ludHMYAiABKAVSFGVmZmVjdGl2ZUJhc2lzUG9pbnRzEkUKDGFjdGl2ZV9y'
+    'dWxlcxgDIAMoCzIiLnN0dGF0dHVzLmVtcGlyZS52MS5UYXhSdWxlU3VtbWFyeVILYWN0aXZlUn'
+    'VsZXMSIQoMYW5udWFsX3NwZW5kGAQgASgDUgthbm51YWxTcGVuZBIlCg5hbm51YWxfc2F2aW5n'
+    'cxgFIAEoA1INYW5udWFsU2F2aW5ncxInCg9tb250aGx5X3NhdmluZ3MYBiABKANSDm1vbnRobH'
+    'lTYXZpbmdzEhoKCGN1cnJlbmN5GAcgASgJUghjdXJyZW5jeRIiCgxpbGx1c3RyYXRpdmUYCCAB'
+    'KAhSDGlsbHVzdHJhdGl2ZQ==');
+

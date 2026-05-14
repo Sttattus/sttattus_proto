@@ -707,6 +707,231 @@ func (x *ListLedgerEntriesResponse) GetEntries() []*LedgerEntry {
 	return nil
 }
 
+type GetTaxStatementRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// The annual cross-pillar spend to project savings against, in the
+	// minor unit (cents). Zero falls back to a reference basket so the
+	// statement is never empty.
+	AnnualSpend int64 `protobuf:"varint,1,opt,name=annual_spend,json=annualSpend,proto3" json:"annual_spend,omitempty"`
+	// ISO-4217. Empty defaults to USD.
+	Currency      string `protobuf:"bytes,2,opt,name=currency,proto3" json:"currency,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTaxStatementRequest) Reset() {
+	*x = GetTaxStatementRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTaxStatementRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTaxStatementRequest) ProtoMessage() {}
+
+func (x *GetTaxStatementRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTaxStatementRequest.ProtoReflect.Descriptor instead.
+func (*GetTaxStatementRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *GetTaxStatementRequest) GetAnnualSpend() int64 {
+	if x != nil {
+		return x.AnnualSpend
+	}
+	return 0
+}
+
+func (x *GetTaxStatementRequest) GetCurrency() string {
+	if x != nil {
+		return x.Currency
+	}
+	return ""
+}
+
+// TaxRuleSummary is one active rule in the member's discount fabric.
+type TaxRuleSummary struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	RuleId              string                 `protobuf:"bytes,1,opt,name=rule_id,json=ruleId,proto3" json:"rule_id,omitempty"`
+	DiscountBasisPoints int32                  `protobuf:"varint,2,opt,name=discount_basis_points,json=discountBasisPoints,proto3" json:"discount_basis_points,omitempty"`
+	Description         string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *TaxRuleSummary) Reset() {
+	*x = TaxRuleSummary{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TaxRuleSummary) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaxRuleSummary) ProtoMessage() {}
+
+func (x *TaxRuleSummary) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaxRuleSummary.ProtoReflect.Descriptor instead.
+func (*TaxRuleSummary) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *TaxRuleSummary) GetRuleId() string {
+	if x != nil {
+		return x.RuleId
+	}
+	return ""
+}
+
+func (x *TaxRuleSummary) GetDiscountBasisPoints() int32 {
+	if x != nil {
+		return x.DiscountBasisPoints
+	}
+	return 0
+}
+
+func (x *TaxRuleSummary) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+type GetTaxStatementResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// The tier whose discount fabric this statement reflects.
+	Tier string `protobuf:"bytes,1,opt,name=tier,proto3" json:"tier,omitempty"`
+	// The best effective discount, in basis points, the engine applied.
+	EffectiveBasisPoints int32 `protobuf:"varint,2,opt,name=effective_basis_points,json=effectiveBasisPoints,proto3" json:"effective_basis_points,omitempty"`
+	// The full set of rules the member's tier currently qualifies for.
+	ActiveRules []*TaxRuleSummary `protobuf:"bytes,3,rep,name=active_rules,json=activeRules,proto3" json:"active_rules,omitempty"`
+	// The spend the projection was run against (echoes the request, or
+	// the reference basket when the request was zero).
+	AnnualSpend int64 `protobuf:"varint,4,opt,name=annual_spend,json=annualSpend,proto3" json:"annual_spend,omitempty"`
+	// Projected savings on annual_spend, computed by the real Tax engine.
+	AnnualSavings  int64  `protobuf:"varint,5,opt,name=annual_savings,json=annualSavings,proto3" json:"annual_savings,omitempty"`
+	MonthlySavings int64  `protobuf:"varint,6,opt,name=monthly_savings,json=monthlySavings,proto3" json:"monthly_savings,omitempty"`
+	Currency       string `protobuf:"bytes,7,opt,name=currency,proto3" json:"currency,omitempty"`
+	// True when annual_spend was a reference basket, not caller-supplied —
+	// so the UI can label the projection as illustrative.
+	Illustrative  bool `protobuf:"varint,8,opt,name=illustrative,proto3" json:"illustrative,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTaxStatementResponse) Reset() {
+	*x = GetTaxStatementResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTaxStatementResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTaxStatementResponse) ProtoMessage() {}
+
+func (x *GetTaxStatementResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTaxStatementResponse.ProtoReflect.Descriptor instead.
+func (*GetTaxStatementResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *GetTaxStatementResponse) GetTier() string {
+	if x != nil {
+		return x.Tier
+	}
+	return ""
+}
+
+func (x *GetTaxStatementResponse) GetEffectiveBasisPoints() int32 {
+	if x != nil {
+		return x.EffectiveBasisPoints
+	}
+	return 0
+}
+
+func (x *GetTaxStatementResponse) GetActiveRules() []*TaxRuleSummary {
+	if x != nil {
+		return x.ActiveRules
+	}
+	return nil
+}
+
+func (x *GetTaxStatementResponse) GetAnnualSpend() int64 {
+	if x != nil {
+		return x.AnnualSpend
+	}
+	return 0
+}
+
+func (x *GetTaxStatementResponse) GetAnnualSavings() int64 {
+	if x != nil {
+		return x.AnnualSavings
+	}
+	return 0
+}
+
+func (x *GetTaxStatementResponse) GetMonthlySavings() int64 {
+	if x != nil {
+		return x.MonthlySavings
+	}
+	return 0
+}
+
+func (x *GetTaxStatementResponse) GetCurrency() string {
+	if x != nil {
+		return x.Currency
+	}
+	return ""
+}
+
+func (x *GetTaxStatementResponse) GetIllustrative() bool {
+	if x != nil {
+		return x.Illustrative
+	}
+	return false
+}
+
 var File_sttattus_empire_v1_empire_proto protoreflect.FileDescriptor
 
 const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
@@ -759,12 +984,29 @@ const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\x06 \x01(\tR\tcreatedAt\"V\n" +
 	"\x19ListLedgerEntriesResponse\x129\n" +
-	"\aentries\x18\x01 \x03(\v2\x1f.sttattus.empire.v1.LedgerEntryR\aentries2\xb3\x03\n" +
+	"\aentries\x18\x01 \x03(\v2\x1f.sttattus.empire.v1.LedgerEntryR\aentries\"W\n" +
+	"\x16GetTaxStatementRequest\x12!\n" +
+	"\fannual_spend\x18\x01 \x01(\x03R\vannualSpend\x12\x1a\n" +
+	"\bcurrency\x18\x02 \x01(\tR\bcurrency\"\x7f\n" +
+	"\x0eTaxRuleSummary\x12\x17\n" +
+	"\arule_id\x18\x01 \x01(\tR\x06ruleId\x122\n" +
+	"\x15discount_basis_points\x18\x02 \x01(\x05R\x13discountBasisPoints\x12 \n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\"\xdd\x02\n" +
+	"\x17GetTaxStatementResponse\x12\x12\n" +
+	"\x04tier\x18\x01 \x01(\tR\x04tier\x124\n" +
+	"\x16effective_basis_points\x18\x02 \x01(\x05R\x14effectiveBasisPoints\x12E\n" +
+	"\factive_rules\x18\x03 \x03(\v2\".sttattus.empire.v1.TaxRuleSummaryR\vactiveRules\x12!\n" +
+	"\fannual_spend\x18\x04 \x01(\x03R\vannualSpend\x12%\n" +
+	"\x0eannual_savings\x18\x05 \x01(\x03R\rannualSavings\x12'\n" +
+	"\x0fmonthly_savings\x18\x06 \x01(\x03R\x0emonthlySavings\x12\x1a\n" +
+	"\bcurrency\x18\a \x01(\tR\bcurrency\x12\"\n" +
+	"\fillustrative\x18\b \x01(\bR\fillustrative2\x9f\x04\n" +
 	"\rEmpireService\x12p\n" +
 	"\x11GetScoreBreakdown\x12,.sttattus.empire.v1.GetScoreBreakdownRequest\x1a-.sttattus.empire.v1.GetScoreBreakdownResponse\x12d\n" +
 	"\rGetTierLadder\x12(.sttattus.empire.v1.GetTierLadderRequest\x1a).sttattus.empire.v1.GetTierLadderResponse\x12X\n" +
 	"\tGetWallet\x12$.sttattus.empire.v1.GetWalletRequest\x1a%.sttattus.empire.v1.GetWalletResponse\x12p\n" +
-	"\x11ListLedgerEntries\x12,.sttattus.empire.v1.ListLedgerEntriesRequest\x1a-.sttattus.empire.v1.ListLedgerEntriesResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1b\x06proto3"
+	"\x11ListLedgerEntries\x12,.sttattus.empire.v1.ListLedgerEntriesRequest\x1a-.sttattus.empire.v1.ListLedgerEntriesResponse\x12j\n" +
+	"\x0fGetTaxStatement\x12*.sttattus.empire.v1.GetTaxStatementRequest\x1a+.sttattus.empire.v1.GetTaxStatementResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1b\x06proto3"
 
 var (
 	file_sttattus_empire_v1_empire_proto_rawDescOnce sync.Once
@@ -778,7 +1020,7 @@ func file_sttattus_empire_v1_empire_proto_rawDescGZIP() []byte {
 	return file_sttattus_empire_v1_empire_proto_rawDescData
 }
 
-var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_sttattus_empire_v1_empire_proto_goTypes = []any{
 	(*GetScoreBreakdownRequest)(nil),  // 0: sttattus.empire.v1.GetScoreBreakdownRequest
 	(*GetScoreBreakdownResponse)(nil), // 1: sttattus.empire.v1.GetScoreBreakdownResponse
@@ -791,24 +1033,30 @@ var file_sttattus_empire_v1_empire_proto_goTypes = []any{
 	(*ListLedgerEntriesRequest)(nil),  // 8: sttattus.empire.v1.ListLedgerEntriesRequest
 	(*LedgerEntry)(nil),               // 9: sttattus.empire.v1.LedgerEntry
 	(*ListLedgerEntriesResponse)(nil), // 10: sttattus.empire.v1.ListLedgerEntriesResponse
+	(*GetTaxStatementRequest)(nil),    // 11: sttattus.empire.v1.GetTaxStatementRequest
+	(*TaxRuleSummary)(nil),            // 12: sttattus.empire.v1.TaxRuleSummary
+	(*GetTaxStatementResponse)(nil),   // 13: sttattus.empire.v1.GetTaxStatementResponse
 }
 var file_sttattus_empire_v1_empire_proto_depIdxs = []int32{
 	3,  // 0: sttattus.empire.v1.GetTierLadderResponse.bands:type_name -> sttattus.empire.v1.TierBand
 	6,  // 1: sttattus.empire.v1.GetWalletResponse.by_pillar:type_name -> sttattus.empire.v1.PillarPoints
 	9,  // 2: sttattus.empire.v1.ListLedgerEntriesResponse.entries:type_name -> sttattus.empire.v1.LedgerEntry
-	0,  // 3: sttattus.empire.v1.EmpireService.GetScoreBreakdown:input_type -> sttattus.empire.v1.GetScoreBreakdownRequest
-	2,  // 4: sttattus.empire.v1.EmpireService.GetTierLadder:input_type -> sttattus.empire.v1.GetTierLadderRequest
-	5,  // 5: sttattus.empire.v1.EmpireService.GetWallet:input_type -> sttattus.empire.v1.GetWalletRequest
-	8,  // 6: sttattus.empire.v1.EmpireService.ListLedgerEntries:input_type -> sttattus.empire.v1.ListLedgerEntriesRequest
-	1,  // 7: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
-	4,  // 8: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
-	7,  // 9: sttattus.empire.v1.EmpireService.GetWallet:output_type -> sttattus.empire.v1.GetWalletResponse
-	10, // 10: sttattus.empire.v1.EmpireService.ListLedgerEntries:output_type -> sttattus.empire.v1.ListLedgerEntriesResponse
-	7,  // [7:11] is the sub-list for method output_type
-	3,  // [3:7] is the sub-list for method input_type
-	3,  // [3:3] is the sub-list for extension type_name
-	3,  // [3:3] is the sub-list for extension extendee
-	0,  // [0:3] is the sub-list for field type_name
+	12, // 3: sttattus.empire.v1.GetTaxStatementResponse.active_rules:type_name -> sttattus.empire.v1.TaxRuleSummary
+	0,  // 4: sttattus.empire.v1.EmpireService.GetScoreBreakdown:input_type -> sttattus.empire.v1.GetScoreBreakdownRequest
+	2,  // 5: sttattus.empire.v1.EmpireService.GetTierLadder:input_type -> sttattus.empire.v1.GetTierLadderRequest
+	5,  // 6: sttattus.empire.v1.EmpireService.GetWallet:input_type -> sttattus.empire.v1.GetWalletRequest
+	8,  // 7: sttattus.empire.v1.EmpireService.ListLedgerEntries:input_type -> sttattus.empire.v1.ListLedgerEntriesRequest
+	11, // 8: sttattus.empire.v1.EmpireService.GetTaxStatement:input_type -> sttattus.empire.v1.GetTaxStatementRequest
+	1,  // 9: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
+	4,  // 10: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
+	7,  // 11: sttattus.empire.v1.EmpireService.GetWallet:output_type -> sttattus.empire.v1.GetWalletResponse
+	10, // 12: sttattus.empire.v1.EmpireService.ListLedgerEntries:output_type -> sttattus.empire.v1.ListLedgerEntriesResponse
+	13, // 13: sttattus.empire.v1.EmpireService.GetTaxStatement:output_type -> sttattus.empire.v1.GetTaxStatementResponse
+	9,  // [9:14] is the sub-list for method output_type
+	4,  // [4:9] is the sub-list for method input_type
+	4,  // [4:4] is the sub-list for extension type_name
+	4,  // [4:4] is the sub-list for extension extendee
+	0,  // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_empire_v1_empire_proto_init() }
@@ -822,7 +1070,7 @@ func file_sttattus_empire_v1_empire_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_empire_v1_empire_proto_rawDesc), len(file_sttattus_empire_v1_empire_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   11,
+			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

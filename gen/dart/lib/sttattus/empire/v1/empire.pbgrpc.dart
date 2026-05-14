@@ -57,6 +57,13 @@ class EmpireServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listLedgerEntries, request, options: options);
   }
 
+  /// GetTaxStatement returns the member's Sttattus Tax position — their
+  /// tier's discount fabric and a savings projection computed by the
+  /// real Tax engine.
+  $grpc.ResponseFuture<$0.GetTaxStatementResponse> getTaxStatement($0.GetTaxStatementRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getTaxStatement, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getScoreBreakdown = $grpc.ClientMethod<$0.GetScoreBreakdownRequest, $0.GetScoreBreakdownResponse>(
@@ -75,6 +82,10 @@ class EmpireServiceClient extends $grpc.Client {
       '/sttattus.empire.v1.EmpireService/ListLedgerEntries',
       ($0.ListLedgerEntriesRequest value) => value.writeToBuffer(),
       $0.ListLedgerEntriesResponse.fromBuffer);
+  static final _$getTaxStatement = $grpc.ClientMethod<$0.GetTaxStatementRequest, $0.GetTaxStatementResponse>(
+      '/sttattus.empire.v1.EmpireService/GetTaxStatement',
+      ($0.GetTaxStatementRequest value) => value.writeToBuffer(),
+      $0.GetTaxStatementResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.empire.v1.EmpireService')
@@ -110,6 +121,13 @@ abstract class EmpireServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListLedgerEntriesRequest.fromBuffer(value),
         ($0.ListLedgerEntriesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTaxStatementRequest, $0.GetTaxStatementResponse>(
+        'GetTaxStatement',
+        getTaxStatement_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetTaxStatementRequest.fromBuffer(value),
+        ($0.GetTaxStatementResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetScoreBreakdownResponse> getScoreBreakdown_Pre($grpc.ServiceCall $call, $async.Future<$0.GetScoreBreakdownRequest> $request) async {
@@ -135,5 +153,11 @@ abstract class EmpireServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListLedgerEntriesResponse> listLedgerEntries($grpc.ServiceCall call, $0.ListLedgerEntriesRequest request);
+
+  $async.Future<$0.GetTaxStatementResponse> getTaxStatement_Pre($grpc.ServiceCall $call, $async.Future<$0.GetTaxStatementRequest> $request) async {
+    return getTaxStatement($call, await $request);
+  }
+
+  $async.Future<$0.GetTaxStatementResponse> getTaxStatement($grpc.ServiceCall call, $0.GetTaxStatementRequest request);
 
 }

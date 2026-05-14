@@ -109,6 +109,43 @@ message ListLedgerEntriesResponse {
   repeated LedgerEntry entries = 1;
 }
 
+// === Sttattus Tax statement (P5.5) ===
+
+message GetTaxStatementRequest {
+  // The annual cross-pillar spend to project savings against, in the
+  // minor unit (cents). Zero falls back to a reference basket so the
+  // statement is never empty.
+  int64 annual_spend = 1;
+  // ISO-4217. Empty defaults to USD.
+  string currency = 2;
+}
+
+// TaxRuleSummary is one active rule in the member's discount fabric.
+message TaxRuleSummary {
+  string rule_id = 1;
+  int32 discount_basis_points = 2;
+  string description = 3;
+}
+
+message GetTaxStatementResponse {
+  // The tier whose discount fabric this statement reflects.
+  string tier = 1;
+  // The best effective discount, in basis points, the engine applied.
+  int32 effective_basis_points = 2;
+  // The full set of rules the member's tier currently qualifies for.
+  repeated TaxRuleSummary active_rules = 3;
+  // The spend the projection was run against (echoes the request, or
+  // the reference basket when the request was zero).
+  int64 annual_spend = 4;
+  // Projected savings on annual_spend, computed by the real Tax engine.
+  int64 annual_savings = 5;
+  int64 monthly_savings = 6;
+  string currency = 7;
+  // True when annual_spend was a reference basket, not caller-supplied —
+  // so the UI can label the projection as illustrative.
+  bool illustrative = 8;
+}
+
 service EmpireService {
   // GetScoreBreakdown returns the caller's Sttattus Score with the
   // four weighted-bucket components — the glass-box the audit asks for.
@@ -126,4 +163,9 @@ service EmpireService {
   // ListLedgerEntries returns the append-only points ledger, newest
   // first, paginated.
   rpc ListLedgerEntries(ListLedgerEntriesRequest) returns (ListLedgerEntriesResponse);
+
+  // GetTaxStatement returns the member's Sttattus Tax position — their
+  // tier's discount fabric and a savings projection computed by the
+  // real Tax engine.
+  rpc GetTaxStatement(GetTaxStatementRequest) returns (GetTaxStatementResponse);
 }

@@ -783,6 +783,271 @@ class ListLedgerEntriesResponse extends $pb.GeneratedMessage {
   $pb.PbList<LedgerEntry> get entries => $_getList(0);
 }
 
+class GetTaxStatementRequest extends $pb.GeneratedMessage {
+  factory GetTaxStatementRequest({
+    $fixnum.Int64? annualSpend,
+    $core.String? currency,
+  }) {
+    final result = create();
+    if (annualSpend != null) result.annualSpend = annualSpend;
+    if (currency != null) result.currency = currency;
+    return result;
+  }
+
+  GetTaxStatementRequest._();
+
+  factory GetTaxStatementRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTaxStatementRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTaxStatementRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'annualSpend')
+    ..aOS(2, _omitFieldNames ? '' : 'currency')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTaxStatementRequest clone() => GetTaxStatementRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTaxStatementRequest copyWith(void Function(GetTaxStatementRequest) updates) => super.copyWith((message) => updates(message as GetTaxStatementRequest)) as GetTaxStatementRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTaxStatementRequest create() => GetTaxStatementRequest._();
+  @$core.override
+  GetTaxStatementRequest createEmptyInstance() => create();
+  static $pb.PbList<GetTaxStatementRequest> createRepeated() => $pb.PbList<GetTaxStatementRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetTaxStatementRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTaxStatementRequest>(create);
+  static GetTaxStatementRequest? _defaultInstance;
+
+  /// The annual cross-pillar spend to project savings against, in the
+  /// minor unit (cents). Zero falls back to a reference basket so the
+  /// statement is never empty.
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get annualSpend => $_getI64(0);
+  @$pb.TagNumber(1)
+  set annualSpend($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAnnualSpend() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAnnualSpend() => $_clearField(1);
+
+  /// ISO-4217. Empty defaults to USD.
+  @$pb.TagNumber(2)
+  $core.String get currency => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set currency($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCurrency() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCurrency() => $_clearField(2);
+}
+
+/// TaxRuleSummary is one active rule in the member's discount fabric.
+class TaxRuleSummary extends $pb.GeneratedMessage {
+  factory TaxRuleSummary({
+    $core.String? ruleId,
+    $core.int? discountBasisPoints,
+    $core.String? description,
+  }) {
+    final result = create();
+    if (ruleId != null) result.ruleId = ruleId;
+    if (discountBasisPoints != null) result.discountBasisPoints = discountBasisPoints;
+    if (description != null) result.description = description;
+    return result;
+  }
+
+  TaxRuleSummary._();
+
+  factory TaxRuleSummary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory TaxRuleSummary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TaxRuleSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'ruleId')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'discountBasisPoints', $pb.PbFieldType.O3)
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TaxRuleSummary clone() => TaxRuleSummary()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TaxRuleSummary copyWith(void Function(TaxRuleSummary) updates) => super.copyWith((message) => updates(message as TaxRuleSummary)) as TaxRuleSummary;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TaxRuleSummary create() => TaxRuleSummary._();
+  @$core.override
+  TaxRuleSummary createEmptyInstance() => create();
+  static $pb.PbList<TaxRuleSummary> createRepeated() => $pb.PbList<TaxRuleSummary>();
+  @$core.pragma('dart2js:noInline')
+  static TaxRuleSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TaxRuleSummary>(create);
+  static TaxRuleSummary? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ruleId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ruleId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRuleId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRuleId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get discountBasisPoints => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set discountBasisPoints($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDiscountBasisPoints() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDiscountBasisPoints() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => $_clearField(3);
+}
+
+class GetTaxStatementResponse extends $pb.GeneratedMessage {
+  factory GetTaxStatementResponse({
+    $core.String? tier,
+    $core.int? effectiveBasisPoints,
+    $core.Iterable<TaxRuleSummary>? activeRules,
+    $fixnum.Int64? annualSpend,
+    $fixnum.Int64? annualSavings,
+    $fixnum.Int64? monthlySavings,
+    $core.String? currency,
+    $core.bool? illustrative,
+  }) {
+    final result = create();
+    if (tier != null) result.tier = tier;
+    if (effectiveBasisPoints != null) result.effectiveBasisPoints = effectiveBasisPoints;
+    if (activeRules != null) result.activeRules.addAll(activeRules);
+    if (annualSpend != null) result.annualSpend = annualSpend;
+    if (annualSavings != null) result.annualSavings = annualSavings;
+    if (monthlySavings != null) result.monthlySavings = monthlySavings;
+    if (currency != null) result.currency = currency;
+    if (illustrative != null) result.illustrative = illustrative;
+    return result;
+  }
+
+  GetTaxStatementResponse._();
+
+  factory GetTaxStatementResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTaxStatementResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTaxStatementResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'tier')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'effectiveBasisPoints', $pb.PbFieldType.O3)
+    ..pc<TaxRuleSummary>(3, _omitFieldNames ? '' : 'activeRules', $pb.PbFieldType.PM, subBuilder: TaxRuleSummary.create)
+    ..aInt64(4, _omitFieldNames ? '' : 'annualSpend')
+    ..aInt64(5, _omitFieldNames ? '' : 'annualSavings')
+    ..aInt64(6, _omitFieldNames ? '' : 'monthlySavings')
+    ..aOS(7, _omitFieldNames ? '' : 'currency')
+    ..aOB(8, _omitFieldNames ? '' : 'illustrative')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTaxStatementResponse clone() => GetTaxStatementResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTaxStatementResponse copyWith(void Function(GetTaxStatementResponse) updates) => super.copyWith((message) => updates(message as GetTaxStatementResponse)) as GetTaxStatementResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTaxStatementResponse create() => GetTaxStatementResponse._();
+  @$core.override
+  GetTaxStatementResponse createEmptyInstance() => create();
+  static $pb.PbList<GetTaxStatementResponse> createRepeated() => $pb.PbList<GetTaxStatementResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetTaxStatementResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTaxStatementResponse>(create);
+  static GetTaxStatementResponse? _defaultInstance;
+
+  /// The tier whose discount fabric this statement reflects.
+  @$pb.TagNumber(1)
+  $core.String get tier => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set tier($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTier() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTier() => $_clearField(1);
+
+  /// The best effective discount, in basis points, the engine applied.
+  @$pb.TagNumber(2)
+  $core.int get effectiveBasisPoints => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set effectiveBasisPoints($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEffectiveBasisPoints() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEffectiveBasisPoints() => $_clearField(2);
+
+  /// The full set of rules the member's tier currently qualifies for.
+  @$pb.TagNumber(3)
+  $pb.PbList<TaxRuleSummary> get activeRules => $_getList(2);
+
+  /// The spend the projection was run against (echoes the request, or
+  /// the reference basket when the request was zero).
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get annualSpend => $_getI64(3);
+  @$pb.TagNumber(4)
+  set annualSpend($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAnnualSpend() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAnnualSpend() => $_clearField(4);
+
+  /// Projected savings on annual_spend, computed by the real Tax engine.
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get annualSavings => $_getI64(4);
+  @$pb.TagNumber(5)
+  set annualSavings($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAnnualSavings() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAnnualSavings() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get monthlySavings => $_getI64(5);
+  @$pb.TagNumber(6)
+  set monthlySavings($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMonthlySavings() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMonthlySavings() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get currency => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set currency($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCurrency() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCurrency() => $_clearField(7);
+
+  /// True when annual_spend was a reference basket, not caller-supplied —
+  /// so the UI can label the projection as illustrative.
+  @$pb.TagNumber(8)
+  $core.bool get illustrative => $_getBF(7);
+  @$pb.TagNumber(8)
+  set illustrative($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasIllustrative() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIllustrative() => $_clearField(8);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
