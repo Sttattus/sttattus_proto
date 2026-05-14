@@ -2432,3 +2432,480 @@ export class GetForgeStreakResponse extends Message<GetForgeStreakResponse> {
   }
 }
 
+/**
+ * FormVideo is a single uploaded form-video clip with the public
+ * URL and the movement name baked in, so the Forge "Form Lab"
+ * surface renders it directly.
+ *
+ * @generated from message sttattus.workout.v1.FormVideo
+ */
+export class FormVideo extends Message<FormVideo> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * Empty when the clip was captured ad-hoc outside a live session.
+   *
+   * @generated from field: string session_exercise_id = 2;
+   */
+  sessionExerciseId = "";
+
+  /**
+   * @generated from field: string exercise_id = 3;
+   */
+  exerciseId = "";
+
+  /**
+   * @generated from field: string exercise_name = 4;
+   */
+  exerciseName = "";
+
+  /**
+   * @generated from field: string media_asset_id = 5;
+   */
+  mediaAssetId = "";
+
+  /**
+   * @generated from field: string video_url = 6;
+   */
+  videoUrl = "";
+
+  /**
+   * @generated from field: string thumbnail_url = 7;
+   */
+  thumbnailUrl = "";
+
+  /**
+   * @generated from field: string mime = 8;
+   */
+  mime = "";
+
+  /**
+   * pending | reviewed | archived. Phase 1 only writes 'pending';
+   * user surface flips to 'archived'; the form-check worker
+   * (Phase 3) writes 'reviewed'.
+   *
+   * @generated from field: string status = 9;
+   */
+  status = "";
+
+  /**
+   * Set context recorded at capture so a later PR-detection pass
+   * can match the clip to a specific set. Optional — zero values
+   * mean "not captured with these numbers."
+   *
+   * @generated from field: double set_weight = 10;
+   */
+  setWeight = 0;
+
+  /**
+   * @generated from field: int32 set_reps = 11;
+   */
+  setReps = 0;
+
+  /**
+   * @generated from field: double set_rpe = 12;
+   */
+  setRpe = 0;
+
+  /**
+   * @generated from field: string note = 13;
+   */
+  note = "";
+
+  /**
+   * unix seconds
+   *
+   * @generated from field: int64 captured_at = 14;
+   */
+  capturedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<FormVideo>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.FormVideo";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "session_exercise_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "exercise_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "exercise_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "video_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "thumbnail_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "mime", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "set_weight", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 11, name: "set_reps", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "set_rpe", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 13, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "captured_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FormVideo {
+    return new FormVideo().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FormVideo {
+    return new FormVideo().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FormVideo {
+    return new FormVideo().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: FormVideo | PlainMessage<FormVideo> | undefined, b: FormVideo | PlainMessage<FormVideo> | undefined): boolean {
+    return proto3.util.equals(FormVideo, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.CreateFormVideoRequest
+ */
+export class CreateFormVideoRequest extends Message<CreateFormVideoRequest> {
+  /**
+   * The id returned by MediaService.RequestUpload + uploaded via PUT.
+   *
+   * @generated from field: string media_asset_id = 1;
+   */
+  mediaAssetId = "";
+
+  /**
+   * @generated from field: string exercise_id = 2;
+   */
+  exerciseId = "";
+
+  /**
+   * Empty for an ad-hoc capture outside a live session.
+   *
+   * @generated from field: string session_exercise_id = 3;
+   */
+  sessionExerciseId = "";
+
+  /**
+   * @generated from field: double set_weight = 4;
+   */
+  setWeight = 0;
+
+  /**
+   * @generated from field: int32 set_reps = 5;
+   */
+  setReps = 0;
+
+  /**
+   * @generated from field: double set_rpe = 6;
+   */
+  setRpe = 0;
+
+  /**
+   * @generated from field: string note = 7;
+   */
+  note = "";
+
+  constructor(data?: PartialMessage<CreateFormVideoRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.CreateFormVideoRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "exercise_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "session_exercise_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "set_weight", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "set_reps", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "set_rpe", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateFormVideoRequest {
+    return new CreateFormVideoRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateFormVideoRequest {
+    return new CreateFormVideoRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateFormVideoRequest {
+    return new CreateFormVideoRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateFormVideoRequest | PlainMessage<CreateFormVideoRequest> | undefined, b: CreateFormVideoRequest | PlainMessage<CreateFormVideoRequest> | undefined): boolean {
+    return proto3.util.equals(CreateFormVideoRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.CreateFormVideoResponse
+ */
+export class CreateFormVideoResponse extends Message<CreateFormVideoResponse> {
+  /**
+   * @generated from field: sttattus.workout.v1.FormVideo video = 1;
+   */
+  video?: FormVideo;
+
+  constructor(data?: PartialMessage<CreateFormVideoResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.CreateFormVideoResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "video", kind: "message", T: FormVideo },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateFormVideoResponse {
+    return new CreateFormVideoResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateFormVideoResponse {
+    return new CreateFormVideoResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateFormVideoResponse {
+    return new CreateFormVideoResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateFormVideoResponse | PlainMessage<CreateFormVideoResponse> | undefined, b: CreateFormVideoResponse | PlainMessage<CreateFormVideoResponse> | undefined): boolean {
+    return proto3.util.equals(CreateFormVideoResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ListMyFormVideosRequest
+ */
+export class ListMyFormVideosRequest extends Message<ListMyFormVideosRequest> {
+  /**
+   * @generated from field: sttattus.common.v1.PageRequest page = 1;
+   */
+  page?: PageRequest;
+
+  /**
+   * Optional filter — empty / unset returns every movement.
+   *
+   * @generated from field: string exercise_id = 2;
+   */
+  exerciseId = "";
+
+  constructor(data?: PartialMessage<ListMyFormVideosRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ListMyFormVideosRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "page", kind: "message", T: PageRequest },
+    { no: 2, name: "exercise_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyFormVideosRequest {
+    return new ListMyFormVideosRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyFormVideosRequest {
+    return new ListMyFormVideosRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyFormVideosRequest {
+    return new ListMyFormVideosRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyFormVideosRequest | PlainMessage<ListMyFormVideosRequest> | undefined, b: ListMyFormVideosRequest | PlainMessage<ListMyFormVideosRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyFormVideosRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ListMyFormVideosResponse
+ */
+export class ListMyFormVideosResponse extends Message<ListMyFormVideosResponse> {
+  /**
+   * @generated from field: repeated sttattus.workout.v1.FormVideo videos = 1;
+   */
+  videos: FormVideo[] = [];
+
+  constructor(data?: PartialMessage<ListMyFormVideosResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ListMyFormVideosResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "videos", kind: "message", T: FormVideo, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyFormVideosResponse {
+    return new ListMyFormVideosResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyFormVideosResponse {
+    return new ListMyFormVideosResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyFormVideosResponse {
+    return new ListMyFormVideosResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyFormVideosResponse | PlainMessage<ListMyFormVideosResponse> | undefined, b: ListMyFormVideosResponse | PlainMessage<ListMyFormVideosResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyFormVideosResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.DeleteFormVideoRequest
+ */
+export class DeleteFormVideoRequest extends Message<DeleteFormVideoRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  constructor(data?: PartialMessage<DeleteFormVideoRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.DeleteFormVideoRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteFormVideoRequest {
+    return new DeleteFormVideoRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteFormVideoRequest {
+    return new DeleteFormVideoRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteFormVideoRequest {
+    return new DeleteFormVideoRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteFormVideoRequest | PlainMessage<DeleteFormVideoRequest> | undefined, b: DeleteFormVideoRequest | PlainMessage<DeleteFormVideoRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteFormVideoRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.DeleteFormVideoResponse
+ */
+export class DeleteFormVideoResponse extends Message<DeleteFormVideoResponse> {
+  constructor(data?: PartialMessage<DeleteFormVideoResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.DeleteFormVideoResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteFormVideoResponse {
+    return new DeleteFormVideoResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteFormVideoResponse {
+    return new DeleteFormVideoResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteFormVideoResponse {
+    return new DeleteFormVideoResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteFormVideoResponse | PlainMessage<DeleteFormVideoResponse> | undefined, b: DeleteFormVideoResponse | PlainMessage<DeleteFormVideoResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteFormVideoResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.UpdateFormVideoStatusRequest
+ */
+export class UpdateFormVideoStatusRequest extends Message<UpdateFormVideoStatusRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * pending | archived. 'reviewed' is server-only.
+   *
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<UpdateFormVideoStatusRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.UpdateFormVideoStatusRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateFormVideoStatusRequest {
+    return new UpdateFormVideoStatusRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateFormVideoStatusRequest {
+    return new UpdateFormVideoStatusRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateFormVideoStatusRequest {
+    return new UpdateFormVideoStatusRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateFormVideoStatusRequest | PlainMessage<UpdateFormVideoStatusRequest> | undefined, b: UpdateFormVideoStatusRequest | PlainMessage<UpdateFormVideoStatusRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateFormVideoStatusRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.UpdateFormVideoStatusResponse
+ */
+export class UpdateFormVideoStatusResponse extends Message<UpdateFormVideoStatusResponse> {
+  /**
+   * @generated from field: sttattus.workout.v1.FormVideo video = 1;
+   */
+  video?: FormVideo;
+
+  constructor(data?: PartialMessage<UpdateFormVideoStatusResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.UpdateFormVideoStatusResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "video", kind: "message", T: FormVideo },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateFormVideoStatusResponse {
+    return new UpdateFormVideoStatusResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateFormVideoStatusResponse {
+    return new UpdateFormVideoStatusResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateFormVideoStatusResponse {
+    return new UpdateFormVideoStatusResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateFormVideoStatusResponse | PlainMessage<UpdateFormVideoStatusResponse> | undefined, b: UpdateFormVideoStatusResponse | PlainMessage<UpdateFormVideoStatusResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateFormVideoStatusResponse, a, b);
+  }
+}
+

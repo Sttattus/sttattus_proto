@@ -746,3 +746,145 @@ final $typed_data.Uint8List getForgeStreakResponseDescriptor = $convert.base64De
     'ChZHZXRGb3JnZVN0cmVha1Jlc3BvbnNlEjgKBnN0cmVhaxgBIAEoCzIgLnN0dGF0dHVzLndvcm'
     'tvdXQudjEuRm9yZ2VTdHJlYWtSBnN0cmVhaw==');
 
+@$core.Deprecated('Use formVideoDescriptor instead')
+const FormVideo$json = {
+  '1': 'FormVideo',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'session_exercise_id', '3': 2, '4': 1, '5': 9, '10': 'sessionExerciseId'},
+    {'1': 'exercise_id', '3': 3, '4': 1, '5': 9, '10': 'exerciseId'},
+    {'1': 'exercise_name', '3': 4, '4': 1, '5': 9, '10': 'exerciseName'},
+    {'1': 'media_asset_id', '3': 5, '4': 1, '5': 9, '10': 'mediaAssetId'},
+    {'1': 'video_url', '3': 6, '4': 1, '5': 9, '10': 'videoUrl'},
+    {'1': 'thumbnail_url', '3': 7, '4': 1, '5': 9, '10': 'thumbnailUrl'},
+    {'1': 'mime', '3': 8, '4': 1, '5': 9, '10': 'mime'},
+    {'1': 'status', '3': 9, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'set_weight', '3': 10, '4': 1, '5': 1, '10': 'setWeight'},
+    {'1': 'set_reps', '3': 11, '4': 1, '5': 5, '10': 'setReps'},
+    {'1': 'set_rpe', '3': 12, '4': 1, '5': 1, '10': 'setRpe'},
+    {'1': 'note', '3': 13, '4': 1, '5': 9, '10': 'note'},
+    {'1': 'captured_at', '3': 14, '4': 1, '5': 3, '10': 'capturedAt'},
+  ],
+};
+
+/// Descriptor for `FormVideo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List formVideoDescriptor = $convert.base64Decode(
+    'CglGb3JtVmlkZW8SDgoCaWQYASABKAlSAmlkEi4KE3Nlc3Npb25fZXhlcmNpc2VfaWQYAiABKA'
+    'lSEXNlc3Npb25FeGVyY2lzZUlkEh8KC2V4ZXJjaXNlX2lkGAMgASgJUgpleGVyY2lzZUlkEiMK'
+    'DWV4ZXJjaXNlX25hbWUYBCABKAlSDGV4ZXJjaXNlTmFtZRIkCg5tZWRpYV9hc3NldF9pZBgFIA'
+    'EoCVIMbWVkaWFBc3NldElkEhsKCXZpZGVvX3VybBgGIAEoCVIIdmlkZW9VcmwSIwoNdGh1bWJu'
+    'YWlsX3VybBgHIAEoCVIMdGh1bWJuYWlsVXJsEhIKBG1pbWUYCCABKAlSBG1pbWUSFgoGc3RhdH'
+    'VzGAkgASgJUgZzdGF0dXMSHQoKc2V0X3dlaWdodBgKIAEoAVIJc2V0V2VpZ2h0EhkKCHNldF9y'
+    'ZXBzGAsgASgFUgdzZXRSZXBzEhcKB3NldF9ycGUYDCABKAFSBnNldFJwZRISCgRub3RlGA0gAS'
+    'gJUgRub3RlEh8KC2NhcHR1cmVkX2F0GA4gASgDUgpjYXB0dXJlZEF0');
+
+@$core.Deprecated('Use createFormVideoRequestDescriptor instead')
+const CreateFormVideoRequest$json = {
+  '1': 'CreateFormVideoRequest',
+  '2': [
+    {'1': 'media_asset_id', '3': 1, '4': 1, '5': 9, '10': 'mediaAssetId'},
+    {'1': 'exercise_id', '3': 2, '4': 1, '5': 9, '10': 'exerciseId'},
+    {'1': 'session_exercise_id', '3': 3, '4': 1, '5': 9, '10': 'sessionExerciseId'},
+    {'1': 'set_weight', '3': 4, '4': 1, '5': 1, '10': 'setWeight'},
+    {'1': 'set_reps', '3': 5, '4': 1, '5': 5, '10': 'setReps'},
+    {'1': 'set_rpe', '3': 6, '4': 1, '5': 1, '10': 'setRpe'},
+    {'1': 'note', '3': 7, '4': 1, '5': 9, '10': 'note'},
+  ],
+};
+
+/// Descriptor for `CreateFormVideoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createFormVideoRequestDescriptor = $convert.base64Decode(
+    'ChZDcmVhdGVGb3JtVmlkZW9SZXF1ZXN0EiQKDm1lZGlhX2Fzc2V0X2lkGAEgASgJUgxtZWRpYU'
+    'Fzc2V0SWQSHwoLZXhlcmNpc2VfaWQYAiABKAlSCmV4ZXJjaXNlSWQSLgoTc2Vzc2lvbl9leGVy'
+    'Y2lzZV9pZBgDIAEoCVIRc2Vzc2lvbkV4ZXJjaXNlSWQSHQoKc2V0X3dlaWdodBgEIAEoAVIJc2'
+    'V0V2VpZ2h0EhkKCHNldF9yZXBzGAUgASgFUgdzZXRSZXBzEhcKB3NldF9ycGUYBiABKAFSBnNl'
+    'dFJwZRISCgRub3RlGAcgASgJUgRub3Rl');
+
+@$core.Deprecated('Use createFormVideoResponseDescriptor instead')
+const CreateFormVideoResponse$json = {
+  '1': 'CreateFormVideoResponse',
+  '2': [
+    {'1': 'video', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.FormVideo', '10': 'video'},
+  ],
+};
+
+/// Descriptor for `CreateFormVideoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createFormVideoResponseDescriptor = $convert.base64Decode(
+    'ChdDcmVhdGVGb3JtVmlkZW9SZXNwb25zZRI0CgV2aWRlbxgBIAEoCzIeLnN0dGF0dHVzLndvcm'
+    'tvdXQudjEuRm9ybVZpZGVvUgV2aWRlbw==');
+
+@$core.Deprecated('Use listMyFormVideosRequestDescriptor instead')
+const ListMyFormVideosRequest$json = {
+  '1': 'ListMyFormVideosRequest',
+  '2': [
+    {'1': 'page', '3': 1, '4': 1, '5': 11, '6': '.sttattus.common.v1.PageRequest', '10': 'page'},
+    {'1': 'exercise_id', '3': 2, '4': 1, '5': 9, '10': 'exerciseId'},
+  ],
+};
+
+/// Descriptor for `ListMyFormVideosRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyFormVideosRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0TXlGb3JtVmlkZW9zUmVxdWVzdBIzCgRwYWdlGAEgASgLMh8uc3R0YXR0dXMuY29tbW'
+    '9uLnYxLlBhZ2VSZXF1ZXN0UgRwYWdlEh8KC2V4ZXJjaXNlX2lkGAIgASgJUgpleGVyY2lzZUlk');
+
+@$core.Deprecated('Use listMyFormVideosResponseDescriptor instead')
+const ListMyFormVideosResponse$json = {
+  '1': 'ListMyFormVideosResponse',
+  '2': [
+    {'1': 'videos', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.FormVideo', '10': 'videos'},
+  ],
+};
+
+/// Descriptor for `ListMyFormVideosResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyFormVideosResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0TXlGb3JtVmlkZW9zUmVzcG9uc2USNgoGdmlkZW9zGAEgAygLMh4uc3R0YXR0dXMud2'
+    '9ya291dC52MS5Gb3JtVmlkZW9SBnZpZGVvcw==');
+
+@$core.Deprecated('Use deleteFormVideoRequestDescriptor instead')
+const DeleteFormVideoRequest$json = {
+  '1': 'DeleteFormVideoRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteFormVideoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteFormVideoRequestDescriptor = $convert.base64Decode(
+    'ChZEZWxldGVGb3JtVmlkZW9SZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
+
+@$core.Deprecated('Use deleteFormVideoResponseDescriptor instead')
+const DeleteFormVideoResponse$json = {
+  '1': 'DeleteFormVideoResponse',
+};
+
+/// Descriptor for `DeleteFormVideoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteFormVideoResponseDescriptor = $convert.base64Decode(
+    'ChdEZWxldGVGb3JtVmlkZW9SZXNwb25zZQ==');
+
+@$core.Deprecated('Use updateFormVideoStatusRequestDescriptor instead')
+const UpdateFormVideoStatusRequest$json = {
+  '1': 'UpdateFormVideoStatusRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `UpdateFormVideoStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateFormVideoStatusRequestDescriptor = $convert.base64Decode(
+    'ChxVcGRhdGVGb3JtVmlkZW9TdGF0dXNSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIWCgZzdGF0dX'
+    'MYAiABKAlSBnN0YXR1cw==');
+
+@$core.Deprecated('Use updateFormVideoStatusResponseDescriptor instead')
+const UpdateFormVideoStatusResponse$json = {
+  '1': 'UpdateFormVideoStatusResponse',
+  '2': [
+    {'1': 'video', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.FormVideo', '10': 'video'},
+  ],
+};
+
+/// Descriptor for `UpdateFormVideoStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateFormVideoStatusResponseDescriptor = $convert.base64Decode(
+    'Ch1VcGRhdGVGb3JtVmlkZW9TdGF0dXNSZXNwb25zZRI0CgV2aWRlbxgBIAEoCzIeLnN0dGF0dH'
+    'VzLndvcmtvdXQudjEuRm9ybVZpZGVvUgV2aWRlbw==');
+

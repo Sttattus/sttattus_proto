@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateSessionRequest, CreateSessionResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetRankLadderRequest, GetRankLadderResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse } from "./workout_pb.js";
+import { CreateFormVideoRequest, CreateFormVideoResponse, CreateSessionRequest, CreateSessionResponse, DeleteFormVideoRequest, DeleteFormVideoResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetRankLadderRequest, GetRankLadderResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListMyFormVideosRequest, ListMyFormVideosResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateFormVideoStatusRequest, UpdateFormVideoStatusResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse } from "./workout_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -164,6 +164,47 @@ export const WorkoutService = {
       name: "GetForgeStreak",
       I: GetForgeStreakRequest,
       O: GetForgeStreakResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7.6 — form-video capture path. The bytes go through the
+     * existing MediaService presigned-URL flow; these RPCs link the
+     * resulting media asset to a lifter + movement + set context, and
+     * let the lifter review / archive their library.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.CreateFormVideo
+     */
+    createFormVideo: {
+      name: "CreateFormVideo",
+      I: CreateFormVideoRequest,
+      O: CreateFormVideoResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListMyFormVideos
+     */
+    listMyFormVideos: {
+      name: "ListMyFormVideos",
+      I: ListMyFormVideosRequest,
+      O: ListMyFormVideosResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.DeleteFormVideo
+     */
+    deleteFormVideo: {
+      name: "DeleteFormVideo",
+      I: DeleteFormVideoRequest,
+      O: DeleteFormVideoResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpdateFormVideoStatus
+     */
+    updateFormVideoStatus: {
+      name: "UpdateFormVideoStatus",
+      I: UpdateFormVideoStatusRequest,
+      O: UpdateFormVideoStatusResponse,
       kind: MethodKind.Unary,
     },
   }

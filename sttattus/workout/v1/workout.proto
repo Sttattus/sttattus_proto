@@ -334,6 +334,73 @@ message GetForgeStreakResponse {
   ForgeStreak streak = 1;
 }
 
+// ===== Form-video capture (F7.6) =====
+
+// FormVideo is a single uploaded form-video clip with the public
+// URL and the movement name baked in, so the Forge "Form Lab"
+// surface renders it directly.
+message FormVideo {
+  string id = 1;
+  // Empty when the clip was captured ad-hoc outside a live session.
+  string session_exercise_id = 2;
+  string exercise_id = 3;
+  string exercise_name = 4;
+  string media_asset_id = 5;
+  string video_url = 6;
+  string thumbnail_url = 7;
+  string mime = 8;
+  // pending | reviewed | archived. Phase 1 only writes 'pending';
+  // user surface flips to 'archived'; the form-check worker
+  // (Phase 3) writes 'reviewed'.
+  string status = 9;
+  // Set context recorded at capture so a later PR-detection pass
+  // can match the clip to a specific set. Optional — zero values
+  // mean "not captured with these numbers."
+  double set_weight = 10;
+  int32 set_reps = 11;
+  double set_rpe = 12;
+  string note = 13;
+  int64 captured_at = 14; // unix seconds
+}
+
+message CreateFormVideoRequest {
+  // The id returned by MediaService.RequestUpload + uploaded via PUT.
+  string media_asset_id = 1;
+  string exercise_id = 2;
+  // Empty for an ad-hoc capture outside a live session.
+  string session_exercise_id = 3;
+  double set_weight = 4;
+  int32 set_reps = 5;
+  double set_rpe = 6;
+  string note = 7;
+}
+message CreateFormVideoResponse {
+  FormVideo video = 1;
+}
+
+message ListMyFormVideosRequest {
+  sttattus.common.v1.PageRequest page = 1;
+  // Optional filter — empty / unset returns every movement.
+  string exercise_id = 2;
+}
+message ListMyFormVideosResponse {
+  repeated FormVideo videos = 1;
+}
+
+message DeleteFormVideoRequest {
+  string id = 1;
+}
+message DeleteFormVideoResponse {}
+
+message UpdateFormVideoStatusRequest {
+  string id = 1;
+  // pending | archived. 'reviewed' is server-only.
+  string status = 2;
+}
+message UpdateFormVideoStatusResponse {
+  FormVideo video = 1;
+}
+
 service WorkoutService {
   rpc ListWorkouts(ListWorkoutsRequest) returns (ListWorkoutsResponse);
   rpc GetWorkout(GetWorkoutRequest) returns (GetWorkoutResponse);
@@ -360,4 +427,13 @@ service WorkoutService {
   // already embeds the streak; this RPC is for a dedicated detail
   // surface and for forced refresh after session completion.
   rpc GetForgeStreak(GetForgeStreakRequest) returns (GetForgeStreakResponse);
+
+  // F7.6 — form-video capture path. The bytes go through the
+  // existing MediaService presigned-URL flow; these RPCs link the
+  // resulting media asset to a lifter + movement + set context, and
+  // let the lifter review / archive their library.
+  rpc CreateFormVideo(CreateFormVideoRequest) returns (CreateFormVideoResponse);
+  rpc ListMyFormVideos(ListMyFormVideosRequest) returns (ListMyFormVideosResponse);
+  rpc DeleteFormVideo(DeleteFormVideoRequest) returns (DeleteFormVideoResponse);
+  rpc UpdateFormVideoStatus(UpdateFormVideoStatusRequest) returns (UpdateFormVideoStatusResponse);
 }

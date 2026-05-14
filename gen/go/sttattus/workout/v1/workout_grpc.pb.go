@@ -19,22 +19,26 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	WorkoutService_ListWorkouts_FullMethodName        = "/sttattus.workout.v1.WorkoutService/ListWorkouts"
-	WorkoutService_GetWorkout_FullMethodName          = "/sttattus.workout.v1.WorkoutService/GetWorkout"
-	WorkoutService_LogDayWorkout_FullMethodName       = "/sttattus.workout.v1.WorkoutService/LogDayWorkout"
-	WorkoutService_ListHistory_FullMethodName         = "/sttattus.workout.v1.WorkoutService/ListHistory"
-	WorkoutService_GetForgeStats_FullMethodName       = "/sttattus.workout.v1.WorkoutService/GetForgeStats"
-	WorkoutService_SubmitFeedback_FullMethodName      = "/sttattus.workout.v1.WorkoutService/SubmitFeedback"
-	WorkoutService_GetToday_FullMethodName            = "/sttattus.workout.v1.WorkoutService/GetToday"
-	WorkoutService_GetRankLadder_FullMethodName       = "/sttattus.workout.v1.WorkoutService/GetRankLadder"
-	WorkoutService_ListExercises_FullMethodName       = "/sttattus.workout.v1.WorkoutService/ListExercises"
-	WorkoutService_CreateSession_FullMethodName       = "/sttattus.workout.v1.WorkoutService/CreateSession"
-	WorkoutService_GetSession_FullMethodName          = "/sttattus.workout.v1.WorkoutService/GetSession"
-	WorkoutService_GetActiveSession_FullMethodName    = "/sttattus.workout.v1.WorkoutService/GetActiveSession"
-	WorkoutService_ListSessions_FullMethodName        = "/sttattus.workout.v1.WorkoutService/ListSessions"
-	WorkoutService_UpdateSessionStatus_FullMethodName = "/sttattus.workout.v1.WorkoutService/UpdateSessionStatus"
-	WorkoutService_LogSet_FullMethodName              = "/sttattus.workout.v1.WorkoutService/LogSet"
-	WorkoutService_GetForgeStreak_FullMethodName      = "/sttattus.workout.v1.WorkoutService/GetForgeStreak"
+	WorkoutService_ListWorkouts_FullMethodName          = "/sttattus.workout.v1.WorkoutService/ListWorkouts"
+	WorkoutService_GetWorkout_FullMethodName            = "/sttattus.workout.v1.WorkoutService/GetWorkout"
+	WorkoutService_LogDayWorkout_FullMethodName         = "/sttattus.workout.v1.WorkoutService/LogDayWorkout"
+	WorkoutService_ListHistory_FullMethodName           = "/sttattus.workout.v1.WorkoutService/ListHistory"
+	WorkoutService_GetForgeStats_FullMethodName         = "/sttattus.workout.v1.WorkoutService/GetForgeStats"
+	WorkoutService_SubmitFeedback_FullMethodName        = "/sttattus.workout.v1.WorkoutService/SubmitFeedback"
+	WorkoutService_GetToday_FullMethodName              = "/sttattus.workout.v1.WorkoutService/GetToday"
+	WorkoutService_GetRankLadder_FullMethodName         = "/sttattus.workout.v1.WorkoutService/GetRankLadder"
+	WorkoutService_ListExercises_FullMethodName         = "/sttattus.workout.v1.WorkoutService/ListExercises"
+	WorkoutService_CreateSession_FullMethodName         = "/sttattus.workout.v1.WorkoutService/CreateSession"
+	WorkoutService_GetSession_FullMethodName            = "/sttattus.workout.v1.WorkoutService/GetSession"
+	WorkoutService_GetActiveSession_FullMethodName      = "/sttattus.workout.v1.WorkoutService/GetActiveSession"
+	WorkoutService_ListSessions_FullMethodName          = "/sttattus.workout.v1.WorkoutService/ListSessions"
+	WorkoutService_UpdateSessionStatus_FullMethodName   = "/sttattus.workout.v1.WorkoutService/UpdateSessionStatus"
+	WorkoutService_LogSet_FullMethodName                = "/sttattus.workout.v1.WorkoutService/LogSet"
+	WorkoutService_GetForgeStreak_FullMethodName        = "/sttattus.workout.v1.WorkoutService/GetForgeStreak"
+	WorkoutService_CreateFormVideo_FullMethodName       = "/sttattus.workout.v1.WorkoutService/CreateFormVideo"
+	WorkoutService_ListMyFormVideos_FullMethodName      = "/sttattus.workout.v1.WorkoutService/ListMyFormVideos"
+	WorkoutService_DeleteFormVideo_FullMethodName       = "/sttattus.workout.v1.WorkoutService/DeleteFormVideo"
+	WorkoutService_UpdateFormVideoStatus_FullMethodName = "/sttattus.workout.v1.WorkoutService/UpdateFormVideoStatus"
 )
 
 // WorkoutServiceClient is the client API for WorkoutService service.
@@ -63,6 +67,14 @@ type WorkoutServiceClient interface {
 	// already embeds the streak; this RPC is for a dedicated detail
 	// surface and for forced refresh after session completion.
 	GetForgeStreak(ctx context.Context, in *GetForgeStreakRequest, opts ...grpc.CallOption) (*GetForgeStreakResponse, error)
+	// F7.6 — form-video capture path. The bytes go through the
+	// existing MediaService presigned-URL flow; these RPCs link the
+	// resulting media asset to a lifter + movement + set context, and
+	// let the lifter review / archive their library.
+	CreateFormVideo(ctx context.Context, in *CreateFormVideoRequest, opts ...grpc.CallOption) (*CreateFormVideoResponse, error)
+	ListMyFormVideos(ctx context.Context, in *ListMyFormVideosRequest, opts ...grpc.CallOption) (*ListMyFormVideosResponse, error)
+	DeleteFormVideo(ctx context.Context, in *DeleteFormVideoRequest, opts ...grpc.CallOption) (*DeleteFormVideoResponse, error)
+	UpdateFormVideoStatus(ctx context.Context, in *UpdateFormVideoStatusRequest, opts ...grpc.CallOption) (*UpdateFormVideoStatusResponse, error)
 }
 
 type workoutServiceClient struct {
@@ -233,6 +245,46 @@ func (c *workoutServiceClient) GetForgeStreak(ctx context.Context, in *GetForgeS
 	return out, nil
 }
 
+func (c *workoutServiceClient) CreateFormVideo(ctx context.Context, in *CreateFormVideoRequest, opts ...grpc.CallOption) (*CreateFormVideoResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateFormVideoResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_CreateFormVideo_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ListMyFormVideos(ctx context.Context, in *ListMyFormVideosRequest, opts ...grpc.CallOption) (*ListMyFormVideosResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyFormVideosResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListMyFormVideos_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) DeleteFormVideo(ctx context.Context, in *DeleteFormVideoRequest, opts ...grpc.CallOption) (*DeleteFormVideoResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteFormVideoResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_DeleteFormVideo_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpdateFormVideoStatus(ctx context.Context, in *UpdateFormVideoStatusRequest, opts ...grpc.CallOption) (*UpdateFormVideoStatusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateFormVideoStatusResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpdateFormVideoStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WorkoutServiceServer is the server API for WorkoutService service.
 // All implementations must embed UnimplementedWorkoutServiceServer
 // for forward compatibility.
@@ -259,6 +311,14 @@ type WorkoutServiceServer interface {
 	// already embeds the streak; this RPC is for a dedicated detail
 	// surface and for forced refresh after session completion.
 	GetForgeStreak(context.Context, *GetForgeStreakRequest) (*GetForgeStreakResponse, error)
+	// F7.6 — form-video capture path. The bytes go through the
+	// existing MediaService presigned-URL flow; these RPCs link the
+	// resulting media asset to a lifter + movement + set context, and
+	// let the lifter review / archive their library.
+	CreateFormVideo(context.Context, *CreateFormVideoRequest) (*CreateFormVideoResponse, error)
+	ListMyFormVideos(context.Context, *ListMyFormVideosRequest) (*ListMyFormVideosResponse, error)
+	DeleteFormVideo(context.Context, *DeleteFormVideoRequest) (*DeleteFormVideoResponse, error)
+	UpdateFormVideoStatus(context.Context, *UpdateFormVideoStatusRequest) (*UpdateFormVideoStatusResponse, error)
 	mustEmbedUnimplementedWorkoutServiceServer()
 }
 
@@ -316,6 +376,18 @@ func (UnimplementedWorkoutServiceServer) LogSet(context.Context, *LogSetRequest)
 }
 func (UnimplementedWorkoutServiceServer) GetForgeStreak(context.Context, *GetForgeStreakRequest) (*GetForgeStreakResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetForgeStreak not implemented")
+}
+func (UnimplementedWorkoutServiceServer) CreateFormVideo(context.Context, *CreateFormVideoRequest) (*CreateFormVideoResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateFormVideo not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListMyFormVideos(context.Context, *ListMyFormVideosRequest) (*ListMyFormVideosResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyFormVideos not implemented")
+}
+func (UnimplementedWorkoutServiceServer) DeleteFormVideo(context.Context, *DeleteFormVideoRequest) (*DeleteFormVideoResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteFormVideo not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpdateFormVideoStatus(context.Context, *UpdateFormVideoStatusRequest) (*UpdateFormVideoStatusResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateFormVideoStatus not implemented")
 }
 func (UnimplementedWorkoutServiceServer) mustEmbedUnimplementedWorkoutServiceServer() {}
 func (UnimplementedWorkoutServiceServer) testEmbeddedByValue()                        {}
@@ -626,6 +698,78 @@ func _WorkoutService_GetForgeStreak_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WorkoutService_CreateFormVideo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateFormVideoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).CreateFormVideo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_CreateFormVideo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).CreateFormVideo(ctx, req.(*CreateFormVideoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ListMyFormVideos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyFormVideosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListMyFormVideos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListMyFormVideos_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListMyFormVideos(ctx, req.(*ListMyFormVideosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_DeleteFormVideo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteFormVideoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).DeleteFormVideo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_DeleteFormVideo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).DeleteFormVideo(ctx, req.(*DeleteFormVideoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpdateFormVideoStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateFormVideoStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpdateFormVideoStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpdateFormVideoStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpdateFormVideoStatus(ctx, req.(*UpdateFormVideoStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // WorkoutService_ServiceDesc is the grpc.ServiceDesc for WorkoutService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -696,6 +840,22 @@ var WorkoutService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetForgeStreak",
 			Handler:    _WorkoutService_GetForgeStreak_Handler,
+		},
+		{
+			MethodName: "CreateFormVideo",
+			Handler:    _WorkoutService_CreateFormVideo_Handler,
+		},
+		{
+			MethodName: "ListMyFormVideos",
+			Handler:    _WorkoutService_ListMyFormVideos_Handler,
+		},
+		{
+			MethodName: "DeleteFormVideo",
+			Handler:    _WorkoutService_DeleteFormVideo_Handler,
+		},
+		{
+			MethodName: "UpdateFormVideoStatus",
+			Handler:    _WorkoutService_UpdateFormVideoStatus_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

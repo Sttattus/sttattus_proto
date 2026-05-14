@@ -3373,6 +3373,670 @@ class GetForgeStreakResponse extends $pb.GeneratedMessage {
   ForgeStreak ensureStreak() => $_ensure(0);
 }
 
+/// FormVideo is a single uploaded form-video clip with the public
+/// URL and the movement name baked in, so the Forge "Form Lab"
+/// surface renders it directly.
+class FormVideo extends $pb.GeneratedMessage {
+  factory FormVideo({
+    $core.String? id,
+    $core.String? sessionExerciseId,
+    $core.String? exerciseId,
+    $core.String? exerciseName,
+    $core.String? mediaAssetId,
+    $core.String? videoUrl,
+    $core.String? thumbnailUrl,
+    $core.String? mime,
+    $core.String? status,
+    $core.double? setWeight,
+    $core.int? setReps,
+    $core.double? setRpe,
+    $core.String? note,
+    $fixnum.Int64? capturedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (sessionExerciseId != null) result.sessionExerciseId = sessionExerciseId;
+    if (exerciseId != null) result.exerciseId = exerciseId;
+    if (exerciseName != null) result.exerciseName = exerciseName;
+    if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
+    if (videoUrl != null) result.videoUrl = videoUrl;
+    if (thumbnailUrl != null) result.thumbnailUrl = thumbnailUrl;
+    if (mime != null) result.mime = mime;
+    if (status != null) result.status = status;
+    if (setWeight != null) result.setWeight = setWeight;
+    if (setReps != null) result.setReps = setReps;
+    if (setRpe != null) result.setRpe = setRpe;
+    if (note != null) result.note = note;
+    if (capturedAt != null) result.capturedAt = capturedAt;
+    return result;
+  }
+
+  FormVideo._();
+
+  factory FormVideo.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory FormVideo.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FormVideo', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'sessionExerciseId')
+    ..aOS(3, _omitFieldNames ? '' : 'exerciseId')
+    ..aOS(4, _omitFieldNames ? '' : 'exerciseName')
+    ..aOS(5, _omitFieldNames ? '' : 'mediaAssetId')
+    ..aOS(6, _omitFieldNames ? '' : 'videoUrl')
+    ..aOS(7, _omitFieldNames ? '' : 'thumbnailUrl')
+    ..aOS(8, _omitFieldNames ? '' : 'mime')
+    ..aOS(9, _omitFieldNames ? '' : 'status')
+    ..a<$core.double>(10, _omitFieldNames ? '' : 'setWeight', $pb.PbFieldType.OD)
+    ..a<$core.int>(11, _omitFieldNames ? '' : 'setReps', $pb.PbFieldType.O3)
+    ..a<$core.double>(12, _omitFieldNames ? '' : 'setRpe', $pb.PbFieldType.OD)
+    ..aOS(13, _omitFieldNames ? '' : 'note')
+    ..aInt64(14, _omitFieldNames ? '' : 'capturedAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FormVideo clone() => FormVideo()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FormVideo copyWith(void Function(FormVideo) updates) => super.copyWith((message) => updates(message as FormVideo)) as FormVideo;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FormVideo create() => FormVideo._();
+  @$core.override
+  FormVideo createEmptyInstance() => create();
+  static $pb.PbList<FormVideo> createRepeated() => $pb.PbList<FormVideo>();
+  @$core.pragma('dart2js:noInline')
+  static FormVideo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FormVideo>(create);
+  static FormVideo? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  /// Empty when the clip was captured ad-hoc outside a live session.
+  @$pb.TagNumber(2)
+  $core.String get sessionExerciseId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sessionExerciseId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSessionExerciseId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSessionExerciseId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get exerciseId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set exerciseId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExerciseId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExerciseId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get exerciseName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set exerciseName($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExerciseName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExerciseName() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get mediaAssetId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set mediaAssetId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMediaAssetId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMediaAssetId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get videoUrl => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set videoUrl($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasVideoUrl() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearVideoUrl() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get thumbnailUrl => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set thumbnailUrl($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasThumbnailUrl() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearThumbnailUrl() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get mime => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set mime($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasMime() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMime() => $_clearField(8);
+
+  /// pending | reviewed | archived. Phase 1 only writes 'pending';
+  /// user surface flips to 'archived'; the form-check worker
+  /// (Phase 3) writes 'reviewed'.
+  @$pb.TagNumber(9)
+  $core.String get status => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set status($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasStatus() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearStatus() => $_clearField(9);
+
+  /// Set context recorded at capture so a later PR-detection pass
+  /// can match the clip to a specific set. Optional — zero values
+  /// mean "not captured with these numbers."
+  @$pb.TagNumber(10)
+  $core.double get setWeight => $_getN(9);
+  @$pb.TagNumber(10)
+  set setWeight($core.double value) => $_setDouble(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSetWeight() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSetWeight() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get setReps => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set setReps($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasSetReps() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearSetReps() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.double get setRpe => $_getN(11);
+  @$pb.TagNumber(12)
+  set setRpe($core.double value) => $_setDouble(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasSetRpe() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearSetRpe() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get note => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set note($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasNote() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearNote() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $fixnum.Int64 get capturedAt => $_getI64(13);
+  @$pb.TagNumber(14)
+  set capturedAt($fixnum.Int64 value) => $_setInt64(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasCapturedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearCapturedAt() => $_clearField(14);
+}
+
+class CreateFormVideoRequest extends $pb.GeneratedMessage {
+  factory CreateFormVideoRequest({
+    $core.String? mediaAssetId,
+    $core.String? exerciseId,
+    $core.String? sessionExerciseId,
+    $core.double? setWeight,
+    $core.int? setReps,
+    $core.double? setRpe,
+    $core.String? note,
+  }) {
+    final result = create();
+    if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
+    if (exerciseId != null) result.exerciseId = exerciseId;
+    if (sessionExerciseId != null) result.sessionExerciseId = sessionExerciseId;
+    if (setWeight != null) result.setWeight = setWeight;
+    if (setReps != null) result.setReps = setReps;
+    if (setRpe != null) result.setRpe = setRpe;
+    if (note != null) result.note = note;
+    return result;
+  }
+
+  CreateFormVideoRequest._();
+
+  factory CreateFormVideoRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateFormVideoRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateFormVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'mediaAssetId')
+    ..aOS(2, _omitFieldNames ? '' : 'exerciseId')
+    ..aOS(3, _omitFieldNames ? '' : 'sessionExerciseId')
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'setWeight', $pb.PbFieldType.OD)
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'setReps', $pb.PbFieldType.O3)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'setRpe', $pb.PbFieldType.OD)
+    ..aOS(7, _omitFieldNames ? '' : 'note')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateFormVideoRequest clone() => CreateFormVideoRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateFormVideoRequest copyWith(void Function(CreateFormVideoRequest) updates) => super.copyWith((message) => updates(message as CreateFormVideoRequest)) as CreateFormVideoRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateFormVideoRequest create() => CreateFormVideoRequest._();
+  @$core.override
+  CreateFormVideoRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateFormVideoRequest> createRepeated() => $pb.PbList<CreateFormVideoRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateFormVideoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateFormVideoRequest>(create);
+  static CreateFormVideoRequest? _defaultInstance;
+
+  /// The id returned by MediaService.RequestUpload + uploaded via PUT.
+  @$pb.TagNumber(1)
+  $core.String get mediaAssetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set mediaAssetId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMediaAssetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMediaAssetId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get exerciseId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set exerciseId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExerciseId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExerciseId() => $_clearField(2);
+
+  /// Empty for an ad-hoc capture outside a live session.
+  @$pb.TagNumber(3)
+  $core.String get sessionExerciseId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sessionExerciseId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSessionExerciseId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSessionExerciseId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get setWeight => $_getN(3);
+  @$pb.TagNumber(4)
+  set setWeight($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSetWeight() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSetWeight() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get setReps => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set setReps($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSetReps() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSetReps() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get setRpe => $_getN(5);
+  @$pb.TagNumber(6)
+  set setRpe($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSetRpe() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSetRpe() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get note => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set note($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasNote() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNote() => $_clearField(7);
+}
+
+class CreateFormVideoResponse extends $pb.GeneratedMessage {
+  factory CreateFormVideoResponse({
+    FormVideo? video,
+  }) {
+    final result = create();
+    if (video != null) result.video = video;
+    return result;
+  }
+
+  CreateFormVideoResponse._();
+
+  factory CreateFormVideoResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateFormVideoResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateFormVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<FormVideo>(1, _omitFieldNames ? '' : 'video', subBuilder: FormVideo.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateFormVideoResponse clone() => CreateFormVideoResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateFormVideoResponse copyWith(void Function(CreateFormVideoResponse) updates) => super.copyWith((message) => updates(message as CreateFormVideoResponse)) as CreateFormVideoResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateFormVideoResponse create() => CreateFormVideoResponse._();
+  @$core.override
+  CreateFormVideoResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateFormVideoResponse> createRepeated() => $pb.PbList<CreateFormVideoResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateFormVideoResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateFormVideoResponse>(create);
+  static CreateFormVideoResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  FormVideo get video => $_getN(0);
+  @$pb.TagNumber(1)
+  set video(FormVideo value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasVideo() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVideo() => $_clearField(1);
+  @$pb.TagNumber(1)
+  FormVideo ensureVideo() => $_ensure(0);
+}
+
+class ListMyFormVideosRequest extends $pb.GeneratedMessage {
+  factory ListMyFormVideosRequest({
+    $1.PageRequest? page,
+    $core.String? exerciseId,
+  }) {
+    final result = create();
+    if (page != null) result.page = page;
+    if (exerciseId != null) result.exerciseId = exerciseId;
+    return result;
+  }
+
+  ListMyFormVideosRequest._();
+
+  factory ListMyFormVideosRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyFormVideosRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyFormVideosRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<$1.PageRequest>(1, _omitFieldNames ? '' : 'page', subBuilder: $1.PageRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'exerciseId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyFormVideosRequest clone() => ListMyFormVideosRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyFormVideosRequest copyWith(void Function(ListMyFormVideosRequest) updates) => super.copyWith((message) => updates(message as ListMyFormVideosRequest)) as ListMyFormVideosRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyFormVideosRequest create() => ListMyFormVideosRequest._();
+  @$core.override
+  ListMyFormVideosRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyFormVideosRequest> createRepeated() => $pb.PbList<ListMyFormVideosRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyFormVideosRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyFormVideosRequest>(create);
+  static ListMyFormVideosRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.PageRequest get page => $_getN(0);
+  @$pb.TagNumber(1)
+  set page($1.PageRequest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPage() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $1.PageRequest ensurePage() => $_ensure(0);
+
+  /// Optional filter — empty / unset returns every movement.
+  @$pb.TagNumber(2)
+  $core.String get exerciseId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set exerciseId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExerciseId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExerciseId() => $_clearField(2);
+}
+
+class ListMyFormVideosResponse extends $pb.GeneratedMessage {
+  factory ListMyFormVideosResponse({
+    $core.Iterable<FormVideo>? videos,
+  }) {
+    final result = create();
+    if (videos != null) result.videos.addAll(videos);
+    return result;
+  }
+
+  ListMyFormVideosResponse._();
+
+  factory ListMyFormVideosResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyFormVideosResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyFormVideosResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..pc<FormVideo>(1, _omitFieldNames ? '' : 'videos', $pb.PbFieldType.PM, subBuilder: FormVideo.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyFormVideosResponse clone() => ListMyFormVideosResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyFormVideosResponse copyWith(void Function(ListMyFormVideosResponse) updates) => super.copyWith((message) => updates(message as ListMyFormVideosResponse)) as ListMyFormVideosResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyFormVideosResponse create() => ListMyFormVideosResponse._();
+  @$core.override
+  ListMyFormVideosResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyFormVideosResponse> createRepeated() => $pb.PbList<ListMyFormVideosResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyFormVideosResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyFormVideosResponse>(create);
+  static ListMyFormVideosResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<FormVideo> get videos => $_getList(0);
+}
+
+class DeleteFormVideoRequest extends $pb.GeneratedMessage {
+  factory DeleteFormVideoRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  DeleteFormVideoRequest._();
+
+  factory DeleteFormVideoRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteFormVideoRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteFormVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteFormVideoRequest clone() => DeleteFormVideoRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteFormVideoRequest copyWith(void Function(DeleteFormVideoRequest) updates) => super.copyWith((message) => updates(message as DeleteFormVideoRequest)) as DeleteFormVideoRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteFormVideoRequest create() => DeleteFormVideoRequest._();
+  @$core.override
+  DeleteFormVideoRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteFormVideoRequest> createRepeated() => $pb.PbList<DeleteFormVideoRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteFormVideoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteFormVideoRequest>(create);
+  static DeleteFormVideoRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class DeleteFormVideoResponse extends $pb.GeneratedMessage {
+  factory DeleteFormVideoResponse() => create();
+
+  DeleteFormVideoResponse._();
+
+  factory DeleteFormVideoResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteFormVideoResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteFormVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteFormVideoResponse clone() => DeleteFormVideoResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteFormVideoResponse copyWith(void Function(DeleteFormVideoResponse) updates) => super.copyWith((message) => updates(message as DeleteFormVideoResponse)) as DeleteFormVideoResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteFormVideoResponse create() => DeleteFormVideoResponse._();
+  @$core.override
+  DeleteFormVideoResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteFormVideoResponse> createRepeated() => $pb.PbList<DeleteFormVideoResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteFormVideoResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteFormVideoResponse>(create);
+  static DeleteFormVideoResponse? _defaultInstance;
+}
+
+class UpdateFormVideoStatusRequest extends $pb.GeneratedMessage {
+  factory UpdateFormVideoStatusRequest({
+    $core.String? id,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  UpdateFormVideoStatusRequest._();
+
+  factory UpdateFormVideoStatusRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateFormVideoStatusRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateFormVideoStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateFormVideoStatusRequest clone() => UpdateFormVideoStatusRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateFormVideoStatusRequest copyWith(void Function(UpdateFormVideoStatusRequest) updates) => super.copyWith((message) => updates(message as UpdateFormVideoStatusRequest)) as UpdateFormVideoStatusRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateFormVideoStatusRequest create() => UpdateFormVideoStatusRequest._();
+  @$core.override
+  UpdateFormVideoStatusRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateFormVideoStatusRequest> createRepeated() => $pb.PbList<UpdateFormVideoStatusRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateFormVideoStatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateFormVideoStatusRequest>(create);
+  static UpdateFormVideoStatusRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  /// pending | archived. 'reviewed' is server-only.
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+}
+
+class UpdateFormVideoStatusResponse extends $pb.GeneratedMessage {
+  factory UpdateFormVideoStatusResponse({
+    FormVideo? video,
+  }) {
+    final result = create();
+    if (video != null) result.video = video;
+    return result;
+  }
+
+  UpdateFormVideoStatusResponse._();
+
+  factory UpdateFormVideoStatusResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateFormVideoStatusResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateFormVideoStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<FormVideo>(1, _omitFieldNames ? '' : 'video', subBuilder: FormVideo.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateFormVideoStatusResponse clone() => UpdateFormVideoStatusResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateFormVideoStatusResponse copyWith(void Function(UpdateFormVideoStatusResponse) updates) => super.copyWith((message) => updates(message as UpdateFormVideoStatusResponse)) as UpdateFormVideoStatusResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateFormVideoStatusResponse create() => UpdateFormVideoStatusResponse._();
+  @$core.override
+  UpdateFormVideoStatusResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateFormVideoStatusResponse> createRepeated() => $pb.PbList<UpdateFormVideoStatusResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateFormVideoStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateFormVideoStatusResponse>(create);
+  static UpdateFormVideoStatusResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  FormVideo get video => $_getN(0);
+  @$pb.TagNumber(1)
+  set video(FormVideo value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasVideo() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVideo() => $_clearField(1);
+  @$pb.TagNumber(1)
+  FormVideo ensureVideo() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

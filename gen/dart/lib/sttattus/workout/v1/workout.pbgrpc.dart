@@ -102,6 +102,26 @@ class WorkoutServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getForgeStreak, request, options: options);
   }
 
+  /// F7.6 — form-video capture path. The bytes go through the
+  /// existing MediaService presigned-URL flow; these RPCs link the
+  /// resulting media asset to a lifter + movement + set context, and
+  /// let the lifter review / archive their library.
+  $grpc.ResponseFuture<$0.CreateFormVideoResponse> createFormVideo($0.CreateFormVideoRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createFormVideo, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyFormVideosResponse> listMyFormVideos($0.ListMyFormVideosRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyFormVideos, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteFormVideoResponse> deleteFormVideo($0.DeleteFormVideoRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteFormVideo, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateFormVideoStatusResponse> updateFormVideoStatus($0.UpdateFormVideoStatusRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$updateFormVideoStatus, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listWorkouts = $grpc.ClientMethod<$0.ListWorkoutsRequest, $0.ListWorkoutsResponse>(
@@ -168,6 +188,22 @@ class WorkoutServiceClient extends $grpc.Client {
       '/sttattus.workout.v1.WorkoutService/GetForgeStreak',
       ($0.GetForgeStreakRequest value) => value.writeToBuffer(),
       $0.GetForgeStreakResponse.fromBuffer);
+  static final _$createFormVideo = $grpc.ClientMethod<$0.CreateFormVideoRequest, $0.CreateFormVideoResponse>(
+      '/sttattus.workout.v1.WorkoutService/CreateFormVideo',
+      ($0.CreateFormVideoRequest value) => value.writeToBuffer(),
+      $0.CreateFormVideoResponse.fromBuffer);
+  static final _$listMyFormVideos = $grpc.ClientMethod<$0.ListMyFormVideosRequest, $0.ListMyFormVideosResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListMyFormVideos',
+      ($0.ListMyFormVideosRequest value) => value.writeToBuffer(),
+      $0.ListMyFormVideosResponse.fromBuffer);
+  static final _$deleteFormVideo = $grpc.ClientMethod<$0.DeleteFormVideoRequest, $0.DeleteFormVideoResponse>(
+      '/sttattus.workout.v1.WorkoutService/DeleteFormVideo',
+      ($0.DeleteFormVideoRequest value) => value.writeToBuffer(),
+      $0.DeleteFormVideoResponse.fromBuffer);
+  static final _$updateFormVideoStatus = $grpc.ClientMethod<$0.UpdateFormVideoStatusRequest, $0.UpdateFormVideoStatusResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpdateFormVideoStatus',
+      ($0.UpdateFormVideoStatusRequest value) => value.writeToBuffer(),
+      $0.UpdateFormVideoStatusResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.workout.v1.WorkoutService')
@@ -287,6 +323,34 @@ abstract class WorkoutServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetForgeStreakRequest.fromBuffer(value),
         ($0.GetForgeStreakResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateFormVideoRequest, $0.CreateFormVideoResponse>(
+        'CreateFormVideo',
+        createFormVideo_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateFormVideoRequest.fromBuffer(value),
+        ($0.CreateFormVideoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyFormVideosRequest, $0.ListMyFormVideosResponse>(
+        'ListMyFormVideos',
+        listMyFormVideos_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyFormVideosRequest.fromBuffer(value),
+        ($0.ListMyFormVideosResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteFormVideoRequest, $0.DeleteFormVideoResponse>(
+        'DeleteFormVideo',
+        deleteFormVideo_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteFormVideoRequest.fromBuffer(value),
+        ($0.DeleteFormVideoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateFormVideoStatusRequest, $0.UpdateFormVideoStatusResponse>(
+        'UpdateFormVideoStatus',
+        updateFormVideoStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpdateFormVideoStatusRequest.fromBuffer(value),
+        ($0.UpdateFormVideoStatusResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListWorkoutsResponse> listWorkouts_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWorkoutsRequest> $request) async {
@@ -384,5 +448,29 @@ abstract class WorkoutServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GetForgeStreakResponse> getForgeStreak($grpc.ServiceCall call, $0.GetForgeStreakRequest request);
+
+  $async.Future<$0.CreateFormVideoResponse> createFormVideo_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateFormVideoRequest> $request) async {
+    return createFormVideo($call, await $request);
+  }
+
+  $async.Future<$0.CreateFormVideoResponse> createFormVideo($grpc.ServiceCall call, $0.CreateFormVideoRequest request);
+
+  $async.Future<$0.ListMyFormVideosResponse> listMyFormVideos_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyFormVideosRequest> $request) async {
+    return listMyFormVideos($call, await $request);
+  }
+
+  $async.Future<$0.ListMyFormVideosResponse> listMyFormVideos($grpc.ServiceCall call, $0.ListMyFormVideosRequest request);
+
+  $async.Future<$0.DeleteFormVideoResponse> deleteFormVideo_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteFormVideoRequest> $request) async {
+    return deleteFormVideo($call, await $request);
+  }
+
+  $async.Future<$0.DeleteFormVideoResponse> deleteFormVideo($grpc.ServiceCall call, $0.DeleteFormVideoRequest request);
+
+  $async.Future<$0.UpdateFormVideoStatusResponse> updateFormVideoStatus_Pre($grpc.ServiceCall $call, $async.Future<$0.UpdateFormVideoStatusRequest> $request) async {
+    return updateFormVideoStatus($call, await $request);
+  }
+
+  $async.Future<$0.UpdateFormVideoStatusResponse> updateFormVideoStatus($grpc.ServiceCall call, $0.UpdateFormVideoStatusRequest request);
 
 }
