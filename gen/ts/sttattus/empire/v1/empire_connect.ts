@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ClaimHandleRequest, ClaimHandleResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse } from "./empire_pb.js";
+import { ClaimHandleRequest, ClaimHandleResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse } from "./empire_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -161,6 +161,19 @@ export const EmpireService = {
       name: "RemoveFriend",
       I: RemoveFriendRequest,
       O: RemoveFriendResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListMyAuditLog returns audit_logs rows where the caller is either
+     * the actor or the target, newest first. The glass-box for "who
+     * touched my account."
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ListMyAuditLog
+     */
+    listMyAuditLog: {
+      name: "ListMyAuditLog",
+      I: ListMyAuditLogRequest,
+      O: ListMyAuditLogResponse,
       kind: MethodKind.Unary,
     },
   }

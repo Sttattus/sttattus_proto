@@ -111,6 +111,13 @@ class EmpireServiceClient extends $grpc.Client {
     return $createUnaryCall(_$removeFriend, request, options: options);
   }
 
+  /// ListMyAuditLog returns audit_logs rows where the caller is either
+  /// the actor or the target, newest first. The glass-box for "who
+  /// touched my account."
+  $grpc.ResponseFuture<$0.ListMyAuditLogResponse> listMyAuditLog($0.ListMyAuditLogRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyAuditLog, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getScoreBreakdown = $grpc.ClientMethod<$0.GetScoreBreakdownRequest, $0.GetScoreBreakdownResponse>(
@@ -161,6 +168,10 @@ class EmpireServiceClient extends $grpc.Client {
       '/sttattus.empire.v1.EmpireService/RemoveFriend',
       ($0.RemoveFriendRequest value) => value.writeToBuffer(),
       $0.RemoveFriendResponse.fromBuffer);
+  static final _$listMyAuditLog = $grpc.ClientMethod<$0.ListMyAuditLogRequest, $0.ListMyAuditLogResponse>(
+      '/sttattus.empire.v1.EmpireService/ListMyAuditLog',
+      ($0.ListMyAuditLogRequest value) => value.writeToBuffer(),
+      $0.ListMyAuditLogResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.empire.v1.EmpireService')
@@ -252,6 +263,13 @@ abstract class EmpireServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.RemoveFriendRequest.fromBuffer(value),
         ($0.RemoveFriendResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyAuditLogRequest, $0.ListMyAuditLogResponse>(
+        'ListMyAuditLog',
+        listMyAuditLog_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyAuditLogRequest.fromBuffer(value),
+        ($0.ListMyAuditLogResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetScoreBreakdownResponse> getScoreBreakdown_Pre($grpc.ServiceCall $call, $async.Future<$0.GetScoreBreakdownRequest> $request) async {
@@ -325,5 +343,11 @@ abstract class EmpireServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.RemoveFriendResponse> removeFriend($grpc.ServiceCall call, $0.RemoveFriendRequest request);
+
+  $async.Future<$0.ListMyAuditLogResponse> listMyAuditLog_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyAuditLogRequest> $request) async {
+    return listMyAuditLog($call, await $request);
+  }
+
+  $async.Future<$0.ListMyAuditLogResponse> listMyAuditLog($grpc.ServiceCall call, $0.ListMyAuditLogRequest request);
 
 }

@@ -31,6 +31,7 @@ const (
 	EmpireService_SendInvite_FullMethodName          = "/sttattus.empire.v1.EmpireService/SendInvite"
 	EmpireService_RespondInvite_FullMethodName       = "/sttattus.empire.v1.EmpireService/RespondInvite"
 	EmpireService_RemoveFriend_FullMethodName        = "/sttattus.empire.v1.EmpireService/RemoveFriend"
+	EmpireService_ListMyAuditLog_FullMethodName      = "/sttattus.empire.v1.EmpireService/ListMyAuditLog"
 )
 
 // EmpireServiceClient is the client API for EmpireService service.
@@ -80,6 +81,10 @@ type EmpireServiceClient interface {
 	// RemoveFriend severs an accepted edge, or withdraws a pending one.
 	// Either side may call.
 	RemoveFriend(ctx context.Context, in *RemoveFriendRequest, opts ...grpc.CallOption) (*RemoveFriendResponse, error)
+	// ListMyAuditLog returns audit_logs rows where the caller is either
+	// the actor or the target, newest first. The glass-box for "who
+	// touched my account."
+	ListMyAuditLog(ctx context.Context, in *ListMyAuditLogRequest, opts ...grpc.CallOption) (*ListMyAuditLogResponse, error)
 }
 
 type empireServiceClient struct {
@@ -210,6 +215,16 @@ func (c *empireServiceClient) RemoveFriend(ctx context.Context, in *RemoveFriend
 	return out, nil
 }
 
+func (c *empireServiceClient) ListMyAuditLog(ctx context.Context, in *ListMyAuditLogRequest, opts ...grpc.CallOption) (*ListMyAuditLogResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyAuditLogResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ListMyAuditLog_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmpireServiceServer is the server API for EmpireService service.
 // All implementations must embed UnimplementedEmpireServiceServer
 // for forward compatibility.
@@ -257,6 +272,10 @@ type EmpireServiceServer interface {
 	// RemoveFriend severs an accepted edge, or withdraws a pending one.
 	// Either side may call.
 	RemoveFriend(context.Context, *RemoveFriendRequest) (*RemoveFriendResponse, error)
+	// ListMyAuditLog returns audit_logs rows where the caller is either
+	// the actor or the target, newest first. The glass-box for "who
+	// touched my account."
+	ListMyAuditLog(context.Context, *ListMyAuditLogRequest) (*ListMyAuditLogResponse, error)
 	mustEmbedUnimplementedEmpireServiceServer()
 }
 
@@ -302,6 +321,9 @@ func (UnimplementedEmpireServiceServer) RespondInvite(context.Context, *RespondI
 }
 func (UnimplementedEmpireServiceServer) RemoveFriend(context.Context, *RemoveFriendRequest) (*RemoveFriendResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RemoveFriend not implemented")
+}
+func (UnimplementedEmpireServiceServer) ListMyAuditLog(context.Context, *ListMyAuditLogRequest) (*ListMyAuditLogResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyAuditLog not implemented")
 }
 func (UnimplementedEmpireServiceServer) mustEmbedUnimplementedEmpireServiceServer() {}
 func (UnimplementedEmpireServiceServer) testEmbeddedByValue()                       {}
@@ -540,6 +562,24 @@ func _EmpireService_RemoveFriend_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmpireService_ListMyAuditLog_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyAuditLogRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ListMyAuditLog(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ListMyAuditLog_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ListMyAuditLog(ctx, req.(*ListMyAuditLogRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EmpireService_ServiceDesc is the grpc.ServiceDesc for EmpireService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -594,6 +634,10 @@ var EmpireService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RemoveFriend",
 			Handler:    _EmpireService_RemoveFriend_Handler,
+		},
+		{
+			MethodName: "ListMyAuditLog",
+			Handler:    _EmpireService_ListMyAuditLog_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -190,6 +190,30 @@ message UpdatePublicProfileResponse {
   string bio = 2;
 }
 
+// === Member-facing audit log (P5.8) ===
+
+message ListMyAuditLogRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+}
+
+// MyAuditEntry is one audit_logs row from the caller's perspective.
+// is_self_initiated is true when the user themselves was the actor;
+// false means another actor (typically staff) touched their account.
+message MyAuditEntry {
+  string id = 1;
+  string action = 2;
+  bool is_self_initiated = 3;
+  // JSON payload (object or null) serialised as a string for the wire —
+  // the app decides whether to render structured fields or hide them.
+  string payload_json = 4;
+  string created_at = 5;
+}
+
+message ListMyAuditLogResponse {
+  repeated MyAuditEntry entries = 1;
+}
+
 // === Friend graph (P5.7) ===
 
 // FriendSummary is the public slice of one friend (or pending invite
@@ -301,4 +325,9 @@ service EmpireService {
   // RemoveFriend severs an accepted edge, or withdraws a pending one.
   // Either side may call.
   rpc RemoveFriend(RemoveFriendRequest) returns (RemoveFriendResponse);
+
+  // ListMyAuditLog returns audit_logs rows where the caller is either
+  // the actor or the target, newest first. The glass-box for "who
+  // touched my account."
+  rpc ListMyAuditLog(ListMyAuditLogRequest) returns (ListMyAuditLogResponse);
 }

@@ -1441,6 +1441,203 @@ class UpdatePublicProfileResponse extends $pb.GeneratedMessage {
   void clearBio() => $_clearField(2);
 }
 
+class ListMyAuditLogRequest extends $pb.GeneratedMessage {
+  factory ListMyAuditLogRequest({
+    $core.int? limit,
+    $core.int? offset,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    if (offset != null) result.offset = offset;
+    return result;
+  }
+
+  ListMyAuditLogRequest._();
+
+  factory ListMyAuditLogRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyAuditLogRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyAuditLogRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'offset', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyAuditLogRequest clone() => ListMyAuditLogRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyAuditLogRequest copyWith(void Function(ListMyAuditLogRequest) updates) => super.copyWith((message) => updates(message as ListMyAuditLogRequest)) as ListMyAuditLogRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyAuditLogRequest create() => ListMyAuditLogRequest._();
+  @$core.override
+  ListMyAuditLogRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyAuditLogRequest> createRepeated() => $pb.PbList<ListMyAuditLogRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyAuditLogRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyAuditLogRequest>(create);
+  static ListMyAuditLogRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get offset => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set offset($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOffset() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOffset() => $_clearField(2);
+}
+
+/// MyAuditEntry is one audit_logs row from the caller's perspective.
+/// is_self_initiated is true when the user themselves was the actor;
+/// false means another actor (typically staff) touched their account.
+class MyAuditEntry extends $pb.GeneratedMessage {
+  factory MyAuditEntry({
+    $core.String? id,
+    $core.String? action,
+    $core.bool? isSelfInitiated,
+    $core.String? payloadJson,
+    $core.String? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (action != null) result.action = action;
+    if (isSelfInitiated != null) result.isSelfInitiated = isSelfInitiated;
+    if (payloadJson != null) result.payloadJson = payloadJson;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  MyAuditEntry._();
+
+  factory MyAuditEntry.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MyAuditEntry.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MyAuditEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..aOB(3, _omitFieldNames ? '' : 'isSelfInitiated')
+    ..aOS(4, _omitFieldNames ? '' : 'payloadJson')
+    ..aOS(5, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MyAuditEntry clone() => MyAuditEntry()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MyAuditEntry copyWith(void Function(MyAuditEntry) updates) => super.copyWith((message) => updates(message as MyAuditEntry)) as MyAuditEntry;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MyAuditEntry create() => MyAuditEntry._();
+  @$core.override
+  MyAuditEntry createEmptyInstance() => create();
+  static $pb.PbList<MyAuditEntry> createRepeated() => $pb.PbList<MyAuditEntry>();
+  @$core.pragma('dart2js:noInline')
+  static MyAuditEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MyAuditEntry>(create);
+  static MyAuditEntry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get isSelfInitiated => $_getBF(2);
+  @$pb.TagNumber(3)
+  set isSelfInitiated($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasIsSelfInitiated() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIsSelfInitiated() => $_clearField(3);
+
+  /// JSON payload (object or null) serialised as a string for the wire —
+  /// the app decides whether to render structured fields or hide them.
+  @$pb.TagNumber(4)
+  $core.String get payloadJson => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set payloadJson($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPayloadJson() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPayloadJson() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get createdAt => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set createdAt($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedAt() => $_clearField(5);
+}
+
+class ListMyAuditLogResponse extends $pb.GeneratedMessage {
+  factory ListMyAuditLogResponse({
+    $core.Iterable<MyAuditEntry>? entries,
+  }) {
+    final result = create();
+    if (entries != null) result.entries.addAll(entries);
+    return result;
+  }
+
+  ListMyAuditLogResponse._();
+
+  factory ListMyAuditLogResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyAuditLogResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyAuditLogResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..pc<MyAuditEntry>(1, _omitFieldNames ? '' : 'entries', $pb.PbFieldType.PM, subBuilder: MyAuditEntry.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyAuditLogResponse clone() => ListMyAuditLogResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyAuditLogResponse copyWith(void Function(ListMyAuditLogResponse) updates) => super.copyWith((message) => updates(message as ListMyAuditLogResponse)) as ListMyAuditLogResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyAuditLogResponse create() => ListMyAuditLogResponse._();
+  @$core.override
+  ListMyAuditLogResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyAuditLogResponse> createRepeated() => $pb.PbList<ListMyAuditLogResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyAuditLogResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyAuditLogResponse>(create);
+  static ListMyAuditLogResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<MyAuditEntry> get entries => $_getList(0);
+}
+
 /// FriendSummary is the public slice of one friend (or pending invite
 /// counterparty). Renders in directory rows + invite cards.
 class FriendSummary extends $pb.GeneratedMessage {

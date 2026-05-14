@@ -1077,6 +1077,154 @@ export class UpdatePublicProfileResponse extends Message<UpdatePublicProfileResp
 }
 
 /**
+ * @generated from message sttattus.empire.v1.ListMyAuditLogRequest
+ */
+export class ListMyAuditLogRequest extends Message<ListMyAuditLogRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  /**
+   * @generated from field: int32 offset = 2;
+   */
+  offset = 0;
+
+  constructor(data?: PartialMessage<ListMyAuditLogRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListMyAuditLogRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyAuditLogRequest {
+    return new ListMyAuditLogRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyAuditLogRequest {
+    return new ListMyAuditLogRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyAuditLogRequest {
+    return new ListMyAuditLogRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyAuditLogRequest | PlainMessage<ListMyAuditLogRequest> | undefined, b: ListMyAuditLogRequest | PlainMessage<ListMyAuditLogRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyAuditLogRequest, a, b);
+  }
+}
+
+/**
+ * MyAuditEntry is one audit_logs row from the caller's perspective.
+ * is_self_initiated is true when the user themselves was the actor;
+ * false means another actor (typically staff) touched their account.
+ *
+ * @generated from message sttattus.empire.v1.MyAuditEntry
+ */
+export class MyAuditEntry extends Message<MyAuditEntry> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  /**
+   * @generated from field: bool is_self_initiated = 3;
+   */
+  isSelfInitiated = false;
+
+  /**
+   * JSON payload (object or null) serialised as a string for the wire —
+   * the app decides whether to render structured fields or hide them.
+   *
+   * @generated from field: string payload_json = 4;
+   */
+  payloadJson = "";
+
+  /**
+   * @generated from field: string created_at = 5;
+   */
+  createdAt = "";
+
+  constructor(data?: PartialMessage<MyAuditEntry>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.MyAuditEntry";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "is_self_initiated", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "payload_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "created_at", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MyAuditEntry {
+    return new MyAuditEntry().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MyAuditEntry {
+    return new MyAuditEntry().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MyAuditEntry {
+    return new MyAuditEntry().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MyAuditEntry | PlainMessage<MyAuditEntry> | undefined, b: MyAuditEntry | PlainMessage<MyAuditEntry> | undefined): boolean {
+    return proto3.util.equals(MyAuditEntry, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListMyAuditLogResponse
+ */
+export class ListMyAuditLogResponse extends Message<ListMyAuditLogResponse> {
+  /**
+   * @generated from field: repeated sttattus.empire.v1.MyAuditEntry entries = 1;
+   */
+  entries: MyAuditEntry[] = [];
+
+  constructor(data?: PartialMessage<ListMyAuditLogResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListMyAuditLogResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entries", kind: "message", T: MyAuditEntry, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyAuditLogResponse {
+    return new ListMyAuditLogResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyAuditLogResponse {
+    return new ListMyAuditLogResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyAuditLogResponse {
+    return new ListMyAuditLogResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyAuditLogResponse | PlainMessage<ListMyAuditLogResponse> | undefined, b: ListMyAuditLogResponse | PlainMessage<ListMyAuditLogResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyAuditLogResponse, a, b);
+  }
+}
+
+/**
  * FriendSummary is the public slice of one friend (or pending invite
  * counterparty). Renders in directory rows + invite cards.
  *

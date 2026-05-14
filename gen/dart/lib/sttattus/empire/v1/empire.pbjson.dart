@@ -323,6 +323,51 @@ final $typed_data.Uint8List updatePublicProfileResponseDescriptor = $convert.bas
     'ChtVcGRhdGVQdWJsaWNQcm9maWxlUmVzcG9uc2USGAoHdGFnbGluZRgBIAEoCVIHdGFnbGluZR'
     'IQCgNiaW8YAiABKAlSA2Jpbw==');
 
+@$core.Deprecated('Use listMyAuditLogRequestDescriptor instead')
+const ListMyAuditLogRequest$json = {
+  '1': 'ListMyAuditLogRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+    {'1': 'offset', '3': 2, '4': 1, '5': 5, '10': 'offset'},
+  ],
+};
+
+/// Descriptor for `ListMyAuditLogRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyAuditLogRequestDescriptor = $convert.base64Decode(
+    'ChVMaXN0TXlBdWRpdExvZ1JlcXVlc3QSFAoFbGltaXQYASABKAVSBWxpbWl0EhYKBm9mZnNldB'
+    'gCIAEoBVIGb2Zmc2V0');
+
+@$core.Deprecated('Use myAuditEntryDescriptor instead')
+const MyAuditEntry$json = {
+  '1': 'MyAuditEntry',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'action', '3': 2, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'is_self_initiated', '3': 3, '4': 1, '5': 8, '10': 'isSelfInitiated'},
+    {'1': 'payload_json', '3': 4, '4': 1, '5': 9, '10': 'payloadJson'},
+    {'1': 'created_at', '3': 5, '4': 1, '5': 9, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `MyAuditEntry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List myAuditEntryDescriptor = $convert.base64Decode(
+    'CgxNeUF1ZGl0RW50cnkSDgoCaWQYASABKAlSAmlkEhYKBmFjdGlvbhgCIAEoCVIGYWN0aW9uEi'
+    'oKEWlzX3NlbGZfaW5pdGlhdGVkGAMgASgIUg9pc1NlbGZJbml0aWF0ZWQSIQoMcGF5bG9hZF9q'
+    'c29uGAQgASgJUgtwYXlsb2FkSnNvbhIdCgpjcmVhdGVkX2F0GAUgASgJUgljcmVhdGVkQXQ=');
+
+@$core.Deprecated('Use listMyAuditLogResponseDescriptor instead')
+const ListMyAuditLogResponse$json = {
+  '1': 'ListMyAuditLogResponse',
+  '2': [
+    {'1': 'entries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.empire.v1.MyAuditEntry', '10': 'entries'},
+  ],
+};
+
+/// Descriptor for `ListMyAuditLogResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyAuditLogResponseDescriptor = $convert.base64Decode(
+    'ChZMaXN0TXlBdWRpdExvZ1Jlc3BvbnNlEjoKB2VudHJpZXMYASADKAsyIC5zdHRhdHR1cy5lbX'
+    'BpcmUudjEuTXlBdWRpdEVudHJ5UgdlbnRyaWVz');
+
 @$core.Deprecated('Use friendSummaryDescriptor instead')
 const FriendSummary$json = {
   '1': 'FriendSummary',
