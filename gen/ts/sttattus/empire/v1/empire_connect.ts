@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetScoreBreakdownRequest, GetScoreBreakdownResponse } from "./empire_pb.js";
+import { GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTierLadderRequest, GetTierLadderResponse } from "./empire_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -22,6 +22,19 @@ export const EmpireService = {
       name: "GetScoreBreakdown",
       I: GetScoreBreakdownRequest,
       O: GetScoreBreakdownResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetTierLadder returns the five-band tier ladder with bounds +
+     * benefits, marking the caller's current band. Bounds are confirmed
+     * against empire_engine.GetTier.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetTierLadder
+     */
+    getTierLadder: {
+      name: "GetTierLadder",
+      I: GetTierLadderRequest,
+      O: GetTierLadderResponse,
       kind: MethodKind.Unary,
     },
   }

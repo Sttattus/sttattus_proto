@@ -162,6 +162,193 @@ func (x *GetScoreBreakdownResponse) GetOperationalComponent() float64 {
 	return 0
 }
 
+type GetTierLadderRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTierLadderRequest) Reset() {
+	*x = GetTierLadderRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTierLadderRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTierLadderRequest) ProtoMessage() {}
+
+func (x *GetTierLadderRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTierLadderRequest.ProtoReflect.Descriptor instead.
+func (*GetTierLadderRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{2}
+}
+
+type TierBand struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// sovereign | platinum | gold | silver | bronze.
+	Code string `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	// Inclusive lower / exclusive upper Sttattus Score bound.
+	LowerBound float64 `protobuf:"fixed64,3,opt,name=lower_bound,json=lowerBound,proto3" json:"lower_bound,omitempty"`
+	UpperBound float64 `protobuf:"fixed64,4,opt,name=upper_bound,json=upperBound,proto3" json:"upper_bound,omitempty"`
+	// Editorial one-liner on what the band unlocks.
+	Benefit string `protobuf:"bytes,5,opt,name=benefit,proto3" json:"benefit,omitempty"`
+	// True for the band the caller currently sits in.
+	Current       bool `protobuf:"varint,6,opt,name=current,proto3" json:"current,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TierBand) Reset() {
+	*x = TierBand{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TierBand) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TierBand) ProtoMessage() {}
+
+func (x *TierBand) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TierBand.ProtoReflect.Descriptor instead.
+func (*TierBand) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *TierBand) GetCode() string {
+	if x != nil {
+		return x.Code
+	}
+	return ""
+}
+
+func (x *TierBand) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *TierBand) GetLowerBound() float64 {
+	if x != nil {
+		return x.LowerBound
+	}
+	return 0
+}
+
+func (x *TierBand) GetUpperBound() float64 {
+	if x != nil {
+		return x.UpperBound
+	}
+	return 0
+}
+
+func (x *TierBand) GetBenefit() string {
+	if x != nil {
+		return x.Benefit
+	}
+	return ""
+}
+
+func (x *TierBand) GetCurrent() bool {
+	if x != nil {
+		return x.Current
+	}
+	return false
+}
+
+type GetTierLadderResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// The five bands, ordered bronze → sovereign.
+	Bands []*TierBand `protobuf:"bytes,1,rep,name=bands,proto3" json:"bands,omitempty"`
+	// The caller's live Sttattus Score, for the progress indicator.
+	SttattusScore float64 `protobuf:"fixed64,2,opt,name=sttattus_score,json=sttattusScore,proto3" json:"sttattus_score,omitempty"`
+	// The caller's current tier code.
+	CurrentTier   string `protobuf:"bytes,3,opt,name=current_tier,json=currentTier,proto3" json:"current_tier,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTierLadderResponse) Reset() {
+	*x = GetTierLadderResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTierLadderResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTierLadderResponse) ProtoMessage() {}
+
+func (x *GetTierLadderResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTierLadderResponse.ProtoReflect.Descriptor instead.
+func (*GetTierLadderResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *GetTierLadderResponse) GetBands() []*TierBand {
+	if x != nil {
+		return x.Bands
+	}
+	return nil
+}
+
+func (x *GetTierLadderResponse) GetSttattusScore() float64 {
+	if x != nil {
+		return x.SttattusScore
+	}
+	return 0
+}
+
+func (x *GetTierLadderResponse) GetCurrentTier() string {
+	if x != nil {
+		return x.CurrentTier
+	}
+	return ""
+}
+
 var File_sttattus_empire_v1_empire_proto protoreflect.FileDescriptor
 
 const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
@@ -177,9 +364,24 @@ const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\x10wealth_component\x18\x05 \x01(\x01R\x0fwealthComponent\x12#\n" +
 	"\rbio_component\x18\x06 \x01(\x01R\fbioComponent\x12)\n" +
 	"\x10social_component\x18\a \x01(\x01R\x0fsocialComponent\x123\n" +
-	"\x15operational_component\x18\b \x01(\x01R\x14operationalComponent2\x81\x01\n" +
+	"\x15operational_component\x18\b \x01(\x01R\x14operationalComponent\"\x16\n" +
+	"\x14GetTierLadderRequest\"\xa8\x01\n" +
+	"\bTierBand\x12\x12\n" +
+	"\x04code\x18\x01 \x01(\tR\x04code\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1f\n" +
+	"\vlower_bound\x18\x03 \x01(\x01R\n" +
+	"lowerBound\x12\x1f\n" +
+	"\vupper_bound\x18\x04 \x01(\x01R\n" +
+	"upperBound\x12\x18\n" +
+	"\abenefit\x18\x05 \x01(\tR\abenefit\x12\x18\n" +
+	"\acurrent\x18\x06 \x01(\bR\acurrent\"\x95\x01\n" +
+	"\x15GetTierLadderResponse\x122\n" +
+	"\x05bands\x18\x01 \x03(\v2\x1c.sttattus.empire.v1.TierBandR\x05bands\x12%\n" +
+	"\x0esttattus_score\x18\x02 \x01(\x01R\rsttattusScore\x12!\n" +
+	"\fcurrent_tier\x18\x03 \x01(\tR\vcurrentTier2\xe7\x01\n" +
 	"\rEmpireService\x12p\n" +
-	"\x11GetScoreBreakdown\x12,.sttattus.empire.v1.GetScoreBreakdownRequest\x1a-.sttattus.empire.v1.GetScoreBreakdownResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1b\x06proto3"
+	"\x11GetScoreBreakdown\x12,.sttattus.empire.v1.GetScoreBreakdownRequest\x1a-.sttattus.empire.v1.GetScoreBreakdownResponse\x12d\n" +
+	"\rGetTierLadder\x12(.sttattus.empire.v1.GetTierLadderRequest\x1a).sttattus.empire.v1.GetTierLadderResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1b\x06proto3"
 
 var (
 	file_sttattus_empire_v1_empire_proto_rawDescOnce sync.Once
@@ -193,19 +395,25 @@ func file_sttattus_empire_v1_empire_proto_rawDescGZIP() []byte {
 	return file_sttattus_empire_v1_empire_proto_rawDescData
 }
 
-var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_sttattus_empire_v1_empire_proto_goTypes = []any{
 	(*GetScoreBreakdownRequest)(nil),  // 0: sttattus.empire.v1.GetScoreBreakdownRequest
 	(*GetScoreBreakdownResponse)(nil), // 1: sttattus.empire.v1.GetScoreBreakdownResponse
+	(*GetTierLadderRequest)(nil),      // 2: sttattus.empire.v1.GetTierLadderRequest
+	(*TierBand)(nil),                  // 3: sttattus.empire.v1.TierBand
+	(*GetTierLadderResponse)(nil),     // 4: sttattus.empire.v1.GetTierLadderResponse
 }
 var file_sttattus_empire_v1_empire_proto_depIdxs = []int32{
-	0, // 0: sttattus.empire.v1.EmpireService.GetScoreBreakdown:input_type -> sttattus.empire.v1.GetScoreBreakdownRequest
-	1, // 1: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	3, // 0: sttattus.empire.v1.GetTierLadderResponse.bands:type_name -> sttattus.empire.v1.TierBand
+	0, // 1: sttattus.empire.v1.EmpireService.GetScoreBreakdown:input_type -> sttattus.empire.v1.GetScoreBreakdownRequest
+	2, // 2: sttattus.empire.v1.EmpireService.GetTierLadder:input_type -> sttattus.empire.v1.GetTierLadderRequest
+	1, // 3: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
+	4, // 4: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
+	3, // [3:5] is the sub-list for method output_type
+	1, // [1:3] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_empire_v1_empire_proto_init() }
@@ -219,7 +427,7 @@ func file_sttattus_empire_v1_empire_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_empire_v1_empire_proto_rawDesc), len(file_sttattus_empire_v1_empire_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

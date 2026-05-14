@@ -124,3 +124,164 @@ export class GetScoreBreakdownResponse extends Message<GetScoreBreakdownResponse
   }
 }
 
+/**
+ * @generated from message sttattus.empire.v1.GetTierLadderRequest
+ */
+export class GetTierLadderRequest extends Message<GetTierLadderRequest> {
+  constructor(data?: PartialMessage<GetTierLadderRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.GetTierLadderRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTierLadderRequest {
+    return new GetTierLadderRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTierLadderRequest {
+    return new GetTierLadderRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTierLadderRequest {
+    return new GetTierLadderRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTierLadderRequest | PlainMessage<GetTierLadderRequest> | undefined, b: GetTierLadderRequest | PlainMessage<GetTierLadderRequest> | undefined): boolean {
+    return proto3.util.equals(GetTierLadderRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.TierBand
+ */
+export class TierBand extends Message<TierBand> {
+  /**
+   * sovereign | platinum | gold | silver | bronze.
+   *
+   * @generated from field: string code = 1;
+   */
+  code = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * Inclusive lower / exclusive upper Sttattus Score bound.
+   *
+   * @generated from field: double lower_bound = 3;
+   */
+  lowerBound = 0;
+
+  /**
+   * @generated from field: double upper_bound = 4;
+   */
+  upperBound = 0;
+
+  /**
+   * Editorial one-liner on what the band unlocks.
+   *
+   * @generated from field: string benefit = 5;
+   */
+  benefit = "";
+
+  /**
+   * True for the band the caller currently sits in.
+   *
+   * @generated from field: bool current = 6;
+   */
+  current = false;
+
+  constructor(data?: PartialMessage<TierBand>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.TierBand";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "lower_bound", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "upper_bound", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "benefit", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "current", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TierBand {
+    return new TierBand().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TierBand {
+    return new TierBand().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TierBand {
+    return new TierBand().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TierBand | PlainMessage<TierBand> | undefined, b: TierBand | PlainMessage<TierBand> | undefined): boolean {
+    return proto3.util.equals(TierBand, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.GetTierLadderResponse
+ */
+export class GetTierLadderResponse extends Message<GetTierLadderResponse> {
+  /**
+   * The five bands, ordered bronze → sovereign.
+   *
+   * @generated from field: repeated sttattus.empire.v1.TierBand bands = 1;
+   */
+  bands: TierBand[] = [];
+
+  /**
+   * The caller's live Sttattus Score, for the progress indicator.
+   *
+   * @generated from field: double sttattus_score = 2;
+   */
+  sttattusScore = 0;
+
+  /**
+   * The caller's current tier code.
+   *
+   * @generated from field: string current_tier = 3;
+   */
+  currentTier = "";
+
+  constructor(data?: PartialMessage<GetTierLadderResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.GetTierLadderResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "bands", kind: "message", T: TierBand, repeated: true },
+    { no: 2, name: "sttattus_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "current_tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTierLadderResponse {
+    return new GetTierLadderResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTierLadderResponse {
+    return new GetTierLadderResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTierLadderResponse {
+    return new GetTierLadderResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTierLadderResponse | PlainMessage<GetTierLadderResponse> | undefined, b: GetTierLadderResponse | PlainMessage<GetTierLadderResponse> | undefined): boolean {
+    return proto3.util.equals(GetTierLadderResponse, a, b);
+  }
+}
+

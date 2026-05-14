@@ -48,3 +48,48 @@ final $typed_data.Uint8List getScoreBreakdownResponseDescriptor = $convert.base6
     'xDb21wb25lbnQSMwoVb3BlcmF0aW9uYWxfY29tcG9uZW50GAggASgBUhRvcGVyYXRpb25hbENv'
     'bXBvbmVudA==');
 
+@$core.Deprecated('Use getTierLadderRequestDescriptor instead')
+const GetTierLadderRequest$json = {
+  '1': 'GetTierLadderRequest',
+};
+
+/// Descriptor for `GetTierLadderRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTierLadderRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRUaWVyTGFkZGVyUmVxdWVzdA==');
+
+@$core.Deprecated('Use tierBandDescriptor instead')
+const TierBand$json = {
+  '1': 'TierBand',
+  '2': [
+    {'1': 'code', '3': 1, '4': 1, '5': 9, '10': 'code'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'lower_bound', '3': 3, '4': 1, '5': 1, '10': 'lowerBound'},
+    {'1': 'upper_bound', '3': 4, '4': 1, '5': 1, '10': 'upperBound'},
+    {'1': 'benefit', '3': 5, '4': 1, '5': 9, '10': 'benefit'},
+    {'1': 'current', '3': 6, '4': 1, '5': 8, '10': 'current'},
+  ],
+};
+
+/// Descriptor for `TierBand`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tierBandDescriptor = $convert.base64Decode(
+    'CghUaWVyQmFuZBISCgRjb2RlGAEgASgJUgRjb2RlEhIKBG5hbWUYAiABKAlSBG5hbWUSHwoLbG'
+    '93ZXJfYm91bmQYAyABKAFSCmxvd2VyQm91bmQSHwoLdXBwZXJfYm91bmQYBCABKAFSCnVwcGVy'
+    'Qm91bmQSGAoHYmVuZWZpdBgFIAEoCVIHYmVuZWZpdBIYCgdjdXJyZW50GAYgASgIUgdjdXJyZW'
+    '50');
+
+@$core.Deprecated('Use getTierLadderResponseDescriptor instead')
+const GetTierLadderResponse$json = {
+  '1': 'GetTierLadderResponse',
+  '2': [
+    {'1': 'bands', '3': 1, '4': 3, '5': 11, '6': '.sttattus.empire.v1.TierBand', '10': 'bands'},
+    {'1': 'sttattus_score', '3': 2, '4': 1, '5': 1, '10': 'sttattusScore'},
+    {'1': 'current_tier', '3': 3, '4': 1, '5': 9, '10': 'currentTier'},
+  ],
+};
+
+/// Descriptor for `GetTierLadderResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTierLadderResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRUaWVyTGFkZGVyUmVzcG9uc2USMgoFYmFuZHMYASADKAsyHC5zdHRhdHR1cy5lbXBpcm'
+    'UudjEuVGllckJhbmRSBWJhbmRzEiUKDnN0dGF0dHVzX3Njb3JlGAIgASgBUg1zdHRhdHR1c1Nj'
+    'b3JlEiEKDGN1cnJlbnRfdGllchgDIAEoCVILY3VycmVudFRpZXI=');
+

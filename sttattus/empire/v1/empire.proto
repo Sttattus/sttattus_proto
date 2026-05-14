@@ -34,8 +34,39 @@ message GetScoreBreakdownResponse {
   double operational_component = 8;
 }
 
+// === Tier ladder (P5.3) ===
+
+message GetTierLadderRequest {}
+
+message TierBand {
+  // sovereign | platinum | gold | silver | bronze.
+  string code = 1;
+  string name = 2;
+  // Inclusive lower / exclusive upper Sttattus Score bound.
+  double lower_bound = 3;
+  double upper_bound = 4;
+  // Editorial one-liner on what the band unlocks.
+  string benefit = 5;
+  // True for the band the caller currently sits in.
+  bool current = 6;
+}
+
+message GetTierLadderResponse {
+  // The five bands, ordered bronze → sovereign.
+  repeated TierBand bands = 1;
+  // The caller's live Sttattus Score, for the progress indicator.
+  double sttattus_score = 2;
+  // The caller's current tier code.
+  string current_tier = 3;
+}
+
 service EmpireService {
   // GetScoreBreakdown returns the caller's Sttattus Score with the
   // four weighted-bucket components — the glass-box the audit asks for.
   rpc GetScoreBreakdown(GetScoreBreakdownRequest) returns (GetScoreBreakdownResponse);
+
+  // GetTierLadder returns the five-band tier ladder with bounds +
+  // benefits, marking the caller's current band. Bounds are confirmed
+  // against empire_engine.GetTier.
+  rpc GetTierLadder(GetTierLadderRequest) returns (GetTierLadderResponse);
 }
