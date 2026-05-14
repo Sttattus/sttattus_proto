@@ -181,6 +181,23 @@ class EmpireServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateNotificationPreference, request, options: options);
   }
 
+  /// ListRedemptionItems returns the active redemption catalog —
+  /// points-priced items the member can claim from the wallet.
+  $grpc.ResponseFuture<$0.ListRedemptionItemsResponse> listRedemptionItems($0.ListRedemptionItemsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listRedemptionItems, request, options: options);
+  }
+
+  /// RedeemItem charges points and opens a redemption_orders row
+  /// (status=requested). Ops confirms via the dashboard.
+  $grpc.ResponseFuture<$0.RedeemItemResponse> redeemItem($0.RedeemItemRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$redeemItem, request, options: options);
+  }
+
+  /// ListMyRedemptions returns the caller's redemption history.
+  $grpc.ResponseFuture<$0.ListMyRedemptionsResponse> listMyRedemptions($0.ListMyRedemptionsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyRedemptions, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getScoreBreakdown = $grpc.ClientMethod<$0.GetScoreBreakdownRequest, $0.GetScoreBreakdownResponse>(
@@ -279,6 +296,18 @@ class EmpireServiceClient extends $grpc.Client {
       '/sttattus.empire.v1.EmpireService/UpdateNotificationPreference',
       ($0.UpdateNotificationPreferenceRequest value) => value.writeToBuffer(),
       $0.UpdateNotificationPreferenceResponse.fromBuffer);
+  static final _$listRedemptionItems = $grpc.ClientMethod<$0.ListRedemptionItemsRequest, $0.ListRedemptionItemsResponse>(
+      '/sttattus.empire.v1.EmpireService/ListRedemptionItems',
+      ($0.ListRedemptionItemsRequest value) => value.writeToBuffer(),
+      $0.ListRedemptionItemsResponse.fromBuffer);
+  static final _$redeemItem = $grpc.ClientMethod<$0.RedeemItemRequest, $0.RedeemItemResponse>(
+      '/sttattus.empire.v1.EmpireService/RedeemItem',
+      ($0.RedeemItemRequest value) => value.writeToBuffer(),
+      $0.RedeemItemResponse.fromBuffer);
+  static final _$listMyRedemptions = $grpc.ClientMethod<$0.ListMyRedemptionsRequest, $0.ListMyRedemptionsResponse>(
+      '/sttattus.empire.v1.EmpireService/ListMyRedemptions',
+      ($0.ListMyRedemptionsRequest value) => value.writeToBuffer(),
+      $0.ListMyRedemptionsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.empire.v1.EmpireService')
@@ -454,6 +483,27 @@ abstract class EmpireServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UpdateNotificationPreferenceRequest.fromBuffer(value),
         ($0.UpdateNotificationPreferenceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListRedemptionItemsRequest, $0.ListRedemptionItemsResponse>(
+        'ListRedemptionItems',
+        listRedemptionItems_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListRedemptionItemsRequest.fromBuffer(value),
+        ($0.ListRedemptionItemsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RedeemItemRequest, $0.RedeemItemResponse>(
+        'RedeemItem',
+        redeemItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RedeemItemRequest.fromBuffer(value),
+        ($0.RedeemItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyRedemptionsRequest, $0.ListMyRedemptionsResponse>(
+        'ListMyRedemptions',
+        listMyRedemptions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyRedemptionsRequest.fromBuffer(value),
+        ($0.ListMyRedemptionsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetScoreBreakdownResponse> getScoreBreakdown_Pre($grpc.ServiceCall $call, $async.Future<$0.GetScoreBreakdownRequest> $request) async {
@@ -599,5 +649,23 @@ abstract class EmpireServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.UpdateNotificationPreferenceResponse> updateNotificationPreference($grpc.ServiceCall call, $0.UpdateNotificationPreferenceRequest request);
+
+  $async.Future<$0.ListRedemptionItemsResponse> listRedemptionItems_Pre($grpc.ServiceCall $call, $async.Future<$0.ListRedemptionItemsRequest> $request) async {
+    return listRedemptionItems($call, await $request);
+  }
+
+  $async.Future<$0.ListRedemptionItemsResponse> listRedemptionItems($grpc.ServiceCall call, $0.ListRedemptionItemsRequest request);
+
+  $async.Future<$0.RedeemItemResponse> redeemItem_Pre($grpc.ServiceCall $call, $async.Future<$0.RedeemItemRequest> $request) async {
+    return redeemItem($call, await $request);
+  }
+
+  $async.Future<$0.RedeemItemResponse> redeemItem($grpc.ServiceCall call, $0.RedeemItemRequest request);
+
+  $async.Future<$0.ListMyRedemptionsResponse> listMyRedemptions_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyRedemptionsRequest> $request) async {
+    return listMyRedemptions($call, await $request);
+  }
+
+  $async.Future<$0.ListMyRedemptionsResponse> listMyRedemptions($grpc.ServiceCall call, $0.ListMyRedemptionsRequest request);
 
 }

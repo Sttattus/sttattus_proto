@@ -1441,6 +1441,539 @@ class UpdatePublicProfileResponse extends $pb.GeneratedMessage {
   void clearBio() => $_clearField(2);
 }
 
+class RedemptionItem extends $pb.GeneratedMessage {
+  factory RedemptionItem({
+    $core.String? id,
+    $core.String? title,
+    $core.String? description,
+    $core.String? category,
+    $core.int? pointCost,
+    $core.String? minTier,
+    $core.String? heroUrl,
+    $core.int? stock,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (title != null) result.title = title;
+    if (description != null) result.description = description;
+    if (category != null) result.category = category;
+    if (pointCost != null) result.pointCost = pointCost;
+    if (minTier != null) result.minTier = minTier;
+    if (heroUrl != null) result.heroUrl = heroUrl;
+    if (stock != null) result.stock = stock;
+    return result;
+  }
+
+  RedemptionItem._();
+
+  factory RedemptionItem.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RedemptionItem.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RedemptionItem', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOS(4, _omitFieldNames ? '' : 'category')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'pointCost', $pb.PbFieldType.O3)
+    ..aOS(6, _omitFieldNames ? '' : 'minTier')
+    ..aOS(7, _omitFieldNames ? '' : 'heroUrl')
+    ..a<$core.int>(8, _omitFieldNames ? '' : 'stock', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RedemptionItem clone() => RedemptionItem()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RedemptionItem copyWith(void Function(RedemptionItem) updates) => super.copyWith((message) => updates(message as RedemptionItem)) as RedemptionItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RedemptionItem create() => RedemptionItem._();
+  @$core.override
+  RedemptionItem createEmptyInstance() => create();
+  static $pb.PbList<RedemptionItem> createRepeated() => $pb.PbList<RedemptionItem>();
+  @$core.pragma('dart2js:noInline')
+  static RedemptionItem getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RedemptionItem>(create);
+  static RedemptionItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get category => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set category($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCategory() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCategory() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get pointCost => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set pointCost($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPointCost() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPointCost() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get minTier => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set minTier($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMinTier() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMinTier() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get heroUrl => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set heroUrl($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasHeroUrl() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearHeroUrl() => $_clearField(7);
+
+  /// -1 = unlimited; 0+ = stock remaining.
+  @$pb.TagNumber(8)
+  $core.int get stock => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set stock($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasStock() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearStock() => $_clearField(8);
+}
+
+class ListRedemptionItemsRequest extends $pb.GeneratedMessage {
+  factory ListRedemptionItemsRequest() => create();
+
+  ListRedemptionItemsRequest._();
+
+  factory ListRedemptionItemsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListRedemptionItemsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRedemptionItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRedemptionItemsRequest clone() => ListRedemptionItemsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRedemptionItemsRequest copyWith(void Function(ListRedemptionItemsRequest) updates) => super.copyWith((message) => updates(message as ListRedemptionItemsRequest)) as ListRedemptionItemsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRedemptionItemsRequest create() => ListRedemptionItemsRequest._();
+  @$core.override
+  ListRedemptionItemsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListRedemptionItemsRequest> createRepeated() => $pb.PbList<ListRedemptionItemsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListRedemptionItemsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRedemptionItemsRequest>(create);
+  static ListRedemptionItemsRequest? _defaultInstance;
+}
+
+class ListRedemptionItemsResponse extends $pb.GeneratedMessage {
+  factory ListRedemptionItemsResponse({
+    $core.Iterable<RedemptionItem>? items,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    return result;
+  }
+
+  ListRedemptionItemsResponse._();
+
+  factory ListRedemptionItemsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListRedemptionItemsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRedemptionItemsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..pc<RedemptionItem>(1, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: RedemptionItem.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRedemptionItemsResponse clone() => ListRedemptionItemsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRedemptionItemsResponse copyWith(void Function(ListRedemptionItemsResponse) updates) => super.copyWith((message) => updates(message as ListRedemptionItemsResponse)) as ListRedemptionItemsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRedemptionItemsResponse create() => ListRedemptionItemsResponse._();
+  @$core.override
+  ListRedemptionItemsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListRedemptionItemsResponse> createRepeated() => $pb.PbList<ListRedemptionItemsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListRedemptionItemsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRedemptionItemsResponse>(create);
+  static ListRedemptionItemsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<RedemptionItem> get items => $_getList(0);
+}
+
+class RedeemItemRequest extends $pb.GeneratedMessage {
+  factory RedeemItemRequest({
+    $core.String? itemId,
+    $core.String? notes,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (notes != null) result.notes = notes;
+    return result;
+  }
+
+  RedeemItemRequest._();
+
+  factory RedeemItemRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RedeemItemRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RedeemItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'notes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RedeemItemRequest clone() => RedeemItemRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RedeemItemRequest copyWith(void Function(RedeemItemRequest) updates) => super.copyWith((message) => updates(message as RedeemItemRequest)) as RedeemItemRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RedeemItemRequest create() => RedeemItemRequest._();
+  @$core.override
+  RedeemItemRequest createEmptyInstance() => create();
+  static $pb.PbList<RedeemItemRequest> createRepeated() => $pb.PbList<RedeemItemRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RedeemItemRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RedeemItemRequest>(create);
+  static RedeemItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get notes => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set notes($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNotes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNotes() => $_clearField(2);
+}
+
+class RedeemItemResponse extends $pb.GeneratedMessage {
+  factory RedeemItemResponse({
+    $core.String? orderId,
+    $core.int? pointCostCharged,
+  }) {
+    final result = create();
+    if (orderId != null) result.orderId = orderId;
+    if (pointCostCharged != null) result.pointCostCharged = pointCostCharged;
+    return result;
+  }
+
+  RedeemItemResponse._();
+
+  factory RedeemItemResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RedeemItemResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RedeemItemResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orderId')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'pointCostCharged', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RedeemItemResponse clone() => RedeemItemResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RedeemItemResponse copyWith(void Function(RedeemItemResponse) updates) => super.copyWith((message) => updates(message as RedeemItemResponse)) as RedeemItemResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RedeemItemResponse create() => RedeemItemResponse._();
+  @$core.override
+  RedeemItemResponse createEmptyInstance() => create();
+  static $pb.PbList<RedeemItemResponse> createRepeated() => $pb.PbList<RedeemItemResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RedeemItemResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RedeemItemResponse>(create);
+  static RedeemItemResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orderId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orderId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrderId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrderId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get pointCostCharged => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set pointCostCharged($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPointCostCharged() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPointCostCharged() => $_clearField(2);
+}
+
+class RedemptionOrderSummary extends $pb.GeneratedMessage {
+  factory RedemptionOrderSummary({
+    $core.String? id,
+    $core.String? status,
+    $core.int? pointCost,
+    $core.String? notes,
+    $core.String? createdAt,
+    $core.String? itemTitle,
+    $core.String? itemCategory,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (status != null) result.status = status;
+    if (pointCost != null) result.pointCost = pointCost;
+    if (notes != null) result.notes = notes;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (itemTitle != null) result.itemTitle = itemTitle;
+    if (itemCategory != null) result.itemCategory = itemCategory;
+    return result;
+  }
+
+  RedemptionOrderSummary._();
+
+  factory RedemptionOrderSummary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RedemptionOrderSummary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RedemptionOrderSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'pointCost', $pb.PbFieldType.O3)
+    ..aOS(4, _omitFieldNames ? '' : 'notes')
+    ..aOS(5, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(6, _omitFieldNames ? '' : 'itemTitle')
+    ..aOS(7, _omitFieldNames ? '' : 'itemCategory')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RedemptionOrderSummary clone() => RedemptionOrderSummary()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RedemptionOrderSummary copyWith(void Function(RedemptionOrderSummary) updates) => super.copyWith((message) => updates(message as RedemptionOrderSummary)) as RedemptionOrderSummary;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RedemptionOrderSummary create() => RedemptionOrderSummary._();
+  @$core.override
+  RedemptionOrderSummary createEmptyInstance() => create();
+  static $pb.PbList<RedemptionOrderSummary> createRepeated() => $pb.PbList<RedemptionOrderSummary>();
+  @$core.pragma('dart2js:noInline')
+  static RedemptionOrderSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RedemptionOrderSummary>(create);
+  static RedemptionOrderSummary? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get pointCost => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set pointCost($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPointCost() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPointCost() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get notes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set notes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNotes() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get createdAt => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set createdAt($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedAt() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get itemTitle => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set itemTitle($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasItemTitle() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearItemTitle() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get itemCategory => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set itemCategory($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasItemCategory() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearItemCategory() => $_clearField(7);
+}
+
+class ListMyRedemptionsRequest extends $pb.GeneratedMessage {
+  factory ListMyRedemptionsRequest({
+    $core.int? limit,
+    $core.int? offset,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    if (offset != null) result.offset = offset;
+    return result;
+  }
+
+  ListMyRedemptionsRequest._();
+
+  factory ListMyRedemptionsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyRedemptionsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyRedemptionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'offset', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyRedemptionsRequest clone() => ListMyRedemptionsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyRedemptionsRequest copyWith(void Function(ListMyRedemptionsRequest) updates) => super.copyWith((message) => updates(message as ListMyRedemptionsRequest)) as ListMyRedemptionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyRedemptionsRequest create() => ListMyRedemptionsRequest._();
+  @$core.override
+  ListMyRedemptionsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyRedemptionsRequest> createRepeated() => $pb.PbList<ListMyRedemptionsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyRedemptionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyRedemptionsRequest>(create);
+  static ListMyRedemptionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get offset => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set offset($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOffset() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOffset() => $_clearField(2);
+}
+
+class ListMyRedemptionsResponse extends $pb.GeneratedMessage {
+  factory ListMyRedemptionsResponse({
+    $core.Iterable<RedemptionOrderSummary>? orders,
+  }) {
+    final result = create();
+    if (orders != null) result.orders.addAll(orders);
+    return result;
+  }
+
+  ListMyRedemptionsResponse._();
+
+  factory ListMyRedemptionsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyRedemptionsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyRedemptionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..pc<RedemptionOrderSummary>(1, _omitFieldNames ? '' : 'orders', $pb.PbFieldType.PM, subBuilder: RedemptionOrderSummary.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyRedemptionsResponse clone() => ListMyRedemptionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyRedemptionsResponse copyWith(void Function(ListMyRedemptionsResponse) updates) => super.copyWith((message) => updates(message as ListMyRedemptionsResponse)) as ListMyRedemptionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyRedemptionsResponse create() => ListMyRedemptionsResponse._();
+  @$core.override
+  ListMyRedemptionsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyRedemptionsResponse> createRepeated() => $pb.PbList<ListMyRedemptionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyRedemptionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyRedemptionsResponse>(create);
+  static ListMyRedemptionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<RedemptionOrderSummary> get orders => $_getList(0);
+}
+
 class RegisterDeviceTokenRequest extends $pb.GeneratedMessage {
   factory RegisterDeviceTokenRequest({
     $core.String? platform,

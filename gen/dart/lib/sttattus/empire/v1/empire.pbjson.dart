@@ -323,6 +323,127 @@ final $typed_data.Uint8List updatePublicProfileResponseDescriptor = $convert.bas
     'ChtVcGRhdGVQdWJsaWNQcm9maWxlUmVzcG9uc2USGAoHdGFnbGluZRgBIAEoCVIHdGFnbGluZR'
     'IQCgNiaW8YAiABKAlSA2Jpbw==');
 
+@$core.Deprecated('Use redemptionItemDescriptor instead')
+const RedemptionItem$json = {
+  '1': 'RedemptionItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'category', '3': 4, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'point_cost', '3': 5, '4': 1, '5': 5, '10': 'pointCost'},
+    {'1': 'min_tier', '3': 6, '4': 1, '5': 9, '10': 'minTier'},
+    {'1': 'hero_url', '3': 7, '4': 1, '5': 9, '10': 'heroUrl'},
+    {'1': 'stock', '3': 8, '4': 1, '5': 5, '10': 'stock'},
+  ],
+};
+
+/// Descriptor for `RedemptionItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List redemptionItemDescriptor = $convert.base64Decode(
+    'Cg5SZWRlbXB0aW9uSXRlbRIOCgJpZBgBIAEoCVICaWQSFAoFdGl0bGUYAiABKAlSBXRpdGxlEi'
+    'AKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIaCghjYXRlZ29yeRgEIAEoCVIIY2F0'
+    'ZWdvcnkSHQoKcG9pbnRfY29zdBgFIAEoBVIJcG9pbnRDb3N0EhkKCG1pbl90aWVyGAYgASgJUg'
+    'dtaW5UaWVyEhkKCGhlcm9fdXJsGAcgASgJUgdoZXJvVXJsEhQKBXN0b2NrGAggASgFUgVzdG9j'
+    'aw==');
+
+@$core.Deprecated('Use listRedemptionItemsRequestDescriptor instead')
+const ListRedemptionItemsRequest$json = {
+  '1': 'ListRedemptionItemsRequest',
+};
+
+/// Descriptor for `ListRedemptionItemsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRedemptionItemsRequestDescriptor = $convert.base64Decode(
+    'ChpMaXN0UmVkZW1wdGlvbkl0ZW1zUmVxdWVzdA==');
+
+@$core.Deprecated('Use listRedemptionItemsResponseDescriptor instead')
+const ListRedemptionItemsResponse$json = {
+  '1': 'ListRedemptionItemsResponse',
+  '2': [
+    {'1': 'items', '3': 1, '4': 3, '5': 11, '6': '.sttattus.empire.v1.RedemptionItem', '10': 'items'},
+  ],
+};
+
+/// Descriptor for `ListRedemptionItemsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRedemptionItemsResponseDescriptor = $convert.base64Decode(
+    'ChtMaXN0UmVkZW1wdGlvbkl0ZW1zUmVzcG9uc2USOAoFaXRlbXMYASADKAsyIi5zdHRhdHR1cy'
+    '5lbXBpcmUudjEuUmVkZW1wdGlvbkl0ZW1SBWl0ZW1z');
+
+@$core.Deprecated('Use redeemItemRequestDescriptor instead')
+const RedeemItemRequest$json = {
+  '1': 'RedeemItemRequest',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'notes', '3': 2, '4': 1, '5': 9, '10': 'notes'},
+  ],
+};
+
+/// Descriptor for `RedeemItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List redeemItemRequestDescriptor = $convert.base64Decode(
+    'ChFSZWRlZW1JdGVtUmVxdWVzdBIXCgdpdGVtX2lkGAEgASgJUgZpdGVtSWQSFAoFbm90ZXMYAi'
+    'ABKAlSBW5vdGVz');
+
+@$core.Deprecated('Use redeemItemResponseDescriptor instead')
+const RedeemItemResponse$json = {
+  '1': 'RedeemItemResponse',
+  '2': [
+    {'1': 'order_id', '3': 1, '4': 1, '5': 9, '10': 'orderId'},
+    {'1': 'point_cost_charged', '3': 2, '4': 1, '5': 5, '10': 'pointCostCharged'},
+  ],
+};
+
+/// Descriptor for `RedeemItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List redeemItemResponseDescriptor = $convert.base64Decode(
+    'ChJSZWRlZW1JdGVtUmVzcG9uc2USGQoIb3JkZXJfaWQYASABKAlSB29yZGVySWQSLAoScG9pbn'
+    'RfY29zdF9jaGFyZ2VkGAIgASgFUhBwb2ludENvc3RDaGFyZ2Vk');
+
+@$core.Deprecated('Use redemptionOrderSummaryDescriptor instead')
+const RedemptionOrderSummary$json = {
+  '1': 'RedemptionOrderSummary',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'point_cost', '3': 3, '4': 1, '5': 5, '10': 'pointCost'},
+    {'1': 'notes', '3': 4, '4': 1, '5': 9, '10': 'notes'},
+    {'1': 'created_at', '3': 5, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'item_title', '3': 6, '4': 1, '5': 9, '10': 'itemTitle'},
+    {'1': 'item_category', '3': 7, '4': 1, '5': 9, '10': 'itemCategory'},
+  ],
+};
+
+/// Descriptor for `RedemptionOrderSummary`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List redemptionOrderSummaryDescriptor = $convert.base64Decode(
+    'ChZSZWRlbXB0aW9uT3JkZXJTdW1tYXJ5Eg4KAmlkGAEgASgJUgJpZBIWCgZzdGF0dXMYAiABKA'
+    'lSBnN0YXR1cxIdCgpwb2ludF9jb3N0GAMgASgFUglwb2ludENvc3QSFAoFbm90ZXMYBCABKAlS'
+    'BW5vdGVzEh0KCmNyZWF0ZWRfYXQYBSABKAlSCWNyZWF0ZWRBdBIdCgppdGVtX3RpdGxlGAYgAS'
+    'gJUglpdGVtVGl0bGUSIwoNaXRlbV9jYXRlZ29yeRgHIAEoCVIMaXRlbUNhdGVnb3J5');
+
+@$core.Deprecated('Use listMyRedemptionsRequestDescriptor instead')
+const ListMyRedemptionsRequest$json = {
+  '1': 'ListMyRedemptionsRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+    {'1': 'offset', '3': 2, '4': 1, '5': 5, '10': 'offset'},
+  ],
+};
+
+/// Descriptor for `ListMyRedemptionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyRedemptionsRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0TXlSZWRlbXB0aW9uc1JlcXVlc3QSFAoFbGltaXQYASABKAVSBWxpbWl0EhYKBm9mZn'
+    'NldBgCIAEoBVIGb2Zmc2V0');
+
+@$core.Deprecated('Use listMyRedemptionsResponseDescriptor instead')
+const ListMyRedemptionsResponse$json = {
+  '1': 'ListMyRedemptionsResponse',
+  '2': [
+    {'1': 'orders', '3': 1, '4': 3, '5': 11, '6': '.sttattus.empire.v1.RedemptionOrderSummary', '10': 'orders'},
+  ],
+};
+
+/// Descriptor for `ListMyRedemptionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyRedemptionsResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0TXlSZWRlbXB0aW9uc1Jlc3BvbnNlEkIKBm9yZGVycxgBIAMoCzIqLnN0dGF0dHVzLm'
+    'VtcGlyZS52MS5SZWRlbXB0aW9uT3JkZXJTdW1tYXJ5UgZvcmRlcnM=');
+
 @$core.Deprecated('Use registerDeviceTokenRequestDescriptor instead')
 const RegisterDeviceTokenRequest$json = {
   '1': 'RegisterDeviceTokenRequest',

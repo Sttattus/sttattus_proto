@@ -43,6 +43,9 @@ const (
 	EmpireService_UnregisterDeviceToken_FullMethodName        = "/sttattus.empire.v1.EmpireService/UnregisterDeviceToken"
 	EmpireService_ListNotificationPreferences_FullMethodName  = "/sttattus.empire.v1.EmpireService/ListNotificationPreferences"
 	EmpireService_UpdateNotificationPreference_FullMethodName = "/sttattus.empire.v1.EmpireService/UpdateNotificationPreference"
+	EmpireService_ListRedemptionItems_FullMethodName          = "/sttattus.empire.v1.EmpireService/ListRedemptionItems"
+	EmpireService_RedeemItem_FullMethodName                   = "/sttattus.empire.v1.EmpireService/RedeemItem"
+	EmpireService_ListMyRedemptions_FullMethodName            = "/sttattus.empire.v1.EmpireService/ListMyRedemptions"
 )
 
 // EmpireServiceClient is the client API for EmpireService service.
@@ -126,6 +129,14 @@ type EmpireServiceClient interface {
 	ListNotificationPreferences(ctx context.Context, in *ListNotificationPreferencesRequest, opts ...grpc.CallOption) (*ListNotificationPreferencesResponse, error)
 	// UpdateNotificationPreference upserts one channel's preference.
 	UpdateNotificationPreference(ctx context.Context, in *UpdateNotificationPreferenceRequest, opts ...grpc.CallOption) (*UpdateNotificationPreferenceResponse, error)
+	// ListRedemptionItems returns the active redemption catalog —
+	// points-priced items the member can claim from the wallet.
+	ListRedemptionItems(ctx context.Context, in *ListRedemptionItemsRequest, opts ...grpc.CallOption) (*ListRedemptionItemsResponse, error)
+	// RedeemItem charges points and opens a redemption_orders row
+	// (status=requested). Ops confirms via the dashboard.
+	RedeemItem(ctx context.Context, in *RedeemItemRequest, opts ...grpc.CallOption) (*RedeemItemResponse, error)
+	// ListMyRedemptions returns the caller's redemption history.
+	ListMyRedemptions(ctx context.Context, in *ListMyRedemptionsRequest, opts ...grpc.CallOption) (*ListMyRedemptionsResponse, error)
 }
 
 type empireServiceClient struct {
@@ -376,6 +387,36 @@ func (c *empireServiceClient) UpdateNotificationPreference(ctx context.Context, 
 	return out, nil
 }
 
+func (c *empireServiceClient) ListRedemptionItems(ctx context.Context, in *ListRedemptionItemsRequest, opts ...grpc.CallOption) (*ListRedemptionItemsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListRedemptionItemsResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ListRedemptionItems_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) RedeemItem(ctx context.Context, in *RedeemItemRequest, opts ...grpc.CallOption) (*RedeemItemResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RedeemItemResponse)
+	err := c.cc.Invoke(ctx, EmpireService_RedeemItem_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ListMyRedemptions(ctx context.Context, in *ListMyRedemptionsRequest, opts ...grpc.CallOption) (*ListMyRedemptionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyRedemptionsResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ListMyRedemptions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmpireServiceServer is the server API for EmpireService service.
 // All implementations must embed UnimplementedEmpireServiceServer
 // for forward compatibility.
@@ -457,6 +498,14 @@ type EmpireServiceServer interface {
 	ListNotificationPreferences(context.Context, *ListNotificationPreferencesRequest) (*ListNotificationPreferencesResponse, error)
 	// UpdateNotificationPreference upserts one channel's preference.
 	UpdateNotificationPreference(context.Context, *UpdateNotificationPreferenceRequest) (*UpdateNotificationPreferenceResponse, error)
+	// ListRedemptionItems returns the active redemption catalog —
+	// points-priced items the member can claim from the wallet.
+	ListRedemptionItems(context.Context, *ListRedemptionItemsRequest) (*ListRedemptionItemsResponse, error)
+	// RedeemItem charges points and opens a redemption_orders row
+	// (status=requested). Ops confirms via the dashboard.
+	RedeemItem(context.Context, *RedeemItemRequest) (*RedeemItemResponse, error)
+	// ListMyRedemptions returns the caller's redemption history.
+	ListMyRedemptions(context.Context, *ListMyRedemptionsRequest) (*ListMyRedemptionsResponse, error)
 	mustEmbedUnimplementedEmpireServiceServer()
 }
 
@@ -538,6 +587,15 @@ func (UnimplementedEmpireServiceServer) ListNotificationPreferences(context.Cont
 }
 func (UnimplementedEmpireServiceServer) UpdateNotificationPreference(context.Context, *UpdateNotificationPreferenceRequest) (*UpdateNotificationPreferenceResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method UpdateNotificationPreference not implemented")
+}
+func (UnimplementedEmpireServiceServer) ListRedemptionItems(context.Context, *ListRedemptionItemsRequest) (*ListRedemptionItemsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListRedemptionItems not implemented")
+}
+func (UnimplementedEmpireServiceServer) RedeemItem(context.Context, *RedeemItemRequest) (*RedeemItemResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RedeemItem not implemented")
+}
+func (UnimplementedEmpireServiceServer) ListMyRedemptions(context.Context, *ListMyRedemptionsRequest) (*ListMyRedemptionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyRedemptions not implemented")
 }
 func (UnimplementedEmpireServiceServer) mustEmbedUnimplementedEmpireServiceServer() {}
 func (UnimplementedEmpireServiceServer) testEmbeddedByValue()                       {}
@@ -992,6 +1050,60 @@ func _EmpireService_UpdateNotificationPreference_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmpireService_ListRedemptionItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRedemptionItemsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ListRedemptionItems(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ListRedemptionItems_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ListRedemptionItems(ctx, req.(*ListRedemptionItemsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_RedeemItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RedeemItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).RedeemItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_RedeemItem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).RedeemItem(ctx, req.(*RedeemItemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ListMyRedemptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyRedemptionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ListMyRedemptions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ListMyRedemptions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ListMyRedemptions(ctx, req.(*ListMyRedemptionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EmpireService_ServiceDesc is the grpc.ServiceDesc for EmpireService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1094,6 +1206,18 @@ var EmpireService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateNotificationPreference",
 			Handler:    _EmpireService_UpdateNotificationPreference_Handler,
+		},
+		{
+			MethodName: "ListRedemptionItems",
+			Handler:    _EmpireService_ListRedemptionItems_Handler,
+		},
+		{
+			MethodName: "RedeemItem",
+			Handler:    _EmpireService_RedeemItem_Handler,
+		},
+		{
+			MethodName: "ListMyRedemptions",
+			Handler:    _EmpireService_ListMyRedemptions_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

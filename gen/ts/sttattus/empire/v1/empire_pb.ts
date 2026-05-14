@@ -1077,6 +1077,394 @@ export class UpdatePublicProfileResponse extends Message<UpdatePublicProfileResp
 }
 
 /**
+ * @generated from message sttattus.empire.v1.RedemptionItem
+ */
+export class RedemptionItem extends Message<RedemptionItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string description = 3;
+   */
+  description = "";
+
+  /**
+   * @generated from field: string category = 4;
+   */
+  category = "";
+
+  /**
+   * @generated from field: int32 point_cost = 5;
+   */
+  pointCost = 0;
+
+  /**
+   * @generated from field: string min_tier = 6;
+   */
+  minTier = "";
+
+  /**
+   * @generated from field: string hero_url = 7;
+   */
+  heroUrl = "";
+
+  /**
+   * -1 = unlimited; 0+ = stock remaining.
+   *
+   * @generated from field: int32 stock = 8;
+   */
+  stock = 0;
+
+  constructor(data?: PartialMessage<RedemptionItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.RedemptionItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "point_cost", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "min_tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "hero_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "stock", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RedemptionItem {
+    return new RedemptionItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RedemptionItem {
+    return new RedemptionItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RedemptionItem {
+    return new RedemptionItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RedemptionItem | PlainMessage<RedemptionItem> | undefined, b: RedemptionItem | PlainMessage<RedemptionItem> | undefined): boolean {
+    return proto3.util.equals(RedemptionItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListRedemptionItemsRequest
+ */
+export class ListRedemptionItemsRequest extends Message<ListRedemptionItemsRequest> {
+  constructor(data?: PartialMessage<ListRedemptionItemsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListRedemptionItemsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListRedemptionItemsRequest {
+    return new ListRedemptionItemsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListRedemptionItemsRequest {
+    return new ListRedemptionItemsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListRedemptionItemsRequest {
+    return new ListRedemptionItemsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListRedemptionItemsRequest | PlainMessage<ListRedemptionItemsRequest> | undefined, b: ListRedemptionItemsRequest | PlainMessage<ListRedemptionItemsRequest> | undefined): boolean {
+    return proto3.util.equals(ListRedemptionItemsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListRedemptionItemsResponse
+ */
+export class ListRedemptionItemsResponse extends Message<ListRedemptionItemsResponse> {
+  /**
+   * @generated from field: repeated sttattus.empire.v1.RedemptionItem items = 1;
+   */
+  items: RedemptionItem[] = [];
+
+  constructor(data?: PartialMessage<ListRedemptionItemsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListRedemptionItemsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "items", kind: "message", T: RedemptionItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListRedemptionItemsResponse {
+    return new ListRedemptionItemsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListRedemptionItemsResponse {
+    return new ListRedemptionItemsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListRedemptionItemsResponse {
+    return new ListRedemptionItemsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListRedemptionItemsResponse | PlainMessage<ListRedemptionItemsResponse> | undefined, b: ListRedemptionItemsResponse | PlainMessage<ListRedemptionItemsResponse> | undefined): boolean {
+    return proto3.util.equals(ListRedemptionItemsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.RedeemItemRequest
+ */
+export class RedeemItemRequest extends Message<RedeemItemRequest> {
+  /**
+   * @generated from field: string item_id = 1;
+   */
+  itemId = "";
+
+  /**
+   * @generated from field: string notes = 2;
+   */
+  notes = "";
+
+  constructor(data?: PartialMessage<RedeemItemRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.RedeemItemRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RedeemItemRequest {
+    return new RedeemItemRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RedeemItemRequest {
+    return new RedeemItemRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RedeemItemRequest {
+    return new RedeemItemRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RedeemItemRequest | PlainMessage<RedeemItemRequest> | undefined, b: RedeemItemRequest | PlainMessage<RedeemItemRequest> | undefined): boolean {
+    return proto3.util.equals(RedeemItemRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.RedeemItemResponse
+ */
+export class RedeemItemResponse extends Message<RedeemItemResponse> {
+  /**
+   * @generated from field: string order_id = 1;
+   */
+  orderId = "";
+
+  /**
+   * @generated from field: int32 point_cost_charged = 2;
+   */
+  pointCostCharged = 0;
+
+  constructor(data?: PartialMessage<RedeemItemResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.RedeemItemResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "order_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "point_cost_charged", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RedeemItemResponse {
+    return new RedeemItemResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RedeemItemResponse {
+    return new RedeemItemResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RedeemItemResponse {
+    return new RedeemItemResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RedeemItemResponse | PlainMessage<RedeemItemResponse> | undefined, b: RedeemItemResponse | PlainMessage<RedeemItemResponse> | undefined): boolean {
+    return proto3.util.equals(RedeemItemResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.RedemptionOrderSummary
+ */
+export class RedemptionOrderSummary extends Message<RedemptionOrderSummary> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int32 point_cost = 3;
+   */
+  pointCost = 0;
+
+  /**
+   * @generated from field: string notes = 4;
+   */
+  notes = "";
+
+  /**
+   * @generated from field: string created_at = 5;
+   */
+  createdAt = "";
+
+  /**
+   * @generated from field: string item_title = 6;
+   */
+  itemTitle = "";
+
+  /**
+   * @generated from field: string item_category = 7;
+   */
+  itemCategory = "";
+
+  constructor(data?: PartialMessage<RedemptionOrderSummary>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.RedemptionOrderSummary";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "point_cost", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "created_at", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "item_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "item_category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RedemptionOrderSummary {
+    return new RedemptionOrderSummary().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RedemptionOrderSummary {
+    return new RedemptionOrderSummary().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RedemptionOrderSummary {
+    return new RedemptionOrderSummary().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RedemptionOrderSummary | PlainMessage<RedemptionOrderSummary> | undefined, b: RedemptionOrderSummary | PlainMessage<RedemptionOrderSummary> | undefined): boolean {
+    return proto3.util.equals(RedemptionOrderSummary, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListMyRedemptionsRequest
+ */
+export class ListMyRedemptionsRequest extends Message<ListMyRedemptionsRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  /**
+   * @generated from field: int32 offset = 2;
+   */
+  offset = 0;
+
+  constructor(data?: PartialMessage<ListMyRedemptionsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListMyRedemptionsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyRedemptionsRequest {
+    return new ListMyRedemptionsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyRedemptionsRequest {
+    return new ListMyRedemptionsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyRedemptionsRequest {
+    return new ListMyRedemptionsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyRedemptionsRequest | PlainMessage<ListMyRedemptionsRequest> | undefined, b: ListMyRedemptionsRequest | PlainMessage<ListMyRedemptionsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyRedemptionsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListMyRedemptionsResponse
+ */
+export class ListMyRedemptionsResponse extends Message<ListMyRedemptionsResponse> {
+  /**
+   * @generated from field: repeated sttattus.empire.v1.RedemptionOrderSummary orders = 1;
+   */
+  orders: RedemptionOrderSummary[] = [];
+
+  constructor(data?: PartialMessage<ListMyRedemptionsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListMyRedemptionsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "orders", kind: "message", T: RedemptionOrderSummary, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyRedemptionsResponse {
+    return new ListMyRedemptionsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyRedemptionsResponse {
+    return new ListMyRedemptionsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyRedemptionsResponse {
+    return new ListMyRedemptionsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyRedemptionsResponse | PlainMessage<ListMyRedemptionsResponse> | undefined, b: ListMyRedemptionsResponse | PlainMessage<ListMyRedemptionsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyRedemptionsResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.empire.v1.RegisterDeviceTokenRequest
  */
 export class RegisterDeviceTokenRequest extends Message<RegisterDeviceTokenRequest> {

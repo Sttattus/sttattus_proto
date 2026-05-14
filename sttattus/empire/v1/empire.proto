@@ -190,6 +190,55 @@ message UpdatePublicProfileResponse {
   string bio = 2;
 }
 
+// === Redemption catalog (P5.14) ===
+
+message RedemptionItem {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string category = 4;
+  int32 point_cost = 5;
+  string min_tier = 6;
+  string hero_url = 7;
+  // -1 = unlimited; 0+ = stock remaining.
+  int32 stock = 8;
+}
+
+message ListRedemptionItemsRequest {}
+
+message ListRedemptionItemsResponse {
+  repeated RedemptionItem items = 1;
+}
+
+message RedeemItemRequest {
+  string item_id = 1;
+  string notes = 2;
+}
+
+message RedeemItemResponse {
+  string order_id = 1;
+  int32 point_cost_charged = 2;
+}
+
+message RedemptionOrderSummary {
+  string id = 1;
+  string status = 2;
+  int32 point_cost = 3;
+  string notes = 4;
+  string created_at = 5;
+  string item_title = 6;
+  string item_category = 7;
+}
+
+message ListMyRedemptionsRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+}
+
+message ListMyRedemptionsResponse {
+  repeated RedemptionOrderSummary orders = 1;
+}
+
 // === Notifications hub (P5.13) ===
 
 message RegisterDeviceTokenRequest {
@@ -556,4 +605,15 @@ service EmpireService {
 
   // UpdateNotificationPreference upserts one channel's preference.
   rpc UpdateNotificationPreference(UpdateNotificationPreferenceRequest) returns (UpdateNotificationPreferenceResponse);
+
+  // ListRedemptionItems returns the active redemption catalog —
+  // points-priced items the member can claim from the wallet.
+  rpc ListRedemptionItems(ListRedemptionItemsRequest) returns (ListRedemptionItemsResponse);
+
+  // RedeemItem charges points and opens a redemption_orders row
+  // (status=requested). Ops confirms via the dashboard.
+  rpc RedeemItem(RedeemItemRequest) returns (RedeemItemResponse);
+
+  // ListMyRedemptions returns the caller's redemption history.
+  rpc ListMyRedemptions(ListMyRedemptionsRequest) returns (ListMyRedemptionsResponse);
 }

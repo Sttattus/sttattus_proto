@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ClaimHandleRequest, ClaimHandleResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetLatestEditorialDigestRequest, GetLatestEditorialDigestResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListEditorialDigestsRequest, ListEditorialDigestsResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListLoungesRequest, ListLoungesResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, ListNotificationPreferencesRequest, ListNotificationPreferencesResponse, ListUpcomingLoungeEventsRequest, ListUpcomingLoungeEventsResponse, ListUpcomingSalonsRequest, ListUpcomingSalonsResponse, RegisterDeviceTokenRequest, RegisterDeviceTokenResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UnregisterDeviceTokenRequest, UnregisterDeviceTokenResponse, UpdateNotificationPreferenceRequest, UpdateNotificationPreferenceResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse, UpdateSalonRsvpRequest, UpdateSalonRsvpResponse } from "./empire_pb.js";
+import { ClaimHandleRequest, ClaimHandleResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetLatestEditorialDigestRequest, GetLatestEditorialDigestResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListEditorialDigestsRequest, ListEditorialDigestsResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListLoungesRequest, ListLoungesResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, ListMyRedemptionsRequest, ListMyRedemptionsResponse, ListNotificationPreferencesRequest, ListNotificationPreferencesResponse, ListRedemptionItemsRequest, ListRedemptionItemsResponse, ListUpcomingLoungeEventsRequest, ListUpcomingLoungeEventsResponse, ListUpcomingSalonsRequest, ListUpcomingSalonsResponse, RedeemItemRequest, RedeemItemResponse, RegisterDeviceTokenRequest, RegisterDeviceTokenResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UnregisterDeviceTokenRequest, UnregisterDeviceTokenResponse, UpdateNotificationPreferenceRequest, UpdateNotificationPreferenceResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse, UpdateSalonRsvpRequest, UpdateSalonRsvpResponse } from "./empire_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -303,6 +303,41 @@ export const EmpireService = {
       name: "UpdateNotificationPreference",
       I: UpdateNotificationPreferenceRequest,
       O: UpdateNotificationPreferenceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListRedemptionItems returns the active redemption catalog —
+     * points-priced items the member can claim from the wallet.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ListRedemptionItems
+     */
+    listRedemptionItems: {
+      name: "ListRedemptionItems",
+      I: ListRedemptionItemsRequest,
+      O: ListRedemptionItemsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * RedeemItem charges points and opens a redemption_orders row
+     * (status=requested). Ops confirms via the dashboard.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.RedeemItem
+     */
+    redeemItem: {
+      name: "RedeemItem",
+      I: RedeemItemRequest,
+      O: RedeemItemResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListMyRedemptions returns the caller's redemption history.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ListMyRedemptions
+     */
+    listMyRedemptions: {
+      name: "ListMyRedemptions",
+      I: ListMyRedemptionsRequest,
+      O: ListMyRedemptionsResponse,
       kind: MethodKind.Unary,
     },
   }
