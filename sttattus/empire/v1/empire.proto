@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package sttattus.empire.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1";
+
+// EmpireService is the app-facing gateway for the Empire pillar. The
+// Flutter `empire` app calls it; backend_go implements it
+// (internal/service/empire.go), delegating math to the Rust
+// services_rust/empire_engine and hydrating rows from Neon.
+//
+// EmpireEngineService (empire_engine.proto, same package) is the
+// *internal* Rust service this gateway proxies to — separate concern.
+//
+// audits/empire.md §10 Phase 1.
+
+// === Sttattus Score glass-box (P5.2) ===
+
+message GetScoreBreakdownRequest {}
+
+message GetScoreBreakdownResponse {
+  // 0..100 unified composite.
+  double sttattus_score = 1;
+  // sovereign | platinum | gold | silver | bronze.
+  string tier = 2;
+  int32 global_rank = 3;
+  double global_percentile = 4;
+  // Glass-box: the four weighted buckets empire_engine returns. Weights
+  // are wealth 30% / bio 25% / social 20% / operational 25% — published
+  // here so the app can render the exact contribution of each.
+  double wealth_component = 5;
+  double bio_component = 6;
+  double social_component = 7;
+  double operational_component = 8;
+}
+
+service EmpireService {
+  // GetScoreBreakdown returns the caller's Sttattus Score with the
+  // four weighted-bucket components — the glass-box the audit asks for.
+  rpc GetScoreBreakdown(GetScoreBreakdownRequest) returns (GetScoreBreakdownResponse);
+}

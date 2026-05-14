@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+package sttattus.empire.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1";
+
+// EmpireEngine is the Rust service that owns Sttattus's social and
+// economic core: the unified Sttattus Score, the tier ladder, the
+// Sttattus Tax engine, and the points ledger.
+//
+// Implementation: services_rust/empire_engine (port 50065).
+// Audits/services_rust.md §10 Phase 1 item 5.
+
+// === Sttattus Score (12-factor composite) ===
+
+message PillarScores {
+  // Each field is a 0..100 quality signal from one pillar.
+  double forge_exp = 1;            // Forge (workout)
+  double lexicon_eloquence = 2;    // Lexicon
+  double nomad_exploration = 3;    // Nomad
+  double atlas_behavioral = 4;     // Atlas (dating)
+  double vault_wealth = 5;         // Vault
+  double apex_biomarkers = 6;      // Apex
+  double oracle_intelligence = 7;  // Oracle
+  double dominion_estate = 8;      // Dominion
+  double legacy_heritage = 9;      // Legacy
+  double zenith_focus = 10;        // Zenith
+  double onyx_exclusivity = 11;    // Onyx
+  double empire_reputation = 12;   // Empire (this layer itself)
+}
+
+message ComputeSttattusScoreRequest {
+  string user_id = 1;
+  PillarScores pillars = 2;
+}
+
+message ComputeSttattusScoreResponse {
+  // 0..100 final composite.
+  double sttattus_score = 1;
+  // The audit's tier name (sovereign | platinum | gold | silver | bronze).
+  string recommended_tier = 2;
+  // Glass-box: contribution of each weighted bucket.
+  double wealth_component = 3;
+  double bio_component = 4;
+  double social_component = 5;
+  double operational_component = 6;
+}
+
+// === Tier engine ===
+
+message GetTierRequest {
+  double sttattus_score = 1;
+}
+
+message GetTierResponse {
+  string tier = 1;
+  // Lower + upper bounds of this tier, for client UI to render the
+  // progress bar without re-computing the ladder.
+  double tier_lower_bound = 2;
+  double tier_upper_bound = 3;
+}
+
+// === Sttattus Tax (cross-pillar discount fabric) ===
+
+message TaxRule {
+  string rule_id = 1;
+  int32 discount_basis_points = 2; // 0..10000
+  string description = 3;
+  // Optional partner specificity. Empty = generic rule for the tier.
+  string partner_id = 4;
+}
+
+message ComputeTaxRequest {
+  string user_id = 1;
+  string tier = 2;
+  int64 subtotal = 3;       // cents
+  string currency = 4;      // ISO-4217
+  string partner_id = 5;    // optional
+  // Active rules the caller (backend_go) already loaded from
+  // tax_rules. Passing them in keeps empire_engine stateless — the
+  // database stays in one place.
+  repeated TaxRule rules = 6;
+}
+
+message AppliedRule {
+  string rule_id = 1;
+  int32 discount_basis_points = 2;
+  string description = 3;
+}
+
+message ComputeTaxResponse {
+  int64 subtotal = 1;
+  int64 discount = 2;
+  int64 total = 3;
+  string currency = 4;
+  string applied_tier = 5;
+  repeated AppliedRule applied_rules = 6;
+}
+
+// === Points ledger projection ===
+
+message RecordPointsLedgerRequest {
+  string user_id = 1;
+  int64 current_balance = 2;
+  int64 delta = 3;          // may be negative (spend / decay)
+  string reason = 4;
+  // Optional cap; if non-zero the engine clamps the resulting balance
+  // at [0, balance_cap].
+  int64 balance_cap = 5;
+}
+
+message RecordPointsLedgerResponse {
+  int64 new_balance = 1;
+  int64 applied_delta = 2;  // post-clamp
+  bool clamped = 3;
+}
+
+service EmpireEngineService {
+  rpc ComputeSttattusScore(ComputeSttattusScoreRequest) returns (ComputeSttattusScoreResponse);
+  rpc GetTier(GetTierRequest) returns (GetTierResponse);
+  rpc ComputeTax(ComputeTaxRequest) returns (ComputeTaxResponse);
+  rpc RecordPointsLedger(RecordPointsLedgerRequest) returns (RecordPointsLedgerResponse);
+}

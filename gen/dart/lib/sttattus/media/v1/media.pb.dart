@@ -439,12 +439,16 @@ class ResizeRequest extends $pb.GeneratedMessage {
     $core.String? sourceUrl,
     $core.int? maxWidth,
     $core.int? maxHeight,
+    $core.String? uploadUrl,
+    $core.String? publicUrl,
   }) {
     final result = create();
     if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
     if (sourceUrl != null) result.sourceUrl = sourceUrl;
     if (maxWidth != null) result.maxWidth = maxWidth;
     if (maxHeight != null) result.maxHeight = maxHeight;
+    if (uploadUrl != null) result.uploadUrl = uploadUrl;
+    if (publicUrl != null) result.publicUrl = publicUrl;
     return result;
   }
 
@@ -458,6 +462,8 @@ class ResizeRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'sourceUrl')
     ..a<$core.int>(3, _omitFieldNames ? '' : 'maxWidth', $pb.PbFieldType.O3)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'maxHeight', $pb.PbFieldType.O3)
+    ..aOS(5, _omitFieldNames ? '' : 'uploadUrl')
+    ..aOS(6, _omitFieldNames ? '' : 'publicUrl')
     ..hasRequiredFields = false
   ;
 
@@ -513,6 +519,30 @@ class ResizeRequest extends $pb.GeneratedMessage {
   $core.bool hasMaxHeight() => $_has(3);
   @$pb.TagNumber(4)
   void clearMaxHeight() => $_clearField(4);
+
+  /// Pre-signed PUT URL where the resized JPEG is uploaded. Issued by
+  /// backend_go's media service; imageproc only PUTs bytes so credentials
+  /// stay in one place. Phase 2.4.
+  @$pb.TagNumber(5)
+  $core.String get uploadUrl => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set uploadUrl($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasUploadUrl() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearUploadUrl() => $_clearField(5);
+
+  /// The final readable URL the asset will live at after upload (the
+  /// public_url from MediaService.RequestUpload). Echoed back as
+  /// thumbnail_url in the response so callers don't need to derive it.
+  @$pb.TagNumber(6)
+  $core.String get publicUrl => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set publicUrl($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPublicUrl() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPublicUrl() => $_clearField(6);
 }
 
 class ResizeResponse extends $pb.GeneratedMessage {
@@ -520,11 +550,13 @@ class ResizeResponse extends $pb.GeneratedMessage {
     $core.String? thumbnailUrl,
     $core.int? width,
     $core.int? height,
+    $fixnum.Int64? sizeBytes,
   }) {
     final result = create();
     if (thumbnailUrl != null) result.thumbnailUrl = thumbnailUrl;
     if (width != null) result.width = width;
     if (height != null) result.height = height;
+    if (sizeBytes != null) result.sizeBytes = sizeBytes;
     return result;
   }
 
@@ -537,6 +569,7 @@ class ResizeResponse extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'thumbnailUrl')
     ..a<$core.int>(2, _omitFieldNames ? '' : 'width', $pb.PbFieldType.O3)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'height', $pb.PbFieldType.O3)
+    ..aInt64(4, _omitFieldNames ? '' : 'sizeBytes')
     ..hasRequiredFields = false
   ;
 
@@ -583,6 +616,15 @@ class ResizeResponse extends $pb.GeneratedMessage {
   $core.bool hasHeight() => $_has(2);
   @$pb.TagNumber(3)
   void clearHeight() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get sizeBytes => $_getI64(3);
+  @$pb.TagNumber(4)
+  set sizeBytes($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSizeBytes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSizeBytes() => $_clearField(4);
 }
 
 class ExtractDominantColorsRequest extends $pb.GeneratedMessage {

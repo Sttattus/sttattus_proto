@@ -126,6 +126,8 @@ const ResizeRequest$json = {
     {'1': 'source_url', '3': 2, '4': 1, '5': 9, '10': 'sourceUrl'},
     {'1': 'max_width', '3': 3, '4': 1, '5': 5, '10': 'maxWidth'},
     {'1': 'max_height', '3': 4, '4': 1, '5': 5, '10': 'maxHeight'},
+    {'1': 'upload_url', '3': 5, '4': 1, '5': 9, '10': 'uploadUrl'},
+    {'1': 'public_url', '3': 6, '4': 1, '5': 9, '10': 'publicUrl'},
   ],
 };
 
@@ -133,7 +135,8 @@ const ResizeRequest$json = {
 final $typed_data.Uint8List resizeRequestDescriptor = $convert.base64Decode(
     'Cg1SZXNpemVSZXF1ZXN0EiQKDm1lZGlhX2Fzc2V0X2lkGAEgASgJUgxtZWRpYUFzc2V0SWQSHQ'
     'oKc291cmNlX3VybBgCIAEoCVIJc291cmNlVXJsEhsKCW1heF93aWR0aBgDIAEoBVIIbWF4V2lk'
-    'dGgSHQoKbWF4X2hlaWdodBgEIAEoBVIJbWF4SGVpZ2h0');
+    'dGgSHQoKbWF4X2hlaWdodBgEIAEoBVIJbWF4SGVpZ2h0Eh0KCnVwbG9hZF91cmwYBSABKAlSCX'
+    'VwbG9hZFVybBIdCgpwdWJsaWNfdXJsGAYgASgJUglwdWJsaWNVcmw=');
 
 @$core.Deprecated('Use resizeResponseDescriptor instead')
 const ResizeResponse$json = {
@@ -142,13 +145,15 @@ const ResizeResponse$json = {
     {'1': 'thumbnail_url', '3': 1, '4': 1, '5': 9, '10': 'thumbnailUrl'},
     {'1': 'width', '3': 2, '4': 1, '5': 5, '10': 'width'},
     {'1': 'height', '3': 3, '4': 1, '5': 5, '10': 'height'},
+    {'1': 'size_bytes', '3': 4, '4': 1, '5': 3, '10': 'sizeBytes'},
   ],
 };
 
 /// Descriptor for `ResizeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List resizeResponseDescriptor = $convert.base64Decode(
     'Cg5SZXNpemVSZXNwb25zZRIjCg10aHVtYm5haWxfdXJsGAEgASgJUgx0aHVtYm5haWxVcmwSFA'
-    'oFd2lkdGgYAiABKAVSBXdpZHRoEhYKBmhlaWdodBgDIAEoBVIGaGVpZ2h0');
+    'oFd2lkdGgYAiABKAVSBXdpZHRoEhYKBmhlaWdodBgDIAEoBVIGaGVpZ2h0Eh0KCnNpemVfYnl0'
+    'ZXMYBCABKANSCXNpemVCeXRlcw==');
 
 @$core.Deprecated('Use extractDominantColorsRequestDescriptor instead')
 const ExtractDominantColorsRequest$json = {
