@@ -188,6 +188,10 @@ message PlannedExercise {
 
 message ListExercisesRequest {
   sttattus.common.v1.PageRequest page = 1;
+  // F7.4 — optional filters. Empty string = unfiltered.
+  string search = 2;     // case-insensitive name substring
+  string muscle = 3;     // primary_muscle exact match
+  string equipment = 4;  // equipment exact match
 }
 message ListExercisesResponse {
   repeated Exercise exercises = 1;

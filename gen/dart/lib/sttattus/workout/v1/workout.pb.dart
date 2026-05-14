@@ -1931,9 +1931,15 @@ class PlannedExercise extends $pb.GeneratedMessage {
 class ListExercisesRequest extends $pb.GeneratedMessage {
   factory ListExercisesRequest({
     $1.PageRequest? page,
+    $core.String? search,
+    $core.String? muscle,
+    $core.String? equipment,
   }) {
     final result = create();
     if (page != null) result.page = page;
+    if (search != null) result.search = search;
+    if (muscle != null) result.muscle = muscle;
+    if (equipment != null) result.equipment = equipment;
     return result;
   }
 
@@ -1944,6 +1950,9 @@ class ListExercisesRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListExercisesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
     ..aOM<$1.PageRequest>(1, _omitFieldNames ? '' : 'page', subBuilder: $1.PageRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'search')
+    ..aOS(3, _omitFieldNames ? '' : 'muscle')
+    ..aOS(4, _omitFieldNames ? '' : 'equipment')
     ..hasRequiredFields = false
   ;
 
@@ -1974,6 +1983,34 @@ class ListExercisesRequest extends $pb.GeneratedMessage {
   void clearPage() => $_clearField(1);
   @$pb.TagNumber(1)
   $1.PageRequest ensurePage() => $_ensure(0);
+
+  /// F7.4 — optional filters. Empty string = unfiltered.
+  @$pb.TagNumber(2)
+  $core.String get search => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set search($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSearch() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSearch() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get muscle => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set muscle($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMuscle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMuscle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get equipment => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set equipment($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEquipment() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEquipment() => $_clearField(4);
 }
 
 class ListExercisesResponse extends $pb.GeneratedMessage {

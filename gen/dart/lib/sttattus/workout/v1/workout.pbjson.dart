@@ -418,13 +418,17 @@ const ListExercisesRequest$json = {
   '1': 'ListExercisesRequest',
   '2': [
     {'1': 'page', '3': 1, '4': 1, '5': 11, '6': '.sttattus.common.v1.PageRequest', '10': 'page'},
+    {'1': 'search', '3': 2, '4': 1, '5': 9, '10': 'search'},
+    {'1': 'muscle', '3': 3, '4': 1, '5': 9, '10': 'muscle'},
+    {'1': 'equipment', '3': 4, '4': 1, '5': 9, '10': 'equipment'},
   ],
 };
 
 /// Descriptor for `ListExercisesRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listExercisesRequestDescriptor = $convert.base64Decode(
     'ChRMaXN0RXhlcmNpc2VzUmVxdWVzdBIzCgRwYWdlGAEgASgLMh8uc3R0YXR0dXMuY29tbW9uLn'
-    'YxLlBhZ2VSZXF1ZXN0UgRwYWdl');
+    'YxLlBhZ2VSZXF1ZXN0UgRwYWdlEhYKBnNlYXJjaBgCIAEoCVIGc2VhcmNoEhYKBm11c2NsZRgD'
+    'IAEoCVIGbXVzY2xlEhwKCWVxdWlwbWVudBgEIAEoCVIJZXF1aXBtZW50');
 
 @$core.Deprecated('Use listExercisesResponseDescriptor instead')
 const ListExercisesResponse$json = {

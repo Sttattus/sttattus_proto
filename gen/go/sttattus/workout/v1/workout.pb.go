@@ -1628,8 +1628,12 @@ func (x *PlannedExercise) GetRestSeconds() int32 {
 }
 
 type ListExercisesRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Page          *v1.PageRequest        `protobuf:"bytes,1,opt,name=page,proto3" json:"page,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Page  *v1.PageRequest        `protobuf:"bytes,1,opt,name=page,proto3" json:"page,omitempty"`
+	// F7.4 — optional filters. Empty string = unfiltered.
+	Search        string `protobuf:"bytes,2,opt,name=search,proto3" json:"search,omitempty"`       // case-insensitive name substring
+	Muscle        string `protobuf:"bytes,3,opt,name=muscle,proto3" json:"muscle,omitempty"`       // primary_muscle exact match
+	Equipment     string `protobuf:"bytes,4,opt,name=equipment,proto3" json:"equipment,omitempty"` // equipment exact match
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1669,6 +1673,27 @@ func (x *ListExercisesRequest) GetPage() *v1.PageRequest {
 		return x.Page
 	}
 	return nil
+}
+
+func (x *ListExercisesRequest) GetSearch() string {
+	if x != nil {
+		return x.Search
+	}
+	return ""
+}
+
+func (x *ListExercisesRequest) GetMuscle() string {
+	if x != nil {
+		return x.Muscle
+	}
+	return ""
+}
+
+func (x *ListExercisesRequest) GetEquipment() string {
+	if x != nil {
+		return x.Equipment
+	}
+	return ""
 }
 
 type ListExercisesResponse struct {
@@ -2857,9 +2882,12 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"exerciseId\x12\x1f\n" +
 	"\vtarget_sets\x18\x02 \x01(\x05R\n" +
 	"targetSets\x12!\n" +
-	"\frest_seconds\x18\x03 \x01(\x05R\vrestSeconds\"K\n" +
+	"\frest_seconds\x18\x03 \x01(\x05R\vrestSeconds\"\x99\x01\n" +
 	"\x14ListExercisesRequest\x123\n" +
-	"\x04page\x18\x01 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"T\n" +
+	"\x04page\x18\x01 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\x12\x16\n" +
+	"\x06search\x18\x02 \x01(\tR\x06search\x12\x16\n" +
+	"\x06muscle\x18\x03 \x01(\tR\x06muscle\x12\x1c\n" +
+	"\tequipment\x18\x04 \x01(\tR\tequipment\"T\n" +
 	"\x15ListExercisesResponse\x12;\n" +
 	"\texercises\x18\x01 \x03(\v2\x1d.sttattus.workout.v1.ExerciseR\texercises\"\x86\x01\n" +
 	"\x14CreateSessionRequest\x12\x14\n" +

@@ -1344,6 +1344,29 @@ export class ListExercisesRequest extends Message<ListExercisesRequest> {
    */
   page?: PageRequest;
 
+  /**
+   * F7.4 — optional filters. Empty string = unfiltered.
+   *
+   * case-insensitive name substring
+   *
+   * @generated from field: string search = 2;
+   */
+  search = "";
+
+  /**
+   * primary_muscle exact match
+   *
+   * @generated from field: string muscle = 3;
+   */
+  muscle = "";
+
+  /**
+   * equipment exact match
+   *
+   * @generated from field: string equipment = 4;
+   */
+  equipment = "";
+
   constructor(data?: PartialMessage<ListExercisesRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1353,6 +1376,9 @@ export class ListExercisesRequest extends Message<ListExercisesRequest> {
   static readonly typeName = "sttattus.workout.v1.ListExercisesRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "page", kind: "message", T: PageRequest },
+    { no: 2, name: "search", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "muscle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "equipment", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListExercisesRequest {
