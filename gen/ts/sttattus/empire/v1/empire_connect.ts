@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ClaimHandleRequest, ClaimHandleResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetLatestEditorialDigestRequest, GetLatestEditorialDigestResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListEditorialDigestsRequest, ListEditorialDigestsResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListLoungesRequest, ListLoungesResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, ListUpcomingLoungeEventsRequest, ListUpcomingLoungeEventsResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse } from "./empire_pb.js";
+import { ClaimHandleRequest, ClaimHandleResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetLatestEditorialDigestRequest, GetLatestEditorialDigestResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListEditorialDigestsRequest, ListEditorialDigestsResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListLoungesRequest, ListLoungesResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, ListUpcomingLoungeEventsRequest, ListUpcomingLoungeEventsResponse, ListUpcomingSalonsRequest, ListUpcomingSalonsResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse, UpdateSalonRsvpRequest, UpdateSalonRsvpResponse } from "./empire_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -233,6 +233,29 @@ export const EmpireService = {
       name: "ListUpcomingLoungeEvents",
       I: ListUpcomingLoungeEventsRequest,
       O: ListUpcomingLoungeEventsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListUpcomingSalons returns near-future salons with the caller's
+     * RSVP and the current going-count joined in.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ListUpcomingSalons
+     */
+    listUpcomingSalons: {
+      name: "ListUpcomingSalons",
+      I: ListUpcomingSalonsRequest,
+      O: ListUpcomingSalonsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateSalonRsvp sets or clears the caller's RSVP for a salon.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.UpdateSalonRsvp
+     */
+    updateSalonRsvp: {
+      name: "UpdateSalonRsvp",
+      I: UpdateSalonRsvpRequest,
+      O: UpdateSalonRsvpResponse,
       kind: MethodKind.Unary,
     },
   }

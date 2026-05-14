@@ -1441,6 +1441,380 @@ class UpdatePublicProfileResponse extends $pb.GeneratedMessage {
   void clearBio() => $_clearField(2);
 }
 
+/// SalonSummary is a salon row joined with the caller's RSVP and the
+/// current going count. Renders in the upcoming list.
+class SalonSummary extends $pb.GeneratedMessage {
+  factory SalonSummary({
+    $core.String? id,
+    $core.String? title,
+    $core.String? city,
+    $core.String? venue,
+    $core.String? description,
+    $core.String? startsAt,
+    $core.String? endsAt,
+    $core.int? capacity,
+    $core.String? minTier,
+    $core.int? goingCount,
+    $core.String? myStatus,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (title != null) result.title = title;
+    if (city != null) result.city = city;
+    if (venue != null) result.venue = venue;
+    if (description != null) result.description = description;
+    if (startsAt != null) result.startsAt = startsAt;
+    if (endsAt != null) result.endsAt = endsAt;
+    if (capacity != null) result.capacity = capacity;
+    if (minTier != null) result.minTier = minTier;
+    if (goingCount != null) result.goingCount = goingCount;
+    if (myStatus != null) result.myStatus = myStatus;
+    return result;
+  }
+
+  SalonSummary._();
+
+  factory SalonSummary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SalonSummary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SalonSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'city')
+    ..aOS(4, _omitFieldNames ? '' : 'venue')
+    ..aOS(5, _omitFieldNames ? '' : 'description')
+    ..aOS(6, _omitFieldNames ? '' : 'startsAt')
+    ..aOS(7, _omitFieldNames ? '' : 'endsAt')
+    ..a<$core.int>(8, _omitFieldNames ? '' : 'capacity', $pb.PbFieldType.O3)
+    ..aOS(9, _omitFieldNames ? '' : 'minTier')
+    ..a<$core.int>(10, _omitFieldNames ? '' : 'goingCount', $pb.PbFieldType.O3)
+    ..aOS(11, _omitFieldNames ? '' : 'myStatus')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SalonSummary clone() => SalonSummary()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SalonSummary copyWith(void Function(SalonSummary) updates) => super.copyWith((message) => updates(message as SalonSummary)) as SalonSummary;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SalonSummary create() => SalonSummary._();
+  @$core.override
+  SalonSummary createEmptyInstance() => create();
+  static $pb.PbList<SalonSummary> createRepeated() => $pb.PbList<SalonSummary>();
+  @$core.pragma('dart2js:noInline')
+  static SalonSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SalonSummary>(create);
+  static SalonSummary? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get city => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set city($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCity() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCity() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get venue => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set venue($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasVenue() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearVenue() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get description => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set description($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDescription() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDescription() => $_clearField(5);
+
+  /// RFC-3339 UTC.
+  @$pb.TagNumber(6)
+  $core.String get startsAt => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set startsAt($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStartsAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStartsAt() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get endsAt => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set endsAt($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasEndsAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearEndsAt() => $_clearField(7);
+
+  /// 0 = unlimited.
+  @$pb.TagNumber(8)
+  $core.int get capacity => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set capacity($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCapacity() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCapacity() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get minTier => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set minTier($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMinTier() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMinTier() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get goingCount => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set goingCount($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasGoingCount() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearGoingCount() => $_clearField(10);
+
+  /// "going" | "maybe" | "declined" | "" (no RSVP).
+  @$pb.TagNumber(11)
+  $core.String get myStatus => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set myStatus($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasMyStatus() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearMyStatus() => $_clearField(11);
+}
+
+class ListUpcomingSalonsRequest extends $pb.GeneratedMessage {
+  factory ListUpcomingSalonsRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListUpcomingSalonsRequest._();
+
+  factory ListUpcomingSalonsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListUpcomingSalonsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListUpcomingSalonsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListUpcomingSalonsRequest clone() => ListUpcomingSalonsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListUpcomingSalonsRequest copyWith(void Function(ListUpcomingSalonsRequest) updates) => super.copyWith((message) => updates(message as ListUpcomingSalonsRequest)) as ListUpcomingSalonsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListUpcomingSalonsRequest create() => ListUpcomingSalonsRequest._();
+  @$core.override
+  ListUpcomingSalonsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListUpcomingSalonsRequest> createRepeated() => $pb.PbList<ListUpcomingSalonsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListUpcomingSalonsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListUpcomingSalonsRequest>(create);
+  static ListUpcomingSalonsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class ListUpcomingSalonsResponse extends $pb.GeneratedMessage {
+  factory ListUpcomingSalonsResponse({
+    $core.Iterable<SalonSummary>? salons,
+  }) {
+    final result = create();
+    if (salons != null) result.salons.addAll(salons);
+    return result;
+  }
+
+  ListUpcomingSalonsResponse._();
+
+  factory ListUpcomingSalonsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListUpcomingSalonsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListUpcomingSalonsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..pc<SalonSummary>(1, _omitFieldNames ? '' : 'salons', $pb.PbFieldType.PM, subBuilder: SalonSummary.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListUpcomingSalonsResponse clone() => ListUpcomingSalonsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListUpcomingSalonsResponse copyWith(void Function(ListUpcomingSalonsResponse) updates) => super.copyWith((message) => updates(message as ListUpcomingSalonsResponse)) as ListUpcomingSalonsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListUpcomingSalonsResponse create() => ListUpcomingSalonsResponse._();
+  @$core.override
+  ListUpcomingSalonsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListUpcomingSalonsResponse> createRepeated() => $pb.PbList<ListUpcomingSalonsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListUpcomingSalonsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListUpcomingSalonsResponse>(create);
+  static ListUpcomingSalonsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<SalonSummary> get salons => $_getList(0);
+}
+
+class UpdateSalonRsvpRequest extends $pb.GeneratedMessage {
+  factory UpdateSalonRsvpRequest({
+    $core.String? salonId,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (salonId != null) result.salonId = salonId;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  UpdateSalonRsvpRequest._();
+
+  factory UpdateSalonRsvpRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateSalonRsvpRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSalonRsvpRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'salonId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateSalonRsvpRequest clone() => UpdateSalonRsvpRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateSalonRsvpRequest copyWith(void Function(UpdateSalonRsvpRequest) updates) => super.copyWith((message) => updates(message as UpdateSalonRsvpRequest)) as UpdateSalonRsvpRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSalonRsvpRequest create() => UpdateSalonRsvpRequest._();
+  @$core.override
+  UpdateSalonRsvpRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateSalonRsvpRequest> createRepeated() => $pb.PbList<UpdateSalonRsvpRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSalonRsvpRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSalonRsvpRequest>(create);
+  static UpdateSalonRsvpRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get salonId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set salonId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSalonId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSalonId() => $_clearField(1);
+
+  /// "going" | "maybe" | "declined" — empty string clears the RSVP.
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+}
+
+class UpdateSalonRsvpResponse extends $pb.GeneratedMessage {
+  factory UpdateSalonRsvpResponse({
+    $core.String? salonId,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (salonId != null) result.salonId = salonId;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  UpdateSalonRsvpResponse._();
+
+  factory UpdateSalonRsvpResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateSalonRsvpResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSalonRsvpResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'salonId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateSalonRsvpResponse clone() => UpdateSalonRsvpResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateSalonRsvpResponse copyWith(void Function(UpdateSalonRsvpResponse) updates) => super.copyWith((message) => updates(message as UpdateSalonRsvpResponse)) as UpdateSalonRsvpResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSalonRsvpResponse create() => UpdateSalonRsvpResponse._();
+  @$core.override
+  UpdateSalonRsvpResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateSalonRsvpResponse> createRepeated() => $pb.PbList<UpdateSalonRsvpResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSalonRsvpResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSalonRsvpResponse>(create);
+  static UpdateSalonRsvpResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get salonId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set salonId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSalonId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSalonId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+}
+
 class Lounge extends $pb.GeneratedMessage {
   factory Lounge({
     $core.String? id,

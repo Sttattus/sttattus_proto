@@ -1077,6 +1077,274 @@ export class UpdatePublicProfileResponse extends Message<UpdatePublicProfileResp
 }
 
 /**
+ * SalonSummary is a salon row joined with the caller's RSVP and the
+ * current going count. Renders in the upcoming list.
+ *
+ * @generated from message sttattus.empire.v1.SalonSummary
+ */
+export class SalonSummary extends Message<SalonSummary> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string city = 3;
+   */
+  city = "";
+
+  /**
+   * @generated from field: string venue = 4;
+   */
+  venue = "";
+
+  /**
+   * @generated from field: string description = 5;
+   */
+  description = "";
+
+  /**
+   * RFC-3339 UTC.
+   *
+   * @generated from field: string starts_at = 6;
+   */
+  startsAt = "";
+
+  /**
+   * @generated from field: string ends_at = 7;
+   */
+  endsAt = "";
+
+  /**
+   * 0 = unlimited.
+   *
+   * @generated from field: int32 capacity = 8;
+   */
+  capacity = 0;
+
+  /**
+   * @generated from field: string min_tier = 9;
+   */
+  minTier = "";
+
+  /**
+   * @generated from field: int32 going_count = 10;
+   */
+  goingCount = 0;
+
+  /**
+   * "going" | "maybe" | "declined" | "" (no RSVP).
+   *
+   * @generated from field: string my_status = 11;
+   */
+  myStatus = "";
+
+  constructor(data?: PartialMessage<SalonSummary>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.SalonSummary";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "venue", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "starts_at", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "ends_at", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "capacity", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "min_tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "going_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "my_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SalonSummary {
+    return new SalonSummary().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SalonSummary {
+    return new SalonSummary().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SalonSummary {
+    return new SalonSummary().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SalonSummary | PlainMessage<SalonSummary> | undefined, b: SalonSummary | PlainMessage<SalonSummary> | undefined): boolean {
+    return proto3.util.equals(SalonSummary, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListUpcomingSalonsRequest
+ */
+export class ListUpcomingSalonsRequest extends Message<ListUpcomingSalonsRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListUpcomingSalonsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListUpcomingSalonsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUpcomingSalonsRequest {
+    return new ListUpcomingSalonsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUpcomingSalonsRequest {
+    return new ListUpcomingSalonsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUpcomingSalonsRequest {
+    return new ListUpcomingSalonsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListUpcomingSalonsRequest | PlainMessage<ListUpcomingSalonsRequest> | undefined, b: ListUpcomingSalonsRequest | PlainMessage<ListUpcomingSalonsRequest> | undefined): boolean {
+    return proto3.util.equals(ListUpcomingSalonsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListUpcomingSalonsResponse
+ */
+export class ListUpcomingSalonsResponse extends Message<ListUpcomingSalonsResponse> {
+  /**
+   * @generated from field: repeated sttattus.empire.v1.SalonSummary salons = 1;
+   */
+  salons: SalonSummary[] = [];
+
+  constructor(data?: PartialMessage<ListUpcomingSalonsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListUpcomingSalonsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "salons", kind: "message", T: SalonSummary, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUpcomingSalonsResponse {
+    return new ListUpcomingSalonsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUpcomingSalonsResponse {
+    return new ListUpcomingSalonsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUpcomingSalonsResponse {
+    return new ListUpcomingSalonsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListUpcomingSalonsResponse | PlainMessage<ListUpcomingSalonsResponse> | undefined, b: ListUpcomingSalonsResponse | PlainMessage<ListUpcomingSalonsResponse> | undefined): boolean {
+    return proto3.util.equals(ListUpcomingSalonsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.UpdateSalonRsvpRequest
+ */
+export class UpdateSalonRsvpRequest extends Message<UpdateSalonRsvpRequest> {
+  /**
+   * @generated from field: string salon_id = 1;
+   */
+  salonId = "";
+
+  /**
+   * "going" | "maybe" | "declined" — empty string clears the RSVP.
+   *
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<UpdateSalonRsvpRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.UpdateSalonRsvpRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "salon_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateSalonRsvpRequest {
+    return new UpdateSalonRsvpRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateSalonRsvpRequest {
+    return new UpdateSalonRsvpRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateSalonRsvpRequest {
+    return new UpdateSalonRsvpRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateSalonRsvpRequest | PlainMessage<UpdateSalonRsvpRequest> | undefined, b: UpdateSalonRsvpRequest | PlainMessage<UpdateSalonRsvpRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateSalonRsvpRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.UpdateSalonRsvpResponse
+ */
+export class UpdateSalonRsvpResponse extends Message<UpdateSalonRsvpResponse> {
+  /**
+   * @generated from field: string salon_id = 1;
+   */
+  salonId = "";
+
+  /**
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<UpdateSalonRsvpResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.UpdateSalonRsvpResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "salon_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateSalonRsvpResponse {
+    return new UpdateSalonRsvpResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateSalonRsvpResponse {
+    return new UpdateSalonRsvpResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateSalonRsvpResponse {
+    return new UpdateSalonRsvpResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateSalonRsvpResponse | PlainMessage<UpdateSalonRsvpResponse> | undefined, b: UpdateSalonRsvpResponse | PlainMessage<UpdateSalonRsvpResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateSalonRsvpResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.empire.v1.Lounge
  */
 export class Lounge extends Message<Lounge> {

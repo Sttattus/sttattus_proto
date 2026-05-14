@@ -190,6 +190,46 @@ message UpdatePublicProfileResponse {
   string bio = 2;
 }
 
+// === Salons (P5.12) ===
+
+// SalonSummary is a salon row joined with the caller's RSVP and the
+// current going count. Renders in the upcoming list.
+message SalonSummary {
+  string id = 1;
+  string title = 2;
+  string city = 3;
+  string venue = 4;
+  string description = 5;
+  // RFC-3339 UTC.
+  string starts_at = 6;
+  string ends_at = 7;
+  // 0 = unlimited.
+  int32 capacity = 8;
+  string min_tier = 9;
+  int32 going_count = 10;
+  // "going" | "maybe" | "declined" | "" (no RSVP).
+  string my_status = 11;
+}
+
+message ListUpcomingSalonsRequest {
+  int32 limit = 1;
+}
+
+message ListUpcomingSalonsResponse {
+  repeated SalonSummary salons = 1;
+}
+
+message UpdateSalonRsvpRequest {
+  string salon_id = 1;
+  // "going" | "maybe" | "declined" — empty string clears the RSVP.
+  string status = 2;
+}
+
+message UpdateSalonRsvpResponse {
+  string salon_id = 1;
+  string status = 2;
+}
+
 // === Lounges (P5.11) ===
 
 message Lounge {
@@ -444,4 +484,11 @@ service EmpireService {
   // ListUpcomingLoungeEvents returns near-future events across all
   // active lounges, ordered by start time.
   rpc ListUpcomingLoungeEvents(ListUpcomingLoungeEventsRequest) returns (ListUpcomingLoungeEventsResponse);
+
+  // ListUpcomingSalons returns near-future salons with the caller's
+  // RSVP and the current going-count joined in.
+  rpc ListUpcomingSalons(ListUpcomingSalonsRequest) returns (ListUpcomingSalonsResponse);
+
+  // UpdateSalonRsvp sets or clears the caller's RSVP for a salon.
+  rpc UpdateSalonRsvp(UpdateSalonRsvpRequest) returns (UpdateSalonRsvpResponse);
 }

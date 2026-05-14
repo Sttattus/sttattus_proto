@@ -37,6 +37,8 @@ const (
 	EmpireService_ListEditorialDigests_FullMethodName     = "/sttattus.empire.v1.EmpireService/ListEditorialDigests"
 	EmpireService_ListLounges_FullMethodName              = "/sttattus.empire.v1.EmpireService/ListLounges"
 	EmpireService_ListUpcomingLoungeEvents_FullMethodName = "/sttattus.empire.v1.EmpireService/ListUpcomingLoungeEvents"
+	EmpireService_ListUpcomingSalons_FullMethodName       = "/sttattus.empire.v1.EmpireService/ListUpcomingSalons"
+	EmpireService_UpdateSalonRsvp_FullMethodName          = "/sttattus.empire.v1.EmpireService/UpdateSalonRsvp"
 )
 
 // EmpireServiceClient is the client API for EmpireService service.
@@ -104,6 +106,11 @@ type EmpireServiceClient interface {
 	// ListUpcomingLoungeEvents returns near-future events across all
 	// active lounges, ordered by start time.
 	ListUpcomingLoungeEvents(ctx context.Context, in *ListUpcomingLoungeEventsRequest, opts ...grpc.CallOption) (*ListUpcomingLoungeEventsResponse, error)
+	// ListUpcomingSalons returns near-future salons with the caller's
+	// RSVP and the current going-count joined in.
+	ListUpcomingSalons(ctx context.Context, in *ListUpcomingSalonsRequest, opts ...grpc.CallOption) (*ListUpcomingSalonsResponse, error)
+	// UpdateSalonRsvp sets or clears the caller's RSVP for a salon.
+	UpdateSalonRsvp(ctx context.Context, in *UpdateSalonRsvpRequest, opts ...grpc.CallOption) (*UpdateSalonRsvpResponse, error)
 }
 
 type empireServiceClient struct {
@@ -294,6 +301,26 @@ func (c *empireServiceClient) ListUpcomingLoungeEvents(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *empireServiceClient) ListUpcomingSalons(ctx context.Context, in *ListUpcomingSalonsRequest, opts ...grpc.CallOption) (*ListUpcomingSalonsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListUpcomingSalonsResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ListUpcomingSalons_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) UpdateSalonRsvp(ctx context.Context, in *UpdateSalonRsvpRequest, opts ...grpc.CallOption) (*UpdateSalonRsvpResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateSalonRsvpResponse)
+	err := c.cc.Invoke(ctx, EmpireService_UpdateSalonRsvp_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmpireServiceServer is the server API for EmpireService service.
 // All implementations must embed UnimplementedEmpireServiceServer
 // for forward compatibility.
@@ -359,6 +386,11 @@ type EmpireServiceServer interface {
 	// ListUpcomingLoungeEvents returns near-future events across all
 	// active lounges, ordered by start time.
 	ListUpcomingLoungeEvents(context.Context, *ListUpcomingLoungeEventsRequest) (*ListUpcomingLoungeEventsResponse, error)
+	// ListUpcomingSalons returns near-future salons with the caller's
+	// RSVP and the current going-count joined in.
+	ListUpcomingSalons(context.Context, *ListUpcomingSalonsRequest) (*ListUpcomingSalonsResponse, error)
+	// UpdateSalonRsvp sets or clears the caller's RSVP for a salon.
+	UpdateSalonRsvp(context.Context, *UpdateSalonRsvpRequest) (*UpdateSalonRsvpResponse, error)
 	mustEmbedUnimplementedEmpireServiceServer()
 }
 
@@ -422,6 +454,12 @@ func (UnimplementedEmpireServiceServer) ListLounges(context.Context, *ListLounge
 }
 func (UnimplementedEmpireServiceServer) ListUpcomingLoungeEvents(context.Context, *ListUpcomingLoungeEventsRequest) (*ListUpcomingLoungeEventsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListUpcomingLoungeEvents not implemented")
+}
+func (UnimplementedEmpireServiceServer) ListUpcomingSalons(context.Context, *ListUpcomingSalonsRequest) (*ListUpcomingSalonsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListUpcomingSalons not implemented")
+}
+func (UnimplementedEmpireServiceServer) UpdateSalonRsvp(context.Context, *UpdateSalonRsvpRequest) (*UpdateSalonRsvpResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateSalonRsvp not implemented")
 }
 func (UnimplementedEmpireServiceServer) mustEmbedUnimplementedEmpireServiceServer() {}
 func (UnimplementedEmpireServiceServer) testEmbeddedByValue()                       {}
@@ -768,6 +806,42 @@ func _EmpireService_ListUpcomingLoungeEvents_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmpireService_ListUpcomingSalons_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListUpcomingSalonsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ListUpcomingSalons(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ListUpcomingSalons_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ListUpcomingSalons(ctx, req.(*ListUpcomingSalonsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_UpdateSalonRsvp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateSalonRsvpRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).UpdateSalonRsvp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_UpdateSalonRsvp_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).UpdateSalonRsvp(ctx, req.(*UpdateSalonRsvpRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EmpireService_ServiceDesc is the grpc.ServiceDesc for EmpireService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -846,6 +920,14 @@ var EmpireService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListUpcomingLoungeEvents",
 			Handler:    _EmpireService_ListUpcomingLoungeEvents_Handler,
+		},
+		{
+			MethodName: "ListUpcomingSalons",
+			Handler:    _EmpireService_ListUpcomingSalons_Handler,
+		},
+		{
+			MethodName: "UpdateSalonRsvp",
+			Handler:    _EmpireService_UpdateSalonRsvp_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

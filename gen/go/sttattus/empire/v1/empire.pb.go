@@ -1277,6 +1277,328 @@ func (x *UpdatePublicProfileResponse) GetBio() string {
 	return ""
 }
 
+// SalonSummary is a salon row joined with the caller's RSVP and the
+// current going count. Renders in the upcoming list.
+type SalonSummary struct {
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title       string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	City        string                 `protobuf:"bytes,3,opt,name=city,proto3" json:"city,omitempty"`
+	Venue       string                 `protobuf:"bytes,4,opt,name=venue,proto3" json:"venue,omitempty"`
+	Description string                 `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
+	// RFC-3339 UTC.
+	StartsAt string `protobuf:"bytes,6,opt,name=starts_at,json=startsAt,proto3" json:"starts_at,omitempty"`
+	EndsAt   string `protobuf:"bytes,7,opt,name=ends_at,json=endsAt,proto3" json:"ends_at,omitempty"`
+	// 0 = unlimited.
+	Capacity   int32  `protobuf:"varint,8,opt,name=capacity,proto3" json:"capacity,omitempty"`
+	MinTier    string `protobuf:"bytes,9,opt,name=min_tier,json=minTier,proto3" json:"min_tier,omitempty"`
+	GoingCount int32  `protobuf:"varint,10,opt,name=going_count,json=goingCount,proto3" json:"going_count,omitempty"`
+	// "going" | "maybe" | "declined" | "" (no RSVP).
+	MyStatus      string `protobuf:"bytes,11,opt,name=my_status,json=myStatus,proto3" json:"my_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SalonSummary) Reset() {
+	*x = SalonSummary{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SalonSummary) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SalonSummary) ProtoMessage() {}
+
+func (x *SalonSummary) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SalonSummary.ProtoReflect.Descriptor instead.
+func (*SalonSummary) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *SalonSummary) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SalonSummary) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *SalonSummary) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *SalonSummary) GetVenue() string {
+	if x != nil {
+		return x.Venue
+	}
+	return ""
+}
+
+func (x *SalonSummary) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *SalonSummary) GetStartsAt() string {
+	if x != nil {
+		return x.StartsAt
+	}
+	return ""
+}
+
+func (x *SalonSummary) GetEndsAt() string {
+	if x != nil {
+		return x.EndsAt
+	}
+	return ""
+}
+
+func (x *SalonSummary) GetCapacity() int32 {
+	if x != nil {
+		return x.Capacity
+	}
+	return 0
+}
+
+func (x *SalonSummary) GetMinTier() string {
+	if x != nil {
+		return x.MinTier
+	}
+	return ""
+}
+
+func (x *SalonSummary) GetGoingCount() int32 {
+	if x != nil {
+		return x.GoingCount
+	}
+	return 0
+}
+
+func (x *SalonSummary) GetMyStatus() string {
+	if x != nil {
+		return x.MyStatus
+	}
+	return ""
+}
+
+type ListUpcomingSalonsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListUpcomingSalonsRequest) Reset() {
+	*x = ListUpcomingSalonsRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListUpcomingSalonsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListUpcomingSalonsRequest) ProtoMessage() {}
+
+func (x *ListUpcomingSalonsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListUpcomingSalonsRequest.ProtoReflect.Descriptor instead.
+func (*ListUpcomingSalonsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *ListUpcomingSalonsRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ListUpcomingSalonsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Salons        []*SalonSummary        `protobuf:"bytes,1,rep,name=salons,proto3" json:"salons,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListUpcomingSalonsResponse) Reset() {
+	*x = ListUpcomingSalonsResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListUpcomingSalonsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListUpcomingSalonsResponse) ProtoMessage() {}
+
+func (x *ListUpcomingSalonsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListUpcomingSalonsResponse.ProtoReflect.Descriptor instead.
+func (*ListUpcomingSalonsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *ListUpcomingSalonsResponse) GetSalons() []*SalonSummary {
+	if x != nil {
+		return x.Salons
+	}
+	return nil
+}
+
+type UpdateSalonRsvpRequest struct {
+	state   protoimpl.MessageState `protogen:"open.v1"`
+	SalonId string                 `protobuf:"bytes,1,opt,name=salon_id,json=salonId,proto3" json:"salon_id,omitempty"`
+	// "going" | "maybe" | "declined" — empty string clears the RSVP.
+	Status        string `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateSalonRsvpRequest) Reset() {
+	*x = UpdateSalonRsvpRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateSalonRsvpRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSalonRsvpRequest) ProtoMessage() {}
+
+func (x *UpdateSalonRsvpRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSalonRsvpRequest.ProtoReflect.Descriptor instead.
+func (*UpdateSalonRsvpRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *UpdateSalonRsvpRequest) GetSalonId() string {
+	if x != nil {
+		return x.SalonId
+	}
+	return ""
+}
+
+func (x *UpdateSalonRsvpRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+type UpdateSalonRsvpResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SalonId       string                 `protobuf:"bytes,1,opt,name=salon_id,json=salonId,proto3" json:"salon_id,omitempty"`
+	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateSalonRsvpResponse) Reset() {
+	*x = UpdateSalonRsvpResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateSalonRsvpResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSalonRsvpResponse) ProtoMessage() {}
+
+func (x *UpdateSalonRsvpResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSalonRsvpResponse.ProtoReflect.Descriptor instead.
+func (*UpdateSalonRsvpResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *UpdateSalonRsvpResponse) GetSalonId() string {
+	if x != nil {
+		return x.SalonId
+	}
+	return ""
+}
+
+func (x *UpdateSalonRsvpResponse) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
 type Lounge struct {
 	state       protoimpl.MessageState `protogen:"open.v1"`
 	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -1293,7 +1615,7 @@ type Lounge struct {
 
 func (x *Lounge) Reset() {
 	*x = Lounge{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[20]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1305,7 +1627,7 @@ func (x *Lounge) String() string {
 func (*Lounge) ProtoMessage() {}
 
 func (x *Lounge) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[20]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1318,7 +1640,7 @@ func (x *Lounge) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Lounge.ProtoReflect.Descriptor instead.
 func (*Lounge) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{20}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *Lounge) GetId() string {
@@ -1378,7 +1700,7 @@ type ListLoungesRequest struct {
 
 func (x *ListLoungesRequest) Reset() {
 	*x = ListLoungesRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[21]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1390,7 +1712,7 @@ func (x *ListLoungesRequest) String() string {
 func (*ListLoungesRequest) ProtoMessage() {}
 
 func (x *ListLoungesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[21]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1403,7 +1725,7 @@ func (x *ListLoungesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLoungesRequest.ProtoReflect.Descriptor instead.
 func (*ListLoungesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{21}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{26}
 }
 
 type ListLoungesResponse struct {
@@ -1415,7 +1737,7 @@ type ListLoungesResponse struct {
 
 func (x *ListLoungesResponse) Reset() {
 	*x = ListLoungesResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[22]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1427,7 +1749,7 @@ func (x *ListLoungesResponse) String() string {
 func (*ListLoungesResponse) ProtoMessage() {}
 
 func (x *ListLoungesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[22]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1440,7 +1762,7 @@ func (x *ListLoungesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLoungesResponse.ProtoReflect.Descriptor instead.
 func (*ListLoungesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{22}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *ListLoungesResponse) GetLounges() []*Lounge {
@@ -1468,7 +1790,7 @@ type LoungeEvent struct {
 
 func (x *LoungeEvent) Reset() {
 	*x = LoungeEvent{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[23]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1480,7 +1802,7 @@ func (x *LoungeEvent) String() string {
 func (*LoungeEvent) ProtoMessage() {}
 
 func (x *LoungeEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[23]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1493,7 +1815,7 @@ func (x *LoungeEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoungeEvent.ProtoReflect.Descriptor instead.
 func (*LoungeEvent) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{23}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *LoungeEvent) GetId() string {
@@ -1568,7 +1890,7 @@ type ListUpcomingLoungeEventsRequest struct {
 
 func (x *ListUpcomingLoungeEventsRequest) Reset() {
 	*x = ListUpcomingLoungeEventsRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[24]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1580,7 +1902,7 @@ func (x *ListUpcomingLoungeEventsRequest) String() string {
 func (*ListUpcomingLoungeEventsRequest) ProtoMessage() {}
 
 func (x *ListUpcomingLoungeEventsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[24]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1593,7 +1915,7 @@ func (x *ListUpcomingLoungeEventsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListUpcomingLoungeEventsRequest.ProtoReflect.Descriptor instead.
 func (*ListUpcomingLoungeEventsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{24}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *ListUpcomingLoungeEventsRequest) GetLimit() int32 {
@@ -1612,7 +1934,7 @@ type ListUpcomingLoungeEventsResponse struct {
 
 func (x *ListUpcomingLoungeEventsResponse) Reset() {
 	*x = ListUpcomingLoungeEventsResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[25]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1624,7 +1946,7 @@ func (x *ListUpcomingLoungeEventsResponse) String() string {
 func (*ListUpcomingLoungeEventsResponse) ProtoMessage() {}
 
 func (x *ListUpcomingLoungeEventsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[25]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1637,7 +1959,7 @@ func (x *ListUpcomingLoungeEventsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListUpcomingLoungeEventsResponse.ProtoReflect.Descriptor instead.
 func (*ListUpcomingLoungeEventsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{25}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *ListUpcomingLoungeEventsResponse) GetEvents() []*LoungeEvent {
@@ -1665,7 +1987,7 @@ type EditorialDigest struct {
 
 func (x *EditorialDigest) Reset() {
 	*x = EditorialDigest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[26]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1677,7 +1999,7 @@ func (x *EditorialDigest) String() string {
 func (*EditorialDigest) ProtoMessage() {}
 
 func (x *EditorialDigest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[26]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1690,7 +2012,7 @@ func (x *EditorialDigest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EditorialDigest.ProtoReflect.Descriptor instead.
 func (*EditorialDigest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{26}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *EditorialDigest) GetId() string {
@@ -1750,7 +2072,7 @@ type GetLatestEditorialDigestRequest struct {
 
 func (x *GetLatestEditorialDigestRequest) Reset() {
 	*x = GetLatestEditorialDigestRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[27]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1762,7 +2084,7 @@ func (x *GetLatestEditorialDigestRequest) String() string {
 func (*GetLatestEditorialDigestRequest) ProtoMessage() {}
 
 func (x *GetLatestEditorialDigestRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[27]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1775,7 +2097,7 @@ func (x *GetLatestEditorialDigestRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLatestEditorialDigestRequest.ProtoReflect.Descriptor instead.
 func (*GetLatestEditorialDigestRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{27}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{32}
 }
 
 type GetLatestEditorialDigestResponse struct {
@@ -1788,7 +2110,7 @@ type GetLatestEditorialDigestResponse struct {
 
 func (x *GetLatestEditorialDigestResponse) Reset() {
 	*x = GetLatestEditorialDigestResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[28]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1800,7 +2122,7 @@ func (x *GetLatestEditorialDigestResponse) String() string {
 func (*GetLatestEditorialDigestResponse) ProtoMessage() {}
 
 func (x *GetLatestEditorialDigestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[28]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1813,7 +2135,7 @@ func (x *GetLatestEditorialDigestResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLatestEditorialDigestResponse.ProtoReflect.Descriptor instead.
 func (*GetLatestEditorialDigestResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{28}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *GetLatestEditorialDigestResponse) GetDigest() *EditorialDigest {
@@ -1833,7 +2155,7 @@ type ListEditorialDigestsRequest struct {
 
 func (x *ListEditorialDigestsRequest) Reset() {
 	*x = ListEditorialDigestsRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[29]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1845,7 +2167,7 @@ func (x *ListEditorialDigestsRequest) String() string {
 func (*ListEditorialDigestsRequest) ProtoMessage() {}
 
 func (x *ListEditorialDigestsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[29]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1858,7 +2180,7 @@ func (x *ListEditorialDigestsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListEditorialDigestsRequest.ProtoReflect.Descriptor instead.
 func (*ListEditorialDigestsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{29}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *ListEditorialDigestsRequest) GetLimit() int32 {
@@ -1884,7 +2206,7 @@ type ListEditorialDigestsResponse struct {
 
 func (x *ListEditorialDigestsResponse) Reset() {
 	*x = ListEditorialDigestsResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[30]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1896,7 +2218,7 @@ func (x *ListEditorialDigestsResponse) String() string {
 func (*ListEditorialDigestsResponse) ProtoMessage() {}
 
 func (x *ListEditorialDigestsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[30]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1909,7 +2231,7 @@ func (x *ListEditorialDigestsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListEditorialDigestsResponse.ProtoReflect.Descriptor instead.
 func (*ListEditorialDigestsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{30}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *ListEditorialDigestsResponse) GetDigests() []*EditorialDigest {
@@ -1927,7 +2249,7 @@ type GetLatestCloutDropRequest struct {
 
 func (x *GetLatestCloutDropRequest) Reset() {
 	*x = GetLatestCloutDropRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[31]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1939,7 +2261,7 @@ func (x *GetLatestCloutDropRequest) String() string {
 func (*GetLatestCloutDropRequest) ProtoMessage() {}
 
 func (x *GetLatestCloutDropRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[31]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1952,7 +2274,7 @@ func (x *GetLatestCloutDropRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLatestCloutDropRequest.ProtoReflect.Descriptor instead.
 func (*GetLatestCloutDropRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{31}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{36}
 }
 
 // CloutDropEntry is one (pillar, rank) cell of the drop.
@@ -1973,7 +2295,7 @@ type CloutDropEntry struct {
 
 func (x *CloutDropEntry) Reset() {
 	*x = CloutDropEntry{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[32]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1985,7 +2307,7 @@ func (x *CloutDropEntry) String() string {
 func (*CloutDropEntry) ProtoMessage() {}
 
 func (x *CloutDropEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[32]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1998,7 +2320,7 @@ func (x *CloutDropEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CloutDropEntry.ProtoReflect.Descriptor instead.
 func (*CloutDropEntry) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{32}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *CloutDropEntry) GetPillarCode() string {
@@ -2069,7 +2391,7 @@ type GetLatestCloutDropResponse struct {
 
 func (x *GetLatestCloutDropResponse) Reset() {
 	*x = GetLatestCloutDropResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[33]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2081,7 +2403,7 @@ func (x *GetLatestCloutDropResponse) String() string {
 func (*GetLatestCloutDropResponse) ProtoMessage() {}
 
 func (x *GetLatestCloutDropResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[33]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2094,7 +2416,7 @@ func (x *GetLatestCloutDropResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLatestCloutDropResponse.ProtoReflect.Descriptor instead.
 func (*GetLatestCloutDropResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{33}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *GetLatestCloutDropResponse) GetWeekStart() string {
@@ -2121,7 +2443,7 @@ type ListMyAuditLogRequest struct {
 
 func (x *ListMyAuditLogRequest) Reset() {
 	*x = ListMyAuditLogRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[34]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2133,7 +2455,7 @@ func (x *ListMyAuditLogRequest) String() string {
 func (*ListMyAuditLogRequest) ProtoMessage() {}
 
 func (x *ListMyAuditLogRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[34]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2146,7 +2468,7 @@ func (x *ListMyAuditLogRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyAuditLogRequest.ProtoReflect.Descriptor instead.
 func (*ListMyAuditLogRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{34}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *ListMyAuditLogRequest) GetLimit() int32 {
@@ -2181,7 +2503,7 @@ type MyAuditEntry struct {
 
 func (x *MyAuditEntry) Reset() {
 	*x = MyAuditEntry{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[35]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2193,7 +2515,7 @@ func (x *MyAuditEntry) String() string {
 func (*MyAuditEntry) ProtoMessage() {}
 
 func (x *MyAuditEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[35]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2206,7 +2528,7 @@ func (x *MyAuditEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MyAuditEntry.ProtoReflect.Descriptor instead.
 func (*MyAuditEntry) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{35}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *MyAuditEntry) GetId() string {
@@ -2253,7 +2575,7 @@ type ListMyAuditLogResponse struct {
 
 func (x *ListMyAuditLogResponse) Reset() {
 	*x = ListMyAuditLogResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[36]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2265,7 +2587,7 @@ func (x *ListMyAuditLogResponse) String() string {
 func (*ListMyAuditLogResponse) ProtoMessage() {}
 
 func (x *ListMyAuditLogResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[36]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2278,7 +2600,7 @@ func (x *ListMyAuditLogResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyAuditLogResponse.ProtoReflect.Descriptor instead.
 func (*ListMyAuditLogResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{36}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *ListMyAuditLogResponse) GetEntries() []*MyAuditEntry {
@@ -2308,7 +2630,7 @@ type FriendSummary struct {
 
 func (x *FriendSummary) Reset() {
 	*x = FriendSummary{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[37]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2320,7 +2642,7 @@ func (x *FriendSummary) String() string {
 func (*FriendSummary) ProtoMessage() {}
 
 func (x *FriendSummary) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[37]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2333,7 +2655,7 @@ func (x *FriendSummary) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FriendSummary.ProtoReflect.Descriptor instead.
 func (*FriendSummary) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{37}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *FriendSummary) GetFriendshipId() string {
@@ -2400,7 +2722,7 @@ type ListFriendsRequest struct {
 
 func (x *ListFriendsRequest) Reset() {
 	*x = ListFriendsRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[38]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2412,7 +2734,7 @@ func (x *ListFriendsRequest) String() string {
 func (*ListFriendsRequest) ProtoMessage() {}
 
 func (x *ListFriendsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[38]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2425,7 +2747,7 @@ func (x *ListFriendsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListFriendsRequest.ProtoReflect.Descriptor instead.
 func (*ListFriendsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{38}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{43}
 }
 
 type ListFriendsResponse struct {
@@ -2439,7 +2761,7 @@ type ListFriendsResponse struct {
 
 func (x *ListFriendsResponse) Reset() {
 	*x = ListFriendsResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[39]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2451,7 +2773,7 @@ func (x *ListFriendsResponse) String() string {
 func (*ListFriendsResponse) ProtoMessage() {}
 
 func (x *ListFriendsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[39]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2464,7 +2786,7 @@ func (x *ListFriendsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListFriendsResponse.ProtoReflect.Descriptor instead.
 func (*ListFriendsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{39}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *ListFriendsResponse) GetFriends() []*FriendSummary {
@@ -2498,7 +2820,7 @@ type SendInviteRequest struct {
 
 func (x *SendInviteRequest) Reset() {
 	*x = SendInviteRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[40]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[45]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2510,7 +2832,7 @@ func (x *SendInviteRequest) String() string {
 func (*SendInviteRequest) ProtoMessage() {}
 
 func (x *SendInviteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[40]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[45]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2523,7 +2845,7 @@ func (x *SendInviteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendInviteRequest.ProtoReflect.Descriptor instead.
 func (*SendInviteRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{40}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *SendInviteRequest) GetHandle() string {
@@ -2542,7 +2864,7 @@ type SendInviteResponse struct {
 
 func (x *SendInviteResponse) Reset() {
 	*x = SendInviteResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[41]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2554,7 +2876,7 @@ func (x *SendInviteResponse) String() string {
 func (*SendInviteResponse) ProtoMessage() {}
 
 func (x *SendInviteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[41]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2567,7 +2889,7 @@ func (x *SendInviteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendInviteResponse.ProtoReflect.Descriptor instead.
 func (*SendInviteResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{41}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *SendInviteResponse) GetFriendshipId() string {
@@ -2588,7 +2910,7 @@ type RespondInviteRequest struct {
 
 func (x *RespondInviteRequest) Reset() {
 	*x = RespondInviteRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[42]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[47]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2600,7 +2922,7 @@ func (x *RespondInviteRequest) String() string {
 func (*RespondInviteRequest) ProtoMessage() {}
 
 func (x *RespondInviteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[42]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[47]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2613,7 +2935,7 @@ func (x *RespondInviteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RespondInviteRequest.ProtoReflect.Descriptor instead.
 func (*RespondInviteRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{42}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *RespondInviteRequest) GetFriendshipId() string {
@@ -2641,7 +2963,7 @@ type RespondInviteResponse struct {
 
 func (x *RespondInviteResponse) Reset() {
 	*x = RespondInviteResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[43]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2653,7 +2975,7 @@ func (x *RespondInviteResponse) String() string {
 func (*RespondInviteResponse) ProtoMessage() {}
 
 func (x *RespondInviteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[43]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2666,7 +2988,7 @@ func (x *RespondInviteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RespondInviteResponse.ProtoReflect.Descriptor instead.
 func (*RespondInviteResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{43}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *RespondInviteResponse) GetFriendshipId() string {
@@ -2694,7 +3016,7 @@ type RemoveFriendRequest struct {
 
 func (x *RemoveFriendRequest) Reset() {
 	*x = RemoveFriendRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[44]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2706,7 +3028,7 @@ func (x *RemoveFriendRequest) String() string {
 func (*RemoveFriendRequest) ProtoMessage() {}
 
 func (x *RemoveFriendRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[44]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2719,7 +3041,7 @@ func (x *RemoveFriendRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveFriendRequest.ProtoReflect.Descriptor instead.
 func (*RemoveFriendRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{44}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *RemoveFriendRequest) GetFriendshipId() string {
@@ -2738,7 +3060,7 @@ type RemoveFriendResponse struct {
 
 func (x *RemoveFriendResponse) Reset() {
 	*x = RemoveFriendResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[45]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[50]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2750,7 +3072,7 @@ func (x *RemoveFriendResponse) String() string {
 func (*RemoveFriendResponse) ProtoMessage() {}
 
 func (x *RemoveFriendResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[45]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[50]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2763,7 +3085,7 @@ func (x *RemoveFriendResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveFriendResponse.ProtoReflect.Descriptor instead.
 func (*RemoveFriendResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{45}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *RemoveFriendResponse) GetFriendshipId() string {
@@ -2863,7 +3185,31 @@ const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\x03bio\x18\x02 \x01(\tR\x03bio\"I\n" +
 	"\x1bUpdatePublicProfileResponse\x12\x18\n" +
 	"\atagline\x18\x01 \x01(\tR\atagline\x12\x10\n" +
-	"\x03bio\x18\x02 \x01(\tR\x03bio\"\xb2\x01\n" +
+	"\x03bio\x18\x02 \x01(\tR\x03bio\"\xab\x02\n" +
+	"\fSalonSummary\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x12\n" +
+	"\x04city\x18\x03 \x01(\tR\x04city\x12\x14\n" +
+	"\x05venue\x18\x04 \x01(\tR\x05venue\x12 \n" +
+	"\vdescription\x18\x05 \x01(\tR\vdescription\x12\x1b\n" +
+	"\tstarts_at\x18\x06 \x01(\tR\bstartsAt\x12\x17\n" +
+	"\aends_at\x18\a \x01(\tR\x06endsAt\x12\x1a\n" +
+	"\bcapacity\x18\b \x01(\x05R\bcapacity\x12\x19\n" +
+	"\bmin_tier\x18\t \x01(\tR\aminTier\x12\x1f\n" +
+	"\vgoing_count\x18\n" +
+	" \x01(\x05R\n" +
+	"goingCount\x12\x1b\n" +
+	"\tmy_status\x18\v \x01(\tR\bmyStatus\"1\n" +
+	"\x19ListUpcomingSalonsRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"V\n" +
+	"\x1aListUpcomingSalonsResponse\x128\n" +
+	"\x06salons\x18\x01 \x03(\v2 .sttattus.empire.v1.SalonSummaryR\x06salons\"K\n" +
+	"\x16UpdateSalonRsvpRequest\x12\x19\n" +
+	"\bsalon_id\x18\x01 \x01(\tR\asalonId\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\"L\n" +
+	"\x17UpdateSalonRsvpResponse\x12\x19\n" +
+	"\bsalon_id\x18\x01 \x01(\tR\asalonId\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\"\xb2\x01\n" +
 	"\x06Lounge\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -2965,7 +3311,7 @@ const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\x13RemoveFriendRequest\x12#\n" +
 	"\rfriendship_id\x18\x01 \x01(\tR\ffriendshipId\";\n" +
 	"\x14RemoveFriendResponse\x12#\n" +
-	"\rfriendship_id\x18\x01 \x01(\tR\ffriendshipId2\xb5\x0f\n" +
+	"\rfriendship_id\x18\x01 \x01(\tR\ffriendshipId2\x96\x11\n" +
 	"\rEmpireService\x12p\n" +
 	"\x11GetScoreBreakdown\x12,.sttattus.empire.v1.GetScoreBreakdownRequest\x1a-.sttattus.empire.v1.GetScoreBreakdownResponse\x12d\n" +
 	"\rGetTierLadder\x12(.sttattus.empire.v1.GetTierLadderRequest\x1a).sttattus.empire.v1.GetTierLadderResponse\x12X\n" +
@@ -2985,7 +3331,9 @@ const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\x18GetLatestEditorialDigest\x123.sttattus.empire.v1.GetLatestEditorialDigestRequest\x1a4.sttattus.empire.v1.GetLatestEditorialDigestResponse\x12y\n" +
 	"\x14ListEditorialDigests\x12/.sttattus.empire.v1.ListEditorialDigestsRequest\x1a0.sttattus.empire.v1.ListEditorialDigestsResponse\x12^\n" +
 	"\vListLounges\x12&.sttattus.empire.v1.ListLoungesRequest\x1a'.sttattus.empire.v1.ListLoungesResponse\x12\x85\x01\n" +
-	"\x18ListUpcomingLoungeEvents\x123.sttattus.empire.v1.ListUpcomingLoungeEventsRequest\x1a4.sttattus.empire.v1.ListUpcomingLoungeEventsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1b\x06proto3"
+	"\x18ListUpcomingLoungeEvents\x123.sttattus.empire.v1.ListUpcomingLoungeEventsRequest\x1a4.sttattus.empire.v1.ListUpcomingLoungeEventsResponse\x12s\n" +
+	"\x12ListUpcomingSalons\x12-.sttattus.empire.v1.ListUpcomingSalonsRequest\x1a..sttattus.empire.v1.ListUpcomingSalonsResponse\x12j\n" +
+	"\x0fUpdateSalonRsvp\x12*.sttattus.empire.v1.UpdateSalonRsvpRequest\x1a+.sttattus.empire.v1.UpdateSalonRsvpResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1b\x06proto3"
 
 var (
 	file_sttattus_empire_v1_empire_proto_rawDescOnce sync.Once
@@ -2999,7 +3347,7 @@ func file_sttattus_empire_v1_empire_proto_rawDescGZIP() []byte {
 	return file_sttattus_empire_v1_empire_proto_rawDescData
 }
 
-var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 46)
+var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 51)
 var file_sttattus_empire_v1_empire_proto_goTypes = []any{
 	(*GetScoreBreakdownRequest)(nil),         // 0: sttattus.empire.v1.GetScoreBreakdownRequest
 	(*GetScoreBreakdownResponse)(nil),        // 1: sttattus.empire.v1.GetScoreBreakdownResponse
@@ -3021,88 +3369,98 @@ var file_sttattus_empire_v1_empire_proto_goTypes = []any{
 	(*ClaimHandleResponse)(nil),              // 17: sttattus.empire.v1.ClaimHandleResponse
 	(*UpdatePublicProfileRequest)(nil),       // 18: sttattus.empire.v1.UpdatePublicProfileRequest
 	(*UpdatePublicProfileResponse)(nil),      // 19: sttattus.empire.v1.UpdatePublicProfileResponse
-	(*Lounge)(nil),                           // 20: sttattus.empire.v1.Lounge
-	(*ListLoungesRequest)(nil),               // 21: sttattus.empire.v1.ListLoungesRequest
-	(*ListLoungesResponse)(nil),              // 22: sttattus.empire.v1.ListLoungesResponse
-	(*LoungeEvent)(nil),                      // 23: sttattus.empire.v1.LoungeEvent
-	(*ListUpcomingLoungeEventsRequest)(nil),  // 24: sttattus.empire.v1.ListUpcomingLoungeEventsRequest
-	(*ListUpcomingLoungeEventsResponse)(nil), // 25: sttattus.empire.v1.ListUpcomingLoungeEventsResponse
-	(*EditorialDigest)(nil),                  // 26: sttattus.empire.v1.EditorialDigest
-	(*GetLatestEditorialDigestRequest)(nil),  // 27: sttattus.empire.v1.GetLatestEditorialDigestRequest
-	(*GetLatestEditorialDigestResponse)(nil), // 28: sttattus.empire.v1.GetLatestEditorialDigestResponse
-	(*ListEditorialDigestsRequest)(nil),      // 29: sttattus.empire.v1.ListEditorialDigestsRequest
-	(*ListEditorialDigestsResponse)(nil),     // 30: sttattus.empire.v1.ListEditorialDigestsResponse
-	(*GetLatestCloutDropRequest)(nil),        // 31: sttattus.empire.v1.GetLatestCloutDropRequest
-	(*CloutDropEntry)(nil),                   // 32: sttattus.empire.v1.CloutDropEntry
-	(*GetLatestCloutDropResponse)(nil),       // 33: sttattus.empire.v1.GetLatestCloutDropResponse
-	(*ListMyAuditLogRequest)(nil),            // 34: sttattus.empire.v1.ListMyAuditLogRequest
-	(*MyAuditEntry)(nil),                     // 35: sttattus.empire.v1.MyAuditEntry
-	(*ListMyAuditLogResponse)(nil),           // 36: sttattus.empire.v1.ListMyAuditLogResponse
-	(*FriendSummary)(nil),                    // 37: sttattus.empire.v1.FriendSummary
-	(*ListFriendsRequest)(nil),               // 38: sttattus.empire.v1.ListFriendsRequest
-	(*ListFriendsResponse)(nil),              // 39: sttattus.empire.v1.ListFriendsResponse
-	(*SendInviteRequest)(nil),                // 40: sttattus.empire.v1.SendInviteRequest
-	(*SendInviteResponse)(nil),               // 41: sttattus.empire.v1.SendInviteResponse
-	(*RespondInviteRequest)(nil),             // 42: sttattus.empire.v1.RespondInviteRequest
-	(*RespondInviteResponse)(nil),            // 43: sttattus.empire.v1.RespondInviteResponse
-	(*RemoveFriendRequest)(nil),              // 44: sttattus.empire.v1.RemoveFriendRequest
-	(*RemoveFriendResponse)(nil),             // 45: sttattus.empire.v1.RemoveFriendResponse
+	(*SalonSummary)(nil),                     // 20: sttattus.empire.v1.SalonSummary
+	(*ListUpcomingSalonsRequest)(nil),        // 21: sttattus.empire.v1.ListUpcomingSalonsRequest
+	(*ListUpcomingSalonsResponse)(nil),       // 22: sttattus.empire.v1.ListUpcomingSalonsResponse
+	(*UpdateSalonRsvpRequest)(nil),           // 23: sttattus.empire.v1.UpdateSalonRsvpRequest
+	(*UpdateSalonRsvpResponse)(nil),          // 24: sttattus.empire.v1.UpdateSalonRsvpResponse
+	(*Lounge)(nil),                           // 25: sttattus.empire.v1.Lounge
+	(*ListLoungesRequest)(nil),               // 26: sttattus.empire.v1.ListLoungesRequest
+	(*ListLoungesResponse)(nil),              // 27: sttattus.empire.v1.ListLoungesResponse
+	(*LoungeEvent)(nil),                      // 28: sttattus.empire.v1.LoungeEvent
+	(*ListUpcomingLoungeEventsRequest)(nil),  // 29: sttattus.empire.v1.ListUpcomingLoungeEventsRequest
+	(*ListUpcomingLoungeEventsResponse)(nil), // 30: sttattus.empire.v1.ListUpcomingLoungeEventsResponse
+	(*EditorialDigest)(nil),                  // 31: sttattus.empire.v1.EditorialDigest
+	(*GetLatestEditorialDigestRequest)(nil),  // 32: sttattus.empire.v1.GetLatestEditorialDigestRequest
+	(*GetLatestEditorialDigestResponse)(nil), // 33: sttattus.empire.v1.GetLatestEditorialDigestResponse
+	(*ListEditorialDigestsRequest)(nil),      // 34: sttattus.empire.v1.ListEditorialDigestsRequest
+	(*ListEditorialDigestsResponse)(nil),     // 35: sttattus.empire.v1.ListEditorialDigestsResponse
+	(*GetLatestCloutDropRequest)(nil),        // 36: sttattus.empire.v1.GetLatestCloutDropRequest
+	(*CloutDropEntry)(nil),                   // 37: sttattus.empire.v1.CloutDropEntry
+	(*GetLatestCloutDropResponse)(nil),       // 38: sttattus.empire.v1.GetLatestCloutDropResponse
+	(*ListMyAuditLogRequest)(nil),            // 39: sttattus.empire.v1.ListMyAuditLogRequest
+	(*MyAuditEntry)(nil),                     // 40: sttattus.empire.v1.MyAuditEntry
+	(*ListMyAuditLogResponse)(nil),           // 41: sttattus.empire.v1.ListMyAuditLogResponse
+	(*FriendSummary)(nil),                    // 42: sttattus.empire.v1.FriendSummary
+	(*ListFriendsRequest)(nil),               // 43: sttattus.empire.v1.ListFriendsRequest
+	(*ListFriendsResponse)(nil),              // 44: sttattus.empire.v1.ListFriendsResponse
+	(*SendInviteRequest)(nil),                // 45: sttattus.empire.v1.SendInviteRequest
+	(*SendInviteResponse)(nil),               // 46: sttattus.empire.v1.SendInviteResponse
+	(*RespondInviteRequest)(nil),             // 47: sttattus.empire.v1.RespondInviteRequest
+	(*RespondInviteResponse)(nil),            // 48: sttattus.empire.v1.RespondInviteResponse
+	(*RemoveFriendRequest)(nil),              // 49: sttattus.empire.v1.RemoveFriendRequest
+	(*RemoveFriendResponse)(nil),             // 50: sttattus.empire.v1.RemoveFriendResponse
 }
 var file_sttattus_empire_v1_empire_proto_depIdxs = []int32{
 	3,  // 0: sttattus.empire.v1.GetTierLadderResponse.bands:type_name -> sttattus.empire.v1.TierBand
 	6,  // 1: sttattus.empire.v1.GetWalletResponse.by_pillar:type_name -> sttattus.empire.v1.PillarPoints
 	9,  // 2: sttattus.empire.v1.ListLedgerEntriesResponse.entries:type_name -> sttattus.empire.v1.LedgerEntry
 	12, // 3: sttattus.empire.v1.GetTaxStatementResponse.active_rules:type_name -> sttattus.empire.v1.TaxRuleSummary
-	20, // 4: sttattus.empire.v1.ListLoungesResponse.lounges:type_name -> sttattus.empire.v1.Lounge
-	23, // 5: sttattus.empire.v1.ListUpcomingLoungeEventsResponse.events:type_name -> sttattus.empire.v1.LoungeEvent
-	26, // 6: sttattus.empire.v1.GetLatestEditorialDigestResponse.digest:type_name -> sttattus.empire.v1.EditorialDigest
-	26, // 7: sttattus.empire.v1.ListEditorialDigestsResponse.digests:type_name -> sttattus.empire.v1.EditorialDigest
-	32, // 8: sttattus.empire.v1.GetLatestCloutDropResponse.entries:type_name -> sttattus.empire.v1.CloutDropEntry
-	35, // 9: sttattus.empire.v1.ListMyAuditLogResponse.entries:type_name -> sttattus.empire.v1.MyAuditEntry
-	37, // 10: sttattus.empire.v1.ListFriendsResponse.friends:type_name -> sttattus.empire.v1.FriendSummary
-	37, // 11: sttattus.empire.v1.ListFriendsResponse.incoming:type_name -> sttattus.empire.v1.FriendSummary
-	37, // 12: sttattus.empire.v1.ListFriendsResponse.outgoing:type_name -> sttattus.empire.v1.FriendSummary
-	0,  // 13: sttattus.empire.v1.EmpireService.GetScoreBreakdown:input_type -> sttattus.empire.v1.GetScoreBreakdownRequest
-	2,  // 14: sttattus.empire.v1.EmpireService.GetTierLadder:input_type -> sttattus.empire.v1.GetTierLadderRequest
-	5,  // 15: sttattus.empire.v1.EmpireService.GetWallet:input_type -> sttattus.empire.v1.GetWalletRequest
-	8,  // 16: sttattus.empire.v1.EmpireService.ListLedgerEntries:input_type -> sttattus.empire.v1.ListLedgerEntriesRequest
-	11, // 17: sttattus.empire.v1.EmpireService.GetTaxStatement:input_type -> sttattus.empire.v1.GetTaxStatementRequest
-	14, // 18: sttattus.empire.v1.EmpireService.GetPublicProfile:input_type -> sttattus.empire.v1.GetPublicProfileRequest
-	16, // 19: sttattus.empire.v1.EmpireService.ClaimHandle:input_type -> sttattus.empire.v1.ClaimHandleRequest
-	18, // 20: sttattus.empire.v1.EmpireService.UpdatePublicProfile:input_type -> sttattus.empire.v1.UpdatePublicProfileRequest
-	38, // 21: sttattus.empire.v1.EmpireService.ListFriends:input_type -> sttattus.empire.v1.ListFriendsRequest
-	40, // 22: sttattus.empire.v1.EmpireService.SendInvite:input_type -> sttattus.empire.v1.SendInviteRequest
-	42, // 23: sttattus.empire.v1.EmpireService.RespondInvite:input_type -> sttattus.empire.v1.RespondInviteRequest
-	44, // 24: sttattus.empire.v1.EmpireService.RemoveFriend:input_type -> sttattus.empire.v1.RemoveFriendRequest
-	34, // 25: sttattus.empire.v1.EmpireService.ListMyAuditLog:input_type -> sttattus.empire.v1.ListMyAuditLogRequest
-	31, // 26: sttattus.empire.v1.EmpireService.GetLatestCloutDrop:input_type -> sttattus.empire.v1.GetLatestCloutDropRequest
-	27, // 27: sttattus.empire.v1.EmpireService.GetLatestEditorialDigest:input_type -> sttattus.empire.v1.GetLatestEditorialDigestRequest
-	29, // 28: sttattus.empire.v1.EmpireService.ListEditorialDigests:input_type -> sttattus.empire.v1.ListEditorialDigestsRequest
-	21, // 29: sttattus.empire.v1.EmpireService.ListLounges:input_type -> sttattus.empire.v1.ListLoungesRequest
-	24, // 30: sttattus.empire.v1.EmpireService.ListUpcomingLoungeEvents:input_type -> sttattus.empire.v1.ListUpcomingLoungeEventsRequest
-	1,  // 31: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
-	4,  // 32: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
-	7,  // 33: sttattus.empire.v1.EmpireService.GetWallet:output_type -> sttattus.empire.v1.GetWalletResponse
-	10, // 34: sttattus.empire.v1.EmpireService.ListLedgerEntries:output_type -> sttattus.empire.v1.ListLedgerEntriesResponse
-	13, // 35: sttattus.empire.v1.EmpireService.GetTaxStatement:output_type -> sttattus.empire.v1.GetTaxStatementResponse
-	15, // 36: sttattus.empire.v1.EmpireService.GetPublicProfile:output_type -> sttattus.empire.v1.GetPublicProfileResponse
-	17, // 37: sttattus.empire.v1.EmpireService.ClaimHandle:output_type -> sttattus.empire.v1.ClaimHandleResponse
-	19, // 38: sttattus.empire.v1.EmpireService.UpdatePublicProfile:output_type -> sttattus.empire.v1.UpdatePublicProfileResponse
-	39, // 39: sttattus.empire.v1.EmpireService.ListFriends:output_type -> sttattus.empire.v1.ListFriendsResponse
-	41, // 40: sttattus.empire.v1.EmpireService.SendInvite:output_type -> sttattus.empire.v1.SendInviteResponse
-	43, // 41: sttattus.empire.v1.EmpireService.RespondInvite:output_type -> sttattus.empire.v1.RespondInviteResponse
-	45, // 42: sttattus.empire.v1.EmpireService.RemoveFriend:output_type -> sttattus.empire.v1.RemoveFriendResponse
-	36, // 43: sttattus.empire.v1.EmpireService.ListMyAuditLog:output_type -> sttattus.empire.v1.ListMyAuditLogResponse
-	33, // 44: sttattus.empire.v1.EmpireService.GetLatestCloutDrop:output_type -> sttattus.empire.v1.GetLatestCloutDropResponse
-	28, // 45: sttattus.empire.v1.EmpireService.GetLatestEditorialDigest:output_type -> sttattus.empire.v1.GetLatestEditorialDigestResponse
-	30, // 46: sttattus.empire.v1.EmpireService.ListEditorialDigests:output_type -> sttattus.empire.v1.ListEditorialDigestsResponse
-	22, // 47: sttattus.empire.v1.EmpireService.ListLounges:output_type -> sttattus.empire.v1.ListLoungesResponse
-	25, // 48: sttattus.empire.v1.EmpireService.ListUpcomingLoungeEvents:output_type -> sttattus.empire.v1.ListUpcomingLoungeEventsResponse
-	31, // [31:49] is the sub-list for method output_type
-	13, // [13:31] is the sub-list for method input_type
-	13, // [13:13] is the sub-list for extension type_name
-	13, // [13:13] is the sub-list for extension extendee
-	0,  // [0:13] is the sub-list for field type_name
+	20, // 4: sttattus.empire.v1.ListUpcomingSalonsResponse.salons:type_name -> sttattus.empire.v1.SalonSummary
+	25, // 5: sttattus.empire.v1.ListLoungesResponse.lounges:type_name -> sttattus.empire.v1.Lounge
+	28, // 6: sttattus.empire.v1.ListUpcomingLoungeEventsResponse.events:type_name -> sttattus.empire.v1.LoungeEvent
+	31, // 7: sttattus.empire.v1.GetLatestEditorialDigestResponse.digest:type_name -> sttattus.empire.v1.EditorialDigest
+	31, // 8: sttattus.empire.v1.ListEditorialDigestsResponse.digests:type_name -> sttattus.empire.v1.EditorialDigest
+	37, // 9: sttattus.empire.v1.GetLatestCloutDropResponse.entries:type_name -> sttattus.empire.v1.CloutDropEntry
+	40, // 10: sttattus.empire.v1.ListMyAuditLogResponse.entries:type_name -> sttattus.empire.v1.MyAuditEntry
+	42, // 11: sttattus.empire.v1.ListFriendsResponse.friends:type_name -> sttattus.empire.v1.FriendSummary
+	42, // 12: sttattus.empire.v1.ListFriendsResponse.incoming:type_name -> sttattus.empire.v1.FriendSummary
+	42, // 13: sttattus.empire.v1.ListFriendsResponse.outgoing:type_name -> sttattus.empire.v1.FriendSummary
+	0,  // 14: sttattus.empire.v1.EmpireService.GetScoreBreakdown:input_type -> sttattus.empire.v1.GetScoreBreakdownRequest
+	2,  // 15: sttattus.empire.v1.EmpireService.GetTierLadder:input_type -> sttattus.empire.v1.GetTierLadderRequest
+	5,  // 16: sttattus.empire.v1.EmpireService.GetWallet:input_type -> sttattus.empire.v1.GetWalletRequest
+	8,  // 17: sttattus.empire.v1.EmpireService.ListLedgerEntries:input_type -> sttattus.empire.v1.ListLedgerEntriesRequest
+	11, // 18: sttattus.empire.v1.EmpireService.GetTaxStatement:input_type -> sttattus.empire.v1.GetTaxStatementRequest
+	14, // 19: sttattus.empire.v1.EmpireService.GetPublicProfile:input_type -> sttattus.empire.v1.GetPublicProfileRequest
+	16, // 20: sttattus.empire.v1.EmpireService.ClaimHandle:input_type -> sttattus.empire.v1.ClaimHandleRequest
+	18, // 21: sttattus.empire.v1.EmpireService.UpdatePublicProfile:input_type -> sttattus.empire.v1.UpdatePublicProfileRequest
+	43, // 22: sttattus.empire.v1.EmpireService.ListFriends:input_type -> sttattus.empire.v1.ListFriendsRequest
+	45, // 23: sttattus.empire.v1.EmpireService.SendInvite:input_type -> sttattus.empire.v1.SendInviteRequest
+	47, // 24: sttattus.empire.v1.EmpireService.RespondInvite:input_type -> sttattus.empire.v1.RespondInviteRequest
+	49, // 25: sttattus.empire.v1.EmpireService.RemoveFriend:input_type -> sttattus.empire.v1.RemoveFriendRequest
+	39, // 26: sttattus.empire.v1.EmpireService.ListMyAuditLog:input_type -> sttattus.empire.v1.ListMyAuditLogRequest
+	36, // 27: sttattus.empire.v1.EmpireService.GetLatestCloutDrop:input_type -> sttattus.empire.v1.GetLatestCloutDropRequest
+	32, // 28: sttattus.empire.v1.EmpireService.GetLatestEditorialDigest:input_type -> sttattus.empire.v1.GetLatestEditorialDigestRequest
+	34, // 29: sttattus.empire.v1.EmpireService.ListEditorialDigests:input_type -> sttattus.empire.v1.ListEditorialDigestsRequest
+	26, // 30: sttattus.empire.v1.EmpireService.ListLounges:input_type -> sttattus.empire.v1.ListLoungesRequest
+	29, // 31: sttattus.empire.v1.EmpireService.ListUpcomingLoungeEvents:input_type -> sttattus.empire.v1.ListUpcomingLoungeEventsRequest
+	21, // 32: sttattus.empire.v1.EmpireService.ListUpcomingSalons:input_type -> sttattus.empire.v1.ListUpcomingSalonsRequest
+	23, // 33: sttattus.empire.v1.EmpireService.UpdateSalonRsvp:input_type -> sttattus.empire.v1.UpdateSalonRsvpRequest
+	1,  // 34: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
+	4,  // 35: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
+	7,  // 36: sttattus.empire.v1.EmpireService.GetWallet:output_type -> sttattus.empire.v1.GetWalletResponse
+	10, // 37: sttattus.empire.v1.EmpireService.ListLedgerEntries:output_type -> sttattus.empire.v1.ListLedgerEntriesResponse
+	13, // 38: sttattus.empire.v1.EmpireService.GetTaxStatement:output_type -> sttattus.empire.v1.GetTaxStatementResponse
+	15, // 39: sttattus.empire.v1.EmpireService.GetPublicProfile:output_type -> sttattus.empire.v1.GetPublicProfileResponse
+	17, // 40: sttattus.empire.v1.EmpireService.ClaimHandle:output_type -> sttattus.empire.v1.ClaimHandleResponse
+	19, // 41: sttattus.empire.v1.EmpireService.UpdatePublicProfile:output_type -> sttattus.empire.v1.UpdatePublicProfileResponse
+	44, // 42: sttattus.empire.v1.EmpireService.ListFriends:output_type -> sttattus.empire.v1.ListFriendsResponse
+	46, // 43: sttattus.empire.v1.EmpireService.SendInvite:output_type -> sttattus.empire.v1.SendInviteResponse
+	48, // 44: sttattus.empire.v1.EmpireService.RespondInvite:output_type -> sttattus.empire.v1.RespondInviteResponse
+	50, // 45: sttattus.empire.v1.EmpireService.RemoveFriend:output_type -> sttattus.empire.v1.RemoveFriendResponse
+	41, // 46: sttattus.empire.v1.EmpireService.ListMyAuditLog:output_type -> sttattus.empire.v1.ListMyAuditLogResponse
+	38, // 47: sttattus.empire.v1.EmpireService.GetLatestCloutDrop:output_type -> sttattus.empire.v1.GetLatestCloutDropResponse
+	33, // 48: sttattus.empire.v1.EmpireService.GetLatestEditorialDigest:output_type -> sttattus.empire.v1.GetLatestEditorialDigestResponse
+	35, // 49: sttattus.empire.v1.EmpireService.ListEditorialDigests:output_type -> sttattus.empire.v1.ListEditorialDigestsResponse
+	27, // 50: sttattus.empire.v1.EmpireService.ListLounges:output_type -> sttattus.empire.v1.ListLoungesResponse
+	30, // 51: sttattus.empire.v1.EmpireService.ListUpcomingLoungeEvents:output_type -> sttattus.empire.v1.ListUpcomingLoungeEventsResponse
+	22, // 52: sttattus.empire.v1.EmpireService.ListUpcomingSalons:output_type -> sttattus.empire.v1.ListUpcomingSalonsResponse
+	24, // 53: sttattus.empire.v1.EmpireService.UpdateSalonRsvp:output_type -> sttattus.empire.v1.UpdateSalonRsvpResponse
+	34, // [34:54] is the sub-list for method output_type
+	14, // [14:34] is the sub-list for method input_type
+	14, // [14:14] is the sub-list for extension type_name
+	14, // [14:14] is the sub-list for extension extendee
+	0,  // [0:14] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_empire_v1_empire_proto_init() }
@@ -3116,7 +3474,7 @@ func file_sttattus_empire_v1_empire_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_empire_v1_empire_proto_rawDesc), len(file_sttattus_empire_v1_empire_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   46,
+			NumMessages:   51,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

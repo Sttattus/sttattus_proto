@@ -323,6 +323,86 @@ final $typed_data.Uint8List updatePublicProfileResponseDescriptor = $convert.bas
     'ChtVcGRhdGVQdWJsaWNQcm9maWxlUmVzcG9uc2USGAoHdGFnbGluZRgBIAEoCVIHdGFnbGluZR'
     'IQCgNiaW8YAiABKAlSA2Jpbw==');
 
+@$core.Deprecated('Use salonSummaryDescriptor instead')
+const SalonSummary$json = {
+  '1': 'SalonSummary',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'city', '3': 3, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'venue', '3': 4, '4': 1, '5': 9, '10': 'venue'},
+    {'1': 'description', '3': 5, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'starts_at', '3': 6, '4': 1, '5': 9, '10': 'startsAt'},
+    {'1': 'ends_at', '3': 7, '4': 1, '5': 9, '10': 'endsAt'},
+    {'1': 'capacity', '3': 8, '4': 1, '5': 5, '10': 'capacity'},
+    {'1': 'min_tier', '3': 9, '4': 1, '5': 9, '10': 'minTier'},
+    {'1': 'going_count', '3': 10, '4': 1, '5': 5, '10': 'goingCount'},
+    {'1': 'my_status', '3': 11, '4': 1, '5': 9, '10': 'myStatus'},
+  ],
+};
+
+/// Descriptor for `SalonSummary`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List salonSummaryDescriptor = $convert.base64Decode(
+    'CgxTYWxvblN1bW1hcnkSDgoCaWQYASABKAlSAmlkEhQKBXRpdGxlGAIgASgJUgV0aXRsZRISCg'
+    'RjaXR5GAMgASgJUgRjaXR5EhQKBXZlbnVlGAQgASgJUgV2ZW51ZRIgCgtkZXNjcmlwdGlvbhgF'
+    'IAEoCVILZGVzY3JpcHRpb24SGwoJc3RhcnRzX2F0GAYgASgJUghzdGFydHNBdBIXCgdlbmRzX2'
+    'F0GAcgASgJUgZlbmRzQXQSGgoIY2FwYWNpdHkYCCABKAVSCGNhcGFjaXR5EhkKCG1pbl90aWVy'
+    'GAkgASgJUgdtaW5UaWVyEh8KC2dvaW5nX2NvdW50GAogASgFUgpnb2luZ0NvdW50EhsKCW15X3'
+    'N0YXR1cxgLIAEoCVIIbXlTdGF0dXM=');
+
+@$core.Deprecated('Use listUpcomingSalonsRequestDescriptor instead')
+const ListUpcomingSalonsRequest$json = {
+  '1': 'ListUpcomingSalonsRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListUpcomingSalonsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listUpcomingSalonsRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0VXBjb21pbmdTYWxvbnNSZXF1ZXN0EhQKBWxpbWl0GAEgASgFUgVsaW1pdA==');
+
+@$core.Deprecated('Use listUpcomingSalonsResponseDescriptor instead')
+const ListUpcomingSalonsResponse$json = {
+  '1': 'ListUpcomingSalonsResponse',
+  '2': [
+    {'1': 'salons', '3': 1, '4': 3, '5': 11, '6': '.sttattus.empire.v1.SalonSummary', '10': 'salons'},
+  ],
+};
+
+/// Descriptor for `ListUpcomingSalonsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listUpcomingSalonsResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0VXBjb21pbmdTYWxvbnNSZXNwb25zZRI4CgZzYWxvbnMYASADKAsyIC5zdHRhdHR1cy'
+    '5lbXBpcmUudjEuU2Fsb25TdW1tYXJ5UgZzYWxvbnM=');
+
+@$core.Deprecated('Use updateSalonRsvpRequestDescriptor instead')
+const UpdateSalonRsvpRequest$json = {
+  '1': 'UpdateSalonRsvpRequest',
+  '2': [
+    {'1': 'salon_id', '3': 1, '4': 1, '5': 9, '10': 'salonId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `UpdateSalonRsvpRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateSalonRsvpRequestDescriptor = $convert.base64Decode(
+    'ChZVcGRhdGVTYWxvblJzdnBSZXF1ZXN0EhkKCHNhbG9uX2lkGAEgASgJUgdzYWxvbklkEhYKBn'
+    'N0YXR1cxgCIAEoCVIGc3RhdHVz');
+
+@$core.Deprecated('Use updateSalonRsvpResponseDescriptor instead')
+const UpdateSalonRsvpResponse$json = {
+  '1': 'UpdateSalonRsvpResponse',
+  '2': [
+    {'1': 'salon_id', '3': 1, '4': 1, '5': 9, '10': 'salonId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `UpdateSalonRsvpResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateSalonRsvpResponseDescriptor = $convert.base64Decode(
+    'ChdVcGRhdGVTYWxvblJzdnBSZXNwb25zZRIZCghzYWxvbl9pZBgBIAEoCVIHc2Fsb25JZBIWCg'
+    'ZzdGF0dXMYAiABKAlSBnN0YXR1cw==');
+
 @$core.Deprecated('Use loungeDescriptor instead')
 const Lounge$json = {
   '1': 'Lounge',

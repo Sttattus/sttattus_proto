@@ -147,6 +147,17 @@ class EmpireServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listUpcomingLoungeEvents, request, options: options);
   }
 
+  /// ListUpcomingSalons returns near-future salons with the caller's
+  /// RSVP and the current going-count joined in.
+  $grpc.ResponseFuture<$0.ListUpcomingSalonsResponse> listUpcomingSalons($0.ListUpcomingSalonsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listUpcomingSalons, request, options: options);
+  }
+
+  /// UpdateSalonRsvp sets or clears the caller's RSVP for a salon.
+  $grpc.ResponseFuture<$0.UpdateSalonRsvpResponse> updateSalonRsvp($0.UpdateSalonRsvpRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$updateSalonRsvp, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getScoreBreakdown = $grpc.ClientMethod<$0.GetScoreBreakdownRequest, $0.GetScoreBreakdownResponse>(
@@ -221,6 +232,14 @@ class EmpireServiceClient extends $grpc.Client {
       '/sttattus.empire.v1.EmpireService/ListUpcomingLoungeEvents',
       ($0.ListUpcomingLoungeEventsRequest value) => value.writeToBuffer(),
       $0.ListUpcomingLoungeEventsResponse.fromBuffer);
+  static final _$listUpcomingSalons = $grpc.ClientMethod<$0.ListUpcomingSalonsRequest, $0.ListUpcomingSalonsResponse>(
+      '/sttattus.empire.v1.EmpireService/ListUpcomingSalons',
+      ($0.ListUpcomingSalonsRequest value) => value.writeToBuffer(),
+      $0.ListUpcomingSalonsResponse.fromBuffer);
+  static final _$updateSalonRsvp = $grpc.ClientMethod<$0.UpdateSalonRsvpRequest, $0.UpdateSalonRsvpResponse>(
+      '/sttattus.empire.v1.EmpireService/UpdateSalonRsvp',
+      ($0.UpdateSalonRsvpRequest value) => value.writeToBuffer(),
+      $0.UpdateSalonRsvpResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.empire.v1.EmpireService')
@@ -354,6 +373,20 @@ abstract class EmpireServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListUpcomingLoungeEventsRequest.fromBuffer(value),
         ($0.ListUpcomingLoungeEventsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListUpcomingSalonsRequest, $0.ListUpcomingSalonsResponse>(
+        'ListUpcomingSalons',
+        listUpcomingSalons_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListUpcomingSalonsRequest.fromBuffer(value),
+        ($0.ListUpcomingSalonsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateSalonRsvpRequest, $0.UpdateSalonRsvpResponse>(
+        'UpdateSalonRsvp',
+        updateSalonRsvp_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpdateSalonRsvpRequest.fromBuffer(value),
+        ($0.UpdateSalonRsvpResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetScoreBreakdownResponse> getScoreBreakdown_Pre($grpc.ServiceCall $call, $async.Future<$0.GetScoreBreakdownRequest> $request) async {
@@ -463,5 +496,17 @@ abstract class EmpireServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListUpcomingLoungeEventsResponse> listUpcomingLoungeEvents($grpc.ServiceCall call, $0.ListUpcomingLoungeEventsRequest request);
+
+  $async.Future<$0.ListUpcomingSalonsResponse> listUpcomingSalons_Pre($grpc.ServiceCall $call, $async.Future<$0.ListUpcomingSalonsRequest> $request) async {
+    return listUpcomingSalons($call, await $request);
+  }
+
+  $async.Future<$0.ListUpcomingSalonsResponse> listUpcomingSalons($grpc.ServiceCall call, $0.ListUpcomingSalonsRequest request);
+
+  $async.Future<$0.UpdateSalonRsvpResponse> updateSalonRsvp_Pre($grpc.ServiceCall $call, $async.Future<$0.UpdateSalonRsvpRequest> $request) async {
+    return updateSalonRsvp($call, await $request);
+  }
+
+  $async.Future<$0.UpdateSalonRsvpResponse> updateSalonRsvp($grpc.ServiceCall call, $0.UpdateSalonRsvpRequest request);
 
 }
