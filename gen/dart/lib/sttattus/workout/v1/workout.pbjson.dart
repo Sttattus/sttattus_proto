@@ -1085,3 +1085,76 @@ final $typed_data.Uint8List updateEnrolmentResponseDescriptor = $convert.base64D
     'ChdVcGRhdGVFbnJvbG1lbnRSZXNwb25zZRJFCgllbnJvbG1lbnQYASABKAsyJy5zdHRhdHR1cy'
     '53b3Jrb3V0LnYxLlByb2dyYW1tZUVucm9sbWVudFIJZW5yb2xtZW50');
 
+@$core.Deprecated('Use personalRecordDescriptor instead')
+const PersonalRecord$json = {
+  '1': 'PersonalRecord',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'exercise_id', '3': 2, '4': 1, '5': 9, '10': 'exerciseId'},
+    {'1': 'exercise_name', '3': 3, '4': 1, '5': 9, '10': 'exerciseName'},
+    {'1': 'kind', '3': 4, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'weight', '3': 5, '4': 1, '5': 1, '10': 'weight'},
+    {'1': 'reps', '3': 6, '4': 1, '5': 5, '10': 'reps'},
+    {'1': 'estimated_one_rm', '3': 7, '4': 1, '5': 1, '10': 'estimatedOneRm'},
+    {'1': 'unit', '3': 8, '4': 1, '5': 9, '10': 'unit'},
+    {'1': 'source_session_id', '3': 9, '4': 1, '5': 9, '10': 'sourceSessionId'},
+    {'1': 'achieved_at', '3': 10, '4': 1, '5': 3, '10': 'achievedAt'},
+  ],
+};
+
+/// Descriptor for `PersonalRecord`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List personalRecordDescriptor = $convert.base64Decode(
+    'Cg5QZXJzb25hbFJlY29yZBIOCgJpZBgBIAEoCVICaWQSHwoLZXhlcmNpc2VfaWQYAiABKAlSCm'
+    'V4ZXJjaXNlSWQSIwoNZXhlcmNpc2VfbmFtZRgDIAEoCVIMZXhlcmNpc2VOYW1lEhIKBGtpbmQY'
+    'BCABKAlSBGtpbmQSFgoGd2VpZ2h0GAUgASgBUgZ3ZWlnaHQSEgoEcmVwcxgGIAEoBVIEcmVwcx'
+    'IoChBlc3RpbWF0ZWRfb25lX3JtGAcgASgBUg5lc3RpbWF0ZWRPbmVSbRISCgR1bml0GAggASgJ'
+    'UgR1bml0EioKEXNvdXJjZV9zZXNzaW9uX2lkGAkgASgJUg9zb3VyY2VTZXNzaW9uSWQSHwoLYW'
+    'NoaWV2ZWRfYXQYCiABKANSCmFjaGlldmVkQXQ=');
+
+@$core.Deprecated('Use listMyPRsRequestDescriptor instead')
+const ListMyPRsRequest$json = {
+  '1': 'ListMyPRsRequest',
+};
+
+/// Descriptor for `ListMyPRsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyPRsRequestDescriptor = $convert.base64Decode(
+    'ChBMaXN0TXlQUnNSZXF1ZXN0');
+
+@$core.Deprecated('Use listMyPRsResponseDescriptor instead')
+const ListMyPRsResponse$json = {
+  '1': 'ListMyPRsResponse',
+  '2': [
+    {'1': 'prs', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.PersonalRecord', '10': 'prs'},
+  ],
+};
+
+/// Descriptor for `ListMyPRsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyPRsResponseDescriptor = $convert.base64Decode(
+    'ChFMaXN0TXlQUnNSZXNwb25zZRI1CgNwcnMYASADKAsyIy5zdHRhdHR1cy53b3Jrb3V0LnYxLl'
+    'BlcnNvbmFsUmVjb3JkUgNwcnM=');
+
+@$core.Deprecated('Use listRecentPRsRequestDescriptor instead')
+const ListRecentPRsRequest$json = {
+  '1': 'ListRecentPRsRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListRecentPRsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRecentPRsRequestDescriptor = $convert.base64Decode(
+    'ChRMaXN0UmVjZW50UFJzUmVxdWVzdBIUCgVsaW1pdBgBIAEoBVIFbGltaXQ=');
+
+@$core.Deprecated('Use listRecentPRsResponseDescriptor instead')
+const ListRecentPRsResponse$json = {
+  '1': 'ListRecentPRsResponse',
+  '2': [
+    {'1': 'prs', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.PersonalRecord', '10': 'prs'},
+  ],
+};
+
+/// Descriptor for `ListRecentPRsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRecentPRsResponseDescriptor = $convert.base64Decode(
+    'ChVMaXN0UmVjZW50UFJzUmVzcG9uc2USNQoDcHJzGAEgAygLMiMuc3R0YXR0dXMud29ya291dC'
+    '52MS5QZXJzb25hbFJlY29yZFIDcHJz');
+

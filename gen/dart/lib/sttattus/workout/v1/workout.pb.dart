@@ -4878,6 +4878,321 @@ class UpdateEnrolmentResponse extends $pb.GeneratedMessage {
   ProgrammeEnrolment ensureEnrolment() => $_ensure(0);
 }
 
+/// PersonalRecord is one PR with the movement name + estimated 1RM
+/// (Epley) baked in. kind is one of: 1RM | 3RM | 5RM | AMRAP | EST1RM.
+class PersonalRecord extends $pb.GeneratedMessage {
+  factory PersonalRecord({
+    $core.String? id,
+    $core.String? exerciseId,
+    $core.String? exerciseName,
+    $core.String? kind,
+    $core.double? weight,
+    $core.int? reps,
+    $core.double? estimatedOneRm,
+    $core.String? unit,
+    $core.String? sourceSessionId,
+    $fixnum.Int64? achievedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (exerciseId != null) result.exerciseId = exerciseId;
+    if (exerciseName != null) result.exerciseName = exerciseName;
+    if (kind != null) result.kind = kind;
+    if (weight != null) result.weight = weight;
+    if (reps != null) result.reps = reps;
+    if (estimatedOneRm != null) result.estimatedOneRm = estimatedOneRm;
+    if (unit != null) result.unit = unit;
+    if (sourceSessionId != null) result.sourceSessionId = sourceSessionId;
+    if (achievedAt != null) result.achievedAt = achievedAt;
+    return result;
+  }
+
+  PersonalRecord._();
+
+  factory PersonalRecord.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PersonalRecord.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PersonalRecord', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'exerciseId')
+    ..aOS(3, _omitFieldNames ? '' : 'exerciseName')
+    ..aOS(4, _omitFieldNames ? '' : 'kind')
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'weight', $pb.PbFieldType.OD)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'reps', $pb.PbFieldType.O3)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'estimatedOneRm', $pb.PbFieldType.OD)
+    ..aOS(8, _omitFieldNames ? '' : 'unit')
+    ..aOS(9, _omitFieldNames ? '' : 'sourceSessionId')
+    ..aInt64(10, _omitFieldNames ? '' : 'achievedAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PersonalRecord clone() => PersonalRecord()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PersonalRecord copyWith(void Function(PersonalRecord) updates) => super.copyWith((message) => updates(message as PersonalRecord)) as PersonalRecord;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PersonalRecord create() => PersonalRecord._();
+  @$core.override
+  PersonalRecord createEmptyInstance() => create();
+  static $pb.PbList<PersonalRecord> createRepeated() => $pb.PbList<PersonalRecord>();
+  @$core.pragma('dart2js:noInline')
+  static PersonalRecord getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PersonalRecord>(create);
+  static PersonalRecord? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get exerciseId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set exerciseId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExerciseId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExerciseId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get exerciseName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set exerciseName($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExerciseName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExerciseName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get kind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set kind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get weight => $_getN(4);
+  @$pb.TagNumber(5)
+  set weight($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWeight() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWeight() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get reps => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set reps($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReps() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReps() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get estimatedOneRm => $_getN(6);
+  @$pb.TagNumber(7)
+  set estimatedOneRm($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasEstimatedOneRm() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearEstimatedOneRm() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get unit => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set unit($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasUnit() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearUnit() => $_clearField(8);
+
+  /// The session this PR was first detected in. Empty when imported.
+  @$pb.TagNumber(9)
+  $core.String get sourceSessionId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set sourceSessionId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSourceSessionId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSourceSessionId() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get achievedAt => $_getI64(9);
+  @$pb.TagNumber(10)
+  set achievedAt($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasAchievedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAchievedAt() => $_clearField(10);
+}
+
+class ListMyPRsRequest extends $pb.GeneratedMessage {
+  factory ListMyPRsRequest() => create();
+
+  ListMyPRsRequest._();
+
+  factory ListMyPRsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyPRsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyPRsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyPRsRequest clone() => ListMyPRsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyPRsRequest copyWith(void Function(ListMyPRsRequest) updates) => super.copyWith((message) => updates(message as ListMyPRsRequest)) as ListMyPRsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyPRsRequest create() => ListMyPRsRequest._();
+  @$core.override
+  ListMyPRsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyPRsRequest> createRepeated() => $pb.PbList<ListMyPRsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyPRsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyPRsRequest>(create);
+  static ListMyPRsRequest? _defaultInstance;
+}
+
+class ListMyPRsResponse extends $pb.GeneratedMessage {
+  factory ListMyPRsResponse({
+    $core.Iterable<PersonalRecord>? prs,
+  }) {
+    final result = create();
+    if (prs != null) result.prs.addAll(prs);
+    return result;
+  }
+
+  ListMyPRsResponse._();
+
+  factory ListMyPRsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyPRsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyPRsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..pc<PersonalRecord>(1, _omitFieldNames ? '' : 'prs', $pb.PbFieldType.PM, subBuilder: PersonalRecord.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyPRsResponse clone() => ListMyPRsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyPRsResponse copyWith(void Function(ListMyPRsResponse) updates) => super.copyWith((message) => updates(message as ListMyPRsResponse)) as ListMyPRsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyPRsResponse create() => ListMyPRsResponse._();
+  @$core.override
+  ListMyPRsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyPRsResponse> createRepeated() => $pb.PbList<ListMyPRsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyPRsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyPRsResponse>(create);
+  static ListMyPRsResponse? _defaultInstance;
+
+  /// Current PR per (kind, exercise) — the PR-board surface.
+  @$pb.TagNumber(1)
+  $pb.PbList<PersonalRecord> get prs => $_getList(0);
+}
+
+class ListRecentPRsRequest extends $pb.GeneratedMessage {
+  factory ListRecentPRsRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListRecentPRsRequest._();
+
+  factory ListRecentPRsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListRecentPRsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRecentPRsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRecentPRsRequest clone() => ListRecentPRsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRecentPRsRequest copyWith(void Function(ListRecentPRsRequest) updates) => super.copyWith((message) => updates(message as ListRecentPRsRequest)) as ListRecentPRsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRecentPRsRequest create() => ListRecentPRsRequest._();
+  @$core.override
+  ListRecentPRsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListRecentPRsRequest> createRepeated() => $pb.PbList<ListRecentPRsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListRecentPRsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRecentPRsRequest>(create);
+  static ListRecentPRsRequest? _defaultInstance;
+
+  /// 0 means default (5).
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class ListRecentPRsResponse extends $pb.GeneratedMessage {
+  factory ListRecentPRsResponse({
+    $core.Iterable<PersonalRecord>? prs,
+  }) {
+    final result = create();
+    if (prs != null) result.prs.addAll(prs);
+    return result;
+  }
+
+  ListRecentPRsResponse._();
+
+  factory ListRecentPRsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListRecentPRsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRecentPRsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..pc<PersonalRecord>(1, _omitFieldNames ? '' : 'prs', $pb.PbFieldType.PM, subBuilder: PersonalRecord.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRecentPRsResponse clone() => ListRecentPRsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRecentPRsResponse copyWith(void Function(ListRecentPRsResponse) updates) => super.copyWith((message) => updates(message as ListRecentPRsResponse)) as ListRecentPRsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRecentPRsResponse create() => ListRecentPRsResponse._();
+  @$core.override
+  ListRecentPRsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListRecentPRsResponse> createRepeated() => $pb.PbList<ListRecentPRsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListRecentPRsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRecentPRsResponse>(create);
+  static ListRecentPRsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<PersonalRecord> get prs => $_getList(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

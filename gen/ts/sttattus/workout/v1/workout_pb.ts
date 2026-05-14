@@ -3547,3 +3547,249 @@ export class UpdateEnrolmentResponse extends Message<UpdateEnrolmentResponse> {
   }
 }
 
+/**
+ * PersonalRecord is one PR with the movement name + estimated 1RM
+ * (Epley) baked in. kind is one of: 1RM | 3RM | 5RM | AMRAP | EST1RM.
+ *
+ * @generated from message sttattus.workout.v1.PersonalRecord
+ */
+export class PersonalRecord extends Message<PersonalRecord> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string exercise_id = 2;
+   */
+  exerciseId = "";
+
+  /**
+   * @generated from field: string exercise_name = 3;
+   */
+  exerciseName = "";
+
+  /**
+   * @generated from field: string kind = 4;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: double weight = 5;
+   */
+  weight = 0;
+
+  /**
+   * @generated from field: int32 reps = 6;
+   */
+  reps = 0;
+
+  /**
+   * @generated from field: double estimated_one_rm = 7;
+   */
+  estimatedOneRm = 0;
+
+  /**
+   * 'kg' | 'lb'
+   *
+   * @generated from field: string unit = 8;
+   */
+  unit = "";
+
+  /**
+   * The session this PR was first detected in. Empty when imported.
+   *
+   * @generated from field: string source_session_id = 9;
+   */
+  sourceSessionId = "";
+
+  /**
+   * unix seconds
+   *
+   * @generated from field: int64 achieved_at = 10;
+   */
+  achievedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<PersonalRecord>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.PersonalRecord";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "exercise_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "exercise_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "weight", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "reps", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "estimated_one_rm", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "unit", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "source_session_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "achieved_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PersonalRecord {
+    return new PersonalRecord().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PersonalRecord {
+    return new PersonalRecord().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PersonalRecord {
+    return new PersonalRecord().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PersonalRecord | PlainMessage<PersonalRecord> | undefined, b: PersonalRecord | PlainMessage<PersonalRecord> | undefined): boolean {
+    return proto3.util.equals(PersonalRecord, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ListMyPRsRequest
+ */
+export class ListMyPRsRequest extends Message<ListMyPRsRequest> {
+  constructor(data?: PartialMessage<ListMyPRsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ListMyPRsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyPRsRequest {
+    return new ListMyPRsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyPRsRequest {
+    return new ListMyPRsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyPRsRequest {
+    return new ListMyPRsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyPRsRequest | PlainMessage<ListMyPRsRequest> | undefined, b: ListMyPRsRequest | PlainMessage<ListMyPRsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyPRsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ListMyPRsResponse
+ */
+export class ListMyPRsResponse extends Message<ListMyPRsResponse> {
+  /**
+   * Current PR per (kind, exercise) — the PR-board surface.
+   *
+   * @generated from field: repeated sttattus.workout.v1.PersonalRecord prs = 1;
+   */
+  prs: PersonalRecord[] = [];
+
+  constructor(data?: PartialMessage<ListMyPRsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ListMyPRsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "prs", kind: "message", T: PersonalRecord, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyPRsResponse {
+    return new ListMyPRsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyPRsResponse {
+    return new ListMyPRsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyPRsResponse {
+    return new ListMyPRsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyPRsResponse | PlainMessage<ListMyPRsResponse> | undefined, b: ListMyPRsResponse | PlainMessage<ListMyPRsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyPRsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ListRecentPRsRequest
+ */
+export class ListRecentPRsRequest extends Message<ListRecentPRsRequest> {
+  /**
+   * 0 means default (5).
+   *
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListRecentPRsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ListRecentPRsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListRecentPRsRequest {
+    return new ListRecentPRsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListRecentPRsRequest {
+    return new ListRecentPRsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListRecentPRsRequest {
+    return new ListRecentPRsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListRecentPRsRequest | PlainMessage<ListRecentPRsRequest> | undefined, b: ListRecentPRsRequest | PlainMessage<ListRecentPRsRequest> | undefined): boolean {
+    return proto3.util.equals(ListRecentPRsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ListRecentPRsResponse
+ */
+export class ListRecentPRsResponse extends Message<ListRecentPRsResponse> {
+  /**
+   * @generated from field: repeated sttattus.workout.v1.PersonalRecord prs = 1;
+   */
+  prs: PersonalRecord[] = [];
+
+  constructor(data?: PartialMessage<ListRecentPRsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ListRecentPRsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "prs", kind: "message", T: PersonalRecord, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListRecentPRsResponse {
+    return new ListRecentPRsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListRecentPRsResponse {
+    return new ListRecentPRsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListRecentPRsResponse {
+    return new ListRecentPRsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListRecentPRsResponse | PlainMessage<ListRecentPRsResponse> | undefined, b: ListRecentPRsResponse | PlainMessage<ListRecentPRsResponse> | undefined): boolean {
+    return proto3.util.equals(ListRecentPRsResponse, a, b);
+  }
+}
+

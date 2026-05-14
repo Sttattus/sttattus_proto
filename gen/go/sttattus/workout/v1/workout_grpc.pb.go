@@ -45,6 +45,8 @@ const (
 	WorkoutService_GetActiveEnrolment_FullMethodName    = "/sttattus.workout.v1.WorkoutService/GetActiveEnrolment"
 	WorkoutService_ListMyEnrolments_FullMethodName      = "/sttattus.workout.v1.WorkoutService/ListMyEnrolments"
 	WorkoutService_UpdateEnrolment_FullMethodName       = "/sttattus.workout.v1.WorkoutService/UpdateEnrolment"
+	WorkoutService_ListMyPRs_FullMethodName             = "/sttattus.workout.v1.WorkoutService/ListMyPRs"
+	WorkoutService_ListRecentPRs_FullMethodName         = "/sttattus.workout.v1.WorkoutService/ListRecentPRs"
 )
 
 // WorkoutServiceClient is the client API for WorkoutService service.
@@ -89,6 +91,10 @@ type WorkoutServiceClient interface {
 	GetActiveEnrolment(ctx context.Context, in *GetActiveEnrolmentRequest, opts ...grpc.CallOption) (*GetActiveEnrolmentResponse, error)
 	ListMyEnrolments(ctx context.Context, in *ListMyEnrolmentsRequest, opts ...grpc.CallOption) (*ListMyEnrolmentsResponse, error)
 	UpdateEnrolment(ctx context.Context, in *UpdateEnrolmentRequest, opts ...grpc.CallOption) (*UpdateEnrolmentResponse, error)
+	// F7P2.2 — personal records. Detection itself runs as a River
+	// worker fired on session completion; these RPCs are read-only.
+	ListMyPRs(ctx context.Context, in *ListMyPRsRequest, opts ...grpc.CallOption) (*ListMyPRsResponse, error)
+	ListRecentPRs(ctx context.Context, in *ListRecentPRsRequest, opts ...grpc.CallOption) (*ListRecentPRsResponse, error)
 }
 
 type workoutServiceClient struct {
@@ -359,6 +365,26 @@ func (c *workoutServiceClient) UpdateEnrolment(ctx context.Context, in *UpdateEn
 	return out, nil
 }
 
+func (c *workoutServiceClient) ListMyPRs(ctx context.Context, in *ListMyPRsRequest, opts ...grpc.CallOption) (*ListMyPRsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyPRsResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListMyPRs_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ListRecentPRs(ctx context.Context, in *ListRecentPRsRequest, opts ...grpc.CallOption) (*ListRecentPRsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListRecentPRsResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListRecentPRs_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WorkoutServiceServer is the server API for WorkoutService service.
 // All implementations must embed UnimplementedWorkoutServiceServer
 // for forward compatibility.
@@ -401,6 +427,10 @@ type WorkoutServiceServer interface {
 	GetActiveEnrolment(context.Context, *GetActiveEnrolmentRequest) (*GetActiveEnrolmentResponse, error)
 	ListMyEnrolments(context.Context, *ListMyEnrolmentsRequest) (*ListMyEnrolmentsResponse, error)
 	UpdateEnrolment(context.Context, *UpdateEnrolmentRequest) (*UpdateEnrolmentResponse, error)
+	// F7P2.2 — personal records. Detection itself runs as a River
+	// worker fired on session completion; these RPCs are read-only.
+	ListMyPRs(context.Context, *ListMyPRsRequest) (*ListMyPRsResponse, error)
+	ListRecentPRs(context.Context, *ListRecentPRsRequest) (*ListRecentPRsResponse, error)
 	mustEmbedUnimplementedWorkoutServiceServer()
 }
 
@@ -488,6 +518,12 @@ func (UnimplementedWorkoutServiceServer) ListMyEnrolments(context.Context, *List
 }
 func (UnimplementedWorkoutServiceServer) UpdateEnrolment(context.Context, *UpdateEnrolmentRequest) (*UpdateEnrolmentResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method UpdateEnrolment not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListMyPRs(context.Context, *ListMyPRsRequest) (*ListMyPRsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyPRs not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListRecentPRs(context.Context, *ListRecentPRsRequest) (*ListRecentPRsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListRecentPRs not implemented")
 }
 func (UnimplementedWorkoutServiceServer) mustEmbedUnimplementedWorkoutServiceServer() {}
 func (UnimplementedWorkoutServiceServer) testEmbeddedByValue()                        {}
@@ -978,6 +1014,42 @@ func _WorkoutService_UpdateEnrolment_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WorkoutService_ListMyPRs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyPRsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListMyPRs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListMyPRs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListMyPRs(ctx, req.(*ListMyPRsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ListRecentPRs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRecentPRsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListRecentPRs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListRecentPRs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListRecentPRs(ctx, req.(*ListRecentPRsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // WorkoutService_ServiceDesc is the grpc.ServiceDesc for WorkoutService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1088,6 +1160,14 @@ var WorkoutService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateEnrolment",
 			Handler:    _WorkoutService_UpdateEnrolment_Handler,
+		},
+		{
+			MethodName: "ListMyPRs",
+			Handler:    _WorkoutService_ListMyPRs_Handler,
+		},
+		{
+			MethodName: "ListRecentPRs",
+			Handler:    _WorkoutService_ListRecentPRs_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

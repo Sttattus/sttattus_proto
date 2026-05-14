@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateFormVideoRequest, CreateFormVideoResponse, CreateSessionRequest, CreateSessionResponse, DeleteFormVideoRequest, DeleteFormVideoResponse, EnrolInProgrammeRequest, EnrolInProgrammeResponse, GetActiveEnrolmentRequest, GetActiveEnrolmentResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetProgrammeRequest, GetProgrammeResponse, GetRankLadderRequest, GetRankLadderResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListMyEnrolmentsRequest, ListMyEnrolmentsResponse, ListMyFormVideosRequest, ListMyFormVideosResponse, ListProgrammesRequest, ListProgrammesResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateEnrolmentRequest, UpdateEnrolmentResponse, UpdateFormVideoStatusRequest, UpdateFormVideoStatusResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse } from "./workout_pb.js";
+import { CreateFormVideoRequest, CreateFormVideoResponse, CreateSessionRequest, CreateSessionResponse, DeleteFormVideoRequest, DeleteFormVideoResponse, EnrolInProgrammeRequest, EnrolInProgrammeResponse, GetActiveEnrolmentRequest, GetActiveEnrolmentResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetProgrammeRequest, GetProgrammeResponse, GetRankLadderRequest, GetRankLadderResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListMyEnrolmentsRequest, ListMyEnrolmentsResponse, ListMyFormVideosRequest, ListMyFormVideosResponse, ListMyPRsRequest, ListMyPRsResponse, ListProgrammesRequest, ListProgrammesResponse, ListRecentPRsRequest, ListRecentPRsResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateEnrolmentRequest, UpdateEnrolmentResponse, UpdateFormVideoStatusRequest, UpdateFormVideoStatusResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse } from "./workout_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -262,6 +262,27 @@ export const WorkoutService = {
       name: "UpdateEnrolment",
       I: UpdateEnrolmentRequest,
       O: UpdateEnrolmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P2.2 — personal records. Detection itself runs as a River
+     * worker fired on session completion; these RPCs are read-only.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListMyPRs
+     */
+    listMyPRs: {
+      name: "ListMyPRs",
+      I: ListMyPRsRequest,
+      O: ListMyPRsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListRecentPRs
+     */
+    listRecentPRs: {
+      name: "ListRecentPRs",
+      I: ListRecentPRsRequest,
+      O: ListRecentPRsResponse,
       kind: MethodKind.Unary,
     },
   }

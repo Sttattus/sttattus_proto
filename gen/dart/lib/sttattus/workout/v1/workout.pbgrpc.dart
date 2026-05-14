@@ -148,6 +148,16 @@ class WorkoutServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateEnrolment, request, options: options);
   }
 
+  /// F7P2.2 — personal records. Detection itself runs as a River
+  /// worker fired on session completion; these RPCs are read-only.
+  $grpc.ResponseFuture<$0.ListMyPRsResponse> listMyPRs($0.ListMyPRsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyPRs, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListRecentPRsResponse> listRecentPRs($0.ListRecentPRsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listRecentPRs, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listWorkouts = $grpc.ClientMethod<$0.ListWorkoutsRequest, $0.ListWorkoutsResponse>(
@@ -254,6 +264,14 @@ class WorkoutServiceClient extends $grpc.Client {
       '/sttattus.workout.v1.WorkoutService/UpdateEnrolment',
       ($0.UpdateEnrolmentRequest value) => value.writeToBuffer(),
       $0.UpdateEnrolmentResponse.fromBuffer);
+  static final _$listMyPRs = $grpc.ClientMethod<$0.ListMyPRsRequest, $0.ListMyPRsResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListMyPRs',
+      ($0.ListMyPRsRequest value) => value.writeToBuffer(),
+      $0.ListMyPRsResponse.fromBuffer);
+  static final _$listRecentPRs = $grpc.ClientMethod<$0.ListRecentPRsRequest, $0.ListRecentPRsResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListRecentPRs',
+      ($0.ListRecentPRsRequest value) => value.writeToBuffer(),
+      $0.ListRecentPRsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.workout.v1.WorkoutService')
@@ -443,6 +461,20 @@ abstract class WorkoutServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UpdateEnrolmentRequest.fromBuffer(value),
         ($0.UpdateEnrolmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyPRsRequest, $0.ListMyPRsResponse>(
+        'ListMyPRs',
+        listMyPRs_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyPRsRequest.fromBuffer(value),
+        ($0.ListMyPRsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListRecentPRsRequest, $0.ListRecentPRsResponse>(
+        'ListRecentPRs',
+        listRecentPRs_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListRecentPRsRequest.fromBuffer(value),
+        ($0.ListRecentPRsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListWorkoutsResponse> listWorkouts_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWorkoutsRequest> $request) async {
@@ -600,5 +632,17 @@ abstract class WorkoutServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.UpdateEnrolmentResponse> updateEnrolment($grpc.ServiceCall call, $0.UpdateEnrolmentRequest request);
+
+  $async.Future<$0.ListMyPRsResponse> listMyPRs_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyPRsRequest> $request) async {
+    return listMyPRs($call, await $request);
+  }
+
+  $async.Future<$0.ListMyPRsResponse> listMyPRs($grpc.ServiceCall call, $0.ListMyPRsRequest request);
+
+  $async.Future<$0.ListRecentPRsResponse> listRecentPRs_Pre($grpc.ServiceCall $call, $async.Future<$0.ListRecentPRsRequest> $request) async {
+    return listRecentPRs($call, await $request);
+  }
+
+  $async.Future<$0.ListRecentPRsResponse> listRecentPRs($grpc.ServiceCall call, $0.ListRecentPRsRequest request);
 
 }

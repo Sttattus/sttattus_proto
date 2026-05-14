@@ -482,6 +482,38 @@ message UpdateEnrolmentResponse {
   ProgrammeEnrolment enrolment = 1;
 }
 
+// ===== Personal records (F7P2.2) =====
+
+// PersonalRecord is one PR with the movement name + estimated 1RM
+// (Epley) baked in. kind is one of: 1RM | 3RM | 5RM | AMRAP | EST1RM.
+message PersonalRecord {
+  string id = 1;
+  string exercise_id = 2;
+  string exercise_name = 3;
+  string kind = 4;
+  double weight = 5;
+  int32 reps = 6;
+  double estimated_one_rm = 7;
+  string unit = 8; // 'kg' | 'lb'
+  // The session this PR was first detected in. Empty when imported.
+  string source_session_id = 9;
+  int64 achieved_at = 10; // unix seconds
+}
+
+message ListMyPRsRequest {}
+message ListMyPRsResponse {
+  // Current PR per (kind, exercise) — the PR-board surface.
+  repeated PersonalRecord prs = 1;
+}
+
+message ListRecentPRsRequest {
+  // 0 means default (5).
+  int32 limit = 1;
+}
+message ListRecentPRsResponse {
+  repeated PersonalRecord prs = 1;
+}
+
 service WorkoutService {
   rpc ListWorkouts(ListWorkoutsRequest) returns (ListWorkoutsResponse);
   rpc GetWorkout(GetWorkoutRequest) returns (GetWorkoutResponse);
@@ -526,4 +558,9 @@ service WorkoutService {
   rpc GetActiveEnrolment(GetActiveEnrolmentRequest) returns (GetActiveEnrolmentResponse);
   rpc ListMyEnrolments(ListMyEnrolmentsRequest) returns (ListMyEnrolmentsResponse);
   rpc UpdateEnrolment(UpdateEnrolmentRequest) returns (UpdateEnrolmentResponse);
+
+  // F7P2.2 — personal records. Detection itself runs as a River
+  // worker fired on session completion; these RPCs are read-only.
+  rpc ListMyPRs(ListMyPRsRequest) returns (ListMyPRsResponse);
+  rpc ListRecentPRs(ListRecentPRsRequest) returns (ListRecentPRsResponse);
 }
