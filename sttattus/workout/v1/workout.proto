@@ -244,6 +244,31 @@ message LogSetResponse {
   SessionSet set = 1;
 }
 
+// ===== Today screen (F7.2) =====
+
+// TodaySnapshot is everything the redesigned Today screen renders:
+// a readiness ring, the session in focus, and the rank delta.
+message TodaySnapshot {
+  // 0-100 readiness, with a one-line plain-language basis. Phase 1 is
+  // a recency/load heuristic; F7.11 wearables feed real HRV readiness.
+  int32 readiness = 1;
+  string readiness_basis = 2;
+  // The session in focus: the active one if a session is in progress,
+  // otherwise the most recent planned session. session.id is empty
+  // when there is nothing to show.
+  ForgeSession focus_session = 3;
+  // Current forge rank (1-100), its label, and the change over the
+  // trailing 7 days (0 when there is no prior snapshot).
+  double forge_rank = 4;
+  string rank_label = 5;
+  double rank_delta_7d = 6;
+}
+
+message GetTodayRequest {}
+message GetTodayResponse {
+  TodaySnapshot today = 1;
+}
+
 service WorkoutService {
   rpc ListWorkouts(ListWorkoutsRequest) returns (ListWorkoutsResponse);
   rpc GetWorkout(GetWorkoutRequest) returns (GetWorkoutResponse);
@@ -251,6 +276,9 @@ service WorkoutService {
   rpc ListHistory(ListHistoryRequest) returns (ListHistoryResponse);
   rpc GetForgeStats(GetForgeStatsRequest) returns (GetForgeStatsResponse);
   rpc SubmitFeedback(SubmitFeedbackRequest) returns (SubmitFeedbackResponse);
+
+  // F7.2 — the Today screen snapshot.
+  rpc GetToday(GetTodayRequest) returns (GetTodayResponse);
 
   // F7.1 — movement library + session builder + live session.
   rpc ListExercises(ListExercisesRequest) returns (ListExercisesResponse);

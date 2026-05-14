@@ -25,6 +25,7 @@ const (
 	WorkoutService_ListHistory_FullMethodName         = "/sttattus.workout.v1.WorkoutService/ListHistory"
 	WorkoutService_GetForgeStats_FullMethodName       = "/sttattus.workout.v1.WorkoutService/GetForgeStats"
 	WorkoutService_SubmitFeedback_FullMethodName      = "/sttattus.workout.v1.WorkoutService/SubmitFeedback"
+	WorkoutService_GetToday_FullMethodName            = "/sttattus.workout.v1.WorkoutService/GetToday"
 	WorkoutService_ListExercises_FullMethodName       = "/sttattus.workout.v1.WorkoutService/ListExercises"
 	WorkoutService_CreateSession_FullMethodName       = "/sttattus.workout.v1.WorkoutService/CreateSession"
 	WorkoutService_GetSession_FullMethodName          = "/sttattus.workout.v1.WorkoutService/GetSession"
@@ -44,6 +45,8 @@ type WorkoutServiceClient interface {
 	ListHistory(ctx context.Context, in *ListHistoryRequest, opts ...grpc.CallOption) (*ListHistoryResponse, error)
 	GetForgeStats(ctx context.Context, in *GetForgeStatsRequest, opts ...grpc.CallOption) (*GetForgeStatsResponse, error)
 	SubmitFeedback(ctx context.Context, in *SubmitFeedbackRequest, opts ...grpc.CallOption) (*SubmitFeedbackResponse, error)
+	// F7.2 — the Today screen snapshot.
+	GetToday(ctx context.Context, in *GetTodayRequest, opts ...grpc.CallOption) (*GetTodayResponse, error)
 	// F7.1 — movement library + session builder + live session.
 	ListExercises(ctx context.Context, in *ListExercisesRequest, opts ...grpc.CallOption) (*ListExercisesResponse, error)
 	CreateSession(ctx context.Context, in *CreateSessionRequest, opts ...grpc.CallOption) (*CreateSessionResponse, error)
@@ -116,6 +119,16 @@ func (c *workoutServiceClient) SubmitFeedback(ctx context.Context, in *SubmitFee
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(SubmitFeedbackResponse)
 	err := c.cc.Invoke(ctx, WorkoutService_SubmitFeedback_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetToday(ctx context.Context, in *GetTodayRequest, opts ...grpc.CallOption) (*GetTodayResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTodayResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetToday_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -202,6 +215,8 @@ type WorkoutServiceServer interface {
 	ListHistory(context.Context, *ListHistoryRequest) (*ListHistoryResponse, error)
 	GetForgeStats(context.Context, *GetForgeStatsRequest) (*GetForgeStatsResponse, error)
 	SubmitFeedback(context.Context, *SubmitFeedbackRequest) (*SubmitFeedbackResponse, error)
+	// F7.2 — the Today screen snapshot.
+	GetToday(context.Context, *GetTodayRequest) (*GetTodayResponse, error)
 	// F7.1 — movement library + session builder + live session.
 	ListExercises(context.Context, *ListExercisesRequest) (*ListExercisesResponse, error)
 	CreateSession(context.Context, *CreateSessionRequest) (*CreateSessionResponse, error)
@@ -237,6 +252,9 @@ func (UnimplementedWorkoutServiceServer) GetForgeStats(context.Context, *GetForg
 }
 func (UnimplementedWorkoutServiceServer) SubmitFeedback(context.Context, *SubmitFeedbackRequest) (*SubmitFeedbackResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SubmitFeedback not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetToday(context.Context, *GetTodayRequest) (*GetTodayResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetToday not implemented")
 }
 func (UnimplementedWorkoutServiceServer) ListExercises(context.Context, *ListExercisesRequest) (*ListExercisesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListExercises not implemented")
@@ -384,6 +402,24 @@ func _WorkoutService_SubmitFeedback_Handler(srv interface{}, ctx context.Context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkoutServiceServer).SubmitFeedback(ctx, req.(*SubmitFeedbackRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetToday_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTodayRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetToday(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetToday_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetToday(ctx, req.(*GetTodayRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -544,6 +580,10 @@ var WorkoutService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SubmitFeedback",
 			Handler:    _WorkoutService_SubmitFeedback_Handler,
+		},
+		{
+			MethodName: "GetToday",
+			Handler:    _WorkoutService_GetToday_Handler,
 		},
 		{
 			MethodName: "ListExercises",

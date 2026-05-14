@@ -56,6 +56,11 @@ class WorkoutServiceClient extends $grpc.Client {
     return $createUnaryCall(_$submitFeedback, request, options: options);
   }
 
+  /// F7.2 — the Today screen snapshot.
+  $grpc.ResponseFuture<$0.GetTodayResponse> getToday($0.GetTodayRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getToday, request, options: options);
+  }
+
   /// F7.1 — movement library + session builder + live session.
   $grpc.ResponseFuture<$0.ListExercisesResponse> listExercises($0.ListExercisesRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listExercises, request, options: options);
@@ -111,6 +116,10 @@ class WorkoutServiceClient extends $grpc.Client {
       '/sttattus.workout.v1.WorkoutService/SubmitFeedback',
       ($0.SubmitFeedbackRequest value) => value.writeToBuffer(),
       $0.SubmitFeedbackResponse.fromBuffer);
+  static final _$getToday = $grpc.ClientMethod<$0.GetTodayRequest, $0.GetTodayResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetToday',
+      ($0.GetTodayRequest value) => value.writeToBuffer(),
+      $0.GetTodayResponse.fromBuffer);
   static final _$listExercises = $grpc.ClientMethod<$0.ListExercisesRequest, $0.ListExercisesResponse>(
       '/sttattus.workout.v1.WorkoutService/ListExercises',
       ($0.ListExercisesRequest value) => value.writeToBuffer(),
@@ -188,6 +197,13 @@ abstract class WorkoutServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SubmitFeedbackRequest.fromBuffer(value),
         ($0.SubmitFeedbackResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTodayRequest, $0.GetTodayResponse>(
+        'GetToday',
+        getToday_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetTodayRequest.fromBuffer(value),
+        ($0.GetTodayResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListExercisesRequest, $0.ListExercisesResponse>(
         'ListExercises',
         listExercises_Pre,
@@ -274,6 +290,12 @@ abstract class WorkoutServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.SubmitFeedbackResponse> submitFeedback($grpc.ServiceCall call, $0.SubmitFeedbackRequest request);
+
+  $async.Future<$0.GetTodayResponse> getToday_Pre($grpc.ServiceCall $call, $async.Future<$0.GetTodayRequest> $request) async {
+    return getToday($call, await $request);
+  }
+
+  $async.Future<$0.GetTodayResponse> getToday($grpc.ServiceCall call, $0.GetTodayRequest request);
 
   $async.Future<$0.ListExercisesResponse> listExercises_Pre($grpc.ServiceCall $call, $async.Future<$0.ListExercisesRequest> $request) async {
     return listExercises($call, await $request);

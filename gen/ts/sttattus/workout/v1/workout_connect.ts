@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateSessionRequest, CreateSessionResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetSessionRequest, GetSessionResponse, GetWorkoutRequest, GetWorkoutResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse } from "./workout_pb.js";
+import { CreateSessionRequest, CreateSessionResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse } from "./workout_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -64,6 +64,17 @@ export const WorkoutService = {
       name: "SubmitFeedback",
       I: SubmitFeedbackRequest,
       O: SubmitFeedbackResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7.2 — the Today screen snapshot.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetToday
+     */
+    getToday: {
+      name: "GetToday",
+      I: GetTodayRequest,
+      O: GetTodayResponse,
       kind: MethodKind.Unary,
     },
     /**

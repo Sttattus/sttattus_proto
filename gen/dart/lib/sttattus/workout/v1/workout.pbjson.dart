@@ -602,3 +602,46 @@ final $typed_data.Uint8List logSetResponseDescriptor = $convert.base64Decode(
     'Cg5Mb2dTZXRSZXNwb25zZRIxCgNzZXQYASABKAsyHy5zdHRhdHR1cy53b3Jrb3V0LnYxLlNlc3'
     'Npb25TZXRSA3NldA==');
 
+@$core.Deprecated('Use todaySnapshotDescriptor instead')
+const TodaySnapshot$json = {
+  '1': 'TodaySnapshot',
+  '2': [
+    {'1': 'readiness', '3': 1, '4': 1, '5': 5, '10': 'readiness'},
+    {'1': 'readiness_basis', '3': 2, '4': 1, '5': 9, '10': 'readinessBasis'},
+    {'1': 'focus_session', '3': 3, '4': 1, '5': 11, '6': '.sttattus.workout.v1.ForgeSession', '10': 'focusSession'},
+    {'1': 'forge_rank', '3': 4, '4': 1, '5': 1, '10': 'forgeRank'},
+    {'1': 'rank_label', '3': 5, '4': 1, '5': 9, '10': 'rankLabel'},
+    {'1': 'rank_delta_7d', '3': 6, '4': 1, '5': 1, '10': 'rankDelta7d'},
+  ],
+};
+
+/// Descriptor for `TodaySnapshot`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List todaySnapshotDescriptor = $convert.base64Decode(
+    'Cg1Ub2RheVNuYXBzaG90EhwKCXJlYWRpbmVzcxgBIAEoBVIJcmVhZGluZXNzEicKD3JlYWRpbm'
+    'Vzc19iYXNpcxgCIAEoCVIOcmVhZGluZXNzQmFzaXMSRgoNZm9jdXNfc2Vzc2lvbhgDIAEoCzIh'
+    'LnN0dGF0dHVzLndvcmtvdXQudjEuRm9yZ2VTZXNzaW9uUgxmb2N1c1Nlc3Npb24SHQoKZm9yZ2'
+    'VfcmFuaxgEIAEoAVIJZm9yZ2VSYW5rEh0KCnJhbmtfbGFiZWwYBSABKAlSCXJhbmtMYWJlbBIi'
+    'Cg1yYW5rX2RlbHRhXzdkGAYgASgBUgtyYW5rRGVsdGE3ZA==');
+
+@$core.Deprecated('Use getTodayRequestDescriptor instead')
+const GetTodayRequest$json = {
+  '1': 'GetTodayRequest',
+};
+
+/// Descriptor for `GetTodayRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTodayRequestDescriptor = $convert.base64Decode(
+    'Cg9HZXRUb2RheVJlcXVlc3Q=');
+
+@$core.Deprecated('Use getTodayResponseDescriptor instead')
+const GetTodayResponse$json = {
+  '1': 'GetTodayResponse',
+  '2': [
+    {'1': 'today', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.TodaySnapshot', '10': 'today'},
+  ],
+};
+
+/// Descriptor for `GetTodayResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTodayResponseDescriptor = $convert.base64Decode(
+    'ChBHZXRUb2RheVJlc3BvbnNlEjgKBXRvZGF5GAEgASgLMiIuc3R0YXR0dXMud29ya291dC52MS'
+    '5Ub2RheVNuYXBzaG90UgV0b2RheQ==');
+

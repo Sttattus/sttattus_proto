@@ -1907,3 +1907,151 @@ export class LogSetResponse extends Message<LogSetResponse> {
   }
 }
 
+/**
+ * TodaySnapshot is everything the redesigned Today screen renders:
+ * a readiness ring, the session in focus, and the rank delta.
+ *
+ * @generated from message sttattus.workout.v1.TodaySnapshot
+ */
+export class TodaySnapshot extends Message<TodaySnapshot> {
+  /**
+   * 0-100 readiness, with a one-line plain-language basis. Phase 1 is
+   * a recency/load heuristic; F7.11 wearables feed real HRV readiness.
+   *
+   * @generated from field: int32 readiness = 1;
+   */
+  readiness = 0;
+
+  /**
+   * @generated from field: string readiness_basis = 2;
+   */
+  readinessBasis = "";
+
+  /**
+   * The session in focus: the active one if a session is in progress,
+   * otherwise the most recent planned session. session.id is empty
+   * when there is nothing to show.
+   *
+   * @generated from field: sttattus.workout.v1.ForgeSession focus_session = 3;
+   */
+  focusSession?: ForgeSession;
+
+  /**
+   * Current forge rank (1-100), its label, and the change over the
+   * trailing 7 days (0 when there is no prior snapshot).
+   *
+   * @generated from field: double forge_rank = 4;
+   */
+  forgeRank = 0;
+
+  /**
+   * @generated from field: string rank_label = 5;
+   */
+  rankLabel = "";
+
+  /**
+   * @generated from field: double rank_delta_7d = 6;
+   */
+  rankDelta7d = 0;
+
+  constructor(data?: PartialMessage<TodaySnapshot>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.TodaySnapshot";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "readiness", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "readiness_basis", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "focus_session", kind: "message", T: ForgeSession },
+    { no: 4, name: "forge_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "rank_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "rank_delta_7d", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TodaySnapshot {
+    return new TodaySnapshot().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TodaySnapshot {
+    return new TodaySnapshot().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TodaySnapshot {
+    return new TodaySnapshot().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TodaySnapshot | PlainMessage<TodaySnapshot> | undefined, b: TodaySnapshot | PlainMessage<TodaySnapshot> | undefined): boolean {
+    return proto3.util.equals(TodaySnapshot, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.GetTodayRequest
+ */
+export class GetTodayRequest extends Message<GetTodayRequest> {
+  constructor(data?: PartialMessage<GetTodayRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.GetTodayRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTodayRequest {
+    return new GetTodayRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTodayRequest {
+    return new GetTodayRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTodayRequest {
+    return new GetTodayRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTodayRequest | PlainMessage<GetTodayRequest> | undefined, b: GetTodayRequest | PlainMessage<GetTodayRequest> | undefined): boolean {
+    return proto3.util.equals(GetTodayRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.GetTodayResponse
+ */
+export class GetTodayResponse extends Message<GetTodayResponse> {
+  /**
+   * @generated from field: sttattus.workout.v1.TodaySnapshot today = 1;
+   */
+  today?: TodaySnapshot;
+
+  constructor(data?: PartialMessage<GetTodayResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.GetTodayResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "today", kind: "message", T: TodaySnapshot },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTodayResponse {
+    return new GetTodayResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTodayResponse {
+    return new GetTodayResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTodayResponse {
+    return new GetTodayResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTodayResponse | PlainMessage<GetTodayResponse> | undefined, b: GetTodayResponse | PlainMessage<GetTodayResponse> | undefined): boolean {
+    return proto3.util.equals(GetTodayResponse, a, b);
+  }
+}
+

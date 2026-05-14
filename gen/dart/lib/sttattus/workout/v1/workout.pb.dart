@@ -2662,6 +2662,201 @@ class LogSetResponse extends $pb.GeneratedMessage {
   SessionSet ensureSet() => $_ensure(0);
 }
 
+/// TodaySnapshot is everything the redesigned Today screen renders:
+/// a readiness ring, the session in focus, and the rank delta.
+class TodaySnapshot extends $pb.GeneratedMessage {
+  factory TodaySnapshot({
+    $core.int? readiness,
+    $core.String? readinessBasis,
+    ForgeSession? focusSession,
+    $core.double? forgeRank,
+    $core.String? rankLabel,
+    $core.double? rankDelta7d,
+  }) {
+    final result = create();
+    if (readiness != null) result.readiness = readiness;
+    if (readinessBasis != null) result.readinessBasis = readinessBasis;
+    if (focusSession != null) result.focusSession = focusSession;
+    if (forgeRank != null) result.forgeRank = forgeRank;
+    if (rankLabel != null) result.rankLabel = rankLabel;
+    if (rankDelta7d != null) result.rankDelta7d = rankDelta7d;
+    return result;
+  }
+
+  TodaySnapshot._();
+
+  factory TodaySnapshot.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory TodaySnapshot.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TodaySnapshot', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'readiness', $pb.PbFieldType.O3)
+    ..aOS(2, _omitFieldNames ? '' : 'readinessBasis')
+    ..aOM<ForgeSession>(3, _omitFieldNames ? '' : 'focusSession', subBuilder: ForgeSession.create)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'forgeRank', $pb.PbFieldType.OD)
+    ..aOS(5, _omitFieldNames ? '' : 'rankLabel')
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'rankDelta7d', $pb.PbFieldType.OD, protoName: 'rank_delta_7d')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TodaySnapshot clone() => TodaySnapshot()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TodaySnapshot copyWith(void Function(TodaySnapshot) updates) => super.copyWith((message) => updates(message as TodaySnapshot)) as TodaySnapshot;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TodaySnapshot create() => TodaySnapshot._();
+  @$core.override
+  TodaySnapshot createEmptyInstance() => create();
+  static $pb.PbList<TodaySnapshot> createRepeated() => $pb.PbList<TodaySnapshot>();
+  @$core.pragma('dart2js:noInline')
+  static TodaySnapshot getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TodaySnapshot>(create);
+  static TodaySnapshot? _defaultInstance;
+
+  /// 0-100 readiness, with a one-line plain-language basis. Phase 1 is
+  /// a recency/load heuristic; F7.11 wearables feed real HRV readiness.
+  @$pb.TagNumber(1)
+  $core.int get readiness => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set readiness($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReadiness() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReadiness() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get readinessBasis => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set readinessBasis($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReadinessBasis() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReadinessBasis() => $_clearField(2);
+
+  /// The session in focus: the active one if a session is in progress,
+  /// otherwise the most recent planned session. session.id is empty
+  /// when there is nothing to show.
+  @$pb.TagNumber(3)
+  ForgeSession get focusSession => $_getN(2);
+  @$pb.TagNumber(3)
+  set focusSession(ForgeSession value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFocusSession() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFocusSession() => $_clearField(3);
+  @$pb.TagNumber(3)
+  ForgeSession ensureFocusSession() => $_ensure(2);
+
+  /// Current forge rank (1-100), its label, and the change over the
+  /// trailing 7 days (0 when there is no prior snapshot).
+  @$pb.TagNumber(4)
+  $core.double get forgeRank => $_getN(3);
+  @$pb.TagNumber(4)
+  set forgeRank($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasForgeRank() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearForgeRank() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get rankLabel => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set rankLabel($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRankLabel() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRankLabel() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get rankDelta7d => $_getN(5);
+  @$pb.TagNumber(6)
+  set rankDelta7d($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRankDelta7d() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRankDelta7d() => $_clearField(6);
+}
+
+class GetTodayRequest extends $pb.GeneratedMessage {
+  factory GetTodayRequest() => create();
+
+  GetTodayRequest._();
+
+  factory GetTodayRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTodayRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTodayRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTodayRequest clone() => GetTodayRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTodayRequest copyWith(void Function(GetTodayRequest) updates) => super.copyWith((message) => updates(message as GetTodayRequest)) as GetTodayRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTodayRequest create() => GetTodayRequest._();
+  @$core.override
+  GetTodayRequest createEmptyInstance() => create();
+  static $pb.PbList<GetTodayRequest> createRepeated() => $pb.PbList<GetTodayRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetTodayRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTodayRequest>(create);
+  static GetTodayRequest? _defaultInstance;
+}
+
+class GetTodayResponse extends $pb.GeneratedMessage {
+  factory GetTodayResponse({
+    TodaySnapshot? today,
+  }) {
+    final result = create();
+    if (today != null) result.today = today;
+    return result;
+  }
+
+  GetTodayResponse._();
+
+  factory GetTodayResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTodayResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTodayResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<TodaySnapshot>(1, _omitFieldNames ? '' : 'today', subBuilder: TodaySnapshot.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTodayResponse clone() => GetTodayResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTodayResponse copyWith(void Function(GetTodayResponse) updates) => super.copyWith((message) => updates(message as GetTodayResponse)) as GetTodayResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTodayResponse create() => GetTodayResponse._();
+  @$core.override
+  GetTodayResponse createEmptyInstance() => create();
+  static $pb.PbList<GetTodayResponse> createRepeated() => $pb.PbList<GetTodayResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetTodayResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTodayResponse>(create);
+  static GetTodayResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  TodaySnapshot get today => $_getN(0);
+  @$pb.TagNumber(1)
+  set today(TodaySnapshot value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasToday() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearToday() => $_clearField(1);
+  @$pb.TagNumber(1)
+  TodaySnapshot ensureToday() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
