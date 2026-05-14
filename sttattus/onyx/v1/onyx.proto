@@ -37,6 +37,24 @@ message OnyxContent {
   string signed_url = 9; // Only populated if is_locked is false
   google.protobuf.Timestamp created_at = 10;
   google.protobuf.Timestamp expires_at = 11;
+
+  // P6.2 — content kind + delivery fields.
+  // article | audio | video.
+  string kind = 12;
+  // Long-form markdown body, used when kind == article.
+  string body_markdown = 13;
+  int32 duration_seconds = 14;
+  string audio_url = 15;
+  string video_url = 16;
+  string hero_image_url = 17;
+  string captions_url = 18;
+  // articles | audio | video | curator | "" (catalog-only).
+  string shelf_code = 19;
+
+  // The caller's progress on this piece, when one exists. -1 when no
+  // progress row exists.
+  double progress_completion = 20;
+  int32 progress_position_seconds = 21;
 }
 
 // Subscription represents an exclusive link between user and creator.
@@ -81,6 +99,61 @@ message SubscribeResponse {
   Subscription subscription = 1;
 }
 
+// === P6.2 ===
+
+message GetContentRequest {
+  string id = 1;
+}
+
+message GetContentResponse {
+  OnyxContent content = 1;
+}
+
+message ListShelfRequest {
+  // articles | audio | video | curator.
+  string shelf_code = 1;
+  int32 limit = 2;
+}
+
+message ListShelfResponse {
+  repeated OnyxContent items = 1;
+}
+
+message ListContinueRequest {
+  int32 limit = 1;
+}
+
+message ListContinueResponse {
+  repeated OnyxContent items = 1;
+}
+
+message GetShelvesRequest {}
+
+// Shelf is one named editorial section in the library.
+message Shelf {
+  string code = 1;
+  string title = 2;
+  // Editorial copy on the shelf.
+  string blurb = 3;
+  repeated OnyxContent items = 4;
+}
+
+message GetShelvesResponse {
+  repeated Shelf shelves = 1;
+}
+
+message RecordProgressRequest {
+  string content_id = 1;
+  // 0..1 fraction. >= 1 marks complete.
+  double completion = 2;
+  int32 position_seconds = 3;
+}
+
+message RecordProgressResponse {
+  double completion = 1;
+  int32 position_seconds = 2;
+}
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateOnyxProfileRequest) returns (CreateOnyxProfileResponse);
@@ -91,4 +164,11 @@ service OnyxService {
 
   // Exclusivity Mechanics
   rpc Subscribe(SubscribeRequest) returns (SubscribeResponse);
+
+  // P6.2 — content + library reads.
+  rpc GetContent(GetContentRequest) returns (GetContentResponse);
+  rpc ListShelf(ListShelfRequest) returns (ListShelfResponse);
+  rpc ListContinue(ListContinueRequest) returns (ListContinueResponse);
+  rpc GetShelves(GetShelvesRequest) returns (GetShelvesResponse);
+  rpc RecordProgress(RecordProgressRequest) returns (RecordProgressResponse);
 }

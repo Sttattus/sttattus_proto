@@ -51,6 +51,27 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$subscribe, request, options: options);
   }
 
+  /// P6.2 — content + library reads.
+  $grpc.ResponseFuture<$0.GetContentResponse> getContent($0.GetContentRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getContent, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListShelfResponse> listShelf($0.ListShelfRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listShelf, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListContinueResponse> listContinue($0.ListContinueRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listContinue, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetShelvesResponse> getShelves($0.GetShelvesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getShelves, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordProgressResponse> recordProgress($0.RecordProgressRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$recordProgress, request, options: options);
+  }
+
     // method descriptors
 
   static final _$createProfile = $grpc.ClientMethod<$0.CreateOnyxProfileRequest, $0.CreateOnyxProfileResponse>(
@@ -69,6 +90,26 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/Subscribe',
       ($0.SubscribeRequest value) => value.writeToBuffer(),
       $0.SubscribeResponse.fromBuffer);
+  static final _$getContent = $grpc.ClientMethod<$0.GetContentRequest, $0.GetContentResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetContent',
+      ($0.GetContentRequest value) => value.writeToBuffer(),
+      $0.GetContentResponse.fromBuffer);
+  static final _$listShelf = $grpc.ClientMethod<$0.ListShelfRequest, $0.ListShelfResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListShelf',
+      ($0.ListShelfRequest value) => value.writeToBuffer(),
+      $0.ListShelfResponse.fromBuffer);
+  static final _$listContinue = $grpc.ClientMethod<$0.ListContinueRequest, $0.ListContinueResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListContinue',
+      ($0.ListContinueRequest value) => value.writeToBuffer(),
+      $0.ListContinueResponse.fromBuffer);
+  static final _$getShelves = $grpc.ClientMethod<$0.GetShelvesRequest, $0.GetShelvesResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetShelves',
+      ($0.GetShelvesRequest value) => value.writeToBuffer(),
+      $0.GetShelvesResponse.fromBuffer);
+  static final _$recordProgress = $grpc.ClientMethod<$0.RecordProgressRequest, $0.RecordProgressResponse>(
+      '/sttattus.onyx.v1.OnyxService/RecordProgress',
+      ($0.RecordProgressRequest value) => value.writeToBuffer(),
+      $0.RecordProgressResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -104,6 +145,41 @@ abstract class OnyxServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SubscribeRequest.fromBuffer(value),
         ($0.SubscribeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetContentRequest, $0.GetContentResponse>(
+        'GetContent',
+        getContent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetContentRequest.fromBuffer(value),
+        ($0.GetContentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListShelfRequest, $0.ListShelfResponse>(
+        'ListShelf',
+        listShelf_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListShelfRequest.fromBuffer(value),
+        ($0.ListShelfResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListContinueRequest, $0.ListContinueResponse>(
+        'ListContinue',
+        listContinue_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListContinueRequest.fromBuffer(value),
+        ($0.ListContinueResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetShelvesRequest, $0.GetShelvesResponse>(
+        'GetShelves',
+        getShelves_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetShelvesRequest.fromBuffer(value),
+        ($0.GetShelvesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordProgressRequest, $0.RecordProgressResponse>(
+        'RecordProgress',
+        recordProgress_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RecordProgressRequest.fromBuffer(value),
+        ($0.RecordProgressResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateOnyxProfileResponse> createProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateOnyxProfileRequest> $request) async {
@@ -129,5 +205,35 @@ abstract class OnyxServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.SubscribeResponse> subscribe($grpc.ServiceCall call, $0.SubscribeRequest request);
+
+  $async.Future<$0.GetContentResponse> getContent_Pre($grpc.ServiceCall $call, $async.Future<$0.GetContentRequest> $request) async {
+    return getContent($call, await $request);
+  }
+
+  $async.Future<$0.GetContentResponse> getContent($grpc.ServiceCall call, $0.GetContentRequest request);
+
+  $async.Future<$0.ListShelfResponse> listShelf_Pre($grpc.ServiceCall $call, $async.Future<$0.ListShelfRequest> $request) async {
+    return listShelf($call, await $request);
+  }
+
+  $async.Future<$0.ListShelfResponse> listShelf($grpc.ServiceCall call, $0.ListShelfRequest request);
+
+  $async.Future<$0.ListContinueResponse> listContinue_Pre($grpc.ServiceCall $call, $async.Future<$0.ListContinueRequest> $request) async {
+    return listContinue($call, await $request);
+  }
+
+  $async.Future<$0.ListContinueResponse> listContinue($grpc.ServiceCall call, $0.ListContinueRequest request);
+
+  $async.Future<$0.GetShelvesResponse> getShelves_Pre($grpc.ServiceCall $call, $async.Future<$0.GetShelvesRequest> $request) async {
+    return getShelves($call, await $request);
+  }
+
+  $async.Future<$0.GetShelvesResponse> getShelves($grpc.ServiceCall call, $0.GetShelvesRequest request);
+
+  $async.Future<$0.RecordProgressResponse> recordProgress_Pre($grpc.ServiceCall $call, $async.Future<$0.RecordProgressRequest> $request) async {
+    return recordProgress($call, await $request);
+  }
+
+  $async.Future<$0.RecordProgressResponse> recordProgress($grpc.ServiceCall call, $0.RecordProgressRequest request);
 
 }

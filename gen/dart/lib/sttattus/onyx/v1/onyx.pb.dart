@@ -224,6 +224,16 @@ class OnyxContent extends $pb.GeneratedMessage {
     $core.String? signedUrl,
     $1.Timestamp? createdAt,
     $1.Timestamp? expiresAt,
+    $core.String? kind,
+    $core.String? bodyMarkdown,
+    $core.int? durationSeconds,
+    $core.String? audioUrl,
+    $core.String? videoUrl,
+    $core.String? heroImageUrl,
+    $core.String? captionsUrl,
+    $core.String? shelfCode,
+    $core.double? progressCompletion,
+    $core.int? progressPositionSeconds,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -237,6 +247,16 @@ class OnyxContent extends $pb.GeneratedMessage {
     if (signedUrl != null) result.signedUrl = signedUrl;
     if (createdAt != null) result.createdAt = createdAt;
     if (expiresAt != null) result.expiresAt = expiresAt;
+    if (kind != null) result.kind = kind;
+    if (bodyMarkdown != null) result.bodyMarkdown = bodyMarkdown;
+    if (durationSeconds != null) result.durationSeconds = durationSeconds;
+    if (audioUrl != null) result.audioUrl = audioUrl;
+    if (videoUrl != null) result.videoUrl = videoUrl;
+    if (heroImageUrl != null) result.heroImageUrl = heroImageUrl;
+    if (captionsUrl != null) result.captionsUrl = captionsUrl;
+    if (shelfCode != null) result.shelfCode = shelfCode;
+    if (progressCompletion != null) result.progressCompletion = progressCompletion;
+    if (progressPositionSeconds != null) result.progressPositionSeconds = progressPositionSeconds;
     return result;
   }
 
@@ -257,6 +277,16 @@ class OnyxContent extends $pb.GeneratedMessage {
     ..aOS(9, _omitFieldNames ? '' : 'signedUrl')
     ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'expiresAt', subBuilder: $1.Timestamp.create)
+    ..aOS(12, _omitFieldNames ? '' : 'kind')
+    ..aOS(13, _omitFieldNames ? '' : 'bodyMarkdown')
+    ..a<$core.int>(14, _omitFieldNames ? '' : 'durationSeconds', $pb.PbFieldType.O3)
+    ..aOS(15, _omitFieldNames ? '' : 'audioUrl')
+    ..aOS(16, _omitFieldNames ? '' : 'videoUrl')
+    ..aOS(17, _omitFieldNames ? '' : 'heroImageUrl')
+    ..aOS(18, _omitFieldNames ? '' : 'captionsUrl')
+    ..aOS(19, _omitFieldNames ? '' : 'shelfCode')
+    ..a<$core.double>(20, _omitFieldNames ? '' : 'progressCompletion', $pb.PbFieldType.OD)
+    ..a<$core.int>(21, _omitFieldNames ? '' : 'progressPositionSeconds', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -381,6 +411,102 @@ class OnyxContent extends $pb.GeneratedMessage {
   void clearExpiresAt() => $_clearField(11);
   @$pb.TagNumber(11)
   $1.Timestamp ensureExpiresAt() => $_ensure(10);
+
+  /// P6.2 — content kind + delivery fields.
+  /// article | audio | video.
+  @$pb.TagNumber(12)
+  $core.String get kind => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set kind($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasKind() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearKind() => $_clearField(12);
+
+  /// Long-form markdown body, used when kind == article.
+  @$pb.TagNumber(13)
+  $core.String get bodyMarkdown => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set bodyMarkdown($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasBodyMarkdown() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearBodyMarkdown() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.int get durationSeconds => $_getIZ(13);
+  @$pb.TagNumber(14)
+  set durationSeconds($core.int value) => $_setSignedInt32(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasDurationSeconds() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearDurationSeconds() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get audioUrl => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set audioUrl($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasAudioUrl() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearAudioUrl() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get videoUrl => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set videoUrl($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasVideoUrl() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearVideoUrl() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get heroImageUrl => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set heroImageUrl($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasHeroImageUrl() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearHeroImageUrl() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get captionsUrl => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set captionsUrl($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasCaptionsUrl() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearCaptionsUrl() => $_clearField(18);
+
+  /// articles | audio | video | curator | "" (catalog-only).
+  @$pb.TagNumber(19)
+  $core.String get shelfCode => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set shelfCode($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasShelfCode() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearShelfCode() => $_clearField(19);
+
+  /// The caller's progress on this piece, when one exists. -1 when no
+  /// progress row exists.
+  @$pb.TagNumber(20)
+  $core.double get progressCompletion => $_getN(19);
+  @$pb.TagNumber(20)
+  set progressCompletion($core.double value) => $_setDouble(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasProgressCompletion() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearProgressCompletion() => $_clearField(20);
+
+  @$pb.TagNumber(21)
+  $core.int get progressPositionSeconds => $_getIZ(20);
+  @$pb.TagNumber(21)
+  set progressPositionSeconds($core.int value) => $_setSignedInt32(20, value);
+  @$pb.TagNumber(21)
+  $core.bool hasProgressPositionSeconds() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearProgressPositionSeconds() => $_clearField(21);
 }
 
 /// Subscription represents an exclusive link between user and creator.
@@ -849,6 +975,562 @@ class SubscribeResponse extends $pb.GeneratedMessage {
   void clearSubscription() => $_clearField(1);
   @$pb.TagNumber(1)
   Subscription ensureSubscription() => $_ensure(0);
+}
+
+class GetContentRequest extends $pb.GeneratedMessage {
+  factory GetContentRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  GetContentRequest._();
+
+  factory GetContentRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetContentRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetContentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetContentRequest clone() => GetContentRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetContentRequest copyWith(void Function(GetContentRequest) updates) => super.copyWith((message) => updates(message as GetContentRequest)) as GetContentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetContentRequest create() => GetContentRequest._();
+  @$core.override
+  GetContentRequest createEmptyInstance() => create();
+  static $pb.PbList<GetContentRequest> createRepeated() => $pb.PbList<GetContentRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetContentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetContentRequest>(create);
+  static GetContentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class GetContentResponse extends $pb.GeneratedMessage {
+  factory GetContentResponse({
+    OnyxContent? content,
+  }) {
+    final result = create();
+    if (content != null) result.content = content;
+    return result;
+  }
+
+  GetContentResponse._();
+
+  factory GetContentResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetContentResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetContentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..aOM<OnyxContent>(1, _omitFieldNames ? '' : 'content', subBuilder: OnyxContent.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetContentResponse clone() => GetContentResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetContentResponse copyWith(void Function(GetContentResponse) updates) => super.copyWith((message) => updates(message as GetContentResponse)) as GetContentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetContentResponse create() => GetContentResponse._();
+  @$core.override
+  GetContentResponse createEmptyInstance() => create();
+  static $pb.PbList<GetContentResponse> createRepeated() => $pb.PbList<GetContentResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetContentResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetContentResponse>(create);
+  static GetContentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxContent get content => $_getN(0);
+  @$pb.TagNumber(1)
+  set content(OnyxContent value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContent() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxContent ensureContent() => $_ensure(0);
+}
+
+class ListShelfRequest extends $pb.GeneratedMessage {
+  factory ListShelfRequest({
+    $core.String? shelfCode,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (shelfCode != null) result.shelfCode = shelfCode;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListShelfRequest._();
+
+  factory ListShelfRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListShelfRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShelfRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'shelfCode')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListShelfRequest clone() => ListShelfRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListShelfRequest copyWith(void Function(ListShelfRequest) updates) => super.copyWith((message) => updates(message as ListShelfRequest)) as ListShelfRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListShelfRequest create() => ListShelfRequest._();
+  @$core.override
+  ListShelfRequest createEmptyInstance() => create();
+  static $pb.PbList<ListShelfRequest> createRepeated() => $pb.PbList<ListShelfRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListShelfRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListShelfRequest>(create);
+  static ListShelfRequest? _defaultInstance;
+
+  /// articles | audio | video | curator.
+  @$pb.TagNumber(1)
+  $core.String get shelfCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set shelfCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasShelfCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearShelfCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get limit => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set limit($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLimit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLimit() => $_clearField(2);
+}
+
+class ListShelfResponse extends $pb.GeneratedMessage {
+  factory ListShelfResponse({
+    $core.Iterable<OnyxContent>? items,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    return result;
+  }
+
+  ListShelfResponse._();
+
+  factory ListShelfResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListShelfResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShelfResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..pc<OnyxContent>(1, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: OnyxContent.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListShelfResponse clone() => ListShelfResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListShelfResponse copyWith(void Function(ListShelfResponse) updates) => super.copyWith((message) => updates(message as ListShelfResponse)) as ListShelfResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListShelfResponse create() => ListShelfResponse._();
+  @$core.override
+  ListShelfResponse createEmptyInstance() => create();
+  static $pb.PbList<ListShelfResponse> createRepeated() => $pb.PbList<ListShelfResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListShelfResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListShelfResponse>(create);
+  static ListShelfResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OnyxContent> get items => $_getList(0);
+}
+
+class ListContinueRequest extends $pb.GeneratedMessage {
+  factory ListContinueRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListContinueRequest._();
+
+  factory ListContinueRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListContinueRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListContinueRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListContinueRequest clone() => ListContinueRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListContinueRequest copyWith(void Function(ListContinueRequest) updates) => super.copyWith((message) => updates(message as ListContinueRequest)) as ListContinueRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListContinueRequest create() => ListContinueRequest._();
+  @$core.override
+  ListContinueRequest createEmptyInstance() => create();
+  static $pb.PbList<ListContinueRequest> createRepeated() => $pb.PbList<ListContinueRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListContinueRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListContinueRequest>(create);
+  static ListContinueRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class ListContinueResponse extends $pb.GeneratedMessage {
+  factory ListContinueResponse({
+    $core.Iterable<OnyxContent>? items,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    return result;
+  }
+
+  ListContinueResponse._();
+
+  factory ListContinueResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListContinueResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListContinueResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..pc<OnyxContent>(1, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: OnyxContent.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListContinueResponse clone() => ListContinueResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListContinueResponse copyWith(void Function(ListContinueResponse) updates) => super.copyWith((message) => updates(message as ListContinueResponse)) as ListContinueResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListContinueResponse create() => ListContinueResponse._();
+  @$core.override
+  ListContinueResponse createEmptyInstance() => create();
+  static $pb.PbList<ListContinueResponse> createRepeated() => $pb.PbList<ListContinueResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListContinueResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListContinueResponse>(create);
+  static ListContinueResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OnyxContent> get items => $_getList(0);
+}
+
+class GetShelvesRequest extends $pb.GeneratedMessage {
+  factory GetShelvesRequest() => create();
+
+  GetShelvesRequest._();
+
+  factory GetShelvesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetShelvesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetShelvesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetShelvesRequest clone() => GetShelvesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetShelvesRequest copyWith(void Function(GetShelvesRequest) updates) => super.copyWith((message) => updates(message as GetShelvesRequest)) as GetShelvesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetShelvesRequest create() => GetShelvesRequest._();
+  @$core.override
+  GetShelvesRequest createEmptyInstance() => create();
+  static $pb.PbList<GetShelvesRequest> createRepeated() => $pb.PbList<GetShelvesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetShelvesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetShelvesRequest>(create);
+  static GetShelvesRequest? _defaultInstance;
+}
+
+/// Shelf is one named editorial section in the library.
+class Shelf extends $pb.GeneratedMessage {
+  factory Shelf({
+    $core.String? code,
+    $core.String? title,
+    $core.String? blurb,
+    $core.Iterable<OnyxContent>? items,
+  }) {
+    final result = create();
+    if (code != null) result.code = code;
+    if (title != null) result.title = title;
+    if (blurb != null) result.blurb = blurb;
+    if (items != null) result.items.addAll(items);
+    return result;
+  }
+
+  Shelf._();
+
+  factory Shelf.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Shelf.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Shelf', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'code')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'blurb')
+    ..pc<OnyxContent>(4, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: OnyxContent.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Shelf clone() => Shelf()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Shelf copyWith(void Function(Shelf) updates) => super.copyWith((message) => updates(message as Shelf)) as Shelf;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Shelf create() => Shelf._();
+  @$core.override
+  Shelf createEmptyInstance() => create();
+  static $pb.PbList<Shelf> createRepeated() => $pb.PbList<Shelf>();
+  @$core.pragma('dart2js:noInline')
+  static Shelf getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Shelf>(create);
+  static Shelf? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get code => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set code($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  /// Editorial copy on the shelf.
+  @$pb.TagNumber(3)
+  $core.String get blurb => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set blurb($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBlurb() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBlurb() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<OnyxContent> get items => $_getList(3);
+}
+
+class GetShelvesResponse extends $pb.GeneratedMessage {
+  factory GetShelvesResponse({
+    $core.Iterable<Shelf>? shelves,
+  }) {
+    final result = create();
+    if (shelves != null) result.shelves.addAll(shelves);
+    return result;
+  }
+
+  GetShelvesResponse._();
+
+  factory GetShelvesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetShelvesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetShelvesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..pc<Shelf>(1, _omitFieldNames ? '' : 'shelves', $pb.PbFieldType.PM, subBuilder: Shelf.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetShelvesResponse clone() => GetShelvesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetShelvesResponse copyWith(void Function(GetShelvesResponse) updates) => super.copyWith((message) => updates(message as GetShelvesResponse)) as GetShelvesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetShelvesResponse create() => GetShelvesResponse._();
+  @$core.override
+  GetShelvesResponse createEmptyInstance() => create();
+  static $pb.PbList<GetShelvesResponse> createRepeated() => $pb.PbList<GetShelvesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetShelvesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetShelvesResponse>(create);
+  static GetShelvesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Shelf> get shelves => $_getList(0);
+}
+
+class RecordProgressRequest extends $pb.GeneratedMessage {
+  factory RecordProgressRequest({
+    $core.String? contentId,
+    $core.double? completion,
+    $core.int? positionSeconds,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (completion != null) result.completion = completion;
+    if (positionSeconds != null) result.positionSeconds = positionSeconds;
+    return result;
+  }
+
+  RecordProgressRequest._();
+
+  factory RecordProgressRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RecordProgressRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordProgressRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'completion', $pb.PbFieldType.OD)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'positionSeconds', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordProgressRequest clone() => RecordProgressRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordProgressRequest copyWith(void Function(RecordProgressRequest) updates) => super.copyWith((message) => updates(message as RecordProgressRequest)) as RecordProgressRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordProgressRequest create() => RecordProgressRequest._();
+  @$core.override
+  RecordProgressRequest createEmptyInstance() => create();
+  static $pb.PbList<RecordProgressRequest> createRepeated() => $pb.PbList<RecordProgressRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RecordProgressRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordProgressRequest>(create);
+  static RecordProgressRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  /// 0..1 fraction. >= 1 marks complete.
+  @$pb.TagNumber(2)
+  $core.double get completion => $_getN(1);
+  @$pb.TagNumber(2)
+  set completion($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCompletion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCompletion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get positionSeconds => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set positionSeconds($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPositionSeconds() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPositionSeconds() => $_clearField(3);
+}
+
+class RecordProgressResponse extends $pb.GeneratedMessage {
+  factory RecordProgressResponse({
+    $core.double? completion,
+    $core.int? positionSeconds,
+  }) {
+    final result = create();
+    if (completion != null) result.completion = completion;
+    if (positionSeconds != null) result.positionSeconds = positionSeconds;
+    return result;
+  }
+
+  RecordProgressResponse._();
+
+  factory RecordProgressResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RecordProgressResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordProgressResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'completion', $pb.PbFieldType.OD)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'positionSeconds', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordProgressResponse clone() => RecordProgressResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordProgressResponse copyWith(void Function(RecordProgressResponse) updates) => super.copyWith((message) => updates(message as RecordProgressResponse)) as RecordProgressResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordProgressResponse create() => RecordProgressResponse._();
+  @$core.override
+  RecordProgressResponse createEmptyInstance() => create();
+  static $pb.PbList<RecordProgressResponse> createRepeated() => $pb.PbList<RecordProgressResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RecordProgressResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordProgressResponse>(create);
+  static RecordProgressResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get completion => $_getN(0);
+  @$pb.TagNumber(1)
+  set completion($core.double value) => $_setDouble(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCompletion() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCompletion() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get positionSeconds => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set positionSeconds($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPositionSeconds() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPositionSeconds() => $_clearField(2);
 }
 
 

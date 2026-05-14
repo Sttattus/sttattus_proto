@@ -19,10 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	OnyxService_CreateProfile_FullMethodName = "/sttattus.onyx.v1.OnyxService/CreateProfile"
-	OnyxService_GetProfile_FullMethodName    = "/sttattus.onyx.v1.OnyxService/GetProfile"
-	OnyxService_ListContent_FullMethodName   = "/sttattus.onyx.v1.OnyxService/ListContent"
-	OnyxService_Subscribe_FullMethodName     = "/sttattus.onyx.v1.OnyxService/Subscribe"
+	OnyxService_CreateProfile_FullMethodName  = "/sttattus.onyx.v1.OnyxService/CreateProfile"
+	OnyxService_GetProfile_FullMethodName     = "/sttattus.onyx.v1.OnyxService/GetProfile"
+	OnyxService_ListContent_FullMethodName    = "/sttattus.onyx.v1.OnyxService/ListContent"
+	OnyxService_Subscribe_FullMethodName      = "/sttattus.onyx.v1.OnyxService/Subscribe"
+	OnyxService_GetContent_FullMethodName     = "/sttattus.onyx.v1.OnyxService/GetContent"
+	OnyxService_ListShelf_FullMethodName      = "/sttattus.onyx.v1.OnyxService/ListShelf"
+	OnyxService_ListContinue_FullMethodName   = "/sttattus.onyx.v1.OnyxService/ListContinue"
+	OnyxService_GetShelves_FullMethodName     = "/sttattus.onyx.v1.OnyxService/GetShelves"
+	OnyxService_RecordProgress_FullMethodName = "/sttattus.onyx.v1.OnyxService/RecordProgress"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -36,6 +41,12 @@ type OnyxServiceClient interface {
 	ListContent(ctx context.Context, in *ListContentRequest, opts ...grpc.CallOption) (*ListContentResponse, error)
 	// Exclusivity Mechanics
 	Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*SubscribeResponse, error)
+	// P6.2 — content + library reads.
+	GetContent(ctx context.Context, in *GetContentRequest, opts ...grpc.CallOption) (*GetContentResponse, error)
+	ListShelf(ctx context.Context, in *ListShelfRequest, opts ...grpc.CallOption) (*ListShelfResponse, error)
+	ListContinue(ctx context.Context, in *ListContinueRequest, opts ...grpc.CallOption) (*ListContinueResponse, error)
+	GetShelves(ctx context.Context, in *GetShelvesRequest, opts ...grpc.CallOption) (*GetShelvesResponse, error)
+	RecordProgress(ctx context.Context, in *RecordProgressRequest, opts ...grpc.CallOption) (*RecordProgressResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -86,6 +97,56 @@ func (c *onyxServiceClient) Subscribe(ctx context.Context, in *SubscribeRequest,
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetContent(ctx context.Context, in *GetContentRequest, opts ...grpc.CallOption) (*GetContentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetContentResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetContent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListShelf(ctx context.Context, in *ListShelfRequest, opts ...grpc.CallOption) (*ListShelfResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListShelfResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListShelf_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListContinue(ctx context.Context, in *ListContinueRequest, opts ...grpc.CallOption) (*ListContinueResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListContinueResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListContinue_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetShelves(ctx context.Context, in *GetShelvesRequest, opts ...grpc.CallOption) (*GetShelvesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetShelvesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetShelves_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RecordProgress(ctx context.Context, in *RecordProgressRequest, opts ...grpc.CallOption) (*RecordProgressResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordProgressResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RecordProgress_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -97,6 +158,12 @@ type OnyxServiceServer interface {
 	ListContent(context.Context, *ListContentRequest) (*ListContentResponse, error)
 	// Exclusivity Mechanics
 	Subscribe(context.Context, *SubscribeRequest) (*SubscribeResponse, error)
+	// P6.2 — content + library reads.
+	GetContent(context.Context, *GetContentRequest) (*GetContentResponse, error)
+	ListShelf(context.Context, *ListShelfRequest) (*ListShelfResponse, error)
+	ListContinue(context.Context, *ListContinueRequest) (*ListContinueResponse, error)
+	GetShelves(context.Context, *GetShelvesRequest) (*GetShelvesResponse, error)
+	RecordProgress(context.Context, *RecordProgressRequest) (*RecordProgressResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -118,6 +185,21 @@ func (UnimplementedOnyxServiceServer) ListContent(context.Context, *ListContentR
 }
 func (UnimplementedOnyxServiceServer) Subscribe(context.Context, *SubscribeRequest) (*SubscribeResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method Subscribe not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetContent(context.Context, *GetContentRequest) (*GetContentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetContent not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListShelf(context.Context, *ListShelfRequest) (*ListShelfResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListShelf not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListContinue(context.Context, *ListContinueRequest) (*ListContinueResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListContinue not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetShelves(context.Context, *GetShelvesRequest) (*GetShelvesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetShelves not implemented")
+}
+func (UnimplementedOnyxServiceServer) RecordProgress(context.Context, *RecordProgressRequest) (*RecordProgressResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordProgress not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -212,6 +294,96 @@ func _OnyxService_Subscribe_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetContent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetContentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetContent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetContent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetContent(ctx, req.(*GetContentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListShelf_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListShelfRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListShelf(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListShelf_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListShelf(ctx, req.(*ListShelfRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListContinue_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListContinueRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListContinue(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListContinue_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListContinue(ctx, req.(*ListContinueRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetShelves_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetShelvesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetShelves(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetShelves_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetShelves(ctx, req.(*GetShelvesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RecordProgress_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordProgressRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RecordProgress(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RecordProgress_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RecordProgress(ctx, req.(*RecordProgressRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -234,6 +406,26 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Subscribe",
 			Handler:    _OnyxService_Subscribe_Handler,
+		},
+		{
+			MethodName: "GetContent",
+			Handler:    _OnyxService_GetContent_Handler,
+		},
+		{
+			MethodName: "ListShelf",
+			Handler:    _OnyxService_ListShelf_Handler,
+		},
+		{
+			MethodName: "ListContinue",
+			Handler:    _OnyxService_ListContinue_Handler,
+		},
+		{
+			MethodName: "GetShelves",
+			Handler:    _OnyxService_GetShelves_Handler,
+		},
+		{
+			MethodName: "RecordProgress",
+			Handler:    _OnyxService_RecordProgress_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

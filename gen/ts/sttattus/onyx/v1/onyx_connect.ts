@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateOnyxProfileRequest, CreateOnyxProfileResponse, GetOnyxProfileRequest, GetOnyxProfileResponse, ListContentRequest, ListContentResponse, SubscribeRequest, SubscribeResponse } from "./onyx_pb.js";
+import { CreateOnyxProfileRequest, CreateOnyxProfileResponse, GetContentRequest, GetContentResponse, GetOnyxProfileRequest, GetOnyxProfileResponse, GetShelvesRequest, GetShelvesResponse, ListContentRequest, ListContentResponse, ListContinueRequest, ListContinueResponse, ListShelfRequest, ListShelfResponse, RecordProgressRequest, RecordProgressResponse, SubscribeRequest, SubscribeResponse } from "./onyx_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -52,6 +52,53 @@ export const OnyxService = {
       name: "Subscribe",
       I: SubscribeRequest,
       O: SubscribeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P6.2 — content + library reads.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetContent
+     */
+    getContent: {
+      name: "GetContent",
+      I: GetContentRequest,
+      O: GetContentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListShelf
+     */
+    listShelf: {
+      name: "ListShelf",
+      I: ListShelfRequest,
+      O: ListShelfResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListContinue
+     */
+    listContinue: {
+      name: "ListContinue",
+      I: ListContinueRequest,
+      O: ListContinueResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetShelves
+     */
+    getShelves: {
+      name: "GetShelves",
+      I: GetShelvesRequest,
+      O: GetShelvesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.RecordProgress
+     */
+    recordProgress: {
+      name: "RecordProgress",
+      I: RecordProgressRequest,
+      O: RecordProgressResponse,
       kind: MethodKind.Unary,
     },
   }

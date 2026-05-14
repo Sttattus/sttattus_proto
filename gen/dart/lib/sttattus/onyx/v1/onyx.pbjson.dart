@@ -67,6 +67,16 @@ const OnyxContent$json = {
     {'1': 'signed_url', '3': 9, '4': 1, '5': 9, '10': 'signedUrl'},
     {'1': 'created_at', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     {'1': 'expires_at', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expiresAt'},
+    {'1': 'kind', '3': 12, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'body_markdown', '3': 13, '4': 1, '5': 9, '10': 'bodyMarkdown'},
+    {'1': 'duration_seconds', '3': 14, '4': 1, '5': 5, '10': 'durationSeconds'},
+    {'1': 'audio_url', '3': 15, '4': 1, '5': 9, '10': 'audioUrl'},
+    {'1': 'video_url', '3': 16, '4': 1, '5': 9, '10': 'videoUrl'},
+    {'1': 'hero_image_url', '3': 17, '4': 1, '5': 9, '10': 'heroImageUrl'},
+    {'1': 'captions_url', '3': 18, '4': 1, '5': 9, '10': 'captionsUrl'},
+    {'1': 'shelf_code', '3': 19, '4': 1, '5': 9, '10': 'shelfCode'},
+    {'1': 'progress_completion', '3': 20, '4': 1, '5': 1, '10': 'progressCompletion'},
+    {'1': 'progress_position_seconds', '3': 21, '4': 1, '5': 5, '10': 'progressPositionSeconds'},
   ],
 };
 
@@ -79,7 +89,13 @@ final $typed_data.Uint8List onyxContentDescriptor = $convert.base64Decode(
     'UG9pbnRzEhsKCWlzX2xvY2tlZBgIIAEoCFIIaXNMb2NrZWQSHQoKc2lnbmVkX3VybBgJIAEoCV'
     'IJc2lnbmVkVXJsEjkKCmNyZWF0ZWRfYXQYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0'
     'YW1wUgljcmVhdGVkQXQSOQoKZXhwaXJlc19hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW'
-    '1lc3RhbXBSCWV4cGlyZXNBdA==');
+    '1lc3RhbXBSCWV4cGlyZXNBdBISCgRraW5kGAwgASgJUgRraW5kEiMKDWJvZHlfbWFya2Rvd24Y'
+    'DSABKAlSDGJvZHlNYXJrZG93bhIpChBkdXJhdGlvbl9zZWNvbmRzGA4gASgFUg9kdXJhdGlvbl'
+    'NlY29uZHMSGwoJYXVkaW9fdXJsGA8gASgJUghhdWRpb1VybBIbCgl2aWRlb191cmwYECABKAlS'
+    'CHZpZGVvVXJsEiQKDmhlcm9faW1hZ2VfdXJsGBEgASgJUgxoZXJvSW1hZ2VVcmwSIQoMY2FwdG'
+    'lvbnNfdXJsGBIgASgJUgtjYXB0aW9uc1VybBIdCgpzaGVsZl9jb2RlGBMgASgJUglzaGVsZkNv'
+    'ZGUSLwoTcHJvZ3Jlc3NfY29tcGxldGlvbhgUIAEoAVIScHJvZ3Jlc3NDb21wbGV0aW9uEjoKGX'
+    'Byb2dyZXNzX3Bvc2l0aW9uX3NlY29uZHMYFSABKAVSF3Byb2dyZXNzUG9zaXRpb25TZWNvbmRz');
 
 @$core.Deprecated('Use subscriptionDescriptor instead')
 const Subscription$json = {
@@ -200,4 +216,150 @@ const SubscribeResponse$json = {
 final $typed_data.Uint8List subscribeResponseDescriptor = $convert.base64Decode(
     'ChFTdWJzY3JpYmVSZXNwb25zZRJCCgxzdWJzY3JpcHRpb24YASABKAsyHi5zdHRhdHR1cy5vbn'
     'l4LnYxLlN1YnNjcmlwdGlvblIMc3Vic2NyaXB0aW9u');
+
+@$core.Deprecated('Use getContentRequestDescriptor instead')
+const GetContentRequest$json = {
+  '1': 'GetContentRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetContentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getContentRequestDescriptor = $convert.base64Decode(
+    'ChFHZXRDb250ZW50UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use getContentResponseDescriptor instead')
+const GetContentResponse$json = {
+  '1': 'GetContentResponse',
+  '2': [
+    {'1': 'content', '3': 1, '4': 1, '5': 11, '6': '.sttattus.onyx.v1.OnyxContent', '10': 'content'},
+  ],
+};
+
+/// Descriptor for `GetContentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getContentResponseDescriptor = $convert.base64Decode(
+    'ChJHZXRDb250ZW50UmVzcG9uc2USNwoHY29udGVudBgBIAEoCzIdLnN0dGF0dHVzLm9ueXgudj'
+    'EuT255eENvbnRlbnRSB2NvbnRlbnQ=');
+
+@$core.Deprecated('Use listShelfRequestDescriptor instead')
+const ListShelfRequest$json = {
+  '1': 'ListShelfRequest',
+  '2': [
+    {'1': 'shelf_code', '3': 1, '4': 1, '5': 9, '10': 'shelfCode'},
+    {'1': 'limit', '3': 2, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListShelfRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listShelfRequestDescriptor = $convert.base64Decode(
+    'ChBMaXN0U2hlbGZSZXF1ZXN0Eh0KCnNoZWxmX2NvZGUYASABKAlSCXNoZWxmQ29kZRIUCgVsaW'
+    '1pdBgCIAEoBVIFbGltaXQ=');
+
+@$core.Deprecated('Use listShelfResponseDescriptor instead')
+const ListShelfResponse$json = {
+  '1': 'ListShelfResponse',
+  '2': [
+    {'1': 'items', '3': 1, '4': 3, '5': 11, '6': '.sttattus.onyx.v1.OnyxContent', '10': 'items'},
+  ],
+};
+
+/// Descriptor for `ListShelfResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listShelfResponseDescriptor = $convert.base64Decode(
+    'ChFMaXN0U2hlbGZSZXNwb25zZRIzCgVpdGVtcxgBIAMoCzIdLnN0dGF0dHVzLm9ueXgudjEuT2'
+    '55eENvbnRlbnRSBWl0ZW1z');
+
+@$core.Deprecated('Use listContinueRequestDescriptor instead')
+const ListContinueRequest$json = {
+  '1': 'ListContinueRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListContinueRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listContinueRequestDescriptor = $convert.base64Decode(
+    'ChNMaXN0Q29udGludWVSZXF1ZXN0EhQKBWxpbWl0GAEgASgFUgVsaW1pdA==');
+
+@$core.Deprecated('Use listContinueResponseDescriptor instead')
+const ListContinueResponse$json = {
+  '1': 'ListContinueResponse',
+  '2': [
+    {'1': 'items', '3': 1, '4': 3, '5': 11, '6': '.sttattus.onyx.v1.OnyxContent', '10': 'items'},
+  ],
+};
+
+/// Descriptor for `ListContinueResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listContinueResponseDescriptor = $convert.base64Decode(
+    'ChRMaXN0Q29udGludWVSZXNwb25zZRIzCgVpdGVtcxgBIAMoCzIdLnN0dGF0dHVzLm9ueXgudj'
+    'EuT255eENvbnRlbnRSBWl0ZW1z');
+
+@$core.Deprecated('Use getShelvesRequestDescriptor instead')
+const GetShelvesRequest$json = {
+  '1': 'GetShelvesRequest',
+};
+
+/// Descriptor for `GetShelvesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getShelvesRequestDescriptor = $convert.base64Decode(
+    'ChFHZXRTaGVsdmVzUmVxdWVzdA==');
+
+@$core.Deprecated('Use shelfDescriptor instead')
+const Shelf$json = {
+  '1': 'Shelf',
+  '2': [
+    {'1': 'code', '3': 1, '4': 1, '5': 9, '10': 'code'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'blurb', '3': 3, '4': 1, '5': 9, '10': 'blurb'},
+    {'1': 'items', '3': 4, '4': 3, '5': 11, '6': '.sttattus.onyx.v1.OnyxContent', '10': 'items'},
+  ],
+};
+
+/// Descriptor for `Shelf`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List shelfDescriptor = $convert.base64Decode(
+    'CgVTaGVsZhISCgRjb2RlGAEgASgJUgRjb2RlEhQKBXRpdGxlGAIgASgJUgV0aXRsZRIUCgVibH'
+    'VyYhgDIAEoCVIFYmx1cmISMwoFaXRlbXMYBCADKAsyHS5zdHRhdHR1cy5vbnl4LnYxLk9ueXhD'
+    'b250ZW50UgVpdGVtcw==');
+
+@$core.Deprecated('Use getShelvesResponseDescriptor instead')
+const GetShelvesResponse$json = {
+  '1': 'GetShelvesResponse',
+  '2': [
+    {'1': 'shelves', '3': 1, '4': 3, '5': 11, '6': '.sttattus.onyx.v1.Shelf', '10': 'shelves'},
+  ],
+};
+
+/// Descriptor for `GetShelvesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getShelvesResponseDescriptor = $convert.base64Decode(
+    'ChJHZXRTaGVsdmVzUmVzcG9uc2USMQoHc2hlbHZlcxgBIAMoCzIXLnN0dGF0dHVzLm9ueXgudj'
+    'EuU2hlbGZSB3NoZWx2ZXM=');
+
+@$core.Deprecated('Use recordProgressRequestDescriptor instead')
+const RecordProgressRequest$json = {
+  '1': 'RecordProgressRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'completion', '3': 2, '4': 1, '5': 1, '10': 'completion'},
+    {'1': 'position_seconds', '3': 3, '4': 1, '5': 5, '10': 'positionSeconds'},
+  ],
+};
+
+/// Descriptor for `RecordProgressRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordProgressRequestDescriptor = $convert.base64Decode(
+    'ChVSZWNvcmRQcm9ncmVzc1JlcXVlc3QSHQoKY29udGVudF9pZBgBIAEoCVIJY29udGVudElkEh'
+    '4KCmNvbXBsZXRpb24YAiABKAFSCmNvbXBsZXRpb24SKQoQcG9zaXRpb25fc2Vjb25kcxgDIAEo'
+    'BVIPcG9zaXRpb25TZWNvbmRz');
+
+@$core.Deprecated('Use recordProgressResponseDescriptor instead')
+const RecordProgressResponse$json = {
+  '1': 'RecordProgressResponse',
+  '2': [
+    {'1': 'completion', '3': 1, '4': 1, '5': 1, '10': 'completion'},
+    {'1': 'position_seconds', '3': 2, '4': 1, '5': 5, '10': 'positionSeconds'},
+  ],
+};
+
+/// Descriptor for `RecordProgressResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordProgressResponseDescriptor = $convert.base64Decode(
+    'ChZSZWNvcmRQcm9ncmVzc1Jlc3BvbnNlEh4KCmNvbXBsZXRpb24YASABKAFSCmNvbXBsZXRpb2'
+    '4SKQoQcG9zaXRpb25fc2Vjb25kcxgCIAEoBVIPcG9zaXRpb25TZWNvbmRz');
 

@@ -207,6 +207,66 @@ export class OnyxContent extends Message<OnyxContent> {
    */
   expiresAt?: Timestamp;
 
+  /**
+   * P6.2 — content kind + delivery fields.
+   * article | audio | video.
+   *
+   * @generated from field: string kind = 12;
+   */
+  kind = "";
+
+  /**
+   * Long-form markdown body, used when kind == article.
+   *
+   * @generated from field: string body_markdown = 13;
+   */
+  bodyMarkdown = "";
+
+  /**
+   * @generated from field: int32 duration_seconds = 14;
+   */
+  durationSeconds = 0;
+
+  /**
+   * @generated from field: string audio_url = 15;
+   */
+  audioUrl = "";
+
+  /**
+   * @generated from field: string video_url = 16;
+   */
+  videoUrl = "";
+
+  /**
+   * @generated from field: string hero_image_url = 17;
+   */
+  heroImageUrl = "";
+
+  /**
+   * @generated from field: string captions_url = 18;
+   */
+  captionsUrl = "";
+
+  /**
+   * articles | audio | video | curator | "" (catalog-only).
+   *
+   * @generated from field: string shelf_code = 19;
+   */
+  shelfCode = "";
+
+  /**
+   * The caller's progress on this piece, when one exists. -1 when no
+   * progress row exists.
+   *
+   * @generated from field: double progress_completion = 20;
+   */
+  progressCompletion = 0;
+
+  /**
+   * @generated from field: int32 progress_position_seconds = 21;
+   */
+  progressPositionSeconds = 0;
+
   constructor(data?: PartialMessage<OnyxContent>) {
     super();
     proto3.util.initPartial(data, this);
@@ -226,6 +286,16 @@ export class OnyxContent extends Message<OnyxContent> {
     { no: 9, name: "signed_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "created_at", kind: "message", T: Timestamp },
     { no: 11, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 12, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "body_markdown", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "duration_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 15, name: "audio_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "video_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "hero_image_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 18, name: "captions_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "shelf_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 20, name: "progress_completion", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 21, name: "progress_position_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxContent {
@@ -607,6 +677,457 @@ export class SubscribeResponse extends Message<SubscribeResponse> {
 
   static equals(a: SubscribeResponse | PlainMessage<SubscribeResponse> | undefined, b: SubscribeResponse | PlainMessage<SubscribeResponse> | undefined): boolean {
     return proto3.util.equals(SubscribeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetContentRequest
+ */
+export class GetContentRequest extends Message<GetContentRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  constructor(data?: PartialMessage<GetContentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetContentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetContentRequest {
+    return new GetContentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetContentRequest {
+    return new GetContentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetContentRequest {
+    return new GetContentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetContentRequest | PlainMessage<GetContentRequest> | undefined, b: GetContentRequest | PlainMessage<GetContentRequest> | undefined): boolean {
+    return proto3.util.equals(GetContentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetContentResponse
+ */
+export class GetContentResponse extends Message<GetContentResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxContent content = 1;
+   */
+  content?: OnyxContent;
+
+  constructor(data?: PartialMessage<GetContentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetContentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content", kind: "message", T: OnyxContent },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetContentResponse {
+    return new GetContentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetContentResponse {
+    return new GetContentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetContentResponse {
+    return new GetContentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetContentResponse | PlainMessage<GetContentResponse> | undefined, b: GetContentResponse | PlainMessage<GetContentResponse> | undefined): boolean {
+    return proto3.util.equals(GetContentResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListShelfRequest
+ */
+export class ListShelfRequest extends Message<ListShelfRequest> {
+  /**
+   * articles | audio | video | curator.
+   *
+   * @generated from field: string shelf_code = 1;
+   */
+  shelfCode = "";
+
+  /**
+   * @generated from field: int32 limit = 2;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListShelfRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListShelfRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "shelf_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListShelfRequest {
+    return new ListShelfRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListShelfRequest {
+    return new ListShelfRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListShelfRequest {
+    return new ListShelfRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListShelfRequest | PlainMessage<ListShelfRequest> | undefined, b: ListShelfRequest | PlainMessage<ListShelfRequest> | undefined): boolean {
+    return proto3.util.equals(ListShelfRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListShelfResponse
+ */
+export class ListShelfResponse extends Message<ListShelfResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxContent items = 1;
+   */
+  items: OnyxContent[] = [];
+
+  constructor(data?: PartialMessage<ListShelfResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListShelfResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "items", kind: "message", T: OnyxContent, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListShelfResponse {
+    return new ListShelfResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListShelfResponse {
+    return new ListShelfResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListShelfResponse {
+    return new ListShelfResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListShelfResponse | PlainMessage<ListShelfResponse> | undefined, b: ListShelfResponse | PlainMessage<ListShelfResponse> | undefined): boolean {
+    return proto3.util.equals(ListShelfResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListContinueRequest
+ */
+export class ListContinueRequest extends Message<ListContinueRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListContinueRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListContinueRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListContinueRequest {
+    return new ListContinueRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListContinueRequest {
+    return new ListContinueRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListContinueRequest {
+    return new ListContinueRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListContinueRequest | PlainMessage<ListContinueRequest> | undefined, b: ListContinueRequest | PlainMessage<ListContinueRequest> | undefined): boolean {
+    return proto3.util.equals(ListContinueRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListContinueResponse
+ */
+export class ListContinueResponse extends Message<ListContinueResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxContent items = 1;
+   */
+  items: OnyxContent[] = [];
+
+  constructor(data?: PartialMessage<ListContinueResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListContinueResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "items", kind: "message", T: OnyxContent, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListContinueResponse {
+    return new ListContinueResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListContinueResponse {
+    return new ListContinueResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListContinueResponse {
+    return new ListContinueResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListContinueResponse | PlainMessage<ListContinueResponse> | undefined, b: ListContinueResponse | PlainMessage<ListContinueResponse> | undefined): boolean {
+    return proto3.util.equals(ListContinueResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetShelvesRequest
+ */
+export class GetShelvesRequest extends Message<GetShelvesRequest> {
+  constructor(data?: PartialMessage<GetShelvesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetShelvesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetShelvesRequest {
+    return new GetShelvesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetShelvesRequest {
+    return new GetShelvesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetShelvesRequest {
+    return new GetShelvesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetShelvesRequest | PlainMessage<GetShelvesRequest> | undefined, b: GetShelvesRequest | PlainMessage<GetShelvesRequest> | undefined): boolean {
+    return proto3.util.equals(GetShelvesRequest, a, b);
+  }
+}
+
+/**
+ * Shelf is one named editorial section in the library.
+ *
+ * @generated from message sttattus.onyx.v1.Shelf
+ */
+export class Shelf extends Message<Shelf> {
+  /**
+   * @generated from field: string code = 1;
+   */
+  code = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * Editorial copy on the shelf.
+   *
+   * @generated from field: string blurb = 3;
+   */
+  blurb = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxContent items = 4;
+   */
+  items: OnyxContent[] = [];
+
+  constructor(data?: PartialMessage<Shelf>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.Shelf";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "blurb", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "items", kind: "message", T: OnyxContent, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Shelf {
+    return new Shelf().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Shelf {
+    return new Shelf().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Shelf {
+    return new Shelf().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: Shelf | PlainMessage<Shelf> | undefined, b: Shelf | PlainMessage<Shelf> | undefined): boolean {
+    return proto3.util.equals(Shelf, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetShelvesResponse
+ */
+export class GetShelvesResponse extends Message<GetShelvesResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.Shelf shelves = 1;
+   */
+  shelves: Shelf[] = [];
+
+  constructor(data?: PartialMessage<GetShelvesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetShelvesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "shelves", kind: "message", T: Shelf, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetShelvesResponse {
+    return new GetShelvesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetShelvesResponse {
+    return new GetShelvesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetShelvesResponse {
+    return new GetShelvesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetShelvesResponse | PlainMessage<GetShelvesResponse> | undefined, b: GetShelvesResponse | PlainMessage<GetShelvesResponse> | undefined): boolean {
+    return proto3.util.equals(GetShelvesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordProgressRequest
+ */
+export class RecordProgressRequest extends Message<RecordProgressRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * 0..1 fraction. >= 1 marks complete.
+   *
+   * @generated from field: double completion = 2;
+   */
+  completion = 0;
+
+  /**
+   * @generated from field: int32 position_seconds = 3;
+   */
+  positionSeconds = 0;
+
+  constructor(data?: PartialMessage<RecordProgressRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordProgressRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "completion", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "position_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordProgressRequest {
+    return new RecordProgressRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordProgressRequest {
+    return new RecordProgressRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordProgressRequest {
+    return new RecordProgressRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordProgressRequest | PlainMessage<RecordProgressRequest> | undefined, b: RecordProgressRequest | PlainMessage<RecordProgressRequest> | undefined): boolean {
+    return proto3.util.equals(RecordProgressRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordProgressResponse
+ */
+export class RecordProgressResponse extends Message<RecordProgressResponse> {
+  /**
+   * @generated from field: double completion = 1;
+   */
+  completion = 0;
+
+  /**
+   * @generated from field: int32 position_seconds = 2;
+   */
+  positionSeconds = 0;
+
+  constructor(data?: PartialMessage<RecordProgressResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordProgressResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "completion", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "position_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordProgressResponse {
+    return new RecordProgressResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordProgressResponse {
+    return new RecordProgressResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordProgressResponse {
+    return new RecordProgressResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordProgressResponse | PlainMessage<RecordProgressResponse> | undefined, b: RecordProgressResponse | PlainMessage<RecordProgressResponse> | undefined): boolean {
+    return proto3.util.equals(RecordProgressResponse, a, b);
   }
 }
 
