@@ -323,6 +323,76 @@ final $typed_data.Uint8List updatePublicProfileResponseDescriptor = $convert.bas
     'ChtVcGRhdGVQdWJsaWNQcm9maWxlUmVzcG9uc2USGAoHdGFnbGluZRgBIAEoCVIHdGFnbGluZR'
     'IQCgNiaW8YAiABKAlSA2Jpbw==');
 
+@$core.Deprecated('Use editorialDigestDescriptor instead')
+const EditorialDigest$json = {
+  '1': 'EditorialDigest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'week_start', '3': 2, '4': 1, '5': 9, '10': 'weekStart'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'subtitle', '3': 4, '4': 1, '5': 9, '10': 'subtitle'},
+    {'1': 'body', '3': 5, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'editor_name', '3': 6, '4': 1, '5': 9, '10': 'editorName'},
+    {'1': 'published_at', '3': 7, '4': 1, '5': 9, '10': 'publishedAt'},
+  ],
+};
+
+/// Descriptor for `EditorialDigest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List editorialDigestDescriptor = $convert.base64Decode(
+    'Cg9FZGl0b3JpYWxEaWdlc3QSDgoCaWQYASABKAlSAmlkEh0KCndlZWtfc3RhcnQYAiABKAlSCX'
+    'dlZWtTdGFydBIUCgV0aXRsZRgDIAEoCVIFdGl0bGUSGgoIc3VidGl0bGUYBCABKAlSCHN1YnRp'
+    'dGxlEhIKBGJvZHkYBSABKAlSBGJvZHkSHwoLZWRpdG9yX25hbWUYBiABKAlSCmVkaXRvck5hbW'
+    'USIQoMcHVibGlzaGVkX2F0GAcgASgJUgtwdWJsaXNoZWRBdA==');
+
+@$core.Deprecated('Use getLatestEditorialDigestRequestDescriptor instead')
+const GetLatestEditorialDigestRequest$json = {
+  '1': 'GetLatestEditorialDigestRequest',
+};
+
+/// Descriptor for `GetLatestEditorialDigestRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLatestEditorialDigestRequestDescriptor = $convert.base64Decode(
+    'Ch9HZXRMYXRlc3RFZGl0b3JpYWxEaWdlc3RSZXF1ZXN0');
+
+@$core.Deprecated('Use getLatestEditorialDigestResponseDescriptor instead')
+const GetLatestEditorialDigestResponse$json = {
+  '1': 'GetLatestEditorialDigestResponse',
+  '2': [
+    {'1': 'digest', '3': 1, '4': 1, '5': 11, '6': '.sttattus.empire.v1.EditorialDigest', '10': 'digest'},
+  ],
+};
+
+/// Descriptor for `GetLatestEditorialDigestResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLatestEditorialDigestResponseDescriptor = $convert.base64Decode(
+    'CiBHZXRMYXRlc3RFZGl0b3JpYWxEaWdlc3RSZXNwb25zZRI7CgZkaWdlc3QYASABKAsyIy5zdH'
+    'RhdHR1cy5lbXBpcmUudjEuRWRpdG9yaWFsRGlnZXN0UgZkaWdlc3Q=');
+
+@$core.Deprecated('Use listEditorialDigestsRequestDescriptor instead')
+const ListEditorialDigestsRequest$json = {
+  '1': 'ListEditorialDigestsRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+    {'1': 'offset', '3': 2, '4': 1, '5': 5, '10': 'offset'},
+  ],
+};
+
+/// Descriptor for `ListEditorialDigestsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listEditorialDigestsRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0RWRpdG9yaWFsRGlnZXN0c1JlcXVlc3QSFAoFbGltaXQYASABKAVSBWxpbWl0EhYKBm'
+    '9mZnNldBgCIAEoBVIGb2Zmc2V0');
+
+@$core.Deprecated('Use listEditorialDigestsResponseDescriptor instead')
+const ListEditorialDigestsResponse$json = {
+  '1': 'ListEditorialDigestsResponse',
+  '2': [
+    {'1': 'digests', '3': 1, '4': 3, '5': 11, '6': '.sttattus.empire.v1.EditorialDigest', '10': 'digests'},
+  ],
+};
+
+/// Descriptor for `ListEditorialDigestsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listEditorialDigestsResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0RWRpdG9yaWFsRGlnZXN0c1Jlc3BvbnNlEj0KB2RpZ2VzdHMYASADKAsyIy5zdHRhdH'
+    'R1cy5lbXBpcmUudjEuRWRpdG9yaWFsRGlnZXN0UgdkaWdlc3Rz');
+
 @$core.Deprecated('Use getLatestCloutDropRequestDescriptor instead')
 const GetLatestCloutDropRequest$json = {
   '1': 'GetLatestCloutDropRequest',

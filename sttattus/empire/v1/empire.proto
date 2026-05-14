@@ -190,6 +190,37 @@ message UpdatePublicProfileResponse {
   string bio = 2;
 }
 
+// === Editorial digest (P5.10) ===
+
+message EditorialDigest {
+  string id = 1;
+  // YYYY-MM-DD UTC.
+  string week_start = 2;
+  string title = 3;
+  string subtitle = 4;
+  // Markdown body.
+  string body = 5;
+  string editor_name = 6;
+  // RFC-3339 UTC.
+  string published_at = 7;
+}
+
+message GetLatestEditorialDigestRequest {}
+
+message GetLatestEditorialDigestResponse {
+  // Nil when no digest has been published yet.
+  EditorialDigest digest = 1;
+}
+
+message ListEditorialDigestsRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+}
+
+message ListEditorialDigestsResponse {
+  repeated EditorialDigest digests = 1;
+}
+
 // === Sunday clout drop (P5.9) ===
 
 message GetLatestCloutDropRequest {}
@@ -359,4 +390,11 @@ service EmpireService {
   // server has computed — every pillar's top entries flattened into
   // one list, ordered by pillar then rank.
   rpc GetLatestCloutDrop(GetLatestCloutDropRequest) returns (GetLatestCloutDropResponse);
+
+  // GetLatestEditorialDigest returns the most recent weekly digest
+  // the editorial team has published.
+  rpc GetLatestEditorialDigest(GetLatestEditorialDigestRequest) returns (GetLatestEditorialDigestResponse);
+
+  // ListEditorialDigests returns the digest archive, newest first.
+  rpc ListEditorialDigests(ListEditorialDigestsRequest) returns (ListEditorialDigestsResponse);
 }

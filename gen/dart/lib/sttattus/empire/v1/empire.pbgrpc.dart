@@ -125,6 +125,17 @@ class EmpireServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getLatestCloutDrop, request, options: options);
   }
 
+  /// GetLatestEditorialDigest returns the most recent weekly digest
+  /// the editorial team has published.
+  $grpc.ResponseFuture<$0.GetLatestEditorialDigestResponse> getLatestEditorialDigest($0.GetLatestEditorialDigestRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getLatestEditorialDigest, request, options: options);
+  }
+
+  /// ListEditorialDigests returns the digest archive, newest first.
+  $grpc.ResponseFuture<$0.ListEditorialDigestsResponse> listEditorialDigests($0.ListEditorialDigestsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listEditorialDigests, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getScoreBreakdown = $grpc.ClientMethod<$0.GetScoreBreakdownRequest, $0.GetScoreBreakdownResponse>(
@@ -183,6 +194,14 @@ class EmpireServiceClient extends $grpc.Client {
       '/sttattus.empire.v1.EmpireService/GetLatestCloutDrop',
       ($0.GetLatestCloutDropRequest value) => value.writeToBuffer(),
       $0.GetLatestCloutDropResponse.fromBuffer);
+  static final _$getLatestEditorialDigest = $grpc.ClientMethod<$0.GetLatestEditorialDigestRequest, $0.GetLatestEditorialDigestResponse>(
+      '/sttattus.empire.v1.EmpireService/GetLatestEditorialDigest',
+      ($0.GetLatestEditorialDigestRequest value) => value.writeToBuffer(),
+      $0.GetLatestEditorialDigestResponse.fromBuffer);
+  static final _$listEditorialDigests = $grpc.ClientMethod<$0.ListEditorialDigestsRequest, $0.ListEditorialDigestsResponse>(
+      '/sttattus.empire.v1.EmpireService/ListEditorialDigests',
+      ($0.ListEditorialDigestsRequest value) => value.writeToBuffer(),
+      $0.ListEditorialDigestsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.empire.v1.EmpireService')
@@ -288,6 +307,20 @@ abstract class EmpireServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetLatestCloutDropRequest.fromBuffer(value),
         ($0.GetLatestCloutDropResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetLatestEditorialDigestRequest, $0.GetLatestEditorialDigestResponse>(
+        'GetLatestEditorialDigest',
+        getLatestEditorialDigest_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetLatestEditorialDigestRequest.fromBuffer(value),
+        ($0.GetLatestEditorialDigestResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListEditorialDigestsRequest, $0.ListEditorialDigestsResponse>(
+        'ListEditorialDigests',
+        listEditorialDigests_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListEditorialDigestsRequest.fromBuffer(value),
+        ($0.ListEditorialDigestsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetScoreBreakdownResponse> getScoreBreakdown_Pre($grpc.ServiceCall $call, $async.Future<$0.GetScoreBreakdownRequest> $request) async {
@@ -373,5 +406,17 @@ abstract class EmpireServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GetLatestCloutDropResponse> getLatestCloutDrop($grpc.ServiceCall call, $0.GetLatestCloutDropRequest request);
+
+  $async.Future<$0.GetLatestEditorialDigestResponse> getLatestEditorialDigest_Pre($grpc.ServiceCall $call, $async.Future<$0.GetLatestEditorialDigestRequest> $request) async {
+    return getLatestEditorialDigest($call, await $request);
+  }
+
+  $async.Future<$0.GetLatestEditorialDigestResponse> getLatestEditorialDigest($grpc.ServiceCall call, $0.GetLatestEditorialDigestRequest request);
+
+  $async.Future<$0.ListEditorialDigestsResponse> listEditorialDigests_Pre($grpc.ServiceCall $call, $async.Future<$0.ListEditorialDigestsRequest> $request) async {
+    return listEditorialDigests($call, await $request);
+  }
+
+  $async.Future<$0.ListEditorialDigestsResponse> listEditorialDigests($grpc.ServiceCall call, $0.ListEditorialDigestsRequest request);
 
 }

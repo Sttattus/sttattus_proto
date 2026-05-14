@@ -19,20 +19,22 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	EmpireService_GetScoreBreakdown_FullMethodName   = "/sttattus.empire.v1.EmpireService/GetScoreBreakdown"
-	EmpireService_GetTierLadder_FullMethodName       = "/sttattus.empire.v1.EmpireService/GetTierLadder"
-	EmpireService_GetWallet_FullMethodName           = "/sttattus.empire.v1.EmpireService/GetWallet"
-	EmpireService_ListLedgerEntries_FullMethodName   = "/sttattus.empire.v1.EmpireService/ListLedgerEntries"
-	EmpireService_GetTaxStatement_FullMethodName     = "/sttattus.empire.v1.EmpireService/GetTaxStatement"
-	EmpireService_GetPublicProfile_FullMethodName    = "/sttattus.empire.v1.EmpireService/GetPublicProfile"
-	EmpireService_ClaimHandle_FullMethodName         = "/sttattus.empire.v1.EmpireService/ClaimHandle"
-	EmpireService_UpdatePublicProfile_FullMethodName = "/sttattus.empire.v1.EmpireService/UpdatePublicProfile"
-	EmpireService_ListFriends_FullMethodName         = "/sttattus.empire.v1.EmpireService/ListFriends"
-	EmpireService_SendInvite_FullMethodName          = "/sttattus.empire.v1.EmpireService/SendInvite"
-	EmpireService_RespondInvite_FullMethodName       = "/sttattus.empire.v1.EmpireService/RespondInvite"
-	EmpireService_RemoveFriend_FullMethodName        = "/sttattus.empire.v1.EmpireService/RemoveFriend"
-	EmpireService_ListMyAuditLog_FullMethodName      = "/sttattus.empire.v1.EmpireService/ListMyAuditLog"
-	EmpireService_GetLatestCloutDrop_FullMethodName  = "/sttattus.empire.v1.EmpireService/GetLatestCloutDrop"
+	EmpireService_GetScoreBreakdown_FullMethodName        = "/sttattus.empire.v1.EmpireService/GetScoreBreakdown"
+	EmpireService_GetTierLadder_FullMethodName            = "/sttattus.empire.v1.EmpireService/GetTierLadder"
+	EmpireService_GetWallet_FullMethodName                = "/sttattus.empire.v1.EmpireService/GetWallet"
+	EmpireService_ListLedgerEntries_FullMethodName        = "/sttattus.empire.v1.EmpireService/ListLedgerEntries"
+	EmpireService_GetTaxStatement_FullMethodName          = "/sttattus.empire.v1.EmpireService/GetTaxStatement"
+	EmpireService_GetPublicProfile_FullMethodName         = "/sttattus.empire.v1.EmpireService/GetPublicProfile"
+	EmpireService_ClaimHandle_FullMethodName              = "/sttattus.empire.v1.EmpireService/ClaimHandle"
+	EmpireService_UpdatePublicProfile_FullMethodName      = "/sttattus.empire.v1.EmpireService/UpdatePublicProfile"
+	EmpireService_ListFriends_FullMethodName              = "/sttattus.empire.v1.EmpireService/ListFriends"
+	EmpireService_SendInvite_FullMethodName               = "/sttattus.empire.v1.EmpireService/SendInvite"
+	EmpireService_RespondInvite_FullMethodName            = "/sttattus.empire.v1.EmpireService/RespondInvite"
+	EmpireService_RemoveFriend_FullMethodName             = "/sttattus.empire.v1.EmpireService/RemoveFriend"
+	EmpireService_ListMyAuditLog_FullMethodName           = "/sttattus.empire.v1.EmpireService/ListMyAuditLog"
+	EmpireService_GetLatestCloutDrop_FullMethodName       = "/sttattus.empire.v1.EmpireService/GetLatestCloutDrop"
+	EmpireService_GetLatestEditorialDigest_FullMethodName = "/sttattus.empire.v1.EmpireService/GetLatestEditorialDigest"
+	EmpireService_ListEditorialDigests_FullMethodName     = "/sttattus.empire.v1.EmpireService/ListEditorialDigests"
 )
 
 // EmpireServiceClient is the client API for EmpireService service.
@@ -90,6 +92,11 @@ type EmpireServiceClient interface {
 	// server has computed — every pillar's top entries flattened into
 	// one list, ordered by pillar then rank.
 	GetLatestCloutDrop(ctx context.Context, in *GetLatestCloutDropRequest, opts ...grpc.CallOption) (*GetLatestCloutDropResponse, error)
+	// GetLatestEditorialDigest returns the most recent weekly digest
+	// the editorial team has published.
+	GetLatestEditorialDigest(ctx context.Context, in *GetLatestEditorialDigestRequest, opts ...grpc.CallOption) (*GetLatestEditorialDigestResponse, error)
+	// ListEditorialDigests returns the digest archive, newest first.
+	ListEditorialDigests(ctx context.Context, in *ListEditorialDigestsRequest, opts ...grpc.CallOption) (*ListEditorialDigestsResponse, error)
 }
 
 type empireServiceClient struct {
@@ -240,6 +247,26 @@ func (c *empireServiceClient) GetLatestCloutDrop(ctx context.Context, in *GetLat
 	return out, nil
 }
 
+func (c *empireServiceClient) GetLatestEditorialDigest(ctx context.Context, in *GetLatestEditorialDigestRequest, opts ...grpc.CallOption) (*GetLatestEditorialDigestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLatestEditorialDigestResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetLatestEditorialDigest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ListEditorialDigests(ctx context.Context, in *ListEditorialDigestsRequest, opts ...grpc.CallOption) (*ListEditorialDigestsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListEditorialDigestsResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ListEditorialDigests_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmpireServiceServer is the server API for EmpireService service.
 // All implementations must embed UnimplementedEmpireServiceServer
 // for forward compatibility.
@@ -295,6 +322,11 @@ type EmpireServiceServer interface {
 	// server has computed — every pillar's top entries flattened into
 	// one list, ordered by pillar then rank.
 	GetLatestCloutDrop(context.Context, *GetLatestCloutDropRequest) (*GetLatestCloutDropResponse, error)
+	// GetLatestEditorialDigest returns the most recent weekly digest
+	// the editorial team has published.
+	GetLatestEditorialDigest(context.Context, *GetLatestEditorialDigestRequest) (*GetLatestEditorialDigestResponse, error)
+	// ListEditorialDigests returns the digest archive, newest first.
+	ListEditorialDigests(context.Context, *ListEditorialDigestsRequest) (*ListEditorialDigestsResponse, error)
 	mustEmbedUnimplementedEmpireServiceServer()
 }
 
@@ -346,6 +378,12 @@ func (UnimplementedEmpireServiceServer) ListMyAuditLog(context.Context, *ListMyA
 }
 func (UnimplementedEmpireServiceServer) GetLatestCloutDrop(context.Context, *GetLatestCloutDropRequest) (*GetLatestCloutDropResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetLatestCloutDrop not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetLatestEditorialDigest(context.Context, *GetLatestEditorialDigestRequest) (*GetLatestEditorialDigestResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLatestEditorialDigest not implemented")
+}
+func (UnimplementedEmpireServiceServer) ListEditorialDigests(context.Context, *ListEditorialDigestsRequest) (*ListEditorialDigestsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListEditorialDigests not implemented")
 }
 func (UnimplementedEmpireServiceServer) mustEmbedUnimplementedEmpireServiceServer() {}
 func (UnimplementedEmpireServiceServer) testEmbeddedByValue()                       {}
@@ -620,6 +658,42 @@ func _EmpireService_GetLatestCloutDrop_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmpireService_GetLatestEditorialDigest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLatestEditorialDigestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetLatestEditorialDigest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetLatestEditorialDigest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetLatestEditorialDigest(ctx, req.(*GetLatestEditorialDigestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ListEditorialDigests_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListEditorialDigestsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ListEditorialDigests(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ListEditorialDigests_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ListEditorialDigests(ctx, req.(*ListEditorialDigestsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EmpireService_ServiceDesc is the grpc.ServiceDesc for EmpireService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -682,6 +756,14 @@ var EmpireService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLatestCloutDrop",
 			Handler:    _EmpireService_GetLatestCloutDrop_Handler,
+		},
+		{
+			MethodName: "GetLatestEditorialDigest",
+			Handler:    _EmpireService_GetLatestEditorialDigest_Handler,
+		},
+		{
+			MethodName: "ListEditorialDigests",
+			Handler:    _EmpireService_ListEditorialDigests_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

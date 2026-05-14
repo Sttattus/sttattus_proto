@@ -1441,6 +1441,304 @@ class UpdatePublicProfileResponse extends $pb.GeneratedMessage {
   void clearBio() => $_clearField(2);
 }
 
+class EditorialDigest extends $pb.GeneratedMessage {
+  factory EditorialDigest({
+    $core.String? id,
+    $core.String? weekStart,
+    $core.String? title,
+    $core.String? subtitle,
+    $core.String? body,
+    $core.String? editorName,
+    $core.String? publishedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (weekStart != null) result.weekStart = weekStart;
+    if (title != null) result.title = title;
+    if (subtitle != null) result.subtitle = subtitle;
+    if (body != null) result.body = body;
+    if (editorName != null) result.editorName = editorName;
+    if (publishedAt != null) result.publishedAt = publishedAt;
+    return result;
+  }
+
+  EditorialDigest._();
+
+  factory EditorialDigest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EditorialDigest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EditorialDigest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'weekStart')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'subtitle')
+    ..aOS(5, _omitFieldNames ? '' : 'body')
+    ..aOS(6, _omitFieldNames ? '' : 'editorName')
+    ..aOS(7, _omitFieldNames ? '' : 'publishedAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EditorialDigest clone() => EditorialDigest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EditorialDigest copyWith(void Function(EditorialDigest) updates) => super.copyWith((message) => updates(message as EditorialDigest)) as EditorialDigest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EditorialDigest create() => EditorialDigest._();
+  @$core.override
+  EditorialDigest createEmptyInstance() => create();
+  static $pb.PbList<EditorialDigest> createRepeated() => $pb.PbList<EditorialDigest>();
+  @$core.pragma('dart2js:noInline')
+  static EditorialDigest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EditorialDigest>(create);
+  static EditorialDigest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  /// YYYY-MM-DD UTC.
+  @$pb.TagNumber(2)
+  $core.String get weekStart => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set weekStart($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWeekStart() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWeekStart() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get subtitle => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set subtitle($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSubtitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSubtitle() => $_clearField(4);
+
+  /// Markdown body.
+  @$pb.TagNumber(5)
+  $core.String get body => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set body($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBody() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBody() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get editorName => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set editorName($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEditorName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEditorName() => $_clearField(6);
+
+  /// RFC-3339 UTC.
+  @$pb.TagNumber(7)
+  $core.String get publishedAt => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set publishedAt($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPublishedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPublishedAt() => $_clearField(7);
+}
+
+class GetLatestEditorialDigestRequest extends $pb.GeneratedMessage {
+  factory GetLatestEditorialDigestRequest() => create();
+
+  GetLatestEditorialDigestRequest._();
+
+  factory GetLatestEditorialDigestRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetLatestEditorialDigestRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLatestEditorialDigestRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLatestEditorialDigestRequest clone() => GetLatestEditorialDigestRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLatestEditorialDigestRequest copyWith(void Function(GetLatestEditorialDigestRequest) updates) => super.copyWith((message) => updates(message as GetLatestEditorialDigestRequest)) as GetLatestEditorialDigestRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLatestEditorialDigestRequest create() => GetLatestEditorialDigestRequest._();
+  @$core.override
+  GetLatestEditorialDigestRequest createEmptyInstance() => create();
+  static $pb.PbList<GetLatestEditorialDigestRequest> createRepeated() => $pb.PbList<GetLatestEditorialDigestRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetLatestEditorialDigestRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestEditorialDigestRequest>(create);
+  static GetLatestEditorialDigestRequest? _defaultInstance;
+}
+
+class GetLatestEditorialDigestResponse extends $pb.GeneratedMessage {
+  factory GetLatestEditorialDigestResponse({
+    EditorialDigest? digest,
+  }) {
+    final result = create();
+    if (digest != null) result.digest = digest;
+    return result;
+  }
+
+  GetLatestEditorialDigestResponse._();
+
+  factory GetLatestEditorialDigestResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetLatestEditorialDigestResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLatestEditorialDigestResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOM<EditorialDigest>(1, _omitFieldNames ? '' : 'digest', subBuilder: EditorialDigest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLatestEditorialDigestResponse clone() => GetLatestEditorialDigestResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLatestEditorialDigestResponse copyWith(void Function(GetLatestEditorialDigestResponse) updates) => super.copyWith((message) => updates(message as GetLatestEditorialDigestResponse)) as GetLatestEditorialDigestResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLatestEditorialDigestResponse create() => GetLatestEditorialDigestResponse._();
+  @$core.override
+  GetLatestEditorialDigestResponse createEmptyInstance() => create();
+  static $pb.PbList<GetLatestEditorialDigestResponse> createRepeated() => $pb.PbList<GetLatestEditorialDigestResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetLatestEditorialDigestResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestEditorialDigestResponse>(create);
+  static GetLatestEditorialDigestResponse? _defaultInstance;
+
+  /// Nil when no digest has been published yet.
+  @$pb.TagNumber(1)
+  EditorialDigest get digest => $_getN(0);
+  @$pb.TagNumber(1)
+  set digest(EditorialDigest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDigest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDigest() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EditorialDigest ensureDigest() => $_ensure(0);
+}
+
+class ListEditorialDigestsRequest extends $pb.GeneratedMessage {
+  factory ListEditorialDigestsRequest({
+    $core.int? limit,
+    $core.int? offset,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    if (offset != null) result.offset = offset;
+    return result;
+  }
+
+  ListEditorialDigestsRequest._();
+
+  factory ListEditorialDigestsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListEditorialDigestsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListEditorialDigestsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'offset', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListEditorialDigestsRequest clone() => ListEditorialDigestsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListEditorialDigestsRequest copyWith(void Function(ListEditorialDigestsRequest) updates) => super.copyWith((message) => updates(message as ListEditorialDigestsRequest)) as ListEditorialDigestsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListEditorialDigestsRequest create() => ListEditorialDigestsRequest._();
+  @$core.override
+  ListEditorialDigestsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListEditorialDigestsRequest> createRepeated() => $pb.PbList<ListEditorialDigestsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListEditorialDigestsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListEditorialDigestsRequest>(create);
+  static ListEditorialDigestsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get offset => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set offset($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOffset() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOffset() => $_clearField(2);
+}
+
+class ListEditorialDigestsResponse extends $pb.GeneratedMessage {
+  factory ListEditorialDigestsResponse({
+    $core.Iterable<EditorialDigest>? digests,
+  }) {
+    final result = create();
+    if (digests != null) result.digests.addAll(digests);
+    return result;
+  }
+
+  ListEditorialDigestsResponse._();
+
+  factory ListEditorialDigestsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListEditorialDigestsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListEditorialDigestsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..pc<EditorialDigest>(1, _omitFieldNames ? '' : 'digests', $pb.PbFieldType.PM, subBuilder: EditorialDigest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListEditorialDigestsResponse clone() => ListEditorialDigestsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListEditorialDigestsResponse copyWith(void Function(ListEditorialDigestsResponse) updates) => super.copyWith((message) => updates(message as ListEditorialDigestsResponse)) as ListEditorialDigestsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListEditorialDigestsResponse create() => ListEditorialDigestsResponse._();
+  @$core.override
+  ListEditorialDigestsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListEditorialDigestsResponse> createRepeated() => $pb.PbList<ListEditorialDigestsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListEditorialDigestsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListEditorialDigestsResponse>(create);
+  static ListEditorialDigestsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EditorialDigest> get digests => $_getList(0);
+}
+
 class GetLatestCloutDropRequest extends $pb.GeneratedMessage {
   factory GetLatestCloutDropRequest() => create();
 

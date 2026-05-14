@@ -1077,6 +1077,235 @@ export class UpdatePublicProfileResponse extends Message<UpdatePublicProfileResp
 }
 
 /**
+ * @generated from message sttattus.empire.v1.EditorialDigest
+ */
+export class EditorialDigest extends Message<EditorialDigest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * YYYY-MM-DD UTC.
+   *
+   * @generated from field: string week_start = 2;
+   */
+  weekStart = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string subtitle = 4;
+   */
+  subtitle = "";
+
+  /**
+   * Markdown body.
+   *
+   * @generated from field: string body = 5;
+   */
+  body = "";
+
+  /**
+   * @generated from field: string editor_name = 6;
+   */
+  editorName = "";
+
+  /**
+   * RFC-3339 UTC.
+   *
+   * @generated from field: string published_at = 7;
+   */
+  publishedAt = "";
+
+  constructor(data?: PartialMessage<EditorialDigest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.EditorialDigest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "week_start", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "subtitle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "editor_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "published_at", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EditorialDigest {
+    return new EditorialDigest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EditorialDigest {
+    return new EditorialDigest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EditorialDigest {
+    return new EditorialDigest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EditorialDigest | PlainMessage<EditorialDigest> | undefined, b: EditorialDigest | PlainMessage<EditorialDigest> | undefined): boolean {
+    return proto3.util.equals(EditorialDigest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.GetLatestEditorialDigestRequest
+ */
+export class GetLatestEditorialDigestRequest extends Message<GetLatestEditorialDigestRequest> {
+  constructor(data?: PartialMessage<GetLatestEditorialDigestRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.GetLatestEditorialDigestRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLatestEditorialDigestRequest {
+    return new GetLatestEditorialDigestRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLatestEditorialDigestRequest {
+    return new GetLatestEditorialDigestRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLatestEditorialDigestRequest {
+    return new GetLatestEditorialDigestRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLatestEditorialDigestRequest | PlainMessage<GetLatestEditorialDigestRequest> | undefined, b: GetLatestEditorialDigestRequest | PlainMessage<GetLatestEditorialDigestRequest> | undefined): boolean {
+    return proto3.util.equals(GetLatestEditorialDigestRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.GetLatestEditorialDigestResponse
+ */
+export class GetLatestEditorialDigestResponse extends Message<GetLatestEditorialDigestResponse> {
+  /**
+   * Nil when no digest has been published yet.
+   *
+   * @generated from field: sttattus.empire.v1.EditorialDigest digest = 1;
+   */
+  digest?: EditorialDigest;
+
+  constructor(data?: PartialMessage<GetLatestEditorialDigestResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.GetLatestEditorialDigestResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "digest", kind: "message", T: EditorialDigest },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLatestEditorialDigestResponse {
+    return new GetLatestEditorialDigestResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLatestEditorialDigestResponse {
+    return new GetLatestEditorialDigestResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLatestEditorialDigestResponse {
+    return new GetLatestEditorialDigestResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLatestEditorialDigestResponse | PlainMessage<GetLatestEditorialDigestResponse> | undefined, b: GetLatestEditorialDigestResponse | PlainMessage<GetLatestEditorialDigestResponse> | undefined): boolean {
+    return proto3.util.equals(GetLatestEditorialDigestResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListEditorialDigestsRequest
+ */
+export class ListEditorialDigestsRequest extends Message<ListEditorialDigestsRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  /**
+   * @generated from field: int32 offset = 2;
+   */
+  offset = 0;
+
+  constructor(data?: PartialMessage<ListEditorialDigestsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListEditorialDigestsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEditorialDigestsRequest {
+    return new ListEditorialDigestsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEditorialDigestsRequest {
+    return new ListEditorialDigestsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEditorialDigestsRequest {
+    return new ListEditorialDigestsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEditorialDigestsRequest | PlainMessage<ListEditorialDigestsRequest> | undefined, b: ListEditorialDigestsRequest | PlainMessage<ListEditorialDigestsRequest> | undefined): boolean {
+    return proto3.util.equals(ListEditorialDigestsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListEditorialDigestsResponse
+ */
+export class ListEditorialDigestsResponse extends Message<ListEditorialDigestsResponse> {
+  /**
+   * @generated from field: repeated sttattus.empire.v1.EditorialDigest digests = 1;
+   */
+  digests: EditorialDigest[] = [];
+
+  constructor(data?: PartialMessage<ListEditorialDigestsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListEditorialDigestsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "digests", kind: "message", T: EditorialDigest, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEditorialDigestsResponse {
+    return new ListEditorialDigestsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEditorialDigestsResponse {
+    return new ListEditorialDigestsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEditorialDigestsResponse {
+    return new ListEditorialDigestsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEditorialDigestsResponse | PlainMessage<ListEditorialDigestsResponse> | undefined, b: ListEditorialDigestsResponse | PlainMessage<ListEditorialDigestsResponse> | undefined): boolean {
+    return proto3.util.equals(ListEditorialDigestsResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.empire.v1.GetLatestCloutDropRequest
  */
 export class GetLatestCloutDropRequest extends Message<GetLatestCloutDropRequest> {

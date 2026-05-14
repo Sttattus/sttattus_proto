@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ClaimHandleRequest, ClaimHandleResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse } from "./empire_pb.js";
+import { ClaimHandleRequest, ClaimHandleResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetLatestEditorialDigestRequest, GetLatestEditorialDigestResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListEditorialDigestsRequest, ListEditorialDigestsResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse } from "./empire_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -187,6 +187,29 @@ export const EmpireService = {
       name: "GetLatestCloutDrop",
       I: GetLatestCloutDropRequest,
       O: GetLatestCloutDropResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetLatestEditorialDigest returns the most recent weekly digest
+     * the editorial team has published.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetLatestEditorialDigest
+     */
+    getLatestEditorialDigest: {
+      name: "GetLatestEditorialDigest",
+      I: GetLatestEditorialDigestRequest,
+      O: GetLatestEditorialDigestResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListEditorialDigests returns the digest archive, newest first.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ListEditorialDigests
+     */
+    listEditorialDigests: {
+      name: "ListEditorialDigests",
+      I: ListEditorialDigestsRequest,
+      O: ListEditorialDigestsResponse,
       kind: MethodKind.Unary,
     },
   }
