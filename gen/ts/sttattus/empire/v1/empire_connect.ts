@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ClaimHandleRequest, ClaimHandleResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetLatestEditorialDigestRequest, GetLatestEditorialDigestResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListEditorialDigestsRequest, ListEditorialDigestsResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListLoungesRequest, ListLoungesResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, ListUpcomingLoungeEventsRequest, ListUpcomingLoungeEventsResponse, ListUpcomingSalonsRequest, ListUpcomingSalonsResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse, UpdateSalonRsvpRequest, UpdateSalonRsvpResponse } from "./empire_pb.js";
+import { ClaimHandleRequest, ClaimHandleResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetLatestEditorialDigestRequest, GetLatestEditorialDigestResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListEditorialDigestsRequest, ListEditorialDigestsResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListLoungesRequest, ListLoungesResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, ListNotificationPreferencesRequest, ListNotificationPreferencesResponse, ListUpcomingLoungeEventsRequest, ListUpcomingLoungeEventsResponse, ListUpcomingSalonsRequest, ListUpcomingSalonsResponse, RegisterDeviceTokenRequest, RegisterDeviceTokenResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UnregisterDeviceTokenRequest, UnregisterDeviceTokenResponse, UpdateNotificationPreferenceRequest, UpdateNotificationPreferenceResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse, UpdateSalonRsvpRequest, UpdateSalonRsvpResponse } from "./empire_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -256,6 +256,53 @@ export const EmpireService = {
       name: "UpdateSalonRsvp",
       I: UpdateSalonRsvpRequest,
       O: UpdateSalonRsvpResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * RegisterDeviceToken stores or refreshes an APNs / FCM token bound
+     * to the caller and app_code.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.RegisterDeviceToken
+     */
+    registerDeviceToken: {
+      name: "RegisterDeviceToken",
+      I: RegisterDeviceTokenRequest,
+      O: RegisterDeviceTokenResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UnregisterDeviceToken drops a token (logout / token rotation).
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.UnregisterDeviceToken
+     */
+    unregisterDeviceToken: {
+      name: "UnregisterDeviceToken",
+      I: UnregisterDeviceTokenRequest,
+      O: UnregisterDeviceTokenResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListNotificationPreferences returns the caller's email/sms/push
+     * preferences. Missing channels collapse to "enabled with no quiet
+     * hours" at the service layer.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ListNotificationPreferences
+     */
+    listNotificationPreferences: {
+      name: "ListNotificationPreferences",
+      I: ListNotificationPreferencesRequest,
+      O: ListNotificationPreferencesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateNotificationPreference upserts one channel's preference.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.UpdateNotificationPreference
+     */
+    updateNotificationPreference: {
+      name: "UpdateNotificationPreference",
+      I: UpdateNotificationPreferenceRequest,
+      O: UpdateNotificationPreferenceResponse,
       kind: MethodKind.Unary,
     },
   }

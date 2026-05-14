@@ -190,6 +190,56 @@ message UpdatePublicProfileResponse {
   string bio = 2;
 }
 
+// === Notifications hub (P5.13) ===
+
+message RegisterDeviceTokenRequest {
+  // "ios" or "android".
+  string platform = 1;
+  // APNs / FCM token from the device.
+  string token = 2;
+  // The app the token belongs to (empire, vault, …). The backend uses
+  // it to route per-pillar pushes to the right surface.
+  string app_code = 3;
+}
+
+message RegisterDeviceTokenResponse {
+  string token = 1;
+}
+
+message UnregisterDeviceTokenRequest {
+  string token = 1;
+}
+
+message UnregisterDeviceTokenResponse {}
+
+message NotificationPreference {
+  // "email" | "sms" | "push".
+  string channel = 1;
+  bool enabled = 2;
+  // "HH:MM" 24-hour, empty when unset.
+  string quiet_hours_start = 3;
+  string quiet_hours_end = 4;
+  string timezone = 5;
+}
+
+message ListNotificationPreferencesRequest {}
+
+message ListNotificationPreferencesResponse {
+  repeated NotificationPreference preferences = 1;
+}
+
+message UpdateNotificationPreferenceRequest {
+  string channel = 1;
+  bool enabled = 2;
+  string quiet_hours_start = 3;
+  string quiet_hours_end = 4;
+  string timezone = 5;
+}
+
+message UpdateNotificationPreferenceResponse {
+  NotificationPreference preference = 1;
+}
+
 // === Salons (P5.12) ===
 
 // SalonSummary is a salon row joined with the caller's RSVP and the
@@ -491,4 +541,19 @@ service EmpireService {
 
   // UpdateSalonRsvp sets or clears the caller's RSVP for a salon.
   rpc UpdateSalonRsvp(UpdateSalonRsvpRequest) returns (UpdateSalonRsvpResponse);
+
+  // RegisterDeviceToken stores or refreshes an APNs / FCM token bound
+  // to the caller and app_code.
+  rpc RegisterDeviceToken(RegisterDeviceTokenRequest) returns (RegisterDeviceTokenResponse);
+
+  // UnregisterDeviceToken drops a token (logout / token rotation).
+  rpc UnregisterDeviceToken(UnregisterDeviceTokenRequest) returns (UnregisterDeviceTokenResponse);
+
+  // ListNotificationPreferences returns the caller's email/sms/push
+  // preferences. Missing channels collapse to "enabled with no quiet
+  // hours" at the service layer.
+  rpc ListNotificationPreferences(ListNotificationPreferencesRequest) returns (ListNotificationPreferencesResponse);
+
+  // UpdateNotificationPreference upserts one channel's preference.
+  rpc UpdateNotificationPreference(UpdateNotificationPreferenceRequest) returns (UpdateNotificationPreferenceResponse);
 }

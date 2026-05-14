@@ -323,6 +323,129 @@ final $typed_data.Uint8List updatePublicProfileResponseDescriptor = $convert.bas
     'ChtVcGRhdGVQdWJsaWNQcm9maWxlUmVzcG9uc2USGAoHdGFnbGluZRgBIAEoCVIHdGFnbGluZR'
     'IQCgNiaW8YAiABKAlSA2Jpbw==');
 
+@$core.Deprecated('Use registerDeviceTokenRequestDescriptor instead')
+const RegisterDeviceTokenRequest$json = {
+  '1': 'RegisterDeviceTokenRequest',
+  '2': [
+    {'1': 'platform', '3': 1, '4': 1, '5': 9, '10': 'platform'},
+    {'1': 'token', '3': 2, '4': 1, '5': 9, '10': 'token'},
+    {'1': 'app_code', '3': 3, '4': 1, '5': 9, '10': 'appCode'},
+  ],
+};
+
+/// Descriptor for `RegisterDeviceTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerDeviceTokenRequestDescriptor = $convert.base64Decode(
+    'ChpSZWdpc3RlckRldmljZVRva2VuUmVxdWVzdBIaCghwbGF0Zm9ybRgBIAEoCVIIcGxhdGZvcm'
+    '0SFAoFdG9rZW4YAiABKAlSBXRva2VuEhkKCGFwcF9jb2RlGAMgASgJUgdhcHBDb2Rl');
+
+@$core.Deprecated('Use registerDeviceTokenResponseDescriptor instead')
+const RegisterDeviceTokenResponse$json = {
+  '1': 'RegisterDeviceTokenResponse',
+  '2': [
+    {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
+  ],
+};
+
+/// Descriptor for `RegisterDeviceTokenResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerDeviceTokenResponseDescriptor = $convert.base64Decode(
+    'ChtSZWdpc3RlckRldmljZVRva2VuUmVzcG9uc2USFAoFdG9rZW4YASABKAlSBXRva2Vu');
+
+@$core.Deprecated('Use unregisterDeviceTokenRequestDescriptor instead')
+const UnregisterDeviceTokenRequest$json = {
+  '1': 'UnregisterDeviceTokenRequest',
+  '2': [
+    {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
+  ],
+};
+
+/// Descriptor for `UnregisterDeviceTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unregisterDeviceTokenRequestDescriptor = $convert.base64Decode(
+    'ChxVbnJlZ2lzdGVyRGV2aWNlVG9rZW5SZXF1ZXN0EhQKBXRva2VuGAEgASgJUgV0b2tlbg==');
+
+@$core.Deprecated('Use unregisterDeviceTokenResponseDescriptor instead')
+const UnregisterDeviceTokenResponse$json = {
+  '1': 'UnregisterDeviceTokenResponse',
+};
+
+/// Descriptor for `UnregisterDeviceTokenResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unregisterDeviceTokenResponseDescriptor = $convert.base64Decode(
+    'Ch1VbnJlZ2lzdGVyRGV2aWNlVG9rZW5SZXNwb25zZQ==');
+
+@$core.Deprecated('Use notificationPreferenceDescriptor instead')
+const NotificationPreference$json = {
+  '1': 'NotificationPreference',
+  '2': [
+    {'1': 'channel', '3': 1, '4': 1, '5': 9, '10': 'channel'},
+    {'1': 'enabled', '3': 2, '4': 1, '5': 8, '10': 'enabled'},
+    {'1': 'quiet_hours_start', '3': 3, '4': 1, '5': 9, '10': 'quietHoursStart'},
+    {'1': 'quiet_hours_end', '3': 4, '4': 1, '5': 9, '10': 'quietHoursEnd'},
+    {'1': 'timezone', '3': 5, '4': 1, '5': 9, '10': 'timezone'},
+  ],
+};
+
+/// Descriptor for `NotificationPreference`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List notificationPreferenceDescriptor = $convert.base64Decode(
+    'ChZOb3RpZmljYXRpb25QcmVmZXJlbmNlEhgKB2NoYW5uZWwYASABKAlSB2NoYW5uZWwSGAoHZW'
+    '5hYmxlZBgCIAEoCFIHZW5hYmxlZBIqChFxdWlldF9ob3Vyc19zdGFydBgDIAEoCVIPcXVpZXRI'
+    'b3Vyc1N0YXJ0EiYKD3F1aWV0X2hvdXJzX2VuZBgEIAEoCVINcXVpZXRIb3Vyc0VuZBIaCgh0aW'
+    '1lem9uZRgFIAEoCVIIdGltZXpvbmU=');
+
+@$core.Deprecated('Use listNotificationPreferencesRequestDescriptor instead')
+const ListNotificationPreferencesRequest$json = {
+  '1': 'ListNotificationPreferencesRequest',
+};
+
+/// Descriptor for `ListNotificationPreferencesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listNotificationPreferencesRequestDescriptor = $convert.base64Decode(
+    'CiJMaXN0Tm90aWZpY2F0aW9uUHJlZmVyZW5jZXNSZXF1ZXN0');
+
+@$core.Deprecated('Use listNotificationPreferencesResponseDescriptor instead')
+const ListNotificationPreferencesResponse$json = {
+  '1': 'ListNotificationPreferencesResponse',
+  '2': [
+    {'1': 'preferences', '3': 1, '4': 3, '5': 11, '6': '.sttattus.empire.v1.NotificationPreference', '10': 'preferences'},
+  ],
+};
+
+/// Descriptor for `ListNotificationPreferencesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listNotificationPreferencesResponseDescriptor = $convert.base64Decode(
+    'CiNMaXN0Tm90aWZpY2F0aW9uUHJlZmVyZW5jZXNSZXNwb25zZRJMCgtwcmVmZXJlbmNlcxgBIA'
+    'MoCzIqLnN0dGF0dHVzLmVtcGlyZS52MS5Ob3RpZmljYXRpb25QcmVmZXJlbmNlUgtwcmVmZXJl'
+    'bmNlcw==');
+
+@$core.Deprecated('Use updateNotificationPreferenceRequestDescriptor instead')
+const UpdateNotificationPreferenceRequest$json = {
+  '1': 'UpdateNotificationPreferenceRequest',
+  '2': [
+    {'1': 'channel', '3': 1, '4': 1, '5': 9, '10': 'channel'},
+    {'1': 'enabled', '3': 2, '4': 1, '5': 8, '10': 'enabled'},
+    {'1': 'quiet_hours_start', '3': 3, '4': 1, '5': 9, '10': 'quietHoursStart'},
+    {'1': 'quiet_hours_end', '3': 4, '4': 1, '5': 9, '10': 'quietHoursEnd'},
+    {'1': 'timezone', '3': 5, '4': 1, '5': 9, '10': 'timezone'},
+  ],
+};
+
+/// Descriptor for `UpdateNotificationPreferenceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateNotificationPreferenceRequestDescriptor = $convert.base64Decode(
+    'CiNVcGRhdGVOb3RpZmljYXRpb25QcmVmZXJlbmNlUmVxdWVzdBIYCgdjaGFubmVsGAEgASgJUg'
+    'djaGFubmVsEhgKB2VuYWJsZWQYAiABKAhSB2VuYWJsZWQSKgoRcXVpZXRfaG91cnNfc3RhcnQY'
+    'AyABKAlSD3F1aWV0SG91cnNTdGFydBImCg9xdWlldF9ob3Vyc19lbmQYBCABKAlSDXF1aWV0SG'
+    '91cnNFbmQSGgoIdGltZXpvbmUYBSABKAlSCHRpbWV6b25l');
+
+@$core.Deprecated('Use updateNotificationPreferenceResponseDescriptor instead')
+const UpdateNotificationPreferenceResponse$json = {
+  '1': 'UpdateNotificationPreferenceResponse',
+  '2': [
+    {'1': 'preference', '3': 1, '4': 1, '5': 11, '6': '.sttattus.empire.v1.NotificationPreference', '10': 'preference'},
+  ],
+};
+
+/// Descriptor for `UpdateNotificationPreferenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateNotificationPreferenceResponseDescriptor = $convert.base64Decode(
+    'CiRVcGRhdGVOb3RpZmljYXRpb25QcmVmZXJlbmNlUmVzcG9uc2USSgoKcHJlZmVyZW5jZRgBIA'
+    'EoCzIqLnN0dGF0dHVzLmVtcGlyZS52MS5Ob3RpZmljYXRpb25QcmVmZXJlbmNlUgpwcmVmZXJl'
+    'bmNl');
+
 @$core.Deprecated('Use salonSummaryDescriptor instead')
 const SalonSummary$json = {
   '1': 'SalonSummary',

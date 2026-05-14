@@ -1441,6 +1441,510 @@ class UpdatePublicProfileResponse extends $pb.GeneratedMessage {
   void clearBio() => $_clearField(2);
 }
 
+class RegisterDeviceTokenRequest extends $pb.GeneratedMessage {
+  factory RegisterDeviceTokenRequest({
+    $core.String? platform,
+    $core.String? token,
+    $core.String? appCode,
+  }) {
+    final result = create();
+    if (platform != null) result.platform = platform;
+    if (token != null) result.token = token;
+    if (appCode != null) result.appCode = appCode;
+    return result;
+  }
+
+  RegisterDeviceTokenRequest._();
+
+  factory RegisterDeviceTokenRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RegisterDeviceTokenRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterDeviceTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'platform')
+    ..aOS(2, _omitFieldNames ? '' : 'token')
+    ..aOS(3, _omitFieldNames ? '' : 'appCode')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterDeviceTokenRequest clone() => RegisterDeviceTokenRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterDeviceTokenRequest copyWith(void Function(RegisterDeviceTokenRequest) updates) => super.copyWith((message) => updates(message as RegisterDeviceTokenRequest)) as RegisterDeviceTokenRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterDeviceTokenRequest create() => RegisterDeviceTokenRequest._();
+  @$core.override
+  RegisterDeviceTokenRequest createEmptyInstance() => create();
+  static $pb.PbList<RegisterDeviceTokenRequest> createRepeated() => $pb.PbList<RegisterDeviceTokenRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RegisterDeviceTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterDeviceTokenRequest>(create);
+  static RegisterDeviceTokenRequest? _defaultInstance;
+
+  /// "ios" or "android".
+  @$pb.TagNumber(1)
+  $core.String get platform => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set platform($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPlatform() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlatform() => $_clearField(1);
+
+  /// APNs / FCM token from the device.
+  @$pb.TagNumber(2)
+  $core.String get token => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set token($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearToken() => $_clearField(2);
+
+  /// The app the token belongs to (empire, vault, …). The backend uses
+  /// it to route per-pillar pushes to the right surface.
+  @$pb.TagNumber(3)
+  $core.String get appCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set appCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAppCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAppCode() => $_clearField(3);
+}
+
+class RegisterDeviceTokenResponse extends $pb.GeneratedMessage {
+  factory RegisterDeviceTokenResponse({
+    $core.String? token,
+  }) {
+    final result = create();
+    if (token != null) result.token = token;
+    return result;
+  }
+
+  RegisterDeviceTokenResponse._();
+
+  factory RegisterDeviceTokenResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RegisterDeviceTokenResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterDeviceTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'token')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterDeviceTokenResponse clone() => RegisterDeviceTokenResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterDeviceTokenResponse copyWith(void Function(RegisterDeviceTokenResponse) updates) => super.copyWith((message) => updates(message as RegisterDeviceTokenResponse)) as RegisterDeviceTokenResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterDeviceTokenResponse create() => RegisterDeviceTokenResponse._();
+  @$core.override
+  RegisterDeviceTokenResponse createEmptyInstance() => create();
+  static $pb.PbList<RegisterDeviceTokenResponse> createRepeated() => $pb.PbList<RegisterDeviceTokenResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RegisterDeviceTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterDeviceTokenResponse>(create);
+  static RegisterDeviceTokenResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get token => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set token($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearToken() => $_clearField(1);
+}
+
+class UnregisterDeviceTokenRequest extends $pb.GeneratedMessage {
+  factory UnregisterDeviceTokenRequest({
+    $core.String? token,
+  }) {
+    final result = create();
+    if (token != null) result.token = token;
+    return result;
+  }
+
+  UnregisterDeviceTokenRequest._();
+
+  factory UnregisterDeviceTokenRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UnregisterDeviceTokenRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnregisterDeviceTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'token')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnregisterDeviceTokenRequest clone() => UnregisterDeviceTokenRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnregisterDeviceTokenRequest copyWith(void Function(UnregisterDeviceTokenRequest) updates) => super.copyWith((message) => updates(message as UnregisterDeviceTokenRequest)) as UnregisterDeviceTokenRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnregisterDeviceTokenRequest create() => UnregisterDeviceTokenRequest._();
+  @$core.override
+  UnregisterDeviceTokenRequest createEmptyInstance() => create();
+  static $pb.PbList<UnregisterDeviceTokenRequest> createRepeated() => $pb.PbList<UnregisterDeviceTokenRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UnregisterDeviceTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnregisterDeviceTokenRequest>(create);
+  static UnregisterDeviceTokenRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get token => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set token($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearToken() => $_clearField(1);
+}
+
+class UnregisterDeviceTokenResponse extends $pb.GeneratedMessage {
+  factory UnregisterDeviceTokenResponse() => create();
+
+  UnregisterDeviceTokenResponse._();
+
+  factory UnregisterDeviceTokenResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UnregisterDeviceTokenResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnregisterDeviceTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnregisterDeviceTokenResponse clone() => UnregisterDeviceTokenResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnregisterDeviceTokenResponse copyWith(void Function(UnregisterDeviceTokenResponse) updates) => super.copyWith((message) => updates(message as UnregisterDeviceTokenResponse)) as UnregisterDeviceTokenResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnregisterDeviceTokenResponse create() => UnregisterDeviceTokenResponse._();
+  @$core.override
+  UnregisterDeviceTokenResponse createEmptyInstance() => create();
+  static $pb.PbList<UnregisterDeviceTokenResponse> createRepeated() => $pb.PbList<UnregisterDeviceTokenResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UnregisterDeviceTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnregisterDeviceTokenResponse>(create);
+  static UnregisterDeviceTokenResponse? _defaultInstance;
+}
+
+class NotificationPreference extends $pb.GeneratedMessage {
+  factory NotificationPreference({
+    $core.String? channel,
+    $core.bool? enabled,
+    $core.String? quietHoursStart,
+    $core.String? quietHoursEnd,
+    $core.String? timezone,
+  }) {
+    final result = create();
+    if (channel != null) result.channel = channel;
+    if (enabled != null) result.enabled = enabled;
+    if (quietHoursStart != null) result.quietHoursStart = quietHoursStart;
+    if (quietHoursEnd != null) result.quietHoursEnd = quietHoursEnd;
+    if (timezone != null) result.timezone = timezone;
+    return result;
+  }
+
+  NotificationPreference._();
+
+  factory NotificationPreference.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory NotificationPreference.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotificationPreference', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'channel')
+    ..aOB(2, _omitFieldNames ? '' : 'enabled')
+    ..aOS(3, _omitFieldNames ? '' : 'quietHoursStart')
+    ..aOS(4, _omitFieldNames ? '' : 'quietHoursEnd')
+    ..aOS(5, _omitFieldNames ? '' : 'timezone')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NotificationPreference clone() => NotificationPreference()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NotificationPreference copyWith(void Function(NotificationPreference) updates) => super.copyWith((message) => updates(message as NotificationPreference)) as NotificationPreference;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NotificationPreference create() => NotificationPreference._();
+  @$core.override
+  NotificationPreference createEmptyInstance() => create();
+  static $pb.PbList<NotificationPreference> createRepeated() => $pb.PbList<NotificationPreference>();
+  @$core.pragma('dart2js:noInline')
+  static NotificationPreference getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NotificationPreference>(create);
+  static NotificationPreference? _defaultInstance;
+
+  /// "email" | "sms" | "push".
+  @$pb.TagNumber(1)
+  $core.String get channel => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set channel($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasChannel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChannel() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get enabled => $_getBF(1);
+  @$pb.TagNumber(2)
+  set enabled($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEnabled() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEnabled() => $_clearField(2);
+
+  /// "HH:MM" 24-hour, empty when unset.
+  @$pb.TagNumber(3)
+  $core.String get quietHoursStart => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set quietHoursStart($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasQuietHoursStart() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearQuietHoursStart() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get quietHoursEnd => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set quietHoursEnd($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasQuietHoursEnd() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearQuietHoursEnd() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get timezone => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set timezone($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTimezone() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTimezone() => $_clearField(5);
+}
+
+class ListNotificationPreferencesRequest extends $pb.GeneratedMessage {
+  factory ListNotificationPreferencesRequest() => create();
+
+  ListNotificationPreferencesRequest._();
+
+  factory ListNotificationPreferencesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListNotificationPreferencesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotificationPreferencesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListNotificationPreferencesRequest clone() => ListNotificationPreferencesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListNotificationPreferencesRequest copyWith(void Function(ListNotificationPreferencesRequest) updates) => super.copyWith((message) => updates(message as ListNotificationPreferencesRequest)) as ListNotificationPreferencesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListNotificationPreferencesRequest create() => ListNotificationPreferencesRequest._();
+  @$core.override
+  ListNotificationPreferencesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListNotificationPreferencesRequest> createRepeated() => $pb.PbList<ListNotificationPreferencesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListNotificationPreferencesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListNotificationPreferencesRequest>(create);
+  static ListNotificationPreferencesRequest? _defaultInstance;
+}
+
+class ListNotificationPreferencesResponse extends $pb.GeneratedMessage {
+  factory ListNotificationPreferencesResponse({
+    $core.Iterable<NotificationPreference>? preferences,
+  }) {
+    final result = create();
+    if (preferences != null) result.preferences.addAll(preferences);
+    return result;
+  }
+
+  ListNotificationPreferencesResponse._();
+
+  factory ListNotificationPreferencesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListNotificationPreferencesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotificationPreferencesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..pc<NotificationPreference>(1, _omitFieldNames ? '' : 'preferences', $pb.PbFieldType.PM, subBuilder: NotificationPreference.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListNotificationPreferencesResponse clone() => ListNotificationPreferencesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListNotificationPreferencesResponse copyWith(void Function(ListNotificationPreferencesResponse) updates) => super.copyWith((message) => updates(message as ListNotificationPreferencesResponse)) as ListNotificationPreferencesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListNotificationPreferencesResponse create() => ListNotificationPreferencesResponse._();
+  @$core.override
+  ListNotificationPreferencesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListNotificationPreferencesResponse> createRepeated() => $pb.PbList<ListNotificationPreferencesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListNotificationPreferencesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListNotificationPreferencesResponse>(create);
+  static ListNotificationPreferencesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<NotificationPreference> get preferences => $_getList(0);
+}
+
+class UpdateNotificationPreferenceRequest extends $pb.GeneratedMessage {
+  factory UpdateNotificationPreferenceRequest({
+    $core.String? channel,
+    $core.bool? enabled,
+    $core.String? quietHoursStart,
+    $core.String? quietHoursEnd,
+    $core.String? timezone,
+  }) {
+    final result = create();
+    if (channel != null) result.channel = channel;
+    if (enabled != null) result.enabled = enabled;
+    if (quietHoursStart != null) result.quietHoursStart = quietHoursStart;
+    if (quietHoursEnd != null) result.quietHoursEnd = quietHoursEnd;
+    if (timezone != null) result.timezone = timezone;
+    return result;
+  }
+
+  UpdateNotificationPreferenceRequest._();
+
+  factory UpdateNotificationPreferenceRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateNotificationPreferenceRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateNotificationPreferenceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'channel')
+    ..aOB(2, _omitFieldNames ? '' : 'enabled')
+    ..aOS(3, _omitFieldNames ? '' : 'quietHoursStart')
+    ..aOS(4, _omitFieldNames ? '' : 'quietHoursEnd')
+    ..aOS(5, _omitFieldNames ? '' : 'timezone')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateNotificationPreferenceRequest clone() => UpdateNotificationPreferenceRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateNotificationPreferenceRequest copyWith(void Function(UpdateNotificationPreferenceRequest) updates) => super.copyWith((message) => updates(message as UpdateNotificationPreferenceRequest)) as UpdateNotificationPreferenceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateNotificationPreferenceRequest create() => UpdateNotificationPreferenceRequest._();
+  @$core.override
+  UpdateNotificationPreferenceRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateNotificationPreferenceRequest> createRepeated() => $pb.PbList<UpdateNotificationPreferenceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateNotificationPreferenceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateNotificationPreferenceRequest>(create);
+  static UpdateNotificationPreferenceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get channel => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set channel($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasChannel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChannel() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get enabled => $_getBF(1);
+  @$pb.TagNumber(2)
+  set enabled($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEnabled() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEnabled() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get quietHoursStart => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set quietHoursStart($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasQuietHoursStart() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearQuietHoursStart() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get quietHoursEnd => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set quietHoursEnd($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasQuietHoursEnd() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearQuietHoursEnd() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get timezone => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set timezone($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTimezone() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTimezone() => $_clearField(5);
+}
+
+class UpdateNotificationPreferenceResponse extends $pb.GeneratedMessage {
+  factory UpdateNotificationPreferenceResponse({
+    NotificationPreference? preference,
+  }) {
+    final result = create();
+    if (preference != null) result.preference = preference;
+    return result;
+  }
+
+  UpdateNotificationPreferenceResponse._();
+
+  factory UpdateNotificationPreferenceResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateNotificationPreferenceResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateNotificationPreferenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOM<NotificationPreference>(1, _omitFieldNames ? '' : 'preference', subBuilder: NotificationPreference.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateNotificationPreferenceResponse clone() => UpdateNotificationPreferenceResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateNotificationPreferenceResponse copyWith(void Function(UpdateNotificationPreferenceResponse) updates) => super.copyWith((message) => updates(message as UpdateNotificationPreferenceResponse)) as UpdateNotificationPreferenceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateNotificationPreferenceResponse create() => UpdateNotificationPreferenceResponse._();
+  @$core.override
+  UpdateNotificationPreferenceResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateNotificationPreferenceResponse> createRepeated() => $pb.PbList<UpdateNotificationPreferenceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateNotificationPreferenceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateNotificationPreferenceResponse>(create);
+  static UpdateNotificationPreferenceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  NotificationPreference get preference => $_getN(0);
+  @$pb.TagNumber(1)
+  set preference(NotificationPreference value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreference() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreference() => $_clearField(1);
+  @$pb.TagNumber(1)
+  NotificationPreference ensurePreference() => $_ensure(0);
+}
+
 /// SalonSummary is a salon row joined with the caller's RSVP and the
 /// current going count. Renders in the upcoming list.
 class SalonSummary extends $pb.GeneratedMessage {

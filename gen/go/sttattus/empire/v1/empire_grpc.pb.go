@@ -19,26 +19,30 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	EmpireService_GetScoreBreakdown_FullMethodName        = "/sttattus.empire.v1.EmpireService/GetScoreBreakdown"
-	EmpireService_GetTierLadder_FullMethodName            = "/sttattus.empire.v1.EmpireService/GetTierLadder"
-	EmpireService_GetWallet_FullMethodName                = "/sttattus.empire.v1.EmpireService/GetWallet"
-	EmpireService_ListLedgerEntries_FullMethodName        = "/sttattus.empire.v1.EmpireService/ListLedgerEntries"
-	EmpireService_GetTaxStatement_FullMethodName          = "/sttattus.empire.v1.EmpireService/GetTaxStatement"
-	EmpireService_GetPublicProfile_FullMethodName         = "/sttattus.empire.v1.EmpireService/GetPublicProfile"
-	EmpireService_ClaimHandle_FullMethodName              = "/sttattus.empire.v1.EmpireService/ClaimHandle"
-	EmpireService_UpdatePublicProfile_FullMethodName      = "/sttattus.empire.v1.EmpireService/UpdatePublicProfile"
-	EmpireService_ListFriends_FullMethodName              = "/sttattus.empire.v1.EmpireService/ListFriends"
-	EmpireService_SendInvite_FullMethodName               = "/sttattus.empire.v1.EmpireService/SendInvite"
-	EmpireService_RespondInvite_FullMethodName            = "/sttattus.empire.v1.EmpireService/RespondInvite"
-	EmpireService_RemoveFriend_FullMethodName             = "/sttattus.empire.v1.EmpireService/RemoveFriend"
-	EmpireService_ListMyAuditLog_FullMethodName           = "/sttattus.empire.v1.EmpireService/ListMyAuditLog"
-	EmpireService_GetLatestCloutDrop_FullMethodName       = "/sttattus.empire.v1.EmpireService/GetLatestCloutDrop"
-	EmpireService_GetLatestEditorialDigest_FullMethodName = "/sttattus.empire.v1.EmpireService/GetLatestEditorialDigest"
-	EmpireService_ListEditorialDigests_FullMethodName     = "/sttattus.empire.v1.EmpireService/ListEditorialDigests"
-	EmpireService_ListLounges_FullMethodName              = "/sttattus.empire.v1.EmpireService/ListLounges"
-	EmpireService_ListUpcomingLoungeEvents_FullMethodName = "/sttattus.empire.v1.EmpireService/ListUpcomingLoungeEvents"
-	EmpireService_ListUpcomingSalons_FullMethodName       = "/sttattus.empire.v1.EmpireService/ListUpcomingSalons"
-	EmpireService_UpdateSalonRsvp_FullMethodName          = "/sttattus.empire.v1.EmpireService/UpdateSalonRsvp"
+	EmpireService_GetScoreBreakdown_FullMethodName            = "/sttattus.empire.v1.EmpireService/GetScoreBreakdown"
+	EmpireService_GetTierLadder_FullMethodName                = "/sttattus.empire.v1.EmpireService/GetTierLadder"
+	EmpireService_GetWallet_FullMethodName                    = "/sttattus.empire.v1.EmpireService/GetWallet"
+	EmpireService_ListLedgerEntries_FullMethodName            = "/sttattus.empire.v1.EmpireService/ListLedgerEntries"
+	EmpireService_GetTaxStatement_FullMethodName              = "/sttattus.empire.v1.EmpireService/GetTaxStatement"
+	EmpireService_GetPublicProfile_FullMethodName             = "/sttattus.empire.v1.EmpireService/GetPublicProfile"
+	EmpireService_ClaimHandle_FullMethodName                  = "/sttattus.empire.v1.EmpireService/ClaimHandle"
+	EmpireService_UpdatePublicProfile_FullMethodName          = "/sttattus.empire.v1.EmpireService/UpdatePublicProfile"
+	EmpireService_ListFriends_FullMethodName                  = "/sttattus.empire.v1.EmpireService/ListFriends"
+	EmpireService_SendInvite_FullMethodName                   = "/sttattus.empire.v1.EmpireService/SendInvite"
+	EmpireService_RespondInvite_FullMethodName                = "/sttattus.empire.v1.EmpireService/RespondInvite"
+	EmpireService_RemoveFriend_FullMethodName                 = "/sttattus.empire.v1.EmpireService/RemoveFriend"
+	EmpireService_ListMyAuditLog_FullMethodName               = "/sttattus.empire.v1.EmpireService/ListMyAuditLog"
+	EmpireService_GetLatestCloutDrop_FullMethodName           = "/sttattus.empire.v1.EmpireService/GetLatestCloutDrop"
+	EmpireService_GetLatestEditorialDigest_FullMethodName     = "/sttattus.empire.v1.EmpireService/GetLatestEditorialDigest"
+	EmpireService_ListEditorialDigests_FullMethodName         = "/sttattus.empire.v1.EmpireService/ListEditorialDigests"
+	EmpireService_ListLounges_FullMethodName                  = "/sttattus.empire.v1.EmpireService/ListLounges"
+	EmpireService_ListUpcomingLoungeEvents_FullMethodName     = "/sttattus.empire.v1.EmpireService/ListUpcomingLoungeEvents"
+	EmpireService_ListUpcomingSalons_FullMethodName           = "/sttattus.empire.v1.EmpireService/ListUpcomingSalons"
+	EmpireService_UpdateSalonRsvp_FullMethodName              = "/sttattus.empire.v1.EmpireService/UpdateSalonRsvp"
+	EmpireService_RegisterDeviceToken_FullMethodName          = "/sttattus.empire.v1.EmpireService/RegisterDeviceToken"
+	EmpireService_UnregisterDeviceToken_FullMethodName        = "/sttattus.empire.v1.EmpireService/UnregisterDeviceToken"
+	EmpireService_ListNotificationPreferences_FullMethodName  = "/sttattus.empire.v1.EmpireService/ListNotificationPreferences"
+	EmpireService_UpdateNotificationPreference_FullMethodName = "/sttattus.empire.v1.EmpireService/UpdateNotificationPreference"
 )
 
 // EmpireServiceClient is the client API for EmpireService service.
@@ -111,6 +115,17 @@ type EmpireServiceClient interface {
 	ListUpcomingSalons(ctx context.Context, in *ListUpcomingSalonsRequest, opts ...grpc.CallOption) (*ListUpcomingSalonsResponse, error)
 	// UpdateSalonRsvp sets or clears the caller's RSVP for a salon.
 	UpdateSalonRsvp(ctx context.Context, in *UpdateSalonRsvpRequest, opts ...grpc.CallOption) (*UpdateSalonRsvpResponse, error)
+	// RegisterDeviceToken stores or refreshes an APNs / FCM token bound
+	// to the caller and app_code.
+	RegisterDeviceToken(ctx context.Context, in *RegisterDeviceTokenRequest, opts ...grpc.CallOption) (*RegisterDeviceTokenResponse, error)
+	// UnregisterDeviceToken drops a token (logout / token rotation).
+	UnregisterDeviceToken(ctx context.Context, in *UnregisterDeviceTokenRequest, opts ...grpc.CallOption) (*UnregisterDeviceTokenResponse, error)
+	// ListNotificationPreferences returns the caller's email/sms/push
+	// preferences. Missing channels collapse to "enabled with no quiet
+	// hours" at the service layer.
+	ListNotificationPreferences(ctx context.Context, in *ListNotificationPreferencesRequest, opts ...grpc.CallOption) (*ListNotificationPreferencesResponse, error)
+	// UpdateNotificationPreference upserts one channel's preference.
+	UpdateNotificationPreference(ctx context.Context, in *UpdateNotificationPreferenceRequest, opts ...grpc.CallOption) (*UpdateNotificationPreferenceResponse, error)
 }
 
 type empireServiceClient struct {
@@ -321,6 +336,46 @@ func (c *empireServiceClient) UpdateSalonRsvp(ctx context.Context, in *UpdateSal
 	return out, nil
 }
 
+func (c *empireServiceClient) RegisterDeviceToken(ctx context.Context, in *RegisterDeviceTokenRequest, opts ...grpc.CallOption) (*RegisterDeviceTokenResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RegisterDeviceTokenResponse)
+	err := c.cc.Invoke(ctx, EmpireService_RegisterDeviceToken_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) UnregisterDeviceToken(ctx context.Context, in *UnregisterDeviceTokenRequest, opts ...grpc.CallOption) (*UnregisterDeviceTokenResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UnregisterDeviceTokenResponse)
+	err := c.cc.Invoke(ctx, EmpireService_UnregisterDeviceToken_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ListNotificationPreferences(ctx context.Context, in *ListNotificationPreferencesRequest, opts ...grpc.CallOption) (*ListNotificationPreferencesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListNotificationPreferencesResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ListNotificationPreferences_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) UpdateNotificationPreference(ctx context.Context, in *UpdateNotificationPreferenceRequest, opts ...grpc.CallOption) (*UpdateNotificationPreferenceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateNotificationPreferenceResponse)
+	err := c.cc.Invoke(ctx, EmpireService_UpdateNotificationPreference_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmpireServiceServer is the server API for EmpireService service.
 // All implementations must embed UnimplementedEmpireServiceServer
 // for forward compatibility.
@@ -391,6 +446,17 @@ type EmpireServiceServer interface {
 	ListUpcomingSalons(context.Context, *ListUpcomingSalonsRequest) (*ListUpcomingSalonsResponse, error)
 	// UpdateSalonRsvp sets or clears the caller's RSVP for a salon.
 	UpdateSalonRsvp(context.Context, *UpdateSalonRsvpRequest) (*UpdateSalonRsvpResponse, error)
+	// RegisterDeviceToken stores or refreshes an APNs / FCM token bound
+	// to the caller and app_code.
+	RegisterDeviceToken(context.Context, *RegisterDeviceTokenRequest) (*RegisterDeviceTokenResponse, error)
+	// UnregisterDeviceToken drops a token (logout / token rotation).
+	UnregisterDeviceToken(context.Context, *UnregisterDeviceTokenRequest) (*UnregisterDeviceTokenResponse, error)
+	// ListNotificationPreferences returns the caller's email/sms/push
+	// preferences. Missing channels collapse to "enabled with no quiet
+	// hours" at the service layer.
+	ListNotificationPreferences(context.Context, *ListNotificationPreferencesRequest) (*ListNotificationPreferencesResponse, error)
+	// UpdateNotificationPreference upserts one channel's preference.
+	UpdateNotificationPreference(context.Context, *UpdateNotificationPreferenceRequest) (*UpdateNotificationPreferenceResponse, error)
 	mustEmbedUnimplementedEmpireServiceServer()
 }
 
@@ -460,6 +526,18 @@ func (UnimplementedEmpireServiceServer) ListUpcomingSalons(context.Context, *Lis
 }
 func (UnimplementedEmpireServiceServer) UpdateSalonRsvp(context.Context, *UpdateSalonRsvpRequest) (*UpdateSalonRsvpResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method UpdateSalonRsvp not implemented")
+}
+func (UnimplementedEmpireServiceServer) RegisterDeviceToken(context.Context, *RegisterDeviceTokenRequest) (*RegisterDeviceTokenResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RegisterDeviceToken not implemented")
+}
+func (UnimplementedEmpireServiceServer) UnregisterDeviceToken(context.Context, *UnregisterDeviceTokenRequest) (*UnregisterDeviceTokenResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UnregisterDeviceToken not implemented")
+}
+func (UnimplementedEmpireServiceServer) ListNotificationPreferences(context.Context, *ListNotificationPreferencesRequest) (*ListNotificationPreferencesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListNotificationPreferences not implemented")
+}
+func (UnimplementedEmpireServiceServer) UpdateNotificationPreference(context.Context, *UpdateNotificationPreferenceRequest) (*UpdateNotificationPreferenceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateNotificationPreference not implemented")
 }
 func (UnimplementedEmpireServiceServer) mustEmbedUnimplementedEmpireServiceServer() {}
 func (UnimplementedEmpireServiceServer) testEmbeddedByValue()                       {}
@@ -842,6 +920,78 @@ func _EmpireService_UpdateSalonRsvp_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmpireService_RegisterDeviceToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterDeviceTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).RegisterDeviceToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_RegisterDeviceToken_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).RegisterDeviceToken(ctx, req.(*RegisterDeviceTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_UnregisterDeviceToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnregisterDeviceTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).UnregisterDeviceToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_UnregisterDeviceToken_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).UnregisterDeviceToken(ctx, req.(*UnregisterDeviceTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ListNotificationPreferences_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListNotificationPreferencesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ListNotificationPreferences(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ListNotificationPreferences_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ListNotificationPreferences(ctx, req.(*ListNotificationPreferencesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_UpdateNotificationPreference_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateNotificationPreferenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).UpdateNotificationPreference(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_UpdateNotificationPreference_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).UpdateNotificationPreference(ctx, req.(*UpdateNotificationPreferenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EmpireService_ServiceDesc is the grpc.ServiceDesc for EmpireService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -928,6 +1078,22 @@ var EmpireService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateSalonRsvp",
 			Handler:    _EmpireService_UpdateSalonRsvp_Handler,
+		},
+		{
+			MethodName: "RegisterDeviceToken",
+			Handler:    _EmpireService_RegisterDeviceToken_Handler,
+		},
+		{
+			MethodName: "UnregisterDeviceToken",
+			Handler:    _EmpireService_UnregisterDeviceToken_Handler,
+		},
+		{
+			MethodName: "ListNotificationPreferences",
+			Handler:    _EmpireService_ListNotificationPreferences_Handler,
+		},
+		{
+			MethodName: "UpdateNotificationPreference",
+			Handler:    _EmpireService_UpdateNotificationPreference_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -158,6 +158,29 @@ class EmpireServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateSalonRsvp, request, options: options);
   }
 
+  /// RegisterDeviceToken stores or refreshes an APNs / FCM token bound
+  /// to the caller and app_code.
+  $grpc.ResponseFuture<$0.RegisterDeviceTokenResponse> registerDeviceToken($0.RegisterDeviceTokenRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$registerDeviceToken, request, options: options);
+  }
+
+  /// UnregisterDeviceToken drops a token (logout / token rotation).
+  $grpc.ResponseFuture<$0.UnregisterDeviceTokenResponse> unregisterDeviceToken($0.UnregisterDeviceTokenRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$unregisterDeviceToken, request, options: options);
+  }
+
+  /// ListNotificationPreferences returns the caller's email/sms/push
+  /// preferences. Missing channels collapse to "enabled with no quiet
+  /// hours" at the service layer.
+  $grpc.ResponseFuture<$0.ListNotificationPreferencesResponse> listNotificationPreferences($0.ListNotificationPreferencesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listNotificationPreferences, request, options: options);
+  }
+
+  /// UpdateNotificationPreference upserts one channel's preference.
+  $grpc.ResponseFuture<$0.UpdateNotificationPreferenceResponse> updateNotificationPreference($0.UpdateNotificationPreferenceRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$updateNotificationPreference, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getScoreBreakdown = $grpc.ClientMethod<$0.GetScoreBreakdownRequest, $0.GetScoreBreakdownResponse>(
@@ -240,6 +263,22 @@ class EmpireServiceClient extends $grpc.Client {
       '/sttattus.empire.v1.EmpireService/UpdateSalonRsvp',
       ($0.UpdateSalonRsvpRequest value) => value.writeToBuffer(),
       $0.UpdateSalonRsvpResponse.fromBuffer);
+  static final _$registerDeviceToken = $grpc.ClientMethod<$0.RegisterDeviceTokenRequest, $0.RegisterDeviceTokenResponse>(
+      '/sttattus.empire.v1.EmpireService/RegisterDeviceToken',
+      ($0.RegisterDeviceTokenRequest value) => value.writeToBuffer(),
+      $0.RegisterDeviceTokenResponse.fromBuffer);
+  static final _$unregisterDeviceToken = $grpc.ClientMethod<$0.UnregisterDeviceTokenRequest, $0.UnregisterDeviceTokenResponse>(
+      '/sttattus.empire.v1.EmpireService/UnregisterDeviceToken',
+      ($0.UnregisterDeviceTokenRequest value) => value.writeToBuffer(),
+      $0.UnregisterDeviceTokenResponse.fromBuffer);
+  static final _$listNotificationPreferences = $grpc.ClientMethod<$0.ListNotificationPreferencesRequest, $0.ListNotificationPreferencesResponse>(
+      '/sttattus.empire.v1.EmpireService/ListNotificationPreferences',
+      ($0.ListNotificationPreferencesRequest value) => value.writeToBuffer(),
+      $0.ListNotificationPreferencesResponse.fromBuffer);
+  static final _$updateNotificationPreference = $grpc.ClientMethod<$0.UpdateNotificationPreferenceRequest, $0.UpdateNotificationPreferenceResponse>(
+      '/sttattus.empire.v1.EmpireService/UpdateNotificationPreference',
+      ($0.UpdateNotificationPreferenceRequest value) => value.writeToBuffer(),
+      $0.UpdateNotificationPreferenceResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.empire.v1.EmpireService')
@@ -387,6 +426,34 @@ abstract class EmpireServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UpdateSalonRsvpRequest.fromBuffer(value),
         ($0.UpdateSalonRsvpResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RegisterDeviceTokenRequest, $0.RegisterDeviceTokenResponse>(
+        'RegisterDeviceToken',
+        registerDeviceToken_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RegisterDeviceTokenRequest.fromBuffer(value),
+        ($0.RegisterDeviceTokenResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UnregisterDeviceTokenRequest, $0.UnregisterDeviceTokenResponse>(
+        'UnregisterDeviceToken',
+        unregisterDeviceToken_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UnregisterDeviceTokenRequest.fromBuffer(value),
+        ($0.UnregisterDeviceTokenResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListNotificationPreferencesRequest, $0.ListNotificationPreferencesResponse>(
+        'ListNotificationPreferences',
+        listNotificationPreferences_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListNotificationPreferencesRequest.fromBuffer(value),
+        ($0.ListNotificationPreferencesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateNotificationPreferenceRequest, $0.UpdateNotificationPreferenceResponse>(
+        'UpdateNotificationPreference',
+        updateNotificationPreference_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpdateNotificationPreferenceRequest.fromBuffer(value),
+        ($0.UpdateNotificationPreferenceResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetScoreBreakdownResponse> getScoreBreakdown_Pre($grpc.ServiceCall $call, $async.Future<$0.GetScoreBreakdownRequest> $request) async {
@@ -508,5 +575,29 @@ abstract class EmpireServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.UpdateSalonRsvpResponse> updateSalonRsvp($grpc.ServiceCall call, $0.UpdateSalonRsvpRequest request);
+
+  $async.Future<$0.RegisterDeviceTokenResponse> registerDeviceToken_Pre($grpc.ServiceCall $call, $async.Future<$0.RegisterDeviceTokenRequest> $request) async {
+    return registerDeviceToken($call, await $request);
+  }
+
+  $async.Future<$0.RegisterDeviceTokenResponse> registerDeviceToken($grpc.ServiceCall call, $0.RegisterDeviceTokenRequest request);
+
+  $async.Future<$0.UnregisterDeviceTokenResponse> unregisterDeviceToken_Pre($grpc.ServiceCall $call, $async.Future<$0.UnregisterDeviceTokenRequest> $request) async {
+    return unregisterDeviceToken($call, await $request);
+  }
+
+  $async.Future<$0.UnregisterDeviceTokenResponse> unregisterDeviceToken($grpc.ServiceCall call, $0.UnregisterDeviceTokenRequest request);
+
+  $async.Future<$0.ListNotificationPreferencesResponse> listNotificationPreferences_Pre($grpc.ServiceCall $call, $async.Future<$0.ListNotificationPreferencesRequest> $request) async {
+    return listNotificationPreferences($call, await $request);
+  }
+
+  $async.Future<$0.ListNotificationPreferencesResponse> listNotificationPreferences($grpc.ServiceCall call, $0.ListNotificationPreferencesRequest request);
+
+  $async.Future<$0.UpdateNotificationPreferenceResponse> updateNotificationPreference_Pre($grpc.ServiceCall $call, $async.Future<$0.UpdateNotificationPreferenceRequest> $request) async {
+    return updateNotificationPreference($call, await $request);
+  }
+
+  $async.Future<$0.UpdateNotificationPreferenceResponse> updateNotificationPreference($grpc.ServiceCall call, $0.UpdateNotificationPreferenceRequest request);
 
 }

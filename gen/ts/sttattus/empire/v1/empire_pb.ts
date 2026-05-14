@@ -1077,6 +1077,398 @@ export class UpdatePublicProfileResponse extends Message<UpdatePublicProfileResp
 }
 
 /**
+ * @generated from message sttattus.empire.v1.RegisterDeviceTokenRequest
+ */
+export class RegisterDeviceTokenRequest extends Message<RegisterDeviceTokenRequest> {
+  /**
+   * "ios" or "android".
+   *
+   * @generated from field: string platform = 1;
+   */
+  platform = "";
+
+  /**
+   * APNs / FCM token from the device.
+   *
+   * @generated from field: string token = 2;
+   */
+  token = "";
+
+  /**
+   * The app the token belongs to (empire, vault, …). The backend uses
+   * it to route per-pillar pushes to the right surface.
+   *
+   * @generated from field: string app_code = 3;
+   */
+  appCode = "";
+
+  constructor(data?: PartialMessage<RegisterDeviceTokenRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.RegisterDeviceTokenRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "platform", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "app_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RegisterDeviceTokenRequest {
+    return new RegisterDeviceTokenRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RegisterDeviceTokenRequest {
+    return new RegisterDeviceTokenRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RegisterDeviceTokenRequest {
+    return new RegisterDeviceTokenRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RegisterDeviceTokenRequest | PlainMessage<RegisterDeviceTokenRequest> | undefined, b: RegisterDeviceTokenRequest | PlainMessage<RegisterDeviceTokenRequest> | undefined): boolean {
+    return proto3.util.equals(RegisterDeviceTokenRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.RegisterDeviceTokenResponse
+ */
+export class RegisterDeviceTokenResponse extends Message<RegisterDeviceTokenResponse> {
+  /**
+   * @generated from field: string token = 1;
+   */
+  token = "";
+
+  constructor(data?: PartialMessage<RegisterDeviceTokenResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.RegisterDeviceTokenResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RegisterDeviceTokenResponse {
+    return new RegisterDeviceTokenResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RegisterDeviceTokenResponse {
+    return new RegisterDeviceTokenResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RegisterDeviceTokenResponse {
+    return new RegisterDeviceTokenResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RegisterDeviceTokenResponse | PlainMessage<RegisterDeviceTokenResponse> | undefined, b: RegisterDeviceTokenResponse | PlainMessage<RegisterDeviceTokenResponse> | undefined): boolean {
+    return proto3.util.equals(RegisterDeviceTokenResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.UnregisterDeviceTokenRequest
+ */
+export class UnregisterDeviceTokenRequest extends Message<UnregisterDeviceTokenRequest> {
+  /**
+   * @generated from field: string token = 1;
+   */
+  token = "";
+
+  constructor(data?: PartialMessage<UnregisterDeviceTokenRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.UnregisterDeviceTokenRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnregisterDeviceTokenRequest {
+    return new UnregisterDeviceTokenRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnregisterDeviceTokenRequest {
+    return new UnregisterDeviceTokenRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnregisterDeviceTokenRequest {
+    return new UnregisterDeviceTokenRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UnregisterDeviceTokenRequest | PlainMessage<UnregisterDeviceTokenRequest> | undefined, b: UnregisterDeviceTokenRequest | PlainMessage<UnregisterDeviceTokenRequest> | undefined): boolean {
+    return proto3.util.equals(UnregisterDeviceTokenRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.UnregisterDeviceTokenResponse
+ */
+export class UnregisterDeviceTokenResponse extends Message<UnregisterDeviceTokenResponse> {
+  constructor(data?: PartialMessage<UnregisterDeviceTokenResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.UnregisterDeviceTokenResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnregisterDeviceTokenResponse {
+    return new UnregisterDeviceTokenResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnregisterDeviceTokenResponse {
+    return new UnregisterDeviceTokenResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnregisterDeviceTokenResponse {
+    return new UnregisterDeviceTokenResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UnregisterDeviceTokenResponse | PlainMessage<UnregisterDeviceTokenResponse> | undefined, b: UnregisterDeviceTokenResponse | PlainMessage<UnregisterDeviceTokenResponse> | undefined): boolean {
+    return proto3.util.equals(UnregisterDeviceTokenResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.NotificationPreference
+ */
+export class NotificationPreference extends Message<NotificationPreference> {
+  /**
+   * "email" | "sms" | "push".
+   *
+   * @generated from field: string channel = 1;
+   */
+  channel = "";
+
+  /**
+   * @generated from field: bool enabled = 2;
+   */
+  enabled = false;
+
+  /**
+   * "HH:MM" 24-hour, empty when unset.
+   *
+   * @generated from field: string quiet_hours_start = 3;
+   */
+  quietHoursStart = "";
+
+  /**
+   * @generated from field: string quiet_hours_end = 4;
+   */
+  quietHoursEnd = "";
+
+  /**
+   * @generated from field: string timezone = 5;
+   */
+  timezone = "";
+
+  constructor(data?: PartialMessage<NotificationPreference>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.NotificationPreference";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "channel", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "quiet_hours_start", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "quiet_hours_end", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "timezone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): NotificationPreference {
+    return new NotificationPreference().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): NotificationPreference {
+    return new NotificationPreference().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): NotificationPreference {
+    return new NotificationPreference().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: NotificationPreference | PlainMessage<NotificationPreference> | undefined, b: NotificationPreference | PlainMessage<NotificationPreference> | undefined): boolean {
+    return proto3.util.equals(NotificationPreference, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListNotificationPreferencesRequest
+ */
+export class ListNotificationPreferencesRequest extends Message<ListNotificationPreferencesRequest> {
+  constructor(data?: PartialMessage<ListNotificationPreferencesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListNotificationPreferencesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListNotificationPreferencesRequest {
+    return new ListNotificationPreferencesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListNotificationPreferencesRequest {
+    return new ListNotificationPreferencesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListNotificationPreferencesRequest {
+    return new ListNotificationPreferencesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListNotificationPreferencesRequest | PlainMessage<ListNotificationPreferencesRequest> | undefined, b: ListNotificationPreferencesRequest | PlainMessage<ListNotificationPreferencesRequest> | undefined): boolean {
+    return proto3.util.equals(ListNotificationPreferencesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ListNotificationPreferencesResponse
+ */
+export class ListNotificationPreferencesResponse extends Message<ListNotificationPreferencesResponse> {
+  /**
+   * @generated from field: repeated sttattus.empire.v1.NotificationPreference preferences = 1;
+   */
+  preferences: NotificationPreference[] = [];
+
+  constructor(data?: PartialMessage<ListNotificationPreferencesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ListNotificationPreferencesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preferences", kind: "message", T: NotificationPreference, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListNotificationPreferencesResponse {
+    return new ListNotificationPreferencesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListNotificationPreferencesResponse {
+    return new ListNotificationPreferencesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListNotificationPreferencesResponse {
+    return new ListNotificationPreferencesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListNotificationPreferencesResponse | PlainMessage<ListNotificationPreferencesResponse> | undefined, b: ListNotificationPreferencesResponse | PlainMessage<ListNotificationPreferencesResponse> | undefined): boolean {
+    return proto3.util.equals(ListNotificationPreferencesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.UpdateNotificationPreferenceRequest
+ */
+export class UpdateNotificationPreferenceRequest extends Message<UpdateNotificationPreferenceRequest> {
+  /**
+   * @generated from field: string channel = 1;
+   */
+  channel = "";
+
+  /**
+   * @generated from field: bool enabled = 2;
+   */
+  enabled = false;
+
+  /**
+   * @generated from field: string quiet_hours_start = 3;
+   */
+  quietHoursStart = "";
+
+  /**
+   * @generated from field: string quiet_hours_end = 4;
+   */
+  quietHoursEnd = "";
+
+  /**
+   * @generated from field: string timezone = 5;
+   */
+  timezone = "";
+
+  constructor(data?: PartialMessage<UpdateNotificationPreferenceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.UpdateNotificationPreferenceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "channel", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "quiet_hours_start", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "quiet_hours_end", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "timezone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateNotificationPreferenceRequest {
+    return new UpdateNotificationPreferenceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateNotificationPreferenceRequest {
+    return new UpdateNotificationPreferenceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateNotificationPreferenceRequest {
+    return new UpdateNotificationPreferenceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateNotificationPreferenceRequest | PlainMessage<UpdateNotificationPreferenceRequest> | undefined, b: UpdateNotificationPreferenceRequest | PlainMessage<UpdateNotificationPreferenceRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateNotificationPreferenceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.UpdateNotificationPreferenceResponse
+ */
+export class UpdateNotificationPreferenceResponse extends Message<UpdateNotificationPreferenceResponse> {
+  /**
+   * @generated from field: sttattus.empire.v1.NotificationPreference preference = 1;
+   */
+  preference?: NotificationPreference;
+
+  constructor(data?: PartialMessage<UpdateNotificationPreferenceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.UpdateNotificationPreferenceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preference", kind: "message", T: NotificationPreference },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateNotificationPreferenceResponse {
+    return new UpdateNotificationPreferenceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateNotificationPreferenceResponse {
+    return new UpdateNotificationPreferenceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateNotificationPreferenceResponse {
+    return new UpdateNotificationPreferenceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateNotificationPreferenceResponse | PlainMessage<UpdateNotificationPreferenceResponse> | undefined, b: UpdateNotificationPreferenceResponse | PlainMessage<UpdateNotificationPreferenceResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateNotificationPreferenceResponse, a, b);
+  }
+}
+
+/**
  * SalonSummary is a salon row joined with the caller's RSVP and the
  * current going count. Renders in the upcoming list.
  *
