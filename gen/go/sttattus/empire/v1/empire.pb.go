@@ -932,6 +932,351 @@ func (x *GetTaxStatementResponse) GetIllustrative() bool {
 	return false
 }
 
+type GetPublicProfileRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Case-insensitive handle. Empty → NotFound.
+	Handle        string `protobuf:"bytes,1,opt,name=handle,proto3" json:"handle,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPublicProfileRequest) Reset() {
+	*x = GetPublicProfileRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPublicProfileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPublicProfileRequest) ProtoMessage() {}
+
+func (x *GetPublicProfileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPublicProfileRequest.ProtoReflect.Descriptor instead.
+func (*GetPublicProfileRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *GetPublicProfileRequest) GetHandle() string {
+	if x != nil {
+		return x.Handle
+	}
+	return ""
+}
+
+type GetPublicProfileResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Stable handle (canonical casing).
+	Handle string `protobuf:"bytes,1,opt,name=handle,proto3" json:"handle,omitempty"`
+	// Display name.
+	Name      string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	AvatarUrl string `protobuf:"bytes,3,opt,name=avatar_url,json=avatarUrl,proto3" json:"avatar_url,omitempty"`
+	Tagline   string `protobuf:"bytes,4,opt,name=tagline,proto3" json:"tagline,omitempty"`
+	Bio       string `protobuf:"bytes,5,opt,name=bio,proto3" json:"bio,omitempty"`
+	// Composite + tier so the public surface can echo the badge.
+	SttattusScore float64 `protobuf:"fixed64,6,opt,name=sttattus_score,json=sttattusScore,proto3" json:"sttattus_score,omitempty"`
+	Tier          string  `protobuf:"bytes,7,opt,name=tier,proto3" json:"tier,omitempty"`
+	// RFC-3339 UTC of when the user joined.
+	JoinedAt      string `protobuf:"bytes,8,opt,name=joined_at,json=joinedAt,proto3" json:"joined_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPublicProfileResponse) Reset() {
+	*x = GetPublicProfileResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPublicProfileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPublicProfileResponse) ProtoMessage() {}
+
+func (x *GetPublicProfileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPublicProfileResponse.ProtoReflect.Descriptor instead.
+func (*GetPublicProfileResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *GetPublicProfileResponse) GetHandle() string {
+	if x != nil {
+		return x.Handle
+	}
+	return ""
+}
+
+func (x *GetPublicProfileResponse) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *GetPublicProfileResponse) GetAvatarUrl() string {
+	if x != nil {
+		return x.AvatarUrl
+	}
+	return ""
+}
+
+func (x *GetPublicProfileResponse) GetTagline() string {
+	if x != nil {
+		return x.Tagline
+	}
+	return ""
+}
+
+func (x *GetPublicProfileResponse) GetBio() string {
+	if x != nil {
+		return x.Bio
+	}
+	return ""
+}
+
+func (x *GetPublicProfileResponse) GetSttattusScore() float64 {
+	if x != nil {
+		return x.SttattusScore
+	}
+	return 0
+}
+
+func (x *GetPublicProfileResponse) GetTier() string {
+	if x != nil {
+		return x.Tier
+	}
+	return ""
+}
+
+func (x *GetPublicProfileResponse) GetJoinedAt() string {
+	if x != nil {
+		return x.JoinedAt
+	}
+	return ""
+}
+
+type ClaimHandleRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Lowercase letters, digits, and underscores, 3–24 chars. Server
+	// validates.
+	Handle        string `protobuf:"bytes,1,opt,name=handle,proto3" json:"handle,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ClaimHandleRequest) Reset() {
+	*x = ClaimHandleRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ClaimHandleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ClaimHandleRequest) ProtoMessage() {}
+
+func (x *ClaimHandleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ClaimHandleRequest.ProtoReflect.Descriptor instead.
+func (*ClaimHandleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *ClaimHandleRequest) GetHandle() string {
+	if x != nil {
+		return x.Handle
+	}
+	return ""
+}
+
+type ClaimHandleResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Handle        string                 `protobuf:"bytes,1,opt,name=handle,proto3" json:"handle,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ClaimHandleResponse) Reset() {
+	*x = ClaimHandleResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ClaimHandleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ClaimHandleResponse) ProtoMessage() {}
+
+func (x *ClaimHandleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ClaimHandleResponse.ProtoReflect.Descriptor instead.
+func (*ClaimHandleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *ClaimHandleResponse) GetHandle() string {
+	if x != nil {
+		return x.Handle
+	}
+	return ""
+}
+
+type UpdatePublicProfileRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Either field may be empty to leave the existing value alone; pass
+	// a single space to clear a field.
+	Tagline       string `protobuf:"bytes,1,opt,name=tagline,proto3" json:"tagline,omitempty"`
+	Bio           string `protobuf:"bytes,2,opt,name=bio,proto3" json:"bio,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdatePublicProfileRequest) Reset() {
+	*x = UpdatePublicProfileRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdatePublicProfileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdatePublicProfileRequest) ProtoMessage() {}
+
+func (x *UpdatePublicProfileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdatePublicProfileRequest.ProtoReflect.Descriptor instead.
+func (*UpdatePublicProfileRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *UpdatePublicProfileRequest) GetTagline() string {
+	if x != nil {
+		return x.Tagline
+	}
+	return ""
+}
+
+func (x *UpdatePublicProfileRequest) GetBio() string {
+	if x != nil {
+		return x.Bio
+	}
+	return ""
+}
+
+type UpdatePublicProfileResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Tagline       string                 `protobuf:"bytes,1,opt,name=tagline,proto3" json:"tagline,omitempty"`
+	Bio           string                 `protobuf:"bytes,2,opt,name=bio,proto3" json:"bio,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdatePublicProfileResponse) Reset() {
+	*x = UpdatePublicProfileResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdatePublicProfileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdatePublicProfileResponse) ProtoMessage() {}
+
+func (x *UpdatePublicProfileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdatePublicProfileResponse.ProtoReflect.Descriptor instead.
+func (*UpdatePublicProfileResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *UpdatePublicProfileResponse) GetTagline() string {
+	if x != nil {
+		return x.Tagline
+	}
+	return ""
+}
+
+func (x *UpdatePublicProfileResponse) GetBio() string {
+	if x != nil {
+		return x.Bio
+	}
+	return ""
+}
+
 var File_sttattus_empire_v1_empire_proto protoreflect.FileDescriptor
 
 const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
@@ -1000,13 +1345,38 @@ const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\x0eannual_savings\x18\x05 \x01(\x03R\rannualSavings\x12'\n" +
 	"\x0fmonthly_savings\x18\x06 \x01(\x03R\x0emonthlySavings\x12\x1a\n" +
 	"\bcurrency\x18\a \x01(\tR\bcurrency\x12\"\n" +
-	"\fillustrative\x18\b \x01(\bR\fillustrative2\x9f\x04\n" +
+	"\fillustrative\x18\b \x01(\bR\fillustrative\"1\n" +
+	"\x17GetPublicProfileRequest\x12\x16\n" +
+	"\x06handle\x18\x01 \x01(\tR\x06handle\"\xe9\x01\n" +
+	"\x18GetPublicProfileResponse\x12\x16\n" +
+	"\x06handle\x18\x01 \x01(\tR\x06handle\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n" +
+	"\n" +
+	"avatar_url\x18\x03 \x01(\tR\tavatarUrl\x12\x18\n" +
+	"\atagline\x18\x04 \x01(\tR\atagline\x12\x10\n" +
+	"\x03bio\x18\x05 \x01(\tR\x03bio\x12%\n" +
+	"\x0esttattus_score\x18\x06 \x01(\x01R\rsttattusScore\x12\x12\n" +
+	"\x04tier\x18\a \x01(\tR\x04tier\x12\x1b\n" +
+	"\tjoined_at\x18\b \x01(\tR\bjoinedAt\",\n" +
+	"\x12ClaimHandleRequest\x12\x16\n" +
+	"\x06handle\x18\x01 \x01(\tR\x06handle\"-\n" +
+	"\x13ClaimHandleResponse\x12\x16\n" +
+	"\x06handle\x18\x01 \x01(\tR\x06handle\"H\n" +
+	"\x1aUpdatePublicProfileRequest\x12\x18\n" +
+	"\atagline\x18\x01 \x01(\tR\atagline\x12\x10\n" +
+	"\x03bio\x18\x02 \x01(\tR\x03bio\"I\n" +
+	"\x1bUpdatePublicProfileResponse\x12\x18\n" +
+	"\atagline\x18\x01 \x01(\tR\atagline\x12\x10\n" +
+	"\x03bio\x18\x02 \x01(\tR\x03bio2\xe6\x06\n" +
 	"\rEmpireService\x12p\n" +
 	"\x11GetScoreBreakdown\x12,.sttattus.empire.v1.GetScoreBreakdownRequest\x1a-.sttattus.empire.v1.GetScoreBreakdownResponse\x12d\n" +
 	"\rGetTierLadder\x12(.sttattus.empire.v1.GetTierLadderRequest\x1a).sttattus.empire.v1.GetTierLadderResponse\x12X\n" +
 	"\tGetWallet\x12$.sttattus.empire.v1.GetWalletRequest\x1a%.sttattus.empire.v1.GetWalletResponse\x12p\n" +
 	"\x11ListLedgerEntries\x12,.sttattus.empire.v1.ListLedgerEntriesRequest\x1a-.sttattus.empire.v1.ListLedgerEntriesResponse\x12j\n" +
-	"\x0fGetTaxStatement\x12*.sttattus.empire.v1.GetTaxStatementRequest\x1a+.sttattus.empire.v1.GetTaxStatementResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1b\x06proto3"
+	"\x0fGetTaxStatement\x12*.sttattus.empire.v1.GetTaxStatementRequest\x1a+.sttattus.empire.v1.GetTaxStatementResponse\x12m\n" +
+	"\x10GetPublicProfile\x12+.sttattus.empire.v1.GetPublicProfileRequest\x1a,.sttattus.empire.v1.GetPublicProfileResponse\x12^\n" +
+	"\vClaimHandle\x12&.sttattus.empire.v1.ClaimHandleRequest\x1a'.sttattus.empire.v1.ClaimHandleResponse\x12v\n" +
+	"\x13UpdatePublicProfile\x12..sttattus.empire.v1.UpdatePublicProfileRequest\x1a/.sttattus.empire.v1.UpdatePublicProfileResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1b\x06proto3"
 
 var (
 	file_sttattus_empire_v1_empire_proto_rawDescOnce sync.Once
@@ -1020,22 +1390,28 @@ func file_sttattus_empire_v1_empire_proto_rawDescGZIP() []byte {
 	return file_sttattus_empire_v1_empire_proto_rawDescData
 }
 
-var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 20)
 var file_sttattus_empire_v1_empire_proto_goTypes = []any{
-	(*GetScoreBreakdownRequest)(nil),  // 0: sttattus.empire.v1.GetScoreBreakdownRequest
-	(*GetScoreBreakdownResponse)(nil), // 1: sttattus.empire.v1.GetScoreBreakdownResponse
-	(*GetTierLadderRequest)(nil),      // 2: sttattus.empire.v1.GetTierLadderRequest
-	(*TierBand)(nil),                  // 3: sttattus.empire.v1.TierBand
-	(*GetTierLadderResponse)(nil),     // 4: sttattus.empire.v1.GetTierLadderResponse
-	(*GetWalletRequest)(nil),          // 5: sttattus.empire.v1.GetWalletRequest
-	(*PillarPoints)(nil),              // 6: sttattus.empire.v1.PillarPoints
-	(*GetWalletResponse)(nil),         // 7: sttattus.empire.v1.GetWalletResponse
-	(*ListLedgerEntriesRequest)(nil),  // 8: sttattus.empire.v1.ListLedgerEntriesRequest
-	(*LedgerEntry)(nil),               // 9: sttattus.empire.v1.LedgerEntry
-	(*ListLedgerEntriesResponse)(nil), // 10: sttattus.empire.v1.ListLedgerEntriesResponse
-	(*GetTaxStatementRequest)(nil),    // 11: sttattus.empire.v1.GetTaxStatementRequest
-	(*TaxRuleSummary)(nil),            // 12: sttattus.empire.v1.TaxRuleSummary
-	(*GetTaxStatementResponse)(nil),   // 13: sttattus.empire.v1.GetTaxStatementResponse
+	(*GetScoreBreakdownRequest)(nil),    // 0: sttattus.empire.v1.GetScoreBreakdownRequest
+	(*GetScoreBreakdownResponse)(nil),   // 1: sttattus.empire.v1.GetScoreBreakdownResponse
+	(*GetTierLadderRequest)(nil),        // 2: sttattus.empire.v1.GetTierLadderRequest
+	(*TierBand)(nil),                    // 3: sttattus.empire.v1.TierBand
+	(*GetTierLadderResponse)(nil),       // 4: sttattus.empire.v1.GetTierLadderResponse
+	(*GetWalletRequest)(nil),            // 5: sttattus.empire.v1.GetWalletRequest
+	(*PillarPoints)(nil),                // 6: sttattus.empire.v1.PillarPoints
+	(*GetWalletResponse)(nil),           // 7: sttattus.empire.v1.GetWalletResponse
+	(*ListLedgerEntriesRequest)(nil),    // 8: sttattus.empire.v1.ListLedgerEntriesRequest
+	(*LedgerEntry)(nil),                 // 9: sttattus.empire.v1.LedgerEntry
+	(*ListLedgerEntriesResponse)(nil),   // 10: sttattus.empire.v1.ListLedgerEntriesResponse
+	(*GetTaxStatementRequest)(nil),      // 11: sttattus.empire.v1.GetTaxStatementRequest
+	(*TaxRuleSummary)(nil),              // 12: sttattus.empire.v1.TaxRuleSummary
+	(*GetTaxStatementResponse)(nil),     // 13: sttattus.empire.v1.GetTaxStatementResponse
+	(*GetPublicProfileRequest)(nil),     // 14: sttattus.empire.v1.GetPublicProfileRequest
+	(*GetPublicProfileResponse)(nil),    // 15: sttattus.empire.v1.GetPublicProfileResponse
+	(*ClaimHandleRequest)(nil),          // 16: sttattus.empire.v1.ClaimHandleRequest
+	(*ClaimHandleResponse)(nil),         // 17: sttattus.empire.v1.ClaimHandleResponse
+	(*UpdatePublicProfileRequest)(nil),  // 18: sttattus.empire.v1.UpdatePublicProfileRequest
+	(*UpdatePublicProfileResponse)(nil), // 19: sttattus.empire.v1.UpdatePublicProfileResponse
 }
 var file_sttattus_empire_v1_empire_proto_depIdxs = []int32{
 	3,  // 0: sttattus.empire.v1.GetTierLadderResponse.bands:type_name -> sttattus.empire.v1.TierBand
@@ -1047,13 +1423,19 @@ var file_sttattus_empire_v1_empire_proto_depIdxs = []int32{
 	5,  // 6: sttattus.empire.v1.EmpireService.GetWallet:input_type -> sttattus.empire.v1.GetWalletRequest
 	8,  // 7: sttattus.empire.v1.EmpireService.ListLedgerEntries:input_type -> sttattus.empire.v1.ListLedgerEntriesRequest
 	11, // 8: sttattus.empire.v1.EmpireService.GetTaxStatement:input_type -> sttattus.empire.v1.GetTaxStatementRequest
-	1,  // 9: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
-	4,  // 10: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
-	7,  // 11: sttattus.empire.v1.EmpireService.GetWallet:output_type -> sttattus.empire.v1.GetWalletResponse
-	10, // 12: sttattus.empire.v1.EmpireService.ListLedgerEntries:output_type -> sttattus.empire.v1.ListLedgerEntriesResponse
-	13, // 13: sttattus.empire.v1.EmpireService.GetTaxStatement:output_type -> sttattus.empire.v1.GetTaxStatementResponse
-	9,  // [9:14] is the sub-list for method output_type
-	4,  // [4:9] is the sub-list for method input_type
+	14, // 9: sttattus.empire.v1.EmpireService.GetPublicProfile:input_type -> sttattus.empire.v1.GetPublicProfileRequest
+	16, // 10: sttattus.empire.v1.EmpireService.ClaimHandle:input_type -> sttattus.empire.v1.ClaimHandleRequest
+	18, // 11: sttattus.empire.v1.EmpireService.UpdatePublicProfile:input_type -> sttattus.empire.v1.UpdatePublicProfileRequest
+	1,  // 12: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
+	4,  // 13: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
+	7,  // 14: sttattus.empire.v1.EmpireService.GetWallet:output_type -> sttattus.empire.v1.GetWalletResponse
+	10, // 15: sttattus.empire.v1.EmpireService.ListLedgerEntries:output_type -> sttattus.empire.v1.ListLedgerEntriesResponse
+	13, // 16: sttattus.empire.v1.EmpireService.GetTaxStatement:output_type -> sttattus.empire.v1.GetTaxStatementResponse
+	15, // 17: sttattus.empire.v1.EmpireService.GetPublicProfile:output_type -> sttattus.empire.v1.GetPublicProfileResponse
+	17, // 18: sttattus.empire.v1.EmpireService.ClaimHandle:output_type -> sttattus.empire.v1.ClaimHandleResponse
+	19, // 19: sttattus.empire.v1.EmpireService.UpdatePublicProfile:output_type -> sttattus.empire.v1.UpdatePublicProfileResponse
+	12, // [12:20] is the sub-list for method output_type
+	4,  // [4:12] is the sub-list for method input_type
 	4,  // [4:4] is the sub-list for extension type_name
 	4,  // [4:4] is the sub-list for extension extendee
 	0,  // [0:4] is the sub-list for field type_name
@@ -1070,7 +1452,7 @@ func file_sttattus_empire_v1_empire_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_empire_v1_empire_proto_rawDesc), len(file_sttattus_empire_v1_empire_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   14,
+			NumMessages:   20,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -236,3 +236,90 @@ final $typed_data.Uint8List getTaxStatementResponseDescriptor = $convert.base64D
     'lTYXZpbmdzEhoKCGN1cnJlbmN5GAcgASgJUghjdXJyZW5jeRIiCgxpbGx1c3RyYXRpdmUYCCAB'
     'KAhSDGlsbHVzdHJhdGl2ZQ==');
 
+@$core.Deprecated('Use getPublicProfileRequestDescriptor instead')
+const GetPublicProfileRequest$json = {
+  '1': 'GetPublicProfileRequest',
+  '2': [
+    {'1': 'handle', '3': 1, '4': 1, '5': 9, '10': 'handle'},
+  ],
+};
+
+/// Descriptor for `GetPublicProfileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPublicProfileRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRQdWJsaWNQcm9maWxlUmVxdWVzdBIWCgZoYW5kbGUYASABKAlSBmhhbmRsZQ==');
+
+@$core.Deprecated('Use getPublicProfileResponseDescriptor instead')
+const GetPublicProfileResponse$json = {
+  '1': 'GetPublicProfileResponse',
+  '2': [
+    {'1': 'handle', '3': 1, '4': 1, '5': 9, '10': 'handle'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'avatar_url', '3': 3, '4': 1, '5': 9, '10': 'avatarUrl'},
+    {'1': 'tagline', '3': 4, '4': 1, '5': 9, '10': 'tagline'},
+    {'1': 'bio', '3': 5, '4': 1, '5': 9, '10': 'bio'},
+    {'1': 'sttattus_score', '3': 6, '4': 1, '5': 1, '10': 'sttattusScore'},
+    {'1': 'tier', '3': 7, '4': 1, '5': 9, '10': 'tier'},
+    {'1': 'joined_at', '3': 8, '4': 1, '5': 9, '10': 'joinedAt'},
+  ],
+};
+
+/// Descriptor for `GetPublicProfileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPublicProfileResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRQdWJsaWNQcm9maWxlUmVzcG9uc2USFgoGaGFuZGxlGAEgASgJUgZoYW5kbGUSEgoEbm'
+    'FtZRgCIAEoCVIEbmFtZRIdCgphdmF0YXJfdXJsGAMgASgJUglhdmF0YXJVcmwSGAoHdGFnbGlu'
+    'ZRgEIAEoCVIHdGFnbGluZRIQCgNiaW8YBSABKAlSA2JpbxIlCg5zdHRhdHR1c19zY29yZRgGIA'
+    'EoAVINc3R0YXR0dXNTY29yZRISCgR0aWVyGAcgASgJUgR0aWVyEhsKCWpvaW5lZF9hdBgIIAEo'
+    'CVIIam9pbmVkQXQ=');
+
+@$core.Deprecated('Use claimHandleRequestDescriptor instead')
+const ClaimHandleRequest$json = {
+  '1': 'ClaimHandleRequest',
+  '2': [
+    {'1': 'handle', '3': 1, '4': 1, '5': 9, '10': 'handle'},
+  ],
+};
+
+/// Descriptor for `ClaimHandleRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List claimHandleRequestDescriptor = $convert.base64Decode(
+    'ChJDbGFpbUhhbmRsZVJlcXVlc3QSFgoGaGFuZGxlGAEgASgJUgZoYW5kbGU=');
+
+@$core.Deprecated('Use claimHandleResponseDescriptor instead')
+const ClaimHandleResponse$json = {
+  '1': 'ClaimHandleResponse',
+  '2': [
+    {'1': 'handle', '3': 1, '4': 1, '5': 9, '10': 'handle'},
+  ],
+};
+
+/// Descriptor for `ClaimHandleResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List claimHandleResponseDescriptor = $convert.base64Decode(
+    'ChNDbGFpbUhhbmRsZVJlc3BvbnNlEhYKBmhhbmRsZRgBIAEoCVIGaGFuZGxl');
+
+@$core.Deprecated('Use updatePublicProfileRequestDescriptor instead')
+const UpdatePublicProfileRequest$json = {
+  '1': 'UpdatePublicProfileRequest',
+  '2': [
+    {'1': 'tagline', '3': 1, '4': 1, '5': 9, '10': 'tagline'},
+    {'1': 'bio', '3': 2, '4': 1, '5': 9, '10': 'bio'},
+  ],
+};
+
+/// Descriptor for `UpdatePublicProfileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updatePublicProfileRequestDescriptor = $convert.base64Decode(
+    'ChpVcGRhdGVQdWJsaWNQcm9maWxlUmVxdWVzdBIYCgd0YWdsaW5lGAEgASgJUgd0YWdsaW5lEh'
+    'AKA2JpbxgCIAEoCVIDYmlv');
+
+@$core.Deprecated('Use updatePublicProfileResponseDescriptor instead')
+const UpdatePublicProfileResponse$json = {
+  '1': 'UpdatePublicProfileResponse',
+  '2': [
+    {'1': 'tagline', '3': 1, '4': 1, '5': 9, '10': 'tagline'},
+    {'1': 'bio', '3': 2, '4': 1, '5': 9, '10': 'bio'},
+  ],
+};
+
+/// Descriptor for `UpdatePublicProfileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updatePublicProfileResponseDescriptor = $convert.base64Decode(
+    'ChtVcGRhdGVQdWJsaWNQcm9maWxlUmVzcG9uc2USGAoHdGFnbGluZRgBIAEoCVIHdGFnbGluZR'
+    'IQCgNiaW8YAiABKAlSA2Jpbw==');
+

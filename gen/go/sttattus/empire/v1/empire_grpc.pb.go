@@ -19,11 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	EmpireService_GetScoreBreakdown_FullMethodName = "/sttattus.empire.v1.EmpireService/GetScoreBreakdown"
-	EmpireService_GetTierLadder_FullMethodName     = "/sttattus.empire.v1.EmpireService/GetTierLadder"
-	EmpireService_GetWallet_FullMethodName         = "/sttattus.empire.v1.EmpireService/GetWallet"
-	EmpireService_ListLedgerEntries_FullMethodName = "/sttattus.empire.v1.EmpireService/ListLedgerEntries"
-	EmpireService_GetTaxStatement_FullMethodName   = "/sttattus.empire.v1.EmpireService/GetTaxStatement"
+	EmpireService_GetScoreBreakdown_FullMethodName   = "/sttattus.empire.v1.EmpireService/GetScoreBreakdown"
+	EmpireService_GetTierLadder_FullMethodName       = "/sttattus.empire.v1.EmpireService/GetTierLadder"
+	EmpireService_GetWallet_FullMethodName           = "/sttattus.empire.v1.EmpireService/GetWallet"
+	EmpireService_ListLedgerEntries_FullMethodName   = "/sttattus.empire.v1.EmpireService/ListLedgerEntries"
+	EmpireService_GetTaxStatement_FullMethodName     = "/sttattus.empire.v1.EmpireService/GetTaxStatement"
+	EmpireService_GetPublicProfile_FullMethodName    = "/sttattus.empire.v1.EmpireService/GetPublicProfile"
+	EmpireService_ClaimHandle_FullMethodName         = "/sttattus.empire.v1.EmpireService/ClaimHandle"
+	EmpireService_UpdatePublicProfile_FullMethodName = "/sttattus.empire.v1.EmpireService/UpdatePublicProfile"
 )
 
 // EmpireServiceClient is the client API for EmpireService service.
@@ -47,6 +50,17 @@ type EmpireServiceClient interface {
 	// tier's discount fabric and a savings projection computed by the
 	// real Tax engine.
 	GetTaxStatement(ctx context.Context, in *GetTaxStatementRequest, opts ...grpc.CallOption) (*GetTaxStatementResponse, error)
+	// GetPublicProfile returns the public Empire profile for a handle.
+	// No auth dependency — this is the surface the website's
+	// /empire/<handle> route will eventually mirror.
+	GetPublicProfile(ctx context.Context, in *GetPublicProfileRequest, opts ...grpc.CallOption) (*GetPublicProfileResponse, error)
+	// ClaimHandle sets the caller's public handle. The handle is unique
+	// (case-insensitive) and can only be claimed once per user — a second
+	// call returns AlreadyExists.
+	ClaimHandle(ctx context.Context, in *ClaimHandleRequest, opts ...grpc.CallOption) (*ClaimHandleResponse, error)
+	// UpdatePublicProfile updates the caller's tagline + bio. Empty
+	// fields are left alone; a single space clears.
+	UpdatePublicProfile(ctx context.Context, in *UpdatePublicProfileRequest, opts ...grpc.CallOption) (*UpdatePublicProfileResponse, error)
 }
 
 type empireServiceClient struct {
@@ -107,6 +121,36 @@ func (c *empireServiceClient) GetTaxStatement(ctx context.Context, in *GetTaxSta
 	return out, nil
 }
 
+func (c *empireServiceClient) GetPublicProfile(ctx context.Context, in *GetPublicProfileRequest, opts ...grpc.CallOption) (*GetPublicProfileResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPublicProfileResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetPublicProfile_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ClaimHandle(ctx context.Context, in *ClaimHandleRequest, opts ...grpc.CallOption) (*ClaimHandleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ClaimHandleResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ClaimHandle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) UpdatePublicProfile(ctx context.Context, in *UpdatePublicProfileRequest, opts ...grpc.CallOption) (*UpdatePublicProfileResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdatePublicProfileResponse)
+	err := c.cc.Invoke(ctx, EmpireService_UpdatePublicProfile_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmpireServiceServer is the server API for EmpireService service.
 // All implementations must embed UnimplementedEmpireServiceServer
 // for forward compatibility.
@@ -128,6 +172,17 @@ type EmpireServiceServer interface {
 	// tier's discount fabric and a savings projection computed by the
 	// real Tax engine.
 	GetTaxStatement(context.Context, *GetTaxStatementRequest) (*GetTaxStatementResponse, error)
+	// GetPublicProfile returns the public Empire profile for a handle.
+	// No auth dependency — this is the surface the website's
+	// /empire/<handle> route will eventually mirror.
+	GetPublicProfile(context.Context, *GetPublicProfileRequest) (*GetPublicProfileResponse, error)
+	// ClaimHandle sets the caller's public handle. The handle is unique
+	// (case-insensitive) and can only be claimed once per user — a second
+	// call returns AlreadyExists.
+	ClaimHandle(context.Context, *ClaimHandleRequest) (*ClaimHandleResponse, error)
+	// UpdatePublicProfile updates the caller's tagline + bio. Empty
+	// fields are left alone; a single space clears.
+	UpdatePublicProfile(context.Context, *UpdatePublicProfileRequest) (*UpdatePublicProfileResponse, error)
 	mustEmbedUnimplementedEmpireServiceServer()
 }
 
@@ -152,6 +207,15 @@ func (UnimplementedEmpireServiceServer) ListLedgerEntries(context.Context, *List
 }
 func (UnimplementedEmpireServiceServer) GetTaxStatement(context.Context, *GetTaxStatementRequest) (*GetTaxStatementResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetTaxStatement not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetPublicProfile(context.Context, *GetPublicProfileRequest) (*GetPublicProfileResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPublicProfile not implemented")
+}
+func (UnimplementedEmpireServiceServer) ClaimHandle(context.Context, *ClaimHandleRequest) (*ClaimHandleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ClaimHandle not implemented")
+}
+func (UnimplementedEmpireServiceServer) UpdatePublicProfile(context.Context, *UpdatePublicProfileRequest) (*UpdatePublicProfileResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdatePublicProfile not implemented")
 }
 func (UnimplementedEmpireServiceServer) mustEmbedUnimplementedEmpireServiceServer() {}
 func (UnimplementedEmpireServiceServer) testEmbeddedByValue()                       {}
@@ -264,6 +328,60 @@ func _EmpireService_GetTaxStatement_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmpireService_GetPublicProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPublicProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetPublicProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetPublicProfile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetPublicProfile(ctx, req.(*GetPublicProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ClaimHandle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ClaimHandleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ClaimHandle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ClaimHandle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ClaimHandle(ctx, req.(*ClaimHandleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_UpdatePublicProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdatePublicProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).UpdatePublicProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_UpdatePublicProfile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).UpdatePublicProfile(ctx, req.(*UpdatePublicProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EmpireService_ServiceDesc is the grpc.ServiceDesc for EmpireService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -290,6 +408,18 @@ var EmpireService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTaxStatement",
 			Handler:    _EmpireService_GetTaxStatement_Handler,
+		},
+		{
+			MethodName: "GetPublicProfile",
+			Handler:    _EmpireService_GetPublicProfile_Handler,
+		},
+		{
+			MethodName: "ClaimHandle",
+			Handler:    _EmpireService_ClaimHandle_Handler,
+		},
+		{
+			MethodName: "UpdatePublicProfile",
+			Handler:    _EmpireService_UpdatePublicProfile_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

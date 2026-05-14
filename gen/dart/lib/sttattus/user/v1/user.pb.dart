@@ -37,6 +37,7 @@ class UserProfile extends $pb.GeneratedMessage {
     $core.double? vaultRank,
     $core.double? apexRank,
     $core.double? culturalCapital,
+    $core.String? handle,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -55,6 +56,7 @@ class UserProfile extends $pb.GeneratedMessage {
     if (vaultRank != null) result.vaultRank = vaultRank;
     if (apexRank != null) result.apexRank = apexRank;
     if (culturalCapital != null) result.culturalCapital = culturalCapital;
+    if (handle != null) result.handle = handle;
     return result;
   }
 
@@ -80,6 +82,7 @@ class UserProfile extends $pb.GeneratedMessage {
     ..a<$core.double>(14, _omitFieldNames ? '' : 'vaultRank', $pb.PbFieldType.OD)
     ..a<$core.double>(15, _omitFieldNames ? '' : 'apexRank', $pb.PbFieldType.OD)
     ..a<$core.double>(16, _omitFieldNames ? '' : 'culturalCapital', $pb.PbFieldType.OD)
+    ..aOS(17, _omitFieldNames ? '' : 'handle')
     ..hasRequiredFields = false
   ;
 
@@ -244,6 +247,16 @@ class UserProfile extends $pb.GeneratedMessage {
   $core.bool hasCulturalCapital() => $_has(15);
   @$pb.TagNumber(16)
   void clearCulturalCapital() => $_clearField(16);
+
+  /// P5.6 — public handle (empty when not yet claimed).
+  @$pb.TagNumber(17)
+  $core.String get handle => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set handle($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasHandle() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearHandle() => $_clearField(17);
 }
 
 class AppAccess extends $pb.GeneratedMessage {

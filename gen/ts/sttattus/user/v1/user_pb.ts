@@ -101,6 +101,13 @@ export class UserProfile extends Message<UserProfile> {
    */
   culturalCapital = 0;
 
+  /**
+   * P5.6 — public handle (empty when not yet claimed).
+   *
+   * @generated from field: string handle = 17;
+   */
+  handle = "";
+
   constructor(data?: PartialMessage<UserProfile>) {
     super();
     proto3.util.initPartial(data, this);
@@ -125,6 +132,7 @@ export class UserProfile extends Message<UserProfile> {
     { no: 14, name: "vault_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 15, name: "apex_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 16, name: "cultural_capital", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 17, name: "handle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserProfile {

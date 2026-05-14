@@ -146,6 +146,50 @@ message GetTaxStatementResponse {
   bool illustrative = 8;
 }
 
+// === Public profile (P5.6) ===
+
+message GetPublicProfileRequest {
+  // Case-insensitive handle. Empty → NotFound.
+  string handle = 1;
+}
+
+message GetPublicProfileResponse {
+  // Stable handle (canonical casing).
+  string handle = 1;
+  // Display name.
+  string name = 2;
+  string avatar_url = 3;
+  string tagline = 4;
+  string bio = 5;
+  // Composite + tier so the public surface can echo the badge.
+  double sttattus_score = 6;
+  string tier = 7;
+  // RFC-3339 UTC of when the user joined.
+  string joined_at = 8;
+}
+
+message ClaimHandleRequest {
+  // Lowercase letters, digits, and underscores, 3–24 chars. Server
+  // validates.
+  string handle = 1;
+}
+
+message ClaimHandleResponse {
+  string handle = 1;
+}
+
+message UpdatePublicProfileRequest {
+  // Either field may be empty to leave the existing value alone; pass
+  // a single space to clear a field.
+  string tagline = 1;
+  string bio = 2;
+}
+
+message UpdatePublicProfileResponse {
+  string tagline = 1;
+  string bio = 2;
+}
+
 service EmpireService {
   // GetScoreBreakdown returns the caller's Sttattus Score with the
   // four weighted-bucket components — the glass-box the audit asks for.
@@ -168,4 +212,18 @@ service EmpireService {
   // tier's discount fabric and a savings projection computed by the
   // real Tax engine.
   rpc GetTaxStatement(GetTaxStatementRequest) returns (GetTaxStatementResponse);
+
+  // GetPublicProfile returns the public Empire profile for a handle.
+  // No auth dependency — this is the surface the website's
+  // /empire/<handle> route will eventually mirror.
+  rpc GetPublicProfile(GetPublicProfileRequest) returns (GetPublicProfileResponse);
+
+  // ClaimHandle sets the caller's public handle. The handle is unique
+  // (case-insensitive) and can only be claimed once per user — a second
+  // call returns AlreadyExists.
+  rpc ClaimHandle(ClaimHandleRequest) returns (ClaimHandleResponse);
+
+  // UpdatePublicProfile updates the caller's tagline + bio. Empty
+  // fields are left alone; a single space clears.
+  rpc UpdatePublicProfile(UpdatePublicProfileRequest) returns (UpdatePublicProfileResponse);
 }

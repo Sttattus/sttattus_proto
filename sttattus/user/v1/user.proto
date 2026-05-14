@@ -25,6 +25,9 @@ message UserProfile {
   double vault_rank = 14;
   double apex_rank = 15;
   double cultural_capital = 16;
+
+  // P5.6 — public handle (empty when not yet claimed).
+  string handle = 17;
 }
 
 message AppAccess {

@@ -784,3 +784,295 @@ export class GetTaxStatementResponse extends Message<GetTaxStatementResponse> {
   }
 }
 
+/**
+ * @generated from message sttattus.empire.v1.GetPublicProfileRequest
+ */
+export class GetPublicProfileRequest extends Message<GetPublicProfileRequest> {
+  /**
+   * Case-insensitive handle. Empty → NotFound.
+   *
+   * @generated from field: string handle = 1;
+   */
+  handle = "";
+
+  constructor(data?: PartialMessage<GetPublicProfileRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.GetPublicProfileRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "handle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPublicProfileRequest {
+    return new GetPublicProfileRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPublicProfileRequest {
+    return new GetPublicProfileRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPublicProfileRequest {
+    return new GetPublicProfileRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPublicProfileRequest | PlainMessage<GetPublicProfileRequest> | undefined, b: GetPublicProfileRequest | PlainMessage<GetPublicProfileRequest> | undefined): boolean {
+    return proto3.util.equals(GetPublicProfileRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.GetPublicProfileResponse
+ */
+export class GetPublicProfileResponse extends Message<GetPublicProfileResponse> {
+  /**
+   * Stable handle (canonical casing).
+   *
+   * @generated from field: string handle = 1;
+   */
+  handle = "";
+
+  /**
+   * Display name.
+   *
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string avatar_url = 3;
+   */
+  avatarUrl = "";
+
+  /**
+   * @generated from field: string tagline = 4;
+   */
+  tagline = "";
+
+  /**
+   * @generated from field: string bio = 5;
+   */
+  bio = "";
+
+  /**
+   * Composite + tier so the public surface can echo the badge.
+   *
+   * @generated from field: double sttattus_score = 6;
+   */
+  sttattusScore = 0;
+
+  /**
+   * @generated from field: string tier = 7;
+   */
+  tier = "";
+
+  /**
+   * RFC-3339 UTC of when the user joined.
+   *
+   * @generated from field: string joined_at = 8;
+   */
+  joinedAt = "";
+
+  constructor(data?: PartialMessage<GetPublicProfileResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.GetPublicProfileResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "handle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "avatar_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "tagline", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "bio", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "sttattus_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "joined_at", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPublicProfileResponse {
+    return new GetPublicProfileResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPublicProfileResponse {
+    return new GetPublicProfileResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPublicProfileResponse {
+    return new GetPublicProfileResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPublicProfileResponse | PlainMessage<GetPublicProfileResponse> | undefined, b: GetPublicProfileResponse | PlainMessage<GetPublicProfileResponse> | undefined): boolean {
+    return proto3.util.equals(GetPublicProfileResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ClaimHandleRequest
+ */
+export class ClaimHandleRequest extends Message<ClaimHandleRequest> {
+  /**
+   * Lowercase letters, digits, and underscores, 3–24 chars. Server
+   * validates.
+   *
+   * @generated from field: string handle = 1;
+   */
+  handle = "";
+
+  constructor(data?: PartialMessage<ClaimHandleRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ClaimHandleRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "handle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClaimHandleRequest {
+    return new ClaimHandleRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClaimHandleRequest {
+    return new ClaimHandleRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClaimHandleRequest {
+    return new ClaimHandleRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ClaimHandleRequest | PlainMessage<ClaimHandleRequest> | undefined, b: ClaimHandleRequest | PlainMessage<ClaimHandleRequest> | undefined): boolean {
+    return proto3.util.equals(ClaimHandleRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.ClaimHandleResponse
+ */
+export class ClaimHandleResponse extends Message<ClaimHandleResponse> {
+  /**
+   * @generated from field: string handle = 1;
+   */
+  handle = "";
+
+  constructor(data?: PartialMessage<ClaimHandleResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.ClaimHandleResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "handle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClaimHandleResponse {
+    return new ClaimHandleResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClaimHandleResponse {
+    return new ClaimHandleResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClaimHandleResponse {
+    return new ClaimHandleResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ClaimHandleResponse | PlainMessage<ClaimHandleResponse> | undefined, b: ClaimHandleResponse | PlainMessage<ClaimHandleResponse> | undefined): boolean {
+    return proto3.util.equals(ClaimHandleResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.UpdatePublicProfileRequest
+ */
+export class UpdatePublicProfileRequest extends Message<UpdatePublicProfileRequest> {
+  /**
+   * Either field may be empty to leave the existing value alone; pass
+   * a single space to clear a field.
+   *
+   * @generated from field: string tagline = 1;
+   */
+  tagline = "";
+
+  /**
+   * @generated from field: string bio = 2;
+   */
+  bio = "";
+
+  constructor(data?: PartialMessage<UpdatePublicProfileRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.UpdatePublicProfileRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tagline", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "bio", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdatePublicProfileRequest {
+    return new UpdatePublicProfileRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdatePublicProfileRequest {
+    return new UpdatePublicProfileRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdatePublicProfileRequest {
+    return new UpdatePublicProfileRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdatePublicProfileRequest | PlainMessage<UpdatePublicProfileRequest> | undefined, b: UpdatePublicProfileRequest | PlainMessage<UpdatePublicProfileRequest> | undefined): boolean {
+    return proto3.util.equals(UpdatePublicProfileRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.empire.v1.UpdatePublicProfileResponse
+ */
+export class UpdatePublicProfileResponse extends Message<UpdatePublicProfileResponse> {
+  /**
+   * @generated from field: string tagline = 1;
+   */
+  tagline = "";
+
+  /**
+   * @generated from field: string bio = 2;
+   */
+  bio = "";
+
+  constructor(data?: PartialMessage<UpdatePublicProfileResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.UpdatePublicProfileResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tagline", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "bio", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdatePublicProfileResponse {
+    return new UpdatePublicProfileResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdatePublicProfileResponse {
+    return new UpdatePublicProfileResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdatePublicProfileResponse {
+    return new UpdatePublicProfileResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdatePublicProfileResponse | PlainMessage<UpdatePublicProfileResponse> | undefined, b: UpdatePublicProfileResponse | PlainMessage<UpdatePublicProfileResponse> | undefined): boolean {
+    return proto3.util.equals(UpdatePublicProfileResponse, a, b);
+  }
+}
+

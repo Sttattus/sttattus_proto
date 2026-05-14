@@ -41,8 +41,10 @@ type UserProfile struct {
 	VaultRank        float64 `protobuf:"fixed64,14,opt,name=vault_rank,json=vaultRank,proto3" json:"vault_rank,omitempty"`
 	ApexRank         float64 `protobuf:"fixed64,15,opt,name=apex_rank,json=apexRank,proto3" json:"apex_rank,omitempty"`
 	CulturalCapital  float64 `protobuf:"fixed64,16,opt,name=cultural_capital,json=culturalCapital,proto3" json:"cultural_capital,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	// P5.6 — public handle (empty when not yet claimed).
+	Handle        string `protobuf:"bytes,17,opt,name=handle,proto3" json:"handle,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *UserProfile) Reset() {
@@ -185,6 +187,13 @@ func (x *UserProfile) GetCulturalCapital() float64 {
 		return x.CulturalCapital
 	}
 	return 0
+}
+
+func (x *UserProfile) GetHandle() string {
+	if x != nil {
+		return x.Handle
+	}
+	return ""
 }
 
 type AppAccess struct {
@@ -1135,7 +1144,7 @@ var File_sttattus_user_v1_user_proto protoreflect.FileDescriptor
 
 const file_sttattus_user_v1_user_proto_rawDesc = "" +
 	"\n" +
-	"\x1bsttattus/user/v1/user.proto\x12\x10sttattus.user.v1\x1a\x1bsttattus/auth/v1/auth.proto\"\xe4\x03\n" +
+	"\x1bsttattus/user/v1/user.proto\x12\x10sttattus.user.v1\x1a\x1bsttattus/auth/v1/auth.proto\"\xfc\x03\n" +
 	"\vUserProfile\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x12\n" +
@@ -1158,7 +1167,8 @@ const file_sttattus_user_v1_user_proto_rawDesc = "" +
 	"\n" +
 	"vault_rank\x18\x0e \x01(\x01R\tvaultRank\x12\x1b\n" +
 	"\tapex_rank\x18\x0f \x01(\x01R\bapexRank\x12)\n" +
-	"\x10cultural_capital\x18\x10 \x01(\x01R\x0fculturalCapital\"\x86\x01\n" +
+	"\x10cultural_capital\x18\x10 \x01(\x01R\x0fculturalCapital\x12\x16\n" +
+	"\x06handle\x18\x11 \x01(\tR\x06handle\"\x86\x01\n" +
 	"\tAppAccess\x124\n" +
 	"\bapp_code\x18\x01 \x01(\x0e2\x19.sttattus.auth.v1.AppCodeR\aappCode\x12\x1d\n" +
 	"\n" +

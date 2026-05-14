@@ -64,6 +64,26 @@ class EmpireServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getTaxStatement, request, options: options);
   }
 
+  /// GetPublicProfile returns the public Empire profile for a handle.
+  /// No auth dependency — this is the surface the website's
+  /// /empire/<handle> route will eventually mirror.
+  $grpc.ResponseFuture<$0.GetPublicProfileResponse> getPublicProfile($0.GetPublicProfileRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getPublicProfile, request, options: options);
+  }
+
+  /// ClaimHandle sets the caller's public handle. The handle is unique
+  /// (case-insensitive) and can only be claimed once per user — a second
+  /// call returns AlreadyExists.
+  $grpc.ResponseFuture<$0.ClaimHandleResponse> claimHandle($0.ClaimHandleRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$claimHandle, request, options: options);
+  }
+
+  /// UpdatePublicProfile updates the caller's tagline + bio. Empty
+  /// fields are left alone; a single space clears.
+  $grpc.ResponseFuture<$0.UpdatePublicProfileResponse> updatePublicProfile($0.UpdatePublicProfileRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$updatePublicProfile, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getScoreBreakdown = $grpc.ClientMethod<$0.GetScoreBreakdownRequest, $0.GetScoreBreakdownResponse>(
@@ -86,6 +106,18 @@ class EmpireServiceClient extends $grpc.Client {
       '/sttattus.empire.v1.EmpireService/GetTaxStatement',
       ($0.GetTaxStatementRequest value) => value.writeToBuffer(),
       $0.GetTaxStatementResponse.fromBuffer);
+  static final _$getPublicProfile = $grpc.ClientMethod<$0.GetPublicProfileRequest, $0.GetPublicProfileResponse>(
+      '/sttattus.empire.v1.EmpireService/GetPublicProfile',
+      ($0.GetPublicProfileRequest value) => value.writeToBuffer(),
+      $0.GetPublicProfileResponse.fromBuffer);
+  static final _$claimHandle = $grpc.ClientMethod<$0.ClaimHandleRequest, $0.ClaimHandleResponse>(
+      '/sttattus.empire.v1.EmpireService/ClaimHandle',
+      ($0.ClaimHandleRequest value) => value.writeToBuffer(),
+      $0.ClaimHandleResponse.fromBuffer);
+  static final _$updatePublicProfile = $grpc.ClientMethod<$0.UpdatePublicProfileRequest, $0.UpdatePublicProfileResponse>(
+      '/sttattus.empire.v1.EmpireService/UpdatePublicProfile',
+      ($0.UpdatePublicProfileRequest value) => value.writeToBuffer(),
+      $0.UpdatePublicProfileResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.empire.v1.EmpireService')
@@ -128,6 +160,27 @@ abstract class EmpireServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetTaxStatementRequest.fromBuffer(value),
         ($0.GetTaxStatementResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetPublicProfileRequest, $0.GetPublicProfileResponse>(
+        'GetPublicProfile',
+        getPublicProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetPublicProfileRequest.fromBuffer(value),
+        ($0.GetPublicProfileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ClaimHandleRequest, $0.ClaimHandleResponse>(
+        'ClaimHandle',
+        claimHandle_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ClaimHandleRequest.fromBuffer(value),
+        ($0.ClaimHandleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdatePublicProfileRequest, $0.UpdatePublicProfileResponse>(
+        'UpdatePublicProfile',
+        updatePublicProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpdatePublicProfileRequest.fromBuffer(value),
+        ($0.UpdatePublicProfileResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetScoreBreakdownResponse> getScoreBreakdown_Pre($grpc.ServiceCall $call, $async.Future<$0.GetScoreBreakdownRequest> $request) async {
@@ -159,5 +212,23 @@ abstract class EmpireServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GetTaxStatementResponse> getTaxStatement($grpc.ServiceCall call, $0.GetTaxStatementRequest request);
+
+  $async.Future<$0.GetPublicProfileResponse> getPublicProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetPublicProfileRequest> $request) async {
+    return getPublicProfile($call, await $request);
+  }
+
+  $async.Future<$0.GetPublicProfileResponse> getPublicProfile($grpc.ServiceCall call, $0.GetPublicProfileRequest request);
+
+  $async.Future<$0.ClaimHandleResponse> claimHandle_Pre($grpc.ServiceCall $call, $async.Future<$0.ClaimHandleRequest> $request) async {
+    return claimHandle($call, await $request);
+  }
+
+  $async.Future<$0.ClaimHandleResponse> claimHandle($grpc.ServiceCall call, $0.ClaimHandleRequest request);
+
+  $async.Future<$0.UpdatePublicProfileResponse> updatePublicProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.UpdatePublicProfileRequest> $request) async {
+    return updatePublicProfile($call, await $request);
+  }
+
+  $async.Future<$0.UpdatePublicProfileResponse> updatePublicProfile($grpc.ServiceCall call, $0.UpdatePublicProfileRequest request);
 
 }

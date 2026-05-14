@@ -1048,6 +1048,399 @@ class GetTaxStatementResponse extends $pb.GeneratedMessage {
   void clearIllustrative() => $_clearField(8);
 }
 
+class GetPublicProfileRequest extends $pb.GeneratedMessage {
+  factory GetPublicProfileRequest({
+    $core.String? handle,
+  }) {
+    final result = create();
+    if (handle != null) result.handle = handle;
+    return result;
+  }
+
+  GetPublicProfileRequest._();
+
+  factory GetPublicProfileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetPublicProfileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPublicProfileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'handle')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPublicProfileRequest clone() => GetPublicProfileRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPublicProfileRequest copyWith(void Function(GetPublicProfileRequest) updates) => super.copyWith((message) => updates(message as GetPublicProfileRequest)) as GetPublicProfileRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPublicProfileRequest create() => GetPublicProfileRequest._();
+  @$core.override
+  GetPublicProfileRequest createEmptyInstance() => create();
+  static $pb.PbList<GetPublicProfileRequest> createRepeated() => $pb.PbList<GetPublicProfileRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetPublicProfileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPublicProfileRequest>(create);
+  static GetPublicProfileRequest? _defaultInstance;
+
+  /// Case-insensitive handle. Empty → NotFound.
+  @$pb.TagNumber(1)
+  $core.String get handle => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set handle($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasHandle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHandle() => $_clearField(1);
+}
+
+class GetPublicProfileResponse extends $pb.GeneratedMessage {
+  factory GetPublicProfileResponse({
+    $core.String? handle,
+    $core.String? name,
+    $core.String? avatarUrl,
+    $core.String? tagline,
+    $core.String? bio,
+    $core.double? sttattusScore,
+    $core.String? tier,
+    $core.String? joinedAt,
+  }) {
+    final result = create();
+    if (handle != null) result.handle = handle;
+    if (name != null) result.name = name;
+    if (avatarUrl != null) result.avatarUrl = avatarUrl;
+    if (tagline != null) result.tagline = tagline;
+    if (bio != null) result.bio = bio;
+    if (sttattusScore != null) result.sttattusScore = sttattusScore;
+    if (tier != null) result.tier = tier;
+    if (joinedAt != null) result.joinedAt = joinedAt;
+    return result;
+  }
+
+  GetPublicProfileResponse._();
+
+  factory GetPublicProfileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetPublicProfileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPublicProfileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'handle')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'avatarUrl')
+    ..aOS(4, _omitFieldNames ? '' : 'tagline')
+    ..aOS(5, _omitFieldNames ? '' : 'bio')
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'sttattusScore', $pb.PbFieldType.OD)
+    ..aOS(7, _omitFieldNames ? '' : 'tier')
+    ..aOS(8, _omitFieldNames ? '' : 'joinedAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPublicProfileResponse clone() => GetPublicProfileResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPublicProfileResponse copyWith(void Function(GetPublicProfileResponse) updates) => super.copyWith((message) => updates(message as GetPublicProfileResponse)) as GetPublicProfileResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPublicProfileResponse create() => GetPublicProfileResponse._();
+  @$core.override
+  GetPublicProfileResponse createEmptyInstance() => create();
+  static $pb.PbList<GetPublicProfileResponse> createRepeated() => $pb.PbList<GetPublicProfileResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetPublicProfileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPublicProfileResponse>(create);
+  static GetPublicProfileResponse? _defaultInstance;
+
+  /// Stable handle (canonical casing).
+  @$pb.TagNumber(1)
+  $core.String get handle => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set handle($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasHandle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHandle() => $_clearField(1);
+
+  /// Display name.
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get avatarUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set avatarUrl($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAvatarUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAvatarUrl() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get tagline => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set tagline($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTagline() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTagline() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get bio => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set bio($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBio() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBio() => $_clearField(5);
+
+  /// Composite + tier so the public surface can echo the badge.
+  @$pb.TagNumber(6)
+  $core.double get sttattusScore => $_getN(5);
+  @$pb.TagNumber(6)
+  set sttattusScore($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSttattusScore() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSttattusScore() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get tier => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set tier($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasTier() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTier() => $_clearField(7);
+
+  /// RFC-3339 UTC of when the user joined.
+  @$pb.TagNumber(8)
+  $core.String get joinedAt => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set joinedAt($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasJoinedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearJoinedAt() => $_clearField(8);
+}
+
+class ClaimHandleRequest extends $pb.GeneratedMessage {
+  factory ClaimHandleRequest({
+    $core.String? handle,
+  }) {
+    final result = create();
+    if (handle != null) result.handle = handle;
+    return result;
+  }
+
+  ClaimHandleRequest._();
+
+  factory ClaimHandleRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ClaimHandleRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ClaimHandleRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'handle')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ClaimHandleRequest clone() => ClaimHandleRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ClaimHandleRequest copyWith(void Function(ClaimHandleRequest) updates) => super.copyWith((message) => updates(message as ClaimHandleRequest)) as ClaimHandleRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ClaimHandleRequest create() => ClaimHandleRequest._();
+  @$core.override
+  ClaimHandleRequest createEmptyInstance() => create();
+  static $pb.PbList<ClaimHandleRequest> createRepeated() => $pb.PbList<ClaimHandleRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ClaimHandleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ClaimHandleRequest>(create);
+  static ClaimHandleRequest? _defaultInstance;
+
+  /// Lowercase letters, digits, and underscores, 3–24 chars. Server
+  /// validates.
+  @$pb.TagNumber(1)
+  $core.String get handle => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set handle($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasHandle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHandle() => $_clearField(1);
+}
+
+class ClaimHandleResponse extends $pb.GeneratedMessage {
+  factory ClaimHandleResponse({
+    $core.String? handle,
+  }) {
+    final result = create();
+    if (handle != null) result.handle = handle;
+    return result;
+  }
+
+  ClaimHandleResponse._();
+
+  factory ClaimHandleResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ClaimHandleResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ClaimHandleResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'handle')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ClaimHandleResponse clone() => ClaimHandleResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ClaimHandleResponse copyWith(void Function(ClaimHandleResponse) updates) => super.copyWith((message) => updates(message as ClaimHandleResponse)) as ClaimHandleResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ClaimHandleResponse create() => ClaimHandleResponse._();
+  @$core.override
+  ClaimHandleResponse createEmptyInstance() => create();
+  static $pb.PbList<ClaimHandleResponse> createRepeated() => $pb.PbList<ClaimHandleResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ClaimHandleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ClaimHandleResponse>(create);
+  static ClaimHandleResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get handle => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set handle($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasHandle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHandle() => $_clearField(1);
+}
+
+class UpdatePublicProfileRequest extends $pb.GeneratedMessage {
+  factory UpdatePublicProfileRequest({
+    $core.String? tagline,
+    $core.String? bio,
+  }) {
+    final result = create();
+    if (tagline != null) result.tagline = tagline;
+    if (bio != null) result.bio = bio;
+    return result;
+  }
+
+  UpdatePublicProfileRequest._();
+
+  factory UpdatePublicProfileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdatePublicProfileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePublicProfileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'tagline')
+    ..aOS(2, _omitFieldNames ? '' : 'bio')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdatePublicProfileRequest clone() => UpdatePublicProfileRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdatePublicProfileRequest copyWith(void Function(UpdatePublicProfileRequest) updates) => super.copyWith((message) => updates(message as UpdatePublicProfileRequest)) as UpdatePublicProfileRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdatePublicProfileRequest create() => UpdatePublicProfileRequest._();
+  @$core.override
+  UpdatePublicProfileRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdatePublicProfileRequest> createRepeated() => $pb.PbList<UpdatePublicProfileRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdatePublicProfileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdatePublicProfileRequest>(create);
+  static UpdatePublicProfileRequest? _defaultInstance;
+
+  /// Either field may be empty to leave the existing value alone; pass
+  /// a single space to clear a field.
+  @$pb.TagNumber(1)
+  $core.String get tagline => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set tagline($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTagline() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTagline() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get bio => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set bio($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBio() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBio() => $_clearField(2);
+}
+
+class UpdatePublicProfileResponse extends $pb.GeneratedMessage {
+  factory UpdatePublicProfileResponse({
+    $core.String? tagline,
+    $core.String? bio,
+  }) {
+    final result = create();
+    if (tagline != null) result.tagline = tagline;
+    if (bio != null) result.bio = bio;
+    return result;
+  }
+
+  UpdatePublicProfileResponse._();
+
+  factory UpdatePublicProfileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdatePublicProfileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePublicProfileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'tagline')
+    ..aOS(2, _omitFieldNames ? '' : 'bio')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdatePublicProfileResponse clone() => UpdatePublicProfileResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdatePublicProfileResponse copyWith(void Function(UpdatePublicProfileResponse) updates) => super.copyWith((message) => updates(message as UpdatePublicProfileResponse)) as UpdatePublicProfileResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdatePublicProfileResponse create() => UpdatePublicProfileResponse._();
+  @$core.override
+  UpdatePublicProfileResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdatePublicProfileResponse> createRepeated() => $pb.PbList<UpdatePublicProfileResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdatePublicProfileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdatePublicProfileResponse>(create);
+  static UpdatePublicProfileResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get tagline => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set tagline($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTagline() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTagline() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get bio => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set bio($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBio() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBio() => $_clearField(2);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

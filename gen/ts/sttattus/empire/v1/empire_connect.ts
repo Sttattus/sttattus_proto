@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse } from "./empire_pb.js";
+import { ClaimHandleRequest, ClaimHandleResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse } from "./empire_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -72,6 +72,44 @@ export const EmpireService = {
       name: "GetTaxStatement",
       I: GetTaxStatementRequest,
       O: GetTaxStatementResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetPublicProfile returns the public Empire profile for a handle.
+     * No auth dependency — this is the surface the website's
+     * /empire/<handle> route will eventually mirror.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetPublicProfile
+     */
+    getPublicProfile: {
+      name: "GetPublicProfile",
+      I: GetPublicProfileRequest,
+      O: GetPublicProfileResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ClaimHandle sets the caller's public handle. The handle is unique
+     * (case-insensitive) and can only be claimed once per user — a second
+     * call returns AlreadyExists.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ClaimHandle
+     */
+    claimHandle: {
+      name: "ClaimHandle",
+      I: ClaimHandleRequest,
+      O: ClaimHandleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdatePublicProfile updates the caller's tagline + bio. Empty
+     * fields are left alone; a single space clears.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.UpdatePublicProfile
+     */
+    updatePublicProfile: {
+      name: "UpdatePublicProfile",
+      I: UpdatePublicProfileRequest,
+      O: UpdatePublicProfileResponse,
       kind: MethodKind.Unary,
     },
   }

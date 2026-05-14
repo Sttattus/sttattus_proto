@@ -34,6 +34,7 @@ const UserProfile$json = {
     {'1': 'vault_rank', '3': 14, '4': 1, '5': 1, '10': 'vaultRank'},
     {'1': 'apex_rank', '3': 15, '4': 1, '5': 1, '10': 'apexRank'},
     {'1': 'cultural_capital', '3': 16, '4': 1, '5': 1, '10': 'culturalCapital'},
+    {'1': 'handle', '3': 17, '4': 1, '5': 9, '10': 'handle'},
   ],
 };
 
@@ -47,7 +48,8 @@ final $typed_data.Uint8List userProfileDescriptor = $convert.base64Decode(
     '9iYWxSYW5rEisKEWdsb2JhbF9wZXJjZW50aWxlGAsgASgBUhBnbG9iYWxQZXJjZW50aWxlEhIK'
     'BHRpZXIYDCABKAlSBHRpZXISHQoKYXVyYV9jb2xvchgNIAEoCVIJYXVyYUNvbG9yEh0KCnZhdW'
     'x0X3JhbmsYDiABKAFSCXZhdWx0UmFuaxIbCglhcGV4X3JhbmsYDyABKAFSCGFwZXhSYW5rEikK'
-    'EGN1bHR1cmFsX2NhcGl0YWwYECABKAFSD2N1bHR1cmFsQ2FwaXRhbA==');
+    'EGN1bHR1cmFsX2NhcGl0YWwYECABKAFSD2N1bHR1cmFsQ2FwaXRhbBIWCgZoYW5kbGUYESABKA'
+    'lSBmhhbmRsZQ==');
 
 @$core.Deprecated('Use appAccessDescriptor instead')
 const AppAccess$json = {
