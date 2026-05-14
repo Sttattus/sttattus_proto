@@ -1441,6 +1441,424 @@ class UpdatePublicProfileResponse extends $pb.GeneratedMessage {
   void clearBio() => $_clearField(2);
 }
 
+class Lounge extends $pb.GeneratedMessage {
+  factory Lounge({
+    $core.String? id,
+    $core.String? name,
+    $core.String? city,
+    $core.String? address,
+    $core.String? description,
+    $core.String? minTier,
+    $core.String? heroUrl,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (city != null) result.city = city;
+    if (address != null) result.address = address;
+    if (description != null) result.description = description;
+    if (minTier != null) result.minTier = minTier;
+    if (heroUrl != null) result.heroUrl = heroUrl;
+    return result;
+  }
+
+  Lounge._();
+
+  factory Lounge.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Lounge.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Lounge', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'city')
+    ..aOS(4, _omitFieldNames ? '' : 'address')
+    ..aOS(5, _omitFieldNames ? '' : 'description')
+    ..aOS(6, _omitFieldNames ? '' : 'minTier')
+    ..aOS(7, _omitFieldNames ? '' : 'heroUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Lounge clone() => Lounge()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Lounge copyWith(void Function(Lounge) updates) => super.copyWith((message) => updates(message as Lounge)) as Lounge;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Lounge create() => Lounge._();
+  @$core.override
+  Lounge createEmptyInstance() => create();
+  static $pb.PbList<Lounge> createRepeated() => $pb.PbList<Lounge>();
+  @$core.pragma('dart2js:noInline')
+  static Lounge getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Lounge>(create);
+  static Lounge? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get city => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set city($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCity() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCity() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get address => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set address($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAddress() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAddress() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get description => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set description($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDescription() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDescription() => $_clearField(5);
+
+  /// bronze | silver | gold | platinum | sovereign.
+  @$pb.TagNumber(6)
+  $core.String get minTier => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set minTier($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMinTier() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMinTier() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get heroUrl => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set heroUrl($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasHeroUrl() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearHeroUrl() => $_clearField(7);
+}
+
+class ListLoungesRequest extends $pb.GeneratedMessage {
+  factory ListLoungesRequest() => create();
+
+  ListLoungesRequest._();
+
+  factory ListLoungesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLoungesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLoungesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLoungesRequest clone() => ListLoungesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLoungesRequest copyWith(void Function(ListLoungesRequest) updates) => super.copyWith((message) => updates(message as ListLoungesRequest)) as ListLoungesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLoungesRequest create() => ListLoungesRequest._();
+  @$core.override
+  ListLoungesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListLoungesRequest> createRepeated() => $pb.PbList<ListLoungesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListLoungesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLoungesRequest>(create);
+  static ListLoungesRequest? _defaultInstance;
+}
+
+class ListLoungesResponse extends $pb.GeneratedMessage {
+  factory ListLoungesResponse({
+    $core.Iterable<Lounge>? lounges,
+  }) {
+    final result = create();
+    if (lounges != null) result.lounges.addAll(lounges);
+    return result;
+  }
+
+  ListLoungesResponse._();
+
+  factory ListLoungesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLoungesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLoungesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..pc<Lounge>(1, _omitFieldNames ? '' : 'lounges', $pb.PbFieldType.PM, subBuilder: Lounge.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLoungesResponse clone() => ListLoungesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLoungesResponse copyWith(void Function(ListLoungesResponse) updates) => super.copyWith((message) => updates(message as ListLoungesResponse)) as ListLoungesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLoungesResponse create() => ListLoungesResponse._();
+  @$core.override
+  ListLoungesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListLoungesResponse> createRepeated() => $pb.PbList<ListLoungesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListLoungesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLoungesResponse>(create);
+  static ListLoungesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Lounge> get lounges => $_getList(0);
+}
+
+class LoungeEvent extends $pb.GeneratedMessage {
+  factory LoungeEvent({
+    $core.String? id,
+    $core.String? loungeId,
+    $core.String? loungeName,
+    $core.String? loungeCity,
+    $core.String? title,
+    $core.String? description,
+    $core.String? startsAt,
+    $core.String? endsAt,
+    $core.String? minTier,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (loungeId != null) result.loungeId = loungeId;
+    if (loungeName != null) result.loungeName = loungeName;
+    if (loungeCity != null) result.loungeCity = loungeCity;
+    if (title != null) result.title = title;
+    if (description != null) result.description = description;
+    if (startsAt != null) result.startsAt = startsAt;
+    if (endsAt != null) result.endsAt = endsAt;
+    if (minTier != null) result.minTier = minTier;
+    return result;
+  }
+
+  LoungeEvent._();
+
+  factory LoungeEvent.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory LoungeEvent.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoungeEvent', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'loungeId')
+    ..aOS(3, _omitFieldNames ? '' : 'loungeName')
+    ..aOS(4, _omitFieldNames ? '' : 'loungeCity')
+    ..aOS(5, _omitFieldNames ? '' : 'title')
+    ..aOS(6, _omitFieldNames ? '' : 'description')
+    ..aOS(7, _omitFieldNames ? '' : 'startsAt')
+    ..aOS(8, _omitFieldNames ? '' : 'endsAt')
+    ..aOS(9, _omitFieldNames ? '' : 'minTier')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LoungeEvent clone() => LoungeEvent()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LoungeEvent copyWith(void Function(LoungeEvent) updates) => super.copyWith((message) => updates(message as LoungeEvent)) as LoungeEvent;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LoungeEvent create() => LoungeEvent._();
+  @$core.override
+  LoungeEvent createEmptyInstance() => create();
+  static $pb.PbList<LoungeEvent> createRepeated() => $pb.PbList<LoungeEvent>();
+  @$core.pragma('dart2js:noInline')
+  static LoungeEvent getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoungeEvent>(create);
+  static LoungeEvent? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get loungeId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set loungeId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLoungeId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLoungeId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get loungeName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set loungeName($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLoungeName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLoungeName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get loungeCity => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set loungeCity($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLoungeCity() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLoungeCity() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get title => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set title($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTitle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get description => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set description($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDescription() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDescription() => $_clearField(6);
+
+  /// RFC-3339 UTC.
+  @$pb.TagNumber(7)
+  $core.String get startsAt => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set startsAt($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasStartsAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStartsAt() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get endsAt => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set endsAt($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEndsAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEndsAt() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get minTier => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set minTier($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMinTier() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMinTier() => $_clearField(9);
+}
+
+class ListUpcomingLoungeEventsRequest extends $pb.GeneratedMessage {
+  factory ListUpcomingLoungeEventsRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListUpcomingLoungeEventsRequest._();
+
+  factory ListUpcomingLoungeEventsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListUpcomingLoungeEventsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListUpcomingLoungeEventsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListUpcomingLoungeEventsRequest clone() => ListUpcomingLoungeEventsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListUpcomingLoungeEventsRequest copyWith(void Function(ListUpcomingLoungeEventsRequest) updates) => super.copyWith((message) => updates(message as ListUpcomingLoungeEventsRequest)) as ListUpcomingLoungeEventsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListUpcomingLoungeEventsRequest create() => ListUpcomingLoungeEventsRequest._();
+  @$core.override
+  ListUpcomingLoungeEventsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListUpcomingLoungeEventsRequest> createRepeated() => $pb.PbList<ListUpcomingLoungeEventsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListUpcomingLoungeEventsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListUpcomingLoungeEventsRequest>(create);
+  static ListUpcomingLoungeEventsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class ListUpcomingLoungeEventsResponse extends $pb.GeneratedMessage {
+  factory ListUpcomingLoungeEventsResponse({
+    $core.Iterable<LoungeEvent>? events,
+  }) {
+    final result = create();
+    if (events != null) result.events.addAll(events);
+    return result;
+  }
+
+  ListUpcomingLoungeEventsResponse._();
+
+  factory ListUpcomingLoungeEventsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListUpcomingLoungeEventsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListUpcomingLoungeEventsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'), createEmptyInstance: create)
+    ..pc<LoungeEvent>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: LoungeEvent.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListUpcomingLoungeEventsResponse clone() => ListUpcomingLoungeEventsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListUpcomingLoungeEventsResponse copyWith(void Function(ListUpcomingLoungeEventsResponse) updates) => super.copyWith((message) => updates(message as ListUpcomingLoungeEventsResponse)) as ListUpcomingLoungeEventsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListUpcomingLoungeEventsResponse create() => ListUpcomingLoungeEventsResponse._();
+  @$core.override
+  ListUpcomingLoungeEventsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListUpcomingLoungeEventsResponse> createRepeated() => $pb.PbList<ListUpcomingLoungeEventsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListUpcomingLoungeEventsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListUpcomingLoungeEventsResponse>(create);
+  static ListUpcomingLoungeEventsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LoungeEvent> get events => $_getList(0);
+}
+
 class EditorialDigest extends $pb.GeneratedMessage {
   factory EditorialDigest({
     $core.String? id,

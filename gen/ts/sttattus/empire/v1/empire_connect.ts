@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ClaimHandleRequest, ClaimHandleResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetLatestEditorialDigestRequest, GetLatestEditorialDigestResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListEditorialDigestsRequest, ListEditorialDigestsResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse } from "./empire_pb.js";
+import { ClaimHandleRequest, ClaimHandleResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetLatestEditorialDigestRequest, GetLatestEditorialDigestResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListEditorialDigestsRequest, ListEditorialDigestsResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListLoungesRequest, ListLoungesResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, ListUpcomingLoungeEventsRequest, ListUpcomingLoungeEventsResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse } from "./empire_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -210,6 +210,29 @@ export const EmpireService = {
       name: "ListEditorialDigests",
       I: ListEditorialDigestsRequest,
       O: ListEditorialDigestsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListLounges returns the active Sttattus Lounges directory.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ListLounges
+     */
+    listLounges: {
+      name: "ListLounges",
+      I: ListLoungesRequest,
+      O: ListLoungesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListUpcomingLoungeEvents returns near-future events across all
+     * active lounges, ordered by start time.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ListUpcomingLoungeEvents
+     */
+    listUpcomingLoungeEvents: {
+      name: "ListUpcomingLoungeEvents",
+      I: ListUpcomingLoungeEventsRequest,
+      O: ListUpcomingLoungeEventsResponse,
       kind: MethodKind.Unary,
     },
   }

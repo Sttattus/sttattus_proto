@@ -323,6 +323,99 @@ final $typed_data.Uint8List updatePublicProfileResponseDescriptor = $convert.bas
     'ChtVcGRhdGVQdWJsaWNQcm9maWxlUmVzcG9uc2USGAoHdGFnbGluZRgBIAEoCVIHdGFnbGluZR'
     'IQCgNiaW8YAiABKAlSA2Jpbw==');
 
+@$core.Deprecated('Use loungeDescriptor instead')
+const Lounge$json = {
+  '1': 'Lounge',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'city', '3': 3, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'address', '3': 4, '4': 1, '5': 9, '10': 'address'},
+    {'1': 'description', '3': 5, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'min_tier', '3': 6, '4': 1, '5': 9, '10': 'minTier'},
+    {'1': 'hero_url', '3': 7, '4': 1, '5': 9, '10': 'heroUrl'},
+  ],
+};
+
+/// Descriptor for `Lounge`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List loungeDescriptor = $convert.base64Decode(
+    'CgZMb3VuZ2USDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEY2l0eRgDIA'
+    'EoCVIEY2l0eRIYCgdhZGRyZXNzGAQgASgJUgdhZGRyZXNzEiAKC2Rlc2NyaXB0aW9uGAUgASgJ'
+    'UgtkZXNjcmlwdGlvbhIZCghtaW5fdGllchgGIAEoCVIHbWluVGllchIZCghoZXJvX3VybBgHIA'
+    'EoCVIHaGVyb1VybA==');
+
+@$core.Deprecated('Use listLoungesRequestDescriptor instead')
+const ListLoungesRequest$json = {
+  '1': 'ListLoungesRequest',
+};
+
+/// Descriptor for `ListLoungesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLoungesRequestDescriptor = $convert.base64Decode(
+    'ChJMaXN0TG91bmdlc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listLoungesResponseDescriptor instead')
+const ListLoungesResponse$json = {
+  '1': 'ListLoungesResponse',
+  '2': [
+    {'1': 'lounges', '3': 1, '4': 3, '5': 11, '6': '.sttattus.empire.v1.Lounge', '10': 'lounges'},
+  ],
+};
+
+/// Descriptor for `ListLoungesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLoungesResponseDescriptor = $convert.base64Decode(
+    'ChNMaXN0TG91bmdlc1Jlc3BvbnNlEjQKB2xvdW5nZXMYASADKAsyGi5zdHRhdHR1cy5lbXBpcm'
+    'UudjEuTG91bmdlUgdsb3VuZ2Vz');
+
+@$core.Deprecated('Use loungeEventDescriptor instead')
+const LoungeEvent$json = {
+  '1': 'LoungeEvent',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'lounge_id', '3': 2, '4': 1, '5': 9, '10': 'loungeId'},
+    {'1': 'lounge_name', '3': 3, '4': 1, '5': 9, '10': 'loungeName'},
+    {'1': 'lounge_city', '3': 4, '4': 1, '5': 9, '10': 'loungeCity'},
+    {'1': 'title', '3': 5, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'description', '3': 6, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'starts_at', '3': 7, '4': 1, '5': 9, '10': 'startsAt'},
+    {'1': 'ends_at', '3': 8, '4': 1, '5': 9, '10': 'endsAt'},
+    {'1': 'min_tier', '3': 9, '4': 1, '5': 9, '10': 'minTier'},
+  ],
+};
+
+/// Descriptor for `LoungeEvent`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List loungeEventDescriptor = $convert.base64Decode(
+    'CgtMb3VuZ2VFdmVudBIOCgJpZBgBIAEoCVICaWQSGwoJbG91bmdlX2lkGAIgASgJUghsb3VuZ2'
+    'VJZBIfCgtsb3VuZ2VfbmFtZRgDIAEoCVIKbG91bmdlTmFtZRIfCgtsb3VuZ2VfY2l0eRgEIAEo'
+    'CVIKbG91bmdlQ2l0eRIUCgV0aXRsZRgFIAEoCVIFdGl0bGUSIAoLZGVzY3JpcHRpb24YBiABKA'
+    'lSC2Rlc2NyaXB0aW9uEhsKCXN0YXJ0c19hdBgHIAEoCVIIc3RhcnRzQXQSFwoHZW5kc19hdBgI'
+    'IAEoCVIGZW5kc0F0EhkKCG1pbl90aWVyGAkgASgJUgdtaW5UaWVy');
+
+@$core.Deprecated('Use listUpcomingLoungeEventsRequestDescriptor instead')
+const ListUpcomingLoungeEventsRequest$json = {
+  '1': 'ListUpcomingLoungeEventsRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListUpcomingLoungeEventsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listUpcomingLoungeEventsRequestDescriptor = $convert.base64Decode(
+    'Ch9MaXN0VXBjb21pbmdMb3VuZ2VFdmVudHNSZXF1ZXN0EhQKBWxpbWl0GAEgASgFUgVsaW1pdA'
+    '==');
+
+@$core.Deprecated('Use listUpcomingLoungeEventsResponseDescriptor instead')
+const ListUpcomingLoungeEventsResponse$json = {
+  '1': 'ListUpcomingLoungeEventsResponse',
+  '2': [
+    {'1': 'events', '3': 1, '4': 3, '5': 11, '6': '.sttattus.empire.v1.LoungeEvent', '10': 'events'},
+  ],
+};
+
+/// Descriptor for `ListUpcomingLoungeEventsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listUpcomingLoungeEventsResponseDescriptor = $convert.base64Decode(
+    'CiBMaXN0VXBjb21pbmdMb3VuZ2VFdmVudHNSZXNwb25zZRI3CgZldmVudHMYASADKAsyHy5zdH'
+    'RhdHR1cy5lbXBpcmUudjEuTG91bmdlRXZlbnRSBmV2ZW50cw==');
+
 @$core.Deprecated('Use editorialDigestDescriptor instead')
 const EditorialDigest$json = {
   '1': 'EditorialDigest',

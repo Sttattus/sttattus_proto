@@ -136,6 +136,17 @@ class EmpireServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listEditorialDigests, request, options: options);
   }
 
+  /// ListLounges returns the active Sttattus Lounges directory.
+  $grpc.ResponseFuture<$0.ListLoungesResponse> listLounges($0.ListLoungesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listLounges, request, options: options);
+  }
+
+  /// ListUpcomingLoungeEvents returns near-future events across all
+  /// active lounges, ordered by start time.
+  $grpc.ResponseFuture<$0.ListUpcomingLoungeEventsResponse> listUpcomingLoungeEvents($0.ListUpcomingLoungeEventsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listUpcomingLoungeEvents, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getScoreBreakdown = $grpc.ClientMethod<$0.GetScoreBreakdownRequest, $0.GetScoreBreakdownResponse>(
@@ -202,6 +213,14 @@ class EmpireServiceClient extends $grpc.Client {
       '/sttattus.empire.v1.EmpireService/ListEditorialDigests',
       ($0.ListEditorialDigestsRequest value) => value.writeToBuffer(),
       $0.ListEditorialDigestsResponse.fromBuffer);
+  static final _$listLounges = $grpc.ClientMethod<$0.ListLoungesRequest, $0.ListLoungesResponse>(
+      '/sttattus.empire.v1.EmpireService/ListLounges',
+      ($0.ListLoungesRequest value) => value.writeToBuffer(),
+      $0.ListLoungesResponse.fromBuffer);
+  static final _$listUpcomingLoungeEvents = $grpc.ClientMethod<$0.ListUpcomingLoungeEventsRequest, $0.ListUpcomingLoungeEventsResponse>(
+      '/sttattus.empire.v1.EmpireService/ListUpcomingLoungeEvents',
+      ($0.ListUpcomingLoungeEventsRequest value) => value.writeToBuffer(),
+      $0.ListUpcomingLoungeEventsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.empire.v1.EmpireService')
@@ -321,6 +340,20 @@ abstract class EmpireServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListEditorialDigestsRequest.fromBuffer(value),
         ($0.ListEditorialDigestsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListLoungesRequest, $0.ListLoungesResponse>(
+        'ListLounges',
+        listLounges_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListLoungesRequest.fromBuffer(value),
+        ($0.ListLoungesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListUpcomingLoungeEventsRequest, $0.ListUpcomingLoungeEventsResponse>(
+        'ListUpcomingLoungeEvents',
+        listUpcomingLoungeEvents_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListUpcomingLoungeEventsRequest.fromBuffer(value),
+        ($0.ListUpcomingLoungeEventsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetScoreBreakdownResponse> getScoreBreakdown_Pre($grpc.ServiceCall $call, $async.Future<$0.GetScoreBreakdownRequest> $request) async {
@@ -418,5 +451,17 @@ abstract class EmpireServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListEditorialDigestsResponse> listEditorialDigests($grpc.ServiceCall call, $0.ListEditorialDigestsRequest request);
+
+  $async.Future<$0.ListLoungesResponse> listLounges_Pre($grpc.ServiceCall $call, $async.Future<$0.ListLoungesRequest> $request) async {
+    return listLounges($call, await $request);
+  }
+
+  $async.Future<$0.ListLoungesResponse> listLounges($grpc.ServiceCall call, $0.ListLoungesRequest request);
+
+  $async.Future<$0.ListUpcomingLoungeEventsResponse> listUpcomingLoungeEvents_Pre($grpc.ServiceCall $call, $async.Future<$0.ListUpcomingLoungeEventsRequest> $request) async {
+    return listUpcomingLoungeEvents($call, await $request);
+  }
+
+  $async.Future<$0.ListUpcomingLoungeEventsResponse> listUpcomingLoungeEvents($grpc.ServiceCall call, $0.ListUpcomingLoungeEventsRequest request);
 
 }

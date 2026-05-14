@@ -35,6 +35,8 @@ const (
 	EmpireService_GetLatestCloutDrop_FullMethodName       = "/sttattus.empire.v1.EmpireService/GetLatestCloutDrop"
 	EmpireService_GetLatestEditorialDigest_FullMethodName = "/sttattus.empire.v1.EmpireService/GetLatestEditorialDigest"
 	EmpireService_ListEditorialDigests_FullMethodName     = "/sttattus.empire.v1.EmpireService/ListEditorialDigests"
+	EmpireService_ListLounges_FullMethodName              = "/sttattus.empire.v1.EmpireService/ListLounges"
+	EmpireService_ListUpcomingLoungeEvents_FullMethodName = "/sttattus.empire.v1.EmpireService/ListUpcomingLoungeEvents"
 )
 
 // EmpireServiceClient is the client API for EmpireService service.
@@ -97,6 +99,11 @@ type EmpireServiceClient interface {
 	GetLatestEditorialDigest(ctx context.Context, in *GetLatestEditorialDigestRequest, opts ...grpc.CallOption) (*GetLatestEditorialDigestResponse, error)
 	// ListEditorialDigests returns the digest archive, newest first.
 	ListEditorialDigests(ctx context.Context, in *ListEditorialDigestsRequest, opts ...grpc.CallOption) (*ListEditorialDigestsResponse, error)
+	// ListLounges returns the active Sttattus Lounges directory.
+	ListLounges(ctx context.Context, in *ListLoungesRequest, opts ...grpc.CallOption) (*ListLoungesResponse, error)
+	// ListUpcomingLoungeEvents returns near-future events across all
+	// active lounges, ordered by start time.
+	ListUpcomingLoungeEvents(ctx context.Context, in *ListUpcomingLoungeEventsRequest, opts ...grpc.CallOption) (*ListUpcomingLoungeEventsResponse, error)
 }
 
 type empireServiceClient struct {
@@ -267,6 +274,26 @@ func (c *empireServiceClient) ListEditorialDigests(ctx context.Context, in *List
 	return out, nil
 }
 
+func (c *empireServiceClient) ListLounges(ctx context.Context, in *ListLoungesRequest, opts ...grpc.CallOption) (*ListLoungesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLoungesResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ListLounges_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ListUpcomingLoungeEvents(ctx context.Context, in *ListUpcomingLoungeEventsRequest, opts ...grpc.CallOption) (*ListUpcomingLoungeEventsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListUpcomingLoungeEventsResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ListUpcomingLoungeEvents_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmpireServiceServer is the server API for EmpireService service.
 // All implementations must embed UnimplementedEmpireServiceServer
 // for forward compatibility.
@@ -327,6 +354,11 @@ type EmpireServiceServer interface {
 	GetLatestEditorialDigest(context.Context, *GetLatestEditorialDigestRequest) (*GetLatestEditorialDigestResponse, error)
 	// ListEditorialDigests returns the digest archive, newest first.
 	ListEditorialDigests(context.Context, *ListEditorialDigestsRequest) (*ListEditorialDigestsResponse, error)
+	// ListLounges returns the active Sttattus Lounges directory.
+	ListLounges(context.Context, *ListLoungesRequest) (*ListLoungesResponse, error)
+	// ListUpcomingLoungeEvents returns near-future events across all
+	// active lounges, ordered by start time.
+	ListUpcomingLoungeEvents(context.Context, *ListUpcomingLoungeEventsRequest) (*ListUpcomingLoungeEventsResponse, error)
 	mustEmbedUnimplementedEmpireServiceServer()
 }
 
@@ -384,6 +416,12 @@ func (UnimplementedEmpireServiceServer) GetLatestEditorialDigest(context.Context
 }
 func (UnimplementedEmpireServiceServer) ListEditorialDigests(context.Context, *ListEditorialDigestsRequest) (*ListEditorialDigestsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListEditorialDigests not implemented")
+}
+func (UnimplementedEmpireServiceServer) ListLounges(context.Context, *ListLoungesRequest) (*ListLoungesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLounges not implemented")
+}
+func (UnimplementedEmpireServiceServer) ListUpcomingLoungeEvents(context.Context, *ListUpcomingLoungeEventsRequest) (*ListUpcomingLoungeEventsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListUpcomingLoungeEvents not implemented")
 }
 func (UnimplementedEmpireServiceServer) mustEmbedUnimplementedEmpireServiceServer() {}
 func (UnimplementedEmpireServiceServer) testEmbeddedByValue()                       {}
@@ -694,6 +732,42 @@ func _EmpireService_ListEditorialDigests_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmpireService_ListLounges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLoungesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ListLounges(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ListLounges_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ListLounges(ctx, req.(*ListLoungesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ListUpcomingLoungeEvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListUpcomingLoungeEventsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ListUpcomingLoungeEvents(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ListUpcomingLoungeEvents_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ListUpcomingLoungeEvents(ctx, req.(*ListUpcomingLoungeEventsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EmpireService_ServiceDesc is the grpc.ServiceDesc for EmpireService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -764,6 +838,14 @@ var EmpireService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListEditorialDigests",
 			Handler:    _EmpireService_ListEditorialDigests_Handler,
+		},
+		{
+			MethodName: "ListLounges",
+			Handler:    _EmpireService_ListLounges_Handler,
+		},
+		{
+			MethodName: "ListUpcomingLoungeEvents",
+			Handler:    _EmpireService_ListUpcomingLoungeEvents_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

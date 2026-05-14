@@ -190,6 +190,46 @@ message UpdatePublicProfileResponse {
   string bio = 2;
 }
 
+// === Lounges (P5.11) ===
+
+message Lounge {
+  string id = 1;
+  string name = 2;
+  string city = 3;
+  string address = 4;
+  string description = 5;
+  // bronze | silver | gold | platinum | sovereign.
+  string min_tier = 6;
+  string hero_url = 7;
+}
+
+message ListLoungesRequest {}
+
+message ListLoungesResponse {
+  repeated Lounge lounges = 1;
+}
+
+message LoungeEvent {
+  string id = 1;
+  string lounge_id = 2;
+  string lounge_name = 3;
+  string lounge_city = 4;
+  string title = 5;
+  string description = 6;
+  // RFC-3339 UTC.
+  string starts_at = 7;
+  string ends_at = 8;
+  string min_tier = 9;
+}
+
+message ListUpcomingLoungeEventsRequest {
+  int32 limit = 1;
+}
+
+message ListUpcomingLoungeEventsResponse {
+  repeated LoungeEvent events = 1;
+}
+
 // === Editorial digest (P5.10) ===
 
 message EditorialDigest {
@@ -397,4 +437,11 @@ service EmpireService {
 
   // ListEditorialDigests returns the digest archive, newest first.
   rpc ListEditorialDigests(ListEditorialDigestsRequest) returns (ListEditorialDigestsResponse);
+
+  // ListLounges returns the active Sttattus Lounges directory.
+  rpc ListLounges(ListLoungesRequest) returns (ListLoungesResponse);
+
+  // ListUpcomingLoungeEvents returns near-future events across all
+  // active lounges, ordered by start time.
+  rpc ListUpcomingLoungeEvents(ListUpcomingLoungeEventsRequest) returns (ListUpcomingLoungeEventsResponse);
 }
