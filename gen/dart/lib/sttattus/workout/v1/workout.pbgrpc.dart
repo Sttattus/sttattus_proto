@@ -56,6 +56,35 @@ class WorkoutServiceClient extends $grpc.Client {
     return $createUnaryCall(_$submitFeedback, request, options: options);
   }
 
+  /// F7.1 — movement library + session builder + live session.
+  $grpc.ResponseFuture<$0.ListExercisesResponse> listExercises($0.ListExercisesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listExercises, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateSessionResponse> createSession($0.CreateSessionRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createSession, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetSessionResponse> getSession($0.GetSessionRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getSession, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetActiveSessionResponse> getActiveSession($0.GetActiveSessionRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getActiveSession, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListSessionsResponse> listSessions($0.ListSessionsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listSessions, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateSessionStatusResponse> updateSessionStatus($0.UpdateSessionStatusRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$updateSessionStatus, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.LogSetResponse> logSet($0.LogSetRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$logSet, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listWorkouts = $grpc.ClientMethod<$0.ListWorkoutsRequest, $0.ListWorkoutsResponse>(
@@ -82,6 +111,34 @@ class WorkoutServiceClient extends $grpc.Client {
       '/sttattus.workout.v1.WorkoutService/SubmitFeedback',
       ($0.SubmitFeedbackRequest value) => value.writeToBuffer(),
       $0.SubmitFeedbackResponse.fromBuffer);
+  static final _$listExercises = $grpc.ClientMethod<$0.ListExercisesRequest, $0.ListExercisesResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListExercises',
+      ($0.ListExercisesRequest value) => value.writeToBuffer(),
+      $0.ListExercisesResponse.fromBuffer);
+  static final _$createSession = $grpc.ClientMethod<$0.CreateSessionRequest, $0.CreateSessionResponse>(
+      '/sttattus.workout.v1.WorkoutService/CreateSession',
+      ($0.CreateSessionRequest value) => value.writeToBuffer(),
+      $0.CreateSessionResponse.fromBuffer);
+  static final _$getSession = $grpc.ClientMethod<$0.GetSessionRequest, $0.GetSessionResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetSession',
+      ($0.GetSessionRequest value) => value.writeToBuffer(),
+      $0.GetSessionResponse.fromBuffer);
+  static final _$getActiveSession = $grpc.ClientMethod<$0.GetActiveSessionRequest, $0.GetActiveSessionResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetActiveSession',
+      ($0.GetActiveSessionRequest value) => value.writeToBuffer(),
+      $0.GetActiveSessionResponse.fromBuffer);
+  static final _$listSessions = $grpc.ClientMethod<$0.ListSessionsRequest, $0.ListSessionsResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListSessions',
+      ($0.ListSessionsRequest value) => value.writeToBuffer(),
+      $0.ListSessionsResponse.fromBuffer);
+  static final _$updateSessionStatus = $grpc.ClientMethod<$0.UpdateSessionStatusRequest, $0.UpdateSessionStatusResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpdateSessionStatus',
+      ($0.UpdateSessionStatusRequest value) => value.writeToBuffer(),
+      $0.UpdateSessionStatusResponse.fromBuffer);
+  static final _$logSet = $grpc.ClientMethod<$0.LogSetRequest, $0.LogSetResponse>(
+      '/sttattus.workout.v1.WorkoutService/LogSet',
+      ($0.LogSetRequest value) => value.writeToBuffer(),
+      $0.LogSetResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.workout.v1.WorkoutService')
@@ -131,6 +188,55 @@ abstract class WorkoutServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SubmitFeedbackRequest.fromBuffer(value),
         ($0.SubmitFeedbackResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListExercisesRequest, $0.ListExercisesResponse>(
+        'ListExercises',
+        listExercises_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListExercisesRequest.fromBuffer(value),
+        ($0.ListExercisesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateSessionRequest, $0.CreateSessionResponse>(
+        'CreateSession',
+        createSession_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateSessionRequest.fromBuffer(value),
+        ($0.CreateSessionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetSessionRequest, $0.GetSessionResponse>(
+        'GetSession',
+        getSession_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetSessionRequest.fromBuffer(value),
+        ($0.GetSessionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetActiveSessionRequest, $0.GetActiveSessionResponse>(
+        'GetActiveSession',
+        getActiveSession_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetActiveSessionRequest.fromBuffer(value),
+        ($0.GetActiveSessionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListSessionsRequest, $0.ListSessionsResponse>(
+        'ListSessions',
+        listSessions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListSessionsRequest.fromBuffer(value),
+        ($0.ListSessionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateSessionStatusRequest, $0.UpdateSessionStatusResponse>(
+        'UpdateSessionStatus',
+        updateSessionStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpdateSessionStatusRequest.fromBuffer(value),
+        ($0.UpdateSessionStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.LogSetRequest, $0.LogSetResponse>(
+        'LogSet',
+        logSet_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.LogSetRequest.fromBuffer(value),
+        ($0.LogSetResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListWorkoutsResponse> listWorkouts_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWorkoutsRequest> $request) async {
@@ -168,5 +274,47 @@ abstract class WorkoutServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.SubmitFeedbackResponse> submitFeedback($grpc.ServiceCall call, $0.SubmitFeedbackRequest request);
+
+  $async.Future<$0.ListExercisesResponse> listExercises_Pre($grpc.ServiceCall $call, $async.Future<$0.ListExercisesRequest> $request) async {
+    return listExercises($call, await $request);
+  }
+
+  $async.Future<$0.ListExercisesResponse> listExercises($grpc.ServiceCall call, $0.ListExercisesRequest request);
+
+  $async.Future<$0.CreateSessionResponse> createSession_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateSessionRequest> $request) async {
+    return createSession($call, await $request);
+  }
+
+  $async.Future<$0.CreateSessionResponse> createSession($grpc.ServiceCall call, $0.CreateSessionRequest request);
+
+  $async.Future<$0.GetSessionResponse> getSession_Pre($grpc.ServiceCall $call, $async.Future<$0.GetSessionRequest> $request) async {
+    return getSession($call, await $request);
+  }
+
+  $async.Future<$0.GetSessionResponse> getSession($grpc.ServiceCall call, $0.GetSessionRequest request);
+
+  $async.Future<$0.GetActiveSessionResponse> getActiveSession_Pre($grpc.ServiceCall $call, $async.Future<$0.GetActiveSessionRequest> $request) async {
+    return getActiveSession($call, await $request);
+  }
+
+  $async.Future<$0.GetActiveSessionResponse> getActiveSession($grpc.ServiceCall call, $0.GetActiveSessionRequest request);
+
+  $async.Future<$0.ListSessionsResponse> listSessions_Pre($grpc.ServiceCall $call, $async.Future<$0.ListSessionsRequest> $request) async {
+    return listSessions($call, await $request);
+  }
+
+  $async.Future<$0.ListSessionsResponse> listSessions($grpc.ServiceCall call, $0.ListSessionsRequest request);
+
+  $async.Future<$0.UpdateSessionStatusResponse> updateSessionStatus_Pre($grpc.ServiceCall $call, $async.Future<$0.UpdateSessionStatusRequest> $request) async {
+    return updateSessionStatus($call, await $request);
+  }
+
+  $async.Future<$0.UpdateSessionStatusResponse> updateSessionStatus($grpc.ServiceCall call, $0.UpdateSessionStatusRequest request);
+
+  $async.Future<$0.LogSetResponse> logSet_Pre($grpc.ServiceCall $call, $async.Future<$0.LogSetRequest> $request) async {
+    return logSet($call, await $request);
+  }
+
+  $async.Future<$0.LogSetResponse> logSet($grpc.ServiceCall call, $0.LogSetRequest request);
 
 }

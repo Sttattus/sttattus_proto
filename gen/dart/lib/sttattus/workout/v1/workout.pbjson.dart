@@ -296,3 +296,309 @@ const SubmitFeedbackResponse$json = {
 final $typed_data.Uint8List submitFeedbackResponseDescriptor = $convert.base64Decode(
     'ChZTdWJtaXRGZWVkYmFja1Jlc3BvbnNlEg4KAmlkGAEgASgJUgJpZA==');
 
+@$core.Deprecated('Use exerciseDescriptor instead')
+const Exercise$json = {
+  '1': 'Exercise',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'category', '3': 3, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'primary_muscle', '3': 4, '4': 1, '5': 9, '10': 'primaryMuscle'},
+    {'1': 'equipment', '3': 5, '4': 1, '5': 9, '10': 'equipment'},
+    {'1': 'video_url', '3': 6, '4': 1, '5': 9, '10': 'videoUrl'},
+    {'1': 'cue_one', '3': 7, '4': 1, '5': 9, '10': 'cueOne'},
+    {'1': 'cue_two', '3': 8, '4': 1, '5': 9, '10': 'cueTwo'},
+    {'1': 'cue_three', '3': 9, '4': 1, '5': 9, '10': 'cueThree'},
+  ],
+};
+
+/// Descriptor for `Exercise`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exerciseDescriptor = $convert.base64Decode(
+    'CghFeGVyY2lzZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIaCghjYXRlZ2'
+    '9yeRgDIAEoCVIIY2F0ZWdvcnkSJQoOcHJpbWFyeV9tdXNjbGUYBCABKAlSDXByaW1hcnlNdXNj'
+    'bGUSHAoJZXF1aXBtZW50GAUgASgJUgllcXVpcG1lbnQSGwoJdmlkZW9fdXJsGAYgASgJUgh2aW'
+    'Rlb1VybBIXCgdjdWVfb25lGAcgASgJUgZjdWVPbmUSFwoHY3VlX3R3bxgIIAEoCVIGY3VlVHdv'
+    'EhsKCWN1ZV90aHJlZRgJIAEoCVIIY3VlVGhyZWU=');
+
+@$core.Deprecated('Use sessionSetDescriptor instead')
+const SessionSet$json = {
+  '1': 'SessionSet',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'set_index', '3': 2, '4': 1, '5': 5, '10': 'setIndex'},
+    {'1': 'weight', '3': 3, '4': 1, '5': 1, '10': 'weight'},
+    {'1': 'reps', '3': 4, '4': 1, '5': 5, '10': 'reps'},
+    {'1': 'unit', '3': 5, '4': 1, '5': 9, '10': 'unit'},
+    {'1': 'rpe', '3': 6, '4': 1, '5': 1, '10': 'rpe'},
+    {'1': 'completed', '3': 7, '4': 1, '5': 8, '10': 'completed'},
+  ],
+};
+
+/// Descriptor for `SessionSet`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sessionSetDescriptor = $convert.base64Decode(
+    'CgpTZXNzaW9uU2V0Eg4KAmlkGAEgASgJUgJpZBIbCglzZXRfaW5kZXgYAiABKAVSCHNldEluZG'
+    'V4EhYKBndlaWdodBgDIAEoAVIGd2VpZ2h0EhIKBHJlcHMYBCABKAVSBHJlcHMSEgoEdW5pdBgF'
+    'IAEoCVIEdW5pdBIQCgNycGUYBiABKAFSA3JwZRIcCgljb21wbGV0ZWQYByABKAhSCWNvbXBsZX'
+    'RlZA==');
+
+@$core.Deprecated('Use sessionExerciseDescriptor instead')
+const SessionExercise$json = {
+  '1': 'SessionExercise',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'exercise_id', '3': 2, '4': 1, '5': 9, '10': 'exerciseId'},
+    {'1': 'order_index', '3': 3, '4': 1, '5': 5, '10': 'orderIndex'},
+    {'1': 'target_sets', '3': 4, '4': 1, '5': 5, '10': 'targetSets'},
+    {'1': 'rest_seconds', '3': 5, '4': 1, '5': 5, '10': 'restSeconds'},
+    {'1': 'exercise_name', '3': 6, '4': 1, '5': 9, '10': 'exerciseName'},
+    {'1': 'exercise_category', '3': 7, '4': 1, '5': 9, '10': 'exerciseCategory'},
+    {'1': 'primary_muscle', '3': 8, '4': 1, '5': 9, '10': 'primaryMuscle'},
+    {'1': 'equipment', '3': 9, '4': 1, '5': 9, '10': 'equipment'},
+    {'1': 'video_url', '3': 10, '4': 1, '5': 9, '10': 'videoUrl'},
+    {'1': 'cue_one', '3': 11, '4': 1, '5': 9, '10': 'cueOne'},
+    {'1': 'cue_two', '3': 12, '4': 1, '5': 9, '10': 'cueTwo'},
+    {'1': 'cue_three', '3': 13, '4': 1, '5': 9, '10': 'cueThree'},
+    {'1': 'sets', '3': 14, '4': 3, '5': 11, '6': '.sttattus.workout.v1.SessionSet', '10': 'sets'},
+  ],
+};
+
+/// Descriptor for `SessionExercise`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sessionExerciseDescriptor = $convert.base64Decode(
+    'Cg9TZXNzaW9uRXhlcmNpc2USDgoCaWQYASABKAlSAmlkEh8KC2V4ZXJjaXNlX2lkGAIgASgJUg'
+    'pleGVyY2lzZUlkEh8KC29yZGVyX2luZGV4GAMgASgFUgpvcmRlckluZGV4Eh8KC3RhcmdldF9z'
+    'ZXRzGAQgASgFUgp0YXJnZXRTZXRzEiEKDHJlc3Rfc2Vjb25kcxgFIAEoBVILcmVzdFNlY29uZH'
+    'MSIwoNZXhlcmNpc2VfbmFtZRgGIAEoCVIMZXhlcmNpc2VOYW1lEisKEWV4ZXJjaXNlX2NhdGVn'
+    'b3J5GAcgASgJUhBleGVyY2lzZUNhdGVnb3J5EiUKDnByaW1hcnlfbXVzY2xlGAggASgJUg1wcm'
+    'ltYXJ5TXVzY2xlEhwKCWVxdWlwbWVudBgJIAEoCVIJZXF1aXBtZW50EhsKCXZpZGVvX3VybBgK'
+    'IAEoCVIIdmlkZW9VcmwSFwoHY3VlX29uZRgLIAEoCVIGY3VlT25lEhcKB2N1ZV90d28YDCABKA'
+    'lSBmN1ZVR3bxIbCgljdWVfdGhyZWUYDSABKAlSCGN1ZVRocmVlEjMKBHNldHMYDiADKAsyHy5z'
+    'dHRhdHR1cy53b3Jrb3V0LnYxLlNlc3Npb25TZXRSBHNldHM=');
+
+@$core.Deprecated('Use forgeSessionDescriptor instead')
+const ForgeSession$json = {
+  '1': 'ForgeSession',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'notes', '3': 4, '4': 1, '5': 9, '10': 'notes'},
+    {'1': 'started_at', '3': 5, '4': 1, '5': 3, '10': 'startedAt'},
+    {'1': 'completed_at', '3': 6, '4': 1, '5': 3, '10': 'completedAt'},
+    {'1': 'created_at', '3': 7, '4': 1, '5': 3, '10': 'createdAt'},
+    {'1': 'exercises', '3': 8, '4': 3, '5': 11, '6': '.sttattus.workout.v1.SessionExercise', '10': 'exercises'},
+  ],
+};
+
+/// Descriptor for `ForgeSession`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List forgeSessionDescriptor = $convert.base64Decode(
+    'CgxGb3JnZVNlc3Npb24SDgoCaWQYASABKAlSAmlkEhQKBXRpdGxlGAIgASgJUgV0aXRsZRIWCg'
+    'ZzdGF0dXMYAyABKAlSBnN0YXR1cxIUCgVub3RlcxgEIAEoCVIFbm90ZXMSHQoKc3RhcnRlZF9h'
+    'dBgFIAEoA1IJc3RhcnRlZEF0EiEKDGNvbXBsZXRlZF9hdBgGIAEoA1ILY29tcGxldGVkQXQSHQ'
+    'oKY3JlYXRlZF9hdBgHIAEoA1IJY3JlYXRlZEF0EkIKCWV4ZXJjaXNlcxgIIAMoCzIkLnN0dGF0'
+    'dHVzLndvcmtvdXQudjEuU2Vzc2lvbkV4ZXJjaXNlUglleGVyY2lzZXM=');
+
+@$core.Deprecated('Use plannedExerciseDescriptor instead')
+const PlannedExercise$json = {
+  '1': 'PlannedExercise',
+  '2': [
+    {'1': 'exercise_id', '3': 1, '4': 1, '5': 9, '10': 'exerciseId'},
+    {'1': 'target_sets', '3': 2, '4': 1, '5': 5, '10': 'targetSets'},
+    {'1': 'rest_seconds', '3': 3, '4': 1, '5': 5, '10': 'restSeconds'},
+  ],
+};
+
+/// Descriptor for `PlannedExercise`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List plannedExerciseDescriptor = $convert.base64Decode(
+    'Cg9QbGFubmVkRXhlcmNpc2USHwoLZXhlcmNpc2VfaWQYASABKAlSCmV4ZXJjaXNlSWQSHwoLdG'
+    'FyZ2V0X3NldHMYAiABKAVSCnRhcmdldFNldHMSIQoMcmVzdF9zZWNvbmRzGAMgASgFUgtyZXN0'
+    'U2Vjb25kcw==');
+
+@$core.Deprecated('Use listExercisesRequestDescriptor instead')
+const ListExercisesRequest$json = {
+  '1': 'ListExercisesRequest',
+  '2': [
+    {'1': 'page', '3': 1, '4': 1, '5': 11, '6': '.sttattus.common.v1.PageRequest', '10': 'page'},
+  ],
+};
+
+/// Descriptor for `ListExercisesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listExercisesRequestDescriptor = $convert.base64Decode(
+    'ChRMaXN0RXhlcmNpc2VzUmVxdWVzdBIzCgRwYWdlGAEgASgLMh8uc3R0YXR0dXMuY29tbW9uLn'
+    'YxLlBhZ2VSZXF1ZXN0UgRwYWdl');
+
+@$core.Deprecated('Use listExercisesResponseDescriptor instead')
+const ListExercisesResponse$json = {
+  '1': 'ListExercisesResponse',
+  '2': [
+    {'1': 'exercises', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.Exercise', '10': 'exercises'},
+  ],
+};
+
+/// Descriptor for `ListExercisesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listExercisesResponseDescriptor = $convert.base64Decode(
+    'ChVMaXN0RXhlcmNpc2VzUmVzcG9uc2USOwoJZXhlcmNpc2VzGAEgAygLMh0uc3R0YXR0dXMud2'
+    '9ya291dC52MS5FeGVyY2lzZVIJZXhlcmNpc2Vz');
+
+@$core.Deprecated('Use createSessionRequestDescriptor instead')
+const CreateSessionRequest$json = {
+  '1': 'CreateSessionRequest',
+  '2': [
+    {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'notes', '3': 2, '4': 1, '5': 9, '10': 'notes'},
+    {'1': 'exercises', '3': 3, '4': 3, '5': 11, '6': '.sttattus.workout.v1.PlannedExercise', '10': 'exercises'},
+  ],
+};
+
+/// Descriptor for `CreateSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSessionRequestDescriptor = $convert.base64Decode(
+    'ChRDcmVhdGVTZXNzaW9uUmVxdWVzdBIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSFAoFbm90ZXMYAi'
+    'ABKAlSBW5vdGVzEkIKCWV4ZXJjaXNlcxgDIAMoCzIkLnN0dGF0dHVzLndvcmtvdXQudjEuUGxh'
+    'bm5lZEV4ZXJjaXNlUglleGVyY2lzZXM=');
+
+@$core.Deprecated('Use createSessionResponseDescriptor instead')
+const CreateSessionResponse$json = {
+  '1': 'CreateSessionResponse',
+  '2': [
+    {'1': 'session', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.ForgeSession', '10': 'session'},
+  ],
+};
+
+/// Descriptor for `CreateSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSessionResponseDescriptor = $convert.base64Decode(
+    'ChVDcmVhdGVTZXNzaW9uUmVzcG9uc2USOwoHc2Vzc2lvbhgBIAEoCzIhLnN0dGF0dHVzLndvcm'
+    'tvdXQudjEuRm9yZ2VTZXNzaW9uUgdzZXNzaW9u');
+
+@$core.Deprecated('Use getSessionRequestDescriptor instead')
+const GetSessionRequest$json = {
+  '1': 'GetSessionRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSessionRequestDescriptor = $convert.base64Decode(
+    'ChFHZXRTZXNzaW9uUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use getSessionResponseDescriptor instead')
+const GetSessionResponse$json = {
+  '1': 'GetSessionResponse',
+  '2': [
+    {'1': 'session', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.ForgeSession', '10': 'session'},
+  ],
+};
+
+/// Descriptor for `GetSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSessionResponseDescriptor = $convert.base64Decode(
+    'ChJHZXRTZXNzaW9uUmVzcG9uc2USOwoHc2Vzc2lvbhgBIAEoCzIhLnN0dGF0dHVzLndvcmtvdX'
+    'QudjEuRm9yZ2VTZXNzaW9uUgdzZXNzaW9u');
+
+@$core.Deprecated('Use getActiveSessionRequestDescriptor instead')
+const GetActiveSessionRequest$json = {
+  '1': 'GetActiveSessionRequest',
+};
+
+/// Descriptor for `GetActiveSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getActiveSessionRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRBY3RpdmVTZXNzaW9uUmVxdWVzdA==');
+
+@$core.Deprecated('Use getActiveSessionResponseDescriptor instead')
+const GetActiveSessionResponse$json = {
+  '1': 'GetActiveSessionResponse',
+  '2': [
+    {'1': 'session', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.ForgeSession', '10': 'session'},
+  ],
+};
+
+/// Descriptor for `GetActiveSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getActiveSessionResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRBY3RpdmVTZXNzaW9uUmVzcG9uc2USOwoHc2Vzc2lvbhgBIAEoCzIhLnN0dGF0dHVzLn'
+    'dvcmtvdXQudjEuRm9yZ2VTZXNzaW9uUgdzZXNzaW9u');
+
+@$core.Deprecated('Use listSessionsRequestDescriptor instead')
+const ListSessionsRequest$json = {
+  '1': 'ListSessionsRequest',
+  '2': [
+    {'1': 'page', '3': 1, '4': 1, '5': 11, '6': '.sttattus.common.v1.PageRequest', '10': 'page'},
+  ],
+};
+
+/// Descriptor for `ListSessionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSessionsRequestDescriptor = $convert.base64Decode(
+    'ChNMaXN0U2Vzc2lvbnNSZXF1ZXN0EjMKBHBhZ2UYASABKAsyHy5zdHRhdHR1cy5jb21tb24udj'
+    'EuUGFnZVJlcXVlc3RSBHBhZ2U=');
+
+@$core.Deprecated('Use listSessionsResponseDescriptor instead')
+const ListSessionsResponse$json = {
+  '1': 'ListSessionsResponse',
+  '2': [
+    {'1': 'sessions', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.ForgeSession', '10': 'sessions'},
+  ],
+};
+
+/// Descriptor for `ListSessionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSessionsResponseDescriptor = $convert.base64Decode(
+    'ChRMaXN0U2Vzc2lvbnNSZXNwb25zZRI9CghzZXNzaW9ucxgBIAMoCzIhLnN0dGF0dHVzLndvcm'
+    'tvdXQudjEuRm9yZ2VTZXNzaW9uUghzZXNzaW9ucw==');
+
+@$core.Deprecated('Use updateSessionStatusRequestDescriptor instead')
+const UpdateSessionStatusRequest$json = {
+  '1': 'UpdateSessionStatusRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `UpdateSessionStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateSessionStatusRequestDescriptor = $convert.base64Decode(
+    'ChpVcGRhdGVTZXNzaW9uU3RhdHVzUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSFgoGc3RhdHVzGA'
+    'IgASgJUgZzdGF0dXM=');
+
+@$core.Deprecated('Use updateSessionStatusResponseDescriptor instead')
+const UpdateSessionStatusResponse$json = {
+  '1': 'UpdateSessionStatusResponse',
+  '2': [
+    {'1': 'session', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.ForgeSession', '10': 'session'},
+  ],
+};
+
+/// Descriptor for `UpdateSessionStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateSessionStatusResponseDescriptor = $convert.base64Decode(
+    'ChtVcGRhdGVTZXNzaW9uU3RhdHVzUmVzcG9uc2USOwoHc2Vzc2lvbhgBIAEoCzIhLnN0dGF0dH'
+    'VzLndvcmtvdXQudjEuRm9yZ2VTZXNzaW9uUgdzZXNzaW9u');
+
+@$core.Deprecated('Use logSetRequestDescriptor instead')
+const LogSetRequest$json = {
+  '1': 'LogSetRequest',
+  '2': [
+    {'1': 'session_exercise_id', '3': 1, '4': 1, '5': 9, '10': 'sessionExerciseId'},
+    {'1': 'set_index', '3': 2, '4': 1, '5': 5, '10': 'setIndex'},
+    {'1': 'weight', '3': 3, '4': 1, '5': 1, '10': 'weight'},
+    {'1': 'reps', '3': 4, '4': 1, '5': 5, '10': 'reps'},
+    {'1': 'unit', '3': 5, '4': 1, '5': 9, '10': 'unit'},
+    {'1': 'rpe', '3': 6, '4': 1, '5': 1, '10': 'rpe'},
+    {'1': 'completed', '3': 7, '4': 1, '5': 8, '10': 'completed'},
+  ],
+};
+
+/// Descriptor for `LogSetRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List logSetRequestDescriptor = $convert.base64Decode(
+    'Cg1Mb2dTZXRSZXF1ZXN0Ei4KE3Nlc3Npb25fZXhlcmNpc2VfaWQYASABKAlSEXNlc3Npb25FeG'
+    'VyY2lzZUlkEhsKCXNldF9pbmRleBgCIAEoBVIIc2V0SW5kZXgSFgoGd2VpZ2h0GAMgASgBUgZ3'
+    'ZWlnaHQSEgoEcmVwcxgEIAEoBVIEcmVwcxISCgR1bml0GAUgASgJUgR1bml0EhAKA3JwZRgGIA'
+    'EoAVIDcnBlEhwKCWNvbXBsZXRlZBgHIAEoCFIJY29tcGxldGVk');
+
+@$core.Deprecated('Use logSetResponseDescriptor instead')
+const LogSetResponse$json = {
+  '1': 'LogSetResponse',
+  '2': [
+    {'1': 'set', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.SessionSet', '10': 'set'},
+  ],
+};
+
+/// Descriptor for `LogSetResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List logSetResponseDescriptor = $convert.base64Decode(
+    'Cg5Mb2dTZXRSZXNwb25zZRIxCgNzZXQYASABKAsyHy5zdHRhdHR1cy53b3Jrb3V0LnYxLlNlc3'
+    'Npb25TZXRSA3NldA==');
+

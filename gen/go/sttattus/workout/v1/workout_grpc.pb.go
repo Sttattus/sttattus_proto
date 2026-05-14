@@ -19,12 +19,19 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	WorkoutService_ListWorkouts_FullMethodName   = "/sttattus.workout.v1.WorkoutService/ListWorkouts"
-	WorkoutService_GetWorkout_FullMethodName     = "/sttattus.workout.v1.WorkoutService/GetWorkout"
-	WorkoutService_LogDayWorkout_FullMethodName  = "/sttattus.workout.v1.WorkoutService/LogDayWorkout"
-	WorkoutService_ListHistory_FullMethodName    = "/sttattus.workout.v1.WorkoutService/ListHistory"
-	WorkoutService_GetForgeStats_FullMethodName  = "/sttattus.workout.v1.WorkoutService/GetForgeStats"
-	WorkoutService_SubmitFeedback_FullMethodName = "/sttattus.workout.v1.WorkoutService/SubmitFeedback"
+	WorkoutService_ListWorkouts_FullMethodName        = "/sttattus.workout.v1.WorkoutService/ListWorkouts"
+	WorkoutService_GetWorkout_FullMethodName          = "/sttattus.workout.v1.WorkoutService/GetWorkout"
+	WorkoutService_LogDayWorkout_FullMethodName       = "/sttattus.workout.v1.WorkoutService/LogDayWorkout"
+	WorkoutService_ListHistory_FullMethodName         = "/sttattus.workout.v1.WorkoutService/ListHistory"
+	WorkoutService_GetForgeStats_FullMethodName       = "/sttattus.workout.v1.WorkoutService/GetForgeStats"
+	WorkoutService_SubmitFeedback_FullMethodName      = "/sttattus.workout.v1.WorkoutService/SubmitFeedback"
+	WorkoutService_ListExercises_FullMethodName       = "/sttattus.workout.v1.WorkoutService/ListExercises"
+	WorkoutService_CreateSession_FullMethodName       = "/sttattus.workout.v1.WorkoutService/CreateSession"
+	WorkoutService_GetSession_FullMethodName          = "/sttattus.workout.v1.WorkoutService/GetSession"
+	WorkoutService_GetActiveSession_FullMethodName    = "/sttattus.workout.v1.WorkoutService/GetActiveSession"
+	WorkoutService_ListSessions_FullMethodName        = "/sttattus.workout.v1.WorkoutService/ListSessions"
+	WorkoutService_UpdateSessionStatus_FullMethodName = "/sttattus.workout.v1.WorkoutService/UpdateSessionStatus"
+	WorkoutService_LogSet_FullMethodName              = "/sttattus.workout.v1.WorkoutService/LogSet"
 )
 
 // WorkoutServiceClient is the client API for WorkoutService service.
@@ -37,6 +44,14 @@ type WorkoutServiceClient interface {
 	ListHistory(ctx context.Context, in *ListHistoryRequest, opts ...grpc.CallOption) (*ListHistoryResponse, error)
 	GetForgeStats(ctx context.Context, in *GetForgeStatsRequest, opts ...grpc.CallOption) (*GetForgeStatsResponse, error)
 	SubmitFeedback(ctx context.Context, in *SubmitFeedbackRequest, opts ...grpc.CallOption) (*SubmitFeedbackResponse, error)
+	// F7.1 — movement library + session builder + live session.
+	ListExercises(ctx context.Context, in *ListExercisesRequest, opts ...grpc.CallOption) (*ListExercisesResponse, error)
+	CreateSession(ctx context.Context, in *CreateSessionRequest, opts ...grpc.CallOption) (*CreateSessionResponse, error)
+	GetSession(ctx context.Context, in *GetSessionRequest, opts ...grpc.CallOption) (*GetSessionResponse, error)
+	GetActiveSession(ctx context.Context, in *GetActiveSessionRequest, opts ...grpc.CallOption) (*GetActiveSessionResponse, error)
+	ListSessions(ctx context.Context, in *ListSessionsRequest, opts ...grpc.CallOption) (*ListSessionsResponse, error)
+	UpdateSessionStatus(ctx context.Context, in *UpdateSessionStatusRequest, opts ...grpc.CallOption) (*UpdateSessionStatusResponse, error)
+	LogSet(ctx context.Context, in *LogSetRequest, opts ...grpc.CallOption) (*LogSetResponse, error)
 }
 
 type workoutServiceClient struct {
@@ -107,6 +122,76 @@ func (c *workoutServiceClient) SubmitFeedback(ctx context.Context, in *SubmitFee
 	return out, nil
 }
 
+func (c *workoutServiceClient) ListExercises(ctx context.Context, in *ListExercisesRequest, opts ...grpc.CallOption) (*ListExercisesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListExercisesResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListExercises_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) CreateSession(ctx context.Context, in *CreateSessionRequest, opts ...grpc.CallOption) (*CreateSessionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateSessionResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_CreateSession_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetSession(ctx context.Context, in *GetSessionRequest, opts ...grpc.CallOption) (*GetSessionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSessionResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetSession_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetActiveSession(ctx context.Context, in *GetActiveSessionRequest, opts ...grpc.CallOption) (*GetActiveSessionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetActiveSessionResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetActiveSession_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ListSessions(ctx context.Context, in *ListSessionsRequest, opts ...grpc.CallOption) (*ListSessionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListSessionsResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListSessions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpdateSessionStatus(ctx context.Context, in *UpdateSessionStatusRequest, opts ...grpc.CallOption) (*UpdateSessionStatusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateSessionStatusResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpdateSessionStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) LogSet(ctx context.Context, in *LogSetRequest, opts ...grpc.CallOption) (*LogSetResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LogSetResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_LogSet_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WorkoutServiceServer is the server API for WorkoutService service.
 // All implementations must embed UnimplementedWorkoutServiceServer
 // for forward compatibility.
@@ -117,6 +202,14 @@ type WorkoutServiceServer interface {
 	ListHistory(context.Context, *ListHistoryRequest) (*ListHistoryResponse, error)
 	GetForgeStats(context.Context, *GetForgeStatsRequest) (*GetForgeStatsResponse, error)
 	SubmitFeedback(context.Context, *SubmitFeedbackRequest) (*SubmitFeedbackResponse, error)
+	// F7.1 — movement library + session builder + live session.
+	ListExercises(context.Context, *ListExercisesRequest) (*ListExercisesResponse, error)
+	CreateSession(context.Context, *CreateSessionRequest) (*CreateSessionResponse, error)
+	GetSession(context.Context, *GetSessionRequest) (*GetSessionResponse, error)
+	GetActiveSession(context.Context, *GetActiveSessionRequest) (*GetActiveSessionResponse, error)
+	ListSessions(context.Context, *ListSessionsRequest) (*ListSessionsResponse, error)
+	UpdateSessionStatus(context.Context, *UpdateSessionStatusRequest) (*UpdateSessionStatusResponse, error)
+	LogSet(context.Context, *LogSetRequest) (*LogSetResponse, error)
 	mustEmbedUnimplementedWorkoutServiceServer()
 }
 
@@ -144,6 +237,27 @@ func (UnimplementedWorkoutServiceServer) GetForgeStats(context.Context, *GetForg
 }
 func (UnimplementedWorkoutServiceServer) SubmitFeedback(context.Context, *SubmitFeedbackRequest) (*SubmitFeedbackResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SubmitFeedback not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListExercises(context.Context, *ListExercisesRequest) (*ListExercisesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListExercises not implemented")
+}
+func (UnimplementedWorkoutServiceServer) CreateSession(context.Context, *CreateSessionRequest) (*CreateSessionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateSession not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetSession(context.Context, *GetSessionRequest) (*GetSessionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSession not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetActiveSession(context.Context, *GetActiveSessionRequest) (*GetActiveSessionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetActiveSession not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListSessions(context.Context, *ListSessionsRequest) (*ListSessionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListSessions not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpdateSessionStatus(context.Context, *UpdateSessionStatusRequest) (*UpdateSessionStatusResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateSessionStatus not implemented")
+}
+func (UnimplementedWorkoutServiceServer) LogSet(context.Context, *LogSetRequest) (*LogSetResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LogSet not implemented")
 }
 func (UnimplementedWorkoutServiceServer) mustEmbedUnimplementedWorkoutServiceServer() {}
 func (UnimplementedWorkoutServiceServer) testEmbeddedByValue()                        {}
@@ -274,6 +388,132 @@ func _WorkoutService_SubmitFeedback_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WorkoutService_ListExercises_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListExercisesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListExercises(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListExercises_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListExercises(ctx, req.(*ListExercisesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_CreateSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSessionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).CreateSession(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_CreateSession_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).CreateSession(ctx, req.(*CreateSessionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSessionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetSession(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetSession_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetSession(ctx, req.(*GetSessionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetActiveSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetActiveSessionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetActiveSession(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetActiveSession_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetActiveSession(ctx, req.(*GetActiveSessionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ListSessions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSessionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListSessions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListSessions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListSessions(ctx, req.(*ListSessionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpdateSessionStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateSessionStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpdateSessionStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpdateSessionStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpdateSessionStatus(ctx, req.(*UpdateSessionStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_LogSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LogSetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).LogSet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_LogSet_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).LogSet(ctx, req.(*LogSetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // WorkoutService_ServiceDesc is the grpc.ServiceDesc for WorkoutService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -304,6 +544,34 @@ var WorkoutService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SubmitFeedback",
 			Handler:    _WorkoutService_SubmitFeedback_Handler,
+		},
+		{
+			MethodName: "ListExercises",
+			Handler:    _WorkoutService_ListExercises_Handler,
+		},
+		{
+			MethodName: "CreateSession",
+			Handler:    _WorkoutService_CreateSession_Handler,
+		},
+		{
+			MethodName: "GetSession",
+			Handler:    _WorkoutService_GetSession_Handler,
+		},
+		{
+			MethodName: "GetActiveSession",
+			Handler:    _WorkoutService_GetActiveSession_Handler,
+		},
+		{
+			MethodName: "ListSessions",
+			Handler:    _WorkoutService_ListSessions_Handler,
+		},
+		{
+			MethodName: "UpdateSessionStatus",
+			Handler:    _WorkoutService_UpdateSessionStatus_Handler,
+		},
+		{
+			MethodName: "LogSet",
+			Handler:    _WorkoutService_LogSet_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

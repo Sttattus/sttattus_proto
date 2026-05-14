@@ -114,6 +114,136 @@ message SubmitFeedbackResponse {
   string id = 1;
 }
 
+// ===== Forge sessions (F7.1) =====
+// The session model the Phase-1 rebuild needs: a movement library, a
+// session builder, and a live session view with rest timer, plate
+// calculator (client-side) and RPE-per-set.
+
+// Exercise is one entry in the movement library.
+message Exercise {
+  string id = 1;
+  string name = 2;
+  // compound | accessory | conditioning | mobility.
+  string category = 3;
+  string primary_muscle = 4;
+  // barbell | dumbbell | machine | bodyweight | cable | kettlebell.
+  string equipment = 5;
+  string video_url = 6;
+  string cue_one = 7;
+  string cue_two = 8;
+  string cue_three = 9;
+}
+
+// SessionSet is one logged set inside a session exercise. rpe is 0 when
+// not yet rated (1-10 once rated); completed flips when the lifter
+// marks the set done in the live view.
+message SessionSet {
+  string id = 1;
+  int32 set_index = 2;
+  double weight = 3;
+  int32 reps = 4;
+  string unit = 5; // "kg" | "lb"
+  double rpe = 6;
+  bool completed = 7;
+}
+
+// SessionExercise is an exercise slotted into a session, with its
+// library metadata joined in and its logged sets attached.
+message SessionExercise {
+  string id = 1;
+  string exercise_id = 2;
+  int32 order_index = 3;
+  int32 target_sets = 4;
+  int32 rest_seconds = 5;
+  string exercise_name = 6;
+  string exercise_category = 7;
+  string primary_muscle = 8;
+  string equipment = 9;
+  string video_url = 10;
+  string cue_one = 11;
+  string cue_two = 12;
+  string cue_three = 13;
+  repeated SessionSet sets = 14;
+}
+
+// ForgeSession is a built / live / closed training session.
+message ForgeSession {
+  string id = 1;
+  string title = 2;
+  // planned | active | completed | abandoned.
+  string status = 3;
+  string notes = 4;
+  int64 started_at = 5;   // unix seconds, 0 if not started
+  int64 completed_at = 6; // unix seconds, 0 if not completed
+  int64 created_at = 7;
+  repeated SessionExercise exercises = 8;
+}
+
+// PlannedExercise is one row of the session builder's output.
+message PlannedExercise {
+  string exercise_id = 1;
+  int32 target_sets = 2;
+  int32 rest_seconds = 3;
+}
+
+message ListExercisesRequest {
+  sttattus.common.v1.PageRequest page = 1;
+}
+message ListExercisesResponse {
+  repeated Exercise exercises = 1;
+}
+
+message CreateSessionRequest {
+  string title = 1;
+  string notes = 2;
+  repeated PlannedExercise exercises = 3;
+}
+message CreateSessionResponse {
+  ForgeSession session = 1;
+}
+
+message GetSessionRequest {
+  string id = 1;
+}
+message GetSessionResponse {
+  ForgeSession session = 1;
+}
+
+message GetActiveSessionRequest {}
+message GetActiveSessionResponse {
+  // session.id is empty when the caller has no active session.
+  ForgeSession session = 1;
+}
+
+message ListSessionsRequest {
+  sttattus.common.v1.PageRequest page = 1;
+}
+message ListSessionsResponse {
+  // Summaries — exercises are not hydrated; call GetSession for detail.
+  repeated ForgeSession sessions = 1;
+}
+
+message UpdateSessionStatusRequest {
+  string id = 1;
+  string status = 2; // planned | active | completed | abandoned
+}
+message UpdateSessionStatusResponse {
+  ForgeSession session = 1;
+}
+
+message LogSetRequest {
+  string session_exercise_id = 1;
+  int32 set_index = 2;
+  double weight = 3;
+  int32 reps = 4;
+  string unit = 5;
+  double rpe = 6;
+  bool completed = 7;
+}
+message LogSetResponse {
+  SessionSet set = 1;
+}
+
 service WorkoutService {
   rpc ListWorkouts(ListWorkoutsRequest) returns (ListWorkoutsResponse);
   rpc GetWorkout(GetWorkoutRequest) returns (GetWorkoutResponse);
@@ -121,4 +251,13 @@ service WorkoutService {
   rpc ListHistory(ListHistoryRequest) returns (ListHistoryResponse);
   rpc GetForgeStats(GetForgeStatsRequest) returns (GetForgeStatsResponse);
   rpc SubmitFeedback(SubmitFeedbackRequest) returns (SubmitFeedbackResponse);
+
+  // F7.1 — movement library + session builder + live session.
+  rpc ListExercises(ListExercisesRequest) returns (ListExercisesResponse);
+  rpc CreateSession(CreateSessionRequest) returns (CreateSessionResponse);
+  rpc GetSession(GetSessionRequest) returns (GetSessionResponse);
+  rpc GetActiveSession(GetActiveSessionRequest) returns (GetActiveSessionResponse);
+  rpc ListSessions(ListSessionsRequest) returns (ListSessionsResponse);
+  rpc UpdateSessionStatus(UpdateSessionStatusRequest) returns (UpdateSessionStatusResponse);
+  rpc LogSet(LogSetRequest) returns (LogSetResponse);
 }

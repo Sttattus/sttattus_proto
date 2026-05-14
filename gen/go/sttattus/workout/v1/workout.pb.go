@@ -1108,6 +1108,1207 @@ func (x *SubmitFeedbackResponse) GetId() string {
 	return ""
 }
 
+// Exercise is one entry in the movement library.
+type Exercise struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name  string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	// compound | accessory | conditioning | mobility.
+	Category      string `protobuf:"bytes,3,opt,name=category,proto3" json:"category,omitempty"`
+	PrimaryMuscle string `protobuf:"bytes,4,opt,name=primary_muscle,json=primaryMuscle,proto3" json:"primary_muscle,omitempty"`
+	// barbell | dumbbell | machine | bodyweight | cable | kettlebell.
+	Equipment     string `protobuf:"bytes,5,opt,name=equipment,proto3" json:"equipment,omitempty"`
+	VideoUrl      string `protobuf:"bytes,6,opt,name=video_url,json=videoUrl,proto3" json:"video_url,omitempty"`
+	CueOne        string `protobuf:"bytes,7,opt,name=cue_one,json=cueOne,proto3" json:"cue_one,omitempty"`
+	CueTwo        string `protobuf:"bytes,8,opt,name=cue_two,json=cueTwo,proto3" json:"cue_two,omitempty"`
+	CueThree      string `protobuf:"bytes,9,opt,name=cue_three,json=cueThree,proto3" json:"cue_three,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Exercise) Reset() {
+	*x = Exercise{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Exercise) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Exercise) ProtoMessage() {}
+
+func (x *Exercise) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Exercise.ProtoReflect.Descriptor instead.
+func (*Exercise) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *Exercise) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Exercise) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Exercise) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *Exercise) GetPrimaryMuscle() string {
+	if x != nil {
+		return x.PrimaryMuscle
+	}
+	return ""
+}
+
+func (x *Exercise) GetEquipment() string {
+	if x != nil {
+		return x.Equipment
+	}
+	return ""
+}
+
+func (x *Exercise) GetVideoUrl() string {
+	if x != nil {
+		return x.VideoUrl
+	}
+	return ""
+}
+
+func (x *Exercise) GetCueOne() string {
+	if x != nil {
+		return x.CueOne
+	}
+	return ""
+}
+
+func (x *Exercise) GetCueTwo() string {
+	if x != nil {
+		return x.CueTwo
+	}
+	return ""
+}
+
+func (x *Exercise) GetCueThree() string {
+	if x != nil {
+		return x.CueThree
+	}
+	return ""
+}
+
+// SessionSet is one logged set inside a session exercise. rpe is 0 when
+// not yet rated (1-10 once rated); completed flips when the lifter
+// marks the set done in the live view.
+type SessionSet struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	SetIndex      int32                  `protobuf:"varint,2,opt,name=set_index,json=setIndex,proto3" json:"set_index,omitempty"`
+	Weight        float64                `protobuf:"fixed64,3,opt,name=weight,proto3" json:"weight,omitempty"`
+	Reps          int32                  `protobuf:"varint,4,opt,name=reps,proto3" json:"reps,omitempty"`
+	Unit          string                 `protobuf:"bytes,5,opt,name=unit,proto3" json:"unit,omitempty"` // "kg" | "lb"
+	Rpe           float64                `protobuf:"fixed64,6,opt,name=rpe,proto3" json:"rpe,omitempty"`
+	Completed     bool                   `protobuf:"varint,7,opt,name=completed,proto3" json:"completed,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SessionSet) Reset() {
+	*x = SessionSet{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SessionSet) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SessionSet) ProtoMessage() {}
+
+func (x *SessionSet) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SessionSet.ProtoReflect.Descriptor instead.
+func (*SessionSet) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *SessionSet) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SessionSet) GetSetIndex() int32 {
+	if x != nil {
+		return x.SetIndex
+	}
+	return 0
+}
+
+func (x *SessionSet) GetWeight() float64 {
+	if x != nil {
+		return x.Weight
+	}
+	return 0
+}
+
+func (x *SessionSet) GetReps() int32 {
+	if x != nil {
+		return x.Reps
+	}
+	return 0
+}
+
+func (x *SessionSet) GetUnit() string {
+	if x != nil {
+		return x.Unit
+	}
+	return ""
+}
+
+func (x *SessionSet) GetRpe() float64 {
+	if x != nil {
+		return x.Rpe
+	}
+	return 0
+}
+
+func (x *SessionSet) GetCompleted() bool {
+	if x != nil {
+		return x.Completed
+	}
+	return false
+}
+
+// SessionExercise is an exercise slotted into a session, with its
+// library metadata joined in and its logged sets attached.
+type SessionExercise struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ExerciseId       string                 `protobuf:"bytes,2,opt,name=exercise_id,json=exerciseId,proto3" json:"exercise_id,omitempty"`
+	OrderIndex       int32                  `protobuf:"varint,3,opt,name=order_index,json=orderIndex,proto3" json:"order_index,omitempty"`
+	TargetSets       int32                  `protobuf:"varint,4,opt,name=target_sets,json=targetSets,proto3" json:"target_sets,omitempty"`
+	RestSeconds      int32                  `protobuf:"varint,5,opt,name=rest_seconds,json=restSeconds,proto3" json:"rest_seconds,omitempty"`
+	ExerciseName     string                 `protobuf:"bytes,6,opt,name=exercise_name,json=exerciseName,proto3" json:"exercise_name,omitempty"`
+	ExerciseCategory string                 `protobuf:"bytes,7,opt,name=exercise_category,json=exerciseCategory,proto3" json:"exercise_category,omitempty"`
+	PrimaryMuscle    string                 `protobuf:"bytes,8,opt,name=primary_muscle,json=primaryMuscle,proto3" json:"primary_muscle,omitempty"`
+	Equipment        string                 `protobuf:"bytes,9,opt,name=equipment,proto3" json:"equipment,omitempty"`
+	VideoUrl         string                 `protobuf:"bytes,10,opt,name=video_url,json=videoUrl,proto3" json:"video_url,omitempty"`
+	CueOne           string                 `protobuf:"bytes,11,opt,name=cue_one,json=cueOne,proto3" json:"cue_one,omitempty"`
+	CueTwo           string                 `protobuf:"bytes,12,opt,name=cue_two,json=cueTwo,proto3" json:"cue_two,omitempty"`
+	CueThree         string                 `protobuf:"bytes,13,opt,name=cue_three,json=cueThree,proto3" json:"cue_three,omitempty"`
+	Sets             []*SessionSet          `protobuf:"bytes,14,rep,name=sets,proto3" json:"sets,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *SessionExercise) Reset() {
+	*x = SessionExercise{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SessionExercise) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SessionExercise) ProtoMessage() {}
+
+func (x *SessionExercise) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SessionExercise.ProtoReflect.Descriptor instead.
+func (*SessionExercise) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *SessionExercise) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SessionExercise) GetExerciseId() string {
+	if x != nil {
+		return x.ExerciseId
+	}
+	return ""
+}
+
+func (x *SessionExercise) GetOrderIndex() int32 {
+	if x != nil {
+		return x.OrderIndex
+	}
+	return 0
+}
+
+func (x *SessionExercise) GetTargetSets() int32 {
+	if x != nil {
+		return x.TargetSets
+	}
+	return 0
+}
+
+func (x *SessionExercise) GetRestSeconds() int32 {
+	if x != nil {
+		return x.RestSeconds
+	}
+	return 0
+}
+
+func (x *SessionExercise) GetExerciseName() string {
+	if x != nil {
+		return x.ExerciseName
+	}
+	return ""
+}
+
+func (x *SessionExercise) GetExerciseCategory() string {
+	if x != nil {
+		return x.ExerciseCategory
+	}
+	return ""
+}
+
+func (x *SessionExercise) GetPrimaryMuscle() string {
+	if x != nil {
+		return x.PrimaryMuscle
+	}
+	return ""
+}
+
+func (x *SessionExercise) GetEquipment() string {
+	if x != nil {
+		return x.Equipment
+	}
+	return ""
+}
+
+func (x *SessionExercise) GetVideoUrl() string {
+	if x != nil {
+		return x.VideoUrl
+	}
+	return ""
+}
+
+func (x *SessionExercise) GetCueOne() string {
+	if x != nil {
+		return x.CueOne
+	}
+	return ""
+}
+
+func (x *SessionExercise) GetCueTwo() string {
+	if x != nil {
+		return x.CueTwo
+	}
+	return ""
+}
+
+func (x *SessionExercise) GetCueThree() string {
+	if x != nil {
+		return x.CueThree
+	}
+	return ""
+}
+
+func (x *SessionExercise) GetSets() []*SessionSet {
+	if x != nil {
+		return x.Sets
+	}
+	return nil
+}
+
+// ForgeSession is a built / live / closed training session.
+type ForgeSession struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	// planned | active | completed | abandoned.
+	Status        string             `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
+	Notes         string             `protobuf:"bytes,4,opt,name=notes,proto3" json:"notes,omitempty"`
+	StartedAt     int64              `protobuf:"varint,5,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`       // unix seconds, 0 if not started
+	CompletedAt   int64              `protobuf:"varint,6,opt,name=completed_at,json=completedAt,proto3" json:"completed_at,omitempty"` // unix seconds, 0 if not completed
+	CreatedAt     int64              `protobuf:"varint,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	Exercises     []*SessionExercise `protobuf:"bytes,8,rep,name=exercises,proto3" json:"exercises,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ForgeSession) Reset() {
+	*x = ForgeSession{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ForgeSession) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ForgeSession) ProtoMessage() {}
+
+func (x *ForgeSession) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ForgeSession.ProtoReflect.Descriptor instead.
+func (*ForgeSession) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *ForgeSession) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ForgeSession) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ForgeSession) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ForgeSession) GetNotes() string {
+	if x != nil {
+		return x.Notes
+	}
+	return ""
+}
+
+func (x *ForgeSession) GetStartedAt() int64 {
+	if x != nil {
+		return x.StartedAt
+	}
+	return 0
+}
+
+func (x *ForgeSession) GetCompletedAt() int64 {
+	if x != nil {
+		return x.CompletedAt
+	}
+	return 0
+}
+
+func (x *ForgeSession) GetCreatedAt() int64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+func (x *ForgeSession) GetExercises() []*SessionExercise {
+	if x != nil {
+		return x.Exercises
+	}
+	return nil
+}
+
+// PlannedExercise is one row of the session builder's output.
+type PlannedExercise struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ExerciseId    string                 `protobuf:"bytes,1,opt,name=exercise_id,json=exerciseId,proto3" json:"exercise_id,omitempty"`
+	TargetSets    int32                  `protobuf:"varint,2,opt,name=target_sets,json=targetSets,proto3" json:"target_sets,omitempty"`
+	RestSeconds   int32                  `protobuf:"varint,3,opt,name=rest_seconds,json=restSeconds,proto3" json:"rest_seconds,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PlannedExercise) Reset() {
+	*x = PlannedExercise{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PlannedExercise) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PlannedExercise) ProtoMessage() {}
+
+func (x *PlannedExercise) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PlannedExercise.ProtoReflect.Descriptor instead.
+func (*PlannedExercise) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *PlannedExercise) GetExerciseId() string {
+	if x != nil {
+		return x.ExerciseId
+	}
+	return ""
+}
+
+func (x *PlannedExercise) GetTargetSets() int32 {
+	if x != nil {
+		return x.TargetSets
+	}
+	return 0
+}
+
+func (x *PlannedExercise) GetRestSeconds() int32 {
+	if x != nil {
+		return x.RestSeconds
+	}
+	return 0
+}
+
+type ListExercisesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Page          *v1.PageRequest        `protobuf:"bytes,1,opt,name=page,proto3" json:"page,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListExercisesRequest) Reset() {
+	*x = ListExercisesRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListExercisesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListExercisesRequest) ProtoMessage() {}
+
+func (x *ListExercisesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListExercisesRequest.ProtoReflect.Descriptor instead.
+func (*ListExercisesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *ListExercisesRequest) GetPage() *v1.PageRequest {
+	if x != nil {
+		return x.Page
+	}
+	return nil
+}
+
+type ListExercisesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Exercises     []*Exercise            `protobuf:"bytes,1,rep,name=exercises,proto3" json:"exercises,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListExercisesResponse) Reset() {
+	*x = ListExercisesResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListExercisesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListExercisesResponse) ProtoMessage() {}
+
+func (x *ListExercisesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListExercisesResponse.ProtoReflect.Descriptor instead.
+func (*ListExercisesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *ListExercisesResponse) GetExercises() []*Exercise {
+	if x != nil {
+		return x.Exercises
+	}
+	return nil
+}
+
+type CreateSessionRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	Notes         string                 `protobuf:"bytes,2,opt,name=notes,proto3" json:"notes,omitempty"`
+	Exercises     []*PlannedExercise     `protobuf:"bytes,3,rep,name=exercises,proto3" json:"exercises,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateSessionRequest) Reset() {
+	*x = CreateSessionRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateSessionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateSessionRequest) ProtoMessage() {}
+
+func (x *CreateSessionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateSessionRequest.ProtoReflect.Descriptor instead.
+func (*CreateSessionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *CreateSessionRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CreateSessionRequest) GetNotes() string {
+	if x != nil {
+		return x.Notes
+	}
+	return ""
+}
+
+func (x *CreateSessionRequest) GetExercises() []*PlannedExercise {
+	if x != nil {
+		return x.Exercises
+	}
+	return nil
+}
+
+type CreateSessionResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Session       *ForgeSession          `protobuf:"bytes,1,opt,name=session,proto3" json:"session,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateSessionResponse) Reset() {
+	*x = CreateSessionResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateSessionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateSessionResponse) ProtoMessage() {}
+
+func (x *CreateSessionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateSessionResponse.ProtoReflect.Descriptor instead.
+func (*CreateSessionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *CreateSessionResponse) GetSession() *ForgeSession {
+	if x != nil {
+		return x.Session
+	}
+	return nil
+}
+
+type GetSessionRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetSessionRequest) Reset() {
+	*x = GetSessionRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSessionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSessionRequest) ProtoMessage() {}
+
+func (x *GetSessionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSessionRequest.ProtoReflect.Descriptor instead.
+func (*GetSessionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *GetSessionRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type GetSessionResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Session       *ForgeSession          `protobuf:"bytes,1,opt,name=session,proto3" json:"session,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetSessionResponse) Reset() {
+	*x = GetSessionResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSessionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSessionResponse) ProtoMessage() {}
+
+func (x *GetSessionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSessionResponse.ProtoReflect.Descriptor instead.
+func (*GetSessionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *GetSessionResponse) GetSession() *ForgeSession {
+	if x != nil {
+		return x.Session
+	}
+	return nil
+}
+
+type GetActiveSessionRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetActiveSessionRequest) Reset() {
+	*x = GetActiveSessionRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[29]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetActiveSessionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetActiveSessionRequest) ProtoMessage() {}
+
+func (x *GetActiveSessionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[29]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetActiveSessionRequest.ProtoReflect.Descriptor instead.
+func (*GetActiveSessionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{29}
+}
+
+type GetActiveSessionResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// session.id is empty when the caller has no active session.
+	Session       *ForgeSession `protobuf:"bytes,1,opt,name=session,proto3" json:"session,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetActiveSessionResponse) Reset() {
+	*x = GetActiveSessionResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[30]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetActiveSessionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetActiveSessionResponse) ProtoMessage() {}
+
+func (x *GetActiveSessionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[30]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetActiveSessionResponse.ProtoReflect.Descriptor instead.
+func (*GetActiveSessionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{30}
+}
+
+func (x *GetActiveSessionResponse) GetSession() *ForgeSession {
+	if x != nil {
+		return x.Session
+	}
+	return nil
+}
+
+type ListSessionsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Page          *v1.PageRequest        `protobuf:"bytes,1,opt,name=page,proto3" json:"page,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListSessionsRequest) Reset() {
+	*x = ListSessionsRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[31]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListSessionsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSessionsRequest) ProtoMessage() {}
+
+func (x *ListSessionsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[31]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSessionsRequest.ProtoReflect.Descriptor instead.
+func (*ListSessionsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{31}
+}
+
+func (x *ListSessionsRequest) GetPage() *v1.PageRequest {
+	if x != nil {
+		return x.Page
+	}
+	return nil
+}
+
+type ListSessionsResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Summaries — exercises are not hydrated; call GetSession for detail.
+	Sessions      []*ForgeSession `protobuf:"bytes,1,rep,name=sessions,proto3" json:"sessions,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListSessionsResponse) Reset() {
+	*x = ListSessionsResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[32]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListSessionsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSessionsResponse) ProtoMessage() {}
+
+func (x *ListSessionsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[32]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSessionsResponse.ProtoReflect.Descriptor instead.
+func (*ListSessionsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{32}
+}
+
+func (x *ListSessionsResponse) GetSessions() []*ForgeSession {
+	if x != nil {
+		return x.Sessions
+	}
+	return nil
+}
+
+type UpdateSessionStatusRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"` // planned | active | completed | abandoned
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateSessionStatusRequest) Reset() {
+	*x = UpdateSessionStatusRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[33]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateSessionStatusRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSessionStatusRequest) ProtoMessage() {}
+
+func (x *UpdateSessionStatusRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[33]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSessionStatusRequest.ProtoReflect.Descriptor instead.
+func (*UpdateSessionStatusRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *UpdateSessionStatusRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UpdateSessionStatusRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+type UpdateSessionStatusResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Session       *ForgeSession          `protobuf:"bytes,1,opt,name=session,proto3" json:"session,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateSessionStatusResponse) Reset() {
+	*x = UpdateSessionStatusResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[34]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateSessionStatusResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSessionStatusResponse) ProtoMessage() {}
+
+func (x *UpdateSessionStatusResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[34]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSessionStatusResponse.ProtoReflect.Descriptor instead.
+func (*UpdateSessionStatusResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *UpdateSessionStatusResponse) GetSession() *ForgeSession {
+	if x != nil {
+		return x.Session
+	}
+	return nil
+}
+
+type LogSetRequest struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	SessionExerciseId string                 `protobuf:"bytes,1,opt,name=session_exercise_id,json=sessionExerciseId,proto3" json:"session_exercise_id,omitempty"`
+	SetIndex          int32                  `protobuf:"varint,2,opt,name=set_index,json=setIndex,proto3" json:"set_index,omitempty"`
+	Weight            float64                `protobuf:"fixed64,3,opt,name=weight,proto3" json:"weight,omitempty"`
+	Reps              int32                  `protobuf:"varint,4,opt,name=reps,proto3" json:"reps,omitempty"`
+	Unit              string                 `protobuf:"bytes,5,opt,name=unit,proto3" json:"unit,omitempty"`
+	Rpe               float64                `protobuf:"fixed64,6,opt,name=rpe,proto3" json:"rpe,omitempty"`
+	Completed         bool                   `protobuf:"varint,7,opt,name=completed,proto3" json:"completed,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *LogSetRequest) Reset() {
+	*x = LogSetRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[35]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogSetRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogSetRequest) ProtoMessage() {}
+
+func (x *LogSetRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[35]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogSetRequest.ProtoReflect.Descriptor instead.
+func (*LogSetRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *LogSetRequest) GetSessionExerciseId() string {
+	if x != nil {
+		return x.SessionExerciseId
+	}
+	return ""
+}
+
+func (x *LogSetRequest) GetSetIndex() int32 {
+	if x != nil {
+		return x.SetIndex
+	}
+	return 0
+}
+
+func (x *LogSetRequest) GetWeight() float64 {
+	if x != nil {
+		return x.Weight
+	}
+	return 0
+}
+
+func (x *LogSetRequest) GetReps() int32 {
+	if x != nil {
+		return x.Reps
+	}
+	return 0
+}
+
+func (x *LogSetRequest) GetUnit() string {
+	if x != nil {
+		return x.Unit
+	}
+	return ""
+}
+
+func (x *LogSetRequest) GetRpe() float64 {
+	if x != nil {
+		return x.Rpe
+	}
+	return 0
+}
+
+func (x *LogSetRequest) GetCompleted() bool {
+	if x != nil {
+		return x.Completed
+	}
+	return false
+}
+
+type LogSetResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Set           *SessionSet            `protobuf:"bytes,1,opt,name=set,proto3" json:"set,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LogSetResponse) Reset() {
+	*x = LogSetResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogSetResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogSetResponse) ProtoMessage() {}
+
+func (x *LogSetResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[36]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogSetResponse.ProtoReflect.Descriptor instead.
+func (*LogSetResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *LogSetResponse) GetSet() *SessionSet {
+	if x != nil {
+		return x.Set
+	}
+	return nil
+}
+
 var File_sttattus_workout_v1_workout_proto protoreflect.FileDescriptor
 
 const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
@@ -1194,7 +2395,99 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x15SubmitFeedbackRequest\x12\x12\n" +
 	"\x04body\x18\x01 \x01(\tR\x04body\"(\n" +
 	"\x16SubmitFeedbackResponse\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id2\xf1\x04\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"\xfb\x01\n" +
+	"\bExercise\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1a\n" +
+	"\bcategory\x18\x03 \x01(\tR\bcategory\x12%\n" +
+	"\x0eprimary_muscle\x18\x04 \x01(\tR\rprimaryMuscle\x12\x1c\n" +
+	"\tequipment\x18\x05 \x01(\tR\tequipment\x12\x1b\n" +
+	"\tvideo_url\x18\x06 \x01(\tR\bvideoUrl\x12\x17\n" +
+	"\acue_one\x18\a \x01(\tR\x06cueOne\x12\x17\n" +
+	"\acue_two\x18\b \x01(\tR\x06cueTwo\x12\x1b\n" +
+	"\tcue_three\x18\t \x01(\tR\bcueThree\"\xa9\x01\n" +
+	"\n" +
+	"SessionSet\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\tset_index\x18\x02 \x01(\x05R\bsetIndex\x12\x16\n" +
+	"\x06weight\x18\x03 \x01(\x01R\x06weight\x12\x12\n" +
+	"\x04reps\x18\x04 \x01(\x05R\x04reps\x12\x12\n" +
+	"\x04unit\x18\x05 \x01(\tR\x04unit\x12\x10\n" +
+	"\x03rpe\x18\x06 \x01(\x01R\x03rpe\x12\x1c\n" +
+	"\tcompleted\x18\a \x01(\bR\tcompleted\"\xdf\x03\n" +
+	"\x0fSessionExercise\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
+	"\vexercise_id\x18\x02 \x01(\tR\n" +
+	"exerciseId\x12\x1f\n" +
+	"\vorder_index\x18\x03 \x01(\x05R\n" +
+	"orderIndex\x12\x1f\n" +
+	"\vtarget_sets\x18\x04 \x01(\x05R\n" +
+	"targetSets\x12!\n" +
+	"\frest_seconds\x18\x05 \x01(\x05R\vrestSeconds\x12#\n" +
+	"\rexercise_name\x18\x06 \x01(\tR\fexerciseName\x12+\n" +
+	"\x11exercise_category\x18\a \x01(\tR\x10exerciseCategory\x12%\n" +
+	"\x0eprimary_muscle\x18\b \x01(\tR\rprimaryMuscle\x12\x1c\n" +
+	"\tequipment\x18\t \x01(\tR\tequipment\x12\x1b\n" +
+	"\tvideo_url\x18\n" +
+	" \x01(\tR\bvideoUrl\x12\x17\n" +
+	"\acue_one\x18\v \x01(\tR\x06cueOne\x12\x17\n" +
+	"\acue_two\x18\f \x01(\tR\x06cueTwo\x12\x1b\n" +
+	"\tcue_three\x18\r \x01(\tR\bcueThree\x123\n" +
+	"\x04sets\x18\x0e \x03(\v2\x1f.sttattus.workout.v1.SessionSetR\x04sets\"\x87\x02\n" +
+	"\fForgeSession\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\x12\x14\n" +
+	"\x05notes\x18\x04 \x01(\tR\x05notes\x12\x1d\n" +
+	"\n" +
+	"started_at\x18\x05 \x01(\x03R\tstartedAt\x12!\n" +
+	"\fcompleted_at\x18\x06 \x01(\x03R\vcompletedAt\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\a \x01(\x03R\tcreatedAt\x12B\n" +
+	"\texercises\x18\b \x03(\v2$.sttattus.workout.v1.SessionExerciseR\texercises\"v\n" +
+	"\x0fPlannedExercise\x12\x1f\n" +
+	"\vexercise_id\x18\x01 \x01(\tR\n" +
+	"exerciseId\x12\x1f\n" +
+	"\vtarget_sets\x18\x02 \x01(\x05R\n" +
+	"targetSets\x12!\n" +
+	"\frest_seconds\x18\x03 \x01(\x05R\vrestSeconds\"K\n" +
+	"\x14ListExercisesRequest\x123\n" +
+	"\x04page\x18\x01 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"T\n" +
+	"\x15ListExercisesResponse\x12;\n" +
+	"\texercises\x18\x01 \x03(\v2\x1d.sttattus.workout.v1.ExerciseR\texercises\"\x86\x01\n" +
+	"\x14CreateSessionRequest\x12\x14\n" +
+	"\x05title\x18\x01 \x01(\tR\x05title\x12\x14\n" +
+	"\x05notes\x18\x02 \x01(\tR\x05notes\x12B\n" +
+	"\texercises\x18\x03 \x03(\v2$.sttattus.workout.v1.PlannedExerciseR\texercises\"T\n" +
+	"\x15CreateSessionResponse\x12;\n" +
+	"\asession\x18\x01 \x01(\v2!.sttattus.workout.v1.ForgeSessionR\asession\"#\n" +
+	"\x11GetSessionRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"Q\n" +
+	"\x12GetSessionResponse\x12;\n" +
+	"\asession\x18\x01 \x01(\v2!.sttattus.workout.v1.ForgeSessionR\asession\"\x19\n" +
+	"\x17GetActiveSessionRequest\"W\n" +
+	"\x18GetActiveSessionResponse\x12;\n" +
+	"\asession\x18\x01 \x01(\v2!.sttattus.workout.v1.ForgeSessionR\asession\"J\n" +
+	"\x13ListSessionsRequest\x123\n" +
+	"\x04page\x18\x01 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"U\n" +
+	"\x14ListSessionsResponse\x12=\n" +
+	"\bsessions\x18\x01 \x03(\v2!.sttattus.workout.v1.ForgeSessionR\bsessions\"D\n" +
+	"\x1aUpdateSessionStatusRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\"Z\n" +
+	"\x1bUpdateSessionStatusResponse\x12;\n" +
+	"\asession\x18\x01 \x01(\v2!.sttattus.workout.v1.ForgeSessionR\asession\"\xcc\x01\n" +
+	"\rLogSetRequest\x12.\n" +
+	"\x13session_exercise_id\x18\x01 \x01(\tR\x11sessionExerciseId\x12\x1b\n" +
+	"\tset_index\x18\x02 \x01(\x05R\bsetIndex\x12\x16\n" +
+	"\x06weight\x18\x03 \x01(\x01R\x06weight\x12\x12\n" +
+	"\x04reps\x18\x04 \x01(\x05R\x04reps\x12\x12\n" +
+	"\x04unit\x18\x05 \x01(\tR\x04unit\x12\x10\n" +
+	"\x03rpe\x18\x06 \x01(\x01R\x03rpe\x12\x1c\n" +
+	"\tcompleted\x18\a \x01(\bR\tcompleted\"C\n" +
+	"\x0eLogSetResponse\x121\n" +
+	"\x03set\x18\x01 \x01(\v2\x1f.sttattus.workout.v1.SessionSetR\x03set2\xc3\n" +
+	"\n" +
 	"\x0eWorkoutService\x12c\n" +
 	"\fListWorkouts\x12(.sttattus.workout.v1.ListWorkoutsRequest\x1a).sttattus.workout.v1.ListWorkoutsResponse\x12]\n" +
 	"\n" +
@@ -1202,7 +2495,15 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\rLogDayWorkout\x12).sttattus.workout.v1.LogDayWorkoutRequest\x1a*.sttattus.workout.v1.LogDayWorkoutResponse\x12`\n" +
 	"\vListHistory\x12'.sttattus.workout.v1.ListHistoryRequest\x1a(.sttattus.workout.v1.ListHistoryResponse\x12f\n" +
 	"\rGetForgeStats\x12).sttattus.workout.v1.GetForgeStatsRequest\x1a*.sttattus.workout.v1.GetForgeStatsResponse\x12i\n" +
-	"\x0eSubmitFeedback\x12*.sttattus.workout.v1.SubmitFeedbackRequest\x1a+.sttattus.workout.v1.SubmitFeedbackResponseB@Z>github.com/sttattus/proto/gen/go/sttattus/workout/v1;workoutv1b\x06proto3"
+	"\x0eSubmitFeedback\x12*.sttattus.workout.v1.SubmitFeedbackRequest\x1a+.sttattus.workout.v1.SubmitFeedbackResponse\x12f\n" +
+	"\rListExercises\x12).sttattus.workout.v1.ListExercisesRequest\x1a*.sttattus.workout.v1.ListExercisesResponse\x12f\n" +
+	"\rCreateSession\x12).sttattus.workout.v1.CreateSessionRequest\x1a*.sttattus.workout.v1.CreateSessionResponse\x12]\n" +
+	"\n" +
+	"GetSession\x12&.sttattus.workout.v1.GetSessionRequest\x1a'.sttattus.workout.v1.GetSessionResponse\x12o\n" +
+	"\x10GetActiveSession\x12,.sttattus.workout.v1.GetActiveSessionRequest\x1a-.sttattus.workout.v1.GetActiveSessionResponse\x12c\n" +
+	"\fListSessions\x12(.sttattus.workout.v1.ListSessionsRequest\x1a).sttattus.workout.v1.ListSessionsResponse\x12x\n" +
+	"\x13UpdateSessionStatus\x12/.sttattus.workout.v1.UpdateSessionStatusRequest\x1a0.sttattus.workout.v1.UpdateSessionStatusResponse\x12Q\n" +
+	"\x06LogSet\x12\".sttattus.workout.v1.LogSetRequest\x1a#.sttattus.workout.v1.LogSetResponseB@Z>github.com/sttattus/proto/gen/go/sttattus/workout/v1;workoutv1b\x06proto3"
 
 var (
 	file_sttattus_workout_v1_workout_proto_rawDescOnce sync.Once
@@ -1216,63 +2517,108 @@ func file_sttattus_workout_v1_workout_proto_rawDescGZIP() []byte {
 	return file_sttattus_workout_v1_workout_proto_rawDescData
 }
 
-var file_sttattus_workout_v1_workout_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
+var file_sttattus_workout_v1_workout_proto_msgTypes = make([]protoimpl.MessageInfo, 37)
 var file_sttattus_workout_v1_workout_proto_goTypes = []any{
-	(*Tag)(nil),                    // 0: sttattus.workout.v1.Tag
-	(*Workout)(nil),                // 1: sttattus.workout.v1.Workout
-	(*Series)(nil),                 // 2: sttattus.workout.v1.Series
-	(*StrainMetrics)(nil),          // 3: sttattus.workout.v1.StrainMetrics
-	(*DayWorkout)(nil),             // 4: sttattus.workout.v1.DayWorkout
-	(*ForgeStats)(nil),             // 5: sttattus.workout.v1.ForgeStats
-	(*ListWorkoutsRequest)(nil),    // 6: sttattus.workout.v1.ListWorkoutsRequest
-	(*ListWorkoutsResponse)(nil),   // 7: sttattus.workout.v1.ListWorkoutsResponse
-	(*GetWorkoutRequest)(nil),      // 8: sttattus.workout.v1.GetWorkoutRequest
-	(*GetWorkoutResponse)(nil),     // 9: sttattus.workout.v1.GetWorkoutResponse
-	(*LogDayWorkoutRequest)(nil),   // 10: sttattus.workout.v1.LogDayWorkoutRequest
-	(*LogDayWorkoutResponse)(nil),  // 11: sttattus.workout.v1.LogDayWorkoutResponse
-	(*ListHistoryRequest)(nil),     // 12: sttattus.workout.v1.ListHistoryRequest
-	(*ListHistoryResponse)(nil),    // 13: sttattus.workout.v1.ListHistoryResponse
-	(*GetForgeStatsRequest)(nil),   // 14: sttattus.workout.v1.GetForgeStatsRequest
-	(*GetForgeStatsResponse)(nil),  // 15: sttattus.workout.v1.GetForgeStatsResponse
-	(*SubmitFeedbackRequest)(nil),  // 16: sttattus.workout.v1.SubmitFeedbackRequest
-	(*SubmitFeedbackResponse)(nil), // 17: sttattus.workout.v1.SubmitFeedbackResponse
-	(*v1.PageRequest)(nil),         // 18: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),        // 19: sttattus.common.v1.PageResponse
+	(*Tag)(nil),                         // 0: sttattus.workout.v1.Tag
+	(*Workout)(nil),                     // 1: sttattus.workout.v1.Workout
+	(*Series)(nil),                      // 2: sttattus.workout.v1.Series
+	(*StrainMetrics)(nil),               // 3: sttattus.workout.v1.StrainMetrics
+	(*DayWorkout)(nil),                  // 4: sttattus.workout.v1.DayWorkout
+	(*ForgeStats)(nil),                  // 5: sttattus.workout.v1.ForgeStats
+	(*ListWorkoutsRequest)(nil),         // 6: sttattus.workout.v1.ListWorkoutsRequest
+	(*ListWorkoutsResponse)(nil),        // 7: sttattus.workout.v1.ListWorkoutsResponse
+	(*GetWorkoutRequest)(nil),           // 8: sttattus.workout.v1.GetWorkoutRequest
+	(*GetWorkoutResponse)(nil),          // 9: sttattus.workout.v1.GetWorkoutResponse
+	(*LogDayWorkoutRequest)(nil),        // 10: sttattus.workout.v1.LogDayWorkoutRequest
+	(*LogDayWorkoutResponse)(nil),       // 11: sttattus.workout.v1.LogDayWorkoutResponse
+	(*ListHistoryRequest)(nil),          // 12: sttattus.workout.v1.ListHistoryRequest
+	(*ListHistoryResponse)(nil),         // 13: sttattus.workout.v1.ListHistoryResponse
+	(*GetForgeStatsRequest)(nil),        // 14: sttattus.workout.v1.GetForgeStatsRequest
+	(*GetForgeStatsResponse)(nil),       // 15: sttattus.workout.v1.GetForgeStatsResponse
+	(*SubmitFeedbackRequest)(nil),       // 16: sttattus.workout.v1.SubmitFeedbackRequest
+	(*SubmitFeedbackResponse)(nil),      // 17: sttattus.workout.v1.SubmitFeedbackResponse
+	(*Exercise)(nil),                    // 18: sttattus.workout.v1.Exercise
+	(*SessionSet)(nil),                  // 19: sttattus.workout.v1.SessionSet
+	(*SessionExercise)(nil),             // 20: sttattus.workout.v1.SessionExercise
+	(*ForgeSession)(nil),                // 21: sttattus.workout.v1.ForgeSession
+	(*PlannedExercise)(nil),             // 22: sttattus.workout.v1.PlannedExercise
+	(*ListExercisesRequest)(nil),        // 23: sttattus.workout.v1.ListExercisesRequest
+	(*ListExercisesResponse)(nil),       // 24: sttattus.workout.v1.ListExercisesResponse
+	(*CreateSessionRequest)(nil),        // 25: sttattus.workout.v1.CreateSessionRequest
+	(*CreateSessionResponse)(nil),       // 26: sttattus.workout.v1.CreateSessionResponse
+	(*GetSessionRequest)(nil),           // 27: sttattus.workout.v1.GetSessionRequest
+	(*GetSessionResponse)(nil),          // 28: sttattus.workout.v1.GetSessionResponse
+	(*GetActiveSessionRequest)(nil),     // 29: sttattus.workout.v1.GetActiveSessionRequest
+	(*GetActiveSessionResponse)(nil),    // 30: sttattus.workout.v1.GetActiveSessionResponse
+	(*ListSessionsRequest)(nil),         // 31: sttattus.workout.v1.ListSessionsRequest
+	(*ListSessionsResponse)(nil),        // 32: sttattus.workout.v1.ListSessionsResponse
+	(*UpdateSessionStatusRequest)(nil),  // 33: sttattus.workout.v1.UpdateSessionStatusRequest
+	(*UpdateSessionStatusResponse)(nil), // 34: sttattus.workout.v1.UpdateSessionStatusResponse
+	(*LogSetRequest)(nil),               // 35: sttattus.workout.v1.LogSetRequest
+	(*LogSetResponse)(nil),              // 36: sttattus.workout.v1.LogSetResponse
+	(*v1.PageRequest)(nil),              // 37: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),             // 38: sttattus.common.v1.PageResponse
 }
 var file_sttattus_workout_v1_workout_proto_depIdxs = []int32{
 	0,  // 0: sttattus.workout.v1.Workout.tags:type_name -> sttattus.workout.v1.Tag
 	1,  // 1: sttattus.workout.v1.DayWorkout.workout:type_name -> sttattus.workout.v1.Workout
 	2,  // 2: sttattus.workout.v1.DayWorkout.series:type_name -> sttattus.workout.v1.Series
 	3,  // 3: sttattus.workout.v1.DayWorkout.strain:type_name -> sttattus.workout.v1.StrainMetrics
-	18, // 4: sttattus.workout.v1.ListWorkoutsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	37, // 4: sttattus.workout.v1.ListWorkoutsRequest.page:type_name -> sttattus.common.v1.PageRequest
 	1,  // 5: sttattus.workout.v1.ListWorkoutsResponse.workouts:type_name -> sttattus.workout.v1.Workout
-	19, // 6: sttattus.workout.v1.ListWorkoutsResponse.page:type_name -> sttattus.common.v1.PageResponse
+	38, // 6: sttattus.workout.v1.ListWorkoutsResponse.page:type_name -> sttattus.common.v1.PageResponse
 	1,  // 7: sttattus.workout.v1.GetWorkoutResponse.workout:type_name -> sttattus.workout.v1.Workout
 	2,  // 8: sttattus.workout.v1.LogDayWorkoutRequest.series:type_name -> sttattus.workout.v1.Series
 	3,  // 9: sttattus.workout.v1.LogDayWorkoutRequest.strain:type_name -> sttattus.workout.v1.StrainMetrics
 	4,  // 10: sttattus.workout.v1.LogDayWorkoutResponse.day_workout:type_name -> sttattus.workout.v1.DayWorkout
 	5,  // 11: sttattus.workout.v1.LogDayWorkoutResponse.stats:type_name -> sttattus.workout.v1.ForgeStats
-	18, // 12: sttattus.workout.v1.ListHistoryRequest.page:type_name -> sttattus.common.v1.PageRequest
+	37, // 12: sttattus.workout.v1.ListHistoryRequest.page:type_name -> sttattus.common.v1.PageRequest
 	4,  // 13: sttattus.workout.v1.ListHistoryResponse.entries:type_name -> sttattus.workout.v1.DayWorkout
-	19, // 14: sttattus.workout.v1.ListHistoryResponse.page:type_name -> sttattus.common.v1.PageResponse
+	38, // 14: sttattus.workout.v1.ListHistoryResponse.page:type_name -> sttattus.common.v1.PageResponse
 	5,  // 15: sttattus.workout.v1.GetForgeStatsResponse.stats:type_name -> sttattus.workout.v1.ForgeStats
-	6,  // 16: sttattus.workout.v1.WorkoutService.ListWorkouts:input_type -> sttattus.workout.v1.ListWorkoutsRequest
-	8,  // 17: sttattus.workout.v1.WorkoutService.GetWorkout:input_type -> sttattus.workout.v1.GetWorkoutRequest
-	10, // 18: sttattus.workout.v1.WorkoutService.LogDayWorkout:input_type -> sttattus.workout.v1.LogDayWorkoutRequest
-	12, // 19: sttattus.workout.v1.WorkoutService.ListHistory:input_type -> sttattus.workout.v1.ListHistoryRequest
-	14, // 20: sttattus.workout.v1.WorkoutService.GetForgeStats:input_type -> sttattus.workout.v1.GetForgeStatsRequest
-	16, // 21: sttattus.workout.v1.WorkoutService.SubmitFeedback:input_type -> sttattus.workout.v1.SubmitFeedbackRequest
-	7,  // 22: sttattus.workout.v1.WorkoutService.ListWorkouts:output_type -> sttattus.workout.v1.ListWorkoutsResponse
-	9,  // 23: sttattus.workout.v1.WorkoutService.GetWorkout:output_type -> sttattus.workout.v1.GetWorkoutResponse
-	11, // 24: sttattus.workout.v1.WorkoutService.LogDayWorkout:output_type -> sttattus.workout.v1.LogDayWorkoutResponse
-	13, // 25: sttattus.workout.v1.WorkoutService.ListHistory:output_type -> sttattus.workout.v1.ListHistoryResponse
-	15, // 26: sttattus.workout.v1.WorkoutService.GetForgeStats:output_type -> sttattus.workout.v1.GetForgeStatsResponse
-	17, // 27: sttattus.workout.v1.WorkoutService.SubmitFeedback:output_type -> sttattus.workout.v1.SubmitFeedbackResponse
-	22, // [22:28] is the sub-list for method output_type
-	16, // [16:22] is the sub-list for method input_type
-	16, // [16:16] is the sub-list for extension type_name
-	16, // [16:16] is the sub-list for extension extendee
-	0,  // [0:16] is the sub-list for field type_name
+	19, // 16: sttattus.workout.v1.SessionExercise.sets:type_name -> sttattus.workout.v1.SessionSet
+	20, // 17: sttattus.workout.v1.ForgeSession.exercises:type_name -> sttattus.workout.v1.SessionExercise
+	37, // 18: sttattus.workout.v1.ListExercisesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	18, // 19: sttattus.workout.v1.ListExercisesResponse.exercises:type_name -> sttattus.workout.v1.Exercise
+	22, // 20: sttattus.workout.v1.CreateSessionRequest.exercises:type_name -> sttattus.workout.v1.PlannedExercise
+	21, // 21: sttattus.workout.v1.CreateSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
+	21, // 22: sttattus.workout.v1.GetSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
+	21, // 23: sttattus.workout.v1.GetActiveSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
+	37, // 24: sttattus.workout.v1.ListSessionsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	21, // 25: sttattus.workout.v1.ListSessionsResponse.sessions:type_name -> sttattus.workout.v1.ForgeSession
+	21, // 26: sttattus.workout.v1.UpdateSessionStatusResponse.session:type_name -> sttattus.workout.v1.ForgeSession
+	19, // 27: sttattus.workout.v1.LogSetResponse.set:type_name -> sttattus.workout.v1.SessionSet
+	6,  // 28: sttattus.workout.v1.WorkoutService.ListWorkouts:input_type -> sttattus.workout.v1.ListWorkoutsRequest
+	8,  // 29: sttattus.workout.v1.WorkoutService.GetWorkout:input_type -> sttattus.workout.v1.GetWorkoutRequest
+	10, // 30: sttattus.workout.v1.WorkoutService.LogDayWorkout:input_type -> sttattus.workout.v1.LogDayWorkoutRequest
+	12, // 31: sttattus.workout.v1.WorkoutService.ListHistory:input_type -> sttattus.workout.v1.ListHistoryRequest
+	14, // 32: sttattus.workout.v1.WorkoutService.GetForgeStats:input_type -> sttattus.workout.v1.GetForgeStatsRequest
+	16, // 33: sttattus.workout.v1.WorkoutService.SubmitFeedback:input_type -> sttattus.workout.v1.SubmitFeedbackRequest
+	23, // 34: sttattus.workout.v1.WorkoutService.ListExercises:input_type -> sttattus.workout.v1.ListExercisesRequest
+	25, // 35: sttattus.workout.v1.WorkoutService.CreateSession:input_type -> sttattus.workout.v1.CreateSessionRequest
+	27, // 36: sttattus.workout.v1.WorkoutService.GetSession:input_type -> sttattus.workout.v1.GetSessionRequest
+	29, // 37: sttattus.workout.v1.WorkoutService.GetActiveSession:input_type -> sttattus.workout.v1.GetActiveSessionRequest
+	31, // 38: sttattus.workout.v1.WorkoutService.ListSessions:input_type -> sttattus.workout.v1.ListSessionsRequest
+	33, // 39: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:input_type -> sttattus.workout.v1.UpdateSessionStatusRequest
+	35, // 40: sttattus.workout.v1.WorkoutService.LogSet:input_type -> sttattus.workout.v1.LogSetRequest
+	7,  // 41: sttattus.workout.v1.WorkoutService.ListWorkouts:output_type -> sttattus.workout.v1.ListWorkoutsResponse
+	9,  // 42: sttattus.workout.v1.WorkoutService.GetWorkout:output_type -> sttattus.workout.v1.GetWorkoutResponse
+	11, // 43: sttattus.workout.v1.WorkoutService.LogDayWorkout:output_type -> sttattus.workout.v1.LogDayWorkoutResponse
+	13, // 44: sttattus.workout.v1.WorkoutService.ListHistory:output_type -> sttattus.workout.v1.ListHistoryResponse
+	15, // 45: sttattus.workout.v1.WorkoutService.GetForgeStats:output_type -> sttattus.workout.v1.GetForgeStatsResponse
+	17, // 46: sttattus.workout.v1.WorkoutService.SubmitFeedback:output_type -> sttattus.workout.v1.SubmitFeedbackResponse
+	24, // 47: sttattus.workout.v1.WorkoutService.ListExercises:output_type -> sttattus.workout.v1.ListExercisesResponse
+	26, // 48: sttattus.workout.v1.WorkoutService.CreateSession:output_type -> sttattus.workout.v1.CreateSessionResponse
+	28, // 49: sttattus.workout.v1.WorkoutService.GetSession:output_type -> sttattus.workout.v1.GetSessionResponse
+	30, // 50: sttattus.workout.v1.WorkoutService.GetActiveSession:output_type -> sttattus.workout.v1.GetActiveSessionResponse
+	32, // 51: sttattus.workout.v1.WorkoutService.ListSessions:output_type -> sttattus.workout.v1.ListSessionsResponse
+	34, // 52: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:output_type -> sttattus.workout.v1.UpdateSessionStatusResponse
+	36, // 53: sttattus.workout.v1.WorkoutService.LogSet:output_type -> sttattus.workout.v1.LogSetResponse
+	41, // [41:54] is the sub-list for method output_type
+	28, // [28:41] is the sub-list for method input_type
+	28, // [28:28] is the sub-list for extension type_name
+	28, // [28:28] is the sub-list for extension extendee
+	0,  // [0:28] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_workout_v1_workout_proto_init() }
@@ -1286,7 +2632,7 @@ func file_sttattus_workout_v1_workout_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_workout_v1_workout_proto_rawDesc), len(file_sttattus_workout_v1_workout_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   18,
+			NumMessages:   37,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

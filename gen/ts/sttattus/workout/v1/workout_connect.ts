@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetForgeStatsRequest, GetForgeStatsResponse, GetWorkoutRequest, GetWorkoutResponse, ListHistoryRequest, ListHistoryResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, SubmitFeedbackRequest, SubmitFeedbackResponse } from "./workout_pb.js";
+import { CreateSessionRequest, CreateSessionResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetSessionRequest, GetSessionResponse, GetWorkoutRequest, GetWorkoutResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse } from "./workout_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -64,6 +64,71 @@ export const WorkoutService = {
       name: "SubmitFeedback",
       I: SubmitFeedbackRequest,
       O: SubmitFeedbackResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7.1 — movement library + session builder + live session.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListExercises
+     */
+    listExercises: {
+      name: "ListExercises",
+      I: ListExercisesRequest,
+      O: ListExercisesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.CreateSession
+     */
+    createSession: {
+      name: "CreateSession",
+      I: CreateSessionRequest,
+      O: CreateSessionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetSession
+     */
+    getSession: {
+      name: "GetSession",
+      I: GetSessionRequest,
+      O: GetSessionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetActiveSession
+     */
+    getActiveSession: {
+      name: "GetActiveSession",
+      I: GetActiveSessionRequest,
+      O: GetActiveSessionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListSessions
+     */
+    listSessions: {
+      name: "ListSessions",
+      I: ListSessionsRequest,
+      O: ListSessionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpdateSessionStatus
+     */
+    updateSessionStatus: {
+      name: "UpdateSessionStatus",
+      I: UpdateSessionStatusRequest,
+      O: UpdateSessionStatusResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.LogSet
+     */
+    logSet: {
+      name: "LogSet",
+      I: LogSetRequest,
+      O: LogSetResponse,
       kind: MethodKind.Unary,
     },
   }

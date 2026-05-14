@@ -1267,6 +1267,1401 @@ class SubmitFeedbackResponse extends $pb.GeneratedMessage {
   void clearId() => $_clearField(1);
 }
 
+/// Exercise is one entry in the movement library.
+class Exercise extends $pb.GeneratedMessage {
+  factory Exercise({
+    $core.String? id,
+    $core.String? name,
+    $core.String? category,
+    $core.String? primaryMuscle,
+    $core.String? equipment,
+    $core.String? videoUrl,
+    $core.String? cueOne,
+    $core.String? cueTwo,
+    $core.String? cueThree,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (category != null) result.category = category;
+    if (primaryMuscle != null) result.primaryMuscle = primaryMuscle;
+    if (equipment != null) result.equipment = equipment;
+    if (videoUrl != null) result.videoUrl = videoUrl;
+    if (cueOne != null) result.cueOne = cueOne;
+    if (cueTwo != null) result.cueTwo = cueTwo;
+    if (cueThree != null) result.cueThree = cueThree;
+    return result;
+  }
+
+  Exercise._();
+
+  factory Exercise.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Exercise.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Exercise', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'category')
+    ..aOS(4, _omitFieldNames ? '' : 'primaryMuscle')
+    ..aOS(5, _omitFieldNames ? '' : 'equipment')
+    ..aOS(6, _omitFieldNames ? '' : 'videoUrl')
+    ..aOS(7, _omitFieldNames ? '' : 'cueOne')
+    ..aOS(8, _omitFieldNames ? '' : 'cueTwo')
+    ..aOS(9, _omitFieldNames ? '' : 'cueThree')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Exercise clone() => Exercise()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Exercise copyWith(void Function(Exercise) updates) => super.copyWith((message) => updates(message as Exercise)) as Exercise;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Exercise create() => Exercise._();
+  @$core.override
+  Exercise createEmptyInstance() => create();
+  static $pb.PbList<Exercise> createRepeated() => $pb.PbList<Exercise>();
+  @$core.pragma('dart2js:noInline')
+  static Exercise getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Exercise>(create);
+  static Exercise? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  /// compound | accessory | conditioning | mobility.
+  @$pb.TagNumber(3)
+  $core.String get category => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set category($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCategory() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCategory() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get primaryMuscle => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set primaryMuscle($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPrimaryMuscle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPrimaryMuscle() => $_clearField(4);
+
+  /// barbell | dumbbell | machine | bodyweight | cable | kettlebell.
+  @$pb.TagNumber(5)
+  $core.String get equipment => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set equipment($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEquipment() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEquipment() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get videoUrl => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set videoUrl($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasVideoUrl() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearVideoUrl() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get cueOne => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set cueOne($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCueOne() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCueOne() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get cueTwo => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set cueTwo($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCueTwo() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCueTwo() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get cueThree => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set cueThree($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCueThree() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCueThree() => $_clearField(9);
+}
+
+/// SessionSet is one logged set inside a session exercise. rpe is 0 when
+/// not yet rated (1-10 once rated); completed flips when the lifter
+/// marks the set done in the live view.
+class SessionSet extends $pb.GeneratedMessage {
+  factory SessionSet({
+    $core.String? id,
+    $core.int? setIndex,
+    $core.double? weight,
+    $core.int? reps,
+    $core.String? unit,
+    $core.double? rpe,
+    $core.bool? completed,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (setIndex != null) result.setIndex = setIndex;
+    if (weight != null) result.weight = weight;
+    if (reps != null) result.reps = reps;
+    if (unit != null) result.unit = unit;
+    if (rpe != null) result.rpe = rpe;
+    if (completed != null) result.completed = completed;
+    return result;
+  }
+
+  SessionSet._();
+
+  factory SessionSet.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SessionSet.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SessionSet', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'setIndex', $pb.PbFieldType.O3)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'weight', $pb.PbFieldType.OD)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'reps', $pb.PbFieldType.O3)
+    ..aOS(5, _omitFieldNames ? '' : 'unit')
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'rpe', $pb.PbFieldType.OD)
+    ..aOB(7, _omitFieldNames ? '' : 'completed')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SessionSet clone() => SessionSet()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SessionSet copyWith(void Function(SessionSet) updates) => super.copyWith((message) => updates(message as SessionSet)) as SessionSet;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SessionSet create() => SessionSet._();
+  @$core.override
+  SessionSet createEmptyInstance() => create();
+  static $pb.PbList<SessionSet> createRepeated() => $pb.PbList<SessionSet>();
+  @$core.pragma('dart2js:noInline')
+  static SessionSet getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SessionSet>(create);
+  static SessionSet? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get setIndex => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set setIndex($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSetIndex() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSetIndex() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get weight => $_getN(2);
+  @$pb.TagNumber(3)
+  set weight($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWeight() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWeight() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get reps => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set reps($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReps() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReps() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get unit => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set unit($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasUnit() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearUnit() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get rpe => $_getN(5);
+  @$pb.TagNumber(6)
+  set rpe($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRpe() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRpe() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get completed => $_getBF(6);
+  @$pb.TagNumber(7)
+  set completed($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCompleted() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCompleted() => $_clearField(7);
+}
+
+/// SessionExercise is an exercise slotted into a session, with its
+/// library metadata joined in and its logged sets attached.
+class SessionExercise extends $pb.GeneratedMessage {
+  factory SessionExercise({
+    $core.String? id,
+    $core.String? exerciseId,
+    $core.int? orderIndex,
+    $core.int? targetSets,
+    $core.int? restSeconds,
+    $core.String? exerciseName,
+    $core.String? exerciseCategory,
+    $core.String? primaryMuscle,
+    $core.String? equipment,
+    $core.String? videoUrl,
+    $core.String? cueOne,
+    $core.String? cueTwo,
+    $core.String? cueThree,
+    $core.Iterable<SessionSet>? sets,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (exerciseId != null) result.exerciseId = exerciseId;
+    if (orderIndex != null) result.orderIndex = orderIndex;
+    if (targetSets != null) result.targetSets = targetSets;
+    if (restSeconds != null) result.restSeconds = restSeconds;
+    if (exerciseName != null) result.exerciseName = exerciseName;
+    if (exerciseCategory != null) result.exerciseCategory = exerciseCategory;
+    if (primaryMuscle != null) result.primaryMuscle = primaryMuscle;
+    if (equipment != null) result.equipment = equipment;
+    if (videoUrl != null) result.videoUrl = videoUrl;
+    if (cueOne != null) result.cueOne = cueOne;
+    if (cueTwo != null) result.cueTwo = cueTwo;
+    if (cueThree != null) result.cueThree = cueThree;
+    if (sets != null) result.sets.addAll(sets);
+    return result;
+  }
+
+  SessionExercise._();
+
+  factory SessionExercise.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SessionExercise.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SessionExercise', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'exerciseId')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'orderIndex', $pb.PbFieldType.O3)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'targetSets', $pb.PbFieldType.O3)
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'restSeconds', $pb.PbFieldType.O3)
+    ..aOS(6, _omitFieldNames ? '' : 'exerciseName')
+    ..aOS(7, _omitFieldNames ? '' : 'exerciseCategory')
+    ..aOS(8, _omitFieldNames ? '' : 'primaryMuscle')
+    ..aOS(9, _omitFieldNames ? '' : 'equipment')
+    ..aOS(10, _omitFieldNames ? '' : 'videoUrl')
+    ..aOS(11, _omitFieldNames ? '' : 'cueOne')
+    ..aOS(12, _omitFieldNames ? '' : 'cueTwo')
+    ..aOS(13, _omitFieldNames ? '' : 'cueThree')
+    ..pc<SessionSet>(14, _omitFieldNames ? '' : 'sets', $pb.PbFieldType.PM, subBuilder: SessionSet.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SessionExercise clone() => SessionExercise()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SessionExercise copyWith(void Function(SessionExercise) updates) => super.copyWith((message) => updates(message as SessionExercise)) as SessionExercise;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SessionExercise create() => SessionExercise._();
+  @$core.override
+  SessionExercise createEmptyInstance() => create();
+  static $pb.PbList<SessionExercise> createRepeated() => $pb.PbList<SessionExercise>();
+  @$core.pragma('dart2js:noInline')
+  static SessionExercise getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SessionExercise>(create);
+  static SessionExercise? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get exerciseId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set exerciseId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExerciseId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExerciseId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get orderIndex => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set orderIndex($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOrderIndex() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOrderIndex() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get targetSets => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set targetSets($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTargetSets() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTargetSets() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get restSeconds => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set restSeconds($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRestSeconds() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRestSeconds() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get exerciseName => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set exerciseName($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExerciseName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExerciseName() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get exerciseCategory => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set exerciseCategory($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasExerciseCategory() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearExerciseCategory() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get primaryMuscle => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set primaryMuscle($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPrimaryMuscle() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPrimaryMuscle() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get equipment => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set equipment($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasEquipment() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearEquipment() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get videoUrl => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set videoUrl($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasVideoUrl() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearVideoUrl() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get cueOne => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set cueOne($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCueOne() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCueOne() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get cueTwo => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set cueTwo($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasCueTwo() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCueTwo() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get cueThree => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set cueThree($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCueThree() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCueThree() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $pb.PbList<SessionSet> get sets => $_getList(13);
+}
+
+/// ForgeSession is a built / live / closed training session.
+class ForgeSession extends $pb.GeneratedMessage {
+  factory ForgeSession({
+    $core.String? id,
+    $core.String? title,
+    $core.String? status,
+    $core.String? notes,
+    $fixnum.Int64? startedAt,
+    $fixnum.Int64? completedAt,
+    $fixnum.Int64? createdAt,
+    $core.Iterable<SessionExercise>? exercises,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (notes != null) result.notes = notes;
+    if (startedAt != null) result.startedAt = startedAt;
+    if (completedAt != null) result.completedAt = completedAt;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (exercises != null) result.exercises.addAll(exercises);
+    return result;
+  }
+
+  ForgeSession._();
+
+  factory ForgeSession.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ForgeSession.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ForgeSession', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOS(4, _omitFieldNames ? '' : 'notes')
+    ..aInt64(5, _omitFieldNames ? '' : 'startedAt')
+    ..aInt64(6, _omitFieldNames ? '' : 'completedAt')
+    ..aInt64(7, _omitFieldNames ? '' : 'createdAt')
+    ..pc<SessionExercise>(8, _omitFieldNames ? '' : 'exercises', $pb.PbFieldType.PM, subBuilder: SessionExercise.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ForgeSession clone() => ForgeSession()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ForgeSession copyWith(void Function(ForgeSession) updates) => super.copyWith((message) => updates(message as ForgeSession)) as ForgeSession;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ForgeSession create() => ForgeSession._();
+  @$core.override
+  ForgeSession createEmptyInstance() => create();
+  static $pb.PbList<ForgeSession> createRepeated() => $pb.PbList<ForgeSession>();
+  @$core.pragma('dart2js:noInline')
+  static ForgeSession getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ForgeSession>(create);
+  static ForgeSession? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  /// planned | active | completed | abandoned.
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get notes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set notes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNotes() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get startedAt => $_getI64(4);
+  @$pb.TagNumber(5)
+  set startedAt($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStartedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStartedAt() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get completedAt => $_getI64(5);
+  @$pb.TagNumber(6)
+  set completedAt($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCompletedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCompletedAt() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get createdAt => $_getI64(6);
+  @$pb.TagNumber(7)
+  set createdAt($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCreatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreatedAt() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $pb.PbList<SessionExercise> get exercises => $_getList(7);
+}
+
+/// PlannedExercise is one row of the session builder's output.
+class PlannedExercise extends $pb.GeneratedMessage {
+  factory PlannedExercise({
+    $core.String? exerciseId,
+    $core.int? targetSets,
+    $core.int? restSeconds,
+  }) {
+    final result = create();
+    if (exerciseId != null) result.exerciseId = exerciseId;
+    if (targetSets != null) result.targetSets = targetSets;
+    if (restSeconds != null) result.restSeconds = restSeconds;
+    return result;
+  }
+
+  PlannedExercise._();
+
+  factory PlannedExercise.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PlannedExercise.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlannedExercise', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'exerciseId')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'targetSets', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'restSeconds', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlannedExercise clone() => PlannedExercise()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlannedExercise copyWith(void Function(PlannedExercise) updates) => super.copyWith((message) => updates(message as PlannedExercise)) as PlannedExercise;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PlannedExercise create() => PlannedExercise._();
+  @$core.override
+  PlannedExercise createEmptyInstance() => create();
+  static $pb.PbList<PlannedExercise> createRepeated() => $pb.PbList<PlannedExercise>();
+  @$core.pragma('dart2js:noInline')
+  static PlannedExercise getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlannedExercise>(create);
+  static PlannedExercise? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get exerciseId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set exerciseId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExerciseId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExerciseId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get targetSets => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set targetSets($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTargetSets() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTargetSets() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get restSeconds => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set restSeconds($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRestSeconds() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRestSeconds() => $_clearField(3);
+}
+
+class ListExercisesRequest extends $pb.GeneratedMessage {
+  factory ListExercisesRequest({
+    $1.PageRequest? page,
+  }) {
+    final result = create();
+    if (page != null) result.page = page;
+    return result;
+  }
+
+  ListExercisesRequest._();
+
+  factory ListExercisesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListExercisesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListExercisesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<$1.PageRequest>(1, _omitFieldNames ? '' : 'page', subBuilder: $1.PageRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListExercisesRequest clone() => ListExercisesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListExercisesRequest copyWith(void Function(ListExercisesRequest) updates) => super.copyWith((message) => updates(message as ListExercisesRequest)) as ListExercisesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListExercisesRequest create() => ListExercisesRequest._();
+  @$core.override
+  ListExercisesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListExercisesRequest> createRepeated() => $pb.PbList<ListExercisesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListExercisesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListExercisesRequest>(create);
+  static ListExercisesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.PageRequest get page => $_getN(0);
+  @$pb.TagNumber(1)
+  set page($1.PageRequest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPage() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $1.PageRequest ensurePage() => $_ensure(0);
+}
+
+class ListExercisesResponse extends $pb.GeneratedMessage {
+  factory ListExercisesResponse({
+    $core.Iterable<Exercise>? exercises,
+  }) {
+    final result = create();
+    if (exercises != null) result.exercises.addAll(exercises);
+    return result;
+  }
+
+  ListExercisesResponse._();
+
+  factory ListExercisesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListExercisesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListExercisesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..pc<Exercise>(1, _omitFieldNames ? '' : 'exercises', $pb.PbFieldType.PM, subBuilder: Exercise.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListExercisesResponse clone() => ListExercisesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListExercisesResponse copyWith(void Function(ListExercisesResponse) updates) => super.copyWith((message) => updates(message as ListExercisesResponse)) as ListExercisesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListExercisesResponse create() => ListExercisesResponse._();
+  @$core.override
+  ListExercisesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListExercisesResponse> createRepeated() => $pb.PbList<ListExercisesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListExercisesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListExercisesResponse>(create);
+  static ListExercisesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Exercise> get exercises => $_getList(0);
+}
+
+class CreateSessionRequest extends $pb.GeneratedMessage {
+  factory CreateSessionRequest({
+    $core.String? title,
+    $core.String? notes,
+    $core.Iterable<PlannedExercise>? exercises,
+  }) {
+    final result = create();
+    if (title != null) result.title = title;
+    if (notes != null) result.notes = notes;
+    if (exercises != null) result.exercises.addAll(exercises);
+    return result;
+  }
+
+  CreateSessionRequest._();
+
+  factory CreateSessionRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateSessionRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSessionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'title')
+    ..aOS(2, _omitFieldNames ? '' : 'notes')
+    ..pc<PlannedExercise>(3, _omitFieldNames ? '' : 'exercises', $pb.PbFieldType.PM, subBuilder: PlannedExercise.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSessionRequest clone() => CreateSessionRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSessionRequest copyWith(void Function(CreateSessionRequest) updates) => super.copyWith((message) => updates(message as CreateSessionRequest)) as CreateSessionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSessionRequest create() => CreateSessionRequest._();
+  @$core.override
+  CreateSessionRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateSessionRequest> createRepeated() => $pb.PbList<CreateSessionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSessionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSessionRequest>(create);
+  static CreateSessionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get title => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set title($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTitle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTitle() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get notes => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set notes($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNotes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNotes() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<PlannedExercise> get exercises => $_getList(2);
+}
+
+class CreateSessionResponse extends $pb.GeneratedMessage {
+  factory CreateSessionResponse({
+    ForgeSession? session,
+  }) {
+    final result = create();
+    if (session != null) result.session = session;
+    return result;
+  }
+
+  CreateSessionResponse._();
+
+  factory CreateSessionResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateSessionResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSessionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<ForgeSession>(1, _omitFieldNames ? '' : 'session', subBuilder: ForgeSession.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSessionResponse clone() => CreateSessionResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSessionResponse copyWith(void Function(CreateSessionResponse) updates) => super.copyWith((message) => updates(message as CreateSessionResponse)) as CreateSessionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSessionResponse create() => CreateSessionResponse._();
+  @$core.override
+  CreateSessionResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateSessionResponse> createRepeated() => $pb.PbList<CreateSessionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSessionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSessionResponse>(create);
+  static CreateSessionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ForgeSession get session => $_getN(0);
+  @$pb.TagNumber(1)
+  set session(ForgeSession value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSession() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSession() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ForgeSession ensureSession() => $_ensure(0);
+}
+
+class GetSessionRequest extends $pb.GeneratedMessage {
+  factory GetSessionRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  GetSessionRequest._();
+
+  factory GetSessionRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetSessionRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSessionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSessionRequest clone() => GetSessionRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSessionRequest copyWith(void Function(GetSessionRequest) updates) => super.copyWith((message) => updates(message as GetSessionRequest)) as GetSessionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSessionRequest create() => GetSessionRequest._();
+  @$core.override
+  GetSessionRequest createEmptyInstance() => create();
+  static $pb.PbList<GetSessionRequest> createRepeated() => $pb.PbList<GetSessionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetSessionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSessionRequest>(create);
+  static GetSessionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class GetSessionResponse extends $pb.GeneratedMessage {
+  factory GetSessionResponse({
+    ForgeSession? session,
+  }) {
+    final result = create();
+    if (session != null) result.session = session;
+    return result;
+  }
+
+  GetSessionResponse._();
+
+  factory GetSessionResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetSessionResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSessionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<ForgeSession>(1, _omitFieldNames ? '' : 'session', subBuilder: ForgeSession.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSessionResponse clone() => GetSessionResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSessionResponse copyWith(void Function(GetSessionResponse) updates) => super.copyWith((message) => updates(message as GetSessionResponse)) as GetSessionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSessionResponse create() => GetSessionResponse._();
+  @$core.override
+  GetSessionResponse createEmptyInstance() => create();
+  static $pb.PbList<GetSessionResponse> createRepeated() => $pb.PbList<GetSessionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetSessionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSessionResponse>(create);
+  static GetSessionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ForgeSession get session => $_getN(0);
+  @$pb.TagNumber(1)
+  set session(ForgeSession value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSession() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSession() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ForgeSession ensureSession() => $_ensure(0);
+}
+
+class GetActiveSessionRequest extends $pb.GeneratedMessage {
+  factory GetActiveSessionRequest() => create();
+
+  GetActiveSessionRequest._();
+
+  factory GetActiveSessionRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetActiveSessionRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetActiveSessionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetActiveSessionRequest clone() => GetActiveSessionRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetActiveSessionRequest copyWith(void Function(GetActiveSessionRequest) updates) => super.copyWith((message) => updates(message as GetActiveSessionRequest)) as GetActiveSessionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetActiveSessionRequest create() => GetActiveSessionRequest._();
+  @$core.override
+  GetActiveSessionRequest createEmptyInstance() => create();
+  static $pb.PbList<GetActiveSessionRequest> createRepeated() => $pb.PbList<GetActiveSessionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetActiveSessionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetActiveSessionRequest>(create);
+  static GetActiveSessionRequest? _defaultInstance;
+}
+
+class GetActiveSessionResponse extends $pb.GeneratedMessage {
+  factory GetActiveSessionResponse({
+    ForgeSession? session,
+  }) {
+    final result = create();
+    if (session != null) result.session = session;
+    return result;
+  }
+
+  GetActiveSessionResponse._();
+
+  factory GetActiveSessionResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetActiveSessionResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetActiveSessionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<ForgeSession>(1, _omitFieldNames ? '' : 'session', subBuilder: ForgeSession.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetActiveSessionResponse clone() => GetActiveSessionResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetActiveSessionResponse copyWith(void Function(GetActiveSessionResponse) updates) => super.copyWith((message) => updates(message as GetActiveSessionResponse)) as GetActiveSessionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetActiveSessionResponse create() => GetActiveSessionResponse._();
+  @$core.override
+  GetActiveSessionResponse createEmptyInstance() => create();
+  static $pb.PbList<GetActiveSessionResponse> createRepeated() => $pb.PbList<GetActiveSessionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetActiveSessionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetActiveSessionResponse>(create);
+  static GetActiveSessionResponse? _defaultInstance;
+
+  /// session.id is empty when the caller has no active session.
+  @$pb.TagNumber(1)
+  ForgeSession get session => $_getN(0);
+  @$pb.TagNumber(1)
+  set session(ForgeSession value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSession() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSession() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ForgeSession ensureSession() => $_ensure(0);
+}
+
+class ListSessionsRequest extends $pb.GeneratedMessage {
+  factory ListSessionsRequest({
+    $1.PageRequest? page,
+  }) {
+    final result = create();
+    if (page != null) result.page = page;
+    return result;
+  }
+
+  ListSessionsRequest._();
+
+  factory ListSessionsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListSessionsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSessionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<$1.PageRequest>(1, _omitFieldNames ? '' : 'page', subBuilder: $1.PageRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSessionsRequest clone() => ListSessionsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSessionsRequest copyWith(void Function(ListSessionsRequest) updates) => super.copyWith((message) => updates(message as ListSessionsRequest)) as ListSessionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSessionsRequest create() => ListSessionsRequest._();
+  @$core.override
+  ListSessionsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListSessionsRequest> createRepeated() => $pb.PbList<ListSessionsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListSessionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSessionsRequest>(create);
+  static ListSessionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.PageRequest get page => $_getN(0);
+  @$pb.TagNumber(1)
+  set page($1.PageRequest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPage() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $1.PageRequest ensurePage() => $_ensure(0);
+}
+
+class ListSessionsResponse extends $pb.GeneratedMessage {
+  factory ListSessionsResponse({
+    $core.Iterable<ForgeSession>? sessions,
+  }) {
+    final result = create();
+    if (sessions != null) result.sessions.addAll(sessions);
+    return result;
+  }
+
+  ListSessionsResponse._();
+
+  factory ListSessionsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListSessionsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSessionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..pc<ForgeSession>(1, _omitFieldNames ? '' : 'sessions', $pb.PbFieldType.PM, subBuilder: ForgeSession.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSessionsResponse clone() => ListSessionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSessionsResponse copyWith(void Function(ListSessionsResponse) updates) => super.copyWith((message) => updates(message as ListSessionsResponse)) as ListSessionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSessionsResponse create() => ListSessionsResponse._();
+  @$core.override
+  ListSessionsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListSessionsResponse> createRepeated() => $pb.PbList<ListSessionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListSessionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSessionsResponse>(create);
+  static ListSessionsResponse? _defaultInstance;
+
+  /// Summaries — exercises are not hydrated; call GetSession for detail.
+  @$pb.TagNumber(1)
+  $pb.PbList<ForgeSession> get sessions => $_getList(0);
+}
+
+class UpdateSessionStatusRequest extends $pb.GeneratedMessage {
+  factory UpdateSessionStatusRequest({
+    $core.String? id,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  UpdateSessionStatusRequest._();
+
+  factory UpdateSessionStatusRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateSessionStatusRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSessionStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateSessionStatusRequest clone() => UpdateSessionStatusRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateSessionStatusRequest copyWith(void Function(UpdateSessionStatusRequest) updates) => super.copyWith((message) => updates(message as UpdateSessionStatusRequest)) as UpdateSessionStatusRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSessionStatusRequest create() => UpdateSessionStatusRequest._();
+  @$core.override
+  UpdateSessionStatusRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateSessionStatusRequest> createRepeated() => $pb.PbList<UpdateSessionStatusRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSessionStatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSessionStatusRequest>(create);
+  static UpdateSessionStatusRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+}
+
+class UpdateSessionStatusResponse extends $pb.GeneratedMessage {
+  factory UpdateSessionStatusResponse({
+    ForgeSession? session,
+  }) {
+    final result = create();
+    if (session != null) result.session = session;
+    return result;
+  }
+
+  UpdateSessionStatusResponse._();
+
+  factory UpdateSessionStatusResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateSessionStatusResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSessionStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<ForgeSession>(1, _omitFieldNames ? '' : 'session', subBuilder: ForgeSession.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateSessionStatusResponse clone() => UpdateSessionStatusResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateSessionStatusResponse copyWith(void Function(UpdateSessionStatusResponse) updates) => super.copyWith((message) => updates(message as UpdateSessionStatusResponse)) as UpdateSessionStatusResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSessionStatusResponse create() => UpdateSessionStatusResponse._();
+  @$core.override
+  UpdateSessionStatusResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateSessionStatusResponse> createRepeated() => $pb.PbList<UpdateSessionStatusResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSessionStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSessionStatusResponse>(create);
+  static UpdateSessionStatusResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ForgeSession get session => $_getN(0);
+  @$pb.TagNumber(1)
+  set session(ForgeSession value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSession() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSession() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ForgeSession ensureSession() => $_ensure(0);
+}
+
+class LogSetRequest extends $pb.GeneratedMessage {
+  factory LogSetRequest({
+    $core.String? sessionExerciseId,
+    $core.int? setIndex,
+    $core.double? weight,
+    $core.int? reps,
+    $core.String? unit,
+    $core.double? rpe,
+    $core.bool? completed,
+  }) {
+    final result = create();
+    if (sessionExerciseId != null) result.sessionExerciseId = sessionExerciseId;
+    if (setIndex != null) result.setIndex = setIndex;
+    if (weight != null) result.weight = weight;
+    if (reps != null) result.reps = reps;
+    if (unit != null) result.unit = unit;
+    if (rpe != null) result.rpe = rpe;
+    if (completed != null) result.completed = completed;
+    return result;
+  }
+
+  LogSetRequest._();
+
+  factory LogSetRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory LogSetRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LogSetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sessionExerciseId')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'setIndex', $pb.PbFieldType.O3)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'weight', $pb.PbFieldType.OD)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'reps', $pb.PbFieldType.O3)
+    ..aOS(5, _omitFieldNames ? '' : 'unit')
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'rpe', $pb.PbFieldType.OD)
+    ..aOB(7, _omitFieldNames ? '' : 'completed')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LogSetRequest clone() => LogSetRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LogSetRequest copyWith(void Function(LogSetRequest) updates) => super.copyWith((message) => updates(message as LogSetRequest)) as LogSetRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LogSetRequest create() => LogSetRequest._();
+  @$core.override
+  LogSetRequest createEmptyInstance() => create();
+  static $pb.PbList<LogSetRequest> createRepeated() => $pb.PbList<LogSetRequest>();
+  @$core.pragma('dart2js:noInline')
+  static LogSetRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogSetRequest>(create);
+  static LogSetRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sessionExerciseId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sessionExerciseId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSessionExerciseId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionExerciseId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get setIndex => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set setIndex($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSetIndex() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSetIndex() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get weight => $_getN(2);
+  @$pb.TagNumber(3)
+  set weight($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWeight() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWeight() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get reps => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set reps($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReps() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReps() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get unit => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set unit($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasUnit() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearUnit() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get rpe => $_getN(5);
+  @$pb.TagNumber(6)
+  set rpe($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRpe() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRpe() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get completed => $_getBF(6);
+  @$pb.TagNumber(7)
+  set completed($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCompleted() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCompleted() => $_clearField(7);
+}
+
+class LogSetResponse extends $pb.GeneratedMessage {
+  factory LogSetResponse({
+    SessionSet? set,
+  }) {
+    final result = create();
+    if (set != null) result.set = set;
+    return result;
+  }
+
+  LogSetResponse._();
+
+  factory LogSetResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory LogSetResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LogSetResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<SessionSet>(1, _omitFieldNames ? '' : 'set', subBuilder: SessionSet.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LogSetResponse clone() => LogSetResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LogSetResponse copyWith(void Function(LogSetResponse) updates) => super.copyWith((message) => updates(message as LogSetResponse)) as LogSetResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LogSetResponse create() => LogSetResponse._();
+  @$core.override
+  LogSetResponse createEmptyInstance() => create();
+  static $pb.PbList<LogSetResponse> createRepeated() => $pb.PbList<LogSetResponse>();
+  @$core.pragma('dart2js:noInline')
+  static LogSetResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogSetResponse>(create);
+  static LogSetResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SessionSet get set => $_getN(0);
+  @$pb.TagNumber(1)
+  set set(SessionSet value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSet() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSet() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SessionSet ensureSet() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
