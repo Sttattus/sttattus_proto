@@ -1353,6 +1353,199 @@ func (x *RecordProgressResponse) GetPositionSeconds() int32 {
 	return 0
 }
 
+type RedeemContentRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ContentId     string                 `protobuf:"bytes,1,opt,name=content_id,json=contentId,proto3" json:"content_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RedeemContentRequest) Reset() {
+	*x = RedeemContentRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RedeemContentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RedeemContentRequest) ProtoMessage() {}
+
+func (x *RedeemContentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RedeemContentRequest.ProtoReflect.Descriptor instead.
+func (*RedeemContentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *RedeemContentRequest) GetContentId() string {
+	if x != nil {
+		return x.ContentId
+	}
+	return ""
+}
+
+type RedeemContentResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ContentId     string                 `protobuf:"bytes,1,opt,name=content_id,json=contentId,proto3" json:"content_id,omitempty"`
+	PointsSpent   int32                  `protobuf:"varint,2,opt,name=points_spent,json=pointsSpent,proto3" json:"points_spent,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RedeemContentResponse) Reset() {
+	*x = RedeemContentResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RedeemContentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RedeemContentResponse) ProtoMessage() {}
+
+func (x *RedeemContentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RedeemContentResponse.ProtoReflect.Descriptor instead.
+func (*RedeemContentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *RedeemContentResponse) GetContentId() string {
+	if x != nil {
+		return x.ContentId
+	}
+	return ""
+}
+
+func (x *RedeemContentResponse) GetPointsSpent() int32 {
+	if x != nil {
+		return x.PointsSpent
+	}
+	return 0
+}
+
+type CreateSubscriptionCheckoutRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SuccessUrl    string                 `protobuf:"bytes,1,opt,name=success_url,json=successUrl,proto3" json:"success_url,omitempty"`
+	CancelUrl     string                 `protobuf:"bytes,2,opt,name=cancel_url,json=cancelUrl,proto3" json:"cancel_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateSubscriptionCheckoutRequest) Reset() {
+	*x = CreateSubscriptionCheckoutRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateSubscriptionCheckoutRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateSubscriptionCheckoutRequest) ProtoMessage() {}
+
+func (x *CreateSubscriptionCheckoutRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateSubscriptionCheckoutRequest.ProtoReflect.Descriptor instead.
+func (*CreateSubscriptionCheckoutRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *CreateSubscriptionCheckoutRequest) GetSuccessUrl() string {
+	if x != nil {
+		return x.SuccessUrl
+	}
+	return ""
+}
+
+func (x *CreateSubscriptionCheckoutRequest) GetCancelUrl() string {
+	if x != nil {
+		return x.CancelUrl
+	}
+	return ""
+}
+
+type CreateSubscriptionCheckoutResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Stripe-hosted checkout URL. Empty when billing is not configured.
+	CheckoutUrl   string `protobuf:"bytes,1,opt,name=checkout_url,json=checkoutUrl,proto3" json:"checkout_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateSubscriptionCheckoutResponse) Reset() {
+	*x = CreateSubscriptionCheckoutResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateSubscriptionCheckoutResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateSubscriptionCheckoutResponse) ProtoMessage() {}
+
+func (x *CreateSubscriptionCheckoutResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateSubscriptionCheckoutResponse.ProtoReflect.Descriptor instead.
+func (*CreateSubscriptionCheckoutResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *CreateSubscriptionCheckoutResponse) GetCheckoutUrl() string {
+	if x != nil {
+		return x.CheckoutUrl
+	}
+	return ""
+}
+
 var File_sttattus_onyx_v1_onyx_proto protoreflect.FileDescriptor
 
 const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
@@ -1462,7 +1655,21 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\n" +
 	"completion\x18\x01 \x01(\x01R\n" +
 	"completion\x12)\n" +
-	"\x10position_seconds\x18\x02 \x01(\x05R\x0fpositionSeconds2\xd6\x06\n" +
+	"\x10position_seconds\x18\x02 \x01(\x05R\x0fpositionSeconds\"5\n" +
+	"\x14RedeemContentRequest\x12\x1d\n" +
+	"\n" +
+	"content_id\x18\x01 \x01(\tR\tcontentId\"Y\n" +
+	"\x15RedeemContentResponse\x12\x1d\n" +
+	"\n" +
+	"content_id\x18\x01 \x01(\tR\tcontentId\x12!\n" +
+	"\fpoints_spent\x18\x02 \x01(\x05R\vpointsSpent\"c\n" +
+	"!CreateSubscriptionCheckoutRequest\x12\x1f\n" +
+	"\vsuccess_url\x18\x01 \x01(\tR\n" +
+	"successUrl\x12\x1d\n" +
+	"\n" +
+	"cancel_url\x18\x02 \x01(\tR\tcancelUrl\"G\n" +
+	"\"CreateSubscriptionCheckoutResponse\x12!\n" +
+	"\fcheckout_url\x18\x01 \x01(\tR\vcheckoutUrl2\xc2\b\n" +
 	"\vOnyxService\x12h\n" +
 	"\rCreateProfile\x12*.sttattus.onyx.v1.CreateOnyxProfileRequest\x1a+.sttattus.onyx.v1.CreateOnyxProfileResponse\x12_\n" +
 	"\n" +
@@ -1475,7 +1682,9 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\fListContinue\x12%.sttattus.onyx.v1.ListContinueRequest\x1a&.sttattus.onyx.v1.ListContinueResponse\x12W\n" +
 	"\n" +
 	"GetShelves\x12#.sttattus.onyx.v1.GetShelvesRequest\x1a$.sttattus.onyx.v1.GetShelvesResponse\x12c\n" +
-	"\x0eRecordProgress\x12'.sttattus.onyx.v1.RecordProgressRequest\x1a(.sttattus.onyx.v1.RecordProgressResponseB:Z8github.com/sttattus/proto/gen/go/sttattus/onyx/v1;onyxv1b\x06proto3"
+	"\x0eRecordProgress\x12'.sttattus.onyx.v1.RecordProgressRequest\x1a(.sttattus.onyx.v1.RecordProgressResponse\x12`\n" +
+	"\rRedeemContent\x12&.sttattus.onyx.v1.RedeemContentRequest\x1a'.sttattus.onyx.v1.RedeemContentResponse\x12\x87\x01\n" +
+	"\x1aCreateSubscriptionCheckout\x123.sttattus.onyx.v1.CreateSubscriptionCheckoutRequest\x1a4.sttattus.onyx.v1.CreateSubscriptionCheckoutResponseB:Z8github.com/sttattus/proto/gen/go/sttattus/onyx/v1;onyxv1b\x06proto3"
 
 var (
 	file_sttattus_onyx_v1_onyx_proto_rawDescOnce sync.Once
@@ -1489,40 +1698,44 @@ func file_sttattus_onyx_v1_onyx_proto_rawDescGZIP() []byte {
 	return file_sttattus_onyx_v1_onyx_proto_rawDescData
 }
 
-var file_sttattus_onyx_v1_onyx_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
+var file_sttattus_onyx_v1_onyx_proto_msgTypes = make([]protoimpl.MessageInfo, 27)
 var file_sttattus_onyx_v1_onyx_proto_goTypes = []any{
-	(*GatingCriteria)(nil),            // 0: sttattus.onyx.v1.GatingCriteria
-	(*OnyxProfile)(nil),               // 1: sttattus.onyx.v1.OnyxProfile
-	(*OnyxContent)(nil),               // 2: sttattus.onyx.v1.OnyxContent
-	(*Subscription)(nil),              // 3: sttattus.onyx.v1.Subscription
-	(*CreateOnyxProfileRequest)(nil),  // 4: sttattus.onyx.v1.CreateOnyxProfileRequest
-	(*CreateOnyxProfileResponse)(nil), // 5: sttattus.onyx.v1.CreateOnyxProfileResponse
-	(*GetOnyxProfileRequest)(nil),     // 6: sttattus.onyx.v1.GetOnyxProfileRequest
-	(*GetOnyxProfileResponse)(nil),    // 7: sttattus.onyx.v1.GetOnyxProfileResponse
-	(*ListContentRequest)(nil),        // 8: sttattus.onyx.v1.ListContentRequest
-	(*ListContentResponse)(nil),       // 9: sttattus.onyx.v1.ListContentResponse
-	(*SubscribeRequest)(nil),          // 10: sttattus.onyx.v1.SubscribeRequest
-	(*SubscribeResponse)(nil),         // 11: sttattus.onyx.v1.SubscribeResponse
-	(*GetContentRequest)(nil),         // 12: sttattus.onyx.v1.GetContentRequest
-	(*GetContentResponse)(nil),        // 13: sttattus.onyx.v1.GetContentResponse
-	(*ListShelfRequest)(nil),          // 14: sttattus.onyx.v1.ListShelfRequest
-	(*ListShelfResponse)(nil),         // 15: sttattus.onyx.v1.ListShelfResponse
-	(*ListContinueRequest)(nil),       // 16: sttattus.onyx.v1.ListContinueRequest
-	(*ListContinueResponse)(nil),      // 17: sttattus.onyx.v1.ListContinueResponse
-	(*GetShelvesRequest)(nil),         // 18: sttattus.onyx.v1.GetShelvesRequest
-	(*Shelf)(nil),                     // 19: sttattus.onyx.v1.Shelf
-	(*GetShelvesResponse)(nil),        // 20: sttattus.onyx.v1.GetShelvesResponse
-	(*RecordProgressRequest)(nil),     // 21: sttattus.onyx.v1.RecordProgressRequest
-	(*RecordProgressResponse)(nil),    // 22: sttattus.onyx.v1.RecordProgressResponse
-	(*timestamppb.Timestamp)(nil),     // 23: google.protobuf.Timestamp
+	(*GatingCriteria)(nil),                     // 0: sttattus.onyx.v1.GatingCriteria
+	(*OnyxProfile)(nil),                        // 1: sttattus.onyx.v1.OnyxProfile
+	(*OnyxContent)(nil),                        // 2: sttattus.onyx.v1.OnyxContent
+	(*Subscription)(nil),                       // 3: sttattus.onyx.v1.Subscription
+	(*CreateOnyxProfileRequest)(nil),           // 4: sttattus.onyx.v1.CreateOnyxProfileRequest
+	(*CreateOnyxProfileResponse)(nil),          // 5: sttattus.onyx.v1.CreateOnyxProfileResponse
+	(*GetOnyxProfileRequest)(nil),              // 6: sttattus.onyx.v1.GetOnyxProfileRequest
+	(*GetOnyxProfileResponse)(nil),             // 7: sttattus.onyx.v1.GetOnyxProfileResponse
+	(*ListContentRequest)(nil),                 // 8: sttattus.onyx.v1.ListContentRequest
+	(*ListContentResponse)(nil),                // 9: sttattus.onyx.v1.ListContentResponse
+	(*SubscribeRequest)(nil),                   // 10: sttattus.onyx.v1.SubscribeRequest
+	(*SubscribeResponse)(nil),                  // 11: sttattus.onyx.v1.SubscribeResponse
+	(*GetContentRequest)(nil),                  // 12: sttattus.onyx.v1.GetContentRequest
+	(*GetContentResponse)(nil),                 // 13: sttattus.onyx.v1.GetContentResponse
+	(*ListShelfRequest)(nil),                   // 14: sttattus.onyx.v1.ListShelfRequest
+	(*ListShelfResponse)(nil),                  // 15: sttattus.onyx.v1.ListShelfResponse
+	(*ListContinueRequest)(nil),                // 16: sttattus.onyx.v1.ListContinueRequest
+	(*ListContinueResponse)(nil),               // 17: sttattus.onyx.v1.ListContinueResponse
+	(*GetShelvesRequest)(nil),                  // 18: sttattus.onyx.v1.GetShelvesRequest
+	(*Shelf)(nil),                              // 19: sttattus.onyx.v1.Shelf
+	(*GetShelvesResponse)(nil),                 // 20: sttattus.onyx.v1.GetShelvesResponse
+	(*RecordProgressRequest)(nil),              // 21: sttattus.onyx.v1.RecordProgressRequest
+	(*RecordProgressResponse)(nil),             // 22: sttattus.onyx.v1.RecordProgressResponse
+	(*RedeemContentRequest)(nil),               // 23: sttattus.onyx.v1.RedeemContentRequest
+	(*RedeemContentResponse)(nil),              // 24: sttattus.onyx.v1.RedeemContentResponse
+	(*CreateSubscriptionCheckoutRequest)(nil),  // 25: sttattus.onyx.v1.CreateSubscriptionCheckoutRequest
+	(*CreateSubscriptionCheckoutResponse)(nil), // 26: sttattus.onyx.v1.CreateSubscriptionCheckoutResponse
+	(*timestamppb.Timestamp)(nil),              // 27: google.protobuf.Timestamp
 }
 var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
-	23, // 0: sttattus.onyx.v1.OnyxProfile.verified_at:type_name -> google.protobuf.Timestamp
+	27, // 0: sttattus.onyx.v1.OnyxProfile.verified_at:type_name -> google.protobuf.Timestamp
 	0,  // 1: sttattus.onyx.v1.OnyxContent.gating:type_name -> sttattus.onyx.v1.GatingCriteria
-	23, // 2: sttattus.onyx.v1.OnyxContent.created_at:type_name -> google.protobuf.Timestamp
-	23, // 3: sttattus.onyx.v1.OnyxContent.expires_at:type_name -> google.protobuf.Timestamp
-	23, // 4: sttattus.onyx.v1.Subscription.granted_at:type_name -> google.protobuf.Timestamp
-	23, // 5: sttattus.onyx.v1.Subscription.expires_at:type_name -> google.protobuf.Timestamp
+	27, // 2: sttattus.onyx.v1.OnyxContent.created_at:type_name -> google.protobuf.Timestamp
+	27, // 3: sttattus.onyx.v1.OnyxContent.expires_at:type_name -> google.protobuf.Timestamp
+	27, // 4: sttattus.onyx.v1.Subscription.granted_at:type_name -> google.protobuf.Timestamp
+	27, // 5: sttattus.onyx.v1.Subscription.expires_at:type_name -> google.protobuf.Timestamp
 	1,  // 6: sttattus.onyx.v1.CreateOnyxProfileResponse.profile:type_name -> sttattus.onyx.v1.OnyxProfile
 	1,  // 7: sttattus.onyx.v1.GetOnyxProfileResponse.profile:type_name -> sttattus.onyx.v1.OnyxProfile
 	2,  // 8: sttattus.onyx.v1.ListContentResponse.content:type_name -> sttattus.onyx.v1.OnyxContent
@@ -1541,17 +1754,21 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	16, // 21: sttattus.onyx.v1.OnyxService.ListContinue:input_type -> sttattus.onyx.v1.ListContinueRequest
 	18, // 22: sttattus.onyx.v1.OnyxService.GetShelves:input_type -> sttattus.onyx.v1.GetShelvesRequest
 	21, // 23: sttattus.onyx.v1.OnyxService.RecordProgress:input_type -> sttattus.onyx.v1.RecordProgressRequest
-	5,  // 24: sttattus.onyx.v1.OnyxService.CreateProfile:output_type -> sttattus.onyx.v1.CreateOnyxProfileResponse
-	7,  // 25: sttattus.onyx.v1.OnyxService.GetProfile:output_type -> sttattus.onyx.v1.GetOnyxProfileResponse
-	9,  // 26: sttattus.onyx.v1.OnyxService.ListContent:output_type -> sttattus.onyx.v1.ListContentResponse
-	11, // 27: sttattus.onyx.v1.OnyxService.Subscribe:output_type -> sttattus.onyx.v1.SubscribeResponse
-	13, // 28: sttattus.onyx.v1.OnyxService.GetContent:output_type -> sttattus.onyx.v1.GetContentResponse
-	15, // 29: sttattus.onyx.v1.OnyxService.ListShelf:output_type -> sttattus.onyx.v1.ListShelfResponse
-	17, // 30: sttattus.onyx.v1.OnyxService.ListContinue:output_type -> sttattus.onyx.v1.ListContinueResponse
-	20, // 31: sttattus.onyx.v1.OnyxService.GetShelves:output_type -> sttattus.onyx.v1.GetShelvesResponse
-	22, // 32: sttattus.onyx.v1.OnyxService.RecordProgress:output_type -> sttattus.onyx.v1.RecordProgressResponse
-	24, // [24:33] is the sub-list for method output_type
-	15, // [15:24] is the sub-list for method input_type
+	23, // 24: sttattus.onyx.v1.OnyxService.RedeemContent:input_type -> sttattus.onyx.v1.RedeemContentRequest
+	25, // 25: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:input_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutRequest
+	5,  // 26: sttattus.onyx.v1.OnyxService.CreateProfile:output_type -> sttattus.onyx.v1.CreateOnyxProfileResponse
+	7,  // 27: sttattus.onyx.v1.OnyxService.GetProfile:output_type -> sttattus.onyx.v1.GetOnyxProfileResponse
+	9,  // 28: sttattus.onyx.v1.OnyxService.ListContent:output_type -> sttattus.onyx.v1.ListContentResponse
+	11, // 29: sttattus.onyx.v1.OnyxService.Subscribe:output_type -> sttattus.onyx.v1.SubscribeResponse
+	13, // 30: sttattus.onyx.v1.OnyxService.GetContent:output_type -> sttattus.onyx.v1.GetContentResponse
+	15, // 31: sttattus.onyx.v1.OnyxService.ListShelf:output_type -> sttattus.onyx.v1.ListShelfResponse
+	17, // 32: sttattus.onyx.v1.OnyxService.ListContinue:output_type -> sttattus.onyx.v1.ListContinueResponse
+	20, // 33: sttattus.onyx.v1.OnyxService.GetShelves:output_type -> sttattus.onyx.v1.GetShelvesResponse
+	22, // 34: sttattus.onyx.v1.OnyxService.RecordProgress:output_type -> sttattus.onyx.v1.RecordProgressResponse
+	24, // 35: sttattus.onyx.v1.OnyxService.RedeemContent:output_type -> sttattus.onyx.v1.RedeemContentResponse
+	26, // 36: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:output_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutResponse
+	26, // [26:37] is the sub-list for method output_type
+	15, // [15:26] is the sub-list for method input_type
 	15, // [15:15] is the sub-list for extension type_name
 	15, // [15:15] is the sub-list for extension extendee
 	0,  // [0:15] is the sub-list for field type_name
@@ -1568,7 +1785,7 @@ func file_sttattus_onyx_v1_onyx_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_onyx_v1_onyx_proto_rawDesc), len(file_sttattus_onyx_v1_onyx_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   23,
+			NumMessages:   27,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

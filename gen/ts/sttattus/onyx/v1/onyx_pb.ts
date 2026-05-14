@@ -1131,3 +1131,165 @@ export class RecordProgressResponse extends Message<RecordProgressResponse> {
   }
 }
 
+/**
+ * @generated from message sttattus.onyx.v1.RedeemContentRequest
+ */
+export class RedeemContentRequest extends Message<RedeemContentRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  constructor(data?: PartialMessage<RedeemContentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RedeemContentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RedeemContentRequest {
+    return new RedeemContentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RedeemContentRequest {
+    return new RedeemContentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RedeemContentRequest {
+    return new RedeemContentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RedeemContentRequest | PlainMessage<RedeemContentRequest> | undefined, b: RedeemContentRequest | PlainMessage<RedeemContentRequest> | undefined): boolean {
+    return proto3.util.equals(RedeemContentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RedeemContentResponse
+ */
+export class RedeemContentResponse extends Message<RedeemContentResponse> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: int32 points_spent = 2;
+   */
+  pointsSpent = 0;
+
+  constructor(data?: PartialMessage<RedeemContentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RedeemContentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "points_spent", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RedeemContentResponse {
+    return new RedeemContentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RedeemContentResponse {
+    return new RedeemContentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RedeemContentResponse {
+    return new RedeemContentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RedeemContentResponse | PlainMessage<RedeemContentResponse> | undefined, b: RedeemContentResponse | PlainMessage<RedeemContentResponse> | undefined): boolean {
+    return proto3.util.equals(RedeemContentResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateSubscriptionCheckoutRequest
+ */
+export class CreateSubscriptionCheckoutRequest extends Message<CreateSubscriptionCheckoutRequest> {
+  /**
+   * @generated from field: string success_url = 1;
+   */
+  successUrl = "";
+
+  /**
+   * @generated from field: string cancel_url = 2;
+   */
+  cancelUrl = "";
+
+  constructor(data?: PartialMessage<CreateSubscriptionCheckoutRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateSubscriptionCheckoutRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "success_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "cancel_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSubscriptionCheckoutRequest {
+    return new CreateSubscriptionCheckoutRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSubscriptionCheckoutRequest {
+    return new CreateSubscriptionCheckoutRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSubscriptionCheckoutRequest {
+    return new CreateSubscriptionCheckoutRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateSubscriptionCheckoutRequest | PlainMessage<CreateSubscriptionCheckoutRequest> | undefined, b: CreateSubscriptionCheckoutRequest | PlainMessage<CreateSubscriptionCheckoutRequest> | undefined): boolean {
+    return proto3.util.equals(CreateSubscriptionCheckoutRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateSubscriptionCheckoutResponse
+ */
+export class CreateSubscriptionCheckoutResponse extends Message<CreateSubscriptionCheckoutResponse> {
+  /**
+   * Stripe-hosted checkout URL. Empty when billing is not configured.
+   *
+   * @generated from field: string checkout_url = 1;
+   */
+  checkoutUrl = "";
+
+  constructor(data?: PartialMessage<CreateSubscriptionCheckoutResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateSubscriptionCheckoutResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "checkout_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSubscriptionCheckoutResponse {
+    return new CreateSubscriptionCheckoutResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSubscriptionCheckoutResponse {
+    return new CreateSubscriptionCheckoutResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSubscriptionCheckoutResponse {
+    return new CreateSubscriptionCheckoutResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateSubscriptionCheckoutResponse | PlainMessage<CreateSubscriptionCheckoutResponse> | undefined, b: CreateSubscriptionCheckoutResponse | PlainMessage<CreateSubscriptionCheckoutResponse> | undefined): boolean {
+    return proto3.util.equals(CreateSubscriptionCheckoutResponse, a, b);
+  }
+}
+

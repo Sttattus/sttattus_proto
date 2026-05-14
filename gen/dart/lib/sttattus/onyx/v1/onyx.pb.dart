@@ -1533,6 +1533,215 @@ class RecordProgressResponse extends $pb.GeneratedMessage {
   void clearPositionSeconds() => $_clearField(2);
 }
 
+class RedeemContentRequest extends $pb.GeneratedMessage {
+  factory RedeemContentRequest({
+    $core.String? contentId,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    return result;
+  }
+
+  RedeemContentRequest._();
+
+  factory RedeemContentRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RedeemContentRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RedeemContentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RedeemContentRequest clone() => RedeemContentRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RedeemContentRequest copyWith(void Function(RedeemContentRequest) updates) => super.copyWith((message) => updates(message as RedeemContentRequest)) as RedeemContentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RedeemContentRequest create() => RedeemContentRequest._();
+  @$core.override
+  RedeemContentRequest createEmptyInstance() => create();
+  static $pb.PbList<RedeemContentRequest> createRepeated() => $pb.PbList<RedeemContentRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RedeemContentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RedeemContentRequest>(create);
+  static RedeemContentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+}
+
+class RedeemContentResponse extends $pb.GeneratedMessage {
+  factory RedeemContentResponse({
+    $core.String? contentId,
+    $core.int? pointsSpent,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (pointsSpent != null) result.pointsSpent = pointsSpent;
+    return result;
+  }
+
+  RedeemContentResponse._();
+
+  factory RedeemContentResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RedeemContentResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RedeemContentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'pointsSpent', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RedeemContentResponse clone() => RedeemContentResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RedeemContentResponse copyWith(void Function(RedeemContentResponse) updates) => super.copyWith((message) => updates(message as RedeemContentResponse)) as RedeemContentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RedeemContentResponse create() => RedeemContentResponse._();
+  @$core.override
+  RedeemContentResponse createEmptyInstance() => create();
+  static $pb.PbList<RedeemContentResponse> createRepeated() => $pb.PbList<RedeemContentResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RedeemContentResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RedeemContentResponse>(create);
+  static RedeemContentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get pointsSpent => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set pointsSpent($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPointsSpent() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPointsSpent() => $_clearField(2);
+}
+
+class CreateSubscriptionCheckoutRequest extends $pb.GeneratedMessage {
+  factory CreateSubscriptionCheckoutRequest({
+    $core.String? successUrl,
+    $core.String? cancelUrl,
+  }) {
+    final result = create();
+    if (successUrl != null) result.successUrl = successUrl;
+    if (cancelUrl != null) result.cancelUrl = cancelUrl;
+    return result;
+  }
+
+  CreateSubscriptionCheckoutRequest._();
+
+  factory CreateSubscriptionCheckoutRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateSubscriptionCheckoutRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSubscriptionCheckoutRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'successUrl')
+    ..aOS(2, _omitFieldNames ? '' : 'cancelUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSubscriptionCheckoutRequest clone() => CreateSubscriptionCheckoutRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSubscriptionCheckoutRequest copyWith(void Function(CreateSubscriptionCheckoutRequest) updates) => super.copyWith((message) => updates(message as CreateSubscriptionCheckoutRequest)) as CreateSubscriptionCheckoutRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSubscriptionCheckoutRequest create() => CreateSubscriptionCheckoutRequest._();
+  @$core.override
+  CreateSubscriptionCheckoutRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateSubscriptionCheckoutRequest> createRepeated() => $pb.PbList<CreateSubscriptionCheckoutRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSubscriptionCheckoutRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSubscriptionCheckoutRequest>(create);
+  static CreateSubscriptionCheckoutRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get successUrl => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set successUrl($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSuccessUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSuccessUrl() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get cancelUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set cancelUrl($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCancelUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCancelUrl() => $_clearField(2);
+}
+
+class CreateSubscriptionCheckoutResponse extends $pb.GeneratedMessage {
+  factory CreateSubscriptionCheckoutResponse({
+    $core.String? checkoutUrl,
+  }) {
+    final result = create();
+    if (checkoutUrl != null) result.checkoutUrl = checkoutUrl;
+    return result;
+  }
+
+  CreateSubscriptionCheckoutResponse._();
+
+  factory CreateSubscriptionCheckoutResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateSubscriptionCheckoutResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSubscriptionCheckoutResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'checkoutUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSubscriptionCheckoutResponse clone() => CreateSubscriptionCheckoutResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSubscriptionCheckoutResponse copyWith(void Function(CreateSubscriptionCheckoutResponse) updates) => super.copyWith((message) => updates(message as CreateSubscriptionCheckoutResponse)) as CreateSubscriptionCheckoutResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSubscriptionCheckoutResponse create() => CreateSubscriptionCheckoutResponse._();
+  @$core.override
+  CreateSubscriptionCheckoutResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateSubscriptionCheckoutResponse> createRepeated() => $pb.PbList<CreateSubscriptionCheckoutResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSubscriptionCheckoutResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSubscriptionCheckoutResponse>(create);
+  static CreateSubscriptionCheckoutResponse? _defaultInstance;
+
+  /// Stripe-hosted checkout URL. Empty when billing is not configured.
+  @$pb.TagNumber(1)
+  $core.String get checkoutUrl => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set checkoutUrl($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCheckoutUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCheckoutUrl() => $_clearField(1);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

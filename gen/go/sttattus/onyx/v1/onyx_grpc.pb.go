@@ -19,15 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	OnyxService_CreateProfile_FullMethodName  = "/sttattus.onyx.v1.OnyxService/CreateProfile"
-	OnyxService_GetProfile_FullMethodName     = "/sttattus.onyx.v1.OnyxService/GetProfile"
-	OnyxService_ListContent_FullMethodName    = "/sttattus.onyx.v1.OnyxService/ListContent"
-	OnyxService_Subscribe_FullMethodName      = "/sttattus.onyx.v1.OnyxService/Subscribe"
-	OnyxService_GetContent_FullMethodName     = "/sttattus.onyx.v1.OnyxService/GetContent"
-	OnyxService_ListShelf_FullMethodName      = "/sttattus.onyx.v1.OnyxService/ListShelf"
-	OnyxService_ListContinue_FullMethodName   = "/sttattus.onyx.v1.OnyxService/ListContinue"
-	OnyxService_GetShelves_FullMethodName     = "/sttattus.onyx.v1.OnyxService/GetShelves"
-	OnyxService_RecordProgress_FullMethodName = "/sttattus.onyx.v1.OnyxService/RecordProgress"
+	OnyxService_CreateProfile_FullMethodName              = "/sttattus.onyx.v1.OnyxService/CreateProfile"
+	OnyxService_GetProfile_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetProfile"
+	OnyxService_ListContent_FullMethodName                = "/sttattus.onyx.v1.OnyxService/ListContent"
+	OnyxService_Subscribe_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/Subscribe"
+	OnyxService_GetContent_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetContent"
+	OnyxService_ListShelf_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/ListShelf"
+	OnyxService_ListContinue_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListContinue"
+	OnyxService_GetShelves_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetShelves"
+	OnyxService_RecordProgress_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RecordProgress"
+	OnyxService_RedeemContent_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RedeemContent"
+	OnyxService_CreateSubscriptionCheckout_FullMethodName = "/sttattus.onyx.v1.OnyxService/CreateSubscriptionCheckout"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -47,6 +49,10 @@ type OnyxServiceClient interface {
 	ListContinue(ctx context.Context, in *ListContinueRequest, opts ...grpc.CallOption) (*ListContinueResponse, error)
 	GetShelves(ctx context.Context, in *GetShelvesRequest, opts ...grpc.CallOption) (*GetShelvesResponse, error)
 	RecordProgress(ctx context.Context, in *RecordProgressRequest, opts ...grpc.CallOption) (*RecordProgressResponse, error)
+	// P6.6 — spend points to unlock one gated piece.
+	RedeemContent(ctx context.Context, in *RedeemContentRequest, opts ...grpc.CallOption) (*RedeemContentResponse, error)
+	// P6.6 — open a Stripe checkout for the Onyx network subscription.
+	CreateSubscriptionCheckout(ctx context.Context, in *CreateSubscriptionCheckoutRequest, opts ...grpc.CallOption) (*CreateSubscriptionCheckoutResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -147,6 +153,26 @@ func (c *onyxServiceClient) RecordProgress(ctx context.Context, in *RecordProgre
 	return out, nil
 }
 
+func (c *onyxServiceClient) RedeemContent(ctx context.Context, in *RedeemContentRequest, opts ...grpc.CallOption) (*RedeemContentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RedeemContentResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RedeemContent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CreateSubscriptionCheckout(ctx context.Context, in *CreateSubscriptionCheckoutRequest, opts ...grpc.CallOption) (*CreateSubscriptionCheckoutResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateSubscriptionCheckoutResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateSubscriptionCheckout_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -164,6 +190,10 @@ type OnyxServiceServer interface {
 	ListContinue(context.Context, *ListContinueRequest) (*ListContinueResponse, error)
 	GetShelves(context.Context, *GetShelvesRequest) (*GetShelvesResponse, error)
 	RecordProgress(context.Context, *RecordProgressRequest) (*RecordProgressResponse, error)
+	// P6.6 — spend points to unlock one gated piece.
+	RedeemContent(context.Context, *RedeemContentRequest) (*RedeemContentResponse, error)
+	// P6.6 — open a Stripe checkout for the Onyx network subscription.
+	CreateSubscriptionCheckout(context.Context, *CreateSubscriptionCheckoutRequest) (*CreateSubscriptionCheckoutResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -200,6 +230,12 @@ func (UnimplementedOnyxServiceServer) GetShelves(context.Context, *GetShelvesReq
 }
 func (UnimplementedOnyxServiceServer) RecordProgress(context.Context, *RecordProgressRequest) (*RecordProgressResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RecordProgress not implemented")
+}
+func (UnimplementedOnyxServiceServer) RedeemContent(context.Context, *RedeemContentRequest) (*RedeemContentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RedeemContent not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateSubscriptionCheckout(context.Context, *CreateSubscriptionCheckoutRequest) (*CreateSubscriptionCheckoutResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateSubscriptionCheckout not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -384,6 +420,42 @@ func _OnyxService_RecordProgress_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_RedeemContent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RedeemContentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RedeemContent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RedeemContent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RedeemContent(ctx, req.(*RedeemContentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CreateSubscriptionCheckout_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSubscriptionCheckoutRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateSubscriptionCheckout(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateSubscriptionCheckout_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateSubscriptionCheckout(ctx, req.(*CreateSubscriptionCheckoutRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -426,6 +498,14 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RecordProgress",
 			Handler:    _OnyxService_RecordProgress_Handler,
+		},
+		{
+			MethodName: "RedeemContent",
+			Handler:    _OnyxService_RedeemContent_Handler,
+		},
+		{
+			MethodName: "CreateSubscriptionCheckout",
+			Handler:    _OnyxService_CreateSubscriptionCheckout_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

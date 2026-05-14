@@ -72,6 +72,16 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$recordProgress, request, options: options);
   }
 
+  /// P6.6 — spend points to unlock one gated piece.
+  $grpc.ResponseFuture<$0.RedeemContentResponse> redeemContent($0.RedeemContentRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$redeemContent, request, options: options);
+  }
+
+  /// P6.6 — open a Stripe checkout for the Onyx network subscription.
+  $grpc.ResponseFuture<$0.CreateSubscriptionCheckoutResponse> createSubscriptionCheckout($0.CreateSubscriptionCheckoutRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createSubscriptionCheckout, request, options: options);
+  }
+
     // method descriptors
 
   static final _$createProfile = $grpc.ClientMethod<$0.CreateOnyxProfileRequest, $0.CreateOnyxProfileResponse>(
@@ -110,6 +120,14 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/RecordProgress',
       ($0.RecordProgressRequest value) => value.writeToBuffer(),
       $0.RecordProgressResponse.fromBuffer);
+  static final _$redeemContent = $grpc.ClientMethod<$0.RedeemContentRequest, $0.RedeemContentResponse>(
+      '/sttattus.onyx.v1.OnyxService/RedeemContent',
+      ($0.RedeemContentRequest value) => value.writeToBuffer(),
+      $0.RedeemContentResponse.fromBuffer);
+  static final _$createSubscriptionCheckout = $grpc.ClientMethod<$0.CreateSubscriptionCheckoutRequest, $0.CreateSubscriptionCheckoutResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateSubscriptionCheckout',
+      ($0.CreateSubscriptionCheckoutRequest value) => value.writeToBuffer(),
+      $0.CreateSubscriptionCheckoutResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -180,6 +198,20 @@ abstract class OnyxServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.RecordProgressRequest.fromBuffer(value),
         ($0.RecordProgressResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RedeemContentRequest, $0.RedeemContentResponse>(
+        'RedeemContent',
+        redeemContent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RedeemContentRequest.fromBuffer(value),
+        ($0.RedeemContentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateSubscriptionCheckoutRequest, $0.CreateSubscriptionCheckoutResponse>(
+        'CreateSubscriptionCheckout',
+        createSubscriptionCheckout_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateSubscriptionCheckoutRequest.fromBuffer(value),
+        ($0.CreateSubscriptionCheckoutResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateOnyxProfileResponse> createProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateOnyxProfileRequest> $request) async {
@@ -235,5 +267,17 @@ abstract class OnyxServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.RecordProgressResponse> recordProgress($grpc.ServiceCall call, $0.RecordProgressRequest request);
+
+  $async.Future<$0.RedeemContentResponse> redeemContent_Pre($grpc.ServiceCall $call, $async.Future<$0.RedeemContentRequest> $request) async {
+    return redeemContent($call, await $request);
+  }
+
+  $async.Future<$0.RedeemContentResponse> redeemContent($grpc.ServiceCall call, $0.RedeemContentRequest request);
+
+  $async.Future<$0.CreateSubscriptionCheckoutResponse> createSubscriptionCheckout_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateSubscriptionCheckoutRequest> $request) async {
+    return createSubscriptionCheckout($call, await $request);
+  }
+
+  $async.Future<$0.CreateSubscriptionCheckoutResponse> createSubscriptionCheckout($grpc.ServiceCall call, $0.CreateSubscriptionCheckoutRequest request);
 
 }

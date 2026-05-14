@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateOnyxProfileRequest, CreateOnyxProfileResponse, GetContentRequest, GetContentResponse, GetOnyxProfileRequest, GetOnyxProfileResponse, GetShelvesRequest, GetShelvesResponse, ListContentRequest, ListContentResponse, ListContinueRequest, ListContinueResponse, ListShelfRequest, ListShelfResponse, RecordProgressRequest, RecordProgressResponse, SubscribeRequest, SubscribeResponse } from "./onyx_pb.js";
+import { CreateOnyxProfileRequest, CreateOnyxProfileResponse, CreateSubscriptionCheckoutRequest, CreateSubscriptionCheckoutResponse, GetContentRequest, GetContentResponse, GetOnyxProfileRequest, GetOnyxProfileResponse, GetShelvesRequest, GetShelvesResponse, ListContentRequest, ListContentResponse, ListContinueRequest, ListContinueResponse, ListShelfRequest, ListShelfResponse, RecordProgressRequest, RecordProgressResponse, RedeemContentRequest, RedeemContentResponse, SubscribeRequest, SubscribeResponse } from "./onyx_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -99,6 +99,28 @@ export const OnyxService = {
       name: "RecordProgress",
       I: RecordProgressRequest,
       O: RecordProgressResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P6.6 — spend points to unlock one gated piece.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.RedeemContent
+     */
+    redeemContent: {
+      name: "RedeemContent",
+      I: RedeemContentRequest,
+      O: RedeemContentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P6.6 — open a Stripe checkout for the Onyx network subscription.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout
+     */
+    createSubscriptionCheckout: {
+      name: "CreateSubscriptionCheckout",
+      I: CreateSubscriptionCheckoutRequest,
+      O: CreateSubscriptionCheckoutResponse,
       kind: MethodKind.Unary,
     },
   }

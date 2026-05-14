@@ -154,6 +154,27 @@ message RecordProgressResponse {
   int32 position_seconds = 2;
 }
 
+// === P6.6 — subscription + points redemption ===
+
+message RedeemContentRequest {
+  string content_id = 1;
+}
+
+message RedeemContentResponse {
+  string content_id = 1;
+  int32 points_spent = 2;
+}
+
+message CreateSubscriptionCheckoutRequest {
+  string success_url = 1;
+  string cancel_url = 2;
+}
+
+message CreateSubscriptionCheckoutResponse {
+  // Stripe-hosted checkout URL. Empty when billing is not configured.
+  string checkout_url = 1;
+}
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateOnyxProfileRequest) returns (CreateOnyxProfileResponse);
@@ -171,4 +192,9 @@ service OnyxService {
   rpc ListContinue(ListContinueRequest) returns (ListContinueResponse);
   rpc GetShelves(GetShelvesRequest) returns (GetShelvesResponse);
   rpc RecordProgress(RecordProgressRequest) returns (RecordProgressResponse);
+
+  // P6.6 — spend points to unlock one gated piece.
+  rpc RedeemContent(RedeemContentRequest) returns (RedeemContentResponse);
+  // P6.6 — open a Stripe checkout for the Onyx network subscription.
+  rpc CreateSubscriptionCheckout(CreateSubscriptionCheckoutRequest) returns (CreateSubscriptionCheckoutResponse);
 }

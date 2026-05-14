@@ -363,3 +363,56 @@ final $typed_data.Uint8List recordProgressResponseDescriptor = $convert.base64De
     'ChZSZWNvcmRQcm9ncmVzc1Jlc3BvbnNlEh4KCmNvbXBsZXRpb24YASABKAFSCmNvbXBsZXRpb2'
     '4SKQoQcG9zaXRpb25fc2Vjb25kcxgCIAEoBVIPcG9zaXRpb25TZWNvbmRz');
 
+@$core.Deprecated('Use redeemContentRequestDescriptor instead')
+const RedeemContentRequest$json = {
+  '1': 'RedeemContentRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+  ],
+};
+
+/// Descriptor for `RedeemContentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List redeemContentRequestDescriptor = $convert.base64Decode(
+    'ChRSZWRlZW1Db250ZW50UmVxdWVzdBIdCgpjb250ZW50X2lkGAEgASgJUgljb250ZW50SWQ=');
+
+@$core.Deprecated('Use redeemContentResponseDescriptor instead')
+const RedeemContentResponse$json = {
+  '1': 'RedeemContentResponse',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'points_spent', '3': 2, '4': 1, '5': 5, '10': 'pointsSpent'},
+  ],
+};
+
+/// Descriptor for `RedeemContentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List redeemContentResponseDescriptor = $convert.base64Decode(
+    'ChVSZWRlZW1Db250ZW50UmVzcG9uc2USHQoKY29udGVudF9pZBgBIAEoCVIJY29udGVudElkEi'
+    'EKDHBvaW50c19zcGVudBgCIAEoBVILcG9pbnRzU3BlbnQ=');
+
+@$core.Deprecated('Use createSubscriptionCheckoutRequestDescriptor instead')
+const CreateSubscriptionCheckoutRequest$json = {
+  '1': 'CreateSubscriptionCheckoutRequest',
+  '2': [
+    {'1': 'success_url', '3': 1, '4': 1, '5': 9, '10': 'successUrl'},
+    {'1': 'cancel_url', '3': 2, '4': 1, '5': 9, '10': 'cancelUrl'},
+  ],
+};
+
+/// Descriptor for `CreateSubscriptionCheckoutRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSubscriptionCheckoutRequestDescriptor = $convert.base64Decode(
+    'CiFDcmVhdGVTdWJzY3JpcHRpb25DaGVja291dFJlcXVlc3QSHwoLc3VjY2Vzc191cmwYASABKA'
+    'lSCnN1Y2Nlc3NVcmwSHQoKY2FuY2VsX3VybBgCIAEoCVIJY2FuY2VsVXJs');
+
+@$core.Deprecated('Use createSubscriptionCheckoutResponseDescriptor instead')
+const CreateSubscriptionCheckoutResponse$json = {
+  '1': 'CreateSubscriptionCheckoutResponse',
+  '2': [
+    {'1': 'checkout_url', '3': 1, '4': 1, '5': 9, '10': 'checkoutUrl'},
+  ],
+};
+
+/// Descriptor for `CreateSubscriptionCheckoutResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSubscriptionCheckoutResponseDescriptor = $convert.base64Decode(
+    'CiJDcmVhdGVTdWJzY3JpcHRpb25DaGVja291dFJlc3BvbnNlEiEKDGNoZWNrb3V0X3VybBgBIA'
+    'EoCVILY2hlY2tvdXRVcmw=');
+
