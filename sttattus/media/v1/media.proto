@@ -57,11 +57,20 @@ message ResizeRequest {
   string source_url = 2;
   int32 max_width = 3;
   int32 max_height = 4;
+  // Pre-signed PUT URL where the resized JPEG is uploaded. Issued by
+  // backend_go's media service; imageproc only PUTs bytes so credentials
+  // stay in one place. Phase 2.4.
+  string upload_url = 5;
+  // The final readable URL the asset will live at after upload (the
+  // public_url from MediaService.RequestUpload). Echoed back as
+  // thumbnail_url in the response so callers don't need to derive it.
+  string public_url = 6;
 }
 message ResizeResponse {
   string thumbnail_url = 1;
   int32 width = 2;
   int32 height = 3;
+  int64 size_bytes = 4;
 }
 
 message ExtractDominantColorsRequest {

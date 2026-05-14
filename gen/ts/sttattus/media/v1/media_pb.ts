@@ -347,6 +347,24 @@ export class ResizeRequest extends Message<ResizeRequest> {
    */
   maxHeight = 0;
 
+  /**
+   * Pre-signed PUT URL where the resized JPEG is uploaded. Issued by
+   * backend_go's media service; imageproc only PUTs bytes so credentials
+   * stay in one place. Phase 2.4.
+   *
+   * @generated from field: string upload_url = 5;
+   */
+  uploadUrl = "";
+
+  /**
+   * The final readable URL the asset will live at after upload (the
+   * public_url from MediaService.RequestUpload). Echoed back as
+   * thumbnail_url in the response so callers don't need to derive it.
+   *
+   * @generated from field: string public_url = 6;
+   */
+  publicUrl = "";
+
   constructor(data?: PartialMessage<ResizeRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -359,6 +377,8 @@ export class ResizeRequest extends Message<ResizeRequest> {
     { no: 2, name: "source_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "max_width", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "max_height", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "upload_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "public_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResizeRequest {
@@ -397,6 +417,11 @@ export class ResizeResponse extends Message<ResizeResponse> {
    */
   height = 0;
 
+  /**
+   * @generated from field: int64 size_bytes = 4;
+   */
+  sizeBytes = protoInt64.zero;
+
   constructor(data?: PartialMessage<ResizeResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -408,6 +433,7 @@ export class ResizeResponse extends Message<ResizeResponse> {
     { no: 1, name: "thumbnail_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "width", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "height", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "size_bytes", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResizeResponse {

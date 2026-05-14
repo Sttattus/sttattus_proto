@@ -417,11 +417,19 @@ func (x *MarkProcessedResponse) GetAsset() *MediaAsset {
 }
 
 type ResizeRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	MediaAssetId  string                 `protobuf:"bytes,1,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
-	SourceUrl     string                 `protobuf:"bytes,2,opt,name=source_url,json=sourceUrl,proto3" json:"source_url,omitempty"`
-	MaxWidth      int32                  `protobuf:"varint,3,opt,name=max_width,json=maxWidth,proto3" json:"max_width,omitempty"`
-	MaxHeight     int32                  `protobuf:"varint,4,opt,name=max_height,json=maxHeight,proto3" json:"max_height,omitempty"`
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	MediaAssetId string                 `protobuf:"bytes,1,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
+	SourceUrl    string                 `protobuf:"bytes,2,opt,name=source_url,json=sourceUrl,proto3" json:"source_url,omitempty"`
+	MaxWidth     int32                  `protobuf:"varint,3,opt,name=max_width,json=maxWidth,proto3" json:"max_width,omitempty"`
+	MaxHeight    int32                  `protobuf:"varint,4,opt,name=max_height,json=maxHeight,proto3" json:"max_height,omitempty"`
+	// Pre-signed PUT URL where the resized JPEG is uploaded. Issued by
+	// backend_go's media service; imageproc only PUTs bytes so credentials
+	// stay in one place. Phase 2.4.
+	UploadUrl string `protobuf:"bytes,5,opt,name=upload_url,json=uploadUrl,proto3" json:"upload_url,omitempty"`
+	// The final readable URL the asset will live at after upload (the
+	// public_url from MediaService.RequestUpload). Echoed back as
+	// thumbnail_url in the response so callers don't need to derive it.
+	PublicUrl     string `protobuf:"bytes,6,opt,name=public_url,json=publicUrl,proto3" json:"public_url,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -484,11 +492,26 @@ func (x *ResizeRequest) GetMaxHeight() int32 {
 	return 0
 }
 
+func (x *ResizeRequest) GetUploadUrl() string {
+	if x != nil {
+		return x.UploadUrl
+	}
+	return ""
+}
+
+func (x *ResizeRequest) GetPublicUrl() string {
+	if x != nil {
+		return x.PublicUrl
+	}
+	return ""
+}
+
 type ResizeResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ThumbnailUrl  string                 `protobuf:"bytes,1,opt,name=thumbnail_url,json=thumbnailUrl,proto3" json:"thumbnail_url,omitempty"`
 	Width         int32                  `protobuf:"varint,2,opt,name=width,proto3" json:"width,omitempty"`
 	Height        int32                  `protobuf:"varint,3,opt,name=height,proto3" json:"height,omitempty"`
+	SizeBytes     int64                  `protobuf:"varint,4,opt,name=size_bytes,json=sizeBytes,proto3" json:"size_bytes,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -540,6 +563,13 @@ func (x *ResizeResponse) GetWidth() int32 {
 func (x *ResizeResponse) GetHeight() int32 {
 	if x != nil {
 		return x.Height
+	}
+	return 0
+}
+
+func (x *ResizeResponse) GetSizeBytes() int64 {
+	if x != nil {
+		return x.SizeBytes
 	}
 	return 0
 }
@@ -675,18 +705,24 @@ const file_sttattus_media_v1_media_proto_rawDesc = "" +
 	"\x05width\x18\x02 \x01(\x05R\x05width\x12\x16\n" +
 	"\x06height\x18\x03 \x01(\x05R\x06height\"L\n" +
 	"\x15MarkProcessedResponse\x123\n" +
-	"\x05asset\x18\x01 \x01(\v2\x1d.sttattus.media.v1.MediaAssetR\x05asset\"\x90\x01\n" +
+	"\x05asset\x18\x01 \x01(\v2\x1d.sttattus.media.v1.MediaAssetR\x05asset\"\xce\x01\n" +
 	"\rResizeRequest\x12$\n" +
 	"\x0emedia_asset_id\x18\x01 \x01(\tR\fmediaAssetId\x12\x1d\n" +
 	"\n" +
 	"source_url\x18\x02 \x01(\tR\tsourceUrl\x12\x1b\n" +
 	"\tmax_width\x18\x03 \x01(\x05R\bmaxWidth\x12\x1d\n" +
 	"\n" +
-	"max_height\x18\x04 \x01(\x05R\tmaxHeight\"c\n" +
+	"max_height\x18\x04 \x01(\x05R\tmaxHeight\x12\x1d\n" +
+	"\n" +
+	"upload_url\x18\x05 \x01(\tR\tuploadUrl\x12\x1d\n" +
+	"\n" +
+	"public_url\x18\x06 \x01(\tR\tpublicUrl\"\x82\x01\n" +
 	"\x0eResizeResponse\x12#\n" +
 	"\rthumbnail_url\x18\x01 \x01(\tR\fthumbnailUrl\x12\x14\n" +
 	"\x05width\x18\x02 \x01(\x05R\x05width\x12\x16\n" +
-	"\x06height\x18\x03 \x01(\x05R\x06height\"`\n" +
+	"\x06height\x18\x03 \x01(\x05R\x06height\x12\x1d\n" +
+	"\n" +
+	"size_bytes\x18\x04 \x01(\x03R\tsizeBytes\"`\n" +
 	"\x1cExtractDominantColorsRequest\x12\x1d\n" +
 	"\n" +
 	"source_url\x18\x01 \x01(\tR\tsourceUrl\x12!\n" +
