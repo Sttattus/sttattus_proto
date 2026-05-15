@@ -1244,6 +1244,428 @@ func (x *ListNetWorthHistoryResponse) GetPoints() []*NetWorthPoint {
 	return nil
 }
 
+// PlaidTransaction is one row hydrated for the Flutter list surface.
+// Sign convention follows Plaid: positive amount = money out of the
+// account.
+type PlaidTransaction struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	AccountId          string                 `protobuf:"bytes,2,opt,name=account_id,json=accountId,proto3" json:"account_id,omitempty"`
+	PlaidTransactionId string                 `protobuf:"bytes,3,opt,name=plaid_transaction_id,json=plaidTransactionId,proto3" json:"plaid_transaction_id,omitempty"`
+	Amount             float64                `protobuf:"fixed64,4,opt,name=amount,proto3" json:"amount,omitempty"`
+	IsoCurrencyCode    string                 `protobuf:"bytes,5,opt,name=iso_currency_code,json=isoCurrencyCode,proto3" json:"iso_currency_code,omitempty"`
+	MerchantName       string                 `protobuf:"bytes,6,opt,name=merchant_name,json=merchantName,proto3" json:"merchant_name,omitempty"`
+	Category           string                 `protobuf:"bytes,7,opt,name=category,proto3" json:"category,omitempty"`
+	Subcategory        string                 `protobuf:"bytes,8,opt,name=subcategory,proto3" json:"subcategory,omitempty"`
+	Pending            bool                   `protobuf:"varint,9,opt,name=pending,proto3" json:"pending,omitempty"`
+	PostedAtIso        string                 `protobuf:"bytes,10,opt,name=posted_at_iso,json=postedAtIso,proto3" json:"posted_at_iso,omitempty"` // YYYY-MM-DD UTC
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *PlaidTransaction) Reset() {
+	*x = PlaidTransaction{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PlaidTransaction) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PlaidTransaction) ProtoMessage() {}
+
+func (x *PlaidTransaction) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PlaidTransaction.ProtoReflect.Descriptor instead.
+func (*PlaidTransaction) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *PlaidTransaction) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *PlaidTransaction) GetAccountId() string {
+	if x != nil {
+		return x.AccountId
+	}
+	return ""
+}
+
+func (x *PlaidTransaction) GetPlaidTransactionId() string {
+	if x != nil {
+		return x.PlaidTransactionId
+	}
+	return ""
+}
+
+func (x *PlaidTransaction) GetAmount() float64 {
+	if x != nil {
+		return x.Amount
+	}
+	return 0
+}
+
+func (x *PlaidTransaction) GetIsoCurrencyCode() string {
+	if x != nil {
+		return x.IsoCurrencyCode
+	}
+	return ""
+}
+
+func (x *PlaidTransaction) GetMerchantName() string {
+	if x != nil {
+		return x.MerchantName
+	}
+	return ""
+}
+
+func (x *PlaidTransaction) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *PlaidTransaction) GetSubcategory() string {
+	if x != nil {
+		return x.Subcategory
+	}
+	return ""
+}
+
+func (x *PlaidTransaction) GetPending() bool {
+	if x != nil {
+		return x.Pending
+	}
+	return false
+}
+
+func (x *PlaidTransaction) GetPostedAtIso() string {
+	if x != nil {
+		return x.PostedAtIso
+	}
+	return ""
+}
+
+type ListPlaidTransactionsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListPlaidTransactionsRequest) Reset() {
+	*x = ListPlaidTransactionsRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListPlaidTransactionsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListPlaidTransactionsRequest) ProtoMessage() {}
+
+func (x *ListPlaidTransactionsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListPlaidTransactionsRequest.ProtoReflect.Descriptor instead.
+func (*ListPlaidTransactionsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *ListPlaidTransactionsRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListPlaidTransactionsRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+type ListPlaidTransactionsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Transactions  []*PlaidTransaction    `protobuf:"bytes,1,rep,name=transactions,proto3" json:"transactions,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListPlaidTransactionsResponse) Reset() {
+	*x = ListPlaidTransactionsResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListPlaidTransactionsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListPlaidTransactionsResponse) ProtoMessage() {}
+
+func (x *ListPlaidTransactionsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListPlaidTransactionsResponse.ProtoReflect.Descriptor instead.
+func (*ListPlaidTransactionsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *ListPlaidTransactionsResponse) GetTransactions() []*PlaidTransaction {
+	if x != nil {
+		return x.Transactions
+	}
+	return nil
+}
+
+// PlaidHolding is one investment-holding row. institution_value is
+// the authoritative dollar figure the dashboard sums; quantity *
+// institution_price is the local approximation.
+type PlaidHolding struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	AccountId        string                 `protobuf:"bytes,2,opt,name=account_id,json=accountId,proto3" json:"account_id,omitempty"`
+	SecurityId       string                 `protobuf:"bytes,3,opt,name=security_id,json=securityId,proto3" json:"security_id,omitempty"`
+	Ticker           string                 `protobuf:"bytes,4,opt,name=ticker,proto3" json:"ticker,omitempty"`
+	SecurityName     string                 `protobuf:"bytes,5,opt,name=security_name,json=securityName,proto3" json:"security_name,omitempty"`
+	SecurityType     string                 `protobuf:"bytes,6,opt,name=security_type,json=securityType,proto3" json:"security_type,omitempty"`
+	Quantity         float64                `protobuf:"fixed64,7,opt,name=quantity,proto3" json:"quantity,omitempty"`
+	CostBasis        float64                `protobuf:"fixed64,8,opt,name=cost_basis,json=costBasis,proto3" json:"cost_basis,omitempty"`
+	InstitutionValue float64                `protobuf:"fixed64,9,opt,name=institution_value,json=institutionValue,proto3" json:"institution_value,omitempty"`
+	InstitutionPrice float64                `protobuf:"fixed64,10,opt,name=institution_price,json=institutionPrice,proto3" json:"institution_price,omitempty"`
+	IsoCurrencyCode  string                 `protobuf:"bytes,11,opt,name=iso_currency_code,json=isoCurrencyCode,proto3" json:"iso_currency_code,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *PlaidHolding) Reset() {
+	*x = PlaidHolding{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PlaidHolding) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PlaidHolding) ProtoMessage() {}
+
+func (x *PlaidHolding) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PlaidHolding.ProtoReflect.Descriptor instead.
+func (*PlaidHolding) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *PlaidHolding) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *PlaidHolding) GetAccountId() string {
+	if x != nil {
+		return x.AccountId
+	}
+	return ""
+}
+
+func (x *PlaidHolding) GetSecurityId() string {
+	if x != nil {
+		return x.SecurityId
+	}
+	return ""
+}
+
+func (x *PlaidHolding) GetTicker() string {
+	if x != nil {
+		return x.Ticker
+	}
+	return ""
+}
+
+func (x *PlaidHolding) GetSecurityName() string {
+	if x != nil {
+		return x.SecurityName
+	}
+	return ""
+}
+
+func (x *PlaidHolding) GetSecurityType() string {
+	if x != nil {
+		return x.SecurityType
+	}
+	return ""
+}
+
+func (x *PlaidHolding) GetQuantity() float64 {
+	if x != nil {
+		return x.Quantity
+	}
+	return 0
+}
+
+func (x *PlaidHolding) GetCostBasis() float64 {
+	if x != nil {
+		return x.CostBasis
+	}
+	return 0
+}
+
+func (x *PlaidHolding) GetInstitutionValue() float64 {
+	if x != nil {
+		return x.InstitutionValue
+	}
+	return 0
+}
+
+func (x *PlaidHolding) GetInstitutionPrice() float64 {
+	if x != nil {
+		return x.InstitutionPrice
+	}
+	return 0
+}
+
+func (x *PlaidHolding) GetIsoCurrencyCode() string {
+	if x != nil {
+		return x.IsoCurrencyCode
+	}
+	return ""
+}
+
+type ListPlaidHoldingsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListPlaidHoldingsRequest) Reset() {
+	*x = ListPlaidHoldingsRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListPlaidHoldingsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListPlaidHoldingsRequest) ProtoMessage() {}
+
+func (x *ListPlaidHoldingsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListPlaidHoldingsRequest.ProtoReflect.Descriptor instead.
+func (*ListPlaidHoldingsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{25}
+}
+
+type ListPlaidHoldingsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Holdings      []*PlaidHolding        `protobuf:"bytes,1,rep,name=holdings,proto3" json:"holdings,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListPlaidHoldingsResponse) Reset() {
+	*x = ListPlaidHoldingsResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListPlaidHoldingsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListPlaidHoldingsResponse) ProtoMessage() {}
+
+func (x *ListPlaidHoldingsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListPlaidHoldingsResponse.ProtoReflect.Descriptor instead.
+func (*ListPlaidHoldingsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *ListPlaidHoldingsResponse) GetHoldings() []*PlaidHolding {
+	if x != nil {
+		return x.Holdings
+	}
+	return nil
+}
+
 var File_sttattus_vault_v1_vault_proto protoreflect.FileDescriptor
 
 const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
@@ -1323,7 +1745,44 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x1aListNetWorthHistoryRequest\x12\x12\n" +
 	"\x04days\x18\x01 \x01(\x05R\x04days\"W\n" +
 	"\x1bListNetWorthHistoryResponse\x128\n" +
-	"\x06points\x18\x01 \x03(\v2 .sttattus.vault.v1.NetWorthPointR\x06points*\x9c\x01\n" +
+	"\x06points\x18\x01 \x03(\v2 .sttattus.vault.v1.NetWorthPointR\x06points\"\xd8\x02\n" +
+	"\x10PlaidTransaction\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\n" +
+	"account_id\x18\x02 \x01(\tR\taccountId\x120\n" +
+	"\x14plaid_transaction_id\x18\x03 \x01(\tR\x12plaidTransactionId\x12\x16\n" +
+	"\x06amount\x18\x04 \x01(\x01R\x06amount\x12*\n" +
+	"\x11iso_currency_code\x18\x05 \x01(\tR\x0fisoCurrencyCode\x12#\n" +
+	"\rmerchant_name\x18\x06 \x01(\tR\fmerchantName\x12\x1a\n" +
+	"\bcategory\x18\a \x01(\tR\bcategory\x12 \n" +
+	"\vsubcategory\x18\b \x01(\tR\vsubcategory\x12\x18\n" +
+	"\apending\x18\t \x01(\bR\apending\x12\"\n" +
+	"\rposted_at_iso\x18\n" +
+	" \x01(\tR\vpostedAtIso\"L\n" +
+	"\x1cListPlaidTransactionsRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\"h\n" +
+	"\x1dListPlaidTransactionsResponse\x12G\n" +
+	"\ftransactions\x18\x01 \x03(\v2#.sttattus.vault.v1.PlaidTransactionR\ftransactions\"\x81\x03\n" +
+	"\fPlaidHolding\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\n" +
+	"account_id\x18\x02 \x01(\tR\taccountId\x12\x1f\n" +
+	"\vsecurity_id\x18\x03 \x01(\tR\n" +
+	"securityId\x12\x16\n" +
+	"\x06ticker\x18\x04 \x01(\tR\x06ticker\x12#\n" +
+	"\rsecurity_name\x18\x05 \x01(\tR\fsecurityName\x12#\n" +
+	"\rsecurity_type\x18\x06 \x01(\tR\fsecurityType\x12\x1a\n" +
+	"\bquantity\x18\a \x01(\x01R\bquantity\x12\x1d\n" +
+	"\n" +
+	"cost_basis\x18\b \x01(\x01R\tcostBasis\x12+\n" +
+	"\x11institution_value\x18\t \x01(\x01R\x10institutionValue\x12+\n" +
+	"\x11institution_price\x18\n" +
+	" \x01(\x01R\x10institutionPrice\x12*\n" +
+	"\x11iso_currency_code\x18\v \x01(\tR\x0fisoCurrencyCode\"\x1a\n" +
+	"\x18ListPlaidHoldingsRequest\"X\n" +
+	"\x19ListPlaidHoldingsResponse\x12;\n" +
+	"\bholdings\x18\x01 \x03(\v2\x1f.sttattus.vault.v1.PlaidHoldingR\bholdings*\x9c\x01\n" +
 	"\rAssetCategory\x12\x1e\n" +
 	"\x1aASSET_CATEGORY_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13ASSET_CATEGORY_FIAT\x10\x01\x12\x19\n" +
@@ -1334,7 +1793,7 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xd8\a\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xc4\t\n" +
 	"\fVaultService\x12\\\n" +
 	"\vSubmitAsset\x12%.sttattus.vault.v1.SubmitAssetRequest\x1a&.sttattus.vault.v1.SubmitAssetResponse\x12_\n" +
 	"\fGetPortfolio\x12&.sttattus.vault.v1.GetPortfolioRequest\x1a'.sttattus.vault.v1.GetPortfolioResponse\x12q\n" +
@@ -1346,7 +1805,9 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\n" +
 	"SyncWealth\x12$.sttattus.vault.v1.SyncWealthRequest\x1a%.sttattus.vault.v1.SyncWealthResponse\x12k\n" +
 	"\x10AdminVerifyAsset\x12*.sttattus.vault.v1.AdminVerifyAssetRequest\x1a+.sttattus.vault.v1.AdminVerifyAssetResponse\x12t\n" +
-	"\x13ListNetWorthHistory\x12-.sttattus.vault.v1.ListNetWorthHistoryRequest\x1a..sttattus.vault.v1.ListNetWorthHistoryResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
+	"\x13ListNetWorthHistory\x12-.sttattus.vault.v1.ListNetWorthHistoryRequest\x1a..sttattus.vault.v1.ListNetWorthHistoryResponse\x12z\n" +
+	"\x15ListPlaidTransactions\x12/.sttattus.vault.v1.ListPlaidTransactionsRequest\x1a0.sttattus.vault.v1.ListPlaidTransactionsResponse\x12n\n" +
+	"\x11ListPlaidHoldings\x12+.sttattus.vault.v1.ListPlaidHoldingsRequest\x1a,.sttattus.vault.v1.ListPlaidHoldingsResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
 
 var (
 	file_sttattus_vault_v1_vault_proto_rawDescOnce sync.Once
@@ -1361,7 +1822,7 @@ func file_sttattus_vault_v1_vault_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_vault_v1_vault_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_vault_v1_vault_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
+var file_sttattus_vault_v1_vault_proto_msgTypes = make([]protoimpl.MessageInfo, 29)
 var file_sttattus_vault_v1_vault_proto_goTypes = []any{
 	(AssetCategory)(0),                       // 0: sttattus.vault.v1.AssetCategory
 	(VerificationStatus)(0),                  // 1: sttattus.vault.v1.VerificationStatus
@@ -1386,19 +1847,25 @@ var file_sttattus_vault_v1_vault_proto_goTypes = []any{
 	(*NetWorthPoint)(nil),                    // 20: sttattus.vault.v1.NetWorthPoint
 	(*ListNetWorthHistoryRequest)(nil),       // 21: sttattus.vault.v1.ListNetWorthHistoryRequest
 	(*ListNetWorthHistoryResponse)(nil),      // 22: sttattus.vault.v1.ListNetWorthHistoryResponse
-	nil,                                      // 23: sttattus.vault.v1.Asset.MetadataEntry
-	nil,                                      // 24: sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
-	(*timestamppb.Timestamp)(nil),            // 25: google.protobuf.Timestamp
+	(*PlaidTransaction)(nil),                 // 23: sttattus.vault.v1.PlaidTransaction
+	(*ListPlaidTransactionsRequest)(nil),     // 24: sttattus.vault.v1.ListPlaidTransactionsRequest
+	(*ListPlaidTransactionsResponse)(nil),    // 25: sttattus.vault.v1.ListPlaidTransactionsResponse
+	(*PlaidHolding)(nil),                     // 26: sttattus.vault.v1.PlaidHolding
+	(*ListPlaidHoldingsRequest)(nil),         // 27: sttattus.vault.v1.ListPlaidHoldingsRequest
+	(*ListPlaidHoldingsResponse)(nil),        // 28: sttattus.vault.v1.ListPlaidHoldingsResponse
+	nil,                                      // 29: sttattus.vault.v1.Asset.MetadataEntry
+	nil,                                      // 30: sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
+	(*timestamppb.Timestamp)(nil),            // 31: google.protobuf.Timestamp
 }
 var file_sttattus_vault_v1_vault_proto_depIdxs = []int32{
 	0,  // 0: sttattus.vault.v1.Asset.category:type_name -> sttattus.vault.v1.AssetCategory
 	1,  // 1: sttattus.vault.v1.Asset.status:type_name -> sttattus.vault.v1.VerificationStatus
-	25, // 2: sttattus.vault.v1.Asset.last_updated:type_name -> google.protobuf.Timestamp
-	23, // 3: sttattus.vault.v1.Asset.metadata:type_name -> sttattus.vault.v1.Asset.MetadataEntry
+	31, // 2: sttattus.vault.v1.Asset.last_updated:type_name -> google.protobuf.Timestamp
+	29, // 3: sttattus.vault.v1.Asset.metadata:type_name -> sttattus.vault.v1.Asset.MetadataEntry
 	2,  // 4: sttattus.vault.v1.Portfolio.assets:type_name -> sttattus.vault.v1.Asset
-	25, // 5: sttattus.vault.v1.Portfolio.calculated_at:type_name -> google.protobuf.Timestamp
+	31, // 5: sttattus.vault.v1.Portfolio.calculated_at:type_name -> google.protobuf.Timestamp
 	0,  // 6: sttattus.vault.v1.SubmitAssetRequest.category:type_name -> sttattus.vault.v1.AssetCategory
-	24, // 7: sttattus.vault.v1.SubmitAssetRequest.metadata:type_name -> sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
+	30, // 7: sttattus.vault.v1.SubmitAssetRequest.metadata:type_name -> sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
 	2,  // 8: sttattus.vault.v1.SubmitAssetResponse.asset:type_name -> sttattus.vault.v1.Asset
 	3,  // 9: sttattus.vault.v1.GetPortfolioResponse.portfolio:type_name -> sttattus.vault.v1.Portfolio
 	1,  // 10: sttattus.vault.v1.AdminVerifyAssetRequest.status:type_name -> sttattus.vault.v1.VerificationStatus
@@ -1406,29 +1873,35 @@ var file_sttattus_vault_v1_vault_proto_depIdxs = []int32{
 	2,  // 12: sttattus.vault.v1.SyncWealthRequest.assets:type_name -> sttattus.vault.v1.Asset
 	2,  // 13: sttattus.vault.v1.LinkWalletResponse.asset:type_name -> sttattus.vault.v1.Asset
 	20, // 14: sttattus.vault.v1.ListNetWorthHistoryResponse.points:type_name -> sttattus.vault.v1.NetWorthPoint
-	4,  // 15: sttattus.vault.v1.VaultService.SubmitAsset:input_type -> sttattus.vault.v1.SubmitAssetRequest
-	6,  // 16: sttattus.vault.v1.VaultService.GetPortfolio:input_type -> sttattus.vault.v1.GetPortfolioRequest
-	12, // 17: sttattus.vault.v1.VaultService.GetWalletChallenge:input_type -> sttattus.vault.v1.GetWalletChallengeRequest
-	14, // 18: sttattus.vault.v1.VaultService.LinkWallet:input_type -> sttattus.vault.v1.LinkWalletRequest
-	16, // 19: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:input_type -> sttattus.vault.v1.CreatePlaidLinkTokenRequest
-	18, // 20: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:input_type -> sttattus.vault.v1.ExchangePlaidPublicTokenRequest
-	10, // 21: sttattus.vault.v1.VaultService.SyncWealth:input_type -> sttattus.vault.v1.SyncWealthRequest
-	8,  // 22: sttattus.vault.v1.VaultService.AdminVerifyAsset:input_type -> sttattus.vault.v1.AdminVerifyAssetRequest
-	21, // 23: sttattus.vault.v1.VaultService.ListNetWorthHistory:input_type -> sttattus.vault.v1.ListNetWorthHistoryRequest
-	5,  // 24: sttattus.vault.v1.VaultService.SubmitAsset:output_type -> sttattus.vault.v1.SubmitAssetResponse
-	7,  // 25: sttattus.vault.v1.VaultService.GetPortfolio:output_type -> sttattus.vault.v1.GetPortfolioResponse
-	13, // 26: sttattus.vault.v1.VaultService.GetWalletChallenge:output_type -> sttattus.vault.v1.GetWalletChallengeResponse
-	15, // 27: sttattus.vault.v1.VaultService.LinkWallet:output_type -> sttattus.vault.v1.LinkWalletResponse
-	17, // 28: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:output_type -> sttattus.vault.v1.CreatePlaidLinkTokenResponse
-	19, // 29: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:output_type -> sttattus.vault.v1.ExchangePlaidPublicTokenResponse
-	11, // 30: sttattus.vault.v1.VaultService.SyncWealth:output_type -> sttattus.vault.v1.SyncWealthResponse
-	9,  // 31: sttattus.vault.v1.VaultService.AdminVerifyAsset:output_type -> sttattus.vault.v1.AdminVerifyAssetResponse
-	22, // 32: sttattus.vault.v1.VaultService.ListNetWorthHistory:output_type -> sttattus.vault.v1.ListNetWorthHistoryResponse
-	24, // [24:33] is the sub-list for method output_type
-	15, // [15:24] is the sub-list for method input_type
-	15, // [15:15] is the sub-list for extension type_name
-	15, // [15:15] is the sub-list for extension extendee
-	0,  // [0:15] is the sub-list for field type_name
+	23, // 15: sttattus.vault.v1.ListPlaidTransactionsResponse.transactions:type_name -> sttattus.vault.v1.PlaidTransaction
+	26, // 16: sttattus.vault.v1.ListPlaidHoldingsResponse.holdings:type_name -> sttattus.vault.v1.PlaidHolding
+	4,  // 17: sttattus.vault.v1.VaultService.SubmitAsset:input_type -> sttattus.vault.v1.SubmitAssetRequest
+	6,  // 18: sttattus.vault.v1.VaultService.GetPortfolio:input_type -> sttattus.vault.v1.GetPortfolioRequest
+	12, // 19: sttattus.vault.v1.VaultService.GetWalletChallenge:input_type -> sttattus.vault.v1.GetWalletChallengeRequest
+	14, // 20: sttattus.vault.v1.VaultService.LinkWallet:input_type -> sttattus.vault.v1.LinkWalletRequest
+	16, // 21: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:input_type -> sttattus.vault.v1.CreatePlaidLinkTokenRequest
+	18, // 22: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:input_type -> sttattus.vault.v1.ExchangePlaidPublicTokenRequest
+	10, // 23: sttattus.vault.v1.VaultService.SyncWealth:input_type -> sttattus.vault.v1.SyncWealthRequest
+	8,  // 24: sttattus.vault.v1.VaultService.AdminVerifyAsset:input_type -> sttattus.vault.v1.AdminVerifyAssetRequest
+	21, // 25: sttattus.vault.v1.VaultService.ListNetWorthHistory:input_type -> sttattus.vault.v1.ListNetWorthHistoryRequest
+	24, // 26: sttattus.vault.v1.VaultService.ListPlaidTransactions:input_type -> sttattus.vault.v1.ListPlaidTransactionsRequest
+	27, // 27: sttattus.vault.v1.VaultService.ListPlaidHoldings:input_type -> sttattus.vault.v1.ListPlaidHoldingsRequest
+	5,  // 28: sttattus.vault.v1.VaultService.SubmitAsset:output_type -> sttattus.vault.v1.SubmitAssetResponse
+	7,  // 29: sttattus.vault.v1.VaultService.GetPortfolio:output_type -> sttattus.vault.v1.GetPortfolioResponse
+	13, // 30: sttattus.vault.v1.VaultService.GetWalletChallenge:output_type -> sttattus.vault.v1.GetWalletChallengeResponse
+	15, // 31: sttattus.vault.v1.VaultService.LinkWallet:output_type -> sttattus.vault.v1.LinkWalletResponse
+	17, // 32: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:output_type -> sttattus.vault.v1.CreatePlaidLinkTokenResponse
+	19, // 33: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:output_type -> sttattus.vault.v1.ExchangePlaidPublicTokenResponse
+	11, // 34: sttattus.vault.v1.VaultService.SyncWealth:output_type -> sttattus.vault.v1.SyncWealthResponse
+	9,  // 35: sttattus.vault.v1.VaultService.AdminVerifyAsset:output_type -> sttattus.vault.v1.AdminVerifyAssetResponse
+	22, // 36: sttattus.vault.v1.VaultService.ListNetWorthHistory:output_type -> sttattus.vault.v1.ListNetWorthHistoryResponse
+	25, // 37: sttattus.vault.v1.VaultService.ListPlaidTransactions:output_type -> sttattus.vault.v1.ListPlaidTransactionsResponse
+	28, // 38: sttattus.vault.v1.VaultService.ListPlaidHoldings:output_type -> sttattus.vault.v1.ListPlaidHoldingsResponse
+	28, // [28:39] is the sub-list for method output_type
+	17, // [17:28] is the sub-list for method input_type
+	17, // [17:17] is the sub-list for extension type_name
+	17, // [17:17] is the sub-list for extension extendee
+	0,  // [0:17] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_vault_v1_vault_proto_init() }
@@ -1442,7 +1915,7 @@ func file_sttattus_vault_v1_vault_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_vault_v1_vault_proto_rawDesc), len(file_sttattus_vault_v1_vault_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   23,
+			NumMessages:   29,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

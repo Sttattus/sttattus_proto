@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
+import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -103,6 +103,27 @@ export const VaultService = {
       name: "ListNetWorthHistory",
       I: ListNetWorthHistoryRequest,
       O: ListNetWorthHistoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8.2 — Plaid transactions + investment holdings, ingested by
+     * backend_go and surfaced for the Flutter dashboard.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.ListPlaidTransactions
+     */
+    listPlaidTransactions: {
+      name: "ListPlaidTransactions",
+      I: ListPlaidTransactionsRequest,
+      O: ListPlaidTransactionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.ListPlaidHoldings
+     */
+    listPlaidHoldings: {
+      name: "ListPlaidHoldings",
+      I: ListPlaidHoldingsRequest,
+      O: ListPlaidHoldingsResponse,
       kind: MethodKind.Unary,
     },
   }

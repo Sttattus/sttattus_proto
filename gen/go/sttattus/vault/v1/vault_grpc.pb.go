@@ -28,6 +28,8 @@ const (
 	VaultService_SyncWealth_FullMethodName               = "/sttattus.vault.v1.VaultService/SyncWealth"
 	VaultService_AdminVerifyAsset_FullMethodName         = "/sttattus.vault.v1.VaultService/AdminVerifyAsset"
 	VaultService_ListNetWorthHistory_FullMethodName      = "/sttattus.vault.v1.VaultService/ListNetWorthHistory"
+	VaultService_ListPlaidTransactions_FullMethodName    = "/sttattus.vault.v1.VaultService/ListPlaidTransactions"
+	VaultService_ListPlaidHoldings_FullMethodName        = "/sttattus.vault.v1.VaultService/ListPlaidHoldings"
 )
 
 // VaultServiceClient is the client API for VaultService service.
@@ -49,6 +51,10 @@ type VaultServiceClient interface {
 	AdminVerifyAsset(ctx context.Context, in *AdminVerifyAssetRequest, opts ...grpc.CallOption) (*AdminVerifyAssetResponse, error)
 	// V8.1 — daily net-worth snapshot history.
 	ListNetWorthHistory(ctx context.Context, in *ListNetWorthHistoryRequest, opts ...grpc.CallOption) (*ListNetWorthHistoryResponse, error)
+	// V8.2 — Plaid transactions + investment holdings, ingested by
+	// backend_go and surfaced for the Flutter dashboard.
+	ListPlaidTransactions(ctx context.Context, in *ListPlaidTransactionsRequest, opts ...grpc.CallOption) (*ListPlaidTransactionsResponse, error)
+	ListPlaidHoldings(ctx context.Context, in *ListPlaidHoldingsRequest, opts ...grpc.CallOption) (*ListPlaidHoldingsResponse, error)
 }
 
 type vaultServiceClient struct {
@@ -149,6 +155,26 @@ func (c *vaultServiceClient) ListNetWorthHistory(ctx context.Context, in *ListNe
 	return out, nil
 }
 
+func (c *vaultServiceClient) ListPlaidTransactions(ctx context.Context, in *ListPlaidTransactionsRequest, opts ...grpc.CallOption) (*ListPlaidTransactionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListPlaidTransactionsResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListPlaidTransactions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) ListPlaidHoldings(ctx context.Context, in *ListPlaidHoldingsRequest, opts ...grpc.CallOption) (*ListPlaidHoldingsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListPlaidHoldingsResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListPlaidHoldings_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultServiceServer is the server API for VaultService service.
 // All implementations must embed UnimplementedVaultServiceServer
 // for forward compatibility.
@@ -168,6 +194,10 @@ type VaultServiceServer interface {
 	AdminVerifyAsset(context.Context, *AdminVerifyAssetRequest) (*AdminVerifyAssetResponse, error)
 	// V8.1 — daily net-worth snapshot history.
 	ListNetWorthHistory(context.Context, *ListNetWorthHistoryRequest) (*ListNetWorthHistoryResponse, error)
+	// V8.2 — Plaid transactions + investment holdings, ingested by
+	// backend_go and surfaced for the Flutter dashboard.
+	ListPlaidTransactions(context.Context, *ListPlaidTransactionsRequest) (*ListPlaidTransactionsResponse, error)
+	ListPlaidHoldings(context.Context, *ListPlaidHoldingsRequest) (*ListPlaidHoldingsResponse, error)
 	mustEmbedUnimplementedVaultServiceServer()
 }
 
@@ -204,6 +234,12 @@ func (UnimplementedVaultServiceServer) AdminVerifyAsset(context.Context, *AdminV
 }
 func (UnimplementedVaultServiceServer) ListNetWorthHistory(context.Context, *ListNetWorthHistoryRequest) (*ListNetWorthHistoryResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListNetWorthHistory not implemented")
+}
+func (UnimplementedVaultServiceServer) ListPlaidTransactions(context.Context, *ListPlaidTransactionsRequest) (*ListPlaidTransactionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListPlaidTransactions not implemented")
+}
+func (UnimplementedVaultServiceServer) ListPlaidHoldings(context.Context, *ListPlaidHoldingsRequest) (*ListPlaidHoldingsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListPlaidHoldings not implemented")
 }
 func (UnimplementedVaultServiceServer) mustEmbedUnimplementedVaultServiceServer() {}
 func (UnimplementedVaultServiceServer) testEmbeddedByValue()                      {}
@@ -388,6 +424,42 @@ func _VaultService_ListNetWorthHistory_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultService_ListPlaidTransactions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListPlaidTransactionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListPlaidTransactions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListPlaidTransactions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListPlaidTransactions(ctx, req.(*ListPlaidTransactionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_ListPlaidHoldings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListPlaidHoldingsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListPlaidHoldings(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListPlaidHoldings_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListPlaidHoldings(ctx, req.(*ListPlaidHoldingsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultService_ServiceDesc is the grpc.ServiceDesc for VaultService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -430,6 +502,14 @@ var VaultService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListNetWorthHistory",
 			Handler:    _VaultService_ListNetWorthHistory_Handler,
+		},
+		{
+			MethodName: "ListPlaidTransactions",
+			Handler:    _VaultService_ListPlaidTransactions_Handler,
+		},
+		{
+			MethodName: "ListPlaidHoldings",
+			Handler:    _VaultService_ListPlaidHoldings_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

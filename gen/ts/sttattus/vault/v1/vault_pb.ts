@@ -1032,3 +1032,349 @@ export class ListNetWorthHistoryResponse extends Message<ListNetWorthHistoryResp
   }
 }
 
+/**
+ * PlaidTransaction is one row hydrated for the Flutter list surface.
+ * Sign convention follows Plaid: positive amount = money out of the
+ * account.
+ *
+ * @generated from message sttattus.vault.v1.PlaidTransaction
+ */
+export class PlaidTransaction extends Message<PlaidTransaction> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string account_id = 2;
+   */
+  accountId = "";
+
+  /**
+   * @generated from field: string plaid_transaction_id = 3;
+   */
+  plaidTransactionId = "";
+
+  /**
+   * @generated from field: double amount = 4;
+   */
+  amount = 0;
+
+  /**
+   * @generated from field: string iso_currency_code = 5;
+   */
+  isoCurrencyCode = "";
+
+  /**
+   * @generated from field: string merchant_name = 6;
+   */
+  merchantName = "";
+
+  /**
+   * @generated from field: string category = 7;
+   */
+  category = "";
+
+  /**
+   * @generated from field: string subcategory = 8;
+   */
+  subcategory = "";
+
+  /**
+   * @generated from field: bool pending = 9;
+   */
+  pending = false;
+
+  /**
+   * YYYY-MM-DD UTC
+   *
+   * @generated from field: string posted_at_iso = 10;
+   */
+  postedAtIso = "";
+
+  constructor(data?: PartialMessage<PlaidTransaction>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.PlaidTransaction";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "account_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "plaid_transaction_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "amount", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "iso_currency_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "merchant_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "subcategory", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "pending", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "posted_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlaidTransaction {
+    return new PlaidTransaction().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PlaidTransaction {
+    return new PlaidTransaction().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PlaidTransaction {
+    return new PlaidTransaction().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PlaidTransaction | PlainMessage<PlaidTransaction> | undefined, b: PlaidTransaction | PlainMessage<PlaidTransaction> | undefined): boolean {
+    return proto3.util.equals(PlaidTransaction, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListPlaidTransactionsRequest
+ */
+export class ListPlaidTransactionsRequest extends Message<ListPlaidTransactionsRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  /**
+   * @generated from field: int32 offset = 2;
+   */
+  offset = 0;
+
+  constructor(data?: PartialMessage<ListPlaidTransactionsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListPlaidTransactionsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPlaidTransactionsRequest {
+    return new ListPlaidTransactionsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPlaidTransactionsRequest {
+    return new ListPlaidTransactionsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPlaidTransactionsRequest {
+    return new ListPlaidTransactionsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListPlaidTransactionsRequest | PlainMessage<ListPlaidTransactionsRequest> | undefined, b: ListPlaidTransactionsRequest | PlainMessage<ListPlaidTransactionsRequest> | undefined): boolean {
+    return proto3.util.equals(ListPlaidTransactionsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListPlaidTransactionsResponse
+ */
+export class ListPlaidTransactionsResponse extends Message<ListPlaidTransactionsResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.PlaidTransaction transactions = 1;
+   */
+  transactions: PlaidTransaction[] = [];
+
+  constructor(data?: PartialMessage<ListPlaidTransactionsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListPlaidTransactionsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "transactions", kind: "message", T: PlaidTransaction, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPlaidTransactionsResponse {
+    return new ListPlaidTransactionsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPlaidTransactionsResponse {
+    return new ListPlaidTransactionsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPlaidTransactionsResponse {
+    return new ListPlaidTransactionsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListPlaidTransactionsResponse | PlainMessage<ListPlaidTransactionsResponse> | undefined, b: ListPlaidTransactionsResponse | PlainMessage<ListPlaidTransactionsResponse> | undefined): boolean {
+    return proto3.util.equals(ListPlaidTransactionsResponse, a, b);
+  }
+}
+
+/**
+ * PlaidHolding is one investment-holding row. institution_value is
+ * the authoritative dollar figure the dashboard sums; quantity *
+ * institution_price is the local approximation.
+ *
+ * @generated from message sttattus.vault.v1.PlaidHolding
+ */
+export class PlaidHolding extends Message<PlaidHolding> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string account_id = 2;
+   */
+  accountId = "";
+
+  /**
+   * @generated from field: string security_id = 3;
+   */
+  securityId = "";
+
+  /**
+   * @generated from field: string ticker = 4;
+   */
+  ticker = "";
+
+  /**
+   * @generated from field: string security_name = 5;
+   */
+  securityName = "";
+
+  /**
+   * @generated from field: string security_type = 6;
+   */
+  securityType = "";
+
+  /**
+   * @generated from field: double quantity = 7;
+   */
+  quantity = 0;
+
+  /**
+   * @generated from field: double cost_basis = 8;
+   */
+  costBasis = 0;
+
+  /**
+   * @generated from field: double institution_value = 9;
+   */
+  institutionValue = 0;
+
+  /**
+   * @generated from field: double institution_price = 10;
+   */
+  institutionPrice = 0;
+
+  /**
+   * @generated from field: string iso_currency_code = 11;
+   */
+  isoCurrencyCode = "";
+
+  constructor(data?: PartialMessage<PlaidHolding>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.PlaidHolding";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "account_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "security_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "ticker", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "security_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "security_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "quantity", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "cost_basis", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 9, name: "institution_value", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 10, name: "institution_price", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 11, name: "iso_currency_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlaidHolding {
+    return new PlaidHolding().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PlaidHolding {
+    return new PlaidHolding().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PlaidHolding {
+    return new PlaidHolding().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PlaidHolding | PlainMessage<PlaidHolding> | undefined, b: PlaidHolding | PlainMessage<PlaidHolding> | undefined): boolean {
+    return proto3.util.equals(PlaidHolding, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListPlaidHoldingsRequest
+ */
+export class ListPlaidHoldingsRequest extends Message<ListPlaidHoldingsRequest> {
+  constructor(data?: PartialMessage<ListPlaidHoldingsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListPlaidHoldingsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPlaidHoldingsRequest {
+    return new ListPlaidHoldingsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPlaidHoldingsRequest {
+    return new ListPlaidHoldingsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPlaidHoldingsRequest {
+    return new ListPlaidHoldingsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListPlaidHoldingsRequest | PlainMessage<ListPlaidHoldingsRequest> | undefined, b: ListPlaidHoldingsRequest | PlainMessage<ListPlaidHoldingsRequest> | undefined): boolean {
+    return proto3.util.equals(ListPlaidHoldingsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListPlaidHoldingsResponse
+ */
+export class ListPlaidHoldingsResponse extends Message<ListPlaidHoldingsResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.PlaidHolding holdings = 1;
+   */
+  holdings: PlaidHolding[] = [];
+
+  constructor(data?: PartialMessage<ListPlaidHoldingsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListPlaidHoldingsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "holdings", kind: "message", T: PlaidHolding, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPlaidHoldingsResponse {
+    return new ListPlaidHoldingsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPlaidHoldingsResponse {
+    return new ListPlaidHoldingsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPlaidHoldingsResponse {
+    return new ListPlaidHoldingsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListPlaidHoldingsResponse | PlainMessage<ListPlaidHoldingsResponse> | undefined, b: ListPlaidHoldingsResponse | PlainMessage<ListPlaidHoldingsResponse> | undefined): boolean {
+    return proto3.util.equals(ListPlaidHoldingsResponse, a, b);
+  }
+}
+

@@ -94,6 +94,11 @@ service VaultService {
 
   // V8.1 — daily net-worth snapshot history.
   rpc ListNetWorthHistory(ListNetWorthHistoryRequest) returns (ListNetWorthHistoryResponse);
+
+  // V8.2 — Plaid transactions + investment holdings, ingested by
+  // backend_go and surfaced for the Flutter dashboard.
+  rpc ListPlaidTransactions(ListPlaidTransactionsRequest) returns (ListPlaidTransactionsResponse);
+  rpc ListPlaidHoldings(ListPlaidHoldingsRequest) returns (ListPlaidHoldingsResponse);
 }
 
 message SyncWealthRequest {
@@ -156,4 +161,54 @@ message ListNetWorthHistoryRequest {
 
 message ListNetWorthHistoryResponse {
   repeated NetWorthPoint points = 1;
+}
+
+// === Plaid transactions + holdings (V8.2) ===
+
+// PlaidTransaction is one row hydrated for the Flutter list surface.
+// Sign convention follows Plaid: positive amount = money out of the
+// account.
+message PlaidTransaction {
+  string id = 1;
+  string account_id = 2;
+  string plaid_transaction_id = 3;
+  double amount = 4;
+  string iso_currency_code = 5;
+  string merchant_name = 6;
+  string category = 7;
+  string subcategory = 8;
+  bool pending = 9;
+  string posted_at_iso = 10; // YYYY-MM-DD UTC
+}
+
+message ListPlaidTransactionsRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+}
+
+message ListPlaidTransactionsResponse {
+  repeated PlaidTransaction transactions = 1;
+}
+
+// PlaidHolding is one investment-holding row. institution_value is
+// the authoritative dollar figure the dashboard sums; quantity *
+// institution_price is the local approximation.
+message PlaidHolding {
+  string id = 1;
+  string account_id = 2;
+  string security_id = 3;
+  string ticker = 4;
+  string security_name = 5;
+  string security_type = 6;
+  double quantity = 7;
+  double cost_basis = 8;
+  double institution_value = 9;
+  double institution_price = 10;
+  string iso_currency_code = 11;
+}
+
+message ListPlaidHoldingsRequest {}
+
+message ListPlaidHoldingsResponse {
+  repeated PlaidHolding holdings = 1;
 }

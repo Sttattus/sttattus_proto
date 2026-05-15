@@ -74,6 +74,16 @@ class VaultServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listNetWorthHistory, request, options: options);
   }
 
+  /// V8.2 — Plaid transactions + investment holdings, ingested by
+  /// backend_go and surfaced for the Flutter dashboard.
+  $grpc.ResponseFuture<$0.ListPlaidTransactionsResponse> listPlaidTransactions($0.ListPlaidTransactionsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listPlaidTransactions, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListPlaidHoldingsResponse> listPlaidHoldings($0.ListPlaidHoldingsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listPlaidHoldings, request, options: options);
+  }
+
     // method descriptors
 
   static final _$submitAsset = $grpc.ClientMethod<$0.SubmitAssetRequest, $0.SubmitAssetResponse>(
@@ -112,6 +122,14 @@ class VaultServiceClient extends $grpc.Client {
       '/sttattus.vault.v1.VaultService/ListNetWorthHistory',
       ($0.ListNetWorthHistoryRequest value) => value.writeToBuffer(),
       $0.ListNetWorthHistoryResponse.fromBuffer);
+  static final _$listPlaidTransactions = $grpc.ClientMethod<$0.ListPlaidTransactionsRequest, $0.ListPlaidTransactionsResponse>(
+      '/sttattus.vault.v1.VaultService/ListPlaidTransactions',
+      ($0.ListPlaidTransactionsRequest value) => value.writeToBuffer(),
+      $0.ListPlaidTransactionsResponse.fromBuffer);
+  static final _$listPlaidHoldings = $grpc.ClientMethod<$0.ListPlaidHoldingsRequest, $0.ListPlaidHoldingsResponse>(
+      '/sttattus.vault.v1.VaultService/ListPlaidHoldings',
+      ($0.ListPlaidHoldingsRequest value) => value.writeToBuffer(),
+      $0.ListPlaidHoldingsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.vault.v1.VaultService')
@@ -182,6 +200,20 @@ abstract class VaultServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListNetWorthHistoryRequest.fromBuffer(value),
         ($0.ListNetWorthHistoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListPlaidTransactionsRequest, $0.ListPlaidTransactionsResponse>(
+        'ListPlaidTransactions',
+        listPlaidTransactions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListPlaidTransactionsRequest.fromBuffer(value),
+        ($0.ListPlaidTransactionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListPlaidHoldingsRequest, $0.ListPlaidHoldingsResponse>(
+        'ListPlaidHoldings',
+        listPlaidHoldings_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListPlaidHoldingsRequest.fromBuffer(value),
+        ($0.ListPlaidHoldingsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.SubmitAssetResponse> submitAsset_Pre($grpc.ServiceCall $call, $async.Future<$0.SubmitAssetRequest> $request) async {
@@ -237,5 +269,17 @@ abstract class VaultServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListNetWorthHistoryResponse> listNetWorthHistory($grpc.ServiceCall call, $0.ListNetWorthHistoryRequest request);
+
+  $async.Future<$0.ListPlaidTransactionsResponse> listPlaidTransactions_Pre($grpc.ServiceCall $call, $async.Future<$0.ListPlaidTransactionsRequest> $request) async {
+    return listPlaidTransactions($call, await $request);
+  }
+
+  $async.Future<$0.ListPlaidTransactionsResponse> listPlaidTransactions($grpc.ServiceCall call, $0.ListPlaidTransactionsRequest request);
+
+  $async.Future<$0.ListPlaidHoldingsResponse> listPlaidHoldings_Pre($grpc.ServiceCall $call, $async.Future<$0.ListPlaidHoldingsRequest> $request) async {
+    return listPlaidHoldings($call, await $request);
+  }
+
+  $async.Future<$0.ListPlaidHoldingsResponse> listPlaidHoldings($grpc.ServiceCall call, $0.ListPlaidHoldingsRequest request);
 
 }

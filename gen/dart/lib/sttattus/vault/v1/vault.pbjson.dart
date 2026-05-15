@@ -376,3 +376,107 @@ final $typed_data.Uint8List listNetWorthHistoryResponseDescriptor = $convert.bas
     'ChtMaXN0TmV0V29ydGhIaXN0b3J5UmVzcG9uc2USOAoGcG9pbnRzGAEgAygLMiAuc3R0YXR0dX'
     'MudmF1bHQudjEuTmV0V29ydGhQb2ludFIGcG9pbnRz');
 
+@$core.Deprecated('Use plaidTransactionDescriptor instead')
+const PlaidTransaction$json = {
+  '1': 'PlaidTransaction',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'account_id', '3': 2, '4': 1, '5': 9, '10': 'accountId'},
+    {'1': 'plaid_transaction_id', '3': 3, '4': 1, '5': 9, '10': 'plaidTransactionId'},
+    {'1': 'amount', '3': 4, '4': 1, '5': 1, '10': 'amount'},
+    {'1': 'iso_currency_code', '3': 5, '4': 1, '5': 9, '10': 'isoCurrencyCode'},
+    {'1': 'merchant_name', '3': 6, '4': 1, '5': 9, '10': 'merchantName'},
+    {'1': 'category', '3': 7, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'subcategory', '3': 8, '4': 1, '5': 9, '10': 'subcategory'},
+    {'1': 'pending', '3': 9, '4': 1, '5': 8, '10': 'pending'},
+    {'1': 'posted_at_iso', '3': 10, '4': 1, '5': 9, '10': 'postedAtIso'},
+  ],
+};
+
+/// Descriptor for `PlaidTransaction`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List plaidTransactionDescriptor = $convert.base64Decode(
+    'ChBQbGFpZFRyYW5zYWN0aW9uEg4KAmlkGAEgASgJUgJpZBIdCgphY2NvdW50X2lkGAIgASgJUg'
+    'lhY2NvdW50SWQSMAoUcGxhaWRfdHJhbnNhY3Rpb25faWQYAyABKAlSEnBsYWlkVHJhbnNhY3Rp'
+    'b25JZBIWCgZhbW91bnQYBCABKAFSBmFtb3VudBIqChFpc29fY3VycmVuY3lfY29kZRgFIAEoCV'
+    'IPaXNvQ3VycmVuY3lDb2RlEiMKDW1lcmNoYW50X25hbWUYBiABKAlSDG1lcmNoYW50TmFtZRIa'
+    'CghjYXRlZ29yeRgHIAEoCVIIY2F0ZWdvcnkSIAoLc3ViY2F0ZWdvcnkYCCABKAlSC3N1YmNhdG'
+    'Vnb3J5EhgKB3BlbmRpbmcYCSABKAhSB3BlbmRpbmcSIgoNcG9zdGVkX2F0X2lzbxgKIAEoCVIL'
+    'cG9zdGVkQXRJc28=');
+
+@$core.Deprecated('Use listPlaidTransactionsRequestDescriptor instead')
+const ListPlaidTransactionsRequest$json = {
+  '1': 'ListPlaidTransactionsRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+    {'1': 'offset', '3': 2, '4': 1, '5': 5, '10': 'offset'},
+  ],
+};
+
+/// Descriptor for `ListPlaidTransactionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPlaidTransactionsRequestDescriptor = $convert.base64Decode(
+    'ChxMaXN0UGxhaWRUcmFuc2FjdGlvbnNSZXF1ZXN0EhQKBWxpbWl0GAEgASgFUgVsaW1pdBIWCg'
+    'ZvZmZzZXQYAiABKAVSBm9mZnNldA==');
+
+@$core.Deprecated('Use listPlaidTransactionsResponseDescriptor instead')
+const ListPlaidTransactionsResponse$json = {
+  '1': 'ListPlaidTransactionsResponse',
+  '2': [
+    {'1': 'transactions', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.PlaidTransaction', '10': 'transactions'},
+  ],
+};
+
+/// Descriptor for `ListPlaidTransactionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPlaidTransactionsResponseDescriptor = $convert.base64Decode(
+    'Ch1MaXN0UGxhaWRUcmFuc2FjdGlvbnNSZXNwb25zZRJHCgx0cmFuc2FjdGlvbnMYASADKAsyIy'
+    '5zdHRhdHR1cy52YXVsdC52MS5QbGFpZFRyYW5zYWN0aW9uUgx0cmFuc2FjdGlvbnM=');
+
+@$core.Deprecated('Use plaidHoldingDescriptor instead')
+const PlaidHolding$json = {
+  '1': 'PlaidHolding',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'account_id', '3': 2, '4': 1, '5': 9, '10': 'accountId'},
+    {'1': 'security_id', '3': 3, '4': 1, '5': 9, '10': 'securityId'},
+    {'1': 'ticker', '3': 4, '4': 1, '5': 9, '10': 'ticker'},
+    {'1': 'security_name', '3': 5, '4': 1, '5': 9, '10': 'securityName'},
+    {'1': 'security_type', '3': 6, '4': 1, '5': 9, '10': 'securityType'},
+    {'1': 'quantity', '3': 7, '4': 1, '5': 1, '10': 'quantity'},
+    {'1': 'cost_basis', '3': 8, '4': 1, '5': 1, '10': 'costBasis'},
+    {'1': 'institution_value', '3': 9, '4': 1, '5': 1, '10': 'institutionValue'},
+    {'1': 'institution_price', '3': 10, '4': 1, '5': 1, '10': 'institutionPrice'},
+    {'1': 'iso_currency_code', '3': 11, '4': 1, '5': 9, '10': 'isoCurrencyCode'},
+  ],
+};
+
+/// Descriptor for `PlaidHolding`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List plaidHoldingDescriptor = $convert.base64Decode(
+    'CgxQbGFpZEhvbGRpbmcSDgoCaWQYASABKAlSAmlkEh0KCmFjY291bnRfaWQYAiABKAlSCWFjY2'
+    '91bnRJZBIfCgtzZWN1cml0eV9pZBgDIAEoCVIKc2VjdXJpdHlJZBIWCgZ0aWNrZXIYBCABKAlS'
+    'BnRpY2tlchIjCg1zZWN1cml0eV9uYW1lGAUgASgJUgxzZWN1cml0eU5hbWUSIwoNc2VjdXJpdH'
+    'lfdHlwZRgGIAEoCVIMc2VjdXJpdHlUeXBlEhoKCHF1YW50aXR5GAcgASgBUghxdWFudGl0eRId'
+    'Cgpjb3N0X2Jhc2lzGAggASgBUgljb3N0QmFzaXMSKwoRaW5zdGl0dXRpb25fdmFsdWUYCSABKA'
+    'FSEGluc3RpdHV0aW9uVmFsdWUSKwoRaW5zdGl0dXRpb25fcHJpY2UYCiABKAFSEGluc3RpdHV0'
+    'aW9uUHJpY2USKgoRaXNvX2N1cnJlbmN5X2NvZGUYCyABKAlSD2lzb0N1cnJlbmN5Q29kZQ==');
+
+@$core.Deprecated('Use listPlaidHoldingsRequestDescriptor instead')
+const ListPlaidHoldingsRequest$json = {
+  '1': 'ListPlaidHoldingsRequest',
+};
+
+/// Descriptor for `ListPlaidHoldingsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPlaidHoldingsRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0UGxhaWRIb2xkaW5nc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listPlaidHoldingsResponseDescriptor instead')
+const ListPlaidHoldingsResponse$json = {
+  '1': 'ListPlaidHoldingsResponse',
+  '2': [
+    {'1': 'holdings', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.PlaidHolding', '10': 'holdings'},
+  ],
+};
+
+/// Descriptor for `ListPlaidHoldingsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPlaidHoldingsResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0UGxhaWRIb2xkaW5nc1Jlc3BvbnNlEjsKCGhvbGRpbmdzGAEgAygLMh8uc3R0YXR0dX'
+    'MudmF1bHQudjEuUGxhaWRIb2xkaW5nUghob2xkaW5ncw==');
+

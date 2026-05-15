@@ -1242,6 +1242,500 @@ class ListNetWorthHistoryResponse extends $pb.GeneratedMessage {
   $pb.PbList<NetWorthPoint> get points => $_getList(0);
 }
 
+/// PlaidTransaction is one row hydrated for the Flutter list surface.
+/// Sign convention follows Plaid: positive amount = money out of the
+/// account.
+class PlaidTransaction extends $pb.GeneratedMessage {
+  factory PlaidTransaction({
+    $core.String? id,
+    $core.String? accountId,
+    $core.String? plaidTransactionId,
+    $core.double? amount,
+    $core.String? isoCurrencyCode,
+    $core.String? merchantName,
+    $core.String? category,
+    $core.String? subcategory,
+    $core.bool? pending,
+    $core.String? postedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (accountId != null) result.accountId = accountId;
+    if (plaidTransactionId != null) result.plaidTransactionId = plaidTransactionId;
+    if (amount != null) result.amount = amount;
+    if (isoCurrencyCode != null) result.isoCurrencyCode = isoCurrencyCode;
+    if (merchantName != null) result.merchantName = merchantName;
+    if (category != null) result.category = category;
+    if (subcategory != null) result.subcategory = subcategory;
+    if (pending != null) result.pending = pending;
+    if (postedAtIso != null) result.postedAtIso = postedAtIso;
+    return result;
+  }
+
+  PlaidTransaction._();
+
+  factory PlaidTransaction.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PlaidTransaction.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlaidTransaction', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'accountId')
+    ..aOS(3, _omitFieldNames ? '' : 'plaidTransactionId')
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'amount', $pb.PbFieldType.OD)
+    ..aOS(5, _omitFieldNames ? '' : 'isoCurrencyCode')
+    ..aOS(6, _omitFieldNames ? '' : 'merchantName')
+    ..aOS(7, _omitFieldNames ? '' : 'category')
+    ..aOS(8, _omitFieldNames ? '' : 'subcategory')
+    ..aOB(9, _omitFieldNames ? '' : 'pending')
+    ..aOS(10, _omitFieldNames ? '' : 'postedAtIso')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlaidTransaction clone() => PlaidTransaction()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlaidTransaction copyWith(void Function(PlaidTransaction) updates) => super.copyWith((message) => updates(message as PlaidTransaction)) as PlaidTransaction;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PlaidTransaction create() => PlaidTransaction._();
+  @$core.override
+  PlaidTransaction createEmptyInstance() => create();
+  static $pb.PbList<PlaidTransaction> createRepeated() => $pb.PbList<PlaidTransaction>();
+  @$core.pragma('dart2js:noInline')
+  static PlaidTransaction getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlaidTransaction>(create);
+  static PlaidTransaction? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get accountId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set accountId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAccountId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccountId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get plaidTransactionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set plaidTransactionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPlaidTransactionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPlaidTransactionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get amount => $_getN(3);
+  @$pb.TagNumber(4)
+  set amount($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAmount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAmount() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get isoCurrencyCode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set isoCurrencyCode($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasIsoCurrencyCode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIsoCurrencyCode() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get merchantName => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set merchantName($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMerchantName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMerchantName() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get category => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set category($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCategory() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCategory() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get subcategory => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set subcategory($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSubcategory() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSubcategory() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get pending => $_getBF(8);
+  @$pb.TagNumber(9)
+  set pending($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPending() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPending() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get postedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set postedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasPostedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearPostedAtIso() => $_clearField(10);
+}
+
+class ListPlaidTransactionsRequest extends $pb.GeneratedMessage {
+  factory ListPlaidTransactionsRequest({
+    $core.int? limit,
+    $core.int? offset,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    if (offset != null) result.offset = offset;
+    return result;
+  }
+
+  ListPlaidTransactionsRequest._();
+
+  factory ListPlaidTransactionsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListPlaidTransactionsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPlaidTransactionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'offset', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListPlaidTransactionsRequest clone() => ListPlaidTransactionsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListPlaidTransactionsRequest copyWith(void Function(ListPlaidTransactionsRequest) updates) => super.copyWith((message) => updates(message as ListPlaidTransactionsRequest)) as ListPlaidTransactionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListPlaidTransactionsRequest create() => ListPlaidTransactionsRequest._();
+  @$core.override
+  ListPlaidTransactionsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListPlaidTransactionsRequest> createRepeated() => $pb.PbList<ListPlaidTransactionsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListPlaidTransactionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPlaidTransactionsRequest>(create);
+  static ListPlaidTransactionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get offset => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set offset($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOffset() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOffset() => $_clearField(2);
+}
+
+class ListPlaidTransactionsResponse extends $pb.GeneratedMessage {
+  factory ListPlaidTransactionsResponse({
+    $core.Iterable<PlaidTransaction>? transactions,
+  }) {
+    final result = create();
+    if (transactions != null) result.transactions.addAll(transactions);
+    return result;
+  }
+
+  ListPlaidTransactionsResponse._();
+
+  factory ListPlaidTransactionsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListPlaidTransactionsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPlaidTransactionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..pc<PlaidTransaction>(1, _omitFieldNames ? '' : 'transactions', $pb.PbFieldType.PM, subBuilder: PlaidTransaction.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListPlaidTransactionsResponse clone() => ListPlaidTransactionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListPlaidTransactionsResponse copyWith(void Function(ListPlaidTransactionsResponse) updates) => super.copyWith((message) => updates(message as ListPlaidTransactionsResponse)) as ListPlaidTransactionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListPlaidTransactionsResponse create() => ListPlaidTransactionsResponse._();
+  @$core.override
+  ListPlaidTransactionsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListPlaidTransactionsResponse> createRepeated() => $pb.PbList<ListPlaidTransactionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListPlaidTransactionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPlaidTransactionsResponse>(create);
+  static ListPlaidTransactionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<PlaidTransaction> get transactions => $_getList(0);
+}
+
+/// PlaidHolding is one investment-holding row. institution_value is
+/// the authoritative dollar figure the dashboard sums; quantity *
+/// institution_price is the local approximation.
+class PlaidHolding extends $pb.GeneratedMessage {
+  factory PlaidHolding({
+    $core.String? id,
+    $core.String? accountId,
+    $core.String? securityId,
+    $core.String? ticker,
+    $core.String? securityName,
+    $core.String? securityType,
+    $core.double? quantity,
+    $core.double? costBasis,
+    $core.double? institutionValue,
+    $core.double? institutionPrice,
+    $core.String? isoCurrencyCode,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (accountId != null) result.accountId = accountId;
+    if (securityId != null) result.securityId = securityId;
+    if (ticker != null) result.ticker = ticker;
+    if (securityName != null) result.securityName = securityName;
+    if (securityType != null) result.securityType = securityType;
+    if (quantity != null) result.quantity = quantity;
+    if (costBasis != null) result.costBasis = costBasis;
+    if (institutionValue != null) result.institutionValue = institutionValue;
+    if (institutionPrice != null) result.institutionPrice = institutionPrice;
+    if (isoCurrencyCode != null) result.isoCurrencyCode = isoCurrencyCode;
+    return result;
+  }
+
+  PlaidHolding._();
+
+  factory PlaidHolding.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PlaidHolding.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlaidHolding', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'accountId')
+    ..aOS(3, _omitFieldNames ? '' : 'securityId')
+    ..aOS(4, _omitFieldNames ? '' : 'ticker')
+    ..aOS(5, _omitFieldNames ? '' : 'securityName')
+    ..aOS(6, _omitFieldNames ? '' : 'securityType')
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'quantity', $pb.PbFieldType.OD)
+    ..a<$core.double>(8, _omitFieldNames ? '' : 'costBasis', $pb.PbFieldType.OD)
+    ..a<$core.double>(9, _omitFieldNames ? '' : 'institutionValue', $pb.PbFieldType.OD)
+    ..a<$core.double>(10, _omitFieldNames ? '' : 'institutionPrice', $pb.PbFieldType.OD)
+    ..aOS(11, _omitFieldNames ? '' : 'isoCurrencyCode')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlaidHolding clone() => PlaidHolding()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlaidHolding copyWith(void Function(PlaidHolding) updates) => super.copyWith((message) => updates(message as PlaidHolding)) as PlaidHolding;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PlaidHolding create() => PlaidHolding._();
+  @$core.override
+  PlaidHolding createEmptyInstance() => create();
+  static $pb.PbList<PlaidHolding> createRepeated() => $pb.PbList<PlaidHolding>();
+  @$core.pragma('dart2js:noInline')
+  static PlaidHolding getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlaidHolding>(create);
+  static PlaidHolding? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get accountId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set accountId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAccountId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccountId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get securityId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set securityId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSecurityId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSecurityId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get ticker => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set ticker($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTicker() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTicker() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get securityName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set securityName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSecurityName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSecurityName() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get securityType => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set securityType($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecurityType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecurityType() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get quantity => $_getN(6);
+  @$pb.TagNumber(7)
+  set quantity($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasQuantity() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearQuantity() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.double get costBasis => $_getN(7);
+  @$pb.TagNumber(8)
+  set costBasis($core.double value) => $_setDouble(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCostBasis() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCostBasis() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.double get institutionValue => $_getN(8);
+  @$pb.TagNumber(9)
+  set institutionValue($core.double value) => $_setDouble(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasInstitutionValue() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearInstitutionValue() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.double get institutionPrice => $_getN(9);
+  @$pb.TagNumber(10)
+  set institutionPrice($core.double value) => $_setDouble(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasInstitutionPrice() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearInstitutionPrice() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get isoCurrencyCode => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set isoCurrencyCode($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasIsoCurrencyCode() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearIsoCurrencyCode() => $_clearField(11);
+}
+
+class ListPlaidHoldingsRequest extends $pb.GeneratedMessage {
+  factory ListPlaidHoldingsRequest() => create();
+
+  ListPlaidHoldingsRequest._();
+
+  factory ListPlaidHoldingsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListPlaidHoldingsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPlaidHoldingsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListPlaidHoldingsRequest clone() => ListPlaidHoldingsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListPlaidHoldingsRequest copyWith(void Function(ListPlaidHoldingsRequest) updates) => super.copyWith((message) => updates(message as ListPlaidHoldingsRequest)) as ListPlaidHoldingsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListPlaidHoldingsRequest create() => ListPlaidHoldingsRequest._();
+  @$core.override
+  ListPlaidHoldingsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListPlaidHoldingsRequest> createRepeated() => $pb.PbList<ListPlaidHoldingsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListPlaidHoldingsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPlaidHoldingsRequest>(create);
+  static ListPlaidHoldingsRequest? _defaultInstance;
+}
+
+class ListPlaidHoldingsResponse extends $pb.GeneratedMessage {
+  factory ListPlaidHoldingsResponse({
+    $core.Iterable<PlaidHolding>? holdings,
+  }) {
+    final result = create();
+    if (holdings != null) result.holdings.addAll(holdings);
+    return result;
+  }
+
+  ListPlaidHoldingsResponse._();
+
+  factory ListPlaidHoldingsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListPlaidHoldingsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPlaidHoldingsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..pc<PlaidHolding>(1, _omitFieldNames ? '' : 'holdings', $pb.PbFieldType.PM, subBuilder: PlaidHolding.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListPlaidHoldingsResponse clone() => ListPlaidHoldingsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListPlaidHoldingsResponse copyWith(void Function(ListPlaidHoldingsResponse) updates) => super.copyWith((message) => updates(message as ListPlaidHoldingsResponse)) as ListPlaidHoldingsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListPlaidHoldingsResponse create() => ListPlaidHoldingsResponse._();
+  @$core.override
+  ListPlaidHoldingsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListPlaidHoldingsResponse> createRepeated() => $pb.PbList<ListPlaidHoldingsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListPlaidHoldingsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPlaidHoldingsResponse>(create);
+  static ListPlaidHoldingsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<PlaidHolding> get holdings => $_getList(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
