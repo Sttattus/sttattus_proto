@@ -654,6 +654,56 @@ message DeleteMobilityBaselineRequest {
 }
 message DeleteMobilityBaselineResponse {}
 
+// ===== Wearable connectors v1 + parity dashboard (F7P2.4).
+// Audits/forge.md §4.3 item 30, §5 screen 22, §9, §10 Phase 2
+// item 4. The connection + priority ledger the parity dashboard
+// reads; actual cloud reading ingestion is deferred. =====
+
+// SensorConnection is one (user, source) connection row.
+message SensorConnection {
+  string source = 1; // apple_health | google_fit | whoop | oura | garmin
+  string status = 2; // connected | disconnected | needs_auth
+  int64 connected_at = 3; // unix seconds, 0 when never connected
+  int64 last_synced_at = 4; // unix seconds, 0 when never synced
+}
+
+// SensorPriority is one per-metric conflict-reducer override.
+message SensorPriority {
+  string metric = 1; // sleep | hrv | rhr | steps | vo2
+  string source = 2;
+}
+
+message ListSensorConnectionsRequest {}
+message ListSensorConnectionsResponse {
+  repeated SensorConnection connections = 1;
+  repeated SensorPriority priority = 2;
+}
+
+message SetSensorConnectionStatusRequest {
+  string source = 1;
+  string status = 2; // connected | disconnected | needs_auth
+}
+message SetSensorConnectionStatusResponse {
+  SensorConnection connection = 1;
+}
+
+message MarkSensorSyncedRequest {
+  string source = 1;
+}
+message MarkSensorSyncedResponse {
+  SensorConnection connection = 1;
+}
+
+message SetSensorPriorityRequest {
+  string metric = 1;
+  // Empty source clears the override.
+  string source = 2;
+}
+message SetSensorPriorityResponse {
+  // Empty when the override was cleared.
+  SensorPriority priority = 1;
+}
+
 service WorkoutService {
   rpc ListWorkouts(ListWorkoutsRequest) returns (ListWorkoutsResponse);
   rpc GetWorkout(GetWorkoutRequest) returns (GetWorkoutResponse);
@@ -720,4 +770,12 @@ service WorkoutService {
   rpc GetCurrentMobilityBaseline(GetCurrentMobilityBaselineRequest) returns (GetCurrentMobilityBaselineResponse);
   rpc UpsertMobilityBaseline(UpsertMobilityBaselineRequest) returns (UpsertMobilityBaselineResponse);
   rpc DeleteMobilityBaseline(DeleteMobilityBaselineRequest) returns (DeleteMobilityBaselineResponse);
+
+  // F7P2.4 — wearable connectors + parity dashboard. The connection
+  // and per-metric priority ledger; cloud reading ingestion (OAuth
+  // pulls from Whoop / Oura / Garmin) is deferred.
+  rpc ListSensorConnections(ListSensorConnectionsRequest) returns (ListSensorConnectionsResponse);
+  rpc SetSensorConnectionStatus(SetSensorConnectionStatusRequest) returns (SetSensorConnectionStatusResponse);
+  rpc MarkSensorSynced(MarkSensorSyncedRequest) returns (MarkSensorSyncedResponse);
+  rpc SetSensorPriority(SetSensorPriorityRequest) returns (SetSensorPriorityResponse);
 }

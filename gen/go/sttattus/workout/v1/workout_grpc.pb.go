@@ -58,6 +58,10 @@ const (
 	WorkoutService_GetCurrentMobilityBaseline_FullMethodName = "/sttattus.workout.v1.WorkoutService/GetCurrentMobilityBaseline"
 	WorkoutService_UpsertMobilityBaseline_FullMethodName     = "/sttattus.workout.v1.WorkoutService/UpsertMobilityBaseline"
 	WorkoutService_DeleteMobilityBaseline_FullMethodName     = "/sttattus.workout.v1.WorkoutService/DeleteMobilityBaseline"
+	WorkoutService_ListSensorConnections_FullMethodName      = "/sttattus.workout.v1.WorkoutService/ListSensorConnections"
+	WorkoutService_SetSensorConnectionStatus_FullMethodName  = "/sttattus.workout.v1.WorkoutService/SetSensorConnectionStatus"
+	WorkoutService_MarkSensorSynced_FullMethodName           = "/sttattus.workout.v1.WorkoutService/MarkSensorSynced"
+	WorkoutService_SetSensorPriority_FullMethodName          = "/sttattus.workout.v1.WorkoutService/SetSensorPriority"
 )
 
 // WorkoutServiceClient is the client API for WorkoutService service.
@@ -120,6 +124,13 @@ type WorkoutServiceClient interface {
 	GetCurrentMobilityBaseline(ctx context.Context, in *GetCurrentMobilityBaselineRequest, opts ...grpc.CallOption) (*GetCurrentMobilityBaselineResponse, error)
 	UpsertMobilityBaseline(ctx context.Context, in *UpsertMobilityBaselineRequest, opts ...grpc.CallOption) (*UpsertMobilityBaselineResponse, error)
 	DeleteMobilityBaseline(ctx context.Context, in *DeleteMobilityBaselineRequest, opts ...grpc.CallOption) (*DeleteMobilityBaselineResponse, error)
+	// F7P2.4 — wearable connectors + parity dashboard. The connection
+	// and per-metric priority ledger; cloud reading ingestion (OAuth
+	// pulls from Whoop / Oura / Garmin) is deferred.
+	ListSensorConnections(ctx context.Context, in *ListSensorConnectionsRequest, opts ...grpc.CallOption) (*ListSensorConnectionsResponse, error)
+	SetSensorConnectionStatus(ctx context.Context, in *SetSensorConnectionStatusRequest, opts ...grpc.CallOption) (*SetSensorConnectionStatusResponse, error)
+	MarkSensorSynced(ctx context.Context, in *MarkSensorSyncedRequest, opts ...grpc.CallOption) (*MarkSensorSyncedResponse, error)
+	SetSensorPriority(ctx context.Context, in *SetSensorPriorityRequest, opts ...grpc.CallOption) (*SetSensorPriorityResponse, error)
 }
 
 type workoutServiceClient struct {
@@ -520,6 +531,46 @@ func (c *workoutServiceClient) DeleteMobilityBaseline(ctx context.Context, in *D
 	return out, nil
 }
 
+func (c *workoutServiceClient) ListSensorConnections(ctx context.Context, in *ListSensorConnectionsRequest, opts ...grpc.CallOption) (*ListSensorConnectionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListSensorConnectionsResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListSensorConnections_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) SetSensorConnectionStatus(ctx context.Context, in *SetSensorConnectionStatusRequest, opts ...grpc.CallOption) (*SetSensorConnectionStatusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetSensorConnectionStatusResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_SetSensorConnectionStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) MarkSensorSynced(ctx context.Context, in *MarkSensorSyncedRequest, opts ...grpc.CallOption) (*MarkSensorSyncedResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MarkSensorSyncedResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_MarkSensorSynced_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) SetSensorPriority(ctx context.Context, in *SetSensorPriorityRequest, opts ...grpc.CallOption) (*SetSensorPriorityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetSensorPriorityResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_SetSensorPriority_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WorkoutServiceServer is the server API for WorkoutService service.
 // All implementations must embed UnimplementedWorkoutServiceServer
 // for forward compatibility.
@@ -580,6 +631,13 @@ type WorkoutServiceServer interface {
 	GetCurrentMobilityBaseline(context.Context, *GetCurrentMobilityBaselineRequest) (*GetCurrentMobilityBaselineResponse, error)
 	UpsertMobilityBaseline(context.Context, *UpsertMobilityBaselineRequest) (*UpsertMobilityBaselineResponse, error)
 	DeleteMobilityBaseline(context.Context, *DeleteMobilityBaselineRequest) (*DeleteMobilityBaselineResponse, error)
+	// F7P2.4 — wearable connectors + parity dashboard. The connection
+	// and per-metric priority ledger; cloud reading ingestion (OAuth
+	// pulls from Whoop / Oura / Garmin) is deferred.
+	ListSensorConnections(context.Context, *ListSensorConnectionsRequest) (*ListSensorConnectionsResponse, error)
+	SetSensorConnectionStatus(context.Context, *SetSensorConnectionStatusRequest) (*SetSensorConnectionStatusResponse, error)
+	MarkSensorSynced(context.Context, *MarkSensorSyncedRequest) (*MarkSensorSyncedResponse, error)
+	SetSensorPriority(context.Context, *SetSensorPriorityRequest) (*SetSensorPriorityResponse, error)
 	mustEmbedUnimplementedWorkoutServiceServer()
 }
 
@@ -706,6 +764,18 @@ func (UnimplementedWorkoutServiceServer) UpsertMobilityBaseline(context.Context,
 }
 func (UnimplementedWorkoutServiceServer) DeleteMobilityBaseline(context.Context, *DeleteMobilityBaselineRequest) (*DeleteMobilityBaselineResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method DeleteMobilityBaseline not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListSensorConnections(context.Context, *ListSensorConnectionsRequest) (*ListSensorConnectionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListSensorConnections not implemented")
+}
+func (UnimplementedWorkoutServiceServer) SetSensorConnectionStatus(context.Context, *SetSensorConnectionStatusRequest) (*SetSensorConnectionStatusResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetSensorConnectionStatus not implemented")
+}
+func (UnimplementedWorkoutServiceServer) MarkSensorSynced(context.Context, *MarkSensorSyncedRequest) (*MarkSensorSyncedResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method MarkSensorSynced not implemented")
+}
+func (UnimplementedWorkoutServiceServer) SetSensorPriority(context.Context, *SetSensorPriorityRequest) (*SetSensorPriorityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetSensorPriority not implemented")
 }
 func (UnimplementedWorkoutServiceServer) mustEmbedUnimplementedWorkoutServiceServer() {}
 func (UnimplementedWorkoutServiceServer) testEmbeddedByValue()                        {}
@@ -1430,6 +1500,78 @@ func _WorkoutService_DeleteMobilityBaseline_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WorkoutService_ListSensorConnections_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSensorConnectionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListSensorConnections(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListSensorConnections_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListSensorConnections(ctx, req.(*ListSensorConnectionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_SetSensorConnectionStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetSensorConnectionStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).SetSensorConnectionStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_SetSensorConnectionStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).SetSensorConnectionStatus(ctx, req.(*SetSensorConnectionStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_MarkSensorSynced_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MarkSensorSyncedRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).MarkSensorSynced(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_MarkSensorSynced_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).MarkSensorSynced(ctx, req.(*MarkSensorSyncedRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_SetSensorPriority_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetSensorPriorityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).SetSensorPriority(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_SetSensorPriority_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).SetSensorPriority(ctx, req.(*SetSensorPriorityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // WorkoutService_ServiceDesc is the grpc.ServiceDesc for WorkoutService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1592,6 +1734,22 @@ var WorkoutService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteMobilityBaseline",
 			Handler:    _WorkoutService_DeleteMobilityBaseline_Handler,
+		},
+		{
+			MethodName: "ListSensorConnections",
+			Handler:    _WorkoutService_ListSensorConnections_Handler,
+		},
+		{
+			MethodName: "SetSensorConnectionStatus",
+			Handler:    _WorkoutService_SetSensorConnectionStatus_Handler,
+		},
+		{
+			MethodName: "MarkSensorSynced",
+			Handler:    _WorkoutService_MarkSensorSynced_Handler,
+		},
+		{
+			MethodName: "SetSensorPriority",
+			Handler:    _WorkoutService_SetSensorPriority_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

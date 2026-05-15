@@ -6002,6 +6002,498 @@ func (*DeleteMobilityBaselineResponse) Descriptor() ([]byte, []int) {
 	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{99}
 }
 
+// SensorConnection is one (user, source) connection row.
+type SensorConnection struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Source        string                 `protobuf:"bytes,1,opt,name=source,proto3" json:"source,omitempty"`                                    // apple_health | google_fit | whoop | oura | garmin
+	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`                                    // connected | disconnected | needs_auth
+	ConnectedAt   int64                  `protobuf:"varint,3,opt,name=connected_at,json=connectedAt,proto3" json:"connected_at,omitempty"`      // unix seconds, 0 when never connected
+	LastSyncedAt  int64                  `protobuf:"varint,4,opt,name=last_synced_at,json=lastSyncedAt,proto3" json:"last_synced_at,omitempty"` // unix seconds, 0 when never synced
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SensorConnection) Reset() {
+	*x = SensorConnection{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[100]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SensorConnection) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SensorConnection) ProtoMessage() {}
+
+func (x *SensorConnection) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[100]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SensorConnection.ProtoReflect.Descriptor instead.
+func (*SensorConnection) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{100}
+}
+
+func (x *SensorConnection) GetSource() string {
+	if x != nil {
+		return x.Source
+	}
+	return ""
+}
+
+func (x *SensorConnection) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *SensorConnection) GetConnectedAt() int64 {
+	if x != nil {
+		return x.ConnectedAt
+	}
+	return 0
+}
+
+func (x *SensorConnection) GetLastSyncedAt() int64 {
+	if x != nil {
+		return x.LastSyncedAt
+	}
+	return 0
+}
+
+// SensorPriority is one per-metric conflict-reducer override.
+type SensorPriority struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metric        string                 `protobuf:"bytes,1,opt,name=metric,proto3" json:"metric,omitempty"` // sleep | hrv | rhr | steps | vo2
+	Source        string                 `protobuf:"bytes,2,opt,name=source,proto3" json:"source,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SensorPriority) Reset() {
+	*x = SensorPriority{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[101]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SensorPriority) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SensorPriority) ProtoMessage() {}
+
+func (x *SensorPriority) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[101]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SensorPriority.ProtoReflect.Descriptor instead.
+func (*SensorPriority) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{101}
+}
+
+func (x *SensorPriority) GetMetric() string {
+	if x != nil {
+		return x.Metric
+	}
+	return ""
+}
+
+func (x *SensorPriority) GetSource() string {
+	if x != nil {
+		return x.Source
+	}
+	return ""
+}
+
+type ListSensorConnectionsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListSensorConnectionsRequest) Reset() {
+	*x = ListSensorConnectionsRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[102]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListSensorConnectionsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSensorConnectionsRequest) ProtoMessage() {}
+
+func (x *ListSensorConnectionsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[102]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSensorConnectionsRequest.ProtoReflect.Descriptor instead.
+func (*ListSensorConnectionsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{102}
+}
+
+type ListSensorConnectionsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Connections   []*SensorConnection    `protobuf:"bytes,1,rep,name=connections,proto3" json:"connections,omitempty"`
+	Priority      []*SensorPriority      `protobuf:"bytes,2,rep,name=priority,proto3" json:"priority,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListSensorConnectionsResponse) Reset() {
+	*x = ListSensorConnectionsResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[103]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListSensorConnectionsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSensorConnectionsResponse) ProtoMessage() {}
+
+func (x *ListSensorConnectionsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[103]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSensorConnectionsResponse.ProtoReflect.Descriptor instead.
+func (*ListSensorConnectionsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{103}
+}
+
+func (x *ListSensorConnectionsResponse) GetConnections() []*SensorConnection {
+	if x != nil {
+		return x.Connections
+	}
+	return nil
+}
+
+func (x *ListSensorConnectionsResponse) GetPriority() []*SensorPriority {
+	if x != nil {
+		return x.Priority
+	}
+	return nil
+}
+
+type SetSensorConnectionStatusRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Source        string                 `protobuf:"bytes,1,opt,name=source,proto3" json:"source,omitempty"`
+	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"` // connected | disconnected | needs_auth
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetSensorConnectionStatusRequest) Reset() {
+	*x = SetSensorConnectionStatusRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[104]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetSensorConnectionStatusRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetSensorConnectionStatusRequest) ProtoMessage() {}
+
+func (x *SetSensorConnectionStatusRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[104]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetSensorConnectionStatusRequest.ProtoReflect.Descriptor instead.
+func (*SetSensorConnectionStatusRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{104}
+}
+
+func (x *SetSensorConnectionStatusRequest) GetSource() string {
+	if x != nil {
+		return x.Source
+	}
+	return ""
+}
+
+func (x *SetSensorConnectionStatusRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+type SetSensorConnectionStatusResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Connection    *SensorConnection      `protobuf:"bytes,1,opt,name=connection,proto3" json:"connection,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetSensorConnectionStatusResponse) Reset() {
+	*x = SetSensorConnectionStatusResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[105]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetSensorConnectionStatusResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetSensorConnectionStatusResponse) ProtoMessage() {}
+
+func (x *SetSensorConnectionStatusResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[105]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetSensorConnectionStatusResponse.ProtoReflect.Descriptor instead.
+func (*SetSensorConnectionStatusResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{105}
+}
+
+func (x *SetSensorConnectionStatusResponse) GetConnection() *SensorConnection {
+	if x != nil {
+		return x.Connection
+	}
+	return nil
+}
+
+type MarkSensorSyncedRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Source        string                 `protobuf:"bytes,1,opt,name=source,proto3" json:"source,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MarkSensorSyncedRequest) Reset() {
+	*x = MarkSensorSyncedRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[106]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MarkSensorSyncedRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MarkSensorSyncedRequest) ProtoMessage() {}
+
+func (x *MarkSensorSyncedRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[106]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MarkSensorSyncedRequest.ProtoReflect.Descriptor instead.
+func (*MarkSensorSyncedRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{106}
+}
+
+func (x *MarkSensorSyncedRequest) GetSource() string {
+	if x != nil {
+		return x.Source
+	}
+	return ""
+}
+
+type MarkSensorSyncedResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Connection    *SensorConnection      `protobuf:"bytes,1,opt,name=connection,proto3" json:"connection,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MarkSensorSyncedResponse) Reset() {
+	*x = MarkSensorSyncedResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[107]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MarkSensorSyncedResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MarkSensorSyncedResponse) ProtoMessage() {}
+
+func (x *MarkSensorSyncedResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[107]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MarkSensorSyncedResponse.ProtoReflect.Descriptor instead.
+func (*MarkSensorSyncedResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{107}
+}
+
+func (x *MarkSensorSyncedResponse) GetConnection() *SensorConnection {
+	if x != nil {
+		return x.Connection
+	}
+	return nil
+}
+
+type SetSensorPriorityRequest struct {
+	state  protoimpl.MessageState `protogen:"open.v1"`
+	Metric string                 `protobuf:"bytes,1,opt,name=metric,proto3" json:"metric,omitempty"`
+	// Empty source clears the override.
+	Source        string `protobuf:"bytes,2,opt,name=source,proto3" json:"source,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetSensorPriorityRequest) Reset() {
+	*x = SetSensorPriorityRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[108]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetSensorPriorityRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetSensorPriorityRequest) ProtoMessage() {}
+
+func (x *SetSensorPriorityRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[108]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetSensorPriorityRequest.ProtoReflect.Descriptor instead.
+func (*SetSensorPriorityRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{108}
+}
+
+func (x *SetSensorPriorityRequest) GetMetric() string {
+	if x != nil {
+		return x.Metric
+	}
+	return ""
+}
+
+func (x *SetSensorPriorityRequest) GetSource() string {
+	if x != nil {
+		return x.Source
+	}
+	return ""
+}
+
+type SetSensorPriorityResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Empty when the override was cleared.
+	Priority      *SensorPriority `protobuf:"bytes,1,opt,name=priority,proto3" json:"priority,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetSensorPriorityResponse) Reset() {
+	*x = SetSensorPriorityResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[109]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetSensorPriorityResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetSensorPriorityResponse) ProtoMessage() {}
+
+func (x *SetSensorPriorityResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[109]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetSensorPriorityResponse.ProtoReflect.Descriptor instead.
+func (*SetSensorPriorityResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{109}
+}
+
+func (x *SetSensorPriorityResponse) GetPriority() *SensorPriority {
+	if x != nil {
+		return x.Priority
+	}
+	return nil
+}
+
 var File_sttattus_workout_v1_workout_proto protoreflect.FileDescriptor
 
 const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
@@ -6453,7 +6945,37 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\bbaseline\x18\x01 \x01(\v2%.sttattus.workout.v1.MobilityBaselineR\bbaseline\"/\n" +
 	"\x1dDeleteMobilityBaselineRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\" \n" +
-	"\x1eDeleteMobilityBaselineResponse2\xd2!\n" +
+	"\x1eDeleteMobilityBaselineResponse\"\x8b\x01\n" +
+	"\x10SensorConnection\x12\x16\n" +
+	"\x06source\x18\x01 \x01(\tR\x06source\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\x12!\n" +
+	"\fconnected_at\x18\x03 \x01(\x03R\vconnectedAt\x12$\n" +
+	"\x0elast_synced_at\x18\x04 \x01(\x03R\flastSyncedAt\"@\n" +
+	"\x0eSensorPriority\x12\x16\n" +
+	"\x06metric\x18\x01 \x01(\tR\x06metric\x12\x16\n" +
+	"\x06source\x18\x02 \x01(\tR\x06source\"\x1e\n" +
+	"\x1cListSensorConnectionsRequest\"\xa9\x01\n" +
+	"\x1dListSensorConnectionsResponse\x12G\n" +
+	"\vconnections\x18\x01 \x03(\v2%.sttattus.workout.v1.SensorConnectionR\vconnections\x12?\n" +
+	"\bpriority\x18\x02 \x03(\v2#.sttattus.workout.v1.SensorPriorityR\bpriority\"R\n" +
+	" SetSensorConnectionStatusRequest\x12\x16\n" +
+	"\x06source\x18\x01 \x01(\tR\x06source\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\"j\n" +
+	"!SetSensorConnectionStatusResponse\x12E\n" +
+	"\n" +
+	"connection\x18\x01 \x01(\v2%.sttattus.workout.v1.SensorConnectionR\n" +
+	"connection\"1\n" +
+	"\x17MarkSensorSyncedRequest\x12\x16\n" +
+	"\x06source\x18\x01 \x01(\tR\x06source\"a\n" +
+	"\x18MarkSensorSyncedResponse\x12E\n" +
+	"\n" +
+	"connection\x18\x01 \x01(\v2%.sttattus.workout.v1.SensorConnectionR\n" +
+	"connection\"J\n" +
+	"\x18SetSensorPriorityRequest\x12\x16\n" +
+	"\x06metric\x18\x01 \x01(\tR\x06metric\x12\x16\n" +
+	"\x06source\x18\x02 \x01(\tR\x06source\"\\\n" +
+	"\x19SetSensorPriorityResponse\x12?\n" +
+	"\bpriority\x18\x01 \x01(\v2#.sttattus.workout.v1.SensorPriorityR\bpriority2\xc4%\n" +
 	"\x0eWorkoutService\x12c\n" +
 	"\fListWorkouts\x12(.sttattus.workout.v1.ListWorkoutsRequest\x1a).sttattus.workout.v1.ListWorkoutsResponse\x12]\n" +
 	"\n" +
@@ -6495,7 +7017,11 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x15ListMobilityBaselines\x121.sttattus.workout.v1.ListMobilityBaselinesRequest\x1a2.sttattus.workout.v1.ListMobilityBaselinesResponse\x12\x8d\x01\n" +
 	"\x1aGetCurrentMobilityBaseline\x126.sttattus.workout.v1.GetCurrentMobilityBaselineRequest\x1a7.sttattus.workout.v1.GetCurrentMobilityBaselineResponse\x12\x81\x01\n" +
 	"\x16UpsertMobilityBaseline\x122.sttattus.workout.v1.UpsertMobilityBaselineRequest\x1a3.sttattus.workout.v1.UpsertMobilityBaselineResponse\x12\x81\x01\n" +
-	"\x16DeleteMobilityBaseline\x122.sttattus.workout.v1.DeleteMobilityBaselineRequest\x1a3.sttattus.workout.v1.DeleteMobilityBaselineResponseB@Z>github.com/sttattus/proto/gen/go/sttattus/workout/v1;workoutv1b\x06proto3"
+	"\x16DeleteMobilityBaseline\x122.sttattus.workout.v1.DeleteMobilityBaselineRequest\x1a3.sttattus.workout.v1.DeleteMobilityBaselineResponse\x12~\n" +
+	"\x15ListSensorConnections\x121.sttattus.workout.v1.ListSensorConnectionsRequest\x1a2.sttattus.workout.v1.ListSensorConnectionsResponse\x12\x8a\x01\n" +
+	"\x19SetSensorConnectionStatus\x125.sttattus.workout.v1.SetSensorConnectionStatusRequest\x1a6.sttattus.workout.v1.SetSensorConnectionStatusResponse\x12o\n" +
+	"\x10MarkSensorSynced\x12,.sttattus.workout.v1.MarkSensorSyncedRequest\x1a-.sttattus.workout.v1.MarkSensorSyncedResponse\x12r\n" +
+	"\x11SetSensorPriority\x12-.sttattus.workout.v1.SetSensorPriorityRequest\x1a..sttattus.workout.v1.SetSensorPriorityResponseB@Z>github.com/sttattus/proto/gen/go/sttattus/workout/v1;workoutv1b\x06proto3"
 
 var (
 	file_sttattus_workout_v1_workout_proto_rawDescOnce sync.Once
@@ -6509,7 +7035,7 @@ func file_sttattus_workout_v1_workout_proto_rawDescGZIP() []byte {
 	return file_sttattus_workout_v1_workout_proto_rawDescData
 }
 
-var file_sttattus_workout_v1_workout_proto_msgTypes = make([]protoimpl.MessageInfo, 100)
+var file_sttattus_workout_v1_workout_proto_msgTypes = make([]protoimpl.MessageInfo, 110)
 var file_sttattus_workout_v1_workout_proto_goTypes = []any{
 	(*Tag)(nil),                                // 0: sttattus.workout.v1.Tag
 	(*Workout)(nil),                            // 1: sttattus.workout.v1.Workout
@@ -6611,35 +7137,45 @@ var file_sttattus_workout_v1_workout_proto_goTypes = []any{
 	(*UpsertMobilityBaselineResponse)(nil),     // 97: sttattus.workout.v1.UpsertMobilityBaselineResponse
 	(*DeleteMobilityBaselineRequest)(nil),      // 98: sttattus.workout.v1.DeleteMobilityBaselineRequest
 	(*DeleteMobilityBaselineResponse)(nil),     // 99: sttattus.workout.v1.DeleteMobilityBaselineResponse
-	(*v1.PageRequest)(nil),                     // 100: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),                    // 101: sttattus.common.v1.PageResponse
+	(*SensorConnection)(nil),                   // 100: sttattus.workout.v1.SensorConnection
+	(*SensorPriority)(nil),                     // 101: sttattus.workout.v1.SensorPriority
+	(*ListSensorConnectionsRequest)(nil),       // 102: sttattus.workout.v1.ListSensorConnectionsRequest
+	(*ListSensorConnectionsResponse)(nil),      // 103: sttattus.workout.v1.ListSensorConnectionsResponse
+	(*SetSensorConnectionStatusRequest)(nil),   // 104: sttattus.workout.v1.SetSensorConnectionStatusRequest
+	(*SetSensorConnectionStatusResponse)(nil),  // 105: sttattus.workout.v1.SetSensorConnectionStatusResponse
+	(*MarkSensorSyncedRequest)(nil),            // 106: sttattus.workout.v1.MarkSensorSyncedRequest
+	(*MarkSensorSyncedResponse)(nil),           // 107: sttattus.workout.v1.MarkSensorSyncedResponse
+	(*SetSensorPriorityRequest)(nil),           // 108: sttattus.workout.v1.SetSensorPriorityRequest
+	(*SetSensorPriorityResponse)(nil),          // 109: sttattus.workout.v1.SetSensorPriorityResponse
+	(*v1.PageRequest)(nil),                     // 110: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),                    // 111: sttattus.common.v1.PageResponse
 }
 var file_sttattus_workout_v1_workout_proto_depIdxs = []int32{
 	0,   // 0: sttattus.workout.v1.Workout.tags:type_name -> sttattus.workout.v1.Tag
 	1,   // 1: sttattus.workout.v1.DayWorkout.workout:type_name -> sttattus.workout.v1.Workout
 	2,   // 2: sttattus.workout.v1.DayWorkout.series:type_name -> sttattus.workout.v1.Series
 	3,   // 3: sttattus.workout.v1.DayWorkout.strain:type_name -> sttattus.workout.v1.StrainMetrics
-	100, // 4: sttattus.workout.v1.ListWorkoutsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	110, // 4: sttattus.workout.v1.ListWorkoutsRequest.page:type_name -> sttattus.common.v1.PageRequest
 	1,   // 5: sttattus.workout.v1.ListWorkoutsResponse.workouts:type_name -> sttattus.workout.v1.Workout
-	101, // 6: sttattus.workout.v1.ListWorkoutsResponse.page:type_name -> sttattus.common.v1.PageResponse
+	111, // 6: sttattus.workout.v1.ListWorkoutsResponse.page:type_name -> sttattus.common.v1.PageResponse
 	1,   // 7: sttattus.workout.v1.GetWorkoutResponse.workout:type_name -> sttattus.workout.v1.Workout
 	2,   // 8: sttattus.workout.v1.LogDayWorkoutRequest.series:type_name -> sttattus.workout.v1.Series
 	3,   // 9: sttattus.workout.v1.LogDayWorkoutRequest.strain:type_name -> sttattus.workout.v1.StrainMetrics
 	4,   // 10: sttattus.workout.v1.LogDayWorkoutResponse.day_workout:type_name -> sttattus.workout.v1.DayWorkout
 	5,   // 11: sttattus.workout.v1.LogDayWorkoutResponse.stats:type_name -> sttattus.workout.v1.ForgeStats
-	100, // 12: sttattus.workout.v1.ListHistoryRequest.page:type_name -> sttattus.common.v1.PageRequest
+	110, // 12: sttattus.workout.v1.ListHistoryRequest.page:type_name -> sttattus.common.v1.PageRequest
 	4,   // 13: sttattus.workout.v1.ListHistoryResponse.entries:type_name -> sttattus.workout.v1.DayWorkout
-	101, // 14: sttattus.workout.v1.ListHistoryResponse.page:type_name -> sttattus.common.v1.PageResponse
+	111, // 14: sttattus.workout.v1.ListHistoryResponse.page:type_name -> sttattus.common.v1.PageResponse
 	5,   // 15: sttattus.workout.v1.GetForgeStatsResponse.stats:type_name -> sttattus.workout.v1.ForgeStats
 	19,  // 16: sttattus.workout.v1.SessionExercise.sets:type_name -> sttattus.workout.v1.SessionSet
 	20,  // 17: sttattus.workout.v1.ForgeSession.exercises:type_name -> sttattus.workout.v1.SessionExercise
-	100, // 18: sttattus.workout.v1.ListExercisesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	110, // 18: sttattus.workout.v1.ListExercisesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	18,  // 19: sttattus.workout.v1.ListExercisesResponse.exercises:type_name -> sttattus.workout.v1.Exercise
 	22,  // 20: sttattus.workout.v1.CreateSessionRequest.exercises:type_name -> sttattus.workout.v1.PlannedExercise
 	21,  // 21: sttattus.workout.v1.CreateSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
 	21,  // 22: sttattus.workout.v1.GetSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
 	21,  // 23: sttattus.workout.v1.GetActiveSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
-	100, // 24: sttattus.workout.v1.ListSessionsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	110, // 24: sttattus.workout.v1.ListSessionsRequest.page:type_name -> sttattus.common.v1.PageRequest
 	21,  // 25: sttattus.workout.v1.ListSessionsResponse.sessions:type_name -> sttattus.workout.v1.ForgeSession
 	21,  // 26: sttattus.workout.v1.UpdateSessionStatusResponse.session:type_name -> sttattus.workout.v1.ForgeSession
 	19,  // 27: sttattus.workout.v1.LogSetResponse.set:type_name -> sttattus.workout.v1.SessionSet
@@ -6649,7 +7185,7 @@ var file_sttattus_workout_v1_workout_proto_depIdxs = []int32{
 	40,  // 31: sttattus.workout.v1.GetTodayResponse.today:type_name -> sttattus.workout.v1.TodaySnapshot
 	43,  // 32: sttattus.workout.v1.GetForgeStreakResponse.streak:type_name -> sttattus.workout.v1.ForgeStreak
 	46,  // 33: sttattus.workout.v1.CreateFormVideoResponse.video:type_name -> sttattus.workout.v1.FormVideo
-	100, // 34: sttattus.workout.v1.ListMyFormVideosRequest.page:type_name -> sttattus.common.v1.PageRequest
+	110, // 34: sttattus.workout.v1.ListMyFormVideosRequest.page:type_name -> sttattus.common.v1.PageRequest
 	46,  // 35: sttattus.workout.v1.ListMyFormVideosResponse.videos:type_name -> sttattus.workout.v1.FormVideo
 	46,  // 36: sttattus.workout.v1.UpdateFormVideoStatusResponse.video:type_name -> sttattus.workout.v1.FormVideo
 	55,  // 37: sttattus.workout.v1.ProgrammeEnrolment.programme:type_name -> sttattus.workout.v1.Programme
@@ -6661,7 +7197,7 @@ var file_sttattus_workout_v1_workout_proto_depIdxs = []int32{
 	56,  // 43: sttattus.workout.v1.UpdateEnrolmentResponse.enrolment:type_name -> sttattus.workout.v1.ProgrammeEnrolment
 	69,  // 44: sttattus.workout.v1.ListMyPRsResponse.prs:type_name -> sttattus.workout.v1.PersonalRecord
 	69,  // 45: sttattus.workout.v1.ListRecentPRsResponse.prs:type_name -> sttattus.workout.v1.PersonalRecord
-	100, // 46: sttattus.workout.v1.ListBodyCompositionsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	110, // 46: sttattus.workout.v1.ListBodyCompositionsRequest.page:type_name -> sttattus.common.v1.PageRequest
 	74,  // 47: sttattus.workout.v1.ListBodyCompositionsResponse.entries:type_name -> sttattus.workout.v1.BodyComposition
 	74,  // 48: sttattus.workout.v1.CreateBodyCompositionResponse.entry:type_name -> sttattus.workout.v1.BodyComposition
 	81,  // 49: sttattus.workout.v1.ListInjuriesResponse.injuries:type_name -> sttattus.workout.v1.Injury
@@ -6672,89 +7208,102 @@ var file_sttattus_workout_v1_workout_proto_depIdxs = []int32{
 	91,  // 54: sttattus.workout.v1.GetCurrentMobilityBaselineResponse.baseline:type_name -> sttattus.workout.v1.MobilityBaseline
 	90,  // 55: sttattus.workout.v1.UpsertMobilityBaselineRequest.scores:type_name -> sttattus.workout.v1.MobilityScore
 	91,  // 56: sttattus.workout.v1.UpsertMobilityBaselineResponse.baseline:type_name -> sttattus.workout.v1.MobilityBaseline
-	6,   // 57: sttattus.workout.v1.WorkoutService.ListWorkouts:input_type -> sttattus.workout.v1.ListWorkoutsRequest
-	8,   // 58: sttattus.workout.v1.WorkoutService.GetWorkout:input_type -> sttattus.workout.v1.GetWorkoutRequest
-	10,  // 59: sttattus.workout.v1.WorkoutService.LogDayWorkout:input_type -> sttattus.workout.v1.LogDayWorkoutRequest
-	12,  // 60: sttattus.workout.v1.WorkoutService.ListHistory:input_type -> sttattus.workout.v1.ListHistoryRequest
-	14,  // 61: sttattus.workout.v1.WorkoutService.GetForgeStats:input_type -> sttattus.workout.v1.GetForgeStatsRequest
-	16,  // 62: sttattus.workout.v1.WorkoutService.SubmitFeedback:input_type -> sttattus.workout.v1.SubmitFeedbackRequest
-	41,  // 63: sttattus.workout.v1.WorkoutService.GetToday:input_type -> sttattus.workout.v1.GetTodayRequest
-	38,  // 64: sttattus.workout.v1.WorkoutService.GetRankLadder:input_type -> sttattus.workout.v1.GetRankLadderRequest
-	23,  // 65: sttattus.workout.v1.WorkoutService.ListExercises:input_type -> sttattus.workout.v1.ListExercisesRequest
-	25,  // 66: sttattus.workout.v1.WorkoutService.CreateSession:input_type -> sttattus.workout.v1.CreateSessionRequest
-	27,  // 67: sttattus.workout.v1.WorkoutService.GetSession:input_type -> sttattus.workout.v1.GetSessionRequest
-	29,  // 68: sttattus.workout.v1.WorkoutService.GetActiveSession:input_type -> sttattus.workout.v1.GetActiveSessionRequest
-	31,  // 69: sttattus.workout.v1.WorkoutService.ListSessions:input_type -> sttattus.workout.v1.ListSessionsRequest
-	33,  // 70: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:input_type -> sttattus.workout.v1.UpdateSessionStatusRequest
-	35,  // 71: sttattus.workout.v1.WorkoutService.LogSet:input_type -> sttattus.workout.v1.LogSetRequest
-	44,  // 72: sttattus.workout.v1.WorkoutService.GetForgeStreak:input_type -> sttattus.workout.v1.GetForgeStreakRequest
-	47,  // 73: sttattus.workout.v1.WorkoutService.CreateFormVideo:input_type -> sttattus.workout.v1.CreateFormVideoRequest
-	49,  // 74: sttattus.workout.v1.WorkoutService.ListMyFormVideos:input_type -> sttattus.workout.v1.ListMyFormVideosRequest
-	51,  // 75: sttattus.workout.v1.WorkoutService.DeleteFormVideo:input_type -> sttattus.workout.v1.DeleteFormVideoRequest
-	53,  // 76: sttattus.workout.v1.WorkoutService.UpdateFormVideoStatus:input_type -> sttattus.workout.v1.UpdateFormVideoStatusRequest
-	57,  // 77: sttattus.workout.v1.WorkoutService.ListProgrammes:input_type -> sttattus.workout.v1.ListProgrammesRequest
-	59,  // 78: sttattus.workout.v1.WorkoutService.GetProgramme:input_type -> sttattus.workout.v1.GetProgrammeRequest
-	61,  // 79: sttattus.workout.v1.WorkoutService.EnrolInProgramme:input_type -> sttattus.workout.v1.EnrolInProgrammeRequest
-	63,  // 80: sttattus.workout.v1.WorkoutService.GetActiveEnrolment:input_type -> sttattus.workout.v1.GetActiveEnrolmentRequest
-	65,  // 81: sttattus.workout.v1.WorkoutService.ListMyEnrolments:input_type -> sttattus.workout.v1.ListMyEnrolmentsRequest
-	67,  // 82: sttattus.workout.v1.WorkoutService.UpdateEnrolment:input_type -> sttattus.workout.v1.UpdateEnrolmentRequest
-	70,  // 83: sttattus.workout.v1.WorkoutService.ListMyPRs:input_type -> sttattus.workout.v1.ListMyPRsRequest
-	72,  // 84: sttattus.workout.v1.WorkoutService.ListRecentPRs:input_type -> sttattus.workout.v1.ListRecentPRsRequest
-	75,  // 85: sttattus.workout.v1.WorkoutService.ListBodyCompositions:input_type -> sttattus.workout.v1.ListBodyCompositionsRequest
-	77,  // 86: sttattus.workout.v1.WorkoutService.CreateBodyComposition:input_type -> sttattus.workout.v1.CreateBodyCompositionRequest
-	79,  // 87: sttattus.workout.v1.WorkoutService.DeleteBodyComposition:input_type -> sttattus.workout.v1.DeleteBodyCompositionRequest
-	82,  // 88: sttattus.workout.v1.WorkoutService.ListInjuries:input_type -> sttattus.workout.v1.ListInjuriesRequest
-	84,  // 89: sttattus.workout.v1.WorkoutService.CreateInjury:input_type -> sttattus.workout.v1.CreateInjuryRequest
-	86,  // 90: sttattus.workout.v1.WorkoutService.UpdateInjuryStatus:input_type -> sttattus.workout.v1.UpdateInjuryStatusRequest
-	88,  // 91: sttattus.workout.v1.WorkoutService.DeleteInjury:input_type -> sttattus.workout.v1.DeleteInjuryRequest
-	92,  // 92: sttattus.workout.v1.WorkoutService.ListMobilityBaselines:input_type -> sttattus.workout.v1.ListMobilityBaselinesRequest
-	94,  // 93: sttattus.workout.v1.WorkoutService.GetCurrentMobilityBaseline:input_type -> sttattus.workout.v1.GetCurrentMobilityBaselineRequest
-	96,  // 94: sttattus.workout.v1.WorkoutService.UpsertMobilityBaseline:input_type -> sttattus.workout.v1.UpsertMobilityBaselineRequest
-	98,  // 95: sttattus.workout.v1.WorkoutService.DeleteMobilityBaseline:input_type -> sttattus.workout.v1.DeleteMobilityBaselineRequest
-	7,   // 96: sttattus.workout.v1.WorkoutService.ListWorkouts:output_type -> sttattus.workout.v1.ListWorkoutsResponse
-	9,   // 97: sttattus.workout.v1.WorkoutService.GetWorkout:output_type -> sttattus.workout.v1.GetWorkoutResponse
-	11,  // 98: sttattus.workout.v1.WorkoutService.LogDayWorkout:output_type -> sttattus.workout.v1.LogDayWorkoutResponse
-	13,  // 99: sttattus.workout.v1.WorkoutService.ListHistory:output_type -> sttattus.workout.v1.ListHistoryResponse
-	15,  // 100: sttattus.workout.v1.WorkoutService.GetForgeStats:output_type -> sttattus.workout.v1.GetForgeStatsResponse
-	17,  // 101: sttattus.workout.v1.WorkoutService.SubmitFeedback:output_type -> sttattus.workout.v1.SubmitFeedbackResponse
-	42,  // 102: sttattus.workout.v1.WorkoutService.GetToday:output_type -> sttattus.workout.v1.GetTodayResponse
-	39,  // 103: sttattus.workout.v1.WorkoutService.GetRankLadder:output_type -> sttattus.workout.v1.GetRankLadderResponse
-	24,  // 104: sttattus.workout.v1.WorkoutService.ListExercises:output_type -> sttattus.workout.v1.ListExercisesResponse
-	26,  // 105: sttattus.workout.v1.WorkoutService.CreateSession:output_type -> sttattus.workout.v1.CreateSessionResponse
-	28,  // 106: sttattus.workout.v1.WorkoutService.GetSession:output_type -> sttattus.workout.v1.GetSessionResponse
-	30,  // 107: sttattus.workout.v1.WorkoutService.GetActiveSession:output_type -> sttattus.workout.v1.GetActiveSessionResponse
-	32,  // 108: sttattus.workout.v1.WorkoutService.ListSessions:output_type -> sttattus.workout.v1.ListSessionsResponse
-	34,  // 109: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:output_type -> sttattus.workout.v1.UpdateSessionStatusResponse
-	36,  // 110: sttattus.workout.v1.WorkoutService.LogSet:output_type -> sttattus.workout.v1.LogSetResponse
-	45,  // 111: sttattus.workout.v1.WorkoutService.GetForgeStreak:output_type -> sttattus.workout.v1.GetForgeStreakResponse
-	48,  // 112: sttattus.workout.v1.WorkoutService.CreateFormVideo:output_type -> sttattus.workout.v1.CreateFormVideoResponse
-	50,  // 113: sttattus.workout.v1.WorkoutService.ListMyFormVideos:output_type -> sttattus.workout.v1.ListMyFormVideosResponse
-	52,  // 114: sttattus.workout.v1.WorkoutService.DeleteFormVideo:output_type -> sttattus.workout.v1.DeleteFormVideoResponse
-	54,  // 115: sttattus.workout.v1.WorkoutService.UpdateFormVideoStatus:output_type -> sttattus.workout.v1.UpdateFormVideoStatusResponse
-	58,  // 116: sttattus.workout.v1.WorkoutService.ListProgrammes:output_type -> sttattus.workout.v1.ListProgrammesResponse
-	60,  // 117: sttattus.workout.v1.WorkoutService.GetProgramme:output_type -> sttattus.workout.v1.GetProgrammeResponse
-	62,  // 118: sttattus.workout.v1.WorkoutService.EnrolInProgramme:output_type -> sttattus.workout.v1.EnrolInProgrammeResponse
-	64,  // 119: sttattus.workout.v1.WorkoutService.GetActiveEnrolment:output_type -> sttattus.workout.v1.GetActiveEnrolmentResponse
-	66,  // 120: sttattus.workout.v1.WorkoutService.ListMyEnrolments:output_type -> sttattus.workout.v1.ListMyEnrolmentsResponse
-	68,  // 121: sttattus.workout.v1.WorkoutService.UpdateEnrolment:output_type -> sttattus.workout.v1.UpdateEnrolmentResponse
-	71,  // 122: sttattus.workout.v1.WorkoutService.ListMyPRs:output_type -> sttattus.workout.v1.ListMyPRsResponse
-	73,  // 123: sttattus.workout.v1.WorkoutService.ListRecentPRs:output_type -> sttattus.workout.v1.ListRecentPRsResponse
-	76,  // 124: sttattus.workout.v1.WorkoutService.ListBodyCompositions:output_type -> sttattus.workout.v1.ListBodyCompositionsResponse
-	78,  // 125: sttattus.workout.v1.WorkoutService.CreateBodyComposition:output_type -> sttattus.workout.v1.CreateBodyCompositionResponse
-	80,  // 126: sttattus.workout.v1.WorkoutService.DeleteBodyComposition:output_type -> sttattus.workout.v1.DeleteBodyCompositionResponse
-	83,  // 127: sttattus.workout.v1.WorkoutService.ListInjuries:output_type -> sttattus.workout.v1.ListInjuriesResponse
-	85,  // 128: sttattus.workout.v1.WorkoutService.CreateInjury:output_type -> sttattus.workout.v1.CreateInjuryResponse
-	87,  // 129: sttattus.workout.v1.WorkoutService.UpdateInjuryStatus:output_type -> sttattus.workout.v1.UpdateInjuryStatusResponse
-	89,  // 130: sttattus.workout.v1.WorkoutService.DeleteInjury:output_type -> sttattus.workout.v1.DeleteInjuryResponse
-	93,  // 131: sttattus.workout.v1.WorkoutService.ListMobilityBaselines:output_type -> sttattus.workout.v1.ListMobilityBaselinesResponse
-	95,  // 132: sttattus.workout.v1.WorkoutService.GetCurrentMobilityBaseline:output_type -> sttattus.workout.v1.GetCurrentMobilityBaselineResponse
-	97,  // 133: sttattus.workout.v1.WorkoutService.UpsertMobilityBaseline:output_type -> sttattus.workout.v1.UpsertMobilityBaselineResponse
-	99,  // 134: sttattus.workout.v1.WorkoutService.DeleteMobilityBaseline:output_type -> sttattus.workout.v1.DeleteMobilityBaselineResponse
-	96,  // [96:135] is the sub-list for method output_type
-	57,  // [57:96] is the sub-list for method input_type
-	57,  // [57:57] is the sub-list for extension type_name
-	57,  // [57:57] is the sub-list for extension extendee
-	0,   // [0:57] is the sub-list for field type_name
+	100, // 57: sttattus.workout.v1.ListSensorConnectionsResponse.connections:type_name -> sttattus.workout.v1.SensorConnection
+	101, // 58: sttattus.workout.v1.ListSensorConnectionsResponse.priority:type_name -> sttattus.workout.v1.SensorPriority
+	100, // 59: sttattus.workout.v1.SetSensorConnectionStatusResponse.connection:type_name -> sttattus.workout.v1.SensorConnection
+	100, // 60: sttattus.workout.v1.MarkSensorSyncedResponse.connection:type_name -> sttattus.workout.v1.SensorConnection
+	101, // 61: sttattus.workout.v1.SetSensorPriorityResponse.priority:type_name -> sttattus.workout.v1.SensorPriority
+	6,   // 62: sttattus.workout.v1.WorkoutService.ListWorkouts:input_type -> sttattus.workout.v1.ListWorkoutsRequest
+	8,   // 63: sttattus.workout.v1.WorkoutService.GetWorkout:input_type -> sttattus.workout.v1.GetWorkoutRequest
+	10,  // 64: sttattus.workout.v1.WorkoutService.LogDayWorkout:input_type -> sttattus.workout.v1.LogDayWorkoutRequest
+	12,  // 65: sttattus.workout.v1.WorkoutService.ListHistory:input_type -> sttattus.workout.v1.ListHistoryRequest
+	14,  // 66: sttattus.workout.v1.WorkoutService.GetForgeStats:input_type -> sttattus.workout.v1.GetForgeStatsRequest
+	16,  // 67: sttattus.workout.v1.WorkoutService.SubmitFeedback:input_type -> sttattus.workout.v1.SubmitFeedbackRequest
+	41,  // 68: sttattus.workout.v1.WorkoutService.GetToday:input_type -> sttattus.workout.v1.GetTodayRequest
+	38,  // 69: sttattus.workout.v1.WorkoutService.GetRankLadder:input_type -> sttattus.workout.v1.GetRankLadderRequest
+	23,  // 70: sttattus.workout.v1.WorkoutService.ListExercises:input_type -> sttattus.workout.v1.ListExercisesRequest
+	25,  // 71: sttattus.workout.v1.WorkoutService.CreateSession:input_type -> sttattus.workout.v1.CreateSessionRequest
+	27,  // 72: sttattus.workout.v1.WorkoutService.GetSession:input_type -> sttattus.workout.v1.GetSessionRequest
+	29,  // 73: sttattus.workout.v1.WorkoutService.GetActiveSession:input_type -> sttattus.workout.v1.GetActiveSessionRequest
+	31,  // 74: sttattus.workout.v1.WorkoutService.ListSessions:input_type -> sttattus.workout.v1.ListSessionsRequest
+	33,  // 75: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:input_type -> sttattus.workout.v1.UpdateSessionStatusRequest
+	35,  // 76: sttattus.workout.v1.WorkoutService.LogSet:input_type -> sttattus.workout.v1.LogSetRequest
+	44,  // 77: sttattus.workout.v1.WorkoutService.GetForgeStreak:input_type -> sttattus.workout.v1.GetForgeStreakRequest
+	47,  // 78: sttattus.workout.v1.WorkoutService.CreateFormVideo:input_type -> sttattus.workout.v1.CreateFormVideoRequest
+	49,  // 79: sttattus.workout.v1.WorkoutService.ListMyFormVideos:input_type -> sttattus.workout.v1.ListMyFormVideosRequest
+	51,  // 80: sttattus.workout.v1.WorkoutService.DeleteFormVideo:input_type -> sttattus.workout.v1.DeleteFormVideoRequest
+	53,  // 81: sttattus.workout.v1.WorkoutService.UpdateFormVideoStatus:input_type -> sttattus.workout.v1.UpdateFormVideoStatusRequest
+	57,  // 82: sttattus.workout.v1.WorkoutService.ListProgrammes:input_type -> sttattus.workout.v1.ListProgrammesRequest
+	59,  // 83: sttattus.workout.v1.WorkoutService.GetProgramme:input_type -> sttattus.workout.v1.GetProgrammeRequest
+	61,  // 84: sttattus.workout.v1.WorkoutService.EnrolInProgramme:input_type -> sttattus.workout.v1.EnrolInProgrammeRequest
+	63,  // 85: sttattus.workout.v1.WorkoutService.GetActiveEnrolment:input_type -> sttattus.workout.v1.GetActiveEnrolmentRequest
+	65,  // 86: sttattus.workout.v1.WorkoutService.ListMyEnrolments:input_type -> sttattus.workout.v1.ListMyEnrolmentsRequest
+	67,  // 87: sttattus.workout.v1.WorkoutService.UpdateEnrolment:input_type -> sttattus.workout.v1.UpdateEnrolmentRequest
+	70,  // 88: sttattus.workout.v1.WorkoutService.ListMyPRs:input_type -> sttattus.workout.v1.ListMyPRsRequest
+	72,  // 89: sttattus.workout.v1.WorkoutService.ListRecentPRs:input_type -> sttattus.workout.v1.ListRecentPRsRequest
+	75,  // 90: sttattus.workout.v1.WorkoutService.ListBodyCompositions:input_type -> sttattus.workout.v1.ListBodyCompositionsRequest
+	77,  // 91: sttattus.workout.v1.WorkoutService.CreateBodyComposition:input_type -> sttattus.workout.v1.CreateBodyCompositionRequest
+	79,  // 92: sttattus.workout.v1.WorkoutService.DeleteBodyComposition:input_type -> sttattus.workout.v1.DeleteBodyCompositionRequest
+	82,  // 93: sttattus.workout.v1.WorkoutService.ListInjuries:input_type -> sttattus.workout.v1.ListInjuriesRequest
+	84,  // 94: sttattus.workout.v1.WorkoutService.CreateInjury:input_type -> sttattus.workout.v1.CreateInjuryRequest
+	86,  // 95: sttattus.workout.v1.WorkoutService.UpdateInjuryStatus:input_type -> sttattus.workout.v1.UpdateInjuryStatusRequest
+	88,  // 96: sttattus.workout.v1.WorkoutService.DeleteInjury:input_type -> sttattus.workout.v1.DeleteInjuryRequest
+	92,  // 97: sttattus.workout.v1.WorkoutService.ListMobilityBaselines:input_type -> sttattus.workout.v1.ListMobilityBaselinesRequest
+	94,  // 98: sttattus.workout.v1.WorkoutService.GetCurrentMobilityBaseline:input_type -> sttattus.workout.v1.GetCurrentMobilityBaselineRequest
+	96,  // 99: sttattus.workout.v1.WorkoutService.UpsertMobilityBaseline:input_type -> sttattus.workout.v1.UpsertMobilityBaselineRequest
+	98,  // 100: sttattus.workout.v1.WorkoutService.DeleteMobilityBaseline:input_type -> sttattus.workout.v1.DeleteMobilityBaselineRequest
+	102, // 101: sttattus.workout.v1.WorkoutService.ListSensorConnections:input_type -> sttattus.workout.v1.ListSensorConnectionsRequest
+	104, // 102: sttattus.workout.v1.WorkoutService.SetSensorConnectionStatus:input_type -> sttattus.workout.v1.SetSensorConnectionStatusRequest
+	106, // 103: sttattus.workout.v1.WorkoutService.MarkSensorSynced:input_type -> sttattus.workout.v1.MarkSensorSyncedRequest
+	108, // 104: sttattus.workout.v1.WorkoutService.SetSensorPriority:input_type -> sttattus.workout.v1.SetSensorPriorityRequest
+	7,   // 105: sttattus.workout.v1.WorkoutService.ListWorkouts:output_type -> sttattus.workout.v1.ListWorkoutsResponse
+	9,   // 106: sttattus.workout.v1.WorkoutService.GetWorkout:output_type -> sttattus.workout.v1.GetWorkoutResponse
+	11,  // 107: sttattus.workout.v1.WorkoutService.LogDayWorkout:output_type -> sttattus.workout.v1.LogDayWorkoutResponse
+	13,  // 108: sttattus.workout.v1.WorkoutService.ListHistory:output_type -> sttattus.workout.v1.ListHistoryResponse
+	15,  // 109: sttattus.workout.v1.WorkoutService.GetForgeStats:output_type -> sttattus.workout.v1.GetForgeStatsResponse
+	17,  // 110: sttattus.workout.v1.WorkoutService.SubmitFeedback:output_type -> sttattus.workout.v1.SubmitFeedbackResponse
+	42,  // 111: sttattus.workout.v1.WorkoutService.GetToday:output_type -> sttattus.workout.v1.GetTodayResponse
+	39,  // 112: sttattus.workout.v1.WorkoutService.GetRankLadder:output_type -> sttattus.workout.v1.GetRankLadderResponse
+	24,  // 113: sttattus.workout.v1.WorkoutService.ListExercises:output_type -> sttattus.workout.v1.ListExercisesResponse
+	26,  // 114: sttattus.workout.v1.WorkoutService.CreateSession:output_type -> sttattus.workout.v1.CreateSessionResponse
+	28,  // 115: sttattus.workout.v1.WorkoutService.GetSession:output_type -> sttattus.workout.v1.GetSessionResponse
+	30,  // 116: sttattus.workout.v1.WorkoutService.GetActiveSession:output_type -> sttattus.workout.v1.GetActiveSessionResponse
+	32,  // 117: sttattus.workout.v1.WorkoutService.ListSessions:output_type -> sttattus.workout.v1.ListSessionsResponse
+	34,  // 118: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:output_type -> sttattus.workout.v1.UpdateSessionStatusResponse
+	36,  // 119: sttattus.workout.v1.WorkoutService.LogSet:output_type -> sttattus.workout.v1.LogSetResponse
+	45,  // 120: sttattus.workout.v1.WorkoutService.GetForgeStreak:output_type -> sttattus.workout.v1.GetForgeStreakResponse
+	48,  // 121: sttattus.workout.v1.WorkoutService.CreateFormVideo:output_type -> sttattus.workout.v1.CreateFormVideoResponse
+	50,  // 122: sttattus.workout.v1.WorkoutService.ListMyFormVideos:output_type -> sttattus.workout.v1.ListMyFormVideosResponse
+	52,  // 123: sttattus.workout.v1.WorkoutService.DeleteFormVideo:output_type -> sttattus.workout.v1.DeleteFormVideoResponse
+	54,  // 124: sttattus.workout.v1.WorkoutService.UpdateFormVideoStatus:output_type -> sttattus.workout.v1.UpdateFormVideoStatusResponse
+	58,  // 125: sttattus.workout.v1.WorkoutService.ListProgrammes:output_type -> sttattus.workout.v1.ListProgrammesResponse
+	60,  // 126: sttattus.workout.v1.WorkoutService.GetProgramme:output_type -> sttattus.workout.v1.GetProgrammeResponse
+	62,  // 127: sttattus.workout.v1.WorkoutService.EnrolInProgramme:output_type -> sttattus.workout.v1.EnrolInProgrammeResponse
+	64,  // 128: sttattus.workout.v1.WorkoutService.GetActiveEnrolment:output_type -> sttattus.workout.v1.GetActiveEnrolmentResponse
+	66,  // 129: sttattus.workout.v1.WorkoutService.ListMyEnrolments:output_type -> sttattus.workout.v1.ListMyEnrolmentsResponse
+	68,  // 130: sttattus.workout.v1.WorkoutService.UpdateEnrolment:output_type -> sttattus.workout.v1.UpdateEnrolmentResponse
+	71,  // 131: sttattus.workout.v1.WorkoutService.ListMyPRs:output_type -> sttattus.workout.v1.ListMyPRsResponse
+	73,  // 132: sttattus.workout.v1.WorkoutService.ListRecentPRs:output_type -> sttattus.workout.v1.ListRecentPRsResponse
+	76,  // 133: sttattus.workout.v1.WorkoutService.ListBodyCompositions:output_type -> sttattus.workout.v1.ListBodyCompositionsResponse
+	78,  // 134: sttattus.workout.v1.WorkoutService.CreateBodyComposition:output_type -> sttattus.workout.v1.CreateBodyCompositionResponse
+	80,  // 135: sttattus.workout.v1.WorkoutService.DeleteBodyComposition:output_type -> sttattus.workout.v1.DeleteBodyCompositionResponse
+	83,  // 136: sttattus.workout.v1.WorkoutService.ListInjuries:output_type -> sttattus.workout.v1.ListInjuriesResponse
+	85,  // 137: sttattus.workout.v1.WorkoutService.CreateInjury:output_type -> sttattus.workout.v1.CreateInjuryResponse
+	87,  // 138: sttattus.workout.v1.WorkoutService.UpdateInjuryStatus:output_type -> sttattus.workout.v1.UpdateInjuryStatusResponse
+	89,  // 139: sttattus.workout.v1.WorkoutService.DeleteInjury:output_type -> sttattus.workout.v1.DeleteInjuryResponse
+	93,  // 140: sttattus.workout.v1.WorkoutService.ListMobilityBaselines:output_type -> sttattus.workout.v1.ListMobilityBaselinesResponse
+	95,  // 141: sttattus.workout.v1.WorkoutService.GetCurrentMobilityBaseline:output_type -> sttattus.workout.v1.GetCurrentMobilityBaselineResponse
+	97,  // 142: sttattus.workout.v1.WorkoutService.UpsertMobilityBaseline:output_type -> sttattus.workout.v1.UpsertMobilityBaselineResponse
+	99,  // 143: sttattus.workout.v1.WorkoutService.DeleteMobilityBaseline:output_type -> sttattus.workout.v1.DeleteMobilityBaselineResponse
+	103, // 144: sttattus.workout.v1.WorkoutService.ListSensorConnections:output_type -> sttattus.workout.v1.ListSensorConnectionsResponse
+	105, // 145: sttattus.workout.v1.WorkoutService.SetSensorConnectionStatus:output_type -> sttattus.workout.v1.SetSensorConnectionStatusResponse
+	107, // 146: sttattus.workout.v1.WorkoutService.MarkSensorSynced:output_type -> sttattus.workout.v1.MarkSensorSyncedResponse
+	109, // 147: sttattus.workout.v1.WorkoutService.SetSensorPriority:output_type -> sttattus.workout.v1.SetSensorPriorityResponse
+	105, // [105:148] is the sub-list for method output_type
+	62,  // [62:105] is the sub-list for method input_type
+	62,  // [62:62] is the sub-list for extension type_name
+	62,  // [62:62] is the sub-list for extension extendee
+	0,   // [0:62] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_workout_v1_workout_proto_init() }
@@ -6768,7 +7317,7 @@ func file_sttattus_workout_v1_workout_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_workout_v1_workout_proto_rawDesc), len(file_sttattus_workout_v1_workout_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   100,
+			NumMessages:   110,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

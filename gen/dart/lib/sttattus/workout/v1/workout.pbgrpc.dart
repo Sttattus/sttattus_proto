@@ -205,6 +205,25 @@ class WorkoutServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteMobilityBaseline, request, options: options);
   }
 
+  /// F7P2.4 — wearable connectors + parity dashboard. The connection
+  /// and per-metric priority ledger; cloud reading ingestion (OAuth
+  /// pulls from Whoop / Oura / Garmin) is deferred.
+  $grpc.ResponseFuture<$0.ListSensorConnectionsResponse> listSensorConnections($0.ListSensorConnectionsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listSensorConnections, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetSensorConnectionStatusResponse> setSensorConnectionStatus($0.SetSensorConnectionStatusRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$setSensorConnectionStatus, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MarkSensorSyncedResponse> markSensorSynced($0.MarkSensorSyncedRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$markSensorSynced, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetSensorPriorityResponse> setSensorPriority($0.SetSensorPriorityRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$setSensorPriority, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listWorkouts = $grpc.ClientMethod<$0.ListWorkoutsRequest, $0.ListWorkoutsResponse>(
@@ -363,6 +382,22 @@ class WorkoutServiceClient extends $grpc.Client {
       '/sttattus.workout.v1.WorkoutService/DeleteMobilityBaseline',
       ($0.DeleteMobilityBaselineRequest value) => value.writeToBuffer(),
       $0.DeleteMobilityBaselineResponse.fromBuffer);
+  static final _$listSensorConnections = $grpc.ClientMethod<$0.ListSensorConnectionsRequest, $0.ListSensorConnectionsResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListSensorConnections',
+      ($0.ListSensorConnectionsRequest value) => value.writeToBuffer(),
+      $0.ListSensorConnectionsResponse.fromBuffer);
+  static final _$setSensorConnectionStatus = $grpc.ClientMethod<$0.SetSensorConnectionStatusRequest, $0.SetSensorConnectionStatusResponse>(
+      '/sttattus.workout.v1.WorkoutService/SetSensorConnectionStatus',
+      ($0.SetSensorConnectionStatusRequest value) => value.writeToBuffer(),
+      $0.SetSensorConnectionStatusResponse.fromBuffer);
+  static final _$markSensorSynced = $grpc.ClientMethod<$0.MarkSensorSyncedRequest, $0.MarkSensorSyncedResponse>(
+      '/sttattus.workout.v1.WorkoutService/MarkSensorSynced',
+      ($0.MarkSensorSyncedRequest value) => value.writeToBuffer(),
+      $0.MarkSensorSyncedResponse.fromBuffer);
+  static final _$setSensorPriority = $grpc.ClientMethod<$0.SetSensorPriorityRequest, $0.SetSensorPriorityResponse>(
+      '/sttattus.workout.v1.WorkoutService/SetSensorPriority',
+      ($0.SetSensorPriorityRequest value) => value.writeToBuffer(),
+      $0.SetSensorPriorityResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.workout.v1.WorkoutService')
@@ -643,6 +678,34 @@ abstract class WorkoutServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.DeleteMobilityBaselineRequest.fromBuffer(value),
         ($0.DeleteMobilityBaselineResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListSensorConnectionsRequest, $0.ListSensorConnectionsResponse>(
+        'ListSensorConnections',
+        listSensorConnections_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListSensorConnectionsRequest.fromBuffer(value),
+        ($0.ListSensorConnectionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetSensorConnectionStatusRequest, $0.SetSensorConnectionStatusResponse>(
+        'SetSensorConnectionStatus',
+        setSensorConnectionStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SetSensorConnectionStatusRequest.fromBuffer(value),
+        ($0.SetSensorConnectionStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MarkSensorSyncedRequest, $0.MarkSensorSyncedResponse>(
+        'MarkSensorSynced',
+        markSensorSynced_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.MarkSensorSyncedRequest.fromBuffer(value),
+        ($0.MarkSensorSyncedResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetSensorPriorityRequest, $0.SetSensorPriorityResponse>(
+        'SetSensorPriority',
+        setSensorPriority_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SetSensorPriorityRequest.fromBuffer(value),
+        ($0.SetSensorPriorityResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListWorkoutsResponse> listWorkouts_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWorkoutsRequest> $request) async {
@@ -878,5 +941,29 @@ abstract class WorkoutServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.DeleteMobilityBaselineResponse> deleteMobilityBaseline($grpc.ServiceCall call, $0.DeleteMobilityBaselineRequest request);
+
+  $async.Future<$0.ListSensorConnectionsResponse> listSensorConnections_Pre($grpc.ServiceCall $call, $async.Future<$0.ListSensorConnectionsRequest> $request) async {
+    return listSensorConnections($call, await $request);
+  }
+
+  $async.Future<$0.ListSensorConnectionsResponse> listSensorConnections($grpc.ServiceCall call, $0.ListSensorConnectionsRequest request);
+
+  $async.Future<$0.SetSensorConnectionStatusResponse> setSensorConnectionStatus_Pre($grpc.ServiceCall $call, $async.Future<$0.SetSensorConnectionStatusRequest> $request) async {
+    return setSensorConnectionStatus($call, await $request);
+  }
+
+  $async.Future<$0.SetSensorConnectionStatusResponse> setSensorConnectionStatus($grpc.ServiceCall call, $0.SetSensorConnectionStatusRequest request);
+
+  $async.Future<$0.MarkSensorSyncedResponse> markSensorSynced_Pre($grpc.ServiceCall $call, $async.Future<$0.MarkSensorSyncedRequest> $request) async {
+    return markSensorSynced($call, await $request);
+  }
+
+  $async.Future<$0.MarkSensorSyncedResponse> markSensorSynced($grpc.ServiceCall call, $0.MarkSensorSyncedRequest request);
+
+  $async.Future<$0.SetSensorPriorityResponse> setSensorPriority_Pre($grpc.ServiceCall $call, $async.Future<$0.SetSensorPriorityRequest> $request) async {
+    return setSensorPriority($call, await $request);
+  }
+
+  $async.Future<$0.SetSensorPriorityResponse> setSensorPriority($grpc.ServiceCall call, $0.SetSensorPriorityRequest request);
 
 }

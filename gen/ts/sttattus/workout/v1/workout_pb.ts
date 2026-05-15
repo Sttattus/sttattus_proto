@@ -5017,3 +5017,429 @@ export class DeleteMobilityBaselineResponse extends Message<DeleteMobilityBaseli
   }
 }
 
+/**
+ * SensorConnection is one (user, source) connection row.
+ *
+ * @generated from message sttattus.workout.v1.SensorConnection
+ */
+export class SensorConnection extends Message<SensorConnection> {
+  /**
+   * apple_health | google_fit | whoop | oura | garmin
+   *
+   * @generated from field: string source = 1;
+   */
+  source = "";
+
+  /**
+   * connected | disconnected | needs_auth
+   *
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * unix seconds, 0 when never connected
+   *
+   * @generated from field: int64 connected_at = 3;
+   */
+  connectedAt = protoInt64.zero;
+
+  /**
+   * unix seconds, 0 when never synced
+   *
+   * @generated from field: int64 last_synced_at = 4;
+   */
+  lastSyncedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<SensorConnection>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.SensorConnection";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "connected_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "last_synced_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SensorConnection {
+    return new SensorConnection().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SensorConnection {
+    return new SensorConnection().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SensorConnection {
+    return new SensorConnection().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SensorConnection | PlainMessage<SensorConnection> | undefined, b: SensorConnection | PlainMessage<SensorConnection> | undefined): boolean {
+    return proto3.util.equals(SensorConnection, a, b);
+  }
+}
+
+/**
+ * SensorPriority is one per-metric conflict-reducer override.
+ *
+ * @generated from message sttattus.workout.v1.SensorPriority
+ */
+export class SensorPriority extends Message<SensorPriority> {
+  /**
+   * sleep | hrv | rhr | steps | vo2
+   *
+   * @generated from field: string metric = 1;
+   */
+  metric = "";
+
+  /**
+   * @generated from field: string source = 2;
+   */
+  source = "";
+
+  constructor(data?: PartialMessage<SensorPriority>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.SensorPriority";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "metric", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SensorPriority {
+    return new SensorPriority().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SensorPriority {
+    return new SensorPriority().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SensorPriority {
+    return new SensorPriority().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SensorPriority | PlainMessage<SensorPriority> | undefined, b: SensorPriority | PlainMessage<SensorPriority> | undefined): boolean {
+    return proto3.util.equals(SensorPriority, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ListSensorConnectionsRequest
+ */
+export class ListSensorConnectionsRequest extends Message<ListSensorConnectionsRequest> {
+  constructor(data?: PartialMessage<ListSensorConnectionsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ListSensorConnectionsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSensorConnectionsRequest {
+    return new ListSensorConnectionsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSensorConnectionsRequest {
+    return new ListSensorConnectionsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSensorConnectionsRequest {
+    return new ListSensorConnectionsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListSensorConnectionsRequest | PlainMessage<ListSensorConnectionsRequest> | undefined, b: ListSensorConnectionsRequest | PlainMessage<ListSensorConnectionsRequest> | undefined): boolean {
+    return proto3.util.equals(ListSensorConnectionsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ListSensorConnectionsResponse
+ */
+export class ListSensorConnectionsResponse extends Message<ListSensorConnectionsResponse> {
+  /**
+   * @generated from field: repeated sttattus.workout.v1.SensorConnection connections = 1;
+   */
+  connections: SensorConnection[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.workout.v1.SensorPriority priority = 2;
+   */
+  priority: SensorPriority[] = [];
+
+  constructor(data?: PartialMessage<ListSensorConnectionsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ListSensorConnectionsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "connections", kind: "message", T: SensorConnection, repeated: true },
+    { no: 2, name: "priority", kind: "message", T: SensorPriority, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSensorConnectionsResponse {
+    return new ListSensorConnectionsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSensorConnectionsResponse {
+    return new ListSensorConnectionsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSensorConnectionsResponse {
+    return new ListSensorConnectionsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListSensorConnectionsResponse | PlainMessage<ListSensorConnectionsResponse> | undefined, b: ListSensorConnectionsResponse | PlainMessage<ListSensorConnectionsResponse> | undefined): boolean {
+    return proto3.util.equals(ListSensorConnectionsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.SetSensorConnectionStatusRequest
+ */
+export class SetSensorConnectionStatusRequest extends Message<SetSensorConnectionStatusRequest> {
+  /**
+   * @generated from field: string source = 1;
+   */
+  source = "";
+
+  /**
+   * connected | disconnected | needs_auth
+   *
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<SetSensorConnectionStatusRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.SetSensorConnectionStatusRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetSensorConnectionStatusRequest {
+    return new SetSensorConnectionStatusRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetSensorConnectionStatusRequest {
+    return new SetSensorConnectionStatusRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetSensorConnectionStatusRequest {
+    return new SetSensorConnectionStatusRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetSensorConnectionStatusRequest | PlainMessage<SetSensorConnectionStatusRequest> | undefined, b: SetSensorConnectionStatusRequest | PlainMessage<SetSensorConnectionStatusRequest> | undefined): boolean {
+    return proto3.util.equals(SetSensorConnectionStatusRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.SetSensorConnectionStatusResponse
+ */
+export class SetSensorConnectionStatusResponse extends Message<SetSensorConnectionStatusResponse> {
+  /**
+   * @generated from field: sttattus.workout.v1.SensorConnection connection = 1;
+   */
+  connection?: SensorConnection;
+
+  constructor(data?: PartialMessage<SetSensorConnectionStatusResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.SetSensorConnectionStatusResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "connection", kind: "message", T: SensorConnection },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetSensorConnectionStatusResponse {
+    return new SetSensorConnectionStatusResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetSensorConnectionStatusResponse {
+    return new SetSensorConnectionStatusResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetSensorConnectionStatusResponse {
+    return new SetSensorConnectionStatusResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetSensorConnectionStatusResponse | PlainMessage<SetSensorConnectionStatusResponse> | undefined, b: SetSensorConnectionStatusResponse | PlainMessage<SetSensorConnectionStatusResponse> | undefined): boolean {
+    return proto3.util.equals(SetSensorConnectionStatusResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.MarkSensorSyncedRequest
+ */
+export class MarkSensorSyncedRequest extends Message<MarkSensorSyncedRequest> {
+  /**
+   * @generated from field: string source = 1;
+   */
+  source = "";
+
+  constructor(data?: PartialMessage<MarkSensorSyncedRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.MarkSensorSyncedRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MarkSensorSyncedRequest {
+    return new MarkSensorSyncedRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MarkSensorSyncedRequest {
+    return new MarkSensorSyncedRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MarkSensorSyncedRequest {
+    return new MarkSensorSyncedRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MarkSensorSyncedRequest | PlainMessage<MarkSensorSyncedRequest> | undefined, b: MarkSensorSyncedRequest | PlainMessage<MarkSensorSyncedRequest> | undefined): boolean {
+    return proto3.util.equals(MarkSensorSyncedRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.MarkSensorSyncedResponse
+ */
+export class MarkSensorSyncedResponse extends Message<MarkSensorSyncedResponse> {
+  /**
+   * @generated from field: sttattus.workout.v1.SensorConnection connection = 1;
+   */
+  connection?: SensorConnection;
+
+  constructor(data?: PartialMessage<MarkSensorSyncedResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.MarkSensorSyncedResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "connection", kind: "message", T: SensorConnection },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MarkSensorSyncedResponse {
+    return new MarkSensorSyncedResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MarkSensorSyncedResponse {
+    return new MarkSensorSyncedResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MarkSensorSyncedResponse {
+    return new MarkSensorSyncedResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MarkSensorSyncedResponse | PlainMessage<MarkSensorSyncedResponse> | undefined, b: MarkSensorSyncedResponse | PlainMessage<MarkSensorSyncedResponse> | undefined): boolean {
+    return proto3.util.equals(MarkSensorSyncedResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.SetSensorPriorityRequest
+ */
+export class SetSensorPriorityRequest extends Message<SetSensorPriorityRequest> {
+  /**
+   * @generated from field: string metric = 1;
+   */
+  metric = "";
+
+  /**
+   * Empty source clears the override.
+   *
+   * @generated from field: string source = 2;
+   */
+  source = "";
+
+  constructor(data?: PartialMessage<SetSensorPriorityRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.SetSensorPriorityRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "metric", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetSensorPriorityRequest {
+    return new SetSensorPriorityRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetSensorPriorityRequest {
+    return new SetSensorPriorityRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetSensorPriorityRequest {
+    return new SetSensorPriorityRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetSensorPriorityRequest | PlainMessage<SetSensorPriorityRequest> | undefined, b: SetSensorPriorityRequest | PlainMessage<SetSensorPriorityRequest> | undefined): boolean {
+    return proto3.util.equals(SetSensorPriorityRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.SetSensorPriorityResponse
+ */
+export class SetSensorPriorityResponse extends Message<SetSensorPriorityResponse> {
+  /**
+   * Empty when the override was cleared.
+   *
+   * @generated from field: sttattus.workout.v1.SensorPriority priority = 1;
+   */
+  priority?: SensorPriority;
+
+  constructor(data?: PartialMessage<SetSensorPriorityResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.SetSensorPriorityResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "priority", kind: "message", T: SensorPriority },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetSensorPriorityResponse {
+    return new SetSensorPriorityResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetSensorPriorityResponse {
+    return new SetSensorPriorityResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetSensorPriorityResponse {
+    return new SetSensorPriorityResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetSensorPriorityResponse | PlainMessage<SetSensorPriorityResponse> | undefined, b: SetSensorPriorityResponse | PlainMessage<SetSensorPriorityResponse> | undefined): boolean {
+    return proto3.util.equals(SetSensorPriorityResponse, a, b);
+  }
+}
+

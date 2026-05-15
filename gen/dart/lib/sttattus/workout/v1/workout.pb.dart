@@ -6847,6 +6847,532 @@ class DeleteMobilityBaselineResponse extends $pb.GeneratedMessage {
   static DeleteMobilityBaselineResponse? _defaultInstance;
 }
 
+/// SensorConnection is one (user, source) connection row.
+class SensorConnection extends $pb.GeneratedMessage {
+  factory SensorConnection({
+    $core.String? source,
+    $core.String? status,
+    $fixnum.Int64? connectedAt,
+    $fixnum.Int64? lastSyncedAt,
+  }) {
+    final result = create();
+    if (source != null) result.source = source;
+    if (status != null) result.status = status;
+    if (connectedAt != null) result.connectedAt = connectedAt;
+    if (lastSyncedAt != null) result.lastSyncedAt = lastSyncedAt;
+    return result;
+  }
+
+  SensorConnection._();
+
+  factory SensorConnection.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SensorConnection.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SensorConnection', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aInt64(3, _omitFieldNames ? '' : 'connectedAt')
+    ..aInt64(4, _omitFieldNames ? '' : 'lastSyncedAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SensorConnection clone() => SensorConnection()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SensorConnection copyWith(void Function(SensorConnection) updates) => super.copyWith((message) => updates(message as SensorConnection)) as SensorConnection;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SensorConnection create() => SensorConnection._();
+  @$core.override
+  SensorConnection createEmptyInstance() => create();
+  static $pb.PbList<SensorConnection> createRepeated() => $pb.PbList<SensorConnection>();
+  @$core.pragma('dart2js:noInline')
+  static SensorConnection getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SensorConnection>(create);
+  static SensorConnection? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get source => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set source($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get connectedAt => $_getI64(2);
+  @$pb.TagNumber(3)
+  set connectedAt($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasConnectedAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearConnectedAt() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get lastSyncedAt => $_getI64(3);
+  @$pb.TagNumber(4)
+  set lastSyncedAt($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLastSyncedAt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLastSyncedAt() => $_clearField(4);
+}
+
+/// SensorPriority is one per-metric conflict-reducer override.
+class SensorPriority extends $pb.GeneratedMessage {
+  factory SensorPriority({
+    $core.String? metric,
+    $core.String? source,
+  }) {
+    final result = create();
+    if (metric != null) result.metric = metric;
+    if (source != null) result.source = source;
+    return result;
+  }
+
+  SensorPriority._();
+
+  factory SensorPriority.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SensorPriority.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SensorPriority', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'metric')
+    ..aOS(2, _omitFieldNames ? '' : 'source')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SensorPriority clone() => SensorPriority()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SensorPriority copyWith(void Function(SensorPriority) updates) => super.copyWith((message) => updates(message as SensorPriority)) as SensorPriority;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SensorPriority create() => SensorPriority._();
+  @$core.override
+  SensorPriority createEmptyInstance() => create();
+  static $pb.PbList<SensorPriority> createRepeated() => $pb.PbList<SensorPriority>();
+  @$core.pragma('dart2js:noInline')
+  static SensorPriority getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SensorPriority>(create);
+  static SensorPriority? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get metric => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set metric($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMetric() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMetric() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get source => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set source($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSource() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSource() => $_clearField(2);
+}
+
+class ListSensorConnectionsRequest extends $pb.GeneratedMessage {
+  factory ListSensorConnectionsRequest() => create();
+
+  ListSensorConnectionsRequest._();
+
+  factory ListSensorConnectionsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListSensorConnectionsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSensorConnectionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSensorConnectionsRequest clone() => ListSensorConnectionsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSensorConnectionsRequest copyWith(void Function(ListSensorConnectionsRequest) updates) => super.copyWith((message) => updates(message as ListSensorConnectionsRequest)) as ListSensorConnectionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSensorConnectionsRequest create() => ListSensorConnectionsRequest._();
+  @$core.override
+  ListSensorConnectionsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListSensorConnectionsRequest> createRepeated() => $pb.PbList<ListSensorConnectionsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListSensorConnectionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSensorConnectionsRequest>(create);
+  static ListSensorConnectionsRequest? _defaultInstance;
+}
+
+class ListSensorConnectionsResponse extends $pb.GeneratedMessage {
+  factory ListSensorConnectionsResponse({
+    $core.Iterable<SensorConnection>? connections,
+    $core.Iterable<SensorPriority>? priority,
+  }) {
+    final result = create();
+    if (connections != null) result.connections.addAll(connections);
+    if (priority != null) result.priority.addAll(priority);
+    return result;
+  }
+
+  ListSensorConnectionsResponse._();
+
+  factory ListSensorConnectionsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListSensorConnectionsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSensorConnectionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..pc<SensorConnection>(1, _omitFieldNames ? '' : 'connections', $pb.PbFieldType.PM, subBuilder: SensorConnection.create)
+    ..pc<SensorPriority>(2, _omitFieldNames ? '' : 'priority', $pb.PbFieldType.PM, subBuilder: SensorPriority.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSensorConnectionsResponse clone() => ListSensorConnectionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSensorConnectionsResponse copyWith(void Function(ListSensorConnectionsResponse) updates) => super.copyWith((message) => updates(message as ListSensorConnectionsResponse)) as ListSensorConnectionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSensorConnectionsResponse create() => ListSensorConnectionsResponse._();
+  @$core.override
+  ListSensorConnectionsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListSensorConnectionsResponse> createRepeated() => $pb.PbList<ListSensorConnectionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListSensorConnectionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSensorConnectionsResponse>(create);
+  static ListSensorConnectionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<SensorConnection> get connections => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<SensorPriority> get priority => $_getList(1);
+}
+
+class SetSensorConnectionStatusRequest extends $pb.GeneratedMessage {
+  factory SetSensorConnectionStatusRequest({
+    $core.String? source,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (source != null) result.source = source;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  SetSensorConnectionStatusRequest._();
+
+  factory SetSensorConnectionStatusRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SetSensorConnectionStatusRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetSensorConnectionStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSensorConnectionStatusRequest clone() => SetSensorConnectionStatusRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSensorConnectionStatusRequest copyWith(void Function(SetSensorConnectionStatusRequest) updates) => super.copyWith((message) => updates(message as SetSensorConnectionStatusRequest)) as SetSensorConnectionStatusRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetSensorConnectionStatusRequest create() => SetSensorConnectionStatusRequest._();
+  @$core.override
+  SetSensorConnectionStatusRequest createEmptyInstance() => create();
+  static $pb.PbList<SetSensorConnectionStatusRequest> createRepeated() => $pb.PbList<SetSensorConnectionStatusRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetSensorConnectionStatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetSensorConnectionStatusRequest>(create);
+  static SetSensorConnectionStatusRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get source => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set source($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+}
+
+class SetSensorConnectionStatusResponse extends $pb.GeneratedMessage {
+  factory SetSensorConnectionStatusResponse({
+    SensorConnection? connection,
+  }) {
+    final result = create();
+    if (connection != null) result.connection = connection;
+    return result;
+  }
+
+  SetSensorConnectionStatusResponse._();
+
+  factory SetSensorConnectionStatusResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SetSensorConnectionStatusResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetSensorConnectionStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<SensorConnection>(1, _omitFieldNames ? '' : 'connection', subBuilder: SensorConnection.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSensorConnectionStatusResponse clone() => SetSensorConnectionStatusResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSensorConnectionStatusResponse copyWith(void Function(SetSensorConnectionStatusResponse) updates) => super.copyWith((message) => updates(message as SetSensorConnectionStatusResponse)) as SetSensorConnectionStatusResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetSensorConnectionStatusResponse create() => SetSensorConnectionStatusResponse._();
+  @$core.override
+  SetSensorConnectionStatusResponse createEmptyInstance() => create();
+  static $pb.PbList<SetSensorConnectionStatusResponse> createRepeated() => $pb.PbList<SetSensorConnectionStatusResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetSensorConnectionStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetSensorConnectionStatusResponse>(create);
+  static SetSensorConnectionStatusResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SensorConnection get connection => $_getN(0);
+  @$pb.TagNumber(1)
+  set connection(SensorConnection value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConnection() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConnection() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SensorConnection ensureConnection() => $_ensure(0);
+}
+
+class MarkSensorSyncedRequest extends $pb.GeneratedMessage {
+  factory MarkSensorSyncedRequest({
+    $core.String? source,
+  }) {
+    final result = create();
+    if (source != null) result.source = source;
+    return result;
+  }
+
+  MarkSensorSyncedRequest._();
+
+  factory MarkSensorSyncedRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MarkSensorSyncedRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MarkSensorSyncedRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkSensorSyncedRequest clone() => MarkSensorSyncedRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkSensorSyncedRequest copyWith(void Function(MarkSensorSyncedRequest) updates) => super.copyWith((message) => updates(message as MarkSensorSyncedRequest)) as MarkSensorSyncedRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MarkSensorSyncedRequest create() => MarkSensorSyncedRequest._();
+  @$core.override
+  MarkSensorSyncedRequest createEmptyInstance() => create();
+  static $pb.PbList<MarkSensorSyncedRequest> createRepeated() => $pb.PbList<MarkSensorSyncedRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MarkSensorSyncedRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MarkSensorSyncedRequest>(create);
+  static MarkSensorSyncedRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get source => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set source($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => $_clearField(1);
+}
+
+class MarkSensorSyncedResponse extends $pb.GeneratedMessage {
+  factory MarkSensorSyncedResponse({
+    SensorConnection? connection,
+  }) {
+    final result = create();
+    if (connection != null) result.connection = connection;
+    return result;
+  }
+
+  MarkSensorSyncedResponse._();
+
+  factory MarkSensorSyncedResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MarkSensorSyncedResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MarkSensorSyncedResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<SensorConnection>(1, _omitFieldNames ? '' : 'connection', subBuilder: SensorConnection.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkSensorSyncedResponse clone() => MarkSensorSyncedResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkSensorSyncedResponse copyWith(void Function(MarkSensorSyncedResponse) updates) => super.copyWith((message) => updates(message as MarkSensorSyncedResponse)) as MarkSensorSyncedResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MarkSensorSyncedResponse create() => MarkSensorSyncedResponse._();
+  @$core.override
+  MarkSensorSyncedResponse createEmptyInstance() => create();
+  static $pb.PbList<MarkSensorSyncedResponse> createRepeated() => $pb.PbList<MarkSensorSyncedResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MarkSensorSyncedResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MarkSensorSyncedResponse>(create);
+  static MarkSensorSyncedResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SensorConnection get connection => $_getN(0);
+  @$pb.TagNumber(1)
+  set connection(SensorConnection value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConnection() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConnection() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SensorConnection ensureConnection() => $_ensure(0);
+}
+
+class SetSensorPriorityRequest extends $pb.GeneratedMessage {
+  factory SetSensorPriorityRequest({
+    $core.String? metric,
+    $core.String? source,
+  }) {
+    final result = create();
+    if (metric != null) result.metric = metric;
+    if (source != null) result.source = source;
+    return result;
+  }
+
+  SetSensorPriorityRequest._();
+
+  factory SetSensorPriorityRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SetSensorPriorityRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetSensorPriorityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'metric')
+    ..aOS(2, _omitFieldNames ? '' : 'source')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSensorPriorityRequest clone() => SetSensorPriorityRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSensorPriorityRequest copyWith(void Function(SetSensorPriorityRequest) updates) => super.copyWith((message) => updates(message as SetSensorPriorityRequest)) as SetSensorPriorityRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetSensorPriorityRequest create() => SetSensorPriorityRequest._();
+  @$core.override
+  SetSensorPriorityRequest createEmptyInstance() => create();
+  static $pb.PbList<SetSensorPriorityRequest> createRepeated() => $pb.PbList<SetSensorPriorityRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetSensorPriorityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetSensorPriorityRequest>(create);
+  static SetSensorPriorityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get metric => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set metric($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMetric() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMetric() => $_clearField(1);
+
+  /// Empty source clears the override.
+  @$pb.TagNumber(2)
+  $core.String get source => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set source($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSource() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSource() => $_clearField(2);
+}
+
+class SetSensorPriorityResponse extends $pb.GeneratedMessage {
+  factory SetSensorPriorityResponse({
+    SensorPriority? priority,
+  }) {
+    final result = create();
+    if (priority != null) result.priority = priority;
+    return result;
+  }
+
+  SetSensorPriorityResponse._();
+
+  factory SetSensorPriorityResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SetSensorPriorityResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetSensorPriorityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<SensorPriority>(1, _omitFieldNames ? '' : 'priority', subBuilder: SensorPriority.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSensorPriorityResponse clone() => SetSensorPriorityResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSensorPriorityResponse copyWith(void Function(SetSensorPriorityResponse) updates) => super.copyWith((message) => updates(message as SetSensorPriorityResponse)) as SetSensorPriorityResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetSensorPriorityResponse create() => SetSensorPriorityResponse._();
+  @$core.override
+  SetSensorPriorityResponse createEmptyInstance() => create();
+  static $pb.PbList<SetSensorPriorityResponse> createRepeated() => $pb.PbList<SetSensorPriorityResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetSensorPriorityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetSensorPriorityResponse>(create);
+  static SetSensorPriorityResponse? _defaultInstance;
+
+  /// Empty when the override was cleared.
+  @$pb.TagNumber(1)
+  SensorPriority get priority => $_getN(0);
+  @$pb.TagNumber(1)
+  set priority(SensorPriority value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPriority() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPriority() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SensorPriority ensurePriority() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

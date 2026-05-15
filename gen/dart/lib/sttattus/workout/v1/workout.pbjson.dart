@@ -1538,3 +1538,138 @@ const DeleteMobilityBaselineResponse$json = {
 final $typed_data.Uint8List deleteMobilityBaselineResponseDescriptor = $convert.base64Decode(
     'Ch5EZWxldGVNb2JpbGl0eUJhc2VsaW5lUmVzcG9uc2U=');
 
+@$core.Deprecated('Use sensorConnectionDescriptor instead')
+const SensorConnection$json = {
+  '1': 'SensorConnection',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'connected_at', '3': 3, '4': 1, '5': 3, '10': 'connectedAt'},
+    {'1': 'last_synced_at', '3': 4, '4': 1, '5': 3, '10': 'lastSyncedAt'},
+  ],
+};
+
+/// Descriptor for `SensorConnection`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sensorConnectionDescriptor = $convert.base64Decode(
+    'ChBTZW5zb3JDb25uZWN0aW9uEhYKBnNvdXJjZRgBIAEoCVIGc291cmNlEhYKBnN0YXR1cxgCIA'
+    'EoCVIGc3RhdHVzEiEKDGNvbm5lY3RlZF9hdBgDIAEoA1ILY29ubmVjdGVkQXQSJAoObGFzdF9z'
+    'eW5jZWRfYXQYBCABKANSDGxhc3RTeW5jZWRBdA==');
+
+@$core.Deprecated('Use sensorPriorityDescriptor instead')
+const SensorPriority$json = {
+  '1': 'SensorPriority',
+  '2': [
+    {'1': 'metric', '3': 1, '4': 1, '5': 9, '10': 'metric'},
+    {'1': 'source', '3': 2, '4': 1, '5': 9, '10': 'source'},
+  ],
+};
+
+/// Descriptor for `SensorPriority`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sensorPriorityDescriptor = $convert.base64Decode(
+    'Cg5TZW5zb3JQcmlvcml0eRIWCgZtZXRyaWMYASABKAlSBm1ldHJpYxIWCgZzb3VyY2UYAiABKA'
+    'lSBnNvdXJjZQ==');
+
+@$core.Deprecated('Use listSensorConnectionsRequestDescriptor instead')
+const ListSensorConnectionsRequest$json = {
+  '1': 'ListSensorConnectionsRequest',
+};
+
+/// Descriptor for `ListSensorConnectionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSensorConnectionsRequestDescriptor = $convert.base64Decode(
+    'ChxMaXN0U2Vuc29yQ29ubmVjdGlvbnNSZXF1ZXN0');
+
+@$core.Deprecated('Use listSensorConnectionsResponseDescriptor instead')
+const ListSensorConnectionsResponse$json = {
+  '1': 'ListSensorConnectionsResponse',
+  '2': [
+    {'1': 'connections', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.SensorConnection', '10': 'connections'},
+    {'1': 'priority', '3': 2, '4': 3, '5': 11, '6': '.sttattus.workout.v1.SensorPriority', '10': 'priority'},
+  ],
+};
+
+/// Descriptor for `ListSensorConnectionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSensorConnectionsResponseDescriptor = $convert.base64Decode(
+    'Ch1MaXN0U2Vuc29yQ29ubmVjdGlvbnNSZXNwb25zZRJHCgtjb25uZWN0aW9ucxgBIAMoCzIlLn'
+    'N0dGF0dHVzLndvcmtvdXQudjEuU2Vuc29yQ29ubmVjdGlvblILY29ubmVjdGlvbnMSPwoIcHJp'
+    'b3JpdHkYAiADKAsyIy5zdHRhdHR1cy53b3Jrb3V0LnYxLlNlbnNvclByaW9yaXR5Ughwcmlvcm'
+    'l0eQ==');
+
+@$core.Deprecated('Use setSensorConnectionStatusRequestDescriptor instead')
+const SetSensorConnectionStatusRequest$json = {
+  '1': 'SetSensorConnectionStatusRequest',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `SetSensorConnectionStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setSensorConnectionStatusRequestDescriptor = $convert.base64Decode(
+    'CiBTZXRTZW5zb3JDb25uZWN0aW9uU3RhdHVzUmVxdWVzdBIWCgZzb3VyY2UYASABKAlSBnNvdX'
+    'JjZRIWCgZzdGF0dXMYAiABKAlSBnN0YXR1cw==');
+
+@$core.Deprecated('Use setSensorConnectionStatusResponseDescriptor instead')
+const SetSensorConnectionStatusResponse$json = {
+  '1': 'SetSensorConnectionStatusResponse',
+  '2': [
+    {'1': 'connection', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.SensorConnection', '10': 'connection'},
+  ],
+};
+
+/// Descriptor for `SetSensorConnectionStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setSensorConnectionStatusResponseDescriptor = $convert.base64Decode(
+    'CiFTZXRTZW5zb3JDb25uZWN0aW9uU3RhdHVzUmVzcG9uc2USRQoKY29ubmVjdGlvbhgBIAEoCz'
+    'IlLnN0dGF0dHVzLndvcmtvdXQudjEuU2Vuc29yQ29ubmVjdGlvblIKY29ubmVjdGlvbg==');
+
+@$core.Deprecated('Use markSensorSyncedRequestDescriptor instead')
+const MarkSensorSyncedRequest$json = {
+  '1': 'MarkSensorSyncedRequest',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 9, '10': 'source'},
+  ],
+};
+
+/// Descriptor for `MarkSensorSyncedRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List markSensorSyncedRequestDescriptor = $convert.base64Decode(
+    'ChdNYXJrU2Vuc29yU3luY2VkUmVxdWVzdBIWCgZzb3VyY2UYASABKAlSBnNvdXJjZQ==');
+
+@$core.Deprecated('Use markSensorSyncedResponseDescriptor instead')
+const MarkSensorSyncedResponse$json = {
+  '1': 'MarkSensorSyncedResponse',
+  '2': [
+    {'1': 'connection', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.SensorConnection', '10': 'connection'},
+  ],
+};
+
+/// Descriptor for `MarkSensorSyncedResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List markSensorSyncedResponseDescriptor = $convert.base64Decode(
+    'ChhNYXJrU2Vuc29yU3luY2VkUmVzcG9uc2USRQoKY29ubmVjdGlvbhgBIAEoCzIlLnN0dGF0dH'
+    'VzLndvcmtvdXQudjEuU2Vuc29yQ29ubmVjdGlvblIKY29ubmVjdGlvbg==');
+
+@$core.Deprecated('Use setSensorPriorityRequestDescriptor instead')
+const SetSensorPriorityRequest$json = {
+  '1': 'SetSensorPriorityRequest',
+  '2': [
+    {'1': 'metric', '3': 1, '4': 1, '5': 9, '10': 'metric'},
+    {'1': 'source', '3': 2, '4': 1, '5': 9, '10': 'source'},
+  ],
+};
+
+/// Descriptor for `SetSensorPriorityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setSensorPriorityRequestDescriptor = $convert.base64Decode(
+    'ChhTZXRTZW5zb3JQcmlvcml0eVJlcXVlc3QSFgoGbWV0cmljGAEgASgJUgZtZXRyaWMSFgoGc2'
+    '91cmNlGAIgASgJUgZzb3VyY2U=');
+
+@$core.Deprecated('Use setSensorPriorityResponseDescriptor instead')
+const SetSensorPriorityResponse$json = {
+  '1': 'SetSensorPriorityResponse',
+  '2': [
+    {'1': 'priority', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.SensorPriority', '10': 'priority'},
+  ],
+};
+
+/// Descriptor for `SetSensorPriorityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setSensorPriorityResponseDescriptor = $convert.base64Decode(
+    'ChlTZXRTZW5zb3JQcmlvcml0eVJlc3BvbnNlEj8KCHByaW9yaXR5GAEgASgLMiMuc3R0YXR0dX'
+    'Mud29ya291dC52MS5TZW5zb3JQcmlvcml0eVIIcHJpb3JpdHk=');
+
