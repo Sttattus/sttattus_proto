@@ -12,6 +12,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $1;
@@ -2022,6 +2023,629 @@ class ListAllocationHistoryResponse extends $pb.GeneratedMessage {
   /// Flat tuples; the stacked-area chart pivots in the client.
   @$pb.TagNumber(1)
   $pb.PbList<AllocationHistoryPoint> get points => $_getList(0);
+}
+
+class RealEstateProperty extends $pb.GeneratedMessage {
+  factory RealEstateProperty({
+    $core.String? id,
+    $core.String? label,
+    $core.String? address,
+    $core.String? country,
+    $core.String? assetId,
+    $core.double? currentValuationUsd,
+    $core.String? currentSource,
+    $fixnum.Int64? currentValuedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (label != null) result.label = label;
+    if (address != null) result.address = address;
+    if (country != null) result.country = country;
+    if (assetId != null) result.assetId = assetId;
+    if (currentValuationUsd != null) result.currentValuationUsd = currentValuationUsd;
+    if (currentSource != null) result.currentSource = currentSource;
+    if (currentValuedAt != null) result.currentValuedAt = currentValuedAt;
+    return result;
+  }
+
+  RealEstateProperty._();
+
+  factory RealEstateProperty.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RealEstateProperty.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RealEstateProperty', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'label')
+    ..aOS(3, _omitFieldNames ? '' : 'address')
+    ..aOS(4, _omitFieldNames ? '' : 'country')
+    ..aOS(5, _omitFieldNames ? '' : 'assetId')
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'currentValuationUsd', $pb.PbFieldType.OD)
+    ..aOS(7, _omitFieldNames ? '' : 'currentSource')
+    ..aInt64(8, _omitFieldNames ? '' : 'currentValuedAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RealEstateProperty clone() => RealEstateProperty()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RealEstateProperty copyWith(void Function(RealEstateProperty) updates) => super.copyWith((message) => updates(message as RealEstateProperty)) as RealEstateProperty;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RealEstateProperty create() => RealEstateProperty._();
+  @$core.override
+  RealEstateProperty createEmptyInstance() => create();
+  static $pb.PbList<RealEstateProperty> createRepeated() => $pb.PbList<RealEstateProperty>();
+  @$core.pragma('dart2js:noInline')
+  static RealEstateProperty getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RealEstateProperty>(create);
+  static RealEstateProperty? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get label => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set label($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLabel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLabel() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get address => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set address($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAddress() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAddress() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get country => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set country($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCountry() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCountry() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get assetId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set assetId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAssetId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAssetId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get currentValuationUsd => $_getN(5);
+  @$pb.TagNumber(6)
+  set currentValuationUsd($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCurrentValuationUsd() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCurrentValuationUsd() => $_clearField(6);
+
+  /// 'manual' | 'zillow' | 'rightmove' | 'redfin' | 'domain'
+  @$pb.TagNumber(7)
+  $core.String get currentSource => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set currentSource($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCurrentSource() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCurrentSource() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get currentValuedAt => $_getI64(7);
+  @$pb.TagNumber(8)
+  set currentValuedAt($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCurrentValuedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCurrentValuedAt() => $_clearField(8);
+}
+
+class ListRealEstatePropertiesRequest extends $pb.GeneratedMessage {
+  factory ListRealEstatePropertiesRequest() => create();
+
+  ListRealEstatePropertiesRequest._();
+
+  factory ListRealEstatePropertiesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListRealEstatePropertiesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRealEstatePropertiesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRealEstatePropertiesRequest clone() => ListRealEstatePropertiesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRealEstatePropertiesRequest copyWith(void Function(ListRealEstatePropertiesRequest) updates) => super.copyWith((message) => updates(message as ListRealEstatePropertiesRequest)) as ListRealEstatePropertiesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRealEstatePropertiesRequest create() => ListRealEstatePropertiesRequest._();
+  @$core.override
+  ListRealEstatePropertiesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListRealEstatePropertiesRequest> createRepeated() => $pb.PbList<ListRealEstatePropertiesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListRealEstatePropertiesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRealEstatePropertiesRequest>(create);
+  static ListRealEstatePropertiesRequest? _defaultInstance;
+}
+
+class ListRealEstatePropertiesResponse extends $pb.GeneratedMessage {
+  factory ListRealEstatePropertiesResponse({
+    $core.Iterable<RealEstateProperty>? properties,
+  }) {
+    final result = create();
+    if (properties != null) result.properties.addAll(properties);
+    return result;
+  }
+
+  ListRealEstatePropertiesResponse._();
+
+  factory ListRealEstatePropertiesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListRealEstatePropertiesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRealEstatePropertiesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..pc<RealEstateProperty>(1, _omitFieldNames ? '' : 'properties', $pb.PbFieldType.PM, subBuilder: RealEstateProperty.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRealEstatePropertiesResponse clone() => ListRealEstatePropertiesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRealEstatePropertiesResponse copyWith(void Function(ListRealEstatePropertiesResponse) updates) => super.copyWith((message) => updates(message as ListRealEstatePropertiesResponse)) as ListRealEstatePropertiesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRealEstatePropertiesResponse create() => ListRealEstatePropertiesResponse._();
+  @$core.override
+  ListRealEstatePropertiesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListRealEstatePropertiesResponse> createRepeated() => $pb.PbList<ListRealEstatePropertiesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListRealEstatePropertiesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRealEstatePropertiesResponse>(create);
+  static ListRealEstatePropertiesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<RealEstateProperty> get properties => $_getList(0);
+}
+
+class CreateRealEstatePropertyRequest extends $pb.GeneratedMessage {
+  factory CreateRealEstatePropertyRequest({
+    $core.String? label,
+    $core.String? address,
+    $core.String? country,
+    $core.double? initialValuationUsd,
+  }) {
+    final result = create();
+    if (label != null) result.label = label;
+    if (address != null) result.address = address;
+    if (country != null) result.country = country;
+    if (initialValuationUsd != null) result.initialValuationUsd = initialValuationUsd;
+    return result;
+  }
+
+  CreateRealEstatePropertyRequest._();
+
+  factory CreateRealEstatePropertyRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateRealEstatePropertyRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateRealEstatePropertyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'label')
+    ..aOS(2, _omitFieldNames ? '' : 'address')
+    ..aOS(3, _omitFieldNames ? '' : 'country')
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'initialValuationUsd', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateRealEstatePropertyRequest clone() => CreateRealEstatePropertyRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateRealEstatePropertyRequest copyWith(void Function(CreateRealEstatePropertyRequest) updates) => super.copyWith((message) => updates(message as CreateRealEstatePropertyRequest)) as CreateRealEstatePropertyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateRealEstatePropertyRequest create() => CreateRealEstatePropertyRequest._();
+  @$core.override
+  CreateRealEstatePropertyRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateRealEstatePropertyRequest> createRepeated() => $pb.PbList<CreateRealEstatePropertyRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateRealEstatePropertyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateRealEstatePropertyRequest>(create);
+  static CreateRealEstatePropertyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get label => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set label($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLabel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLabel() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get address => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set address($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAddress() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get country => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set country($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCountry() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCountry() => $_clearField(3);
+
+  /// Optional initial value. When 0 the service tries the configured
+  /// AVM provider for the country and falls back to manual when no
+  /// provider is wired.
+  @$pb.TagNumber(4)
+  $core.double get initialValuationUsd => $_getN(3);
+  @$pb.TagNumber(4)
+  set initialValuationUsd($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasInitialValuationUsd() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearInitialValuationUsd() => $_clearField(4);
+}
+
+class CreateRealEstatePropertyResponse extends $pb.GeneratedMessage {
+  factory CreateRealEstatePropertyResponse({
+    RealEstateProperty? property,
+  }) {
+    final result = create();
+    if (property != null) result.property = property;
+    return result;
+  }
+
+  CreateRealEstatePropertyResponse._();
+
+  factory CreateRealEstatePropertyResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateRealEstatePropertyResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateRealEstatePropertyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOM<RealEstateProperty>(1, _omitFieldNames ? '' : 'property', subBuilder: RealEstateProperty.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateRealEstatePropertyResponse clone() => CreateRealEstatePropertyResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateRealEstatePropertyResponse copyWith(void Function(CreateRealEstatePropertyResponse) updates) => super.copyWith((message) => updates(message as CreateRealEstatePropertyResponse)) as CreateRealEstatePropertyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateRealEstatePropertyResponse create() => CreateRealEstatePropertyResponse._();
+  @$core.override
+  CreateRealEstatePropertyResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateRealEstatePropertyResponse> createRepeated() => $pb.PbList<CreateRealEstatePropertyResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateRealEstatePropertyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateRealEstatePropertyResponse>(create);
+  static CreateRealEstatePropertyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  RealEstateProperty get property => $_getN(0);
+  @$pb.TagNumber(1)
+  set property(RealEstateProperty value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProperty() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProperty() => $_clearField(1);
+  @$pb.TagNumber(1)
+  RealEstateProperty ensureProperty() => $_ensure(0);
+}
+
+class RecordManualValuationRequest extends $pb.GeneratedMessage {
+  factory RecordManualValuationRequest({
+    $core.String? propertyId,
+    $core.double? valuationUsd,
+    $core.String? appraisalUrl,
+  }) {
+    final result = create();
+    if (propertyId != null) result.propertyId = propertyId;
+    if (valuationUsd != null) result.valuationUsd = valuationUsd;
+    if (appraisalUrl != null) result.appraisalUrl = appraisalUrl;
+    return result;
+  }
+
+  RecordManualValuationRequest._();
+
+  factory RecordManualValuationRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RecordManualValuationRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordManualValuationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'propertyId')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'valuationUsd', $pb.PbFieldType.OD)
+    ..aOS(3, _omitFieldNames ? '' : 'appraisalUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordManualValuationRequest clone() => RecordManualValuationRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordManualValuationRequest copyWith(void Function(RecordManualValuationRequest) updates) => super.copyWith((message) => updates(message as RecordManualValuationRequest)) as RecordManualValuationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordManualValuationRequest create() => RecordManualValuationRequest._();
+  @$core.override
+  RecordManualValuationRequest createEmptyInstance() => create();
+  static $pb.PbList<RecordManualValuationRequest> createRepeated() => $pb.PbList<RecordManualValuationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RecordManualValuationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordManualValuationRequest>(create);
+  static RecordManualValuationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get propertyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set propertyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPropertyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPropertyId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get valuationUsd => $_getN(1);
+  @$pb.TagNumber(2)
+  set valuationUsd($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasValuationUsd() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValuationUsd() => $_clearField(2);
+
+  /// Optional R2/S3 URL to an uploaded appraisal document.
+  @$pb.TagNumber(3)
+  $core.String get appraisalUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set appraisalUrl($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAppraisalUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAppraisalUrl() => $_clearField(3);
+}
+
+class RecordManualValuationResponse extends $pb.GeneratedMessage {
+  factory RecordManualValuationResponse({
+    RealEstateProperty? property,
+  }) {
+    final result = create();
+    if (property != null) result.property = property;
+    return result;
+  }
+
+  RecordManualValuationResponse._();
+
+  factory RecordManualValuationResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RecordManualValuationResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordManualValuationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOM<RealEstateProperty>(1, _omitFieldNames ? '' : 'property', subBuilder: RealEstateProperty.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordManualValuationResponse clone() => RecordManualValuationResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordManualValuationResponse copyWith(void Function(RecordManualValuationResponse) updates) => super.copyWith((message) => updates(message as RecordManualValuationResponse)) as RecordManualValuationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordManualValuationResponse create() => RecordManualValuationResponse._();
+  @$core.override
+  RecordManualValuationResponse createEmptyInstance() => create();
+  static $pb.PbList<RecordManualValuationResponse> createRepeated() => $pb.PbList<RecordManualValuationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RecordManualValuationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordManualValuationResponse>(create);
+  static RecordManualValuationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  RealEstateProperty get property => $_getN(0);
+  @$pb.TagNumber(1)
+  set property(RealEstateProperty value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProperty() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProperty() => $_clearField(1);
+  @$pb.TagNumber(1)
+  RealEstateProperty ensureProperty() => $_ensure(0);
+}
+
+class RefreshAvmValuationRequest extends $pb.GeneratedMessage {
+  factory RefreshAvmValuationRequest({
+    $core.String? propertyId,
+  }) {
+    final result = create();
+    if (propertyId != null) result.propertyId = propertyId;
+    return result;
+  }
+
+  RefreshAvmValuationRequest._();
+
+  factory RefreshAvmValuationRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RefreshAvmValuationRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RefreshAvmValuationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'propertyId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RefreshAvmValuationRequest clone() => RefreshAvmValuationRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RefreshAvmValuationRequest copyWith(void Function(RefreshAvmValuationRequest) updates) => super.copyWith((message) => updates(message as RefreshAvmValuationRequest)) as RefreshAvmValuationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RefreshAvmValuationRequest create() => RefreshAvmValuationRequest._();
+  @$core.override
+  RefreshAvmValuationRequest createEmptyInstance() => create();
+  static $pb.PbList<RefreshAvmValuationRequest> createRepeated() => $pb.PbList<RefreshAvmValuationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RefreshAvmValuationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RefreshAvmValuationRequest>(create);
+  static RefreshAvmValuationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get propertyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set propertyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPropertyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPropertyId() => $_clearField(1);
+}
+
+class RefreshAvmValuationResponse extends $pb.GeneratedMessage {
+  factory RefreshAvmValuationResponse({
+    RealEstateProperty? property,
+  }) {
+    final result = create();
+    if (property != null) result.property = property;
+    return result;
+  }
+
+  RefreshAvmValuationResponse._();
+
+  factory RefreshAvmValuationResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RefreshAvmValuationResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RefreshAvmValuationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOM<RealEstateProperty>(1, _omitFieldNames ? '' : 'property', subBuilder: RealEstateProperty.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RefreshAvmValuationResponse clone() => RefreshAvmValuationResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RefreshAvmValuationResponse copyWith(void Function(RefreshAvmValuationResponse) updates) => super.copyWith((message) => updates(message as RefreshAvmValuationResponse)) as RefreshAvmValuationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RefreshAvmValuationResponse create() => RefreshAvmValuationResponse._();
+  @$core.override
+  RefreshAvmValuationResponse createEmptyInstance() => create();
+  static $pb.PbList<RefreshAvmValuationResponse> createRepeated() => $pb.PbList<RefreshAvmValuationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RefreshAvmValuationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RefreshAvmValuationResponse>(create);
+  static RefreshAvmValuationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  RealEstateProperty get property => $_getN(0);
+  @$pb.TagNumber(1)
+  set property(RealEstateProperty value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProperty() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProperty() => $_clearField(1);
+  @$pb.TagNumber(1)
+  RealEstateProperty ensureProperty() => $_ensure(0);
+}
+
+class DeleteRealEstatePropertyRequest extends $pb.GeneratedMessage {
+  factory DeleteRealEstatePropertyRequest({
+    $core.String? propertyId,
+  }) {
+    final result = create();
+    if (propertyId != null) result.propertyId = propertyId;
+    return result;
+  }
+
+  DeleteRealEstatePropertyRequest._();
+
+  factory DeleteRealEstatePropertyRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteRealEstatePropertyRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteRealEstatePropertyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'propertyId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteRealEstatePropertyRequest clone() => DeleteRealEstatePropertyRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteRealEstatePropertyRequest copyWith(void Function(DeleteRealEstatePropertyRequest) updates) => super.copyWith((message) => updates(message as DeleteRealEstatePropertyRequest)) as DeleteRealEstatePropertyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteRealEstatePropertyRequest create() => DeleteRealEstatePropertyRequest._();
+  @$core.override
+  DeleteRealEstatePropertyRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteRealEstatePropertyRequest> createRepeated() => $pb.PbList<DeleteRealEstatePropertyRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteRealEstatePropertyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteRealEstatePropertyRequest>(create);
+  static DeleteRealEstatePropertyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get propertyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set propertyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPropertyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPropertyId() => $_clearField(1);
+}
+
+class DeleteRealEstatePropertyResponse extends $pb.GeneratedMessage {
+  factory DeleteRealEstatePropertyResponse() => create();
+
+  DeleteRealEstatePropertyResponse._();
+
+  factory DeleteRealEstatePropertyResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteRealEstatePropertyResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteRealEstatePropertyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteRealEstatePropertyResponse clone() => DeleteRealEstatePropertyResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteRealEstatePropertyResponse copyWith(void Function(DeleteRealEstatePropertyResponse) updates) => super.copyWith((message) => updates(message as DeleteRealEstatePropertyResponse)) as DeleteRealEstatePropertyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteRealEstatePropertyResponse create() => DeleteRealEstatePropertyResponse._();
+  @$core.override
+  DeleteRealEstatePropertyResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteRealEstatePropertyResponse> createRepeated() => $pb.PbList<DeleteRealEstatePropertyResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteRealEstatePropertyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteRealEstatePropertyResponse>(create);
+  static DeleteRealEstatePropertyResponse? _defaultInstance;
 }
 
 

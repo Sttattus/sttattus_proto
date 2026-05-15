@@ -1950,6 +1950,575 @@ func (x *ListAllocationHistoryResponse) GetPoints() []*AllocationHistoryPoint {
 	return nil
 }
 
+type RealEstateProperty struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Label               string                 `protobuf:"bytes,2,opt,name=label,proto3" json:"label,omitempty"`
+	Address             string                 `protobuf:"bytes,3,opt,name=address,proto3" json:"address,omitempty"`
+	Country             string                 `protobuf:"bytes,4,opt,name=country,proto3" json:"country,omitempty"`                // ISO-3166 alpha-2
+	AssetId             string                 `protobuf:"bytes,5,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"` // empty when not yet mirrored
+	CurrentValuationUsd float64                `protobuf:"fixed64,6,opt,name=current_valuation_usd,json=currentValuationUsd,proto3" json:"current_valuation_usd,omitempty"`
+	// 'manual' | 'zillow' | 'rightmove' | 'redfin' | 'domain'
+	CurrentSource   string `protobuf:"bytes,7,opt,name=current_source,json=currentSource,proto3" json:"current_source,omitempty"`
+	CurrentValuedAt int64  `protobuf:"varint,8,opt,name=current_valued_at,json=currentValuedAt,proto3" json:"current_valued_at,omitempty"` // unix seconds, 0 when never valued
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *RealEstateProperty) Reset() {
+	*x = RealEstateProperty{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[33]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RealEstateProperty) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RealEstateProperty) ProtoMessage() {}
+
+func (x *RealEstateProperty) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[33]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RealEstateProperty.ProtoReflect.Descriptor instead.
+func (*RealEstateProperty) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *RealEstateProperty) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *RealEstateProperty) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *RealEstateProperty) GetAddress() string {
+	if x != nil {
+		return x.Address
+	}
+	return ""
+}
+
+func (x *RealEstateProperty) GetCountry() string {
+	if x != nil {
+		return x.Country
+	}
+	return ""
+}
+
+func (x *RealEstateProperty) GetAssetId() string {
+	if x != nil {
+		return x.AssetId
+	}
+	return ""
+}
+
+func (x *RealEstateProperty) GetCurrentValuationUsd() float64 {
+	if x != nil {
+		return x.CurrentValuationUsd
+	}
+	return 0
+}
+
+func (x *RealEstateProperty) GetCurrentSource() string {
+	if x != nil {
+		return x.CurrentSource
+	}
+	return ""
+}
+
+func (x *RealEstateProperty) GetCurrentValuedAt() int64 {
+	if x != nil {
+		return x.CurrentValuedAt
+	}
+	return 0
+}
+
+type ListRealEstatePropertiesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListRealEstatePropertiesRequest) Reset() {
+	*x = ListRealEstatePropertiesRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[34]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListRealEstatePropertiesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListRealEstatePropertiesRequest) ProtoMessage() {}
+
+func (x *ListRealEstatePropertiesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[34]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListRealEstatePropertiesRequest.ProtoReflect.Descriptor instead.
+func (*ListRealEstatePropertiesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{34}
+}
+
+type ListRealEstatePropertiesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Properties    []*RealEstateProperty  `protobuf:"bytes,1,rep,name=properties,proto3" json:"properties,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListRealEstatePropertiesResponse) Reset() {
+	*x = ListRealEstatePropertiesResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[35]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListRealEstatePropertiesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListRealEstatePropertiesResponse) ProtoMessage() {}
+
+func (x *ListRealEstatePropertiesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[35]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListRealEstatePropertiesResponse.ProtoReflect.Descriptor instead.
+func (*ListRealEstatePropertiesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *ListRealEstatePropertiesResponse) GetProperties() []*RealEstateProperty {
+	if x != nil {
+		return x.Properties
+	}
+	return nil
+}
+
+type CreateRealEstatePropertyRequest struct {
+	state   protoimpl.MessageState `protogen:"open.v1"`
+	Label   string                 `protobuf:"bytes,1,opt,name=label,proto3" json:"label,omitempty"`
+	Address string                 `protobuf:"bytes,2,opt,name=address,proto3" json:"address,omitempty"`
+	Country string                 `protobuf:"bytes,3,opt,name=country,proto3" json:"country,omitempty"` // ISO-3166 alpha-2; empty defaults to "US"
+	// Optional initial value. When 0 the service tries the configured
+	// AVM provider for the country and falls back to manual when no
+	// provider is wired.
+	InitialValuationUsd float64 `protobuf:"fixed64,4,opt,name=initial_valuation_usd,json=initialValuationUsd,proto3" json:"initial_valuation_usd,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *CreateRealEstatePropertyRequest) Reset() {
+	*x = CreateRealEstatePropertyRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateRealEstatePropertyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateRealEstatePropertyRequest) ProtoMessage() {}
+
+func (x *CreateRealEstatePropertyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[36]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateRealEstatePropertyRequest.ProtoReflect.Descriptor instead.
+func (*CreateRealEstatePropertyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *CreateRealEstatePropertyRequest) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *CreateRealEstatePropertyRequest) GetAddress() string {
+	if x != nil {
+		return x.Address
+	}
+	return ""
+}
+
+func (x *CreateRealEstatePropertyRequest) GetCountry() string {
+	if x != nil {
+		return x.Country
+	}
+	return ""
+}
+
+func (x *CreateRealEstatePropertyRequest) GetInitialValuationUsd() float64 {
+	if x != nil {
+		return x.InitialValuationUsd
+	}
+	return 0
+}
+
+type CreateRealEstatePropertyResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Property      *RealEstateProperty    `protobuf:"bytes,1,opt,name=property,proto3" json:"property,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateRealEstatePropertyResponse) Reset() {
+	*x = CreateRealEstatePropertyResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[37]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateRealEstatePropertyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateRealEstatePropertyResponse) ProtoMessage() {}
+
+func (x *CreateRealEstatePropertyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[37]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateRealEstatePropertyResponse.ProtoReflect.Descriptor instead.
+func (*CreateRealEstatePropertyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *CreateRealEstatePropertyResponse) GetProperty() *RealEstateProperty {
+	if x != nil {
+		return x.Property
+	}
+	return nil
+}
+
+type RecordManualValuationRequest struct {
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	PropertyId   string                 `protobuf:"bytes,1,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	ValuationUsd float64                `protobuf:"fixed64,2,opt,name=valuation_usd,json=valuationUsd,proto3" json:"valuation_usd,omitempty"`
+	// Optional R2/S3 URL to an uploaded appraisal document.
+	AppraisalUrl  string `protobuf:"bytes,3,opt,name=appraisal_url,json=appraisalUrl,proto3" json:"appraisal_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordManualValuationRequest) Reset() {
+	*x = RecordManualValuationRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[38]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordManualValuationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordManualValuationRequest) ProtoMessage() {}
+
+func (x *RecordManualValuationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[38]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordManualValuationRequest.ProtoReflect.Descriptor instead.
+func (*RecordManualValuationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *RecordManualValuationRequest) GetPropertyId() string {
+	if x != nil {
+		return x.PropertyId
+	}
+	return ""
+}
+
+func (x *RecordManualValuationRequest) GetValuationUsd() float64 {
+	if x != nil {
+		return x.ValuationUsd
+	}
+	return 0
+}
+
+func (x *RecordManualValuationRequest) GetAppraisalUrl() string {
+	if x != nil {
+		return x.AppraisalUrl
+	}
+	return ""
+}
+
+type RecordManualValuationResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Property      *RealEstateProperty    `protobuf:"bytes,1,opt,name=property,proto3" json:"property,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordManualValuationResponse) Reset() {
+	*x = RecordManualValuationResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[39]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordManualValuationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordManualValuationResponse) ProtoMessage() {}
+
+func (x *RecordManualValuationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[39]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordManualValuationResponse.ProtoReflect.Descriptor instead.
+func (*RecordManualValuationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{39}
+}
+
+func (x *RecordManualValuationResponse) GetProperty() *RealEstateProperty {
+	if x != nil {
+		return x.Property
+	}
+	return nil
+}
+
+type RefreshAvmValuationRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	PropertyId    string                 `protobuf:"bytes,1,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RefreshAvmValuationRequest) Reset() {
+	*x = RefreshAvmValuationRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[40]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RefreshAvmValuationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RefreshAvmValuationRequest) ProtoMessage() {}
+
+func (x *RefreshAvmValuationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[40]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RefreshAvmValuationRequest.ProtoReflect.Descriptor instead.
+func (*RefreshAvmValuationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *RefreshAvmValuationRequest) GetPropertyId() string {
+	if x != nil {
+		return x.PropertyId
+	}
+	return ""
+}
+
+type RefreshAvmValuationResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Property      *RealEstateProperty    `protobuf:"bytes,1,opt,name=property,proto3" json:"property,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RefreshAvmValuationResponse) Reset() {
+	*x = RefreshAvmValuationResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[41]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RefreshAvmValuationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RefreshAvmValuationResponse) ProtoMessage() {}
+
+func (x *RefreshAvmValuationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[41]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RefreshAvmValuationResponse.ProtoReflect.Descriptor instead.
+func (*RefreshAvmValuationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *RefreshAvmValuationResponse) GetProperty() *RealEstateProperty {
+	if x != nil {
+		return x.Property
+	}
+	return nil
+}
+
+type DeleteRealEstatePropertyRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	PropertyId    string                 `protobuf:"bytes,1,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteRealEstatePropertyRequest) Reset() {
+	*x = DeleteRealEstatePropertyRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[42]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteRealEstatePropertyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteRealEstatePropertyRequest) ProtoMessage() {}
+
+func (x *DeleteRealEstatePropertyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[42]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteRealEstatePropertyRequest.ProtoReflect.Descriptor instead.
+func (*DeleteRealEstatePropertyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{42}
+}
+
+func (x *DeleteRealEstatePropertyRequest) GetPropertyId() string {
+	if x != nil {
+		return x.PropertyId
+	}
+	return ""
+}
+
+type DeleteRealEstatePropertyResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteRealEstatePropertyResponse) Reset() {
+	*x = DeleteRealEstatePropertyResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[43]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteRealEstatePropertyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteRealEstatePropertyResponse) ProtoMessage() {}
+
+func (x *DeleteRealEstatePropertyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[43]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteRealEstatePropertyResponse.ProtoReflect.Descriptor instead.
+func (*DeleteRealEstatePropertyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{43}
+}
+
 var File_sttattus_vault_v1_vault_proto protoreflect.FileDescriptor
 
 const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
@@ -2080,7 +2649,44 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x1cListAllocationHistoryRequest\x12\x12\n" +
 	"\x04days\x18\x01 \x01(\x05R\x04days\"b\n" +
 	"\x1dListAllocationHistoryResponse\x12A\n" +
-	"\x06points\x18\x01 \x03(\v2).sttattus.vault.v1.AllocationHistoryPointR\x06points*\x9c\x01\n" +
+	"\x06points\x18\x01 \x03(\v2).sttattus.vault.v1.AllocationHistoryPointR\x06points\"\x90\x02\n" +
+	"\x12RealEstateProperty\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05label\x18\x02 \x01(\tR\x05label\x12\x18\n" +
+	"\aaddress\x18\x03 \x01(\tR\aaddress\x12\x18\n" +
+	"\acountry\x18\x04 \x01(\tR\acountry\x12\x19\n" +
+	"\basset_id\x18\x05 \x01(\tR\aassetId\x122\n" +
+	"\x15current_valuation_usd\x18\x06 \x01(\x01R\x13currentValuationUsd\x12%\n" +
+	"\x0ecurrent_source\x18\a \x01(\tR\rcurrentSource\x12*\n" +
+	"\x11current_valued_at\x18\b \x01(\x03R\x0fcurrentValuedAt\"!\n" +
+	"\x1fListRealEstatePropertiesRequest\"i\n" +
+	" ListRealEstatePropertiesResponse\x12E\n" +
+	"\n" +
+	"properties\x18\x01 \x03(\v2%.sttattus.vault.v1.RealEstatePropertyR\n" +
+	"properties\"\x9f\x01\n" +
+	"\x1fCreateRealEstatePropertyRequest\x12\x14\n" +
+	"\x05label\x18\x01 \x01(\tR\x05label\x12\x18\n" +
+	"\aaddress\x18\x02 \x01(\tR\aaddress\x12\x18\n" +
+	"\acountry\x18\x03 \x01(\tR\acountry\x122\n" +
+	"\x15initial_valuation_usd\x18\x04 \x01(\x01R\x13initialValuationUsd\"e\n" +
+	" CreateRealEstatePropertyResponse\x12A\n" +
+	"\bproperty\x18\x01 \x01(\v2%.sttattus.vault.v1.RealEstatePropertyR\bproperty\"\x89\x01\n" +
+	"\x1cRecordManualValuationRequest\x12\x1f\n" +
+	"\vproperty_id\x18\x01 \x01(\tR\n" +
+	"propertyId\x12#\n" +
+	"\rvaluation_usd\x18\x02 \x01(\x01R\fvaluationUsd\x12#\n" +
+	"\rappraisal_url\x18\x03 \x01(\tR\fappraisalUrl\"b\n" +
+	"\x1dRecordManualValuationResponse\x12A\n" +
+	"\bproperty\x18\x01 \x01(\v2%.sttattus.vault.v1.RealEstatePropertyR\bproperty\"=\n" +
+	"\x1aRefreshAvmValuationRequest\x12\x1f\n" +
+	"\vproperty_id\x18\x01 \x01(\tR\n" +
+	"propertyId\"`\n" +
+	"\x1bRefreshAvmValuationResponse\x12A\n" +
+	"\bproperty\x18\x01 \x01(\v2%.sttattus.vault.v1.RealEstatePropertyR\bproperty\"B\n" +
+	"\x1fDeleteRealEstatePropertyRequest\x12\x1f\n" +
+	"\vproperty_id\x18\x01 \x01(\tR\n" +
+	"propertyId\"\"\n" +
+	" DeleteRealEstatePropertyResponse*\x9c\x01\n" +
 	"\rAssetCategory\x12\x1e\n" +
 	"\x1aASSET_CATEGORY_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13ASSET_CATEGORY_FIAT\x10\x01\x12\x19\n" +
@@ -2091,7 +2697,7 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xb9\v\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xbd\x10\n" +
 	"\fVaultService\x12\\\n" +
 	"\vSubmitAsset\x12%.sttattus.vault.v1.SubmitAssetRequest\x1a&.sttattus.vault.v1.SubmitAssetResponse\x12_\n" +
 	"\fGetPortfolio\x12&.sttattus.vault.v1.GetPortfolioRequest\x1a'.sttattus.vault.v1.GetPortfolioResponse\x12q\n" +
@@ -2107,7 +2713,12 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x15ListPlaidTransactions\x12/.sttattus.vault.v1.ListPlaidTransactionsRequest\x1a0.sttattus.vault.v1.ListPlaidTransactionsResponse\x12n\n" +
 	"\x11ListPlaidHoldings\x12+.sttattus.vault.v1.ListPlaidHoldingsRequest\x1a,.sttattus.vault.v1.ListPlaidHoldingsResponse\x12w\n" +
 	"\x14GetCurrentAllocation\x12..sttattus.vault.v1.GetCurrentAllocationRequest\x1a/.sttattus.vault.v1.GetCurrentAllocationResponse\x12z\n" +
-	"\x15ListAllocationHistory\x12/.sttattus.vault.v1.ListAllocationHistoryRequest\x1a0.sttattus.vault.v1.ListAllocationHistoryResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
+	"\x15ListAllocationHistory\x12/.sttattus.vault.v1.ListAllocationHistoryRequest\x1a0.sttattus.vault.v1.ListAllocationHistoryResponse\x12\x83\x01\n" +
+	"\x18ListRealEstateProperties\x122.sttattus.vault.v1.ListRealEstatePropertiesRequest\x1a3.sttattus.vault.v1.ListRealEstatePropertiesResponse\x12\x83\x01\n" +
+	"\x18CreateRealEstateProperty\x122.sttattus.vault.v1.CreateRealEstatePropertyRequest\x1a3.sttattus.vault.v1.CreateRealEstatePropertyResponse\x12z\n" +
+	"\x15RecordManualValuation\x12/.sttattus.vault.v1.RecordManualValuationRequest\x1a0.sttattus.vault.v1.RecordManualValuationResponse\x12t\n" +
+	"\x13RefreshAvmValuation\x12-.sttattus.vault.v1.RefreshAvmValuationRequest\x1a..sttattus.vault.v1.RefreshAvmValuationResponse\x12\x83\x01\n" +
+	"\x18DeleteRealEstateProperty\x122.sttattus.vault.v1.DeleteRealEstatePropertyRequest\x1a3.sttattus.vault.v1.DeleteRealEstatePropertyResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
 
 var (
 	file_sttattus_vault_v1_vault_proto_rawDescOnce sync.Once
@@ -2122,7 +2733,7 @@ func file_sttattus_vault_v1_vault_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_vault_v1_vault_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_vault_v1_vault_proto_msgTypes = make([]protoimpl.MessageInfo, 35)
+var file_sttattus_vault_v1_vault_proto_msgTypes = make([]protoimpl.MessageInfo, 46)
 var file_sttattus_vault_v1_vault_proto_goTypes = []any{
 	(AssetCategory)(0),                       // 0: sttattus.vault.v1.AssetCategory
 	(VerificationStatus)(0),                  // 1: sttattus.vault.v1.VerificationStatus
@@ -2159,19 +2770,30 @@ var file_sttattus_vault_v1_vault_proto_goTypes = []any{
 	(*AllocationHistoryPoint)(nil),           // 32: sttattus.vault.v1.AllocationHistoryPoint
 	(*ListAllocationHistoryRequest)(nil),     // 33: sttattus.vault.v1.ListAllocationHistoryRequest
 	(*ListAllocationHistoryResponse)(nil),    // 34: sttattus.vault.v1.ListAllocationHistoryResponse
-	nil,                                      // 35: sttattus.vault.v1.Asset.MetadataEntry
-	nil,                                      // 36: sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
-	(*timestamppb.Timestamp)(nil),            // 37: google.protobuf.Timestamp
+	(*RealEstateProperty)(nil),               // 35: sttattus.vault.v1.RealEstateProperty
+	(*ListRealEstatePropertiesRequest)(nil),  // 36: sttattus.vault.v1.ListRealEstatePropertiesRequest
+	(*ListRealEstatePropertiesResponse)(nil), // 37: sttattus.vault.v1.ListRealEstatePropertiesResponse
+	(*CreateRealEstatePropertyRequest)(nil),  // 38: sttattus.vault.v1.CreateRealEstatePropertyRequest
+	(*CreateRealEstatePropertyResponse)(nil), // 39: sttattus.vault.v1.CreateRealEstatePropertyResponse
+	(*RecordManualValuationRequest)(nil),     // 40: sttattus.vault.v1.RecordManualValuationRequest
+	(*RecordManualValuationResponse)(nil),    // 41: sttattus.vault.v1.RecordManualValuationResponse
+	(*RefreshAvmValuationRequest)(nil),       // 42: sttattus.vault.v1.RefreshAvmValuationRequest
+	(*RefreshAvmValuationResponse)(nil),      // 43: sttattus.vault.v1.RefreshAvmValuationResponse
+	(*DeleteRealEstatePropertyRequest)(nil),  // 44: sttattus.vault.v1.DeleteRealEstatePropertyRequest
+	(*DeleteRealEstatePropertyResponse)(nil), // 45: sttattus.vault.v1.DeleteRealEstatePropertyResponse
+	nil,                                      // 46: sttattus.vault.v1.Asset.MetadataEntry
+	nil,                                      // 47: sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
+	(*timestamppb.Timestamp)(nil),            // 48: google.protobuf.Timestamp
 }
 var file_sttattus_vault_v1_vault_proto_depIdxs = []int32{
 	0,  // 0: sttattus.vault.v1.Asset.category:type_name -> sttattus.vault.v1.AssetCategory
 	1,  // 1: sttattus.vault.v1.Asset.status:type_name -> sttattus.vault.v1.VerificationStatus
-	37, // 2: sttattus.vault.v1.Asset.last_updated:type_name -> google.protobuf.Timestamp
-	35, // 3: sttattus.vault.v1.Asset.metadata:type_name -> sttattus.vault.v1.Asset.MetadataEntry
+	48, // 2: sttattus.vault.v1.Asset.last_updated:type_name -> google.protobuf.Timestamp
+	46, // 3: sttattus.vault.v1.Asset.metadata:type_name -> sttattus.vault.v1.Asset.MetadataEntry
 	2,  // 4: sttattus.vault.v1.Portfolio.assets:type_name -> sttattus.vault.v1.Asset
-	37, // 5: sttattus.vault.v1.Portfolio.calculated_at:type_name -> google.protobuf.Timestamp
+	48, // 5: sttattus.vault.v1.Portfolio.calculated_at:type_name -> google.protobuf.Timestamp
 	0,  // 6: sttattus.vault.v1.SubmitAssetRequest.category:type_name -> sttattus.vault.v1.AssetCategory
-	36, // 7: sttattus.vault.v1.SubmitAssetRequest.metadata:type_name -> sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
+	47, // 7: sttattus.vault.v1.SubmitAssetRequest.metadata:type_name -> sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
 	2,  // 8: sttattus.vault.v1.SubmitAssetResponse.asset:type_name -> sttattus.vault.v1.Asset
 	3,  // 9: sttattus.vault.v1.GetPortfolioResponse.portfolio:type_name -> sttattus.vault.v1.Portfolio
 	1,  // 10: sttattus.vault.v1.AdminVerifyAssetRequest.status:type_name -> sttattus.vault.v1.VerificationStatus
@@ -2183,37 +2805,51 @@ var file_sttattus_vault_v1_vault_proto_depIdxs = []int32{
 	26, // 16: sttattus.vault.v1.ListPlaidHoldingsResponse.holdings:type_name -> sttattus.vault.v1.PlaidHolding
 	29, // 17: sttattus.vault.v1.GetCurrentAllocationResponse.slices:type_name -> sttattus.vault.v1.AllocationSlice
 	32, // 18: sttattus.vault.v1.ListAllocationHistoryResponse.points:type_name -> sttattus.vault.v1.AllocationHistoryPoint
-	4,  // 19: sttattus.vault.v1.VaultService.SubmitAsset:input_type -> sttattus.vault.v1.SubmitAssetRequest
-	6,  // 20: sttattus.vault.v1.VaultService.GetPortfolio:input_type -> sttattus.vault.v1.GetPortfolioRequest
-	12, // 21: sttattus.vault.v1.VaultService.GetWalletChallenge:input_type -> sttattus.vault.v1.GetWalletChallengeRequest
-	14, // 22: sttattus.vault.v1.VaultService.LinkWallet:input_type -> sttattus.vault.v1.LinkWalletRequest
-	16, // 23: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:input_type -> sttattus.vault.v1.CreatePlaidLinkTokenRequest
-	18, // 24: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:input_type -> sttattus.vault.v1.ExchangePlaidPublicTokenRequest
-	10, // 25: sttattus.vault.v1.VaultService.SyncWealth:input_type -> sttattus.vault.v1.SyncWealthRequest
-	8,  // 26: sttattus.vault.v1.VaultService.AdminVerifyAsset:input_type -> sttattus.vault.v1.AdminVerifyAssetRequest
-	21, // 27: sttattus.vault.v1.VaultService.ListNetWorthHistory:input_type -> sttattus.vault.v1.ListNetWorthHistoryRequest
-	24, // 28: sttattus.vault.v1.VaultService.ListPlaidTransactions:input_type -> sttattus.vault.v1.ListPlaidTransactionsRequest
-	27, // 29: sttattus.vault.v1.VaultService.ListPlaidHoldings:input_type -> sttattus.vault.v1.ListPlaidHoldingsRequest
-	30, // 30: sttattus.vault.v1.VaultService.GetCurrentAllocation:input_type -> sttattus.vault.v1.GetCurrentAllocationRequest
-	33, // 31: sttattus.vault.v1.VaultService.ListAllocationHistory:input_type -> sttattus.vault.v1.ListAllocationHistoryRequest
-	5,  // 32: sttattus.vault.v1.VaultService.SubmitAsset:output_type -> sttattus.vault.v1.SubmitAssetResponse
-	7,  // 33: sttattus.vault.v1.VaultService.GetPortfolio:output_type -> sttattus.vault.v1.GetPortfolioResponse
-	13, // 34: sttattus.vault.v1.VaultService.GetWalletChallenge:output_type -> sttattus.vault.v1.GetWalletChallengeResponse
-	15, // 35: sttattus.vault.v1.VaultService.LinkWallet:output_type -> sttattus.vault.v1.LinkWalletResponse
-	17, // 36: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:output_type -> sttattus.vault.v1.CreatePlaidLinkTokenResponse
-	19, // 37: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:output_type -> sttattus.vault.v1.ExchangePlaidPublicTokenResponse
-	11, // 38: sttattus.vault.v1.VaultService.SyncWealth:output_type -> sttattus.vault.v1.SyncWealthResponse
-	9,  // 39: sttattus.vault.v1.VaultService.AdminVerifyAsset:output_type -> sttattus.vault.v1.AdminVerifyAssetResponse
-	22, // 40: sttattus.vault.v1.VaultService.ListNetWorthHistory:output_type -> sttattus.vault.v1.ListNetWorthHistoryResponse
-	25, // 41: sttattus.vault.v1.VaultService.ListPlaidTransactions:output_type -> sttattus.vault.v1.ListPlaidTransactionsResponse
-	28, // 42: sttattus.vault.v1.VaultService.ListPlaidHoldings:output_type -> sttattus.vault.v1.ListPlaidHoldingsResponse
-	31, // 43: sttattus.vault.v1.VaultService.GetCurrentAllocation:output_type -> sttattus.vault.v1.GetCurrentAllocationResponse
-	34, // 44: sttattus.vault.v1.VaultService.ListAllocationHistory:output_type -> sttattus.vault.v1.ListAllocationHistoryResponse
-	32, // [32:45] is the sub-list for method output_type
-	19, // [19:32] is the sub-list for method input_type
-	19, // [19:19] is the sub-list for extension type_name
-	19, // [19:19] is the sub-list for extension extendee
-	0,  // [0:19] is the sub-list for field type_name
+	35, // 19: sttattus.vault.v1.ListRealEstatePropertiesResponse.properties:type_name -> sttattus.vault.v1.RealEstateProperty
+	35, // 20: sttattus.vault.v1.CreateRealEstatePropertyResponse.property:type_name -> sttattus.vault.v1.RealEstateProperty
+	35, // 21: sttattus.vault.v1.RecordManualValuationResponse.property:type_name -> sttattus.vault.v1.RealEstateProperty
+	35, // 22: sttattus.vault.v1.RefreshAvmValuationResponse.property:type_name -> sttattus.vault.v1.RealEstateProperty
+	4,  // 23: sttattus.vault.v1.VaultService.SubmitAsset:input_type -> sttattus.vault.v1.SubmitAssetRequest
+	6,  // 24: sttattus.vault.v1.VaultService.GetPortfolio:input_type -> sttattus.vault.v1.GetPortfolioRequest
+	12, // 25: sttattus.vault.v1.VaultService.GetWalletChallenge:input_type -> sttattus.vault.v1.GetWalletChallengeRequest
+	14, // 26: sttattus.vault.v1.VaultService.LinkWallet:input_type -> sttattus.vault.v1.LinkWalletRequest
+	16, // 27: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:input_type -> sttattus.vault.v1.CreatePlaidLinkTokenRequest
+	18, // 28: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:input_type -> sttattus.vault.v1.ExchangePlaidPublicTokenRequest
+	10, // 29: sttattus.vault.v1.VaultService.SyncWealth:input_type -> sttattus.vault.v1.SyncWealthRequest
+	8,  // 30: sttattus.vault.v1.VaultService.AdminVerifyAsset:input_type -> sttattus.vault.v1.AdminVerifyAssetRequest
+	21, // 31: sttattus.vault.v1.VaultService.ListNetWorthHistory:input_type -> sttattus.vault.v1.ListNetWorthHistoryRequest
+	24, // 32: sttattus.vault.v1.VaultService.ListPlaidTransactions:input_type -> sttattus.vault.v1.ListPlaidTransactionsRequest
+	27, // 33: sttattus.vault.v1.VaultService.ListPlaidHoldings:input_type -> sttattus.vault.v1.ListPlaidHoldingsRequest
+	30, // 34: sttattus.vault.v1.VaultService.GetCurrentAllocation:input_type -> sttattus.vault.v1.GetCurrentAllocationRequest
+	33, // 35: sttattus.vault.v1.VaultService.ListAllocationHistory:input_type -> sttattus.vault.v1.ListAllocationHistoryRequest
+	36, // 36: sttattus.vault.v1.VaultService.ListRealEstateProperties:input_type -> sttattus.vault.v1.ListRealEstatePropertiesRequest
+	38, // 37: sttattus.vault.v1.VaultService.CreateRealEstateProperty:input_type -> sttattus.vault.v1.CreateRealEstatePropertyRequest
+	40, // 38: sttattus.vault.v1.VaultService.RecordManualValuation:input_type -> sttattus.vault.v1.RecordManualValuationRequest
+	42, // 39: sttattus.vault.v1.VaultService.RefreshAvmValuation:input_type -> sttattus.vault.v1.RefreshAvmValuationRequest
+	44, // 40: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:input_type -> sttattus.vault.v1.DeleteRealEstatePropertyRequest
+	5,  // 41: sttattus.vault.v1.VaultService.SubmitAsset:output_type -> sttattus.vault.v1.SubmitAssetResponse
+	7,  // 42: sttattus.vault.v1.VaultService.GetPortfolio:output_type -> sttattus.vault.v1.GetPortfolioResponse
+	13, // 43: sttattus.vault.v1.VaultService.GetWalletChallenge:output_type -> sttattus.vault.v1.GetWalletChallengeResponse
+	15, // 44: sttattus.vault.v1.VaultService.LinkWallet:output_type -> sttattus.vault.v1.LinkWalletResponse
+	17, // 45: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:output_type -> sttattus.vault.v1.CreatePlaidLinkTokenResponse
+	19, // 46: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:output_type -> sttattus.vault.v1.ExchangePlaidPublicTokenResponse
+	11, // 47: sttattus.vault.v1.VaultService.SyncWealth:output_type -> sttattus.vault.v1.SyncWealthResponse
+	9,  // 48: sttattus.vault.v1.VaultService.AdminVerifyAsset:output_type -> sttattus.vault.v1.AdminVerifyAssetResponse
+	22, // 49: sttattus.vault.v1.VaultService.ListNetWorthHistory:output_type -> sttattus.vault.v1.ListNetWorthHistoryResponse
+	25, // 50: sttattus.vault.v1.VaultService.ListPlaidTransactions:output_type -> sttattus.vault.v1.ListPlaidTransactionsResponse
+	28, // 51: sttattus.vault.v1.VaultService.ListPlaidHoldings:output_type -> sttattus.vault.v1.ListPlaidHoldingsResponse
+	31, // 52: sttattus.vault.v1.VaultService.GetCurrentAllocation:output_type -> sttattus.vault.v1.GetCurrentAllocationResponse
+	34, // 53: sttattus.vault.v1.VaultService.ListAllocationHistory:output_type -> sttattus.vault.v1.ListAllocationHistoryResponse
+	37, // 54: sttattus.vault.v1.VaultService.ListRealEstateProperties:output_type -> sttattus.vault.v1.ListRealEstatePropertiesResponse
+	39, // 55: sttattus.vault.v1.VaultService.CreateRealEstateProperty:output_type -> sttattus.vault.v1.CreateRealEstatePropertyResponse
+	41, // 56: sttattus.vault.v1.VaultService.RecordManualValuation:output_type -> sttattus.vault.v1.RecordManualValuationResponse
+	43, // 57: sttattus.vault.v1.VaultService.RefreshAvmValuation:output_type -> sttattus.vault.v1.RefreshAvmValuationResponse
+	45, // 58: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:output_type -> sttattus.vault.v1.DeleteRealEstatePropertyResponse
+	41, // [41:59] is the sub-list for method output_type
+	23, // [23:41] is the sub-list for method input_type
+	23, // [23:23] is the sub-list for extension type_name
+	23, // [23:23] is the sub-list for extension extendee
+	0,  // [0:23] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_vault_v1_vault_proto_init() }
@@ -2227,7 +2863,7 @@ func file_sttattus_vault_v1_vault_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_vault_v1_vault_proto_rawDesc), len(file_sttattus_vault_v1_vault_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   35,
+			NumMessages:   46,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

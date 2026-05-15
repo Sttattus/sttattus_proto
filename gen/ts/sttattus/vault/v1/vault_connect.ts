@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
+import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -144,6 +144,53 @@ export const VaultService = {
       name: "ListAllocationHistory",
       I: ListAllocationHistoryRequest,
       O: ListAllocationHistoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8.5 — real-estate properties + AVM lifecycle.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.ListRealEstateProperties
+     */
+    listRealEstateProperties: {
+      name: "ListRealEstateProperties",
+      I: ListRealEstatePropertiesRequest,
+      O: ListRealEstatePropertiesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.CreateRealEstateProperty
+     */
+    createRealEstateProperty: {
+      name: "CreateRealEstateProperty",
+      I: CreateRealEstatePropertyRequest,
+      O: CreateRealEstatePropertyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.RecordManualValuation
+     */
+    recordManualValuation: {
+      name: "RecordManualValuation",
+      I: RecordManualValuationRequest,
+      O: RecordManualValuationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.RefreshAvmValuation
+     */
+    refreshAvmValuation: {
+      name: "RefreshAvmValuation",
+      I: RefreshAvmValuationRequest,
+      O: RefreshAvmValuationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.DeleteRealEstateProperty
+     */
+    deleteRealEstateProperty: {
+      name: "DeleteRealEstateProperty",
+      I: DeleteRealEstatePropertyRequest,
+      O: DeleteRealEstatePropertyResponse,
       kind: MethodKind.Unary,
     },
   }

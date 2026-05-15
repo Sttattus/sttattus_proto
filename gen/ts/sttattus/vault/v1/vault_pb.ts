@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
 
 /**
  * AssetCategory defines the broad classification of wealth.
@@ -1619,6 +1619,489 @@ export class ListAllocationHistoryResponse extends Message<ListAllocationHistory
 
   static equals(a: ListAllocationHistoryResponse | PlainMessage<ListAllocationHistoryResponse> | undefined, b: ListAllocationHistoryResponse | PlainMessage<ListAllocationHistoryResponse> | undefined): boolean {
     return proto3.util.equals(ListAllocationHistoryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.RealEstateProperty
+ */
+export class RealEstateProperty extends Message<RealEstateProperty> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string label = 2;
+   */
+  label = "";
+
+  /**
+   * @generated from field: string address = 3;
+   */
+  address = "";
+
+  /**
+   * ISO-3166 alpha-2
+   *
+   * @generated from field: string country = 4;
+   */
+  country = "";
+
+  /**
+   * empty when not yet mirrored
+   *
+   * @generated from field: string asset_id = 5;
+   */
+  assetId = "";
+
+  /**
+   * @generated from field: double current_valuation_usd = 6;
+   */
+  currentValuationUsd = 0;
+
+  /**
+   * 'manual' | 'zillow' | 'rightmove' | 'redfin' | 'domain'
+   *
+   * @generated from field: string current_source = 7;
+   */
+  currentSource = "";
+
+  /**
+   * unix seconds, 0 when never valued
+   *
+   * @generated from field: int64 current_valued_at = 8;
+   */
+  currentValuedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<RealEstateProperty>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.RealEstateProperty";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "country", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "current_valuation_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "current_source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "current_valued_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RealEstateProperty {
+    return new RealEstateProperty().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RealEstateProperty {
+    return new RealEstateProperty().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RealEstateProperty {
+    return new RealEstateProperty().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RealEstateProperty | PlainMessage<RealEstateProperty> | undefined, b: RealEstateProperty | PlainMessage<RealEstateProperty> | undefined): boolean {
+    return proto3.util.equals(RealEstateProperty, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListRealEstatePropertiesRequest
+ */
+export class ListRealEstatePropertiesRequest extends Message<ListRealEstatePropertiesRequest> {
+  constructor(data?: PartialMessage<ListRealEstatePropertiesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListRealEstatePropertiesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListRealEstatePropertiesRequest {
+    return new ListRealEstatePropertiesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListRealEstatePropertiesRequest {
+    return new ListRealEstatePropertiesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListRealEstatePropertiesRequest {
+    return new ListRealEstatePropertiesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListRealEstatePropertiesRequest | PlainMessage<ListRealEstatePropertiesRequest> | undefined, b: ListRealEstatePropertiesRequest | PlainMessage<ListRealEstatePropertiesRequest> | undefined): boolean {
+    return proto3.util.equals(ListRealEstatePropertiesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListRealEstatePropertiesResponse
+ */
+export class ListRealEstatePropertiesResponse extends Message<ListRealEstatePropertiesResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.RealEstateProperty properties = 1;
+   */
+  properties: RealEstateProperty[] = [];
+
+  constructor(data?: PartialMessage<ListRealEstatePropertiesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListRealEstatePropertiesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "properties", kind: "message", T: RealEstateProperty, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListRealEstatePropertiesResponse {
+    return new ListRealEstatePropertiesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListRealEstatePropertiesResponse {
+    return new ListRealEstatePropertiesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListRealEstatePropertiesResponse {
+    return new ListRealEstatePropertiesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListRealEstatePropertiesResponse | PlainMessage<ListRealEstatePropertiesResponse> | undefined, b: ListRealEstatePropertiesResponse | PlainMessage<ListRealEstatePropertiesResponse> | undefined): boolean {
+    return proto3.util.equals(ListRealEstatePropertiesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.CreateRealEstatePropertyRequest
+ */
+export class CreateRealEstatePropertyRequest extends Message<CreateRealEstatePropertyRequest> {
+  /**
+   * @generated from field: string label = 1;
+   */
+  label = "";
+
+  /**
+   * @generated from field: string address = 2;
+   */
+  address = "";
+
+  /**
+   * ISO-3166 alpha-2; empty defaults to "US"
+   *
+   * @generated from field: string country = 3;
+   */
+  country = "";
+
+  /**
+   * Optional initial value. When 0 the service tries the configured
+   * AVM provider for the country and falls back to manual when no
+   * provider is wired.
+   *
+   * @generated from field: double initial_valuation_usd = 4;
+   */
+  initialValuationUsd = 0;
+
+  constructor(data?: PartialMessage<CreateRealEstatePropertyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.CreateRealEstatePropertyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "country", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "initial_valuation_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateRealEstatePropertyRequest {
+    return new CreateRealEstatePropertyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateRealEstatePropertyRequest {
+    return new CreateRealEstatePropertyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateRealEstatePropertyRequest {
+    return new CreateRealEstatePropertyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateRealEstatePropertyRequest | PlainMessage<CreateRealEstatePropertyRequest> | undefined, b: CreateRealEstatePropertyRequest | PlainMessage<CreateRealEstatePropertyRequest> | undefined): boolean {
+    return proto3.util.equals(CreateRealEstatePropertyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.CreateRealEstatePropertyResponse
+ */
+export class CreateRealEstatePropertyResponse extends Message<CreateRealEstatePropertyResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.RealEstateProperty property = 1;
+   */
+  property?: RealEstateProperty;
+
+  constructor(data?: PartialMessage<CreateRealEstatePropertyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.CreateRealEstatePropertyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "property", kind: "message", T: RealEstateProperty },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateRealEstatePropertyResponse {
+    return new CreateRealEstatePropertyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateRealEstatePropertyResponse {
+    return new CreateRealEstatePropertyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateRealEstatePropertyResponse {
+    return new CreateRealEstatePropertyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateRealEstatePropertyResponse | PlainMessage<CreateRealEstatePropertyResponse> | undefined, b: CreateRealEstatePropertyResponse | PlainMessage<CreateRealEstatePropertyResponse> | undefined): boolean {
+    return proto3.util.equals(CreateRealEstatePropertyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.RecordManualValuationRequest
+ */
+export class RecordManualValuationRequest extends Message<RecordManualValuationRequest> {
+  /**
+   * @generated from field: string property_id = 1;
+   */
+  propertyId = "";
+
+  /**
+   * @generated from field: double valuation_usd = 2;
+   */
+  valuationUsd = 0;
+
+  /**
+   * Optional R2/S3 URL to an uploaded appraisal document.
+   *
+   * @generated from field: string appraisal_url = 3;
+   */
+  appraisalUrl = "";
+
+  constructor(data?: PartialMessage<RecordManualValuationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.RecordManualValuationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "property_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "valuation_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "appraisal_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordManualValuationRequest {
+    return new RecordManualValuationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordManualValuationRequest {
+    return new RecordManualValuationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordManualValuationRequest {
+    return new RecordManualValuationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordManualValuationRequest | PlainMessage<RecordManualValuationRequest> | undefined, b: RecordManualValuationRequest | PlainMessage<RecordManualValuationRequest> | undefined): boolean {
+    return proto3.util.equals(RecordManualValuationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.RecordManualValuationResponse
+ */
+export class RecordManualValuationResponse extends Message<RecordManualValuationResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.RealEstateProperty property = 1;
+   */
+  property?: RealEstateProperty;
+
+  constructor(data?: PartialMessage<RecordManualValuationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.RecordManualValuationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "property", kind: "message", T: RealEstateProperty },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordManualValuationResponse {
+    return new RecordManualValuationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordManualValuationResponse {
+    return new RecordManualValuationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordManualValuationResponse {
+    return new RecordManualValuationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordManualValuationResponse | PlainMessage<RecordManualValuationResponse> | undefined, b: RecordManualValuationResponse | PlainMessage<RecordManualValuationResponse> | undefined): boolean {
+    return proto3.util.equals(RecordManualValuationResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.RefreshAvmValuationRequest
+ */
+export class RefreshAvmValuationRequest extends Message<RefreshAvmValuationRequest> {
+  /**
+   * @generated from field: string property_id = 1;
+   */
+  propertyId = "";
+
+  constructor(data?: PartialMessage<RefreshAvmValuationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.RefreshAvmValuationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "property_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefreshAvmValuationRequest {
+    return new RefreshAvmValuationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefreshAvmValuationRequest {
+    return new RefreshAvmValuationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefreshAvmValuationRequest {
+    return new RefreshAvmValuationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RefreshAvmValuationRequest | PlainMessage<RefreshAvmValuationRequest> | undefined, b: RefreshAvmValuationRequest | PlainMessage<RefreshAvmValuationRequest> | undefined): boolean {
+    return proto3.util.equals(RefreshAvmValuationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.RefreshAvmValuationResponse
+ */
+export class RefreshAvmValuationResponse extends Message<RefreshAvmValuationResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.RealEstateProperty property = 1;
+   */
+  property?: RealEstateProperty;
+
+  constructor(data?: PartialMessage<RefreshAvmValuationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.RefreshAvmValuationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "property", kind: "message", T: RealEstateProperty },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefreshAvmValuationResponse {
+    return new RefreshAvmValuationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefreshAvmValuationResponse {
+    return new RefreshAvmValuationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefreshAvmValuationResponse {
+    return new RefreshAvmValuationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RefreshAvmValuationResponse | PlainMessage<RefreshAvmValuationResponse> | undefined, b: RefreshAvmValuationResponse | PlainMessage<RefreshAvmValuationResponse> | undefined): boolean {
+    return proto3.util.equals(RefreshAvmValuationResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.DeleteRealEstatePropertyRequest
+ */
+export class DeleteRealEstatePropertyRequest extends Message<DeleteRealEstatePropertyRequest> {
+  /**
+   * @generated from field: string property_id = 1;
+   */
+  propertyId = "";
+
+  constructor(data?: PartialMessage<DeleteRealEstatePropertyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.DeleteRealEstatePropertyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "property_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteRealEstatePropertyRequest {
+    return new DeleteRealEstatePropertyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteRealEstatePropertyRequest {
+    return new DeleteRealEstatePropertyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteRealEstatePropertyRequest {
+    return new DeleteRealEstatePropertyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteRealEstatePropertyRequest | PlainMessage<DeleteRealEstatePropertyRequest> | undefined, b: DeleteRealEstatePropertyRequest | PlainMessage<DeleteRealEstatePropertyRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteRealEstatePropertyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.DeleteRealEstatePropertyResponse
+ */
+export class DeleteRealEstatePropertyResponse extends Message<DeleteRealEstatePropertyResponse> {
+  constructor(data?: PartialMessage<DeleteRealEstatePropertyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.DeleteRealEstatePropertyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteRealEstatePropertyResponse {
+    return new DeleteRealEstatePropertyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteRealEstatePropertyResponse {
+    return new DeleteRealEstatePropertyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteRealEstatePropertyResponse {
+    return new DeleteRealEstatePropertyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteRealEstatePropertyResponse | PlainMessage<DeleteRealEstatePropertyResponse> | undefined, b: DeleteRealEstatePropertyResponse | PlainMessage<DeleteRealEstatePropertyResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteRealEstatePropertyResponse, a, b);
   }
 }
 

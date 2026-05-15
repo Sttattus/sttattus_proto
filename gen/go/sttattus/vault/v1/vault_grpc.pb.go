@@ -32,6 +32,11 @@ const (
 	VaultService_ListPlaidHoldings_FullMethodName        = "/sttattus.vault.v1.VaultService/ListPlaidHoldings"
 	VaultService_GetCurrentAllocation_FullMethodName     = "/sttattus.vault.v1.VaultService/GetCurrentAllocation"
 	VaultService_ListAllocationHistory_FullMethodName    = "/sttattus.vault.v1.VaultService/ListAllocationHistory"
+	VaultService_ListRealEstateProperties_FullMethodName = "/sttattus.vault.v1.VaultService/ListRealEstateProperties"
+	VaultService_CreateRealEstateProperty_FullMethodName = "/sttattus.vault.v1.VaultService/CreateRealEstateProperty"
+	VaultService_RecordManualValuation_FullMethodName    = "/sttattus.vault.v1.VaultService/RecordManualValuation"
+	VaultService_RefreshAvmValuation_FullMethodName      = "/sttattus.vault.v1.VaultService/RefreshAvmValuation"
+	VaultService_DeleteRealEstateProperty_FullMethodName = "/sttattus.vault.v1.VaultService/DeleteRealEstateProperty"
 )
 
 // VaultServiceClient is the client API for VaultService service.
@@ -60,6 +65,12 @@ type VaultServiceClient interface {
 	// V8.3 — allocation donut + stacked-area history.
 	GetCurrentAllocation(ctx context.Context, in *GetCurrentAllocationRequest, opts ...grpc.CallOption) (*GetCurrentAllocationResponse, error)
 	ListAllocationHistory(ctx context.Context, in *ListAllocationHistoryRequest, opts ...grpc.CallOption) (*ListAllocationHistoryResponse, error)
+	// V8.5 — real-estate properties + AVM lifecycle.
+	ListRealEstateProperties(ctx context.Context, in *ListRealEstatePropertiesRequest, opts ...grpc.CallOption) (*ListRealEstatePropertiesResponse, error)
+	CreateRealEstateProperty(ctx context.Context, in *CreateRealEstatePropertyRequest, opts ...grpc.CallOption) (*CreateRealEstatePropertyResponse, error)
+	RecordManualValuation(ctx context.Context, in *RecordManualValuationRequest, opts ...grpc.CallOption) (*RecordManualValuationResponse, error)
+	RefreshAvmValuation(ctx context.Context, in *RefreshAvmValuationRequest, opts ...grpc.CallOption) (*RefreshAvmValuationResponse, error)
+	DeleteRealEstateProperty(ctx context.Context, in *DeleteRealEstatePropertyRequest, opts ...grpc.CallOption) (*DeleteRealEstatePropertyResponse, error)
 }
 
 type vaultServiceClient struct {
@@ -200,6 +211,56 @@ func (c *vaultServiceClient) ListAllocationHistory(ctx context.Context, in *List
 	return out, nil
 }
 
+func (c *vaultServiceClient) ListRealEstateProperties(ctx context.Context, in *ListRealEstatePropertiesRequest, opts ...grpc.CallOption) (*ListRealEstatePropertiesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListRealEstatePropertiesResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListRealEstateProperties_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) CreateRealEstateProperty(ctx context.Context, in *CreateRealEstatePropertyRequest, opts ...grpc.CallOption) (*CreateRealEstatePropertyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateRealEstatePropertyResponse)
+	err := c.cc.Invoke(ctx, VaultService_CreateRealEstateProperty_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) RecordManualValuation(ctx context.Context, in *RecordManualValuationRequest, opts ...grpc.CallOption) (*RecordManualValuationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordManualValuationResponse)
+	err := c.cc.Invoke(ctx, VaultService_RecordManualValuation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) RefreshAvmValuation(ctx context.Context, in *RefreshAvmValuationRequest, opts ...grpc.CallOption) (*RefreshAvmValuationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RefreshAvmValuationResponse)
+	err := c.cc.Invoke(ctx, VaultService_RefreshAvmValuation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) DeleteRealEstateProperty(ctx context.Context, in *DeleteRealEstatePropertyRequest, opts ...grpc.CallOption) (*DeleteRealEstatePropertyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteRealEstatePropertyResponse)
+	err := c.cc.Invoke(ctx, VaultService_DeleteRealEstateProperty_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultServiceServer is the server API for VaultService service.
 // All implementations must embed UnimplementedVaultServiceServer
 // for forward compatibility.
@@ -226,6 +287,12 @@ type VaultServiceServer interface {
 	// V8.3 — allocation donut + stacked-area history.
 	GetCurrentAllocation(context.Context, *GetCurrentAllocationRequest) (*GetCurrentAllocationResponse, error)
 	ListAllocationHistory(context.Context, *ListAllocationHistoryRequest) (*ListAllocationHistoryResponse, error)
+	// V8.5 — real-estate properties + AVM lifecycle.
+	ListRealEstateProperties(context.Context, *ListRealEstatePropertiesRequest) (*ListRealEstatePropertiesResponse, error)
+	CreateRealEstateProperty(context.Context, *CreateRealEstatePropertyRequest) (*CreateRealEstatePropertyResponse, error)
+	RecordManualValuation(context.Context, *RecordManualValuationRequest) (*RecordManualValuationResponse, error)
+	RefreshAvmValuation(context.Context, *RefreshAvmValuationRequest) (*RefreshAvmValuationResponse, error)
+	DeleteRealEstateProperty(context.Context, *DeleteRealEstatePropertyRequest) (*DeleteRealEstatePropertyResponse, error)
 	mustEmbedUnimplementedVaultServiceServer()
 }
 
@@ -274,6 +341,21 @@ func (UnimplementedVaultServiceServer) GetCurrentAllocation(context.Context, *Ge
 }
 func (UnimplementedVaultServiceServer) ListAllocationHistory(context.Context, *ListAllocationHistoryRequest) (*ListAllocationHistoryResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListAllocationHistory not implemented")
+}
+func (UnimplementedVaultServiceServer) ListRealEstateProperties(context.Context, *ListRealEstatePropertiesRequest) (*ListRealEstatePropertiesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListRealEstateProperties not implemented")
+}
+func (UnimplementedVaultServiceServer) CreateRealEstateProperty(context.Context, *CreateRealEstatePropertyRequest) (*CreateRealEstatePropertyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateRealEstateProperty not implemented")
+}
+func (UnimplementedVaultServiceServer) RecordManualValuation(context.Context, *RecordManualValuationRequest) (*RecordManualValuationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordManualValuation not implemented")
+}
+func (UnimplementedVaultServiceServer) RefreshAvmValuation(context.Context, *RefreshAvmValuationRequest) (*RefreshAvmValuationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RefreshAvmValuation not implemented")
+}
+func (UnimplementedVaultServiceServer) DeleteRealEstateProperty(context.Context, *DeleteRealEstatePropertyRequest) (*DeleteRealEstatePropertyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteRealEstateProperty not implemented")
 }
 func (UnimplementedVaultServiceServer) mustEmbedUnimplementedVaultServiceServer() {}
 func (UnimplementedVaultServiceServer) testEmbeddedByValue()                      {}
@@ -530,6 +612,96 @@ func _VaultService_ListAllocationHistory_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultService_ListRealEstateProperties_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRealEstatePropertiesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListRealEstateProperties(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListRealEstateProperties_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListRealEstateProperties(ctx, req.(*ListRealEstatePropertiesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_CreateRealEstateProperty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateRealEstatePropertyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).CreateRealEstateProperty(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_CreateRealEstateProperty_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).CreateRealEstateProperty(ctx, req.(*CreateRealEstatePropertyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_RecordManualValuation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordManualValuationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).RecordManualValuation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_RecordManualValuation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).RecordManualValuation(ctx, req.(*RecordManualValuationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_RefreshAvmValuation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RefreshAvmValuationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).RefreshAvmValuation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_RefreshAvmValuation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).RefreshAvmValuation(ctx, req.(*RefreshAvmValuationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_DeleteRealEstateProperty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteRealEstatePropertyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).DeleteRealEstateProperty(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_DeleteRealEstateProperty_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).DeleteRealEstateProperty(ctx, req.(*DeleteRealEstatePropertyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultService_ServiceDesc is the grpc.ServiceDesc for VaultService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -588,6 +760,26 @@ var VaultService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListAllocationHistory",
 			Handler:    _VaultService_ListAllocationHistory_Handler,
+		},
+		{
+			MethodName: "ListRealEstateProperties",
+			Handler:    _VaultService_ListRealEstateProperties_Handler,
+		},
+		{
+			MethodName: "CreateRealEstateProperty",
+			Handler:    _VaultService_CreateRealEstateProperty_Handler,
+		},
+		{
+			MethodName: "RecordManualValuation",
+			Handler:    _VaultService_RecordManualValuation_Handler,
+		},
+		{
+			MethodName: "RefreshAvmValuation",
+			Handler:    _VaultService_RefreshAvmValuation_Handler,
+		},
+		{
+			MethodName: "DeleteRealEstateProperty",
+			Handler:    _VaultService_DeleteRealEstateProperty_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

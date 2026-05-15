@@ -556,3 +556,155 @@ final $typed_data.Uint8List listAllocationHistoryResponseDescriptor = $convert.b
     'Ch1MaXN0QWxsb2NhdGlvbkhpc3RvcnlSZXNwb25zZRJBCgZwb2ludHMYASADKAsyKS5zdHRhdH'
     'R1cy52YXVsdC52MS5BbGxvY2F0aW9uSGlzdG9yeVBvaW50UgZwb2ludHM=');
 
+@$core.Deprecated('Use realEstatePropertyDescriptor instead')
+const RealEstateProperty$json = {
+  '1': 'RealEstateProperty',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'label', '3': 2, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'address', '3': 3, '4': 1, '5': 9, '10': 'address'},
+    {'1': 'country', '3': 4, '4': 1, '5': 9, '10': 'country'},
+    {'1': 'asset_id', '3': 5, '4': 1, '5': 9, '10': 'assetId'},
+    {'1': 'current_valuation_usd', '3': 6, '4': 1, '5': 1, '10': 'currentValuationUsd'},
+    {'1': 'current_source', '3': 7, '4': 1, '5': 9, '10': 'currentSource'},
+    {'1': 'current_valued_at', '3': 8, '4': 1, '5': 3, '10': 'currentValuedAt'},
+  ],
+};
+
+/// Descriptor for `RealEstateProperty`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List realEstatePropertyDescriptor = $convert.base64Decode(
+    'ChJSZWFsRXN0YXRlUHJvcGVydHkSDgoCaWQYASABKAlSAmlkEhQKBWxhYmVsGAIgASgJUgVsYW'
+    'JlbBIYCgdhZGRyZXNzGAMgASgJUgdhZGRyZXNzEhgKB2NvdW50cnkYBCABKAlSB2NvdW50cnkS'
+    'GQoIYXNzZXRfaWQYBSABKAlSB2Fzc2V0SWQSMgoVY3VycmVudF92YWx1YXRpb25fdXNkGAYgAS'
+    'gBUhNjdXJyZW50VmFsdWF0aW9uVXNkEiUKDmN1cnJlbnRfc291cmNlGAcgASgJUg1jdXJyZW50'
+    'U291cmNlEioKEWN1cnJlbnRfdmFsdWVkX2F0GAggASgDUg9jdXJyZW50VmFsdWVkQXQ=');
+
+@$core.Deprecated('Use listRealEstatePropertiesRequestDescriptor instead')
+const ListRealEstatePropertiesRequest$json = {
+  '1': 'ListRealEstatePropertiesRequest',
+};
+
+/// Descriptor for `ListRealEstatePropertiesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRealEstatePropertiesRequestDescriptor = $convert.base64Decode(
+    'Ch9MaXN0UmVhbEVzdGF0ZVByb3BlcnRpZXNSZXF1ZXN0');
+
+@$core.Deprecated('Use listRealEstatePropertiesResponseDescriptor instead')
+const ListRealEstatePropertiesResponse$json = {
+  '1': 'ListRealEstatePropertiesResponse',
+  '2': [
+    {'1': 'properties', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.RealEstateProperty', '10': 'properties'},
+  ],
+};
+
+/// Descriptor for `ListRealEstatePropertiesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRealEstatePropertiesResponseDescriptor = $convert.base64Decode(
+    'CiBMaXN0UmVhbEVzdGF0ZVByb3BlcnRpZXNSZXNwb25zZRJFCgpwcm9wZXJ0aWVzGAEgAygLMi'
+    'Uuc3R0YXR0dXMudmF1bHQudjEuUmVhbEVzdGF0ZVByb3BlcnR5Ugpwcm9wZXJ0aWVz');
+
+@$core.Deprecated('Use createRealEstatePropertyRequestDescriptor instead')
+const CreateRealEstatePropertyRequest$json = {
+  '1': 'CreateRealEstatePropertyRequest',
+  '2': [
+    {'1': 'label', '3': 1, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'address', '3': 2, '4': 1, '5': 9, '10': 'address'},
+    {'1': 'country', '3': 3, '4': 1, '5': 9, '10': 'country'},
+    {'1': 'initial_valuation_usd', '3': 4, '4': 1, '5': 1, '10': 'initialValuationUsd'},
+  ],
+};
+
+/// Descriptor for `CreateRealEstatePropertyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createRealEstatePropertyRequestDescriptor = $convert.base64Decode(
+    'Ch9DcmVhdGVSZWFsRXN0YXRlUHJvcGVydHlSZXF1ZXN0EhQKBWxhYmVsGAEgASgJUgVsYWJlbB'
+    'IYCgdhZGRyZXNzGAIgASgJUgdhZGRyZXNzEhgKB2NvdW50cnkYAyABKAlSB2NvdW50cnkSMgoV'
+    'aW5pdGlhbF92YWx1YXRpb25fdXNkGAQgASgBUhNpbml0aWFsVmFsdWF0aW9uVXNk');
+
+@$core.Deprecated('Use createRealEstatePropertyResponseDescriptor instead')
+const CreateRealEstatePropertyResponse$json = {
+  '1': 'CreateRealEstatePropertyResponse',
+  '2': [
+    {'1': 'property', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.RealEstateProperty', '10': 'property'},
+  ],
+};
+
+/// Descriptor for `CreateRealEstatePropertyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createRealEstatePropertyResponseDescriptor = $convert.base64Decode(
+    'CiBDcmVhdGVSZWFsRXN0YXRlUHJvcGVydHlSZXNwb25zZRJBCghwcm9wZXJ0eRgBIAEoCzIlLn'
+    'N0dGF0dHVzLnZhdWx0LnYxLlJlYWxFc3RhdGVQcm9wZXJ0eVIIcHJvcGVydHk=');
+
+@$core.Deprecated('Use recordManualValuationRequestDescriptor instead')
+const RecordManualValuationRequest$json = {
+  '1': 'RecordManualValuationRequest',
+  '2': [
+    {'1': 'property_id', '3': 1, '4': 1, '5': 9, '10': 'propertyId'},
+    {'1': 'valuation_usd', '3': 2, '4': 1, '5': 1, '10': 'valuationUsd'},
+    {'1': 'appraisal_url', '3': 3, '4': 1, '5': 9, '10': 'appraisalUrl'},
+  ],
+};
+
+/// Descriptor for `RecordManualValuationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordManualValuationRequestDescriptor = $convert.base64Decode(
+    'ChxSZWNvcmRNYW51YWxWYWx1YXRpb25SZXF1ZXN0Eh8KC3Byb3BlcnR5X2lkGAEgASgJUgpwcm'
+    '9wZXJ0eUlkEiMKDXZhbHVhdGlvbl91c2QYAiABKAFSDHZhbHVhdGlvblVzZBIjCg1hcHByYWlz'
+    'YWxfdXJsGAMgASgJUgxhcHByYWlzYWxVcmw=');
+
+@$core.Deprecated('Use recordManualValuationResponseDescriptor instead')
+const RecordManualValuationResponse$json = {
+  '1': 'RecordManualValuationResponse',
+  '2': [
+    {'1': 'property', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.RealEstateProperty', '10': 'property'},
+  ],
+};
+
+/// Descriptor for `RecordManualValuationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordManualValuationResponseDescriptor = $convert.base64Decode(
+    'Ch1SZWNvcmRNYW51YWxWYWx1YXRpb25SZXNwb25zZRJBCghwcm9wZXJ0eRgBIAEoCzIlLnN0dG'
+    'F0dHVzLnZhdWx0LnYxLlJlYWxFc3RhdGVQcm9wZXJ0eVIIcHJvcGVydHk=');
+
+@$core.Deprecated('Use refreshAvmValuationRequestDescriptor instead')
+const RefreshAvmValuationRequest$json = {
+  '1': 'RefreshAvmValuationRequest',
+  '2': [
+    {'1': 'property_id', '3': 1, '4': 1, '5': 9, '10': 'propertyId'},
+  ],
+};
+
+/// Descriptor for `RefreshAvmValuationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List refreshAvmValuationRequestDescriptor = $convert.base64Decode(
+    'ChpSZWZyZXNoQXZtVmFsdWF0aW9uUmVxdWVzdBIfCgtwcm9wZXJ0eV9pZBgBIAEoCVIKcHJvcG'
+    'VydHlJZA==');
+
+@$core.Deprecated('Use refreshAvmValuationResponseDescriptor instead')
+const RefreshAvmValuationResponse$json = {
+  '1': 'RefreshAvmValuationResponse',
+  '2': [
+    {'1': 'property', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.RealEstateProperty', '10': 'property'},
+  ],
+};
+
+/// Descriptor for `RefreshAvmValuationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List refreshAvmValuationResponseDescriptor = $convert.base64Decode(
+    'ChtSZWZyZXNoQXZtVmFsdWF0aW9uUmVzcG9uc2USQQoIcHJvcGVydHkYASABKAsyJS5zdHRhdH'
+    'R1cy52YXVsdC52MS5SZWFsRXN0YXRlUHJvcGVydHlSCHByb3BlcnR5');
+
+@$core.Deprecated('Use deleteRealEstatePropertyRequestDescriptor instead')
+const DeleteRealEstatePropertyRequest$json = {
+  '1': 'DeleteRealEstatePropertyRequest',
+  '2': [
+    {'1': 'property_id', '3': 1, '4': 1, '5': 9, '10': 'propertyId'},
+  ],
+};
+
+/// Descriptor for `DeleteRealEstatePropertyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteRealEstatePropertyRequestDescriptor = $convert.base64Decode(
+    'Ch9EZWxldGVSZWFsRXN0YXRlUHJvcGVydHlSZXF1ZXN0Eh8KC3Byb3BlcnR5X2lkGAEgASgJUg'
+    'pwcm9wZXJ0eUlk');
+
+@$core.Deprecated('Use deleteRealEstatePropertyResponseDescriptor instead')
+const DeleteRealEstatePropertyResponse$json = {
+  '1': 'DeleteRealEstatePropertyResponse',
+};
+
+/// Descriptor for `DeleteRealEstatePropertyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteRealEstatePropertyResponseDescriptor = $convert.base64Decode(
+    'CiBEZWxldGVSZWFsRXN0YXRlUHJvcGVydHlSZXNwb25zZQ==');
+

@@ -103,6 +103,13 @@ service VaultService {
   // V8.3 — allocation donut + stacked-area history.
   rpc GetCurrentAllocation(GetCurrentAllocationRequest) returns (GetCurrentAllocationResponse);
   rpc ListAllocationHistory(ListAllocationHistoryRequest) returns (ListAllocationHistoryResponse);
+
+  // V8.5 — real-estate properties + AVM lifecycle.
+  rpc ListRealEstateProperties(ListRealEstatePropertiesRequest) returns (ListRealEstatePropertiesResponse);
+  rpc CreateRealEstateProperty(CreateRealEstatePropertyRequest) returns (CreateRealEstatePropertyResponse);
+  rpc RecordManualValuation(RecordManualValuationRequest) returns (RecordManualValuationResponse);
+  rpc RefreshAvmValuation(RefreshAvmValuationRequest) returns (RefreshAvmValuationResponse);
+  rpc DeleteRealEstateProperty(DeleteRealEstatePropertyRequest) returns (DeleteRealEstatePropertyResponse);
 }
 
 message SyncWealthRequest {
@@ -247,3 +254,62 @@ message ListAllocationHistoryResponse {
   // Flat tuples; the stacked-area chart pivots in the client.
   repeated AllocationHistoryPoint points = 1;
 }
+
+// === Real-estate AVM (V8.5) ===
+
+message RealEstateProperty {
+  string id = 1;
+  string label = 2;
+  string address = 3;
+  string country = 4; // ISO-3166 alpha-2
+  string asset_id = 5; // empty when not yet mirrored
+  double current_valuation_usd = 6;
+  // 'manual' | 'zillow' | 'rightmove' | 'redfin' | 'domain'
+  string current_source = 7;
+  int64 current_valued_at = 8; // unix seconds, 0 when never valued
+}
+
+message ListRealEstatePropertiesRequest {}
+
+message ListRealEstatePropertiesResponse {
+  repeated RealEstateProperty properties = 1;
+}
+
+message CreateRealEstatePropertyRequest {
+  string label = 1;
+  string address = 2;
+  string country = 3; // ISO-3166 alpha-2; empty defaults to "US"
+  // Optional initial value. When 0 the service tries the configured
+  // AVM provider for the country and falls back to manual when no
+  // provider is wired.
+  double initial_valuation_usd = 4;
+}
+
+message CreateRealEstatePropertyResponse {
+  RealEstateProperty property = 1;
+}
+
+message RecordManualValuationRequest {
+  string property_id = 1;
+  double valuation_usd = 2;
+  // Optional R2/S3 URL to an uploaded appraisal document.
+  string appraisal_url = 3;
+}
+
+message RecordManualValuationResponse {
+  RealEstateProperty property = 1;
+}
+
+message RefreshAvmValuationRequest {
+  string property_id = 1;
+}
+
+message RefreshAvmValuationResponse {
+  RealEstateProperty property = 1;
+}
+
+message DeleteRealEstatePropertyRequest {
+  string property_id = 1;
+}
+
+message DeleteRealEstatePropertyResponse {}

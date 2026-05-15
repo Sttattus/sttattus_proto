@@ -93,6 +93,27 @@ class VaultServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listAllocationHistory, request, options: options);
   }
 
+  /// V8.5 — real-estate properties + AVM lifecycle.
+  $grpc.ResponseFuture<$0.ListRealEstatePropertiesResponse> listRealEstateProperties($0.ListRealEstatePropertiesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listRealEstateProperties, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateRealEstatePropertyResponse> createRealEstateProperty($0.CreateRealEstatePropertyRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createRealEstateProperty, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordManualValuationResponse> recordManualValuation($0.RecordManualValuationRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$recordManualValuation, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RefreshAvmValuationResponse> refreshAvmValuation($0.RefreshAvmValuationRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$refreshAvmValuation, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteRealEstatePropertyResponse> deleteRealEstateProperty($0.DeleteRealEstatePropertyRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteRealEstateProperty, request, options: options);
+  }
+
     // method descriptors
 
   static final _$submitAsset = $grpc.ClientMethod<$0.SubmitAssetRequest, $0.SubmitAssetResponse>(
@@ -147,6 +168,26 @@ class VaultServiceClient extends $grpc.Client {
       '/sttattus.vault.v1.VaultService/ListAllocationHistory',
       ($0.ListAllocationHistoryRequest value) => value.writeToBuffer(),
       $0.ListAllocationHistoryResponse.fromBuffer);
+  static final _$listRealEstateProperties = $grpc.ClientMethod<$0.ListRealEstatePropertiesRequest, $0.ListRealEstatePropertiesResponse>(
+      '/sttattus.vault.v1.VaultService/ListRealEstateProperties',
+      ($0.ListRealEstatePropertiesRequest value) => value.writeToBuffer(),
+      $0.ListRealEstatePropertiesResponse.fromBuffer);
+  static final _$createRealEstateProperty = $grpc.ClientMethod<$0.CreateRealEstatePropertyRequest, $0.CreateRealEstatePropertyResponse>(
+      '/sttattus.vault.v1.VaultService/CreateRealEstateProperty',
+      ($0.CreateRealEstatePropertyRequest value) => value.writeToBuffer(),
+      $0.CreateRealEstatePropertyResponse.fromBuffer);
+  static final _$recordManualValuation = $grpc.ClientMethod<$0.RecordManualValuationRequest, $0.RecordManualValuationResponse>(
+      '/sttattus.vault.v1.VaultService/RecordManualValuation',
+      ($0.RecordManualValuationRequest value) => value.writeToBuffer(),
+      $0.RecordManualValuationResponse.fromBuffer);
+  static final _$refreshAvmValuation = $grpc.ClientMethod<$0.RefreshAvmValuationRequest, $0.RefreshAvmValuationResponse>(
+      '/sttattus.vault.v1.VaultService/RefreshAvmValuation',
+      ($0.RefreshAvmValuationRequest value) => value.writeToBuffer(),
+      $0.RefreshAvmValuationResponse.fromBuffer);
+  static final _$deleteRealEstateProperty = $grpc.ClientMethod<$0.DeleteRealEstatePropertyRequest, $0.DeleteRealEstatePropertyResponse>(
+      '/sttattus.vault.v1.VaultService/DeleteRealEstateProperty',
+      ($0.DeleteRealEstatePropertyRequest value) => value.writeToBuffer(),
+      $0.DeleteRealEstatePropertyResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.vault.v1.VaultService')
@@ -245,6 +286,41 @@ abstract class VaultServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListAllocationHistoryRequest.fromBuffer(value),
         ($0.ListAllocationHistoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListRealEstatePropertiesRequest, $0.ListRealEstatePropertiesResponse>(
+        'ListRealEstateProperties',
+        listRealEstateProperties_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListRealEstatePropertiesRequest.fromBuffer(value),
+        ($0.ListRealEstatePropertiesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateRealEstatePropertyRequest, $0.CreateRealEstatePropertyResponse>(
+        'CreateRealEstateProperty',
+        createRealEstateProperty_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateRealEstatePropertyRequest.fromBuffer(value),
+        ($0.CreateRealEstatePropertyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordManualValuationRequest, $0.RecordManualValuationResponse>(
+        'RecordManualValuation',
+        recordManualValuation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RecordManualValuationRequest.fromBuffer(value),
+        ($0.RecordManualValuationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RefreshAvmValuationRequest, $0.RefreshAvmValuationResponse>(
+        'RefreshAvmValuation',
+        refreshAvmValuation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RefreshAvmValuationRequest.fromBuffer(value),
+        ($0.RefreshAvmValuationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteRealEstatePropertyRequest, $0.DeleteRealEstatePropertyResponse>(
+        'DeleteRealEstateProperty',
+        deleteRealEstateProperty_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteRealEstatePropertyRequest.fromBuffer(value),
+        ($0.DeleteRealEstatePropertyResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.SubmitAssetResponse> submitAsset_Pre($grpc.ServiceCall $call, $async.Future<$0.SubmitAssetRequest> $request) async {
@@ -324,5 +400,35 @@ abstract class VaultServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListAllocationHistoryResponse> listAllocationHistory($grpc.ServiceCall call, $0.ListAllocationHistoryRequest request);
+
+  $async.Future<$0.ListRealEstatePropertiesResponse> listRealEstateProperties_Pre($grpc.ServiceCall $call, $async.Future<$0.ListRealEstatePropertiesRequest> $request) async {
+    return listRealEstateProperties($call, await $request);
+  }
+
+  $async.Future<$0.ListRealEstatePropertiesResponse> listRealEstateProperties($grpc.ServiceCall call, $0.ListRealEstatePropertiesRequest request);
+
+  $async.Future<$0.CreateRealEstatePropertyResponse> createRealEstateProperty_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateRealEstatePropertyRequest> $request) async {
+    return createRealEstateProperty($call, await $request);
+  }
+
+  $async.Future<$0.CreateRealEstatePropertyResponse> createRealEstateProperty($grpc.ServiceCall call, $0.CreateRealEstatePropertyRequest request);
+
+  $async.Future<$0.RecordManualValuationResponse> recordManualValuation_Pre($grpc.ServiceCall $call, $async.Future<$0.RecordManualValuationRequest> $request) async {
+    return recordManualValuation($call, await $request);
+  }
+
+  $async.Future<$0.RecordManualValuationResponse> recordManualValuation($grpc.ServiceCall call, $0.RecordManualValuationRequest request);
+
+  $async.Future<$0.RefreshAvmValuationResponse> refreshAvmValuation_Pre($grpc.ServiceCall $call, $async.Future<$0.RefreshAvmValuationRequest> $request) async {
+    return refreshAvmValuation($call, await $request);
+  }
+
+  $async.Future<$0.RefreshAvmValuationResponse> refreshAvmValuation($grpc.ServiceCall call, $0.RefreshAvmValuationRequest request);
+
+  $async.Future<$0.DeleteRealEstatePropertyResponse> deleteRealEstateProperty_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteRealEstatePropertyRequest> $request) async {
+    return deleteRealEstateProperty($call, await $request);
+  }
+
+  $async.Future<$0.DeleteRealEstatePropertyResponse> deleteRealEstateProperty($grpc.ServiceCall call, $0.DeleteRealEstatePropertyRequest request);
 
 }
