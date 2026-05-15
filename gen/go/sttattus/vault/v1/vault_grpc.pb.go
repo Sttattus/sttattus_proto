@@ -30,6 +30,8 @@ const (
 	VaultService_ListNetWorthHistory_FullMethodName      = "/sttattus.vault.v1.VaultService/ListNetWorthHistory"
 	VaultService_ListPlaidTransactions_FullMethodName    = "/sttattus.vault.v1.VaultService/ListPlaidTransactions"
 	VaultService_ListPlaidHoldings_FullMethodName        = "/sttattus.vault.v1.VaultService/ListPlaidHoldings"
+	VaultService_GetCurrentAllocation_FullMethodName     = "/sttattus.vault.v1.VaultService/GetCurrentAllocation"
+	VaultService_ListAllocationHistory_FullMethodName    = "/sttattus.vault.v1.VaultService/ListAllocationHistory"
 )
 
 // VaultServiceClient is the client API for VaultService service.
@@ -55,6 +57,9 @@ type VaultServiceClient interface {
 	// backend_go and surfaced for the Flutter dashboard.
 	ListPlaidTransactions(ctx context.Context, in *ListPlaidTransactionsRequest, opts ...grpc.CallOption) (*ListPlaidTransactionsResponse, error)
 	ListPlaidHoldings(ctx context.Context, in *ListPlaidHoldingsRequest, opts ...grpc.CallOption) (*ListPlaidHoldingsResponse, error)
+	// V8.3 — allocation donut + stacked-area history.
+	GetCurrentAllocation(ctx context.Context, in *GetCurrentAllocationRequest, opts ...grpc.CallOption) (*GetCurrentAllocationResponse, error)
+	ListAllocationHistory(ctx context.Context, in *ListAllocationHistoryRequest, opts ...grpc.CallOption) (*ListAllocationHistoryResponse, error)
 }
 
 type vaultServiceClient struct {
@@ -175,6 +180,26 @@ func (c *vaultServiceClient) ListPlaidHoldings(ctx context.Context, in *ListPlai
 	return out, nil
 }
 
+func (c *vaultServiceClient) GetCurrentAllocation(ctx context.Context, in *GetCurrentAllocationRequest, opts ...grpc.CallOption) (*GetCurrentAllocationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCurrentAllocationResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetCurrentAllocation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) ListAllocationHistory(ctx context.Context, in *ListAllocationHistoryRequest, opts ...grpc.CallOption) (*ListAllocationHistoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAllocationHistoryResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListAllocationHistory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultServiceServer is the server API for VaultService service.
 // All implementations must embed UnimplementedVaultServiceServer
 // for forward compatibility.
@@ -198,6 +223,9 @@ type VaultServiceServer interface {
 	// backend_go and surfaced for the Flutter dashboard.
 	ListPlaidTransactions(context.Context, *ListPlaidTransactionsRequest) (*ListPlaidTransactionsResponse, error)
 	ListPlaidHoldings(context.Context, *ListPlaidHoldingsRequest) (*ListPlaidHoldingsResponse, error)
+	// V8.3 — allocation donut + stacked-area history.
+	GetCurrentAllocation(context.Context, *GetCurrentAllocationRequest) (*GetCurrentAllocationResponse, error)
+	ListAllocationHistory(context.Context, *ListAllocationHistoryRequest) (*ListAllocationHistoryResponse, error)
 	mustEmbedUnimplementedVaultServiceServer()
 }
 
@@ -240,6 +268,12 @@ func (UnimplementedVaultServiceServer) ListPlaidTransactions(context.Context, *L
 }
 func (UnimplementedVaultServiceServer) ListPlaidHoldings(context.Context, *ListPlaidHoldingsRequest) (*ListPlaidHoldingsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListPlaidHoldings not implemented")
+}
+func (UnimplementedVaultServiceServer) GetCurrentAllocation(context.Context, *GetCurrentAllocationRequest) (*GetCurrentAllocationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCurrentAllocation not implemented")
+}
+func (UnimplementedVaultServiceServer) ListAllocationHistory(context.Context, *ListAllocationHistoryRequest) (*ListAllocationHistoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAllocationHistory not implemented")
 }
 func (UnimplementedVaultServiceServer) mustEmbedUnimplementedVaultServiceServer() {}
 func (UnimplementedVaultServiceServer) testEmbeddedByValue()                      {}
@@ -460,6 +494,42 @@ func _VaultService_ListPlaidHoldings_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultService_GetCurrentAllocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCurrentAllocationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetCurrentAllocation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetCurrentAllocation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetCurrentAllocation(ctx, req.(*GetCurrentAllocationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_ListAllocationHistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAllocationHistoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListAllocationHistory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListAllocationHistory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListAllocationHistory(ctx, req.(*ListAllocationHistoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultService_ServiceDesc is the grpc.ServiceDesc for VaultService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -510,6 +580,14 @@ var VaultService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListPlaidHoldings",
 			Handler:    _VaultService_ListPlaidHoldings_Handler,
+		},
+		{
+			MethodName: "GetCurrentAllocation",
+			Handler:    _VaultService_GetCurrentAllocation_Handler,
+		},
+		{
+			MethodName: "ListAllocationHistory",
+			Handler:    _VaultService_ListAllocationHistory_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -84,6 +84,15 @@ class VaultServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listPlaidHoldings, request, options: options);
   }
 
+  /// V8.3 — allocation donut + stacked-area history.
+  $grpc.ResponseFuture<$0.GetCurrentAllocationResponse> getCurrentAllocation($0.GetCurrentAllocationRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getCurrentAllocation, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListAllocationHistoryResponse> listAllocationHistory($0.ListAllocationHistoryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listAllocationHistory, request, options: options);
+  }
+
     // method descriptors
 
   static final _$submitAsset = $grpc.ClientMethod<$0.SubmitAssetRequest, $0.SubmitAssetResponse>(
@@ -130,6 +139,14 @@ class VaultServiceClient extends $grpc.Client {
       '/sttattus.vault.v1.VaultService/ListPlaidHoldings',
       ($0.ListPlaidHoldingsRequest value) => value.writeToBuffer(),
       $0.ListPlaidHoldingsResponse.fromBuffer);
+  static final _$getCurrentAllocation = $grpc.ClientMethod<$0.GetCurrentAllocationRequest, $0.GetCurrentAllocationResponse>(
+      '/sttattus.vault.v1.VaultService/GetCurrentAllocation',
+      ($0.GetCurrentAllocationRequest value) => value.writeToBuffer(),
+      $0.GetCurrentAllocationResponse.fromBuffer);
+  static final _$listAllocationHistory = $grpc.ClientMethod<$0.ListAllocationHistoryRequest, $0.ListAllocationHistoryResponse>(
+      '/sttattus.vault.v1.VaultService/ListAllocationHistory',
+      ($0.ListAllocationHistoryRequest value) => value.writeToBuffer(),
+      $0.ListAllocationHistoryResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.vault.v1.VaultService')
@@ -214,6 +231,20 @@ abstract class VaultServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListPlaidHoldingsRequest.fromBuffer(value),
         ($0.ListPlaidHoldingsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetCurrentAllocationRequest, $0.GetCurrentAllocationResponse>(
+        'GetCurrentAllocation',
+        getCurrentAllocation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetCurrentAllocationRequest.fromBuffer(value),
+        ($0.GetCurrentAllocationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAllocationHistoryRequest, $0.ListAllocationHistoryResponse>(
+        'ListAllocationHistory',
+        listAllocationHistory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListAllocationHistoryRequest.fromBuffer(value),
+        ($0.ListAllocationHistoryResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.SubmitAssetResponse> submitAsset_Pre($grpc.ServiceCall $call, $async.Future<$0.SubmitAssetRequest> $request) async {
@@ -281,5 +312,17 @@ abstract class VaultServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListPlaidHoldingsResponse> listPlaidHoldings($grpc.ServiceCall call, $0.ListPlaidHoldingsRequest request);
+
+  $async.Future<$0.GetCurrentAllocationResponse> getCurrentAllocation_Pre($grpc.ServiceCall $call, $async.Future<$0.GetCurrentAllocationRequest> $request) async {
+    return getCurrentAllocation($call, await $request);
+  }
+
+  $async.Future<$0.GetCurrentAllocationResponse> getCurrentAllocation($grpc.ServiceCall call, $0.GetCurrentAllocationRequest request);
+
+  $async.Future<$0.ListAllocationHistoryResponse> listAllocationHistory_Pre($grpc.ServiceCall $call, $async.Future<$0.ListAllocationHistoryRequest> $request) async {
+    return listAllocationHistory($call, await $request);
+  }
+
+  $async.Future<$0.ListAllocationHistoryResponse> listAllocationHistory($grpc.ServiceCall call, $0.ListAllocationHistoryRequest request);
 
 }

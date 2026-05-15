@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
+import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -124,6 +124,26 @@ export const VaultService = {
       name: "ListPlaidHoldings",
       I: ListPlaidHoldingsRequest,
       O: ListPlaidHoldingsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8.3 — allocation donut + stacked-area history.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetCurrentAllocation
+     */
+    getCurrentAllocation: {
+      name: "GetCurrentAllocation",
+      I: GetCurrentAllocationRequest,
+      O: GetCurrentAllocationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.ListAllocationHistory
+     */
+    listAllocationHistory: {
+      name: "ListAllocationHistory",
+      I: ListAllocationHistoryRequest,
+      O: ListAllocationHistoryResponse,
       kind: MethodKind.Unary,
     },
   }

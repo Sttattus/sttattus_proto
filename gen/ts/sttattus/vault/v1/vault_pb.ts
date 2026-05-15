@@ -1378,3 +1378,247 @@ export class ListPlaidHoldingsResponse extends Message<ListPlaidHoldingsResponse
   }
 }
 
+/**
+ * @generated from message sttattus.vault.v1.AllocationSlice
+ */
+export class AllocationSlice extends Message<AllocationSlice> {
+  /**
+   * 'fiat' | 'crypto' | 'rare_asset' | 'metal'
+   *
+   * @generated from field: string category = 1;
+   */
+  category = "";
+
+  /**
+   * @generated from field: double value_usd = 2;
+   */
+  valueUsd = 0;
+
+  constructor(data?: PartialMessage<AllocationSlice>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.AllocationSlice";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "value_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AllocationSlice {
+    return new AllocationSlice().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AllocationSlice {
+    return new AllocationSlice().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AllocationSlice {
+    return new AllocationSlice().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AllocationSlice | PlainMessage<AllocationSlice> | undefined, b: AllocationSlice | PlainMessage<AllocationSlice> | undefined): boolean {
+    return proto3.util.equals(AllocationSlice, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetCurrentAllocationRequest
+ */
+export class GetCurrentAllocationRequest extends Message<GetCurrentAllocationRequest> {
+  constructor(data?: PartialMessage<GetCurrentAllocationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetCurrentAllocationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCurrentAllocationRequest {
+    return new GetCurrentAllocationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCurrentAllocationRequest {
+    return new GetCurrentAllocationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCurrentAllocationRequest {
+    return new GetCurrentAllocationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetCurrentAllocationRequest | PlainMessage<GetCurrentAllocationRequest> | undefined, b: GetCurrentAllocationRequest | PlainMessage<GetCurrentAllocationRequest> | undefined): boolean {
+    return proto3.util.equals(GetCurrentAllocationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetCurrentAllocationResponse
+ */
+export class GetCurrentAllocationResponse extends Message<GetCurrentAllocationResponse> {
+  /**
+   * Approved-only sums per category, descending by value.
+   *
+   * @generated from field: repeated sttattus.vault.v1.AllocationSlice slices = 1;
+   */
+  slices: AllocationSlice[] = [];
+
+  constructor(data?: PartialMessage<GetCurrentAllocationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetCurrentAllocationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "slices", kind: "message", T: AllocationSlice, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCurrentAllocationResponse {
+    return new GetCurrentAllocationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCurrentAllocationResponse {
+    return new GetCurrentAllocationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCurrentAllocationResponse {
+    return new GetCurrentAllocationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetCurrentAllocationResponse | PlainMessage<GetCurrentAllocationResponse> | undefined, b: GetCurrentAllocationResponse | PlainMessage<GetCurrentAllocationResponse> | undefined): boolean {
+    return proto3.util.equals(GetCurrentAllocationResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.AllocationHistoryPoint
+ */
+export class AllocationHistoryPoint extends Message<AllocationHistoryPoint> {
+  /**
+   * YYYY-MM-DD UTC
+   *
+   * @generated from field: string date_iso = 1;
+   */
+  dateIso = "";
+
+  /**
+   * @generated from field: string category = 2;
+   */
+  category = "";
+
+  /**
+   * @generated from field: double value_usd = 3;
+   */
+  valueUsd = 0;
+
+  constructor(data?: PartialMessage<AllocationHistoryPoint>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.AllocationHistoryPoint";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "date_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "value_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AllocationHistoryPoint {
+    return new AllocationHistoryPoint().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AllocationHistoryPoint {
+    return new AllocationHistoryPoint().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AllocationHistoryPoint {
+    return new AllocationHistoryPoint().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AllocationHistoryPoint | PlainMessage<AllocationHistoryPoint> | undefined, b: AllocationHistoryPoint | PlainMessage<AllocationHistoryPoint> | undefined): boolean {
+    return proto3.util.equals(AllocationHistoryPoint, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListAllocationHistoryRequest
+ */
+export class ListAllocationHistoryRequest extends Message<ListAllocationHistoryRequest> {
+  /**
+   * Trailing window in days. 0 = default (90).
+   *
+   * @generated from field: int32 days = 1;
+   */
+  days = 0;
+
+  constructor(data?: PartialMessage<ListAllocationHistoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListAllocationHistoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAllocationHistoryRequest {
+    return new ListAllocationHistoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAllocationHistoryRequest {
+    return new ListAllocationHistoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAllocationHistoryRequest {
+    return new ListAllocationHistoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAllocationHistoryRequest | PlainMessage<ListAllocationHistoryRequest> | undefined, b: ListAllocationHistoryRequest | PlainMessage<ListAllocationHistoryRequest> | undefined): boolean {
+    return proto3.util.equals(ListAllocationHistoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListAllocationHistoryResponse
+ */
+export class ListAllocationHistoryResponse extends Message<ListAllocationHistoryResponse> {
+  /**
+   * Flat tuples; the stacked-area chart pivots in the client.
+   *
+   * @generated from field: repeated sttattus.vault.v1.AllocationHistoryPoint points = 1;
+   */
+  points: AllocationHistoryPoint[] = [];
+
+  constructor(data?: PartialMessage<ListAllocationHistoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListAllocationHistoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "points", kind: "message", T: AllocationHistoryPoint, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAllocationHistoryResponse {
+    return new ListAllocationHistoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAllocationHistoryResponse {
+    return new ListAllocationHistoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAllocationHistoryResponse {
+    return new ListAllocationHistoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAllocationHistoryResponse | PlainMessage<ListAllocationHistoryResponse> | undefined, b: ListAllocationHistoryResponse | PlainMessage<ListAllocationHistoryResponse> | undefined): boolean {
+    return proto3.util.equals(ListAllocationHistoryResponse, a, b);
+  }
+}
+

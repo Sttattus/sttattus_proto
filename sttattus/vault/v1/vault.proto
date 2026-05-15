@@ -99,6 +99,10 @@ service VaultService {
   // backend_go and surfaced for the Flutter dashboard.
   rpc ListPlaidTransactions(ListPlaidTransactionsRequest) returns (ListPlaidTransactionsResponse);
   rpc ListPlaidHoldings(ListPlaidHoldingsRequest) returns (ListPlaidHoldingsResponse);
+
+  // V8.3 — allocation donut + stacked-area history.
+  rpc GetCurrentAllocation(GetCurrentAllocationRequest) returns (GetCurrentAllocationResponse);
+  rpc ListAllocationHistory(ListAllocationHistoryRequest) returns (ListAllocationHistoryResponse);
 }
 
 message SyncWealthRequest {
@@ -211,4 +215,35 @@ message ListPlaidHoldingsRequest {}
 
 message ListPlaidHoldingsResponse {
   repeated PlaidHolding holdings = 1;
+}
+
+// === Allocation (V8.3) ===
+
+message AllocationSlice {
+  // 'fiat' | 'crypto' | 'rare_asset' | 'metal'
+  string category = 1;
+  double value_usd = 2;
+}
+
+message GetCurrentAllocationRequest {}
+
+message GetCurrentAllocationResponse {
+  // Approved-only sums per category, descending by value.
+  repeated AllocationSlice slices = 1;
+}
+
+message AllocationHistoryPoint {
+  string date_iso = 1; // YYYY-MM-DD UTC
+  string category = 2;
+  double value_usd = 3;
+}
+
+message ListAllocationHistoryRequest {
+  // Trailing window in days. 0 = default (90).
+  int32 days = 1;
+}
+
+message ListAllocationHistoryResponse {
+  // Flat tuples; the stacked-area chart pivots in the client.
+  repeated AllocationHistoryPoint points = 1;
 }

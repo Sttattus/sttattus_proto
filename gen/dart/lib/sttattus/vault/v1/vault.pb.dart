@@ -1736,6 +1736,294 @@ class ListPlaidHoldingsResponse extends $pb.GeneratedMessage {
   $pb.PbList<PlaidHolding> get holdings => $_getList(0);
 }
 
+class AllocationSlice extends $pb.GeneratedMessage {
+  factory AllocationSlice({
+    $core.String? category,
+    $core.double? valueUsd,
+  }) {
+    final result = create();
+    if (category != null) result.category = category;
+    if (valueUsd != null) result.valueUsd = valueUsd;
+    return result;
+  }
+
+  AllocationSlice._();
+
+  factory AllocationSlice.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AllocationSlice.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AllocationSlice', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'category')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'valueUsd', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AllocationSlice clone() => AllocationSlice()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AllocationSlice copyWith(void Function(AllocationSlice) updates) => super.copyWith((message) => updates(message as AllocationSlice)) as AllocationSlice;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AllocationSlice create() => AllocationSlice._();
+  @$core.override
+  AllocationSlice createEmptyInstance() => create();
+  static $pb.PbList<AllocationSlice> createRepeated() => $pb.PbList<AllocationSlice>();
+  @$core.pragma('dart2js:noInline')
+  static AllocationSlice getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AllocationSlice>(create);
+  static AllocationSlice? _defaultInstance;
+
+  /// 'fiat' | 'crypto' | 'rare_asset' | 'metal'
+  @$pb.TagNumber(1)
+  $core.String get category => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set category($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCategory() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCategory() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get valueUsd => $_getN(1);
+  @$pb.TagNumber(2)
+  set valueUsd($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasValueUsd() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValueUsd() => $_clearField(2);
+}
+
+class GetCurrentAllocationRequest extends $pb.GeneratedMessage {
+  factory GetCurrentAllocationRequest() => create();
+
+  GetCurrentAllocationRequest._();
+
+  factory GetCurrentAllocationRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetCurrentAllocationRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCurrentAllocationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCurrentAllocationRequest clone() => GetCurrentAllocationRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCurrentAllocationRequest copyWith(void Function(GetCurrentAllocationRequest) updates) => super.copyWith((message) => updates(message as GetCurrentAllocationRequest)) as GetCurrentAllocationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCurrentAllocationRequest create() => GetCurrentAllocationRequest._();
+  @$core.override
+  GetCurrentAllocationRequest createEmptyInstance() => create();
+  static $pb.PbList<GetCurrentAllocationRequest> createRepeated() => $pb.PbList<GetCurrentAllocationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetCurrentAllocationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCurrentAllocationRequest>(create);
+  static GetCurrentAllocationRequest? _defaultInstance;
+}
+
+class GetCurrentAllocationResponse extends $pb.GeneratedMessage {
+  factory GetCurrentAllocationResponse({
+    $core.Iterable<AllocationSlice>? slices,
+  }) {
+    final result = create();
+    if (slices != null) result.slices.addAll(slices);
+    return result;
+  }
+
+  GetCurrentAllocationResponse._();
+
+  factory GetCurrentAllocationResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetCurrentAllocationResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCurrentAllocationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..pc<AllocationSlice>(1, _omitFieldNames ? '' : 'slices', $pb.PbFieldType.PM, subBuilder: AllocationSlice.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCurrentAllocationResponse clone() => GetCurrentAllocationResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCurrentAllocationResponse copyWith(void Function(GetCurrentAllocationResponse) updates) => super.copyWith((message) => updates(message as GetCurrentAllocationResponse)) as GetCurrentAllocationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCurrentAllocationResponse create() => GetCurrentAllocationResponse._();
+  @$core.override
+  GetCurrentAllocationResponse createEmptyInstance() => create();
+  static $pb.PbList<GetCurrentAllocationResponse> createRepeated() => $pb.PbList<GetCurrentAllocationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetCurrentAllocationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCurrentAllocationResponse>(create);
+  static GetCurrentAllocationResponse? _defaultInstance;
+
+  /// Approved-only sums per category, descending by value.
+  @$pb.TagNumber(1)
+  $pb.PbList<AllocationSlice> get slices => $_getList(0);
+}
+
+class AllocationHistoryPoint extends $pb.GeneratedMessage {
+  factory AllocationHistoryPoint({
+    $core.String? dateIso,
+    $core.String? category,
+    $core.double? valueUsd,
+  }) {
+    final result = create();
+    if (dateIso != null) result.dateIso = dateIso;
+    if (category != null) result.category = category;
+    if (valueUsd != null) result.valueUsd = valueUsd;
+    return result;
+  }
+
+  AllocationHistoryPoint._();
+
+  factory AllocationHistoryPoint.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AllocationHistoryPoint.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AllocationHistoryPoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'dateIso')
+    ..aOS(2, _omitFieldNames ? '' : 'category')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'valueUsd', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AllocationHistoryPoint clone() => AllocationHistoryPoint()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AllocationHistoryPoint copyWith(void Function(AllocationHistoryPoint) updates) => super.copyWith((message) => updates(message as AllocationHistoryPoint)) as AllocationHistoryPoint;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AllocationHistoryPoint create() => AllocationHistoryPoint._();
+  @$core.override
+  AllocationHistoryPoint createEmptyInstance() => create();
+  static $pb.PbList<AllocationHistoryPoint> createRepeated() => $pb.PbList<AllocationHistoryPoint>();
+  @$core.pragma('dart2js:noInline')
+  static AllocationHistoryPoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AllocationHistoryPoint>(create);
+  static AllocationHistoryPoint? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get dateIso => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set dateIso($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDateIso() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDateIso() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get category => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set category($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCategory() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCategory() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get valueUsd => $_getN(2);
+  @$pb.TagNumber(3)
+  set valueUsd($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasValueUsd() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearValueUsd() => $_clearField(3);
+}
+
+class ListAllocationHistoryRequest extends $pb.GeneratedMessage {
+  factory ListAllocationHistoryRequest({
+    $core.int? days,
+  }) {
+    final result = create();
+    if (days != null) result.days = days;
+    return result;
+  }
+
+  ListAllocationHistoryRequest._();
+
+  factory ListAllocationHistoryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListAllocationHistoryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAllocationHistoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'days', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAllocationHistoryRequest clone() => ListAllocationHistoryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAllocationHistoryRequest copyWith(void Function(ListAllocationHistoryRequest) updates) => super.copyWith((message) => updates(message as ListAllocationHistoryRequest)) as ListAllocationHistoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAllocationHistoryRequest create() => ListAllocationHistoryRequest._();
+  @$core.override
+  ListAllocationHistoryRequest createEmptyInstance() => create();
+  static $pb.PbList<ListAllocationHistoryRequest> createRepeated() => $pb.PbList<ListAllocationHistoryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListAllocationHistoryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAllocationHistoryRequest>(create);
+  static ListAllocationHistoryRequest? _defaultInstance;
+
+  /// Trailing window in days. 0 = default (90).
+  @$pb.TagNumber(1)
+  $core.int get days => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set days($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDays() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDays() => $_clearField(1);
+}
+
+class ListAllocationHistoryResponse extends $pb.GeneratedMessage {
+  factory ListAllocationHistoryResponse({
+    $core.Iterable<AllocationHistoryPoint>? points,
+  }) {
+    final result = create();
+    if (points != null) result.points.addAll(points);
+    return result;
+  }
+
+  ListAllocationHistoryResponse._();
+
+  factory ListAllocationHistoryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListAllocationHistoryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAllocationHistoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..pc<AllocationHistoryPoint>(1, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: AllocationHistoryPoint.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAllocationHistoryResponse clone() => ListAllocationHistoryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAllocationHistoryResponse copyWith(void Function(ListAllocationHistoryResponse) updates) => super.copyWith((message) => updates(message as ListAllocationHistoryResponse)) as ListAllocationHistoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAllocationHistoryResponse create() => ListAllocationHistoryResponse._();
+  @$core.override
+  ListAllocationHistoryResponse createEmptyInstance() => create();
+  static $pb.PbList<ListAllocationHistoryResponse> createRepeated() => $pb.PbList<ListAllocationHistoryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListAllocationHistoryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAllocationHistoryResponse>(create);
+  static ListAllocationHistoryResponse? _defaultInstance;
+
+  /// Flat tuples; the stacked-area chart pivots in the client.
+  @$pb.TagNumber(1)
+  $pb.PbList<AllocationHistoryPoint> get points => $_getList(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

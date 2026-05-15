@@ -1666,6 +1666,290 @@ func (x *ListPlaidHoldingsResponse) GetHoldings() []*PlaidHolding {
 	return nil
 }
 
+type AllocationSlice struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 'fiat' | 'crypto' | 'rare_asset' | 'metal'
+	Category      string  `protobuf:"bytes,1,opt,name=category,proto3" json:"category,omitempty"`
+	ValueUsd      float64 `protobuf:"fixed64,2,opt,name=value_usd,json=valueUsd,proto3" json:"value_usd,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AllocationSlice) Reset() {
+	*x = AllocationSlice{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AllocationSlice) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AllocationSlice) ProtoMessage() {}
+
+func (x *AllocationSlice) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AllocationSlice.ProtoReflect.Descriptor instead.
+func (*AllocationSlice) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *AllocationSlice) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *AllocationSlice) GetValueUsd() float64 {
+	if x != nil {
+		return x.ValueUsd
+	}
+	return 0
+}
+
+type GetCurrentAllocationRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCurrentAllocationRequest) Reset() {
+	*x = GetCurrentAllocationRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCurrentAllocationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCurrentAllocationRequest) ProtoMessage() {}
+
+func (x *GetCurrentAllocationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCurrentAllocationRequest.ProtoReflect.Descriptor instead.
+func (*GetCurrentAllocationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{28}
+}
+
+type GetCurrentAllocationResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Approved-only sums per category, descending by value.
+	Slices        []*AllocationSlice `protobuf:"bytes,1,rep,name=slices,proto3" json:"slices,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCurrentAllocationResponse) Reset() {
+	*x = GetCurrentAllocationResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[29]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCurrentAllocationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCurrentAllocationResponse) ProtoMessage() {}
+
+func (x *GetCurrentAllocationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[29]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCurrentAllocationResponse.ProtoReflect.Descriptor instead.
+func (*GetCurrentAllocationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{29}
+}
+
+func (x *GetCurrentAllocationResponse) GetSlices() []*AllocationSlice {
+	if x != nil {
+		return x.Slices
+	}
+	return nil
+}
+
+type AllocationHistoryPoint struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	DateIso       string                 `protobuf:"bytes,1,opt,name=date_iso,json=dateIso,proto3" json:"date_iso,omitempty"` // YYYY-MM-DD UTC
+	Category      string                 `protobuf:"bytes,2,opt,name=category,proto3" json:"category,omitempty"`
+	ValueUsd      float64                `protobuf:"fixed64,3,opt,name=value_usd,json=valueUsd,proto3" json:"value_usd,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AllocationHistoryPoint) Reset() {
+	*x = AllocationHistoryPoint{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[30]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AllocationHistoryPoint) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AllocationHistoryPoint) ProtoMessage() {}
+
+func (x *AllocationHistoryPoint) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[30]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AllocationHistoryPoint.ProtoReflect.Descriptor instead.
+func (*AllocationHistoryPoint) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{30}
+}
+
+func (x *AllocationHistoryPoint) GetDateIso() string {
+	if x != nil {
+		return x.DateIso
+	}
+	return ""
+}
+
+func (x *AllocationHistoryPoint) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *AllocationHistoryPoint) GetValueUsd() float64 {
+	if x != nil {
+		return x.ValueUsd
+	}
+	return 0
+}
+
+type ListAllocationHistoryRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Trailing window in days. 0 = default (90).
+	Days          int32 `protobuf:"varint,1,opt,name=days,proto3" json:"days,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAllocationHistoryRequest) Reset() {
+	*x = ListAllocationHistoryRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[31]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAllocationHistoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAllocationHistoryRequest) ProtoMessage() {}
+
+func (x *ListAllocationHistoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[31]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAllocationHistoryRequest.ProtoReflect.Descriptor instead.
+func (*ListAllocationHistoryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{31}
+}
+
+func (x *ListAllocationHistoryRequest) GetDays() int32 {
+	if x != nil {
+		return x.Days
+	}
+	return 0
+}
+
+type ListAllocationHistoryResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Flat tuples; the stacked-area chart pivots in the client.
+	Points        []*AllocationHistoryPoint `protobuf:"bytes,1,rep,name=points,proto3" json:"points,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAllocationHistoryResponse) Reset() {
+	*x = ListAllocationHistoryResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[32]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAllocationHistoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAllocationHistoryResponse) ProtoMessage() {}
+
+func (x *ListAllocationHistoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[32]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAllocationHistoryResponse.ProtoReflect.Descriptor instead.
+func (*ListAllocationHistoryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{32}
+}
+
+func (x *ListAllocationHistoryResponse) GetPoints() []*AllocationHistoryPoint {
+	if x != nil {
+		return x.Points
+	}
+	return nil
+}
+
 var File_sttattus_vault_v1_vault_proto protoreflect.FileDescriptor
 
 const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
@@ -1782,7 +2066,21 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x11iso_currency_code\x18\v \x01(\tR\x0fisoCurrencyCode\"\x1a\n" +
 	"\x18ListPlaidHoldingsRequest\"X\n" +
 	"\x19ListPlaidHoldingsResponse\x12;\n" +
-	"\bholdings\x18\x01 \x03(\v2\x1f.sttattus.vault.v1.PlaidHoldingR\bholdings*\x9c\x01\n" +
+	"\bholdings\x18\x01 \x03(\v2\x1f.sttattus.vault.v1.PlaidHoldingR\bholdings\"J\n" +
+	"\x0fAllocationSlice\x12\x1a\n" +
+	"\bcategory\x18\x01 \x01(\tR\bcategory\x12\x1b\n" +
+	"\tvalue_usd\x18\x02 \x01(\x01R\bvalueUsd\"\x1d\n" +
+	"\x1bGetCurrentAllocationRequest\"Z\n" +
+	"\x1cGetCurrentAllocationResponse\x12:\n" +
+	"\x06slices\x18\x01 \x03(\v2\".sttattus.vault.v1.AllocationSliceR\x06slices\"l\n" +
+	"\x16AllocationHistoryPoint\x12\x19\n" +
+	"\bdate_iso\x18\x01 \x01(\tR\adateIso\x12\x1a\n" +
+	"\bcategory\x18\x02 \x01(\tR\bcategory\x12\x1b\n" +
+	"\tvalue_usd\x18\x03 \x01(\x01R\bvalueUsd\"2\n" +
+	"\x1cListAllocationHistoryRequest\x12\x12\n" +
+	"\x04days\x18\x01 \x01(\x05R\x04days\"b\n" +
+	"\x1dListAllocationHistoryResponse\x12A\n" +
+	"\x06points\x18\x01 \x03(\v2).sttattus.vault.v1.AllocationHistoryPointR\x06points*\x9c\x01\n" +
 	"\rAssetCategory\x12\x1e\n" +
 	"\x1aASSET_CATEGORY_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13ASSET_CATEGORY_FIAT\x10\x01\x12\x19\n" +
@@ -1793,7 +2091,7 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xc4\t\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xb9\v\n" +
 	"\fVaultService\x12\\\n" +
 	"\vSubmitAsset\x12%.sttattus.vault.v1.SubmitAssetRequest\x1a&.sttattus.vault.v1.SubmitAssetResponse\x12_\n" +
 	"\fGetPortfolio\x12&.sttattus.vault.v1.GetPortfolioRequest\x1a'.sttattus.vault.v1.GetPortfolioResponse\x12q\n" +
@@ -1807,7 +2105,9 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x10AdminVerifyAsset\x12*.sttattus.vault.v1.AdminVerifyAssetRequest\x1a+.sttattus.vault.v1.AdminVerifyAssetResponse\x12t\n" +
 	"\x13ListNetWorthHistory\x12-.sttattus.vault.v1.ListNetWorthHistoryRequest\x1a..sttattus.vault.v1.ListNetWorthHistoryResponse\x12z\n" +
 	"\x15ListPlaidTransactions\x12/.sttattus.vault.v1.ListPlaidTransactionsRequest\x1a0.sttattus.vault.v1.ListPlaidTransactionsResponse\x12n\n" +
-	"\x11ListPlaidHoldings\x12+.sttattus.vault.v1.ListPlaidHoldingsRequest\x1a,.sttattus.vault.v1.ListPlaidHoldingsResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
+	"\x11ListPlaidHoldings\x12+.sttattus.vault.v1.ListPlaidHoldingsRequest\x1a,.sttattus.vault.v1.ListPlaidHoldingsResponse\x12w\n" +
+	"\x14GetCurrentAllocation\x12..sttattus.vault.v1.GetCurrentAllocationRequest\x1a/.sttattus.vault.v1.GetCurrentAllocationResponse\x12z\n" +
+	"\x15ListAllocationHistory\x12/.sttattus.vault.v1.ListAllocationHistoryRequest\x1a0.sttattus.vault.v1.ListAllocationHistoryResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
 
 var (
 	file_sttattus_vault_v1_vault_proto_rawDescOnce sync.Once
@@ -1822,7 +2122,7 @@ func file_sttattus_vault_v1_vault_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_vault_v1_vault_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_vault_v1_vault_proto_msgTypes = make([]protoimpl.MessageInfo, 29)
+var file_sttattus_vault_v1_vault_proto_msgTypes = make([]protoimpl.MessageInfo, 35)
 var file_sttattus_vault_v1_vault_proto_goTypes = []any{
 	(AssetCategory)(0),                       // 0: sttattus.vault.v1.AssetCategory
 	(VerificationStatus)(0),                  // 1: sttattus.vault.v1.VerificationStatus
@@ -1853,19 +2153,25 @@ var file_sttattus_vault_v1_vault_proto_goTypes = []any{
 	(*PlaidHolding)(nil),                     // 26: sttattus.vault.v1.PlaidHolding
 	(*ListPlaidHoldingsRequest)(nil),         // 27: sttattus.vault.v1.ListPlaidHoldingsRequest
 	(*ListPlaidHoldingsResponse)(nil),        // 28: sttattus.vault.v1.ListPlaidHoldingsResponse
-	nil,                                      // 29: sttattus.vault.v1.Asset.MetadataEntry
-	nil,                                      // 30: sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
-	(*timestamppb.Timestamp)(nil),            // 31: google.protobuf.Timestamp
+	(*AllocationSlice)(nil),                  // 29: sttattus.vault.v1.AllocationSlice
+	(*GetCurrentAllocationRequest)(nil),      // 30: sttattus.vault.v1.GetCurrentAllocationRequest
+	(*GetCurrentAllocationResponse)(nil),     // 31: sttattus.vault.v1.GetCurrentAllocationResponse
+	(*AllocationHistoryPoint)(nil),           // 32: sttattus.vault.v1.AllocationHistoryPoint
+	(*ListAllocationHistoryRequest)(nil),     // 33: sttattus.vault.v1.ListAllocationHistoryRequest
+	(*ListAllocationHistoryResponse)(nil),    // 34: sttattus.vault.v1.ListAllocationHistoryResponse
+	nil,                                      // 35: sttattus.vault.v1.Asset.MetadataEntry
+	nil,                                      // 36: sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
+	(*timestamppb.Timestamp)(nil),            // 37: google.protobuf.Timestamp
 }
 var file_sttattus_vault_v1_vault_proto_depIdxs = []int32{
 	0,  // 0: sttattus.vault.v1.Asset.category:type_name -> sttattus.vault.v1.AssetCategory
 	1,  // 1: sttattus.vault.v1.Asset.status:type_name -> sttattus.vault.v1.VerificationStatus
-	31, // 2: sttattus.vault.v1.Asset.last_updated:type_name -> google.protobuf.Timestamp
-	29, // 3: sttattus.vault.v1.Asset.metadata:type_name -> sttattus.vault.v1.Asset.MetadataEntry
+	37, // 2: sttattus.vault.v1.Asset.last_updated:type_name -> google.protobuf.Timestamp
+	35, // 3: sttattus.vault.v1.Asset.metadata:type_name -> sttattus.vault.v1.Asset.MetadataEntry
 	2,  // 4: sttattus.vault.v1.Portfolio.assets:type_name -> sttattus.vault.v1.Asset
-	31, // 5: sttattus.vault.v1.Portfolio.calculated_at:type_name -> google.protobuf.Timestamp
+	37, // 5: sttattus.vault.v1.Portfolio.calculated_at:type_name -> google.protobuf.Timestamp
 	0,  // 6: sttattus.vault.v1.SubmitAssetRequest.category:type_name -> sttattus.vault.v1.AssetCategory
-	30, // 7: sttattus.vault.v1.SubmitAssetRequest.metadata:type_name -> sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
+	36, // 7: sttattus.vault.v1.SubmitAssetRequest.metadata:type_name -> sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
 	2,  // 8: sttattus.vault.v1.SubmitAssetResponse.asset:type_name -> sttattus.vault.v1.Asset
 	3,  // 9: sttattus.vault.v1.GetPortfolioResponse.portfolio:type_name -> sttattus.vault.v1.Portfolio
 	1,  // 10: sttattus.vault.v1.AdminVerifyAssetRequest.status:type_name -> sttattus.vault.v1.VerificationStatus
@@ -1875,33 +2181,39 @@ var file_sttattus_vault_v1_vault_proto_depIdxs = []int32{
 	20, // 14: sttattus.vault.v1.ListNetWorthHistoryResponse.points:type_name -> sttattus.vault.v1.NetWorthPoint
 	23, // 15: sttattus.vault.v1.ListPlaidTransactionsResponse.transactions:type_name -> sttattus.vault.v1.PlaidTransaction
 	26, // 16: sttattus.vault.v1.ListPlaidHoldingsResponse.holdings:type_name -> sttattus.vault.v1.PlaidHolding
-	4,  // 17: sttattus.vault.v1.VaultService.SubmitAsset:input_type -> sttattus.vault.v1.SubmitAssetRequest
-	6,  // 18: sttattus.vault.v1.VaultService.GetPortfolio:input_type -> sttattus.vault.v1.GetPortfolioRequest
-	12, // 19: sttattus.vault.v1.VaultService.GetWalletChallenge:input_type -> sttattus.vault.v1.GetWalletChallengeRequest
-	14, // 20: sttattus.vault.v1.VaultService.LinkWallet:input_type -> sttattus.vault.v1.LinkWalletRequest
-	16, // 21: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:input_type -> sttattus.vault.v1.CreatePlaidLinkTokenRequest
-	18, // 22: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:input_type -> sttattus.vault.v1.ExchangePlaidPublicTokenRequest
-	10, // 23: sttattus.vault.v1.VaultService.SyncWealth:input_type -> sttattus.vault.v1.SyncWealthRequest
-	8,  // 24: sttattus.vault.v1.VaultService.AdminVerifyAsset:input_type -> sttattus.vault.v1.AdminVerifyAssetRequest
-	21, // 25: sttattus.vault.v1.VaultService.ListNetWorthHistory:input_type -> sttattus.vault.v1.ListNetWorthHistoryRequest
-	24, // 26: sttattus.vault.v1.VaultService.ListPlaidTransactions:input_type -> sttattus.vault.v1.ListPlaidTransactionsRequest
-	27, // 27: sttattus.vault.v1.VaultService.ListPlaidHoldings:input_type -> sttattus.vault.v1.ListPlaidHoldingsRequest
-	5,  // 28: sttattus.vault.v1.VaultService.SubmitAsset:output_type -> sttattus.vault.v1.SubmitAssetResponse
-	7,  // 29: sttattus.vault.v1.VaultService.GetPortfolio:output_type -> sttattus.vault.v1.GetPortfolioResponse
-	13, // 30: sttattus.vault.v1.VaultService.GetWalletChallenge:output_type -> sttattus.vault.v1.GetWalletChallengeResponse
-	15, // 31: sttattus.vault.v1.VaultService.LinkWallet:output_type -> sttattus.vault.v1.LinkWalletResponse
-	17, // 32: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:output_type -> sttattus.vault.v1.CreatePlaidLinkTokenResponse
-	19, // 33: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:output_type -> sttattus.vault.v1.ExchangePlaidPublicTokenResponse
-	11, // 34: sttattus.vault.v1.VaultService.SyncWealth:output_type -> sttattus.vault.v1.SyncWealthResponse
-	9,  // 35: sttattus.vault.v1.VaultService.AdminVerifyAsset:output_type -> sttattus.vault.v1.AdminVerifyAssetResponse
-	22, // 36: sttattus.vault.v1.VaultService.ListNetWorthHistory:output_type -> sttattus.vault.v1.ListNetWorthHistoryResponse
-	25, // 37: sttattus.vault.v1.VaultService.ListPlaidTransactions:output_type -> sttattus.vault.v1.ListPlaidTransactionsResponse
-	28, // 38: sttattus.vault.v1.VaultService.ListPlaidHoldings:output_type -> sttattus.vault.v1.ListPlaidHoldingsResponse
-	28, // [28:39] is the sub-list for method output_type
-	17, // [17:28] is the sub-list for method input_type
-	17, // [17:17] is the sub-list for extension type_name
-	17, // [17:17] is the sub-list for extension extendee
-	0,  // [0:17] is the sub-list for field type_name
+	29, // 17: sttattus.vault.v1.GetCurrentAllocationResponse.slices:type_name -> sttattus.vault.v1.AllocationSlice
+	32, // 18: sttattus.vault.v1.ListAllocationHistoryResponse.points:type_name -> sttattus.vault.v1.AllocationHistoryPoint
+	4,  // 19: sttattus.vault.v1.VaultService.SubmitAsset:input_type -> sttattus.vault.v1.SubmitAssetRequest
+	6,  // 20: sttattus.vault.v1.VaultService.GetPortfolio:input_type -> sttattus.vault.v1.GetPortfolioRequest
+	12, // 21: sttattus.vault.v1.VaultService.GetWalletChallenge:input_type -> sttattus.vault.v1.GetWalletChallengeRequest
+	14, // 22: sttattus.vault.v1.VaultService.LinkWallet:input_type -> sttattus.vault.v1.LinkWalletRequest
+	16, // 23: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:input_type -> sttattus.vault.v1.CreatePlaidLinkTokenRequest
+	18, // 24: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:input_type -> sttattus.vault.v1.ExchangePlaidPublicTokenRequest
+	10, // 25: sttattus.vault.v1.VaultService.SyncWealth:input_type -> sttattus.vault.v1.SyncWealthRequest
+	8,  // 26: sttattus.vault.v1.VaultService.AdminVerifyAsset:input_type -> sttattus.vault.v1.AdminVerifyAssetRequest
+	21, // 27: sttattus.vault.v1.VaultService.ListNetWorthHistory:input_type -> sttattus.vault.v1.ListNetWorthHistoryRequest
+	24, // 28: sttattus.vault.v1.VaultService.ListPlaidTransactions:input_type -> sttattus.vault.v1.ListPlaidTransactionsRequest
+	27, // 29: sttattus.vault.v1.VaultService.ListPlaidHoldings:input_type -> sttattus.vault.v1.ListPlaidHoldingsRequest
+	30, // 30: sttattus.vault.v1.VaultService.GetCurrentAllocation:input_type -> sttattus.vault.v1.GetCurrentAllocationRequest
+	33, // 31: sttattus.vault.v1.VaultService.ListAllocationHistory:input_type -> sttattus.vault.v1.ListAllocationHistoryRequest
+	5,  // 32: sttattus.vault.v1.VaultService.SubmitAsset:output_type -> sttattus.vault.v1.SubmitAssetResponse
+	7,  // 33: sttattus.vault.v1.VaultService.GetPortfolio:output_type -> sttattus.vault.v1.GetPortfolioResponse
+	13, // 34: sttattus.vault.v1.VaultService.GetWalletChallenge:output_type -> sttattus.vault.v1.GetWalletChallengeResponse
+	15, // 35: sttattus.vault.v1.VaultService.LinkWallet:output_type -> sttattus.vault.v1.LinkWalletResponse
+	17, // 36: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:output_type -> sttattus.vault.v1.CreatePlaidLinkTokenResponse
+	19, // 37: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:output_type -> sttattus.vault.v1.ExchangePlaidPublicTokenResponse
+	11, // 38: sttattus.vault.v1.VaultService.SyncWealth:output_type -> sttattus.vault.v1.SyncWealthResponse
+	9,  // 39: sttattus.vault.v1.VaultService.AdminVerifyAsset:output_type -> sttattus.vault.v1.AdminVerifyAssetResponse
+	22, // 40: sttattus.vault.v1.VaultService.ListNetWorthHistory:output_type -> sttattus.vault.v1.ListNetWorthHistoryResponse
+	25, // 41: sttattus.vault.v1.VaultService.ListPlaidTransactions:output_type -> sttattus.vault.v1.ListPlaidTransactionsResponse
+	28, // 42: sttattus.vault.v1.VaultService.ListPlaidHoldings:output_type -> sttattus.vault.v1.ListPlaidHoldingsResponse
+	31, // 43: sttattus.vault.v1.VaultService.GetCurrentAllocation:output_type -> sttattus.vault.v1.GetCurrentAllocationResponse
+	34, // 44: sttattus.vault.v1.VaultService.ListAllocationHistory:output_type -> sttattus.vault.v1.ListAllocationHistoryResponse
+	32, // [32:45] is the sub-list for method output_type
+	19, // [19:32] is the sub-list for method input_type
+	19, // [19:19] is the sub-list for extension type_name
+	19, // [19:19] is the sub-list for extension extendee
+	0,  // [0:19] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_vault_v1_vault_proto_init() }
@@ -1915,7 +2227,7 @@ func file_sttattus_vault_v1_vault_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_vault_v1_vault_proto_rawDesc), len(file_sttattus_vault_v1_vault_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   29,
+			NumMessages:   35,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

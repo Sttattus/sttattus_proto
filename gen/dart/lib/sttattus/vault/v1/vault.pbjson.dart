@@ -480,3 +480,79 @@ final $typed_data.Uint8List listPlaidHoldingsResponseDescriptor = $convert.base6
     'ChlMaXN0UGxhaWRIb2xkaW5nc1Jlc3BvbnNlEjsKCGhvbGRpbmdzGAEgAygLMh8uc3R0YXR0dX'
     'MudmF1bHQudjEuUGxhaWRIb2xkaW5nUghob2xkaW5ncw==');
 
+@$core.Deprecated('Use allocationSliceDescriptor instead')
+const AllocationSlice$json = {
+  '1': 'AllocationSlice',
+  '2': [
+    {'1': 'category', '3': 1, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'value_usd', '3': 2, '4': 1, '5': 1, '10': 'valueUsd'},
+  ],
+};
+
+/// Descriptor for `AllocationSlice`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List allocationSliceDescriptor = $convert.base64Decode(
+    'Cg9BbGxvY2F0aW9uU2xpY2USGgoIY2F0ZWdvcnkYASABKAlSCGNhdGVnb3J5EhsKCXZhbHVlX3'
+    'VzZBgCIAEoAVIIdmFsdWVVc2Q=');
+
+@$core.Deprecated('Use getCurrentAllocationRequestDescriptor instead')
+const GetCurrentAllocationRequest$json = {
+  '1': 'GetCurrentAllocationRequest',
+};
+
+/// Descriptor for `GetCurrentAllocationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCurrentAllocationRequestDescriptor = $convert.base64Decode(
+    'ChtHZXRDdXJyZW50QWxsb2NhdGlvblJlcXVlc3Q=');
+
+@$core.Deprecated('Use getCurrentAllocationResponseDescriptor instead')
+const GetCurrentAllocationResponse$json = {
+  '1': 'GetCurrentAllocationResponse',
+  '2': [
+    {'1': 'slices', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.AllocationSlice', '10': 'slices'},
+  ],
+};
+
+/// Descriptor for `GetCurrentAllocationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCurrentAllocationResponseDescriptor = $convert.base64Decode(
+    'ChxHZXRDdXJyZW50QWxsb2NhdGlvblJlc3BvbnNlEjoKBnNsaWNlcxgBIAMoCzIiLnN0dGF0dH'
+    'VzLnZhdWx0LnYxLkFsbG9jYXRpb25TbGljZVIGc2xpY2Vz');
+
+@$core.Deprecated('Use allocationHistoryPointDescriptor instead')
+const AllocationHistoryPoint$json = {
+  '1': 'AllocationHistoryPoint',
+  '2': [
+    {'1': 'date_iso', '3': 1, '4': 1, '5': 9, '10': 'dateIso'},
+    {'1': 'category', '3': 2, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'value_usd', '3': 3, '4': 1, '5': 1, '10': 'valueUsd'},
+  ],
+};
+
+/// Descriptor for `AllocationHistoryPoint`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List allocationHistoryPointDescriptor = $convert.base64Decode(
+    'ChZBbGxvY2F0aW9uSGlzdG9yeVBvaW50EhkKCGRhdGVfaXNvGAEgASgJUgdkYXRlSXNvEhoKCG'
+    'NhdGVnb3J5GAIgASgJUghjYXRlZ29yeRIbCgl2YWx1ZV91c2QYAyABKAFSCHZhbHVlVXNk');
+
+@$core.Deprecated('Use listAllocationHistoryRequestDescriptor instead')
+const ListAllocationHistoryRequest$json = {
+  '1': 'ListAllocationHistoryRequest',
+  '2': [
+    {'1': 'days', '3': 1, '4': 1, '5': 5, '10': 'days'},
+  ],
+};
+
+/// Descriptor for `ListAllocationHistoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAllocationHistoryRequestDescriptor = $convert.base64Decode(
+    'ChxMaXN0QWxsb2NhdGlvbkhpc3RvcnlSZXF1ZXN0EhIKBGRheXMYASABKAVSBGRheXM=');
+
+@$core.Deprecated('Use listAllocationHistoryResponseDescriptor instead')
+const ListAllocationHistoryResponse$json = {
+  '1': 'ListAllocationHistoryResponse',
+  '2': [
+    {'1': 'points', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.AllocationHistoryPoint', '10': 'points'},
+  ],
+};
+
+/// Descriptor for `ListAllocationHistoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAllocationHistoryResponseDescriptor = $convert.base64Decode(
+    'Ch1MaXN0QWxsb2NhdGlvbkhpc3RvcnlSZXNwb25zZRJBCgZwb2ludHMYASADKAsyKS5zdHRhdH'
+    'R1cy52YXVsdC52MS5BbGxvY2F0aW9uSGlzdG9yeVBvaW50UgZwb2ludHM=');
+
