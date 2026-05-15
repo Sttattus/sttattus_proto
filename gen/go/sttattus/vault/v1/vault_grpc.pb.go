@@ -27,6 +27,7 @@ const (
 	VaultService_ExchangePlaidPublicToken_FullMethodName = "/sttattus.vault.v1.VaultService/ExchangePlaidPublicToken"
 	VaultService_SyncWealth_FullMethodName               = "/sttattus.vault.v1.VaultService/SyncWealth"
 	VaultService_AdminVerifyAsset_FullMethodName         = "/sttattus.vault.v1.VaultService/AdminVerifyAsset"
+	VaultService_ListNetWorthHistory_FullMethodName      = "/sttattus.vault.v1.VaultService/ListNetWorthHistory"
 )
 
 // VaultServiceClient is the client API for VaultService service.
@@ -46,6 +47,8 @@ type VaultServiceClient interface {
 	SyncWealth(ctx context.Context, in *SyncWealthRequest, opts ...grpc.CallOption) (*SyncWealthResponse, error)
 	// Admin Methods (Gated by Admin Middleware)
 	AdminVerifyAsset(ctx context.Context, in *AdminVerifyAssetRequest, opts ...grpc.CallOption) (*AdminVerifyAssetResponse, error)
+	// V8.1 — daily net-worth snapshot history.
+	ListNetWorthHistory(ctx context.Context, in *ListNetWorthHistoryRequest, opts ...grpc.CallOption) (*ListNetWorthHistoryResponse, error)
 }
 
 type vaultServiceClient struct {
@@ -136,6 +139,16 @@ func (c *vaultServiceClient) AdminVerifyAsset(ctx context.Context, in *AdminVeri
 	return out, nil
 }
 
+func (c *vaultServiceClient) ListNetWorthHistory(ctx context.Context, in *ListNetWorthHistoryRequest, opts ...grpc.CallOption) (*ListNetWorthHistoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListNetWorthHistoryResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListNetWorthHistory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultServiceServer is the server API for VaultService service.
 // All implementations must embed UnimplementedVaultServiceServer
 // for forward compatibility.
@@ -153,6 +166,8 @@ type VaultServiceServer interface {
 	SyncWealth(context.Context, *SyncWealthRequest) (*SyncWealthResponse, error)
 	// Admin Methods (Gated by Admin Middleware)
 	AdminVerifyAsset(context.Context, *AdminVerifyAssetRequest) (*AdminVerifyAssetResponse, error)
+	// V8.1 — daily net-worth snapshot history.
+	ListNetWorthHistory(context.Context, *ListNetWorthHistoryRequest) (*ListNetWorthHistoryResponse, error)
 	mustEmbedUnimplementedVaultServiceServer()
 }
 
@@ -186,6 +201,9 @@ func (UnimplementedVaultServiceServer) SyncWealth(context.Context, *SyncWealthRe
 }
 func (UnimplementedVaultServiceServer) AdminVerifyAsset(context.Context, *AdminVerifyAssetRequest) (*AdminVerifyAssetResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method AdminVerifyAsset not implemented")
+}
+func (UnimplementedVaultServiceServer) ListNetWorthHistory(context.Context, *ListNetWorthHistoryRequest) (*ListNetWorthHistoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListNetWorthHistory not implemented")
 }
 func (UnimplementedVaultServiceServer) mustEmbedUnimplementedVaultServiceServer() {}
 func (UnimplementedVaultServiceServer) testEmbeddedByValue()                      {}
@@ -352,6 +370,24 @@ func _VaultService_AdminVerifyAsset_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultService_ListNetWorthHistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListNetWorthHistoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListNetWorthHistory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListNetWorthHistory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListNetWorthHistory(ctx, req.(*ListNetWorthHistoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultService_ServiceDesc is the grpc.ServiceDesc for VaultService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -390,6 +426,10 @@ var VaultService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AdminVerifyAsset",
 			Handler:    _VaultService_AdminVerifyAsset_Handler,
+		},
+		{
+			MethodName: "ListNetWorthHistory",
+			Handler:    _VaultService_ListNetWorthHistory_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

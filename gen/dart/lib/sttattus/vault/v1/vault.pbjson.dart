@@ -336,3 +336,43 @@ final $typed_data.Uint8List exchangePlaidPublicTokenResponseDescriptor = $conver
     'CiBFeGNoYW5nZVBsYWlkUHVibGljVG9rZW5SZXNwb25zZRIYCgdzdWNjZXNzGAEgASgIUgdzdW'
     'NjZXNz');
 
+@$core.Deprecated('Use netWorthPointDescriptor instead')
+const NetWorthPoint$json = {
+  '1': 'NetWorthPoint',
+  '2': [
+    {'1': 'date_iso', '3': 1, '4': 1, '5': 9, '10': 'dateIso'},
+    {'1': 'net_worth_usd', '3': 2, '4': 1, '5': 1, '10': 'netWorthUsd'},
+    {'1': 'vault_rank', '3': 3, '4': 1, '5': 1, '10': 'vaultRank'},
+  ],
+};
+
+/// Descriptor for `NetWorthPoint`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List netWorthPointDescriptor = $convert.base64Decode(
+    'Cg1OZXRXb3J0aFBvaW50EhkKCGRhdGVfaXNvGAEgASgJUgdkYXRlSXNvEiIKDW5ldF93b3J0aF'
+    '91c2QYAiABKAFSC25ldFdvcnRoVXNkEh0KCnZhdWx0X3JhbmsYAyABKAFSCXZhdWx0UmFuaw==');
+
+@$core.Deprecated('Use listNetWorthHistoryRequestDescriptor instead')
+const ListNetWorthHistoryRequest$json = {
+  '1': 'ListNetWorthHistoryRequest',
+  '2': [
+    {'1': 'days', '3': 1, '4': 1, '5': 5, '10': 'days'},
+  ],
+};
+
+/// Descriptor for `ListNetWorthHistoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listNetWorthHistoryRequestDescriptor = $convert.base64Decode(
+    'ChpMaXN0TmV0V29ydGhIaXN0b3J5UmVxdWVzdBISCgRkYXlzGAEgASgFUgRkYXlz');
+
+@$core.Deprecated('Use listNetWorthHistoryResponseDescriptor instead')
+const ListNetWorthHistoryResponse$json = {
+  '1': 'ListNetWorthHistoryResponse',
+  '2': [
+    {'1': 'points', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.NetWorthPoint', '10': 'points'},
+  ],
+};
+
+/// Descriptor for `ListNetWorthHistoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listNetWorthHistoryResponseDescriptor = $convert.base64Decode(
+    'ChtMaXN0TmV0V29ydGhIaXN0b3J5UmVzcG9uc2USOAoGcG9pbnRzGAEgAygLMiAuc3R0YXR0dX'
+    'MudmF1bHQudjEuTmV0V29ydGhQb2ludFIGcG9pbnRz');
+

@@ -69,6 +69,11 @@ class VaultServiceClient extends $grpc.Client {
     return $createUnaryCall(_$adminVerifyAsset, request, options: options);
   }
 
+  /// V8.1 — daily net-worth snapshot history.
+  $grpc.ResponseFuture<$0.ListNetWorthHistoryResponse> listNetWorthHistory($0.ListNetWorthHistoryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listNetWorthHistory, request, options: options);
+  }
+
     // method descriptors
 
   static final _$submitAsset = $grpc.ClientMethod<$0.SubmitAssetRequest, $0.SubmitAssetResponse>(
@@ -103,6 +108,10 @@ class VaultServiceClient extends $grpc.Client {
       '/sttattus.vault.v1.VaultService/AdminVerifyAsset',
       ($0.AdminVerifyAssetRequest value) => value.writeToBuffer(),
       $0.AdminVerifyAssetResponse.fromBuffer);
+  static final _$listNetWorthHistory = $grpc.ClientMethod<$0.ListNetWorthHistoryRequest, $0.ListNetWorthHistoryResponse>(
+      '/sttattus.vault.v1.VaultService/ListNetWorthHistory',
+      ($0.ListNetWorthHistoryRequest value) => value.writeToBuffer(),
+      $0.ListNetWorthHistoryResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.vault.v1.VaultService')
@@ -166,6 +175,13 @@ abstract class VaultServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.AdminVerifyAssetRequest.fromBuffer(value),
         ($0.AdminVerifyAssetResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListNetWorthHistoryRequest, $0.ListNetWorthHistoryResponse>(
+        'ListNetWorthHistory',
+        listNetWorthHistory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListNetWorthHistoryRequest.fromBuffer(value),
+        ($0.ListNetWorthHistoryResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.SubmitAssetResponse> submitAsset_Pre($grpc.ServiceCall $call, $async.Future<$0.SubmitAssetRequest> $request) async {
@@ -215,5 +231,11 @@ abstract class VaultServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.AdminVerifyAssetResponse> adminVerifyAsset($grpc.ServiceCall call, $0.AdminVerifyAssetRequest request);
+
+  $async.Future<$0.ListNetWorthHistoryResponse> listNetWorthHistory_Pre($grpc.ServiceCall $call, $async.Future<$0.ListNetWorthHistoryRequest> $request) async {
+    return listNetWorthHistory($call, await $request);
+  }
+
+  $async.Future<$0.ListNetWorthHistoryResponse> listNetWorthHistory($grpc.ServiceCall call, $0.ListNetWorthHistoryRequest request);
 
 }

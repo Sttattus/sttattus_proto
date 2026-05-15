@@ -1083,6 +1083,165 @@ class ExchangePlaidPublicTokenResponse extends $pb.GeneratedMessage {
   void clearSuccess() => $_clearField(1);
 }
 
+/// NetWorthPoint is one daily snapshot. The Flutter chart consumes
+/// these in ascending date order. Audits/vault.md §10 Phase 1 item 1.
+class NetWorthPoint extends $pb.GeneratedMessage {
+  factory NetWorthPoint({
+    $core.String? dateIso,
+    $core.double? netWorthUsd,
+    $core.double? vaultRank,
+  }) {
+    final result = create();
+    if (dateIso != null) result.dateIso = dateIso;
+    if (netWorthUsd != null) result.netWorthUsd = netWorthUsd;
+    if (vaultRank != null) result.vaultRank = vaultRank;
+    return result;
+  }
+
+  NetWorthPoint._();
+
+  factory NetWorthPoint.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory NetWorthPoint.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NetWorthPoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'dateIso')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'netWorthUsd', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'vaultRank', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetWorthPoint clone() => NetWorthPoint()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetWorthPoint copyWith(void Function(NetWorthPoint) updates) => super.copyWith((message) => updates(message as NetWorthPoint)) as NetWorthPoint;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NetWorthPoint create() => NetWorthPoint._();
+  @$core.override
+  NetWorthPoint createEmptyInstance() => create();
+  static $pb.PbList<NetWorthPoint> createRepeated() => $pb.PbList<NetWorthPoint>();
+  @$core.pragma('dart2js:noInline')
+  static NetWorthPoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NetWorthPoint>(create);
+  static NetWorthPoint? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get dateIso => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set dateIso($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDateIso() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDateIso() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get netWorthUsd => $_getN(1);
+  @$pb.TagNumber(2)
+  set netWorthUsd($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNetWorthUsd() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNetWorthUsd() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get vaultRank => $_getN(2);
+  @$pb.TagNumber(3)
+  set vaultRank($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVaultRank() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVaultRank() => $_clearField(3);
+}
+
+class ListNetWorthHistoryRequest extends $pb.GeneratedMessage {
+  factory ListNetWorthHistoryRequest({
+    $core.int? days,
+  }) {
+    final result = create();
+    if (days != null) result.days = days;
+    return result;
+  }
+
+  ListNetWorthHistoryRequest._();
+
+  factory ListNetWorthHistoryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListNetWorthHistoryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNetWorthHistoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'days', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListNetWorthHistoryRequest clone() => ListNetWorthHistoryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListNetWorthHistoryRequest copyWith(void Function(ListNetWorthHistoryRequest) updates) => super.copyWith((message) => updates(message as ListNetWorthHistoryRequest)) as ListNetWorthHistoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListNetWorthHistoryRequest create() => ListNetWorthHistoryRequest._();
+  @$core.override
+  ListNetWorthHistoryRequest createEmptyInstance() => create();
+  static $pb.PbList<ListNetWorthHistoryRequest> createRepeated() => $pb.PbList<ListNetWorthHistoryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListNetWorthHistoryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListNetWorthHistoryRequest>(create);
+  static ListNetWorthHistoryRequest? _defaultInstance;
+
+  /// Trailing window in days. 0 = default (365).
+  @$pb.TagNumber(1)
+  $core.int get days => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set days($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDays() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDays() => $_clearField(1);
+}
+
+class ListNetWorthHistoryResponse extends $pb.GeneratedMessage {
+  factory ListNetWorthHistoryResponse({
+    $core.Iterable<NetWorthPoint>? points,
+  }) {
+    final result = create();
+    if (points != null) result.points.addAll(points);
+    return result;
+  }
+
+  ListNetWorthHistoryResponse._();
+
+  factory ListNetWorthHistoryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListNetWorthHistoryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNetWorthHistoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..pc<NetWorthPoint>(1, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: NetWorthPoint.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListNetWorthHistoryResponse clone() => ListNetWorthHistoryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListNetWorthHistoryResponse copyWith(void Function(ListNetWorthHistoryResponse) updates) => super.copyWith((message) => updates(message as ListNetWorthHistoryResponse)) as ListNetWorthHistoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListNetWorthHistoryResponse create() => ListNetWorthHistoryResponse._();
+  @$core.override
+  ListNetWorthHistoryResponse createEmptyInstance() => create();
+  static $pb.PbList<ListNetWorthHistoryResponse> createRepeated() => $pb.PbList<ListNetWorthHistoryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListNetWorthHistoryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListNetWorthHistoryResponse>(create);
+  static ListNetWorthHistoryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<NetWorthPoint> get points => $_getList(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
+import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -92,6 +92,17 @@ export const VaultService = {
       name: "AdminVerifyAsset",
       I: AdminVerifyAssetRequest,
       O: AdminVerifyAssetResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8.1 — daily net-worth snapshot history.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.ListNetWorthHistory
+     */
+    listNetWorthHistory: {
+      name: "ListNetWorthHistory",
+      I: ListNetWorthHistoryRequest,
+      O: ListNetWorthHistoryResponse,
       kind: MethodKind.Unary,
     },
   }

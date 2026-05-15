@@ -902,3 +902,133 @@ export class ExchangePlaidPublicTokenResponse extends Message<ExchangePlaidPubli
   }
 }
 
+/**
+ * NetWorthPoint is one daily snapshot. The Flutter chart consumes
+ * these in ascending date order. Audits/vault.md §10 Phase 1 item 1.
+ *
+ * @generated from message sttattus.vault.v1.NetWorthPoint
+ */
+export class NetWorthPoint extends Message<NetWorthPoint> {
+  /**
+   * YYYY-MM-DD UTC
+   *
+   * @generated from field: string date_iso = 1;
+   */
+  dateIso = "";
+
+  /**
+   * @generated from field: double net_worth_usd = 2;
+   */
+  netWorthUsd = 0;
+
+  /**
+   * @generated from field: double vault_rank = 3;
+   */
+  vaultRank = 0;
+
+  constructor(data?: PartialMessage<NetWorthPoint>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.NetWorthPoint";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "date_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "net_worth_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "vault_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): NetWorthPoint {
+    return new NetWorthPoint().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): NetWorthPoint {
+    return new NetWorthPoint().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): NetWorthPoint {
+    return new NetWorthPoint().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: NetWorthPoint | PlainMessage<NetWorthPoint> | undefined, b: NetWorthPoint | PlainMessage<NetWorthPoint> | undefined): boolean {
+    return proto3.util.equals(NetWorthPoint, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListNetWorthHistoryRequest
+ */
+export class ListNetWorthHistoryRequest extends Message<ListNetWorthHistoryRequest> {
+  /**
+   * Trailing window in days. 0 = default (365).
+   *
+   * @generated from field: int32 days = 1;
+   */
+  days = 0;
+
+  constructor(data?: PartialMessage<ListNetWorthHistoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListNetWorthHistoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListNetWorthHistoryRequest {
+    return new ListNetWorthHistoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListNetWorthHistoryRequest {
+    return new ListNetWorthHistoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListNetWorthHistoryRequest {
+    return new ListNetWorthHistoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListNetWorthHistoryRequest | PlainMessage<ListNetWorthHistoryRequest> | undefined, b: ListNetWorthHistoryRequest | PlainMessage<ListNetWorthHistoryRequest> | undefined): boolean {
+    return proto3.util.equals(ListNetWorthHistoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListNetWorthHistoryResponse
+ */
+export class ListNetWorthHistoryResponse extends Message<ListNetWorthHistoryResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.NetWorthPoint points = 1;
+   */
+  points: NetWorthPoint[] = [];
+
+  constructor(data?: PartialMessage<ListNetWorthHistoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListNetWorthHistoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "points", kind: "message", T: NetWorthPoint, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListNetWorthHistoryResponse {
+    return new ListNetWorthHistoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListNetWorthHistoryResponse {
+    return new ListNetWorthHistoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListNetWorthHistoryResponse {
+    return new ListNetWorthHistoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListNetWorthHistoryResponse | PlainMessage<ListNetWorthHistoryResponse> | undefined, b: ListNetWorthHistoryResponse | PlainMessage<ListNetWorthHistoryResponse> | undefined): boolean {
+    return proto3.util.equals(ListNetWorthHistoryResponse, a, b);
+  }
+}
+

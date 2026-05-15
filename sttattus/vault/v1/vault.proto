@@ -91,6 +91,9 @@ service VaultService {
 
   // Admin Methods (Gated by Admin Middleware)
   rpc AdminVerifyAsset(AdminVerifyAssetRequest) returns (AdminVerifyAssetResponse);
+
+  // V8.1 — daily net-worth snapshot history.
+  rpc ListNetWorthHistory(ListNetWorthHistoryRequest) returns (ListNetWorthHistoryResponse);
 }
 
 message SyncWealthRequest {
@@ -134,4 +137,23 @@ message ExchangePlaidPublicTokenRequest {
 
 message ExchangePlaidPublicTokenResponse {
   bool success = 1;
+}
+
+// === Net-worth time-series (V8.1) ===
+
+// NetWorthPoint is one daily snapshot. The Flutter chart consumes
+// these in ascending date order. Audits/vault.md §10 Phase 1 item 1.
+message NetWorthPoint {
+  string date_iso = 1; // YYYY-MM-DD UTC
+  double net_worth_usd = 2;
+  double vault_rank = 3;
+}
+
+message ListNetWorthHistoryRequest {
+  // Trailing window in days. 0 = default (365).
+  int32 days = 1;
+}
+
+message ListNetWorthHistoryResponse {
+  repeated NetWorthPoint points = 1;
 }
