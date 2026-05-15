@@ -158,6 +158,53 @@ class WorkoutServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listRecentPRs, request, options: options);
   }
 
+  /// F7P2.3 — body record. The composition timeline, injury log, and
+  /// annual mobility baseline are the three primitives that the
+  /// programming engine references permanently.
+  $grpc.ResponseFuture<$0.ListBodyCompositionsResponse> listBodyCompositions($0.ListBodyCompositionsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listBodyCompositions, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateBodyCompositionResponse> createBodyComposition($0.CreateBodyCompositionRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createBodyComposition, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteBodyCompositionResponse> deleteBodyComposition($0.DeleteBodyCompositionRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteBodyComposition, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListInjuriesResponse> listInjuries($0.ListInjuriesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listInjuries, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateInjuryResponse> createInjury($0.CreateInjuryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createInjury, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateInjuryStatusResponse> updateInjuryStatus($0.UpdateInjuryStatusRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$updateInjuryStatus, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteInjuryResponse> deleteInjury($0.DeleteInjuryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteInjury, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMobilityBaselinesResponse> listMobilityBaselines($0.ListMobilityBaselinesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMobilityBaselines, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetCurrentMobilityBaselineResponse> getCurrentMobilityBaseline($0.GetCurrentMobilityBaselineRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getCurrentMobilityBaseline, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertMobilityBaselineResponse> upsertMobilityBaseline($0.UpsertMobilityBaselineRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$upsertMobilityBaseline, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteMobilityBaselineResponse> deleteMobilityBaseline($0.DeleteMobilityBaselineRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteMobilityBaseline, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listWorkouts = $grpc.ClientMethod<$0.ListWorkoutsRequest, $0.ListWorkoutsResponse>(
@@ -272,6 +319,50 @@ class WorkoutServiceClient extends $grpc.Client {
       '/sttattus.workout.v1.WorkoutService/ListRecentPRs',
       ($0.ListRecentPRsRequest value) => value.writeToBuffer(),
       $0.ListRecentPRsResponse.fromBuffer);
+  static final _$listBodyCompositions = $grpc.ClientMethod<$0.ListBodyCompositionsRequest, $0.ListBodyCompositionsResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListBodyCompositions',
+      ($0.ListBodyCompositionsRequest value) => value.writeToBuffer(),
+      $0.ListBodyCompositionsResponse.fromBuffer);
+  static final _$createBodyComposition = $grpc.ClientMethod<$0.CreateBodyCompositionRequest, $0.CreateBodyCompositionResponse>(
+      '/sttattus.workout.v1.WorkoutService/CreateBodyComposition',
+      ($0.CreateBodyCompositionRequest value) => value.writeToBuffer(),
+      $0.CreateBodyCompositionResponse.fromBuffer);
+  static final _$deleteBodyComposition = $grpc.ClientMethod<$0.DeleteBodyCompositionRequest, $0.DeleteBodyCompositionResponse>(
+      '/sttattus.workout.v1.WorkoutService/DeleteBodyComposition',
+      ($0.DeleteBodyCompositionRequest value) => value.writeToBuffer(),
+      $0.DeleteBodyCompositionResponse.fromBuffer);
+  static final _$listInjuries = $grpc.ClientMethod<$0.ListInjuriesRequest, $0.ListInjuriesResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListInjuries',
+      ($0.ListInjuriesRequest value) => value.writeToBuffer(),
+      $0.ListInjuriesResponse.fromBuffer);
+  static final _$createInjury = $grpc.ClientMethod<$0.CreateInjuryRequest, $0.CreateInjuryResponse>(
+      '/sttattus.workout.v1.WorkoutService/CreateInjury',
+      ($0.CreateInjuryRequest value) => value.writeToBuffer(),
+      $0.CreateInjuryResponse.fromBuffer);
+  static final _$updateInjuryStatus = $grpc.ClientMethod<$0.UpdateInjuryStatusRequest, $0.UpdateInjuryStatusResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpdateInjuryStatus',
+      ($0.UpdateInjuryStatusRequest value) => value.writeToBuffer(),
+      $0.UpdateInjuryStatusResponse.fromBuffer);
+  static final _$deleteInjury = $grpc.ClientMethod<$0.DeleteInjuryRequest, $0.DeleteInjuryResponse>(
+      '/sttattus.workout.v1.WorkoutService/DeleteInjury',
+      ($0.DeleteInjuryRequest value) => value.writeToBuffer(),
+      $0.DeleteInjuryResponse.fromBuffer);
+  static final _$listMobilityBaselines = $grpc.ClientMethod<$0.ListMobilityBaselinesRequest, $0.ListMobilityBaselinesResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListMobilityBaselines',
+      ($0.ListMobilityBaselinesRequest value) => value.writeToBuffer(),
+      $0.ListMobilityBaselinesResponse.fromBuffer);
+  static final _$getCurrentMobilityBaseline = $grpc.ClientMethod<$0.GetCurrentMobilityBaselineRequest, $0.GetCurrentMobilityBaselineResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetCurrentMobilityBaseline',
+      ($0.GetCurrentMobilityBaselineRequest value) => value.writeToBuffer(),
+      $0.GetCurrentMobilityBaselineResponse.fromBuffer);
+  static final _$upsertMobilityBaseline = $grpc.ClientMethod<$0.UpsertMobilityBaselineRequest, $0.UpsertMobilityBaselineResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertMobilityBaseline',
+      ($0.UpsertMobilityBaselineRequest value) => value.writeToBuffer(),
+      $0.UpsertMobilityBaselineResponse.fromBuffer);
+  static final _$deleteMobilityBaseline = $grpc.ClientMethod<$0.DeleteMobilityBaselineRequest, $0.DeleteMobilityBaselineResponse>(
+      '/sttattus.workout.v1.WorkoutService/DeleteMobilityBaseline',
+      ($0.DeleteMobilityBaselineRequest value) => value.writeToBuffer(),
+      $0.DeleteMobilityBaselineResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.workout.v1.WorkoutService')
@@ -475,6 +566,83 @@ abstract class WorkoutServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListRecentPRsRequest.fromBuffer(value),
         ($0.ListRecentPRsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListBodyCompositionsRequest, $0.ListBodyCompositionsResponse>(
+        'ListBodyCompositions',
+        listBodyCompositions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListBodyCompositionsRequest.fromBuffer(value),
+        ($0.ListBodyCompositionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateBodyCompositionRequest, $0.CreateBodyCompositionResponse>(
+        'CreateBodyComposition',
+        createBodyComposition_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateBodyCompositionRequest.fromBuffer(value),
+        ($0.CreateBodyCompositionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteBodyCompositionRequest, $0.DeleteBodyCompositionResponse>(
+        'DeleteBodyComposition',
+        deleteBodyComposition_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteBodyCompositionRequest.fromBuffer(value),
+        ($0.DeleteBodyCompositionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListInjuriesRequest, $0.ListInjuriesResponse>(
+        'ListInjuries',
+        listInjuries_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListInjuriesRequest.fromBuffer(value),
+        ($0.ListInjuriesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateInjuryRequest, $0.CreateInjuryResponse>(
+        'CreateInjury',
+        createInjury_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateInjuryRequest.fromBuffer(value),
+        ($0.CreateInjuryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateInjuryStatusRequest, $0.UpdateInjuryStatusResponse>(
+        'UpdateInjuryStatus',
+        updateInjuryStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpdateInjuryStatusRequest.fromBuffer(value),
+        ($0.UpdateInjuryStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteInjuryRequest, $0.DeleteInjuryResponse>(
+        'DeleteInjury',
+        deleteInjury_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteInjuryRequest.fromBuffer(value),
+        ($0.DeleteInjuryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMobilityBaselinesRequest, $0.ListMobilityBaselinesResponse>(
+        'ListMobilityBaselines',
+        listMobilityBaselines_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMobilityBaselinesRequest.fromBuffer(value),
+        ($0.ListMobilityBaselinesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetCurrentMobilityBaselineRequest, $0.GetCurrentMobilityBaselineResponse>(
+        'GetCurrentMobilityBaseline',
+        getCurrentMobilityBaseline_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetCurrentMobilityBaselineRequest.fromBuffer(value),
+        ($0.GetCurrentMobilityBaselineResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertMobilityBaselineRequest, $0.UpsertMobilityBaselineResponse>(
+        'UpsertMobilityBaseline',
+        upsertMobilityBaseline_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpsertMobilityBaselineRequest.fromBuffer(value),
+        ($0.UpsertMobilityBaselineResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteMobilityBaselineRequest, $0.DeleteMobilityBaselineResponse>(
+        'DeleteMobilityBaseline',
+        deleteMobilityBaseline_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteMobilityBaselineRequest.fromBuffer(value),
+        ($0.DeleteMobilityBaselineResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListWorkoutsResponse> listWorkouts_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWorkoutsRequest> $request) async {
@@ -644,5 +812,71 @@ abstract class WorkoutServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListRecentPRsResponse> listRecentPRs($grpc.ServiceCall call, $0.ListRecentPRsRequest request);
+
+  $async.Future<$0.ListBodyCompositionsResponse> listBodyCompositions_Pre($grpc.ServiceCall $call, $async.Future<$0.ListBodyCompositionsRequest> $request) async {
+    return listBodyCompositions($call, await $request);
+  }
+
+  $async.Future<$0.ListBodyCompositionsResponse> listBodyCompositions($grpc.ServiceCall call, $0.ListBodyCompositionsRequest request);
+
+  $async.Future<$0.CreateBodyCompositionResponse> createBodyComposition_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateBodyCompositionRequest> $request) async {
+    return createBodyComposition($call, await $request);
+  }
+
+  $async.Future<$0.CreateBodyCompositionResponse> createBodyComposition($grpc.ServiceCall call, $0.CreateBodyCompositionRequest request);
+
+  $async.Future<$0.DeleteBodyCompositionResponse> deleteBodyComposition_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteBodyCompositionRequest> $request) async {
+    return deleteBodyComposition($call, await $request);
+  }
+
+  $async.Future<$0.DeleteBodyCompositionResponse> deleteBodyComposition($grpc.ServiceCall call, $0.DeleteBodyCompositionRequest request);
+
+  $async.Future<$0.ListInjuriesResponse> listInjuries_Pre($grpc.ServiceCall $call, $async.Future<$0.ListInjuriesRequest> $request) async {
+    return listInjuries($call, await $request);
+  }
+
+  $async.Future<$0.ListInjuriesResponse> listInjuries($grpc.ServiceCall call, $0.ListInjuriesRequest request);
+
+  $async.Future<$0.CreateInjuryResponse> createInjury_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateInjuryRequest> $request) async {
+    return createInjury($call, await $request);
+  }
+
+  $async.Future<$0.CreateInjuryResponse> createInjury($grpc.ServiceCall call, $0.CreateInjuryRequest request);
+
+  $async.Future<$0.UpdateInjuryStatusResponse> updateInjuryStatus_Pre($grpc.ServiceCall $call, $async.Future<$0.UpdateInjuryStatusRequest> $request) async {
+    return updateInjuryStatus($call, await $request);
+  }
+
+  $async.Future<$0.UpdateInjuryStatusResponse> updateInjuryStatus($grpc.ServiceCall call, $0.UpdateInjuryStatusRequest request);
+
+  $async.Future<$0.DeleteInjuryResponse> deleteInjury_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteInjuryRequest> $request) async {
+    return deleteInjury($call, await $request);
+  }
+
+  $async.Future<$0.DeleteInjuryResponse> deleteInjury($grpc.ServiceCall call, $0.DeleteInjuryRequest request);
+
+  $async.Future<$0.ListMobilityBaselinesResponse> listMobilityBaselines_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMobilityBaselinesRequest> $request) async {
+    return listMobilityBaselines($call, await $request);
+  }
+
+  $async.Future<$0.ListMobilityBaselinesResponse> listMobilityBaselines($grpc.ServiceCall call, $0.ListMobilityBaselinesRequest request);
+
+  $async.Future<$0.GetCurrentMobilityBaselineResponse> getCurrentMobilityBaseline_Pre($grpc.ServiceCall $call, $async.Future<$0.GetCurrentMobilityBaselineRequest> $request) async {
+    return getCurrentMobilityBaseline($call, await $request);
+  }
+
+  $async.Future<$0.GetCurrentMobilityBaselineResponse> getCurrentMobilityBaseline($grpc.ServiceCall call, $0.GetCurrentMobilityBaselineRequest request);
+
+  $async.Future<$0.UpsertMobilityBaselineResponse> upsertMobilityBaseline_Pre($grpc.ServiceCall $call, $async.Future<$0.UpsertMobilityBaselineRequest> $request) async {
+    return upsertMobilityBaseline($call, await $request);
+  }
+
+  $async.Future<$0.UpsertMobilityBaselineResponse> upsertMobilityBaseline($grpc.ServiceCall call, $0.UpsertMobilityBaselineRequest request);
+
+  $async.Future<$0.DeleteMobilityBaselineResponse> deleteMobilityBaseline_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteMobilityBaselineRequest> $request) async {
+    return deleteMobilityBaseline($call, await $request);
+  }
+
+  $async.Future<$0.DeleteMobilityBaselineResponse> deleteMobilityBaseline($grpc.ServiceCall call, $0.DeleteMobilityBaselineRequest request);
 
 }

@@ -514,6 +514,146 @@ message ListRecentPRsResponse {
   repeated PersonalRecord prs = 1;
 }
 
+// ===== Body record (F7P2.3): composition timeline, injury log,
+// annual mobility baselines. Audits/forge.md §5 screens 11/12/13,
+// §10 Phase 2 item 3. =====
+
+// BodyComposition is one row of the timeline. Nullable metrics
+// surface as 0 — the client decides whether to show a value.
+message BodyComposition {
+  string id = 1;
+  string source = 2; // dexa | inbody | scale | manual
+  int64 captured_at = 3; // unix seconds
+  double weight_kg = 4;
+  double body_fat_pct = 5;
+  double lean_mass_kg = 6;
+  double fat_mass_kg = 7;
+  double visceral_fat_rating = 8;
+  int32 bmr_kcal = 9;
+  string notes = 10;
+}
+
+message ListBodyCompositionsRequest {
+  sttattus.common.v1.PageRequest page = 1;
+}
+message ListBodyCompositionsResponse {
+  repeated BodyComposition entries = 1;
+}
+
+message CreateBodyCompositionRequest {
+  string source = 1;
+  int64 captured_at = 2;
+  double weight_kg = 3;
+  double body_fat_pct = 4;
+  double lean_mass_kg = 5;
+  double fat_mass_kg = 6;
+  double visceral_fat_rating = 7;
+  int32 bmr_kcal = 8;
+  string notes = 9;
+}
+message CreateBodyCompositionResponse {
+  BodyComposition entry = 1;
+}
+
+message DeleteBodyCompositionRequest {
+  string id = 1;
+}
+message DeleteBodyCompositionResponse {}
+
+// Injury is one row of the permanent injury record. Programming
+// reads ListActiveInjuries to inject contraindications.
+message Injury {
+  string id = 1;
+  int64 occurred_at = 2; // unix seconds
+  string region = 3;
+  int32 severity = 4; // 1..5
+  string mechanism = 5;
+  string status = 6; // active | recovering | resolved
+  int64 resolved_at = 7; // 0 when not resolved
+  string notes = 8;
+}
+
+message ListInjuriesRequest {
+  bool active_only = 1;
+}
+message ListInjuriesResponse {
+  repeated Injury injuries = 1;
+}
+
+message CreateInjuryRequest {
+  int64 occurred_at = 1;
+  string region = 2;
+  int32 severity = 3;
+  string mechanism = 4;
+  string notes = 5;
+}
+message CreateInjuryResponse {
+  Injury injury = 1;
+}
+
+message UpdateInjuryStatusRequest {
+  string id = 1;
+  string status = 2; // active | recovering | resolved
+  string notes = 3;
+}
+message UpdateInjuryStatusResponse {
+  Injury injury = 1;
+}
+
+message DeleteInjuryRequest {
+  string id = 1;
+}
+message DeleteInjuryResponse {}
+
+// MobilityScore — the seven test slots in the annual screen.
+message MobilityScore {
+  int32 overhead_squat = 1;
+  int32 ankle_dorsiflexion = 2;
+  int32 hip_internal_rot = 3;
+  int32 t_spine_rot = 4;
+  int32 shoulder_flex = 5;
+  int32 single_leg_balance = 6;
+  int32 scap_pushup = 7;
+}
+
+message MobilityBaseline {
+  string id = 1;
+  int64 captured_at = 2;
+  int32 season_year = 3;
+  MobilityScore scores = 4;
+  string notes = 5;
+}
+
+message ListMobilityBaselinesRequest {}
+message ListMobilityBaselinesResponse {
+  repeated MobilityBaseline baselines = 1;
+}
+
+message GetCurrentMobilityBaselineRequest {
+  // 0 means current calendar year.
+  int32 season_year = 1;
+}
+message GetCurrentMobilityBaselineResponse {
+  // Empty baseline (id == "") means no screen for that year yet.
+  MobilityBaseline baseline = 1;
+}
+
+message UpsertMobilityBaselineRequest {
+  int64 captured_at = 1;
+  // 0 means current calendar year.
+  int32 season_year = 2;
+  MobilityScore scores = 3;
+  string notes = 4;
+}
+message UpsertMobilityBaselineResponse {
+  MobilityBaseline baseline = 1;
+}
+
+message DeleteMobilityBaselineRequest {
+  string id = 1;
+}
+message DeleteMobilityBaselineResponse {}
+
 service WorkoutService {
   rpc ListWorkouts(ListWorkoutsRequest) returns (ListWorkoutsResponse);
   rpc GetWorkout(GetWorkoutRequest) returns (GetWorkoutResponse);
@@ -563,4 +703,21 @@ service WorkoutService {
   // worker fired on session completion; these RPCs are read-only.
   rpc ListMyPRs(ListMyPRsRequest) returns (ListMyPRsResponse);
   rpc ListRecentPRs(ListRecentPRsRequest) returns (ListRecentPRsResponse);
+
+  // F7P2.3 — body record. The composition timeline, injury log, and
+  // annual mobility baseline are the three primitives that the
+  // programming engine references permanently.
+  rpc ListBodyCompositions(ListBodyCompositionsRequest) returns (ListBodyCompositionsResponse);
+  rpc CreateBodyComposition(CreateBodyCompositionRequest) returns (CreateBodyCompositionResponse);
+  rpc DeleteBodyComposition(DeleteBodyCompositionRequest) returns (DeleteBodyCompositionResponse);
+
+  rpc ListInjuries(ListInjuriesRequest) returns (ListInjuriesResponse);
+  rpc CreateInjury(CreateInjuryRequest) returns (CreateInjuryResponse);
+  rpc UpdateInjuryStatus(UpdateInjuryStatusRequest) returns (UpdateInjuryStatusResponse);
+  rpc DeleteInjury(DeleteInjuryRequest) returns (DeleteInjuryResponse);
+
+  rpc ListMobilityBaselines(ListMobilityBaselinesRequest) returns (ListMobilityBaselinesResponse);
+  rpc GetCurrentMobilityBaseline(GetCurrentMobilityBaselineRequest) returns (GetCurrentMobilityBaselineResponse);
+  rpc UpsertMobilityBaseline(UpsertMobilityBaselineRequest) returns (UpsertMobilityBaselineResponse);
+  rpc DeleteMobilityBaseline(DeleteMobilityBaselineRequest) returns (DeleteMobilityBaselineResponse);
 }

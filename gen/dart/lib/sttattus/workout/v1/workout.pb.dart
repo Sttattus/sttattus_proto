@@ -5193,6 +5193,1660 @@ class ListRecentPRsResponse extends $pb.GeneratedMessage {
   $pb.PbList<PersonalRecord> get prs => $_getList(0);
 }
 
+/// BodyComposition is one row of the timeline. Nullable metrics
+/// surface as 0 — the client decides whether to show a value.
+class BodyComposition extends $pb.GeneratedMessage {
+  factory BodyComposition({
+    $core.String? id,
+    $core.String? source,
+    $fixnum.Int64? capturedAt,
+    $core.double? weightKg,
+    $core.double? bodyFatPct,
+    $core.double? leanMassKg,
+    $core.double? fatMassKg,
+    $core.double? visceralFatRating,
+    $core.int? bmrKcal,
+    $core.String? notes,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (source != null) result.source = source;
+    if (capturedAt != null) result.capturedAt = capturedAt;
+    if (weightKg != null) result.weightKg = weightKg;
+    if (bodyFatPct != null) result.bodyFatPct = bodyFatPct;
+    if (leanMassKg != null) result.leanMassKg = leanMassKg;
+    if (fatMassKg != null) result.fatMassKg = fatMassKg;
+    if (visceralFatRating != null) result.visceralFatRating = visceralFatRating;
+    if (bmrKcal != null) result.bmrKcal = bmrKcal;
+    if (notes != null) result.notes = notes;
+    return result;
+  }
+
+  BodyComposition._();
+
+  factory BodyComposition.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory BodyComposition.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BodyComposition', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'source')
+    ..aInt64(3, _omitFieldNames ? '' : 'capturedAt')
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'weightKg', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'bodyFatPct', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'leanMassKg', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'fatMassKg', $pb.PbFieldType.OD)
+    ..a<$core.double>(8, _omitFieldNames ? '' : 'visceralFatRating', $pb.PbFieldType.OD)
+    ..a<$core.int>(9, _omitFieldNames ? '' : 'bmrKcal', $pb.PbFieldType.O3)
+    ..aOS(10, _omitFieldNames ? '' : 'notes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BodyComposition clone() => BodyComposition()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BodyComposition copyWith(void Function(BodyComposition) updates) => super.copyWith((message) => updates(message as BodyComposition)) as BodyComposition;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BodyComposition create() => BodyComposition._();
+  @$core.override
+  BodyComposition createEmptyInstance() => create();
+  static $pb.PbList<BodyComposition> createRepeated() => $pb.PbList<BodyComposition>();
+  @$core.pragma('dart2js:noInline')
+  static BodyComposition getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BodyComposition>(create);
+  static BodyComposition? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get source => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set source($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSource() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSource() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get capturedAt => $_getI64(2);
+  @$pb.TagNumber(3)
+  set capturedAt($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCapturedAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCapturedAt() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get weightKg => $_getN(3);
+  @$pb.TagNumber(4)
+  set weightKg($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasWeightKg() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWeightKg() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get bodyFatPct => $_getN(4);
+  @$pb.TagNumber(5)
+  set bodyFatPct($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBodyFatPct() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBodyFatPct() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get leanMassKg => $_getN(5);
+  @$pb.TagNumber(6)
+  set leanMassKg($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLeanMassKg() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLeanMassKg() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get fatMassKg => $_getN(6);
+  @$pb.TagNumber(7)
+  set fatMassKg($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasFatMassKg() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFatMassKg() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.double get visceralFatRating => $_getN(7);
+  @$pb.TagNumber(8)
+  set visceralFatRating($core.double value) => $_setDouble(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasVisceralFatRating() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearVisceralFatRating() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get bmrKcal => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set bmrKcal($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasBmrKcal() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearBmrKcal() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get notes => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set notes($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasNotes() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearNotes() => $_clearField(10);
+}
+
+class ListBodyCompositionsRequest extends $pb.GeneratedMessage {
+  factory ListBodyCompositionsRequest({
+    $1.PageRequest? page,
+  }) {
+    final result = create();
+    if (page != null) result.page = page;
+    return result;
+  }
+
+  ListBodyCompositionsRequest._();
+
+  factory ListBodyCompositionsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListBodyCompositionsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListBodyCompositionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<$1.PageRequest>(1, _omitFieldNames ? '' : 'page', subBuilder: $1.PageRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListBodyCompositionsRequest clone() => ListBodyCompositionsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListBodyCompositionsRequest copyWith(void Function(ListBodyCompositionsRequest) updates) => super.copyWith((message) => updates(message as ListBodyCompositionsRequest)) as ListBodyCompositionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListBodyCompositionsRequest create() => ListBodyCompositionsRequest._();
+  @$core.override
+  ListBodyCompositionsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListBodyCompositionsRequest> createRepeated() => $pb.PbList<ListBodyCompositionsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListBodyCompositionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListBodyCompositionsRequest>(create);
+  static ListBodyCompositionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.PageRequest get page => $_getN(0);
+  @$pb.TagNumber(1)
+  set page($1.PageRequest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPage() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $1.PageRequest ensurePage() => $_ensure(0);
+}
+
+class ListBodyCompositionsResponse extends $pb.GeneratedMessage {
+  factory ListBodyCompositionsResponse({
+    $core.Iterable<BodyComposition>? entries,
+  }) {
+    final result = create();
+    if (entries != null) result.entries.addAll(entries);
+    return result;
+  }
+
+  ListBodyCompositionsResponse._();
+
+  factory ListBodyCompositionsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListBodyCompositionsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListBodyCompositionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..pc<BodyComposition>(1, _omitFieldNames ? '' : 'entries', $pb.PbFieldType.PM, subBuilder: BodyComposition.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListBodyCompositionsResponse clone() => ListBodyCompositionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListBodyCompositionsResponse copyWith(void Function(ListBodyCompositionsResponse) updates) => super.copyWith((message) => updates(message as ListBodyCompositionsResponse)) as ListBodyCompositionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListBodyCompositionsResponse create() => ListBodyCompositionsResponse._();
+  @$core.override
+  ListBodyCompositionsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListBodyCompositionsResponse> createRepeated() => $pb.PbList<ListBodyCompositionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListBodyCompositionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListBodyCompositionsResponse>(create);
+  static ListBodyCompositionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<BodyComposition> get entries => $_getList(0);
+}
+
+class CreateBodyCompositionRequest extends $pb.GeneratedMessage {
+  factory CreateBodyCompositionRequest({
+    $core.String? source,
+    $fixnum.Int64? capturedAt,
+    $core.double? weightKg,
+    $core.double? bodyFatPct,
+    $core.double? leanMassKg,
+    $core.double? fatMassKg,
+    $core.double? visceralFatRating,
+    $core.int? bmrKcal,
+    $core.String? notes,
+  }) {
+    final result = create();
+    if (source != null) result.source = source;
+    if (capturedAt != null) result.capturedAt = capturedAt;
+    if (weightKg != null) result.weightKg = weightKg;
+    if (bodyFatPct != null) result.bodyFatPct = bodyFatPct;
+    if (leanMassKg != null) result.leanMassKg = leanMassKg;
+    if (fatMassKg != null) result.fatMassKg = fatMassKg;
+    if (visceralFatRating != null) result.visceralFatRating = visceralFatRating;
+    if (bmrKcal != null) result.bmrKcal = bmrKcal;
+    if (notes != null) result.notes = notes;
+    return result;
+  }
+
+  CreateBodyCompositionRequest._();
+
+  factory CreateBodyCompositionRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateBodyCompositionRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateBodyCompositionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
+    ..aInt64(2, _omitFieldNames ? '' : 'capturedAt')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'weightKg', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'bodyFatPct', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'leanMassKg', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'fatMassKg', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'visceralFatRating', $pb.PbFieldType.OD)
+    ..a<$core.int>(8, _omitFieldNames ? '' : 'bmrKcal', $pb.PbFieldType.O3)
+    ..aOS(9, _omitFieldNames ? '' : 'notes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateBodyCompositionRequest clone() => CreateBodyCompositionRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateBodyCompositionRequest copyWith(void Function(CreateBodyCompositionRequest) updates) => super.copyWith((message) => updates(message as CreateBodyCompositionRequest)) as CreateBodyCompositionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateBodyCompositionRequest create() => CreateBodyCompositionRequest._();
+  @$core.override
+  CreateBodyCompositionRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateBodyCompositionRequest> createRepeated() => $pb.PbList<CreateBodyCompositionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateBodyCompositionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateBodyCompositionRequest>(create);
+  static CreateBodyCompositionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get source => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set source($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get capturedAt => $_getI64(1);
+  @$pb.TagNumber(2)
+  set capturedAt($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCapturedAt() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCapturedAt() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get weightKg => $_getN(2);
+  @$pb.TagNumber(3)
+  set weightKg($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWeightKg() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWeightKg() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get bodyFatPct => $_getN(3);
+  @$pb.TagNumber(4)
+  set bodyFatPct($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBodyFatPct() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBodyFatPct() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get leanMassKg => $_getN(4);
+  @$pb.TagNumber(5)
+  set leanMassKg($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLeanMassKg() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLeanMassKg() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get fatMassKg => $_getN(5);
+  @$pb.TagNumber(6)
+  set fatMassKg($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasFatMassKg() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFatMassKg() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get visceralFatRating => $_getN(6);
+  @$pb.TagNumber(7)
+  set visceralFatRating($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasVisceralFatRating() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearVisceralFatRating() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get bmrKcal => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set bmrKcal($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasBmrKcal() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearBmrKcal() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get notes => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set notes($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasNotes() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearNotes() => $_clearField(9);
+}
+
+class CreateBodyCompositionResponse extends $pb.GeneratedMessage {
+  factory CreateBodyCompositionResponse({
+    BodyComposition? entry,
+  }) {
+    final result = create();
+    if (entry != null) result.entry = entry;
+    return result;
+  }
+
+  CreateBodyCompositionResponse._();
+
+  factory CreateBodyCompositionResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateBodyCompositionResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateBodyCompositionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<BodyComposition>(1, _omitFieldNames ? '' : 'entry', subBuilder: BodyComposition.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateBodyCompositionResponse clone() => CreateBodyCompositionResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateBodyCompositionResponse copyWith(void Function(CreateBodyCompositionResponse) updates) => super.copyWith((message) => updates(message as CreateBodyCompositionResponse)) as CreateBodyCompositionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateBodyCompositionResponse create() => CreateBodyCompositionResponse._();
+  @$core.override
+  CreateBodyCompositionResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateBodyCompositionResponse> createRepeated() => $pb.PbList<CreateBodyCompositionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateBodyCompositionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateBodyCompositionResponse>(create);
+  static CreateBodyCompositionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  BodyComposition get entry => $_getN(0);
+  @$pb.TagNumber(1)
+  set entry(BodyComposition value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEntry() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEntry() => $_clearField(1);
+  @$pb.TagNumber(1)
+  BodyComposition ensureEntry() => $_ensure(0);
+}
+
+class DeleteBodyCompositionRequest extends $pb.GeneratedMessage {
+  factory DeleteBodyCompositionRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  DeleteBodyCompositionRequest._();
+
+  factory DeleteBodyCompositionRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteBodyCompositionRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteBodyCompositionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteBodyCompositionRequest clone() => DeleteBodyCompositionRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteBodyCompositionRequest copyWith(void Function(DeleteBodyCompositionRequest) updates) => super.copyWith((message) => updates(message as DeleteBodyCompositionRequest)) as DeleteBodyCompositionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteBodyCompositionRequest create() => DeleteBodyCompositionRequest._();
+  @$core.override
+  DeleteBodyCompositionRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteBodyCompositionRequest> createRepeated() => $pb.PbList<DeleteBodyCompositionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteBodyCompositionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteBodyCompositionRequest>(create);
+  static DeleteBodyCompositionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class DeleteBodyCompositionResponse extends $pb.GeneratedMessage {
+  factory DeleteBodyCompositionResponse() => create();
+
+  DeleteBodyCompositionResponse._();
+
+  factory DeleteBodyCompositionResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteBodyCompositionResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteBodyCompositionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteBodyCompositionResponse clone() => DeleteBodyCompositionResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteBodyCompositionResponse copyWith(void Function(DeleteBodyCompositionResponse) updates) => super.copyWith((message) => updates(message as DeleteBodyCompositionResponse)) as DeleteBodyCompositionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteBodyCompositionResponse create() => DeleteBodyCompositionResponse._();
+  @$core.override
+  DeleteBodyCompositionResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteBodyCompositionResponse> createRepeated() => $pb.PbList<DeleteBodyCompositionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteBodyCompositionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteBodyCompositionResponse>(create);
+  static DeleteBodyCompositionResponse? _defaultInstance;
+}
+
+/// Injury is one row of the permanent injury record. Programming
+/// reads ListActiveInjuries to inject contraindications.
+class Injury extends $pb.GeneratedMessage {
+  factory Injury({
+    $core.String? id,
+    $fixnum.Int64? occurredAt,
+    $core.String? region,
+    $core.int? severity,
+    $core.String? mechanism,
+    $core.String? status,
+    $fixnum.Int64? resolvedAt,
+    $core.String? notes,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (occurredAt != null) result.occurredAt = occurredAt;
+    if (region != null) result.region = region;
+    if (severity != null) result.severity = severity;
+    if (mechanism != null) result.mechanism = mechanism;
+    if (status != null) result.status = status;
+    if (resolvedAt != null) result.resolvedAt = resolvedAt;
+    if (notes != null) result.notes = notes;
+    return result;
+  }
+
+  Injury._();
+
+  factory Injury.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Injury.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Injury', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aInt64(2, _omitFieldNames ? '' : 'occurredAt')
+    ..aOS(3, _omitFieldNames ? '' : 'region')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'severity', $pb.PbFieldType.O3)
+    ..aOS(5, _omitFieldNames ? '' : 'mechanism')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aInt64(7, _omitFieldNames ? '' : 'resolvedAt')
+    ..aOS(8, _omitFieldNames ? '' : 'notes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Injury clone() => Injury()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Injury copyWith(void Function(Injury) updates) => super.copyWith((message) => updates(message as Injury)) as Injury;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Injury create() => Injury._();
+  @$core.override
+  Injury createEmptyInstance() => create();
+  static $pb.PbList<Injury> createRepeated() => $pb.PbList<Injury>();
+  @$core.pragma('dart2js:noInline')
+  static Injury getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Injury>(create);
+  static Injury? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get occurredAt => $_getI64(1);
+  @$pb.TagNumber(2)
+  set occurredAt($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOccurredAt() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOccurredAt() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get region => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set region($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRegion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRegion() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get severity => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set severity($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSeverity() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSeverity() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get mechanism => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set mechanism($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMechanism() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMechanism() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get resolvedAt => $_getI64(6);
+  @$pb.TagNumber(7)
+  set resolvedAt($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasResolvedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearResolvedAt() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get notes => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set notes($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNotes() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNotes() => $_clearField(8);
+}
+
+class ListInjuriesRequest extends $pb.GeneratedMessage {
+  factory ListInjuriesRequest({
+    $core.bool? activeOnly,
+  }) {
+    final result = create();
+    if (activeOnly != null) result.activeOnly = activeOnly;
+    return result;
+  }
+
+  ListInjuriesRequest._();
+
+  factory ListInjuriesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListInjuriesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListInjuriesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'activeOnly')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListInjuriesRequest clone() => ListInjuriesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListInjuriesRequest copyWith(void Function(ListInjuriesRequest) updates) => super.copyWith((message) => updates(message as ListInjuriesRequest)) as ListInjuriesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListInjuriesRequest create() => ListInjuriesRequest._();
+  @$core.override
+  ListInjuriesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListInjuriesRequest> createRepeated() => $pb.PbList<ListInjuriesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListInjuriesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListInjuriesRequest>(create);
+  static ListInjuriesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get activeOnly => $_getBF(0);
+  @$pb.TagNumber(1)
+  set activeOnly($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasActiveOnly() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearActiveOnly() => $_clearField(1);
+}
+
+class ListInjuriesResponse extends $pb.GeneratedMessage {
+  factory ListInjuriesResponse({
+    $core.Iterable<Injury>? injuries,
+  }) {
+    final result = create();
+    if (injuries != null) result.injuries.addAll(injuries);
+    return result;
+  }
+
+  ListInjuriesResponse._();
+
+  factory ListInjuriesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListInjuriesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListInjuriesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..pc<Injury>(1, _omitFieldNames ? '' : 'injuries', $pb.PbFieldType.PM, subBuilder: Injury.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListInjuriesResponse clone() => ListInjuriesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListInjuriesResponse copyWith(void Function(ListInjuriesResponse) updates) => super.copyWith((message) => updates(message as ListInjuriesResponse)) as ListInjuriesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListInjuriesResponse create() => ListInjuriesResponse._();
+  @$core.override
+  ListInjuriesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListInjuriesResponse> createRepeated() => $pb.PbList<ListInjuriesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListInjuriesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListInjuriesResponse>(create);
+  static ListInjuriesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Injury> get injuries => $_getList(0);
+}
+
+class CreateInjuryRequest extends $pb.GeneratedMessage {
+  factory CreateInjuryRequest({
+    $fixnum.Int64? occurredAt,
+    $core.String? region,
+    $core.int? severity,
+    $core.String? mechanism,
+    $core.String? notes,
+  }) {
+    final result = create();
+    if (occurredAt != null) result.occurredAt = occurredAt;
+    if (region != null) result.region = region;
+    if (severity != null) result.severity = severity;
+    if (mechanism != null) result.mechanism = mechanism;
+    if (notes != null) result.notes = notes;
+    return result;
+  }
+
+  CreateInjuryRequest._();
+
+  factory CreateInjuryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateInjuryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateInjuryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'occurredAt')
+    ..aOS(2, _omitFieldNames ? '' : 'region')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'severity', $pb.PbFieldType.O3)
+    ..aOS(4, _omitFieldNames ? '' : 'mechanism')
+    ..aOS(5, _omitFieldNames ? '' : 'notes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateInjuryRequest clone() => CreateInjuryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateInjuryRequest copyWith(void Function(CreateInjuryRequest) updates) => super.copyWith((message) => updates(message as CreateInjuryRequest)) as CreateInjuryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateInjuryRequest create() => CreateInjuryRequest._();
+  @$core.override
+  CreateInjuryRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateInjuryRequest> createRepeated() => $pb.PbList<CreateInjuryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateInjuryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateInjuryRequest>(create);
+  static CreateInjuryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get occurredAt => $_getI64(0);
+  @$pb.TagNumber(1)
+  set occurredAt($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOccurredAt() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOccurredAt() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get region => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set region($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRegion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRegion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get severity => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set severity($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSeverity() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSeverity() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get mechanism => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set mechanism($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMechanism() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMechanism() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get notes => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set notes($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNotes() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNotes() => $_clearField(5);
+}
+
+class CreateInjuryResponse extends $pb.GeneratedMessage {
+  factory CreateInjuryResponse({
+    Injury? injury,
+  }) {
+    final result = create();
+    if (injury != null) result.injury = injury;
+    return result;
+  }
+
+  CreateInjuryResponse._();
+
+  factory CreateInjuryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateInjuryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateInjuryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<Injury>(1, _omitFieldNames ? '' : 'injury', subBuilder: Injury.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateInjuryResponse clone() => CreateInjuryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateInjuryResponse copyWith(void Function(CreateInjuryResponse) updates) => super.copyWith((message) => updates(message as CreateInjuryResponse)) as CreateInjuryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateInjuryResponse create() => CreateInjuryResponse._();
+  @$core.override
+  CreateInjuryResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateInjuryResponse> createRepeated() => $pb.PbList<CreateInjuryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateInjuryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateInjuryResponse>(create);
+  static CreateInjuryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Injury get injury => $_getN(0);
+  @$pb.TagNumber(1)
+  set injury(Injury value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasInjury() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInjury() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Injury ensureInjury() => $_ensure(0);
+}
+
+class UpdateInjuryStatusRequest extends $pb.GeneratedMessage {
+  factory UpdateInjuryStatusRequest({
+    $core.String? id,
+    $core.String? status,
+    $core.String? notes,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (status != null) result.status = status;
+    if (notes != null) result.notes = notes;
+    return result;
+  }
+
+  UpdateInjuryStatusRequest._();
+
+  factory UpdateInjuryStatusRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateInjuryStatusRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateInjuryStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aOS(3, _omitFieldNames ? '' : 'notes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateInjuryStatusRequest clone() => UpdateInjuryStatusRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateInjuryStatusRequest copyWith(void Function(UpdateInjuryStatusRequest) updates) => super.copyWith((message) => updates(message as UpdateInjuryStatusRequest)) as UpdateInjuryStatusRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateInjuryStatusRequest create() => UpdateInjuryStatusRequest._();
+  @$core.override
+  UpdateInjuryStatusRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateInjuryStatusRequest> createRepeated() => $pb.PbList<UpdateInjuryStatusRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateInjuryStatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateInjuryStatusRequest>(create);
+  static UpdateInjuryStatusRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get notes => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set notes($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNotes() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNotes() => $_clearField(3);
+}
+
+class UpdateInjuryStatusResponse extends $pb.GeneratedMessage {
+  factory UpdateInjuryStatusResponse({
+    Injury? injury,
+  }) {
+    final result = create();
+    if (injury != null) result.injury = injury;
+    return result;
+  }
+
+  UpdateInjuryStatusResponse._();
+
+  factory UpdateInjuryStatusResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateInjuryStatusResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateInjuryStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<Injury>(1, _omitFieldNames ? '' : 'injury', subBuilder: Injury.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateInjuryStatusResponse clone() => UpdateInjuryStatusResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateInjuryStatusResponse copyWith(void Function(UpdateInjuryStatusResponse) updates) => super.copyWith((message) => updates(message as UpdateInjuryStatusResponse)) as UpdateInjuryStatusResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateInjuryStatusResponse create() => UpdateInjuryStatusResponse._();
+  @$core.override
+  UpdateInjuryStatusResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateInjuryStatusResponse> createRepeated() => $pb.PbList<UpdateInjuryStatusResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateInjuryStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateInjuryStatusResponse>(create);
+  static UpdateInjuryStatusResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Injury get injury => $_getN(0);
+  @$pb.TagNumber(1)
+  set injury(Injury value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasInjury() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInjury() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Injury ensureInjury() => $_ensure(0);
+}
+
+class DeleteInjuryRequest extends $pb.GeneratedMessage {
+  factory DeleteInjuryRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  DeleteInjuryRequest._();
+
+  factory DeleteInjuryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteInjuryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteInjuryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteInjuryRequest clone() => DeleteInjuryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteInjuryRequest copyWith(void Function(DeleteInjuryRequest) updates) => super.copyWith((message) => updates(message as DeleteInjuryRequest)) as DeleteInjuryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteInjuryRequest create() => DeleteInjuryRequest._();
+  @$core.override
+  DeleteInjuryRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteInjuryRequest> createRepeated() => $pb.PbList<DeleteInjuryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteInjuryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteInjuryRequest>(create);
+  static DeleteInjuryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class DeleteInjuryResponse extends $pb.GeneratedMessage {
+  factory DeleteInjuryResponse() => create();
+
+  DeleteInjuryResponse._();
+
+  factory DeleteInjuryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteInjuryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteInjuryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteInjuryResponse clone() => DeleteInjuryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteInjuryResponse copyWith(void Function(DeleteInjuryResponse) updates) => super.copyWith((message) => updates(message as DeleteInjuryResponse)) as DeleteInjuryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteInjuryResponse create() => DeleteInjuryResponse._();
+  @$core.override
+  DeleteInjuryResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteInjuryResponse> createRepeated() => $pb.PbList<DeleteInjuryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteInjuryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteInjuryResponse>(create);
+  static DeleteInjuryResponse? _defaultInstance;
+}
+
+/// MobilityScore — the seven test slots in the annual screen.
+class MobilityScore extends $pb.GeneratedMessage {
+  factory MobilityScore({
+    $core.int? overheadSquat,
+    $core.int? ankleDorsiflexion,
+    $core.int? hipInternalRot,
+    $core.int? tSpineRot,
+    $core.int? shoulderFlex,
+    $core.int? singleLegBalance,
+    $core.int? scapPushup,
+  }) {
+    final result = create();
+    if (overheadSquat != null) result.overheadSquat = overheadSquat;
+    if (ankleDorsiflexion != null) result.ankleDorsiflexion = ankleDorsiflexion;
+    if (hipInternalRot != null) result.hipInternalRot = hipInternalRot;
+    if (tSpineRot != null) result.tSpineRot = tSpineRot;
+    if (shoulderFlex != null) result.shoulderFlex = shoulderFlex;
+    if (singleLegBalance != null) result.singleLegBalance = singleLegBalance;
+    if (scapPushup != null) result.scapPushup = scapPushup;
+    return result;
+  }
+
+  MobilityScore._();
+
+  factory MobilityScore.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MobilityScore.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MobilityScore', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'overheadSquat', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'ankleDorsiflexion', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'hipInternalRot', $pb.PbFieldType.O3)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'tSpineRot', $pb.PbFieldType.O3)
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'shoulderFlex', $pb.PbFieldType.O3)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'singleLegBalance', $pb.PbFieldType.O3)
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'scapPushup', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MobilityScore clone() => MobilityScore()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MobilityScore copyWith(void Function(MobilityScore) updates) => super.copyWith((message) => updates(message as MobilityScore)) as MobilityScore;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MobilityScore create() => MobilityScore._();
+  @$core.override
+  MobilityScore createEmptyInstance() => create();
+  static $pb.PbList<MobilityScore> createRepeated() => $pb.PbList<MobilityScore>();
+  @$core.pragma('dart2js:noInline')
+  static MobilityScore getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MobilityScore>(create);
+  static MobilityScore? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get overheadSquat => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set overheadSquat($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOverheadSquat() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOverheadSquat() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get ankleDorsiflexion => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set ankleDorsiflexion($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAnkleDorsiflexion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAnkleDorsiflexion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get hipInternalRot => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set hipInternalRot($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasHipInternalRot() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHipInternalRot() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get tSpineRot => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set tSpineRot($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTSpineRot() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTSpineRot() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get shoulderFlex => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set shoulderFlex($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasShoulderFlex() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearShoulderFlex() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get singleLegBalance => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set singleLegBalance($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSingleLegBalance() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSingleLegBalance() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get scapPushup => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set scapPushup($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasScapPushup() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearScapPushup() => $_clearField(7);
+}
+
+class MobilityBaseline extends $pb.GeneratedMessage {
+  factory MobilityBaseline({
+    $core.String? id,
+    $fixnum.Int64? capturedAt,
+    $core.int? seasonYear,
+    MobilityScore? scores,
+    $core.String? notes,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (capturedAt != null) result.capturedAt = capturedAt;
+    if (seasonYear != null) result.seasonYear = seasonYear;
+    if (scores != null) result.scores = scores;
+    if (notes != null) result.notes = notes;
+    return result;
+  }
+
+  MobilityBaseline._();
+
+  factory MobilityBaseline.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MobilityBaseline.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MobilityBaseline', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aInt64(2, _omitFieldNames ? '' : 'capturedAt')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'seasonYear', $pb.PbFieldType.O3)
+    ..aOM<MobilityScore>(4, _omitFieldNames ? '' : 'scores', subBuilder: MobilityScore.create)
+    ..aOS(5, _omitFieldNames ? '' : 'notes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MobilityBaseline clone() => MobilityBaseline()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MobilityBaseline copyWith(void Function(MobilityBaseline) updates) => super.copyWith((message) => updates(message as MobilityBaseline)) as MobilityBaseline;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MobilityBaseline create() => MobilityBaseline._();
+  @$core.override
+  MobilityBaseline createEmptyInstance() => create();
+  static $pb.PbList<MobilityBaseline> createRepeated() => $pb.PbList<MobilityBaseline>();
+  @$core.pragma('dart2js:noInline')
+  static MobilityBaseline getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MobilityBaseline>(create);
+  static MobilityBaseline? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get capturedAt => $_getI64(1);
+  @$pb.TagNumber(2)
+  set capturedAt($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCapturedAt() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCapturedAt() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get seasonYear => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set seasonYear($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSeasonYear() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSeasonYear() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  MobilityScore get scores => $_getN(3);
+  @$pb.TagNumber(4)
+  set scores(MobilityScore value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasScores() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearScores() => $_clearField(4);
+  @$pb.TagNumber(4)
+  MobilityScore ensureScores() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.String get notes => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set notes($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNotes() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNotes() => $_clearField(5);
+}
+
+class ListMobilityBaselinesRequest extends $pb.GeneratedMessage {
+  factory ListMobilityBaselinesRequest() => create();
+
+  ListMobilityBaselinesRequest._();
+
+  factory ListMobilityBaselinesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMobilityBaselinesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMobilityBaselinesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMobilityBaselinesRequest clone() => ListMobilityBaselinesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMobilityBaselinesRequest copyWith(void Function(ListMobilityBaselinesRequest) updates) => super.copyWith((message) => updates(message as ListMobilityBaselinesRequest)) as ListMobilityBaselinesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMobilityBaselinesRequest create() => ListMobilityBaselinesRequest._();
+  @$core.override
+  ListMobilityBaselinesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMobilityBaselinesRequest> createRepeated() => $pb.PbList<ListMobilityBaselinesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMobilityBaselinesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMobilityBaselinesRequest>(create);
+  static ListMobilityBaselinesRequest? _defaultInstance;
+}
+
+class ListMobilityBaselinesResponse extends $pb.GeneratedMessage {
+  factory ListMobilityBaselinesResponse({
+    $core.Iterable<MobilityBaseline>? baselines,
+  }) {
+    final result = create();
+    if (baselines != null) result.baselines.addAll(baselines);
+    return result;
+  }
+
+  ListMobilityBaselinesResponse._();
+
+  factory ListMobilityBaselinesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMobilityBaselinesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMobilityBaselinesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..pc<MobilityBaseline>(1, _omitFieldNames ? '' : 'baselines', $pb.PbFieldType.PM, subBuilder: MobilityBaseline.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMobilityBaselinesResponse clone() => ListMobilityBaselinesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMobilityBaselinesResponse copyWith(void Function(ListMobilityBaselinesResponse) updates) => super.copyWith((message) => updates(message as ListMobilityBaselinesResponse)) as ListMobilityBaselinesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMobilityBaselinesResponse create() => ListMobilityBaselinesResponse._();
+  @$core.override
+  ListMobilityBaselinesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMobilityBaselinesResponse> createRepeated() => $pb.PbList<ListMobilityBaselinesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMobilityBaselinesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMobilityBaselinesResponse>(create);
+  static ListMobilityBaselinesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<MobilityBaseline> get baselines => $_getList(0);
+}
+
+class GetCurrentMobilityBaselineRequest extends $pb.GeneratedMessage {
+  factory GetCurrentMobilityBaselineRequest({
+    $core.int? seasonYear,
+  }) {
+    final result = create();
+    if (seasonYear != null) result.seasonYear = seasonYear;
+    return result;
+  }
+
+  GetCurrentMobilityBaselineRequest._();
+
+  factory GetCurrentMobilityBaselineRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetCurrentMobilityBaselineRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCurrentMobilityBaselineRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'seasonYear', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCurrentMobilityBaselineRequest clone() => GetCurrentMobilityBaselineRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCurrentMobilityBaselineRequest copyWith(void Function(GetCurrentMobilityBaselineRequest) updates) => super.copyWith((message) => updates(message as GetCurrentMobilityBaselineRequest)) as GetCurrentMobilityBaselineRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCurrentMobilityBaselineRequest create() => GetCurrentMobilityBaselineRequest._();
+  @$core.override
+  GetCurrentMobilityBaselineRequest createEmptyInstance() => create();
+  static $pb.PbList<GetCurrentMobilityBaselineRequest> createRepeated() => $pb.PbList<GetCurrentMobilityBaselineRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetCurrentMobilityBaselineRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCurrentMobilityBaselineRequest>(create);
+  static GetCurrentMobilityBaselineRequest? _defaultInstance;
+
+  /// 0 means current calendar year.
+  @$pb.TagNumber(1)
+  $core.int get seasonYear => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set seasonYear($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSeasonYear() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSeasonYear() => $_clearField(1);
+}
+
+class GetCurrentMobilityBaselineResponse extends $pb.GeneratedMessage {
+  factory GetCurrentMobilityBaselineResponse({
+    MobilityBaseline? baseline,
+  }) {
+    final result = create();
+    if (baseline != null) result.baseline = baseline;
+    return result;
+  }
+
+  GetCurrentMobilityBaselineResponse._();
+
+  factory GetCurrentMobilityBaselineResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetCurrentMobilityBaselineResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCurrentMobilityBaselineResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<MobilityBaseline>(1, _omitFieldNames ? '' : 'baseline', subBuilder: MobilityBaseline.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCurrentMobilityBaselineResponse clone() => GetCurrentMobilityBaselineResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCurrentMobilityBaselineResponse copyWith(void Function(GetCurrentMobilityBaselineResponse) updates) => super.copyWith((message) => updates(message as GetCurrentMobilityBaselineResponse)) as GetCurrentMobilityBaselineResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCurrentMobilityBaselineResponse create() => GetCurrentMobilityBaselineResponse._();
+  @$core.override
+  GetCurrentMobilityBaselineResponse createEmptyInstance() => create();
+  static $pb.PbList<GetCurrentMobilityBaselineResponse> createRepeated() => $pb.PbList<GetCurrentMobilityBaselineResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetCurrentMobilityBaselineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCurrentMobilityBaselineResponse>(create);
+  static GetCurrentMobilityBaselineResponse? _defaultInstance;
+
+  /// Empty baseline (id == "") means no screen for that year yet.
+  @$pb.TagNumber(1)
+  MobilityBaseline get baseline => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseline(MobilityBaseline value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBaseline() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseline() => $_clearField(1);
+  @$pb.TagNumber(1)
+  MobilityBaseline ensureBaseline() => $_ensure(0);
+}
+
+class UpsertMobilityBaselineRequest extends $pb.GeneratedMessage {
+  factory UpsertMobilityBaselineRequest({
+    $fixnum.Int64? capturedAt,
+    $core.int? seasonYear,
+    MobilityScore? scores,
+    $core.String? notes,
+  }) {
+    final result = create();
+    if (capturedAt != null) result.capturedAt = capturedAt;
+    if (seasonYear != null) result.seasonYear = seasonYear;
+    if (scores != null) result.scores = scores;
+    if (notes != null) result.notes = notes;
+    return result;
+  }
+
+  UpsertMobilityBaselineRequest._();
+
+  factory UpsertMobilityBaselineRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpsertMobilityBaselineRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpsertMobilityBaselineRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'capturedAt')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'seasonYear', $pb.PbFieldType.O3)
+    ..aOM<MobilityScore>(3, _omitFieldNames ? '' : 'scores', subBuilder: MobilityScore.create)
+    ..aOS(4, _omitFieldNames ? '' : 'notes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertMobilityBaselineRequest clone() => UpsertMobilityBaselineRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertMobilityBaselineRequest copyWith(void Function(UpsertMobilityBaselineRequest) updates) => super.copyWith((message) => updates(message as UpsertMobilityBaselineRequest)) as UpsertMobilityBaselineRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertMobilityBaselineRequest create() => UpsertMobilityBaselineRequest._();
+  @$core.override
+  UpsertMobilityBaselineRequest createEmptyInstance() => create();
+  static $pb.PbList<UpsertMobilityBaselineRequest> createRepeated() => $pb.PbList<UpsertMobilityBaselineRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpsertMobilityBaselineRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpsertMobilityBaselineRequest>(create);
+  static UpsertMobilityBaselineRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get capturedAt => $_getI64(0);
+  @$pb.TagNumber(1)
+  set capturedAt($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCapturedAt() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCapturedAt() => $_clearField(1);
+
+  /// 0 means current calendar year.
+  @$pb.TagNumber(2)
+  $core.int get seasonYear => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set seasonYear($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSeasonYear() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSeasonYear() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  MobilityScore get scores => $_getN(2);
+  @$pb.TagNumber(3)
+  set scores(MobilityScore value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasScores() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearScores() => $_clearField(3);
+  @$pb.TagNumber(3)
+  MobilityScore ensureScores() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.String get notes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set notes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNotes() => $_clearField(4);
+}
+
+class UpsertMobilityBaselineResponse extends $pb.GeneratedMessage {
+  factory UpsertMobilityBaselineResponse({
+    MobilityBaseline? baseline,
+  }) {
+    final result = create();
+    if (baseline != null) result.baseline = baseline;
+    return result;
+  }
+
+  UpsertMobilityBaselineResponse._();
+
+  factory UpsertMobilityBaselineResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpsertMobilityBaselineResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpsertMobilityBaselineResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<MobilityBaseline>(1, _omitFieldNames ? '' : 'baseline', subBuilder: MobilityBaseline.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertMobilityBaselineResponse clone() => UpsertMobilityBaselineResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertMobilityBaselineResponse copyWith(void Function(UpsertMobilityBaselineResponse) updates) => super.copyWith((message) => updates(message as UpsertMobilityBaselineResponse)) as UpsertMobilityBaselineResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertMobilityBaselineResponse create() => UpsertMobilityBaselineResponse._();
+  @$core.override
+  UpsertMobilityBaselineResponse createEmptyInstance() => create();
+  static $pb.PbList<UpsertMobilityBaselineResponse> createRepeated() => $pb.PbList<UpsertMobilityBaselineResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpsertMobilityBaselineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpsertMobilityBaselineResponse>(create);
+  static UpsertMobilityBaselineResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  MobilityBaseline get baseline => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseline(MobilityBaseline value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBaseline() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseline() => $_clearField(1);
+  @$pb.TagNumber(1)
+  MobilityBaseline ensureBaseline() => $_ensure(0);
+}
+
+class DeleteMobilityBaselineRequest extends $pb.GeneratedMessage {
+  factory DeleteMobilityBaselineRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  DeleteMobilityBaselineRequest._();
+
+  factory DeleteMobilityBaselineRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteMobilityBaselineRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteMobilityBaselineRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteMobilityBaselineRequest clone() => DeleteMobilityBaselineRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteMobilityBaselineRequest copyWith(void Function(DeleteMobilityBaselineRequest) updates) => super.copyWith((message) => updates(message as DeleteMobilityBaselineRequest)) as DeleteMobilityBaselineRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteMobilityBaselineRequest create() => DeleteMobilityBaselineRequest._();
+  @$core.override
+  DeleteMobilityBaselineRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteMobilityBaselineRequest> createRepeated() => $pb.PbList<DeleteMobilityBaselineRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteMobilityBaselineRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteMobilityBaselineRequest>(create);
+  static DeleteMobilityBaselineRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class DeleteMobilityBaselineResponse extends $pb.GeneratedMessage {
+  factory DeleteMobilityBaselineResponse() => create();
+
+  DeleteMobilityBaselineResponse._();
+
+  factory DeleteMobilityBaselineResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteMobilityBaselineResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteMobilityBaselineResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteMobilityBaselineResponse clone() => DeleteMobilityBaselineResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteMobilityBaselineResponse copyWith(void Function(DeleteMobilityBaselineResponse) updates) => super.copyWith((message) => updates(message as DeleteMobilityBaselineResponse)) as DeleteMobilityBaselineResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteMobilityBaselineResponse create() => DeleteMobilityBaselineResponse._();
+  @$core.override
+  DeleteMobilityBaselineResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteMobilityBaselineResponse> createRepeated() => $pb.PbList<DeleteMobilityBaselineResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteMobilityBaselineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteMobilityBaselineResponse>(create);
+  static DeleteMobilityBaselineResponse? _defaultInstance;
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -19,34 +19,45 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	WorkoutService_ListWorkouts_FullMethodName          = "/sttattus.workout.v1.WorkoutService/ListWorkouts"
-	WorkoutService_GetWorkout_FullMethodName            = "/sttattus.workout.v1.WorkoutService/GetWorkout"
-	WorkoutService_LogDayWorkout_FullMethodName         = "/sttattus.workout.v1.WorkoutService/LogDayWorkout"
-	WorkoutService_ListHistory_FullMethodName           = "/sttattus.workout.v1.WorkoutService/ListHistory"
-	WorkoutService_GetForgeStats_FullMethodName         = "/sttattus.workout.v1.WorkoutService/GetForgeStats"
-	WorkoutService_SubmitFeedback_FullMethodName        = "/sttattus.workout.v1.WorkoutService/SubmitFeedback"
-	WorkoutService_GetToday_FullMethodName              = "/sttattus.workout.v1.WorkoutService/GetToday"
-	WorkoutService_GetRankLadder_FullMethodName         = "/sttattus.workout.v1.WorkoutService/GetRankLadder"
-	WorkoutService_ListExercises_FullMethodName         = "/sttattus.workout.v1.WorkoutService/ListExercises"
-	WorkoutService_CreateSession_FullMethodName         = "/sttattus.workout.v1.WorkoutService/CreateSession"
-	WorkoutService_GetSession_FullMethodName            = "/sttattus.workout.v1.WorkoutService/GetSession"
-	WorkoutService_GetActiveSession_FullMethodName      = "/sttattus.workout.v1.WorkoutService/GetActiveSession"
-	WorkoutService_ListSessions_FullMethodName          = "/sttattus.workout.v1.WorkoutService/ListSessions"
-	WorkoutService_UpdateSessionStatus_FullMethodName   = "/sttattus.workout.v1.WorkoutService/UpdateSessionStatus"
-	WorkoutService_LogSet_FullMethodName                = "/sttattus.workout.v1.WorkoutService/LogSet"
-	WorkoutService_GetForgeStreak_FullMethodName        = "/sttattus.workout.v1.WorkoutService/GetForgeStreak"
-	WorkoutService_CreateFormVideo_FullMethodName       = "/sttattus.workout.v1.WorkoutService/CreateFormVideo"
-	WorkoutService_ListMyFormVideos_FullMethodName      = "/sttattus.workout.v1.WorkoutService/ListMyFormVideos"
-	WorkoutService_DeleteFormVideo_FullMethodName       = "/sttattus.workout.v1.WorkoutService/DeleteFormVideo"
-	WorkoutService_UpdateFormVideoStatus_FullMethodName = "/sttattus.workout.v1.WorkoutService/UpdateFormVideoStatus"
-	WorkoutService_ListProgrammes_FullMethodName        = "/sttattus.workout.v1.WorkoutService/ListProgrammes"
-	WorkoutService_GetProgramme_FullMethodName          = "/sttattus.workout.v1.WorkoutService/GetProgramme"
-	WorkoutService_EnrolInProgramme_FullMethodName      = "/sttattus.workout.v1.WorkoutService/EnrolInProgramme"
-	WorkoutService_GetActiveEnrolment_FullMethodName    = "/sttattus.workout.v1.WorkoutService/GetActiveEnrolment"
-	WorkoutService_ListMyEnrolments_FullMethodName      = "/sttattus.workout.v1.WorkoutService/ListMyEnrolments"
-	WorkoutService_UpdateEnrolment_FullMethodName       = "/sttattus.workout.v1.WorkoutService/UpdateEnrolment"
-	WorkoutService_ListMyPRs_FullMethodName             = "/sttattus.workout.v1.WorkoutService/ListMyPRs"
-	WorkoutService_ListRecentPRs_FullMethodName         = "/sttattus.workout.v1.WorkoutService/ListRecentPRs"
+	WorkoutService_ListWorkouts_FullMethodName               = "/sttattus.workout.v1.WorkoutService/ListWorkouts"
+	WorkoutService_GetWorkout_FullMethodName                 = "/sttattus.workout.v1.WorkoutService/GetWorkout"
+	WorkoutService_LogDayWorkout_FullMethodName              = "/sttattus.workout.v1.WorkoutService/LogDayWorkout"
+	WorkoutService_ListHistory_FullMethodName                = "/sttattus.workout.v1.WorkoutService/ListHistory"
+	WorkoutService_GetForgeStats_FullMethodName              = "/sttattus.workout.v1.WorkoutService/GetForgeStats"
+	WorkoutService_SubmitFeedback_FullMethodName             = "/sttattus.workout.v1.WorkoutService/SubmitFeedback"
+	WorkoutService_GetToday_FullMethodName                   = "/sttattus.workout.v1.WorkoutService/GetToday"
+	WorkoutService_GetRankLadder_FullMethodName              = "/sttattus.workout.v1.WorkoutService/GetRankLadder"
+	WorkoutService_ListExercises_FullMethodName              = "/sttattus.workout.v1.WorkoutService/ListExercises"
+	WorkoutService_CreateSession_FullMethodName              = "/sttattus.workout.v1.WorkoutService/CreateSession"
+	WorkoutService_GetSession_FullMethodName                 = "/sttattus.workout.v1.WorkoutService/GetSession"
+	WorkoutService_GetActiveSession_FullMethodName           = "/sttattus.workout.v1.WorkoutService/GetActiveSession"
+	WorkoutService_ListSessions_FullMethodName               = "/sttattus.workout.v1.WorkoutService/ListSessions"
+	WorkoutService_UpdateSessionStatus_FullMethodName        = "/sttattus.workout.v1.WorkoutService/UpdateSessionStatus"
+	WorkoutService_LogSet_FullMethodName                     = "/sttattus.workout.v1.WorkoutService/LogSet"
+	WorkoutService_GetForgeStreak_FullMethodName             = "/sttattus.workout.v1.WorkoutService/GetForgeStreak"
+	WorkoutService_CreateFormVideo_FullMethodName            = "/sttattus.workout.v1.WorkoutService/CreateFormVideo"
+	WorkoutService_ListMyFormVideos_FullMethodName           = "/sttattus.workout.v1.WorkoutService/ListMyFormVideos"
+	WorkoutService_DeleteFormVideo_FullMethodName            = "/sttattus.workout.v1.WorkoutService/DeleteFormVideo"
+	WorkoutService_UpdateFormVideoStatus_FullMethodName      = "/sttattus.workout.v1.WorkoutService/UpdateFormVideoStatus"
+	WorkoutService_ListProgrammes_FullMethodName             = "/sttattus.workout.v1.WorkoutService/ListProgrammes"
+	WorkoutService_GetProgramme_FullMethodName               = "/sttattus.workout.v1.WorkoutService/GetProgramme"
+	WorkoutService_EnrolInProgramme_FullMethodName           = "/sttattus.workout.v1.WorkoutService/EnrolInProgramme"
+	WorkoutService_GetActiveEnrolment_FullMethodName         = "/sttattus.workout.v1.WorkoutService/GetActiveEnrolment"
+	WorkoutService_ListMyEnrolments_FullMethodName           = "/sttattus.workout.v1.WorkoutService/ListMyEnrolments"
+	WorkoutService_UpdateEnrolment_FullMethodName            = "/sttattus.workout.v1.WorkoutService/UpdateEnrolment"
+	WorkoutService_ListMyPRs_FullMethodName                  = "/sttattus.workout.v1.WorkoutService/ListMyPRs"
+	WorkoutService_ListRecentPRs_FullMethodName              = "/sttattus.workout.v1.WorkoutService/ListRecentPRs"
+	WorkoutService_ListBodyCompositions_FullMethodName       = "/sttattus.workout.v1.WorkoutService/ListBodyCompositions"
+	WorkoutService_CreateBodyComposition_FullMethodName      = "/sttattus.workout.v1.WorkoutService/CreateBodyComposition"
+	WorkoutService_DeleteBodyComposition_FullMethodName      = "/sttattus.workout.v1.WorkoutService/DeleteBodyComposition"
+	WorkoutService_ListInjuries_FullMethodName               = "/sttattus.workout.v1.WorkoutService/ListInjuries"
+	WorkoutService_CreateInjury_FullMethodName               = "/sttattus.workout.v1.WorkoutService/CreateInjury"
+	WorkoutService_UpdateInjuryStatus_FullMethodName         = "/sttattus.workout.v1.WorkoutService/UpdateInjuryStatus"
+	WorkoutService_DeleteInjury_FullMethodName               = "/sttattus.workout.v1.WorkoutService/DeleteInjury"
+	WorkoutService_ListMobilityBaselines_FullMethodName      = "/sttattus.workout.v1.WorkoutService/ListMobilityBaselines"
+	WorkoutService_GetCurrentMobilityBaseline_FullMethodName = "/sttattus.workout.v1.WorkoutService/GetCurrentMobilityBaseline"
+	WorkoutService_UpsertMobilityBaseline_FullMethodName     = "/sttattus.workout.v1.WorkoutService/UpsertMobilityBaseline"
+	WorkoutService_DeleteMobilityBaseline_FullMethodName     = "/sttattus.workout.v1.WorkoutService/DeleteMobilityBaseline"
 )
 
 // WorkoutServiceClient is the client API for WorkoutService service.
@@ -95,6 +106,20 @@ type WorkoutServiceClient interface {
 	// worker fired on session completion; these RPCs are read-only.
 	ListMyPRs(ctx context.Context, in *ListMyPRsRequest, opts ...grpc.CallOption) (*ListMyPRsResponse, error)
 	ListRecentPRs(ctx context.Context, in *ListRecentPRsRequest, opts ...grpc.CallOption) (*ListRecentPRsResponse, error)
+	// F7P2.3 — body record. The composition timeline, injury log, and
+	// annual mobility baseline are the three primitives that the
+	// programming engine references permanently.
+	ListBodyCompositions(ctx context.Context, in *ListBodyCompositionsRequest, opts ...grpc.CallOption) (*ListBodyCompositionsResponse, error)
+	CreateBodyComposition(ctx context.Context, in *CreateBodyCompositionRequest, opts ...grpc.CallOption) (*CreateBodyCompositionResponse, error)
+	DeleteBodyComposition(ctx context.Context, in *DeleteBodyCompositionRequest, opts ...grpc.CallOption) (*DeleteBodyCompositionResponse, error)
+	ListInjuries(ctx context.Context, in *ListInjuriesRequest, opts ...grpc.CallOption) (*ListInjuriesResponse, error)
+	CreateInjury(ctx context.Context, in *CreateInjuryRequest, opts ...grpc.CallOption) (*CreateInjuryResponse, error)
+	UpdateInjuryStatus(ctx context.Context, in *UpdateInjuryStatusRequest, opts ...grpc.CallOption) (*UpdateInjuryStatusResponse, error)
+	DeleteInjury(ctx context.Context, in *DeleteInjuryRequest, opts ...grpc.CallOption) (*DeleteInjuryResponse, error)
+	ListMobilityBaselines(ctx context.Context, in *ListMobilityBaselinesRequest, opts ...grpc.CallOption) (*ListMobilityBaselinesResponse, error)
+	GetCurrentMobilityBaseline(ctx context.Context, in *GetCurrentMobilityBaselineRequest, opts ...grpc.CallOption) (*GetCurrentMobilityBaselineResponse, error)
+	UpsertMobilityBaseline(ctx context.Context, in *UpsertMobilityBaselineRequest, opts ...grpc.CallOption) (*UpsertMobilityBaselineResponse, error)
+	DeleteMobilityBaseline(ctx context.Context, in *DeleteMobilityBaselineRequest, opts ...grpc.CallOption) (*DeleteMobilityBaselineResponse, error)
 }
 
 type workoutServiceClient struct {
@@ -385,6 +410,116 @@ func (c *workoutServiceClient) ListRecentPRs(ctx context.Context, in *ListRecent
 	return out, nil
 }
 
+func (c *workoutServiceClient) ListBodyCompositions(ctx context.Context, in *ListBodyCompositionsRequest, opts ...grpc.CallOption) (*ListBodyCompositionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListBodyCompositionsResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListBodyCompositions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) CreateBodyComposition(ctx context.Context, in *CreateBodyCompositionRequest, opts ...grpc.CallOption) (*CreateBodyCompositionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateBodyCompositionResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_CreateBodyComposition_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) DeleteBodyComposition(ctx context.Context, in *DeleteBodyCompositionRequest, opts ...grpc.CallOption) (*DeleteBodyCompositionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteBodyCompositionResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_DeleteBodyComposition_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ListInjuries(ctx context.Context, in *ListInjuriesRequest, opts ...grpc.CallOption) (*ListInjuriesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListInjuriesResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListInjuries_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) CreateInjury(ctx context.Context, in *CreateInjuryRequest, opts ...grpc.CallOption) (*CreateInjuryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateInjuryResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_CreateInjury_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpdateInjuryStatus(ctx context.Context, in *UpdateInjuryStatusRequest, opts ...grpc.CallOption) (*UpdateInjuryStatusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateInjuryStatusResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpdateInjuryStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) DeleteInjury(ctx context.Context, in *DeleteInjuryRequest, opts ...grpc.CallOption) (*DeleteInjuryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteInjuryResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_DeleteInjury_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ListMobilityBaselines(ctx context.Context, in *ListMobilityBaselinesRequest, opts ...grpc.CallOption) (*ListMobilityBaselinesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMobilityBaselinesResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListMobilityBaselines_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetCurrentMobilityBaseline(ctx context.Context, in *GetCurrentMobilityBaselineRequest, opts ...grpc.CallOption) (*GetCurrentMobilityBaselineResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCurrentMobilityBaselineResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetCurrentMobilityBaseline_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertMobilityBaseline(ctx context.Context, in *UpsertMobilityBaselineRequest, opts ...grpc.CallOption) (*UpsertMobilityBaselineResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertMobilityBaselineResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertMobilityBaseline_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) DeleteMobilityBaseline(ctx context.Context, in *DeleteMobilityBaselineRequest, opts ...grpc.CallOption) (*DeleteMobilityBaselineResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteMobilityBaselineResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_DeleteMobilityBaseline_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WorkoutServiceServer is the server API for WorkoutService service.
 // All implementations must embed UnimplementedWorkoutServiceServer
 // for forward compatibility.
@@ -431,6 +566,20 @@ type WorkoutServiceServer interface {
 	// worker fired on session completion; these RPCs are read-only.
 	ListMyPRs(context.Context, *ListMyPRsRequest) (*ListMyPRsResponse, error)
 	ListRecentPRs(context.Context, *ListRecentPRsRequest) (*ListRecentPRsResponse, error)
+	// F7P2.3 — body record. The composition timeline, injury log, and
+	// annual mobility baseline are the three primitives that the
+	// programming engine references permanently.
+	ListBodyCompositions(context.Context, *ListBodyCompositionsRequest) (*ListBodyCompositionsResponse, error)
+	CreateBodyComposition(context.Context, *CreateBodyCompositionRequest) (*CreateBodyCompositionResponse, error)
+	DeleteBodyComposition(context.Context, *DeleteBodyCompositionRequest) (*DeleteBodyCompositionResponse, error)
+	ListInjuries(context.Context, *ListInjuriesRequest) (*ListInjuriesResponse, error)
+	CreateInjury(context.Context, *CreateInjuryRequest) (*CreateInjuryResponse, error)
+	UpdateInjuryStatus(context.Context, *UpdateInjuryStatusRequest) (*UpdateInjuryStatusResponse, error)
+	DeleteInjury(context.Context, *DeleteInjuryRequest) (*DeleteInjuryResponse, error)
+	ListMobilityBaselines(context.Context, *ListMobilityBaselinesRequest) (*ListMobilityBaselinesResponse, error)
+	GetCurrentMobilityBaseline(context.Context, *GetCurrentMobilityBaselineRequest) (*GetCurrentMobilityBaselineResponse, error)
+	UpsertMobilityBaseline(context.Context, *UpsertMobilityBaselineRequest) (*UpsertMobilityBaselineResponse, error)
+	DeleteMobilityBaseline(context.Context, *DeleteMobilityBaselineRequest) (*DeleteMobilityBaselineResponse, error)
 	mustEmbedUnimplementedWorkoutServiceServer()
 }
 
@@ -524,6 +673,39 @@ func (UnimplementedWorkoutServiceServer) ListMyPRs(context.Context, *ListMyPRsRe
 }
 func (UnimplementedWorkoutServiceServer) ListRecentPRs(context.Context, *ListRecentPRsRequest) (*ListRecentPRsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListRecentPRs not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListBodyCompositions(context.Context, *ListBodyCompositionsRequest) (*ListBodyCompositionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListBodyCompositions not implemented")
+}
+func (UnimplementedWorkoutServiceServer) CreateBodyComposition(context.Context, *CreateBodyCompositionRequest) (*CreateBodyCompositionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateBodyComposition not implemented")
+}
+func (UnimplementedWorkoutServiceServer) DeleteBodyComposition(context.Context, *DeleteBodyCompositionRequest) (*DeleteBodyCompositionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteBodyComposition not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListInjuries(context.Context, *ListInjuriesRequest) (*ListInjuriesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListInjuries not implemented")
+}
+func (UnimplementedWorkoutServiceServer) CreateInjury(context.Context, *CreateInjuryRequest) (*CreateInjuryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateInjury not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpdateInjuryStatus(context.Context, *UpdateInjuryStatusRequest) (*UpdateInjuryStatusResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateInjuryStatus not implemented")
+}
+func (UnimplementedWorkoutServiceServer) DeleteInjury(context.Context, *DeleteInjuryRequest) (*DeleteInjuryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteInjury not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListMobilityBaselines(context.Context, *ListMobilityBaselinesRequest) (*ListMobilityBaselinesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMobilityBaselines not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetCurrentMobilityBaseline(context.Context, *GetCurrentMobilityBaselineRequest) (*GetCurrentMobilityBaselineResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCurrentMobilityBaseline not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertMobilityBaseline(context.Context, *UpsertMobilityBaselineRequest) (*UpsertMobilityBaselineResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertMobilityBaseline not implemented")
+}
+func (UnimplementedWorkoutServiceServer) DeleteMobilityBaseline(context.Context, *DeleteMobilityBaselineRequest) (*DeleteMobilityBaselineResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteMobilityBaseline not implemented")
 }
 func (UnimplementedWorkoutServiceServer) mustEmbedUnimplementedWorkoutServiceServer() {}
 func (UnimplementedWorkoutServiceServer) testEmbeddedByValue()                        {}
@@ -1050,6 +1232,204 @@ func _WorkoutService_ListRecentPRs_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WorkoutService_ListBodyCompositions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListBodyCompositionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListBodyCompositions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListBodyCompositions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListBodyCompositions(ctx, req.(*ListBodyCompositionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_CreateBodyComposition_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateBodyCompositionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).CreateBodyComposition(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_CreateBodyComposition_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).CreateBodyComposition(ctx, req.(*CreateBodyCompositionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_DeleteBodyComposition_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteBodyCompositionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).DeleteBodyComposition(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_DeleteBodyComposition_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).DeleteBodyComposition(ctx, req.(*DeleteBodyCompositionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ListInjuries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListInjuriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListInjuries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListInjuries_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListInjuries(ctx, req.(*ListInjuriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_CreateInjury_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateInjuryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).CreateInjury(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_CreateInjury_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).CreateInjury(ctx, req.(*CreateInjuryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpdateInjuryStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateInjuryStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpdateInjuryStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpdateInjuryStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpdateInjuryStatus(ctx, req.(*UpdateInjuryStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_DeleteInjury_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteInjuryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).DeleteInjury(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_DeleteInjury_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).DeleteInjury(ctx, req.(*DeleteInjuryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ListMobilityBaselines_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMobilityBaselinesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListMobilityBaselines(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListMobilityBaselines_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListMobilityBaselines(ctx, req.(*ListMobilityBaselinesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetCurrentMobilityBaseline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCurrentMobilityBaselineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetCurrentMobilityBaseline(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetCurrentMobilityBaseline_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetCurrentMobilityBaseline(ctx, req.(*GetCurrentMobilityBaselineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertMobilityBaseline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertMobilityBaselineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertMobilityBaseline(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertMobilityBaseline_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertMobilityBaseline(ctx, req.(*UpsertMobilityBaselineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_DeleteMobilityBaseline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteMobilityBaselineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).DeleteMobilityBaseline(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_DeleteMobilityBaseline_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).DeleteMobilityBaseline(ctx, req.(*DeleteMobilityBaselineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // WorkoutService_ServiceDesc is the grpc.ServiceDesc for WorkoutService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1168,6 +1548,50 @@ var WorkoutService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListRecentPRs",
 			Handler:    _WorkoutService_ListRecentPRs_Handler,
+		},
+		{
+			MethodName: "ListBodyCompositions",
+			Handler:    _WorkoutService_ListBodyCompositions_Handler,
+		},
+		{
+			MethodName: "CreateBodyComposition",
+			Handler:    _WorkoutService_CreateBodyComposition_Handler,
+		},
+		{
+			MethodName: "DeleteBodyComposition",
+			Handler:    _WorkoutService_DeleteBodyComposition_Handler,
+		},
+		{
+			MethodName: "ListInjuries",
+			Handler:    _WorkoutService_ListInjuries_Handler,
+		},
+		{
+			MethodName: "CreateInjury",
+			Handler:    _WorkoutService_CreateInjury_Handler,
+		},
+		{
+			MethodName: "UpdateInjuryStatus",
+			Handler:    _WorkoutService_UpdateInjuryStatus_Handler,
+		},
+		{
+			MethodName: "DeleteInjury",
+			Handler:    _WorkoutService_DeleteInjury_Handler,
+		},
+		{
+			MethodName: "ListMobilityBaselines",
+			Handler:    _WorkoutService_ListMobilityBaselines_Handler,
+		},
+		{
+			MethodName: "GetCurrentMobilityBaseline",
+			Handler:    _WorkoutService_GetCurrentMobilityBaseline_Handler,
+		},
+		{
+			MethodName: "UpsertMobilityBaseline",
+			Handler:    _WorkoutService_UpsertMobilityBaseline_Handler,
+		},
+		{
+			MethodName: "DeleteMobilityBaseline",
+			Handler:    _WorkoutService_DeleteMobilityBaseline_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -1158,3 +1158,383 @@ final $typed_data.Uint8List listRecentPRsResponseDescriptor = $convert.base64Dec
     'ChVMaXN0UmVjZW50UFJzUmVzcG9uc2USNQoDcHJzGAEgAygLMiMuc3R0YXR0dXMud29ya291dC'
     '52MS5QZXJzb25hbFJlY29yZFIDcHJz');
 
+@$core.Deprecated('Use bodyCompositionDescriptor instead')
+const BodyComposition$json = {
+  '1': 'BodyComposition',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'source', '3': 2, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'captured_at', '3': 3, '4': 1, '5': 3, '10': 'capturedAt'},
+    {'1': 'weight_kg', '3': 4, '4': 1, '5': 1, '10': 'weightKg'},
+    {'1': 'body_fat_pct', '3': 5, '4': 1, '5': 1, '10': 'bodyFatPct'},
+    {'1': 'lean_mass_kg', '3': 6, '4': 1, '5': 1, '10': 'leanMassKg'},
+    {'1': 'fat_mass_kg', '3': 7, '4': 1, '5': 1, '10': 'fatMassKg'},
+    {'1': 'visceral_fat_rating', '3': 8, '4': 1, '5': 1, '10': 'visceralFatRating'},
+    {'1': 'bmr_kcal', '3': 9, '4': 1, '5': 5, '10': 'bmrKcal'},
+    {'1': 'notes', '3': 10, '4': 1, '5': 9, '10': 'notes'},
+  ],
+};
+
+/// Descriptor for `BodyComposition`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List bodyCompositionDescriptor = $convert.base64Decode(
+    'Cg9Cb2R5Q29tcG9zaXRpb24SDgoCaWQYASABKAlSAmlkEhYKBnNvdXJjZRgCIAEoCVIGc291cm'
+    'NlEh8KC2NhcHR1cmVkX2F0GAMgASgDUgpjYXB0dXJlZEF0EhsKCXdlaWdodF9rZxgEIAEoAVII'
+    'd2VpZ2h0S2cSIAoMYm9keV9mYXRfcGN0GAUgASgBUgpib2R5RmF0UGN0EiAKDGxlYW5fbWFzc1'
+    '9rZxgGIAEoAVIKbGVhbk1hc3NLZxIeCgtmYXRfbWFzc19rZxgHIAEoAVIJZmF0TWFzc0tnEi4K'
+    'E3Zpc2NlcmFsX2ZhdF9yYXRpbmcYCCABKAFSEXZpc2NlcmFsRmF0UmF0aW5nEhkKCGJtcl9rY2'
+    'FsGAkgASgFUgdibXJLY2FsEhQKBW5vdGVzGAogASgJUgVub3Rlcw==');
+
+@$core.Deprecated('Use listBodyCompositionsRequestDescriptor instead')
+const ListBodyCompositionsRequest$json = {
+  '1': 'ListBodyCompositionsRequest',
+  '2': [
+    {'1': 'page', '3': 1, '4': 1, '5': 11, '6': '.sttattus.common.v1.PageRequest', '10': 'page'},
+  ],
+};
+
+/// Descriptor for `ListBodyCompositionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listBodyCompositionsRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0Qm9keUNvbXBvc2l0aW9uc1JlcXVlc3QSMwoEcGFnZRgBIAEoCzIfLnN0dGF0dHVzLm'
+    'NvbW1vbi52MS5QYWdlUmVxdWVzdFIEcGFnZQ==');
+
+@$core.Deprecated('Use listBodyCompositionsResponseDescriptor instead')
+const ListBodyCompositionsResponse$json = {
+  '1': 'ListBodyCompositionsResponse',
+  '2': [
+    {'1': 'entries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.BodyComposition', '10': 'entries'},
+  ],
+};
+
+/// Descriptor for `ListBodyCompositionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listBodyCompositionsResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0Qm9keUNvbXBvc2l0aW9uc1Jlc3BvbnNlEj4KB2VudHJpZXMYASADKAsyJC5zdHRhdH'
+    'R1cy53b3Jrb3V0LnYxLkJvZHlDb21wb3NpdGlvblIHZW50cmllcw==');
+
+@$core.Deprecated('Use createBodyCompositionRequestDescriptor instead')
+const CreateBodyCompositionRequest$json = {
+  '1': 'CreateBodyCompositionRequest',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'captured_at', '3': 2, '4': 1, '5': 3, '10': 'capturedAt'},
+    {'1': 'weight_kg', '3': 3, '4': 1, '5': 1, '10': 'weightKg'},
+    {'1': 'body_fat_pct', '3': 4, '4': 1, '5': 1, '10': 'bodyFatPct'},
+    {'1': 'lean_mass_kg', '3': 5, '4': 1, '5': 1, '10': 'leanMassKg'},
+    {'1': 'fat_mass_kg', '3': 6, '4': 1, '5': 1, '10': 'fatMassKg'},
+    {'1': 'visceral_fat_rating', '3': 7, '4': 1, '5': 1, '10': 'visceralFatRating'},
+    {'1': 'bmr_kcal', '3': 8, '4': 1, '5': 5, '10': 'bmrKcal'},
+    {'1': 'notes', '3': 9, '4': 1, '5': 9, '10': 'notes'},
+  ],
+};
+
+/// Descriptor for `CreateBodyCompositionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createBodyCompositionRequestDescriptor = $convert.base64Decode(
+    'ChxDcmVhdGVCb2R5Q29tcG9zaXRpb25SZXF1ZXN0EhYKBnNvdXJjZRgBIAEoCVIGc291cmNlEh'
+    '8KC2NhcHR1cmVkX2F0GAIgASgDUgpjYXB0dXJlZEF0EhsKCXdlaWdodF9rZxgDIAEoAVIId2Vp'
+    'Z2h0S2cSIAoMYm9keV9mYXRfcGN0GAQgASgBUgpib2R5RmF0UGN0EiAKDGxlYW5fbWFzc19rZx'
+    'gFIAEoAVIKbGVhbk1hc3NLZxIeCgtmYXRfbWFzc19rZxgGIAEoAVIJZmF0TWFzc0tnEi4KE3Zp'
+    'c2NlcmFsX2ZhdF9yYXRpbmcYByABKAFSEXZpc2NlcmFsRmF0UmF0aW5nEhkKCGJtcl9rY2FsGA'
+    'ggASgFUgdibXJLY2FsEhQKBW5vdGVzGAkgASgJUgVub3Rlcw==');
+
+@$core.Deprecated('Use createBodyCompositionResponseDescriptor instead')
+const CreateBodyCompositionResponse$json = {
+  '1': 'CreateBodyCompositionResponse',
+  '2': [
+    {'1': 'entry', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.BodyComposition', '10': 'entry'},
+  ],
+};
+
+/// Descriptor for `CreateBodyCompositionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createBodyCompositionResponseDescriptor = $convert.base64Decode(
+    'Ch1DcmVhdGVCb2R5Q29tcG9zaXRpb25SZXNwb25zZRI6CgVlbnRyeRgBIAEoCzIkLnN0dGF0dH'
+    'VzLndvcmtvdXQudjEuQm9keUNvbXBvc2l0aW9uUgVlbnRyeQ==');
+
+@$core.Deprecated('Use deleteBodyCompositionRequestDescriptor instead')
+const DeleteBodyCompositionRequest$json = {
+  '1': 'DeleteBodyCompositionRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteBodyCompositionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteBodyCompositionRequestDescriptor = $convert.base64Decode(
+    'ChxEZWxldGVCb2R5Q29tcG9zaXRpb25SZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
+
+@$core.Deprecated('Use deleteBodyCompositionResponseDescriptor instead')
+const DeleteBodyCompositionResponse$json = {
+  '1': 'DeleteBodyCompositionResponse',
+};
+
+/// Descriptor for `DeleteBodyCompositionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteBodyCompositionResponseDescriptor = $convert.base64Decode(
+    'Ch1EZWxldGVCb2R5Q29tcG9zaXRpb25SZXNwb25zZQ==');
+
+@$core.Deprecated('Use injuryDescriptor instead')
+const Injury$json = {
+  '1': 'Injury',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'occurred_at', '3': 2, '4': 1, '5': 3, '10': 'occurredAt'},
+    {'1': 'region', '3': 3, '4': 1, '5': 9, '10': 'region'},
+    {'1': 'severity', '3': 4, '4': 1, '5': 5, '10': 'severity'},
+    {'1': 'mechanism', '3': 5, '4': 1, '5': 9, '10': 'mechanism'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'resolved_at', '3': 7, '4': 1, '5': 3, '10': 'resolvedAt'},
+    {'1': 'notes', '3': 8, '4': 1, '5': 9, '10': 'notes'},
+  ],
+};
+
+/// Descriptor for `Injury`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List injuryDescriptor = $convert.base64Decode(
+    'CgZJbmp1cnkSDgoCaWQYASABKAlSAmlkEh8KC29jY3VycmVkX2F0GAIgASgDUgpvY2N1cnJlZE'
+    'F0EhYKBnJlZ2lvbhgDIAEoCVIGcmVnaW9uEhoKCHNldmVyaXR5GAQgASgFUghzZXZlcml0eRIc'
+    'CgltZWNoYW5pc20YBSABKAlSCW1lY2hhbmlzbRIWCgZzdGF0dXMYBiABKAlSBnN0YXR1cxIfCg'
+    'tyZXNvbHZlZF9hdBgHIAEoA1IKcmVzb2x2ZWRBdBIUCgVub3RlcxgIIAEoCVIFbm90ZXM=');
+
+@$core.Deprecated('Use listInjuriesRequestDescriptor instead')
+const ListInjuriesRequest$json = {
+  '1': 'ListInjuriesRequest',
+  '2': [
+    {'1': 'active_only', '3': 1, '4': 1, '5': 8, '10': 'activeOnly'},
+  ],
+};
+
+/// Descriptor for `ListInjuriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listInjuriesRequestDescriptor = $convert.base64Decode(
+    'ChNMaXN0SW5qdXJpZXNSZXF1ZXN0Eh8KC2FjdGl2ZV9vbmx5GAEgASgIUgphY3RpdmVPbmx5');
+
+@$core.Deprecated('Use listInjuriesResponseDescriptor instead')
+const ListInjuriesResponse$json = {
+  '1': 'ListInjuriesResponse',
+  '2': [
+    {'1': 'injuries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.Injury', '10': 'injuries'},
+  ],
+};
+
+/// Descriptor for `ListInjuriesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listInjuriesResponseDescriptor = $convert.base64Decode(
+    'ChRMaXN0SW5qdXJpZXNSZXNwb25zZRI3Cghpbmp1cmllcxgBIAMoCzIbLnN0dGF0dHVzLndvcm'
+    'tvdXQudjEuSW5qdXJ5Ughpbmp1cmllcw==');
+
+@$core.Deprecated('Use createInjuryRequestDescriptor instead')
+const CreateInjuryRequest$json = {
+  '1': 'CreateInjuryRequest',
+  '2': [
+    {'1': 'occurred_at', '3': 1, '4': 1, '5': 3, '10': 'occurredAt'},
+    {'1': 'region', '3': 2, '4': 1, '5': 9, '10': 'region'},
+    {'1': 'severity', '3': 3, '4': 1, '5': 5, '10': 'severity'},
+    {'1': 'mechanism', '3': 4, '4': 1, '5': 9, '10': 'mechanism'},
+    {'1': 'notes', '3': 5, '4': 1, '5': 9, '10': 'notes'},
+  ],
+};
+
+/// Descriptor for `CreateInjuryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createInjuryRequestDescriptor = $convert.base64Decode(
+    'ChNDcmVhdGVJbmp1cnlSZXF1ZXN0Eh8KC29jY3VycmVkX2F0GAEgASgDUgpvY2N1cnJlZEF0Eh'
+    'YKBnJlZ2lvbhgCIAEoCVIGcmVnaW9uEhoKCHNldmVyaXR5GAMgASgFUghzZXZlcml0eRIcCglt'
+    'ZWNoYW5pc20YBCABKAlSCW1lY2hhbmlzbRIUCgVub3RlcxgFIAEoCVIFbm90ZXM=');
+
+@$core.Deprecated('Use createInjuryResponseDescriptor instead')
+const CreateInjuryResponse$json = {
+  '1': 'CreateInjuryResponse',
+  '2': [
+    {'1': 'injury', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.Injury', '10': 'injury'},
+  ],
+};
+
+/// Descriptor for `CreateInjuryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createInjuryResponseDescriptor = $convert.base64Decode(
+    'ChRDcmVhdGVJbmp1cnlSZXNwb25zZRIzCgZpbmp1cnkYASABKAsyGy5zdHRhdHR1cy53b3Jrb3'
+    'V0LnYxLkluanVyeVIGaW5qdXJ5');
+
+@$core.Deprecated('Use updateInjuryStatusRequestDescriptor instead')
+const UpdateInjuryStatusRequest$json = {
+  '1': 'UpdateInjuryStatusRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'notes', '3': 3, '4': 1, '5': 9, '10': 'notes'},
+  ],
+};
+
+/// Descriptor for `UpdateInjuryStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateInjuryStatusRequestDescriptor = $convert.base64Decode(
+    'ChlVcGRhdGVJbmp1cnlTdGF0dXNSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIWCgZzdGF0dXMYAi'
+    'ABKAlSBnN0YXR1cxIUCgVub3RlcxgDIAEoCVIFbm90ZXM=');
+
+@$core.Deprecated('Use updateInjuryStatusResponseDescriptor instead')
+const UpdateInjuryStatusResponse$json = {
+  '1': 'UpdateInjuryStatusResponse',
+  '2': [
+    {'1': 'injury', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.Injury', '10': 'injury'},
+  ],
+};
+
+/// Descriptor for `UpdateInjuryStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateInjuryStatusResponseDescriptor = $convert.base64Decode(
+    'ChpVcGRhdGVJbmp1cnlTdGF0dXNSZXNwb25zZRIzCgZpbmp1cnkYASABKAsyGy5zdHRhdHR1cy'
+    '53b3Jrb3V0LnYxLkluanVyeVIGaW5qdXJ5');
+
+@$core.Deprecated('Use deleteInjuryRequestDescriptor instead')
+const DeleteInjuryRequest$json = {
+  '1': 'DeleteInjuryRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteInjuryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteInjuryRequestDescriptor = $convert.base64Decode(
+    'ChNEZWxldGVJbmp1cnlSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
+
+@$core.Deprecated('Use deleteInjuryResponseDescriptor instead')
+const DeleteInjuryResponse$json = {
+  '1': 'DeleteInjuryResponse',
+};
+
+/// Descriptor for `DeleteInjuryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteInjuryResponseDescriptor = $convert.base64Decode(
+    'ChREZWxldGVJbmp1cnlSZXNwb25zZQ==');
+
+@$core.Deprecated('Use mobilityScoreDescriptor instead')
+const MobilityScore$json = {
+  '1': 'MobilityScore',
+  '2': [
+    {'1': 'overhead_squat', '3': 1, '4': 1, '5': 5, '10': 'overheadSquat'},
+    {'1': 'ankle_dorsiflexion', '3': 2, '4': 1, '5': 5, '10': 'ankleDorsiflexion'},
+    {'1': 'hip_internal_rot', '3': 3, '4': 1, '5': 5, '10': 'hipInternalRot'},
+    {'1': 't_spine_rot', '3': 4, '4': 1, '5': 5, '10': 'tSpineRot'},
+    {'1': 'shoulder_flex', '3': 5, '4': 1, '5': 5, '10': 'shoulderFlex'},
+    {'1': 'single_leg_balance', '3': 6, '4': 1, '5': 5, '10': 'singleLegBalance'},
+    {'1': 'scap_pushup', '3': 7, '4': 1, '5': 5, '10': 'scapPushup'},
+  ],
+};
+
+/// Descriptor for `MobilityScore`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mobilityScoreDescriptor = $convert.base64Decode(
+    'Cg1Nb2JpbGl0eVNjb3JlEiUKDm92ZXJoZWFkX3NxdWF0GAEgASgFUg1vdmVyaGVhZFNxdWF0Ei'
+    '0KEmFua2xlX2RvcnNpZmxleGlvbhgCIAEoBVIRYW5rbGVEb3JzaWZsZXhpb24SKAoQaGlwX2lu'
+    'dGVybmFsX3JvdBgDIAEoBVIOaGlwSW50ZXJuYWxSb3QSHgoLdF9zcGluZV9yb3QYBCABKAVSCX'
+    'RTcGluZVJvdBIjCg1zaG91bGRlcl9mbGV4GAUgASgFUgxzaG91bGRlckZsZXgSLAoSc2luZ2xl'
+    'X2xlZ19iYWxhbmNlGAYgASgFUhBzaW5nbGVMZWdCYWxhbmNlEh8KC3NjYXBfcHVzaHVwGAcgAS'
+    'gFUgpzY2FwUHVzaHVw');
+
+@$core.Deprecated('Use mobilityBaselineDescriptor instead')
+const MobilityBaseline$json = {
+  '1': 'MobilityBaseline',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'captured_at', '3': 2, '4': 1, '5': 3, '10': 'capturedAt'},
+    {'1': 'season_year', '3': 3, '4': 1, '5': 5, '10': 'seasonYear'},
+    {'1': 'scores', '3': 4, '4': 1, '5': 11, '6': '.sttattus.workout.v1.MobilityScore', '10': 'scores'},
+    {'1': 'notes', '3': 5, '4': 1, '5': 9, '10': 'notes'},
+  ],
+};
+
+/// Descriptor for `MobilityBaseline`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mobilityBaselineDescriptor = $convert.base64Decode(
+    'ChBNb2JpbGl0eUJhc2VsaW5lEg4KAmlkGAEgASgJUgJpZBIfCgtjYXB0dXJlZF9hdBgCIAEoA1'
+    'IKY2FwdHVyZWRBdBIfCgtzZWFzb25feWVhchgDIAEoBVIKc2Vhc29uWWVhchI6CgZzY29yZXMY'
+    'BCABKAsyIi5zdHRhdHR1cy53b3Jrb3V0LnYxLk1vYmlsaXR5U2NvcmVSBnNjb3JlcxIUCgVub3'
+    'RlcxgFIAEoCVIFbm90ZXM=');
+
+@$core.Deprecated('Use listMobilityBaselinesRequestDescriptor instead')
+const ListMobilityBaselinesRequest$json = {
+  '1': 'ListMobilityBaselinesRequest',
+};
+
+/// Descriptor for `ListMobilityBaselinesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMobilityBaselinesRequestDescriptor = $convert.base64Decode(
+    'ChxMaXN0TW9iaWxpdHlCYXNlbGluZXNSZXF1ZXN0');
+
+@$core.Deprecated('Use listMobilityBaselinesResponseDescriptor instead')
+const ListMobilityBaselinesResponse$json = {
+  '1': 'ListMobilityBaselinesResponse',
+  '2': [
+    {'1': 'baselines', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.MobilityBaseline', '10': 'baselines'},
+  ],
+};
+
+/// Descriptor for `ListMobilityBaselinesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMobilityBaselinesResponseDescriptor = $convert.base64Decode(
+    'Ch1MaXN0TW9iaWxpdHlCYXNlbGluZXNSZXNwb25zZRJDCgliYXNlbGluZXMYASADKAsyJS5zdH'
+    'RhdHR1cy53b3Jrb3V0LnYxLk1vYmlsaXR5QmFzZWxpbmVSCWJhc2VsaW5lcw==');
+
+@$core.Deprecated('Use getCurrentMobilityBaselineRequestDescriptor instead')
+const GetCurrentMobilityBaselineRequest$json = {
+  '1': 'GetCurrentMobilityBaselineRequest',
+  '2': [
+    {'1': 'season_year', '3': 1, '4': 1, '5': 5, '10': 'seasonYear'},
+  ],
+};
+
+/// Descriptor for `GetCurrentMobilityBaselineRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCurrentMobilityBaselineRequestDescriptor = $convert.base64Decode(
+    'CiFHZXRDdXJyZW50TW9iaWxpdHlCYXNlbGluZVJlcXVlc3QSHwoLc2Vhc29uX3llYXIYASABKA'
+    'VSCnNlYXNvblllYXI=');
+
+@$core.Deprecated('Use getCurrentMobilityBaselineResponseDescriptor instead')
+const GetCurrentMobilityBaselineResponse$json = {
+  '1': 'GetCurrentMobilityBaselineResponse',
+  '2': [
+    {'1': 'baseline', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.MobilityBaseline', '10': 'baseline'},
+  ],
+};
+
+/// Descriptor for `GetCurrentMobilityBaselineResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCurrentMobilityBaselineResponseDescriptor = $convert.base64Decode(
+    'CiJHZXRDdXJyZW50TW9iaWxpdHlCYXNlbGluZVJlc3BvbnNlEkEKCGJhc2VsaW5lGAEgASgLMi'
+    'Uuc3R0YXR0dXMud29ya291dC52MS5Nb2JpbGl0eUJhc2VsaW5lUghiYXNlbGluZQ==');
+
+@$core.Deprecated('Use upsertMobilityBaselineRequestDescriptor instead')
+const UpsertMobilityBaselineRequest$json = {
+  '1': 'UpsertMobilityBaselineRequest',
+  '2': [
+    {'1': 'captured_at', '3': 1, '4': 1, '5': 3, '10': 'capturedAt'},
+    {'1': 'season_year', '3': 2, '4': 1, '5': 5, '10': 'seasonYear'},
+    {'1': 'scores', '3': 3, '4': 1, '5': 11, '6': '.sttattus.workout.v1.MobilityScore', '10': 'scores'},
+    {'1': 'notes', '3': 4, '4': 1, '5': 9, '10': 'notes'},
+  ],
+};
+
+/// Descriptor for `UpsertMobilityBaselineRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertMobilityBaselineRequestDescriptor = $convert.base64Decode(
+    'Ch1VcHNlcnRNb2JpbGl0eUJhc2VsaW5lUmVxdWVzdBIfCgtjYXB0dXJlZF9hdBgBIAEoA1IKY2'
+    'FwdHVyZWRBdBIfCgtzZWFzb25feWVhchgCIAEoBVIKc2Vhc29uWWVhchI6CgZzY29yZXMYAyAB'
+    'KAsyIi5zdHRhdHR1cy53b3Jrb3V0LnYxLk1vYmlsaXR5U2NvcmVSBnNjb3JlcxIUCgVub3Rlcx'
+    'gEIAEoCVIFbm90ZXM=');
+
+@$core.Deprecated('Use upsertMobilityBaselineResponseDescriptor instead')
+const UpsertMobilityBaselineResponse$json = {
+  '1': 'UpsertMobilityBaselineResponse',
+  '2': [
+    {'1': 'baseline', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.MobilityBaseline', '10': 'baseline'},
+  ],
+};
+
+/// Descriptor for `UpsertMobilityBaselineResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertMobilityBaselineResponseDescriptor = $convert.base64Decode(
+    'Ch5VcHNlcnRNb2JpbGl0eUJhc2VsaW5lUmVzcG9uc2USQQoIYmFzZWxpbmUYASABKAsyJS5zdH'
+    'RhdHR1cy53b3Jrb3V0LnYxLk1vYmlsaXR5QmFzZWxpbmVSCGJhc2VsaW5l');
+
+@$core.Deprecated('Use deleteMobilityBaselineRequestDescriptor instead')
+const DeleteMobilityBaselineRequest$json = {
+  '1': 'DeleteMobilityBaselineRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteMobilityBaselineRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteMobilityBaselineRequestDescriptor = $convert.base64Decode(
+    'Ch1EZWxldGVNb2JpbGl0eUJhc2VsaW5lUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use deleteMobilityBaselineResponseDescriptor instead')
+const DeleteMobilityBaselineResponse$json = {
+  '1': 'DeleteMobilityBaselineResponse',
+};
+
+/// Descriptor for `DeleteMobilityBaselineResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteMobilityBaselineResponseDescriptor = $convert.base64Decode(
+    'Ch5EZWxldGVNb2JpbGl0eUJhc2VsaW5lUmVzcG9uc2U=');
+

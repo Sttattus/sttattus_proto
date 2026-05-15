@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateFormVideoRequest, CreateFormVideoResponse, CreateSessionRequest, CreateSessionResponse, DeleteFormVideoRequest, DeleteFormVideoResponse, EnrolInProgrammeRequest, EnrolInProgrammeResponse, GetActiveEnrolmentRequest, GetActiveEnrolmentResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetProgrammeRequest, GetProgrammeResponse, GetRankLadderRequest, GetRankLadderResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListMyEnrolmentsRequest, ListMyEnrolmentsResponse, ListMyFormVideosRequest, ListMyFormVideosResponse, ListMyPRsRequest, ListMyPRsResponse, ListProgrammesRequest, ListProgrammesResponse, ListRecentPRsRequest, ListRecentPRsResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateEnrolmentRequest, UpdateEnrolmentResponse, UpdateFormVideoStatusRequest, UpdateFormVideoStatusResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse } from "./workout_pb.js";
+import { CreateBodyCompositionRequest, CreateBodyCompositionResponse, CreateFormVideoRequest, CreateFormVideoResponse, CreateInjuryRequest, CreateInjuryResponse, CreateSessionRequest, CreateSessionResponse, DeleteBodyCompositionRequest, DeleteBodyCompositionResponse, DeleteFormVideoRequest, DeleteFormVideoResponse, DeleteInjuryRequest, DeleteInjuryResponse, DeleteMobilityBaselineRequest, DeleteMobilityBaselineResponse, EnrolInProgrammeRequest, EnrolInProgrammeResponse, GetActiveEnrolmentRequest, GetActiveEnrolmentResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetCurrentMobilityBaselineRequest, GetCurrentMobilityBaselineResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetProgrammeRequest, GetProgrammeResponse, GetRankLadderRequest, GetRankLadderResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListBodyCompositionsRequest, ListBodyCompositionsResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListInjuriesRequest, ListInjuriesResponse, ListMobilityBaselinesRequest, ListMobilityBaselinesResponse, ListMyEnrolmentsRequest, ListMyEnrolmentsResponse, ListMyFormVideosRequest, ListMyFormVideosResponse, ListMyPRsRequest, ListMyPRsResponse, ListProgrammesRequest, ListProgrammesResponse, ListRecentPRsRequest, ListRecentPRsResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateEnrolmentRequest, UpdateEnrolmentResponse, UpdateFormVideoStatusRequest, UpdateFormVideoStatusResponse, UpdateInjuryStatusRequest, UpdateInjuryStatusResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse, UpsertMobilityBaselineRequest, UpsertMobilityBaselineResponse } from "./workout_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -283,6 +283,109 @@ export const WorkoutService = {
       name: "ListRecentPRs",
       I: ListRecentPRsRequest,
       O: ListRecentPRsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P2.3 — body record. The composition timeline, injury log, and
+     * annual mobility baseline are the three primitives that the
+     * programming engine references permanently.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListBodyCompositions
+     */
+    listBodyCompositions: {
+      name: "ListBodyCompositions",
+      I: ListBodyCompositionsRequest,
+      O: ListBodyCompositionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.CreateBodyComposition
+     */
+    createBodyComposition: {
+      name: "CreateBodyComposition",
+      I: CreateBodyCompositionRequest,
+      O: CreateBodyCompositionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.DeleteBodyComposition
+     */
+    deleteBodyComposition: {
+      name: "DeleteBodyComposition",
+      I: DeleteBodyCompositionRequest,
+      O: DeleteBodyCompositionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListInjuries
+     */
+    listInjuries: {
+      name: "ListInjuries",
+      I: ListInjuriesRequest,
+      O: ListInjuriesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.CreateInjury
+     */
+    createInjury: {
+      name: "CreateInjury",
+      I: CreateInjuryRequest,
+      O: CreateInjuryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpdateInjuryStatus
+     */
+    updateInjuryStatus: {
+      name: "UpdateInjuryStatus",
+      I: UpdateInjuryStatusRequest,
+      O: UpdateInjuryStatusResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.DeleteInjury
+     */
+    deleteInjury: {
+      name: "DeleteInjury",
+      I: DeleteInjuryRequest,
+      O: DeleteInjuryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListMobilityBaselines
+     */
+    listMobilityBaselines: {
+      name: "ListMobilityBaselines",
+      I: ListMobilityBaselinesRequest,
+      O: ListMobilityBaselinesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetCurrentMobilityBaseline
+     */
+    getCurrentMobilityBaseline: {
+      name: "GetCurrentMobilityBaseline",
+      I: GetCurrentMobilityBaselineRequest,
+      O: GetCurrentMobilityBaselineResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertMobilityBaseline
+     */
+    upsertMobilityBaseline: {
+      name: "UpsertMobilityBaseline",
+      I: UpsertMobilityBaselineRequest,
+      O: UpsertMobilityBaselineResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.DeleteMobilityBaseline
+     */
+    deleteMobilityBaseline: {
+      name: "DeleteMobilityBaseline",
+      I: DeleteMobilityBaselineRequest,
+      O: DeleteMobilityBaselineResponse,
       kind: MethodKind.Unary,
     },
   }
