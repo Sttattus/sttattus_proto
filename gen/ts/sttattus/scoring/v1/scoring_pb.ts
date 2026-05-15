@@ -1526,3 +1526,336 @@ export class ScoreDominionResponse extends Message<ScoreDominionResponse> {
   }
 }
 
+/**
+ * ScoreAcuteChronicRequest carries daily training loads. acute is
+ * the trailing 7-day sum, chronic the trailing 28-day sum (both as
+ * session tonnage or another consistent load proxy). The ratio is
+ * the established acute:chronic workload ratio (ACWR).
+ *
+ * @generated from message sttattus.scoring.v1.ScoreAcuteChronicRequest
+ */
+export class ScoreAcuteChronicRequest extends Message<ScoreAcuteChronicRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: double acute_load_7d = 2;
+   */
+  acuteLoad7d = 0;
+
+  /**
+   * @generated from field: double chronic_load_28d = 3;
+   */
+  chronicLoad28d = 0;
+
+  constructor(data?: PartialMessage<ScoreAcuteChronicRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreAcuteChronicRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "acute_load_7d", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "chronic_load_28d", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreAcuteChronicRequest {
+    return new ScoreAcuteChronicRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreAcuteChronicRequest {
+    return new ScoreAcuteChronicRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreAcuteChronicRequest {
+    return new ScoreAcuteChronicRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreAcuteChronicRequest | PlainMessage<ScoreAcuteChronicRequest> | undefined, b: ScoreAcuteChronicRequest | PlainMessage<ScoreAcuteChronicRequest> | undefined): boolean {
+    return proto3.util.equals(ScoreAcuteChronicRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreAcuteChronicResponse
+ */
+export class ScoreAcuteChronicResponse extends Message<ScoreAcuteChronicResponse> {
+  /**
+   * acute / (chronic / 4); ~1.0 is balanced
+   *
+   * @generated from field: double ratio = 1;
+   */
+  ratio = 0;
+
+  /**
+   * 'detraining' | 'optimal' | 'caution' | 'high_risk'
+   *
+   * @generated from field: string zone = 2;
+   */
+  zone = "";
+
+  /**
+   * True when the ratio crosses the injury-risk threshold (>1.5).
+   *
+   * @generated from field: bool injury_risk = 3;
+   */
+  injuryRisk = false;
+
+  constructor(data?: PartialMessage<ScoreAcuteChronicResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreAcuteChronicResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "ratio", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "zone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "injury_risk", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreAcuteChronicResponse {
+    return new ScoreAcuteChronicResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreAcuteChronicResponse {
+    return new ScoreAcuteChronicResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreAcuteChronicResponse {
+    return new ScoreAcuteChronicResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreAcuteChronicResponse | PlainMessage<ScoreAcuteChronicResponse> | undefined, b: ScoreAcuteChronicResponse | PlainMessage<ScoreAcuteChronicResponse> | undefined): boolean {
+    return proto3.util.equals(ScoreAcuteChronicResponse, a, b);
+  }
+}
+
+/**
+ * EstimateOneRmRequest is a single (weight, reps) effort. The
+ * estimate uses the Epley formula, the same one the PR detector
+ * uses, so the analytics tab and the PR board agree.
+ *
+ * @generated from message sttattus.scoring.v1.EstimateOneRmRequest
+ */
+export class EstimateOneRmRequest extends Message<EstimateOneRmRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: double weight = 2;
+   */
+  weight = 0;
+
+  /**
+   * @generated from field: int32 reps = 3;
+   */
+  reps = 0;
+
+  constructor(data?: PartialMessage<EstimateOneRmRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.EstimateOneRmRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "weight", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "reps", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EstimateOneRmRequest {
+    return new EstimateOneRmRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EstimateOneRmRequest {
+    return new EstimateOneRmRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EstimateOneRmRequest {
+    return new EstimateOneRmRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EstimateOneRmRequest | PlainMessage<EstimateOneRmRequest> | undefined, b: EstimateOneRmRequest | PlainMessage<EstimateOneRmRequest> | undefined): boolean {
+    return proto3.util.equals(EstimateOneRmRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.EstimateOneRmResponse
+ */
+export class EstimateOneRmResponse extends Message<EstimateOneRmResponse> {
+  /**
+   * @generated from field: double estimated_one_rm = 1;
+   */
+  estimatedOneRm = 0;
+
+  /**
+   * Confidence falls off as reps climb — a 1RM estimated from a
+   * 12-rep set is far softer than from a triple. 0.0-1.0.
+   *
+   * @generated from field: double confidence = 2;
+   */
+  confidence = 0;
+
+  constructor(data?: PartialMessage<EstimateOneRmResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.EstimateOneRmResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "estimated_one_rm", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "confidence", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EstimateOneRmResponse {
+    return new EstimateOneRmResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EstimateOneRmResponse {
+    return new EstimateOneRmResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EstimateOneRmResponse {
+    return new EstimateOneRmResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EstimateOneRmResponse | PlainMessage<EstimateOneRmResponse> | undefined, b: EstimateOneRmResponse | PlainMessage<EstimateOneRmResponse> | undefined): boolean {
+    return proto3.util.equals(EstimateOneRmResponse, a, b);
+  }
+}
+
+/**
+ * ScoreVolumeIntensityFrequencyRequest is one analysis window
+ * (typically a 7-day block) of completed sets.
+ *
+ * @generated from message sttattus.scoring.v1.ScoreVolumeIntensityFrequencyRequest
+ */
+export class ScoreVolumeIntensityFrequencyRequest extends Message<ScoreVolumeIntensityFrequencyRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: repeated sttattus.scoring.v1.WorkoutSeriesInput series = 2;
+   */
+  series: WorkoutSeriesInput[] = [];
+
+  /**
+   * Distinct training days in the window — the frequency input.
+   *
+   * @generated from field: int32 session_days = 3;
+   */
+  sessionDays = 0;
+
+  /**
+   * Length of the window in days (e.g. 7).
+   *
+   * @generated from field: int32 window_days = 4;
+   */
+  windowDays = 0;
+
+  constructor(data?: PartialMessage<ScoreVolumeIntensityFrequencyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreVolumeIntensityFrequencyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "series", kind: "message", T: WorkoutSeriesInput, repeated: true },
+    { no: 3, name: "session_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "window_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreVolumeIntensityFrequencyRequest {
+    return new ScoreVolumeIntensityFrequencyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreVolumeIntensityFrequencyRequest {
+    return new ScoreVolumeIntensityFrequencyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreVolumeIntensityFrequencyRequest {
+    return new ScoreVolumeIntensityFrequencyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreVolumeIntensityFrequencyRequest | PlainMessage<ScoreVolumeIntensityFrequencyRequest> | undefined, b: ScoreVolumeIntensityFrequencyRequest | PlainMessage<ScoreVolumeIntensityFrequencyRequest> | undefined): boolean {
+    return proto3.util.equals(ScoreVolumeIntensityFrequencyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreVolumeIntensityFrequencyResponse
+ */
+export class ScoreVolumeIntensityFrequencyResponse extends Message<ScoreVolumeIntensityFrequencyResponse> {
+  /**
+   * Total tonnage (sum of weight * reps) across the window.
+   *
+   * @generated from field: double volume = 1;
+   */
+  volume = 0;
+
+  /**
+   * Mean weight per rep — a crude intensity proxy.
+   *
+   * @generated from field: double intensity = 2;
+   */
+  intensity = 0;
+
+  /**
+   * Session days / window days, 0.0-1.0.
+   *
+   * @generated from field: double frequency = 3;
+   */
+  frequency = 0;
+
+  /**
+   * A single 0-100 roll-up the Today screen can show as one number.
+   *
+   * @generated from field: double composite = 4;
+   */
+  composite = 0;
+
+  constructor(data?: PartialMessage<ScoreVolumeIntensityFrequencyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreVolumeIntensityFrequencyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "volume", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "intensity", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "frequency", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "composite", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreVolumeIntensityFrequencyResponse {
+    return new ScoreVolumeIntensityFrequencyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreVolumeIntensityFrequencyResponse {
+    return new ScoreVolumeIntensityFrequencyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreVolumeIntensityFrequencyResponse {
+    return new ScoreVolumeIntensityFrequencyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreVolumeIntensityFrequencyResponse | PlainMessage<ScoreVolumeIntensityFrequencyResponse> | undefined, b: ScoreVolumeIntensityFrequencyResponse | PlainMessage<ScoreVolumeIntensityFrequencyResponse> | undefined): boolean {
+    return proto3.util.equals(ScoreVolumeIntensityFrequencyResponse, a, b);
+  }
+}
+

@@ -62,6 +62,7 @@ const (
 	WorkoutService_SetSensorConnectionStatus_FullMethodName  = "/sttattus.workout.v1.WorkoutService/SetSensorConnectionStatus"
 	WorkoutService_MarkSensorSynced_FullMethodName           = "/sttattus.workout.v1.WorkoutService/MarkSensorSynced"
 	WorkoutService_SetSensorPriority_FullMethodName          = "/sttattus.workout.v1.WorkoutService/SetSensorPriority"
+	WorkoutService_GetForgeAnalytics_FullMethodName          = "/sttattus.workout.v1.WorkoutService/GetForgeAnalytics"
 )
 
 // WorkoutServiceClient is the client API for WorkoutService service.
@@ -131,6 +132,10 @@ type WorkoutServiceClient interface {
 	SetSensorConnectionStatus(ctx context.Context, in *SetSensorConnectionStatusRequest, opts ...grpc.CallOption) (*SetSensorConnectionStatusResponse, error)
 	MarkSensorSynced(ctx context.Context, in *MarkSensorSyncedRequest, opts ...grpc.CallOption) (*MarkSensorSyncedResponse, error)
 	SetSensorPriority(ctx context.Context, in *SetSensorPriorityRequest, opts ...grpc.CallOption) (*SetSensorPriorityResponse, error)
+	// F7P2.6 — the training-science snapshot (acute:chronic ratio,
+	// estimated 1RM, volume/intensity/frequency). Aggregation here,
+	// math in services_rust/scoring.
+	GetForgeAnalytics(ctx context.Context, in *GetForgeAnalyticsRequest, opts ...grpc.CallOption) (*GetForgeAnalyticsResponse, error)
 }
 
 type workoutServiceClient struct {
@@ -571,6 +576,16 @@ func (c *workoutServiceClient) SetSensorPriority(ctx context.Context, in *SetSen
 	return out, nil
 }
 
+func (c *workoutServiceClient) GetForgeAnalytics(ctx context.Context, in *GetForgeAnalyticsRequest, opts ...grpc.CallOption) (*GetForgeAnalyticsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetForgeAnalyticsResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetForgeAnalytics_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WorkoutServiceServer is the server API for WorkoutService service.
 // All implementations must embed UnimplementedWorkoutServiceServer
 // for forward compatibility.
@@ -638,6 +653,10 @@ type WorkoutServiceServer interface {
 	SetSensorConnectionStatus(context.Context, *SetSensorConnectionStatusRequest) (*SetSensorConnectionStatusResponse, error)
 	MarkSensorSynced(context.Context, *MarkSensorSyncedRequest) (*MarkSensorSyncedResponse, error)
 	SetSensorPriority(context.Context, *SetSensorPriorityRequest) (*SetSensorPriorityResponse, error)
+	// F7P2.6 — the training-science snapshot (acute:chronic ratio,
+	// estimated 1RM, volume/intensity/frequency). Aggregation here,
+	// math in services_rust/scoring.
+	GetForgeAnalytics(context.Context, *GetForgeAnalyticsRequest) (*GetForgeAnalyticsResponse, error)
 	mustEmbedUnimplementedWorkoutServiceServer()
 }
 
@@ -776,6 +795,9 @@ func (UnimplementedWorkoutServiceServer) MarkSensorSynced(context.Context, *Mark
 }
 func (UnimplementedWorkoutServiceServer) SetSensorPriority(context.Context, *SetSensorPriorityRequest) (*SetSensorPriorityResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SetSensorPriority not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetForgeAnalytics(context.Context, *GetForgeAnalyticsRequest) (*GetForgeAnalyticsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetForgeAnalytics not implemented")
 }
 func (UnimplementedWorkoutServiceServer) mustEmbedUnimplementedWorkoutServiceServer() {}
 func (UnimplementedWorkoutServiceServer) testEmbeddedByValue()                        {}
@@ -1572,6 +1594,24 @@ func _WorkoutService_SetSensorPriority_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WorkoutService_GetForgeAnalytics_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetForgeAnalyticsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetForgeAnalytics(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetForgeAnalytics_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetForgeAnalytics(ctx, req.(*GetForgeAnalyticsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // WorkoutService_ServiceDesc is the grpc.ServiceDesc for WorkoutService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1750,6 +1790,10 @@ var WorkoutService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SetSensorPriority",
 			Handler:    _WorkoutService_SetSensorPriority_Handler,
+		},
+		{
+			MethodName: "GetForgeAnalytics",
+			Handler:    _WorkoutService_GetForgeAnalytics_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

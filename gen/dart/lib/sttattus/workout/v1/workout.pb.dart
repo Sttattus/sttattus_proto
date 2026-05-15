@@ -7373,6 +7373,246 @@ class SetSensorPriorityResponse extends $pb.GeneratedMessage {
   SensorPriority ensurePriority() => $_ensure(0);
 }
 
+class ForgeAnalytics extends $pb.GeneratedMessage {
+  factory ForgeAnalytics({
+    $core.double? acuteChronicRatio,
+    $core.String? acuteChronicZone,
+    $core.bool? injuryRisk,
+    $core.double? volume7d,
+    $core.double? intensity7d,
+    $core.double? frequency7d,
+    $core.double? vifComposite,
+    $core.double? bestEstimatedOneRm,
+    $core.String? bestOneRmExercise,
+    $core.bool? isEmpty,
+  }) {
+    final result = create();
+    if (acuteChronicRatio != null) result.acuteChronicRatio = acuteChronicRatio;
+    if (acuteChronicZone != null) result.acuteChronicZone = acuteChronicZone;
+    if (injuryRisk != null) result.injuryRisk = injuryRisk;
+    if (volume7d != null) result.volume7d = volume7d;
+    if (intensity7d != null) result.intensity7d = intensity7d;
+    if (frequency7d != null) result.frequency7d = frequency7d;
+    if (vifComposite != null) result.vifComposite = vifComposite;
+    if (bestEstimatedOneRm != null) result.bestEstimatedOneRm = bestEstimatedOneRm;
+    if (bestOneRmExercise != null) result.bestOneRmExercise = bestOneRmExercise;
+    if (isEmpty != null) result.isEmpty = isEmpty;
+    return result;
+  }
+
+  ForgeAnalytics._();
+
+  factory ForgeAnalytics.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ForgeAnalytics.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ForgeAnalytics', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'acuteChronicRatio', $pb.PbFieldType.OD)
+    ..aOS(2, _omitFieldNames ? '' : 'acuteChronicZone')
+    ..aOB(3, _omitFieldNames ? '' : 'injuryRisk')
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'volume7d', $pb.PbFieldType.OD, protoName: 'volume_7d')
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'intensity7d', $pb.PbFieldType.OD, protoName: 'intensity_7d')
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'frequency7d', $pb.PbFieldType.OD, protoName: 'frequency_7d')
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'vifComposite', $pb.PbFieldType.OD)
+    ..a<$core.double>(8, _omitFieldNames ? '' : 'bestEstimatedOneRm', $pb.PbFieldType.OD)
+    ..aOS(9, _omitFieldNames ? '' : 'bestOneRmExercise')
+    ..aOB(10, _omitFieldNames ? '' : 'isEmpty')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ForgeAnalytics clone() => ForgeAnalytics()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ForgeAnalytics copyWith(void Function(ForgeAnalytics) updates) => super.copyWith((message) => updates(message as ForgeAnalytics)) as ForgeAnalytics;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ForgeAnalytics create() => ForgeAnalytics._();
+  @$core.override
+  ForgeAnalytics createEmptyInstance() => create();
+  static $pb.PbList<ForgeAnalytics> createRepeated() => $pb.PbList<ForgeAnalytics>();
+  @$core.pragma('dart2js:noInline')
+  static ForgeAnalytics getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ForgeAnalytics>(create);
+  static ForgeAnalytics? _defaultInstance;
+
+  /// Acute:chronic workload ratio (7-day load / weekly chronic load).
+  @$pb.TagNumber(1)
+  $core.double get acuteChronicRatio => $_getN(0);
+  @$pb.TagNumber(1)
+  set acuteChronicRatio($core.double value) => $_setDouble(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAcuteChronicRatio() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAcuteChronicRatio() => $_clearField(1);
+
+  /// 'detraining' | 'optimal' | 'caution' | 'high_risk'
+  @$pb.TagNumber(2)
+  $core.String get acuteChronicZone => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set acuteChronicZone($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAcuteChronicZone() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAcuteChronicZone() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get injuryRisk => $_getBF(2);
+  @$pb.TagNumber(3)
+  set injuryRisk($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasInjuryRisk() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearInjuryRisk() => $_clearField(3);
+
+  /// Volume / intensity / frequency triad over the trailing 7 days.
+  @$pb.TagNumber(4)
+  $core.double get volume7d => $_getN(3);
+  @$pb.TagNumber(4)
+  set volume7d($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasVolume7d() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearVolume7d() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get intensity7d => $_getN(4);
+  @$pb.TagNumber(5)
+  set intensity7d($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasIntensity7d() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIntensity7d() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get frequency7d => $_getN(5);
+  @$pb.TagNumber(6)
+  set frequency7d($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasFrequency7d() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFrequency7d() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get vifComposite => $_getN(6);
+  @$pb.TagNumber(7)
+  set vifComposite($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasVifComposite() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearVifComposite() => $_clearField(7);
+
+  /// Best Epley-estimated 1RM observed in the trailing 28 days, with
+  /// the movement that produced it. Empty exercise = no qualifying
+  /// set in the window.
+  @$pb.TagNumber(8)
+  $core.double get bestEstimatedOneRm => $_getN(7);
+  @$pb.TagNumber(8)
+  set bestEstimatedOneRm($core.double value) => $_setDouble(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasBestEstimatedOneRm() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearBestEstimatedOneRm() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get bestOneRmExercise => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set bestOneRmExercise($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasBestOneRmExercise() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearBestOneRmExercise() => $_clearField(9);
+
+  /// True when the lifter has no completed sessions in the window —
+  /// the client shows an editorial empty state instead of zeroes.
+  @$pb.TagNumber(10)
+  $core.bool get isEmpty => $_getBF(9);
+  @$pb.TagNumber(10)
+  set isEmpty($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasIsEmpty() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearIsEmpty() => $_clearField(10);
+}
+
+class GetForgeAnalyticsRequest extends $pb.GeneratedMessage {
+  factory GetForgeAnalyticsRequest() => create();
+
+  GetForgeAnalyticsRequest._();
+
+  factory GetForgeAnalyticsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetForgeAnalyticsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetForgeAnalyticsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForgeAnalyticsRequest clone() => GetForgeAnalyticsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForgeAnalyticsRequest copyWith(void Function(GetForgeAnalyticsRequest) updates) => super.copyWith((message) => updates(message as GetForgeAnalyticsRequest)) as GetForgeAnalyticsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetForgeAnalyticsRequest create() => GetForgeAnalyticsRequest._();
+  @$core.override
+  GetForgeAnalyticsRequest createEmptyInstance() => create();
+  static $pb.PbList<GetForgeAnalyticsRequest> createRepeated() => $pb.PbList<GetForgeAnalyticsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetForgeAnalyticsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetForgeAnalyticsRequest>(create);
+  static GetForgeAnalyticsRequest? _defaultInstance;
+}
+
+class GetForgeAnalyticsResponse extends $pb.GeneratedMessage {
+  factory GetForgeAnalyticsResponse({
+    ForgeAnalytics? analytics,
+  }) {
+    final result = create();
+    if (analytics != null) result.analytics = analytics;
+    return result;
+  }
+
+  GetForgeAnalyticsResponse._();
+
+  factory GetForgeAnalyticsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetForgeAnalyticsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetForgeAnalyticsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<ForgeAnalytics>(1, _omitFieldNames ? '' : 'analytics', subBuilder: ForgeAnalytics.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForgeAnalyticsResponse clone() => GetForgeAnalyticsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForgeAnalyticsResponse copyWith(void Function(GetForgeAnalyticsResponse) updates) => super.copyWith((message) => updates(message as GetForgeAnalyticsResponse)) as GetForgeAnalyticsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetForgeAnalyticsResponse create() => GetForgeAnalyticsResponse._();
+  @$core.override
+  GetForgeAnalyticsResponse createEmptyInstance() => create();
+  static $pb.PbList<GetForgeAnalyticsResponse> createRepeated() => $pb.PbList<GetForgeAnalyticsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetForgeAnalyticsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetForgeAnalyticsResponse>(create);
+  static GetForgeAnalyticsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ForgeAnalytics get analytics => $_getN(0);
+  @$pb.TagNumber(1)
+  set analytics(ForgeAnalytics value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAnalytics() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAnalytics() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ForgeAnalytics ensureAnalytics() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

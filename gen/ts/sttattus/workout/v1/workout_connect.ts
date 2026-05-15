@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateBodyCompositionRequest, CreateBodyCompositionResponse, CreateFormVideoRequest, CreateFormVideoResponse, CreateInjuryRequest, CreateInjuryResponse, CreateSessionRequest, CreateSessionResponse, DeleteBodyCompositionRequest, DeleteBodyCompositionResponse, DeleteFormVideoRequest, DeleteFormVideoResponse, DeleteInjuryRequest, DeleteInjuryResponse, DeleteMobilityBaselineRequest, DeleteMobilityBaselineResponse, EnrolInProgrammeRequest, EnrolInProgrammeResponse, GetActiveEnrolmentRequest, GetActiveEnrolmentResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetCurrentMobilityBaselineRequest, GetCurrentMobilityBaselineResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetProgrammeRequest, GetProgrammeResponse, GetRankLadderRequest, GetRankLadderResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListBodyCompositionsRequest, ListBodyCompositionsResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListInjuriesRequest, ListInjuriesResponse, ListMobilityBaselinesRequest, ListMobilityBaselinesResponse, ListMyEnrolmentsRequest, ListMyEnrolmentsResponse, ListMyFormVideosRequest, ListMyFormVideosResponse, ListMyPRsRequest, ListMyPRsResponse, ListProgrammesRequest, ListProgrammesResponse, ListRecentPRsRequest, ListRecentPRsResponse, ListSensorConnectionsRequest, ListSensorConnectionsResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, MarkSensorSyncedRequest, MarkSensorSyncedResponse, SetSensorConnectionStatusRequest, SetSensorConnectionStatusResponse, SetSensorPriorityRequest, SetSensorPriorityResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateEnrolmentRequest, UpdateEnrolmentResponse, UpdateFormVideoStatusRequest, UpdateFormVideoStatusResponse, UpdateInjuryStatusRequest, UpdateInjuryStatusResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse, UpsertMobilityBaselineRequest, UpsertMobilityBaselineResponse } from "./workout_pb.js";
+import { CreateBodyCompositionRequest, CreateBodyCompositionResponse, CreateFormVideoRequest, CreateFormVideoResponse, CreateInjuryRequest, CreateInjuryResponse, CreateSessionRequest, CreateSessionResponse, DeleteBodyCompositionRequest, DeleteBodyCompositionResponse, DeleteFormVideoRequest, DeleteFormVideoResponse, DeleteInjuryRequest, DeleteInjuryResponse, DeleteMobilityBaselineRequest, DeleteMobilityBaselineResponse, EnrolInProgrammeRequest, EnrolInProgrammeResponse, GetActiveEnrolmentRequest, GetActiveEnrolmentResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetCurrentMobilityBaselineRequest, GetCurrentMobilityBaselineResponse, GetForgeAnalyticsRequest, GetForgeAnalyticsResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetProgrammeRequest, GetProgrammeResponse, GetRankLadderRequest, GetRankLadderResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListBodyCompositionsRequest, ListBodyCompositionsResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListInjuriesRequest, ListInjuriesResponse, ListMobilityBaselinesRequest, ListMobilityBaselinesResponse, ListMyEnrolmentsRequest, ListMyEnrolmentsResponse, ListMyFormVideosRequest, ListMyFormVideosResponse, ListMyPRsRequest, ListMyPRsResponse, ListProgrammesRequest, ListProgrammesResponse, ListRecentPRsRequest, ListRecentPRsResponse, ListSensorConnectionsRequest, ListSensorConnectionsResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, MarkSensorSyncedRequest, MarkSensorSyncedResponse, SetSensorConnectionStatusRequest, SetSensorConnectionStatusResponse, SetSensorPriorityRequest, SetSensorPriorityResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateEnrolmentRequest, UpdateEnrolmentResponse, UpdateFormVideoStatusRequest, UpdateFormVideoStatusResponse, UpdateInjuryStatusRequest, UpdateInjuryStatusResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse, UpsertMobilityBaselineRequest, UpsertMobilityBaselineResponse } from "./workout_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -426,6 +426,19 @@ export const WorkoutService = {
       name: "SetSensorPriority",
       I: SetSensorPriorityRequest,
       O: SetSensorPriorityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P2.6 — the training-science snapshot (acute:chronic ratio,
+     * estimated 1RM, volume/intensity/frequency). Aggregation here,
+     * math in services_rust/scoring.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetForgeAnalytics
+     */
+    getForgeAnalytics: {
+      name: "GetForgeAnalytics",
+      I: GetForgeAnalyticsRequest,
+      O: GetForgeAnalyticsResponse,
       kind: MethodKind.Unary,
     },
   }

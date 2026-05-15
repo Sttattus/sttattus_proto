@@ -224,6 +224,13 @@ class WorkoutServiceClient extends $grpc.Client {
     return $createUnaryCall(_$setSensorPriority, request, options: options);
   }
 
+  /// F7P2.6 — the training-science snapshot (acute:chronic ratio,
+  /// estimated 1RM, volume/intensity/frequency). Aggregation here,
+  /// math in services_rust/scoring.
+  $grpc.ResponseFuture<$0.GetForgeAnalyticsResponse> getForgeAnalytics($0.GetForgeAnalyticsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getForgeAnalytics, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listWorkouts = $grpc.ClientMethod<$0.ListWorkoutsRequest, $0.ListWorkoutsResponse>(
@@ -398,6 +405,10 @@ class WorkoutServiceClient extends $grpc.Client {
       '/sttattus.workout.v1.WorkoutService/SetSensorPriority',
       ($0.SetSensorPriorityRequest value) => value.writeToBuffer(),
       $0.SetSensorPriorityResponse.fromBuffer);
+  static final _$getForgeAnalytics = $grpc.ClientMethod<$0.GetForgeAnalyticsRequest, $0.GetForgeAnalyticsResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetForgeAnalytics',
+      ($0.GetForgeAnalyticsRequest value) => value.writeToBuffer(),
+      $0.GetForgeAnalyticsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.workout.v1.WorkoutService')
@@ -706,6 +717,13 @@ abstract class WorkoutServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SetSensorPriorityRequest.fromBuffer(value),
         ($0.SetSensorPriorityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetForgeAnalyticsRequest, $0.GetForgeAnalyticsResponse>(
+        'GetForgeAnalytics',
+        getForgeAnalytics_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetForgeAnalyticsRequest.fromBuffer(value),
+        ($0.GetForgeAnalyticsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListWorkoutsResponse> listWorkouts_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWorkoutsRequest> $request) async {
@@ -965,5 +983,11 @@ abstract class WorkoutServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.SetSensorPriorityResponse> setSensorPriority($grpc.ServiceCall call, $0.SetSensorPriorityRequest request);
+
+  $async.Future<$0.GetForgeAnalyticsResponse> getForgeAnalytics_Pre($grpc.ServiceCall $call, $async.Future<$0.GetForgeAnalyticsRequest> $request) async {
+    return getForgeAnalytics($call, await $request);
+  }
+
+  $async.Future<$0.GetForgeAnalyticsResponse> getForgeAnalytics($grpc.ServiceCall call, $0.GetForgeAnalyticsRequest request);
 
 }

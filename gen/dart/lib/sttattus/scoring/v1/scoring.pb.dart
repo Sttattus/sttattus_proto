@@ -2289,6 +2289,451 @@ class ScoreDominionResponse extends $pb.GeneratedMessage {
   void clearDominionDelta() => $_clearField(2);
 }
 
+/// ScoreAcuteChronicRequest carries daily training loads. acute is
+/// the trailing 7-day sum, chronic the trailing 28-day sum (both as
+/// session tonnage or another consistent load proxy). The ratio is
+/// the established acute:chronic workload ratio (ACWR).
+class ScoreAcuteChronicRequest extends $pb.GeneratedMessage {
+  factory ScoreAcuteChronicRequest({
+    $core.String? userId,
+    $core.double? acuteLoad7d,
+    $core.double? chronicLoad28d,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (acuteLoad7d != null) result.acuteLoad7d = acuteLoad7d;
+    if (chronicLoad28d != null) result.chronicLoad28d = chronicLoad28d;
+    return result;
+  }
+
+  ScoreAcuteChronicRequest._();
+
+  factory ScoreAcuteChronicRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ScoreAcuteChronicRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreAcuteChronicRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'acuteLoad7d', $pb.PbFieldType.OD, protoName: 'acute_load_7d')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'chronicLoad28d', $pb.PbFieldType.OD, protoName: 'chronic_load_28d')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreAcuteChronicRequest clone() => ScoreAcuteChronicRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreAcuteChronicRequest copyWith(void Function(ScoreAcuteChronicRequest) updates) => super.copyWith((message) => updates(message as ScoreAcuteChronicRequest)) as ScoreAcuteChronicRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ScoreAcuteChronicRequest create() => ScoreAcuteChronicRequest._();
+  @$core.override
+  ScoreAcuteChronicRequest createEmptyInstance() => create();
+  static $pb.PbList<ScoreAcuteChronicRequest> createRepeated() => $pb.PbList<ScoreAcuteChronicRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ScoreAcuteChronicRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreAcuteChronicRequest>(create);
+  static ScoreAcuteChronicRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get acuteLoad7d => $_getN(1);
+  @$pb.TagNumber(2)
+  set acuteLoad7d($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAcuteLoad7d() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAcuteLoad7d() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get chronicLoad28d => $_getN(2);
+  @$pb.TagNumber(3)
+  set chronicLoad28d($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasChronicLoad28d() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearChronicLoad28d() => $_clearField(3);
+}
+
+class ScoreAcuteChronicResponse extends $pb.GeneratedMessage {
+  factory ScoreAcuteChronicResponse({
+    $core.double? ratio,
+    $core.String? zone,
+    $core.bool? injuryRisk,
+  }) {
+    final result = create();
+    if (ratio != null) result.ratio = ratio;
+    if (zone != null) result.zone = zone;
+    if (injuryRisk != null) result.injuryRisk = injuryRisk;
+    return result;
+  }
+
+  ScoreAcuteChronicResponse._();
+
+  factory ScoreAcuteChronicResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ScoreAcuteChronicResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreAcuteChronicResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'ratio', $pb.PbFieldType.OD)
+    ..aOS(2, _omitFieldNames ? '' : 'zone')
+    ..aOB(3, _omitFieldNames ? '' : 'injuryRisk')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreAcuteChronicResponse clone() => ScoreAcuteChronicResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreAcuteChronicResponse copyWith(void Function(ScoreAcuteChronicResponse) updates) => super.copyWith((message) => updates(message as ScoreAcuteChronicResponse)) as ScoreAcuteChronicResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ScoreAcuteChronicResponse create() => ScoreAcuteChronicResponse._();
+  @$core.override
+  ScoreAcuteChronicResponse createEmptyInstance() => create();
+  static $pb.PbList<ScoreAcuteChronicResponse> createRepeated() => $pb.PbList<ScoreAcuteChronicResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ScoreAcuteChronicResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreAcuteChronicResponse>(create);
+  static ScoreAcuteChronicResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get ratio => $_getN(0);
+  @$pb.TagNumber(1)
+  set ratio($core.double value) => $_setDouble(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRatio() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRatio() => $_clearField(1);
+
+  /// 'detraining' | 'optimal' | 'caution' | 'high_risk'
+  @$pb.TagNumber(2)
+  $core.String get zone => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set zone($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasZone() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearZone() => $_clearField(2);
+
+  /// True when the ratio crosses the injury-risk threshold (>1.5).
+  @$pb.TagNumber(3)
+  $core.bool get injuryRisk => $_getBF(2);
+  @$pb.TagNumber(3)
+  set injuryRisk($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasInjuryRisk() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearInjuryRisk() => $_clearField(3);
+}
+
+/// EstimateOneRmRequest is a single (weight, reps) effort. The
+/// estimate uses the Epley formula, the same one the PR detector
+/// uses, so the analytics tab and the PR board agree.
+class EstimateOneRmRequest extends $pb.GeneratedMessage {
+  factory EstimateOneRmRequest({
+    $core.String? userId,
+    $core.double? weight,
+    $core.int? reps,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (weight != null) result.weight = weight;
+    if (reps != null) result.reps = reps;
+    return result;
+  }
+
+  EstimateOneRmRequest._();
+
+  factory EstimateOneRmRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EstimateOneRmRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EstimateOneRmRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'weight', $pb.PbFieldType.OD)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'reps', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EstimateOneRmRequest clone() => EstimateOneRmRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EstimateOneRmRequest copyWith(void Function(EstimateOneRmRequest) updates) => super.copyWith((message) => updates(message as EstimateOneRmRequest)) as EstimateOneRmRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EstimateOneRmRequest create() => EstimateOneRmRequest._();
+  @$core.override
+  EstimateOneRmRequest createEmptyInstance() => create();
+  static $pb.PbList<EstimateOneRmRequest> createRepeated() => $pb.PbList<EstimateOneRmRequest>();
+  @$core.pragma('dart2js:noInline')
+  static EstimateOneRmRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EstimateOneRmRequest>(create);
+  static EstimateOneRmRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get weight => $_getN(1);
+  @$pb.TagNumber(2)
+  set weight($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWeight() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWeight() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get reps => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set reps($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReps() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReps() => $_clearField(3);
+}
+
+class EstimateOneRmResponse extends $pb.GeneratedMessage {
+  factory EstimateOneRmResponse({
+    $core.double? estimatedOneRm,
+    $core.double? confidence,
+  }) {
+    final result = create();
+    if (estimatedOneRm != null) result.estimatedOneRm = estimatedOneRm;
+    if (confidence != null) result.confidence = confidence;
+    return result;
+  }
+
+  EstimateOneRmResponse._();
+
+  factory EstimateOneRmResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EstimateOneRmResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EstimateOneRmResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'estimatedOneRm', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'confidence', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EstimateOneRmResponse clone() => EstimateOneRmResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EstimateOneRmResponse copyWith(void Function(EstimateOneRmResponse) updates) => super.copyWith((message) => updates(message as EstimateOneRmResponse)) as EstimateOneRmResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EstimateOneRmResponse create() => EstimateOneRmResponse._();
+  @$core.override
+  EstimateOneRmResponse createEmptyInstance() => create();
+  static $pb.PbList<EstimateOneRmResponse> createRepeated() => $pb.PbList<EstimateOneRmResponse>();
+  @$core.pragma('dart2js:noInline')
+  static EstimateOneRmResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EstimateOneRmResponse>(create);
+  static EstimateOneRmResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get estimatedOneRm => $_getN(0);
+  @$pb.TagNumber(1)
+  set estimatedOneRm($core.double value) => $_setDouble(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEstimatedOneRm() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEstimatedOneRm() => $_clearField(1);
+
+  /// Confidence falls off as reps climb — a 1RM estimated from a
+  /// 12-rep set is far softer than from a triple. 0.0-1.0.
+  @$pb.TagNumber(2)
+  $core.double get confidence => $_getN(1);
+  @$pb.TagNumber(2)
+  set confidence($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasConfidence() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearConfidence() => $_clearField(2);
+}
+
+/// ScoreVolumeIntensityFrequencyRequest is one analysis window
+/// (typically a 7-day block) of completed sets.
+class ScoreVolumeIntensityFrequencyRequest extends $pb.GeneratedMessage {
+  factory ScoreVolumeIntensityFrequencyRequest({
+    $core.String? userId,
+    $core.Iterable<WorkoutSeriesInput>? series,
+    $core.int? sessionDays,
+    $core.int? windowDays,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (series != null) result.series.addAll(series);
+    if (sessionDays != null) result.sessionDays = sessionDays;
+    if (windowDays != null) result.windowDays = windowDays;
+    return result;
+  }
+
+  ScoreVolumeIntensityFrequencyRequest._();
+
+  factory ScoreVolumeIntensityFrequencyRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ScoreVolumeIntensityFrequencyRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreVolumeIntensityFrequencyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..pc<WorkoutSeriesInput>(2, _omitFieldNames ? '' : 'series', $pb.PbFieldType.PM, subBuilder: WorkoutSeriesInput.create)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'sessionDays', $pb.PbFieldType.O3)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'windowDays', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreVolumeIntensityFrequencyRequest clone() => ScoreVolumeIntensityFrequencyRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreVolumeIntensityFrequencyRequest copyWith(void Function(ScoreVolumeIntensityFrequencyRequest) updates) => super.copyWith((message) => updates(message as ScoreVolumeIntensityFrequencyRequest)) as ScoreVolumeIntensityFrequencyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ScoreVolumeIntensityFrequencyRequest create() => ScoreVolumeIntensityFrequencyRequest._();
+  @$core.override
+  ScoreVolumeIntensityFrequencyRequest createEmptyInstance() => create();
+  static $pb.PbList<ScoreVolumeIntensityFrequencyRequest> createRepeated() => $pb.PbList<ScoreVolumeIntensityFrequencyRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ScoreVolumeIntensityFrequencyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreVolumeIntensityFrequencyRequest>(create);
+  static ScoreVolumeIntensityFrequencyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<WorkoutSeriesInput> get series => $_getList(1);
+
+  /// Distinct training days in the window — the frequency input.
+  @$pb.TagNumber(3)
+  $core.int get sessionDays => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set sessionDays($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSessionDays() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSessionDays() => $_clearField(3);
+
+  /// Length of the window in days (e.g. 7).
+  @$pb.TagNumber(4)
+  $core.int get windowDays => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set windowDays($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasWindowDays() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWindowDays() => $_clearField(4);
+}
+
+class ScoreVolumeIntensityFrequencyResponse extends $pb.GeneratedMessage {
+  factory ScoreVolumeIntensityFrequencyResponse({
+    $core.double? volume,
+    $core.double? intensity,
+    $core.double? frequency,
+    $core.double? composite,
+  }) {
+    final result = create();
+    if (volume != null) result.volume = volume;
+    if (intensity != null) result.intensity = intensity;
+    if (frequency != null) result.frequency = frequency;
+    if (composite != null) result.composite = composite;
+    return result;
+  }
+
+  ScoreVolumeIntensityFrequencyResponse._();
+
+  factory ScoreVolumeIntensityFrequencyResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ScoreVolumeIntensityFrequencyResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreVolumeIntensityFrequencyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'volume', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'intensity', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'frequency', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'composite', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreVolumeIntensityFrequencyResponse clone() => ScoreVolumeIntensityFrequencyResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreVolumeIntensityFrequencyResponse copyWith(void Function(ScoreVolumeIntensityFrequencyResponse) updates) => super.copyWith((message) => updates(message as ScoreVolumeIntensityFrequencyResponse)) as ScoreVolumeIntensityFrequencyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ScoreVolumeIntensityFrequencyResponse create() => ScoreVolumeIntensityFrequencyResponse._();
+  @$core.override
+  ScoreVolumeIntensityFrequencyResponse createEmptyInstance() => create();
+  static $pb.PbList<ScoreVolumeIntensityFrequencyResponse> createRepeated() => $pb.PbList<ScoreVolumeIntensityFrequencyResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ScoreVolumeIntensityFrequencyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreVolumeIntensityFrequencyResponse>(create);
+  static ScoreVolumeIntensityFrequencyResponse? _defaultInstance;
+
+  /// Total tonnage (sum of weight * reps) across the window.
+  @$pb.TagNumber(1)
+  $core.double get volume => $_getN(0);
+  @$pb.TagNumber(1)
+  set volume($core.double value) => $_setDouble(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasVolume() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVolume() => $_clearField(1);
+
+  /// Mean weight per rep — a crude intensity proxy.
+  @$pb.TagNumber(2)
+  $core.double get intensity => $_getN(1);
+  @$pb.TagNumber(2)
+  set intensity($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIntensity() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIntensity() => $_clearField(2);
+
+  /// Session days / window days, 0.0-1.0.
+  @$pb.TagNumber(3)
+  $core.double get frequency => $_getN(2);
+  @$pb.TagNumber(3)
+  set frequency($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFrequency() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFrequency() => $_clearField(3);
+
+  /// A single 0-100 roll-up the Today screen can show as one number.
+  @$pb.TagNumber(4)
+  $core.double get composite => $_getN(3);
+  @$pb.TagNumber(4)
+  set composite($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasComposite() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearComposite() => $_clearField(4);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -1673,3 +1673,53 @@ final $typed_data.Uint8List setSensorPriorityResponseDescriptor = $convert.base6
     'ChlTZXRTZW5zb3JQcmlvcml0eVJlc3BvbnNlEj8KCHByaW9yaXR5GAEgASgLMiMuc3R0YXR0dX'
     'Mud29ya291dC52MS5TZW5zb3JQcmlvcml0eVIIcHJpb3JpdHk=');
 
+@$core.Deprecated('Use forgeAnalyticsDescriptor instead')
+const ForgeAnalytics$json = {
+  '1': 'ForgeAnalytics',
+  '2': [
+    {'1': 'acute_chronic_ratio', '3': 1, '4': 1, '5': 1, '10': 'acuteChronicRatio'},
+    {'1': 'acute_chronic_zone', '3': 2, '4': 1, '5': 9, '10': 'acuteChronicZone'},
+    {'1': 'injury_risk', '3': 3, '4': 1, '5': 8, '10': 'injuryRisk'},
+    {'1': 'volume_7d', '3': 4, '4': 1, '5': 1, '10': 'volume7d'},
+    {'1': 'intensity_7d', '3': 5, '4': 1, '5': 1, '10': 'intensity7d'},
+    {'1': 'frequency_7d', '3': 6, '4': 1, '5': 1, '10': 'frequency7d'},
+    {'1': 'vif_composite', '3': 7, '4': 1, '5': 1, '10': 'vifComposite'},
+    {'1': 'best_estimated_one_rm', '3': 8, '4': 1, '5': 1, '10': 'bestEstimatedOneRm'},
+    {'1': 'best_one_rm_exercise', '3': 9, '4': 1, '5': 9, '10': 'bestOneRmExercise'},
+    {'1': 'is_empty', '3': 10, '4': 1, '5': 8, '10': 'isEmpty'},
+  ],
+};
+
+/// Descriptor for `ForgeAnalytics`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List forgeAnalyticsDescriptor = $convert.base64Decode(
+    'Cg5Gb3JnZUFuYWx5dGljcxIuChNhY3V0ZV9jaHJvbmljX3JhdGlvGAEgASgBUhFhY3V0ZUNocm'
+    '9uaWNSYXRpbxIsChJhY3V0ZV9jaHJvbmljX3pvbmUYAiABKAlSEGFjdXRlQ2hyb25pY1pvbmUS'
+    'HwoLaW5qdXJ5X3Jpc2sYAyABKAhSCmluanVyeVJpc2sSGwoJdm9sdW1lXzdkGAQgASgBUgh2b2'
+    'x1bWU3ZBIhCgxpbnRlbnNpdHlfN2QYBSABKAFSC2ludGVuc2l0eTdkEiEKDGZyZXF1ZW5jeV83'
+    'ZBgGIAEoAVILZnJlcXVlbmN5N2QSIwoNdmlmX2NvbXBvc2l0ZRgHIAEoAVIMdmlmQ29tcG9zaX'
+    'RlEjEKFWJlc3RfZXN0aW1hdGVkX29uZV9ybRgIIAEoAVISYmVzdEVzdGltYXRlZE9uZVJtEi8K'
+    'FGJlc3Rfb25lX3JtX2V4ZXJjaXNlGAkgASgJUhFiZXN0T25lUm1FeGVyY2lzZRIZCghpc19lbX'
+    'B0eRgKIAEoCFIHaXNFbXB0eQ==');
+
+@$core.Deprecated('Use getForgeAnalyticsRequestDescriptor instead')
+const GetForgeAnalyticsRequest$json = {
+  '1': 'GetForgeAnalyticsRequest',
+};
+
+/// Descriptor for `GetForgeAnalyticsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getForgeAnalyticsRequestDescriptor = $convert.base64Decode(
+    'ChhHZXRGb3JnZUFuYWx5dGljc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use getForgeAnalyticsResponseDescriptor instead')
+const GetForgeAnalyticsResponse$json = {
+  '1': 'GetForgeAnalyticsResponse',
+  '2': [
+    {'1': 'analytics', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.ForgeAnalytics', '10': 'analytics'},
+  ],
+};
+
+/// Descriptor for `GetForgeAnalyticsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getForgeAnalyticsResponseDescriptor = $convert.base64Decode(
+    'ChlHZXRGb3JnZUFuYWx5dGljc1Jlc3BvbnNlEkEKCWFuYWx5dGljcxgBIAEoCzIjLnN0dGF0dH'
+    'VzLndvcmtvdXQudjEuRm9yZ2VBbmFseXRpY3NSCWFuYWx5dGljcw==');
+

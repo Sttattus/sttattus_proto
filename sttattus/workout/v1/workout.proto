@@ -704,6 +704,40 @@ message SetSensorPriorityResponse {
   SensorPriority priority = 1;
 }
 
+// ===== Forge analytics (F7P2.6). The training-science snapshot the
+// Today screen + analytics tab render. backend_go aggregates the
+// lifter's completed sets into load buckets and delegates the math
+// to services_rust/scoring. Audits/forge.md §10 Phase 2 item 6. =====
+
+message ForgeAnalytics {
+  // Acute:chronic workload ratio (7-day load / weekly chronic load).
+  double acute_chronic_ratio = 1;
+  // 'detraining' | 'optimal' | 'caution' | 'high_risk'
+  string acute_chronic_zone = 2;
+  bool injury_risk = 3;
+
+  // Volume / intensity / frequency triad over the trailing 7 days.
+  double volume_7d = 4; // total tonnage (kg)
+  double intensity_7d = 5; // mean weight per rep (kg)
+  double frequency_7d = 6; // training days / 7, 0.0-1.0
+  double vif_composite = 7; // single 0-100 roll-up
+
+  // Best Epley-estimated 1RM observed in the trailing 28 days, with
+  // the movement that produced it. Empty exercise = no qualifying
+  // set in the window.
+  double best_estimated_one_rm = 8;
+  string best_one_rm_exercise = 9;
+
+  // True when the lifter has no completed sessions in the window —
+  // the client shows an editorial empty state instead of zeroes.
+  bool is_empty = 10;
+}
+
+message GetForgeAnalyticsRequest {}
+message GetForgeAnalyticsResponse {
+  ForgeAnalytics analytics = 1;
+}
+
 service WorkoutService {
   rpc ListWorkouts(ListWorkoutsRequest) returns (ListWorkoutsResponse);
   rpc GetWorkout(GetWorkoutRequest) returns (GetWorkoutResponse);
@@ -778,4 +812,9 @@ service WorkoutService {
   rpc SetSensorConnectionStatus(SetSensorConnectionStatusRequest) returns (SetSensorConnectionStatusResponse);
   rpc MarkSensorSynced(MarkSensorSyncedRequest) returns (MarkSensorSyncedResponse);
   rpc SetSensorPriority(SetSensorPriorityRequest) returns (SetSensorPriorityResponse);
+
+  // F7P2.6 — the training-science snapshot (acute:chronic ratio,
+  // estimated 1RM, volume/intensity/frequency). Aggregation here,
+  // math in services_rust/scoring.
+  rpc GetForgeAnalytics(GetForgeAnalyticsRequest) returns (GetForgeAnalyticsResponse);
 }

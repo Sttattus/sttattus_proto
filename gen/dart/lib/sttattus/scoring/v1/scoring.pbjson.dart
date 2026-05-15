@@ -495,3 +495,98 @@ final $typed_data.Uint8List scoreDominionResponseDescriptor = $convert.base64Dec
     'ChVTY29yZURvbWluaW9uUmVzcG9uc2USKgoRbmV3X2RvbWluaW9uX3JhbmsYASABKAFSD25ld0'
     'RvbWluaW9uUmFuaxIlCg5kb21pbmlvbl9kZWx0YRgCIAEoAVINZG9taW5pb25EZWx0YQ==');
 
+@$core.Deprecated('Use scoreAcuteChronicRequestDescriptor instead')
+const ScoreAcuteChronicRequest$json = {
+  '1': 'ScoreAcuteChronicRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'acute_load_7d', '3': 2, '4': 1, '5': 1, '10': 'acuteLoad7d'},
+    {'1': 'chronic_load_28d', '3': 3, '4': 1, '5': 1, '10': 'chronicLoad28d'},
+  ],
+};
+
+/// Descriptor for `ScoreAcuteChronicRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List scoreAcuteChronicRequestDescriptor = $convert.base64Decode(
+    'ChhTY29yZUFjdXRlQ2hyb25pY1JlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklkEiIKDW'
+    'FjdXRlX2xvYWRfN2QYAiABKAFSC2FjdXRlTG9hZDdkEigKEGNocm9uaWNfbG9hZF8yOGQYAyAB'
+    'KAFSDmNocm9uaWNMb2FkMjhk');
+
+@$core.Deprecated('Use scoreAcuteChronicResponseDescriptor instead')
+const ScoreAcuteChronicResponse$json = {
+  '1': 'ScoreAcuteChronicResponse',
+  '2': [
+    {'1': 'ratio', '3': 1, '4': 1, '5': 1, '10': 'ratio'},
+    {'1': 'zone', '3': 2, '4': 1, '5': 9, '10': 'zone'},
+    {'1': 'injury_risk', '3': 3, '4': 1, '5': 8, '10': 'injuryRisk'},
+  ],
+};
+
+/// Descriptor for `ScoreAcuteChronicResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List scoreAcuteChronicResponseDescriptor = $convert.base64Decode(
+    'ChlTY29yZUFjdXRlQ2hyb25pY1Jlc3BvbnNlEhQKBXJhdGlvGAEgASgBUgVyYXRpbxISCgR6b2'
+    '5lGAIgASgJUgR6b25lEh8KC2luanVyeV9yaXNrGAMgASgIUgppbmp1cnlSaXNr');
+
+@$core.Deprecated('Use estimateOneRmRequestDescriptor instead')
+const EstimateOneRmRequest$json = {
+  '1': 'EstimateOneRmRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'weight', '3': 2, '4': 1, '5': 1, '10': 'weight'},
+    {'1': 'reps', '3': 3, '4': 1, '5': 5, '10': 'reps'},
+  ],
+};
+
+/// Descriptor for `EstimateOneRmRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List estimateOneRmRequestDescriptor = $convert.base64Decode(
+    'ChRFc3RpbWF0ZU9uZVJtUmVxdWVzdBIXCgd1c2VyX2lkGAEgASgJUgZ1c2VySWQSFgoGd2VpZ2'
+    'h0GAIgASgBUgZ3ZWlnaHQSEgoEcmVwcxgDIAEoBVIEcmVwcw==');
+
+@$core.Deprecated('Use estimateOneRmResponseDescriptor instead')
+const EstimateOneRmResponse$json = {
+  '1': 'EstimateOneRmResponse',
+  '2': [
+    {'1': 'estimated_one_rm', '3': 1, '4': 1, '5': 1, '10': 'estimatedOneRm'},
+    {'1': 'confidence', '3': 2, '4': 1, '5': 1, '10': 'confidence'},
+  ],
+};
+
+/// Descriptor for `EstimateOneRmResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List estimateOneRmResponseDescriptor = $convert.base64Decode(
+    'ChVFc3RpbWF0ZU9uZVJtUmVzcG9uc2USKAoQZXN0aW1hdGVkX29uZV9ybRgBIAEoAVIOZXN0aW'
+    '1hdGVkT25lUm0SHgoKY29uZmlkZW5jZRgCIAEoAVIKY29uZmlkZW5jZQ==');
+
+@$core.Deprecated('Use scoreVolumeIntensityFrequencyRequestDescriptor instead')
+const ScoreVolumeIntensityFrequencyRequest$json = {
+  '1': 'ScoreVolumeIntensityFrequencyRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'series', '3': 2, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.WorkoutSeriesInput', '10': 'series'},
+    {'1': 'session_days', '3': 3, '4': 1, '5': 5, '10': 'sessionDays'},
+    {'1': 'window_days', '3': 4, '4': 1, '5': 5, '10': 'windowDays'},
+  ],
+};
+
+/// Descriptor for `ScoreVolumeIntensityFrequencyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List scoreVolumeIntensityFrequencyRequestDescriptor = $convert.base64Decode(
+    'CiRTY29yZVZvbHVtZUludGVuc2l0eUZyZXF1ZW5jeVJlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCV'
+    'IGdXNlcklkEj8KBnNlcmllcxgCIAMoCzInLnN0dGF0dHVzLnNjb3JpbmcudjEuV29ya291dFNl'
+    'cmllc0lucHV0UgZzZXJpZXMSIQoMc2Vzc2lvbl9kYXlzGAMgASgFUgtzZXNzaW9uRGF5cxIfCg'
+    't3aW5kb3dfZGF5cxgEIAEoBVIKd2luZG93RGF5cw==');
+
+@$core.Deprecated('Use scoreVolumeIntensityFrequencyResponseDescriptor instead')
+const ScoreVolumeIntensityFrequencyResponse$json = {
+  '1': 'ScoreVolumeIntensityFrequencyResponse',
+  '2': [
+    {'1': 'volume', '3': 1, '4': 1, '5': 1, '10': 'volume'},
+    {'1': 'intensity', '3': 2, '4': 1, '5': 1, '10': 'intensity'},
+    {'1': 'frequency', '3': 3, '4': 1, '5': 1, '10': 'frequency'},
+    {'1': 'composite', '3': 4, '4': 1, '5': 1, '10': 'composite'},
+  ],
+};
+
+/// Descriptor for `ScoreVolumeIntensityFrequencyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List scoreVolumeIntensityFrequencyResponseDescriptor = $convert.base64Decode(
+    'CiVTY29yZVZvbHVtZUludGVuc2l0eUZyZXF1ZW5jeVJlc3BvbnNlEhYKBnZvbHVtZRgBIAEoAV'
+    'IGdm9sdW1lEhwKCWludGVuc2l0eRgCIAEoAVIJaW50ZW5zaXR5EhwKCWZyZXF1ZW5jeRgDIAEo'
+    'AVIJZnJlcXVlbmN5EhwKCWNvbXBvc2l0ZRgEIAEoAVIJY29tcG9zaXRl');
+

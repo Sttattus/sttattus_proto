@@ -81,6 +81,20 @@ class ScoringServiceClient extends $grpc.Client {
     return $createUnaryCall(_$applyDecay, request, options: options);
   }
 
+  /// F7P2.6 — Forge analytics: acute:chronic workload ratio,
+  /// Epley-estimated 1RM, and the volume/intensity/frequency triad.
+  $grpc.ResponseFuture<$0.ScoreAcuteChronicResponse> scoreAcuteChronic($0.ScoreAcuteChronicRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$scoreAcuteChronic, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EstimateOneRmResponse> estimateOneRm($0.EstimateOneRmRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$estimateOneRm, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ScoreVolumeIntensityFrequencyResponse> scoreVolumeIntensityFrequency($0.ScoreVolumeIntensityFrequencyRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$scoreVolumeIntensityFrequency, request, options: options);
+  }
+
     // method descriptors
 
   static final _$scoreWorkout = $grpc.ClientMethod<$0.ScoreWorkoutRequest, $0.ScoreWorkoutResponse>(
@@ -131,6 +145,18 @@ class ScoringServiceClient extends $grpc.Client {
       '/sttattus.scoring.v1.ScoringService/ApplyDecay',
       ($0.ApplyDecayRequest value) => value.writeToBuffer(),
       $0.ApplyDecayResponse.fromBuffer);
+  static final _$scoreAcuteChronic = $grpc.ClientMethod<$0.ScoreAcuteChronicRequest, $0.ScoreAcuteChronicResponse>(
+      '/sttattus.scoring.v1.ScoringService/ScoreAcuteChronic',
+      ($0.ScoreAcuteChronicRequest value) => value.writeToBuffer(),
+      $0.ScoreAcuteChronicResponse.fromBuffer);
+  static final _$estimateOneRm = $grpc.ClientMethod<$0.EstimateOneRmRequest, $0.EstimateOneRmResponse>(
+      '/sttattus.scoring.v1.ScoringService/EstimateOneRm',
+      ($0.EstimateOneRmRequest value) => value.writeToBuffer(),
+      $0.EstimateOneRmResponse.fromBuffer);
+  static final _$scoreVolumeIntensityFrequency = $grpc.ClientMethod<$0.ScoreVolumeIntensityFrequencyRequest, $0.ScoreVolumeIntensityFrequencyResponse>(
+      '/sttattus.scoring.v1.ScoringService/ScoreVolumeIntensityFrequency',
+      ($0.ScoreVolumeIntensityFrequencyRequest value) => value.writeToBuffer(),
+      $0.ScoreVolumeIntensityFrequencyResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.scoring.v1.ScoringService')
@@ -222,6 +248,27 @@ abstract class ScoringServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ApplyDecayRequest.fromBuffer(value),
         ($0.ApplyDecayResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ScoreAcuteChronicRequest, $0.ScoreAcuteChronicResponse>(
+        'ScoreAcuteChronic',
+        scoreAcuteChronic_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ScoreAcuteChronicRequest.fromBuffer(value),
+        ($0.ScoreAcuteChronicResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EstimateOneRmRequest, $0.EstimateOneRmResponse>(
+        'EstimateOneRm',
+        estimateOneRm_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.EstimateOneRmRequest.fromBuffer(value),
+        ($0.EstimateOneRmResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ScoreVolumeIntensityFrequencyRequest, $0.ScoreVolumeIntensityFrequencyResponse>(
+        'ScoreVolumeIntensityFrequency',
+        scoreVolumeIntensityFrequency_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ScoreVolumeIntensityFrequencyRequest.fromBuffer(value),
+        ($0.ScoreVolumeIntensityFrequencyResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ScoreWorkoutResponse> scoreWorkout_Pre($grpc.ServiceCall $call, $async.Future<$0.ScoreWorkoutRequest> $request) async {
@@ -295,5 +342,23 @@ abstract class ScoringServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ApplyDecayResponse> applyDecay($grpc.ServiceCall call, $0.ApplyDecayRequest request);
+
+  $async.Future<$0.ScoreAcuteChronicResponse> scoreAcuteChronic_Pre($grpc.ServiceCall $call, $async.Future<$0.ScoreAcuteChronicRequest> $request) async {
+    return scoreAcuteChronic($call, await $request);
+  }
+
+  $async.Future<$0.ScoreAcuteChronicResponse> scoreAcuteChronic($grpc.ServiceCall call, $0.ScoreAcuteChronicRequest request);
+
+  $async.Future<$0.EstimateOneRmResponse> estimateOneRm_Pre($grpc.ServiceCall $call, $async.Future<$0.EstimateOneRmRequest> $request) async {
+    return estimateOneRm($call, await $request);
+  }
+
+  $async.Future<$0.EstimateOneRmResponse> estimateOneRm($grpc.ServiceCall call, $0.EstimateOneRmRequest request);
+
+  $async.Future<$0.ScoreVolumeIntensityFrequencyResponse> scoreVolumeIntensityFrequency_Pre($grpc.ServiceCall $call, $async.Future<$0.ScoreVolumeIntensityFrequencyRequest> $request) async {
+    return scoreVolumeIntensityFrequency($call, await $request);
+  }
+
+  $async.Future<$0.ScoreVolumeIntensityFrequencyResponse> scoreVolumeIntensityFrequency($grpc.ServiceCall call, $0.ScoreVolumeIntensityFrequencyRequest request);
 
 }

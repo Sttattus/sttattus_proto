@@ -1879,6 +1879,393 @@ func (x *ScoreDominionResponse) GetDominionDelta() float64 {
 	return 0
 }
 
+// ScoreAcuteChronicRequest carries daily training loads. acute is
+// the trailing 7-day sum, chronic the trailing 28-day sum (both as
+// session tonnage or another consistent load proxy). The ratio is
+// the established acute:chronic workload ratio (ACWR).
+type ScoreAcuteChronicRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	UserId          string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AcuteLoad_7D    float64                `protobuf:"fixed64,2,opt,name=acute_load_7d,json=acuteLoad7d,proto3" json:"acute_load_7d,omitempty"`
+	ChronicLoad_28D float64                `protobuf:"fixed64,3,opt,name=chronic_load_28d,json=chronicLoad28d,proto3" json:"chronic_load_28d,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ScoreAcuteChronicRequest) Reset() {
+	*x = ScoreAcuteChronicRequest{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreAcuteChronicRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreAcuteChronicRequest) ProtoMessage() {}
+
+func (x *ScoreAcuteChronicRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreAcuteChronicRequest.ProtoReflect.Descriptor instead.
+func (*ScoreAcuteChronicRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *ScoreAcuteChronicRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ScoreAcuteChronicRequest) GetAcuteLoad_7D() float64 {
+	if x != nil {
+		return x.AcuteLoad_7D
+	}
+	return 0
+}
+
+func (x *ScoreAcuteChronicRequest) GetChronicLoad_28D() float64 {
+	if x != nil {
+		return x.ChronicLoad_28D
+	}
+	return 0
+}
+
+type ScoreAcuteChronicResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Ratio float64                `protobuf:"fixed64,1,opt,name=ratio,proto3" json:"ratio,omitempty"` // acute / (chronic / 4); ~1.0 is balanced
+	// 'detraining' | 'optimal' | 'caution' | 'high_risk'
+	Zone string `protobuf:"bytes,2,opt,name=zone,proto3" json:"zone,omitempty"`
+	// True when the ratio crosses the injury-risk threshold (>1.5).
+	InjuryRisk    bool `protobuf:"varint,3,opt,name=injury_risk,json=injuryRisk,proto3" json:"injury_risk,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ScoreAcuteChronicResponse) Reset() {
+	*x = ScoreAcuteChronicResponse{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreAcuteChronicResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreAcuteChronicResponse) ProtoMessage() {}
+
+func (x *ScoreAcuteChronicResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreAcuteChronicResponse.ProtoReflect.Descriptor instead.
+func (*ScoreAcuteChronicResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *ScoreAcuteChronicResponse) GetRatio() float64 {
+	if x != nil {
+		return x.Ratio
+	}
+	return 0
+}
+
+func (x *ScoreAcuteChronicResponse) GetZone() string {
+	if x != nil {
+		return x.Zone
+	}
+	return ""
+}
+
+func (x *ScoreAcuteChronicResponse) GetInjuryRisk() bool {
+	if x != nil {
+		return x.InjuryRisk
+	}
+	return false
+}
+
+// EstimateOneRmRequest is a single (weight, reps) effort. The
+// estimate uses the Epley formula, the same one the PR detector
+// uses, so the analytics tab and the PR board agree.
+type EstimateOneRmRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Weight        float64                `protobuf:"fixed64,2,opt,name=weight,proto3" json:"weight,omitempty"`
+	Reps          int32                  `protobuf:"varint,3,opt,name=reps,proto3" json:"reps,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EstimateOneRmRequest) Reset() {
+	*x = EstimateOneRmRequest{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EstimateOneRmRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EstimateOneRmRequest) ProtoMessage() {}
+
+func (x *EstimateOneRmRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EstimateOneRmRequest.ProtoReflect.Descriptor instead.
+func (*EstimateOneRmRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *EstimateOneRmRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *EstimateOneRmRequest) GetWeight() float64 {
+	if x != nil {
+		return x.Weight
+	}
+	return 0
+}
+
+func (x *EstimateOneRmRequest) GetReps() int32 {
+	if x != nil {
+		return x.Reps
+	}
+	return 0
+}
+
+type EstimateOneRmResponse struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	EstimatedOneRm float64                `protobuf:"fixed64,1,opt,name=estimated_one_rm,json=estimatedOneRm,proto3" json:"estimated_one_rm,omitempty"`
+	// Confidence falls off as reps climb — a 1RM estimated from a
+	// 12-rep set is far softer than from a triple. 0.0-1.0.
+	Confidence    float64 `protobuf:"fixed64,2,opt,name=confidence,proto3" json:"confidence,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EstimateOneRmResponse) Reset() {
+	*x = EstimateOneRmResponse{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EstimateOneRmResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EstimateOneRmResponse) ProtoMessage() {}
+
+func (x *EstimateOneRmResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EstimateOneRmResponse.ProtoReflect.Descriptor instead.
+func (*EstimateOneRmResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *EstimateOneRmResponse) GetEstimatedOneRm() float64 {
+	if x != nil {
+		return x.EstimatedOneRm
+	}
+	return 0
+}
+
+func (x *EstimateOneRmResponse) GetConfidence() float64 {
+	if x != nil {
+		return x.Confidence
+	}
+	return 0
+}
+
+// ScoreVolumeIntensityFrequencyRequest is one analysis window
+// (typically a 7-day block) of completed sets.
+type ScoreVolumeIntensityFrequencyRequest struct {
+	state  protoimpl.MessageState `protogen:"open.v1"`
+	UserId string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Series []*WorkoutSeriesInput  `protobuf:"bytes,2,rep,name=series,proto3" json:"series,omitempty"`
+	// Distinct training days in the window — the frequency input.
+	SessionDays int32 `protobuf:"varint,3,opt,name=session_days,json=sessionDays,proto3" json:"session_days,omitempty"`
+	// Length of the window in days (e.g. 7).
+	WindowDays    int32 `protobuf:"varint,4,opt,name=window_days,json=windowDays,proto3" json:"window_days,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ScoreVolumeIntensityFrequencyRequest) Reset() {
+	*x = ScoreVolumeIntensityFrequencyRequest{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[29]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreVolumeIntensityFrequencyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreVolumeIntensityFrequencyRequest) ProtoMessage() {}
+
+func (x *ScoreVolumeIntensityFrequencyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[29]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreVolumeIntensityFrequencyRequest.ProtoReflect.Descriptor instead.
+func (*ScoreVolumeIntensityFrequencyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{29}
+}
+
+func (x *ScoreVolumeIntensityFrequencyRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ScoreVolumeIntensityFrequencyRequest) GetSeries() []*WorkoutSeriesInput {
+	if x != nil {
+		return x.Series
+	}
+	return nil
+}
+
+func (x *ScoreVolumeIntensityFrequencyRequest) GetSessionDays() int32 {
+	if x != nil {
+		return x.SessionDays
+	}
+	return 0
+}
+
+func (x *ScoreVolumeIntensityFrequencyRequest) GetWindowDays() int32 {
+	if x != nil {
+		return x.WindowDays
+	}
+	return 0
+}
+
+type ScoreVolumeIntensityFrequencyResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Total tonnage (sum of weight * reps) across the window.
+	Volume float64 `protobuf:"fixed64,1,opt,name=volume,proto3" json:"volume,omitempty"`
+	// Mean weight per rep — a crude intensity proxy.
+	Intensity float64 `protobuf:"fixed64,2,opt,name=intensity,proto3" json:"intensity,omitempty"`
+	// Session days / window days, 0.0-1.0.
+	Frequency float64 `protobuf:"fixed64,3,opt,name=frequency,proto3" json:"frequency,omitempty"`
+	// A single 0-100 roll-up the Today screen can show as one number.
+	Composite     float64 `protobuf:"fixed64,4,opt,name=composite,proto3" json:"composite,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ScoreVolumeIntensityFrequencyResponse) Reset() {
+	*x = ScoreVolumeIntensityFrequencyResponse{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[30]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreVolumeIntensityFrequencyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreVolumeIntensityFrequencyResponse) ProtoMessage() {}
+
+func (x *ScoreVolumeIntensityFrequencyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[30]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreVolumeIntensityFrequencyResponse.ProtoReflect.Descriptor instead.
+func (*ScoreVolumeIntensityFrequencyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{30}
+}
+
+func (x *ScoreVolumeIntensityFrequencyResponse) GetVolume() float64 {
+	if x != nil {
+		return x.Volume
+	}
+	return 0
+}
+
+func (x *ScoreVolumeIntensityFrequencyResponse) GetIntensity() float64 {
+	if x != nil {
+		return x.Intensity
+	}
+	return 0
+}
+
+func (x *ScoreVolumeIntensityFrequencyResponse) GetFrequency() float64 {
+	if x != nil {
+		return x.Frequency
+	}
+	return 0
+}
+
+func (x *ScoreVolumeIntensityFrequencyResponse) GetComposite() float64 {
+	if x != nil {
+		return x.Composite
+	}
+	return 0
+}
+
 var File_sttattus_scoring_v1_scoring_proto protoreflect.FileDescriptor
 
 const file_sttattus_scoring_v1_scoring_proto_rawDesc = "" +
@@ -2041,7 +2428,36 @@ const file_sttattus_scoring_v1_scoring_proto_rawDesc = "" +
 	"\x15current_dominion_rank\x18\x05 \x01(\x01R\x13currentDominionRank\"j\n" +
 	"\x15ScoreDominionResponse\x12*\n" +
 	"\x11new_dominion_rank\x18\x01 \x01(\x01R\x0fnewDominionRank\x12%\n" +
-	"\x0edominion_delta\x18\x02 \x01(\x01R\rdominionDelta2\xde\t\n" +
+	"\x0edominion_delta\x18\x02 \x01(\x01R\rdominionDelta\"\x81\x01\n" +
+	"\x18ScoreAcuteChronicRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\"\n" +
+	"\racute_load_7d\x18\x02 \x01(\x01R\vacuteLoad7d\x12(\n" +
+	"\x10chronic_load_28d\x18\x03 \x01(\x01R\x0echronicLoad28d\"f\n" +
+	"\x19ScoreAcuteChronicResponse\x12\x14\n" +
+	"\x05ratio\x18\x01 \x01(\x01R\x05ratio\x12\x12\n" +
+	"\x04zone\x18\x02 \x01(\tR\x04zone\x12\x1f\n" +
+	"\vinjury_risk\x18\x03 \x01(\bR\n" +
+	"injuryRisk\"[\n" +
+	"\x14EstimateOneRmRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x16\n" +
+	"\x06weight\x18\x02 \x01(\x01R\x06weight\x12\x12\n" +
+	"\x04reps\x18\x03 \x01(\x05R\x04reps\"a\n" +
+	"\x15EstimateOneRmResponse\x12(\n" +
+	"\x10estimated_one_rm\x18\x01 \x01(\x01R\x0eestimatedOneRm\x12\x1e\n" +
+	"\n" +
+	"confidence\x18\x02 \x01(\x01R\n" +
+	"confidence\"\xc4\x01\n" +
+	"$ScoreVolumeIntensityFrequencyRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12?\n" +
+	"\x06series\x18\x02 \x03(\v2'.sttattus.scoring.v1.WorkoutSeriesInputR\x06series\x12!\n" +
+	"\fsession_days\x18\x03 \x01(\x05R\vsessionDays\x12\x1f\n" +
+	"\vwindow_days\x18\x04 \x01(\x05R\n" +
+	"windowDays\"\x99\x01\n" +
+	"%ScoreVolumeIntensityFrequencyResponse\x12\x16\n" +
+	"\x06volume\x18\x01 \x01(\x01R\x06volume\x12\x1c\n" +
+	"\tintensity\x18\x02 \x01(\x01R\tintensity\x12\x1c\n" +
+	"\tfrequency\x18\x03 \x01(\x01R\tfrequency\x12\x1c\n" +
+	"\tcomposite\x18\x04 \x01(\x01R\tcomposite2\xd3\f\n" +
 	"\x0eScoringService\x12c\n" +
 	"\fScoreWorkout\x12(.sttattus.scoring.v1.ScoreWorkoutRequest\x1a).sttattus.scoring.v1.ScoreWorkoutResponse\x12]\n" +
 	"\n" +
@@ -2058,7 +2474,10 @@ const file_sttattus_scoring_v1_scoring_proto_rawDesc = "" +
 	"ScoreMatch\x12&.sttattus.scoring.v1.ScoreMatchRequest\x1a'.sttattus.scoring.v1.ScoreMatchResponse\x12`\n" +
 	"\vScoreEmpire\x12'.sttattus.scoring.v1.ScoreEmpireRequest\x1a(.sttattus.scoring.v1.ScoreEmpireResponse\x12]\n" +
 	"\n" +
-	"ApplyDecay\x12&.sttattus.scoring.v1.ApplyDecayRequest\x1a'.sttattus.scoring.v1.ApplyDecayResponseB@Z>github.com/sttattus/proto/gen/go/sttattus/scoring/v1;scoringv1b\x06proto3"
+	"ApplyDecay\x12&.sttattus.scoring.v1.ApplyDecayRequest\x1a'.sttattus.scoring.v1.ApplyDecayResponse\x12r\n" +
+	"\x11ScoreAcuteChronic\x12-.sttattus.scoring.v1.ScoreAcuteChronicRequest\x1a..sttattus.scoring.v1.ScoreAcuteChronicResponse\x12f\n" +
+	"\rEstimateOneRm\x12).sttattus.scoring.v1.EstimateOneRmRequest\x1a*.sttattus.scoring.v1.EstimateOneRmResponse\x12\x96\x01\n" +
+	"\x1dScoreVolumeIntensityFrequency\x129.sttattus.scoring.v1.ScoreVolumeIntensityFrequencyRequest\x1a:.sttattus.scoring.v1.ScoreVolumeIntensityFrequencyResponseB@Z>github.com/sttattus/proto/gen/go/sttattus/scoring/v1;scoringv1b\x06proto3"
 
 var (
 	file_sttattus_scoring_v1_scoring_proto_rawDescOnce sync.Once
@@ -2072,66 +2491,79 @@ func file_sttattus_scoring_v1_scoring_proto_rawDescGZIP() []byte {
 	return file_sttattus_scoring_v1_scoring_proto_rawDescData
 }
 
-var file_sttattus_scoring_v1_scoring_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
+var file_sttattus_scoring_v1_scoring_proto_msgTypes = make([]protoimpl.MessageInfo, 31)
 var file_sttattus_scoring_v1_scoring_proto_goTypes = []any{
-	(*WorkoutSeriesInput)(nil),            // 0: sttattus.scoring.v1.WorkoutSeriesInput
-	(*ScoreWorkoutRequest)(nil),           // 1: sttattus.scoring.v1.ScoreWorkoutRequest
-	(*ScoreWorkoutResponse)(nil),          // 2: sttattus.scoring.v1.ScoreWorkoutResponse
-	(*ScoreLexicalProgressRequest)(nil),   // 3: sttattus.scoring.v1.ScoreLexicalProgressRequest
-	(*ScoreLexicalProgressResponse)(nil),  // 4: sttattus.scoring.v1.ScoreLexicalProgressResponse
-	(*ScoreMatchRequest)(nil),             // 5: sttattus.scoring.v1.ScoreMatchRequest
-	(*ScoreMatchResponse)(nil),            // 6: sttattus.scoring.v1.ScoreMatchResponse
-	(*ScoreEmpireRequest)(nil),            // 7: sttattus.scoring.v1.ScoreEmpireRequest
-	(*ScoreEmpireResponse)(nil),           // 8: sttattus.scoring.v1.ScoreEmpireResponse
-	(*ApplyDecayRequest)(nil),             // 9: sttattus.scoring.v1.ApplyDecayRequest
-	(*ApplyDecayResponse)(nil),            // 10: sttattus.scoring.v1.ApplyDecayResponse
-	(*ScoreForgeRequest)(nil),             // 11: sttattus.scoring.v1.ScoreForgeRequest
-	(*ScoreForgeResponse)(nil),            // 12: sttattus.scoring.v1.ScoreForgeResponse
-	(*ScoreCognitiveMasteryRequest)(nil),  // 13: sttattus.scoring.v1.ScoreCognitiveMasteryRequest
-	(*ScoreCognitiveMasteryResponse)(nil), // 14: sttattus.scoring.v1.ScoreCognitiveMasteryResponse
-	(*ScoreNomadRequest)(nil),             // 15: sttattus.scoring.v1.ScoreNomadRequest
-	(*ScoreNomadResponse)(nil),            // 16: sttattus.scoring.v1.ScoreNomadResponse
-	(*ScoreOracleRequest)(nil),            // 17: sttattus.scoring.v1.ScoreOracleRequest
-	(*ScoreOracleResponse)(nil),           // 18: sttattus.scoring.v1.ScoreOracleResponse
-	(*ScoreZenithRequest)(nil),            // 19: sttattus.scoring.v1.ScoreZenithRequest
-	(*ScoreZenithResponse)(nil),           // 20: sttattus.scoring.v1.ScoreZenithResponse
-	(*ScoreLegacyRequest)(nil),            // 21: sttattus.scoring.v1.ScoreLegacyRequest
-	(*ScoreLegacyResponse)(nil),           // 22: sttattus.scoring.v1.ScoreLegacyResponse
-	(*ScoreDominionRequest)(nil),          // 23: sttattus.scoring.v1.ScoreDominionRequest
-	(*ScoreDominionResponse)(nil),         // 24: sttattus.scoring.v1.ScoreDominionResponse
+	(*WorkoutSeriesInput)(nil),                    // 0: sttattus.scoring.v1.WorkoutSeriesInput
+	(*ScoreWorkoutRequest)(nil),                   // 1: sttattus.scoring.v1.ScoreWorkoutRequest
+	(*ScoreWorkoutResponse)(nil),                  // 2: sttattus.scoring.v1.ScoreWorkoutResponse
+	(*ScoreLexicalProgressRequest)(nil),           // 3: sttattus.scoring.v1.ScoreLexicalProgressRequest
+	(*ScoreLexicalProgressResponse)(nil),          // 4: sttattus.scoring.v1.ScoreLexicalProgressResponse
+	(*ScoreMatchRequest)(nil),                     // 5: sttattus.scoring.v1.ScoreMatchRequest
+	(*ScoreMatchResponse)(nil),                    // 6: sttattus.scoring.v1.ScoreMatchResponse
+	(*ScoreEmpireRequest)(nil),                    // 7: sttattus.scoring.v1.ScoreEmpireRequest
+	(*ScoreEmpireResponse)(nil),                   // 8: sttattus.scoring.v1.ScoreEmpireResponse
+	(*ApplyDecayRequest)(nil),                     // 9: sttattus.scoring.v1.ApplyDecayRequest
+	(*ApplyDecayResponse)(nil),                    // 10: sttattus.scoring.v1.ApplyDecayResponse
+	(*ScoreForgeRequest)(nil),                     // 11: sttattus.scoring.v1.ScoreForgeRequest
+	(*ScoreForgeResponse)(nil),                    // 12: sttattus.scoring.v1.ScoreForgeResponse
+	(*ScoreCognitiveMasteryRequest)(nil),          // 13: sttattus.scoring.v1.ScoreCognitiveMasteryRequest
+	(*ScoreCognitiveMasteryResponse)(nil),         // 14: sttattus.scoring.v1.ScoreCognitiveMasteryResponse
+	(*ScoreNomadRequest)(nil),                     // 15: sttattus.scoring.v1.ScoreNomadRequest
+	(*ScoreNomadResponse)(nil),                    // 16: sttattus.scoring.v1.ScoreNomadResponse
+	(*ScoreOracleRequest)(nil),                    // 17: sttattus.scoring.v1.ScoreOracleRequest
+	(*ScoreOracleResponse)(nil),                   // 18: sttattus.scoring.v1.ScoreOracleResponse
+	(*ScoreZenithRequest)(nil),                    // 19: sttattus.scoring.v1.ScoreZenithRequest
+	(*ScoreZenithResponse)(nil),                   // 20: sttattus.scoring.v1.ScoreZenithResponse
+	(*ScoreLegacyRequest)(nil),                    // 21: sttattus.scoring.v1.ScoreLegacyRequest
+	(*ScoreLegacyResponse)(nil),                   // 22: sttattus.scoring.v1.ScoreLegacyResponse
+	(*ScoreDominionRequest)(nil),                  // 23: sttattus.scoring.v1.ScoreDominionRequest
+	(*ScoreDominionResponse)(nil),                 // 24: sttattus.scoring.v1.ScoreDominionResponse
+	(*ScoreAcuteChronicRequest)(nil),              // 25: sttattus.scoring.v1.ScoreAcuteChronicRequest
+	(*ScoreAcuteChronicResponse)(nil),             // 26: sttattus.scoring.v1.ScoreAcuteChronicResponse
+	(*EstimateOneRmRequest)(nil),                  // 27: sttattus.scoring.v1.EstimateOneRmRequest
+	(*EstimateOneRmResponse)(nil),                 // 28: sttattus.scoring.v1.EstimateOneRmResponse
+	(*ScoreVolumeIntensityFrequencyRequest)(nil),  // 29: sttattus.scoring.v1.ScoreVolumeIntensityFrequencyRequest
+	(*ScoreVolumeIntensityFrequencyResponse)(nil), // 30: sttattus.scoring.v1.ScoreVolumeIntensityFrequencyResponse
 }
 var file_sttattus_scoring_v1_scoring_proto_depIdxs = []int32{
 	0,  // 0: sttattus.scoring.v1.ScoreWorkoutRequest.series:type_name -> sttattus.scoring.v1.WorkoutSeriesInput
 	0,  // 1: sttattus.scoring.v1.ScoreForgeRequest.series:type_name -> sttattus.scoring.v1.WorkoutSeriesInput
-	1,  // 2: sttattus.scoring.v1.ScoringService.ScoreWorkout:input_type -> sttattus.scoring.v1.ScoreWorkoutRequest
-	11, // 3: sttattus.scoring.v1.ScoringService.ScoreForge:input_type -> sttattus.scoring.v1.ScoreForgeRequest
-	3,  // 4: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:input_type -> sttattus.scoring.v1.ScoreLexicalProgressRequest
-	13, // 5: sttattus.scoring.v1.ScoringService.ScoreCognitiveMastery:input_type -> sttattus.scoring.v1.ScoreCognitiveMasteryRequest
-	15, // 6: sttattus.scoring.v1.ScoringService.ScoreNomad:input_type -> sttattus.scoring.v1.ScoreNomadRequest
-	17, // 7: sttattus.scoring.v1.ScoringService.ScoreOracle:input_type -> sttattus.scoring.v1.ScoreOracleRequest
-	19, // 8: sttattus.scoring.v1.ScoringService.ScoreZenith:input_type -> sttattus.scoring.v1.ScoreZenithRequest
-	21, // 9: sttattus.scoring.v1.ScoringService.ScoreLegacy:input_type -> sttattus.scoring.v1.ScoreLegacyRequest
-	23, // 10: sttattus.scoring.v1.ScoringService.ScoreDominion:input_type -> sttattus.scoring.v1.ScoreDominionRequest
-	5,  // 11: sttattus.scoring.v1.ScoringService.ScoreMatch:input_type -> sttattus.scoring.v1.ScoreMatchRequest
-	7,  // 12: sttattus.scoring.v1.ScoringService.ScoreEmpire:input_type -> sttattus.scoring.v1.ScoreEmpireRequest
-	9,  // 13: sttattus.scoring.v1.ScoringService.ApplyDecay:input_type -> sttattus.scoring.v1.ApplyDecayRequest
-	2,  // 14: sttattus.scoring.v1.ScoringService.ScoreWorkout:output_type -> sttattus.scoring.v1.ScoreWorkoutResponse
-	12, // 15: sttattus.scoring.v1.ScoringService.ScoreForge:output_type -> sttattus.scoring.v1.ScoreForgeResponse
-	4,  // 16: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:output_type -> sttattus.scoring.v1.ScoreLexicalProgressResponse
-	14, // 17: sttattus.scoring.v1.ScoringService.ScoreCognitiveMastery:output_type -> sttattus.scoring.v1.ScoreCognitiveMasteryResponse
-	16, // 18: sttattus.scoring.v1.ScoringService.ScoreNomad:output_type -> sttattus.scoring.v1.ScoreNomadResponse
-	18, // 19: sttattus.scoring.v1.ScoringService.ScoreOracle:output_type -> sttattus.scoring.v1.ScoreOracleResponse
-	20, // 20: sttattus.scoring.v1.ScoringService.ScoreZenith:output_type -> sttattus.scoring.v1.ScoreZenithResponse
-	22, // 21: sttattus.scoring.v1.ScoringService.ScoreLegacy:output_type -> sttattus.scoring.v1.ScoreLegacyResponse
-	24, // 22: sttattus.scoring.v1.ScoringService.ScoreDominion:output_type -> sttattus.scoring.v1.ScoreDominionResponse
-	6,  // 23: sttattus.scoring.v1.ScoringService.ScoreMatch:output_type -> sttattus.scoring.v1.ScoreMatchResponse
-	8,  // 24: sttattus.scoring.v1.ScoringService.ScoreEmpire:output_type -> sttattus.scoring.v1.ScoreEmpireResponse
-	10, // 25: sttattus.scoring.v1.ScoringService.ApplyDecay:output_type -> sttattus.scoring.v1.ApplyDecayResponse
-	14, // [14:26] is the sub-list for method output_type
-	2,  // [2:14] is the sub-list for method input_type
-	2,  // [2:2] is the sub-list for extension type_name
-	2,  // [2:2] is the sub-list for extension extendee
-	0,  // [0:2] is the sub-list for field type_name
+	0,  // 2: sttattus.scoring.v1.ScoreVolumeIntensityFrequencyRequest.series:type_name -> sttattus.scoring.v1.WorkoutSeriesInput
+	1,  // 3: sttattus.scoring.v1.ScoringService.ScoreWorkout:input_type -> sttattus.scoring.v1.ScoreWorkoutRequest
+	11, // 4: sttattus.scoring.v1.ScoringService.ScoreForge:input_type -> sttattus.scoring.v1.ScoreForgeRequest
+	3,  // 5: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:input_type -> sttattus.scoring.v1.ScoreLexicalProgressRequest
+	13, // 6: sttattus.scoring.v1.ScoringService.ScoreCognitiveMastery:input_type -> sttattus.scoring.v1.ScoreCognitiveMasteryRequest
+	15, // 7: sttattus.scoring.v1.ScoringService.ScoreNomad:input_type -> sttattus.scoring.v1.ScoreNomadRequest
+	17, // 8: sttattus.scoring.v1.ScoringService.ScoreOracle:input_type -> sttattus.scoring.v1.ScoreOracleRequest
+	19, // 9: sttattus.scoring.v1.ScoringService.ScoreZenith:input_type -> sttattus.scoring.v1.ScoreZenithRequest
+	21, // 10: sttattus.scoring.v1.ScoringService.ScoreLegacy:input_type -> sttattus.scoring.v1.ScoreLegacyRequest
+	23, // 11: sttattus.scoring.v1.ScoringService.ScoreDominion:input_type -> sttattus.scoring.v1.ScoreDominionRequest
+	5,  // 12: sttattus.scoring.v1.ScoringService.ScoreMatch:input_type -> sttattus.scoring.v1.ScoreMatchRequest
+	7,  // 13: sttattus.scoring.v1.ScoringService.ScoreEmpire:input_type -> sttattus.scoring.v1.ScoreEmpireRequest
+	9,  // 14: sttattus.scoring.v1.ScoringService.ApplyDecay:input_type -> sttattus.scoring.v1.ApplyDecayRequest
+	25, // 15: sttattus.scoring.v1.ScoringService.ScoreAcuteChronic:input_type -> sttattus.scoring.v1.ScoreAcuteChronicRequest
+	27, // 16: sttattus.scoring.v1.ScoringService.EstimateOneRm:input_type -> sttattus.scoring.v1.EstimateOneRmRequest
+	29, // 17: sttattus.scoring.v1.ScoringService.ScoreVolumeIntensityFrequency:input_type -> sttattus.scoring.v1.ScoreVolumeIntensityFrequencyRequest
+	2,  // 18: sttattus.scoring.v1.ScoringService.ScoreWorkout:output_type -> sttattus.scoring.v1.ScoreWorkoutResponse
+	12, // 19: sttattus.scoring.v1.ScoringService.ScoreForge:output_type -> sttattus.scoring.v1.ScoreForgeResponse
+	4,  // 20: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:output_type -> sttattus.scoring.v1.ScoreLexicalProgressResponse
+	14, // 21: sttattus.scoring.v1.ScoringService.ScoreCognitiveMastery:output_type -> sttattus.scoring.v1.ScoreCognitiveMasteryResponse
+	16, // 22: sttattus.scoring.v1.ScoringService.ScoreNomad:output_type -> sttattus.scoring.v1.ScoreNomadResponse
+	18, // 23: sttattus.scoring.v1.ScoringService.ScoreOracle:output_type -> sttattus.scoring.v1.ScoreOracleResponse
+	20, // 24: sttattus.scoring.v1.ScoringService.ScoreZenith:output_type -> sttattus.scoring.v1.ScoreZenithResponse
+	22, // 25: sttattus.scoring.v1.ScoringService.ScoreLegacy:output_type -> sttattus.scoring.v1.ScoreLegacyResponse
+	24, // 26: sttattus.scoring.v1.ScoringService.ScoreDominion:output_type -> sttattus.scoring.v1.ScoreDominionResponse
+	6,  // 27: sttattus.scoring.v1.ScoringService.ScoreMatch:output_type -> sttattus.scoring.v1.ScoreMatchResponse
+	8,  // 28: sttattus.scoring.v1.ScoringService.ScoreEmpire:output_type -> sttattus.scoring.v1.ScoreEmpireResponse
+	10, // 29: sttattus.scoring.v1.ScoringService.ApplyDecay:output_type -> sttattus.scoring.v1.ApplyDecayResponse
+	26, // 30: sttattus.scoring.v1.ScoringService.ScoreAcuteChronic:output_type -> sttattus.scoring.v1.ScoreAcuteChronicResponse
+	28, // 31: sttattus.scoring.v1.ScoringService.EstimateOneRm:output_type -> sttattus.scoring.v1.EstimateOneRmResponse
+	30, // 32: sttattus.scoring.v1.ScoringService.ScoreVolumeIntensityFrequency:output_type -> sttattus.scoring.v1.ScoreVolumeIntensityFrequencyResponse
+	18, // [18:33] is the sub-list for method output_type
+	3,  // [3:18] is the sub-list for method input_type
+	3,  // [3:3] is the sub-list for extension type_name
+	3,  // [3:3] is the sub-list for extension extendee
+	0,  // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_scoring_v1_scoring_proto_init() }
@@ -2145,7 +2577,7 @@ func file_sttattus_scoring_v1_scoring_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_scoring_v1_scoring_proto_rawDesc), len(file_sttattus_scoring_v1_scoring_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   25,
+			NumMessages:   31,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

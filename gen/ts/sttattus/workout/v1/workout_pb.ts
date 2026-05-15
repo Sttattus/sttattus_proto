@@ -5443,3 +5443,183 @@ export class SetSensorPriorityResponse extends Message<SetSensorPriorityResponse
   }
 }
 
+/**
+ * @generated from message sttattus.workout.v1.ForgeAnalytics
+ */
+export class ForgeAnalytics extends Message<ForgeAnalytics> {
+  /**
+   * Acute:chronic workload ratio (7-day load / weekly chronic load).
+   *
+   * @generated from field: double acute_chronic_ratio = 1;
+   */
+  acuteChronicRatio = 0;
+
+  /**
+   * 'detraining' | 'optimal' | 'caution' | 'high_risk'
+   *
+   * @generated from field: string acute_chronic_zone = 2;
+   */
+  acuteChronicZone = "";
+
+  /**
+   * @generated from field: bool injury_risk = 3;
+   */
+  injuryRisk = false;
+
+  /**
+   * Volume / intensity / frequency triad over the trailing 7 days.
+   *
+   * total tonnage (kg)
+   *
+   * @generated from field: double volume_7d = 4;
+   */
+  volume7d = 0;
+
+  /**
+   * mean weight per rep (kg)
+   *
+   * @generated from field: double intensity_7d = 5;
+   */
+  intensity7d = 0;
+
+  /**
+   * training days / 7, 0.0-1.0
+   *
+   * @generated from field: double frequency_7d = 6;
+   */
+  frequency7d = 0;
+
+  /**
+   * single 0-100 roll-up
+   *
+   * @generated from field: double vif_composite = 7;
+   */
+  vifComposite = 0;
+
+  /**
+   * Best Epley-estimated 1RM observed in the trailing 28 days, with
+   * the movement that produced it. Empty exercise = no qualifying
+   * set in the window.
+   *
+   * @generated from field: double best_estimated_one_rm = 8;
+   */
+  bestEstimatedOneRm = 0;
+
+  /**
+   * @generated from field: string best_one_rm_exercise = 9;
+   */
+  bestOneRmExercise = "";
+
+  /**
+   * True when the lifter has no completed sessions in the window —
+   * the client shows an editorial empty state instead of zeroes.
+   *
+   * @generated from field: bool is_empty = 10;
+   */
+  isEmpty = false;
+
+  constructor(data?: PartialMessage<ForgeAnalytics>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ForgeAnalytics";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "acute_chronic_ratio", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "acute_chronic_zone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "injury_risk", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "volume_7d", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "intensity_7d", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "frequency_7d", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "vif_composite", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "best_estimated_one_rm", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 9, name: "best_one_rm_exercise", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "is_empty", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ForgeAnalytics {
+    return new ForgeAnalytics().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ForgeAnalytics {
+    return new ForgeAnalytics().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ForgeAnalytics {
+    return new ForgeAnalytics().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ForgeAnalytics | PlainMessage<ForgeAnalytics> | undefined, b: ForgeAnalytics | PlainMessage<ForgeAnalytics> | undefined): boolean {
+    return proto3.util.equals(ForgeAnalytics, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.GetForgeAnalyticsRequest
+ */
+export class GetForgeAnalyticsRequest extends Message<GetForgeAnalyticsRequest> {
+  constructor(data?: PartialMessage<GetForgeAnalyticsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.GetForgeAnalyticsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetForgeAnalyticsRequest {
+    return new GetForgeAnalyticsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetForgeAnalyticsRequest {
+    return new GetForgeAnalyticsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetForgeAnalyticsRequest {
+    return new GetForgeAnalyticsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetForgeAnalyticsRequest | PlainMessage<GetForgeAnalyticsRequest> | undefined, b: GetForgeAnalyticsRequest | PlainMessage<GetForgeAnalyticsRequest> | undefined): boolean {
+    return proto3.util.equals(GetForgeAnalyticsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.GetForgeAnalyticsResponse
+ */
+export class GetForgeAnalyticsResponse extends Message<GetForgeAnalyticsResponse> {
+  /**
+   * @generated from field: sttattus.workout.v1.ForgeAnalytics analytics = 1;
+   */
+  analytics?: ForgeAnalytics;
+
+  constructor(data?: PartialMessage<GetForgeAnalyticsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.GetForgeAnalyticsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "analytics", kind: "message", T: ForgeAnalytics },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetForgeAnalyticsResponse {
+    return new GetForgeAnalyticsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetForgeAnalyticsResponse {
+    return new GetForgeAnalyticsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetForgeAnalyticsResponse {
+    return new GetForgeAnalyticsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetForgeAnalyticsResponse | PlainMessage<GetForgeAnalyticsResponse> | undefined, b: GetForgeAnalyticsResponse | PlainMessage<GetForgeAnalyticsResponse> | undefined): boolean {
+    return proto3.util.equals(GetForgeAnalyticsResponse, a, b);
+  }
+}
+

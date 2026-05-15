@@ -205,6 +205,67 @@ message ScoreDominionResponse {
   double dominion_delta = 2;
 }
 
+// ===== Forge analytics (F7P2.6). Audits/forge.md §4.4 item 31,
+// §9 "Rust-side analytics jobs", §10 Phase 2 item 6. Pure
+// sports-science math offloaded to Rust; surfaced on the Forge
+// Today screen + the analytics tab. =====
+
+// ScoreAcuteChronicRequest carries daily training loads. acute is
+// the trailing 7-day sum, chronic the trailing 28-day sum (both as
+// session tonnage or another consistent load proxy). The ratio is
+// the established acute:chronic workload ratio (ACWR).
+message ScoreAcuteChronicRequest {
+  string user_id = 1;
+  double acute_load_7d = 2;
+  double chronic_load_28d = 3;
+}
+
+message ScoreAcuteChronicResponse {
+  double ratio = 1; // acute / (chronic / 4); ~1.0 is balanced
+  // 'detraining' | 'optimal' | 'caution' | 'high_risk'
+  string zone = 2;
+  // True when the ratio crosses the injury-risk threshold (>1.5).
+  bool injury_risk = 3;
+}
+
+// EstimateOneRmRequest is a single (weight, reps) effort. The
+// estimate uses the Epley formula, the same one the PR detector
+// uses, so the analytics tab and the PR board agree.
+message EstimateOneRmRequest {
+  string user_id = 1;
+  double weight = 2;
+  int32 reps = 3;
+}
+
+message EstimateOneRmResponse {
+  double estimated_one_rm = 1;
+  // Confidence falls off as reps climb — a 1RM estimated from a
+  // 12-rep set is far softer than from a triple. 0.0-1.0.
+  double confidence = 2;
+}
+
+// ScoreVolumeIntensityFrequencyRequest is one analysis window
+// (typically a 7-day block) of completed sets.
+message ScoreVolumeIntensityFrequencyRequest {
+  string user_id = 1;
+  repeated WorkoutSeriesInput series = 2;
+  // Distinct training days in the window — the frequency input.
+  int32 session_days = 3;
+  // Length of the window in days (e.g. 7).
+  int32 window_days = 4;
+}
+
+message ScoreVolumeIntensityFrequencyResponse {
+  // Total tonnage (sum of weight * reps) across the window.
+  double volume = 1;
+  // Mean weight per rep — a crude intensity proxy.
+  double intensity = 2;
+  // Session days / window days, 0.0-1.0.
+  double frequency = 3;
+  // A single 0-100 roll-up the Today screen can show as one number.
+  double composite = 4;
+}
+
 service ScoringService {
   rpc ScoreWorkout(ScoreWorkoutRequest) returns (ScoreWorkoutResponse);
   rpc ScoreForge(ScoreForgeRequest) returns (ScoreForgeResponse);
@@ -220,4 +281,10 @@ service ScoringService {
   // High-Stakes Monolith Logic (Rust Offloaded)
   rpc ScoreEmpire(ScoreEmpireRequest) returns (ScoreEmpireResponse);
   rpc ApplyDecay(ApplyDecayRequest) returns (ApplyDecayResponse);
+
+  // F7P2.6 — Forge analytics: acute:chronic workload ratio,
+  // Epley-estimated 1RM, and the volume/intensity/frequency triad.
+  rpc ScoreAcuteChronic(ScoreAcuteChronicRequest) returns (ScoreAcuteChronicResponse);
+  rpc EstimateOneRm(EstimateOneRmRequest) returns (EstimateOneRmResponse);
+  rpc ScoreVolumeIntensityFrequency(ScoreVolumeIntensityFrequencyRequest) returns (ScoreVolumeIntensityFrequencyResponse);
 }

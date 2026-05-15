@@ -19,18 +19,21 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ScoringService_ScoreWorkout_FullMethodName          = "/sttattus.scoring.v1.ScoringService/ScoreWorkout"
-	ScoringService_ScoreForge_FullMethodName            = "/sttattus.scoring.v1.ScoringService/ScoreForge"
-	ScoringService_ScoreLexicalProgress_FullMethodName  = "/sttattus.scoring.v1.ScoringService/ScoreLexicalProgress"
-	ScoringService_ScoreCognitiveMastery_FullMethodName = "/sttattus.scoring.v1.ScoringService/ScoreCognitiveMastery"
-	ScoringService_ScoreNomad_FullMethodName            = "/sttattus.scoring.v1.ScoringService/ScoreNomad"
-	ScoringService_ScoreOracle_FullMethodName           = "/sttattus.scoring.v1.ScoringService/ScoreOracle"
-	ScoringService_ScoreZenith_FullMethodName           = "/sttattus.scoring.v1.ScoringService/ScoreZenith"
-	ScoringService_ScoreLegacy_FullMethodName           = "/sttattus.scoring.v1.ScoringService/ScoreLegacy"
-	ScoringService_ScoreDominion_FullMethodName         = "/sttattus.scoring.v1.ScoringService/ScoreDominion"
-	ScoringService_ScoreMatch_FullMethodName            = "/sttattus.scoring.v1.ScoringService/ScoreMatch"
-	ScoringService_ScoreEmpire_FullMethodName           = "/sttattus.scoring.v1.ScoringService/ScoreEmpire"
-	ScoringService_ApplyDecay_FullMethodName            = "/sttattus.scoring.v1.ScoringService/ApplyDecay"
+	ScoringService_ScoreWorkout_FullMethodName                  = "/sttattus.scoring.v1.ScoringService/ScoreWorkout"
+	ScoringService_ScoreForge_FullMethodName                    = "/sttattus.scoring.v1.ScoringService/ScoreForge"
+	ScoringService_ScoreLexicalProgress_FullMethodName          = "/sttattus.scoring.v1.ScoringService/ScoreLexicalProgress"
+	ScoringService_ScoreCognitiveMastery_FullMethodName         = "/sttattus.scoring.v1.ScoringService/ScoreCognitiveMastery"
+	ScoringService_ScoreNomad_FullMethodName                    = "/sttattus.scoring.v1.ScoringService/ScoreNomad"
+	ScoringService_ScoreOracle_FullMethodName                   = "/sttattus.scoring.v1.ScoringService/ScoreOracle"
+	ScoringService_ScoreZenith_FullMethodName                   = "/sttattus.scoring.v1.ScoringService/ScoreZenith"
+	ScoringService_ScoreLegacy_FullMethodName                   = "/sttattus.scoring.v1.ScoringService/ScoreLegacy"
+	ScoringService_ScoreDominion_FullMethodName                 = "/sttattus.scoring.v1.ScoringService/ScoreDominion"
+	ScoringService_ScoreMatch_FullMethodName                    = "/sttattus.scoring.v1.ScoringService/ScoreMatch"
+	ScoringService_ScoreEmpire_FullMethodName                   = "/sttattus.scoring.v1.ScoringService/ScoreEmpire"
+	ScoringService_ApplyDecay_FullMethodName                    = "/sttattus.scoring.v1.ScoringService/ApplyDecay"
+	ScoringService_ScoreAcuteChronic_FullMethodName             = "/sttattus.scoring.v1.ScoringService/ScoreAcuteChronic"
+	ScoringService_EstimateOneRm_FullMethodName                 = "/sttattus.scoring.v1.ScoringService/EstimateOneRm"
+	ScoringService_ScoreVolumeIntensityFrequency_FullMethodName = "/sttattus.scoring.v1.ScoringService/ScoreVolumeIntensityFrequency"
 )
 
 // ScoringServiceClient is the client API for ScoringService service.
@@ -50,6 +53,11 @@ type ScoringServiceClient interface {
 	// High-Stakes Monolith Logic (Rust Offloaded)
 	ScoreEmpire(ctx context.Context, in *ScoreEmpireRequest, opts ...grpc.CallOption) (*ScoreEmpireResponse, error)
 	ApplyDecay(ctx context.Context, in *ApplyDecayRequest, opts ...grpc.CallOption) (*ApplyDecayResponse, error)
+	// F7P2.6 — Forge analytics: acute:chronic workload ratio,
+	// Epley-estimated 1RM, and the volume/intensity/frequency triad.
+	ScoreAcuteChronic(ctx context.Context, in *ScoreAcuteChronicRequest, opts ...grpc.CallOption) (*ScoreAcuteChronicResponse, error)
+	EstimateOneRm(ctx context.Context, in *EstimateOneRmRequest, opts ...grpc.CallOption) (*EstimateOneRmResponse, error)
+	ScoreVolumeIntensityFrequency(ctx context.Context, in *ScoreVolumeIntensityFrequencyRequest, opts ...grpc.CallOption) (*ScoreVolumeIntensityFrequencyResponse, error)
 }
 
 type scoringServiceClient struct {
@@ -180,6 +188,36 @@ func (c *scoringServiceClient) ApplyDecay(ctx context.Context, in *ApplyDecayReq
 	return out, nil
 }
 
+func (c *scoringServiceClient) ScoreAcuteChronic(ctx context.Context, in *ScoreAcuteChronicRequest, opts ...grpc.CallOption) (*ScoreAcuteChronicResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ScoreAcuteChronicResponse)
+	err := c.cc.Invoke(ctx, ScoringService_ScoreAcuteChronic_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *scoringServiceClient) EstimateOneRm(ctx context.Context, in *EstimateOneRmRequest, opts ...grpc.CallOption) (*EstimateOneRmResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EstimateOneRmResponse)
+	err := c.cc.Invoke(ctx, ScoringService_EstimateOneRm_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *scoringServiceClient) ScoreVolumeIntensityFrequency(ctx context.Context, in *ScoreVolumeIntensityFrequencyRequest, opts ...grpc.CallOption) (*ScoreVolumeIntensityFrequencyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ScoreVolumeIntensityFrequencyResponse)
+	err := c.cc.Invoke(ctx, ScoringService_ScoreVolumeIntensityFrequency_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ScoringServiceServer is the server API for ScoringService service.
 // All implementations must embed UnimplementedScoringServiceServer
 // for forward compatibility.
@@ -197,6 +235,11 @@ type ScoringServiceServer interface {
 	// High-Stakes Monolith Logic (Rust Offloaded)
 	ScoreEmpire(context.Context, *ScoreEmpireRequest) (*ScoreEmpireResponse, error)
 	ApplyDecay(context.Context, *ApplyDecayRequest) (*ApplyDecayResponse, error)
+	// F7P2.6 — Forge analytics: acute:chronic workload ratio,
+	// Epley-estimated 1RM, and the volume/intensity/frequency triad.
+	ScoreAcuteChronic(context.Context, *ScoreAcuteChronicRequest) (*ScoreAcuteChronicResponse, error)
+	EstimateOneRm(context.Context, *EstimateOneRmRequest) (*EstimateOneRmResponse, error)
+	ScoreVolumeIntensityFrequency(context.Context, *ScoreVolumeIntensityFrequencyRequest) (*ScoreVolumeIntensityFrequencyResponse, error)
 	mustEmbedUnimplementedScoringServiceServer()
 }
 
@@ -242,6 +285,15 @@ func (UnimplementedScoringServiceServer) ScoreEmpire(context.Context, *ScoreEmpi
 }
 func (UnimplementedScoringServiceServer) ApplyDecay(context.Context, *ApplyDecayRequest) (*ApplyDecayResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ApplyDecay not implemented")
+}
+func (UnimplementedScoringServiceServer) ScoreAcuteChronic(context.Context, *ScoreAcuteChronicRequest) (*ScoreAcuteChronicResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ScoreAcuteChronic not implemented")
+}
+func (UnimplementedScoringServiceServer) EstimateOneRm(context.Context, *EstimateOneRmRequest) (*EstimateOneRmResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EstimateOneRm not implemented")
+}
+func (UnimplementedScoringServiceServer) ScoreVolumeIntensityFrequency(context.Context, *ScoreVolumeIntensityFrequencyRequest) (*ScoreVolumeIntensityFrequencyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ScoreVolumeIntensityFrequency not implemented")
 }
 func (UnimplementedScoringServiceServer) mustEmbedUnimplementedScoringServiceServer() {}
 func (UnimplementedScoringServiceServer) testEmbeddedByValue()                        {}
@@ -480,6 +532,60 @@ func _ScoringService_ApplyDecay_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ScoringService_ScoreAcuteChronic_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ScoreAcuteChronicRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScoringServiceServer).ScoreAcuteChronic(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ScoringService_ScoreAcuteChronic_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScoringServiceServer).ScoreAcuteChronic(ctx, req.(*ScoreAcuteChronicRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ScoringService_EstimateOneRm_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EstimateOneRmRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScoringServiceServer).EstimateOneRm(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ScoringService_EstimateOneRm_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScoringServiceServer).EstimateOneRm(ctx, req.(*EstimateOneRmRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ScoringService_ScoreVolumeIntensityFrequency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ScoreVolumeIntensityFrequencyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScoringServiceServer).ScoreVolumeIntensityFrequency(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ScoringService_ScoreVolumeIntensityFrequency_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScoringServiceServer).ScoreVolumeIntensityFrequency(ctx, req.(*ScoreVolumeIntensityFrequencyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ScoringService_ServiceDesc is the grpc.ServiceDesc for ScoringService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -534,6 +640,18 @@ var ScoringService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ApplyDecay",
 			Handler:    _ScoringService_ApplyDecay_Handler,
+		},
+		{
+			MethodName: "ScoreAcuteChronic",
+			Handler:    _ScoringService_ScoreAcuteChronic_Handler,
+		},
+		{
+			MethodName: "EstimateOneRm",
+			Handler:    _ScoringService_EstimateOneRm_Handler,
+		},
+		{
+			MethodName: "ScoreVolumeIntensityFrequency",
+			Handler:    _ScoringService_ScoreVolumeIntensityFrequency_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

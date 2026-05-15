@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ApplyDecayRequest, ApplyDecayResponse, ScoreCognitiveMasteryRequest, ScoreCognitiveMasteryResponse, ScoreDominionRequest, ScoreDominionResponse, ScoreEmpireRequest, ScoreEmpireResponse, ScoreForgeRequest, ScoreForgeResponse, ScoreLegacyRequest, ScoreLegacyResponse, ScoreLexicalProgressRequest, ScoreLexicalProgressResponse, ScoreMatchRequest, ScoreMatchResponse, ScoreNomadRequest, ScoreNomadResponse, ScoreOracleRequest, ScoreOracleResponse, ScoreWorkoutRequest, ScoreWorkoutResponse, ScoreZenithRequest, ScoreZenithResponse } from "./scoring_pb.js";
+import { ApplyDecayRequest, ApplyDecayResponse, EstimateOneRmRequest, EstimateOneRmResponse, ScoreAcuteChronicRequest, ScoreAcuteChronicResponse, ScoreCognitiveMasteryRequest, ScoreCognitiveMasteryResponse, ScoreDominionRequest, ScoreDominionResponse, ScoreEmpireRequest, ScoreEmpireResponse, ScoreForgeRequest, ScoreForgeResponse, ScoreLegacyRequest, ScoreLegacyResponse, ScoreLexicalProgressRequest, ScoreLexicalProgressResponse, ScoreMatchRequest, ScoreMatchResponse, ScoreNomadRequest, ScoreNomadResponse, ScoreOracleRequest, ScoreOracleResponse, ScoreVolumeIntensityFrequencyRequest, ScoreVolumeIntensityFrequencyResponse, ScoreWorkoutRequest, ScoreWorkoutResponse, ScoreZenithRequest, ScoreZenithResponse } from "./scoring_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -120,6 +120,36 @@ export const ScoringService = {
       name: "ApplyDecay",
       I: ApplyDecayRequest,
       O: ApplyDecayResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P2.6 — Forge analytics: acute:chronic workload ratio,
+     * Epley-estimated 1RM, and the volume/intensity/frequency triad.
+     *
+     * @generated from rpc sttattus.scoring.v1.ScoringService.ScoreAcuteChronic
+     */
+    scoreAcuteChronic: {
+      name: "ScoreAcuteChronic",
+      I: ScoreAcuteChronicRequest,
+      O: ScoreAcuteChronicResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.scoring.v1.ScoringService.EstimateOneRm
+     */
+    estimateOneRm: {
+      name: "EstimateOneRm",
+      I: EstimateOneRmRequest,
+      O: EstimateOneRmResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.scoring.v1.ScoringService.ScoreVolumeIntensityFrequency
+     */
+    scoreVolumeIntensityFrequency: {
+      name: "ScoreVolumeIntensityFrequency",
+      I: ScoreVolumeIntensityFrequencyRequest,
+      O: ScoreVolumeIntensityFrequencyResponse,
       kind: MethodKind.Unary,
     },
   }
