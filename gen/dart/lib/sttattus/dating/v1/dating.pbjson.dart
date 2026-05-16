@@ -1164,3 +1164,158 @@ final $typed_data.Uint8List listMessageAttachmentsResponseDescriptor = $convert.
     'Ch5MaXN0TWVzc2FnZUF0dGFjaG1lbnRzUmVzcG9uc2USRwoLYXR0YWNobWVudHMYASADKAsyJS'
     '5zdHRhdHR1cy5kYXRpbmcudjEuTWVzc2FnZUF0dGFjaG1lbnRSC2F0dGFjaG1lbnRz');
 
+@$core.Deprecated('Use restaurantDescriptor instead')
+const Restaurant$json = {
+  '1': 'Restaurant',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'city', '3': 3, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'neighborhood', '3': 4, '4': 1, '5': 9, '10': 'neighborhood'},
+    {'1': 'partner', '3': 5, '4': 1, '5': 9, '10': 'partner'},
+    {'1': 'partner_external_id', '3': 6, '4': 1, '5': 9, '10': 'partnerExternalId'},
+    {'1': 'is_atlas_curated', '3': 7, '4': 1, '5': 8, '10': 'isAtlasCurated'},
+    {'1': 'cuisine', '3': 8, '4': 1, '5': 9, '10': 'cuisine'},
+    {'1': 'price_tier', '3': 9, '4': 1, '5': 5, '10': 'priceTier'},
+  ],
+};
+
+/// Descriptor for `Restaurant`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List restaurantDescriptor = $convert.base64Decode(
+    'CgpSZXN0YXVyYW50Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGNpdH'
+    'kYAyABKAlSBGNpdHkSIgoMbmVpZ2hib3Job29kGAQgASgJUgxuZWlnaGJvcmhvb2QSGAoHcGFy'
+    'dG5lchgFIAEoCVIHcGFydG5lchIuChNwYXJ0bmVyX2V4dGVybmFsX2lkGAYgASgJUhFwYXJ0bm'
+    'VyRXh0ZXJuYWxJZBIoChBpc19hdGxhc19jdXJhdGVkGAcgASgIUg5pc0F0bGFzQ3VyYXRlZBIY'
+    'CgdjdWlzaW5lGAggASgJUgdjdWlzaW5lEh0KCnByaWNlX3RpZXIYCSABKAVSCXByaWNlVGllcg'
+    '==');
+
+@$core.Deprecated('Use listRestaurantsRequestDescriptor instead')
+const ListRestaurantsRequest$json = {
+  '1': 'ListRestaurantsRequest',
+  '2': [
+    {'1': 'city', '3': 1, '4': 1, '5': 9, '10': 'city'},
+  ],
+};
+
+/// Descriptor for `ListRestaurantsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRestaurantsRequestDescriptor = $convert.base64Decode(
+    'ChZMaXN0UmVzdGF1cmFudHNSZXF1ZXN0EhIKBGNpdHkYASABKAlSBGNpdHk=');
+
+@$core.Deprecated('Use listRestaurantsResponseDescriptor instead')
+const ListRestaurantsResponse$json = {
+  '1': 'ListRestaurantsResponse',
+  '2': [
+    {'1': 'restaurants', '3': 1, '4': 3, '5': 11, '6': '.sttattus.dating.v1.Restaurant', '10': 'restaurants'},
+  ],
+};
+
+/// Descriptor for `ListRestaurantsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRestaurantsResponseDescriptor = $convert.base64Decode(
+    'ChdMaXN0UmVzdGF1cmFudHNSZXNwb25zZRJACgtyZXN0YXVyYW50cxgBIAMoCzIeLnN0dGF0dH'
+    'VzLmRhdGluZy52MS5SZXN0YXVyYW50UgtyZXN0YXVyYW50cw==');
+
+@$core.Deprecated('Use reservationDescriptor instead')
+const Reservation$json = {
+  '1': 'Reservation',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'restaurant_id', '3': 2, '4': 1, '5': 9, '10': 'restaurantId'},
+    {'1': 'match_id', '3': 3, '4': 1, '5': 9, '10': 'matchId'},
+    {'1': 'party_size', '3': 4, '4': 1, '5': 5, '10': 'partySize'},
+    {'1': 'requested_at', '3': 5, '4': 1, '5': 3, '10': 'requestedAt'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'partner_reservation_id', '3': 7, '4': 1, '5': 9, '10': 'partnerReservationId'},
+    {'1': 'note', '3': 8, '4': 1, '5': 9, '10': 'note'},
+    {'1': 'created_at', '3': 9, '4': 1, '5': 3, '10': 'createdAt'},
+    {'1': 'decided_at', '3': 10, '4': 1, '5': 3, '10': 'decidedAt'},
+  ],
+};
+
+/// Descriptor for `Reservation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reservationDescriptor = $convert.base64Decode(
+    'CgtSZXNlcnZhdGlvbhIOCgJpZBgBIAEoCVICaWQSIwoNcmVzdGF1cmFudF9pZBgCIAEoCVIMcm'
+    'VzdGF1cmFudElkEhkKCG1hdGNoX2lkGAMgASgJUgdtYXRjaElkEh0KCnBhcnR5X3NpemUYBCAB'
+    'KAVSCXBhcnR5U2l6ZRIhCgxyZXF1ZXN0ZWRfYXQYBSABKANSC3JlcXVlc3RlZEF0EhYKBnN0YX'
+    'R1cxgGIAEoCVIGc3RhdHVzEjQKFnBhcnRuZXJfcmVzZXJ2YXRpb25faWQYByABKAlSFHBhcnRu'
+    'ZXJSZXNlcnZhdGlvbklkEhIKBG5vdGUYCCABKAlSBG5vdGUSHQoKY3JlYXRlZF9hdBgJIAEoA1'
+    'IJY3JlYXRlZEF0Eh0KCmRlY2lkZWRfYXQYCiABKANSCWRlY2lkZWRBdA==');
+
+@$core.Deprecated('Use createReservationRequestDescriptor instead')
+const CreateReservationRequest$json = {
+  '1': 'CreateReservationRequest',
+  '2': [
+    {'1': 'restaurant_id', '3': 1, '4': 1, '5': 9, '10': 'restaurantId'},
+    {'1': 'match_id', '3': 2, '4': 1, '5': 9, '10': 'matchId'},
+    {'1': 'party_size', '3': 3, '4': 1, '5': 5, '10': 'partySize'},
+    {'1': 'requested_at', '3': 4, '4': 1, '5': 3, '10': 'requestedAt'},
+    {'1': 'note', '3': 5, '4': 1, '5': 9, '10': 'note'},
+  ],
+};
+
+/// Descriptor for `CreateReservationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createReservationRequestDescriptor = $convert.base64Decode(
+    'ChhDcmVhdGVSZXNlcnZhdGlvblJlcXVlc3QSIwoNcmVzdGF1cmFudF9pZBgBIAEoCVIMcmVzdG'
+    'F1cmFudElkEhkKCG1hdGNoX2lkGAIgASgJUgdtYXRjaElkEh0KCnBhcnR5X3NpemUYAyABKAVS'
+    'CXBhcnR5U2l6ZRIhCgxyZXF1ZXN0ZWRfYXQYBCABKANSC3JlcXVlc3RlZEF0EhIKBG5vdGUYBS'
+    'ABKAlSBG5vdGU=');
+
+@$core.Deprecated('Use createReservationResponseDescriptor instead')
+const CreateReservationResponse$json = {
+  '1': 'CreateReservationResponse',
+  '2': [
+    {'1': 'reservation', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.Reservation', '10': 'reservation'},
+  ],
+};
+
+/// Descriptor for `CreateReservationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createReservationResponseDescriptor = $convert.base64Decode(
+    'ChlDcmVhdGVSZXNlcnZhdGlvblJlc3BvbnNlEkEKC3Jlc2VydmF0aW9uGAEgASgLMh8uc3R0YX'
+    'R0dXMuZGF0aW5nLnYxLlJlc2VydmF0aW9uUgtyZXNlcnZhdGlvbg==');
+
+@$core.Deprecated('Use listMyReservationsRequestDescriptor instead')
+const ListMyReservationsRequest$json = {
+  '1': 'ListMyReservationsRequest',
+};
+
+/// Descriptor for `ListMyReservationsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyReservationsRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0TXlSZXNlcnZhdGlvbnNSZXF1ZXN0');
+
+@$core.Deprecated('Use listMyReservationsResponseDescriptor instead')
+const ListMyReservationsResponse$json = {
+  '1': 'ListMyReservationsResponse',
+  '2': [
+    {'1': 'reservations', '3': 1, '4': 3, '5': 11, '6': '.sttattus.dating.v1.Reservation', '10': 'reservations'},
+  ],
+};
+
+/// Descriptor for `ListMyReservationsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyReservationsResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0TXlSZXNlcnZhdGlvbnNSZXNwb25zZRJDCgxyZXNlcnZhdGlvbnMYASADKAsyHy5zdH'
+    'RhdHR1cy5kYXRpbmcudjEuUmVzZXJ2YXRpb25SDHJlc2VydmF0aW9ucw==');
+
+@$core.Deprecated('Use cancelReservationRequestDescriptor instead')
+const CancelReservationRequest$json = {
+  '1': 'CancelReservationRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `CancelReservationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cancelReservationRequestDescriptor = $convert.base64Decode(
+    'ChhDYW5jZWxSZXNlcnZhdGlvblJlcXVlc3QSDgoCaWQYASABKAlSAmlk');
+
+@$core.Deprecated('Use cancelReservationResponseDescriptor instead')
+const CancelReservationResponse$json = {
+  '1': 'CancelReservationResponse',
+  '2': [
+    {'1': 'reservation', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.Reservation', '10': 'reservation'},
+  ],
+};
+
+/// Descriptor for `CancelReservationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cancelReservationResponseDescriptor = $convert.base64Decode(
+    'ChlDYW5jZWxSZXNlcnZhdGlvblJlc3BvbnNlEkEKC3Jlc2VydmF0aW9uGAEgASgLMh8uc3R0YX'
+    'R0dXMuZGF0aW5nLnYxLlJlc2VydmF0aW9uUgtyZXNlcnZhdGlvbg==');
+

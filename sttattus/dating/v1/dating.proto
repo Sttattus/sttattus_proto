@@ -425,6 +425,66 @@ message ListMessageAttachmentsResponse {
   repeated MessageAttachment attachments = 1;
 }
 
+// === Restaurant partner integration (A9P2.5) ===
+
+message Restaurant {
+  string id = 1;
+  string name = 2;
+  string city = 3;
+  string neighborhood = 4;
+  // 'opentable' | 'resy' | 'manual'
+  string partner = 5;
+  string partner_external_id = 6;
+  bool is_atlas_curated = 7;
+  string cuisine = 8;
+  int32 price_tier = 9; // 1..5
+}
+
+message ListRestaurantsRequest {
+  // Empty city = curated set (the Atlas Twelve).
+  string city = 1;
+}
+message ListRestaurantsResponse {
+  repeated Restaurant restaurants = 1;
+}
+
+message Reservation {
+  string id = 1;
+  string restaurant_id = 2;
+  string match_id = 3; // empty when unscoped
+  int32 party_size = 4;
+  int64 requested_at = 5;
+  // 'requested' | 'confirmed' | 'declined' | 'cancelled'
+  string status = 6;
+  string partner_reservation_id = 7;
+  string note = 8;
+  int64 created_at = 9;
+  int64 decided_at = 10;
+}
+
+message CreateReservationRequest {
+  string restaurant_id = 1;
+  string match_id = 2; // empty when solo / unscoped
+  int32 party_size = 3;
+  int64 requested_at = 4;
+  string note = 5;
+}
+message CreateReservationResponse {
+  Reservation reservation = 1;
+}
+
+message ListMyReservationsRequest {}
+message ListMyReservationsResponse {
+  repeated Reservation reservations = 1;
+}
+
+message CancelReservationRequest {
+  string id = 1;
+}
+message CancelReservationResponse {
+  Reservation reservation = 1;
+}
+
 service DatingService {
   rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
   rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
@@ -472,4 +532,11 @@ service DatingService {
   // A9P2.4 — voice + video message attachments.
   rpc AttachMediaToMessage(AttachMediaToMessageRequest) returns (AttachMediaToMessageResponse);
   rpc ListMessageAttachments(ListMessageAttachmentsRequest) returns (ListMessageAttachmentsResponse);
+
+  // A9P2.5 — restaurant partner integration (directory +
+  // reservation ledger; partner API call is concierge-routed today).
+  rpc ListRestaurants(ListRestaurantsRequest) returns (ListRestaurantsResponse);
+  rpc CreateReservation(CreateReservationRequest) returns (CreateReservationResponse);
+  rpc ListMyReservations(ListMyReservationsRequest) returns (ListMyReservationsResponse);
+  rpc CancelReservation(CancelReservationRequest) returns (CancelReservationResponse);
 }

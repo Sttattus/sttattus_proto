@@ -4350,6 +4350,609 @@ func (x *ListMessageAttachmentsResponse) GetAttachments() []*MessageAttachment {
 	return nil
 }
 
+type Restaurant struct {
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name         string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	City         string                 `protobuf:"bytes,3,opt,name=city,proto3" json:"city,omitempty"`
+	Neighborhood string                 `protobuf:"bytes,4,opt,name=neighborhood,proto3" json:"neighborhood,omitempty"`
+	// 'opentable' | 'resy' | 'manual'
+	Partner           string `protobuf:"bytes,5,opt,name=partner,proto3" json:"partner,omitempty"`
+	PartnerExternalId string `protobuf:"bytes,6,opt,name=partner_external_id,json=partnerExternalId,proto3" json:"partner_external_id,omitempty"`
+	IsAtlasCurated    bool   `protobuf:"varint,7,opt,name=is_atlas_curated,json=isAtlasCurated,proto3" json:"is_atlas_curated,omitempty"`
+	Cuisine           string `protobuf:"bytes,8,opt,name=cuisine,proto3" json:"cuisine,omitempty"`
+	PriceTier         int32  `protobuf:"varint,9,opt,name=price_tier,json=priceTier,proto3" json:"price_tier,omitempty"` // 1..5
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *Restaurant) Reset() {
+	*x = Restaurant{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[79]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Restaurant) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Restaurant) ProtoMessage() {}
+
+func (x *Restaurant) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[79]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Restaurant.ProtoReflect.Descriptor instead.
+func (*Restaurant) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{79}
+}
+
+func (x *Restaurant) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Restaurant) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Restaurant) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *Restaurant) GetNeighborhood() string {
+	if x != nil {
+		return x.Neighborhood
+	}
+	return ""
+}
+
+func (x *Restaurant) GetPartner() string {
+	if x != nil {
+		return x.Partner
+	}
+	return ""
+}
+
+func (x *Restaurant) GetPartnerExternalId() string {
+	if x != nil {
+		return x.PartnerExternalId
+	}
+	return ""
+}
+
+func (x *Restaurant) GetIsAtlasCurated() bool {
+	if x != nil {
+		return x.IsAtlasCurated
+	}
+	return false
+}
+
+func (x *Restaurant) GetCuisine() string {
+	if x != nil {
+		return x.Cuisine
+	}
+	return ""
+}
+
+func (x *Restaurant) GetPriceTier() int32 {
+	if x != nil {
+		return x.PriceTier
+	}
+	return 0
+}
+
+type ListRestaurantsRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Empty city = curated set (the Atlas Twelve).
+	City          string `protobuf:"bytes,1,opt,name=city,proto3" json:"city,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListRestaurantsRequest) Reset() {
+	*x = ListRestaurantsRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[80]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListRestaurantsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListRestaurantsRequest) ProtoMessage() {}
+
+func (x *ListRestaurantsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[80]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListRestaurantsRequest.ProtoReflect.Descriptor instead.
+func (*ListRestaurantsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{80}
+}
+
+func (x *ListRestaurantsRequest) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+type ListRestaurantsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Restaurants   []*Restaurant          `protobuf:"bytes,1,rep,name=restaurants,proto3" json:"restaurants,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListRestaurantsResponse) Reset() {
+	*x = ListRestaurantsResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[81]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListRestaurantsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListRestaurantsResponse) ProtoMessage() {}
+
+func (x *ListRestaurantsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[81]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListRestaurantsResponse.ProtoReflect.Descriptor instead.
+func (*ListRestaurantsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{81}
+}
+
+func (x *ListRestaurantsResponse) GetRestaurants() []*Restaurant {
+	if x != nil {
+		return x.Restaurants
+	}
+	return nil
+}
+
+type Reservation struct {
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RestaurantId string                 `protobuf:"bytes,2,opt,name=restaurant_id,json=restaurantId,proto3" json:"restaurant_id,omitempty"`
+	MatchId      string                 `protobuf:"bytes,3,opt,name=match_id,json=matchId,proto3" json:"match_id,omitempty"` // empty when unscoped
+	PartySize    int32                  `protobuf:"varint,4,opt,name=party_size,json=partySize,proto3" json:"party_size,omitempty"`
+	RequestedAt  int64                  `protobuf:"varint,5,opt,name=requested_at,json=requestedAt,proto3" json:"requested_at,omitempty"`
+	// 'requested' | 'confirmed' | 'declined' | 'cancelled'
+	Status               string `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`
+	PartnerReservationId string `protobuf:"bytes,7,opt,name=partner_reservation_id,json=partnerReservationId,proto3" json:"partner_reservation_id,omitempty"`
+	Note                 string `protobuf:"bytes,8,opt,name=note,proto3" json:"note,omitempty"`
+	CreatedAt            int64  `protobuf:"varint,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	DecidedAt            int64  `protobuf:"varint,10,opt,name=decided_at,json=decidedAt,proto3" json:"decided_at,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *Reservation) Reset() {
+	*x = Reservation{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[82]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Reservation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Reservation) ProtoMessage() {}
+
+func (x *Reservation) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[82]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Reservation.ProtoReflect.Descriptor instead.
+func (*Reservation) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{82}
+}
+
+func (x *Reservation) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Reservation) GetRestaurantId() string {
+	if x != nil {
+		return x.RestaurantId
+	}
+	return ""
+}
+
+func (x *Reservation) GetMatchId() string {
+	if x != nil {
+		return x.MatchId
+	}
+	return ""
+}
+
+func (x *Reservation) GetPartySize() int32 {
+	if x != nil {
+		return x.PartySize
+	}
+	return 0
+}
+
+func (x *Reservation) GetRequestedAt() int64 {
+	if x != nil {
+		return x.RequestedAt
+	}
+	return 0
+}
+
+func (x *Reservation) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *Reservation) GetPartnerReservationId() string {
+	if x != nil {
+		return x.PartnerReservationId
+	}
+	return ""
+}
+
+func (x *Reservation) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
+}
+
+func (x *Reservation) GetCreatedAt() int64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+func (x *Reservation) GetDecidedAt() int64 {
+	if x != nil {
+		return x.DecidedAt
+	}
+	return 0
+}
+
+type CreateReservationRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RestaurantId  string                 `protobuf:"bytes,1,opt,name=restaurant_id,json=restaurantId,proto3" json:"restaurant_id,omitempty"`
+	MatchId       string                 `protobuf:"bytes,2,opt,name=match_id,json=matchId,proto3" json:"match_id,omitempty"` // empty when solo / unscoped
+	PartySize     int32                  `protobuf:"varint,3,opt,name=party_size,json=partySize,proto3" json:"party_size,omitempty"`
+	RequestedAt   int64                  `protobuf:"varint,4,opt,name=requested_at,json=requestedAt,proto3" json:"requested_at,omitempty"`
+	Note          string                 `protobuf:"bytes,5,opt,name=note,proto3" json:"note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateReservationRequest) Reset() {
+	*x = CreateReservationRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[83]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateReservationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateReservationRequest) ProtoMessage() {}
+
+func (x *CreateReservationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[83]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateReservationRequest.ProtoReflect.Descriptor instead.
+func (*CreateReservationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{83}
+}
+
+func (x *CreateReservationRequest) GetRestaurantId() string {
+	if x != nil {
+		return x.RestaurantId
+	}
+	return ""
+}
+
+func (x *CreateReservationRequest) GetMatchId() string {
+	if x != nil {
+		return x.MatchId
+	}
+	return ""
+}
+
+func (x *CreateReservationRequest) GetPartySize() int32 {
+	if x != nil {
+		return x.PartySize
+	}
+	return 0
+}
+
+func (x *CreateReservationRequest) GetRequestedAt() int64 {
+	if x != nil {
+		return x.RequestedAt
+	}
+	return 0
+}
+
+func (x *CreateReservationRequest) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
+}
+
+type CreateReservationResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Reservation   *Reservation           `protobuf:"bytes,1,opt,name=reservation,proto3" json:"reservation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateReservationResponse) Reset() {
+	*x = CreateReservationResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[84]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateReservationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateReservationResponse) ProtoMessage() {}
+
+func (x *CreateReservationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[84]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateReservationResponse.ProtoReflect.Descriptor instead.
+func (*CreateReservationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{84}
+}
+
+func (x *CreateReservationResponse) GetReservation() *Reservation {
+	if x != nil {
+		return x.Reservation
+	}
+	return nil
+}
+
+type ListMyReservationsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyReservationsRequest) Reset() {
+	*x = ListMyReservationsRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[85]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyReservationsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyReservationsRequest) ProtoMessage() {}
+
+func (x *ListMyReservationsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[85]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyReservationsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyReservationsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{85}
+}
+
+type ListMyReservationsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Reservations  []*Reservation         `protobuf:"bytes,1,rep,name=reservations,proto3" json:"reservations,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyReservationsResponse) Reset() {
+	*x = ListMyReservationsResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[86]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyReservationsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyReservationsResponse) ProtoMessage() {}
+
+func (x *ListMyReservationsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[86]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyReservationsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyReservationsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{86}
+}
+
+func (x *ListMyReservationsResponse) GetReservations() []*Reservation {
+	if x != nil {
+		return x.Reservations
+	}
+	return nil
+}
+
+type CancelReservationRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CancelReservationRequest) Reset() {
+	*x = CancelReservationRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[87]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CancelReservationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CancelReservationRequest) ProtoMessage() {}
+
+func (x *CancelReservationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[87]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CancelReservationRequest.ProtoReflect.Descriptor instead.
+func (*CancelReservationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{87}
+}
+
+func (x *CancelReservationRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type CancelReservationResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Reservation   *Reservation           `protobuf:"bytes,1,opt,name=reservation,proto3" json:"reservation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CancelReservationResponse) Reset() {
+	*x = CancelReservationResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[88]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CancelReservationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CancelReservationResponse) ProtoMessage() {}
+
+func (x *CancelReservationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[88]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CancelReservationResponse.ProtoReflect.Descriptor instead.
+func (*CancelReservationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{88}
+}
+
+func (x *CancelReservationResponse) GetReservation() *Reservation {
+	if x != nil {
+		return x.Reservation
+	}
+	return nil
+}
+
 var File_sttattus_dating_v1_dating_proto protoreflect.FileDescriptor
 
 const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
@@ -4643,7 +5246,54 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\n" +
 	"message_id\x18\x01 \x01(\tR\tmessageId\"i\n" +
 	"\x1eListMessageAttachmentsResponse\x12G\n" +
-	"\vattachments\x18\x01 \x03(\v2%.sttattus.dating.v1.MessageAttachmentR\vattachments*\x80\x01\n" +
+	"\vattachments\x18\x01 \x03(\v2%.sttattus.dating.v1.MessageAttachmentR\vattachments\"\x95\x02\n" +
+	"\n" +
+	"Restaurant\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04city\x18\x03 \x01(\tR\x04city\x12\"\n" +
+	"\fneighborhood\x18\x04 \x01(\tR\fneighborhood\x12\x18\n" +
+	"\apartner\x18\x05 \x01(\tR\apartner\x12.\n" +
+	"\x13partner_external_id\x18\x06 \x01(\tR\x11partnerExternalId\x12(\n" +
+	"\x10is_atlas_curated\x18\a \x01(\bR\x0eisAtlasCurated\x12\x18\n" +
+	"\acuisine\x18\b \x01(\tR\acuisine\x12\x1d\n" +
+	"\n" +
+	"price_tier\x18\t \x01(\x05R\tpriceTier\",\n" +
+	"\x16ListRestaurantsRequest\x12\x12\n" +
+	"\x04city\x18\x01 \x01(\tR\x04city\"[\n" +
+	"\x17ListRestaurantsResponse\x12@\n" +
+	"\vrestaurants\x18\x01 \x03(\v2\x1e.sttattus.dating.v1.RestaurantR\vrestaurants\"\xbf\x02\n" +
+	"\vReservation\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12#\n" +
+	"\rrestaurant_id\x18\x02 \x01(\tR\frestaurantId\x12\x19\n" +
+	"\bmatch_id\x18\x03 \x01(\tR\amatchId\x12\x1d\n" +
+	"\n" +
+	"party_size\x18\x04 \x01(\x05R\tpartySize\x12!\n" +
+	"\frequested_at\x18\x05 \x01(\x03R\vrequestedAt\x12\x16\n" +
+	"\x06status\x18\x06 \x01(\tR\x06status\x124\n" +
+	"\x16partner_reservation_id\x18\a \x01(\tR\x14partnerReservationId\x12\x12\n" +
+	"\x04note\x18\b \x01(\tR\x04note\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\t \x01(\x03R\tcreatedAt\x12\x1d\n" +
+	"\n" +
+	"decided_at\x18\n" +
+	" \x01(\x03R\tdecidedAt\"\xb0\x01\n" +
+	"\x18CreateReservationRequest\x12#\n" +
+	"\rrestaurant_id\x18\x01 \x01(\tR\frestaurantId\x12\x19\n" +
+	"\bmatch_id\x18\x02 \x01(\tR\amatchId\x12\x1d\n" +
+	"\n" +
+	"party_size\x18\x03 \x01(\x05R\tpartySize\x12!\n" +
+	"\frequested_at\x18\x04 \x01(\x03R\vrequestedAt\x12\x12\n" +
+	"\x04note\x18\x05 \x01(\tR\x04note\"^\n" +
+	"\x19CreateReservationResponse\x12A\n" +
+	"\vreservation\x18\x01 \x01(\v2\x1f.sttattus.dating.v1.ReservationR\vreservation\"\x1b\n" +
+	"\x19ListMyReservationsRequest\"a\n" +
+	"\x1aListMyReservationsResponse\x12C\n" +
+	"\freservations\x18\x01 \x03(\v2\x1f.sttattus.dating.v1.ReservationR\freservations\"*\n" +
+	"\x18CancelReservationRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"^\n" +
+	"\x19CancelReservationResponse\x12A\n" +
+	"\vreservation\x18\x01 \x01(\v2\x1f.sttattus.dating.v1.ReservationR\vreservation*\x80\x01\n" +
 	"\x0eSwipeDirection\x12\x1f\n" +
 	"\x1bSWIPE_DIRECTION_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14SWIPE_DIRECTION_PASS\x10\x01\x12\x18\n" +
@@ -4654,7 +5304,7 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x14DATING_INTENT_CASUAL\x10\x01\x12\x1e\n" +
 	"\x1aDATING_INTENT_RELATIONSHIP\x10\x02\x12\x19\n" +
 	"\x15DATING_INTENT_FRIENDS\x10\x03\x12\x1c\n" +
-	"\x18DATING_INTENT_NETWORKING\x10\x042\x87\x1b\n" +
+	"\x18DATING_INTENT_NETWORKING\x10\x042\xcc\x1e\n" +
 	"\rDatingService\x12[\n" +
 	"\n" +
 	"GetProfile\x12%.sttattus.dating.v1.GetProfileRequest\x1a&.sttattus.dating.v1.GetProfileResponse\x12d\n" +
@@ -4689,7 +5339,11 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\fEndAgoraRoom\x12'.sttattus.dating.v1.EndAgoraRoomRequest\x1a(.sttattus.dating.v1.EndAgoraRoomResponse\x12m\n" +
 	"\x10MintLiveKitToken\x12+.sttattus.dating.v1.MintLiveKitTokenRequest\x1a,.sttattus.dating.v1.MintLiveKitTokenResponse\x12y\n" +
 	"\x14AttachMediaToMessage\x12/.sttattus.dating.v1.AttachMediaToMessageRequest\x1a0.sttattus.dating.v1.AttachMediaToMessageResponse\x12\x7f\n" +
-	"\x16ListMessageAttachments\x121.sttattus.dating.v1.ListMessageAttachmentsRequest\x1a2.sttattus.dating.v1.ListMessageAttachmentsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
+	"\x16ListMessageAttachments\x121.sttattus.dating.v1.ListMessageAttachmentsRequest\x1a2.sttattus.dating.v1.ListMessageAttachmentsResponse\x12j\n" +
+	"\x0fListRestaurants\x12*.sttattus.dating.v1.ListRestaurantsRequest\x1a+.sttattus.dating.v1.ListRestaurantsResponse\x12p\n" +
+	"\x11CreateReservation\x12,.sttattus.dating.v1.CreateReservationRequest\x1a-.sttattus.dating.v1.CreateReservationResponse\x12s\n" +
+	"\x12ListMyReservations\x12-.sttattus.dating.v1.ListMyReservationsRequest\x1a..sttattus.dating.v1.ListMyReservationsResponse\x12p\n" +
+	"\x11CancelReservation\x12,.sttattus.dating.v1.CancelReservationRequest\x1a-.sttattus.dating.v1.CancelReservationResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
 
 var (
 	file_sttattus_dating_v1_dating_proto_rawDescOnce sync.Once
@@ -4704,7 +5358,7 @@ func file_sttattus_dating_v1_dating_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_dating_v1_dating_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 79)
+var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 89)
 var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(SwipeDirection)(0),                    // 0: sttattus.dating.v1.SwipeDirection
 	(DatingIntent)(0),                      // 1: sttattus.dating.v1.DatingIntent
@@ -4787,8 +5441,18 @@ var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(*AttachMediaToMessageResponse)(nil),   // 78: sttattus.dating.v1.AttachMediaToMessageResponse
 	(*ListMessageAttachmentsRequest)(nil),  // 79: sttattus.dating.v1.ListMessageAttachmentsRequest
 	(*ListMessageAttachmentsResponse)(nil), // 80: sttattus.dating.v1.ListMessageAttachmentsResponse
-	(*v1.PageRequest)(nil),                 // 81: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),                // 82: sttattus.common.v1.PageResponse
+	(*Restaurant)(nil),                     // 81: sttattus.dating.v1.Restaurant
+	(*ListRestaurantsRequest)(nil),         // 82: sttattus.dating.v1.ListRestaurantsRequest
+	(*ListRestaurantsResponse)(nil),        // 83: sttattus.dating.v1.ListRestaurantsResponse
+	(*Reservation)(nil),                    // 84: sttattus.dating.v1.Reservation
+	(*CreateReservationRequest)(nil),       // 85: sttattus.dating.v1.CreateReservationRequest
+	(*CreateReservationResponse)(nil),      // 86: sttattus.dating.v1.CreateReservationResponse
+	(*ListMyReservationsRequest)(nil),      // 87: sttattus.dating.v1.ListMyReservationsRequest
+	(*ListMyReservationsResponse)(nil),     // 88: sttattus.dating.v1.ListMyReservationsResponse
+	(*CancelReservationRequest)(nil),       // 89: sttattus.dating.v1.CancelReservationRequest
+	(*CancelReservationResponse)(nil),      // 90: sttattus.dating.v1.CancelReservationResponse
+	(*v1.PageRequest)(nil),                 // 91: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),                // 92: sttattus.common.v1.PageResponse
 }
 var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	1,  // 0: sttattus.dating.v1.DatingProfile.intent:type_name -> sttattus.dating.v1.DatingIntent
@@ -4801,9 +5465,9 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	4,  // 7: sttattus.dating.v1.StreamDiscoveryResponse.candidate:type_name -> sttattus.dating.v1.Candidate
 	0,  // 8: sttattus.dating.v1.SwipeRequest.direction:type_name -> sttattus.dating.v1.SwipeDirection
 	5,  // 9: sttattus.dating.v1.SwipeResponse.match:type_name -> sttattus.dating.v1.Match
-	81, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	91, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	5,  // 11: sttattus.dating.v1.ListMatchesResponse.matches:type_name -> sttattus.dating.v1.Match
-	82, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	92, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
 	6,  // 13: sttattus.dating.v1.StreamMessagesResponse.message:type_name -> sttattus.dating.v1.Message
 	6,  // 14: sttattus.dating.v1.SendMessageResponse.message:type_name -> sttattus.dating.v1.Message
 	21, // 15: sttattus.dating.v1.StartVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
@@ -4829,75 +5493,87 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	67, // 35: sttattus.dating.v1.EndAgoraRoomResponse.room:type_name -> sttattus.dating.v1.AgoraRoom
 	76, // 36: sttattus.dating.v1.AttachMediaToMessageResponse.attachment:type_name -> sttattus.dating.v1.MessageAttachment
 	76, // 37: sttattus.dating.v1.ListMessageAttachmentsResponse.attachments:type_name -> sttattus.dating.v1.MessageAttachment
-	7,  // 38: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
-	9,  // 39: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
-	11, // 40: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
-	13, // 41: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
-	15, // 42: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
-	17, // 43: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
-	19, // 44: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
-	22, // 45: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
-	24, // 46: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
-	27, // 47: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
-	29, // 48: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
-	31, // 49: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
-	34, // 50: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
-	36, // 51: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
-	38, // 52: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
-	40, // 53: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
-	43, // 54: sttattus.dating.v1.DatingService.ListMyBlocks:input_type -> sttattus.dating.v1.ListMyBlocksRequest
-	45, // 55: sttattus.dating.v1.DatingService.BlockUser:input_type -> sttattus.dating.v1.BlockUserRequest
-	47, // 56: sttattus.dating.v1.DatingService.UnblockUser:input_type -> sttattus.dating.v1.UnblockUserRequest
-	50, // 57: sttattus.dating.v1.DatingService.ListMyReports:input_type -> sttattus.dating.v1.ListMyReportsRequest
-	52, // 58: sttattus.dating.v1.DatingService.ReportUser:input_type -> sttattus.dating.v1.ReportUserRequest
-	55, // 59: sttattus.dating.v1.DatingService.GetPanicContact:input_type -> sttattus.dating.v1.GetPanicContactRequest
-	57, // 60: sttattus.dating.v1.DatingService.UpsertPanicContact:input_type -> sttattus.dating.v1.UpsertPanicContactRequest
-	60, // 61: sttattus.dating.v1.DatingService.GetPrivacyAxes:input_type -> sttattus.dating.v1.GetPrivacyAxesRequest
-	62, // 62: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:input_type -> sttattus.dating.v1.UpsertPrivacyAxesRequest
-	65, // 63: sttattus.dating.v1.DatingService.ListAtlasMapPoints:input_type -> sttattus.dating.v1.ListAtlasMapPointsRequest
-	68, // 64: sttattus.dating.v1.DatingService.ListLiveRooms:input_type -> sttattus.dating.v1.ListLiveRoomsRequest
-	70, // 65: sttattus.dating.v1.DatingService.CreateAgoraRoom:input_type -> sttattus.dating.v1.CreateAgoraRoomRequest
-	72, // 66: sttattus.dating.v1.DatingService.EndAgoraRoom:input_type -> sttattus.dating.v1.EndAgoraRoomRequest
-	74, // 67: sttattus.dating.v1.DatingService.MintLiveKitToken:input_type -> sttattus.dating.v1.MintLiveKitTokenRequest
-	77, // 68: sttattus.dating.v1.DatingService.AttachMediaToMessage:input_type -> sttattus.dating.v1.AttachMediaToMessageRequest
-	79, // 69: sttattus.dating.v1.DatingService.ListMessageAttachments:input_type -> sttattus.dating.v1.ListMessageAttachmentsRequest
-	8,  // 70: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
-	10, // 71: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
-	12, // 72: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
-	14, // 73: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
-	16, // 74: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
-	18, // 75: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
-	20, // 76: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
-	23, // 77: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
-	25, // 78: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
-	28, // 79: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
-	30, // 80: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
-	32, // 81: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
-	35, // 82: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
-	37, // 83: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
-	39, // 84: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
-	41, // 85: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
-	44, // 86: sttattus.dating.v1.DatingService.ListMyBlocks:output_type -> sttattus.dating.v1.ListMyBlocksResponse
-	46, // 87: sttattus.dating.v1.DatingService.BlockUser:output_type -> sttattus.dating.v1.BlockUserResponse
-	48, // 88: sttattus.dating.v1.DatingService.UnblockUser:output_type -> sttattus.dating.v1.UnblockUserResponse
-	51, // 89: sttattus.dating.v1.DatingService.ListMyReports:output_type -> sttattus.dating.v1.ListMyReportsResponse
-	53, // 90: sttattus.dating.v1.DatingService.ReportUser:output_type -> sttattus.dating.v1.ReportUserResponse
-	56, // 91: sttattus.dating.v1.DatingService.GetPanicContact:output_type -> sttattus.dating.v1.GetPanicContactResponse
-	58, // 92: sttattus.dating.v1.DatingService.UpsertPanicContact:output_type -> sttattus.dating.v1.UpsertPanicContactResponse
-	61, // 93: sttattus.dating.v1.DatingService.GetPrivacyAxes:output_type -> sttattus.dating.v1.GetPrivacyAxesResponse
-	63, // 94: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:output_type -> sttattus.dating.v1.UpsertPrivacyAxesResponse
-	66, // 95: sttattus.dating.v1.DatingService.ListAtlasMapPoints:output_type -> sttattus.dating.v1.ListAtlasMapPointsResponse
-	69, // 96: sttattus.dating.v1.DatingService.ListLiveRooms:output_type -> sttattus.dating.v1.ListLiveRoomsResponse
-	71, // 97: sttattus.dating.v1.DatingService.CreateAgoraRoom:output_type -> sttattus.dating.v1.CreateAgoraRoomResponse
-	73, // 98: sttattus.dating.v1.DatingService.EndAgoraRoom:output_type -> sttattus.dating.v1.EndAgoraRoomResponse
-	75, // 99: sttattus.dating.v1.DatingService.MintLiveKitToken:output_type -> sttattus.dating.v1.MintLiveKitTokenResponse
-	78, // 100: sttattus.dating.v1.DatingService.AttachMediaToMessage:output_type -> sttattus.dating.v1.AttachMediaToMessageResponse
-	80, // 101: sttattus.dating.v1.DatingService.ListMessageAttachments:output_type -> sttattus.dating.v1.ListMessageAttachmentsResponse
-	70, // [70:102] is the sub-list for method output_type
-	38, // [38:70] is the sub-list for method input_type
-	38, // [38:38] is the sub-list for extension type_name
-	38, // [38:38] is the sub-list for extension extendee
-	0,  // [0:38] is the sub-list for field type_name
+	81, // 38: sttattus.dating.v1.ListRestaurantsResponse.restaurants:type_name -> sttattus.dating.v1.Restaurant
+	84, // 39: sttattus.dating.v1.CreateReservationResponse.reservation:type_name -> sttattus.dating.v1.Reservation
+	84, // 40: sttattus.dating.v1.ListMyReservationsResponse.reservations:type_name -> sttattus.dating.v1.Reservation
+	84, // 41: sttattus.dating.v1.CancelReservationResponse.reservation:type_name -> sttattus.dating.v1.Reservation
+	7,  // 42: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
+	9,  // 43: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
+	11, // 44: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
+	13, // 45: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
+	15, // 46: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
+	17, // 47: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
+	19, // 48: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
+	22, // 49: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
+	24, // 50: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
+	27, // 51: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
+	29, // 52: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
+	31, // 53: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
+	34, // 54: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
+	36, // 55: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
+	38, // 56: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
+	40, // 57: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
+	43, // 58: sttattus.dating.v1.DatingService.ListMyBlocks:input_type -> sttattus.dating.v1.ListMyBlocksRequest
+	45, // 59: sttattus.dating.v1.DatingService.BlockUser:input_type -> sttattus.dating.v1.BlockUserRequest
+	47, // 60: sttattus.dating.v1.DatingService.UnblockUser:input_type -> sttattus.dating.v1.UnblockUserRequest
+	50, // 61: sttattus.dating.v1.DatingService.ListMyReports:input_type -> sttattus.dating.v1.ListMyReportsRequest
+	52, // 62: sttattus.dating.v1.DatingService.ReportUser:input_type -> sttattus.dating.v1.ReportUserRequest
+	55, // 63: sttattus.dating.v1.DatingService.GetPanicContact:input_type -> sttattus.dating.v1.GetPanicContactRequest
+	57, // 64: sttattus.dating.v1.DatingService.UpsertPanicContact:input_type -> sttattus.dating.v1.UpsertPanicContactRequest
+	60, // 65: sttattus.dating.v1.DatingService.GetPrivacyAxes:input_type -> sttattus.dating.v1.GetPrivacyAxesRequest
+	62, // 66: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:input_type -> sttattus.dating.v1.UpsertPrivacyAxesRequest
+	65, // 67: sttattus.dating.v1.DatingService.ListAtlasMapPoints:input_type -> sttattus.dating.v1.ListAtlasMapPointsRequest
+	68, // 68: sttattus.dating.v1.DatingService.ListLiveRooms:input_type -> sttattus.dating.v1.ListLiveRoomsRequest
+	70, // 69: sttattus.dating.v1.DatingService.CreateAgoraRoom:input_type -> sttattus.dating.v1.CreateAgoraRoomRequest
+	72, // 70: sttattus.dating.v1.DatingService.EndAgoraRoom:input_type -> sttattus.dating.v1.EndAgoraRoomRequest
+	74, // 71: sttattus.dating.v1.DatingService.MintLiveKitToken:input_type -> sttattus.dating.v1.MintLiveKitTokenRequest
+	77, // 72: sttattus.dating.v1.DatingService.AttachMediaToMessage:input_type -> sttattus.dating.v1.AttachMediaToMessageRequest
+	79, // 73: sttattus.dating.v1.DatingService.ListMessageAttachments:input_type -> sttattus.dating.v1.ListMessageAttachmentsRequest
+	82, // 74: sttattus.dating.v1.DatingService.ListRestaurants:input_type -> sttattus.dating.v1.ListRestaurantsRequest
+	85, // 75: sttattus.dating.v1.DatingService.CreateReservation:input_type -> sttattus.dating.v1.CreateReservationRequest
+	87, // 76: sttattus.dating.v1.DatingService.ListMyReservations:input_type -> sttattus.dating.v1.ListMyReservationsRequest
+	89, // 77: sttattus.dating.v1.DatingService.CancelReservation:input_type -> sttattus.dating.v1.CancelReservationRequest
+	8,  // 78: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
+	10, // 79: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
+	12, // 80: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
+	14, // 81: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
+	16, // 82: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
+	18, // 83: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
+	20, // 84: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
+	23, // 85: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
+	25, // 86: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
+	28, // 87: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
+	30, // 88: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
+	32, // 89: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
+	35, // 90: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
+	37, // 91: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
+	39, // 92: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
+	41, // 93: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
+	44, // 94: sttattus.dating.v1.DatingService.ListMyBlocks:output_type -> sttattus.dating.v1.ListMyBlocksResponse
+	46, // 95: sttattus.dating.v1.DatingService.BlockUser:output_type -> sttattus.dating.v1.BlockUserResponse
+	48, // 96: sttattus.dating.v1.DatingService.UnblockUser:output_type -> sttattus.dating.v1.UnblockUserResponse
+	51, // 97: sttattus.dating.v1.DatingService.ListMyReports:output_type -> sttattus.dating.v1.ListMyReportsResponse
+	53, // 98: sttattus.dating.v1.DatingService.ReportUser:output_type -> sttattus.dating.v1.ReportUserResponse
+	56, // 99: sttattus.dating.v1.DatingService.GetPanicContact:output_type -> sttattus.dating.v1.GetPanicContactResponse
+	58, // 100: sttattus.dating.v1.DatingService.UpsertPanicContact:output_type -> sttattus.dating.v1.UpsertPanicContactResponse
+	61, // 101: sttattus.dating.v1.DatingService.GetPrivacyAxes:output_type -> sttattus.dating.v1.GetPrivacyAxesResponse
+	63, // 102: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:output_type -> sttattus.dating.v1.UpsertPrivacyAxesResponse
+	66, // 103: sttattus.dating.v1.DatingService.ListAtlasMapPoints:output_type -> sttattus.dating.v1.ListAtlasMapPointsResponse
+	69, // 104: sttattus.dating.v1.DatingService.ListLiveRooms:output_type -> sttattus.dating.v1.ListLiveRoomsResponse
+	71, // 105: sttattus.dating.v1.DatingService.CreateAgoraRoom:output_type -> sttattus.dating.v1.CreateAgoraRoomResponse
+	73, // 106: sttattus.dating.v1.DatingService.EndAgoraRoom:output_type -> sttattus.dating.v1.EndAgoraRoomResponse
+	75, // 107: sttattus.dating.v1.DatingService.MintLiveKitToken:output_type -> sttattus.dating.v1.MintLiveKitTokenResponse
+	78, // 108: sttattus.dating.v1.DatingService.AttachMediaToMessage:output_type -> sttattus.dating.v1.AttachMediaToMessageResponse
+	80, // 109: sttattus.dating.v1.DatingService.ListMessageAttachments:output_type -> sttattus.dating.v1.ListMessageAttachmentsResponse
+	83, // 110: sttattus.dating.v1.DatingService.ListRestaurants:output_type -> sttattus.dating.v1.ListRestaurantsResponse
+	86, // 111: sttattus.dating.v1.DatingService.CreateReservation:output_type -> sttattus.dating.v1.CreateReservationResponse
+	88, // 112: sttattus.dating.v1.DatingService.ListMyReservations:output_type -> sttattus.dating.v1.ListMyReservationsResponse
+	90, // 113: sttattus.dating.v1.DatingService.CancelReservation:output_type -> sttattus.dating.v1.CancelReservationResponse
+	78, // [78:114] is the sub-list for method output_type
+	42, // [42:78] is the sub-list for method input_type
+	42, // [42:42] is the sub-list for extension type_name
+	42, // [42:42] is the sub-list for extension extendee
+	0,  // [0:42] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dating_v1_dating_proto_init() }
@@ -4911,7 +5587,7 @@ func file_sttattus_dating_v1_dating_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_dating_v1_dating_proto_rawDesc), len(file_sttattus_dating_v1_dating_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   79,
+			NumMessages:   89,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

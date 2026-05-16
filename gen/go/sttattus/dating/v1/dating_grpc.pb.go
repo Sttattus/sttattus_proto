@@ -51,6 +51,10 @@ const (
 	DatingService_MintLiveKitToken_FullMethodName       = "/sttattus.dating.v1.DatingService/MintLiveKitToken"
 	DatingService_AttachMediaToMessage_FullMethodName   = "/sttattus.dating.v1.DatingService/AttachMediaToMessage"
 	DatingService_ListMessageAttachments_FullMethodName = "/sttattus.dating.v1.DatingService/ListMessageAttachments"
+	DatingService_ListRestaurants_FullMethodName        = "/sttattus.dating.v1.DatingService/ListRestaurants"
+	DatingService_CreateReservation_FullMethodName      = "/sttattus.dating.v1.DatingService/CreateReservation"
+	DatingService_ListMyReservations_FullMethodName     = "/sttattus.dating.v1.DatingService/ListMyReservations"
+	DatingService_CancelReservation_FullMethodName      = "/sttattus.dating.v1.DatingService/CancelReservation"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -96,6 +100,12 @@ type DatingServiceClient interface {
 	// A9P2.4 — voice + video message attachments.
 	AttachMediaToMessage(ctx context.Context, in *AttachMediaToMessageRequest, opts ...grpc.CallOption) (*AttachMediaToMessageResponse, error)
 	ListMessageAttachments(ctx context.Context, in *ListMessageAttachmentsRequest, opts ...grpc.CallOption) (*ListMessageAttachmentsResponse, error)
+	// A9P2.5 — restaurant partner integration (directory +
+	// reservation ledger; partner API call is concierge-routed today).
+	ListRestaurants(ctx context.Context, in *ListRestaurantsRequest, opts ...grpc.CallOption) (*ListRestaurantsResponse, error)
+	CreateReservation(ctx context.Context, in *CreateReservationRequest, opts ...grpc.CallOption) (*CreateReservationResponse, error)
+	ListMyReservations(ctx context.Context, in *ListMyReservationsRequest, opts ...grpc.CallOption) (*ListMyReservationsResponse, error)
+	CancelReservation(ctx context.Context, in *CancelReservationRequest, opts ...grpc.CallOption) (*CancelReservationResponse, error)
 }
 
 type datingServiceClient struct {
@@ -444,6 +454,46 @@ func (c *datingServiceClient) ListMessageAttachments(ctx context.Context, in *Li
 	return out, nil
 }
 
+func (c *datingServiceClient) ListRestaurants(ctx context.Context, in *ListRestaurantsRequest, opts ...grpc.CallOption) (*ListRestaurantsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListRestaurantsResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListRestaurants_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) CreateReservation(ctx context.Context, in *CreateReservationRequest, opts ...grpc.CallOption) (*CreateReservationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateReservationResponse)
+	err := c.cc.Invoke(ctx, DatingService_CreateReservation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ListMyReservations(ctx context.Context, in *ListMyReservationsRequest, opts ...grpc.CallOption) (*ListMyReservationsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyReservationsResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListMyReservations_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) CancelReservation(ctx context.Context, in *CancelReservationRequest, opts ...grpc.CallOption) (*CancelReservationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CancelReservationResponse)
+	err := c.cc.Invoke(ctx, DatingService_CancelReservation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatingServiceServer is the server API for DatingService service.
 // All implementations must embed UnimplementedDatingServiceServer
 // for forward compatibility.
@@ -487,6 +537,12 @@ type DatingServiceServer interface {
 	// A9P2.4 — voice + video message attachments.
 	AttachMediaToMessage(context.Context, *AttachMediaToMessageRequest) (*AttachMediaToMessageResponse, error)
 	ListMessageAttachments(context.Context, *ListMessageAttachmentsRequest) (*ListMessageAttachmentsResponse, error)
+	// A9P2.5 — restaurant partner integration (directory +
+	// reservation ledger; partner API call is concierge-routed today).
+	ListRestaurants(context.Context, *ListRestaurantsRequest) (*ListRestaurantsResponse, error)
+	CreateReservation(context.Context, *CreateReservationRequest) (*CreateReservationResponse, error)
+	ListMyReservations(context.Context, *ListMyReservationsRequest) (*ListMyReservationsResponse, error)
+	CancelReservation(context.Context, *CancelReservationRequest) (*CancelReservationResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -592,6 +648,18 @@ func (UnimplementedDatingServiceServer) AttachMediaToMessage(context.Context, *A
 }
 func (UnimplementedDatingServiceServer) ListMessageAttachments(context.Context, *ListMessageAttachmentsRequest) (*ListMessageAttachmentsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMessageAttachments not implemented")
+}
+func (UnimplementedDatingServiceServer) ListRestaurants(context.Context, *ListRestaurantsRequest) (*ListRestaurantsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListRestaurants not implemented")
+}
+func (UnimplementedDatingServiceServer) CreateReservation(context.Context, *CreateReservationRequest) (*CreateReservationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateReservation not implemented")
+}
+func (UnimplementedDatingServiceServer) ListMyReservations(context.Context, *ListMyReservationsRequest) (*ListMyReservationsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyReservations not implemented")
+}
+func (UnimplementedDatingServiceServer) CancelReservation(context.Context, *CancelReservationRequest) (*CancelReservationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CancelReservation not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -1176,6 +1244,78 @@ func _DatingService_ListMessageAttachments_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_ListRestaurants_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRestaurantsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListRestaurants(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListRestaurants_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListRestaurants(ctx, req.(*ListRestaurantsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_CreateReservation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateReservationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).CreateReservation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_CreateReservation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).CreateReservation(ctx, req.(*CreateReservationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ListMyReservations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyReservationsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListMyReservations(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListMyReservations_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListMyReservations(ctx, req.(*ListMyReservationsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_CancelReservation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CancelReservationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).CancelReservation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_CancelReservation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).CancelReservation(ctx, req.(*CancelReservationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatingService_ServiceDesc is the grpc.ServiceDesc for DatingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1302,6 +1442,22 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListMessageAttachments",
 			Handler:    _DatingService_ListMessageAttachments_Handler,
+		},
+		{
+			MethodName: "ListRestaurants",
+			Handler:    _DatingService_ListRestaurants_Handler,
+		},
+		{
+			MethodName: "CreateReservation",
+			Handler:    _DatingService_CreateReservation_Handler,
+		},
+		{
+			MethodName: "ListMyReservations",
+			Handler:    _DatingService_ListMyReservations_Handler,
+		},
+		{
+			MethodName: "CancelReservation",
+			Handler:    _DatingService_CancelReservation_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

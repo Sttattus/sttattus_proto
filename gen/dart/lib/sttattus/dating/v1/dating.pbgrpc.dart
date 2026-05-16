@@ -167,6 +167,24 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listMessageAttachments, request, options: options);
   }
 
+  /// A9P2.5 — restaurant partner integration (directory +
+  /// reservation ledger; partner API call is concierge-routed today).
+  $grpc.ResponseFuture<$0.ListRestaurantsResponse> listRestaurants($0.ListRestaurantsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listRestaurants, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateReservationResponse> createReservation($0.CreateReservationRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createReservation, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyReservationsResponse> listMyReservations($0.ListMyReservationsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyReservations, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CancelReservationResponse> cancelReservation($0.CancelReservationRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$cancelReservation, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getProfile = $grpc.ClientMethod<$0.GetProfileRequest, $0.GetProfileResponse>(
@@ -297,6 +315,22 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/ListMessageAttachments',
       ($0.ListMessageAttachmentsRequest value) => value.writeToBuffer(),
       $0.ListMessageAttachmentsResponse.fromBuffer);
+  static final _$listRestaurants = $grpc.ClientMethod<$0.ListRestaurantsRequest, $0.ListRestaurantsResponse>(
+      '/sttattus.dating.v1.DatingService/ListRestaurants',
+      ($0.ListRestaurantsRequest value) => value.writeToBuffer(),
+      $0.ListRestaurantsResponse.fromBuffer);
+  static final _$createReservation = $grpc.ClientMethod<$0.CreateReservationRequest, $0.CreateReservationResponse>(
+      '/sttattus.dating.v1.DatingService/CreateReservation',
+      ($0.CreateReservationRequest value) => value.writeToBuffer(),
+      $0.CreateReservationResponse.fromBuffer);
+  static final _$listMyReservations = $grpc.ClientMethod<$0.ListMyReservationsRequest, $0.ListMyReservationsResponse>(
+      '/sttattus.dating.v1.DatingService/ListMyReservations',
+      ($0.ListMyReservationsRequest value) => value.writeToBuffer(),
+      $0.ListMyReservationsResponse.fromBuffer);
+  static final _$cancelReservation = $grpc.ClientMethod<$0.CancelReservationRequest, $0.CancelReservationResponse>(
+      '/sttattus.dating.v1.DatingService/CancelReservation',
+      ($0.CancelReservationRequest value) => value.writeToBuffer(),
+      $0.CancelReservationResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dating.v1.DatingService')
@@ -528,6 +562,34 @@ abstract class DatingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListMessageAttachmentsRequest.fromBuffer(value),
         ($0.ListMessageAttachmentsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListRestaurantsRequest, $0.ListRestaurantsResponse>(
+        'ListRestaurants',
+        listRestaurants_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListRestaurantsRequest.fromBuffer(value),
+        ($0.ListRestaurantsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateReservationRequest, $0.CreateReservationResponse>(
+        'CreateReservation',
+        createReservation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateReservationRequest.fromBuffer(value),
+        ($0.CreateReservationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyReservationsRequest, $0.ListMyReservationsResponse>(
+        'ListMyReservations',
+        listMyReservations_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyReservationsRequest.fromBuffer(value),
+        ($0.ListMyReservationsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CancelReservationRequest, $0.CancelReservationResponse>(
+        'CancelReservation',
+        cancelReservation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CancelReservationRequest.fromBuffer(value),
+        ($0.CancelReservationResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProfileRequest> $request) async {
@@ -721,5 +783,29 @@ abstract class DatingServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListMessageAttachmentsResponse> listMessageAttachments($grpc.ServiceCall call, $0.ListMessageAttachmentsRequest request);
+
+  $async.Future<$0.ListRestaurantsResponse> listRestaurants_Pre($grpc.ServiceCall $call, $async.Future<$0.ListRestaurantsRequest> $request) async {
+    return listRestaurants($call, await $request);
+  }
+
+  $async.Future<$0.ListRestaurantsResponse> listRestaurants($grpc.ServiceCall call, $0.ListRestaurantsRequest request);
+
+  $async.Future<$0.CreateReservationResponse> createReservation_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateReservationRequest> $request) async {
+    return createReservation($call, await $request);
+  }
+
+  $async.Future<$0.CreateReservationResponse> createReservation($grpc.ServiceCall call, $0.CreateReservationRequest request);
+
+  $async.Future<$0.ListMyReservationsResponse> listMyReservations_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyReservationsRequest> $request) async {
+    return listMyReservations($call, await $request);
+  }
+
+  $async.Future<$0.ListMyReservationsResponse> listMyReservations($grpc.ServiceCall call, $0.ListMyReservationsRequest request);
+
+  $async.Future<$0.CancelReservationResponse> cancelReservation_Pre($grpc.ServiceCall $call, $async.Future<$0.CancelReservationRequest> $request) async {
+    return cancelReservation($call, await $request);
+  }
+
+  $async.Future<$0.CancelReservationResponse> cancelReservation($grpc.ServiceCall call, $0.CancelReservationRequest request);
 
 }

@@ -3595,3 +3595,505 @@ export class ListMessageAttachmentsResponse extends Message$1<ListMessageAttachm
   }
 }
 
+/**
+ * @generated from message sttattus.dating.v1.Restaurant
+ */
+export class Restaurant extends Message$1<Restaurant> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string city = 3;
+   */
+  city = "";
+
+  /**
+   * @generated from field: string neighborhood = 4;
+   */
+  neighborhood = "";
+
+  /**
+   * 'opentable' | 'resy' | 'manual'
+   *
+   * @generated from field: string partner = 5;
+   */
+  partner = "";
+
+  /**
+   * @generated from field: string partner_external_id = 6;
+   */
+  partnerExternalId = "";
+
+  /**
+   * @generated from field: bool is_atlas_curated = 7;
+   */
+  isAtlasCurated = false;
+
+  /**
+   * @generated from field: string cuisine = 8;
+   */
+  cuisine = "";
+
+  /**
+   * 1..5
+   *
+   * @generated from field: int32 price_tier = 9;
+   */
+  priceTier = 0;
+
+  constructor(data?: PartialMessage<Restaurant>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.Restaurant";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "neighborhood", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "partner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "partner_external_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "is_atlas_curated", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "cuisine", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "price_tier", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Restaurant {
+    return new Restaurant().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Restaurant {
+    return new Restaurant().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Restaurant {
+    return new Restaurant().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: Restaurant | PlainMessage<Restaurant> | undefined, b: Restaurant | PlainMessage<Restaurant> | undefined): boolean {
+    return proto3.util.equals(Restaurant, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListRestaurantsRequest
+ */
+export class ListRestaurantsRequest extends Message$1<ListRestaurantsRequest> {
+  /**
+   * Empty city = curated set (the Atlas Twelve).
+   *
+   * @generated from field: string city = 1;
+   */
+  city = "";
+
+  constructor(data?: PartialMessage<ListRestaurantsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListRestaurantsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListRestaurantsRequest {
+    return new ListRestaurantsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListRestaurantsRequest {
+    return new ListRestaurantsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListRestaurantsRequest {
+    return new ListRestaurantsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListRestaurantsRequest | PlainMessage<ListRestaurantsRequest> | undefined, b: ListRestaurantsRequest | PlainMessage<ListRestaurantsRequest> | undefined): boolean {
+    return proto3.util.equals(ListRestaurantsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListRestaurantsResponse
+ */
+export class ListRestaurantsResponse extends Message$1<ListRestaurantsResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.Restaurant restaurants = 1;
+   */
+  restaurants: Restaurant[] = [];
+
+  constructor(data?: PartialMessage<ListRestaurantsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListRestaurantsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "restaurants", kind: "message", T: Restaurant, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListRestaurantsResponse {
+    return new ListRestaurantsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListRestaurantsResponse {
+    return new ListRestaurantsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListRestaurantsResponse {
+    return new ListRestaurantsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListRestaurantsResponse | PlainMessage<ListRestaurantsResponse> | undefined, b: ListRestaurantsResponse | PlainMessage<ListRestaurantsResponse> | undefined): boolean {
+    return proto3.util.equals(ListRestaurantsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.Reservation
+ */
+export class Reservation extends Message$1<Reservation> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string restaurant_id = 2;
+   */
+  restaurantId = "";
+
+  /**
+   * empty when unscoped
+   *
+   * @generated from field: string match_id = 3;
+   */
+  matchId = "";
+
+  /**
+   * @generated from field: int32 party_size = 4;
+   */
+  partySize = 0;
+
+  /**
+   * @generated from field: int64 requested_at = 5;
+   */
+  requestedAt = protoInt64.zero;
+
+  /**
+   * 'requested' | 'confirmed' | 'declined' | 'cancelled'
+   *
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string partner_reservation_id = 7;
+   */
+  partnerReservationId = "";
+
+  /**
+   * @generated from field: string note = 8;
+   */
+  note = "";
+
+  /**
+   * @generated from field: int64 created_at = 9;
+   */
+  createdAt = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 decided_at = 10;
+   */
+  decidedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<Reservation>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.Reservation";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "restaurant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "match_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "party_size", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "requested_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "partner_reservation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: "decided_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Reservation {
+    return new Reservation().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Reservation {
+    return new Reservation().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Reservation {
+    return new Reservation().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: Reservation | PlainMessage<Reservation> | undefined, b: Reservation | PlainMessage<Reservation> | undefined): boolean {
+    return proto3.util.equals(Reservation, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.CreateReservationRequest
+ */
+export class CreateReservationRequest extends Message$1<CreateReservationRequest> {
+  /**
+   * @generated from field: string restaurant_id = 1;
+   */
+  restaurantId = "";
+
+  /**
+   * empty when solo / unscoped
+   *
+   * @generated from field: string match_id = 2;
+   */
+  matchId = "";
+
+  /**
+   * @generated from field: int32 party_size = 3;
+   */
+  partySize = 0;
+
+  /**
+   * @generated from field: int64 requested_at = 4;
+   */
+  requestedAt = protoInt64.zero;
+
+  /**
+   * @generated from field: string note = 5;
+   */
+  note = "";
+
+  constructor(data?: PartialMessage<CreateReservationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.CreateReservationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "restaurant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "match_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "party_size", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "requested_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateReservationRequest {
+    return new CreateReservationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateReservationRequest {
+    return new CreateReservationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateReservationRequest {
+    return new CreateReservationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateReservationRequest | PlainMessage<CreateReservationRequest> | undefined, b: CreateReservationRequest | PlainMessage<CreateReservationRequest> | undefined): boolean {
+    return proto3.util.equals(CreateReservationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.CreateReservationResponse
+ */
+export class CreateReservationResponse extends Message$1<CreateReservationResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.Reservation reservation = 1;
+   */
+  reservation?: Reservation;
+
+  constructor(data?: PartialMessage<CreateReservationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.CreateReservationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "reservation", kind: "message", T: Reservation },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateReservationResponse {
+    return new CreateReservationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateReservationResponse {
+    return new CreateReservationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateReservationResponse {
+    return new CreateReservationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateReservationResponse | PlainMessage<CreateReservationResponse> | undefined, b: CreateReservationResponse | PlainMessage<CreateReservationResponse> | undefined): boolean {
+    return proto3.util.equals(CreateReservationResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListMyReservationsRequest
+ */
+export class ListMyReservationsRequest extends Message$1<ListMyReservationsRequest> {
+  constructor(data?: PartialMessage<ListMyReservationsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListMyReservationsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyReservationsRequest {
+    return new ListMyReservationsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyReservationsRequest {
+    return new ListMyReservationsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyReservationsRequest {
+    return new ListMyReservationsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyReservationsRequest | PlainMessage<ListMyReservationsRequest> | undefined, b: ListMyReservationsRequest | PlainMessage<ListMyReservationsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyReservationsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListMyReservationsResponse
+ */
+export class ListMyReservationsResponse extends Message$1<ListMyReservationsResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.Reservation reservations = 1;
+   */
+  reservations: Reservation[] = [];
+
+  constructor(data?: PartialMessage<ListMyReservationsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListMyReservationsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "reservations", kind: "message", T: Reservation, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyReservationsResponse {
+    return new ListMyReservationsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyReservationsResponse {
+    return new ListMyReservationsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyReservationsResponse {
+    return new ListMyReservationsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyReservationsResponse | PlainMessage<ListMyReservationsResponse> | undefined, b: ListMyReservationsResponse | PlainMessage<ListMyReservationsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyReservationsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.CancelReservationRequest
+ */
+export class CancelReservationRequest extends Message$1<CancelReservationRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  constructor(data?: PartialMessage<CancelReservationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.CancelReservationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CancelReservationRequest {
+    return new CancelReservationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CancelReservationRequest {
+    return new CancelReservationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CancelReservationRequest {
+    return new CancelReservationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CancelReservationRequest | PlainMessage<CancelReservationRequest> | undefined, b: CancelReservationRequest | PlainMessage<CancelReservationRequest> | undefined): boolean {
+    return proto3.util.equals(CancelReservationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.CancelReservationResponse
+ */
+export class CancelReservationResponse extends Message$1<CancelReservationResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.Reservation reservation = 1;
+   */
+  reservation?: Reservation;
+
+  constructor(data?: PartialMessage<CancelReservationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.CancelReservationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "reservation", kind: "message", T: Reservation },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CancelReservationResponse {
+    return new CancelReservationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CancelReservationResponse {
+    return new CancelReservationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CancelReservationResponse {
+    return new CancelReservationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CancelReservationResponse | PlainMessage<CancelReservationResponse> | undefined, b: CancelReservationResponse | PlainMessage<CancelReservationResponse> | undefined): boolean {
+    return proto3.util.equals(CancelReservationResponse, a, b);
+  }
+}
+

@@ -4711,6 +4711,697 @@ class ListMessageAttachmentsResponse extends $pb.GeneratedMessage {
   $pb.PbList<MessageAttachment> get attachments => $_getList(0);
 }
 
+class Restaurant extends $pb.GeneratedMessage {
+  factory Restaurant({
+    $core.String? id,
+    $core.String? name,
+    $core.String? city,
+    $core.String? neighborhood,
+    $core.String? partner,
+    $core.String? partnerExternalId,
+    $core.bool? isAtlasCurated,
+    $core.String? cuisine,
+    $core.int? priceTier,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (city != null) result.city = city;
+    if (neighborhood != null) result.neighborhood = neighborhood;
+    if (partner != null) result.partner = partner;
+    if (partnerExternalId != null) result.partnerExternalId = partnerExternalId;
+    if (isAtlasCurated != null) result.isAtlasCurated = isAtlasCurated;
+    if (cuisine != null) result.cuisine = cuisine;
+    if (priceTier != null) result.priceTier = priceTier;
+    return result;
+  }
+
+  Restaurant._();
+
+  factory Restaurant.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Restaurant.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Restaurant', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'city')
+    ..aOS(4, _omitFieldNames ? '' : 'neighborhood')
+    ..aOS(5, _omitFieldNames ? '' : 'partner')
+    ..aOS(6, _omitFieldNames ? '' : 'partnerExternalId')
+    ..aOB(7, _omitFieldNames ? '' : 'isAtlasCurated')
+    ..aOS(8, _omitFieldNames ? '' : 'cuisine')
+    ..a<$core.int>(9, _omitFieldNames ? '' : 'priceTier', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Restaurant clone() => Restaurant()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Restaurant copyWith(void Function(Restaurant) updates) => super.copyWith((message) => updates(message as Restaurant)) as Restaurant;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Restaurant create() => Restaurant._();
+  @$core.override
+  Restaurant createEmptyInstance() => create();
+  static $pb.PbList<Restaurant> createRepeated() => $pb.PbList<Restaurant>();
+  @$core.pragma('dart2js:noInline')
+  static Restaurant getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Restaurant>(create);
+  static Restaurant? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get city => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set city($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCity() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCity() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get neighborhood => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set neighborhood($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNeighborhood() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNeighborhood() => $_clearField(4);
+
+  /// 'opentable' | 'resy' | 'manual'
+  @$pb.TagNumber(5)
+  $core.String get partner => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set partner($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPartner() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPartner() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get partnerExternalId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set partnerExternalId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPartnerExternalId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPartnerExternalId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get isAtlasCurated => $_getBF(6);
+  @$pb.TagNumber(7)
+  set isAtlasCurated($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasIsAtlasCurated() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIsAtlasCurated() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get cuisine => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set cuisine($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCuisine() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCuisine() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get priceTier => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set priceTier($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPriceTier() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPriceTier() => $_clearField(9);
+}
+
+class ListRestaurantsRequest extends $pb.GeneratedMessage {
+  factory ListRestaurantsRequest({
+    $core.String? city,
+  }) {
+    final result = create();
+    if (city != null) result.city = city;
+    return result;
+  }
+
+  ListRestaurantsRequest._();
+
+  factory ListRestaurantsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListRestaurantsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRestaurantsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'city')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRestaurantsRequest clone() => ListRestaurantsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRestaurantsRequest copyWith(void Function(ListRestaurantsRequest) updates) => super.copyWith((message) => updates(message as ListRestaurantsRequest)) as ListRestaurantsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRestaurantsRequest create() => ListRestaurantsRequest._();
+  @$core.override
+  ListRestaurantsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListRestaurantsRequest> createRepeated() => $pb.PbList<ListRestaurantsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListRestaurantsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRestaurantsRequest>(create);
+  static ListRestaurantsRequest? _defaultInstance;
+
+  /// Empty city = curated set (the Atlas Twelve).
+  @$pb.TagNumber(1)
+  $core.String get city => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set city($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCity() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCity() => $_clearField(1);
+}
+
+class ListRestaurantsResponse extends $pb.GeneratedMessage {
+  factory ListRestaurantsResponse({
+    $core.Iterable<Restaurant>? restaurants,
+  }) {
+    final result = create();
+    if (restaurants != null) result.restaurants.addAll(restaurants);
+    return result;
+  }
+
+  ListRestaurantsResponse._();
+
+  factory ListRestaurantsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListRestaurantsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRestaurantsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..pc<Restaurant>(1, _omitFieldNames ? '' : 'restaurants', $pb.PbFieldType.PM, subBuilder: Restaurant.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRestaurantsResponse clone() => ListRestaurantsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRestaurantsResponse copyWith(void Function(ListRestaurantsResponse) updates) => super.copyWith((message) => updates(message as ListRestaurantsResponse)) as ListRestaurantsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRestaurantsResponse create() => ListRestaurantsResponse._();
+  @$core.override
+  ListRestaurantsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListRestaurantsResponse> createRepeated() => $pb.PbList<ListRestaurantsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListRestaurantsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRestaurantsResponse>(create);
+  static ListRestaurantsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Restaurant> get restaurants => $_getList(0);
+}
+
+class Reservation extends $pb.GeneratedMessage {
+  factory Reservation({
+    $core.String? id,
+    $core.String? restaurantId,
+    $core.String? matchId,
+    $core.int? partySize,
+    $fixnum.Int64? requestedAt,
+    $core.String? status,
+    $core.String? partnerReservationId,
+    $core.String? note,
+    $fixnum.Int64? createdAt,
+    $fixnum.Int64? decidedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (restaurantId != null) result.restaurantId = restaurantId;
+    if (matchId != null) result.matchId = matchId;
+    if (partySize != null) result.partySize = partySize;
+    if (requestedAt != null) result.requestedAt = requestedAt;
+    if (status != null) result.status = status;
+    if (partnerReservationId != null) result.partnerReservationId = partnerReservationId;
+    if (note != null) result.note = note;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (decidedAt != null) result.decidedAt = decidedAt;
+    return result;
+  }
+
+  Reservation._();
+
+  factory Reservation.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Reservation.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Reservation', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'restaurantId')
+    ..aOS(3, _omitFieldNames ? '' : 'matchId')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'partySize', $pb.PbFieldType.O3)
+    ..aInt64(5, _omitFieldNames ? '' : 'requestedAt')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aOS(7, _omitFieldNames ? '' : 'partnerReservationId')
+    ..aOS(8, _omitFieldNames ? '' : 'note')
+    ..aInt64(9, _omitFieldNames ? '' : 'createdAt')
+    ..aInt64(10, _omitFieldNames ? '' : 'decidedAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Reservation clone() => Reservation()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Reservation copyWith(void Function(Reservation) updates) => super.copyWith((message) => updates(message as Reservation)) as Reservation;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Reservation create() => Reservation._();
+  @$core.override
+  Reservation createEmptyInstance() => create();
+  static $pb.PbList<Reservation> createRepeated() => $pb.PbList<Reservation>();
+  @$core.pragma('dart2js:noInline')
+  static Reservation getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Reservation>(create);
+  static Reservation? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get restaurantId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set restaurantId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRestaurantId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRestaurantId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get matchId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set matchId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMatchId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMatchId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get partySize => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set partySize($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPartySize() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPartySize() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get requestedAt => $_getI64(4);
+  @$pb.TagNumber(5)
+  set requestedAt($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRequestedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRequestedAt() => $_clearField(5);
+
+  /// 'requested' | 'confirmed' | 'declined' | 'cancelled'
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get partnerReservationId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set partnerReservationId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPartnerReservationId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPartnerReservationId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get note => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set note($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNote() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNote() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get createdAt => $_getI64(8);
+  @$pb.TagNumber(9)
+  set createdAt($fixnum.Int64 value) => $_setInt64(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCreatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCreatedAt() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get decidedAt => $_getI64(9);
+  @$pb.TagNumber(10)
+  set decidedAt($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasDecidedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearDecidedAt() => $_clearField(10);
+}
+
+class CreateReservationRequest extends $pb.GeneratedMessage {
+  factory CreateReservationRequest({
+    $core.String? restaurantId,
+    $core.String? matchId,
+    $core.int? partySize,
+    $fixnum.Int64? requestedAt,
+    $core.String? note,
+  }) {
+    final result = create();
+    if (restaurantId != null) result.restaurantId = restaurantId;
+    if (matchId != null) result.matchId = matchId;
+    if (partySize != null) result.partySize = partySize;
+    if (requestedAt != null) result.requestedAt = requestedAt;
+    if (note != null) result.note = note;
+    return result;
+  }
+
+  CreateReservationRequest._();
+
+  factory CreateReservationRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateReservationRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateReservationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'restaurantId')
+    ..aOS(2, _omitFieldNames ? '' : 'matchId')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'partySize', $pb.PbFieldType.O3)
+    ..aInt64(4, _omitFieldNames ? '' : 'requestedAt')
+    ..aOS(5, _omitFieldNames ? '' : 'note')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateReservationRequest clone() => CreateReservationRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateReservationRequest copyWith(void Function(CreateReservationRequest) updates) => super.copyWith((message) => updates(message as CreateReservationRequest)) as CreateReservationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateReservationRequest create() => CreateReservationRequest._();
+  @$core.override
+  CreateReservationRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateReservationRequest> createRepeated() => $pb.PbList<CreateReservationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateReservationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateReservationRequest>(create);
+  static CreateReservationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get restaurantId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set restaurantId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRestaurantId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRestaurantId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get matchId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set matchId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMatchId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMatchId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get partySize => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set partySize($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPartySize() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPartySize() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get requestedAt => $_getI64(3);
+  @$pb.TagNumber(4)
+  set requestedAt($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRequestedAt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRequestedAt() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get note => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set note($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNote() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNote() => $_clearField(5);
+}
+
+class CreateReservationResponse extends $pb.GeneratedMessage {
+  factory CreateReservationResponse({
+    Reservation? reservation,
+  }) {
+    final result = create();
+    if (reservation != null) result.reservation = reservation;
+    return result;
+  }
+
+  CreateReservationResponse._();
+
+  factory CreateReservationResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateReservationResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateReservationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<Reservation>(1, _omitFieldNames ? '' : 'reservation', subBuilder: Reservation.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateReservationResponse clone() => CreateReservationResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateReservationResponse copyWith(void Function(CreateReservationResponse) updates) => super.copyWith((message) => updates(message as CreateReservationResponse)) as CreateReservationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateReservationResponse create() => CreateReservationResponse._();
+  @$core.override
+  CreateReservationResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateReservationResponse> createRepeated() => $pb.PbList<CreateReservationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateReservationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateReservationResponse>(create);
+  static CreateReservationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Reservation get reservation => $_getN(0);
+  @$pb.TagNumber(1)
+  set reservation(Reservation value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReservation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReservation() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Reservation ensureReservation() => $_ensure(0);
+}
+
+class ListMyReservationsRequest extends $pb.GeneratedMessage {
+  factory ListMyReservationsRequest() => create();
+
+  ListMyReservationsRequest._();
+
+  factory ListMyReservationsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyReservationsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyReservationsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyReservationsRequest clone() => ListMyReservationsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyReservationsRequest copyWith(void Function(ListMyReservationsRequest) updates) => super.copyWith((message) => updates(message as ListMyReservationsRequest)) as ListMyReservationsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyReservationsRequest create() => ListMyReservationsRequest._();
+  @$core.override
+  ListMyReservationsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyReservationsRequest> createRepeated() => $pb.PbList<ListMyReservationsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyReservationsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyReservationsRequest>(create);
+  static ListMyReservationsRequest? _defaultInstance;
+}
+
+class ListMyReservationsResponse extends $pb.GeneratedMessage {
+  factory ListMyReservationsResponse({
+    $core.Iterable<Reservation>? reservations,
+  }) {
+    final result = create();
+    if (reservations != null) result.reservations.addAll(reservations);
+    return result;
+  }
+
+  ListMyReservationsResponse._();
+
+  factory ListMyReservationsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyReservationsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyReservationsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..pc<Reservation>(1, _omitFieldNames ? '' : 'reservations', $pb.PbFieldType.PM, subBuilder: Reservation.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyReservationsResponse clone() => ListMyReservationsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyReservationsResponse copyWith(void Function(ListMyReservationsResponse) updates) => super.copyWith((message) => updates(message as ListMyReservationsResponse)) as ListMyReservationsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyReservationsResponse create() => ListMyReservationsResponse._();
+  @$core.override
+  ListMyReservationsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyReservationsResponse> createRepeated() => $pb.PbList<ListMyReservationsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyReservationsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyReservationsResponse>(create);
+  static ListMyReservationsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Reservation> get reservations => $_getList(0);
+}
+
+class CancelReservationRequest extends $pb.GeneratedMessage {
+  factory CancelReservationRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  CancelReservationRequest._();
+
+  factory CancelReservationRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CancelReservationRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CancelReservationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelReservationRequest clone() => CancelReservationRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelReservationRequest copyWith(void Function(CancelReservationRequest) updates) => super.copyWith((message) => updates(message as CancelReservationRequest)) as CancelReservationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CancelReservationRequest create() => CancelReservationRequest._();
+  @$core.override
+  CancelReservationRequest createEmptyInstance() => create();
+  static $pb.PbList<CancelReservationRequest> createRepeated() => $pb.PbList<CancelReservationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CancelReservationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CancelReservationRequest>(create);
+  static CancelReservationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class CancelReservationResponse extends $pb.GeneratedMessage {
+  factory CancelReservationResponse({
+    Reservation? reservation,
+  }) {
+    final result = create();
+    if (reservation != null) result.reservation = reservation;
+    return result;
+  }
+
+  CancelReservationResponse._();
+
+  factory CancelReservationResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CancelReservationResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CancelReservationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<Reservation>(1, _omitFieldNames ? '' : 'reservation', subBuilder: Reservation.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelReservationResponse clone() => CancelReservationResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelReservationResponse copyWith(void Function(CancelReservationResponse) updates) => super.copyWith((message) => updates(message as CancelReservationResponse)) as CancelReservationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CancelReservationResponse create() => CancelReservationResponse._();
+  @$core.override
+  CancelReservationResponse createEmptyInstance() => create();
+  static $pb.PbList<CancelReservationResponse> createRepeated() => $pb.PbList<CancelReservationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CancelReservationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CancelReservationResponse>(create);
+  static CancelReservationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Reservation get reservation => $_getN(0);
+  @$pb.TagNumber(1)
+  set reservation(Reservation value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReservation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReservation() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Reservation ensureReservation() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AttachMediaToMessageRequest, AttachMediaToMessageResponse, BlockUserRequest, BlockUserResponse, CreateAgoraRoomRequest, CreateAgoraRoomResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, EndAgoraRoomRequest, EndAgoraRoomResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListLiveRoomsRequest, ListLiveRoomsResponse, ListMatchesRequest, ListMatchesResponse, ListMessageAttachmentsRequest, ListMessageAttachmentsResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyReportsRequest, ListMyReportsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, MintLiveKitTokenRequest, MintLiveKitTokenResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
+import { AttachMediaToMessageRequest, AttachMediaToMessageResponse, BlockUserRequest, BlockUserResponse, CancelReservationRequest, CancelReservationResponse, CreateAgoraRoomRequest, CreateAgoraRoomResponse, CreateReservationRequest, CreateReservationResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, EndAgoraRoomRequest, EndAgoraRoomResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListLiveRoomsRequest, ListLiveRoomsResponse, ListMatchesRequest, ListMatchesResponse, ListMessageAttachmentsRequest, ListMessageAttachmentsResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyReportsRequest, ListMyReportsResponse, ListMyReservationsRequest, ListMyReservationsResponse, ListRestaurantsRequest, ListRestaurantsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, MintLiveKitTokenRequest, MintLiveKitTokenResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -312,6 +312,45 @@ export const DatingService = {
       name: "ListMessageAttachments",
       I: ListMessageAttachmentsRequest,
       O: ListMessageAttachmentsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9P2.5 — restaurant partner integration (directory +
+     * reservation ledger; partner API call is concierge-routed today).
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.ListRestaurants
+     */
+    listRestaurants: {
+      name: "ListRestaurants",
+      I: ListRestaurantsRequest,
+      O: ListRestaurantsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.CreateReservation
+     */
+    createReservation: {
+      name: "CreateReservation",
+      I: CreateReservationRequest,
+      O: CreateReservationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.ListMyReservations
+     */
+    listMyReservations: {
+      name: "ListMyReservations",
+      I: ListMyReservationsRequest,
+      O: ListMyReservationsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.CancelReservation
+     */
+    cancelReservation: {
+      name: "CancelReservation",
+      I: CancelReservationRequest,
+      O: CancelReservationResponse,
       kind: MethodKind.Unary,
     },
   }
