@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package sttattus.atlas.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/atlas/v1;atlasv1";
+
+// AtlasEngine — Rust analytics for the Atlas pillar (A9P2.1).
+// audits/atlas.md §10 Phase 2 item 1.
+
+// Embedding inputs — the raw signals the feature pipeline folds
+// into a vector. The caller is responsible for assembling these
+// from dating_profiles + the cross-pillar ranks.
+message EmbeddingInput {
+  string user_id = 1;
+  int32 intellectual_pace = 2;
+  int32 emotional_granularity = 3;
+  int32 physical_drive = 4;
+  int32 social_battery = 5;
+  double vault_rank = 6;
+  double apex_rank = 7;
+  double forge_rank = 8;
+  double luminance = 9;
+}
+
+message ComputeEmbeddingRequest {
+  EmbeddingInput input = 1;
+  // Engine-version target. 0 = current.
+  int32 engine_version = 2;
+}
+
+message ComputeEmbeddingResponse {
+  repeated double embedding = 1;
+  int32 engine_version = 2;
+}
+
+// 3D projection request. The caller passes the full embedding set
+// so the projection is deterministic over the same input.
+message ProjectionPoint {
+  string user_id = 1;
+  repeated double embedding = 2;
+}
+
+message ProjectUmapRequest {
+  repeated ProjectionPoint points = 1;
+}
+
+message Projected3D {
+  string user_id = 1;
+  double x = 2;
+  double y = 3;
+  double z = 4;
+}
+
+message ProjectUmapResponse {
+  repeated Projected3D points = 1;
+}
+
+// Compatibility report — two embeddings to a single cosine score
+// plus a per-axis delta vector. The dashboard's compatibility surface
+// (A9P2.6) reads this.
+message CompareEmbeddingsRequest {
+  string left_user_id = 1;
+  repeated double left = 2;
+  string right_user_id = 3;
+  repeated double right = 4;
+}
+
+message CompareEmbeddingsResponse {
+  double cosine_similarity = 1; // -1..1
+  // Per-axis absolute delta — caller can render which axes pull the
+  // pair apart.
+  repeated double per_axis_delta = 2;
+}
+
+service AtlasEngineService {
+  rpc ComputeEmbedding(ComputeEmbeddingRequest) returns (ComputeEmbeddingResponse);
+  rpc ProjectUmap(ProjectUmapRequest) returns (ProjectUmapResponse);
+  rpc CompareEmbeddings(CompareEmbeddingsRequest) returns (CompareEmbeddingsResponse);
+}
