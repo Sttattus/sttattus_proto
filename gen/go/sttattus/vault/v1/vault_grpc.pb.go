@@ -52,6 +52,8 @@ const (
 	VaultService_ListWalletChains_FullMethodName            = "/sttattus.vault.v1.VaultService/ListWalletChains"
 	VaultService_UpsertWalletChain_FullMethodName           = "/sttattus.vault.v1.VaultService/UpsertWalletChain"
 	VaultService_DeleteWalletChain_FullMethodName           = "/sttattus.vault.v1.VaultService/DeleteWalletChain"
+	VaultService_GetTaxSnapshot_FullMethodName              = "/sttattus.vault.v1.VaultService/GetTaxSnapshot"
+	VaultService_ExportUsCgtCsv_FullMethodName              = "/sttattus.vault.v1.VaultService/ExportUsCgtCsv"
 )
 
 // VaultServiceClient is the client API for VaultService service.
@@ -110,6 +112,10 @@ type VaultServiceClient interface {
 	ListWalletChains(ctx context.Context, in *ListWalletChainsRequest, opts ...grpc.CallOption) (*ListWalletChainsResponse, error)
 	UpsertWalletChain(ctx context.Context, in *UpsertWalletChainRequest, opts ...grpc.CallOption) (*UpsertWalletChainResponse, error)
 	DeleteWalletChain(ctx context.Context, in *DeleteWalletChainRequest, opts ...grpc.CallOption) (*DeleteWalletChainResponse, error)
+	// V8P2.7 — tax surface. v1 ships unrealised gains across Plaid
+	// holdings + cap-table line items and a US-CGT (Form 8949) CSV.
+	GetTaxSnapshot(ctx context.Context, in *GetTaxSnapshotRequest, opts ...grpc.CallOption) (*GetTaxSnapshotResponse, error)
+	ExportUsCgtCsv(ctx context.Context, in *ExportUsCgtCsvRequest, opts ...grpc.CallOption) (*ExportUsCgtCsvResponse, error)
 }
 
 type vaultServiceClient struct {
@@ -450,6 +456,26 @@ func (c *vaultServiceClient) DeleteWalletChain(ctx context.Context, in *DeleteWa
 	return out, nil
 }
 
+func (c *vaultServiceClient) GetTaxSnapshot(ctx context.Context, in *GetTaxSnapshotRequest, opts ...grpc.CallOption) (*GetTaxSnapshotResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTaxSnapshotResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetTaxSnapshot_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) ExportUsCgtCsv(ctx context.Context, in *ExportUsCgtCsvRequest, opts ...grpc.CallOption) (*ExportUsCgtCsvResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExportUsCgtCsvResponse)
+	err := c.cc.Invoke(ctx, VaultService_ExportUsCgtCsv_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultServiceServer is the server API for VaultService service.
 // All implementations must embed UnimplementedVaultServiceServer
 // for forward compatibility.
@@ -506,6 +532,10 @@ type VaultServiceServer interface {
 	ListWalletChains(context.Context, *ListWalletChainsRequest) (*ListWalletChainsResponse, error)
 	UpsertWalletChain(context.Context, *UpsertWalletChainRequest) (*UpsertWalletChainResponse, error)
 	DeleteWalletChain(context.Context, *DeleteWalletChainRequest) (*DeleteWalletChainResponse, error)
+	// V8P2.7 — tax surface. v1 ships unrealised gains across Plaid
+	// holdings + cap-table line items and a US-CGT (Form 8949) CSV.
+	GetTaxSnapshot(context.Context, *GetTaxSnapshotRequest) (*GetTaxSnapshotResponse, error)
+	ExportUsCgtCsv(context.Context, *ExportUsCgtCsvRequest) (*ExportUsCgtCsvResponse, error)
 	mustEmbedUnimplementedVaultServiceServer()
 }
 
@@ -614,6 +644,12 @@ func (UnimplementedVaultServiceServer) UpsertWalletChain(context.Context, *Upser
 }
 func (UnimplementedVaultServiceServer) DeleteWalletChain(context.Context, *DeleteWalletChainRequest) (*DeleteWalletChainResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method DeleteWalletChain not implemented")
+}
+func (UnimplementedVaultServiceServer) GetTaxSnapshot(context.Context, *GetTaxSnapshotRequest) (*GetTaxSnapshotResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTaxSnapshot not implemented")
+}
+func (UnimplementedVaultServiceServer) ExportUsCgtCsv(context.Context, *ExportUsCgtCsvRequest) (*ExportUsCgtCsvResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExportUsCgtCsv not implemented")
 }
 func (UnimplementedVaultServiceServer) mustEmbedUnimplementedVaultServiceServer() {}
 func (UnimplementedVaultServiceServer) testEmbeddedByValue()                      {}
@@ -1230,6 +1266,42 @@ func _VaultService_DeleteWalletChain_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultService_GetTaxSnapshot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTaxSnapshotRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetTaxSnapshot(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetTaxSnapshot_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetTaxSnapshot(ctx, req.(*GetTaxSnapshotRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_ExportUsCgtCsv_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExportUsCgtCsvRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ExportUsCgtCsv(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ExportUsCgtCsv_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ExportUsCgtCsv(ctx, req.(*ExportUsCgtCsvRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultService_ServiceDesc is the grpc.ServiceDesc for VaultService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1368,6 +1440,14 @@ var VaultService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteWalletChain",
 			Handler:    _VaultService_DeleteWalletChain_Handler,
+		},
+		{
+			MethodName: "GetTaxSnapshot",
+			Handler:    _VaultService_GetTaxSnapshot_Handler,
+		},
+		{
+			MethodName: "ExportUsCgtCsv",
+			Handler:    _VaultService_ExportUsCgtCsv_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

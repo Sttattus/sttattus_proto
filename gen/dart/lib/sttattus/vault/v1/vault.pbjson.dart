@@ -1191,3 +1191,71 @@ const DeleteWalletChainResponse$json = {
 final $typed_data.Uint8List deleteWalletChainResponseDescriptor = $convert.base64Decode(
     'ChlEZWxldGVXYWxsZXRDaGFpblJlc3BvbnNl');
 
+@$core.Deprecated('Use taxLotDescriptor instead')
+const TaxLot$json = {
+  '1': 'TaxLot',
+  '2': [
+    {'1': 'symbol', '3': 1, '4': 1, '5': 9, '10': 'symbol'},
+    {'1': 'cost_basis_usd', '3': 2, '4': 1, '5': 1, '10': 'costBasisUsd'},
+    {'1': 'current_value_usd', '3': 3, '4': 1, '5': 1, '10': 'currentValueUsd'},
+    {'1': 'unrealised_gain_usd', '3': 4, '4': 1, '5': 1, '10': 'unrealisedGainUsd'},
+    {'1': 'term', '3': 5, '4': 1, '5': 9, '10': 'term'},
+  ],
+};
+
+/// Descriptor for `TaxLot`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List taxLotDescriptor = $convert.base64Decode(
+    'CgZUYXhMb3QSFgoGc3ltYm9sGAEgASgJUgZzeW1ib2wSJAoOY29zdF9iYXNpc191c2QYAiABKA'
+    'FSDGNvc3RCYXNpc1VzZBIqChFjdXJyZW50X3ZhbHVlX3VzZBgDIAEoAVIPY3VycmVudFZhbHVl'
+    'VXNkEi4KE3VucmVhbGlzZWRfZ2Fpbl91c2QYBCABKAFSEXVucmVhbGlzZWRHYWluVXNkEhIKBH'
+    'Rlcm0YBSABKAlSBHRlcm0=');
+
+@$core.Deprecated('Use getTaxSnapshotRequestDescriptor instead')
+const GetTaxSnapshotRequest$json = {
+  '1': 'GetTaxSnapshotRequest',
+};
+
+/// Descriptor for `GetTaxSnapshotRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTaxSnapshotRequestDescriptor = $convert.base64Decode(
+    'ChVHZXRUYXhTbmFwc2hvdFJlcXVlc3Q=');
+
+@$core.Deprecated('Use getTaxSnapshotResponseDescriptor instead')
+const GetTaxSnapshotResponse$json = {
+  '1': 'GetTaxSnapshotResponse',
+  '2': [
+    {'1': 'total_unrealised_gain_usd', '3': 1, '4': 1, '5': 1, '10': 'totalUnrealisedGainUsd'},
+    {'1': 'total_unrealised_short_term_usd', '3': 2, '4': 1, '5': 1, '10': 'totalUnrealisedShortTermUsd'},
+    {'1': 'total_unrealised_long_term_usd', '3': 3, '4': 1, '5': 1, '10': 'totalUnrealisedLongTermUsd'},
+    {'1': 'lots', '3': 4, '4': 3, '5': 11, '6': '.sttattus.vault.v1.TaxLot', '10': 'lots'},
+  ],
+};
+
+/// Descriptor for `GetTaxSnapshotResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTaxSnapshotResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRUYXhTbmFwc2hvdFJlc3BvbnNlEjkKGXRvdGFsX3VucmVhbGlzZWRfZ2Fpbl91c2QYAS'
+    'ABKAFSFnRvdGFsVW5yZWFsaXNlZEdhaW5Vc2QSRAofdG90YWxfdW5yZWFsaXNlZF9zaG9ydF90'
+    'ZXJtX3VzZBgCIAEoAVIbdG90YWxVbnJlYWxpc2VkU2hvcnRUZXJtVXNkEkIKHnRvdGFsX3Vucm'
+    'VhbGlzZWRfbG9uZ190ZXJtX3VzZBgDIAEoAVIadG90YWxVbnJlYWxpc2VkTG9uZ1Rlcm1Vc2QS'
+    'LQoEbG90cxgEIAMoCzIZLnN0dGF0dHVzLnZhdWx0LnYxLlRheExvdFIEbG90cw==');
+
+@$core.Deprecated('Use exportUsCgtCsvRequestDescriptor instead')
+const ExportUsCgtCsvRequest$json = {
+  '1': 'ExportUsCgtCsvRequest',
+};
+
+/// Descriptor for `ExportUsCgtCsvRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exportUsCgtCsvRequestDescriptor = $convert.base64Decode(
+    'ChVFeHBvcnRVc0NndENzdlJlcXVlc3Q=');
+
+@$core.Deprecated('Use exportUsCgtCsvResponseDescriptor instead')
+const ExportUsCgtCsvResponse$json = {
+  '1': 'ExportUsCgtCsvResponse',
+  '2': [
+    {'1': 'csv', '3': 1, '4': 1, '5': 12, '10': 'csv'},
+  ],
+};
+
+/// Descriptor for `ExportUsCgtCsvResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exportUsCgtCsvResponseDescriptor = $convert.base64Decode(
+    'ChZFeHBvcnRVc0NndENzdlJlc3BvbnNlEhAKA2NzdhgBIAEoDFIDY3N2');
+

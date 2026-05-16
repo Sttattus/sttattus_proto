@@ -138,6 +138,11 @@ service VaultService {
   rpc ListWalletChains(ListWalletChainsRequest) returns (ListWalletChainsResponse);
   rpc UpsertWalletChain(UpsertWalletChainRequest) returns (UpsertWalletChainResponse);
   rpc DeleteWalletChain(DeleteWalletChainRequest) returns (DeleteWalletChainResponse);
+
+  // V8P2.7 — tax surface. v1 ships unrealised gains across Plaid
+  // holdings + cap-table line items and a US-CGT (Form 8949) CSV.
+  rpc GetTaxSnapshot(GetTaxSnapshotRequest) returns (GetTaxSnapshotResponse);
+  rpc ExportUsCgtCsv(ExportUsCgtCsvRequest) returns (ExportUsCgtCsvResponse);
 }
 
 message SyncWealthRequest {
@@ -523,3 +528,29 @@ message DeleteWalletChainRequest {
   string id = 1;
 }
 message DeleteWalletChainResponse {}
+
+// === Tax surface (V8P2.7) ===
+
+message TaxLot {
+  string symbol = 1;
+  double cost_basis_usd = 2;
+  double current_value_usd = 3;
+  double unrealised_gain_usd = 4; // signed
+  string term = 5; // 'short_term' | 'long_term'
+}
+
+message GetTaxSnapshotRequest {}
+
+message GetTaxSnapshotResponse {
+  double total_unrealised_gain_usd = 1;
+  double total_unrealised_short_term_usd = 2;
+  double total_unrealised_long_term_usd = 3;
+  repeated TaxLot lots = 4;
+}
+
+message ExportUsCgtCsvRequest {}
+
+message ExportUsCgtCsvResponse {
+  // Raw CSV bytes — the client writes / shares the file directly.
+  bytes csv = 1;
+}

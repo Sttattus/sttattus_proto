@@ -4368,6 +4368,267 @@ func (*DeleteWalletChainResponse) Descriptor() ([]byte, []int) {
 	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{79}
 }
 
+type TaxLot struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Symbol            string                 `protobuf:"bytes,1,opt,name=symbol,proto3" json:"symbol,omitempty"`
+	CostBasisUsd      float64                `protobuf:"fixed64,2,opt,name=cost_basis_usd,json=costBasisUsd,proto3" json:"cost_basis_usd,omitempty"`
+	CurrentValueUsd   float64                `protobuf:"fixed64,3,opt,name=current_value_usd,json=currentValueUsd,proto3" json:"current_value_usd,omitempty"`
+	UnrealisedGainUsd float64                `protobuf:"fixed64,4,opt,name=unrealised_gain_usd,json=unrealisedGainUsd,proto3" json:"unrealised_gain_usd,omitempty"` // signed
+	Term              string                 `protobuf:"bytes,5,opt,name=term,proto3" json:"term,omitempty"`                                                        // 'short_term' | 'long_term'
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *TaxLot) Reset() {
+	*x = TaxLot{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[80]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TaxLot) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaxLot) ProtoMessage() {}
+
+func (x *TaxLot) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[80]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaxLot.ProtoReflect.Descriptor instead.
+func (*TaxLot) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{80}
+}
+
+func (x *TaxLot) GetSymbol() string {
+	if x != nil {
+		return x.Symbol
+	}
+	return ""
+}
+
+func (x *TaxLot) GetCostBasisUsd() float64 {
+	if x != nil {
+		return x.CostBasisUsd
+	}
+	return 0
+}
+
+func (x *TaxLot) GetCurrentValueUsd() float64 {
+	if x != nil {
+		return x.CurrentValueUsd
+	}
+	return 0
+}
+
+func (x *TaxLot) GetUnrealisedGainUsd() float64 {
+	if x != nil {
+		return x.UnrealisedGainUsd
+	}
+	return 0
+}
+
+func (x *TaxLot) GetTerm() string {
+	if x != nil {
+		return x.Term
+	}
+	return ""
+}
+
+type GetTaxSnapshotRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTaxSnapshotRequest) Reset() {
+	*x = GetTaxSnapshotRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[81]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTaxSnapshotRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTaxSnapshotRequest) ProtoMessage() {}
+
+func (x *GetTaxSnapshotRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[81]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTaxSnapshotRequest.ProtoReflect.Descriptor instead.
+func (*GetTaxSnapshotRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{81}
+}
+
+type GetTaxSnapshotResponse struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	TotalUnrealisedGainUsd      float64                `protobuf:"fixed64,1,opt,name=total_unrealised_gain_usd,json=totalUnrealisedGainUsd,proto3" json:"total_unrealised_gain_usd,omitempty"`
+	TotalUnrealisedShortTermUsd float64                `protobuf:"fixed64,2,opt,name=total_unrealised_short_term_usd,json=totalUnrealisedShortTermUsd,proto3" json:"total_unrealised_short_term_usd,omitempty"`
+	TotalUnrealisedLongTermUsd  float64                `protobuf:"fixed64,3,opt,name=total_unrealised_long_term_usd,json=totalUnrealisedLongTermUsd,proto3" json:"total_unrealised_long_term_usd,omitempty"`
+	Lots                        []*TaxLot              `protobuf:"bytes,4,rep,name=lots,proto3" json:"lots,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *GetTaxSnapshotResponse) Reset() {
+	*x = GetTaxSnapshotResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[82]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTaxSnapshotResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTaxSnapshotResponse) ProtoMessage() {}
+
+func (x *GetTaxSnapshotResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[82]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTaxSnapshotResponse.ProtoReflect.Descriptor instead.
+func (*GetTaxSnapshotResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{82}
+}
+
+func (x *GetTaxSnapshotResponse) GetTotalUnrealisedGainUsd() float64 {
+	if x != nil {
+		return x.TotalUnrealisedGainUsd
+	}
+	return 0
+}
+
+func (x *GetTaxSnapshotResponse) GetTotalUnrealisedShortTermUsd() float64 {
+	if x != nil {
+		return x.TotalUnrealisedShortTermUsd
+	}
+	return 0
+}
+
+func (x *GetTaxSnapshotResponse) GetTotalUnrealisedLongTermUsd() float64 {
+	if x != nil {
+		return x.TotalUnrealisedLongTermUsd
+	}
+	return 0
+}
+
+func (x *GetTaxSnapshotResponse) GetLots() []*TaxLot {
+	if x != nil {
+		return x.Lots
+	}
+	return nil
+}
+
+type ExportUsCgtCsvRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExportUsCgtCsvRequest) Reset() {
+	*x = ExportUsCgtCsvRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[83]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExportUsCgtCsvRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExportUsCgtCsvRequest) ProtoMessage() {}
+
+func (x *ExportUsCgtCsvRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[83]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExportUsCgtCsvRequest.ProtoReflect.Descriptor instead.
+func (*ExportUsCgtCsvRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{83}
+}
+
+type ExportUsCgtCsvResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Raw CSV bytes — the client writes / shares the file directly.
+	Csv           []byte `protobuf:"bytes,1,opt,name=csv,proto3" json:"csv,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExportUsCgtCsvResponse) Reset() {
+	*x = ExportUsCgtCsvResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[84]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExportUsCgtCsvResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExportUsCgtCsvResponse) ProtoMessage() {}
+
+func (x *ExportUsCgtCsvResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[84]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExportUsCgtCsvResponse.ProtoReflect.Descriptor instead.
+func (*ExportUsCgtCsvResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{84}
+}
+
+func (x *ExportUsCgtCsvResponse) GetCsv() []byte {
+	if x != nil {
+		return x.Csv
+	}
+	return nil
+}
+
 var File_sttattus_vault_v1_vault_proto protoreflect.FileDescriptor
 
 const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
@@ -4643,7 +4904,22 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x06wallet\x18\x01 \x01(\v2\x1e.sttattus.vault.v1.WalletChainR\x06wallet\"*\n" +
 	"\x18DeleteWalletChainRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"\x1b\n" +
-	"\x19DeleteWalletChainResponse*\x9c\x01\n" +
+	"\x19DeleteWalletChainResponse\"\xb6\x01\n" +
+	"\x06TaxLot\x12\x16\n" +
+	"\x06symbol\x18\x01 \x01(\tR\x06symbol\x12$\n" +
+	"\x0ecost_basis_usd\x18\x02 \x01(\x01R\fcostBasisUsd\x12*\n" +
+	"\x11current_value_usd\x18\x03 \x01(\x01R\x0fcurrentValueUsd\x12.\n" +
+	"\x13unrealised_gain_usd\x18\x04 \x01(\x01R\x11unrealisedGainUsd\x12\x12\n" +
+	"\x04term\x18\x05 \x01(\tR\x04term\"\x17\n" +
+	"\x15GetTaxSnapshotRequest\"\x8c\x02\n" +
+	"\x16GetTaxSnapshotResponse\x129\n" +
+	"\x19total_unrealised_gain_usd\x18\x01 \x01(\x01R\x16totalUnrealisedGainUsd\x12D\n" +
+	"\x1ftotal_unrealised_short_term_usd\x18\x02 \x01(\x01R\x1btotalUnrealisedShortTermUsd\x12B\n" +
+	"\x1etotal_unrealised_long_term_usd\x18\x03 \x01(\x01R\x1atotalUnrealisedLongTermUsd\x12-\n" +
+	"\x04lots\x18\x04 \x03(\v2\x19.sttattus.vault.v1.TaxLotR\x04lots\"\x17\n" +
+	"\x15ExportUsCgtCsvRequest\"*\n" +
+	"\x16ExportUsCgtCsvResponse\x12\x10\n" +
+	"\x03csv\x18\x01 \x01(\fR\x03csv*\x9c\x01\n" +
 	"\rAssetCategory\x12\x1e\n" +
 	"\x1aASSET_CATEGORY_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13ASSET_CATEGORY_FIAT\x10\x01\x12\x19\n" +
@@ -4654,7 +4930,7 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xf3\x1d\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xc1\x1f\n" +
 	"\fVaultService\x12\\\n" +
 	"\vSubmitAsset\x12%.sttattus.vault.v1.SubmitAssetRequest\x1a&.sttattus.vault.v1.SubmitAssetResponse\x12_\n" +
 	"\fGetPortfolio\x12&.sttattus.vault.v1.GetPortfolioRequest\x1a'.sttattus.vault.v1.GetPortfolioResponse\x12q\n" +
@@ -4690,7 +4966,9 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x1bSetCapTableConnectionStatus\x125.sttattus.vault.v1.SetCapTableConnectionStatusRequest\x1a6.sttattus.vault.v1.SetCapTableConnectionStatusResponse\x12k\n" +
 	"\x10ListWalletChains\x12*.sttattus.vault.v1.ListWalletChainsRequest\x1a+.sttattus.vault.v1.ListWalletChainsResponse\x12n\n" +
 	"\x11UpsertWalletChain\x12+.sttattus.vault.v1.UpsertWalletChainRequest\x1a,.sttattus.vault.v1.UpsertWalletChainResponse\x12n\n" +
-	"\x11DeleteWalletChain\x12+.sttattus.vault.v1.DeleteWalletChainRequest\x1a,.sttattus.vault.v1.DeleteWalletChainResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
+	"\x11DeleteWalletChain\x12+.sttattus.vault.v1.DeleteWalletChainRequest\x1a,.sttattus.vault.v1.DeleteWalletChainResponse\x12e\n" +
+	"\x0eGetTaxSnapshot\x12(.sttattus.vault.v1.GetTaxSnapshotRequest\x1a).sttattus.vault.v1.GetTaxSnapshotResponse\x12e\n" +
+	"\x0eExportUsCgtCsv\x12(.sttattus.vault.v1.ExportUsCgtCsvRequest\x1a).sttattus.vault.v1.ExportUsCgtCsvResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
 
 var (
 	file_sttattus_vault_v1_vault_proto_rawDescOnce sync.Once
@@ -4705,7 +4983,7 @@ func file_sttattus_vault_v1_vault_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_vault_v1_vault_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_vault_v1_vault_proto_msgTypes = make([]protoimpl.MessageInfo, 82)
+var file_sttattus_vault_v1_vault_proto_msgTypes = make([]protoimpl.MessageInfo, 87)
 var file_sttattus_vault_v1_vault_proto_goTypes = []any{
 	(AssetCategory)(0),                          // 0: sttattus.vault.v1.AssetCategory
 	(VerificationStatus)(0),                     // 1: sttattus.vault.v1.VerificationStatus
@@ -4789,19 +5067,24 @@ var file_sttattus_vault_v1_vault_proto_goTypes = []any{
 	(*UpsertWalletChainResponse)(nil),           // 79: sttattus.vault.v1.UpsertWalletChainResponse
 	(*DeleteWalletChainRequest)(nil),            // 80: sttattus.vault.v1.DeleteWalletChainRequest
 	(*DeleteWalletChainResponse)(nil),           // 81: sttattus.vault.v1.DeleteWalletChainResponse
-	nil,                                         // 82: sttattus.vault.v1.Asset.MetadataEntry
-	nil,                                         // 83: sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
-	(*timestamppb.Timestamp)(nil),               // 84: google.protobuf.Timestamp
+	(*TaxLot)(nil),                              // 82: sttattus.vault.v1.TaxLot
+	(*GetTaxSnapshotRequest)(nil),               // 83: sttattus.vault.v1.GetTaxSnapshotRequest
+	(*GetTaxSnapshotResponse)(nil),              // 84: sttattus.vault.v1.GetTaxSnapshotResponse
+	(*ExportUsCgtCsvRequest)(nil),               // 85: sttattus.vault.v1.ExportUsCgtCsvRequest
+	(*ExportUsCgtCsvResponse)(nil),              // 86: sttattus.vault.v1.ExportUsCgtCsvResponse
+	nil,                                         // 87: sttattus.vault.v1.Asset.MetadataEntry
+	nil,                                         // 88: sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
+	(*timestamppb.Timestamp)(nil),               // 89: google.protobuf.Timestamp
 }
 var file_sttattus_vault_v1_vault_proto_depIdxs = []int32{
 	0,  // 0: sttattus.vault.v1.Asset.category:type_name -> sttattus.vault.v1.AssetCategory
 	1,  // 1: sttattus.vault.v1.Asset.status:type_name -> sttattus.vault.v1.VerificationStatus
-	84, // 2: sttattus.vault.v1.Asset.last_updated:type_name -> google.protobuf.Timestamp
-	82, // 3: sttattus.vault.v1.Asset.metadata:type_name -> sttattus.vault.v1.Asset.MetadataEntry
+	89, // 2: sttattus.vault.v1.Asset.last_updated:type_name -> google.protobuf.Timestamp
+	87, // 3: sttattus.vault.v1.Asset.metadata:type_name -> sttattus.vault.v1.Asset.MetadataEntry
 	2,  // 4: sttattus.vault.v1.Portfolio.assets:type_name -> sttattus.vault.v1.Asset
-	84, // 5: sttattus.vault.v1.Portfolio.calculated_at:type_name -> google.protobuf.Timestamp
+	89, // 5: sttattus.vault.v1.Portfolio.calculated_at:type_name -> google.protobuf.Timestamp
 	0,  // 6: sttattus.vault.v1.SubmitAssetRequest.category:type_name -> sttattus.vault.v1.AssetCategory
-	83, // 7: sttattus.vault.v1.SubmitAssetRequest.metadata:type_name -> sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
+	88, // 7: sttattus.vault.v1.SubmitAssetRequest.metadata:type_name -> sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
 	2,  // 8: sttattus.vault.v1.SubmitAssetResponse.asset:type_name -> sttattus.vault.v1.Asset
 	3,  // 9: sttattus.vault.v1.GetPortfolioResponse.portfolio:type_name -> sttattus.vault.v1.Portfolio
 	1,  // 10: sttattus.vault.v1.AdminVerifyAssetRequest.status:type_name -> sttattus.vault.v1.VerificationStatus
@@ -4830,77 +5113,82 @@ var file_sttattus_vault_v1_vault_proto_depIdxs = []int32{
 	70, // 33: sttattus.vault.v1.SetCapTableConnectionStatusResponse.connection:type_name -> sttattus.vault.v1.CapTableConnection
 	75, // 34: sttattus.vault.v1.ListWalletChainsResponse.wallets:type_name -> sttattus.vault.v1.WalletChain
 	75, // 35: sttattus.vault.v1.UpsertWalletChainResponse.wallet:type_name -> sttattus.vault.v1.WalletChain
-	4,  // 36: sttattus.vault.v1.VaultService.SubmitAsset:input_type -> sttattus.vault.v1.SubmitAssetRequest
-	6,  // 37: sttattus.vault.v1.VaultService.GetPortfolio:input_type -> sttattus.vault.v1.GetPortfolioRequest
-	12, // 38: sttattus.vault.v1.VaultService.GetWalletChallenge:input_type -> sttattus.vault.v1.GetWalletChallengeRequest
-	14, // 39: sttattus.vault.v1.VaultService.LinkWallet:input_type -> sttattus.vault.v1.LinkWalletRequest
-	16, // 40: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:input_type -> sttattus.vault.v1.CreatePlaidLinkTokenRequest
-	18, // 41: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:input_type -> sttattus.vault.v1.ExchangePlaidPublicTokenRequest
-	10, // 42: sttattus.vault.v1.VaultService.SyncWealth:input_type -> sttattus.vault.v1.SyncWealthRequest
-	8,  // 43: sttattus.vault.v1.VaultService.AdminVerifyAsset:input_type -> sttattus.vault.v1.AdminVerifyAssetRequest
-	21, // 44: sttattus.vault.v1.VaultService.ListNetWorthHistory:input_type -> sttattus.vault.v1.ListNetWorthHistoryRequest
-	24, // 45: sttattus.vault.v1.VaultService.ListPlaidTransactions:input_type -> sttattus.vault.v1.ListPlaidTransactionsRequest
-	27, // 46: sttattus.vault.v1.VaultService.ListPlaidHoldings:input_type -> sttattus.vault.v1.ListPlaidHoldingsRequest
-	30, // 47: sttattus.vault.v1.VaultService.GetCurrentAllocation:input_type -> sttattus.vault.v1.GetCurrentAllocationRequest
-	33, // 48: sttattus.vault.v1.VaultService.ListAllocationHistory:input_type -> sttattus.vault.v1.ListAllocationHistoryRequest
-	36, // 49: sttattus.vault.v1.VaultService.ListRealEstateProperties:input_type -> sttattus.vault.v1.ListRealEstatePropertiesRequest
-	38, // 50: sttattus.vault.v1.VaultService.CreateRealEstateProperty:input_type -> sttattus.vault.v1.CreateRealEstatePropertyRequest
-	40, // 51: sttattus.vault.v1.VaultService.RecordManualValuation:input_type -> sttattus.vault.v1.RecordManualValuationRequest
-	42, // 52: sttattus.vault.v1.VaultService.RefreshAvmValuation:input_type -> sttattus.vault.v1.RefreshAvmValuationRequest
-	44, // 53: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:input_type -> sttattus.vault.v1.DeleteRealEstatePropertyRequest
-	47, // 54: sttattus.vault.v1.VaultService.ListEntities:input_type -> sttattus.vault.v1.ListEntitiesRequest
-	49, // 55: sttattus.vault.v1.VaultService.CreateEntity:input_type -> sttattus.vault.v1.CreateEntityRequest
-	51, // 56: sttattus.vault.v1.VaultService.RenameEntity:input_type -> sttattus.vault.v1.RenameEntityRequest
-	53, // 57: sttattus.vault.v1.VaultService.DeleteEntity:input_type -> sttattus.vault.v1.DeleteEntityRequest
-	55, // 58: sttattus.vault.v1.VaultService.AssignAssetToEntity:input_type -> sttattus.vault.v1.AssignAssetToEntityRequest
-	58, // 59: sttattus.vault.v1.VaultService.ListLatestFxRates:input_type -> sttattus.vault.v1.ListLatestFxRatesRequest
-	61, // 60: sttattus.vault.v1.VaultService.ListCapTableHoldings:input_type -> sttattus.vault.v1.ListCapTableHoldingsRequest
-	64, // 61: sttattus.vault.v1.VaultService.CreateCapTableHolding:input_type -> sttattus.vault.v1.CreateCapTableHoldingRequest
-	66, // 62: sttattus.vault.v1.VaultService.UpdateCapTableHolding:input_type -> sttattus.vault.v1.UpdateCapTableHoldingRequest
-	68, // 63: sttattus.vault.v1.VaultService.DeleteCapTableHolding:input_type -> sttattus.vault.v1.DeleteCapTableHoldingRequest
-	71, // 64: sttattus.vault.v1.VaultService.ListCapTableConnections:input_type -> sttattus.vault.v1.ListCapTableConnectionsRequest
-	73, // 65: sttattus.vault.v1.VaultService.SetCapTableConnectionStatus:input_type -> sttattus.vault.v1.SetCapTableConnectionStatusRequest
-	76, // 66: sttattus.vault.v1.VaultService.ListWalletChains:input_type -> sttattus.vault.v1.ListWalletChainsRequest
-	78, // 67: sttattus.vault.v1.VaultService.UpsertWalletChain:input_type -> sttattus.vault.v1.UpsertWalletChainRequest
-	80, // 68: sttattus.vault.v1.VaultService.DeleteWalletChain:input_type -> sttattus.vault.v1.DeleteWalletChainRequest
-	5,  // 69: sttattus.vault.v1.VaultService.SubmitAsset:output_type -> sttattus.vault.v1.SubmitAssetResponse
-	7,  // 70: sttattus.vault.v1.VaultService.GetPortfolio:output_type -> sttattus.vault.v1.GetPortfolioResponse
-	13, // 71: sttattus.vault.v1.VaultService.GetWalletChallenge:output_type -> sttattus.vault.v1.GetWalletChallengeResponse
-	15, // 72: sttattus.vault.v1.VaultService.LinkWallet:output_type -> sttattus.vault.v1.LinkWalletResponse
-	17, // 73: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:output_type -> sttattus.vault.v1.CreatePlaidLinkTokenResponse
-	19, // 74: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:output_type -> sttattus.vault.v1.ExchangePlaidPublicTokenResponse
-	11, // 75: sttattus.vault.v1.VaultService.SyncWealth:output_type -> sttattus.vault.v1.SyncWealthResponse
-	9,  // 76: sttattus.vault.v1.VaultService.AdminVerifyAsset:output_type -> sttattus.vault.v1.AdminVerifyAssetResponse
-	22, // 77: sttattus.vault.v1.VaultService.ListNetWorthHistory:output_type -> sttattus.vault.v1.ListNetWorthHistoryResponse
-	25, // 78: sttattus.vault.v1.VaultService.ListPlaidTransactions:output_type -> sttattus.vault.v1.ListPlaidTransactionsResponse
-	28, // 79: sttattus.vault.v1.VaultService.ListPlaidHoldings:output_type -> sttattus.vault.v1.ListPlaidHoldingsResponse
-	31, // 80: sttattus.vault.v1.VaultService.GetCurrentAllocation:output_type -> sttattus.vault.v1.GetCurrentAllocationResponse
-	34, // 81: sttattus.vault.v1.VaultService.ListAllocationHistory:output_type -> sttattus.vault.v1.ListAllocationHistoryResponse
-	37, // 82: sttattus.vault.v1.VaultService.ListRealEstateProperties:output_type -> sttattus.vault.v1.ListRealEstatePropertiesResponse
-	39, // 83: sttattus.vault.v1.VaultService.CreateRealEstateProperty:output_type -> sttattus.vault.v1.CreateRealEstatePropertyResponse
-	41, // 84: sttattus.vault.v1.VaultService.RecordManualValuation:output_type -> sttattus.vault.v1.RecordManualValuationResponse
-	43, // 85: sttattus.vault.v1.VaultService.RefreshAvmValuation:output_type -> sttattus.vault.v1.RefreshAvmValuationResponse
-	45, // 86: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:output_type -> sttattus.vault.v1.DeleteRealEstatePropertyResponse
-	48, // 87: sttattus.vault.v1.VaultService.ListEntities:output_type -> sttattus.vault.v1.ListEntitiesResponse
-	50, // 88: sttattus.vault.v1.VaultService.CreateEntity:output_type -> sttattus.vault.v1.CreateEntityResponse
-	52, // 89: sttattus.vault.v1.VaultService.RenameEntity:output_type -> sttattus.vault.v1.RenameEntityResponse
-	54, // 90: sttattus.vault.v1.VaultService.DeleteEntity:output_type -> sttattus.vault.v1.DeleteEntityResponse
-	56, // 91: sttattus.vault.v1.VaultService.AssignAssetToEntity:output_type -> sttattus.vault.v1.AssignAssetToEntityResponse
-	59, // 92: sttattus.vault.v1.VaultService.ListLatestFxRates:output_type -> sttattus.vault.v1.ListLatestFxRatesResponse
-	62, // 93: sttattus.vault.v1.VaultService.ListCapTableHoldings:output_type -> sttattus.vault.v1.ListCapTableHoldingsResponse
-	65, // 94: sttattus.vault.v1.VaultService.CreateCapTableHolding:output_type -> sttattus.vault.v1.CreateCapTableHoldingResponse
-	67, // 95: sttattus.vault.v1.VaultService.UpdateCapTableHolding:output_type -> sttattus.vault.v1.UpdateCapTableHoldingResponse
-	69, // 96: sttattus.vault.v1.VaultService.DeleteCapTableHolding:output_type -> sttattus.vault.v1.DeleteCapTableHoldingResponse
-	72, // 97: sttattus.vault.v1.VaultService.ListCapTableConnections:output_type -> sttattus.vault.v1.ListCapTableConnectionsResponse
-	74, // 98: sttattus.vault.v1.VaultService.SetCapTableConnectionStatus:output_type -> sttattus.vault.v1.SetCapTableConnectionStatusResponse
-	77, // 99: sttattus.vault.v1.VaultService.ListWalletChains:output_type -> sttattus.vault.v1.ListWalletChainsResponse
-	79, // 100: sttattus.vault.v1.VaultService.UpsertWalletChain:output_type -> sttattus.vault.v1.UpsertWalletChainResponse
-	81, // 101: sttattus.vault.v1.VaultService.DeleteWalletChain:output_type -> sttattus.vault.v1.DeleteWalletChainResponse
-	69, // [69:102] is the sub-list for method output_type
-	36, // [36:69] is the sub-list for method input_type
-	36, // [36:36] is the sub-list for extension type_name
-	36, // [36:36] is the sub-list for extension extendee
-	0,  // [0:36] is the sub-list for field type_name
+	82, // 36: sttattus.vault.v1.GetTaxSnapshotResponse.lots:type_name -> sttattus.vault.v1.TaxLot
+	4,  // 37: sttattus.vault.v1.VaultService.SubmitAsset:input_type -> sttattus.vault.v1.SubmitAssetRequest
+	6,  // 38: sttattus.vault.v1.VaultService.GetPortfolio:input_type -> sttattus.vault.v1.GetPortfolioRequest
+	12, // 39: sttattus.vault.v1.VaultService.GetWalletChallenge:input_type -> sttattus.vault.v1.GetWalletChallengeRequest
+	14, // 40: sttattus.vault.v1.VaultService.LinkWallet:input_type -> sttattus.vault.v1.LinkWalletRequest
+	16, // 41: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:input_type -> sttattus.vault.v1.CreatePlaidLinkTokenRequest
+	18, // 42: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:input_type -> sttattus.vault.v1.ExchangePlaidPublicTokenRequest
+	10, // 43: sttattus.vault.v1.VaultService.SyncWealth:input_type -> sttattus.vault.v1.SyncWealthRequest
+	8,  // 44: sttattus.vault.v1.VaultService.AdminVerifyAsset:input_type -> sttattus.vault.v1.AdminVerifyAssetRequest
+	21, // 45: sttattus.vault.v1.VaultService.ListNetWorthHistory:input_type -> sttattus.vault.v1.ListNetWorthHistoryRequest
+	24, // 46: sttattus.vault.v1.VaultService.ListPlaidTransactions:input_type -> sttattus.vault.v1.ListPlaidTransactionsRequest
+	27, // 47: sttattus.vault.v1.VaultService.ListPlaidHoldings:input_type -> sttattus.vault.v1.ListPlaidHoldingsRequest
+	30, // 48: sttattus.vault.v1.VaultService.GetCurrentAllocation:input_type -> sttattus.vault.v1.GetCurrentAllocationRequest
+	33, // 49: sttattus.vault.v1.VaultService.ListAllocationHistory:input_type -> sttattus.vault.v1.ListAllocationHistoryRequest
+	36, // 50: sttattus.vault.v1.VaultService.ListRealEstateProperties:input_type -> sttattus.vault.v1.ListRealEstatePropertiesRequest
+	38, // 51: sttattus.vault.v1.VaultService.CreateRealEstateProperty:input_type -> sttattus.vault.v1.CreateRealEstatePropertyRequest
+	40, // 52: sttattus.vault.v1.VaultService.RecordManualValuation:input_type -> sttattus.vault.v1.RecordManualValuationRequest
+	42, // 53: sttattus.vault.v1.VaultService.RefreshAvmValuation:input_type -> sttattus.vault.v1.RefreshAvmValuationRequest
+	44, // 54: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:input_type -> sttattus.vault.v1.DeleteRealEstatePropertyRequest
+	47, // 55: sttattus.vault.v1.VaultService.ListEntities:input_type -> sttattus.vault.v1.ListEntitiesRequest
+	49, // 56: sttattus.vault.v1.VaultService.CreateEntity:input_type -> sttattus.vault.v1.CreateEntityRequest
+	51, // 57: sttattus.vault.v1.VaultService.RenameEntity:input_type -> sttattus.vault.v1.RenameEntityRequest
+	53, // 58: sttattus.vault.v1.VaultService.DeleteEntity:input_type -> sttattus.vault.v1.DeleteEntityRequest
+	55, // 59: sttattus.vault.v1.VaultService.AssignAssetToEntity:input_type -> sttattus.vault.v1.AssignAssetToEntityRequest
+	58, // 60: sttattus.vault.v1.VaultService.ListLatestFxRates:input_type -> sttattus.vault.v1.ListLatestFxRatesRequest
+	61, // 61: sttattus.vault.v1.VaultService.ListCapTableHoldings:input_type -> sttattus.vault.v1.ListCapTableHoldingsRequest
+	64, // 62: sttattus.vault.v1.VaultService.CreateCapTableHolding:input_type -> sttattus.vault.v1.CreateCapTableHoldingRequest
+	66, // 63: sttattus.vault.v1.VaultService.UpdateCapTableHolding:input_type -> sttattus.vault.v1.UpdateCapTableHoldingRequest
+	68, // 64: sttattus.vault.v1.VaultService.DeleteCapTableHolding:input_type -> sttattus.vault.v1.DeleteCapTableHoldingRequest
+	71, // 65: sttattus.vault.v1.VaultService.ListCapTableConnections:input_type -> sttattus.vault.v1.ListCapTableConnectionsRequest
+	73, // 66: sttattus.vault.v1.VaultService.SetCapTableConnectionStatus:input_type -> sttattus.vault.v1.SetCapTableConnectionStatusRequest
+	76, // 67: sttattus.vault.v1.VaultService.ListWalletChains:input_type -> sttattus.vault.v1.ListWalletChainsRequest
+	78, // 68: sttattus.vault.v1.VaultService.UpsertWalletChain:input_type -> sttattus.vault.v1.UpsertWalletChainRequest
+	80, // 69: sttattus.vault.v1.VaultService.DeleteWalletChain:input_type -> sttattus.vault.v1.DeleteWalletChainRequest
+	83, // 70: sttattus.vault.v1.VaultService.GetTaxSnapshot:input_type -> sttattus.vault.v1.GetTaxSnapshotRequest
+	85, // 71: sttattus.vault.v1.VaultService.ExportUsCgtCsv:input_type -> sttattus.vault.v1.ExportUsCgtCsvRequest
+	5,  // 72: sttattus.vault.v1.VaultService.SubmitAsset:output_type -> sttattus.vault.v1.SubmitAssetResponse
+	7,  // 73: sttattus.vault.v1.VaultService.GetPortfolio:output_type -> sttattus.vault.v1.GetPortfolioResponse
+	13, // 74: sttattus.vault.v1.VaultService.GetWalletChallenge:output_type -> sttattus.vault.v1.GetWalletChallengeResponse
+	15, // 75: sttattus.vault.v1.VaultService.LinkWallet:output_type -> sttattus.vault.v1.LinkWalletResponse
+	17, // 76: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:output_type -> sttattus.vault.v1.CreatePlaidLinkTokenResponse
+	19, // 77: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:output_type -> sttattus.vault.v1.ExchangePlaidPublicTokenResponse
+	11, // 78: sttattus.vault.v1.VaultService.SyncWealth:output_type -> sttattus.vault.v1.SyncWealthResponse
+	9,  // 79: sttattus.vault.v1.VaultService.AdminVerifyAsset:output_type -> sttattus.vault.v1.AdminVerifyAssetResponse
+	22, // 80: sttattus.vault.v1.VaultService.ListNetWorthHistory:output_type -> sttattus.vault.v1.ListNetWorthHistoryResponse
+	25, // 81: sttattus.vault.v1.VaultService.ListPlaidTransactions:output_type -> sttattus.vault.v1.ListPlaidTransactionsResponse
+	28, // 82: sttattus.vault.v1.VaultService.ListPlaidHoldings:output_type -> sttattus.vault.v1.ListPlaidHoldingsResponse
+	31, // 83: sttattus.vault.v1.VaultService.GetCurrentAllocation:output_type -> sttattus.vault.v1.GetCurrentAllocationResponse
+	34, // 84: sttattus.vault.v1.VaultService.ListAllocationHistory:output_type -> sttattus.vault.v1.ListAllocationHistoryResponse
+	37, // 85: sttattus.vault.v1.VaultService.ListRealEstateProperties:output_type -> sttattus.vault.v1.ListRealEstatePropertiesResponse
+	39, // 86: sttattus.vault.v1.VaultService.CreateRealEstateProperty:output_type -> sttattus.vault.v1.CreateRealEstatePropertyResponse
+	41, // 87: sttattus.vault.v1.VaultService.RecordManualValuation:output_type -> sttattus.vault.v1.RecordManualValuationResponse
+	43, // 88: sttattus.vault.v1.VaultService.RefreshAvmValuation:output_type -> sttattus.vault.v1.RefreshAvmValuationResponse
+	45, // 89: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:output_type -> sttattus.vault.v1.DeleteRealEstatePropertyResponse
+	48, // 90: sttattus.vault.v1.VaultService.ListEntities:output_type -> sttattus.vault.v1.ListEntitiesResponse
+	50, // 91: sttattus.vault.v1.VaultService.CreateEntity:output_type -> sttattus.vault.v1.CreateEntityResponse
+	52, // 92: sttattus.vault.v1.VaultService.RenameEntity:output_type -> sttattus.vault.v1.RenameEntityResponse
+	54, // 93: sttattus.vault.v1.VaultService.DeleteEntity:output_type -> sttattus.vault.v1.DeleteEntityResponse
+	56, // 94: sttattus.vault.v1.VaultService.AssignAssetToEntity:output_type -> sttattus.vault.v1.AssignAssetToEntityResponse
+	59, // 95: sttattus.vault.v1.VaultService.ListLatestFxRates:output_type -> sttattus.vault.v1.ListLatestFxRatesResponse
+	62, // 96: sttattus.vault.v1.VaultService.ListCapTableHoldings:output_type -> sttattus.vault.v1.ListCapTableHoldingsResponse
+	65, // 97: sttattus.vault.v1.VaultService.CreateCapTableHolding:output_type -> sttattus.vault.v1.CreateCapTableHoldingResponse
+	67, // 98: sttattus.vault.v1.VaultService.UpdateCapTableHolding:output_type -> sttattus.vault.v1.UpdateCapTableHoldingResponse
+	69, // 99: sttattus.vault.v1.VaultService.DeleteCapTableHolding:output_type -> sttattus.vault.v1.DeleteCapTableHoldingResponse
+	72, // 100: sttattus.vault.v1.VaultService.ListCapTableConnections:output_type -> sttattus.vault.v1.ListCapTableConnectionsResponse
+	74, // 101: sttattus.vault.v1.VaultService.SetCapTableConnectionStatus:output_type -> sttattus.vault.v1.SetCapTableConnectionStatusResponse
+	77, // 102: sttattus.vault.v1.VaultService.ListWalletChains:output_type -> sttattus.vault.v1.ListWalletChainsResponse
+	79, // 103: sttattus.vault.v1.VaultService.UpsertWalletChain:output_type -> sttattus.vault.v1.UpsertWalletChainResponse
+	81, // 104: sttattus.vault.v1.VaultService.DeleteWalletChain:output_type -> sttattus.vault.v1.DeleteWalletChainResponse
+	84, // 105: sttattus.vault.v1.VaultService.GetTaxSnapshot:output_type -> sttattus.vault.v1.GetTaxSnapshotResponse
+	86, // 106: sttattus.vault.v1.VaultService.ExportUsCgtCsv:output_type -> sttattus.vault.v1.ExportUsCgtCsvResponse
+	72, // [72:107] is the sub-list for method output_type
+	37, // [37:72] is the sub-list for method input_type
+	37, // [37:37] is the sub-list for extension type_name
+	37, // [37:37] is the sub-list for extension extendee
+	0,  // [0:37] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_vault_v1_vault_proto_init() }
@@ -4914,7 +5202,7 @@ func file_sttattus_vault_v1_vault_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_vault_v1_vault_proto_rawDesc), len(file_sttattus_vault_v1_vault_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   82,
+			NumMessages:   87,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

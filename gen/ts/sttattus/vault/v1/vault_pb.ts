@@ -3669,3 +3669,224 @@ export class DeleteWalletChainResponse extends Message<DeleteWalletChainResponse
   }
 }
 
+/**
+ * @generated from message sttattus.vault.v1.TaxLot
+ */
+export class TaxLot extends Message<TaxLot> {
+  /**
+   * @generated from field: string symbol = 1;
+   */
+  symbol = "";
+
+  /**
+   * @generated from field: double cost_basis_usd = 2;
+   */
+  costBasisUsd = 0;
+
+  /**
+   * @generated from field: double current_value_usd = 3;
+   */
+  currentValueUsd = 0;
+
+  /**
+   * signed
+   *
+   * @generated from field: double unrealised_gain_usd = 4;
+   */
+  unrealisedGainUsd = 0;
+
+  /**
+   * 'short_term' | 'long_term'
+   *
+   * @generated from field: string term = 5;
+   */
+  term = "";
+
+  constructor(data?: PartialMessage<TaxLot>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.TaxLot";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "symbol", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "cost_basis_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "current_value_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "unrealised_gain_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "term", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TaxLot {
+    return new TaxLot().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TaxLot {
+    return new TaxLot().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TaxLot {
+    return new TaxLot().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TaxLot | PlainMessage<TaxLot> | undefined, b: TaxLot | PlainMessage<TaxLot> | undefined): boolean {
+    return proto3.util.equals(TaxLot, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetTaxSnapshotRequest
+ */
+export class GetTaxSnapshotRequest extends Message<GetTaxSnapshotRequest> {
+  constructor(data?: PartialMessage<GetTaxSnapshotRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetTaxSnapshotRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTaxSnapshotRequest {
+    return new GetTaxSnapshotRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTaxSnapshotRequest {
+    return new GetTaxSnapshotRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTaxSnapshotRequest {
+    return new GetTaxSnapshotRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTaxSnapshotRequest | PlainMessage<GetTaxSnapshotRequest> | undefined, b: GetTaxSnapshotRequest | PlainMessage<GetTaxSnapshotRequest> | undefined): boolean {
+    return proto3.util.equals(GetTaxSnapshotRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetTaxSnapshotResponse
+ */
+export class GetTaxSnapshotResponse extends Message<GetTaxSnapshotResponse> {
+  /**
+   * @generated from field: double total_unrealised_gain_usd = 1;
+   */
+  totalUnrealisedGainUsd = 0;
+
+  /**
+   * @generated from field: double total_unrealised_short_term_usd = 2;
+   */
+  totalUnrealisedShortTermUsd = 0;
+
+  /**
+   * @generated from field: double total_unrealised_long_term_usd = 3;
+   */
+  totalUnrealisedLongTermUsd = 0;
+
+  /**
+   * @generated from field: repeated sttattus.vault.v1.TaxLot lots = 4;
+   */
+  lots: TaxLot[] = [];
+
+  constructor(data?: PartialMessage<GetTaxSnapshotResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetTaxSnapshotResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "total_unrealised_gain_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "total_unrealised_short_term_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "total_unrealised_long_term_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "lots", kind: "message", T: TaxLot, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTaxSnapshotResponse {
+    return new GetTaxSnapshotResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTaxSnapshotResponse {
+    return new GetTaxSnapshotResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTaxSnapshotResponse {
+    return new GetTaxSnapshotResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTaxSnapshotResponse | PlainMessage<GetTaxSnapshotResponse> | undefined, b: GetTaxSnapshotResponse | PlainMessage<GetTaxSnapshotResponse> | undefined): boolean {
+    return proto3.util.equals(GetTaxSnapshotResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ExportUsCgtCsvRequest
+ */
+export class ExportUsCgtCsvRequest extends Message<ExportUsCgtCsvRequest> {
+  constructor(data?: PartialMessage<ExportUsCgtCsvRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ExportUsCgtCsvRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportUsCgtCsvRequest {
+    return new ExportUsCgtCsvRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportUsCgtCsvRequest {
+    return new ExportUsCgtCsvRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportUsCgtCsvRequest {
+    return new ExportUsCgtCsvRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExportUsCgtCsvRequest | PlainMessage<ExportUsCgtCsvRequest> | undefined, b: ExportUsCgtCsvRequest | PlainMessage<ExportUsCgtCsvRequest> | undefined): boolean {
+    return proto3.util.equals(ExportUsCgtCsvRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ExportUsCgtCsvResponse
+ */
+export class ExportUsCgtCsvResponse extends Message<ExportUsCgtCsvResponse> {
+  /**
+   * Raw CSV bytes — the client writes / shares the file directly.
+   *
+   * @generated from field: bytes csv = 1;
+   */
+  csv = new Uint8Array(0);
+
+  constructor(data?: PartialMessage<ExportUsCgtCsvResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ExportUsCgtCsvResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "csv", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportUsCgtCsvResponse {
+    return new ExportUsCgtCsvResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportUsCgtCsvResponse {
+    return new ExportUsCgtCsvResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportUsCgtCsvResponse {
+    return new ExportUsCgtCsvResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExportUsCgtCsvResponse | PlainMessage<ExportUsCgtCsvResponse> | undefined, b: ExportUsCgtCsvResponse | PlainMessage<ExportUsCgtCsvResponse> | undefined): boolean {
+    return proto3.util.equals(ExportUsCgtCsvResponse, a, b);
+  }
+}
+

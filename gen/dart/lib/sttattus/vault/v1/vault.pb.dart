@@ -4643,6 +4643,283 @@ class DeleteWalletChainResponse extends $pb.GeneratedMessage {
   static DeleteWalletChainResponse? _defaultInstance;
 }
 
+class TaxLot extends $pb.GeneratedMessage {
+  factory TaxLot({
+    $core.String? symbol,
+    $core.double? costBasisUsd,
+    $core.double? currentValueUsd,
+    $core.double? unrealisedGainUsd,
+    $core.String? term,
+  }) {
+    final result = create();
+    if (symbol != null) result.symbol = symbol;
+    if (costBasisUsd != null) result.costBasisUsd = costBasisUsd;
+    if (currentValueUsd != null) result.currentValueUsd = currentValueUsd;
+    if (unrealisedGainUsd != null) result.unrealisedGainUsd = unrealisedGainUsd;
+    if (term != null) result.term = term;
+    return result;
+  }
+
+  TaxLot._();
+
+  factory TaxLot.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory TaxLot.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TaxLot', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'symbol')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'costBasisUsd', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'currentValueUsd', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'unrealisedGainUsd', $pb.PbFieldType.OD)
+    ..aOS(5, _omitFieldNames ? '' : 'term')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TaxLot clone() => TaxLot()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TaxLot copyWith(void Function(TaxLot) updates) => super.copyWith((message) => updates(message as TaxLot)) as TaxLot;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TaxLot create() => TaxLot._();
+  @$core.override
+  TaxLot createEmptyInstance() => create();
+  static $pb.PbList<TaxLot> createRepeated() => $pb.PbList<TaxLot>();
+  @$core.pragma('dart2js:noInline')
+  static TaxLot getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TaxLot>(create);
+  static TaxLot? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get symbol => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set symbol($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSymbol() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSymbol() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get costBasisUsd => $_getN(1);
+  @$pb.TagNumber(2)
+  set costBasisUsd($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCostBasisUsd() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCostBasisUsd() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get currentValueUsd => $_getN(2);
+  @$pb.TagNumber(3)
+  set currentValueUsd($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCurrentValueUsd() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCurrentValueUsd() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get unrealisedGainUsd => $_getN(3);
+  @$pb.TagNumber(4)
+  set unrealisedGainUsd($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasUnrealisedGainUsd() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUnrealisedGainUsd() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get term => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set term($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTerm() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTerm() => $_clearField(5);
+}
+
+class GetTaxSnapshotRequest extends $pb.GeneratedMessage {
+  factory GetTaxSnapshotRequest() => create();
+
+  GetTaxSnapshotRequest._();
+
+  factory GetTaxSnapshotRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTaxSnapshotRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTaxSnapshotRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTaxSnapshotRequest clone() => GetTaxSnapshotRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTaxSnapshotRequest copyWith(void Function(GetTaxSnapshotRequest) updates) => super.copyWith((message) => updates(message as GetTaxSnapshotRequest)) as GetTaxSnapshotRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTaxSnapshotRequest create() => GetTaxSnapshotRequest._();
+  @$core.override
+  GetTaxSnapshotRequest createEmptyInstance() => create();
+  static $pb.PbList<GetTaxSnapshotRequest> createRepeated() => $pb.PbList<GetTaxSnapshotRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetTaxSnapshotRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTaxSnapshotRequest>(create);
+  static GetTaxSnapshotRequest? _defaultInstance;
+}
+
+class GetTaxSnapshotResponse extends $pb.GeneratedMessage {
+  factory GetTaxSnapshotResponse({
+    $core.double? totalUnrealisedGainUsd,
+    $core.double? totalUnrealisedShortTermUsd,
+    $core.double? totalUnrealisedLongTermUsd,
+    $core.Iterable<TaxLot>? lots,
+  }) {
+    final result = create();
+    if (totalUnrealisedGainUsd != null) result.totalUnrealisedGainUsd = totalUnrealisedGainUsd;
+    if (totalUnrealisedShortTermUsd != null) result.totalUnrealisedShortTermUsd = totalUnrealisedShortTermUsd;
+    if (totalUnrealisedLongTermUsd != null) result.totalUnrealisedLongTermUsd = totalUnrealisedLongTermUsd;
+    if (lots != null) result.lots.addAll(lots);
+    return result;
+  }
+
+  GetTaxSnapshotResponse._();
+
+  factory GetTaxSnapshotResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTaxSnapshotResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTaxSnapshotResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'totalUnrealisedGainUsd', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'totalUnrealisedShortTermUsd', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'totalUnrealisedLongTermUsd', $pb.PbFieldType.OD)
+    ..pc<TaxLot>(4, _omitFieldNames ? '' : 'lots', $pb.PbFieldType.PM, subBuilder: TaxLot.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTaxSnapshotResponse clone() => GetTaxSnapshotResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTaxSnapshotResponse copyWith(void Function(GetTaxSnapshotResponse) updates) => super.copyWith((message) => updates(message as GetTaxSnapshotResponse)) as GetTaxSnapshotResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTaxSnapshotResponse create() => GetTaxSnapshotResponse._();
+  @$core.override
+  GetTaxSnapshotResponse createEmptyInstance() => create();
+  static $pb.PbList<GetTaxSnapshotResponse> createRepeated() => $pb.PbList<GetTaxSnapshotResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetTaxSnapshotResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTaxSnapshotResponse>(create);
+  static GetTaxSnapshotResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get totalUnrealisedGainUsd => $_getN(0);
+  @$pb.TagNumber(1)
+  set totalUnrealisedGainUsd($core.double value) => $_setDouble(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTotalUnrealisedGainUsd() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTotalUnrealisedGainUsd() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get totalUnrealisedShortTermUsd => $_getN(1);
+  @$pb.TagNumber(2)
+  set totalUnrealisedShortTermUsd($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTotalUnrealisedShortTermUsd() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotalUnrealisedShortTermUsd() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get totalUnrealisedLongTermUsd => $_getN(2);
+  @$pb.TagNumber(3)
+  set totalUnrealisedLongTermUsd($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTotalUnrealisedLongTermUsd() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTotalUnrealisedLongTermUsd() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<TaxLot> get lots => $_getList(3);
+}
+
+class ExportUsCgtCsvRequest extends $pb.GeneratedMessage {
+  factory ExportUsCgtCsvRequest() => create();
+
+  ExportUsCgtCsvRequest._();
+
+  factory ExportUsCgtCsvRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ExportUsCgtCsvRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExportUsCgtCsvRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportUsCgtCsvRequest clone() => ExportUsCgtCsvRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportUsCgtCsvRequest copyWith(void Function(ExportUsCgtCsvRequest) updates) => super.copyWith((message) => updates(message as ExportUsCgtCsvRequest)) as ExportUsCgtCsvRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExportUsCgtCsvRequest create() => ExportUsCgtCsvRequest._();
+  @$core.override
+  ExportUsCgtCsvRequest createEmptyInstance() => create();
+  static $pb.PbList<ExportUsCgtCsvRequest> createRepeated() => $pb.PbList<ExportUsCgtCsvRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ExportUsCgtCsvRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExportUsCgtCsvRequest>(create);
+  static ExportUsCgtCsvRequest? _defaultInstance;
+}
+
+class ExportUsCgtCsvResponse extends $pb.GeneratedMessage {
+  factory ExportUsCgtCsvResponse({
+    $core.List<$core.int>? csv,
+  }) {
+    final result = create();
+    if (csv != null) result.csv = csv;
+    return result;
+  }
+
+  ExportUsCgtCsvResponse._();
+
+  factory ExportUsCgtCsvResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ExportUsCgtCsvResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExportUsCgtCsvResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'csv', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportUsCgtCsvResponse clone() => ExportUsCgtCsvResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportUsCgtCsvResponse copyWith(void Function(ExportUsCgtCsvResponse) updates) => super.copyWith((message) => updates(message as ExportUsCgtCsvResponse)) as ExportUsCgtCsvResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExportUsCgtCsvResponse create() => ExportUsCgtCsvResponse._();
+  @$core.override
+  ExportUsCgtCsvResponse createEmptyInstance() => create();
+  static $pb.PbList<ExportUsCgtCsvResponse> createRepeated() => $pb.PbList<ExportUsCgtCsvResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ExportUsCgtCsvResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExportUsCgtCsvResponse>(create);
+  static ExportUsCgtCsvResponse? _defaultInstance;
+
+  /// Raw CSV bytes — the client writes / shares the file directly.
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get csv => $_getN(0);
+  @$pb.TagNumber(1)
+  set csv($core.List<$core.int> value) => $_setBytes(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCsv() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCsv() => $_clearField(1);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

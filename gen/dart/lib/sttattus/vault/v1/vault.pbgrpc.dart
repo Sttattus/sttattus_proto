@@ -183,6 +183,16 @@ class VaultServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteWalletChain, request, options: options);
   }
 
+  /// V8P2.7 — tax surface. v1 ships unrealised gains across Plaid
+  /// holdings + cap-table line items and a US-CGT (Form 8949) CSV.
+  $grpc.ResponseFuture<$0.GetTaxSnapshotResponse> getTaxSnapshot($0.GetTaxSnapshotRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getTaxSnapshot, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ExportUsCgtCsvResponse> exportUsCgtCsv($0.ExportUsCgtCsvRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$exportUsCgtCsv, request, options: options);
+  }
+
     // method descriptors
 
   static final _$submitAsset = $grpc.ClientMethod<$0.SubmitAssetRequest, $0.SubmitAssetResponse>(
@@ -317,6 +327,14 @@ class VaultServiceClient extends $grpc.Client {
       '/sttattus.vault.v1.VaultService/DeleteWalletChain',
       ($0.DeleteWalletChainRequest value) => value.writeToBuffer(),
       $0.DeleteWalletChainResponse.fromBuffer);
+  static final _$getTaxSnapshot = $grpc.ClientMethod<$0.GetTaxSnapshotRequest, $0.GetTaxSnapshotResponse>(
+      '/sttattus.vault.v1.VaultService/GetTaxSnapshot',
+      ($0.GetTaxSnapshotRequest value) => value.writeToBuffer(),
+      $0.GetTaxSnapshotResponse.fromBuffer);
+  static final _$exportUsCgtCsv = $grpc.ClientMethod<$0.ExportUsCgtCsvRequest, $0.ExportUsCgtCsvResponse>(
+      '/sttattus.vault.v1.VaultService/ExportUsCgtCsv',
+      ($0.ExportUsCgtCsvRequest value) => value.writeToBuffer(),
+      $0.ExportUsCgtCsvResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.vault.v1.VaultService')
@@ -555,6 +573,20 @@ abstract class VaultServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.DeleteWalletChainRequest.fromBuffer(value),
         ($0.DeleteWalletChainResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTaxSnapshotRequest, $0.GetTaxSnapshotResponse>(
+        'GetTaxSnapshot',
+        getTaxSnapshot_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetTaxSnapshotRequest.fromBuffer(value),
+        ($0.GetTaxSnapshotResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ExportUsCgtCsvRequest, $0.ExportUsCgtCsvResponse>(
+        'ExportUsCgtCsv',
+        exportUsCgtCsv_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ExportUsCgtCsvRequest.fromBuffer(value),
+        ($0.ExportUsCgtCsvResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.SubmitAssetResponse> submitAsset_Pre($grpc.ServiceCall $call, $async.Future<$0.SubmitAssetRequest> $request) async {
@@ -754,5 +786,17 @@ abstract class VaultServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.DeleteWalletChainResponse> deleteWalletChain($grpc.ServiceCall call, $0.DeleteWalletChainRequest request);
+
+  $async.Future<$0.GetTaxSnapshotResponse> getTaxSnapshot_Pre($grpc.ServiceCall $call, $async.Future<$0.GetTaxSnapshotRequest> $request) async {
+    return getTaxSnapshot($call, await $request);
+  }
+
+  $async.Future<$0.GetTaxSnapshotResponse> getTaxSnapshot($grpc.ServiceCall call, $0.GetTaxSnapshotRequest request);
+
+  $async.Future<$0.ExportUsCgtCsvResponse> exportUsCgtCsv_Pre($grpc.ServiceCall $call, $async.Future<$0.ExportUsCgtCsvRequest> $request) async {
+    return exportUsCgtCsv($call, await $request);
+  }
+
+  $async.Future<$0.ExportUsCgtCsvResponse> exportUsCgtCsv($grpc.ServiceCall call, $0.ExportUsCgtCsvRequest request);
 
 }

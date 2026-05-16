@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, AssignAssetToEntityRequest, AssignAssetToEntityResponse, CreateCapTableHoldingRequest, CreateCapTableHoldingResponse, CreateEntityRequest, CreateEntityResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, DeleteCapTableHoldingRequest, DeleteCapTableHoldingResponse, DeleteEntityRequest, DeleteEntityResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, DeleteWalletChainRequest, DeleteWalletChainResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListCapTableConnectionsRequest, ListCapTableConnectionsResponse, ListCapTableHoldingsRequest, ListCapTableHoldingsResponse, ListEntitiesRequest, ListEntitiesResponse, ListLatestFxRatesRequest, ListLatestFxRatesResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, ListWalletChainsRequest, ListWalletChainsResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, RenameEntityRequest, RenameEntityResponse, SetCapTableConnectionStatusRequest, SetCapTableConnectionStatusResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse, UpdateCapTableHoldingRequest, UpdateCapTableHoldingResponse, UpsertWalletChainRequest, UpsertWalletChainResponse } from "./vault_pb.js";
+import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, AssignAssetToEntityRequest, AssignAssetToEntityResponse, CreateCapTableHoldingRequest, CreateCapTableHoldingResponse, CreateEntityRequest, CreateEntityResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, DeleteCapTableHoldingRequest, DeleteCapTableHoldingResponse, DeleteEntityRequest, DeleteEntityResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, DeleteWalletChainRequest, DeleteWalletChainResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, ExportUsCgtCsvRequest, ExportUsCgtCsvResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetPortfolioRequest, GetPortfolioResponse, GetTaxSnapshotRequest, GetTaxSnapshotResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListCapTableConnectionsRequest, ListCapTableConnectionsResponse, ListCapTableHoldingsRequest, ListCapTableHoldingsResponse, ListEntitiesRequest, ListEntitiesResponse, ListLatestFxRatesRequest, ListLatestFxRatesResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, ListWalletChainsRequest, ListWalletChainsResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, RenameEntityRequest, RenameEntityResponse, SetCapTableConnectionStatusRequest, SetCapTableConnectionStatusResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse, UpdateCapTableHoldingRequest, UpdateCapTableHoldingResponse, UpsertWalletChainRequest, UpsertWalletChainResponse } from "./vault_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -339,6 +339,27 @@ export const VaultService = {
       name: "DeleteWalletChain",
       I: DeleteWalletChainRequest,
       O: DeleteWalletChainResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8P2.7 — tax surface. v1 ships unrealised gains across Plaid
+     * holdings + cap-table line items and a US-CGT (Form 8949) CSV.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetTaxSnapshot
+     */
+    getTaxSnapshot: {
+      name: "GetTaxSnapshot",
+      I: GetTaxSnapshotRequest,
+      O: GetTaxSnapshotResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.ExportUsCgtCsv
+     */
+    exportUsCgtCsv: {
+      name: "ExportUsCgtCsv",
+      I: ExportUsCgtCsvRequest,
+      O: ExportUsCgtCsvResponse,
       kind: MethodKind.Unary,
     },
   }
