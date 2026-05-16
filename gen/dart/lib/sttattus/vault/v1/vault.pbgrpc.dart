@@ -114,6 +114,28 @@ class VaultServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteRealEstateProperty, request, options: options);
   }
 
+  /// V8P2.1 — multi-entity (Personal / LLC / trust / etc.) and
+  /// per-asset entity assignment.
+  $grpc.ResponseFuture<$0.ListEntitiesResponse> listEntities($0.ListEntitiesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listEntities, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateEntityResponse> createEntity($0.CreateEntityRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createEntity, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RenameEntityResponse> renameEntity($0.RenameEntityRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$renameEntity, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteEntityResponse> deleteEntity($0.DeleteEntityRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteEntity, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AssignAssetToEntityResponse> assignAssetToEntity($0.AssignAssetToEntityRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$assignAssetToEntity, request, options: options);
+  }
+
     // method descriptors
 
   static final _$submitAsset = $grpc.ClientMethod<$0.SubmitAssetRequest, $0.SubmitAssetResponse>(
@@ -188,6 +210,26 @@ class VaultServiceClient extends $grpc.Client {
       '/sttattus.vault.v1.VaultService/DeleteRealEstateProperty',
       ($0.DeleteRealEstatePropertyRequest value) => value.writeToBuffer(),
       $0.DeleteRealEstatePropertyResponse.fromBuffer);
+  static final _$listEntities = $grpc.ClientMethod<$0.ListEntitiesRequest, $0.ListEntitiesResponse>(
+      '/sttattus.vault.v1.VaultService/ListEntities',
+      ($0.ListEntitiesRequest value) => value.writeToBuffer(),
+      $0.ListEntitiesResponse.fromBuffer);
+  static final _$createEntity = $grpc.ClientMethod<$0.CreateEntityRequest, $0.CreateEntityResponse>(
+      '/sttattus.vault.v1.VaultService/CreateEntity',
+      ($0.CreateEntityRequest value) => value.writeToBuffer(),
+      $0.CreateEntityResponse.fromBuffer);
+  static final _$renameEntity = $grpc.ClientMethod<$0.RenameEntityRequest, $0.RenameEntityResponse>(
+      '/sttattus.vault.v1.VaultService/RenameEntity',
+      ($0.RenameEntityRequest value) => value.writeToBuffer(),
+      $0.RenameEntityResponse.fromBuffer);
+  static final _$deleteEntity = $grpc.ClientMethod<$0.DeleteEntityRequest, $0.DeleteEntityResponse>(
+      '/sttattus.vault.v1.VaultService/DeleteEntity',
+      ($0.DeleteEntityRequest value) => value.writeToBuffer(),
+      $0.DeleteEntityResponse.fromBuffer);
+  static final _$assignAssetToEntity = $grpc.ClientMethod<$0.AssignAssetToEntityRequest, $0.AssignAssetToEntityResponse>(
+      '/sttattus.vault.v1.VaultService/AssignAssetToEntity',
+      ($0.AssignAssetToEntityRequest value) => value.writeToBuffer(),
+      $0.AssignAssetToEntityResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.vault.v1.VaultService')
@@ -321,6 +363,41 @@ abstract class VaultServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.DeleteRealEstatePropertyRequest.fromBuffer(value),
         ($0.DeleteRealEstatePropertyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListEntitiesRequest, $0.ListEntitiesResponse>(
+        'ListEntities',
+        listEntities_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListEntitiesRequest.fromBuffer(value),
+        ($0.ListEntitiesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateEntityRequest, $0.CreateEntityResponse>(
+        'CreateEntity',
+        createEntity_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateEntityRequest.fromBuffer(value),
+        ($0.CreateEntityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RenameEntityRequest, $0.RenameEntityResponse>(
+        'RenameEntity',
+        renameEntity_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RenameEntityRequest.fromBuffer(value),
+        ($0.RenameEntityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteEntityRequest, $0.DeleteEntityResponse>(
+        'DeleteEntity',
+        deleteEntity_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteEntityRequest.fromBuffer(value),
+        ($0.DeleteEntityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AssignAssetToEntityRequest, $0.AssignAssetToEntityResponse>(
+        'AssignAssetToEntity',
+        assignAssetToEntity_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.AssignAssetToEntityRequest.fromBuffer(value),
+        ($0.AssignAssetToEntityResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.SubmitAssetResponse> submitAsset_Pre($grpc.ServiceCall $call, $async.Future<$0.SubmitAssetRequest> $request) async {
@@ -430,5 +507,35 @@ abstract class VaultServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.DeleteRealEstatePropertyResponse> deleteRealEstateProperty($grpc.ServiceCall call, $0.DeleteRealEstatePropertyRequest request);
+
+  $async.Future<$0.ListEntitiesResponse> listEntities_Pre($grpc.ServiceCall $call, $async.Future<$0.ListEntitiesRequest> $request) async {
+    return listEntities($call, await $request);
+  }
+
+  $async.Future<$0.ListEntitiesResponse> listEntities($grpc.ServiceCall call, $0.ListEntitiesRequest request);
+
+  $async.Future<$0.CreateEntityResponse> createEntity_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateEntityRequest> $request) async {
+    return createEntity($call, await $request);
+  }
+
+  $async.Future<$0.CreateEntityResponse> createEntity($grpc.ServiceCall call, $0.CreateEntityRequest request);
+
+  $async.Future<$0.RenameEntityResponse> renameEntity_Pre($grpc.ServiceCall $call, $async.Future<$0.RenameEntityRequest> $request) async {
+    return renameEntity($call, await $request);
+  }
+
+  $async.Future<$0.RenameEntityResponse> renameEntity($grpc.ServiceCall call, $0.RenameEntityRequest request);
+
+  $async.Future<$0.DeleteEntityResponse> deleteEntity_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteEntityRequest> $request) async {
+    return deleteEntity($call, await $request);
+  }
+
+  $async.Future<$0.DeleteEntityResponse> deleteEntity($grpc.ServiceCall call, $0.DeleteEntityRequest request);
+
+  $async.Future<$0.AssignAssetToEntityResponse> assignAssetToEntity_Pre($grpc.ServiceCall $call, $async.Future<$0.AssignAssetToEntityRequest> $request) async {
+    return assignAssetToEntity($call, await $request);
+  }
+
+  $async.Future<$0.AssignAssetToEntityResponse> assignAssetToEntity($grpc.ServiceCall call, $0.AssignAssetToEntityRequest request);
 
 }

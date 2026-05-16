@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
+import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, AssignAssetToEntityRequest, AssignAssetToEntityResponse, CreateEntityRequest, CreateEntityResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, DeleteEntityRequest, DeleteEntityResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListEntitiesRequest, ListEntitiesResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, RenameEntityRequest, RenameEntityResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -191,6 +191,54 @@ export const VaultService = {
       name: "DeleteRealEstateProperty",
       I: DeleteRealEstatePropertyRequest,
       O: DeleteRealEstatePropertyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8P2.1 — multi-entity (Personal / LLC / trust / etc.) and
+     * per-asset entity assignment.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.ListEntities
+     */
+    listEntities: {
+      name: "ListEntities",
+      I: ListEntitiesRequest,
+      O: ListEntitiesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.CreateEntity
+     */
+    createEntity: {
+      name: "CreateEntity",
+      I: CreateEntityRequest,
+      O: CreateEntityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.RenameEntity
+     */
+    renameEntity: {
+      name: "RenameEntity",
+      I: RenameEntityRequest,
+      O: RenameEntityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.DeleteEntity
+     */
+    deleteEntity: {
+      name: "DeleteEntity",
+      I: DeleteEntityRequest,
+      O: DeleteEntityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.AssignAssetToEntity
+     */
+    assignAssetToEntity: {
+      name: "AssignAssetToEntity",
+      I: AssignAssetToEntityRequest,
+      O: AssignAssetToEntityResponse,
       kind: MethodKind.Unary,
     },
   }

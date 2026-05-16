@@ -110,6 +110,14 @@ service VaultService {
   rpc RecordManualValuation(RecordManualValuationRequest) returns (RecordManualValuationResponse);
   rpc RefreshAvmValuation(RefreshAvmValuationRequest) returns (RefreshAvmValuationResponse);
   rpc DeleteRealEstateProperty(DeleteRealEstatePropertyRequest) returns (DeleteRealEstatePropertyResponse);
+
+  // V8P2.1 — multi-entity (Personal / LLC / trust / etc.) and
+  // per-asset entity assignment.
+  rpc ListEntities(ListEntitiesRequest) returns (ListEntitiesResponse);
+  rpc CreateEntity(CreateEntityRequest) returns (CreateEntityResponse);
+  rpc RenameEntity(RenameEntityRequest) returns (RenameEntityResponse);
+  rpc DeleteEntity(DeleteEntityRequest) returns (DeleteEntityResponse);
+  rpc AssignAssetToEntity(AssignAssetToEntityRequest) returns (AssignAssetToEntityResponse);
 }
 
 message SyncWealthRequest {
@@ -313,3 +321,55 @@ message DeleteRealEstatePropertyRequest {
 }
 
 message DeleteRealEstatePropertyResponse {}
+
+// === Multi-entity (V8P2.1) ===
+
+message Entity {
+  string id = 1;
+  string name = 2;
+  // 'personal' | 'llc' | 'trust' | 'family_holding' | 'foundation'
+  string kind = 3;
+  bool is_default = 4;
+  // Approved-only sum of assets scoped to this entity.
+  double net_worth_usd = 5;
+}
+
+message ListEntitiesRequest {}
+
+message ListEntitiesResponse {
+  repeated Entity entities = 1;
+}
+
+message CreateEntityRequest {
+  string name = 1;
+  // Empty defaults to 'llc'. 'personal' is server-managed and
+  // rejected.
+  string kind = 2;
+}
+
+message CreateEntityResponse {
+  Entity entity = 1;
+}
+
+message RenameEntityRequest {
+  string id = 1;
+  string name = 2;
+}
+
+message RenameEntityResponse {
+  Entity entity = 1;
+}
+
+message DeleteEntityRequest {
+  string id = 1;
+}
+
+message DeleteEntityResponse {}
+
+message AssignAssetToEntityRequest {
+  string asset_id = 1;
+  // Empty detaches; the dashboard's Personal view picks up orphans.
+  string entity_id = 2;
+}
+
+message AssignAssetToEntityResponse {}

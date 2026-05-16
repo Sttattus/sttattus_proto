@@ -37,6 +37,11 @@ const (
 	VaultService_RecordManualValuation_FullMethodName    = "/sttattus.vault.v1.VaultService/RecordManualValuation"
 	VaultService_RefreshAvmValuation_FullMethodName      = "/sttattus.vault.v1.VaultService/RefreshAvmValuation"
 	VaultService_DeleteRealEstateProperty_FullMethodName = "/sttattus.vault.v1.VaultService/DeleteRealEstateProperty"
+	VaultService_ListEntities_FullMethodName             = "/sttattus.vault.v1.VaultService/ListEntities"
+	VaultService_CreateEntity_FullMethodName             = "/sttattus.vault.v1.VaultService/CreateEntity"
+	VaultService_RenameEntity_FullMethodName             = "/sttattus.vault.v1.VaultService/RenameEntity"
+	VaultService_DeleteEntity_FullMethodName             = "/sttattus.vault.v1.VaultService/DeleteEntity"
+	VaultService_AssignAssetToEntity_FullMethodName      = "/sttattus.vault.v1.VaultService/AssignAssetToEntity"
 )
 
 // VaultServiceClient is the client API for VaultService service.
@@ -71,6 +76,13 @@ type VaultServiceClient interface {
 	RecordManualValuation(ctx context.Context, in *RecordManualValuationRequest, opts ...grpc.CallOption) (*RecordManualValuationResponse, error)
 	RefreshAvmValuation(ctx context.Context, in *RefreshAvmValuationRequest, opts ...grpc.CallOption) (*RefreshAvmValuationResponse, error)
 	DeleteRealEstateProperty(ctx context.Context, in *DeleteRealEstatePropertyRequest, opts ...grpc.CallOption) (*DeleteRealEstatePropertyResponse, error)
+	// V8P2.1 — multi-entity (Personal / LLC / trust / etc.) and
+	// per-asset entity assignment.
+	ListEntities(ctx context.Context, in *ListEntitiesRequest, opts ...grpc.CallOption) (*ListEntitiesResponse, error)
+	CreateEntity(ctx context.Context, in *CreateEntityRequest, opts ...grpc.CallOption) (*CreateEntityResponse, error)
+	RenameEntity(ctx context.Context, in *RenameEntityRequest, opts ...grpc.CallOption) (*RenameEntityResponse, error)
+	DeleteEntity(ctx context.Context, in *DeleteEntityRequest, opts ...grpc.CallOption) (*DeleteEntityResponse, error)
+	AssignAssetToEntity(ctx context.Context, in *AssignAssetToEntityRequest, opts ...grpc.CallOption) (*AssignAssetToEntityResponse, error)
 }
 
 type vaultServiceClient struct {
@@ -261,6 +273,56 @@ func (c *vaultServiceClient) DeleteRealEstateProperty(ctx context.Context, in *D
 	return out, nil
 }
 
+func (c *vaultServiceClient) ListEntities(ctx context.Context, in *ListEntitiesRequest, opts ...grpc.CallOption) (*ListEntitiesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListEntitiesResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListEntities_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) CreateEntity(ctx context.Context, in *CreateEntityRequest, opts ...grpc.CallOption) (*CreateEntityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateEntityResponse)
+	err := c.cc.Invoke(ctx, VaultService_CreateEntity_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) RenameEntity(ctx context.Context, in *RenameEntityRequest, opts ...grpc.CallOption) (*RenameEntityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RenameEntityResponse)
+	err := c.cc.Invoke(ctx, VaultService_RenameEntity_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) DeleteEntity(ctx context.Context, in *DeleteEntityRequest, opts ...grpc.CallOption) (*DeleteEntityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteEntityResponse)
+	err := c.cc.Invoke(ctx, VaultService_DeleteEntity_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) AssignAssetToEntity(ctx context.Context, in *AssignAssetToEntityRequest, opts ...grpc.CallOption) (*AssignAssetToEntityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AssignAssetToEntityResponse)
+	err := c.cc.Invoke(ctx, VaultService_AssignAssetToEntity_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultServiceServer is the server API for VaultService service.
 // All implementations must embed UnimplementedVaultServiceServer
 // for forward compatibility.
@@ -293,6 +355,13 @@ type VaultServiceServer interface {
 	RecordManualValuation(context.Context, *RecordManualValuationRequest) (*RecordManualValuationResponse, error)
 	RefreshAvmValuation(context.Context, *RefreshAvmValuationRequest) (*RefreshAvmValuationResponse, error)
 	DeleteRealEstateProperty(context.Context, *DeleteRealEstatePropertyRequest) (*DeleteRealEstatePropertyResponse, error)
+	// V8P2.1 — multi-entity (Personal / LLC / trust / etc.) and
+	// per-asset entity assignment.
+	ListEntities(context.Context, *ListEntitiesRequest) (*ListEntitiesResponse, error)
+	CreateEntity(context.Context, *CreateEntityRequest) (*CreateEntityResponse, error)
+	RenameEntity(context.Context, *RenameEntityRequest) (*RenameEntityResponse, error)
+	DeleteEntity(context.Context, *DeleteEntityRequest) (*DeleteEntityResponse, error)
+	AssignAssetToEntity(context.Context, *AssignAssetToEntityRequest) (*AssignAssetToEntityResponse, error)
 	mustEmbedUnimplementedVaultServiceServer()
 }
 
@@ -356,6 +425,21 @@ func (UnimplementedVaultServiceServer) RefreshAvmValuation(context.Context, *Ref
 }
 func (UnimplementedVaultServiceServer) DeleteRealEstateProperty(context.Context, *DeleteRealEstatePropertyRequest) (*DeleteRealEstatePropertyResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method DeleteRealEstateProperty not implemented")
+}
+func (UnimplementedVaultServiceServer) ListEntities(context.Context, *ListEntitiesRequest) (*ListEntitiesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListEntities not implemented")
+}
+func (UnimplementedVaultServiceServer) CreateEntity(context.Context, *CreateEntityRequest) (*CreateEntityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateEntity not implemented")
+}
+func (UnimplementedVaultServiceServer) RenameEntity(context.Context, *RenameEntityRequest) (*RenameEntityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RenameEntity not implemented")
+}
+func (UnimplementedVaultServiceServer) DeleteEntity(context.Context, *DeleteEntityRequest) (*DeleteEntityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteEntity not implemented")
+}
+func (UnimplementedVaultServiceServer) AssignAssetToEntity(context.Context, *AssignAssetToEntityRequest) (*AssignAssetToEntityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AssignAssetToEntity not implemented")
 }
 func (UnimplementedVaultServiceServer) mustEmbedUnimplementedVaultServiceServer() {}
 func (UnimplementedVaultServiceServer) testEmbeddedByValue()                      {}
@@ -702,6 +786,96 @@ func _VaultService_DeleteRealEstateProperty_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultService_ListEntities_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListEntitiesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListEntities(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListEntities_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListEntities(ctx, req.(*ListEntitiesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_CreateEntity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateEntityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).CreateEntity(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_CreateEntity_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).CreateEntity(ctx, req.(*CreateEntityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_RenameEntity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RenameEntityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).RenameEntity(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_RenameEntity_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).RenameEntity(ctx, req.(*RenameEntityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_DeleteEntity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteEntityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).DeleteEntity(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_DeleteEntity_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).DeleteEntity(ctx, req.(*DeleteEntityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_AssignAssetToEntity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AssignAssetToEntityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).AssignAssetToEntity(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_AssignAssetToEntity_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).AssignAssetToEntity(ctx, req.(*AssignAssetToEntityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultService_ServiceDesc is the grpc.ServiceDesc for VaultService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -780,6 +954,26 @@ var VaultService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteRealEstateProperty",
 			Handler:    _VaultService_DeleteRealEstateProperty_Handler,
+		},
+		{
+			MethodName: "ListEntities",
+			Handler:    _VaultService_ListEntities_Handler,
+		},
+		{
+			MethodName: "CreateEntity",
+			Handler:    _VaultService_CreateEntity_Handler,
+		},
+		{
+			MethodName: "RenameEntity",
+			Handler:    _VaultService_RenameEntity_Handler,
+		},
+		{
+			MethodName: "DeleteEntity",
+			Handler:    _VaultService_DeleteEntity_Handler,
+		},
+		{
+			MethodName: "AssignAssetToEntity",
+			Handler:    _VaultService_AssignAssetToEntity_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

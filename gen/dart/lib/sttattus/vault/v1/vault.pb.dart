@@ -2648,6 +2648,551 @@ class DeleteRealEstatePropertyResponse extends $pb.GeneratedMessage {
   static DeleteRealEstatePropertyResponse? _defaultInstance;
 }
 
+class Entity extends $pb.GeneratedMessage {
+  factory Entity({
+    $core.String? id,
+    $core.String? name,
+    $core.String? kind,
+    $core.bool? isDefault,
+    $core.double? netWorthUsd,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (kind != null) result.kind = kind;
+    if (isDefault != null) result.isDefault = isDefault;
+    if (netWorthUsd != null) result.netWorthUsd = netWorthUsd;
+    return result;
+  }
+
+  Entity._();
+
+  factory Entity.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Entity.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Entity', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'kind')
+    ..aOB(4, _omitFieldNames ? '' : 'isDefault')
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'netWorthUsd', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Entity clone() => Entity()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Entity copyWith(void Function(Entity) updates) => super.copyWith((message) => updates(message as Entity)) as Entity;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Entity create() => Entity._();
+  @$core.override
+  Entity createEmptyInstance() => create();
+  static $pb.PbList<Entity> createRepeated() => $pb.PbList<Entity>();
+  @$core.pragma('dart2js:noInline')
+  static Entity getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Entity>(create);
+  static Entity? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  /// 'personal' | 'llc' | 'trust' | 'family_holding' | 'foundation'
+  @$pb.TagNumber(3)
+  $core.String get kind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set kind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get isDefault => $_getBF(3);
+  @$pb.TagNumber(4)
+  set isDefault($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasIsDefault() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIsDefault() => $_clearField(4);
+
+  /// Approved-only sum of assets scoped to this entity.
+  @$pb.TagNumber(5)
+  $core.double get netWorthUsd => $_getN(4);
+  @$pb.TagNumber(5)
+  set netWorthUsd($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNetWorthUsd() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNetWorthUsd() => $_clearField(5);
+}
+
+class ListEntitiesRequest extends $pb.GeneratedMessage {
+  factory ListEntitiesRequest() => create();
+
+  ListEntitiesRequest._();
+
+  factory ListEntitiesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListEntitiesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListEntitiesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListEntitiesRequest clone() => ListEntitiesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListEntitiesRequest copyWith(void Function(ListEntitiesRequest) updates) => super.copyWith((message) => updates(message as ListEntitiesRequest)) as ListEntitiesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListEntitiesRequest create() => ListEntitiesRequest._();
+  @$core.override
+  ListEntitiesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListEntitiesRequest> createRepeated() => $pb.PbList<ListEntitiesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListEntitiesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListEntitiesRequest>(create);
+  static ListEntitiesRequest? _defaultInstance;
+}
+
+class ListEntitiesResponse extends $pb.GeneratedMessage {
+  factory ListEntitiesResponse({
+    $core.Iterable<Entity>? entities,
+  }) {
+    final result = create();
+    if (entities != null) result.entities.addAll(entities);
+    return result;
+  }
+
+  ListEntitiesResponse._();
+
+  factory ListEntitiesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListEntitiesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListEntitiesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..pc<Entity>(1, _omitFieldNames ? '' : 'entities', $pb.PbFieldType.PM, subBuilder: Entity.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListEntitiesResponse clone() => ListEntitiesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListEntitiesResponse copyWith(void Function(ListEntitiesResponse) updates) => super.copyWith((message) => updates(message as ListEntitiesResponse)) as ListEntitiesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListEntitiesResponse create() => ListEntitiesResponse._();
+  @$core.override
+  ListEntitiesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListEntitiesResponse> createRepeated() => $pb.PbList<ListEntitiesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListEntitiesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListEntitiesResponse>(create);
+  static ListEntitiesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Entity> get entities => $_getList(0);
+}
+
+class CreateEntityRequest extends $pb.GeneratedMessage {
+  factory CreateEntityRequest({
+    $core.String? name,
+    $core.String? kind,
+  }) {
+    final result = create();
+    if (name != null) result.name = name;
+    if (kind != null) result.kind = kind;
+    return result;
+  }
+
+  CreateEntityRequest._();
+
+  factory CreateEntityRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateEntityRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateEntityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'kind')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateEntityRequest clone() => CreateEntityRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateEntityRequest copyWith(void Function(CreateEntityRequest) updates) => super.copyWith((message) => updates(message as CreateEntityRequest)) as CreateEntityRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateEntityRequest create() => CreateEntityRequest._();
+  @$core.override
+  CreateEntityRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateEntityRequest> createRepeated() => $pb.PbList<CreateEntityRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateEntityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateEntityRequest>(create);
+  static CreateEntityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+
+  /// Empty defaults to 'llc'. 'personal' is server-managed and
+  /// rejected.
+  @$pb.TagNumber(2)
+  $core.String get kind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set kind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKind() => $_clearField(2);
+}
+
+class CreateEntityResponse extends $pb.GeneratedMessage {
+  factory CreateEntityResponse({
+    Entity? entity,
+  }) {
+    final result = create();
+    if (entity != null) result.entity = entity;
+    return result;
+  }
+
+  CreateEntityResponse._();
+
+  factory CreateEntityResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateEntityResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateEntityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOM<Entity>(1, _omitFieldNames ? '' : 'entity', subBuilder: Entity.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateEntityResponse clone() => CreateEntityResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateEntityResponse copyWith(void Function(CreateEntityResponse) updates) => super.copyWith((message) => updates(message as CreateEntityResponse)) as CreateEntityResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateEntityResponse create() => CreateEntityResponse._();
+  @$core.override
+  CreateEntityResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateEntityResponse> createRepeated() => $pb.PbList<CreateEntityResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateEntityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateEntityResponse>(create);
+  static CreateEntityResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Entity get entity => $_getN(0);
+  @$pb.TagNumber(1)
+  set entity(Entity value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEntity() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEntity() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Entity ensureEntity() => $_ensure(0);
+}
+
+class RenameEntityRequest extends $pb.GeneratedMessage {
+  factory RenameEntityRequest({
+    $core.String? id,
+    $core.String? name,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    return result;
+  }
+
+  RenameEntityRequest._();
+
+  factory RenameEntityRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RenameEntityRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RenameEntityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RenameEntityRequest clone() => RenameEntityRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RenameEntityRequest copyWith(void Function(RenameEntityRequest) updates) => super.copyWith((message) => updates(message as RenameEntityRequest)) as RenameEntityRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RenameEntityRequest create() => RenameEntityRequest._();
+  @$core.override
+  RenameEntityRequest createEmptyInstance() => create();
+  static $pb.PbList<RenameEntityRequest> createRepeated() => $pb.PbList<RenameEntityRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RenameEntityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RenameEntityRequest>(create);
+  static RenameEntityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+}
+
+class RenameEntityResponse extends $pb.GeneratedMessage {
+  factory RenameEntityResponse({
+    Entity? entity,
+  }) {
+    final result = create();
+    if (entity != null) result.entity = entity;
+    return result;
+  }
+
+  RenameEntityResponse._();
+
+  factory RenameEntityResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RenameEntityResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RenameEntityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOM<Entity>(1, _omitFieldNames ? '' : 'entity', subBuilder: Entity.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RenameEntityResponse clone() => RenameEntityResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RenameEntityResponse copyWith(void Function(RenameEntityResponse) updates) => super.copyWith((message) => updates(message as RenameEntityResponse)) as RenameEntityResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RenameEntityResponse create() => RenameEntityResponse._();
+  @$core.override
+  RenameEntityResponse createEmptyInstance() => create();
+  static $pb.PbList<RenameEntityResponse> createRepeated() => $pb.PbList<RenameEntityResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RenameEntityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RenameEntityResponse>(create);
+  static RenameEntityResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Entity get entity => $_getN(0);
+  @$pb.TagNumber(1)
+  set entity(Entity value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEntity() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEntity() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Entity ensureEntity() => $_ensure(0);
+}
+
+class DeleteEntityRequest extends $pb.GeneratedMessage {
+  factory DeleteEntityRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  DeleteEntityRequest._();
+
+  factory DeleteEntityRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteEntityRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteEntityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteEntityRequest clone() => DeleteEntityRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteEntityRequest copyWith(void Function(DeleteEntityRequest) updates) => super.copyWith((message) => updates(message as DeleteEntityRequest)) as DeleteEntityRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteEntityRequest create() => DeleteEntityRequest._();
+  @$core.override
+  DeleteEntityRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteEntityRequest> createRepeated() => $pb.PbList<DeleteEntityRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteEntityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteEntityRequest>(create);
+  static DeleteEntityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class DeleteEntityResponse extends $pb.GeneratedMessage {
+  factory DeleteEntityResponse() => create();
+
+  DeleteEntityResponse._();
+
+  factory DeleteEntityResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteEntityResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteEntityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteEntityResponse clone() => DeleteEntityResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteEntityResponse copyWith(void Function(DeleteEntityResponse) updates) => super.copyWith((message) => updates(message as DeleteEntityResponse)) as DeleteEntityResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteEntityResponse create() => DeleteEntityResponse._();
+  @$core.override
+  DeleteEntityResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteEntityResponse> createRepeated() => $pb.PbList<DeleteEntityResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteEntityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteEntityResponse>(create);
+  static DeleteEntityResponse? _defaultInstance;
+}
+
+class AssignAssetToEntityRequest extends $pb.GeneratedMessage {
+  factory AssignAssetToEntityRequest({
+    $core.String? assetId,
+    $core.String? entityId,
+  }) {
+    final result = create();
+    if (assetId != null) result.assetId = assetId;
+    if (entityId != null) result.entityId = entityId;
+    return result;
+  }
+
+  AssignAssetToEntityRequest._();
+
+  factory AssignAssetToEntityRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AssignAssetToEntityRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AssignAssetToEntityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'assetId')
+    ..aOS(2, _omitFieldNames ? '' : 'entityId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AssignAssetToEntityRequest clone() => AssignAssetToEntityRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AssignAssetToEntityRequest copyWith(void Function(AssignAssetToEntityRequest) updates) => super.copyWith((message) => updates(message as AssignAssetToEntityRequest)) as AssignAssetToEntityRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AssignAssetToEntityRequest create() => AssignAssetToEntityRequest._();
+  @$core.override
+  AssignAssetToEntityRequest createEmptyInstance() => create();
+  static $pb.PbList<AssignAssetToEntityRequest> createRepeated() => $pb.PbList<AssignAssetToEntityRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AssignAssetToEntityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AssignAssetToEntityRequest>(create);
+  static AssignAssetToEntityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get assetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set assetId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAssetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAssetId() => $_clearField(1);
+
+  /// Empty detaches; the dashboard's Personal view picks up orphans.
+  @$pb.TagNumber(2)
+  $core.String get entityId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set entityId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEntityId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEntityId() => $_clearField(2);
+}
+
+class AssignAssetToEntityResponse extends $pb.GeneratedMessage {
+  factory AssignAssetToEntityResponse() => create();
+
+  AssignAssetToEntityResponse._();
+
+  factory AssignAssetToEntityResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AssignAssetToEntityResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AssignAssetToEntityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AssignAssetToEntityResponse clone() => AssignAssetToEntityResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AssignAssetToEntityResponse copyWith(void Function(AssignAssetToEntityResponse) updates) => super.copyWith((message) => updates(message as AssignAssetToEntityResponse)) as AssignAssetToEntityResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AssignAssetToEntityResponse create() => AssignAssetToEntityResponse._();
+  @$core.override
+  AssignAssetToEntityResponse createEmptyInstance() => create();
+  static $pb.PbList<AssignAssetToEntityResponse> createRepeated() => $pb.PbList<AssignAssetToEntityResponse>();
+  @$core.pragma('dart2js:noInline')
+  static AssignAssetToEntityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AssignAssetToEntityResponse>(create);
+  static AssignAssetToEntityResponse? _defaultInstance;
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -2105,3 +2105,443 @@ export class DeleteRealEstatePropertyResponse extends Message<DeleteRealEstatePr
   }
 }
 
+/**
+ * @generated from message sttattus.vault.v1.Entity
+ */
+export class Entity extends Message<Entity> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * 'personal' | 'llc' | 'trust' | 'family_holding' | 'foundation'
+   *
+   * @generated from field: string kind = 3;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: bool is_default = 4;
+   */
+  isDefault = false;
+
+  /**
+   * Approved-only sum of assets scoped to this entity.
+   *
+   * @generated from field: double net_worth_usd = 5;
+   */
+  netWorthUsd = 0;
+
+  constructor(data?: PartialMessage<Entity>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.Entity";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "is_default", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "net_worth_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Entity {
+    return new Entity().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Entity {
+    return new Entity().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Entity {
+    return new Entity().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: Entity | PlainMessage<Entity> | undefined, b: Entity | PlainMessage<Entity> | undefined): boolean {
+    return proto3.util.equals(Entity, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListEntitiesRequest
+ */
+export class ListEntitiesRequest extends Message<ListEntitiesRequest> {
+  constructor(data?: PartialMessage<ListEntitiesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListEntitiesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEntitiesRequest {
+    return new ListEntitiesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEntitiesRequest {
+    return new ListEntitiesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEntitiesRequest {
+    return new ListEntitiesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEntitiesRequest | PlainMessage<ListEntitiesRequest> | undefined, b: ListEntitiesRequest | PlainMessage<ListEntitiesRequest> | undefined): boolean {
+    return proto3.util.equals(ListEntitiesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListEntitiesResponse
+ */
+export class ListEntitiesResponse extends Message<ListEntitiesResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.Entity entities = 1;
+   */
+  entities: Entity[] = [];
+
+  constructor(data?: PartialMessage<ListEntitiesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListEntitiesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entities", kind: "message", T: Entity, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEntitiesResponse {
+    return new ListEntitiesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEntitiesResponse {
+    return new ListEntitiesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEntitiesResponse {
+    return new ListEntitiesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEntitiesResponse | PlainMessage<ListEntitiesResponse> | undefined, b: ListEntitiesResponse | PlainMessage<ListEntitiesResponse> | undefined): boolean {
+    return proto3.util.equals(ListEntitiesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.CreateEntityRequest
+ */
+export class CreateEntityRequest extends Message<CreateEntityRequest> {
+  /**
+   * @generated from field: string name = 1;
+   */
+  name = "";
+
+  /**
+   * Empty defaults to 'llc'. 'personal' is server-managed and
+   * rejected.
+   *
+   * @generated from field: string kind = 2;
+   */
+  kind = "";
+
+  constructor(data?: PartialMessage<CreateEntityRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.CreateEntityRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEntityRequest {
+    return new CreateEntityRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEntityRequest {
+    return new CreateEntityRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEntityRequest {
+    return new CreateEntityRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateEntityRequest | PlainMessage<CreateEntityRequest> | undefined, b: CreateEntityRequest | PlainMessage<CreateEntityRequest> | undefined): boolean {
+    return proto3.util.equals(CreateEntityRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.CreateEntityResponse
+ */
+export class CreateEntityResponse extends Message<CreateEntityResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.Entity entity = 1;
+   */
+  entity?: Entity;
+
+  constructor(data?: PartialMessage<CreateEntityResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.CreateEntityResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entity", kind: "message", T: Entity },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEntityResponse {
+    return new CreateEntityResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEntityResponse {
+    return new CreateEntityResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEntityResponse {
+    return new CreateEntityResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateEntityResponse | PlainMessage<CreateEntityResponse> | undefined, b: CreateEntityResponse | PlainMessage<CreateEntityResponse> | undefined): boolean {
+    return proto3.util.equals(CreateEntityResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.RenameEntityRequest
+ */
+export class RenameEntityRequest extends Message<RenameEntityRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  constructor(data?: PartialMessage<RenameEntityRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.RenameEntityRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RenameEntityRequest {
+    return new RenameEntityRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RenameEntityRequest {
+    return new RenameEntityRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RenameEntityRequest {
+    return new RenameEntityRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RenameEntityRequest | PlainMessage<RenameEntityRequest> | undefined, b: RenameEntityRequest | PlainMessage<RenameEntityRequest> | undefined): boolean {
+    return proto3.util.equals(RenameEntityRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.RenameEntityResponse
+ */
+export class RenameEntityResponse extends Message<RenameEntityResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.Entity entity = 1;
+   */
+  entity?: Entity;
+
+  constructor(data?: PartialMessage<RenameEntityResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.RenameEntityResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entity", kind: "message", T: Entity },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RenameEntityResponse {
+    return new RenameEntityResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RenameEntityResponse {
+    return new RenameEntityResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RenameEntityResponse {
+    return new RenameEntityResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RenameEntityResponse | PlainMessage<RenameEntityResponse> | undefined, b: RenameEntityResponse | PlainMessage<RenameEntityResponse> | undefined): boolean {
+    return proto3.util.equals(RenameEntityResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.DeleteEntityRequest
+ */
+export class DeleteEntityRequest extends Message<DeleteEntityRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  constructor(data?: PartialMessage<DeleteEntityRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.DeleteEntityRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEntityRequest {
+    return new DeleteEntityRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEntityRequest {
+    return new DeleteEntityRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEntityRequest {
+    return new DeleteEntityRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteEntityRequest | PlainMessage<DeleteEntityRequest> | undefined, b: DeleteEntityRequest | PlainMessage<DeleteEntityRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteEntityRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.DeleteEntityResponse
+ */
+export class DeleteEntityResponse extends Message<DeleteEntityResponse> {
+  constructor(data?: PartialMessage<DeleteEntityResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.DeleteEntityResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEntityResponse {
+    return new DeleteEntityResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEntityResponse {
+    return new DeleteEntityResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEntityResponse {
+    return new DeleteEntityResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteEntityResponse | PlainMessage<DeleteEntityResponse> | undefined, b: DeleteEntityResponse | PlainMessage<DeleteEntityResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteEntityResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.AssignAssetToEntityRequest
+ */
+export class AssignAssetToEntityRequest extends Message<AssignAssetToEntityRequest> {
+  /**
+   * @generated from field: string asset_id = 1;
+   */
+  assetId = "";
+
+  /**
+   * Empty detaches; the dashboard's Personal view picks up orphans.
+   *
+   * @generated from field: string entity_id = 2;
+   */
+  entityId = "";
+
+  constructor(data?: PartialMessage<AssignAssetToEntityRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.AssignAssetToEntityRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "entity_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignAssetToEntityRequest {
+    return new AssignAssetToEntityRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignAssetToEntityRequest {
+    return new AssignAssetToEntityRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignAssetToEntityRequest {
+    return new AssignAssetToEntityRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AssignAssetToEntityRequest | PlainMessage<AssignAssetToEntityRequest> | undefined, b: AssignAssetToEntityRequest | PlainMessage<AssignAssetToEntityRequest> | undefined): boolean {
+    return proto3.util.equals(AssignAssetToEntityRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.AssignAssetToEntityResponse
+ */
+export class AssignAssetToEntityResponse extends Message<AssignAssetToEntityResponse> {
+  constructor(data?: PartialMessage<AssignAssetToEntityResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.AssignAssetToEntityResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignAssetToEntityResponse {
+    return new AssignAssetToEntityResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignAssetToEntityResponse {
+    return new AssignAssetToEntityResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignAssetToEntityResponse {
+    return new AssignAssetToEntityResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AssignAssetToEntityResponse | PlainMessage<AssignAssetToEntityResponse> | undefined, b: AssignAssetToEntityResponse | PlainMessage<AssignAssetToEntityResponse> | undefined): boolean {
+    return proto3.util.equals(AssignAssetToEntityResponse, a, b);
+  }
+}
+

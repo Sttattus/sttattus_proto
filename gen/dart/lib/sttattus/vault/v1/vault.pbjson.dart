@@ -708,3 +708,141 @@ const DeleteRealEstatePropertyResponse$json = {
 final $typed_data.Uint8List deleteRealEstatePropertyResponseDescriptor = $convert.base64Decode(
     'CiBEZWxldGVSZWFsRXN0YXRlUHJvcGVydHlSZXNwb25zZQ==');
 
+@$core.Deprecated('Use entityDescriptor instead')
+const Entity$json = {
+  '1': 'Entity',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'is_default', '3': 4, '4': 1, '5': 8, '10': 'isDefault'},
+    {'1': 'net_worth_usd', '3': 5, '4': 1, '5': 1, '10': 'netWorthUsd'},
+  ],
+};
+
+/// Descriptor for `Entity`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List entityDescriptor = $convert.base64Decode(
+    'CgZFbnRpdHkSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEa2luZBgDIA'
+    'EoCVIEa2luZBIdCgppc19kZWZhdWx0GAQgASgIUglpc0RlZmF1bHQSIgoNbmV0X3dvcnRoX3Vz'
+    'ZBgFIAEoAVILbmV0V29ydGhVc2Q=');
+
+@$core.Deprecated('Use listEntitiesRequestDescriptor instead')
+const ListEntitiesRequest$json = {
+  '1': 'ListEntitiesRequest',
+};
+
+/// Descriptor for `ListEntitiesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listEntitiesRequestDescriptor = $convert.base64Decode(
+    'ChNMaXN0RW50aXRpZXNSZXF1ZXN0');
+
+@$core.Deprecated('Use listEntitiesResponseDescriptor instead')
+const ListEntitiesResponse$json = {
+  '1': 'ListEntitiesResponse',
+  '2': [
+    {'1': 'entities', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.Entity', '10': 'entities'},
+  ],
+};
+
+/// Descriptor for `ListEntitiesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listEntitiesResponseDescriptor = $convert.base64Decode(
+    'ChRMaXN0RW50aXRpZXNSZXNwb25zZRI1CghlbnRpdGllcxgBIAMoCzIZLnN0dGF0dHVzLnZhdW'
+    'x0LnYxLkVudGl0eVIIZW50aXRpZXM=');
+
+@$core.Deprecated('Use createEntityRequestDescriptor instead')
+const CreateEntityRequest$json = {
+  '1': 'CreateEntityRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'kind', '3': 2, '4': 1, '5': 9, '10': 'kind'},
+  ],
+};
+
+/// Descriptor for `CreateEntityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createEntityRequestDescriptor = $convert.base64Decode(
+    'ChNDcmVhdGVFbnRpdHlSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSEgoEa2luZBgCIAEoCV'
+    'IEa2luZA==');
+
+@$core.Deprecated('Use createEntityResponseDescriptor instead')
+const CreateEntityResponse$json = {
+  '1': 'CreateEntityResponse',
+  '2': [
+    {'1': 'entity', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.Entity', '10': 'entity'},
+  ],
+};
+
+/// Descriptor for `CreateEntityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createEntityResponseDescriptor = $convert.base64Decode(
+    'ChRDcmVhdGVFbnRpdHlSZXNwb25zZRIxCgZlbnRpdHkYASABKAsyGS5zdHRhdHR1cy52YXVsdC'
+    '52MS5FbnRpdHlSBmVudGl0eQ==');
+
+@$core.Deprecated('Use renameEntityRequestDescriptor instead')
+const RenameEntityRequest$json = {
+  '1': 'RenameEntityRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `RenameEntityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List renameEntityRequestDescriptor = $convert.base64Decode(
+    'ChNSZW5hbWVFbnRpdHlSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW'
+    '1l');
+
+@$core.Deprecated('Use renameEntityResponseDescriptor instead')
+const RenameEntityResponse$json = {
+  '1': 'RenameEntityResponse',
+  '2': [
+    {'1': 'entity', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.Entity', '10': 'entity'},
+  ],
+};
+
+/// Descriptor for `RenameEntityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List renameEntityResponseDescriptor = $convert.base64Decode(
+    'ChRSZW5hbWVFbnRpdHlSZXNwb25zZRIxCgZlbnRpdHkYASABKAsyGS5zdHRhdHR1cy52YXVsdC'
+    '52MS5FbnRpdHlSBmVudGl0eQ==');
+
+@$core.Deprecated('Use deleteEntityRequestDescriptor instead')
+const DeleteEntityRequest$json = {
+  '1': 'DeleteEntityRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteEntityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteEntityRequestDescriptor = $convert.base64Decode(
+    'ChNEZWxldGVFbnRpdHlSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
+
+@$core.Deprecated('Use deleteEntityResponseDescriptor instead')
+const DeleteEntityResponse$json = {
+  '1': 'DeleteEntityResponse',
+};
+
+/// Descriptor for `DeleteEntityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteEntityResponseDescriptor = $convert.base64Decode(
+    'ChREZWxldGVFbnRpdHlSZXNwb25zZQ==');
+
+@$core.Deprecated('Use assignAssetToEntityRequestDescriptor instead')
+const AssignAssetToEntityRequest$json = {
+  '1': 'AssignAssetToEntityRequest',
+  '2': [
+    {'1': 'asset_id', '3': 1, '4': 1, '5': 9, '10': 'assetId'},
+    {'1': 'entity_id', '3': 2, '4': 1, '5': 9, '10': 'entityId'},
+  ],
+};
+
+/// Descriptor for `AssignAssetToEntityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List assignAssetToEntityRequestDescriptor = $convert.base64Decode(
+    'ChpBc3NpZ25Bc3NldFRvRW50aXR5UmVxdWVzdBIZCghhc3NldF9pZBgBIAEoCVIHYXNzZXRJZB'
+    'IbCgllbnRpdHlfaWQYAiABKAlSCGVudGl0eUlk');
+
+@$core.Deprecated('Use assignAssetToEntityResponseDescriptor instead')
+const AssignAssetToEntityResponse$json = {
+  '1': 'AssignAssetToEntityResponse',
+};
+
+/// Descriptor for `AssignAssetToEntityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List assignAssetToEntityResponseDescriptor = $convert.base64Decode(
+    'ChtBc3NpZ25Bc3NldFRvRW50aXR5UmVzcG9uc2U=');
+
