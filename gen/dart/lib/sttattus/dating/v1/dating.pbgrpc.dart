@@ -127,6 +127,15 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$upsertPanicContact, request, options: options);
   }
 
+  /// A9.8 — per-axis visibility on the viewer surface.
+  $grpc.ResponseFuture<$0.GetPrivacyAxesResponse> getPrivacyAxes($0.GetPrivacyAxesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getPrivacyAxes, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertPrivacyAxesResponse> upsertPrivacyAxes($0.UpsertPrivacyAxesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$upsertPrivacyAxes, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getProfile = $grpc.ClientMethod<$0.GetProfileRequest, $0.GetProfileResponse>(
@@ -221,6 +230,14 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/UpsertPanicContact',
       ($0.UpsertPanicContactRequest value) => value.writeToBuffer(),
       $0.UpsertPanicContactResponse.fromBuffer);
+  static final _$getPrivacyAxes = $grpc.ClientMethod<$0.GetPrivacyAxesRequest, $0.GetPrivacyAxesResponse>(
+      '/sttattus.dating.v1.DatingService/GetPrivacyAxes',
+      ($0.GetPrivacyAxesRequest value) => value.writeToBuffer(),
+      $0.GetPrivacyAxesResponse.fromBuffer);
+  static final _$upsertPrivacyAxes = $grpc.ClientMethod<$0.UpsertPrivacyAxesRequest, $0.UpsertPrivacyAxesResponse>(
+      '/sttattus.dating.v1.DatingService/UpsertPrivacyAxes',
+      ($0.UpsertPrivacyAxesRequest value) => value.writeToBuffer(),
+      $0.UpsertPrivacyAxesResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dating.v1.DatingService')
@@ -389,6 +406,20 @@ abstract class DatingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UpsertPanicContactRequest.fromBuffer(value),
         ($0.UpsertPanicContactResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetPrivacyAxesRequest, $0.GetPrivacyAxesResponse>(
+        'GetPrivacyAxes',
+        getPrivacyAxes_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetPrivacyAxesRequest.fromBuffer(value),
+        ($0.GetPrivacyAxesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertPrivacyAxesRequest, $0.UpsertPrivacyAxesResponse>(
+        'UpsertPrivacyAxes',
+        upsertPrivacyAxes_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpsertPrivacyAxesRequest.fromBuffer(value),
+        ($0.UpsertPrivacyAxesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProfileRequest> $request) async {
@@ -528,5 +559,17 @@ abstract class DatingServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.UpsertPanicContactResponse> upsertPanicContact($grpc.ServiceCall call, $0.UpsertPanicContactRequest request);
+
+  $async.Future<$0.GetPrivacyAxesResponse> getPrivacyAxes_Pre($grpc.ServiceCall $call, $async.Future<$0.GetPrivacyAxesRequest> $request) async {
+    return getPrivacyAxes($call, await $request);
+  }
+
+  $async.Future<$0.GetPrivacyAxesResponse> getPrivacyAxes($grpc.ServiceCall call, $0.GetPrivacyAxesRequest request);
+
+  $async.Future<$0.UpsertPrivacyAxesResponse> upsertPrivacyAxes_Pre($grpc.ServiceCall $call, $async.Future<$0.UpsertPrivacyAxesRequest> $request) async {
+    return upsertPrivacyAxes($call, await $request);
+  }
+
+  $async.Future<$0.UpsertPrivacyAxesResponse> upsertPrivacyAxes($grpc.ServiceCall call, $0.UpsertPrivacyAxesRequest request);
 
 }

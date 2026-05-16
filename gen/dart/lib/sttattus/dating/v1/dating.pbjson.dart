@@ -849,3 +849,76 @@ final $typed_data.Uint8List upsertPanicContactResponseDescriptor = $convert.base
     'ChpVcHNlcnRQYW5pY0NvbnRhY3RSZXNwb25zZRI6Cgdjb250YWN0GAEgASgLMiAuc3R0YXR0dX'
     'MuZGF0aW5nLnYxLlBhbmljQ29udGFjdFIHY29udGFjdA==');
 
+@$core.Deprecated('Use privacyAxesDescriptor instead')
+const PrivacyAxes$json = {
+  '1': 'PrivacyAxes',
+  '2': [
+    {'1': 'vault_rank', '3': 1, '4': 1, '5': 9, '10': 'vaultRank'},
+    {'1': 'apex_rank', '3': 2, '4': 1, '5': 9, '10': 'apexRank'},
+    {'1': 'forge_rank', '3': 3, '4': 1, '5': 9, '10': 'forgeRank'},
+    {'1': 'luminance', '3': 4, '4': 1, '5': 9, '10': 'luminance'},
+    {'1': 'intellectual_pace', '3': 5, '4': 1, '5': 9, '10': 'intellectualPace'},
+    {'1': 'emotional_granularity', '3': 6, '4': 1, '5': 9, '10': 'emotionalGranularity'},
+    {'1': 'physical_drive', '3': 7, '4': 1, '5': 9, '10': 'physicalDrive'},
+    {'1': 'social_battery', '3': 8, '4': 1, '5': 9, '10': 'socialBattery'},
+    {'1': 'tier', '3': 9, '4': 1, '5': 9, '10': 'tier'},
+  ],
+};
+
+/// Descriptor for `PrivacyAxes`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List privacyAxesDescriptor = $convert.base64Decode(
+    'CgtQcml2YWN5QXhlcxIdCgp2YXVsdF9yYW5rGAEgASgJUgl2YXVsdFJhbmsSGwoJYXBleF9yYW'
+    '5rGAIgASgJUghhcGV4UmFuaxIdCgpmb3JnZV9yYW5rGAMgASgJUglmb3JnZVJhbmsSHAoJbHVt'
+    'aW5hbmNlGAQgASgJUglsdW1pbmFuY2USKwoRaW50ZWxsZWN0dWFsX3BhY2UYBSABKAlSEGludG'
+    'VsbGVjdHVhbFBhY2USMwoVZW1vdGlvbmFsX2dyYW51bGFyaXR5GAYgASgJUhRlbW90aW9uYWxH'
+    'cmFudWxhcml0eRIlCg5waHlzaWNhbF9kcml2ZRgHIAEoCVINcGh5c2ljYWxEcml2ZRIlCg5zb2'
+    'NpYWxfYmF0dGVyeRgIIAEoCVINc29jaWFsQmF0dGVyeRISCgR0aWVyGAkgASgJUgR0aWVy');
+
+@$core.Deprecated('Use getPrivacyAxesRequestDescriptor instead')
+const GetPrivacyAxesRequest$json = {
+  '1': 'GetPrivacyAxesRequest',
+};
+
+/// Descriptor for `GetPrivacyAxesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPrivacyAxesRequestDescriptor = $convert.base64Decode(
+    'ChVHZXRQcml2YWN5QXhlc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use getPrivacyAxesResponseDescriptor instead')
+const GetPrivacyAxesResponse$json = {
+  '1': 'GetPrivacyAxesResponse',
+  '2': [
+    {'1': 'axes', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.PrivacyAxes', '10': 'axes'},
+  ],
+};
+
+/// Descriptor for `GetPrivacyAxesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPrivacyAxesResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRQcml2YWN5QXhlc1Jlc3BvbnNlEjMKBGF4ZXMYASABKAsyHy5zdHRhdHR1cy5kYXRpbm'
+    'cudjEuUHJpdmFjeUF4ZXNSBGF4ZXM=');
+
+@$core.Deprecated('Use upsertPrivacyAxesRequestDescriptor instead')
+const UpsertPrivacyAxesRequest$json = {
+  '1': 'UpsertPrivacyAxesRequest',
+  '2': [
+    {'1': 'axes', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.PrivacyAxes', '10': 'axes'},
+  ],
+};
+
+/// Descriptor for `UpsertPrivacyAxesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertPrivacyAxesRequestDescriptor = $convert.base64Decode(
+    'ChhVcHNlcnRQcml2YWN5QXhlc1JlcXVlc3QSMwoEYXhlcxgBIAEoCzIfLnN0dGF0dHVzLmRhdG'
+    'luZy52MS5Qcml2YWN5QXhlc1IEYXhlcw==');
+
+@$core.Deprecated('Use upsertPrivacyAxesResponseDescriptor instead')
+const UpsertPrivacyAxesResponse$json = {
+  '1': 'UpsertPrivacyAxesResponse',
+  '2': [
+    {'1': 'axes', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.PrivacyAxes', '10': 'axes'},
+  ],
+};
+
+/// Descriptor for `UpsertPrivacyAxesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertPrivacyAxesResponseDescriptor = $convert.base64Decode(
+    'ChlVcHNlcnRQcml2YWN5QXhlc1Jlc3BvbnNlEjMKBGF4ZXMYASABKAsyHy5zdHRhdHR1cy5kYX'
+    'RpbmcudjEuUHJpdmFjeUF4ZXNSBGF4ZXM=');
+

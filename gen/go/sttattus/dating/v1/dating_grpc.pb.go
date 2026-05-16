@@ -42,6 +42,8 @@ const (
 	DatingService_ReportUser_FullMethodName            = "/sttattus.dating.v1.DatingService/ReportUser"
 	DatingService_GetPanicContact_FullMethodName       = "/sttattus.dating.v1.DatingService/GetPanicContact"
 	DatingService_UpsertPanicContact_FullMethodName    = "/sttattus.dating.v1.DatingService/UpsertPanicContact"
+	DatingService_GetPrivacyAxes_FullMethodName        = "/sttattus.dating.v1.DatingService/GetPrivacyAxes"
+	DatingService_UpsertPrivacyAxes_FullMethodName     = "/sttattus.dating.v1.DatingService/UpsertPrivacyAxes"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -74,6 +76,9 @@ type DatingServiceClient interface {
 	ReportUser(ctx context.Context, in *ReportUserRequest, opts ...grpc.CallOption) (*ReportUserResponse, error)
 	GetPanicContact(ctx context.Context, in *GetPanicContactRequest, opts ...grpc.CallOption) (*GetPanicContactResponse, error)
 	UpsertPanicContact(ctx context.Context, in *UpsertPanicContactRequest, opts ...grpc.CallOption) (*UpsertPanicContactResponse, error)
+	// A9.8 — per-axis visibility on the viewer surface.
+	GetPrivacyAxes(ctx context.Context, in *GetPrivacyAxesRequest, opts ...grpc.CallOption) (*GetPrivacyAxesResponse, error)
+	UpsertPrivacyAxes(ctx context.Context, in *UpsertPrivacyAxesRequest, opts ...grpc.CallOption) (*UpsertPrivacyAxesResponse, error)
 }
 
 type datingServiceClient struct {
@@ -332,6 +337,26 @@ func (c *datingServiceClient) UpsertPanicContact(ctx context.Context, in *Upsert
 	return out, nil
 }
 
+func (c *datingServiceClient) GetPrivacyAxes(ctx context.Context, in *GetPrivacyAxesRequest, opts ...grpc.CallOption) (*GetPrivacyAxesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPrivacyAxesResponse)
+	err := c.cc.Invoke(ctx, DatingService_GetPrivacyAxes_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) UpsertPrivacyAxes(ctx context.Context, in *UpsertPrivacyAxesRequest, opts ...grpc.CallOption) (*UpsertPrivacyAxesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertPrivacyAxesResponse)
+	err := c.cc.Invoke(ctx, DatingService_UpsertPrivacyAxes_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatingServiceServer is the server API for DatingService service.
 // All implementations must embed UnimplementedDatingServiceServer
 // for forward compatibility.
@@ -362,6 +387,9 @@ type DatingServiceServer interface {
 	ReportUser(context.Context, *ReportUserRequest) (*ReportUserResponse, error)
 	GetPanicContact(context.Context, *GetPanicContactRequest) (*GetPanicContactResponse, error)
 	UpsertPanicContact(context.Context, *UpsertPanicContactRequest) (*UpsertPanicContactResponse, error)
+	// A9.8 — per-axis visibility on the viewer surface.
+	GetPrivacyAxes(context.Context, *GetPrivacyAxesRequest) (*GetPrivacyAxesResponse, error)
+	UpsertPrivacyAxes(context.Context, *UpsertPrivacyAxesRequest) (*UpsertPrivacyAxesResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -440,6 +468,12 @@ func (UnimplementedDatingServiceServer) GetPanicContact(context.Context, *GetPan
 }
 func (UnimplementedDatingServiceServer) UpsertPanicContact(context.Context, *UpsertPanicContactRequest) (*UpsertPanicContactResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method UpsertPanicContact not implemented")
+}
+func (UnimplementedDatingServiceServer) GetPrivacyAxes(context.Context, *GetPrivacyAxesRequest) (*GetPrivacyAxesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPrivacyAxes not implemented")
+}
+func (UnimplementedDatingServiceServer) UpsertPrivacyAxes(context.Context, *UpsertPrivacyAxesRequest) (*UpsertPrivacyAxesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertPrivacyAxes not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -862,6 +896,42 @@ func _DatingService_UpsertPanicContact_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_GetPrivacyAxes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPrivacyAxesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).GetPrivacyAxes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_GetPrivacyAxes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).GetPrivacyAxes(ctx, req.(*GetPrivacyAxesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_UpsertPrivacyAxes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertPrivacyAxesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).UpsertPrivacyAxes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_UpsertPrivacyAxes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).UpsertPrivacyAxes(ctx, req.(*UpsertPrivacyAxesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatingService_ServiceDesc is the grpc.ServiceDesc for DatingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -952,6 +1022,14 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpsertPanicContact",
 			Handler:    _DatingService_UpsertPanicContact_Handler,
+		},
+		{
+			MethodName: "GetPrivacyAxes",
+			Handler:    _DatingService_GetPrivacyAxes_Handler,
+		},
+		{
+			MethodName: "UpsertPrivacyAxes",
+			Handler:    _DatingService_UpsertPrivacyAxes_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

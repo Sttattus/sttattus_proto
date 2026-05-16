@@ -2596,3 +2596,232 @@ export class UpsertPanicContactResponse extends Message$1<UpsertPanicContactResp
   }
 }
 
+/**
+ * @generated from message sttattus.dating.v1.PrivacyAxes
+ */
+export class PrivacyAxes extends Message$1<PrivacyAxes> {
+  /**
+   * Per-axis visibility: 'matched' | 'seated' | 'private'.
+   *
+   * @generated from field: string vault_rank = 1;
+   */
+  vaultRank = "";
+
+  /**
+   * @generated from field: string apex_rank = 2;
+   */
+  apexRank = "";
+
+  /**
+   * @generated from field: string forge_rank = 3;
+   */
+  forgeRank = "";
+
+  /**
+   * @generated from field: string luminance = 4;
+   */
+  luminance = "";
+
+  /**
+   * @generated from field: string intellectual_pace = 5;
+   */
+  intellectualPace = "";
+
+  /**
+   * @generated from field: string emotional_granularity = 6;
+   */
+  emotionalGranularity = "";
+
+  /**
+   * @generated from field: string physical_drive = 7;
+   */
+  physicalDrive = "";
+
+  /**
+   * @generated from field: string social_battery = 8;
+   */
+  socialBattery = "";
+
+  /**
+   * @generated from field: string tier = 9;
+   */
+  tier = "";
+
+  constructor(data?: PartialMessage<PrivacyAxes>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.PrivacyAxes";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "vault_rank", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "apex_rank", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "forge_rank", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "luminance", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "intellectual_pace", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "emotional_granularity", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "physical_drive", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "social_battery", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PrivacyAxes {
+    return new PrivacyAxes().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PrivacyAxes {
+    return new PrivacyAxes().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PrivacyAxes {
+    return new PrivacyAxes().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PrivacyAxes | PlainMessage<PrivacyAxes> | undefined, b: PrivacyAxes | PlainMessage<PrivacyAxes> | undefined): boolean {
+    return proto3.util.equals(PrivacyAxes, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetPrivacyAxesRequest
+ */
+export class GetPrivacyAxesRequest extends Message$1<GetPrivacyAxesRequest> {
+  constructor(data?: PartialMessage<GetPrivacyAxesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetPrivacyAxesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPrivacyAxesRequest {
+    return new GetPrivacyAxesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPrivacyAxesRequest {
+    return new GetPrivacyAxesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPrivacyAxesRequest {
+    return new GetPrivacyAxesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPrivacyAxesRequest | PlainMessage<GetPrivacyAxesRequest> | undefined, b: GetPrivacyAxesRequest | PlainMessage<GetPrivacyAxesRequest> | undefined): boolean {
+    return proto3.util.equals(GetPrivacyAxesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetPrivacyAxesResponse
+ */
+export class GetPrivacyAxesResponse extends Message$1<GetPrivacyAxesResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.PrivacyAxes axes = 1;
+   */
+  axes?: PrivacyAxes;
+
+  constructor(data?: PartialMessage<GetPrivacyAxesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetPrivacyAxesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "axes", kind: "message", T: PrivacyAxes },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPrivacyAxesResponse {
+    return new GetPrivacyAxesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPrivacyAxesResponse {
+    return new GetPrivacyAxesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPrivacyAxesResponse {
+    return new GetPrivacyAxesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPrivacyAxesResponse | PlainMessage<GetPrivacyAxesResponse> | undefined, b: GetPrivacyAxesResponse | PlainMessage<GetPrivacyAxesResponse> | undefined): boolean {
+    return proto3.util.equals(GetPrivacyAxesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.UpsertPrivacyAxesRequest
+ */
+export class UpsertPrivacyAxesRequest extends Message$1<UpsertPrivacyAxesRequest> {
+  /**
+   * @generated from field: sttattus.dating.v1.PrivacyAxes axes = 1;
+   */
+  axes?: PrivacyAxes;
+
+  constructor(data?: PartialMessage<UpsertPrivacyAxesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.UpsertPrivacyAxesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "axes", kind: "message", T: PrivacyAxes },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertPrivacyAxesRequest {
+    return new UpsertPrivacyAxesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertPrivacyAxesRequest {
+    return new UpsertPrivacyAxesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertPrivacyAxesRequest {
+    return new UpsertPrivacyAxesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertPrivacyAxesRequest | PlainMessage<UpsertPrivacyAxesRequest> | undefined, b: UpsertPrivacyAxesRequest | PlainMessage<UpsertPrivacyAxesRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertPrivacyAxesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.UpsertPrivacyAxesResponse
+ */
+export class UpsertPrivacyAxesResponse extends Message$1<UpsertPrivacyAxesResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.PrivacyAxes axes = 1;
+   */
+  axes?: PrivacyAxes;
+
+  constructor(data?: PartialMessage<UpsertPrivacyAxesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.UpsertPrivacyAxesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "axes", kind: "message", T: PrivacyAxes },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertPrivacyAxesResponse {
+    return new UpsertPrivacyAxesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertPrivacyAxesResponse {
+    return new UpsertPrivacyAxesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertPrivacyAxesResponse {
+    return new UpsertPrivacyAxesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertPrivacyAxesResponse | PlainMessage<UpsertPrivacyAxesResponse> | undefined, b: UpsertPrivacyAxesResponse | PlainMessage<UpsertPrivacyAxesResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertPrivacyAxesResponse, a, b);
+  }
+}
+

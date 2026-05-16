@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { BlockUserRequest, BlockUserResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetProfileRequest, GetProfileResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListMatchesRequest, ListMatchesResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyReportsRequest, ListMyReportsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse } from "./dating_pb.js";
+import { BlockUserRequest, BlockUserResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListMatchesRequest, ListMatchesResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyReportsRequest, ListMyReportsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -223,6 +223,26 @@ export const DatingService = {
       name: "UpsertPanicContact",
       I: UpsertPanicContactRequest,
       O: UpsertPanicContactResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9.8 — per-axis visibility on the viewer surface.
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.GetPrivacyAxes
+     */
+    getPrivacyAxes: {
+      name: "GetPrivacyAxes",
+      I: GetPrivacyAxesRequest,
+      O: GetPrivacyAxesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.UpsertPrivacyAxes
+     */
+    upsertPrivacyAxes: {
+      name: "UpsertPrivacyAxes",
+      I: UpsertPrivacyAxesRequest,
+      O: UpsertPrivacyAxesResponse,
       kind: MethodKind.Unary,
     },
   }

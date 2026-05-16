@@ -301,6 +301,33 @@ message UpsertPanicContactResponse {
   PanicContact contact = 1;
 }
 
+// === Privacy axes (A9.8) ===
+
+message PrivacyAxes {
+  // Per-axis visibility: 'matched' | 'seated' | 'private'.
+  string vault_rank = 1;
+  string apex_rank = 2;
+  string forge_rank = 3;
+  string luminance = 4;
+  string intellectual_pace = 5;
+  string emotional_granularity = 6;
+  string physical_drive = 7;
+  string social_battery = 8;
+  string tier = 9;
+}
+
+message GetPrivacyAxesRequest {}
+message GetPrivacyAxesResponse {
+  PrivacyAxes axes = 1;
+}
+
+message UpsertPrivacyAxesRequest {
+  PrivacyAxes axes = 1;
+}
+message UpsertPrivacyAxesResponse {
+  PrivacyAxes axes = 1;
+}
+
 service DatingService {
   rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
   rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
@@ -331,4 +358,8 @@ service DatingService {
   rpc ReportUser(ReportUserRequest) returns (ReportUserResponse);
   rpc GetPanicContact(GetPanicContactRequest) returns (GetPanicContactResponse);
   rpc UpsertPanicContact(UpsertPanicContactRequest) returns (UpsertPanicContactResponse);
+
+  // A9.8 — per-axis visibility on the viewer surface.
+  rpc GetPrivacyAxes(GetPrivacyAxesRequest) returns (GetPrivacyAxesResponse);
+  rpc UpsertPrivacyAxes(UpsertPrivacyAxesRequest) returns (UpsertPrivacyAxesResponse);
 }

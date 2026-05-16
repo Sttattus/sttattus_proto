@@ -3366,6 +3366,323 @@ class UpsertPanicContactResponse extends $pb.GeneratedMessage {
   PanicContact ensureContact() => $_ensure(0);
 }
 
+class PrivacyAxes extends $pb.GeneratedMessage {
+  factory PrivacyAxes({
+    $core.String? vaultRank,
+    $core.String? apexRank,
+    $core.String? forgeRank,
+    $core.String? luminance,
+    $core.String? intellectualPace,
+    $core.String? emotionalGranularity,
+    $core.String? physicalDrive,
+    $core.String? socialBattery,
+    $core.String? tier,
+  }) {
+    final result = create();
+    if (vaultRank != null) result.vaultRank = vaultRank;
+    if (apexRank != null) result.apexRank = apexRank;
+    if (forgeRank != null) result.forgeRank = forgeRank;
+    if (luminance != null) result.luminance = luminance;
+    if (intellectualPace != null) result.intellectualPace = intellectualPace;
+    if (emotionalGranularity != null) result.emotionalGranularity = emotionalGranularity;
+    if (physicalDrive != null) result.physicalDrive = physicalDrive;
+    if (socialBattery != null) result.socialBattery = socialBattery;
+    if (tier != null) result.tier = tier;
+    return result;
+  }
+
+  PrivacyAxes._();
+
+  factory PrivacyAxes.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PrivacyAxes.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PrivacyAxes', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'vaultRank')
+    ..aOS(2, _omitFieldNames ? '' : 'apexRank')
+    ..aOS(3, _omitFieldNames ? '' : 'forgeRank')
+    ..aOS(4, _omitFieldNames ? '' : 'luminance')
+    ..aOS(5, _omitFieldNames ? '' : 'intellectualPace')
+    ..aOS(6, _omitFieldNames ? '' : 'emotionalGranularity')
+    ..aOS(7, _omitFieldNames ? '' : 'physicalDrive')
+    ..aOS(8, _omitFieldNames ? '' : 'socialBattery')
+    ..aOS(9, _omitFieldNames ? '' : 'tier')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PrivacyAxes clone() => PrivacyAxes()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PrivacyAxes copyWith(void Function(PrivacyAxes) updates) => super.copyWith((message) => updates(message as PrivacyAxes)) as PrivacyAxes;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PrivacyAxes create() => PrivacyAxes._();
+  @$core.override
+  PrivacyAxes createEmptyInstance() => create();
+  static $pb.PbList<PrivacyAxes> createRepeated() => $pb.PbList<PrivacyAxes>();
+  @$core.pragma('dart2js:noInline')
+  static PrivacyAxes getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PrivacyAxes>(create);
+  static PrivacyAxes? _defaultInstance;
+
+  /// Per-axis visibility: 'matched' | 'seated' | 'private'.
+  @$pb.TagNumber(1)
+  $core.String get vaultRank => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set vaultRank($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasVaultRank() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVaultRank() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get apexRank => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set apexRank($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasApexRank() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearApexRank() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get forgeRank => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set forgeRank($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasForgeRank() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearForgeRank() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get luminance => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set luminance($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLuminance() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLuminance() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get intellectualPace => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set intellectualPace($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasIntellectualPace() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIntellectualPace() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get emotionalGranularity => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set emotionalGranularity($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEmotionalGranularity() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEmotionalGranularity() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get physicalDrive => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set physicalDrive($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPhysicalDrive() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPhysicalDrive() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get socialBattery => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set socialBattery($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSocialBattery() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSocialBattery() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get tier => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set tier($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasTier() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearTier() => $_clearField(9);
+}
+
+class GetPrivacyAxesRequest extends $pb.GeneratedMessage {
+  factory GetPrivacyAxesRequest() => create();
+
+  GetPrivacyAxesRequest._();
+
+  factory GetPrivacyAxesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetPrivacyAxesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPrivacyAxesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPrivacyAxesRequest clone() => GetPrivacyAxesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPrivacyAxesRequest copyWith(void Function(GetPrivacyAxesRequest) updates) => super.copyWith((message) => updates(message as GetPrivacyAxesRequest)) as GetPrivacyAxesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPrivacyAxesRequest create() => GetPrivacyAxesRequest._();
+  @$core.override
+  GetPrivacyAxesRequest createEmptyInstance() => create();
+  static $pb.PbList<GetPrivacyAxesRequest> createRepeated() => $pb.PbList<GetPrivacyAxesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetPrivacyAxesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPrivacyAxesRequest>(create);
+  static GetPrivacyAxesRequest? _defaultInstance;
+}
+
+class GetPrivacyAxesResponse extends $pb.GeneratedMessage {
+  factory GetPrivacyAxesResponse({
+    PrivacyAxes? axes,
+  }) {
+    final result = create();
+    if (axes != null) result.axes = axes;
+    return result;
+  }
+
+  GetPrivacyAxesResponse._();
+
+  factory GetPrivacyAxesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetPrivacyAxesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPrivacyAxesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<PrivacyAxes>(1, _omitFieldNames ? '' : 'axes', subBuilder: PrivacyAxes.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPrivacyAxesResponse clone() => GetPrivacyAxesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPrivacyAxesResponse copyWith(void Function(GetPrivacyAxesResponse) updates) => super.copyWith((message) => updates(message as GetPrivacyAxesResponse)) as GetPrivacyAxesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPrivacyAxesResponse create() => GetPrivacyAxesResponse._();
+  @$core.override
+  GetPrivacyAxesResponse createEmptyInstance() => create();
+  static $pb.PbList<GetPrivacyAxesResponse> createRepeated() => $pb.PbList<GetPrivacyAxesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetPrivacyAxesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPrivacyAxesResponse>(create);
+  static GetPrivacyAxesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  PrivacyAxes get axes => $_getN(0);
+  @$pb.TagNumber(1)
+  set axes(PrivacyAxes value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAxes() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAxes() => $_clearField(1);
+  @$pb.TagNumber(1)
+  PrivacyAxes ensureAxes() => $_ensure(0);
+}
+
+class UpsertPrivacyAxesRequest extends $pb.GeneratedMessage {
+  factory UpsertPrivacyAxesRequest({
+    PrivacyAxes? axes,
+  }) {
+    final result = create();
+    if (axes != null) result.axes = axes;
+    return result;
+  }
+
+  UpsertPrivacyAxesRequest._();
+
+  factory UpsertPrivacyAxesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpsertPrivacyAxesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpsertPrivacyAxesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<PrivacyAxes>(1, _omitFieldNames ? '' : 'axes', subBuilder: PrivacyAxes.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertPrivacyAxesRequest clone() => UpsertPrivacyAxesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertPrivacyAxesRequest copyWith(void Function(UpsertPrivacyAxesRequest) updates) => super.copyWith((message) => updates(message as UpsertPrivacyAxesRequest)) as UpsertPrivacyAxesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertPrivacyAxesRequest create() => UpsertPrivacyAxesRequest._();
+  @$core.override
+  UpsertPrivacyAxesRequest createEmptyInstance() => create();
+  static $pb.PbList<UpsertPrivacyAxesRequest> createRepeated() => $pb.PbList<UpsertPrivacyAxesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpsertPrivacyAxesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpsertPrivacyAxesRequest>(create);
+  static UpsertPrivacyAxesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  PrivacyAxes get axes => $_getN(0);
+  @$pb.TagNumber(1)
+  set axes(PrivacyAxes value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAxes() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAxes() => $_clearField(1);
+  @$pb.TagNumber(1)
+  PrivacyAxes ensureAxes() => $_ensure(0);
+}
+
+class UpsertPrivacyAxesResponse extends $pb.GeneratedMessage {
+  factory UpsertPrivacyAxesResponse({
+    PrivacyAxes? axes,
+  }) {
+    final result = create();
+    if (axes != null) result.axes = axes;
+    return result;
+  }
+
+  UpsertPrivacyAxesResponse._();
+
+  factory UpsertPrivacyAxesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpsertPrivacyAxesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpsertPrivacyAxesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<PrivacyAxes>(1, _omitFieldNames ? '' : 'axes', subBuilder: PrivacyAxes.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertPrivacyAxesResponse clone() => UpsertPrivacyAxesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertPrivacyAxesResponse copyWith(void Function(UpsertPrivacyAxesResponse) updates) => super.copyWith((message) => updates(message as UpsertPrivacyAxesResponse)) as UpsertPrivacyAxesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertPrivacyAxesResponse create() => UpsertPrivacyAxesResponse._();
+  @$core.override
+  UpsertPrivacyAxesResponse createEmptyInstance() => create();
+  static $pb.PbList<UpsertPrivacyAxesResponse> createRepeated() => $pb.PbList<UpsertPrivacyAxesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpsertPrivacyAxesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpsertPrivacyAxesResponse>(create);
+  static UpsertPrivacyAxesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  PrivacyAxes get axes => $_getN(0);
+  @$pb.TagNumber(1)
+  set axes(PrivacyAxes value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAxes() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAxes() => $_clearField(1);
+  @$pb.TagNumber(1)
+  PrivacyAxes ensureAxes() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
