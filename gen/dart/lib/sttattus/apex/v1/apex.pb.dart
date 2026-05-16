@@ -684,6 +684,78 @@ class AdminVerifyLabResponse extends $pb.GeneratedMessage {
   LabReport ensureReport() => $_ensure(0);
 }
 
+/// A11.1 — vitals dashboard. Most-recent value per metric for the
+/// signed-in member; what the today screen renders.
+class ListMyVitalsRequest extends $pb.GeneratedMessage {
+  factory ListMyVitalsRequest() => create();
+
+  ListMyVitalsRequest._();
+
+  factory ListMyVitalsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyVitalsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyVitalsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyVitalsRequest clone() => ListMyVitalsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyVitalsRequest copyWith(void Function(ListMyVitalsRequest) updates) => super.copyWith((message) => updates(message as ListMyVitalsRequest)) as ListMyVitalsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyVitalsRequest create() => ListMyVitalsRequest._();
+  @$core.override
+  ListMyVitalsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyVitalsRequest> createRepeated() => $pb.PbList<ListMyVitalsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyVitalsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyVitalsRequest>(create);
+  static ListMyVitalsRequest? _defaultInstance;
+}
+
+class ListMyVitalsResponse extends $pb.GeneratedMessage {
+  factory ListMyVitalsResponse({
+    $core.Iterable<Biomarker>? vitals,
+  }) {
+    final result = create();
+    if (vitals != null) result.vitals.addAll(vitals);
+    return result;
+  }
+
+  ListMyVitalsResponse._();
+
+  factory ListMyVitalsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyVitalsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyVitalsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..pc<Biomarker>(1, _omitFieldNames ? '' : 'vitals', $pb.PbFieldType.PM, subBuilder: Biomarker.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyVitalsResponse clone() => ListMyVitalsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyVitalsResponse copyWith(void Function(ListMyVitalsResponse) updates) => super.copyWith((message) => updates(message as ListMyVitalsResponse)) as ListMyVitalsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyVitalsResponse create() => ListMyVitalsResponse._();
+  @$core.override
+  ListMyVitalsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyVitalsResponse> createRepeated() => $pb.PbList<ListMyVitalsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyVitalsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyVitalsResponse>(create);
+  static ListMyVitalsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Biomarker> get vitals => $_getList(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

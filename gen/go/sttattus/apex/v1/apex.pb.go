@@ -724,6 +724,88 @@ func (x *AdminVerifyLabResponse) GetReport() *LabReport {
 	return nil
 }
 
+// A11.1 — vitals dashboard. Most-recent value per metric for the
+// signed-in member; what the today screen renders.
+type ListMyVitalsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyVitalsRequest) Reset() {
+	*x = ListMyVitalsRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyVitalsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyVitalsRequest) ProtoMessage() {}
+
+func (x *ListMyVitalsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyVitalsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyVitalsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{10}
+}
+
+type ListMyVitalsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Vitals        []*Biomarker           `protobuf:"bytes,1,rep,name=vitals,proto3" json:"vitals,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyVitalsResponse) Reset() {
+	*x = ListMyVitalsResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyVitalsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyVitalsResponse) ProtoMessage() {}
+
+func (x *ListMyVitalsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyVitalsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyVitalsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *ListMyVitalsResponse) GetVitals() []*Biomarker {
+	if x != nil {
+		return x.Vitals
+	}
+	return nil
+}
+
 var File_sttattus_apex_v1_apex_proto protoreflect.FileDescriptor
 
 const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
@@ -773,7 +855,10 @@ const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"admin_note\x18\x03 \x01(\tR\tadminNote\x12F\n" +
 	"\x10verified_markers\x18\x04 \x03(\v2\x1b.sttattus.apex.v1.BiomarkerR\x0fverifiedMarkers\"M\n" +
 	"\x16AdminVerifyLabResponse\x123\n" +
-	"\x06report\x18\x01 \x01(\v2\x1b.sttattus.apex.v1.LabReportR\x06report*\xff\x01\n" +
+	"\x06report\x18\x01 \x01(\v2\x1b.sttattus.apex.v1.LabReportR\x06report\"\x15\n" +
+	"\x13ListMyVitalsRequest\"K\n" +
+	"\x14ListMyVitalsResponse\x123\n" +
+	"\x06vitals\x18\x01 \x03(\v2\x1b.sttattus.apex.v1.BiomarkerR\x06vitals*\xff\x01\n" +
 	"\x11BiomarkerCategory\x12\"\n" +
 	"\x1eBIOMARKER_CATEGORY_UNSPECIFIED\x10\x00\x12\x1d\n" +
 	"\x19BIOMARKER_CATEGORY_LIPIDS\x10\x01\x12 \n" +
@@ -786,12 +871,13 @@ const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\x98\x03\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xf7\x03\n" +
 	"\vApexService\x12W\n" +
 	"\n" +
 	"SyncVitals\x12#.sttattus.apex.v1.SyncVitalsRequest\x1a$.sttattus.apex.v1.SyncVitalsResponse\x12f\n" +
 	"\x0fSubmitLabReport\x12(.sttattus.apex.v1.SubmitLabReportRequest\x1a).sttattus.apex.v1.SubmitLabReportResponse\x12c\n" +
-	"\x0eListLabReports\x12'.sttattus.apex.v1.ListLabReportsRequest\x1a(.sttattus.apex.v1.ListLabReportsResponse\x12c\n" +
+	"\x0eListLabReports\x12'.sttattus.apex.v1.ListLabReportsRequest\x1a(.sttattus.apex.v1.ListLabReportsResponse\x12]\n" +
+	"\fListMyVitals\x12%.sttattus.apex.v1.ListMyVitalsRequest\x1a&.sttattus.apex.v1.ListMyVitalsResponse\x12c\n" +
 	"\x0eAdminVerifyLab\x12'.sttattus.apex.v1.AdminVerifyLabRequest\x1a(.sttattus.apex.v1.AdminVerifyLabResponseB:Z8github.com/sttattus/proto/gen/go/sttattus/apex/v1;apexv1b\x06proto3"
 
 var (
@@ -807,7 +893,7 @@ func file_sttattus_apex_v1_apex_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_apex_v1_apex_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_apex_v1_apex_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_sttattus_apex_v1_apex_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_sttattus_apex_v1_apex_proto_goTypes = []any{
 	(BiomarkerCategory)(0),          // 0: sttattus.apex.v1.BiomarkerCategory
 	(VerificationStatus)(0),         // 1: sttattus.apex.v1.VerificationStatus
@@ -821,35 +907,40 @@ var file_sttattus_apex_v1_apex_proto_goTypes = []any{
 	(*ListLabReportsResponse)(nil),  // 9: sttattus.apex.v1.ListLabReportsResponse
 	(*AdminVerifyLabRequest)(nil),   // 10: sttattus.apex.v1.AdminVerifyLabRequest
 	(*AdminVerifyLabResponse)(nil),  // 11: sttattus.apex.v1.AdminVerifyLabResponse
-	(*timestamppb.Timestamp)(nil),   // 12: google.protobuf.Timestamp
+	(*ListMyVitalsRequest)(nil),     // 12: sttattus.apex.v1.ListMyVitalsRequest
+	(*ListMyVitalsResponse)(nil),    // 13: sttattus.apex.v1.ListMyVitalsResponse
+	(*timestamppb.Timestamp)(nil),   // 14: google.protobuf.Timestamp
 }
 var file_sttattus_apex_v1_apex_proto_depIdxs = []int32{
 	0,  // 0: sttattus.apex.v1.Biomarker.category:type_name -> sttattus.apex.v1.BiomarkerCategory
-	12, // 1: sttattus.apex.v1.Biomarker.recorded_at:type_name -> google.protobuf.Timestamp
+	14, // 1: sttattus.apex.v1.Biomarker.recorded_at:type_name -> google.protobuf.Timestamp
 	1,  // 2: sttattus.apex.v1.LabReport.status:type_name -> sttattus.apex.v1.VerificationStatus
-	12, // 3: sttattus.apex.v1.LabReport.report_date:type_name -> google.protobuf.Timestamp
-	12, // 4: sttattus.apex.v1.LabReport.submitted_at:type_name -> google.protobuf.Timestamp
+	14, // 3: sttattus.apex.v1.LabReport.report_date:type_name -> google.protobuf.Timestamp
+	14, // 4: sttattus.apex.v1.LabReport.submitted_at:type_name -> google.protobuf.Timestamp
 	2,  // 5: sttattus.apex.v1.LabReport.extracted_markers:type_name -> sttattus.apex.v1.Biomarker
 	2,  // 6: sttattus.apex.v1.SyncVitalsRequest.metrics:type_name -> sttattus.apex.v1.Biomarker
-	12, // 7: sttattus.apex.v1.SubmitLabReportRequest.report_date:type_name -> google.protobuf.Timestamp
+	14, // 7: sttattus.apex.v1.SubmitLabReportRequest.report_date:type_name -> google.protobuf.Timestamp
 	3,  // 8: sttattus.apex.v1.SubmitLabReportResponse.report:type_name -> sttattus.apex.v1.LabReport
 	3,  // 9: sttattus.apex.v1.ListLabReportsResponse.reports:type_name -> sttattus.apex.v1.LabReport
 	1,  // 10: sttattus.apex.v1.AdminVerifyLabRequest.status:type_name -> sttattus.apex.v1.VerificationStatus
 	2,  // 11: sttattus.apex.v1.AdminVerifyLabRequest.verified_markers:type_name -> sttattus.apex.v1.Biomarker
 	3,  // 12: sttattus.apex.v1.AdminVerifyLabResponse.report:type_name -> sttattus.apex.v1.LabReport
-	4,  // 13: sttattus.apex.v1.ApexService.SyncVitals:input_type -> sttattus.apex.v1.SyncVitalsRequest
-	6,  // 14: sttattus.apex.v1.ApexService.SubmitLabReport:input_type -> sttattus.apex.v1.SubmitLabReportRequest
-	8,  // 15: sttattus.apex.v1.ApexService.ListLabReports:input_type -> sttattus.apex.v1.ListLabReportsRequest
-	10, // 16: sttattus.apex.v1.ApexService.AdminVerifyLab:input_type -> sttattus.apex.v1.AdminVerifyLabRequest
-	5,  // 17: sttattus.apex.v1.ApexService.SyncVitals:output_type -> sttattus.apex.v1.SyncVitalsResponse
-	7,  // 18: sttattus.apex.v1.ApexService.SubmitLabReport:output_type -> sttattus.apex.v1.SubmitLabReportResponse
-	9,  // 19: sttattus.apex.v1.ApexService.ListLabReports:output_type -> sttattus.apex.v1.ListLabReportsResponse
-	11, // 20: sttattus.apex.v1.ApexService.AdminVerifyLab:output_type -> sttattus.apex.v1.AdminVerifyLabResponse
-	17, // [17:21] is the sub-list for method output_type
-	13, // [13:17] is the sub-list for method input_type
-	13, // [13:13] is the sub-list for extension type_name
-	13, // [13:13] is the sub-list for extension extendee
-	0,  // [0:13] is the sub-list for field type_name
+	2,  // 13: sttattus.apex.v1.ListMyVitalsResponse.vitals:type_name -> sttattus.apex.v1.Biomarker
+	4,  // 14: sttattus.apex.v1.ApexService.SyncVitals:input_type -> sttattus.apex.v1.SyncVitalsRequest
+	6,  // 15: sttattus.apex.v1.ApexService.SubmitLabReport:input_type -> sttattus.apex.v1.SubmitLabReportRequest
+	8,  // 16: sttattus.apex.v1.ApexService.ListLabReports:input_type -> sttattus.apex.v1.ListLabReportsRequest
+	12, // 17: sttattus.apex.v1.ApexService.ListMyVitals:input_type -> sttattus.apex.v1.ListMyVitalsRequest
+	10, // 18: sttattus.apex.v1.ApexService.AdminVerifyLab:input_type -> sttattus.apex.v1.AdminVerifyLabRequest
+	5,  // 19: sttattus.apex.v1.ApexService.SyncVitals:output_type -> sttattus.apex.v1.SyncVitalsResponse
+	7,  // 20: sttattus.apex.v1.ApexService.SubmitLabReport:output_type -> sttattus.apex.v1.SubmitLabReportResponse
+	9,  // 21: sttattus.apex.v1.ApexService.ListLabReports:output_type -> sttattus.apex.v1.ListLabReportsResponse
+	13, // 22: sttattus.apex.v1.ApexService.ListMyVitals:output_type -> sttattus.apex.v1.ListMyVitalsResponse
+	11, // 23: sttattus.apex.v1.ApexService.AdminVerifyLab:output_type -> sttattus.apex.v1.AdminVerifyLabResponse
+	19, // [19:24] is the sub-list for method output_type
+	14, // [14:19] is the sub-list for method input_type
+	14, // [14:14] is the sub-list for extension type_name
+	14, // [14:14] is the sub-list for extension extendee
+	0,  // [0:14] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_apex_v1_apex_proto_init() }
@@ -863,7 +954,7 @@ func file_sttattus_apex_v1_apex_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_apex_v1_apex_proto_rawDesc), len(file_sttattus_apex_v1_apex_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   10,
+			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

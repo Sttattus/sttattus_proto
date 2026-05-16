@@ -85,6 +85,14 @@ message AdminVerifyLabResponse {
   LabReport report = 1;
 }
 
+// A11.1 — vitals dashboard. Most-recent value per metric for the
+// signed-in member; what the today screen renders.
+message ListMyVitalsRequest {}
+
+message ListMyVitalsResponse {
+  repeated Biomarker vitals = 1;
+}
+
 service ApexService {
   // Wearable/Manual Sync
   rpc SyncVitals(SyncVitalsRequest) returns (SyncVitalsResponse);
@@ -92,6 +100,9 @@ service ApexService {
   // The Lab: Clinical Data
   rpc SubmitLabReport(SubmitLabReportRequest) returns (SubmitLabReportResponse);
   rpc ListLabReports(ListLabReportsRequest) returns (ListLabReportsResponse);
+
+  // Today's vitals (A11.1).
+  rpc ListMyVitals(ListMyVitalsRequest) returns (ListMyVitalsResponse);
 
   // Admin Methods (Gated by Admin Middleware)
   rpc AdminVerifyLab(AdminVerifyLabRequest) returns (AdminVerifyLabResponse);

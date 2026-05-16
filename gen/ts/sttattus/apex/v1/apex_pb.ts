@@ -600,3 +600,74 @@ export class AdminVerifyLabResponse extends Message<AdminVerifyLabResponse> {
   }
 }
 
+/**
+ * A11.1 — vitals dashboard. Most-recent value per metric for the
+ * signed-in member; what the today screen renders.
+ *
+ * @generated from message sttattus.apex.v1.ListMyVitalsRequest
+ */
+export class ListMyVitalsRequest extends Message<ListMyVitalsRequest> {
+  constructor(data?: PartialMessage<ListMyVitalsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListMyVitalsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyVitalsRequest {
+    return new ListMyVitalsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyVitalsRequest {
+    return new ListMyVitalsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyVitalsRequest {
+    return new ListMyVitalsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyVitalsRequest | PlainMessage<ListMyVitalsRequest> | undefined, b: ListMyVitalsRequest | PlainMessage<ListMyVitalsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyVitalsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListMyVitalsResponse
+ */
+export class ListMyVitalsResponse extends Message<ListMyVitalsResponse> {
+  /**
+   * @generated from field: repeated sttattus.apex.v1.Biomarker vitals = 1;
+   */
+  vitals: Biomarker[] = [];
+
+  constructor(data?: PartialMessage<ListMyVitalsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListMyVitalsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "vitals", kind: "message", T: Biomarker, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyVitalsResponse {
+    return new ListMyVitalsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyVitalsResponse {
+    return new ListMyVitalsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyVitalsResponse {
+    return new ListMyVitalsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyVitalsResponse | PlainMessage<ListMyVitalsResponse> | undefined, b: ListMyVitalsResponse | PlainMessage<ListMyVitalsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyVitalsResponse, a, b);
+  }
+}
+

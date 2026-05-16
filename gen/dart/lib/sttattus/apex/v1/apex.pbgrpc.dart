@@ -46,6 +46,11 @@ class ApexServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listLabReports, request, options: options);
   }
 
+  /// Today's vitals (A11.1).
+  $grpc.ResponseFuture<$0.ListMyVitalsResponse> listMyVitals($0.ListMyVitalsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyVitals, request, options: options);
+  }
+
   /// Admin Methods (Gated by Admin Middleware)
   $grpc.ResponseFuture<$0.AdminVerifyLabResponse> adminVerifyLab($0.AdminVerifyLabRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$adminVerifyLab, request, options: options);
@@ -65,6 +70,10 @@ class ApexServiceClient extends $grpc.Client {
       '/sttattus.apex.v1.ApexService/ListLabReports',
       ($0.ListLabReportsRequest value) => value.writeToBuffer(),
       $0.ListLabReportsResponse.fromBuffer);
+  static final _$listMyVitals = $grpc.ClientMethod<$0.ListMyVitalsRequest, $0.ListMyVitalsResponse>(
+      '/sttattus.apex.v1.ApexService/ListMyVitals',
+      ($0.ListMyVitalsRequest value) => value.writeToBuffer(),
+      $0.ListMyVitalsResponse.fromBuffer);
   static final _$adminVerifyLab = $grpc.ClientMethod<$0.AdminVerifyLabRequest, $0.AdminVerifyLabResponse>(
       '/sttattus.apex.v1.ApexService/AdminVerifyLab',
       ($0.AdminVerifyLabRequest value) => value.writeToBuffer(),
@@ -97,6 +106,13 @@ abstract class ApexServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListLabReportsRequest.fromBuffer(value),
         ($0.ListLabReportsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyVitalsRequest, $0.ListMyVitalsResponse>(
+        'ListMyVitals',
+        listMyVitals_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyVitalsRequest.fromBuffer(value),
+        ($0.ListMyVitalsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.AdminVerifyLabRequest, $0.AdminVerifyLabResponse>(
         'AdminVerifyLab',
         adminVerifyLab_Pre,
@@ -123,6 +139,12 @@ abstract class ApexServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListLabReportsResponse> listLabReports($grpc.ServiceCall call, $0.ListLabReportsRequest request);
+
+  $async.Future<$0.ListMyVitalsResponse> listMyVitals_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyVitalsRequest> $request) async {
+    return listMyVitals($call, await $request);
+  }
+
+  $async.Future<$0.ListMyVitalsResponse> listMyVitals($grpc.ServiceCall call, $0.ListMyVitalsRequest request);
 
   $async.Future<$0.AdminVerifyLabResponse> adminVerifyLab_Pre($grpc.ServiceCall $call, $async.Future<$0.AdminVerifyLabRequest> $request) async {
     return adminVerifyLab($call, await $request);

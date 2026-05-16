@@ -209,3 +209,25 @@ final $typed_data.Uint8List adminVerifyLabResponseDescriptor = $convert.base64De
     'ChZBZG1pblZlcmlmeUxhYlJlc3BvbnNlEjMKBnJlcG9ydBgBIAEoCzIbLnN0dGF0dHVzLmFwZX'
     'gudjEuTGFiUmVwb3J0UgZyZXBvcnQ=');
 
+@$core.Deprecated('Use listMyVitalsRequestDescriptor instead')
+const ListMyVitalsRequest$json = {
+  '1': 'ListMyVitalsRequest',
+};
+
+/// Descriptor for `ListMyVitalsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyVitalsRequestDescriptor = $convert.base64Decode(
+    'ChNMaXN0TXlWaXRhbHNSZXF1ZXN0');
+
+@$core.Deprecated('Use listMyVitalsResponseDescriptor instead')
+const ListMyVitalsResponse$json = {
+  '1': 'ListMyVitalsResponse',
+  '2': [
+    {'1': 'vitals', '3': 1, '4': 3, '5': 11, '6': '.sttattus.apex.v1.Biomarker', '10': 'vitals'},
+  ],
+};
+
+/// Descriptor for `ListMyVitalsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyVitalsResponseDescriptor = $convert.base64Decode(
+    'ChRMaXN0TXlWaXRhbHNSZXNwb25zZRIzCgZ2aXRhbHMYASADKAsyGy5zdHRhdHR1cy5hcGV4Ln'
+    'YxLkJpb21hcmtlclIGdml0YWxz');
+

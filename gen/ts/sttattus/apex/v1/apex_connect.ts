@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyLabRequest, AdminVerifyLabResponse, ListLabReportsRequest, ListLabReportsResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncVitalsRequest, SyncVitalsResponse } from "./apex_pb.js";
+import { AdminVerifyLabRequest, AdminVerifyLabResponse, ListLabReportsRequest, ListLabReportsResponse, ListMyVitalsRequest, ListMyVitalsResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncVitalsRequest, SyncVitalsResponse } from "./apex_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -41,6 +41,17 @@ export const ApexService = {
       name: "ListLabReports",
       I: ListLabReportsRequest,
       O: ListLabReportsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Today's vitals (A11.1).
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyVitals
+     */
+    listMyVitals: {
+      name: "ListMyVitals",
+      I: ListMyVitalsRequest,
+      O: ListMyVitalsResponse,
       kind: MethodKind.Unary,
     },
     /**
