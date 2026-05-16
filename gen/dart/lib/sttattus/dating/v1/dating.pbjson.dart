@@ -505,3 +505,121 @@ final $typed_data.Uint8List releaseTensionSeatResponseDescriptor = $convert.base
     'ChpSZWxlYXNlVGVuc2lvblNlYXRSZXNwb25zZRIzCgRzZWF0GAEgASgLMh8uc3R0YXR0dXMuZG'
     'F0aW5nLnYxLlRlbnNpb25TZWF0UgRzZWF0');
 
+@$core.Deprecated('Use akashicChapterDescriptor instead')
+const AkashicChapter$json = {
+  '1': 'AkashicChapter',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'chapter_key', '3': 2, '4': 1, '5': 9, '10': 'chapterKey'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'body', '3': 4, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'visibility', '3': 5, '4': 1, '5': 9, '10': 'visibility'},
+  ],
+};
+
+/// Descriptor for `AkashicChapter`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List akashicChapterDescriptor = $convert.base64Decode(
+    'Cg5Ba2FzaGljQ2hhcHRlchIOCgJpZBgBIAEoCVICaWQSHwoLY2hhcHRlcl9rZXkYAiABKAlSCm'
+    'NoYXB0ZXJLZXkSFAoFdGl0bGUYAyABKAlSBXRpdGxlEhIKBGJvZHkYBCABKAlSBGJvZHkSHgoK'
+    'dmlzaWJpbGl0eRgFIAEoCVIKdmlzaWJpbGl0eQ==');
+
+@$core.Deprecated('Use listAuthorAkashicRequestDescriptor instead')
+const ListAuthorAkashicRequest$json = {
+  '1': 'ListAuthorAkashicRequest',
+};
+
+/// Descriptor for `ListAuthorAkashicRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAuthorAkashicRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0QXV0aG9yQWthc2hpY1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listAuthorAkashicResponseDescriptor instead')
+const ListAuthorAkashicResponse$json = {
+  '1': 'ListAuthorAkashicResponse',
+  '2': [
+    {'1': 'chapters', '3': 1, '4': 3, '5': 11, '6': '.sttattus.dating.v1.AkashicChapter', '10': 'chapters'},
+  ],
+};
+
+/// Descriptor for `ListAuthorAkashicResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAuthorAkashicResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0QXV0aG9yQWthc2hpY1Jlc3BvbnNlEj4KCGNoYXB0ZXJzGAEgAygLMiIuc3R0YXR0dX'
+    'MuZGF0aW5nLnYxLkFrYXNoaWNDaGFwdGVyUghjaGFwdGVycw==');
+
+@$core.Deprecated('Use listVisibleAkashicRequestDescriptor instead')
+const ListVisibleAkashicRequest$json = {
+  '1': 'ListVisibleAkashicRequest',
+  '2': [
+    {'1': 'target_user_id', '3': 1, '4': 1, '5': 9, '10': 'targetUserId'},
+  ],
+};
+
+/// Descriptor for `ListVisibleAkashicRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listVisibleAkashicRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0VmlzaWJsZUFrYXNoaWNSZXF1ZXN0EiQKDnRhcmdldF91c2VyX2lkGAEgASgJUgx0YX'
+    'JnZXRVc2VySWQ=');
+
+@$core.Deprecated('Use listVisibleAkashicResponseDescriptor instead')
+const ListVisibleAkashicResponse$json = {
+  '1': 'ListVisibleAkashicResponse',
+  '2': [
+    {'1': 'chapters', '3': 1, '4': 3, '5': 11, '6': '.sttattus.dating.v1.AkashicChapter', '10': 'chapters'},
+  ],
+};
+
+/// Descriptor for `ListVisibleAkashicResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listVisibleAkashicResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0VmlzaWJsZUFrYXNoaWNSZXNwb25zZRI+CghjaGFwdGVycxgBIAMoCzIiLnN0dGF0dH'
+    'VzLmRhdGluZy52MS5Ba2FzaGljQ2hhcHRlclIIY2hhcHRlcnM=');
+
+@$core.Deprecated('Use upsertAkashicChapterRequestDescriptor instead')
+const UpsertAkashicChapterRequest$json = {
+  '1': 'UpsertAkashicChapterRequest',
+  '2': [
+    {'1': 'chapter_key', '3': 1, '4': 1, '5': 9, '10': 'chapterKey'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'body', '3': 3, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'visibility', '3': 4, '4': 1, '5': 9, '10': 'visibility'},
+  ],
+};
+
+/// Descriptor for `UpsertAkashicChapterRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertAkashicChapterRequestDescriptor = $convert.base64Decode(
+    'ChtVcHNlcnRBa2FzaGljQ2hhcHRlclJlcXVlc3QSHwoLY2hhcHRlcl9rZXkYASABKAlSCmNoYX'
+    'B0ZXJLZXkSFAoFdGl0bGUYAiABKAlSBXRpdGxlEhIKBGJvZHkYAyABKAlSBGJvZHkSHgoKdmlz'
+    'aWJpbGl0eRgEIAEoCVIKdmlzaWJpbGl0eQ==');
+
+@$core.Deprecated('Use upsertAkashicChapterResponseDescriptor instead')
+const UpsertAkashicChapterResponse$json = {
+  '1': 'UpsertAkashicChapterResponse',
+  '2': [
+    {'1': 'chapter', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.AkashicChapter', '10': 'chapter'},
+  ],
+};
+
+/// Descriptor for `UpsertAkashicChapterResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertAkashicChapterResponseDescriptor = $convert.base64Decode(
+    'ChxVcHNlcnRBa2FzaGljQ2hhcHRlclJlc3BvbnNlEjwKB2NoYXB0ZXIYASABKAsyIi5zdHRhdH'
+    'R1cy5kYXRpbmcudjEuQWthc2hpY0NoYXB0ZXJSB2NoYXB0ZXI=');
+
+@$core.Deprecated('Use deleteAkashicChapterRequestDescriptor instead')
+const DeleteAkashicChapterRequest$json = {
+  '1': 'DeleteAkashicChapterRequest',
+  '2': [
+    {'1': 'chapter_key', '3': 1, '4': 1, '5': 9, '10': 'chapterKey'},
+  ],
+};
+
+/// Descriptor for `DeleteAkashicChapterRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteAkashicChapterRequestDescriptor = $convert.base64Decode(
+    'ChtEZWxldGVBa2FzaGljQ2hhcHRlclJlcXVlc3QSHwoLY2hhcHRlcl9rZXkYASABKAlSCmNoYX'
+    'B0ZXJLZXk=');
+
+@$core.Deprecated('Use deleteAkashicChapterResponseDescriptor instead')
+const DeleteAkashicChapterResponse$json = {
+  '1': 'DeleteAkashicChapterResponse',
+};
+
+/// Descriptor for `DeleteAkashicChapterResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteAkashicChapterResponseDescriptor = $convert.base64Decode(
+    'ChxEZWxldGVBa2FzaGljQ2hhcHRlclJlc3BvbnNl');
+

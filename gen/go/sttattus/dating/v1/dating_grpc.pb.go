@@ -31,6 +31,10 @@ const (
 	DatingService_ListTensionSeats_FullMethodName      = "/sttattus.dating.v1.DatingService/ListTensionSeats"
 	DatingService_PlaceTensionBid_FullMethodName       = "/sttattus.dating.v1.DatingService/PlaceTensionBid"
 	DatingService_ReleaseTensionSeat_FullMethodName    = "/sttattus.dating.v1.DatingService/ReleaseTensionSeat"
+	DatingService_ListAuthorAkashic_FullMethodName     = "/sttattus.dating.v1.DatingService/ListAuthorAkashic"
+	DatingService_ListVisibleAkashic_FullMethodName    = "/sttattus.dating.v1.DatingService/ListVisibleAkashic"
+	DatingService_UpsertAkashicChapter_FullMethodName  = "/sttattus.dating.v1.DatingService/UpsertAkashicChapter"
+	DatingService_DeleteAkashicChapter_FullMethodName  = "/sttattus.dating.v1.DatingService/DeleteAkashicChapter"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -50,6 +54,11 @@ type DatingServiceClient interface {
 	ListTensionSeats(ctx context.Context, in *ListTensionSeatsRequest, opts ...grpc.CallOption) (*ListTensionSeatsResponse, error)
 	PlaceTensionBid(ctx context.Context, in *PlaceTensionBidRequest, opts ...grpc.CallOption) (*PlaceTensionBidResponse, error)
 	ReleaseTensionSeat(ctx context.Context, in *ReleaseTensionSeatRequest, opts ...grpc.CallOption) (*ReleaseTensionSeatResponse, error)
+	// A9.5 — Akashic Record v2.
+	ListAuthorAkashic(ctx context.Context, in *ListAuthorAkashicRequest, opts ...grpc.CallOption) (*ListAuthorAkashicResponse, error)
+	ListVisibleAkashic(ctx context.Context, in *ListVisibleAkashicRequest, opts ...grpc.CallOption) (*ListVisibleAkashicResponse, error)
+	UpsertAkashicChapter(ctx context.Context, in *UpsertAkashicChapterRequest, opts ...grpc.CallOption) (*UpsertAkashicChapterResponse, error)
+	DeleteAkashicChapter(ctx context.Context, in *DeleteAkashicChapterRequest, opts ...grpc.CallOption) (*DeleteAkashicChapterResponse, error)
 }
 
 type datingServiceClient struct {
@@ -198,6 +207,46 @@ func (c *datingServiceClient) ReleaseTensionSeat(ctx context.Context, in *Releas
 	return out, nil
 }
 
+func (c *datingServiceClient) ListAuthorAkashic(ctx context.Context, in *ListAuthorAkashicRequest, opts ...grpc.CallOption) (*ListAuthorAkashicResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAuthorAkashicResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListAuthorAkashic_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ListVisibleAkashic(ctx context.Context, in *ListVisibleAkashicRequest, opts ...grpc.CallOption) (*ListVisibleAkashicResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListVisibleAkashicResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListVisibleAkashic_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) UpsertAkashicChapter(ctx context.Context, in *UpsertAkashicChapterRequest, opts ...grpc.CallOption) (*UpsertAkashicChapterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertAkashicChapterResponse)
+	err := c.cc.Invoke(ctx, DatingService_UpsertAkashicChapter_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) DeleteAkashicChapter(ctx context.Context, in *DeleteAkashicChapterRequest, opts ...grpc.CallOption) (*DeleteAkashicChapterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteAkashicChapterResponse)
+	err := c.cc.Invoke(ctx, DatingService_DeleteAkashicChapter_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatingServiceServer is the server API for DatingService service.
 // All implementations must embed UnimplementedDatingServiceServer
 // for forward compatibility.
@@ -215,6 +264,11 @@ type DatingServiceServer interface {
 	ListTensionSeats(context.Context, *ListTensionSeatsRequest) (*ListTensionSeatsResponse, error)
 	PlaceTensionBid(context.Context, *PlaceTensionBidRequest) (*PlaceTensionBidResponse, error)
 	ReleaseTensionSeat(context.Context, *ReleaseTensionSeatRequest) (*ReleaseTensionSeatResponse, error)
+	// A9.5 — Akashic Record v2.
+	ListAuthorAkashic(context.Context, *ListAuthorAkashicRequest) (*ListAuthorAkashicResponse, error)
+	ListVisibleAkashic(context.Context, *ListVisibleAkashicRequest) (*ListVisibleAkashicResponse, error)
+	UpsertAkashicChapter(context.Context, *UpsertAkashicChapterRequest) (*UpsertAkashicChapterResponse, error)
+	DeleteAkashicChapter(context.Context, *DeleteAkashicChapterRequest) (*DeleteAkashicChapterResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -260,6 +314,18 @@ func (UnimplementedDatingServiceServer) PlaceTensionBid(context.Context, *PlaceT
 }
 func (UnimplementedDatingServiceServer) ReleaseTensionSeat(context.Context, *ReleaseTensionSeatRequest) (*ReleaseTensionSeatResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ReleaseTensionSeat not implemented")
+}
+func (UnimplementedDatingServiceServer) ListAuthorAkashic(context.Context, *ListAuthorAkashicRequest) (*ListAuthorAkashicResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAuthorAkashic not implemented")
+}
+func (UnimplementedDatingServiceServer) ListVisibleAkashic(context.Context, *ListVisibleAkashicRequest) (*ListVisibleAkashicResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListVisibleAkashic not implemented")
+}
+func (UnimplementedDatingServiceServer) UpsertAkashicChapter(context.Context, *UpsertAkashicChapterRequest) (*UpsertAkashicChapterResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertAkashicChapter not implemented")
+}
+func (UnimplementedDatingServiceServer) DeleteAkashicChapter(context.Context, *DeleteAkashicChapterRequest) (*DeleteAkashicChapterResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteAkashicChapter not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -484,6 +550,78 @@ func _DatingService_ReleaseTensionSeat_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_ListAuthorAkashic_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAuthorAkashicRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListAuthorAkashic(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListAuthorAkashic_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListAuthorAkashic(ctx, req.(*ListAuthorAkashicRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ListVisibleAkashic_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListVisibleAkashicRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListVisibleAkashic(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListVisibleAkashic_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListVisibleAkashic(ctx, req.(*ListVisibleAkashicRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_UpsertAkashicChapter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertAkashicChapterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).UpsertAkashicChapter(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_UpsertAkashicChapter_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).UpsertAkashicChapter(ctx, req.(*UpsertAkashicChapterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_DeleteAkashicChapter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAkashicChapterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).DeleteAkashicChapter(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_DeleteAkashicChapter_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).DeleteAkashicChapter(ctx, req.(*DeleteAkashicChapterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatingService_ServiceDesc is the grpc.ServiceDesc for DatingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -530,6 +668,22 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ReleaseTensionSeat",
 			Handler:    _DatingService_ReleaseTensionSeat_Handler,
+		},
+		{
+			MethodName: "ListAuthorAkashic",
+			Handler:    _DatingService_ListAuthorAkashic_Handler,
+		},
+		{
+			MethodName: "ListVisibleAkashic",
+			Handler:    _DatingService_ListVisibleAkashic_Handler,
+		},
+		{
+			MethodName: "UpsertAkashicChapter",
+			Handler:    _DatingService_UpsertAkashicChapter_Handler,
+		},
+		{
+			MethodName: "DeleteAkashicChapter",
+			Handler:    _DatingService_DeleteAkashicChapter_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

@@ -1860,6 +1860,448 @@ func (x *ReleaseTensionSeatResponse) GetSeat() *TensionSeat {
 	return nil
 }
 
+type AkashicChapter struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// One of the 12 canonical chapter keys.
+	ChapterKey string `protobuf:"bytes,2,opt,name=chapter_key,json=chapterKey,proto3" json:"chapter_key,omitempty"`
+	Title      string `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Body       string `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
+	// 'public' | 'seated' | 'private'
+	Visibility    string `protobuf:"bytes,5,opt,name=visibility,proto3" json:"visibility,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AkashicChapter) Reset() {
+	*x = AkashicChapter{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[31]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AkashicChapter) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AkashicChapter) ProtoMessage() {}
+
+func (x *AkashicChapter) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[31]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AkashicChapter.ProtoReflect.Descriptor instead.
+func (*AkashicChapter) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{31}
+}
+
+func (x *AkashicChapter) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AkashicChapter) GetChapterKey() string {
+	if x != nil {
+		return x.ChapterKey
+	}
+	return ""
+}
+
+func (x *AkashicChapter) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AkashicChapter) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *AkashicChapter) GetVisibility() string {
+	if x != nil {
+		return x.Visibility
+	}
+	return ""
+}
+
+type ListAuthorAkashicRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAuthorAkashicRequest) Reset() {
+	*x = ListAuthorAkashicRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[32]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAuthorAkashicRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAuthorAkashicRequest) ProtoMessage() {}
+
+func (x *ListAuthorAkashicRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[32]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAuthorAkashicRequest.ProtoReflect.Descriptor instead.
+func (*ListAuthorAkashicRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{32}
+}
+
+type ListAuthorAkashicResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// All 12 chapters in canonical order; un-authored chapters come
+	// back as empty placeholders so the editor renders the full set.
+	Chapters      []*AkashicChapter `protobuf:"bytes,1,rep,name=chapters,proto3" json:"chapters,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAuthorAkashicResponse) Reset() {
+	*x = ListAuthorAkashicResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[33]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAuthorAkashicResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAuthorAkashicResponse) ProtoMessage() {}
+
+func (x *ListAuthorAkashicResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[33]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAuthorAkashicResponse.ProtoReflect.Descriptor instead.
+func (*ListAuthorAkashicResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *ListAuthorAkashicResponse) GetChapters() []*AkashicChapter {
+	if x != nil {
+		return x.Chapters
+	}
+	return nil
+}
+
+type ListVisibleAkashicRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TargetUserId  string                 `protobuf:"bytes,1,opt,name=target_user_id,json=targetUserId,proto3" json:"target_user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListVisibleAkashicRequest) Reset() {
+	*x = ListVisibleAkashicRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[34]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListVisibleAkashicRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListVisibleAkashicRequest) ProtoMessage() {}
+
+func (x *ListVisibleAkashicRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[34]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListVisibleAkashicRequest.ProtoReflect.Descriptor instead.
+func (*ListVisibleAkashicRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *ListVisibleAkashicRequest) GetTargetUserId() string {
+	if x != nil {
+		return x.TargetUserId
+	}
+	return ""
+}
+
+type ListVisibleAkashicResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Server filters by visibility. Seat-gated chapters are included
+	// only when the caller holds a Tension Seat with the author.
+	Chapters      []*AkashicChapter `protobuf:"bytes,1,rep,name=chapters,proto3" json:"chapters,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListVisibleAkashicResponse) Reset() {
+	*x = ListVisibleAkashicResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[35]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListVisibleAkashicResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListVisibleAkashicResponse) ProtoMessage() {}
+
+func (x *ListVisibleAkashicResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[35]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListVisibleAkashicResponse.ProtoReflect.Descriptor instead.
+func (*ListVisibleAkashicResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *ListVisibleAkashicResponse) GetChapters() []*AkashicChapter {
+	if x != nil {
+		return x.Chapters
+	}
+	return nil
+}
+
+type UpsertAkashicChapterRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ChapterKey    string                 `protobuf:"bytes,1,opt,name=chapter_key,json=chapterKey,proto3" json:"chapter_key,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Body          string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
+	Visibility    string                 `protobuf:"bytes,4,opt,name=visibility,proto3" json:"visibility,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertAkashicChapterRequest) Reset() {
+	*x = UpsertAkashicChapterRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertAkashicChapterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertAkashicChapterRequest) ProtoMessage() {}
+
+func (x *UpsertAkashicChapterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[36]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertAkashicChapterRequest.ProtoReflect.Descriptor instead.
+func (*UpsertAkashicChapterRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *UpsertAkashicChapterRequest) GetChapterKey() string {
+	if x != nil {
+		return x.ChapterKey
+	}
+	return ""
+}
+
+func (x *UpsertAkashicChapterRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UpsertAkashicChapterRequest) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *UpsertAkashicChapterRequest) GetVisibility() string {
+	if x != nil {
+		return x.Visibility
+	}
+	return ""
+}
+
+type UpsertAkashicChapterResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Chapter       *AkashicChapter        `protobuf:"bytes,1,opt,name=chapter,proto3" json:"chapter,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertAkashicChapterResponse) Reset() {
+	*x = UpsertAkashicChapterResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[37]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertAkashicChapterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertAkashicChapterResponse) ProtoMessage() {}
+
+func (x *UpsertAkashicChapterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[37]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertAkashicChapterResponse.ProtoReflect.Descriptor instead.
+func (*UpsertAkashicChapterResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *UpsertAkashicChapterResponse) GetChapter() *AkashicChapter {
+	if x != nil {
+		return x.Chapter
+	}
+	return nil
+}
+
+type DeleteAkashicChapterRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ChapterKey    string                 `protobuf:"bytes,1,opt,name=chapter_key,json=chapterKey,proto3" json:"chapter_key,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteAkashicChapterRequest) Reset() {
+	*x = DeleteAkashicChapterRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[38]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteAkashicChapterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteAkashicChapterRequest) ProtoMessage() {}
+
+func (x *DeleteAkashicChapterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[38]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteAkashicChapterRequest.ProtoReflect.Descriptor instead.
+func (*DeleteAkashicChapterRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *DeleteAkashicChapterRequest) GetChapterKey() string {
+	if x != nil {
+		return x.ChapterKey
+	}
+	return ""
+}
+
+type DeleteAkashicChapterResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteAkashicChapterResponse) Reset() {
+	*x = DeleteAkashicChapterResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[39]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteAkashicChapterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteAkashicChapterResponse) ProtoMessage() {}
+
+func (x *DeleteAkashicChapterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[39]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteAkashicChapterResponse.ProtoReflect.Descriptor instead.
+func (*DeleteAkashicChapterResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{39}
+}
+
 var File_sttattus_dating_v1_dating_proto protoreflect.FileDescriptor
 
 const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
@@ -1986,7 +2428,37 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x19ReleaseTensionSeatRequest\x12\x17\n" +
 	"\aseat_id\x18\x01 \x01(\tR\x06seatId\"Q\n" +
 	"\x1aReleaseTensionSeatResponse\x123\n" +
-	"\x04seat\x18\x01 \x01(\v2\x1f.sttattus.dating.v1.TensionSeatR\x04seat*\x80\x01\n" +
+	"\x04seat\x18\x01 \x01(\v2\x1f.sttattus.dating.v1.TensionSeatR\x04seat\"\x8b\x01\n" +
+	"\x0eAkashicChapter\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
+	"\vchapter_key\x18\x02 \x01(\tR\n" +
+	"chapterKey\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x12\n" +
+	"\x04body\x18\x04 \x01(\tR\x04body\x12\x1e\n" +
+	"\n" +
+	"visibility\x18\x05 \x01(\tR\n" +
+	"visibility\"\x1a\n" +
+	"\x18ListAuthorAkashicRequest\"[\n" +
+	"\x19ListAuthorAkashicResponse\x12>\n" +
+	"\bchapters\x18\x01 \x03(\v2\".sttattus.dating.v1.AkashicChapterR\bchapters\"A\n" +
+	"\x19ListVisibleAkashicRequest\x12$\n" +
+	"\x0etarget_user_id\x18\x01 \x01(\tR\ftargetUserId\"\\\n" +
+	"\x1aListVisibleAkashicResponse\x12>\n" +
+	"\bchapters\x18\x01 \x03(\v2\".sttattus.dating.v1.AkashicChapterR\bchapters\"\x88\x01\n" +
+	"\x1bUpsertAkashicChapterRequest\x12\x1f\n" +
+	"\vchapter_key\x18\x01 \x01(\tR\n" +
+	"chapterKey\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x12\n" +
+	"\x04body\x18\x03 \x01(\tR\x04body\x12\x1e\n" +
+	"\n" +
+	"visibility\x18\x04 \x01(\tR\n" +
+	"visibility\"\\\n" +
+	"\x1cUpsertAkashicChapterResponse\x12<\n" +
+	"\achapter\x18\x01 \x01(\v2\".sttattus.dating.v1.AkashicChapterR\achapter\">\n" +
+	"\x1bDeleteAkashicChapterRequest\x12\x1f\n" +
+	"\vchapter_key\x18\x01 \x01(\tR\n" +
+	"chapterKey\"\x1e\n" +
+	"\x1cDeleteAkashicChapterResponse*\x80\x01\n" +
 	"\x0eSwipeDirection\x12\x1f\n" +
 	"\x1bSWIPE_DIRECTION_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14SWIPE_DIRECTION_PASS\x10\x01\x12\x18\n" +
@@ -1997,7 +2469,7 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x14DATING_INTENT_CASUAL\x10\x01\x12\x1e\n" +
 	"\x1aDATING_INTENT_RELATIONSHIP\x10\x02\x12\x19\n" +
 	"\x15DATING_INTENT_FRIENDS\x10\x03\x12\x1c\n" +
-	"\x18DATING_INTENT_NETWORKING\x10\x042\xf9\t\n" +
+	"\x18DATING_INTENT_NETWORKING\x10\x042\xd6\r\n" +
 	"\rDatingService\x12[\n" +
 	"\n" +
 	"GetProfile\x12%.sttattus.dating.v1.GetProfileRequest\x1a&.sttattus.dating.v1.GetProfileResponse\x12d\n" +
@@ -2011,7 +2483,11 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x15GetLatestVerification\x120.sttattus.dating.v1.GetLatestVerificationRequest\x1a1.sttattus.dating.v1.GetLatestVerificationResponse\x12m\n" +
 	"\x10ListTensionSeats\x12+.sttattus.dating.v1.ListTensionSeatsRequest\x1a,.sttattus.dating.v1.ListTensionSeatsResponse\x12j\n" +
 	"\x0fPlaceTensionBid\x12*.sttattus.dating.v1.PlaceTensionBidRequest\x1a+.sttattus.dating.v1.PlaceTensionBidResponse\x12s\n" +
-	"\x12ReleaseTensionSeat\x12-.sttattus.dating.v1.ReleaseTensionSeatRequest\x1a..sttattus.dating.v1.ReleaseTensionSeatResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
+	"\x12ReleaseTensionSeat\x12-.sttattus.dating.v1.ReleaseTensionSeatRequest\x1a..sttattus.dating.v1.ReleaseTensionSeatResponse\x12p\n" +
+	"\x11ListAuthorAkashic\x12,.sttattus.dating.v1.ListAuthorAkashicRequest\x1a-.sttattus.dating.v1.ListAuthorAkashicResponse\x12s\n" +
+	"\x12ListVisibleAkashic\x12-.sttattus.dating.v1.ListVisibleAkashicRequest\x1a..sttattus.dating.v1.ListVisibleAkashicResponse\x12y\n" +
+	"\x14UpsertAkashicChapter\x12/.sttattus.dating.v1.UpsertAkashicChapterRequest\x1a0.sttattus.dating.v1.UpsertAkashicChapterResponse\x12y\n" +
+	"\x14DeleteAkashicChapter\x12/.sttattus.dating.v1.DeleteAkashicChapterRequest\x1a0.sttattus.dating.v1.DeleteAkashicChapterResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
 
 var (
 	file_sttattus_dating_v1_dating_proto_rawDescOnce sync.Once
@@ -2026,7 +2502,7 @@ func file_sttattus_dating_v1_dating_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_dating_v1_dating_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 31)
+var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 40)
 var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(SwipeDirection)(0),                   // 0: sttattus.dating.v1.SwipeDirection
 	(DatingIntent)(0),                     // 1: sttattus.dating.v1.DatingIntent
@@ -2061,8 +2537,17 @@ var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(*PlaceTensionBidResponse)(nil),       // 30: sttattus.dating.v1.PlaceTensionBidResponse
 	(*ReleaseTensionSeatRequest)(nil),     // 31: sttattus.dating.v1.ReleaseTensionSeatRequest
 	(*ReleaseTensionSeatResponse)(nil),    // 32: sttattus.dating.v1.ReleaseTensionSeatResponse
-	(*v1.PageRequest)(nil),                // 33: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),               // 34: sttattus.common.v1.PageResponse
+	(*AkashicChapter)(nil),                // 33: sttattus.dating.v1.AkashicChapter
+	(*ListAuthorAkashicRequest)(nil),      // 34: sttattus.dating.v1.ListAuthorAkashicRequest
+	(*ListAuthorAkashicResponse)(nil),     // 35: sttattus.dating.v1.ListAuthorAkashicResponse
+	(*ListVisibleAkashicRequest)(nil),     // 36: sttattus.dating.v1.ListVisibleAkashicRequest
+	(*ListVisibleAkashicResponse)(nil),    // 37: sttattus.dating.v1.ListVisibleAkashicResponse
+	(*UpsertAkashicChapterRequest)(nil),   // 38: sttattus.dating.v1.UpsertAkashicChapterRequest
+	(*UpsertAkashicChapterResponse)(nil),  // 39: sttattus.dating.v1.UpsertAkashicChapterResponse
+	(*DeleteAkashicChapterRequest)(nil),   // 40: sttattus.dating.v1.DeleteAkashicChapterRequest
+	(*DeleteAkashicChapterResponse)(nil),  // 41: sttattus.dating.v1.DeleteAkashicChapterResponse
+	(*v1.PageRequest)(nil),                // 42: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),               // 43: sttattus.common.v1.PageResponse
 }
 var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	1,  // 0: sttattus.dating.v1.DatingProfile.intent:type_name -> sttattus.dating.v1.DatingIntent
@@ -2075,9 +2560,9 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	4,  // 7: sttattus.dating.v1.StreamDiscoveryResponse.candidate:type_name -> sttattus.dating.v1.Candidate
 	0,  // 8: sttattus.dating.v1.SwipeRequest.direction:type_name -> sttattus.dating.v1.SwipeDirection
 	5,  // 9: sttattus.dating.v1.SwipeResponse.match:type_name -> sttattus.dating.v1.Match
-	33, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	42, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	5,  // 11: sttattus.dating.v1.ListMatchesResponse.matches:type_name -> sttattus.dating.v1.Match
-	34, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	43, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
 	6,  // 13: sttattus.dating.v1.StreamMessagesResponse.message:type_name -> sttattus.dating.v1.Message
 	6,  // 14: sttattus.dating.v1.SendMessageResponse.message:type_name -> sttattus.dating.v1.Message
 	21, // 15: sttattus.dating.v1.StartVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
@@ -2085,35 +2570,46 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	26, // 17: sttattus.dating.v1.ListTensionSeatsResponse.seats:type_name -> sttattus.dating.v1.TensionSeat
 	26, // 18: sttattus.dating.v1.PlaceTensionBidResponse.seat:type_name -> sttattus.dating.v1.TensionSeat
 	26, // 19: sttattus.dating.v1.ReleaseTensionSeatResponse.seat:type_name -> sttattus.dating.v1.TensionSeat
-	7,  // 20: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
-	9,  // 21: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
-	11, // 22: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
-	13, // 23: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
-	15, // 24: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
-	17, // 25: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
-	19, // 26: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
-	22, // 27: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
-	24, // 28: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
-	27, // 29: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
-	29, // 30: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
-	31, // 31: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
-	8,  // 32: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
-	10, // 33: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
-	12, // 34: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
-	14, // 35: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
-	16, // 36: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
-	18, // 37: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
-	20, // 38: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
-	23, // 39: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
-	25, // 40: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
-	28, // 41: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
-	30, // 42: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
-	32, // 43: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
-	32, // [32:44] is the sub-list for method output_type
-	20, // [20:32] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	33, // 20: sttattus.dating.v1.ListAuthorAkashicResponse.chapters:type_name -> sttattus.dating.v1.AkashicChapter
+	33, // 21: sttattus.dating.v1.ListVisibleAkashicResponse.chapters:type_name -> sttattus.dating.v1.AkashicChapter
+	33, // 22: sttattus.dating.v1.UpsertAkashicChapterResponse.chapter:type_name -> sttattus.dating.v1.AkashicChapter
+	7,  // 23: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
+	9,  // 24: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
+	11, // 25: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
+	13, // 26: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
+	15, // 27: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
+	17, // 28: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
+	19, // 29: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
+	22, // 30: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
+	24, // 31: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
+	27, // 32: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
+	29, // 33: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
+	31, // 34: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
+	34, // 35: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
+	36, // 36: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
+	38, // 37: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
+	40, // 38: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
+	8,  // 39: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
+	10, // 40: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
+	12, // 41: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
+	14, // 42: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
+	16, // 43: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
+	18, // 44: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
+	20, // 45: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
+	23, // 46: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
+	25, // 47: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
+	28, // 48: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
+	30, // 49: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
+	32, // 50: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
+	35, // 51: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
+	37, // 52: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
+	39, // 53: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
+	41, // 54: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
+	39, // [39:55] is the sub-list for method output_type
+	23, // [23:39] is the sub-list for method input_type
+	23, // [23:23] is the sub-list for extension type_name
+	23, // [23:23] is the sub-list for extension extendee
+	0,  // [0:23] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dating_v1_dating_proto_init() }
@@ -2127,7 +2623,7 @@ func file_sttattus_dating_v1_dating_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_dating_v1_dating_proto_rawDesc), len(file_sttattus_dating_v1_dating_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   31,
+			NumMessages:   40,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

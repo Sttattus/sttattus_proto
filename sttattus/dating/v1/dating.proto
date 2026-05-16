@@ -186,6 +186,49 @@ message ReleaseTensionSeatResponse {
   TensionSeat seat = 1;
 }
 
+// === Akashic Record v2 (A9.5) ===
+
+message AkashicChapter {
+  string id = 1;
+  // One of the 12 canonical chapter keys.
+  string chapter_key = 2;
+  string title = 3;
+  string body = 4;
+  // 'public' | 'seated' | 'private'
+  string visibility = 5;
+}
+
+message ListAuthorAkashicRequest {}
+message ListAuthorAkashicResponse {
+  // All 12 chapters in canonical order; un-authored chapters come
+  // back as empty placeholders so the editor renders the full set.
+  repeated AkashicChapter chapters = 1;
+}
+
+message ListVisibleAkashicRequest {
+  string target_user_id = 1;
+}
+message ListVisibleAkashicResponse {
+  // Server filters by visibility. Seat-gated chapters are included
+  // only when the caller holds a Tension Seat with the author.
+  repeated AkashicChapter chapters = 1;
+}
+
+message UpsertAkashicChapterRequest {
+  string chapter_key = 1;
+  string title = 2;
+  string body = 3;
+  string visibility = 4;
+}
+message UpsertAkashicChapterResponse {
+  AkashicChapter chapter = 1;
+}
+
+message DeleteAkashicChapterRequest {
+  string chapter_key = 1;
+}
+message DeleteAkashicChapterResponse {}
+
 service DatingService {
   rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
   rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
@@ -201,4 +244,10 @@ service DatingService {
   rpc ListTensionSeats(ListTensionSeatsRequest) returns (ListTensionSeatsResponse);
   rpc PlaceTensionBid(PlaceTensionBidRequest) returns (PlaceTensionBidResponse);
   rpc ReleaseTensionSeat(ReleaseTensionSeatRequest) returns (ReleaseTensionSeatResponse);
+
+  // A9.5 — Akashic Record v2.
+  rpc ListAuthorAkashic(ListAuthorAkashicRequest) returns (ListAuthorAkashicResponse);
+  rpc ListVisibleAkashic(ListVisibleAkashicRequest) returns (ListVisibleAkashicResponse);
+  rpc UpsertAkashicChapter(UpsertAkashicChapterRequest) returns (UpsertAkashicChapterResponse);
+  rpc DeleteAkashicChapter(DeleteAkashicChapterRequest) returns (DeleteAkashicChapterResponse);
 }

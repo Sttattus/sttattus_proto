@@ -1997,6 +1997,468 @@ class ReleaseTensionSeatResponse extends $pb.GeneratedMessage {
   TensionSeat ensureSeat() => $_ensure(0);
 }
 
+class AkashicChapter extends $pb.GeneratedMessage {
+  factory AkashicChapter({
+    $core.String? id,
+    $core.String? chapterKey,
+    $core.String? title,
+    $core.String? body,
+    $core.String? visibility,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (chapterKey != null) result.chapterKey = chapterKey;
+    if (title != null) result.title = title;
+    if (body != null) result.body = body;
+    if (visibility != null) result.visibility = visibility;
+    return result;
+  }
+
+  AkashicChapter._();
+
+  factory AkashicChapter.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AkashicChapter.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AkashicChapter', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'chapterKey')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'body')
+    ..aOS(5, _omitFieldNames ? '' : 'visibility')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AkashicChapter clone() => AkashicChapter()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AkashicChapter copyWith(void Function(AkashicChapter) updates) => super.copyWith((message) => updates(message as AkashicChapter)) as AkashicChapter;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AkashicChapter create() => AkashicChapter._();
+  @$core.override
+  AkashicChapter createEmptyInstance() => create();
+  static $pb.PbList<AkashicChapter> createRepeated() => $pb.PbList<AkashicChapter>();
+  @$core.pragma('dart2js:noInline')
+  static AkashicChapter getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AkashicChapter>(create);
+  static AkashicChapter? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  /// One of the 12 canonical chapter keys.
+  @$pb.TagNumber(2)
+  $core.String get chapterKey => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set chapterKey($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasChapterKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearChapterKey() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get body => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set body($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBody() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBody() => $_clearField(4);
+
+  /// 'public' | 'seated' | 'private'
+  @$pb.TagNumber(5)
+  $core.String get visibility => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set visibility($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasVisibility() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearVisibility() => $_clearField(5);
+}
+
+class ListAuthorAkashicRequest extends $pb.GeneratedMessage {
+  factory ListAuthorAkashicRequest() => create();
+
+  ListAuthorAkashicRequest._();
+
+  factory ListAuthorAkashicRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListAuthorAkashicRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAuthorAkashicRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAuthorAkashicRequest clone() => ListAuthorAkashicRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAuthorAkashicRequest copyWith(void Function(ListAuthorAkashicRequest) updates) => super.copyWith((message) => updates(message as ListAuthorAkashicRequest)) as ListAuthorAkashicRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAuthorAkashicRequest create() => ListAuthorAkashicRequest._();
+  @$core.override
+  ListAuthorAkashicRequest createEmptyInstance() => create();
+  static $pb.PbList<ListAuthorAkashicRequest> createRepeated() => $pb.PbList<ListAuthorAkashicRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListAuthorAkashicRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAuthorAkashicRequest>(create);
+  static ListAuthorAkashicRequest? _defaultInstance;
+}
+
+class ListAuthorAkashicResponse extends $pb.GeneratedMessage {
+  factory ListAuthorAkashicResponse({
+    $core.Iterable<AkashicChapter>? chapters,
+  }) {
+    final result = create();
+    if (chapters != null) result.chapters.addAll(chapters);
+    return result;
+  }
+
+  ListAuthorAkashicResponse._();
+
+  factory ListAuthorAkashicResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListAuthorAkashicResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAuthorAkashicResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..pc<AkashicChapter>(1, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: AkashicChapter.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAuthorAkashicResponse clone() => ListAuthorAkashicResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAuthorAkashicResponse copyWith(void Function(ListAuthorAkashicResponse) updates) => super.copyWith((message) => updates(message as ListAuthorAkashicResponse)) as ListAuthorAkashicResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAuthorAkashicResponse create() => ListAuthorAkashicResponse._();
+  @$core.override
+  ListAuthorAkashicResponse createEmptyInstance() => create();
+  static $pb.PbList<ListAuthorAkashicResponse> createRepeated() => $pb.PbList<ListAuthorAkashicResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListAuthorAkashicResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAuthorAkashicResponse>(create);
+  static ListAuthorAkashicResponse? _defaultInstance;
+
+  /// All 12 chapters in canonical order; un-authored chapters come
+  /// back as empty placeholders so the editor renders the full set.
+  @$pb.TagNumber(1)
+  $pb.PbList<AkashicChapter> get chapters => $_getList(0);
+}
+
+class ListVisibleAkashicRequest extends $pb.GeneratedMessage {
+  factory ListVisibleAkashicRequest({
+    $core.String? targetUserId,
+  }) {
+    final result = create();
+    if (targetUserId != null) result.targetUserId = targetUserId;
+    return result;
+  }
+
+  ListVisibleAkashicRequest._();
+
+  factory ListVisibleAkashicRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListVisibleAkashicRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListVisibleAkashicRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'targetUserId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListVisibleAkashicRequest clone() => ListVisibleAkashicRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListVisibleAkashicRequest copyWith(void Function(ListVisibleAkashicRequest) updates) => super.copyWith((message) => updates(message as ListVisibleAkashicRequest)) as ListVisibleAkashicRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListVisibleAkashicRequest create() => ListVisibleAkashicRequest._();
+  @$core.override
+  ListVisibleAkashicRequest createEmptyInstance() => create();
+  static $pb.PbList<ListVisibleAkashicRequest> createRepeated() => $pb.PbList<ListVisibleAkashicRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListVisibleAkashicRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListVisibleAkashicRequest>(create);
+  static ListVisibleAkashicRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get targetUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set targetUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTargetUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTargetUserId() => $_clearField(1);
+}
+
+class ListVisibleAkashicResponse extends $pb.GeneratedMessage {
+  factory ListVisibleAkashicResponse({
+    $core.Iterable<AkashicChapter>? chapters,
+  }) {
+    final result = create();
+    if (chapters != null) result.chapters.addAll(chapters);
+    return result;
+  }
+
+  ListVisibleAkashicResponse._();
+
+  factory ListVisibleAkashicResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListVisibleAkashicResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListVisibleAkashicResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..pc<AkashicChapter>(1, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: AkashicChapter.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListVisibleAkashicResponse clone() => ListVisibleAkashicResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListVisibleAkashicResponse copyWith(void Function(ListVisibleAkashicResponse) updates) => super.copyWith((message) => updates(message as ListVisibleAkashicResponse)) as ListVisibleAkashicResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListVisibleAkashicResponse create() => ListVisibleAkashicResponse._();
+  @$core.override
+  ListVisibleAkashicResponse createEmptyInstance() => create();
+  static $pb.PbList<ListVisibleAkashicResponse> createRepeated() => $pb.PbList<ListVisibleAkashicResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListVisibleAkashicResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListVisibleAkashicResponse>(create);
+  static ListVisibleAkashicResponse? _defaultInstance;
+
+  /// Server filters by visibility. Seat-gated chapters are included
+  /// only when the caller holds a Tension Seat with the author.
+  @$pb.TagNumber(1)
+  $pb.PbList<AkashicChapter> get chapters => $_getList(0);
+}
+
+class UpsertAkashicChapterRequest extends $pb.GeneratedMessage {
+  factory UpsertAkashicChapterRequest({
+    $core.String? chapterKey,
+    $core.String? title,
+    $core.String? body,
+    $core.String? visibility,
+  }) {
+    final result = create();
+    if (chapterKey != null) result.chapterKey = chapterKey;
+    if (title != null) result.title = title;
+    if (body != null) result.body = body;
+    if (visibility != null) result.visibility = visibility;
+    return result;
+  }
+
+  UpsertAkashicChapterRequest._();
+
+  factory UpsertAkashicChapterRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpsertAkashicChapterRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpsertAkashicChapterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'chapterKey')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'body')
+    ..aOS(4, _omitFieldNames ? '' : 'visibility')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertAkashicChapterRequest clone() => UpsertAkashicChapterRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertAkashicChapterRequest copyWith(void Function(UpsertAkashicChapterRequest) updates) => super.copyWith((message) => updates(message as UpsertAkashicChapterRequest)) as UpsertAkashicChapterRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertAkashicChapterRequest create() => UpsertAkashicChapterRequest._();
+  @$core.override
+  UpsertAkashicChapterRequest createEmptyInstance() => create();
+  static $pb.PbList<UpsertAkashicChapterRequest> createRepeated() => $pb.PbList<UpsertAkashicChapterRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpsertAkashicChapterRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpsertAkashicChapterRequest>(create);
+  static UpsertAkashicChapterRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get chapterKey => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set chapterKey($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasChapterKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChapterKey() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get body => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set body($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBody() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBody() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get visibility => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set visibility($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasVisibility() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearVisibility() => $_clearField(4);
+}
+
+class UpsertAkashicChapterResponse extends $pb.GeneratedMessage {
+  factory UpsertAkashicChapterResponse({
+    AkashicChapter? chapter,
+  }) {
+    final result = create();
+    if (chapter != null) result.chapter = chapter;
+    return result;
+  }
+
+  UpsertAkashicChapterResponse._();
+
+  factory UpsertAkashicChapterResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpsertAkashicChapterResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpsertAkashicChapterResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<AkashicChapter>(1, _omitFieldNames ? '' : 'chapter', subBuilder: AkashicChapter.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertAkashicChapterResponse clone() => UpsertAkashicChapterResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertAkashicChapterResponse copyWith(void Function(UpsertAkashicChapterResponse) updates) => super.copyWith((message) => updates(message as UpsertAkashicChapterResponse)) as UpsertAkashicChapterResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertAkashicChapterResponse create() => UpsertAkashicChapterResponse._();
+  @$core.override
+  UpsertAkashicChapterResponse createEmptyInstance() => create();
+  static $pb.PbList<UpsertAkashicChapterResponse> createRepeated() => $pb.PbList<UpsertAkashicChapterResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpsertAkashicChapterResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpsertAkashicChapterResponse>(create);
+  static UpsertAkashicChapterResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AkashicChapter get chapter => $_getN(0);
+  @$pb.TagNumber(1)
+  set chapter(AkashicChapter value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasChapter() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChapter() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AkashicChapter ensureChapter() => $_ensure(0);
+}
+
+class DeleteAkashicChapterRequest extends $pb.GeneratedMessage {
+  factory DeleteAkashicChapterRequest({
+    $core.String? chapterKey,
+  }) {
+    final result = create();
+    if (chapterKey != null) result.chapterKey = chapterKey;
+    return result;
+  }
+
+  DeleteAkashicChapterRequest._();
+
+  factory DeleteAkashicChapterRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteAkashicChapterRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteAkashicChapterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'chapterKey')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteAkashicChapterRequest clone() => DeleteAkashicChapterRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteAkashicChapterRequest copyWith(void Function(DeleteAkashicChapterRequest) updates) => super.copyWith((message) => updates(message as DeleteAkashicChapterRequest)) as DeleteAkashicChapterRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteAkashicChapterRequest create() => DeleteAkashicChapterRequest._();
+  @$core.override
+  DeleteAkashicChapterRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteAkashicChapterRequest> createRepeated() => $pb.PbList<DeleteAkashicChapterRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteAkashicChapterRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteAkashicChapterRequest>(create);
+  static DeleteAkashicChapterRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get chapterKey => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set chapterKey($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasChapterKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChapterKey() => $_clearField(1);
+}
+
+class DeleteAkashicChapterResponse extends $pb.GeneratedMessage {
+  factory DeleteAkashicChapterResponse() => create();
+
+  DeleteAkashicChapterResponse._();
+
+  factory DeleteAkashicChapterResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteAkashicChapterResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteAkashicChapterResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteAkashicChapterResponse clone() => DeleteAkashicChapterResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteAkashicChapterResponse copyWith(void Function(DeleteAkashicChapterResponse) updates) => super.copyWith((message) => updates(message as DeleteAkashicChapterResponse)) as DeleteAkashicChapterResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteAkashicChapterResponse create() => DeleteAkashicChapterResponse._();
+  @$core.override
+  DeleteAkashicChapterResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteAkashicChapterResponse> createRepeated() => $pb.PbList<DeleteAkashicChapterResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteAkashicChapterResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteAkashicChapterResponse>(create);
+  static DeleteAkashicChapterResponse? _defaultInstance;
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -1520,3 +1520,376 @@ export class ReleaseTensionSeatResponse extends Message$1<ReleaseTensionSeatResp
   }
 }
 
+/**
+ * @generated from message sttattus.dating.v1.AkashicChapter
+ */
+export class AkashicChapter extends Message$1<AkashicChapter> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * One of the 12 canonical chapter keys.
+   *
+   * @generated from field: string chapter_key = 2;
+   */
+  chapterKey = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string body = 4;
+   */
+  body = "";
+
+  /**
+   * 'public' | 'seated' | 'private'
+   *
+   * @generated from field: string visibility = 5;
+   */
+  visibility = "";
+
+  constructor(data?: PartialMessage<AkashicChapter>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AkashicChapter";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "chapter_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "visibility", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AkashicChapter {
+    return new AkashicChapter().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AkashicChapter {
+    return new AkashicChapter().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AkashicChapter {
+    return new AkashicChapter().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AkashicChapter | PlainMessage<AkashicChapter> | undefined, b: AkashicChapter | PlainMessage<AkashicChapter> | undefined): boolean {
+    return proto3.util.equals(AkashicChapter, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListAuthorAkashicRequest
+ */
+export class ListAuthorAkashicRequest extends Message$1<ListAuthorAkashicRequest> {
+  constructor(data?: PartialMessage<ListAuthorAkashicRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListAuthorAkashicRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAuthorAkashicRequest {
+    return new ListAuthorAkashicRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAuthorAkashicRequest {
+    return new ListAuthorAkashicRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAuthorAkashicRequest {
+    return new ListAuthorAkashicRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAuthorAkashicRequest | PlainMessage<ListAuthorAkashicRequest> | undefined, b: ListAuthorAkashicRequest | PlainMessage<ListAuthorAkashicRequest> | undefined): boolean {
+    return proto3.util.equals(ListAuthorAkashicRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListAuthorAkashicResponse
+ */
+export class ListAuthorAkashicResponse extends Message$1<ListAuthorAkashicResponse> {
+  /**
+   * All 12 chapters in canonical order; un-authored chapters come
+   * back as empty placeholders so the editor renders the full set.
+   *
+   * @generated from field: repeated sttattus.dating.v1.AkashicChapter chapters = 1;
+   */
+  chapters: AkashicChapter[] = [];
+
+  constructor(data?: PartialMessage<ListAuthorAkashicResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListAuthorAkashicResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "chapters", kind: "message", T: AkashicChapter, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAuthorAkashicResponse {
+    return new ListAuthorAkashicResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAuthorAkashicResponse {
+    return new ListAuthorAkashicResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAuthorAkashicResponse {
+    return new ListAuthorAkashicResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAuthorAkashicResponse | PlainMessage<ListAuthorAkashicResponse> | undefined, b: ListAuthorAkashicResponse | PlainMessage<ListAuthorAkashicResponse> | undefined): boolean {
+    return proto3.util.equals(ListAuthorAkashicResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListVisibleAkashicRequest
+ */
+export class ListVisibleAkashicRequest extends Message$1<ListVisibleAkashicRequest> {
+  /**
+   * @generated from field: string target_user_id = 1;
+   */
+  targetUserId = "";
+
+  constructor(data?: PartialMessage<ListVisibleAkashicRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListVisibleAkashicRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListVisibleAkashicRequest {
+    return new ListVisibleAkashicRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListVisibleAkashicRequest {
+    return new ListVisibleAkashicRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListVisibleAkashicRequest {
+    return new ListVisibleAkashicRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListVisibleAkashicRequest | PlainMessage<ListVisibleAkashicRequest> | undefined, b: ListVisibleAkashicRequest | PlainMessage<ListVisibleAkashicRequest> | undefined): boolean {
+    return proto3.util.equals(ListVisibleAkashicRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListVisibleAkashicResponse
+ */
+export class ListVisibleAkashicResponse extends Message$1<ListVisibleAkashicResponse> {
+  /**
+   * Server filters by visibility. Seat-gated chapters are included
+   * only when the caller holds a Tension Seat with the author.
+   *
+   * @generated from field: repeated sttattus.dating.v1.AkashicChapter chapters = 1;
+   */
+  chapters: AkashicChapter[] = [];
+
+  constructor(data?: PartialMessage<ListVisibleAkashicResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListVisibleAkashicResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "chapters", kind: "message", T: AkashicChapter, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListVisibleAkashicResponse {
+    return new ListVisibleAkashicResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListVisibleAkashicResponse {
+    return new ListVisibleAkashicResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListVisibleAkashicResponse {
+    return new ListVisibleAkashicResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListVisibleAkashicResponse | PlainMessage<ListVisibleAkashicResponse> | undefined, b: ListVisibleAkashicResponse | PlainMessage<ListVisibleAkashicResponse> | undefined): boolean {
+    return proto3.util.equals(ListVisibleAkashicResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.UpsertAkashicChapterRequest
+ */
+export class UpsertAkashicChapterRequest extends Message$1<UpsertAkashicChapterRequest> {
+  /**
+   * @generated from field: string chapter_key = 1;
+   */
+  chapterKey = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string body = 3;
+   */
+  body = "";
+
+  /**
+   * @generated from field: string visibility = 4;
+   */
+  visibility = "";
+
+  constructor(data?: PartialMessage<UpsertAkashicChapterRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.UpsertAkashicChapterRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "chapter_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "visibility", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertAkashicChapterRequest {
+    return new UpsertAkashicChapterRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertAkashicChapterRequest {
+    return new UpsertAkashicChapterRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertAkashicChapterRequest {
+    return new UpsertAkashicChapterRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertAkashicChapterRequest | PlainMessage<UpsertAkashicChapterRequest> | undefined, b: UpsertAkashicChapterRequest | PlainMessage<UpsertAkashicChapterRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertAkashicChapterRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.UpsertAkashicChapterResponse
+ */
+export class UpsertAkashicChapterResponse extends Message$1<UpsertAkashicChapterResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AkashicChapter chapter = 1;
+   */
+  chapter?: AkashicChapter;
+
+  constructor(data?: PartialMessage<UpsertAkashicChapterResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.UpsertAkashicChapterResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "chapter", kind: "message", T: AkashicChapter },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertAkashicChapterResponse {
+    return new UpsertAkashicChapterResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertAkashicChapterResponse {
+    return new UpsertAkashicChapterResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertAkashicChapterResponse {
+    return new UpsertAkashicChapterResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertAkashicChapterResponse | PlainMessage<UpsertAkashicChapterResponse> | undefined, b: UpsertAkashicChapterResponse | PlainMessage<UpsertAkashicChapterResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertAkashicChapterResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.DeleteAkashicChapterRequest
+ */
+export class DeleteAkashicChapterRequest extends Message$1<DeleteAkashicChapterRequest> {
+  /**
+   * @generated from field: string chapter_key = 1;
+   */
+  chapterKey = "";
+
+  constructor(data?: PartialMessage<DeleteAkashicChapterRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.DeleteAkashicChapterRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "chapter_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteAkashicChapterRequest {
+    return new DeleteAkashicChapterRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteAkashicChapterRequest {
+    return new DeleteAkashicChapterRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAkashicChapterRequest {
+    return new DeleteAkashicChapterRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteAkashicChapterRequest | PlainMessage<DeleteAkashicChapterRequest> | undefined, b: DeleteAkashicChapterRequest | PlainMessage<DeleteAkashicChapterRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteAkashicChapterRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.DeleteAkashicChapterResponse
+ */
+export class DeleteAkashicChapterResponse extends Message$1<DeleteAkashicChapterResponse> {
+  constructor(data?: PartialMessage<DeleteAkashicChapterResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.DeleteAkashicChapterResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteAkashicChapterResponse {
+    return new DeleteAkashicChapterResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteAkashicChapterResponse {
+    return new DeleteAkashicChapterResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAkashicChapterResponse {
+    return new DeleteAkashicChapterResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteAkashicChapterResponse | PlainMessage<DeleteAkashicChapterResponse> | undefined, b: DeleteAkashicChapterResponse | PlainMessage<DeleteAkashicChapterResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteAkashicChapterResponse, a, b);
+  }
+}
+

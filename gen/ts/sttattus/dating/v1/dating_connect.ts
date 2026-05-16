@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetLatestVerificationRequest, GetLatestVerificationResponse, GetProfileRequest, GetProfileResponse, ListMatchesRequest, ListMatchesResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UpdateProfileRequest, UpdateProfileResponse } from "./dating_pb.js";
+import { DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetProfileRequest, GetProfileResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListMatchesRequest, ListMatchesResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse } from "./dating_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -120,6 +120,44 @@ export const DatingService = {
       name: "ReleaseTensionSeat",
       I: ReleaseTensionSeatRequest,
       O: ReleaseTensionSeatResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9.5 — Akashic Record v2.
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.ListAuthorAkashic
+     */
+    listAuthorAkashic: {
+      name: "ListAuthorAkashic",
+      I: ListAuthorAkashicRequest,
+      O: ListAuthorAkashicResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.ListVisibleAkashic
+     */
+    listVisibleAkashic: {
+      name: "ListVisibleAkashic",
+      I: ListVisibleAkashicRequest,
+      O: ListVisibleAkashicResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.UpsertAkashicChapter
+     */
+    upsertAkashicChapter: {
+      name: "UpsertAkashicChapter",
+      I: UpsertAkashicChapterRequest,
+      O: UpsertAkashicChapterResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.DeleteAkashicChapter
+     */
+    deleteAkashicChapter: {
+      name: "DeleteAkashicChapter",
+      I: DeleteAkashicChapterRequest,
+      O: DeleteAkashicChapterResponse,
       kind: MethodKind.Unary,
     },
   }

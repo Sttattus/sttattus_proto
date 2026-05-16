@@ -81,6 +81,23 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$releaseTensionSeat, request, options: options);
   }
 
+  /// A9.5 — Akashic Record v2.
+  $grpc.ResponseFuture<$0.ListAuthorAkashicResponse> listAuthorAkashic($0.ListAuthorAkashicRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listAuthorAkashic, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListVisibleAkashicResponse> listVisibleAkashic($0.ListVisibleAkashicRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listVisibleAkashic, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertAkashicChapterResponse> upsertAkashicChapter($0.UpsertAkashicChapterRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$upsertAkashicChapter, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteAkashicChapterResponse> deleteAkashicChapter($0.DeleteAkashicChapterRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteAkashicChapter, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getProfile = $grpc.ClientMethod<$0.GetProfileRequest, $0.GetProfileResponse>(
@@ -131,6 +148,22 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/ReleaseTensionSeat',
       ($0.ReleaseTensionSeatRequest value) => value.writeToBuffer(),
       $0.ReleaseTensionSeatResponse.fromBuffer);
+  static final _$listAuthorAkashic = $grpc.ClientMethod<$0.ListAuthorAkashicRequest, $0.ListAuthorAkashicResponse>(
+      '/sttattus.dating.v1.DatingService/ListAuthorAkashic',
+      ($0.ListAuthorAkashicRequest value) => value.writeToBuffer(),
+      $0.ListAuthorAkashicResponse.fromBuffer);
+  static final _$listVisibleAkashic = $grpc.ClientMethod<$0.ListVisibleAkashicRequest, $0.ListVisibleAkashicResponse>(
+      '/sttattus.dating.v1.DatingService/ListVisibleAkashic',
+      ($0.ListVisibleAkashicRequest value) => value.writeToBuffer(),
+      $0.ListVisibleAkashicResponse.fromBuffer);
+  static final _$upsertAkashicChapter = $grpc.ClientMethod<$0.UpsertAkashicChapterRequest, $0.UpsertAkashicChapterResponse>(
+      '/sttattus.dating.v1.DatingService/UpsertAkashicChapter',
+      ($0.UpsertAkashicChapterRequest value) => value.writeToBuffer(),
+      $0.UpsertAkashicChapterResponse.fromBuffer);
+  static final _$deleteAkashicChapter = $grpc.ClientMethod<$0.DeleteAkashicChapterRequest, $0.DeleteAkashicChapterResponse>(
+      '/sttattus.dating.v1.DatingService/DeleteAkashicChapter',
+      ($0.DeleteAkashicChapterRequest value) => value.writeToBuffer(),
+      $0.DeleteAkashicChapterResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dating.v1.DatingService')
@@ -222,6 +255,34 @@ abstract class DatingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ReleaseTensionSeatRequest.fromBuffer(value),
         ($0.ReleaseTensionSeatResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAuthorAkashicRequest, $0.ListAuthorAkashicResponse>(
+        'ListAuthorAkashic',
+        listAuthorAkashic_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListAuthorAkashicRequest.fromBuffer(value),
+        ($0.ListAuthorAkashicResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListVisibleAkashicRequest, $0.ListVisibleAkashicResponse>(
+        'ListVisibleAkashic',
+        listVisibleAkashic_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListVisibleAkashicRequest.fromBuffer(value),
+        ($0.ListVisibleAkashicResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertAkashicChapterRequest, $0.UpsertAkashicChapterResponse>(
+        'UpsertAkashicChapter',
+        upsertAkashicChapter_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpsertAkashicChapterRequest.fromBuffer(value),
+        ($0.UpsertAkashicChapterResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteAkashicChapterRequest, $0.DeleteAkashicChapterResponse>(
+        'DeleteAkashicChapter',
+        deleteAkashicChapter_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteAkashicChapterRequest.fromBuffer(value),
+        ($0.DeleteAkashicChapterResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProfileRequest> $request) async {
@@ -295,5 +356,29 @@ abstract class DatingServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ReleaseTensionSeatResponse> releaseTensionSeat($grpc.ServiceCall call, $0.ReleaseTensionSeatRequest request);
+
+  $async.Future<$0.ListAuthorAkashicResponse> listAuthorAkashic_Pre($grpc.ServiceCall $call, $async.Future<$0.ListAuthorAkashicRequest> $request) async {
+    return listAuthorAkashic($call, await $request);
+  }
+
+  $async.Future<$0.ListAuthorAkashicResponse> listAuthorAkashic($grpc.ServiceCall call, $0.ListAuthorAkashicRequest request);
+
+  $async.Future<$0.ListVisibleAkashicResponse> listVisibleAkashic_Pre($grpc.ServiceCall $call, $async.Future<$0.ListVisibleAkashicRequest> $request) async {
+    return listVisibleAkashic($call, await $request);
+  }
+
+  $async.Future<$0.ListVisibleAkashicResponse> listVisibleAkashic($grpc.ServiceCall call, $0.ListVisibleAkashicRequest request);
+
+  $async.Future<$0.UpsertAkashicChapterResponse> upsertAkashicChapter_Pre($grpc.ServiceCall $call, $async.Future<$0.UpsertAkashicChapterRequest> $request) async {
+    return upsertAkashicChapter($call, await $request);
+  }
+
+  $async.Future<$0.UpsertAkashicChapterResponse> upsertAkashicChapter($grpc.ServiceCall call, $0.UpsertAkashicChapterRequest request);
+
+  $async.Future<$0.DeleteAkashicChapterResponse> deleteAkashicChapter_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteAkashicChapterRequest> $request) async {
+    return deleteAkashicChapter($call, await $request);
+  }
+
+  $async.Future<$0.DeleteAkashicChapterResponse> deleteAkashicChapter($grpc.ServiceCall call, $0.DeleteAkashicChapterRequest request);
 
 }
