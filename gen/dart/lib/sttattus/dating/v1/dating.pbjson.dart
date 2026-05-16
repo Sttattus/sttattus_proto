@@ -407,3 +407,101 @@ final $typed_data.Uint8List getLatestVerificationResponseDescriptor = $convert.b
     'Ch1HZXRMYXRlc3RWZXJpZmljYXRpb25SZXNwb25zZRJJCgx2ZXJpZmljYXRpb24YASABKAsyJS'
     '5zdHRhdHR1cy5kYXRpbmcudjEuQXRsYXNWZXJpZmljYXRpb25SDHZlcmlmaWNhdGlvbg==');
 
+@$core.Deprecated('Use tensionSeatDescriptor instead')
+const TensionSeat$json = {
+  '1': 'TensionSeat',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slot', '3': 2, '4': 1, '5': 5, '10': 'slot'},
+    {'1': 'state', '3': 3, '4': 1, '5': 9, '10': 'state'},
+    {'1': 'target_id', '3': 4, '4': 1, '5': 9, '10': 'targetId'},
+    {'1': 'bid_message', '3': 5, '4': 1, '5': 9, '10': 'bidMessage'},
+    {'1': 'expires_at', '3': 6, '4': 1, '5': 3, '10': 'expiresAt'},
+    {'1': 'shattered_at', '3': 7, '4': 1, '5': 3, '10': 'shatteredAt'},
+    {'1': 'accepted_at', '3': 8, '4': 1, '5': 3, '10': 'acceptedAt'},
+  ],
+};
+
+/// Descriptor for `TensionSeat`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tensionSeatDescriptor = $convert.base64Decode(
+    'CgtUZW5zaW9uU2VhdBIOCgJpZBgBIAEoCVICaWQSEgoEc2xvdBgCIAEoBVIEc2xvdBIUCgVzdG'
+    'F0ZRgDIAEoCVIFc3RhdGUSGwoJdGFyZ2V0X2lkGAQgASgJUgh0YXJnZXRJZBIfCgtiaWRfbWVz'
+    'c2FnZRgFIAEoCVIKYmlkTWVzc2FnZRIdCgpleHBpcmVzX2F0GAYgASgDUglleHBpcmVzQXQSIQ'
+    'oMc2hhdHRlcmVkX2F0GAcgASgDUgtzaGF0dGVyZWRBdBIfCgthY2NlcHRlZF9hdBgIIAEoA1IK'
+    'YWNjZXB0ZWRBdA==');
+
+@$core.Deprecated('Use listTensionSeatsRequestDescriptor instead')
+const ListTensionSeatsRequest$json = {
+  '1': 'ListTensionSeatsRequest',
+};
+
+/// Descriptor for `ListTensionSeatsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTensionSeatsRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0VGVuc2lvblNlYXRzUmVxdWVzdA==');
+
+@$core.Deprecated('Use listTensionSeatsResponseDescriptor instead')
+const ListTensionSeatsResponse$json = {
+  '1': 'ListTensionSeatsResponse',
+  '2': [
+    {'1': 'seats', '3': 1, '4': 3, '5': 11, '6': '.sttattus.dating.v1.TensionSeat', '10': 'seats'},
+  ],
+};
+
+/// Descriptor for `ListTensionSeatsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTensionSeatsResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0VGVuc2lvblNlYXRzUmVzcG9uc2USNQoFc2VhdHMYASADKAsyHy5zdHRhdHR1cy5kYX'
+    'RpbmcudjEuVGVuc2lvblNlYXRSBXNlYXRz');
+
+@$core.Deprecated('Use placeTensionBidRequestDescriptor instead')
+const PlaceTensionBidRequest$json = {
+  '1': 'PlaceTensionBidRequest',
+  '2': [
+    {'1': 'seat_id', '3': 1, '4': 1, '5': 9, '10': 'seatId'},
+    {'1': 'target_id', '3': 2, '4': 1, '5': 9, '10': 'targetId'},
+    {'1': 'bid_message', '3': 3, '4': 1, '5': 9, '10': 'bidMessage'},
+  ],
+};
+
+/// Descriptor for `PlaceTensionBidRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List placeTensionBidRequestDescriptor = $convert.base64Decode(
+    'ChZQbGFjZVRlbnNpb25CaWRSZXF1ZXN0EhcKB3NlYXRfaWQYASABKAlSBnNlYXRJZBIbCgl0YX'
+    'JnZXRfaWQYAiABKAlSCHRhcmdldElkEh8KC2JpZF9tZXNzYWdlGAMgASgJUgpiaWRNZXNzYWdl');
+
+@$core.Deprecated('Use placeTensionBidResponseDescriptor instead')
+const PlaceTensionBidResponse$json = {
+  '1': 'PlaceTensionBidResponse',
+  '2': [
+    {'1': 'seat', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.TensionSeat', '10': 'seat'},
+  ],
+};
+
+/// Descriptor for `PlaceTensionBidResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List placeTensionBidResponseDescriptor = $convert.base64Decode(
+    'ChdQbGFjZVRlbnNpb25CaWRSZXNwb25zZRIzCgRzZWF0GAEgASgLMh8uc3R0YXR0dXMuZGF0aW'
+    '5nLnYxLlRlbnNpb25TZWF0UgRzZWF0');
+
+@$core.Deprecated('Use releaseTensionSeatRequestDescriptor instead')
+const ReleaseTensionSeatRequest$json = {
+  '1': 'ReleaseTensionSeatRequest',
+  '2': [
+    {'1': 'seat_id', '3': 1, '4': 1, '5': 9, '10': 'seatId'},
+  ],
+};
+
+/// Descriptor for `ReleaseTensionSeatRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List releaseTensionSeatRequestDescriptor = $convert.base64Decode(
+    'ChlSZWxlYXNlVGVuc2lvblNlYXRSZXF1ZXN0EhcKB3NlYXRfaWQYASABKAlSBnNlYXRJZA==');
+
+@$core.Deprecated('Use releaseTensionSeatResponseDescriptor instead')
+const ReleaseTensionSeatResponse$json = {
+  '1': 'ReleaseTensionSeatResponse',
+  '2': [
+    {'1': 'seat', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.TensionSeat', '10': 'seat'},
+  ],
+};
+
+/// Descriptor for `ReleaseTensionSeatResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List releaseTensionSeatResponseDescriptor = $convert.base64Decode(
+    'ChpSZWxlYXNlVGVuc2lvblNlYXRSZXNwb25zZRIzCgRzZWF0GAEgASgLMh8uc3R0YXR0dXMuZG'
+    'F0aW5nLnYxLlRlbnNpb25TZWF0UgRzZWF0');
+

@@ -1486,6 +1486,380 @@ func (x *GetLatestVerificationResponse) GetVerification() *AtlasVerification {
 	return nil
 }
 
+type TensionSeat struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slot  int32                  `protobuf:"varint,2,opt,name=slot,proto3" json:"slot,omitempty"` // 0..4
+	// 'open' | 'held' | 'shattered' | 'accepted'
+	State         string `protobuf:"bytes,3,opt,name=state,proto3" json:"state,omitempty"`
+	TargetId      string `protobuf:"bytes,4,opt,name=target_id,json=targetId,proto3" json:"target_id,omitempty"`
+	BidMessage    string `protobuf:"bytes,5,opt,name=bid_message,json=bidMessage,proto3" json:"bid_message,omitempty"`
+	ExpiresAt     int64  `protobuf:"varint,6,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	ShatteredAt   int64  `protobuf:"varint,7,opt,name=shattered_at,json=shatteredAt,proto3" json:"shattered_at,omitempty"`
+	AcceptedAt    int64  `protobuf:"varint,8,opt,name=accepted_at,json=acceptedAt,proto3" json:"accepted_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TensionSeat) Reset() {
+	*x = TensionSeat{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TensionSeat) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TensionSeat) ProtoMessage() {}
+
+func (x *TensionSeat) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TensionSeat.ProtoReflect.Descriptor instead.
+func (*TensionSeat) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *TensionSeat) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *TensionSeat) GetSlot() int32 {
+	if x != nil {
+		return x.Slot
+	}
+	return 0
+}
+
+func (x *TensionSeat) GetState() string {
+	if x != nil {
+		return x.State
+	}
+	return ""
+}
+
+func (x *TensionSeat) GetTargetId() string {
+	if x != nil {
+		return x.TargetId
+	}
+	return ""
+}
+
+func (x *TensionSeat) GetBidMessage() string {
+	if x != nil {
+		return x.BidMessage
+	}
+	return ""
+}
+
+func (x *TensionSeat) GetExpiresAt() int64 {
+	if x != nil {
+		return x.ExpiresAt
+	}
+	return 0
+}
+
+func (x *TensionSeat) GetShatteredAt() int64 {
+	if x != nil {
+		return x.ShatteredAt
+	}
+	return 0
+}
+
+func (x *TensionSeat) GetAcceptedAt() int64 {
+	if x != nil {
+		return x.AcceptedAt
+	}
+	return 0
+}
+
+type ListTensionSeatsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListTensionSeatsRequest) Reset() {
+	*x = ListTensionSeatsRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListTensionSeatsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListTensionSeatsRequest) ProtoMessage() {}
+
+func (x *ListTensionSeatsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListTensionSeatsRequest.ProtoReflect.Descriptor instead.
+func (*ListTensionSeatsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{25}
+}
+
+type ListTensionSeatsResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Always five seats, ordered by slot 0..4.
+	Seats         []*TensionSeat `protobuf:"bytes,1,rep,name=seats,proto3" json:"seats,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListTensionSeatsResponse) Reset() {
+	*x = ListTensionSeatsResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListTensionSeatsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListTensionSeatsResponse) ProtoMessage() {}
+
+func (x *ListTensionSeatsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListTensionSeatsResponse.ProtoReflect.Descriptor instead.
+func (*ListTensionSeatsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *ListTensionSeatsResponse) GetSeats() []*TensionSeat {
+	if x != nil {
+		return x.Seats
+	}
+	return nil
+}
+
+type PlaceTensionBidRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SeatId        string                 `protobuf:"bytes,1,opt,name=seat_id,json=seatId,proto3" json:"seat_id,omitempty"`
+	TargetId      string                 `protobuf:"bytes,2,opt,name=target_id,json=targetId,proto3" json:"target_id,omitempty"`
+	BidMessage    string                 `protobuf:"bytes,3,opt,name=bid_message,json=bidMessage,proto3" json:"bid_message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PlaceTensionBidRequest) Reset() {
+	*x = PlaceTensionBidRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PlaceTensionBidRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PlaceTensionBidRequest) ProtoMessage() {}
+
+func (x *PlaceTensionBidRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PlaceTensionBidRequest.ProtoReflect.Descriptor instead.
+func (*PlaceTensionBidRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *PlaceTensionBidRequest) GetSeatId() string {
+	if x != nil {
+		return x.SeatId
+	}
+	return ""
+}
+
+func (x *PlaceTensionBidRequest) GetTargetId() string {
+	if x != nil {
+		return x.TargetId
+	}
+	return ""
+}
+
+func (x *PlaceTensionBidRequest) GetBidMessage() string {
+	if x != nil {
+		return x.BidMessage
+	}
+	return ""
+}
+
+type PlaceTensionBidResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Seat          *TensionSeat           `protobuf:"bytes,1,opt,name=seat,proto3" json:"seat,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PlaceTensionBidResponse) Reset() {
+	*x = PlaceTensionBidResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PlaceTensionBidResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PlaceTensionBidResponse) ProtoMessage() {}
+
+func (x *PlaceTensionBidResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PlaceTensionBidResponse.ProtoReflect.Descriptor instead.
+func (*PlaceTensionBidResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *PlaceTensionBidResponse) GetSeat() *TensionSeat {
+	if x != nil {
+		return x.Seat
+	}
+	return nil
+}
+
+type ReleaseTensionSeatRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SeatId        string                 `protobuf:"bytes,1,opt,name=seat_id,json=seatId,proto3" json:"seat_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReleaseTensionSeatRequest) Reset() {
+	*x = ReleaseTensionSeatRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[29]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReleaseTensionSeatRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReleaseTensionSeatRequest) ProtoMessage() {}
+
+func (x *ReleaseTensionSeatRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[29]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReleaseTensionSeatRequest.ProtoReflect.Descriptor instead.
+func (*ReleaseTensionSeatRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{29}
+}
+
+func (x *ReleaseTensionSeatRequest) GetSeatId() string {
+	if x != nil {
+		return x.SeatId
+	}
+	return ""
+}
+
+type ReleaseTensionSeatResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Seat          *TensionSeat           `protobuf:"bytes,1,opt,name=seat,proto3" json:"seat,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReleaseTensionSeatResponse) Reset() {
+	*x = ReleaseTensionSeatResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[30]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReleaseTensionSeatResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReleaseTensionSeatResponse) ProtoMessage() {}
+
+func (x *ReleaseTensionSeatResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[30]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReleaseTensionSeatResponse.ProtoReflect.Descriptor instead.
+func (*ReleaseTensionSeatResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{30}
+}
+
+func (x *ReleaseTensionSeatResponse) GetSeat() *TensionSeat {
+	if x != nil {
+		return x.Seat
+	}
+	return nil
+}
+
 var File_sttattus_dating_v1_dating_proto protoreflect.FileDescriptor
 
 const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
@@ -1586,7 +1960,33 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\fverification\x18\x01 \x01(\v2%.sttattus.dating.v1.AtlasVerificationR\fverification\"\x1e\n" +
 	"\x1cGetLatestVerificationRequest\"j\n" +
 	"\x1dGetLatestVerificationResponse\x12I\n" +
-	"\fverification\x18\x01 \x01(\v2%.sttattus.dating.v1.AtlasVerificationR\fverification*\x80\x01\n" +
+	"\fverification\x18\x01 \x01(\v2%.sttattus.dating.v1.AtlasVerificationR\fverification\"\xe8\x01\n" +
+	"\vTensionSeat\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slot\x18\x02 \x01(\x05R\x04slot\x12\x14\n" +
+	"\x05state\x18\x03 \x01(\tR\x05state\x12\x1b\n" +
+	"\ttarget_id\x18\x04 \x01(\tR\btargetId\x12\x1f\n" +
+	"\vbid_message\x18\x05 \x01(\tR\n" +
+	"bidMessage\x12\x1d\n" +
+	"\n" +
+	"expires_at\x18\x06 \x01(\x03R\texpiresAt\x12!\n" +
+	"\fshattered_at\x18\a \x01(\x03R\vshatteredAt\x12\x1f\n" +
+	"\vaccepted_at\x18\b \x01(\x03R\n" +
+	"acceptedAt\"\x19\n" +
+	"\x17ListTensionSeatsRequest\"Q\n" +
+	"\x18ListTensionSeatsResponse\x125\n" +
+	"\x05seats\x18\x01 \x03(\v2\x1f.sttattus.dating.v1.TensionSeatR\x05seats\"o\n" +
+	"\x16PlaceTensionBidRequest\x12\x17\n" +
+	"\aseat_id\x18\x01 \x01(\tR\x06seatId\x12\x1b\n" +
+	"\ttarget_id\x18\x02 \x01(\tR\btargetId\x12\x1f\n" +
+	"\vbid_message\x18\x03 \x01(\tR\n" +
+	"bidMessage\"N\n" +
+	"\x17PlaceTensionBidResponse\x123\n" +
+	"\x04seat\x18\x01 \x01(\v2\x1f.sttattus.dating.v1.TensionSeatR\x04seat\"4\n" +
+	"\x19ReleaseTensionSeatRequest\x12\x17\n" +
+	"\aseat_id\x18\x01 \x01(\tR\x06seatId\"Q\n" +
+	"\x1aReleaseTensionSeatResponse\x123\n" +
+	"\x04seat\x18\x01 \x01(\v2\x1f.sttattus.dating.v1.TensionSeatR\x04seat*\x80\x01\n" +
 	"\x0eSwipeDirection\x12\x1f\n" +
 	"\x1bSWIPE_DIRECTION_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14SWIPE_DIRECTION_PASS\x10\x01\x12\x18\n" +
@@ -1597,7 +1997,7 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x14DATING_INTENT_CASUAL\x10\x01\x12\x1e\n" +
 	"\x1aDATING_INTENT_RELATIONSHIP\x10\x02\x12\x19\n" +
 	"\x15DATING_INTENT_FRIENDS\x10\x03\x12\x1c\n" +
-	"\x18DATING_INTENT_NETWORKING\x10\x042\xa9\a\n" +
+	"\x18DATING_INTENT_NETWORKING\x10\x042\xf9\t\n" +
 	"\rDatingService\x12[\n" +
 	"\n" +
 	"GetProfile\x12%.sttattus.dating.v1.GetProfileRequest\x1a&.sttattus.dating.v1.GetProfileResponse\x12d\n" +
@@ -1608,7 +2008,10 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x0eStreamMessages\x12).sttattus.dating.v1.StreamMessagesRequest\x1a*.sttattus.dating.v1.StreamMessagesResponse0\x01\x12^\n" +
 	"\vSendMessage\x12&.sttattus.dating.v1.SendMessageRequest\x1a'.sttattus.dating.v1.SendMessageResponse\x12p\n" +
 	"\x11StartVerification\x12,.sttattus.dating.v1.StartVerificationRequest\x1a-.sttattus.dating.v1.StartVerificationResponse\x12|\n" +
-	"\x15GetLatestVerification\x120.sttattus.dating.v1.GetLatestVerificationRequest\x1a1.sttattus.dating.v1.GetLatestVerificationResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
+	"\x15GetLatestVerification\x120.sttattus.dating.v1.GetLatestVerificationRequest\x1a1.sttattus.dating.v1.GetLatestVerificationResponse\x12m\n" +
+	"\x10ListTensionSeats\x12+.sttattus.dating.v1.ListTensionSeatsRequest\x1a,.sttattus.dating.v1.ListTensionSeatsResponse\x12j\n" +
+	"\x0fPlaceTensionBid\x12*.sttattus.dating.v1.PlaceTensionBidRequest\x1a+.sttattus.dating.v1.PlaceTensionBidResponse\x12s\n" +
+	"\x12ReleaseTensionSeat\x12-.sttattus.dating.v1.ReleaseTensionSeatRequest\x1a..sttattus.dating.v1.ReleaseTensionSeatResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
 
 var (
 	file_sttattus_dating_v1_dating_proto_rawDescOnce sync.Once
@@ -1623,7 +2026,7 @@ func file_sttattus_dating_v1_dating_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_dating_v1_dating_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
+var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 31)
 var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(SwipeDirection)(0),                   // 0: sttattus.dating.v1.SwipeDirection
 	(DatingIntent)(0),                     // 1: sttattus.dating.v1.DatingIntent
@@ -1651,8 +2054,15 @@ var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(*StartVerificationResponse)(nil),     // 23: sttattus.dating.v1.StartVerificationResponse
 	(*GetLatestVerificationRequest)(nil),  // 24: sttattus.dating.v1.GetLatestVerificationRequest
 	(*GetLatestVerificationResponse)(nil), // 25: sttattus.dating.v1.GetLatestVerificationResponse
-	(*v1.PageRequest)(nil),                // 26: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),               // 27: sttattus.common.v1.PageResponse
+	(*TensionSeat)(nil),                   // 26: sttattus.dating.v1.TensionSeat
+	(*ListTensionSeatsRequest)(nil),       // 27: sttattus.dating.v1.ListTensionSeatsRequest
+	(*ListTensionSeatsResponse)(nil),      // 28: sttattus.dating.v1.ListTensionSeatsResponse
+	(*PlaceTensionBidRequest)(nil),        // 29: sttattus.dating.v1.PlaceTensionBidRequest
+	(*PlaceTensionBidResponse)(nil),       // 30: sttattus.dating.v1.PlaceTensionBidResponse
+	(*ReleaseTensionSeatRequest)(nil),     // 31: sttattus.dating.v1.ReleaseTensionSeatRequest
+	(*ReleaseTensionSeatResponse)(nil),    // 32: sttattus.dating.v1.ReleaseTensionSeatResponse
+	(*v1.PageRequest)(nil),                // 33: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),               // 34: sttattus.common.v1.PageResponse
 }
 var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	1,  // 0: sttattus.dating.v1.DatingProfile.intent:type_name -> sttattus.dating.v1.DatingIntent
@@ -1665,36 +2075,45 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	4,  // 7: sttattus.dating.v1.StreamDiscoveryResponse.candidate:type_name -> sttattus.dating.v1.Candidate
 	0,  // 8: sttattus.dating.v1.SwipeRequest.direction:type_name -> sttattus.dating.v1.SwipeDirection
 	5,  // 9: sttattus.dating.v1.SwipeResponse.match:type_name -> sttattus.dating.v1.Match
-	26, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	33, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	5,  // 11: sttattus.dating.v1.ListMatchesResponse.matches:type_name -> sttattus.dating.v1.Match
-	27, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	34, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
 	6,  // 13: sttattus.dating.v1.StreamMessagesResponse.message:type_name -> sttattus.dating.v1.Message
 	6,  // 14: sttattus.dating.v1.SendMessageResponse.message:type_name -> sttattus.dating.v1.Message
 	21, // 15: sttattus.dating.v1.StartVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
 	21, // 16: sttattus.dating.v1.GetLatestVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
-	7,  // 17: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
-	9,  // 18: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
-	11, // 19: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
-	13, // 20: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
-	15, // 21: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
-	17, // 22: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
-	19, // 23: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
-	22, // 24: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
-	24, // 25: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
-	8,  // 26: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
-	10, // 27: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
-	12, // 28: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
-	14, // 29: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
-	16, // 30: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
-	18, // 31: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
-	20, // 32: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
-	23, // 33: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
-	25, // 34: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
-	26, // [26:35] is the sub-list for method output_type
-	17, // [17:26] is the sub-list for method input_type
-	17, // [17:17] is the sub-list for extension type_name
-	17, // [17:17] is the sub-list for extension extendee
-	0,  // [0:17] is the sub-list for field type_name
+	26, // 17: sttattus.dating.v1.ListTensionSeatsResponse.seats:type_name -> sttattus.dating.v1.TensionSeat
+	26, // 18: sttattus.dating.v1.PlaceTensionBidResponse.seat:type_name -> sttattus.dating.v1.TensionSeat
+	26, // 19: sttattus.dating.v1.ReleaseTensionSeatResponse.seat:type_name -> sttattus.dating.v1.TensionSeat
+	7,  // 20: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
+	9,  // 21: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
+	11, // 22: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
+	13, // 23: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
+	15, // 24: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
+	17, // 25: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
+	19, // 26: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
+	22, // 27: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
+	24, // 28: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
+	27, // 29: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
+	29, // 30: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
+	31, // 31: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
+	8,  // 32: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
+	10, // 33: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
+	12, // 34: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
+	14, // 35: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
+	16, // 36: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
+	18, // 37: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
+	20, // 38: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
+	23, // 39: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
+	25, // 40: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
+	28, // 41: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
+	30, // 42: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
+	32, // 43: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
+	32, // [32:44] is the sub-list for method output_type
+	20, // [20:32] is the sub-list for method input_type
+	20, // [20:20] is the sub-list for extension type_name
+	20, // [20:20] is the sub-list for extension extendee
+	0,  // [0:20] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dating_v1_dating_proto_init() }
@@ -1708,7 +2127,7 @@ func file_sttattus_dating_v1_dating_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_dating_v1_dating_proto_rawDesc), len(file_sttattus_dating_v1_dating_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   24,
+			NumMessages:   31,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

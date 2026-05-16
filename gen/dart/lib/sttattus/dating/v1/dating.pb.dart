@@ -1583,6 +1583,420 @@ class GetLatestVerificationResponse extends $pb.GeneratedMessage {
   AtlasVerification ensureVerification() => $_ensure(0);
 }
 
+class TensionSeat extends $pb.GeneratedMessage {
+  factory TensionSeat({
+    $core.String? id,
+    $core.int? slot,
+    $core.String? state,
+    $core.String? targetId,
+    $core.String? bidMessage,
+    $fixnum.Int64? expiresAt,
+    $fixnum.Int64? shatteredAt,
+    $fixnum.Int64? acceptedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (slot != null) result.slot = slot;
+    if (state != null) result.state = state;
+    if (targetId != null) result.targetId = targetId;
+    if (bidMessage != null) result.bidMessage = bidMessage;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (shatteredAt != null) result.shatteredAt = shatteredAt;
+    if (acceptedAt != null) result.acceptedAt = acceptedAt;
+    return result;
+  }
+
+  TensionSeat._();
+
+  factory TensionSeat.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory TensionSeat.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TensionSeat', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'slot', $pb.PbFieldType.O3)
+    ..aOS(3, _omitFieldNames ? '' : 'state')
+    ..aOS(4, _omitFieldNames ? '' : 'targetId')
+    ..aOS(5, _omitFieldNames ? '' : 'bidMessage')
+    ..aInt64(6, _omitFieldNames ? '' : 'expiresAt')
+    ..aInt64(7, _omitFieldNames ? '' : 'shatteredAt')
+    ..aInt64(8, _omitFieldNames ? '' : 'acceptedAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TensionSeat clone() => TensionSeat()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TensionSeat copyWith(void Function(TensionSeat) updates) => super.copyWith((message) => updates(message as TensionSeat)) as TensionSeat;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TensionSeat create() => TensionSeat._();
+  @$core.override
+  TensionSeat createEmptyInstance() => create();
+  static $pb.PbList<TensionSeat> createRepeated() => $pb.PbList<TensionSeat>();
+  @$core.pragma('dart2js:noInline')
+  static TensionSeat getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TensionSeat>(create);
+  static TensionSeat? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get slot => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set slot($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSlot() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSlot() => $_clearField(2);
+
+  /// 'open' | 'held' | 'shattered' | 'accepted'
+  @$pb.TagNumber(3)
+  $core.String get state => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set state($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get targetId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set targetId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTargetId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTargetId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get bidMessage => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set bidMessage($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBidMessage() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBidMessage() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get expiresAt => $_getI64(5);
+  @$pb.TagNumber(6)
+  set expiresAt($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExpiresAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExpiresAt() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get shatteredAt => $_getI64(6);
+  @$pb.TagNumber(7)
+  set shatteredAt($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasShatteredAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearShatteredAt() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get acceptedAt => $_getI64(7);
+  @$pb.TagNumber(8)
+  set acceptedAt($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAcceptedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAcceptedAt() => $_clearField(8);
+}
+
+class ListTensionSeatsRequest extends $pb.GeneratedMessage {
+  factory ListTensionSeatsRequest() => create();
+
+  ListTensionSeatsRequest._();
+
+  factory ListTensionSeatsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListTensionSeatsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTensionSeatsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListTensionSeatsRequest clone() => ListTensionSeatsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListTensionSeatsRequest copyWith(void Function(ListTensionSeatsRequest) updates) => super.copyWith((message) => updates(message as ListTensionSeatsRequest)) as ListTensionSeatsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTensionSeatsRequest create() => ListTensionSeatsRequest._();
+  @$core.override
+  ListTensionSeatsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListTensionSeatsRequest> createRepeated() => $pb.PbList<ListTensionSeatsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListTensionSeatsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTensionSeatsRequest>(create);
+  static ListTensionSeatsRequest? _defaultInstance;
+}
+
+class ListTensionSeatsResponse extends $pb.GeneratedMessage {
+  factory ListTensionSeatsResponse({
+    $core.Iterable<TensionSeat>? seats,
+  }) {
+    final result = create();
+    if (seats != null) result.seats.addAll(seats);
+    return result;
+  }
+
+  ListTensionSeatsResponse._();
+
+  factory ListTensionSeatsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListTensionSeatsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTensionSeatsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..pc<TensionSeat>(1, _omitFieldNames ? '' : 'seats', $pb.PbFieldType.PM, subBuilder: TensionSeat.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListTensionSeatsResponse clone() => ListTensionSeatsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListTensionSeatsResponse copyWith(void Function(ListTensionSeatsResponse) updates) => super.copyWith((message) => updates(message as ListTensionSeatsResponse)) as ListTensionSeatsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTensionSeatsResponse create() => ListTensionSeatsResponse._();
+  @$core.override
+  ListTensionSeatsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListTensionSeatsResponse> createRepeated() => $pb.PbList<ListTensionSeatsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListTensionSeatsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTensionSeatsResponse>(create);
+  static ListTensionSeatsResponse? _defaultInstance;
+
+  /// Always five seats, ordered by slot 0..4.
+  @$pb.TagNumber(1)
+  $pb.PbList<TensionSeat> get seats => $_getList(0);
+}
+
+class PlaceTensionBidRequest extends $pb.GeneratedMessage {
+  factory PlaceTensionBidRequest({
+    $core.String? seatId,
+    $core.String? targetId,
+    $core.String? bidMessage,
+  }) {
+    final result = create();
+    if (seatId != null) result.seatId = seatId;
+    if (targetId != null) result.targetId = targetId;
+    if (bidMessage != null) result.bidMessage = bidMessage;
+    return result;
+  }
+
+  PlaceTensionBidRequest._();
+
+  factory PlaceTensionBidRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PlaceTensionBidRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlaceTensionBidRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'seatId')
+    ..aOS(2, _omitFieldNames ? '' : 'targetId')
+    ..aOS(3, _omitFieldNames ? '' : 'bidMessage')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlaceTensionBidRequest clone() => PlaceTensionBidRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlaceTensionBidRequest copyWith(void Function(PlaceTensionBidRequest) updates) => super.copyWith((message) => updates(message as PlaceTensionBidRequest)) as PlaceTensionBidRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PlaceTensionBidRequest create() => PlaceTensionBidRequest._();
+  @$core.override
+  PlaceTensionBidRequest createEmptyInstance() => create();
+  static $pb.PbList<PlaceTensionBidRequest> createRepeated() => $pb.PbList<PlaceTensionBidRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PlaceTensionBidRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlaceTensionBidRequest>(create);
+  static PlaceTensionBidRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get seatId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set seatId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSeatId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSeatId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get targetId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set targetId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTargetId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTargetId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get bidMessage => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set bidMessage($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBidMessage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBidMessage() => $_clearField(3);
+}
+
+class PlaceTensionBidResponse extends $pb.GeneratedMessage {
+  factory PlaceTensionBidResponse({
+    TensionSeat? seat,
+  }) {
+    final result = create();
+    if (seat != null) result.seat = seat;
+    return result;
+  }
+
+  PlaceTensionBidResponse._();
+
+  factory PlaceTensionBidResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PlaceTensionBidResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlaceTensionBidResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<TensionSeat>(1, _omitFieldNames ? '' : 'seat', subBuilder: TensionSeat.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlaceTensionBidResponse clone() => PlaceTensionBidResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlaceTensionBidResponse copyWith(void Function(PlaceTensionBidResponse) updates) => super.copyWith((message) => updates(message as PlaceTensionBidResponse)) as PlaceTensionBidResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PlaceTensionBidResponse create() => PlaceTensionBidResponse._();
+  @$core.override
+  PlaceTensionBidResponse createEmptyInstance() => create();
+  static $pb.PbList<PlaceTensionBidResponse> createRepeated() => $pb.PbList<PlaceTensionBidResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PlaceTensionBidResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlaceTensionBidResponse>(create);
+  static PlaceTensionBidResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  TensionSeat get seat => $_getN(0);
+  @$pb.TagNumber(1)
+  set seat(TensionSeat value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSeat() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSeat() => $_clearField(1);
+  @$pb.TagNumber(1)
+  TensionSeat ensureSeat() => $_ensure(0);
+}
+
+class ReleaseTensionSeatRequest extends $pb.GeneratedMessage {
+  factory ReleaseTensionSeatRequest({
+    $core.String? seatId,
+  }) {
+    final result = create();
+    if (seatId != null) result.seatId = seatId;
+    return result;
+  }
+
+  ReleaseTensionSeatRequest._();
+
+  factory ReleaseTensionSeatRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ReleaseTensionSeatRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReleaseTensionSeatRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'seatId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReleaseTensionSeatRequest clone() => ReleaseTensionSeatRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReleaseTensionSeatRequest copyWith(void Function(ReleaseTensionSeatRequest) updates) => super.copyWith((message) => updates(message as ReleaseTensionSeatRequest)) as ReleaseTensionSeatRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReleaseTensionSeatRequest create() => ReleaseTensionSeatRequest._();
+  @$core.override
+  ReleaseTensionSeatRequest createEmptyInstance() => create();
+  static $pb.PbList<ReleaseTensionSeatRequest> createRepeated() => $pb.PbList<ReleaseTensionSeatRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ReleaseTensionSeatRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReleaseTensionSeatRequest>(create);
+  static ReleaseTensionSeatRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get seatId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set seatId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSeatId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSeatId() => $_clearField(1);
+}
+
+class ReleaseTensionSeatResponse extends $pb.GeneratedMessage {
+  factory ReleaseTensionSeatResponse({
+    TensionSeat? seat,
+  }) {
+    final result = create();
+    if (seat != null) result.seat = seat;
+    return result;
+  }
+
+  ReleaseTensionSeatResponse._();
+
+  factory ReleaseTensionSeatResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ReleaseTensionSeatResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReleaseTensionSeatResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<TensionSeat>(1, _omitFieldNames ? '' : 'seat', subBuilder: TensionSeat.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReleaseTensionSeatResponse clone() => ReleaseTensionSeatResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReleaseTensionSeatResponse copyWith(void Function(ReleaseTensionSeatResponse) updates) => super.copyWith((message) => updates(message as ReleaseTensionSeatResponse)) as ReleaseTensionSeatResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReleaseTensionSeatResponse create() => ReleaseTensionSeatResponse._();
+  @$core.override
+  ReleaseTensionSeatResponse createEmptyInstance() => create();
+  static $pb.PbList<ReleaseTensionSeatResponse> createRepeated() => $pb.PbList<ReleaseTensionSeatResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ReleaseTensionSeatResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReleaseTensionSeatResponse>(create);
+  static ReleaseTensionSeatResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  TensionSeat get seat => $_getN(0);
+  @$pb.TagNumber(1)
+  set seat(TensionSeat value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSeat() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSeat() => $_clearField(1);
+  @$pb.TagNumber(1)
+  TensionSeat ensureSeat() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

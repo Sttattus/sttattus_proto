@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetLatestVerificationRequest, GetLatestVerificationResponse, GetProfileRequest, GetProfileResponse, ListMatchesRequest, ListMatchesResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UpdateProfileRequest, UpdateProfileResponse } from "./dating_pb.js";
+import { GetLatestVerificationRequest, GetLatestVerificationResponse, GetProfileRequest, GetProfileResponse, ListMatchesRequest, ListMatchesResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UpdateProfileRequest, UpdateProfileResponse } from "./dating_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -91,6 +91,35 @@ export const DatingService = {
       name: "GetLatestVerification",
       I: GetLatestVerificationRequest,
       O: GetLatestVerificationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9.4 — server-authoritative Tension Seats.
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.ListTensionSeats
+     */
+    listTensionSeats: {
+      name: "ListTensionSeats",
+      I: ListTensionSeatsRequest,
+      O: ListTensionSeatsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.PlaceTensionBid
+     */
+    placeTensionBid: {
+      name: "PlaceTensionBid",
+      I: PlaceTensionBidRequest,
+      O: PlaceTensionBidResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.ReleaseTensionSeat
+     */
+    releaseTensionSeat: {
+      name: "ReleaseTensionSeat",
+      I: ReleaseTensionSeatRequest,
+      O: ReleaseTensionSeatResponse,
       kind: MethodKind.Unary,
     },
   }

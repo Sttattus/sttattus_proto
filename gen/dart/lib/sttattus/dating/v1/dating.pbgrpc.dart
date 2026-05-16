@@ -68,6 +68,19 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getLatestVerification, request, options: options);
   }
 
+  /// A9.4 — server-authoritative Tension Seats.
+  $grpc.ResponseFuture<$0.ListTensionSeatsResponse> listTensionSeats($0.ListTensionSeatsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listTensionSeats, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PlaceTensionBidResponse> placeTensionBid($0.PlaceTensionBidRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$placeTensionBid, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReleaseTensionSeatResponse> releaseTensionSeat($0.ReleaseTensionSeatRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$releaseTensionSeat, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getProfile = $grpc.ClientMethod<$0.GetProfileRequest, $0.GetProfileResponse>(
@@ -106,6 +119,18 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/GetLatestVerification',
       ($0.GetLatestVerificationRequest value) => value.writeToBuffer(),
       $0.GetLatestVerificationResponse.fromBuffer);
+  static final _$listTensionSeats = $grpc.ClientMethod<$0.ListTensionSeatsRequest, $0.ListTensionSeatsResponse>(
+      '/sttattus.dating.v1.DatingService/ListTensionSeats',
+      ($0.ListTensionSeatsRequest value) => value.writeToBuffer(),
+      $0.ListTensionSeatsResponse.fromBuffer);
+  static final _$placeTensionBid = $grpc.ClientMethod<$0.PlaceTensionBidRequest, $0.PlaceTensionBidResponse>(
+      '/sttattus.dating.v1.DatingService/PlaceTensionBid',
+      ($0.PlaceTensionBidRequest value) => value.writeToBuffer(),
+      $0.PlaceTensionBidResponse.fromBuffer);
+  static final _$releaseTensionSeat = $grpc.ClientMethod<$0.ReleaseTensionSeatRequest, $0.ReleaseTensionSeatResponse>(
+      '/sttattus.dating.v1.DatingService/ReleaseTensionSeat',
+      ($0.ReleaseTensionSeatRequest value) => value.writeToBuffer(),
+      $0.ReleaseTensionSeatResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dating.v1.DatingService')
@@ -176,6 +201,27 @@ abstract class DatingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetLatestVerificationRequest.fromBuffer(value),
         ($0.GetLatestVerificationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListTensionSeatsRequest, $0.ListTensionSeatsResponse>(
+        'ListTensionSeats',
+        listTensionSeats_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListTensionSeatsRequest.fromBuffer(value),
+        ($0.ListTensionSeatsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PlaceTensionBidRequest, $0.PlaceTensionBidResponse>(
+        'PlaceTensionBid',
+        placeTensionBid_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.PlaceTensionBidRequest.fromBuffer(value),
+        ($0.PlaceTensionBidResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReleaseTensionSeatRequest, $0.ReleaseTensionSeatResponse>(
+        'ReleaseTensionSeat',
+        releaseTensionSeat_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ReleaseTensionSeatRequest.fromBuffer(value),
+        ($0.ReleaseTensionSeatResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProfileRequest> $request) async {
@@ -231,5 +277,23 @@ abstract class DatingServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GetLatestVerificationResponse> getLatestVerification($grpc.ServiceCall call, $0.GetLatestVerificationRequest request);
+
+  $async.Future<$0.ListTensionSeatsResponse> listTensionSeats_Pre($grpc.ServiceCall $call, $async.Future<$0.ListTensionSeatsRequest> $request) async {
+    return listTensionSeats($call, await $request);
+  }
+
+  $async.Future<$0.ListTensionSeatsResponse> listTensionSeats($grpc.ServiceCall call, $0.ListTensionSeatsRequest request);
+
+  $async.Future<$0.PlaceTensionBidResponse> placeTensionBid_Pre($grpc.ServiceCall $call, $async.Future<$0.PlaceTensionBidRequest> $request) async {
+    return placeTensionBid($call, await $request);
+  }
+
+  $async.Future<$0.PlaceTensionBidResponse> placeTensionBid($grpc.ServiceCall call, $0.PlaceTensionBidRequest request);
+
+  $async.Future<$0.ReleaseTensionSeatResponse> releaseTensionSeat_Pre($grpc.ServiceCall $call, $async.Future<$0.ReleaseTensionSeatRequest> $request) async {
+    return releaseTensionSeat($call, await $request);
+  }
+
+  $async.Future<$0.ReleaseTensionSeatResponse> releaseTensionSeat($grpc.ServiceCall call, $0.ReleaseTensionSeatRequest request);
 
 }

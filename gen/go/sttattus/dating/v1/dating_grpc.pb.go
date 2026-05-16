@@ -28,6 +28,9 @@ const (
 	DatingService_SendMessage_FullMethodName           = "/sttattus.dating.v1.DatingService/SendMessage"
 	DatingService_StartVerification_FullMethodName     = "/sttattus.dating.v1.DatingService/StartVerification"
 	DatingService_GetLatestVerification_FullMethodName = "/sttattus.dating.v1.DatingService/GetLatestVerification"
+	DatingService_ListTensionSeats_FullMethodName      = "/sttattus.dating.v1.DatingService/ListTensionSeats"
+	DatingService_PlaceTensionBid_FullMethodName       = "/sttattus.dating.v1.DatingService/PlaceTensionBid"
+	DatingService_ReleaseTensionSeat_FullMethodName    = "/sttattus.dating.v1.DatingService/ReleaseTensionSeat"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -43,6 +46,10 @@ type DatingServiceClient interface {
 	SendMessage(ctx context.Context, in *SendMessageRequest, opts ...grpc.CallOption) (*SendMessageResponse, error)
 	StartVerification(ctx context.Context, in *StartVerificationRequest, opts ...grpc.CallOption) (*StartVerificationResponse, error)
 	GetLatestVerification(ctx context.Context, in *GetLatestVerificationRequest, opts ...grpc.CallOption) (*GetLatestVerificationResponse, error)
+	// A9.4 — server-authoritative Tension Seats.
+	ListTensionSeats(ctx context.Context, in *ListTensionSeatsRequest, opts ...grpc.CallOption) (*ListTensionSeatsResponse, error)
+	PlaceTensionBid(ctx context.Context, in *PlaceTensionBidRequest, opts ...grpc.CallOption) (*PlaceTensionBidResponse, error)
+	ReleaseTensionSeat(ctx context.Context, in *ReleaseTensionSeatRequest, opts ...grpc.CallOption) (*ReleaseTensionSeatResponse, error)
 }
 
 type datingServiceClient struct {
@@ -161,6 +168,36 @@ func (c *datingServiceClient) GetLatestVerification(ctx context.Context, in *Get
 	return out, nil
 }
 
+func (c *datingServiceClient) ListTensionSeats(ctx context.Context, in *ListTensionSeatsRequest, opts ...grpc.CallOption) (*ListTensionSeatsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListTensionSeatsResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListTensionSeats_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) PlaceTensionBid(ctx context.Context, in *PlaceTensionBidRequest, opts ...grpc.CallOption) (*PlaceTensionBidResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PlaceTensionBidResponse)
+	err := c.cc.Invoke(ctx, DatingService_PlaceTensionBid_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ReleaseTensionSeat(ctx context.Context, in *ReleaseTensionSeatRequest, opts ...grpc.CallOption) (*ReleaseTensionSeatResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReleaseTensionSeatResponse)
+	err := c.cc.Invoke(ctx, DatingService_ReleaseTensionSeat_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatingServiceServer is the server API for DatingService service.
 // All implementations must embed UnimplementedDatingServiceServer
 // for forward compatibility.
@@ -174,6 +211,10 @@ type DatingServiceServer interface {
 	SendMessage(context.Context, *SendMessageRequest) (*SendMessageResponse, error)
 	StartVerification(context.Context, *StartVerificationRequest) (*StartVerificationResponse, error)
 	GetLatestVerification(context.Context, *GetLatestVerificationRequest) (*GetLatestVerificationResponse, error)
+	// A9.4 — server-authoritative Tension Seats.
+	ListTensionSeats(context.Context, *ListTensionSeatsRequest) (*ListTensionSeatsResponse, error)
+	PlaceTensionBid(context.Context, *PlaceTensionBidRequest) (*PlaceTensionBidResponse, error)
+	ReleaseTensionSeat(context.Context, *ReleaseTensionSeatRequest) (*ReleaseTensionSeatResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -210,6 +251,15 @@ func (UnimplementedDatingServiceServer) StartVerification(context.Context, *Star
 }
 func (UnimplementedDatingServiceServer) GetLatestVerification(context.Context, *GetLatestVerificationRequest) (*GetLatestVerificationResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetLatestVerification not implemented")
+}
+func (UnimplementedDatingServiceServer) ListTensionSeats(context.Context, *ListTensionSeatsRequest) (*ListTensionSeatsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListTensionSeats not implemented")
+}
+func (UnimplementedDatingServiceServer) PlaceTensionBid(context.Context, *PlaceTensionBidRequest) (*PlaceTensionBidResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PlaceTensionBid not implemented")
+}
+func (UnimplementedDatingServiceServer) ReleaseTensionSeat(context.Context, *ReleaseTensionSeatRequest) (*ReleaseTensionSeatResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReleaseTensionSeat not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -380,6 +430,60 @@ func _DatingService_GetLatestVerification_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_ListTensionSeats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListTensionSeatsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListTensionSeats(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListTensionSeats_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListTensionSeats(ctx, req.(*ListTensionSeatsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_PlaceTensionBid_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PlaceTensionBidRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).PlaceTensionBid(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_PlaceTensionBid_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).PlaceTensionBid(ctx, req.(*PlaceTensionBidRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ReleaseTensionSeat_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReleaseTensionSeatRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ReleaseTensionSeat(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ReleaseTensionSeat_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ReleaseTensionSeat(ctx, req.(*ReleaseTensionSeatRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatingService_ServiceDesc is the grpc.ServiceDesc for DatingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -414,6 +518,18 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLatestVerification",
 			Handler:    _DatingService_GetLatestVerification_Handler,
+		},
+		{
+			MethodName: "ListTensionSeats",
+			Handler:    _DatingService_ListTensionSeats_Handler,
+		},
+		{
+			MethodName: "PlaceTensionBid",
+			Handler:    _DatingService_PlaceTensionBid_Handler,
+		},
+		{
+			MethodName: "ReleaseTensionSeat",
+			Handler:    _DatingService_ReleaseTensionSeat_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

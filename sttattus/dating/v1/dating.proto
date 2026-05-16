@@ -150,6 +150,42 @@ message GetLatestVerificationResponse {
   AtlasVerification verification = 1;
 }
 
+// === Tension Seats (A9.4) ===
+
+message TensionSeat {
+  string id = 1;
+  int32 slot = 2; // 0..4
+  // 'open' | 'held' | 'shattered' | 'accepted'
+  string state = 3;
+  string target_id = 4;
+  string bid_message = 5;
+  int64 expires_at = 6;
+  int64 shattered_at = 7;
+  int64 accepted_at = 8;
+}
+
+message ListTensionSeatsRequest {}
+message ListTensionSeatsResponse {
+  // Always five seats, ordered by slot 0..4.
+  repeated TensionSeat seats = 1;
+}
+
+message PlaceTensionBidRequest {
+  string seat_id = 1;
+  string target_id = 2;
+  string bid_message = 3;
+}
+message PlaceTensionBidResponse {
+  TensionSeat seat = 1;
+}
+
+message ReleaseTensionSeatRequest {
+  string seat_id = 1;
+}
+message ReleaseTensionSeatResponse {
+  TensionSeat seat = 1;
+}
+
 service DatingService {
   rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
   rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
@@ -160,4 +196,9 @@ service DatingService {
   rpc SendMessage(SendMessageRequest) returns (SendMessageResponse);
   rpc StartVerification(StartVerificationRequest) returns (StartVerificationResponse);
   rpc GetLatestVerification(GetLatestVerificationRequest) returns (GetLatestVerificationResponse);
+
+  // A9.4 — server-authoritative Tension Seats.
+  rpc ListTensionSeats(ListTensionSeatsRequest) returns (ListTensionSeatsResponse);
+  rpc PlaceTensionBid(PlaceTensionBidRequest) returns (PlaceTensionBidResponse);
+  rpc ReleaseTensionSeat(ReleaseTensionSeatRequest) returns (ReleaseTensionSeatResponse);
 }

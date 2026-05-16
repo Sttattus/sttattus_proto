@@ -1207,3 +1207,316 @@ export class GetLatestVerificationResponse extends Message$1<GetLatestVerificati
   }
 }
 
+/**
+ * @generated from message sttattus.dating.v1.TensionSeat
+ */
+export class TensionSeat extends Message$1<TensionSeat> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * 0..4
+   *
+   * @generated from field: int32 slot = 2;
+   */
+  slot = 0;
+
+  /**
+   * 'open' | 'held' | 'shattered' | 'accepted'
+   *
+   * @generated from field: string state = 3;
+   */
+  state = "";
+
+  /**
+   * @generated from field: string target_id = 4;
+   */
+  targetId = "";
+
+  /**
+   * @generated from field: string bid_message = 5;
+   */
+  bidMessage = "";
+
+  /**
+   * @generated from field: int64 expires_at = 6;
+   */
+  expiresAt = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 shattered_at = 7;
+   */
+  shatteredAt = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 accepted_at = 8;
+   */
+  acceptedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<TensionSeat>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.TensionSeat";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "slot", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "target_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "bid_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "expires_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "shattered_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: "accepted_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TensionSeat {
+    return new TensionSeat().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TensionSeat {
+    return new TensionSeat().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TensionSeat {
+    return new TensionSeat().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TensionSeat | PlainMessage<TensionSeat> | undefined, b: TensionSeat | PlainMessage<TensionSeat> | undefined): boolean {
+    return proto3.util.equals(TensionSeat, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListTensionSeatsRequest
+ */
+export class ListTensionSeatsRequest extends Message$1<ListTensionSeatsRequest> {
+  constructor(data?: PartialMessage<ListTensionSeatsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListTensionSeatsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTensionSeatsRequest {
+    return new ListTensionSeatsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTensionSeatsRequest {
+    return new ListTensionSeatsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTensionSeatsRequest {
+    return new ListTensionSeatsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListTensionSeatsRequest | PlainMessage<ListTensionSeatsRequest> | undefined, b: ListTensionSeatsRequest | PlainMessage<ListTensionSeatsRequest> | undefined): boolean {
+    return proto3.util.equals(ListTensionSeatsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListTensionSeatsResponse
+ */
+export class ListTensionSeatsResponse extends Message$1<ListTensionSeatsResponse> {
+  /**
+   * Always five seats, ordered by slot 0..4.
+   *
+   * @generated from field: repeated sttattus.dating.v1.TensionSeat seats = 1;
+   */
+  seats: TensionSeat[] = [];
+
+  constructor(data?: PartialMessage<ListTensionSeatsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListTensionSeatsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "seats", kind: "message", T: TensionSeat, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTensionSeatsResponse {
+    return new ListTensionSeatsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTensionSeatsResponse {
+    return new ListTensionSeatsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTensionSeatsResponse {
+    return new ListTensionSeatsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListTensionSeatsResponse | PlainMessage<ListTensionSeatsResponse> | undefined, b: ListTensionSeatsResponse | PlainMessage<ListTensionSeatsResponse> | undefined): boolean {
+    return proto3.util.equals(ListTensionSeatsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.PlaceTensionBidRequest
+ */
+export class PlaceTensionBidRequest extends Message$1<PlaceTensionBidRequest> {
+  /**
+   * @generated from field: string seat_id = 1;
+   */
+  seatId = "";
+
+  /**
+   * @generated from field: string target_id = 2;
+   */
+  targetId = "";
+
+  /**
+   * @generated from field: string bid_message = 3;
+   */
+  bidMessage = "";
+
+  constructor(data?: PartialMessage<PlaceTensionBidRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.PlaceTensionBidRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "seat_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "target_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "bid_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlaceTensionBidRequest {
+    return new PlaceTensionBidRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PlaceTensionBidRequest {
+    return new PlaceTensionBidRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PlaceTensionBidRequest {
+    return new PlaceTensionBidRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PlaceTensionBidRequest | PlainMessage<PlaceTensionBidRequest> | undefined, b: PlaceTensionBidRequest | PlainMessage<PlaceTensionBidRequest> | undefined): boolean {
+    return proto3.util.equals(PlaceTensionBidRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.PlaceTensionBidResponse
+ */
+export class PlaceTensionBidResponse extends Message$1<PlaceTensionBidResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.TensionSeat seat = 1;
+   */
+  seat?: TensionSeat;
+
+  constructor(data?: PartialMessage<PlaceTensionBidResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.PlaceTensionBidResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "seat", kind: "message", T: TensionSeat },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlaceTensionBidResponse {
+    return new PlaceTensionBidResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PlaceTensionBidResponse {
+    return new PlaceTensionBidResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PlaceTensionBidResponse {
+    return new PlaceTensionBidResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PlaceTensionBidResponse | PlainMessage<PlaceTensionBidResponse> | undefined, b: PlaceTensionBidResponse | PlainMessage<PlaceTensionBidResponse> | undefined): boolean {
+    return proto3.util.equals(PlaceTensionBidResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ReleaseTensionSeatRequest
+ */
+export class ReleaseTensionSeatRequest extends Message$1<ReleaseTensionSeatRequest> {
+  /**
+   * @generated from field: string seat_id = 1;
+   */
+  seatId = "";
+
+  constructor(data?: PartialMessage<ReleaseTensionSeatRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ReleaseTensionSeatRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "seat_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReleaseTensionSeatRequest {
+    return new ReleaseTensionSeatRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReleaseTensionSeatRequest {
+    return new ReleaseTensionSeatRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReleaseTensionSeatRequest {
+    return new ReleaseTensionSeatRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReleaseTensionSeatRequest | PlainMessage<ReleaseTensionSeatRequest> | undefined, b: ReleaseTensionSeatRequest | PlainMessage<ReleaseTensionSeatRequest> | undefined): boolean {
+    return proto3.util.equals(ReleaseTensionSeatRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ReleaseTensionSeatResponse
+ */
+export class ReleaseTensionSeatResponse extends Message$1<ReleaseTensionSeatResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.TensionSeat seat = 1;
+   */
+  seat?: TensionSeat;
+
+  constructor(data?: PartialMessage<ReleaseTensionSeatResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ReleaseTensionSeatResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "seat", kind: "message", T: TensionSeat },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReleaseTensionSeatResponse {
+    return new ReleaseTensionSeatResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReleaseTensionSeatResponse {
+    return new ReleaseTensionSeatResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReleaseTensionSeatResponse {
+    return new ReleaseTensionSeatResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReleaseTensionSeatResponse | PlainMessage<ReleaseTensionSeatResponse> | undefined, b: ReleaseTensionSeatResponse | PlainMessage<ReleaseTensionSeatResponse> | undefined): boolean {
+    return proto3.util.equals(ReleaseTensionSeatResponse, a, b);
+  }
+}
+
