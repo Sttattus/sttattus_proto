@@ -3193,6 +3193,149 @@ class AssignAssetToEntityResponse extends $pb.GeneratedMessage {
   static AssignAssetToEntityResponse? _defaultInstance;
 }
 
+class FxRate extends $pb.GeneratedMessage {
+  factory FxRate({
+    $core.String? currency,
+    $core.double? rateToUsd,
+    $core.String? asOfIso,
+  }) {
+    final result = create();
+    if (currency != null) result.currency = currency;
+    if (rateToUsd != null) result.rateToUsd = rateToUsd;
+    if (asOfIso != null) result.asOfIso = asOfIso;
+    return result;
+  }
+
+  FxRate._();
+
+  factory FxRate.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory FxRate.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FxRate', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'currency')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'rateToUsd', $pb.PbFieldType.OD)
+    ..aOS(3, _omitFieldNames ? '' : 'asOfIso')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FxRate clone() => FxRate()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FxRate copyWith(void Function(FxRate) updates) => super.copyWith((message) => updates(message as FxRate)) as FxRate;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FxRate create() => FxRate._();
+  @$core.override
+  FxRate createEmptyInstance() => create();
+  static $pb.PbList<FxRate> createRepeated() => $pb.PbList<FxRate>();
+  @$core.pragma('dart2js:noInline')
+  static FxRate getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FxRate>(create);
+  static FxRate? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get currency => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set currency($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCurrency() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCurrency() => $_clearField(1);
+
+  /// Multiplier such that native_value * rate_to_usd = USD.
+  @$pb.TagNumber(2)
+  $core.double get rateToUsd => $_getN(1);
+  @$pb.TagNumber(2)
+  set rateToUsd($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRateToUsd() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRateToUsd() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get asOfIso => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set asOfIso($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAsOfIso() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAsOfIso() => $_clearField(3);
+}
+
+class ListLatestFxRatesRequest extends $pb.GeneratedMessage {
+  factory ListLatestFxRatesRequest() => create();
+
+  ListLatestFxRatesRequest._();
+
+  factory ListLatestFxRatesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLatestFxRatesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLatestFxRatesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLatestFxRatesRequest clone() => ListLatestFxRatesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLatestFxRatesRequest copyWith(void Function(ListLatestFxRatesRequest) updates) => super.copyWith((message) => updates(message as ListLatestFxRatesRequest)) as ListLatestFxRatesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLatestFxRatesRequest create() => ListLatestFxRatesRequest._();
+  @$core.override
+  ListLatestFxRatesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListLatestFxRatesRequest> createRepeated() => $pb.PbList<ListLatestFxRatesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListLatestFxRatesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLatestFxRatesRequest>(create);
+  static ListLatestFxRatesRequest? _defaultInstance;
+}
+
+class ListLatestFxRatesResponse extends $pb.GeneratedMessage {
+  factory ListLatestFxRatesResponse({
+    $core.Iterable<FxRate>? rates,
+  }) {
+    final result = create();
+    if (rates != null) result.rates.addAll(rates);
+    return result;
+  }
+
+  ListLatestFxRatesResponse._();
+
+  factory ListLatestFxRatesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLatestFxRatesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLatestFxRatesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..pc<FxRate>(1, _omitFieldNames ? '' : 'rates', $pb.PbFieldType.PM, subBuilder: FxRate.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLatestFxRatesResponse clone() => ListLatestFxRatesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLatestFxRatesResponse copyWith(void Function(ListLatestFxRatesResponse) updates) => super.copyWith((message) => updates(message as ListLatestFxRatesResponse)) as ListLatestFxRatesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLatestFxRatesResponse create() => ListLatestFxRatesResponse._();
+  @$core.override
+  ListLatestFxRatesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListLatestFxRatesResponse> createRepeated() => $pb.PbList<ListLatestFxRatesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListLatestFxRatesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLatestFxRatesResponse>(create);
+  static ListLatestFxRatesResponse? _defaultInstance;
+
+  /// One row per currency, latest as-of. The dashboard reads this
+  /// once and converts asset.native_value at display time.
+  @$pb.TagNumber(1)
+  $pb.PbList<FxRate> get rates => $_getList(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

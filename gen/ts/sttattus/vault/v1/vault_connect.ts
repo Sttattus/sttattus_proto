@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, AssignAssetToEntityRequest, AssignAssetToEntityResponse, CreateEntityRequest, CreateEntityResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, DeleteEntityRequest, DeleteEntityResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListEntitiesRequest, ListEntitiesResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, RenameEntityRequest, RenameEntityResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
+import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, AssignAssetToEntityRequest, AssignAssetToEntityResponse, CreateEntityRequest, CreateEntityResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, DeleteEntityRequest, DeleteEntityResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListEntitiesRequest, ListEntitiesResponse, ListLatestFxRatesRequest, ListLatestFxRatesResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, RenameEntityRequest, RenameEntityResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -239,6 +239,17 @@ export const VaultService = {
       name: "AssignAssetToEntity",
       I: AssignAssetToEntityRequest,
       O: AssignAssetToEntityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8P2.2 — current FX rates for client-side conversion.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.ListLatestFxRates
+     */
+    listLatestFxRates: {
+      name: "ListLatestFxRates",
+      I: ListLatestFxRatesRequest,
+      O: ListLatestFxRatesResponse,
       kind: MethodKind.Unary,
     },
   }

@@ -2545,3 +2545,129 @@ export class AssignAssetToEntityResponse extends Message<AssignAssetToEntityResp
   }
 }
 
+/**
+ * @generated from message sttattus.vault.v1.FxRate
+ */
+export class FxRate extends Message<FxRate> {
+  /**
+   * ISO-4217 alpha-3
+   *
+   * @generated from field: string currency = 1;
+   */
+  currency = "";
+
+  /**
+   * Multiplier such that native_value * rate_to_usd = USD.
+   *
+   * @generated from field: double rate_to_usd = 2;
+   */
+  rateToUsd = 0;
+
+  /**
+   * YYYY-MM-DD UTC
+   *
+   * @generated from field: string as_of_iso = 3;
+   */
+  asOfIso = "";
+
+  constructor(data?: PartialMessage<FxRate>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.FxRate";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "currency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "rate_to_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "as_of_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FxRate {
+    return new FxRate().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FxRate {
+    return new FxRate().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FxRate {
+    return new FxRate().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: FxRate | PlainMessage<FxRate> | undefined, b: FxRate | PlainMessage<FxRate> | undefined): boolean {
+    return proto3.util.equals(FxRate, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListLatestFxRatesRequest
+ */
+export class ListLatestFxRatesRequest extends Message<ListLatestFxRatesRequest> {
+  constructor(data?: PartialMessage<ListLatestFxRatesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListLatestFxRatesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLatestFxRatesRequest {
+    return new ListLatestFxRatesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLatestFxRatesRequest {
+    return new ListLatestFxRatesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLatestFxRatesRequest {
+    return new ListLatestFxRatesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLatestFxRatesRequest | PlainMessage<ListLatestFxRatesRequest> | undefined, b: ListLatestFxRatesRequest | PlainMessage<ListLatestFxRatesRequest> | undefined): boolean {
+    return proto3.util.equals(ListLatestFxRatesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListLatestFxRatesResponse
+ */
+export class ListLatestFxRatesResponse extends Message<ListLatestFxRatesResponse> {
+  /**
+   * One row per currency, latest as-of. The dashboard reads this
+   * once and converts asset.native_value at display time.
+   *
+   * @generated from field: repeated sttattus.vault.v1.FxRate rates = 1;
+   */
+  rates: FxRate[] = [];
+
+  constructor(data?: PartialMessage<ListLatestFxRatesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListLatestFxRatesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "rates", kind: "message", T: FxRate, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLatestFxRatesResponse {
+    return new ListLatestFxRatesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLatestFxRatesResponse {
+    return new ListLatestFxRatesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLatestFxRatesResponse {
+    return new ListLatestFxRatesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLatestFxRatesResponse | PlainMessage<ListLatestFxRatesResponse> | undefined, b: ListLatestFxRatesResponse | PlainMessage<ListLatestFxRatesResponse> | undefined): boolean {
+    return proto3.util.equals(ListLatestFxRatesResponse, a, b);
+  }
+}
+

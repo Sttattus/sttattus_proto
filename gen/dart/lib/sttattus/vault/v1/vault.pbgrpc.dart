@@ -136,6 +136,11 @@ class VaultServiceClient extends $grpc.Client {
     return $createUnaryCall(_$assignAssetToEntity, request, options: options);
   }
 
+  /// V8P2.2 — current FX rates for client-side conversion.
+  $grpc.ResponseFuture<$0.ListLatestFxRatesResponse> listLatestFxRates($0.ListLatestFxRatesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listLatestFxRates, request, options: options);
+  }
+
     // method descriptors
 
   static final _$submitAsset = $grpc.ClientMethod<$0.SubmitAssetRequest, $0.SubmitAssetResponse>(
@@ -230,6 +235,10 @@ class VaultServiceClient extends $grpc.Client {
       '/sttattus.vault.v1.VaultService/AssignAssetToEntity',
       ($0.AssignAssetToEntityRequest value) => value.writeToBuffer(),
       $0.AssignAssetToEntityResponse.fromBuffer);
+  static final _$listLatestFxRates = $grpc.ClientMethod<$0.ListLatestFxRatesRequest, $0.ListLatestFxRatesResponse>(
+      '/sttattus.vault.v1.VaultService/ListLatestFxRates',
+      ($0.ListLatestFxRatesRequest value) => value.writeToBuffer(),
+      $0.ListLatestFxRatesResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.vault.v1.VaultService')
@@ -398,6 +407,13 @@ abstract class VaultServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.AssignAssetToEntityRequest.fromBuffer(value),
         ($0.AssignAssetToEntityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListLatestFxRatesRequest, $0.ListLatestFxRatesResponse>(
+        'ListLatestFxRates',
+        listLatestFxRates_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListLatestFxRatesRequest.fromBuffer(value),
+        ($0.ListLatestFxRatesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.SubmitAssetResponse> submitAsset_Pre($grpc.ServiceCall $call, $async.Future<$0.SubmitAssetRequest> $request) async {
@@ -537,5 +553,11 @@ abstract class VaultServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.AssignAssetToEntityResponse> assignAssetToEntity($grpc.ServiceCall call, $0.AssignAssetToEntityRequest request);
+
+  $async.Future<$0.ListLatestFxRatesResponse> listLatestFxRates_Pre($grpc.ServiceCall $call, $async.Future<$0.ListLatestFxRatesRequest> $request) async {
+    return listLatestFxRates($call, await $request);
+  }
+
+  $async.Future<$0.ListLatestFxRatesResponse> listLatestFxRates($grpc.ServiceCall call, $0.ListLatestFxRatesRequest request);
 
 }

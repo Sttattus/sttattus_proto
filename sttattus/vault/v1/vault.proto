@@ -118,6 +118,9 @@ service VaultService {
   rpc RenameEntity(RenameEntityRequest) returns (RenameEntityResponse);
   rpc DeleteEntity(DeleteEntityRequest) returns (DeleteEntityResponse);
   rpc AssignAssetToEntity(AssignAssetToEntityRequest) returns (AssignAssetToEntityResponse);
+
+  // V8P2.2 — current FX rates for client-side conversion.
+  rpc ListLatestFxRates(ListLatestFxRatesRequest) returns (ListLatestFxRatesResponse);
 }
 
 message SyncWealthRequest {
@@ -373,3 +376,20 @@ message AssignAssetToEntityRequest {
 }
 
 message AssignAssetToEntityResponse {}
+
+// === Multi-currency (V8P2.2) ===
+
+message FxRate {
+  string currency = 1; // ISO-4217 alpha-3
+  // Multiplier such that native_value * rate_to_usd = USD.
+  double rate_to_usd = 2;
+  string as_of_iso = 3; // YYYY-MM-DD UTC
+}
+
+message ListLatestFxRatesRequest {}
+
+message ListLatestFxRatesResponse {
+  // One row per currency, latest as-of. The dashboard reads this
+  // once and converts asset.native_value at display time.
+  repeated FxRate rates = 1;
+}

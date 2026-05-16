@@ -42,6 +42,7 @@ const (
 	VaultService_RenameEntity_FullMethodName             = "/sttattus.vault.v1.VaultService/RenameEntity"
 	VaultService_DeleteEntity_FullMethodName             = "/sttattus.vault.v1.VaultService/DeleteEntity"
 	VaultService_AssignAssetToEntity_FullMethodName      = "/sttattus.vault.v1.VaultService/AssignAssetToEntity"
+	VaultService_ListLatestFxRates_FullMethodName        = "/sttattus.vault.v1.VaultService/ListLatestFxRates"
 )
 
 // VaultServiceClient is the client API for VaultService service.
@@ -83,6 +84,8 @@ type VaultServiceClient interface {
 	RenameEntity(ctx context.Context, in *RenameEntityRequest, opts ...grpc.CallOption) (*RenameEntityResponse, error)
 	DeleteEntity(ctx context.Context, in *DeleteEntityRequest, opts ...grpc.CallOption) (*DeleteEntityResponse, error)
 	AssignAssetToEntity(ctx context.Context, in *AssignAssetToEntityRequest, opts ...grpc.CallOption) (*AssignAssetToEntityResponse, error)
+	// V8P2.2 — current FX rates for client-side conversion.
+	ListLatestFxRates(ctx context.Context, in *ListLatestFxRatesRequest, opts ...grpc.CallOption) (*ListLatestFxRatesResponse, error)
 }
 
 type vaultServiceClient struct {
@@ -323,6 +326,16 @@ func (c *vaultServiceClient) AssignAssetToEntity(ctx context.Context, in *Assign
 	return out, nil
 }
 
+func (c *vaultServiceClient) ListLatestFxRates(ctx context.Context, in *ListLatestFxRatesRequest, opts ...grpc.CallOption) (*ListLatestFxRatesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLatestFxRatesResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListLatestFxRates_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultServiceServer is the server API for VaultService service.
 // All implementations must embed UnimplementedVaultServiceServer
 // for forward compatibility.
@@ -362,6 +375,8 @@ type VaultServiceServer interface {
 	RenameEntity(context.Context, *RenameEntityRequest) (*RenameEntityResponse, error)
 	DeleteEntity(context.Context, *DeleteEntityRequest) (*DeleteEntityResponse, error)
 	AssignAssetToEntity(context.Context, *AssignAssetToEntityRequest) (*AssignAssetToEntityResponse, error)
+	// V8P2.2 — current FX rates for client-side conversion.
+	ListLatestFxRates(context.Context, *ListLatestFxRatesRequest) (*ListLatestFxRatesResponse, error)
 	mustEmbedUnimplementedVaultServiceServer()
 }
 
@@ -440,6 +455,9 @@ func (UnimplementedVaultServiceServer) DeleteEntity(context.Context, *DeleteEnti
 }
 func (UnimplementedVaultServiceServer) AssignAssetToEntity(context.Context, *AssignAssetToEntityRequest) (*AssignAssetToEntityResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method AssignAssetToEntity not implemented")
+}
+func (UnimplementedVaultServiceServer) ListLatestFxRates(context.Context, *ListLatestFxRatesRequest) (*ListLatestFxRatesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLatestFxRates not implemented")
 }
 func (UnimplementedVaultServiceServer) mustEmbedUnimplementedVaultServiceServer() {}
 func (UnimplementedVaultServiceServer) testEmbeddedByValue()                      {}
@@ -876,6 +894,24 @@ func _VaultService_AssignAssetToEntity_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultService_ListLatestFxRates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLatestFxRatesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListLatestFxRates(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListLatestFxRates_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListLatestFxRates(ctx, req.(*ListLatestFxRatesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultService_ServiceDesc is the grpc.ServiceDesc for VaultService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -974,6 +1010,10 @@ var VaultService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AssignAssetToEntity",
 			Handler:    _VaultService_AssignAssetToEntity_Handler,
+		},
+		{
+			MethodName: "ListLatestFxRates",
+			Handler:    _VaultService_ListLatestFxRates_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

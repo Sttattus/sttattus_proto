@@ -846,3 +846,40 @@ const AssignAssetToEntityResponse$json = {
 final $typed_data.Uint8List assignAssetToEntityResponseDescriptor = $convert.base64Decode(
     'ChtBc3NpZ25Bc3NldFRvRW50aXR5UmVzcG9uc2U=');
 
+@$core.Deprecated('Use fxRateDescriptor instead')
+const FxRate$json = {
+  '1': 'FxRate',
+  '2': [
+    {'1': 'currency', '3': 1, '4': 1, '5': 9, '10': 'currency'},
+    {'1': 'rate_to_usd', '3': 2, '4': 1, '5': 1, '10': 'rateToUsd'},
+    {'1': 'as_of_iso', '3': 3, '4': 1, '5': 9, '10': 'asOfIso'},
+  ],
+};
+
+/// Descriptor for `FxRate`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fxRateDescriptor = $convert.base64Decode(
+    'CgZGeFJhdGUSGgoIY3VycmVuY3kYASABKAlSCGN1cnJlbmN5Eh4KC3JhdGVfdG9fdXNkGAIgAS'
+    'gBUglyYXRlVG9Vc2QSGgoJYXNfb2ZfaXNvGAMgASgJUgdhc09mSXNv');
+
+@$core.Deprecated('Use listLatestFxRatesRequestDescriptor instead')
+const ListLatestFxRatesRequest$json = {
+  '1': 'ListLatestFxRatesRequest',
+};
+
+/// Descriptor for `ListLatestFxRatesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLatestFxRatesRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0TGF0ZXN0RnhSYXRlc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listLatestFxRatesResponseDescriptor instead')
+const ListLatestFxRatesResponse$json = {
+  '1': 'ListLatestFxRatesResponse',
+  '2': [
+    {'1': 'rates', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.FxRate', '10': 'rates'},
+  ],
+};
+
+/// Descriptor for `ListLatestFxRatesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLatestFxRatesResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0TGF0ZXN0RnhSYXRlc1Jlc3BvbnNlEi8KBXJhdGVzGAEgAygLMhkuc3R0YXR0dXMudm'
+    'F1bHQudjEuRnhSYXRlUgVyYXRlcw==');
+
