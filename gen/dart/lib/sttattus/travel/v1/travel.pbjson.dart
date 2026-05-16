@@ -412,3 +412,60 @@ const DeleteTripResponse$json = {
 final $typed_data.Uint8List deleteTripResponseDescriptor = $convert.base64Decode(
     'ChJEZWxldGVUcmlwUmVzcG9uc2U=');
 
+@$core.Deprecated('Use visitedCountryDescriptor instead')
+const VisitedCountry$json = {
+  '1': 'VisitedCountry',
+  '2': [
+    {'1': 'country_code', '3': 1, '4': 1, '5': 9, '10': 'countryCode'},
+    {'1': 'continent', '3': 2, '4': 1, '5': 9, '10': 'continent'},
+    {'1': 'visit_count', '3': 3, '4': 1, '5': 5, '10': 'visitCount'},
+    {'1': 'verified_count', '3': 4, '4': 1, '5': 5, '10': 'verifiedCount'},
+    {'1': 'last_visit', '3': 5, '4': 1, '5': 3, '10': 'lastVisit'},
+  ],
+};
+
+/// Descriptor for `VisitedCountry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List visitedCountryDescriptor = $convert.base64Decode(
+    'Cg5WaXNpdGVkQ291bnRyeRIhCgxjb3VudHJ5X2NvZGUYASABKAlSC2NvdW50cnlDb2RlEhwKCW'
+    'NvbnRpbmVudBgCIAEoCVIJY29udGluZW50Eh8KC3Zpc2l0X2NvdW50GAMgASgFUgp2aXNpdENv'
+    'dW50EiUKDnZlcmlmaWVkX2NvdW50GAQgASgFUg12ZXJpZmllZENvdW50Eh0KCmxhc3RfdmlzaX'
+    'QYBSABKANSCWxhc3RWaXNpdA==');
+
+@$core.Deprecated('Use continentClaimDescriptor instead')
+const ContinentClaim$json = {
+  '1': 'ContinentClaim',
+  '2': [
+    {'1': 'continent', '3': 1, '4': 1, '5': 9, '10': 'continent'},
+    {'1': 'count', '3': 2, '4': 1, '5': 5, '10': 'count'},
+  ],
+};
+
+/// Descriptor for `ContinentClaim`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List continentClaimDescriptor = $convert.base64Decode(
+    'Cg5Db250aW5lbnRDbGFpbRIcCgljb250aW5lbnQYASABKAlSCWNvbnRpbmVudBIUCgVjb3VudB'
+    'gCIAEoBVIFY291bnQ=');
+
+@$core.Deprecated('Use listVisitedCountriesRequestDescriptor instead')
+const ListVisitedCountriesRequest$json = {
+  '1': 'ListVisitedCountriesRequest',
+};
+
+/// Descriptor for `ListVisitedCountriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listVisitedCountriesRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0VmlzaXRlZENvdW50cmllc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listVisitedCountriesResponseDescriptor instead')
+const ListVisitedCountriesResponse$json = {
+  '1': 'ListVisitedCountriesResponse',
+  '2': [
+    {'1': 'countries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.travel.v1.VisitedCountry', '10': 'countries'},
+    {'1': 'continents', '3': 2, '4': 3, '5': 11, '6': '.sttattus.travel.v1.ContinentClaim', '10': 'continents'},
+  ],
+};
+
+/// Descriptor for `ListVisitedCountriesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listVisitedCountriesResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0VmlzaXRlZENvdW50cmllc1Jlc3BvbnNlEkAKCWNvdW50cmllcxgBIAMoCzIiLnN0dG'
+    'F0dHVzLnRyYXZlbC52MS5WaXNpdGVkQ291bnRyeVIJY291bnRyaWVzEkIKCmNvbnRpbmVudHMY'
+    'AiADKAsyIi5zdHRhdHR1cy50cmF2ZWwudjEuQ29udGluZW50Q2xhaW1SCmNvbnRpbmVudHM=');
+

@@ -19,16 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	TravelService_ListMilestones_FullMethodName    = "/sttattus.travel.v1.TravelService/ListMilestones"
-	TravelService_CreateMilestone_FullMethodName   = "/sttattus.travel.v1.TravelService/CreateMilestone"
-	TravelService_GetNomadStats_FullMethodName     = "/sttattus.travel.v1.TravelService/GetNomadStats"
-	TravelService_ListFeed_FullMethodName          = "/sttattus.travel.v1.TravelService/ListFeed"
-	TravelService_CreateTrip_FullMethodName        = "/sttattus.travel.v1.TravelService/CreateTrip"
-	TravelService_UpdateTrip_FullMethodName        = "/sttattus.travel.v1.TravelService/UpdateTrip"
-	TravelService_ListMyTrips_FullMethodName       = "/sttattus.travel.v1.TravelService/ListMyTrips"
-	TravelService_GetTrip_FullMethodName           = "/sttattus.travel.v1.TravelService/GetTrip"
-	TravelService_AttachVisitToTrip_FullMethodName = "/sttattus.travel.v1.TravelService/AttachVisitToTrip"
-	TravelService_DeleteTrip_FullMethodName        = "/sttattus.travel.v1.TravelService/DeleteTrip"
+	TravelService_ListMilestones_FullMethodName       = "/sttattus.travel.v1.TravelService/ListMilestones"
+	TravelService_CreateMilestone_FullMethodName      = "/sttattus.travel.v1.TravelService/CreateMilestone"
+	TravelService_GetNomadStats_FullMethodName        = "/sttattus.travel.v1.TravelService/GetNomadStats"
+	TravelService_ListFeed_FullMethodName             = "/sttattus.travel.v1.TravelService/ListFeed"
+	TravelService_CreateTrip_FullMethodName           = "/sttattus.travel.v1.TravelService/CreateTrip"
+	TravelService_UpdateTrip_FullMethodName           = "/sttattus.travel.v1.TravelService/UpdateTrip"
+	TravelService_ListMyTrips_FullMethodName          = "/sttattus.travel.v1.TravelService/ListMyTrips"
+	TravelService_GetTrip_FullMethodName              = "/sttattus.travel.v1.TravelService/GetTrip"
+	TravelService_AttachVisitToTrip_FullMethodName    = "/sttattus.travel.v1.TravelService/AttachVisitToTrip"
+	TravelService_DeleteTrip_FullMethodName           = "/sttattus.travel.v1.TravelService/DeleteTrip"
+	TravelService_ListVisitedCountries_FullMethodName = "/sttattus.travel.v1.TravelService/ListVisitedCountries"
 )
 
 // TravelServiceClient is the client API for TravelService service.
@@ -46,6 +47,8 @@ type TravelServiceClient interface {
 	GetTrip(ctx context.Context, in *GetTripRequest, opts ...grpc.CallOption) (*GetTripResponse, error)
 	AttachVisitToTrip(ctx context.Context, in *AttachVisitToTripRequest, opts ...grpc.CallOption) (*AttachVisitToTripResponse, error)
 	DeleteTrip(ctx context.Context, in *DeleteTripRequest, opts ...grpc.CallOption) (*DeleteTripResponse, error)
+	// N10.5 — country chip grid + continent claim.
+	ListVisitedCountries(ctx context.Context, in *ListVisitedCountriesRequest, opts ...grpc.CallOption) (*ListVisitedCountriesResponse, error)
 }
 
 type travelServiceClient struct {
@@ -156,6 +159,16 @@ func (c *travelServiceClient) DeleteTrip(ctx context.Context, in *DeleteTripRequ
 	return out, nil
 }
 
+func (c *travelServiceClient) ListVisitedCountries(ctx context.Context, in *ListVisitedCountriesRequest, opts ...grpc.CallOption) (*ListVisitedCountriesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListVisitedCountriesResponse)
+	err := c.cc.Invoke(ctx, TravelService_ListVisitedCountries_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TravelServiceServer is the server API for TravelService service.
 // All implementations must embed UnimplementedTravelServiceServer
 // for forward compatibility.
@@ -171,6 +184,8 @@ type TravelServiceServer interface {
 	GetTrip(context.Context, *GetTripRequest) (*GetTripResponse, error)
 	AttachVisitToTrip(context.Context, *AttachVisitToTripRequest) (*AttachVisitToTripResponse, error)
 	DeleteTrip(context.Context, *DeleteTripRequest) (*DeleteTripResponse, error)
+	// N10.5 — country chip grid + continent claim.
+	ListVisitedCountries(context.Context, *ListVisitedCountriesRequest) (*ListVisitedCountriesResponse, error)
 	mustEmbedUnimplementedTravelServiceServer()
 }
 
@@ -210,6 +225,9 @@ func (UnimplementedTravelServiceServer) AttachVisitToTrip(context.Context, *Atta
 }
 func (UnimplementedTravelServiceServer) DeleteTrip(context.Context, *DeleteTripRequest) (*DeleteTripResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method DeleteTrip not implemented")
+}
+func (UnimplementedTravelServiceServer) ListVisitedCountries(context.Context, *ListVisitedCountriesRequest) (*ListVisitedCountriesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListVisitedCountries not implemented")
 }
 func (UnimplementedTravelServiceServer) mustEmbedUnimplementedTravelServiceServer() {}
 func (UnimplementedTravelServiceServer) testEmbeddedByValue()                       {}
@@ -412,6 +430,24 @@ func _TravelService_DeleteTrip_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TravelService_ListVisitedCountries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListVisitedCountriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).ListVisitedCountries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_ListVisitedCountries_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).ListVisitedCountries(ctx, req.(*ListVisitedCountriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // TravelService_ServiceDesc is the grpc.ServiceDesc for TravelService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -458,6 +494,10 @@ var TravelService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteTrip",
 			Handler:    _TravelService_DeleteTrip_Handler,
+		},
+		{
+			MethodName: "ListVisitedCountries",
+			Handler:    _TravelService_ListVisitedCountries_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

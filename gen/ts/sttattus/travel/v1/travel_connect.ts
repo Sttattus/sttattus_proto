@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AttachVisitToTripRequest, AttachVisitToTripResponse, CreateMilestoneRequest, CreateMilestoneResponse, CreateTripRequest, CreateTripResponse, DeleteTripRequest, DeleteTripResponse, GetNomadStatsRequest, GetNomadStatsResponse, GetTripRequest, GetTripResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse, ListMyTripsRequest, ListMyTripsResponse, UpdateTripRequest, UpdateTripResponse } from "./travel_pb.js";
+import { AttachVisitToTripRequest, AttachVisitToTripResponse, CreateMilestoneRequest, CreateMilestoneResponse, CreateTripRequest, CreateTripResponse, DeleteTripRequest, DeleteTripResponse, GetNomadStatsRequest, GetNomadStatsResponse, GetTripRequest, GetTripResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse, ListMyTripsRequest, ListMyTripsResponse, ListVisitedCountriesRequest, ListVisitedCountriesResponse, UpdateTripRequest, UpdateTripResponse } from "./travel_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -102,6 +102,17 @@ export const TravelService = {
       name: "DeleteTrip",
       I: DeleteTripRequest,
       O: DeleteTripResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * N10.5 — country chip grid + continent claim.
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.ListVisitedCountries
+     */
+    listVisitedCountries: {
+      name: "ListVisitedCountries",
+      I: ListVisitedCountriesRequest,
+      O: ListVisitedCountriesResponse,
       kind: MethodKind.Unary,
     },
   }

@@ -160,6 +160,27 @@ message DeleteTripRequest {
 }
 message DeleteTripResponse {}
 
+// === Country chip grid + continent claim (N10.5) ===
+
+message VisitedCountry {
+  string country_code = 1;
+  string continent = 2;
+  int32 visit_count = 3;
+  int32 verified_count = 4;
+  int64 last_visit = 5;
+}
+
+message ContinentClaim {
+  string continent = 1;
+  int32 count = 2;
+}
+
+message ListVisitedCountriesRequest {}
+message ListVisitedCountriesResponse {
+  repeated VisitedCountry countries = 1;
+  repeated ContinentClaim continents = 2;
+}
+
 service TravelService {
   rpc ListMilestones(ListMilestonesRequest) returns (ListMilestonesResponse);
   rpc CreateMilestone(CreateMilestoneRequest) returns (CreateMilestoneResponse);
@@ -173,4 +194,7 @@ service TravelService {
   rpc GetTrip(GetTripRequest) returns (GetTripResponse);
   rpc AttachVisitToTrip(AttachVisitToTripRequest) returns (AttachVisitToTripResponse);
   rpc DeleteTrip(DeleteTripRequest) returns (DeleteTripResponse);
+
+  // N10.5 — country chip grid + continent claim.
+  rpc ListVisitedCountries(ListVisitedCountriesRequest) returns (ListVisitedCountriesResponse);
 }

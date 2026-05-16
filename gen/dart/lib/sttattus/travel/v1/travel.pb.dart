@@ -1718,6 +1718,234 @@ class DeleteTripResponse extends $pb.GeneratedMessage {
   static DeleteTripResponse? _defaultInstance;
 }
 
+class VisitedCountry extends $pb.GeneratedMessage {
+  factory VisitedCountry({
+    $core.String? countryCode,
+    $core.String? continent,
+    $core.int? visitCount,
+    $core.int? verifiedCount,
+    $fixnum.Int64? lastVisit,
+  }) {
+    final result = create();
+    if (countryCode != null) result.countryCode = countryCode;
+    if (continent != null) result.continent = continent;
+    if (visitCount != null) result.visitCount = visitCount;
+    if (verifiedCount != null) result.verifiedCount = verifiedCount;
+    if (lastVisit != null) result.lastVisit = lastVisit;
+    return result;
+  }
+
+  VisitedCountry._();
+
+  factory VisitedCountry.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory VisitedCountry.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VisitedCountry', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'countryCode')
+    ..aOS(2, _omitFieldNames ? '' : 'continent')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'visitCount', $pb.PbFieldType.O3)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'verifiedCount', $pb.PbFieldType.O3)
+    ..aInt64(5, _omitFieldNames ? '' : 'lastVisit')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VisitedCountry clone() => VisitedCountry()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VisitedCountry copyWith(void Function(VisitedCountry) updates) => super.copyWith((message) => updates(message as VisitedCountry)) as VisitedCountry;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VisitedCountry create() => VisitedCountry._();
+  @$core.override
+  VisitedCountry createEmptyInstance() => create();
+  static $pb.PbList<VisitedCountry> createRepeated() => $pb.PbList<VisitedCountry>();
+  @$core.pragma('dart2js:noInline')
+  static VisitedCountry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VisitedCountry>(create);
+  static VisitedCountry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get countryCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set countryCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCountryCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCountryCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get continent => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set continent($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContinent() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContinent() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get visitCount => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set visitCount($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVisitCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVisitCount() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get verifiedCount => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set verifiedCount($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasVerifiedCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearVerifiedCount() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get lastVisit => $_getI64(4);
+  @$pb.TagNumber(5)
+  set lastVisit($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLastVisit() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLastVisit() => $_clearField(5);
+}
+
+class ContinentClaim extends $pb.GeneratedMessage {
+  factory ContinentClaim({
+    $core.String? continent,
+    $core.int? count,
+  }) {
+    final result = create();
+    if (continent != null) result.continent = continent;
+    if (count != null) result.count = count;
+    return result;
+  }
+
+  ContinentClaim._();
+
+  factory ContinentClaim.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ContinentClaim.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ContinentClaim', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'continent')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'count', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ContinentClaim clone() => ContinentClaim()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ContinentClaim copyWith(void Function(ContinentClaim) updates) => super.copyWith((message) => updates(message as ContinentClaim)) as ContinentClaim;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ContinentClaim create() => ContinentClaim._();
+  @$core.override
+  ContinentClaim createEmptyInstance() => create();
+  static $pb.PbList<ContinentClaim> createRepeated() => $pb.PbList<ContinentClaim>();
+  @$core.pragma('dart2js:noInline')
+  static ContinentClaim getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ContinentClaim>(create);
+  static ContinentClaim? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get continent => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set continent($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContinent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContinent() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get count => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set count($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCount() => $_clearField(2);
+}
+
+class ListVisitedCountriesRequest extends $pb.GeneratedMessage {
+  factory ListVisitedCountriesRequest() => create();
+
+  ListVisitedCountriesRequest._();
+
+  factory ListVisitedCountriesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListVisitedCountriesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListVisitedCountriesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListVisitedCountriesRequest clone() => ListVisitedCountriesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListVisitedCountriesRequest copyWith(void Function(ListVisitedCountriesRequest) updates) => super.copyWith((message) => updates(message as ListVisitedCountriesRequest)) as ListVisitedCountriesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListVisitedCountriesRequest create() => ListVisitedCountriesRequest._();
+  @$core.override
+  ListVisitedCountriesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListVisitedCountriesRequest> createRepeated() => $pb.PbList<ListVisitedCountriesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListVisitedCountriesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListVisitedCountriesRequest>(create);
+  static ListVisitedCountriesRequest? _defaultInstance;
+}
+
+class ListVisitedCountriesResponse extends $pb.GeneratedMessage {
+  factory ListVisitedCountriesResponse({
+    $core.Iterable<VisitedCountry>? countries,
+    $core.Iterable<ContinentClaim>? continents,
+  }) {
+    final result = create();
+    if (countries != null) result.countries.addAll(countries);
+    if (continents != null) result.continents.addAll(continents);
+    return result;
+  }
+
+  ListVisitedCountriesResponse._();
+
+  factory ListVisitedCountriesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListVisitedCountriesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListVisitedCountriesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..pc<VisitedCountry>(1, _omitFieldNames ? '' : 'countries', $pb.PbFieldType.PM, subBuilder: VisitedCountry.create)
+    ..pc<ContinentClaim>(2, _omitFieldNames ? '' : 'continents', $pb.PbFieldType.PM, subBuilder: ContinentClaim.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListVisitedCountriesResponse clone() => ListVisitedCountriesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListVisitedCountriesResponse copyWith(void Function(ListVisitedCountriesResponse) updates) => super.copyWith((message) => updates(message as ListVisitedCountriesResponse)) as ListVisitedCountriesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListVisitedCountriesResponse create() => ListVisitedCountriesResponse._();
+  @$core.override
+  ListVisitedCountriesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListVisitedCountriesResponse> createRepeated() => $pb.PbList<ListVisitedCountriesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListVisitedCountriesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListVisitedCountriesResponse>(create);
+  static ListVisitedCountriesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VisitedCountry> get countries => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<ContinentClaim> get continents => $_getList(1);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

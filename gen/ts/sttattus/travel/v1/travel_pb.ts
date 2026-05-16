@@ -1243,3 +1243,181 @@ export class DeleteTripResponse extends Message<DeleteTripResponse> {
   }
 }
 
+/**
+ * @generated from message sttattus.travel.v1.VisitedCountry
+ */
+export class VisitedCountry extends Message<VisitedCountry> {
+  /**
+   * @generated from field: string country_code = 1;
+   */
+  countryCode = "";
+
+  /**
+   * @generated from field: string continent = 2;
+   */
+  continent = "";
+
+  /**
+   * @generated from field: int32 visit_count = 3;
+   */
+  visitCount = 0;
+
+  /**
+   * @generated from field: int32 verified_count = 4;
+   */
+  verifiedCount = 0;
+
+  /**
+   * @generated from field: int64 last_visit = 5;
+   */
+  lastVisit = protoInt64.zero;
+
+  constructor(data?: PartialMessage<VisitedCountry>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.VisitedCountry";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "continent", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "visit_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "verified_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "last_visit", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VisitedCountry {
+    return new VisitedCountry().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VisitedCountry {
+    return new VisitedCountry().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VisitedCountry {
+    return new VisitedCountry().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VisitedCountry | PlainMessage<VisitedCountry> | undefined, b: VisitedCountry | PlainMessage<VisitedCountry> | undefined): boolean {
+    return proto3.util.equals(VisitedCountry, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ContinentClaim
+ */
+export class ContinentClaim extends Message<ContinentClaim> {
+  /**
+   * @generated from field: string continent = 1;
+   */
+  continent = "";
+
+  /**
+   * @generated from field: int32 count = 2;
+   */
+  count = 0;
+
+  constructor(data?: PartialMessage<ContinentClaim>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ContinentClaim";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "continent", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ContinentClaim {
+    return new ContinentClaim().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ContinentClaim {
+    return new ContinentClaim().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ContinentClaim {
+    return new ContinentClaim().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ContinentClaim | PlainMessage<ContinentClaim> | undefined, b: ContinentClaim | PlainMessage<ContinentClaim> | undefined): boolean {
+    return proto3.util.equals(ContinentClaim, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ListVisitedCountriesRequest
+ */
+export class ListVisitedCountriesRequest extends Message<ListVisitedCountriesRequest> {
+  constructor(data?: PartialMessage<ListVisitedCountriesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ListVisitedCountriesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListVisitedCountriesRequest {
+    return new ListVisitedCountriesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListVisitedCountriesRequest {
+    return new ListVisitedCountriesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListVisitedCountriesRequest {
+    return new ListVisitedCountriesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListVisitedCountriesRequest | PlainMessage<ListVisitedCountriesRequest> | undefined, b: ListVisitedCountriesRequest | PlainMessage<ListVisitedCountriesRequest> | undefined): boolean {
+    return proto3.util.equals(ListVisitedCountriesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ListVisitedCountriesResponse
+ */
+export class ListVisitedCountriesResponse extends Message<ListVisitedCountriesResponse> {
+  /**
+   * @generated from field: repeated sttattus.travel.v1.VisitedCountry countries = 1;
+   */
+  countries: VisitedCountry[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.travel.v1.ContinentClaim continents = 2;
+   */
+  continents: ContinentClaim[] = [];
+
+  constructor(data?: PartialMessage<ListVisitedCountriesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ListVisitedCountriesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "countries", kind: "message", T: VisitedCountry, repeated: true },
+    { no: 2, name: "continents", kind: "message", T: ContinentClaim, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListVisitedCountriesResponse {
+    return new ListVisitedCountriesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListVisitedCountriesResponse {
+    return new ListVisitedCountriesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListVisitedCountriesResponse {
+    return new ListVisitedCountriesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListVisitedCountriesResponse | PlainMessage<ListVisitedCountriesResponse> | undefined, b: ListVisitedCountriesResponse | PlainMessage<ListVisitedCountriesResponse> | undefined): boolean {
+    return proto3.util.equals(ListVisitedCountriesResponse, a, b);
+  }
+}
+

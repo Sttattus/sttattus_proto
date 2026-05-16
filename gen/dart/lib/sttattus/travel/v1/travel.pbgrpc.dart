@@ -73,6 +73,11 @@ class TravelServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteTrip, request, options: options);
   }
 
+  /// N10.5 — country chip grid + continent claim.
+  $grpc.ResponseFuture<$0.ListVisitedCountriesResponse> listVisitedCountries($0.ListVisitedCountriesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listVisitedCountries, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listMilestones = $grpc.ClientMethod<$0.ListMilestonesRequest, $0.ListMilestonesResponse>(
@@ -115,6 +120,10 @@ class TravelServiceClient extends $grpc.Client {
       '/sttattus.travel.v1.TravelService/DeleteTrip',
       ($0.DeleteTripRequest value) => value.writeToBuffer(),
       $0.DeleteTripResponse.fromBuffer);
+  static final _$listVisitedCountries = $grpc.ClientMethod<$0.ListVisitedCountriesRequest, $0.ListVisitedCountriesResponse>(
+      '/sttattus.travel.v1.TravelService/ListVisitedCountries',
+      ($0.ListVisitedCountriesRequest value) => value.writeToBuffer(),
+      $0.ListVisitedCountriesResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.travel.v1.TravelService')
@@ -192,6 +201,13 @@ abstract class TravelServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.DeleteTripRequest.fromBuffer(value),
         ($0.DeleteTripResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListVisitedCountriesRequest, $0.ListVisitedCountriesResponse>(
+        'ListVisitedCountries',
+        listVisitedCountries_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListVisitedCountriesRequest.fromBuffer(value),
+        ($0.ListVisitedCountriesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListMilestonesResponse> listMilestones_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMilestonesRequest> $request) async {
@@ -253,5 +269,11 @@ abstract class TravelServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.DeleteTripResponse> deleteTrip($grpc.ServiceCall call, $0.DeleteTripRequest request);
+
+  $async.Future<$0.ListVisitedCountriesResponse> listVisitedCountries_Pre($grpc.ServiceCall $call, $async.Future<$0.ListVisitedCountriesRequest> $request) async {
+    return listVisitedCountries($call, await $request);
+  }
+
+  $async.Future<$0.ListVisitedCountriesResponse> listVisitedCountries($grpc.ServiceCall call, $0.ListVisitedCountriesRequest request);
 
 }
