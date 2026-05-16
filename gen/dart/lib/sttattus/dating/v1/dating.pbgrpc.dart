@@ -98,6 +98,35 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteAkashicChapter, request, options: options);
   }
 
+  /// A9.6 — safety center: blocks + reports + panic contact.
+  $grpc.ResponseFuture<$0.ListMyBlocksResponse> listMyBlocks($0.ListMyBlocksRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyBlocks, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.BlockUserResponse> blockUser($0.BlockUserRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$blockUser, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UnblockUserResponse> unblockUser($0.UnblockUserRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$unblockUser, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyReportsResponse> listMyReports($0.ListMyReportsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyReports, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReportUserResponse> reportUser($0.ReportUserRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$reportUser, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetPanicContactResponse> getPanicContact($0.GetPanicContactRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getPanicContact, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertPanicContactResponse> upsertPanicContact($0.UpsertPanicContactRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$upsertPanicContact, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getProfile = $grpc.ClientMethod<$0.GetProfileRequest, $0.GetProfileResponse>(
@@ -164,6 +193,34 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/DeleteAkashicChapter',
       ($0.DeleteAkashicChapterRequest value) => value.writeToBuffer(),
       $0.DeleteAkashicChapterResponse.fromBuffer);
+  static final _$listMyBlocks = $grpc.ClientMethod<$0.ListMyBlocksRequest, $0.ListMyBlocksResponse>(
+      '/sttattus.dating.v1.DatingService/ListMyBlocks',
+      ($0.ListMyBlocksRequest value) => value.writeToBuffer(),
+      $0.ListMyBlocksResponse.fromBuffer);
+  static final _$blockUser = $grpc.ClientMethod<$0.BlockUserRequest, $0.BlockUserResponse>(
+      '/sttattus.dating.v1.DatingService/BlockUser',
+      ($0.BlockUserRequest value) => value.writeToBuffer(),
+      $0.BlockUserResponse.fromBuffer);
+  static final _$unblockUser = $grpc.ClientMethod<$0.UnblockUserRequest, $0.UnblockUserResponse>(
+      '/sttattus.dating.v1.DatingService/UnblockUser',
+      ($0.UnblockUserRequest value) => value.writeToBuffer(),
+      $0.UnblockUserResponse.fromBuffer);
+  static final _$listMyReports = $grpc.ClientMethod<$0.ListMyReportsRequest, $0.ListMyReportsResponse>(
+      '/sttattus.dating.v1.DatingService/ListMyReports',
+      ($0.ListMyReportsRequest value) => value.writeToBuffer(),
+      $0.ListMyReportsResponse.fromBuffer);
+  static final _$reportUser = $grpc.ClientMethod<$0.ReportUserRequest, $0.ReportUserResponse>(
+      '/sttattus.dating.v1.DatingService/ReportUser',
+      ($0.ReportUserRequest value) => value.writeToBuffer(),
+      $0.ReportUserResponse.fromBuffer);
+  static final _$getPanicContact = $grpc.ClientMethod<$0.GetPanicContactRequest, $0.GetPanicContactResponse>(
+      '/sttattus.dating.v1.DatingService/GetPanicContact',
+      ($0.GetPanicContactRequest value) => value.writeToBuffer(),
+      $0.GetPanicContactResponse.fromBuffer);
+  static final _$upsertPanicContact = $grpc.ClientMethod<$0.UpsertPanicContactRequest, $0.UpsertPanicContactResponse>(
+      '/sttattus.dating.v1.DatingService/UpsertPanicContact',
+      ($0.UpsertPanicContactRequest value) => value.writeToBuffer(),
+      $0.UpsertPanicContactResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dating.v1.DatingService')
@@ -283,6 +340,55 @@ abstract class DatingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.DeleteAkashicChapterRequest.fromBuffer(value),
         ($0.DeleteAkashicChapterResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyBlocksRequest, $0.ListMyBlocksResponse>(
+        'ListMyBlocks',
+        listMyBlocks_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyBlocksRequest.fromBuffer(value),
+        ($0.ListMyBlocksResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.BlockUserRequest, $0.BlockUserResponse>(
+        'BlockUser',
+        blockUser_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.BlockUserRequest.fromBuffer(value),
+        ($0.BlockUserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UnblockUserRequest, $0.UnblockUserResponse>(
+        'UnblockUser',
+        unblockUser_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UnblockUserRequest.fromBuffer(value),
+        ($0.UnblockUserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyReportsRequest, $0.ListMyReportsResponse>(
+        'ListMyReports',
+        listMyReports_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyReportsRequest.fromBuffer(value),
+        ($0.ListMyReportsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReportUserRequest, $0.ReportUserResponse>(
+        'ReportUser',
+        reportUser_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ReportUserRequest.fromBuffer(value),
+        ($0.ReportUserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetPanicContactRequest, $0.GetPanicContactResponse>(
+        'GetPanicContact',
+        getPanicContact_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetPanicContactRequest.fromBuffer(value),
+        ($0.GetPanicContactResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertPanicContactRequest, $0.UpsertPanicContactResponse>(
+        'UpsertPanicContact',
+        upsertPanicContact_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpsertPanicContactRequest.fromBuffer(value),
+        ($0.UpsertPanicContactResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProfileRequest> $request) async {
@@ -380,5 +486,47 @@ abstract class DatingServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.DeleteAkashicChapterResponse> deleteAkashicChapter($grpc.ServiceCall call, $0.DeleteAkashicChapterRequest request);
+
+  $async.Future<$0.ListMyBlocksResponse> listMyBlocks_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyBlocksRequest> $request) async {
+    return listMyBlocks($call, await $request);
+  }
+
+  $async.Future<$0.ListMyBlocksResponse> listMyBlocks($grpc.ServiceCall call, $0.ListMyBlocksRequest request);
+
+  $async.Future<$0.BlockUserResponse> blockUser_Pre($grpc.ServiceCall $call, $async.Future<$0.BlockUserRequest> $request) async {
+    return blockUser($call, await $request);
+  }
+
+  $async.Future<$0.BlockUserResponse> blockUser($grpc.ServiceCall call, $0.BlockUserRequest request);
+
+  $async.Future<$0.UnblockUserResponse> unblockUser_Pre($grpc.ServiceCall $call, $async.Future<$0.UnblockUserRequest> $request) async {
+    return unblockUser($call, await $request);
+  }
+
+  $async.Future<$0.UnblockUserResponse> unblockUser($grpc.ServiceCall call, $0.UnblockUserRequest request);
+
+  $async.Future<$0.ListMyReportsResponse> listMyReports_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyReportsRequest> $request) async {
+    return listMyReports($call, await $request);
+  }
+
+  $async.Future<$0.ListMyReportsResponse> listMyReports($grpc.ServiceCall call, $0.ListMyReportsRequest request);
+
+  $async.Future<$0.ReportUserResponse> reportUser_Pre($grpc.ServiceCall $call, $async.Future<$0.ReportUserRequest> $request) async {
+    return reportUser($call, await $request);
+  }
+
+  $async.Future<$0.ReportUserResponse> reportUser($grpc.ServiceCall call, $0.ReportUserRequest request);
+
+  $async.Future<$0.GetPanicContactResponse> getPanicContact_Pre($grpc.ServiceCall $call, $async.Future<$0.GetPanicContactRequest> $request) async {
+    return getPanicContact($call, await $request);
+  }
+
+  $async.Future<$0.GetPanicContactResponse> getPanicContact($grpc.ServiceCall call, $0.GetPanicContactRequest request);
+
+  $async.Future<$0.UpsertPanicContactResponse> upsertPanicContact_Pre($grpc.ServiceCall $call, $async.Future<$0.UpsertPanicContactRequest> $request) async {
+    return upsertPanicContact($call, await $request);
+  }
+
+  $async.Future<$0.UpsertPanicContactResponse> upsertPanicContact($grpc.ServiceCall call, $0.UpsertPanicContactRequest request);
 
 }

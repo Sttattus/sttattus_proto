@@ -35,6 +35,13 @@ const (
 	DatingService_ListVisibleAkashic_FullMethodName    = "/sttattus.dating.v1.DatingService/ListVisibleAkashic"
 	DatingService_UpsertAkashicChapter_FullMethodName  = "/sttattus.dating.v1.DatingService/UpsertAkashicChapter"
 	DatingService_DeleteAkashicChapter_FullMethodName  = "/sttattus.dating.v1.DatingService/DeleteAkashicChapter"
+	DatingService_ListMyBlocks_FullMethodName          = "/sttattus.dating.v1.DatingService/ListMyBlocks"
+	DatingService_BlockUser_FullMethodName             = "/sttattus.dating.v1.DatingService/BlockUser"
+	DatingService_UnblockUser_FullMethodName           = "/sttattus.dating.v1.DatingService/UnblockUser"
+	DatingService_ListMyReports_FullMethodName         = "/sttattus.dating.v1.DatingService/ListMyReports"
+	DatingService_ReportUser_FullMethodName            = "/sttattus.dating.v1.DatingService/ReportUser"
+	DatingService_GetPanicContact_FullMethodName       = "/sttattus.dating.v1.DatingService/GetPanicContact"
+	DatingService_UpsertPanicContact_FullMethodName    = "/sttattus.dating.v1.DatingService/UpsertPanicContact"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -59,6 +66,14 @@ type DatingServiceClient interface {
 	ListVisibleAkashic(ctx context.Context, in *ListVisibleAkashicRequest, opts ...grpc.CallOption) (*ListVisibleAkashicResponse, error)
 	UpsertAkashicChapter(ctx context.Context, in *UpsertAkashicChapterRequest, opts ...grpc.CallOption) (*UpsertAkashicChapterResponse, error)
 	DeleteAkashicChapter(ctx context.Context, in *DeleteAkashicChapterRequest, opts ...grpc.CallOption) (*DeleteAkashicChapterResponse, error)
+	// A9.6 — safety center: blocks + reports + panic contact.
+	ListMyBlocks(ctx context.Context, in *ListMyBlocksRequest, opts ...grpc.CallOption) (*ListMyBlocksResponse, error)
+	BlockUser(ctx context.Context, in *BlockUserRequest, opts ...grpc.CallOption) (*BlockUserResponse, error)
+	UnblockUser(ctx context.Context, in *UnblockUserRequest, opts ...grpc.CallOption) (*UnblockUserResponse, error)
+	ListMyReports(ctx context.Context, in *ListMyReportsRequest, opts ...grpc.CallOption) (*ListMyReportsResponse, error)
+	ReportUser(ctx context.Context, in *ReportUserRequest, opts ...grpc.CallOption) (*ReportUserResponse, error)
+	GetPanicContact(ctx context.Context, in *GetPanicContactRequest, opts ...grpc.CallOption) (*GetPanicContactResponse, error)
+	UpsertPanicContact(ctx context.Context, in *UpsertPanicContactRequest, opts ...grpc.CallOption) (*UpsertPanicContactResponse, error)
 }
 
 type datingServiceClient struct {
@@ -247,6 +262,76 @@ func (c *datingServiceClient) DeleteAkashicChapter(ctx context.Context, in *Dele
 	return out, nil
 }
 
+func (c *datingServiceClient) ListMyBlocks(ctx context.Context, in *ListMyBlocksRequest, opts ...grpc.CallOption) (*ListMyBlocksResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyBlocksResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListMyBlocks_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) BlockUser(ctx context.Context, in *BlockUserRequest, opts ...grpc.CallOption) (*BlockUserResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(BlockUserResponse)
+	err := c.cc.Invoke(ctx, DatingService_BlockUser_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) UnblockUser(ctx context.Context, in *UnblockUserRequest, opts ...grpc.CallOption) (*UnblockUserResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UnblockUserResponse)
+	err := c.cc.Invoke(ctx, DatingService_UnblockUser_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ListMyReports(ctx context.Context, in *ListMyReportsRequest, opts ...grpc.CallOption) (*ListMyReportsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyReportsResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListMyReports_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ReportUser(ctx context.Context, in *ReportUserRequest, opts ...grpc.CallOption) (*ReportUserResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReportUserResponse)
+	err := c.cc.Invoke(ctx, DatingService_ReportUser_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) GetPanicContact(ctx context.Context, in *GetPanicContactRequest, opts ...grpc.CallOption) (*GetPanicContactResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPanicContactResponse)
+	err := c.cc.Invoke(ctx, DatingService_GetPanicContact_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) UpsertPanicContact(ctx context.Context, in *UpsertPanicContactRequest, opts ...grpc.CallOption) (*UpsertPanicContactResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertPanicContactResponse)
+	err := c.cc.Invoke(ctx, DatingService_UpsertPanicContact_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatingServiceServer is the server API for DatingService service.
 // All implementations must embed UnimplementedDatingServiceServer
 // for forward compatibility.
@@ -269,6 +354,14 @@ type DatingServiceServer interface {
 	ListVisibleAkashic(context.Context, *ListVisibleAkashicRequest) (*ListVisibleAkashicResponse, error)
 	UpsertAkashicChapter(context.Context, *UpsertAkashicChapterRequest) (*UpsertAkashicChapterResponse, error)
 	DeleteAkashicChapter(context.Context, *DeleteAkashicChapterRequest) (*DeleteAkashicChapterResponse, error)
+	// A9.6 — safety center: blocks + reports + panic contact.
+	ListMyBlocks(context.Context, *ListMyBlocksRequest) (*ListMyBlocksResponse, error)
+	BlockUser(context.Context, *BlockUserRequest) (*BlockUserResponse, error)
+	UnblockUser(context.Context, *UnblockUserRequest) (*UnblockUserResponse, error)
+	ListMyReports(context.Context, *ListMyReportsRequest) (*ListMyReportsResponse, error)
+	ReportUser(context.Context, *ReportUserRequest) (*ReportUserResponse, error)
+	GetPanicContact(context.Context, *GetPanicContactRequest) (*GetPanicContactResponse, error)
+	UpsertPanicContact(context.Context, *UpsertPanicContactRequest) (*UpsertPanicContactResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -326,6 +419,27 @@ func (UnimplementedDatingServiceServer) UpsertAkashicChapter(context.Context, *U
 }
 func (UnimplementedDatingServiceServer) DeleteAkashicChapter(context.Context, *DeleteAkashicChapterRequest) (*DeleteAkashicChapterResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method DeleteAkashicChapter not implemented")
+}
+func (UnimplementedDatingServiceServer) ListMyBlocks(context.Context, *ListMyBlocksRequest) (*ListMyBlocksResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyBlocks not implemented")
+}
+func (UnimplementedDatingServiceServer) BlockUser(context.Context, *BlockUserRequest) (*BlockUserResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method BlockUser not implemented")
+}
+func (UnimplementedDatingServiceServer) UnblockUser(context.Context, *UnblockUserRequest) (*UnblockUserResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UnblockUser not implemented")
+}
+func (UnimplementedDatingServiceServer) ListMyReports(context.Context, *ListMyReportsRequest) (*ListMyReportsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyReports not implemented")
+}
+func (UnimplementedDatingServiceServer) ReportUser(context.Context, *ReportUserRequest) (*ReportUserResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReportUser not implemented")
+}
+func (UnimplementedDatingServiceServer) GetPanicContact(context.Context, *GetPanicContactRequest) (*GetPanicContactResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPanicContact not implemented")
+}
+func (UnimplementedDatingServiceServer) UpsertPanicContact(context.Context, *UpsertPanicContactRequest) (*UpsertPanicContactResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertPanicContact not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -622,6 +736,132 @@ func _DatingService_DeleteAkashicChapter_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_ListMyBlocks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyBlocksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListMyBlocks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListMyBlocks_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListMyBlocks(ctx, req.(*ListMyBlocksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_BlockUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BlockUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).BlockUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_BlockUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).BlockUser(ctx, req.(*BlockUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_UnblockUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnblockUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).UnblockUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_UnblockUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).UnblockUser(ctx, req.(*UnblockUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ListMyReports_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyReportsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListMyReports(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListMyReports_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListMyReports(ctx, req.(*ListMyReportsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ReportUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ReportUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ReportUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ReportUser(ctx, req.(*ReportUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_GetPanicContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPanicContactRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).GetPanicContact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_GetPanicContact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).GetPanicContact(ctx, req.(*GetPanicContactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_UpsertPanicContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertPanicContactRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).UpsertPanicContact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_UpsertPanicContact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).UpsertPanicContact(ctx, req.(*UpsertPanicContactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatingService_ServiceDesc is the grpc.ServiceDesc for DatingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -684,6 +924,34 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteAkashicChapter",
 			Handler:    _DatingService_DeleteAkashicChapter_Handler,
+		},
+		{
+			MethodName: "ListMyBlocks",
+			Handler:    _DatingService_ListMyBlocks_Handler,
+		},
+		{
+			MethodName: "BlockUser",
+			Handler:    _DatingService_BlockUser_Handler,
+		},
+		{
+			MethodName: "UnblockUser",
+			Handler:    _DatingService_UnblockUser_Handler,
+		},
+		{
+			MethodName: "ListMyReports",
+			Handler:    _DatingService_ListMyReports_Handler,
+		},
+		{
+			MethodName: "ReportUser",
+			Handler:    _DatingService_ReportUser_Handler,
+		},
+		{
+			MethodName: "GetPanicContact",
+			Handler:    _DatingService_GetPanicContact_Handler,
+		},
+		{
+			MethodName: "UpsertPanicContact",
+			Handler:    _DatingService_UpsertPanicContact_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

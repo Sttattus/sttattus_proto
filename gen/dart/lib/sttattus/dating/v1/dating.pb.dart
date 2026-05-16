@@ -2459,6 +2459,913 @@ class DeleteAkashicChapterResponse extends $pb.GeneratedMessage {
   static DeleteAkashicChapterResponse? _defaultInstance;
 }
 
+class UserBlock extends $pb.GeneratedMessage {
+  factory UserBlock({
+    $core.String? id,
+    $core.String? blockedId,
+    $core.String? reason,
+    $fixnum.Int64? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (blockedId != null) result.blockedId = blockedId;
+    if (reason != null) result.reason = reason;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  UserBlock._();
+
+  factory UserBlock.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UserBlock.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserBlock', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'blockedId')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aInt64(4, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UserBlock clone() => UserBlock()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UserBlock copyWith(void Function(UserBlock) updates) => super.copyWith((message) => updates(message as UserBlock)) as UserBlock;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UserBlock create() => UserBlock._();
+  @$core.override
+  UserBlock createEmptyInstance() => create();
+  static $pb.PbList<UserBlock> createRepeated() => $pb.PbList<UserBlock>();
+  @$core.pragma('dart2js:noInline')
+  static UserBlock getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserBlock>(create);
+  static UserBlock? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get blockedId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set blockedId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBlockedId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBlockedId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get createdAt => $_getI64(3);
+  @$pb.TagNumber(4)
+  set createdAt($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCreatedAt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCreatedAt() => $_clearField(4);
+}
+
+class ListMyBlocksRequest extends $pb.GeneratedMessage {
+  factory ListMyBlocksRequest() => create();
+
+  ListMyBlocksRequest._();
+
+  factory ListMyBlocksRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyBlocksRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyBlocksRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyBlocksRequest clone() => ListMyBlocksRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyBlocksRequest copyWith(void Function(ListMyBlocksRequest) updates) => super.copyWith((message) => updates(message as ListMyBlocksRequest)) as ListMyBlocksRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyBlocksRequest create() => ListMyBlocksRequest._();
+  @$core.override
+  ListMyBlocksRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyBlocksRequest> createRepeated() => $pb.PbList<ListMyBlocksRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyBlocksRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyBlocksRequest>(create);
+  static ListMyBlocksRequest? _defaultInstance;
+}
+
+class ListMyBlocksResponse extends $pb.GeneratedMessage {
+  factory ListMyBlocksResponse({
+    $core.Iterable<UserBlock>? blocks,
+  }) {
+    final result = create();
+    if (blocks != null) result.blocks.addAll(blocks);
+    return result;
+  }
+
+  ListMyBlocksResponse._();
+
+  factory ListMyBlocksResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyBlocksResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyBlocksResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..pc<UserBlock>(1, _omitFieldNames ? '' : 'blocks', $pb.PbFieldType.PM, subBuilder: UserBlock.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyBlocksResponse clone() => ListMyBlocksResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyBlocksResponse copyWith(void Function(ListMyBlocksResponse) updates) => super.copyWith((message) => updates(message as ListMyBlocksResponse)) as ListMyBlocksResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyBlocksResponse create() => ListMyBlocksResponse._();
+  @$core.override
+  ListMyBlocksResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyBlocksResponse> createRepeated() => $pb.PbList<ListMyBlocksResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyBlocksResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyBlocksResponse>(create);
+  static ListMyBlocksResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<UserBlock> get blocks => $_getList(0);
+}
+
+class BlockUserRequest extends $pb.GeneratedMessage {
+  factory BlockUserRequest({
+    $core.String? blockedId,
+    $core.String? reason,
+  }) {
+    final result = create();
+    if (blockedId != null) result.blockedId = blockedId;
+    if (reason != null) result.reason = reason;
+    return result;
+  }
+
+  BlockUserRequest._();
+
+  factory BlockUserRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory BlockUserRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BlockUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'blockedId')
+    ..aOS(2, _omitFieldNames ? '' : 'reason')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BlockUserRequest clone() => BlockUserRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BlockUserRequest copyWith(void Function(BlockUserRequest) updates) => super.copyWith((message) => updates(message as BlockUserRequest)) as BlockUserRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BlockUserRequest create() => BlockUserRequest._();
+  @$core.override
+  BlockUserRequest createEmptyInstance() => create();
+  static $pb.PbList<BlockUserRequest> createRepeated() => $pb.PbList<BlockUserRequest>();
+  @$core.pragma('dart2js:noInline')
+  static BlockUserRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BlockUserRequest>(create);
+  static BlockUserRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get blockedId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set blockedId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBlockedId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBlockedId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get reason => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set reason($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReason() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReason() => $_clearField(2);
+}
+
+class BlockUserResponse extends $pb.GeneratedMessage {
+  factory BlockUserResponse({
+    UserBlock? block,
+  }) {
+    final result = create();
+    if (block != null) result.block = block;
+    return result;
+  }
+
+  BlockUserResponse._();
+
+  factory BlockUserResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory BlockUserResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BlockUserResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<UserBlock>(1, _omitFieldNames ? '' : 'block', subBuilder: UserBlock.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BlockUserResponse clone() => BlockUserResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BlockUserResponse copyWith(void Function(BlockUserResponse) updates) => super.copyWith((message) => updates(message as BlockUserResponse)) as BlockUserResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BlockUserResponse create() => BlockUserResponse._();
+  @$core.override
+  BlockUserResponse createEmptyInstance() => create();
+  static $pb.PbList<BlockUserResponse> createRepeated() => $pb.PbList<BlockUserResponse>();
+  @$core.pragma('dart2js:noInline')
+  static BlockUserResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BlockUserResponse>(create);
+  static BlockUserResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  UserBlock get block => $_getN(0);
+  @$pb.TagNumber(1)
+  set block(UserBlock value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBlock() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBlock() => $_clearField(1);
+  @$pb.TagNumber(1)
+  UserBlock ensureBlock() => $_ensure(0);
+}
+
+class UnblockUserRequest extends $pb.GeneratedMessage {
+  factory UnblockUserRequest({
+    $core.String? blockedId,
+  }) {
+    final result = create();
+    if (blockedId != null) result.blockedId = blockedId;
+    return result;
+  }
+
+  UnblockUserRequest._();
+
+  factory UnblockUserRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UnblockUserRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnblockUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'blockedId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnblockUserRequest clone() => UnblockUserRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnblockUserRequest copyWith(void Function(UnblockUserRequest) updates) => super.copyWith((message) => updates(message as UnblockUserRequest)) as UnblockUserRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnblockUserRequest create() => UnblockUserRequest._();
+  @$core.override
+  UnblockUserRequest createEmptyInstance() => create();
+  static $pb.PbList<UnblockUserRequest> createRepeated() => $pb.PbList<UnblockUserRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UnblockUserRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnblockUserRequest>(create);
+  static UnblockUserRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get blockedId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set blockedId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBlockedId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBlockedId() => $_clearField(1);
+}
+
+class UnblockUserResponse extends $pb.GeneratedMessage {
+  factory UnblockUserResponse() => create();
+
+  UnblockUserResponse._();
+
+  factory UnblockUserResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UnblockUserResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnblockUserResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnblockUserResponse clone() => UnblockUserResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnblockUserResponse copyWith(void Function(UnblockUserResponse) updates) => super.copyWith((message) => updates(message as UnblockUserResponse)) as UnblockUserResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnblockUserResponse create() => UnblockUserResponse._();
+  @$core.override
+  UnblockUserResponse createEmptyInstance() => create();
+  static $pb.PbList<UnblockUserResponse> createRepeated() => $pb.PbList<UnblockUserResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UnblockUserResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnblockUserResponse>(create);
+  static UnblockUserResponse? _defaultInstance;
+}
+
+class UserReport extends $pb.GeneratedMessage {
+  factory UserReport({
+    $core.String? id,
+    $core.String? reportedId,
+    $core.String? category,
+    $core.String? description,
+    $core.String? status,
+    $fixnum.Int64? createdAt,
+    $fixnum.Int64? decidedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (reportedId != null) result.reportedId = reportedId;
+    if (category != null) result.category = category;
+    if (description != null) result.description = description;
+    if (status != null) result.status = status;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (decidedAt != null) result.decidedAt = decidedAt;
+    return result;
+  }
+
+  UserReport._();
+
+  factory UserReport.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UserReport.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserReport', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'reportedId')
+    ..aOS(3, _omitFieldNames ? '' : 'category')
+    ..aOS(4, _omitFieldNames ? '' : 'description')
+    ..aOS(5, _omitFieldNames ? '' : 'status')
+    ..aInt64(6, _omitFieldNames ? '' : 'createdAt')
+    ..aInt64(7, _omitFieldNames ? '' : 'decidedAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UserReport clone() => UserReport()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UserReport copyWith(void Function(UserReport) updates) => super.copyWith((message) => updates(message as UserReport)) as UserReport;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UserReport create() => UserReport._();
+  @$core.override
+  UserReport createEmptyInstance() => create();
+  static $pb.PbList<UserReport> createRepeated() => $pb.PbList<UserReport>();
+  @$core.pragma('dart2js:noInline')
+  static UserReport getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserReport>(create);
+  static UserReport? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get reportedId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set reportedId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReportedId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReportedId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get category => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set category($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCategory() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCategory() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get description => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set description($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDescription() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDescription() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get status => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set status($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get createdAt => $_getI64(5);
+  @$pb.TagNumber(6)
+  set createdAt($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedAt() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get decidedAt => $_getI64(6);
+  @$pb.TagNumber(7)
+  set decidedAt($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDecidedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDecidedAt() => $_clearField(7);
+}
+
+class ListMyReportsRequest extends $pb.GeneratedMessage {
+  factory ListMyReportsRequest() => create();
+
+  ListMyReportsRequest._();
+
+  factory ListMyReportsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyReportsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyReportsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyReportsRequest clone() => ListMyReportsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyReportsRequest copyWith(void Function(ListMyReportsRequest) updates) => super.copyWith((message) => updates(message as ListMyReportsRequest)) as ListMyReportsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyReportsRequest create() => ListMyReportsRequest._();
+  @$core.override
+  ListMyReportsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyReportsRequest> createRepeated() => $pb.PbList<ListMyReportsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyReportsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyReportsRequest>(create);
+  static ListMyReportsRequest? _defaultInstance;
+}
+
+class ListMyReportsResponse extends $pb.GeneratedMessage {
+  factory ListMyReportsResponse({
+    $core.Iterable<UserReport>? reports,
+  }) {
+    final result = create();
+    if (reports != null) result.reports.addAll(reports);
+    return result;
+  }
+
+  ListMyReportsResponse._();
+
+  factory ListMyReportsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyReportsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyReportsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..pc<UserReport>(1, _omitFieldNames ? '' : 'reports', $pb.PbFieldType.PM, subBuilder: UserReport.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyReportsResponse clone() => ListMyReportsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyReportsResponse copyWith(void Function(ListMyReportsResponse) updates) => super.copyWith((message) => updates(message as ListMyReportsResponse)) as ListMyReportsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyReportsResponse create() => ListMyReportsResponse._();
+  @$core.override
+  ListMyReportsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyReportsResponse> createRepeated() => $pb.PbList<ListMyReportsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyReportsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyReportsResponse>(create);
+  static ListMyReportsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<UserReport> get reports => $_getList(0);
+}
+
+class ReportUserRequest extends $pb.GeneratedMessage {
+  factory ReportUserRequest({
+    $core.String? reportedId,
+    $core.String? category,
+    $core.String? description,
+  }) {
+    final result = create();
+    if (reportedId != null) result.reportedId = reportedId;
+    if (category != null) result.category = category;
+    if (description != null) result.description = description;
+    return result;
+  }
+
+  ReportUserRequest._();
+
+  factory ReportUserRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ReportUserRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'reportedId')
+    ..aOS(2, _omitFieldNames ? '' : 'category')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportUserRequest clone() => ReportUserRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportUserRequest copyWith(void Function(ReportUserRequest) updates) => super.copyWith((message) => updates(message as ReportUserRequest)) as ReportUserRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportUserRequest create() => ReportUserRequest._();
+  @$core.override
+  ReportUserRequest createEmptyInstance() => create();
+  static $pb.PbList<ReportUserRequest> createRepeated() => $pb.PbList<ReportUserRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ReportUserRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReportUserRequest>(create);
+  static ReportUserRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get reportedId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set reportedId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReportedId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReportedId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get category => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set category($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCategory() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCategory() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => $_clearField(3);
+}
+
+class ReportUserResponse extends $pb.GeneratedMessage {
+  factory ReportUserResponse({
+    UserReport? report,
+  }) {
+    final result = create();
+    if (report != null) result.report = report;
+    return result;
+  }
+
+  ReportUserResponse._();
+
+  factory ReportUserResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ReportUserResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportUserResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<UserReport>(1, _omitFieldNames ? '' : 'report', subBuilder: UserReport.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportUserResponse clone() => ReportUserResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportUserResponse copyWith(void Function(ReportUserResponse) updates) => super.copyWith((message) => updates(message as ReportUserResponse)) as ReportUserResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportUserResponse create() => ReportUserResponse._();
+  @$core.override
+  ReportUserResponse createEmptyInstance() => create();
+  static $pb.PbList<ReportUserResponse> createRepeated() => $pb.PbList<ReportUserResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ReportUserResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReportUserResponse>(create);
+  static ReportUserResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  UserReport get report => $_getN(0);
+  @$pb.TagNumber(1)
+  set report(UserReport value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReport() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReport() => $_clearField(1);
+  @$pb.TagNumber(1)
+  UserReport ensureReport() => $_ensure(0);
+}
+
+class PanicContact extends $pb.GeneratedMessage {
+  factory PanicContact({
+    $core.String? contactPhoneE164,
+    $core.String? contactName,
+    $core.String? contextNote,
+  }) {
+    final result = create();
+    if (contactPhoneE164 != null) result.contactPhoneE164 = contactPhoneE164;
+    if (contactName != null) result.contactName = contactName;
+    if (contextNote != null) result.contextNote = contextNote;
+    return result;
+  }
+
+  PanicContact._();
+
+  factory PanicContact.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PanicContact.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PanicContact', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contactPhoneE164')
+    ..aOS(2, _omitFieldNames ? '' : 'contactName')
+    ..aOS(3, _omitFieldNames ? '' : 'contextNote')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PanicContact clone() => PanicContact()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PanicContact copyWith(void Function(PanicContact) updates) => super.copyWith((message) => updates(message as PanicContact)) as PanicContact;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PanicContact create() => PanicContact._();
+  @$core.override
+  PanicContact createEmptyInstance() => create();
+  static $pb.PbList<PanicContact> createRepeated() => $pb.PbList<PanicContact>();
+  @$core.pragma('dart2js:noInline')
+  static PanicContact getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PanicContact>(create);
+  static PanicContact? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contactPhoneE164 => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contactPhoneE164($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContactPhoneE164() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContactPhoneE164() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contactName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contactName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContactName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContactName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get contextNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set contextNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContextNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContextNote() => $_clearField(3);
+}
+
+class GetPanicContactRequest extends $pb.GeneratedMessage {
+  factory GetPanicContactRequest() => create();
+
+  GetPanicContactRequest._();
+
+  factory GetPanicContactRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetPanicContactRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPanicContactRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPanicContactRequest clone() => GetPanicContactRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPanicContactRequest copyWith(void Function(GetPanicContactRequest) updates) => super.copyWith((message) => updates(message as GetPanicContactRequest)) as GetPanicContactRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPanicContactRequest create() => GetPanicContactRequest._();
+  @$core.override
+  GetPanicContactRequest createEmptyInstance() => create();
+  static $pb.PbList<GetPanicContactRequest> createRepeated() => $pb.PbList<GetPanicContactRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetPanicContactRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPanicContactRequest>(create);
+  static GetPanicContactRequest? _defaultInstance;
+}
+
+class GetPanicContactResponse extends $pb.GeneratedMessage {
+  factory GetPanicContactResponse({
+    PanicContact? contact,
+  }) {
+    final result = create();
+    if (contact != null) result.contact = contact;
+    return result;
+  }
+
+  GetPanicContactResponse._();
+
+  factory GetPanicContactResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetPanicContactResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPanicContactResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<PanicContact>(1, _omitFieldNames ? '' : 'contact', subBuilder: PanicContact.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPanicContactResponse clone() => GetPanicContactResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPanicContactResponse copyWith(void Function(GetPanicContactResponse) updates) => super.copyWith((message) => updates(message as GetPanicContactResponse)) as GetPanicContactResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPanicContactResponse create() => GetPanicContactResponse._();
+  @$core.override
+  GetPanicContactResponse createEmptyInstance() => create();
+  static $pb.PbList<GetPanicContactResponse> createRepeated() => $pb.PbList<GetPanicContactResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetPanicContactResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPanicContactResponse>(create);
+  static GetPanicContactResponse? _defaultInstance;
+
+  /// Empty (phone == "") = no contact configured.
+  @$pb.TagNumber(1)
+  PanicContact get contact => $_getN(0);
+  @$pb.TagNumber(1)
+  set contact(PanicContact value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContact() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContact() => $_clearField(1);
+  @$pb.TagNumber(1)
+  PanicContact ensureContact() => $_ensure(0);
+}
+
+class UpsertPanicContactRequest extends $pb.GeneratedMessage {
+  factory UpsertPanicContactRequest({
+    $core.String? contactPhoneE164,
+    $core.String? contactName,
+    $core.String? contextNote,
+  }) {
+    final result = create();
+    if (contactPhoneE164 != null) result.contactPhoneE164 = contactPhoneE164;
+    if (contactName != null) result.contactName = contactName;
+    if (contextNote != null) result.contextNote = contextNote;
+    return result;
+  }
+
+  UpsertPanicContactRequest._();
+
+  factory UpsertPanicContactRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpsertPanicContactRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpsertPanicContactRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contactPhoneE164')
+    ..aOS(2, _omitFieldNames ? '' : 'contactName')
+    ..aOS(3, _omitFieldNames ? '' : 'contextNote')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertPanicContactRequest clone() => UpsertPanicContactRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertPanicContactRequest copyWith(void Function(UpsertPanicContactRequest) updates) => super.copyWith((message) => updates(message as UpsertPanicContactRequest)) as UpsertPanicContactRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertPanicContactRequest create() => UpsertPanicContactRequest._();
+  @$core.override
+  UpsertPanicContactRequest createEmptyInstance() => create();
+  static $pb.PbList<UpsertPanicContactRequest> createRepeated() => $pb.PbList<UpsertPanicContactRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpsertPanicContactRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpsertPanicContactRequest>(create);
+  static UpsertPanicContactRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contactPhoneE164 => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contactPhoneE164($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContactPhoneE164() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContactPhoneE164() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contactName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contactName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContactName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContactName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get contextNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set contextNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContextNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContextNote() => $_clearField(3);
+}
+
+class UpsertPanicContactResponse extends $pb.GeneratedMessage {
+  factory UpsertPanicContactResponse({
+    PanicContact? contact,
+  }) {
+    final result = create();
+    if (contact != null) result.contact = contact;
+    return result;
+  }
+
+  UpsertPanicContactResponse._();
+
+  factory UpsertPanicContactResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpsertPanicContactResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpsertPanicContactResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<PanicContact>(1, _omitFieldNames ? '' : 'contact', subBuilder: PanicContact.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertPanicContactResponse clone() => UpsertPanicContactResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertPanicContactResponse copyWith(void Function(UpsertPanicContactResponse) updates) => super.copyWith((message) => updates(message as UpsertPanicContactResponse)) as UpsertPanicContactResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertPanicContactResponse create() => UpsertPanicContactResponse._();
+  @$core.override
+  UpsertPanicContactResponse createEmptyInstance() => create();
+  static $pb.PbList<UpsertPanicContactResponse> createRepeated() => $pb.PbList<UpsertPanicContactResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpsertPanicContactResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpsertPanicContactResponse>(create);
+  static UpsertPanicContactResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  PanicContact get contact => $_getN(0);
+  @$pb.TagNumber(1)
+  set contact(PanicContact value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContact() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContact() => $_clearField(1);
+  @$pb.TagNumber(1)
+  PanicContact ensureContact() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

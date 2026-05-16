@@ -623,3 +623,229 @@ const DeleteAkashicChapterResponse$json = {
 final $typed_data.Uint8List deleteAkashicChapterResponseDescriptor = $convert.base64Decode(
     'ChxEZWxldGVBa2FzaGljQ2hhcHRlclJlc3BvbnNl');
 
+@$core.Deprecated('Use userBlockDescriptor instead')
+const UserBlock$json = {
+  '1': 'UserBlock',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'blocked_id', '3': 2, '4': 1, '5': 9, '10': 'blockedId'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'created_at', '3': 4, '4': 1, '5': 3, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `UserBlock`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userBlockDescriptor = $convert.base64Decode(
+    'CglVc2VyQmxvY2sSDgoCaWQYASABKAlSAmlkEh0KCmJsb2NrZWRfaWQYAiABKAlSCWJsb2NrZW'
+    'RJZBIWCgZyZWFzb24YAyABKAlSBnJlYXNvbhIdCgpjcmVhdGVkX2F0GAQgASgDUgljcmVhdGVk'
+    'QXQ=');
+
+@$core.Deprecated('Use listMyBlocksRequestDescriptor instead')
+const ListMyBlocksRequest$json = {
+  '1': 'ListMyBlocksRequest',
+};
+
+/// Descriptor for `ListMyBlocksRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyBlocksRequestDescriptor = $convert.base64Decode(
+    'ChNMaXN0TXlCbG9ja3NSZXF1ZXN0');
+
+@$core.Deprecated('Use listMyBlocksResponseDescriptor instead')
+const ListMyBlocksResponse$json = {
+  '1': 'ListMyBlocksResponse',
+  '2': [
+    {'1': 'blocks', '3': 1, '4': 3, '5': 11, '6': '.sttattus.dating.v1.UserBlock', '10': 'blocks'},
+  ],
+};
+
+/// Descriptor for `ListMyBlocksResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyBlocksResponseDescriptor = $convert.base64Decode(
+    'ChRMaXN0TXlCbG9ja3NSZXNwb25zZRI1CgZibG9ja3MYASADKAsyHS5zdHRhdHR1cy5kYXRpbm'
+    'cudjEuVXNlckJsb2NrUgZibG9ja3M=');
+
+@$core.Deprecated('Use blockUserRequestDescriptor instead')
+const BlockUserRequest$json = {
+  '1': 'BlockUserRequest',
+  '2': [
+    {'1': 'blocked_id', '3': 1, '4': 1, '5': 9, '10': 'blockedId'},
+    {'1': 'reason', '3': 2, '4': 1, '5': 9, '10': 'reason'},
+  ],
+};
+
+/// Descriptor for `BlockUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List blockUserRequestDescriptor = $convert.base64Decode(
+    'ChBCbG9ja1VzZXJSZXF1ZXN0Eh0KCmJsb2NrZWRfaWQYASABKAlSCWJsb2NrZWRJZBIWCgZyZW'
+    'Fzb24YAiABKAlSBnJlYXNvbg==');
+
+@$core.Deprecated('Use blockUserResponseDescriptor instead')
+const BlockUserResponse$json = {
+  '1': 'BlockUserResponse',
+  '2': [
+    {'1': 'block', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.UserBlock', '10': 'block'},
+  ],
+};
+
+/// Descriptor for `BlockUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List blockUserResponseDescriptor = $convert.base64Decode(
+    'ChFCbG9ja1VzZXJSZXNwb25zZRIzCgVibG9jaxgBIAEoCzIdLnN0dGF0dHVzLmRhdGluZy52MS'
+    '5Vc2VyQmxvY2tSBWJsb2Nr');
+
+@$core.Deprecated('Use unblockUserRequestDescriptor instead')
+const UnblockUserRequest$json = {
+  '1': 'UnblockUserRequest',
+  '2': [
+    {'1': 'blocked_id', '3': 1, '4': 1, '5': 9, '10': 'blockedId'},
+  ],
+};
+
+/// Descriptor for `UnblockUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unblockUserRequestDescriptor = $convert.base64Decode(
+    'ChJVbmJsb2NrVXNlclJlcXVlc3QSHQoKYmxvY2tlZF9pZBgBIAEoCVIJYmxvY2tlZElk');
+
+@$core.Deprecated('Use unblockUserResponseDescriptor instead')
+const UnblockUserResponse$json = {
+  '1': 'UnblockUserResponse',
+};
+
+/// Descriptor for `UnblockUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unblockUserResponseDescriptor = $convert.base64Decode(
+    'ChNVbmJsb2NrVXNlclJlc3BvbnNl');
+
+@$core.Deprecated('Use userReportDescriptor instead')
+const UserReport$json = {
+  '1': 'UserReport',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'reported_id', '3': 2, '4': 1, '5': 9, '10': 'reportedId'},
+    {'1': 'category', '3': 3, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'created_at', '3': 6, '4': 1, '5': 3, '10': 'createdAt'},
+    {'1': 'decided_at', '3': 7, '4': 1, '5': 3, '10': 'decidedAt'},
+  ],
+};
+
+/// Descriptor for `UserReport`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userReportDescriptor = $convert.base64Decode(
+    'CgpVc2VyUmVwb3J0Eg4KAmlkGAEgASgJUgJpZBIfCgtyZXBvcnRlZF9pZBgCIAEoCVIKcmVwb3'
+    'J0ZWRJZBIaCghjYXRlZ29yeRgDIAEoCVIIY2F0ZWdvcnkSIAoLZGVzY3JpcHRpb24YBCABKAlS'
+    'C2Rlc2NyaXB0aW9uEhYKBnN0YXR1cxgFIAEoCVIGc3RhdHVzEh0KCmNyZWF0ZWRfYXQYBiABKA'
+    'NSCWNyZWF0ZWRBdBIdCgpkZWNpZGVkX2F0GAcgASgDUglkZWNpZGVkQXQ=');
+
+@$core.Deprecated('Use listMyReportsRequestDescriptor instead')
+const ListMyReportsRequest$json = {
+  '1': 'ListMyReportsRequest',
+};
+
+/// Descriptor for `ListMyReportsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyReportsRequestDescriptor = $convert.base64Decode(
+    'ChRMaXN0TXlSZXBvcnRzUmVxdWVzdA==');
+
+@$core.Deprecated('Use listMyReportsResponseDescriptor instead')
+const ListMyReportsResponse$json = {
+  '1': 'ListMyReportsResponse',
+  '2': [
+    {'1': 'reports', '3': 1, '4': 3, '5': 11, '6': '.sttattus.dating.v1.UserReport', '10': 'reports'},
+  ],
+};
+
+/// Descriptor for `ListMyReportsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyReportsResponseDescriptor = $convert.base64Decode(
+    'ChVMaXN0TXlSZXBvcnRzUmVzcG9uc2USOAoHcmVwb3J0cxgBIAMoCzIeLnN0dGF0dHVzLmRhdG'
+    'luZy52MS5Vc2VyUmVwb3J0UgdyZXBvcnRz');
+
+@$core.Deprecated('Use reportUserRequestDescriptor instead')
+const ReportUserRequest$json = {
+  '1': 'ReportUserRequest',
+  '2': [
+    {'1': 'reported_id', '3': 1, '4': 1, '5': 9, '10': 'reportedId'},
+    {'1': 'category', '3': 2, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+  ],
+};
+
+/// Descriptor for `ReportUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportUserRequestDescriptor = $convert.base64Decode(
+    'ChFSZXBvcnRVc2VyUmVxdWVzdBIfCgtyZXBvcnRlZF9pZBgBIAEoCVIKcmVwb3J0ZWRJZBIaCg'
+    'hjYXRlZ29yeRgCIAEoCVIIY2F0ZWdvcnkSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0'
+    'aW9u');
+
+@$core.Deprecated('Use reportUserResponseDescriptor instead')
+const ReportUserResponse$json = {
+  '1': 'ReportUserResponse',
+  '2': [
+    {'1': 'report', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.UserReport', '10': 'report'},
+  ],
+};
+
+/// Descriptor for `ReportUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportUserResponseDescriptor = $convert.base64Decode(
+    'ChJSZXBvcnRVc2VyUmVzcG9uc2USNgoGcmVwb3J0GAEgASgLMh4uc3R0YXR0dXMuZGF0aW5nLn'
+    'YxLlVzZXJSZXBvcnRSBnJlcG9ydA==');
+
+@$core.Deprecated('Use panicContactDescriptor instead')
+const PanicContact$json = {
+  '1': 'PanicContact',
+  '2': [
+    {'1': 'contact_phone_e164', '3': 1, '4': 1, '5': 9, '10': 'contactPhoneE164'},
+    {'1': 'contact_name', '3': 2, '4': 1, '5': 9, '10': 'contactName'},
+    {'1': 'context_note', '3': 3, '4': 1, '5': 9, '10': 'contextNote'},
+  ],
+};
+
+/// Descriptor for `PanicContact`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List panicContactDescriptor = $convert.base64Decode(
+    'CgxQYW5pY0NvbnRhY3QSLAoSY29udGFjdF9waG9uZV9lMTY0GAEgASgJUhBjb250YWN0UGhvbm'
+    'VFMTY0EiEKDGNvbnRhY3RfbmFtZRgCIAEoCVILY29udGFjdE5hbWUSIQoMY29udGV4dF9ub3Rl'
+    'GAMgASgJUgtjb250ZXh0Tm90ZQ==');
+
+@$core.Deprecated('Use getPanicContactRequestDescriptor instead')
+const GetPanicContactRequest$json = {
+  '1': 'GetPanicContactRequest',
+};
+
+/// Descriptor for `GetPanicContactRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPanicContactRequestDescriptor = $convert.base64Decode(
+    'ChZHZXRQYW5pY0NvbnRhY3RSZXF1ZXN0');
+
+@$core.Deprecated('Use getPanicContactResponseDescriptor instead')
+const GetPanicContactResponse$json = {
+  '1': 'GetPanicContactResponse',
+  '2': [
+    {'1': 'contact', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.PanicContact', '10': 'contact'},
+  ],
+};
+
+/// Descriptor for `GetPanicContactResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPanicContactResponseDescriptor = $convert.base64Decode(
+    'ChdHZXRQYW5pY0NvbnRhY3RSZXNwb25zZRI6Cgdjb250YWN0GAEgASgLMiAuc3R0YXR0dXMuZG'
+    'F0aW5nLnYxLlBhbmljQ29udGFjdFIHY29udGFjdA==');
+
+@$core.Deprecated('Use upsertPanicContactRequestDescriptor instead')
+const UpsertPanicContactRequest$json = {
+  '1': 'UpsertPanicContactRequest',
+  '2': [
+    {'1': 'contact_phone_e164', '3': 1, '4': 1, '5': 9, '10': 'contactPhoneE164'},
+    {'1': 'contact_name', '3': 2, '4': 1, '5': 9, '10': 'contactName'},
+    {'1': 'context_note', '3': 3, '4': 1, '5': 9, '10': 'contextNote'},
+  ],
+};
+
+/// Descriptor for `UpsertPanicContactRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertPanicContactRequestDescriptor = $convert.base64Decode(
+    'ChlVcHNlcnRQYW5pY0NvbnRhY3RSZXF1ZXN0EiwKEmNvbnRhY3RfcGhvbmVfZTE2NBgBIAEoCV'
+    'IQY29udGFjdFBob25lRTE2NBIhCgxjb250YWN0X25hbWUYAiABKAlSC2NvbnRhY3ROYW1lEiEK'
+    'DGNvbnRleHRfbm90ZRgDIAEoCVILY29udGV4dE5vdGU=');
+
+@$core.Deprecated('Use upsertPanicContactResponseDescriptor instead')
+const UpsertPanicContactResponse$json = {
+  '1': 'UpsertPanicContactResponse',
+  '2': [
+    {'1': 'contact', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.PanicContact', '10': 'contact'},
+  ],
+};
+
+/// Descriptor for `UpsertPanicContactResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertPanicContactResponseDescriptor = $convert.base64Decode(
+    'ChpVcHNlcnRQYW5pY0NvbnRhY3RSZXNwb25zZRI6Cgdjb250YWN0GAEgASgLMiAuc3R0YXR0dX'
+    'MuZGF0aW5nLnYxLlBhbmljQ29udGFjdFIHY29udGFjdA==');
+

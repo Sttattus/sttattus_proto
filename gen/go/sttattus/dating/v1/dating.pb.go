@@ -2302,6 +2302,851 @@ func (*DeleteAkashicChapterResponse) Descriptor() ([]byte, []int) {
 	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{39}
 }
 
+type UserBlock struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	BlockedId     string                 `protobuf:"bytes,2,opt,name=blocked_id,json=blockedId,proto3" json:"blocked_id,omitempty"`
+	Reason        string                 `protobuf:"bytes,3,opt,name=reason,proto3" json:"reason,omitempty"`
+	CreatedAt     int64                  `protobuf:"varint,4,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UserBlock) Reset() {
+	*x = UserBlock{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[40]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UserBlock) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserBlock) ProtoMessage() {}
+
+func (x *UserBlock) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[40]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserBlock.ProtoReflect.Descriptor instead.
+func (*UserBlock) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *UserBlock) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UserBlock) GetBlockedId() string {
+	if x != nil {
+		return x.BlockedId
+	}
+	return ""
+}
+
+func (x *UserBlock) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *UserBlock) GetCreatedAt() int64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+type ListMyBlocksRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyBlocksRequest) Reset() {
+	*x = ListMyBlocksRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[41]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyBlocksRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyBlocksRequest) ProtoMessage() {}
+
+func (x *ListMyBlocksRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[41]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyBlocksRequest.ProtoReflect.Descriptor instead.
+func (*ListMyBlocksRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{41}
+}
+
+type ListMyBlocksResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Blocks        []*UserBlock           `protobuf:"bytes,1,rep,name=blocks,proto3" json:"blocks,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyBlocksResponse) Reset() {
+	*x = ListMyBlocksResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[42]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyBlocksResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyBlocksResponse) ProtoMessage() {}
+
+func (x *ListMyBlocksResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[42]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyBlocksResponse.ProtoReflect.Descriptor instead.
+func (*ListMyBlocksResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{42}
+}
+
+func (x *ListMyBlocksResponse) GetBlocks() []*UserBlock {
+	if x != nil {
+		return x.Blocks
+	}
+	return nil
+}
+
+type BlockUserRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	BlockedId     string                 `protobuf:"bytes,1,opt,name=blocked_id,json=blockedId,proto3" json:"blocked_id,omitempty"`
+	Reason        string                 `protobuf:"bytes,2,opt,name=reason,proto3" json:"reason,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *BlockUserRequest) Reset() {
+	*x = BlockUserRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[43]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *BlockUserRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BlockUserRequest) ProtoMessage() {}
+
+func (x *BlockUserRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[43]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BlockUserRequest.ProtoReflect.Descriptor instead.
+func (*BlockUserRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *BlockUserRequest) GetBlockedId() string {
+	if x != nil {
+		return x.BlockedId
+	}
+	return ""
+}
+
+func (x *BlockUserRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+type BlockUserResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Block         *UserBlock             `protobuf:"bytes,1,opt,name=block,proto3" json:"block,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *BlockUserResponse) Reset() {
+	*x = BlockUserResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[44]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *BlockUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BlockUserResponse) ProtoMessage() {}
+
+func (x *BlockUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[44]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BlockUserResponse.ProtoReflect.Descriptor instead.
+func (*BlockUserResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{44}
+}
+
+func (x *BlockUserResponse) GetBlock() *UserBlock {
+	if x != nil {
+		return x.Block
+	}
+	return nil
+}
+
+type UnblockUserRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	BlockedId     string                 `protobuf:"bytes,1,opt,name=blocked_id,json=blockedId,proto3" json:"blocked_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UnblockUserRequest) Reset() {
+	*x = UnblockUserRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[45]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UnblockUserRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UnblockUserRequest) ProtoMessage() {}
+
+func (x *UnblockUserRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[45]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UnblockUserRequest.ProtoReflect.Descriptor instead.
+func (*UnblockUserRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{45}
+}
+
+func (x *UnblockUserRequest) GetBlockedId() string {
+	if x != nil {
+		return x.BlockedId
+	}
+	return ""
+}
+
+type UnblockUserResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UnblockUserResponse) Reset() {
+	*x = UnblockUserResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[46]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UnblockUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UnblockUserResponse) ProtoMessage() {}
+
+func (x *UnblockUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[46]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UnblockUserResponse.ProtoReflect.Descriptor instead.
+func (*UnblockUserResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{46}
+}
+
+type UserReport struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ReportedId    string                 `protobuf:"bytes,2,opt,name=reported_id,json=reportedId,proto3" json:"reported_id,omitempty"`
+	Category      string                 `protobuf:"bytes,3,opt,name=category,proto3" json:"category,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Status        string                 `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"`
+	CreatedAt     int64                  `protobuf:"varint,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	DecidedAt     int64                  `protobuf:"varint,7,opt,name=decided_at,json=decidedAt,proto3" json:"decided_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UserReport) Reset() {
+	*x = UserReport{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[47]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UserReport) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserReport) ProtoMessage() {}
+
+func (x *UserReport) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[47]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserReport.ProtoReflect.Descriptor instead.
+func (*UserReport) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{47}
+}
+
+func (x *UserReport) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UserReport) GetReportedId() string {
+	if x != nil {
+		return x.ReportedId
+	}
+	return ""
+}
+
+func (x *UserReport) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *UserReport) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *UserReport) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *UserReport) GetCreatedAt() int64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+func (x *UserReport) GetDecidedAt() int64 {
+	if x != nil {
+		return x.DecidedAt
+	}
+	return 0
+}
+
+type ListMyReportsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyReportsRequest) Reset() {
+	*x = ListMyReportsRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[48]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyReportsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyReportsRequest) ProtoMessage() {}
+
+func (x *ListMyReportsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[48]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyReportsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyReportsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{48}
+}
+
+type ListMyReportsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Reports       []*UserReport          `protobuf:"bytes,1,rep,name=reports,proto3" json:"reports,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyReportsResponse) Reset() {
+	*x = ListMyReportsResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[49]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyReportsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyReportsResponse) ProtoMessage() {}
+
+func (x *ListMyReportsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[49]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyReportsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyReportsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{49}
+}
+
+func (x *ListMyReportsResponse) GetReports() []*UserReport {
+	if x != nil {
+		return x.Reports
+	}
+	return nil
+}
+
+type ReportUserRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ReportedId    string                 `protobuf:"bytes,1,opt,name=reported_id,json=reportedId,proto3" json:"reported_id,omitempty"`
+	Category      string                 `protobuf:"bytes,2,opt,name=category,proto3" json:"category,omitempty"`
+	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReportUserRequest) Reset() {
+	*x = ReportUserRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[50]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReportUserRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReportUserRequest) ProtoMessage() {}
+
+func (x *ReportUserRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[50]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReportUserRequest.ProtoReflect.Descriptor instead.
+func (*ReportUserRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{50}
+}
+
+func (x *ReportUserRequest) GetReportedId() string {
+	if x != nil {
+		return x.ReportedId
+	}
+	return ""
+}
+
+func (x *ReportUserRequest) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *ReportUserRequest) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+type ReportUserResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Report        *UserReport            `protobuf:"bytes,1,opt,name=report,proto3" json:"report,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReportUserResponse) Reset() {
+	*x = ReportUserResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[51]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReportUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReportUserResponse) ProtoMessage() {}
+
+func (x *ReportUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[51]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReportUserResponse.ProtoReflect.Descriptor instead.
+func (*ReportUserResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{51}
+}
+
+func (x *ReportUserResponse) GetReport() *UserReport {
+	if x != nil {
+		return x.Report
+	}
+	return nil
+}
+
+type PanicContact struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	ContactPhoneE164 string                 `protobuf:"bytes,1,opt,name=contact_phone_e164,json=contactPhoneE164,proto3" json:"contact_phone_e164,omitempty"`
+	ContactName      string                 `protobuf:"bytes,2,opt,name=contact_name,json=contactName,proto3" json:"contact_name,omitempty"`
+	ContextNote      string                 `protobuf:"bytes,3,opt,name=context_note,json=contextNote,proto3" json:"context_note,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *PanicContact) Reset() {
+	*x = PanicContact{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[52]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PanicContact) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PanicContact) ProtoMessage() {}
+
+func (x *PanicContact) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[52]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PanicContact.ProtoReflect.Descriptor instead.
+func (*PanicContact) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{52}
+}
+
+func (x *PanicContact) GetContactPhoneE164() string {
+	if x != nil {
+		return x.ContactPhoneE164
+	}
+	return ""
+}
+
+func (x *PanicContact) GetContactName() string {
+	if x != nil {
+		return x.ContactName
+	}
+	return ""
+}
+
+func (x *PanicContact) GetContextNote() string {
+	if x != nil {
+		return x.ContextNote
+	}
+	return ""
+}
+
+type GetPanicContactRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPanicContactRequest) Reset() {
+	*x = GetPanicContactRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[53]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPanicContactRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPanicContactRequest) ProtoMessage() {}
+
+func (x *GetPanicContactRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[53]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPanicContactRequest.ProtoReflect.Descriptor instead.
+func (*GetPanicContactRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{53}
+}
+
+type GetPanicContactResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Empty (phone == "") = no contact configured.
+	Contact       *PanicContact `protobuf:"bytes,1,opt,name=contact,proto3" json:"contact,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPanicContactResponse) Reset() {
+	*x = GetPanicContactResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[54]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPanicContactResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPanicContactResponse) ProtoMessage() {}
+
+func (x *GetPanicContactResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[54]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPanicContactResponse.ProtoReflect.Descriptor instead.
+func (*GetPanicContactResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{54}
+}
+
+func (x *GetPanicContactResponse) GetContact() *PanicContact {
+	if x != nil {
+		return x.Contact
+	}
+	return nil
+}
+
+type UpsertPanicContactRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	ContactPhoneE164 string                 `protobuf:"bytes,1,opt,name=contact_phone_e164,json=contactPhoneE164,proto3" json:"contact_phone_e164,omitempty"`
+	ContactName      string                 `protobuf:"bytes,2,opt,name=contact_name,json=contactName,proto3" json:"contact_name,omitempty"`
+	ContextNote      string                 `protobuf:"bytes,3,opt,name=context_note,json=contextNote,proto3" json:"context_note,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *UpsertPanicContactRequest) Reset() {
+	*x = UpsertPanicContactRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[55]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertPanicContactRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertPanicContactRequest) ProtoMessage() {}
+
+func (x *UpsertPanicContactRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[55]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertPanicContactRequest.ProtoReflect.Descriptor instead.
+func (*UpsertPanicContactRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{55}
+}
+
+func (x *UpsertPanicContactRequest) GetContactPhoneE164() string {
+	if x != nil {
+		return x.ContactPhoneE164
+	}
+	return ""
+}
+
+func (x *UpsertPanicContactRequest) GetContactName() string {
+	if x != nil {
+		return x.ContactName
+	}
+	return ""
+}
+
+func (x *UpsertPanicContactRequest) GetContextNote() string {
+	if x != nil {
+		return x.ContextNote
+	}
+	return ""
+}
+
+type UpsertPanicContactResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Contact       *PanicContact          `protobuf:"bytes,1,opt,name=contact,proto3" json:"contact,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertPanicContactResponse) Reset() {
+	*x = UpsertPanicContactResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[56]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertPanicContactResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertPanicContactResponse) ProtoMessage() {}
+
+func (x *UpsertPanicContactResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[56]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertPanicContactResponse.ProtoReflect.Descriptor instead.
+func (*UpsertPanicContactResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{56}
+}
+
+func (x *UpsertPanicContactResponse) GetContact() *PanicContact {
+	if x != nil {
+		return x.Contact
+	}
+	return nil
+}
+
 var File_sttattus_dating_v1_dating_proto protoreflect.FileDescriptor
 
 const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
@@ -2458,7 +3303,62 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x1bDeleteAkashicChapterRequest\x12\x1f\n" +
 	"\vchapter_key\x18\x01 \x01(\tR\n" +
 	"chapterKey\"\x1e\n" +
-	"\x1cDeleteAkashicChapterResponse*\x80\x01\n" +
+	"\x1cDeleteAkashicChapterResponse\"q\n" +
+	"\tUserBlock\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\n" +
+	"blocked_id\x18\x02 \x01(\tR\tblockedId\x12\x16\n" +
+	"\x06reason\x18\x03 \x01(\tR\x06reason\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\x04 \x01(\x03R\tcreatedAt\"\x15\n" +
+	"\x13ListMyBlocksRequest\"M\n" +
+	"\x14ListMyBlocksResponse\x125\n" +
+	"\x06blocks\x18\x01 \x03(\v2\x1d.sttattus.dating.v1.UserBlockR\x06blocks\"I\n" +
+	"\x10BlockUserRequest\x12\x1d\n" +
+	"\n" +
+	"blocked_id\x18\x01 \x01(\tR\tblockedId\x12\x16\n" +
+	"\x06reason\x18\x02 \x01(\tR\x06reason\"H\n" +
+	"\x11BlockUserResponse\x123\n" +
+	"\x05block\x18\x01 \x01(\v2\x1d.sttattus.dating.v1.UserBlockR\x05block\"3\n" +
+	"\x12UnblockUserRequest\x12\x1d\n" +
+	"\n" +
+	"blocked_id\x18\x01 \x01(\tR\tblockedId\"\x15\n" +
+	"\x13UnblockUserResponse\"\xd1\x01\n" +
+	"\n" +
+	"UserReport\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
+	"\vreported_id\x18\x02 \x01(\tR\n" +
+	"reportedId\x12\x1a\n" +
+	"\bcategory\x18\x03 \x01(\tR\bcategory\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x16\n" +
+	"\x06status\x18\x05 \x01(\tR\x06status\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\x06 \x01(\x03R\tcreatedAt\x12\x1d\n" +
+	"\n" +
+	"decided_at\x18\a \x01(\x03R\tdecidedAt\"\x16\n" +
+	"\x14ListMyReportsRequest\"Q\n" +
+	"\x15ListMyReportsResponse\x128\n" +
+	"\areports\x18\x01 \x03(\v2\x1e.sttattus.dating.v1.UserReportR\areports\"r\n" +
+	"\x11ReportUserRequest\x12\x1f\n" +
+	"\vreported_id\x18\x01 \x01(\tR\n" +
+	"reportedId\x12\x1a\n" +
+	"\bcategory\x18\x02 \x01(\tR\bcategory\x12 \n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\"L\n" +
+	"\x12ReportUserResponse\x126\n" +
+	"\x06report\x18\x01 \x01(\v2\x1e.sttattus.dating.v1.UserReportR\x06report\"\x82\x01\n" +
+	"\fPanicContact\x12,\n" +
+	"\x12contact_phone_e164\x18\x01 \x01(\tR\x10contactPhoneE164\x12!\n" +
+	"\fcontact_name\x18\x02 \x01(\tR\vcontactName\x12!\n" +
+	"\fcontext_note\x18\x03 \x01(\tR\vcontextNote\"\x18\n" +
+	"\x16GetPanicContactRequest\"U\n" +
+	"\x17GetPanicContactResponse\x12:\n" +
+	"\acontact\x18\x01 \x01(\v2 .sttattus.dating.v1.PanicContactR\acontact\"\x8f\x01\n" +
+	"\x19UpsertPanicContactRequest\x12,\n" +
+	"\x12contact_phone_e164\x18\x01 \x01(\tR\x10contactPhoneE164\x12!\n" +
+	"\fcontact_name\x18\x02 \x01(\tR\vcontactName\x12!\n" +
+	"\fcontext_note\x18\x03 \x01(\tR\vcontextNote\"X\n" +
+	"\x1aUpsertPanicContactResponse\x12:\n" +
+	"\acontact\x18\x01 \x01(\v2 .sttattus.dating.v1.PanicContactR\acontact*\x80\x01\n" +
 	"\x0eSwipeDirection\x12\x1f\n" +
 	"\x1bSWIPE_DIRECTION_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14SWIPE_DIRECTION_PASS\x10\x01\x12\x18\n" +
@@ -2469,7 +3369,7 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x14DATING_INTENT_CASUAL\x10\x01\x12\x1e\n" +
 	"\x1aDATING_INTENT_RELATIONSHIP\x10\x02\x12\x19\n" +
 	"\x15DATING_INTENT_FRIENDS\x10\x03\x12\x1c\n" +
-	"\x18DATING_INTENT_NETWORKING\x10\x042\xd6\r\n" +
+	"\x18DATING_INTENT_NETWORKING\x10\x042\x97\x13\n" +
 	"\rDatingService\x12[\n" +
 	"\n" +
 	"GetProfile\x12%.sttattus.dating.v1.GetProfileRequest\x1a&.sttattus.dating.v1.GetProfileResponse\x12d\n" +
@@ -2487,7 +3387,15 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x11ListAuthorAkashic\x12,.sttattus.dating.v1.ListAuthorAkashicRequest\x1a-.sttattus.dating.v1.ListAuthorAkashicResponse\x12s\n" +
 	"\x12ListVisibleAkashic\x12-.sttattus.dating.v1.ListVisibleAkashicRequest\x1a..sttattus.dating.v1.ListVisibleAkashicResponse\x12y\n" +
 	"\x14UpsertAkashicChapter\x12/.sttattus.dating.v1.UpsertAkashicChapterRequest\x1a0.sttattus.dating.v1.UpsertAkashicChapterResponse\x12y\n" +
-	"\x14DeleteAkashicChapter\x12/.sttattus.dating.v1.DeleteAkashicChapterRequest\x1a0.sttattus.dating.v1.DeleteAkashicChapterResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
+	"\x14DeleteAkashicChapter\x12/.sttattus.dating.v1.DeleteAkashicChapterRequest\x1a0.sttattus.dating.v1.DeleteAkashicChapterResponse\x12a\n" +
+	"\fListMyBlocks\x12'.sttattus.dating.v1.ListMyBlocksRequest\x1a(.sttattus.dating.v1.ListMyBlocksResponse\x12X\n" +
+	"\tBlockUser\x12$.sttattus.dating.v1.BlockUserRequest\x1a%.sttattus.dating.v1.BlockUserResponse\x12^\n" +
+	"\vUnblockUser\x12&.sttattus.dating.v1.UnblockUserRequest\x1a'.sttattus.dating.v1.UnblockUserResponse\x12d\n" +
+	"\rListMyReports\x12(.sttattus.dating.v1.ListMyReportsRequest\x1a).sttattus.dating.v1.ListMyReportsResponse\x12[\n" +
+	"\n" +
+	"ReportUser\x12%.sttattus.dating.v1.ReportUserRequest\x1a&.sttattus.dating.v1.ReportUserResponse\x12j\n" +
+	"\x0fGetPanicContact\x12*.sttattus.dating.v1.GetPanicContactRequest\x1a+.sttattus.dating.v1.GetPanicContactResponse\x12s\n" +
+	"\x12UpsertPanicContact\x12-.sttattus.dating.v1.UpsertPanicContactRequest\x1a..sttattus.dating.v1.UpsertPanicContactResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
 
 var (
 	file_sttattus_dating_v1_dating_proto_rawDescOnce sync.Once
@@ -2502,7 +3410,7 @@ func file_sttattus_dating_v1_dating_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_dating_v1_dating_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 40)
+var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 57)
 var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(SwipeDirection)(0),                   // 0: sttattus.dating.v1.SwipeDirection
 	(DatingIntent)(0),                     // 1: sttattus.dating.v1.DatingIntent
@@ -2546,8 +3454,25 @@ var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(*UpsertAkashicChapterResponse)(nil),  // 39: sttattus.dating.v1.UpsertAkashicChapterResponse
 	(*DeleteAkashicChapterRequest)(nil),   // 40: sttattus.dating.v1.DeleteAkashicChapterRequest
 	(*DeleteAkashicChapterResponse)(nil),  // 41: sttattus.dating.v1.DeleteAkashicChapterResponse
-	(*v1.PageRequest)(nil),                // 42: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),               // 43: sttattus.common.v1.PageResponse
+	(*UserBlock)(nil),                     // 42: sttattus.dating.v1.UserBlock
+	(*ListMyBlocksRequest)(nil),           // 43: sttattus.dating.v1.ListMyBlocksRequest
+	(*ListMyBlocksResponse)(nil),          // 44: sttattus.dating.v1.ListMyBlocksResponse
+	(*BlockUserRequest)(nil),              // 45: sttattus.dating.v1.BlockUserRequest
+	(*BlockUserResponse)(nil),             // 46: sttattus.dating.v1.BlockUserResponse
+	(*UnblockUserRequest)(nil),            // 47: sttattus.dating.v1.UnblockUserRequest
+	(*UnblockUserResponse)(nil),           // 48: sttattus.dating.v1.UnblockUserResponse
+	(*UserReport)(nil),                    // 49: sttattus.dating.v1.UserReport
+	(*ListMyReportsRequest)(nil),          // 50: sttattus.dating.v1.ListMyReportsRequest
+	(*ListMyReportsResponse)(nil),         // 51: sttattus.dating.v1.ListMyReportsResponse
+	(*ReportUserRequest)(nil),             // 52: sttattus.dating.v1.ReportUserRequest
+	(*ReportUserResponse)(nil),            // 53: sttattus.dating.v1.ReportUserResponse
+	(*PanicContact)(nil),                  // 54: sttattus.dating.v1.PanicContact
+	(*GetPanicContactRequest)(nil),        // 55: sttattus.dating.v1.GetPanicContactRequest
+	(*GetPanicContactResponse)(nil),       // 56: sttattus.dating.v1.GetPanicContactResponse
+	(*UpsertPanicContactRequest)(nil),     // 57: sttattus.dating.v1.UpsertPanicContactRequest
+	(*UpsertPanicContactResponse)(nil),    // 58: sttattus.dating.v1.UpsertPanicContactResponse
+	(*v1.PageRequest)(nil),                // 59: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),               // 60: sttattus.common.v1.PageResponse
 }
 var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	1,  // 0: sttattus.dating.v1.DatingProfile.intent:type_name -> sttattus.dating.v1.DatingIntent
@@ -2560,9 +3485,9 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	4,  // 7: sttattus.dating.v1.StreamDiscoveryResponse.candidate:type_name -> sttattus.dating.v1.Candidate
 	0,  // 8: sttattus.dating.v1.SwipeRequest.direction:type_name -> sttattus.dating.v1.SwipeDirection
 	5,  // 9: sttattus.dating.v1.SwipeResponse.match:type_name -> sttattus.dating.v1.Match
-	42, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	59, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	5,  // 11: sttattus.dating.v1.ListMatchesResponse.matches:type_name -> sttattus.dating.v1.Match
-	43, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	60, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
 	6,  // 13: sttattus.dating.v1.StreamMessagesResponse.message:type_name -> sttattus.dating.v1.Message
 	6,  // 14: sttattus.dating.v1.SendMessageResponse.message:type_name -> sttattus.dating.v1.Message
 	21, // 15: sttattus.dating.v1.StartVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
@@ -2573,43 +3498,63 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	33, // 20: sttattus.dating.v1.ListAuthorAkashicResponse.chapters:type_name -> sttattus.dating.v1.AkashicChapter
 	33, // 21: sttattus.dating.v1.ListVisibleAkashicResponse.chapters:type_name -> sttattus.dating.v1.AkashicChapter
 	33, // 22: sttattus.dating.v1.UpsertAkashicChapterResponse.chapter:type_name -> sttattus.dating.v1.AkashicChapter
-	7,  // 23: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
-	9,  // 24: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
-	11, // 25: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
-	13, // 26: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
-	15, // 27: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
-	17, // 28: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
-	19, // 29: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
-	22, // 30: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
-	24, // 31: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
-	27, // 32: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
-	29, // 33: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
-	31, // 34: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
-	34, // 35: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
-	36, // 36: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
-	38, // 37: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
-	40, // 38: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
-	8,  // 39: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
-	10, // 40: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
-	12, // 41: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
-	14, // 42: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
-	16, // 43: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
-	18, // 44: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
-	20, // 45: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
-	23, // 46: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
-	25, // 47: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
-	28, // 48: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
-	30, // 49: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
-	32, // 50: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
-	35, // 51: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
-	37, // 52: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
-	39, // 53: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
-	41, // 54: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
-	39, // [39:55] is the sub-list for method output_type
-	23, // [23:39] is the sub-list for method input_type
-	23, // [23:23] is the sub-list for extension type_name
-	23, // [23:23] is the sub-list for extension extendee
-	0,  // [0:23] is the sub-list for field type_name
+	42, // 23: sttattus.dating.v1.ListMyBlocksResponse.blocks:type_name -> sttattus.dating.v1.UserBlock
+	42, // 24: sttattus.dating.v1.BlockUserResponse.block:type_name -> sttattus.dating.v1.UserBlock
+	49, // 25: sttattus.dating.v1.ListMyReportsResponse.reports:type_name -> sttattus.dating.v1.UserReport
+	49, // 26: sttattus.dating.v1.ReportUserResponse.report:type_name -> sttattus.dating.v1.UserReport
+	54, // 27: sttattus.dating.v1.GetPanicContactResponse.contact:type_name -> sttattus.dating.v1.PanicContact
+	54, // 28: sttattus.dating.v1.UpsertPanicContactResponse.contact:type_name -> sttattus.dating.v1.PanicContact
+	7,  // 29: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
+	9,  // 30: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
+	11, // 31: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
+	13, // 32: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
+	15, // 33: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
+	17, // 34: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
+	19, // 35: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
+	22, // 36: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
+	24, // 37: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
+	27, // 38: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
+	29, // 39: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
+	31, // 40: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
+	34, // 41: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
+	36, // 42: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
+	38, // 43: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
+	40, // 44: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
+	43, // 45: sttattus.dating.v1.DatingService.ListMyBlocks:input_type -> sttattus.dating.v1.ListMyBlocksRequest
+	45, // 46: sttattus.dating.v1.DatingService.BlockUser:input_type -> sttattus.dating.v1.BlockUserRequest
+	47, // 47: sttattus.dating.v1.DatingService.UnblockUser:input_type -> sttattus.dating.v1.UnblockUserRequest
+	50, // 48: sttattus.dating.v1.DatingService.ListMyReports:input_type -> sttattus.dating.v1.ListMyReportsRequest
+	52, // 49: sttattus.dating.v1.DatingService.ReportUser:input_type -> sttattus.dating.v1.ReportUserRequest
+	55, // 50: sttattus.dating.v1.DatingService.GetPanicContact:input_type -> sttattus.dating.v1.GetPanicContactRequest
+	57, // 51: sttattus.dating.v1.DatingService.UpsertPanicContact:input_type -> sttattus.dating.v1.UpsertPanicContactRequest
+	8,  // 52: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
+	10, // 53: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
+	12, // 54: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
+	14, // 55: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
+	16, // 56: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
+	18, // 57: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
+	20, // 58: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
+	23, // 59: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
+	25, // 60: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
+	28, // 61: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
+	30, // 62: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
+	32, // 63: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
+	35, // 64: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
+	37, // 65: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
+	39, // 66: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
+	41, // 67: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
+	44, // 68: sttattus.dating.v1.DatingService.ListMyBlocks:output_type -> sttattus.dating.v1.ListMyBlocksResponse
+	46, // 69: sttattus.dating.v1.DatingService.BlockUser:output_type -> sttattus.dating.v1.BlockUserResponse
+	48, // 70: sttattus.dating.v1.DatingService.UnblockUser:output_type -> sttattus.dating.v1.UnblockUserResponse
+	51, // 71: sttattus.dating.v1.DatingService.ListMyReports:output_type -> sttattus.dating.v1.ListMyReportsResponse
+	53, // 72: sttattus.dating.v1.DatingService.ReportUser:output_type -> sttattus.dating.v1.ReportUserResponse
+	56, // 73: sttattus.dating.v1.DatingService.GetPanicContact:output_type -> sttattus.dating.v1.GetPanicContactResponse
+	58, // 74: sttattus.dating.v1.DatingService.UpsertPanicContact:output_type -> sttattus.dating.v1.UpsertPanicContactResponse
+	52, // [52:75] is the sub-list for method output_type
+	29, // [29:52] is the sub-list for method input_type
+	29, // [29:29] is the sub-list for extension type_name
+	29, // [29:29] is the sub-list for extension extendee
+	0,  // [0:29] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dating_v1_dating_proto_init() }
@@ -2623,7 +3568,7 @@ func file_sttattus_dating_v1_dating_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_dating_v1_dating_proto_rawDesc), len(file_sttattus_dating_v1_dating_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   40,
+			NumMessages:   57,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

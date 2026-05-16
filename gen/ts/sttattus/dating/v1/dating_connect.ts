@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetProfileRequest, GetProfileResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListMatchesRequest, ListMatchesResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse } from "./dating_pb.js";
+import { BlockUserRequest, BlockUserResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetProfileRequest, GetProfileResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListMatchesRequest, ListMatchesResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyReportsRequest, ListMyReportsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse } from "./dating_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -158,6 +158,71 @@ export const DatingService = {
       name: "DeleteAkashicChapter",
       I: DeleteAkashicChapterRequest,
       O: DeleteAkashicChapterResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9.6 — safety center: blocks + reports + panic contact.
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.ListMyBlocks
+     */
+    listMyBlocks: {
+      name: "ListMyBlocks",
+      I: ListMyBlocksRequest,
+      O: ListMyBlocksResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.BlockUser
+     */
+    blockUser: {
+      name: "BlockUser",
+      I: BlockUserRequest,
+      O: BlockUserResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.UnblockUser
+     */
+    unblockUser: {
+      name: "UnblockUser",
+      I: UnblockUserRequest,
+      O: UnblockUserResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.ListMyReports
+     */
+    listMyReports: {
+      name: "ListMyReports",
+      I: ListMyReportsRequest,
+      O: ListMyReportsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.ReportUser
+     */
+    reportUser: {
+      name: "ReportUser",
+      I: ReportUserRequest,
+      O: ReportUserResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.GetPanicContact
+     */
+    getPanicContact: {
+      name: "GetPanicContact",
+      I: GetPanicContactRequest,
+      O: GetPanicContactResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.UpsertPanicContact
+     */
+    upsertPanicContact: {
+      name: "UpsertPanicContact",
+      I: UpsertPanicContactRequest,
+      O: UpsertPanicContactResponse,
       kind: MethodKind.Unary,
     },
   }
