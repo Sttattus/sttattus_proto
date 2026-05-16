@@ -121,6 +121,16 @@ service VaultService {
 
   // V8P2.2 — current FX rates for client-side conversion.
   rpc ListLatestFxRates(ListLatestFxRatesRequest) returns (ListLatestFxRatesResponse);
+
+  // V8P2.5 — cap-table holdings + Carta / Pulley / AngelList
+  // connection lifecycle. Cloud pull is honest about being
+  // unavailable without API credentials (see OUTSTANDING.md).
+  rpc ListCapTableHoldings(ListCapTableHoldingsRequest) returns (ListCapTableHoldingsResponse);
+  rpc CreateCapTableHolding(CreateCapTableHoldingRequest) returns (CreateCapTableHoldingResponse);
+  rpc UpdateCapTableHolding(UpdateCapTableHoldingRequest) returns (UpdateCapTableHoldingResponse);
+  rpc DeleteCapTableHolding(DeleteCapTableHoldingRequest) returns (DeleteCapTableHoldingResponse);
+  rpc ListCapTableConnections(ListCapTableConnectionsRequest) returns (ListCapTableConnectionsResponse);
+  rpc SetCapTableConnectionStatus(SetCapTableConnectionStatusRequest) returns (SetCapTableConnectionStatusResponse);
 }
 
 message SyncWealthRequest {
@@ -392,4 +402,83 @@ message ListLatestFxRatesResponse {
   // One row per currency, latest as-of. The dashboard reads this
   // once and converts asset.native_value at display time.
   repeated FxRate rates = 1;
+}
+
+// === Cap-table (V8P2.5) ===
+
+message CapTableHolding {
+  string id = 1;
+  string entity_id = 2; // empty when unscoped
+  string company_name = 3;
+  // common | preferred | safe | convertible_note | option | rsu | warrant
+  string instrument_type = 4;
+  double shares = 5;
+  double strike_price_usd = 6;
+  double last_priced_price_usd = 7;
+  string last_priced_at_iso = 8; // YYYY-MM-DD; empty when never priced
+  // manual | carta | pulley | angellist
+  string source = 9;
+  string external_id = 10; // empty for manual rows
+  string notes = 11;
+  // Derived: shares * last_priced_price_usd
+  double position_value_usd = 12;
+}
+
+message ListCapTableHoldingsRequest {}
+message ListCapTableHoldingsResponse {
+  repeated CapTableHolding holdings = 1;
+  // Sum of position_value_usd across all rows.
+  double total_value_usd = 2;
+}
+
+message CapTableHoldingInput {
+  string entity_id = 1; // empty when unscoped
+  string company_name = 2;
+  string instrument_type = 3;
+  double shares = 4;
+  double strike_price_usd = 5;
+  double last_priced_price_usd = 6;
+  string last_priced_at_iso = 7; // YYYY-MM-DD; empty when never priced
+  string notes = 8;
+}
+
+message CreateCapTableHoldingRequest {
+  CapTableHoldingInput input = 1;
+}
+message CreateCapTableHoldingResponse {
+  CapTableHolding holding = 1;
+}
+
+message UpdateCapTableHoldingRequest {
+  string id = 1;
+  CapTableHoldingInput input = 2;
+}
+message UpdateCapTableHoldingResponse {
+  CapTableHolding holding = 1;
+}
+
+message DeleteCapTableHoldingRequest {
+  string id = 1;
+}
+message DeleteCapTableHoldingResponse {}
+
+// One (user, provider) OAuth connection — Carta / Pulley / AngelList.
+// status: needs_auth | connected | disconnected.
+message CapTableConnection {
+  string provider = 1;
+  string status = 2;
+  int64 last_synced_at = 3; // unix seconds, 0 when never synced
+}
+
+message ListCapTableConnectionsRequest {}
+message ListCapTableConnectionsResponse {
+  repeated CapTableConnection connections = 1;
+}
+
+message SetCapTableConnectionStatusRequest {
+  string provider = 1;
+  string status = 2;
+}
+message SetCapTableConnectionStatusResponse {
+  CapTableConnection connection = 1;
 }

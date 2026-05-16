@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, AssignAssetToEntityRequest, AssignAssetToEntityResponse, CreateEntityRequest, CreateEntityResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, DeleteEntityRequest, DeleteEntityResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListEntitiesRequest, ListEntitiesResponse, ListLatestFxRatesRequest, ListLatestFxRatesResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, RenameEntityRequest, RenameEntityResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse } from "./vault_pb.js";
+import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, AssignAssetToEntityRequest, AssignAssetToEntityResponse, CreateCapTableHoldingRequest, CreateCapTableHoldingResponse, CreateEntityRequest, CreateEntityResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, DeleteCapTableHoldingRequest, DeleteCapTableHoldingResponse, DeleteEntityRequest, DeleteEntityResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListCapTableConnectionsRequest, ListCapTableConnectionsResponse, ListCapTableHoldingsRequest, ListCapTableHoldingsResponse, ListEntitiesRequest, ListEntitiesResponse, ListLatestFxRatesRequest, ListLatestFxRatesResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, RenameEntityRequest, RenameEntityResponse, SetCapTableConnectionStatusRequest, SetCapTableConnectionStatusResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse, UpdateCapTableHoldingRequest, UpdateCapTableHoldingResponse } from "./vault_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -250,6 +250,64 @@ export const VaultService = {
       name: "ListLatestFxRates",
       I: ListLatestFxRatesRequest,
       O: ListLatestFxRatesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8P2.5 — cap-table holdings + Carta / Pulley / AngelList
+     * connection lifecycle. Cloud pull is honest about being
+     * unavailable without API credentials (see OUTSTANDING.md).
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.ListCapTableHoldings
+     */
+    listCapTableHoldings: {
+      name: "ListCapTableHoldings",
+      I: ListCapTableHoldingsRequest,
+      O: ListCapTableHoldingsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.CreateCapTableHolding
+     */
+    createCapTableHolding: {
+      name: "CreateCapTableHolding",
+      I: CreateCapTableHoldingRequest,
+      O: CreateCapTableHoldingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.UpdateCapTableHolding
+     */
+    updateCapTableHolding: {
+      name: "UpdateCapTableHolding",
+      I: UpdateCapTableHoldingRequest,
+      O: UpdateCapTableHoldingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.DeleteCapTableHolding
+     */
+    deleteCapTableHolding: {
+      name: "DeleteCapTableHolding",
+      I: DeleteCapTableHoldingRequest,
+      O: DeleteCapTableHoldingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.ListCapTableConnections
+     */
+    listCapTableConnections: {
+      name: "ListCapTableConnections",
+      I: ListCapTableConnectionsRequest,
+      O: ListCapTableConnectionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.SetCapTableConnectionStatus
+     */
+    setCapTableConnectionStatus: {
+      name: "SetCapTableConnectionStatus",
+      I: SetCapTableConnectionStatusRequest,
+      O: SetCapTableConnectionStatusResponse,
       kind: MethodKind.Unary,
     },
   }

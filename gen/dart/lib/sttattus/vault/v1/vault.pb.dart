@@ -3336,6 +3336,928 @@ class ListLatestFxRatesResponse extends $pb.GeneratedMessage {
   $pb.PbList<FxRate> get rates => $_getList(0);
 }
 
+class CapTableHolding extends $pb.GeneratedMessage {
+  factory CapTableHolding({
+    $core.String? id,
+    $core.String? entityId,
+    $core.String? companyName,
+    $core.String? instrumentType,
+    $core.double? shares,
+    $core.double? strikePriceUsd,
+    $core.double? lastPricedPriceUsd,
+    $core.String? lastPricedAtIso,
+    $core.String? source,
+    $core.String? externalId,
+    $core.String? notes,
+    $core.double? positionValueUsd,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (entityId != null) result.entityId = entityId;
+    if (companyName != null) result.companyName = companyName;
+    if (instrumentType != null) result.instrumentType = instrumentType;
+    if (shares != null) result.shares = shares;
+    if (strikePriceUsd != null) result.strikePriceUsd = strikePriceUsd;
+    if (lastPricedPriceUsd != null) result.lastPricedPriceUsd = lastPricedPriceUsd;
+    if (lastPricedAtIso != null) result.lastPricedAtIso = lastPricedAtIso;
+    if (source != null) result.source = source;
+    if (externalId != null) result.externalId = externalId;
+    if (notes != null) result.notes = notes;
+    if (positionValueUsd != null) result.positionValueUsd = positionValueUsd;
+    return result;
+  }
+
+  CapTableHolding._();
+
+  factory CapTableHolding.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CapTableHolding.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CapTableHolding', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'entityId')
+    ..aOS(3, _omitFieldNames ? '' : 'companyName')
+    ..aOS(4, _omitFieldNames ? '' : 'instrumentType')
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'shares', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'strikePriceUsd', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'lastPricedPriceUsd', $pb.PbFieldType.OD)
+    ..aOS(8, _omitFieldNames ? '' : 'lastPricedAtIso')
+    ..aOS(9, _omitFieldNames ? '' : 'source')
+    ..aOS(10, _omitFieldNames ? '' : 'externalId')
+    ..aOS(11, _omitFieldNames ? '' : 'notes')
+    ..a<$core.double>(12, _omitFieldNames ? '' : 'positionValueUsd', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CapTableHolding clone() => CapTableHolding()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CapTableHolding copyWith(void Function(CapTableHolding) updates) => super.copyWith((message) => updates(message as CapTableHolding)) as CapTableHolding;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CapTableHolding create() => CapTableHolding._();
+  @$core.override
+  CapTableHolding createEmptyInstance() => create();
+  static $pb.PbList<CapTableHolding> createRepeated() => $pb.PbList<CapTableHolding>();
+  @$core.pragma('dart2js:noInline')
+  static CapTableHolding getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CapTableHolding>(create);
+  static CapTableHolding? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get entityId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set entityId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEntityId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEntityId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get companyName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set companyName($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCompanyName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCompanyName() => $_clearField(3);
+
+  /// common | preferred | safe | convertible_note | option | rsu | warrant
+  @$pb.TagNumber(4)
+  $core.String get instrumentType => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set instrumentType($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasInstrumentType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearInstrumentType() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get shares => $_getN(4);
+  @$pb.TagNumber(5)
+  set shares($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasShares() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearShares() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get strikePriceUsd => $_getN(5);
+  @$pb.TagNumber(6)
+  set strikePriceUsd($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStrikePriceUsd() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStrikePriceUsd() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get lastPricedPriceUsd => $_getN(6);
+  @$pb.TagNumber(7)
+  set lastPricedPriceUsd($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLastPricedPriceUsd() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLastPricedPriceUsd() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get lastPricedAtIso => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set lastPricedAtIso($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLastPricedAtIso() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLastPricedAtIso() => $_clearField(8);
+
+  /// manual | carta | pulley | angellist
+  @$pb.TagNumber(9)
+  $core.String get source => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set source($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSource() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSource() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get externalId => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set externalId($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasExternalId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearExternalId() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get notes => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set notes($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasNotes() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearNotes() => $_clearField(11);
+
+  /// Derived: shares * last_priced_price_usd
+  @$pb.TagNumber(12)
+  $core.double get positionValueUsd => $_getN(11);
+  @$pb.TagNumber(12)
+  set positionValueUsd($core.double value) => $_setDouble(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasPositionValueUsd() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPositionValueUsd() => $_clearField(12);
+}
+
+class ListCapTableHoldingsRequest extends $pb.GeneratedMessage {
+  factory ListCapTableHoldingsRequest() => create();
+
+  ListCapTableHoldingsRequest._();
+
+  factory ListCapTableHoldingsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListCapTableHoldingsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCapTableHoldingsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCapTableHoldingsRequest clone() => ListCapTableHoldingsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCapTableHoldingsRequest copyWith(void Function(ListCapTableHoldingsRequest) updates) => super.copyWith((message) => updates(message as ListCapTableHoldingsRequest)) as ListCapTableHoldingsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListCapTableHoldingsRequest create() => ListCapTableHoldingsRequest._();
+  @$core.override
+  ListCapTableHoldingsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListCapTableHoldingsRequest> createRepeated() => $pb.PbList<ListCapTableHoldingsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListCapTableHoldingsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListCapTableHoldingsRequest>(create);
+  static ListCapTableHoldingsRequest? _defaultInstance;
+}
+
+class ListCapTableHoldingsResponse extends $pb.GeneratedMessage {
+  factory ListCapTableHoldingsResponse({
+    $core.Iterable<CapTableHolding>? holdings,
+    $core.double? totalValueUsd,
+  }) {
+    final result = create();
+    if (holdings != null) result.holdings.addAll(holdings);
+    if (totalValueUsd != null) result.totalValueUsd = totalValueUsd;
+    return result;
+  }
+
+  ListCapTableHoldingsResponse._();
+
+  factory ListCapTableHoldingsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListCapTableHoldingsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCapTableHoldingsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..pc<CapTableHolding>(1, _omitFieldNames ? '' : 'holdings', $pb.PbFieldType.PM, subBuilder: CapTableHolding.create)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'totalValueUsd', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCapTableHoldingsResponse clone() => ListCapTableHoldingsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCapTableHoldingsResponse copyWith(void Function(ListCapTableHoldingsResponse) updates) => super.copyWith((message) => updates(message as ListCapTableHoldingsResponse)) as ListCapTableHoldingsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListCapTableHoldingsResponse create() => ListCapTableHoldingsResponse._();
+  @$core.override
+  ListCapTableHoldingsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListCapTableHoldingsResponse> createRepeated() => $pb.PbList<ListCapTableHoldingsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListCapTableHoldingsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListCapTableHoldingsResponse>(create);
+  static ListCapTableHoldingsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<CapTableHolding> get holdings => $_getList(0);
+
+  /// Sum of position_value_usd across all rows.
+  @$pb.TagNumber(2)
+  $core.double get totalValueUsd => $_getN(1);
+  @$pb.TagNumber(2)
+  set totalValueUsd($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTotalValueUsd() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotalValueUsd() => $_clearField(2);
+}
+
+class CapTableHoldingInput extends $pb.GeneratedMessage {
+  factory CapTableHoldingInput({
+    $core.String? entityId,
+    $core.String? companyName,
+    $core.String? instrumentType,
+    $core.double? shares,
+    $core.double? strikePriceUsd,
+    $core.double? lastPricedPriceUsd,
+    $core.String? lastPricedAtIso,
+    $core.String? notes,
+  }) {
+    final result = create();
+    if (entityId != null) result.entityId = entityId;
+    if (companyName != null) result.companyName = companyName;
+    if (instrumentType != null) result.instrumentType = instrumentType;
+    if (shares != null) result.shares = shares;
+    if (strikePriceUsd != null) result.strikePriceUsd = strikePriceUsd;
+    if (lastPricedPriceUsd != null) result.lastPricedPriceUsd = lastPricedPriceUsd;
+    if (lastPricedAtIso != null) result.lastPricedAtIso = lastPricedAtIso;
+    if (notes != null) result.notes = notes;
+    return result;
+  }
+
+  CapTableHoldingInput._();
+
+  factory CapTableHoldingInput.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CapTableHoldingInput.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CapTableHoldingInput', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'entityId')
+    ..aOS(2, _omitFieldNames ? '' : 'companyName')
+    ..aOS(3, _omitFieldNames ? '' : 'instrumentType')
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'shares', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'strikePriceUsd', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'lastPricedPriceUsd', $pb.PbFieldType.OD)
+    ..aOS(7, _omitFieldNames ? '' : 'lastPricedAtIso')
+    ..aOS(8, _omitFieldNames ? '' : 'notes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CapTableHoldingInput clone() => CapTableHoldingInput()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CapTableHoldingInput copyWith(void Function(CapTableHoldingInput) updates) => super.copyWith((message) => updates(message as CapTableHoldingInput)) as CapTableHoldingInput;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CapTableHoldingInput create() => CapTableHoldingInput._();
+  @$core.override
+  CapTableHoldingInput createEmptyInstance() => create();
+  static $pb.PbList<CapTableHoldingInput> createRepeated() => $pb.PbList<CapTableHoldingInput>();
+  @$core.pragma('dart2js:noInline')
+  static CapTableHoldingInput getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CapTableHoldingInput>(create);
+  static CapTableHoldingInput? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get entityId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set entityId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEntityId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEntityId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get companyName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set companyName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCompanyName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCompanyName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get instrumentType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set instrumentType($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasInstrumentType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearInstrumentType() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get shares => $_getN(3);
+  @$pb.TagNumber(4)
+  set shares($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasShares() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearShares() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get strikePriceUsd => $_getN(4);
+  @$pb.TagNumber(5)
+  set strikePriceUsd($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStrikePriceUsd() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStrikePriceUsd() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get lastPricedPriceUsd => $_getN(5);
+  @$pb.TagNumber(6)
+  set lastPricedPriceUsd($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLastPricedPriceUsd() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLastPricedPriceUsd() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get lastPricedAtIso => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set lastPricedAtIso($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLastPricedAtIso() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLastPricedAtIso() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get notes => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set notes($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNotes() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNotes() => $_clearField(8);
+}
+
+class CreateCapTableHoldingRequest extends $pb.GeneratedMessage {
+  factory CreateCapTableHoldingRequest({
+    CapTableHoldingInput? input,
+  }) {
+    final result = create();
+    if (input != null) result.input = input;
+    return result;
+  }
+
+  CreateCapTableHoldingRequest._();
+
+  factory CreateCapTableHoldingRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateCapTableHoldingRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateCapTableHoldingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOM<CapTableHoldingInput>(1, _omitFieldNames ? '' : 'input', subBuilder: CapTableHoldingInput.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateCapTableHoldingRequest clone() => CreateCapTableHoldingRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateCapTableHoldingRequest copyWith(void Function(CreateCapTableHoldingRequest) updates) => super.copyWith((message) => updates(message as CreateCapTableHoldingRequest)) as CreateCapTableHoldingRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateCapTableHoldingRequest create() => CreateCapTableHoldingRequest._();
+  @$core.override
+  CreateCapTableHoldingRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateCapTableHoldingRequest> createRepeated() => $pb.PbList<CreateCapTableHoldingRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateCapTableHoldingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateCapTableHoldingRequest>(create);
+  static CreateCapTableHoldingRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CapTableHoldingInput get input => $_getN(0);
+  @$pb.TagNumber(1)
+  set input(CapTableHoldingInput value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasInput() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInput() => $_clearField(1);
+  @$pb.TagNumber(1)
+  CapTableHoldingInput ensureInput() => $_ensure(0);
+}
+
+class CreateCapTableHoldingResponse extends $pb.GeneratedMessage {
+  factory CreateCapTableHoldingResponse({
+    CapTableHolding? holding,
+  }) {
+    final result = create();
+    if (holding != null) result.holding = holding;
+    return result;
+  }
+
+  CreateCapTableHoldingResponse._();
+
+  factory CreateCapTableHoldingResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateCapTableHoldingResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateCapTableHoldingResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOM<CapTableHolding>(1, _omitFieldNames ? '' : 'holding', subBuilder: CapTableHolding.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateCapTableHoldingResponse clone() => CreateCapTableHoldingResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateCapTableHoldingResponse copyWith(void Function(CreateCapTableHoldingResponse) updates) => super.copyWith((message) => updates(message as CreateCapTableHoldingResponse)) as CreateCapTableHoldingResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateCapTableHoldingResponse create() => CreateCapTableHoldingResponse._();
+  @$core.override
+  CreateCapTableHoldingResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateCapTableHoldingResponse> createRepeated() => $pb.PbList<CreateCapTableHoldingResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateCapTableHoldingResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateCapTableHoldingResponse>(create);
+  static CreateCapTableHoldingResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CapTableHolding get holding => $_getN(0);
+  @$pb.TagNumber(1)
+  set holding(CapTableHolding value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasHolding() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHolding() => $_clearField(1);
+  @$pb.TagNumber(1)
+  CapTableHolding ensureHolding() => $_ensure(0);
+}
+
+class UpdateCapTableHoldingRequest extends $pb.GeneratedMessage {
+  factory UpdateCapTableHoldingRequest({
+    $core.String? id,
+    CapTableHoldingInput? input,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (input != null) result.input = input;
+    return result;
+  }
+
+  UpdateCapTableHoldingRequest._();
+
+  factory UpdateCapTableHoldingRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateCapTableHoldingRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateCapTableHoldingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOM<CapTableHoldingInput>(2, _omitFieldNames ? '' : 'input', subBuilder: CapTableHoldingInput.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateCapTableHoldingRequest clone() => UpdateCapTableHoldingRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateCapTableHoldingRequest copyWith(void Function(UpdateCapTableHoldingRequest) updates) => super.copyWith((message) => updates(message as UpdateCapTableHoldingRequest)) as UpdateCapTableHoldingRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateCapTableHoldingRequest create() => UpdateCapTableHoldingRequest._();
+  @$core.override
+  UpdateCapTableHoldingRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateCapTableHoldingRequest> createRepeated() => $pb.PbList<UpdateCapTableHoldingRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateCapTableHoldingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateCapTableHoldingRequest>(create);
+  static UpdateCapTableHoldingRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  CapTableHoldingInput get input => $_getN(1);
+  @$pb.TagNumber(2)
+  set input(CapTableHoldingInput value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasInput() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearInput() => $_clearField(2);
+  @$pb.TagNumber(2)
+  CapTableHoldingInput ensureInput() => $_ensure(1);
+}
+
+class UpdateCapTableHoldingResponse extends $pb.GeneratedMessage {
+  factory UpdateCapTableHoldingResponse({
+    CapTableHolding? holding,
+  }) {
+    final result = create();
+    if (holding != null) result.holding = holding;
+    return result;
+  }
+
+  UpdateCapTableHoldingResponse._();
+
+  factory UpdateCapTableHoldingResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateCapTableHoldingResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateCapTableHoldingResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOM<CapTableHolding>(1, _omitFieldNames ? '' : 'holding', subBuilder: CapTableHolding.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateCapTableHoldingResponse clone() => UpdateCapTableHoldingResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateCapTableHoldingResponse copyWith(void Function(UpdateCapTableHoldingResponse) updates) => super.copyWith((message) => updates(message as UpdateCapTableHoldingResponse)) as UpdateCapTableHoldingResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateCapTableHoldingResponse create() => UpdateCapTableHoldingResponse._();
+  @$core.override
+  UpdateCapTableHoldingResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateCapTableHoldingResponse> createRepeated() => $pb.PbList<UpdateCapTableHoldingResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateCapTableHoldingResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateCapTableHoldingResponse>(create);
+  static UpdateCapTableHoldingResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CapTableHolding get holding => $_getN(0);
+  @$pb.TagNumber(1)
+  set holding(CapTableHolding value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasHolding() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHolding() => $_clearField(1);
+  @$pb.TagNumber(1)
+  CapTableHolding ensureHolding() => $_ensure(0);
+}
+
+class DeleteCapTableHoldingRequest extends $pb.GeneratedMessage {
+  factory DeleteCapTableHoldingRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  DeleteCapTableHoldingRequest._();
+
+  factory DeleteCapTableHoldingRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteCapTableHoldingRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteCapTableHoldingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteCapTableHoldingRequest clone() => DeleteCapTableHoldingRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteCapTableHoldingRequest copyWith(void Function(DeleteCapTableHoldingRequest) updates) => super.copyWith((message) => updates(message as DeleteCapTableHoldingRequest)) as DeleteCapTableHoldingRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteCapTableHoldingRequest create() => DeleteCapTableHoldingRequest._();
+  @$core.override
+  DeleteCapTableHoldingRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteCapTableHoldingRequest> createRepeated() => $pb.PbList<DeleteCapTableHoldingRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteCapTableHoldingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteCapTableHoldingRequest>(create);
+  static DeleteCapTableHoldingRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class DeleteCapTableHoldingResponse extends $pb.GeneratedMessage {
+  factory DeleteCapTableHoldingResponse() => create();
+
+  DeleteCapTableHoldingResponse._();
+
+  factory DeleteCapTableHoldingResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteCapTableHoldingResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteCapTableHoldingResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteCapTableHoldingResponse clone() => DeleteCapTableHoldingResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteCapTableHoldingResponse copyWith(void Function(DeleteCapTableHoldingResponse) updates) => super.copyWith((message) => updates(message as DeleteCapTableHoldingResponse)) as DeleteCapTableHoldingResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteCapTableHoldingResponse create() => DeleteCapTableHoldingResponse._();
+  @$core.override
+  DeleteCapTableHoldingResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteCapTableHoldingResponse> createRepeated() => $pb.PbList<DeleteCapTableHoldingResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteCapTableHoldingResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteCapTableHoldingResponse>(create);
+  static DeleteCapTableHoldingResponse? _defaultInstance;
+}
+
+/// One (user, provider) OAuth connection — Carta / Pulley / AngelList.
+/// status: needs_auth | connected | disconnected.
+class CapTableConnection extends $pb.GeneratedMessage {
+  factory CapTableConnection({
+    $core.String? provider,
+    $core.String? status,
+    $fixnum.Int64? lastSyncedAt,
+  }) {
+    final result = create();
+    if (provider != null) result.provider = provider;
+    if (status != null) result.status = status;
+    if (lastSyncedAt != null) result.lastSyncedAt = lastSyncedAt;
+    return result;
+  }
+
+  CapTableConnection._();
+
+  factory CapTableConnection.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CapTableConnection.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CapTableConnection', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'provider')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aInt64(3, _omitFieldNames ? '' : 'lastSyncedAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CapTableConnection clone() => CapTableConnection()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CapTableConnection copyWith(void Function(CapTableConnection) updates) => super.copyWith((message) => updates(message as CapTableConnection)) as CapTableConnection;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CapTableConnection create() => CapTableConnection._();
+  @$core.override
+  CapTableConnection createEmptyInstance() => create();
+  static $pb.PbList<CapTableConnection> createRepeated() => $pb.PbList<CapTableConnection>();
+  @$core.pragma('dart2js:noInline')
+  static CapTableConnection getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CapTableConnection>(create);
+  static CapTableConnection? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get provider => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set provider($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProvider() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProvider() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get lastSyncedAt => $_getI64(2);
+  @$pb.TagNumber(3)
+  set lastSyncedAt($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLastSyncedAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLastSyncedAt() => $_clearField(3);
+}
+
+class ListCapTableConnectionsRequest extends $pb.GeneratedMessage {
+  factory ListCapTableConnectionsRequest() => create();
+
+  ListCapTableConnectionsRequest._();
+
+  factory ListCapTableConnectionsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListCapTableConnectionsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCapTableConnectionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCapTableConnectionsRequest clone() => ListCapTableConnectionsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCapTableConnectionsRequest copyWith(void Function(ListCapTableConnectionsRequest) updates) => super.copyWith((message) => updates(message as ListCapTableConnectionsRequest)) as ListCapTableConnectionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListCapTableConnectionsRequest create() => ListCapTableConnectionsRequest._();
+  @$core.override
+  ListCapTableConnectionsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListCapTableConnectionsRequest> createRepeated() => $pb.PbList<ListCapTableConnectionsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListCapTableConnectionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListCapTableConnectionsRequest>(create);
+  static ListCapTableConnectionsRequest? _defaultInstance;
+}
+
+class ListCapTableConnectionsResponse extends $pb.GeneratedMessage {
+  factory ListCapTableConnectionsResponse({
+    $core.Iterable<CapTableConnection>? connections,
+  }) {
+    final result = create();
+    if (connections != null) result.connections.addAll(connections);
+    return result;
+  }
+
+  ListCapTableConnectionsResponse._();
+
+  factory ListCapTableConnectionsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListCapTableConnectionsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCapTableConnectionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..pc<CapTableConnection>(1, _omitFieldNames ? '' : 'connections', $pb.PbFieldType.PM, subBuilder: CapTableConnection.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCapTableConnectionsResponse clone() => ListCapTableConnectionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCapTableConnectionsResponse copyWith(void Function(ListCapTableConnectionsResponse) updates) => super.copyWith((message) => updates(message as ListCapTableConnectionsResponse)) as ListCapTableConnectionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListCapTableConnectionsResponse create() => ListCapTableConnectionsResponse._();
+  @$core.override
+  ListCapTableConnectionsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListCapTableConnectionsResponse> createRepeated() => $pb.PbList<ListCapTableConnectionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListCapTableConnectionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListCapTableConnectionsResponse>(create);
+  static ListCapTableConnectionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<CapTableConnection> get connections => $_getList(0);
+}
+
+class SetCapTableConnectionStatusRequest extends $pb.GeneratedMessage {
+  factory SetCapTableConnectionStatusRequest({
+    $core.String? provider,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (provider != null) result.provider = provider;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  SetCapTableConnectionStatusRequest._();
+
+  factory SetCapTableConnectionStatusRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SetCapTableConnectionStatusRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetCapTableConnectionStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'provider')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetCapTableConnectionStatusRequest clone() => SetCapTableConnectionStatusRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetCapTableConnectionStatusRequest copyWith(void Function(SetCapTableConnectionStatusRequest) updates) => super.copyWith((message) => updates(message as SetCapTableConnectionStatusRequest)) as SetCapTableConnectionStatusRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetCapTableConnectionStatusRequest create() => SetCapTableConnectionStatusRequest._();
+  @$core.override
+  SetCapTableConnectionStatusRequest createEmptyInstance() => create();
+  static $pb.PbList<SetCapTableConnectionStatusRequest> createRepeated() => $pb.PbList<SetCapTableConnectionStatusRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetCapTableConnectionStatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetCapTableConnectionStatusRequest>(create);
+  static SetCapTableConnectionStatusRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get provider => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set provider($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProvider() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProvider() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+}
+
+class SetCapTableConnectionStatusResponse extends $pb.GeneratedMessage {
+  factory SetCapTableConnectionStatusResponse({
+    CapTableConnection? connection,
+  }) {
+    final result = create();
+    if (connection != null) result.connection = connection;
+    return result;
+  }
+
+  SetCapTableConnectionStatusResponse._();
+
+  factory SetCapTableConnectionStatusResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SetCapTableConnectionStatusResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetCapTableConnectionStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOM<CapTableConnection>(1, _omitFieldNames ? '' : 'connection', subBuilder: CapTableConnection.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetCapTableConnectionStatusResponse clone() => SetCapTableConnectionStatusResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetCapTableConnectionStatusResponse copyWith(void Function(SetCapTableConnectionStatusResponse) updates) => super.copyWith((message) => updates(message as SetCapTableConnectionStatusResponse)) as SetCapTableConnectionStatusResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetCapTableConnectionStatusResponse create() => SetCapTableConnectionStatusResponse._();
+  @$core.override
+  SetCapTableConnectionStatusResponse createEmptyInstance() => create();
+  static $pb.PbList<SetCapTableConnectionStatusResponse> createRepeated() => $pb.PbList<SetCapTableConnectionStatusResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetCapTableConnectionStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetCapTableConnectionStatusResponse>(create);
+  static SetCapTableConnectionStatusResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CapTableConnection get connection => $_getN(0);
+  @$pb.TagNumber(1)
+  set connection(CapTableConnection value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConnection() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConnection() => $_clearField(1);
+  @$pb.TagNumber(1)
+  CapTableConnection ensureConnection() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

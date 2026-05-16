@@ -2671,3 +2671,701 @@ export class ListLatestFxRatesResponse extends Message<ListLatestFxRatesResponse
   }
 }
 
+/**
+ * @generated from message sttattus.vault.v1.CapTableHolding
+ */
+export class CapTableHolding extends Message<CapTableHolding> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * empty when unscoped
+   *
+   * @generated from field: string entity_id = 2;
+   */
+  entityId = "";
+
+  /**
+   * @generated from field: string company_name = 3;
+   */
+  companyName = "";
+
+  /**
+   * common | preferred | safe | convertible_note | option | rsu | warrant
+   *
+   * @generated from field: string instrument_type = 4;
+   */
+  instrumentType = "";
+
+  /**
+   * @generated from field: double shares = 5;
+   */
+  shares = 0;
+
+  /**
+   * @generated from field: double strike_price_usd = 6;
+   */
+  strikePriceUsd = 0;
+
+  /**
+   * @generated from field: double last_priced_price_usd = 7;
+   */
+  lastPricedPriceUsd = 0;
+
+  /**
+   * YYYY-MM-DD; empty when never priced
+   *
+   * @generated from field: string last_priced_at_iso = 8;
+   */
+  lastPricedAtIso = "";
+
+  /**
+   * manual | carta | pulley | angellist
+   *
+   * @generated from field: string source = 9;
+   */
+  source = "";
+
+  /**
+   * empty for manual rows
+   *
+   * @generated from field: string external_id = 10;
+   */
+  externalId = "";
+
+  /**
+   * @generated from field: string notes = 11;
+   */
+  notes = "";
+
+  /**
+   * Derived: shares * last_priced_price_usd
+   *
+   * @generated from field: double position_value_usd = 12;
+   */
+  positionValueUsd = 0;
+
+  constructor(data?: PartialMessage<CapTableHolding>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.CapTableHolding";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "entity_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "company_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "instrument_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "shares", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "strike_price_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "last_priced_price_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "last_priced_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "external_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "position_value_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CapTableHolding {
+    return new CapTableHolding().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CapTableHolding {
+    return new CapTableHolding().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CapTableHolding {
+    return new CapTableHolding().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CapTableHolding | PlainMessage<CapTableHolding> | undefined, b: CapTableHolding | PlainMessage<CapTableHolding> | undefined): boolean {
+    return proto3.util.equals(CapTableHolding, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListCapTableHoldingsRequest
+ */
+export class ListCapTableHoldingsRequest extends Message<ListCapTableHoldingsRequest> {
+  constructor(data?: PartialMessage<ListCapTableHoldingsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListCapTableHoldingsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListCapTableHoldingsRequest {
+    return new ListCapTableHoldingsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListCapTableHoldingsRequest {
+    return new ListCapTableHoldingsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListCapTableHoldingsRequest {
+    return new ListCapTableHoldingsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListCapTableHoldingsRequest | PlainMessage<ListCapTableHoldingsRequest> | undefined, b: ListCapTableHoldingsRequest | PlainMessage<ListCapTableHoldingsRequest> | undefined): boolean {
+    return proto3.util.equals(ListCapTableHoldingsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListCapTableHoldingsResponse
+ */
+export class ListCapTableHoldingsResponse extends Message<ListCapTableHoldingsResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.CapTableHolding holdings = 1;
+   */
+  holdings: CapTableHolding[] = [];
+
+  /**
+   * Sum of position_value_usd across all rows.
+   *
+   * @generated from field: double total_value_usd = 2;
+   */
+  totalValueUsd = 0;
+
+  constructor(data?: PartialMessage<ListCapTableHoldingsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListCapTableHoldingsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "holdings", kind: "message", T: CapTableHolding, repeated: true },
+    { no: 2, name: "total_value_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListCapTableHoldingsResponse {
+    return new ListCapTableHoldingsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListCapTableHoldingsResponse {
+    return new ListCapTableHoldingsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListCapTableHoldingsResponse {
+    return new ListCapTableHoldingsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListCapTableHoldingsResponse | PlainMessage<ListCapTableHoldingsResponse> | undefined, b: ListCapTableHoldingsResponse | PlainMessage<ListCapTableHoldingsResponse> | undefined): boolean {
+    return proto3.util.equals(ListCapTableHoldingsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.CapTableHoldingInput
+ */
+export class CapTableHoldingInput extends Message<CapTableHoldingInput> {
+  /**
+   * empty when unscoped
+   *
+   * @generated from field: string entity_id = 1;
+   */
+  entityId = "";
+
+  /**
+   * @generated from field: string company_name = 2;
+   */
+  companyName = "";
+
+  /**
+   * @generated from field: string instrument_type = 3;
+   */
+  instrumentType = "";
+
+  /**
+   * @generated from field: double shares = 4;
+   */
+  shares = 0;
+
+  /**
+   * @generated from field: double strike_price_usd = 5;
+   */
+  strikePriceUsd = 0;
+
+  /**
+   * @generated from field: double last_priced_price_usd = 6;
+   */
+  lastPricedPriceUsd = 0;
+
+  /**
+   * YYYY-MM-DD; empty when never priced
+   *
+   * @generated from field: string last_priced_at_iso = 7;
+   */
+  lastPricedAtIso = "";
+
+  /**
+   * @generated from field: string notes = 8;
+   */
+  notes = "";
+
+  constructor(data?: PartialMessage<CapTableHoldingInput>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.CapTableHoldingInput";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entity_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "company_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "instrument_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "shares", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "strike_price_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "last_priced_price_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "last_priced_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CapTableHoldingInput {
+    return new CapTableHoldingInput().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CapTableHoldingInput {
+    return new CapTableHoldingInput().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CapTableHoldingInput {
+    return new CapTableHoldingInput().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CapTableHoldingInput | PlainMessage<CapTableHoldingInput> | undefined, b: CapTableHoldingInput | PlainMessage<CapTableHoldingInput> | undefined): boolean {
+    return proto3.util.equals(CapTableHoldingInput, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.CreateCapTableHoldingRequest
+ */
+export class CreateCapTableHoldingRequest extends Message<CreateCapTableHoldingRequest> {
+  /**
+   * @generated from field: sttattus.vault.v1.CapTableHoldingInput input = 1;
+   */
+  input?: CapTableHoldingInput;
+
+  constructor(data?: PartialMessage<CreateCapTableHoldingRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.CreateCapTableHoldingRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "input", kind: "message", T: CapTableHoldingInput },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateCapTableHoldingRequest {
+    return new CreateCapTableHoldingRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateCapTableHoldingRequest {
+    return new CreateCapTableHoldingRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateCapTableHoldingRequest {
+    return new CreateCapTableHoldingRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateCapTableHoldingRequest | PlainMessage<CreateCapTableHoldingRequest> | undefined, b: CreateCapTableHoldingRequest | PlainMessage<CreateCapTableHoldingRequest> | undefined): boolean {
+    return proto3.util.equals(CreateCapTableHoldingRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.CreateCapTableHoldingResponse
+ */
+export class CreateCapTableHoldingResponse extends Message<CreateCapTableHoldingResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.CapTableHolding holding = 1;
+   */
+  holding?: CapTableHolding;
+
+  constructor(data?: PartialMessage<CreateCapTableHoldingResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.CreateCapTableHoldingResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "holding", kind: "message", T: CapTableHolding },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateCapTableHoldingResponse {
+    return new CreateCapTableHoldingResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateCapTableHoldingResponse {
+    return new CreateCapTableHoldingResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateCapTableHoldingResponse {
+    return new CreateCapTableHoldingResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateCapTableHoldingResponse | PlainMessage<CreateCapTableHoldingResponse> | undefined, b: CreateCapTableHoldingResponse | PlainMessage<CreateCapTableHoldingResponse> | undefined): boolean {
+    return proto3.util.equals(CreateCapTableHoldingResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.UpdateCapTableHoldingRequest
+ */
+export class UpdateCapTableHoldingRequest extends Message<UpdateCapTableHoldingRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: sttattus.vault.v1.CapTableHoldingInput input = 2;
+   */
+  input?: CapTableHoldingInput;
+
+  constructor(data?: PartialMessage<UpdateCapTableHoldingRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.UpdateCapTableHoldingRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "input", kind: "message", T: CapTableHoldingInput },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateCapTableHoldingRequest {
+    return new UpdateCapTableHoldingRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateCapTableHoldingRequest {
+    return new UpdateCapTableHoldingRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateCapTableHoldingRequest {
+    return new UpdateCapTableHoldingRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateCapTableHoldingRequest | PlainMessage<UpdateCapTableHoldingRequest> | undefined, b: UpdateCapTableHoldingRequest | PlainMessage<UpdateCapTableHoldingRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateCapTableHoldingRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.UpdateCapTableHoldingResponse
+ */
+export class UpdateCapTableHoldingResponse extends Message<UpdateCapTableHoldingResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.CapTableHolding holding = 1;
+   */
+  holding?: CapTableHolding;
+
+  constructor(data?: PartialMessage<UpdateCapTableHoldingResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.UpdateCapTableHoldingResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "holding", kind: "message", T: CapTableHolding },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateCapTableHoldingResponse {
+    return new UpdateCapTableHoldingResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateCapTableHoldingResponse {
+    return new UpdateCapTableHoldingResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateCapTableHoldingResponse {
+    return new UpdateCapTableHoldingResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateCapTableHoldingResponse | PlainMessage<UpdateCapTableHoldingResponse> | undefined, b: UpdateCapTableHoldingResponse | PlainMessage<UpdateCapTableHoldingResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateCapTableHoldingResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.DeleteCapTableHoldingRequest
+ */
+export class DeleteCapTableHoldingRequest extends Message<DeleteCapTableHoldingRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  constructor(data?: PartialMessage<DeleteCapTableHoldingRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.DeleteCapTableHoldingRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteCapTableHoldingRequest {
+    return new DeleteCapTableHoldingRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteCapTableHoldingRequest {
+    return new DeleteCapTableHoldingRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteCapTableHoldingRequest {
+    return new DeleteCapTableHoldingRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteCapTableHoldingRequest | PlainMessage<DeleteCapTableHoldingRequest> | undefined, b: DeleteCapTableHoldingRequest | PlainMessage<DeleteCapTableHoldingRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteCapTableHoldingRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.DeleteCapTableHoldingResponse
+ */
+export class DeleteCapTableHoldingResponse extends Message<DeleteCapTableHoldingResponse> {
+  constructor(data?: PartialMessage<DeleteCapTableHoldingResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.DeleteCapTableHoldingResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteCapTableHoldingResponse {
+    return new DeleteCapTableHoldingResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteCapTableHoldingResponse {
+    return new DeleteCapTableHoldingResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteCapTableHoldingResponse {
+    return new DeleteCapTableHoldingResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteCapTableHoldingResponse | PlainMessage<DeleteCapTableHoldingResponse> | undefined, b: DeleteCapTableHoldingResponse | PlainMessage<DeleteCapTableHoldingResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteCapTableHoldingResponse, a, b);
+  }
+}
+
+/**
+ * One (user, provider) OAuth connection — Carta / Pulley / AngelList.
+ * status: needs_auth | connected | disconnected.
+ *
+ * @generated from message sttattus.vault.v1.CapTableConnection
+ */
+export class CapTableConnection extends Message<CapTableConnection> {
+  /**
+   * @generated from field: string provider = 1;
+   */
+  provider = "";
+
+  /**
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * unix seconds, 0 when never synced
+   *
+   * @generated from field: int64 last_synced_at = 3;
+   */
+  lastSyncedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<CapTableConnection>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.CapTableConnection";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "provider", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "last_synced_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CapTableConnection {
+    return new CapTableConnection().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CapTableConnection {
+    return new CapTableConnection().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CapTableConnection {
+    return new CapTableConnection().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CapTableConnection | PlainMessage<CapTableConnection> | undefined, b: CapTableConnection | PlainMessage<CapTableConnection> | undefined): boolean {
+    return proto3.util.equals(CapTableConnection, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListCapTableConnectionsRequest
+ */
+export class ListCapTableConnectionsRequest extends Message<ListCapTableConnectionsRequest> {
+  constructor(data?: PartialMessage<ListCapTableConnectionsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListCapTableConnectionsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListCapTableConnectionsRequest {
+    return new ListCapTableConnectionsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListCapTableConnectionsRequest {
+    return new ListCapTableConnectionsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListCapTableConnectionsRequest {
+    return new ListCapTableConnectionsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListCapTableConnectionsRequest | PlainMessage<ListCapTableConnectionsRequest> | undefined, b: ListCapTableConnectionsRequest | PlainMessage<ListCapTableConnectionsRequest> | undefined): boolean {
+    return proto3.util.equals(ListCapTableConnectionsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListCapTableConnectionsResponse
+ */
+export class ListCapTableConnectionsResponse extends Message<ListCapTableConnectionsResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.CapTableConnection connections = 1;
+   */
+  connections: CapTableConnection[] = [];
+
+  constructor(data?: PartialMessage<ListCapTableConnectionsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListCapTableConnectionsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "connections", kind: "message", T: CapTableConnection, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListCapTableConnectionsResponse {
+    return new ListCapTableConnectionsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListCapTableConnectionsResponse {
+    return new ListCapTableConnectionsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListCapTableConnectionsResponse {
+    return new ListCapTableConnectionsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListCapTableConnectionsResponse | PlainMessage<ListCapTableConnectionsResponse> | undefined, b: ListCapTableConnectionsResponse | PlainMessage<ListCapTableConnectionsResponse> | undefined): boolean {
+    return proto3.util.equals(ListCapTableConnectionsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SetCapTableConnectionStatusRequest
+ */
+export class SetCapTableConnectionStatusRequest extends Message<SetCapTableConnectionStatusRequest> {
+  /**
+   * @generated from field: string provider = 1;
+   */
+  provider = "";
+
+  /**
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<SetCapTableConnectionStatusRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SetCapTableConnectionStatusRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "provider", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetCapTableConnectionStatusRequest {
+    return new SetCapTableConnectionStatusRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetCapTableConnectionStatusRequest {
+    return new SetCapTableConnectionStatusRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetCapTableConnectionStatusRequest {
+    return new SetCapTableConnectionStatusRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetCapTableConnectionStatusRequest | PlainMessage<SetCapTableConnectionStatusRequest> | undefined, b: SetCapTableConnectionStatusRequest | PlainMessage<SetCapTableConnectionStatusRequest> | undefined): boolean {
+    return proto3.util.equals(SetCapTableConnectionStatusRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SetCapTableConnectionStatusResponse
+ */
+export class SetCapTableConnectionStatusResponse extends Message<SetCapTableConnectionStatusResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.CapTableConnection connection = 1;
+   */
+  connection?: CapTableConnection;
+
+  constructor(data?: PartialMessage<SetCapTableConnectionStatusResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SetCapTableConnectionStatusResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "connection", kind: "message", T: CapTableConnection },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetCapTableConnectionStatusResponse {
+    return new SetCapTableConnectionStatusResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetCapTableConnectionStatusResponse {
+    return new SetCapTableConnectionStatusResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetCapTableConnectionStatusResponse {
+    return new SetCapTableConnectionStatusResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetCapTableConnectionStatusResponse | PlainMessage<SetCapTableConnectionStatusResponse> | undefined, b: SetCapTableConnectionStatusResponse | PlainMessage<SetCapTableConnectionStatusResponse> | undefined): boolean {
+    return proto3.util.equals(SetCapTableConnectionStatusResponse, a, b);
+  }
+}
+

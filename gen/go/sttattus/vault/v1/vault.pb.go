@@ -3183,6 +3183,832 @@ func (x *ListLatestFxRatesResponse) GetRates() []*FxRate {
 	return nil
 }
 
+type CapTableHolding struct {
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	EntityId    string                 `protobuf:"bytes,2,opt,name=entity_id,json=entityId,proto3" json:"entity_id,omitempty"` // empty when unscoped
+	CompanyName string                 `protobuf:"bytes,3,opt,name=company_name,json=companyName,proto3" json:"company_name,omitempty"`
+	// common | preferred | safe | convertible_note | option | rsu | warrant
+	InstrumentType     string  `protobuf:"bytes,4,opt,name=instrument_type,json=instrumentType,proto3" json:"instrument_type,omitempty"`
+	Shares             float64 `protobuf:"fixed64,5,opt,name=shares,proto3" json:"shares,omitempty"`
+	StrikePriceUsd     float64 `protobuf:"fixed64,6,opt,name=strike_price_usd,json=strikePriceUsd,proto3" json:"strike_price_usd,omitempty"`
+	LastPricedPriceUsd float64 `protobuf:"fixed64,7,opt,name=last_priced_price_usd,json=lastPricedPriceUsd,proto3" json:"last_priced_price_usd,omitempty"`
+	LastPricedAtIso    string  `protobuf:"bytes,8,opt,name=last_priced_at_iso,json=lastPricedAtIso,proto3" json:"last_priced_at_iso,omitempty"` // YYYY-MM-DD; empty when never priced
+	// manual | carta | pulley | angellist
+	Source     string `protobuf:"bytes,9,opt,name=source,proto3" json:"source,omitempty"`
+	ExternalId string `protobuf:"bytes,10,opt,name=external_id,json=externalId,proto3" json:"external_id,omitempty"` // empty for manual rows
+	Notes      string `protobuf:"bytes,11,opt,name=notes,proto3" json:"notes,omitempty"`
+	// Derived: shares * last_priced_price_usd
+	PositionValueUsd float64 `protobuf:"fixed64,12,opt,name=position_value_usd,json=positionValueUsd,proto3" json:"position_value_usd,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *CapTableHolding) Reset() {
+	*x = CapTableHolding{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[58]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CapTableHolding) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CapTableHolding) ProtoMessage() {}
+
+func (x *CapTableHolding) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[58]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CapTableHolding.ProtoReflect.Descriptor instead.
+func (*CapTableHolding) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{58}
+}
+
+func (x *CapTableHolding) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CapTableHolding) GetEntityId() string {
+	if x != nil {
+		return x.EntityId
+	}
+	return ""
+}
+
+func (x *CapTableHolding) GetCompanyName() string {
+	if x != nil {
+		return x.CompanyName
+	}
+	return ""
+}
+
+func (x *CapTableHolding) GetInstrumentType() string {
+	if x != nil {
+		return x.InstrumentType
+	}
+	return ""
+}
+
+func (x *CapTableHolding) GetShares() float64 {
+	if x != nil {
+		return x.Shares
+	}
+	return 0
+}
+
+func (x *CapTableHolding) GetStrikePriceUsd() float64 {
+	if x != nil {
+		return x.StrikePriceUsd
+	}
+	return 0
+}
+
+func (x *CapTableHolding) GetLastPricedPriceUsd() float64 {
+	if x != nil {
+		return x.LastPricedPriceUsd
+	}
+	return 0
+}
+
+func (x *CapTableHolding) GetLastPricedAtIso() string {
+	if x != nil {
+		return x.LastPricedAtIso
+	}
+	return ""
+}
+
+func (x *CapTableHolding) GetSource() string {
+	if x != nil {
+		return x.Source
+	}
+	return ""
+}
+
+func (x *CapTableHolding) GetExternalId() string {
+	if x != nil {
+		return x.ExternalId
+	}
+	return ""
+}
+
+func (x *CapTableHolding) GetNotes() string {
+	if x != nil {
+		return x.Notes
+	}
+	return ""
+}
+
+func (x *CapTableHolding) GetPositionValueUsd() float64 {
+	if x != nil {
+		return x.PositionValueUsd
+	}
+	return 0
+}
+
+type ListCapTableHoldingsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListCapTableHoldingsRequest) Reset() {
+	*x = ListCapTableHoldingsRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[59]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListCapTableHoldingsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListCapTableHoldingsRequest) ProtoMessage() {}
+
+func (x *ListCapTableHoldingsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[59]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListCapTableHoldingsRequest.ProtoReflect.Descriptor instead.
+func (*ListCapTableHoldingsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{59}
+}
+
+type ListCapTableHoldingsResponse struct {
+	state    protoimpl.MessageState `protogen:"open.v1"`
+	Holdings []*CapTableHolding     `protobuf:"bytes,1,rep,name=holdings,proto3" json:"holdings,omitempty"`
+	// Sum of position_value_usd across all rows.
+	TotalValueUsd float64 `protobuf:"fixed64,2,opt,name=total_value_usd,json=totalValueUsd,proto3" json:"total_value_usd,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListCapTableHoldingsResponse) Reset() {
+	*x = ListCapTableHoldingsResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[60]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListCapTableHoldingsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListCapTableHoldingsResponse) ProtoMessage() {}
+
+func (x *ListCapTableHoldingsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[60]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListCapTableHoldingsResponse.ProtoReflect.Descriptor instead.
+func (*ListCapTableHoldingsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{60}
+}
+
+func (x *ListCapTableHoldingsResponse) GetHoldings() []*CapTableHolding {
+	if x != nil {
+		return x.Holdings
+	}
+	return nil
+}
+
+func (x *ListCapTableHoldingsResponse) GetTotalValueUsd() float64 {
+	if x != nil {
+		return x.TotalValueUsd
+	}
+	return 0
+}
+
+type CapTableHoldingInput struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	EntityId           string                 `protobuf:"bytes,1,opt,name=entity_id,json=entityId,proto3" json:"entity_id,omitempty"` // empty when unscoped
+	CompanyName        string                 `protobuf:"bytes,2,opt,name=company_name,json=companyName,proto3" json:"company_name,omitempty"`
+	InstrumentType     string                 `protobuf:"bytes,3,opt,name=instrument_type,json=instrumentType,proto3" json:"instrument_type,omitempty"`
+	Shares             float64                `protobuf:"fixed64,4,opt,name=shares,proto3" json:"shares,omitempty"`
+	StrikePriceUsd     float64                `protobuf:"fixed64,5,opt,name=strike_price_usd,json=strikePriceUsd,proto3" json:"strike_price_usd,omitempty"`
+	LastPricedPriceUsd float64                `protobuf:"fixed64,6,opt,name=last_priced_price_usd,json=lastPricedPriceUsd,proto3" json:"last_priced_price_usd,omitempty"`
+	LastPricedAtIso    string                 `protobuf:"bytes,7,opt,name=last_priced_at_iso,json=lastPricedAtIso,proto3" json:"last_priced_at_iso,omitempty"` // YYYY-MM-DD; empty when never priced
+	Notes              string                 `protobuf:"bytes,8,opt,name=notes,proto3" json:"notes,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *CapTableHoldingInput) Reset() {
+	*x = CapTableHoldingInput{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[61]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CapTableHoldingInput) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CapTableHoldingInput) ProtoMessage() {}
+
+func (x *CapTableHoldingInput) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[61]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CapTableHoldingInput.ProtoReflect.Descriptor instead.
+func (*CapTableHoldingInput) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{61}
+}
+
+func (x *CapTableHoldingInput) GetEntityId() string {
+	if x != nil {
+		return x.EntityId
+	}
+	return ""
+}
+
+func (x *CapTableHoldingInput) GetCompanyName() string {
+	if x != nil {
+		return x.CompanyName
+	}
+	return ""
+}
+
+func (x *CapTableHoldingInput) GetInstrumentType() string {
+	if x != nil {
+		return x.InstrumentType
+	}
+	return ""
+}
+
+func (x *CapTableHoldingInput) GetShares() float64 {
+	if x != nil {
+		return x.Shares
+	}
+	return 0
+}
+
+func (x *CapTableHoldingInput) GetStrikePriceUsd() float64 {
+	if x != nil {
+		return x.StrikePriceUsd
+	}
+	return 0
+}
+
+func (x *CapTableHoldingInput) GetLastPricedPriceUsd() float64 {
+	if x != nil {
+		return x.LastPricedPriceUsd
+	}
+	return 0
+}
+
+func (x *CapTableHoldingInput) GetLastPricedAtIso() string {
+	if x != nil {
+		return x.LastPricedAtIso
+	}
+	return ""
+}
+
+func (x *CapTableHoldingInput) GetNotes() string {
+	if x != nil {
+		return x.Notes
+	}
+	return ""
+}
+
+type CreateCapTableHoldingRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Input         *CapTableHoldingInput  `protobuf:"bytes,1,opt,name=input,proto3" json:"input,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateCapTableHoldingRequest) Reset() {
+	*x = CreateCapTableHoldingRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[62]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateCapTableHoldingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateCapTableHoldingRequest) ProtoMessage() {}
+
+func (x *CreateCapTableHoldingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[62]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateCapTableHoldingRequest.ProtoReflect.Descriptor instead.
+func (*CreateCapTableHoldingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{62}
+}
+
+func (x *CreateCapTableHoldingRequest) GetInput() *CapTableHoldingInput {
+	if x != nil {
+		return x.Input
+	}
+	return nil
+}
+
+type CreateCapTableHoldingResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Holding       *CapTableHolding       `protobuf:"bytes,1,opt,name=holding,proto3" json:"holding,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateCapTableHoldingResponse) Reset() {
+	*x = CreateCapTableHoldingResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[63]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateCapTableHoldingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateCapTableHoldingResponse) ProtoMessage() {}
+
+func (x *CreateCapTableHoldingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[63]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateCapTableHoldingResponse.ProtoReflect.Descriptor instead.
+func (*CreateCapTableHoldingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{63}
+}
+
+func (x *CreateCapTableHoldingResponse) GetHolding() *CapTableHolding {
+	if x != nil {
+		return x.Holding
+	}
+	return nil
+}
+
+type UpdateCapTableHoldingRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Input         *CapTableHoldingInput  `protobuf:"bytes,2,opt,name=input,proto3" json:"input,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateCapTableHoldingRequest) Reset() {
+	*x = UpdateCapTableHoldingRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[64]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateCapTableHoldingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateCapTableHoldingRequest) ProtoMessage() {}
+
+func (x *UpdateCapTableHoldingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[64]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateCapTableHoldingRequest.ProtoReflect.Descriptor instead.
+func (*UpdateCapTableHoldingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{64}
+}
+
+func (x *UpdateCapTableHoldingRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UpdateCapTableHoldingRequest) GetInput() *CapTableHoldingInput {
+	if x != nil {
+		return x.Input
+	}
+	return nil
+}
+
+type UpdateCapTableHoldingResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Holding       *CapTableHolding       `protobuf:"bytes,1,opt,name=holding,proto3" json:"holding,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateCapTableHoldingResponse) Reset() {
+	*x = UpdateCapTableHoldingResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[65]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateCapTableHoldingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateCapTableHoldingResponse) ProtoMessage() {}
+
+func (x *UpdateCapTableHoldingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[65]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateCapTableHoldingResponse.ProtoReflect.Descriptor instead.
+func (*UpdateCapTableHoldingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{65}
+}
+
+func (x *UpdateCapTableHoldingResponse) GetHolding() *CapTableHolding {
+	if x != nil {
+		return x.Holding
+	}
+	return nil
+}
+
+type DeleteCapTableHoldingRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteCapTableHoldingRequest) Reset() {
+	*x = DeleteCapTableHoldingRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[66]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteCapTableHoldingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteCapTableHoldingRequest) ProtoMessage() {}
+
+func (x *DeleteCapTableHoldingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[66]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteCapTableHoldingRequest.ProtoReflect.Descriptor instead.
+func (*DeleteCapTableHoldingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{66}
+}
+
+func (x *DeleteCapTableHoldingRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type DeleteCapTableHoldingResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteCapTableHoldingResponse) Reset() {
+	*x = DeleteCapTableHoldingResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[67]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteCapTableHoldingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteCapTableHoldingResponse) ProtoMessage() {}
+
+func (x *DeleteCapTableHoldingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[67]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteCapTableHoldingResponse.ProtoReflect.Descriptor instead.
+func (*DeleteCapTableHoldingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{67}
+}
+
+// One (user, provider) OAuth connection — Carta / Pulley / AngelList.
+// status: needs_auth | connected | disconnected.
+type CapTableConnection struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Provider      string                 `protobuf:"bytes,1,opt,name=provider,proto3" json:"provider,omitempty"`
+	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	LastSyncedAt  int64                  `protobuf:"varint,3,opt,name=last_synced_at,json=lastSyncedAt,proto3" json:"last_synced_at,omitempty"` // unix seconds, 0 when never synced
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CapTableConnection) Reset() {
+	*x = CapTableConnection{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[68]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CapTableConnection) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CapTableConnection) ProtoMessage() {}
+
+func (x *CapTableConnection) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[68]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CapTableConnection.ProtoReflect.Descriptor instead.
+func (*CapTableConnection) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *CapTableConnection) GetProvider() string {
+	if x != nil {
+		return x.Provider
+	}
+	return ""
+}
+
+func (x *CapTableConnection) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *CapTableConnection) GetLastSyncedAt() int64 {
+	if x != nil {
+		return x.LastSyncedAt
+	}
+	return 0
+}
+
+type ListCapTableConnectionsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListCapTableConnectionsRequest) Reset() {
+	*x = ListCapTableConnectionsRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[69]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListCapTableConnectionsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListCapTableConnectionsRequest) ProtoMessage() {}
+
+func (x *ListCapTableConnectionsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[69]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListCapTableConnectionsRequest.ProtoReflect.Descriptor instead.
+func (*ListCapTableConnectionsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{69}
+}
+
+type ListCapTableConnectionsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Connections   []*CapTableConnection  `protobuf:"bytes,1,rep,name=connections,proto3" json:"connections,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListCapTableConnectionsResponse) Reset() {
+	*x = ListCapTableConnectionsResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[70]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListCapTableConnectionsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListCapTableConnectionsResponse) ProtoMessage() {}
+
+func (x *ListCapTableConnectionsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[70]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListCapTableConnectionsResponse.ProtoReflect.Descriptor instead.
+func (*ListCapTableConnectionsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *ListCapTableConnectionsResponse) GetConnections() []*CapTableConnection {
+	if x != nil {
+		return x.Connections
+	}
+	return nil
+}
+
+type SetCapTableConnectionStatusRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Provider      string                 `protobuf:"bytes,1,opt,name=provider,proto3" json:"provider,omitempty"`
+	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetCapTableConnectionStatusRequest) Reset() {
+	*x = SetCapTableConnectionStatusRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[71]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetCapTableConnectionStatusRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetCapTableConnectionStatusRequest) ProtoMessage() {}
+
+func (x *SetCapTableConnectionStatusRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[71]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetCapTableConnectionStatusRequest.ProtoReflect.Descriptor instead.
+func (*SetCapTableConnectionStatusRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *SetCapTableConnectionStatusRequest) GetProvider() string {
+	if x != nil {
+		return x.Provider
+	}
+	return ""
+}
+
+func (x *SetCapTableConnectionStatusRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+type SetCapTableConnectionStatusResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Connection    *CapTableConnection    `protobuf:"bytes,1,opt,name=connection,proto3" json:"connection,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetCapTableConnectionStatusResponse) Reset() {
+	*x = SetCapTableConnectionStatusResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[72]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetCapTableConnectionStatusResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetCapTableConnectionStatusResponse) ProtoMessage() {}
+
+func (x *SetCapTableConnectionStatusResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[72]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetCapTableConnectionStatusResponse.ProtoReflect.Descriptor instead.
+func (*SetCapTableConnectionStatusResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{72}
+}
+
+func (x *SetCapTableConnectionStatusResponse) GetConnection() *CapTableConnection {
+	if x != nil {
+		return x.Connection
+	}
+	return nil
+}
+
 var File_sttattus_vault_v1_vault_proto protoreflect.FileDescriptor
 
 const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
@@ -3384,7 +4210,61 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\tas_of_iso\x18\x03 \x01(\tR\aasOfIso\"\x1a\n" +
 	"\x18ListLatestFxRatesRequest\"L\n" +
 	"\x19ListLatestFxRatesResponse\x12/\n" +
-	"\x05rates\x18\x01 \x03(\v2\x19.sttattus.vault.v1.FxRateR\x05rates*\x9c\x01\n" +
+	"\x05rates\x18\x01 \x03(\v2\x19.sttattus.vault.v1.FxRateR\x05rates\"\xa9\x03\n" +
+	"\x0fCapTableHolding\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\tentity_id\x18\x02 \x01(\tR\bentityId\x12!\n" +
+	"\fcompany_name\x18\x03 \x01(\tR\vcompanyName\x12'\n" +
+	"\x0finstrument_type\x18\x04 \x01(\tR\x0einstrumentType\x12\x16\n" +
+	"\x06shares\x18\x05 \x01(\x01R\x06shares\x12(\n" +
+	"\x10strike_price_usd\x18\x06 \x01(\x01R\x0estrikePriceUsd\x121\n" +
+	"\x15last_priced_price_usd\x18\a \x01(\x01R\x12lastPricedPriceUsd\x12+\n" +
+	"\x12last_priced_at_iso\x18\b \x01(\tR\x0flastPricedAtIso\x12\x16\n" +
+	"\x06source\x18\t \x01(\tR\x06source\x12\x1f\n" +
+	"\vexternal_id\x18\n" +
+	" \x01(\tR\n" +
+	"externalId\x12\x14\n" +
+	"\x05notes\x18\v \x01(\tR\x05notes\x12,\n" +
+	"\x12position_value_usd\x18\f \x01(\x01R\x10positionValueUsd\"\x1d\n" +
+	"\x1bListCapTableHoldingsRequest\"\x86\x01\n" +
+	"\x1cListCapTableHoldingsResponse\x12>\n" +
+	"\bholdings\x18\x01 \x03(\v2\".sttattus.vault.v1.CapTableHoldingR\bholdings\x12&\n" +
+	"\x0ftotal_value_usd\x18\x02 \x01(\x01R\rtotalValueUsd\"\xb7\x02\n" +
+	"\x14CapTableHoldingInput\x12\x1b\n" +
+	"\tentity_id\x18\x01 \x01(\tR\bentityId\x12!\n" +
+	"\fcompany_name\x18\x02 \x01(\tR\vcompanyName\x12'\n" +
+	"\x0finstrument_type\x18\x03 \x01(\tR\x0einstrumentType\x12\x16\n" +
+	"\x06shares\x18\x04 \x01(\x01R\x06shares\x12(\n" +
+	"\x10strike_price_usd\x18\x05 \x01(\x01R\x0estrikePriceUsd\x121\n" +
+	"\x15last_priced_price_usd\x18\x06 \x01(\x01R\x12lastPricedPriceUsd\x12+\n" +
+	"\x12last_priced_at_iso\x18\a \x01(\tR\x0flastPricedAtIso\x12\x14\n" +
+	"\x05notes\x18\b \x01(\tR\x05notes\"]\n" +
+	"\x1cCreateCapTableHoldingRequest\x12=\n" +
+	"\x05input\x18\x01 \x01(\v2'.sttattus.vault.v1.CapTableHoldingInputR\x05input\"]\n" +
+	"\x1dCreateCapTableHoldingResponse\x12<\n" +
+	"\aholding\x18\x01 \x01(\v2\".sttattus.vault.v1.CapTableHoldingR\aholding\"m\n" +
+	"\x1cUpdateCapTableHoldingRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12=\n" +
+	"\x05input\x18\x02 \x01(\v2'.sttattus.vault.v1.CapTableHoldingInputR\x05input\"]\n" +
+	"\x1dUpdateCapTableHoldingResponse\x12<\n" +
+	"\aholding\x18\x01 \x01(\v2\".sttattus.vault.v1.CapTableHoldingR\aholding\".\n" +
+	"\x1cDeleteCapTableHoldingRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"\x1f\n" +
+	"\x1dDeleteCapTableHoldingResponse\"n\n" +
+	"\x12CapTableConnection\x12\x1a\n" +
+	"\bprovider\x18\x01 \x01(\tR\bprovider\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\x12$\n" +
+	"\x0elast_synced_at\x18\x03 \x01(\x03R\flastSyncedAt\" \n" +
+	"\x1eListCapTableConnectionsRequest\"j\n" +
+	"\x1fListCapTableConnectionsResponse\x12G\n" +
+	"\vconnections\x18\x01 \x03(\v2%.sttattus.vault.v1.CapTableConnectionR\vconnections\"X\n" +
+	"\"SetCapTableConnectionStatusRequest\x12\x1a\n" +
+	"\bprovider\x18\x01 \x01(\tR\bprovider\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\"l\n" +
+	"#SetCapTableConnectionStatusResponse\x12E\n" +
+	"\n" +
+	"connection\x18\x01 \x01(\v2%.sttattus.vault.v1.CapTableConnectionR\n" +
+	"connection*\x9c\x01\n" +
 	"\rAssetCategory\x12\x1e\n" +
 	"\x1aASSET_CATEGORY_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13ASSET_CATEGORY_FIAT\x10\x01\x12\x19\n" +
@@ -3395,7 +4275,7 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xa7\x15\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xa6\x1b\n" +
 	"\fVaultService\x12\\\n" +
 	"\vSubmitAsset\x12%.sttattus.vault.v1.SubmitAssetRequest\x1a&.sttattus.vault.v1.SubmitAssetResponse\x12_\n" +
 	"\fGetPortfolio\x12&.sttattus.vault.v1.GetPortfolioRequest\x1a'.sttattus.vault.v1.GetPortfolioResponse\x12q\n" +
@@ -3422,7 +4302,13 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\fRenameEntity\x12&.sttattus.vault.v1.RenameEntityRequest\x1a'.sttattus.vault.v1.RenameEntityResponse\x12_\n" +
 	"\fDeleteEntity\x12&.sttattus.vault.v1.DeleteEntityRequest\x1a'.sttattus.vault.v1.DeleteEntityResponse\x12t\n" +
 	"\x13AssignAssetToEntity\x12-.sttattus.vault.v1.AssignAssetToEntityRequest\x1a..sttattus.vault.v1.AssignAssetToEntityResponse\x12n\n" +
-	"\x11ListLatestFxRates\x12+.sttattus.vault.v1.ListLatestFxRatesRequest\x1a,.sttattus.vault.v1.ListLatestFxRatesResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
+	"\x11ListLatestFxRates\x12+.sttattus.vault.v1.ListLatestFxRatesRequest\x1a,.sttattus.vault.v1.ListLatestFxRatesResponse\x12w\n" +
+	"\x14ListCapTableHoldings\x12..sttattus.vault.v1.ListCapTableHoldingsRequest\x1a/.sttattus.vault.v1.ListCapTableHoldingsResponse\x12z\n" +
+	"\x15CreateCapTableHolding\x12/.sttattus.vault.v1.CreateCapTableHoldingRequest\x1a0.sttattus.vault.v1.CreateCapTableHoldingResponse\x12z\n" +
+	"\x15UpdateCapTableHolding\x12/.sttattus.vault.v1.UpdateCapTableHoldingRequest\x1a0.sttattus.vault.v1.UpdateCapTableHoldingResponse\x12z\n" +
+	"\x15DeleteCapTableHolding\x12/.sttattus.vault.v1.DeleteCapTableHoldingRequest\x1a0.sttattus.vault.v1.DeleteCapTableHoldingResponse\x12\x80\x01\n" +
+	"\x17ListCapTableConnections\x121.sttattus.vault.v1.ListCapTableConnectionsRequest\x1a2.sttattus.vault.v1.ListCapTableConnectionsResponse\x12\x8c\x01\n" +
+	"\x1bSetCapTableConnectionStatus\x125.sttattus.vault.v1.SetCapTableConnectionStatusRequest\x1a6.sttattus.vault.v1.SetCapTableConnectionStatusResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
 
 var (
 	file_sttattus_vault_v1_vault_proto_rawDescOnce sync.Once
@@ -3437,81 +4323,96 @@ func file_sttattus_vault_v1_vault_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_vault_v1_vault_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_vault_v1_vault_proto_msgTypes = make([]protoimpl.MessageInfo, 60)
+var file_sttattus_vault_v1_vault_proto_msgTypes = make([]protoimpl.MessageInfo, 75)
 var file_sttattus_vault_v1_vault_proto_goTypes = []any{
-	(AssetCategory)(0),                       // 0: sttattus.vault.v1.AssetCategory
-	(VerificationStatus)(0),                  // 1: sttattus.vault.v1.VerificationStatus
-	(*Asset)(nil),                            // 2: sttattus.vault.v1.Asset
-	(*Portfolio)(nil),                        // 3: sttattus.vault.v1.Portfolio
-	(*SubmitAssetRequest)(nil),               // 4: sttattus.vault.v1.SubmitAssetRequest
-	(*SubmitAssetResponse)(nil),              // 5: sttattus.vault.v1.SubmitAssetResponse
-	(*GetPortfolioRequest)(nil),              // 6: sttattus.vault.v1.GetPortfolioRequest
-	(*GetPortfolioResponse)(nil),             // 7: sttattus.vault.v1.GetPortfolioResponse
-	(*AdminVerifyAssetRequest)(nil),          // 8: sttattus.vault.v1.AdminVerifyAssetRequest
-	(*AdminVerifyAssetResponse)(nil),         // 9: sttattus.vault.v1.AdminVerifyAssetResponse
-	(*SyncWealthRequest)(nil),                // 10: sttattus.vault.v1.SyncWealthRequest
-	(*SyncWealthResponse)(nil),               // 11: sttattus.vault.v1.SyncWealthResponse
-	(*GetWalletChallengeRequest)(nil),        // 12: sttattus.vault.v1.GetWalletChallengeRequest
-	(*GetWalletChallengeResponse)(nil),       // 13: sttattus.vault.v1.GetWalletChallengeResponse
-	(*LinkWalletRequest)(nil),                // 14: sttattus.vault.v1.LinkWalletRequest
-	(*LinkWalletResponse)(nil),               // 15: sttattus.vault.v1.LinkWalletResponse
-	(*CreatePlaidLinkTokenRequest)(nil),      // 16: sttattus.vault.v1.CreatePlaidLinkTokenRequest
-	(*CreatePlaidLinkTokenResponse)(nil),     // 17: sttattus.vault.v1.CreatePlaidLinkTokenResponse
-	(*ExchangePlaidPublicTokenRequest)(nil),  // 18: sttattus.vault.v1.ExchangePlaidPublicTokenRequest
-	(*ExchangePlaidPublicTokenResponse)(nil), // 19: sttattus.vault.v1.ExchangePlaidPublicTokenResponse
-	(*NetWorthPoint)(nil),                    // 20: sttattus.vault.v1.NetWorthPoint
-	(*ListNetWorthHistoryRequest)(nil),       // 21: sttattus.vault.v1.ListNetWorthHistoryRequest
-	(*ListNetWorthHistoryResponse)(nil),      // 22: sttattus.vault.v1.ListNetWorthHistoryResponse
-	(*PlaidTransaction)(nil),                 // 23: sttattus.vault.v1.PlaidTransaction
-	(*ListPlaidTransactionsRequest)(nil),     // 24: sttattus.vault.v1.ListPlaidTransactionsRequest
-	(*ListPlaidTransactionsResponse)(nil),    // 25: sttattus.vault.v1.ListPlaidTransactionsResponse
-	(*PlaidHolding)(nil),                     // 26: sttattus.vault.v1.PlaidHolding
-	(*ListPlaidHoldingsRequest)(nil),         // 27: sttattus.vault.v1.ListPlaidHoldingsRequest
-	(*ListPlaidHoldingsResponse)(nil),        // 28: sttattus.vault.v1.ListPlaidHoldingsResponse
-	(*AllocationSlice)(nil),                  // 29: sttattus.vault.v1.AllocationSlice
-	(*GetCurrentAllocationRequest)(nil),      // 30: sttattus.vault.v1.GetCurrentAllocationRequest
-	(*GetCurrentAllocationResponse)(nil),     // 31: sttattus.vault.v1.GetCurrentAllocationResponse
-	(*AllocationHistoryPoint)(nil),           // 32: sttattus.vault.v1.AllocationHistoryPoint
-	(*ListAllocationHistoryRequest)(nil),     // 33: sttattus.vault.v1.ListAllocationHistoryRequest
-	(*ListAllocationHistoryResponse)(nil),    // 34: sttattus.vault.v1.ListAllocationHistoryResponse
-	(*RealEstateProperty)(nil),               // 35: sttattus.vault.v1.RealEstateProperty
-	(*ListRealEstatePropertiesRequest)(nil),  // 36: sttattus.vault.v1.ListRealEstatePropertiesRequest
-	(*ListRealEstatePropertiesResponse)(nil), // 37: sttattus.vault.v1.ListRealEstatePropertiesResponse
-	(*CreateRealEstatePropertyRequest)(nil),  // 38: sttattus.vault.v1.CreateRealEstatePropertyRequest
-	(*CreateRealEstatePropertyResponse)(nil), // 39: sttattus.vault.v1.CreateRealEstatePropertyResponse
-	(*RecordManualValuationRequest)(nil),     // 40: sttattus.vault.v1.RecordManualValuationRequest
-	(*RecordManualValuationResponse)(nil),    // 41: sttattus.vault.v1.RecordManualValuationResponse
-	(*RefreshAvmValuationRequest)(nil),       // 42: sttattus.vault.v1.RefreshAvmValuationRequest
-	(*RefreshAvmValuationResponse)(nil),      // 43: sttattus.vault.v1.RefreshAvmValuationResponse
-	(*DeleteRealEstatePropertyRequest)(nil),  // 44: sttattus.vault.v1.DeleteRealEstatePropertyRequest
-	(*DeleteRealEstatePropertyResponse)(nil), // 45: sttattus.vault.v1.DeleteRealEstatePropertyResponse
-	(*Entity)(nil),                           // 46: sttattus.vault.v1.Entity
-	(*ListEntitiesRequest)(nil),              // 47: sttattus.vault.v1.ListEntitiesRequest
-	(*ListEntitiesResponse)(nil),             // 48: sttattus.vault.v1.ListEntitiesResponse
-	(*CreateEntityRequest)(nil),              // 49: sttattus.vault.v1.CreateEntityRequest
-	(*CreateEntityResponse)(nil),             // 50: sttattus.vault.v1.CreateEntityResponse
-	(*RenameEntityRequest)(nil),              // 51: sttattus.vault.v1.RenameEntityRequest
-	(*RenameEntityResponse)(nil),             // 52: sttattus.vault.v1.RenameEntityResponse
-	(*DeleteEntityRequest)(nil),              // 53: sttattus.vault.v1.DeleteEntityRequest
-	(*DeleteEntityResponse)(nil),             // 54: sttattus.vault.v1.DeleteEntityResponse
-	(*AssignAssetToEntityRequest)(nil),       // 55: sttattus.vault.v1.AssignAssetToEntityRequest
-	(*AssignAssetToEntityResponse)(nil),      // 56: sttattus.vault.v1.AssignAssetToEntityResponse
-	(*FxRate)(nil),                           // 57: sttattus.vault.v1.FxRate
-	(*ListLatestFxRatesRequest)(nil),         // 58: sttattus.vault.v1.ListLatestFxRatesRequest
-	(*ListLatestFxRatesResponse)(nil),        // 59: sttattus.vault.v1.ListLatestFxRatesResponse
-	nil,                                      // 60: sttattus.vault.v1.Asset.MetadataEntry
-	nil,                                      // 61: sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
-	(*timestamppb.Timestamp)(nil),            // 62: google.protobuf.Timestamp
+	(AssetCategory)(0),                          // 0: sttattus.vault.v1.AssetCategory
+	(VerificationStatus)(0),                     // 1: sttattus.vault.v1.VerificationStatus
+	(*Asset)(nil),                               // 2: sttattus.vault.v1.Asset
+	(*Portfolio)(nil),                           // 3: sttattus.vault.v1.Portfolio
+	(*SubmitAssetRequest)(nil),                  // 4: sttattus.vault.v1.SubmitAssetRequest
+	(*SubmitAssetResponse)(nil),                 // 5: sttattus.vault.v1.SubmitAssetResponse
+	(*GetPortfolioRequest)(nil),                 // 6: sttattus.vault.v1.GetPortfolioRequest
+	(*GetPortfolioResponse)(nil),                // 7: sttattus.vault.v1.GetPortfolioResponse
+	(*AdminVerifyAssetRequest)(nil),             // 8: sttattus.vault.v1.AdminVerifyAssetRequest
+	(*AdminVerifyAssetResponse)(nil),            // 9: sttattus.vault.v1.AdminVerifyAssetResponse
+	(*SyncWealthRequest)(nil),                   // 10: sttattus.vault.v1.SyncWealthRequest
+	(*SyncWealthResponse)(nil),                  // 11: sttattus.vault.v1.SyncWealthResponse
+	(*GetWalletChallengeRequest)(nil),           // 12: sttattus.vault.v1.GetWalletChallengeRequest
+	(*GetWalletChallengeResponse)(nil),          // 13: sttattus.vault.v1.GetWalletChallengeResponse
+	(*LinkWalletRequest)(nil),                   // 14: sttattus.vault.v1.LinkWalletRequest
+	(*LinkWalletResponse)(nil),                  // 15: sttattus.vault.v1.LinkWalletResponse
+	(*CreatePlaidLinkTokenRequest)(nil),         // 16: sttattus.vault.v1.CreatePlaidLinkTokenRequest
+	(*CreatePlaidLinkTokenResponse)(nil),        // 17: sttattus.vault.v1.CreatePlaidLinkTokenResponse
+	(*ExchangePlaidPublicTokenRequest)(nil),     // 18: sttattus.vault.v1.ExchangePlaidPublicTokenRequest
+	(*ExchangePlaidPublicTokenResponse)(nil),    // 19: sttattus.vault.v1.ExchangePlaidPublicTokenResponse
+	(*NetWorthPoint)(nil),                       // 20: sttattus.vault.v1.NetWorthPoint
+	(*ListNetWorthHistoryRequest)(nil),          // 21: sttattus.vault.v1.ListNetWorthHistoryRequest
+	(*ListNetWorthHistoryResponse)(nil),         // 22: sttattus.vault.v1.ListNetWorthHistoryResponse
+	(*PlaidTransaction)(nil),                    // 23: sttattus.vault.v1.PlaidTransaction
+	(*ListPlaidTransactionsRequest)(nil),        // 24: sttattus.vault.v1.ListPlaidTransactionsRequest
+	(*ListPlaidTransactionsResponse)(nil),       // 25: sttattus.vault.v1.ListPlaidTransactionsResponse
+	(*PlaidHolding)(nil),                        // 26: sttattus.vault.v1.PlaidHolding
+	(*ListPlaidHoldingsRequest)(nil),            // 27: sttattus.vault.v1.ListPlaidHoldingsRequest
+	(*ListPlaidHoldingsResponse)(nil),           // 28: sttattus.vault.v1.ListPlaidHoldingsResponse
+	(*AllocationSlice)(nil),                     // 29: sttattus.vault.v1.AllocationSlice
+	(*GetCurrentAllocationRequest)(nil),         // 30: sttattus.vault.v1.GetCurrentAllocationRequest
+	(*GetCurrentAllocationResponse)(nil),        // 31: sttattus.vault.v1.GetCurrentAllocationResponse
+	(*AllocationHistoryPoint)(nil),              // 32: sttattus.vault.v1.AllocationHistoryPoint
+	(*ListAllocationHistoryRequest)(nil),        // 33: sttattus.vault.v1.ListAllocationHistoryRequest
+	(*ListAllocationHistoryResponse)(nil),       // 34: sttattus.vault.v1.ListAllocationHistoryResponse
+	(*RealEstateProperty)(nil),                  // 35: sttattus.vault.v1.RealEstateProperty
+	(*ListRealEstatePropertiesRequest)(nil),     // 36: sttattus.vault.v1.ListRealEstatePropertiesRequest
+	(*ListRealEstatePropertiesResponse)(nil),    // 37: sttattus.vault.v1.ListRealEstatePropertiesResponse
+	(*CreateRealEstatePropertyRequest)(nil),     // 38: sttattus.vault.v1.CreateRealEstatePropertyRequest
+	(*CreateRealEstatePropertyResponse)(nil),    // 39: sttattus.vault.v1.CreateRealEstatePropertyResponse
+	(*RecordManualValuationRequest)(nil),        // 40: sttattus.vault.v1.RecordManualValuationRequest
+	(*RecordManualValuationResponse)(nil),       // 41: sttattus.vault.v1.RecordManualValuationResponse
+	(*RefreshAvmValuationRequest)(nil),          // 42: sttattus.vault.v1.RefreshAvmValuationRequest
+	(*RefreshAvmValuationResponse)(nil),         // 43: sttattus.vault.v1.RefreshAvmValuationResponse
+	(*DeleteRealEstatePropertyRequest)(nil),     // 44: sttattus.vault.v1.DeleteRealEstatePropertyRequest
+	(*DeleteRealEstatePropertyResponse)(nil),    // 45: sttattus.vault.v1.DeleteRealEstatePropertyResponse
+	(*Entity)(nil),                              // 46: sttattus.vault.v1.Entity
+	(*ListEntitiesRequest)(nil),                 // 47: sttattus.vault.v1.ListEntitiesRequest
+	(*ListEntitiesResponse)(nil),                // 48: sttattus.vault.v1.ListEntitiesResponse
+	(*CreateEntityRequest)(nil),                 // 49: sttattus.vault.v1.CreateEntityRequest
+	(*CreateEntityResponse)(nil),                // 50: sttattus.vault.v1.CreateEntityResponse
+	(*RenameEntityRequest)(nil),                 // 51: sttattus.vault.v1.RenameEntityRequest
+	(*RenameEntityResponse)(nil),                // 52: sttattus.vault.v1.RenameEntityResponse
+	(*DeleteEntityRequest)(nil),                 // 53: sttattus.vault.v1.DeleteEntityRequest
+	(*DeleteEntityResponse)(nil),                // 54: sttattus.vault.v1.DeleteEntityResponse
+	(*AssignAssetToEntityRequest)(nil),          // 55: sttattus.vault.v1.AssignAssetToEntityRequest
+	(*AssignAssetToEntityResponse)(nil),         // 56: sttattus.vault.v1.AssignAssetToEntityResponse
+	(*FxRate)(nil),                              // 57: sttattus.vault.v1.FxRate
+	(*ListLatestFxRatesRequest)(nil),            // 58: sttattus.vault.v1.ListLatestFxRatesRequest
+	(*ListLatestFxRatesResponse)(nil),           // 59: sttattus.vault.v1.ListLatestFxRatesResponse
+	(*CapTableHolding)(nil),                     // 60: sttattus.vault.v1.CapTableHolding
+	(*ListCapTableHoldingsRequest)(nil),         // 61: sttattus.vault.v1.ListCapTableHoldingsRequest
+	(*ListCapTableHoldingsResponse)(nil),        // 62: sttattus.vault.v1.ListCapTableHoldingsResponse
+	(*CapTableHoldingInput)(nil),                // 63: sttattus.vault.v1.CapTableHoldingInput
+	(*CreateCapTableHoldingRequest)(nil),        // 64: sttattus.vault.v1.CreateCapTableHoldingRequest
+	(*CreateCapTableHoldingResponse)(nil),       // 65: sttattus.vault.v1.CreateCapTableHoldingResponse
+	(*UpdateCapTableHoldingRequest)(nil),        // 66: sttattus.vault.v1.UpdateCapTableHoldingRequest
+	(*UpdateCapTableHoldingResponse)(nil),       // 67: sttattus.vault.v1.UpdateCapTableHoldingResponse
+	(*DeleteCapTableHoldingRequest)(nil),        // 68: sttattus.vault.v1.DeleteCapTableHoldingRequest
+	(*DeleteCapTableHoldingResponse)(nil),       // 69: sttattus.vault.v1.DeleteCapTableHoldingResponse
+	(*CapTableConnection)(nil),                  // 70: sttattus.vault.v1.CapTableConnection
+	(*ListCapTableConnectionsRequest)(nil),      // 71: sttattus.vault.v1.ListCapTableConnectionsRequest
+	(*ListCapTableConnectionsResponse)(nil),     // 72: sttattus.vault.v1.ListCapTableConnectionsResponse
+	(*SetCapTableConnectionStatusRequest)(nil),  // 73: sttattus.vault.v1.SetCapTableConnectionStatusRequest
+	(*SetCapTableConnectionStatusResponse)(nil), // 74: sttattus.vault.v1.SetCapTableConnectionStatusResponse
+	nil,                           // 75: sttattus.vault.v1.Asset.MetadataEntry
+	nil,                           // 76: sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
+	(*timestamppb.Timestamp)(nil), // 77: google.protobuf.Timestamp
 }
 var file_sttattus_vault_v1_vault_proto_depIdxs = []int32{
 	0,  // 0: sttattus.vault.v1.Asset.category:type_name -> sttattus.vault.v1.AssetCategory
 	1,  // 1: sttattus.vault.v1.Asset.status:type_name -> sttattus.vault.v1.VerificationStatus
-	62, // 2: sttattus.vault.v1.Asset.last_updated:type_name -> google.protobuf.Timestamp
-	60, // 3: sttattus.vault.v1.Asset.metadata:type_name -> sttattus.vault.v1.Asset.MetadataEntry
+	77, // 2: sttattus.vault.v1.Asset.last_updated:type_name -> google.protobuf.Timestamp
+	75, // 3: sttattus.vault.v1.Asset.metadata:type_name -> sttattus.vault.v1.Asset.MetadataEntry
 	2,  // 4: sttattus.vault.v1.Portfolio.assets:type_name -> sttattus.vault.v1.Asset
-	62, // 5: sttattus.vault.v1.Portfolio.calculated_at:type_name -> google.protobuf.Timestamp
+	77, // 5: sttattus.vault.v1.Portfolio.calculated_at:type_name -> google.protobuf.Timestamp
 	0,  // 6: sttattus.vault.v1.SubmitAssetRequest.category:type_name -> sttattus.vault.v1.AssetCategory
-	61, // 7: sttattus.vault.v1.SubmitAssetRequest.metadata:type_name -> sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
+	76, // 7: sttattus.vault.v1.SubmitAssetRequest.metadata:type_name -> sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
 	2,  // 8: sttattus.vault.v1.SubmitAssetResponse.asset:type_name -> sttattus.vault.v1.Asset
 	3,  // 9: sttattus.vault.v1.GetPortfolioResponse.portfolio:type_name -> sttattus.vault.v1.Portfolio
 	1,  // 10: sttattus.vault.v1.AdminVerifyAssetRequest.status:type_name -> sttattus.vault.v1.VerificationStatus
@@ -3531,59 +4432,78 @@ var file_sttattus_vault_v1_vault_proto_depIdxs = []int32{
 	46, // 24: sttattus.vault.v1.CreateEntityResponse.entity:type_name -> sttattus.vault.v1.Entity
 	46, // 25: sttattus.vault.v1.RenameEntityResponse.entity:type_name -> sttattus.vault.v1.Entity
 	57, // 26: sttattus.vault.v1.ListLatestFxRatesResponse.rates:type_name -> sttattus.vault.v1.FxRate
-	4,  // 27: sttattus.vault.v1.VaultService.SubmitAsset:input_type -> sttattus.vault.v1.SubmitAssetRequest
-	6,  // 28: sttattus.vault.v1.VaultService.GetPortfolio:input_type -> sttattus.vault.v1.GetPortfolioRequest
-	12, // 29: sttattus.vault.v1.VaultService.GetWalletChallenge:input_type -> sttattus.vault.v1.GetWalletChallengeRequest
-	14, // 30: sttattus.vault.v1.VaultService.LinkWallet:input_type -> sttattus.vault.v1.LinkWalletRequest
-	16, // 31: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:input_type -> sttattus.vault.v1.CreatePlaidLinkTokenRequest
-	18, // 32: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:input_type -> sttattus.vault.v1.ExchangePlaidPublicTokenRequest
-	10, // 33: sttattus.vault.v1.VaultService.SyncWealth:input_type -> sttattus.vault.v1.SyncWealthRequest
-	8,  // 34: sttattus.vault.v1.VaultService.AdminVerifyAsset:input_type -> sttattus.vault.v1.AdminVerifyAssetRequest
-	21, // 35: sttattus.vault.v1.VaultService.ListNetWorthHistory:input_type -> sttattus.vault.v1.ListNetWorthHistoryRequest
-	24, // 36: sttattus.vault.v1.VaultService.ListPlaidTransactions:input_type -> sttattus.vault.v1.ListPlaidTransactionsRequest
-	27, // 37: sttattus.vault.v1.VaultService.ListPlaidHoldings:input_type -> sttattus.vault.v1.ListPlaidHoldingsRequest
-	30, // 38: sttattus.vault.v1.VaultService.GetCurrentAllocation:input_type -> sttattus.vault.v1.GetCurrentAllocationRequest
-	33, // 39: sttattus.vault.v1.VaultService.ListAllocationHistory:input_type -> sttattus.vault.v1.ListAllocationHistoryRequest
-	36, // 40: sttattus.vault.v1.VaultService.ListRealEstateProperties:input_type -> sttattus.vault.v1.ListRealEstatePropertiesRequest
-	38, // 41: sttattus.vault.v1.VaultService.CreateRealEstateProperty:input_type -> sttattus.vault.v1.CreateRealEstatePropertyRequest
-	40, // 42: sttattus.vault.v1.VaultService.RecordManualValuation:input_type -> sttattus.vault.v1.RecordManualValuationRequest
-	42, // 43: sttattus.vault.v1.VaultService.RefreshAvmValuation:input_type -> sttattus.vault.v1.RefreshAvmValuationRequest
-	44, // 44: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:input_type -> sttattus.vault.v1.DeleteRealEstatePropertyRequest
-	47, // 45: sttattus.vault.v1.VaultService.ListEntities:input_type -> sttattus.vault.v1.ListEntitiesRequest
-	49, // 46: sttattus.vault.v1.VaultService.CreateEntity:input_type -> sttattus.vault.v1.CreateEntityRequest
-	51, // 47: sttattus.vault.v1.VaultService.RenameEntity:input_type -> sttattus.vault.v1.RenameEntityRequest
-	53, // 48: sttattus.vault.v1.VaultService.DeleteEntity:input_type -> sttattus.vault.v1.DeleteEntityRequest
-	55, // 49: sttattus.vault.v1.VaultService.AssignAssetToEntity:input_type -> sttattus.vault.v1.AssignAssetToEntityRequest
-	58, // 50: sttattus.vault.v1.VaultService.ListLatestFxRates:input_type -> sttattus.vault.v1.ListLatestFxRatesRequest
-	5,  // 51: sttattus.vault.v1.VaultService.SubmitAsset:output_type -> sttattus.vault.v1.SubmitAssetResponse
-	7,  // 52: sttattus.vault.v1.VaultService.GetPortfolio:output_type -> sttattus.vault.v1.GetPortfolioResponse
-	13, // 53: sttattus.vault.v1.VaultService.GetWalletChallenge:output_type -> sttattus.vault.v1.GetWalletChallengeResponse
-	15, // 54: sttattus.vault.v1.VaultService.LinkWallet:output_type -> sttattus.vault.v1.LinkWalletResponse
-	17, // 55: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:output_type -> sttattus.vault.v1.CreatePlaidLinkTokenResponse
-	19, // 56: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:output_type -> sttattus.vault.v1.ExchangePlaidPublicTokenResponse
-	11, // 57: sttattus.vault.v1.VaultService.SyncWealth:output_type -> sttattus.vault.v1.SyncWealthResponse
-	9,  // 58: sttattus.vault.v1.VaultService.AdminVerifyAsset:output_type -> sttattus.vault.v1.AdminVerifyAssetResponse
-	22, // 59: sttattus.vault.v1.VaultService.ListNetWorthHistory:output_type -> sttattus.vault.v1.ListNetWorthHistoryResponse
-	25, // 60: sttattus.vault.v1.VaultService.ListPlaidTransactions:output_type -> sttattus.vault.v1.ListPlaidTransactionsResponse
-	28, // 61: sttattus.vault.v1.VaultService.ListPlaidHoldings:output_type -> sttattus.vault.v1.ListPlaidHoldingsResponse
-	31, // 62: sttattus.vault.v1.VaultService.GetCurrentAllocation:output_type -> sttattus.vault.v1.GetCurrentAllocationResponse
-	34, // 63: sttattus.vault.v1.VaultService.ListAllocationHistory:output_type -> sttattus.vault.v1.ListAllocationHistoryResponse
-	37, // 64: sttattus.vault.v1.VaultService.ListRealEstateProperties:output_type -> sttattus.vault.v1.ListRealEstatePropertiesResponse
-	39, // 65: sttattus.vault.v1.VaultService.CreateRealEstateProperty:output_type -> sttattus.vault.v1.CreateRealEstatePropertyResponse
-	41, // 66: sttattus.vault.v1.VaultService.RecordManualValuation:output_type -> sttattus.vault.v1.RecordManualValuationResponse
-	43, // 67: sttattus.vault.v1.VaultService.RefreshAvmValuation:output_type -> sttattus.vault.v1.RefreshAvmValuationResponse
-	45, // 68: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:output_type -> sttattus.vault.v1.DeleteRealEstatePropertyResponse
-	48, // 69: sttattus.vault.v1.VaultService.ListEntities:output_type -> sttattus.vault.v1.ListEntitiesResponse
-	50, // 70: sttattus.vault.v1.VaultService.CreateEntity:output_type -> sttattus.vault.v1.CreateEntityResponse
-	52, // 71: sttattus.vault.v1.VaultService.RenameEntity:output_type -> sttattus.vault.v1.RenameEntityResponse
-	54, // 72: sttattus.vault.v1.VaultService.DeleteEntity:output_type -> sttattus.vault.v1.DeleteEntityResponse
-	56, // 73: sttattus.vault.v1.VaultService.AssignAssetToEntity:output_type -> sttattus.vault.v1.AssignAssetToEntityResponse
-	59, // 74: sttattus.vault.v1.VaultService.ListLatestFxRates:output_type -> sttattus.vault.v1.ListLatestFxRatesResponse
-	51, // [51:75] is the sub-list for method output_type
-	27, // [27:51] is the sub-list for method input_type
-	27, // [27:27] is the sub-list for extension type_name
-	27, // [27:27] is the sub-list for extension extendee
-	0,  // [0:27] is the sub-list for field type_name
+	60, // 27: sttattus.vault.v1.ListCapTableHoldingsResponse.holdings:type_name -> sttattus.vault.v1.CapTableHolding
+	63, // 28: sttattus.vault.v1.CreateCapTableHoldingRequest.input:type_name -> sttattus.vault.v1.CapTableHoldingInput
+	60, // 29: sttattus.vault.v1.CreateCapTableHoldingResponse.holding:type_name -> sttattus.vault.v1.CapTableHolding
+	63, // 30: sttattus.vault.v1.UpdateCapTableHoldingRequest.input:type_name -> sttattus.vault.v1.CapTableHoldingInput
+	60, // 31: sttattus.vault.v1.UpdateCapTableHoldingResponse.holding:type_name -> sttattus.vault.v1.CapTableHolding
+	70, // 32: sttattus.vault.v1.ListCapTableConnectionsResponse.connections:type_name -> sttattus.vault.v1.CapTableConnection
+	70, // 33: sttattus.vault.v1.SetCapTableConnectionStatusResponse.connection:type_name -> sttattus.vault.v1.CapTableConnection
+	4,  // 34: sttattus.vault.v1.VaultService.SubmitAsset:input_type -> sttattus.vault.v1.SubmitAssetRequest
+	6,  // 35: sttattus.vault.v1.VaultService.GetPortfolio:input_type -> sttattus.vault.v1.GetPortfolioRequest
+	12, // 36: sttattus.vault.v1.VaultService.GetWalletChallenge:input_type -> sttattus.vault.v1.GetWalletChallengeRequest
+	14, // 37: sttattus.vault.v1.VaultService.LinkWallet:input_type -> sttattus.vault.v1.LinkWalletRequest
+	16, // 38: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:input_type -> sttattus.vault.v1.CreatePlaidLinkTokenRequest
+	18, // 39: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:input_type -> sttattus.vault.v1.ExchangePlaidPublicTokenRequest
+	10, // 40: sttattus.vault.v1.VaultService.SyncWealth:input_type -> sttattus.vault.v1.SyncWealthRequest
+	8,  // 41: sttattus.vault.v1.VaultService.AdminVerifyAsset:input_type -> sttattus.vault.v1.AdminVerifyAssetRequest
+	21, // 42: sttattus.vault.v1.VaultService.ListNetWorthHistory:input_type -> sttattus.vault.v1.ListNetWorthHistoryRequest
+	24, // 43: sttattus.vault.v1.VaultService.ListPlaidTransactions:input_type -> sttattus.vault.v1.ListPlaidTransactionsRequest
+	27, // 44: sttattus.vault.v1.VaultService.ListPlaidHoldings:input_type -> sttattus.vault.v1.ListPlaidHoldingsRequest
+	30, // 45: sttattus.vault.v1.VaultService.GetCurrentAllocation:input_type -> sttattus.vault.v1.GetCurrentAllocationRequest
+	33, // 46: sttattus.vault.v1.VaultService.ListAllocationHistory:input_type -> sttattus.vault.v1.ListAllocationHistoryRequest
+	36, // 47: sttattus.vault.v1.VaultService.ListRealEstateProperties:input_type -> sttattus.vault.v1.ListRealEstatePropertiesRequest
+	38, // 48: sttattus.vault.v1.VaultService.CreateRealEstateProperty:input_type -> sttattus.vault.v1.CreateRealEstatePropertyRequest
+	40, // 49: sttattus.vault.v1.VaultService.RecordManualValuation:input_type -> sttattus.vault.v1.RecordManualValuationRequest
+	42, // 50: sttattus.vault.v1.VaultService.RefreshAvmValuation:input_type -> sttattus.vault.v1.RefreshAvmValuationRequest
+	44, // 51: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:input_type -> sttattus.vault.v1.DeleteRealEstatePropertyRequest
+	47, // 52: sttattus.vault.v1.VaultService.ListEntities:input_type -> sttattus.vault.v1.ListEntitiesRequest
+	49, // 53: sttattus.vault.v1.VaultService.CreateEntity:input_type -> sttattus.vault.v1.CreateEntityRequest
+	51, // 54: sttattus.vault.v1.VaultService.RenameEntity:input_type -> sttattus.vault.v1.RenameEntityRequest
+	53, // 55: sttattus.vault.v1.VaultService.DeleteEntity:input_type -> sttattus.vault.v1.DeleteEntityRequest
+	55, // 56: sttattus.vault.v1.VaultService.AssignAssetToEntity:input_type -> sttattus.vault.v1.AssignAssetToEntityRequest
+	58, // 57: sttattus.vault.v1.VaultService.ListLatestFxRates:input_type -> sttattus.vault.v1.ListLatestFxRatesRequest
+	61, // 58: sttattus.vault.v1.VaultService.ListCapTableHoldings:input_type -> sttattus.vault.v1.ListCapTableHoldingsRequest
+	64, // 59: sttattus.vault.v1.VaultService.CreateCapTableHolding:input_type -> sttattus.vault.v1.CreateCapTableHoldingRequest
+	66, // 60: sttattus.vault.v1.VaultService.UpdateCapTableHolding:input_type -> sttattus.vault.v1.UpdateCapTableHoldingRequest
+	68, // 61: sttattus.vault.v1.VaultService.DeleteCapTableHolding:input_type -> sttattus.vault.v1.DeleteCapTableHoldingRequest
+	71, // 62: sttattus.vault.v1.VaultService.ListCapTableConnections:input_type -> sttattus.vault.v1.ListCapTableConnectionsRequest
+	73, // 63: sttattus.vault.v1.VaultService.SetCapTableConnectionStatus:input_type -> sttattus.vault.v1.SetCapTableConnectionStatusRequest
+	5,  // 64: sttattus.vault.v1.VaultService.SubmitAsset:output_type -> sttattus.vault.v1.SubmitAssetResponse
+	7,  // 65: sttattus.vault.v1.VaultService.GetPortfolio:output_type -> sttattus.vault.v1.GetPortfolioResponse
+	13, // 66: sttattus.vault.v1.VaultService.GetWalletChallenge:output_type -> sttattus.vault.v1.GetWalletChallengeResponse
+	15, // 67: sttattus.vault.v1.VaultService.LinkWallet:output_type -> sttattus.vault.v1.LinkWalletResponse
+	17, // 68: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:output_type -> sttattus.vault.v1.CreatePlaidLinkTokenResponse
+	19, // 69: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:output_type -> sttattus.vault.v1.ExchangePlaidPublicTokenResponse
+	11, // 70: sttattus.vault.v1.VaultService.SyncWealth:output_type -> sttattus.vault.v1.SyncWealthResponse
+	9,  // 71: sttattus.vault.v1.VaultService.AdminVerifyAsset:output_type -> sttattus.vault.v1.AdminVerifyAssetResponse
+	22, // 72: sttattus.vault.v1.VaultService.ListNetWorthHistory:output_type -> sttattus.vault.v1.ListNetWorthHistoryResponse
+	25, // 73: sttattus.vault.v1.VaultService.ListPlaidTransactions:output_type -> sttattus.vault.v1.ListPlaidTransactionsResponse
+	28, // 74: sttattus.vault.v1.VaultService.ListPlaidHoldings:output_type -> sttattus.vault.v1.ListPlaidHoldingsResponse
+	31, // 75: sttattus.vault.v1.VaultService.GetCurrentAllocation:output_type -> sttattus.vault.v1.GetCurrentAllocationResponse
+	34, // 76: sttattus.vault.v1.VaultService.ListAllocationHistory:output_type -> sttattus.vault.v1.ListAllocationHistoryResponse
+	37, // 77: sttattus.vault.v1.VaultService.ListRealEstateProperties:output_type -> sttattus.vault.v1.ListRealEstatePropertiesResponse
+	39, // 78: sttattus.vault.v1.VaultService.CreateRealEstateProperty:output_type -> sttattus.vault.v1.CreateRealEstatePropertyResponse
+	41, // 79: sttattus.vault.v1.VaultService.RecordManualValuation:output_type -> sttattus.vault.v1.RecordManualValuationResponse
+	43, // 80: sttattus.vault.v1.VaultService.RefreshAvmValuation:output_type -> sttattus.vault.v1.RefreshAvmValuationResponse
+	45, // 81: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:output_type -> sttattus.vault.v1.DeleteRealEstatePropertyResponse
+	48, // 82: sttattus.vault.v1.VaultService.ListEntities:output_type -> sttattus.vault.v1.ListEntitiesResponse
+	50, // 83: sttattus.vault.v1.VaultService.CreateEntity:output_type -> sttattus.vault.v1.CreateEntityResponse
+	52, // 84: sttattus.vault.v1.VaultService.RenameEntity:output_type -> sttattus.vault.v1.RenameEntityResponse
+	54, // 85: sttattus.vault.v1.VaultService.DeleteEntity:output_type -> sttattus.vault.v1.DeleteEntityResponse
+	56, // 86: sttattus.vault.v1.VaultService.AssignAssetToEntity:output_type -> sttattus.vault.v1.AssignAssetToEntityResponse
+	59, // 87: sttattus.vault.v1.VaultService.ListLatestFxRates:output_type -> sttattus.vault.v1.ListLatestFxRatesResponse
+	62, // 88: sttattus.vault.v1.VaultService.ListCapTableHoldings:output_type -> sttattus.vault.v1.ListCapTableHoldingsResponse
+	65, // 89: sttattus.vault.v1.VaultService.CreateCapTableHolding:output_type -> sttattus.vault.v1.CreateCapTableHoldingResponse
+	67, // 90: sttattus.vault.v1.VaultService.UpdateCapTableHolding:output_type -> sttattus.vault.v1.UpdateCapTableHoldingResponse
+	69, // 91: sttattus.vault.v1.VaultService.DeleteCapTableHolding:output_type -> sttattus.vault.v1.DeleteCapTableHoldingResponse
+	72, // 92: sttattus.vault.v1.VaultService.ListCapTableConnections:output_type -> sttattus.vault.v1.ListCapTableConnectionsResponse
+	74, // 93: sttattus.vault.v1.VaultService.SetCapTableConnectionStatus:output_type -> sttattus.vault.v1.SetCapTableConnectionStatusResponse
+	64, // [64:94] is the sub-list for method output_type
+	34, // [34:64] is the sub-list for method input_type
+	34, // [34:34] is the sub-list for extension type_name
+	34, // [34:34] is the sub-list for extension extendee
+	0,  // [0:34] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_vault_v1_vault_proto_init() }
@@ -3597,7 +4517,7 @@ func file_sttattus_vault_v1_vault_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_vault_v1_vault_proto_rawDesc), len(file_sttattus_vault_v1_vault_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   60,
+			NumMessages:   75,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

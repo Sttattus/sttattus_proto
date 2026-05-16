@@ -19,30 +19,36 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	VaultService_SubmitAsset_FullMethodName              = "/sttattus.vault.v1.VaultService/SubmitAsset"
-	VaultService_GetPortfolio_FullMethodName             = "/sttattus.vault.v1.VaultService/GetPortfolio"
-	VaultService_GetWalletChallenge_FullMethodName       = "/sttattus.vault.v1.VaultService/GetWalletChallenge"
-	VaultService_LinkWallet_FullMethodName               = "/sttattus.vault.v1.VaultService/LinkWallet"
-	VaultService_CreatePlaidLinkToken_FullMethodName     = "/sttattus.vault.v1.VaultService/CreatePlaidLinkToken"
-	VaultService_ExchangePlaidPublicToken_FullMethodName = "/sttattus.vault.v1.VaultService/ExchangePlaidPublicToken"
-	VaultService_SyncWealth_FullMethodName               = "/sttattus.vault.v1.VaultService/SyncWealth"
-	VaultService_AdminVerifyAsset_FullMethodName         = "/sttattus.vault.v1.VaultService/AdminVerifyAsset"
-	VaultService_ListNetWorthHistory_FullMethodName      = "/sttattus.vault.v1.VaultService/ListNetWorthHistory"
-	VaultService_ListPlaidTransactions_FullMethodName    = "/sttattus.vault.v1.VaultService/ListPlaidTransactions"
-	VaultService_ListPlaidHoldings_FullMethodName        = "/sttattus.vault.v1.VaultService/ListPlaidHoldings"
-	VaultService_GetCurrentAllocation_FullMethodName     = "/sttattus.vault.v1.VaultService/GetCurrentAllocation"
-	VaultService_ListAllocationHistory_FullMethodName    = "/sttattus.vault.v1.VaultService/ListAllocationHistory"
-	VaultService_ListRealEstateProperties_FullMethodName = "/sttattus.vault.v1.VaultService/ListRealEstateProperties"
-	VaultService_CreateRealEstateProperty_FullMethodName = "/sttattus.vault.v1.VaultService/CreateRealEstateProperty"
-	VaultService_RecordManualValuation_FullMethodName    = "/sttattus.vault.v1.VaultService/RecordManualValuation"
-	VaultService_RefreshAvmValuation_FullMethodName      = "/sttattus.vault.v1.VaultService/RefreshAvmValuation"
-	VaultService_DeleteRealEstateProperty_FullMethodName = "/sttattus.vault.v1.VaultService/DeleteRealEstateProperty"
-	VaultService_ListEntities_FullMethodName             = "/sttattus.vault.v1.VaultService/ListEntities"
-	VaultService_CreateEntity_FullMethodName             = "/sttattus.vault.v1.VaultService/CreateEntity"
-	VaultService_RenameEntity_FullMethodName             = "/sttattus.vault.v1.VaultService/RenameEntity"
-	VaultService_DeleteEntity_FullMethodName             = "/sttattus.vault.v1.VaultService/DeleteEntity"
-	VaultService_AssignAssetToEntity_FullMethodName      = "/sttattus.vault.v1.VaultService/AssignAssetToEntity"
-	VaultService_ListLatestFxRates_FullMethodName        = "/sttattus.vault.v1.VaultService/ListLatestFxRates"
+	VaultService_SubmitAsset_FullMethodName                 = "/sttattus.vault.v1.VaultService/SubmitAsset"
+	VaultService_GetPortfolio_FullMethodName                = "/sttattus.vault.v1.VaultService/GetPortfolio"
+	VaultService_GetWalletChallenge_FullMethodName          = "/sttattus.vault.v1.VaultService/GetWalletChallenge"
+	VaultService_LinkWallet_FullMethodName                  = "/sttattus.vault.v1.VaultService/LinkWallet"
+	VaultService_CreatePlaidLinkToken_FullMethodName        = "/sttattus.vault.v1.VaultService/CreatePlaidLinkToken"
+	VaultService_ExchangePlaidPublicToken_FullMethodName    = "/sttattus.vault.v1.VaultService/ExchangePlaidPublicToken"
+	VaultService_SyncWealth_FullMethodName                  = "/sttattus.vault.v1.VaultService/SyncWealth"
+	VaultService_AdminVerifyAsset_FullMethodName            = "/sttattus.vault.v1.VaultService/AdminVerifyAsset"
+	VaultService_ListNetWorthHistory_FullMethodName         = "/sttattus.vault.v1.VaultService/ListNetWorthHistory"
+	VaultService_ListPlaidTransactions_FullMethodName       = "/sttattus.vault.v1.VaultService/ListPlaidTransactions"
+	VaultService_ListPlaidHoldings_FullMethodName           = "/sttattus.vault.v1.VaultService/ListPlaidHoldings"
+	VaultService_GetCurrentAllocation_FullMethodName        = "/sttattus.vault.v1.VaultService/GetCurrentAllocation"
+	VaultService_ListAllocationHistory_FullMethodName       = "/sttattus.vault.v1.VaultService/ListAllocationHistory"
+	VaultService_ListRealEstateProperties_FullMethodName    = "/sttattus.vault.v1.VaultService/ListRealEstateProperties"
+	VaultService_CreateRealEstateProperty_FullMethodName    = "/sttattus.vault.v1.VaultService/CreateRealEstateProperty"
+	VaultService_RecordManualValuation_FullMethodName       = "/sttattus.vault.v1.VaultService/RecordManualValuation"
+	VaultService_RefreshAvmValuation_FullMethodName         = "/sttattus.vault.v1.VaultService/RefreshAvmValuation"
+	VaultService_DeleteRealEstateProperty_FullMethodName    = "/sttattus.vault.v1.VaultService/DeleteRealEstateProperty"
+	VaultService_ListEntities_FullMethodName                = "/sttattus.vault.v1.VaultService/ListEntities"
+	VaultService_CreateEntity_FullMethodName                = "/sttattus.vault.v1.VaultService/CreateEntity"
+	VaultService_RenameEntity_FullMethodName                = "/sttattus.vault.v1.VaultService/RenameEntity"
+	VaultService_DeleteEntity_FullMethodName                = "/sttattus.vault.v1.VaultService/DeleteEntity"
+	VaultService_AssignAssetToEntity_FullMethodName         = "/sttattus.vault.v1.VaultService/AssignAssetToEntity"
+	VaultService_ListLatestFxRates_FullMethodName           = "/sttattus.vault.v1.VaultService/ListLatestFxRates"
+	VaultService_ListCapTableHoldings_FullMethodName        = "/sttattus.vault.v1.VaultService/ListCapTableHoldings"
+	VaultService_CreateCapTableHolding_FullMethodName       = "/sttattus.vault.v1.VaultService/CreateCapTableHolding"
+	VaultService_UpdateCapTableHolding_FullMethodName       = "/sttattus.vault.v1.VaultService/UpdateCapTableHolding"
+	VaultService_DeleteCapTableHolding_FullMethodName       = "/sttattus.vault.v1.VaultService/DeleteCapTableHolding"
+	VaultService_ListCapTableConnections_FullMethodName     = "/sttattus.vault.v1.VaultService/ListCapTableConnections"
+	VaultService_SetCapTableConnectionStatus_FullMethodName = "/sttattus.vault.v1.VaultService/SetCapTableConnectionStatus"
 )
 
 // VaultServiceClient is the client API for VaultService service.
@@ -86,6 +92,15 @@ type VaultServiceClient interface {
 	AssignAssetToEntity(ctx context.Context, in *AssignAssetToEntityRequest, opts ...grpc.CallOption) (*AssignAssetToEntityResponse, error)
 	// V8P2.2 — current FX rates for client-side conversion.
 	ListLatestFxRates(ctx context.Context, in *ListLatestFxRatesRequest, opts ...grpc.CallOption) (*ListLatestFxRatesResponse, error)
+	// V8P2.5 — cap-table holdings + Carta / Pulley / AngelList
+	// connection lifecycle. Cloud pull is honest about being
+	// unavailable without API credentials (see OUTSTANDING.md).
+	ListCapTableHoldings(ctx context.Context, in *ListCapTableHoldingsRequest, opts ...grpc.CallOption) (*ListCapTableHoldingsResponse, error)
+	CreateCapTableHolding(ctx context.Context, in *CreateCapTableHoldingRequest, opts ...grpc.CallOption) (*CreateCapTableHoldingResponse, error)
+	UpdateCapTableHolding(ctx context.Context, in *UpdateCapTableHoldingRequest, opts ...grpc.CallOption) (*UpdateCapTableHoldingResponse, error)
+	DeleteCapTableHolding(ctx context.Context, in *DeleteCapTableHoldingRequest, opts ...grpc.CallOption) (*DeleteCapTableHoldingResponse, error)
+	ListCapTableConnections(ctx context.Context, in *ListCapTableConnectionsRequest, opts ...grpc.CallOption) (*ListCapTableConnectionsResponse, error)
+	SetCapTableConnectionStatus(ctx context.Context, in *SetCapTableConnectionStatusRequest, opts ...grpc.CallOption) (*SetCapTableConnectionStatusResponse, error)
 }
 
 type vaultServiceClient struct {
@@ -336,6 +351,66 @@ func (c *vaultServiceClient) ListLatestFxRates(ctx context.Context, in *ListLate
 	return out, nil
 }
 
+func (c *vaultServiceClient) ListCapTableHoldings(ctx context.Context, in *ListCapTableHoldingsRequest, opts ...grpc.CallOption) (*ListCapTableHoldingsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListCapTableHoldingsResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListCapTableHoldings_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) CreateCapTableHolding(ctx context.Context, in *CreateCapTableHoldingRequest, opts ...grpc.CallOption) (*CreateCapTableHoldingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateCapTableHoldingResponse)
+	err := c.cc.Invoke(ctx, VaultService_CreateCapTableHolding_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) UpdateCapTableHolding(ctx context.Context, in *UpdateCapTableHoldingRequest, opts ...grpc.CallOption) (*UpdateCapTableHoldingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateCapTableHoldingResponse)
+	err := c.cc.Invoke(ctx, VaultService_UpdateCapTableHolding_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) DeleteCapTableHolding(ctx context.Context, in *DeleteCapTableHoldingRequest, opts ...grpc.CallOption) (*DeleteCapTableHoldingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteCapTableHoldingResponse)
+	err := c.cc.Invoke(ctx, VaultService_DeleteCapTableHolding_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) ListCapTableConnections(ctx context.Context, in *ListCapTableConnectionsRequest, opts ...grpc.CallOption) (*ListCapTableConnectionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListCapTableConnectionsResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListCapTableConnections_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) SetCapTableConnectionStatus(ctx context.Context, in *SetCapTableConnectionStatusRequest, opts ...grpc.CallOption) (*SetCapTableConnectionStatusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetCapTableConnectionStatusResponse)
+	err := c.cc.Invoke(ctx, VaultService_SetCapTableConnectionStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultServiceServer is the server API for VaultService service.
 // All implementations must embed UnimplementedVaultServiceServer
 // for forward compatibility.
@@ -377,6 +452,15 @@ type VaultServiceServer interface {
 	AssignAssetToEntity(context.Context, *AssignAssetToEntityRequest) (*AssignAssetToEntityResponse, error)
 	// V8P2.2 — current FX rates for client-side conversion.
 	ListLatestFxRates(context.Context, *ListLatestFxRatesRequest) (*ListLatestFxRatesResponse, error)
+	// V8P2.5 — cap-table holdings + Carta / Pulley / AngelList
+	// connection lifecycle. Cloud pull is honest about being
+	// unavailable without API credentials (see OUTSTANDING.md).
+	ListCapTableHoldings(context.Context, *ListCapTableHoldingsRequest) (*ListCapTableHoldingsResponse, error)
+	CreateCapTableHolding(context.Context, *CreateCapTableHoldingRequest) (*CreateCapTableHoldingResponse, error)
+	UpdateCapTableHolding(context.Context, *UpdateCapTableHoldingRequest) (*UpdateCapTableHoldingResponse, error)
+	DeleteCapTableHolding(context.Context, *DeleteCapTableHoldingRequest) (*DeleteCapTableHoldingResponse, error)
+	ListCapTableConnections(context.Context, *ListCapTableConnectionsRequest) (*ListCapTableConnectionsResponse, error)
+	SetCapTableConnectionStatus(context.Context, *SetCapTableConnectionStatusRequest) (*SetCapTableConnectionStatusResponse, error)
 	mustEmbedUnimplementedVaultServiceServer()
 }
 
@@ -458,6 +542,24 @@ func (UnimplementedVaultServiceServer) AssignAssetToEntity(context.Context, *Ass
 }
 func (UnimplementedVaultServiceServer) ListLatestFxRates(context.Context, *ListLatestFxRatesRequest) (*ListLatestFxRatesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListLatestFxRates not implemented")
+}
+func (UnimplementedVaultServiceServer) ListCapTableHoldings(context.Context, *ListCapTableHoldingsRequest) (*ListCapTableHoldingsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListCapTableHoldings not implemented")
+}
+func (UnimplementedVaultServiceServer) CreateCapTableHolding(context.Context, *CreateCapTableHoldingRequest) (*CreateCapTableHoldingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateCapTableHolding not implemented")
+}
+func (UnimplementedVaultServiceServer) UpdateCapTableHolding(context.Context, *UpdateCapTableHoldingRequest) (*UpdateCapTableHoldingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateCapTableHolding not implemented")
+}
+func (UnimplementedVaultServiceServer) DeleteCapTableHolding(context.Context, *DeleteCapTableHoldingRequest) (*DeleteCapTableHoldingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteCapTableHolding not implemented")
+}
+func (UnimplementedVaultServiceServer) ListCapTableConnections(context.Context, *ListCapTableConnectionsRequest) (*ListCapTableConnectionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListCapTableConnections not implemented")
+}
+func (UnimplementedVaultServiceServer) SetCapTableConnectionStatus(context.Context, *SetCapTableConnectionStatusRequest) (*SetCapTableConnectionStatusResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetCapTableConnectionStatus not implemented")
 }
 func (UnimplementedVaultServiceServer) mustEmbedUnimplementedVaultServiceServer() {}
 func (UnimplementedVaultServiceServer) testEmbeddedByValue()                      {}
@@ -912,6 +1014,114 @@ func _VaultService_ListLatestFxRates_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultService_ListCapTableHoldings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListCapTableHoldingsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListCapTableHoldings(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListCapTableHoldings_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListCapTableHoldings(ctx, req.(*ListCapTableHoldingsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_CreateCapTableHolding_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCapTableHoldingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).CreateCapTableHolding(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_CreateCapTableHolding_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).CreateCapTableHolding(ctx, req.(*CreateCapTableHoldingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_UpdateCapTableHolding_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCapTableHoldingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).UpdateCapTableHolding(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_UpdateCapTableHolding_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).UpdateCapTableHolding(ctx, req.(*UpdateCapTableHoldingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_DeleteCapTableHolding_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteCapTableHoldingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).DeleteCapTableHolding(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_DeleteCapTableHolding_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).DeleteCapTableHolding(ctx, req.(*DeleteCapTableHoldingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_ListCapTableConnections_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListCapTableConnectionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListCapTableConnections(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListCapTableConnections_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListCapTableConnections(ctx, req.(*ListCapTableConnectionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_SetCapTableConnectionStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetCapTableConnectionStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SetCapTableConnectionStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SetCapTableConnectionStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SetCapTableConnectionStatus(ctx, req.(*SetCapTableConnectionStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultService_ServiceDesc is the grpc.ServiceDesc for VaultService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1014,6 +1224,30 @@ var VaultService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListLatestFxRates",
 			Handler:    _VaultService_ListLatestFxRates_Handler,
+		},
+		{
+			MethodName: "ListCapTableHoldings",
+			Handler:    _VaultService_ListCapTableHoldings_Handler,
+		},
+		{
+			MethodName: "CreateCapTableHolding",
+			Handler:    _VaultService_CreateCapTableHolding_Handler,
+		},
+		{
+			MethodName: "UpdateCapTableHolding",
+			Handler:    _VaultService_UpdateCapTableHolding_Handler,
+		},
+		{
+			MethodName: "DeleteCapTableHolding",
+			Handler:    _VaultService_DeleteCapTableHolding_Handler,
+		},
+		{
+			MethodName: "ListCapTableConnections",
+			Handler:    _VaultService_ListCapTableConnections_Handler,
+		},
+		{
+			MethodName: "SetCapTableConnectionStatus",
+			Handler:    _VaultService_SetCapTableConnectionStatus_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

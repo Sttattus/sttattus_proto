@@ -883,3 +883,219 @@ final $typed_data.Uint8List listLatestFxRatesResponseDescriptor = $convert.base6
     'ChlMaXN0TGF0ZXN0RnhSYXRlc1Jlc3BvbnNlEi8KBXJhdGVzGAEgAygLMhkuc3R0YXR0dXMudm'
     'F1bHQudjEuRnhSYXRlUgVyYXRlcw==');
 
+@$core.Deprecated('Use capTableHoldingDescriptor instead')
+const CapTableHolding$json = {
+  '1': 'CapTableHolding',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'entity_id', '3': 2, '4': 1, '5': 9, '10': 'entityId'},
+    {'1': 'company_name', '3': 3, '4': 1, '5': 9, '10': 'companyName'},
+    {'1': 'instrument_type', '3': 4, '4': 1, '5': 9, '10': 'instrumentType'},
+    {'1': 'shares', '3': 5, '4': 1, '5': 1, '10': 'shares'},
+    {'1': 'strike_price_usd', '3': 6, '4': 1, '5': 1, '10': 'strikePriceUsd'},
+    {'1': 'last_priced_price_usd', '3': 7, '4': 1, '5': 1, '10': 'lastPricedPriceUsd'},
+    {'1': 'last_priced_at_iso', '3': 8, '4': 1, '5': 9, '10': 'lastPricedAtIso'},
+    {'1': 'source', '3': 9, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'external_id', '3': 10, '4': 1, '5': 9, '10': 'externalId'},
+    {'1': 'notes', '3': 11, '4': 1, '5': 9, '10': 'notes'},
+    {'1': 'position_value_usd', '3': 12, '4': 1, '5': 1, '10': 'positionValueUsd'},
+  ],
+};
+
+/// Descriptor for `CapTableHolding`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List capTableHoldingDescriptor = $convert.base64Decode(
+    'Cg9DYXBUYWJsZUhvbGRpbmcSDgoCaWQYASABKAlSAmlkEhsKCWVudGl0eV9pZBgCIAEoCVIIZW'
+    '50aXR5SWQSIQoMY29tcGFueV9uYW1lGAMgASgJUgtjb21wYW55TmFtZRInCg9pbnN0cnVtZW50'
+    'X3R5cGUYBCABKAlSDmluc3RydW1lbnRUeXBlEhYKBnNoYXJlcxgFIAEoAVIGc2hhcmVzEigKEH'
+    'N0cmlrZV9wcmljZV91c2QYBiABKAFSDnN0cmlrZVByaWNlVXNkEjEKFWxhc3RfcHJpY2VkX3By'
+    'aWNlX3VzZBgHIAEoAVISbGFzdFByaWNlZFByaWNlVXNkEisKEmxhc3RfcHJpY2VkX2F0X2lzbx'
+    'gIIAEoCVIPbGFzdFByaWNlZEF0SXNvEhYKBnNvdXJjZRgJIAEoCVIGc291cmNlEh8KC2V4dGVy'
+    'bmFsX2lkGAogASgJUgpleHRlcm5hbElkEhQKBW5vdGVzGAsgASgJUgVub3RlcxIsChJwb3NpdG'
+    'lvbl92YWx1ZV91c2QYDCABKAFSEHBvc2l0aW9uVmFsdWVVc2Q=');
+
+@$core.Deprecated('Use listCapTableHoldingsRequestDescriptor instead')
+const ListCapTableHoldingsRequest$json = {
+  '1': 'ListCapTableHoldingsRequest',
+};
+
+/// Descriptor for `ListCapTableHoldingsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listCapTableHoldingsRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0Q2FwVGFibGVIb2xkaW5nc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listCapTableHoldingsResponseDescriptor instead')
+const ListCapTableHoldingsResponse$json = {
+  '1': 'ListCapTableHoldingsResponse',
+  '2': [
+    {'1': 'holdings', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.CapTableHolding', '10': 'holdings'},
+    {'1': 'total_value_usd', '3': 2, '4': 1, '5': 1, '10': 'totalValueUsd'},
+  ],
+};
+
+/// Descriptor for `ListCapTableHoldingsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listCapTableHoldingsResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0Q2FwVGFibGVIb2xkaW5nc1Jlc3BvbnNlEj4KCGhvbGRpbmdzGAEgAygLMiIuc3R0YX'
+    'R0dXMudmF1bHQudjEuQ2FwVGFibGVIb2xkaW5nUghob2xkaW5ncxImCg90b3RhbF92YWx1ZV91'
+    'c2QYAiABKAFSDXRvdGFsVmFsdWVVc2Q=');
+
+@$core.Deprecated('Use capTableHoldingInputDescriptor instead')
+const CapTableHoldingInput$json = {
+  '1': 'CapTableHoldingInput',
+  '2': [
+    {'1': 'entity_id', '3': 1, '4': 1, '5': 9, '10': 'entityId'},
+    {'1': 'company_name', '3': 2, '4': 1, '5': 9, '10': 'companyName'},
+    {'1': 'instrument_type', '3': 3, '4': 1, '5': 9, '10': 'instrumentType'},
+    {'1': 'shares', '3': 4, '4': 1, '5': 1, '10': 'shares'},
+    {'1': 'strike_price_usd', '3': 5, '4': 1, '5': 1, '10': 'strikePriceUsd'},
+    {'1': 'last_priced_price_usd', '3': 6, '4': 1, '5': 1, '10': 'lastPricedPriceUsd'},
+    {'1': 'last_priced_at_iso', '3': 7, '4': 1, '5': 9, '10': 'lastPricedAtIso'},
+    {'1': 'notes', '3': 8, '4': 1, '5': 9, '10': 'notes'},
+  ],
+};
+
+/// Descriptor for `CapTableHoldingInput`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List capTableHoldingInputDescriptor = $convert.base64Decode(
+    'ChRDYXBUYWJsZUhvbGRpbmdJbnB1dBIbCgllbnRpdHlfaWQYASABKAlSCGVudGl0eUlkEiEKDG'
+    'NvbXBhbnlfbmFtZRgCIAEoCVILY29tcGFueU5hbWUSJwoPaW5zdHJ1bWVudF90eXBlGAMgASgJ'
+    'Ug5pbnN0cnVtZW50VHlwZRIWCgZzaGFyZXMYBCABKAFSBnNoYXJlcxIoChBzdHJpa2VfcHJpY2'
+    'VfdXNkGAUgASgBUg5zdHJpa2VQcmljZVVzZBIxChVsYXN0X3ByaWNlZF9wcmljZV91c2QYBiAB'
+    'KAFSEmxhc3RQcmljZWRQcmljZVVzZBIrChJsYXN0X3ByaWNlZF9hdF9pc28YByABKAlSD2xhc3'
+    'RQcmljZWRBdElzbxIUCgVub3RlcxgIIAEoCVIFbm90ZXM=');
+
+@$core.Deprecated('Use createCapTableHoldingRequestDescriptor instead')
+const CreateCapTableHoldingRequest$json = {
+  '1': 'CreateCapTableHoldingRequest',
+  '2': [
+    {'1': 'input', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.CapTableHoldingInput', '10': 'input'},
+  ],
+};
+
+/// Descriptor for `CreateCapTableHoldingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createCapTableHoldingRequestDescriptor = $convert.base64Decode(
+    'ChxDcmVhdGVDYXBUYWJsZUhvbGRpbmdSZXF1ZXN0Ej0KBWlucHV0GAEgASgLMicuc3R0YXR0dX'
+    'MudmF1bHQudjEuQ2FwVGFibGVIb2xkaW5nSW5wdXRSBWlucHV0');
+
+@$core.Deprecated('Use createCapTableHoldingResponseDescriptor instead')
+const CreateCapTableHoldingResponse$json = {
+  '1': 'CreateCapTableHoldingResponse',
+  '2': [
+    {'1': 'holding', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.CapTableHolding', '10': 'holding'},
+  ],
+};
+
+/// Descriptor for `CreateCapTableHoldingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createCapTableHoldingResponseDescriptor = $convert.base64Decode(
+    'Ch1DcmVhdGVDYXBUYWJsZUhvbGRpbmdSZXNwb25zZRI8Cgdob2xkaW5nGAEgASgLMiIuc3R0YX'
+    'R0dXMudmF1bHQudjEuQ2FwVGFibGVIb2xkaW5nUgdob2xkaW5n');
+
+@$core.Deprecated('Use updateCapTableHoldingRequestDescriptor instead')
+const UpdateCapTableHoldingRequest$json = {
+  '1': 'UpdateCapTableHoldingRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'input', '3': 2, '4': 1, '5': 11, '6': '.sttattus.vault.v1.CapTableHoldingInput', '10': 'input'},
+  ],
+};
+
+/// Descriptor for `UpdateCapTableHoldingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateCapTableHoldingRequestDescriptor = $convert.base64Decode(
+    'ChxVcGRhdGVDYXBUYWJsZUhvbGRpbmdSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBI9CgVpbnB1dB'
+    'gCIAEoCzInLnN0dGF0dHVzLnZhdWx0LnYxLkNhcFRhYmxlSG9sZGluZ0lucHV0UgVpbnB1dA==');
+
+@$core.Deprecated('Use updateCapTableHoldingResponseDescriptor instead')
+const UpdateCapTableHoldingResponse$json = {
+  '1': 'UpdateCapTableHoldingResponse',
+  '2': [
+    {'1': 'holding', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.CapTableHolding', '10': 'holding'},
+  ],
+};
+
+/// Descriptor for `UpdateCapTableHoldingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateCapTableHoldingResponseDescriptor = $convert.base64Decode(
+    'Ch1VcGRhdGVDYXBUYWJsZUhvbGRpbmdSZXNwb25zZRI8Cgdob2xkaW5nGAEgASgLMiIuc3R0YX'
+    'R0dXMudmF1bHQudjEuQ2FwVGFibGVIb2xkaW5nUgdob2xkaW5n');
+
+@$core.Deprecated('Use deleteCapTableHoldingRequestDescriptor instead')
+const DeleteCapTableHoldingRequest$json = {
+  '1': 'DeleteCapTableHoldingRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteCapTableHoldingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteCapTableHoldingRequestDescriptor = $convert.base64Decode(
+    'ChxEZWxldGVDYXBUYWJsZUhvbGRpbmdSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
+
+@$core.Deprecated('Use deleteCapTableHoldingResponseDescriptor instead')
+const DeleteCapTableHoldingResponse$json = {
+  '1': 'DeleteCapTableHoldingResponse',
+};
+
+/// Descriptor for `DeleteCapTableHoldingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteCapTableHoldingResponseDescriptor = $convert.base64Decode(
+    'Ch1EZWxldGVDYXBUYWJsZUhvbGRpbmdSZXNwb25zZQ==');
+
+@$core.Deprecated('Use capTableConnectionDescriptor instead')
+const CapTableConnection$json = {
+  '1': 'CapTableConnection',
+  '2': [
+    {'1': 'provider', '3': 1, '4': 1, '5': 9, '10': 'provider'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'last_synced_at', '3': 3, '4': 1, '5': 3, '10': 'lastSyncedAt'},
+  ],
+};
+
+/// Descriptor for `CapTableConnection`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List capTableConnectionDescriptor = $convert.base64Decode(
+    'ChJDYXBUYWJsZUNvbm5lY3Rpb24SGgoIcHJvdmlkZXIYASABKAlSCHByb3ZpZGVyEhYKBnN0YX'
+    'R1cxgCIAEoCVIGc3RhdHVzEiQKDmxhc3Rfc3luY2VkX2F0GAMgASgDUgxsYXN0U3luY2VkQXQ=');
+
+@$core.Deprecated('Use listCapTableConnectionsRequestDescriptor instead')
+const ListCapTableConnectionsRequest$json = {
+  '1': 'ListCapTableConnectionsRequest',
+};
+
+/// Descriptor for `ListCapTableConnectionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listCapTableConnectionsRequestDescriptor = $convert.base64Decode(
+    'Ch5MaXN0Q2FwVGFibGVDb25uZWN0aW9uc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listCapTableConnectionsResponseDescriptor instead')
+const ListCapTableConnectionsResponse$json = {
+  '1': 'ListCapTableConnectionsResponse',
+  '2': [
+    {'1': 'connections', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.CapTableConnection', '10': 'connections'},
+  ],
+};
+
+/// Descriptor for `ListCapTableConnectionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listCapTableConnectionsResponseDescriptor = $convert.base64Decode(
+    'Ch9MaXN0Q2FwVGFibGVDb25uZWN0aW9uc1Jlc3BvbnNlEkcKC2Nvbm5lY3Rpb25zGAEgAygLMi'
+    'Uuc3R0YXR0dXMudmF1bHQudjEuQ2FwVGFibGVDb25uZWN0aW9uUgtjb25uZWN0aW9ucw==');
+
+@$core.Deprecated('Use setCapTableConnectionStatusRequestDescriptor instead')
+const SetCapTableConnectionStatusRequest$json = {
+  '1': 'SetCapTableConnectionStatusRequest',
+  '2': [
+    {'1': 'provider', '3': 1, '4': 1, '5': 9, '10': 'provider'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `SetCapTableConnectionStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setCapTableConnectionStatusRequestDescriptor = $convert.base64Decode(
+    'CiJTZXRDYXBUYWJsZUNvbm5lY3Rpb25TdGF0dXNSZXF1ZXN0EhoKCHByb3ZpZGVyGAEgASgJUg'
+    'hwcm92aWRlchIWCgZzdGF0dXMYAiABKAlSBnN0YXR1cw==');
+
+@$core.Deprecated('Use setCapTableConnectionStatusResponseDescriptor instead')
+const SetCapTableConnectionStatusResponse$json = {
+  '1': 'SetCapTableConnectionStatusResponse',
+  '2': [
+    {'1': 'connection', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.CapTableConnection', '10': 'connection'},
+  ],
+};
+
+/// Descriptor for `SetCapTableConnectionStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setCapTableConnectionStatusResponseDescriptor = $convert.base64Decode(
+    'CiNTZXRDYXBUYWJsZUNvbm5lY3Rpb25TdGF0dXNSZXNwb25zZRJFCgpjb25uZWN0aW9uGAEgAS'
+    'gLMiUuc3R0YXR0dXMudmF1bHQudjEuQ2FwVGFibGVDb25uZWN0aW9uUgpjb25uZWN0aW9u');
+

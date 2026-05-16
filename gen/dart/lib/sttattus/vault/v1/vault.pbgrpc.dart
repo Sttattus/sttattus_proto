@@ -141,6 +141,33 @@ class VaultServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listLatestFxRates, request, options: options);
   }
 
+  /// V8P2.5 — cap-table holdings + Carta / Pulley / AngelList
+  /// connection lifecycle. Cloud pull is honest about being
+  /// unavailable without API credentials (see OUTSTANDING.md).
+  $grpc.ResponseFuture<$0.ListCapTableHoldingsResponse> listCapTableHoldings($0.ListCapTableHoldingsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listCapTableHoldings, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateCapTableHoldingResponse> createCapTableHolding($0.CreateCapTableHoldingRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createCapTableHolding, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateCapTableHoldingResponse> updateCapTableHolding($0.UpdateCapTableHoldingRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$updateCapTableHolding, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteCapTableHoldingResponse> deleteCapTableHolding($0.DeleteCapTableHoldingRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteCapTableHolding, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListCapTableConnectionsResponse> listCapTableConnections($0.ListCapTableConnectionsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listCapTableConnections, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetCapTableConnectionStatusResponse> setCapTableConnectionStatus($0.SetCapTableConnectionStatusRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$setCapTableConnectionStatus, request, options: options);
+  }
+
     // method descriptors
 
   static final _$submitAsset = $grpc.ClientMethod<$0.SubmitAssetRequest, $0.SubmitAssetResponse>(
@@ -239,6 +266,30 @@ class VaultServiceClient extends $grpc.Client {
       '/sttattus.vault.v1.VaultService/ListLatestFxRates',
       ($0.ListLatestFxRatesRequest value) => value.writeToBuffer(),
       $0.ListLatestFxRatesResponse.fromBuffer);
+  static final _$listCapTableHoldings = $grpc.ClientMethod<$0.ListCapTableHoldingsRequest, $0.ListCapTableHoldingsResponse>(
+      '/sttattus.vault.v1.VaultService/ListCapTableHoldings',
+      ($0.ListCapTableHoldingsRequest value) => value.writeToBuffer(),
+      $0.ListCapTableHoldingsResponse.fromBuffer);
+  static final _$createCapTableHolding = $grpc.ClientMethod<$0.CreateCapTableHoldingRequest, $0.CreateCapTableHoldingResponse>(
+      '/sttattus.vault.v1.VaultService/CreateCapTableHolding',
+      ($0.CreateCapTableHoldingRequest value) => value.writeToBuffer(),
+      $0.CreateCapTableHoldingResponse.fromBuffer);
+  static final _$updateCapTableHolding = $grpc.ClientMethod<$0.UpdateCapTableHoldingRequest, $0.UpdateCapTableHoldingResponse>(
+      '/sttattus.vault.v1.VaultService/UpdateCapTableHolding',
+      ($0.UpdateCapTableHoldingRequest value) => value.writeToBuffer(),
+      $0.UpdateCapTableHoldingResponse.fromBuffer);
+  static final _$deleteCapTableHolding = $grpc.ClientMethod<$0.DeleteCapTableHoldingRequest, $0.DeleteCapTableHoldingResponse>(
+      '/sttattus.vault.v1.VaultService/DeleteCapTableHolding',
+      ($0.DeleteCapTableHoldingRequest value) => value.writeToBuffer(),
+      $0.DeleteCapTableHoldingResponse.fromBuffer);
+  static final _$listCapTableConnections = $grpc.ClientMethod<$0.ListCapTableConnectionsRequest, $0.ListCapTableConnectionsResponse>(
+      '/sttattus.vault.v1.VaultService/ListCapTableConnections',
+      ($0.ListCapTableConnectionsRequest value) => value.writeToBuffer(),
+      $0.ListCapTableConnectionsResponse.fromBuffer);
+  static final _$setCapTableConnectionStatus = $grpc.ClientMethod<$0.SetCapTableConnectionStatusRequest, $0.SetCapTableConnectionStatusResponse>(
+      '/sttattus.vault.v1.VaultService/SetCapTableConnectionStatus',
+      ($0.SetCapTableConnectionStatusRequest value) => value.writeToBuffer(),
+      $0.SetCapTableConnectionStatusResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.vault.v1.VaultService')
@@ -414,6 +465,48 @@ abstract class VaultServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListLatestFxRatesRequest.fromBuffer(value),
         ($0.ListLatestFxRatesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListCapTableHoldingsRequest, $0.ListCapTableHoldingsResponse>(
+        'ListCapTableHoldings',
+        listCapTableHoldings_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListCapTableHoldingsRequest.fromBuffer(value),
+        ($0.ListCapTableHoldingsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateCapTableHoldingRequest, $0.CreateCapTableHoldingResponse>(
+        'CreateCapTableHolding',
+        createCapTableHolding_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateCapTableHoldingRequest.fromBuffer(value),
+        ($0.CreateCapTableHoldingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateCapTableHoldingRequest, $0.UpdateCapTableHoldingResponse>(
+        'UpdateCapTableHolding',
+        updateCapTableHolding_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpdateCapTableHoldingRequest.fromBuffer(value),
+        ($0.UpdateCapTableHoldingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteCapTableHoldingRequest, $0.DeleteCapTableHoldingResponse>(
+        'DeleteCapTableHolding',
+        deleteCapTableHolding_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteCapTableHoldingRequest.fromBuffer(value),
+        ($0.DeleteCapTableHoldingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListCapTableConnectionsRequest, $0.ListCapTableConnectionsResponse>(
+        'ListCapTableConnections',
+        listCapTableConnections_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListCapTableConnectionsRequest.fromBuffer(value),
+        ($0.ListCapTableConnectionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetCapTableConnectionStatusRequest, $0.SetCapTableConnectionStatusResponse>(
+        'SetCapTableConnectionStatus',
+        setCapTableConnectionStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SetCapTableConnectionStatusRequest.fromBuffer(value),
+        ($0.SetCapTableConnectionStatusResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.SubmitAssetResponse> submitAsset_Pre($grpc.ServiceCall $call, $async.Future<$0.SubmitAssetRequest> $request) async {
@@ -559,5 +652,41 @@ abstract class VaultServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListLatestFxRatesResponse> listLatestFxRates($grpc.ServiceCall call, $0.ListLatestFxRatesRequest request);
+
+  $async.Future<$0.ListCapTableHoldingsResponse> listCapTableHoldings_Pre($grpc.ServiceCall $call, $async.Future<$0.ListCapTableHoldingsRequest> $request) async {
+    return listCapTableHoldings($call, await $request);
+  }
+
+  $async.Future<$0.ListCapTableHoldingsResponse> listCapTableHoldings($grpc.ServiceCall call, $0.ListCapTableHoldingsRequest request);
+
+  $async.Future<$0.CreateCapTableHoldingResponse> createCapTableHolding_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateCapTableHoldingRequest> $request) async {
+    return createCapTableHolding($call, await $request);
+  }
+
+  $async.Future<$0.CreateCapTableHoldingResponse> createCapTableHolding($grpc.ServiceCall call, $0.CreateCapTableHoldingRequest request);
+
+  $async.Future<$0.UpdateCapTableHoldingResponse> updateCapTableHolding_Pre($grpc.ServiceCall $call, $async.Future<$0.UpdateCapTableHoldingRequest> $request) async {
+    return updateCapTableHolding($call, await $request);
+  }
+
+  $async.Future<$0.UpdateCapTableHoldingResponse> updateCapTableHolding($grpc.ServiceCall call, $0.UpdateCapTableHoldingRequest request);
+
+  $async.Future<$0.DeleteCapTableHoldingResponse> deleteCapTableHolding_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteCapTableHoldingRequest> $request) async {
+    return deleteCapTableHolding($call, await $request);
+  }
+
+  $async.Future<$0.DeleteCapTableHoldingResponse> deleteCapTableHolding($grpc.ServiceCall call, $0.DeleteCapTableHoldingRequest request);
+
+  $async.Future<$0.ListCapTableConnectionsResponse> listCapTableConnections_Pre($grpc.ServiceCall $call, $async.Future<$0.ListCapTableConnectionsRequest> $request) async {
+    return listCapTableConnections($call, await $request);
+  }
+
+  $async.Future<$0.ListCapTableConnectionsResponse> listCapTableConnections($grpc.ServiceCall call, $0.ListCapTableConnectionsRequest request);
+
+  $async.Future<$0.SetCapTableConnectionStatusResponse> setCapTableConnectionStatus_Pre($grpc.ServiceCall $call, $async.Future<$0.SetCapTableConnectionStatusRequest> $request) async {
+    return setCapTableConnectionStatus($call, await $request);
+  }
+
+  $async.Future<$0.SetCapTableConnectionStatusResponse> setCapTableConnectionStatus($grpc.ServiceCall call, $0.SetCapTableConnectionStatusRequest request);
 
 }
