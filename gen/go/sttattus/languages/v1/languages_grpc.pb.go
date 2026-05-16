@@ -25,6 +25,8 @@ const (
 	LanguagesService_ListPlacementQuestions_FullMethodName = "/sttattus.languages.v1.LanguagesService/ListPlacementQuestions"
 	LanguagesService_SubmitPlacementResult_FullMethodName  = "/sttattus.languages.v1.LanguagesService/SubmitPlacementResult"
 	LanguagesService_ListMyPlacementResults_FullMethodName = "/sttattus.languages.v1.LanguagesService/ListMyPlacementResults"
+	LanguagesService_GetTodayPlan_FullMethodName           = "/sttattus.languages.v1.LanguagesService/GetTodayPlan"
+	LanguagesService_MarkPlanBlock_FullMethodName          = "/sttattus.languages.v1.LanguagesService/MarkPlanBlock"
 	LanguagesService_ListWords_FullMethodName              = "/sttattus.languages.v1.LanguagesService/ListWords"
 )
 
@@ -41,6 +43,9 @@ type LanguagesServiceClient interface {
 	ListPlacementQuestions(ctx context.Context, in *ListPlacementQuestionsRequest, opts ...grpc.CallOption) (*ListPlacementQuestionsResponse, error)
 	SubmitPlacementResult(ctx context.Context, in *SubmitPlacementResultRequest, opts ...grpc.CallOption) (*SubmitPlacementResultResponse, error)
 	ListMyPlacementResults(ctx context.Context, in *ListMyPlacementResultsRequest, opts ...grpc.CallOption) (*ListMyPlacementResultsResponse, error)
+	// L12.2 — today's plan (three-block daily).
+	GetTodayPlan(ctx context.Context, in *GetTodayPlanRequest, opts ...grpc.CallOption) (*GetTodayPlanResponse, error)
+	MarkPlanBlock(ctx context.Context, in *MarkPlanBlockRequest, opts ...grpc.CallOption) (*MarkPlanBlockResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error)
 }
@@ -113,6 +118,26 @@ func (c *languagesServiceClient) ListMyPlacementResults(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *languagesServiceClient) GetTodayPlan(ctx context.Context, in *GetTodayPlanRequest, opts ...grpc.CallOption) (*GetTodayPlanResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTodayPlanResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetTodayPlan_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) MarkPlanBlock(ctx context.Context, in *MarkPlanBlockRequest, opts ...grpc.CallOption) (*MarkPlanBlockResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MarkPlanBlockResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_MarkPlanBlock_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *languagesServiceClient) ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListWordsResponse)
@@ -136,6 +161,9 @@ type LanguagesServiceServer interface {
 	ListPlacementQuestions(context.Context, *ListPlacementQuestionsRequest) (*ListPlacementQuestionsResponse, error)
 	SubmitPlacementResult(context.Context, *SubmitPlacementResultRequest) (*SubmitPlacementResultResponse, error)
 	ListMyPlacementResults(context.Context, *ListMyPlacementResultsRequest) (*ListMyPlacementResultsResponse, error)
+	// L12.2 — today's plan (three-block daily).
+	GetTodayPlan(context.Context, *GetTodayPlanRequest) (*GetTodayPlanResponse, error)
+	MarkPlanBlock(context.Context, *MarkPlanBlockRequest) (*MarkPlanBlockResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error)
 	mustEmbedUnimplementedLanguagesServiceServer()
@@ -165,6 +193,12 @@ func (UnimplementedLanguagesServiceServer) SubmitPlacementResult(context.Context
 }
 func (UnimplementedLanguagesServiceServer) ListMyPlacementResults(context.Context, *ListMyPlacementResultsRequest) (*ListMyPlacementResultsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMyPlacementResults not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetTodayPlan(context.Context, *GetTodayPlanRequest) (*GetTodayPlanResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTodayPlan not implemented")
+}
+func (UnimplementedLanguagesServiceServer) MarkPlanBlock(context.Context, *MarkPlanBlockRequest) (*MarkPlanBlockResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method MarkPlanBlock not implemented")
 }
 func (UnimplementedLanguagesServiceServer) ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListWords not implemented")
@@ -298,6 +332,42 @@ func _LanguagesService_ListMyPlacementResults_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LanguagesService_GetTodayPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTodayPlanRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetTodayPlan(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetTodayPlan_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetTodayPlan(ctx, req.(*GetTodayPlanRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_MarkPlanBlock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MarkPlanBlockRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).MarkPlanBlock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_MarkPlanBlock_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).MarkPlanBlock(ctx, req.(*MarkPlanBlockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LanguagesService_ListWords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListWordsRequest)
 	if err := dec(in); err != nil {
@@ -346,6 +416,14 @@ var LanguagesService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListMyPlacementResults",
 			Handler:    _LanguagesService_ListMyPlacementResults_Handler,
+		},
+		{
+			MethodName: "GetTodayPlan",
+			Handler:    _LanguagesService_GetTodayPlan_Handler,
+		},
+		{
+			MethodName: "MarkPlanBlock",
+			Handler:    _LanguagesService_MarkPlanBlock_Handler,
 		},
 		{
 			MethodName: "ListWords",

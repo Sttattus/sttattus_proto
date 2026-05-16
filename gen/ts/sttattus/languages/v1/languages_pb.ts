@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
 import { PageRequest, PageResponse } from "../../common/v1/pagination_pb.js";
 
 /**
@@ -706,6 +706,229 @@ export class GetLinguistStatsResponse extends Message<GetLinguistStatsResponse> 
 
   static equals(a: GetLinguistStatsResponse | PlainMessage<GetLinguistStatsResponse> | undefined, b: GetLinguistStatsResponse | PlainMessage<GetLinguistStatsResponse> | undefined): boolean {
     return proto3.util.equals(GetLinguistStatsResponse, a, b);
+  }
+}
+
+/**
+ * DailyPlan = the three blocks of today for one (user, language).
+ * done_unix == 0 means "not yet done"; a non-zero value is the
+ * stamp from the backend.
+ *
+ * @generated from message sttattus.languages.v1.DailyPlan
+ */
+export class DailyPlan extends Message<DailyPlan> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  /**
+   * ISO YYYY-MM-DD
+   *
+   * @generated from field: string plan_date = 2;
+   */
+  planDate = "";
+
+  /**
+   * @generated from field: int64 warmup_done_unix = 3;
+   */
+  warmupDoneUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 immersion_done_unix = 4;
+   */
+  immersionDoneUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 output_done_unix = 5;
+   */
+  outputDoneUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<DailyPlan>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.DailyPlan";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "plan_date", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "warmup_done_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "immersion_done_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "output_done_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DailyPlan {
+    return new DailyPlan().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DailyPlan {
+    return new DailyPlan().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DailyPlan {
+    return new DailyPlan().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DailyPlan | PlainMessage<DailyPlan> | undefined, b: DailyPlan | PlainMessage<DailyPlan> | undefined): boolean {
+    return proto3.util.equals(DailyPlan, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.GetTodayPlanRequest
+ */
+export class GetTodayPlanRequest extends Message<GetTodayPlanRequest> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  constructor(data?: PartialMessage<GetTodayPlanRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.GetTodayPlanRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTodayPlanRequest {
+    return new GetTodayPlanRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTodayPlanRequest {
+    return new GetTodayPlanRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTodayPlanRequest {
+    return new GetTodayPlanRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTodayPlanRequest | PlainMessage<GetTodayPlanRequest> | undefined, b: GetTodayPlanRequest | PlainMessage<GetTodayPlanRequest> | undefined): boolean {
+    return proto3.util.equals(GetTodayPlanRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.GetTodayPlanResponse
+ */
+export class GetTodayPlanResponse extends Message<GetTodayPlanResponse> {
+  /**
+   * @generated from field: sttattus.languages.v1.DailyPlan plan = 1;
+   */
+  plan?: DailyPlan;
+
+  constructor(data?: PartialMessage<GetTodayPlanResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.GetTodayPlanResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "plan", kind: "message", T: DailyPlan },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTodayPlanResponse {
+    return new GetTodayPlanResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTodayPlanResponse {
+    return new GetTodayPlanResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTodayPlanResponse {
+    return new GetTodayPlanResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTodayPlanResponse | PlainMessage<GetTodayPlanResponse> | undefined, b: GetTodayPlanResponse | PlainMessage<GetTodayPlanResponse> | undefined): boolean {
+    return proto3.util.equals(GetTodayPlanResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.MarkPlanBlockRequest
+ */
+export class MarkPlanBlockRequest extends Message<MarkPlanBlockRequest> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  /**
+   * 'warmup' | 'immersion' | 'output'
+   *
+   * @generated from field: string block = 2;
+   */
+  block = "";
+
+  constructor(data?: PartialMessage<MarkPlanBlockRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.MarkPlanBlockRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "block", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MarkPlanBlockRequest {
+    return new MarkPlanBlockRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MarkPlanBlockRequest {
+    return new MarkPlanBlockRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MarkPlanBlockRequest {
+    return new MarkPlanBlockRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MarkPlanBlockRequest | PlainMessage<MarkPlanBlockRequest> | undefined, b: MarkPlanBlockRequest | PlainMessage<MarkPlanBlockRequest> | undefined): boolean {
+    return proto3.util.equals(MarkPlanBlockRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.MarkPlanBlockResponse
+ */
+export class MarkPlanBlockResponse extends Message<MarkPlanBlockResponse> {
+  /**
+   * @generated from field: sttattus.languages.v1.DailyPlan plan = 1;
+   */
+  plan?: DailyPlan;
+
+  constructor(data?: PartialMessage<MarkPlanBlockResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.MarkPlanBlockResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "plan", kind: "message", T: DailyPlan },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MarkPlanBlockResponse {
+    return new MarkPlanBlockResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MarkPlanBlockResponse {
+    return new MarkPlanBlockResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MarkPlanBlockResponse {
+    return new MarkPlanBlockResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MarkPlanBlockResponse | PlainMessage<MarkPlanBlockResponse> | undefined, b: MarkPlanBlockResponse | PlainMessage<MarkPlanBlockResponse> | undefined): boolean {
+    return proto3.util.equals(MarkPlanBlockResponse, a, b);
   }
 }
 

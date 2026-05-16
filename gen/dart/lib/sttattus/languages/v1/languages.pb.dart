@@ -12,6 +12,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $1;
@@ -926,6 +927,303 @@ class GetLinguistStatsResponse extends $pb.GeneratedMessage {
   void clearStats() => $_clearField(1);
   @$pb.TagNumber(1)
   LinguistStats ensureStats() => $_ensure(0);
+}
+
+/// DailyPlan = the three blocks of today for one (user, language).
+/// done_unix == 0 means "not yet done"; a non-zero value is the
+/// stamp from the backend.
+class DailyPlan extends $pb.GeneratedMessage {
+  factory DailyPlan({
+    $core.String? language,
+    $core.String? planDate,
+    $fixnum.Int64? warmupDoneUnix,
+    $fixnum.Int64? immersionDoneUnix,
+    $fixnum.Int64? outputDoneUnix,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (planDate != null) result.planDate = planDate;
+    if (warmupDoneUnix != null) result.warmupDoneUnix = warmupDoneUnix;
+    if (immersionDoneUnix != null) result.immersionDoneUnix = immersionDoneUnix;
+    if (outputDoneUnix != null) result.outputDoneUnix = outputDoneUnix;
+    return result;
+  }
+
+  DailyPlan._();
+
+  factory DailyPlan.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DailyPlan.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DailyPlan', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOS(2, _omitFieldNames ? '' : 'planDate')
+    ..aInt64(3, _omitFieldNames ? '' : 'warmupDoneUnix')
+    ..aInt64(4, _omitFieldNames ? '' : 'immersionDoneUnix')
+    ..aInt64(5, _omitFieldNames ? '' : 'outputDoneUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DailyPlan clone() => DailyPlan()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DailyPlan copyWith(void Function(DailyPlan) updates) => super.copyWith((message) => updates(message as DailyPlan)) as DailyPlan;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DailyPlan create() => DailyPlan._();
+  @$core.override
+  DailyPlan createEmptyInstance() => create();
+  static $pb.PbList<DailyPlan> createRepeated() => $pb.PbList<DailyPlan>();
+  @$core.pragma('dart2js:noInline')
+  static DailyPlan getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DailyPlan>(create);
+  static DailyPlan? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get planDate => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set planDate($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPlanDate() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPlanDate() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get warmupDoneUnix => $_getI64(2);
+  @$pb.TagNumber(3)
+  set warmupDoneUnix($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWarmupDoneUnix() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWarmupDoneUnix() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get immersionDoneUnix => $_getI64(3);
+  @$pb.TagNumber(4)
+  set immersionDoneUnix($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasImmersionDoneUnix() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearImmersionDoneUnix() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get outputDoneUnix => $_getI64(4);
+  @$pb.TagNumber(5)
+  set outputDoneUnix($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasOutputDoneUnix() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOutputDoneUnix() => $_clearField(5);
+}
+
+class GetTodayPlanRequest extends $pb.GeneratedMessage {
+  factory GetTodayPlanRequest({
+    $core.String? language,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    return result;
+  }
+
+  GetTodayPlanRequest._();
+
+  factory GetTodayPlanRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTodayPlanRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTodayPlanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTodayPlanRequest clone() => GetTodayPlanRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTodayPlanRequest copyWith(void Function(GetTodayPlanRequest) updates) => super.copyWith((message) => updates(message as GetTodayPlanRequest)) as GetTodayPlanRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTodayPlanRequest create() => GetTodayPlanRequest._();
+  @$core.override
+  GetTodayPlanRequest createEmptyInstance() => create();
+  static $pb.PbList<GetTodayPlanRequest> createRepeated() => $pb.PbList<GetTodayPlanRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetTodayPlanRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTodayPlanRequest>(create);
+  static GetTodayPlanRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+}
+
+class GetTodayPlanResponse extends $pb.GeneratedMessage {
+  factory GetTodayPlanResponse({
+    DailyPlan? plan,
+  }) {
+    final result = create();
+    if (plan != null) result.plan = plan;
+    return result;
+  }
+
+  GetTodayPlanResponse._();
+
+  factory GetTodayPlanResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTodayPlanResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTodayPlanResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<DailyPlan>(1, _omitFieldNames ? '' : 'plan', subBuilder: DailyPlan.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTodayPlanResponse clone() => GetTodayPlanResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTodayPlanResponse copyWith(void Function(GetTodayPlanResponse) updates) => super.copyWith((message) => updates(message as GetTodayPlanResponse)) as GetTodayPlanResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTodayPlanResponse create() => GetTodayPlanResponse._();
+  @$core.override
+  GetTodayPlanResponse createEmptyInstance() => create();
+  static $pb.PbList<GetTodayPlanResponse> createRepeated() => $pb.PbList<GetTodayPlanResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetTodayPlanResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTodayPlanResponse>(create);
+  static GetTodayPlanResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DailyPlan get plan => $_getN(0);
+  @$pb.TagNumber(1)
+  set plan(DailyPlan value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPlan() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlan() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DailyPlan ensurePlan() => $_ensure(0);
+}
+
+class MarkPlanBlockRequest extends $pb.GeneratedMessage {
+  factory MarkPlanBlockRequest({
+    $core.String? language,
+    $core.String? block,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (block != null) result.block = block;
+    return result;
+  }
+
+  MarkPlanBlockRequest._();
+
+  factory MarkPlanBlockRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MarkPlanBlockRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MarkPlanBlockRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOS(2, _omitFieldNames ? '' : 'block')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkPlanBlockRequest clone() => MarkPlanBlockRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkPlanBlockRequest copyWith(void Function(MarkPlanBlockRequest) updates) => super.copyWith((message) => updates(message as MarkPlanBlockRequest)) as MarkPlanBlockRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MarkPlanBlockRequest create() => MarkPlanBlockRequest._();
+  @$core.override
+  MarkPlanBlockRequest createEmptyInstance() => create();
+  static $pb.PbList<MarkPlanBlockRequest> createRepeated() => $pb.PbList<MarkPlanBlockRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MarkPlanBlockRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MarkPlanBlockRequest>(create);
+  static MarkPlanBlockRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get block => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set block($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBlock() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBlock() => $_clearField(2);
+}
+
+class MarkPlanBlockResponse extends $pb.GeneratedMessage {
+  factory MarkPlanBlockResponse({
+    DailyPlan? plan,
+  }) {
+    final result = create();
+    if (plan != null) result.plan = plan;
+    return result;
+  }
+
+  MarkPlanBlockResponse._();
+
+  factory MarkPlanBlockResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MarkPlanBlockResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MarkPlanBlockResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<DailyPlan>(1, _omitFieldNames ? '' : 'plan', subBuilder: DailyPlan.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkPlanBlockResponse clone() => MarkPlanBlockResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkPlanBlockResponse copyWith(void Function(MarkPlanBlockResponse) updates) => super.copyWith((message) => updates(message as MarkPlanBlockResponse)) as MarkPlanBlockResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MarkPlanBlockResponse create() => MarkPlanBlockResponse._();
+  @$core.override
+  MarkPlanBlockResponse createEmptyInstance() => create();
+  static $pb.PbList<MarkPlanBlockResponse> createRepeated() => $pb.PbList<MarkPlanBlockResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MarkPlanBlockResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MarkPlanBlockResponse>(create);
+  static MarkPlanBlockResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DailyPlan get plan => $_getN(0);
+  @$pb.TagNumber(1)
+  set plan(DailyPlan value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPlan() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlan() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DailyPlan ensurePlan() => $_ensure(0);
 }
 
 /// PlacementQuestion is one multiple-choice question seeded in

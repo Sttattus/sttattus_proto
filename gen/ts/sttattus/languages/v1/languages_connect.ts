@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CompleteInteractionRequest, CompleteInteractionResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListScenariosRequest, ListScenariosResponse, ListWordsRequest, ListWordsResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse } from "./languages_pb.js";
+import { CompleteInteractionRequest, CompleteInteractionResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetTodayPlanRequest, GetTodayPlanResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListScenariosRequest, ListScenariosResponse, ListWordsRequest, ListWordsResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse } from "./languages_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -70,6 +70,26 @@ export const LanguagesService = {
       name: "ListMyPlacementResults",
       I: ListMyPlacementResultsRequest,
       O: ListMyPlacementResultsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L12.2 — today's plan (three-block daily).
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetTodayPlan
+     */
+    getTodayPlan: {
+      name: "GetTodayPlan",
+      I: GetTodayPlanRequest,
+      O: GetTodayPlanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.MarkPlanBlock
+     */
+    markPlanBlock: {
+      name: "MarkPlanBlock",
+      I: MarkPlanBlockRequest,
+      O: MarkPlanBlockResponse,
       kind: MethodKind.Unary,
     },
     /**

@@ -94,6 +94,34 @@ message GetLinguistStatsResponse {
   LinguistStats stats = 1;
 }
 
+// === L12.2 — today's plan ===
+
+// DailyPlan = the three blocks of today for one (user, language).
+// done_unix == 0 means "not yet done"; a non-zero value is the
+// stamp from the backend.
+message DailyPlan {
+  string language = 1;
+  string plan_date = 2; // ISO YYYY-MM-DD
+  int64 warmup_done_unix = 3;
+  int64 immersion_done_unix = 4;
+  int64 output_done_unix = 5;
+}
+
+message GetTodayPlanRequest {
+  string language = 1;
+}
+message GetTodayPlanResponse {
+  DailyPlan plan = 1;
+}
+
+message MarkPlanBlockRequest {
+  string language = 1;
+  string block = 2; // 'warmup' | 'immersion' | 'output'
+}
+message MarkPlanBlockResponse {
+  DailyPlan plan = 1;
+}
+
 // === L12.1 — CEFR placement test ===
 
 // PlacementQuestion is one multiple-choice question seeded in
@@ -161,6 +189,10 @@ service LanguagesService {
   rpc ListPlacementQuestions(ListPlacementQuestionsRequest) returns (ListPlacementQuestionsResponse);
   rpc SubmitPlacementResult(SubmitPlacementResultRequest) returns (SubmitPlacementResultResponse);
   rpc ListMyPlacementResults(ListMyPlacementResultsRequest) returns (ListMyPlacementResultsResponse);
+
+  // L12.2 — today's plan (three-block daily).
+  rpc GetTodayPlan(GetTodayPlanRequest) returns (GetTodayPlanResponse);
+  rpc MarkPlanBlock(MarkPlanBlockRequest) returns (MarkPlanBlockResponse);
 
   // Legacy (Deprecated but kept for bridge)
   rpc ListWords(ListWordsRequest) returns (ListWordsResponse);

@@ -235,6 +235,77 @@ final $typed_data.Uint8List getLinguistStatsResponseDescriptor = $convert.base64
     'ChhHZXRMaW5ndWlzdFN0YXRzUmVzcG9uc2USOgoFc3RhdHMYASABKAsyJC5zdHRhdHR1cy5sYW'
     '5ndWFnZXMudjEuTGluZ3Vpc3RTdGF0c1IFc3RhdHM=');
 
+@$core.Deprecated('Use dailyPlanDescriptor instead')
+const DailyPlan$json = {
+  '1': 'DailyPlan',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'plan_date', '3': 2, '4': 1, '5': 9, '10': 'planDate'},
+    {'1': 'warmup_done_unix', '3': 3, '4': 1, '5': 3, '10': 'warmupDoneUnix'},
+    {'1': 'immersion_done_unix', '3': 4, '4': 1, '5': 3, '10': 'immersionDoneUnix'},
+    {'1': 'output_done_unix', '3': 5, '4': 1, '5': 3, '10': 'outputDoneUnix'},
+  ],
+};
+
+/// Descriptor for `DailyPlan`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dailyPlanDescriptor = $convert.base64Decode(
+    'CglEYWlseVBsYW4SGgoIbGFuZ3VhZ2UYASABKAlSCGxhbmd1YWdlEhsKCXBsYW5fZGF0ZRgCIA'
+    'EoCVIIcGxhbkRhdGUSKAoQd2FybXVwX2RvbmVfdW5peBgDIAEoA1IOd2FybXVwRG9uZVVuaXgS'
+    'LgoTaW1tZXJzaW9uX2RvbmVfdW5peBgEIAEoA1IRaW1tZXJzaW9uRG9uZVVuaXgSKAoQb3V0cH'
+    'V0X2RvbmVfdW5peBgFIAEoA1IOb3V0cHV0RG9uZVVuaXg=');
+
+@$core.Deprecated('Use getTodayPlanRequestDescriptor instead')
+const GetTodayPlanRequest$json = {
+  '1': 'GetTodayPlanRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+  ],
+};
+
+/// Descriptor for `GetTodayPlanRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTodayPlanRequestDescriptor = $convert.base64Decode(
+    'ChNHZXRUb2RheVBsYW5SZXF1ZXN0EhoKCGxhbmd1YWdlGAEgASgJUghsYW5ndWFnZQ==');
+
+@$core.Deprecated('Use getTodayPlanResponseDescriptor instead')
+const GetTodayPlanResponse$json = {
+  '1': 'GetTodayPlanResponse',
+  '2': [
+    {'1': 'plan', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.DailyPlan', '10': 'plan'},
+  ],
+};
+
+/// Descriptor for `GetTodayPlanResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTodayPlanResponseDescriptor = $convert.base64Decode(
+    'ChRHZXRUb2RheVBsYW5SZXNwb25zZRI0CgRwbGFuGAEgASgLMiAuc3R0YXR0dXMubGFuZ3VhZ2'
+    'VzLnYxLkRhaWx5UGxhblIEcGxhbg==');
+
+@$core.Deprecated('Use markPlanBlockRequestDescriptor instead')
+const MarkPlanBlockRequest$json = {
+  '1': 'MarkPlanBlockRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'block', '3': 2, '4': 1, '5': 9, '10': 'block'},
+  ],
+};
+
+/// Descriptor for `MarkPlanBlockRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List markPlanBlockRequestDescriptor = $convert.base64Decode(
+    'ChRNYXJrUGxhbkJsb2NrUmVxdWVzdBIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3VhZ2USFAoFYm'
+    'xvY2sYAiABKAlSBWJsb2Nr');
+
+@$core.Deprecated('Use markPlanBlockResponseDescriptor instead')
+const MarkPlanBlockResponse$json = {
+  '1': 'MarkPlanBlockResponse',
+  '2': [
+    {'1': 'plan', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.DailyPlan', '10': 'plan'},
+  ],
+};
+
+/// Descriptor for `MarkPlanBlockResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List markPlanBlockResponseDescriptor = $convert.base64Decode(
+    'ChVNYXJrUGxhbkJsb2NrUmVzcG9uc2USNAoEcGxhbhgBIAEoCzIgLnN0dGF0dHVzLmxhbmd1YW'
+    'dlcy52MS5EYWlseVBsYW5SBHBsYW4=');
+
 @$core.Deprecated('Use placementQuestionDescriptor instead')
 const PlacementQuestion$json = {
   '1': 'PlacementQuestion',

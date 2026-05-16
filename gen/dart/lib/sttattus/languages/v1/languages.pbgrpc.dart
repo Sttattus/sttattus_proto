@@ -59,6 +59,15 @@ class LanguagesServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listMyPlacementResults, request, options: options);
   }
 
+  /// L12.2 — today's plan (three-block daily).
+  $grpc.ResponseFuture<$0.GetTodayPlanResponse> getTodayPlan($0.GetTodayPlanRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getTodayPlan, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MarkPlanBlockResponse> markPlanBlock($0.MarkPlanBlockRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$markPlanBlock, request, options: options);
+  }
+
   /// Legacy (Deprecated but kept for bridge)
   $grpc.ResponseFuture<$0.ListWordsResponse> listWords($0.ListWordsRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listWords, request, options: options);
@@ -90,6 +99,14 @@ class LanguagesServiceClient extends $grpc.Client {
       '/sttattus.languages.v1.LanguagesService/ListMyPlacementResults',
       ($0.ListMyPlacementResultsRequest value) => value.writeToBuffer(),
       $0.ListMyPlacementResultsResponse.fromBuffer);
+  static final _$getTodayPlan = $grpc.ClientMethod<$0.GetTodayPlanRequest, $0.GetTodayPlanResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetTodayPlan',
+      ($0.GetTodayPlanRequest value) => value.writeToBuffer(),
+      $0.GetTodayPlanResponse.fromBuffer);
+  static final _$markPlanBlock = $grpc.ClientMethod<$0.MarkPlanBlockRequest, $0.MarkPlanBlockResponse>(
+      '/sttattus.languages.v1.LanguagesService/MarkPlanBlock',
+      ($0.MarkPlanBlockRequest value) => value.writeToBuffer(),
+      $0.MarkPlanBlockResponse.fromBuffer);
   static final _$listWords = $grpc.ClientMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
       '/sttattus.languages.v1.LanguagesService/ListWords',
       ($0.ListWordsRequest value) => value.writeToBuffer(),
@@ -143,6 +160,20 @@ abstract class LanguagesServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListMyPlacementResultsRequest.fromBuffer(value),
         ($0.ListMyPlacementResultsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTodayPlanRequest, $0.GetTodayPlanResponse>(
+        'GetTodayPlan',
+        getTodayPlan_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetTodayPlanRequest.fromBuffer(value),
+        ($0.GetTodayPlanResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MarkPlanBlockRequest, $0.MarkPlanBlockResponse>(
+        'MarkPlanBlock',
+        markPlanBlock_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.MarkPlanBlockRequest.fromBuffer(value),
+        ($0.MarkPlanBlockResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
         'ListWords',
         listWords_Pre,
@@ -187,6 +218,18 @@ abstract class LanguagesServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListMyPlacementResultsResponse> listMyPlacementResults($grpc.ServiceCall call, $0.ListMyPlacementResultsRequest request);
+
+  $async.Future<$0.GetTodayPlanResponse> getTodayPlan_Pre($grpc.ServiceCall $call, $async.Future<$0.GetTodayPlanRequest> $request) async {
+    return getTodayPlan($call, await $request);
+  }
+
+  $async.Future<$0.GetTodayPlanResponse> getTodayPlan($grpc.ServiceCall call, $0.GetTodayPlanRequest request);
+
+  $async.Future<$0.MarkPlanBlockResponse> markPlanBlock_Pre($grpc.ServiceCall $call, $async.Future<$0.MarkPlanBlockRequest> $request) async {
+    return markPlanBlock($call, await $request);
+  }
+
+  $async.Future<$0.MarkPlanBlockResponse> markPlanBlock($grpc.ServiceCall call, $0.MarkPlanBlockRequest request);
 
   $async.Future<$0.ListWordsResponse> listWords_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWordsRequest> $request) async {
     return listWords($call, await $request);
