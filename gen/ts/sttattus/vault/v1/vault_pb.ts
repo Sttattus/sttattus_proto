@@ -3369,3 +3369,303 @@ export class SetCapTableConnectionStatusResponse extends Message<SetCapTableConn
   }
 }
 
+/**
+ * @generated from message sttattus.vault.v1.WalletChain
+ */
+export class WalletChain extends Message<WalletChain> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * 'ethereum' | 'bitcoin' | 'solana' | 'cosmos' | 'polygon' |
+   * 'base' | 'arbitrum' | 'optimism'
+   *
+   * @generated from field: string chain = 2;
+   */
+  chain = "";
+
+  /**
+   * @generated from field: string address = 3;
+   */
+  address = "";
+
+  /**
+   * 'connected' | 'disconnected' | 'needs_auth'
+   *
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string label = 5;
+   */
+  label = "";
+
+  /**
+   * @generated from field: int64 last_synced_at = 6;
+   */
+  lastSyncedAt = protoInt64.zero;
+
+  /**
+   * @generated from field: double last_value_usd = 7;
+   */
+  lastValueUsd = 0;
+
+  constructor(data?: PartialMessage<WalletChain>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.WalletChain";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "chain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "last_synced_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "last_value_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WalletChain {
+    return new WalletChain().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WalletChain {
+    return new WalletChain().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WalletChain {
+    return new WalletChain().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: WalletChain | PlainMessage<WalletChain> | undefined, b: WalletChain | PlainMessage<WalletChain> | undefined): boolean {
+    return proto3.util.equals(WalletChain, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListWalletChainsRequest
+ */
+export class ListWalletChainsRequest extends Message<ListWalletChainsRequest> {
+  constructor(data?: PartialMessage<ListWalletChainsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListWalletChainsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListWalletChainsRequest {
+    return new ListWalletChainsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListWalletChainsRequest {
+    return new ListWalletChainsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListWalletChainsRequest {
+    return new ListWalletChainsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListWalletChainsRequest | PlainMessage<ListWalletChainsRequest> | undefined, b: ListWalletChainsRequest | PlainMessage<ListWalletChainsRequest> | undefined): boolean {
+    return proto3.util.equals(ListWalletChainsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ListWalletChainsResponse
+ */
+export class ListWalletChainsResponse extends Message<ListWalletChainsResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.WalletChain wallets = 1;
+   */
+  wallets: WalletChain[] = [];
+
+  constructor(data?: PartialMessage<ListWalletChainsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ListWalletChainsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "wallets", kind: "message", T: WalletChain, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListWalletChainsResponse {
+    return new ListWalletChainsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListWalletChainsResponse {
+    return new ListWalletChainsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListWalletChainsResponse {
+    return new ListWalletChainsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListWalletChainsResponse | PlainMessage<ListWalletChainsResponse> | undefined, b: ListWalletChainsResponse | PlainMessage<ListWalletChainsResponse> | undefined): boolean {
+    return proto3.util.equals(ListWalletChainsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.UpsertWalletChainRequest
+ */
+export class UpsertWalletChainRequest extends Message<UpsertWalletChainRequest> {
+  /**
+   * @generated from field: string chain = 1;
+   */
+  chain = "";
+
+  /**
+   * @generated from field: string address = 2;
+   */
+  address = "";
+
+  /**
+   * @generated from field: string label = 3;
+   */
+  label = "";
+
+  constructor(data?: PartialMessage<UpsertWalletChainRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.UpsertWalletChainRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "chain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertWalletChainRequest {
+    return new UpsertWalletChainRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertWalletChainRequest {
+    return new UpsertWalletChainRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertWalletChainRequest {
+    return new UpsertWalletChainRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertWalletChainRequest | PlainMessage<UpsertWalletChainRequest> | undefined, b: UpsertWalletChainRequest | PlainMessage<UpsertWalletChainRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertWalletChainRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.UpsertWalletChainResponse
+ */
+export class UpsertWalletChainResponse extends Message<UpsertWalletChainResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.WalletChain wallet = 1;
+   */
+  wallet?: WalletChain;
+
+  constructor(data?: PartialMessage<UpsertWalletChainResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.UpsertWalletChainResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "wallet", kind: "message", T: WalletChain },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertWalletChainResponse {
+    return new UpsertWalletChainResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertWalletChainResponse {
+    return new UpsertWalletChainResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertWalletChainResponse {
+    return new UpsertWalletChainResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertWalletChainResponse | PlainMessage<UpsertWalletChainResponse> | undefined, b: UpsertWalletChainResponse | PlainMessage<UpsertWalletChainResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertWalletChainResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.DeleteWalletChainRequest
+ */
+export class DeleteWalletChainRequest extends Message<DeleteWalletChainRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  constructor(data?: PartialMessage<DeleteWalletChainRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.DeleteWalletChainRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteWalletChainRequest {
+    return new DeleteWalletChainRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteWalletChainRequest {
+    return new DeleteWalletChainRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteWalletChainRequest {
+    return new DeleteWalletChainRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteWalletChainRequest | PlainMessage<DeleteWalletChainRequest> | undefined, b: DeleteWalletChainRequest | PlainMessage<DeleteWalletChainRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteWalletChainRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.DeleteWalletChainResponse
+ */
+export class DeleteWalletChainResponse extends Message<DeleteWalletChainResponse> {
+  constructor(data?: PartialMessage<DeleteWalletChainResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.DeleteWalletChainResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteWalletChainResponse {
+    return new DeleteWalletChainResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteWalletChainResponse {
+    return new DeleteWalletChainResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteWalletChainResponse {
+    return new DeleteWalletChainResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteWalletChainResponse | PlainMessage<DeleteWalletChainResponse> | undefined, b: DeleteWalletChainResponse | PlainMessage<DeleteWalletChainResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteWalletChainResponse, a, b);
+  }
+}
+

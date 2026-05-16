@@ -131,6 +131,13 @@ service VaultService {
   rpc DeleteCapTableHolding(DeleteCapTableHoldingRequest) returns (DeleteCapTableHoldingResponse);
   rpc ListCapTableConnections(ListCapTableConnectionsRequest) returns (ListCapTableConnectionsResponse);
   rpc SetCapTableConnectionStatus(SetCapTableConnectionStatusRequest) returns (SetCapTableConnectionStatusResponse);
+
+  // V8P2.6 — multi-chain wallets. EVM is the only live adapter
+  // today; non-EVM chains land in needs_auth until the gateway URLs
+  // are configured.
+  rpc ListWalletChains(ListWalletChainsRequest) returns (ListWalletChainsResponse);
+  rpc UpsertWalletChain(UpsertWalletChainRequest) returns (UpsertWalletChainResponse);
+  rpc DeleteWalletChain(DeleteWalletChainRequest) returns (DeleteWalletChainResponse);
 }
 
 message SyncWealthRequest {
@@ -482,3 +489,37 @@ message SetCapTableConnectionStatusRequest {
 message SetCapTableConnectionStatusResponse {
   CapTableConnection connection = 1;
 }
+
+// === Multi-chain wallets (V8P2.6) ===
+
+message WalletChain {
+  string id = 1;
+  // 'ethereum' | 'bitcoin' | 'solana' | 'cosmos' | 'polygon' |
+  // 'base' | 'arbitrum' | 'optimism'
+  string chain = 2;
+  string address = 3;
+  // 'connected' | 'disconnected' | 'needs_auth'
+  string status = 4;
+  string label = 5;
+  int64 last_synced_at = 6;
+  double last_value_usd = 7;
+}
+
+message ListWalletChainsRequest {}
+message ListWalletChainsResponse {
+  repeated WalletChain wallets = 1;
+}
+
+message UpsertWalletChainRequest {
+  string chain = 1;
+  string address = 2;
+  string label = 3;
+}
+message UpsertWalletChainResponse {
+  WalletChain wallet = 1;
+}
+
+message DeleteWalletChainRequest {
+  string id = 1;
+}
+message DeleteWalletChainResponse {}

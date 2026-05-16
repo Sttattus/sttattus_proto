@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, AssignAssetToEntityRequest, AssignAssetToEntityResponse, CreateCapTableHoldingRequest, CreateCapTableHoldingResponse, CreateEntityRequest, CreateEntityResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, DeleteCapTableHoldingRequest, DeleteCapTableHoldingResponse, DeleteEntityRequest, DeleteEntityResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListCapTableConnectionsRequest, ListCapTableConnectionsResponse, ListCapTableHoldingsRequest, ListCapTableHoldingsResponse, ListEntitiesRequest, ListEntitiesResponse, ListLatestFxRatesRequest, ListLatestFxRatesResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, RenameEntityRequest, RenameEntityResponse, SetCapTableConnectionStatusRequest, SetCapTableConnectionStatusResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse, UpdateCapTableHoldingRequest, UpdateCapTableHoldingResponse } from "./vault_pb.js";
+import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, AssignAssetToEntityRequest, AssignAssetToEntityResponse, CreateCapTableHoldingRequest, CreateCapTableHoldingResponse, CreateEntityRequest, CreateEntityResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, DeleteCapTableHoldingRequest, DeleteCapTableHoldingResponse, DeleteEntityRequest, DeleteEntityResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, DeleteWalletChainRequest, DeleteWalletChainResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetPortfolioRequest, GetPortfolioResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListCapTableConnectionsRequest, ListCapTableConnectionsResponse, ListCapTableHoldingsRequest, ListCapTableHoldingsResponse, ListEntitiesRequest, ListEntitiesResponse, ListLatestFxRatesRequest, ListLatestFxRatesResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, ListWalletChainsRequest, ListWalletChainsResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, RenameEntityRequest, RenameEntityResponse, SetCapTableConnectionStatusRequest, SetCapTableConnectionStatusResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse, UpdateCapTableHoldingRequest, UpdateCapTableHoldingResponse, UpsertWalletChainRequest, UpsertWalletChainResponse } from "./vault_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -308,6 +308,37 @@ export const VaultService = {
       name: "SetCapTableConnectionStatus",
       I: SetCapTableConnectionStatusRequest,
       O: SetCapTableConnectionStatusResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8P2.6 — multi-chain wallets. EVM is the only live adapter
+     * today; non-EVM chains land in needs_auth until the gateway URLs
+     * are configured.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.ListWalletChains
+     */
+    listWalletChains: {
+      name: "ListWalletChains",
+      I: ListWalletChainsRequest,
+      O: ListWalletChainsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.UpsertWalletChain
+     */
+    upsertWalletChain: {
+      name: "UpsertWalletChain",
+      I: UpsertWalletChainRequest,
+      O: UpsertWalletChainResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.DeleteWalletChain
+     */
+    deleteWalletChain: {
+      name: "DeleteWalletChain",
+      I: DeleteWalletChainRequest,
+      O: DeleteWalletChainResponse,
       kind: MethodKind.Unary,
     },
   }

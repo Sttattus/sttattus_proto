@@ -1099,3 +1099,95 @@ final $typed_data.Uint8List setCapTableConnectionStatusResponseDescriptor = $con
     'CiNTZXRDYXBUYWJsZUNvbm5lY3Rpb25TdGF0dXNSZXNwb25zZRJFCgpjb25uZWN0aW9uGAEgAS'
     'gLMiUuc3R0YXR0dXMudmF1bHQudjEuQ2FwVGFibGVDb25uZWN0aW9uUgpjb25uZWN0aW9u');
 
+@$core.Deprecated('Use walletChainDescriptor instead')
+const WalletChain$json = {
+  '1': 'WalletChain',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'chain', '3': 2, '4': 1, '5': 9, '10': 'chain'},
+    {'1': 'address', '3': 3, '4': 1, '5': 9, '10': 'address'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'label', '3': 5, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'last_synced_at', '3': 6, '4': 1, '5': 3, '10': 'lastSyncedAt'},
+    {'1': 'last_value_usd', '3': 7, '4': 1, '5': 1, '10': 'lastValueUsd'},
+  ],
+};
+
+/// Descriptor for `WalletChain`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List walletChainDescriptor = $convert.base64Decode(
+    'CgtXYWxsZXRDaGFpbhIOCgJpZBgBIAEoCVICaWQSFAoFY2hhaW4YAiABKAlSBWNoYWluEhgKB2'
+    'FkZHJlc3MYAyABKAlSB2FkZHJlc3MSFgoGc3RhdHVzGAQgASgJUgZzdGF0dXMSFAoFbGFiZWwY'
+    'BSABKAlSBWxhYmVsEiQKDmxhc3Rfc3luY2VkX2F0GAYgASgDUgxsYXN0U3luY2VkQXQSJAoObG'
+    'FzdF92YWx1ZV91c2QYByABKAFSDGxhc3RWYWx1ZVVzZA==');
+
+@$core.Deprecated('Use listWalletChainsRequestDescriptor instead')
+const ListWalletChainsRequest$json = {
+  '1': 'ListWalletChainsRequest',
+};
+
+/// Descriptor for `ListWalletChainsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listWalletChainsRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0V2FsbGV0Q2hhaW5zUmVxdWVzdA==');
+
+@$core.Deprecated('Use listWalletChainsResponseDescriptor instead')
+const ListWalletChainsResponse$json = {
+  '1': 'ListWalletChainsResponse',
+  '2': [
+    {'1': 'wallets', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.WalletChain', '10': 'wallets'},
+  ],
+};
+
+/// Descriptor for `ListWalletChainsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listWalletChainsResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0V2FsbGV0Q2hhaW5zUmVzcG9uc2USOAoHd2FsbGV0cxgBIAMoCzIeLnN0dGF0dHVzLn'
+    'ZhdWx0LnYxLldhbGxldENoYWluUgd3YWxsZXRz');
+
+@$core.Deprecated('Use upsertWalletChainRequestDescriptor instead')
+const UpsertWalletChainRequest$json = {
+  '1': 'UpsertWalletChainRequest',
+  '2': [
+    {'1': 'chain', '3': 1, '4': 1, '5': 9, '10': 'chain'},
+    {'1': 'address', '3': 2, '4': 1, '5': 9, '10': 'address'},
+    {'1': 'label', '3': 3, '4': 1, '5': 9, '10': 'label'},
+  ],
+};
+
+/// Descriptor for `UpsertWalletChainRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertWalletChainRequestDescriptor = $convert.base64Decode(
+    'ChhVcHNlcnRXYWxsZXRDaGFpblJlcXVlc3QSFAoFY2hhaW4YASABKAlSBWNoYWluEhgKB2FkZH'
+    'Jlc3MYAiABKAlSB2FkZHJlc3MSFAoFbGFiZWwYAyABKAlSBWxhYmVs');
+
+@$core.Deprecated('Use upsertWalletChainResponseDescriptor instead')
+const UpsertWalletChainResponse$json = {
+  '1': 'UpsertWalletChainResponse',
+  '2': [
+    {'1': 'wallet', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.WalletChain', '10': 'wallet'},
+  ],
+};
+
+/// Descriptor for `UpsertWalletChainResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertWalletChainResponseDescriptor = $convert.base64Decode(
+    'ChlVcHNlcnRXYWxsZXRDaGFpblJlc3BvbnNlEjYKBndhbGxldBgBIAEoCzIeLnN0dGF0dHVzLn'
+    'ZhdWx0LnYxLldhbGxldENoYWluUgZ3YWxsZXQ=');
+
+@$core.Deprecated('Use deleteWalletChainRequestDescriptor instead')
+const DeleteWalletChainRequest$json = {
+  '1': 'DeleteWalletChainRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteWalletChainRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteWalletChainRequestDescriptor = $convert.base64Decode(
+    'ChhEZWxldGVXYWxsZXRDaGFpblJlcXVlc3QSDgoCaWQYASABKAlSAmlk');
+
+@$core.Deprecated('Use deleteWalletChainResponseDescriptor instead')
+const DeleteWalletChainResponse$json = {
+  '1': 'DeleteWalletChainResponse',
+};
+
+/// Descriptor for `DeleteWalletChainResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteWalletChainResponseDescriptor = $convert.base64Decode(
+    'ChlEZWxldGVXYWxsZXRDaGFpblJlc3BvbnNl');
+

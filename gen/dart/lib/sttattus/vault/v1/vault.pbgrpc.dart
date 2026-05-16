@@ -168,6 +168,21 @@ class VaultServiceClient extends $grpc.Client {
     return $createUnaryCall(_$setCapTableConnectionStatus, request, options: options);
   }
 
+  /// V8P2.6 — multi-chain wallets. EVM is the only live adapter
+  /// today; non-EVM chains land in needs_auth until the gateway URLs
+  /// are configured.
+  $grpc.ResponseFuture<$0.ListWalletChainsResponse> listWalletChains($0.ListWalletChainsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listWalletChains, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertWalletChainResponse> upsertWalletChain($0.UpsertWalletChainRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$upsertWalletChain, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteWalletChainResponse> deleteWalletChain($0.DeleteWalletChainRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteWalletChain, request, options: options);
+  }
+
     // method descriptors
 
   static final _$submitAsset = $grpc.ClientMethod<$0.SubmitAssetRequest, $0.SubmitAssetResponse>(
@@ -290,6 +305,18 @@ class VaultServiceClient extends $grpc.Client {
       '/sttattus.vault.v1.VaultService/SetCapTableConnectionStatus',
       ($0.SetCapTableConnectionStatusRequest value) => value.writeToBuffer(),
       $0.SetCapTableConnectionStatusResponse.fromBuffer);
+  static final _$listWalletChains = $grpc.ClientMethod<$0.ListWalletChainsRequest, $0.ListWalletChainsResponse>(
+      '/sttattus.vault.v1.VaultService/ListWalletChains',
+      ($0.ListWalletChainsRequest value) => value.writeToBuffer(),
+      $0.ListWalletChainsResponse.fromBuffer);
+  static final _$upsertWalletChain = $grpc.ClientMethod<$0.UpsertWalletChainRequest, $0.UpsertWalletChainResponse>(
+      '/sttattus.vault.v1.VaultService/UpsertWalletChain',
+      ($0.UpsertWalletChainRequest value) => value.writeToBuffer(),
+      $0.UpsertWalletChainResponse.fromBuffer);
+  static final _$deleteWalletChain = $grpc.ClientMethod<$0.DeleteWalletChainRequest, $0.DeleteWalletChainResponse>(
+      '/sttattus.vault.v1.VaultService/DeleteWalletChain',
+      ($0.DeleteWalletChainRequest value) => value.writeToBuffer(),
+      $0.DeleteWalletChainResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.vault.v1.VaultService')
@@ -507,6 +534,27 @@ abstract class VaultServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SetCapTableConnectionStatusRequest.fromBuffer(value),
         ($0.SetCapTableConnectionStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListWalletChainsRequest, $0.ListWalletChainsResponse>(
+        'ListWalletChains',
+        listWalletChains_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListWalletChainsRequest.fromBuffer(value),
+        ($0.ListWalletChainsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertWalletChainRequest, $0.UpsertWalletChainResponse>(
+        'UpsertWalletChain',
+        upsertWalletChain_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpsertWalletChainRequest.fromBuffer(value),
+        ($0.UpsertWalletChainResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteWalletChainRequest, $0.DeleteWalletChainResponse>(
+        'DeleteWalletChain',
+        deleteWalletChain_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteWalletChainRequest.fromBuffer(value),
+        ($0.DeleteWalletChainResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.SubmitAssetResponse> submitAsset_Pre($grpc.ServiceCall $call, $async.Future<$0.SubmitAssetRequest> $request) async {
@@ -688,5 +736,23 @@ abstract class VaultServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.SetCapTableConnectionStatusResponse> setCapTableConnectionStatus($grpc.ServiceCall call, $0.SetCapTableConnectionStatusRequest request);
+
+  $async.Future<$0.ListWalletChainsResponse> listWalletChains_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWalletChainsRequest> $request) async {
+    return listWalletChains($call, await $request);
+  }
+
+  $async.Future<$0.ListWalletChainsResponse> listWalletChains($grpc.ServiceCall call, $0.ListWalletChainsRequest request);
+
+  $async.Future<$0.UpsertWalletChainResponse> upsertWalletChain_Pre($grpc.ServiceCall $call, $async.Future<$0.UpsertWalletChainRequest> $request) async {
+    return upsertWalletChain($call, await $request);
+  }
+
+  $async.Future<$0.UpsertWalletChainResponse> upsertWalletChain($grpc.ServiceCall call, $0.UpsertWalletChainRequest request);
+
+  $async.Future<$0.DeleteWalletChainResponse> deleteWalletChain_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteWalletChainRequest> $request) async {
+    return deleteWalletChain($call, await $request);
+  }
+
+  $async.Future<$0.DeleteWalletChainResponse> deleteWalletChain($grpc.ServiceCall call, $0.DeleteWalletChainRequest request);
 
 }

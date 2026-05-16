@@ -4258,6 +4258,391 @@ class SetCapTableConnectionStatusResponse extends $pb.GeneratedMessage {
   CapTableConnection ensureConnection() => $_ensure(0);
 }
 
+class WalletChain extends $pb.GeneratedMessage {
+  factory WalletChain({
+    $core.String? id,
+    $core.String? chain,
+    $core.String? address,
+    $core.String? status,
+    $core.String? label,
+    $fixnum.Int64? lastSyncedAt,
+    $core.double? lastValueUsd,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (chain != null) result.chain = chain;
+    if (address != null) result.address = address;
+    if (status != null) result.status = status;
+    if (label != null) result.label = label;
+    if (lastSyncedAt != null) result.lastSyncedAt = lastSyncedAt;
+    if (lastValueUsd != null) result.lastValueUsd = lastValueUsd;
+    return result;
+  }
+
+  WalletChain._();
+
+  factory WalletChain.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory WalletChain.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WalletChain', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'chain')
+    ..aOS(3, _omitFieldNames ? '' : 'address')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'label')
+    ..aInt64(6, _omitFieldNames ? '' : 'lastSyncedAt')
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'lastValueUsd', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  WalletChain clone() => WalletChain()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  WalletChain copyWith(void Function(WalletChain) updates) => super.copyWith((message) => updates(message as WalletChain)) as WalletChain;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static WalletChain create() => WalletChain._();
+  @$core.override
+  WalletChain createEmptyInstance() => create();
+  static $pb.PbList<WalletChain> createRepeated() => $pb.PbList<WalletChain>();
+  @$core.pragma('dart2js:noInline')
+  static WalletChain getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WalletChain>(create);
+  static WalletChain? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  /// 'ethereum' | 'bitcoin' | 'solana' | 'cosmos' | 'polygon' |
+  /// 'base' | 'arbitrum' | 'optimism'
+  @$pb.TagNumber(2)
+  $core.String get chain => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set chain($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasChain() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearChain() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get address => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set address($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAddress() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAddress() => $_clearField(3);
+
+  /// 'connected' | 'disconnected' | 'needs_auth'
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get label => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set label($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLabel() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLabel() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get lastSyncedAt => $_getI64(5);
+  @$pb.TagNumber(6)
+  set lastSyncedAt($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLastSyncedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLastSyncedAt() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get lastValueUsd => $_getN(6);
+  @$pb.TagNumber(7)
+  set lastValueUsd($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLastValueUsd() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLastValueUsd() => $_clearField(7);
+}
+
+class ListWalletChainsRequest extends $pb.GeneratedMessage {
+  factory ListWalletChainsRequest() => create();
+
+  ListWalletChainsRequest._();
+
+  factory ListWalletChainsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListWalletChainsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListWalletChainsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWalletChainsRequest clone() => ListWalletChainsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWalletChainsRequest copyWith(void Function(ListWalletChainsRequest) updates) => super.copyWith((message) => updates(message as ListWalletChainsRequest)) as ListWalletChainsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListWalletChainsRequest create() => ListWalletChainsRequest._();
+  @$core.override
+  ListWalletChainsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListWalletChainsRequest> createRepeated() => $pb.PbList<ListWalletChainsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListWalletChainsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListWalletChainsRequest>(create);
+  static ListWalletChainsRequest? _defaultInstance;
+}
+
+class ListWalletChainsResponse extends $pb.GeneratedMessage {
+  factory ListWalletChainsResponse({
+    $core.Iterable<WalletChain>? wallets,
+  }) {
+    final result = create();
+    if (wallets != null) result.wallets.addAll(wallets);
+    return result;
+  }
+
+  ListWalletChainsResponse._();
+
+  factory ListWalletChainsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListWalletChainsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListWalletChainsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..pc<WalletChain>(1, _omitFieldNames ? '' : 'wallets', $pb.PbFieldType.PM, subBuilder: WalletChain.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWalletChainsResponse clone() => ListWalletChainsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWalletChainsResponse copyWith(void Function(ListWalletChainsResponse) updates) => super.copyWith((message) => updates(message as ListWalletChainsResponse)) as ListWalletChainsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListWalletChainsResponse create() => ListWalletChainsResponse._();
+  @$core.override
+  ListWalletChainsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListWalletChainsResponse> createRepeated() => $pb.PbList<ListWalletChainsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListWalletChainsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListWalletChainsResponse>(create);
+  static ListWalletChainsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<WalletChain> get wallets => $_getList(0);
+}
+
+class UpsertWalletChainRequest extends $pb.GeneratedMessage {
+  factory UpsertWalletChainRequest({
+    $core.String? chain,
+    $core.String? address,
+    $core.String? label,
+  }) {
+    final result = create();
+    if (chain != null) result.chain = chain;
+    if (address != null) result.address = address;
+    if (label != null) result.label = label;
+    return result;
+  }
+
+  UpsertWalletChainRequest._();
+
+  factory UpsertWalletChainRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpsertWalletChainRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpsertWalletChainRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'chain')
+    ..aOS(2, _omitFieldNames ? '' : 'address')
+    ..aOS(3, _omitFieldNames ? '' : 'label')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertWalletChainRequest clone() => UpsertWalletChainRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertWalletChainRequest copyWith(void Function(UpsertWalletChainRequest) updates) => super.copyWith((message) => updates(message as UpsertWalletChainRequest)) as UpsertWalletChainRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertWalletChainRequest create() => UpsertWalletChainRequest._();
+  @$core.override
+  UpsertWalletChainRequest createEmptyInstance() => create();
+  static $pb.PbList<UpsertWalletChainRequest> createRepeated() => $pb.PbList<UpsertWalletChainRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpsertWalletChainRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpsertWalletChainRequest>(create);
+  static UpsertWalletChainRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get chain => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set chain($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasChain() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChain() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get address => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set address($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAddress() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get label => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set label($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLabel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLabel() => $_clearField(3);
+}
+
+class UpsertWalletChainResponse extends $pb.GeneratedMessage {
+  factory UpsertWalletChainResponse({
+    WalletChain? wallet,
+  }) {
+    final result = create();
+    if (wallet != null) result.wallet = wallet;
+    return result;
+  }
+
+  UpsertWalletChainResponse._();
+
+  factory UpsertWalletChainResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpsertWalletChainResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpsertWalletChainResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOM<WalletChain>(1, _omitFieldNames ? '' : 'wallet', subBuilder: WalletChain.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertWalletChainResponse clone() => UpsertWalletChainResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertWalletChainResponse copyWith(void Function(UpsertWalletChainResponse) updates) => super.copyWith((message) => updates(message as UpsertWalletChainResponse)) as UpsertWalletChainResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertWalletChainResponse create() => UpsertWalletChainResponse._();
+  @$core.override
+  UpsertWalletChainResponse createEmptyInstance() => create();
+  static $pb.PbList<UpsertWalletChainResponse> createRepeated() => $pb.PbList<UpsertWalletChainResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpsertWalletChainResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpsertWalletChainResponse>(create);
+  static UpsertWalletChainResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  WalletChain get wallet => $_getN(0);
+  @$pb.TagNumber(1)
+  set wallet(WalletChain value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWallet() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWallet() => $_clearField(1);
+  @$pb.TagNumber(1)
+  WalletChain ensureWallet() => $_ensure(0);
+}
+
+class DeleteWalletChainRequest extends $pb.GeneratedMessage {
+  factory DeleteWalletChainRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  DeleteWalletChainRequest._();
+
+  factory DeleteWalletChainRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteWalletChainRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteWalletChainRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteWalletChainRequest clone() => DeleteWalletChainRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteWalletChainRequest copyWith(void Function(DeleteWalletChainRequest) updates) => super.copyWith((message) => updates(message as DeleteWalletChainRequest)) as DeleteWalletChainRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteWalletChainRequest create() => DeleteWalletChainRequest._();
+  @$core.override
+  DeleteWalletChainRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteWalletChainRequest> createRepeated() => $pb.PbList<DeleteWalletChainRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteWalletChainRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteWalletChainRequest>(create);
+  static DeleteWalletChainRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class DeleteWalletChainResponse extends $pb.GeneratedMessage {
+  factory DeleteWalletChainResponse() => create();
+
+  DeleteWalletChainResponse._();
+
+  factory DeleteWalletChainResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteWalletChainResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteWalletChainResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteWalletChainResponse clone() => DeleteWalletChainResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteWalletChainResponse copyWith(void Function(DeleteWalletChainResponse) updates) => super.copyWith((message) => updates(message as DeleteWalletChainResponse)) as DeleteWalletChainResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteWalletChainResponse create() => DeleteWalletChainResponse._();
+  @$core.override
+  DeleteWalletChainResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteWalletChainResponse> createRepeated() => $pb.PbList<DeleteWalletChainResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteWalletChainResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteWalletChainResponse>(create);
+  static DeleteWalletChainResponse? _defaultInstance;
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

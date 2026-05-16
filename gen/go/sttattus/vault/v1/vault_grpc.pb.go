@@ -49,6 +49,9 @@ const (
 	VaultService_DeleteCapTableHolding_FullMethodName       = "/sttattus.vault.v1.VaultService/DeleteCapTableHolding"
 	VaultService_ListCapTableConnections_FullMethodName     = "/sttattus.vault.v1.VaultService/ListCapTableConnections"
 	VaultService_SetCapTableConnectionStatus_FullMethodName = "/sttattus.vault.v1.VaultService/SetCapTableConnectionStatus"
+	VaultService_ListWalletChains_FullMethodName            = "/sttattus.vault.v1.VaultService/ListWalletChains"
+	VaultService_UpsertWalletChain_FullMethodName           = "/sttattus.vault.v1.VaultService/UpsertWalletChain"
+	VaultService_DeleteWalletChain_FullMethodName           = "/sttattus.vault.v1.VaultService/DeleteWalletChain"
 )
 
 // VaultServiceClient is the client API for VaultService service.
@@ -101,6 +104,12 @@ type VaultServiceClient interface {
 	DeleteCapTableHolding(ctx context.Context, in *DeleteCapTableHoldingRequest, opts ...grpc.CallOption) (*DeleteCapTableHoldingResponse, error)
 	ListCapTableConnections(ctx context.Context, in *ListCapTableConnectionsRequest, opts ...grpc.CallOption) (*ListCapTableConnectionsResponse, error)
 	SetCapTableConnectionStatus(ctx context.Context, in *SetCapTableConnectionStatusRequest, opts ...grpc.CallOption) (*SetCapTableConnectionStatusResponse, error)
+	// V8P2.6 — multi-chain wallets. EVM is the only live adapter
+	// today; non-EVM chains land in needs_auth until the gateway URLs
+	// are configured.
+	ListWalletChains(ctx context.Context, in *ListWalletChainsRequest, opts ...grpc.CallOption) (*ListWalletChainsResponse, error)
+	UpsertWalletChain(ctx context.Context, in *UpsertWalletChainRequest, opts ...grpc.CallOption) (*UpsertWalletChainResponse, error)
+	DeleteWalletChain(ctx context.Context, in *DeleteWalletChainRequest, opts ...grpc.CallOption) (*DeleteWalletChainResponse, error)
 }
 
 type vaultServiceClient struct {
@@ -411,6 +420,36 @@ func (c *vaultServiceClient) SetCapTableConnectionStatus(ctx context.Context, in
 	return out, nil
 }
 
+func (c *vaultServiceClient) ListWalletChains(ctx context.Context, in *ListWalletChainsRequest, opts ...grpc.CallOption) (*ListWalletChainsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListWalletChainsResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListWalletChains_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) UpsertWalletChain(ctx context.Context, in *UpsertWalletChainRequest, opts ...grpc.CallOption) (*UpsertWalletChainResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertWalletChainResponse)
+	err := c.cc.Invoke(ctx, VaultService_UpsertWalletChain_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) DeleteWalletChain(ctx context.Context, in *DeleteWalletChainRequest, opts ...grpc.CallOption) (*DeleteWalletChainResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteWalletChainResponse)
+	err := c.cc.Invoke(ctx, VaultService_DeleteWalletChain_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultServiceServer is the server API for VaultService service.
 // All implementations must embed UnimplementedVaultServiceServer
 // for forward compatibility.
@@ -461,6 +500,12 @@ type VaultServiceServer interface {
 	DeleteCapTableHolding(context.Context, *DeleteCapTableHoldingRequest) (*DeleteCapTableHoldingResponse, error)
 	ListCapTableConnections(context.Context, *ListCapTableConnectionsRequest) (*ListCapTableConnectionsResponse, error)
 	SetCapTableConnectionStatus(context.Context, *SetCapTableConnectionStatusRequest) (*SetCapTableConnectionStatusResponse, error)
+	// V8P2.6 — multi-chain wallets. EVM is the only live adapter
+	// today; non-EVM chains land in needs_auth until the gateway URLs
+	// are configured.
+	ListWalletChains(context.Context, *ListWalletChainsRequest) (*ListWalletChainsResponse, error)
+	UpsertWalletChain(context.Context, *UpsertWalletChainRequest) (*UpsertWalletChainResponse, error)
+	DeleteWalletChain(context.Context, *DeleteWalletChainRequest) (*DeleteWalletChainResponse, error)
 	mustEmbedUnimplementedVaultServiceServer()
 }
 
@@ -560,6 +605,15 @@ func (UnimplementedVaultServiceServer) ListCapTableConnections(context.Context, 
 }
 func (UnimplementedVaultServiceServer) SetCapTableConnectionStatus(context.Context, *SetCapTableConnectionStatusRequest) (*SetCapTableConnectionStatusResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SetCapTableConnectionStatus not implemented")
+}
+func (UnimplementedVaultServiceServer) ListWalletChains(context.Context, *ListWalletChainsRequest) (*ListWalletChainsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListWalletChains not implemented")
+}
+func (UnimplementedVaultServiceServer) UpsertWalletChain(context.Context, *UpsertWalletChainRequest) (*UpsertWalletChainResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertWalletChain not implemented")
+}
+func (UnimplementedVaultServiceServer) DeleteWalletChain(context.Context, *DeleteWalletChainRequest) (*DeleteWalletChainResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteWalletChain not implemented")
 }
 func (UnimplementedVaultServiceServer) mustEmbedUnimplementedVaultServiceServer() {}
 func (UnimplementedVaultServiceServer) testEmbeddedByValue()                      {}
@@ -1122,6 +1176,60 @@ func _VaultService_SetCapTableConnectionStatus_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultService_ListWalletChains_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListWalletChainsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListWalletChains(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListWalletChains_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListWalletChains(ctx, req.(*ListWalletChainsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_UpsertWalletChain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertWalletChainRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).UpsertWalletChain(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_UpsertWalletChain_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).UpsertWalletChain(ctx, req.(*UpsertWalletChainRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_DeleteWalletChain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteWalletChainRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).DeleteWalletChain(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_DeleteWalletChain_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).DeleteWalletChain(ctx, req.(*DeleteWalletChainRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultService_ServiceDesc is the grpc.ServiceDesc for VaultService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1248,6 +1356,18 @@ var VaultService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SetCapTableConnectionStatus",
 			Handler:    _VaultService_SetCapTableConnectionStatus_Handler,
+		},
+		{
+			MethodName: "ListWalletChains",
+			Handler:    _VaultService_ListWalletChains_Handler,
+		},
+		{
+			MethodName: "UpsertWalletChain",
+			Handler:    _VaultService_UpsertWalletChain_Handler,
+		},
+		{
+			MethodName: "DeleteWalletChain",
+			Handler:    _VaultService_DeleteWalletChain_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
