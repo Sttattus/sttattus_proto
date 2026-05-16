@@ -3582,6 +3582,495 @@ func (x *ListAtlasMapPointsResponse) GetPoints() []*AtlasMapPoint {
 	return nil
 }
 
+type AgoraRoom struct {
+	state     protoimpl.MessageState `protogen:"open.v1"`
+	Id        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	HostId    string                 `protobuf:"bytes,2,opt,name=host_id,json=hostId,proto3" json:"host_id,omitempty"`
+	Title     string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Cluster   string                 `protobuf:"bytes,4,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	MaxGuests int32                  `protobuf:"varint,5,opt,name=max_guests,json=maxGuests,proto3" json:"max_guests,omitempty"`
+	// 'live' | 'ended' | 'scheduled'
+	Status          string `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`
+	LivekitRoomName string `protobuf:"bytes,7,opt,name=livekit_room_name,json=livekitRoomName,proto3" json:"livekit_room_name,omitempty"`
+	StartedAt       int64  `protobuf:"varint,8,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`
+	EndedAt         int64  `protobuf:"varint,9,opt,name=ended_at,json=endedAt,proto3" json:"ended_at,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *AgoraRoom) Reset() {
+	*x = AgoraRoom{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[65]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AgoraRoom) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AgoraRoom) ProtoMessage() {}
+
+func (x *AgoraRoom) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[65]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AgoraRoom.ProtoReflect.Descriptor instead.
+func (*AgoraRoom) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{65}
+}
+
+func (x *AgoraRoom) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AgoraRoom) GetHostId() string {
+	if x != nil {
+		return x.HostId
+	}
+	return ""
+}
+
+func (x *AgoraRoom) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AgoraRoom) GetCluster() string {
+	if x != nil {
+		return x.Cluster
+	}
+	return ""
+}
+
+func (x *AgoraRoom) GetMaxGuests() int32 {
+	if x != nil {
+		return x.MaxGuests
+	}
+	return 0
+}
+
+func (x *AgoraRoom) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *AgoraRoom) GetLivekitRoomName() string {
+	if x != nil {
+		return x.LivekitRoomName
+	}
+	return ""
+}
+
+func (x *AgoraRoom) GetStartedAt() int64 {
+	if x != nil {
+		return x.StartedAt
+	}
+	return 0
+}
+
+func (x *AgoraRoom) GetEndedAt() int64 {
+	if x != nil {
+		return x.EndedAt
+	}
+	return 0
+}
+
+type ListLiveRoomsRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Optional cluster filter (” = all clusters).
+	Cluster       string `protobuf:"bytes,1,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLiveRoomsRequest) Reset() {
+	*x = ListLiveRoomsRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[66]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLiveRoomsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLiveRoomsRequest) ProtoMessage() {}
+
+func (x *ListLiveRoomsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[66]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLiveRoomsRequest.ProtoReflect.Descriptor instead.
+func (*ListLiveRoomsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{66}
+}
+
+func (x *ListLiveRoomsRequest) GetCluster() string {
+	if x != nil {
+		return x.Cluster
+	}
+	return ""
+}
+
+type ListLiveRoomsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Rooms         []*AgoraRoom           `protobuf:"bytes,1,rep,name=rooms,proto3" json:"rooms,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLiveRoomsResponse) Reset() {
+	*x = ListLiveRoomsResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[67]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLiveRoomsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLiveRoomsResponse) ProtoMessage() {}
+
+func (x *ListLiveRoomsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[67]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLiveRoomsResponse.ProtoReflect.Descriptor instead.
+func (*ListLiveRoomsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{67}
+}
+
+func (x *ListLiveRoomsResponse) GetRooms() []*AgoraRoom {
+	if x != nil {
+		return x.Rooms
+	}
+	return nil
+}
+
+type CreateAgoraRoomRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	Cluster       string                 `protobuf:"bytes,2,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	MaxGuests     int32                  `protobuf:"varint,3,opt,name=max_guests,json=maxGuests,proto3" json:"max_guests,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateAgoraRoomRequest) Reset() {
+	*x = CreateAgoraRoomRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[68]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateAgoraRoomRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateAgoraRoomRequest) ProtoMessage() {}
+
+func (x *CreateAgoraRoomRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[68]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateAgoraRoomRequest.ProtoReflect.Descriptor instead.
+func (*CreateAgoraRoomRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *CreateAgoraRoomRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CreateAgoraRoomRequest) GetCluster() string {
+	if x != nil {
+		return x.Cluster
+	}
+	return ""
+}
+
+func (x *CreateAgoraRoomRequest) GetMaxGuests() int32 {
+	if x != nil {
+		return x.MaxGuests
+	}
+	return 0
+}
+
+type CreateAgoraRoomResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Room          *AgoraRoom             `protobuf:"bytes,1,opt,name=room,proto3" json:"room,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateAgoraRoomResponse) Reset() {
+	*x = CreateAgoraRoomResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[69]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateAgoraRoomResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateAgoraRoomResponse) ProtoMessage() {}
+
+func (x *CreateAgoraRoomResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[69]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateAgoraRoomResponse.ProtoReflect.Descriptor instead.
+func (*CreateAgoraRoomResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{69}
+}
+
+func (x *CreateAgoraRoomResponse) GetRoom() *AgoraRoom {
+	if x != nil {
+		return x.Room
+	}
+	return nil
+}
+
+type EndAgoraRoomRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RoomId        string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EndAgoraRoomRequest) Reset() {
+	*x = EndAgoraRoomRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[70]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EndAgoraRoomRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EndAgoraRoomRequest) ProtoMessage() {}
+
+func (x *EndAgoraRoomRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[70]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EndAgoraRoomRequest.ProtoReflect.Descriptor instead.
+func (*EndAgoraRoomRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *EndAgoraRoomRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+type EndAgoraRoomResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Room          *AgoraRoom             `protobuf:"bytes,1,opt,name=room,proto3" json:"room,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EndAgoraRoomResponse) Reset() {
+	*x = EndAgoraRoomResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[71]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EndAgoraRoomResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EndAgoraRoomResponse) ProtoMessage() {}
+
+func (x *EndAgoraRoomResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[71]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EndAgoraRoomResponse.ProtoReflect.Descriptor instead.
+func (*EndAgoraRoomResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *EndAgoraRoomResponse) GetRoom() *AgoraRoom {
+	if x != nil {
+		return x.Room
+	}
+	return nil
+}
+
+type MintLiveKitTokenRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RoomId        string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MintLiveKitTokenRequest) Reset() {
+	*x = MintLiveKitTokenRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[72]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MintLiveKitTokenRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MintLiveKitTokenRequest) ProtoMessage() {}
+
+func (x *MintLiveKitTokenRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[72]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MintLiveKitTokenRequest.ProtoReflect.Descriptor instead.
+func (*MintLiveKitTokenRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{72}
+}
+
+func (x *MintLiveKitTokenRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+type MintLiveKitTokenResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Empty when LiveKit credentials are not configured server-side
+	// (FailedPrecondition is returned in that case so the client can
+	// surface "joining unavailable").
+	Token         string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	WsUrl         string `protobuf:"bytes,2,opt,name=ws_url,json=wsUrl,proto3" json:"ws_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MintLiveKitTokenResponse) Reset() {
+	*x = MintLiveKitTokenResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[73]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MintLiveKitTokenResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MintLiveKitTokenResponse) ProtoMessage() {}
+
+func (x *MintLiveKitTokenResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[73]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MintLiveKitTokenResponse.ProtoReflect.Descriptor instead.
+func (*MintLiveKitTokenResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{73}
+}
+
+func (x *MintLiveKitTokenResponse) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *MintLiveKitTokenResponse) GetWsUrl() string {
+	if x != nil {
+		return x.WsUrl
+	}
+	return ""
+}
+
 var File_sttattus_dating_v1_dating_proto protoreflect.FileDescriptor
 
 const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
@@ -3821,7 +4310,39 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x01z\x18\x05 \x01(\x01R\x01z\"\x1b\n" +
 	"\x19ListAtlasMapPointsRequest\"W\n" +
 	"\x1aListAtlasMapPointsResponse\x129\n" +
-	"\x06points\x18\x01 \x03(\v2!.sttattus.dating.v1.AtlasMapPointR\x06points*\x80\x01\n" +
+	"\x06points\x18\x01 \x03(\v2!.sttattus.dating.v1.AtlasMapPointR\x06points\"\x81\x02\n" +
+	"\tAgoraRoom\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\ahost_id\x18\x02 \x01(\tR\x06hostId\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x18\n" +
+	"\acluster\x18\x04 \x01(\tR\acluster\x12\x1d\n" +
+	"\n" +
+	"max_guests\x18\x05 \x01(\x05R\tmaxGuests\x12\x16\n" +
+	"\x06status\x18\x06 \x01(\tR\x06status\x12*\n" +
+	"\x11livekit_room_name\x18\a \x01(\tR\x0flivekitRoomName\x12\x1d\n" +
+	"\n" +
+	"started_at\x18\b \x01(\x03R\tstartedAt\x12\x19\n" +
+	"\bended_at\x18\t \x01(\x03R\aendedAt\"0\n" +
+	"\x14ListLiveRoomsRequest\x12\x18\n" +
+	"\acluster\x18\x01 \x01(\tR\acluster\"L\n" +
+	"\x15ListLiveRoomsResponse\x123\n" +
+	"\x05rooms\x18\x01 \x03(\v2\x1d.sttattus.dating.v1.AgoraRoomR\x05rooms\"g\n" +
+	"\x16CreateAgoraRoomRequest\x12\x14\n" +
+	"\x05title\x18\x01 \x01(\tR\x05title\x12\x18\n" +
+	"\acluster\x18\x02 \x01(\tR\acluster\x12\x1d\n" +
+	"\n" +
+	"max_guests\x18\x03 \x01(\x05R\tmaxGuests\"L\n" +
+	"\x17CreateAgoraRoomResponse\x121\n" +
+	"\x04room\x18\x01 \x01(\v2\x1d.sttattus.dating.v1.AgoraRoomR\x04room\".\n" +
+	"\x13EndAgoraRoomRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\"I\n" +
+	"\x14EndAgoraRoomResponse\x121\n" +
+	"\x04room\x18\x01 \x01(\v2\x1d.sttattus.dating.v1.AgoraRoomR\x04room\"2\n" +
+	"\x17MintLiveKitTokenRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\"G\n" +
+	"\x18MintLiveKitTokenResponse\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\x12\x15\n" +
+	"\x06ws_url\x18\x02 \x01(\tR\x05wsUrl*\x80\x01\n" +
 	"\x0eSwipeDirection\x12\x1f\n" +
 	"\x1bSWIPE_DIRECTION_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14SWIPE_DIRECTION_PASS\x10\x01\x12\x18\n" +
@@ -3832,7 +4353,7 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x14DATING_INTENT_CASUAL\x10\x01\x12\x1e\n" +
 	"\x1aDATING_INTENT_RELATIONSHIP\x10\x02\x12\x19\n" +
 	"\x15DATING_INTENT_FRIENDS\x10\x03\x12\x1c\n" +
-	"\x18DATING_INTENT_NETWORKING\x10\x042\xe7\x15\n" +
+	"\x18DATING_INTENT_NETWORKING\x10\x042\x8b\x19\n" +
 	"\rDatingService\x12[\n" +
 	"\n" +
 	"GetProfile\x12%.sttattus.dating.v1.GetProfileRequest\x1a&.sttattus.dating.v1.GetProfileResponse\x12d\n" +
@@ -3861,7 +4382,11 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x12UpsertPanicContact\x12-.sttattus.dating.v1.UpsertPanicContactRequest\x1a..sttattus.dating.v1.UpsertPanicContactResponse\x12g\n" +
 	"\x0eGetPrivacyAxes\x12).sttattus.dating.v1.GetPrivacyAxesRequest\x1a*.sttattus.dating.v1.GetPrivacyAxesResponse\x12p\n" +
 	"\x11UpsertPrivacyAxes\x12,.sttattus.dating.v1.UpsertPrivacyAxesRequest\x1a-.sttattus.dating.v1.UpsertPrivacyAxesResponse\x12s\n" +
-	"\x12ListAtlasMapPoints\x12-.sttattus.dating.v1.ListAtlasMapPointsRequest\x1a..sttattus.dating.v1.ListAtlasMapPointsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
+	"\x12ListAtlasMapPoints\x12-.sttattus.dating.v1.ListAtlasMapPointsRequest\x1a..sttattus.dating.v1.ListAtlasMapPointsResponse\x12d\n" +
+	"\rListLiveRooms\x12(.sttattus.dating.v1.ListLiveRoomsRequest\x1a).sttattus.dating.v1.ListLiveRoomsResponse\x12j\n" +
+	"\x0fCreateAgoraRoom\x12*.sttattus.dating.v1.CreateAgoraRoomRequest\x1a+.sttattus.dating.v1.CreateAgoraRoomResponse\x12a\n" +
+	"\fEndAgoraRoom\x12'.sttattus.dating.v1.EndAgoraRoomRequest\x1a(.sttattus.dating.v1.EndAgoraRoomResponse\x12m\n" +
+	"\x10MintLiveKitToken\x12+.sttattus.dating.v1.MintLiveKitTokenRequest\x1a,.sttattus.dating.v1.MintLiveKitTokenResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
 
 var (
 	file_sttattus_dating_v1_dating_proto_rawDescOnce sync.Once
@@ -3876,7 +4401,7 @@ func file_sttattus_dating_v1_dating_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_dating_v1_dating_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 65)
+var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 74)
 var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(SwipeDirection)(0),                   // 0: sttattus.dating.v1.SwipeDirection
 	(DatingIntent)(0),                     // 1: sttattus.dating.v1.DatingIntent
@@ -3945,8 +4470,17 @@ var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(*AtlasMapPoint)(nil),                 // 64: sttattus.dating.v1.AtlasMapPoint
 	(*ListAtlasMapPointsRequest)(nil),     // 65: sttattus.dating.v1.ListAtlasMapPointsRequest
 	(*ListAtlasMapPointsResponse)(nil),    // 66: sttattus.dating.v1.ListAtlasMapPointsResponse
-	(*v1.PageRequest)(nil),                // 67: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),               // 68: sttattus.common.v1.PageResponse
+	(*AgoraRoom)(nil),                     // 67: sttattus.dating.v1.AgoraRoom
+	(*ListLiveRoomsRequest)(nil),          // 68: sttattus.dating.v1.ListLiveRoomsRequest
+	(*ListLiveRoomsResponse)(nil),         // 69: sttattus.dating.v1.ListLiveRoomsResponse
+	(*CreateAgoraRoomRequest)(nil),        // 70: sttattus.dating.v1.CreateAgoraRoomRequest
+	(*CreateAgoraRoomResponse)(nil),       // 71: sttattus.dating.v1.CreateAgoraRoomResponse
+	(*EndAgoraRoomRequest)(nil),           // 72: sttattus.dating.v1.EndAgoraRoomRequest
+	(*EndAgoraRoomResponse)(nil),          // 73: sttattus.dating.v1.EndAgoraRoomResponse
+	(*MintLiveKitTokenRequest)(nil),       // 74: sttattus.dating.v1.MintLiveKitTokenRequest
+	(*MintLiveKitTokenResponse)(nil),      // 75: sttattus.dating.v1.MintLiveKitTokenResponse
+	(*v1.PageRequest)(nil),                // 76: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),               // 77: sttattus.common.v1.PageResponse
 }
 var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	1,  // 0: sttattus.dating.v1.DatingProfile.intent:type_name -> sttattus.dating.v1.DatingIntent
@@ -3959,9 +4493,9 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	4,  // 7: sttattus.dating.v1.StreamDiscoveryResponse.candidate:type_name -> sttattus.dating.v1.Candidate
 	0,  // 8: sttattus.dating.v1.SwipeRequest.direction:type_name -> sttattus.dating.v1.SwipeDirection
 	5,  // 9: sttattus.dating.v1.SwipeResponse.match:type_name -> sttattus.dating.v1.Match
-	67, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	76, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	5,  // 11: sttattus.dating.v1.ListMatchesResponse.matches:type_name -> sttattus.dating.v1.Match
-	68, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	77, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
 	6,  // 13: sttattus.dating.v1.StreamMessagesResponse.message:type_name -> sttattus.dating.v1.Message
 	6,  // 14: sttattus.dating.v1.SendMessageResponse.message:type_name -> sttattus.dating.v1.Message
 	21, // 15: sttattus.dating.v1.StartVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
@@ -3982,63 +4516,74 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	59, // 30: sttattus.dating.v1.UpsertPrivacyAxesRequest.axes:type_name -> sttattus.dating.v1.PrivacyAxes
 	59, // 31: sttattus.dating.v1.UpsertPrivacyAxesResponse.axes:type_name -> sttattus.dating.v1.PrivacyAxes
 	64, // 32: sttattus.dating.v1.ListAtlasMapPointsResponse.points:type_name -> sttattus.dating.v1.AtlasMapPoint
-	7,  // 33: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
-	9,  // 34: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
-	11, // 35: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
-	13, // 36: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
-	15, // 37: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
-	17, // 38: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
-	19, // 39: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
-	22, // 40: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
-	24, // 41: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
-	27, // 42: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
-	29, // 43: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
-	31, // 44: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
-	34, // 45: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
-	36, // 46: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
-	38, // 47: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
-	40, // 48: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
-	43, // 49: sttattus.dating.v1.DatingService.ListMyBlocks:input_type -> sttattus.dating.v1.ListMyBlocksRequest
-	45, // 50: sttattus.dating.v1.DatingService.BlockUser:input_type -> sttattus.dating.v1.BlockUserRequest
-	47, // 51: sttattus.dating.v1.DatingService.UnblockUser:input_type -> sttattus.dating.v1.UnblockUserRequest
-	50, // 52: sttattus.dating.v1.DatingService.ListMyReports:input_type -> sttattus.dating.v1.ListMyReportsRequest
-	52, // 53: sttattus.dating.v1.DatingService.ReportUser:input_type -> sttattus.dating.v1.ReportUserRequest
-	55, // 54: sttattus.dating.v1.DatingService.GetPanicContact:input_type -> sttattus.dating.v1.GetPanicContactRequest
-	57, // 55: sttattus.dating.v1.DatingService.UpsertPanicContact:input_type -> sttattus.dating.v1.UpsertPanicContactRequest
-	60, // 56: sttattus.dating.v1.DatingService.GetPrivacyAxes:input_type -> sttattus.dating.v1.GetPrivacyAxesRequest
-	62, // 57: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:input_type -> sttattus.dating.v1.UpsertPrivacyAxesRequest
-	65, // 58: sttattus.dating.v1.DatingService.ListAtlasMapPoints:input_type -> sttattus.dating.v1.ListAtlasMapPointsRequest
-	8,  // 59: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
-	10, // 60: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
-	12, // 61: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
-	14, // 62: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
-	16, // 63: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
-	18, // 64: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
-	20, // 65: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
-	23, // 66: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
-	25, // 67: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
-	28, // 68: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
-	30, // 69: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
-	32, // 70: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
-	35, // 71: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
-	37, // 72: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
-	39, // 73: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
-	41, // 74: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
-	44, // 75: sttattus.dating.v1.DatingService.ListMyBlocks:output_type -> sttattus.dating.v1.ListMyBlocksResponse
-	46, // 76: sttattus.dating.v1.DatingService.BlockUser:output_type -> sttattus.dating.v1.BlockUserResponse
-	48, // 77: sttattus.dating.v1.DatingService.UnblockUser:output_type -> sttattus.dating.v1.UnblockUserResponse
-	51, // 78: sttattus.dating.v1.DatingService.ListMyReports:output_type -> sttattus.dating.v1.ListMyReportsResponse
-	53, // 79: sttattus.dating.v1.DatingService.ReportUser:output_type -> sttattus.dating.v1.ReportUserResponse
-	56, // 80: sttattus.dating.v1.DatingService.GetPanicContact:output_type -> sttattus.dating.v1.GetPanicContactResponse
-	58, // 81: sttattus.dating.v1.DatingService.UpsertPanicContact:output_type -> sttattus.dating.v1.UpsertPanicContactResponse
-	61, // 82: sttattus.dating.v1.DatingService.GetPrivacyAxes:output_type -> sttattus.dating.v1.GetPrivacyAxesResponse
-	63, // 83: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:output_type -> sttattus.dating.v1.UpsertPrivacyAxesResponse
-	66, // 84: sttattus.dating.v1.DatingService.ListAtlasMapPoints:output_type -> sttattus.dating.v1.ListAtlasMapPointsResponse
-	59, // [59:85] is the sub-list for method output_type
-	33, // [33:59] is the sub-list for method input_type
-	33, // [33:33] is the sub-list for extension type_name
-	33, // [33:33] is the sub-list for extension extendee
-	0,  // [0:33] is the sub-list for field type_name
+	67, // 33: sttattus.dating.v1.ListLiveRoomsResponse.rooms:type_name -> sttattus.dating.v1.AgoraRoom
+	67, // 34: sttattus.dating.v1.CreateAgoraRoomResponse.room:type_name -> sttattus.dating.v1.AgoraRoom
+	67, // 35: sttattus.dating.v1.EndAgoraRoomResponse.room:type_name -> sttattus.dating.v1.AgoraRoom
+	7,  // 36: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
+	9,  // 37: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
+	11, // 38: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
+	13, // 39: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
+	15, // 40: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
+	17, // 41: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
+	19, // 42: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
+	22, // 43: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
+	24, // 44: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
+	27, // 45: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
+	29, // 46: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
+	31, // 47: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
+	34, // 48: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
+	36, // 49: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
+	38, // 50: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
+	40, // 51: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
+	43, // 52: sttattus.dating.v1.DatingService.ListMyBlocks:input_type -> sttattus.dating.v1.ListMyBlocksRequest
+	45, // 53: sttattus.dating.v1.DatingService.BlockUser:input_type -> sttattus.dating.v1.BlockUserRequest
+	47, // 54: sttattus.dating.v1.DatingService.UnblockUser:input_type -> sttattus.dating.v1.UnblockUserRequest
+	50, // 55: sttattus.dating.v1.DatingService.ListMyReports:input_type -> sttattus.dating.v1.ListMyReportsRequest
+	52, // 56: sttattus.dating.v1.DatingService.ReportUser:input_type -> sttattus.dating.v1.ReportUserRequest
+	55, // 57: sttattus.dating.v1.DatingService.GetPanicContact:input_type -> sttattus.dating.v1.GetPanicContactRequest
+	57, // 58: sttattus.dating.v1.DatingService.UpsertPanicContact:input_type -> sttattus.dating.v1.UpsertPanicContactRequest
+	60, // 59: sttattus.dating.v1.DatingService.GetPrivacyAxes:input_type -> sttattus.dating.v1.GetPrivacyAxesRequest
+	62, // 60: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:input_type -> sttattus.dating.v1.UpsertPrivacyAxesRequest
+	65, // 61: sttattus.dating.v1.DatingService.ListAtlasMapPoints:input_type -> sttattus.dating.v1.ListAtlasMapPointsRequest
+	68, // 62: sttattus.dating.v1.DatingService.ListLiveRooms:input_type -> sttattus.dating.v1.ListLiveRoomsRequest
+	70, // 63: sttattus.dating.v1.DatingService.CreateAgoraRoom:input_type -> sttattus.dating.v1.CreateAgoraRoomRequest
+	72, // 64: sttattus.dating.v1.DatingService.EndAgoraRoom:input_type -> sttattus.dating.v1.EndAgoraRoomRequest
+	74, // 65: sttattus.dating.v1.DatingService.MintLiveKitToken:input_type -> sttattus.dating.v1.MintLiveKitTokenRequest
+	8,  // 66: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
+	10, // 67: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
+	12, // 68: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
+	14, // 69: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
+	16, // 70: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
+	18, // 71: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
+	20, // 72: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
+	23, // 73: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
+	25, // 74: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
+	28, // 75: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
+	30, // 76: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
+	32, // 77: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
+	35, // 78: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
+	37, // 79: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
+	39, // 80: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
+	41, // 81: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
+	44, // 82: sttattus.dating.v1.DatingService.ListMyBlocks:output_type -> sttattus.dating.v1.ListMyBlocksResponse
+	46, // 83: sttattus.dating.v1.DatingService.BlockUser:output_type -> sttattus.dating.v1.BlockUserResponse
+	48, // 84: sttattus.dating.v1.DatingService.UnblockUser:output_type -> sttattus.dating.v1.UnblockUserResponse
+	51, // 85: sttattus.dating.v1.DatingService.ListMyReports:output_type -> sttattus.dating.v1.ListMyReportsResponse
+	53, // 86: sttattus.dating.v1.DatingService.ReportUser:output_type -> sttattus.dating.v1.ReportUserResponse
+	56, // 87: sttattus.dating.v1.DatingService.GetPanicContact:output_type -> sttattus.dating.v1.GetPanicContactResponse
+	58, // 88: sttattus.dating.v1.DatingService.UpsertPanicContact:output_type -> sttattus.dating.v1.UpsertPanicContactResponse
+	61, // 89: sttattus.dating.v1.DatingService.GetPrivacyAxes:output_type -> sttattus.dating.v1.GetPrivacyAxesResponse
+	63, // 90: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:output_type -> sttattus.dating.v1.UpsertPrivacyAxesResponse
+	66, // 91: sttattus.dating.v1.DatingService.ListAtlasMapPoints:output_type -> sttattus.dating.v1.ListAtlasMapPointsResponse
+	69, // 92: sttattus.dating.v1.DatingService.ListLiveRooms:output_type -> sttattus.dating.v1.ListLiveRoomsResponse
+	71, // 93: sttattus.dating.v1.DatingService.CreateAgoraRoom:output_type -> sttattus.dating.v1.CreateAgoraRoomResponse
+	73, // 94: sttattus.dating.v1.DatingService.EndAgoraRoom:output_type -> sttattus.dating.v1.EndAgoraRoomResponse
+	75, // 95: sttattus.dating.v1.DatingService.MintLiveKitToken:output_type -> sttattus.dating.v1.MintLiveKitTokenResponse
+	66, // [66:96] is the sub-list for method output_type
+	36, // [36:66] is the sub-list for method input_type
+	36, // [36:36] is the sub-list for extension type_name
+	36, // [36:36] is the sub-list for extension extendee
+	0,  // [0:36] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dating_v1_dating_proto_init() }
@@ -4052,7 +4597,7 @@ func file_sttattus_dating_v1_dating_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_dating_v1_dating_proto_rawDesc), len(file_sttattus_dating_v1_dating_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   65,
+			NumMessages:   74,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

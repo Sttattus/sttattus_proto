@@ -961,3 +961,131 @@ final $typed_data.Uint8List listAtlasMapPointsResponseDescriptor = $convert.base
     'ChpMaXN0QXRsYXNNYXBQb2ludHNSZXNwb25zZRI5CgZwb2ludHMYASADKAsyIS5zdHRhdHR1cy'
     '5kYXRpbmcudjEuQXRsYXNNYXBQb2ludFIGcG9pbnRz');
 
+@$core.Deprecated('Use agoraRoomDescriptor instead')
+const AgoraRoom$json = {
+  '1': 'AgoraRoom',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'host_id', '3': 2, '4': 1, '5': 9, '10': 'hostId'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'cluster', '3': 4, '4': 1, '5': 9, '10': 'cluster'},
+    {'1': 'max_guests', '3': 5, '4': 1, '5': 5, '10': 'maxGuests'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'livekit_room_name', '3': 7, '4': 1, '5': 9, '10': 'livekitRoomName'},
+    {'1': 'started_at', '3': 8, '4': 1, '5': 3, '10': 'startedAt'},
+    {'1': 'ended_at', '3': 9, '4': 1, '5': 3, '10': 'endedAt'},
+  ],
+};
+
+/// Descriptor for `AgoraRoom`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List agoraRoomDescriptor = $convert.base64Decode(
+    'CglBZ29yYVJvb20SDgoCaWQYASABKAlSAmlkEhcKB2hvc3RfaWQYAiABKAlSBmhvc3RJZBIUCg'
+    'V0aXRsZRgDIAEoCVIFdGl0bGUSGAoHY2x1c3RlchgEIAEoCVIHY2x1c3RlchIdCgptYXhfZ3Vl'
+    'c3RzGAUgASgFUgltYXhHdWVzdHMSFgoGc3RhdHVzGAYgASgJUgZzdGF0dXMSKgoRbGl2ZWtpdF'
+    '9yb29tX25hbWUYByABKAlSD2xpdmVraXRSb29tTmFtZRIdCgpzdGFydGVkX2F0GAggASgDUglz'
+    'dGFydGVkQXQSGQoIZW5kZWRfYXQYCSABKANSB2VuZGVkQXQ=');
+
+@$core.Deprecated('Use listLiveRoomsRequestDescriptor instead')
+const ListLiveRoomsRequest$json = {
+  '1': 'ListLiveRoomsRequest',
+  '2': [
+    {'1': 'cluster', '3': 1, '4': 1, '5': 9, '10': 'cluster'},
+  ],
+};
+
+/// Descriptor for `ListLiveRoomsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLiveRoomsRequestDescriptor = $convert.base64Decode(
+    'ChRMaXN0TGl2ZVJvb21zUmVxdWVzdBIYCgdjbHVzdGVyGAEgASgJUgdjbHVzdGVy');
+
+@$core.Deprecated('Use listLiveRoomsResponseDescriptor instead')
+const ListLiveRoomsResponse$json = {
+  '1': 'ListLiveRoomsResponse',
+  '2': [
+    {'1': 'rooms', '3': 1, '4': 3, '5': 11, '6': '.sttattus.dating.v1.AgoraRoom', '10': 'rooms'},
+  ],
+};
+
+/// Descriptor for `ListLiveRoomsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLiveRoomsResponseDescriptor = $convert.base64Decode(
+    'ChVMaXN0TGl2ZVJvb21zUmVzcG9uc2USMwoFcm9vbXMYASADKAsyHS5zdHRhdHR1cy5kYXRpbm'
+    'cudjEuQWdvcmFSb29tUgVyb29tcw==');
+
+@$core.Deprecated('Use createAgoraRoomRequestDescriptor instead')
+const CreateAgoraRoomRequest$json = {
+  '1': 'CreateAgoraRoomRequest',
+  '2': [
+    {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'cluster', '3': 2, '4': 1, '5': 9, '10': 'cluster'},
+    {'1': 'max_guests', '3': 3, '4': 1, '5': 5, '10': 'maxGuests'},
+  ],
+};
+
+/// Descriptor for `CreateAgoraRoomRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createAgoraRoomRequestDescriptor = $convert.base64Decode(
+    'ChZDcmVhdGVBZ29yYVJvb21SZXF1ZXN0EhQKBXRpdGxlGAEgASgJUgV0aXRsZRIYCgdjbHVzdG'
+    'VyGAIgASgJUgdjbHVzdGVyEh0KCm1heF9ndWVzdHMYAyABKAVSCW1heEd1ZXN0cw==');
+
+@$core.Deprecated('Use createAgoraRoomResponseDescriptor instead')
+const CreateAgoraRoomResponse$json = {
+  '1': 'CreateAgoraRoomResponse',
+  '2': [
+    {'1': 'room', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.AgoraRoom', '10': 'room'},
+  ],
+};
+
+/// Descriptor for `CreateAgoraRoomResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createAgoraRoomResponseDescriptor = $convert.base64Decode(
+    'ChdDcmVhdGVBZ29yYVJvb21SZXNwb25zZRIxCgRyb29tGAEgASgLMh0uc3R0YXR0dXMuZGF0aW'
+    '5nLnYxLkFnb3JhUm9vbVIEcm9vbQ==');
+
+@$core.Deprecated('Use endAgoraRoomRequestDescriptor instead')
+const EndAgoraRoomRequest$json = {
+  '1': 'EndAgoraRoomRequest',
+  '2': [
+    {'1': 'room_id', '3': 1, '4': 1, '5': 9, '10': 'roomId'},
+  ],
+};
+
+/// Descriptor for `EndAgoraRoomRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List endAgoraRoomRequestDescriptor = $convert.base64Decode(
+    'ChNFbmRBZ29yYVJvb21SZXF1ZXN0EhcKB3Jvb21faWQYASABKAlSBnJvb21JZA==');
+
+@$core.Deprecated('Use endAgoraRoomResponseDescriptor instead')
+const EndAgoraRoomResponse$json = {
+  '1': 'EndAgoraRoomResponse',
+  '2': [
+    {'1': 'room', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.AgoraRoom', '10': 'room'},
+  ],
+};
+
+/// Descriptor for `EndAgoraRoomResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List endAgoraRoomResponseDescriptor = $convert.base64Decode(
+    'ChRFbmRBZ29yYVJvb21SZXNwb25zZRIxCgRyb29tGAEgASgLMh0uc3R0YXR0dXMuZGF0aW5nLn'
+    'YxLkFnb3JhUm9vbVIEcm9vbQ==');
+
+@$core.Deprecated('Use mintLiveKitTokenRequestDescriptor instead')
+const MintLiveKitTokenRequest$json = {
+  '1': 'MintLiveKitTokenRequest',
+  '2': [
+    {'1': 'room_id', '3': 1, '4': 1, '5': 9, '10': 'roomId'},
+  ],
+};
+
+/// Descriptor for `MintLiveKitTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mintLiveKitTokenRequestDescriptor = $convert.base64Decode(
+    'ChdNaW50TGl2ZUtpdFRva2VuUmVxdWVzdBIXCgdyb29tX2lkGAEgASgJUgZyb29tSWQ=');
+
+@$core.Deprecated('Use mintLiveKitTokenResponseDescriptor instead')
+const MintLiveKitTokenResponse$json = {
+  '1': 'MintLiveKitTokenResponse',
+  '2': [
+    {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
+    {'1': 'ws_url', '3': 2, '4': 1, '5': 9, '10': 'wsUrl'},
+  ],
+};
+
+/// Descriptor for `MintLiveKitTokenResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mintLiveKitTokenResponseDescriptor = $convert.base64Decode(
+    'ChhNaW50TGl2ZUtpdFRva2VuUmVzcG9uc2USFAoFdG9rZW4YASABKAlSBXRva2VuEhUKBndzX3'
+    'VybBgCIAEoCVIFd3NVcmw=');
+

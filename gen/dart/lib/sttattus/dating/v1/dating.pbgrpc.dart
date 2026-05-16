@@ -141,6 +141,23 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listAtlasMapPoints, request, options: options);
   }
 
+  /// A9P2.3 — Agora live audio rooms.
+  $grpc.ResponseFuture<$0.ListLiveRoomsResponse> listLiveRooms($0.ListLiveRoomsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listLiveRooms, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateAgoraRoomResponse> createAgoraRoom($0.CreateAgoraRoomRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createAgoraRoom, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EndAgoraRoomResponse> endAgoraRoom($0.EndAgoraRoomRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$endAgoraRoom, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MintLiveKitTokenResponse> mintLiveKitToken($0.MintLiveKitTokenRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$mintLiveKitToken, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getProfile = $grpc.ClientMethod<$0.GetProfileRequest, $0.GetProfileResponse>(
@@ -247,6 +264,22 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/ListAtlasMapPoints',
       ($0.ListAtlasMapPointsRequest value) => value.writeToBuffer(),
       $0.ListAtlasMapPointsResponse.fromBuffer);
+  static final _$listLiveRooms = $grpc.ClientMethod<$0.ListLiveRoomsRequest, $0.ListLiveRoomsResponse>(
+      '/sttattus.dating.v1.DatingService/ListLiveRooms',
+      ($0.ListLiveRoomsRequest value) => value.writeToBuffer(),
+      $0.ListLiveRoomsResponse.fromBuffer);
+  static final _$createAgoraRoom = $grpc.ClientMethod<$0.CreateAgoraRoomRequest, $0.CreateAgoraRoomResponse>(
+      '/sttattus.dating.v1.DatingService/CreateAgoraRoom',
+      ($0.CreateAgoraRoomRequest value) => value.writeToBuffer(),
+      $0.CreateAgoraRoomResponse.fromBuffer);
+  static final _$endAgoraRoom = $grpc.ClientMethod<$0.EndAgoraRoomRequest, $0.EndAgoraRoomResponse>(
+      '/sttattus.dating.v1.DatingService/EndAgoraRoom',
+      ($0.EndAgoraRoomRequest value) => value.writeToBuffer(),
+      $0.EndAgoraRoomResponse.fromBuffer);
+  static final _$mintLiveKitToken = $grpc.ClientMethod<$0.MintLiveKitTokenRequest, $0.MintLiveKitTokenResponse>(
+      '/sttattus.dating.v1.DatingService/MintLiveKitToken',
+      ($0.MintLiveKitTokenRequest value) => value.writeToBuffer(),
+      $0.MintLiveKitTokenResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dating.v1.DatingService')
@@ -436,6 +469,34 @@ abstract class DatingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListAtlasMapPointsRequest.fromBuffer(value),
         ($0.ListAtlasMapPointsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListLiveRoomsRequest, $0.ListLiveRoomsResponse>(
+        'ListLiveRooms',
+        listLiveRooms_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListLiveRoomsRequest.fromBuffer(value),
+        ($0.ListLiveRoomsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateAgoraRoomRequest, $0.CreateAgoraRoomResponse>(
+        'CreateAgoraRoom',
+        createAgoraRoom_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateAgoraRoomRequest.fromBuffer(value),
+        ($0.CreateAgoraRoomResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EndAgoraRoomRequest, $0.EndAgoraRoomResponse>(
+        'EndAgoraRoom',
+        endAgoraRoom_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.EndAgoraRoomRequest.fromBuffer(value),
+        ($0.EndAgoraRoomResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MintLiveKitTokenRequest, $0.MintLiveKitTokenResponse>(
+        'MintLiveKitToken',
+        mintLiveKitToken_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.MintLiveKitTokenRequest.fromBuffer(value),
+        ($0.MintLiveKitTokenResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProfileRequest> $request) async {
@@ -593,5 +654,29 @@ abstract class DatingServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListAtlasMapPointsResponse> listAtlasMapPoints($grpc.ServiceCall call, $0.ListAtlasMapPointsRequest request);
+
+  $async.Future<$0.ListLiveRoomsResponse> listLiveRooms_Pre($grpc.ServiceCall $call, $async.Future<$0.ListLiveRoomsRequest> $request) async {
+    return listLiveRooms($call, await $request);
+  }
+
+  $async.Future<$0.ListLiveRoomsResponse> listLiveRooms($grpc.ServiceCall call, $0.ListLiveRoomsRequest request);
+
+  $async.Future<$0.CreateAgoraRoomResponse> createAgoraRoom_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateAgoraRoomRequest> $request) async {
+    return createAgoraRoom($call, await $request);
+  }
+
+  $async.Future<$0.CreateAgoraRoomResponse> createAgoraRoom($grpc.ServiceCall call, $0.CreateAgoraRoomRequest request);
+
+  $async.Future<$0.EndAgoraRoomResponse> endAgoraRoom_Pre($grpc.ServiceCall $call, $async.Future<$0.EndAgoraRoomRequest> $request) async {
+    return endAgoraRoom($call, await $request);
+  }
+
+  $async.Future<$0.EndAgoraRoomResponse> endAgoraRoom($grpc.ServiceCall call, $0.EndAgoraRoomRequest request);
+
+  $async.Future<$0.MintLiveKitTokenResponse> mintLiveKitToken_Pre($grpc.ServiceCall $call, $async.Future<$0.MintLiveKitTokenRequest> $request) async {
+    return mintLiveKitToken($call, await $request);
+  }
+
+  $async.Future<$0.MintLiveKitTokenResponse> mintLiveKitToken($grpc.ServiceCall call, $0.MintLiveKitTokenRequest request);
 
 }

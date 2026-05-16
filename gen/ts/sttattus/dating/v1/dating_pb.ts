@@ -2957,3 +2957,410 @@ export class ListAtlasMapPointsResponse extends Message$1<ListAtlasMapPointsResp
   }
 }
 
+/**
+ * @generated from message sttattus.dating.v1.AgoraRoom
+ */
+export class AgoraRoom extends Message$1<AgoraRoom> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string host_id = 2;
+   */
+  hostId = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string cluster = 4;
+   */
+  cluster = "";
+
+  /**
+   * @generated from field: int32 max_guests = 5;
+   */
+  maxGuests = 0;
+
+  /**
+   * 'live' | 'ended' | 'scheduled'
+   *
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string livekit_room_name = 7;
+   */
+  livekitRoomName = "";
+
+  /**
+   * @generated from field: int64 started_at = 8;
+   */
+  startedAt = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 ended_at = 9;
+   */
+  endedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AgoraRoom>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AgoraRoom";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "host_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "cluster", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "max_guests", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "livekit_room_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "started_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "ended_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AgoraRoom {
+    return new AgoraRoom().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AgoraRoom {
+    return new AgoraRoom().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AgoraRoom {
+    return new AgoraRoom().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AgoraRoom | PlainMessage<AgoraRoom> | undefined, b: AgoraRoom | PlainMessage<AgoraRoom> | undefined): boolean {
+    return proto3.util.equals(AgoraRoom, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListLiveRoomsRequest
+ */
+export class ListLiveRoomsRequest extends Message$1<ListLiveRoomsRequest> {
+  /**
+   * Optional cluster filter ('' = all clusters).
+   *
+   * @generated from field: string cluster = 1;
+   */
+  cluster = "";
+
+  constructor(data?: PartialMessage<ListLiveRoomsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListLiveRoomsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "cluster", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLiveRoomsRequest {
+    return new ListLiveRoomsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLiveRoomsRequest {
+    return new ListLiveRoomsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLiveRoomsRequest {
+    return new ListLiveRoomsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLiveRoomsRequest | PlainMessage<ListLiveRoomsRequest> | undefined, b: ListLiveRoomsRequest | PlainMessage<ListLiveRoomsRequest> | undefined): boolean {
+    return proto3.util.equals(ListLiveRoomsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListLiveRoomsResponse
+ */
+export class ListLiveRoomsResponse extends Message$1<ListLiveRoomsResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AgoraRoom rooms = 1;
+   */
+  rooms: AgoraRoom[] = [];
+
+  constructor(data?: PartialMessage<ListLiveRoomsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListLiveRoomsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "rooms", kind: "message", T: AgoraRoom, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLiveRoomsResponse {
+    return new ListLiveRoomsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLiveRoomsResponse {
+    return new ListLiveRoomsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLiveRoomsResponse {
+    return new ListLiveRoomsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLiveRoomsResponse | PlainMessage<ListLiveRoomsResponse> | undefined, b: ListLiveRoomsResponse | PlainMessage<ListLiveRoomsResponse> | undefined): boolean {
+    return proto3.util.equals(ListLiveRoomsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.CreateAgoraRoomRequest
+ */
+export class CreateAgoraRoomRequest extends Message$1<CreateAgoraRoomRequest> {
+  /**
+   * @generated from field: string title = 1;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string cluster = 2;
+   */
+  cluster = "";
+
+  /**
+   * @generated from field: int32 max_guests = 3;
+   */
+  maxGuests = 0;
+
+  constructor(data?: PartialMessage<CreateAgoraRoomRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.CreateAgoraRoomRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "cluster", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "max_guests", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAgoraRoomRequest {
+    return new CreateAgoraRoomRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAgoraRoomRequest {
+    return new CreateAgoraRoomRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAgoraRoomRequest {
+    return new CreateAgoraRoomRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateAgoraRoomRequest | PlainMessage<CreateAgoraRoomRequest> | undefined, b: CreateAgoraRoomRequest | PlainMessage<CreateAgoraRoomRequest> | undefined): boolean {
+    return proto3.util.equals(CreateAgoraRoomRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.CreateAgoraRoomResponse
+ */
+export class CreateAgoraRoomResponse extends Message$1<CreateAgoraRoomResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AgoraRoom room = 1;
+   */
+  room?: AgoraRoom;
+
+  constructor(data?: PartialMessage<CreateAgoraRoomResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.CreateAgoraRoomResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room", kind: "message", T: AgoraRoom },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAgoraRoomResponse {
+    return new CreateAgoraRoomResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAgoraRoomResponse {
+    return new CreateAgoraRoomResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAgoraRoomResponse {
+    return new CreateAgoraRoomResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateAgoraRoomResponse | PlainMessage<CreateAgoraRoomResponse> | undefined, b: CreateAgoraRoomResponse | PlainMessage<CreateAgoraRoomResponse> | undefined): boolean {
+    return proto3.util.equals(CreateAgoraRoomResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.EndAgoraRoomRequest
+ */
+export class EndAgoraRoomRequest extends Message$1<EndAgoraRoomRequest> {
+  /**
+   * @generated from field: string room_id = 1;
+   */
+  roomId = "";
+
+  constructor(data?: PartialMessage<EndAgoraRoomRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.EndAgoraRoomRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EndAgoraRoomRequest {
+    return new EndAgoraRoomRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EndAgoraRoomRequest {
+    return new EndAgoraRoomRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EndAgoraRoomRequest {
+    return new EndAgoraRoomRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EndAgoraRoomRequest | PlainMessage<EndAgoraRoomRequest> | undefined, b: EndAgoraRoomRequest | PlainMessage<EndAgoraRoomRequest> | undefined): boolean {
+    return proto3.util.equals(EndAgoraRoomRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.EndAgoraRoomResponse
+ */
+export class EndAgoraRoomResponse extends Message$1<EndAgoraRoomResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AgoraRoom room = 1;
+   */
+  room?: AgoraRoom;
+
+  constructor(data?: PartialMessage<EndAgoraRoomResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.EndAgoraRoomResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room", kind: "message", T: AgoraRoom },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EndAgoraRoomResponse {
+    return new EndAgoraRoomResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EndAgoraRoomResponse {
+    return new EndAgoraRoomResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EndAgoraRoomResponse {
+    return new EndAgoraRoomResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EndAgoraRoomResponse | PlainMessage<EndAgoraRoomResponse> | undefined, b: EndAgoraRoomResponse | PlainMessage<EndAgoraRoomResponse> | undefined): boolean {
+    return proto3.util.equals(EndAgoraRoomResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.MintLiveKitTokenRequest
+ */
+export class MintLiveKitTokenRequest extends Message$1<MintLiveKitTokenRequest> {
+  /**
+   * @generated from field: string room_id = 1;
+   */
+  roomId = "";
+
+  constructor(data?: PartialMessage<MintLiveKitTokenRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.MintLiveKitTokenRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MintLiveKitTokenRequest {
+    return new MintLiveKitTokenRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MintLiveKitTokenRequest {
+    return new MintLiveKitTokenRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MintLiveKitTokenRequest {
+    return new MintLiveKitTokenRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MintLiveKitTokenRequest | PlainMessage<MintLiveKitTokenRequest> | undefined, b: MintLiveKitTokenRequest | PlainMessage<MintLiveKitTokenRequest> | undefined): boolean {
+    return proto3.util.equals(MintLiveKitTokenRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.MintLiveKitTokenResponse
+ */
+export class MintLiveKitTokenResponse extends Message$1<MintLiveKitTokenResponse> {
+  /**
+   * Empty when LiveKit credentials are not configured server-side
+   * (FailedPrecondition is returned in that case so the client can
+   * surface "joining unavailable").
+   *
+   * @generated from field: string token = 1;
+   */
+  token = "";
+
+  /**
+   * @generated from field: string ws_url = 2;
+   */
+  wsUrl = "";
+
+  constructor(data?: PartialMessage<MintLiveKitTokenResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.MintLiveKitTokenResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "ws_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MintLiveKitTokenResponse {
+    return new MintLiveKitTokenResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MintLiveKitTokenResponse {
+    return new MintLiveKitTokenResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MintLiveKitTokenResponse {
+    return new MintLiveKitTokenResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MintLiveKitTokenResponse | PlainMessage<MintLiveKitTokenResponse> | undefined, b: MintLiveKitTokenResponse | PlainMessage<MintLiveKitTokenResponse> | undefined): boolean {
+    return proto3.util.equals(MintLiveKitTokenResponse, a, b);
+  }
+}
+

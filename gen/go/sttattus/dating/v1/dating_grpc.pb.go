@@ -45,6 +45,10 @@ const (
 	DatingService_GetPrivacyAxes_FullMethodName        = "/sttattus.dating.v1.DatingService/GetPrivacyAxes"
 	DatingService_UpsertPrivacyAxes_FullMethodName     = "/sttattus.dating.v1.DatingService/UpsertPrivacyAxes"
 	DatingService_ListAtlasMapPoints_FullMethodName    = "/sttattus.dating.v1.DatingService/ListAtlasMapPoints"
+	DatingService_ListLiveRooms_FullMethodName         = "/sttattus.dating.v1.DatingService/ListLiveRooms"
+	DatingService_CreateAgoraRoom_FullMethodName       = "/sttattus.dating.v1.DatingService/CreateAgoraRoom"
+	DatingService_EndAgoraRoom_FullMethodName          = "/sttattus.dating.v1.DatingService/EndAgoraRoom"
+	DatingService_MintLiveKitToken_FullMethodName      = "/sttattus.dating.v1.DatingService/MintLiveKitToken"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -82,6 +86,11 @@ type DatingServiceClient interface {
 	UpsertPrivacyAxes(ctx context.Context, in *UpsertPrivacyAxesRequest, opts ...grpc.CallOption) (*UpsertPrivacyAxesResponse, error)
 	// A9P2.2 — Atlas map v2: latest 3D projection per user.
 	ListAtlasMapPoints(ctx context.Context, in *ListAtlasMapPointsRequest, opts ...grpc.CallOption) (*ListAtlasMapPointsResponse, error)
+	// A9P2.3 — Agora live audio rooms.
+	ListLiveRooms(ctx context.Context, in *ListLiveRoomsRequest, opts ...grpc.CallOption) (*ListLiveRoomsResponse, error)
+	CreateAgoraRoom(ctx context.Context, in *CreateAgoraRoomRequest, opts ...grpc.CallOption) (*CreateAgoraRoomResponse, error)
+	EndAgoraRoom(ctx context.Context, in *EndAgoraRoomRequest, opts ...grpc.CallOption) (*EndAgoraRoomResponse, error)
+	MintLiveKitToken(ctx context.Context, in *MintLiveKitTokenRequest, opts ...grpc.CallOption) (*MintLiveKitTokenResponse, error)
 }
 
 type datingServiceClient struct {
@@ -370,6 +379,46 @@ func (c *datingServiceClient) ListAtlasMapPoints(ctx context.Context, in *ListAt
 	return out, nil
 }
 
+func (c *datingServiceClient) ListLiveRooms(ctx context.Context, in *ListLiveRoomsRequest, opts ...grpc.CallOption) (*ListLiveRoomsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLiveRoomsResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListLiveRooms_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) CreateAgoraRoom(ctx context.Context, in *CreateAgoraRoomRequest, opts ...grpc.CallOption) (*CreateAgoraRoomResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateAgoraRoomResponse)
+	err := c.cc.Invoke(ctx, DatingService_CreateAgoraRoom_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) EndAgoraRoom(ctx context.Context, in *EndAgoraRoomRequest, opts ...grpc.CallOption) (*EndAgoraRoomResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EndAgoraRoomResponse)
+	err := c.cc.Invoke(ctx, DatingService_EndAgoraRoom_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) MintLiveKitToken(ctx context.Context, in *MintLiveKitTokenRequest, opts ...grpc.CallOption) (*MintLiveKitTokenResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MintLiveKitTokenResponse)
+	err := c.cc.Invoke(ctx, DatingService_MintLiveKitToken_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatingServiceServer is the server API for DatingService service.
 // All implementations must embed UnimplementedDatingServiceServer
 // for forward compatibility.
@@ -405,6 +454,11 @@ type DatingServiceServer interface {
 	UpsertPrivacyAxes(context.Context, *UpsertPrivacyAxesRequest) (*UpsertPrivacyAxesResponse, error)
 	// A9P2.2 — Atlas map v2: latest 3D projection per user.
 	ListAtlasMapPoints(context.Context, *ListAtlasMapPointsRequest) (*ListAtlasMapPointsResponse, error)
+	// A9P2.3 — Agora live audio rooms.
+	ListLiveRooms(context.Context, *ListLiveRoomsRequest) (*ListLiveRoomsResponse, error)
+	CreateAgoraRoom(context.Context, *CreateAgoraRoomRequest) (*CreateAgoraRoomResponse, error)
+	EndAgoraRoom(context.Context, *EndAgoraRoomRequest) (*EndAgoraRoomResponse, error)
+	MintLiveKitToken(context.Context, *MintLiveKitTokenRequest) (*MintLiveKitTokenResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -492,6 +546,18 @@ func (UnimplementedDatingServiceServer) UpsertPrivacyAxes(context.Context, *Upse
 }
 func (UnimplementedDatingServiceServer) ListAtlasMapPoints(context.Context, *ListAtlasMapPointsRequest) (*ListAtlasMapPointsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListAtlasMapPoints not implemented")
+}
+func (UnimplementedDatingServiceServer) ListLiveRooms(context.Context, *ListLiveRoomsRequest) (*ListLiveRoomsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLiveRooms not implemented")
+}
+func (UnimplementedDatingServiceServer) CreateAgoraRoom(context.Context, *CreateAgoraRoomRequest) (*CreateAgoraRoomResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateAgoraRoom not implemented")
+}
+func (UnimplementedDatingServiceServer) EndAgoraRoom(context.Context, *EndAgoraRoomRequest) (*EndAgoraRoomResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EndAgoraRoom not implemented")
+}
+func (UnimplementedDatingServiceServer) MintLiveKitToken(context.Context, *MintLiveKitTokenRequest) (*MintLiveKitTokenResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method MintLiveKitToken not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -968,6 +1034,78 @@ func _DatingService_ListAtlasMapPoints_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_ListLiveRooms_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLiveRoomsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListLiveRooms(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListLiveRooms_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListLiveRooms(ctx, req.(*ListLiveRoomsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_CreateAgoraRoom_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAgoraRoomRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).CreateAgoraRoom(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_CreateAgoraRoom_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).CreateAgoraRoom(ctx, req.(*CreateAgoraRoomRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_EndAgoraRoom_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EndAgoraRoomRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).EndAgoraRoom(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_EndAgoraRoom_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).EndAgoraRoom(ctx, req.(*EndAgoraRoomRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_MintLiveKitToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MintLiveKitTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).MintLiveKitToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_MintLiveKitToken_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).MintLiveKitToken(ctx, req.(*MintLiveKitTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatingService_ServiceDesc is the grpc.ServiceDesc for DatingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1070,6 +1208,22 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListAtlasMapPoints",
 			Handler:    _DatingService_ListAtlasMapPoints_Handler,
+		},
+		{
+			MethodName: "ListLiveRooms",
+			Handler:    _DatingService_ListLiveRooms_Handler,
+		},
+		{
+			MethodName: "CreateAgoraRoom",
+			Handler:    _DatingService_CreateAgoraRoom_Handler,
+		},
+		{
+			MethodName: "EndAgoraRoom",
+			Handler:    _DatingService_EndAgoraRoom_Handler,
+		},
+		{
+			MethodName: "MintLiveKitToken",
+			Handler:    _DatingService_MintLiveKitToken_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

@@ -345,6 +345,56 @@ message ListAtlasMapPointsResponse {
   repeated AtlasMapPoint points = 1;
 }
 
+// === Agora live audio rooms (A9P2.3) ===
+
+message AgoraRoom {
+  string id = 1;
+  string host_id = 2;
+  string title = 3;
+  string cluster = 4;
+  int32 max_guests = 5;
+  // 'live' | 'ended' | 'scheduled'
+  string status = 6;
+  string livekit_room_name = 7;
+  int64 started_at = 8;
+  int64 ended_at = 9;
+}
+
+message ListLiveRoomsRequest {
+  // Optional cluster filter ('' = all clusters).
+  string cluster = 1;
+}
+message ListLiveRoomsResponse {
+  repeated AgoraRoom rooms = 1;
+}
+
+message CreateAgoraRoomRequest {
+  string title = 1;
+  string cluster = 2;
+  int32 max_guests = 3;
+}
+message CreateAgoraRoomResponse {
+  AgoraRoom room = 1;
+}
+
+message EndAgoraRoomRequest {
+  string room_id = 1;
+}
+message EndAgoraRoomResponse {
+  AgoraRoom room = 1;
+}
+
+message MintLiveKitTokenRequest {
+  string room_id = 1;
+}
+message MintLiveKitTokenResponse {
+  // Empty when LiveKit credentials are not configured server-side
+  // (FailedPrecondition is returned in that case so the client can
+  // surface "joining unavailable").
+  string token = 1;
+  string ws_url = 2;
+}
+
 service DatingService {
   rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
   rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
@@ -382,4 +432,10 @@ service DatingService {
 
   // A9P2.2 — Atlas map v2: latest 3D projection per user.
   rpc ListAtlasMapPoints(ListAtlasMapPointsRequest) returns (ListAtlasMapPointsResponse);
+
+  // A9P2.3 — Agora live audio rooms.
+  rpc ListLiveRooms(ListLiveRoomsRequest) returns (ListLiveRoomsResponse);
+  rpc CreateAgoraRoom(CreateAgoraRoomRequest) returns (CreateAgoraRoomResponse);
+  rpc EndAgoraRoom(EndAgoraRoomRequest) returns (EndAgoraRoomResponse);
+  rpc MintLiveKitToken(MintLiveKitTokenRequest) returns (MintLiveKitTokenResponse);
 }

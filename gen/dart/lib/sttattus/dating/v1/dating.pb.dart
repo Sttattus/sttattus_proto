@@ -3849,6 +3849,555 @@ class ListAtlasMapPointsResponse extends $pb.GeneratedMessage {
   $pb.PbList<AtlasMapPoint> get points => $_getList(0);
 }
 
+class AgoraRoom extends $pb.GeneratedMessage {
+  factory AgoraRoom({
+    $core.String? id,
+    $core.String? hostId,
+    $core.String? title,
+    $core.String? cluster,
+    $core.int? maxGuests,
+    $core.String? status,
+    $core.String? livekitRoomName,
+    $fixnum.Int64? startedAt,
+    $fixnum.Int64? endedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (hostId != null) result.hostId = hostId;
+    if (title != null) result.title = title;
+    if (cluster != null) result.cluster = cluster;
+    if (maxGuests != null) result.maxGuests = maxGuests;
+    if (status != null) result.status = status;
+    if (livekitRoomName != null) result.livekitRoomName = livekitRoomName;
+    if (startedAt != null) result.startedAt = startedAt;
+    if (endedAt != null) result.endedAt = endedAt;
+    return result;
+  }
+
+  AgoraRoom._();
+
+  factory AgoraRoom.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AgoraRoom.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AgoraRoom', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'hostId')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'cluster')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'maxGuests', $pb.PbFieldType.O3)
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aOS(7, _omitFieldNames ? '' : 'livekitRoomName')
+    ..aInt64(8, _omitFieldNames ? '' : 'startedAt')
+    ..aInt64(9, _omitFieldNames ? '' : 'endedAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AgoraRoom clone() => AgoraRoom()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AgoraRoom copyWith(void Function(AgoraRoom) updates) => super.copyWith((message) => updates(message as AgoraRoom)) as AgoraRoom;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AgoraRoom create() => AgoraRoom._();
+  @$core.override
+  AgoraRoom createEmptyInstance() => create();
+  static $pb.PbList<AgoraRoom> createRepeated() => $pb.PbList<AgoraRoom>();
+  @$core.pragma('dart2js:noInline')
+  static AgoraRoom getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AgoraRoom>(create);
+  static AgoraRoom? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get hostId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set hostId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasHostId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHostId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get cluster => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set cluster($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCluster() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCluster() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get maxGuests => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set maxGuests($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMaxGuests() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMaxGuests() => $_clearField(5);
+
+  /// 'live' | 'ended' | 'scheduled'
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get livekitRoomName => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set livekitRoomName($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLivekitRoomName() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLivekitRoomName() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get startedAt => $_getI64(7);
+  @$pb.TagNumber(8)
+  set startedAt($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasStartedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearStartedAt() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get endedAt => $_getI64(8);
+  @$pb.TagNumber(9)
+  set endedAt($fixnum.Int64 value) => $_setInt64(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasEndedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearEndedAt() => $_clearField(9);
+}
+
+class ListLiveRoomsRequest extends $pb.GeneratedMessage {
+  factory ListLiveRoomsRequest({
+    $core.String? cluster,
+  }) {
+    final result = create();
+    if (cluster != null) result.cluster = cluster;
+    return result;
+  }
+
+  ListLiveRoomsRequest._();
+
+  factory ListLiveRoomsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLiveRoomsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLiveRoomsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'cluster')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLiveRoomsRequest clone() => ListLiveRoomsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLiveRoomsRequest copyWith(void Function(ListLiveRoomsRequest) updates) => super.copyWith((message) => updates(message as ListLiveRoomsRequest)) as ListLiveRoomsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLiveRoomsRequest create() => ListLiveRoomsRequest._();
+  @$core.override
+  ListLiveRoomsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListLiveRoomsRequest> createRepeated() => $pb.PbList<ListLiveRoomsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListLiveRoomsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLiveRoomsRequest>(create);
+  static ListLiveRoomsRequest? _defaultInstance;
+
+  /// Optional cluster filter ('' = all clusters).
+  @$pb.TagNumber(1)
+  $core.String get cluster => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set cluster($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCluster() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCluster() => $_clearField(1);
+}
+
+class ListLiveRoomsResponse extends $pb.GeneratedMessage {
+  factory ListLiveRoomsResponse({
+    $core.Iterable<AgoraRoom>? rooms,
+  }) {
+    final result = create();
+    if (rooms != null) result.rooms.addAll(rooms);
+    return result;
+  }
+
+  ListLiveRoomsResponse._();
+
+  factory ListLiveRoomsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLiveRoomsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLiveRoomsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..pc<AgoraRoom>(1, _omitFieldNames ? '' : 'rooms', $pb.PbFieldType.PM, subBuilder: AgoraRoom.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLiveRoomsResponse clone() => ListLiveRoomsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLiveRoomsResponse copyWith(void Function(ListLiveRoomsResponse) updates) => super.copyWith((message) => updates(message as ListLiveRoomsResponse)) as ListLiveRoomsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLiveRoomsResponse create() => ListLiveRoomsResponse._();
+  @$core.override
+  ListLiveRoomsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListLiveRoomsResponse> createRepeated() => $pb.PbList<ListLiveRoomsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListLiveRoomsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLiveRoomsResponse>(create);
+  static ListLiveRoomsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<AgoraRoom> get rooms => $_getList(0);
+}
+
+class CreateAgoraRoomRequest extends $pb.GeneratedMessage {
+  factory CreateAgoraRoomRequest({
+    $core.String? title,
+    $core.String? cluster,
+    $core.int? maxGuests,
+  }) {
+    final result = create();
+    if (title != null) result.title = title;
+    if (cluster != null) result.cluster = cluster;
+    if (maxGuests != null) result.maxGuests = maxGuests;
+    return result;
+  }
+
+  CreateAgoraRoomRequest._();
+
+  factory CreateAgoraRoomRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateAgoraRoomRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateAgoraRoomRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'title')
+    ..aOS(2, _omitFieldNames ? '' : 'cluster')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'maxGuests', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateAgoraRoomRequest clone() => CreateAgoraRoomRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateAgoraRoomRequest copyWith(void Function(CreateAgoraRoomRequest) updates) => super.copyWith((message) => updates(message as CreateAgoraRoomRequest)) as CreateAgoraRoomRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateAgoraRoomRequest create() => CreateAgoraRoomRequest._();
+  @$core.override
+  CreateAgoraRoomRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateAgoraRoomRequest> createRepeated() => $pb.PbList<CreateAgoraRoomRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateAgoraRoomRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateAgoraRoomRequest>(create);
+  static CreateAgoraRoomRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get title => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set title($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTitle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTitle() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get cluster => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set cluster($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCluster() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCluster() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get maxGuests => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set maxGuests($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMaxGuests() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMaxGuests() => $_clearField(3);
+}
+
+class CreateAgoraRoomResponse extends $pb.GeneratedMessage {
+  factory CreateAgoraRoomResponse({
+    AgoraRoom? room,
+  }) {
+    final result = create();
+    if (room != null) result.room = room;
+    return result;
+  }
+
+  CreateAgoraRoomResponse._();
+
+  factory CreateAgoraRoomResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateAgoraRoomResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateAgoraRoomResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<AgoraRoom>(1, _omitFieldNames ? '' : 'room', subBuilder: AgoraRoom.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateAgoraRoomResponse clone() => CreateAgoraRoomResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateAgoraRoomResponse copyWith(void Function(CreateAgoraRoomResponse) updates) => super.copyWith((message) => updates(message as CreateAgoraRoomResponse)) as CreateAgoraRoomResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateAgoraRoomResponse create() => CreateAgoraRoomResponse._();
+  @$core.override
+  CreateAgoraRoomResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateAgoraRoomResponse> createRepeated() => $pb.PbList<CreateAgoraRoomResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateAgoraRoomResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateAgoraRoomResponse>(create);
+  static CreateAgoraRoomResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AgoraRoom get room => $_getN(0);
+  @$pb.TagNumber(1)
+  set room(AgoraRoom value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoom() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AgoraRoom ensureRoom() => $_ensure(0);
+}
+
+class EndAgoraRoomRequest extends $pb.GeneratedMessage {
+  factory EndAgoraRoomRequest({
+    $core.String? roomId,
+  }) {
+    final result = create();
+    if (roomId != null) result.roomId = roomId;
+    return result;
+  }
+
+  EndAgoraRoomRequest._();
+
+  factory EndAgoraRoomRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EndAgoraRoomRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EndAgoraRoomRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'roomId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EndAgoraRoomRequest clone() => EndAgoraRoomRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EndAgoraRoomRequest copyWith(void Function(EndAgoraRoomRequest) updates) => super.copyWith((message) => updates(message as EndAgoraRoomRequest)) as EndAgoraRoomRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EndAgoraRoomRequest create() => EndAgoraRoomRequest._();
+  @$core.override
+  EndAgoraRoomRequest createEmptyInstance() => create();
+  static $pb.PbList<EndAgoraRoomRequest> createRepeated() => $pb.PbList<EndAgoraRoomRequest>();
+  @$core.pragma('dart2js:noInline')
+  static EndAgoraRoomRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EndAgoraRoomRequest>(create);
+  static EndAgoraRoomRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get roomId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set roomId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomId() => $_clearField(1);
+}
+
+class EndAgoraRoomResponse extends $pb.GeneratedMessage {
+  factory EndAgoraRoomResponse({
+    AgoraRoom? room,
+  }) {
+    final result = create();
+    if (room != null) result.room = room;
+    return result;
+  }
+
+  EndAgoraRoomResponse._();
+
+  factory EndAgoraRoomResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EndAgoraRoomResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EndAgoraRoomResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<AgoraRoom>(1, _omitFieldNames ? '' : 'room', subBuilder: AgoraRoom.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EndAgoraRoomResponse clone() => EndAgoraRoomResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EndAgoraRoomResponse copyWith(void Function(EndAgoraRoomResponse) updates) => super.copyWith((message) => updates(message as EndAgoraRoomResponse)) as EndAgoraRoomResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EndAgoraRoomResponse create() => EndAgoraRoomResponse._();
+  @$core.override
+  EndAgoraRoomResponse createEmptyInstance() => create();
+  static $pb.PbList<EndAgoraRoomResponse> createRepeated() => $pb.PbList<EndAgoraRoomResponse>();
+  @$core.pragma('dart2js:noInline')
+  static EndAgoraRoomResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EndAgoraRoomResponse>(create);
+  static EndAgoraRoomResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AgoraRoom get room => $_getN(0);
+  @$pb.TagNumber(1)
+  set room(AgoraRoom value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoom() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AgoraRoom ensureRoom() => $_ensure(0);
+}
+
+class MintLiveKitTokenRequest extends $pb.GeneratedMessage {
+  factory MintLiveKitTokenRequest({
+    $core.String? roomId,
+  }) {
+    final result = create();
+    if (roomId != null) result.roomId = roomId;
+    return result;
+  }
+
+  MintLiveKitTokenRequest._();
+
+  factory MintLiveKitTokenRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MintLiveKitTokenRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MintLiveKitTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'roomId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MintLiveKitTokenRequest clone() => MintLiveKitTokenRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MintLiveKitTokenRequest copyWith(void Function(MintLiveKitTokenRequest) updates) => super.copyWith((message) => updates(message as MintLiveKitTokenRequest)) as MintLiveKitTokenRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MintLiveKitTokenRequest create() => MintLiveKitTokenRequest._();
+  @$core.override
+  MintLiveKitTokenRequest createEmptyInstance() => create();
+  static $pb.PbList<MintLiveKitTokenRequest> createRepeated() => $pb.PbList<MintLiveKitTokenRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MintLiveKitTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MintLiveKitTokenRequest>(create);
+  static MintLiveKitTokenRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get roomId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set roomId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomId() => $_clearField(1);
+}
+
+class MintLiveKitTokenResponse extends $pb.GeneratedMessage {
+  factory MintLiveKitTokenResponse({
+    $core.String? token,
+    $core.String? wsUrl,
+  }) {
+    final result = create();
+    if (token != null) result.token = token;
+    if (wsUrl != null) result.wsUrl = wsUrl;
+    return result;
+  }
+
+  MintLiveKitTokenResponse._();
+
+  factory MintLiveKitTokenResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MintLiveKitTokenResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MintLiveKitTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'token')
+    ..aOS(2, _omitFieldNames ? '' : 'wsUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MintLiveKitTokenResponse clone() => MintLiveKitTokenResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MintLiveKitTokenResponse copyWith(void Function(MintLiveKitTokenResponse) updates) => super.copyWith((message) => updates(message as MintLiveKitTokenResponse)) as MintLiveKitTokenResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MintLiveKitTokenResponse create() => MintLiveKitTokenResponse._();
+  @$core.override
+  MintLiveKitTokenResponse createEmptyInstance() => create();
+  static $pb.PbList<MintLiveKitTokenResponse> createRepeated() => $pb.PbList<MintLiveKitTokenResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MintLiveKitTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MintLiveKitTokenResponse>(create);
+  static MintLiveKitTokenResponse? _defaultInstance;
+
+  /// Empty when LiveKit credentials are not configured server-side
+  /// (FailedPrecondition is returned in that case so the client can
+  /// surface "joining unavailable").
+  @$pb.TagNumber(1)
+  $core.String get token => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set token($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearToken() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get wsUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set wsUrl($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWsUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWsUrl() => $_clearField(2);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
