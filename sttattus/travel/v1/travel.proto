@@ -203,6 +203,29 @@ message PostConciergeMessageResponse {
   ConciergeMessage message = 1;
 }
 
+// === Per-milestone verification signals (N10.7) ===
+
+message VerificationSignals {
+  string milestone_id = 1;
+  bool exif_gps_present = 2;
+  bool exif_gps_matches = 3;
+  bool ip_geo_present = 4;
+  bool ip_geo_matches = 5;
+  bool elite_hub_match = 6;
+  bool boarding_pass_present = 7;
+  bool boarding_pass_matches = 8;
+  bool concierge_witness = 9;
+  // Derived: true when ≥ 2 _matches signals fire.
+  bool fully_verified = 10;
+}
+
+message ListMyVerificationSignalsRequest {
+  int32 limit = 1;
+}
+message ListMyVerificationSignalsResponse {
+  repeated VerificationSignals signals = 1;
+}
+
 service TravelService {
   rpc ListMilestones(ListMilestonesRequest) returns (ListMilestonesResponse);
   rpc CreateMilestone(CreateMilestoneRequest) returns (CreateMilestoneResponse);
@@ -223,4 +246,7 @@ service TravelService {
   // N10.6 — Sovereign-tier concierge thread.
   rpc ListConciergeMessages(ListConciergeMessagesRequest) returns (ListConciergeMessagesResponse);
   rpc PostConciergeMessage(PostConciergeMessageRequest) returns (PostConciergeMessageResponse);
+
+  // N10.7 — verification dashboard per milestone.
+  rpc ListMyVerificationSignals(ListMyVerificationSignalsRequest) returns (ListMyVerificationSignalsResponse);
 }

@@ -87,6 +87,11 @@ class TravelServiceClient extends $grpc.Client {
     return $createUnaryCall(_$postConciergeMessage, request, options: options);
   }
 
+  /// N10.7 — verification dashboard per milestone.
+  $grpc.ResponseFuture<$0.ListMyVerificationSignalsResponse> listMyVerificationSignals($0.ListMyVerificationSignalsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyVerificationSignals, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listMilestones = $grpc.ClientMethod<$0.ListMilestonesRequest, $0.ListMilestonesResponse>(
@@ -141,6 +146,10 @@ class TravelServiceClient extends $grpc.Client {
       '/sttattus.travel.v1.TravelService/PostConciergeMessage',
       ($0.PostConciergeMessageRequest value) => value.writeToBuffer(),
       $0.PostConciergeMessageResponse.fromBuffer);
+  static final _$listMyVerificationSignals = $grpc.ClientMethod<$0.ListMyVerificationSignalsRequest, $0.ListMyVerificationSignalsResponse>(
+      '/sttattus.travel.v1.TravelService/ListMyVerificationSignals',
+      ($0.ListMyVerificationSignalsRequest value) => value.writeToBuffer(),
+      $0.ListMyVerificationSignalsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.travel.v1.TravelService')
@@ -239,6 +248,13 @@ abstract class TravelServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.PostConciergeMessageRequest.fromBuffer(value),
         ($0.PostConciergeMessageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyVerificationSignalsRequest, $0.ListMyVerificationSignalsResponse>(
+        'ListMyVerificationSignals',
+        listMyVerificationSignals_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyVerificationSignalsRequest.fromBuffer(value),
+        ($0.ListMyVerificationSignalsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListMilestonesResponse> listMilestones_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMilestonesRequest> $request) async {
@@ -318,5 +334,11 @@ abstract class TravelServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.PostConciergeMessageResponse> postConciergeMessage($grpc.ServiceCall call, $0.PostConciergeMessageRequest request);
+
+  $async.Future<$0.ListMyVerificationSignalsResponse> listMyVerificationSignals_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyVerificationSignalsRequest> $request) async {
+    return listMyVerificationSignals($call, await $request);
+  }
+
+  $async.Future<$0.ListMyVerificationSignalsResponse> listMyVerificationSignals($grpc.ServiceCall call, $0.ListMyVerificationSignalsRequest request);
 
 }

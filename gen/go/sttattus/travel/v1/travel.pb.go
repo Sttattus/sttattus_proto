@@ -1989,6 +1989,211 @@ func (x *PostConciergeMessageResponse) GetMessage() *ConciergeMessage {
 	return nil
 }
 
+type VerificationSignals struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	MilestoneId         string                 `protobuf:"bytes,1,opt,name=milestone_id,json=milestoneId,proto3" json:"milestone_id,omitempty"`
+	ExifGpsPresent      bool                   `protobuf:"varint,2,opt,name=exif_gps_present,json=exifGpsPresent,proto3" json:"exif_gps_present,omitempty"`
+	ExifGpsMatches      bool                   `protobuf:"varint,3,opt,name=exif_gps_matches,json=exifGpsMatches,proto3" json:"exif_gps_matches,omitempty"`
+	IpGeoPresent        bool                   `protobuf:"varint,4,opt,name=ip_geo_present,json=ipGeoPresent,proto3" json:"ip_geo_present,omitempty"`
+	IpGeoMatches        bool                   `protobuf:"varint,5,opt,name=ip_geo_matches,json=ipGeoMatches,proto3" json:"ip_geo_matches,omitempty"`
+	EliteHubMatch       bool                   `protobuf:"varint,6,opt,name=elite_hub_match,json=eliteHubMatch,proto3" json:"elite_hub_match,omitempty"`
+	BoardingPassPresent bool                   `protobuf:"varint,7,opt,name=boarding_pass_present,json=boardingPassPresent,proto3" json:"boarding_pass_present,omitempty"`
+	BoardingPassMatches bool                   `protobuf:"varint,8,opt,name=boarding_pass_matches,json=boardingPassMatches,proto3" json:"boarding_pass_matches,omitempty"`
+	ConciergeWitness    bool                   `protobuf:"varint,9,opt,name=concierge_witness,json=conciergeWitness,proto3" json:"concierge_witness,omitempty"`
+	// Derived: true when ≥ 2 _matches signals fire.
+	FullyVerified bool `protobuf:"varint,10,opt,name=fully_verified,json=fullyVerified,proto3" json:"fully_verified,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerificationSignals) Reset() {
+	*x = VerificationSignals{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[33]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerificationSignals) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerificationSignals) ProtoMessage() {}
+
+func (x *VerificationSignals) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[33]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerificationSignals.ProtoReflect.Descriptor instead.
+func (*VerificationSignals) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *VerificationSignals) GetMilestoneId() string {
+	if x != nil {
+		return x.MilestoneId
+	}
+	return ""
+}
+
+func (x *VerificationSignals) GetExifGpsPresent() bool {
+	if x != nil {
+		return x.ExifGpsPresent
+	}
+	return false
+}
+
+func (x *VerificationSignals) GetExifGpsMatches() bool {
+	if x != nil {
+		return x.ExifGpsMatches
+	}
+	return false
+}
+
+func (x *VerificationSignals) GetIpGeoPresent() bool {
+	if x != nil {
+		return x.IpGeoPresent
+	}
+	return false
+}
+
+func (x *VerificationSignals) GetIpGeoMatches() bool {
+	if x != nil {
+		return x.IpGeoMatches
+	}
+	return false
+}
+
+func (x *VerificationSignals) GetEliteHubMatch() bool {
+	if x != nil {
+		return x.EliteHubMatch
+	}
+	return false
+}
+
+func (x *VerificationSignals) GetBoardingPassPresent() bool {
+	if x != nil {
+		return x.BoardingPassPresent
+	}
+	return false
+}
+
+func (x *VerificationSignals) GetBoardingPassMatches() bool {
+	if x != nil {
+		return x.BoardingPassMatches
+	}
+	return false
+}
+
+func (x *VerificationSignals) GetConciergeWitness() bool {
+	if x != nil {
+		return x.ConciergeWitness
+	}
+	return false
+}
+
+func (x *VerificationSignals) GetFullyVerified() bool {
+	if x != nil {
+		return x.FullyVerified
+	}
+	return false
+}
+
+type ListMyVerificationSignalsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyVerificationSignalsRequest) Reset() {
+	*x = ListMyVerificationSignalsRequest{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[34]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyVerificationSignalsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyVerificationSignalsRequest) ProtoMessage() {}
+
+func (x *ListMyVerificationSignalsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[34]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyVerificationSignalsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyVerificationSignalsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *ListMyVerificationSignalsRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ListMyVerificationSignalsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Signals       []*VerificationSignals `protobuf:"bytes,1,rep,name=signals,proto3" json:"signals,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyVerificationSignalsResponse) Reset() {
+	*x = ListMyVerificationSignalsResponse{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[35]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyVerificationSignalsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyVerificationSignalsResponse) ProtoMessage() {}
+
+func (x *ListMyVerificationSignalsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[35]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyVerificationSignalsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyVerificationSignalsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *ListMyVerificationSignalsResponse) GetSignals() []*VerificationSignals {
+	if x != nil {
+		return x.Signals
+	}
+	return nil
+}
+
 var File_sttattus_travel_v1_travel_proto protoreflect.FileDescriptor
 
 const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
@@ -2140,15 +2345,30 @@ const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	"\x1bPostConciergeMessageRequest\x12\x12\n" +
 	"\x04body\x18\x01 \x01(\tR\x04body\"^\n" +
 	"\x1cPostConciergeMessageResponse\x12>\n" +
-	"\amessage\x18\x01 \x01(\v2$.sttattus.travel.v1.ConciergeMessageR\amessage*\x93\x01\n" +
+	"\amessage\x18\x01 \x01(\v2$.sttattus.travel.v1.ConciergeMessageR\amessage\"\xbc\x03\n" +
+	"\x13VerificationSignals\x12!\n" +
+	"\fmilestone_id\x18\x01 \x01(\tR\vmilestoneId\x12(\n" +
+	"\x10exif_gps_present\x18\x02 \x01(\bR\x0eexifGpsPresent\x12(\n" +
+	"\x10exif_gps_matches\x18\x03 \x01(\bR\x0eexifGpsMatches\x12$\n" +
+	"\x0eip_geo_present\x18\x04 \x01(\bR\fipGeoPresent\x12$\n" +
+	"\x0eip_geo_matches\x18\x05 \x01(\bR\fipGeoMatches\x12&\n" +
+	"\x0felite_hub_match\x18\x06 \x01(\bR\reliteHubMatch\x122\n" +
+	"\x15boarding_pass_present\x18\a \x01(\bR\x13boardingPassPresent\x122\n" +
+	"\x15boarding_pass_matches\x18\b \x01(\bR\x13boardingPassMatches\x12+\n" +
+	"\x11concierge_witness\x18\t \x01(\bR\x10conciergeWitness\x12%\n" +
+	"\x0efully_verified\x18\n" +
+	" \x01(\bR\rfullyVerified\"8\n" +
+	" ListMyVerificationSignalsRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"f\n" +
+	"!ListMyVerificationSignalsResponse\x12A\n" +
+	"\asignals\x18\x01 \x03(\v2'.sttattus.travel.v1.VerificationSignalsR\asignals*\x93\x01\n" +
 	"\n" +
 	"TripStatus\x12\x1b\n" +
 	"\x17TRIP_STATUS_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13TRIP_STATUS_PLANNED\x10\x01\x12\x19\n" +
 	"\x15TRIP_STATUS_IN_FLIGHT\x10\x02\x12\x19\n" +
 	"\x15TRIP_STATUS_COMPLETED\x10\x03\x12\x19\n" +
-	"\x15TRIP_STATUS_CANCELLED\x10\x042\xd2\n" +
-	"\n" +
+	"\x15TRIP_STATUS_CANCELLED\x10\x042\xdd\v\n" +
 	"\rTravelService\x12g\n" +
 	"\x0eListMilestones\x12).sttattus.travel.v1.ListMilestonesRequest\x1a*.sttattus.travel.v1.ListMilestonesResponse\x12j\n" +
 	"\x0fCreateMilestone\x12*.sttattus.travel.v1.CreateMilestoneRequest\x1a+.sttattus.travel.v1.CreateMilestoneResponse\x12d\n" +
@@ -2165,7 +2385,8 @@ const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	"DeleteTrip\x12%.sttattus.travel.v1.DeleteTripRequest\x1a&.sttattus.travel.v1.DeleteTripResponse\x12y\n" +
 	"\x14ListVisitedCountries\x12/.sttattus.travel.v1.ListVisitedCountriesRequest\x1a0.sttattus.travel.v1.ListVisitedCountriesResponse\x12|\n" +
 	"\x15ListConciergeMessages\x120.sttattus.travel.v1.ListConciergeMessagesRequest\x1a1.sttattus.travel.v1.ListConciergeMessagesResponse\x12y\n" +
-	"\x14PostConciergeMessage\x12/.sttattus.travel.v1.PostConciergeMessageRequest\x1a0.sttattus.travel.v1.PostConciergeMessageResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/travel/v1;travelv1b\x06proto3"
+	"\x14PostConciergeMessage\x12/.sttattus.travel.v1.PostConciergeMessageRequest\x1a0.sttattus.travel.v1.PostConciergeMessageResponse\x12\x88\x01\n" +
+	"\x19ListMyVerificationSignals\x124.sttattus.travel.v1.ListMyVerificationSignalsRequest\x1a5.sttattus.travel.v1.ListMyVerificationSignalsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/travel/v1;travelv1b\x06proto3"
 
 var (
 	file_sttattus_travel_v1_travel_proto_rawDescOnce sync.Once
@@ -2180,59 +2401,62 @@ func file_sttattus_travel_v1_travel_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_travel_v1_travel_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_sttattus_travel_v1_travel_proto_msgTypes = make([]protoimpl.MessageInfo, 33)
+var file_sttattus_travel_v1_travel_proto_msgTypes = make([]protoimpl.MessageInfo, 36)
 var file_sttattus_travel_v1_travel_proto_goTypes = []any{
-	(TripStatus)(0),                       // 0: sttattus.travel.v1.TripStatus
-	(*NomadStats)(nil),                    // 1: sttattus.travel.v1.NomadStats
-	(*Milestone)(nil),                     // 2: sttattus.travel.v1.Milestone
-	(*CheckIn)(nil),                       // 3: sttattus.travel.v1.CheckIn
-	(*ListMilestonesRequest)(nil),         // 4: sttattus.travel.v1.ListMilestonesRequest
-	(*ListMilestonesResponse)(nil),        // 5: sttattus.travel.v1.ListMilestonesResponse
-	(*CreateMilestoneRequest)(nil),        // 6: sttattus.travel.v1.CreateMilestoneRequest
-	(*CreateMilestoneResponse)(nil),       // 7: sttattus.travel.v1.CreateMilestoneResponse
-	(*GetNomadStatsRequest)(nil),          // 8: sttattus.travel.v1.GetNomadStatsRequest
-	(*GetNomadStatsResponse)(nil),         // 9: sttattus.travel.v1.GetNomadStatsResponse
-	(*ListFeedRequest)(nil),               // 10: sttattus.travel.v1.ListFeedRequest
-	(*ListFeedResponse)(nil),              // 11: sttattus.travel.v1.ListFeedResponse
-	(*Trip)(nil),                          // 12: sttattus.travel.v1.Trip
-	(*CreateTripRequest)(nil),             // 13: sttattus.travel.v1.CreateTripRequest
-	(*CreateTripResponse)(nil),            // 14: sttattus.travel.v1.CreateTripResponse
-	(*UpdateTripRequest)(nil),             // 15: sttattus.travel.v1.UpdateTripRequest
-	(*UpdateTripResponse)(nil),            // 16: sttattus.travel.v1.UpdateTripResponse
-	(*ListMyTripsRequest)(nil),            // 17: sttattus.travel.v1.ListMyTripsRequest
-	(*ListMyTripsResponse)(nil),           // 18: sttattus.travel.v1.ListMyTripsResponse
-	(*GetTripRequest)(nil),                // 19: sttattus.travel.v1.GetTripRequest
-	(*GetTripResponse)(nil),               // 20: sttattus.travel.v1.GetTripResponse
-	(*AttachVisitToTripRequest)(nil),      // 21: sttattus.travel.v1.AttachVisitToTripRequest
-	(*AttachVisitToTripResponse)(nil),     // 22: sttattus.travel.v1.AttachVisitToTripResponse
-	(*DeleteTripRequest)(nil),             // 23: sttattus.travel.v1.DeleteTripRequest
-	(*DeleteTripResponse)(nil),            // 24: sttattus.travel.v1.DeleteTripResponse
-	(*VisitedCountry)(nil),                // 25: sttattus.travel.v1.VisitedCountry
-	(*ContinentClaim)(nil),                // 26: sttattus.travel.v1.ContinentClaim
-	(*ListVisitedCountriesRequest)(nil),   // 27: sttattus.travel.v1.ListVisitedCountriesRequest
-	(*ListVisitedCountriesResponse)(nil),  // 28: sttattus.travel.v1.ListVisitedCountriesResponse
-	(*ConciergeMessage)(nil),              // 29: sttattus.travel.v1.ConciergeMessage
-	(*ListConciergeMessagesRequest)(nil),  // 30: sttattus.travel.v1.ListConciergeMessagesRequest
-	(*ListConciergeMessagesResponse)(nil), // 31: sttattus.travel.v1.ListConciergeMessagesResponse
-	(*PostConciergeMessageRequest)(nil),   // 32: sttattus.travel.v1.PostConciergeMessageRequest
-	(*PostConciergeMessageResponse)(nil),  // 33: sttattus.travel.v1.PostConciergeMessageResponse
-	(*timestamppb.Timestamp)(nil),         // 34: google.protobuf.Timestamp
-	(*v1.PageRequest)(nil),                // 35: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),               // 36: sttattus.common.v1.PageResponse
+	(TripStatus)(0),                           // 0: sttattus.travel.v1.TripStatus
+	(*NomadStats)(nil),                        // 1: sttattus.travel.v1.NomadStats
+	(*Milestone)(nil),                         // 2: sttattus.travel.v1.Milestone
+	(*CheckIn)(nil),                           // 3: sttattus.travel.v1.CheckIn
+	(*ListMilestonesRequest)(nil),             // 4: sttattus.travel.v1.ListMilestonesRequest
+	(*ListMilestonesResponse)(nil),            // 5: sttattus.travel.v1.ListMilestonesResponse
+	(*CreateMilestoneRequest)(nil),            // 6: sttattus.travel.v1.CreateMilestoneRequest
+	(*CreateMilestoneResponse)(nil),           // 7: sttattus.travel.v1.CreateMilestoneResponse
+	(*GetNomadStatsRequest)(nil),              // 8: sttattus.travel.v1.GetNomadStatsRequest
+	(*GetNomadStatsResponse)(nil),             // 9: sttattus.travel.v1.GetNomadStatsResponse
+	(*ListFeedRequest)(nil),                   // 10: sttattus.travel.v1.ListFeedRequest
+	(*ListFeedResponse)(nil),                  // 11: sttattus.travel.v1.ListFeedResponse
+	(*Trip)(nil),                              // 12: sttattus.travel.v1.Trip
+	(*CreateTripRequest)(nil),                 // 13: sttattus.travel.v1.CreateTripRequest
+	(*CreateTripResponse)(nil),                // 14: sttattus.travel.v1.CreateTripResponse
+	(*UpdateTripRequest)(nil),                 // 15: sttattus.travel.v1.UpdateTripRequest
+	(*UpdateTripResponse)(nil),                // 16: sttattus.travel.v1.UpdateTripResponse
+	(*ListMyTripsRequest)(nil),                // 17: sttattus.travel.v1.ListMyTripsRequest
+	(*ListMyTripsResponse)(nil),               // 18: sttattus.travel.v1.ListMyTripsResponse
+	(*GetTripRequest)(nil),                    // 19: sttattus.travel.v1.GetTripRequest
+	(*GetTripResponse)(nil),                   // 20: sttattus.travel.v1.GetTripResponse
+	(*AttachVisitToTripRequest)(nil),          // 21: sttattus.travel.v1.AttachVisitToTripRequest
+	(*AttachVisitToTripResponse)(nil),         // 22: sttattus.travel.v1.AttachVisitToTripResponse
+	(*DeleteTripRequest)(nil),                 // 23: sttattus.travel.v1.DeleteTripRequest
+	(*DeleteTripResponse)(nil),                // 24: sttattus.travel.v1.DeleteTripResponse
+	(*VisitedCountry)(nil),                    // 25: sttattus.travel.v1.VisitedCountry
+	(*ContinentClaim)(nil),                    // 26: sttattus.travel.v1.ContinentClaim
+	(*ListVisitedCountriesRequest)(nil),       // 27: sttattus.travel.v1.ListVisitedCountriesRequest
+	(*ListVisitedCountriesResponse)(nil),      // 28: sttattus.travel.v1.ListVisitedCountriesResponse
+	(*ConciergeMessage)(nil),                  // 29: sttattus.travel.v1.ConciergeMessage
+	(*ListConciergeMessagesRequest)(nil),      // 30: sttattus.travel.v1.ListConciergeMessagesRequest
+	(*ListConciergeMessagesResponse)(nil),     // 31: sttattus.travel.v1.ListConciergeMessagesResponse
+	(*PostConciergeMessageRequest)(nil),       // 32: sttattus.travel.v1.PostConciergeMessageRequest
+	(*PostConciergeMessageResponse)(nil),      // 33: sttattus.travel.v1.PostConciergeMessageResponse
+	(*VerificationSignals)(nil),               // 34: sttattus.travel.v1.VerificationSignals
+	(*ListMyVerificationSignalsRequest)(nil),  // 35: sttattus.travel.v1.ListMyVerificationSignalsRequest
+	(*ListMyVerificationSignalsResponse)(nil), // 36: sttattus.travel.v1.ListMyVerificationSignalsResponse
+	(*timestamppb.Timestamp)(nil),             // 37: google.protobuf.Timestamp
+	(*v1.PageRequest)(nil),                    // 38: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),                   // 39: sttattus.common.v1.PageResponse
 }
 var file_sttattus_travel_v1_travel_proto_depIdxs = []int32{
 	3,  // 0: sttattus.travel.v1.Milestone.checkin:type_name -> sttattus.travel.v1.CheckIn
-	34, // 1: sttattus.travel.v1.CheckIn.verified_at:type_name -> google.protobuf.Timestamp
-	35, // 2: sttattus.travel.v1.ListMilestonesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	37, // 1: sttattus.travel.v1.CheckIn.verified_at:type_name -> google.protobuf.Timestamp
+	38, // 2: sttattus.travel.v1.ListMilestonesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	2,  // 3: sttattus.travel.v1.ListMilestonesResponse.milestones:type_name -> sttattus.travel.v1.Milestone
-	36, // 4: sttattus.travel.v1.ListMilestonesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	39, // 4: sttattus.travel.v1.ListMilestonesResponse.page:type_name -> sttattus.common.v1.PageResponse
 	3,  // 5: sttattus.travel.v1.CreateMilestoneRequest.checkin:type_name -> sttattus.travel.v1.CheckIn
 	2,  // 6: sttattus.travel.v1.CreateMilestoneResponse.milestone:type_name -> sttattus.travel.v1.Milestone
 	1,  // 7: sttattus.travel.v1.CreateMilestoneResponse.stats:type_name -> sttattus.travel.v1.NomadStats
 	1,  // 8: sttattus.travel.v1.GetNomadStatsResponse.stats:type_name -> sttattus.travel.v1.NomadStats
-	35, // 9: sttattus.travel.v1.ListFeedRequest.page:type_name -> sttattus.common.v1.PageRequest
+	38, // 9: sttattus.travel.v1.ListFeedRequest.page:type_name -> sttattus.common.v1.PageRequest
 	2,  // 10: sttattus.travel.v1.ListFeedResponse.milestones:type_name -> sttattus.travel.v1.Milestone
-	36, // 11: sttattus.travel.v1.ListFeedResponse.page:type_name -> sttattus.common.v1.PageResponse
+	39, // 11: sttattus.travel.v1.ListFeedResponse.page:type_name -> sttattus.common.v1.PageResponse
 	0,  // 12: sttattus.travel.v1.Trip.status:type_name -> sttattus.travel.v1.TripStatus
 	2,  // 13: sttattus.travel.v1.Trip.visits:type_name -> sttattus.travel.v1.Milestone
 	12, // 14: sttattus.travel.v1.CreateTripResponse.trip:type_name -> sttattus.travel.v1.Trip
@@ -2246,37 +2470,40 @@ var file_sttattus_travel_v1_travel_proto_depIdxs = []int32{
 	26, // 22: sttattus.travel.v1.ListVisitedCountriesResponse.continents:type_name -> sttattus.travel.v1.ContinentClaim
 	29, // 23: sttattus.travel.v1.ListConciergeMessagesResponse.messages:type_name -> sttattus.travel.v1.ConciergeMessage
 	29, // 24: sttattus.travel.v1.PostConciergeMessageResponse.message:type_name -> sttattus.travel.v1.ConciergeMessage
-	4,  // 25: sttattus.travel.v1.TravelService.ListMilestones:input_type -> sttattus.travel.v1.ListMilestonesRequest
-	6,  // 26: sttattus.travel.v1.TravelService.CreateMilestone:input_type -> sttattus.travel.v1.CreateMilestoneRequest
-	8,  // 27: sttattus.travel.v1.TravelService.GetNomadStats:input_type -> sttattus.travel.v1.GetNomadStatsRequest
-	10, // 28: sttattus.travel.v1.TravelService.ListFeed:input_type -> sttattus.travel.v1.ListFeedRequest
-	13, // 29: sttattus.travel.v1.TravelService.CreateTrip:input_type -> sttattus.travel.v1.CreateTripRequest
-	15, // 30: sttattus.travel.v1.TravelService.UpdateTrip:input_type -> sttattus.travel.v1.UpdateTripRequest
-	17, // 31: sttattus.travel.v1.TravelService.ListMyTrips:input_type -> sttattus.travel.v1.ListMyTripsRequest
-	19, // 32: sttattus.travel.v1.TravelService.GetTrip:input_type -> sttattus.travel.v1.GetTripRequest
-	21, // 33: sttattus.travel.v1.TravelService.AttachVisitToTrip:input_type -> sttattus.travel.v1.AttachVisitToTripRequest
-	23, // 34: sttattus.travel.v1.TravelService.DeleteTrip:input_type -> sttattus.travel.v1.DeleteTripRequest
-	27, // 35: sttattus.travel.v1.TravelService.ListVisitedCountries:input_type -> sttattus.travel.v1.ListVisitedCountriesRequest
-	30, // 36: sttattus.travel.v1.TravelService.ListConciergeMessages:input_type -> sttattus.travel.v1.ListConciergeMessagesRequest
-	32, // 37: sttattus.travel.v1.TravelService.PostConciergeMessage:input_type -> sttattus.travel.v1.PostConciergeMessageRequest
-	5,  // 38: sttattus.travel.v1.TravelService.ListMilestones:output_type -> sttattus.travel.v1.ListMilestonesResponse
-	7,  // 39: sttattus.travel.v1.TravelService.CreateMilestone:output_type -> sttattus.travel.v1.CreateMilestoneResponse
-	9,  // 40: sttattus.travel.v1.TravelService.GetNomadStats:output_type -> sttattus.travel.v1.GetNomadStatsResponse
-	11, // 41: sttattus.travel.v1.TravelService.ListFeed:output_type -> sttattus.travel.v1.ListFeedResponse
-	14, // 42: sttattus.travel.v1.TravelService.CreateTrip:output_type -> sttattus.travel.v1.CreateTripResponse
-	16, // 43: sttattus.travel.v1.TravelService.UpdateTrip:output_type -> sttattus.travel.v1.UpdateTripResponse
-	18, // 44: sttattus.travel.v1.TravelService.ListMyTrips:output_type -> sttattus.travel.v1.ListMyTripsResponse
-	20, // 45: sttattus.travel.v1.TravelService.GetTrip:output_type -> sttattus.travel.v1.GetTripResponse
-	22, // 46: sttattus.travel.v1.TravelService.AttachVisitToTrip:output_type -> sttattus.travel.v1.AttachVisitToTripResponse
-	24, // 47: sttattus.travel.v1.TravelService.DeleteTrip:output_type -> sttattus.travel.v1.DeleteTripResponse
-	28, // 48: sttattus.travel.v1.TravelService.ListVisitedCountries:output_type -> sttattus.travel.v1.ListVisitedCountriesResponse
-	31, // 49: sttattus.travel.v1.TravelService.ListConciergeMessages:output_type -> sttattus.travel.v1.ListConciergeMessagesResponse
-	33, // 50: sttattus.travel.v1.TravelService.PostConciergeMessage:output_type -> sttattus.travel.v1.PostConciergeMessageResponse
-	38, // [38:51] is the sub-list for method output_type
-	25, // [25:38] is the sub-list for method input_type
-	25, // [25:25] is the sub-list for extension type_name
-	25, // [25:25] is the sub-list for extension extendee
-	0,  // [0:25] is the sub-list for field type_name
+	34, // 25: sttattus.travel.v1.ListMyVerificationSignalsResponse.signals:type_name -> sttattus.travel.v1.VerificationSignals
+	4,  // 26: sttattus.travel.v1.TravelService.ListMilestones:input_type -> sttattus.travel.v1.ListMilestonesRequest
+	6,  // 27: sttattus.travel.v1.TravelService.CreateMilestone:input_type -> sttattus.travel.v1.CreateMilestoneRequest
+	8,  // 28: sttattus.travel.v1.TravelService.GetNomadStats:input_type -> sttattus.travel.v1.GetNomadStatsRequest
+	10, // 29: sttattus.travel.v1.TravelService.ListFeed:input_type -> sttattus.travel.v1.ListFeedRequest
+	13, // 30: sttattus.travel.v1.TravelService.CreateTrip:input_type -> sttattus.travel.v1.CreateTripRequest
+	15, // 31: sttattus.travel.v1.TravelService.UpdateTrip:input_type -> sttattus.travel.v1.UpdateTripRequest
+	17, // 32: sttattus.travel.v1.TravelService.ListMyTrips:input_type -> sttattus.travel.v1.ListMyTripsRequest
+	19, // 33: sttattus.travel.v1.TravelService.GetTrip:input_type -> sttattus.travel.v1.GetTripRequest
+	21, // 34: sttattus.travel.v1.TravelService.AttachVisitToTrip:input_type -> sttattus.travel.v1.AttachVisitToTripRequest
+	23, // 35: sttattus.travel.v1.TravelService.DeleteTrip:input_type -> sttattus.travel.v1.DeleteTripRequest
+	27, // 36: sttattus.travel.v1.TravelService.ListVisitedCountries:input_type -> sttattus.travel.v1.ListVisitedCountriesRequest
+	30, // 37: sttattus.travel.v1.TravelService.ListConciergeMessages:input_type -> sttattus.travel.v1.ListConciergeMessagesRequest
+	32, // 38: sttattus.travel.v1.TravelService.PostConciergeMessage:input_type -> sttattus.travel.v1.PostConciergeMessageRequest
+	35, // 39: sttattus.travel.v1.TravelService.ListMyVerificationSignals:input_type -> sttattus.travel.v1.ListMyVerificationSignalsRequest
+	5,  // 40: sttattus.travel.v1.TravelService.ListMilestones:output_type -> sttattus.travel.v1.ListMilestonesResponse
+	7,  // 41: sttattus.travel.v1.TravelService.CreateMilestone:output_type -> sttattus.travel.v1.CreateMilestoneResponse
+	9,  // 42: sttattus.travel.v1.TravelService.GetNomadStats:output_type -> sttattus.travel.v1.GetNomadStatsResponse
+	11, // 43: sttattus.travel.v1.TravelService.ListFeed:output_type -> sttattus.travel.v1.ListFeedResponse
+	14, // 44: sttattus.travel.v1.TravelService.CreateTrip:output_type -> sttattus.travel.v1.CreateTripResponse
+	16, // 45: sttattus.travel.v1.TravelService.UpdateTrip:output_type -> sttattus.travel.v1.UpdateTripResponse
+	18, // 46: sttattus.travel.v1.TravelService.ListMyTrips:output_type -> sttattus.travel.v1.ListMyTripsResponse
+	20, // 47: sttattus.travel.v1.TravelService.GetTrip:output_type -> sttattus.travel.v1.GetTripResponse
+	22, // 48: sttattus.travel.v1.TravelService.AttachVisitToTrip:output_type -> sttattus.travel.v1.AttachVisitToTripResponse
+	24, // 49: sttattus.travel.v1.TravelService.DeleteTrip:output_type -> sttattus.travel.v1.DeleteTripResponse
+	28, // 50: sttattus.travel.v1.TravelService.ListVisitedCountries:output_type -> sttattus.travel.v1.ListVisitedCountriesResponse
+	31, // 51: sttattus.travel.v1.TravelService.ListConciergeMessages:output_type -> sttattus.travel.v1.ListConciergeMessagesResponse
+	33, // 52: sttattus.travel.v1.TravelService.PostConciergeMessage:output_type -> sttattus.travel.v1.PostConciergeMessageResponse
+	36, // 53: sttattus.travel.v1.TravelService.ListMyVerificationSignals:output_type -> sttattus.travel.v1.ListMyVerificationSignalsResponse
+	40, // [40:54] is the sub-list for method output_type
+	26, // [26:40] is the sub-list for method input_type
+	26, // [26:26] is the sub-list for extension type_name
+	26, // [26:26] is the sub-list for extension extendee
+	0,  // [0:26] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_travel_v1_travel_proto_init() }
@@ -2290,7 +2517,7 @@ func file_sttattus_travel_v1_travel_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_travel_v1_travel_proto_rawDesc), len(file_sttattus_travel_v1_travel_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   33,
+			NumMessages:   36,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -534,3 +534,57 @@ final $typed_data.Uint8List postConciergeMessageResponseDescriptor = $convert.ba
     'ChxQb3N0Q29uY2llcmdlTWVzc2FnZVJlc3BvbnNlEj4KB21lc3NhZ2UYASABKAsyJC5zdHRhdH'
     'R1cy50cmF2ZWwudjEuQ29uY2llcmdlTWVzc2FnZVIHbWVzc2FnZQ==');
 
+@$core.Deprecated('Use verificationSignalsDescriptor instead')
+const VerificationSignals$json = {
+  '1': 'VerificationSignals',
+  '2': [
+    {'1': 'milestone_id', '3': 1, '4': 1, '5': 9, '10': 'milestoneId'},
+    {'1': 'exif_gps_present', '3': 2, '4': 1, '5': 8, '10': 'exifGpsPresent'},
+    {'1': 'exif_gps_matches', '3': 3, '4': 1, '5': 8, '10': 'exifGpsMatches'},
+    {'1': 'ip_geo_present', '3': 4, '4': 1, '5': 8, '10': 'ipGeoPresent'},
+    {'1': 'ip_geo_matches', '3': 5, '4': 1, '5': 8, '10': 'ipGeoMatches'},
+    {'1': 'elite_hub_match', '3': 6, '4': 1, '5': 8, '10': 'eliteHubMatch'},
+    {'1': 'boarding_pass_present', '3': 7, '4': 1, '5': 8, '10': 'boardingPassPresent'},
+    {'1': 'boarding_pass_matches', '3': 8, '4': 1, '5': 8, '10': 'boardingPassMatches'},
+    {'1': 'concierge_witness', '3': 9, '4': 1, '5': 8, '10': 'conciergeWitness'},
+    {'1': 'fully_verified', '3': 10, '4': 1, '5': 8, '10': 'fullyVerified'},
+  ],
+};
+
+/// Descriptor for `VerificationSignals`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List verificationSignalsDescriptor = $convert.base64Decode(
+    'ChNWZXJpZmljYXRpb25TaWduYWxzEiEKDG1pbGVzdG9uZV9pZBgBIAEoCVILbWlsZXN0b25lSW'
+    'QSKAoQZXhpZl9ncHNfcHJlc2VudBgCIAEoCFIOZXhpZkdwc1ByZXNlbnQSKAoQZXhpZl9ncHNf'
+    'bWF0Y2hlcxgDIAEoCFIOZXhpZkdwc01hdGNoZXMSJAoOaXBfZ2VvX3ByZXNlbnQYBCABKAhSDG'
+    'lwR2VvUHJlc2VudBIkCg5pcF9nZW9fbWF0Y2hlcxgFIAEoCFIMaXBHZW9NYXRjaGVzEiYKD2Vs'
+    'aXRlX2h1Yl9tYXRjaBgGIAEoCFINZWxpdGVIdWJNYXRjaBIyChVib2FyZGluZ19wYXNzX3ByZX'
+    'NlbnQYByABKAhSE2JvYXJkaW5nUGFzc1ByZXNlbnQSMgoVYm9hcmRpbmdfcGFzc19tYXRjaGVz'
+    'GAggASgIUhNib2FyZGluZ1Bhc3NNYXRjaGVzEisKEWNvbmNpZXJnZV93aXRuZXNzGAkgASgIUh'
+    'Bjb25jaWVyZ2VXaXRuZXNzEiUKDmZ1bGx5X3ZlcmlmaWVkGAogASgIUg1mdWxseVZlcmlmaWVk');
+
+@$core.Deprecated('Use listMyVerificationSignalsRequestDescriptor instead')
+const ListMyVerificationSignalsRequest$json = {
+  '1': 'ListMyVerificationSignalsRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListMyVerificationSignalsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyVerificationSignalsRequestDescriptor = $convert.base64Decode(
+    'CiBMaXN0TXlWZXJpZmljYXRpb25TaWduYWxzUmVxdWVzdBIUCgVsaW1pdBgBIAEoBVIFbGltaX'
+    'Q=');
+
+@$core.Deprecated('Use listMyVerificationSignalsResponseDescriptor instead')
+const ListMyVerificationSignalsResponse$json = {
+  '1': 'ListMyVerificationSignalsResponse',
+  '2': [
+    {'1': 'signals', '3': 1, '4': 3, '5': 11, '6': '.sttattus.travel.v1.VerificationSignals', '10': 'signals'},
+  ],
+};
+
+/// Descriptor for `ListMyVerificationSignalsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyVerificationSignalsResponseDescriptor = $convert.base64Decode(
+    'CiFMaXN0TXlWZXJpZmljYXRpb25TaWduYWxzUmVzcG9uc2USQQoHc2lnbmFscxgBIAMoCzInLn'
+    'N0dGF0dHVzLnRyYXZlbC52MS5WZXJpZmljYXRpb25TaWduYWxzUgdzaWduYWxz');
+

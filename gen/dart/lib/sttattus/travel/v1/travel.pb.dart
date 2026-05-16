@@ -2204,6 +2204,247 @@ class PostConciergeMessageResponse extends $pb.GeneratedMessage {
   ConciergeMessage ensureMessage() => $_ensure(0);
 }
 
+class VerificationSignals extends $pb.GeneratedMessage {
+  factory VerificationSignals({
+    $core.String? milestoneId,
+    $core.bool? exifGpsPresent,
+    $core.bool? exifGpsMatches,
+    $core.bool? ipGeoPresent,
+    $core.bool? ipGeoMatches,
+    $core.bool? eliteHubMatch,
+    $core.bool? boardingPassPresent,
+    $core.bool? boardingPassMatches,
+    $core.bool? conciergeWitness,
+    $core.bool? fullyVerified,
+  }) {
+    final result = create();
+    if (milestoneId != null) result.milestoneId = milestoneId;
+    if (exifGpsPresent != null) result.exifGpsPresent = exifGpsPresent;
+    if (exifGpsMatches != null) result.exifGpsMatches = exifGpsMatches;
+    if (ipGeoPresent != null) result.ipGeoPresent = ipGeoPresent;
+    if (ipGeoMatches != null) result.ipGeoMatches = ipGeoMatches;
+    if (eliteHubMatch != null) result.eliteHubMatch = eliteHubMatch;
+    if (boardingPassPresent != null) result.boardingPassPresent = boardingPassPresent;
+    if (boardingPassMatches != null) result.boardingPassMatches = boardingPassMatches;
+    if (conciergeWitness != null) result.conciergeWitness = conciergeWitness;
+    if (fullyVerified != null) result.fullyVerified = fullyVerified;
+    return result;
+  }
+
+  VerificationSignals._();
+
+  factory VerificationSignals.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory VerificationSignals.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerificationSignals', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'milestoneId')
+    ..aOB(2, _omitFieldNames ? '' : 'exifGpsPresent')
+    ..aOB(3, _omitFieldNames ? '' : 'exifGpsMatches')
+    ..aOB(4, _omitFieldNames ? '' : 'ipGeoPresent')
+    ..aOB(5, _omitFieldNames ? '' : 'ipGeoMatches')
+    ..aOB(6, _omitFieldNames ? '' : 'eliteHubMatch')
+    ..aOB(7, _omitFieldNames ? '' : 'boardingPassPresent')
+    ..aOB(8, _omitFieldNames ? '' : 'boardingPassMatches')
+    ..aOB(9, _omitFieldNames ? '' : 'conciergeWitness')
+    ..aOB(10, _omitFieldNames ? '' : 'fullyVerified')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerificationSignals clone() => VerificationSignals()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerificationSignals copyWith(void Function(VerificationSignals) updates) => super.copyWith((message) => updates(message as VerificationSignals)) as VerificationSignals;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerificationSignals create() => VerificationSignals._();
+  @$core.override
+  VerificationSignals createEmptyInstance() => create();
+  static $pb.PbList<VerificationSignals> createRepeated() => $pb.PbList<VerificationSignals>();
+  @$core.pragma('dart2js:noInline')
+  static VerificationSignals getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VerificationSignals>(create);
+  static VerificationSignals? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get milestoneId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set milestoneId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMilestoneId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMilestoneId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get exifGpsPresent => $_getBF(1);
+  @$pb.TagNumber(2)
+  set exifGpsPresent($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExifGpsPresent() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExifGpsPresent() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get exifGpsMatches => $_getBF(2);
+  @$pb.TagNumber(3)
+  set exifGpsMatches($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExifGpsMatches() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExifGpsMatches() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get ipGeoPresent => $_getBF(3);
+  @$pb.TagNumber(4)
+  set ipGeoPresent($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasIpGeoPresent() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIpGeoPresent() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get ipGeoMatches => $_getBF(4);
+  @$pb.TagNumber(5)
+  set ipGeoMatches($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasIpGeoMatches() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIpGeoMatches() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get eliteHubMatch => $_getBF(5);
+  @$pb.TagNumber(6)
+  set eliteHubMatch($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEliteHubMatch() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEliteHubMatch() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get boardingPassPresent => $_getBF(6);
+  @$pb.TagNumber(7)
+  set boardingPassPresent($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasBoardingPassPresent() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearBoardingPassPresent() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get boardingPassMatches => $_getBF(7);
+  @$pb.TagNumber(8)
+  set boardingPassMatches($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasBoardingPassMatches() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearBoardingPassMatches() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get conciergeWitness => $_getBF(8);
+  @$pb.TagNumber(9)
+  set conciergeWitness($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasConciergeWitness() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearConciergeWitness() => $_clearField(9);
+
+  /// Derived: true when ≥ 2 _matches signals fire.
+  @$pb.TagNumber(10)
+  $core.bool get fullyVerified => $_getBF(9);
+  @$pb.TagNumber(10)
+  set fullyVerified($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasFullyVerified() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearFullyVerified() => $_clearField(10);
+}
+
+class ListMyVerificationSignalsRequest extends $pb.GeneratedMessage {
+  factory ListMyVerificationSignalsRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListMyVerificationSignalsRequest._();
+
+  factory ListMyVerificationSignalsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyVerificationSignalsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyVerificationSignalsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyVerificationSignalsRequest clone() => ListMyVerificationSignalsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyVerificationSignalsRequest copyWith(void Function(ListMyVerificationSignalsRequest) updates) => super.copyWith((message) => updates(message as ListMyVerificationSignalsRequest)) as ListMyVerificationSignalsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyVerificationSignalsRequest create() => ListMyVerificationSignalsRequest._();
+  @$core.override
+  ListMyVerificationSignalsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyVerificationSignalsRequest> createRepeated() => $pb.PbList<ListMyVerificationSignalsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyVerificationSignalsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyVerificationSignalsRequest>(create);
+  static ListMyVerificationSignalsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class ListMyVerificationSignalsResponse extends $pb.GeneratedMessage {
+  factory ListMyVerificationSignalsResponse({
+    $core.Iterable<VerificationSignals>? signals,
+  }) {
+    final result = create();
+    if (signals != null) result.signals.addAll(signals);
+    return result;
+  }
+
+  ListMyVerificationSignalsResponse._();
+
+  factory ListMyVerificationSignalsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyVerificationSignalsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyVerificationSignalsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..pc<VerificationSignals>(1, _omitFieldNames ? '' : 'signals', $pb.PbFieldType.PM, subBuilder: VerificationSignals.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyVerificationSignalsResponse clone() => ListMyVerificationSignalsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyVerificationSignalsResponse copyWith(void Function(ListMyVerificationSignalsResponse) updates) => super.copyWith((message) => updates(message as ListMyVerificationSignalsResponse)) as ListMyVerificationSignalsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyVerificationSignalsResponse create() => ListMyVerificationSignalsResponse._();
+  @$core.override
+  ListMyVerificationSignalsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyVerificationSignalsResponse> createRepeated() => $pb.PbList<ListMyVerificationSignalsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyVerificationSignalsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyVerificationSignalsResponse>(create);
+  static ListMyVerificationSignalsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VerificationSignals> get signals => $_getList(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

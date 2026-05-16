@@ -1624,3 +1624,170 @@ export class PostConciergeMessageResponse extends Message<PostConciergeMessageRe
   }
 }
 
+/**
+ * @generated from message sttattus.travel.v1.VerificationSignals
+ */
+export class VerificationSignals extends Message<VerificationSignals> {
+  /**
+   * @generated from field: string milestone_id = 1;
+   */
+  milestoneId = "";
+
+  /**
+   * @generated from field: bool exif_gps_present = 2;
+   */
+  exifGpsPresent = false;
+
+  /**
+   * @generated from field: bool exif_gps_matches = 3;
+   */
+  exifGpsMatches = false;
+
+  /**
+   * @generated from field: bool ip_geo_present = 4;
+   */
+  ipGeoPresent = false;
+
+  /**
+   * @generated from field: bool ip_geo_matches = 5;
+   */
+  ipGeoMatches = false;
+
+  /**
+   * @generated from field: bool elite_hub_match = 6;
+   */
+  eliteHubMatch = false;
+
+  /**
+   * @generated from field: bool boarding_pass_present = 7;
+   */
+  boardingPassPresent = false;
+
+  /**
+   * @generated from field: bool boarding_pass_matches = 8;
+   */
+  boardingPassMatches = false;
+
+  /**
+   * @generated from field: bool concierge_witness = 9;
+   */
+  conciergeWitness = false;
+
+  /**
+   * Derived: true when ≥ 2 _matches signals fire.
+   *
+   * @generated from field: bool fully_verified = 10;
+   */
+  fullyVerified = false;
+
+  constructor(data?: PartialMessage<VerificationSignals>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.VerificationSignals";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "milestone_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "exif_gps_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "exif_gps_matches", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "ip_geo_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "ip_geo_matches", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "elite_hub_match", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "boarding_pass_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "boarding_pass_matches", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "concierge_witness", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "fully_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerificationSignals {
+    return new VerificationSignals().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerificationSignals {
+    return new VerificationSignals().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerificationSignals {
+    return new VerificationSignals().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerificationSignals | PlainMessage<VerificationSignals> | undefined, b: VerificationSignals | PlainMessage<VerificationSignals> | undefined): boolean {
+    return proto3.util.equals(VerificationSignals, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ListMyVerificationSignalsRequest
+ */
+export class ListMyVerificationSignalsRequest extends Message<ListMyVerificationSignalsRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListMyVerificationSignalsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ListMyVerificationSignalsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyVerificationSignalsRequest {
+    return new ListMyVerificationSignalsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyVerificationSignalsRequest {
+    return new ListMyVerificationSignalsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyVerificationSignalsRequest {
+    return new ListMyVerificationSignalsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyVerificationSignalsRequest | PlainMessage<ListMyVerificationSignalsRequest> | undefined, b: ListMyVerificationSignalsRequest | PlainMessage<ListMyVerificationSignalsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyVerificationSignalsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ListMyVerificationSignalsResponse
+ */
+export class ListMyVerificationSignalsResponse extends Message<ListMyVerificationSignalsResponse> {
+  /**
+   * @generated from field: repeated sttattus.travel.v1.VerificationSignals signals = 1;
+   */
+  signals: VerificationSignals[] = [];
+
+  constructor(data?: PartialMessage<ListMyVerificationSignalsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ListMyVerificationSignalsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "signals", kind: "message", T: VerificationSignals, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyVerificationSignalsResponse {
+    return new ListMyVerificationSignalsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyVerificationSignalsResponse {
+    return new ListMyVerificationSignalsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyVerificationSignalsResponse {
+    return new ListMyVerificationSignalsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyVerificationSignalsResponse | PlainMessage<ListMyVerificationSignalsResponse> | undefined, b: ListMyVerificationSignalsResponse | PlainMessage<ListMyVerificationSignalsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyVerificationSignalsResponse, a, b);
+  }
+}
+

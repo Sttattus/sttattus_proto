@@ -19,19 +19,20 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	TravelService_ListMilestones_FullMethodName        = "/sttattus.travel.v1.TravelService/ListMilestones"
-	TravelService_CreateMilestone_FullMethodName       = "/sttattus.travel.v1.TravelService/CreateMilestone"
-	TravelService_GetNomadStats_FullMethodName         = "/sttattus.travel.v1.TravelService/GetNomadStats"
-	TravelService_ListFeed_FullMethodName              = "/sttattus.travel.v1.TravelService/ListFeed"
-	TravelService_CreateTrip_FullMethodName            = "/sttattus.travel.v1.TravelService/CreateTrip"
-	TravelService_UpdateTrip_FullMethodName            = "/sttattus.travel.v1.TravelService/UpdateTrip"
-	TravelService_ListMyTrips_FullMethodName           = "/sttattus.travel.v1.TravelService/ListMyTrips"
-	TravelService_GetTrip_FullMethodName               = "/sttattus.travel.v1.TravelService/GetTrip"
-	TravelService_AttachVisitToTrip_FullMethodName     = "/sttattus.travel.v1.TravelService/AttachVisitToTrip"
-	TravelService_DeleteTrip_FullMethodName            = "/sttattus.travel.v1.TravelService/DeleteTrip"
-	TravelService_ListVisitedCountries_FullMethodName  = "/sttattus.travel.v1.TravelService/ListVisitedCountries"
-	TravelService_ListConciergeMessages_FullMethodName = "/sttattus.travel.v1.TravelService/ListConciergeMessages"
-	TravelService_PostConciergeMessage_FullMethodName  = "/sttattus.travel.v1.TravelService/PostConciergeMessage"
+	TravelService_ListMilestones_FullMethodName            = "/sttattus.travel.v1.TravelService/ListMilestones"
+	TravelService_CreateMilestone_FullMethodName           = "/sttattus.travel.v1.TravelService/CreateMilestone"
+	TravelService_GetNomadStats_FullMethodName             = "/sttattus.travel.v1.TravelService/GetNomadStats"
+	TravelService_ListFeed_FullMethodName                  = "/sttattus.travel.v1.TravelService/ListFeed"
+	TravelService_CreateTrip_FullMethodName                = "/sttattus.travel.v1.TravelService/CreateTrip"
+	TravelService_UpdateTrip_FullMethodName                = "/sttattus.travel.v1.TravelService/UpdateTrip"
+	TravelService_ListMyTrips_FullMethodName               = "/sttattus.travel.v1.TravelService/ListMyTrips"
+	TravelService_GetTrip_FullMethodName                   = "/sttattus.travel.v1.TravelService/GetTrip"
+	TravelService_AttachVisitToTrip_FullMethodName         = "/sttattus.travel.v1.TravelService/AttachVisitToTrip"
+	TravelService_DeleteTrip_FullMethodName                = "/sttattus.travel.v1.TravelService/DeleteTrip"
+	TravelService_ListVisitedCountries_FullMethodName      = "/sttattus.travel.v1.TravelService/ListVisitedCountries"
+	TravelService_ListConciergeMessages_FullMethodName     = "/sttattus.travel.v1.TravelService/ListConciergeMessages"
+	TravelService_PostConciergeMessage_FullMethodName      = "/sttattus.travel.v1.TravelService/PostConciergeMessage"
+	TravelService_ListMyVerificationSignals_FullMethodName = "/sttattus.travel.v1.TravelService/ListMyVerificationSignals"
 )
 
 // TravelServiceClient is the client API for TravelService service.
@@ -54,6 +55,8 @@ type TravelServiceClient interface {
 	// N10.6 — Sovereign-tier concierge thread.
 	ListConciergeMessages(ctx context.Context, in *ListConciergeMessagesRequest, opts ...grpc.CallOption) (*ListConciergeMessagesResponse, error)
 	PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error)
+	// N10.7 — verification dashboard per milestone.
+	ListMyVerificationSignals(ctx context.Context, in *ListMyVerificationSignalsRequest, opts ...grpc.CallOption) (*ListMyVerificationSignalsResponse, error)
 }
 
 type travelServiceClient struct {
@@ -194,6 +197,16 @@ func (c *travelServiceClient) PostConciergeMessage(ctx context.Context, in *Post
 	return out, nil
 }
 
+func (c *travelServiceClient) ListMyVerificationSignals(ctx context.Context, in *ListMyVerificationSignalsRequest, opts ...grpc.CallOption) (*ListMyVerificationSignalsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyVerificationSignalsResponse)
+	err := c.cc.Invoke(ctx, TravelService_ListMyVerificationSignals_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TravelServiceServer is the server API for TravelService service.
 // All implementations must embed UnimplementedTravelServiceServer
 // for forward compatibility.
@@ -214,6 +227,8 @@ type TravelServiceServer interface {
 	// N10.6 — Sovereign-tier concierge thread.
 	ListConciergeMessages(context.Context, *ListConciergeMessagesRequest) (*ListConciergeMessagesResponse, error)
 	PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error)
+	// N10.7 — verification dashboard per milestone.
+	ListMyVerificationSignals(context.Context, *ListMyVerificationSignalsRequest) (*ListMyVerificationSignalsResponse, error)
 	mustEmbedUnimplementedTravelServiceServer()
 }
 
@@ -262,6 +277,9 @@ func (UnimplementedTravelServiceServer) ListConciergeMessages(context.Context, *
 }
 func (UnimplementedTravelServiceServer) PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method PostConciergeMessage not implemented")
+}
+func (UnimplementedTravelServiceServer) ListMyVerificationSignals(context.Context, *ListMyVerificationSignalsRequest) (*ListMyVerificationSignalsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyVerificationSignals not implemented")
 }
 func (UnimplementedTravelServiceServer) mustEmbedUnimplementedTravelServiceServer() {}
 func (UnimplementedTravelServiceServer) testEmbeddedByValue()                       {}
@@ -518,6 +536,24 @@ func _TravelService_PostConciergeMessage_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TravelService_ListMyVerificationSignals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyVerificationSignalsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).ListMyVerificationSignals(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_ListMyVerificationSignals_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).ListMyVerificationSignals(ctx, req.(*ListMyVerificationSignalsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // TravelService_ServiceDesc is the grpc.ServiceDesc for TravelService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -576,6 +612,10 @@ var TravelService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PostConciergeMessage",
 			Handler:    _TravelService_PostConciergeMessage_Handler,
+		},
+		{
+			MethodName: "ListMyVerificationSignals",
+			Handler:    _TravelService_ListMyVerificationSignals_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
