@@ -19,36 +19,38 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	DatingService_GetProfile_FullMethodName            = "/sttattus.dating.v1.DatingService/GetProfile"
-	DatingService_UpdateProfile_FullMethodName         = "/sttattus.dating.v1.DatingService/UpdateProfile"
-	DatingService_StreamDiscovery_FullMethodName       = "/sttattus.dating.v1.DatingService/StreamDiscovery"
-	DatingService_Swipe_FullMethodName                 = "/sttattus.dating.v1.DatingService/Swipe"
-	DatingService_ListMatches_FullMethodName           = "/sttattus.dating.v1.DatingService/ListMatches"
-	DatingService_StreamMessages_FullMethodName        = "/sttattus.dating.v1.DatingService/StreamMessages"
-	DatingService_SendMessage_FullMethodName           = "/sttattus.dating.v1.DatingService/SendMessage"
-	DatingService_StartVerification_FullMethodName     = "/sttattus.dating.v1.DatingService/StartVerification"
-	DatingService_GetLatestVerification_FullMethodName = "/sttattus.dating.v1.DatingService/GetLatestVerification"
-	DatingService_ListTensionSeats_FullMethodName      = "/sttattus.dating.v1.DatingService/ListTensionSeats"
-	DatingService_PlaceTensionBid_FullMethodName       = "/sttattus.dating.v1.DatingService/PlaceTensionBid"
-	DatingService_ReleaseTensionSeat_FullMethodName    = "/sttattus.dating.v1.DatingService/ReleaseTensionSeat"
-	DatingService_ListAuthorAkashic_FullMethodName     = "/sttattus.dating.v1.DatingService/ListAuthorAkashic"
-	DatingService_ListVisibleAkashic_FullMethodName    = "/sttattus.dating.v1.DatingService/ListVisibleAkashic"
-	DatingService_UpsertAkashicChapter_FullMethodName  = "/sttattus.dating.v1.DatingService/UpsertAkashicChapter"
-	DatingService_DeleteAkashicChapter_FullMethodName  = "/sttattus.dating.v1.DatingService/DeleteAkashicChapter"
-	DatingService_ListMyBlocks_FullMethodName          = "/sttattus.dating.v1.DatingService/ListMyBlocks"
-	DatingService_BlockUser_FullMethodName             = "/sttattus.dating.v1.DatingService/BlockUser"
-	DatingService_UnblockUser_FullMethodName           = "/sttattus.dating.v1.DatingService/UnblockUser"
-	DatingService_ListMyReports_FullMethodName         = "/sttattus.dating.v1.DatingService/ListMyReports"
-	DatingService_ReportUser_FullMethodName            = "/sttattus.dating.v1.DatingService/ReportUser"
-	DatingService_GetPanicContact_FullMethodName       = "/sttattus.dating.v1.DatingService/GetPanicContact"
-	DatingService_UpsertPanicContact_FullMethodName    = "/sttattus.dating.v1.DatingService/UpsertPanicContact"
-	DatingService_GetPrivacyAxes_FullMethodName        = "/sttattus.dating.v1.DatingService/GetPrivacyAxes"
-	DatingService_UpsertPrivacyAxes_FullMethodName     = "/sttattus.dating.v1.DatingService/UpsertPrivacyAxes"
-	DatingService_ListAtlasMapPoints_FullMethodName    = "/sttattus.dating.v1.DatingService/ListAtlasMapPoints"
-	DatingService_ListLiveRooms_FullMethodName         = "/sttattus.dating.v1.DatingService/ListLiveRooms"
-	DatingService_CreateAgoraRoom_FullMethodName       = "/sttattus.dating.v1.DatingService/CreateAgoraRoom"
-	DatingService_EndAgoraRoom_FullMethodName          = "/sttattus.dating.v1.DatingService/EndAgoraRoom"
-	DatingService_MintLiveKitToken_FullMethodName      = "/sttattus.dating.v1.DatingService/MintLiveKitToken"
+	DatingService_GetProfile_FullMethodName             = "/sttattus.dating.v1.DatingService/GetProfile"
+	DatingService_UpdateProfile_FullMethodName          = "/sttattus.dating.v1.DatingService/UpdateProfile"
+	DatingService_StreamDiscovery_FullMethodName        = "/sttattus.dating.v1.DatingService/StreamDiscovery"
+	DatingService_Swipe_FullMethodName                  = "/sttattus.dating.v1.DatingService/Swipe"
+	DatingService_ListMatches_FullMethodName            = "/sttattus.dating.v1.DatingService/ListMatches"
+	DatingService_StreamMessages_FullMethodName         = "/sttattus.dating.v1.DatingService/StreamMessages"
+	DatingService_SendMessage_FullMethodName            = "/sttattus.dating.v1.DatingService/SendMessage"
+	DatingService_StartVerification_FullMethodName      = "/sttattus.dating.v1.DatingService/StartVerification"
+	DatingService_GetLatestVerification_FullMethodName  = "/sttattus.dating.v1.DatingService/GetLatestVerification"
+	DatingService_ListTensionSeats_FullMethodName       = "/sttattus.dating.v1.DatingService/ListTensionSeats"
+	DatingService_PlaceTensionBid_FullMethodName        = "/sttattus.dating.v1.DatingService/PlaceTensionBid"
+	DatingService_ReleaseTensionSeat_FullMethodName     = "/sttattus.dating.v1.DatingService/ReleaseTensionSeat"
+	DatingService_ListAuthorAkashic_FullMethodName      = "/sttattus.dating.v1.DatingService/ListAuthorAkashic"
+	DatingService_ListVisibleAkashic_FullMethodName     = "/sttattus.dating.v1.DatingService/ListVisibleAkashic"
+	DatingService_UpsertAkashicChapter_FullMethodName   = "/sttattus.dating.v1.DatingService/UpsertAkashicChapter"
+	DatingService_DeleteAkashicChapter_FullMethodName   = "/sttattus.dating.v1.DatingService/DeleteAkashicChapter"
+	DatingService_ListMyBlocks_FullMethodName           = "/sttattus.dating.v1.DatingService/ListMyBlocks"
+	DatingService_BlockUser_FullMethodName              = "/sttattus.dating.v1.DatingService/BlockUser"
+	DatingService_UnblockUser_FullMethodName            = "/sttattus.dating.v1.DatingService/UnblockUser"
+	DatingService_ListMyReports_FullMethodName          = "/sttattus.dating.v1.DatingService/ListMyReports"
+	DatingService_ReportUser_FullMethodName             = "/sttattus.dating.v1.DatingService/ReportUser"
+	DatingService_GetPanicContact_FullMethodName        = "/sttattus.dating.v1.DatingService/GetPanicContact"
+	DatingService_UpsertPanicContact_FullMethodName     = "/sttattus.dating.v1.DatingService/UpsertPanicContact"
+	DatingService_GetPrivacyAxes_FullMethodName         = "/sttattus.dating.v1.DatingService/GetPrivacyAxes"
+	DatingService_UpsertPrivacyAxes_FullMethodName      = "/sttattus.dating.v1.DatingService/UpsertPrivacyAxes"
+	DatingService_ListAtlasMapPoints_FullMethodName     = "/sttattus.dating.v1.DatingService/ListAtlasMapPoints"
+	DatingService_ListLiveRooms_FullMethodName          = "/sttattus.dating.v1.DatingService/ListLiveRooms"
+	DatingService_CreateAgoraRoom_FullMethodName        = "/sttattus.dating.v1.DatingService/CreateAgoraRoom"
+	DatingService_EndAgoraRoom_FullMethodName           = "/sttattus.dating.v1.DatingService/EndAgoraRoom"
+	DatingService_MintLiveKitToken_FullMethodName       = "/sttattus.dating.v1.DatingService/MintLiveKitToken"
+	DatingService_AttachMediaToMessage_FullMethodName   = "/sttattus.dating.v1.DatingService/AttachMediaToMessage"
+	DatingService_ListMessageAttachments_FullMethodName = "/sttattus.dating.v1.DatingService/ListMessageAttachments"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -91,6 +93,9 @@ type DatingServiceClient interface {
 	CreateAgoraRoom(ctx context.Context, in *CreateAgoraRoomRequest, opts ...grpc.CallOption) (*CreateAgoraRoomResponse, error)
 	EndAgoraRoom(ctx context.Context, in *EndAgoraRoomRequest, opts ...grpc.CallOption) (*EndAgoraRoomResponse, error)
 	MintLiveKitToken(ctx context.Context, in *MintLiveKitTokenRequest, opts ...grpc.CallOption) (*MintLiveKitTokenResponse, error)
+	// A9P2.4 — voice + video message attachments.
+	AttachMediaToMessage(ctx context.Context, in *AttachMediaToMessageRequest, opts ...grpc.CallOption) (*AttachMediaToMessageResponse, error)
+	ListMessageAttachments(ctx context.Context, in *ListMessageAttachmentsRequest, opts ...grpc.CallOption) (*ListMessageAttachmentsResponse, error)
 }
 
 type datingServiceClient struct {
@@ -419,6 +424,26 @@ func (c *datingServiceClient) MintLiveKitToken(ctx context.Context, in *MintLive
 	return out, nil
 }
 
+func (c *datingServiceClient) AttachMediaToMessage(ctx context.Context, in *AttachMediaToMessageRequest, opts ...grpc.CallOption) (*AttachMediaToMessageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AttachMediaToMessageResponse)
+	err := c.cc.Invoke(ctx, DatingService_AttachMediaToMessage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ListMessageAttachments(ctx context.Context, in *ListMessageAttachmentsRequest, opts ...grpc.CallOption) (*ListMessageAttachmentsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMessageAttachmentsResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListMessageAttachments_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatingServiceServer is the server API for DatingService service.
 // All implementations must embed UnimplementedDatingServiceServer
 // for forward compatibility.
@@ -459,6 +484,9 @@ type DatingServiceServer interface {
 	CreateAgoraRoom(context.Context, *CreateAgoraRoomRequest) (*CreateAgoraRoomResponse, error)
 	EndAgoraRoom(context.Context, *EndAgoraRoomRequest) (*EndAgoraRoomResponse, error)
 	MintLiveKitToken(context.Context, *MintLiveKitTokenRequest) (*MintLiveKitTokenResponse, error)
+	// A9P2.4 — voice + video message attachments.
+	AttachMediaToMessage(context.Context, *AttachMediaToMessageRequest) (*AttachMediaToMessageResponse, error)
+	ListMessageAttachments(context.Context, *ListMessageAttachmentsRequest) (*ListMessageAttachmentsResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -558,6 +586,12 @@ func (UnimplementedDatingServiceServer) EndAgoraRoom(context.Context, *EndAgoraR
 }
 func (UnimplementedDatingServiceServer) MintLiveKitToken(context.Context, *MintLiveKitTokenRequest) (*MintLiveKitTokenResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method MintLiveKitToken not implemented")
+}
+func (UnimplementedDatingServiceServer) AttachMediaToMessage(context.Context, *AttachMediaToMessageRequest) (*AttachMediaToMessageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AttachMediaToMessage not implemented")
+}
+func (UnimplementedDatingServiceServer) ListMessageAttachments(context.Context, *ListMessageAttachmentsRequest) (*ListMessageAttachmentsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMessageAttachments not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -1106,6 +1140,42 @@ func _DatingService_MintLiveKitToken_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_AttachMediaToMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AttachMediaToMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).AttachMediaToMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_AttachMediaToMessage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).AttachMediaToMessage(ctx, req.(*AttachMediaToMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ListMessageAttachments_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMessageAttachmentsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListMessageAttachments(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListMessageAttachments_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListMessageAttachments(ctx, req.(*ListMessageAttachmentsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatingService_ServiceDesc is the grpc.ServiceDesc for DatingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1224,6 +1294,14 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "MintLiveKitToken",
 			Handler:    _DatingService_MintLiveKitToken_Handler,
+		},
+		{
+			MethodName: "AttachMediaToMessage",
+			Handler:    _DatingService_AttachMediaToMessage_Handler,
+		},
+		{
+			MethodName: "ListMessageAttachments",
+			Handler:    _DatingService_ListMessageAttachments_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

@@ -3364,3 +3364,234 @@ export class MintLiveKitTokenResponse extends Message$1<MintLiveKitTokenResponse
   }
 }
 
+/**
+ * MessageAttachment ties a message to a media_assets row. kind:
+ * 'voice' | 'video'. The clip bytes go through MediaService's
+ * presigned-URL flow; this row is the join.
+ *
+ * @generated from message sttattus.dating.v1.MessageAttachment
+ */
+export class MessageAttachment extends Message$1<MessageAttachment> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string message_id = 2;
+   */
+  messageId = "";
+
+  /**
+   * @generated from field: string media_asset_id = 3;
+   */
+  mediaAssetId = "";
+
+  /**
+   * @generated from field: string kind = 4;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: int32 duration_seconds = 5;
+   */
+  durationSeconds = 0;
+
+  constructor(data?: PartialMessage<MessageAttachment>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.MessageAttachment";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "message_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "duration_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MessageAttachment {
+    return new MessageAttachment().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MessageAttachment {
+    return new MessageAttachment().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MessageAttachment {
+    return new MessageAttachment().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MessageAttachment | PlainMessage<MessageAttachment> | undefined, b: MessageAttachment | PlainMessage<MessageAttachment> | undefined): boolean {
+    return proto3.util.equals(MessageAttachment, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AttachMediaToMessageRequest
+ */
+export class AttachMediaToMessageRequest extends Message$1<AttachMediaToMessageRequest> {
+  /**
+   * @generated from field: string message_id = 1;
+   */
+  messageId = "";
+
+  /**
+   * @generated from field: string media_asset_id = 2;
+   */
+  mediaAssetId = "";
+
+  /**
+   * @generated from field: string kind = 3;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: int32 duration_seconds = 4;
+   */
+  durationSeconds = 0;
+
+  constructor(data?: PartialMessage<AttachMediaToMessageRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AttachMediaToMessageRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "message_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "duration_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AttachMediaToMessageRequest {
+    return new AttachMediaToMessageRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AttachMediaToMessageRequest {
+    return new AttachMediaToMessageRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AttachMediaToMessageRequest {
+    return new AttachMediaToMessageRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AttachMediaToMessageRequest | PlainMessage<AttachMediaToMessageRequest> | undefined, b: AttachMediaToMessageRequest | PlainMessage<AttachMediaToMessageRequest> | undefined): boolean {
+    return proto3.util.equals(AttachMediaToMessageRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AttachMediaToMessageResponse
+ */
+export class AttachMediaToMessageResponse extends Message$1<AttachMediaToMessageResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.MessageAttachment attachment = 1;
+   */
+  attachment?: MessageAttachment;
+
+  constructor(data?: PartialMessage<AttachMediaToMessageResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AttachMediaToMessageResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "attachment", kind: "message", T: MessageAttachment },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AttachMediaToMessageResponse {
+    return new AttachMediaToMessageResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AttachMediaToMessageResponse {
+    return new AttachMediaToMessageResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AttachMediaToMessageResponse {
+    return new AttachMediaToMessageResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AttachMediaToMessageResponse | PlainMessage<AttachMediaToMessageResponse> | undefined, b: AttachMediaToMessageResponse | PlainMessage<AttachMediaToMessageResponse> | undefined): boolean {
+    return proto3.util.equals(AttachMediaToMessageResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListMessageAttachmentsRequest
+ */
+export class ListMessageAttachmentsRequest extends Message$1<ListMessageAttachmentsRequest> {
+  /**
+   * @generated from field: string message_id = 1;
+   */
+  messageId = "";
+
+  constructor(data?: PartialMessage<ListMessageAttachmentsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListMessageAttachmentsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "message_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMessageAttachmentsRequest {
+    return new ListMessageAttachmentsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMessageAttachmentsRequest {
+    return new ListMessageAttachmentsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMessageAttachmentsRequest {
+    return new ListMessageAttachmentsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMessageAttachmentsRequest | PlainMessage<ListMessageAttachmentsRequest> | undefined, b: ListMessageAttachmentsRequest | PlainMessage<ListMessageAttachmentsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMessageAttachmentsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListMessageAttachmentsResponse
+ */
+export class ListMessageAttachmentsResponse extends Message$1<ListMessageAttachmentsResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.MessageAttachment attachments = 1;
+   */
+  attachments: MessageAttachment[] = [];
+
+  constructor(data?: PartialMessage<ListMessageAttachmentsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListMessageAttachmentsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "attachments", kind: "message", T: MessageAttachment, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMessageAttachmentsResponse {
+    return new ListMessageAttachmentsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMessageAttachmentsResponse {
+    return new ListMessageAttachmentsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMessageAttachmentsResponse {
+    return new ListMessageAttachmentsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMessageAttachmentsResponse | PlainMessage<ListMessageAttachmentsResponse> | undefined, b: ListMessageAttachmentsResponse | PlainMessage<ListMessageAttachmentsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMessageAttachmentsResponse, a, b);
+  }
+}
+

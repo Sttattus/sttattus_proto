@@ -1089,3 +1089,78 @@ final $typed_data.Uint8List mintLiveKitTokenResponseDescriptor = $convert.base64
     'ChhNaW50TGl2ZUtpdFRva2VuUmVzcG9uc2USFAoFdG9rZW4YASABKAlSBXRva2VuEhUKBndzX3'
     'VybBgCIAEoCVIFd3NVcmw=');
 
+@$core.Deprecated('Use messageAttachmentDescriptor instead')
+const MessageAttachment$json = {
+  '1': 'MessageAttachment',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'message_id', '3': 2, '4': 1, '5': 9, '10': 'messageId'},
+    {'1': 'media_asset_id', '3': 3, '4': 1, '5': 9, '10': 'mediaAssetId'},
+    {'1': 'kind', '3': 4, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'duration_seconds', '3': 5, '4': 1, '5': 5, '10': 'durationSeconds'},
+  ],
+};
+
+/// Descriptor for `MessageAttachment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List messageAttachmentDescriptor = $convert.base64Decode(
+    'ChFNZXNzYWdlQXR0YWNobWVudBIOCgJpZBgBIAEoCVICaWQSHQoKbWVzc2FnZV9pZBgCIAEoCV'
+    'IJbWVzc2FnZUlkEiQKDm1lZGlhX2Fzc2V0X2lkGAMgASgJUgxtZWRpYUFzc2V0SWQSEgoEa2lu'
+    'ZBgEIAEoCVIEa2luZBIpChBkdXJhdGlvbl9zZWNvbmRzGAUgASgFUg9kdXJhdGlvblNlY29uZH'
+    'M=');
+
+@$core.Deprecated('Use attachMediaToMessageRequestDescriptor instead')
+const AttachMediaToMessageRequest$json = {
+  '1': 'AttachMediaToMessageRequest',
+  '2': [
+    {'1': 'message_id', '3': 1, '4': 1, '5': 9, '10': 'messageId'},
+    {'1': 'media_asset_id', '3': 2, '4': 1, '5': 9, '10': 'mediaAssetId'},
+    {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'duration_seconds', '3': 4, '4': 1, '5': 5, '10': 'durationSeconds'},
+  ],
+};
+
+/// Descriptor for `AttachMediaToMessageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List attachMediaToMessageRequestDescriptor = $convert.base64Decode(
+    'ChtBdHRhY2hNZWRpYVRvTWVzc2FnZVJlcXVlc3QSHQoKbWVzc2FnZV9pZBgBIAEoCVIJbWVzc2'
+    'FnZUlkEiQKDm1lZGlhX2Fzc2V0X2lkGAIgASgJUgxtZWRpYUFzc2V0SWQSEgoEa2luZBgDIAEo'
+    'CVIEa2luZBIpChBkdXJhdGlvbl9zZWNvbmRzGAQgASgFUg9kdXJhdGlvblNlY29uZHM=');
+
+@$core.Deprecated('Use attachMediaToMessageResponseDescriptor instead')
+const AttachMediaToMessageResponse$json = {
+  '1': 'AttachMediaToMessageResponse',
+  '2': [
+    {'1': 'attachment', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.MessageAttachment', '10': 'attachment'},
+  ],
+};
+
+/// Descriptor for `AttachMediaToMessageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List attachMediaToMessageResponseDescriptor = $convert.base64Decode(
+    'ChxBdHRhY2hNZWRpYVRvTWVzc2FnZVJlc3BvbnNlEkUKCmF0dGFjaG1lbnQYASABKAsyJS5zdH'
+    'RhdHR1cy5kYXRpbmcudjEuTWVzc2FnZUF0dGFjaG1lbnRSCmF0dGFjaG1lbnQ=');
+
+@$core.Deprecated('Use listMessageAttachmentsRequestDescriptor instead')
+const ListMessageAttachmentsRequest$json = {
+  '1': 'ListMessageAttachmentsRequest',
+  '2': [
+    {'1': 'message_id', '3': 1, '4': 1, '5': 9, '10': 'messageId'},
+  ],
+};
+
+/// Descriptor for `ListMessageAttachmentsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMessageAttachmentsRequestDescriptor = $convert.base64Decode(
+    'Ch1MaXN0TWVzc2FnZUF0dGFjaG1lbnRzUmVxdWVzdBIdCgptZXNzYWdlX2lkGAEgASgJUgltZX'
+    'NzYWdlSWQ=');
+
+@$core.Deprecated('Use listMessageAttachmentsResponseDescriptor instead')
+const ListMessageAttachmentsResponse$json = {
+  '1': 'ListMessageAttachmentsResponse',
+  '2': [
+    {'1': 'attachments', '3': 1, '4': 3, '5': 11, '6': '.sttattus.dating.v1.MessageAttachment', '10': 'attachments'},
+  ],
+};
+
+/// Descriptor for `ListMessageAttachmentsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMessageAttachmentsResponseDescriptor = $convert.base64Decode(
+    'Ch5MaXN0TWVzc2FnZUF0dGFjaG1lbnRzUmVzcG9uc2USRwoLYXR0YWNobWVudHMYASADKAsyJS'
+    '5zdHRhdHR1cy5kYXRpbmcudjEuTWVzc2FnZUF0dGFjaG1lbnRSC2F0dGFjaG1lbnRz');
+

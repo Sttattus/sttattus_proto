@@ -158,6 +158,15 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$mintLiveKitToken, request, options: options);
   }
 
+  /// A9P2.4 — voice + video message attachments.
+  $grpc.ResponseFuture<$0.AttachMediaToMessageResponse> attachMediaToMessage($0.AttachMediaToMessageRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$attachMediaToMessage, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMessageAttachmentsResponse> listMessageAttachments($0.ListMessageAttachmentsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMessageAttachments, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getProfile = $grpc.ClientMethod<$0.GetProfileRequest, $0.GetProfileResponse>(
@@ -280,6 +289,14 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/MintLiveKitToken',
       ($0.MintLiveKitTokenRequest value) => value.writeToBuffer(),
       $0.MintLiveKitTokenResponse.fromBuffer);
+  static final _$attachMediaToMessage = $grpc.ClientMethod<$0.AttachMediaToMessageRequest, $0.AttachMediaToMessageResponse>(
+      '/sttattus.dating.v1.DatingService/AttachMediaToMessage',
+      ($0.AttachMediaToMessageRequest value) => value.writeToBuffer(),
+      $0.AttachMediaToMessageResponse.fromBuffer);
+  static final _$listMessageAttachments = $grpc.ClientMethod<$0.ListMessageAttachmentsRequest, $0.ListMessageAttachmentsResponse>(
+      '/sttattus.dating.v1.DatingService/ListMessageAttachments',
+      ($0.ListMessageAttachmentsRequest value) => value.writeToBuffer(),
+      $0.ListMessageAttachmentsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dating.v1.DatingService')
@@ -497,6 +514,20 @@ abstract class DatingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.MintLiveKitTokenRequest.fromBuffer(value),
         ($0.MintLiveKitTokenResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AttachMediaToMessageRequest, $0.AttachMediaToMessageResponse>(
+        'AttachMediaToMessage',
+        attachMediaToMessage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.AttachMediaToMessageRequest.fromBuffer(value),
+        ($0.AttachMediaToMessageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMessageAttachmentsRequest, $0.ListMessageAttachmentsResponse>(
+        'ListMessageAttachments',
+        listMessageAttachments_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMessageAttachmentsRequest.fromBuffer(value),
+        ($0.ListMessageAttachmentsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProfileRequest> $request) async {
@@ -678,5 +709,17 @@ abstract class DatingServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.MintLiveKitTokenResponse> mintLiveKitToken($grpc.ServiceCall call, $0.MintLiveKitTokenRequest request);
+
+  $async.Future<$0.AttachMediaToMessageResponse> attachMediaToMessage_Pre($grpc.ServiceCall $call, $async.Future<$0.AttachMediaToMessageRequest> $request) async {
+    return attachMediaToMessage($call, await $request);
+  }
+
+  $async.Future<$0.AttachMediaToMessageResponse> attachMediaToMessage($grpc.ServiceCall call, $0.AttachMediaToMessageRequest request);
+
+  $async.Future<$0.ListMessageAttachmentsResponse> listMessageAttachments_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMessageAttachmentsRequest> $request) async {
+    return listMessageAttachments($call, await $request);
+  }
+
+  $async.Future<$0.ListMessageAttachmentsResponse> listMessageAttachments($grpc.ServiceCall call, $0.ListMessageAttachmentsRequest request);
 
 }

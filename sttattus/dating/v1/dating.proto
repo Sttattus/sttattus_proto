@@ -395,6 +395,36 @@ message MintLiveKitTokenResponse {
   string ws_url = 2;
 }
 
+// === Voice + video messages (A9P2.4) ===
+
+// MessageAttachment ties a message to a media_assets row. kind:
+// 'voice' | 'video'. The clip bytes go through MediaService's
+// presigned-URL flow; this row is the join.
+message MessageAttachment {
+  string id = 1;
+  string message_id = 2;
+  string media_asset_id = 3;
+  string kind = 4;
+  int32 duration_seconds = 5;
+}
+
+message AttachMediaToMessageRequest {
+  string message_id = 1;
+  string media_asset_id = 2;
+  string kind = 3;
+  int32 duration_seconds = 4;
+}
+message AttachMediaToMessageResponse {
+  MessageAttachment attachment = 1;
+}
+
+message ListMessageAttachmentsRequest {
+  string message_id = 1;
+}
+message ListMessageAttachmentsResponse {
+  repeated MessageAttachment attachments = 1;
+}
+
 service DatingService {
   rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
   rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
@@ -438,4 +468,8 @@ service DatingService {
   rpc CreateAgoraRoom(CreateAgoraRoomRequest) returns (CreateAgoraRoomResponse);
   rpc EndAgoraRoom(EndAgoraRoomRequest) returns (EndAgoraRoomResponse);
   rpc MintLiveKitToken(MintLiveKitTokenRequest) returns (MintLiveKitTokenResponse);
+
+  // A9P2.4 — voice + video message attachments.
+  rpc AttachMediaToMessage(AttachMediaToMessageRequest) returns (AttachMediaToMessageResponse);
+  rpc ListMessageAttachments(ListMessageAttachmentsRequest) returns (ListMessageAttachmentsResponse);
 }

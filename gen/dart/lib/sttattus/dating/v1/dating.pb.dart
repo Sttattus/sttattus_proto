@@ -4398,6 +4398,319 @@ class MintLiveKitTokenResponse extends $pb.GeneratedMessage {
   void clearWsUrl() => $_clearField(2);
 }
 
+/// MessageAttachment ties a message to a media_assets row. kind:
+/// 'voice' | 'video'. The clip bytes go through MediaService's
+/// presigned-URL flow; this row is the join.
+class MessageAttachment extends $pb.GeneratedMessage {
+  factory MessageAttachment({
+    $core.String? id,
+    $core.String? messageId,
+    $core.String? mediaAssetId,
+    $core.String? kind,
+    $core.int? durationSeconds,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (messageId != null) result.messageId = messageId;
+    if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
+    if (kind != null) result.kind = kind;
+    if (durationSeconds != null) result.durationSeconds = durationSeconds;
+    return result;
+  }
+
+  MessageAttachment._();
+
+  factory MessageAttachment.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MessageAttachment.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MessageAttachment', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'messageId')
+    ..aOS(3, _omitFieldNames ? '' : 'mediaAssetId')
+    ..aOS(4, _omitFieldNames ? '' : 'kind')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'durationSeconds', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MessageAttachment clone() => MessageAttachment()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MessageAttachment copyWith(void Function(MessageAttachment) updates) => super.copyWith((message) => updates(message as MessageAttachment)) as MessageAttachment;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MessageAttachment create() => MessageAttachment._();
+  @$core.override
+  MessageAttachment createEmptyInstance() => create();
+  static $pb.PbList<MessageAttachment> createRepeated() => $pb.PbList<MessageAttachment>();
+  @$core.pragma('dart2js:noInline')
+  static MessageAttachment getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MessageAttachment>(create);
+  static MessageAttachment? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get messageId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set messageId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMessageId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMessageId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get mediaAssetId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set mediaAssetId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMediaAssetId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMediaAssetId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get kind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set kind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get durationSeconds => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set durationSeconds($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDurationSeconds() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDurationSeconds() => $_clearField(5);
+}
+
+class AttachMediaToMessageRequest extends $pb.GeneratedMessage {
+  factory AttachMediaToMessageRequest({
+    $core.String? messageId,
+    $core.String? mediaAssetId,
+    $core.String? kind,
+    $core.int? durationSeconds,
+  }) {
+    final result = create();
+    if (messageId != null) result.messageId = messageId;
+    if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
+    if (kind != null) result.kind = kind;
+    if (durationSeconds != null) result.durationSeconds = durationSeconds;
+    return result;
+  }
+
+  AttachMediaToMessageRequest._();
+
+  factory AttachMediaToMessageRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AttachMediaToMessageRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AttachMediaToMessageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'messageId')
+    ..aOS(2, _omitFieldNames ? '' : 'mediaAssetId')
+    ..aOS(3, _omitFieldNames ? '' : 'kind')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'durationSeconds', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AttachMediaToMessageRequest clone() => AttachMediaToMessageRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AttachMediaToMessageRequest copyWith(void Function(AttachMediaToMessageRequest) updates) => super.copyWith((message) => updates(message as AttachMediaToMessageRequest)) as AttachMediaToMessageRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AttachMediaToMessageRequest create() => AttachMediaToMessageRequest._();
+  @$core.override
+  AttachMediaToMessageRequest createEmptyInstance() => create();
+  static $pb.PbList<AttachMediaToMessageRequest> createRepeated() => $pb.PbList<AttachMediaToMessageRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AttachMediaToMessageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AttachMediaToMessageRequest>(create);
+  static AttachMediaToMessageRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get messageId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set messageId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMessageId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMessageId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get mediaAssetId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set mediaAssetId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMediaAssetId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMediaAssetId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get kind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set kind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get durationSeconds => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set durationSeconds($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDurationSeconds() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDurationSeconds() => $_clearField(4);
+}
+
+class AttachMediaToMessageResponse extends $pb.GeneratedMessage {
+  factory AttachMediaToMessageResponse({
+    MessageAttachment? attachment,
+  }) {
+    final result = create();
+    if (attachment != null) result.attachment = attachment;
+    return result;
+  }
+
+  AttachMediaToMessageResponse._();
+
+  factory AttachMediaToMessageResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AttachMediaToMessageResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AttachMediaToMessageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<MessageAttachment>(1, _omitFieldNames ? '' : 'attachment', subBuilder: MessageAttachment.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AttachMediaToMessageResponse clone() => AttachMediaToMessageResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AttachMediaToMessageResponse copyWith(void Function(AttachMediaToMessageResponse) updates) => super.copyWith((message) => updates(message as AttachMediaToMessageResponse)) as AttachMediaToMessageResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AttachMediaToMessageResponse create() => AttachMediaToMessageResponse._();
+  @$core.override
+  AttachMediaToMessageResponse createEmptyInstance() => create();
+  static $pb.PbList<AttachMediaToMessageResponse> createRepeated() => $pb.PbList<AttachMediaToMessageResponse>();
+  @$core.pragma('dart2js:noInline')
+  static AttachMediaToMessageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AttachMediaToMessageResponse>(create);
+  static AttachMediaToMessageResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  MessageAttachment get attachment => $_getN(0);
+  @$pb.TagNumber(1)
+  set attachment(MessageAttachment value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAttachment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAttachment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  MessageAttachment ensureAttachment() => $_ensure(0);
+}
+
+class ListMessageAttachmentsRequest extends $pb.GeneratedMessage {
+  factory ListMessageAttachmentsRequest({
+    $core.String? messageId,
+  }) {
+    final result = create();
+    if (messageId != null) result.messageId = messageId;
+    return result;
+  }
+
+  ListMessageAttachmentsRequest._();
+
+  factory ListMessageAttachmentsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMessageAttachmentsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMessageAttachmentsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'messageId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMessageAttachmentsRequest clone() => ListMessageAttachmentsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMessageAttachmentsRequest copyWith(void Function(ListMessageAttachmentsRequest) updates) => super.copyWith((message) => updates(message as ListMessageAttachmentsRequest)) as ListMessageAttachmentsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMessageAttachmentsRequest create() => ListMessageAttachmentsRequest._();
+  @$core.override
+  ListMessageAttachmentsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMessageAttachmentsRequest> createRepeated() => $pb.PbList<ListMessageAttachmentsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMessageAttachmentsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMessageAttachmentsRequest>(create);
+  static ListMessageAttachmentsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get messageId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set messageId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMessageId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMessageId() => $_clearField(1);
+}
+
+class ListMessageAttachmentsResponse extends $pb.GeneratedMessage {
+  factory ListMessageAttachmentsResponse({
+    $core.Iterable<MessageAttachment>? attachments,
+  }) {
+    final result = create();
+    if (attachments != null) result.attachments.addAll(attachments);
+    return result;
+  }
+
+  ListMessageAttachmentsResponse._();
+
+  factory ListMessageAttachmentsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMessageAttachmentsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMessageAttachmentsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..pc<MessageAttachment>(1, _omitFieldNames ? '' : 'attachments', $pb.PbFieldType.PM, subBuilder: MessageAttachment.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMessageAttachmentsResponse clone() => ListMessageAttachmentsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMessageAttachmentsResponse copyWith(void Function(ListMessageAttachmentsResponse) updates) => super.copyWith((message) => updates(message as ListMessageAttachmentsResponse)) as ListMessageAttachmentsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMessageAttachmentsResponse create() => ListMessageAttachmentsResponse._();
+  @$core.override
+  ListMessageAttachmentsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMessageAttachmentsResponse> createRepeated() => $pb.PbList<ListMessageAttachmentsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMessageAttachmentsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMessageAttachmentsResponse>(create);
+  static ListMessageAttachmentsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<MessageAttachment> get attachments => $_getList(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

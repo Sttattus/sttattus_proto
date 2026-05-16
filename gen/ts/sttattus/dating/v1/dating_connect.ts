@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { BlockUserRequest, BlockUserResponse, CreateAgoraRoomRequest, CreateAgoraRoomResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, EndAgoraRoomRequest, EndAgoraRoomResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListLiveRoomsRequest, ListLiveRoomsResponse, ListMatchesRequest, ListMatchesResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyReportsRequest, ListMyReportsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, MintLiveKitTokenRequest, MintLiveKitTokenResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
+import { AttachMediaToMessageRequest, AttachMediaToMessageResponse, BlockUserRequest, BlockUserResponse, CreateAgoraRoomRequest, CreateAgoraRoomResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, EndAgoraRoomRequest, EndAgoraRoomResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListLiveRoomsRequest, ListLiveRoomsResponse, ListMatchesRequest, ListMatchesResponse, ListMessageAttachmentsRequest, ListMessageAttachmentsResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyReportsRequest, ListMyReportsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, MintLiveKitTokenRequest, MintLiveKitTokenResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -292,6 +292,26 @@ export const DatingService = {
       name: "MintLiveKitToken",
       I: MintLiveKitTokenRequest,
       O: MintLiveKitTokenResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9P2.4 — voice + video message attachments.
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.AttachMediaToMessage
+     */
+    attachMediaToMessage: {
+      name: "AttachMediaToMessage",
+      I: AttachMediaToMessageRequest,
+      O: AttachMediaToMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.ListMessageAttachments
+     */
+    listMessageAttachments: {
+      name: "ListMessageAttachments",
+      I: ListMessageAttachmentsRequest,
+      O: ListMessageAttachmentsResponse,
       kind: MethodKind.Unary,
     },
   }
