@@ -161,6 +161,7 @@ var MediaService_ServiceDesc = grpc.ServiceDesc{
 const (
 	ImageProcService_Resize_FullMethodName                = "/sttattus.media.v1.ImageProcService/Resize"
 	ImageProcService_ExtractDominantColors_FullMethodName = "/sttattus.media.v1.ImageProcService/ExtractDominantColors"
+	ImageProcService_ExtractExif_FullMethodName           = "/sttattus.media.v1.ImageProcService/ExtractExif"
 )
 
 // ImageProcServiceClient is the client API for ImageProcService service.
@@ -169,6 +170,10 @@ const (
 type ImageProcServiceClient interface {
 	Resize(ctx context.Context, in *ResizeRequest, opts ...grpc.CallOption) (*ResizeResponse, error)
 	ExtractDominantColors(ctx context.Context, in *ExtractDominantColorsRequest, opts ...grpc.CallOption) (*ExtractDominantColorsResponse, error)
+	// N10.3 — EXIF + GPS extraction. Nomad calls this after every
+	// milestone-photo upload to bind the visit's verified location to
+	// EXIF rather than to client-supplied coordinates.
+	ExtractExif(ctx context.Context, in *ExtractExifRequest, opts ...grpc.CallOption) (*ExtractExifResponse, error)
 }
 
 type imageProcServiceClient struct {
@@ -199,12 +204,26 @@ func (c *imageProcServiceClient) ExtractDominantColors(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *imageProcServiceClient) ExtractExif(ctx context.Context, in *ExtractExifRequest, opts ...grpc.CallOption) (*ExtractExifResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExtractExifResponse)
+	err := c.cc.Invoke(ctx, ImageProcService_ExtractExif_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ImageProcServiceServer is the server API for ImageProcService service.
 // All implementations must embed UnimplementedImageProcServiceServer
 // for forward compatibility.
 type ImageProcServiceServer interface {
 	Resize(context.Context, *ResizeRequest) (*ResizeResponse, error)
 	ExtractDominantColors(context.Context, *ExtractDominantColorsRequest) (*ExtractDominantColorsResponse, error)
+	// N10.3 — EXIF + GPS extraction. Nomad calls this after every
+	// milestone-photo upload to bind the visit's verified location to
+	// EXIF rather than to client-supplied coordinates.
+	ExtractExif(context.Context, *ExtractExifRequest) (*ExtractExifResponse, error)
 	mustEmbedUnimplementedImageProcServiceServer()
 }
 
@@ -220,6 +239,9 @@ func (UnimplementedImageProcServiceServer) Resize(context.Context, *ResizeReques
 }
 func (UnimplementedImageProcServiceServer) ExtractDominantColors(context.Context, *ExtractDominantColorsRequest) (*ExtractDominantColorsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ExtractDominantColors not implemented")
+}
+func (UnimplementedImageProcServiceServer) ExtractExif(context.Context, *ExtractExifRequest) (*ExtractExifResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExtractExif not implemented")
 }
 func (UnimplementedImageProcServiceServer) mustEmbedUnimplementedImageProcServiceServer() {}
 func (UnimplementedImageProcServiceServer) testEmbeddedByValue()                          {}
@@ -278,6 +300,24 @@ func _ImageProcService_ExtractDominantColors_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ImageProcService_ExtractExif_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExtractExifRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImageProcServiceServer).ExtractExif(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ImageProcService_ExtractExif_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImageProcServiceServer).ExtractExif(ctx, req.(*ExtractExifRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ImageProcService_ServiceDesc is the grpc.ServiceDesc for ImageProcService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -292,6 +332,10 @@ var ImageProcService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExtractDominantColors",
 			Handler:    _ImageProcService_ExtractDominantColors_Handler,
+		},
+		{
+			MethodName: "ExtractExif",
+			Handler:    _ImageProcService_ExtractExif_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

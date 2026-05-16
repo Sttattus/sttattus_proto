@@ -725,6 +725,209 @@ class ExtractDominantColorsResponse extends $pb.GeneratedMessage {
   $pb.PbList<$core.String> get hexColors => $_getList(0);
 }
 
+class ExtractExifRequest extends $pb.GeneratedMessage {
+  factory ExtractExifRequest({
+    $core.String? sourceUrl,
+  }) {
+    final result = create();
+    if (sourceUrl != null) result.sourceUrl = sourceUrl;
+    return result;
+  }
+
+  ExtractExifRequest._();
+
+  factory ExtractExifRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ExtractExifRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExtractExifRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.media.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourceUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExtractExifRequest clone() => ExtractExifRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExtractExifRequest copyWith(void Function(ExtractExifRequest) updates) => super.copyWith((message) => updates(message as ExtractExifRequest)) as ExtractExifRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExtractExifRequest create() => ExtractExifRequest._();
+  @$core.override
+  ExtractExifRequest createEmptyInstance() => create();
+  static $pb.PbList<ExtractExifRequest> createRepeated() => $pb.PbList<ExtractExifRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ExtractExifRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExtractExifRequest>(create);
+  static ExtractExifRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sourceUrl => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sourceUrl($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSourceUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceUrl() => $_clearField(1);
+}
+
+class ExtractExifResponse extends $pb.GeneratedMessage {
+  factory ExtractExifResponse({
+    $core.bool? gpsPresent,
+    $core.double? latitude,
+    $core.double? longitude,
+    $core.bool? takenAtPresent,
+    $fixnum.Int64? takenAt,
+    $core.String? cameraMake,
+    $core.String? cameraModel,
+    $core.int? orientation,
+    $core.int? width,
+    $core.int? height,
+  }) {
+    final result = create();
+    if (gpsPresent != null) result.gpsPresent = gpsPresent;
+    if (latitude != null) result.latitude = latitude;
+    if (longitude != null) result.longitude = longitude;
+    if (takenAtPresent != null) result.takenAtPresent = takenAtPresent;
+    if (takenAt != null) result.takenAt = takenAt;
+    if (cameraMake != null) result.cameraMake = cameraMake;
+    if (cameraModel != null) result.cameraModel = cameraModel;
+    if (orientation != null) result.orientation = orientation;
+    if (width != null) result.width = width;
+    if (height != null) result.height = height;
+    return result;
+  }
+
+  ExtractExifResponse._();
+
+  factory ExtractExifResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ExtractExifResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExtractExifResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.media.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'gpsPresent')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'latitude', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'longitude', $pb.PbFieldType.OD)
+    ..aOB(4, _omitFieldNames ? '' : 'takenAtPresent')
+    ..aInt64(5, _omitFieldNames ? '' : 'takenAt')
+    ..aOS(6, _omitFieldNames ? '' : 'cameraMake')
+    ..aOS(7, _omitFieldNames ? '' : 'cameraModel')
+    ..a<$core.int>(8, _omitFieldNames ? '' : 'orientation', $pb.PbFieldType.O3)
+    ..a<$core.int>(9, _omitFieldNames ? '' : 'width', $pb.PbFieldType.O3)
+    ..a<$core.int>(10, _omitFieldNames ? '' : 'height', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExtractExifResponse clone() => ExtractExifResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExtractExifResponse copyWith(void Function(ExtractExifResponse) updates) => super.copyWith((message) => updates(message as ExtractExifResponse)) as ExtractExifResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExtractExifResponse create() => ExtractExifResponse._();
+  @$core.override
+  ExtractExifResponse createEmptyInstance() => create();
+  static $pb.PbList<ExtractExifResponse> createRepeated() => $pb.PbList<ExtractExifResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ExtractExifResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExtractExifResponse>(create);
+  static ExtractExifResponse? _defaultInstance;
+
+  /// GPS coordinates as decoded from the EXIF GPSInfo IFD.
+  @$pb.TagNumber(1)
+  $core.bool get gpsPresent => $_getBF(0);
+  @$pb.TagNumber(1)
+  set gpsPresent($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGpsPresent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGpsPresent() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get latitude => $_getN(1);
+  @$pb.TagNumber(2)
+  set latitude($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLatitude() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLatitude() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get longitude => $_getN(2);
+  @$pb.TagNumber(3)
+  set longitude($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLongitude() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLongitude() => $_clearField(3);
+
+  /// Capture timestamp from EXIF DateTimeOriginal (UTC unix seconds).
+  @$pb.TagNumber(4)
+  $core.bool get takenAtPresent => $_getBF(3);
+  @$pb.TagNumber(4)
+  set takenAtPresent($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTakenAtPresent() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTakenAtPresent() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get takenAt => $_getI64(4);
+  @$pb.TagNumber(5)
+  set takenAt($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTakenAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTakenAt() => $_clearField(5);
+
+  /// Camera + lens identifiers from the IFD0 / ExifIFD.
+  @$pb.TagNumber(6)
+  $core.String get cameraMake => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set cameraMake($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCameraMake() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCameraMake() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get cameraModel => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set cameraModel($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCameraModel() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCameraModel() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get orientation => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set orientation($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasOrientation() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearOrientation() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get width => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set width($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasWidth() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearWidth() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get height => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set height($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasHeight() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearHeight() => $_clearField(10);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

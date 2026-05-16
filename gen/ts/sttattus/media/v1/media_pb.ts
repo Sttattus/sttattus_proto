@@ -535,3 +535,137 @@ export class ExtractDominantColorsResponse extends Message<ExtractDominantColors
   }
 }
 
+/**
+ * @generated from message sttattus.media.v1.ExtractExifRequest
+ */
+export class ExtractExifRequest extends Message<ExtractExifRequest> {
+  /**
+   * @generated from field: string source_url = 1;
+   */
+  sourceUrl = "";
+
+  constructor(data?: PartialMessage<ExtractExifRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.media.v1.ExtractExifRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExtractExifRequest {
+    return new ExtractExifRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExtractExifRequest {
+    return new ExtractExifRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExtractExifRequest {
+    return new ExtractExifRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExtractExifRequest | PlainMessage<ExtractExifRequest> | undefined, b: ExtractExifRequest | PlainMessage<ExtractExifRequest> | undefined): boolean {
+    return proto3.util.equals(ExtractExifRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.media.v1.ExtractExifResponse
+ */
+export class ExtractExifResponse extends Message<ExtractExifResponse> {
+  /**
+   * GPS coordinates as decoded from the EXIF GPSInfo IFD.
+   *
+   * @generated from field: bool gps_present = 1;
+   */
+  gpsPresent = false;
+
+  /**
+   * @generated from field: double latitude = 2;
+   */
+  latitude = 0;
+
+  /**
+   * @generated from field: double longitude = 3;
+   */
+  longitude = 0;
+
+  /**
+   * Capture timestamp from EXIF DateTimeOriginal (UTC unix seconds).
+   *
+   * @generated from field: bool taken_at_present = 4;
+   */
+  takenAtPresent = false;
+
+  /**
+   * @generated from field: int64 taken_at = 5;
+   */
+  takenAt = protoInt64.zero;
+
+  /**
+   * Camera + lens identifiers from the IFD0 / ExifIFD.
+   *
+   * @generated from field: string camera_make = 6;
+   */
+  cameraMake = "";
+
+  /**
+   * @generated from field: string camera_model = 7;
+   */
+  cameraModel = "";
+
+  /**
+   * @generated from field: int32 orientation = 8;
+   */
+  orientation = 0;
+
+  /**
+   * @generated from field: int32 width = 9;
+   */
+  width = 0;
+
+  /**
+   * @generated from field: int32 height = 10;
+   */
+  height = 0;
+
+  constructor(data?: PartialMessage<ExtractExifResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.media.v1.ExtractExifResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "gps_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "latitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "longitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "taken_at_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "taken_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "camera_make", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "camera_model", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "orientation", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "width", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "height", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExtractExifResponse {
+    return new ExtractExifResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExtractExifResponse {
+    return new ExtractExifResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExtractExifResponse {
+    return new ExtractExifResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExtractExifResponse | PlainMessage<ExtractExifResponse> | undefined, b: ExtractExifResponse | PlainMessage<ExtractExifResponse> | undefined): boolean {
+    return proto3.util.equals(ExtractExifResponse, a, b);
+  }
+}
+

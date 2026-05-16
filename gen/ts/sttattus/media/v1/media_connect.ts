@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ExtractDominantColorsRequest, ExtractDominantColorsResponse, MarkProcessedRequest, MarkProcessedResponse, RequestUploadRequest, RequestUploadResponse, ResizeRequest, ResizeResponse } from "./media_pb.js";
+import { ExtractDominantColorsRequest, ExtractDominantColorsResponse, ExtractExifRequest, ExtractExifResponse, MarkProcessedRequest, MarkProcessedResponse, RequestUploadRequest, RequestUploadResponse, ResizeRequest, ResizeResponse } from "./media_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -55,6 +55,19 @@ export const ImageProcService = {
       name: "ExtractDominantColors",
       I: ExtractDominantColorsRequest,
       O: ExtractDominantColorsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * N10.3 — EXIF + GPS extraction. Nomad calls this after every
+     * milestone-photo upload to bind the visit's verified location to
+     * EXIF rather than to client-supplied coordinates.
+     *
+     * @generated from rpc sttattus.media.v1.ImageProcService.ExtractExif
+     */
+    extractExif: {
+      name: "ExtractExif",
+      I: ExtractExifRequest,
+      O: ExtractExifResponse,
       kind: MethodKind.Unary,
     },
   }

@@ -670,6 +670,169 @@ func (x *ExtractDominantColorsResponse) GetHexColors() []string {
 	return nil
 }
 
+type ExtractExifRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SourceUrl     string                 `protobuf:"bytes,1,opt,name=source_url,json=sourceUrl,proto3" json:"source_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExtractExifRequest) Reset() {
+	*x = ExtractExifRequest{}
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExtractExifRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExtractExifRequest) ProtoMessage() {}
+
+func (x *ExtractExifRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExtractExifRequest.ProtoReflect.Descriptor instead.
+func (*ExtractExifRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *ExtractExifRequest) GetSourceUrl() string {
+	if x != nil {
+		return x.SourceUrl
+	}
+	return ""
+}
+
+type ExtractExifResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// GPS coordinates as decoded from the EXIF GPSInfo IFD.
+	GpsPresent bool    `protobuf:"varint,1,opt,name=gps_present,json=gpsPresent,proto3" json:"gps_present,omitempty"`
+	Latitude   float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty"`
+	Longitude  float64 `protobuf:"fixed64,3,opt,name=longitude,proto3" json:"longitude,omitempty"`
+	// Capture timestamp from EXIF DateTimeOriginal (UTC unix seconds).
+	TakenAtPresent bool  `protobuf:"varint,4,opt,name=taken_at_present,json=takenAtPresent,proto3" json:"taken_at_present,omitempty"`
+	TakenAt        int64 `protobuf:"varint,5,opt,name=taken_at,json=takenAt,proto3" json:"taken_at,omitempty"`
+	// Camera + lens identifiers from the IFD0 / ExifIFD.
+	CameraMake    string `protobuf:"bytes,6,opt,name=camera_make,json=cameraMake,proto3" json:"camera_make,omitempty"`
+	CameraModel   string `protobuf:"bytes,7,opt,name=camera_model,json=cameraModel,proto3" json:"camera_model,omitempty"`
+	Orientation   int32  `protobuf:"varint,8,opt,name=orientation,proto3" json:"orientation,omitempty"`
+	Width         int32  `protobuf:"varint,9,opt,name=width,proto3" json:"width,omitempty"`
+	Height        int32  `protobuf:"varint,10,opt,name=height,proto3" json:"height,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExtractExifResponse) Reset() {
+	*x = ExtractExifResponse{}
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExtractExifResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExtractExifResponse) ProtoMessage() {}
+
+func (x *ExtractExifResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExtractExifResponse.ProtoReflect.Descriptor instead.
+func (*ExtractExifResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *ExtractExifResponse) GetGpsPresent() bool {
+	if x != nil {
+		return x.GpsPresent
+	}
+	return false
+}
+
+func (x *ExtractExifResponse) GetLatitude() float64 {
+	if x != nil {
+		return x.Latitude
+	}
+	return 0
+}
+
+func (x *ExtractExifResponse) GetLongitude() float64 {
+	if x != nil {
+		return x.Longitude
+	}
+	return 0
+}
+
+func (x *ExtractExifResponse) GetTakenAtPresent() bool {
+	if x != nil {
+		return x.TakenAtPresent
+	}
+	return false
+}
+
+func (x *ExtractExifResponse) GetTakenAt() int64 {
+	if x != nil {
+		return x.TakenAt
+	}
+	return 0
+}
+
+func (x *ExtractExifResponse) GetCameraMake() string {
+	if x != nil {
+		return x.CameraMake
+	}
+	return ""
+}
+
+func (x *ExtractExifResponse) GetCameraModel() string {
+	if x != nil {
+		return x.CameraModel
+	}
+	return ""
+}
+
+func (x *ExtractExifResponse) GetOrientation() int32 {
+	if x != nil {
+		return x.Orientation
+	}
+	return 0
+}
+
+func (x *ExtractExifResponse) GetWidth() int32 {
+	if x != nil {
+		return x.Width
+	}
+	return 0
+}
+
+func (x *ExtractExifResponse) GetHeight() int32 {
+	if x != nil {
+		return x.Height
+	}
+	return 0
+}
+
 var File_sttattus_media_v1_media_proto protoreflect.FileDescriptor
 
 const file_sttattus_media_v1_media_proto_rawDesc = "" +
@@ -729,7 +892,24 @@ const file_sttattus_media_v1_media_proto_rawDesc = "" +
 	"\fsample_count\x18\x02 \x01(\x05R\vsampleCount\">\n" +
 	"\x1dExtractDominantColorsResponse\x12\x1d\n" +
 	"\n" +
-	"hex_colors\x18\x01 \x03(\tR\thexColors*\xb1\x01\n" +
+	"hex_colors\x18\x01 \x03(\tR\thexColors\"3\n" +
+	"\x12ExtractExifRequest\x12\x1d\n" +
+	"\n" +
+	"source_url\x18\x01 \x01(\tR\tsourceUrl\"\xc9\x02\n" +
+	"\x13ExtractExifResponse\x12\x1f\n" +
+	"\vgps_present\x18\x01 \x01(\bR\n" +
+	"gpsPresent\x12\x1a\n" +
+	"\blatitude\x18\x02 \x01(\x01R\blatitude\x12\x1c\n" +
+	"\tlongitude\x18\x03 \x01(\x01R\tlongitude\x12(\n" +
+	"\x10taken_at_present\x18\x04 \x01(\bR\x0etakenAtPresent\x12\x19\n" +
+	"\btaken_at\x18\x05 \x01(\x03R\atakenAt\x12\x1f\n" +
+	"\vcamera_make\x18\x06 \x01(\tR\n" +
+	"cameraMake\x12!\n" +
+	"\fcamera_model\x18\a \x01(\tR\vcameraModel\x12 \n" +
+	"\vorientation\x18\b \x01(\x05R\vorientation\x12\x14\n" +
+	"\x05width\x18\t \x01(\x05R\x05width\x12\x16\n" +
+	"\x06height\x18\n" +
+	" \x01(\x05R\x06height*\xb1\x01\n" +
 	"\x10ProcessingStatus\x12!\n" +
 	"\x1dPROCESSING_STATUS_UNSPECIFIED\x10\x00\x12\x1d\n" +
 	"\x19PROCESSING_STATUS_PENDING\x10\x01\x12 \n" +
@@ -738,10 +918,11 @@ const file_sttattus_media_v1_media_proto_rawDesc = "" +
 	"\x18PROCESSING_STATUS_FAILED\x10\x042\xd6\x01\n" +
 	"\fMediaService\x12b\n" +
 	"\rRequestUpload\x12'.sttattus.media.v1.RequestUploadRequest\x1a(.sttattus.media.v1.RequestUploadResponse\x12b\n" +
-	"\rMarkProcessed\x12'.sttattus.media.v1.MarkProcessedRequest\x1a(.sttattus.media.v1.MarkProcessedResponse2\xdd\x01\n" +
+	"\rMarkProcessed\x12'.sttattus.media.v1.MarkProcessedRequest\x1a(.sttattus.media.v1.MarkProcessedResponse2\xbb\x02\n" +
 	"\x10ImageProcService\x12M\n" +
 	"\x06Resize\x12 .sttattus.media.v1.ResizeRequest\x1a!.sttattus.media.v1.ResizeResponse\x12z\n" +
-	"\x15ExtractDominantColors\x12/.sttattus.media.v1.ExtractDominantColorsRequest\x1a0.sttattus.media.v1.ExtractDominantColorsResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/media/v1;mediav1b\x06proto3"
+	"\x15ExtractDominantColors\x12/.sttattus.media.v1.ExtractDominantColorsRequest\x1a0.sttattus.media.v1.ExtractDominantColorsResponse\x12\\\n" +
+	"\vExtractExif\x12%.sttattus.media.v1.ExtractExifRequest\x1a&.sttattus.media.v1.ExtractExifResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/media/v1;mediav1b\x06proto3"
 
 var (
 	file_sttattus_media_v1_media_proto_rawDescOnce sync.Once
@@ -756,7 +937,7 @@ func file_sttattus_media_v1_media_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_media_v1_media_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_sttattus_media_v1_media_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_sttattus_media_v1_media_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_sttattus_media_v1_media_proto_goTypes = []any{
 	(ProcessingStatus)(0),                 // 0: sttattus.media.v1.ProcessingStatus
 	(*MediaAsset)(nil),                    // 1: sttattus.media.v1.MediaAsset
@@ -768,23 +949,27 @@ var file_sttattus_media_v1_media_proto_goTypes = []any{
 	(*ResizeResponse)(nil),                // 7: sttattus.media.v1.ResizeResponse
 	(*ExtractDominantColorsRequest)(nil),  // 8: sttattus.media.v1.ExtractDominantColorsRequest
 	(*ExtractDominantColorsResponse)(nil), // 9: sttattus.media.v1.ExtractDominantColorsResponse
+	(*ExtractExifRequest)(nil),            // 10: sttattus.media.v1.ExtractExifRequest
+	(*ExtractExifResponse)(nil),           // 11: sttattus.media.v1.ExtractExifResponse
 }
 var file_sttattus_media_v1_media_proto_depIdxs = []int32{
-	0, // 0: sttattus.media.v1.MediaAsset.status:type_name -> sttattus.media.v1.ProcessingStatus
-	1, // 1: sttattus.media.v1.MarkProcessedResponse.asset:type_name -> sttattus.media.v1.MediaAsset
-	2, // 2: sttattus.media.v1.MediaService.RequestUpload:input_type -> sttattus.media.v1.RequestUploadRequest
-	4, // 3: sttattus.media.v1.MediaService.MarkProcessed:input_type -> sttattus.media.v1.MarkProcessedRequest
-	6, // 4: sttattus.media.v1.ImageProcService.Resize:input_type -> sttattus.media.v1.ResizeRequest
-	8, // 5: sttattus.media.v1.ImageProcService.ExtractDominantColors:input_type -> sttattus.media.v1.ExtractDominantColorsRequest
-	3, // 6: sttattus.media.v1.MediaService.RequestUpload:output_type -> sttattus.media.v1.RequestUploadResponse
-	5, // 7: sttattus.media.v1.MediaService.MarkProcessed:output_type -> sttattus.media.v1.MarkProcessedResponse
-	7, // 8: sttattus.media.v1.ImageProcService.Resize:output_type -> sttattus.media.v1.ResizeResponse
-	9, // 9: sttattus.media.v1.ImageProcService.ExtractDominantColors:output_type -> sttattus.media.v1.ExtractDominantColorsResponse
-	6, // [6:10] is the sub-list for method output_type
-	2, // [2:6] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	0,  // 0: sttattus.media.v1.MediaAsset.status:type_name -> sttattus.media.v1.ProcessingStatus
+	1,  // 1: sttattus.media.v1.MarkProcessedResponse.asset:type_name -> sttattus.media.v1.MediaAsset
+	2,  // 2: sttattus.media.v1.MediaService.RequestUpload:input_type -> sttattus.media.v1.RequestUploadRequest
+	4,  // 3: sttattus.media.v1.MediaService.MarkProcessed:input_type -> sttattus.media.v1.MarkProcessedRequest
+	6,  // 4: sttattus.media.v1.ImageProcService.Resize:input_type -> sttattus.media.v1.ResizeRequest
+	8,  // 5: sttattus.media.v1.ImageProcService.ExtractDominantColors:input_type -> sttattus.media.v1.ExtractDominantColorsRequest
+	10, // 6: sttattus.media.v1.ImageProcService.ExtractExif:input_type -> sttattus.media.v1.ExtractExifRequest
+	3,  // 7: sttattus.media.v1.MediaService.RequestUpload:output_type -> sttattus.media.v1.RequestUploadResponse
+	5,  // 8: sttattus.media.v1.MediaService.MarkProcessed:output_type -> sttattus.media.v1.MarkProcessedResponse
+	7,  // 9: sttattus.media.v1.ImageProcService.Resize:output_type -> sttattus.media.v1.ResizeResponse
+	9,  // 10: sttattus.media.v1.ImageProcService.ExtractDominantColors:output_type -> sttattus.media.v1.ExtractDominantColorsResponse
+	11, // 11: sttattus.media.v1.ImageProcService.ExtractExif:output_type -> sttattus.media.v1.ExtractExifResponse
+	7,  // [7:12] is the sub-list for method output_type
+	2,  // [2:7] is the sub-list for method input_type
+	2,  // [2:2] is the sub-list for extension type_name
+	2,  // [2:2] is the sub-list for extension extendee
+	0,  // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_media_v1_media_proto_init() }
@@ -798,7 +983,7 @@ func file_sttattus_media_v1_media_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_media_v1_media_proto_rawDesc), len(file_sttattus_media_v1_media_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   9,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   2,
 		},

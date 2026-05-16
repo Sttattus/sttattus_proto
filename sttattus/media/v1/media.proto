@@ -81,7 +81,42 @@ message ExtractDominantColorsResponse {
   repeated string hex_colors = 1; // strongest first
 }
 
+// === EXIF + GPS extraction (N10.3) ===
+//
+// audits/nomad.md §10 Phase 1 item 3 — "EXIF reading on uploads.
+// Graduate imageproc from stub to real EXIF + GPS extraction." Real
+// numbers only: when EXIF / GPS isn't present in the image, the
+// response sets the corresponding _present field to false rather
+// than fabricating defaults.
+
+message ExtractExifRequest {
+  string source_url = 1;
+}
+
+message ExtractExifResponse {
+  // GPS coordinates as decoded from the EXIF GPSInfo IFD.
+  bool gps_present = 1;
+  double latitude = 2;
+  double longitude = 3;
+
+  // Capture timestamp from EXIF DateTimeOriginal (UTC unix seconds).
+  bool taken_at_present = 4;
+  int64 taken_at = 5;
+
+  // Camera + lens identifiers from the IFD0 / ExifIFD.
+  string camera_make = 6;
+  string camera_model = 7;
+  int32 orientation = 8;
+  int32 width = 9;
+  int32 height = 10;
+}
+
 service ImageProcService {
   rpc Resize(ResizeRequest) returns (ResizeResponse);
   rpc ExtractDominantColors(ExtractDominantColorsRequest) returns (ExtractDominantColorsResponse);
+
+  // N10.3 — EXIF + GPS extraction. Nomad calls this after every
+  // milestone-photo upload to bind the visit's verified location to
+  // EXIF rather than to client-supplied coordinates.
+  rpc ExtractExif(ExtractExifRequest) returns (ExtractExifResponse);
 }

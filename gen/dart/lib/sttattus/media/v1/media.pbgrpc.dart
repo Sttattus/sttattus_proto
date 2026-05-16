@@ -106,6 +106,13 @@ class ImageProcServiceClient extends $grpc.Client {
     return $createUnaryCall(_$extractDominantColors, request, options: options);
   }
 
+  /// N10.3 — EXIF + GPS extraction. Nomad calls this after every
+  /// milestone-photo upload to bind the visit's verified location to
+  /// EXIF rather than to client-supplied coordinates.
+  $grpc.ResponseFuture<$0.ExtractExifResponse> extractExif($0.ExtractExifRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$extractExif, request, options: options);
+  }
+
     // method descriptors
 
   static final _$resize = $grpc.ClientMethod<$0.ResizeRequest, $0.ResizeResponse>(
@@ -116,6 +123,10 @@ class ImageProcServiceClient extends $grpc.Client {
       '/sttattus.media.v1.ImageProcService/ExtractDominantColors',
       ($0.ExtractDominantColorsRequest value) => value.writeToBuffer(),
       $0.ExtractDominantColorsResponse.fromBuffer);
+  static final _$extractExif = $grpc.ClientMethod<$0.ExtractExifRequest, $0.ExtractExifResponse>(
+      '/sttattus.media.v1.ImageProcService/ExtractExif',
+      ($0.ExtractExifRequest value) => value.writeToBuffer(),
+      $0.ExtractExifResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.media.v1.ImageProcService')
@@ -137,6 +148,13 @@ abstract class ImageProcServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ExtractDominantColorsRequest.fromBuffer(value),
         ($0.ExtractDominantColorsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ExtractExifRequest, $0.ExtractExifResponse>(
+        'ExtractExif',
+        extractExif_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ExtractExifRequest.fromBuffer(value),
+        ($0.ExtractExifResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ResizeResponse> resize_Pre($grpc.ServiceCall $call, $async.Future<$0.ResizeRequest> $request) async {
@@ -150,5 +168,11 @@ abstract class ImageProcServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ExtractDominantColorsResponse> extractDominantColors($grpc.ServiceCall call, $0.ExtractDominantColorsRequest request);
+
+  $async.Future<$0.ExtractExifResponse> extractExif_Pre($grpc.ServiceCall $call, $async.Future<$0.ExtractExifRequest> $request) async {
+    return extractExif($call, await $request);
+  }
+
+  $async.Future<$0.ExtractExifResponse> extractExif($grpc.ServiceCall call, $0.ExtractExifRequest request);
 
 }

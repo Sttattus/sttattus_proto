@@ -182,3 +182,41 @@ final $typed_data.Uint8List extractDominantColorsResponseDescriptor = $convert.b
     'Ch1FeHRyYWN0RG9taW5hbnRDb2xvcnNSZXNwb25zZRIdCgpoZXhfY29sb3JzGAEgAygJUgloZX'
     'hDb2xvcnM=');
 
+@$core.Deprecated('Use extractExifRequestDescriptor instead')
+const ExtractExifRequest$json = {
+  '1': 'ExtractExifRequest',
+  '2': [
+    {'1': 'source_url', '3': 1, '4': 1, '5': 9, '10': 'sourceUrl'},
+  ],
+};
+
+/// Descriptor for `ExtractExifRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List extractExifRequestDescriptor = $convert.base64Decode(
+    'ChJFeHRyYWN0RXhpZlJlcXVlc3QSHQoKc291cmNlX3VybBgBIAEoCVIJc291cmNlVXJs');
+
+@$core.Deprecated('Use extractExifResponseDescriptor instead')
+const ExtractExifResponse$json = {
+  '1': 'ExtractExifResponse',
+  '2': [
+    {'1': 'gps_present', '3': 1, '4': 1, '5': 8, '10': 'gpsPresent'},
+    {'1': 'latitude', '3': 2, '4': 1, '5': 1, '10': 'latitude'},
+    {'1': 'longitude', '3': 3, '4': 1, '5': 1, '10': 'longitude'},
+    {'1': 'taken_at_present', '3': 4, '4': 1, '5': 8, '10': 'takenAtPresent'},
+    {'1': 'taken_at', '3': 5, '4': 1, '5': 3, '10': 'takenAt'},
+    {'1': 'camera_make', '3': 6, '4': 1, '5': 9, '10': 'cameraMake'},
+    {'1': 'camera_model', '3': 7, '4': 1, '5': 9, '10': 'cameraModel'},
+    {'1': 'orientation', '3': 8, '4': 1, '5': 5, '10': 'orientation'},
+    {'1': 'width', '3': 9, '4': 1, '5': 5, '10': 'width'},
+    {'1': 'height', '3': 10, '4': 1, '5': 5, '10': 'height'},
+  ],
+};
+
+/// Descriptor for `ExtractExifResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List extractExifResponseDescriptor = $convert.base64Decode(
+    'ChNFeHRyYWN0RXhpZlJlc3BvbnNlEh8KC2dwc19wcmVzZW50GAEgASgIUgpncHNQcmVzZW50Eh'
+    'oKCGxhdGl0dWRlGAIgASgBUghsYXRpdHVkZRIcCglsb25naXR1ZGUYAyABKAFSCWxvbmdpdHVk'
+    'ZRIoChB0YWtlbl9hdF9wcmVzZW50GAQgASgIUg50YWtlbkF0UHJlc2VudBIZCgh0YWtlbl9hdB'
+    'gFIAEoA1IHdGFrZW5BdBIfCgtjYW1lcmFfbWFrZRgGIAEoCVIKY2FtZXJhTWFrZRIhCgxjYW1l'
+    'cmFfbW9kZWwYByABKAlSC2NhbWVyYU1vZGVsEiAKC29yaWVudGF0aW9uGAggASgFUgtvcmllbn'
+    'RhdGlvbhIUCgV3aWR0aBgJIAEoBVIFd2lkdGgSFgoGaGVpZ2h0GAogASgFUgZoZWlnaHQ=');
+
