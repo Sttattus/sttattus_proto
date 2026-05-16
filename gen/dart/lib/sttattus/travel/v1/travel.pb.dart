@@ -1946,6 +1946,264 @@ class ListVisitedCountriesResponse extends $pb.GeneratedMessage {
   $pb.PbList<ContinentClaim> get continents => $_getList(1);
 }
 
+class ConciergeMessage extends $pb.GeneratedMessage {
+  factory ConciergeMessage({
+    $core.String? id,
+    $core.bool? isStaff,
+    $core.String? senderUserId,
+    $core.String? body,
+    $fixnum.Int64? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (isStaff != null) result.isStaff = isStaff;
+    if (senderUserId != null) result.senderUserId = senderUserId;
+    if (body != null) result.body = body;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  ConciergeMessage._();
+
+  factory ConciergeMessage.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ConciergeMessage.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConciergeMessage', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOB(2, _omitFieldNames ? '' : 'isStaff')
+    ..aOS(3, _omitFieldNames ? '' : 'senderUserId')
+    ..aOS(4, _omitFieldNames ? '' : 'body')
+    ..aInt64(5, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConciergeMessage clone() => ConciergeMessage()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConciergeMessage copyWith(void Function(ConciergeMessage) updates) => super.copyWith((message) => updates(message as ConciergeMessage)) as ConciergeMessage;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConciergeMessage create() => ConciergeMessage._();
+  @$core.override
+  ConciergeMessage createEmptyInstance() => create();
+  static $pb.PbList<ConciergeMessage> createRepeated() => $pb.PbList<ConciergeMessage>();
+  @$core.pragma('dart2js:noInline')
+  static ConciergeMessage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConciergeMessage>(create);
+  static ConciergeMessage? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get isStaff => $_getBF(1);
+  @$pb.TagNumber(2)
+  set isStaff($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIsStaff() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIsStaff() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get senderUserId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set senderUserId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSenderUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSenderUserId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get body => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set body($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBody() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBody() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get createdAt => $_getI64(4);
+  @$pb.TagNumber(5)
+  set createdAt($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedAt() => $_clearField(5);
+}
+
+class ListConciergeMessagesRequest extends $pb.GeneratedMessage {
+  factory ListConciergeMessagesRequest() => create();
+
+  ListConciergeMessagesRequest._();
+
+  factory ListConciergeMessagesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListConciergeMessagesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListConciergeMessagesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListConciergeMessagesRequest clone() => ListConciergeMessagesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListConciergeMessagesRequest copyWith(void Function(ListConciergeMessagesRequest) updates) => super.copyWith((message) => updates(message as ListConciergeMessagesRequest)) as ListConciergeMessagesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListConciergeMessagesRequest create() => ListConciergeMessagesRequest._();
+  @$core.override
+  ListConciergeMessagesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListConciergeMessagesRequest> createRepeated() => $pb.PbList<ListConciergeMessagesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListConciergeMessagesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListConciergeMessagesRequest>(create);
+  static ListConciergeMessagesRequest? _defaultInstance;
+}
+
+class ListConciergeMessagesResponse extends $pb.GeneratedMessage {
+  factory ListConciergeMessagesResponse({
+    $core.Iterable<ConciergeMessage>? messages,
+  }) {
+    final result = create();
+    if (messages != null) result.messages.addAll(messages);
+    return result;
+  }
+
+  ListConciergeMessagesResponse._();
+
+  factory ListConciergeMessagesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListConciergeMessagesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListConciergeMessagesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..pc<ConciergeMessage>(1, _omitFieldNames ? '' : 'messages', $pb.PbFieldType.PM, subBuilder: ConciergeMessage.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListConciergeMessagesResponse clone() => ListConciergeMessagesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListConciergeMessagesResponse copyWith(void Function(ListConciergeMessagesResponse) updates) => super.copyWith((message) => updates(message as ListConciergeMessagesResponse)) as ListConciergeMessagesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListConciergeMessagesResponse create() => ListConciergeMessagesResponse._();
+  @$core.override
+  ListConciergeMessagesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListConciergeMessagesResponse> createRepeated() => $pb.PbList<ListConciergeMessagesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListConciergeMessagesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListConciergeMessagesResponse>(create);
+  static ListConciergeMessagesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ConciergeMessage> get messages => $_getList(0);
+}
+
+class PostConciergeMessageRequest extends $pb.GeneratedMessage {
+  factory PostConciergeMessageRequest({
+    $core.String? body,
+  }) {
+    final result = create();
+    if (body != null) result.body = body;
+    return result;
+  }
+
+  PostConciergeMessageRequest._();
+
+  factory PostConciergeMessageRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PostConciergeMessageRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PostConciergeMessageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'body')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostConciergeMessageRequest clone() => PostConciergeMessageRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostConciergeMessageRequest copyWith(void Function(PostConciergeMessageRequest) updates) => super.copyWith((message) => updates(message as PostConciergeMessageRequest)) as PostConciergeMessageRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PostConciergeMessageRequest create() => PostConciergeMessageRequest._();
+  @$core.override
+  PostConciergeMessageRequest createEmptyInstance() => create();
+  static $pb.PbList<PostConciergeMessageRequest> createRepeated() => $pb.PbList<PostConciergeMessageRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PostConciergeMessageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PostConciergeMessageRequest>(create);
+  static PostConciergeMessageRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get body => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set body($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBody() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBody() => $_clearField(1);
+}
+
+class PostConciergeMessageResponse extends $pb.GeneratedMessage {
+  factory PostConciergeMessageResponse({
+    ConciergeMessage? message,
+  }) {
+    final result = create();
+    if (message != null) result.message = message;
+    return result;
+  }
+
+  PostConciergeMessageResponse._();
+
+  factory PostConciergeMessageResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PostConciergeMessageResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PostConciergeMessageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..aOM<ConciergeMessage>(1, _omitFieldNames ? '' : 'message', subBuilder: ConciergeMessage.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostConciergeMessageResponse clone() => PostConciergeMessageResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostConciergeMessageResponse copyWith(void Function(PostConciergeMessageResponse) updates) => super.copyWith((message) => updates(message as PostConciergeMessageResponse)) as PostConciergeMessageResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PostConciergeMessageResponse create() => PostConciergeMessageResponse._();
+  @$core.override
+  PostConciergeMessageResponse createEmptyInstance() => create();
+  static $pb.PbList<PostConciergeMessageResponse> createRepeated() => $pb.PbList<PostConciergeMessageResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PostConciergeMessageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PostConciergeMessageResponse>(create);
+  static PostConciergeMessageResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ConciergeMessage get message => $_getN(0);
+  @$pb.TagNumber(1)
+  set message(ConciergeMessage value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMessage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMessage() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ConciergeMessage ensureMessage() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

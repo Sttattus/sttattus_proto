@@ -469,3 +469,68 @@ final $typed_data.Uint8List listVisitedCountriesResponseDescriptor = $convert.ba
     'F0dHVzLnRyYXZlbC52MS5WaXNpdGVkQ291bnRyeVIJY291bnRyaWVzEkIKCmNvbnRpbmVudHMY'
     'AiADKAsyIi5zdHRhdHR1cy50cmF2ZWwudjEuQ29udGluZW50Q2xhaW1SCmNvbnRpbmVudHM=');
 
+@$core.Deprecated('Use conciergeMessageDescriptor instead')
+const ConciergeMessage$json = {
+  '1': 'ConciergeMessage',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'is_staff', '3': 2, '4': 1, '5': 8, '10': 'isStaff'},
+    {'1': 'sender_user_id', '3': 3, '4': 1, '5': 9, '10': 'senderUserId'},
+    {'1': 'body', '3': 4, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'created_at', '3': 5, '4': 1, '5': 3, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `ConciergeMessage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List conciergeMessageDescriptor = $convert.base64Decode(
+    'ChBDb25jaWVyZ2VNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBIZCghpc19zdGFmZhgCIAEoCFIHaX'
+    'NTdGFmZhIkCg5zZW5kZXJfdXNlcl9pZBgDIAEoCVIMc2VuZGVyVXNlcklkEhIKBGJvZHkYBCAB'
+    'KAlSBGJvZHkSHQoKY3JlYXRlZF9hdBgFIAEoA1IJY3JlYXRlZEF0');
+
+@$core.Deprecated('Use listConciergeMessagesRequestDescriptor instead')
+const ListConciergeMessagesRequest$json = {
+  '1': 'ListConciergeMessagesRequest',
+};
+
+/// Descriptor for `ListConciergeMessagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listConciergeMessagesRequestDescriptor = $convert.base64Decode(
+    'ChxMaXN0Q29uY2llcmdlTWVzc2FnZXNSZXF1ZXN0');
+
+@$core.Deprecated('Use listConciergeMessagesResponseDescriptor instead')
+const ListConciergeMessagesResponse$json = {
+  '1': 'ListConciergeMessagesResponse',
+  '2': [
+    {'1': 'messages', '3': 1, '4': 3, '5': 11, '6': '.sttattus.travel.v1.ConciergeMessage', '10': 'messages'},
+  ],
+};
+
+/// Descriptor for `ListConciergeMessagesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listConciergeMessagesResponseDescriptor = $convert.base64Decode(
+    'Ch1MaXN0Q29uY2llcmdlTWVzc2FnZXNSZXNwb25zZRJACghtZXNzYWdlcxgBIAMoCzIkLnN0dG'
+    'F0dHVzLnRyYXZlbC52MS5Db25jaWVyZ2VNZXNzYWdlUghtZXNzYWdlcw==');
+
+@$core.Deprecated('Use postConciergeMessageRequestDescriptor instead')
+const PostConciergeMessageRequest$json = {
+  '1': 'PostConciergeMessageRequest',
+  '2': [
+    {'1': 'body', '3': 1, '4': 1, '5': 9, '10': 'body'},
+  ],
+};
+
+/// Descriptor for `PostConciergeMessageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List postConciergeMessageRequestDescriptor = $convert.base64Decode(
+    'ChtQb3N0Q29uY2llcmdlTWVzc2FnZVJlcXVlc3QSEgoEYm9keRgBIAEoCVIEYm9keQ==');
+
+@$core.Deprecated('Use postConciergeMessageResponseDescriptor instead')
+const PostConciergeMessageResponse$json = {
+  '1': 'PostConciergeMessageResponse',
+  '2': [
+    {'1': 'message', '3': 1, '4': 1, '5': 11, '6': '.sttattus.travel.v1.ConciergeMessage', '10': 'message'},
+  ],
+};
+
+/// Descriptor for `PostConciergeMessageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List postConciergeMessageResponseDescriptor = $convert.base64Decode(
+    'ChxQb3N0Q29uY2llcmdlTWVzc2FnZVJlc3BvbnNlEj4KB21lc3NhZ2UYASABKAsyJC5zdHRhdH'
+    'R1cy50cmF2ZWwudjEuQ29uY2llcmdlTWVzc2FnZVIHbWVzc2FnZQ==');
+

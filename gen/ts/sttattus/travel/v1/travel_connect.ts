@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AttachVisitToTripRequest, AttachVisitToTripResponse, CreateMilestoneRequest, CreateMilestoneResponse, CreateTripRequest, CreateTripResponse, DeleteTripRequest, DeleteTripResponse, GetNomadStatsRequest, GetNomadStatsResponse, GetTripRequest, GetTripResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse, ListMyTripsRequest, ListMyTripsResponse, ListVisitedCountriesRequest, ListVisitedCountriesResponse, UpdateTripRequest, UpdateTripResponse } from "./travel_pb.js";
+import { AttachVisitToTripRequest, AttachVisitToTripResponse, CreateMilestoneRequest, CreateMilestoneResponse, CreateTripRequest, CreateTripResponse, DeleteTripRequest, DeleteTripResponse, GetNomadStatsRequest, GetNomadStatsResponse, GetTripRequest, GetTripResponse, ListConciergeMessagesRequest, ListConciergeMessagesResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse, ListMyTripsRequest, ListMyTripsResponse, ListVisitedCountriesRequest, ListVisitedCountriesResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, UpdateTripRequest, UpdateTripResponse } from "./travel_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -113,6 +113,26 @@ export const TravelService = {
       name: "ListVisitedCountries",
       I: ListVisitedCountriesRequest,
       O: ListVisitedCountriesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * N10.6 — Sovereign-tier concierge thread.
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.ListConciergeMessages
+     */
+    listConciergeMessages: {
+      name: "ListConciergeMessages",
+      I: ListConciergeMessagesRequest,
+      O: ListConciergeMessagesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.PostConciergeMessage
+     */
+    postConciergeMessage: {
+      name: "PostConciergeMessage",
+      I: PostConciergeMessageRequest,
+      O: PostConciergeMessageResponse,
       kind: MethodKind.Unary,
     },
   }

@@ -78,6 +78,15 @@ class TravelServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listVisitedCountries, request, options: options);
   }
 
+  /// N10.6 — Sovereign-tier concierge thread.
+  $grpc.ResponseFuture<$0.ListConciergeMessagesResponse> listConciergeMessages($0.ListConciergeMessagesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listConciergeMessages, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PostConciergeMessageResponse> postConciergeMessage($0.PostConciergeMessageRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$postConciergeMessage, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listMilestones = $grpc.ClientMethod<$0.ListMilestonesRequest, $0.ListMilestonesResponse>(
@@ -124,6 +133,14 @@ class TravelServiceClient extends $grpc.Client {
       '/sttattus.travel.v1.TravelService/ListVisitedCountries',
       ($0.ListVisitedCountriesRequest value) => value.writeToBuffer(),
       $0.ListVisitedCountriesResponse.fromBuffer);
+  static final _$listConciergeMessages = $grpc.ClientMethod<$0.ListConciergeMessagesRequest, $0.ListConciergeMessagesResponse>(
+      '/sttattus.travel.v1.TravelService/ListConciergeMessages',
+      ($0.ListConciergeMessagesRequest value) => value.writeToBuffer(),
+      $0.ListConciergeMessagesResponse.fromBuffer);
+  static final _$postConciergeMessage = $grpc.ClientMethod<$0.PostConciergeMessageRequest, $0.PostConciergeMessageResponse>(
+      '/sttattus.travel.v1.TravelService/PostConciergeMessage',
+      ($0.PostConciergeMessageRequest value) => value.writeToBuffer(),
+      $0.PostConciergeMessageResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.travel.v1.TravelService')
@@ -208,6 +225,20 @@ abstract class TravelServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListVisitedCountriesRequest.fromBuffer(value),
         ($0.ListVisitedCountriesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListConciergeMessagesRequest, $0.ListConciergeMessagesResponse>(
+        'ListConciergeMessages',
+        listConciergeMessages_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListConciergeMessagesRequest.fromBuffer(value),
+        ($0.ListConciergeMessagesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PostConciergeMessageRequest, $0.PostConciergeMessageResponse>(
+        'PostConciergeMessage',
+        postConciergeMessage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.PostConciergeMessageRequest.fromBuffer(value),
+        ($0.PostConciergeMessageResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListMilestonesResponse> listMilestones_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMilestonesRequest> $request) async {
@@ -275,5 +306,17 @@ abstract class TravelServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListVisitedCountriesResponse> listVisitedCountries($grpc.ServiceCall call, $0.ListVisitedCountriesRequest request);
+
+  $async.Future<$0.ListConciergeMessagesResponse> listConciergeMessages_Pre($grpc.ServiceCall $call, $async.Future<$0.ListConciergeMessagesRequest> $request) async {
+    return listConciergeMessages($call, await $request);
+  }
+
+  $async.Future<$0.ListConciergeMessagesResponse> listConciergeMessages($grpc.ServiceCall call, $0.ListConciergeMessagesRequest request);
+
+  $async.Future<$0.PostConciergeMessageResponse> postConciergeMessage_Pre($grpc.ServiceCall $call, $async.Future<$0.PostConciergeMessageRequest> $request) async {
+    return postConciergeMessage($call, await $request);
+  }
+
+  $async.Future<$0.PostConciergeMessageResponse> postConciergeMessage($grpc.ServiceCall call, $0.PostConciergeMessageRequest request);
 
 }

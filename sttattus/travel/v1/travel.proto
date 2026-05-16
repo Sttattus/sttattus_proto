@@ -181,6 +181,28 @@ message ListVisitedCountriesResponse {
   repeated ContinentClaim continents = 2;
 }
 
+// === Concierge thread (N10.6) ===
+
+message ConciergeMessage {
+  string id = 1;
+  bool is_staff = 2;
+  string sender_user_id = 3;
+  string body = 4;
+  int64 created_at = 5;
+}
+
+message ListConciergeMessagesRequest {}
+message ListConciergeMessagesResponse {
+  repeated ConciergeMessage messages = 1;
+}
+
+message PostConciergeMessageRequest {
+  string body = 1;
+}
+message PostConciergeMessageResponse {
+  ConciergeMessage message = 1;
+}
+
 service TravelService {
   rpc ListMilestones(ListMilestonesRequest) returns (ListMilestonesResponse);
   rpc CreateMilestone(CreateMilestoneRequest) returns (CreateMilestoneResponse);
@@ -197,4 +219,8 @@ service TravelService {
 
   // N10.5 — country chip grid + continent claim.
   rpc ListVisitedCountries(ListVisitedCountriesRequest) returns (ListVisitedCountriesResponse);
+
+  // N10.6 — Sovereign-tier concierge thread.
+  rpc ListConciergeMessages(ListConciergeMessagesRequest) returns (ListConciergeMessagesResponse);
+  rpc PostConciergeMessage(PostConciergeMessageRequest) returns (PostConciergeMessageResponse);
 }
