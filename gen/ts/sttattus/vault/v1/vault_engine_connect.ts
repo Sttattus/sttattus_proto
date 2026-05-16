@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ComputeIrrRequest, ComputeIrrResponse, ComputeLiquidityBandsRequest, ComputeLiquidityBandsResponse, ComputeTwrRequest, ComputeTwrResponse, DetectHarvestOpportunitiesRequest, DetectHarvestOpportunitiesResponse } from "./vault_engine_pb.js";
+import { ComputeIrrRequest, ComputeIrrResponse, ComputeLiquidityBandsRequest, ComputeLiquidityBandsResponse, ComputeTwrRequest, ComputeTwrResponse, DetectHarvestOpportunitiesRequest, DetectHarvestOpportunitiesResponse, DetectTransactionAnomaliesRequest, DetectTransactionAnomaliesResponse } from "./vault_engine_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -46,6 +46,18 @@ export const VaultEngineService = {
       name: "DetectHarvestOpportunities",
       I: DetectHarvestOpportunitiesRequest,
       O: DetectHarvestOpportunitiesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8P2.8 — z-score outlier detector on a pre-filtered transaction
+     * window.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultEngineService.DetectTransactionAnomalies
+     */
+    detectTransactionAnomalies: {
+      name: "DetectTransactionAnomalies",
+      I: DetectTransactionAnomaliesRequest,
+      O: DetectTransactionAnomaliesResponse,
       kind: MethodKind.Unary,
     },
   }

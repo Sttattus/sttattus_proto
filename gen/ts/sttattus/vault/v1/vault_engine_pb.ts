@@ -689,3 +689,241 @@ export class DetectHarvestOpportunitiesResponse extends Message<DetectHarvestOpp
   }
 }
 
+/**
+ * TransactionPoint is one observed (amount, day-offset) tuple. The
+ * caller pre-filters to a single account / category so the
+ * distribution is meaningful — mixing categories defeats the
+ * statistical baseline.
+ *
+ * @generated from message sttattus.vault.v1.TransactionPoint
+ */
+export class TransactionPoint extends Message<TransactionPoint> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * Signed amount: Plaid's convention (positive = out of account).
+   *
+   * @generated from field: double amount = 2;
+   */
+  amount = 0;
+
+  /**
+   * YYYY-MM-DD UTC.
+   *
+   * @generated from field: string posted_at_iso = 3;
+   */
+  postedAtIso = "";
+
+  /**
+   * @generated from field: string merchant_name = 4;
+   */
+  merchantName = "";
+
+  constructor(data?: PartialMessage<TransactionPoint>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.TransactionPoint";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "amount", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "posted_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "merchant_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TransactionPoint {
+    return new TransactionPoint().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TransactionPoint {
+    return new TransactionPoint().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TransactionPoint {
+    return new TransactionPoint().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TransactionPoint | PlainMessage<TransactionPoint> | undefined, b: TransactionPoint | PlainMessage<TransactionPoint> | undefined): boolean {
+    return proto3.util.equals(TransactionPoint, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.DetectTransactionAnomaliesRequest
+ */
+export class DetectTransactionAnomaliesRequest extends Message<DetectTransactionAnomaliesRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: repeated sttattus.vault.v1.TransactionPoint points = 2;
+   */
+  points: TransactionPoint[] = [];
+
+  /**
+   * Z-score threshold. 0 = default (3.0).
+   *
+   * @generated from field: double z_threshold = 3;
+   */
+  zThreshold = 0;
+
+  constructor(data?: PartialMessage<DetectTransactionAnomaliesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.DetectTransactionAnomaliesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "points", kind: "message", T: TransactionPoint, repeated: true },
+    { no: 3, name: "z_threshold", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DetectTransactionAnomaliesRequest {
+    return new DetectTransactionAnomaliesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DetectTransactionAnomaliesRequest {
+    return new DetectTransactionAnomaliesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DetectTransactionAnomaliesRequest {
+    return new DetectTransactionAnomaliesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DetectTransactionAnomaliesRequest | PlainMessage<DetectTransactionAnomaliesRequest> | undefined, b: DetectTransactionAnomaliesRequest | PlainMessage<DetectTransactionAnomaliesRequest> | undefined): boolean {
+    return proto3.util.equals(DetectTransactionAnomaliesRequest, a, b);
+  }
+}
+
+/**
+ * AnomalyHit is one outlier the detector flagged.
+ *
+ * @generated from message sttattus.vault.v1.AnomalyHit
+ */
+export class AnomalyHit extends Message<AnomalyHit> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: double amount = 2;
+   */
+  amount = 0;
+
+  /**
+   * @generated from field: double z_score = 3;
+   */
+  zScore = 0;
+
+  /**
+   * 'large_debit' | 'large_credit' | 'first_seen'
+   *
+   * @generated from field: string reason = 4;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string merchant_name = 5;
+   */
+  merchantName = "";
+
+  /**
+   * @generated from field: string posted_at_iso = 6;
+   */
+  postedAtIso = "";
+
+  constructor(data?: PartialMessage<AnomalyHit>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.AnomalyHit";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "amount", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "z_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "merchant_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "posted_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AnomalyHit {
+    return new AnomalyHit().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AnomalyHit {
+    return new AnomalyHit().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AnomalyHit {
+    return new AnomalyHit().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AnomalyHit | PlainMessage<AnomalyHit> | undefined, b: AnomalyHit | PlainMessage<AnomalyHit> | undefined): boolean {
+    return proto3.util.equals(AnomalyHit, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.DetectTransactionAnomaliesResponse
+ */
+export class DetectTransactionAnomaliesResponse extends Message<DetectTransactionAnomaliesResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.AnomalyHit hits = 1;
+   */
+  hits: AnomalyHit[] = [];
+
+  /**
+   * Baseline summary so the dashboard can show "the engine learned
+   * your average debit is $X with σ Y".
+   *
+   * @generated from field: double mean_amount = 2;
+   */
+  meanAmount = 0;
+
+  /**
+   * @generated from field: double std_amount = 3;
+   */
+  stdAmount = 0;
+
+  constructor(data?: PartialMessage<DetectTransactionAnomaliesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.DetectTransactionAnomaliesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "hits", kind: "message", T: AnomalyHit, repeated: true },
+    { no: 2, name: "mean_amount", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "std_amount", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DetectTransactionAnomaliesResponse {
+    return new DetectTransactionAnomaliesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DetectTransactionAnomaliesResponse {
+    return new DetectTransactionAnomaliesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DetectTransactionAnomaliesResponse {
+    return new DetectTransactionAnomaliesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DetectTransactionAnomaliesResponse | PlainMessage<DetectTransactionAnomaliesResponse> | undefined, b: DetectTransactionAnomaliesResponse | PlainMessage<DetectTransactionAnomaliesResponse> | undefined): boolean {
+    return proto3.util.equals(DetectTransactionAnomaliesResponse, a, b);
+  }
+}
+

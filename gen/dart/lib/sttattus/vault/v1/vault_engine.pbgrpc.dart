@@ -48,6 +48,12 @@ class VaultEngineServiceClient extends $grpc.Client {
     return $createUnaryCall(_$detectHarvestOpportunities, request, options: options);
   }
 
+  /// V8P2.8 — z-score outlier detector on a pre-filtered transaction
+  /// window.
+  $grpc.ResponseFuture<$0.DetectTransactionAnomaliesResponse> detectTransactionAnomalies($0.DetectTransactionAnomaliesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$detectTransactionAnomalies, request, options: options);
+  }
+
     // method descriptors
 
   static final _$computeIrr = $grpc.ClientMethod<$0.ComputeIrrRequest, $0.ComputeIrrResponse>(
@@ -66,6 +72,10 @@ class VaultEngineServiceClient extends $grpc.Client {
       '/sttattus.vault.v1.VaultEngineService/DetectHarvestOpportunities',
       ($0.DetectHarvestOpportunitiesRequest value) => value.writeToBuffer(),
       $0.DetectHarvestOpportunitiesResponse.fromBuffer);
+  static final _$detectTransactionAnomalies = $grpc.ClientMethod<$0.DetectTransactionAnomaliesRequest, $0.DetectTransactionAnomaliesResponse>(
+      '/sttattus.vault.v1.VaultEngineService/DetectTransactionAnomalies',
+      ($0.DetectTransactionAnomaliesRequest value) => value.writeToBuffer(),
+      $0.DetectTransactionAnomaliesResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.vault.v1.VaultEngineService')
@@ -101,6 +111,13 @@ abstract class VaultEngineServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.DetectHarvestOpportunitiesRequest.fromBuffer(value),
         ($0.DetectHarvestOpportunitiesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DetectTransactionAnomaliesRequest, $0.DetectTransactionAnomaliesResponse>(
+        'DetectTransactionAnomalies',
+        detectTransactionAnomalies_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DetectTransactionAnomaliesRequest.fromBuffer(value),
+        ($0.DetectTransactionAnomaliesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ComputeIrrResponse> computeIrr_Pre($grpc.ServiceCall $call, $async.Future<$0.ComputeIrrRequest> $request) async {
@@ -126,5 +143,11 @@ abstract class VaultEngineServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.DetectHarvestOpportunitiesResponse> detectHarvestOpportunities($grpc.ServiceCall call, $0.DetectHarvestOpportunitiesRequest request);
+
+  $async.Future<$0.DetectTransactionAnomaliesResponse> detectTransactionAnomalies_Pre($grpc.ServiceCall $call, $async.Future<$0.DetectTransactionAnomaliesRequest> $request) async {
+    return detectTransactionAnomalies($call, await $request);
+  }
+
+  $async.Future<$0.DetectTransactionAnomaliesResponse> detectTransactionAnomalies($grpc.ServiceCall call, $0.DetectTransactionAnomaliesRequest request);
 
 }

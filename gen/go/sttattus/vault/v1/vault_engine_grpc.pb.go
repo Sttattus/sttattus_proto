@@ -23,6 +23,7 @@ const (
 	VaultEngineService_ComputeTwr_FullMethodName                 = "/sttattus.vault.v1.VaultEngineService/ComputeTwr"
 	VaultEngineService_ComputeLiquidityBands_FullMethodName      = "/sttattus.vault.v1.VaultEngineService/ComputeLiquidityBands"
 	VaultEngineService_DetectHarvestOpportunities_FullMethodName = "/sttattus.vault.v1.VaultEngineService/DetectHarvestOpportunities"
+	VaultEngineService_DetectTransactionAnomalies_FullMethodName = "/sttattus.vault.v1.VaultEngineService/DetectTransactionAnomalies"
 )
 
 // VaultEngineServiceClient is the client API for VaultEngineService service.
@@ -33,6 +34,9 @@ type VaultEngineServiceClient interface {
 	ComputeTwr(ctx context.Context, in *ComputeTwrRequest, opts ...grpc.CallOption) (*ComputeTwrResponse, error)
 	ComputeLiquidityBands(ctx context.Context, in *ComputeLiquidityBandsRequest, opts ...grpc.CallOption) (*ComputeLiquidityBandsResponse, error)
 	DetectHarvestOpportunities(ctx context.Context, in *DetectHarvestOpportunitiesRequest, opts ...grpc.CallOption) (*DetectHarvestOpportunitiesResponse, error)
+	// V8P2.8 — z-score outlier detector on a pre-filtered transaction
+	// window.
+	DetectTransactionAnomalies(ctx context.Context, in *DetectTransactionAnomaliesRequest, opts ...grpc.CallOption) (*DetectTransactionAnomaliesResponse, error)
 }
 
 type vaultEngineServiceClient struct {
@@ -83,6 +87,16 @@ func (c *vaultEngineServiceClient) DetectHarvestOpportunities(ctx context.Contex
 	return out, nil
 }
 
+func (c *vaultEngineServiceClient) DetectTransactionAnomalies(ctx context.Context, in *DetectTransactionAnomaliesRequest, opts ...grpc.CallOption) (*DetectTransactionAnomaliesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DetectTransactionAnomaliesResponse)
+	err := c.cc.Invoke(ctx, VaultEngineService_DetectTransactionAnomalies_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultEngineServiceServer is the server API for VaultEngineService service.
 // All implementations must embed UnimplementedVaultEngineServiceServer
 // for forward compatibility.
@@ -91,6 +105,9 @@ type VaultEngineServiceServer interface {
 	ComputeTwr(context.Context, *ComputeTwrRequest) (*ComputeTwrResponse, error)
 	ComputeLiquidityBands(context.Context, *ComputeLiquidityBandsRequest) (*ComputeLiquidityBandsResponse, error)
 	DetectHarvestOpportunities(context.Context, *DetectHarvestOpportunitiesRequest) (*DetectHarvestOpportunitiesResponse, error)
+	// V8P2.8 — z-score outlier detector on a pre-filtered transaction
+	// window.
+	DetectTransactionAnomalies(context.Context, *DetectTransactionAnomaliesRequest) (*DetectTransactionAnomaliesResponse, error)
 	mustEmbedUnimplementedVaultEngineServiceServer()
 }
 
@@ -112,6 +129,9 @@ func (UnimplementedVaultEngineServiceServer) ComputeLiquidityBands(context.Conte
 }
 func (UnimplementedVaultEngineServiceServer) DetectHarvestOpportunities(context.Context, *DetectHarvestOpportunitiesRequest) (*DetectHarvestOpportunitiesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method DetectHarvestOpportunities not implemented")
+}
+func (UnimplementedVaultEngineServiceServer) DetectTransactionAnomalies(context.Context, *DetectTransactionAnomaliesRequest) (*DetectTransactionAnomaliesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DetectTransactionAnomalies not implemented")
 }
 func (UnimplementedVaultEngineServiceServer) mustEmbedUnimplementedVaultEngineServiceServer() {}
 func (UnimplementedVaultEngineServiceServer) testEmbeddedByValue()                            {}
@@ -206,6 +226,24 @@ func _VaultEngineService_DetectHarvestOpportunities_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultEngineService_DetectTransactionAnomalies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DetectTransactionAnomaliesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultEngineServiceServer).DetectTransactionAnomalies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultEngineService_DetectTransactionAnomalies_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultEngineServiceServer).DetectTransactionAnomalies(ctx, req.(*DetectTransactionAnomaliesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultEngineService_ServiceDesc is the grpc.ServiceDesc for VaultEngineService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -228,6 +266,10 @@ var VaultEngineService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DetectHarvestOpportunities",
 			Handler:    _VaultEngineService_DetectHarvestOpportunities_Handler,
+		},
+		{
+			MethodName: "DetectTransactionAnomalies",
+			Handler:    _VaultEngineService_DetectTransactionAnomalies_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

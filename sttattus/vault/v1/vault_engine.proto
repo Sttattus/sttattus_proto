@@ -122,9 +122,53 @@ message DetectHarvestOpportunitiesResponse {
   double total_harvestable_loss_usd = 2;
 }
 
+// === Transaction anomaly detection (V8P2.8) ===
+
+// TransactionPoint is one observed (amount, day-offset) tuple. The
+// caller pre-filters to a single account / category so the
+// distribution is meaningful — mixing categories defeats the
+// statistical baseline.
+message TransactionPoint {
+  string id = 1;
+  // Signed amount: Plaid's convention (positive = out of account).
+  double amount = 2;
+  // YYYY-MM-DD UTC.
+  string posted_at_iso = 3;
+  string merchant_name = 4;
+}
+
+message DetectTransactionAnomaliesRequest {
+  string user_id = 1;
+  repeated TransactionPoint points = 2;
+  // Z-score threshold. 0 = default (3.0).
+  double z_threshold = 3;
+}
+
+// AnomalyHit is one outlier the detector flagged.
+message AnomalyHit {
+  string id = 1;
+  double amount = 2;
+  double z_score = 3;
+  string reason = 4; // 'large_debit' | 'large_credit' | 'first_seen'
+  string merchant_name = 5;
+  string posted_at_iso = 6;
+}
+
+message DetectTransactionAnomaliesResponse {
+  repeated AnomalyHit hits = 1;
+  // Baseline summary so the dashboard can show "the engine learned
+  // your average debit is $X with σ Y".
+  double mean_amount = 2;
+  double std_amount = 3;
+}
+
 service VaultEngineService {
   rpc ComputeIrr(ComputeIrrRequest) returns (ComputeIrrResponse);
   rpc ComputeTwr(ComputeTwrRequest) returns (ComputeTwrResponse);
   rpc ComputeLiquidityBands(ComputeLiquidityBandsRequest) returns (ComputeLiquidityBandsResponse);
   rpc DetectHarvestOpportunities(DetectHarvestOpportunitiesRequest) returns (DetectHarvestOpportunitiesResponse);
+
+  // V8P2.8 — z-score outlier detector on a pre-filtered transaction
+  // window.
+  rpc DetectTransactionAnomalies(DetectTransactionAnomaliesRequest) returns (DetectTransactionAnomaliesResponse);
 }

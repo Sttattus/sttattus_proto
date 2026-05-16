@@ -891,6 +891,332 @@ class DetectHarvestOpportunitiesResponse extends $pb.GeneratedMessage {
   void clearTotalHarvestableLossUsd() => $_clearField(2);
 }
 
+/// TransactionPoint is one observed (amount, day-offset) tuple. The
+/// caller pre-filters to a single account / category so the
+/// distribution is meaningful — mixing categories defeats the
+/// statistical baseline.
+class TransactionPoint extends $pb.GeneratedMessage {
+  factory TransactionPoint({
+    $core.String? id,
+    $core.double? amount,
+    $core.String? postedAtIso,
+    $core.String? merchantName,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (amount != null) result.amount = amount;
+    if (postedAtIso != null) result.postedAtIso = postedAtIso;
+    if (merchantName != null) result.merchantName = merchantName;
+    return result;
+  }
+
+  TransactionPoint._();
+
+  factory TransactionPoint.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory TransactionPoint.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TransactionPoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'amount', $pb.PbFieldType.OD)
+    ..aOS(3, _omitFieldNames ? '' : 'postedAtIso')
+    ..aOS(4, _omitFieldNames ? '' : 'merchantName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TransactionPoint clone() => TransactionPoint()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TransactionPoint copyWith(void Function(TransactionPoint) updates) => super.copyWith((message) => updates(message as TransactionPoint)) as TransactionPoint;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TransactionPoint create() => TransactionPoint._();
+  @$core.override
+  TransactionPoint createEmptyInstance() => create();
+  static $pb.PbList<TransactionPoint> createRepeated() => $pb.PbList<TransactionPoint>();
+  @$core.pragma('dart2js:noInline')
+  static TransactionPoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TransactionPoint>(create);
+  static TransactionPoint? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  /// Signed amount: Plaid's convention (positive = out of account).
+  @$pb.TagNumber(2)
+  $core.double get amount => $_getN(1);
+  @$pb.TagNumber(2)
+  set amount($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAmount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAmount() => $_clearField(2);
+
+  /// YYYY-MM-DD UTC.
+  @$pb.TagNumber(3)
+  $core.String get postedAtIso => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set postedAtIso($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPostedAtIso() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPostedAtIso() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get merchantName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set merchantName($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMerchantName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMerchantName() => $_clearField(4);
+}
+
+class DetectTransactionAnomaliesRequest extends $pb.GeneratedMessage {
+  factory DetectTransactionAnomaliesRequest({
+    $core.String? userId,
+    $core.Iterable<TransactionPoint>? points,
+    $core.double? zThreshold,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (points != null) result.points.addAll(points);
+    if (zThreshold != null) result.zThreshold = zThreshold;
+    return result;
+  }
+
+  DetectTransactionAnomaliesRequest._();
+
+  factory DetectTransactionAnomaliesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DetectTransactionAnomaliesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DetectTransactionAnomaliesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..pc<TransactionPoint>(2, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: TransactionPoint.create)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'zThreshold', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DetectTransactionAnomaliesRequest clone() => DetectTransactionAnomaliesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DetectTransactionAnomaliesRequest copyWith(void Function(DetectTransactionAnomaliesRequest) updates) => super.copyWith((message) => updates(message as DetectTransactionAnomaliesRequest)) as DetectTransactionAnomaliesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DetectTransactionAnomaliesRequest create() => DetectTransactionAnomaliesRequest._();
+  @$core.override
+  DetectTransactionAnomaliesRequest createEmptyInstance() => create();
+  static $pb.PbList<DetectTransactionAnomaliesRequest> createRepeated() => $pb.PbList<DetectTransactionAnomaliesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DetectTransactionAnomaliesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DetectTransactionAnomaliesRequest>(create);
+  static DetectTransactionAnomaliesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<TransactionPoint> get points => $_getList(1);
+
+  /// Z-score threshold. 0 = default (3.0).
+  @$pb.TagNumber(3)
+  $core.double get zThreshold => $_getN(2);
+  @$pb.TagNumber(3)
+  set zThreshold($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasZThreshold() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearZThreshold() => $_clearField(3);
+}
+
+/// AnomalyHit is one outlier the detector flagged.
+class AnomalyHit extends $pb.GeneratedMessage {
+  factory AnomalyHit({
+    $core.String? id,
+    $core.double? amount,
+    $core.double? zScore,
+    $core.String? reason,
+    $core.String? merchantName,
+    $core.String? postedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (amount != null) result.amount = amount;
+    if (zScore != null) result.zScore = zScore;
+    if (reason != null) result.reason = reason;
+    if (merchantName != null) result.merchantName = merchantName;
+    if (postedAtIso != null) result.postedAtIso = postedAtIso;
+    return result;
+  }
+
+  AnomalyHit._();
+
+  factory AnomalyHit.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AnomalyHit.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnomalyHit', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'amount', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'zScore', $pb.PbFieldType.OD)
+    ..aOS(4, _omitFieldNames ? '' : 'reason')
+    ..aOS(5, _omitFieldNames ? '' : 'merchantName')
+    ..aOS(6, _omitFieldNames ? '' : 'postedAtIso')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnomalyHit clone() => AnomalyHit()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnomalyHit copyWith(void Function(AnomalyHit) updates) => super.copyWith((message) => updates(message as AnomalyHit)) as AnomalyHit;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AnomalyHit create() => AnomalyHit._();
+  @$core.override
+  AnomalyHit createEmptyInstance() => create();
+  static $pb.PbList<AnomalyHit> createRepeated() => $pb.PbList<AnomalyHit>();
+  @$core.pragma('dart2js:noInline')
+  static AnomalyHit getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AnomalyHit>(create);
+  static AnomalyHit? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get amount => $_getN(1);
+  @$pb.TagNumber(2)
+  set amount($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAmount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAmount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get zScore => $_getN(2);
+  @$pb.TagNumber(3)
+  set zScore($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasZScore() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearZScore() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get reason => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set reason($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReason() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReason() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get merchantName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set merchantName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMerchantName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMerchantName() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get postedAtIso => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set postedAtIso($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPostedAtIso() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPostedAtIso() => $_clearField(6);
+}
+
+class DetectTransactionAnomaliesResponse extends $pb.GeneratedMessage {
+  factory DetectTransactionAnomaliesResponse({
+    $core.Iterable<AnomalyHit>? hits,
+    $core.double? meanAmount,
+    $core.double? stdAmount,
+  }) {
+    final result = create();
+    if (hits != null) result.hits.addAll(hits);
+    if (meanAmount != null) result.meanAmount = meanAmount;
+    if (stdAmount != null) result.stdAmount = stdAmount;
+    return result;
+  }
+
+  DetectTransactionAnomaliesResponse._();
+
+  factory DetectTransactionAnomaliesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DetectTransactionAnomaliesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DetectTransactionAnomaliesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+    ..pc<AnomalyHit>(1, _omitFieldNames ? '' : 'hits', $pb.PbFieldType.PM, subBuilder: AnomalyHit.create)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'meanAmount', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'stdAmount', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DetectTransactionAnomaliesResponse clone() => DetectTransactionAnomaliesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DetectTransactionAnomaliesResponse copyWith(void Function(DetectTransactionAnomaliesResponse) updates) => super.copyWith((message) => updates(message as DetectTransactionAnomaliesResponse)) as DetectTransactionAnomaliesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DetectTransactionAnomaliesResponse create() => DetectTransactionAnomaliesResponse._();
+  @$core.override
+  DetectTransactionAnomaliesResponse createEmptyInstance() => create();
+  static $pb.PbList<DetectTransactionAnomaliesResponse> createRepeated() => $pb.PbList<DetectTransactionAnomaliesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DetectTransactionAnomaliesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DetectTransactionAnomaliesResponse>(create);
+  static DetectTransactionAnomaliesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<AnomalyHit> get hits => $_getList(0);
+
+  /// Baseline summary so the dashboard can show "the engine learned
+  /// your average debit is $X with σ Y".
+  @$pb.TagNumber(2)
+  $core.double get meanAmount => $_getN(1);
+  @$pb.TagNumber(2)
+  set meanAmount($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMeanAmount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMeanAmount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get stdAmount => $_getN(2);
+  @$pb.TagNumber(3)
+  set stdAmount($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStdAmount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStdAmount() => $_clearField(3);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -221,3 +221,72 @@ final $typed_data.Uint8List detectHarvestOpportunitiesResponseDescriptor = $conv
     'ZXMSOwoadG90YWxfaGFydmVzdGFibGVfbG9zc191c2QYAiABKAFSF3RvdGFsSGFydmVzdGFibG'
     'VMb3NzVXNk');
 
+@$core.Deprecated('Use transactionPointDescriptor instead')
+const TransactionPoint$json = {
+  '1': 'TransactionPoint',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'amount', '3': 2, '4': 1, '5': 1, '10': 'amount'},
+    {'1': 'posted_at_iso', '3': 3, '4': 1, '5': 9, '10': 'postedAtIso'},
+    {'1': 'merchant_name', '3': 4, '4': 1, '5': 9, '10': 'merchantName'},
+  ],
+};
+
+/// Descriptor for `TransactionPoint`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List transactionPointDescriptor = $convert.base64Decode(
+    'ChBUcmFuc2FjdGlvblBvaW50Eg4KAmlkGAEgASgJUgJpZBIWCgZhbW91bnQYAiABKAFSBmFtb3'
+    'VudBIiCg1wb3N0ZWRfYXRfaXNvGAMgASgJUgtwb3N0ZWRBdElzbxIjCg1tZXJjaGFudF9uYW1l'
+    'GAQgASgJUgxtZXJjaGFudE5hbWU=');
+
+@$core.Deprecated('Use detectTransactionAnomaliesRequestDescriptor instead')
+const DetectTransactionAnomaliesRequest$json = {
+  '1': 'DetectTransactionAnomaliesRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'points', '3': 2, '4': 3, '5': 11, '6': '.sttattus.vault.v1.TransactionPoint', '10': 'points'},
+    {'1': 'z_threshold', '3': 3, '4': 1, '5': 1, '10': 'zThreshold'},
+  ],
+};
+
+/// Descriptor for `DetectTransactionAnomaliesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List detectTransactionAnomaliesRequestDescriptor = $convert.base64Decode(
+    'CiFEZXRlY3RUcmFuc2FjdGlvbkFub21hbGllc1JlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdX'
+    'NlcklkEjsKBnBvaW50cxgCIAMoCzIjLnN0dGF0dHVzLnZhdWx0LnYxLlRyYW5zYWN0aW9uUG9p'
+    'bnRSBnBvaW50cxIfCgt6X3RocmVzaG9sZBgDIAEoAVIKelRocmVzaG9sZA==');
+
+@$core.Deprecated('Use anomalyHitDescriptor instead')
+const AnomalyHit$json = {
+  '1': 'AnomalyHit',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'amount', '3': 2, '4': 1, '5': 1, '10': 'amount'},
+    {'1': 'z_score', '3': 3, '4': 1, '5': 1, '10': 'zScore'},
+    {'1': 'reason', '3': 4, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'merchant_name', '3': 5, '4': 1, '5': 9, '10': 'merchantName'},
+    {'1': 'posted_at_iso', '3': 6, '4': 1, '5': 9, '10': 'postedAtIso'},
+  ],
+};
+
+/// Descriptor for `AnomalyHit`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List anomalyHitDescriptor = $convert.base64Decode(
+    'CgpBbm9tYWx5SGl0Eg4KAmlkGAEgASgJUgJpZBIWCgZhbW91bnQYAiABKAFSBmFtb3VudBIXCg'
+    'd6X3Njb3JlGAMgASgBUgZ6U2NvcmUSFgoGcmVhc29uGAQgASgJUgZyZWFzb24SIwoNbWVyY2hh'
+    'bnRfbmFtZRgFIAEoCVIMbWVyY2hhbnROYW1lEiIKDXBvc3RlZF9hdF9pc28YBiABKAlSC3Bvc3'
+    'RlZEF0SXNv');
+
+@$core.Deprecated('Use detectTransactionAnomaliesResponseDescriptor instead')
+const DetectTransactionAnomaliesResponse$json = {
+  '1': 'DetectTransactionAnomaliesResponse',
+  '2': [
+    {'1': 'hits', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.AnomalyHit', '10': 'hits'},
+    {'1': 'mean_amount', '3': 2, '4': 1, '5': 1, '10': 'meanAmount'},
+    {'1': 'std_amount', '3': 3, '4': 1, '5': 1, '10': 'stdAmount'},
+  ],
+};
+
+/// Descriptor for `DetectTransactionAnomaliesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List detectTransactionAnomaliesResponseDescriptor = $convert.base64Decode(
+    'CiJEZXRlY3RUcmFuc2FjdGlvbkFub21hbGllc1Jlc3BvbnNlEjEKBGhpdHMYASADKAsyHS5zdH'
+    'RhdHR1cy52YXVsdC52MS5Bbm9tYWx5SGl0UgRoaXRzEh8KC21lYW5fYW1vdW50GAIgASgBUgpt'
+    'ZWFuQW1vdW50Eh0KCnN0ZF9hbW91bnQYAyABKAFSCXN0ZEFtb3VudA==');
+

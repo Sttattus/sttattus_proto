@@ -824,6 +824,288 @@ func (x *DetectHarvestOpportunitiesResponse) GetTotalHarvestableLossUsd() float6
 	return 0
 }
 
+// TransactionPoint is one observed (amount, day-offset) tuple. The
+// caller pre-filters to a single account / category so the
+// distribution is meaningful — mixing categories defeats the
+// statistical baseline.
+type TransactionPoint struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// Signed amount: Plaid's convention (positive = out of account).
+	Amount float64 `protobuf:"fixed64,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	// YYYY-MM-DD UTC.
+	PostedAtIso   string `protobuf:"bytes,3,opt,name=posted_at_iso,json=postedAtIso,proto3" json:"posted_at_iso,omitempty"`
+	MerchantName  string `protobuf:"bytes,4,opt,name=merchant_name,json=merchantName,proto3" json:"merchant_name,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TransactionPoint) Reset() {
+	*x = TransactionPoint{}
+	mi := &file_sttattus_vault_v1_vault_engine_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TransactionPoint) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TransactionPoint) ProtoMessage() {}
+
+func (x *TransactionPoint) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_engine_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TransactionPoint.ProtoReflect.Descriptor instead.
+func (*TransactionPoint) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_engine_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *TransactionPoint) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *TransactionPoint) GetAmount() float64 {
+	if x != nil {
+		return x.Amount
+	}
+	return 0
+}
+
+func (x *TransactionPoint) GetPostedAtIso() string {
+	if x != nil {
+		return x.PostedAtIso
+	}
+	return ""
+}
+
+func (x *TransactionPoint) GetMerchantName() string {
+	if x != nil {
+		return x.MerchantName
+	}
+	return ""
+}
+
+type DetectTransactionAnomaliesRequest struct {
+	state  protoimpl.MessageState `protogen:"open.v1"`
+	UserId string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Points []*TransactionPoint    `protobuf:"bytes,2,rep,name=points,proto3" json:"points,omitempty"`
+	// Z-score threshold. 0 = default (3.0).
+	ZThreshold    float64 `protobuf:"fixed64,3,opt,name=z_threshold,json=zThreshold,proto3" json:"z_threshold,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DetectTransactionAnomaliesRequest) Reset() {
+	*x = DetectTransactionAnomaliesRequest{}
+	mi := &file_sttattus_vault_v1_vault_engine_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DetectTransactionAnomaliesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DetectTransactionAnomaliesRequest) ProtoMessage() {}
+
+func (x *DetectTransactionAnomaliesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_engine_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DetectTransactionAnomaliesRequest.ProtoReflect.Descriptor instead.
+func (*DetectTransactionAnomaliesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_engine_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *DetectTransactionAnomaliesRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DetectTransactionAnomaliesRequest) GetPoints() []*TransactionPoint {
+	if x != nil {
+		return x.Points
+	}
+	return nil
+}
+
+func (x *DetectTransactionAnomaliesRequest) GetZThreshold() float64 {
+	if x != nil {
+		return x.ZThreshold
+	}
+	return 0
+}
+
+// AnomalyHit is one outlier the detector flagged.
+type AnomalyHit struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Amount        float64                `protobuf:"fixed64,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	ZScore        float64                `protobuf:"fixed64,3,opt,name=z_score,json=zScore,proto3" json:"z_score,omitempty"`
+	Reason        string                 `protobuf:"bytes,4,opt,name=reason,proto3" json:"reason,omitempty"` // 'large_debit' | 'large_credit' | 'first_seen'
+	MerchantName  string                 `protobuf:"bytes,5,opt,name=merchant_name,json=merchantName,proto3" json:"merchant_name,omitempty"`
+	PostedAtIso   string                 `protobuf:"bytes,6,opt,name=posted_at_iso,json=postedAtIso,proto3" json:"posted_at_iso,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AnomalyHit) Reset() {
+	*x = AnomalyHit{}
+	mi := &file_sttattus_vault_v1_vault_engine_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AnomalyHit) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AnomalyHit) ProtoMessage() {}
+
+func (x *AnomalyHit) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_engine_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AnomalyHit.ProtoReflect.Descriptor instead.
+func (*AnomalyHit) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_engine_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *AnomalyHit) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AnomalyHit) GetAmount() float64 {
+	if x != nil {
+		return x.Amount
+	}
+	return 0
+}
+
+func (x *AnomalyHit) GetZScore() float64 {
+	if x != nil {
+		return x.ZScore
+	}
+	return 0
+}
+
+func (x *AnomalyHit) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *AnomalyHit) GetMerchantName() string {
+	if x != nil {
+		return x.MerchantName
+	}
+	return ""
+}
+
+func (x *AnomalyHit) GetPostedAtIso() string {
+	if x != nil {
+		return x.PostedAtIso
+	}
+	return ""
+}
+
+type DetectTransactionAnomaliesResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Hits  []*AnomalyHit          `protobuf:"bytes,1,rep,name=hits,proto3" json:"hits,omitempty"`
+	// Baseline summary so the dashboard can show "the engine learned
+	// your average debit is $X with σ Y".
+	MeanAmount    float64 `protobuf:"fixed64,2,opt,name=mean_amount,json=meanAmount,proto3" json:"mean_amount,omitempty"`
+	StdAmount     float64 `protobuf:"fixed64,3,opt,name=std_amount,json=stdAmount,proto3" json:"std_amount,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DetectTransactionAnomaliesResponse) Reset() {
+	*x = DetectTransactionAnomaliesResponse{}
+	mi := &file_sttattus_vault_v1_vault_engine_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DetectTransactionAnomaliesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DetectTransactionAnomaliesResponse) ProtoMessage() {}
+
+func (x *DetectTransactionAnomaliesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_engine_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DetectTransactionAnomaliesResponse.ProtoReflect.Descriptor instead.
+func (*DetectTransactionAnomaliesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_engine_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *DetectTransactionAnomaliesResponse) GetHits() []*AnomalyHit {
+	if x != nil {
+		return x.Hits
+	}
+	return nil
+}
+
+func (x *DetectTransactionAnomaliesResponse) GetMeanAmount() float64 {
+	if x != nil {
+		return x.MeanAmount
+	}
+	return 0
+}
+
+func (x *DetectTransactionAnomaliesResponse) GetStdAmount() float64 {
+	if x != nil {
+		return x.StdAmount
+	}
+	return 0
+}
+
 var File_sttattus_vault_v1_vault_engine_proto protoreflect.FileDescriptor
 
 const file_sttattus_vault_v1_vault_engine_proto_rawDesc = "" +
@@ -881,14 +1163,39 @@ const file_sttattus_vault_v1_vault_engine_proto_rawDesc = "" +
 	"\fholding_days\x18\x04 \x01(\x05R\vholdingDays\"\xae\x01\n" +
 	"\"DetectHarvestOpportunitiesResponse\x12K\n" +
 	"\ropportunities\x18\x01 \x03(\v2%.sttattus.vault.v1.HarvestOpportunityR\ropportunities\x12;\n" +
-	"\x1atotal_harvestable_loss_usd\x18\x02 \x01(\x01R\x17totalHarvestableLossUsd2\xd2\x03\n" +
+	"\x1atotal_harvestable_loss_usd\x18\x02 \x01(\x01R\x17totalHarvestableLossUsd\"\x83\x01\n" +
+	"\x10TransactionPoint\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
+	"\x06amount\x18\x02 \x01(\x01R\x06amount\x12\"\n" +
+	"\rposted_at_iso\x18\x03 \x01(\tR\vpostedAtIso\x12#\n" +
+	"\rmerchant_name\x18\x04 \x01(\tR\fmerchantName\"\x9a\x01\n" +
+	"!DetectTransactionAnomaliesRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12;\n" +
+	"\x06points\x18\x02 \x03(\v2#.sttattus.vault.v1.TransactionPointR\x06points\x12\x1f\n" +
+	"\vz_threshold\x18\x03 \x01(\x01R\n" +
+	"zThreshold\"\xae\x01\n" +
+	"\n" +
+	"AnomalyHit\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
+	"\x06amount\x18\x02 \x01(\x01R\x06amount\x12\x17\n" +
+	"\az_score\x18\x03 \x01(\x01R\x06zScore\x12\x16\n" +
+	"\x06reason\x18\x04 \x01(\tR\x06reason\x12#\n" +
+	"\rmerchant_name\x18\x05 \x01(\tR\fmerchantName\x12\"\n" +
+	"\rposted_at_iso\x18\x06 \x01(\tR\vpostedAtIso\"\x97\x01\n" +
+	"\"DetectTransactionAnomaliesResponse\x121\n" +
+	"\x04hits\x18\x01 \x03(\v2\x1d.sttattus.vault.v1.AnomalyHitR\x04hits\x12\x1f\n" +
+	"\vmean_amount\x18\x02 \x01(\x01R\n" +
+	"meanAmount\x12\x1d\n" +
+	"\n" +
+	"std_amount\x18\x03 \x01(\x01R\tstdAmount2\xde\x04\n" +
 	"\x12VaultEngineService\x12Y\n" +
 	"\n" +
 	"ComputeIrr\x12$.sttattus.vault.v1.ComputeIrrRequest\x1a%.sttattus.vault.v1.ComputeIrrResponse\x12Y\n" +
 	"\n" +
 	"ComputeTwr\x12$.sttattus.vault.v1.ComputeTwrRequest\x1a%.sttattus.vault.v1.ComputeTwrResponse\x12z\n" +
 	"\x15ComputeLiquidityBands\x12/.sttattus.vault.v1.ComputeLiquidityBandsRequest\x1a0.sttattus.vault.v1.ComputeLiquidityBandsResponse\x12\x89\x01\n" +
-	"\x1aDetectHarvestOpportunities\x124.sttattus.vault.v1.DetectHarvestOpportunitiesRequest\x1a5.sttattus.vault.v1.DetectHarvestOpportunitiesResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
+	"\x1aDetectHarvestOpportunities\x124.sttattus.vault.v1.DetectHarvestOpportunitiesRequest\x1a5.sttattus.vault.v1.DetectHarvestOpportunitiesResponse\x12\x89\x01\n" +
+	"\x1aDetectTransactionAnomalies\x124.sttattus.vault.v1.DetectTransactionAnomaliesRequest\x1a5.sttattus.vault.v1.DetectTransactionAnomaliesResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
 
 var (
 	file_sttattus_vault_v1_vault_engine_proto_rawDescOnce sync.Once
@@ -902,7 +1209,7 @@ func file_sttattus_vault_v1_vault_engine_proto_rawDescGZIP() []byte {
 	return file_sttattus_vault_v1_vault_engine_proto_rawDescData
 }
 
-var file_sttattus_vault_v1_vault_engine_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_sttattus_vault_v1_vault_engine_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
 var file_sttattus_vault_v1_vault_engine_proto_goTypes = []any{
 	(*CashFlowPoint)(nil),                      // 0: sttattus.vault.v1.CashFlowPoint
 	(*ComputeIrrRequest)(nil),                  // 1: sttattus.vault.v1.ComputeIrrRequest
@@ -918,6 +1225,10 @@ var file_sttattus_vault_v1_vault_engine_proto_goTypes = []any{
 	(*DetectHarvestOpportunitiesRequest)(nil),  // 11: sttattus.vault.v1.DetectHarvestOpportunitiesRequest
 	(*HarvestOpportunity)(nil),                 // 12: sttattus.vault.v1.HarvestOpportunity
 	(*DetectHarvestOpportunitiesResponse)(nil), // 13: sttattus.vault.v1.DetectHarvestOpportunitiesResponse
+	(*TransactionPoint)(nil),                   // 14: sttattus.vault.v1.TransactionPoint
+	(*DetectTransactionAnomaliesRequest)(nil),  // 15: sttattus.vault.v1.DetectTransactionAnomaliesRequest
+	(*AnomalyHit)(nil),                         // 16: sttattus.vault.v1.AnomalyHit
+	(*DetectTransactionAnomaliesResponse)(nil), // 17: sttattus.vault.v1.DetectTransactionAnomaliesResponse
 }
 var file_sttattus_vault_v1_vault_engine_proto_depIdxs = []int32{
 	0,  // 0: sttattus.vault.v1.ComputeIrrRequest.cash_flows:type_name -> sttattus.vault.v1.CashFlowPoint
@@ -926,19 +1237,23 @@ var file_sttattus_vault_v1_vault_engine_proto_depIdxs = []int32{
 	8,  // 3: sttattus.vault.v1.ComputeLiquidityBandsResponse.slices:type_name -> sttattus.vault.v1.LiquidityBandSlice
 	10, // 4: sttattus.vault.v1.DetectHarvestOpportunitiesRequest.lots:type_name -> sttattus.vault.v1.HarvestLot
 	12, // 5: sttattus.vault.v1.DetectHarvestOpportunitiesResponse.opportunities:type_name -> sttattus.vault.v1.HarvestOpportunity
-	1,  // 6: sttattus.vault.v1.VaultEngineService.ComputeIrr:input_type -> sttattus.vault.v1.ComputeIrrRequest
-	4,  // 7: sttattus.vault.v1.VaultEngineService.ComputeTwr:input_type -> sttattus.vault.v1.ComputeTwrRequest
-	7,  // 8: sttattus.vault.v1.VaultEngineService.ComputeLiquidityBands:input_type -> sttattus.vault.v1.ComputeLiquidityBandsRequest
-	11, // 9: sttattus.vault.v1.VaultEngineService.DetectHarvestOpportunities:input_type -> sttattus.vault.v1.DetectHarvestOpportunitiesRequest
-	2,  // 10: sttattus.vault.v1.VaultEngineService.ComputeIrr:output_type -> sttattus.vault.v1.ComputeIrrResponse
-	5,  // 11: sttattus.vault.v1.VaultEngineService.ComputeTwr:output_type -> sttattus.vault.v1.ComputeTwrResponse
-	9,  // 12: sttattus.vault.v1.VaultEngineService.ComputeLiquidityBands:output_type -> sttattus.vault.v1.ComputeLiquidityBandsResponse
-	13, // 13: sttattus.vault.v1.VaultEngineService.DetectHarvestOpportunities:output_type -> sttattus.vault.v1.DetectHarvestOpportunitiesResponse
-	10, // [10:14] is the sub-list for method output_type
-	6,  // [6:10] is the sub-list for method input_type
-	6,  // [6:6] is the sub-list for extension type_name
-	6,  // [6:6] is the sub-list for extension extendee
-	0,  // [0:6] is the sub-list for field type_name
+	14, // 6: sttattus.vault.v1.DetectTransactionAnomaliesRequest.points:type_name -> sttattus.vault.v1.TransactionPoint
+	16, // 7: sttattus.vault.v1.DetectTransactionAnomaliesResponse.hits:type_name -> sttattus.vault.v1.AnomalyHit
+	1,  // 8: sttattus.vault.v1.VaultEngineService.ComputeIrr:input_type -> sttattus.vault.v1.ComputeIrrRequest
+	4,  // 9: sttattus.vault.v1.VaultEngineService.ComputeTwr:input_type -> sttattus.vault.v1.ComputeTwrRequest
+	7,  // 10: sttattus.vault.v1.VaultEngineService.ComputeLiquidityBands:input_type -> sttattus.vault.v1.ComputeLiquidityBandsRequest
+	11, // 11: sttattus.vault.v1.VaultEngineService.DetectHarvestOpportunities:input_type -> sttattus.vault.v1.DetectHarvestOpportunitiesRequest
+	15, // 12: sttattus.vault.v1.VaultEngineService.DetectTransactionAnomalies:input_type -> sttattus.vault.v1.DetectTransactionAnomaliesRequest
+	2,  // 13: sttattus.vault.v1.VaultEngineService.ComputeIrr:output_type -> sttattus.vault.v1.ComputeIrrResponse
+	5,  // 14: sttattus.vault.v1.VaultEngineService.ComputeTwr:output_type -> sttattus.vault.v1.ComputeTwrResponse
+	9,  // 15: sttattus.vault.v1.VaultEngineService.ComputeLiquidityBands:output_type -> sttattus.vault.v1.ComputeLiquidityBandsResponse
+	13, // 16: sttattus.vault.v1.VaultEngineService.DetectHarvestOpportunities:output_type -> sttattus.vault.v1.DetectHarvestOpportunitiesResponse
+	17, // 17: sttattus.vault.v1.VaultEngineService.DetectTransactionAnomalies:output_type -> sttattus.vault.v1.DetectTransactionAnomaliesResponse
+	13, // [13:18] is the sub-list for method output_type
+	8,  // [8:13] is the sub-list for method input_type
+	8,  // [8:8] is the sub-list for extension type_name
+	8,  // [8:8] is the sub-list for extension extendee
+	0,  // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_vault_v1_vault_engine_proto_init() }
@@ -952,7 +1267,7 @@ func file_sttattus_vault_v1_vault_engine_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_vault_v1_vault_engine_proto_rawDesc), len(file_sttattus_vault_v1_vault_engine_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   14,
+			NumMessages:   18,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
