@@ -235,6 +235,85 @@ final $typed_data.Uint8List getLinguistStatsResponseDescriptor = $convert.base64
     'ChhHZXRMaW5ndWlzdFN0YXRzUmVzcG9uc2USOgoFc3RhdHMYASABKAsyJC5zdHRhdHR1cy5sYW'
     '5ndWFnZXMudjEuTGluZ3Vpc3RTdGF0c1IFc3RhdHM=');
 
+@$core.Deprecated('Use culturalModuleDescriptor instead')
+const CulturalModule$json = {
+  '1': 'CulturalModule',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'language', '3': 2, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'slug', '3': 3, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'category', '3': 5, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'summary', '3': 6, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'body_markdown', '3': 7, '4': 1, '5': 9, '10': 'bodyMarkdown'},
+    {'1': 'insight', '3': 8, '4': 1, '5': 9, '10': 'insight'},
+    {'1': 'duration_minutes', '3': 9, '4': 1, '5': 5, '10': 'durationMinutes'},
+    {'1': 'min_cefr', '3': 10, '4': 1, '5': 9, '10': 'minCefr'},
+    {'1': 'completed', '3': 11, '4': 1, '5': 8, '10': 'completed'},
+  ],
+};
+
+/// Descriptor for `CulturalModule`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List culturalModuleDescriptor = $convert.base64Decode(
+    'Cg5DdWx0dXJhbE1vZHVsZRIOCgJpZBgBIAEoCVICaWQSGgoIbGFuZ3VhZ2UYAiABKAlSCGxhbm'
+    'd1YWdlEhIKBHNsdWcYAyABKAlSBHNsdWcSFAoFdGl0bGUYBCABKAlSBXRpdGxlEhoKCGNhdGVn'
+    'b3J5GAUgASgJUghjYXRlZ29yeRIYCgdzdW1tYXJ5GAYgASgJUgdzdW1tYXJ5EiMKDWJvZHlfbW'
+    'Fya2Rvd24YByABKAlSDGJvZHlNYXJrZG93bhIYCgdpbnNpZ2h0GAggASgJUgdpbnNpZ2h0EikK'
+    'EGR1cmF0aW9uX21pbnV0ZXMYCSABKAVSD2R1cmF0aW9uTWludXRlcxIZCghtaW5fY2VmchgKIA'
+    'EoCVIHbWluQ2VmchIcCgljb21wbGV0ZWQYCyABKAhSCWNvbXBsZXRlZA==');
+
+@$core.Deprecated('Use listCulturalModulesRequestDescriptor instead')
+const ListCulturalModulesRequest$json = {
+  '1': 'ListCulturalModulesRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+  ],
+};
+
+/// Descriptor for `ListCulturalModulesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listCulturalModulesRequestDescriptor = $convert.base64Decode(
+    'ChpMaXN0Q3VsdHVyYWxNb2R1bGVzUmVxdWVzdBIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3VhZ2'
+    'U=');
+
+@$core.Deprecated('Use listCulturalModulesResponseDescriptor instead')
+const ListCulturalModulesResponse$json = {
+  '1': 'ListCulturalModulesResponse',
+  '2': [
+    {'1': 'modules', '3': 1, '4': 3, '5': 11, '6': '.sttattus.languages.v1.CulturalModule', '10': 'modules'},
+  ],
+};
+
+/// Descriptor for `ListCulturalModulesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listCulturalModulesResponseDescriptor = $convert.base64Decode(
+    'ChtMaXN0Q3VsdHVyYWxNb2R1bGVzUmVzcG9uc2USPwoHbW9kdWxlcxgBIAMoCzIlLnN0dGF0dH'
+    'VzLmxhbmd1YWdlcy52MS5DdWx0dXJhbE1vZHVsZVIHbW9kdWxlcw==');
+
+@$core.Deprecated('Use markCulturalCompletedRequestDescriptor instead')
+const MarkCulturalCompletedRequest$json = {
+  '1': 'MarkCulturalCompletedRequest',
+  '2': [
+    {'1': 'module_id', '3': 1, '4': 1, '5': 9, '10': 'moduleId'},
+  ],
+};
+
+/// Descriptor for `MarkCulturalCompletedRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List markCulturalCompletedRequestDescriptor = $convert.base64Decode(
+    'ChxNYXJrQ3VsdHVyYWxDb21wbGV0ZWRSZXF1ZXN0EhsKCW1vZHVsZV9pZBgBIAEoCVIIbW9kdW'
+    'xlSWQ=');
+
+@$core.Deprecated('Use markCulturalCompletedResponseDescriptor instead')
+const MarkCulturalCompletedResponse$json = {
+  '1': 'MarkCulturalCompletedResponse',
+  '2': [
+    {'1': 'module', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.CulturalModule', '10': 'module'},
+  ],
+};
+
+/// Descriptor for `MarkCulturalCompletedResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List markCulturalCompletedResponseDescriptor = $convert.base64Decode(
+    'Ch1NYXJrQ3VsdHVyYWxDb21wbGV0ZWRSZXNwb25zZRI9CgZtb2R1bGUYASABKAsyJS5zdHRhdH'
+    'R1cy5sYW5ndWFnZXMudjEuQ3VsdHVyYWxNb2R1bGVSBm1vZHVsZQ==');
+
 @$core.Deprecated('Use userLanguageDescriptor instead')
 const UserLanguage$json = {
   '1': 'UserLanguage',

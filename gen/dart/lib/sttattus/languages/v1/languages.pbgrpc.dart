@@ -107,6 +107,15 @@ class LanguagesServiceClient extends $grpc.Client {
     return $createUnaryCall(_$setMyPrimaryLanguage, request, options: options);
   }
 
+  /// L12.7 — cultural modules.
+  $grpc.ResponseFuture<$0.ListCulturalModulesResponse> listCulturalModules($0.ListCulturalModulesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listCulturalModules, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MarkCulturalCompletedResponse> markCulturalCompleted($0.MarkCulturalCompletedRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$markCulturalCompleted, request, options: options);
+  }
+
   /// Legacy (Deprecated but kept for bridge)
   $grpc.ResponseFuture<$0.ListWordsResponse> listWords($0.ListWordsRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listWords, request, options: options);
@@ -182,6 +191,14 @@ class LanguagesServiceClient extends $grpc.Client {
       '/sttattus.languages.v1.LanguagesService/SetMyPrimaryLanguage',
       ($0.SetMyPrimaryLanguageRequest value) => value.writeToBuffer(),
       $0.SetMyPrimaryLanguageResponse.fromBuffer);
+  static final _$listCulturalModules = $grpc.ClientMethod<$0.ListCulturalModulesRequest, $0.ListCulturalModulesResponse>(
+      '/sttattus.languages.v1.LanguagesService/ListCulturalModules',
+      ($0.ListCulturalModulesRequest value) => value.writeToBuffer(),
+      $0.ListCulturalModulesResponse.fromBuffer);
+  static final _$markCulturalCompleted = $grpc.ClientMethod<$0.MarkCulturalCompletedRequest, $0.MarkCulturalCompletedResponse>(
+      '/sttattus.languages.v1.LanguagesService/MarkCulturalCompleted',
+      ($0.MarkCulturalCompletedRequest value) => value.writeToBuffer(),
+      $0.MarkCulturalCompletedResponse.fromBuffer);
   static final _$listWords = $grpc.ClientMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
       '/sttattus.languages.v1.LanguagesService/ListWords',
       ($0.ListWordsRequest value) => value.writeToBuffer(),
@@ -312,6 +329,20 @@ abstract class LanguagesServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SetMyPrimaryLanguageRequest.fromBuffer(value),
         ($0.SetMyPrimaryLanguageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListCulturalModulesRequest, $0.ListCulturalModulesResponse>(
+        'ListCulturalModules',
+        listCulturalModules_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListCulturalModulesRequest.fromBuffer(value),
+        ($0.ListCulturalModulesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MarkCulturalCompletedRequest, $0.MarkCulturalCompletedResponse>(
+        'MarkCulturalCompleted',
+        markCulturalCompleted_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.MarkCulturalCompletedRequest.fromBuffer(value),
+        ($0.MarkCulturalCompletedResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
         'ListWords',
         listWords_Pre,
@@ -422,6 +453,18 @@ abstract class LanguagesServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.SetMyPrimaryLanguageResponse> setMyPrimaryLanguage($grpc.ServiceCall call, $0.SetMyPrimaryLanguageRequest request);
+
+  $async.Future<$0.ListCulturalModulesResponse> listCulturalModules_Pre($grpc.ServiceCall $call, $async.Future<$0.ListCulturalModulesRequest> $request) async {
+    return listCulturalModules($call, await $request);
+  }
+
+  $async.Future<$0.ListCulturalModulesResponse> listCulturalModules($grpc.ServiceCall call, $0.ListCulturalModulesRequest request);
+
+  $async.Future<$0.MarkCulturalCompletedResponse> markCulturalCompleted_Pre($grpc.ServiceCall $call, $async.Future<$0.MarkCulturalCompletedRequest> $request) async {
+    return markCulturalCompleted($call, await $request);
+  }
+
+  $async.Future<$0.MarkCulturalCompletedResponse> markCulturalCompleted($grpc.ServiceCall call, $0.MarkCulturalCompletedRequest request);
 
   $async.Future<$0.ListWordsResponse> listWords_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWordsRequest> $request) async {
     return listWords($call, await $request);

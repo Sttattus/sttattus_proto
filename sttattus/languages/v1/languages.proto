@@ -94,6 +94,36 @@ message GetLinguistStatsResponse {
   LinguistStats stats = 1;
 }
 
+// === L12.7 — cultural modules ===
+
+message CulturalModule {
+  string id = 1;
+  string language = 2;
+  string slug = 3;
+  string title = 4;
+  string category = 5;
+  string summary = 6;
+  string body_markdown = 7;
+  string insight = 8;
+  int32 duration_minutes = 9;
+  string min_cefr = 10;
+  bool completed = 11;
+}
+
+message ListCulturalModulesRequest {
+  string language = 1;
+}
+message ListCulturalModulesResponse {
+  repeated CulturalModule modules = 1;
+}
+
+message MarkCulturalCompletedRequest {
+  string module_id = 1;
+}
+message MarkCulturalCompletedResponse {
+  CulturalModule module = 1;
+}
+
 // === L12.6 — multilingual ===
 
 message UserLanguage {
@@ -329,6 +359,10 @@ service LanguagesService {
   rpc AddMyLanguage(AddMyLanguageRequest) returns (AddMyLanguageResponse);
   rpc RemoveMyLanguage(RemoveMyLanguageRequest) returns (RemoveMyLanguageResponse);
   rpc SetMyPrimaryLanguage(SetMyPrimaryLanguageRequest) returns (SetMyPrimaryLanguageResponse);
+
+  // L12.7 — cultural modules.
+  rpc ListCulturalModules(ListCulturalModulesRequest) returns (ListCulturalModulesResponse);
+  rpc MarkCulturalCompleted(MarkCulturalCompletedRequest) returns (MarkCulturalCompletedResponse);
 
   // Legacy (Deprecated but kept for bridge)
   rpc ListWords(ListWordsRequest) returns (ListWordsResponse);

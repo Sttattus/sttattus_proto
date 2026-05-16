@@ -36,6 +36,8 @@ const (
 	LanguagesService_AddMyLanguage_FullMethodName          = "/sttattus.languages.v1.LanguagesService/AddMyLanguage"
 	LanguagesService_RemoveMyLanguage_FullMethodName       = "/sttattus.languages.v1.LanguagesService/RemoveMyLanguage"
 	LanguagesService_SetMyPrimaryLanguage_FullMethodName   = "/sttattus.languages.v1.LanguagesService/SetMyPrimaryLanguage"
+	LanguagesService_ListCulturalModules_FullMethodName    = "/sttattus.languages.v1.LanguagesService/ListCulturalModules"
+	LanguagesService_MarkCulturalCompleted_FullMethodName  = "/sttattus.languages.v1.LanguagesService/MarkCulturalCompleted"
 	LanguagesService_ListWords_FullMethodName              = "/sttattus.languages.v1.LanguagesService/ListWords"
 )
 
@@ -67,6 +69,9 @@ type LanguagesServiceClient interface {
 	AddMyLanguage(ctx context.Context, in *AddMyLanguageRequest, opts ...grpc.CallOption) (*AddMyLanguageResponse, error)
 	RemoveMyLanguage(ctx context.Context, in *RemoveMyLanguageRequest, opts ...grpc.CallOption) (*RemoveMyLanguageResponse, error)
 	SetMyPrimaryLanguage(ctx context.Context, in *SetMyPrimaryLanguageRequest, opts ...grpc.CallOption) (*SetMyPrimaryLanguageResponse, error)
+	// L12.7 — cultural modules.
+	ListCulturalModules(ctx context.Context, in *ListCulturalModulesRequest, opts ...grpc.CallOption) (*ListCulturalModulesResponse, error)
+	MarkCulturalCompleted(ctx context.Context, in *MarkCulturalCompletedRequest, opts ...grpc.CallOption) (*MarkCulturalCompletedResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error)
 }
@@ -249,6 +254,26 @@ func (c *languagesServiceClient) SetMyPrimaryLanguage(ctx context.Context, in *S
 	return out, nil
 }
 
+func (c *languagesServiceClient) ListCulturalModules(ctx context.Context, in *ListCulturalModulesRequest, opts ...grpc.CallOption) (*ListCulturalModulesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListCulturalModulesResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListCulturalModules_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) MarkCulturalCompleted(ctx context.Context, in *MarkCulturalCompletedRequest, opts ...grpc.CallOption) (*MarkCulturalCompletedResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MarkCulturalCompletedResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_MarkCulturalCompleted_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *languagesServiceClient) ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListWordsResponse)
@@ -287,6 +312,9 @@ type LanguagesServiceServer interface {
 	AddMyLanguage(context.Context, *AddMyLanguageRequest) (*AddMyLanguageResponse, error)
 	RemoveMyLanguage(context.Context, *RemoveMyLanguageRequest) (*RemoveMyLanguageResponse, error)
 	SetMyPrimaryLanguage(context.Context, *SetMyPrimaryLanguageRequest) (*SetMyPrimaryLanguageResponse, error)
+	// L12.7 — cultural modules.
+	ListCulturalModules(context.Context, *ListCulturalModulesRequest) (*ListCulturalModulesResponse, error)
+	MarkCulturalCompleted(context.Context, *MarkCulturalCompletedRequest) (*MarkCulturalCompletedResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error)
 	mustEmbedUnimplementedLanguagesServiceServer()
@@ -349,6 +377,12 @@ func (UnimplementedLanguagesServiceServer) RemoveMyLanguage(context.Context, *Re
 }
 func (UnimplementedLanguagesServiceServer) SetMyPrimaryLanguage(context.Context, *SetMyPrimaryLanguageRequest) (*SetMyPrimaryLanguageResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SetMyPrimaryLanguage not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ListCulturalModules(context.Context, *ListCulturalModulesRequest) (*ListCulturalModulesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListCulturalModules not implemented")
+}
+func (UnimplementedLanguagesServiceServer) MarkCulturalCompleted(context.Context, *MarkCulturalCompletedRequest) (*MarkCulturalCompletedResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method MarkCulturalCompleted not implemented")
 }
 func (UnimplementedLanguagesServiceServer) ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListWords not implemented")
@@ -680,6 +714,42 @@ func _LanguagesService_SetMyPrimaryLanguage_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LanguagesService_ListCulturalModules_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListCulturalModulesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ListCulturalModules(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ListCulturalModules_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ListCulturalModules(ctx, req.(*ListCulturalModulesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_MarkCulturalCompleted_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MarkCulturalCompletedRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).MarkCulturalCompleted(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_MarkCulturalCompleted_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).MarkCulturalCompleted(ctx, req.(*MarkCulturalCompletedRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LanguagesService_ListWords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListWordsRequest)
 	if err := dec(in); err != nil {
@@ -772,6 +842,14 @@ var LanguagesService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SetMyPrimaryLanguage",
 			Handler:    _LanguagesService_SetMyPrimaryLanguage_Handler,
+		},
+		{
+			MethodName: "ListCulturalModules",
+			Handler:    _LanguagesService_ListCulturalModules_Handler,
+		},
+		{
+			MethodName: "MarkCulturalCompleted",
+			Handler:    _LanguagesService_MarkCulturalCompleted_Handler,
 		},
 		{
 			MethodName: "ListWords",

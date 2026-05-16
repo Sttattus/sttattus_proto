@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddMyLanguageRequest, AddMyLanguageResponse, CompleteInteractionRequest, CompleteInteractionResponse, CreateSpeakingAttemptRequest, CreateSpeakingAttemptResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetSpeakingAttemptRequest, GetSpeakingAttemptResponse, GetTodayPlanRequest, GetTodayPlanResponse, ListMyLanguagesRequest, ListMyLanguagesResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListScenariosRequest, ListScenariosResponse, ListSpeakingPromptsRequest, ListSpeakingPromptsResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, RemoveMyLanguageRequest, RemoveMyLanguageResponse, SetMyPrimaryLanguageRequest, SetMyPrimaryLanguageResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse } from "./languages_pb.js";
+import { AddMyLanguageRequest, AddMyLanguageResponse, CompleteInteractionRequest, CompleteInteractionResponse, CreateSpeakingAttemptRequest, CreateSpeakingAttemptResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetSpeakingAttemptRequest, GetSpeakingAttemptResponse, GetTodayPlanRequest, GetTodayPlanResponse, ListCulturalModulesRequest, ListCulturalModulesResponse, ListMyLanguagesRequest, ListMyLanguagesResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListScenariosRequest, ListScenariosResponse, ListSpeakingPromptsRequest, ListSpeakingPromptsResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, MarkCulturalCompletedRequest, MarkCulturalCompletedResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, RemoveMyLanguageRequest, RemoveMyLanguageResponse, SetMyPrimaryLanguageRequest, SetMyPrimaryLanguageResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse } from "./languages_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -177,6 +177,26 @@ export const LanguagesService = {
       name: "SetMyPrimaryLanguage",
       I: SetMyPrimaryLanguageRequest,
       O: SetMyPrimaryLanguageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L12.7 — cultural modules.
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListCulturalModules
+     */
+    listCulturalModules: {
+      name: "ListCulturalModules",
+      I: ListCulturalModulesRequest,
+      O: ListCulturalModulesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.MarkCulturalCompleted
+     */
+    markCulturalCompleted: {
+      name: "MarkCulturalCompleted",
+      I: MarkCulturalCompletedRequest,
+      O: MarkCulturalCompletedResponse,
       kind: MethodKind.Unary,
     },
     /**

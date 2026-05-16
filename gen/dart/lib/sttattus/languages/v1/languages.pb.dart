@@ -929,6 +929,352 @@ class GetLinguistStatsResponse extends $pb.GeneratedMessage {
   LinguistStats ensureStats() => $_ensure(0);
 }
 
+class CulturalModule extends $pb.GeneratedMessage {
+  factory CulturalModule({
+    $core.String? id,
+    $core.String? language,
+    $core.String? slug,
+    $core.String? title,
+    $core.String? category,
+    $core.String? summary,
+    $core.String? bodyMarkdown,
+    $core.String? insight,
+    $core.int? durationMinutes,
+    $core.String? minCefr,
+    $core.bool? completed,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (language != null) result.language = language;
+    if (slug != null) result.slug = slug;
+    if (title != null) result.title = title;
+    if (category != null) result.category = category;
+    if (summary != null) result.summary = summary;
+    if (bodyMarkdown != null) result.bodyMarkdown = bodyMarkdown;
+    if (insight != null) result.insight = insight;
+    if (durationMinutes != null) result.durationMinutes = durationMinutes;
+    if (minCefr != null) result.minCefr = minCefr;
+    if (completed != null) result.completed = completed;
+    return result;
+  }
+
+  CulturalModule._();
+
+  factory CulturalModule.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CulturalModule.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CulturalModule', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'language')
+    ..aOS(3, _omitFieldNames ? '' : 'slug')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'category')
+    ..aOS(6, _omitFieldNames ? '' : 'summary')
+    ..aOS(7, _omitFieldNames ? '' : 'bodyMarkdown')
+    ..aOS(8, _omitFieldNames ? '' : 'insight')
+    ..a<$core.int>(9, _omitFieldNames ? '' : 'durationMinutes', $pb.PbFieldType.O3)
+    ..aOS(10, _omitFieldNames ? '' : 'minCefr')
+    ..aOB(11, _omitFieldNames ? '' : 'completed')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CulturalModule clone() => CulturalModule()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CulturalModule copyWith(void Function(CulturalModule) updates) => super.copyWith((message) => updates(message as CulturalModule)) as CulturalModule;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CulturalModule create() => CulturalModule._();
+  @$core.override
+  CulturalModule createEmptyInstance() => create();
+  static $pb.PbList<CulturalModule> createRepeated() => $pb.PbList<CulturalModule>();
+  @$core.pragma('dart2js:noInline')
+  static CulturalModule getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CulturalModule>(create);
+  static CulturalModule? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get language => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set language($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLanguage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguage() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get slug => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set slug($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSlug() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSlug() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get category => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set category($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCategory() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCategory() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get summary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set summary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get bodyMarkdown => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set bodyMarkdown($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasBodyMarkdown() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearBodyMarkdown() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get insight => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set insight($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasInsight() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearInsight() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get durationMinutes => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set durationMinutes($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDurationMinutes() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDurationMinutes() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get minCefr => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set minCefr($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasMinCefr() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMinCefr() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get completed => $_getBF(10);
+  @$pb.TagNumber(11)
+  set completed($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCompleted() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCompleted() => $_clearField(11);
+}
+
+class ListCulturalModulesRequest extends $pb.GeneratedMessage {
+  factory ListCulturalModulesRequest({
+    $core.String? language,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    return result;
+  }
+
+  ListCulturalModulesRequest._();
+
+  factory ListCulturalModulesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListCulturalModulesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCulturalModulesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCulturalModulesRequest clone() => ListCulturalModulesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCulturalModulesRequest copyWith(void Function(ListCulturalModulesRequest) updates) => super.copyWith((message) => updates(message as ListCulturalModulesRequest)) as ListCulturalModulesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListCulturalModulesRequest create() => ListCulturalModulesRequest._();
+  @$core.override
+  ListCulturalModulesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListCulturalModulesRequest> createRepeated() => $pb.PbList<ListCulturalModulesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListCulturalModulesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListCulturalModulesRequest>(create);
+  static ListCulturalModulesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+}
+
+class ListCulturalModulesResponse extends $pb.GeneratedMessage {
+  factory ListCulturalModulesResponse({
+    $core.Iterable<CulturalModule>? modules,
+  }) {
+    final result = create();
+    if (modules != null) result.modules.addAll(modules);
+    return result;
+  }
+
+  ListCulturalModulesResponse._();
+
+  factory ListCulturalModulesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListCulturalModulesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCulturalModulesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<CulturalModule>(1, _omitFieldNames ? '' : 'modules', $pb.PbFieldType.PM, subBuilder: CulturalModule.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCulturalModulesResponse clone() => ListCulturalModulesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCulturalModulesResponse copyWith(void Function(ListCulturalModulesResponse) updates) => super.copyWith((message) => updates(message as ListCulturalModulesResponse)) as ListCulturalModulesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListCulturalModulesResponse create() => ListCulturalModulesResponse._();
+  @$core.override
+  ListCulturalModulesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListCulturalModulesResponse> createRepeated() => $pb.PbList<ListCulturalModulesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListCulturalModulesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListCulturalModulesResponse>(create);
+  static ListCulturalModulesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<CulturalModule> get modules => $_getList(0);
+}
+
+class MarkCulturalCompletedRequest extends $pb.GeneratedMessage {
+  factory MarkCulturalCompletedRequest({
+    $core.String? moduleId,
+  }) {
+    final result = create();
+    if (moduleId != null) result.moduleId = moduleId;
+    return result;
+  }
+
+  MarkCulturalCompletedRequest._();
+
+  factory MarkCulturalCompletedRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MarkCulturalCompletedRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MarkCulturalCompletedRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'moduleId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkCulturalCompletedRequest clone() => MarkCulturalCompletedRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkCulturalCompletedRequest copyWith(void Function(MarkCulturalCompletedRequest) updates) => super.copyWith((message) => updates(message as MarkCulturalCompletedRequest)) as MarkCulturalCompletedRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MarkCulturalCompletedRequest create() => MarkCulturalCompletedRequest._();
+  @$core.override
+  MarkCulturalCompletedRequest createEmptyInstance() => create();
+  static $pb.PbList<MarkCulturalCompletedRequest> createRepeated() => $pb.PbList<MarkCulturalCompletedRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MarkCulturalCompletedRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MarkCulturalCompletedRequest>(create);
+  static MarkCulturalCompletedRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get moduleId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set moduleId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasModuleId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearModuleId() => $_clearField(1);
+}
+
+class MarkCulturalCompletedResponse extends $pb.GeneratedMessage {
+  factory MarkCulturalCompletedResponse({
+    CulturalModule? module,
+  }) {
+    final result = create();
+    if (module != null) result.module = module;
+    return result;
+  }
+
+  MarkCulturalCompletedResponse._();
+
+  factory MarkCulturalCompletedResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MarkCulturalCompletedResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MarkCulturalCompletedResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<CulturalModule>(1, _omitFieldNames ? '' : 'module', subBuilder: CulturalModule.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkCulturalCompletedResponse clone() => MarkCulturalCompletedResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkCulturalCompletedResponse copyWith(void Function(MarkCulturalCompletedResponse) updates) => super.copyWith((message) => updates(message as MarkCulturalCompletedResponse)) as MarkCulturalCompletedResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MarkCulturalCompletedResponse create() => MarkCulturalCompletedResponse._();
+  @$core.override
+  MarkCulturalCompletedResponse createEmptyInstance() => create();
+  static $pb.PbList<MarkCulturalCompletedResponse> createRepeated() => $pb.PbList<MarkCulturalCompletedResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MarkCulturalCompletedResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MarkCulturalCompletedResponse>(create);
+  static MarkCulturalCompletedResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CulturalModule get module => $_getN(0);
+  @$pb.TagNumber(1)
+  set module(CulturalModule value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasModule() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearModule() => $_clearField(1);
+  @$pb.TagNumber(1)
+  CulturalModule ensureModule() => $_ensure(0);
+}
+
 class UserLanguage extends $pb.GeneratedMessage {
   factory UserLanguage({
     $core.String? language,

@@ -710,6 +710,251 @@ export class GetLinguistStatsResponse extends Message<GetLinguistStatsResponse> 
 }
 
 /**
+ * @generated from message sttattus.languages.v1.CulturalModule
+ */
+export class CulturalModule extends Message<CulturalModule> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string language = 2;
+   */
+  language = "";
+
+  /**
+   * @generated from field: string slug = 3;
+   */
+  slug = "";
+
+  /**
+   * @generated from field: string title = 4;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string category = 5;
+   */
+  category = "";
+
+  /**
+   * @generated from field: string summary = 6;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string body_markdown = 7;
+   */
+  bodyMarkdown = "";
+
+  /**
+   * @generated from field: string insight = 8;
+   */
+  insight = "";
+
+  /**
+   * @generated from field: int32 duration_minutes = 9;
+   */
+  durationMinutes = 0;
+
+  /**
+   * @generated from field: string min_cefr = 10;
+   */
+  minCefr = "";
+
+  /**
+   * @generated from field: bool completed = 11;
+   */
+  completed = false;
+
+  constructor(data?: PartialMessage<CulturalModule>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.CulturalModule";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "body_markdown", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "insight", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "duration_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "min_cefr", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "completed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CulturalModule {
+    return new CulturalModule().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CulturalModule {
+    return new CulturalModule().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CulturalModule {
+    return new CulturalModule().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CulturalModule | PlainMessage<CulturalModule> | undefined, b: CulturalModule | PlainMessage<CulturalModule> | undefined): boolean {
+    return proto3.util.equals(CulturalModule, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ListCulturalModulesRequest
+ */
+export class ListCulturalModulesRequest extends Message<ListCulturalModulesRequest> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  constructor(data?: PartialMessage<ListCulturalModulesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ListCulturalModulesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListCulturalModulesRequest {
+    return new ListCulturalModulesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListCulturalModulesRequest {
+    return new ListCulturalModulesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListCulturalModulesRequest {
+    return new ListCulturalModulesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListCulturalModulesRequest | PlainMessage<ListCulturalModulesRequest> | undefined, b: ListCulturalModulesRequest | PlainMessage<ListCulturalModulesRequest> | undefined): boolean {
+    return proto3.util.equals(ListCulturalModulesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ListCulturalModulesResponse
+ */
+export class ListCulturalModulesResponse extends Message<ListCulturalModulesResponse> {
+  /**
+   * @generated from field: repeated sttattus.languages.v1.CulturalModule modules = 1;
+   */
+  modules: CulturalModule[] = [];
+
+  constructor(data?: PartialMessage<ListCulturalModulesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ListCulturalModulesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "modules", kind: "message", T: CulturalModule, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListCulturalModulesResponse {
+    return new ListCulturalModulesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListCulturalModulesResponse {
+    return new ListCulturalModulesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListCulturalModulesResponse {
+    return new ListCulturalModulesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListCulturalModulesResponse | PlainMessage<ListCulturalModulesResponse> | undefined, b: ListCulturalModulesResponse | PlainMessage<ListCulturalModulesResponse> | undefined): boolean {
+    return proto3.util.equals(ListCulturalModulesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.MarkCulturalCompletedRequest
+ */
+export class MarkCulturalCompletedRequest extends Message<MarkCulturalCompletedRequest> {
+  /**
+   * @generated from field: string module_id = 1;
+   */
+  moduleId = "";
+
+  constructor(data?: PartialMessage<MarkCulturalCompletedRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.MarkCulturalCompletedRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "module_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MarkCulturalCompletedRequest {
+    return new MarkCulturalCompletedRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MarkCulturalCompletedRequest {
+    return new MarkCulturalCompletedRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MarkCulturalCompletedRequest {
+    return new MarkCulturalCompletedRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MarkCulturalCompletedRequest | PlainMessage<MarkCulturalCompletedRequest> | undefined, b: MarkCulturalCompletedRequest | PlainMessage<MarkCulturalCompletedRequest> | undefined): boolean {
+    return proto3.util.equals(MarkCulturalCompletedRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.MarkCulturalCompletedResponse
+ */
+export class MarkCulturalCompletedResponse extends Message<MarkCulturalCompletedResponse> {
+  /**
+   * @generated from field: sttattus.languages.v1.CulturalModule module = 1;
+   */
+  module?: CulturalModule;
+
+  constructor(data?: PartialMessage<MarkCulturalCompletedResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.MarkCulturalCompletedResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "module", kind: "message", T: CulturalModule },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MarkCulturalCompletedResponse {
+    return new MarkCulturalCompletedResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MarkCulturalCompletedResponse {
+    return new MarkCulturalCompletedResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MarkCulturalCompletedResponse {
+    return new MarkCulturalCompletedResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MarkCulturalCompletedResponse | PlainMessage<MarkCulturalCompletedResponse> | undefined, b: MarkCulturalCompletedResponse | PlainMessage<MarkCulturalCompletedResponse> | undefined): boolean {
+    return proto3.util.equals(MarkCulturalCompletedResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.languages.v1.UserLanguage
  */
 export class UserLanguage extends Message<UserLanguage> {
