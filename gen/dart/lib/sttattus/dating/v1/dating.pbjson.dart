@@ -1319,3 +1319,46 @@ final $typed_data.Uint8List cancelReservationResponseDescriptor = $convert.base6
     'ChlDYW5jZWxSZXNlcnZhdGlvblJlc3BvbnNlEkEKC3Jlc2VydmF0aW9uGAEgASgLMh8uc3R0YX'
     'R0dXMuZGF0aW5nLnYxLlJlc2VydmF0aW9uUgtyZXNlcnZhdGlvbg==');
 
+@$core.Deprecated('Use compatibilityReportDescriptor instead')
+const CompatibilityReport$json = {
+  '1': 'CompatibilityReport',
+  '2': [
+    {'1': 'left_user_id', '3': 1, '4': 1, '5': 9, '10': 'leftUserId'},
+    {'1': 'right_user_id', '3': 2, '4': 1, '5': 9, '10': 'rightUserId'},
+    {'1': 'cosine', '3': 3, '4': 1, '5': 1, '10': 'cosine'},
+    {'1': 'per_axis_delta', '3': 4, '4': 3, '5': 1, '10': 'perAxisDelta'},
+  ],
+};
+
+/// Descriptor for `CompatibilityReport`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List compatibilityReportDescriptor = $convert.base64Decode(
+    'ChNDb21wYXRpYmlsaXR5UmVwb3J0EiAKDGxlZnRfdXNlcl9pZBgBIAEoCVIKbGVmdFVzZXJJZB'
+    'IiCg1yaWdodF91c2VyX2lkGAIgASgJUgtyaWdodFVzZXJJZBIWCgZjb3NpbmUYAyABKAFSBmNv'
+    'c2luZRIkCg5wZXJfYXhpc19kZWx0YRgEIAMoAVIMcGVyQXhpc0RlbHRh');
+
+@$core.Deprecated('Use getCompatibilityReportRequestDescriptor instead')
+const GetCompatibilityReportRequest$json = {
+  '1': 'GetCompatibilityReportRequest',
+  '2': [
+    {'1': 'other_user_id', '3': 1, '4': 1, '5': 9, '10': 'otherUserId'},
+  ],
+};
+
+/// Descriptor for `GetCompatibilityReportRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCompatibilityReportRequestDescriptor = $convert.base64Decode(
+    'Ch1HZXRDb21wYXRpYmlsaXR5UmVwb3J0UmVxdWVzdBIiCg1vdGhlcl91c2VyX2lkGAEgASgJUg'
+    'tvdGhlclVzZXJJZA==');
+
+@$core.Deprecated('Use getCompatibilityReportResponseDescriptor instead')
+const GetCompatibilityReportResponse$json = {
+  '1': 'GetCompatibilityReportResponse',
+  '2': [
+    {'1': 'report', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.CompatibilityReport', '10': 'report'},
+  ],
+};
+
+/// Descriptor for `GetCompatibilityReportResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCompatibilityReportResponseDescriptor = $convert.base64Decode(
+    'Ch5HZXRDb21wYXRpYmlsaXR5UmVwb3J0UmVzcG9uc2USPwoGcmVwb3J0GAEgASgLMicuc3R0YX'
+    'R0dXMuZGF0aW5nLnYxLkNvbXBhdGliaWxpdHlSZXBvcnRSBnJlcG9ydA==');
+

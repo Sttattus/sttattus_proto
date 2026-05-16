@@ -4097,3 +4097,140 @@ export class CancelReservationResponse extends Message$1<CancelReservationRespon
   }
 }
 
+/**
+ * @generated from message sttattus.dating.v1.CompatibilityReport
+ */
+export class CompatibilityReport extends Message$1<CompatibilityReport> {
+  /**
+   * @generated from field: string left_user_id = 1;
+   */
+  leftUserId = "";
+
+  /**
+   * @generated from field: string right_user_id = 2;
+   */
+  rightUserId = "";
+
+  /**
+   * -1..1 cosine similarity between the two embeddings.
+   *
+   * @generated from field: double cosine = 3;
+   */
+  cosine = 0;
+
+  /**
+   * Absolute |left - right| per axis, in atlas_engine's signal
+   * order. The dashboard renders which axes pull the pair apart.
+   *
+   * @generated from field: repeated double per_axis_delta = 4;
+   */
+  perAxisDelta: number[] = [];
+
+  constructor(data?: PartialMessage<CompatibilityReport>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.CompatibilityReport";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "left_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "right_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "cosine", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "per_axis_delta", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompatibilityReport {
+    return new CompatibilityReport().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompatibilityReport {
+    return new CompatibilityReport().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompatibilityReport {
+    return new CompatibilityReport().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CompatibilityReport | PlainMessage<CompatibilityReport> | undefined, b: CompatibilityReport | PlainMessage<CompatibilityReport> | undefined): boolean {
+    return proto3.util.equals(CompatibilityReport, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetCompatibilityReportRequest
+ */
+export class GetCompatibilityReportRequest extends Message$1<GetCompatibilityReportRequest> {
+  /**
+   * @generated from field: string other_user_id = 1;
+   */
+  otherUserId = "";
+
+  constructor(data?: PartialMessage<GetCompatibilityReportRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetCompatibilityReportRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "other_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCompatibilityReportRequest {
+    return new GetCompatibilityReportRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCompatibilityReportRequest {
+    return new GetCompatibilityReportRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCompatibilityReportRequest {
+    return new GetCompatibilityReportRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetCompatibilityReportRequest | PlainMessage<GetCompatibilityReportRequest> | undefined, b: GetCompatibilityReportRequest | PlainMessage<GetCompatibilityReportRequest> | undefined): boolean {
+    return proto3.util.equals(GetCompatibilityReportRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetCompatibilityReportResponse
+ */
+export class GetCompatibilityReportResponse extends Message$1<GetCompatibilityReportResponse> {
+  /**
+   * Empty (left_user_id == "") = compatibility unavailable because
+   * either user has no embedding yet, or the engine is offline.
+   *
+   * @generated from field: sttattus.dating.v1.CompatibilityReport report = 1;
+   */
+  report?: CompatibilityReport;
+
+  constructor(data?: PartialMessage<GetCompatibilityReportResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetCompatibilityReportResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "report", kind: "message", T: CompatibilityReport },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCompatibilityReportResponse {
+    return new GetCompatibilityReportResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCompatibilityReportResponse {
+    return new GetCompatibilityReportResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCompatibilityReportResponse {
+    return new GetCompatibilityReportResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetCompatibilityReportResponse | PlainMessage<GetCompatibilityReportResponse> | undefined, b: GetCompatibilityReportResponse | PlainMessage<GetCompatibilityReportResponse> | undefined): boolean {
+    return proto3.util.equals(GetCompatibilityReportResponse, a, b);
+  }
+}
+

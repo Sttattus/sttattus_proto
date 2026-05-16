@@ -5402,6 +5402,181 @@ class CancelReservationResponse extends $pb.GeneratedMessage {
   Reservation ensureReservation() => $_ensure(0);
 }
 
+class CompatibilityReport extends $pb.GeneratedMessage {
+  factory CompatibilityReport({
+    $core.String? leftUserId,
+    $core.String? rightUserId,
+    $core.double? cosine,
+    $core.Iterable<$core.double>? perAxisDelta,
+  }) {
+    final result = create();
+    if (leftUserId != null) result.leftUserId = leftUserId;
+    if (rightUserId != null) result.rightUserId = rightUserId;
+    if (cosine != null) result.cosine = cosine;
+    if (perAxisDelta != null) result.perAxisDelta.addAll(perAxisDelta);
+    return result;
+  }
+
+  CompatibilityReport._();
+
+  factory CompatibilityReport.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CompatibilityReport.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompatibilityReport', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'leftUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'rightUserId')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'cosine', $pb.PbFieldType.OD)
+    ..p<$core.double>(4, _omitFieldNames ? '' : 'perAxisDelta', $pb.PbFieldType.KD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompatibilityReport clone() => CompatibilityReport()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompatibilityReport copyWith(void Function(CompatibilityReport) updates) => super.copyWith((message) => updates(message as CompatibilityReport)) as CompatibilityReport;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CompatibilityReport create() => CompatibilityReport._();
+  @$core.override
+  CompatibilityReport createEmptyInstance() => create();
+  static $pb.PbList<CompatibilityReport> createRepeated() => $pb.PbList<CompatibilityReport>();
+  @$core.pragma('dart2js:noInline')
+  static CompatibilityReport getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompatibilityReport>(create);
+  static CompatibilityReport? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get leftUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set leftUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLeftUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLeftUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get rightUserId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set rightUserId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRightUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRightUserId() => $_clearField(2);
+
+  /// -1..1 cosine similarity between the two embeddings.
+  @$pb.TagNumber(3)
+  $core.double get cosine => $_getN(2);
+  @$pb.TagNumber(3)
+  set cosine($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCosine() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCosine() => $_clearField(3);
+
+  /// Absolute |left - right| per axis, in atlas_engine's signal
+  /// order. The dashboard renders which axes pull the pair apart.
+  @$pb.TagNumber(4)
+  $pb.PbList<$core.double> get perAxisDelta => $_getList(3);
+}
+
+class GetCompatibilityReportRequest extends $pb.GeneratedMessage {
+  factory GetCompatibilityReportRequest({
+    $core.String? otherUserId,
+  }) {
+    final result = create();
+    if (otherUserId != null) result.otherUserId = otherUserId;
+    return result;
+  }
+
+  GetCompatibilityReportRequest._();
+
+  factory GetCompatibilityReportRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetCompatibilityReportRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCompatibilityReportRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'otherUserId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCompatibilityReportRequest clone() => GetCompatibilityReportRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCompatibilityReportRequest copyWith(void Function(GetCompatibilityReportRequest) updates) => super.copyWith((message) => updates(message as GetCompatibilityReportRequest)) as GetCompatibilityReportRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCompatibilityReportRequest create() => GetCompatibilityReportRequest._();
+  @$core.override
+  GetCompatibilityReportRequest createEmptyInstance() => create();
+  static $pb.PbList<GetCompatibilityReportRequest> createRepeated() => $pb.PbList<GetCompatibilityReportRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetCompatibilityReportRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCompatibilityReportRequest>(create);
+  static GetCompatibilityReportRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get otherUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set otherUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOtherUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOtherUserId() => $_clearField(1);
+}
+
+class GetCompatibilityReportResponse extends $pb.GeneratedMessage {
+  factory GetCompatibilityReportResponse({
+    CompatibilityReport? report,
+  }) {
+    final result = create();
+    if (report != null) result.report = report;
+    return result;
+  }
+
+  GetCompatibilityReportResponse._();
+
+  factory GetCompatibilityReportResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetCompatibilityReportResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCompatibilityReportResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<CompatibilityReport>(1, _omitFieldNames ? '' : 'report', subBuilder: CompatibilityReport.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCompatibilityReportResponse clone() => GetCompatibilityReportResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCompatibilityReportResponse copyWith(void Function(GetCompatibilityReportResponse) updates) => super.copyWith((message) => updates(message as GetCompatibilityReportResponse)) as GetCompatibilityReportResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCompatibilityReportResponse create() => GetCompatibilityReportResponse._();
+  @$core.override
+  GetCompatibilityReportResponse createEmptyInstance() => create();
+  static $pb.PbList<GetCompatibilityReportResponse> createRepeated() => $pb.PbList<GetCompatibilityReportResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetCompatibilityReportResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCompatibilityReportResponse>(create);
+  static GetCompatibilityReportResponse? _defaultInstance;
+
+  /// Empty (left_user_id == "") = compatibility unavailable because
+  /// either user has no embedding yet, or the engine is offline.
+  @$pb.TagNumber(1)
+  CompatibilityReport get report => $_getN(0);
+  @$pb.TagNumber(1)
+  set report(CompatibilityReport value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReport() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReport() => $_clearField(1);
+  @$pb.TagNumber(1)
+  CompatibilityReport ensureReport() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

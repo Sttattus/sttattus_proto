@@ -485,6 +485,27 @@ message CancelReservationResponse {
   Reservation reservation = 1;
 }
 
+// === Compatibility report (A9P2.6) ===
+
+message CompatibilityReport {
+  string left_user_id = 1;
+  string right_user_id = 2;
+  // -1..1 cosine similarity between the two embeddings.
+  double cosine = 3;
+  // Absolute |left - right| per axis, in atlas_engine's signal
+  // order. The dashboard renders which axes pull the pair apart.
+  repeated double per_axis_delta = 4;
+}
+
+message GetCompatibilityReportRequest {
+  string other_user_id = 1;
+}
+message GetCompatibilityReportResponse {
+  // Empty (left_user_id == "") = compatibility unavailable because
+  // either user has no embedding yet, or the engine is offline.
+  CompatibilityReport report = 1;
+}
+
 service DatingService {
   rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
   rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
@@ -539,4 +560,7 @@ service DatingService {
   rpc CreateReservation(CreateReservationRequest) returns (CreateReservationResponse);
   rpc ListMyReservations(ListMyReservationsRequest) returns (ListMyReservationsResponse);
   rpc CancelReservation(CancelReservationRequest) returns (CancelReservationResponse);
+
+  // A9P2.6 — two-user compatibility report.
+  rpc GetCompatibilityReport(GetCompatibilityReportRequest) returns (GetCompatibilityReportResponse);
 }

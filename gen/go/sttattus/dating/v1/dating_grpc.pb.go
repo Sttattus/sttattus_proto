@@ -55,6 +55,7 @@ const (
 	DatingService_CreateReservation_FullMethodName      = "/sttattus.dating.v1.DatingService/CreateReservation"
 	DatingService_ListMyReservations_FullMethodName     = "/sttattus.dating.v1.DatingService/ListMyReservations"
 	DatingService_CancelReservation_FullMethodName      = "/sttattus.dating.v1.DatingService/CancelReservation"
+	DatingService_GetCompatibilityReport_FullMethodName = "/sttattus.dating.v1.DatingService/GetCompatibilityReport"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -106,6 +107,8 @@ type DatingServiceClient interface {
 	CreateReservation(ctx context.Context, in *CreateReservationRequest, opts ...grpc.CallOption) (*CreateReservationResponse, error)
 	ListMyReservations(ctx context.Context, in *ListMyReservationsRequest, opts ...grpc.CallOption) (*ListMyReservationsResponse, error)
 	CancelReservation(ctx context.Context, in *CancelReservationRequest, opts ...grpc.CallOption) (*CancelReservationResponse, error)
+	// A9P2.6 — two-user compatibility report.
+	GetCompatibilityReport(ctx context.Context, in *GetCompatibilityReportRequest, opts ...grpc.CallOption) (*GetCompatibilityReportResponse, error)
 }
 
 type datingServiceClient struct {
@@ -494,6 +497,16 @@ func (c *datingServiceClient) CancelReservation(ctx context.Context, in *CancelR
 	return out, nil
 }
 
+func (c *datingServiceClient) GetCompatibilityReport(ctx context.Context, in *GetCompatibilityReportRequest, opts ...grpc.CallOption) (*GetCompatibilityReportResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCompatibilityReportResponse)
+	err := c.cc.Invoke(ctx, DatingService_GetCompatibilityReport_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatingServiceServer is the server API for DatingService service.
 // All implementations must embed UnimplementedDatingServiceServer
 // for forward compatibility.
@@ -543,6 +556,8 @@ type DatingServiceServer interface {
 	CreateReservation(context.Context, *CreateReservationRequest) (*CreateReservationResponse, error)
 	ListMyReservations(context.Context, *ListMyReservationsRequest) (*ListMyReservationsResponse, error)
 	CancelReservation(context.Context, *CancelReservationRequest) (*CancelReservationResponse, error)
+	// A9P2.6 — two-user compatibility report.
+	GetCompatibilityReport(context.Context, *GetCompatibilityReportRequest) (*GetCompatibilityReportResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -660,6 +675,9 @@ func (UnimplementedDatingServiceServer) ListMyReservations(context.Context, *Lis
 }
 func (UnimplementedDatingServiceServer) CancelReservation(context.Context, *CancelReservationRequest) (*CancelReservationResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CancelReservation not implemented")
+}
+func (UnimplementedDatingServiceServer) GetCompatibilityReport(context.Context, *GetCompatibilityReportRequest) (*GetCompatibilityReportResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCompatibilityReport not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -1316,6 +1334,24 @@ func _DatingService_CancelReservation_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_GetCompatibilityReport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCompatibilityReportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).GetCompatibilityReport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_GetCompatibilityReport_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).GetCompatibilityReport(ctx, req.(*GetCompatibilityReportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatingService_ServiceDesc is the grpc.ServiceDesc for DatingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1458,6 +1494,10 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CancelReservation",
 			Handler:    _DatingService_CancelReservation_Handler,
+		},
+		{
+			MethodName: "GetCompatibilityReport",
+			Handler:    _DatingService_GetCompatibilityReport_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

@@ -185,6 +185,11 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$cancelReservation, request, options: options);
   }
 
+  /// A9P2.6 — two-user compatibility report.
+  $grpc.ResponseFuture<$0.GetCompatibilityReportResponse> getCompatibilityReport($0.GetCompatibilityReportRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getCompatibilityReport, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getProfile = $grpc.ClientMethod<$0.GetProfileRequest, $0.GetProfileResponse>(
@@ -331,6 +336,10 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/CancelReservation',
       ($0.CancelReservationRequest value) => value.writeToBuffer(),
       $0.CancelReservationResponse.fromBuffer);
+  static final _$getCompatibilityReport = $grpc.ClientMethod<$0.GetCompatibilityReportRequest, $0.GetCompatibilityReportResponse>(
+      '/sttattus.dating.v1.DatingService/GetCompatibilityReport',
+      ($0.GetCompatibilityReportRequest value) => value.writeToBuffer(),
+      $0.GetCompatibilityReportResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dating.v1.DatingService')
@@ -590,6 +599,13 @@ abstract class DatingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.CancelReservationRequest.fromBuffer(value),
         ($0.CancelReservationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetCompatibilityReportRequest, $0.GetCompatibilityReportResponse>(
+        'GetCompatibilityReport',
+        getCompatibilityReport_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetCompatibilityReportRequest.fromBuffer(value),
+        ($0.GetCompatibilityReportResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProfileRequest> $request) async {
@@ -807,5 +823,11 @@ abstract class DatingServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.CancelReservationResponse> cancelReservation($grpc.ServiceCall call, $0.CancelReservationRequest request);
+
+  $async.Future<$0.GetCompatibilityReportResponse> getCompatibilityReport_Pre($grpc.ServiceCall $call, $async.Future<$0.GetCompatibilityReportRequest> $request) async {
+    return getCompatibilityReport($call, await $request);
+  }
+
+  $async.Future<$0.GetCompatibilityReportResponse> getCompatibilityReport($grpc.ServiceCall call, $0.GetCompatibilityReportRequest request);
 
 }
