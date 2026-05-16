@@ -710,6 +710,433 @@ export class GetLinguistStatsResponse extends Message<GetLinguistStatsResponse> 
 }
 
 /**
+ * PlacementQuestion is one multiple-choice question seeded in
+ * lexicon_placement_questions. Audio URL is empty for non-listening
+ * skills; clients skip questions whose audio_url is empty for the
+ * listening skill (the immersion player wires real audio in L12.3).
+ *
+ * @generated from message sttattus.languages.v1.PlacementQuestion
+ */
+export class PlacementQuestion extends Message<PlacementQuestion> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string language = 2;
+   */
+  language = "";
+
+  /**
+   * @generated from field: string skill = 3;
+   */
+  skill = "";
+
+  /**
+   * 'A1'..'C2'
+   *
+   * @generated from field: string cefr_target = 4;
+   */
+  cefrTarget = "";
+
+  /**
+   * @generated from field: string prompt = 5;
+   */
+  prompt = "";
+
+  /**
+   * @generated from field: repeated string options = 6;
+   */
+  options: string[] = [];
+
+  /**
+   * @generated from field: string audio_url = 7;
+   */
+  audioUrl = "";
+
+  constructor(data?: PartialMessage<PlacementQuestion>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.PlacementQuestion";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "skill", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "cefr_target", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 7, name: "audio_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlacementQuestion {
+    return new PlacementQuestion().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PlacementQuestion {
+    return new PlacementQuestion().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PlacementQuestion {
+    return new PlacementQuestion().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PlacementQuestion | PlainMessage<PlacementQuestion> | undefined, b: PlacementQuestion | PlainMessage<PlacementQuestion> | undefined): boolean {
+    return proto3.util.equals(PlacementQuestion, a, b);
+  }
+}
+
+/**
+ * PlacementAnswer is one row sent back. selected_index < 0 means
+ * the user skipped the question.
+ *
+ * @generated from message sttattus.languages.v1.PlacementAnswer
+ */
+export class PlacementAnswer extends Message<PlacementAnswer> {
+  /**
+   * @generated from field: string question_id = 1;
+   */
+  questionId = "";
+
+  /**
+   * @generated from field: int32 selected_index = 2;
+   */
+  selectedIndex = 0;
+
+  constructor(data?: PartialMessage<PlacementAnswer>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.PlacementAnswer";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "question_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "selected_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlacementAnswer {
+    return new PlacementAnswer().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PlacementAnswer {
+    return new PlacementAnswer().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PlacementAnswer {
+    return new PlacementAnswer().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PlacementAnswer | PlainMessage<PlacementAnswer> | undefined, b: PlacementAnswer | PlainMessage<PlacementAnswer> | undefined): boolean {
+    return proto3.util.equals(PlacementAnswer, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ListPlacementQuestionsRequest
+ */
+export class ListPlacementQuestionsRequest extends Message<ListPlacementQuestionsRequest> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  /**
+   * @generated from field: string skill = 2;
+   */
+  skill = "";
+
+  constructor(data?: PartialMessage<ListPlacementQuestionsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ListPlacementQuestionsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "skill", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPlacementQuestionsRequest {
+    return new ListPlacementQuestionsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPlacementQuestionsRequest {
+    return new ListPlacementQuestionsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPlacementQuestionsRequest {
+    return new ListPlacementQuestionsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListPlacementQuestionsRequest | PlainMessage<ListPlacementQuestionsRequest> | undefined, b: ListPlacementQuestionsRequest | PlainMessage<ListPlacementQuestionsRequest> | undefined): boolean {
+    return proto3.util.equals(ListPlacementQuestionsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ListPlacementQuestionsResponse
+ */
+export class ListPlacementQuestionsResponse extends Message<ListPlacementQuestionsResponse> {
+  /**
+   * @generated from field: repeated sttattus.languages.v1.PlacementQuestion questions = 1;
+   */
+  questions: PlacementQuestion[] = [];
+
+  constructor(data?: PartialMessage<ListPlacementQuestionsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ListPlacementQuestionsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "questions", kind: "message", T: PlacementQuestion, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPlacementQuestionsResponse {
+    return new ListPlacementQuestionsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPlacementQuestionsResponse {
+    return new ListPlacementQuestionsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPlacementQuestionsResponse {
+    return new ListPlacementQuestionsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListPlacementQuestionsResponse | PlainMessage<ListPlacementQuestionsResponse> | undefined, b: ListPlacementQuestionsResponse | PlainMessage<ListPlacementQuestionsResponse> | undefined): boolean {
+    return proto3.util.equals(ListPlacementQuestionsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.SubmitPlacementResultRequest
+ */
+export class SubmitPlacementResultRequest extends Message<SubmitPlacementResultRequest> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  /**
+   * @generated from field: string skill = 2;
+   */
+  skill = "";
+
+  /**
+   * @generated from field: repeated sttattus.languages.v1.PlacementAnswer answers = 3;
+   */
+  answers: PlacementAnswer[] = [];
+
+  constructor(data?: PartialMessage<SubmitPlacementResultRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.SubmitPlacementResultRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "skill", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "answers", kind: "message", T: PlacementAnswer, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitPlacementResultRequest {
+    return new SubmitPlacementResultRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitPlacementResultRequest {
+    return new SubmitPlacementResultRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitPlacementResultRequest {
+    return new SubmitPlacementResultRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitPlacementResultRequest | PlainMessage<SubmitPlacementResultRequest> | undefined, b: SubmitPlacementResultRequest | PlainMessage<SubmitPlacementResultRequest> | undefined): boolean {
+    return proto3.util.equals(SubmitPlacementResultRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.PlacementResult
+ */
+export class PlacementResult extends Message<PlacementResult> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  /**
+   * @generated from field: string skill = 2;
+   */
+  skill = "";
+
+  /**
+   * @generated from field: string cefr_level = 3;
+   */
+  cefrLevel = "";
+
+  /**
+   * @generated from field: int32 raw_score = 4;
+   */
+  rawScore = 0;
+
+  /**
+   * @generated from field: int32 total = 5;
+   */
+  total = 0;
+
+  /**
+   * @generated from field: string completed_at = 6;
+   */
+  completedAt = "";
+
+  constructor(data?: PartialMessage<PlacementResult>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.PlacementResult";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "skill", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "cefr_level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "raw_score", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "total", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "completed_at", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlacementResult {
+    return new PlacementResult().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PlacementResult {
+    return new PlacementResult().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PlacementResult {
+    return new PlacementResult().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PlacementResult | PlainMessage<PlacementResult> | undefined, b: PlacementResult | PlainMessage<PlacementResult> | undefined): boolean {
+    return proto3.util.equals(PlacementResult, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.SubmitPlacementResultResponse
+ */
+export class SubmitPlacementResultResponse extends Message<SubmitPlacementResultResponse> {
+  /**
+   * @generated from field: sttattus.languages.v1.PlacementResult result = 1;
+   */
+  result?: PlacementResult;
+
+  constructor(data?: PartialMessage<SubmitPlacementResultResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.SubmitPlacementResultResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "result", kind: "message", T: PlacementResult },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitPlacementResultResponse {
+    return new SubmitPlacementResultResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitPlacementResultResponse {
+    return new SubmitPlacementResultResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitPlacementResultResponse {
+    return new SubmitPlacementResultResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitPlacementResultResponse | PlainMessage<SubmitPlacementResultResponse> | undefined, b: SubmitPlacementResultResponse | PlainMessage<SubmitPlacementResultResponse> | undefined): boolean {
+    return proto3.util.equals(SubmitPlacementResultResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ListMyPlacementResultsRequest
+ */
+export class ListMyPlacementResultsRequest extends Message<ListMyPlacementResultsRequest> {
+  constructor(data?: PartialMessage<ListMyPlacementResultsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ListMyPlacementResultsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyPlacementResultsRequest {
+    return new ListMyPlacementResultsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyPlacementResultsRequest {
+    return new ListMyPlacementResultsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyPlacementResultsRequest {
+    return new ListMyPlacementResultsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyPlacementResultsRequest | PlainMessage<ListMyPlacementResultsRequest> | undefined, b: ListMyPlacementResultsRequest | PlainMessage<ListMyPlacementResultsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyPlacementResultsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ListMyPlacementResultsResponse
+ */
+export class ListMyPlacementResultsResponse extends Message<ListMyPlacementResultsResponse> {
+  /**
+   * @generated from field: repeated sttattus.languages.v1.PlacementResult results = 1;
+   */
+  results: PlacementResult[] = [];
+
+  constructor(data?: PartialMessage<ListMyPlacementResultsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ListMyPlacementResultsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "results", kind: "message", T: PlacementResult, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyPlacementResultsResponse {
+    return new ListMyPlacementResultsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyPlacementResultsResponse {
+    return new ListMyPlacementResultsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyPlacementResultsResponse {
+    return new ListMyPlacementResultsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyPlacementResultsResponse | PlainMessage<ListMyPlacementResultsResponse> | undefined, b: ListMyPlacementResultsResponse | PlainMessage<ListMyPlacementResultsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyPlacementResultsResponse, a, b);
+  }
+}
+
+/**
  * Deprecated Word-based messages (for transition)
  *
  * @generated from message sttattus.languages.v1.Word

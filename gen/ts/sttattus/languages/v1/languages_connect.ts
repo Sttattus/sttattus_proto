@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CompleteInteractionRequest, CompleteInteractionResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, ListScenariosRequest, ListScenariosResponse, ListWordsRequest, ListWordsResponse } from "./languages_pb.js";
+import { CompleteInteractionRequest, CompleteInteractionResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListScenariosRequest, ListScenariosResponse, ListWordsRequest, ListWordsResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse } from "./languages_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -41,6 +41,35 @@ export const LanguagesService = {
       name: "GetLinguistStats",
       I: GetLinguistStatsRequest,
       O: GetLinguistStatsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L12.1 — CEFR placement.
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListPlacementQuestions
+     */
+    listPlacementQuestions: {
+      name: "ListPlacementQuestions",
+      I: ListPlacementQuestionsRequest,
+      O: ListPlacementQuestionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.SubmitPlacementResult
+     */
+    submitPlacementResult: {
+      name: "SubmitPlacementResult",
+      I: SubmitPlacementResultRequest,
+      O: SubmitPlacementResultResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListMyPlacementResults
+     */
+    listMyPlacementResults: {
+      name: "ListMyPlacementResults",
+      I: ListMyPlacementResultsRequest,
+      O: ListMyPlacementResultsResponse,
       kind: MethodKind.Unary,
     },
     /**

@@ -235,6 +235,139 @@ final $typed_data.Uint8List getLinguistStatsResponseDescriptor = $convert.base64
     'ChhHZXRMaW5ndWlzdFN0YXRzUmVzcG9uc2USOgoFc3RhdHMYASABKAsyJC5zdHRhdHR1cy5sYW'
     '5ndWFnZXMudjEuTGluZ3Vpc3RTdGF0c1IFc3RhdHM=');
 
+@$core.Deprecated('Use placementQuestionDescriptor instead')
+const PlacementQuestion$json = {
+  '1': 'PlacementQuestion',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'language', '3': 2, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'skill', '3': 3, '4': 1, '5': 9, '10': 'skill'},
+    {'1': 'cefr_target', '3': 4, '4': 1, '5': 9, '10': 'cefrTarget'},
+    {'1': 'prompt', '3': 5, '4': 1, '5': 9, '10': 'prompt'},
+    {'1': 'options', '3': 6, '4': 3, '5': 9, '10': 'options'},
+    {'1': 'audio_url', '3': 7, '4': 1, '5': 9, '10': 'audioUrl'},
+  ],
+};
+
+/// Descriptor for `PlacementQuestion`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List placementQuestionDescriptor = $convert.base64Decode(
+    'ChFQbGFjZW1lbnRRdWVzdGlvbhIOCgJpZBgBIAEoCVICaWQSGgoIbGFuZ3VhZ2UYAiABKAlSCG'
+    'xhbmd1YWdlEhQKBXNraWxsGAMgASgJUgVza2lsbBIfCgtjZWZyX3RhcmdldBgEIAEoCVIKY2Vm'
+    'clRhcmdldBIWCgZwcm9tcHQYBSABKAlSBnByb21wdBIYCgdvcHRpb25zGAYgAygJUgdvcHRpb2'
+    '5zEhsKCWF1ZGlvX3VybBgHIAEoCVIIYXVkaW9Vcmw=');
+
+@$core.Deprecated('Use placementAnswerDescriptor instead')
+const PlacementAnswer$json = {
+  '1': 'PlacementAnswer',
+  '2': [
+    {'1': 'question_id', '3': 1, '4': 1, '5': 9, '10': 'questionId'},
+    {'1': 'selected_index', '3': 2, '4': 1, '5': 5, '10': 'selectedIndex'},
+  ],
+};
+
+/// Descriptor for `PlacementAnswer`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List placementAnswerDescriptor = $convert.base64Decode(
+    'Cg9QbGFjZW1lbnRBbnN3ZXISHwoLcXVlc3Rpb25faWQYASABKAlSCnF1ZXN0aW9uSWQSJQoOc2'
+    'VsZWN0ZWRfaW5kZXgYAiABKAVSDXNlbGVjdGVkSW5kZXg=');
+
+@$core.Deprecated('Use listPlacementQuestionsRequestDescriptor instead')
+const ListPlacementQuestionsRequest$json = {
+  '1': 'ListPlacementQuestionsRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'skill', '3': 2, '4': 1, '5': 9, '10': 'skill'},
+  ],
+};
+
+/// Descriptor for `ListPlacementQuestionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPlacementQuestionsRequestDescriptor = $convert.base64Decode(
+    'Ch1MaXN0UGxhY2VtZW50UXVlc3Rpb25zUmVxdWVzdBIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3'
+    'VhZ2USFAoFc2tpbGwYAiABKAlSBXNraWxs');
+
+@$core.Deprecated('Use listPlacementQuestionsResponseDescriptor instead')
+const ListPlacementQuestionsResponse$json = {
+  '1': 'ListPlacementQuestionsResponse',
+  '2': [
+    {'1': 'questions', '3': 1, '4': 3, '5': 11, '6': '.sttattus.languages.v1.PlacementQuestion', '10': 'questions'},
+  ],
+};
+
+/// Descriptor for `ListPlacementQuestionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPlacementQuestionsResponseDescriptor = $convert.base64Decode(
+    'Ch5MaXN0UGxhY2VtZW50UXVlc3Rpb25zUmVzcG9uc2USRgoJcXVlc3Rpb25zGAEgAygLMiguc3'
+    'R0YXR0dXMubGFuZ3VhZ2VzLnYxLlBsYWNlbWVudFF1ZXN0aW9uUglxdWVzdGlvbnM=');
+
+@$core.Deprecated('Use submitPlacementResultRequestDescriptor instead')
+const SubmitPlacementResultRequest$json = {
+  '1': 'SubmitPlacementResultRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'skill', '3': 2, '4': 1, '5': 9, '10': 'skill'},
+    {'1': 'answers', '3': 3, '4': 3, '5': 11, '6': '.sttattus.languages.v1.PlacementAnswer', '10': 'answers'},
+  ],
+};
+
+/// Descriptor for `SubmitPlacementResultRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitPlacementResultRequestDescriptor = $convert.base64Decode(
+    'ChxTdWJtaXRQbGFjZW1lbnRSZXN1bHRSZXF1ZXN0EhoKCGxhbmd1YWdlGAEgASgJUghsYW5ndW'
+    'FnZRIUCgVza2lsbBgCIAEoCVIFc2tpbGwSQAoHYW5zd2VycxgDIAMoCzImLnN0dGF0dHVzLmxh'
+    'bmd1YWdlcy52MS5QbGFjZW1lbnRBbnN3ZXJSB2Fuc3dlcnM=');
+
+@$core.Deprecated('Use placementResultDescriptor instead')
+const PlacementResult$json = {
+  '1': 'PlacementResult',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'skill', '3': 2, '4': 1, '5': 9, '10': 'skill'},
+    {'1': 'cefr_level', '3': 3, '4': 1, '5': 9, '10': 'cefrLevel'},
+    {'1': 'raw_score', '3': 4, '4': 1, '5': 5, '10': 'rawScore'},
+    {'1': 'total', '3': 5, '4': 1, '5': 5, '10': 'total'},
+    {'1': 'completed_at', '3': 6, '4': 1, '5': 9, '10': 'completedAt'},
+  ],
+};
+
+/// Descriptor for `PlacementResult`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List placementResultDescriptor = $convert.base64Decode(
+    'Cg9QbGFjZW1lbnRSZXN1bHQSGgoIbGFuZ3VhZ2UYASABKAlSCGxhbmd1YWdlEhQKBXNraWxsGA'
+    'IgASgJUgVza2lsbBIdCgpjZWZyX2xldmVsGAMgASgJUgljZWZyTGV2ZWwSGwoJcmF3X3Njb3Jl'
+    'GAQgASgFUghyYXdTY29yZRIUCgV0b3RhbBgFIAEoBVIFdG90YWwSIQoMY29tcGxldGVkX2F0GA'
+    'YgASgJUgtjb21wbGV0ZWRBdA==');
+
+@$core.Deprecated('Use submitPlacementResultResponseDescriptor instead')
+const SubmitPlacementResultResponse$json = {
+  '1': 'SubmitPlacementResultResponse',
+  '2': [
+    {'1': 'result', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.PlacementResult', '10': 'result'},
+  ],
+};
+
+/// Descriptor for `SubmitPlacementResultResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitPlacementResultResponseDescriptor = $convert.base64Decode(
+    'Ch1TdWJtaXRQbGFjZW1lbnRSZXN1bHRSZXNwb25zZRI+CgZyZXN1bHQYASABKAsyJi5zdHRhdH'
+    'R1cy5sYW5ndWFnZXMudjEuUGxhY2VtZW50UmVzdWx0UgZyZXN1bHQ=');
+
+@$core.Deprecated('Use listMyPlacementResultsRequestDescriptor instead')
+const ListMyPlacementResultsRequest$json = {
+  '1': 'ListMyPlacementResultsRequest',
+};
+
+/// Descriptor for `ListMyPlacementResultsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyPlacementResultsRequestDescriptor = $convert.base64Decode(
+    'Ch1MaXN0TXlQbGFjZW1lbnRSZXN1bHRzUmVxdWVzdA==');
+
+@$core.Deprecated('Use listMyPlacementResultsResponseDescriptor instead')
+const ListMyPlacementResultsResponse$json = {
+  '1': 'ListMyPlacementResultsResponse',
+  '2': [
+    {'1': 'results', '3': 1, '4': 3, '5': 11, '6': '.sttattus.languages.v1.PlacementResult', '10': 'results'},
+  ],
+};
+
+/// Descriptor for `ListMyPlacementResultsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyPlacementResultsResponseDescriptor = $convert.base64Decode(
+    'Ch5MaXN0TXlQbGFjZW1lbnRSZXN1bHRzUmVzcG9uc2USQAoHcmVzdWx0cxgBIAMoCzImLnN0dG'
+    'F0dHVzLmxhbmd1YWdlcy52MS5QbGFjZW1lbnRSZXN1bHRSB3Jlc3VsdHM=');
+
 @$core.Deprecated('Use wordDescriptor instead')
 const Word$json = {
   '1': 'Word',

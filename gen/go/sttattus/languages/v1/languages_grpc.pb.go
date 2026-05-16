@@ -19,10 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	LanguagesService_ListScenarios_FullMethodName       = "/sttattus.languages.v1.LanguagesService/ListScenarios"
-	LanguagesService_CompleteInteraction_FullMethodName = "/sttattus.languages.v1.LanguagesService/CompleteInteraction"
-	LanguagesService_GetLinguistStats_FullMethodName    = "/sttattus.languages.v1.LanguagesService/GetLinguistStats"
-	LanguagesService_ListWords_FullMethodName           = "/sttattus.languages.v1.LanguagesService/ListWords"
+	LanguagesService_ListScenarios_FullMethodName          = "/sttattus.languages.v1.LanguagesService/ListScenarios"
+	LanguagesService_CompleteInteraction_FullMethodName    = "/sttattus.languages.v1.LanguagesService/CompleteInteraction"
+	LanguagesService_GetLinguistStats_FullMethodName       = "/sttattus.languages.v1.LanguagesService/GetLinguistStats"
+	LanguagesService_ListPlacementQuestions_FullMethodName = "/sttattus.languages.v1.LanguagesService/ListPlacementQuestions"
+	LanguagesService_SubmitPlacementResult_FullMethodName  = "/sttattus.languages.v1.LanguagesService/SubmitPlacementResult"
+	LanguagesService_ListMyPlacementResults_FullMethodName = "/sttattus.languages.v1.LanguagesService/ListMyPlacementResults"
+	LanguagesService_ListWords_FullMethodName              = "/sttattus.languages.v1.LanguagesService/ListWords"
 )
 
 // LanguagesServiceClient is the client API for LanguagesService service.
@@ -34,6 +37,10 @@ type LanguagesServiceClient interface {
 	CompleteInteraction(ctx context.Context, in *CompleteInteractionRequest, opts ...grpc.CallOption) (*CompleteInteractionResponse, error)
 	// Status
 	GetLinguistStats(ctx context.Context, in *GetLinguistStatsRequest, opts ...grpc.CallOption) (*GetLinguistStatsResponse, error)
+	// L12.1 — CEFR placement.
+	ListPlacementQuestions(ctx context.Context, in *ListPlacementQuestionsRequest, opts ...grpc.CallOption) (*ListPlacementQuestionsResponse, error)
+	SubmitPlacementResult(ctx context.Context, in *SubmitPlacementResultRequest, opts ...grpc.CallOption) (*SubmitPlacementResultResponse, error)
+	ListMyPlacementResults(ctx context.Context, in *ListMyPlacementResultsRequest, opts ...grpc.CallOption) (*ListMyPlacementResultsResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error)
 }
@@ -76,6 +83,36 @@ func (c *languagesServiceClient) GetLinguistStats(ctx context.Context, in *GetLi
 	return out, nil
 }
 
+func (c *languagesServiceClient) ListPlacementQuestions(ctx context.Context, in *ListPlacementQuestionsRequest, opts ...grpc.CallOption) (*ListPlacementQuestionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListPlacementQuestionsResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListPlacementQuestions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) SubmitPlacementResult(ctx context.Context, in *SubmitPlacementResultRequest, opts ...grpc.CallOption) (*SubmitPlacementResultResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitPlacementResultResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_SubmitPlacementResult_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) ListMyPlacementResults(ctx context.Context, in *ListMyPlacementResultsRequest, opts ...grpc.CallOption) (*ListMyPlacementResultsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyPlacementResultsResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListMyPlacementResults_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *languagesServiceClient) ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListWordsResponse)
@@ -95,6 +132,10 @@ type LanguagesServiceServer interface {
 	CompleteInteraction(context.Context, *CompleteInteractionRequest) (*CompleteInteractionResponse, error)
 	// Status
 	GetLinguistStats(context.Context, *GetLinguistStatsRequest) (*GetLinguistStatsResponse, error)
+	// L12.1 — CEFR placement.
+	ListPlacementQuestions(context.Context, *ListPlacementQuestionsRequest) (*ListPlacementQuestionsResponse, error)
+	SubmitPlacementResult(context.Context, *SubmitPlacementResultRequest) (*SubmitPlacementResultResponse, error)
+	ListMyPlacementResults(context.Context, *ListMyPlacementResultsRequest) (*ListMyPlacementResultsResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error)
 	mustEmbedUnimplementedLanguagesServiceServer()
@@ -115,6 +156,15 @@ func (UnimplementedLanguagesServiceServer) CompleteInteraction(context.Context, 
 }
 func (UnimplementedLanguagesServiceServer) GetLinguistStats(context.Context, *GetLinguistStatsRequest) (*GetLinguistStatsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetLinguistStats not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ListPlacementQuestions(context.Context, *ListPlacementQuestionsRequest) (*ListPlacementQuestionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListPlacementQuestions not implemented")
+}
+func (UnimplementedLanguagesServiceServer) SubmitPlacementResult(context.Context, *SubmitPlacementResultRequest) (*SubmitPlacementResultResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitPlacementResult not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ListMyPlacementResults(context.Context, *ListMyPlacementResultsRequest) (*ListMyPlacementResultsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyPlacementResults not implemented")
 }
 func (UnimplementedLanguagesServiceServer) ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListWords not implemented")
@@ -194,6 +244,60 @@ func _LanguagesService_GetLinguistStats_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LanguagesService_ListPlacementQuestions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListPlacementQuestionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ListPlacementQuestions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ListPlacementQuestions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ListPlacementQuestions(ctx, req.(*ListPlacementQuestionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_SubmitPlacementResult_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitPlacementResultRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).SubmitPlacementResult(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_SubmitPlacementResult_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).SubmitPlacementResult(ctx, req.(*SubmitPlacementResultRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_ListMyPlacementResults_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyPlacementResultsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ListMyPlacementResults(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ListMyPlacementResults_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ListMyPlacementResults(ctx, req.(*ListMyPlacementResultsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LanguagesService_ListWords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListWordsRequest)
 	if err := dec(in); err != nil {
@@ -230,6 +334,18 @@ var LanguagesService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLinguistStats",
 			Handler:    _LanguagesService_GetLinguistStats_Handler,
+		},
+		{
+			MethodName: "ListPlacementQuestions",
+			Handler:    _LanguagesService_ListPlacementQuestions_Handler,
+		},
+		{
+			MethodName: "SubmitPlacementResult",
+			Handler:    _LanguagesService_SubmitPlacementResult_Handler,
+		},
+		{
+			MethodName: "ListMyPlacementResults",
+			Handler:    _LanguagesService_ListMyPlacementResults_Handler,
 		},
 		{
 			MethodName: "ListWords",

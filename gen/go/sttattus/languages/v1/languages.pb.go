@@ -851,6 +851,520 @@ func (x *GetLinguistStatsResponse) GetStats() *LinguistStats {
 	return nil
 }
 
+// PlacementQuestion is one multiple-choice question seeded in
+// lexicon_placement_questions. Audio URL is empty for non-listening
+// skills; clients skip questions whose audio_url is empty for the
+// listening skill (the immersion player wires real audio in L12.3).
+type PlacementQuestion struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Language      string                 `protobuf:"bytes,2,opt,name=language,proto3" json:"language,omitempty"`
+	Skill         string                 `protobuf:"bytes,3,opt,name=skill,proto3" json:"skill,omitempty"`
+	CefrTarget    string                 `protobuf:"bytes,4,opt,name=cefr_target,json=cefrTarget,proto3" json:"cefr_target,omitempty"` // 'A1'..'C2'
+	Prompt        string                 `protobuf:"bytes,5,opt,name=prompt,proto3" json:"prompt,omitempty"`
+	Options       []string               `protobuf:"bytes,6,rep,name=options,proto3" json:"options,omitempty"`
+	AudioUrl      string                 `protobuf:"bytes,7,opt,name=audio_url,json=audioUrl,proto3" json:"audio_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PlacementQuestion) Reset() {
+	*x = PlacementQuestion{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PlacementQuestion) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PlacementQuestion) ProtoMessage() {}
+
+func (x *PlacementQuestion) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PlacementQuestion.ProtoReflect.Descriptor instead.
+func (*PlacementQuestion) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *PlacementQuestion) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *PlacementQuestion) GetLanguage() string {
+	if x != nil {
+		return x.Language
+	}
+	return ""
+}
+
+func (x *PlacementQuestion) GetSkill() string {
+	if x != nil {
+		return x.Skill
+	}
+	return ""
+}
+
+func (x *PlacementQuestion) GetCefrTarget() string {
+	if x != nil {
+		return x.CefrTarget
+	}
+	return ""
+}
+
+func (x *PlacementQuestion) GetPrompt() string {
+	if x != nil {
+		return x.Prompt
+	}
+	return ""
+}
+
+func (x *PlacementQuestion) GetOptions() []string {
+	if x != nil {
+		return x.Options
+	}
+	return nil
+}
+
+func (x *PlacementQuestion) GetAudioUrl() string {
+	if x != nil {
+		return x.AudioUrl
+	}
+	return ""
+}
+
+// PlacementAnswer is one row sent back. selected_index < 0 means
+// the user skipped the question.
+type PlacementAnswer struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	QuestionId    string                 `protobuf:"bytes,1,opt,name=question_id,json=questionId,proto3" json:"question_id,omitempty"`
+	SelectedIndex int32                  `protobuf:"varint,2,opt,name=selected_index,json=selectedIndex,proto3" json:"selected_index,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PlacementAnswer) Reset() {
+	*x = PlacementAnswer{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PlacementAnswer) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PlacementAnswer) ProtoMessage() {}
+
+func (x *PlacementAnswer) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PlacementAnswer.ProtoReflect.Descriptor instead.
+func (*PlacementAnswer) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *PlacementAnswer) GetQuestionId() string {
+	if x != nil {
+		return x.QuestionId
+	}
+	return ""
+}
+
+func (x *PlacementAnswer) GetSelectedIndex() int32 {
+	if x != nil {
+		return x.SelectedIndex
+	}
+	return 0
+}
+
+type ListPlacementQuestionsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Language      string                 `protobuf:"bytes,1,opt,name=language,proto3" json:"language,omitempty"`
+	Skill         string                 `protobuf:"bytes,2,opt,name=skill,proto3" json:"skill,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListPlacementQuestionsRequest) Reset() {
+	*x = ListPlacementQuestionsRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListPlacementQuestionsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListPlacementQuestionsRequest) ProtoMessage() {}
+
+func (x *ListPlacementQuestionsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListPlacementQuestionsRequest.ProtoReflect.Descriptor instead.
+func (*ListPlacementQuestionsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *ListPlacementQuestionsRequest) GetLanguage() string {
+	if x != nil {
+		return x.Language
+	}
+	return ""
+}
+
+func (x *ListPlacementQuestionsRequest) GetSkill() string {
+	if x != nil {
+		return x.Skill
+	}
+	return ""
+}
+
+type ListPlacementQuestionsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Questions     []*PlacementQuestion   `protobuf:"bytes,1,rep,name=questions,proto3" json:"questions,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListPlacementQuestionsResponse) Reset() {
+	*x = ListPlacementQuestionsResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListPlacementQuestionsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListPlacementQuestionsResponse) ProtoMessage() {}
+
+func (x *ListPlacementQuestionsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListPlacementQuestionsResponse.ProtoReflect.Descriptor instead.
+func (*ListPlacementQuestionsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *ListPlacementQuestionsResponse) GetQuestions() []*PlacementQuestion {
+	if x != nil {
+		return x.Questions
+	}
+	return nil
+}
+
+type SubmitPlacementResultRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Language      string                 `protobuf:"bytes,1,opt,name=language,proto3" json:"language,omitempty"`
+	Skill         string                 `protobuf:"bytes,2,opt,name=skill,proto3" json:"skill,omitempty"`
+	Answers       []*PlacementAnswer     `protobuf:"bytes,3,rep,name=answers,proto3" json:"answers,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitPlacementResultRequest) Reset() {
+	*x = SubmitPlacementResultRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitPlacementResultRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitPlacementResultRequest) ProtoMessage() {}
+
+func (x *SubmitPlacementResultRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitPlacementResultRequest.ProtoReflect.Descriptor instead.
+func (*SubmitPlacementResultRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *SubmitPlacementResultRequest) GetLanguage() string {
+	if x != nil {
+		return x.Language
+	}
+	return ""
+}
+
+func (x *SubmitPlacementResultRequest) GetSkill() string {
+	if x != nil {
+		return x.Skill
+	}
+	return ""
+}
+
+func (x *SubmitPlacementResultRequest) GetAnswers() []*PlacementAnswer {
+	if x != nil {
+		return x.Answers
+	}
+	return nil
+}
+
+type PlacementResult struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Language      string                 `protobuf:"bytes,1,opt,name=language,proto3" json:"language,omitempty"`
+	Skill         string                 `protobuf:"bytes,2,opt,name=skill,proto3" json:"skill,omitempty"`
+	CefrLevel     string                 `protobuf:"bytes,3,opt,name=cefr_level,json=cefrLevel,proto3" json:"cefr_level,omitempty"`
+	RawScore      int32                  `protobuf:"varint,4,opt,name=raw_score,json=rawScore,proto3" json:"raw_score,omitempty"`
+	Total         int32                  `protobuf:"varint,5,opt,name=total,proto3" json:"total,omitempty"`
+	CompletedAt   string                 `protobuf:"bytes,6,opt,name=completed_at,json=completedAt,proto3" json:"completed_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PlacementResult) Reset() {
+	*x = PlacementResult{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PlacementResult) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PlacementResult) ProtoMessage() {}
+
+func (x *PlacementResult) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PlacementResult.ProtoReflect.Descriptor instead.
+func (*PlacementResult) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *PlacementResult) GetLanguage() string {
+	if x != nil {
+		return x.Language
+	}
+	return ""
+}
+
+func (x *PlacementResult) GetSkill() string {
+	if x != nil {
+		return x.Skill
+	}
+	return ""
+}
+
+func (x *PlacementResult) GetCefrLevel() string {
+	if x != nil {
+		return x.CefrLevel
+	}
+	return ""
+}
+
+func (x *PlacementResult) GetRawScore() int32 {
+	if x != nil {
+		return x.RawScore
+	}
+	return 0
+}
+
+func (x *PlacementResult) GetTotal() int32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+func (x *PlacementResult) GetCompletedAt() string {
+	if x != nil {
+		return x.CompletedAt
+	}
+	return ""
+}
+
+type SubmitPlacementResultResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Result        *PlacementResult       `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitPlacementResultResponse) Reset() {
+	*x = SubmitPlacementResultResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitPlacementResultResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitPlacementResultResponse) ProtoMessage() {}
+
+func (x *SubmitPlacementResultResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitPlacementResultResponse.ProtoReflect.Descriptor instead.
+func (*SubmitPlacementResultResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *SubmitPlacementResultResponse) GetResult() *PlacementResult {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+type ListMyPlacementResultsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyPlacementResultsRequest) Reset() {
+	*x = ListMyPlacementResultsRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyPlacementResultsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyPlacementResultsRequest) ProtoMessage() {}
+
+func (x *ListMyPlacementResultsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyPlacementResultsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyPlacementResultsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{19}
+}
+
+type ListMyPlacementResultsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Results       []*PlacementResult     `protobuf:"bytes,1,rep,name=results,proto3" json:"results,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyPlacementResultsResponse) Reset() {
+	*x = ListMyPlacementResultsResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyPlacementResultsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyPlacementResultsResponse) ProtoMessage() {}
+
+func (x *ListMyPlacementResultsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyPlacementResultsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyPlacementResultsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *ListMyPlacementResultsResponse) GetResults() []*PlacementResult {
+	if x != nil {
+		return x.Results
+	}
+	return nil
+}
+
 // Deprecated Word-based messages (for transition)
 type Word struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -862,7 +1376,7 @@ type Word struct {
 
 func (x *Word) Reset() {
 	*x = Word{}
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[12]
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -874,7 +1388,7 @@ func (x *Word) String() string {
 func (*Word) ProtoMessage() {}
 
 func (x *Word) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[12]
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -887,7 +1401,7 @@ func (x *Word) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Word.ProtoReflect.Descriptor instead.
 func (*Word) Descriptor() ([]byte, []int) {
-	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{12}
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *Word) GetId() string {
@@ -913,7 +1427,7 @@ type ListWordsRequest struct {
 
 func (x *ListWordsRequest) Reset() {
 	*x = ListWordsRequest{}
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[13]
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -925,7 +1439,7 @@ func (x *ListWordsRequest) String() string {
 func (*ListWordsRequest) ProtoMessage() {}
 
 func (x *ListWordsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[13]
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -938,7 +1452,7 @@ func (x *ListWordsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListWordsRequest.ProtoReflect.Descriptor instead.
 func (*ListWordsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{13}
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *ListWordsRequest) GetPage() *v1.PageRequest {
@@ -957,7 +1471,7 @@ type ListWordsResponse struct {
 
 func (x *ListWordsResponse) Reset() {
 	*x = ListWordsResponse{}
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[14]
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -969,7 +1483,7 @@ func (x *ListWordsResponse) String() string {
 func (*ListWordsResponse) ProtoMessage() {}
 
 func (x *ListWordsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[14]
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -982,7 +1496,7 @@ func (x *ListWordsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListWordsResponse.ProtoReflect.Descriptor instead.
 func (*ListWordsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{14}
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *ListWordsResponse) GetWords() []*Word {
@@ -1054,7 +1568,42 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x05stats\x18\x02 \x01(\v2$.sttattus.languages.v1.LinguistStatsR\x05stats\"\x19\n" +
 	"\x17GetLinguistStatsRequest\"V\n" +
 	"\x18GetLinguistStatsResponse\x12:\n" +
-	"\x05stats\x18\x01 \x01(\v2$.sttattus.languages.v1.LinguistStatsR\x05stats\"9\n" +
+	"\x05stats\x18\x01 \x01(\v2$.sttattus.languages.v1.LinguistStatsR\x05stats\"\xc5\x01\n" +
+	"\x11PlacementQuestion\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
+	"\blanguage\x18\x02 \x01(\tR\blanguage\x12\x14\n" +
+	"\x05skill\x18\x03 \x01(\tR\x05skill\x12\x1f\n" +
+	"\vcefr_target\x18\x04 \x01(\tR\n" +
+	"cefrTarget\x12\x16\n" +
+	"\x06prompt\x18\x05 \x01(\tR\x06prompt\x12\x18\n" +
+	"\aoptions\x18\x06 \x03(\tR\aoptions\x12\x1b\n" +
+	"\taudio_url\x18\a \x01(\tR\baudioUrl\"Y\n" +
+	"\x0fPlacementAnswer\x12\x1f\n" +
+	"\vquestion_id\x18\x01 \x01(\tR\n" +
+	"questionId\x12%\n" +
+	"\x0eselected_index\x18\x02 \x01(\x05R\rselectedIndex\"Q\n" +
+	"\x1dListPlacementQuestionsRequest\x12\x1a\n" +
+	"\blanguage\x18\x01 \x01(\tR\blanguage\x12\x14\n" +
+	"\x05skill\x18\x02 \x01(\tR\x05skill\"h\n" +
+	"\x1eListPlacementQuestionsResponse\x12F\n" +
+	"\tquestions\x18\x01 \x03(\v2(.sttattus.languages.v1.PlacementQuestionR\tquestions\"\x92\x01\n" +
+	"\x1cSubmitPlacementResultRequest\x12\x1a\n" +
+	"\blanguage\x18\x01 \x01(\tR\blanguage\x12\x14\n" +
+	"\x05skill\x18\x02 \x01(\tR\x05skill\x12@\n" +
+	"\aanswers\x18\x03 \x03(\v2&.sttattus.languages.v1.PlacementAnswerR\aanswers\"\xb8\x01\n" +
+	"\x0fPlacementResult\x12\x1a\n" +
+	"\blanguage\x18\x01 \x01(\tR\blanguage\x12\x14\n" +
+	"\x05skill\x18\x02 \x01(\tR\x05skill\x12\x1d\n" +
+	"\n" +
+	"cefr_level\x18\x03 \x01(\tR\tcefrLevel\x12\x1b\n" +
+	"\traw_score\x18\x04 \x01(\x05R\brawScore\x12\x14\n" +
+	"\x05total\x18\x05 \x01(\x05R\x05total\x12!\n" +
+	"\fcompleted_at\x18\x06 \x01(\tR\vcompletedAt\"_\n" +
+	"\x1dSubmitPlacementResultResponse\x12>\n" +
+	"\x06result\x18\x01 \x01(\v2&.sttattus.languages.v1.PlacementResultR\x06result\"\x1f\n" +
+	"\x1dListMyPlacementResultsRequest\"b\n" +
+	"\x1eListMyPlacementResultsResponse\x12@\n" +
+	"\aresults\x18\x01 \x03(\v2&.sttattus.languages.v1.PlacementResultR\aresults\"9\n" +
 	"\x04Word\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
 	"\fpayload_json\x18\x02 \x01(\tR\vpayloadJson\"G\n" +
@@ -1067,11 +1616,14 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x1bCULTURAL_CATEGORY_DIPLOMACY\x10\x01\x12#\n" +
 	"\x1fCULTURAL_CATEGORY_LUXURY_ASSETS\x10\x02\x12 \n" +
 	"\x1cCULTURAL_CATEGORY_GASTRONOMY\x10\x03\x12\"\n" +
-	"\x1eCULTURAL_CATEGORY_PHILANTHROPY\x10\x042\xd1\x03\n" +
+	"\x1eCULTURAL_CATEGORY_PHILANTHROPY\x10\x042\xe6\x06\n" +
 	"\x10LanguagesService\x12j\n" +
 	"\rListScenarios\x12+.sttattus.languages.v1.ListScenariosRequest\x1a,.sttattus.languages.v1.ListScenariosResponse\x12|\n" +
 	"\x13CompleteInteraction\x121.sttattus.languages.v1.CompleteInteractionRequest\x1a2.sttattus.languages.v1.CompleteInteractionResponse\x12s\n" +
-	"\x10GetLinguistStats\x12..sttattus.languages.v1.GetLinguistStatsRequest\x1a/.sttattus.languages.v1.GetLinguistStatsResponse\x12^\n" +
+	"\x10GetLinguistStats\x12..sttattus.languages.v1.GetLinguistStatsRequest\x1a/.sttattus.languages.v1.GetLinguistStatsResponse\x12\x85\x01\n" +
+	"\x16ListPlacementQuestions\x124.sttattus.languages.v1.ListPlacementQuestionsRequest\x1a5.sttattus.languages.v1.ListPlacementQuestionsResponse\x12\x82\x01\n" +
+	"\x15SubmitPlacementResult\x123.sttattus.languages.v1.SubmitPlacementResultRequest\x1a4.sttattus.languages.v1.SubmitPlacementResultResponse\x12\x85\x01\n" +
+	"\x16ListMyPlacementResults\x124.sttattus.languages.v1.ListMyPlacementResultsRequest\x1a5.sttattus.languages.v1.ListMyPlacementResultsResponse\x12^\n" +
 	"\tListWords\x12'.sttattus.languages.v1.ListWordsRequest\x1a(.sttattus.languages.v1.ListWordsResponseBDZBgithub.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1b\x06proto3"
 
 var (
@@ -1087,55 +1639,74 @@ func file_sttattus_languages_v1_languages_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_languages_v1_languages_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_sttattus_languages_v1_languages_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_sttattus_languages_v1_languages_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
 var file_sttattus_languages_v1_languages_proto_goTypes = []any{
-	(CulturalCategory)(0),               // 0: sttattus.languages.v1.CulturalCategory
-	(*CulturalNuance)(nil),              // 1: sttattus.languages.v1.CulturalNuance
-	(*Scenario)(nil),                    // 2: sttattus.languages.v1.Scenario
-	(*DialogueNode)(nil),                // 3: sttattus.languages.v1.DialogueNode
-	(*DialogueOption)(nil),              // 4: sttattus.languages.v1.DialogueOption
-	(*Progress)(nil),                    // 5: sttattus.languages.v1.Progress
-	(*LinguistStats)(nil),               // 6: sttattus.languages.v1.LinguistStats
-	(*ListScenariosRequest)(nil),        // 7: sttattus.languages.v1.ListScenariosRequest
-	(*ListScenariosResponse)(nil),       // 8: sttattus.languages.v1.ListScenariosResponse
-	(*CompleteInteractionRequest)(nil),  // 9: sttattus.languages.v1.CompleteInteractionRequest
-	(*CompleteInteractionResponse)(nil), // 10: sttattus.languages.v1.CompleteInteractionResponse
-	(*GetLinguistStatsRequest)(nil),     // 11: sttattus.languages.v1.GetLinguistStatsRequest
-	(*GetLinguistStatsResponse)(nil),    // 12: sttattus.languages.v1.GetLinguistStatsResponse
-	(*Word)(nil),                        // 13: sttattus.languages.v1.Word
-	(*ListWordsRequest)(nil),            // 14: sttattus.languages.v1.ListWordsRequest
-	(*ListWordsResponse)(nil),           // 15: sttattus.languages.v1.ListWordsResponse
-	(*timestamppb.Timestamp)(nil),       // 16: google.protobuf.Timestamp
-	(*v1.PageRequest)(nil),              // 17: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),             // 18: sttattus.common.v1.PageResponse
+	(CulturalCategory)(0),                  // 0: sttattus.languages.v1.CulturalCategory
+	(*CulturalNuance)(nil),                 // 1: sttattus.languages.v1.CulturalNuance
+	(*Scenario)(nil),                       // 2: sttattus.languages.v1.Scenario
+	(*DialogueNode)(nil),                   // 3: sttattus.languages.v1.DialogueNode
+	(*DialogueOption)(nil),                 // 4: sttattus.languages.v1.DialogueOption
+	(*Progress)(nil),                       // 5: sttattus.languages.v1.Progress
+	(*LinguistStats)(nil),                  // 6: sttattus.languages.v1.LinguistStats
+	(*ListScenariosRequest)(nil),           // 7: sttattus.languages.v1.ListScenariosRequest
+	(*ListScenariosResponse)(nil),          // 8: sttattus.languages.v1.ListScenariosResponse
+	(*CompleteInteractionRequest)(nil),     // 9: sttattus.languages.v1.CompleteInteractionRequest
+	(*CompleteInteractionResponse)(nil),    // 10: sttattus.languages.v1.CompleteInteractionResponse
+	(*GetLinguistStatsRequest)(nil),        // 11: sttattus.languages.v1.GetLinguistStatsRequest
+	(*GetLinguistStatsResponse)(nil),       // 12: sttattus.languages.v1.GetLinguistStatsResponse
+	(*PlacementQuestion)(nil),              // 13: sttattus.languages.v1.PlacementQuestion
+	(*PlacementAnswer)(nil),                // 14: sttattus.languages.v1.PlacementAnswer
+	(*ListPlacementQuestionsRequest)(nil),  // 15: sttattus.languages.v1.ListPlacementQuestionsRequest
+	(*ListPlacementQuestionsResponse)(nil), // 16: sttattus.languages.v1.ListPlacementQuestionsResponse
+	(*SubmitPlacementResultRequest)(nil),   // 17: sttattus.languages.v1.SubmitPlacementResultRequest
+	(*PlacementResult)(nil),                // 18: sttattus.languages.v1.PlacementResult
+	(*SubmitPlacementResultResponse)(nil),  // 19: sttattus.languages.v1.SubmitPlacementResultResponse
+	(*ListMyPlacementResultsRequest)(nil),  // 20: sttattus.languages.v1.ListMyPlacementResultsRequest
+	(*ListMyPlacementResultsResponse)(nil), // 21: sttattus.languages.v1.ListMyPlacementResultsResponse
+	(*Word)(nil),                           // 22: sttattus.languages.v1.Word
+	(*ListWordsRequest)(nil),               // 23: sttattus.languages.v1.ListWordsRequest
+	(*ListWordsResponse)(nil),              // 24: sttattus.languages.v1.ListWordsResponse
+	(*timestamppb.Timestamp)(nil),          // 25: google.protobuf.Timestamp
+	(*v1.PageRequest)(nil),                 // 26: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),                // 27: sttattus.common.v1.PageResponse
 }
 var file_sttattus_languages_v1_languages_proto_depIdxs = []int32{
 	0,  // 0: sttattus.languages.v1.Scenario.category:type_name -> sttattus.languages.v1.CulturalCategory
 	3,  // 1: sttattus.languages.v1.Scenario.nodes:type_name -> sttattus.languages.v1.DialogueNode
 	4,  // 2: sttattus.languages.v1.DialogueNode.options:type_name -> sttattus.languages.v1.DialogueOption
-	16, // 3: sttattus.languages.v1.Progress.last_refined_at:type_name -> google.protobuf.Timestamp
+	25, // 3: sttattus.languages.v1.Progress.last_refined_at:type_name -> google.protobuf.Timestamp
 	0,  // 4: sttattus.languages.v1.ListScenariosRequest.category:type_name -> sttattus.languages.v1.CulturalCategory
-	17, // 5: sttattus.languages.v1.ListScenariosRequest.page:type_name -> sttattus.common.v1.PageRequest
+	26, // 5: sttattus.languages.v1.ListScenariosRequest.page:type_name -> sttattus.common.v1.PageRequest
 	2,  // 6: sttattus.languages.v1.ListScenariosResponse.scenarios:type_name -> sttattus.languages.v1.Scenario
-	18, // 7: sttattus.languages.v1.ListScenariosResponse.page:type_name -> sttattus.common.v1.PageResponse
+	27, // 7: sttattus.languages.v1.ListScenariosResponse.page:type_name -> sttattus.common.v1.PageResponse
 	5,  // 8: sttattus.languages.v1.CompleteInteractionResponse.progress:type_name -> sttattus.languages.v1.Progress
 	6,  // 9: sttattus.languages.v1.CompleteInteractionResponse.stats:type_name -> sttattus.languages.v1.LinguistStats
 	6,  // 10: sttattus.languages.v1.GetLinguistStatsResponse.stats:type_name -> sttattus.languages.v1.LinguistStats
-	17, // 11: sttattus.languages.v1.ListWordsRequest.page:type_name -> sttattus.common.v1.PageRequest
-	13, // 12: sttattus.languages.v1.ListWordsResponse.words:type_name -> sttattus.languages.v1.Word
-	7,  // 13: sttattus.languages.v1.LanguagesService.ListScenarios:input_type -> sttattus.languages.v1.ListScenariosRequest
-	9,  // 14: sttattus.languages.v1.LanguagesService.CompleteInteraction:input_type -> sttattus.languages.v1.CompleteInteractionRequest
-	11, // 15: sttattus.languages.v1.LanguagesService.GetLinguistStats:input_type -> sttattus.languages.v1.GetLinguistStatsRequest
-	14, // 16: sttattus.languages.v1.LanguagesService.ListWords:input_type -> sttattus.languages.v1.ListWordsRequest
-	8,  // 17: sttattus.languages.v1.LanguagesService.ListScenarios:output_type -> sttattus.languages.v1.ListScenariosResponse
-	10, // 18: sttattus.languages.v1.LanguagesService.CompleteInteraction:output_type -> sttattus.languages.v1.CompleteInteractionResponse
-	12, // 19: sttattus.languages.v1.LanguagesService.GetLinguistStats:output_type -> sttattus.languages.v1.GetLinguistStatsResponse
-	15, // 20: sttattus.languages.v1.LanguagesService.ListWords:output_type -> sttattus.languages.v1.ListWordsResponse
-	17, // [17:21] is the sub-list for method output_type
-	13, // [13:17] is the sub-list for method input_type
-	13, // [13:13] is the sub-list for extension type_name
-	13, // [13:13] is the sub-list for extension extendee
-	0,  // [0:13] is the sub-list for field type_name
+	13, // 11: sttattus.languages.v1.ListPlacementQuestionsResponse.questions:type_name -> sttattus.languages.v1.PlacementQuestion
+	14, // 12: sttattus.languages.v1.SubmitPlacementResultRequest.answers:type_name -> sttattus.languages.v1.PlacementAnswer
+	18, // 13: sttattus.languages.v1.SubmitPlacementResultResponse.result:type_name -> sttattus.languages.v1.PlacementResult
+	18, // 14: sttattus.languages.v1.ListMyPlacementResultsResponse.results:type_name -> sttattus.languages.v1.PlacementResult
+	26, // 15: sttattus.languages.v1.ListWordsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	22, // 16: sttattus.languages.v1.ListWordsResponse.words:type_name -> sttattus.languages.v1.Word
+	7,  // 17: sttattus.languages.v1.LanguagesService.ListScenarios:input_type -> sttattus.languages.v1.ListScenariosRequest
+	9,  // 18: sttattus.languages.v1.LanguagesService.CompleteInteraction:input_type -> sttattus.languages.v1.CompleteInteractionRequest
+	11, // 19: sttattus.languages.v1.LanguagesService.GetLinguistStats:input_type -> sttattus.languages.v1.GetLinguistStatsRequest
+	15, // 20: sttattus.languages.v1.LanguagesService.ListPlacementQuestions:input_type -> sttattus.languages.v1.ListPlacementQuestionsRequest
+	17, // 21: sttattus.languages.v1.LanguagesService.SubmitPlacementResult:input_type -> sttattus.languages.v1.SubmitPlacementResultRequest
+	20, // 22: sttattus.languages.v1.LanguagesService.ListMyPlacementResults:input_type -> sttattus.languages.v1.ListMyPlacementResultsRequest
+	23, // 23: sttattus.languages.v1.LanguagesService.ListWords:input_type -> sttattus.languages.v1.ListWordsRequest
+	8,  // 24: sttattus.languages.v1.LanguagesService.ListScenarios:output_type -> sttattus.languages.v1.ListScenariosResponse
+	10, // 25: sttattus.languages.v1.LanguagesService.CompleteInteraction:output_type -> sttattus.languages.v1.CompleteInteractionResponse
+	12, // 26: sttattus.languages.v1.LanguagesService.GetLinguistStats:output_type -> sttattus.languages.v1.GetLinguistStatsResponse
+	16, // 27: sttattus.languages.v1.LanguagesService.ListPlacementQuestions:output_type -> sttattus.languages.v1.ListPlacementQuestionsResponse
+	19, // 28: sttattus.languages.v1.LanguagesService.SubmitPlacementResult:output_type -> sttattus.languages.v1.SubmitPlacementResultResponse
+	21, // 29: sttattus.languages.v1.LanguagesService.ListMyPlacementResults:output_type -> sttattus.languages.v1.ListMyPlacementResultsResponse
+	24, // 30: sttattus.languages.v1.LanguagesService.ListWords:output_type -> sttattus.languages.v1.ListWordsResponse
+	24, // [24:31] is the sub-list for method output_type
+	17, // [17:24] is the sub-list for method input_type
+	17, // [17:17] is the sub-list for extension type_name
+	17, // [17:17] is the sub-list for extension extendee
+	0,  // [0:17] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_languages_v1_languages_proto_init() }
@@ -1149,7 +1720,7 @@ func file_sttattus_languages_v1_languages_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_languages_v1_languages_proto_rawDesc), len(file_sttattus_languages_v1_languages_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   15,
+			NumMessages:   24,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

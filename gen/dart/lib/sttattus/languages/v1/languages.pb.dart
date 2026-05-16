@@ -928,6 +928,568 @@ class GetLinguistStatsResponse extends $pb.GeneratedMessage {
   LinguistStats ensureStats() => $_ensure(0);
 }
 
+/// PlacementQuestion is one multiple-choice question seeded in
+/// lexicon_placement_questions. Audio URL is empty for non-listening
+/// skills; clients skip questions whose audio_url is empty for the
+/// listening skill (the immersion player wires real audio in L12.3).
+class PlacementQuestion extends $pb.GeneratedMessage {
+  factory PlacementQuestion({
+    $core.String? id,
+    $core.String? language,
+    $core.String? skill,
+    $core.String? cefrTarget,
+    $core.String? prompt,
+    $core.Iterable<$core.String>? options,
+    $core.String? audioUrl,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (language != null) result.language = language;
+    if (skill != null) result.skill = skill;
+    if (cefrTarget != null) result.cefrTarget = cefrTarget;
+    if (prompt != null) result.prompt = prompt;
+    if (options != null) result.options.addAll(options);
+    if (audioUrl != null) result.audioUrl = audioUrl;
+    return result;
+  }
+
+  PlacementQuestion._();
+
+  factory PlacementQuestion.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PlacementQuestion.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlacementQuestion', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'language')
+    ..aOS(3, _omitFieldNames ? '' : 'skill')
+    ..aOS(4, _omitFieldNames ? '' : 'cefrTarget')
+    ..aOS(5, _omitFieldNames ? '' : 'prompt')
+    ..pPS(6, _omitFieldNames ? '' : 'options')
+    ..aOS(7, _omitFieldNames ? '' : 'audioUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlacementQuestion clone() => PlacementQuestion()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlacementQuestion copyWith(void Function(PlacementQuestion) updates) => super.copyWith((message) => updates(message as PlacementQuestion)) as PlacementQuestion;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PlacementQuestion create() => PlacementQuestion._();
+  @$core.override
+  PlacementQuestion createEmptyInstance() => create();
+  static $pb.PbList<PlacementQuestion> createRepeated() => $pb.PbList<PlacementQuestion>();
+  @$core.pragma('dart2js:noInline')
+  static PlacementQuestion getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlacementQuestion>(create);
+  static PlacementQuestion? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get language => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set language($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLanguage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguage() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get skill => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set skill($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSkill() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSkill() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get cefrTarget => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set cefrTarget($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCefrTarget() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCefrTarget() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get prompt => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set prompt($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrompt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrompt() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<$core.String> get options => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.String get audioUrl => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set audioUrl($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAudioUrl() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAudioUrl() => $_clearField(7);
+}
+
+/// PlacementAnswer is one row sent back. selected_index < 0 means
+/// the user skipped the question.
+class PlacementAnswer extends $pb.GeneratedMessage {
+  factory PlacementAnswer({
+    $core.String? questionId,
+    $core.int? selectedIndex,
+  }) {
+    final result = create();
+    if (questionId != null) result.questionId = questionId;
+    if (selectedIndex != null) result.selectedIndex = selectedIndex;
+    return result;
+  }
+
+  PlacementAnswer._();
+
+  factory PlacementAnswer.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PlacementAnswer.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlacementAnswer', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'questionId')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'selectedIndex', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlacementAnswer clone() => PlacementAnswer()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlacementAnswer copyWith(void Function(PlacementAnswer) updates) => super.copyWith((message) => updates(message as PlacementAnswer)) as PlacementAnswer;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PlacementAnswer create() => PlacementAnswer._();
+  @$core.override
+  PlacementAnswer createEmptyInstance() => create();
+  static $pb.PbList<PlacementAnswer> createRepeated() => $pb.PbList<PlacementAnswer>();
+  @$core.pragma('dart2js:noInline')
+  static PlacementAnswer getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlacementAnswer>(create);
+  static PlacementAnswer? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get questionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set questionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasQuestionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearQuestionId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get selectedIndex => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set selectedIndex($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSelectedIndex() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSelectedIndex() => $_clearField(2);
+}
+
+class ListPlacementQuestionsRequest extends $pb.GeneratedMessage {
+  factory ListPlacementQuestionsRequest({
+    $core.String? language,
+    $core.String? skill,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (skill != null) result.skill = skill;
+    return result;
+  }
+
+  ListPlacementQuestionsRequest._();
+
+  factory ListPlacementQuestionsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListPlacementQuestionsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPlacementQuestionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOS(2, _omitFieldNames ? '' : 'skill')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListPlacementQuestionsRequest clone() => ListPlacementQuestionsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListPlacementQuestionsRequest copyWith(void Function(ListPlacementQuestionsRequest) updates) => super.copyWith((message) => updates(message as ListPlacementQuestionsRequest)) as ListPlacementQuestionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListPlacementQuestionsRequest create() => ListPlacementQuestionsRequest._();
+  @$core.override
+  ListPlacementQuestionsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListPlacementQuestionsRequest> createRepeated() => $pb.PbList<ListPlacementQuestionsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListPlacementQuestionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPlacementQuestionsRequest>(create);
+  static ListPlacementQuestionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get skill => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set skill($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSkill() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSkill() => $_clearField(2);
+}
+
+class ListPlacementQuestionsResponse extends $pb.GeneratedMessage {
+  factory ListPlacementQuestionsResponse({
+    $core.Iterable<PlacementQuestion>? questions,
+  }) {
+    final result = create();
+    if (questions != null) result.questions.addAll(questions);
+    return result;
+  }
+
+  ListPlacementQuestionsResponse._();
+
+  factory ListPlacementQuestionsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListPlacementQuestionsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPlacementQuestionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<PlacementQuestion>(1, _omitFieldNames ? '' : 'questions', $pb.PbFieldType.PM, subBuilder: PlacementQuestion.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListPlacementQuestionsResponse clone() => ListPlacementQuestionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListPlacementQuestionsResponse copyWith(void Function(ListPlacementQuestionsResponse) updates) => super.copyWith((message) => updates(message as ListPlacementQuestionsResponse)) as ListPlacementQuestionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListPlacementQuestionsResponse create() => ListPlacementQuestionsResponse._();
+  @$core.override
+  ListPlacementQuestionsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListPlacementQuestionsResponse> createRepeated() => $pb.PbList<ListPlacementQuestionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListPlacementQuestionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPlacementQuestionsResponse>(create);
+  static ListPlacementQuestionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<PlacementQuestion> get questions => $_getList(0);
+}
+
+class SubmitPlacementResultRequest extends $pb.GeneratedMessage {
+  factory SubmitPlacementResultRequest({
+    $core.String? language,
+    $core.String? skill,
+    $core.Iterable<PlacementAnswer>? answers,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (skill != null) result.skill = skill;
+    if (answers != null) result.answers.addAll(answers);
+    return result;
+  }
+
+  SubmitPlacementResultRequest._();
+
+  factory SubmitPlacementResultRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SubmitPlacementResultRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitPlacementResultRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOS(2, _omitFieldNames ? '' : 'skill')
+    ..pc<PlacementAnswer>(3, _omitFieldNames ? '' : 'answers', $pb.PbFieldType.PM, subBuilder: PlacementAnswer.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitPlacementResultRequest clone() => SubmitPlacementResultRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitPlacementResultRequest copyWith(void Function(SubmitPlacementResultRequest) updates) => super.copyWith((message) => updates(message as SubmitPlacementResultRequest)) as SubmitPlacementResultRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitPlacementResultRequest create() => SubmitPlacementResultRequest._();
+  @$core.override
+  SubmitPlacementResultRequest createEmptyInstance() => create();
+  static $pb.PbList<SubmitPlacementResultRequest> createRepeated() => $pb.PbList<SubmitPlacementResultRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SubmitPlacementResultRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitPlacementResultRequest>(create);
+  static SubmitPlacementResultRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get skill => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set skill($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSkill() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSkill() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<PlacementAnswer> get answers => $_getList(2);
+}
+
+class PlacementResult extends $pb.GeneratedMessage {
+  factory PlacementResult({
+    $core.String? language,
+    $core.String? skill,
+    $core.String? cefrLevel,
+    $core.int? rawScore,
+    $core.int? total,
+    $core.String? completedAt,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (skill != null) result.skill = skill;
+    if (cefrLevel != null) result.cefrLevel = cefrLevel;
+    if (rawScore != null) result.rawScore = rawScore;
+    if (total != null) result.total = total;
+    if (completedAt != null) result.completedAt = completedAt;
+    return result;
+  }
+
+  PlacementResult._();
+
+  factory PlacementResult.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PlacementResult.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlacementResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOS(2, _omitFieldNames ? '' : 'skill')
+    ..aOS(3, _omitFieldNames ? '' : 'cefrLevel')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'rawScore', $pb.PbFieldType.O3)
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'total', $pb.PbFieldType.O3)
+    ..aOS(6, _omitFieldNames ? '' : 'completedAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlacementResult clone() => PlacementResult()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlacementResult copyWith(void Function(PlacementResult) updates) => super.copyWith((message) => updates(message as PlacementResult)) as PlacementResult;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PlacementResult create() => PlacementResult._();
+  @$core.override
+  PlacementResult createEmptyInstance() => create();
+  static $pb.PbList<PlacementResult> createRepeated() => $pb.PbList<PlacementResult>();
+  @$core.pragma('dart2js:noInline')
+  static PlacementResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlacementResult>(create);
+  static PlacementResult? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get skill => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set skill($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSkill() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSkill() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get cefrLevel => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set cefrLevel($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCefrLevel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCefrLevel() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get rawScore => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set rawScore($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRawScore() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRawScore() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get total => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set total($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTotal() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTotal() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get completedAt => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set completedAt($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCompletedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCompletedAt() => $_clearField(6);
+}
+
+class SubmitPlacementResultResponse extends $pb.GeneratedMessage {
+  factory SubmitPlacementResultResponse({
+    PlacementResult? result,
+  }) {
+    final result$ = create();
+    if (result != null) result$.result = result;
+    return result$;
+  }
+
+  SubmitPlacementResultResponse._();
+
+  factory SubmitPlacementResultResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SubmitPlacementResultResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitPlacementResultResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<PlacementResult>(1, _omitFieldNames ? '' : 'result', subBuilder: PlacementResult.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitPlacementResultResponse clone() => SubmitPlacementResultResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitPlacementResultResponse copyWith(void Function(SubmitPlacementResultResponse) updates) => super.copyWith((message) => updates(message as SubmitPlacementResultResponse)) as SubmitPlacementResultResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitPlacementResultResponse create() => SubmitPlacementResultResponse._();
+  @$core.override
+  SubmitPlacementResultResponse createEmptyInstance() => create();
+  static $pb.PbList<SubmitPlacementResultResponse> createRepeated() => $pb.PbList<SubmitPlacementResultResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SubmitPlacementResultResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitPlacementResultResponse>(create);
+  static SubmitPlacementResultResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  PlacementResult get result => $_getN(0);
+  @$pb.TagNumber(1)
+  set result(PlacementResult value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasResult() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResult() => $_clearField(1);
+  @$pb.TagNumber(1)
+  PlacementResult ensureResult() => $_ensure(0);
+}
+
+class ListMyPlacementResultsRequest extends $pb.GeneratedMessage {
+  factory ListMyPlacementResultsRequest() => create();
+
+  ListMyPlacementResultsRequest._();
+
+  factory ListMyPlacementResultsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyPlacementResultsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyPlacementResultsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyPlacementResultsRequest clone() => ListMyPlacementResultsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyPlacementResultsRequest copyWith(void Function(ListMyPlacementResultsRequest) updates) => super.copyWith((message) => updates(message as ListMyPlacementResultsRequest)) as ListMyPlacementResultsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyPlacementResultsRequest create() => ListMyPlacementResultsRequest._();
+  @$core.override
+  ListMyPlacementResultsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyPlacementResultsRequest> createRepeated() => $pb.PbList<ListMyPlacementResultsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyPlacementResultsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyPlacementResultsRequest>(create);
+  static ListMyPlacementResultsRequest? _defaultInstance;
+}
+
+class ListMyPlacementResultsResponse extends $pb.GeneratedMessage {
+  factory ListMyPlacementResultsResponse({
+    $core.Iterable<PlacementResult>? results,
+  }) {
+    final result = create();
+    if (results != null) result.results.addAll(results);
+    return result;
+  }
+
+  ListMyPlacementResultsResponse._();
+
+  factory ListMyPlacementResultsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyPlacementResultsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyPlacementResultsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<PlacementResult>(1, _omitFieldNames ? '' : 'results', $pb.PbFieldType.PM, subBuilder: PlacementResult.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyPlacementResultsResponse clone() => ListMyPlacementResultsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyPlacementResultsResponse copyWith(void Function(ListMyPlacementResultsResponse) updates) => super.copyWith((message) => updates(message as ListMyPlacementResultsResponse)) as ListMyPlacementResultsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyPlacementResultsResponse create() => ListMyPlacementResultsResponse._();
+  @$core.override
+  ListMyPlacementResultsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyPlacementResultsResponse> createRepeated() => $pb.PbList<ListMyPlacementResultsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyPlacementResultsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyPlacementResultsResponse>(create);
+  static ListMyPlacementResultsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<PlacementResult> get results => $_getList(0);
+}
+
 /// Deprecated Word-based messages (for transition)
 class Word extends $pb.GeneratedMessage {
   factory Word({
