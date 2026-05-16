@@ -136,6 +136,11 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$upsertPrivacyAxes, request, options: options);
   }
 
+  /// A9P2.2 — Atlas map v2: latest 3D projection per user.
+  $grpc.ResponseFuture<$0.ListAtlasMapPointsResponse> listAtlasMapPoints($0.ListAtlasMapPointsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listAtlasMapPoints, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getProfile = $grpc.ClientMethod<$0.GetProfileRequest, $0.GetProfileResponse>(
@@ -238,6 +243,10 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/UpsertPrivacyAxes',
       ($0.UpsertPrivacyAxesRequest value) => value.writeToBuffer(),
       $0.UpsertPrivacyAxesResponse.fromBuffer);
+  static final _$listAtlasMapPoints = $grpc.ClientMethod<$0.ListAtlasMapPointsRequest, $0.ListAtlasMapPointsResponse>(
+      '/sttattus.dating.v1.DatingService/ListAtlasMapPoints',
+      ($0.ListAtlasMapPointsRequest value) => value.writeToBuffer(),
+      $0.ListAtlasMapPointsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dating.v1.DatingService')
@@ -420,6 +429,13 @@ abstract class DatingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UpsertPrivacyAxesRequest.fromBuffer(value),
         ($0.UpsertPrivacyAxesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAtlasMapPointsRequest, $0.ListAtlasMapPointsResponse>(
+        'ListAtlasMapPoints',
+        listAtlasMapPoints_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListAtlasMapPointsRequest.fromBuffer(value),
+        ($0.ListAtlasMapPointsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProfileRequest> $request) async {
@@ -571,5 +587,11 @@ abstract class DatingServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.UpsertPrivacyAxesResponse> upsertPrivacyAxes($grpc.ServiceCall call, $0.UpsertPrivacyAxesRequest request);
+
+  $async.Future<$0.ListAtlasMapPointsResponse> listAtlasMapPoints_Pre($grpc.ServiceCall $call, $async.Future<$0.ListAtlasMapPointsRequest> $request) async {
+    return listAtlasMapPoints($call, await $request);
+  }
+
+  $async.Future<$0.ListAtlasMapPointsResponse> listAtlasMapPoints($grpc.ServiceCall call, $0.ListAtlasMapPointsRequest request);
 
 }

@@ -922,3 +922,42 @@ final $typed_data.Uint8List upsertPrivacyAxesResponseDescriptor = $convert.base6
     'ChlVcHNlcnRQcml2YWN5QXhlc1Jlc3BvbnNlEjMKBGF4ZXMYASABKAsyHy5zdHRhdHR1cy5kYX'
     'RpbmcudjEuUHJpdmFjeUF4ZXNSBGF4ZXM=');
 
+@$core.Deprecated('Use atlasMapPointDescriptor instead')
+const AtlasMapPoint$json = {
+  '1': 'AtlasMapPoint',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'x', '3': 3, '4': 1, '5': 1, '10': 'x'},
+    {'1': 'y', '3': 4, '4': 1, '5': 1, '10': 'y'},
+    {'1': 'z', '3': 5, '4': 1, '5': 1, '10': 'z'},
+  ],
+};
+
+/// Descriptor for `AtlasMapPoint`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasMapPointDescriptor = $convert.base64Decode(
+    'Cg1BdGxhc01hcFBvaW50EhcKB3VzZXJfaWQYASABKAlSBnVzZXJJZBISCgRuYW1lGAIgASgJUg'
+    'RuYW1lEgwKAXgYAyABKAFSAXgSDAoBeRgEIAEoAVIBeRIMCgF6GAUgASgBUgF6');
+
+@$core.Deprecated('Use listAtlasMapPointsRequestDescriptor instead')
+const ListAtlasMapPointsRequest$json = {
+  '1': 'ListAtlasMapPointsRequest',
+};
+
+/// Descriptor for `ListAtlasMapPointsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAtlasMapPointsRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0QXRsYXNNYXBQb2ludHNSZXF1ZXN0');
+
+@$core.Deprecated('Use listAtlasMapPointsResponseDescriptor instead')
+const ListAtlasMapPointsResponse$json = {
+  '1': 'ListAtlasMapPointsResponse',
+  '2': [
+    {'1': 'points', '3': 1, '4': 3, '5': 11, '6': '.sttattus.dating.v1.AtlasMapPoint', '10': 'points'},
+  ],
+};
+
+/// Descriptor for `ListAtlasMapPointsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAtlasMapPointsResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0QXRsYXNNYXBQb2ludHNSZXNwb25zZRI5CgZwb2ludHMYASADKAsyIS5zdHRhdHR1cy'
+    '5kYXRpbmcudjEuQXRsYXNNYXBQb2ludFIGcG9pbnRz');
+

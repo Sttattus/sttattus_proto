@@ -44,6 +44,7 @@ const (
 	DatingService_UpsertPanicContact_FullMethodName    = "/sttattus.dating.v1.DatingService/UpsertPanicContact"
 	DatingService_GetPrivacyAxes_FullMethodName        = "/sttattus.dating.v1.DatingService/GetPrivacyAxes"
 	DatingService_UpsertPrivacyAxes_FullMethodName     = "/sttattus.dating.v1.DatingService/UpsertPrivacyAxes"
+	DatingService_ListAtlasMapPoints_FullMethodName    = "/sttattus.dating.v1.DatingService/ListAtlasMapPoints"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -79,6 +80,8 @@ type DatingServiceClient interface {
 	// A9.8 — per-axis visibility on the viewer surface.
 	GetPrivacyAxes(ctx context.Context, in *GetPrivacyAxesRequest, opts ...grpc.CallOption) (*GetPrivacyAxesResponse, error)
 	UpsertPrivacyAxes(ctx context.Context, in *UpsertPrivacyAxesRequest, opts ...grpc.CallOption) (*UpsertPrivacyAxesResponse, error)
+	// A9P2.2 — Atlas map v2: latest 3D projection per user.
+	ListAtlasMapPoints(ctx context.Context, in *ListAtlasMapPointsRequest, opts ...grpc.CallOption) (*ListAtlasMapPointsResponse, error)
 }
 
 type datingServiceClient struct {
@@ -357,6 +360,16 @@ func (c *datingServiceClient) UpsertPrivacyAxes(ctx context.Context, in *UpsertP
 	return out, nil
 }
 
+func (c *datingServiceClient) ListAtlasMapPoints(ctx context.Context, in *ListAtlasMapPointsRequest, opts ...grpc.CallOption) (*ListAtlasMapPointsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAtlasMapPointsResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListAtlasMapPoints_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatingServiceServer is the server API for DatingService service.
 // All implementations must embed UnimplementedDatingServiceServer
 // for forward compatibility.
@@ -390,6 +403,8 @@ type DatingServiceServer interface {
 	// A9.8 — per-axis visibility on the viewer surface.
 	GetPrivacyAxes(context.Context, *GetPrivacyAxesRequest) (*GetPrivacyAxesResponse, error)
 	UpsertPrivacyAxes(context.Context, *UpsertPrivacyAxesRequest) (*UpsertPrivacyAxesResponse, error)
+	// A9P2.2 — Atlas map v2: latest 3D projection per user.
+	ListAtlasMapPoints(context.Context, *ListAtlasMapPointsRequest) (*ListAtlasMapPointsResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -474,6 +489,9 @@ func (UnimplementedDatingServiceServer) GetPrivacyAxes(context.Context, *GetPriv
 }
 func (UnimplementedDatingServiceServer) UpsertPrivacyAxes(context.Context, *UpsertPrivacyAxesRequest) (*UpsertPrivacyAxesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method UpsertPrivacyAxes not implemented")
+}
+func (UnimplementedDatingServiceServer) ListAtlasMapPoints(context.Context, *ListAtlasMapPointsRequest) (*ListAtlasMapPointsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAtlasMapPoints not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -932,6 +950,24 @@ func _DatingService_UpsertPrivacyAxes_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_ListAtlasMapPoints_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAtlasMapPointsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListAtlasMapPoints(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListAtlasMapPoints_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListAtlasMapPoints(ctx, req.(*ListAtlasMapPointsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatingService_ServiceDesc is the grpc.ServiceDesc for DatingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1030,6 +1066,10 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpsertPrivacyAxes",
 			Handler:    _DatingService_UpsertPrivacyAxes_Handler,
+		},
+		{
+			MethodName: "ListAtlasMapPoints",
+			Handler:    _DatingService_ListAtlasMapPoints_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

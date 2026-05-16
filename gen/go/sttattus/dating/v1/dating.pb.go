@@ -3424,6 +3424,164 @@ func (x *UpsertPrivacyAxesResponse) GetAxes() *PrivacyAxes {
 	return nil
 }
 
+type AtlasMapPoint struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	X             float64                `protobuf:"fixed64,3,opt,name=x,proto3" json:"x,omitempty"`
+	Y             float64                `protobuf:"fixed64,4,opt,name=y,proto3" json:"y,omitempty"`
+	Z             float64                `protobuf:"fixed64,5,opt,name=z,proto3" json:"z,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AtlasMapPoint) Reset() {
+	*x = AtlasMapPoint{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[62]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AtlasMapPoint) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AtlasMapPoint) ProtoMessage() {}
+
+func (x *AtlasMapPoint) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[62]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AtlasMapPoint.ProtoReflect.Descriptor instead.
+func (*AtlasMapPoint) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{62}
+}
+
+func (x *AtlasMapPoint) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *AtlasMapPoint) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *AtlasMapPoint) GetX() float64 {
+	if x != nil {
+		return x.X
+	}
+	return 0
+}
+
+func (x *AtlasMapPoint) GetY() float64 {
+	if x != nil {
+		return x.Y
+	}
+	return 0
+}
+
+func (x *AtlasMapPoint) GetZ() float64 {
+	if x != nil {
+		return x.Z
+	}
+	return 0
+}
+
+type ListAtlasMapPointsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAtlasMapPointsRequest) Reset() {
+	*x = ListAtlasMapPointsRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[63]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAtlasMapPointsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAtlasMapPointsRequest) ProtoMessage() {}
+
+func (x *ListAtlasMapPointsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[63]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAtlasMapPointsRequest.ProtoReflect.Descriptor instead.
+func (*ListAtlasMapPointsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{63}
+}
+
+type ListAtlasMapPointsResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Latest projection per user. The map widget treats the caller
+	// as camera origin and renders the rest in 3-space.
+	Points        []*AtlasMapPoint `protobuf:"bytes,1,rep,name=points,proto3" json:"points,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAtlasMapPointsResponse) Reset() {
+	*x = ListAtlasMapPointsResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[64]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAtlasMapPointsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAtlasMapPointsResponse) ProtoMessage() {}
+
+func (x *ListAtlasMapPointsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[64]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAtlasMapPointsResponse.ProtoReflect.Descriptor instead.
+func (*ListAtlasMapPointsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{64}
+}
+
+func (x *ListAtlasMapPointsResponse) GetPoints() []*AtlasMapPoint {
+	if x != nil {
+		return x.Points
+	}
+	return nil
+}
+
 var File_sttattus_dating_v1_dating_proto protoreflect.FileDescriptor
 
 const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
@@ -3654,7 +3812,16 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x18UpsertPrivacyAxesRequest\x123\n" +
 	"\x04axes\x18\x01 \x01(\v2\x1f.sttattus.dating.v1.PrivacyAxesR\x04axes\"P\n" +
 	"\x19UpsertPrivacyAxesResponse\x123\n" +
-	"\x04axes\x18\x01 \x01(\v2\x1f.sttattus.dating.v1.PrivacyAxesR\x04axes*\x80\x01\n" +
+	"\x04axes\x18\x01 \x01(\v2\x1f.sttattus.dating.v1.PrivacyAxesR\x04axes\"f\n" +
+	"\rAtlasMapPoint\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\f\n" +
+	"\x01x\x18\x03 \x01(\x01R\x01x\x12\f\n" +
+	"\x01y\x18\x04 \x01(\x01R\x01y\x12\f\n" +
+	"\x01z\x18\x05 \x01(\x01R\x01z\"\x1b\n" +
+	"\x19ListAtlasMapPointsRequest\"W\n" +
+	"\x1aListAtlasMapPointsResponse\x129\n" +
+	"\x06points\x18\x01 \x03(\v2!.sttattus.dating.v1.AtlasMapPointR\x06points*\x80\x01\n" +
 	"\x0eSwipeDirection\x12\x1f\n" +
 	"\x1bSWIPE_DIRECTION_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14SWIPE_DIRECTION_PASS\x10\x01\x12\x18\n" +
@@ -3665,7 +3832,7 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x14DATING_INTENT_CASUAL\x10\x01\x12\x1e\n" +
 	"\x1aDATING_INTENT_RELATIONSHIP\x10\x02\x12\x19\n" +
 	"\x15DATING_INTENT_FRIENDS\x10\x03\x12\x1c\n" +
-	"\x18DATING_INTENT_NETWORKING\x10\x042\xf2\x14\n" +
+	"\x18DATING_INTENT_NETWORKING\x10\x042\xe7\x15\n" +
 	"\rDatingService\x12[\n" +
 	"\n" +
 	"GetProfile\x12%.sttattus.dating.v1.GetProfileRequest\x1a&.sttattus.dating.v1.GetProfileResponse\x12d\n" +
@@ -3693,7 +3860,8 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x0fGetPanicContact\x12*.sttattus.dating.v1.GetPanicContactRequest\x1a+.sttattus.dating.v1.GetPanicContactResponse\x12s\n" +
 	"\x12UpsertPanicContact\x12-.sttattus.dating.v1.UpsertPanicContactRequest\x1a..sttattus.dating.v1.UpsertPanicContactResponse\x12g\n" +
 	"\x0eGetPrivacyAxes\x12).sttattus.dating.v1.GetPrivacyAxesRequest\x1a*.sttattus.dating.v1.GetPrivacyAxesResponse\x12p\n" +
-	"\x11UpsertPrivacyAxes\x12,.sttattus.dating.v1.UpsertPrivacyAxesRequest\x1a-.sttattus.dating.v1.UpsertPrivacyAxesResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
+	"\x11UpsertPrivacyAxes\x12,.sttattus.dating.v1.UpsertPrivacyAxesRequest\x1a-.sttattus.dating.v1.UpsertPrivacyAxesResponse\x12s\n" +
+	"\x12ListAtlasMapPoints\x12-.sttattus.dating.v1.ListAtlasMapPointsRequest\x1a..sttattus.dating.v1.ListAtlasMapPointsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
 
 var (
 	file_sttattus_dating_v1_dating_proto_rawDescOnce sync.Once
@@ -3708,7 +3876,7 @@ func file_sttattus_dating_v1_dating_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_dating_v1_dating_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 62)
+var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 65)
 var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(SwipeDirection)(0),                   // 0: sttattus.dating.v1.SwipeDirection
 	(DatingIntent)(0),                     // 1: sttattus.dating.v1.DatingIntent
@@ -3774,8 +3942,11 @@ var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(*GetPrivacyAxesResponse)(nil),        // 61: sttattus.dating.v1.GetPrivacyAxesResponse
 	(*UpsertPrivacyAxesRequest)(nil),      // 62: sttattus.dating.v1.UpsertPrivacyAxesRequest
 	(*UpsertPrivacyAxesResponse)(nil),     // 63: sttattus.dating.v1.UpsertPrivacyAxesResponse
-	(*v1.PageRequest)(nil),                // 64: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),               // 65: sttattus.common.v1.PageResponse
+	(*AtlasMapPoint)(nil),                 // 64: sttattus.dating.v1.AtlasMapPoint
+	(*ListAtlasMapPointsRequest)(nil),     // 65: sttattus.dating.v1.ListAtlasMapPointsRequest
+	(*ListAtlasMapPointsResponse)(nil),    // 66: sttattus.dating.v1.ListAtlasMapPointsResponse
+	(*v1.PageRequest)(nil),                // 67: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),               // 68: sttattus.common.v1.PageResponse
 }
 var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	1,  // 0: sttattus.dating.v1.DatingProfile.intent:type_name -> sttattus.dating.v1.DatingIntent
@@ -3788,9 +3959,9 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	4,  // 7: sttattus.dating.v1.StreamDiscoveryResponse.candidate:type_name -> sttattus.dating.v1.Candidate
 	0,  // 8: sttattus.dating.v1.SwipeRequest.direction:type_name -> sttattus.dating.v1.SwipeDirection
 	5,  // 9: sttattus.dating.v1.SwipeResponse.match:type_name -> sttattus.dating.v1.Match
-	64, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	67, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	5,  // 11: sttattus.dating.v1.ListMatchesResponse.matches:type_name -> sttattus.dating.v1.Match
-	65, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	68, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
 	6,  // 13: sttattus.dating.v1.StreamMessagesResponse.message:type_name -> sttattus.dating.v1.Message
 	6,  // 14: sttattus.dating.v1.SendMessageResponse.message:type_name -> sttattus.dating.v1.Message
 	21, // 15: sttattus.dating.v1.StartVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
@@ -3810,61 +3981,64 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	59, // 29: sttattus.dating.v1.GetPrivacyAxesResponse.axes:type_name -> sttattus.dating.v1.PrivacyAxes
 	59, // 30: sttattus.dating.v1.UpsertPrivacyAxesRequest.axes:type_name -> sttattus.dating.v1.PrivacyAxes
 	59, // 31: sttattus.dating.v1.UpsertPrivacyAxesResponse.axes:type_name -> sttattus.dating.v1.PrivacyAxes
-	7,  // 32: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
-	9,  // 33: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
-	11, // 34: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
-	13, // 35: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
-	15, // 36: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
-	17, // 37: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
-	19, // 38: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
-	22, // 39: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
-	24, // 40: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
-	27, // 41: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
-	29, // 42: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
-	31, // 43: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
-	34, // 44: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
-	36, // 45: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
-	38, // 46: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
-	40, // 47: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
-	43, // 48: sttattus.dating.v1.DatingService.ListMyBlocks:input_type -> sttattus.dating.v1.ListMyBlocksRequest
-	45, // 49: sttattus.dating.v1.DatingService.BlockUser:input_type -> sttattus.dating.v1.BlockUserRequest
-	47, // 50: sttattus.dating.v1.DatingService.UnblockUser:input_type -> sttattus.dating.v1.UnblockUserRequest
-	50, // 51: sttattus.dating.v1.DatingService.ListMyReports:input_type -> sttattus.dating.v1.ListMyReportsRequest
-	52, // 52: sttattus.dating.v1.DatingService.ReportUser:input_type -> sttattus.dating.v1.ReportUserRequest
-	55, // 53: sttattus.dating.v1.DatingService.GetPanicContact:input_type -> sttattus.dating.v1.GetPanicContactRequest
-	57, // 54: sttattus.dating.v1.DatingService.UpsertPanicContact:input_type -> sttattus.dating.v1.UpsertPanicContactRequest
-	60, // 55: sttattus.dating.v1.DatingService.GetPrivacyAxes:input_type -> sttattus.dating.v1.GetPrivacyAxesRequest
-	62, // 56: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:input_type -> sttattus.dating.v1.UpsertPrivacyAxesRequest
-	8,  // 57: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
-	10, // 58: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
-	12, // 59: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
-	14, // 60: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
-	16, // 61: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
-	18, // 62: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
-	20, // 63: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
-	23, // 64: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
-	25, // 65: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
-	28, // 66: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
-	30, // 67: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
-	32, // 68: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
-	35, // 69: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
-	37, // 70: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
-	39, // 71: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
-	41, // 72: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
-	44, // 73: sttattus.dating.v1.DatingService.ListMyBlocks:output_type -> sttattus.dating.v1.ListMyBlocksResponse
-	46, // 74: sttattus.dating.v1.DatingService.BlockUser:output_type -> sttattus.dating.v1.BlockUserResponse
-	48, // 75: sttattus.dating.v1.DatingService.UnblockUser:output_type -> sttattus.dating.v1.UnblockUserResponse
-	51, // 76: sttattus.dating.v1.DatingService.ListMyReports:output_type -> sttattus.dating.v1.ListMyReportsResponse
-	53, // 77: sttattus.dating.v1.DatingService.ReportUser:output_type -> sttattus.dating.v1.ReportUserResponse
-	56, // 78: sttattus.dating.v1.DatingService.GetPanicContact:output_type -> sttattus.dating.v1.GetPanicContactResponse
-	58, // 79: sttattus.dating.v1.DatingService.UpsertPanicContact:output_type -> sttattus.dating.v1.UpsertPanicContactResponse
-	61, // 80: sttattus.dating.v1.DatingService.GetPrivacyAxes:output_type -> sttattus.dating.v1.GetPrivacyAxesResponse
-	63, // 81: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:output_type -> sttattus.dating.v1.UpsertPrivacyAxesResponse
-	57, // [57:82] is the sub-list for method output_type
-	32, // [32:57] is the sub-list for method input_type
-	32, // [32:32] is the sub-list for extension type_name
-	32, // [32:32] is the sub-list for extension extendee
-	0,  // [0:32] is the sub-list for field type_name
+	64, // 32: sttattus.dating.v1.ListAtlasMapPointsResponse.points:type_name -> sttattus.dating.v1.AtlasMapPoint
+	7,  // 33: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
+	9,  // 34: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
+	11, // 35: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
+	13, // 36: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
+	15, // 37: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
+	17, // 38: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
+	19, // 39: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
+	22, // 40: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
+	24, // 41: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
+	27, // 42: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
+	29, // 43: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
+	31, // 44: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
+	34, // 45: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
+	36, // 46: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
+	38, // 47: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
+	40, // 48: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
+	43, // 49: sttattus.dating.v1.DatingService.ListMyBlocks:input_type -> sttattus.dating.v1.ListMyBlocksRequest
+	45, // 50: sttattus.dating.v1.DatingService.BlockUser:input_type -> sttattus.dating.v1.BlockUserRequest
+	47, // 51: sttattus.dating.v1.DatingService.UnblockUser:input_type -> sttattus.dating.v1.UnblockUserRequest
+	50, // 52: sttattus.dating.v1.DatingService.ListMyReports:input_type -> sttattus.dating.v1.ListMyReportsRequest
+	52, // 53: sttattus.dating.v1.DatingService.ReportUser:input_type -> sttattus.dating.v1.ReportUserRequest
+	55, // 54: sttattus.dating.v1.DatingService.GetPanicContact:input_type -> sttattus.dating.v1.GetPanicContactRequest
+	57, // 55: sttattus.dating.v1.DatingService.UpsertPanicContact:input_type -> sttattus.dating.v1.UpsertPanicContactRequest
+	60, // 56: sttattus.dating.v1.DatingService.GetPrivacyAxes:input_type -> sttattus.dating.v1.GetPrivacyAxesRequest
+	62, // 57: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:input_type -> sttattus.dating.v1.UpsertPrivacyAxesRequest
+	65, // 58: sttattus.dating.v1.DatingService.ListAtlasMapPoints:input_type -> sttattus.dating.v1.ListAtlasMapPointsRequest
+	8,  // 59: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
+	10, // 60: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
+	12, // 61: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
+	14, // 62: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
+	16, // 63: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
+	18, // 64: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
+	20, // 65: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
+	23, // 66: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
+	25, // 67: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
+	28, // 68: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
+	30, // 69: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
+	32, // 70: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
+	35, // 71: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
+	37, // 72: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
+	39, // 73: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
+	41, // 74: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
+	44, // 75: sttattus.dating.v1.DatingService.ListMyBlocks:output_type -> sttattus.dating.v1.ListMyBlocksResponse
+	46, // 76: sttattus.dating.v1.DatingService.BlockUser:output_type -> sttattus.dating.v1.BlockUserResponse
+	48, // 77: sttattus.dating.v1.DatingService.UnblockUser:output_type -> sttattus.dating.v1.UnblockUserResponse
+	51, // 78: sttattus.dating.v1.DatingService.ListMyReports:output_type -> sttattus.dating.v1.ListMyReportsResponse
+	53, // 79: sttattus.dating.v1.DatingService.ReportUser:output_type -> sttattus.dating.v1.ReportUserResponse
+	56, // 80: sttattus.dating.v1.DatingService.GetPanicContact:output_type -> sttattus.dating.v1.GetPanicContactResponse
+	58, // 81: sttattus.dating.v1.DatingService.UpsertPanicContact:output_type -> sttattus.dating.v1.UpsertPanicContactResponse
+	61, // 82: sttattus.dating.v1.DatingService.GetPrivacyAxes:output_type -> sttattus.dating.v1.GetPrivacyAxesResponse
+	63, // 83: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:output_type -> sttattus.dating.v1.UpsertPrivacyAxesResponse
+	66, // 84: sttattus.dating.v1.DatingService.ListAtlasMapPoints:output_type -> sttattus.dating.v1.ListAtlasMapPointsResponse
+	59, // [59:85] is the sub-list for method output_type
+	33, // [33:59] is the sub-list for method input_type
+	33, // [33:33] is the sub-list for extension type_name
+	33, // [33:33] is the sub-list for extension extendee
+	0,  // [0:33] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dating_v1_dating_proto_init() }
@@ -3878,7 +4052,7 @@ func file_sttattus_dating_v1_dating_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_dating_v1_dating_proto_rawDesc), len(file_sttattus_dating_v1_dating_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   62,
+			NumMessages:   65,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

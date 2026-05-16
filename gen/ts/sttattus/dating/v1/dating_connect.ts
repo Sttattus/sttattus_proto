@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { BlockUserRequest, BlockUserResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListMatchesRequest, ListMatchesResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyReportsRequest, ListMyReportsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
+import { BlockUserRequest, BlockUserResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListMatchesRequest, ListMatchesResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyReportsRequest, ListMyReportsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -243,6 +243,17 @@ export const DatingService = {
       name: "UpsertPrivacyAxes",
       I: UpsertPrivacyAxesRequest,
       O: UpsertPrivacyAxesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9P2.2 — Atlas map v2: latest 3D projection per user.
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.ListAtlasMapPoints
+     */
+    listAtlasMapPoints: {
+      name: "ListAtlasMapPoints",
+      I: ListAtlasMapPointsRequest,
+      O: ListAtlasMapPointsResponse,
       kind: MethodKind.Unary,
     },
   }

@@ -3683,6 +3683,172 @@ class UpsertPrivacyAxesResponse extends $pb.GeneratedMessage {
   PrivacyAxes ensureAxes() => $_ensure(0);
 }
 
+class AtlasMapPoint extends $pb.GeneratedMessage {
+  factory AtlasMapPoint({
+    $core.String? userId,
+    $core.String? name,
+    $core.double? x,
+    $core.double? y,
+    $core.double? z,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (name != null) result.name = name;
+    if (x != null) result.x = x;
+    if (y != null) result.y = y;
+    if (z != null) result.z = z;
+    return result;
+  }
+
+  AtlasMapPoint._();
+
+  factory AtlasMapPoint.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AtlasMapPoint.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AtlasMapPoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'x', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'y', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'z', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AtlasMapPoint clone() => AtlasMapPoint()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AtlasMapPoint copyWith(void Function(AtlasMapPoint) updates) => super.copyWith((message) => updates(message as AtlasMapPoint)) as AtlasMapPoint;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AtlasMapPoint create() => AtlasMapPoint._();
+  @$core.override
+  AtlasMapPoint createEmptyInstance() => create();
+  static $pb.PbList<AtlasMapPoint> createRepeated() => $pb.PbList<AtlasMapPoint>();
+  @$core.pragma('dart2js:noInline')
+  static AtlasMapPoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AtlasMapPoint>(create);
+  static AtlasMapPoint? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get x => $_getN(2);
+  @$pb.TagNumber(3)
+  set x($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasX() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearX() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get y => $_getN(3);
+  @$pb.TagNumber(4)
+  set y($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasY() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearY() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get z => $_getN(4);
+  @$pb.TagNumber(5)
+  set z($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasZ() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearZ() => $_clearField(5);
+}
+
+class ListAtlasMapPointsRequest extends $pb.GeneratedMessage {
+  factory ListAtlasMapPointsRequest() => create();
+
+  ListAtlasMapPointsRequest._();
+
+  factory ListAtlasMapPointsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListAtlasMapPointsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAtlasMapPointsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAtlasMapPointsRequest clone() => ListAtlasMapPointsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAtlasMapPointsRequest copyWith(void Function(ListAtlasMapPointsRequest) updates) => super.copyWith((message) => updates(message as ListAtlasMapPointsRequest)) as ListAtlasMapPointsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAtlasMapPointsRequest create() => ListAtlasMapPointsRequest._();
+  @$core.override
+  ListAtlasMapPointsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListAtlasMapPointsRequest> createRepeated() => $pb.PbList<ListAtlasMapPointsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListAtlasMapPointsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAtlasMapPointsRequest>(create);
+  static ListAtlasMapPointsRequest? _defaultInstance;
+}
+
+class ListAtlasMapPointsResponse extends $pb.GeneratedMessage {
+  factory ListAtlasMapPointsResponse({
+    $core.Iterable<AtlasMapPoint>? points,
+  }) {
+    final result = create();
+    if (points != null) result.points.addAll(points);
+    return result;
+  }
+
+  ListAtlasMapPointsResponse._();
+
+  factory ListAtlasMapPointsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListAtlasMapPointsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAtlasMapPointsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..pc<AtlasMapPoint>(1, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: AtlasMapPoint.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAtlasMapPointsResponse clone() => ListAtlasMapPointsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAtlasMapPointsResponse copyWith(void Function(ListAtlasMapPointsResponse) updates) => super.copyWith((message) => updates(message as ListAtlasMapPointsResponse)) as ListAtlasMapPointsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAtlasMapPointsResponse create() => ListAtlasMapPointsResponse._();
+  @$core.override
+  ListAtlasMapPointsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListAtlasMapPointsResponse> createRepeated() => $pb.PbList<ListAtlasMapPointsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListAtlasMapPointsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAtlasMapPointsResponse>(create);
+  static ListAtlasMapPointsResponse? _defaultInstance;
+
+  /// Latest projection per user. The map widget treats the caller
+  /// as camera origin and renders the rest in 3-space.
+  @$pb.TagNumber(1)
+  $pb.PbList<AtlasMapPoint> get points => $_getList(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

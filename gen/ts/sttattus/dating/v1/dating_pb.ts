@@ -2825,3 +2825,135 @@ export class UpsertPrivacyAxesResponse extends Message$1<UpsertPrivacyAxesRespon
   }
 }
 
+/**
+ * @generated from message sttattus.dating.v1.AtlasMapPoint
+ */
+export class AtlasMapPoint extends Message$1<AtlasMapPoint> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: double x = 3;
+   */
+  x = 0;
+
+  /**
+   * @generated from field: double y = 4;
+   */
+  y = 0;
+
+  /**
+   * @generated from field: double z = 5;
+   */
+  z = 0;
+
+  constructor(data?: PartialMessage<AtlasMapPoint>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasMapPoint";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "x", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "y", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "z", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasMapPoint {
+    return new AtlasMapPoint().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasMapPoint {
+    return new AtlasMapPoint().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasMapPoint {
+    return new AtlasMapPoint().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasMapPoint | PlainMessage<AtlasMapPoint> | undefined, b: AtlasMapPoint | PlainMessage<AtlasMapPoint> | undefined): boolean {
+    return proto3.util.equals(AtlasMapPoint, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListAtlasMapPointsRequest
+ */
+export class ListAtlasMapPointsRequest extends Message$1<ListAtlasMapPointsRequest> {
+  constructor(data?: PartialMessage<ListAtlasMapPointsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListAtlasMapPointsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAtlasMapPointsRequest {
+    return new ListAtlasMapPointsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAtlasMapPointsRequest {
+    return new ListAtlasMapPointsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAtlasMapPointsRequest {
+    return new ListAtlasMapPointsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAtlasMapPointsRequest | PlainMessage<ListAtlasMapPointsRequest> | undefined, b: ListAtlasMapPointsRequest | PlainMessage<ListAtlasMapPointsRequest> | undefined): boolean {
+    return proto3.util.equals(ListAtlasMapPointsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListAtlasMapPointsResponse
+ */
+export class ListAtlasMapPointsResponse extends Message$1<ListAtlasMapPointsResponse> {
+  /**
+   * Latest projection per user. The map widget treats the caller
+   * as camera origin and renders the rest in 3-space.
+   *
+   * @generated from field: repeated sttattus.dating.v1.AtlasMapPoint points = 1;
+   */
+  points: AtlasMapPoint[] = [];
+
+  constructor(data?: PartialMessage<ListAtlasMapPointsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListAtlasMapPointsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "points", kind: "message", T: AtlasMapPoint, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAtlasMapPointsResponse {
+    return new ListAtlasMapPointsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAtlasMapPointsResponse {
+    return new ListAtlasMapPointsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAtlasMapPointsResponse {
+    return new ListAtlasMapPointsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAtlasMapPointsResponse | PlainMessage<ListAtlasMapPointsResponse> | undefined, b: ListAtlasMapPointsResponse | PlainMessage<ListAtlasMapPointsResponse> | undefined): boolean {
+    return proto3.util.equals(ListAtlasMapPointsResponse, a, b);
+  }
+}
+

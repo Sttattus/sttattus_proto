@@ -328,6 +328,23 @@ message UpsertPrivacyAxesResponse {
   PrivacyAxes axes = 1;
 }
 
+// === Atlas map v2 (A9P2.2) ===
+
+message AtlasMapPoint {
+  string user_id = 1;
+  string name = 2;
+  double x = 3;
+  double y = 4;
+  double z = 5;
+}
+
+message ListAtlasMapPointsRequest {}
+message ListAtlasMapPointsResponse {
+  // Latest projection per user. The map widget treats the caller
+  // as camera origin and renders the rest in 3-space.
+  repeated AtlasMapPoint points = 1;
+}
+
 service DatingService {
   rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
   rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
@@ -362,4 +379,7 @@ service DatingService {
   // A9.8 — per-axis visibility on the viewer surface.
   rpc GetPrivacyAxes(GetPrivacyAxesRequest) returns (GetPrivacyAxesResponse);
   rpc UpsertPrivacyAxes(UpsertPrivacyAxesRequest) returns (UpsertPrivacyAxesResponse);
+
+  // A9P2.2 — Atlas map v2: latest 3D projection per user.
+  rpc ListAtlasMapPoints(ListAtlasMapPointsRequest) returns (ListAtlasMapPointsResponse);
 }
