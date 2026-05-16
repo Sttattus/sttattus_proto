@@ -93,6 +93,43 @@ message ListMyVitalsResponse {
   repeated Biomarker vitals = 1;
 }
 
+// A11.3 — Apex Age headline. biological_age comes from apex_engine
+// (mock-base 40 today; the real epigenetic clocks land in Phase 3).
+// chronological_age is null when the user has not set a DOB.
+message GetApexAgeRequest {}
+
+message GetApexAgeResponse {
+  double biological_age = 1;
+  double bio_rank = 2;
+  // Optional — only present when apex_profiles.date_of_birth is set.
+  // Reported in years (decimal). Clients render the delta if both
+  // values are present.
+  bool chronological_age_present = 3;
+  double chronological_age = 4;
+  // Map of system_id (e.g. 'cardiovascular') -> score 0..100.
+  map<string, double> system_scores = 5;
+}
+
+// A11.3 — clinical baseline (DOB / biological sex / chronotype).
+message ApexProfile {
+  bool date_of_birth_present = 1;
+  string date_of_birth = 2; // ISO 8601 YYYY-MM-DD
+  string biological_sex = 3; // 'female' | 'male' | 'intersex' | ''
+  string chronotype = 4; // 'owl' | 'lark' | 'neutral' | ''
+}
+
+message GetMyApexProfileRequest {}
+message GetMyApexProfileResponse {
+  ApexProfile profile = 1;
+}
+
+message UpdateMyApexProfileRequest {
+  ApexProfile profile = 1;
+}
+message UpdateMyApexProfileResponse {
+  ApexProfile profile = 1;
+}
+
 // A11.2 — per-biomarker time-series for the dashboard's drill-in.
 message ListMyBiomarkerHistoryRequest {
   string metric_code = 1; // canonical code e.g. 'HRV', 'LDL'
@@ -117,6 +154,11 @@ service ApexService {
 
   // Per-biomarker history (A11.2).
   rpc ListMyBiomarkerHistory(ListMyBiomarkerHistoryRequest) returns (ListMyBiomarkerHistoryResponse);
+
+  // Apex Age headline + clinical profile (A11.3).
+  rpc GetApexAge(GetApexAgeRequest) returns (GetApexAgeResponse);
+  rpc GetMyApexProfile(GetMyApexProfileRequest) returns (GetMyApexProfileResponse);
+  rpc UpdateMyApexProfile(UpdateMyApexProfileRequest) returns (UpdateMyApexProfileResponse);
 
   // Admin Methods (Gated by Admin Middleware)
   rpc AdminVerifyLab(AdminVerifyLabRequest) returns (AdminVerifyLabResponse);

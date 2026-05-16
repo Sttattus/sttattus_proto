@@ -24,6 +24,9 @@ const (
 	ApexService_ListLabReports_FullMethodName         = "/sttattus.apex.v1.ApexService/ListLabReports"
 	ApexService_ListMyVitals_FullMethodName           = "/sttattus.apex.v1.ApexService/ListMyVitals"
 	ApexService_ListMyBiomarkerHistory_FullMethodName = "/sttattus.apex.v1.ApexService/ListMyBiomarkerHistory"
+	ApexService_GetApexAge_FullMethodName             = "/sttattus.apex.v1.ApexService/GetApexAge"
+	ApexService_GetMyApexProfile_FullMethodName       = "/sttattus.apex.v1.ApexService/GetMyApexProfile"
+	ApexService_UpdateMyApexProfile_FullMethodName    = "/sttattus.apex.v1.ApexService/UpdateMyApexProfile"
 	ApexService_AdminVerifyLab_FullMethodName         = "/sttattus.apex.v1.ApexService/AdminVerifyLab"
 )
 
@@ -40,6 +43,10 @@ type ApexServiceClient interface {
 	ListMyVitals(ctx context.Context, in *ListMyVitalsRequest, opts ...grpc.CallOption) (*ListMyVitalsResponse, error)
 	// Per-biomarker history (A11.2).
 	ListMyBiomarkerHistory(ctx context.Context, in *ListMyBiomarkerHistoryRequest, opts ...grpc.CallOption) (*ListMyBiomarkerHistoryResponse, error)
+	// Apex Age headline + clinical profile (A11.3).
+	GetApexAge(ctx context.Context, in *GetApexAgeRequest, opts ...grpc.CallOption) (*GetApexAgeResponse, error)
+	GetMyApexProfile(ctx context.Context, in *GetMyApexProfileRequest, opts ...grpc.CallOption) (*GetMyApexProfileResponse, error)
+	UpdateMyApexProfile(ctx context.Context, in *UpdateMyApexProfileRequest, opts ...grpc.CallOption) (*UpdateMyApexProfileResponse, error)
 	// Admin Methods (Gated by Admin Middleware)
 	AdminVerifyLab(ctx context.Context, in *AdminVerifyLabRequest, opts ...grpc.CallOption) (*AdminVerifyLabResponse, error)
 }
@@ -102,6 +109,36 @@ func (c *apexServiceClient) ListMyBiomarkerHistory(ctx context.Context, in *List
 	return out, nil
 }
 
+func (c *apexServiceClient) GetApexAge(ctx context.Context, in *GetApexAgeRequest, opts ...grpc.CallOption) (*GetApexAgeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetApexAgeResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetApexAge_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetMyApexProfile(ctx context.Context, in *GetMyApexProfileRequest, opts ...grpc.CallOption) (*GetMyApexProfileResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMyApexProfileResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetMyApexProfile_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateMyApexProfile(ctx context.Context, in *UpdateMyApexProfileRequest, opts ...grpc.CallOption) (*UpdateMyApexProfileResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateMyApexProfileResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateMyApexProfile_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *apexServiceClient) AdminVerifyLab(ctx context.Context, in *AdminVerifyLabRequest, opts ...grpc.CallOption) (*AdminVerifyLabResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(AdminVerifyLabResponse)
@@ -125,6 +162,10 @@ type ApexServiceServer interface {
 	ListMyVitals(context.Context, *ListMyVitalsRequest) (*ListMyVitalsResponse, error)
 	// Per-biomarker history (A11.2).
 	ListMyBiomarkerHistory(context.Context, *ListMyBiomarkerHistoryRequest) (*ListMyBiomarkerHistoryResponse, error)
+	// Apex Age headline + clinical profile (A11.3).
+	GetApexAge(context.Context, *GetApexAgeRequest) (*GetApexAgeResponse, error)
+	GetMyApexProfile(context.Context, *GetMyApexProfileRequest) (*GetMyApexProfileResponse, error)
+	UpdateMyApexProfile(context.Context, *UpdateMyApexProfileRequest) (*UpdateMyApexProfileResponse, error)
 	// Admin Methods (Gated by Admin Middleware)
 	AdminVerifyLab(context.Context, *AdminVerifyLabRequest) (*AdminVerifyLabResponse, error)
 	mustEmbedUnimplementedApexServiceServer()
@@ -151,6 +192,15 @@ func (UnimplementedApexServiceServer) ListMyVitals(context.Context, *ListMyVital
 }
 func (UnimplementedApexServiceServer) ListMyBiomarkerHistory(context.Context, *ListMyBiomarkerHistoryRequest) (*ListMyBiomarkerHistoryResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMyBiomarkerHistory not implemented")
+}
+func (UnimplementedApexServiceServer) GetApexAge(context.Context, *GetApexAgeRequest) (*GetApexAgeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetApexAge not implemented")
+}
+func (UnimplementedApexServiceServer) GetMyApexProfile(context.Context, *GetMyApexProfileRequest) (*GetMyApexProfileResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMyApexProfile not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateMyApexProfile(context.Context, *UpdateMyApexProfileRequest) (*UpdateMyApexProfileResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateMyApexProfile not implemented")
 }
 func (UnimplementedApexServiceServer) AdminVerifyLab(context.Context, *AdminVerifyLabRequest) (*AdminVerifyLabResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method AdminVerifyLab not implemented")
@@ -266,6 +316,60 @@ func _ApexService_ListMyBiomarkerHistory_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ApexService_GetApexAge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetApexAgeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetApexAge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetApexAge_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetApexAge(ctx, req.(*GetApexAgeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetMyApexProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMyApexProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetMyApexProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetMyApexProfile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetMyApexProfile(ctx, req.(*GetMyApexProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateMyApexProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateMyApexProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateMyApexProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateMyApexProfile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateMyApexProfile(ctx, req.(*UpdateMyApexProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ApexService_AdminVerifyLab_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AdminVerifyLabRequest)
 	if err := dec(in); err != nil {
@@ -310,6 +414,18 @@ var ApexService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListMyBiomarkerHistory",
 			Handler:    _ApexService_ListMyBiomarkerHistory_Handler,
+		},
+		{
+			MethodName: "GetApexAge",
+			Handler:    _ApexService_GetApexAge_Handler,
+		},
+		{
+			MethodName: "GetMyApexProfile",
+			Handler:    _ApexService_GetMyApexProfile_Handler,
+		},
+		{
+			MethodName: "UpdateMyApexProfile",
+			Handler:    _ApexService_UpdateMyApexProfile_Handler,
 		},
 		{
 			MethodName: "AdminVerifyLab",

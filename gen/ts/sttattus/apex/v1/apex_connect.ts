@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyLabRequest, AdminVerifyLabResponse, ListLabReportsRequest, ListLabReportsResponse, ListMyBiomarkerHistoryRequest, ListMyBiomarkerHistoryResponse, ListMyVitalsRequest, ListMyVitalsResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncVitalsRequest, SyncVitalsResponse } from "./apex_pb.js";
+import { AdminVerifyLabRequest, AdminVerifyLabResponse, GetApexAgeRequest, GetApexAgeResponse, GetMyApexProfileRequest, GetMyApexProfileResponse, ListLabReportsRequest, ListLabReportsResponse, ListMyBiomarkerHistoryRequest, ListMyBiomarkerHistoryResponse, ListMyVitalsRequest, ListMyVitalsResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncVitalsRequest, SyncVitalsResponse, UpdateMyApexProfileRequest, UpdateMyApexProfileResponse } from "./apex_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -63,6 +63,35 @@ export const ApexService = {
       name: "ListMyBiomarkerHistory",
       I: ListMyBiomarkerHistoryRequest,
       O: ListMyBiomarkerHistoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Apex Age headline + clinical profile (A11.3).
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetApexAge
+     */
+    getApexAge: {
+      name: "GetApexAge",
+      I: GetApexAgeRequest,
+      O: GetApexAgeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.GetMyApexProfile
+     */
+    getMyApexProfile: {
+      name: "GetMyApexProfile",
+      I: GetMyApexProfileRequest,
+      O: GetMyApexProfileResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateMyApexProfile
+     */
+    updateMyApexProfile: {
+      name: "UpdateMyApexProfile",
+      I: UpdateMyApexProfileRequest,
+      O: UpdateMyApexProfileResponse,
       kind: MethodKind.Unary,
     },
     /**

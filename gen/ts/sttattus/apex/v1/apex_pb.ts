@@ -672,6 +672,313 @@ export class ListMyVitalsResponse extends Message<ListMyVitalsResponse> {
 }
 
 /**
+ * A11.3 — Apex Age headline. biological_age comes from apex_engine
+ * (mock-base 40 today; the real epigenetic clocks land in Phase 3).
+ * chronological_age is null when the user has not set a DOB.
+ *
+ * @generated from message sttattus.apex.v1.GetApexAgeRequest
+ */
+export class GetApexAgeRequest extends Message<GetApexAgeRequest> {
+  constructor(data?: PartialMessage<GetApexAgeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.GetApexAgeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetApexAgeRequest {
+    return new GetApexAgeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetApexAgeRequest {
+    return new GetApexAgeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetApexAgeRequest {
+    return new GetApexAgeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetApexAgeRequest | PlainMessage<GetApexAgeRequest> | undefined, b: GetApexAgeRequest | PlainMessage<GetApexAgeRequest> | undefined): boolean {
+    return proto3.util.equals(GetApexAgeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.GetApexAgeResponse
+ */
+export class GetApexAgeResponse extends Message<GetApexAgeResponse> {
+  /**
+   * @generated from field: double biological_age = 1;
+   */
+  biologicalAge = 0;
+
+  /**
+   * @generated from field: double bio_rank = 2;
+   */
+  bioRank = 0;
+
+  /**
+   * Optional — only present when apex_profiles.date_of_birth is set.
+   * Reported in years (decimal). Clients render the delta if both
+   * values are present.
+   *
+   * @generated from field: bool chronological_age_present = 3;
+   */
+  chronologicalAgePresent = false;
+
+  /**
+   * @generated from field: double chronological_age = 4;
+   */
+  chronologicalAge = 0;
+
+  /**
+   * Map of system_id (e.g. 'cardiovascular') -> score 0..100.
+   *
+   * @generated from field: map<string, double> system_scores = 5;
+   */
+  systemScores: { [key: string]: number } = {};
+
+  constructor(data?: PartialMessage<GetApexAgeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.GetApexAgeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "biological_age", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "bio_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "chronological_age_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "chronological_age", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "system_scores", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 1 /* ScalarType.DOUBLE */} },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetApexAgeResponse {
+    return new GetApexAgeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetApexAgeResponse {
+    return new GetApexAgeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetApexAgeResponse {
+    return new GetApexAgeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetApexAgeResponse | PlainMessage<GetApexAgeResponse> | undefined, b: GetApexAgeResponse | PlainMessage<GetApexAgeResponse> | undefined): boolean {
+    return proto3.util.equals(GetApexAgeResponse, a, b);
+  }
+}
+
+/**
+ * A11.3 — clinical baseline (DOB / biological sex / chronotype).
+ *
+ * @generated from message sttattus.apex.v1.ApexProfile
+ */
+export class ApexProfile extends Message<ApexProfile> {
+  /**
+   * @generated from field: bool date_of_birth_present = 1;
+   */
+  dateOfBirthPresent = false;
+
+  /**
+   * ISO 8601 YYYY-MM-DD
+   *
+   * @generated from field: string date_of_birth = 2;
+   */
+  dateOfBirth = "";
+
+  /**
+   * 'female' | 'male' | 'intersex' | ''
+   *
+   * @generated from field: string biological_sex = 3;
+   */
+  biologicalSex = "";
+
+  /**
+   * 'owl' | 'lark' | 'neutral' | ''
+   *
+   * @generated from field: string chronotype = 4;
+   */
+  chronotype = "";
+
+  constructor(data?: PartialMessage<ApexProfile>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ApexProfile";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "date_of_birth_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "date_of_birth", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "biological_sex", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "chronotype", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApexProfile {
+    return new ApexProfile().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApexProfile {
+    return new ApexProfile().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApexProfile {
+    return new ApexProfile().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApexProfile | PlainMessage<ApexProfile> | undefined, b: ApexProfile | PlainMessage<ApexProfile> | undefined): boolean {
+    return proto3.util.equals(ApexProfile, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.GetMyApexProfileRequest
+ */
+export class GetMyApexProfileRequest extends Message<GetMyApexProfileRequest> {
+  constructor(data?: PartialMessage<GetMyApexProfileRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.GetMyApexProfileRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMyApexProfileRequest {
+    return new GetMyApexProfileRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMyApexProfileRequest {
+    return new GetMyApexProfileRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMyApexProfileRequest {
+    return new GetMyApexProfileRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetMyApexProfileRequest | PlainMessage<GetMyApexProfileRequest> | undefined, b: GetMyApexProfileRequest | PlainMessage<GetMyApexProfileRequest> | undefined): boolean {
+    return proto3.util.equals(GetMyApexProfileRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.GetMyApexProfileResponse
+ */
+export class GetMyApexProfileResponse extends Message<GetMyApexProfileResponse> {
+  /**
+   * @generated from field: sttattus.apex.v1.ApexProfile profile = 1;
+   */
+  profile?: ApexProfile;
+
+  constructor(data?: PartialMessage<GetMyApexProfileResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.GetMyApexProfileResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "profile", kind: "message", T: ApexProfile },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMyApexProfileResponse {
+    return new GetMyApexProfileResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMyApexProfileResponse {
+    return new GetMyApexProfileResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMyApexProfileResponse {
+    return new GetMyApexProfileResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetMyApexProfileResponse | PlainMessage<GetMyApexProfileResponse> | undefined, b: GetMyApexProfileResponse | PlainMessage<GetMyApexProfileResponse> | undefined): boolean {
+    return proto3.util.equals(GetMyApexProfileResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.UpdateMyApexProfileRequest
+ */
+export class UpdateMyApexProfileRequest extends Message<UpdateMyApexProfileRequest> {
+  /**
+   * @generated from field: sttattus.apex.v1.ApexProfile profile = 1;
+   */
+  profile?: ApexProfile;
+
+  constructor(data?: PartialMessage<UpdateMyApexProfileRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.UpdateMyApexProfileRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "profile", kind: "message", T: ApexProfile },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateMyApexProfileRequest {
+    return new UpdateMyApexProfileRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateMyApexProfileRequest {
+    return new UpdateMyApexProfileRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateMyApexProfileRequest {
+    return new UpdateMyApexProfileRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateMyApexProfileRequest | PlainMessage<UpdateMyApexProfileRequest> | undefined, b: UpdateMyApexProfileRequest | PlainMessage<UpdateMyApexProfileRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateMyApexProfileRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.UpdateMyApexProfileResponse
+ */
+export class UpdateMyApexProfileResponse extends Message<UpdateMyApexProfileResponse> {
+  /**
+   * @generated from field: sttattus.apex.v1.ApexProfile profile = 1;
+   */
+  profile?: ApexProfile;
+
+  constructor(data?: PartialMessage<UpdateMyApexProfileResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.UpdateMyApexProfileResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "profile", kind: "message", T: ApexProfile },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateMyApexProfileResponse {
+    return new UpdateMyApexProfileResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateMyApexProfileResponse {
+    return new UpdateMyApexProfileResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateMyApexProfileResponse {
+    return new UpdateMyApexProfileResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateMyApexProfileResponse | PlainMessage<UpdateMyApexProfileResponse> | undefined, b: UpdateMyApexProfileResponse | PlainMessage<UpdateMyApexProfileResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateMyApexProfileResponse, a, b);
+  }
+}
+
+/**
  * A11.2 — per-biomarker time-series for the dashboard's drill-in.
  *
  * @generated from message sttattus.apex.v1.ListMyBiomarkerHistoryRequest

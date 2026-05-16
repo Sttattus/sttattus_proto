@@ -56,6 +56,19 @@ class ApexServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listMyBiomarkerHistory, request, options: options);
   }
 
+  /// Apex Age headline + clinical profile (A11.3).
+  $grpc.ResponseFuture<$0.GetApexAgeResponse> getApexAge($0.GetApexAgeRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getApexAge, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetMyApexProfileResponse> getMyApexProfile($0.GetMyApexProfileRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getMyApexProfile, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateMyApexProfileResponse> updateMyApexProfile($0.UpdateMyApexProfileRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$updateMyApexProfile, request, options: options);
+  }
+
   /// Admin Methods (Gated by Admin Middleware)
   $grpc.ResponseFuture<$0.AdminVerifyLabResponse> adminVerifyLab($0.AdminVerifyLabRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$adminVerifyLab, request, options: options);
@@ -83,6 +96,18 @@ class ApexServiceClient extends $grpc.Client {
       '/sttattus.apex.v1.ApexService/ListMyBiomarkerHistory',
       ($0.ListMyBiomarkerHistoryRequest value) => value.writeToBuffer(),
       $0.ListMyBiomarkerHistoryResponse.fromBuffer);
+  static final _$getApexAge = $grpc.ClientMethod<$0.GetApexAgeRequest, $0.GetApexAgeResponse>(
+      '/sttattus.apex.v1.ApexService/GetApexAge',
+      ($0.GetApexAgeRequest value) => value.writeToBuffer(),
+      $0.GetApexAgeResponse.fromBuffer);
+  static final _$getMyApexProfile = $grpc.ClientMethod<$0.GetMyApexProfileRequest, $0.GetMyApexProfileResponse>(
+      '/sttattus.apex.v1.ApexService/GetMyApexProfile',
+      ($0.GetMyApexProfileRequest value) => value.writeToBuffer(),
+      $0.GetMyApexProfileResponse.fromBuffer);
+  static final _$updateMyApexProfile = $grpc.ClientMethod<$0.UpdateMyApexProfileRequest, $0.UpdateMyApexProfileResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateMyApexProfile',
+      ($0.UpdateMyApexProfileRequest value) => value.writeToBuffer(),
+      $0.UpdateMyApexProfileResponse.fromBuffer);
   static final _$adminVerifyLab = $grpc.ClientMethod<$0.AdminVerifyLabRequest, $0.AdminVerifyLabResponse>(
       '/sttattus.apex.v1.ApexService/AdminVerifyLab',
       ($0.AdminVerifyLabRequest value) => value.writeToBuffer(),
@@ -129,6 +154,27 @@ abstract class ApexServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListMyBiomarkerHistoryRequest.fromBuffer(value),
         ($0.ListMyBiomarkerHistoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetApexAgeRequest, $0.GetApexAgeResponse>(
+        'GetApexAge',
+        getApexAge_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetApexAgeRequest.fromBuffer(value),
+        ($0.GetApexAgeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetMyApexProfileRequest, $0.GetMyApexProfileResponse>(
+        'GetMyApexProfile',
+        getMyApexProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetMyApexProfileRequest.fromBuffer(value),
+        ($0.GetMyApexProfileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateMyApexProfileRequest, $0.UpdateMyApexProfileResponse>(
+        'UpdateMyApexProfile',
+        updateMyApexProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpdateMyApexProfileRequest.fromBuffer(value),
+        ($0.UpdateMyApexProfileResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.AdminVerifyLabRequest, $0.AdminVerifyLabResponse>(
         'AdminVerifyLab',
         adminVerifyLab_Pre,
@@ -167,6 +213,24 @@ abstract class ApexServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListMyBiomarkerHistoryResponse> listMyBiomarkerHistory($grpc.ServiceCall call, $0.ListMyBiomarkerHistoryRequest request);
+
+  $async.Future<$0.GetApexAgeResponse> getApexAge_Pre($grpc.ServiceCall $call, $async.Future<$0.GetApexAgeRequest> $request) async {
+    return getApexAge($call, await $request);
+  }
+
+  $async.Future<$0.GetApexAgeResponse> getApexAge($grpc.ServiceCall call, $0.GetApexAgeRequest request);
+
+  $async.Future<$0.GetMyApexProfileResponse> getMyApexProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetMyApexProfileRequest> $request) async {
+    return getMyApexProfile($call, await $request);
+  }
+
+  $async.Future<$0.GetMyApexProfileResponse> getMyApexProfile($grpc.ServiceCall call, $0.GetMyApexProfileRequest request);
+
+  $async.Future<$0.UpdateMyApexProfileResponse> updateMyApexProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.UpdateMyApexProfileRequest> $request) async {
+    return updateMyApexProfile($call, await $request);
+  }
+
+  $async.Future<$0.UpdateMyApexProfileResponse> updateMyApexProfile($grpc.ServiceCall call, $0.UpdateMyApexProfileRequest request);
 
   $async.Future<$0.AdminVerifyLabResponse> adminVerifyLab_Pre($grpc.ServiceCall $call, $async.Future<$0.AdminVerifyLabRequest> $request) async {
     return adminVerifyLab($call, await $request);

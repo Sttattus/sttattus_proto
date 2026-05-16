@@ -756,6 +756,388 @@ class ListMyVitalsResponse extends $pb.GeneratedMessage {
   $pb.PbList<Biomarker> get vitals => $_getList(0);
 }
 
+/// A11.3 — Apex Age headline. biological_age comes from apex_engine
+/// (mock-base 40 today; the real epigenetic clocks land in Phase 3).
+/// chronological_age is null when the user has not set a DOB.
+class GetApexAgeRequest extends $pb.GeneratedMessage {
+  factory GetApexAgeRequest() => create();
+
+  GetApexAgeRequest._();
+
+  factory GetApexAgeRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetApexAgeRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApexAgeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetApexAgeRequest clone() => GetApexAgeRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetApexAgeRequest copyWith(void Function(GetApexAgeRequest) updates) => super.copyWith((message) => updates(message as GetApexAgeRequest)) as GetApexAgeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetApexAgeRequest create() => GetApexAgeRequest._();
+  @$core.override
+  GetApexAgeRequest createEmptyInstance() => create();
+  static $pb.PbList<GetApexAgeRequest> createRepeated() => $pb.PbList<GetApexAgeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetApexAgeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetApexAgeRequest>(create);
+  static GetApexAgeRequest? _defaultInstance;
+}
+
+class GetApexAgeResponse extends $pb.GeneratedMessage {
+  factory GetApexAgeResponse({
+    $core.double? biologicalAge,
+    $core.double? bioRank,
+    $core.bool? chronologicalAgePresent,
+    $core.double? chronologicalAge,
+    $core.Iterable<$core.MapEntry<$core.String, $core.double>>? systemScores,
+  }) {
+    final result = create();
+    if (biologicalAge != null) result.biologicalAge = biologicalAge;
+    if (bioRank != null) result.bioRank = bioRank;
+    if (chronologicalAgePresent != null) result.chronologicalAgePresent = chronologicalAgePresent;
+    if (chronologicalAge != null) result.chronologicalAge = chronologicalAge;
+    if (systemScores != null) result.systemScores.addEntries(systemScores);
+    return result;
+  }
+
+  GetApexAgeResponse._();
+
+  factory GetApexAgeResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetApexAgeResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApexAgeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'biologicalAge', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'bioRank', $pb.PbFieldType.OD)
+    ..aOB(3, _omitFieldNames ? '' : 'chronologicalAgePresent')
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'chronologicalAge', $pb.PbFieldType.OD)
+    ..m<$core.String, $core.double>(5, _omitFieldNames ? '' : 'systemScores', entryClassName: 'GetApexAgeResponse.SystemScoresEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OD, packageName: const $pb.PackageName('sttattus.apex.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetApexAgeResponse clone() => GetApexAgeResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetApexAgeResponse copyWith(void Function(GetApexAgeResponse) updates) => super.copyWith((message) => updates(message as GetApexAgeResponse)) as GetApexAgeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetApexAgeResponse create() => GetApexAgeResponse._();
+  @$core.override
+  GetApexAgeResponse createEmptyInstance() => create();
+  static $pb.PbList<GetApexAgeResponse> createRepeated() => $pb.PbList<GetApexAgeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetApexAgeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetApexAgeResponse>(create);
+  static GetApexAgeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get biologicalAge => $_getN(0);
+  @$pb.TagNumber(1)
+  set biologicalAge($core.double value) => $_setDouble(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBiologicalAge() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBiologicalAge() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get bioRank => $_getN(1);
+  @$pb.TagNumber(2)
+  set bioRank($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBioRank() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBioRank() => $_clearField(2);
+
+  /// Optional — only present when apex_profiles.date_of_birth is set.
+  /// Reported in years (decimal). Clients render the delta if both
+  /// values are present.
+  @$pb.TagNumber(3)
+  $core.bool get chronologicalAgePresent => $_getBF(2);
+  @$pb.TagNumber(3)
+  set chronologicalAgePresent($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasChronologicalAgePresent() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearChronologicalAgePresent() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get chronologicalAge => $_getN(3);
+  @$pb.TagNumber(4)
+  set chronologicalAge($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasChronologicalAge() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearChronologicalAge() => $_clearField(4);
+
+  /// Map of system_id (e.g. 'cardiovascular') -> score 0..100.
+  @$pb.TagNumber(5)
+  $pb.PbMap<$core.String, $core.double> get systemScores => $_getMap(4);
+}
+
+/// A11.3 — clinical baseline (DOB / biological sex / chronotype).
+class ApexProfile extends $pb.GeneratedMessage {
+  factory ApexProfile({
+    $core.bool? dateOfBirthPresent,
+    $core.String? dateOfBirth,
+    $core.String? biologicalSex,
+    $core.String? chronotype,
+  }) {
+    final result = create();
+    if (dateOfBirthPresent != null) result.dateOfBirthPresent = dateOfBirthPresent;
+    if (dateOfBirth != null) result.dateOfBirth = dateOfBirth;
+    if (biologicalSex != null) result.biologicalSex = biologicalSex;
+    if (chronotype != null) result.chronotype = chronotype;
+    return result;
+  }
+
+  ApexProfile._();
+
+  factory ApexProfile.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ApexProfile.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApexProfile', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'dateOfBirthPresent')
+    ..aOS(2, _omitFieldNames ? '' : 'dateOfBirth')
+    ..aOS(3, _omitFieldNames ? '' : 'biologicalSex')
+    ..aOS(4, _omitFieldNames ? '' : 'chronotype')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApexProfile clone() => ApexProfile()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApexProfile copyWith(void Function(ApexProfile) updates) => super.copyWith((message) => updates(message as ApexProfile)) as ApexProfile;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApexProfile create() => ApexProfile._();
+  @$core.override
+  ApexProfile createEmptyInstance() => create();
+  static $pb.PbList<ApexProfile> createRepeated() => $pb.PbList<ApexProfile>();
+  @$core.pragma('dart2js:noInline')
+  static ApexProfile getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApexProfile>(create);
+  static ApexProfile? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get dateOfBirthPresent => $_getBF(0);
+  @$pb.TagNumber(1)
+  set dateOfBirthPresent($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDateOfBirthPresent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDateOfBirthPresent() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get dateOfBirth => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set dateOfBirth($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDateOfBirth() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDateOfBirth() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get biologicalSex => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set biologicalSex($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBiologicalSex() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBiologicalSex() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get chronotype => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set chronotype($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasChronotype() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearChronotype() => $_clearField(4);
+}
+
+class GetMyApexProfileRequest extends $pb.GeneratedMessage {
+  factory GetMyApexProfileRequest() => create();
+
+  GetMyApexProfileRequest._();
+
+  factory GetMyApexProfileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetMyApexProfileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMyApexProfileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMyApexProfileRequest clone() => GetMyApexProfileRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMyApexProfileRequest copyWith(void Function(GetMyApexProfileRequest) updates) => super.copyWith((message) => updates(message as GetMyApexProfileRequest)) as GetMyApexProfileRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMyApexProfileRequest create() => GetMyApexProfileRequest._();
+  @$core.override
+  GetMyApexProfileRequest createEmptyInstance() => create();
+  static $pb.PbList<GetMyApexProfileRequest> createRepeated() => $pb.PbList<GetMyApexProfileRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetMyApexProfileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetMyApexProfileRequest>(create);
+  static GetMyApexProfileRequest? _defaultInstance;
+}
+
+class GetMyApexProfileResponse extends $pb.GeneratedMessage {
+  factory GetMyApexProfileResponse({
+    ApexProfile? profile,
+  }) {
+    final result = create();
+    if (profile != null) result.profile = profile;
+    return result;
+  }
+
+  GetMyApexProfileResponse._();
+
+  factory GetMyApexProfileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetMyApexProfileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMyApexProfileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOM<ApexProfile>(1, _omitFieldNames ? '' : 'profile', subBuilder: ApexProfile.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMyApexProfileResponse clone() => GetMyApexProfileResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMyApexProfileResponse copyWith(void Function(GetMyApexProfileResponse) updates) => super.copyWith((message) => updates(message as GetMyApexProfileResponse)) as GetMyApexProfileResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMyApexProfileResponse create() => GetMyApexProfileResponse._();
+  @$core.override
+  GetMyApexProfileResponse createEmptyInstance() => create();
+  static $pb.PbList<GetMyApexProfileResponse> createRepeated() => $pb.PbList<GetMyApexProfileResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetMyApexProfileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetMyApexProfileResponse>(create);
+  static GetMyApexProfileResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ApexProfile get profile => $_getN(0);
+  @$pb.TagNumber(1)
+  set profile(ApexProfile value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProfile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProfile() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ApexProfile ensureProfile() => $_ensure(0);
+}
+
+class UpdateMyApexProfileRequest extends $pb.GeneratedMessage {
+  factory UpdateMyApexProfileRequest({
+    ApexProfile? profile,
+  }) {
+    final result = create();
+    if (profile != null) result.profile = profile;
+    return result;
+  }
+
+  UpdateMyApexProfileRequest._();
+
+  factory UpdateMyApexProfileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateMyApexProfileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMyApexProfileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOM<ApexProfile>(1, _omitFieldNames ? '' : 'profile', subBuilder: ApexProfile.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateMyApexProfileRequest clone() => UpdateMyApexProfileRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateMyApexProfileRequest copyWith(void Function(UpdateMyApexProfileRequest) updates) => super.copyWith((message) => updates(message as UpdateMyApexProfileRequest)) as UpdateMyApexProfileRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateMyApexProfileRequest create() => UpdateMyApexProfileRequest._();
+  @$core.override
+  UpdateMyApexProfileRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateMyApexProfileRequest> createRepeated() => $pb.PbList<UpdateMyApexProfileRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateMyApexProfileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateMyApexProfileRequest>(create);
+  static UpdateMyApexProfileRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ApexProfile get profile => $_getN(0);
+  @$pb.TagNumber(1)
+  set profile(ApexProfile value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProfile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProfile() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ApexProfile ensureProfile() => $_ensure(0);
+}
+
+class UpdateMyApexProfileResponse extends $pb.GeneratedMessage {
+  factory UpdateMyApexProfileResponse({
+    ApexProfile? profile,
+  }) {
+    final result = create();
+    if (profile != null) result.profile = profile;
+    return result;
+  }
+
+  UpdateMyApexProfileResponse._();
+
+  factory UpdateMyApexProfileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateMyApexProfileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMyApexProfileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOM<ApexProfile>(1, _omitFieldNames ? '' : 'profile', subBuilder: ApexProfile.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateMyApexProfileResponse clone() => UpdateMyApexProfileResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateMyApexProfileResponse copyWith(void Function(UpdateMyApexProfileResponse) updates) => super.copyWith((message) => updates(message as UpdateMyApexProfileResponse)) as UpdateMyApexProfileResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateMyApexProfileResponse create() => UpdateMyApexProfileResponse._();
+  @$core.override
+  UpdateMyApexProfileResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateMyApexProfileResponse> createRepeated() => $pb.PbList<UpdateMyApexProfileResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateMyApexProfileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateMyApexProfileResponse>(create);
+  static UpdateMyApexProfileResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ApexProfile get profile => $_getN(0);
+  @$pb.TagNumber(1)
+  set profile(ApexProfile value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProfile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProfile() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ApexProfile ensureProfile() => $_ensure(0);
+}
+
 /// A11.2 — per-biomarker time-series for the dashboard's drill-in.
 class ListMyBiomarkerHistoryRequest extends $pb.GeneratedMessage {
   factory ListMyBiomarkerHistoryRequest({

@@ -231,6 +231,114 @@ final $typed_data.Uint8List listMyVitalsResponseDescriptor = $convert.base64Deco
     'ChRMaXN0TXlWaXRhbHNSZXNwb25zZRIzCgZ2aXRhbHMYASADKAsyGy5zdHRhdHR1cy5hcGV4Ln'
     'YxLkJpb21hcmtlclIGdml0YWxz');
 
+@$core.Deprecated('Use getApexAgeRequestDescriptor instead')
+const GetApexAgeRequest$json = {
+  '1': 'GetApexAgeRequest',
+};
+
+/// Descriptor for `GetApexAgeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getApexAgeRequestDescriptor = $convert.base64Decode(
+    'ChFHZXRBcGV4QWdlUmVxdWVzdA==');
+
+@$core.Deprecated('Use getApexAgeResponseDescriptor instead')
+const GetApexAgeResponse$json = {
+  '1': 'GetApexAgeResponse',
+  '2': [
+    {'1': 'biological_age', '3': 1, '4': 1, '5': 1, '10': 'biologicalAge'},
+    {'1': 'bio_rank', '3': 2, '4': 1, '5': 1, '10': 'bioRank'},
+    {'1': 'chronological_age_present', '3': 3, '4': 1, '5': 8, '10': 'chronologicalAgePresent'},
+    {'1': 'chronological_age', '3': 4, '4': 1, '5': 1, '10': 'chronologicalAge'},
+    {'1': 'system_scores', '3': 5, '4': 3, '5': 11, '6': '.sttattus.apex.v1.GetApexAgeResponse.SystemScoresEntry', '10': 'systemScores'},
+  ],
+  '3': [GetApexAgeResponse_SystemScoresEntry$json],
+};
+
+@$core.Deprecated('Use getApexAgeResponseDescriptor instead')
+const GetApexAgeResponse_SystemScoresEntry$json = {
+  '1': 'SystemScoresEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 1, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `GetApexAgeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getApexAgeResponseDescriptor = $convert.base64Decode(
+    'ChJHZXRBcGV4QWdlUmVzcG9uc2USJQoOYmlvbG9naWNhbF9hZ2UYASABKAFSDWJpb2xvZ2ljYW'
+    'xBZ2USGQoIYmlvX3JhbmsYAiABKAFSB2Jpb1JhbmsSOgoZY2hyb25vbG9naWNhbF9hZ2VfcHJl'
+    'c2VudBgDIAEoCFIXY2hyb25vbG9naWNhbEFnZVByZXNlbnQSKwoRY2hyb25vbG9naWNhbF9hZ2'
+    'UYBCABKAFSEGNocm9ub2xvZ2ljYWxBZ2USWwoNc3lzdGVtX3Njb3JlcxgFIAMoCzI2LnN0dGF0'
+    'dHVzLmFwZXgudjEuR2V0QXBleEFnZVJlc3BvbnNlLlN5c3RlbVNjb3Jlc0VudHJ5UgxzeXN0ZW'
+    '1TY29yZXMaPwoRU3lzdGVtU2NvcmVzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUY'
+    'AiABKAFSBXZhbHVlOgI4AQ==');
+
+@$core.Deprecated('Use apexProfileDescriptor instead')
+const ApexProfile$json = {
+  '1': 'ApexProfile',
+  '2': [
+    {'1': 'date_of_birth_present', '3': 1, '4': 1, '5': 8, '10': 'dateOfBirthPresent'},
+    {'1': 'date_of_birth', '3': 2, '4': 1, '5': 9, '10': 'dateOfBirth'},
+    {'1': 'biological_sex', '3': 3, '4': 1, '5': 9, '10': 'biologicalSex'},
+    {'1': 'chronotype', '3': 4, '4': 1, '5': 9, '10': 'chronotype'},
+  ],
+};
+
+/// Descriptor for `ApexProfile`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List apexProfileDescriptor = $convert.base64Decode(
+    'CgtBcGV4UHJvZmlsZRIxChVkYXRlX29mX2JpcnRoX3ByZXNlbnQYASABKAhSEmRhdGVPZkJpcn'
+    'RoUHJlc2VudBIiCg1kYXRlX29mX2JpcnRoGAIgASgJUgtkYXRlT2ZCaXJ0aBIlCg5iaW9sb2dp'
+    'Y2FsX3NleBgDIAEoCVINYmlvbG9naWNhbFNleBIeCgpjaHJvbm90eXBlGAQgASgJUgpjaHJvbm'
+    '90eXBl');
+
+@$core.Deprecated('Use getMyApexProfileRequestDescriptor instead')
+const GetMyApexProfileRequest$json = {
+  '1': 'GetMyApexProfileRequest',
+};
+
+/// Descriptor for `GetMyApexProfileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMyApexProfileRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRNeUFwZXhQcm9maWxlUmVxdWVzdA==');
+
+@$core.Deprecated('Use getMyApexProfileResponseDescriptor instead')
+const GetMyApexProfileResponse$json = {
+  '1': 'GetMyApexProfileResponse',
+  '2': [
+    {'1': 'profile', '3': 1, '4': 1, '5': 11, '6': '.sttattus.apex.v1.ApexProfile', '10': 'profile'},
+  ],
+};
+
+/// Descriptor for `GetMyApexProfileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMyApexProfileResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRNeUFwZXhQcm9maWxlUmVzcG9uc2USNwoHcHJvZmlsZRgBIAEoCzIdLnN0dGF0dHVzLm'
+    'FwZXgudjEuQXBleFByb2ZpbGVSB3Byb2ZpbGU=');
+
+@$core.Deprecated('Use updateMyApexProfileRequestDescriptor instead')
+const UpdateMyApexProfileRequest$json = {
+  '1': 'UpdateMyApexProfileRequest',
+  '2': [
+    {'1': 'profile', '3': 1, '4': 1, '5': 11, '6': '.sttattus.apex.v1.ApexProfile', '10': 'profile'},
+  ],
+};
+
+/// Descriptor for `UpdateMyApexProfileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateMyApexProfileRequestDescriptor = $convert.base64Decode(
+    'ChpVcGRhdGVNeUFwZXhQcm9maWxlUmVxdWVzdBI3Cgdwcm9maWxlGAEgASgLMh0uc3R0YXR0dX'
+    'MuYXBleC52MS5BcGV4UHJvZmlsZVIHcHJvZmlsZQ==');
+
+@$core.Deprecated('Use updateMyApexProfileResponseDescriptor instead')
+const UpdateMyApexProfileResponse$json = {
+  '1': 'UpdateMyApexProfileResponse',
+  '2': [
+    {'1': 'profile', '3': 1, '4': 1, '5': 11, '6': '.sttattus.apex.v1.ApexProfile', '10': 'profile'},
+  ],
+};
+
+/// Descriptor for `UpdateMyApexProfileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateMyApexProfileResponseDescriptor = $convert.base64Decode(
+    'ChtVcGRhdGVNeUFwZXhQcm9maWxlUmVzcG9uc2USNwoHcHJvZmlsZRgBIAEoCzIdLnN0dGF0dH'
+    'VzLmFwZXgudjEuQXBleFByb2ZpbGVSB3Byb2ZpbGU=');
+
 @$core.Deprecated('Use listMyBiomarkerHistoryRequestDescriptor instead')
 const ListMyBiomarkerHistoryRequest$json = {
   '1': 'ListMyBiomarkerHistoryRequest',
