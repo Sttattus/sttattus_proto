@@ -231,3 +231,32 @@ final $typed_data.Uint8List listMyVitalsResponseDescriptor = $convert.base64Deco
     'ChRMaXN0TXlWaXRhbHNSZXNwb25zZRIzCgZ2aXRhbHMYASADKAsyGy5zdHRhdHR1cy5hcGV4Ln'
     'YxLkJpb21hcmtlclIGdml0YWxz');
 
+@$core.Deprecated('Use listMyBiomarkerHistoryRequestDescriptor instead')
+const ListMyBiomarkerHistoryRequest$json = {
+  '1': 'ListMyBiomarkerHistoryRequest',
+  '2': [
+    {'1': 'metric_code', '3': 1, '4': 1, '5': 9, '10': 'metricCode'},
+    {'1': 'days', '3': 2, '4': 1, '5': 5, '10': 'days'},
+  ],
+};
+
+/// Descriptor for `ListMyBiomarkerHistoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyBiomarkerHistoryRequestDescriptor = $convert.base64Decode(
+    'Ch1MaXN0TXlCaW9tYXJrZXJIaXN0b3J5UmVxdWVzdBIfCgttZXRyaWNfY29kZRgBIAEoCVIKbW'
+    'V0cmljQ29kZRISCgRkYXlzGAIgASgFUgRkYXlz');
+
+@$core.Deprecated('Use listMyBiomarkerHistoryResponseDescriptor instead')
+const ListMyBiomarkerHistoryResponse$json = {
+  '1': 'ListMyBiomarkerHistoryResponse',
+  '2': [
+    {'1': 'metric_code', '3': 1, '4': 1, '5': 9, '10': 'metricCode'},
+    {'1': 'points', '3': 2, '4': 3, '5': 11, '6': '.sttattus.apex.v1.Biomarker', '10': 'points'},
+  ],
+};
+
+/// Descriptor for `ListMyBiomarkerHistoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyBiomarkerHistoryResponseDescriptor = $convert.base64Decode(
+    'Ch5MaXN0TXlCaW9tYXJrZXJIaXN0b3J5UmVzcG9uc2USHwoLbWV0cmljX2NvZGUYASABKAlSCm'
+    '1ldHJpY0NvZGUSMwoGcG9pbnRzGAIgAygLMhsuc3R0YXR0dXMuYXBleC52MS5CaW9tYXJrZXJS'
+    'BnBvaW50cw==');
+

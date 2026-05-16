@@ -51,6 +51,11 @@ class ApexServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listMyVitals, request, options: options);
   }
 
+  /// Per-biomarker history (A11.2).
+  $grpc.ResponseFuture<$0.ListMyBiomarkerHistoryResponse> listMyBiomarkerHistory($0.ListMyBiomarkerHistoryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyBiomarkerHistory, request, options: options);
+  }
+
   /// Admin Methods (Gated by Admin Middleware)
   $grpc.ResponseFuture<$0.AdminVerifyLabResponse> adminVerifyLab($0.AdminVerifyLabRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$adminVerifyLab, request, options: options);
@@ -74,6 +79,10 @@ class ApexServiceClient extends $grpc.Client {
       '/sttattus.apex.v1.ApexService/ListMyVitals',
       ($0.ListMyVitalsRequest value) => value.writeToBuffer(),
       $0.ListMyVitalsResponse.fromBuffer);
+  static final _$listMyBiomarkerHistory = $grpc.ClientMethod<$0.ListMyBiomarkerHistoryRequest, $0.ListMyBiomarkerHistoryResponse>(
+      '/sttattus.apex.v1.ApexService/ListMyBiomarkerHistory',
+      ($0.ListMyBiomarkerHistoryRequest value) => value.writeToBuffer(),
+      $0.ListMyBiomarkerHistoryResponse.fromBuffer);
   static final _$adminVerifyLab = $grpc.ClientMethod<$0.AdminVerifyLabRequest, $0.AdminVerifyLabResponse>(
       '/sttattus.apex.v1.ApexService/AdminVerifyLab',
       ($0.AdminVerifyLabRequest value) => value.writeToBuffer(),
@@ -113,6 +122,13 @@ abstract class ApexServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListMyVitalsRequest.fromBuffer(value),
         ($0.ListMyVitalsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyBiomarkerHistoryRequest, $0.ListMyBiomarkerHistoryResponse>(
+        'ListMyBiomarkerHistory',
+        listMyBiomarkerHistory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyBiomarkerHistoryRequest.fromBuffer(value),
+        ($0.ListMyBiomarkerHistoryResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.AdminVerifyLabRequest, $0.AdminVerifyLabResponse>(
         'AdminVerifyLab',
         adminVerifyLab_Pre,
@@ -145,6 +161,12 @@ abstract class ApexServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListMyVitalsResponse> listMyVitals($grpc.ServiceCall call, $0.ListMyVitalsRequest request);
+
+  $async.Future<$0.ListMyBiomarkerHistoryResponse> listMyBiomarkerHistory_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyBiomarkerHistoryRequest> $request) async {
+    return listMyBiomarkerHistory($call, await $request);
+  }
+
+  $async.Future<$0.ListMyBiomarkerHistoryResponse> listMyBiomarkerHistory($grpc.ServiceCall call, $0.ListMyBiomarkerHistoryRequest request);
 
   $async.Future<$0.AdminVerifyLabResponse> adminVerifyLab_Pre($grpc.ServiceCall $call, $async.Future<$0.AdminVerifyLabRequest> $request) async {
     return adminVerifyLab($call, await $request);

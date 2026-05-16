@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyLabRequest, AdminVerifyLabResponse, ListLabReportsRequest, ListLabReportsResponse, ListMyVitalsRequest, ListMyVitalsResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncVitalsRequest, SyncVitalsResponse } from "./apex_pb.js";
+import { AdminVerifyLabRequest, AdminVerifyLabResponse, ListLabReportsRequest, ListLabReportsResponse, ListMyBiomarkerHistoryRequest, ListMyBiomarkerHistoryResponse, ListMyVitalsRequest, ListMyVitalsResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncVitalsRequest, SyncVitalsResponse } from "./apex_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -52,6 +52,17 @@ export const ApexService = {
       name: "ListMyVitals",
       I: ListMyVitalsRequest,
       O: ListMyVitalsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Per-biomarker history (A11.2).
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyBiomarkerHistory
+     */
+    listMyBiomarkerHistory: {
+      name: "ListMyBiomarkerHistory",
+      I: ListMyBiomarkerHistoryRequest,
+      O: ListMyBiomarkerHistoryResponse,
       kind: MethodKind.Unary,
     },
     /**

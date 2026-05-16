@@ -93,6 +93,17 @@ message ListMyVitalsResponse {
   repeated Biomarker vitals = 1;
 }
 
+// A11.2 — per-biomarker time-series for the dashboard's drill-in.
+message ListMyBiomarkerHistoryRequest {
+  string metric_code = 1; // canonical code e.g. 'HRV', 'LDL'
+  int32 days = 2; // 0 == lifetime
+}
+
+message ListMyBiomarkerHistoryResponse {
+  string metric_code = 1;
+  repeated Biomarker points = 2;
+}
+
 service ApexService {
   // Wearable/Manual Sync
   rpc SyncVitals(SyncVitalsRequest) returns (SyncVitalsResponse);
@@ -103,6 +114,9 @@ service ApexService {
 
   // Today's vitals (A11.1).
   rpc ListMyVitals(ListMyVitalsRequest) returns (ListMyVitalsResponse);
+
+  // Per-biomarker history (A11.2).
+  rpc ListMyBiomarkerHistory(ListMyBiomarkerHistoryRequest) returns (ListMyBiomarkerHistoryResponse);
 
   // Admin Methods (Gated by Admin Middleware)
   rpc AdminVerifyLab(AdminVerifyLabRequest) returns (AdminVerifyLabResponse);

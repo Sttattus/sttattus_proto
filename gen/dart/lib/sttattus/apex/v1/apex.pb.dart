@@ -756,6 +756,117 @@ class ListMyVitalsResponse extends $pb.GeneratedMessage {
   $pb.PbList<Biomarker> get vitals => $_getList(0);
 }
 
+/// A11.2 — per-biomarker time-series for the dashboard's drill-in.
+class ListMyBiomarkerHistoryRequest extends $pb.GeneratedMessage {
+  factory ListMyBiomarkerHistoryRequest({
+    $core.String? metricCode,
+    $core.int? days,
+  }) {
+    final result = create();
+    if (metricCode != null) result.metricCode = metricCode;
+    if (days != null) result.days = days;
+    return result;
+  }
+
+  ListMyBiomarkerHistoryRequest._();
+
+  factory ListMyBiomarkerHistoryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyBiomarkerHistoryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyBiomarkerHistoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'metricCode')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'days', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyBiomarkerHistoryRequest clone() => ListMyBiomarkerHistoryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyBiomarkerHistoryRequest copyWith(void Function(ListMyBiomarkerHistoryRequest) updates) => super.copyWith((message) => updates(message as ListMyBiomarkerHistoryRequest)) as ListMyBiomarkerHistoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyBiomarkerHistoryRequest create() => ListMyBiomarkerHistoryRequest._();
+  @$core.override
+  ListMyBiomarkerHistoryRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyBiomarkerHistoryRequest> createRepeated() => $pb.PbList<ListMyBiomarkerHistoryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyBiomarkerHistoryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyBiomarkerHistoryRequest>(create);
+  static ListMyBiomarkerHistoryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get metricCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set metricCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMetricCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMetricCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get days => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set days($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDays() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDays() => $_clearField(2);
+}
+
+class ListMyBiomarkerHistoryResponse extends $pb.GeneratedMessage {
+  factory ListMyBiomarkerHistoryResponse({
+    $core.String? metricCode,
+    $core.Iterable<Biomarker>? points,
+  }) {
+    final result = create();
+    if (metricCode != null) result.metricCode = metricCode;
+    if (points != null) result.points.addAll(points);
+    return result;
+  }
+
+  ListMyBiomarkerHistoryResponse._();
+
+  factory ListMyBiomarkerHistoryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyBiomarkerHistoryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyBiomarkerHistoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'metricCode')
+    ..pc<Biomarker>(2, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: Biomarker.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyBiomarkerHistoryResponse clone() => ListMyBiomarkerHistoryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyBiomarkerHistoryResponse copyWith(void Function(ListMyBiomarkerHistoryResponse) updates) => super.copyWith((message) => updates(message as ListMyBiomarkerHistoryResponse)) as ListMyBiomarkerHistoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyBiomarkerHistoryResponse create() => ListMyBiomarkerHistoryResponse._();
+  @$core.override
+  ListMyBiomarkerHistoryResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyBiomarkerHistoryResponse> createRepeated() => $pb.PbList<ListMyBiomarkerHistoryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyBiomarkerHistoryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyBiomarkerHistoryResponse>(create);
+  static ListMyBiomarkerHistoryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get metricCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set metricCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMetricCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMetricCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<Biomarker> get points => $_getList(1);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

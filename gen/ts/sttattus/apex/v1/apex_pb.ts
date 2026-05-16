@@ -671,3 +671,95 @@ export class ListMyVitalsResponse extends Message<ListMyVitalsResponse> {
   }
 }
 
+/**
+ * A11.2 — per-biomarker time-series for the dashboard's drill-in.
+ *
+ * @generated from message sttattus.apex.v1.ListMyBiomarkerHistoryRequest
+ */
+export class ListMyBiomarkerHistoryRequest extends Message<ListMyBiomarkerHistoryRequest> {
+  /**
+   * canonical code e.g. 'HRV', 'LDL'
+   *
+   * @generated from field: string metric_code = 1;
+   */
+  metricCode = "";
+
+  /**
+   * 0 == lifetime
+   *
+   * @generated from field: int32 days = 2;
+   */
+  days = 0;
+
+  constructor(data?: PartialMessage<ListMyBiomarkerHistoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListMyBiomarkerHistoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "metric_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyBiomarkerHistoryRequest {
+    return new ListMyBiomarkerHistoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyBiomarkerHistoryRequest {
+    return new ListMyBiomarkerHistoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyBiomarkerHistoryRequest {
+    return new ListMyBiomarkerHistoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyBiomarkerHistoryRequest | PlainMessage<ListMyBiomarkerHistoryRequest> | undefined, b: ListMyBiomarkerHistoryRequest | PlainMessage<ListMyBiomarkerHistoryRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyBiomarkerHistoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListMyBiomarkerHistoryResponse
+ */
+export class ListMyBiomarkerHistoryResponse extends Message<ListMyBiomarkerHistoryResponse> {
+  /**
+   * @generated from field: string metric_code = 1;
+   */
+  metricCode = "";
+
+  /**
+   * @generated from field: repeated sttattus.apex.v1.Biomarker points = 2;
+   */
+  points: Biomarker[] = [];
+
+  constructor(data?: PartialMessage<ListMyBiomarkerHistoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListMyBiomarkerHistoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "metric_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "points", kind: "message", T: Biomarker, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyBiomarkerHistoryResponse {
+    return new ListMyBiomarkerHistoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyBiomarkerHistoryResponse {
+    return new ListMyBiomarkerHistoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyBiomarkerHistoryResponse {
+    return new ListMyBiomarkerHistoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyBiomarkerHistoryResponse | PlainMessage<ListMyBiomarkerHistoryResponse> | undefined, b: ListMyBiomarkerHistoryResponse | PlainMessage<ListMyBiomarkerHistoryResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyBiomarkerHistoryResponse, a, b);
+  }
+}
+
