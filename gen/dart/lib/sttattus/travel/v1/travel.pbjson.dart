@@ -14,6 +14,24 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use tripStatusDescriptor instead')
+const TripStatus$json = {
+  '1': 'TripStatus',
+  '2': [
+    {'1': 'TRIP_STATUS_UNSPECIFIED', '2': 0},
+    {'1': 'TRIP_STATUS_PLANNED', '2': 1},
+    {'1': 'TRIP_STATUS_IN_FLIGHT', '2': 2},
+    {'1': 'TRIP_STATUS_COMPLETED', '2': 3},
+    {'1': 'TRIP_STATUS_CANCELLED', '2': 4},
+  ],
+};
+
+/// Descriptor for `TripStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List tripStatusDescriptor = $convert.base64Decode(
+    'CgpUcmlwU3RhdHVzEhsKF1RSSVBfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFwoTVFJJUF9TVEFUVV'
+    'NfUExBTk5FRBABEhkKFVRSSVBfU1RBVFVTX0lOX0ZMSUdIVBACEhkKFVRSSVBfU1RBVFVTX0NP'
+    'TVBMRVRFRBADEhkKFVRSSVBfU1RBVFVTX0NBTkNFTExFRBAE');
+
 @$core.Deprecated('Use nomadStatsDescriptor instead')
 const NomadStats$json = {
   '1': 'NomadStats',
@@ -205,4 +223,192 @@ final $typed_data.Uint8List listFeedResponseDescriptor = $convert.base64Decode(
     'ChBMaXN0RmVlZFJlc3BvbnNlEj0KCm1pbGVzdG9uZXMYASADKAsyHS5zdHRhdHR1cy50cmF2ZW'
     'wudjEuTWlsZXN0b25lUgptaWxlc3RvbmVzEjQKBHBhZ2UYAiABKAsyIC5zdHRhdHR1cy5jb21t'
     'b24udjEuUGFnZVJlc3BvbnNlUgRwYWdl');
+
+@$core.Deprecated('Use tripDescriptor instead')
+const Trip$json = {
+  '1': 'Trip',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'cover_url', '3': 4, '4': 1, '5': 9, '10': 'coverUrl'},
+    {'1': 'status', '3': 5, '4': 1, '5': 14, '6': '.sttattus.travel.v1.TripStatus', '10': 'status'},
+    {'1': 'planned_start', '3': 6, '4': 1, '5': 3, '10': 'plannedStart'},
+    {'1': 'planned_end', '3': 7, '4': 1, '5': 3, '10': 'plannedEnd'},
+    {'1': 'actual_start', '3': 8, '4': 1, '5': 3, '10': 'actualStart'},
+    {'1': 'actual_end', '3': 9, '4': 1, '5': 3, '10': 'actualEnd'},
+    {'1': 'visits', '3': 10, '4': 3, '5': 11, '6': '.sttattus.travel.v1.Milestone', '10': 'visits'},
+    {'1': 'created_at', '3': 11, '4': 1, '5': 3, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `Trip`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tripDescriptor = $convert.base64Decode(
+    'CgRUcmlwEg4KAmlkGAEgASgJUgJpZBIXCgd1c2VyX2lkGAIgASgJUgZ1c2VySWQSFAoFdGl0bG'
+    'UYAyABKAlSBXRpdGxlEhsKCWNvdmVyX3VybBgEIAEoCVIIY292ZXJVcmwSNgoGc3RhdHVzGAUg'
+    'ASgOMh4uc3R0YXR0dXMudHJhdmVsLnYxLlRyaXBTdGF0dXNSBnN0YXR1cxIjCg1wbGFubmVkX3'
+    'N0YXJ0GAYgASgDUgxwbGFubmVkU3RhcnQSHwoLcGxhbm5lZF9lbmQYByABKANSCnBsYW5uZWRF'
+    'bmQSIQoMYWN0dWFsX3N0YXJ0GAggASgDUgthY3R1YWxTdGFydBIdCgphY3R1YWxfZW5kGAkgAS'
+    'gDUglhY3R1YWxFbmQSNQoGdmlzaXRzGAogAygLMh0uc3R0YXR0dXMudHJhdmVsLnYxLk1pbGVz'
+    'dG9uZVIGdmlzaXRzEh0KCmNyZWF0ZWRfYXQYCyABKANSCWNyZWF0ZWRBdA==');
+
+@$core.Deprecated('Use createTripRequestDescriptor instead')
+const CreateTripRequest$json = {
+  '1': 'CreateTripRequest',
+  '2': [
+    {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'planned_start', '3': 2, '4': 1, '5': 3, '10': 'plannedStart'},
+    {'1': 'planned_end', '3': 3, '4': 1, '5': 3, '10': 'plannedEnd'},
+  ],
+};
+
+/// Descriptor for `CreateTripRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createTripRequestDescriptor = $convert.base64Decode(
+    'ChFDcmVhdGVUcmlwUmVxdWVzdBIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSIwoNcGxhbm5lZF9zdG'
+    'FydBgCIAEoA1IMcGxhbm5lZFN0YXJ0Eh8KC3BsYW5uZWRfZW5kGAMgASgDUgpwbGFubmVkRW5k');
+
+@$core.Deprecated('Use createTripResponseDescriptor instead')
+const CreateTripResponse$json = {
+  '1': 'CreateTripResponse',
+  '2': [
+    {'1': 'trip', '3': 1, '4': 1, '5': 11, '6': '.sttattus.travel.v1.Trip', '10': 'trip'},
+  ],
+};
+
+/// Descriptor for `CreateTripResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createTripResponseDescriptor = $convert.base64Decode(
+    'ChJDcmVhdGVUcmlwUmVzcG9uc2USLAoEdHJpcBgBIAEoCzIYLnN0dGF0dHVzLnRyYXZlbC52MS'
+    '5UcmlwUgR0cmlw');
+
+@$core.Deprecated('Use updateTripRequestDescriptor instead')
+const UpdateTripRequest$json = {
+  '1': 'UpdateTripRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'cover_url', '3': 3, '4': 1, '5': 9, '10': 'coverUrl'},
+    {'1': 'status', '3': 4, '4': 1, '5': 14, '6': '.sttattus.travel.v1.TripStatus', '10': 'status'},
+    {'1': 'planned_start', '3': 5, '4': 1, '5': 3, '10': 'plannedStart'},
+    {'1': 'planned_end', '3': 6, '4': 1, '5': 3, '10': 'plannedEnd'},
+  ],
+};
+
+/// Descriptor for `UpdateTripRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateTripRequestDescriptor = $convert.base64Decode(
+    'ChFVcGRhdGVUcmlwUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSFAoFdGl0bGUYAiABKAlSBXRpdG'
+    'xlEhsKCWNvdmVyX3VybBgDIAEoCVIIY292ZXJVcmwSNgoGc3RhdHVzGAQgASgOMh4uc3R0YXR0'
+    'dXMudHJhdmVsLnYxLlRyaXBTdGF0dXNSBnN0YXR1cxIjCg1wbGFubmVkX3N0YXJ0GAUgASgDUg'
+    'xwbGFubmVkU3RhcnQSHwoLcGxhbm5lZF9lbmQYBiABKANSCnBsYW5uZWRFbmQ=');
+
+@$core.Deprecated('Use updateTripResponseDescriptor instead')
+const UpdateTripResponse$json = {
+  '1': 'UpdateTripResponse',
+  '2': [
+    {'1': 'trip', '3': 1, '4': 1, '5': 11, '6': '.sttattus.travel.v1.Trip', '10': 'trip'},
+  ],
+};
+
+/// Descriptor for `UpdateTripResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateTripResponseDescriptor = $convert.base64Decode(
+    'ChJVcGRhdGVUcmlwUmVzcG9uc2USLAoEdHJpcBgBIAEoCzIYLnN0dGF0dHVzLnRyYXZlbC52MS'
+    '5UcmlwUgR0cmlw');
+
+@$core.Deprecated('Use listMyTripsRequestDescriptor instead')
+const ListMyTripsRequest$json = {
+  '1': 'ListMyTripsRequest',
+  '2': [
+    {'1': 'status_filter', '3': 1, '4': 1, '5': 14, '6': '.sttattus.travel.v1.TripStatus', '10': 'statusFilter'},
+  ],
+};
+
+/// Descriptor for `ListMyTripsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyTripsRequestDescriptor = $convert.base64Decode(
+    'ChJMaXN0TXlUcmlwc1JlcXVlc3QSQwoNc3RhdHVzX2ZpbHRlchgBIAEoDjIeLnN0dGF0dHVzLn'
+    'RyYXZlbC52MS5UcmlwU3RhdHVzUgxzdGF0dXNGaWx0ZXI=');
+
+@$core.Deprecated('Use listMyTripsResponseDescriptor instead')
+const ListMyTripsResponse$json = {
+  '1': 'ListMyTripsResponse',
+  '2': [
+    {'1': 'trips', '3': 1, '4': 3, '5': 11, '6': '.sttattus.travel.v1.Trip', '10': 'trips'},
+  ],
+};
+
+/// Descriptor for `ListMyTripsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyTripsResponseDescriptor = $convert.base64Decode(
+    'ChNMaXN0TXlUcmlwc1Jlc3BvbnNlEi4KBXRyaXBzGAEgAygLMhguc3R0YXR0dXMudHJhdmVsLn'
+    'YxLlRyaXBSBXRyaXBz');
+
+@$core.Deprecated('Use getTripRequestDescriptor instead')
+const GetTripRequest$json = {
+  '1': 'GetTripRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetTripRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTripRequestDescriptor = $convert.base64Decode(
+    'Cg5HZXRUcmlwUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use getTripResponseDescriptor instead')
+const GetTripResponse$json = {
+  '1': 'GetTripResponse',
+  '2': [
+    {'1': 'trip', '3': 1, '4': 1, '5': 11, '6': '.sttattus.travel.v1.Trip', '10': 'trip'},
+  ],
+};
+
+/// Descriptor for `GetTripResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTripResponseDescriptor = $convert.base64Decode(
+    'Cg9HZXRUcmlwUmVzcG9uc2USLAoEdHJpcBgBIAEoCzIYLnN0dGF0dHVzLnRyYXZlbC52MS5Ucm'
+    'lwUgR0cmlw');
+
+@$core.Deprecated('Use attachVisitToTripRequestDescriptor instead')
+const AttachVisitToTripRequest$json = {
+  '1': 'AttachVisitToTripRequest',
+  '2': [
+    {'1': 'trip_id', '3': 1, '4': 1, '5': 9, '10': 'tripId'},
+    {'1': 'milestone_id', '3': 2, '4': 1, '5': 9, '10': 'milestoneId'},
+  ],
+};
+
+/// Descriptor for `AttachVisitToTripRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List attachVisitToTripRequestDescriptor = $convert.base64Decode(
+    'ChhBdHRhY2hWaXNpdFRvVHJpcFJlcXVlc3QSFwoHdHJpcF9pZBgBIAEoCVIGdHJpcElkEiEKDG'
+    '1pbGVzdG9uZV9pZBgCIAEoCVILbWlsZXN0b25lSWQ=');
+
+@$core.Deprecated('Use attachVisitToTripResponseDescriptor instead')
+const AttachVisitToTripResponse$json = {
+  '1': 'AttachVisitToTripResponse',
+  '2': [
+    {'1': 'trip', '3': 1, '4': 1, '5': 11, '6': '.sttattus.travel.v1.Trip', '10': 'trip'},
+  ],
+};
+
+/// Descriptor for `AttachVisitToTripResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List attachVisitToTripResponseDescriptor = $convert.base64Decode(
+    'ChlBdHRhY2hWaXNpdFRvVHJpcFJlc3BvbnNlEiwKBHRyaXAYASABKAsyGC5zdHRhdHR1cy50cm'
+    'F2ZWwudjEuVHJpcFIEdHJpcA==');
+
+@$core.Deprecated('Use deleteTripRequestDescriptor instead')
+const DeleteTripRequest$json = {
+  '1': 'DeleteTripRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteTripRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteTripRequestDescriptor = $convert.base64Decode(
+    'ChFEZWxldGVUcmlwUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use deleteTripResponseDescriptor instead')
+const DeleteTripResponse$json = {
+  '1': 'DeleteTripResponse',
+};
+
+/// Descriptor for `DeleteTripResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteTripResponseDescriptor = $convert.base64Decode(
+    'ChJEZWxldGVUcmlwUmVzcG9uc2U=');
 

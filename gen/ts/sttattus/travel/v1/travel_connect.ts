@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateMilestoneRequest, CreateMilestoneResponse, GetNomadStatsRequest, GetNomadStatsResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse } from "./travel_pb.js";
+import { AttachVisitToTripRequest, AttachVisitToTripResponse, CreateMilestoneRequest, CreateMilestoneResponse, CreateTripRequest, CreateTripResponse, DeleteTripRequest, DeleteTripResponse, GetNomadStatsRequest, GetNomadStatsResponse, GetTripRequest, GetTripResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse, ListMyTripsRequest, ListMyTripsResponse, UpdateTripRequest, UpdateTripResponse } from "./travel_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -46,6 +46,62 @@ export const TravelService = {
       name: "ListFeed",
       I: ListFeedRequest,
       O: ListFeedResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * N10.2 — Trip entity lifecycle.
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.CreateTrip
+     */
+    createTrip: {
+      name: "CreateTrip",
+      I: CreateTripRequest,
+      O: CreateTripResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.UpdateTrip
+     */
+    updateTrip: {
+      name: "UpdateTrip",
+      I: UpdateTripRequest,
+      O: UpdateTripResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.ListMyTrips
+     */
+    listMyTrips: {
+      name: "ListMyTrips",
+      I: ListMyTripsRequest,
+      O: ListMyTripsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.GetTrip
+     */
+    getTrip: {
+      name: "GetTrip",
+      I: GetTripRequest,
+      O: GetTripResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.AttachVisitToTrip
+     */
+    attachVisitToTrip: {
+      name: "AttachVisitToTrip",
+      I: AttachVisitToTripRequest,
+      O: AttachVisitToTripResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.DeleteTrip
+     */
+    deleteTrip: {
+      name: "DeleteTrip",
+      I: DeleteTripRequest,
+      O: DeleteTripResponse,
       kind: MethodKind.Unary,
     },
   }

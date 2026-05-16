@@ -81,9 +81,96 @@ message ListFeedResponse {
   sttattus.common.v1.PageResponse page = 2;
 }
 
+// === Trip entity (N10.2) ===
+//
+// A Trip groups one or more visits into a single journey.
+// audits/nomad.md §10 Phase 1 item 2. A trip can be itinerary-only
+// before visits land; once visits roll in (EXIF, boarding-pass scan,
+// manual milestone) they attach by trip_id and the trip moves from
+// planned -> in_flight -> completed.
+
+enum TripStatus {
+  TRIP_STATUS_UNSPECIFIED = 0;
+  TRIP_STATUS_PLANNED = 1;
+  TRIP_STATUS_IN_FLIGHT = 2;
+  TRIP_STATUS_COMPLETED = 3;
+  TRIP_STATUS_CANCELLED = 4;
+}
+
+message Trip {
+  string id = 1;
+  string user_id = 2;
+  string title = 3;
+  string cover_url = 4;
+  TripStatus status = 5;
+  int64 planned_start = 6;
+  int64 planned_end = 7;
+  int64 actual_start = 8;
+  int64 actual_end = 9;
+  repeated Milestone visits = 10;
+  int64 created_at = 11;
+}
+
+message CreateTripRequest {
+  string title = 1;
+  int64 planned_start = 2;
+  int64 planned_end = 3;
+}
+message CreateTripResponse {
+  Trip trip = 1;
+}
+
+message UpdateTripRequest {
+  string id = 1;
+  string title = 2;
+  string cover_url = 3;
+  TripStatus status = 4;
+  int64 planned_start = 5;
+  int64 planned_end = 6;
+}
+message UpdateTripResponse {
+  Trip trip = 1;
+}
+
+message ListMyTripsRequest {
+  // 0 = all statuses.
+  TripStatus status_filter = 1;
+}
+message ListMyTripsResponse {
+  repeated Trip trips = 1;
+}
+
+message GetTripRequest {
+  string id = 1;
+}
+message GetTripResponse {
+  Trip trip = 1;
+}
+
+message AttachVisitToTripRequest {
+  string trip_id = 1;
+  string milestone_id = 2;
+}
+message AttachVisitToTripResponse {
+  Trip trip = 1;
+}
+
+message DeleteTripRequest {
+  string id = 1;
+}
+message DeleteTripResponse {}
+
 service TravelService {
   rpc ListMilestones(ListMilestonesRequest) returns (ListMilestonesResponse);
   rpc CreateMilestone(CreateMilestoneRequest) returns (CreateMilestoneResponse);
   rpc GetNomadStats(GetNomadStatsRequest) returns (GetNomadStatsResponse);
   rpc ListFeed(ListFeedRequest) returns (ListFeedResponse);
+
+  // N10.2 — Trip entity lifecycle.
+  rpc CreateTrip(CreateTripRequest) returns (CreateTripResponse);
+  rpc UpdateTrip(UpdateTripRequest) returns (UpdateTripResponse);
+  rpc ListMyTrips(ListMyTripsRequest) returns (ListMyTripsResponse);
+  rpc GetTrip(GetTripRequest) returns (GetTripResponse);
+  rpc AttachVisitToTrip(AttachVisitToTripRequest) returns (AttachVisitToTripResponse);
+  rpc DeleteTrip(DeleteTripRequest) returns (DeleteTripResponse);
 }

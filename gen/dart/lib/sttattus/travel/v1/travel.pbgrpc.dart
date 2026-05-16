@@ -48,6 +48,31 @@ class TravelServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listFeed, request, options: options);
   }
 
+  /// N10.2 — Trip entity lifecycle.
+  $grpc.ResponseFuture<$0.CreateTripResponse> createTrip($0.CreateTripRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createTrip, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateTripResponse> updateTrip($0.UpdateTripRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$updateTrip, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyTripsResponse> listMyTrips($0.ListMyTripsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyTrips, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetTripResponse> getTrip($0.GetTripRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getTrip, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AttachVisitToTripResponse> attachVisitToTrip($0.AttachVisitToTripRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$attachVisitToTrip, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteTripResponse> deleteTrip($0.DeleteTripRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteTrip, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listMilestones = $grpc.ClientMethod<$0.ListMilestonesRequest, $0.ListMilestonesResponse>(
@@ -66,6 +91,30 @@ class TravelServiceClient extends $grpc.Client {
       '/sttattus.travel.v1.TravelService/ListFeed',
       ($0.ListFeedRequest value) => value.writeToBuffer(),
       $0.ListFeedResponse.fromBuffer);
+  static final _$createTrip = $grpc.ClientMethod<$0.CreateTripRequest, $0.CreateTripResponse>(
+      '/sttattus.travel.v1.TravelService/CreateTrip',
+      ($0.CreateTripRequest value) => value.writeToBuffer(),
+      $0.CreateTripResponse.fromBuffer);
+  static final _$updateTrip = $grpc.ClientMethod<$0.UpdateTripRequest, $0.UpdateTripResponse>(
+      '/sttattus.travel.v1.TravelService/UpdateTrip',
+      ($0.UpdateTripRequest value) => value.writeToBuffer(),
+      $0.UpdateTripResponse.fromBuffer);
+  static final _$listMyTrips = $grpc.ClientMethod<$0.ListMyTripsRequest, $0.ListMyTripsResponse>(
+      '/sttattus.travel.v1.TravelService/ListMyTrips',
+      ($0.ListMyTripsRequest value) => value.writeToBuffer(),
+      $0.ListMyTripsResponse.fromBuffer);
+  static final _$getTrip = $grpc.ClientMethod<$0.GetTripRequest, $0.GetTripResponse>(
+      '/sttattus.travel.v1.TravelService/GetTrip',
+      ($0.GetTripRequest value) => value.writeToBuffer(),
+      $0.GetTripResponse.fromBuffer);
+  static final _$attachVisitToTrip = $grpc.ClientMethod<$0.AttachVisitToTripRequest, $0.AttachVisitToTripResponse>(
+      '/sttattus.travel.v1.TravelService/AttachVisitToTrip',
+      ($0.AttachVisitToTripRequest value) => value.writeToBuffer(),
+      $0.AttachVisitToTripResponse.fromBuffer);
+  static final _$deleteTrip = $grpc.ClientMethod<$0.DeleteTripRequest, $0.DeleteTripResponse>(
+      '/sttattus.travel.v1.TravelService/DeleteTrip',
+      ($0.DeleteTripRequest value) => value.writeToBuffer(),
+      $0.DeleteTripResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.travel.v1.TravelService')
@@ -101,6 +150,48 @@ abstract class TravelServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListFeedRequest.fromBuffer(value),
         ($0.ListFeedResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateTripRequest, $0.CreateTripResponse>(
+        'CreateTrip',
+        createTrip_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateTripRequest.fromBuffer(value),
+        ($0.CreateTripResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateTripRequest, $0.UpdateTripResponse>(
+        'UpdateTrip',
+        updateTrip_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpdateTripRequest.fromBuffer(value),
+        ($0.UpdateTripResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyTripsRequest, $0.ListMyTripsResponse>(
+        'ListMyTrips',
+        listMyTrips_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyTripsRequest.fromBuffer(value),
+        ($0.ListMyTripsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTripRequest, $0.GetTripResponse>(
+        'GetTrip',
+        getTrip_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetTripRequest.fromBuffer(value),
+        ($0.GetTripResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AttachVisitToTripRequest, $0.AttachVisitToTripResponse>(
+        'AttachVisitToTrip',
+        attachVisitToTrip_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.AttachVisitToTripRequest.fromBuffer(value),
+        ($0.AttachVisitToTripResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteTripRequest, $0.DeleteTripResponse>(
+        'DeleteTrip',
+        deleteTrip_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteTripRequest.fromBuffer(value),
+        ($0.DeleteTripResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListMilestonesResponse> listMilestones_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMilestonesRequest> $request) async {
@@ -126,5 +217,41 @@ abstract class TravelServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListFeedResponse> listFeed($grpc.ServiceCall call, $0.ListFeedRequest request);
+
+  $async.Future<$0.CreateTripResponse> createTrip_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateTripRequest> $request) async {
+    return createTrip($call, await $request);
+  }
+
+  $async.Future<$0.CreateTripResponse> createTrip($grpc.ServiceCall call, $0.CreateTripRequest request);
+
+  $async.Future<$0.UpdateTripResponse> updateTrip_Pre($grpc.ServiceCall $call, $async.Future<$0.UpdateTripRequest> $request) async {
+    return updateTrip($call, await $request);
+  }
+
+  $async.Future<$0.UpdateTripResponse> updateTrip($grpc.ServiceCall call, $0.UpdateTripRequest request);
+
+  $async.Future<$0.ListMyTripsResponse> listMyTrips_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyTripsRequest> $request) async {
+    return listMyTrips($call, await $request);
+  }
+
+  $async.Future<$0.ListMyTripsResponse> listMyTrips($grpc.ServiceCall call, $0.ListMyTripsRequest request);
+
+  $async.Future<$0.GetTripResponse> getTrip_Pre($grpc.ServiceCall $call, $async.Future<$0.GetTripRequest> $request) async {
+    return getTrip($call, await $request);
+  }
+
+  $async.Future<$0.GetTripResponse> getTrip($grpc.ServiceCall call, $0.GetTripRequest request);
+
+  $async.Future<$0.AttachVisitToTripResponse> attachVisitToTrip_Pre($grpc.ServiceCall $call, $async.Future<$0.AttachVisitToTripRequest> $request) async {
+    return attachVisitToTrip($call, await $request);
+  }
+
+  $async.Future<$0.AttachVisitToTripResponse> attachVisitToTrip($grpc.ServiceCall call, $0.AttachVisitToTripRequest request);
+
+  $async.Future<$0.DeleteTripResponse> deleteTrip_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteTripRequest> $request) async {
+    return deleteTrip($call, await $request);
+  }
+
+  $async.Future<$0.DeleteTripResponse> deleteTrip($grpc.ServiceCall call, $0.DeleteTripRequest request);
 
 }

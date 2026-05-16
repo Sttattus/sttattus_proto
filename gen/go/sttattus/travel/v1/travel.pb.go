@@ -23,6 +23,61 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type TripStatus int32
+
+const (
+	TripStatus_TRIP_STATUS_UNSPECIFIED TripStatus = 0
+	TripStatus_TRIP_STATUS_PLANNED     TripStatus = 1
+	TripStatus_TRIP_STATUS_IN_FLIGHT   TripStatus = 2
+	TripStatus_TRIP_STATUS_COMPLETED   TripStatus = 3
+	TripStatus_TRIP_STATUS_CANCELLED   TripStatus = 4
+)
+
+// Enum value maps for TripStatus.
+var (
+	TripStatus_name = map[int32]string{
+		0: "TRIP_STATUS_UNSPECIFIED",
+		1: "TRIP_STATUS_PLANNED",
+		2: "TRIP_STATUS_IN_FLIGHT",
+		3: "TRIP_STATUS_COMPLETED",
+		4: "TRIP_STATUS_CANCELLED",
+	}
+	TripStatus_value = map[string]int32{
+		"TRIP_STATUS_UNSPECIFIED": 0,
+		"TRIP_STATUS_PLANNED":     1,
+		"TRIP_STATUS_IN_FLIGHT":   2,
+		"TRIP_STATUS_COMPLETED":   3,
+		"TRIP_STATUS_CANCELLED":   4,
+	}
+)
+
+func (x TripStatus) Enum() *TripStatus {
+	p := new(TripStatus)
+	*p = x
+	return p
+}
+
+func (x TripStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (TripStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_sttattus_travel_v1_travel_proto_enumTypes[0].Descriptor()
+}
+
+func (TripStatus) Type() protoreflect.EnumType {
+	return &file_sttattus_travel_v1_travel_proto_enumTypes[0]
+}
+
+func (x TripStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use TripStatus.Descriptor instead.
+func (TripStatus) EnumDescriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{0}
+}
+
 type NomadStats struct {
 	state                 protoimpl.MessageState `protogen:"open.v1"`
 	UserId                string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -765,6 +820,715 @@ func (x *ListFeedResponse) GetPage() *v1.PageResponse {
 	return nil
 }
 
+type Trip struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId        string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Title         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	CoverUrl      string                 `protobuf:"bytes,4,opt,name=cover_url,json=coverUrl,proto3" json:"cover_url,omitempty"`
+	Status        TripStatus             `protobuf:"varint,5,opt,name=status,proto3,enum=sttattus.travel.v1.TripStatus" json:"status,omitempty"`
+	PlannedStart  int64                  `protobuf:"varint,6,opt,name=planned_start,json=plannedStart,proto3" json:"planned_start,omitempty"`
+	PlannedEnd    int64                  `protobuf:"varint,7,opt,name=planned_end,json=plannedEnd,proto3" json:"planned_end,omitempty"`
+	ActualStart   int64                  `protobuf:"varint,8,opt,name=actual_start,json=actualStart,proto3" json:"actual_start,omitempty"`
+	ActualEnd     int64                  `protobuf:"varint,9,opt,name=actual_end,json=actualEnd,proto3" json:"actual_end,omitempty"`
+	Visits        []*Milestone           `protobuf:"bytes,10,rep,name=visits,proto3" json:"visits,omitempty"`
+	CreatedAt     int64                  `protobuf:"varint,11,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Trip) Reset() {
+	*x = Trip{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Trip) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Trip) ProtoMessage() {}
+
+func (x *Trip) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Trip.ProtoReflect.Descriptor instead.
+func (*Trip) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *Trip) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Trip) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *Trip) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *Trip) GetCoverUrl() string {
+	if x != nil {
+		return x.CoverUrl
+	}
+	return ""
+}
+
+func (x *Trip) GetStatus() TripStatus {
+	if x != nil {
+		return x.Status
+	}
+	return TripStatus_TRIP_STATUS_UNSPECIFIED
+}
+
+func (x *Trip) GetPlannedStart() int64 {
+	if x != nil {
+		return x.PlannedStart
+	}
+	return 0
+}
+
+func (x *Trip) GetPlannedEnd() int64 {
+	if x != nil {
+		return x.PlannedEnd
+	}
+	return 0
+}
+
+func (x *Trip) GetActualStart() int64 {
+	if x != nil {
+		return x.ActualStart
+	}
+	return 0
+}
+
+func (x *Trip) GetActualEnd() int64 {
+	if x != nil {
+		return x.ActualEnd
+	}
+	return 0
+}
+
+func (x *Trip) GetVisits() []*Milestone {
+	if x != nil {
+		return x.Visits
+	}
+	return nil
+}
+
+func (x *Trip) GetCreatedAt() int64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+type CreateTripRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	PlannedStart  int64                  `protobuf:"varint,2,opt,name=planned_start,json=plannedStart,proto3" json:"planned_start,omitempty"`
+	PlannedEnd    int64                  `protobuf:"varint,3,opt,name=planned_end,json=plannedEnd,proto3" json:"planned_end,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateTripRequest) Reset() {
+	*x = CreateTripRequest{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateTripRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateTripRequest) ProtoMessage() {}
+
+func (x *CreateTripRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateTripRequest.ProtoReflect.Descriptor instead.
+func (*CreateTripRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *CreateTripRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CreateTripRequest) GetPlannedStart() int64 {
+	if x != nil {
+		return x.PlannedStart
+	}
+	return 0
+}
+
+func (x *CreateTripRequest) GetPlannedEnd() int64 {
+	if x != nil {
+		return x.PlannedEnd
+	}
+	return 0
+}
+
+type CreateTripResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Trip          *Trip                  `protobuf:"bytes,1,opt,name=trip,proto3" json:"trip,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateTripResponse) Reset() {
+	*x = CreateTripResponse{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateTripResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateTripResponse) ProtoMessage() {}
+
+func (x *CreateTripResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateTripResponse.ProtoReflect.Descriptor instead.
+func (*CreateTripResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *CreateTripResponse) GetTrip() *Trip {
+	if x != nil {
+		return x.Trip
+	}
+	return nil
+}
+
+type UpdateTripRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	CoverUrl      string                 `protobuf:"bytes,3,opt,name=cover_url,json=coverUrl,proto3" json:"cover_url,omitempty"`
+	Status        TripStatus             `protobuf:"varint,4,opt,name=status,proto3,enum=sttattus.travel.v1.TripStatus" json:"status,omitempty"`
+	PlannedStart  int64                  `protobuf:"varint,5,opt,name=planned_start,json=plannedStart,proto3" json:"planned_start,omitempty"`
+	PlannedEnd    int64                  `protobuf:"varint,6,opt,name=planned_end,json=plannedEnd,proto3" json:"planned_end,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateTripRequest) Reset() {
+	*x = UpdateTripRequest{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateTripRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateTripRequest) ProtoMessage() {}
+
+func (x *UpdateTripRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateTripRequest.ProtoReflect.Descriptor instead.
+func (*UpdateTripRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *UpdateTripRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UpdateTripRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UpdateTripRequest) GetCoverUrl() string {
+	if x != nil {
+		return x.CoverUrl
+	}
+	return ""
+}
+
+func (x *UpdateTripRequest) GetStatus() TripStatus {
+	if x != nil {
+		return x.Status
+	}
+	return TripStatus_TRIP_STATUS_UNSPECIFIED
+}
+
+func (x *UpdateTripRequest) GetPlannedStart() int64 {
+	if x != nil {
+		return x.PlannedStart
+	}
+	return 0
+}
+
+func (x *UpdateTripRequest) GetPlannedEnd() int64 {
+	if x != nil {
+		return x.PlannedEnd
+	}
+	return 0
+}
+
+type UpdateTripResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Trip          *Trip                  `protobuf:"bytes,1,opt,name=trip,proto3" json:"trip,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateTripResponse) Reset() {
+	*x = UpdateTripResponse{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateTripResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateTripResponse) ProtoMessage() {}
+
+func (x *UpdateTripResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateTripResponse.ProtoReflect.Descriptor instead.
+func (*UpdateTripResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *UpdateTripResponse) GetTrip() *Trip {
+	if x != nil {
+		return x.Trip
+	}
+	return nil
+}
+
+type ListMyTripsRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 0 = all statuses.
+	StatusFilter  TripStatus `protobuf:"varint,1,opt,name=status_filter,json=statusFilter,proto3,enum=sttattus.travel.v1.TripStatus" json:"status_filter,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyTripsRequest) Reset() {
+	*x = ListMyTripsRequest{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyTripsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyTripsRequest) ProtoMessage() {}
+
+func (x *ListMyTripsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyTripsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyTripsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *ListMyTripsRequest) GetStatusFilter() TripStatus {
+	if x != nil {
+		return x.StatusFilter
+	}
+	return TripStatus_TRIP_STATUS_UNSPECIFIED
+}
+
+type ListMyTripsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Trips         []*Trip                `protobuf:"bytes,1,rep,name=trips,proto3" json:"trips,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyTripsResponse) Reset() {
+	*x = ListMyTripsResponse{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyTripsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyTripsResponse) ProtoMessage() {}
+
+func (x *ListMyTripsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyTripsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyTripsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *ListMyTripsResponse) GetTrips() []*Trip {
+	if x != nil {
+		return x.Trips
+	}
+	return nil
+}
+
+type GetTripRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTripRequest) Reset() {
+	*x = GetTripRequest{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTripRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTripRequest) ProtoMessage() {}
+
+func (x *GetTripRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTripRequest.ProtoReflect.Descriptor instead.
+func (*GetTripRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *GetTripRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type GetTripResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Trip          *Trip                  `protobuf:"bytes,1,opt,name=trip,proto3" json:"trip,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTripResponse) Reset() {
+	*x = GetTripResponse{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTripResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTripResponse) ProtoMessage() {}
+
+func (x *GetTripResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTripResponse.ProtoReflect.Descriptor instead.
+func (*GetTripResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *GetTripResponse) GetTrip() *Trip {
+	if x != nil {
+		return x.Trip
+	}
+	return nil
+}
+
+type AttachVisitToTripRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TripId        string                 `protobuf:"bytes,1,opt,name=trip_id,json=tripId,proto3" json:"trip_id,omitempty"`
+	MilestoneId   string                 `protobuf:"bytes,2,opt,name=milestone_id,json=milestoneId,proto3" json:"milestone_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AttachVisitToTripRequest) Reset() {
+	*x = AttachVisitToTripRequest{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AttachVisitToTripRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AttachVisitToTripRequest) ProtoMessage() {}
+
+func (x *AttachVisitToTripRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AttachVisitToTripRequest.ProtoReflect.Descriptor instead.
+func (*AttachVisitToTripRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *AttachVisitToTripRequest) GetTripId() string {
+	if x != nil {
+		return x.TripId
+	}
+	return ""
+}
+
+func (x *AttachVisitToTripRequest) GetMilestoneId() string {
+	if x != nil {
+		return x.MilestoneId
+	}
+	return ""
+}
+
+type AttachVisitToTripResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Trip          *Trip                  `protobuf:"bytes,1,opt,name=trip,proto3" json:"trip,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AttachVisitToTripResponse) Reset() {
+	*x = AttachVisitToTripResponse{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AttachVisitToTripResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AttachVisitToTripResponse) ProtoMessage() {}
+
+func (x *AttachVisitToTripResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AttachVisitToTripResponse.ProtoReflect.Descriptor instead.
+func (*AttachVisitToTripResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *AttachVisitToTripResponse) GetTrip() *Trip {
+	if x != nil {
+		return x.Trip
+	}
+	return nil
+}
+
+type DeleteTripRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteTripRequest) Reset() {
+	*x = DeleteTripRequest{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteTripRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteTripRequest) ProtoMessage() {}
+
+func (x *DeleteTripRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteTripRequest.ProtoReflect.Descriptor instead.
+func (*DeleteTripRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *DeleteTripRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type DeleteTripResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteTripResponse) Reset() {
+	*x = DeleteTripResponse{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteTripResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteTripResponse) ProtoMessage() {}
+
+func (x *DeleteTripResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteTripResponse.ProtoReflect.Descriptor instead.
+func (*DeleteTripResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{23}
+}
+
 var File_sttattus_travel_v1_travel_proto protoreflect.FileDescriptor
 
 const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
@@ -836,12 +1600,77 @@ const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	"\n" +
 	"milestones\x18\x01 \x03(\v2\x1d.sttattus.travel.v1.MilestoneR\n" +
 	"milestones\x124\n" +
-	"\x04page\x18\x02 \x01(\v2 .sttattus.common.v1.PageResponseR\x04page2\xa1\x03\n" +
+	"\x04page\x18\x02 \x01(\v2 .sttattus.common.v1.PageResponseR\x04page\"\xf8\x02\n" +
+	"\x04Trip\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x1b\n" +
+	"\tcover_url\x18\x04 \x01(\tR\bcoverUrl\x126\n" +
+	"\x06status\x18\x05 \x01(\x0e2\x1e.sttattus.travel.v1.TripStatusR\x06status\x12#\n" +
+	"\rplanned_start\x18\x06 \x01(\x03R\fplannedStart\x12\x1f\n" +
+	"\vplanned_end\x18\a \x01(\x03R\n" +
+	"plannedEnd\x12!\n" +
+	"\factual_start\x18\b \x01(\x03R\vactualStart\x12\x1d\n" +
+	"\n" +
+	"actual_end\x18\t \x01(\x03R\tactualEnd\x125\n" +
+	"\x06visits\x18\n" +
+	" \x03(\v2\x1d.sttattus.travel.v1.MilestoneR\x06visits\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\v \x01(\x03R\tcreatedAt\"o\n" +
+	"\x11CreateTripRequest\x12\x14\n" +
+	"\x05title\x18\x01 \x01(\tR\x05title\x12#\n" +
+	"\rplanned_start\x18\x02 \x01(\x03R\fplannedStart\x12\x1f\n" +
+	"\vplanned_end\x18\x03 \x01(\x03R\n" +
+	"plannedEnd\"B\n" +
+	"\x12CreateTripResponse\x12,\n" +
+	"\x04trip\x18\x01 \x01(\v2\x18.sttattus.travel.v1.TripR\x04trip\"\xd4\x01\n" +
+	"\x11UpdateTripRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x1b\n" +
+	"\tcover_url\x18\x03 \x01(\tR\bcoverUrl\x126\n" +
+	"\x06status\x18\x04 \x01(\x0e2\x1e.sttattus.travel.v1.TripStatusR\x06status\x12#\n" +
+	"\rplanned_start\x18\x05 \x01(\x03R\fplannedStart\x12\x1f\n" +
+	"\vplanned_end\x18\x06 \x01(\x03R\n" +
+	"plannedEnd\"B\n" +
+	"\x12UpdateTripResponse\x12,\n" +
+	"\x04trip\x18\x01 \x01(\v2\x18.sttattus.travel.v1.TripR\x04trip\"Y\n" +
+	"\x12ListMyTripsRequest\x12C\n" +
+	"\rstatus_filter\x18\x01 \x01(\x0e2\x1e.sttattus.travel.v1.TripStatusR\fstatusFilter\"E\n" +
+	"\x13ListMyTripsResponse\x12.\n" +
+	"\x05trips\x18\x01 \x03(\v2\x18.sttattus.travel.v1.TripR\x05trips\" \n" +
+	"\x0eGetTripRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"?\n" +
+	"\x0fGetTripResponse\x12,\n" +
+	"\x04trip\x18\x01 \x01(\v2\x18.sttattus.travel.v1.TripR\x04trip\"V\n" +
+	"\x18AttachVisitToTripRequest\x12\x17\n" +
+	"\atrip_id\x18\x01 \x01(\tR\x06tripId\x12!\n" +
+	"\fmilestone_id\x18\x02 \x01(\tR\vmilestoneId\"I\n" +
+	"\x19AttachVisitToTripResponse\x12,\n" +
+	"\x04trip\x18\x01 \x01(\v2\x18.sttattus.travel.v1.TripR\x04trip\"#\n" +
+	"\x11DeleteTripRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"\x14\n" +
+	"\x12DeleteTripResponse*\x93\x01\n" +
+	"\n" +
+	"TripStatus\x12\x1b\n" +
+	"\x17TRIP_STATUS_UNSPECIFIED\x10\x00\x12\x17\n" +
+	"\x13TRIP_STATUS_PLANNED\x10\x01\x12\x19\n" +
+	"\x15TRIP_STATUS_IN_FLIGHT\x10\x02\x12\x19\n" +
+	"\x15TRIP_STATUS_COMPLETED\x10\x03\x12\x19\n" +
+	"\x15TRIP_STATUS_CANCELLED\x10\x042\xde\a\n" +
 	"\rTravelService\x12g\n" +
 	"\x0eListMilestones\x12).sttattus.travel.v1.ListMilestonesRequest\x1a*.sttattus.travel.v1.ListMilestonesResponse\x12j\n" +
 	"\x0fCreateMilestone\x12*.sttattus.travel.v1.CreateMilestoneRequest\x1a+.sttattus.travel.v1.CreateMilestoneResponse\x12d\n" +
 	"\rGetNomadStats\x12(.sttattus.travel.v1.GetNomadStatsRequest\x1a).sttattus.travel.v1.GetNomadStatsResponse\x12U\n" +
-	"\bListFeed\x12#.sttattus.travel.v1.ListFeedRequest\x1a$.sttattus.travel.v1.ListFeedResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/travel/v1;travelv1b\x06proto3"
+	"\bListFeed\x12#.sttattus.travel.v1.ListFeedRequest\x1a$.sttattus.travel.v1.ListFeedResponse\x12[\n" +
+	"\n" +
+	"CreateTrip\x12%.sttattus.travel.v1.CreateTripRequest\x1a&.sttattus.travel.v1.CreateTripResponse\x12[\n" +
+	"\n" +
+	"UpdateTrip\x12%.sttattus.travel.v1.UpdateTripRequest\x1a&.sttattus.travel.v1.UpdateTripResponse\x12^\n" +
+	"\vListMyTrips\x12&.sttattus.travel.v1.ListMyTripsRequest\x1a'.sttattus.travel.v1.ListMyTripsResponse\x12R\n" +
+	"\aGetTrip\x12\".sttattus.travel.v1.GetTripRequest\x1a#.sttattus.travel.v1.GetTripResponse\x12p\n" +
+	"\x11AttachVisitToTrip\x12,.sttattus.travel.v1.AttachVisitToTripRequest\x1a-.sttattus.travel.v1.AttachVisitToTripResponse\x12[\n" +
+	"\n" +
+	"DeleteTrip\x12%.sttattus.travel.v1.DeleteTripRequest\x1a&.sttattus.travel.v1.DeleteTripResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/travel/v1;travelv1b\x06proto3"
 
 var (
 	file_sttattus_travel_v1_travel_proto_rawDescOnce sync.Once
@@ -855,49 +1684,85 @@ func file_sttattus_travel_v1_travel_proto_rawDescGZIP() []byte {
 	return file_sttattus_travel_v1_travel_proto_rawDescData
 }
 
-var file_sttattus_travel_v1_travel_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_sttattus_travel_v1_travel_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_sttattus_travel_v1_travel_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
 var file_sttattus_travel_v1_travel_proto_goTypes = []any{
-	(*NomadStats)(nil),              // 0: sttattus.travel.v1.NomadStats
-	(*Milestone)(nil),               // 1: sttattus.travel.v1.Milestone
-	(*CheckIn)(nil),                 // 2: sttattus.travel.v1.CheckIn
-	(*ListMilestonesRequest)(nil),   // 3: sttattus.travel.v1.ListMilestonesRequest
-	(*ListMilestonesResponse)(nil),  // 4: sttattus.travel.v1.ListMilestonesResponse
-	(*CreateMilestoneRequest)(nil),  // 5: sttattus.travel.v1.CreateMilestoneRequest
-	(*CreateMilestoneResponse)(nil), // 6: sttattus.travel.v1.CreateMilestoneResponse
-	(*GetNomadStatsRequest)(nil),    // 7: sttattus.travel.v1.GetNomadStatsRequest
-	(*GetNomadStatsResponse)(nil),   // 8: sttattus.travel.v1.GetNomadStatsResponse
-	(*ListFeedRequest)(nil),         // 9: sttattus.travel.v1.ListFeedRequest
-	(*ListFeedResponse)(nil),        // 10: sttattus.travel.v1.ListFeedResponse
-	(*timestamppb.Timestamp)(nil),   // 11: google.protobuf.Timestamp
-	(*v1.PageRequest)(nil),          // 12: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),         // 13: sttattus.common.v1.PageResponse
+	(TripStatus)(0),                   // 0: sttattus.travel.v1.TripStatus
+	(*NomadStats)(nil),                // 1: sttattus.travel.v1.NomadStats
+	(*Milestone)(nil),                 // 2: sttattus.travel.v1.Milestone
+	(*CheckIn)(nil),                   // 3: sttattus.travel.v1.CheckIn
+	(*ListMilestonesRequest)(nil),     // 4: sttattus.travel.v1.ListMilestonesRequest
+	(*ListMilestonesResponse)(nil),    // 5: sttattus.travel.v1.ListMilestonesResponse
+	(*CreateMilestoneRequest)(nil),    // 6: sttattus.travel.v1.CreateMilestoneRequest
+	(*CreateMilestoneResponse)(nil),   // 7: sttattus.travel.v1.CreateMilestoneResponse
+	(*GetNomadStatsRequest)(nil),      // 8: sttattus.travel.v1.GetNomadStatsRequest
+	(*GetNomadStatsResponse)(nil),     // 9: sttattus.travel.v1.GetNomadStatsResponse
+	(*ListFeedRequest)(nil),           // 10: sttattus.travel.v1.ListFeedRequest
+	(*ListFeedResponse)(nil),          // 11: sttattus.travel.v1.ListFeedResponse
+	(*Trip)(nil),                      // 12: sttattus.travel.v1.Trip
+	(*CreateTripRequest)(nil),         // 13: sttattus.travel.v1.CreateTripRequest
+	(*CreateTripResponse)(nil),        // 14: sttattus.travel.v1.CreateTripResponse
+	(*UpdateTripRequest)(nil),         // 15: sttattus.travel.v1.UpdateTripRequest
+	(*UpdateTripResponse)(nil),        // 16: sttattus.travel.v1.UpdateTripResponse
+	(*ListMyTripsRequest)(nil),        // 17: sttattus.travel.v1.ListMyTripsRequest
+	(*ListMyTripsResponse)(nil),       // 18: sttattus.travel.v1.ListMyTripsResponse
+	(*GetTripRequest)(nil),            // 19: sttattus.travel.v1.GetTripRequest
+	(*GetTripResponse)(nil),           // 20: sttattus.travel.v1.GetTripResponse
+	(*AttachVisitToTripRequest)(nil),  // 21: sttattus.travel.v1.AttachVisitToTripRequest
+	(*AttachVisitToTripResponse)(nil), // 22: sttattus.travel.v1.AttachVisitToTripResponse
+	(*DeleteTripRequest)(nil),         // 23: sttattus.travel.v1.DeleteTripRequest
+	(*DeleteTripResponse)(nil),        // 24: sttattus.travel.v1.DeleteTripResponse
+	(*timestamppb.Timestamp)(nil),     // 25: google.protobuf.Timestamp
+	(*v1.PageRequest)(nil),            // 26: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),           // 27: sttattus.common.v1.PageResponse
 }
 var file_sttattus_travel_v1_travel_proto_depIdxs = []int32{
-	2,  // 0: sttattus.travel.v1.Milestone.checkin:type_name -> sttattus.travel.v1.CheckIn
-	11, // 1: sttattus.travel.v1.CheckIn.verified_at:type_name -> google.protobuf.Timestamp
-	12, // 2: sttattus.travel.v1.ListMilestonesRequest.page:type_name -> sttattus.common.v1.PageRequest
-	1,  // 3: sttattus.travel.v1.ListMilestonesResponse.milestones:type_name -> sttattus.travel.v1.Milestone
-	13, // 4: sttattus.travel.v1.ListMilestonesResponse.page:type_name -> sttattus.common.v1.PageResponse
-	2,  // 5: sttattus.travel.v1.CreateMilestoneRequest.checkin:type_name -> sttattus.travel.v1.CheckIn
-	1,  // 6: sttattus.travel.v1.CreateMilestoneResponse.milestone:type_name -> sttattus.travel.v1.Milestone
-	0,  // 7: sttattus.travel.v1.CreateMilestoneResponse.stats:type_name -> sttattus.travel.v1.NomadStats
-	0,  // 8: sttattus.travel.v1.GetNomadStatsResponse.stats:type_name -> sttattus.travel.v1.NomadStats
-	12, // 9: sttattus.travel.v1.ListFeedRequest.page:type_name -> sttattus.common.v1.PageRequest
-	1,  // 10: sttattus.travel.v1.ListFeedResponse.milestones:type_name -> sttattus.travel.v1.Milestone
-	13, // 11: sttattus.travel.v1.ListFeedResponse.page:type_name -> sttattus.common.v1.PageResponse
-	3,  // 12: sttattus.travel.v1.TravelService.ListMilestones:input_type -> sttattus.travel.v1.ListMilestonesRequest
-	5,  // 13: sttattus.travel.v1.TravelService.CreateMilestone:input_type -> sttattus.travel.v1.CreateMilestoneRequest
-	7,  // 14: sttattus.travel.v1.TravelService.GetNomadStats:input_type -> sttattus.travel.v1.GetNomadStatsRequest
-	9,  // 15: sttattus.travel.v1.TravelService.ListFeed:input_type -> sttattus.travel.v1.ListFeedRequest
-	4,  // 16: sttattus.travel.v1.TravelService.ListMilestones:output_type -> sttattus.travel.v1.ListMilestonesResponse
-	6,  // 17: sttattus.travel.v1.TravelService.CreateMilestone:output_type -> sttattus.travel.v1.CreateMilestoneResponse
-	8,  // 18: sttattus.travel.v1.TravelService.GetNomadStats:output_type -> sttattus.travel.v1.GetNomadStatsResponse
-	10, // 19: sttattus.travel.v1.TravelService.ListFeed:output_type -> sttattus.travel.v1.ListFeedResponse
-	16, // [16:20] is the sub-list for method output_type
-	12, // [12:16] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	12, // [12:12] is the sub-list for extension extendee
-	0,  // [0:12] is the sub-list for field type_name
+	3,  // 0: sttattus.travel.v1.Milestone.checkin:type_name -> sttattus.travel.v1.CheckIn
+	25, // 1: sttattus.travel.v1.CheckIn.verified_at:type_name -> google.protobuf.Timestamp
+	26, // 2: sttattus.travel.v1.ListMilestonesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	2,  // 3: sttattus.travel.v1.ListMilestonesResponse.milestones:type_name -> sttattus.travel.v1.Milestone
+	27, // 4: sttattus.travel.v1.ListMilestonesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	3,  // 5: sttattus.travel.v1.CreateMilestoneRequest.checkin:type_name -> sttattus.travel.v1.CheckIn
+	2,  // 6: sttattus.travel.v1.CreateMilestoneResponse.milestone:type_name -> sttattus.travel.v1.Milestone
+	1,  // 7: sttattus.travel.v1.CreateMilestoneResponse.stats:type_name -> sttattus.travel.v1.NomadStats
+	1,  // 8: sttattus.travel.v1.GetNomadStatsResponse.stats:type_name -> sttattus.travel.v1.NomadStats
+	26, // 9: sttattus.travel.v1.ListFeedRequest.page:type_name -> sttattus.common.v1.PageRequest
+	2,  // 10: sttattus.travel.v1.ListFeedResponse.milestones:type_name -> sttattus.travel.v1.Milestone
+	27, // 11: sttattus.travel.v1.ListFeedResponse.page:type_name -> sttattus.common.v1.PageResponse
+	0,  // 12: sttattus.travel.v1.Trip.status:type_name -> sttattus.travel.v1.TripStatus
+	2,  // 13: sttattus.travel.v1.Trip.visits:type_name -> sttattus.travel.v1.Milestone
+	12, // 14: sttattus.travel.v1.CreateTripResponse.trip:type_name -> sttattus.travel.v1.Trip
+	0,  // 15: sttattus.travel.v1.UpdateTripRequest.status:type_name -> sttattus.travel.v1.TripStatus
+	12, // 16: sttattus.travel.v1.UpdateTripResponse.trip:type_name -> sttattus.travel.v1.Trip
+	0,  // 17: sttattus.travel.v1.ListMyTripsRequest.status_filter:type_name -> sttattus.travel.v1.TripStatus
+	12, // 18: sttattus.travel.v1.ListMyTripsResponse.trips:type_name -> sttattus.travel.v1.Trip
+	12, // 19: sttattus.travel.v1.GetTripResponse.trip:type_name -> sttattus.travel.v1.Trip
+	12, // 20: sttattus.travel.v1.AttachVisitToTripResponse.trip:type_name -> sttattus.travel.v1.Trip
+	4,  // 21: sttattus.travel.v1.TravelService.ListMilestones:input_type -> sttattus.travel.v1.ListMilestonesRequest
+	6,  // 22: sttattus.travel.v1.TravelService.CreateMilestone:input_type -> sttattus.travel.v1.CreateMilestoneRequest
+	8,  // 23: sttattus.travel.v1.TravelService.GetNomadStats:input_type -> sttattus.travel.v1.GetNomadStatsRequest
+	10, // 24: sttattus.travel.v1.TravelService.ListFeed:input_type -> sttattus.travel.v1.ListFeedRequest
+	13, // 25: sttattus.travel.v1.TravelService.CreateTrip:input_type -> sttattus.travel.v1.CreateTripRequest
+	15, // 26: sttattus.travel.v1.TravelService.UpdateTrip:input_type -> sttattus.travel.v1.UpdateTripRequest
+	17, // 27: sttattus.travel.v1.TravelService.ListMyTrips:input_type -> sttattus.travel.v1.ListMyTripsRequest
+	19, // 28: sttattus.travel.v1.TravelService.GetTrip:input_type -> sttattus.travel.v1.GetTripRequest
+	21, // 29: sttattus.travel.v1.TravelService.AttachVisitToTrip:input_type -> sttattus.travel.v1.AttachVisitToTripRequest
+	23, // 30: sttattus.travel.v1.TravelService.DeleteTrip:input_type -> sttattus.travel.v1.DeleteTripRequest
+	5,  // 31: sttattus.travel.v1.TravelService.ListMilestones:output_type -> sttattus.travel.v1.ListMilestonesResponse
+	7,  // 32: sttattus.travel.v1.TravelService.CreateMilestone:output_type -> sttattus.travel.v1.CreateMilestoneResponse
+	9,  // 33: sttattus.travel.v1.TravelService.GetNomadStats:output_type -> sttattus.travel.v1.GetNomadStatsResponse
+	11, // 34: sttattus.travel.v1.TravelService.ListFeed:output_type -> sttattus.travel.v1.ListFeedResponse
+	14, // 35: sttattus.travel.v1.TravelService.CreateTrip:output_type -> sttattus.travel.v1.CreateTripResponse
+	16, // 36: sttattus.travel.v1.TravelService.UpdateTrip:output_type -> sttattus.travel.v1.UpdateTripResponse
+	18, // 37: sttattus.travel.v1.TravelService.ListMyTrips:output_type -> sttattus.travel.v1.ListMyTripsResponse
+	20, // 38: sttattus.travel.v1.TravelService.GetTrip:output_type -> sttattus.travel.v1.GetTripResponse
+	22, // 39: sttattus.travel.v1.TravelService.AttachVisitToTrip:output_type -> sttattus.travel.v1.AttachVisitToTripResponse
+	24, // 40: sttattus.travel.v1.TravelService.DeleteTrip:output_type -> sttattus.travel.v1.DeleteTripResponse
+	31, // [31:41] is the sub-list for method output_type
+	21, // [21:31] is the sub-list for method input_type
+	21, // [21:21] is the sub-list for extension type_name
+	21, // [21:21] is the sub-list for extension extendee
+	0,  // [0:21] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_travel_v1_travel_proto_init() }
@@ -910,13 +1775,14 @@ func file_sttattus_travel_v1_travel_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_travel_v1_travel_proto_rawDesc), len(file_sttattus_travel_v1_travel_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   11,
+			NumEnums:      1,
+			NumMessages:   24,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
 		GoTypes:           file_sttattus_travel_v1_travel_proto_goTypes,
 		DependencyIndexes: file_sttattus_travel_v1_travel_proto_depIdxs,
+		EnumInfos:         file_sttattus_travel_v1_travel_proto_enumTypes,
 		MessageInfos:      file_sttattus_travel_v1_travel_proto_msgTypes,
 	}.Build()
 	File_sttattus_travel_v1_travel_proto = out.File
