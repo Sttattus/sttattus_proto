@@ -94,6 +94,60 @@ message GetLinguistStatsResponse {
   LinguistStats stats = 1;
 }
 
+// === L12.4 — speaking drill + Whisper pronunciation ===
+
+message SpeakingPrompt {
+  string id = 1;
+  string language = 2;
+  string cefr_target = 3;
+  string phrase = 4;
+  string translation = 5;
+}
+
+message PhonemeScore {
+  string token = 1;
+  int32 score = 2; // 0..100
+}
+
+// SpeakingAttempt is the per-user row hydrated for the drill UI.
+// status: 'pending' = scorer not yet run, 'transcribed' = Whisper
+// + overlap complete, 'unavailable' = provider missing — client
+// renders "transcription unavailable, audio preserved".
+message SpeakingAttempt {
+  string id = 1;
+  string prompt_id = 2;
+  string audio_url = 3;
+  string status = 4;
+  string transcribed = 5;
+  int32 score = 6;
+  repeated PhonemeScore phonemes = 7;
+  int64 created_unix = 8;
+  int64 updated_unix = 9;
+}
+
+message ListSpeakingPromptsRequest {
+  string language = 1;
+  string cefr_level = 2;
+}
+message ListSpeakingPromptsResponse {
+  repeated SpeakingPrompt prompts = 1;
+}
+
+message CreateSpeakingAttemptRequest {
+  string prompt_id = 1;
+  string audio_url = 2; // R2 key returned from the presign-PUT upload
+}
+message CreateSpeakingAttemptResponse {
+  SpeakingAttempt attempt = 1;
+}
+
+message GetSpeakingAttemptRequest {
+  string attempt_id = 1;
+}
+message GetSpeakingAttemptResponse {
+  SpeakingAttempt attempt = 1;
+}
+
 // === L12.3 — immersion player ===
 
 // ImmersionClip = one piece of native-context audio with transcript.
@@ -231,6 +285,11 @@ service LanguagesService {
   // L12.3 — immersion player.
   rpc ListTodayImmersion(ListTodayImmersionRequest) returns (ListTodayImmersionResponse);
   rpc MarkImmersionCompleted(MarkImmersionCompletedRequest) returns (MarkImmersionCompletedResponse);
+
+  // L12.4 — speaking drill + Whisper.
+  rpc ListSpeakingPrompts(ListSpeakingPromptsRequest) returns (ListSpeakingPromptsResponse);
+  rpc CreateSpeakingAttempt(CreateSpeakingAttemptRequest) returns (CreateSpeakingAttemptResponse);
+  rpc GetSpeakingAttempt(GetSpeakingAttemptRequest) returns (GetSpeakingAttemptResponse);
 
   // Legacy (Deprecated but kept for bridge)
   rpc ListWords(ListWordsRequest) returns (ListWordsResponse);

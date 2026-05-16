@@ -929,6 +929,596 @@ class GetLinguistStatsResponse extends $pb.GeneratedMessage {
   LinguistStats ensureStats() => $_ensure(0);
 }
 
+class SpeakingPrompt extends $pb.GeneratedMessage {
+  factory SpeakingPrompt({
+    $core.String? id,
+    $core.String? language,
+    $core.String? cefrTarget,
+    $core.String? phrase,
+    $core.String? translation,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (language != null) result.language = language;
+    if (cefrTarget != null) result.cefrTarget = cefrTarget;
+    if (phrase != null) result.phrase = phrase;
+    if (translation != null) result.translation = translation;
+    return result;
+  }
+
+  SpeakingPrompt._();
+
+  factory SpeakingPrompt.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SpeakingPrompt.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SpeakingPrompt', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'language')
+    ..aOS(3, _omitFieldNames ? '' : 'cefrTarget')
+    ..aOS(4, _omitFieldNames ? '' : 'phrase')
+    ..aOS(5, _omitFieldNames ? '' : 'translation')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpeakingPrompt clone() => SpeakingPrompt()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpeakingPrompt copyWith(void Function(SpeakingPrompt) updates) => super.copyWith((message) => updates(message as SpeakingPrompt)) as SpeakingPrompt;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpeakingPrompt create() => SpeakingPrompt._();
+  @$core.override
+  SpeakingPrompt createEmptyInstance() => create();
+  static $pb.PbList<SpeakingPrompt> createRepeated() => $pb.PbList<SpeakingPrompt>();
+  @$core.pragma('dart2js:noInline')
+  static SpeakingPrompt getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SpeakingPrompt>(create);
+  static SpeakingPrompt? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get language => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set language($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLanguage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguage() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get cefrTarget => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set cefrTarget($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCefrTarget() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCefrTarget() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get phrase => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set phrase($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPhrase() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPhrase() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get translation => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set translation($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTranslation() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTranslation() => $_clearField(5);
+}
+
+class PhonemeScore extends $pb.GeneratedMessage {
+  factory PhonemeScore({
+    $core.String? token,
+    $core.int? score,
+  }) {
+    final result = create();
+    if (token != null) result.token = token;
+    if (score != null) result.score = score;
+    return result;
+  }
+
+  PhonemeScore._();
+
+  factory PhonemeScore.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PhonemeScore.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PhonemeScore', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'token')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'score', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PhonemeScore clone() => PhonemeScore()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PhonemeScore copyWith(void Function(PhonemeScore) updates) => super.copyWith((message) => updates(message as PhonemeScore)) as PhonemeScore;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PhonemeScore create() => PhonemeScore._();
+  @$core.override
+  PhonemeScore createEmptyInstance() => create();
+  static $pb.PbList<PhonemeScore> createRepeated() => $pb.PbList<PhonemeScore>();
+  @$core.pragma('dart2js:noInline')
+  static PhonemeScore getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PhonemeScore>(create);
+  static PhonemeScore? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get token => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set token($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearToken() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get score => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set score($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasScore() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearScore() => $_clearField(2);
+}
+
+/// SpeakingAttempt is the per-user row hydrated for the drill UI.
+/// status: 'pending' = scorer not yet run, 'transcribed' = Whisper
+/// + overlap complete, 'unavailable' = provider missing — client
+/// renders "transcription unavailable, audio preserved".
+class SpeakingAttempt extends $pb.GeneratedMessage {
+  factory SpeakingAttempt({
+    $core.String? id,
+    $core.String? promptId,
+    $core.String? audioUrl,
+    $core.String? status,
+    $core.String? transcribed,
+    $core.int? score,
+    $core.Iterable<PhonemeScore>? phonemes,
+    $fixnum.Int64? createdUnix,
+    $fixnum.Int64? updatedUnix,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (promptId != null) result.promptId = promptId;
+    if (audioUrl != null) result.audioUrl = audioUrl;
+    if (status != null) result.status = status;
+    if (transcribed != null) result.transcribed = transcribed;
+    if (score != null) result.score = score;
+    if (phonemes != null) result.phonemes.addAll(phonemes);
+    if (createdUnix != null) result.createdUnix = createdUnix;
+    if (updatedUnix != null) result.updatedUnix = updatedUnix;
+    return result;
+  }
+
+  SpeakingAttempt._();
+
+  factory SpeakingAttempt.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SpeakingAttempt.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SpeakingAttempt', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'promptId')
+    ..aOS(3, _omitFieldNames ? '' : 'audioUrl')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'transcribed')
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'score', $pb.PbFieldType.O3)
+    ..pc<PhonemeScore>(7, _omitFieldNames ? '' : 'phonemes', $pb.PbFieldType.PM, subBuilder: PhonemeScore.create)
+    ..aInt64(8, _omitFieldNames ? '' : 'createdUnix')
+    ..aInt64(9, _omitFieldNames ? '' : 'updatedUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpeakingAttempt clone() => SpeakingAttempt()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpeakingAttempt copyWith(void Function(SpeakingAttempt) updates) => super.copyWith((message) => updates(message as SpeakingAttempt)) as SpeakingAttempt;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpeakingAttempt create() => SpeakingAttempt._();
+  @$core.override
+  SpeakingAttempt createEmptyInstance() => create();
+  static $pb.PbList<SpeakingAttempt> createRepeated() => $pb.PbList<SpeakingAttempt>();
+  @$core.pragma('dart2js:noInline')
+  static SpeakingAttempt getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SpeakingAttempt>(create);
+  static SpeakingAttempt? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get promptId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set promptId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPromptId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPromptId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get audioUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set audioUrl($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAudioUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAudioUrl() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get transcribed => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set transcribed($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTranscribed() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTranscribed() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get score => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set score($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasScore() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearScore() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<PhonemeScore> get phonemes => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get createdUnix => $_getI64(7);
+  @$pb.TagNumber(8)
+  set createdUnix($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCreatedUnix() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatedUnix() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get updatedUnix => $_getI64(8);
+  @$pb.TagNumber(9)
+  set updatedUnix($fixnum.Int64 value) => $_setInt64(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedUnix() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedUnix() => $_clearField(9);
+}
+
+class ListSpeakingPromptsRequest extends $pb.GeneratedMessage {
+  factory ListSpeakingPromptsRequest({
+    $core.String? language,
+    $core.String? cefrLevel,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (cefrLevel != null) result.cefrLevel = cefrLevel;
+    return result;
+  }
+
+  ListSpeakingPromptsRequest._();
+
+  factory ListSpeakingPromptsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListSpeakingPromptsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSpeakingPromptsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOS(2, _omitFieldNames ? '' : 'cefrLevel')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSpeakingPromptsRequest clone() => ListSpeakingPromptsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSpeakingPromptsRequest copyWith(void Function(ListSpeakingPromptsRequest) updates) => super.copyWith((message) => updates(message as ListSpeakingPromptsRequest)) as ListSpeakingPromptsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSpeakingPromptsRequest create() => ListSpeakingPromptsRequest._();
+  @$core.override
+  ListSpeakingPromptsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListSpeakingPromptsRequest> createRepeated() => $pb.PbList<ListSpeakingPromptsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListSpeakingPromptsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSpeakingPromptsRequest>(create);
+  static ListSpeakingPromptsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get cefrLevel => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set cefrLevel($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCefrLevel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCefrLevel() => $_clearField(2);
+}
+
+class ListSpeakingPromptsResponse extends $pb.GeneratedMessage {
+  factory ListSpeakingPromptsResponse({
+    $core.Iterable<SpeakingPrompt>? prompts,
+  }) {
+    final result = create();
+    if (prompts != null) result.prompts.addAll(prompts);
+    return result;
+  }
+
+  ListSpeakingPromptsResponse._();
+
+  factory ListSpeakingPromptsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListSpeakingPromptsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSpeakingPromptsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<SpeakingPrompt>(1, _omitFieldNames ? '' : 'prompts', $pb.PbFieldType.PM, subBuilder: SpeakingPrompt.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSpeakingPromptsResponse clone() => ListSpeakingPromptsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSpeakingPromptsResponse copyWith(void Function(ListSpeakingPromptsResponse) updates) => super.copyWith((message) => updates(message as ListSpeakingPromptsResponse)) as ListSpeakingPromptsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSpeakingPromptsResponse create() => ListSpeakingPromptsResponse._();
+  @$core.override
+  ListSpeakingPromptsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListSpeakingPromptsResponse> createRepeated() => $pb.PbList<ListSpeakingPromptsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListSpeakingPromptsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSpeakingPromptsResponse>(create);
+  static ListSpeakingPromptsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<SpeakingPrompt> get prompts => $_getList(0);
+}
+
+class CreateSpeakingAttemptRequest extends $pb.GeneratedMessage {
+  factory CreateSpeakingAttemptRequest({
+    $core.String? promptId,
+    $core.String? audioUrl,
+  }) {
+    final result = create();
+    if (promptId != null) result.promptId = promptId;
+    if (audioUrl != null) result.audioUrl = audioUrl;
+    return result;
+  }
+
+  CreateSpeakingAttemptRequest._();
+
+  factory CreateSpeakingAttemptRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateSpeakingAttemptRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSpeakingAttemptRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'promptId')
+    ..aOS(2, _omitFieldNames ? '' : 'audioUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSpeakingAttemptRequest clone() => CreateSpeakingAttemptRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSpeakingAttemptRequest copyWith(void Function(CreateSpeakingAttemptRequest) updates) => super.copyWith((message) => updates(message as CreateSpeakingAttemptRequest)) as CreateSpeakingAttemptRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSpeakingAttemptRequest create() => CreateSpeakingAttemptRequest._();
+  @$core.override
+  CreateSpeakingAttemptRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateSpeakingAttemptRequest> createRepeated() => $pb.PbList<CreateSpeakingAttemptRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSpeakingAttemptRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSpeakingAttemptRequest>(create);
+  static CreateSpeakingAttemptRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get promptId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set promptId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPromptId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPromptId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get audioUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set audioUrl($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAudioUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAudioUrl() => $_clearField(2);
+}
+
+class CreateSpeakingAttemptResponse extends $pb.GeneratedMessage {
+  factory CreateSpeakingAttemptResponse({
+    SpeakingAttempt? attempt,
+  }) {
+    final result = create();
+    if (attempt != null) result.attempt = attempt;
+    return result;
+  }
+
+  CreateSpeakingAttemptResponse._();
+
+  factory CreateSpeakingAttemptResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateSpeakingAttemptResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSpeakingAttemptResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<SpeakingAttempt>(1, _omitFieldNames ? '' : 'attempt', subBuilder: SpeakingAttempt.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSpeakingAttemptResponse clone() => CreateSpeakingAttemptResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSpeakingAttemptResponse copyWith(void Function(CreateSpeakingAttemptResponse) updates) => super.copyWith((message) => updates(message as CreateSpeakingAttemptResponse)) as CreateSpeakingAttemptResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSpeakingAttemptResponse create() => CreateSpeakingAttemptResponse._();
+  @$core.override
+  CreateSpeakingAttemptResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateSpeakingAttemptResponse> createRepeated() => $pb.PbList<CreateSpeakingAttemptResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSpeakingAttemptResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSpeakingAttemptResponse>(create);
+  static CreateSpeakingAttemptResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SpeakingAttempt get attempt => $_getN(0);
+  @$pb.TagNumber(1)
+  set attempt(SpeakingAttempt value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAttempt() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAttempt() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SpeakingAttempt ensureAttempt() => $_ensure(0);
+}
+
+class GetSpeakingAttemptRequest extends $pb.GeneratedMessage {
+  factory GetSpeakingAttemptRequest({
+    $core.String? attemptId,
+  }) {
+    final result = create();
+    if (attemptId != null) result.attemptId = attemptId;
+    return result;
+  }
+
+  GetSpeakingAttemptRequest._();
+
+  factory GetSpeakingAttemptRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetSpeakingAttemptRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSpeakingAttemptRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'attemptId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpeakingAttemptRequest clone() => GetSpeakingAttemptRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpeakingAttemptRequest copyWith(void Function(GetSpeakingAttemptRequest) updates) => super.copyWith((message) => updates(message as GetSpeakingAttemptRequest)) as GetSpeakingAttemptRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSpeakingAttemptRequest create() => GetSpeakingAttemptRequest._();
+  @$core.override
+  GetSpeakingAttemptRequest createEmptyInstance() => create();
+  static $pb.PbList<GetSpeakingAttemptRequest> createRepeated() => $pb.PbList<GetSpeakingAttemptRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetSpeakingAttemptRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSpeakingAttemptRequest>(create);
+  static GetSpeakingAttemptRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get attemptId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set attemptId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAttemptId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAttemptId() => $_clearField(1);
+}
+
+class GetSpeakingAttemptResponse extends $pb.GeneratedMessage {
+  factory GetSpeakingAttemptResponse({
+    SpeakingAttempt? attempt,
+  }) {
+    final result = create();
+    if (attempt != null) result.attempt = attempt;
+    return result;
+  }
+
+  GetSpeakingAttemptResponse._();
+
+  factory GetSpeakingAttemptResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetSpeakingAttemptResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSpeakingAttemptResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<SpeakingAttempt>(1, _omitFieldNames ? '' : 'attempt', subBuilder: SpeakingAttempt.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpeakingAttemptResponse clone() => GetSpeakingAttemptResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpeakingAttemptResponse copyWith(void Function(GetSpeakingAttemptResponse) updates) => super.copyWith((message) => updates(message as GetSpeakingAttemptResponse)) as GetSpeakingAttemptResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSpeakingAttemptResponse create() => GetSpeakingAttemptResponse._();
+  @$core.override
+  GetSpeakingAttemptResponse createEmptyInstance() => create();
+  static $pb.PbList<GetSpeakingAttemptResponse> createRepeated() => $pb.PbList<GetSpeakingAttemptResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetSpeakingAttemptResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSpeakingAttemptResponse>(create);
+  static GetSpeakingAttemptResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SpeakingAttempt get attempt => $_getN(0);
+  @$pb.TagNumber(1)
+  set attempt(SpeakingAttempt value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAttempt() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAttempt() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SpeakingAttempt ensureAttempt() => $_ensure(0);
+}
+
 /// ImmersionClip = one piece of native-context audio with transcript.
 /// audio_url is empty until R2 ingestion lands — clients render the
 /// transcript today and surface "audio coming soon" honestly.

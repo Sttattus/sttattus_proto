@@ -77,6 +77,19 @@ class LanguagesServiceClient extends $grpc.Client {
     return $createUnaryCall(_$markImmersionCompleted, request, options: options);
   }
 
+  /// L12.4 — speaking drill + Whisper.
+  $grpc.ResponseFuture<$0.ListSpeakingPromptsResponse> listSpeakingPrompts($0.ListSpeakingPromptsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listSpeakingPrompts, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateSpeakingAttemptResponse> createSpeakingAttempt($0.CreateSpeakingAttemptRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createSpeakingAttempt, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetSpeakingAttemptResponse> getSpeakingAttempt($0.GetSpeakingAttemptRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getSpeakingAttempt, request, options: options);
+  }
+
   /// Legacy (Deprecated but kept for bridge)
   $grpc.ResponseFuture<$0.ListWordsResponse> listWords($0.ListWordsRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listWords, request, options: options);
@@ -124,6 +137,18 @@ class LanguagesServiceClient extends $grpc.Client {
       '/sttattus.languages.v1.LanguagesService/MarkImmersionCompleted',
       ($0.MarkImmersionCompletedRequest value) => value.writeToBuffer(),
       $0.MarkImmersionCompletedResponse.fromBuffer);
+  static final _$listSpeakingPrompts = $grpc.ClientMethod<$0.ListSpeakingPromptsRequest, $0.ListSpeakingPromptsResponse>(
+      '/sttattus.languages.v1.LanguagesService/ListSpeakingPrompts',
+      ($0.ListSpeakingPromptsRequest value) => value.writeToBuffer(),
+      $0.ListSpeakingPromptsResponse.fromBuffer);
+  static final _$createSpeakingAttempt = $grpc.ClientMethod<$0.CreateSpeakingAttemptRequest, $0.CreateSpeakingAttemptResponse>(
+      '/sttattus.languages.v1.LanguagesService/CreateSpeakingAttempt',
+      ($0.CreateSpeakingAttemptRequest value) => value.writeToBuffer(),
+      $0.CreateSpeakingAttemptResponse.fromBuffer);
+  static final _$getSpeakingAttempt = $grpc.ClientMethod<$0.GetSpeakingAttemptRequest, $0.GetSpeakingAttemptResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetSpeakingAttempt',
+      ($0.GetSpeakingAttemptRequest value) => value.writeToBuffer(),
+      $0.GetSpeakingAttemptResponse.fromBuffer);
   static final _$listWords = $grpc.ClientMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
       '/sttattus.languages.v1.LanguagesService/ListWords',
       ($0.ListWordsRequest value) => value.writeToBuffer(),
@@ -205,6 +230,27 @@ abstract class LanguagesServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.MarkImmersionCompletedRequest.fromBuffer(value),
         ($0.MarkImmersionCompletedResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListSpeakingPromptsRequest, $0.ListSpeakingPromptsResponse>(
+        'ListSpeakingPrompts',
+        listSpeakingPrompts_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListSpeakingPromptsRequest.fromBuffer(value),
+        ($0.ListSpeakingPromptsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateSpeakingAttemptRequest, $0.CreateSpeakingAttemptResponse>(
+        'CreateSpeakingAttempt',
+        createSpeakingAttempt_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateSpeakingAttemptRequest.fromBuffer(value),
+        ($0.CreateSpeakingAttemptResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetSpeakingAttemptRequest, $0.GetSpeakingAttemptResponse>(
+        'GetSpeakingAttempt',
+        getSpeakingAttempt_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetSpeakingAttemptRequest.fromBuffer(value),
+        ($0.GetSpeakingAttemptResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
         'ListWords',
         listWords_Pre,
@@ -273,6 +319,24 @@ abstract class LanguagesServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.MarkImmersionCompletedResponse> markImmersionCompleted($grpc.ServiceCall call, $0.MarkImmersionCompletedRequest request);
+
+  $async.Future<$0.ListSpeakingPromptsResponse> listSpeakingPrompts_Pre($grpc.ServiceCall $call, $async.Future<$0.ListSpeakingPromptsRequest> $request) async {
+    return listSpeakingPrompts($call, await $request);
+  }
+
+  $async.Future<$0.ListSpeakingPromptsResponse> listSpeakingPrompts($grpc.ServiceCall call, $0.ListSpeakingPromptsRequest request);
+
+  $async.Future<$0.CreateSpeakingAttemptResponse> createSpeakingAttempt_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateSpeakingAttemptRequest> $request) async {
+    return createSpeakingAttempt($call, await $request);
+  }
+
+  $async.Future<$0.CreateSpeakingAttemptResponse> createSpeakingAttempt($grpc.ServiceCall call, $0.CreateSpeakingAttemptRequest request);
+
+  $async.Future<$0.GetSpeakingAttemptResponse> getSpeakingAttempt_Pre($grpc.ServiceCall $call, $async.Future<$0.GetSpeakingAttemptRequest> $request) async {
+    return getSpeakingAttempt($call, await $request);
+  }
+
+  $async.Future<$0.GetSpeakingAttemptResponse> getSpeakingAttempt($grpc.ServiceCall call, $0.GetSpeakingAttemptRequest request);
 
   $async.Future<$0.ListWordsResponse> listWords_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWordsRequest> $request) async {
     return listWords($call, await $request);

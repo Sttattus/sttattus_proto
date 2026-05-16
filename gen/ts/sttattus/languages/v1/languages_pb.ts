@@ -710,6 +710,438 @@ export class GetLinguistStatsResponse extends Message<GetLinguistStatsResponse> 
 }
 
 /**
+ * @generated from message sttattus.languages.v1.SpeakingPrompt
+ */
+export class SpeakingPrompt extends Message<SpeakingPrompt> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string language = 2;
+   */
+  language = "";
+
+  /**
+   * @generated from field: string cefr_target = 3;
+   */
+  cefrTarget = "";
+
+  /**
+   * @generated from field: string phrase = 4;
+   */
+  phrase = "";
+
+  /**
+   * @generated from field: string translation = 5;
+   */
+  translation = "";
+
+  constructor(data?: PartialMessage<SpeakingPrompt>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.SpeakingPrompt";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "cefr_target", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "phrase", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "translation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpeakingPrompt {
+    return new SpeakingPrompt().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpeakingPrompt {
+    return new SpeakingPrompt().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpeakingPrompt {
+    return new SpeakingPrompt().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpeakingPrompt | PlainMessage<SpeakingPrompt> | undefined, b: SpeakingPrompt | PlainMessage<SpeakingPrompt> | undefined): boolean {
+    return proto3.util.equals(SpeakingPrompt, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.PhonemeScore
+ */
+export class PhonemeScore extends Message<PhonemeScore> {
+  /**
+   * @generated from field: string token = 1;
+   */
+  token = "";
+
+  /**
+   * 0..100
+   *
+   * @generated from field: int32 score = 2;
+   */
+  score = 0;
+
+  constructor(data?: PartialMessage<PhonemeScore>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.PhonemeScore";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "score", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PhonemeScore {
+    return new PhonemeScore().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PhonemeScore {
+    return new PhonemeScore().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PhonemeScore {
+    return new PhonemeScore().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PhonemeScore | PlainMessage<PhonemeScore> | undefined, b: PhonemeScore | PlainMessage<PhonemeScore> | undefined): boolean {
+    return proto3.util.equals(PhonemeScore, a, b);
+  }
+}
+
+/**
+ * SpeakingAttempt is the per-user row hydrated for the drill UI.
+ * status: 'pending' = scorer not yet run, 'transcribed' = Whisper
+ * + overlap complete, 'unavailable' = provider missing — client
+ * renders "transcription unavailable, audio preserved".
+ *
+ * @generated from message sttattus.languages.v1.SpeakingAttempt
+ */
+export class SpeakingAttempt extends Message<SpeakingAttempt> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string prompt_id = 2;
+   */
+  promptId = "";
+
+  /**
+   * @generated from field: string audio_url = 3;
+   */
+  audioUrl = "";
+
+  /**
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string transcribed = 5;
+   */
+  transcribed = "";
+
+  /**
+   * @generated from field: int32 score = 6;
+   */
+  score = 0;
+
+  /**
+   * @generated from field: repeated sttattus.languages.v1.PhonemeScore phonemes = 7;
+   */
+  phonemes: PhonemeScore[] = [];
+
+  /**
+   * @generated from field: int64 created_unix = 8;
+   */
+  createdUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 updated_unix = 9;
+   */
+  updatedUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<SpeakingAttempt>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.SpeakingAttempt";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "prompt_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "audio_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "transcribed", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "score", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "phonemes", kind: "message", T: PhonemeScore, repeated: true },
+    { no: 8, name: "created_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "updated_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpeakingAttempt {
+    return new SpeakingAttempt().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpeakingAttempt {
+    return new SpeakingAttempt().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpeakingAttempt {
+    return new SpeakingAttempt().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpeakingAttempt | PlainMessage<SpeakingAttempt> | undefined, b: SpeakingAttempt | PlainMessage<SpeakingAttempt> | undefined): boolean {
+    return proto3.util.equals(SpeakingAttempt, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ListSpeakingPromptsRequest
+ */
+export class ListSpeakingPromptsRequest extends Message<ListSpeakingPromptsRequest> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  /**
+   * @generated from field: string cefr_level = 2;
+   */
+  cefrLevel = "";
+
+  constructor(data?: PartialMessage<ListSpeakingPromptsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ListSpeakingPromptsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "cefr_level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSpeakingPromptsRequest {
+    return new ListSpeakingPromptsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSpeakingPromptsRequest {
+    return new ListSpeakingPromptsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSpeakingPromptsRequest {
+    return new ListSpeakingPromptsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListSpeakingPromptsRequest | PlainMessage<ListSpeakingPromptsRequest> | undefined, b: ListSpeakingPromptsRequest | PlainMessage<ListSpeakingPromptsRequest> | undefined): boolean {
+    return proto3.util.equals(ListSpeakingPromptsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ListSpeakingPromptsResponse
+ */
+export class ListSpeakingPromptsResponse extends Message<ListSpeakingPromptsResponse> {
+  /**
+   * @generated from field: repeated sttattus.languages.v1.SpeakingPrompt prompts = 1;
+   */
+  prompts: SpeakingPrompt[] = [];
+
+  constructor(data?: PartialMessage<ListSpeakingPromptsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ListSpeakingPromptsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "prompts", kind: "message", T: SpeakingPrompt, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSpeakingPromptsResponse {
+    return new ListSpeakingPromptsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSpeakingPromptsResponse {
+    return new ListSpeakingPromptsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSpeakingPromptsResponse {
+    return new ListSpeakingPromptsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListSpeakingPromptsResponse | PlainMessage<ListSpeakingPromptsResponse> | undefined, b: ListSpeakingPromptsResponse | PlainMessage<ListSpeakingPromptsResponse> | undefined): boolean {
+    return proto3.util.equals(ListSpeakingPromptsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.CreateSpeakingAttemptRequest
+ */
+export class CreateSpeakingAttemptRequest extends Message<CreateSpeakingAttemptRequest> {
+  /**
+   * @generated from field: string prompt_id = 1;
+   */
+  promptId = "";
+
+  /**
+   * R2 key returned from the presign-PUT upload
+   *
+   * @generated from field: string audio_url = 2;
+   */
+  audioUrl = "";
+
+  constructor(data?: PartialMessage<CreateSpeakingAttemptRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.CreateSpeakingAttemptRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "prompt_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "audio_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSpeakingAttemptRequest {
+    return new CreateSpeakingAttemptRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSpeakingAttemptRequest {
+    return new CreateSpeakingAttemptRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSpeakingAttemptRequest {
+    return new CreateSpeakingAttemptRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateSpeakingAttemptRequest | PlainMessage<CreateSpeakingAttemptRequest> | undefined, b: CreateSpeakingAttemptRequest | PlainMessage<CreateSpeakingAttemptRequest> | undefined): boolean {
+    return proto3.util.equals(CreateSpeakingAttemptRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.CreateSpeakingAttemptResponse
+ */
+export class CreateSpeakingAttemptResponse extends Message<CreateSpeakingAttemptResponse> {
+  /**
+   * @generated from field: sttattus.languages.v1.SpeakingAttempt attempt = 1;
+   */
+  attempt?: SpeakingAttempt;
+
+  constructor(data?: PartialMessage<CreateSpeakingAttemptResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.CreateSpeakingAttemptResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "attempt", kind: "message", T: SpeakingAttempt },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSpeakingAttemptResponse {
+    return new CreateSpeakingAttemptResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSpeakingAttemptResponse {
+    return new CreateSpeakingAttemptResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSpeakingAttemptResponse {
+    return new CreateSpeakingAttemptResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateSpeakingAttemptResponse | PlainMessage<CreateSpeakingAttemptResponse> | undefined, b: CreateSpeakingAttemptResponse | PlainMessage<CreateSpeakingAttemptResponse> | undefined): boolean {
+    return proto3.util.equals(CreateSpeakingAttemptResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.GetSpeakingAttemptRequest
+ */
+export class GetSpeakingAttemptRequest extends Message<GetSpeakingAttemptRequest> {
+  /**
+   * @generated from field: string attempt_id = 1;
+   */
+  attemptId = "";
+
+  constructor(data?: PartialMessage<GetSpeakingAttemptRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.GetSpeakingAttemptRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "attempt_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSpeakingAttemptRequest {
+    return new GetSpeakingAttemptRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetSpeakingAttemptRequest {
+    return new GetSpeakingAttemptRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSpeakingAttemptRequest {
+    return new GetSpeakingAttemptRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetSpeakingAttemptRequest | PlainMessage<GetSpeakingAttemptRequest> | undefined, b: GetSpeakingAttemptRequest | PlainMessage<GetSpeakingAttemptRequest> | undefined): boolean {
+    return proto3.util.equals(GetSpeakingAttemptRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.GetSpeakingAttemptResponse
+ */
+export class GetSpeakingAttemptResponse extends Message<GetSpeakingAttemptResponse> {
+  /**
+   * @generated from field: sttattus.languages.v1.SpeakingAttempt attempt = 1;
+   */
+  attempt?: SpeakingAttempt;
+
+  constructor(data?: PartialMessage<GetSpeakingAttemptResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.GetSpeakingAttemptResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "attempt", kind: "message", T: SpeakingAttempt },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSpeakingAttemptResponse {
+    return new GetSpeakingAttemptResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetSpeakingAttemptResponse {
+    return new GetSpeakingAttemptResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSpeakingAttemptResponse {
+    return new GetSpeakingAttemptResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetSpeakingAttemptResponse | PlainMessage<GetSpeakingAttemptResponse> | undefined, b: GetSpeakingAttemptResponse | PlainMessage<GetSpeakingAttemptResponse> | undefined): boolean {
+    return proto3.util.equals(GetSpeakingAttemptResponse, a, b);
+  }
+}
+
+/**
  * ImmersionClip = one piece of native-context audio with transcript.
  * audio_url is empty until R2 ingestion lands — clients render the
  * transcript today and surface "audio coming soon" honestly.

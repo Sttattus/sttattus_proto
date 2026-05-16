@@ -235,6 +235,143 @@ final $typed_data.Uint8List getLinguistStatsResponseDescriptor = $convert.base64
     'ChhHZXRMaW5ndWlzdFN0YXRzUmVzcG9uc2USOgoFc3RhdHMYASABKAsyJC5zdHRhdHR1cy5sYW'
     '5ndWFnZXMudjEuTGluZ3Vpc3RTdGF0c1IFc3RhdHM=');
 
+@$core.Deprecated('Use speakingPromptDescriptor instead')
+const SpeakingPrompt$json = {
+  '1': 'SpeakingPrompt',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'language', '3': 2, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'cefr_target', '3': 3, '4': 1, '5': 9, '10': 'cefrTarget'},
+    {'1': 'phrase', '3': 4, '4': 1, '5': 9, '10': 'phrase'},
+    {'1': 'translation', '3': 5, '4': 1, '5': 9, '10': 'translation'},
+  ],
+};
+
+/// Descriptor for `SpeakingPrompt`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List speakingPromptDescriptor = $convert.base64Decode(
+    'Cg5TcGVha2luZ1Byb21wdBIOCgJpZBgBIAEoCVICaWQSGgoIbGFuZ3VhZ2UYAiABKAlSCGxhbm'
+    'd1YWdlEh8KC2NlZnJfdGFyZ2V0GAMgASgJUgpjZWZyVGFyZ2V0EhYKBnBocmFzZRgEIAEoCVIG'
+    'cGhyYXNlEiAKC3RyYW5zbGF0aW9uGAUgASgJUgt0cmFuc2xhdGlvbg==');
+
+@$core.Deprecated('Use phonemeScoreDescriptor instead')
+const PhonemeScore$json = {
+  '1': 'PhonemeScore',
+  '2': [
+    {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
+    {'1': 'score', '3': 2, '4': 1, '5': 5, '10': 'score'},
+  ],
+};
+
+/// Descriptor for `PhonemeScore`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List phonemeScoreDescriptor = $convert.base64Decode(
+    'CgxQaG9uZW1lU2NvcmUSFAoFdG9rZW4YASABKAlSBXRva2VuEhQKBXNjb3JlGAIgASgFUgVzY2'
+    '9yZQ==');
+
+@$core.Deprecated('Use speakingAttemptDescriptor instead')
+const SpeakingAttempt$json = {
+  '1': 'SpeakingAttempt',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'prompt_id', '3': 2, '4': 1, '5': 9, '10': 'promptId'},
+    {'1': 'audio_url', '3': 3, '4': 1, '5': 9, '10': 'audioUrl'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'transcribed', '3': 5, '4': 1, '5': 9, '10': 'transcribed'},
+    {'1': 'score', '3': 6, '4': 1, '5': 5, '10': 'score'},
+    {'1': 'phonemes', '3': 7, '4': 3, '5': 11, '6': '.sttattus.languages.v1.PhonemeScore', '10': 'phonemes'},
+    {'1': 'created_unix', '3': 8, '4': 1, '5': 3, '10': 'createdUnix'},
+    {'1': 'updated_unix', '3': 9, '4': 1, '5': 3, '10': 'updatedUnix'},
+  ],
+};
+
+/// Descriptor for `SpeakingAttempt`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List speakingAttemptDescriptor = $convert.base64Decode(
+    'Cg9TcGVha2luZ0F0dGVtcHQSDgoCaWQYASABKAlSAmlkEhsKCXByb21wdF9pZBgCIAEoCVIIcH'
+    'JvbXB0SWQSGwoJYXVkaW9fdXJsGAMgASgJUghhdWRpb1VybBIWCgZzdGF0dXMYBCABKAlSBnN0'
+    'YXR1cxIgCgt0cmFuc2NyaWJlZBgFIAEoCVILdHJhbnNjcmliZWQSFAoFc2NvcmUYBiABKAVSBX'
+    'Njb3JlEj8KCHBob25lbWVzGAcgAygLMiMuc3R0YXR0dXMubGFuZ3VhZ2VzLnYxLlBob25lbWVT'
+    'Y29yZVIIcGhvbmVtZXMSIQoMY3JlYXRlZF91bml4GAggASgDUgtjcmVhdGVkVW5peBIhCgx1cG'
+    'RhdGVkX3VuaXgYCSABKANSC3VwZGF0ZWRVbml4');
+
+@$core.Deprecated('Use listSpeakingPromptsRequestDescriptor instead')
+const ListSpeakingPromptsRequest$json = {
+  '1': 'ListSpeakingPromptsRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'cefr_level', '3': 2, '4': 1, '5': 9, '10': 'cefrLevel'},
+  ],
+};
+
+/// Descriptor for `ListSpeakingPromptsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSpeakingPromptsRequestDescriptor = $convert.base64Decode(
+    'ChpMaXN0U3BlYWtpbmdQcm9tcHRzUmVxdWVzdBIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3VhZ2'
+    'USHQoKY2Vmcl9sZXZlbBgCIAEoCVIJY2VmckxldmVs');
+
+@$core.Deprecated('Use listSpeakingPromptsResponseDescriptor instead')
+const ListSpeakingPromptsResponse$json = {
+  '1': 'ListSpeakingPromptsResponse',
+  '2': [
+    {'1': 'prompts', '3': 1, '4': 3, '5': 11, '6': '.sttattus.languages.v1.SpeakingPrompt', '10': 'prompts'},
+  ],
+};
+
+/// Descriptor for `ListSpeakingPromptsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSpeakingPromptsResponseDescriptor = $convert.base64Decode(
+    'ChtMaXN0U3BlYWtpbmdQcm9tcHRzUmVzcG9uc2USPwoHcHJvbXB0cxgBIAMoCzIlLnN0dGF0dH'
+    'VzLmxhbmd1YWdlcy52MS5TcGVha2luZ1Byb21wdFIHcHJvbXB0cw==');
+
+@$core.Deprecated('Use createSpeakingAttemptRequestDescriptor instead')
+const CreateSpeakingAttemptRequest$json = {
+  '1': 'CreateSpeakingAttemptRequest',
+  '2': [
+    {'1': 'prompt_id', '3': 1, '4': 1, '5': 9, '10': 'promptId'},
+    {'1': 'audio_url', '3': 2, '4': 1, '5': 9, '10': 'audioUrl'},
+  ],
+};
+
+/// Descriptor for `CreateSpeakingAttemptRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSpeakingAttemptRequestDescriptor = $convert.base64Decode(
+    'ChxDcmVhdGVTcGVha2luZ0F0dGVtcHRSZXF1ZXN0EhsKCXByb21wdF9pZBgBIAEoCVIIcHJvbX'
+    'B0SWQSGwoJYXVkaW9fdXJsGAIgASgJUghhdWRpb1VybA==');
+
+@$core.Deprecated('Use createSpeakingAttemptResponseDescriptor instead')
+const CreateSpeakingAttemptResponse$json = {
+  '1': 'CreateSpeakingAttemptResponse',
+  '2': [
+    {'1': 'attempt', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.SpeakingAttempt', '10': 'attempt'},
+  ],
+};
+
+/// Descriptor for `CreateSpeakingAttemptResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSpeakingAttemptResponseDescriptor = $convert.base64Decode(
+    'Ch1DcmVhdGVTcGVha2luZ0F0dGVtcHRSZXNwb25zZRJACgdhdHRlbXB0GAEgASgLMiYuc3R0YX'
+    'R0dXMubGFuZ3VhZ2VzLnYxLlNwZWFraW5nQXR0ZW1wdFIHYXR0ZW1wdA==');
+
+@$core.Deprecated('Use getSpeakingAttemptRequestDescriptor instead')
+const GetSpeakingAttemptRequest$json = {
+  '1': 'GetSpeakingAttemptRequest',
+  '2': [
+    {'1': 'attempt_id', '3': 1, '4': 1, '5': 9, '10': 'attemptId'},
+  ],
+};
+
+/// Descriptor for `GetSpeakingAttemptRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSpeakingAttemptRequestDescriptor = $convert.base64Decode(
+    'ChlHZXRTcGVha2luZ0F0dGVtcHRSZXF1ZXN0Eh0KCmF0dGVtcHRfaWQYASABKAlSCWF0dGVtcH'
+    'RJZA==');
+
+@$core.Deprecated('Use getSpeakingAttemptResponseDescriptor instead')
+const GetSpeakingAttemptResponse$json = {
+  '1': 'GetSpeakingAttemptResponse',
+  '2': [
+    {'1': 'attempt', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.SpeakingAttempt', '10': 'attempt'},
+  ],
+};
+
+/// Descriptor for `GetSpeakingAttemptResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSpeakingAttemptResponseDescriptor = $convert.base64Decode(
+    'ChpHZXRTcGVha2luZ0F0dGVtcHRSZXNwb25zZRJACgdhdHRlbXB0GAEgASgLMiYuc3R0YXR0dX'
+    'MubGFuZ3VhZ2VzLnYxLlNwZWFraW5nQXR0ZW1wdFIHYXR0ZW1wdA==');
+
 @$core.Deprecated('Use immersionClipDescriptor instead')
 const ImmersionClip$json = {
   '1': 'ImmersionClip',

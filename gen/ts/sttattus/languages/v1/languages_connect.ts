@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CompleteInteractionRequest, CompleteInteractionResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetTodayPlanRequest, GetTodayPlanResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListScenariosRequest, ListScenariosResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse } from "./languages_pb.js";
+import { CompleteInteractionRequest, CompleteInteractionResponse, CreateSpeakingAttemptRequest, CreateSpeakingAttemptResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetSpeakingAttemptRequest, GetSpeakingAttemptResponse, GetTodayPlanRequest, GetTodayPlanResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListScenariosRequest, ListScenariosResponse, ListSpeakingPromptsRequest, ListSpeakingPromptsResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse } from "./languages_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -110,6 +110,35 @@ export const LanguagesService = {
       name: "MarkImmersionCompleted",
       I: MarkImmersionCompletedRequest,
       O: MarkImmersionCompletedResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L12.4 — speaking drill + Whisper.
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListSpeakingPrompts
+     */
+    listSpeakingPrompts: {
+      name: "ListSpeakingPrompts",
+      I: ListSpeakingPromptsRequest,
+      O: ListSpeakingPromptsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.CreateSpeakingAttempt
+     */
+    createSpeakingAttempt: {
+      name: "CreateSpeakingAttempt",
+      I: CreateSpeakingAttemptRequest,
+      O: CreateSpeakingAttemptResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetSpeakingAttempt
+     */
+    getSpeakingAttempt: {
+      name: "GetSpeakingAttempt",
+      I: GetSpeakingAttemptRequest,
+      O: GetSpeakingAttemptResponse,
       kind: MethodKind.Unary,
     },
     /**

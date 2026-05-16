@@ -29,6 +29,9 @@ const (
 	LanguagesService_MarkPlanBlock_FullMethodName          = "/sttattus.languages.v1.LanguagesService/MarkPlanBlock"
 	LanguagesService_ListTodayImmersion_FullMethodName     = "/sttattus.languages.v1.LanguagesService/ListTodayImmersion"
 	LanguagesService_MarkImmersionCompleted_FullMethodName = "/sttattus.languages.v1.LanguagesService/MarkImmersionCompleted"
+	LanguagesService_ListSpeakingPrompts_FullMethodName    = "/sttattus.languages.v1.LanguagesService/ListSpeakingPrompts"
+	LanguagesService_CreateSpeakingAttempt_FullMethodName  = "/sttattus.languages.v1.LanguagesService/CreateSpeakingAttempt"
+	LanguagesService_GetSpeakingAttempt_FullMethodName     = "/sttattus.languages.v1.LanguagesService/GetSpeakingAttempt"
 	LanguagesService_ListWords_FullMethodName              = "/sttattus.languages.v1.LanguagesService/ListWords"
 )
 
@@ -51,6 +54,10 @@ type LanguagesServiceClient interface {
 	// L12.3 — immersion player.
 	ListTodayImmersion(ctx context.Context, in *ListTodayImmersionRequest, opts ...grpc.CallOption) (*ListTodayImmersionResponse, error)
 	MarkImmersionCompleted(ctx context.Context, in *MarkImmersionCompletedRequest, opts ...grpc.CallOption) (*MarkImmersionCompletedResponse, error)
+	// L12.4 — speaking drill + Whisper.
+	ListSpeakingPrompts(ctx context.Context, in *ListSpeakingPromptsRequest, opts ...grpc.CallOption) (*ListSpeakingPromptsResponse, error)
+	CreateSpeakingAttempt(ctx context.Context, in *CreateSpeakingAttemptRequest, opts ...grpc.CallOption) (*CreateSpeakingAttemptResponse, error)
+	GetSpeakingAttempt(ctx context.Context, in *GetSpeakingAttemptRequest, opts ...grpc.CallOption) (*GetSpeakingAttemptResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error)
 }
@@ -163,6 +170,36 @@ func (c *languagesServiceClient) MarkImmersionCompleted(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *languagesServiceClient) ListSpeakingPrompts(ctx context.Context, in *ListSpeakingPromptsRequest, opts ...grpc.CallOption) (*ListSpeakingPromptsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListSpeakingPromptsResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListSpeakingPrompts_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) CreateSpeakingAttempt(ctx context.Context, in *CreateSpeakingAttemptRequest, opts ...grpc.CallOption) (*CreateSpeakingAttemptResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateSpeakingAttemptResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_CreateSpeakingAttempt_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetSpeakingAttempt(ctx context.Context, in *GetSpeakingAttemptRequest, opts ...grpc.CallOption) (*GetSpeakingAttemptResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSpeakingAttemptResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetSpeakingAttempt_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *languagesServiceClient) ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListWordsResponse)
@@ -192,6 +229,10 @@ type LanguagesServiceServer interface {
 	// L12.3 — immersion player.
 	ListTodayImmersion(context.Context, *ListTodayImmersionRequest) (*ListTodayImmersionResponse, error)
 	MarkImmersionCompleted(context.Context, *MarkImmersionCompletedRequest) (*MarkImmersionCompletedResponse, error)
+	// L12.4 — speaking drill + Whisper.
+	ListSpeakingPrompts(context.Context, *ListSpeakingPromptsRequest) (*ListSpeakingPromptsResponse, error)
+	CreateSpeakingAttempt(context.Context, *CreateSpeakingAttemptRequest) (*CreateSpeakingAttemptResponse, error)
+	GetSpeakingAttempt(context.Context, *GetSpeakingAttemptRequest) (*GetSpeakingAttemptResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error)
 	mustEmbedUnimplementedLanguagesServiceServer()
@@ -233,6 +274,15 @@ func (UnimplementedLanguagesServiceServer) ListTodayImmersion(context.Context, *
 }
 func (UnimplementedLanguagesServiceServer) MarkImmersionCompleted(context.Context, *MarkImmersionCompletedRequest) (*MarkImmersionCompletedResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method MarkImmersionCompleted not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ListSpeakingPrompts(context.Context, *ListSpeakingPromptsRequest) (*ListSpeakingPromptsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListSpeakingPrompts not implemented")
+}
+func (UnimplementedLanguagesServiceServer) CreateSpeakingAttempt(context.Context, *CreateSpeakingAttemptRequest) (*CreateSpeakingAttemptResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateSpeakingAttempt not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetSpeakingAttempt(context.Context, *GetSpeakingAttemptRequest) (*GetSpeakingAttemptResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSpeakingAttempt not implemented")
 }
 func (UnimplementedLanguagesServiceServer) ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListWords not implemented")
@@ -438,6 +488,60 @@ func _LanguagesService_MarkImmersionCompleted_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LanguagesService_ListSpeakingPrompts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSpeakingPromptsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ListSpeakingPrompts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ListSpeakingPrompts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ListSpeakingPrompts(ctx, req.(*ListSpeakingPromptsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_CreateSpeakingAttempt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSpeakingAttemptRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).CreateSpeakingAttempt(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_CreateSpeakingAttempt_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).CreateSpeakingAttempt(ctx, req.(*CreateSpeakingAttemptRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetSpeakingAttempt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSpeakingAttemptRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetSpeakingAttempt(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetSpeakingAttempt_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetSpeakingAttempt(ctx, req.(*GetSpeakingAttemptRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LanguagesService_ListWords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListWordsRequest)
 	if err := dec(in); err != nil {
@@ -502,6 +606,18 @@ var LanguagesService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "MarkImmersionCompleted",
 			Handler:    _LanguagesService_MarkImmersionCompleted_Handler,
+		},
+		{
+			MethodName: "ListSpeakingPrompts",
+			Handler:    _LanguagesService_ListSpeakingPrompts_Handler,
+		},
+		{
+			MethodName: "CreateSpeakingAttempt",
+			Handler:    _LanguagesService_CreateSpeakingAttempt_Handler,
+		},
+		{
+			MethodName: "GetSpeakingAttempt",
+			Handler:    _LanguagesService_GetSpeakingAttempt_Handler,
 		},
 		{
 			MethodName: "ListWords",
