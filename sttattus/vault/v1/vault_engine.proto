@@ -1,0 +1,130 @@
+syntax = "proto3";
+
+package sttattus.vault.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1";
+
+// VaultEngine — the Rust analytics layer for the Vault pillar (V8P2.3).
+// audits/vault.md §9 + §10 Phase 2 item 3.
+//
+// All math runs in services_rust/vault_engine. backend_go aggregates
+// the lifter's portfolio into one of these requests and surfaces the
+// result; the engine itself is pure functions over the inputs.
+
+// === IRR ===
+
+// CashFlowPoint is one (date, amount) tuple. Positive = money into
+// the portfolio (contribution); negative = money out (withdrawal).
+// The final entry should be the current value as a positive number
+// (the IRR routine treats it as a notional inflow / liquidation).
+message CashFlowPoint {
+  string date_iso = 1; // YYYY-MM-DD
+  double amount = 2;
+}
+
+message ComputeIrrRequest {
+  string user_id = 1;
+  repeated CashFlowPoint cash_flows = 2;
+}
+
+message ComputeIrrResponse {
+  // Internal rate of return as a decimal (0.07 = 7% annualised).
+  double irr = 1;
+  // True when the solver converged. False = surface a "needs more
+  // data" hint instead of the number.
+  bool converged = 2;
+}
+
+// === TWR ===
+
+// SubPeriodReturn is one slice between contributions. Each slice's
+// return is start / end value with any external cash flow stripped
+// out — caller is responsible for the slicing, engine just chains.
+message SubPeriodReturn {
+  double start_value = 1;
+  double end_value = 2;
+  // Net external cash flow during the slice. Positive = contribution.
+  double cash_flow = 3;
+}
+
+message ComputeTwrRequest {
+  string user_id = 1;
+  repeated SubPeriodReturn periods = 2;
+}
+
+message ComputeTwrResponse {
+  // Cumulative time-weighted return across the whole window.
+  double twr = 1;
+}
+
+// === Liquidity bands ===
+
+// LiquidAsset is one position categorised by how quickly it can be
+// turned into cash.
+message LiquidAsset {
+  double value_usd = 1;
+  // 't0' (cash) | 't1' (settled equities) | 't30' (private credit /
+  // illiquid bonds) | 't365' (locked vehicles, hard-to-sell PE) |
+  // 'illiquid' (real estate, art, etc.).
+  string band = 2;
+}
+
+message ComputeLiquidityBandsRequest {
+  string user_id = 1;
+  repeated LiquidAsset assets = 2;
+}
+
+message LiquidityBandSlice {
+  string band = 1;
+  double value_usd = 2;
+  // Share of total wealth held in this band, 0.0-1.0.
+  double share = 3;
+}
+
+message ComputeLiquidityBandsResponse {
+  repeated LiquidityBandSlice slices = 1;
+  // The "if I needed cash today" answer — the t0 + t1 sum.
+  double accessible_t1 = 2;
+}
+
+// === Tax-harvest detection ===
+
+// HarvestLot is one tax lot for the harvest scanner.
+message HarvestLot {
+  string symbol = 1;
+  double cost_basis = 2;
+  double current_value = 3;
+  // Days since acquisition; the scanner uses this to flag long- vs
+  // short-term opportunities.
+  int32 holding_days = 4;
+}
+
+message DetectHarvestOpportunitiesRequest {
+  string user_id = 1;
+  repeated HarvestLot lots = 2;
+  // Minimum unrealised loss in USD to surface a lot. 0 = default
+  // (1000).
+  double min_loss_usd = 3;
+}
+
+message HarvestOpportunity {
+  string symbol = 1;
+  double unrealised_loss_usd = 2;
+  // 'short_term' (<365d) | 'long_term'.
+  string term = 3;
+  int32 holding_days = 4;
+}
+
+message DetectHarvestOpportunitiesResponse {
+  // Ordered largest-loss first.
+  repeated HarvestOpportunity opportunities = 1;
+  // Sum of unrealised losses across all flagged lots.
+  double total_harvestable_loss_usd = 2;
+}
+
+service VaultEngineService {
+  rpc ComputeIrr(ComputeIrrRequest) returns (ComputeIrrResponse);
+  rpc ComputeTwr(ComputeTwrRequest) returns (ComputeTwrResponse);
+  rpc ComputeLiquidityBands(ComputeLiquidityBandsRequest) returns (ComputeLiquidityBandsResponse);
+  rpc DetectHarvestOpportunities(DetectHarvestOpportunitiesRequest) returns (DetectHarvestOpportunitiesResponse);
+}
