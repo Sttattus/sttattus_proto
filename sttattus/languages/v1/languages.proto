@@ -94,6 +94,40 @@ message GetLinguistStatsResponse {
   LinguistStats stats = 1;
 }
 
+// === L12.3 — immersion player ===
+
+// ImmersionClip = one piece of native-context audio with transcript.
+// audio_url is empty until R2 ingestion lands — clients render the
+// transcript today and surface "audio coming soon" honestly.
+message ImmersionClip {
+  string id = 1;
+  string language = 2;
+  string cefr_target = 3;
+  string title = 4;
+  string description = 5;
+  string transcript = 6;
+  string translation = 7;
+  string audio_url = 8;
+  int32 duration_seconds = 9;
+  string source_note = 10;
+  bool completed = 11; // per-user, populated by ListTodayImmersion
+}
+
+message ListTodayImmersionRequest {
+  string language = 1;
+  string cefr_level = 2; // e.g. 'A2'
+}
+message ListTodayImmersionResponse {
+  repeated ImmersionClip clips = 1;
+}
+
+message MarkImmersionCompletedRequest {
+  string clip_id = 1;
+}
+message MarkImmersionCompletedResponse {
+  ImmersionClip clip = 1;
+}
+
 // === L12.2 — today's plan ===
 
 // DailyPlan = the three blocks of today for one (user, language).
@@ -193,6 +227,10 @@ service LanguagesService {
   // L12.2 — today's plan (three-block daily).
   rpc GetTodayPlan(GetTodayPlanRequest) returns (GetTodayPlanResponse);
   rpc MarkPlanBlock(MarkPlanBlockRequest) returns (MarkPlanBlockResponse);
+
+  // L12.3 — immersion player.
+  rpc ListTodayImmersion(ListTodayImmersionRequest) returns (ListTodayImmersionResponse);
+  rpc MarkImmersionCompleted(MarkImmersionCompletedRequest) returns (MarkImmersionCompletedResponse);
 
   // Legacy (Deprecated but kept for bridge)
   rpc ListWords(ListWordsRequest) returns (ListWordsResponse);

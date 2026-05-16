@@ -929,6 +929,367 @@ class GetLinguistStatsResponse extends $pb.GeneratedMessage {
   LinguistStats ensureStats() => $_ensure(0);
 }
 
+/// ImmersionClip = one piece of native-context audio with transcript.
+/// audio_url is empty until R2 ingestion lands — clients render the
+/// transcript today and surface "audio coming soon" honestly.
+class ImmersionClip extends $pb.GeneratedMessage {
+  factory ImmersionClip({
+    $core.String? id,
+    $core.String? language,
+    $core.String? cefrTarget,
+    $core.String? title,
+    $core.String? description,
+    $core.String? transcript,
+    $core.String? translation,
+    $core.String? audioUrl,
+    $core.int? durationSeconds,
+    $core.String? sourceNote,
+    $core.bool? completed,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (language != null) result.language = language;
+    if (cefrTarget != null) result.cefrTarget = cefrTarget;
+    if (title != null) result.title = title;
+    if (description != null) result.description = description;
+    if (transcript != null) result.transcript = transcript;
+    if (translation != null) result.translation = translation;
+    if (audioUrl != null) result.audioUrl = audioUrl;
+    if (durationSeconds != null) result.durationSeconds = durationSeconds;
+    if (sourceNote != null) result.sourceNote = sourceNote;
+    if (completed != null) result.completed = completed;
+    return result;
+  }
+
+  ImmersionClip._();
+
+  factory ImmersionClip.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ImmersionClip.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ImmersionClip', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'language')
+    ..aOS(3, _omitFieldNames ? '' : 'cefrTarget')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'description')
+    ..aOS(6, _omitFieldNames ? '' : 'transcript')
+    ..aOS(7, _omitFieldNames ? '' : 'translation')
+    ..aOS(8, _omitFieldNames ? '' : 'audioUrl')
+    ..a<$core.int>(9, _omitFieldNames ? '' : 'durationSeconds', $pb.PbFieldType.O3)
+    ..aOS(10, _omitFieldNames ? '' : 'sourceNote')
+    ..aOB(11, _omitFieldNames ? '' : 'completed')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ImmersionClip clone() => ImmersionClip()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ImmersionClip copyWith(void Function(ImmersionClip) updates) => super.copyWith((message) => updates(message as ImmersionClip)) as ImmersionClip;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ImmersionClip create() => ImmersionClip._();
+  @$core.override
+  ImmersionClip createEmptyInstance() => create();
+  static $pb.PbList<ImmersionClip> createRepeated() => $pb.PbList<ImmersionClip>();
+  @$core.pragma('dart2js:noInline')
+  static ImmersionClip getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ImmersionClip>(create);
+  static ImmersionClip? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get language => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set language($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLanguage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguage() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get cefrTarget => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set cefrTarget($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCefrTarget() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCefrTarget() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get description => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set description($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDescription() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDescription() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get transcript => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set transcript($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTranscript() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTranscript() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get translation => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set translation($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasTranslation() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTranslation() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get audioUrl => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set audioUrl($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAudioUrl() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAudioUrl() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get durationSeconds => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set durationSeconds($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDurationSeconds() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDurationSeconds() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get sourceNote => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set sourceNote($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSourceNote() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSourceNote() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get completed => $_getBF(10);
+  @$pb.TagNumber(11)
+  set completed($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCompleted() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCompleted() => $_clearField(11);
+}
+
+class ListTodayImmersionRequest extends $pb.GeneratedMessage {
+  factory ListTodayImmersionRequest({
+    $core.String? language,
+    $core.String? cefrLevel,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (cefrLevel != null) result.cefrLevel = cefrLevel;
+    return result;
+  }
+
+  ListTodayImmersionRequest._();
+
+  factory ListTodayImmersionRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListTodayImmersionRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTodayImmersionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOS(2, _omitFieldNames ? '' : 'cefrLevel')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListTodayImmersionRequest clone() => ListTodayImmersionRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListTodayImmersionRequest copyWith(void Function(ListTodayImmersionRequest) updates) => super.copyWith((message) => updates(message as ListTodayImmersionRequest)) as ListTodayImmersionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTodayImmersionRequest create() => ListTodayImmersionRequest._();
+  @$core.override
+  ListTodayImmersionRequest createEmptyInstance() => create();
+  static $pb.PbList<ListTodayImmersionRequest> createRepeated() => $pb.PbList<ListTodayImmersionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListTodayImmersionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTodayImmersionRequest>(create);
+  static ListTodayImmersionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get cefrLevel => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set cefrLevel($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCefrLevel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCefrLevel() => $_clearField(2);
+}
+
+class ListTodayImmersionResponse extends $pb.GeneratedMessage {
+  factory ListTodayImmersionResponse({
+    $core.Iterable<ImmersionClip>? clips,
+  }) {
+    final result = create();
+    if (clips != null) result.clips.addAll(clips);
+    return result;
+  }
+
+  ListTodayImmersionResponse._();
+
+  factory ListTodayImmersionResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListTodayImmersionResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTodayImmersionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<ImmersionClip>(1, _omitFieldNames ? '' : 'clips', $pb.PbFieldType.PM, subBuilder: ImmersionClip.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListTodayImmersionResponse clone() => ListTodayImmersionResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListTodayImmersionResponse copyWith(void Function(ListTodayImmersionResponse) updates) => super.copyWith((message) => updates(message as ListTodayImmersionResponse)) as ListTodayImmersionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTodayImmersionResponse create() => ListTodayImmersionResponse._();
+  @$core.override
+  ListTodayImmersionResponse createEmptyInstance() => create();
+  static $pb.PbList<ListTodayImmersionResponse> createRepeated() => $pb.PbList<ListTodayImmersionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListTodayImmersionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTodayImmersionResponse>(create);
+  static ListTodayImmersionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ImmersionClip> get clips => $_getList(0);
+}
+
+class MarkImmersionCompletedRequest extends $pb.GeneratedMessage {
+  factory MarkImmersionCompletedRequest({
+    $core.String? clipId,
+  }) {
+    final result = create();
+    if (clipId != null) result.clipId = clipId;
+    return result;
+  }
+
+  MarkImmersionCompletedRequest._();
+
+  factory MarkImmersionCompletedRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MarkImmersionCompletedRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MarkImmersionCompletedRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'clipId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkImmersionCompletedRequest clone() => MarkImmersionCompletedRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkImmersionCompletedRequest copyWith(void Function(MarkImmersionCompletedRequest) updates) => super.copyWith((message) => updates(message as MarkImmersionCompletedRequest)) as MarkImmersionCompletedRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MarkImmersionCompletedRequest create() => MarkImmersionCompletedRequest._();
+  @$core.override
+  MarkImmersionCompletedRequest createEmptyInstance() => create();
+  static $pb.PbList<MarkImmersionCompletedRequest> createRepeated() => $pb.PbList<MarkImmersionCompletedRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MarkImmersionCompletedRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MarkImmersionCompletedRequest>(create);
+  static MarkImmersionCompletedRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get clipId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set clipId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasClipId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearClipId() => $_clearField(1);
+}
+
+class MarkImmersionCompletedResponse extends $pb.GeneratedMessage {
+  factory MarkImmersionCompletedResponse({
+    ImmersionClip? clip,
+  }) {
+    final result = create();
+    if (clip != null) result.clip = clip;
+    return result;
+  }
+
+  MarkImmersionCompletedResponse._();
+
+  factory MarkImmersionCompletedResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MarkImmersionCompletedResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MarkImmersionCompletedResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<ImmersionClip>(1, _omitFieldNames ? '' : 'clip', subBuilder: ImmersionClip.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkImmersionCompletedResponse clone() => MarkImmersionCompletedResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkImmersionCompletedResponse copyWith(void Function(MarkImmersionCompletedResponse) updates) => super.copyWith((message) => updates(message as MarkImmersionCompletedResponse)) as MarkImmersionCompletedResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MarkImmersionCompletedResponse create() => MarkImmersionCompletedResponse._();
+  @$core.override
+  MarkImmersionCompletedResponse createEmptyInstance() => create();
+  static $pb.PbList<MarkImmersionCompletedResponse> createRepeated() => $pb.PbList<MarkImmersionCompletedResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MarkImmersionCompletedResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MarkImmersionCompletedResponse>(create);
+  static MarkImmersionCompletedResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ImmersionClip get clip => $_getN(0);
+  @$pb.TagNumber(1)
+  set clip(ImmersionClip value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasClip() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearClip() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ImmersionClip ensureClip() => $_ensure(0);
+}
+
 /// DailyPlan = the three blocks of today for one (user, language).
 /// done_unix == 0 means "not yet done"; a non-zero value is the
 /// stamp from the backend.

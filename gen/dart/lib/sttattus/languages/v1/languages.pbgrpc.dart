@@ -68,6 +68,15 @@ class LanguagesServiceClient extends $grpc.Client {
     return $createUnaryCall(_$markPlanBlock, request, options: options);
   }
 
+  /// L12.3 — immersion player.
+  $grpc.ResponseFuture<$0.ListTodayImmersionResponse> listTodayImmersion($0.ListTodayImmersionRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listTodayImmersion, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MarkImmersionCompletedResponse> markImmersionCompleted($0.MarkImmersionCompletedRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$markImmersionCompleted, request, options: options);
+  }
+
   /// Legacy (Deprecated but kept for bridge)
   $grpc.ResponseFuture<$0.ListWordsResponse> listWords($0.ListWordsRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listWords, request, options: options);
@@ -107,6 +116,14 @@ class LanguagesServiceClient extends $grpc.Client {
       '/sttattus.languages.v1.LanguagesService/MarkPlanBlock',
       ($0.MarkPlanBlockRequest value) => value.writeToBuffer(),
       $0.MarkPlanBlockResponse.fromBuffer);
+  static final _$listTodayImmersion = $grpc.ClientMethod<$0.ListTodayImmersionRequest, $0.ListTodayImmersionResponse>(
+      '/sttattus.languages.v1.LanguagesService/ListTodayImmersion',
+      ($0.ListTodayImmersionRequest value) => value.writeToBuffer(),
+      $0.ListTodayImmersionResponse.fromBuffer);
+  static final _$markImmersionCompleted = $grpc.ClientMethod<$0.MarkImmersionCompletedRequest, $0.MarkImmersionCompletedResponse>(
+      '/sttattus.languages.v1.LanguagesService/MarkImmersionCompleted',
+      ($0.MarkImmersionCompletedRequest value) => value.writeToBuffer(),
+      $0.MarkImmersionCompletedResponse.fromBuffer);
   static final _$listWords = $grpc.ClientMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
       '/sttattus.languages.v1.LanguagesService/ListWords',
       ($0.ListWordsRequest value) => value.writeToBuffer(),
@@ -174,6 +191,20 @@ abstract class LanguagesServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.MarkPlanBlockRequest.fromBuffer(value),
         ($0.MarkPlanBlockResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListTodayImmersionRequest, $0.ListTodayImmersionResponse>(
+        'ListTodayImmersion',
+        listTodayImmersion_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListTodayImmersionRequest.fromBuffer(value),
+        ($0.ListTodayImmersionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MarkImmersionCompletedRequest, $0.MarkImmersionCompletedResponse>(
+        'MarkImmersionCompleted',
+        markImmersionCompleted_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.MarkImmersionCompletedRequest.fromBuffer(value),
+        ($0.MarkImmersionCompletedResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
         'ListWords',
         listWords_Pre,
@@ -230,6 +261,18 @@ abstract class LanguagesServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.MarkPlanBlockResponse> markPlanBlock($grpc.ServiceCall call, $0.MarkPlanBlockRequest request);
+
+  $async.Future<$0.ListTodayImmersionResponse> listTodayImmersion_Pre($grpc.ServiceCall $call, $async.Future<$0.ListTodayImmersionRequest> $request) async {
+    return listTodayImmersion($call, await $request);
+  }
+
+  $async.Future<$0.ListTodayImmersionResponse> listTodayImmersion($grpc.ServiceCall call, $0.ListTodayImmersionRequest request);
+
+  $async.Future<$0.MarkImmersionCompletedResponse> markImmersionCompleted_Pre($grpc.ServiceCall $call, $async.Future<$0.MarkImmersionCompletedRequest> $request) async {
+    return markImmersionCompleted($call, await $request);
+  }
+
+  $async.Future<$0.MarkImmersionCompletedResponse> markImmersionCompleted($grpc.ServiceCall call, $0.MarkImmersionCompletedRequest request);
 
   $async.Future<$0.ListWordsResponse> listWords_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWordsRequest> $request) async {
     return listWords($call, await $request);

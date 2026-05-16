@@ -710,6 +710,265 @@ export class GetLinguistStatsResponse extends Message<GetLinguistStatsResponse> 
 }
 
 /**
+ * ImmersionClip = one piece of native-context audio with transcript.
+ * audio_url is empty until R2 ingestion lands — clients render the
+ * transcript today and surface "audio coming soon" honestly.
+ *
+ * @generated from message sttattus.languages.v1.ImmersionClip
+ */
+export class ImmersionClip extends Message<ImmersionClip> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string language = 2;
+   */
+  language = "";
+
+  /**
+   * @generated from field: string cefr_target = 3;
+   */
+  cefrTarget = "";
+
+  /**
+   * @generated from field: string title = 4;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string description = 5;
+   */
+  description = "";
+
+  /**
+   * @generated from field: string transcript = 6;
+   */
+  transcript = "";
+
+  /**
+   * @generated from field: string translation = 7;
+   */
+  translation = "";
+
+  /**
+   * @generated from field: string audio_url = 8;
+   */
+  audioUrl = "";
+
+  /**
+   * @generated from field: int32 duration_seconds = 9;
+   */
+  durationSeconds = 0;
+
+  /**
+   * @generated from field: string source_note = 10;
+   */
+  sourceNote = "";
+
+  /**
+   * per-user, populated by ListTodayImmersion
+   *
+   * @generated from field: bool completed = 11;
+   */
+  completed = false;
+
+  constructor(data?: PartialMessage<ImmersionClip>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ImmersionClip";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "cefr_target", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "transcript", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "translation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "audio_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "duration_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "source_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "completed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ImmersionClip {
+    return new ImmersionClip().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ImmersionClip {
+    return new ImmersionClip().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ImmersionClip {
+    return new ImmersionClip().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ImmersionClip | PlainMessage<ImmersionClip> | undefined, b: ImmersionClip | PlainMessage<ImmersionClip> | undefined): boolean {
+    return proto3.util.equals(ImmersionClip, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ListTodayImmersionRequest
+ */
+export class ListTodayImmersionRequest extends Message<ListTodayImmersionRequest> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  /**
+   * e.g. 'A2'
+   *
+   * @generated from field: string cefr_level = 2;
+   */
+  cefrLevel = "";
+
+  constructor(data?: PartialMessage<ListTodayImmersionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ListTodayImmersionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "cefr_level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTodayImmersionRequest {
+    return new ListTodayImmersionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTodayImmersionRequest {
+    return new ListTodayImmersionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTodayImmersionRequest {
+    return new ListTodayImmersionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListTodayImmersionRequest | PlainMessage<ListTodayImmersionRequest> | undefined, b: ListTodayImmersionRequest | PlainMessage<ListTodayImmersionRequest> | undefined): boolean {
+    return proto3.util.equals(ListTodayImmersionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ListTodayImmersionResponse
+ */
+export class ListTodayImmersionResponse extends Message<ListTodayImmersionResponse> {
+  /**
+   * @generated from field: repeated sttattus.languages.v1.ImmersionClip clips = 1;
+   */
+  clips: ImmersionClip[] = [];
+
+  constructor(data?: PartialMessage<ListTodayImmersionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ListTodayImmersionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "clips", kind: "message", T: ImmersionClip, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTodayImmersionResponse {
+    return new ListTodayImmersionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTodayImmersionResponse {
+    return new ListTodayImmersionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTodayImmersionResponse {
+    return new ListTodayImmersionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListTodayImmersionResponse | PlainMessage<ListTodayImmersionResponse> | undefined, b: ListTodayImmersionResponse | PlainMessage<ListTodayImmersionResponse> | undefined): boolean {
+    return proto3.util.equals(ListTodayImmersionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.MarkImmersionCompletedRequest
+ */
+export class MarkImmersionCompletedRequest extends Message<MarkImmersionCompletedRequest> {
+  /**
+   * @generated from field: string clip_id = 1;
+   */
+  clipId = "";
+
+  constructor(data?: PartialMessage<MarkImmersionCompletedRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.MarkImmersionCompletedRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "clip_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MarkImmersionCompletedRequest {
+    return new MarkImmersionCompletedRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MarkImmersionCompletedRequest {
+    return new MarkImmersionCompletedRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MarkImmersionCompletedRequest {
+    return new MarkImmersionCompletedRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MarkImmersionCompletedRequest | PlainMessage<MarkImmersionCompletedRequest> | undefined, b: MarkImmersionCompletedRequest | PlainMessage<MarkImmersionCompletedRequest> | undefined): boolean {
+    return proto3.util.equals(MarkImmersionCompletedRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.MarkImmersionCompletedResponse
+ */
+export class MarkImmersionCompletedResponse extends Message<MarkImmersionCompletedResponse> {
+  /**
+   * @generated from field: sttattus.languages.v1.ImmersionClip clip = 1;
+   */
+  clip?: ImmersionClip;
+
+  constructor(data?: PartialMessage<MarkImmersionCompletedResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.MarkImmersionCompletedResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "clip", kind: "message", T: ImmersionClip },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MarkImmersionCompletedResponse {
+    return new MarkImmersionCompletedResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MarkImmersionCompletedResponse {
+    return new MarkImmersionCompletedResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MarkImmersionCompletedResponse {
+    return new MarkImmersionCompletedResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MarkImmersionCompletedResponse | PlainMessage<MarkImmersionCompletedResponse> | undefined, b: MarkImmersionCompletedResponse | PlainMessage<MarkImmersionCompletedResponse> | undefined): boolean {
+    return proto3.util.equals(MarkImmersionCompletedResponse, a, b);
+  }
+}
+
+/**
  * DailyPlan = the three blocks of today for one (user, language).
  * done_unix == 0 means "not yet done"; a non-zero value is the
  * stamp from the backend.

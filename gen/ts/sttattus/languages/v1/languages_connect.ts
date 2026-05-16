@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CompleteInteractionRequest, CompleteInteractionResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetTodayPlanRequest, GetTodayPlanResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListScenariosRequest, ListScenariosResponse, ListWordsRequest, ListWordsResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse } from "./languages_pb.js";
+import { CompleteInteractionRequest, CompleteInteractionResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetTodayPlanRequest, GetTodayPlanResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListScenariosRequest, ListScenariosResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse } from "./languages_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -90,6 +90,26 @@ export const LanguagesService = {
       name: "MarkPlanBlock",
       I: MarkPlanBlockRequest,
       O: MarkPlanBlockResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L12.3 — immersion player.
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListTodayImmersion
+     */
+    listTodayImmersion: {
+      name: "ListTodayImmersion",
+      I: ListTodayImmersionRequest,
+      O: ListTodayImmersionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.MarkImmersionCompleted
+     */
+    markImmersionCompleted: {
+      name: "MarkImmersionCompleted",
+      I: MarkImmersionCompletedRequest,
+      O: MarkImmersionCompletedResponse,
       kind: MethodKind.Unary,
     },
     /**

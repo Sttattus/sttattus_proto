@@ -235,6 +235,87 @@ final $typed_data.Uint8List getLinguistStatsResponseDescriptor = $convert.base64
     'ChhHZXRMaW5ndWlzdFN0YXRzUmVzcG9uc2USOgoFc3RhdHMYASABKAsyJC5zdHRhdHR1cy5sYW'
     '5ndWFnZXMudjEuTGluZ3Vpc3RTdGF0c1IFc3RhdHM=');
 
+@$core.Deprecated('Use immersionClipDescriptor instead')
+const ImmersionClip$json = {
+  '1': 'ImmersionClip',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'language', '3': 2, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'cefr_target', '3': 3, '4': 1, '5': 9, '10': 'cefrTarget'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'description', '3': 5, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'transcript', '3': 6, '4': 1, '5': 9, '10': 'transcript'},
+    {'1': 'translation', '3': 7, '4': 1, '5': 9, '10': 'translation'},
+    {'1': 'audio_url', '3': 8, '4': 1, '5': 9, '10': 'audioUrl'},
+    {'1': 'duration_seconds', '3': 9, '4': 1, '5': 5, '10': 'durationSeconds'},
+    {'1': 'source_note', '3': 10, '4': 1, '5': 9, '10': 'sourceNote'},
+    {'1': 'completed', '3': 11, '4': 1, '5': 8, '10': 'completed'},
+  ],
+};
+
+/// Descriptor for `ImmersionClip`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List immersionClipDescriptor = $convert.base64Decode(
+    'Cg1JbW1lcnNpb25DbGlwEg4KAmlkGAEgASgJUgJpZBIaCghsYW5ndWFnZRgCIAEoCVIIbGFuZ3'
+    'VhZ2USHwoLY2Vmcl90YXJnZXQYAyABKAlSCmNlZnJUYXJnZXQSFAoFdGl0bGUYBCABKAlSBXRp'
+    'dGxlEiAKC2Rlc2NyaXB0aW9uGAUgASgJUgtkZXNjcmlwdGlvbhIeCgp0cmFuc2NyaXB0GAYgAS'
+    'gJUgp0cmFuc2NyaXB0EiAKC3RyYW5zbGF0aW9uGAcgASgJUgt0cmFuc2xhdGlvbhIbCglhdWRp'
+    'b191cmwYCCABKAlSCGF1ZGlvVXJsEikKEGR1cmF0aW9uX3NlY29uZHMYCSABKAVSD2R1cmF0aW'
+    '9uU2Vjb25kcxIfCgtzb3VyY2Vfbm90ZRgKIAEoCVIKc291cmNlTm90ZRIcCgljb21wbGV0ZWQY'
+    'CyABKAhSCWNvbXBsZXRlZA==');
+
+@$core.Deprecated('Use listTodayImmersionRequestDescriptor instead')
+const ListTodayImmersionRequest$json = {
+  '1': 'ListTodayImmersionRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'cefr_level', '3': 2, '4': 1, '5': 9, '10': 'cefrLevel'},
+  ],
+};
+
+/// Descriptor for `ListTodayImmersionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTodayImmersionRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0VG9kYXlJbW1lcnNpb25SZXF1ZXN0EhoKCGxhbmd1YWdlGAEgASgJUghsYW5ndWFnZR'
+    'IdCgpjZWZyX2xldmVsGAIgASgJUgljZWZyTGV2ZWw=');
+
+@$core.Deprecated('Use listTodayImmersionResponseDescriptor instead')
+const ListTodayImmersionResponse$json = {
+  '1': 'ListTodayImmersionResponse',
+  '2': [
+    {'1': 'clips', '3': 1, '4': 3, '5': 11, '6': '.sttattus.languages.v1.ImmersionClip', '10': 'clips'},
+  ],
+};
+
+/// Descriptor for `ListTodayImmersionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTodayImmersionResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0VG9kYXlJbW1lcnNpb25SZXNwb25zZRI6CgVjbGlwcxgBIAMoCzIkLnN0dGF0dHVzLm'
+    'xhbmd1YWdlcy52MS5JbW1lcnNpb25DbGlwUgVjbGlwcw==');
+
+@$core.Deprecated('Use markImmersionCompletedRequestDescriptor instead')
+const MarkImmersionCompletedRequest$json = {
+  '1': 'MarkImmersionCompletedRequest',
+  '2': [
+    {'1': 'clip_id', '3': 1, '4': 1, '5': 9, '10': 'clipId'},
+  ],
+};
+
+/// Descriptor for `MarkImmersionCompletedRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List markImmersionCompletedRequestDescriptor = $convert.base64Decode(
+    'Ch1NYXJrSW1tZXJzaW9uQ29tcGxldGVkUmVxdWVzdBIXCgdjbGlwX2lkGAEgASgJUgZjbGlwSW'
+    'Q=');
+
+@$core.Deprecated('Use markImmersionCompletedResponseDescriptor instead')
+const MarkImmersionCompletedResponse$json = {
+  '1': 'MarkImmersionCompletedResponse',
+  '2': [
+    {'1': 'clip', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.ImmersionClip', '10': 'clip'},
+  ],
+};
+
+/// Descriptor for `MarkImmersionCompletedResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List markImmersionCompletedResponseDescriptor = $convert.base64Decode(
+    'Ch5NYXJrSW1tZXJzaW9uQ29tcGxldGVkUmVzcG9uc2USOAoEY2xpcBgBIAEoCzIkLnN0dGF0dH'
+    'VzLmxhbmd1YWdlcy52MS5JbW1lcnNpb25DbGlwUgRjbGlw');
+
 @$core.Deprecated('Use dailyPlanDescriptor instead')
 const DailyPlan$json = {
   '1': 'DailyPlan',

@@ -27,6 +27,8 @@ const (
 	LanguagesService_ListMyPlacementResults_FullMethodName = "/sttattus.languages.v1.LanguagesService/ListMyPlacementResults"
 	LanguagesService_GetTodayPlan_FullMethodName           = "/sttattus.languages.v1.LanguagesService/GetTodayPlan"
 	LanguagesService_MarkPlanBlock_FullMethodName          = "/sttattus.languages.v1.LanguagesService/MarkPlanBlock"
+	LanguagesService_ListTodayImmersion_FullMethodName     = "/sttattus.languages.v1.LanguagesService/ListTodayImmersion"
+	LanguagesService_MarkImmersionCompleted_FullMethodName = "/sttattus.languages.v1.LanguagesService/MarkImmersionCompleted"
 	LanguagesService_ListWords_FullMethodName              = "/sttattus.languages.v1.LanguagesService/ListWords"
 )
 
@@ -46,6 +48,9 @@ type LanguagesServiceClient interface {
 	// L12.2 — today's plan (three-block daily).
 	GetTodayPlan(ctx context.Context, in *GetTodayPlanRequest, opts ...grpc.CallOption) (*GetTodayPlanResponse, error)
 	MarkPlanBlock(ctx context.Context, in *MarkPlanBlockRequest, opts ...grpc.CallOption) (*MarkPlanBlockResponse, error)
+	// L12.3 — immersion player.
+	ListTodayImmersion(ctx context.Context, in *ListTodayImmersionRequest, opts ...grpc.CallOption) (*ListTodayImmersionResponse, error)
+	MarkImmersionCompleted(ctx context.Context, in *MarkImmersionCompletedRequest, opts ...grpc.CallOption) (*MarkImmersionCompletedResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error)
 }
@@ -138,6 +143,26 @@ func (c *languagesServiceClient) MarkPlanBlock(ctx context.Context, in *MarkPlan
 	return out, nil
 }
 
+func (c *languagesServiceClient) ListTodayImmersion(ctx context.Context, in *ListTodayImmersionRequest, opts ...grpc.CallOption) (*ListTodayImmersionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListTodayImmersionResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListTodayImmersion_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) MarkImmersionCompleted(ctx context.Context, in *MarkImmersionCompletedRequest, opts ...grpc.CallOption) (*MarkImmersionCompletedResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MarkImmersionCompletedResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_MarkImmersionCompleted_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *languagesServiceClient) ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListWordsResponse)
@@ -164,6 +189,9 @@ type LanguagesServiceServer interface {
 	// L12.2 — today's plan (three-block daily).
 	GetTodayPlan(context.Context, *GetTodayPlanRequest) (*GetTodayPlanResponse, error)
 	MarkPlanBlock(context.Context, *MarkPlanBlockRequest) (*MarkPlanBlockResponse, error)
+	// L12.3 — immersion player.
+	ListTodayImmersion(context.Context, *ListTodayImmersionRequest) (*ListTodayImmersionResponse, error)
+	MarkImmersionCompleted(context.Context, *MarkImmersionCompletedRequest) (*MarkImmersionCompletedResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error)
 	mustEmbedUnimplementedLanguagesServiceServer()
@@ -199,6 +227,12 @@ func (UnimplementedLanguagesServiceServer) GetTodayPlan(context.Context, *GetTod
 }
 func (UnimplementedLanguagesServiceServer) MarkPlanBlock(context.Context, *MarkPlanBlockRequest) (*MarkPlanBlockResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method MarkPlanBlock not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ListTodayImmersion(context.Context, *ListTodayImmersionRequest) (*ListTodayImmersionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListTodayImmersion not implemented")
+}
+func (UnimplementedLanguagesServiceServer) MarkImmersionCompleted(context.Context, *MarkImmersionCompletedRequest) (*MarkImmersionCompletedResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method MarkImmersionCompleted not implemented")
 }
 func (UnimplementedLanguagesServiceServer) ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListWords not implemented")
@@ -368,6 +402,42 @@ func _LanguagesService_MarkPlanBlock_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LanguagesService_ListTodayImmersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListTodayImmersionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ListTodayImmersion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ListTodayImmersion_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ListTodayImmersion(ctx, req.(*ListTodayImmersionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_MarkImmersionCompleted_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MarkImmersionCompletedRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).MarkImmersionCompleted(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_MarkImmersionCompleted_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).MarkImmersionCompleted(ctx, req.(*MarkImmersionCompletedRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LanguagesService_ListWords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListWordsRequest)
 	if err := dec(in); err != nil {
@@ -424,6 +494,14 @@ var LanguagesService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "MarkPlanBlock",
 			Handler:    _LanguagesService_MarkPlanBlock_Handler,
+		},
+		{
+			MethodName: "ListTodayImmersion",
+			Handler:    _LanguagesService_ListTodayImmersion_Handler,
+		},
+		{
+			MethodName: "MarkImmersionCompleted",
+			Handler:    _LanguagesService_MarkImmersionCompleted_Handler,
 		},
 		{
 			MethodName: "ListWords",
