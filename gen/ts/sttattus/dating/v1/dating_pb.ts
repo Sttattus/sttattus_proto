@@ -972,3 +972,238 @@ export class SendMessageResponse extends Message$1<SendMessageResponse> {
   }
 }
 
+/**
+ * AtlasVerification mirrors one row of atlas_verifications.
+ * status: pending | approved | rejected | expired.
+ * highest_check: document | selfie | liveness; empty when failed.
+ *
+ * @generated from message sttattus.dating.v1.AtlasVerification
+ */
+export class AtlasVerification extends Message$1<AtlasVerification> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * persona | onfido | veriff | manual
+   *
+   * @generated from field: string provider = 2;
+   */
+  provider = "";
+
+  /**
+   * @generated from field: string external_id = 3;
+   */
+  externalId = "";
+
+  /**
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string highest_check = 5;
+   */
+  highestCheck = "";
+
+  /**
+   * @generated from field: string reason = 6;
+   */
+  reason = "";
+
+  /**
+   * unix seconds
+   *
+   * @generated from field: int64 created_at = 7;
+   */
+  createdAt = protoInt64.zero;
+
+  /**
+   * unix seconds, 0 when undecided
+   *
+   * @generated from field: int64 decided_at = 8;
+   */
+  decidedAt = protoInt64.zero;
+
+  /**
+   * Provider's hosted-flow URL — only populated on StartVerification.
+   *
+   * @generated from field: string hosted_flow_url = 9;
+   */
+  hostedFlowUrl = "";
+
+  constructor(data?: PartialMessage<AtlasVerification>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasVerification";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "provider", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "external_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "highest_check", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: "decided_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "hosted_flow_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasVerification {
+    return new AtlasVerification().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasVerification {
+    return new AtlasVerification().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasVerification {
+    return new AtlasVerification().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasVerification | PlainMessage<AtlasVerification> | undefined, b: AtlasVerification | PlainMessage<AtlasVerification> | undefined): boolean {
+    return proto3.util.equals(AtlasVerification, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.StartVerificationRequest
+ */
+export class StartVerificationRequest extends Message$1<StartVerificationRequest> {
+  constructor(data?: PartialMessage<StartVerificationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.StartVerificationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StartVerificationRequest {
+    return new StartVerificationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StartVerificationRequest {
+    return new StartVerificationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StartVerificationRequest {
+    return new StartVerificationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: StartVerificationRequest | PlainMessage<StartVerificationRequest> | undefined, b: StartVerificationRequest | PlainMessage<StartVerificationRequest> | undefined): boolean {
+    return proto3.util.equals(StartVerificationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.StartVerificationResponse
+ */
+export class StartVerificationResponse extends Message$1<StartVerificationResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasVerification verification = 1;
+   */
+  verification?: AtlasVerification;
+
+  constructor(data?: PartialMessage<StartVerificationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.StartVerificationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "verification", kind: "message", T: AtlasVerification },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StartVerificationResponse {
+    return new StartVerificationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StartVerificationResponse {
+    return new StartVerificationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StartVerificationResponse {
+    return new StartVerificationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: StartVerificationResponse | PlainMessage<StartVerificationResponse> | undefined, b: StartVerificationResponse | PlainMessage<StartVerificationResponse> | undefined): boolean {
+    return proto3.util.equals(StartVerificationResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetLatestVerificationRequest
+ */
+export class GetLatestVerificationRequest extends Message$1<GetLatestVerificationRequest> {
+  constructor(data?: PartialMessage<GetLatestVerificationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetLatestVerificationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLatestVerificationRequest {
+    return new GetLatestVerificationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLatestVerificationRequest {
+    return new GetLatestVerificationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLatestVerificationRequest {
+    return new GetLatestVerificationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLatestVerificationRequest | PlainMessage<GetLatestVerificationRequest> | undefined, b: GetLatestVerificationRequest | PlainMessage<GetLatestVerificationRequest> | undefined): boolean {
+    return proto3.util.equals(GetLatestVerificationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetLatestVerificationResponse
+ */
+export class GetLatestVerificationResponse extends Message$1<GetLatestVerificationResponse> {
+  /**
+   * Empty (id == "") = lifter has not yet started a verification.
+   *
+   * @generated from field: sttattus.dating.v1.AtlasVerification verification = 1;
+   */
+  verification?: AtlasVerification;
+
+  constructor(data?: PartialMessage<GetLatestVerificationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetLatestVerificationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "verification", kind: "message", T: AtlasVerification },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLatestVerificationResponse {
+    return new GetLatestVerificationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLatestVerificationResponse {
+    return new GetLatestVerificationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLatestVerificationResponse {
+    return new GetLatestVerificationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLatestVerificationResponse | PlainMessage<GetLatestVerificationResponse> | undefined, b: GetLatestVerificationResponse | PlainMessage<GetLatestVerificationResponse> | undefined): boolean {
+    return proto3.util.equals(GetLatestVerificationResponse, a, b);
+  }
+}
+

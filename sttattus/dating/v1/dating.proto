@@ -121,6 +121,35 @@ message SendMessageResponse {
   Message message = 1;
 }
 
+// === Identity verification (A9.2) ===
+
+// AtlasVerification mirrors one row of atlas_verifications.
+// status: pending | approved | rejected | expired.
+// highest_check: document | selfie | liveness; empty when failed.
+message AtlasVerification {
+  string id = 1;
+  string provider = 2; // persona | onfido | veriff | manual
+  string external_id = 3;
+  string status = 4;
+  string highest_check = 5;
+  string reason = 6;
+  int64 created_at = 7; // unix seconds
+  int64 decided_at = 8; // unix seconds, 0 when undecided
+  // Provider's hosted-flow URL — only populated on StartVerification.
+  string hosted_flow_url = 9;
+}
+
+message StartVerificationRequest {}
+message StartVerificationResponse {
+  AtlasVerification verification = 1;
+}
+
+message GetLatestVerificationRequest {}
+message GetLatestVerificationResponse {
+  // Empty (id == "") = lifter has not yet started a verification.
+  AtlasVerification verification = 1;
+}
+
 service DatingService {
   rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
   rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
@@ -129,4 +158,6 @@ service DatingService {
   rpc ListMatches(ListMatchesRequest) returns (ListMatchesResponse);
   rpc StreamMessages(StreamMessagesRequest) returns (stream StreamMessagesResponse);
   rpc SendMessage(SendMessageRequest) returns (SendMessageResponse);
+  rpc StartVerification(StartVerificationRequest) returns (StartVerificationResponse);
+  rpc GetLatestVerification(GetLatestVerificationRequest) returns (GetLatestVerificationResponse);
 }

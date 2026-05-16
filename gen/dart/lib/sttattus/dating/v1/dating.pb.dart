@@ -1280,6 +1280,309 @@ class SendMessageResponse extends $pb.GeneratedMessage {
   Message ensureMessage() => $_ensure(0);
 }
 
+/// AtlasVerification mirrors one row of atlas_verifications.
+/// status: pending | approved | rejected | expired.
+/// highest_check: document | selfie | liveness; empty when failed.
+class AtlasVerification extends $pb.GeneratedMessage {
+  factory AtlasVerification({
+    $core.String? id,
+    $core.String? provider,
+    $core.String? externalId,
+    $core.String? status,
+    $core.String? highestCheck,
+    $core.String? reason,
+    $fixnum.Int64? createdAt,
+    $fixnum.Int64? decidedAt,
+    $core.String? hostedFlowUrl,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (provider != null) result.provider = provider;
+    if (externalId != null) result.externalId = externalId;
+    if (status != null) result.status = status;
+    if (highestCheck != null) result.highestCheck = highestCheck;
+    if (reason != null) result.reason = reason;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (decidedAt != null) result.decidedAt = decidedAt;
+    if (hostedFlowUrl != null) result.hostedFlowUrl = hostedFlowUrl;
+    return result;
+  }
+
+  AtlasVerification._();
+
+  factory AtlasVerification.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AtlasVerification.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AtlasVerification', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'provider')
+    ..aOS(3, _omitFieldNames ? '' : 'externalId')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'highestCheck')
+    ..aOS(6, _omitFieldNames ? '' : 'reason')
+    ..aInt64(7, _omitFieldNames ? '' : 'createdAt')
+    ..aInt64(8, _omitFieldNames ? '' : 'decidedAt')
+    ..aOS(9, _omitFieldNames ? '' : 'hostedFlowUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AtlasVerification clone() => AtlasVerification()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AtlasVerification copyWith(void Function(AtlasVerification) updates) => super.copyWith((message) => updates(message as AtlasVerification)) as AtlasVerification;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AtlasVerification create() => AtlasVerification._();
+  @$core.override
+  AtlasVerification createEmptyInstance() => create();
+  static $pb.PbList<AtlasVerification> createRepeated() => $pb.PbList<AtlasVerification>();
+  @$core.pragma('dart2js:noInline')
+  static AtlasVerification getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AtlasVerification>(create);
+  static AtlasVerification? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get provider => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set provider($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasProvider() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProvider() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get externalId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set externalId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExternalId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExternalId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get highestCheck => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set highestCheck($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasHighestCheck() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearHighestCheck() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get reason => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set reason($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReason() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReason() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get createdAt => $_getI64(6);
+  @$pb.TagNumber(7)
+  set createdAt($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCreatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreatedAt() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get decidedAt => $_getI64(7);
+  @$pb.TagNumber(8)
+  set decidedAt($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasDecidedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDecidedAt() => $_clearField(8);
+
+  /// Provider's hosted-flow URL — only populated on StartVerification.
+  @$pb.TagNumber(9)
+  $core.String get hostedFlowUrl => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set hostedFlowUrl($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasHostedFlowUrl() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearHostedFlowUrl() => $_clearField(9);
+}
+
+class StartVerificationRequest extends $pb.GeneratedMessage {
+  factory StartVerificationRequest() => create();
+
+  StartVerificationRequest._();
+
+  factory StartVerificationRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory StartVerificationRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartVerificationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StartVerificationRequest clone() => StartVerificationRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StartVerificationRequest copyWith(void Function(StartVerificationRequest) updates) => super.copyWith((message) => updates(message as StartVerificationRequest)) as StartVerificationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StartVerificationRequest create() => StartVerificationRequest._();
+  @$core.override
+  StartVerificationRequest createEmptyInstance() => create();
+  static $pb.PbList<StartVerificationRequest> createRepeated() => $pb.PbList<StartVerificationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static StartVerificationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartVerificationRequest>(create);
+  static StartVerificationRequest? _defaultInstance;
+}
+
+class StartVerificationResponse extends $pb.GeneratedMessage {
+  factory StartVerificationResponse({
+    AtlasVerification? verification,
+  }) {
+    final result = create();
+    if (verification != null) result.verification = verification;
+    return result;
+  }
+
+  StartVerificationResponse._();
+
+  factory StartVerificationResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory StartVerificationResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartVerificationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<AtlasVerification>(1, _omitFieldNames ? '' : 'verification', subBuilder: AtlasVerification.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StartVerificationResponse clone() => StartVerificationResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StartVerificationResponse copyWith(void Function(StartVerificationResponse) updates) => super.copyWith((message) => updates(message as StartVerificationResponse)) as StartVerificationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StartVerificationResponse create() => StartVerificationResponse._();
+  @$core.override
+  StartVerificationResponse createEmptyInstance() => create();
+  static $pb.PbList<StartVerificationResponse> createRepeated() => $pb.PbList<StartVerificationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static StartVerificationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartVerificationResponse>(create);
+  static StartVerificationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AtlasVerification get verification => $_getN(0);
+  @$pb.TagNumber(1)
+  set verification(AtlasVerification value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasVerification() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVerification() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AtlasVerification ensureVerification() => $_ensure(0);
+}
+
+class GetLatestVerificationRequest extends $pb.GeneratedMessage {
+  factory GetLatestVerificationRequest() => create();
+
+  GetLatestVerificationRequest._();
+
+  factory GetLatestVerificationRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetLatestVerificationRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLatestVerificationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLatestVerificationRequest clone() => GetLatestVerificationRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLatestVerificationRequest copyWith(void Function(GetLatestVerificationRequest) updates) => super.copyWith((message) => updates(message as GetLatestVerificationRequest)) as GetLatestVerificationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLatestVerificationRequest create() => GetLatestVerificationRequest._();
+  @$core.override
+  GetLatestVerificationRequest createEmptyInstance() => create();
+  static $pb.PbList<GetLatestVerificationRequest> createRepeated() => $pb.PbList<GetLatestVerificationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetLatestVerificationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestVerificationRequest>(create);
+  static GetLatestVerificationRequest? _defaultInstance;
+}
+
+class GetLatestVerificationResponse extends $pb.GeneratedMessage {
+  factory GetLatestVerificationResponse({
+    AtlasVerification? verification,
+  }) {
+    final result = create();
+    if (verification != null) result.verification = verification;
+    return result;
+  }
+
+  GetLatestVerificationResponse._();
+
+  factory GetLatestVerificationResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetLatestVerificationResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLatestVerificationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<AtlasVerification>(1, _omitFieldNames ? '' : 'verification', subBuilder: AtlasVerification.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLatestVerificationResponse clone() => GetLatestVerificationResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLatestVerificationResponse copyWith(void Function(GetLatestVerificationResponse) updates) => super.copyWith((message) => updates(message as GetLatestVerificationResponse)) as GetLatestVerificationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLatestVerificationResponse create() => GetLatestVerificationResponse._();
+  @$core.override
+  GetLatestVerificationResponse createEmptyInstance() => create();
+  static $pb.PbList<GetLatestVerificationResponse> createRepeated() => $pb.PbList<GetLatestVerificationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetLatestVerificationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestVerificationResponse>(create);
+  static GetLatestVerificationResponse? _defaultInstance;
+
+  /// Empty (id == "") = lifter has not yet started a verification.
+  @$pb.TagNumber(1)
+  AtlasVerification get verification => $_getN(0);
+  @$pb.TagNumber(1)
+  set verification(AtlasVerification value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasVerification() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVerification() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AtlasVerification ensureVerification() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

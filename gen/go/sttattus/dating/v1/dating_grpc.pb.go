@@ -19,13 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	DatingService_GetProfile_FullMethodName      = "/sttattus.dating.v1.DatingService/GetProfile"
-	DatingService_UpdateProfile_FullMethodName   = "/sttattus.dating.v1.DatingService/UpdateProfile"
-	DatingService_StreamDiscovery_FullMethodName = "/sttattus.dating.v1.DatingService/StreamDiscovery"
-	DatingService_Swipe_FullMethodName           = "/sttattus.dating.v1.DatingService/Swipe"
-	DatingService_ListMatches_FullMethodName     = "/sttattus.dating.v1.DatingService/ListMatches"
-	DatingService_StreamMessages_FullMethodName  = "/sttattus.dating.v1.DatingService/StreamMessages"
-	DatingService_SendMessage_FullMethodName     = "/sttattus.dating.v1.DatingService/SendMessage"
+	DatingService_GetProfile_FullMethodName            = "/sttattus.dating.v1.DatingService/GetProfile"
+	DatingService_UpdateProfile_FullMethodName         = "/sttattus.dating.v1.DatingService/UpdateProfile"
+	DatingService_StreamDiscovery_FullMethodName       = "/sttattus.dating.v1.DatingService/StreamDiscovery"
+	DatingService_Swipe_FullMethodName                 = "/sttattus.dating.v1.DatingService/Swipe"
+	DatingService_ListMatches_FullMethodName           = "/sttattus.dating.v1.DatingService/ListMatches"
+	DatingService_StreamMessages_FullMethodName        = "/sttattus.dating.v1.DatingService/StreamMessages"
+	DatingService_SendMessage_FullMethodName           = "/sttattus.dating.v1.DatingService/SendMessage"
+	DatingService_StartVerification_FullMethodName     = "/sttattus.dating.v1.DatingService/StartVerification"
+	DatingService_GetLatestVerification_FullMethodName = "/sttattus.dating.v1.DatingService/GetLatestVerification"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -39,6 +41,8 @@ type DatingServiceClient interface {
 	ListMatches(ctx context.Context, in *ListMatchesRequest, opts ...grpc.CallOption) (*ListMatchesResponse, error)
 	StreamMessages(ctx context.Context, in *StreamMessagesRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamMessagesResponse], error)
 	SendMessage(ctx context.Context, in *SendMessageRequest, opts ...grpc.CallOption) (*SendMessageResponse, error)
+	StartVerification(ctx context.Context, in *StartVerificationRequest, opts ...grpc.CallOption) (*StartVerificationResponse, error)
+	GetLatestVerification(ctx context.Context, in *GetLatestVerificationRequest, opts ...grpc.CallOption) (*GetLatestVerificationResponse, error)
 }
 
 type datingServiceClient struct {
@@ -137,6 +141,26 @@ func (c *datingServiceClient) SendMessage(ctx context.Context, in *SendMessageRe
 	return out, nil
 }
 
+func (c *datingServiceClient) StartVerification(ctx context.Context, in *StartVerificationRequest, opts ...grpc.CallOption) (*StartVerificationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StartVerificationResponse)
+	err := c.cc.Invoke(ctx, DatingService_StartVerification_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) GetLatestVerification(ctx context.Context, in *GetLatestVerificationRequest, opts ...grpc.CallOption) (*GetLatestVerificationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLatestVerificationResponse)
+	err := c.cc.Invoke(ctx, DatingService_GetLatestVerification_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatingServiceServer is the server API for DatingService service.
 // All implementations must embed UnimplementedDatingServiceServer
 // for forward compatibility.
@@ -148,6 +172,8 @@ type DatingServiceServer interface {
 	ListMatches(context.Context, *ListMatchesRequest) (*ListMatchesResponse, error)
 	StreamMessages(*StreamMessagesRequest, grpc.ServerStreamingServer[StreamMessagesResponse]) error
 	SendMessage(context.Context, *SendMessageRequest) (*SendMessageResponse, error)
+	StartVerification(context.Context, *StartVerificationRequest) (*StartVerificationResponse, error)
+	GetLatestVerification(context.Context, *GetLatestVerificationRequest) (*GetLatestVerificationResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -178,6 +204,12 @@ func (UnimplementedDatingServiceServer) StreamMessages(*StreamMessagesRequest, g
 }
 func (UnimplementedDatingServiceServer) SendMessage(context.Context, *SendMessageRequest) (*SendMessageResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SendMessage not implemented")
+}
+func (UnimplementedDatingServiceServer) StartVerification(context.Context, *StartVerificationRequest) (*StartVerificationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StartVerification not implemented")
+}
+func (UnimplementedDatingServiceServer) GetLatestVerification(context.Context, *GetLatestVerificationRequest) (*GetLatestVerificationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLatestVerification not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -312,6 +344,42 @@ func _DatingService_SendMessage_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_StartVerification_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StartVerificationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).StartVerification(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_StartVerification_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).StartVerification(ctx, req.(*StartVerificationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_GetLatestVerification_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLatestVerificationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).GetLatestVerification(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_GetLatestVerification_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).GetLatestVerification(ctx, req.(*GetLatestVerificationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatingService_ServiceDesc is the grpc.ServiceDesc for DatingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -338,6 +406,14 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SendMessage",
 			Handler:    _DatingService_SendMessage_Handler,
+		},
+		{
+			MethodName: "StartVerification",
+			Handler:    _DatingService_StartVerification_Handler,
+		},
+		{
+			MethodName: "GetLatestVerification",
+			Handler:    _DatingService_GetLatestVerification_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

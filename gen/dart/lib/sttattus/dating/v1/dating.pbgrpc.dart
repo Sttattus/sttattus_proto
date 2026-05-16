@@ -60,6 +60,14 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$sendMessage, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.StartVerificationResponse> startVerification($0.StartVerificationRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$startVerification, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetLatestVerificationResponse> getLatestVerification($0.GetLatestVerificationRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getLatestVerification, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getProfile = $grpc.ClientMethod<$0.GetProfileRequest, $0.GetProfileResponse>(
@@ -90,6 +98,14 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/SendMessage',
       ($0.SendMessageRequest value) => value.writeToBuffer(),
       $0.SendMessageResponse.fromBuffer);
+  static final _$startVerification = $grpc.ClientMethod<$0.StartVerificationRequest, $0.StartVerificationResponse>(
+      '/sttattus.dating.v1.DatingService/StartVerification',
+      ($0.StartVerificationRequest value) => value.writeToBuffer(),
+      $0.StartVerificationResponse.fromBuffer);
+  static final _$getLatestVerification = $grpc.ClientMethod<$0.GetLatestVerificationRequest, $0.GetLatestVerificationResponse>(
+      '/sttattus.dating.v1.DatingService/GetLatestVerification',
+      ($0.GetLatestVerificationRequest value) => value.writeToBuffer(),
+      $0.GetLatestVerificationResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dating.v1.DatingService')
@@ -146,6 +162,20 @@ abstract class DatingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SendMessageRequest.fromBuffer(value),
         ($0.SendMessageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.StartVerificationRequest, $0.StartVerificationResponse>(
+        'StartVerification',
+        startVerification_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.StartVerificationRequest.fromBuffer(value),
+        ($0.StartVerificationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetLatestVerificationRequest, $0.GetLatestVerificationResponse>(
+        'GetLatestVerification',
+        getLatestVerification_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetLatestVerificationRequest.fromBuffer(value),
+        ($0.GetLatestVerificationResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProfileRequest> $request) async {
@@ -189,5 +219,17 @@ abstract class DatingServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.SendMessageResponse> sendMessage($grpc.ServiceCall call, $0.SendMessageRequest request);
+
+  $async.Future<$0.StartVerificationResponse> startVerification_Pre($grpc.ServiceCall $call, $async.Future<$0.StartVerificationRequest> $request) async {
+    return startVerification($call, await $request);
+  }
+
+  $async.Future<$0.StartVerificationResponse> startVerification($grpc.ServiceCall call, $0.StartVerificationRequest request);
+
+  $async.Future<$0.GetLatestVerificationResponse> getLatestVerification_Pre($grpc.ServiceCall $call, $async.Future<$0.GetLatestVerificationRequest> $request) async {
+    return getLatestVerification($call, await $request);
+  }
+
+  $async.Future<$0.GetLatestVerificationResponse> getLatestVerification($grpc.ServiceCall call, $0.GetLatestVerificationRequest request);
 
 }

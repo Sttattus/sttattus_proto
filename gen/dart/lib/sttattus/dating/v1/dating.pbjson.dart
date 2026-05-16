@@ -338,3 +338,72 @@ final $typed_data.Uint8List sendMessageResponseDescriptor = $convert.base64Decod
     'ChNTZW5kTWVzc2FnZVJlc3BvbnNlEjUKB21lc3NhZ2UYASABKAsyGy5zdHRhdHR1cy5kYXRpbm'
     'cudjEuTWVzc2FnZVIHbWVzc2FnZQ==');
 
+@$core.Deprecated('Use atlasVerificationDescriptor instead')
+const AtlasVerification$json = {
+  '1': 'AtlasVerification',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'provider', '3': 2, '4': 1, '5': 9, '10': 'provider'},
+    {'1': 'external_id', '3': 3, '4': 1, '5': 9, '10': 'externalId'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'highest_check', '3': 5, '4': 1, '5': 9, '10': 'highestCheck'},
+    {'1': 'reason', '3': 6, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'created_at', '3': 7, '4': 1, '5': 3, '10': 'createdAt'},
+    {'1': 'decided_at', '3': 8, '4': 1, '5': 3, '10': 'decidedAt'},
+    {'1': 'hosted_flow_url', '3': 9, '4': 1, '5': 9, '10': 'hostedFlowUrl'},
+  ],
+};
+
+/// Descriptor for `AtlasVerification`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasVerificationDescriptor = $convert.base64Decode(
+    'ChFBdGxhc1ZlcmlmaWNhdGlvbhIOCgJpZBgBIAEoCVICaWQSGgoIcHJvdmlkZXIYAiABKAlSCH'
+    'Byb3ZpZGVyEh8KC2V4dGVybmFsX2lkGAMgASgJUgpleHRlcm5hbElkEhYKBnN0YXR1cxgEIAEo'
+    'CVIGc3RhdHVzEiMKDWhpZ2hlc3RfY2hlY2sYBSABKAlSDGhpZ2hlc3RDaGVjaxIWCgZyZWFzb2'
+    '4YBiABKAlSBnJlYXNvbhIdCgpjcmVhdGVkX2F0GAcgASgDUgljcmVhdGVkQXQSHQoKZGVjaWRl'
+    'ZF9hdBgIIAEoA1IJZGVjaWRlZEF0EiYKD2hvc3RlZF9mbG93X3VybBgJIAEoCVINaG9zdGVkRm'
+    'xvd1VybA==');
+
+@$core.Deprecated('Use startVerificationRequestDescriptor instead')
+const StartVerificationRequest$json = {
+  '1': 'StartVerificationRequest',
+};
+
+/// Descriptor for `StartVerificationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startVerificationRequestDescriptor = $convert.base64Decode(
+    'ChhTdGFydFZlcmlmaWNhdGlvblJlcXVlc3Q=');
+
+@$core.Deprecated('Use startVerificationResponseDescriptor instead')
+const StartVerificationResponse$json = {
+  '1': 'StartVerificationResponse',
+  '2': [
+    {'1': 'verification', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.AtlasVerification', '10': 'verification'},
+  ],
+};
+
+/// Descriptor for `StartVerificationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startVerificationResponseDescriptor = $convert.base64Decode(
+    'ChlTdGFydFZlcmlmaWNhdGlvblJlc3BvbnNlEkkKDHZlcmlmaWNhdGlvbhgBIAEoCzIlLnN0dG'
+    'F0dHVzLmRhdGluZy52MS5BdGxhc1ZlcmlmaWNhdGlvblIMdmVyaWZpY2F0aW9u');
+
+@$core.Deprecated('Use getLatestVerificationRequestDescriptor instead')
+const GetLatestVerificationRequest$json = {
+  '1': 'GetLatestVerificationRequest',
+};
+
+/// Descriptor for `GetLatestVerificationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLatestVerificationRequestDescriptor = $convert.base64Decode(
+    'ChxHZXRMYXRlc3RWZXJpZmljYXRpb25SZXF1ZXN0');
+
+@$core.Deprecated('Use getLatestVerificationResponseDescriptor instead')
+const GetLatestVerificationResponse$json = {
+  '1': 'GetLatestVerificationResponse',
+  '2': [
+    {'1': 'verification', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.AtlasVerification', '10': 'verification'},
+  ],
+};
+
+/// Descriptor for `GetLatestVerificationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLatestVerificationResponseDescriptor = $convert.base64Decode(
+    'Ch1HZXRMYXRlc3RWZXJpZmljYXRpb25SZXNwb25zZRJJCgx2ZXJpZmljYXRpb24YASABKAsyJS'
+    '5zdHRhdHR1cy5kYXRpbmcudjEuQXRsYXNWZXJpZmljYXRpb25SDHZlcmlmaWNhdGlvbg==');
+

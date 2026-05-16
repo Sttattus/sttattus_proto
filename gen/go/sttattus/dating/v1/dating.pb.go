@@ -1213,6 +1213,279 @@ func (x *SendMessageResponse) GetMessage() *Message {
 	return nil
 }
 
+// AtlasVerification mirrors one row of atlas_verifications.
+// status: pending | approved | rejected | expired.
+// highest_check: document | selfie | liveness; empty when failed.
+type AtlasVerification struct {
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Provider     string                 `protobuf:"bytes,2,opt,name=provider,proto3" json:"provider,omitempty"` // persona | onfido | veriff | manual
+	ExternalId   string                 `protobuf:"bytes,3,opt,name=external_id,json=externalId,proto3" json:"external_id,omitempty"`
+	Status       string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	HighestCheck string                 `protobuf:"bytes,5,opt,name=highest_check,json=highestCheck,proto3" json:"highest_check,omitempty"`
+	Reason       string                 `protobuf:"bytes,6,opt,name=reason,proto3" json:"reason,omitempty"`
+	CreatedAt    int64                  `protobuf:"varint,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"` // unix seconds
+	DecidedAt    int64                  `protobuf:"varint,8,opt,name=decided_at,json=decidedAt,proto3" json:"decided_at,omitempty"` // unix seconds, 0 when undecided
+	// Provider's hosted-flow URL — only populated on StartVerification.
+	HostedFlowUrl string `protobuf:"bytes,9,opt,name=hosted_flow_url,json=hostedFlowUrl,proto3" json:"hosted_flow_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AtlasVerification) Reset() {
+	*x = AtlasVerification{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AtlasVerification) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AtlasVerification) ProtoMessage() {}
+
+func (x *AtlasVerification) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AtlasVerification.ProtoReflect.Descriptor instead.
+func (*AtlasVerification) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *AtlasVerification) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AtlasVerification) GetProvider() string {
+	if x != nil {
+		return x.Provider
+	}
+	return ""
+}
+
+func (x *AtlasVerification) GetExternalId() string {
+	if x != nil {
+		return x.ExternalId
+	}
+	return ""
+}
+
+func (x *AtlasVerification) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *AtlasVerification) GetHighestCheck() string {
+	if x != nil {
+		return x.HighestCheck
+	}
+	return ""
+}
+
+func (x *AtlasVerification) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *AtlasVerification) GetCreatedAt() int64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+func (x *AtlasVerification) GetDecidedAt() int64 {
+	if x != nil {
+		return x.DecidedAt
+	}
+	return 0
+}
+
+func (x *AtlasVerification) GetHostedFlowUrl() string {
+	if x != nil {
+		return x.HostedFlowUrl
+	}
+	return ""
+}
+
+type StartVerificationRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StartVerificationRequest) Reset() {
+	*x = StartVerificationRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StartVerificationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartVerificationRequest) ProtoMessage() {}
+
+func (x *StartVerificationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartVerificationRequest.ProtoReflect.Descriptor instead.
+func (*StartVerificationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{20}
+}
+
+type StartVerificationResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Verification  *AtlasVerification     `protobuf:"bytes,1,opt,name=verification,proto3" json:"verification,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StartVerificationResponse) Reset() {
+	*x = StartVerificationResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StartVerificationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartVerificationResponse) ProtoMessage() {}
+
+func (x *StartVerificationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartVerificationResponse.ProtoReflect.Descriptor instead.
+func (*StartVerificationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *StartVerificationResponse) GetVerification() *AtlasVerification {
+	if x != nil {
+		return x.Verification
+	}
+	return nil
+}
+
+type GetLatestVerificationRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLatestVerificationRequest) Reset() {
+	*x = GetLatestVerificationRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLatestVerificationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLatestVerificationRequest) ProtoMessage() {}
+
+func (x *GetLatestVerificationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLatestVerificationRequest.ProtoReflect.Descriptor instead.
+func (*GetLatestVerificationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{22}
+}
+
+type GetLatestVerificationResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Empty (id == "") = lifter has not yet started a verification.
+	Verification  *AtlasVerification `protobuf:"bytes,1,opt,name=verification,proto3" json:"verification,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLatestVerificationResponse) Reset() {
+	*x = GetLatestVerificationResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLatestVerificationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLatestVerificationResponse) ProtoMessage() {}
+
+func (x *GetLatestVerificationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLatestVerificationResponse.ProtoReflect.Descriptor instead.
+func (*GetLatestVerificationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *GetLatestVerificationResponse) GetVerification() *AtlasVerification {
+	if x != nil {
+		return x.Verification
+	}
+	return nil
+}
+
 var File_sttattus_dating_v1_dating_proto protoreflect.FileDescriptor
 
 const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
@@ -1294,7 +1567,26 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\bmatch_id\x18\x01 \x01(\tR\amatchId\x12\x12\n" +
 	"\x04body\x18\x02 \x01(\tR\x04body\"L\n" +
 	"\x13SendMessageResponse\x125\n" +
-	"\amessage\x18\x01 \x01(\v2\x1b.sttattus.dating.v1.MessageR\amessage*\x80\x01\n" +
+	"\amessage\x18\x01 \x01(\v2\x1b.sttattus.dating.v1.MessageR\amessage\"\x9b\x02\n" +
+	"\x11AtlasVerification\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
+	"\bprovider\x18\x02 \x01(\tR\bprovider\x12\x1f\n" +
+	"\vexternal_id\x18\x03 \x01(\tR\n" +
+	"externalId\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12#\n" +
+	"\rhighest_check\x18\x05 \x01(\tR\fhighestCheck\x12\x16\n" +
+	"\x06reason\x18\x06 \x01(\tR\x06reason\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\a \x01(\x03R\tcreatedAt\x12\x1d\n" +
+	"\n" +
+	"decided_at\x18\b \x01(\x03R\tdecidedAt\x12&\n" +
+	"\x0fhosted_flow_url\x18\t \x01(\tR\rhostedFlowUrl\"\x1a\n" +
+	"\x18StartVerificationRequest\"f\n" +
+	"\x19StartVerificationResponse\x12I\n" +
+	"\fverification\x18\x01 \x01(\v2%.sttattus.dating.v1.AtlasVerificationR\fverification\"\x1e\n" +
+	"\x1cGetLatestVerificationRequest\"j\n" +
+	"\x1dGetLatestVerificationResponse\x12I\n" +
+	"\fverification\x18\x01 \x01(\v2%.sttattus.dating.v1.AtlasVerificationR\fverification*\x80\x01\n" +
 	"\x0eSwipeDirection\x12\x1f\n" +
 	"\x1bSWIPE_DIRECTION_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14SWIPE_DIRECTION_PASS\x10\x01\x12\x18\n" +
@@ -1305,7 +1597,7 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x14DATING_INTENT_CASUAL\x10\x01\x12\x1e\n" +
 	"\x1aDATING_INTENT_RELATIONSHIP\x10\x02\x12\x19\n" +
 	"\x15DATING_INTENT_FRIENDS\x10\x03\x12\x1c\n" +
-	"\x18DATING_INTENT_NETWORKING\x10\x042\xb9\x05\n" +
+	"\x18DATING_INTENT_NETWORKING\x10\x042\xa9\a\n" +
 	"\rDatingService\x12[\n" +
 	"\n" +
 	"GetProfile\x12%.sttattus.dating.v1.GetProfileRequest\x1a&.sttattus.dating.v1.GetProfileResponse\x12d\n" +
@@ -1314,7 +1606,9 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x05Swipe\x12 .sttattus.dating.v1.SwipeRequest\x1a!.sttattus.dating.v1.SwipeResponse\x12^\n" +
 	"\vListMatches\x12&.sttattus.dating.v1.ListMatchesRequest\x1a'.sttattus.dating.v1.ListMatchesResponse\x12i\n" +
 	"\x0eStreamMessages\x12).sttattus.dating.v1.StreamMessagesRequest\x1a*.sttattus.dating.v1.StreamMessagesResponse0\x01\x12^\n" +
-	"\vSendMessage\x12&.sttattus.dating.v1.SendMessageRequest\x1a'.sttattus.dating.v1.SendMessageResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
+	"\vSendMessage\x12&.sttattus.dating.v1.SendMessageRequest\x1a'.sttattus.dating.v1.SendMessageResponse\x12p\n" +
+	"\x11StartVerification\x12,.sttattus.dating.v1.StartVerificationRequest\x1a-.sttattus.dating.v1.StartVerificationResponse\x12|\n" +
+	"\x15GetLatestVerification\x120.sttattus.dating.v1.GetLatestVerificationRequest\x1a1.sttattus.dating.v1.GetLatestVerificationResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
 
 var (
 	file_sttattus_dating_v1_dating_proto_rawDescOnce sync.Once
@@ -1329,31 +1623,36 @@ func file_sttattus_dating_v1_dating_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_dating_v1_dating_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
+var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
 var file_sttattus_dating_v1_dating_proto_goTypes = []any{
-	(SwipeDirection)(0),             // 0: sttattus.dating.v1.SwipeDirection
-	(DatingIntent)(0),               // 1: sttattus.dating.v1.DatingIntent
-	(*Vec3)(nil),                    // 2: sttattus.dating.v1.Vec3
-	(*DatingProfile)(nil),           // 3: sttattus.dating.v1.DatingProfile
-	(*Candidate)(nil),               // 4: sttattus.dating.v1.Candidate
-	(*Match)(nil),                   // 5: sttattus.dating.v1.Match
-	(*Message)(nil),                 // 6: sttattus.dating.v1.Message
-	(*GetProfileRequest)(nil),       // 7: sttattus.dating.v1.GetProfileRequest
-	(*GetProfileResponse)(nil),      // 8: sttattus.dating.v1.GetProfileResponse
-	(*UpdateProfileRequest)(nil),    // 9: sttattus.dating.v1.UpdateProfileRequest
-	(*UpdateProfileResponse)(nil),   // 10: sttattus.dating.v1.UpdateProfileResponse
-	(*StreamDiscoveryRequest)(nil),  // 11: sttattus.dating.v1.StreamDiscoveryRequest
-	(*StreamDiscoveryResponse)(nil), // 12: sttattus.dating.v1.StreamDiscoveryResponse
-	(*SwipeRequest)(nil),            // 13: sttattus.dating.v1.SwipeRequest
-	(*SwipeResponse)(nil),           // 14: sttattus.dating.v1.SwipeResponse
-	(*ListMatchesRequest)(nil),      // 15: sttattus.dating.v1.ListMatchesRequest
-	(*ListMatchesResponse)(nil),     // 16: sttattus.dating.v1.ListMatchesResponse
-	(*StreamMessagesRequest)(nil),   // 17: sttattus.dating.v1.StreamMessagesRequest
-	(*StreamMessagesResponse)(nil),  // 18: sttattus.dating.v1.StreamMessagesResponse
-	(*SendMessageRequest)(nil),      // 19: sttattus.dating.v1.SendMessageRequest
-	(*SendMessageResponse)(nil),     // 20: sttattus.dating.v1.SendMessageResponse
-	(*v1.PageRequest)(nil),          // 21: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),         // 22: sttattus.common.v1.PageResponse
+	(SwipeDirection)(0),                   // 0: sttattus.dating.v1.SwipeDirection
+	(DatingIntent)(0),                     // 1: sttattus.dating.v1.DatingIntent
+	(*Vec3)(nil),                          // 2: sttattus.dating.v1.Vec3
+	(*DatingProfile)(nil),                 // 3: sttattus.dating.v1.DatingProfile
+	(*Candidate)(nil),                     // 4: sttattus.dating.v1.Candidate
+	(*Match)(nil),                         // 5: sttattus.dating.v1.Match
+	(*Message)(nil),                       // 6: sttattus.dating.v1.Message
+	(*GetProfileRequest)(nil),             // 7: sttattus.dating.v1.GetProfileRequest
+	(*GetProfileResponse)(nil),            // 8: sttattus.dating.v1.GetProfileResponse
+	(*UpdateProfileRequest)(nil),          // 9: sttattus.dating.v1.UpdateProfileRequest
+	(*UpdateProfileResponse)(nil),         // 10: sttattus.dating.v1.UpdateProfileResponse
+	(*StreamDiscoveryRequest)(nil),        // 11: sttattus.dating.v1.StreamDiscoveryRequest
+	(*StreamDiscoveryResponse)(nil),       // 12: sttattus.dating.v1.StreamDiscoveryResponse
+	(*SwipeRequest)(nil),                  // 13: sttattus.dating.v1.SwipeRequest
+	(*SwipeResponse)(nil),                 // 14: sttattus.dating.v1.SwipeResponse
+	(*ListMatchesRequest)(nil),            // 15: sttattus.dating.v1.ListMatchesRequest
+	(*ListMatchesResponse)(nil),           // 16: sttattus.dating.v1.ListMatchesResponse
+	(*StreamMessagesRequest)(nil),         // 17: sttattus.dating.v1.StreamMessagesRequest
+	(*StreamMessagesResponse)(nil),        // 18: sttattus.dating.v1.StreamMessagesResponse
+	(*SendMessageRequest)(nil),            // 19: sttattus.dating.v1.SendMessageRequest
+	(*SendMessageResponse)(nil),           // 20: sttattus.dating.v1.SendMessageResponse
+	(*AtlasVerification)(nil),             // 21: sttattus.dating.v1.AtlasVerification
+	(*StartVerificationRequest)(nil),      // 22: sttattus.dating.v1.StartVerificationRequest
+	(*StartVerificationResponse)(nil),     // 23: sttattus.dating.v1.StartVerificationResponse
+	(*GetLatestVerificationRequest)(nil),  // 24: sttattus.dating.v1.GetLatestVerificationRequest
+	(*GetLatestVerificationResponse)(nil), // 25: sttattus.dating.v1.GetLatestVerificationResponse
+	(*v1.PageRequest)(nil),                // 26: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),               // 27: sttattus.common.v1.PageResponse
 }
 var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	1,  // 0: sttattus.dating.v1.DatingProfile.intent:type_name -> sttattus.dating.v1.DatingIntent
@@ -1366,30 +1665,36 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	4,  // 7: sttattus.dating.v1.StreamDiscoveryResponse.candidate:type_name -> sttattus.dating.v1.Candidate
 	0,  // 8: sttattus.dating.v1.SwipeRequest.direction:type_name -> sttattus.dating.v1.SwipeDirection
 	5,  // 9: sttattus.dating.v1.SwipeResponse.match:type_name -> sttattus.dating.v1.Match
-	21, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	26, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	5,  // 11: sttattus.dating.v1.ListMatchesResponse.matches:type_name -> sttattus.dating.v1.Match
-	22, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	27, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
 	6,  // 13: sttattus.dating.v1.StreamMessagesResponse.message:type_name -> sttattus.dating.v1.Message
 	6,  // 14: sttattus.dating.v1.SendMessageResponse.message:type_name -> sttattus.dating.v1.Message
-	7,  // 15: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
-	9,  // 16: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
-	11, // 17: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
-	13, // 18: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
-	15, // 19: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
-	17, // 20: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
-	19, // 21: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
-	8,  // 22: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
-	10, // 23: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
-	12, // 24: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
-	14, // 25: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
-	16, // 26: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
-	18, // 27: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
-	20, // 28: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
-	22, // [22:29] is the sub-list for method output_type
-	15, // [15:22] is the sub-list for method input_type
-	15, // [15:15] is the sub-list for extension type_name
-	15, // [15:15] is the sub-list for extension extendee
-	0,  // [0:15] is the sub-list for field type_name
+	21, // 15: sttattus.dating.v1.StartVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
+	21, // 16: sttattus.dating.v1.GetLatestVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
+	7,  // 17: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
+	9,  // 18: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
+	11, // 19: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
+	13, // 20: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
+	15, // 21: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
+	17, // 22: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
+	19, // 23: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
+	22, // 24: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
+	24, // 25: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
+	8,  // 26: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
+	10, // 27: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
+	12, // 28: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
+	14, // 29: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
+	16, // 30: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
+	18, // 31: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
+	20, // 32: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
+	23, // 33: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
+	25, // 34: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
+	26, // [26:35] is the sub-list for method output_type
+	17, // [17:26] is the sub-list for method input_type
+	17, // [17:17] is the sub-list for extension type_name
+	17, // [17:17] is the sub-list for extension extendee
+	0,  // [0:17] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dating_v1_dating_proto_init() }
@@ -1403,7 +1708,7 @@ func file_sttattus_dating_v1_dating_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_dating_v1_dating_proto_rawDesc), len(file_sttattus_dating_v1_dating_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   19,
+			NumMessages:   24,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

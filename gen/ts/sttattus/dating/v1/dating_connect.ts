@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetProfileRequest, GetProfileResponse, ListMatchesRequest, ListMatchesResponse, SendMessageRequest, SendMessageResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UpdateProfileRequest, UpdateProfileResponse } from "./dating_pb.js";
+import { GetLatestVerificationRequest, GetLatestVerificationResponse, GetProfileRequest, GetProfileResponse, ListMatchesRequest, ListMatchesResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UpdateProfileRequest, UpdateProfileResponse } from "./dating_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -73,6 +73,24 @@ export const DatingService = {
       name: "SendMessage",
       I: SendMessageRequest,
       O: SendMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.StartVerification
+     */
+    startVerification: {
+      name: "StartVerification",
+      I: StartVerificationRequest,
+      O: StartVerificationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.GetLatestVerification
+     */
+    getLatestVerification: {
+      name: "GetLatestVerification",
+      I: GetLatestVerificationRequest,
+      O: GetLatestVerificationResponse,
       kind: MethodKind.Unary,
     },
   }
