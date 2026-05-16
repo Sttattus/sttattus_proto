@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AttachVisitToTripRequest, AttachVisitToTripResponse, CreateMilestoneRequest, CreateMilestoneResponse, CreateTripRequest, CreateTripResponse, DeleteTripRequest, DeleteTripResponse, GetNomadStatsRequest, GetNomadStatsResponse, GetTripRequest, GetTripResponse, ListConciergeMessagesRequest, ListConciergeMessagesResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse, ListMyTripsRequest, ListMyTripsResponse, ListMyVerificationSignalsRequest, ListMyVerificationSignalsResponse, ListVisitedCountriesRequest, ListVisitedCountriesResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, UpdateTripRequest, UpdateTripResponse } from "./travel_pb.js";
+import { AttachVisitToTripRequest, AttachVisitToTripResponse, CreateMilestoneRequest, CreateMilestoneResponse, CreateTripRequest, CreateTripResponse, DeleteTripRequest, DeleteTripResponse, GetNomadStatsRequest, GetNomadStatsResponse, GetTripRequest, GetTripResponse, ListConciergeMessagesRequest, ListConciergeMessagesResponse, ListCountryVisibilityRequest, ListCountryVisibilityResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse, ListMyTripsRequest, ListMyTripsResponse, ListMyVerificationSignalsRequest, ListMyVerificationSignalsResponse, ListVisitedCountriesRequest, ListVisitedCountriesResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, SetMilestoneVisibilityRequest, SetMilestoneVisibilityResponse, UpdateTripRequest, UpdateTripResponse, UpsertCountryVisibilityRequest, UpsertCountryVisibilityResponse } from "./travel_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -144,6 +144,35 @@ export const TravelService = {
       name: "ListMyVerificationSignals",
       I: ListMyVerificationSignalsRequest,
       O: ListMyVerificationSignalsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * N10.8 — privacy granularity.
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.ListCountryVisibility
+     */
+    listCountryVisibility: {
+      name: "ListCountryVisibility",
+      I: ListCountryVisibilityRequest,
+      O: ListCountryVisibilityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.UpsertCountryVisibility
+     */
+    upsertCountryVisibility: {
+      name: "UpsertCountryVisibility",
+      I: UpsertCountryVisibilityRequest,
+      O: UpsertCountryVisibilityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.SetMilestoneVisibility
+     */
+    setMilestoneVisibility: {
+      name: "SetMilestoneVisibility",
+      I: SetMilestoneVisibilityRequest,
+      O: SetMilestoneVisibilityResponse,
       kind: MethodKind.Unary,
     },
   }

@@ -33,6 +33,9 @@ const (
 	TravelService_ListConciergeMessages_FullMethodName     = "/sttattus.travel.v1.TravelService/ListConciergeMessages"
 	TravelService_PostConciergeMessage_FullMethodName      = "/sttattus.travel.v1.TravelService/PostConciergeMessage"
 	TravelService_ListMyVerificationSignals_FullMethodName = "/sttattus.travel.v1.TravelService/ListMyVerificationSignals"
+	TravelService_ListCountryVisibility_FullMethodName     = "/sttattus.travel.v1.TravelService/ListCountryVisibility"
+	TravelService_UpsertCountryVisibility_FullMethodName   = "/sttattus.travel.v1.TravelService/UpsertCountryVisibility"
+	TravelService_SetMilestoneVisibility_FullMethodName    = "/sttattus.travel.v1.TravelService/SetMilestoneVisibility"
 )
 
 // TravelServiceClient is the client API for TravelService service.
@@ -57,6 +60,10 @@ type TravelServiceClient interface {
 	PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error)
 	// N10.7 — verification dashboard per milestone.
 	ListMyVerificationSignals(ctx context.Context, in *ListMyVerificationSignalsRequest, opts ...grpc.CallOption) (*ListMyVerificationSignalsResponse, error)
+	// N10.8 — privacy granularity.
+	ListCountryVisibility(ctx context.Context, in *ListCountryVisibilityRequest, opts ...grpc.CallOption) (*ListCountryVisibilityResponse, error)
+	UpsertCountryVisibility(ctx context.Context, in *UpsertCountryVisibilityRequest, opts ...grpc.CallOption) (*UpsertCountryVisibilityResponse, error)
+	SetMilestoneVisibility(ctx context.Context, in *SetMilestoneVisibilityRequest, opts ...grpc.CallOption) (*SetMilestoneVisibilityResponse, error)
 }
 
 type travelServiceClient struct {
@@ -207,6 +214,36 @@ func (c *travelServiceClient) ListMyVerificationSignals(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *travelServiceClient) ListCountryVisibility(ctx context.Context, in *ListCountryVisibilityRequest, opts ...grpc.CallOption) (*ListCountryVisibilityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListCountryVisibilityResponse)
+	err := c.cc.Invoke(ctx, TravelService_ListCountryVisibility_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) UpsertCountryVisibility(ctx context.Context, in *UpsertCountryVisibilityRequest, opts ...grpc.CallOption) (*UpsertCountryVisibilityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertCountryVisibilityResponse)
+	err := c.cc.Invoke(ctx, TravelService_UpsertCountryVisibility_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) SetMilestoneVisibility(ctx context.Context, in *SetMilestoneVisibilityRequest, opts ...grpc.CallOption) (*SetMilestoneVisibilityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetMilestoneVisibilityResponse)
+	err := c.cc.Invoke(ctx, TravelService_SetMilestoneVisibility_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TravelServiceServer is the server API for TravelService service.
 // All implementations must embed UnimplementedTravelServiceServer
 // for forward compatibility.
@@ -229,6 +266,10 @@ type TravelServiceServer interface {
 	PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error)
 	// N10.7 — verification dashboard per milestone.
 	ListMyVerificationSignals(context.Context, *ListMyVerificationSignalsRequest) (*ListMyVerificationSignalsResponse, error)
+	// N10.8 — privacy granularity.
+	ListCountryVisibility(context.Context, *ListCountryVisibilityRequest) (*ListCountryVisibilityResponse, error)
+	UpsertCountryVisibility(context.Context, *UpsertCountryVisibilityRequest) (*UpsertCountryVisibilityResponse, error)
+	SetMilestoneVisibility(context.Context, *SetMilestoneVisibilityRequest) (*SetMilestoneVisibilityResponse, error)
 	mustEmbedUnimplementedTravelServiceServer()
 }
 
@@ -280,6 +321,15 @@ func (UnimplementedTravelServiceServer) PostConciergeMessage(context.Context, *P
 }
 func (UnimplementedTravelServiceServer) ListMyVerificationSignals(context.Context, *ListMyVerificationSignalsRequest) (*ListMyVerificationSignalsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMyVerificationSignals not implemented")
+}
+func (UnimplementedTravelServiceServer) ListCountryVisibility(context.Context, *ListCountryVisibilityRequest) (*ListCountryVisibilityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListCountryVisibility not implemented")
+}
+func (UnimplementedTravelServiceServer) UpsertCountryVisibility(context.Context, *UpsertCountryVisibilityRequest) (*UpsertCountryVisibilityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertCountryVisibility not implemented")
+}
+func (UnimplementedTravelServiceServer) SetMilestoneVisibility(context.Context, *SetMilestoneVisibilityRequest) (*SetMilestoneVisibilityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetMilestoneVisibility not implemented")
 }
 func (UnimplementedTravelServiceServer) mustEmbedUnimplementedTravelServiceServer() {}
 func (UnimplementedTravelServiceServer) testEmbeddedByValue()                       {}
@@ -554,6 +604,60 @@ func _TravelService_ListMyVerificationSignals_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TravelService_ListCountryVisibility_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListCountryVisibilityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).ListCountryVisibility(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_ListCountryVisibility_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).ListCountryVisibility(ctx, req.(*ListCountryVisibilityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_UpsertCountryVisibility_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertCountryVisibilityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).UpsertCountryVisibility(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_UpsertCountryVisibility_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).UpsertCountryVisibility(ctx, req.(*UpsertCountryVisibilityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_SetMilestoneVisibility_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetMilestoneVisibilityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).SetMilestoneVisibility(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_SetMilestoneVisibility_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).SetMilestoneVisibility(ctx, req.(*SetMilestoneVisibilityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // TravelService_ServiceDesc is the grpc.ServiceDesc for TravelService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -616,6 +720,18 @@ var TravelService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListMyVerificationSignals",
 			Handler:    _TravelService_ListMyVerificationSignals_Handler,
+		},
+		{
+			MethodName: "ListCountryVisibility",
+			Handler:    _TravelService_ListCountryVisibility_Handler,
+		},
+		{
+			MethodName: "UpsertCountryVisibility",
+			Handler:    _TravelService_UpsertCountryVisibility_Handler,
+		},
+		{
+			MethodName: "SetMilestoneVisibility",
+			Handler:    _TravelService_SetMilestoneVisibility_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

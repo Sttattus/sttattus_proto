@@ -588,3 +588,91 @@ final $typed_data.Uint8List listMyVerificationSignalsResponseDescriptor = $conve
     'CiFMaXN0TXlWZXJpZmljYXRpb25TaWduYWxzUmVzcG9uc2USQQoHc2lnbmFscxgBIAMoCzInLn'
     'N0dGF0dHVzLnRyYXZlbC52MS5WZXJpZmljYXRpb25TaWduYWxzUgdzaWduYWxz');
 
+@$core.Deprecated('Use countryVisibilityDescriptor instead')
+const CountryVisibility$json = {
+  '1': 'CountryVisibility',
+  '2': [
+    {'1': 'country_code', '3': 1, '4': 1, '5': 9, '10': 'countryCode'},
+    {'1': 'visibility', '3': 2, '4': 1, '5': 9, '10': 'visibility'},
+  ],
+};
+
+/// Descriptor for `CountryVisibility`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List countryVisibilityDescriptor = $convert.base64Decode(
+    'ChFDb3VudHJ5VmlzaWJpbGl0eRIhCgxjb3VudHJ5X2NvZGUYASABKAlSC2NvdW50cnlDb2RlEh'
+    '4KCnZpc2liaWxpdHkYAiABKAlSCnZpc2liaWxpdHk=');
+
+@$core.Deprecated('Use listCountryVisibilityRequestDescriptor instead')
+const ListCountryVisibilityRequest$json = {
+  '1': 'ListCountryVisibilityRequest',
+};
+
+/// Descriptor for `ListCountryVisibilityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listCountryVisibilityRequestDescriptor = $convert.base64Decode(
+    'ChxMaXN0Q291bnRyeVZpc2liaWxpdHlSZXF1ZXN0');
+
+@$core.Deprecated('Use listCountryVisibilityResponseDescriptor instead')
+const ListCountryVisibilityResponse$json = {
+  '1': 'ListCountryVisibilityResponse',
+  '2': [
+    {'1': 'entries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.travel.v1.CountryVisibility', '10': 'entries'},
+  ],
+};
+
+/// Descriptor for `ListCountryVisibilityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listCountryVisibilityResponseDescriptor = $convert.base64Decode(
+    'Ch1MaXN0Q291bnRyeVZpc2liaWxpdHlSZXNwb25zZRI/CgdlbnRyaWVzGAEgAygLMiUuc3R0YX'
+    'R0dXMudHJhdmVsLnYxLkNvdW50cnlWaXNpYmlsaXR5UgdlbnRyaWVz');
+
+@$core.Deprecated('Use upsertCountryVisibilityRequestDescriptor instead')
+const UpsertCountryVisibilityRequest$json = {
+  '1': 'UpsertCountryVisibilityRequest',
+  '2': [
+    {'1': 'country_code', '3': 1, '4': 1, '5': 9, '10': 'countryCode'},
+    {'1': 'visibility', '3': 2, '4': 1, '5': 9, '10': 'visibility'},
+  ],
+};
+
+/// Descriptor for `UpsertCountryVisibilityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertCountryVisibilityRequestDescriptor = $convert.base64Decode(
+    'Ch5VcHNlcnRDb3VudHJ5VmlzaWJpbGl0eVJlcXVlc3QSIQoMY291bnRyeV9jb2RlGAEgASgJUg'
+    'tjb3VudHJ5Q29kZRIeCgp2aXNpYmlsaXR5GAIgASgJUgp2aXNpYmlsaXR5');
+
+@$core.Deprecated('Use upsertCountryVisibilityResponseDescriptor instead')
+const UpsertCountryVisibilityResponse$json = {
+  '1': 'UpsertCountryVisibilityResponse',
+  '2': [
+    {'1': 'entry', '3': 1, '4': 1, '5': 11, '6': '.sttattus.travel.v1.CountryVisibility', '10': 'entry'},
+  ],
+};
+
+/// Descriptor for `UpsertCountryVisibilityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertCountryVisibilityResponseDescriptor = $convert.base64Decode(
+    'Ch9VcHNlcnRDb3VudHJ5VmlzaWJpbGl0eVJlc3BvbnNlEjsKBWVudHJ5GAEgASgLMiUuc3R0YX'
+    'R0dXMudHJhdmVsLnYxLkNvdW50cnlWaXNpYmlsaXR5UgVlbnRyeQ==');
+
+@$core.Deprecated('Use setMilestoneVisibilityRequestDescriptor instead')
+const SetMilestoneVisibilityRequest$json = {
+  '1': 'SetMilestoneVisibilityRequest',
+  '2': [
+    {'1': 'milestone_id', '3': 1, '4': 1, '5': 9, '10': 'milestoneId'},
+    {'1': 'visit_visibility', '3': 2, '4': 1, '5': 9, '10': 'visitVisibility'},
+    {'1': 'photo_visibility', '3': 3, '4': 1, '5': 9, '10': 'photoVisibility'},
+  ],
+};
+
+/// Descriptor for `SetMilestoneVisibilityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setMilestoneVisibilityRequestDescriptor = $convert.base64Decode(
+    'Ch1TZXRNaWxlc3RvbmVWaXNpYmlsaXR5UmVxdWVzdBIhCgxtaWxlc3RvbmVfaWQYASABKAlSC2'
+    '1pbGVzdG9uZUlkEikKEHZpc2l0X3Zpc2liaWxpdHkYAiABKAlSD3Zpc2l0VmlzaWJpbGl0eRIp'
+    'ChBwaG90b192aXNpYmlsaXR5GAMgASgJUg9waG90b1Zpc2liaWxpdHk=');
+
+@$core.Deprecated('Use setMilestoneVisibilityResponseDescriptor instead')
+const SetMilestoneVisibilityResponse$json = {
+  '1': 'SetMilestoneVisibilityResponse',
+};
+
+/// Descriptor for `SetMilestoneVisibilityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setMilestoneVisibilityResponseDescriptor = $convert.base64Decode(
+    'Ch5TZXRNaWxlc3RvbmVWaXNpYmlsaXR5UmVzcG9uc2U=');
+

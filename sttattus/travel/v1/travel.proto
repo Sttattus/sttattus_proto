@@ -226,6 +226,33 @@ message ListMyVerificationSignalsResponse {
   repeated VerificationSignals signals = 1;
 }
 
+// === Privacy granularity (N10.8) ===
+
+message CountryVisibility {
+  string country_code = 1;
+  string visibility = 2; // 'public' | 'matched' | 'private'
+}
+
+message ListCountryVisibilityRequest {}
+message ListCountryVisibilityResponse {
+  repeated CountryVisibility entries = 1;
+}
+
+message UpsertCountryVisibilityRequest {
+  string country_code = 1;
+  string visibility = 2;
+}
+message UpsertCountryVisibilityResponse {
+  CountryVisibility entry = 1;
+}
+
+message SetMilestoneVisibilityRequest {
+  string milestone_id = 1;
+  string visit_visibility = 2;
+  string photo_visibility = 3;
+}
+message SetMilestoneVisibilityResponse {}
+
 service TravelService {
   rpc ListMilestones(ListMilestonesRequest) returns (ListMilestonesResponse);
   rpc CreateMilestone(CreateMilestoneRequest) returns (CreateMilestoneResponse);
@@ -249,4 +276,9 @@ service TravelService {
 
   // N10.7 — verification dashboard per milestone.
   rpc ListMyVerificationSignals(ListMyVerificationSignalsRequest) returns (ListMyVerificationSignalsResponse);
+
+  // N10.8 — privacy granularity.
+  rpc ListCountryVisibility(ListCountryVisibilityRequest) returns (ListCountryVisibilityResponse);
+  rpc UpsertCountryVisibility(UpsertCountryVisibilityRequest) returns (UpsertCountryVisibilityResponse);
+  rpc SetMilestoneVisibility(SetMilestoneVisibilityRequest) returns (SetMilestoneVisibilityResponse);
 }

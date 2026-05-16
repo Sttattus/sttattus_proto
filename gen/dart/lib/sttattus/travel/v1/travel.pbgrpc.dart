@@ -92,6 +92,19 @@ class TravelServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listMyVerificationSignals, request, options: options);
   }
 
+  /// N10.8 — privacy granularity.
+  $grpc.ResponseFuture<$0.ListCountryVisibilityResponse> listCountryVisibility($0.ListCountryVisibilityRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listCountryVisibility, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertCountryVisibilityResponse> upsertCountryVisibility($0.UpsertCountryVisibilityRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$upsertCountryVisibility, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetMilestoneVisibilityResponse> setMilestoneVisibility($0.SetMilestoneVisibilityRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$setMilestoneVisibility, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listMilestones = $grpc.ClientMethod<$0.ListMilestonesRequest, $0.ListMilestonesResponse>(
@@ -150,6 +163,18 @@ class TravelServiceClient extends $grpc.Client {
       '/sttattus.travel.v1.TravelService/ListMyVerificationSignals',
       ($0.ListMyVerificationSignalsRequest value) => value.writeToBuffer(),
       $0.ListMyVerificationSignalsResponse.fromBuffer);
+  static final _$listCountryVisibility = $grpc.ClientMethod<$0.ListCountryVisibilityRequest, $0.ListCountryVisibilityResponse>(
+      '/sttattus.travel.v1.TravelService/ListCountryVisibility',
+      ($0.ListCountryVisibilityRequest value) => value.writeToBuffer(),
+      $0.ListCountryVisibilityResponse.fromBuffer);
+  static final _$upsertCountryVisibility = $grpc.ClientMethod<$0.UpsertCountryVisibilityRequest, $0.UpsertCountryVisibilityResponse>(
+      '/sttattus.travel.v1.TravelService/UpsertCountryVisibility',
+      ($0.UpsertCountryVisibilityRequest value) => value.writeToBuffer(),
+      $0.UpsertCountryVisibilityResponse.fromBuffer);
+  static final _$setMilestoneVisibility = $grpc.ClientMethod<$0.SetMilestoneVisibilityRequest, $0.SetMilestoneVisibilityResponse>(
+      '/sttattus.travel.v1.TravelService/SetMilestoneVisibility',
+      ($0.SetMilestoneVisibilityRequest value) => value.writeToBuffer(),
+      $0.SetMilestoneVisibilityResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.travel.v1.TravelService')
@@ -255,6 +280,27 @@ abstract class TravelServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListMyVerificationSignalsRequest.fromBuffer(value),
         ($0.ListMyVerificationSignalsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListCountryVisibilityRequest, $0.ListCountryVisibilityResponse>(
+        'ListCountryVisibility',
+        listCountryVisibility_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListCountryVisibilityRequest.fromBuffer(value),
+        ($0.ListCountryVisibilityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertCountryVisibilityRequest, $0.UpsertCountryVisibilityResponse>(
+        'UpsertCountryVisibility',
+        upsertCountryVisibility_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpsertCountryVisibilityRequest.fromBuffer(value),
+        ($0.UpsertCountryVisibilityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetMilestoneVisibilityRequest, $0.SetMilestoneVisibilityResponse>(
+        'SetMilestoneVisibility',
+        setMilestoneVisibility_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SetMilestoneVisibilityRequest.fromBuffer(value),
+        ($0.SetMilestoneVisibilityResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListMilestonesResponse> listMilestones_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMilestonesRequest> $request) async {
@@ -340,5 +386,23 @@ abstract class TravelServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListMyVerificationSignalsResponse> listMyVerificationSignals($grpc.ServiceCall call, $0.ListMyVerificationSignalsRequest request);
+
+  $async.Future<$0.ListCountryVisibilityResponse> listCountryVisibility_Pre($grpc.ServiceCall $call, $async.Future<$0.ListCountryVisibilityRequest> $request) async {
+    return listCountryVisibility($call, await $request);
+  }
+
+  $async.Future<$0.ListCountryVisibilityResponse> listCountryVisibility($grpc.ServiceCall call, $0.ListCountryVisibilityRequest request);
+
+  $async.Future<$0.UpsertCountryVisibilityResponse> upsertCountryVisibility_Pre($grpc.ServiceCall $call, $async.Future<$0.UpsertCountryVisibilityRequest> $request) async {
+    return upsertCountryVisibility($call, await $request);
+  }
+
+  $async.Future<$0.UpsertCountryVisibilityResponse> upsertCountryVisibility($grpc.ServiceCall call, $0.UpsertCountryVisibilityRequest request);
+
+  $async.Future<$0.SetMilestoneVisibilityResponse> setMilestoneVisibility_Pre($grpc.ServiceCall $call, $async.Future<$0.SetMilestoneVisibilityRequest> $request) async {
+    return setMilestoneVisibility($call, await $request);
+  }
+
+  $async.Future<$0.SetMilestoneVisibilityResponse> setMilestoneVisibility($grpc.ServiceCall call, $0.SetMilestoneVisibilityRequest request);
 
 }

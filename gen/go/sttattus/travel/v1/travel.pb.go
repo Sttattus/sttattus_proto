@@ -2194,6 +2194,330 @@ func (x *ListMyVerificationSignalsResponse) GetSignals() []*VerificationSignals 
 	return nil
 }
 
+type CountryVisibility struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	CountryCode   string                 `protobuf:"bytes,1,opt,name=country_code,json=countryCode,proto3" json:"country_code,omitempty"`
+	Visibility    string                 `protobuf:"bytes,2,opt,name=visibility,proto3" json:"visibility,omitempty"` // 'public' | 'matched' | 'private'
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CountryVisibility) Reset() {
+	*x = CountryVisibility{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CountryVisibility) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CountryVisibility) ProtoMessage() {}
+
+func (x *CountryVisibility) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[36]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CountryVisibility.ProtoReflect.Descriptor instead.
+func (*CountryVisibility) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *CountryVisibility) GetCountryCode() string {
+	if x != nil {
+		return x.CountryCode
+	}
+	return ""
+}
+
+func (x *CountryVisibility) GetVisibility() string {
+	if x != nil {
+		return x.Visibility
+	}
+	return ""
+}
+
+type ListCountryVisibilityRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListCountryVisibilityRequest) Reset() {
+	*x = ListCountryVisibilityRequest{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[37]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListCountryVisibilityRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListCountryVisibilityRequest) ProtoMessage() {}
+
+func (x *ListCountryVisibilityRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[37]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListCountryVisibilityRequest.ProtoReflect.Descriptor instead.
+func (*ListCountryVisibilityRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{37}
+}
+
+type ListCountryVisibilityResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Entries       []*CountryVisibility   `protobuf:"bytes,1,rep,name=entries,proto3" json:"entries,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListCountryVisibilityResponse) Reset() {
+	*x = ListCountryVisibilityResponse{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[38]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListCountryVisibilityResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListCountryVisibilityResponse) ProtoMessage() {}
+
+func (x *ListCountryVisibilityResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[38]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListCountryVisibilityResponse.ProtoReflect.Descriptor instead.
+func (*ListCountryVisibilityResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *ListCountryVisibilityResponse) GetEntries() []*CountryVisibility {
+	if x != nil {
+		return x.Entries
+	}
+	return nil
+}
+
+type UpsertCountryVisibilityRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	CountryCode   string                 `protobuf:"bytes,1,opt,name=country_code,json=countryCode,proto3" json:"country_code,omitempty"`
+	Visibility    string                 `protobuf:"bytes,2,opt,name=visibility,proto3" json:"visibility,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertCountryVisibilityRequest) Reset() {
+	*x = UpsertCountryVisibilityRequest{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[39]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertCountryVisibilityRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertCountryVisibilityRequest) ProtoMessage() {}
+
+func (x *UpsertCountryVisibilityRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[39]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertCountryVisibilityRequest.ProtoReflect.Descriptor instead.
+func (*UpsertCountryVisibilityRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{39}
+}
+
+func (x *UpsertCountryVisibilityRequest) GetCountryCode() string {
+	if x != nil {
+		return x.CountryCode
+	}
+	return ""
+}
+
+func (x *UpsertCountryVisibilityRequest) GetVisibility() string {
+	if x != nil {
+		return x.Visibility
+	}
+	return ""
+}
+
+type UpsertCountryVisibilityResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Entry         *CountryVisibility     `protobuf:"bytes,1,opt,name=entry,proto3" json:"entry,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertCountryVisibilityResponse) Reset() {
+	*x = UpsertCountryVisibilityResponse{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[40]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertCountryVisibilityResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertCountryVisibilityResponse) ProtoMessage() {}
+
+func (x *UpsertCountryVisibilityResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[40]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertCountryVisibilityResponse.ProtoReflect.Descriptor instead.
+func (*UpsertCountryVisibilityResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *UpsertCountryVisibilityResponse) GetEntry() *CountryVisibility {
+	if x != nil {
+		return x.Entry
+	}
+	return nil
+}
+
+type SetMilestoneVisibilityRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	MilestoneId     string                 `protobuf:"bytes,1,opt,name=milestone_id,json=milestoneId,proto3" json:"milestone_id,omitempty"`
+	VisitVisibility string                 `protobuf:"bytes,2,opt,name=visit_visibility,json=visitVisibility,proto3" json:"visit_visibility,omitempty"`
+	PhotoVisibility string                 `protobuf:"bytes,3,opt,name=photo_visibility,json=photoVisibility,proto3" json:"photo_visibility,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *SetMilestoneVisibilityRequest) Reset() {
+	*x = SetMilestoneVisibilityRequest{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[41]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetMilestoneVisibilityRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetMilestoneVisibilityRequest) ProtoMessage() {}
+
+func (x *SetMilestoneVisibilityRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[41]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetMilestoneVisibilityRequest.ProtoReflect.Descriptor instead.
+func (*SetMilestoneVisibilityRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *SetMilestoneVisibilityRequest) GetMilestoneId() string {
+	if x != nil {
+		return x.MilestoneId
+	}
+	return ""
+}
+
+func (x *SetMilestoneVisibilityRequest) GetVisitVisibility() string {
+	if x != nil {
+		return x.VisitVisibility
+	}
+	return ""
+}
+
+func (x *SetMilestoneVisibilityRequest) GetPhotoVisibility() string {
+	if x != nil {
+		return x.PhotoVisibility
+	}
+	return ""
+}
+
+type SetMilestoneVisibilityResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetMilestoneVisibilityResponse) Reset() {
+	*x = SetMilestoneVisibilityResponse{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[42]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetMilestoneVisibilityResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetMilestoneVisibilityResponse) ProtoMessage() {}
+
+func (x *SetMilestoneVisibilityResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[42]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetMilestoneVisibilityResponse.ProtoReflect.Descriptor instead.
+func (*SetMilestoneVisibilityResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{42}
+}
+
 var File_sttattus_travel_v1_travel_proto protoreflect.FileDescriptor
 
 const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
@@ -2361,14 +2685,34 @@ const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	" ListMyVerificationSignalsRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\"f\n" +
 	"!ListMyVerificationSignalsResponse\x12A\n" +
-	"\asignals\x18\x01 \x03(\v2'.sttattus.travel.v1.VerificationSignalsR\asignals*\x93\x01\n" +
+	"\asignals\x18\x01 \x03(\v2'.sttattus.travel.v1.VerificationSignalsR\asignals\"V\n" +
+	"\x11CountryVisibility\x12!\n" +
+	"\fcountry_code\x18\x01 \x01(\tR\vcountryCode\x12\x1e\n" +
+	"\n" +
+	"visibility\x18\x02 \x01(\tR\n" +
+	"visibility\"\x1e\n" +
+	"\x1cListCountryVisibilityRequest\"`\n" +
+	"\x1dListCountryVisibilityResponse\x12?\n" +
+	"\aentries\x18\x01 \x03(\v2%.sttattus.travel.v1.CountryVisibilityR\aentries\"c\n" +
+	"\x1eUpsertCountryVisibilityRequest\x12!\n" +
+	"\fcountry_code\x18\x01 \x01(\tR\vcountryCode\x12\x1e\n" +
+	"\n" +
+	"visibility\x18\x02 \x01(\tR\n" +
+	"visibility\"^\n" +
+	"\x1fUpsertCountryVisibilityResponse\x12;\n" +
+	"\x05entry\x18\x01 \x01(\v2%.sttattus.travel.v1.CountryVisibilityR\x05entry\"\x98\x01\n" +
+	"\x1dSetMilestoneVisibilityRequest\x12!\n" +
+	"\fmilestone_id\x18\x01 \x01(\tR\vmilestoneId\x12)\n" +
+	"\x10visit_visibility\x18\x02 \x01(\tR\x0fvisitVisibility\x12)\n" +
+	"\x10photo_visibility\x18\x03 \x01(\tR\x0fphotoVisibility\" \n" +
+	"\x1eSetMilestoneVisibilityResponse*\x93\x01\n" +
 	"\n" +
 	"TripStatus\x12\x1b\n" +
 	"\x17TRIP_STATUS_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13TRIP_STATUS_PLANNED\x10\x01\x12\x19\n" +
 	"\x15TRIP_STATUS_IN_FLIGHT\x10\x02\x12\x19\n" +
 	"\x15TRIP_STATUS_COMPLETED\x10\x03\x12\x19\n" +
-	"\x15TRIP_STATUS_CANCELLED\x10\x042\xdd\v\n" +
+	"\x15TRIP_STATUS_CANCELLED\x10\x042\xe1\x0e\n" +
 	"\rTravelService\x12g\n" +
 	"\x0eListMilestones\x12).sttattus.travel.v1.ListMilestonesRequest\x1a*.sttattus.travel.v1.ListMilestonesResponse\x12j\n" +
 	"\x0fCreateMilestone\x12*.sttattus.travel.v1.CreateMilestoneRequest\x1a+.sttattus.travel.v1.CreateMilestoneResponse\x12d\n" +
@@ -2386,7 +2730,10 @@ const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	"\x14ListVisitedCountries\x12/.sttattus.travel.v1.ListVisitedCountriesRequest\x1a0.sttattus.travel.v1.ListVisitedCountriesResponse\x12|\n" +
 	"\x15ListConciergeMessages\x120.sttattus.travel.v1.ListConciergeMessagesRequest\x1a1.sttattus.travel.v1.ListConciergeMessagesResponse\x12y\n" +
 	"\x14PostConciergeMessage\x12/.sttattus.travel.v1.PostConciergeMessageRequest\x1a0.sttattus.travel.v1.PostConciergeMessageResponse\x12\x88\x01\n" +
-	"\x19ListMyVerificationSignals\x124.sttattus.travel.v1.ListMyVerificationSignalsRequest\x1a5.sttattus.travel.v1.ListMyVerificationSignalsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/travel/v1;travelv1b\x06proto3"
+	"\x19ListMyVerificationSignals\x124.sttattus.travel.v1.ListMyVerificationSignalsRequest\x1a5.sttattus.travel.v1.ListMyVerificationSignalsResponse\x12|\n" +
+	"\x15ListCountryVisibility\x120.sttattus.travel.v1.ListCountryVisibilityRequest\x1a1.sttattus.travel.v1.ListCountryVisibilityResponse\x12\x82\x01\n" +
+	"\x17UpsertCountryVisibility\x122.sttattus.travel.v1.UpsertCountryVisibilityRequest\x1a3.sttattus.travel.v1.UpsertCountryVisibilityResponse\x12\x7f\n" +
+	"\x16SetMilestoneVisibility\x121.sttattus.travel.v1.SetMilestoneVisibilityRequest\x1a2.sttattus.travel.v1.SetMilestoneVisibilityResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/travel/v1;travelv1b\x06proto3"
 
 var (
 	file_sttattus_travel_v1_travel_proto_rawDescOnce sync.Once
@@ -2401,7 +2748,7 @@ func file_sttattus_travel_v1_travel_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_travel_v1_travel_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_sttattus_travel_v1_travel_proto_msgTypes = make([]protoimpl.MessageInfo, 36)
+var file_sttattus_travel_v1_travel_proto_msgTypes = make([]protoimpl.MessageInfo, 43)
 var file_sttattus_travel_v1_travel_proto_goTypes = []any{
 	(TripStatus)(0),                           // 0: sttattus.travel.v1.TripStatus
 	(*NomadStats)(nil),                        // 1: sttattus.travel.v1.NomadStats
@@ -2440,23 +2787,30 @@ var file_sttattus_travel_v1_travel_proto_goTypes = []any{
 	(*VerificationSignals)(nil),               // 34: sttattus.travel.v1.VerificationSignals
 	(*ListMyVerificationSignalsRequest)(nil),  // 35: sttattus.travel.v1.ListMyVerificationSignalsRequest
 	(*ListMyVerificationSignalsResponse)(nil), // 36: sttattus.travel.v1.ListMyVerificationSignalsResponse
-	(*timestamppb.Timestamp)(nil),             // 37: google.protobuf.Timestamp
-	(*v1.PageRequest)(nil),                    // 38: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),                   // 39: sttattus.common.v1.PageResponse
+	(*CountryVisibility)(nil),                 // 37: sttattus.travel.v1.CountryVisibility
+	(*ListCountryVisibilityRequest)(nil),      // 38: sttattus.travel.v1.ListCountryVisibilityRequest
+	(*ListCountryVisibilityResponse)(nil),     // 39: sttattus.travel.v1.ListCountryVisibilityResponse
+	(*UpsertCountryVisibilityRequest)(nil),    // 40: sttattus.travel.v1.UpsertCountryVisibilityRequest
+	(*UpsertCountryVisibilityResponse)(nil),   // 41: sttattus.travel.v1.UpsertCountryVisibilityResponse
+	(*SetMilestoneVisibilityRequest)(nil),     // 42: sttattus.travel.v1.SetMilestoneVisibilityRequest
+	(*SetMilestoneVisibilityResponse)(nil),    // 43: sttattus.travel.v1.SetMilestoneVisibilityResponse
+	(*timestamppb.Timestamp)(nil),             // 44: google.protobuf.Timestamp
+	(*v1.PageRequest)(nil),                    // 45: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),                   // 46: sttattus.common.v1.PageResponse
 }
 var file_sttattus_travel_v1_travel_proto_depIdxs = []int32{
 	3,  // 0: sttattus.travel.v1.Milestone.checkin:type_name -> sttattus.travel.v1.CheckIn
-	37, // 1: sttattus.travel.v1.CheckIn.verified_at:type_name -> google.protobuf.Timestamp
-	38, // 2: sttattus.travel.v1.ListMilestonesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	44, // 1: sttattus.travel.v1.CheckIn.verified_at:type_name -> google.protobuf.Timestamp
+	45, // 2: sttattus.travel.v1.ListMilestonesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	2,  // 3: sttattus.travel.v1.ListMilestonesResponse.milestones:type_name -> sttattus.travel.v1.Milestone
-	39, // 4: sttattus.travel.v1.ListMilestonesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	46, // 4: sttattus.travel.v1.ListMilestonesResponse.page:type_name -> sttattus.common.v1.PageResponse
 	3,  // 5: sttattus.travel.v1.CreateMilestoneRequest.checkin:type_name -> sttattus.travel.v1.CheckIn
 	2,  // 6: sttattus.travel.v1.CreateMilestoneResponse.milestone:type_name -> sttattus.travel.v1.Milestone
 	1,  // 7: sttattus.travel.v1.CreateMilestoneResponse.stats:type_name -> sttattus.travel.v1.NomadStats
 	1,  // 8: sttattus.travel.v1.GetNomadStatsResponse.stats:type_name -> sttattus.travel.v1.NomadStats
-	38, // 9: sttattus.travel.v1.ListFeedRequest.page:type_name -> sttattus.common.v1.PageRequest
+	45, // 9: sttattus.travel.v1.ListFeedRequest.page:type_name -> sttattus.common.v1.PageRequest
 	2,  // 10: sttattus.travel.v1.ListFeedResponse.milestones:type_name -> sttattus.travel.v1.Milestone
-	39, // 11: sttattus.travel.v1.ListFeedResponse.page:type_name -> sttattus.common.v1.PageResponse
+	46, // 11: sttattus.travel.v1.ListFeedResponse.page:type_name -> sttattus.common.v1.PageResponse
 	0,  // 12: sttattus.travel.v1.Trip.status:type_name -> sttattus.travel.v1.TripStatus
 	2,  // 13: sttattus.travel.v1.Trip.visits:type_name -> sttattus.travel.v1.Milestone
 	12, // 14: sttattus.travel.v1.CreateTripResponse.trip:type_name -> sttattus.travel.v1.Trip
@@ -2471,39 +2825,47 @@ var file_sttattus_travel_v1_travel_proto_depIdxs = []int32{
 	29, // 23: sttattus.travel.v1.ListConciergeMessagesResponse.messages:type_name -> sttattus.travel.v1.ConciergeMessage
 	29, // 24: sttattus.travel.v1.PostConciergeMessageResponse.message:type_name -> sttattus.travel.v1.ConciergeMessage
 	34, // 25: sttattus.travel.v1.ListMyVerificationSignalsResponse.signals:type_name -> sttattus.travel.v1.VerificationSignals
-	4,  // 26: sttattus.travel.v1.TravelService.ListMilestones:input_type -> sttattus.travel.v1.ListMilestonesRequest
-	6,  // 27: sttattus.travel.v1.TravelService.CreateMilestone:input_type -> sttattus.travel.v1.CreateMilestoneRequest
-	8,  // 28: sttattus.travel.v1.TravelService.GetNomadStats:input_type -> sttattus.travel.v1.GetNomadStatsRequest
-	10, // 29: sttattus.travel.v1.TravelService.ListFeed:input_type -> sttattus.travel.v1.ListFeedRequest
-	13, // 30: sttattus.travel.v1.TravelService.CreateTrip:input_type -> sttattus.travel.v1.CreateTripRequest
-	15, // 31: sttattus.travel.v1.TravelService.UpdateTrip:input_type -> sttattus.travel.v1.UpdateTripRequest
-	17, // 32: sttattus.travel.v1.TravelService.ListMyTrips:input_type -> sttattus.travel.v1.ListMyTripsRequest
-	19, // 33: sttattus.travel.v1.TravelService.GetTrip:input_type -> sttattus.travel.v1.GetTripRequest
-	21, // 34: sttattus.travel.v1.TravelService.AttachVisitToTrip:input_type -> sttattus.travel.v1.AttachVisitToTripRequest
-	23, // 35: sttattus.travel.v1.TravelService.DeleteTrip:input_type -> sttattus.travel.v1.DeleteTripRequest
-	27, // 36: sttattus.travel.v1.TravelService.ListVisitedCountries:input_type -> sttattus.travel.v1.ListVisitedCountriesRequest
-	30, // 37: sttattus.travel.v1.TravelService.ListConciergeMessages:input_type -> sttattus.travel.v1.ListConciergeMessagesRequest
-	32, // 38: sttattus.travel.v1.TravelService.PostConciergeMessage:input_type -> sttattus.travel.v1.PostConciergeMessageRequest
-	35, // 39: sttattus.travel.v1.TravelService.ListMyVerificationSignals:input_type -> sttattus.travel.v1.ListMyVerificationSignalsRequest
-	5,  // 40: sttattus.travel.v1.TravelService.ListMilestones:output_type -> sttattus.travel.v1.ListMilestonesResponse
-	7,  // 41: sttattus.travel.v1.TravelService.CreateMilestone:output_type -> sttattus.travel.v1.CreateMilestoneResponse
-	9,  // 42: sttattus.travel.v1.TravelService.GetNomadStats:output_type -> sttattus.travel.v1.GetNomadStatsResponse
-	11, // 43: sttattus.travel.v1.TravelService.ListFeed:output_type -> sttattus.travel.v1.ListFeedResponse
-	14, // 44: sttattus.travel.v1.TravelService.CreateTrip:output_type -> sttattus.travel.v1.CreateTripResponse
-	16, // 45: sttattus.travel.v1.TravelService.UpdateTrip:output_type -> sttattus.travel.v1.UpdateTripResponse
-	18, // 46: sttattus.travel.v1.TravelService.ListMyTrips:output_type -> sttattus.travel.v1.ListMyTripsResponse
-	20, // 47: sttattus.travel.v1.TravelService.GetTrip:output_type -> sttattus.travel.v1.GetTripResponse
-	22, // 48: sttattus.travel.v1.TravelService.AttachVisitToTrip:output_type -> sttattus.travel.v1.AttachVisitToTripResponse
-	24, // 49: sttattus.travel.v1.TravelService.DeleteTrip:output_type -> sttattus.travel.v1.DeleteTripResponse
-	28, // 50: sttattus.travel.v1.TravelService.ListVisitedCountries:output_type -> sttattus.travel.v1.ListVisitedCountriesResponse
-	31, // 51: sttattus.travel.v1.TravelService.ListConciergeMessages:output_type -> sttattus.travel.v1.ListConciergeMessagesResponse
-	33, // 52: sttattus.travel.v1.TravelService.PostConciergeMessage:output_type -> sttattus.travel.v1.PostConciergeMessageResponse
-	36, // 53: sttattus.travel.v1.TravelService.ListMyVerificationSignals:output_type -> sttattus.travel.v1.ListMyVerificationSignalsResponse
-	40, // [40:54] is the sub-list for method output_type
-	26, // [26:40] is the sub-list for method input_type
-	26, // [26:26] is the sub-list for extension type_name
-	26, // [26:26] is the sub-list for extension extendee
-	0,  // [0:26] is the sub-list for field type_name
+	37, // 26: sttattus.travel.v1.ListCountryVisibilityResponse.entries:type_name -> sttattus.travel.v1.CountryVisibility
+	37, // 27: sttattus.travel.v1.UpsertCountryVisibilityResponse.entry:type_name -> sttattus.travel.v1.CountryVisibility
+	4,  // 28: sttattus.travel.v1.TravelService.ListMilestones:input_type -> sttattus.travel.v1.ListMilestonesRequest
+	6,  // 29: sttattus.travel.v1.TravelService.CreateMilestone:input_type -> sttattus.travel.v1.CreateMilestoneRequest
+	8,  // 30: sttattus.travel.v1.TravelService.GetNomadStats:input_type -> sttattus.travel.v1.GetNomadStatsRequest
+	10, // 31: sttattus.travel.v1.TravelService.ListFeed:input_type -> sttattus.travel.v1.ListFeedRequest
+	13, // 32: sttattus.travel.v1.TravelService.CreateTrip:input_type -> sttattus.travel.v1.CreateTripRequest
+	15, // 33: sttattus.travel.v1.TravelService.UpdateTrip:input_type -> sttattus.travel.v1.UpdateTripRequest
+	17, // 34: sttattus.travel.v1.TravelService.ListMyTrips:input_type -> sttattus.travel.v1.ListMyTripsRequest
+	19, // 35: sttattus.travel.v1.TravelService.GetTrip:input_type -> sttattus.travel.v1.GetTripRequest
+	21, // 36: sttattus.travel.v1.TravelService.AttachVisitToTrip:input_type -> sttattus.travel.v1.AttachVisitToTripRequest
+	23, // 37: sttattus.travel.v1.TravelService.DeleteTrip:input_type -> sttattus.travel.v1.DeleteTripRequest
+	27, // 38: sttattus.travel.v1.TravelService.ListVisitedCountries:input_type -> sttattus.travel.v1.ListVisitedCountriesRequest
+	30, // 39: sttattus.travel.v1.TravelService.ListConciergeMessages:input_type -> sttattus.travel.v1.ListConciergeMessagesRequest
+	32, // 40: sttattus.travel.v1.TravelService.PostConciergeMessage:input_type -> sttattus.travel.v1.PostConciergeMessageRequest
+	35, // 41: sttattus.travel.v1.TravelService.ListMyVerificationSignals:input_type -> sttattus.travel.v1.ListMyVerificationSignalsRequest
+	38, // 42: sttattus.travel.v1.TravelService.ListCountryVisibility:input_type -> sttattus.travel.v1.ListCountryVisibilityRequest
+	40, // 43: sttattus.travel.v1.TravelService.UpsertCountryVisibility:input_type -> sttattus.travel.v1.UpsertCountryVisibilityRequest
+	42, // 44: sttattus.travel.v1.TravelService.SetMilestoneVisibility:input_type -> sttattus.travel.v1.SetMilestoneVisibilityRequest
+	5,  // 45: sttattus.travel.v1.TravelService.ListMilestones:output_type -> sttattus.travel.v1.ListMilestonesResponse
+	7,  // 46: sttattus.travel.v1.TravelService.CreateMilestone:output_type -> sttattus.travel.v1.CreateMilestoneResponse
+	9,  // 47: sttattus.travel.v1.TravelService.GetNomadStats:output_type -> sttattus.travel.v1.GetNomadStatsResponse
+	11, // 48: sttattus.travel.v1.TravelService.ListFeed:output_type -> sttattus.travel.v1.ListFeedResponse
+	14, // 49: sttattus.travel.v1.TravelService.CreateTrip:output_type -> sttattus.travel.v1.CreateTripResponse
+	16, // 50: sttattus.travel.v1.TravelService.UpdateTrip:output_type -> sttattus.travel.v1.UpdateTripResponse
+	18, // 51: sttattus.travel.v1.TravelService.ListMyTrips:output_type -> sttattus.travel.v1.ListMyTripsResponse
+	20, // 52: sttattus.travel.v1.TravelService.GetTrip:output_type -> sttattus.travel.v1.GetTripResponse
+	22, // 53: sttattus.travel.v1.TravelService.AttachVisitToTrip:output_type -> sttattus.travel.v1.AttachVisitToTripResponse
+	24, // 54: sttattus.travel.v1.TravelService.DeleteTrip:output_type -> sttattus.travel.v1.DeleteTripResponse
+	28, // 55: sttattus.travel.v1.TravelService.ListVisitedCountries:output_type -> sttattus.travel.v1.ListVisitedCountriesResponse
+	31, // 56: sttattus.travel.v1.TravelService.ListConciergeMessages:output_type -> sttattus.travel.v1.ListConciergeMessagesResponse
+	33, // 57: sttattus.travel.v1.TravelService.PostConciergeMessage:output_type -> sttattus.travel.v1.PostConciergeMessageResponse
+	36, // 58: sttattus.travel.v1.TravelService.ListMyVerificationSignals:output_type -> sttattus.travel.v1.ListMyVerificationSignalsResponse
+	39, // 59: sttattus.travel.v1.TravelService.ListCountryVisibility:output_type -> sttattus.travel.v1.ListCountryVisibilityResponse
+	41, // 60: sttattus.travel.v1.TravelService.UpsertCountryVisibility:output_type -> sttattus.travel.v1.UpsertCountryVisibilityResponse
+	43, // 61: sttattus.travel.v1.TravelService.SetMilestoneVisibility:output_type -> sttattus.travel.v1.SetMilestoneVisibilityResponse
+	45, // [45:62] is the sub-list for method output_type
+	28, // [28:45] is the sub-list for method input_type
+	28, // [28:28] is the sub-list for extension type_name
+	28, // [28:28] is the sub-list for extension extendee
+	0,  // [0:28] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_travel_v1_travel_proto_init() }
@@ -2517,7 +2879,7 @@ func file_sttattus_travel_v1_travel_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_travel_v1_travel_proto_rawDesc), len(file_sttattus_travel_v1_travel_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   36,
+			NumMessages:   43,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -2445,6 +2445,340 @@ class ListMyVerificationSignalsResponse extends $pb.GeneratedMessage {
   $pb.PbList<VerificationSignals> get signals => $_getList(0);
 }
 
+class CountryVisibility extends $pb.GeneratedMessage {
+  factory CountryVisibility({
+    $core.String? countryCode,
+    $core.String? visibility,
+  }) {
+    final result = create();
+    if (countryCode != null) result.countryCode = countryCode;
+    if (visibility != null) result.visibility = visibility;
+    return result;
+  }
+
+  CountryVisibility._();
+
+  factory CountryVisibility.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CountryVisibility.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CountryVisibility', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'countryCode')
+    ..aOS(2, _omitFieldNames ? '' : 'visibility')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CountryVisibility clone() => CountryVisibility()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CountryVisibility copyWith(void Function(CountryVisibility) updates) => super.copyWith((message) => updates(message as CountryVisibility)) as CountryVisibility;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CountryVisibility create() => CountryVisibility._();
+  @$core.override
+  CountryVisibility createEmptyInstance() => create();
+  static $pb.PbList<CountryVisibility> createRepeated() => $pb.PbList<CountryVisibility>();
+  @$core.pragma('dart2js:noInline')
+  static CountryVisibility getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CountryVisibility>(create);
+  static CountryVisibility? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get countryCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set countryCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCountryCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCountryCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get visibility => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set visibility($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasVisibility() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVisibility() => $_clearField(2);
+}
+
+class ListCountryVisibilityRequest extends $pb.GeneratedMessage {
+  factory ListCountryVisibilityRequest() => create();
+
+  ListCountryVisibilityRequest._();
+
+  factory ListCountryVisibilityRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListCountryVisibilityRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCountryVisibilityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCountryVisibilityRequest clone() => ListCountryVisibilityRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCountryVisibilityRequest copyWith(void Function(ListCountryVisibilityRequest) updates) => super.copyWith((message) => updates(message as ListCountryVisibilityRequest)) as ListCountryVisibilityRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListCountryVisibilityRequest create() => ListCountryVisibilityRequest._();
+  @$core.override
+  ListCountryVisibilityRequest createEmptyInstance() => create();
+  static $pb.PbList<ListCountryVisibilityRequest> createRepeated() => $pb.PbList<ListCountryVisibilityRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListCountryVisibilityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListCountryVisibilityRequest>(create);
+  static ListCountryVisibilityRequest? _defaultInstance;
+}
+
+class ListCountryVisibilityResponse extends $pb.GeneratedMessage {
+  factory ListCountryVisibilityResponse({
+    $core.Iterable<CountryVisibility>? entries,
+  }) {
+    final result = create();
+    if (entries != null) result.entries.addAll(entries);
+    return result;
+  }
+
+  ListCountryVisibilityResponse._();
+
+  factory ListCountryVisibilityResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListCountryVisibilityResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCountryVisibilityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..pc<CountryVisibility>(1, _omitFieldNames ? '' : 'entries', $pb.PbFieldType.PM, subBuilder: CountryVisibility.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCountryVisibilityResponse clone() => ListCountryVisibilityResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListCountryVisibilityResponse copyWith(void Function(ListCountryVisibilityResponse) updates) => super.copyWith((message) => updates(message as ListCountryVisibilityResponse)) as ListCountryVisibilityResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListCountryVisibilityResponse create() => ListCountryVisibilityResponse._();
+  @$core.override
+  ListCountryVisibilityResponse createEmptyInstance() => create();
+  static $pb.PbList<ListCountryVisibilityResponse> createRepeated() => $pb.PbList<ListCountryVisibilityResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListCountryVisibilityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListCountryVisibilityResponse>(create);
+  static ListCountryVisibilityResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<CountryVisibility> get entries => $_getList(0);
+}
+
+class UpsertCountryVisibilityRequest extends $pb.GeneratedMessage {
+  factory UpsertCountryVisibilityRequest({
+    $core.String? countryCode,
+    $core.String? visibility,
+  }) {
+    final result = create();
+    if (countryCode != null) result.countryCode = countryCode;
+    if (visibility != null) result.visibility = visibility;
+    return result;
+  }
+
+  UpsertCountryVisibilityRequest._();
+
+  factory UpsertCountryVisibilityRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpsertCountryVisibilityRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpsertCountryVisibilityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'countryCode')
+    ..aOS(2, _omitFieldNames ? '' : 'visibility')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertCountryVisibilityRequest clone() => UpsertCountryVisibilityRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertCountryVisibilityRequest copyWith(void Function(UpsertCountryVisibilityRequest) updates) => super.copyWith((message) => updates(message as UpsertCountryVisibilityRequest)) as UpsertCountryVisibilityRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertCountryVisibilityRequest create() => UpsertCountryVisibilityRequest._();
+  @$core.override
+  UpsertCountryVisibilityRequest createEmptyInstance() => create();
+  static $pb.PbList<UpsertCountryVisibilityRequest> createRepeated() => $pb.PbList<UpsertCountryVisibilityRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpsertCountryVisibilityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpsertCountryVisibilityRequest>(create);
+  static UpsertCountryVisibilityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get countryCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set countryCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCountryCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCountryCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get visibility => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set visibility($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasVisibility() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVisibility() => $_clearField(2);
+}
+
+class UpsertCountryVisibilityResponse extends $pb.GeneratedMessage {
+  factory UpsertCountryVisibilityResponse({
+    CountryVisibility? entry,
+  }) {
+    final result = create();
+    if (entry != null) result.entry = entry;
+    return result;
+  }
+
+  UpsertCountryVisibilityResponse._();
+
+  factory UpsertCountryVisibilityResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpsertCountryVisibilityResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpsertCountryVisibilityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..aOM<CountryVisibility>(1, _omitFieldNames ? '' : 'entry', subBuilder: CountryVisibility.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertCountryVisibilityResponse clone() => UpsertCountryVisibilityResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertCountryVisibilityResponse copyWith(void Function(UpsertCountryVisibilityResponse) updates) => super.copyWith((message) => updates(message as UpsertCountryVisibilityResponse)) as UpsertCountryVisibilityResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertCountryVisibilityResponse create() => UpsertCountryVisibilityResponse._();
+  @$core.override
+  UpsertCountryVisibilityResponse createEmptyInstance() => create();
+  static $pb.PbList<UpsertCountryVisibilityResponse> createRepeated() => $pb.PbList<UpsertCountryVisibilityResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpsertCountryVisibilityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpsertCountryVisibilityResponse>(create);
+  static UpsertCountryVisibilityResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CountryVisibility get entry => $_getN(0);
+  @$pb.TagNumber(1)
+  set entry(CountryVisibility value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEntry() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEntry() => $_clearField(1);
+  @$pb.TagNumber(1)
+  CountryVisibility ensureEntry() => $_ensure(0);
+}
+
+class SetMilestoneVisibilityRequest extends $pb.GeneratedMessage {
+  factory SetMilestoneVisibilityRequest({
+    $core.String? milestoneId,
+    $core.String? visitVisibility,
+    $core.String? photoVisibility,
+  }) {
+    final result = create();
+    if (milestoneId != null) result.milestoneId = milestoneId;
+    if (visitVisibility != null) result.visitVisibility = visitVisibility;
+    if (photoVisibility != null) result.photoVisibility = photoVisibility;
+    return result;
+  }
+
+  SetMilestoneVisibilityRequest._();
+
+  factory SetMilestoneVisibilityRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SetMilestoneVisibilityRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetMilestoneVisibilityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'milestoneId')
+    ..aOS(2, _omitFieldNames ? '' : 'visitVisibility')
+    ..aOS(3, _omitFieldNames ? '' : 'photoVisibility')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMilestoneVisibilityRequest clone() => SetMilestoneVisibilityRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMilestoneVisibilityRequest copyWith(void Function(SetMilestoneVisibilityRequest) updates) => super.copyWith((message) => updates(message as SetMilestoneVisibilityRequest)) as SetMilestoneVisibilityRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetMilestoneVisibilityRequest create() => SetMilestoneVisibilityRequest._();
+  @$core.override
+  SetMilestoneVisibilityRequest createEmptyInstance() => create();
+  static $pb.PbList<SetMilestoneVisibilityRequest> createRepeated() => $pb.PbList<SetMilestoneVisibilityRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetMilestoneVisibilityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetMilestoneVisibilityRequest>(create);
+  static SetMilestoneVisibilityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get milestoneId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set milestoneId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMilestoneId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMilestoneId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get visitVisibility => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set visitVisibility($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasVisitVisibility() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVisitVisibility() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get photoVisibility => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set photoVisibility($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPhotoVisibility() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPhotoVisibility() => $_clearField(3);
+}
+
+class SetMilestoneVisibilityResponse extends $pb.GeneratedMessage {
+  factory SetMilestoneVisibilityResponse() => create();
+
+  SetMilestoneVisibilityResponse._();
+
+  factory SetMilestoneVisibilityResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SetMilestoneVisibilityResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetMilestoneVisibilityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMilestoneVisibilityResponse clone() => SetMilestoneVisibilityResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMilestoneVisibilityResponse copyWith(void Function(SetMilestoneVisibilityResponse) updates) => super.copyWith((message) => updates(message as SetMilestoneVisibilityResponse)) as SetMilestoneVisibilityResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetMilestoneVisibilityResponse create() => SetMilestoneVisibilityResponse._();
+  @$core.override
+  SetMilestoneVisibilityResponse createEmptyInstance() => create();
+  static $pb.PbList<SetMilestoneVisibilityResponse> createRepeated() => $pb.PbList<SetMilestoneVisibilityResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetMilestoneVisibilityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetMilestoneVisibilityResponse>(create);
+  static SetMilestoneVisibilityResponse? _defaultInstance;
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
