@@ -979,6 +979,184 @@ export class UpdateMyApexProfileResponse extends Message<UpdateMyApexProfileResp
 }
 
 /**
+ * A11.4 — clinical reference + optimal range for one biomarker.
+ * Bands without data carry the corresponding *_present = false.
+ *
+ * @generated from message sttattus.apex.v1.BiomarkerRef
+ */
+export class BiomarkerRef extends Message<BiomarkerRef> {
+  /**
+   * @generated from field: string metric_code = 1;
+   */
+  metricCode = "";
+
+  /**
+   * @generated from field: string display_name = 2;
+   */
+  displayName = "";
+
+  /**
+   * @generated from field: string unit = 3;
+   */
+  unit = "";
+
+  /**
+   * '' | 'female' | 'male'
+   *
+   * @generated from field: string sex_at_birth = 4;
+   */
+  sexAtBirth = "";
+
+  /**
+   * @generated from field: bool lab_band_present = 5;
+   */
+  labBandPresent = false;
+
+  /**
+   * @generated from field: double lab_low = 6;
+   */
+  labLow = 0;
+
+  /**
+   * @generated from field: double lab_high = 7;
+   */
+  labHigh = 0;
+
+  /**
+   * @generated from field: bool optimal_band_present = 8;
+   */
+  optimalBandPresent = false;
+
+  /**
+   * @generated from field: double optimal_low = 9;
+   */
+  optimalLow = 0;
+
+  /**
+   * @generated from field: double optimal_high = 10;
+   */
+  optimalHigh = 0;
+
+  /**
+   * 'lower' | 'middle' | 'higher'
+   *
+   * @generated from field: string direction = 11;
+   */
+  direction = "";
+
+  /**
+   * @generated from field: string source_note = 12;
+   */
+  sourceNote = "";
+
+  constructor(data?: PartialMessage<BiomarkerRef>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.BiomarkerRef";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "metric_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "unit", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "sex_at_birth", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "lab_band_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "lab_low", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "lab_high", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "optimal_band_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "optimal_low", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 10, name: "optimal_high", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 11, name: "direction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "source_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BiomarkerRef {
+    return new BiomarkerRef().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BiomarkerRef {
+    return new BiomarkerRef().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BiomarkerRef {
+    return new BiomarkerRef().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: BiomarkerRef | PlainMessage<BiomarkerRef> | undefined, b: BiomarkerRef | PlainMessage<BiomarkerRef> | undefined): boolean {
+    return proto3.util.equals(BiomarkerRef, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListBiomarkerRefsRequest
+ */
+export class ListBiomarkerRefsRequest extends Message<ListBiomarkerRefsRequest> {
+  constructor(data?: PartialMessage<ListBiomarkerRefsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListBiomarkerRefsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListBiomarkerRefsRequest {
+    return new ListBiomarkerRefsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListBiomarkerRefsRequest {
+    return new ListBiomarkerRefsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListBiomarkerRefsRequest {
+    return new ListBiomarkerRefsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListBiomarkerRefsRequest | PlainMessage<ListBiomarkerRefsRequest> | undefined, b: ListBiomarkerRefsRequest | PlainMessage<ListBiomarkerRefsRequest> | undefined): boolean {
+    return proto3.util.equals(ListBiomarkerRefsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListBiomarkerRefsResponse
+ */
+export class ListBiomarkerRefsResponse extends Message<ListBiomarkerRefsResponse> {
+  /**
+   * @generated from field: repeated sttattus.apex.v1.BiomarkerRef refs = 1;
+   */
+  refs: BiomarkerRef[] = [];
+
+  constructor(data?: PartialMessage<ListBiomarkerRefsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListBiomarkerRefsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "refs", kind: "message", T: BiomarkerRef, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListBiomarkerRefsResponse {
+    return new ListBiomarkerRefsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListBiomarkerRefsResponse {
+    return new ListBiomarkerRefsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListBiomarkerRefsResponse {
+    return new ListBiomarkerRefsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListBiomarkerRefsResponse | PlainMessage<ListBiomarkerRefsResponse> | undefined, b: ListBiomarkerRefsResponse | PlainMessage<ListBiomarkerRefsResponse> | undefined): boolean {
+    return proto3.util.equals(ListBiomarkerRefsResponse, a, b);
+  }
+}
+
+/**
  * A11.2 — per-biomarker time-series for the dashboard's drill-in.
  *
  * @generated from message sttattus.apex.v1.ListMyBiomarkerHistoryRequest

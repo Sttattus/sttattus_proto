@@ -130,6 +130,28 @@ message UpdateMyApexProfileResponse {
   ApexProfile profile = 1;
 }
 
+// A11.4 — clinical reference + optimal range for one biomarker.
+// Bands without data carry the corresponding *_present = false.
+message BiomarkerRef {
+  string metric_code = 1;
+  string display_name = 2;
+  string unit = 3;
+  string sex_at_birth = 4; // '' | 'female' | 'male'
+  bool lab_band_present = 5;
+  double lab_low = 6;
+  double lab_high = 7;
+  bool optimal_band_present = 8;
+  double optimal_low = 9;
+  double optimal_high = 10;
+  string direction = 11; // 'lower' | 'middle' | 'higher'
+  string source_note = 12;
+}
+
+message ListBiomarkerRefsRequest {}
+message ListBiomarkerRefsResponse {
+  repeated BiomarkerRef refs = 1;
+}
+
 // A11.2 — per-biomarker time-series for the dashboard's drill-in.
 message ListMyBiomarkerHistoryRequest {
   string metric_code = 1; // canonical code e.g. 'HRV', 'LDL'
@@ -154,6 +176,10 @@ service ApexService {
 
   // Per-biomarker history (A11.2).
   rpc ListMyBiomarkerHistory(ListMyBiomarkerHistoryRequest) returns (ListMyBiomarkerHistoryResponse);
+
+  // Reference + optimal ranges (A11.4). Public-readable for any
+  // authed user — the table is curated reference data.
+  rpc ListBiomarkerRefs(ListBiomarkerRefsRequest) returns (ListBiomarkerRefsResponse);
 
   // Apex Age headline + clinical profile (A11.3).
   rpc GetApexAge(GetApexAgeRequest) returns (GetApexAgeResponse);

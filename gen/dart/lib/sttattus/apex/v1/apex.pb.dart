@@ -1138,6 +1138,256 @@ class UpdateMyApexProfileResponse extends $pb.GeneratedMessage {
   ApexProfile ensureProfile() => $_ensure(0);
 }
 
+/// A11.4 — clinical reference + optimal range for one biomarker.
+/// Bands without data carry the corresponding *_present = false.
+class BiomarkerRef extends $pb.GeneratedMessage {
+  factory BiomarkerRef({
+    $core.String? metricCode,
+    $core.String? displayName,
+    $core.String? unit,
+    $core.String? sexAtBirth,
+    $core.bool? labBandPresent,
+    $core.double? labLow,
+    $core.double? labHigh,
+    $core.bool? optimalBandPresent,
+    $core.double? optimalLow,
+    $core.double? optimalHigh,
+    $core.String? direction,
+    $core.String? sourceNote,
+  }) {
+    final result = create();
+    if (metricCode != null) result.metricCode = metricCode;
+    if (displayName != null) result.displayName = displayName;
+    if (unit != null) result.unit = unit;
+    if (sexAtBirth != null) result.sexAtBirth = sexAtBirth;
+    if (labBandPresent != null) result.labBandPresent = labBandPresent;
+    if (labLow != null) result.labLow = labLow;
+    if (labHigh != null) result.labHigh = labHigh;
+    if (optimalBandPresent != null) result.optimalBandPresent = optimalBandPresent;
+    if (optimalLow != null) result.optimalLow = optimalLow;
+    if (optimalHigh != null) result.optimalHigh = optimalHigh;
+    if (direction != null) result.direction = direction;
+    if (sourceNote != null) result.sourceNote = sourceNote;
+    return result;
+  }
+
+  BiomarkerRef._();
+
+  factory BiomarkerRef.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory BiomarkerRef.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BiomarkerRef', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'metricCode')
+    ..aOS(2, _omitFieldNames ? '' : 'displayName')
+    ..aOS(3, _omitFieldNames ? '' : 'unit')
+    ..aOS(4, _omitFieldNames ? '' : 'sexAtBirth')
+    ..aOB(5, _omitFieldNames ? '' : 'labBandPresent')
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'labLow', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'labHigh', $pb.PbFieldType.OD)
+    ..aOB(8, _omitFieldNames ? '' : 'optimalBandPresent')
+    ..a<$core.double>(9, _omitFieldNames ? '' : 'optimalLow', $pb.PbFieldType.OD)
+    ..a<$core.double>(10, _omitFieldNames ? '' : 'optimalHigh', $pb.PbFieldType.OD)
+    ..aOS(11, _omitFieldNames ? '' : 'direction')
+    ..aOS(12, _omitFieldNames ? '' : 'sourceNote')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BiomarkerRef clone() => BiomarkerRef()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BiomarkerRef copyWith(void Function(BiomarkerRef) updates) => super.copyWith((message) => updates(message as BiomarkerRef)) as BiomarkerRef;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BiomarkerRef create() => BiomarkerRef._();
+  @$core.override
+  BiomarkerRef createEmptyInstance() => create();
+  static $pb.PbList<BiomarkerRef> createRepeated() => $pb.PbList<BiomarkerRef>();
+  @$core.pragma('dart2js:noInline')
+  static BiomarkerRef getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BiomarkerRef>(create);
+  static BiomarkerRef? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get metricCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set metricCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMetricCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMetricCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get displayName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set displayName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDisplayName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDisplayName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get unit => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set unit($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUnit() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUnit() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sexAtBirth => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sexAtBirth($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSexAtBirth() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSexAtBirth() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get labBandPresent => $_getBF(4);
+  @$pb.TagNumber(5)
+  set labBandPresent($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLabBandPresent() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLabBandPresent() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get labLow => $_getN(5);
+  @$pb.TagNumber(6)
+  set labLow($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLabLow() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLabLow() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get labHigh => $_getN(6);
+  @$pb.TagNumber(7)
+  set labHigh($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLabHigh() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLabHigh() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get optimalBandPresent => $_getBF(7);
+  @$pb.TagNumber(8)
+  set optimalBandPresent($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasOptimalBandPresent() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearOptimalBandPresent() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.double get optimalLow => $_getN(8);
+  @$pb.TagNumber(9)
+  set optimalLow($core.double value) => $_setDouble(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasOptimalLow() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearOptimalLow() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.double get optimalHigh => $_getN(9);
+  @$pb.TagNumber(10)
+  set optimalHigh($core.double value) => $_setDouble(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasOptimalHigh() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearOptimalHigh() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get direction => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set direction($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasDirection() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearDirection() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get sourceNote => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set sourceNote($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasSourceNote() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearSourceNote() => $_clearField(12);
+}
+
+class ListBiomarkerRefsRequest extends $pb.GeneratedMessage {
+  factory ListBiomarkerRefsRequest() => create();
+
+  ListBiomarkerRefsRequest._();
+
+  factory ListBiomarkerRefsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListBiomarkerRefsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListBiomarkerRefsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListBiomarkerRefsRequest clone() => ListBiomarkerRefsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListBiomarkerRefsRequest copyWith(void Function(ListBiomarkerRefsRequest) updates) => super.copyWith((message) => updates(message as ListBiomarkerRefsRequest)) as ListBiomarkerRefsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListBiomarkerRefsRequest create() => ListBiomarkerRefsRequest._();
+  @$core.override
+  ListBiomarkerRefsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListBiomarkerRefsRequest> createRepeated() => $pb.PbList<ListBiomarkerRefsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListBiomarkerRefsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListBiomarkerRefsRequest>(create);
+  static ListBiomarkerRefsRequest? _defaultInstance;
+}
+
+class ListBiomarkerRefsResponse extends $pb.GeneratedMessage {
+  factory ListBiomarkerRefsResponse({
+    $core.Iterable<BiomarkerRef>? refs,
+  }) {
+    final result = create();
+    if (refs != null) result.refs.addAll(refs);
+    return result;
+  }
+
+  ListBiomarkerRefsResponse._();
+
+  factory ListBiomarkerRefsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListBiomarkerRefsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListBiomarkerRefsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..pc<BiomarkerRef>(1, _omitFieldNames ? '' : 'refs', $pb.PbFieldType.PM, subBuilder: BiomarkerRef.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListBiomarkerRefsResponse clone() => ListBiomarkerRefsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListBiomarkerRefsResponse copyWith(void Function(ListBiomarkerRefsResponse) updates) => super.copyWith((message) => updates(message as ListBiomarkerRefsResponse)) as ListBiomarkerRefsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListBiomarkerRefsResponse create() => ListBiomarkerRefsResponse._();
+  @$core.override
+  ListBiomarkerRefsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListBiomarkerRefsResponse> createRepeated() => $pb.PbList<ListBiomarkerRefsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListBiomarkerRefsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListBiomarkerRefsResponse>(create);
+  static ListBiomarkerRefsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<BiomarkerRef> get refs => $_getList(0);
+}
+
 /// A11.2 — per-biomarker time-series for the dashboard's drill-in.
 class ListMyBiomarkerHistoryRequest extends $pb.GeneratedMessage {
   factory ListMyBiomarkerHistoryRequest({

@@ -24,6 +24,7 @@ const (
 	ApexService_ListLabReports_FullMethodName         = "/sttattus.apex.v1.ApexService/ListLabReports"
 	ApexService_ListMyVitals_FullMethodName           = "/sttattus.apex.v1.ApexService/ListMyVitals"
 	ApexService_ListMyBiomarkerHistory_FullMethodName = "/sttattus.apex.v1.ApexService/ListMyBiomarkerHistory"
+	ApexService_ListBiomarkerRefs_FullMethodName      = "/sttattus.apex.v1.ApexService/ListBiomarkerRefs"
 	ApexService_GetApexAge_FullMethodName             = "/sttattus.apex.v1.ApexService/GetApexAge"
 	ApexService_GetMyApexProfile_FullMethodName       = "/sttattus.apex.v1.ApexService/GetMyApexProfile"
 	ApexService_UpdateMyApexProfile_FullMethodName    = "/sttattus.apex.v1.ApexService/UpdateMyApexProfile"
@@ -43,6 +44,9 @@ type ApexServiceClient interface {
 	ListMyVitals(ctx context.Context, in *ListMyVitalsRequest, opts ...grpc.CallOption) (*ListMyVitalsResponse, error)
 	// Per-biomarker history (A11.2).
 	ListMyBiomarkerHistory(ctx context.Context, in *ListMyBiomarkerHistoryRequest, opts ...grpc.CallOption) (*ListMyBiomarkerHistoryResponse, error)
+	// Reference + optimal ranges (A11.4). Public-readable for any
+	// authed user — the table is curated reference data.
+	ListBiomarkerRefs(ctx context.Context, in *ListBiomarkerRefsRequest, opts ...grpc.CallOption) (*ListBiomarkerRefsResponse, error)
 	// Apex Age headline + clinical profile (A11.3).
 	GetApexAge(ctx context.Context, in *GetApexAgeRequest, opts ...grpc.CallOption) (*GetApexAgeResponse, error)
 	GetMyApexProfile(ctx context.Context, in *GetMyApexProfileRequest, opts ...grpc.CallOption) (*GetMyApexProfileResponse, error)
@@ -109,6 +113,16 @@ func (c *apexServiceClient) ListMyBiomarkerHistory(ctx context.Context, in *List
 	return out, nil
 }
 
+func (c *apexServiceClient) ListBiomarkerRefs(ctx context.Context, in *ListBiomarkerRefsRequest, opts ...grpc.CallOption) (*ListBiomarkerRefsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListBiomarkerRefsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListBiomarkerRefs_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *apexServiceClient) GetApexAge(ctx context.Context, in *GetApexAgeRequest, opts ...grpc.CallOption) (*GetApexAgeResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetApexAgeResponse)
@@ -162,6 +176,9 @@ type ApexServiceServer interface {
 	ListMyVitals(context.Context, *ListMyVitalsRequest) (*ListMyVitalsResponse, error)
 	// Per-biomarker history (A11.2).
 	ListMyBiomarkerHistory(context.Context, *ListMyBiomarkerHistoryRequest) (*ListMyBiomarkerHistoryResponse, error)
+	// Reference + optimal ranges (A11.4). Public-readable for any
+	// authed user — the table is curated reference data.
+	ListBiomarkerRefs(context.Context, *ListBiomarkerRefsRequest) (*ListBiomarkerRefsResponse, error)
 	// Apex Age headline + clinical profile (A11.3).
 	GetApexAge(context.Context, *GetApexAgeRequest) (*GetApexAgeResponse, error)
 	GetMyApexProfile(context.Context, *GetMyApexProfileRequest) (*GetMyApexProfileResponse, error)
@@ -192,6 +209,9 @@ func (UnimplementedApexServiceServer) ListMyVitals(context.Context, *ListMyVital
 }
 func (UnimplementedApexServiceServer) ListMyBiomarkerHistory(context.Context, *ListMyBiomarkerHistoryRequest) (*ListMyBiomarkerHistoryResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMyBiomarkerHistory not implemented")
+}
+func (UnimplementedApexServiceServer) ListBiomarkerRefs(context.Context, *ListBiomarkerRefsRequest) (*ListBiomarkerRefsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListBiomarkerRefs not implemented")
 }
 func (UnimplementedApexServiceServer) GetApexAge(context.Context, *GetApexAgeRequest) (*GetApexAgeResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetApexAge not implemented")
@@ -316,6 +336,24 @@ func _ApexService_ListMyBiomarkerHistory_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ApexService_ListBiomarkerRefs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListBiomarkerRefsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListBiomarkerRefs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListBiomarkerRefs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListBiomarkerRefs(ctx, req.(*ListBiomarkerRefsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ApexService_GetApexAge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetApexAgeRequest)
 	if err := dec(in); err != nil {
@@ -414,6 +452,10 @@ var ApexService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListMyBiomarkerHistory",
 			Handler:    _ApexService_ListMyBiomarkerHistory_Handler,
+		},
+		{
+			MethodName: "ListBiomarkerRefs",
+			Handler:    _ApexService_ListBiomarkerRefs_Handler,
 		},
 		{
 			MethodName: "GetApexAge",

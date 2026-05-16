@@ -339,6 +339,58 @@ final $typed_data.Uint8List updateMyApexProfileResponseDescriptor = $convert.bas
     'ChtVcGRhdGVNeUFwZXhQcm9maWxlUmVzcG9uc2USNwoHcHJvZmlsZRgBIAEoCzIdLnN0dGF0dH'
     'VzLmFwZXgudjEuQXBleFByb2ZpbGVSB3Byb2ZpbGU=');
 
+@$core.Deprecated('Use biomarkerRefDescriptor instead')
+const BiomarkerRef$json = {
+  '1': 'BiomarkerRef',
+  '2': [
+    {'1': 'metric_code', '3': 1, '4': 1, '5': 9, '10': 'metricCode'},
+    {'1': 'display_name', '3': 2, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'unit', '3': 3, '4': 1, '5': 9, '10': 'unit'},
+    {'1': 'sex_at_birth', '3': 4, '4': 1, '5': 9, '10': 'sexAtBirth'},
+    {'1': 'lab_band_present', '3': 5, '4': 1, '5': 8, '10': 'labBandPresent'},
+    {'1': 'lab_low', '3': 6, '4': 1, '5': 1, '10': 'labLow'},
+    {'1': 'lab_high', '3': 7, '4': 1, '5': 1, '10': 'labHigh'},
+    {'1': 'optimal_band_present', '3': 8, '4': 1, '5': 8, '10': 'optimalBandPresent'},
+    {'1': 'optimal_low', '3': 9, '4': 1, '5': 1, '10': 'optimalLow'},
+    {'1': 'optimal_high', '3': 10, '4': 1, '5': 1, '10': 'optimalHigh'},
+    {'1': 'direction', '3': 11, '4': 1, '5': 9, '10': 'direction'},
+    {'1': 'source_note', '3': 12, '4': 1, '5': 9, '10': 'sourceNote'},
+  ],
+};
+
+/// Descriptor for `BiomarkerRef`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List biomarkerRefDescriptor = $convert.base64Decode(
+    'CgxCaW9tYXJrZXJSZWYSHwoLbWV0cmljX2NvZGUYASABKAlSCm1ldHJpY0NvZGUSIQoMZGlzcG'
+    'xheV9uYW1lGAIgASgJUgtkaXNwbGF5TmFtZRISCgR1bml0GAMgASgJUgR1bml0EiAKDHNleF9h'
+    'dF9iaXJ0aBgEIAEoCVIKc2V4QXRCaXJ0aBIoChBsYWJfYmFuZF9wcmVzZW50GAUgASgIUg5sYW'
+    'JCYW5kUHJlc2VudBIXCgdsYWJfbG93GAYgASgBUgZsYWJMb3cSGQoIbGFiX2hpZ2gYByABKAFS'
+    'B2xhYkhpZ2gSMAoUb3B0aW1hbF9iYW5kX3ByZXNlbnQYCCABKAhSEm9wdGltYWxCYW5kUHJlc2'
+    'VudBIfCgtvcHRpbWFsX2xvdxgJIAEoAVIKb3B0aW1hbExvdxIhCgxvcHRpbWFsX2hpZ2gYCiAB'
+    'KAFSC29wdGltYWxIaWdoEhwKCWRpcmVjdGlvbhgLIAEoCVIJZGlyZWN0aW9uEh8KC3NvdXJjZV'
+    '9ub3RlGAwgASgJUgpzb3VyY2VOb3Rl');
+
+@$core.Deprecated('Use listBiomarkerRefsRequestDescriptor instead')
+const ListBiomarkerRefsRequest$json = {
+  '1': 'ListBiomarkerRefsRequest',
+};
+
+/// Descriptor for `ListBiomarkerRefsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listBiomarkerRefsRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0QmlvbWFya2VyUmVmc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listBiomarkerRefsResponseDescriptor instead')
+const ListBiomarkerRefsResponse$json = {
+  '1': 'ListBiomarkerRefsResponse',
+  '2': [
+    {'1': 'refs', '3': 1, '4': 3, '5': 11, '6': '.sttattus.apex.v1.BiomarkerRef', '10': 'refs'},
+  ],
+};
+
+/// Descriptor for `ListBiomarkerRefsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listBiomarkerRefsResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0QmlvbWFya2VyUmVmc1Jlc3BvbnNlEjIKBHJlZnMYASADKAsyHi5zdHRhdHR1cy5hcG'
+    'V4LnYxLkJpb21hcmtlclJlZlIEcmVmcw==');
+
 @$core.Deprecated('Use listMyBiomarkerHistoryRequestDescriptor instead')
 const ListMyBiomarkerHistoryRequest$json = {
   '1': 'ListMyBiomarkerHistoryRequest',

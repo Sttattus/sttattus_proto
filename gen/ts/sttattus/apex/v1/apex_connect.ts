@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyLabRequest, AdminVerifyLabResponse, GetApexAgeRequest, GetApexAgeResponse, GetMyApexProfileRequest, GetMyApexProfileResponse, ListLabReportsRequest, ListLabReportsResponse, ListMyBiomarkerHistoryRequest, ListMyBiomarkerHistoryResponse, ListMyVitalsRequest, ListMyVitalsResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncVitalsRequest, SyncVitalsResponse, UpdateMyApexProfileRequest, UpdateMyApexProfileResponse } from "./apex_pb.js";
+import { AdminVerifyLabRequest, AdminVerifyLabResponse, GetApexAgeRequest, GetApexAgeResponse, GetMyApexProfileRequest, GetMyApexProfileResponse, ListBiomarkerRefsRequest, ListBiomarkerRefsResponse, ListLabReportsRequest, ListLabReportsResponse, ListMyBiomarkerHistoryRequest, ListMyBiomarkerHistoryResponse, ListMyVitalsRequest, ListMyVitalsResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncVitalsRequest, SyncVitalsResponse, UpdateMyApexProfileRequest, UpdateMyApexProfileResponse } from "./apex_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -63,6 +63,18 @@ export const ApexService = {
       name: "ListMyBiomarkerHistory",
       I: ListMyBiomarkerHistoryRequest,
       O: ListMyBiomarkerHistoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Reference + optimal ranges (A11.4). Public-readable for any
+     * authed user — the table is curated reference data.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.ListBiomarkerRefs
+     */
+    listBiomarkerRefs: {
+      name: "ListBiomarkerRefs",
+      I: ListBiomarkerRefsRequest,
+      O: ListBiomarkerRefsResponse,
       kind: MethodKind.Unary,
     },
     /**

@@ -56,6 +56,12 @@ class ApexServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listMyBiomarkerHistory, request, options: options);
   }
 
+  /// Reference + optimal ranges (A11.4). Public-readable for any
+  /// authed user — the table is curated reference data.
+  $grpc.ResponseFuture<$0.ListBiomarkerRefsResponse> listBiomarkerRefs($0.ListBiomarkerRefsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listBiomarkerRefs, request, options: options);
+  }
+
   /// Apex Age headline + clinical profile (A11.3).
   $grpc.ResponseFuture<$0.GetApexAgeResponse> getApexAge($0.GetApexAgeRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$getApexAge, request, options: options);
@@ -96,6 +102,10 @@ class ApexServiceClient extends $grpc.Client {
       '/sttattus.apex.v1.ApexService/ListMyBiomarkerHistory',
       ($0.ListMyBiomarkerHistoryRequest value) => value.writeToBuffer(),
       $0.ListMyBiomarkerHistoryResponse.fromBuffer);
+  static final _$listBiomarkerRefs = $grpc.ClientMethod<$0.ListBiomarkerRefsRequest, $0.ListBiomarkerRefsResponse>(
+      '/sttattus.apex.v1.ApexService/ListBiomarkerRefs',
+      ($0.ListBiomarkerRefsRequest value) => value.writeToBuffer(),
+      $0.ListBiomarkerRefsResponse.fromBuffer);
   static final _$getApexAge = $grpc.ClientMethod<$0.GetApexAgeRequest, $0.GetApexAgeResponse>(
       '/sttattus.apex.v1.ApexService/GetApexAge',
       ($0.GetApexAgeRequest value) => value.writeToBuffer(),
@@ -154,6 +164,13 @@ abstract class ApexServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListMyBiomarkerHistoryRequest.fromBuffer(value),
         ($0.ListMyBiomarkerHistoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListBiomarkerRefsRequest, $0.ListBiomarkerRefsResponse>(
+        'ListBiomarkerRefs',
+        listBiomarkerRefs_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListBiomarkerRefsRequest.fromBuffer(value),
+        ($0.ListBiomarkerRefsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetApexAgeRequest, $0.GetApexAgeResponse>(
         'GetApexAge',
         getApexAge_Pre,
@@ -213,6 +230,12 @@ abstract class ApexServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListMyBiomarkerHistoryResponse> listMyBiomarkerHistory($grpc.ServiceCall call, $0.ListMyBiomarkerHistoryRequest request);
+
+  $async.Future<$0.ListBiomarkerRefsResponse> listBiomarkerRefs_Pre($grpc.ServiceCall $call, $async.Future<$0.ListBiomarkerRefsRequest> $request) async {
+    return listBiomarkerRefs($call, await $request);
+  }
+
+  $async.Future<$0.ListBiomarkerRefsResponse> listBiomarkerRefs($grpc.ServiceCall call, $0.ListBiomarkerRefsRequest request);
 
   $async.Future<$0.GetApexAgeResponse> getApexAge_Pre($grpc.ServiceCall $call, $async.Future<$0.GetApexAgeRequest> $request) async {
     return getApexAge($call, await $request);
