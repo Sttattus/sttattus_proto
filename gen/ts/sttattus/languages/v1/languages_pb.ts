@@ -710,6 +710,347 @@ export class GetLinguistStatsResponse extends Message<GetLinguistStatsResponse> 
 }
 
 /**
+ * @generated from message sttattus.languages.v1.UserLanguage
+ */
+export class UserLanguage extends Message<UserLanguage> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  /**
+   * @generated from field: bool is_primary = 2;
+   */
+  isPrimary = false;
+
+  /**
+   * @generated from field: int64 added_unix = 3;
+   */
+  addedUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<UserLanguage>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.UserLanguage";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "is_primary", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "added_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserLanguage {
+    return new UserLanguage().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserLanguage {
+    return new UserLanguage().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserLanguage {
+    return new UserLanguage().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UserLanguage | PlainMessage<UserLanguage> | undefined, b: UserLanguage | PlainMessage<UserLanguage> | undefined): boolean {
+    return proto3.util.equals(UserLanguage, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ListMyLanguagesRequest
+ */
+export class ListMyLanguagesRequest extends Message<ListMyLanguagesRequest> {
+  constructor(data?: PartialMessage<ListMyLanguagesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ListMyLanguagesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyLanguagesRequest {
+    return new ListMyLanguagesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyLanguagesRequest {
+    return new ListMyLanguagesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyLanguagesRequest {
+    return new ListMyLanguagesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyLanguagesRequest | PlainMessage<ListMyLanguagesRequest> | undefined, b: ListMyLanguagesRequest | PlainMessage<ListMyLanguagesRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyLanguagesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ListMyLanguagesResponse
+ */
+export class ListMyLanguagesResponse extends Message<ListMyLanguagesResponse> {
+  /**
+   * @generated from field: repeated sttattus.languages.v1.UserLanguage languages = 1;
+   */
+  languages: UserLanguage[] = [];
+
+  constructor(data?: PartialMessage<ListMyLanguagesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ListMyLanguagesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "languages", kind: "message", T: UserLanguage, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyLanguagesResponse {
+    return new ListMyLanguagesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyLanguagesResponse {
+    return new ListMyLanguagesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyLanguagesResponse {
+    return new ListMyLanguagesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyLanguagesResponse | PlainMessage<ListMyLanguagesResponse> | undefined, b: ListMyLanguagesResponse | PlainMessage<ListMyLanguagesResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyLanguagesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.AddMyLanguageRequest
+ */
+export class AddMyLanguageRequest extends Message<AddMyLanguageRequest> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  /**
+   * when true, demotes any existing primary
+   *
+   * @generated from field: bool is_primary = 2;
+   */
+  isPrimary = false;
+
+  constructor(data?: PartialMessage<AddMyLanguageRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.AddMyLanguageRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "is_primary", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddMyLanguageRequest {
+    return new AddMyLanguageRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddMyLanguageRequest {
+    return new AddMyLanguageRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddMyLanguageRequest {
+    return new AddMyLanguageRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AddMyLanguageRequest | PlainMessage<AddMyLanguageRequest> | undefined, b: AddMyLanguageRequest | PlainMessage<AddMyLanguageRequest> | undefined): boolean {
+    return proto3.util.equals(AddMyLanguageRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.AddMyLanguageResponse
+ */
+export class AddMyLanguageResponse extends Message<AddMyLanguageResponse> {
+  /**
+   * @generated from field: sttattus.languages.v1.UserLanguage language = 1;
+   */
+  language?: UserLanguage;
+
+  constructor(data?: PartialMessage<AddMyLanguageResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.AddMyLanguageResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "message", T: UserLanguage },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddMyLanguageResponse {
+    return new AddMyLanguageResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddMyLanguageResponse {
+    return new AddMyLanguageResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddMyLanguageResponse {
+    return new AddMyLanguageResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AddMyLanguageResponse | PlainMessage<AddMyLanguageResponse> | undefined, b: AddMyLanguageResponse | PlainMessage<AddMyLanguageResponse> | undefined): boolean {
+    return proto3.util.equals(AddMyLanguageResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.RemoveMyLanguageRequest
+ */
+export class RemoveMyLanguageRequest extends Message<RemoveMyLanguageRequest> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  constructor(data?: PartialMessage<RemoveMyLanguageRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.RemoveMyLanguageRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveMyLanguageRequest {
+    return new RemoveMyLanguageRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveMyLanguageRequest {
+    return new RemoveMyLanguageRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveMyLanguageRequest {
+    return new RemoveMyLanguageRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RemoveMyLanguageRequest | PlainMessage<RemoveMyLanguageRequest> | undefined, b: RemoveMyLanguageRequest | PlainMessage<RemoveMyLanguageRequest> | undefined): boolean {
+    return proto3.util.equals(RemoveMyLanguageRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.RemoveMyLanguageResponse
+ */
+export class RemoveMyLanguageResponse extends Message<RemoveMyLanguageResponse> {
+  constructor(data?: PartialMessage<RemoveMyLanguageResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.RemoveMyLanguageResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveMyLanguageResponse {
+    return new RemoveMyLanguageResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveMyLanguageResponse {
+    return new RemoveMyLanguageResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveMyLanguageResponse {
+    return new RemoveMyLanguageResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RemoveMyLanguageResponse | PlainMessage<RemoveMyLanguageResponse> | undefined, b: RemoveMyLanguageResponse | PlainMessage<RemoveMyLanguageResponse> | undefined): boolean {
+    return proto3.util.equals(RemoveMyLanguageResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.SetMyPrimaryLanguageRequest
+ */
+export class SetMyPrimaryLanguageRequest extends Message<SetMyPrimaryLanguageRequest> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  constructor(data?: PartialMessage<SetMyPrimaryLanguageRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.SetMyPrimaryLanguageRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetMyPrimaryLanguageRequest {
+    return new SetMyPrimaryLanguageRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetMyPrimaryLanguageRequest {
+    return new SetMyPrimaryLanguageRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetMyPrimaryLanguageRequest {
+    return new SetMyPrimaryLanguageRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetMyPrimaryLanguageRequest | PlainMessage<SetMyPrimaryLanguageRequest> | undefined, b: SetMyPrimaryLanguageRequest | PlainMessage<SetMyPrimaryLanguageRequest> | undefined): boolean {
+    return proto3.util.equals(SetMyPrimaryLanguageRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.SetMyPrimaryLanguageResponse
+ */
+export class SetMyPrimaryLanguageResponse extends Message<SetMyPrimaryLanguageResponse> {
+  /**
+   * @generated from field: sttattus.languages.v1.UserLanguage language = 1;
+   */
+  language?: UserLanguage;
+
+  constructor(data?: PartialMessage<SetMyPrimaryLanguageResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.SetMyPrimaryLanguageResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "message", T: UserLanguage },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetMyPrimaryLanguageResponse {
+    return new SetMyPrimaryLanguageResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetMyPrimaryLanguageResponse {
+    return new SetMyPrimaryLanguageResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetMyPrimaryLanguageResponse {
+    return new SetMyPrimaryLanguageResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetMyPrimaryLanguageResponse | PlainMessage<SetMyPrimaryLanguageResponse> | undefined, b: SetMyPrimaryLanguageResponse | PlainMessage<SetMyPrimaryLanguageResponse> | undefined): boolean {
+    return proto3.util.equals(SetMyPrimaryLanguageResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.languages.v1.SpeakingPrompt
  */
 export class SpeakingPrompt extends Message<SpeakingPrompt> {

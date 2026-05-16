@@ -90,6 +90,23 @@ class LanguagesServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getSpeakingAttempt, request, options: options);
   }
 
+  /// L12.6 — multilingual.
+  $grpc.ResponseFuture<$0.ListMyLanguagesResponse> listMyLanguages($0.ListMyLanguagesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyLanguages, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AddMyLanguageResponse> addMyLanguage($0.AddMyLanguageRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$addMyLanguage, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RemoveMyLanguageResponse> removeMyLanguage($0.RemoveMyLanguageRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$removeMyLanguage, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetMyPrimaryLanguageResponse> setMyPrimaryLanguage($0.SetMyPrimaryLanguageRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$setMyPrimaryLanguage, request, options: options);
+  }
+
   /// Legacy (Deprecated but kept for bridge)
   $grpc.ResponseFuture<$0.ListWordsResponse> listWords($0.ListWordsRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listWords, request, options: options);
@@ -149,6 +166,22 @@ class LanguagesServiceClient extends $grpc.Client {
       '/sttattus.languages.v1.LanguagesService/GetSpeakingAttempt',
       ($0.GetSpeakingAttemptRequest value) => value.writeToBuffer(),
       $0.GetSpeakingAttemptResponse.fromBuffer);
+  static final _$listMyLanguages = $grpc.ClientMethod<$0.ListMyLanguagesRequest, $0.ListMyLanguagesResponse>(
+      '/sttattus.languages.v1.LanguagesService/ListMyLanguages',
+      ($0.ListMyLanguagesRequest value) => value.writeToBuffer(),
+      $0.ListMyLanguagesResponse.fromBuffer);
+  static final _$addMyLanguage = $grpc.ClientMethod<$0.AddMyLanguageRequest, $0.AddMyLanguageResponse>(
+      '/sttattus.languages.v1.LanguagesService/AddMyLanguage',
+      ($0.AddMyLanguageRequest value) => value.writeToBuffer(),
+      $0.AddMyLanguageResponse.fromBuffer);
+  static final _$removeMyLanguage = $grpc.ClientMethod<$0.RemoveMyLanguageRequest, $0.RemoveMyLanguageResponse>(
+      '/sttattus.languages.v1.LanguagesService/RemoveMyLanguage',
+      ($0.RemoveMyLanguageRequest value) => value.writeToBuffer(),
+      $0.RemoveMyLanguageResponse.fromBuffer);
+  static final _$setMyPrimaryLanguage = $grpc.ClientMethod<$0.SetMyPrimaryLanguageRequest, $0.SetMyPrimaryLanguageResponse>(
+      '/sttattus.languages.v1.LanguagesService/SetMyPrimaryLanguage',
+      ($0.SetMyPrimaryLanguageRequest value) => value.writeToBuffer(),
+      $0.SetMyPrimaryLanguageResponse.fromBuffer);
   static final _$listWords = $grpc.ClientMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
       '/sttattus.languages.v1.LanguagesService/ListWords',
       ($0.ListWordsRequest value) => value.writeToBuffer(),
@@ -251,6 +284,34 @@ abstract class LanguagesServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetSpeakingAttemptRequest.fromBuffer(value),
         ($0.GetSpeakingAttemptResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyLanguagesRequest, $0.ListMyLanguagesResponse>(
+        'ListMyLanguages',
+        listMyLanguages_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyLanguagesRequest.fromBuffer(value),
+        ($0.ListMyLanguagesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AddMyLanguageRequest, $0.AddMyLanguageResponse>(
+        'AddMyLanguage',
+        addMyLanguage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.AddMyLanguageRequest.fromBuffer(value),
+        ($0.AddMyLanguageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RemoveMyLanguageRequest, $0.RemoveMyLanguageResponse>(
+        'RemoveMyLanguage',
+        removeMyLanguage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RemoveMyLanguageRequest.fromBuffer(value),
+        ($0.RemoveMyLanguageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetMyPrimaryLanguageRequest, $0.SetMyPrimaryLanguageResponse>(
+        'SetMyPrimaryLanguage',
+        setMyPrimaryLanguage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SetMyPrimaryLanguageRequest.fromBuffer(value),
+        ($0.SetMyPrimaryLanguageResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
         'ListWords',
         listWords_Pre,
@@ -337,6 +398,30 @@ abstract class LanguagesServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GetSpeakingAttemptResponse> getSpeakingAttempt($grpc.ServiceCall call, $0.GetSpeakingAttemptRequest request);
+
+  $async.Future<$0.ListMyLanguagesResponse> listMyLanguages_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyLanguagesRequest> $request) async {
+    return listMyLanguages($call, await $request);
+  }
+
+  $async.Future<$0.ListMyLanguagesResponse> listMyLanguages($grpc.ServiceCall call, $0.ListMyLanguagesRequest request);
+
+  $async.Future<$0.AddMyLanguageResponse> addMyLanguage_Pre($grpc.ServiceCall $call, $async.Future<$0.AddMyLanguageRequest> $request) async {
+    return addMyLanguage($call, await $request);
+  }
+
+  $async.Future<$0.AddMyLanguageResponse> addMyLanguage($grpc.ServiceCall call, $0.AddMyLanguageRequest request);
+
+  $async.Future<$0.RemoveMyLanguageResponse> removeMyLanguage_Pre($grpc.ServiceCall $call, $async.Future<$0.RemoveMyLanguageRequest> $request) async {
+    return removeMyLanguage($call, await $request);
+  }
+
+  $async.Future<$0.RemoveMyLanguageResponse> removeMyLanguage($grpc.ServiceCall call, $0.RemoveMyLanguageRequest request);
+
+  $async.Future<$0.SetMyPrimaryLanguageResponse> setMyPrimaryLanguage_Pre($grpc.ServiceCall $call, $async.Future<$0.SetMyPrimaryLanguageRequest> $request) async {
+    return setMyPrimaryLanguage($call, await $request);
+  }
+
+  $async.Future<$0.SetMyPrimaryLanguageResponse> setMyPrimaryLanguage($grpc.ServiceCall call, $0.SetMyPrimaryLanguageRequest request);
 
   $async.Future<$0.ListWordsResponse> listWords_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWordsRequest> $request) async {
     return listWords($call, await $request);

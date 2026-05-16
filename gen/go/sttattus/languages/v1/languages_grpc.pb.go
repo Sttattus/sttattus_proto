@@ -32,6 +32,10 @@ const (
 	LanguagesService_ListSpeakingPrompts_FullMethodName    = "/sttattus.languages.v1.LanguagesService/ListSpeakingPrompts"
 	LanguagesService_CreateSpeakingAttempt_FullMethodName  = "/sttattus.languages.v1.LanguagesService/CreateSpeakingAttempt"
 	LanguagesService_GetSpeakingAttempt_FullMethodName     = "/sttattus.languages.v1.LanguagesService/GetSpeakingAttempt"
+	LanguagesService_ListMyLanguages_FullMethodName        = "/sttattus.languages.v1.LanguagesService/ListMyLanguages"
+	LanguagesService_AddMyLanguage_FullMethodName          = "/sttattus.languages.v1.LanguagesService/AddMyLanguage"
+	LanguagesService_RemoveMyLanguage_FullMethodName       = "/sttattus.languages.v1.LanguagesService/RemoveMyLanguage"
+	LanguagesService_SetMyPrimaryLanguage_FullMethodName   = "/sttattus.languages.v1.LanguagesService/SetMyPrimaryLanguage"
 	LanguagesService_ListWords_FullMethodName              = "/sttattus.languages.v1.LanguagesService/ListWords"
 )
 
@@ -58,6 +62,11 @@ type LanguagesServiceClient interface {
 	ListSpeakingPrompts(ctx context.Context, in *ListSpeakingPromptsRequest, opts ...grpc.CallOption) (*ListSpeakingPromptsResponse, error)
 	CreateSpeakingAttempt(ctx context.Context, in *CreateSpeakingAttemptRequest, opts ...grpc.CallOption) (*CreateSpeakingAttemptResponse, error)
 	GetSpeakingAttempt(ctx context.Context, in *GetSpeakingAttemptRequest, opts ...grpc.CallOption) (*GetSpeakingAttemptResponse, error)
+	// L12.6 — multilingual.
+	ListMyLanguages(ctx context.Context, in *ListMyLanguagesRequest, opts ...grpc.CallOption) (*ListMyLanguagesResponse, error)
+	AddMyLanguage(ctx context.Context, in *AddMyLanguageRequest, opts ...grpc.CallOption) (*AddMyLanguageResponse, error)
+	RemoveMyLanguage(ctx context.Context, in *RemoveMyLanguageRequest, opts ...grpc.CallOption) (*RemoveMyLanguageResponse, error)
+	SetMyPrimaryLanguage(ctx context.Context, in *SetMyPrimaryLanguageRequest, opts ...grpc.CallOption) (*SetMyPrimaryLanguageResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error)
 }
@@ -200,6 +209,46 @@ func (c *languagesServiceClient) GetSpeakingAttempt(ctx context.Context, in *Get
 	return out, nil
 }
 
+func (c *languagesServiceClient) ListMyLanguages(ctx context.Context, in *ListMyLanguagesRequest, opts ...grpc.CallOption) (*ListMyLanguagesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyLanguagesResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListMyLanguages_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) AddMyLanguage(ctx context.Context, in *AddMyLanguageRequest, opts ...grpc.CallOption) (*AddMyLanguageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AddMyLanguageResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_AddMyLanguage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) RemoveMyLanguage(ctx context.Context, in *RemoveMyLanguageRequest, opts ...grpc.CallOption) (*RemoveMyLanguageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RemoveMyLanguageResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_RemoveMyLanguage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) SetMyPrimaryLanguage(ctx context.Context, in *SetMyPrimaryLanguageRequest, opts ...grpc.CallOption) (*SetMyPrimaryLanguageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetMyPrimaryLanguageResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_SetMyPrimaryLanguage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *languagesServiceClient) ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListWordsResponse)
@@ -233,6 +282,11 @@ type LanguagesServiceServer interface {
 	ListSpeakingPrompts(context.Context, *ListSpeakingPromptsRequest) (*ListSpeakingPromptsResponse, error)
 	CreateSpeakingAttempt(context.Context, *CreateSpeakingAttemptRequest) (*CreateSpeakingAttemptResponse, error)
 	GetSpeakingAttempt(context.Context, *GetSpeakingAttemptRequest) (*GetSpeakingAttemptResponse, error)
+	// L12.6 — multilingual.
+	ListMyLanguages(context.Context, *ListMyLanguagesRequest) (*ListMyLanguagesResponse, error)
+	AddMyLanguage(context.Context, *AddMyLanguageRequest) (*AddMyLanguageResponse, error)
+	RemoveMyLanguage(context.Context, *RemoveMyLanguageRequest) (*RemoveMyLanguageResponse, error)
+	SetMyPrimaryLanguage(context.Context, *SetMyPrimaryLanguageRequest) (*SetMyPrimaryLanguageResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error)
 	mustEmbedUnimplementedLanguagesServiceServer()
@@ -283,6 +337,18 @@ func (UnimplementedLanguagesServiceServer) CreateSpeakingAttempt(context.Context
 }
 func (UnimplementedLanguagesServiceServer) GetSpeakingAttempt(context.Context, *GetSpeakingAttemptRequest) (*GetSpeakingAttemptResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetSpeakingAttempt not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ListMyLanguages(context.Context, *ListMyLanguagesRequest) (*ListMyLanguagesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyLanguages not implemented")
+}
+func (UnimplementedLanguagesServiceServer) AddMyLanguage(context.Context, *AddMyLanguageRequest) (*AddMyLanguageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AddMyLanguage not implemented")
+}
+func (UnimplementedLanguagesServiceServer) RemoveMyLanguage(context.Context, *RemoveMyLanguageRequest) (*RemoveMyLanguageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RemoveMyLanguage not implemented")
+}
+func (UnimplementedLanguagesServiceServer) SetMyPrimaryLanguage(context.Context, *SetMyPrimaryLanguageRequest) (*SetMyPrimaryLanguageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetMyPrimaryLanguage not implemented")
 }
 func (UnimplementedLanguagesServiceServer) ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListWords not implemented")
@@ -542,6 +608,78 @@ func _LanguagesService_GetSpeakingAttempt_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LanguagesService_ListMyLanguages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyLanguagesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ListMyLanguages(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ListMyLanguages_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ListMyLanguages(ctx, req.(*ListMyLanguagesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_AddMyLanguage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddMyLanguageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).AddMyLanguage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_AddMyLanguage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).AddMyLanguage(ctx, req.(*AddMyLanguageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_RemoveMyLanguage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveMyLanguageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).RemoveMyLanguage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_RemoveMyLanguage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).RemoveMyLanguage(ctx, req.(*RemoveMyLanguageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_SetMyPrimaryLanguage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetMyPrimaryLanguageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).SetMyPrimaryLanguage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_SetMyPrimaryLanguage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).SetMyPrimaryLanguage(ctx, req.(*SetMyPrimaryLanguageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LanguagesService_ListWords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListWordsRequest)
 	if err := dec(in); err != nil {
@@ -618,6 +756,22 @@ var LanguagesService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetSpeakingAttempt",
 			Handler:    _LanguagesService_GetSpeakingAttempt_Handler,
+		},
+		{
+			MethodName: "ListMyLanguages",
+			Handler:    _LanguagesService_ListMyLanguages_Handler,
+		},
+		{
+			MethodName: "AddMyLanguage",
+			Handler:    _LanguagesService_AddMyLanguage_Handler,
+		},
+		{
+			MethodName: "RemoveMyLanguage",
+			Handler:    _LanguagesService_RemoveMyLanguage_Handler,
+		},
+		{
+			MethodName: "SetMyPrimaryLanguage",
+			Handler:    _LanguagesService_SetMyPrimaryLanguage_Handler,
 		},
 		{
 			MethodName: "ListWords",

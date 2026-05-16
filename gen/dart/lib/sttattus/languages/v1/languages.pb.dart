@@ -929,6 +929,422 @@ class GetLinguistStatsResponse extends $pb.GeneratedMessage {
   LinguistStats ensureStats() => $_ensure(0);
 }
 
+class UserLanguage extends $pb.GeneratedMessage {
+  factory UserLanguage({
+    $core.String? language,
+    $core.bool? isPrimary,
+    $fixnum.Int64? addedUnix,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (isPrimary != null) result.isPrimary = isPrimary;
+    if (addedUnix != null) result.addedUnix = addedUnix;
+    return result;
+  }
+
+  UserLanguage._();
+
+  factory UserLanguage.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UserLanguage.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserLanguage', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOB(2, _omitFieldNames ? '' : 'isPrimary')
+    ..aInt64(3, _omitFieldNames ? '' : 'addedUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UserLanguage clone() => UserLanguage()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UserLanguage copyWith(void Function(UserLanguage) updates) => super.copyWith((message) => updates(message as UserLanguage)) as UserLanguage;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UserLanguage create() => UserLanguage._();
+  @$core.override
+  UserLanguage createEmptyInstance() => create();
+  static $pb.PbList<UserLanguage> createRepeated() => $pb.PbList<UserLanguage>();
+  @$core.pragma('dart2js:noInline')
+  static UserLanguage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserLanguage>(create);
+  static UserLanguage? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get isPrimary => $_getBF(1);
+  @$pb.TagNumber(2)
+  set isPrimary($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIsPrimary() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIsPrimary() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get addedUnix => $_getI64(2);
+  @$pb.TagNumber(3)
+  set addedUnix($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAddedUnix() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAddedUnix() => $_clearField(3);
+}
+
+class ListMyLanguagesRequest extends $pb.GeneratedMessage {
+  factory ListMyLanguagesRequest() => create();
+
+  ListMyLanguagesRequest._();
+
+  factory ListMyLanguagesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyLanguagesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyLanguagesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyLanguagesRequest clone() => ListMyLanguagesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyLanguagesRequest copyWith(void Function(ListMyLanguagesRequest) updates) => super.copyWith((message) => updates(message as ListMyLanguagesRequest)) as ListMyLanguagesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyLanguagesRequest create() => ListMyLanguagesRequest._();
+  @$core.override
+  ListMyLanguagesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyLanguagesRequest> createRepeated() => $pb.PbList<ListMyLanguagesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyLanguagesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyLanguagesRequest>(create);
+  static ListMyLanguagesRequest? _defaultInstance;
+}
+
+class ListMyLanguagesResponse extends $pb.GeneratedMessage {
+  factory ListMyLanguagesResponse({
+    $core.Iterable<UserLanguage>? languages,
+  }) {
+    final result = create();
+    if (languages != null) result.languages.addAll(languages);
+    return result;
+  }
+
+  ListMyLanguagesResponse._();
+
+  factory ListMyLanguagesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyLanguagesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyLanguagesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<UserLanguage>(1, _omitFieldNames ? '' : 'languages', $pb.PbFieldType.PM, subBuilder: UserLanguage.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyLanguagesResponse clone() => ListMyLanguagesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyLanguagesResponse copyWith(void Function(ListMyLanguagesResponse) updates) => super.copyWith((message) => updates(message as ListMyLanguagesResponse)) as ListMyLanguagesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyLanguagesResponse create() => ListMyLanguagesResponse._();
+  @$core.override
+  ListMyLanguagesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyLanguagesResponse> createRepeated() => $pb.PbList<ListMyLanguagesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyLanguagesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyLanguagesResponse>(create);
+  static ListMyLanguagesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<UserLanguage> get languages => $_getList(0);
+}
+
+class AddMyLanguageRequest extends $pb.GeneratedMessage {
+  factory AddMyLanguageRequest({
+    $core.String? language,
+    $core.bool? isPrimary,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (isPrimary != null) result.isPrimary = isPrimary;
+    return result;
+  }
+
+  AddMyLanguageRequest._();
+
+  factory AddMyLanguageRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AddMyLanguageRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddMyLanguageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOB(2, _omitFieldNames ? '' : 'isPrimary')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AddMyLanguageRequest clone() => AddMyLanguageRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AddMyLanguageRequest copyWith(void Function(AddMyLanguageRequest) updates) => super.copyWith((message) => updates(message as AddMyLanguageRequest)) as AddMyLanguageRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddMyLanguageRequest create() => AddMyLanguageRequest._();
+  @$core.override
+  AddMyLanguageRequest createEmptyInstance() => create();
+  static $pb.PbList<AddMyLanguageRequest> createRepeated() => $pb.PbList<AddMyLanguageRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AddMyLanguageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddMyLanguageRequest>(create);
+  static AddMyLanguageRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get isPrimary => $_getBF(1);
+  @$pb.TagNumber(2)
+  set isPrimary($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIsPrimary() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIsPrimary() => $_clearField(2);
+}
+
+class AddMyLanguageResponse extends $pb.GeneratedMessage {
+  factory AddMyLanguageResponse({
+    UserLanguage? language,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    return result;
+  }
+
+  AddMyLanguageResponse._();
+
+  factory AddMyLanguageResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AddMyLanguageResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddMyLanguageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<UserLanguage>(1, _omitFieldNames ? '' : 'language', subBuilder: UserLanguage.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AddMyLanguageResponse clone() => AddMyLanguageResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AddMyLanguageResponse copyWith(void Function(AddMyLanguageResponse) updates) => super.copyWith((message) => updates(message as AddMyLanguageResponse)) as AddMyLanguageResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddMyLanguageResponse create() => AddMyLanguageResponse._();
+  @$core.override
+  AddMyLanguageResponse createEmptyInstance() => create();
+  static $pb.PbList<AddMyLanguageResponse> createRepeated() => $pb.PbList<AddMyLanguageResponse>();
+  @$core.pragma('dart2js:noInline')
+  static AddMyLanguageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddMyLanguageResponse>(create);
+  static AddMyLanguageResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  UserLanguage get language => $_getN(0);
+  @$pb.TagNumber(1)
+  set language(UserLanguage value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+  @$pb.TagNumber(1)
+  UserLanguage ensureLanguage() => $_ensure(0);
+}
+
+class RemoveMyLanguageRequest extends $pb.GeneratedMessage {
+  factory RemoveMyLanguageRequest({
+    $core.String? language,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    return result;
+  }
+
+  RemoveMyLanguageRequest._();
+
+  factory RemoveMyLanguageRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RemoveMyLanguageRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveMyLanguageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveMyLanguageRequest clone() => RemoveMyLanguageRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveMyLanguageRequest copyWith(void Function(RemoveMyLanguageRequest) updates) => super.copyWith((message) => updates(message as RemoveMyLanguageRequest)) as RemoveMyLanguageRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveMyLanguageRequest create() => RemoveMyLanguageRequest._();
+  @$core.override
+  RemoveMyLanguageRequest createEmptyInstance() => create();
+  static $pb.PbList<RemoveMyLanguageRequest> createRepeated() => $pb.PbList<RemoveMyLanguageRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveMyLanguageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveMyLanguageRequest>(create);
+  static RemoveMyLanguageRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+}
+
+class RemoveMyLanguageResponse extends $pb.GeneratedMessage {
+  factory RemoveMyLanguageResponse() => create();
+
+  RemoveMyLanguageResponse._();
+
+  factory RemoveMyLanguageResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RemoveMyLanguageResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveMyLanguageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveMyLanguageResponse clone() => RemoveMyLanguageResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveMyLanguageResponse copyWith(void Function(RemoveMyLanguageResponse) updates) => super.copyWith((message) => updates(message as RemoveMyLanguageResponse)) as RemoveMyLanguageResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveMyLanguageResponse create() => RemoveMyLanguageResponse._();
+  @$core.override
+  RemoveMyLanguageResponse createEmptyInstance() => create();
+  static $pb.PbList<RemoveMyLanguageResponse> createRepeated() => $pb.PbList<RemoveMyLanguageResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveMyLanguageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveMyLanguageResponse>(create);
+  static RemoveMyLanguageResponse? _defaultInstance;
+}
+
+class SetMyPrimaryLanguageRequest extends $pb.GeneratedMessage {
+  factory SetMyPrimaryLanguageRequest({
+    $core.String? language,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    return result;
+  }
+
+  SetMyPrimaryLanguageRequest._();
+
+  factory SetMyPrimaryLanguageRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SetMyPrimaryLanguageRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetMyPrimaryLanguageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMyPrimaryLanguageRequest clone() => SetMyPrimaryLanguageRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMyPrimaryLanguageRequest copyWith(void Function(SetMyPrimaryLanguageRequest) updates) => super.copyWith((message) => updates(message as SetMyPrimaryLanguageRequest)) as SetMyPrimaryLanguageRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetMyPrimaryLanguageRequest create() => SetMyPrimaryLanguageRequest._();
+  @$core.override
+  SetMyPrimaryLanguageRequest createEmptyInstance() => create();
+  static $pb.PbList<SetMyPrimaryLanguageRequest> createRepeated() => $pb.PbList<SetMyPrimaryLanguageRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetMyPrimaryLanguageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetMyPrimaryLanguageRequest>(create);
+  static SetMyPrimaryLanguageRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+}
+
+class SetMyPrimaryLanguageResponse extends $pb.GeneratedMessage {
+  factory SetMyPrimaryLanguageResponse({
+    UserLanguage? language,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    return result;
+  }
+
+  SetMyPrimaryLanguageResponse._();
+
+  factory SetMyPrimaryLanguageResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SetMyPrimaryLanguageResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetMyPrimaryLanguageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<UserLanguage>(1, _omitFieldNames ? '' : 'language', subBuilder: UserLanguage.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMyPrimaryLanguageResponse clone() => SetMyPrimaryLanguageResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMyPrimaryLanguageResponse copyWith(void Function(SetMyPrimaryLanguageResponse) updates) => super.copyWith((message) => updates(message as SetMyPrimaryLanguageResponse)) as SetMyPrimaryLanguageResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetMyPrimaryLanguageResponse create() => SetMyPrimaryLanguageResponse._();
+  @$core.override
+  SetMyPrimaryLanguageResponse createEmptyInstance() => create();
+  static $pb.PbList<SetMyPrimaryLanguageResponse> createRepeated() => $pb.PbList<SetMyPrimaryLanguageResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetMyPrimaryLanguageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetMyPrimaryLanguageResponse>(create);
+  static SetMyPrimaryLanguageResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  UserLanguage get language => $_getN(0);
+  @$pb.TagNumber(1)
+  set language(UserLanguage value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+  @$pb.TagNumber(1)
+  UserLanguage ensureLanguage() => $_ensure(0);
+}
+
 class SpeakingPrompt extends $pb.GeneratedMessage {
   factory SpeakingPrompt({
     $core.String? id,

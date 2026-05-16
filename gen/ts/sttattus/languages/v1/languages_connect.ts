@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CompleteInteractionRequest, CompleteInteractionResponse, CreateSpeakingAttemptRequest, CreateSpeakingAttemptResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetSpeakingAttemptRequest, GetSpeakingAttemptResponse, GetTodayPlanRequest, GetTodayPlanResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListScenariosRequest, ListScenariosResponse, ListSpeakingPromptsRequest, ListSpeakingPromptsResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse } from "./languages_pb.js";
+import { AddMyLanguageRequest, AddMyLanguageResponse, CompleteInteractionRequest, CompleteInteractionResponse, CreateSpeakingAttemptRequest, CreateSpeakingAttemptResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetSpeakingAttemptRequest, GetSpeakingAttemptResponse, GetTodayPlanRequest, GetTodayPlanResponse, ListMyLanguagesRequest, ListMyLanguagesResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListScenariosRequest, ListScenariosResponse, ListSpeakingPromptsRequest, ListSpeakingPromptsResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, RemoveMyLanguageRequest, RemoveMyLanguageResponse, SetMyPrimaryLanguageRequest, SetMyPrimaryLanguageResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse } from "./languages_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -139,6 +139,44 @@ export const LanguagesService = {
       name: "GetSpeakingAttempt",
       I: GetSpeakingAttemptRequest,
       O: GetSpeakingAttemptResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L12.6 — multilingual.
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListMyLanguages
+     */
+    listMyLanguages: {
+      name: "ListMyLanguages",
+      I: ListMyLanguagesRequest,
+      O: ListMyLanguagesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.AddMyLanguage
+     */
+    addMyLanguage: {
+      name: "AddMyLanguage",
+      I: AddMyLanguageRequest,
+      O: AddMyLanguageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.RemoveMyLanguage
+     */
+    removeMyLanguage: {
+      name: "RemoveMyLanguage",
+      I: RemoveMyLanguageRequest,
+      O: RemoveMyLanguageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.SetMyPrimaryLanguage
+     */
+    setMyPrimaryLanguage: {
+      name: "SetMyPrimaryLanguage",
+      I: SetMyPrimaryLanguageRequest,
+      O: SetMyPrimaryLanguageResponse,
       kind: MethodKind.Unary,
     },
     /**

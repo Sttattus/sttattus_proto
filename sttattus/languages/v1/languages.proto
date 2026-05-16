@@ -94,6 +94,39 @@ message GetLinguistStatsResponse {
   LinguistStats stats = 1;
 }
 
+// === L12.6 — multilingual ===
+
+message UserLanguage {
+  string language = 1;
+  bool is_primary = 2;
+  int64 added_unix = 3;
+}
+
+message ListMyLanguagesRequest {}
+message ListMyLanguagesResponse {
+  repeated UserLanguage languages = 1;
+}
+
+message AddMyLanguageRequest {
+  string language = 1;
+  bool is_primary = 2; // when true, demotes any existing primary
+}
+message AddMyLanguageResponse {
+  UserLanguage language = 1;
+}
+
+message RemoveMyLanguageRequest {
+  string language = 1;
+}
+message RemoveMyLanguageResponse {}
+
+message SetMyPrimaryLanguageRequest {
+  string language = 1;
+}
+message SetMyPrimaryLanguageResponse {
+  UserLanguage language = 1;
+}
+
 // === L12.4 — speaking drill + Whisper pronunciation ===
 
 message SpeakingPrompt {
@@ -290,6 +323,12 @@ service LanguagesService {
   rpc ListSpeakingPrompts(ListSpeakingPromptsRequest) returns (ListSpeakingPromptsResponse);
   rpc CreateSpeakingAttempt(CreateSpeakingAttemptRequest) returns (CreateSpeakingAttemptResponse);
   rpc GetSpeakingAttempt(GetSpeakingAttemptRequest) returns (GetSpeakingAttemptResponse);
+
+  // L12.6 — multilingual.
+  rpc ListMyLanguages(ListMyLanguagesRequest) returns (ListMyLanguagesResponse);
+  rpc AddMyLanguage(AddMyLanguageRequest) returns (AddMyLanguageResponse);
+  rpc RemoveMyLanguage(RemoveMyLanguageRequest) returns (RemoveMyLanguageResponse);
+  rpc SetMyPrimaryLanguage(SetMyPrimaryLanguageRequest) returns (SetMyPrimaryLanguageResponse);
 
   // Legacy (Deprecated but kept for bridge)
   rpc ListWords(ListWordsRequest) returns (ListWordsResponse);

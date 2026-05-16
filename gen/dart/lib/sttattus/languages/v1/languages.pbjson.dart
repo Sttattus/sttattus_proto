@@ -235,6 +235,117 @@ final $typed_data.Uint8List getLinguistStatsResponseDescriptor = $convert.base64
     'ChhHZXRMaW5ndWlzdFN0YXRzUmVzcG9uc2USOgoFc3RhdHMYASABKAsyJC5zdHRhdHR1cy5sYW'
     '5ndWFnZXMudjEuTGluZ3Vpc3RTdGF0c1IFc3RhdHM=');
 
+@$core.Deprecated('Use userLanguageDescriptor instead')
+const UserLanguage$json = {
+  '1': 'UserLanguage',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'is_primary', '3': 2, '4': 1, '5': 8, '10': 'isPrimary'},
+    {'1': 'added_unix', '3': 3, '4': 1, '5': 3, '10': 'addedUnix'},
+  ],
+};
+
+/// Descriptor for `UserLanguage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userLanguageDescriptor = $convert.base64Decode(
+    'CgxVc2VyTGFuZ3VhZ2USGgoIbGFuZ3VhZ2UYASABKAlSCGxhbmd1YWdlEh0KCmlzX3ByaW1hcn'
+    'kYAiABKAhSCWlzUHJpbWFyeRIdCgphZGRlZF91bml4GAMgASgDUglhZGRlZFVuaXg=');
+
+@$core.Deprecated('Use listMyLanguagesRequestDescriptor instead')
+const ListMyLanguagesRequest$json = {
+  '1': 'ListMyLanguagesRequest',
+};
+
+/// Descriptor for `ListMyLanguagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyLanguagesRequestDescriptor = $convert.base64Decode(
+    'ChZMaXN0TXlMYW5ndWFnZXNSZXF1ZXN0');
+
+@$core.Deprecated('Use listMyLanguagesResponseDescriptor instead')
+const ListMyLanguagesResponse$json = {
+  '1': 'ListMyLanguagesResponse',
+  '2': [
+    {'1': 'languages', '3': 1, '4': 3, '5': 11, '6': '.sttattus.languages.v1.UserLanguage', '10': 'languages'},
+  ],
+};
+
+/// Descriptor for `ListMyLanguagesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyLanguagesResponseDescriptor = $convert.base64Decode(
+    'ChdMaXN0TXlMYW5ndWFnZXNSZXNwb25zZRJBCglsYW5ndWFnZXMYASADKAsyIy5zdHRhdHR1cy'
+    '5sYW5ndWFnZXMudjEuVXNlckxhbmd1YWdlUglsYW5ndWFnZXM=');
+
+@$core.Deprecated('Use addMyLanguageRequestDescriptor instead')
+const AddMyLanguageRequest$json = {
+  '1': 'AddMyLanguageRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'is_primary', '3': 2, '4': 1, '5': 8, '10': 'isPrimary'},
+  ],
+};
+
+/// Descriptor for `AddMyLanguageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addMyLanguageRequestDescriptor = $convert.base64Decode(
+    'ChRBZGRNeUxhbmd1YWdlUmVxdWVzdBIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3VhZ2USHQoKaX'
+    'NfcHJpbWFyeRgCIAEoCFIJaXNQcmltYXJ5');
+
+@$core.Deprecated('Use addMyLanguageResponseDescriptor instead')
+const AddMyLanguageResponse$json = {
+  '1': 'AddMyLanguageResponse',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.UserLanguage', '10': 'language'},
+  ],
+};
+
+/// Descriptor for `AddMyLanguageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addMyLanguageResponseDescriptor = $convert.base64Decode(
+    'ChVBZGRNeUxhbmd1YWdlUmVzcG9uc2USPwoIbGFuZ3VhZ2UYASABKAsyIy5zdHRhdHR1cy5sYW'
+    '5ndWFnZXMudjEuVXNlckxhbmd1YWdlUghsYW5ndWFnZQ==');
+
+@$core.Deprecated('Use removeMyLanguageRequestDescriptor instead')
+const RemoveMyLanguageRequest$json = {
+  '1': 'RemoveMyLanguageRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+  ],
+};
+
+/// Descriptor for `RemoveMyLanguageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeMyLanguageRequestDescriptor = $convert.base64Decode(
+    'ChdSZW1vdmVNeUxhbmd1YWdlUmVxdWVzdBIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3VhZ2U=');
+
+@$core.Deprecated('Use removeMyLanguageResponseDescriptor instead')
+const RemoveMyLanguageResponse$json = {
+  '1': 'RemoveMyLanguageResponse',
+};
+
+/// Descriptor for `RemoveMyLanguageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeMyLanguageResponseDescriptor = $convert.base64Decode(
+    'ChhSZW1vdmVNeUxhbmd1YWdlUmVzcG9uc2U=');
+
+@$core.Deprecated('Use setMyPrimaryLanguageRequestDescriptor instead')
+const SetMyPrimaryLanguageRequest$json = {
+  '1': 'SetMyPrimaryLanguageRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+  ],
+};
+
+/// Descriptor for `SetMyPrimaryLanguageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setMyPrimaryLanguageRequestDescriptor = $convert.base64Decode(
+    'ChtTZXRNeVByaW1hcnlMYW5ndWFnZVJlcXVlc3QSGgoIbGFuZ3VhZ2UYASABKAlSCGxhbmd1YW'
+    'dl');
+
+@$core.Deprecated('Use setMyPrimaryLanguageResponseDescriptor instead')
+const SetMyPrimaryLanguageResponse$json = {
+  '1': 'SetMyPrimaryLanguageResponse',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.UserLanguage', '10': 'language'},
+  ],
+};
+
+/// Descriptor for `SetMyPrimaryLanguageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setMyPrimaryLanguageResponseDescriptor = $convert.base64Decode(
+    'ChxTZXRNeVByaW1hcnlMYW5ndWFnZVJlc3BvbnNlEj8KCGxhbmd1YWdlGAEgASgLMiMuc3R0YX'
+    'R0dXMubGFuZ3VhZ2VzLnYxLlVzZXJMYW5ndWFnZVIIbGFuZ3VhZ2U=');
+
 @$core.Deprecated('Use speakingPromptDescriptor instead')
 const SpeakingPrompt$json = {
   '1': 'SpeakingPrompt',
