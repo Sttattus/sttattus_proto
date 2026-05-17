@@ -305,6 +305,147 @@ export class GetZenithStatsResponse extends Message<GetZenithStatsResponse> {
 }
 
 /**
+ * @generated from message sttattus.zenith.v1.BlockRecommendation
+ */
+export class BlockRecommendation extends Message<BlockRecommendation> {
+  /**
+   * @generated from field: int64 starts_at_unix = 1;
+   */
+  startsAtUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 duration_minutes = 2;
+   */
+  durationMinutes = 0;
+
+  /**
+   * 1-line "why this window"
+   *
+   * @generated from field: string rationale = 3;
+   */
+  rationale = "";
+
+  /**
+   * 'history' | 'calendar' | 'composite'
+   *
+   * @generated from field: string source = 4;
+   */
+  source = "";
+
+  constructor(data?: PartialMessage<BlockRecommendation>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.BlockRecommendation";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "starts_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "duration_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "rationale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BlockRecommendation {
+    return new BlockRecommendation().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BlockRecommendation {
+    return new BlockRecommendation().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BlockRecommendation {
+    return new BlockRecommendation().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: BlockRecommendation | PlainMessage<BlockRecommendation> | undefined, b: BlockRecommendation | PlainMessage<BlockRecommendation> | undefined): boolean {
+    return proto3.util.equals(BlockRecommendation, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.RecommendBlockRequest
+ */
+export class RecommendBlockRequest extends Message<RecommendBlockRequest> {
+  constructor(data?: PartialMessage<RecommendBlockRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.RecommendBlockRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecommendBlockRequest {
+    return new RecommendBlockRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecommendBlockRequest {
+    return new RecommendBlockRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecommendBlockRequest {
+    return new RecommendBlockRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecommendBlockRequest | PlainMessage<RecommendBlockRequest> | undefined, b: RecommendBlockRequest | PlainMessage<RecommendBlockRequest> | undefined): boolean {
+    return proto3.util.equals(RecommendBlockRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.RecommendBlockResponse
+ */
+export class RecommendBlockResponse extends Message<RecommendBlockResponse> {
+  /**
+   * @generated from field: bool has_recommendation = 1;
+   */
+  hasRecommendation = false;
+
+  /**
+   * @generated from field: sttattus.zenith.v1.BlockRecommendation recommendation = 2;
+   */
+  recommendation?: BlockRecommendation;
+
+  /**
+   * When has_recommendation = false, why we couldn't recommend.
+   *
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  constructor(data?: PartialMessage<RecommendBlockResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.RecommendBlockResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "has_recommendation", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "recommendation", kind: "message", T: BlockRecommendation },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecommendBlockResponse {
+    return new RecommendBlockResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecommendBlockResponse {
+    return new RecommendBlockResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecommendBlockResponse {
+    return new RecommendBlockResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecommendBlockResponse | PlainMessage<RecommendBlockResponse> | undefined, b: RecommendBlockResponse | PlainMessage<RecommendBlockResponse> | undefined): boolean {
+    return proto3.util.equals(RecommendBlockResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.zenith.v1.CalendarConnection
  */
 export class CalendarConnection extends Message<CalendarConnection> {

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetTodayLoadRequest, GetTodayLoadResponse, GetZenithStatsRequest, GetZenithStatsResponse, ListMyCalendarConnectionsRequest, ListMyCalendarConnectionsResponse, ListMyCalendarEventsRequest, ListMyCalendarEventsResponse, LogFocusSessionRequest, LogFocusSessionResponse } from "./zenith_pb.js";
+import { GetTodayLoadRequest, GetTodayLoadResponse, GetZenithStatsRequest, GetZenithStatsResponse, ListMyCalendarConnectionsRequest, ListMyCalendarConnectionsResponse, ListMyCalendarEventsRequest, ListMyCalendarEventsResponse, LogFocusSessionRequest, LogFocusSessionResponse, RecommendBlockRequest, RecommendBlockResponse } from "./zenith_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -59,6 +59,17 @@ export const ZenithService = {
       name: "ListMyCalendarEvents",
       I: ListMyCalendarEventsRequest,
       O: ListMyCalendarEventsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Z16.7 — block-time recommender.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.RecommendBlock
+     */
+    recommendBlock: {
+      name: "RecommendBlock",
+      I: RecommendBlockRequest,
+      O: RecommendBlockResponse,
       kind: MethodKind.Unary,
     },
   }

@@ -54,6 +54,11 @@ class ZenithServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listMyCalendarEvents, request, options: options);
   }
 
+  /// Z16.7 — block-time recommender.
+  $grpc.ResponseFuture<$0.RecommendBlockResponse> recommendBlock($0.RecommendBlockRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$recommendBlock, request, options: options);
+  }
+
     // method descriptors
 
   static final _$logFocusSession = $grpc.ClientMethod<$0.LogFocusSessionRequest, $0.LogFocusSessionResponse>(
@@ -76,6 +81,10 @@ class ZenithServiceClient extends $grpc.Client {
       '/sttattus.zenith.v1.ZenithService/ListMyCalendarEvents',
       ($0.ListMyCalendarEventsRequest value) => value.writeToBuffer(),
       $0.ListMyCalendarEventsResponse.fromBuffer);
+  static final _$recommendBlock = $grpc.ClientMethod<$0.RecommendBlockRequest, $0.RecommendBlockResponse>(
+      '/sttattus.zenith.v1.ZenithService/RecommendBlock',
+      ($0.RecommendBlockRequest value) => value.writeToBuffer(),
+      $0.RecommendBlockResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.zenith.v1.ZenithService')
@@ -118,6 +127,13 @@ abstract class ZenithServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListMyCalendarEventsRequest.fromBuffer(value),
         ($0.ListMyCalendarEventsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecommendBlockRequest, $0.RecommendBlockResponse>(
+        'RecommendBlock',
+        recommendBlock_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RecommendBlockRequest.fromBuffer(value),
+        ($0.RecommendBlockResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.LogFocusSessionResponse> logFocusSession_Pre($grpc.ServiceCall $call, $async.Future<$0.LogFocusSessionRequest> $request) async {
@@ -149,5 +165,11 @@ abstract class ZenithServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListMyCalendarEventsResponse> listMyCalendarEvents($grpc.ServiceCall call, $0.ListMyCalendarEventsRequest request);
+
+  $async.Future<$0.RecommendBlockResponse> recommendBlock_Pre($grpc.ServiceCall $call, $async.Future<$0.RecommendBlockRequest> $request) async {
+    return recommendBlock($call, await $request);
+  }
+
+  $async.Future<$0.RecommendBlockResponse> recommendBlock($grpc.ServiceCall call, $0.RecommendBlockRequest request);
 
 }

@@ -435,6 +435,191 @@ class GetZenithStatsResponse extends $pb.GeneratedMessage {
   ZenithStats ensureStats() => $_ensure(0);
 }
 
+class BlockRecommendation extends $pb.GeneratedMessage {
+  factory BlockRecommendation({
+    $fixnum.Int64? startsAtUnix,
+    $core.int? durationMinutes,
+    $core.String? rationale,
+    $core.String? source,
+  }) {
+    final result = create();
+    if (startsAtUnix != null) result.startsAtUnix = startsAtUnix;
+    if (durationMinutes != null) result.durationMinutes = durationMinutes;
+    if (rationale != null) result.rationale = rationale;
+    if (source != null) result.source = source;
+    return result;
+  }
+
+  BlockRecommendation._();
+
+  factory BlockRecommendation.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory BlockRecommendation.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BlockRecommendation', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'startsAtUnix')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'durationMinutes', $pb.PbFieldType.O3)
+    ..aOS(3, _omitFieldNames ? '' : 'rationale')
+    ..aOS(4, _omitFieldNames ? '' : 'source')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BlockRecommendation clone() => BlockRecommendation()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BlockRecommendation copyWith(void Function(BlockRecommendation) updates) => super.copyWith((message) => updates(message as BlockRecommendation)) as BlockRecommendation;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BlockRecommendation create() => BlockRecommendation._();
+  @$core.override
+  BlockRecommendation createEmptyInstance() => create();
+  static $pb.PbList<BlockRecommendation> createRepeated() => $pb.PbList<BlockRecommendation>();
+  @$core.pragma('dart2js:noInline')
+  static BlockRecommendation getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BlockRecommendation>(create);
+  static BlockRecommendation? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get startsAtUnix => $_getI64(0);
+  @$pb.TagNumber(1)
+  set startsAtUnix($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasStartsAtUnix() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStartsAtUnix() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get durationMinutes => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set durationMinutes($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDurationMinutes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDurationMinutes() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get rationale => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set rationale($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRationale() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRationale() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get source => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set source($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSource() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSource() => $_clearField(4);
+}
+
+class RecommendBlockRequest extends $pb.GeneratedMessage {
+  factory RecommendBlockRequest() => create();
+
+  RecommendBlockRequest._();
+
+  factory RecommendBlockRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RecommendBlockRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecommendBlockRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecommendBlockRequest clone() => RecommendBlockRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecommendBlockRequest copyWith(void Function(RecommendBlockRequest) updates) => super.copyWith((message) => updates(message as RecommendBlockRequest)) as RecommendBlockRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecommendBlockRequest create() => RecommendBlockRequest._();
+  @$core.override
+  RecommendBlockRequest createEmptyInstance() => create();
+  static $pb.PbList<RecommendBlockRequest> createRepeated() => $pb.PbList<RecommendBlockRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RecommendBlockRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecommendBlockRequest>(create);
+  static RecommendBlockRequest? _defaultInstance;
+}
+
+class RecommendBlockResponse extends $pb.GeneratedMessage {
+  factory RecommendBlockResponse({
+    $core.bool? hasRecommendation,
+    BlockRecommendation? recommendation_2,
+    $core.String? reason,
+  }) {
+    final result = create();
+    if (hasRecommendation != null) result.hasRecommendation = hasRecommendation;
+    if (recommendation_2 != null) result.recommendation_2 = recommendation_2;
+    if (reason != null) result.reason = reason;
+    return result;
+  }
+
+  RecommendBlockResponse._();
+
+  factory RecommendBlockResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RecommendBlockResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecommendBlockResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'hasRecommendation')
+    ..aOM<BlockRecommendation>(2, _omitFieldNames ? '' : 'recommendation', subBuilder: BlockRecommendation.create)
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecommendBlockResponse clone() => RecommendBlockResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecommendBlockResponse copyWith(void Function(RecommendBlockResponse) updates) => super.copyWith((message) => updates(message as RecommendBlockResponse)) as RecommendBlockResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecommendBlockResponse create() => RecommendBlockResponse._();
+  @$core.override
+  RecommendBlockResponse createEmptyInstance() => create();
+  static $pb.PbList<RecommendBlockResponse> createRepeated() => $pb.PbList<RecommendBlockResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RecommendBlockResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecommendBlockResponse>(create);
+  static RecommendBlockResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get hasRecommendation => $_getBF(0);
+  @$pb.TagNumber(1)
+  set hasRecommendation($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasHasRecommendation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHasRecommendation() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  BlockRecommendation get recommendation_2 => $_getN(1);
+  @$pb.TagNumber(2)
+  set recommendation_2(BlockRecommendation value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRecommendation_2() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRecommendation_2() => $_clearField(2);
+  @$pb.TagNumber(2)
+  BlockRecommendation ensureRecommendation_2() => $_ensure(1);
+
+  /// When has_recommendation = false, why we couldn't recommend.
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+}
+
 class CalendarConnection extends $pb.GeneratedMessage {
   factory CalendarConnection({
     $core.String? provider,

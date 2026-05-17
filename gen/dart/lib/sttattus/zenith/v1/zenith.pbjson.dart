@@ -108,6 +108,49 @@ final $typed_data.Uint8List getZenithStatsResponseDescriptor = $convert.base64De
     'ChZHZXRaZW5pdGhTdGF0c1Jlc3BvbnNlEjUKBXN0YXRzGAEgASgLMh8uc3R0YXR0dXMuemVuaX'
     'RoLnYxLlplbml0aFN0YXRzUgVzdGF0cw==');
 
+@$core.Deprecated('Use blockRecommendationDescriptor instead')
+const BlockRecommendation$json = {
+  '1': 'BlockRecommendation',
+  '2': [
+    {'1': 'starts_at_unix', '3': 1, '4': 1, '5': 3, '10': 'startsAtUnix'},
+    {'1': 'duration_minutes', '3': 2, '4': 1, '5': 5, '10': 'durationMinutes'},
+    {'1': 'rationale', '3': 3, '4': 1, '5': 9, '10': 'rationale'},
+    {'1': 'source', '3': 4, '4': 1, '5': 9, '10': 'source'},
+  ],
+};
+
+/// Descriptor for `BlockRecommendation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List blockRecommendationDescriptor = $convert.base64Decode(
+    'ChNCbG9ja1JlY29tbWVuZGF0aW9uEiQKDnN0YXJ0c19hdF91bml4GAEgASgDUgxzdGFydHNBdF'
+    'VuaXgSKQoQZHVyYXRpb25fbWludXRlcxgCIAEoBVIPZHVyYXRpb25NaW51dGVzEhwKCXJhdGlv'
+    'bmFsZRgDIAEoCVIJcmF0aW9uYWxlEhYKBnNvdXJjZRgEIAEoCVIGc291cmNl');
+
+@$core.Deprecated('Use recommendBlockRequestDescriptor instead')
+const RecommendBlockRequest$json = {
+  '1': 'RecommendBlockRequest',
+};
+
+/// Descriptor for `RecommendBlockRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recommendBlockRequestDescriptor = $convert.base64Decode(
+    'ChVSZWNvbW1lbmRCbG9ja1JlcXVlc3Q=');
+
+@$core.Deprecated('Use recommendBlockResponseDescriptor instead')
+const RecommendBlockResponse$json = {
+  '1': 'RecommendBlockResponse',
+  '2': [
+    {'1': 'has_recommendation', '3': 1, '4': 1, '5': 8, '10': 'hasRecommendation'},
+    {'1': 'recommendation', '3': 2, '4': 1, '5': 11, '6': '.sttattus.zenith.v1.BlockRecommendation', '10': 'recommendation'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+  ],
+};
+
+/// Descriptor for `RecommendBlockResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recommendBlockResponseDescriptor = $convert.base64Decode(
+    'ChZSZWNvbW1lbmRCbG9ja1Jlc3BvbnNlEi0KEmhhc19yZWNvbW1lbmRhdGlvbhgBIAEoCFIRaG'
+    'FzUmVjb21tZW5kYXRpb24STwoOcmVjb21tZW5kYXRpb24YAiABKAsyJy5zdHRhdHR1cy56ZW5p'
+    'dGgudjEuQmxvY2tSZWNvbW1lbmRhdGlvblIOcmVjb21tZW5kYXRpb24SFgoGcmVhc29uGAMgAS'
+    'gJUgZyZWFzb24=');
+
 @$core.Deprecated('Use calendarConnectionDescriptor instead')
 const CalendarConnection$json = {
   '1': 'CalendarConnection',

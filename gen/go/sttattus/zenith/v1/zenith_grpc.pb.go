@@ -24,6 +24,7 @@ const (
 	ZenithService_GetTodayLoad_FullMethodName              = "/sttattus.zenith.v1.ZenithService/GetTodayLoad"
 	ZenithService_ListMyCalendarConnections_FullMethodName = "/sttattus.zenith.v1.ZenithService/ListMyCalendarConnections"
 	ZenithService_ListMyCalendarEvents_FullMethodName      = "/sttattus.zenith.v1.ZenithService/ListMyCalendarEvents"
+	ZenithService_RecommendBlock_FullMethodName            = "/sttattus.zenith.v1.ZenithService/RecommendBlock"
 )
 
 // ZenithServiceClient is the client API for ZenithService service.
@@ -37,6 +38,8 @@ type ZenithServiceClient interface {
 	// Z16.6 — calendar read integration.
 	ListMyCalendarConnections(ctx context.Context, in *ListMyCalendarConnectionsRequest, opts ...grpc.CallOption) (*ListMyCalendarConnectionsResponse, error)
 	ListMyCalendarEvents(ctx context.Context, in *ListMyCalendarEventsRequest, opts ...grpc.CallOption) (*ListMyCalendarEventsResponse, error)
+	// Z16.7 — block-time recommender.
+	RecommendBlock(ctx context.Context, in *RecommendBlockRequest, opts ...grpc.CallOption) (*RecommendBlockResponse, error)
 }
 
 type zenithServiceClient struct {
@@ -97,6 +100,16 @@ func (c *zenithServiceClient) ListMyCalendarEvents(ctx context.Context, in *List
 	return out, nil
 }
 
+func (c *zenithServiceClient) RecommendBlock(ctx context.Context, in *RecommendBlockRequest, opts ...grpc.CallOption) (*RecommendBlockResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecommendBlockResponse)
+	err := c.cc.Invoke(ctx, ZenithService_RecommendBlock_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ZenithServiceServer is the server API for ZenithService service.
 // All implementations must embed UnimplementedZenithServiceServer
 // for forward compatibility.
@@ -108,6 +121,8 @@ type ZenithServiceServer interface {
 	// Z16.6 — calendar read integration.
 	ListMyCalendarConnections(context.Context, *ListMyCalendarConnectionsRequest) (*ListMyCalendarConnectionsResponse, error)
 	ListMyCalendarEvents(context.Context, *ListMyCalendarEventsRequest) (*ListMyCalendarEventsResponse, error)
+	// Z16.7 — block-time recommender.
+	RecommendBlock(context.Context, *RecommendBlockRequest) (*RecommendBlockResponse, error)
 	mustEmbedUnimplementedZenithServiceServer()
 }
 
@@ -132,6 +147,9 @@ func (UnimplementedZenithServiceServer) ListMyCalendarConnections(context.Contex
 }
 func (UnimplementedZenithServiceServer) ListMyCalendarEvents(context.Context, *ListMyCalendarEventsRequest) (*ListMyCalendarEventsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMyCalendarEvents not implemented")
+}
+func (UnimplementedZenithServiceServer) RecommendBlock(context.Context, *RecommendBlockRequest) (*RecommendBlockResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecommendBlock not implemented")
 }
 func (UnimplementedZenithServiceServer) mustEmbedUnimplementedZenithServiceServer() {}
 func (UnimplementedZenithServiceServer) testEmbeddedByValue()                       {}
@@ -244,6 +262,24 @@ func _ZenithService_ListMyCalendarEvents_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ZenithService_RecommendBlock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecommendBlockRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).RecommendBlock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_RecommendBlock_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).RecommendBlock(ctx, req.(*RecommendBlockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ZenithService_ServiceDesc is the grpc.ServiceDesc for ZenithService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -270,6 +306,10 @@ var ZenithService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListMyCalendarEvents",
 			Handler:    _ZenithService_ListMyCalendarEvents_Handler,
+		},
+		{
+			MethodName: "RecommendBlock",
+			Handler:    _ZenithService_RecommendBlock_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
