@@ -79,6 +79,27 @@ message GetLoungeKeyResponse {
   google.protobuf.Timestamp expires_at = 2;
 }
 
+// === D14.3 — AVM (Automated Valuation Model) ===
+
+message AVMResult {
+  string property_id = 1;
+  string provider = 2;
+  double estimated_value_usd = 3;
+  double confidence_low = 4;
+  double confidence_high = 5;
+  string source_url = 6;
+  int64 fetched_at_unix = 7;
+}
+
+message EstimatePropertyValueRequest {
+  string property_id = 1;
+  bool force_refresh = 2; // when true, bypass cache and re-call partner
+}
+message EstimatePropertyValueResponse {
+  AVMResult result = 1;
+  bool from_cache = 2;
+}
+
 service DominionService {
   // Sovereignty Protocol: Verified Territorial Control
   rpc SyncProperties(SyncPropertiesRequest) returns (SyncPropertiesResponse);
@@ -87,4 +108,7 @@ service DominionService {
 
   // Hard Perks
   rpc GetLoungeKey(GetLoungeKeyRequest) returns (GetLoungeKeyResponse);
+
+  // D14.3 — AVM estimate (Zillow + Rightmove pilot).
+  rpc EstimatePropertyValue(EstimatePropertyValueRequest) returns (EstimatePropertyValueResponse);
 }

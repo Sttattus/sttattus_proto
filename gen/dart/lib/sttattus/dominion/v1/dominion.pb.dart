@@ -12,6 +12,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $1;
@@ -683,6 +684,242 @@ class GetLoungeKeyResponse extends $pb.GeneratedMessage {
   void clearExpiresAt() => $_clearField(2);
   @$pb.TagNumber(2)
   $1.Timestamp ensureExpiresAt() => $_ensure(1);
+}
+
+class AVMResult extends $pb.GeneratedMessage {
+  factory AVMResult({
+    $core.String? propertyId,
+    $core.String? provider,
+    $core.double? estimatedValueUsd,
+    $core.double? confidenceLow,
+    $core.double? confidenceHigh,
+    $core.String? sourceUrl,
+    $fixnum.Int64? fetchedAtUnix,
+  }) {
+    final result = create();
+    if (propertyId != null) result.propertyId = propertyId;
+    if (provider != null) result.provider = provider;
+    if (estimatedValueUsd != null) result.estimatedValueUsd = estimatedValueUsd;
+    if (confidenceLow != null) result.confidenceLow = confidenceLow;
+    if (confidenceHigh != null) result.confidenceHigh = confidenceHigh;
+    if (sourceUrl != null) result.sourceUrl = sourceUrl;
+    if (fetchedAtUnix != null) result.fetchedAtUnix = fetchedAtUnix;
+    return result;
+  }
+
+  AVMResult._();
+
+  factory AVMResult.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AVMResult.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AVMResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dominion.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'propertyId')
+    ..aOS(2, _omitFieldNames ? '' : 'provider')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'estimatedValueUsd', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'confidenceLow', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'confidenceHigh', $pb.PbFieldType.OD)
+    ..aOS(6, _omitFieldNames ? '' : 'sourceUrl')
+    ..aInt64(7, _omitFieldNames ? '' : 'fetchedAtUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AVMResult clone() => AVMResult()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AVMResult copyWith(void Function(AVMResult) updates) => super.copyWith((message) => updates(message as AVMResult)) as AVMResult;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AVMResult create() => AVMResult._();
+  @$core.override
+  AVMResult createEmptyInstance() => create();
+  static $pb.PbList<AVMResult> createRepeated() => $pb.PbList<AVMResult>();
+  @$core.pragma('dart2js:noInline')
+  static AVMResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AVMResult>(create);
+  static AVMResult? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get propertyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set propertyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPropertyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPropertyId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get provider => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set provider($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasProvider() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProvider() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get estimatedValueUsd => $_getN(2);
+  @$pb.TagNumber(3)
+  set estimatedValueUsd($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEstimatedValueUsd() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEstimatedValueUsd() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get confidenceLow => $_getN(3);
+  @$pb.TagNumber(4)
+  set confidenceLow($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasConfidenceLow() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConfidenceLow() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get confidenceHigh => $_getN(4);
+  @$pb.TagNumber(5)
+  set confidenceHigh($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasConfidenceHigh() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearConfidenceHigh() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get sourceUrl => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set sourceUrl($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSourceUrl() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSourceUrl() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get fetchedAtUnix => $_getI64(6);
+  @$pb.TagNumber(7)
+  set fetchedAtUnix($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasFetchedAtUnix() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFetchedAtUnix() => $_clearField(7);
+}
+
+class EstimatePropertyValueRequest extends $pb.GeneratedMessage {
+  factory EstimatePropertyValueRequest({
+    $core.String? propertyId,
+    $core.bool? forceRefresh,
+  }) {
+    final result = create();
+    if (propertyId != null) result.propertyId = propertyId;
+    if (forceRefresh != null) result.forceRefresh = forceRefresh;
+    return result;
+  }
+
+  EstimatePropertyValueRequest._();
+
+  factory EstimatePropertyValueRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EstimatePropertyValueRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EstimatePropertyValueRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dominion.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'propertyId')
+    ..aOB(2, _omitFieldNames ? '' : 'forceRefresh')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EstimatePropertyValueRequest clone() => EstimatePropertyValueRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EstimatePropertyValueRequest copyWith(void Function(EstimatePropertyValueRequest) updates) => super.copyWith((message) => updates(message as EstimatePropertyValueRequest)) as EstimatePropertyValueRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EstimatePropertyValueRequest create() => EstimatePropertyValueRequest._();
+  @$core.override
+  EstimatePropertyValueRequest createEmptyInstance() => create();
+  static $pb.PbList<EstimatePropertyValueRequest> createRepeated() => $pb.PbList<EstimatePropertyValueRequest>();
+  @$core.pragma('dart2js:noInline')
+  static EstimatePropertyValueRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EstimatePropertyValueRequest>(create);
+  static EstimatePropertyValueRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get propertyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set propertyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPropertyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPropertyId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get forceRefresh => $_getBF(1);
+  @$pb.TagNumber(2)
+  set forceRefresh($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasForceRefresh() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearForceRefresh() => $_clearField(2);
+}
+
+class EstimatePropertyValueResponse extends $pb.GeneratedMessage {
+  factory EstimatePropertyValueResponse({
+    AVMResult? result,
+    $core.bool? fromCache,
+  }) {
+    final result$ = create();
+    if (result != null) result$.result = result;
+    if (fromCache != null) result$.fromCache = fromCache;
+    return result$;
+  }
+
+  EstimatePropertyValueResponse._();
+
+  factory EstimatePropertyValueResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EstimatePropertyValueResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EstimatePropertyValueResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dominion.v1'), createEmptyInstance: create)
+    ..aOM<AVMResult>(1, _omitFieldNames ? '' : 'result', subBuilder: AVMResult.create)
+    ..aOB(2, _omitFieldNames ? '' : 'fromCache')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EstimatePropertyValueResponse clone() => EstimatePropertyValueResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EstimatePropertyValueResponse copyWith(void Function(EstimatePropertyValueResponse) updates) => super.copyWith((message) => updates(message as EstimatePropertyValueResponse)) as EstimatePropertyValueResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EstimatePropertyValueResponse create() => EstimatePropertyValueResponse._();
+  @$core.override
+  EstimatePropertyValueResponse createEmptyInstance() => create();
+  static $pb.PbList<EstimatePropertyValueResponse> createRepeated() => $pb.PbList<EstimatePropertyValueResponse>();
+  @$core.pragma('dart2js:noInline')
+  static EstimatePropertyValueResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EstimatePropertyValueResponse>(create);
+  static EstimatePropertyValueResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AVMResult get result => $_getN(0);
+  @$pb.TagNumber(1)
+  set result(AVMResult value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasResult() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResult() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AVMResult ensureResult() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get fromCache => $_getBF(1);
+  @$pb.TagNumber(2)
+  set fromCache($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasFromCache() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFromCache() => $_clearField(2);
 }
 
 

@@ -205,3 +205,54 @@ final $typed_data.Uint8List getLoungeKeyResponseDescriptor = $convert.base64Deco
     'V5Snd0EjkKCmV4cGlyZXNfYXQYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgll'
     'eHBpcmVzQXQ=');
 
+@$core.Deprecated('Use aVMResultDescriptor instead')
+const AVMResult$json = {
+  '1': 'AVMResult',
+  '2': [
+    {'1': 'property_id', '3': 1, '4': 1, '5': 9, '10': 'propertyId'},
+    {'1': 'provider', '3': 2, '4': 1, '5': 9, '10': 'provider'},
+    {'1': 'estimated_value_usd', '3': 3, '4': 1, '5': 1, '10': 'estimatedValueUsd'},
+    {'1': 'confidence_low', '3': 4, '4': 1, '5': 1, '10': 'confidenceLow'},
+    {'1': 'confidence_high', '3': 5, '4': 1, '5': 1, '10': 'confidenceHigh'},
+    {'1': 'source_url', '3': 6, '4': 1, '5': 9, '10': 'sourceUrl'},
+    {'1': 'fetched_at_unix', '3': 7, '4': 1, '5': 3, '10': 'fetchedAtUnix'},
+  ],
+};
+
+/// Descriptor for `AVMResult`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List aVMResultDescriptor = $convert.base64Decode(
+    'CglBVk1SZXN1bHQSHwoLcHJvcGVydHlfaWQYASABKAlSCnByb3BlcnR5SWQSGgoIcHJvdmlkZX'
+    'IYAiABKAlSCHByb3ZpZGVyEi4KE2VzdGltYXRlZF92YWx1ZV91c2QYAyABKAFSEWVzdGltYXRl'
+    'ZFZhbHVlVXNkEiUKDmNvbmZpZGVuY2VfbG93GAQgASgBUg1jb25maWRlbmNlTG93EicKD2Nvbm'
+    'ZpZGVuY2VfaGlnaBgFIAEoAVIOY29uZmlkZW5jZUhpZ2gSHQoKc291cmNlX3VybBgGIAEoCVIJ'
+    'c291cmNlVXJsEiYKD2ZldGNoZWRfYXRfdW5peBgHIAEoA1INZmV0Y2hlZEF0VW5peA==');
+
+@$core.Deprecated('Use estimatePropertyValueRequestDescriptor instead')
+const EstimatePropertyValueRequest$json = {
+  '1': 'EstimatePropertyValueRequest',
+  '2': [
+    {'1': 'property_id', '3': 1, '4': 1, '5': 9, '10': 'propertyId'},
+    {'1': 'force_refresh', '3': 2, '4': 1, '5': 8, '10': 'forceRefresh'},
+  ],
+};
+
+/// Descriptor for `EstimatePropertyValueRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List estimatePropertyValueRequestDescriptor = $convert.base64Decode(
+    'ChxFc3RpbWF0ZVByb3BlcnR5VmFsdWVSZXF1ZXN0Eh8KC3Byb3BlcnR5X2lkGAEgASgJUgpwcm'
+    '9wZXJ0eUlkEiMKDWZvcmNlX3JlZnJlc2gYAiABKAhSDGZvcmNlUmVmcmVzaA==');
+
+@$core.Deprecated('Use estimatePropertyValueResponseDescriptor instead')
+const EstimatePropertyValueResponse$json = {
+  '1': 'EstimatePropertyValueResponse',
+  '2': [
+    {'1': 'result', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dominion.v1.AVMResult', '10': 'result'},
+    {'1': 'from_cache', '3': 2, '4': 1, '5': 8, '10': 'fromCache'},
+  ],
+};
+
+/// Descriptor for `EstimatePropertyValueResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List estimatePropertyValueResponseDescriptor = $convert.base64Decode(
+    'Ch1Fc3RpbWF0ZVByb3BlcnR5VmFsdWVSZXNwb25zZRI3CgZyZXN1bHQYASABKAsyHy5zdHRhdH'
+    'R1cy5kb21pbmlvbi52MS5BVk1SZXN1bHRSBnJlc3VsdBIdCgpmcm9tX2NhY2hlGAIgASgIUglm'
+    'cm9tQ2FjaGU=');
+

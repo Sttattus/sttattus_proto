@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
 
 /**
  * EstateCategory defines the strategic type of property.
@@ -566,6 +566,167 @@ export class GetLoungeKeyResponse extends Message<GetLoungeKeyResponse> {
 
   static equals(a: GetLoungeKeyResponse | PlainMessage<GetLoungeKeyResponse> | undefined, b: GetLoungeKeyResponse | PlainMessage<GetLoungeKeyResponse> | undefined): boolean {
     return proto3.util.equals(GetLoungeKeyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dominion.v1.AVMResult
+ */
+export class AVMResult extends Message<AVMResult> {
+  /**
+   * @generated from field: string property_id = 1;
+   */
+  propertyId = "";
+
+  /**
+   * @generated from field: string provider = 2;
+   */
+  provider = "";
+
+  /**
+   * @generated from field: double estimated_value_usd = 3;
+   */
+  estimatedValueUsd = 0;
+
+  /**
+   * @generated from field: double confidence_low = 4;
+   */
+  confidenceLow = 0;
+
+  /**
+   * @generated from field: double confidence_high = 5;
+   */
+  confidenceHigh = 0;
+
+  /**
+   * @generated from field: string source_url = 6;
+   */
+  sourceUrl = "";
+
+  /**
+   * @generated from field: int64 fetched_at_unix = 7;
+   */
+  fetchedAtUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AVMResult>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.AVMResult";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "property_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "provider", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "estimated_value_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "confidence_low", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "confidence_high", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "source_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "fetched_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AVMResult {
+    return new AVMResult().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AVMResult {
+    return new AVMResult().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AVMResult {
+    return new AVMResult().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AVMResult | PlainMessage<AVMResult> | undefined, b: AVMResult | PlainMessage<AVMResult> | undefined): boolean {
+    return proto3.util.equals(AVMResult, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dominion.v1.EstimatePropertyValueRequest
+ */
+export class EstimatePropertyValueRequest extends Message<EstimatePropertyValueRequest> {
+  /**
+   * @generated from field: string property_id = 1;
+   */
+  propertyId = "";
+
+  /**
+   * when true, bypass cache and re-call partner
+   *
+   * @generated from field: bool force_refresh = 2;
+   */
+  forceRefresh = false;
+
+  constructor(data?: PartialMessage<EstimatePropertyValueRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.EstimatePropertyValueRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "property_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "force_refresh", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EstimatePropertyValueRequest {
+    return new EstimatePropertyValueRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EstimatePropertyValueRequest {
+    return new EstimatePropertyValueRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EstimatePropertyValueRequest {
+    return new EstimatePropertyValueRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EstimatePropertyValueRequest | PlainMessage<EstimatePropertyValueRequest> | undefined, b: EstimatePropertyValueRequest | PlainMessage<EstimatePropertyValueRequest> | undefined): boolean {
+    return proto3.util.equals(EstimatePropertyValueRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dominion.v1.EstimatePropertyValueResponse
+ */
+export class EstimatePropertyValueResponse extends Message<EstimatePropertyValueResponse> {
+  /**
+   * @generated from field: sttattus.dominion.v1.AVMResult result = 1;
+   */
+  result?: AVMResult;
+
+  /**
+   * @generated from field: bool from_cache = 2;
+   */
+  fromCache = false;
+
+  constructor(data?: PartialMessage<EstimatePropertyValueResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.EstimatePropertyValueResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "result", kind: "message", T: AVMResult },
+    { no: 2, name: "from_cache", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EstimatePropertyValueResponse {
+    return new EstimatePropertyValueResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EstimatePropertyValueResponse {
+    return new EstimatePropertyValueResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EstimatePropertyValueResponse {
+    return new EstimatePropertyValueResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EstimatePropertyValueResponse | PlainMessage<EstimatePropertyValueResponse> | undefined, b: EstimatePropertyValueResponse | PlainMessage<EstimatePropertyValueResponse> | undefined): boolean {
+    return proto3.util.equals(EstimatePropertyValueResponse, a, b);
   }
 }
 

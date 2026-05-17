@@ -50,6 +50,11 @@ class DominionServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getLoungeKey, request, options: options);
   }
 
+  /// D14.3 — AVM estimate (Zillow + Rightmove pilot).
+  $grpc.ResponseFuture<$0.EstimatePropertyValueResponse> estimatePropertyValue($0.EstimatePropertyValueRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$estimatePropertyValue, request, options: options);
+  }
+
     // method descriptors
 
   static final _$syncProperties = $grpc.ClientMethod<$0.SyncPropertiesRequest, $0.SyncPropertiesResponse>(
@@ -68,6 +73,10 @@ class DominionServiceClient extends $grpc.Client {
       '/sttattus.dominion.v1.DominionService/GetLoungeKey',
       ($0.GetLoungeKeyRequest value) => value.writeToBuffer(),
       $0.GetLoungeKeyResponse.fromBuffer);
+  static final _$estimatePropertyValue = $grpc.ClientMethod<$0.EstimatePropertyValueRequest, $0.EstimatePropertyValueResponse>(
+      '/sttattus.dominion.v1.DominionService/EstimatePropertyValue',
+      ($0.EstimatePropertyValueRequest value) => value.writeToBuffer(),
+      $0.EstimatePropertyValueResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dominion.v1.DominionService')
@@ -103,6 +112,13 @@ abstract class DominionServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetLoungeKeyRequest.fromBuffer(value),
         ($0.GetLoungeKeyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EstimatePropertyValueRequest, $0.EstimatePropertyValueResponse>(
+        'EstimatePropertyValue',
+        estimatePropertyValue_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.EstimatePropertyValueRequest.fromBuffer(value),
+        ($0.EstimatePropertyValueResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.SyncPropertiesResponse> syncProperties_Pre($grpc.ServiceCall $call, $async.Future<$0.SyncPropertiesRequest> $request) async {
@@ -128,5 +144,11 @@ abstract class DominionServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GetLoungeKeyResponse> getLoungeKey($grpc.ServiceCall call, $0.GetLoungeKeyRequest request);
+
+  $async.Future<$0.EstimatePropertyValueResponse> estimatePropertyValue_Pre($grpc.ServiceCall $call, $async.Future<$0.EstimatePropertyValueRequest> $request) async {
+    return estimatePropertyValue($call, await $request);
+  }
+
+  $async.Future<$0.EstimatePropertyValueResponse> estimatePropertyValue($grpc.ServiceCall call, $0.EstimatePropertyValueRequest request);
 
 }

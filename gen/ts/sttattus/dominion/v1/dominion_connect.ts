@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetDominionStatsRequest, GetDominionStatsResponse, GetLoungeKeyRequest, GetLoungeKeyResponse, ListTerritoriesRequest, ListTerritoriesResponse, SyncPropertiesRequest, SyncPropertiesResponse } from "./dominion_pb.js";
+import { EstimatePropertyValueRequest, EstimatePropertyValueResponse, GetDominionStatsRequest, GetDominionStatsResponse, GetLoungeKeyRequest, GetLoungeKeyResponse, ListTerritoriesRequest, ListTerritoriesResponse, SyncPropertiesRequest, SyncPropertiesResponse } from "./dominion_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -50,6 +50,17 @@ export const DominionService = {
       name: "GetLoungeKey",
       I: GetLoungeKeyRequest,
       O: GetLoungeKeyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.3 — AVM estimate (Zillow + Rightmove pilot).
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.EstimatePropertyValue
+     */
+    estimatePropertyValue: {
+      name: "EstimatePropertyValue",
+      I: EstimatePropertyValueRequest,
+      O: EstimatePropertyValueResponse,
       kind: MethodKind.Unary,
     },
   }

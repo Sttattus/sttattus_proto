@@ -710,6 +710,202 @@ func (x *GetLoungeKeyResponse) GetExpiresAt() *timestamppb.Timestamp {
 	return nil
 }
 
+type AVMResult struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	PropertyId        string                 `protobuf:"bytes,1,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	Provider          string                 `protobuf:"bytes,2,opt,name=provider,proto3" json:"provider,omitempty"`
+	EstimatedValueUsd float64                `protobuf:"fixed64,3,opt,name=estimated_value_usd,json=estimatedValueUsd,proto3" json:"estimated_value_usd,omitempty"`
+	ConfidenceLow     float64                `protobuf:"fixed64,4,opt,name=confidence_low,json=confidenceLow,proto3" json:"confidence_low,omitempty"`
+	ConfidenceHigh    float64                `protobuf:"fixed64,5,opt,name=confidence_high,json=confidenceHigh,proto3" json:"confidence_high,omitempty"`
+	SourceUrl         string                 `protobuf:"bytes,6,opt,name=source_url,json=sourceUrl,proto3" json:"source_url,omitempty"`
+	FetchedAtUnix     int64                  `protobuf:"varint,7,opt,name=fetched_at_unix,json=fetchedAtUnix,proto3" json:"fetched_at_unix,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *AVMResult) Reset() {
+	*x = AVMResult{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AVMResult) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AVMResult) ProtoMessage() {}
+
+func (x *AVMResult) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AVMResult.ProtoReflect.Descriptor instead.
+func (*AVMResult) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *AVMResult) GetPropertyId() string {
+	if x != nil {
+		return x.PropertyId
+	}
+	return ""
+}
+
+func (x *AVMResult) GetProvider() string {
+	if x != nil {
+		return x.Provider
+	}
+	return ""
+}
+
+func (x *AVMResult) GetEstimatedValueUsd() float64 {
+	if x != nil {
+		return x.EstimatedValueUsd
+	}
+	return 0
+}
+
+func (x *AVMResult) GetConfidenceLow() float64 {
+	if x != nil {
+		return x.ConfidenceLow
+	}
+	return 0
+}
+
+func (x *AVMResult) GetConfidenceHigh() float64 {
+	if x != nil {
+		return x.ConfidenceHigh
+	}
+	return 0
+}
+
+func (x *AVMResult) GetSourceUrl() string {
+	if x != nil {
+		return x.SourceUrl
+	}
+	return ""
+}
+
+func (x *AVMResult) GetFetchedAtUnix() int64 {
+	if x != nil {
+		return x.FetchedAtUnix
+	}
+	return 0
+}
+
+type EstimatePropertyValueRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	PropertyId    string                 `protobuf:"bytes,1,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	ForceRefresh  bool                   `protobuf:"varint,2,opt,name=force_refresh,json=forceRefresh,proto3" json:"force_refresh,omitempty"` // when true, bypass cache and re-call partner
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EstimatePropertyValueRequest) Reset() {
+	*x = EstimatePropertyValueRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EstimatePropertyValueRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EstimatePropertyValueRequest) ProtoMessage() {}
+
+func (x *EstimatePropertyValueRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EstimatePropertyValueRequest.ProtoReflect.Descriptor instead.
+func (*EstimatePropertyValueRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *EstimatePropertyValueRequest) GetPropertyId() string {
+	if x != nil {
+		return x.PropertyId
+	}
+	return ""
+}
+
+func (x *EstimatePropertyValueRequest) GetForceRefresh() bool {
+	if x != nil {
+		return x.ForceRefresh
+	}
+	return false
+}
+
+type EstimatePropertyValueResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Result        *AVMResult             `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+	FromCache     bool                   `protobuf:"varint,2,opt,name=from_cache,json=fromCache,proto3" json:"from_cache,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EstimatePropertyValueResponse) Reset() {
+	*x = EstimatePropertyValueResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EstimatePropertyValueResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EstimatePropertyValueResponse) ProtoMessage() {}
+
+func (x *EstimatePropertyValueResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EstimatePropertyValueResponse.ProtoReflect.Descriptor instead.
+func (*EstimatePropertyValueResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *EstimatePropertyValueResponse) GetResult() *AVMResult {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+func (x *EstimatePropertyValueResponse) GetFromCache() bool {
+	if x != nil {
+		return x.FromCache
+	}
+	return false
+}
+
 var File_sttattus_dominion_v1_dominion_proto protoreflect.FileDescriptor
 
 const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
@@ -760,7 +956,25 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x14GetLoungeKeyResponse\x12$\n" +
 	"\x0elounge_key_jwt\x18\x01 \x01(\tR\floungeKeyJwt\x129\n" +
 	"\n" +
-	"expires_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt*\xc5\x01\n" +
+	"expires_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"\x8f\x02\n" +
+	"\tAVMResult\x12\x1f\n" +
+	"\vproperty_id\x18\x01 \x01(\tR\n" +
+	"propertyId\x12\x1a\n" +
+	"\bprovider\x18\x02 \x01(\tR\bprovider\x12.\n" +
+	"\x13estimated_value_usd\x18\x03 \x01(\x01R\x11estimatedValueUsd\x12%\n" +
+	"\x0econfidence_low\x18\x04 \x01(\x01R\rconfidenceLow\x12'\n" +
+	"\x0fconfidence_high\x18\x05 \x01(\x01R\x0econfidenceHigh\x12\x1d\n" +
+	"\n" +
+	"source_url\x18\x06 \x01(\tR\tsourceUrl\x12&\n" +
+	"\x0ffetched_at_unix\x18\a \x01(\x03R\rfetchedAtUnix\"d\n" +
+	"\x1cEstimatePropertyValueRequest\x12\x1f\n" +
+	"\vproperty_id\x18\x01 \x01(\tR\n" +
+	"propertyId\x12#\n" +
+	"\rforce_refresh\x18\x02 \x01(\bR\fforceRefresh\"w\n" +
+	"\x1dEstimatePropertyValueResponse\x127\n" +
+	"\x06result\x18\x01 \x01(\v2\x1f.sttattus.dominion.v1.AVMResultR\x06result\x12\x1d\n" +
+	"\n" +
+	"from_cache\x18\x02 \x01(\bR\tfromCache*\xc5\x01\n" +
 	"\x0eEstateCategory\x12\x1f\n" +
 	"\x1bESTATE_CATEGORY_UNSPECIFIED\x10\x00\x12%\n" +
 	"!ESTATE_CATEGORY_PRIMARY_RESIDENCE\x10\x01\x12#\n" +
@@ -771,12 +985,13 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xc8\x03\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xcb\x04\n" +
 	"\x0fDominionService\x12k\n" +
 	"\x0eSyncProperties\x12+.sttattus.dominion.v1.SyncPropertiesRequest\x1a,.sttattus.dominion.v1.SyncPropertiesResponse\x12n\n" +
 	"\x0fListTerritories\x12,.sttattus.dominion.v1.ListTerritoriesRequest\x1a-.sttattus.dominion.v1.ListTerritoriesResponse\x12q\n" +
 	"\x10GetDominionStats\x12-.sttattus.dominion.v1.GetDominionStatsRequest\x1a..sttattus.dominion.v1.GetDominionStatsResponse\x12e\n" +
-	"\fGetLoungeKey\x12).sttattus.dominion.v1.GetLoungeKeyRequest\x1a*.sttattus.dominion.v1.GetLoungeKeyResponseBBZ@github.com/sttattus/proto/gen/go/sttattus/dominion/v1;dominionv1b\x06proto3"
+	"\fGetLoungeKey\x12).sttattus.dominion.v1.GetLoungeKeyRequest\x1a*.sttattus.dominion.v1.GetLoungeKeyResponse\x12\x80\x01\n" +
+	"\x15EstimatePropertyValue\x122.sttattus.dominion.v1.EstimatePropertyValueRequest\x1a3.sttattus.dominion.v1.EstimatePropertyValueResponseBBZ@github.com/sttattus/proto/gen/go/sttattus/dominion/v1;dominionv1b\x06proto3"
 
 var (
 	file_sttattus_dominion_v1_dominion_proto_rawDescOnce sync.Once
@@ -791,44 +1006,50 @@ func file_sttattus_dominion_v1_dominion_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_dominion_v1_dominion_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_dominion_v1_dominion_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_sttattus_dominion_v1_dominion_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_sttattus_dominion_v1_dominion_proto_goTypes = []any{
-	(EstateCategory)(0),              // 0: sttattus.dominion.v1.EstateCategory
-	(VerificationStatus)(0),          // 1: sttattus.dominion.v1.VerificationStatus
-	(*Property)(nil),                 // 2: sttattus.dominion.v1.Property
-	(*DominionStats)(nil),            // 3: sttattus.dominion.v1.DominionStats
-	(*SyncPropertiesRequest)(nil),    // 4: sttattus.dominion.v1.SyncPropertiesRequest
-	(*SyncPropertiesResponse)(nil),   // 5: sttattus.dominion.v1.SyncPropertiesResponse
-	(*ListTerritoriesRequest)(nil),   // 6: sttattus.dominion.v1.ListTerritoriesRequest
-	(*ListTerritoriesResponse)(nil),  // 7: sttattus.dominion.v1.ListTerritoriesResponse
-	(*GetDominionStatsRequest)(nil),  // 8: sttattus.dominion.v1.GetDominionStatsRequest
-	(*GetDominionStatsResponse)(nil), // 9: sttattus.dominion.v1.GetDominionStatsResponse
-	(*GetLoungeKeyRequest)(nil),      // 10: sttattus.dominion.v1.GetLoungeKeyRequest
-	(*GetLoungeKeyResponse)(nil),     // 11: sttattus.dominion.v1.GetLoungeKeyResponse
-	(*timestamppb.Timestamp)(nil),    // 12: google.protobuf.Timestamp
+	(EstateCategory)(0),                   // 0: sttattus.dominion.v1.EstateCategory
+	(VerificationStatus)(0),               // 1: sttattus.dominion.v1.VerificationStatus
+	(*Property)(nil),                      // 2: sttattus.dominion.v1.Property
+	(*DominionStats)(nil),                 // 3: sttattus.dominion.v1.DominionStats
+	(*SyncPropertiesRequest)(nil),         // 4: sttattus.dominion.v1.SyncPropertiesRequest
+	(*SyncPropertiesResponse)(nil),        // 5: sttattus.dominion.v1.SyncPropertiesResponse
+	(*ListTerritoriesRequest)(nil),        // 6: sttattus.dominion.v1.ListTerritoriesRequest
+	(*ListTerritoriesResponse)(nil),       // 7: sttattus.dominion.v1.ListTerritoriesResponse
+	(*GetDominionStatsRequest)(nil),       // 8: sttattus.dominion.v1.GetDominionStatsRequest
+	(*GetDominionStatsResponse)(nil),      // 9: sttattus.dominion.v1.GetDominionStatsResponse
+	(*GetLoungeKeyRequest)(nil),           // 10: sttattus.dominion.v1.GetLoungeKeyRequest
+	(*GetLoungeKeyResponse)(nil),          // 11: sttattus.dominion.v1.GetLoungeKeyResponse
+	(*AVMResult)(nil),                     // 12: sttattus.dominion.v1.AVMResult
+	(*EstimatePropertyValueRequest)(nil),  // 13: sttattus.dominion.v1.EstimatePropertyValueRequest
+	(*EstimatePropertyValueResponse)(nil), // 14: sttattus.dominion.v1.EstimatePropertyValueResponse
+	(*timestamppb.Timestamp)(nil),         // 15: google.protobuf.Timestamp
 }
 var file_sttattus_dominion_v1_dominion_proto_depIdxs = []int32{
 	0,  // 0: sttattus.dominion.v1.Property.category:type_name -> sttattus.dominion.v1.EstateCategory
 	1,  // 1: sttattus.dominion.v1.Property.status:type_name -> sttattus.dominion.v1.VerificationStatus
-	12, // 2: sttattus.dominion.v1.Property.acquired_at:type_name -> google.protobuf.Timestamp
+	15, // 2: sttattus.dominion.v1.Property.acquired_at:type_name -> google.protobuf.Timestamp
 	2,  // 3: sttattus.dominion.v1.SyncPropertiesRequest.properties:type_name -> sttattus.dominion.v1.Property
 	3,  // 4: sttattus.dominion.v1.SyncPropertiesResponse.stats:type_name -> sttattus.dominion.v1.DominionStats
 	2,  // 5: sttattus.dominion.v1.ListTerritoriesResponse.properties:type_name -> sttattus.dominion.v1.Property
 	3,  // 6: sttattus.dominion.v1.GetDominionStatsResponse.stats:type_name -> sttattus.dominion.v1.DominionStats
-	12, // 7: sttattus.dominion.v1.GetLoungeKeyResponse.expires_at:type_name -> google.protobuf.Timestamp
-	4,  // 8: sttattus.dominion.v1.DominionService.SyncProperties:input_type -> sttattus.dominion.v1.SyncPropertiesRequest
-	6,  // 9: sttattus.dominion.v1.DominionService.ListTerritories:input_type -> sttattus.dominion.v1.ListTerritoriesRequest
-	8,  // 10: sttattus.dominion.v1.DominionService.GetDominionStats:input_type -> sttattus.dominion.v1.GetDominionStatsRequest
-	10, // 11: sttattus.dominion.v1.DominionService.GetLoungeKey:input_type -> sttattus.dominion.v1.GetLoungeKeyRequest
-	5,  // 12: sttattus.dominion.v1.DominionService.SyncProperties:output_type -> sttattus.dominion.v1.SyncPropertiesResponse
-	7,  // 13: sttattus.dominion.v1.DominionService.ListTerritories:output_type -> sttattus.dominion.v1.ListTerritoriesResponse
-	9,  // 14: sttattus.dominion.v1.DominionService.GetDominionStats:output_type -> sttattus.dominion.v1.GetDominionStatsResponse
-	11, // 15: sttattus.dominion.v1.DominionService.GetLoungeKey:output_type -> sttattus.dominion.v1.GetLoungeKeyResponse
-	12, // [12:16] is the sub-list for method output_type
-	8,  // [8:12] is the sub-list for method input_type
-	8,  // [8:8] is the sub-list for extension type_name
-	8,  // [8:8] is the sub-list for extension extendee
-	0,  // [0:8] is the sub-list for field type_name
+	15, // 7: sttattus.dominion.v1.GetLoungeKeyResponse.expires_at:type_name -> google.protobuf.Timestamp
+	12, // 8: sttattus.dominion.v1.EstimatePropertyValueResponse.result:type_name -> sttattus.dominion.v1.AVMResult
+	4,  // 9: sttattus.dominion.v1.DominionService.SyncProperties:input_type -> sttattus.dominion.v1.SyncPropertiesRequest
+	6,  // 10: sttattus.dominion.v1.DominionService.ListTerritories:input_type -> sttattus.dominion.v1.ListTerritoriesRequest
+	8,  // 11: sttattus.dominion.v1.DominionService.GetDominionStats:input_type -> sttattus.dominion.v1.GetDominionStatsRequest
+	10, // 12: sttattus.dominion.v1.DominionService.GetLoungeKey:input_type -> sttattus.dominion.v1.GetLoungeKeyRequest
+	13, // 13: sttattus.dominion.v1.DominionService.EstimatePropertyValue:input_type -> sttattus.dominion.v1.EstimatePropertyValueRequest
+	5,  // 14: sttattus.dominion.v1.DominionService.SyncProperties:output_type -> sttattus.dominion.v1.SyncPropertiesResponse
+	7,  // 15: sttattus.dominion.v1.DominionService.ListTerritories:output_type -> sttattus.dominion.v1.ListTerritoriesResponse
+	9,  // 16: sttattus.dominion.v1.DominionService.GetDominionStats:output_type -> sttattus.dominion.v1.GetDominionStatsResponse
+	11, // 17: sttattus.dominion.v1.DominionService.GetLoungeKey:output_type -> sttattus.dominion.v1.GetLoungeKeyResponse
+	14, // 18: sttattus.dominion.v1.DominionService.EstimatePropertyValue:output_type -> sttattus.dominion.v1.EstimatePropertyValueResponse
+	14, // [14:19] is the sub-list for method output_type
+	9,  // [9:14] is the sub-list for method input_type
+	9,  // [9:9] is the sub-list for extension type_name
+	9,  // [9:9] is the sub-list for extension extendee
+	0,  // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dominion_v1_dominion_proto_init() }
@@ -842,7 +1063,7 @@ func file_sttattus_dominion_v1_dominion_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_dominion_v1_dominion_proto_rawDesc), len(file_sttattus_dominion_v1_dominion_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   10,
+			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

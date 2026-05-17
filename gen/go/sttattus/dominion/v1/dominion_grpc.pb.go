@@ -19,10 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	DominionService_SyncProperties_FullMethodName   = "/sttattus.dominion.v1.DominionService/SyncProperties"
-	DominionService_ListTerritories_FullMethodName  = "/sttattus.dominion.v1.DominionService/ListTerritories"
-	DominionService_GetDominionStats_FullMethodName = "/sttattus.dominion.v1.DominionService/GetDominionStats"
-	DominionService_GetLoungeKey_FullMethodName     = "/sttattus.dominion.v1.DominionService/GetLoungeKey"
+	DominionService_SyncProperties_FullMethodName        = "/sttattus.dominion.v1.DominionService/SyncProperties"
+	DominionService_ListTerritories_FullMethodName       = "/sttattus.dominion.v1.DominionService/ListTerritories"
+	DominionService_GetDominionStats_FullMethodName      = "/sttattus.dominion.v1.DominionService/GetDominionStats"
+	DominionService_GetLoungeKey_FullMethodName          = "/sttattus.dominion.v1.DominionService/GetLoungeKey"
+	DominionService_EstimatePropertyValue_FullMethodName = "/sttattus.dominion.v1.DominionService/EstimatePropertyValue"
 )
 
 // DominionServiceClient is the client API for DominionService service.
@@ -35,6 +36,8 @@ type DominionServiceClient interface {
 	GetDominionStats(ctx context.Context, in *GetDominionStatsRequest, opts ...grpc.CallOption) (*GetDominionStatsResponse, error)
 	// Hard Perks
 	GetLoungeKey(ctx context.Context, in *GetLoungeKeyRequest, opts ...grpc.CallOption) (*GetLoungeKeyResponse, error)
+	// D14.3 — AVM estimate (Zillow + Rightmove pilot).
+	EstimatePropertyValue(ctx context.Context, in *EstimatePropertyValueRequest, opts ...grpc.CallOption) (*EstimatePropertyValueResponse, error)
 }
 
 type dominionServiceClient struct {
@@ -85,6 +88,16 @@ func (c *dominionServiceClient) GetLoungeKey(ctx context.Context, in *GetLoungeK
 	return out, nil
 }
 
+func (c *dominionServiceClient) EstimatePropertyValue(ctx context.Context, in *EstimatePropertyValueRequest, opts ...grpc.CallOption) (*EstimatePropertyValueResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EstimatePropertyValueResponse)
+	err := c.cc.Invoke(ctx, DominionService_EstimatePropertyValue_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DominionServiceServer is the server API for DominionService service.
 // All implementations must embed UnimplementedDominionServiceServer
 // for forward compatibility.
@@ -95,6 +108,8 @@ type DominionServiceServer interface {
 	GetDominionStats(context.Context, *GetDominionStatsRequest) (*GetDominionStatsResponse, error)
 	// Hard Perks
 	GetLoungeKey(context.Context, *GetLoungeKeyRequest) (*GetLoungeKeyResponse, error)
+	// D14.3 — AVM estimate (Zillow + Rightmove pilot).
+	EstimatePropertyValue(context.Context, *EstimatePropertyValueRequest) (*EstimatePropertyValueResponse, error)
 	mustEmbedUnimplementedDominionServiceServer()
 }
 
@@ -116,6 +131,9 @@ func (UnimplementedDominionServiceServer) GetDominionStats(context.Context, *Get
 }
 func (UnimplementedDominionServiceServer) GetLoungeKey(context.Context, *GetLoungeKeyRequest) (*GetLoungeKeyResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetLoungeKey not implemented")
+}
+func (UnimplementedDominionServiceServer) EstimatePropertyValue(context.Context, *EstimatePropertyValueRequest) (*EstimatePropertyValueResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EstimatePropertyValue not implemented")
 }
 func (UnimplementedDominionServiceServer) mustEmbedUnimplementedDominionServiceServer() {}
 func (UnimplementedDominionServiceServer) testEmbeddedByValue()                         {}
@@ -210,6 +228,24 @@ func _DominionService_GetLoungeKey_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DominionService_EstimatePropertyValue_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EstimatePropertyValueRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).EstimatePropertyValue(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_EstimatePropertyValue_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).EstimatePropertyValue(ctx, req.(*EstimatePropertyValueRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DominionService_ServiceDesc is the grpc.ServiceDesc for DominionService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -232,6 +268,10 @@ var DominionService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLoungeKey",
 			Handler:    _DominionService_GetLoungeKey_Handler,
+		},
+		{
+			MethodName: "EstimatePropertyValue",
+			Handler:    _DominionService_EstimatePropertyValue_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
