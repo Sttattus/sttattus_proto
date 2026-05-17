@@ -509,6 +509,731 @@ func (x *GetOracleStatsResponse) GetStats() *OracleStats {
 	return nil
 }
 
+type OracleThread struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	CreatedUnix   int64                  `protobuf:"varint,3,opt,name=created_unix,json=createdUnix,proto3" json:"created_unix,omitempty"`
+	UpdatedUnix   int64                  `protobuf:"varint,4,opt,name=updated_unix,json=updatedUnix,proto3" json:"updated_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *OracleThread) Reset() {
+	*x = OracleThread{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleThread) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleThread) ProtoMessage() {}
+
+func (x *OracleThread) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleThread.ProtoReflect.Descriptor instead.
+func (*OracleThread) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *OracleThread) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleThread) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *OracleThread) GetCreatedUnix() int64 {
+	if x != nil {
+		return x.CreatedUnix
+	}
+	return 0
+}
+
+func (x *OracleThread) GetUpdatedUnix() int64 {
+	if x != nil {
+		return x.UpdatedUnix
+	}
+	return 0
+}
+
+type OracleThreadMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ThreadId      string                 `protobuf:"bytes,2,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	Prompt        string                 `protobuf:"bytes,3,opt,name=prompt,proto3" json:"prompt,omitempty"`
+	Response      string                 `protobuf:"bytes,4,opt,name=response,proto3" json:"response,omitempty"`
+	Domain        string                 `protobuf:"bytes,5,opt,name=domain,proto3" json:"domain,omitempty"`
+	CreatedUnix   int64                  `protobuf:"varint,6,opt,name=created_unix,json=createdUnix,proto3" json:"created_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *OracleThreadMessage) Reset() {
+	*x = OracleThreadMessage{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleThreadMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleThreadMessage) ProtoMessage() {}
+
+func (x *OracleThreadMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleThreadMessage.ProtoReflect.Descriptor instead.
+func (*OracleThreadMessage) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *OracleThreadMessage) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleThreadMessage) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *OracleThreadMessage) GetPrompt() string {
+	if x != nil {
+		return x.Prompt
+	}
+	return ""
+}
+
+func (x *OracleThreadMessage) GetResponse() string {
+	if x != nil {
+		return x.Response
+	}
+	return ""
+}
+
+func (x *OracleThreadMessage) GetDomain() string {
+	if x != nil {
+		return x.Domain
+	}
+	return ""
+}
+
+func (x *OracleThreadMessage) GetCreatedUnix() int64 {
+	if x != nil {
+		return x.CreatedUnix
+	}
+	return 0
+}
+
+type ListMyThreadsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyThreadsRequest) Reset() {
+	*x = ListMyThreadsRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyThreadsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyThreadsRequest) ProtoMessage() {}
+
+func (x *ListMyThreadsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyThreadsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyThreadsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{9}
+}
+
+type ListMyThreadsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Threads       []*OracleThread        `protobuf:"bytes,1,rep,name=threads,proto3" json:"threads,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyThreadsResponse) Reset() {
+	*x = ListMyThreadsResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyThreadsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyThreadsResponse) ProtoMessage() {}
+
+func (x *ListMyThreadsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyThreadsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyThreadsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *ListMyThreadsResponse) GetThreads() []*OracleThread {
+	if x != nil {
+		return x.Threads
+	}
+	return nil
+}
+
+type CreateThreadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateThreadRequest) Reset() {
+	*x = CreateThreadRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateThreadRequest) ProtoMessage() {}
+
+func (x *CreateThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateThreadRequest.ProtoReflect.Descriptor instead.
+func (*CreateThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *CreateThreadRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+type CreateThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *OracleThread          `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateThreadResponse) Reset() {
+	*x = CreateThreadResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateThreadResponse) ProtoMessage() {}
+
+func (x *CreateThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateThreadResponse.ProtoReflect.Descriptor instead.
+func (*CreateThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *CreateThreadResponse) GetThread() *OracleThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+type RenameThreadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RenameThreadRequest) Reset() {
+	*x = RenameThreadRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RenameThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RenameThreadRequest) ProtoMessage() {}
+
+func (x *RenameThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RenameThreadRequest.ProtoReflect.Descriptor instead.
+func (*RenameThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *RenameThreadRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *RenameThreadRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+type RenameThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *OracleThread          `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RenameThreadResponse) Reset() {
+	*x = RenameThreadResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RenameThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RenameThreadResponse) ProtoMessage() {}
+
+func (x *RenameThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RenameThreadResponse.ProtoReflect.Descriptor instead.
+func (*RenameThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *RenameThreadResponse) GetThread() *OracleThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+type DeleteThreadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteThreadRequest) Reset() {
+	*x = DeleteThreadRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteThreadRequest) ProtoMessage() {}
+
+func (x *DeleteThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteThreadRequest.ProtoReflect.Descriptor instead.
+func (*DeleteThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *DeleteThreadRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+type DeleteThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteThreadResponse) Reset() {
+	*x = DeleteThreadResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteThreadResponse) ProtoMessage() {}
+
+func (x *DeleteThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteThreadResponse.ProtoReflect.Descriptor instead.
+func (*DeleteThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{16}
+}
+
+type ListThreadMessagesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListThreadMessagesRequest) Reset() {
+	*x = ListThreadMessagesRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListThreadMessagesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListThreadMessagesRequest) ProtoMessage() {}
+
+func (x *ListThreadMessagesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListThreadMessagesRequest.ProtoReflect.Descriptor instead.
+func (*ListThreadMessagesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *ListThreadMessagesRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+type ListThreadMessagesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Messages      []*OracleThreadMessage `protobuf:"bytes,1,rep,name=messages,proto3" json:"messages,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListThreadMessagesResponse) Reset() {
+	*x = ListThreadMessagesResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListThreadMessagesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListThreadMessagesResponse) ProtoMessage() {}
+
+func (x *ListThreadMessagesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListThreadMessagesResponse.ProtoReflect.Descriptor instead.
+func (*ListThreadMessagesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *ListThreadMessagesResponse) GetMessages() []*OracleThreadMessage {
+	if x != nil {
+		return x.Messages
+	}
+	return nil
+}
+
+// Streaming server-side query. Each chunk carries a text delta;
+// final chunk carries done=true plus the persisted message id.
+// Stream is bounded by the response length — no need to manage
+// keepalive. When the underlying model client is unavailable the
+// server emits one chunk with err='unavailable' and closes.
+type StreamQueryRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId        string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"` // empty == start a new thread
+	Prompt          string                 `protobuf:"bytes,2,opt,name=prompt,proto3" json:"prompt,omitempty"`
+	EnableSynthesis bool                   `protobuf:"varint,3,opt,name=enable_synthesis,json=enableSynthesis,proto3" json:"enable_synthesis,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *StreamQueryRequest) Reset() {
+	*x = StreamQueryRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StreamQueryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StreamQueryRequest) ProtoMessage() {}
+
+func (x *StreamQueryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StreamQueryRequest.ProtoReflect.Descriptor instead.
+func (*StreamQueryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *StreamQueryRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *StreamQueryRequest) GetPrompt() string {
+	if x != nil {
+		return x.Prompt
+	}
+	return ""
+}
+
+func (x *StreamQueryRequest) GetEnableSynthesis() bool {
+	if x != nil {
+		return x.EnableSynthesis
+	}
+	return false
+}
+
+type StreamQueryChunk struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	Delta         string                 `protobuf:"bytes,2,opt,name=delta,proto3" json:"delta,omitempty"`
+	Done          bool                   `protobuf:"varint,3,opt,name=done,proto3" json:"done,omitempty"`
+	MessageId     string                 `protobuf:"bytes,4,opt,name=message_id,json=messageId,proto3" json:"message_id,omitempty"`
+	Err           string                 `protobuf:"bytes,5,opt,name=err,proto3" json:"err,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StreamQueryChunk) Reset() {
+	*x = StreamQueryChunk{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StreamQueryChunk) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StreamQueryChunk) ProtoMessage() {}
+
+func (x *StreamQueryChunk) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StreamQueryChunk.ProtoReflect.Descriptor instead.
+func (*StreamQueryChunk) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *StreamQueryChunk) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *StreamQueryChunk) GetDelta() string {
+	if x != nil {
+		return x.Delta
+	}
+	return ""
+}
+
+func (x *StreamQueryChunk) GetDone() bool {
+	if x != nil {
+		return x.Done
+	}
+	return false
+}
+
+func (x *StreamQueryChunk) GetMessageId() string {
+	if x != nil {
+		return x.MessageId
+	}
+	return ""
+}
+
+func (x *StreamQueryChunk) GetErr() string {
+	if x != nil {
+		return x.Err
+	}
+	return ""
+}
+
 var File_sttattus_oracle_v1_oracle_proto protoreflect.FileDescriptor
 
 const file_sttattus_oracle_v1_oracle_proto_rawDesc = "" +
@@ -546,16 +1271,64 @@ const file_sttattus_oracle_v1_oracle_proto_rawDesc = "" +
 	"\x15GetOracleStatsRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\"O\n" +
 	"\x16GetOracleStatsResponse\x125\n" +
-	"\x05stats\x18\x01 \x01(\v2\x1f.sttattus.oracle.v1.OracleStatsR\x05stats*\xc6\x01\n" +
+	"\x05stats\x18\x01 \x01(\v2\x1f.sttattus.oracle.v1.OracleStatsR\x05stats\"z\n" +
+	"\fOracleThread\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12!\n" +
+	"\fcreated_unix\x18\x03 \x01(\x03R\vcreatedUnix\x12!\n" +
+	"\fupdated_unix\x18\x04 \x01(\x03R\vupdatedUnix\"\xb1\x01\n" +
+	"\x13OracleThreadMessage\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\tthread_id\x18\x02 \x01(\tR\bthreadId\x12\x16\n" +
+	"\x06prompt\x18\x03 \x01(\tR\x06prompt\x12\x1a\n" +
+	"\bresponse\x18\x04 \x01(\tR\bresponse\x12\x16\n" +
+	"\x06domain\x18\x05 \x01(\tR\x06domain\x12!\n" +
+	"\fcreated_unix\x18\x06 \x01(\x03R\vcreatedUnix\"\x16\n" +
+	"\x14ListMyThreadsRequest\"S\n" +
+	"\x15ListMyThreadsResponse\x12:\n" +
+	"\athreads\x18\x01 \x03(\v2 .sttattus.oracle.v1.OracleThreadR\athreads\"+\n" +
+	"\x13CreateThreadRequest\x12\x14\n" +
+	"\x05title\x18\x01 \x01(\tR\x05title\"P\n" +
+	"\x14CreateThreadResponse\x128\n" +
+	"\x06thread\x18\x01 \x01(\v2 .sttattus.oracle.v1.OracleThreadR\x06thread\"H\n" +
+	"\x13RenameThreadRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\"P\n" +
+	"\x14RenameThreadResponse\x128\n" +
+	"\x06thread\x18\x01 \x01(\v2 .sttattus.oracle.v1.OracleThreadR\x06thread\"2\n" +
+	"\x13DeleteThreadRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\"\x16\n" +
+	"\x14DeleteThreadResponse\"8\n" +
+	"\x19ListThreadMessagesRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\"a\n" +
+	"\x1aListThreadMessagesResponse\x12C\n" +
+	"\bmessages\x18\x01 \x03(\v2'.sttattus.oracle.v1.OracleThreadMessageR\bmessages\"t\n" +
+	"\x12StreamQueryRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\x12\x16\n" +
+	"\x06prompt\x18\x02 \x01(\tR\x06prompt\x12)\n" +
+	"\x10enable_synthesis\x18\x03 \x01(\bR\x0fenableSynthesis\"\x8a\x01\n" +
+	"\x10StreamQueryChunk\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\x12\x14\n" +
+	"\x05delta\x18\x02 \x01(\tR\x05delta\x12\x12\n" +
+	"\x04done\x18\x03 \x01(\bR\x04done\x12\x1d\n" +
+	"\n" +
+	"message_id\x18\x04 \x01(\tR\tmessageId\x12\x10\n" +
+	"\x03err\x18\x05 \x01(\tR\x03err*\xc6\x01\n" +
 	"\x0fStrategicDomain\x12 \n" +
 	"\x1cSTRATEGIC_DOMAIN_UNSPECIFIED\x10\x00\x12 \n" +
 	"\x1cSTRATEGIC_DOMAIN_GEOPOLITICS\x10\x01\x12$\n" +
 	" STRATEGIC_DOMAIN_MACRO_ECONOMICS\x10\x02\x12\x1f\n" +
 	"\x1bSTRATEGIC_DOMAIN_BIO_ETHICS\x10\x03\x12(\n" +
-	"$STRATEGIC_DOMAIN_VENTURE_ENGINEERING\x10\x042\xc6\x01\n" +
+	"$STRATEGIC_DOMAIN_VENTURE_ENGINEERING\x10\x042\xa9\x06\n" +
 	"\rOracleService\x12L\n" +
 	"\x05Query\x12 .sttattus.oracle.v1.QueryRequest\x1a!.sttattus.oracle.v1.QueryResponse\x12g\n" +
-	"\x0eGetOracleStats\x12).sttattus.oracle.v1.GetOracleStatsRequest\x1a*.sttattus.oracle.v1.GetOracleStatsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/oracle/v1;oraclev1b\x06proto3"
+	"\x0eGetOracleStats\x12).sttattus.oracle.v1.GetOracleStatsRequest\x1a*.sttattus.oracle.v1.GetOracleStatsResponse\x12d\n" +
+	"\rListMyThreads\x12(.sttattus.oracle.v1.ListMyThreadsRequest\x1a).sttattus.oracle.v1.ListMyThreadsResponse\x12a\n" +
+	"\fCreateThread\x12'.sttattus.oracle.v1.CreateThreadRequest\x1a(.sttattus.oracle.v1.CreateThreadResponse\x12a\n" +
+	"\fRenameThread\x12'.sttattus.oracle.v1.RenameThreadRequest\x1a(.sttattus.oracle.v1.RenameThreadResponse\x12a\n" +
+	"\fDeleteThread\x12'.sttattus.oracle.v1.DeleteThreadRequest\x1a(.sttattus.oracle.v1.DeleteThreadResponse\x12s\n" +
+	"\x12ListThreadMessages\x12-.sttattus.oracle.v1.ListThreadMessagesRequest\x1a..sttattus.oracle.v1.ListThreadMessagesResponse\x12]\n" +
+	"\vStreamQuery\x12&.sttattus.oracle.v1.StreamQueryRequest\x1a$.sttattus.oracle.v1.StreamQueryChunk0\x01B>Z<github.com/sttattus/proto/gen/go/sttattus/oracle/v1;oraclev1b\x06proto3"
 
 var (
 	file_sttattus_oracle_v1_oracle_proto_rawDescOnce sync.Once
@@ -570,36 +1343,66 @@ func file_sttattus_oracle_v1_oracle_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_oracle_v1_oracle_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_sttattus_oracle_v1_oracle_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_sttattus_oracle_v1_oracle_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
 var file_sttattus_oracle_v1_oracle_proto_goTypes = []any{
-	(StrategicDomain)(0),           // 0: sttattus.oracle.v1.StrategicDomain
-	(*DepthGrading)(nil),           // 1: sttattus.oracle.v1.DepthGrading
-	(*StrategicInsight)(nil),       // 2: sttattus.oracle.v1.StrategicInsight
-	(*OracleStats)(nil),            // 3: sttattus.oracle.v1.OracleStats
-	(*QueryRequest)(nil),           // 4: sttattus.oracle.v1.QueryRequest
-	(*QueryResponse)(nil),          // 5: sttattus.oracle.v1.QueryResponse
-	(*GetOracleStatsRequest)(nil),  // 6: sttattus.oracle.v1.GetOracleStatsRequest
-	(*GetOracleStatsResponse)(nil), // 7: sttattus.oracle.v1.GetOracleStatsResponse
-	nil,                            // 8: sttattus.oracle.v1.OracleStats.DomainMasteryEntry
-	(*timestamppb.Timestamp)(nil),  // 9: google.protobuf.Timestamp
+	(StrategicDomain)(0),               // 0: sttattus.oracle.v1.StrategicDomain
+	(*DepthGrading)(nil),               // 1: sttattus.oracle.v1.DepthGrading
+	(*StrategicInsight)(nil),           // 2: sttattus.oracle.v1.StrategicInsight
+	(*OracleStats)(nil),                // 3: sttattus.oracle.v1.OracleStats
+	(*QueryRequest)(nil),               // 4: sttattus.oracle.v1.QueryRequest
+	(*QueryResponse)(nil),              // 5: sttattus.oracle.v1.QueryResponse
+	(*GetOracleStatsRequest)(nil),      // 6: sttattus.oracle.v1.GetOracleStatsRequest
+	(*GetOracleStatsResponse)(nil),     // 7: sttattus.oracle.v1.GetOracleStatsResponse
+	(*OracleThread)(nil),               // 8: sttattus.oracle.v1.OracleThread
+	(*OracleThreadMessage)(nil),        // 9: sttattus.oracle.v1.OracleThreadMessage
+	(*ListMyThreadsRequest)(nil),       // 10: sttattus.oracle.v1.ListMyThreadsRequest
+	(*ListMyThreadsResponse)(nil),      // 11: sttattus.oracle.v1.ListMyThreadsResponse
+	(*CreateThreadRequest)(nil),        // 12: sttattus.oracle.v1.CreateThreadRequest
+	(*CreateThreadResponse)(nil),       // 13: sttattus.oracle.v1.CreateThreadResponse
+	(*RenameThreadRequest)(nil),        // 14: sttattus.oracle.v1.RenameThreadRequest
+	(*RenameThreadResponse)(nil),       // 15: sttattus.oracle.v1.RenameThreadResponse
+	(*DeleteThreadRequest)(nil),        // 16: sttattus.oracle.v1.DeleteThreadRequest
+	(*DeleteThreadResponse)(nil),       // 17: sttattus.oracle.v1.DeleteThreadResponse
+	(*ListThreadMessagesRequest)(nil),  // 18: sttattus.oracle.v1.ListThreadMessagesRequest
+	(*ListThreadMessagesResponse)(nil), // 19: sttattus.oracle.v1.ListThreadMessagesResponse
+	(*StreamQueryRequest)(nil),         // 20: sttattus.oracle.v1.StreamQueryRequest
+	(*StreamQueryChunk)(nil),           // 21: sttattus.oracle.v1.StreamQueryChunk
+	nil,                                // 22: sttattus.oracle.v1.OracleStats.DomainMasteryEntry
+	(*timestamppb.Timestamp)(nil),      // 23: google.protobuf.Timestamp
 }
 var file_sttattus_oracle_v1_oracle_proto_depIdxs = []int32{
-	0, // 0: sttattus.oracle.v1.StrategicInsight.domain:type_name -> sttattus.oracle.v1.StrategicDomain
-	1, // 1: sttattus.oracle.v1.StrategicInsight.grading:type_name -> sttattus.oracle.v1.DepthGrading
-	9, // 2: sttattus.oracle.v1.StrategicInsight.discovered_at:type_name -> google.protobuf.Timestamp
-	8, // 3: sttattus.oracle.v1.OracleStats.domain_mastery:type_name -> sttattus.oracle.v1.OracleStats.DomainMasteryEntry
-	2, // 4: sttattus.oracle.v1.QueryResponse.insight:type_name -> sttattus.oracle.v1.StrategicInsight
-	3, // 5: sttattus.oracle.v1.QueryResponse.stats:type_name -> sttattus.oracle.v1.OracleStats
-	3, // 6: sttattus.oracle.v1.GetOracleStatsResponse.stats:type_name -> sttattus.oracle.v1.OracleStats
-	4, // 7: sttattus.oracle.v1.OracleService.Query:input_type -> sttattus.oracle.v1.QueryRequest
-	6, // 8: sttattus.oracle.v1.OracleService.GetOracleStats:input_type -> sttattus.oracle.v1.GetOracleStatsRequest
-	5, // 9: sttattus.oracle.v1.OracleService.Query:output_type -> sttattus.oracle.v1.QueryResponse
-	7, // 10: sttattus.oracle.v1.OracleService.GetOracleStats:output_type -> sttattus.oracle.v1.GetOracleStatsResponse
-	9, // [9:11] is the sub-list for method output_type
-	7, // [7:9] is the sub-list for method input_type
-	7, // [7:7] is the sub-list for extension type_name
-	7, // [7:7] is the sub-list for extension extendee
-	0, // [0:7] is the sub-list for field type_name
+	0,  // 0: sttattus.oracle.v1.StrategicInsight.domain:type_name -> sttattus.oracle.v1.StrategicDomain
+	1,  // 1: sttattus.oracle.v1.StrategicInsight.grading:type_name -> sttattus.oracle.v1.DepthGrading
+	23, // 2: sttattus.oracle.v1.StrategicInsight.discovered_at:type_name -> google.protobuf.Timestamp
+	22, // 3: sttattus.oracle.v1.OracleStats.domain_mastery:type_name -> sttattus.oracle.v1.OracleStats.DomainMasteryEntry
+	2,  // 4: sttattus.oracle.v1.QueryResponse.insight:type_name -> sttattus.oracle.v1.StrategicInsight
+	3,  // 5: sttattus.oracle.v1.QueryResponse.stats:type_name -> sttattus.oracle.v1.OracleStats
+	3,  // 6: sttattus.oracle.v1.GetOracleStatsResponse.stats:type_name -> sttattus.oracle.v1.OracleStats
+	8,  // 7: sttattus.oracle.v1.ListMyThreadsResponse.threads:type_name -> sttattus.oracle.v1.OracleThread
+	8,  // 8: sttattus.oracle.v1.CreateThreadResponse.thread:type_name -> sttattus.oracle.v1.OracleThread
+	8,  // 9: sttattus.oracle.v1.RenameThreadResponse.thread:type_name -> sttattus.oracle.v1.OracleThread
+	9,  // 10: sttattus.oracle.v1.ListThreadMessagesResponse.messages:type_name -> sttattus.oracle.v1.OracleThreadMessage
+	4,  // 11: sttattus.oracle.v1.OracleService.Query:input_type -> sttattus.oracle.v1.QueryRequest
+	6,  // 12: sttattus.oracle.v1.OracleService.GetOracleStats:input_type -> sttattus.oracle.v1.GetOracleStatsRequest
+	10, // 13: sttattus.oracle.v1.OracleService.ListMyThreads:input_type -> sttattus.oracle.v1.ListMyThreadsRequest
+	12, // 14: sttattus.oracle.v1.OracleService.CreateThread:input_type -> sttattus.oracle.v1.CreateThreadRequest
+	14, // 15: sttattus.oracle.v1.OracleService.RenameThread:input_type -> sttattus.oracle.v1.RenameThreadRequest
+	16, // 16: sttattus.oracle.v1.OracleService.DeleteThread:input_type -> sttattus.oracle.v1.DeleteThreadRequest
+	18, // 17: sttattus.oracle.v1.OracleService.ListThreadMessages:input_type -> sttattus.oracle.v1.ListThreadMessagesRequest
+	20, // 18: sttattus.oracle.v1.OracleService.StreamQuery:input_type -> sttattus.oracle.v1.StreamQueryRequest
+	5,  // 19: sttattus.oracle.v1.OracleService.Query:output_type -> sttattus.oracle.v1.QueryResponse
+	7,  // 20: sttattus.oracle.v1.OracleService.GetOracleStats:output_type -> sttattus.oracle.v1.GetOracleStatsResponse
+	11, // 21: sttattus.oracle.v1.OracleService.ListMyThreads:output_type -> sttattus.oracle.v1.ListMyThreadsResponse
+	13, // 22: sttattus.oracle.v1.OracleService.CreateThread:output_type -> sttattus.oracle.v1.CreateThreadResponse
+	15, // 23: sttattus.oracle.v1.OracleService.RenameThread:output_type -> sttattus.oracle.v1.RenameThreadResponse
+	17, // 24: sttattus.oracle.v1.OracleService.DeleteThread:output_type -> sttattus.oracle.v1.DeleteThreadResponse
+	19, // 25: sttattus.oracle.v1.OracleService.ListThreadMessages:output_type -> sttattus.oracle.v1.ListThreadMessagesResponse
+	21, // 26: sttattus.oracle.v1.OracleService.StreamQuery:output_type -> sttattus.oracle.v1.StreamQueryChunk
+	19, // [19:27] is the sub-list for method output_type
+	11, // [11:19] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_oracle_v1_oracle_proto_init() }
@@ -613,7 +1416,7 @@ func file_sttattus_oracle_v1_oracle_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_oracle_v1_oracle_proto_rawDesc), len(file_sttattus_oracle_v1_oracle_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   8,
+			NumMessages:   22,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

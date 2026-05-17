@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
 
 /**
  * StrategicDomain defines the elite intellectual field.
@@ -414,6 +414,610 @@ export class GetOracleStatsResponse extends Message<GetOracleStatsResponse> {
 
   static equals(a: GetOracleStatsResponse | PlainMessage<GetOracleStatsResponse> | undefined, b: GetOracleStatsResponse | PlainMessage<GetOracleStatsResponse> | undefined): boolean {
     return proto3.util.equals(GetOracleStatsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleThread
+ */
+export class OracleThread extends Message<OracleThread> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: int64 created_unix = 3;
+   */
+  createdUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 updated_unix = 4;
+   */
+  updatedUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<OracleThread>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleThread";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "created_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "updated_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleThread {
+    return new OracleThread().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleThread {
+    return new OracleThread().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleThread {
+    return new OracleThread().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleThread | PlainMessage<OracleThread> | undefined, b: OracleThread | PlainMessage<OracleThread> | undefined): boolean {
+    return proto3.util.equals(OracleThread, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleThreadMessage
+ */
+export class OracleThreadMessage extends Message<OracleThreadMessage> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string thread_id = 2;
+   */
+  threadId = "";
+
+  /**
+   * @generated from field: string prompt = 3;
+   */
+  prompt = "";
+
+  /**
+   * @generated from field: string response = 4;
+   */
+  response = "";
+
+  /**
+   * @generated from field: string domain = 5;
+   */
+  domain = "";
+
+  /**
+   * @generated from field: int64 created_unix = 6;
+   */
+  createdUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<OracleThreadMessage>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleThreadMessage";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "thread_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "response", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "domain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "created_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleThreadMessage {
+    return new OracleThreadMessage().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleThreadMessage {
+    return new OracleThreadMessage().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleThreadMessage {
+    return new OracleThreadMessage().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleThreadMessage | PlainMessage<OracleThreadMessage> | undefined, b: OracleThreadMessage | PlainMessage<OracleThreadMessage> | undefined): boolean {
+    return proto3.util.equals(OracleThreadMessage, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ListMyThreadsRequest
+ */
+export class ListMyThreadsRequest extends Message<ListMyThreadsRequest> {
+  constructor(data?: PartialMessage<ListMyThreadsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ListMyThreadsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyThreadsRequest {
+    return new ListMyThreadsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyThreadsRequest {
+    return new ListMyThreadsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyThreadsRequest {
+    return new ListMyThreadsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyThreadsRequest | PlainMessage<ListMyThreadsRequest> | undefined, b: ListMyThreadsRequest | PlainMessage<ListMyThreadsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyThreadsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ListMyThreadsResponse
+ */
+export class ListMyThreadsResponse extends Message<ListMyThreadsResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleThread threads = 1;
+   */
+  threads: OracleThread[] = [];
+
+  constructor(data?: PartialMessage<ListMyThreadsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ListMyThreadsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "threads", kind: "message", T: OracleThread, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyThreadsResponse {
+    return new ListMyThreadsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyThreadsResponse {
+    return new ListMyThreadsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyThreadsResponse {
+    return new ListMyThreadsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyThreadsResponse | PlainMessage<ListMyThreadsResponse> | undefined, b: ListMyThreadsResponse | PlainMessage<ListMyThreadsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyThreadsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.CreateThreadRequest
+ */
+export class CreateThreadRequest extends Message<CreateThreadRequest> {
+  /**
+   * @generated from field: string title = 1;
+   */
+  title = "";
+
+  constructor(data?: PartialMessage<CreateThreadRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.CreateThreadRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateThreadRequest {
+    return new CreateThreadRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateThreadRequest {
+    return new CreateThreadRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateThreadRequest {
+    return new CreateThreadRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateThreadRequest | PlainMessage<CreateThreadRequest> | undefined, b: CreateThreadRequest | PlainMessage<CreateThreadRequest> | undefined): boolean {
+    return proto3.util.equals(CreateThreadRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.CreateThreadResponse
+ */
+export class CreateThreadResponse extends Message<CreateThreadResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleThread thread = 1;
+   */
+  thread?: OracleThread;
+
+  constructor(data?: PartialMessage<CreateThreadResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.CreateThreadResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "thread", kind: "message", T: OracleThread },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateThreadResponse {
+    return new CreateThreadResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateThreadResponse {
+    return new CreateThreadResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateThreadResponse {
+    return new CreateThreadResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateThreadResponse | PlainMessage<CreateThreadResponse> | undefined, b: CreateThreadResponse | PlainMessage<CreateThreadResponse> | undefined): boolean {
+    return proto3.util.equals(CreateThreadResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RenameThreadRequest
+ */
+export class RenameThreadRequest extends Message<RenameThreadRequest> {
+  /**
+   * @generated from field: string thread_id = 1;
+   */
+  threadId = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  constructor(data?: PartialMessage<RenameThreadRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RenameThreadRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "thread_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RenameThreadRequest {
+    return new RenameThreadRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RenameThreadRequest {
+    return new RenameThreadRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RenameThreadRequest {
+    return new RenameThreadRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RenameThreadRequest | PlainMessage<RenameThreadRequest> | undefined, b: RenameThreadRequest | PlainMessage<RenameThreadRequest> | undefined): boolean {
+    return proto3.util.equals(RenameThreadRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RenameThreadResponse
+ */
+export class RenameThreadResponse extends Message<RenameThreadResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleThread thread = 1;
+   */
+  thread?: OracleThread;
+
+  constructor(data?: PartialMessage<RenameThreadResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RenameThreadResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "thread", kind: "message", T: OracleThread },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RenameThreadResponse {
+    return new RenameThreadResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RenameThreadResponse {
+    return new RenameThreadResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RenameThreadResponse {
+    return new RenameThreadResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RenameThreadResponse | PlainMessage<RenameThreadResponse> | undefined, b: RenameThreadResponse | PlainMessage<RenameThreadResponse> | undefined): boolean {
+    return proto3.util.equals(RenameThreadResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.DeleteThreadRequest
+ */
+export class DeleteThreadRequest extends Message<DeleteThreadRequest> {
+  /**
+   * @generated from field: string thread_id = 1;
+   */
+  threadId = "";
+
+  constructor(data?: PartialMessage<DeleteThreadRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.DeleteThreadRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "thread_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteThreadRequest {
+    return new DeleteThreadRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteThreadRequest {
+    return new DeleteThreadRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteThreadRequest {
+    return new DeleteThreadRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteThreadRequest | PlainMessage<DeleteThreadRequest> | undefined, b: DeleteThreadRequest | PlainMessage<DeleteThreadRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteThreadRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.DeleteThreadResponse
+ */
+export class DeleteThreadResponse extends Message<DeleteThreadResponse> {
+  constructor(data?: PartialMessage<DeleteThreadResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.DeleteThreadResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteThreadResponse {
+    return new DeleteThreadResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteThreadResponse {
+    return new DeleteThreadResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteThreadResponse {
+    return new DeleteThreadResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteThreadResponse | PlainMessage<DeleteThreadResponse> | undefined, b: DeleteThreadResponse | PlainMessage<DeleteThreadResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteThreadResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ListThreadMessagesRequest
+ */
+export class ListThreadMessagesRequest extends Message<ListThreadMessagesRequest> {
+  /**
+   * @generated from field: string thread_id = 1;
+   */
+  threadId = "";
+
+  constructor(data?: PartialMessage<ListThreadMessagesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ListThreadMessagesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "thread_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListThreadMessagesRequest {
+    return new ListThreadMessagesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListThreadMessagesRequest {
+    return new ListThreadMessagesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListThreadMessagesRequest {
+    return new ListThreadMessagesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListThreadMessagesRequest | PlainMessage<ListThreadMessagesRequest> | undefined, b: ListThreadMessagesRequest | PlainMessage<ListThreadMessagesRequest> | undefined): boolean {
+    return proto3.util.equals(ListThreadMessagesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ListThreadMessagesResponse
+ */
+export class ListThreadMessagesResponse extends Message<ListThreadMessagesResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleThreadMessage messages = 1;
+   */
+  messages: OracleThreadMessage[] = [];
+
+  constructor(data?: PartialMessage<ListThreadMessagesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ListThreadMessagesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "messages", kind: "message", T: OracleThreadMessage, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListThreadMessagesResponse {
+    return new ListThreadMessagesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListThreadMessagesResponse {
+    return new ListThreadMessagesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListThreadMessagesResponse {
+    return new ListThreadMessagesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListThreadMessagesResponse | PlainMessage<ListThreadMessagesResponse> | undefined, b: ListThreadMessagesResponse | PlainMessage<ListThreadMessagesResponse> | undefined): boolean {
+    return proto3.util.equals(ListThreadMessagesResponse, a, b);
+  }
+}
+
+/**
+ * Streaming server-side query. Each chunk carries a text delta;
+ * final chunk carries done=true plus the persisted message id.
+ * Stream is bounded by the response length — no need to manage
+ * keepalive. When the underlying model client is unavailable the
+ * server emits one chunk with err='unavailable' and closes.
+ *
+ * @generated from message sttattus.oracle.v1.StreamQueryRequest
+ */
+export class StreamQueryRequest extends Message<StreamQueryRequest> {
+  /**
+   * empty == start a new thread
+   *
+   * @generated from field: string thread_id = 1;
+   */
+  threadId = "";
+
+  /**
+   * @generated from field: string prompt = 2;
+   */
+  prompt = "";
+
+  /**
+   * @generated from field: bool enable_synthesis = 3;
+   */
+  enableSynthesis = false;
+
+  constructor(data?: PartialMessage<StreamQueryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.StreamQueryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "thread_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "enable_synthesis", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StreamQueryRequest {
+    return new StreamQueryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StreamQueryRequest {
+    return new StreamQueryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StreamQueryRequest {
+    return new StreamQueryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: StreamQueryRequest | PlainMessage<StreamQueryRequest> | undefined, b: StreamQueryRequest | PlainMessage<StreamQueryRequest> | undefined): boolean {
+    return proto3.util.equals(StreamQueryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.StreamQueryChunk
+ */
+export class StreamQueryChunk extends Message<StreamQueryChunk> {
+  /**
+   * @generated from field: string thread_id = 1;
+   */
+  threadId = "";
+
+  /**
+   * @generated from field: string delta = 2;
+   */
+  delta = "";
+
+  /**
+   * @generated from field: bool done = 3;
+   */
+  done = false;
+
+  /**
+   * @generated from field: string message_id = 4;
+   */
+  messageId = "";
+
+  /**
+   * @generated from field: string err = 5;
+   */
+  err = "";
+
+  constructor(data?: PartialMessage<StreamQueryChunk>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.StreamQueryChunk";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "thread_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "delta", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "done", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "message_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "err", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StreamQueryChunk {
+    return new StreamQueryChunk().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StreamQueryChunk {
+    return new StreamQueryChunk().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StreamQueryChunk {
+    return new StreamQueryChunk().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: StreamQueryChunk | PlainMessage<StreamQueryChunk> | undefined, b: StreamQueryChunk | PlainMessage<StreamQueryChunk> | undefined): boolean {
+    return proto3.util.equals(StreamQueryChunk, a, b);
   }
 }
 

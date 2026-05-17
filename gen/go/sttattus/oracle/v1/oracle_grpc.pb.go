@@ -19,8 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	OracleService_Query_FullMethodName          = "/sttattus.oracle.v1.OracleService/Query"
-	OracleService_GetOracleStats_FullMethodName = "/sttattus.oracle.v1.OracleService/GetOracleStats"
+	OracleService_Query_FullMethodName              = "/sttattus.oracle.v1.OracleService/Query"
+	OracleService_GetOracleStats_FullMethodName     = "/sttattus.oracle.v1.OracleService/GetOracleStats"
+	OracleService_ListMyThreads_FullMethodName      = "/sttattus.oracle.v1.OracleService/ListMyThreads"
+	OracleService_CreateThread_FullMethodName       = "/sttattus.oracle.v1.OracleService/CreateThread"
+	OracleService_RenameThread_FullMethodName       = "/sttattus.oracle.v1.OracleService/RenameThread"
+	OracleService_DeleteThread_FullMethodName       = "/sttattus.oracle.v1.OracleService/DeleteThread"
+	OracleService_ListThreadMessages_FullMethodName = "/sttattus.oracle.v1.OracleService/ListThreadMessages"
+	OracleService_StreamQuery_FullMethodName        = "/sttattus.oracle.v1.OracleService/StreamQuery"
 )
 
 // OracleServiceClient is the client API for OracleService service.
@@ -31,6 +37,14 @@ type OracleServiceClient interface {
 	Query(ctx context.Context, in *QueryRequest, opts ...grpc.CallOption) (*QueryResponse, error)
 	// Status
 	GetOracleStats(ctx context.Context, in *GetOracleStatsRequest, opts ...grpc.CallOption) (*GetOracleStatsResponse, error)
+	// O13.2 — multi-thread chat.
+	ListMyThreads(ctx context.Context, in *ListMyThreadsRequest, opts ...grpc.CallOption) (*ListMyThreadsResponse, error)
+	CreateThread(ctx context.Context, in *CreateThreadRequest, opts ...grpc.CallOption) (*CreateThreadResponse, error)
+	RenameThread(ctx context.Context, in *RenameThreadRequest, opts ...grpc.CallOption) (*RenameThreadResponse, error)
+	DeleteThread(ctx context.Context, in *DeleteThreadRequest, opts ...grpc.CallOption) (*DeleteThreadResponse, error)
+	ListThreadMessages(ctx context.Context, in *ListThreadMessagesRequest, opts ...grpc.CallOption) (*ListThreadMessagesResponse, error)
+	// O13.2 — streaming response.
+	StreamQuery(ctx context.Context, in *StreamQueryRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamQueryChunk], error)
 }
 
 type oracleServiceClient struct {
@@ -61,6 +75,75 @@ func (c *oracleServiceClient) GetOracleStats(ctx context.Context, in *GetOracleS
 	return out, nil
 }
 
+func (c *oracleServiceClient) ListMyThreads(ctx context.Context, in *ListMyThreadsRequest, opts ...grpc.CallOption) (*ListMyThreadsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyThreadsResponse)
+	err := c.cc.Invoke(ctx, OracleService_ListMyThreads_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) CreateThread(ctx context.Context, in *CreateThreadRequest, opts ...grpc.CallOption) (*CreateThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateThreadResponse)
+	err := c.cc.Invoke(ctx, OracleService_CreateThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) RenameThread(ctx context.Context, in *RenameThreadRequest, opts ...grpc.CallOption) (*RenameThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RenameThreadResponse)
+	err := c.cc.Invoke(ctx, OracleService_RenameThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) DeleteThread(ctx context.Context, in *DeleteThreadRequest, opts ...grpc.CallOption) (*DeleteThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteThreadResponse)
+	err := c.cc.Invoke(ctx, OracleService_DeleteThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) ListThreadMessages(ctx context.Context, in *ListThreadMessagesRequest, opts ...grpc.CallOption) (*ListThreadMessagesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListThreadMessagesResponse)
+	err := c.cc.Invoke(ctx, OracleService_ListThreadMessages_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) StreamQuery(ctx context.Context, in *StreamQueryRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamQueryChunk], error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	stream, err := c.cc.NewStream(ctx, &OracleService_ServiceDesc.Streams[0], OracleService_StreamQuery_FullMethodName, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &grpc.GenericClientStream[StreamQueryRequest, StreamQueryChunk]{ClientStream: stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type OracleService_StreamQueryClient = grpc.ServerStreamingClient[StreamQueryChunk]
+
 // OracleServiceServer is the server API for OracleService service.
 // All implementations must embed UnimplementedOracleServiceServer
 // for forward compatibility.
@@ -69,6 +152,14 @@ type OracleServiceServer interface {
 	Query(context.Context, *QueryRequest) (*QueryResponse, error)
 	// Status
 	GetOracleStats(context.Context, *GetOracleStatsRequest) (*GetOracleStatsResponse, error)
+	// O13.2 — multi-thread chat.
+	ListMyThreads(context.Context, *ListMyThreadsRequest) (*ListMyThreadsResponse, error)
+	CreateThread(context.Context, *CreateThreadRequest) (*CreateThreadResponse, error)
+	RenameThread(context.Context, *RenameThreadRequest) (*RenameThreadResponse, error)
+	DeleteThread(context.Context, *DeleteThreadRequest) (*DeleteThreadResponse, error)
+	ListThreadMessages(context.Context, *ListThreadMessagesRequest) (*ListThreadMessagesResponse, error)
+	// O13.2 — streaming response.
+	StreamQuery(*StreamQueryRequest, grpc.ServerStreamingServer[StreamQueryChunk]) error
 	mustEmbedUnimplementedOracleServiceServer()
 }
 
@@ -84,6 +175,24 @@ func (UnimplementedOracleServiceServer) Query(context.Context, *QueryRequest) (*
 }
 func (UnimplementedOracleServiceServer) GetOracleStats(context.Context, *GetOracleStatsRequest) (*GetOracleStatsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetOracleStats not implemented")
+}
+func (UnimplementedOracleServiceServer) ListMyThreads(context.Context, *ListMyThreadsRequest) (*ListMyThreadsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyThreads not implemented")
+}
+func (UnimplementedOracleServiceServer) CreateThread(context.Context, *CreateThreadRequest) (*CreateThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateThread not implemented")
+}
+func (UnimplementedOracleServiceServer) RenameThread(context.Context, *RenameThreadRequest) (*RenameThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RenameThread not implemented")
+}
+func (UnimplementedOracleServiceServer) DeleteThread(context.Context, *DeleteThreadRequest) (*DeleteThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteThread not implemented")
+}
+func (UnimplementedOracleServiceServer) ListThreadMessages(context.Context, *ListThreadMessagesRequest) (*ListThreadMessagesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListThreadMessages not implemented")
+}
+func (UnimplementedOracleServiceServer) StreamQuery(*StreamQueryRequest, grpc.ServerStreamingServer[StreamQueryChunk]) error {
+	return status.Error(codes.Unimplemented, "method StreamQuery not implemented")
 }
 func (UnimplementedOracleServiceServer) mustEmbedUnimplementedOracleServiceServer() {}
 func (UnimplementedOracleServiceServer) testEmbeddedByValue()                       {}
@@ -142,6 +251,107 @@ func _OracleService_GetOracleStats_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OracleService_ListMyThreads_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyThreadsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ListMyThreads(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ListMyThreads_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ListMyThreads(ctx, req.(*ListMyThreadsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_CreateThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).CreateThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_CreateThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).CreateThread(ctx, req.(*CreateThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_RenameThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RenameThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).RenameThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_RenameThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).RenameThread(ctx, req.(*RenameThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_DeleteThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).DeleteThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_DeleteThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).DeleteThread(ctx, req.(*DeleteThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_ListThreadMessages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListThreadMessagesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ListThreadMessages(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ListThreadMessages_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ListThreadMessages(ctx, req.(*ListThreadMessagesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_StreamQuery_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(StreamQueryRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(OracleServiceServer).StreamQuery(m, &grpc.GenericServerStream[StreamQueryRequest, StreamQueryChunk]{ServerStream: stream})
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type OracleService_StreamQueryServer = grpc.ServerStreamingServer[StreamQueryChunk]
+
 // OracleService_ServiceDesc is the grpc.ServiceDesc for OracleService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -157,7 +367,33 @@ var OracleService_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "GetOracleStats",
 			Handler:    _OracleService_GetOracleStats_Handler,
 		},
+		{
+			MethodName: "ListMyThreads",
+			Handler:    _OracleService_ListMyThreads_Handler,
+		},
+		{
+			MethodName: "CreateThread",
+			Handler:    _OracleService_CreateThread_Handler,
+		},
+		{
+			MethodName: "RenameThread",
+			Handler:    _OracleService_RenameThread_Handler,
+		},
+		{
+			MethodName: "DeleteThread",
+			Handler:    _OracleService_DeleteThread_Handler,
+		},
+		{
+			MethodName: "ListThreadMessages",
+			Handler:    _OracleService_ListThreadMessages_Handler,
+		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "StreamQuery",
+			Handler:       _OracleService_StreamQuery_Handler,
+			ServerStreams: true,
+		},
+	},
 	Metadata: "sttattus/oracle/v1/oracle.proto",
 }

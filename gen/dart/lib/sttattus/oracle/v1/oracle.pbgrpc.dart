@@ -42,6 +42,32 @@ class OracleServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getOracleStats, request, options: options);
   }
 
+  /// O13.2 — multi-thread chat.
+  $grpc.ResponseFuture<$0.ListMyThreadsResponse> listMyThreads($0.ListMyThreadsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyThreads, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateThreadResponse> createThread($0.CreateThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createThread, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RenameThreadResponse> renameThread($0.RenameThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$renameThread, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteThreadResponse> deleteThread($0.DeleteThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteThread, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListThreadMessagesResponse> listThreadMessages($0.ListThreadMessagesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listThreadMessages, request, options: options);
+  }
+
+  /// O13.2 — streaming response.
+  $grpc.ResponseStream<$0.StreamQueryChunk> streamQuery($0.StreamQueryRequest request, {$grpc.CallOptions? options,}) {
+    return $createStreamingCall(_$streamQuery, $async.Stream.fromIterable([request]), options: options);
+  }
+
     // method descriptors
 
   static final _$query = $grpc.ClientMethod<$0.QueryRequest, $0.QueryResponse>(
@@ -52,6 +78,30 @@ class OracleServiceClient extends $grpc.Client {
       '/sttattus.oracle.v1.OracleService/GetOracleStats',
       ($0.GetOracleStatsRequest value) => value.writeToBuffer(),
       $0.GetOracleStatsResponse.fromBuffer);
+  static final _$listMyThreads = $grpc.ClientMethod<$0.ListMyThreadsRequest, $0.ListMyThreadsResponse>(
+      '/sttattus.oracle.v1.OracleService/ListMyThreads',
+      ($0.ListMyThreadsRequest value) => value.writeToBuffer(),
+      $0.ListMyThreadsResponse.fromBuffer);
+  static final _$createThread = $grpc.ClientMethod<$0.CreateThreadRequest, $0.CreateThreadResponse>(
+      '/sttattus.oracle.v1.OracleService/CreateThread',
+      ($0.CreateThreadRequest value) => value.writeToBuffer(),
+      $0.CreateThreadResponse.fromBuffer);
+  static final _$renameThread = $grpc.ClientMethod<$0.RenameThreadRequest, $0.RenameThreadResponse>(
+      '/sttattus.oracle.v1.OracleService/RenameThread',
+      ($0.RenameThreadRequest value) => value.writeToBuffer(),
+      $0.RenameThreadResponse.fromBuffer);
+  static final _$deleteThread = $grpc.ClientMethod<$0.DeleteThreadRequest, $0.DeleteThreadResponse>(
+      '/sttattus.oracle.v1.OracleService/DeleteThread',
+      ($0.DeleteThreadRequest value) => value.writeToBuffer(),
+      $0.DeleteThreadResponse.fromBuffer);
+  static final _$listThreadMessages = $grpc.ClientMethod<$0.ListThreadMessagesRequest, $0.ListThreadMessagesResponse>(
+      '/sttattus.oracle.v1.OracleService/ListThreadMessages',
+      ($0.ListThreadMessagesRequest value) => value.writeToBuffer(),
+      $0.ListThreadMessagesResponse.fromBuffer);
+  static final _$streamQuery = $grpc.ClientMethod<$0.StreamQueryRequest, $0.StreamQueryChunk>(
+      '/sttattus.oracle.v1.OracleService/StreamQuery',
+      ($0.StreamQueryRequest value) => value.writeToBuffer(),
+      $0.StreamQueryChunk.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.oracle.v1.OracleService')
@@ -73,6 +123,48 @@ abstract class OracleServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetOracleStatsRequest.fromBuffer(value),
         ($0.GetOracleStatsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyThreadsRequest, $0.ListMyThreadsResponse>(
+        'ListMyThreads',
+        listMyThreads_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyThreadsRequest.fromBuffer(value),
+        ($0.ListMyThreadsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateThreadRequest, $0.CreateThreadResponse>(
+        'CreateThread',
+        createThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateThreadRequest.fromBuffer(value),
+        ($0.CreateThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RenameThreadRequest, $0.RenameThreadResponse>(
+        'RenameThread',
+        renameThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RenameThreadRequest.fromBuffer(value),
+        ($0.RenameThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteThreadRequest, $0.DeleteThreadResponse>(
+        'DeleteThread',
+        deleteThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteThreadRequest.fromBuffer(value),
+        ($0.DeleteThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListThreadMessagesRequest, $0.ListThreadMessagesResponse>(
+        'ListThreadMessages',
+        listThreadMessages_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListThreadMessagesRequest.fromBuffer(value),
+        ($0.ListThreadMessagesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.StreamQueryRequest, $0.StreamQueryChunk>(
+        'StreamQuery',
+        streamQuery_Pre,
+        false,
+        true,
+        ($core.List<$core.int> value) => $0.StreamQueryRequest.fromBuffer(value),
+        ($0.StreamQueryChunk value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.QueryResponse> query_Pre($grpc.ServiceCall $call, $async.Future<$0.QueryRequest> $request) async {
@@ -86,5 +178,41 @@ abstract class OracleServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GetOracleStatsResponse> getOracleStats($grpc.ServiceCall call, $0.GetOracleStatsRequest request);
+
+  $async.Future<$0.ListMyThreadsResponse> listMyThreads_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyThreadsRequest> $request) async {
+    return listMyThreads($call, await $request);
+  }
+
+  $async.Future<$0.ListMyThreadsResponse> listMyThreads($grpc.ServiceCall call, $0.ListMyThreadsRequest request);
+
+  $async.Future<$0.CreateThreadResponse> createThread_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateThreadRequest> $request) async {
+    return createThread($call, await $request);
+  }
+
+  $async.Future<$0.CreateThreadResponse> createThread($grpc.ServiceCall call, $0.CreateThreadRequest request);
+
+  $async.Future<$0.RenameThreadResponse> renameThread_Pre($grpc.ServiceCall $call, $async.Future<$0.RenameThreadRequest> $request) async {
+    return renameThread($call, await $request);
+  }
+
+  $async.Future<$0.RenameThreadResponse> renameThread($grpc.ServiceCall call, $0.RenameThreadRequest request);
+
+  $async.Future<$0.DeleteThreadResponse> deleteThread_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteThreadRequest> $request) async {
+    return deleteThread($call, await $request);
+  }
+
+  $async.Future<$0.DeleteThreadResponse> deleteThread($grpc.ServiceCall call, $0.DeleteThreadRequest request);
+
+  $async.Future<$0.ListThreadMessagesResponse> listThreadMessages_Pre($grpc.ServiceCall $call, $async.Future<$0.ListThreadMessagesRequest> $request) async {
+    return listThreadMessages($call, await $request);
+  }
+
+  $async.Future<$0.ListThreadMessagesResponse> listThreadMessages($grpc.ServiceCall call, $0.ListThreadMessagesRequest request);
+
+  $async.Stream<$0.StreamQueryChunk> streamQuery_Pre($grpc.ServiceCall $call, $async.Future<$0.StreamQueryRequest> $request) async* {
+    yield* streamQuery($call, await $request);
+  }
+
+  $async.Stream<$0.StreamQueryChunk> streamQuery($grpc.ServiceCall call, $0.StreamQueryRequest request);
 
 }

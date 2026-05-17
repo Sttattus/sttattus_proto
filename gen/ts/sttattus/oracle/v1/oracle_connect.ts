@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetOracleStatsRequest, GetOracleStatsResponse, QueryRequest, QueryResponse } from "./oracle_pb.js";
+import { CreateThreadRequest, CreateThreadResponse, DeleteThreadRequest, DeleteThreadResponse, GetOracleStatsRequest, GetOracleStatsResponse, ListMyThreadsRequest, ListMyThreadsResponse, ListThreadMessagesRequest, ListThreadMessagesResponse, QueryRequest, QueryResponse, RenameThreadRequest, RenameThreadResponse, StreamQueryChunk, StreamQueryRequest } from "./oracle_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -33,6 +33,64 @@ export const OracleService = {
       I: GetOracleStatsRequest,
       O: GetOracleStatsResponse,
       kind: MethodKind.Unary,
+    },
+    /**
+     * O13.2 — multi-thread chat.
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.ListMyThreads
+     */
+    listMyThreads: {
+      name: "ListMyThreads",
+      I: ListMyThreadsRequest,
+      O: ListMyThreadsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.CreateThread
+     */
+    createThread: {
+      name: "CreateThread",
+      I: CreateThreadRequest,
+      O: CreateThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.RenameThread
+     */
+    renameThread: {
+      name: "RenameThread",
+      I: RenameThreadRequest,
+      O: RenameThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.DeleteThread
+     */
+    deleteThread: {
+      name: "DeleteThread",
+      I: DeleteThreadRequest,
+      O: DeleteThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.ListThreadMessages
+     */
+    listThreadMessages: {
+      name: "ListThreadMessages",
+      I: ListThreadMessagesRequest,
+      O: ListThreadMessagesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * O13.2 — streaming response.
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.StreamQuery
+     */
+    streamQuery: {
+      name: "StreamQuery",
+      I: StreamQueryRequest,
+      O: StreamQueryChunk,
+      kind: MethodKind.ServerStreaming,
     },
   }
 } as const;

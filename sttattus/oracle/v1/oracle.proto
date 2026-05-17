@@ -60,10 +60,89 @@ message GetOracleStatsResponse {
   OracleStats stats = 1;
 }
 
+// === O13.2 — multi-thread chat + streaming responses ===
+
+message OracleThread {
+  string id = 1;
+  string title = 2;
+  int64 created_unix = 3;
+  int64 updated_unix = 4;
+}
+
+message OracleThreadMessage {
+  string id = 1;
+  string thread_id = 2;
+  string prompt = 3;
+  string response = 4;
+  string domain = 5;
+  int64 created_unix = 6;
+}
+
+message ListMyThreadsRequest {}
+message ListMyThreadsResponse {
+  repeated OracleThread threads = 1;
+}
+
+message CreateThreadRequest {
+  string title = 1;
+}
+message CreateThreadResponse {
+  OracleThread thread = 1;
+}
+
+message RenameThreadRequest {
+  string thread_id = 1;
+  string title = 2;
+}
+message RenameThreadResponse {
+  OracleThread thread = 1;
+}
+
+message DeleteThreadRequest {
+  string thread_id = 1;
+}
+message DeleteThreadResponse {}
+
+message ListThreadMessagesRequest {
+  string thread_id = 1;
+}
+message ListThreadMessagesResponse {
+  repeated OracleThreadMessage messages = 1;
+}
+
+// Streaming server-side query. Each chunk carries a text delta;
+// final chunk carries done=true plus the persisted message id.
+// Stream is bounded by the response length — no need to manage
+// keepalive. When the underlying model client is unavailable the
+// server emits one chunk with err='unavailable' and closes.
+message StreamQueryRequest {
+  string thread_id = 1; // empty == start a new thread
+  string prompt = 2;
+  bool enable_synthesis = 3;
+}
+
+message StreamQueryChunk {
+  string thread_id = 1;
+  string delta = 2;
+  bool done = 3;
+  string message_id = 4;
+  string err = 5;
+}
+
 service OracleService {
   // Query handles strategic inquiry and rewards verified depth.
   rpc Query(QueryRequest) returns (QueryResponse);
 
   // Status
   rpc GetOracleStats(GetOracleStatsRequest) returns (GetOracleStatsResponse);
+
+  // O13.2 — multi-thread chat.
+  rpc ListMyThreads(ListMyThreadsRequest) returns (ListMyThreadsResponse);
+  rpc CreateThread(CreateThreadRequest) returns (CreateThreadResponse);
+  rpc RenameThread(RenameThreadRequest) returns (RenameThreadResponse);
+  rpc DeleteThread(DeleteThreadRequest) returns (DeleteThreadResponse);
+  rpc ListThreadMessages(ListThreadMessagesRequest) returns (ListThreadMessagesResponse);
+
+  // O13.2 — streaming response.
+  rpc StreamQuery(StreamQueryRequest) returns (stream StreamQueryChunk);
 }

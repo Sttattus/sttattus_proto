@@ -159,3 +159,195 @@ final $typed_data.Uint8List getOracleStatsResponseDescriptor = $convert.base64De
     'ChZHZXRPcmFjbGVTdGF0c1Jlc3BvbnNlEjUKBXN0YXRzGAEgASgLMh8uc3R0YXR0dXMub3JhY2'
     'xlLnYxLk9yYWNsZVN0YXRzUgVzdGF0cw==');
 
+@$core.Deprecated('Use oracleThreadDescriptor instead')
+const OracleThread$json = {
+  '1': 'OracleThread',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'created_unix', '3': 3, '4': 1, '5': 3, '10': 'createdUnix'},
+    {'1': 'updated_unix', '3': 4, '4': 1, '5': 3, '10': 'updatedUnix'},
+  ],
+};
+
+/// Descriptor for `OracleThread`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List oracleThreadDescriptor = $convert.base64Decode(
+    'CgxPcmFjbGVUaHJlYWQSDgoCaWQYASABKAlSAmlkEhQKBXRpdGxlGAIgASgJUgV0aXRsZRIhCg'
+    'xjcmVhdGVkX3VuaXgYAyABKANSC2NyZWF0ZWRVbml4EiEKDHVwZGF0ZWRfdW5peBgEIAEoA1IL'
+    'dXBkYXRlZFVuaXg=');
+
+@$core.Deprecated('Use oracleThreadMessageDescriptor instead')
+const OracleThreadMessage$json = {
+  '1': 'OracleThreadMessage',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'thread_id', '3': 2, '4': 1, '5': 9, '10': 'threadId'},
+    {'1': 'prompt', '3': 3, '4': 1, '5': 9, '10': 'prompt'},
+    {'1': 'response', '3': 4, '4': 1, '5': 9, '10': 'response'},
+    {'1': 'domain', '3': 5, '4': 1, '5': 9, '10': 'domain'},
+    {'1': 'created_unix', '3': 6, '4': 1, '5': 3, '10': 'createdUnix'},
+  ],
+};
+
+/// Descriptor for `OracleThreadMessage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List oracleThreadMessageDescriptor = $convert.base64Decode(
+    'ChNPcmFjbGVUaHJlYWRNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBIbCgl0aHJlYWRfaWQYAiABKA'
+    'lSCHRocmVhZElkEhYKBnByb21wdBgDIAEoCVIGcHJvbXB0EhoKCHJlc3BvbnNlGAQgASgJUghy'
+    'ZXNwb25zZRIWCgZkb21haW4YBSABKAlSBmRvbWFpbhIhCgxjcmVhdGVkX3VuaXgYBiABKANSC2'
+    'NyZWF0ZWRVbml4');
+
+@$core.Deprecated('Use listMyThreadsRequestDescriptor instead')
+const ListMyThreadsRequest$json = {
+  '1': 'ListMyThreadsRequest',
+};
+
+/// Descriptor for `ListMyThreadsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyThreadsRequestDescriptor = $convert.base64Decode(
+    'ChRMaXN0TXlUaHJlYWRzUmVxdWVzdA==');
+
+@$core.Deprecated('Use listMyThreadsResponseDescriptor instead')
+const ListMyThreadsResponse$json = {
+  '1': 'ListMyThreadsResponse',
+  '2': [
+    {'1': 'threads', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.OracleThread', '10': 'threads'},
+  ],
+};
+
+/// Descriptor for `ListMyThreadsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyThreadsResponseDescriptor = $convert.base64Decode(
+    'ChVMaXN0TXlUaHJlYWRzUmVzcG9uc2USOgoHdGhyZWFkcxgBIAMoCzIgLnN0dGF0dHVzLm9yYW'
+    'NsZS52MS5PcmFjbGVUaHJlYWRSB3RocmVhZHM=');
+
+@$core.Deprecated('Use createThreadRequestDescriptor instead')
+const CreateThreadRequest$json = {
+  '1': 'CreateThreadRequest',
+  '2': [
+    {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
+  ],
+};
+
+/// Descriptor for `CreateThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createThreadRequestDescriptor = $convert.base64Decode(
+    'ChNDcmVhdGVUaHJlYWRSZXF1ZXN0EhQKBXRpdGxlGAEgASgJUgV0aXRsZQ==');
+
+@$core.Deprecated('Use createThreadResponseDescriptor instead')
+const CreateThreadResponse$json = {
+  '1': 'CreateThreadResponse',
+  '2': [
+    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.OracleThread', '10': 'thread'},
+  ],
+};
+
+/// Descriptor for `CreateThreadResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createThreadResponseDescriptor = $convert.base64Decode(
+    'ChRDcmVhdGVUaHJlYWRSZXNwb25zZRI4CgZ0aHJlYWQYASABKAsyIC5zdHRhdHR1cy5vcmFjbG'
+    'UudjEuT3JhY2xlVGhyZWFkUgZ0aHJlYWQ=');
+
+@$core.Deprecated('Use renameThreadRequestDescriptor instead')
+const RenameThreadRequest$json = {
+  '1': 'RenameThreadRequest',
+  '2': [
+    {'1': 'thread_id', '3': 1, '4': 1, '5': 9, '10': 'threadId'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+  ],
+};
+
+/// Descriptor for `RenameThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List renameThreadRequestDescriptor = $convert.base64Decode(
+    'ChNSZW5hbWVUaHJlYWRSZXF1ZXN0EhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSWQSFAoFdG'
+    'l0bGUYAiABKAlSBXRpdGxl');
+
+@$core.Deprecated('Use renameThreadResponseDescriptor instead')
+const RenameThreadResponse$json = {
+  '1': 'RenameThreadResponse',
+  '2': [
+    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.OracleThread', '10': 'thread'},
+  ],
+};
+
+/// Descriptor for `RenameThreadResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List renameThreadResponseDescriptor = $convert.base64Decode(
+    'ChRSZW5hbWVUaHJlYWRSZXNwb25zZRI4CgZ0aHJlYWQYASABKAsyIC5zdHRhdHR1cy5vcmFjbG'
+    'UudjEuT3JhY2xlVGhyZWFkUgZ0aHJlYWQ=');
+
+@$core.Deprecated('Use deleteThreadRequestDescriptor instead')
+const DeleteThreadRequest$json = {
+  '1': 'DeleteThreadRequest',
+  '2': [
+    {'1': 'thread_id', '3': 1, '4': 1, '5': 9, '10': 'threadId'},
+  ],
+};
+
+/// Descriptor for `DeleteThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteThreadRequestDescriptor = $convert.base64Decode(
+    'ChNEZWxldGVUaHJlYWRSZXF1ZXN0EhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSWQ=');
+
+@$core.Deprecated('Use deleteThreadResponseDescriptor instead')
+const DeleteThreadResponse$json = {
+  '1': 'DeleteThreadResponse',
+};
+
+/// Descriptor for `DeleteThreadResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteThreadResponseDescriptor = $convert.base64Decode(
+    'ChREZWxldGVUaHJlYWRSZXNwb25zZQ==');
+
+@$core.Deprecated('Use listThreadMessagesRequestDescriptor instead')
+const ListThreadMessagesRequest$json = {
+  '1': 'ListThreadMessagesRequest',
+  '2': [
+    {'1': 'thread_id', '3': 1, '4': 1, '5': 9, '10': 'threadId'},
+  ],
+};
+
+/// Descriptor for `ListThreadMessagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listThreadMessagesRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0VGhyZWFkTWVzc2FnZXNSZXF1ZXN0EhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSW'
+    'Q=');
+
+@$core.Deprecated('Use listThreadMessagesResponseDescriptor instead')
+const ListThreadMessagesResponse$json = {
+  '1': 'ListThreadMessagesResponse',
+  '2': [
+    {'1': 'messages', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.OracleThreadMessage', '10': 'messages'},
+  ],
+};
+
+/// Descriptor for `ListThreadMessagesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listThreadMessagesResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0VGhyZWFkTWVzc2FnZXNSZXNwb25zZRJDCghtZXNzYWdlcxgBIAMoCzInLnN0dGF0dH'
+    'VzLm9yYWNsZS52MS5PcmFjbGVUaHJlYWRNZXNzYWdlUghtZXNzYWdlcw==');
+
+@$core.Deprecated('Use streamQueryRequestDescriptor instead')
+const StreamQueryRequest$json = {
+  '1': 'StreamQueryRequest',
+  '2': [
+    {'1': 'thread_id', '3': 1, '4': 1, '5': 9, '10': 'threadId'},
+    {'1': 'prompt', '3': 2, '4': 1, '5': 9, '10': 'prompt'},
+    {'1': 'enable_synthesis', '3': 3, '4': 1, '5': 8, '10': 'enableSynthesis'},
+  ],
+};
+
+/// Descriptor for `StreamQueryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List streamQueryRequestDescriptor = $convert.base64Decode(
+    'ChJTdHJlYW1RdWVyeVJlcXVlc3QSGwoJdGhyZWFkX2lkGAEgASgJUgh0aHJlYWRJZBIWCgZwcm'
+    '9tcHQYAiABKAlSBnByb21wdBIpChBlbmFibGVfc3ludGhlc2lzGAMgASgIUg9lbmFibGVTeW50'
+    'aGVzaXM=');
+
+@$core.Deprecated('Use streamQueryChunkDescriptor instead')
+const StreamQueryChunk$json = {
+  '1': 'StreamQueryChunk',
+  '2': [
+    {'1': 'thread_id', '3': 1, '4': 1, '5': 9, '10': 'threadId'},
+    {'1': 'delta', '3': 2, '4': 1, '5': 9, '10': 'delta'},
+    {'1': 'done', '3': 3, '4': 1, '5': 8, '10': 'done'},
+    {'1': 'message_id', '3': 4, '4': 1, '5': 9, '10': 'messageId'},
+    {'1': 'err', '3': 5, '4': 1, '5': 9, '10': 'err'},
+  ],
+};
+
+/// Descriptor for `StreamQueryChunk`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List streamQueryChunkDescriptor = $convert.base64Decode(
+    'ChBTdHJlYW1RdWVyeUNodW5rEhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSWQSFAoFZGVsdG'
+    'EYAiABKAlSBWRlbHRhEhIKBGRvbmUYAyABKAhSBGRvbmUSHQoKbWVzc2FnZV9pZBgEIAEoCVIJ'
+    'bWVzc2FnZUlkEhAKA2VychgFIAEoCVIDZXJy');
+
