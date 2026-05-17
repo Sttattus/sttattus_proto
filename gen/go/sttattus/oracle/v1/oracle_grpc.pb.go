@@ -19,14 +19,20 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	OracleService_Query_FullMethodName              = "/sttattus.oracle.v1.OracleService/Query"
-	OracleService_GetOracleStats_FullMethodName     = "/sttattus.oracle.v1.OracleService/GetOracleStats"
-	OracleService_ListMyThreads_FullMethodName      = "/sttattus.oracle.v1.OracleService/ListMyThreads"
-	OracleService_CreateThread_FullMethodName       = "/sttattus.oracle.v1.OracleService/CreateThread"
-	OracleService_RenameThread_FullMethodName       = "/sttattus.oracle.v1.OracleService/RenameThread"
-	OracleService_DeleteThread_FullMethodName       = "/sttattus.oracle.v1.OracleService/DeleteThread"
-	OracleService_ListThreadMessages_FullMethodName = "/sttattus.oracle.v1.OracleService/ListThreadMessages"
-	OracleService_StreamQuery_FullMethodName        = "/sttattus.oracle.v1.OracleService/StreamQuery"
+	OracleService_Query_FullMethodName                = "/sttattus.oracle.v1.OracleService/Query"
+	OracleService_GetOracleStats_FullMethodName       = "/sttattus.oracle.v1.OracleService/GetOracleStats"
+	OracleService_ListMyThreads_FullMethodName        = "/sttattus.oracle.v1.OracleService/ListMyThreads"
+	OracleService_CreateThread_FullMethodName         = "/sttattus.oracle.v1.OracleService/CreateThread"
+	OracleService_RenameThread_FullMethodName         = "/sttattus.oracle.v1.OracleService/RenameThread"
+	OracleService_DeleteThread_FullMethodName         = "/sttattus.oracle.v1.OracleService/DeleteThread"
+	OracleService_ListThreadMessages_FullMethodName   = "/sttattus.oracle.v1.OracleService/ListThreadMessages"
+	OracleService_StreamQuery_FullMethodName          = "/sttattus.oracle.v1.OracleService/StreamQuery"
+	OracleService_RecordEpisodicMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/RecordEpisodicMemory"
+	OracleService_ListMyEpisodicMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/ListMyEpisodicMemory"
+	OracleService_DeleteEpisodicMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/DeleteEpisodicMemory"
+	OracleService_UpsertSemanticMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/UpsertSemanticMemory"
+	OracleService_ListMySemanticMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/ListMySemanticMemory"
+	OracleService_DeleteSemanticMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/DeleteSemanticMemory"
 )
 
 // OracleServiceClient is the client API for OracleService service.
@@ -45,6 +51,13 @@ type OracleServiceClient interface {
 	ListThreadMessages(ctx context.Context, in *ListThreadMessagesRequest, opts ...grpc.CallOption) (*ListThreadMessagesResponse, error)
 	// O13.2 — streaming response.
 	StreamQuery(ctx context.Context, in *StreamQueryRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamQueryChunk], error)
+	// O13.3 — memory store.
+	RecordEpisodicMemory(ctx context.Context, in *RecordEpisodicMemoryRequest, opts ...grpc.CallOption) (*RecordEpisodicMemoryResponse, error)
+	ListMyEpisodicMemory(ctx context.Context, in *ListMyEpisodicMemoryRequest, opts ...grpc.CallOption) (*ListMyEpisodicMemoryResponse, error)
+	DeleteEpisodicMemory(ctx context.Context, in *DeleteEpisodicMemoryRequest, opts ...grpc.CallOption) (*DeleteEpisodicMemoryResponse, error)
+	UpsertSemanticMemory(ctx context.Context, in *UpsertSemanticMemoryRequest, opts ...grpc.CallOption) (*UpsertSemanticMemoryResponse, error)
+	ListMySemanticMemory(ctx context.Context, in *ListMySemanticMemoryRequest, opts ...grpc.CallOption) (*ListMySemanticMemoryResponse, error)
+	DeleteSemanticMemory(ctx context.Context, in *DeleteSemanticMemoryRequest, opts ...grpc.CallOption) (*DeleteSemanticMemoryResponse, error)
 }
 
 type oracleServiceClient struct {
@@ -144,6 +157,66 @@ func (c *oracleServiceClient) StreamQuery(ctx context.Context, in *StreamQueryRe
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
 type OracleService_StreamQueryClient = grpc.ServerStreamingClient[StreamQueryChunk]
 
+func (c *oracleServiceClient) RecordEpisodicMemory(ctx context.Context, in *RecordEpisodicMemoryRequest, opts ...grpc.CallOption) (*RecordEpisodicMemoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordEpisodicMemoryResponse)
+	err := c.cc.Invoke(ctx, OracleService_RecordEpisodicMemory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) ListMyEpisodicMemory(ctx context.Context, in *ListMyEpisodicMemoryRequest, opts ...grpc.CallOption) (*ListMyEpisodicMemoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyEpisodicMemoryResponse)
+	err := c.cc.Invoke(ctx, OracleService_ListMyEpisodicMemory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) DeleteEpisodicMemory(ctx context.Context, in *DeleteEpisodicMemoryRequest, opts ...grpc.CallOption) (*DeleteEpisodicMemoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteEpisodicMemoryResponse)
+	err := c.cc.Invoke(ctx, OracleService_DeleteEpisodicMemory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) UpsertSemanticMemory(ctx context.Context, in *UpsertSemanticMemoryRequest, opts ...grpc.CallOption) (*UpsertSemanticMemoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertSemanticMemoryResponse)
+	err := c.cc.Invoke(ctx, OracleService_UpsertSemanticMemory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) ListMySemanticMemory(ctx context.Context, in *ListMySemanticMemoryRequest, opts ...grpc.CallOption) (*ListMySemanticMemoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMySemanticMemoryResponse)
+	err := c.cc.Invoke(ctx, OracleService_ListMySemanticMemory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) DeleteSemanticMemory(ctx context.Context, in *DeleteSemanticMemoryRequest, opts ...grpc.CallOption) (*DeleteSemanticMemoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteSemanticMemoryResponse)
+	err := c.cc.Invoke(ctx, OracleService_DeleteSemanticMemory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OracleServiceServer is the server API for OracleService service.
 // All implementations must embed UnimplementedOracleServiceServer
 // for forward compatibility.
@@ -160,6 +233,13 @@ type OracleServiceServer interface {
 	ListThreadMessages(context.Context, *ListThreadMessagesRequest) (*ListThreadMessagesResponse, error)
 	// O13.2 — streaming response.
 	StreamQuery(*StreamQueryRequest, grpc.ServerStreamingServer[StreamQueryChunk]) error
+	// O13.3 — memory store.
+	RecordEpisodicMemory(context.Context, *RecordEpisodicMemoryRequest) (*RecordEpisodicMemoryResponse, error)
+	ListMyEpisodicMemory(context.Context, *ListMyEpisodicMemoryRequest) (*ListMyEpisodicMemoryResponse, error)
+	DeleteEpisodicMemory(context.Context, *DeleteEpisodicMemoryRequest) (*DeleteEpisodicMemoryResponse, error)
+	UpsertSemanticMemory(context.Context, *UpsertSemanticMemoryRequest) (*UpsertSemanticMemoryResponse, error)
+	ListMySemanticMemory(context.Context, *ListMySemanticMemoryRequest) (*ListMySemanticMemoryResponse, error)
+	DeleteSemanticMemory(context.Context, *DeleteSemanticMemoryRequest) (*DeleteSemanticMemoryResponse, error)
 	mustEmbedUnimplementedOracleServiceServer()
 }
 
@@ -193,6 +273,24 @@ func (UnimplementedOracleServiceServer) ListThreadMessages(context.Context, *Lis
 }
 func (UnimplementedOracleServiceServer) StreamQuery(*StreamQueryRequest, grpc.ServerStreamingServer[StreamQueryChunk]) error {
 	return status.Error(codes.Unimplemented, "method StreamQuery not implemented")
+}
+func (UnimplementedOracleServiceServer) RecordEpisodicMemory(context.Context, *RecordEpisodicMemoryRequest) (*RecordEpisodicMemoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordEpisodicMemory not implemented")
+}
+func (UnimplementedOracleServiceServer) ListMyEpisodicMemory(context.Context, *ListMyEpisodicMemoryRequest) (*ListMyEpisodicMemoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyEpisodicMemory not implemented")
+}
+func (UnimplementedOracleServiceServer) DeleteEpisodicMemory(context.Context, *DeleteEpisodicMemoryRequest) (*DeleteEpisodicMemoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteEpisodicMemory not implemented")
+}
+func (UnimplementedOracleServiceServer) UpsertSemanticMemory(context.Context, *UpsertSemanticMemoryRequest) (*UpsertSemanticMemoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertSemanticMemory not implemented")
+}
+func (UnimplementedOracleServiceServer) ListMySemanticMemory(context.Context, *ListMySemanticMemoryRequest) (*ListMySemanticMemoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMySemanticMemory not implemented")
+}
+func (UnimplementedOracleServiceServer) DeleteSemanticMemory(context.Context, *DeleteSemanticMemoryRequest) (*DeleteSemanticMemoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteSemanticMemory not implemented")
 }
 func (UnimplementedOracleServiceServer) mustEmbedUnimplementedOracleServiceServer() {}
 func (UnimplementedOracleServiceServer) testEmbeddedByValue()                       {}
@@ -352,6 +450,114 @@ func _OracleService_StreamQuery_Handler(srv interface{}, stream grpc.ServerStrea
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
 type OracleService_StreamQueryServer = grpc.ServerStreamingServer[StreamQueryChunk]
 
+func _OracleService_RecordEpisodicMemory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordEpisodicMemoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).RecordEpisodicMemory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_RecordEpisodicMemory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).RecordEpisodicMemory(ctx, req.(*RecordEpisodicMemoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_ListMyEpisodicMemory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyEpisodicMemoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ListMyEpisodicMemory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ListMyEpisodicMemory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ListMyEpisodicMemory(ctx, req.(*ListMyEpisodicMemoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_DeleteEpisodicMemory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteEpisodicMemoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).DeleteEpisodicMemory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_DeleteEpisodicMemory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).DeleteEpisodicMemory(ctx, req.(*DeleteEpisodicMemoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_UpsertSemanticMemory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertSemanticMemoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).UpsertSemanticMemory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_UpsertSemanticMemory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).UpsertSemanticMemory(ctx, req.(*UpsertSemanticMemoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_ListMySemanticMemory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMySemanticMemoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ListMySemanticMemory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ListMySemanticMemory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ListMySemanticMemory(ctx, req.(*ListMySemanticMemoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_DeleteSemanticMemory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteSemanticMemoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).DeleteSemanticMemory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_DeleteSemanticMemory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).DeleteSemanticMemory(ctx, req.(*DeleteSemanticMemoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OracleService_ServiceDesc is the grpc.ServiceDesc for OracleService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -386,6 +592,30 @@ var OracleService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListThreadMessages",
 			Handler:    _OracleService_ListThreadMessages_Handler,
+		},
+		{
+			MethodName: "RecordEpisodicMemory",
+			Handler:    _OracleService_RecordEpisodicMemory_Handler,
+		},
+		{
+			MethodName: "ListMyEpisodicMemory",
+			Handler:    _OracleService_ListMyEpisodicMemory_Handler,
+		},
+		{
+			MethodName: "DeleteEpisodicMemory",
+			Handler:    _OracleService_DeleteEpisodicMemory_Handler,
+		},
+		{
+			MethodName: "UpsertSemanticMemory",
+			Handler:    _OracleService_UpsertSemanticMemory_Handler,
+		},
+		{
+			MethodName: "ListMySemanticMemory",
+			Handler:    _OracleService_ListMySemanticMemory_Handler,
+		},
+		{
+			MethodName: "DeleteSemanticMemory",
+			Handler:    _OracleService_DeleteSemanticMemory_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

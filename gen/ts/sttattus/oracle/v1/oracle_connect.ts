@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateThreadRequest, CreateThreadResponse, DeleteThreadRequest, DeleteThreadResponse, GetOracleStatsRequest, GetOracleStatsResponse, ListMyThreadsRequest, ListMyThreadsResponse, ListThreadMessagesRequest, ListThreadMessagesResponse, QueryRequest, QueryResponse, RenameThreadRequest, RenameThreadResponse, StreamQueryChunk, StreamQueryRequest } from "./oracle_pb.js";
+import { CreateThreadRequest, CreateThreadResponse, DeleteEpisodicMemoryRequest, DeleteEpisodicMemoryResponse, DeleteSemanticMemoryRequest, DeleteSemanticMemoryResponse, DeleteThreadRequest, DeleteThreadResponse, GetOracleStatsRequest, GetOracleStatsResponse, ListMyEpisodicMemoryRequest, ListMyEpisodicMemoryResponse, ListMySemanticMemoryRequest, ListMySemanticMemoryResponse, ListMyThreadsRequest, ListMyThreadsResponse, ListThreadMessagesRequest, ListThreadMessagesResponse, QueryRequest, QueryResponse, RecordEpisodicMemoryRequest, RecordEpisodicMemoryResponse, RenameThreadRequest, RenameThreadResponse, StreamQueryChunk, StreamQueryRequest, UpsertSemanticMemoryRequest, UpsertSemanticMemoryResponse } from "./oracle_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -91,6 +91,62 @@ export const OracleService = {
       I: StreamQueryRequest,
       O: StreamQueryChunk,
       kind: MethodKind.ServerStreaming,
+    },
+    /**
+     * O13.3 — memory store.
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.RecordEpisodicMemory
+     */
+    recordEpisodicMemory: {
+      name: "RecordEpisodicMemory",
+      I: RecordEpisodicMemoryRequest,
+      O: RecordEpisodicMemoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.ListMyEpisodicMemory
+     */
+    listMyEpisodicMemory: {
+      name: "ListMyEpisodicMemory",
+      I: ListMyEpisodicMemoryRequest,
+      O: ListMyEpisodicMemoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.DeleteEpisodicMemory
+     */
+    deleteEpisodicMemory: {
+      name: "DeleteEpisodicMemory",
+      I: DeleteEpisodicMemoryRequest,
+      O: DeleteEpisodicMemoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.UpsertSemanticMemory
+     */
+    upsertSemanticMemory: {
+      name: "UpsertSemanticMemory",
+      I: UpsertSemanticMemoryRequest,
+      O: UpsertSemanticMemoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.ListMySemanticMemory
+     */
+    listMySemanticMemory: {
+      name: "ListMySemanticMemory",
+      I: ListMySemanticMemoryRequest,
+      O: ListMySemanticMemoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.DeleteSemanticMemory
+     */
+    deleteSemanticMemory: {
+      name: "DeleteSemanticMemory",
+      I: DeleteSemanticMemoryRequest,
+      O: DeleteSemanticMemoryResponse,
+      kind: MethodKind.Unary,
     },
   }
 } as const;

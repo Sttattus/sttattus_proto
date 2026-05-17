@@ -60,6 +60,63 @@ message GetOracleStatsResponse {
   OracleStats stats = 1;
 }
 
+// === O13.3 — memory store (episodic + semantic) ===
+
+message EpisodicMemory {
+  string id = 1;
+  string source = 2; // 'oracle' | 'user' | 'system'
+  string body = 3;
+  int64 occurred_unix = 4;
+}
+
+message SemanticMemory {
+  string id = 1;
+  string key = 2;
+  string value = 3;
+  string source = 4;
+  int64 updated_unix = 5;
+}
+
+message RecordEpisodicMemoryRequest {
+  string source = 1;
+  string body = 2;
+  int64 occurred_unix = 3; // optional; 0 == now
+}
+message RecordEpisodicMemoryResponse {
+  EpisodicMemory memory = 1;
+}
+
+message ListMyEpisodicMemoryRequest {
+  int32 limit = 1; // 0 == default 100
+}
+message ListMyEpisodicMemoryResponse {
+  repeated EpisodicMemory memories = 1;
+}
+
+message DeleteEpisodicMemoryRequest {
+  string memory_id = 1;
+}
+message DeleteEpisodicMemoryResponse {}
+
+message UpsertSemanticMemoryRequest {
+  string key = 1;
+  string value = 2;
+  string source = 3;
+}
+message UpsertSemanticMemoryResponse {
+  SemanticMemory memory = 1;
+}
+
+message ListMySemanticMemoryRequest {}
+message ListMySemanticMemoryResponse {
+  repeated SemanticMemory memories = 1;
+}
+
+message DeleteSemanticMemoryRequest {
+  string memory_id = 1;
+}
+message DeleteSemanticMemoryResponse {}
+
 // === O13.2 — multi-thread chat + streaming responses ===
 
 message OracleThread {
@@ -145,4 +202,12 @@ service OracleService {
 
   // O13.2 — streaming response.
   rpc StreamQuery(StreamQueryRequest) returns (stream StreamQueryChunk);
+
+  // O13.3 — memory store.
+  rpc RecordEpisodicMemory(RecordEpisodicMemoryRequest) returns (RecordEpisodicMemoryResponse);
+  rpc ListMyEpisodicMemory(ListMyEpisodicMemoryRequest) returns (ListMyEpisodicMemoryResponse);
+  rpc DeleteEpisodicMemory(DeleteEpisodicMemoryRequest) returns (DeleteEpisodicMemoryResponse);
+  rpc UpsertSemanticMemory(UpsertSemanticMemoryRequest) returns (UpsertSemanticMemoryResponse);
+  rpc ListMySemanticMemory(ListMySemanticMemoryRequest) returns (ListMySemanticMemoryResponse);
+  rpc DeleteSemanticMemory(DeleteSemanticMemoryRequest) returns (DeleteSemanticMemoryResponse);
 }

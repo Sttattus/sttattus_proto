@@ -68,6 +68,31 @@ class OracleServiceClient extends $grpc.Client {
     return $createStreamingCall(_$streamQuery, $async.Stream.fromIterable([request]), options: options);
   }
 
+  /// O13.3 — memory store.
+  $grpc.ResponseFuture<$0.RecordEpisodicMemoryResponse> recordEpisodicMemory($0.RecordEpisodicMemoryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$recordEpisodicMemory, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyEpisodicMemoryResponse> listMyEpisodicMemory($0.ListMyEpisodicMemoryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyEpisodicMemory, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteEpisodicMemoryResponse> deleteEpisodicMemory($0.DeleteEpisodicMemoryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteEpisodicMemory, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertSemanticMemoryResponse> upsertSemanticMemory($0.UpsertSemanticMemoryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$upsertSemanticMemory, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMySemanticMemoryResponse> listMySemanticMemory($0.ListMySemanticMemoryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMySemanticMemory, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteSemanticMemoryResponse> deleteSemanticMemory($0.DeleteSemanticMemoryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteSemanticMemory, request, options: options);
+  }
+
     // method descriptors
 
   static final _$query = $grpc.ClientMethod<$0.QueryRequest, $0.QueryResponse>(
@@ -102,6 +127,30 @@ class OracleServiceClient extends $grpc.Client {
       '/sttattus.oracle.v1.OracleService/StreamQuery',
       ($0.StreamQueryRequest value) => value.writeToBuffer(),
       $0.StreamQueryChunk.fromBuffer);
+  static final _$recordEpisodicMemory = $grpc.ClientMethod<$0.RecordEpisodicMemoryRequest, $0.RecordEpisodicMemoryResponse>(
+      '/sttattus.oracle.v1.OracleService/RecordEpisodicMemory',
+      ($0.RecordEpisodicMemoryRequest value) => value.writeToBuffer(),
+      $0.RecordEpisodicMemoryResponse.fromBuffer);
+  static final _$listMyEpisodicMemory = $grpc.ClientMethod<$0.ListMyEpisodicMemoryRequest, $0.ListMyEpisodicMemoryResponse>(
+      '/sttattus.oracle.v1.OracleService/ListMyEpisodicMemory',
+      ($0.ListMyEpisodicMemoryRequest value) => value.writeToBuffer(),
+      $0.ListMyEpisodicMemoryResponse.fromBuffer);
+  static final _$deleteEpisodicMemory = $grpc.ClientMethod<$0.DeleteEpisodicMemoryRequest, $0.DeleteEpisodicMemoryResponse>(
+      '/sttattus.oracle.v1.OracleService/DeleteEpisodicMemory',
+      ($0.DeleteEpisodicMemoryRequest value) => value.writeToBuffer(),
+      $0.DeleteEpisodicMemoryResponse.fromBuffer);
+  static final _$upsertSemanticMemory = $grpc.ClientMethod<$0.UpsertSemanticMemoryRequest, $0.UpsertSemanticMemoryResponse>(
+      '/sttattus.oracle.v1.OracleService/UpsertSemanticMemory',
+      ($0.UpsertSemanticMemoryRequest value) => value.writeToBuffer(),
+      $0.UpsertSemanticMemoryResponse.fromBuffer);
+  static final _$listMySemanticMemory = $grpc.ClientMethod<$0.ListMySemanticMemoryRequest, $0.ListMySemanticMemoryResponse>(
+      '/sttattus.oracle.v1.OracleService/ListMySemanticMemory',
+      ($0.ListMySemanticMemoryRequest value) => value.writeToBuffer(),
+      $0.ListMySemanticMemoryResponse.fromBuffer);
+  static final _$deleteSemanticMemory = $grpc.ClientMethod<$0.DeleteSemanticMemoryRequest, $0.DeleteSemanticMemoryResponse>(
+      '/sttattus.oracle.v1.OracleService/DeleteSemanticMemory',
+      ($0.DeleteSemanticMemoryRequest value) => value.writeToBuffer(),
+      $0.DeleteSemanticMemoryResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.oracle.v1.OracleService')
@@ -165,6 +214,48 @@ abstract class OracleServiceBase extends $grpc.Service {
         true,
         ($core.List<$core.int> value) => $0.StreamQueryRequest.fromBuffer(value),
         ($0.StreamQueryChunk value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordEpisodicMemoryRequest, $0.RecordEpisodicMemoryResponse>(
+        'RecordEpisodicMemory',
+        recordEpisodicMemory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RecordEpisodicMemoryRequest.fromBuffer(value),
+        ($0.RecordEpisodicMemoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyEpisodicMemoryRequest, $0.ListMyEpisodicMemoryResponse>(
+        'ListMyEpisodicMemory',
+        listMyEpisodicMemory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyEpisodicMemoryRequest.fromBuffer(value),
+        ($0.ListMyEpisodicMemoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteEpisodicMemoryRequest, $0.DeleteEpisodicMemoryResponse>(
+        'DeleteEpisodicMemory',
+        deleteEpisodicMemory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteEpisodicMemoryRequest.fromBuffer(value),
+        ($0.DeleteEpisodicMemoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertSemanticMemoryRequest, $0.UpsertSemanticMemoryResponse>(
+        'UpsertSemanticMemory',
+        upsertSemanticMemory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpsertSemanticMemoryRequest.fromBuffer(value),
+        ($0.UpsertSemanticMemoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMySemanticMemoryRequest, $0.ListMySemanticMemoryResponse>(
+        'ListMySemanticMemory',
+        listMySemanticMemory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMySemanticMemoryRequest.fromBuffer(value),
+        ($0.ListMySemanticMemoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteSemanticMemoryRequest, $0.DeleteSemanticMemoryResponse>(
+        'DeleteSemanticMemory',
+        deleteSemanticMemory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteSemanticMemoryRequest.fromBuffer(value),
+        ($0.DeleteSemanticMemoryResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.QueryResponse> query_Pre($grpc.ServiceCall $call, $async.Future<$0.QueryRequest> $request) async {
@@ -214,5 +305,41 @@ abstract class OracleServiceBase extends $grpc.Service {
   }
 
   $async.Stream<$0.StreamQueryChunk> streamQuery($grpc.ServiceCall call, $0.StreamQueryRequest request);
+
+  $async.Future<$0.RecordEpisodicMemoryResponse> recordEpisodicMemory_Pre($grpc.ServiceCall $call, $async.Future<$0.RecordEpisodicMemoryRequest> $request) async {
+    return recordEpisodicMemory($call, await $request);
+  }
+
+  $async.Future<$0.RecordEpisodicMemoryResponse> recordEpisodicMemory($grpc.ServiceCall call, $0.RecordEpisodicMemoryRequest request);
+
+  $async.Future<$0.ListMyEpisodicMemoryResponse> listMyEpisodicMemory_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyEpisodicMemoryRequest> $request) async {
+    return listMyEpisodicMemory($call, await $request);
+  }
+
+  $async.Future<$0.ListMyEpisodicMemoryResponse> listMyEpisodicMemory($grpc.ServiceCall call, $0.ListMyEpisodicMemoryRequest request);
+
+  $async.Future<$0.DeleteEpisodicMemoryResponse> deleteEpisodicMemory_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteEpisodicMemoryRequest> $request) async {
+    return deleteEpisodicMemory($call, await $request);
+  }
+
+  $async.Future<$0.DeleteEpisodicMemoryResponse> deleteEpisodicMemory($grpc.ServiceCall call, $0.DeleteEpisodicMemoryRequest request);
+
+  $async.Future<$0.UpsertSemanticMemoryResponse> upsertSemanticMemory_Pre($grpc.ServiceCall $call, $async.Future<$0.UpsertSemanticMemoryRequest> $request) async {
+    return upsertSemanticMemory($call, await $request);
+  }
+
+  $async.Future<$0.UpsertSemanticMemoryResponse> upsertSemanticMemory($grpc.ServiceCall call, $0.UpsertSemanticMemoryRequest request);
+
+  $async.Future<$0.ListMySemanticMemoryResponse> listMySemanticMemory_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMySemanticMemoryRequest> $request) async {
+    return listMySemanticMemory($call, await $request);
+  }
+
+  $async.Future<$0.ListMySemanticMemoryResponse> listMySemanticMemory($grpc.ServiceCall call, $0.ListMySemanticMemoryRequest request);
+
+  $async.Future<$0.DeleteSemanticMemoryResponse> deleteSemanticMemory_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteSemanticMemoryRequest> $request) async {
+    return deleteSemanticMemory($call, await $request);
+  }
+
+  $async.Future<$0.DeleteSemanticMemoryResponse> deleteSemanticMemory($grpc.ServiceCall call, $0.DeleteSemanticMemoryRequest request);
 
 }

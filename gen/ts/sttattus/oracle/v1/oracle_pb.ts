@@ -418,6 +418,578 @@ export class GetOracleStatsResponse extends Message<GetOracleStatsResponse> {
 }
 
 /**
+ * @generated from message sttattus.oracle.v1.EpisodicMemory
+ */
+export class EpisodicMemory extends Message<EpisodicMemory> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * 'oracle' | 'user' | 'system'
+   *
+   * @generated from field: string source = 2;
+   */
+  source = "";
+
+  /**
+   * @generated from field: string body = 3;
+   */
+  body = "";
+
+  /**
+   * @generated from field: int64 occurred_unix = 4;
+   */
+  occurredUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<EpisodicMemory>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.EpisodicMemory";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "occurred_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EpisodicMemory {
+    return new EpisodicMemory().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EpisodicMemory {
+    return new EpisodicMemory().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EpisodicMemory {
+    return new EpisodicMemory().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EpisodicMemory | PlainMessage<EpisodicMemory> | undefined, b: EpisodicMemory | PlainMessage<EpisodicMemory> | undefined): boolean {
+    return proto3.util.equals(EpisodicMemory, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.SemanticMemory
+ */
+export class SemanticMemory extends Message<SemanticMemory> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string key = 2;
+   */
+  key = "";
+
+  /**
+   * @generated from field: string value = 3;
+   */
+  value = "";
+
+  /**
+   * @generated from field: string source = 4;
+   */
+  source = "";
+
+  /**
+   * @generated from field: int64 updated_unix = 5;
+   */
+  updatedUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<SemanticMemory>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.SemanticMemory";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "updated_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SemanticMemory {
+    return new SemanticMemory().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SemanticMemory {
+    return new SemanticMemory().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SemanticMemory {
+    return new SemanticMemory().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SemanticMemory | PlainMessage<SemanticMemory> | undefined, b: SemanticMemory | PlainMessage<SemanticMemory> | undefined): boolean {
+    return proto3.util.equals(SemanticMemory, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RecordEpisodicMemoryRequest
+ */
+export class RecordEpisodicMemoryRequest extends Message<RecordEpisodicMemoryRequest> {
+  /**
+   * @generated from field: string source = 1;
+   */
+  source = "";
+
+  /**
+   * @generated from field: string body = 2;
+   */
+  body = "";
+
+  /**
+   * optional; 0 == now
+   *
+   * @generated from field: int64 occurred_unix = 3;
+   */
+  occurredUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<RecordEpisodicMemoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RecordEpisodicMemoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "occurred_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordEpisodicMemoryRequest {
+    return new RecordEpisodicMemoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordEpisodicMemoryRequest {
+    return new RecordEpisodicMemoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordEpisodicMemoryRequest {
+    return new RecordEpisodicMemoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordEpisodicMemoryRequest | PlainMessage<RecordEpisodicMemoryRequest> | undefined, b: RecordEpisodicMemoryRequest | PlainMessage<RecordEpisodicMemoryRequest> | undefined): boolean {
+    return proto3.util.equals(RecordEpisodicMemoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RecordEpisodicMemoryResponse
+ */
+export class RecordEpisodicMemoryResponse extends Message<RecordEpisodicMemoryResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.EpisodicMemory memory = 1;
+   */
+  memory?: EpisodicMemory;
+
+  constructor(data?: PartialMessage<RecordEpisodicMemoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RecordEpisodicMemoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "memory", kind: "message", T: EpisodicMemory },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordEpisodicMemoryResponse {
+    return new RecordEpisodicMemoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordEpisodicMemoryResponse {
+    return new RecordEpisodicMemoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordEpisodicMemoryResponse {
+    return new RecordEpisodicMemoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordEpisodicMemoryResponse | PlainMessage<RecordEpisodicMemoryResponse> | undefined, b: RecordEpisodicMemoryResponse | PlainMessage<RecordEpisodicMemoryResponse> | undefined): boolean {
+    return proto3.util.equals(RecordEpisodicMemoryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ListMyEpisodicMemoryRequest
+ */
+export class ListMyEpisodicMemoryRequest extends Message<ListMyEpisodicMemoryRequest> {
+  /**
+   * 0 == default 100
+   *
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListMyEpisodicMemoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ListMyEpisodicMemoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyEpisodicMemoryRequest {
+    return new ListMyEpisodicMemoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyEpisodicMemoryRequest {
+    return new ListMyEpisodicMemoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyEpisodicMemoryRequest {
+    return new ListMyEpisodicMemoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyEpisodicMemoryRequest | PlainMessage<ListMyEpisodicMemoryRequest> | undefined, b: ListMyEpisodicMemoryRequest | PlainMessage<ListMyEpisodicMemoryRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyEpisodicMemoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ListMyEpisodicMemoryResponse
+ */
+export class ListMyEpisodicMemoryResponse extends Message<ListMyEpisodicMemoryResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.EpisodicMemory memories = 1;
+   */
+  memories: EpisodicMemory[] = [];
+
+  constructor(data?: PartialMessage<ListMyEpisodicMemoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ListMyEpisodicMemoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "memories", kind: "message", T: EpisodicMemory, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyEpisodicMemoryResponse {
+    return new ListMyEpisodicMemoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyEpisodicMemoryResponse {
+    return new ListMyEpisodicMemoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyEpisodicMemoryResponse {
+    return new ListMyEpisodicMemoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyEpisodicMemoryResponse | PlainMessage<ListMyEpisodicMemoryResponse> | undefined, b: ListMyEpisodicMemoryResponse | PlainMessage<ListMyEpisodicMemoryResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyEpisodicMemoryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.DeleteEpisodicMemoryRequest
+ */
+export class DeleteEpisodicMemoryRequest extends Message<DeleteEpisodicMemoryRequest> {
+  /**
+   * @generated from field: string memory_id = 1;
+   */
+  memoryId = "";
+
+  constructor(data?: PartialMessage<DeleteEpisodicMemoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.DeleteEpisodicMemoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "memory_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEpisodicMemoryRequest {
+    return new DeleteEpisodicMemoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEpisodicMemoryRequest {
+    return new DeleteEpisodicMemoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEpisodicMemoryRequest {
+    return new DeleteEpisodicMemoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteEpisodicMemoryRequest | PlainMessage<DeleteEpisodicMemoryRequest> | undefined, b: DeleteEpisodicMemoryRequest | PlainMessage<DeleteEpisodicMemoryRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteEpisodicMemoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.DeleteEpisodicMemoryResponse
+ */
+export class DeleteEpisodicMemoryResponse extends Message<DeleteEpisodicMemoryResponse> {
+  constructor(data?: PartialMessage<DeleteEpisodicMemoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.DeleteEpisodicMemoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEpisodicMemoryResponse {
+    return new DeleteEpisodicMemoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEpisodicMemoryResponse {
+    return new DeleteEpisodicMemoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEpisodicMemoryResponse {
+    return new DeleteEpisodicMemoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteEpisodicMemoryResponse | PlainMessage<DeleteEpisodicMemoryResponse> | undefined, b: DeleteEpisodicMemoryResponse | PlainMessage<DeleteEpisodicMemoryResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteEpisodicMemoryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.UpsertSemanticMemoryRequest
+ */
+export class UpsertSemanticMemoryRequest extends Message<UpsertSemanticMemoryRequest> {
+  /**
+   * @generated from field: string key = 1;
+   */
+  key = "";
+
+  /**
+   * @generated from field: string value = 2;
+   */
+  value = "";
+
+  /**
+   * @generated from field: string source = 3;
+   */
+  source = "";
+
+  constructor(data?: PartialMessage<UpsertSemanticMemoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.UpsertSemanticMemoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertSemanticMemoryRequest {
+    return new UpsertSemanticMemoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertSemanticMemoryRequest {
+    return new UpsertSemanticMemoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertSemanticMemoryRequest {
+    return new UpsertSemanticMemoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertSemanticMemoryRequest | PlainMessage<UpsertSemanticMemoryRequest> | undefined, b: UpsertSemanticMemoryRequest | PlainMessage<UpsertSemanticMemoryRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertSemanticMemoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.UpsertSemanticMemoryResponse
+ */
+export class UpsertSemanticMemoryResponse extends Message<UpsertSemanticMemoryResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.SemanticMemory memory = 1;
+   */
+  memory?: SemanticMemory;
+
+  constructor(data?: PartialMessage<UpsertSemanticMemoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.UpsertSemanticMemoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "memory", kind: "message", T: SemanticMemory },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertSemanticMemoryResponse {
+    return new UpsertSemanticMemoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertSemanticMemoryResponse {
+    return new UpsertSemanticMemoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertSemanticMemoryResponse {
+    return new UpsertSemanticMemoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertSemanticMemoryResponse | PlainMessage<UpsertSemanticMemoryResponse> | undefined, b: UpsertSemanticMemoryResponse | PlainMessage<UpsertSemanticMemoryResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertSemanticMemoryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ListMySemanticMemoryRequest
+ */
+export class ListMySemanticMemoryRequest extends Message<ListMySemanticMemoryRequest> {
+  constructor(data?: PartialMessage<ListMySemanticMemoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ListMySemanticMemoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMySemanticMemoryRequest {
+    return new ListMySemanticMemoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMySemanticMemoryRequest {
+    return new ListMySemanticMemoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMySemanticMemoryRequest {
+    return new ListMySemanticMemoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMySemanticMemoryRequest | PlainMessage<ListMySemanticMemoryRequest> | undefined, b: ListMySemanticMemoryRequest | PlainMessage<ListMySemanticMemoryRequest> | undefined): boolean {
+    return proto3.util.equals(ListMySemanticMemoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ListMySemanticMemoryResponse
+ */
+export class ListMySemanticMemoryResponse extends Message<ListMySemanticMemoryResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.SemanticMemory memories = 1;
+   */
+  memories: SemanticMemory[] = [];
+
+  constructor(data?: PartialMessage<ListMySemanticMemoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ListMySemanticMemoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "memories", kind: "message", T: SemanticMemory, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMySemanticMemoryResponse {
+    return new ListMySemanticMemoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMySemanticMemoryResponse {
+    return new ListMySemanticMemoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMySemanticMemoryResponse {
+    return new ListMySemanticMemoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMySemanticMemoryResponse | PlainMessage<ListMySemanticMemoryResponse> | undefined, b: ListMySemanticMemoryResponse | PlainMessage<ListMySemanticMemoryResponse> | undefined): boolean {
+    return proto3.util.equals(ListMySemanticMemoryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.DeleteSemanticMemoryRequest
+ */
+export class DeleteSemanticMemoryRequest extends Message<DeleteSemanticMemoryRequest> {
+  /**
+   * @generated from field: string memory_id = 1;
+   */
+  memoryId = "";
+
+  constructor(data?: PartialMessage<DeleteSemanticMemoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.DeleteSemanticMemoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "memory_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteSemanticMemoryRequest {
+    return new DeleteSemanticMemoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteSemanticMemoryRequest {
+    return new DeleteSemanticMemoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteSemanticMemoryRequest {
+    return new DeleteSemanticMemoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteSemanticMemoryRequest | PlainMessage<DeleteSemanticMemoryRequest> | undefined, b: DeleteSemanticMemoryRequest | PlainMessage<DeleteSemanticMemoryRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteSemanticMemoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.DeleteSemanticMemoryResponse
+ */
+export class DeleteSemanticMemoryResponse extends Message<DeleteSemanticMemoryResponse> {
+  constructor(data?: PartialMessage<DeleteSemanticMemoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.DeleteSemanticMemoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteSemanticMemoryResponse {
+    return new DeleteSemanticMemoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteSemanticMemoryResponse {
+    return new DeleteSemanticMemoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteSemanticMemoryResponse {
+    return new DeleteSemanticMemoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteSemanticMemoryResponse | PlainMessage<DeleteSemanticMemoryResponse> | undefined, b: DeleteSemanticMemoryResponse | PlainMessage<DeleteSemanticMemoryResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteSemanticMemoryResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.oracle.v1.OracleThread
  */
 export class OracleThread extends Message<OracleThread> {

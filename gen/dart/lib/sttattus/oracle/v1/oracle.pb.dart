@@ -531,6 +531,726 @@ class GetOracleStatsResponse extends $pb.GeneratedMessage {
   OracleStats ensureStats() => $_ensure(0);
 }
 
+class EpisodicMemory extends $pb.GeneratedMessage {
+  factory EpisodicMemory({
+    $core.String? id,
+    $core.String? source,
+    $core.String? body,
+    $fixnum.Int64? occurredUnix,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (source != null) result.source = source;
+    if (body != null) result.body = body;
+    if (occurredUnix != null) result.occurredUnix = occurredUnix;
+    return result;
+  }
+
+  EpisodicMemory._();
+
+  factory EpisodicMemory.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EpisodicMemory.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EpisodicMemory', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'source')
+    ..aOS(3, _omitFieldNames ? '' : 'body')
+    ..aInt64(4, _omitFieldNames ? '' : 'occurredUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EpisodicMemory clone() => EpisodicMemory()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EpisodicMemory copyWith(void Function(EpisodicMemory) updates) => super.copyWith((message) => updates(message as EpisodicMemory)) as EpisodicMemory;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EpisodicMemory create() => EpisodicMemory._();
+  @$core.override
+  EpisodicMemory createEmptyInstance() => create();
+  static $pb.PbList<EpisodicMemory> createRepeated() => $pb.PbList<EpisodicMemory>();
+  @$core.pragma('dart2js:noInline')
+  static EpisodicMemory getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EpisodicMemory>(create);
+  static EpisodicMemory? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get source => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set source($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSource() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSource() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get body => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set body($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBody() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBody() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get occurredUnix => $_getI64(3);
+  @$pb.TagNumber(4)
+  set occurredUnix($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOccurredUnix() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOccurredUnix() => $_clearField(4);
+}
+
+class SemanticMemory extends $pb.GeneratedMessage {
+  factory SemanticMemory({
+    $core.String? id,
+    $core.String? key,
+    $core.String? value,
+    $core.String? source,
+    $fixnum.Int64? updatedUnix,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (key != null) result.key = key;
+    if (value != null) result.value = value;
+    if (source != null) result.source = source;
+    if (updatedUnix != null) result.updatedUnix = updatedUnix;
+    return result;
+  }
+
+  SemanticMemory._();
+
+  factory SemanticMemory.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SemanticMemory.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SemanticMemory', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'key')
+    ..aOS(3, _omitFieldNames ? '' : 'value')
+    ..aOS(4, _omitFieldNames ? '' : 'source')
+    ..aInt64(5, _omitFieldNames ? '' : 'updatedUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SemanticMemory clone() => SemanticMemory()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SemanticMemory copyWith(void Function(SemanticMemory) updates) => super.copyWith((message) => updates(message as SemanticMemory)) as SemanticMemory;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SemanticMemory create() => SemanticMemory._();
+  @$core.override
+  SemanticMemory createEmptyInstance() => create();
+  static $pb.PbList<SemanticMemory> createRepeated() => $pb.PbList<SemanticMemory>();
+  @$core.pragma('dart2js:noInline')
+  static SemanticMemory getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SemanticMemory>(create);
+  static SemanticMemory? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get key => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set key($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKey() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get value => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set value($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasValue() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearValue() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get source => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set source($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSource() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSource() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get updatedUnix => $_getI64(4);
+  @$pb.TagNumber(5)
+  set updatedUnix($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasUpdatedUnix() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearUpdatedUnix() => $_clearField(5);
+}
+
+class RecordEpisodicMemoryRequest extends $pb.GeneratedMessage {
+  factory RecordEpisodicMemoryRequest({
+    $core.String? source,
+    $core.String? body,
+    $fixnum.Int64? occurredUnix,
+  }) {
+    final result = create();
+    if (source != null) result.source = source;
+    if (body != null) result.body = body;
+    if (occurredUnix != null) result.occurredUnix = occurredUnix;
+    return result;
+  }
+
+  RecordEpisodicMemoryRequest._();
+
+  factory RecordEpisodicMemoryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RecordEpisodicMemoryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordEpisodicMemoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
+    ..aOS(2, _omitFieldNames ? '' : 'body')
+    ..aInt64(3, _omitFieldNames ? '' : 'occurredUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordEpisodicMemoryRequest clone() => RecordEpisodicMemoryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordEpisodicMemoryRequest copyWith(void Function(RecordEpisodicMemoryRequest) updates) => super.copyWith((message) => updates(message as RecordEpisodicMemoryRequest)) as RecordEpisodicMemoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordEpisodicMemoryRequest create() => RecordEpisodicMemoryRequest._();
+  @$core.override
+  RecordEpisodicMemoryRequest createEmptyInstance() => create();
+  static $pb.PbList<RecordEpisodicMemoryRequest> createRepeated() => $pb.PbList<RecordEpisodicMemoryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RecordEpisodicMemoryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordEpisodicMemoryRequest>(create);
+  static RecordEpisodicMemoryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get source => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set source($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get body => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set body($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBody() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBody() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get occurredUnix => $_getI64(2);
+  @$pb.TagNumber(3)
+  set occurredUnix($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOccurredUnix() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOccurredUnix() => $_clearField(3);
+}
+
+class RecordEpisodicMemoryResponse extends $pb.GeneratedMessage {
+  factory RecordEpisodicMemoryResponse({
+    EpisodicMemory? memory,
+  }) {
+    final result = create();
+    if (memory != null) result.memory = memory;
+    return result;
+  }
+
+  RecordEpisodicMemoryResponse._();
+
+  factory RecordEpisodicMemoryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RecordEpisodicMemoryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordEpisodicMemoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOM<EpisodicMemory>(1, _omitFieldNames ? '' : 'memory', subBuilder: EpisodicMemory.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordEpisodicMemoryResponse clone() => RecordEpisodicMemoryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordEpisodicMemoryResponse copyWith(void Function(RecordEpisodicMemoryResponse) updates) => super.copyWith((message) => updates(message as RecordEpisodicMemoryResponse)) as RecordEpisodicMemoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordEpisodicMemoryResponse create() => RecordEpisodicMemoryResponse._();
+  @$core.override
+  RecordEpisodicMemoryResponse createEmptyInstance() => create();
+  static $pb.PbList<RecordEpisodicMemoryResponse> createRepeated() => $pb.PbList<RecordEpisodicMemoryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RecordEpisodicMemoryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordEpisodicMemoryResponse>(create);
+  static RecordEpisodicMemoryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EpisodicMemory get memory => $_getN(0);
+  @$pb.TagNumber(1)
+  set memory(EpisodicMemory value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMemory() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMemory() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EpisodicMemory ensureMemory() => $_ensure(0);
+}
+
+class ListMyEpisodicMemoryRequest extends $pb.GeneratedMessage {
+  factory ListMyEpisodicMemoryRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListMyEpisodicMemoryRequest._();
+
+  factory ListMyEpisodicMemoryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyEpisodicMemoryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyEpisodicMemoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEpisodicMemoryRequest clone() => ListMyEpisodicMemoryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEpisodicMemoryRequest copyWith(void Function(ListMyEpisodicMemoryRequest) updates) => super.copyWith((message) => updates(message as ListMyEpisodicMemoryRequest)) as ListMyEpisodicMemoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyEpisodicMemoryRequest create() => ListMyEpisodicMemoryRequest._();
+  @$core.override
+  ListMyEpisodicMemoryRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyEpisodicMemoryRequest> createRepeated() => $pb.PbList<ListMyEpisodicMemoryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyEpisodicMemoryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyEpisodicMemoryRequest>(create);
+  static ListMyEpisodicMemoryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class ListMyEpisodicMemoryResponse extends $pb.GeneratedMessage {
+  factory ListMyEpisodicMemoryResponse({
+    $core.Iterable<EpisodicMemory>? memories,
+  }) {
+    final result = create();
+    if (memories != null) result.memories.addAll(memories);
+    return result;
+  }
+
+  ListMyEpisodicMemoryResponse._();
+
+  factory ListMyEpisodicMemoryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyEpisodicMemoryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyEpisodicMemoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..pc<EpisodicMemory>(1, _omitFieldNames ? '' : 'memories', $pb.PbFieldType.PM, subBuilder: EpisodicMemory.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEpisodicMemoryResponse clone() => ListMyEpisodicMemoryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEpisodicMemoryResponse copyWith(void Function(ListMyEpisodicMemoryResponse) updates) => super.copyWith((message) => updates(message as ListMyEpisodicMemoryResponse)) as ListMyEpisodicMemoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyEpisodicMemoryResponse create() => ListMyEpisodicMemoryResponse._();
+  @$core.override
+  ListMyEpisodicMemoryResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyEpisodicMemoryResponse> createRepeated() => $pb.PbList<ListMyEpisodicMemoryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyEpisodicMemoryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyEpisodicMemoryResponse>(create);
+  static ListMyEpisodicMemoryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EpisodicMemory> get memories => $_getList(0);
+}
+
+class DeleteEpisodicMemoryRequest extends $pb.GeneratedMessage {
+  factory DeleteEpisodicMemoryRequest({
+    $core.String? memoryId,
+  }) {
+    final result = create();
+    if (memoryId != null) result.memoryId = memoryId;
+    return result;
+  }
+
+  DeleteEpisodicMemoryRequest._();
+
+  factory DeleteEpisodicMemoryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteEpisodicMemoryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteEpisodicMemoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'memoryId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteEpisodicMemoryRequest clone() => DeleteEpisodicMemoryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteEpisodicMemoryRequest copyWith(void Function(DeleteEpisodicMemoryRequest) updates) => super.copyWith((message) => updates(message as DeleteEpisodicMemoryRequest)) as DeleteEpisodicMemoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteEpisodicMemoryRequest create() => DeleteEpisodicMemoryRequest._();
+  @$core.override
+  DeleteEpisodicMemoryRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteEpisodicMemoryRequest> createRepeated() => $pb.PbList<DeleteEpisodicMemoryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteEpisodicMemoryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteEpisodicMemoryRequest>(create);
+  static DeleteEpisodicMemoryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get memoryId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set memoryId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMemoryId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMemoryId() => $_clearField(1);
+}
+
+class DeleteEpisodicMemoryResponse extends $pb.GeneratedMessage {
+  factory DeleteEpisodicMemoryResponse() => create();
+
+  DeleteEpisodicMemoryResponse._();
+
+  factory DeleteEpisodicMemoryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteEpisodicMemoryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteEpisodicMemoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteEpisodicMemoryResponse clone() => DeleteEpisodicMemoryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteEpisodicMemoryResponse copyWith(void Function(DeleteEpisodicMemoryResponse) updates) => super.copyWith((message) => updates(message as DeleteEpisodicMemoryResponse)) as DeleteEpisodicMemoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteEpisodicMemoryResponse create() => DeleteEpisodicMemoryResponse._();
+  @$core.override
+  DeleteEpisodicMemoryResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteEpisodicMemoryResponse> createRepeated() => $pb.PbList<DeleteEpisodicMemoryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteEpisodicMemoryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteEpisodicMemoryResponse>(create);
+  static DeleteEpisodicMemoryResponse? _defaultInstance;
+}
+
+class UpsertSemanticMemoryRequest extends $pb.GeneratedMessage {
+  factory UpsertSemanticMemoryRequest({
+    $core.String? key,
+    $core.String? value,
+    $core.String? source,
+  }) {
+    final result = create();
+    if (key != null) result.key = key;
+    if (value != null) result.value = value;
+    if (source != null) result.source = source;
+    return result;
+  }
+
+  UpsertSemanticMemoryRequest._();
+
+  factory UpsertSemanticMemoryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpsertSemanticMemoryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpsertSemanticMemoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'key')
+    ..aOS(2, _omitFieldNames ? '' : 'value')
+    ..aOS(3, _omitFieldNames ? '' : 'source')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSemanticMemoryRequest clone() => UpsertSemanticMemoryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSemanticMemoryRequest copyWith(void Function(UpsertSemanticMemoryRequest) updates) => super.copyWith((message) => updates(message as UpsertSemanticMemoryRequest)) as UpsertSemanticMemoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertSemanticMemoryRequest create() => UpsertSemanticMemoryRequest._();
+  @$core.override
+  UpsertSemanticMemoryRequest createEmptyInstance() => create();
+  static $pb.PbList<UpsertSemanticMemoryRequest> createRepeated() => $pb.PbList<UpsertSemanticMemoryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpsertSemanticMemoryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpsertSemanticMemoryRequest>(create);
+  static UpsertSemanticMemoryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get key => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set key($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKey() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get value => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set value($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasValue() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValue() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get source => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set source($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSource() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSource() => $_clearField(3);
+}
+
+class UpsertSemanticMemoryResponse extends $pb.GeneratedMessage {
+  factory UpsertSemanticMemoryResponse({
+    SemanticMemory? memory,
+  }) {
+    final result = create();
+    if (memory != null) result.memory = memory;
+    return result;
+  }
+
+  UpsertSemanticMemoryResponse._();
+
+  factory UpsertSemanticMemoryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpsertSemanticMemoryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpsertSemanticMemoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOM<SemanticMemory>(1, _omitFieldNames ? '' : 'memory', subBuilder: SemanticMemory.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSemanticMemoryResponse clone() => UpsertSemanticMemoryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSemanticMemoryResponse copyWith(void Function(UpsertSemanticMemoryResponse) updates) => super.copyWith((message) => updates(message as UpsertSemanticMemoryResponse)) as UpsertSemanticMemoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertSemanticMemoryResponse create() => UpsertSemanticMemoryResponse._();
+  @$core.override
+  UpsertSemanticMemoryResponse createEmptyInstance() => create();
+  static $pb.PbList<UpsertSemanticMemoryResponse> createRepeated() => $pb.PbList<UpsertSemanticMemoryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpsertSemanticMemoryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpsertSemanticMemoryResponse>(create);
+  static UpsertSemanticMemoryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SemanticMemory get memory => $_getN(0);
+  @$pb.TagNumber(1)
+  set memory(SemanticMemory value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMemory() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMemory() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SemanticMemory ensureMemory() => $_ensure(0);
+}
+
+class ListMySemanticMemoryRequest extends $pb.GeneratedMessage {
+  factory ListMySemanticMemoryRequest() => create();
+
+  ListMySemanticMemoryRequest._();
+
+  factory ListMySemanticMemoryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMySemanticMemoryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMySemanticMemoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMySemanticMemoryRequest clone() => ListMySemanticMemoryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMySemanticMemoryRequest copyWith(void Function(ListMySemanticMemoryRequest) updates) => super.copyWith((message) => updates(message as ListMySemanticMemoryRequest)) as ListMySemanticMemoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMySemanticMemoryRequest create() => ListMySemanticMemoryRequest._();
+  @$core.override
+  ListMySemanticMemoryRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMySemanticMemoryRequest> createRepeated() => $pb.PbList<ListMySemanticMemoryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMySemanticMemoryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMySemanticMemoryRequest>(create);
+  static ListMySemanticMemoryRequest? _defaultInstance;
+}
+
+class ListMySemanticMemoryResponse extends $pb.GeneratedMessage {
+  factory ListMySemanticMemoryResponse({
+    $core.Iterable<SemanticMemory>? memories,
+  }) {
+    final result = create();
+    if (memories != null) result.memories.addAll(memories);
+    return result;
+  }
+
+  ListMySemanticMemoryResponse._();
+
+  factory ListMySemanticMemoryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMySemanticMemoryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMySemanticMemoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..pc<SemanticMemory>(1, _omitFieldNames ? '' : 'memories', $pb.PbFieldType.PM, subBuilder: SemanticMemory.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMySemanticMemoryResponse clone() => ListMySemanticMemoryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMySemanticMemoryResponse copyWith(void Function(ListMySemanticMemoryResponse) updates) => super.copyWith((message) => updates(message as ListMySemanticMemoryResponse)) as ListMySemanticMemoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMySemanticMemoryResponse create() => ListMySemanticMemoryResponse._();
+  @$core.override
+  ListMySemanticMemoryResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMySemanticMemoryResponse> createRepeated() => $pb.PbList<ListMySemanticMemoryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMySemanticMemoryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMySemanticMemoryResponse>(create);
+  static ListMySemanticMemoryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<SemanticMemory> get memories => $_getList(0);
+}
+
+class DeleteSemanticMemoryRequest extends $pb.GeneratedMessage {
+  factory DeleteSemanticMemoryRequest({
+    $core.String? memoryId,
+  }) {
+    final result = create();
+    if (memoryId != null) result.memoryId = memoryId;
+    return result;
+  }
+
+  DeleteSemanticMemoryRequest._();
+
+  factory DeleteSemanticMemoryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteSemanticMemoryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSemanticMemoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'memoryId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteSemanticMemoryRequest clone() => DeleteSemanticMemoryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteSemanticMemoryRequest copyWith(void Function(DeleteSemanticMemoryRequest) updates) => super.copyWith((message) => updates(message as DeleteSemanticMemoryRequest)) as DeleteSemanticMemoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteSemanticMemoryRequest create() => DeleteSemanticMemoryRequest._();
+  @$core.override
+  DeleteSemanticMemoryRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteSemanticMemoryRequest> createRepeated() => $pb.PbList<DeleteSemanticMemoryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteSemanticMemoryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteSemanticMemoryRequest>(create);
+  static DeleteSemanticMemoryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get memoryId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set memoryId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMemoryId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMemoryId() => $_clearField(1);
+}
+
+class DeleteSemanticMemoryResponse extends $pb.GeneratedMessage {
+  factory DeleteSemanticMemoryResponse() => create();
+
+  DeleteSemanticMemoryResponse._();
+
+  factory DeleteSemanticMemoryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteSemanticMemoryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSemanticMemoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteSemanticMemoryResponse clone() => DeleteSemanticMemoryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteSemanticMemoryResponse copyWith(void Function(DeleteSemanticMemoryResponse) updates) => super.copyWith((message) => updates(message as DeleteSemanticMemoryResponse)) as DeleteSemanticMemoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteSemanticMemoryResponse create() => DeleteSemanticMemoryResponse._();
+  @$core.override
+  DeleteSemanticMemoryResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteSemanticMemoryResponse> createRepeated() => $pb.PbList<DeleteSemanticMemoryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteSemanticMemoryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteSemanticMemoryResponse>(create);
+  static DeleteSemanticMemoryResponse? _defaultInstance;
+}
+
 class OracleThread extends $pb.GeneratedMessage {
   factory OracleThread({
     $core.String? id,

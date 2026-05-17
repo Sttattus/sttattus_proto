@@ -159,6 +159,188 @@ final $typed_data.Uint8List getOracleStatsResponseDescriptor = $convert.base64De
     'ChZHZXRPcmFjbGVTdGF0c1Jlc3BvbnNlEjUKBXN0YXRzGAEgASgLMh8uc3R0YXR0dXMub3JhY2'
     'xlLnYxLk9yYWNsZVN0YXRzUgVzdGF0cw==');
 
+@$core.Deprecated('Use episodicMemoryDescriptor instead')
+const EpisodicMemory$json = {
+  '1': 'EpisodicMemory',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'source', '3': 2, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'body', '3': 3, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'occurred_unix', '3': 4, '4': 1, '5': 3, '10': 'occurredUnix'},
+  ],
+};
+
+/// Descriptor for `EpisodicMemory`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List episodicMemoryDescriptor = $convert.base64Decode(
+    'Cg5FcGlzb2RpY01lbW9yeRIOCgJpZBgBIAEoCVICaWQSFgoGc291cmNlGAIgASgJUgZzb3VyY2'
+    'USEgoEYm9keRgDIAEoCVIEYm9keRIjCg1vY2N1cnJlZF91bml4GAQgASgDUgxvY2N1cnJlZFVu'
+    'aXg=');
+
+@$core.Deprecated('Use semanticMemoryDescriptor instead')
+const SemanticMemory$json = {
+  '1': 'SemanticMemory',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'key', '3': 2, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 3, '4': 1, '5': 9, '10': 'value'},
+    {'1': 'source', '3': 4, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'updated_unix', '3': 5, '4': 1, '5': 3, '10': 'updatedUnix'},
+  ],
+};
+
+/// Descriptor for `SemanticMemory`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List semanticMemoryDescriptor = $convert.base64Decode(
+    'Cg5TZW1hbnRpY01lbW9yeRIOCgJpZBgBIAEoCVICaWQSEAoDa2V5GAIgASgJUgNrZXkSFAoFdm'
+    'FsdWUYAyABKAlSBXZhbHVlEhYKBnNvdXJjZRgEIAEoCVIGc291cmNlEiEKDHVwZGF0ZWRfdW5p'
+    'eBgFIAEoA1ILdXBkYXRlZFVuaXg=');
+
+@$core.Deprecated('Use recordEpisodicMemoryRequestDescriptor instead')
+const RecordEpisodicMemoryRequest$json = {
+  '1': 'RecordEpisodicMemoryRequest',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'body', '3': 2, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'occurred_unix', '3': 3, '4': 1, '5': 3, '10': 'occurredUnix'},
+  ],
+};
+
+/// Descriptor for `RecordEpisodicMemoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordEpisodicMemoryRequestDescriptor = $convert.base64Decode(
+    'ChtSZWNvcmRFcGlzb2RpY01lbW9yeVJlcXVlc3QSFgoGc291cmNlGAEgASgJUgZzb3VyY2USEg'
+    'oEYm9keRgCIAEoCVIEYm9keRIjCg1vY2N1cnJlZF91bml4GAMgASgDUgxvY2N1cnJlZFVuaXg=');
+
+@$core.Deprecated('Use recordEpisodicMemoryResponseDescriptor instead')
+const RecordEpisodicMemoryResponse$json = {
+  '1': 'RecordEpisodicMemoryResponse',
+  '2': [
+    {'1': 'memory', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.EpisodicMemory', '10': 'memory'},
+  ],
+};
+
+/// Descriptor for `RecordEpisodicMemoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordEpisodicMemoryResponseDescriptor = $convert.base64Decode(
+    'ChxSZWNvcmRFcGlzb2RpY01lbW9yeVJlc3BvbnNlEjoKBm1lbW9yeRgBIAEoCzIiLnN0dGF0dH'
+    'VzLm9yYWNsZS52MS5FcGlzb2RpY01lbW9yeVIGbWVtb3J5');
+
+@$core.Deprecated('Use listMyEpisodicMemoryRequestDescriptor instead')
+const ListMyEpisodicMemoryRequest$json = {
+  '1': 'ListMyEpisodicMemoryRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListMyEpisodicMemoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyEpisodicMemoryRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0TXlFcGlzb2RpY01lbW9yeVJlcXVlc3QSFAoFbGltaXQYASABKAVSBWxpbWl0');
+
+@$core.Deprecated('Use listMyEpisodicMemoryResponseDescriptor instead')
+const ListMyEpisodicMemoryResponse$json = {
+  '1': 'ListMyEpisodicMemoryResponse',
+  '2': [
+    {'1': 'memories', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.EpisodicMemory', '10': 'memories'},
+  ],
+};
+
+/// Descriptor for `ListMyEpisodicMemoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyEpisodicMemoryResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0TXlFcGlzb2RpY01lbW9yeVJlc3BvbnNlEj4KCG1lbW9yaWVzGAEgAygLMiIuc3R0YX'
+    'R0dXMub3JhY2xlLnYxLkVwaXNvZGljTWVtb3J5UghtZW1vcmllcw==');
+
+@$core.Deprecated('Use deleteEpisodicMemoryRequestDescriptor instead')
+const DeleteEpisodicMemoryRequest$json = {
+  '1': 'DeleteEpisodicMemoryRequest',
+  '2': [
+    {'1': 'memory_id', '3': 1, '4': 1, '5': 9, '10': 'memoryId'},
+  ],
+};
+
+/// Descriptor for `DeleteEpisodicMemoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteEpisodicMemoryRequestDescriptor = $convert.base64Decode(
+    'ChtEZWxldGVFcGlzb2RpY01lbW9yeVJlcXVlc3QSGwoJbWVtb3J5X2lkGAEgASgJUghtZW1vcn'
+    'lJZA==');
+
+@$core.Deprecated('Use deleteEpisodicMemoryResponseDescriptor instead')
+const DeleteEpisodicMemoryResponse$json = {
+  '1': 'DeleteEpisodicMemoryResponse',
+};
+
+/// Descriptor for `DeleteEpisodicMemoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteEpisodicMemoryResponseDescriptor = $convert.base64Decode(
+    'ChxEZWxldGVFcGlzb2RpY01lbW9yeVJlc3BvbnNl');
+
+@$core.Deprecated('Use upsertSemanticMemoryRequestDescriptor instead')
+const UpsertSemanticMemoryRequest$json = {
+  '1': 'UpsertSemanticMemoryRequest',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+    {'1': 'source', '3': 3, '4': 1, '5': 9, '10': 'source'},
+  ],
+};
+
+/// Descriptor for `UpsertSemanticMemoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertSemanticMemoryRequestDescriptor = $convert.base64Decode(
+    'ChtVcHNlcnRTZW1hbnRpY01lbW9yeVJlcXVlc3QSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdW'
+    'UYAiABKAlSBXZhbHVlEhYKBnNvdXJjZRgDIAEoCVIGc291cmNl');
+
+@$core.Deprecated('Use upsertSemanticMemoryResponseDescriptor instead')
+const UpsertSemanticMemoryResponse$json = {
+  '1': 'UpsertSemanticMemoryResponse',
+  '2': [
+    {'1': 'memory', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.SemanticMemory', '10': 'memory'},
+  ],
+};
+
+/// Descriptor for `UpsertSemanticMemoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertSemanticMemoryResponseDescriptor = $convert.base64Decode(
+    'ChxVcHNlcnRTZW1hbnRpY01lbW9yeVJlc3BvbnNlEjoKBm1lbW9yeRgBIAEoCzIiLnN0dGF0dH'
+    'VzLm9yYWNsZS52MS5TZW1hbnRpY01lbW9yeVIGbWVtb3J5');
+
+@$core.Deprecated('Use listMySemanticMemoryRequestDescriptor instead')
+const ListMySemanticMemoryRequest$json = {
+  '1': 'ListMySemanticMemoryRequest',
+};
+
+/// Descriptor for `ListMySemanticMemoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMySemanticMemoryRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0TXlTZW1hbnRpY01lbW9yeVJlcXVlc3Q=');
+
+@$core.Deprecated('Use listMySemanticMemoryResponseDescriptor instead')
+const ListMySemanticMemoryResponse$json = {
+  '1': 'ListMySemanticMemoryResponse',
+  '2': [
+    {'1': 'memories', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.SemanticMemory', '10': 'memories'},
+  ],
+};
+
+/// Descriptor for `ListMySemanticMemoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMySemanticMemoryResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0TXlTZW1hbnRpY01lbW9yeVJlc3BvbnNlEj4KCG1lbW9yaWVzGAEgAygLMiIuc3R0YX'
+    'R0dXMub3JhY2xlLnYxLlNlbWFudGljTWVtb3J5UghtZW1vcmllcw==');
+
+@$core.Deprecated('Use deleteSemanticMemoryRequestDescriptor instead')
+const DeleteSemanticMemoryRequest$json = {
+  '1': 'DeleteSemanticMemoryRequest',
+  '2': [
+    {'1': 'memory_id', '3': 1, '4': 1, '5': 9, '10': 'memoryId'},
+  ],
+};
+
+/// Descriptor for `DeleteSemanticMemoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteSemanticMemoryRequestDescriptor = $convert.base64Decode(
+    'ChtEZWxldGVTZW1hbnRpY01lbW9yeVJlcXVlc3QSGwoJbWVtb3J5X2lkGAEgASgJUghtZW1vcn'
+    'lJZA==');
+
+@$core.Deprecated('Use deleteSemanticMemoryResponseDescriptor instead')
+const DeleteSemanticMemoryResponse$json = {
+  '1': 'DeleteSemanticMemoryResponse',
+};
+
+/// Descriptor for `DeleteSemanticMemoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteSemanticMemoryResponseDescriptor = $convert.base64Decode(
+    'ChxEZWxldGVTZW1hbnRpY01lbW9yeVJlc3BvbnNl');
+
 @$core.Deprecated('Use oracleThreadDescriptor instead')
 const OracleThread$json = {
   '1': 'OracleThread',
