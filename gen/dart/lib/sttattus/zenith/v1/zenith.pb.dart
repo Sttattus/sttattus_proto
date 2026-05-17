@@ -435,6 +435,222 @@ class GetZenithStatsResponse extends $pb.GeneratedMessage {
   ZenithStats ensureStats() => $_ensure(0);
 }
 
+class LibraryItem extends $pb.GeneratedMessage {
+  factory LibraryItem({
+    $core.String? id,
+    $core.String? slug,
+    $core.String? kind,
+    $core.String? title,
+    $core.String? summary,
+    $core.String? guidedText,
+    $core.int? durationMinutes,
+    $core.String? instructor,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (slug != null) result.slug = slug;
+    if (kind != null) result.kind = kind;
+    if (title != null) result.title = title;
+    if (summary != null) result.summary = summary;
+    if (guidedText != null) result.guidedText = guidedText;
+    if (durationMinutes != null) result.durationMinutes = durationMinutes;
+    if (instructor != null) result.instructor = instructor;
+    return result;
+  }
+
+  LibraryItem._();
+
+  factory LibraryItem.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory LibraryItem.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LibraryItem', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'slug')
+    ..aOS(3, _omitFieldNames ? '' : 'kind')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'summary')
+    ..aOS(6, _omitFieldNames ? '' : 'guidedText')
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'durationMinutes', $pb.PbFieldType.O3)
+    ..aOS(8, _omitFieldNames ? '' : 'instructor')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LibraryItem clone() => LibraryItem()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LibraryItem copyWith(void Function(LibraryItem) updates) => super.copyWith((message) => updates(message as LibraryItem)) as LibraryItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LibraryItem create() => LibraryItem._();
+  @$core.override
+  LibraryItem createEmptyInstance() => create();
+  static $pb.PbList<LibraryItem> createRepeated() => $pb.PbList<LibraryItem>();
+  @$core.pragma('dart2js:noInline')
+  static LibraryItem getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LibraryItem>(create);
+  static LibraryItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get slug => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set slug($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSlug() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSlug() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get kind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set kind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get summary => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set summary($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSummary() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSummary() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get guidedText => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set guidedText($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasGuidedText() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearGuidedText() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get durationMinutes => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set durationMinutes($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDurationMinutes() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDurationMinutes() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get instructor => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set instructor($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasInstructor() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearInstructor() => $_clearField(8);
+}
+
+class ListLibraryItemsRequest extends $pb.GeneratedMessage {
+  factory ListLibraryItemsRequest({
+    $core.String? kind,
+  }) {
+    final result = create();
+    if (kind != null) result.kind = kind;
+    return result;
+  }
+
+  ListLibraryItemsRequest._();
+
+  factory ListLibraryItemsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLibraryItemsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLibraryItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'kind')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLibraryItemsRequest clone() => ListLibraryItemsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLibraryItemsRequest copyWith(void Function(ListLibraryItemsRequest) updates) => super.copyWith((message) => updates(message as ListLibraryItemsRequest)) as ListLibraryItemsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLibraryItemsRequest create() => ListLibraryItemsRequest._();
+  @$core.override
+  ListLibraryItemsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListLibraryItemsRequest> createRepeated() => $pb.PbList<ListLibraryItemsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListLibraryItemsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLibraryItemsRequest>(create);
+  static ListLibraryItemsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get kind => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set kind($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasKind() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKind() => $_clearField(1);
+}
+
+class ListLibraryItemsResponse extends $pb.GeneratedMessage {
+  factory ListLibraryItemsResponse({
+    $core.Iterable<LibraryItem>? items,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    return result;
+  }
+
+  ListLibraryItemsResponse._();
+
+  factory ListLibraryItemsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLibraryItemsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLibraryItemsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..pc<LibraryItem>(1, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: LibraryItem.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLibraryItemsResponse clone() => ListLibraryItemsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLibraryItemsResponse copyWith(void Function(ListLibraryItemsResponse) updates) => super.copyWith((message) => updates(message as ListLibraryItemsResponse)) as ListLibraryItemsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLibraryItemsResponse create() => ListLibraryItemsResponse._();
+  @$core.override
+  ListLibraryItemsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListLibraryItemsResponse> createRepeated() => $pb.PbList<ListLibraryItemsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListLibraryItemsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLibraryItemsResponse>(create);
+  static ListLibraryItemsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LibraryItem> get items => $_getList(0);
+}
+
 class BlockRecommendation extends $pb.GeneratedMessage {
   factory BlockRecommendation({
     $fixnum.Int64? startsAtUnix,
@@ -549,13 +765,13 @@ class RecommendBlockRequest extends $pb.GeneratedMessage {
 
 class RecommendBlockResponse extends $pb.GeneratedMessage {
   factory RecommendBlockResponse({
-    $core.bool? hasRecommendation,
-    BlockRecommendation? recommendation_2,
+    $core.bool? recommendationPresent,
+    BlockRecommendation? block,
     $core.String? reason,
   }) {
     final result = create();
-    if (hasRecommendation != null) result.hasRecommendation = hasRecommendation;
-    if (recommendation_2 != null) result.recommendation_2 = recommendation_2;
+    if (recommendationPresent != null) result.recommendationPresent = recommendationPresent;
+    if (block != null) result.block = block;
     if (reason != null) result.reason = reason;
     return result;
   }
@@ -566,8 +782,8 @@ class RecommendBlockResponse extends $pb.GeneratedMessage {
   factory RecommendBlockResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecommendBlockResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'hasRecommendation')
-    ..aOM<BlockRecommendation>(2, _omitFieldNames ? '' : 'recommendation', subBuilder: BlockRecommendation.create)
+    ..aOB(1, _omitFieldNames ? '' : 'recommendationPresent')
+    ..aOM<BlockRecommendation>(2, _omitFieldNames ? '' : 'block', subBuilder: BlockRecommendation.create)
     ..aOS(3, _omitFieldNames ? '' : 'reason')
     ..hasRequiredFields = false
   ;
@@ -590,26 +806,26 @@ class RecommendBlockResponse extends $pb.GeneratedMessage {
   static RecommendBlockResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.bool get hasRecommendation => $_getBF(0);
+  $core.bool get recommendationPresent => $_getBF(0);
   @$pb.TagNumber(1)
-  set hasRecommendation($core.bool value) => $_setBool(0, value);
+  set recommendationPresent($core.bool value) => $_setBool(0, value);
   @$pb.TagNumber(1)
-  $core.bool hasHasRecommendation() => $_has(0);
+  $core.bool hasRecommendationPresent() => $_has(0);
   @$pb.TagNumber(1)
-  void clearHasRecommendation() => $_clearField(1);
+  void clearRecommendationPresent() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  BlockRecommendation get recommendation_2 => $_getN(1);
+  BlockRecommendation get block => $_getN(1);
   @$pb.TagNumber(2)
-  set recommendation_2(BlockRecommendation value) => $_setField(2, value);
+  set block(BlockRecommendation value) => $_setField(2, value);
   @$pb.TagNumber(2)
-  $core.bool hasRecommendation_2() => $_has(1);
+  $core.bool hasBlock() => $_has(1);
   @$pb.TagNumber(2)
-  void clearRecommendation_2() => $_clearField(2);
+  void clearBlock() => $_clearField(2);
   @$pb.TagNumber(2)
-  BlockRecommendation ensureRecommendation_2() => $_ensure(1);
+  BlockRecommendation ensureBlock() => $_ensure(1);
 
-  /// When has_recommendation = false, why we couldn't recommend.
+  /// When recommendation_present = false, why we couldn't recommend.
   @$pb.TagNumber(3)
   $core.String get reason => $_getSZ(2);
   @$pb.TagNumber(3)

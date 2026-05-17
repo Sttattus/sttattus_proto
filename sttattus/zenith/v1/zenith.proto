@@ -40,6 +40,26 @@ message GetZenithStatsResponse {
   ZenithStats stats = 1;
 }
 
+// === Z16.8 + Z16.9 — meditation + breathwork library ===
+
+message LibraryItem {
+  string id = 1;
+  string slug = 2;
+  string kind = 3; // 'meditation' | 'breathwork'
+  string title = 4;
+  string summary = 5;
+  string guided_text = 6;
+  int32 duration_minutes = 7;
+  string instructor = 8;
+}
+
+message ListLibraryItemsRequest {
+  string kind = 1; // '' for all
+}
+message ListLibraryItemsResponse {
+  repeated LibraryItem items = 1;
+}
+
 // === Z16.7 — block-time recommender ===
 
 message BlockRecommendation {
@@ -51,9 +71,9 @@ message BlockRecommendation {
 
 message RecommendBlockRequest {}
 message RecommendBlockResponse {
-  bool has_recommendation = 1;
-  BlockRecommendation recommendation = 2;
-  // When has_recommendation = false, why we couldn't recommend.
+  bool recommendation_present = 1;
+  BlockRecommendation block = 2;
+  // When recommendation_present = false, why we couldn't recommend.
   string reason = 3;
 }
 
@@ -127,4 +147,7 @@ service ZenithService {
 
   // Z16.7 — block-time recommender.
   rpc RecommendBlock(RecommendBlockRequest) returns (RecommendBlockResponse);
+
+  // Z16.8 + Z16.9 — meditation + breathwork library.
+  rpc ListLibraryItems(ListLibraryItemsRequest) returns (ListLibraryItemsResponse);
 }

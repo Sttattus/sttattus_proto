@@ -59,6 +59,11 @@ class ZenithServiceClient extends $grpc.Client {
     return $createUnaryCall(_$recommendBlock, request, options: options);
   }
 
+  /// Z16.8 + Z16.9 — meditation + breathwork library.
+  $grpc.ResponseFuture<$0.ListLibraryItemsResponse> listLibraryItems($0.ListLibraryItemsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listLibraryItems, request, options: options);
+  }
+
     // method descriptors
 
   static final _$logFocusSession = $grpc.ClientMethod<$0.LogFocusSessionRequest, $0.LogFocusSessionResponse>(
@@ -85,6 +90,10 @@ class ZenithServiceClient extends $grpc.Client {
       '/sttattus.zenith.v1.ZenithService/RecommendBlock',
       ($0.RecommendBlockRequest value) => value.writeToBuffer(),
       $0.RecommendBlockResponse.fromBuffer);
+  static final _$listLibraryItems = $grpc.ClientMethod<$0.ListLibraryItemsRequest, $0.ListLibraryItemsResponse>(
+      '/sttattus.zenith.v1.ZenithService/ListLibraryItems',
+      ($0.ListLibraryItemsRequest value) => value.writeToBuffer(),
+      $0.ListLibraryItemsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.zenith.v1.ZenithService')
@@ -134,6 +143,13 @@ abstract class ZenithServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.RecommendBlockRequest.fromBuffer(value),
         ($0.RecommendBlockResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListLibraryItemsRequest, $0.ListLibraryItemsResponse>(
+        'ListLibraryItems',
+        listLibraryItems_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListLibraryItemsRequest.fromBuffer(value),
+        ($0.ListLibraryItemsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.LogFocusSessionResponse> logFocusSession_Pre($grpc.ServiceCall $call, $async.Future<$0.LogFocusSessionRequest> $request) async {
@@ -171,5 +187,11 @@ abstract class ZenithServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.RecommendBlockResponse> recommendBlock($grpc.ServiceCall call, $0.RecommendBlockRequest request);
+
+  $async.Future<$0.ListLibraryItemsResponse> listLibraryItems_Pre($grpc.ServiceCall $call, $async.Future<$0.ListLibraryItemsRequest> $request) async {
+    return listLibraryItems($call, await $request);
+  }
+
+  $async.Future<$0.ListLibraryItemsResponse> listLibraryItems($grpc.ServiceCall call, $0.ListLibraryItemsRequest request);
 
 }

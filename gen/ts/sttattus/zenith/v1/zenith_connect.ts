@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetTodayLoadRequest, GetTodayLoadResponse, GetZenithStatsRequest, GetZenithStatsResponse, ListMyCalendarConnectionsRequest, ListMyCalendarConnectionsResponse, ListMyCalendarEventsRequest, ListMyCalendarEventsResponse, LogFocusSessionRequest, LogFocusSessionResponse, RecommendBlockRequest, RecommendBlockResponse } from "./zenith_pb.js";
+import { GetTodayLoadRequest, GetTodayLoadResponse, GetZenithStatsRequest, GetZenithStatsResponse, ListLibraryItemsRequest, ListLibraryItemsResponse, ListMyCalendarConnectionsRequest, ListMyCalendarConnectionsResponse, ListMyCalendarEventsRequest, ListMyCalendarEventsResponse, LogFocusSessionRequest, LogFocusSessionResponse, RecommendBlockRequest, RecommendBlockResponse } from "./zenith_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -70,6 +70,17 @@ export const ZenithService = {
       name: "RecommendBlock",
       I: RecommendBlockRequest,
       O: RecommendBlockResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Z16.8 + Z16.9 — meditation + breathwork library.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListLibraryItems
+     */
+    listLibraryItems: {
+      name: "ListLibraryItems",
+      I: ListLibraryItemsRequest,
+      O: ListLibraryItemsResponse,
       kind: MethodKind.Unary,
     },
   }

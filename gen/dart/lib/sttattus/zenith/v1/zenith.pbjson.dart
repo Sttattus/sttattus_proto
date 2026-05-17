@@ -108,6 +108,54 @@ final $typed_data.Uint8List getZenithStatsResponseDescriptor = $convert.base64De
     'ChZHZXRaZW5pdGhTdGF0c1Jlc3BvbnNlEjUKBXN0YXRzGAEgASgLMh8uc3R0YXR0dXMuemVuaX'
     'RoLnYxLlplbml0aFN0YXRzUgVzdGF0cw==');
 
+@$core.Deprecated('Use libraryItemDescriptor instead')
+const LibraryItem$json = {
+  '1': 'LibraryItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slug', '3': 2, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'summary', '3': 5, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'guided_text', '3': 6, '4': 1, '5': 9, '10': 'guidedText'},
+    {'1': 'duration_minutes', '3': 7, '4': 1, '5': 5, '10': 'durationMinutes'},
+    {'1': 'instructor', '3': 8, '4': 1, '5': 9, '10': 'instructor'},
+  ],
+};
+
+/// Descriptor for `LibraryItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List libraryItemDescriptor = $convert.base64Decode(
+    'CgtMaWJyYXJ5SXRlbRIOCgJpZBgBIAEoCVICaWQSEgoEc2x1ZxgCIAEoCVIEc2x1ZxISCgRraW'
+    '5kGAMgASgJUgRraW5kEhQKBXRpdGxlGAQgASgJUgV0aXRsZRIYCgdzdW1tYXJ5GAUgASgJUgdz'
+    'dW1tYXJ5Eh8KC2d1aWRlZF90ZXh0GAYgASgJUgpndWlkZWRUZXh0EikKEGR1cmF0aW9uX21pbn'
+    'V0ZXMYByABKAVSD2R1cmF0aW9uTWludXRlcxIeCgppbnN0cnVjdG9yGAggASgJUgppbnN0cnVj'
+    'dG9y');
+
+@$core.Deprecated('Use listLibraryItemsRequestDescriptor instead')
+const ListLibraryItemsRequest$json = {
+  '1': 'ListLibraryItemsRequest',
+  '2': [
+    {'1': 'kind', '3': 1, '4': 1, '5': 9, '10': 'kind'},
+  ],
+};
+
+/// Descriptor for `ListLibraryItemsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLibraryItemsRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0TGlicmFyeUl0ZW1zUmVxdWVzdBISCgRraW5kGAEgASgJUgRraW5k');
+
+@$core.Deprecated('Use listLibraryItemsResponseDescriptor instead')
+const ListLibraryItemsResponse$json = {
+  '1': 'ListLibraryItemsResponse',
+  '2': [
+    {'1': 'items', '3': 1, '4': 3, '5': 11, '6': '.sttattus.zenith.v1.LibraryItem', '10': 'items'},
+  ],
+};
+
+/// Descriptor for `ListLibraryItemsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLibraryItemsResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0TGlicmFyeUl0ZW1zUmVzcG9uc2USNQoFaXRlbXMYASADKAsyHy5zdHRhdHR1cy56ZW'
+    '5pdGgudjEuTGlicmFyeUl0ZW1SBWl0ZW1z');
+
 @$core.Deprecated('Use blockRecommendationDescriptor instead')
 const BlockRecommendation$json = {
   '1': 'BlockRecommendation',
@@ -138,18 +186,18 @@ final $typed_data.Uint8List recommendBlockRequestDescriptor = $convert.base64Dec
 const RecommendBlockResponse$json = {
   '1': 'RecommendBlockResponse',
   '2': [
-    {'1': 'has_recommendation', '3': 1, '4': 1, '5': 8, '10': 'hasRecommendation'},
-    {'1': 'recommendation', '3': 2, '4': 1, '5': 11, '6': '.sttattus.zenith.v1.BlockRecommendation', '10': 'recommendation'},
+    {'1': 'recommendation_present', '3': 1, '4': 1, '5': 8, '10': 'recommendationPresent'},
+    {'1': 'block', '3': 2, '4': 1, '5': 11, '6': '.sttattus.zenith.v1.BlockRecommendation', '10': 'block'},
     {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
   ],
 };
 
 /// Descriptor for `RecommendBlockResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List recommendBlockResponseDescriptor = $convert.base64Decode(
-    'ChZSZWNvbW1lbmRCbG9ja1Jlc3BvbnNlEi0KEmhhc19yZWNvbW1lbmRhdGlvbhgBIAEoCFIRaG'
-    'FzUmVjb21tZW5kYXRpb24STwoOcmVjb21tZW5kYXRpb24YAiABKAsyJy5zdHRhdHR1cy56ZW5p'
-    'dGgudjEuQmxvY2tSZWNvbW1lbmRhdGlvblIOcmVjb21tZW5kYXRpb24SFgoGcmVhc29uGAMgAS'
-    'gJUgZyZWFzb24=');
+    'ChZSZWNvbW1lbmRCbG9ja1Jlc3BvbnNlEjUKFnJlY29tbWVuZGF0aW9uX3ByZXNlbnQYASABKA'
+    'hSFXJlY29tbWVuZGF0aW9uUHJlc2VudBI9CgVibG9jaxgCIAEoCzInLnN0dGF0dHVzLnplbml0'
+    'aC52MS5CbG9ja1JlY29tbWVuZGF0aW9uUgVibG9jaxIWCgZyZWFzb24YAyABKAlSBnJlYXNvbg'
+    '==');
 
 @$core.Deprecated('Use calendarConnectionDescriptor instead')
 const CalendarConnection$json = {

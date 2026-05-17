@@ -305,6 +305,163 @@ export class GetZenithStatsResponse extends Message<GetZenithStatsResponse> {
 }
 
 /**
+ * @generated from message sttattus.zenith.v1.LibraryItem
+ */
+export class LibraryItem extends Message<LibraryItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string slug = 2;
+   */
+  slug = "";
+
+  /**
+   * 'meditation' | 'breathwork'
+   *
+   * @generated from field: string kind = 3;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string title = 4;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string summary = 5;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string guided_text = 6;
+   */
+  guidedText = "";
+
+  /**
+   * @generated from field: int32 duration_minutes = 7;
+   */
+  durationMinutes = 0;
+
+  /**
+   * @generated from field: string instructor = 8;
+   */
+  instructor = "";
+
+  constructor(data?: PartialMessage<LibraryItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.LibraryItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "guided_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "duration_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "instructor", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LibraryItem {
+    return new LibraryItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LibraryItem {
+    return new LibraryItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LibraryItem {
+    return new LibraryItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LibraryItem | PlainMessage<LibraryItem> | undefined, b: LibraryItem | PlainMessage<LibraryItem> | undefined): boolean {
+    return proto3.util.equals(LibraryItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ListLibraryItemsRequest
+ */
+export class ListLibraryItemsRequest extends Message<ListLibraryItemsRequest> {
+  /**
+   * '' for all
+   *
+   * @generated from field: string kind = 1;
+   */
+  kind = "";
+
+  constructor(data?: PartialMessage<ListLibraryItemsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ListLibraryItemsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLibraryItemsRequest {
+    return new ListLibraryItemsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLibraryItemsRequest {
+    return new ListLibraryItemsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLibraryItemsRequest {
+    return new ListLibraryItemsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLibraryItemsRequest | PlainMessage<ListLibraryItemsRequest> | undefined, b: ListLibraryItemsRequest | PlainMessage<ListLibraryItemsRequest> | undefined): boolean {
+    return proto3.util.equals(ListLibraryItemsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ListLibraryItemsResponse
+ */
+export class ListLibraryItemsResponse extends Message<ListLibraryItemsResponse> {
+  /**
+   * @generated from field: repeated sttattus.zenith.v1.LibraryItem items = 1;
+   */
+  items: LibraryItem[] = [];
+
+  constructor(data?: PartialMessage<ListLibraryItemsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ListLibraryItemsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "items", kind: "message", T: LibraryItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLibraryItemsResponse {
+    return new ListLibraryItemsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLibraryItemsResponse {
+    return new ListLibraryItemsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLibraryItemsResponse {
+    return new ListLibraryItemsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLibraryItemsResponse | PlainMessage<ListLibraryItemsResponse> | undefined, b: ListLibraryItemsResponse | PlainMessage<ListLibraryItemsResponse> | undefined): boolean {
+    return proto3.util.equals(ListLibraryItemsResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.zenith.v1.BlockRecommendation
  */
 export class BlockRecommendation extends Message<BlockRecommendation> {
@@ -399,17 +556,17 @@ export class RecommendBlockRequest extends Message<RecommendBlockRequest> {
  */
 export class RecommendBlockResponse extends Message<RecommendBlockResponse> {
   /**
-   * @generated from field: bool has_recommendation = 1;
+   * @generated from field: bool recommendation_present = 1;
    */
-  hasRecommendation = false;
+  recommendationPresent = false;
 
   /**
-   * @generated from field: sttattus.zenith.v1.BlockRecommendation recommendation = 2;
+   * @generated from field: sttattus.zenith.v1.BlockRecommendation block = 2;
    */
-  recommendation?: BlockRecommendation;
+  block?: BlockRecommendation;
 
   /**
-   * When has_recommendation = false, why we couldn't recommend.
+   * When recommendation_present = false, why we couldn't recommend.
    *
    * @generated from field: string reason = 3;
    */
@@ -423,8 +580,8 @@ export class RecommendBlockResponse extends Message<RecommendBlockResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sttattus.zenith.v1.RecommendBlockResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "has_recommendation", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: "recommendation", kind: "message", T: BlockRecommendation },
+    { no: 1, name: "recommendation_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "block", kind: "message", T: BlockRecommendation },
     { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 

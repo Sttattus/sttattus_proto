@@ -25,6 +25,7 @@ const (
 	ZenithService_ListMyCalendarConnections_FullMethodName = "/sttattus.zenith.v1.ZenithService/ListMyCalendarConnections"
 	ZenithService_ListMyCalendarEvents_FullMethodName      = "/sttattus.zenith.v1.ZenithService/ListMyCalendarEvents"
 	ZenithService_RecommendBlock_FullMethodName            = "/sttattus.zenith.v1.ZenithService/RecommendBlock"
+	ZenithService_ListLibraryItems_FullMethodName          = "/sttattus.zenith.v1.ZenithService/ListLibraryItems"
 )
 
 // ZenithServiceClient is the client API for ZenithService service.
@@ -40,6 +41,8 @@ type ZenithServiceClient interface {
 	ListMyCalendarEvents(ctx context.Context, in *ListMyCalendarEventsRequest, opts ...grpc.CallOption) (*ListMyCalendarEventsResponse, error)
 	// Z16.7 — block-time recommender.
 	RecommendBlock(ctx context.Context, in *RecommendBlockRequest, opts ...grpc.CallOption) (*RecommendBlockResponse, error)
+	// Z16.8 + Z16.9 — meditation + breathwork library.
+	ListLibraryItems(ctx context.Context, in *ListLibraryItemsRequest, opts ...grpc.CallOption) (*ListLibraryItemsResponse, error)
 }
 
 type zenithServiceClient struct {
@@ -110,6 +113,16 @@ func (c *zenithServiceClient) RecommendBlock(ctx context.Context, in *RecommendB
 	return out, nil
 }
 
+func (c *zenithServiceClient) ListLibraryItems(ctx context.Context, in *ListLibraryItemsRequest, opts ...grpc.CallOption) (*ListLibraryItemsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLibraryItemsResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListLibraryItems_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ZenithServiceServer is the server API for ZenithService service.
 // All implementations must embed UnimplementedZenithServiceServer
 // for forward compatibility.
@@ -123,6 +136,8 @@ type ZenithServiceServer interface {
 	ListMyCalendarEvents(context.Context, *ListMyCalendarEventsRequest) (*ListMyCalendarEventsResponse, error)
 	// Z16.7 — block-time recommender.
 	RecommendBlock(context.Context, *RecommendBlockRequest) (*RecommendBlockResponse, error)
+	// Z16.8 + Z16.9 — meditation + breathwork library.
+	ListLibraryItems(context.Context, *ListLibraryItemsRequest) (*ListLibraryItemsResponse, error)
 	mustEmbedUnimplementedZenithServiceServer()
 }
 
@@ -150,6 +165,9 @@ func (UnimplementedZenithServiceServer) ListMyCalendarEvents(context.Context, *L
 }
 func (UnimplementedZenithServiceServer) RecommendBlock(context.Context, *RecommendBlockRequest) (*RecommendBlockResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RecommendBlock not implemented")
+}
+func (UnimplementedZenithServiceServer) ListLibraryItems(context.Context, *ListLibraryItemsRequest) (*ListLibraryItemsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLibraryItems not implemented")
 }
 func (UnimplementedZenithServiceServer) mustEmbedUnimplementedZenithServiceServer() {}
 func (UnimplementedZenithServiceServer) testEmbeddedByValue()                       {}
@@ -280,6 +298,24 @@ func _ZenithService_RecommendBlock_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ZenithService_ListLibraryItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLibraryItemsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListLibraryItems(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListLibraryItems_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListLibraryItems(ctx, req.(*ListLibraryItemsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ZenithService_ServiceDesc is the grpc.ServiceDesc for ZenithService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -310,6 +346,10 @@ var ZenithService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RecommendBlock",
 			Handler:    _ZenithService_RecommendBlock_Handler,
+		},
+		{
+			MethodName: "ListLibraryItems",
+			Handler:    _ZenithService_ListLibraryItems_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
