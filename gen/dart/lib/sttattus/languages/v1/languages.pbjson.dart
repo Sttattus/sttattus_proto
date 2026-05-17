@@ -652,6 +652,11 @@ const DailyPlan$json = {
     {'1': 'warmup_done_unix', '3': 3, '4': 1, '5': 3, '10': 'warmupDoneUnix'},
     {'1': 'immersion_done_unix', '3': 4, '4': 1, '5': 3, '10': 'immersionDoneUnix'},
     {'1': 'output_done_unix', '3': 5, '4': 1, '5': 3, '10': 'outputDoneUnix'},
+    {'1': 'warmup_message', '3': 6, '4': 1, '5': 9, '10': 'warmupMessage'},
+    {'1': 'immersion_clip_id', '3': 7, '4': 1, '5': 9, '10': 'immersionClipId'},
+    {'1': 'immersion_clip_title', '3': 8, '4': 1, '5': 9, '10': 'immersionClipTitle'},
+    {'1': 'speaking_prompt_id', '3': 9, '4': 1, '5': 9, '10': 'speakingPromptId'},
+    {'1': 'speaking_prompt_phrase', '3': 10, '4': 1, '5': 9, '10': 'speakingPromptPhrase'},
   ],
 };
 
@@ -660,7 +665,11 @@ final $typed_data.Uint8List dailyPlanDescriptor = $convert.base64Decode(
     'CglEYWlseVBsYW4SGgoIbGFuZ3VhZ2UYASABKAlSCGxhbmd1YWdlEhsKCXBsYW5fZGF0ZRgCIA'
     'EoCVIIcGxhbkRhdGUSKAoQd2FybXVwX2RvbmVfdW5peBgDIAEoA1IOd2FybXVwRG9uZVVuaXgS'
     'LgoTaW1tZXJzaW9uX2RvbmVfdW5peBgEIAEoA1IRaW1tZXJzaW9uRG9uZVVuaXgSKAoQb3V0cH'
-    'V0X2RvbmVfdW5peBgFIAEoA1IOb3V0cHV0RG9uZVVuaXg=');
+    'V0X2RvbmVfdW5peBgFIAEoA1IOb3V0cHV0RG9uZVVuaXgSJQoOd2FybXVwX21lc3NhZ2UYBiAB'
+    'KAlSDXdhcm11cE1lc3NhZ2USKgoRaW1tZXJzaW9uX2NsaXBfaWQYByABKAlSD2ltbWVyc2lvbk'
+    'NsaXBJZBIwChRpbW1lcnNpb25fY2xpcF90aXRsZRgIIAEoCVISaW1tZXJzaW9uQ2xpcFRpdGxl'
+    'EiwKEnNwZWFraW5nX3Byb21wdF9pZBgJIAEoCVIQc3BlYWtpbmdQcm9tcHRJZBI0ChZzcGVha2'
+    'luZ19wcm9tcHRfcGhyYXNlGAogASgJUhRzcGVha2luZ1Byb21wdFBocmFzZQ==');
 
 @$core.Deprecated('Use getTodayPlanRequestDescriptor instead')
 const GetTodayPlanRequest$json = {

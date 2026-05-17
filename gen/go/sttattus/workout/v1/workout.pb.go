@@ -404,14 +404,18 @@ func (x *DayWorkout) GetIsVerified() bool {
 }
 
 type ForgeStats struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Power         int32                  `protobuf:"varint,2,opt,name=power,proto3" json:"power,omitempty"`
-	Agility       int32                  `protobuf:"varint,3,opt,name=agility,proto3" json:"agility,omitempty"`
-	Grit          int32                  `protobuf:"varint,4,opt,name=grit,proto3" json:"grit,omitempty"`
-	Experience    int64                  `protobuf:"varint,5,opt,name=experience,proto3" json:"experience,omitempty"`
-	Rank          string                 `protobuf:"bytes,6,opt,name=rank,proto3" json:"rank,omitempty"`                              // Text label (e.g., 'Mythic')
-	ForgeRank     float64                `protobuf:"fixed64,7,opt,name=forge_rank,json=forgeRank,proto3" json:"forge_rank,omitempty"` // Normalized 1-100 status signal
+	state      protoimpl.MessageState `protogen:"open.v1"`
+	UserId     string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Power      int32                  `protobuf:"varint,2,opt,name=power,proto3" json:"power,omitempty"`
+	Agility    int32                  `protobuf:"varint,3,opt,name=agility,proto3" json:"agility,omitempty"`
+	Grit       int32                  `protobuf:"varint,4,opt,name=grit,proto3" json:"grit,omitempty"`
+	Experience int64                  `protobuf:"varint,5,opt,name=experience,proto3" json:"experience,omitempty"`
+	Rank       string                 `protobuf:"bytes,6,opt,name=rank,proto3" json:"rank,omitempty"`                              // Text label (e.g., 'Mythic')
+	ForgeRank  float64                `protobuf:"fixed64,7,opt,name=forge_rank,json=forgeRank,proto3" json:"forge_rank,omitempty"` // Normalized 1-100 status signal
+	// F7P2.7 — Empire-owned handle, mirrored here so the Forge app
+	// can deep-link to sttattus.com/athlete/<handle>. Empty when the
+	// user has not claimed a handle.
+	Handle        string `protobuf:"bytes,8,opt,name=handle,proto3" json:"handle,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -493,6 +497,13 @@ func (x *ForgeStats) GetForgeRank() float64 {
 		return x.ForgeRank
 	}
 	return 0
+}
+
+func (x *ForgeStats) GetHandle() string {
+	if x != nil {
+		return x.Handle
+	}
+	return ""
 }
 
 // ===== Workouts =====
@@ -6735,7 +6746,7 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x06series\x18\x06 \x03(\v2\x1b.sttattus.workout.v1.SeriesR\x06series\x12:\n" +
 	"\x06strain\x18\a \x01(\v2\".sttattus.workout.v1.StrainMetricsR\x06strain\x12\x1f\n" +
 	"\vis_verified\x18\b \x01(\bR\n" +
-	"isVerified\"\xbc\x01\n" +
+	"isVerified\"\xd4\x01\n" +
 	"\n" +
 	"ForgeStats\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x14\n" +
@@ -6747,7 +6758,8 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"experience\x12\x12\n" +
 	"\x04rank\x18\x06 \x01(\tR\x04rank\x12\x1d\n" +
 	"\n" +
-	"forge_rank\x18\a \x01(\x01R\tforgeRank\"\x7f\n" +
+	"forge_rank\x18\a \x01(\x01R\tforgeRank\x12\x16\n" +
+	"\x06handle\x18\b \x01(\tR\x06handle\"\x7f\n" +
 	"\x13ListWorkoutsRequest\x123\n" +
 	"\x04page\x18\x01 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\x12\x16\n" +
 	"\x06search\x18\x02 \x01(\tR\x06search\x12\x1b\n" +

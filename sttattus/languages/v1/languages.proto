@@ -256,6 +256,15 @@ message DailyPlan {
   int64 warmup_done_unix = 3;
   int64 immersion_done_unix = 4;
   int64 output_done_unix = 5;
+
+  // L12.2 block bodies — the server picks a today-specific anchor
+  // for each block. All three are optional; client renders the
+  // fallback structural prompt when empty.
+  string warmup_message = 6; // canned message for the warm-up block
+  string immersion_clip_id = 7; // lexicon_immersion_clips row
+  string immersion_clip_title = 8;
+  string speaking_prompt_id = 9; // lexicon_speaking_prompts row
+  string speaking_prompt_phrase = 10;
 }
 
 message GetTodayPlanRequest {

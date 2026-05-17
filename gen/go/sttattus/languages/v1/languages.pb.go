@@ -2396,8 +2396,16 @@ type DailyPlan struct {
 	WarmupDoneUnix    int64                  `protobuf:"varint,3,opt,name=warmup_done_unix,json=warmupDoneUnix,proto3" json:"warmup_done_unix,omitempty"`
 	ImmersionDoneUnix int64                  `protobuf:"varint,4,opt,name=immersion_done_unix,json=immersionDoneUnix,proto3" json:"immersion_done_unix,omitempty"`
 	OutputDoneUnix    int64                  `protobuf:"varint,5,opt,name=output_done_unix,json=outputDoneUnix,proto3" json:"output_done_unix,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// L12.2 block bodies — the server picks a today-specific anchor
+	// for each block. All three are optional; client renders the
+	// fallback structural prompt when empty.
+	WarmupMessage        string `protobuf:"bytes,6,opt,name=warmup_message,json=warmupMessage,proto3" json:"warmup_message,omitempty"`         // canned message for the warm-up block
+	ImmersionClipId      string `protobuf:"bytes,7,opt,name=immersion_clip_id,json=immersionClipId,proto3" json:"immersion_clip_id,omitempty"` // lexicon_immersion_clips row
+	ImmersionClipTitle   string `protobuf:"bytes,8,opt,name=immersion_clip_title,json=immersionClipTitle,proto3" json:"immersion_clip_title,omitempty"`
+	SpeakingPromptId     string `protobuf:"bytes,9,opt,name=speaking_prompt_id,json=speakingPromptId,proto3" json:"speaking_prompt_id,omitempty"` // lexicon_speaking_prompts row
+	SpeakingPromptPhrase string `protobuf:"bytes,10,opt,name=speaking_prompt_phrase,json=speakingPromptPhrase,proto3" json:"speaking_prompt_phrase,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *DailyPlan) Reset() {
@@ -2463,6 +2471,41 @@ func (x *DailyPlan) GetOutputDoneUnix() int64 {
 		return x.OutputDoneUnix
 	}
 	return 0
+}
+
+func (x *DailyPlan) GetWarmupMessage() string {
+	if x != nil {
+		return x.WarmupMessage
+	}
+	return ""
+}
+
+func (x *DailyPlan) GetImmersionClipId() string {
+	if x != nil {
+		return x.ImmersionClipId
+	}
+	return ""
+}
+
+func (x *DailyPlan) GetImmersionClipTitle() string {
+	if x != nil {
+		return x.ImmersionClipTitle
+	}
+	return ""
+}
+
+func (x *DailyPlan) GetSpeakingPromptId() string {
+	if x != nil {
+		return x.SpeakingPromptId
+	}
+	return ""
+}
+
+func (x *DailyPlan) GetSpeakingPromptPhrase() string {
+	if x != nil {
+		return x.SpeakingPromptPhrase
+	}
+	return ""
 }
 
 type GetTodayPlanRequest struct {
@@ -3472,13 +3515,19 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x1dMarkImmersionCompletedRequest\x12\x17\n" +
 	"\aclip_id\x18\x01 \x01(\tR\x06clipId\"Z\n" +
 	"\x1eMarkImmersionCompletedResponse\x128\n" +
-	"\x04clip\x18\x01 \x01(\v2$.sttattus.languages.v1.ImmersionClipR\x04clip\"\xc8\x01\n" +
+	"\x04clip\x18\x01 \x01(\v2$.sttattus.languages.v1.ImmersionClipR\x04clip\"\xb1\x03\n" +
 	"\tDailyPlan\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\tR\blanguage\x12\x1b\n" +
 	"\tplan_date\x18\x02 \x01(\tR\bplanDate\x12(\n" +
 	"\x10warmup_done_unix\x18\x03 \x01(\x03R\x0ewarmupDoneUnix\x12.\n" +
 	"\x13immersion_done_unix\x18\x04 \x01(\x03R\x11immersionDoneUnix\x12(\n" +
-	"\x10output_done_unix\x18\x05 \x01(\x03R\x0eoutputDoneUnix\"1\n" +
+	"\x10output_done_unix\x18\x05 \x01(\x03R\x0eoutputDoneUnix\x12%\n" +
+	"\x0ewarmup_message\x18\x06 \x01(\tR\rwarmupMessage\x12*\n" +
+	"\x11immersion_clip_id\x18\a \x01(\tR\x0fimmersionClipId\x120\n" +
+	"\x14immersion_clip_title\x18\b \x01(\tR\x12immersionClipTitle\x12,\n" +
+	"\x12speaking_prompt_id\x18\t \x01(\tR\x10speakingPromptId\x124\n" +
+	"\x16speaking_prompt_phrase\x18\n" +
+	" \x01(\tR\x14speakingPromptPhrase\"1\n" +
 	"\x13GetTodayPlanRequest\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\tR\blanguage\"L\n" +
 	"\x14GetTodayPlanResponse\x124\n" +

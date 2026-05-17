@@ -118,6 +118,7 @@ const ForgeStats$json = {
     {'1': 'experience', '3': 5, '4': 1, '5': 3, '10': 'experience'},
     {'1': 'rank', '3': 6, '4': 1, '5': 9, '10': 'rank'},
     {'1': 'forge_rank', '3': 7, '4': 1, '5': 1, '10': 'forgeRank'},
+    {'1': 'handle', '3': 8, '4': 1, '5': 9, '10': 'handle'},
   ],
 };
 
@@ -126,7 +127,7 @@ final $typed_data.Uint8List forgeStatsDescriptor = $convert.base64Decode(
     'CgpGb3JnZVN0YXRzEhcKB3VzZXJfaWQYASABKAlSBnVzZXJJZBIUCgVwb3dlchgCIAEoBVIFcG'
     '93ZXISGAoHYWdpbGl0eRgDIAEoBVIHYWdpbGl0eRISCgRncml0GAQgASgFUgRncml0Eh4KCmV4'
     'cGVyaWVuY2UYBSABKANSCmV4cGVyaWVuY2USEgoEcmFuaxgGIAEoCVIEcmFuaxIdCgpmb3JnZV'
-    '9yYW5rGAcgASgBUglmb3JnZVJhbms=');
+    '9yYW5rGAcgASgBUglmb3JnZVJhbmsSFgoGaGFuZGxlGAggASgJUgZoYW5kbGU=');
 
 @$core.Deprecated('Use listWorkoutsRequestDescriptor instead')
 const ListWorkoutsRequest$json = {

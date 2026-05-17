@@ -2021,6 +2021,41 @@ export class DailyPlan extends Message<DailyPlan> {
    */
   outputDoneUnix = protoInt64.zero;
 
+  /**
+   * L12.2 block bodies — the server picks a today-specific anchor
+   * for each block. All three are optional; client renders the
+   * fallback structural prompt when empty.
+   *
+   * canned message for the warm-up block
+   *
+   * @generated from field: string warmup_message = 6;
+   */
+  warmupMessage = "";
+
+  /**
+   * lexicon_immersion_clips row
+   *
+   * @generated from field: string immersion_clip_id = 7;
+   */
+  immersionClipId = "";
+
+  /**
+   * @generated from field: string immersion_clip_title = 8;
+   */
+  immersionClipTitle = "";
+
+  /**
+   * lexicon_speaking_prompts row
+   *
+   * @generated from field: string speaking_prompt_id = 9;
+   */
+  speakingPromptId = "";
+
+  /**
+   * @generated from field: string speaking_prompt_phrase = 10;
+   */
+  speakingPromptPhrase = "";
+
   constructor(data?: PartialMessage<DailyPlan>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2034,6 +2069,11 @@ export class DailyPlan extends Message<DailyPlan> {
     { no: 3, name: "warmup_done_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 4, name: "immersion_done_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 5, name: "output_done_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "warmup_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "immersion_clip_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "immersion_clip_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "speaking_prompt_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "speaking_prompt_phrase", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DailyPlan {

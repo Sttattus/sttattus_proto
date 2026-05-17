@@ -55,6 +55,10 @@ message ForgeStats {
   int64 experience = 5;
   string rank = 6; // Text label (e.g., 'Mythic')
   double forge_rank = 7; // Normalized 1-100 status signal
+  // F7P2.7 — Empire-owned handle, mirrored here so the Forge app
+  // can deep-link to sttattus.com/athlete/<handle>. Empty when the
+  // user has not claimed a handle.
+  string handle = 8;
 }
 
 // ===== Workouts =====

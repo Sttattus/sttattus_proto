@@ -491,6 +491,7 @@ class ForgeStats extends $pb.GeneratedMessage {
     $fixnum.Int64? experience,
     $core.String? rank,
     $core.double? forgeRank,
+    $core.String? handle,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
@@ -500,6 +501,7 @@ class ForgeStats extends $pb.GeneratedMessage {
     if (experience != null) result.experience = experience;
     if (rank != null) result.rank = rank;
     if (forgeRank != null) result.forgeRank = forgeRank;
+    if (handle != null) result.handle = handle;
     return result;
   }
 
@@ -516,6 +518,7 @@ class ForgeStats extends $pb.GeneratedMessage {
     ..aInt64(5, _omitFieldNames ? '' : 'experience')
     ..aOS(6, _omitFieldNames ? '' : 'rank')
     ..a<$core.double>(7, _omitFieldNames ? '' : 'forgeRank', $pb.PbFieldType.OD)
+    ..aOS(8, _omitFieldNames ? '' : 'handle')
     ..hasRequiredFields = false
   ;
 
@@ -598,6 +601,18 @@ class ForgeStats extends $pb.GeneratedMessage {
   $core.bool hasForgeRank() => $_has(6);
   @$pb.TagNumber(7)
   void clearForgeRank() => $_clearField(7);
+
+  /// F7P2.7 — Empire-owned handle, mirrored here so the Forge app
+  /// can deep-link to sttattus.com/athlete/<handle>. Empty when the
+  /// user has not claimed a handle.
+  @$pb.TagNumber(8)
+  $core.String get handle => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set handle($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasHandle() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearHandle() => $_clearField(8);
 }
 
 /// ===== Workouts =====

@@ -2652,6 +2652,11 @@ class DailyPlan extends $pb.GeneratedMessage {
     $fixnum.Int64? warmupDoneUnix,
     $fixnum.Int64? immersionDoneUnix,
     $fixnum.Int64? outputDoneUnix,
+    $core.String? warmupMessage,
+    $core.String? immersionClipId,
+    $core.String? immersionClipTitle,
+    $core.String? speakingPromptId,
+    $core.String? speakingPromptPhrase,
   }) {
     final result = create();
     if (language != null) result.language = language;
@@ -2659,6 +2664,11 @@ class DailyPlan extends $pb.GeneratedMessage {
     if (warmupDoneUnix != null) result.warmupDoneUnix = warmupDoneUnix;
     if (immersionDoneUnix != null) result.immersionDoneUnix = immersionDoneUnix;
     if (outputDoneUnix != null) result.outputDoneUnix = outputDoneUnix;
+    if (warmupMessage != null) result.warmupMessage = warmupMessage;
+    if (immersionClipId != null) result.immersionClipId = immersionClipId;
+    if (immersionClipTitle != null) result.immersionClipTitle = immersionClipTitle;
+    if (speakingPromptId != null) result.speakingPromptId = speakingPromptId;
+    if (speakingPromptPhrase != null) result.speakingPromptPhrase = speakingPromptPhrase;
     return result;
   }
 
@@ -2673,6 +2683,11 @@ class DailyPlan extends $pb.GeneratedMessage {
     ..aInt64(3, _omitFieldNames ? '' : 'warmupDoneUnix')
     ..aInt64(4, _omitFieldNames ? '' : 'immersionDoneUnix')
     ..aInt64(5, _omitFieldNames ? '' : 'outputDoneUnix')
+    ..aOS(6, _omitFieldNames ? '' : 'warmupMessage')
+    ..aOS(7, _omitFieldNames ? '' : 'immersionClipId')
+    ..aOS(8, _omitFieldNames ? '' : 'immersionClipTitle')
+    ..aOS(9, _omitFieldNames ? '' : 'speakingPromptId')
+    ..aOS(10, _omitFieldNames ? '' : 'speakingPromptPhrase')
     ..hasRequiredFields = false
   ;
 
@@ -2737,6 +2752,54 @@ class DailyPlan extends $pb.GeneratedMessage {
   $core.bool hasOutputDoneUnix() => $_has(4);
   @$pb.TagNumber(5)
   void clearOutputDoneUnix() => $_clearField(5);
+
+  /// L12.2 block bodies — the server picks a today-specific anchor
+  /// for each block. All three are optional; client renders the
+  /// fallback structural prompt when empty.
+  @$pb.TagNumber(6)
+  $core.String get warmupMessage => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set warmupMessage($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasWarmupMessage() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWarmupMessage() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get immersionClipId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set immersionClipId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasImmersionClipId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearImmersionClipId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get immersionClipTitle => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set immersionClipTitle($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasImmersionClipTitle() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearImmersionClipTitle() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get speakingPromptId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set speakingPromptId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSpeakingPromptId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSpeakingPromptId() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get speakingPromptPhrase => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set speakingPromptPhrase($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSpeakingPromptPhrase() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSpeakingPromptPhrase() => $_clearField(10);
 }
 
 class GetTodayPlanRequest extends $pb.GeneratedMessage {

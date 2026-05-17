@@ -363,6 +363,15 @@ export class ForgeStats extends Message<ForgeStats> {
    */
   forgeRank = 0;
 
+  /**
+   * F7P2.7 — Empire-owned handle, mirrored here so the Forge app
+   * can deep-link to sttattus.com/athlete/<handle>. Empty when the
+   * user has not claimed a handle.
+   *
+   * @generated from field: string handle = 8;
+   */
+  handle = "";
+
   constructor(data?: PartialMessage<ForgeStats>) {
     super();
     proto3.util.initPartial(data, this);
@@ -378,6 +387,7 @@ export class ForgeStats extends Message<ForgeStats> {
     { no: 5, name: "experience", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 6, name: "rank", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "forge_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "handle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ForgeStats {
