@@ -531,6 +531,337 @@ class GetOracleStatsResponse extends $pb.GeneratedMessage {
   OracleStats ensureStats() => $_ensure(0);
 }
 
+/// ScopeGrant records that the user has opted Oracle into reading
+/// from a given pillar. Absent rows = "not granted" (the agent
+/// layer must refuse to call the pillar's tools).
+class ScopeGrant extends $pb.GeneratedMessage {
+  factory ScopeGrant({
+    $core.String? pillar,
+    $core.bool? granted,
+    $fixnum.Int64? updatedUnix,
+  }) {
+    final result = create();
+    if (pillar != null) result.pillar = pillar;
+    if (granted != null) result.granted = granted;
+    if (updatedUnix != null) result.updatedUnix = updatedUnix;
+    return result;
+  }
+
+  ScopeGrant._();
+
+  factory ScopeGrant.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ScopeGrant.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScopeGrant', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'pillar')
+    ..aOB(2, _omitFieldNames ? '' : 'granted')
+    ..aInt64(3, _omitFieldNames ? '' : 'updatedUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScopeGrant clone() => ScopeGrant()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScopeGrant copyWith(void Function(ScopeGrant) updates) => super.copyWith((message) => updates(message as ScopeGrant)) as ScopeGrant;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ScopeGrant create() => ScopeGrant._();
+  @$core.override
+  ScopeGrant createEmptyInstance() => create();
+  static $pb.PbList<ScopeGrant> createRepeated() => $pb.PbList<ScopeGrant>();
+  @$core.pragma('dart2js:noInline')
+  static ScopeGrant getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScopeGrant>(create);
+  static ScopeGrant? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get pillar => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set pillar($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPillar() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPillar() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get granted => $_getBF(1);
+  @$pb.TagNumber(2)
+  set granted($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGranted() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGranted() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get updatedUnix => $_getI64(2);
+  @$pb.TagNumber(3)
+  set updatedUnix($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUpdatedUnix() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUpdatedUnix() => $_clearField(3);
+}
+
+class ListMyScopeGrantsRequest extends $pb.GeneratedMessage {
+  factory ListMyScopeGrantsRequest() => create();
+
+  ListMyScopeGrantsRequest._();
+
+  factory ListMyScopeGrantsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyScopeGrantsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyScopeGrantsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyScopeGrantsRequest clone() => ListMyScopeGrantsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyScopeGrantsRequest copyWith(void Function(ListMyScopeGrantsRequest) updates) => super.copyWith((message) => updates(message as ListMyScopeGrantsRequest)) as ListMyScopeGrantsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyScopeGrantsRequest create() => ListMyScopeGrantsRequest._();
+  @$core.override
+  ListMyScopeGrantsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyScopeGrantsRequest> createRepeated() => $pb.PbList<ListMyScopeGrantsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyScopeGrantsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyScopeGrantsRequest>(create);
+  static ListMyScopeGrantsRequest? _defaultInstance;
+}
+
+class ListMyScopeGrantsResponse extends $pb.GeneratedMessage {
+  factory ListMyScopeGrantsResponse({
+    $core.Iterable<ScopeGrant>? grants,
+  }) {
+    final result = create();
+    if (grants != null) result.grants.addAll(grants);
+    return result;
+  }
+
+  ListMyScopeGrantsResponse._();
+
+  factory ListMyScopeGrantsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyScopeGrantsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyScopeGrantsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..pc<ScopeGrant>(1, _omitFieldNames ? '' : 'grants', $pb.PbFieldType.PM, subBuilder: ScopeGrant.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyScopeGrantsResponse clone() => ListMyScopeGrantsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyScopeGrantsResponse copyWith(void Function(ListMyScopeGrantsResponse) updates) => super.copyWith((message) => updates(message as ListMyScopeGrantsResponse)) as ListMyScopeGrantsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyScopeGrantsResponse create() => ListMyScopeGrantsResponse._();
+  @$core.override
+  ListMyScopeGrantsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyScopeGrantsResponse> createRepeated() => $pb.PbList<ListMyScopeGrantsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyScopeGrantsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyScopeGrantsResponse>(create);
+  static ListMyScopeGrantsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ScopeGrant> get grants => $_getList(0);
+}
+
+class GrantScopeRequest extends $pb.GeneratedMessage {
+  factory GrantScopeRequest({
+    $core.String? pillar,
+  }) {
+    final result = create();
+    if (pillar != null) result.pillar = pillar;
+    return result;
+  }
+
+  GrantScopeRequest._();
+
+  factory GrantScopeRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GrantScopeRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GrantScopeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'pillar')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GrantScopeRequest clone() => GrantScopeRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GrantScopeRequest copyWith(void Function(GrantScopeRequest) updates) => super.copyWith((message) => updates(message as GrantScopeRequest)) as GrantScopeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GrantScopeRequest create() => GrantScopeRequest._();
+  @$core.override
+  GrantScopeRequest createEmptyInstance() => create();
+  static $pb.PbList<GrantScopeRequest> createRepeated() => $pb.PbList<GrantScopeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GrantScopeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GrantScopeRequest>(create);
+  static GrantScopeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get pillar => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set pillar($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPillar() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPillar() => $_clearField(1);
+}
+
+class GrantScopeResponse extends $pb.GeneratedMessage {
+  factory GrantScopeResponse({
+    ScopeGrant? grant,
+  }) {
+    final result = create();
+    if (grant != null) result.grant = grant;
+    return result;
+  }
+
+  GrantScopeResponse._();
+
+  factory GrantScopeResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GrantScopeResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GrantScopeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOM<ScopeGrant>(1, _omitFieldNames ? '' : 'grant', subBuilder: ScopeGrant.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GrantScopeResponse clone() => GrantScopeResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GrantScopeResponse copyWith(void Function(GrantScopeResponse) updates) => super.copyWith((message) => updates(message as GrantScopeResponse)) as GrantScopeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GrantScopeResponse create() => GrantScopeResponse._();
+  @$core.override
+  GrantScopeResponse createEmptyInstance() => create();
+  static $pb.PbList<GrantScopeResponse> createRepeated() => $pb.PbList<GrantScopeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GrantScopeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GrantScopeResponse>(create);
+  static GrantScopeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ScopeGrant get grant => $_getN(0);
+  @$pb.TagNumber(1)
+  set grant(ScopeGrant value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGrant() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGrant() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ScopeGrant ensureGrant() => $_ensure(0);
+}
+
+class RevokeScopeRequest extends $pb.GeneratedMessage {
+  factory RevokeScopeRequest({
+    $core.String? pillar,
+  }) {
+    final result = create();
+    if (pillar != null) result.pillar = pillar;
+    return result;
+  }
+
+  RevokeScopeRequest._();
+
+  factory RevokeScopeRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RevokeScopeRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RevokeScopeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'pillar')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeScopeRequest clone() => RevokeScopeRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeScopeRequest copyWith(void Function(RevokeScopeRequest) updates) => super.copyWith((message) => updates(message as RevokeScopeRequest)) as RevokeScopeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeScopeRequest create() => RevokeScopeRequest._();
+  @$core.override
+  RevokeScopeRequest createEmptyInstance() => create();
+  static $pb.PbList<RevokeScopeRequest> createRepeated() => $pb.PbList<RevokeScopeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RevokeScopeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RevokeScopeRequest>(create);
+  static RevokeScopeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get pillar => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set pillar($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPillar() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPillar() => $_clearField(1);
+}
+
+class RevokeScopeResponse extends $pb.GeneratedMessage {
+  factory RevokeScopeResponse({
+    ScopeGrant? grant,
+  }) {
+    final result = create();
+    if (grant != null) result.grant = grant;
+    return result;
+  }
+
+  RevokeScopeResponse._();
+
+  factory RevokeScopeResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RevokeScopeResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RevokeScopeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOM<ScopeGrant>(1, _omitFieldNames ? '' : 'grant', subBuilder: ScopeGrant.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeScopeResponse clone() => RevokeScopeResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeScopeResponse copyWith(void Function(RevokeScopeResponse) updates) => super.copyWith((message) => updates(message as RevokeScopeResponse)) as RevokeScopeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeScopeResponse create() => RevokeScopeResponse._();
+  @$core.override
+  RevokeScopeResponse createEmptyInstance() => create();
+  static $pb.PbList<RevokeScopeResponse> createRepeated() => $pb.PbList<RevokeScopeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RevokeScopeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RevokeScopeResponse>(create);
+  static RevokeScopeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ScopeGrant get grant => $_getN(0);
+  @$pb.TagNumber(1)
+  set grant(ScopeGrant value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGrant() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGrant() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ScopeGrant ensureGrant() => $_ensure(0);
+}
+
 class EpisodicMemory extends $pb.GeneratedMessage {
   factory EpisodicMemory({
     $core.String? id,

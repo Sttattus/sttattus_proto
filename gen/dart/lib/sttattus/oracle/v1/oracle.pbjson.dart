@@ -159,6 +159,93 @@ final $typed_data.Uint8List getOracleStatsResponseDescriptor = $convert.base64De
     'ChZHZXRPcmFjbGVTdGF0c1Jlc3BvbnNlEjUKBXN0YXRzGAEgASgLMh8uc3R0YXR0dXMub3JhY2'
     'xlLnYxLk9yYWNsZVN0YXRzUgVzdGF0cw==');
 
+@$core.Deprecated('Use scopeGrantDescriptor instead')
+const ScopeGrant$json = {
+  '1': 'ScopeGrant',
+  '2': [
+    {'1': 'pillar', '3': 1, '4': 1, '5': 9, '10': 'pillar'},
+    {'1': 'granted', '3': 2, '4': 1, '5': 8, '10': 'granted'},
+    {'1': 'updated_unix', '3': 3, '4': 1, '5': 3, '10': 'updatedUnix'},
+  ],
+};
+
+/// Descriptor for `ScopeGrant`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List scopeGrantDescriptor = $convert.base64Decode(
+    'CgpTY29wZUdyYW50EhYKBnBpbGxhchgBIAEoCVIGcGlsbGFyEhgKB2dyYW50ZWQYAiABKAhSB2'
+    'dyYW50ZWQSIQoMdXBkYXRlZF91bml4GAMgASgDUgt1cGRhdGVkVW5peA==');
+
+@$core.Deprecated('Use listMyScopeGrantsRequestDescriptor instead')
+const ListMyScopeGrantsRequest$json = {
+  '1': 'ListMyScopeGrantsRequest',
+};
+
+/// Descriptor for `ListMyScopeGrantsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyScopeGrantsRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0TXlTY29wZUdyYW50c1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listMyScopeGrantsResponseDescriptor instead')
+const ListMyScopeGrantsResponse$json = {
+  '1': 'ListMyScopeGrantsResponse',
+  '2': [
+    {'1': 'grants', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.ScopeGrant', '10': 'grants'},
+  ],
+};
+
+/// Descriptor for `ListMyScopeGrantsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyScopeGrantsResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0TXlTY29wZUdyYW50c1Jlc3BvbnNlEjYKBmdyYW50cxgBIAMoCzIeLnN0dGF0dHVzLm'
+    '9yYWNsZS52MS5TY29wZUdyYW50UgZncmFudHM=');
+
+@$core.Deprecated('Use grantScopeRequestDescriptor instead')
+const GrantScopeRequest$json = {
+  '1': 'GrantScopeRequest',
+  '2': [
+    {'1': 'pillar', '3': 1, '4': 1, '5': 9, '10': 'pillar'},
+  ],
+};
+
+/// Descriptor for `GrantScopeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List grantScopeRequestDescriptor = $convert.base64Decode(
+    'ChFHcmFudFNjb3BlUmVxdWVzdBIWCgZwaWxsYXIYASABKAlSBnBpbGxhcg==');
+
+@$core.Deprecated('Use grantScopeResponseDescriptor instead')
+const GrantScopeResponse$json = {
+  '1': 'GrantScopeResponse',
+  '2': [
+    {'1': 'grant', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.ScopeGrant', '10': 'grant'},
+  ],
+};
+
+/// Descriptor for `GrantScopeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List grantScopeResponseDescriptor = $convert.base64Decode(
+    'ChJHcmFudFNjb3BlUmVzcG9uc2USNAoFZ3JhbnQYASABKAsyHi5zdHRhdHR1cy5vcmFjbGUudj'
+    'EuU2NvcGVHcmFudFIFZ3JhbnQ=');
+
+@$core.Deprecated('Use revokeScopeRequestDescriptor instead')
+const RevokeScopeRequest$json = {
+  '1': 'RevokeScopeRequest',
+  '2': [
+    {'1': 'pillar', '3': 1, '4': 1, '5': 9, '10': 'pillar'},
+  ],
+};
+
+/// Descriptor for `RevokeScopeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeScopeRequestDescriptor = $convert.base64Decode(
+    'ChJSZXZva2VTY29wZVJlcXVlc3QSFgoGcGlsbGFyGAEgASgJUgZwaWxsYXI=');
+
+@$core.Deprecated('Use revokeScopeResponseDescriptor instead')
+const RevokeScopeResponse$json = {
+  '1': 'RevokeScopeResponse',
+  '2': [
+    {'1': 'grant', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.ScopeGrant', '10': 'grant'},
+  ],
+};
+
+/// Descriptor for `RevokeScopeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeScopeResponseDescriptor = $convert.base64Decode(
+    'ChNSZXZva2VTY29wZVJlc3BvbnNlEjQKBWdyYW50GAEgASgLMh4uc3R0YXR0dXMub3JhY2xlLn'
+    'YxLlNjb3BlR3JhbnRSBWdyYW50');
+
 @$core.Deprecated('Use episodicMemoryDescriptor instead')
 const EpisodicMemory$json = {
   '1': 'EpisodicMemory',

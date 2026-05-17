@@ -418,6 +418,279 @@ export class GetOracleStatsResponse extends Message<GetOracleStatsResponse> {
 }
 
 /**
+ * ScopeGrant records that the user has opted Oracle into reading
+ * from a given pillar. Absent rows = "not granted" (the agent
+ * layer must refuse to call the pillar's tools).
+ *
+ * @generated from message sttattus.oracle.v1.ScopeGrant
+ */
+export class ScopeGrant extends Message<ScopeGrant> {
+  /**
+   * @generated from field: string pillar = 1;
+   */
+  pillar = "";
+
+  /**
+   * @generated from field: bool granted = 2;
+   */
+  granted = false;
+
+  /**
+   * @generated from field: int64 updated_unix = 3;
+   */
+  updatedUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<ScopeGrant>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ScopeGrant";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pillar", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "granted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "updated_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScopeGrant {
+    return new ScopeGrant().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScopeGrant {
+    return new ScopeGrant().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScopeGrant {
+    return new ScopeGrant().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScopeGrant | PlainMessage<ScopeGrant> | undefined, b: ScopeGrant | PlainMessage<ScopeGrant> | undefined): boolean {
+    return proto3.util.equals(ScopeGrant, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ListMyScopeGrantsRequest
+ */
+export class ListMyScopeGrantsRequest extends Message<ListMyScopeGrantsRequest> {
+  constructor(data?: PartialMessage<ListMyScopeGrantsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ListMyScopeGrantsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyScopeGrantsRequest {
+    return new ListMyScopeGrantsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyScopeGrantsRequest {
+    return new ListMyScopeGrantsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyScopeGrantsRequest {
+    return new ListMyScopeGrantsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyScopeGrantsRequest | PlainMessage<ListMyScopeGrantsRequest> | undefined, b: ListMyScopeGrantsRequest | PlainMessage<ListMyScopeGrantsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyScopeGrantsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ListMyScopeGrantsResponse
+ */
+export class ListMyScopeGrantsResponse extends Message<ListMyScopeGrantsResponse> {
+  /**
+   * includes ALL known pillars, granted true/false
+   *
+   * @generated from field: repeated sttattus.oracle.v1.ScopeGrant grants = 1;
+   */
+  grants: ScopeGrant[] = [];
+
+  constructor(data?: PartialMessage<ListMyScopeGrantsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ListMyScopeGrantsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grants", kind: "message", T: ScopeGrant, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyScopeGrantsResponse {
+    return new ListMyScopeGrantsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyScopeGrantsResponse {
+    return new ListMyScopeGrantsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyScopeGrantsResponse {
+    return new ListMyScopeGrantsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyScopeGrantsResponse | PlainMessage<ListMyScopeGrantsResponse> | undefined, b: ListMyScopeGrantsResponse | PlainMessage<ListMyScopeGrantsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyScopeGrantsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GrantScopeRequest
+ */
+export class GrantScopeRequest extends Message<GrantScopeRequest> {
+  /**
+   * @generated from field: string pillar = 1;
+   */
+  pillar = "";
+
+  constructor(data?: PartialMessage<GrantScopeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GrantScopeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pillar", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GrantScopeRequest {
+    return new GrantScopeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GrantScopeRequest {
+    return new GrantScopeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GrantScopeRequest {
+    return new GrantScopeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GrantScopeRequest | PlainMessage<GrantScopeRequest> | undefined, b: GrantScopeRequest | PlainMessage<GrantScopeRequest> | undefined): boolean {
+    return proto3.util.equals(GrantScopeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GrantScopeResponse
+ */
+export class GrantScopeResponse extends Message<GrantScopeResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.ScopeGrant grant = 1;
+   */
+  grant?: ScopeGrant;
+
+  constructor(data?: PartialMessage<GrantScopeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GrantScopeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant", kind: "message", T: ScopeGrant },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GrantScopeResponse {
+    return new GrantScopeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GrantScopeResponse {
+    return new GrantScopeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GrantScopeResponse {
+    return new GrantScopeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GrantScopeResponse | PlainMessage<GrantScopeResponse> | undefined, b: GrantScopeResponse | PlainMessage<GrantScopeResponse> | undefined): boolean {
+    return proto3.util.equals(GrantScopeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RevokeScopeRequest
+ */
+export class RevokeScopeRequest extends Message<RevokeScopeRequest> {
+  /**
+   * @generated from field: string pillar = 1;
+   */
+  pillar = "";
+
+  constructor(data?: PartialMessage<RevokeScopeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RevokeScopeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pillar", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeScopeRequest {
+    return new RevokeScopeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeScopeRequest {
+    return new RevokeScopeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeScopeRequest {
+    return new RevokeScopeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeScopeRequest | PlainMessage<RevokeScopeRequest> | undefined, b: RevokeScopeRequest | PlainMessage<RevokeScopeRequest> | undefined): boolean {
+    return proto3.util.equals(RevokeScopeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RevokeScopeResponse
+ */
+export class RevokeScopeResponse extends Message<RevokeScopeResponse> {
+  /**
+   * returns the pillar with granted=false
+   *
+   * @generated from field: sttattus.oracle.v1.ScopeGrant grant = 1;
+   */
+  grant?: ScopeGrant;
+
+  constructor(data?: PartialMessage<RevokeScopeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RevokeScopeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant", kind: "message", T: ScopeGrant },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeScopeResponse {
+    return new RevokeScopeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeScopeResponse {
+    return new RevokeScopeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeScopeResponse {
+    return new RevokeScopeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeScopeResponse | PlainMessage<RevokeScopeResponse> | undefined, b: RevokeScopeResponse | PlainMessage<RevokeScopeResponse> | undefined): boolean {
+    return proto3.util.equals(RevokeScopeResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.oracle.v1.EpisodicMemory
  */
 export class EpisodicMemory extends Message<EpisodicMemory> {

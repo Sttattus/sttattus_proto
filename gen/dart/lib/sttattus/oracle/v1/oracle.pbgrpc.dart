@@ -93,6 +93,19 @@ class OracleServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteSemanticMemory, request, options: options);
   }
 
+  /// O13.4 — per-pillar scope grants.
+  $grpc.ResponseFuture<$0.ListMyScopeGrantsResponse> listMyScopeGrants($0.ListMyScopeGrantsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyScopeGrants, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GrantScopeResponse> grantScope($0.GrantScopeRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$grantScope, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeScopeResponse> revokeScope($0.RevokeScopeRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$revokeScope, request, options: options);
+  }
+
     // method descriptors
 
   static final _$query = $grpc.ClientMethod<$0.QueryRequest, $0.QueryResponse>(
@@ -151,6 +164,18 @@ class OracleServiceClient extends $grpc.Client {
       '/sttattus.oracle.v1.OracleService/DeleteSemanticMemory',
       ($0.DeleteSemanticMemoryRequest value) => value.writeToBuffer(),
       $0.DeleteSemanticMemoryResponse.fromBuffer);
+  static final _$listMyScopeGrants = $grpc.ClientMethod<$0.ListMyScopeGrantsRequest, $0.ListMyScopeGrantsResponse>(
+      '/sttattus.oracle.v1.OracleService/ListMyScopeGrants',
+      ($0.ListMyScopeGrantsRequest value) => value.writeToBuffer(),
+      $0.ListMyScopeGrantsResponse.fromBuffer);
+  static final _$grantScope = $grpc.ClientMethod<$0.GrantScopeRequest, $0.GrantScopeResponse>(
+      '/sttattus.oracle.v1.OracleService/GrantScope',
+      ($0.GrantScopeRequest value) => value.writeToBuffer(),
+      $0.GrantScopeResponse.fromBuffer);
+  static final _$revokeScope = $grpc.ClientMethod<$0.RevokeScopeRequest, $0.RevokeScopeResponse>(
+      '/sttattus.oracle.v1.OracleService/RevokeScope',
+      ($0.RevokeScopeRequest value) => value.writeToBuffer(),
+      $0.RevokeScopeResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.oracle.v1.OracleService')
@@ -256,6 +281,27 @@ abstract class OracleServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.DeleteSemanticMemoryRequest.fromBuffer(value),
         ($0.DeleteSemanticMemoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyScopeGrantsRequest, $0.ListMyScopeGrantsResponse>(
+        'ListMyScopeGrants',
+        listMyScopeGrants_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyScopeGrantsRequest.fromBuffer(value),
+        ($0.ListMyScopeGrantsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GrantScopeRequest, $0.GrantScopeResponse>(
+        'GrantScope',
+        grantScope_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GrantScopeRequest.fromBuffer(value),
+        ($0.GrantScopeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeScopeRequest, $0.RevokeScopeResponse>(
+        'RevokeScope',
+        revokeScope_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RevokeScopeRequest.fromBuffer(value),
+        ($0.RevokeScopeResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.QueryResponse> query_Pre($grpc.ServiceCall $call, $async.Future<$0.QueryRequest> $request) async {
@@ -341,5 +387,23 @@ abstract class OracleServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.DeleteSemanticMemoryResponse> deleteSemanticMemory($grpc.ServiceCall call, $0.DeleteSemanticMemoryRequest request);
+
+  $async.Future<$0.ListMyScopeGrantsResponse> listMyScopeGrants_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyScopeGrantsRequest> $request) async {
+    return listMyScopeGrants($call, await $request);
+  }
+
+  $async.Future<$0.ListMyScopeGrantsResponse> listMyScopeGrants($grpc.ServiceCall call, $0.ListMyScopeGrantsRequest request);
+
+  $async.Future<$0.GrantScopeResponse> grantScope_Pre($grpc.ServiceCall $call, $async.Future<$0.GrantScopeRequest> $request) async {
+    return grantScope($call, await $request);
+  }
+
+  $async.Future<$0.GrantScopeResponse> grantScope($grpc.ServiceCall call, $0.GrantScopeRequest request);
+
+  $async.Future<$0.RevokeScopeResponse> revokeScope_Pre($grpc.ServiceCall $call, $async.Future<$0.RevokeScopeRequest> $request) async {
+    return revokeScope($call, await $request);
+  }
+
+  $async.Future<$0.RevokeScopeResponse> revokeScope($grpc.ServiceCall call, $0.RevokeScopeRequest request);
 
 }

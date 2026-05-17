@@ -60,6 +60,36 @@ message GetOracleStatsResponse {
   OracleStats stats = 1;
 }
 
+// === O13.4 — per-pillar scope grants ===
+
+// ScopeGrant records that the user has opted Oracle into reading
+// from a given pillar. Absent rows = "not granted" (the agent
+// layer must refuse to call the pillar's tools).
+message ScopeGrant {
+  string pillar = 1;
+  bool granted = 2;
+  int64 updated_unix = 3;
+}
+
+message ListMyScopeGrantsRequest {}
+message ListMyScopeGrantsResponse {
+  repeated ScopeGrant grants = 1; // includes ALL known pillars, granted true/false
+}
+
+message GrantScopeRequest {
+  string pillar = 1;
+}
+message GrantScopeResponse {
+  ScopeGrant grant = 1;
+}
+
+message RevokeScopeRequest {
+  string pillar = 1;
+}
+message RevokeScopeResponse {
+  ScopeGrant grant = 1; // returns the pillar with granted=false
+}
+
 // === O13.3 — memory store (episodic + semantic) ===
 
 message EpisodicMemory {
@@ -210,4 +240,9 @@ service OracleService {
   rpc UpsertSemanticMemory(UpsertSemanticMemoryRequest) returns (UpsertSemanticMemoryResponse);
   rpc ListMySemanticMemory(ListMySemanticMemoryRequest) returns (ListMySemanticMemoryResponse);
   rpc DeleteSemanticMemory(DeleteSemanticMemoryRequest) returns (DeleteSemanticMemoryResponse);
+
+  // O13.4 — per-pillar scope grants.
+  rpc ListMyScopeGrants(ListMyScopeGrantsRequest) returns (ListMyScopeGrantsResponse);
+  rpc GrantScope(GrantScopeRequest) returns (GrantScopeResponse);
+  rpc RevokeScope(RevokeScopeRequest) returns (RevokeScopeResponse);
 }

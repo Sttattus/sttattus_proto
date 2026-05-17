@@ -509,6 +509,325 @@ func (x *GetOracleStatsResponse) GetStats() *OracleStats {
 	return nil
 }
 
+// ScopeGrant records that the user has opted Oracle into reading
+// from a given pillar. Absent rows = "not granted" (the agent
+// layer must refuse to call the pillar's tools).
+type ScopeGrant struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Pillar        string                 `protobuf:"bytes,1,opt,name=pillar,proto3" json:"pillar,omitempty"`
+	Granted       bool                   `protobuf:"varint,2,opt,name=granted,proto3" json:"granted,omitempty"`
+	UpdatedUnix   int64                  `protobuf:"varint,3,opt,name=updated_unix,json=updatedUnix,proto3" json:"updated_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ScopeGrant) Reset() {
+	*x = ScopeGrant{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScopeGrant) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScopeGrant) ProtoMessage() {}
+
+func (x *ScopeGrant) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScopeGrant.ProtoReflect.Descriptor instead.
+func (*ScopeGrant) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *ScopeGrant) GetPillar() string {
+	if x != nil {
+		return x.Pillar
+	}
+	return ""
+}
+
+func (x *ScopeGrant) GetGranted() bool {
+	if x != nil {
+		return x.Granted
+	}
+	return false
+}
+
+func (x *ScopeGrant) GetUpdatedUnix() int64 {
+	if x != nil {
+		return x.UpdatedUnix
+	}
+	return 0
+}
+
+type ListMyScopeGrantsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyScopeGrantsRequest) Reset() {
+	*x = ListMyScopeGrantsRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyScopeGrantsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyScopeGrantsRequest) ProtoMessage() {}
+
+func (x *ListMyScopeGrantsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyScopeGrantsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyScopeGrantsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{8}
+}
+
+type ListMyScopeGrantsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Grants        []*ScopeGrant          `protobuf:"bytes,1,rep,name=grants,proto3" json:"grants,omitempty"` // includes ALL known pillars, granted true/false
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyScopeGrantsResponse) Reset() {
+	*x = ListMyScopeGrantsResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyScopeGrantsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyScopeGrantsResponse) ProtoMessage() {}
+
+func (x *ListMyScopeGrantsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyScopeGrantsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyScopeGrantsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *ListMyScopeGrantsResponse) GetGrants() []*ScopeGrant {
+	if x != nil {
+		return x.Grants
+	}
+	return nil
+}
+
+type GrantScopeRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Pillar        string                 `protobuf:"bytes,1,opt,name=pillar,proto3" json:"pillar,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GrantScopeRequest) Reset() {
+	*x = GrantScopeRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GrantScopeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GrantScopeRequest) ProtoMessage() {}
+
+func (x *GrantScopeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GrantScopeRequest.ProtoReflect.Descriptor instead.
+func (*GrantScopeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *GrantScopeRequest) GetPillar() string {
+	if x != nil {
+		return x.Pillar
+	}
+	return ""
+}
+
+type GrantScopeResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Grant         *ScopeGrant            `protobuf:"bytes,1,opt,name=grant,proto3" json:"grant,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GrantScopeResponse) Reset() {
+	*x = GrantScopeResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GrantScopeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GrantScopeResponse) ProtoMessage() {}
+
+func (x *GrantScopeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GrantScopeResponse.ProtoReflect.Descriptor instead.
+func (*GrantScopeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *GrantScopeResponse) GetGrant() *ScopeGrant {
+	if x != nil {
+		return x.Grant
+	}
+	return nil
+}
+
+type RevokeScopeRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Pillar        string                 `protobuf:"bytes,1,opt,name=pillar,proto3" json:"pillar,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeScopeRequest) Reset() {
+	*x = RevokeScopeRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeScopeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeScopeRequest) ProtoMessage() {}
+
+func (x *RevokeScopeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeScopeRequest.ProtoReflect.Descriptor instead.
+func (*RevokeScopeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *RevokeScopeRequest) GetPillar() string {
+	if x != nil {
+		return x.Pillar
+	}
+	return ""
+}
+
+type RevokeScopeResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Grant         *ScopeGrant            `protobuf:"bytes,1,opt,name=grant,proto3" json:"grant,omitempty"` // returns the pillar with granted=false
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeScopeResponse) Reset() {
+	*x = RevokeScopeResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeScopeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeScopeResponse) ProtoMessage() {}
+
+func (x *RevokeScopeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeScopeResponse.ProtoReflect.Descriptor instead.
+func (*RevokeScopeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *RevokeScopeResponse) GetGrant() *ScopeGrant {
+	if x != nil {
+		return x.Grant
+	}
+	return nil
+}
+
 type EpisodicMemory struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -521,7 +840,7 @@ type EpisodicMemory struct {
 
 func (x *EpisodicMemory) Reset() {
 	*x = EpisodicMemory{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[7]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -533,7 +852,7 @@ func (x *EpisodicMemory) String() string {
 func (*EpisodicMemory) ProtoMessage() {}
 
 func (x *EpisodicMemory) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[7]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -546,7 +865,7 @@ func (x *EpisodicMemory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EpisodicMemory.ProtoReflect.Descriptor instead.
 func (*EpisodicMemory) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{7}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *EpisodicMemory) GetId() string {
@@ -590,7 +909,7 @@ type SemanticMemory struct {
 
 func (x *SemanticMemory) Reset() {
 	*x = SemanticMemory{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[8]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -602,7 +921,7 @@ func (x *SemanticMemory) String() string {
 func (*SemanticMemory) ProtoMessage() {}
 
 func (x *SemanticMemory) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[8]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -615,7 +934,7 @@ func (x *SemanticMemory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SemanticMemory.ProtoReflect.Descriptor instead.
 func (*SemanticMemory) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{8}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *SemanticMemory) GetId() string {
@@ -664,7 +983,7 @@ type RecordEpisodicMemoryRequest struct {
 
 func (x *RecordEpisodicMemoryRequest) Reset() {
 	*x = RecordEpisodicMemoryRequest{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[9]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -676,7 +995,7 @@ func (x *RecordEpisodicMemoryRequest) String() string {
 func (*RecordEpisodicMemoryRequest) ProtoMessage() {}
 
 func (x *RecordEpisodicMemoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[9]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -689,7 +1008,7 @@ func (x *RecordEpisodicMemoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecordEpisodicMemoryRequest.ProtoReflect.Descriptor instead.
 func (*RecordEpisodicMemoryRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{9}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *RecordEpisodicMemoryRequest) GetSource() string {
@@ -722,7 +1041,7 @@ type RecordEpisodicMemoryResponse struct {
 
 func (x *RecordEpisodicMemoryResponse) Reset() {
 	*x = RecordEpisodicMemoryResponse{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[10]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -734,7 +1053,7 @@ func (x *RecordEpisodicMemoryResponse) String() string {
 func (*RecordEpisodicMemoryResponse) ProtoMessage() {}
 
 func (x *RecordEpisodicMemoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[10]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -747,7 +1066,7 @@ func (x *RecordEpisodicMemoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecordEpisodicMemoryResponse.ProtoReflect.Descriptor instead.
 func (*RecordEpisodicMemoryResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{10}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *RecordEpisodicMemoryResponse) GetMemory() *EpisodicMemory {
@@ -766,7 +1085,7 @@ type ListMyEpisodicMemoryRequest struct {
 
 func (x *ListMyEpisodicMemoryRequest) Reset() {
 	*x = ListMyEpisodicMemoryRequest{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[11]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -778,7 +1097,7 @@ func (x *ListMyEpisodicMemoryRequest) String() string {
 func (*ListMyEpisodicMemoryRequest) ProtoMessage() {}
 
 func (x *ListMyEpisodicMemoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[11]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -791,7 +1110,7 @@ func (x *ListMyEpisodicMemoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyEpisodicMemoryRequest.ProtoReflect.Descriptor instead.
 func (*ListMyEpisodicMemoryRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{11}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ListMyEpisodicMemoryRequest) GetLimit() int32 {
@@ -810,7 +1129,7 @@ type ListMyEpisodicMemoryResponse struct {
 
 func (x *ListMyEpisodicMemoryResponse) Reset() {
 	*x = ListMyEpisodicMemoryResponse{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[12]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -822,7 +1141,7 @@ func (x *ListMyEpisodicMemoryResponse) String() string {
 func (*ListMyEpisodicMemoryResponse) ProtoMessage() {}
 
 func (x *ListMyEpisodicMemoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[12]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -835,7 +1154,7 @@ func (x *ListMyEpisodicMemoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyEpisodicMemoryResponse.ProtoReflect.Descriptor instead.
 func (*ListMyEpisodicMemoryResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{12}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *ListMyEpisodicMemoryResponse) GetMemories() []*EpisodicMemory {
@@ -854,7 +1173,7 @@ type DeleteEpisodicMemoryRequest struct {
 
 func (x *DeleteEpisodicMemoryRequest) Reset() {
 	*x = DeleteEpisodicMemoryRequest{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[13]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -866,7 +1185,7 @@ func (x *DeleteEpisodicMemoryRequest) String() string {
 func (*DeleteEpisodicMemoryRequest) ProtoMessage() {}
 
 func (x *DeleteEpisodicMemoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[13]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -879,7 +1198,7 @@ func (x *DeleteEpisodicMemoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteEpisodicMemoryRequest.ProtoReflect.Descriptor instead.
 func (*DeleteEpisodicMemoryRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{13}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *DeleteEpisodicMemoryRequest) GetMemoryId() string {
@@ -897,7 +1216,7 @@ type DeleteEpisodicMemoryResponse struct {
 
 func (x *DeleteEpisodicMemoryResponse) Reset() {
 	*x = DeleteEpisodicMemoryResponse{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[14]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -909,7 +1228,7 @@ func (x *DeleteEpisodicMemoryResponse) String() string {
 func (*DeleteEpisodicMemoryResponse) ProtoMessage() {}
 
 func (x *DeleteEpisodicMemoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[14]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -922,7 +1241,7 @@ func (x *DeleteEpisodicMemoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteEpisodicMemoryResponse.ProtoReflect.Descriptor instead.
 func (*DeleteEpisodicMemoryResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{14}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{21}
 }
 
 type UpsertSemanticMemoryRequest struct {
@@ -936,7 +1255,7 @@ type UpsertSemanticMemoryRequest struct {
 
 func (x *UpsertSemanticMemoryRequest) Reset() {
 	*x = UpsertSemanticMemoryRequest{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[15]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -948,7 +1267,7 @@ func (x *UpsertSemanticMemoryRequest) String() string {
 func (*UpsertSemanticMemoryRequest) ProtoMessage() {}
 
 func (x *UpsertSemanticMemoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[15]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -961,7 +1280,7 @@ func (x *UpsertSemanticMemoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertSemanticMemoryRequest.ProtoReflect.Descriptor instead.
 func (*UpsertSemanticMemoryRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{15}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *UpsertSemanticMemoryRequest) GetKey() string {
@@ -994,7 +1313,7 @@ type UpsertSemanticMemoryResponse struct {
 
 func (x *UpsertSemanticMemoryResponse) Reset() {
 	*x = UpsertSemanticMemoryResponse{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[16]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1006,7 +1325,7 @@ func (x *UpsertSemanticMemoryResponse) String() string {
 func (*UpsertSemanticMemoryResponse) ProtoMessage() {}
 
 func (x *UpsertSemanticMemoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[16]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1019,7 +1338,7 @@ func (x *UpsertSemanticMemoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertSemanticMemoryResponse.ProtoReflect.Descriptor instead.
 func (*UpsertSemanticMemoryResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{16}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *UpsertSemanticMemoryResponse) GetMemory() *SemanticMemory {
@@ -1037,7 +1356,7 @@ type ListMySemanticMemoryRequest struct {
 
 func (x *ListMySemanticMemoryRequest) Reset() {
 	*x = ListMySemanticMemoryRequest{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[17]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1049,7 +1368,7 @@ func (x *ListMySemanticMemoryRequest) String() string {
 func (*ListMySemanticMemoryRequest) ProtoMessage() {}
 
 func (x *ListMySemanticMemoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[17]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1062,7 +1381,7 @@ func (x *ListMySemanticMemoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMySemanticMemoryRequest.ProtoReflect.Descriptor instead.
 func (*ListMySemanticMemoryRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{17}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{24}
 }
 
 type ListMySemanticMemoryResponse struct {
@@ -1074,7 +1393,7 @@ type ListMySemanticMemoryResponse struct {
 
 func (x *ListMySemanticMemoryResponse) Reset() {
 	*x = ListMySemanticMemoryResponse{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[18]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1086,7 +1405,7 @@ func (x *ListMySemanticMemoryResponse) String() string {
 func (*ListMySemanticMemoryResponse) ProtoMessage() {}
 
 func (x *ListMySemanticMemoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[18]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1099,7 +1418,7 @@ func (x *ListMySemanticMemoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMySemanticMemoryResponse.ProtoReflect.Descriptor instead.
 func (*ListMySemanticMemoryResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{18}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *ListMySemanticMemoryResponse) GetMemories() []*SemanticMemory {
@@ -1118,7 +1437,7 @@ type DeleteSemanticMemoryRequest struct {
 
 func (x *DeleteSemanticMemoryRequest) Reset() {
 	*x = DeleteSemanticMemoryRequest{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[19]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1130,7 +1449,7 @@ func (x *DeleteSemanticMemoryRequest) String() string {
 func (*DeleteSemanticMemoryRequest) ProtoMessage() {}
 
 func (x *DeleteSemanticMemoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[19]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1143,7 +1462,7 @@ func (x *DeleteSemanticMemoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteSemanticMemoryRequest.ProtoReflect.Descriptor instead.
 func (*DeleteSemanticMemoryRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{19}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *DeleteSemanticMemoryRequest) GetMemoryId() string {
@@ -1161,7 +1480,7 @@ type DeleteSemanticMemoryResponse struct {
 
 func (x *DeleteSemanticMemoryResponse) Reset() {
 	*x = DeleteSemanticMemoryResponse{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[20]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1173,7 +1492,7 @@ func (x *DeleteSemanticMemoryResponse) String() string {
 func (*DeleteSemanticMemoryResponse) ProtoMessage() {}
 
 func (x *DeleteSemanticMemoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[20]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1186,7 +1505,7 @@ func (x *DeleteSemanticMemoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteSemanticMemoryResponse.ProtoReflect.Descriptor instead.
 func (*DeleteSemanticMemoryResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{20}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{27}
 }
 
 type OracleThread struct {
@@ -1201,7 +1520,7 @@ type OracleThread struct {
 
 func (x *OracleThread) Reset() {
 	*x = OracleThread{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[21]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1213,7 +1532,7 @@ func (x *OracleThread) String() string {
 func (*OracleThread) ProtoMessage() {}
 
 func (x *OracleThread) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[21]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1226,7 +1545,7 @@ func (x *OracleThread) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OracleThread.ProtoReflect.Descriptor instead.
 func (*OracleThread) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{21}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *OracleThread) GetId() string {
@@ -1271,7 +1590,7 @@ type OracleThreadMessage struct {
 
 func (x *OracleThreadMessage) Reset() {
 	*x = OracleThreadMessage{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[22]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1283,7 +1602,7 @@ func (x *OracleThreadMessage) String() string {
 func (*OracleThreadMessage) ProtoMessage() {}
 
 func (x *OracleThreadMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[22]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1296,7 +1615,7 @@ func (x *OracleThreadMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OracleThreadMessage.ProtoReflect.Descriptor instead.
 func (*OracleThreadMessage) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{22}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *OracleThreadMessage) GetId() string {
@@ -1349,7 +1668,7 @@ type ListMyThreadsRequest struct {
 
 func (x *ListMyThreadsRequest) Reset() {
 	*x = ListMyThreadsRequest{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[23]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1361,7 +1680,7 @@ func (x *ListMyThreadsRequest) String() string {
 func (*ListMyThreadsRequest) ProtoMessage() {}
 
 func (x *ListMyThreadsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[23]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1374,7 +1693,7 @@ func (x *ListMyThreadsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyThreadsRequest.ProtoReflect.Descriptor instead.
 func (*ListMyThreadsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{23}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{30}
 }
 
 type ListMyThreadsResponse struct {
@@ -1386,7 +1705,7 @@ type ListMyThreadsResponse struct {
 
 func (x *ListMyThreadsResponse) Reset() {
 	*x = ListMyThreadsResponse{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[24]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1398,7 +1717,7 @@ func (x *ListMyThreadsResponse) String() string {
 func (*ListMyThreadsResponse) ProtoMessage() {}
 
 func (x *ListMyThreadsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[24]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1411,7 +1730,7 @@ func (x *ListMyThreadsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyThreadsResponse.ProtoReflect.Descriptor instead.
 func (*ListMyThreadsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{24}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *ListMyThreadsResponse) GetThreads() []*OracleThread {
@@ -1430,7 +1749,7 @@ type CreateThreadRequest struct {
 
 func (x *CreateThreadRequest) Reset() {
 	*x = CreateThreadRequest{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[25]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1442,7 +1761,7 @@ func (x *CreateThreadRequest) String() string {
 func (*CreateThreadRequest) ProtoMessage() {}
 
 func (x *CreateThreadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[25]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1455,7 +1774,7 @@ func (x *CreateThreadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateThreadRequest.ProtoReflect.Descriptor instead.
 func (*CreateThreadRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{25}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *CreateThreadRequest) GetTitle() string {
@@ -1474,7 +1793,7 @@ type CreateThreadResponse struct {
 
 func (x *CreateThreadResponse) Reset() {
 	*x = CreateThreadResponse{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[26]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1486,7 +1805,7 @@ func (x *CreateThreadResponse) String() string {
 func (*CreateThreadResponse) ProtoMessage() {}
 
 func (x *CreateThreadResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[26]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1499,7 +1818,7 @@ func (x *CreateThreadResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateThreadResponse.ProtoReflect.Descriptor instead.
 func (*CreateThreadResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{26}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *CreateThreadResponse) GetThread() *OracleThread {
@@ -1519,7 +1838,7 @@ type RenameThreadRequest struct {
 
 func (x *RenameThreadRequest) Reset() {
 	*x = RenameThreadRequest{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[27]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1531,7 +1850,7 @@ func (x *RenameThreadRequest) String() string {
 func (*RenameThreadRequest) ProtoMessage() {}
 
 func (x *RenameThreadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[27]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1544,7 +1863,7 @@ func (x *RenameThreadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RenameThreadRequest.ProtoReflect.Descriptor instead.
 func (*RenameThreadRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{27}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *RenameThreadRequest) GetThreadId() string {
@@ -1570,7 +1889,7 @@ type RenameThreadResponse struct {
 
 func (x *RenameThreadResponse) Reset() {
 	*x = RenameThreadResponse{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[28]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1582,7 +1901,7 @@ func (x *RenameThreadResponse) String() string {
 func (*RenameThreadResponse) ProtoMessage() {}
 
 func (x *RenameThreadResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[28]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1595,7 +1914,7 @@ func (x *RenameThreadResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RenameThreadResponse.ProtoReflect.Descriptor instead.
 func (*RenameThreadResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{28}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *RenameThreadResponse) GetThread() *OracleThread {
@@ -1614,7 +1933,7 @@ type DeleteThreadRequest struct {
 
 func (x *DeleteThreadRequest) Reset() {
 	*x = DeleteThreadRequest{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[29]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1626,7 +1945,7 @@ func (x *DeleteThreadRequest) String() string {
 func (*DeleteThreadRequest) ProtoMessage() {}
 
 func (x *DeleteThreadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[29]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1639,7 +1958,7 @@ func (x *DeleteThreadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteThreadRequest.ProtoReflect.Descriptor instead.
 func (*DeleteThreadRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{29}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *DeleteThreadRequest) GetThreadId() string {
@@ -1657,7 +1976,7 @@ type DeleteThreadResponse struct {
 
 func (x *DeleteThreadResponse) Reset() {
 	*x = DeleteThreadResponse{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[30]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1669,7 +1988,7 @@ func (x *DeleteThreadResponse) String() string {
 func (*DeleteThreadResponse) ProtoMessage() {}
 
 func (x *DeleteThreadResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[30]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1682,7 +2001,7 @@ func (x *DeleteThreadResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteThreadResponse.ProtoReflect.Descriptor instead.
 func (*DeleteThreadResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{30}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{37}
 }
 
 type ListThreadMessagesRequest struct {
@@ -1694,7 +2013,7 @@ type ListThreadMessagesRequest struct {
 
 func (x *ListThreadMessagesRequest) Reset() {
 	*x = ListThreadMessagesRequest{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[31]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1706,7 +2025,7 @@ func (x *ListThreadMessagesRequest) String() string {
 func (*ListThreadMessagesRequest) ProtoMessage() {}
 
 func (x *ListThreadMessagesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[31]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1719,7 +2038,7 @@ func (x *ListThreadMessagesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListThreadMessagesRequest.ProtoReflect.Descriptor instead.
 func (*ListThreadMessagesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{31}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *ListThreadMessagesRequest) GetThreadId() string {
@@ -1738,7 +2057,7 @@ type ListThreadMessagesResponse struct {
 
 func (x *ListThreadMessagesResponse) Reset() {
 	*x = ListThreadMessagesResponse{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[32]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1750,7 +2069,7 @@ func (x *ListThreadMessagesResponse) String() string {
 func (*ListThreadMessagesResponse) ProtoMessage() {}
 
 func (x *ListThreadMessagesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[32]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1763,7 +2082,7 @@ func (x *ListThreadMessagesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListThreadMessagesResponse.ProtoReflect.Descriptor instead.
 func (*ListThreadMessagesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{32}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *ListThreadMessagesResponse) GetMessages() []*OracleThreadMessage {
@@ -1789,7 +2108,7 @@ type StreamQueryRequest struct {
 
 func (x *StreamQueryRequest) Reset() {
 	*x = StreamQueryRequest{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[33]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1801,7 +2120,7 @@ func (x *StreamQueryRequest) String() string {
 func (*StreamQueryRequest) ProtoMessage() {}
 
 func (x *StreamQueryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[33]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1814,7 +2133,7 @@ func (x *StreamQueryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StreamQueryRequest.ProtoReflect.Descriptor instead.
 func (*StreamQueryRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{33}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *StreamQueryRequest) GetThreadId() string {
@@ -1851,7 +2170,7 @@ type StreamQueryChunk struct {
 
 func (x *StreamQueryChunk) Reset() {
 	*x = StreamQueryChunk{}
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[34]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1863,7 +2182,7 @@ func (x *StreamQueryChunk) String() string {
 func (*StreamQueryChunk) ProtoMessage() {}
 
 func (x *StreamQueryChunk) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[34]
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1876,7 +2195,7 @@ func (x *StreamQueryChunk) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StreamQueryChunk.ProtoReflect.Descriptor instead.
 func (*StreamQueryChunk) Descriptor() ([]byte, []int) {
-	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{34}
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *StreamQueryChunk) GetThreadId() string {
@@ -1951,7 +2270,23 @@ const file_sttattus_oracle_v1_oracle_proto_rawDesc = "" +
 	"\x15GetOracleStatsRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\"O\n" +
 	"\x16GetOracleStatsResponse\x125\n" +
-	"\x05stats\x18\x01 \x01(\v2\x1f.sttattus.oracle.v1.OracleStatsR\x05stats\"q\n" +
+	"\x05stats\x18\x01 \x01(\v2\x1f.sttattus.oracle.v1.OracleStatsR\x05stats\"a\n" +
+	"\n" +
+	"ScopeGrant\x12\x16\n" +
+	"\x06pillar\x18\x01 \x01(\tR\x06pillar\x12\x18\n" +
+	"\agranted\x18\x02 \x01(\bR\agranted\x12!\n" +
+	"\fupdated_unix\x18\x03 \x01(\x03R\vupdatedUnix\"\x1a\n" +
+	"\x18ListMyScopeGrantsRequest\"S\n" +
+	"\x19ListMyScopeGrantsResponse\x126\n" +
+	"\x06grants\x18\x01 \x03(\v2\x1e.sttattus.oracle.v1.ScopeGrantR\x06grants\"+\n" +
+	"\x11GrantScopeRequest\x12\x16\n" +
+	"\x06pillar\x18\x01 \x01(\tR\x06pillar\"J\n" +
+	"\x12GrantScopeResponse\x124\n" +
+	"\x05grant\x18\x01 \x01(\v2\x1e.sttattus.oracle.v1.ScopeGrantR\x05grant\",\n" +
+	"\x12RevokeScopeRequest\x12\x16\n" +
+	"\x06pillar\x18\x01 \x01(\tR\x06pillar\"K\n" +
+	"\x13RevokeScopeResponse\x124\n" +
+	"\x05grant\x18\x01 \x01(\v2\x1e.sttattus.oracle.v1.ScopeGrantR\x05grant\"q\n" +
 	"\x0eEpisodicMemory\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
 	"\x06source\x18\x02 \x01(\tR\x06source\x12\x12\n" +
@@ -2035,7 +2370,7 @@ const file_sttattus_oracle_v1_oracle_proto_rawDesc = "" +
 	"\x1cSTRATEGIC_DOMAIN_GEOPOLITICS\x10\x01\x12$\n" +
 	" STRATEGIC_DOMAIN_MACRO_ECONOMICS\x10\x02\x12\x1f\n" +
 	"\x1bSTRATEGIC_DOMAIN_BIO_ETHICS\x10\x03\x12(\n" +
-	"$STRATEGIC_DOMAIN_VENTURE_ENGINEERING\x10\x042\x8b\f\n" +
+	"$STRATEGIC_DOMAIN_VENTURE_ENGINEERING\x10\x042\xba\x0e\n" +
 	"\rOracleService\x12L\n" +
 	"\x05Query\x12 .sttattus.oracle.v1.QueryRequest\x1a!.sttattus.oracle.v1.QueryResponse\x12g\n" +
 	"\x0eGetOracleStats\x12).sttattus.oracle.v1.GetOracleStatsRequest\x1a*.sttattus.oracle.v1.GetOracleStatsResponse\x12d\n" +
@@ -2050,7 +2385,11 @@ const file_sttattus_oracle_v1_oracle_proto_rawDesc = "" +
 	"\x14DeleteEpisodicMemory\x12/.sttattus.oracle.v1.DeleteEpisodicMemoryRequest\x1a0.sttattus.oracle.v1.DeleteEpisodicMemoryResponse\x12y\n" +
 	"\x14UpsertSemanticMemory\x12/.sttattus.oracle.v1.UpsertSemanticMemoryRequest\x1a0.sttattus.oracle.v1.UpsertSemanticMemoryResponse\x12y\n" +
 	"\x14ListMySemanticMemory\x12/.sttattus.oracle.v1.ListMySemanticMemoryRequest\x1a0.sttattus.oracle.v1.ListMySemanticMemoryResponse\x12y\n" +
-	"\x14DeleteSemanticMemory\x12/.sttattus.oracle.v1.DeleteSemanticMemoryRequest\x1a0.sttattus.oracle.v1.DeleteSemanticMemoryResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/oracle/v1;oraclev1b\x06proto3"
+	"\x14DeleteSemanticMemory\x12/.sttattus.oracle.v1.DeleteSemanticMemoryRequest\x1a0.sttattus.oracle.v1.DeleteSemanticMemoryResponse\x12p\n" +
+	"\x11ListMyScopeGrants\x12,.sttattus.oracle.v1.ListMyScopeGrantsRequest\x1a-.sttattus.oracle.v1.ListMyScopeGrantsResponse\x12[\n" +
+	"\n" +
+	"GrantScope\x12%.sttattus.oracle.v1.GrantScopeRequest\x1a&.sttattus.oracle.v1.GrantScopeResponse\x12^\n" +
+	"\vRevokeScope\x12&.sttattus.oracle.v1.RevokeScopeRequest\x1a'.sttattus.oracle.v1.RevokeScopeResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/oracle/v1;oraclev1b\x06proto3"
 
 var (
 	file_sttattus_oracle_v1_oracle_proto_rawDescOnce sync.Once
@@ -2065,7 +2404,7 @@ func file_sttattus_oracle_v1_oracle_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_oracle_v1_oracle_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_sttattus_oracle_v1_oracle_proto_msgTypes = make([]protoimpl.MessageInfo, 36)
+var file_sttattus_oracle_v1_oracle_proto_msgTypes = make([]protoimpl.MessageInfo, 43)
 var file_sttattus_oracle_v1_oracle_proto_goTypes = []any{
 	(StrategicDomain)(0),                 // 0: sttattus.oracle.v1.StrategicDomain
 	(*DepthGrading)(nil),                 // 1: sttattus.oracle.v1.DepthGrading
@@ -2075,86 +2414,102 @@ var file_sttattus_oracle_v1_oracle_proto_goTypes = []any{
 	(*QueryResponse)(nil),                // 5: sttattus.oracle.v1.QueryResponse
 	(*GetOracleStatsRequest)(nil),        // 6: sttattus.oracle.v1.GetOracleStatsRequest
 	(*GetOracleStatsResponse)(nil),       // 7: sttattus.oracle.v1.GetOracleStatsResponse
-	(*EpisodicMemory)(nil),               // 8: sttattus.oracle.v1.EpisodicMemory
-	(*SemanticMemory)(nil),               // 9: sttattus.oracle.v1.SemanticMemory
-	(*RecordEpisodicMemoryRequest)(nil),  // 10: sttattus.oracle.v1.RecordEpisodicMemoryRequest
-	(*RecordEpisodicMemoryResponse)(nil), // 11: sttattus.oracle.v1.RecordEpisodicMemoryResponse
-	(*ListMyEpisodicMemoryRequest)(nil),  // 12: sttattus.oracle.v1.ListMyEpisodicMemoryRequest
-	(*ListMyEpisodicMemoryResponse)(nil), // 13: sttattus.oracle.v1.ListMyEpisodicMemoryResponse
-	(*DeleteEpisodicMemoryRequest)(nil),  // 14: sttattus.oracle.v1.DeleteEpisodicMemoryRequest
-	(*DeleteEpisodicMemoryResponse)(nil), // 15: sttattus.oracle.v1.DeleteEpisodicMemoryResponse
-	(*UpsertSemanticMemoryRequest)(nil),  // 16: sttattus.oracle.v1.UpsertSemanticMemoryRequest
-	(*UpsertSemanticMemoryResponse)(nil), // 17: sttattus.oracle.v1.UpsertSemanticMemoryResponse
-	(*ListMySemanticMemoryRequest)(nil),  // 18: sttattus.oracle.v1.ListMySemanticMemoryRequest
-	(*ListMySemanticMemoryResponse)(nil), // 19: sttattus.oracle.v1.ListMySemanticMemoryResponse
-	(*DeleteSemanticMemoryRequest)(nil),  // 20: sttattus.oracle.v1.DeleteSemanticMemoryRequest
-	(*DeleteSemanticMemoryResponse)(nil), // 21: sttattus.oracle.v1.DeleteSemanticMemoryResponse
-	(*OracleThread)(nil),                 // 22: sttattus.oracle.v1.OracleThread
-	(*OracleThreadMessage)(nil),          // 23: sttattus.oracle.v1.OracleThreadMessage
-	(*ListMyThreadsRequest)(nil),         // 24: sttattus.oracle.v1.ListMyThreadsRequest
-	(*ListMyThreadsResponse)(nil),        // 25: sttattus.oracle.v1.ListMyThreadsResponse
-	(*CreateThreadRequest)(nil),          // 26: sttattus.oracle.v1.CreateThreadRequest
-	(*CreateThreadResponse)(nil),         // 27: sttattus.oracle.v1.CreateThreadResponse
-	(*RenameThreadRequest)(nil),          // 28: sttattus.oracle.v1.RenameThreadRequest
-	(*RenameThreadResponse)(nil),         // 29: sttattus.oracle.v1.RenameThreadResponse
-	(*DeleteThreadRequest)(nil),          // 30: sttattus.oracle.v1.DeleteThreadRequest
-	(*DeleteThreadResponse)(nil),         // 31: sttattus.oracle.v1.DeleteThreadResponse
-	(*ListThreadMessagesRequest)(nil),    // 32: sttattus.oracle.v1.ListThreadMessagesRequest
-	(*ListThreadMessagesResponse)(nil),   // 33: sttattus.oracle.v1.ListThreadMessagesResponse
-	(*StreamQueryRequest)(nil),           // 34: sttattus.oracle.v1.StreamQueryRequest
-	(*StreamQueryChunk)(nil),             // 35: sttattus.oracle.v1.StreamQueryChunk
-	nil,                                  // 36: sttattus.oracle.v1.OracleStats.DomainMasteryEntry
-	(*timestamppb.Timestamp)(nil),        // 37: google.protobuf.Timestamp
+	(*ScopeGrant)(nil),                   // 8: sttattus.oracle.v1.ScopeGrant
+	(*ListMyScopeGrantsRequest)(nil),     // 9: sttattus.oracle.v1.ListMyScopeGrantsRequest
+	(*ListMyScopeGrantsResponse)(nil),    // 10: sttattus.oracle.v1.ListMyScopeGrantsResponse
+	(*GrantScopeRequest)(nil),            // 11: sttattus.oracle.v1.GrantScopeRequest
+	(*GrantScopeResponse)(nil),           // 12: sttattus.oracle.v1.GrantScopeResponse
+	(*RevokeScopeRequest)(nil),           // 13: sttattus.oracle.v1.RevokeScopeRequest
+	(*RevokeScopeResponse)(nil),          // 14: sttattus.oracle.v1.RevokeScopeResponse
+	(*EpisodicMemory)(nil),               // 15: sttattus.oracle.v1.EpisodicMemory
+	(*SemanticMemory)(nil),               // 16: sttattus.oracle.v1.SemanticMemory
+	(*RecordEpisodicMemoryRequest)(nil),  // 17: sttattus.oracle.v1.RecordEpisodicMemoryRequest
+	(*RecordEpisodicMemoryResponse)(nil), // 18: sttattus.oracle.v1.RecordEpisodicMemoryResponse
+	(*ListMyEpisodicMemoryRequest)(nil),  // 19: sttattus.oracle.v1.ListMyEpisodicMemoryRequest
+	(*ListMyEpisodicMemoryResponse)(nil), // 20: sttattus.oracle.v1.ListMyEpisodicMemoryResponse
+	(*DeleteEpisodicMemoryRequest)(nil),  // 21: sttattus.oracle.v1.DeleteEpisodicMemoryRequest
+	(*DeleteEpisodicMemoryResponse)(nil), // 22: sttattus.oracle.v1.DeleteEpisodicMemoryResponse
+	(*UpsertSemanticMemoryRequest)(nil),  // 23: sttattus.oracle.v1.UpsertSemanticMemoryRequest
+	(*UpsertSemanticMemoryResponse)(nil), // 24: sttattus.oracle.v1.UpsertSemanticMemoryResponse
+	(*ListMySemanticMemoryRequest)(nil),  // 25: sttattus.oracle.v1.ListMySemanticMemoryRequest
+	(*ListMySemanticMemoryResponse)(nil), // 26: sttattus.oracle.v1.ListMySemanticMemoryResponse
+	(*DeleteSemanticMemoryRequest)(nil),  // 27: sttattus.oracle.v1.DeleteSemanticMemoryRequest
+	(*DeleteSemanticMemoryResponse)(nil), // 28: sttattus.oracle.v1.DeleteSemanticMemoryResponse
+	(*OracleThread)(nil),                 // 29: sttattus.oracle.v1.OracleThread
+	(*OracleThreadMessage)(nil),          // 30: sttattus.oracle.v1.OracleThreadMessage
+	(*ListMyThreadsRequest)(nil),         // 31: sttattus.oracle.v1.ListMyThreadsRequest
+	(*ListMyThreadsResponse)(nil),        // 32: sttattus.oracle.v1.ListMyThreadsResponse
+	(*CreateThreadRequest)(nil),          // 33: sttattus.oracle.v1.CreateThreadRequest
+	(*CreateThreadResponse)(nil),         // 34: sttattus.oracle.v1.CreateThreadResponse
+	(*RenameThreadRequest)(nil),          // 35: sttattus.oracle.v1.RenameThreadRequest
+	(*RenameThreadResponse)(nil),         // 36: sttattus.oracle.v1.RenameThreadResponse
+	(*DeleteThreadRequest)(nil),          // 37: sttattus.oracle.v1.DeleteThreadRequest
+	(*DeleteThreadResponse)(nil),         // 38: sttattus.oracle.v1.DeleteThreadResponse
+	(*ListThreadMessagesRequest)(nil),    // 39: sttattus.oracle.v1.ListThreadMessagesRequest
+	(*ListThreadMessagesResponse)(nil),   // 40: sttattus.oracle.v1.ListThreadMessagesResponse
+	(*StreamQueryRequest)(nil),           // 41: sttattus.oracle.v1.StreamQueryRequest
+	(*StreamQueryChunk)(nil),             // 42: sttattus.oracle.v1.StreamQueryChunk
+	nil,                                  // 43: sttattus.oracle.v1.OracleStats.DomainMasteryEntry
+	(*timestamppb.Timestamp)(nil),        // 44: google.protobuf.Timestamp
 }
 var file_sttattus_oracle_v1_oracle_proto_depIdxs = []int32{
 	0,  // 0: sttattus.oracle.v1.StrategicInsight.domain:type_name -> sttattus.oracle.v1.StrategicDomain
 	1,  // 1: sttattus.oracle.v1.StrategicInsight.grading:type_name -> sttattus.oracle.v1.DepthGrading
-	37, // 2: sttattus.oracle.v1.StrategicInsight.discovered_at:type_name -> google.protobuf.Timestamp
-	36, // 3: sttattus.oracle.v1.OracleStats.domain_mastery:type_name -> sttattus.oracle.v1.OracleStats.DomainMasteryEntry
+	44, // 2: sttattus.oracle.v1.StrategicInsight.discovered_at:type_name -> google.protobuf.Timestamp
+	43, // 3: sttattus.oracle.v1.OracleStats.domain_mastery:type_name -> sttattus.oracle.v1.OracleStats.DomainMasteryEntry
 	2,  // 4: sttattus.oracle.v1.QueryResponse.insight:type_name -> sttattus.oracle.v1.StrategicInsight
 	3,  // 5: sttattus.oracle.v1.QueryResponse.stats:type_name -> sttattus.oracle.v1.OracleStats
 	3,  // 6: sttattus.oracle.v1.GetOracleStatsResponse.stats:type_name -> sttattus.oracle.v1.OracleStats
-	8,  // 7: sttattus.oracle.v1.RecordEpisodicMemoryResponse.memory:type_name -> sttattus.oracle.v1.EpisodicMemory
-	8,  // 8: sttattus.oracle.v1.ListMyEpisodicMemoryResponse.memories:type_name -> sttattus.oracle.v1.EpisodicMemory
-	9,  // 9: sttattus.oracle.v1.UpsertSemanticMemoryResponse.memory:type_name -> sttattus.oracle.v1.SemanticMemory
-	9,  // 10: sttattus.oracle.v1.ListMySemanticMemoryResponse.memories:type_name -> sttattus.oracle.v1.SemanticMemory
-	22, // 11: sttattus.oracle.v1.ListMyThreadsResponse.threads:type_name -> sttattus.oracle.v1.OracleThread
-	22, // 12: sttattus.oracle.v1.CreateThreadResponse.thread:type_name -> sttattus.oracle.v1.OracleThread
-	22, // 13: sttattus.oracle.v1.RenameThreadResponse.thread:type_name -> sttattus.oracle.v1.OracleThread
-	23, // 14: sttattus.oracle.v1.ListThreadMessagesResponse.messages:type_name -> sttattus.oracle.v1.OracleThreadMessage
-	4,  // 15: sttattus.oracle.v1.OracleService.Query:input_type -> sttattus.oracle.v1.QueryRequest
-	6,  // 16: sttattus.oracle.v1.OracleService.GetOracleStats:input_type -> sttattus.oracle.v1.GetOracleStatsRequest
-	24, // 17: sttattus.oracle.v1.OracleService.ListMyThreads:input_type -> sttattus.oracle.v1.ListMyThreadsRequest
-	26, // 18: sttattus.oracle.v1.OracleService.CreateThread:input_type -> sttattus.oracle.v1.CreateThreadRequest
-	28, // 19: sttattus.oracle.v1.OracleService.RenameThread:input_type -> sttattus.oracle.v1.RenameThreadRequest
-	30, // 20: sttattus.oracle.v1.OracleService.DeleteThread:input_type -> sttattus.oracle.v1.DeleteThreadRequest
-	32, // 21: sttattus.oracle.v1.OracleService.ListThreadMessages:input_type -> sttattus.oracle.v1.ListThreadMessagesRequest
-	34, // 22: sttattus.oracle.v1.OracleService.StreamQuery:input_type -> sttattus.oracle.v1.StreamQueryRequest
-	10, // 23: sttattus.oracle.v1.OracleService.RecordEpisodicMemory:input_type -> sttattus.oracle.v1.RecordEpisodicMemoryRequest
-	12, // 24: sttattus.oracle.v1.OracleService.ListMyEpisodicMemory:input_type -> sttattus.oracle.v1.ListMyEpisodicMemoryRequest
-	14, // 25: sttattus.oracle.v1.OracleService.DeleteEpisodicMemory:input_type -> sttattus.oracle.v1.DeleteEpisodicMemoryRequest
-	16, // 26: sttattus.oracle.v1.OracleService.UpsertSemanticMemory:input_type -> sttattus.oracle.v1.UpsertSemanticMemoryRequest
-	18, // 27: sttattus.oracle.v1.OracleService.ListMySemanticMemory:input_type -> sttattus.oracle.v1.ListMySemanticMemoryRequest
-	20, // 28: sttattus.oracle.v1.OracleService.DeleteSemanticMemory:input_type -> sttattus.oracle.v1.DeleteSemanticMemoryRequest
-	5,  // 29: sttattus.oracle.v1.OracleService.Query:output_type -> sttattus.oracle.v1.QueryResponse
-	7,  // 30: sttattus.oracle.v1.OracleService.GetOracleStats:output_type -> sttattus.oracle.v1.GetOracleStatsResponse
-	25, // 31: sttattus.oracle.v1.OracleService.ListMyThreads:output_type -> sttattus.oracle.v1.ListMyThreadsResponse
-	27, // 32: sttattus.oracle.v1.OracleService.CreateThread:output_type -> sttattus.oracle.v1.CreateThreadResponse
-	29, // 33: sttattus.oracle.v1.OracleService.RenameThread:output_type -> sttattus.oracle.v1.RenameThreadResponse
-	31, // 34: sttattus.oracle.v1.OracleService.DeleteThread:output_type -> sttattus.oracle.v1.DeleteThreadResponse
-	33, // 35: sttattus.oracle.v1.OracleService.ListThreadMessages:output_type -> sttattus.oracle.v1.ListThreadMessagesResponse
-	35, // 36: sttattus.oracle.v1.OracleService.StreamQuery:output_type -> sttattus.oracle.v1.StreamQueryChunk
-	11, // 37: sttattus.oracle.v1.OracleService.RecordEpisodicMemory:output_type -> sttattus.oracle.v1.RecordEpisodicMemoryResponse
-	13, // 38: sttattus.oracle.v1.OracleService.ListMyEpisodicMemory:output_type -> sttattus.oracle.v1.ListMyEpisodicMemoryResponse
-	15, // 39: sttattus.oracle.v1.OracleService.DeleteEpisodicMemory:output_type -> sttattus.oracle.v1.DeleteEpisodicMemoryResponse
-	17, // 40: sttattus.oracle.v1.OracleService.UpsertSemanticMemory:output_type -> sttattus.oracle.v1.UpsertSemanticMemoryResponse
-	19, // 41: sttattus.oracle.v1.OracleService.ListMySemanticMemory:output_type -> sttattus.oracle.v1.ListMySemanticMemoryResponse
-	21, // 42: sttattus.oracle.v1.OracleService.DeleteSemanticMemory:output_type -> sttattus.oracle.v1.DeleteSemanticMemoryResponse
-	29, // [29:43] is the sub-list for method output_type
-	15, // [15:29] is the sub-list for method input_type
-	15, // [15:15] is the sub-list for extension type_name
-	15, // [15:15] is the sub-list for extension extendee
-	0,  // [0:15] is the sub-list for field type_name
+	8,  // 7: sttattus.oracle.v1.ListMyScopeGrantsResponse.grants:type_name -> sttattus.oracle.v1.ScopeGrant
+	8,  // 8: sttattus.oracle.v1.GrantScopeResponse.grant:type_name -> sttattus.oracle.v1.ScopeGrant
+	8,  // 9: sttattus.oracle.v1.RevokeScopeResponse.grant:type_name -> sttattus.oracle.v1.ScopeGrant
+	15, // 10: sttattus.oracle.v1.RecordEpisodicMemoryResponse.memory:type_name -> sttattus.oracle.v1.EpisodicMemory
+	15, // 11: sttattus.oracle.v1.ListMyEpisodicMemoryResponse.memories:type_name -> sttattus.oracle.v1.EpisodicMemory
+	16, // 12: sttattus.oracle.v1.UpsertSemanticMemoryResponse.memory:type_name -> sttattus.oracle.v1.SemanticMemory
+	16, // 13: sttattus.oracle.v1.ListMySemanticMemoryResponse.memories:type_name -> sttattus.oracle.v1.SemanticMemory
+	29, // 14: sttattus.oracle.v1.ListMyThreadsResponse.threads:type_name -> sttattus.oracle.v1.OracleThread
+	29, // 15: sttattus.oracle.v1.CreateThreadResponse.thread:type_name -> sttattus.oracle.v1.OracleThread
+	29, // 16: sttattus.oracle.v1.RenameThreadResponse.thread:type_name -> sttattus.oracle.v1.OracleThread
+	30, // 17: sttattus.oracle.v1.ListThreadMessagesResponse.messages:type_name -> sttattus.oracle.v1.OracleThreadMessage
+	4,  // 18: sttattus.oracle.v1.OracleService.Query:input_type -> sttattus.oracle.v1.QueryRequest
+	6,  // 19: sttattus.oracle.v1.OracleService.GetOracleStats:input_type -> sttattus.oracle.v1.GetOracleStatsRequest
+	31, // 20: sttattus.oracle.v1.OracleService.ListMyThreads:input_type -> sttattus.oracle.v1.ListMyThreadsRequest
+	33, // 21: sttattus.oracle.v1.OracleService.CreateThread:input_type -> sttattus.oracle.v1.CreateThreadRequest
+	35, // 22: sttattus.oracle.v1.OracleService.RenameThread:input_type -> sttattus.oracle.v1.RenameThreadRequest
+	37, // 23: sttattus.oracle.v1.OracleService.DeleteThread:input_type -> sttattus.oracle.v1.DeleteThreadRequest
+	39, // 24: sttattus.oracle.v1.OracleService.ListThreadMessages:input_type -> sttattus.oracle.v1.ListThreadMessagesRequest
+	41, // 25: sttattus.oracle.v1.OracleService.StreamQuery:input_type -> sttattus.oracle.v1.StreamQueryRequest
+	17, // 26: sttattus.oracle.v1.OracleService.RecordEpisodicMemory:input_type -> sttattus.oracle.v1.RecordEpisodicMemoryRequest
+	19, // 27: sttattus.oracle.v1.OracleService.ListMyEpisodicMemory:input_type -> sttattus.oracle.v1.ListMyEpisodicMemoryRequest
+	21, // 28: sttattus.oracle.v1.OracleService.DeleteEpisodicMemory:input_type -> sttattus.oracle.v1.DeleteEpisodicMemoryRequest
+	23, // 29: sttattus.oracle.v1.OracleService.UpsertSemanticMemory:input_type -> sttattus.oracle.v1.UpsertSemanticMemoryRequest
+	25, // 30: sttattus.oracle.v1.OracleService.ListMySemanticMemory:input_type -> sttattus.oracle.v1.ListMySemanticMemoryRequest
+	27, // 31: sttattus.oracle.v1.OracleService.DeleteSemanticMemory:input_type -> sttattus.oracle.v1.DeleteSemanticMemoryRequest
+	9,  // 32: sttattus.oracle.v1.OracleService.ListMyScopeGrants:input_type -> sttattus.oracle.v1.ListMyScopeGrantsRequest
+	11, // 33: sttattus.oracle.v1.OracleService.GrantScope:input_type -> sttattus.oracle.v1.GrantScopeRequest
+	13, // 34: sttattus.oracle.v1.OracleService.RevokeScope:input_type -> sttattus.oracle.v1.RevokeScopeRequest
+	5,  // 35: sttattus.oracle.v1.OracleService.Query:output_type -> sttattus.oracle.v1.QueryResponse
+	7,  // 36: sttattus.oracle.v1.OracleService.GetOracleStats:output_type -> sttattus.oracle.v1.GetOracleStatsResponse
+	32, // 37: sttattus.oracle.v1.OracleService.ListMyThreads:output_type -> sttattus.oracle.v1.ListMyThreadsResponse
+	34, // 38: sttattus.oracle.v1.OracleService.CreateThread:output_type -> sttattus.oracle.v1.CreateThreadResponse
+	36, // 39: sttattus.oracle.v1.OracleService.RenameThread:output_type -> sttattus.oracle.v1.RenameThreadResponse
+	38, // 40: sttattus.oracle.v1.OracleService.DeleteThread:output_type -> sttattus.oracle.v1.DeleteThreadResponse
+	40, // 41: sttattus.oracle.v1.OracleService.ListThreadMessages:output_type -> sttattus.oracle.v1.ListThreadMessagesResponse
+	42, // 42: sttattus.oracle.v1.OracleService.StreamQuery:output_type -> sttattus.oracle.v1.StreamQueryChunk
+	18, // 43: sttattus.oracle.v1.OracleService.RecordEpisodicMemory:output_type -> sttattus.oracle.v1.RecordEpisodicMemoryResponse
+	20, // 44: sttattus.oracle.v1.OracleService.ListMyEpisodicMemory:output_type -> sttattus.oracle.v1.ListMyEpisodicMemoryResponse
+	22, // 45: sttattus.oracle.v1.OracleService.DeleteEpisodicMemory:output_type -> sttattus.oracle.v1.DeleteEpisodicMemoryResponse
+	24, // 46: sttattus.oracle.v1.OracleService.UpsertSemanticMemory:output_type -> sttattus.oracle.v1.UpsertSemanticMemoryResponse
+	26, // 47: sttattus.oracle.v1.OracleService.ListMySemanticMemory:output_type -> sttattus.oracle.v1.ListMySemanticMemoryResponse
+	28, // 48: sttattus.oracle.v1.OracleService.DeleteSemanticMemory:output_type -> sttattus.oracle.v1.DeleteSemanticMemoryResponse
+	10, // 49: sttattus.oracle.v1.OracleService.ListMyScopeGrants:output_type -> sttattus.oracle.v1.ListMyScopeGrantsResponse
+	12, // 50: sttattus.oracle.v1.OracleService.GrantScope:output_type -> sttattus.oracle.v1.GrantScopeResponse
+	14, // 51: sttattus.oracle.v1.OracleService.RevokeScope:output_type -> sttattus.oracle.v1.RevokeScopeResponse
+	35, // [35:52] is the sub-list for method output_type
+	18, // [18:35] is the sub-list for method input_type
+	18, // [18:18] is the sub-list for extension type_name
+	18, // [18:18] is the sub-list for extension extendee
+	0,  // [0:18] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_oracle_v1_oracle_proto_init() }
@@ -2168,7 +2523,7 @@ func file_sttattus_oracle_v1_oracle_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_oracle_v1_oracle_proto_rawDesc), len(file_sttattus_oracle_v1_oracle_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   36,
+			NumMessages:   43,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

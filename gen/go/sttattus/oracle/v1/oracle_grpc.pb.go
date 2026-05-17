@@ -33,6 +33,9 @@ const (
 	OracleService_UpsertSemanticMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/UpsertSemanticMemory"
 	OracleService_ListMySemanticMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/ListMySemanticMemory"
 	OracleService_DeleteSemanticMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/DeleteSemanticMemory"
+	OracleService_ListMyScopeGrants_FullMethodName    = "/sttattus.oracle.v1.OracleService/ListMyScopeGrants"
+	OracleService_GrantScope_FullMethodName           = "/sttattus.oracle.v1.OracleService/GrantScope"
+	OracleService_RevokeScope_FullMethodName          = "/sttattus.oracle.v1.OracleService/RevokeScope"
 )
 
 // OracleServiceClient is the client API for OracleService service.
@@ -58,6 +61,10 @@ type OracleServiceClient interface {
 	UpsertSemanticMemory(ctx context.Context, in *UpsertSemanticMemoryRequest, opts ...grpc.CallOption) (*UpsertSemanticMemoryResponse, error)
 	ListMySemanticMemory(ctx context.Context, in *ListMySemanticMemoryRequest, opts ...grpc.CallOption) (*ListMySemanticMemoryResponse, error)
 	DeleteSemanticMemory(ctx context.Context, in *DeleteSemanticMemoryRequest, opts ...grpc.CallOption) (*DeleteSemanticMemoryResponse, error)
+	// O13.4 — per-pillar scope grants.
+	ListMyScopeGrants(ctx context.Context, in *ListMyScopeGrantsRequest, opts ...grpc.CallOption) (*ListMyScopeGrantsResponse, error)
+	GrantScope(ctx context.Context, in *GrantScopeRequest, opts ...grpc.CallOption) (*GrantScopeResponse, error)
+	RevokeScope(ctx context.Context, in *RevokeScopeRequest, opts ...grpc.CallOption) (*RevokeScopeResponse, error)
 }
 
 type oracleServiceClient struct {
@@ -217,6 +224,36 @@ func (c *oracleServiceClient) DeleteSemanticMemory(ctx context.Context, in *Dele
 	return out, nil
 }
 
+func (c *oracleServiceClient) ListMyScopeGrants(ctx context.Context, in *ListMyScopeGrantsRequest, opts ...grpc.CallOption) (*ListMyScopeGrantsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyScopeGrantsResponse)
+	err := c.cc.Invoke(ctx, OracleService_ListMyScopeGrants_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GrantScope(ctx context.Context, in *GrantScopeRequest, opts ...grpc.CallOption) (*GrantScopeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GrantScopeResponse)
+	err := c.cc.Invoke(ctx, OracleService_GrantScope_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) RevokeScope(ctx context.Context, in *RevokeScopeRequest, opts ...grpc.CallOption) (*RevokeScopeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeScopeResponse)
+	err := c.cc.Invoke(ctx, OracleService_RevokeScope_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OracleServiceServer is the server API for OracleService service.
 // All implementations must embed UnimplementedOracleServiceServer
 // for forward compatibility.
@@ -240,6 +277,10 @@ type OracleServiceServer interface {
 	UpsertSemanticMemory(context.Context, *UpsertSemanticMemoryRequest) (*UpsertSemanticMemoryResponse, error)
 	ListMySemanticMemory(context.Context, *ListMySemanticMemoryRequest) (*ListMySemanticMemoryResponse, error)
 	DeleteSemanticMemory(context.Context, *DeleteSemanticMemoryRequest) (*DeleteSemanticMemoryResponse, error)
+	// O13.4 — per-pillar scope grants.
+	ListMyScopeGrants(context.Context, *ListMyScopeGrantsRequest) (*ListMyScopeGrantsResponse, error)
+	GrantScope(context.Context, *GrantScopeRequest) (*GrantScopeResponse, error)
+	RevokeScope(context.Context, *RevokeScopeRequest) (*RevokeScopeResponse, error)
 	mustEmbedUnimplementedOracleServiceServer()
 }
 
@@ -291,6 +332,15 @@ func (UnimplementedOracleServiceServer) ListMySemanticMemory(context.Context, *L
 }
 func (UnimplementedOracleServiceServer) DeleteSemanticMemory(context.Context, *DeleteSemanticMemoryRequest) (*DeleteSemanticMemoryResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method DeleteSemanticMemory not implemented")
+}
+func (UnimplementedOracleServiceServer) ListMyScopeGrants(context.Context, *ListMyScopeGrantsRequest) (*ListMyScopeGrantsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyScopeGrants not implemented")
+}
+func (UnimplementedOracleServiceServer) GrantScope(context.Context, *GrantScopeRequest) (*GrantScopeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GrantScope not implemented")
+}
+func (UnimplementedOracleServiceServer) RevokeScope(context.Context, *RevokeScopeRequest) (*RevokeScopeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeScope not implemented")
 }
 func (UnimplementedOracleServiceServer) mustEmbedUnimplementedOracleServiceServer() {}
 func (UnimplementedOracleServiceServer) testEmbeddedByValue()                       {}
@@ -558,6 +608,60 @@ func _OracleService_DeleteSemanticMemory_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OracleService_ListMyScopeGrants_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyScopeGrantsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ListMyScopeGrants(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ListMyScopeGrants_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ListMyScopeGrants(ctx, req.(*ListMyScopeGrantsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GrantScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GrantScopeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GrantScope(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GrantScope_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GrantScope(ctx, req.(*GrantScopeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_RevokeScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeScopeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).RevokeScope(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_RevokeScope_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).RevokeScope(ctx, req.(*RevokeScopeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OracleService_ServiceDesc is the grpc.ServiceDesc for OracleService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -616,6 +720,18 @@ var OracleService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteSemanticMemory",
 			Handler:    _OracleService_DeleteSemanticMemory_Handler,
+		},
+		{
+			MethodName: "ListMyScopeGrants",
+			Handler:    _OracleService_ListMyScopeGrants_Handler,
+		},
+		{
+			MethodName: "GrantScope",
+			Handler:    _OracleService_GrantScope_Handler,
+		},
+		{
+			MethodName: "RevokeScope",
+			Handler:    _OracleService_RevokeScope_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

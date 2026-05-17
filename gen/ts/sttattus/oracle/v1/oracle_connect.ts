@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateThreadRequest, CreateThreadResponse, DeleteEpisodicMemoryRequest, DeleteEpisodicMemoryResponse, DeleteSemanticMemoryRequest, DeleteSemanticMemoryResponse, DeleteThreadRequest, DeleteThreadResponse, GetOracleStatsRequest, GetOracleStatsResponse, ListMyEpisodicMemoryRequest, ListMyEpisodicMemoryResponse, ListMySemanticMemoryRequest, ListMySemanticMemoryResponse, ListMyThreadsRequest, ListMyThreadsResponse, ListThreadMessagesRequest, ListThreadMessagesResponse, QueryRequest, QueryResponse, RecordEpisodicMemoryRequest, RecordEpisodicMemoryResponse, RenameThreadRequest, RenameThreadResponse, StreamQueryChunk, StreamQueryRequest, UpsertSemanticMemoryRequest, UpsertSemanticMemoryResponse } from "./oracle_pb.js";
+import { CreateThreadRequest, CreateThreadResponse, DeleteEpisodicMemoryRequest, DeleteEpisodicMemoryResponse, DeleteSemanticMemoryRequest, DeleteSemanticMemoryResponse, DeleteThreadRequest, DeleteThreadResponse, GetOracleStatsRequest, GetOracleStatsResponse, GrantScopeRequest, GrantScopeResponse, ListMyEpisodicMemoryRequest, ListMyEpisodicMemoryResponse, ListMyScopeGrantsRequest, ListMyScopeGrantsResponse, ListMySemanticMemoryRequest, ListMySemanticMemoryResponse, ListMyThreadsRequest, ListMyThreadsResponse, ListThreadMessagesRequest, ListThreadMessagesResponse, QueryRequest, QueryResponse, RecordEpisodicMemoryRequest, RecordEpisodicMemoryResponse, RenameThreadRequest, RenameThreadResponse, RevokeScopeRequest, RevokeScopeResponse, StreamQueryChunk, StreamQueryRequest, UpsertSemanticMemoryRequest, UpsertSemanticMemoryResponse } from "./oracle_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -146,6 +146,35 @@ export const OracleService = {
       name: "DeleteSemanticMemory",
       I: DeleteSemanticMemoryRequest,
       O: DeleteSemanticMemoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * O13.4 — per-pillar scope grants.
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.ListMyScopeGrants
+     */
+    listMyScopeGrants: {
+      name: "ListMyScopeGrants",
+      I: ListMyScopeGrantsRequest,
+      O: ListMyScopeGrantsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.GrantScope
+     */
+    grantScope: {
+      name: "GrantScope",
+      I: GrantScopeRequest,
+      O: GrantScopeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.RevokeScope
+     */
+    revokeScope: {
+      name: "RevokeScope",
+      I: RevokeScopeRequest,
+      O: RevokeScopeResponse,
       kind: MethodKind.Unary,
     },
   }
