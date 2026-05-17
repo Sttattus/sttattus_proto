@@ -26,13 +26,18 @@ enum VerificationStatus {
 message Property {
   string id = 1;
   string name = 2;
-  string location_lat_lng = 3;
+  string location_lat_lng = 3; // legacy text label (kept for back-compat)
   string city = 4;
   string region_code = 5; // e.g., 'FR', 'AE', 'US-NY'
   EstateCategory category = 6;
   double valuation_usd = 7;
   VerificationStatus status = 8;
   google.protobuf.Timestamp acquired_at = 9;
+  // D14.2 — typed geo for the map. coords_present = false means the
+  // pin layer must drop this row honestly instead of using 0,0.
+  bool coords_present = 10;
+  double latitude = 11;
+  double longitude = 12;
 }
 
 message DominionStats {

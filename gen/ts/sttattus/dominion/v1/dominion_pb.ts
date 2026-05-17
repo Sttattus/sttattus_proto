@@ -95,6 +95,8 @@ export class Property extends Message<Property> {
   name = "";
 
   /**
+   * legacy text label (kept for back-compat)
+   *
    * @generated from field: string location_lat_lng = 3;
    */
   locationLatLng = "";
@@ -131,6 +133,24 @@ export class Property extends Message<Property> {
    */
   acquiredAt?: Timestamp;
 
+  /**
+   * D14.2 — typed geo for the map. coords_present = false means the
+   * pin layer must drop this row honestly instead of using 0,0.
+   *
+   * @generated from field: bool coords_present = 10;
+   */
+  coordsPresent = false;
+
+  /**
+   * @generated from field: double latitude = 11;
+   */
+  latitude = 0;
+
+  /**
+   * @generated from field: double longitude = 12;
+   */
+  longitude = 0;
+
   constructor(data?: PartialMessage<Property>) {
     super();
     proto3.util.initPartial(data, this);
@@ -148,6 +168,9 @@ export class Property extends Message<Property> {
     { no: 7, name: "valuation_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 8, name: "status", kind: "enum", T: proto3.getEnumType(VerificationStatus) },
     { no: 9, name: "acquired_at", kind: "message", T: Timestamp },
+    { no: 10, name: "coords_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "latitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 12, name: "longitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Property {

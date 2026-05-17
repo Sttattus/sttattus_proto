@@ -33,6 +33,9 @@ class Property extends $pb.GeneratedMessage {
     $core.double? valuationUsd,
     VerificationStatus? status,
     $1.Timestamp? acquiredAt,
+    $core.bool? coordsPresent,
+    $core.double? latitude,
+    $core.double? longitude,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -44,6 +47,9 @@ class Property extends $pb.GeneratedMessage {
     if (valuationUsd != null) result.valuationUsd = valuationUsd;
     if (status != null) result.status = status;
     if (acquiredAt != null) result.acquiredAt = acquiredAt;
+    if (coordsPresent != null) result.coordsPresent = coordsPresent;
+    if (latitude != null) result.latitude = latitude;
+    if (longitude != null) result.longitude = longitude;
     return result;
   }
 
@@ -62,6 +68,9 @@ class Property extends $pb.GeneratedMessage {
     ..a<$core.double>(7, _omitFieldNames ? '' : 'valuationUsd', $pb.PbFieldType.OD)
     ..e<VerificationStatus>(8, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: VerificationStatus.VERIFICATION_STATUS_UNSPECIFIED, valueOf: VerificationStatus.valueOf, enumValues: VerificationStatus.values)
     ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'acquiredAt', subBuilder: $1.Timestamp.create)
+    ..aOB(10, _omitFieldNames ? '' : 'coordsPresent')
+    ..a<$core.double>(11, _omitFieldNames ? '' : 'latitude', $pb.PbFieldType.OD)
+    ..a<$core.double>(12, _omitFieldNames ? '' : 'longitude', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -164,6 +173,35 @@ class Property extends $pb.GeneratedMessage {
   void clearAcquiredAt() => $_clearField(9);
   @$pb.TagNumber(9)
   $1.Timestamp ensureAcquiredAt() => $_ensure(8);
+
+  /// D14.2 — typed geo for the map. coords_present = false means the
+  /// pin layer must drop this row honestly instead of using 0,0.
+  @$pb.TagNumber(10)
+  $core.bool get coordsPresent => $_getBF(9);
+  @$pb.TagNumber(10)
+  set coordsPresent($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCoordsPresent() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCoordsPresent() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.double get latitude => $_getN(10);
+  @$pb.TagNumber(11)
+  set latitude($core.double value) => $_setDouble(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasLatitude() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearLatitude() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.double get longitude => $_getN(11);
+  @$pb.TagNumber(12)
+  set longitude($core.double value) => $_setDouble(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasLongitude() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearLongitude() => $_clearField(12);
 }
 
 class DominionStats extends $pb.GeneratedMessage {

@@ -135,15 +135,20 @@ type Property struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name           string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	LocationLatLng string                 `protobuf:"bytes,3,opt,name=location_lat_lng,json=locationLatLng,proto3" json:"location_lat_lng,omitempty"`
+	LocationLatLng string                 `protobuf:"bytes,3,opt,name=location_lat_lng,json=locationLatLng,proto3" json:"location_lat_lng,omitempty"` // legacy text label (kept for back-compat)
 	City           string                 `protobuf:"bytes,4,opt,name=city,proto3" json:"city,omitempty"`
 	RegionCode     string                 `protobuf:"bytes,5,opt,name=region_code,json=regionCode,proto3" json:"region_code,omitempty"` // e.g., 'FR', 'AE', 'US-NY'
 	Category       EstateCategory         `protobuf:"varint,6,opt,name=category,proto3,enum=sttattus.dominion.v1.EstateCategory" json:"category,omitempty"`
 	ValuationUsd   float64                `protobuf:"fixed64,7,opt,name=valuation_usd,json=valuationUsd,proto3" json:"valuation_usd,omitempty"`
 	Status         VerificationStatus     `protobuf:"varint,8,opt,name=status,proto3,enum=sttattus.dominion.v1.VerificationStatus" json:"status,omitempty"`
 	AcquiredAt     *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=acquired_at,json=acquiredAt,proto3" json:"acquired_at,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	// D14.2 — typed geo for the map. coords_present = false means the
+	// pin layer must drop this row honestly instead of using 0,0.
+	CoordsPresent bool    `protobuf:"varint,10,opt,name=coords_present,json=coordsPresent,proto3" json:"coords_present,omitempty"`
+	Latitude      float64 `protobuf:"fixed64,11,opt,name=latitude,proto3" json:"latitude,omitempty"`
+	Longitude     float64 `protobuf:"fixed64,12,opt,name=longitude,proto3" json:"longitude,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Property) Reset() {
@@ -237,6 +242,27 @@ func (x *Property) GetAcquiredAt() *timestamppb.Timestamp {
 		return x.AcquiredAt
 	}
 	return nil
+}
+
+func (x *Property) GetCoordsPresent() bool {
+	if x != nil {
+		return x.CoordsPresent
+	}
+	return false
+}
+
+func (x *Property) GetLatitude() float64 {
+	if x != nil {
+		return x.Latitude
+	}
+	return 0
+}
+
+func (x *Property) GetLongitude() float64 {
+	if x != nil {
+		return x.Longitude
+	}
+	return 0
 }
 
 type DominionStats struct {
@@ -688,7 +714,7 @@ var File_sttattus_dominion_v1_dominion_proto protoreflect.FileDescriptor
 
 const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\n" +
-	"#sttattus/dominion/v1/dominion.proto\x12\x14sttattus.dominion.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf3\x02\n" +
+	"#sttattus/dominion/v1/dominion.proto\x12\x14sttattus.dominion.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd4\x03\n" +
 	"\bProperty\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12(\n" +
@@ -700,7 +726,11 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\rvaluation_usd\x18\a \x01(\x01R\fvaluationUsd\x12@\n" +
 	"\x06status\x18\b \x01(\x0e2(.sttattus.dominion.v1.VerificationStatusR\x06status\x12;\n" +
 	"\vacquired_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"acquiredAt\"\xdc\x01\n" +
+	"acquiredAt\x12%\n" +
+	"\x0ecoords_present\x18\n" +
+	" \x01(\bR\rcoordsPresent\x12\x1a\n" +
+	"\blatitude\x18\v \x01(\x01R\blatitude\x12\x1c\n" +
+	"\tlongitude\x18\f \x01(\x01R\tlongitude\"\xdc\x01\n" +
 	"\rDominionStats\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12#\n" +
 	"\rdominion_rank\x18\x02 \x01(\x01R\fdominionRank\x12\x1d\n" +

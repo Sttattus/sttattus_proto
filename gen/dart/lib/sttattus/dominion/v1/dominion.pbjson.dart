@@ -63,6 +63,9 @@ const Property$json = {
     {'1': 'valuation_usd', '3': 7, '4': 1, '5': 1, '10': 'valuationUsd'},
     {'1': 'status', '3': 8, '4': 1, '5': 14, '6': '.sttattus.dominion.v1.VerificationStatus', '10': 'status'},
     {'1': 'acquired_at', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'acquiredAt'},
+    {'1': 'coords_present', '3': 10, '4': 1, '5': 8, '10': 'coordsPresent'},
+    {'1': 'latitude', '3': 11, '4': 1, '5': 1, '10': 'latitude'},
+    {'1': 'longitude', '3': 12, '4': 1, '5': 1, '10': 'longitude'},
   ],
 };
 
@@ -74,7 +77,9 @@ final $typed_data.Uint8List propertyDescriptor = $convert.base64Decode(
     'R0dXMuZG9taW5pb24udjEuRXN0YXRlQ2F0ZWdvcnlSCGNhdGVnb3J5EiMKDXZhbHVhdGlvbl91'
     'c2QYByABKAFSDHZhbHVhdGlvblVzZBJACgZzdGF0dXMYCCABKA4yKC5zdHRhdHR1cy5kb21pbm'
     'lvbi52MS5WZXJpZmljYXRpb25TdGF0dXNSBnN0YXR1cxI7CgthY3F1aXJlZF9hdBgJIAEoCzIa'
-    'Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCmFjcXVpcmVkQXQ=');
+    'Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCmFjcXVpcmVkQXQSJQoOY29vcmRzX3ByZXNlbn'
+    'QYCiABKAhSDWNvb3Jkc1ByZXNlbnQSGgoIbGF0aXR1ZGUYCyABKAFSCGxhdGl0dWRlEhwKCWxv'
+    'bmdpdHVkZRgMIAEoAVIJbG9uZ2l0dWRl');
 
 @$core.Deprecated('Use dominionStatsDescriptor instead')
 const DominionStats$json = {
