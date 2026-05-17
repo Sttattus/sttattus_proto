@@ -70,6 +70,33 @@ message ListAssetsResponse {
   repeated LegalAsset assets = 1;
 }
 
+// === L15.6 — version history ===
+
+message AssetVersion {
+  string id = 1;
+  string asset_id = 2;
+  int32 version_no = 3;
+  string snapshot_json = 4;
+  string change_note = 5;
+  int64 created_at_unix = 6;
+}
+
+message RecordAssetVersionRequest {
+  string asset_id = 1;
+  string snapshot_json = 2;
+  string change_note = 3;
+}
+message RecordAssetVersionResponse {
+  AssetVersion version = 1;
+}
+
+message ListAssetVersionsRequest {
+  string asset_id = 1;
+}
+message ListAssetVersionsResponse {
+  repeated AssetVersion versions = 1;
+}
+
 // === L15.5 — document taxonomy ===
 
 message LegacyCategory {
@@ -204,4 +231,8 @@ service LegacyService {
   rpc AssignAssetCategory(AssignAssetCategoryRequest) returns (AssignAssetCategoryResponse);
   rpc UnassignAssetCategory(UnassignAssetCategoryRequest) returns (UnassignAssetCategoryResponse);
   rpc ListAssetCategories(ListAssetCategoriesRequest) returns (ListAssetCategoriesResponse);
+
+  // L15.6 — version history.
+  rpc RecordAssetVersion(RecordAssetVersionRequest) returns (RecordAssetVersionResponse);
+  rpc ListAssetVersions(ListAssetVersionsRequest) returns (ListAssetVersionsResponse);
 }

@@ -600,6 +600,316 @@ class ListAssetsResponse extends $pb.GeneratedMessage {
   $pb.PbList<LegalAsset> get assets => $_getList(0);
 }
 
+class AssetVersion extends $pb.GeneratedMessage {
+  factory AssetVersion({
+    $core.String? id,
+    $core.String? assetId,
+    $core.int? versionNo,
+    $core.String? snapshotJson,
+    $core.String? changeNote,
+    $fixnum.Int64? createdAtUnix,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (assetId != null) result.assetId = assetId;
+    if (versionNo != null) result.versionNo = versionNo;
+    if (snapshotJson != null) result.snapshotJson = snapshotJson;
+    if (changeNote != null) result.changeNote = changeNote;
+    if (createdAtUnix != null) result.createdAtUnix = createdAtUnix;
+    return result;
+  }
+
+  AssetVersion._();
+
+  factory AssetVersion.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AssetVersion.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AssetVersion', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'assetId')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'versionNo', $pb.PbFieldType.O3)
+    ..aOS(4, _omitFieldNames ? '' : 'snapshotJson')
+    ..aOS(5, _omitFieldNames ? '' : 'changeNote')
+    ..aInt64(6, _omitFieldNames ? '' : 'createdAtUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AssetVersion clone() => AssetVersion()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AssetVersion copyWith(void Function(AssetVersion) updates) => super.copyWith((message) => updates(message as AssetVersion)) as AssetVersion;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AssetVersion create() => AssetVersion._();
+  @$core.override
+  AssetVersion createEmptyInstance() => create();
+  static $pb.PbList<AssetVersion> createRepeated() => $pb.PbList<AssetVersion>();
+  @$core.pragma('dart2js:noInline')
+  static AssetVersion getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AssetVersion>(create);
+  static AssetVersion? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get assetId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set assetId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAssetId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAssetId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get versionNo => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set versionNo($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVersionNo() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVersionNo() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get snapshotJson => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set snapshotJson($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSnapshotJson() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSnapshotJson() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get changeNote => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set changeNote($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasChangeNote() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearChangeNote() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get createdAtUnix => $_getI64(5);
+  @$pb.TagNumber(6)
+  set createdAtUnix($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedAtUnix() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedAtUnix() => $_clearField(6);
+}
+
+class RecordAssetVersionRequest extends $pb.GeneratedMessage {
+  factory RecordAssetVersionRequest({
+    $core.String? assetId,
+    $core.String? snapshotJson,
+    $core.String? changeNote,
+  }) {
+    final result = create();
+    if (assetId != null) result.assetId = assetId;
+    if (snapshotJson != null) result.snapshotJson = snapshotJson;
+    if (changeNote != null) result.changeNote = changeNote;
+    return result;
+  }
+
+  RecordAssetVersionRequest._();
+
+  factory RecordAssetVersionRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RecordAssetVersionRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordAssetVersionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'assetId')
+    ..aOS(2, _omitFieldNames ? '' : 'snapshotJson')
+    ..aOS(3, _omitFieldNames ? '' : 'changeNote')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordAssetVersionRequest clone() => RecordAssetVersionRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordAssetVersionRequest copyWith(void Function(RecordAssetVersionRequest) updates) => super.copyWith((message) => updates(message as RecordAssetVersionRequest)) as RecordAssetVersionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordAssetVersionRequest create() => RecordAssetVersionRequest._();
+  @$core.override
+  RecordAssetVersionRequest createEmptyInstance() => create();
+  static $pb.PbList<RecordAssetVersionRequest> createRepeated() => $pb.PbList<RecordAssetVersionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RecordAssetVersionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordAssetVersionRequest>(create);
+  static RecordAssetVersionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get assetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set assetId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAssetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAssetId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get snapshotJson => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set snapshotJson($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSnapshotJson() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSnapshotJson() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get changeNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set changeNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasChangeNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearChangeNote() => $_clearField(3);
+}
+
+class RecordAssetVersionResponse extends $pb.GeneratedMessage {
+  factory RecordAssetVersionResponse({
+    AssetVersion? version,
+  }) {
+    final result = create();
+    if (version != null) result.version = version;
+    return result;
+  }
+
+  RecordAssetVersionResponse._();
+
+  factory RecordAssetVersionResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RecordAssetVersionResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordAssetVersionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOM<AssetVersion>(1, _omitFieldNames ? '' : 'version', subBuilder: AssetVersion.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordAssetVersionResponse clone() => RecordAssetVersionResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordAssetVersionResponse copyWith(void Function(RecordAssetVersionResponse) updates) => super.copyWith((message) => updates(message as RecordAssetVersionResponse)) as RecordAssetVersionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordAssetVersionResponse create() => RecordAssetVersionResponse._();
+  @$core.override
+  RecordAssetVersionResponse createEmptyInstance() => create();
+  static $pb.PbList<RecordAssetVersionResponse> createRepeated() => $pb.PbList<RecordAssetVersionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RecordAssetVersionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordAssetVersionResponse>(create);
+  static RecordAssetVersionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AssetVersion get version => $_getN(0);
+  @$pb.TagNumber(1)
+  set version(AssetVersion value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasVersion() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVersion() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AssetVersion ensureVersion() => $_ensure(0);
+}
+
+class ListAssetVersionsRequest extends $pb.GeneratedMessage {
+  factory ListAssetVersionsRequest({
+    $core.String? assetId,
+  }) {
+    final result = create();
+    if (assetId != null) result.assetId = assetId;
+    return result;
+  }
+
+  ListAssetVersionsRequest._();
+
+  factory ListAssetVersionsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListAssetVersionsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAssetVersionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'assetId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAssetVersionsRequest clone() => ListAssetVersionsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAssetVersionsRequest copyWith(void Function(ListAssetVersionsRequest) updates) => super.copyWith((message) => updates(message as ListAssetVersionsRequest)) as ListAssetVersionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAssetVersionsRequest create() => ListAssetVersionsRequest._();
+  @$core.override
+  ListAssetVersionsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListAssetVersionsRequest> createRepeated() => $pb.PbList<ListAssetVersionsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListAssetVersionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAssetVersionsRequest>(create);
+  static ListAssetVersionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get assetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set assetId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAssetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAssetId() => $_clearField(1);
+}
+
+class ListAssetVersionsResponse extends $pb.GeneratedMessage {
+  factory ListAssetVersionsResponse({
+    $core.Iterable<AssetVersion>? versions,
+  }) {
+    final result = create();
+    if (versions != null) result.versions.addAll(versions);
+    return result;
+  }
+
+  ListAssetVersionsResponse._();
+
+  factory ListAssetVersionsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListAssetVersionsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAssetVersionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..pc<AssetVersion>(1, _omitFieldNames ? '' : 'versions', $pb.PbFieldType.PM, subBuilder: AssetVersion.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAssetVersionsResponse clone() => ListAssetVersionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAssetVersionsResponse copyWith(void Function(ListAssetVersionsResponse) updates) => super.copyWith((message) => updates(message as ListAssetVersionsResponse)) as ListAssetVersionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAssetVersionsResponse create() => ListAssetVersionsResponse._();
+  @$core.override
+  ListAssetVersionsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListAssetVersionsResponse> createRepeated() => $pb.PbList<ListAssetVersionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListAssetVersionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAssetVersionsResponse>(create);
+  static ListAssetVersionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<AssetVersion> get versions => $_getList(0);
+}
+
 class LegacyCategory extends $pb.GeneratedMessage {
   factory LegacyCategory({
     $core.String? id,

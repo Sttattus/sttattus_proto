@@ -497,6 +497,233 @@ export class ListAssetsResponse extends Message<ListAssetsResponse> {
 }
 
 /**
+ * @generated from message sttattus.legacy.v1.AssetVersion
+ */
+export class AssetVersion extends Message<AssetVersion> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string asset_id = 2;
+   */
+  assetId = "";
+
+  /**
+   * @generated from field: int32 version_no = 3;
+   */
+  versionNo = 0;
+
+  /**
+   * @generated from field: string snapshot_json = 4;
+   */
+  snapshotJson = "";
+
+  /**
+   * @generated from field: string change_note = 5;
+   */
+  changeNote = "";
+
+  /**
+   * @generated from field: int64 created_at_unix = 6;
+   */
+  createdAtUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AssetVersion>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.AssetVersion";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "version_no", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "snapshot_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "change_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "created_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssetVersion {
+    return new AssetVersion().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssetVersion {
+    return new AssetVersion().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssetVersion {
+    return new AssetVersion().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AssetVersion | PlainMessage<AssetVersion> | undefined, b: AssetVersion | PlainMessage<AssetVersion> | undefined): boolean {
+    return proto3.util.equals(AssetVersion, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.RecordAssetVersionRequest
+ */
+export class RecordAssetVersionRequest extends Message<RecordAssetVersionRequest> {
+  /**
+   * @generated from field: string asset_id = 1;
+   */
+  assetId = "";
+
+  /**
+   * @generated from field: string snapshot_json = 2;
+   */
+  snapshotJson = "";
+
+  /**
+   * @generated from field: string change_note = 3;
+   */
+  changeNote = "";
+
+  constructor(data?: PartialMessage<RecordAssetVersionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.RecordAssetVersionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "snapshot_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "change_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordAssetVersionRequest {
+    return new RecordAssetVersionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordAssetVersionRequest {
+    return new RecordAssetVersionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordAssetVersionRequest {
+    return new RecordAssetVersionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordAssetVersionRequest | PlainMessage<RecordAssetVersionRequest> | undefined, b: RecordAssetVersionRequest | PlainMessage<RecordAssetVersionRequest> | undefined): boolean {
+    return proto3.util.equals(RecordAssetVersionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.RecordAssetVersionResponse
+ */
+export class RecordAssetVersionResponse extends Message<RecordAssetVersionResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.AssetVersion version = 1;
+   */
+  version?: AssetVersion;
+
+  constructor(data?: PartialMessage<RecordAssetVersionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.RecordAssetVersionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "version", kind: "message", T: AssetVersion },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordAssetVersionResponse {
+    return new RecordAssetVersionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordAssetVersionResponse {
+    return new RecordAssetVersionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordAssetVersionResponse {
+    return new RecordAssetVersionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordAssetVersionResponse | PlainMessage<RecordAssetVersionResponse> | undefined, b: RecordAssetVersionResponse | PlainMessage<RecordAssetVersionResponse> | undefined): boolean {
+    return proto3.util.equals(RecordAssetVersionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.ListAssetVersionsRequest
+ */
+export class ListAssetVersionsRequest extends Message<ListAssetVersionsRequest> {
+  /**
+   * @generated from field: string asset_id = 1;
+   */
+  assetId = "";
+
+  constructor(data?: PartialMessage<ListAssetVersionsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.ListAssetVersionsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAssetVersionsRequest {
+    return new ListAssetVersionsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAssetVersionsRequest {
+    return new ListAssetVersionsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAssetVersionsRequest {
+    return new ListAssetVersionsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAssetVersionsRequest | PlainMessage<ListAssetVersionsRequest> | undefined, b: ListAssetVersionsRequest | PlainMessage<ListAssetVersionsRequest> | undefined): boolean {
+    return proto3.util.equals(ListAssetVersionsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.ListAssetVersionsResponse
+ */
+export class ListAssetVersionsResponse extends Message<ListAssetVersionsResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.AssetVersion versions = 1;
+   */
+  versions: AssetVersion[] = [];
+
+  constructor(data?: PartialMessage<ListAssetVersionsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.ListAssetVersionsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "versions", kind: "message", T: AssetVersion, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAssetVersionsResponse {
+    return new ListAssetVersionsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAssetVersionsResponse {
+    return new ListAssetVersionsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAssetVersionsResponse {
+    return new ListAssetVersionsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAssetVersionsResponse | PlainMessage<ListAssetVersionsResponse> | undefined, b: ListAssetVersionsResponse | PlainMessage<ListAssetVersionsResponse> | undefined): boolean {
+    return proto3.util.equals(ListAssetVersionsResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.legacy.v1.LegacyCategory
  */
 export class LegacyCategory extends Message<LegacyCategory> {

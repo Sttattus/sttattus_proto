@@ -180,6 +180,80 @@ final $typed_data.Uint8List listAssetsResponseDescriptor = $convert.base64Decode
     'ChJMaXN0QXNzZXRzUmVzcG9uc2USNgoGYXNzZXRzGAEgAygLMh4uc3R0YXR0dXMubGVnYWN5Ln'
     'YxLkxlZ2FsQXNzZXRSBmFzc2V0cw==');
 
+@$core.Deprecated('Use assetVersionDescriptor instead')
+const AssetVersion$json = {
+  '1': 'AssetVersion',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'asset_id', '3': 2, '4': 1, '5': 9, '10': 'assetId'},
+    {'1': 'version_no', '3': 3, '4': 1, '5': 5, '10': 'versionNo'},
+    {'1': 'snapshot_json', '3': 4, '4': 1, '5': 9, '10': 'snapshotJson'},
+    {'1': 'change_note', '3': 5, '4': 1, '5': 9, '10': 'changeNote'},
+    {'1': 'created_at_unix', '3': 6, '4': 1, '5': 3, '10': 'createdAtUnix'},
+  ],
+};
+
+/// Descriptor for `AssetVersion`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List assetVersionDescriptor = $convert.base64Decode(
+    'CgxBc3NldFZlcnNpb24SDgoCaWQYASABKAlSAmlkEhkKCGFzc2V0X2lkGAIgASgJUgdhc3NldE'
+    'lkEh0KCnZlcnNpb25fbm8YAyABKAVSCXZlcnNpb25ObxIjCg1zbmFwc2hvdF9qc29uGAQgASgJ'
+    'UgxzbmFwc2hvdEpzb24SHwoLY2hhbmdlX25vdGUYBSABKAlSCmNoYW5nZU5vdGUSJgoPY3JlYX'
+    'RlZF9hdF91bml4GAYgASgDUg1jcmVhdGVkQXRVbml4');
+
+@$core.Deprecated('Use recordAssetVersionRequestDescriptor instead')
+const RecordAssetVersionRequest$json = {
+  '1': 'RecordAssetVersionRequest',
+  '2': [
+    {'1': 'asset_id', '3': 1, '4': 1, '5': 9, '10': 'assetId'},
+    {'1': 'snapshot_json', '3': 2, '4': 1, '5': 9, '10': 'snapshotJson'},
+    {'1': 'change_note', '3': 3, '4': 1, '5': 9, '10': 'changeNote'},
+  ],
+};
+
+/// Descriptor for `RecordAssetVersionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordAssetVersionRequestDescriptor = $convert.base64Decode(
+    'ChlSZWNvcmRBc3NldFZlcnNpb25SZXF1ZXN0EhkKCGFzc2V0X2lkGAEgASgJUgdhc3NldElkEi'
+    'MKDXNuYXBzaG90X2pzb24YAiABKAlSDHNuYXBzaG90SnNvbhIfCgtjaGFuZ2Vfbm90ZRgDIAEo'
+    'CVIKY2hhbmdlTm90ZQ==');
+
+@$core.Deprecated('Use recordAssetVersionResponseDescriptor instead')
+const RecordAssetVersionResponse$json = {
+  '1': 'RecordAssetVersionResponse',
+  '2': [
+    {'1': 'version', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.AssetVersion', '10': 'version'},
+  ],
+};
+
+/// Descriptor for `RecordAssetVersionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordAssetVersionResponseDescriptor = $convert.base64Decode(
+    'ChpSZWNvcmRBc3NldFZlcnNpb25SZXNwb25zZRI6Cgd2ZXJzaW9uGAEgASgLMiAuc3R0YXR0dX'
+    'MubGVnYWN5LnYxLkFzc2V0VmVyc2lvblIHdmVyc2lvbg==');
+
+@$core.Deprecated('Use listAssetVersionsRequestDescriptor instead')
+const ListAssetVersionsRequest$json = {
+  '1': 'ListAssetVersionsRequest',
+  '2': [
+    {'1': 'asset_id', '3': 1, '4': 1, '5': 9, '10': 'assetId'},
+  ],
+};
+
+/// Descriptor for `ListAssetVersionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAssetVersionsRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0QXNzZXRWZXJzaW9uc1JlcXVlc3QSGQoIYXNzZXRfaWQYASABKAlSB2Fzc2V0SWQ=');
+
+@$core.Deprecated('Use listAssetVersionsResponseDescriptor instead')
+const ListAssetVersionsResponse$json = {
+  '1': 'ListAssetVersionsResponse',
+  '2': [
+    {'1': 'versions', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.AssetVersion', '10': 'versions'},
+  ],
+};
+
+/// Descriptor for `ListAssetVersionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAssetVersionsResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0QXNzZXRWZXJzaW9uc1Jlc3BvbnNlEjwKCHZlcnNpb25zGAEgAygLMiAuc3R0YXR0dX'
+    'MubGVnYWN5LnYxLkFzc2V0VmVyc2lvblIIdmVyc2lvbnM=');
+
 @$core.Deprecated('Use legacyCategoryDescriptor instead')
 const LegacyCategory$json = {
   '1': 'LegacyCategory',

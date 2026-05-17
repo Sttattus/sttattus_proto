@@ -88,6 +88,15 @@ class LegacyServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listAssetCategories, request, options: options);
   }
 
+  /// L15.6 — version history.
+  $grpc.ResponseFuture<$0.RecordAssetVersionResponse> recordAssetVersion($0.RecordAssetVersionRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$recordAssetVersion, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListAssetVersionsResponse> listAssetVersions($0.ListAssetVersionsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listAssetVersions, request, options: options);
+  }
+
     // method descriptors
 
   static final _$storeDocument = $grpc.ClientMethod<$0.StoreDocumentRequest, $0.StoreDocumentResponse>(
@@ -142,6 +151,14 @@ class LegacyServiceClient extends $grpc.Client {
       '/sttattus.legacy.v1.LegacyService/ListAssetCategories',
       ($0.ListAssetCategoriesRequest value) => value.writeToBuffer(),
       $0.ListAssetCategoriesResponse.fromBuffer);
+  static final _$recordAssetVersion = $grpc.ClientMethod<$0.RecordAssetVersionRequest, $0.RecordAssetVersionResponse>(
+      '/sttattus.legacy.v1.LegacyService/RecordAssetVersion',
+      ($0.RecordAssetVersionRequest value) => value.writeToBuffer(),
+      $0.RecordAssetVersionResponse.fromBuffer);
+  static final _$listAssetVersions = $grpc.ClientMethod<$0.ListAssetVersionsRequest, $0.ListAssetVersionsResponse>(
+      '/sttattus.legacy.v1.LegacyService/ListAssetVersions',
+      ($0.ListAssetVersionsRequest value) => value.writeToBuffer(),
+      $0.ListAssetVersionsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.legacy.v1.LegacyService')
@@ -240,6 +257,20 @@ abstract class LegacyServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListAssetCategoriesRequest.fromBuffer(value),
         ($0.ListAssetCategoriesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordAssetVersionRequest, $0.RecordAssetVersionResponse>(
+        'RecordAssetVersion',
+        recordAssetVersion_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RecordAssetVersionRequest.fromBuffer(value),
+        ($0.RecordAssetVersionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAssetVersionsRequest, $0.ListAssetVersionsResponse>(
+        'ListAssetVersions',
+        listAssetVersions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListAssetVersionsRequest.fromBuffer(value),
+        ($0.ListAssetVersionsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.StoreDocumentResponse> storeDocument_Pre($grpc.ServiceCall $call, $async.Future<$0.StoreDocumentRequest> $request) async {
@@ -319,5 +350,17 @@ abstract class LegacyServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListAssetCategoriesResponse> listAssetCategories($grpc.ServiceCall call, $0.ListAssetCategoriesRequest request);
+
+  $async.Future<$0.RecordAssetVersionResponse> recordAssetVersion_Pre($grpc.ServiceCall $call, $async.Future<$0.RecordAssetVersionRequest> $request) async {
+    return recordAssetVersion($call, await $request);
+  }
+
+  $async.Future<$0.RecordAssetVersionResponse> recordAssetVersion($grpc.ServiceCall call, $0.RecordAssetVersionRequest request);
+
+  $async.Future<$0.ListAssetVersionsResponse> listAssetVersions_Pre($grpc.ServiceCall $call, $async.Future<$0.ListAssetVersionsRequest> $request) async {
+    return listAssetVersions($call, await $request);
+  }
+
+  $async.Future<$0.ListAssetVersionsResponse> listAssetVersions($grpc.ServiceCall call, $0.ListAssetVersionsRequest request);
 
 }

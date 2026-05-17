@@ -32,6 +32,8 @@ const (
 	LegacyService_AssignAssetCategory_FullMethodName   = "/sttattus.legacy.v1.LegacyService/AssignAssetCategory"
 	LegacyService_UnassignAssetCategory_FullMethodName = "/sttattus.legacy.v1.LegacyService/UnassignAssetCategory"
 	LegacyService_ListAssetCategories_FullMethodName   = "/sttattus.legacy.v1.LegacyService/ListAssetCategories"
+	LegacyService_RecordAssetVersion_FullMethodName    = "/sttattus.legacy.v1.LegacyService/RecordAssetVersion"
+	LegacyService_ListAssetVersions_FullMethodName     = "/sttattus.legacy.v1.LegacyService/ListAssetVersions"
 )
 
 // LegacyServiceClient is the client API for LegacyService service.
@@ -55,6 +57,9 @@ type LegacyServiceClient interface {
 	AssignAssetCategory(ctx context.Context, in *AssignAssetCategoryRequest, opts ...grpc.CallOption) (*AssignAssetCategoryResponse, error)
 	UnassignAssetCategory(ctx context.Context, in *UnassignAssetCategoryRequest, opts ...grpc.CallOption) (*UnassignAssetCategoryResponse, error)
 	ListAssetCategories(ctx context.Context, in *ListAssetCategoriesRequest, opts ...grpc.CallOption) (*ListAssetCategoriesResponse, error)
+	// L15.6 — version history.
+	RecordAssetVersion(ctx context.Context, in *RecordAssetVersionRequest, opts ...grpc.CallOption) (*RecordAssetVersionResponse, error)
+	ListAssetVersions(ctx context.Context, in *ListAssetVersionsRequest, opts ...grpc.CallOption) (*ListAssetVersionsResponse, error)
 }
 
 type legacyServiceClient struct {
@@ -195,6 +200,26 @@ func (c *legacyServiceClient) ListAssetCategories(ctx context.Context, in *ListA
 	return out, nil
 }
 
+func (c *legacyServiceClient) RecordAssetVersion(ctx context.Context, in *RecordAssetVersionRequest, opts ...grpc.CallOption) (*RecordAssetVersionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordAssetVersionResponse)
+	err := c.cc.Invoke(ctx, LegacyService_RecordAssetVersion_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListAssetVersions(ctx context.Context, in *ListAssetVersionsRequest, opts ...grpc.CallOption) (*ListAssetVersionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAssetVersionsResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListAssetVersions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LegacyServiceServer is the server API for LegacyService service.
 // All implementations must embed UnimplementedLegacyServiceServer
 // for forward compatibility.
@@ -216,6 +241,9 @@ type LegacyServiceServer interface {
 	AssignAssetCategory(context.Context, *AssignAssetCategoryRequest) (*AssignAssetCategoryResponse, error)
 	UnassignAssetCategory(context.Context, *UnassignAssetCategoryRequest) (*UnassignAssetCategoryResponse, error)
 	ListAssetCategories(context.Context, *ListAssetCategoriesRequest) (*ListAssetCategoriesResponse, error)
+	// L15.6 — version history.
+	RecordAssetVersion(context.Context, *RecordAssetVersionRequest) (*RecordAssetVersionResponse, error)
+	ListAssetVersions(context.Context, *ListAssetVersionsRequest) (*ListAssetVersionsResponse, error)
 	mustEmbedUnimplementedLegacyServiceServer()
 }
 
@@ -264,6 +292,12 @@ func (UnimplementedLegacyServiceServer) UnassignAssetCategory(context.Context, *
 }
 func (UnimplementedLegacyServiceServer) ListAssetCategories(context.Context, *ListAssetCategoriesRequest) (*ListAssetCategoriesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListAssetCategories not implemented")
+}
+func (UnimplementedLegacyServiceServer) RecordAssetVersion(context.Context, *RecordAssetVersionRequest) (*RecordAssetVersionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordAssetVersion not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListAssetVersions(context.Context, *ListAssetVersionsRequest) (*ListAssetVersionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAssetVersions not implemented")
 }
 func (UnimplementedLegacyServiceServer) mustEmbedUnimplementedLegacyServiceServer() {}
 func (UnimplementedLegacyServiceServer) testEmbeddedByValue()                       {}
@@ -520,6 +554,42 @@ func _LegacyService_ListAssetCategories_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LegacyService_RecordAssetVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordAssetVersionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).RecordAssetVersion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_RecordAssetVersion_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).RecordAssetVersion(ctx, req.(*RecordAssetVersionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListAssetVersions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAssetVersionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListAssetVersions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListAssetVersions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListAssetVersions(ctx, req.(*ListAssetVersionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LegacyService_ServiceDesc is the grpc.ServiceDesc for LegacyService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -578,6 +648,14 @@ var LegacyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListAssetCategories",
 			Handler:    _LegacyService_ListAssetCategories_Handler,
+		},
+		{
+			MethodName: "RecordAssetVersion",
+			Handler:    _LegacyService_RecordAssetVersion_Handler,
+		},
+		{
+			MethodName: "ListAssetVersions",
+			Handler:    _LegacyService_ListAssetVersions_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

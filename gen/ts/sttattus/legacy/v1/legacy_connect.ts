@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignAssetCategoryRequest, AssignAssetCategoryResponse, DeleteRecoveryShareRequest, DeleteRecoveryShareResponse, GetEncryptedBlobRequest, GetEncryptedBlobResponse, GetHeritageStatsRequest, GetHeritageStatsResponse, ListAssetCategoriesRequest, ListAssetCategoriesResponse, ListAssetsRequest, ListAssetsResponse, ListLegacyCategoriesRequest, ListLegacyCategoriesResponse, ListMyEncryptedBlobsRequest, ListMyEncryptedBlobsResponse, ListMyRecoverySharesRequest, ListMyRecoverySharesResponse, StoreDocumentRequest, StoreDocumentResponse, StoreEncryptedBlobRequest, StoreEncryptedBlobResponse, StoreRecoveryShareRequest, StoreRecoveryShareResponse, UnassignAssetCategoryRequest, UnassignAssetCategoryResponse } from "./legacy_pb.js";
+import { AssignAssetCategoryRequest, AssignAssetCategoryResponse, DeleteRecoveryShareRequest, DeleteRecoveryShareResponse, GetEncryptedBlobRequest, GetEncryptedBlobResponse, GetHeritageStatsRequest, GetHeritageStatsResponse, ListAssetCategoriesRequest, ListAssetCategoriesResponse, ListAssetsRequest, ListAssetsResponse, ListAssetVersionsRequest, ListAssetVersionsResponse, ListLegacyCategoriesRequest, ListLegacyCategoriesResponse, ListMyEncryptedBlobsRequest, ListMyEncryptedBlobsResponse, ListMyRecoverySharesRequest, ListMyRecoverySharesResponse, RecordAssetVersionRequest, RecordAssetVersionResponse, StoreDocumentRequest, StoreDocumentResponse, StoreEncryptedBlobRequest, StoreEncryptedBlobResponse, StoreRecoveryShareRequest, StoreRecoveryShareResponse, UnassignAssetCategoryRequest, UnassignAssetCategoryResponse } from "./legacy_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -135,6 +135,26 @@ export const LegacyService = {
       name: "ListAssetCategories",
       I: ListAssetCategoriesRequest,
       O: ListAssetCategoriesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L15.6 — version history.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.RecordAssetVersion
+     */
+    recordAssetVersion: {
+      name: "RecordAssetVersion",
+      I: RecordAssetVersionRequest,
+      O: RecordAssetVersionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListAssetVersions
+     */
+    listAssetVersions: {
+      name: "ListAssetVersions",
+      I: ListAssetVersionsRequest,
+      O: ListAssetVersionsResponse,
       kind: MethodKind.Unary,
     },
   }
