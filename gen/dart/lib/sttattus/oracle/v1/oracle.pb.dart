@@ -531,6 +531,212 @@ class GetOracleStatsResponse extends $pb.GeneratedMessage {
   OracleStats ensureStats() => $_ensure(0);
 }
 
+/// RankExplainer is the per-user breakdown the explainer page renders.
+/// All four numbers are real averages over the user's past inquiries;
+/// the formula the engine uses lives in services_rust/oracle (when
+/// wired) and is documented here as the contract.
+class RankExplainer extends $pb.GeneratedMessage {
+  factory RankExplainer({
+    $core.double? intellectualRank,
+    $core.String? rankLabel,
+    $core.double? avgComplexity,
+    $core.double? avgSynthesis,
+    $core.double? avgForesight,
+    $core.int? uniqueDomainsVisited,
+    $core.int? totalInquiries,
+    $core.Iterable<$core.MapEntry<$core.String, $core.double>>? perDomainClout,
+  }) {
+    final result = create();
+    if (intellectualRank != null) result.intellectualRank = intellectualRank;
+    if (rankLabel != null) result.rankLabel = rankLabel;
+    if (avgComplexity != null) result.avgComplexity = avgComplexity;
+    if (avgSynthesis != null) result.avgSynthesis = avgSynthesis;
+    if (avgForesight != null) result.avgForesight = avgForesight;
+    if (uniqueDomainsVisited != null) result.uniqueDomainsVisited = uniqueDomainsVisited;
+    if (totalInquiries != null) result.totalInquiries = totalInquiries;
+    if (perDomainClout != null) result.perDomainClout.addEntries(perDomainClout);
+    return result;
+  }
+
+  RankExplainer._();
+
+  factory RankExplainer.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RankExplainer.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RankExplainer', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'intellectualRank', $pb.PbFieldType.OD)
+    ..aOS(2, _omitFieldNames ? '' : 'rankLabel')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'avgComplexity', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'avgSynthesis', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'avgForesight', $pb.PbFieldType.OD)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'uniqueDomainsVisited', $pb.PbFieldType.O3)
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'totalInquiries', $pb.PbFieldType.O3)
+    ..m<$core.String, $core.double>(8, _omitFieldNames ? '' : 'perDomainClout', entryClassName: 'RankExplainer.PerDomainCloutEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OD, packageName: const $pb.PackageName('sttattus.oracle.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RankExplainer clone() => RankExplainer()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RankExplainer copyWith(void Function(RankExplainer) updates) => super.copyWith((message) => updates(message as RankExplainer)) as RankExplainer;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RankExplainer create() => RankExplainer._();
+  @$core.override
+  RankExplainer createEmptyInstance() => create();
+  static $pb.PbList<RankExplainer> createRepeated() => $pb.PbList<RankExplainer>();
+  @$core.pragma('dart2js:noInline')
+  static RankExplainer getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RankExplainer>(create);
+  static RankExplainer? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get intellectualRank => $_getN(0);
+  @$pb.TagNumber(1)
+  set intellectualRank($core.double value) => $_setDouble(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasIntellectualRank() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIntellectualRank() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get rankLabel => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set rankLabel($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRankLabel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRankLabel() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get avgComplexity => $_getN(2);
+  @$pb.TagNumber(3)
+  set avgComplexity($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAvgComplexity() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAvgComplexity() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get avgSynthesis => $_getN(3);
+  @$pb.TagNumber(4)
+  set avgSynthesis($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAvgSynthesis() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAvgSynthesis() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get avgForesight => $_getN(4);
+  @$pb.TagNumber(5)
+  set avgForesight($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAvgForesight() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAvgForesight() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get uniqueDomainsVisited => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set uniqueDomainsVisited($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasUniqueDomainsVisited() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUniqueDomainsVisited() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get totalInquiries => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set totalInquiries($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasTotalInquiries() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTotalInquiries() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $pb.PbMap<$core.String, $core.double> get perDomainClout => $_getMap(7);
+}
+
+class GetRankExplainerRequest extends $pb.GeneratedMessage {
+  factory GetRankExplainerRequest() => create();
+
+  GetRankExplainerRequest._();
+
+  factory GetRankExplainerRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetRankExplainerRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRankExplainerRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRankExplainerRequest clone() => GetRankExplainerRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRankExplainerRequest copyWith(void Function(GetRankExplainerRequest) updates) => super.copyWith((message) => updates(message as GetRankExplainerRequest)) as GetRankExplainerRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRankExplainerRequest create() => GetRankExplainerRequest._();
+  @$core.override
+  GetRankExplainerRequest createEmptyInstance() => create();
+  static $pb.PbList<GetRankExplainerRequest> createRepeated() => $pb.PbList<GetRankExplainerRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetRankExplainerRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetRankExplainerRequest>(create);
+  static GetRankExplainerRequest? _defaultInstance;
+}
+
+class GetRankExplainerResponse extends $pb.GeneratedMessage {
+  factory GetRankExplainerResponse({
+    RankExplainer? explainer,
+  }) {
+    final result = create();
+    if (explainer != null) result.explainer = explainer;
+    return result;
+  }
+
+  GetRankExplainerResponse._();
+
+  factory GetRankExplainerResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetRankExplainerResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRankExplainerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOM<RankExplainer>(1, _omitFieldNames ? '' : 'explainer', subBuilder: RankExplainer.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRankExplainerResponse clone() => GetRankExplainerResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRankExplainerResponse copyWith(void Function(GetRankExplainerResponse) updates) => super.copyWith((message) => updates(message as GetRankExplainerResponse)) as GetRankExplainerResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRankExplainerResponse create() => GetRankExplainerResponse._();
+  @$core.override
+  GetRankExplainerResponse createEmptyInstance() => create();
+  static $pb.PbList<GetRankExplainerResponse> createRepeated() => $pb.PbList<GetRankExplainerResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetRankExplainerResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetRankExplainerResponse>(create);
+  static GetRankExplainerResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  RankExplainer get explainer => $_getN(0);
+  @$pb.TagNumber(1)
+  set explainer(RankExplainer value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExplainer() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExplainer() => $_clearField(1);
+  @$pb.TagNumber(1)
+  RankExplainer ensureExplainer() => $_ensure(0);
+}
+
 /// ToolDescriptor lists a runnable tool — pillar + name + a
 /// human-readable description and input hint. The future LLM (O13.2
 /// deferral) reads this catalog to pick tools; today the Flutter

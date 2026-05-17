@@ -115,6 +115,11 @@ class OracleServiceClient extends $grpc.Client {
     return $createUnaryCall(_$runOracleTool, request, options: options);
   }
 
+  /// O13.7 — glass-box rank explainer.
+  $grpc.ResponseFuture<$0.GetRankExplainerResponse> getRankExplainer($0.GetRankExplainerRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getRankExplainer, request, options: options);
+  }
+
     // method descriptors
 
   static final _$query = $grpc.ClientMethod<$0.QueryRequest, $0.QueryResponse>(
@@ -193,6 +198,10 @@ class OracleServiceClient extends $grpc.Client {
       '/sttattus.oracle.v1.OracleService/RunOracleTool',
       ($0.RunOracleToolRequest value) => value.writeToBuffer(),
       $0.RunOracleToolResponse.fromBuffer);
+  static final _$getRankExplainer = $grpc.ClientMethod<$0.GetRankExplainerRequest, $0.GetRankExplainerResponse>(
+      '/sttattus.oracle.v1.OracleService/GetRankExplainer',
+      ($0.GetRankExplainerRequest value) => value.writeToBuffer(),
+      $0.GetRankExplainerResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.oracle.v1.OracleService')
@@ -333,6 +342,13 @@ abstract class OracleServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.RunOracleToolRequest.fromBuffer(value),
         ($0.RunOracleToolResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetRankExplainerRequest, $0.GetRankExplainerResponse>(
+        'GetRankExplainer',
+        getRankExplainer_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetRankExplainerRequest.fromBuffer(value),
+        ($0.GetRankExplainerResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.QueryResponse> query_Pre($grpc.ServiceCall $call, $async.Future<$0.QueryRequest> $request) async {
@@ -448,5 +464,11 @@ abstract class OracleServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.RunOracleToolResponse> runOracleTool($grpc.ServiceCall call, $0.RunOracleToolRequest request);
+
+  $async.Future<$0.GetRankExplainerResponse> getRankExplainer_Pre($grpc.ServiceCall $call, $async.Future<$0.GetRankExplainerRequest> $request) async {
+    return getRankExplainer($call, await $request);
+  }
+
+  $async.Future<$0.GetRankExplainerResponse> getRankExplainer($grpc.ServiceCall call, $0.GetRankExplainerRequest request);
 
 }

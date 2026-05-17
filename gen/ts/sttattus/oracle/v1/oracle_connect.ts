@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateThreadRequest, CreateThreadResponse, DeleteEpisodicMemoryRequest, DeleteEpisodicMemoryResponse, DeleteSemanticMemoryRequest, DeleteSemanticMemoryResponse, DeleteThreadRequest, DeleteThreadResponse, GetOracleStatsRequest, GetOracleStatsResponse, GrantScopeRequest, GrantScopeResponse, ListAvailableToolsRequest, ListAvailableToolsResponse, ListMyEpisodicMemoryRequest, ListMyEpisodicMemoryResponse, ListMyScopeGrantsRequest, ListMyScopeGrantsResponse, ListMySemanticMemoryRequest, ListMySemanticMemoryResponse, ListMyThreadsRequest, ListMyThreadsResponse, ListThreadMessagesRequest, ListThreadMessagesResponse, QueryRequest, QueryResponse, RecordEpisodicMemoryRequest, RecordEpisodicMemoryResponse, RenameThreadRequest, RenameThreadResponse, RevokeScopeRequest, RevokeScopeResponse, RunOracleToolRequest, RunOracleToolResponse, StreamQueryChunk, StreamQueryRequest, UpsertSemanticMemoryRequest, UpsertSemanticMemoryResponse } from "./oracle_pb.js";
+import { CreateThreadRequest, CreateThreadResponse, DeleteEpisodicMemoryRequest, DeleteEpisodicMemoryResponse, DeleteSemanticMemoryRequest, DeleteSemanticMemoryResponse, DeleteThreadRequest, DeleteThreadResponse, GetOracleStatsRequest, GetOracleStatsResponse, GetRankExplainerRequest, GetRankExplainerResponse, GrantScopeRequest, GrantScopeResponse, ListAvailableToolsRequest, ListAvailableToolsResponse, ListMyEpisodicMemoryRequest, ListMyEpisodicMemoryResponse, ListMyScopeGrantsRequest, ListMyScopeGrantsResponse, ListMySemanticMemoryRequest, ListMySemanticMemoryResponse, ListMyThreadsRequest, ListMyThreadsResponse, ListThreadMessagesRequest, ListThreadMessagesResponse, QueryRequest, QueryResponse, RecordEpisodicMemoryRequest, RecordEpisodicMemoryResponse, RenameThreadRequest, RenameThreadResponse, RevokeScopeRequest, RevokeScopeResponse, RunOracleToolRequest, RunOracleToolResponse, StreamQueryChunk, StreamQueryRequest, UpsertSemanticMemoryRequest, UpsertSemanticMemoryResponse } from "./oracle_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -195,6 +195,17 @@ export const OracleService = {
       name: "RunOracleTool",
       I: RunOracleToolRequest,
       O: RunOracleToolResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * O13.7 — glass-box rank explainer.
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetRankExplainer
+     */
+    getRankExplainer: {
+      name: "GetRankExplainer",
+      I: GetRankExplainerRequest,
+      O: GetRankExplainerResponse,
       kind: MethodKind.Unary,
     },
   }

@@ -159,6 +159,66 @@ final $typed_data.Uint8List getOracleStatsResponseDescriptor = $convert.base64De
     'ChZHZXRPcmFjbGVTdGF0c1Jlc3BvbnNlEjUKBXN0YXRzGAEgASgLMh8uc3R0YXR0dXMub3JhY2'
     'xlLnYxLk9yYWNsZVN0YXRzUgVzdGF0cw==');
 
+@$core.Deprecated('Use rankExplainerDescriptor instead')
+const RankExplainer$json = {
+  '1': 'RankExplainer',
+  '2': [
+    {'1': 'intellectual_rank', '3': 1, '4': 1, '5': 1, '10': 'intellectualRank'},
+    {'1': 'rank_label', '3': 2, '4': 1, '5': 9, '10': 'rankLabel'},
+    {'1': 'avg_complexity', '3': 3, '4': 1, '5': 1, '10': 'avgComplexity'},
+    {'1': 'avg_synthesis', '3': 4, '4': 1, '5': 1, '10': 'avgSynthesis'},
+    {'1': 'avg_foresight', '3': 5, '4': 1, '5': 1, '10': 'avgForesight'},
+    {'1': 'unique_domains_visited', '3': 6, '4': 1, '5': 5, '10': 'uniqueDomainsVisited'},
+    {'1': 'total_inquiries', '3': 7, '4': 1, '5': 5, '10': 'totalInquiries'},
+    {'1': 'per_domain_clout', '3': 8, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.RankExplainer.PerDomainCloutEntry', '10': 'perDomainClout'},
+  ],
+  '3': [RankExplainer_PerDomainCloutEntry$json],
+};
+
+@$core.Deprecated('Use rankExplainerDescriptor instead')
+const RankExplainer_PerDomainCloutEntry$json = {
+  '1': 'PerDomainCloutEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 1, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `RankExplainer`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List rankExplainerDescriptor = $convert.base64Decode(
+    'Cg1SYW5rRXhwbGFpbmVyEisKEWludGVsbGVjdHVhbF9yYW5rGAEgASgBUhBpbnRlbGxlY3R1YW'
+    'xSYW5rEh0KCnJhbmtfbGFiZWwYAiABKAlSCXJhbmtMYWJlbBIlCg5hdmdfY29tcGxleGl0eRgD'
+    'IAEoAVINYXZnQ29tcGxleGl0eRIjCg1hdmdfc3ludGhlc2lzGAQgASgBUgxhdmdTeW50aGVzaX'
+    'MSIwoNYXZnX2ZvcmVzaWdodBgFIAEoAVIMYXZnRm9yZXNpZ2h0EjQKFnVuaXF1ZV9kb21haW5z'
+    'X3Zpc2l0ZWQYBiABKAVSFHVuaXF1ZURvbWFpbnNWaXNpdGVkEicKD3RvdGFsX2lucXVpcmllcx'
+    'gHIAEoBVIOdG90YWxJbnF1aXJpZXMSXwoQcGVyX2RvbWFpbl9jbG91dBgIIAMoCzI1LnN0dGF0'
+    'dHVzLm9yYWNsZS52MS5SYW5rRXhwbGFpbmVyLlBlckRvbWFpbkNsb3V0RW50cnlSDnBlckRvbW'
+    'FpbkNsb3V0GkEKE1BlckRvbWFpbkNsb3V0RW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFs'
+    'dWUYAiABKAFSBXZhbHVlOgI4AQ==');
+
+@$core.Deprecated('Use getRankExplainerRequestDescriptor instead')
+const GetRankExplainerRequest$json = {
+  '1': 'GetRankExplainerRequest',
+};
+
+/// Descriptor for `GetRankExplainerRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRankExplainerRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRSYW5rRXhwbGFpbmVyUmVxdWVzdA==');
+
+@$core.Deprecated('Use getRankExplainerResponseDescriptor instead')
+const GetRankExplainerResponse$json = {
+  '1': 'GetRankExplainerResponse',
+  '2': [
+    {'1': 'explainer', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.RankExplainer', '10': 'explainer'},
+  ],
+};
+
+/// Descriptor for `GetRankExplainerResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRankExplainerResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRSYW5rRXhwbGFpbmVyUmVzcG9uc2USPwoJZXhwbGFpbmVyGAEgASgLMiEuc3R0YXR0dX'
+    'Mub3JhY2xlLnYxLlJhbmtFeHBsYWluZXJSCWV4cGxhaW5lcg==');
+
 @$core.Deprecated('Use oracleToolDescriptor instead')
 const OracleTool$json = {
   '1': 'OracleTool',

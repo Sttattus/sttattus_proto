@@ -60,6 +60,28 @@ message GetOracleStatsResponse {
   OracleStats stats = 1;
 }
 
+// === O13.7 — glass-box rank explainer ===
+
+// RankExplainer is the per-user breakdown the explainer page renders.
+// All four numbers are real averages over the user's past inquiries;
+// the formula the engine uses lives in services_rust/oracle (when
+// wired) and is documented here as the contract.
+message RankExplainer {
+  double intellectual_rank = 1; // composite score 0..1000+
+  string rank_label = 2;
+  double avg_complexity = 3; // 0..1
+  double avg_synthesis = 4; // 0..1
+  double avg_foresight = 5; // 0..1
+  int32 unique_domains_visited = 6;
+  int32 total_inquiries = 7;
+  map<string, double> per_domain_clout = 8; // 'macro_economics' -> total
+}
+
+message GetRankExplainerRequest {}
+message GetRankExplainerResponse {
+  RankExplainer explainer = 1;
+}
+
 // === O13.5 — first two agents: Vault + Forge ===
 
 // ToolDescriptor lists a runnable tool — pillar + name + a
@@ -280,4 +302,7 @@ service OracleService {
   // O13.5 — first two agents: Vault + Forge.
   rpc ListAvailableTools(ListAvailableToolsRequest) returns (ListAvailableToolsResponse);
   rpc RunOracleTool(RunOracleToolRequest) returns (RunOracleToolResponse);
+
+  // O13.7 — glass-box rank explainer.
+  rpc GetRankExplainer(GetRankExplainerRequest) returns (GetRankExplainerResponse);
 }

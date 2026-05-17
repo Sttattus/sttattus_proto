@@ -418,6 +418,168 @@ export class GetOracleStatsResponse extends Message<GetOracleStatsResponse> {
 }
 
 /**
+ * RankExplainer is the per-user breakdown the explainer page renders.
+ * All four numbers are real averages over the user's past inquiries;
+ * the formula the engine uses lives in services_rust/oracle (when
+ * wired) and is documented here as the contract.
+ *
+ * @generated from message sttattus.oracle.v1.RankExplainer
+ */
+export class RankExplainer extends Message<RankExplainer> {
+  /**
+   * composite score 0..1000+
+   *
+   * @generated from field: double intellectual_rank = 1;
+   */
+  intellectualRank = 0;
+
+  /**
+   * @generated from field: string rank_label = 2;
+   */
+  rankLabel = "";
+
+  /**
+   * 0..1
+   *
+   * @generated from field: double avg_complexity = 3;
+   */
+  avgComplexity = 0;
+
+  /**
+   * 0..1
+   *
+   * @generated from field: double avg_synthesis = 4;
+   */
+  avgSynthesis = 0;
+
+  /**
+   * 0..1
+   *
+   * @generated from field: double avg_foresight = 5;
+   */
+  avgForesight = 0;
+
+  /**
+   * @generated from field: int32 unique_domains_visited = 6;
+   */
+  uniqueDomainsVisited = 0;
+
+  /**
+   * @generated from field: int32 total_inquiries = 7;
+   */
+  totalInquiries = 0;
+
+  /**
+   * 'macro_economics' -> total
+   *
+   * @generated from field: map<string, double> per_domain_clout = 8;
+   */
+  perDomainClout: { [key: string]: number } = {};
+
+  constructor(data?: PartialMessage<RankExplainer>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RankExplainer";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "intellectual_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "rank_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "avg_complexity", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "avg_synthesis", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "avg_foresight", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "unique_domains_visited", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "total_inquiries", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "per_domain_clout", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 1 /* ScalarType.DOUBLE */} },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RankExplainer {
+    return new RankExplainer().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RankExplainer {
+    return new RankExplainer().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RankExplainer {
+    return new RankExplainer().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RankExplainer | PlainMessage<RankExplainer> | undefined, b: RankExplainer | PlainMessage<RankExplainer> | undefined): boolean {
+    return proto3.util.equals(RankExplainer, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetRankExplainerRequest
+ */
+export class GetRankExplainerRequest extends Message<GetRankExplainerRequest> {
+  constructor(data?: PartialMessage<GetRankExplainerRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetRankExplainerRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRankExplainerRequest {
+    return new GetRankExplainerRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRankExplainerRequest {
+    return new GetRankExplainerRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRankExplainerRequest {
+    return new GetRankExplainerRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetRankExplainerRequest | PlainMessage<GetRankExplainerRequest> | undefined, b: GetRankExplainerRequest | PlainMessage<GetRankExplainerRequest> | undefined): boolean {
+    return proto3.util.equals(GetRankExplainerRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetRankExplainerResponse
+ */
+export class GetRankExplainerResponse extends Message<GetRankExplainerResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.RankExplainer explainer = 1;
+   */
+  explainer?: RankExplainer;
+
+  constructor(data?: PartialMessage<GetRankExplainerResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetRankExplainerResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "explainer", kind: "message", T: RankExplainer },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRankExplainerResponse {
+    return new GetRankExplainerResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRankExplainerResponse {
+    return new GetRankExplainerResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRankExplainerResponse {
+    return new GetRankExplainerResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetRankExplainerResponse | PlainMessage<GetRankExplainerResponse> | undefined, b: GetRankExplainerResponse | PlainMessage<GetRankExplainerResponse> | undefined): boolean {
+    return proto3.util.equals(GetRankExplainerResponse, a, b);
+  }
+}
+
+/**
  * ToolDescriptor lists a runnable tool — pillar + name + a
  * human-readable description and input hint. The future LLM (O13.2
  * deferral) reads this catalog to pick tools; today the Flutter

@@ -38,6 +38,7 @@ const (
 	OracleService_RevokeScope_FullMethodName          = "/sttattus.oracle.v1.OracleService/RevokeScope"
 	OracleService_ListAvailableTools_FullMethodName   = "/sttattus.oracle.v1.OracleService/ListAvailableTools"
 	OracleService_RunOracleTool_FullMethodName        = "/sttattus.oracle.v1.OracleService/RunOracleTool"
+	OracleService_GetRankExplainer_FullMethodName     = "/sttattus.oracle.v1.OracleService/GetRankExplainer"
 )
 
 // OracleServiceClient is the client API for OracleService service.
@@ -70,6 +71,8 @@ type OracleServiceClient interface {
 	// O13.5 — first two agents: Vault + Forge.
 	ListAvailableTools(ctx context.Context, in *ListAvailableToolsRequest, opts ...grpc.CallOption) (*ListAvailableToolsResponse, error)
 	RunOracleTool(ctx context.Context, in *RunOracleToolRequest, opts ...grpc.CallOption) (*RunOracleToolResponse, error)
+	// O13.7 — glass-box rank explainer.
+	GetRankExplainer(ctx context.Context, in *GetRankExplainerRequest, opts ...grpc.CallOption) (*GetRankExplainerResponse, error)
 }
 
 type oracleServiceClient struct {
@@ -279,6 +282,16 @@ func (c *oracleServiceClient) RunOracleTool(ctx context.Context, in *RunOracleTo
 	return out, nil
 }
 
+func (c *oracleServiceClient) GetRankExplainer(ctx context.Context, in *GetRankExplainerRequest, opts ...grpc.CallOption) (*GetRankExplainerResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetRankExplainerResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetRankExplainer_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OracleServiceServer is the server API for OracleService service.
 // All implementations must embed UnimplementedOracleServiceServer
 // for forward compatibility.
@@ -309,6 +322,8 @@ type OracleServiceServer interface {
 	// O13.5 — first two agents: Vault + Forge.
 	ListAvailableTools(context.Context, *ListAvailableToolsRequest) (*ListAvailableToolsResponse, error)
 	RunOracleTool(context.Context, *RunOracleToolRequest) (*RunOracleToolResponse, error)
+	// O13.7 — glass-box rank explainer.
+	GetRankExplainer(context.Context, *GetRankExplainerRequest) (*GetRankExplainerResponse, error)
 	mustEmbedUnimplementedOracleServiceServer()
 }
 
@@ -375,6 +390,9 @@ func (UnimplementedOracleServiceServer) ListAvailableTools(context.Context, *Lis
 }
 func (UnimplementedOracleServiceServer) RunOracleTool(context.Context, *RunOracleToolRequest) (*RunOracleToolResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RunOracleTool not implemented")
+}
+func (UnimplementedOracleServiceServer) GetRankExplainer(context.Context, *GetRankExplainerRequest) (*GetRankExplainerResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetRankExplainer not implemented")
 }
 func (UnimplementedOracleServiceServer) mustEmbedUnimplementedOracleServiceServer() {}
 func (UnimplementedOracleServiceServer) testEmbeddedByValue()                       {}
@@ -732,6 +750,24 @@ func _OracleService_RunOracleTool_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OracleService_GetRankExplainer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRankExplainerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetRankExplainer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetRankExplainer_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetRankExplainer(ctx, req.(*GetRankExplainerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OracleService_ServiceDesc is the grpc.ServiceDesc for OracleService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -810,6 +846,10 @@ var OracleService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RunOracleTool",
 			Handler:    _OracleService_RunOracleTool_Handler,
+		},
+		{
+			MethodName: "GetRankExplainer",
+			Handler:    _OracleService_GetRankExplainer_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
