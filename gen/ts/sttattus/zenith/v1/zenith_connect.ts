@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetTodayLoadRequest, GetTodayLoadResponse, GetZenithStatsRequest, GetZenithStatsResponse, LogFocusSessionRequest, LogFocusSessionResponse } from "./zenith_pb.js";
+import { GetTodayLoadRequest, GetTodayLoadResponse, GetZenithStatsRequest, GetZenithStatsResponse, ListMyCalendarConnectionsRequest, ListMyCalendarConnectionsResponse, ListMyCalendarEventsRequest, ListMyCalendarEventsResponse, LogFocusSessionRequest, LogFocusSessionResponse } from "./zenith_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -39,6 +39,26 @@ export const ZenithService = {
       name: "GetTodayLoad",
       I: GetTodayLoadRequest,
       O: GetTodayLoadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Z16.6 — calendar read integration.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListMyCalendarConnections
+     */
+    listMyCalendarConnections: {
+      name: "ListMyCalendarConnections",
+      I: ListMyCalendarConnectionsRequest,
+      O: ListMyCalendarConnectionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListMyCalendarEvents
+     */
+    listMyCalendarEvents: {
+      name: "ListMyCalendarEvents",
+      I: ListMyCalendarEventsRequest,
+      O: ListMyCalendarEventsResponse,
       kind: MethodKind.Unary,
     },
   }

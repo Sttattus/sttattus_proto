@@ -45,6 +45,15 @@ class ZenithServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getTodayLoad, request, options: options);
   }
 
+  /// Z16.6 — calendar read integration.
+  $grpc.ResponseFuture<$0.ListMyCalendarConnectionsResponse> listMyCalendarConnections($0.ListMyCalendarConnectionsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyCalendarConnections, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyCalendarEventsResponse> listMyCalendarEvents($0.ListMyCalendarEventsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyCalendarEvents, request, options: options);
+  }
+
     // method descriptors
 
   static final _$logFocusSession = $grpc.ClientMethod<$0.LogFocusSessionRequest, $0.LogFocusSessionResponse>(
@@ -59,6 +68,14 @@ class ZenithServiceClient extends $grpc.Client {
       '/sttattus.zenith.v1.ZenithService/GetTodayLoad',
       ($0.GetTodayLoadRequest value) => value.writeToBuffer(),
       $0.GetTodayLoadResponse.fromBuffer);
+  static final _$listMyCalendarConnections = $grpc.ClientMethod<$0.ListMyCalendarConnectionsRequest, $0.ListMyCalendarConnectionsResponse>(
+      '/sttattus.zenith.v1.ZenithService/ListMyCalendarConnections',
+      ($0.ListMyCalendarConnectionsRequest value) => value.writeToBuffer(),
+      $0.ListMyCalendarConnectionsResponse.fromBuffer);
+  static final _$listMyCalendarEvents = $grpc.ClientMethod<$0.ListMyCalendarEventsRequest, $0.ListMyCalendarEventsResponse>(
+      '/sttattus.zenith.v1.ZenithService/ListMyCalendarEvents',
+      ($0.ListMyCalendarEventsRequest value) => value.writeToBuffer(),
+      $0.ListMyCalendarEventsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.zenith.v1.ZenithService')
@@ -87,6 +104,20 @@ abstract class ZenithServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetTodayLoadRequest.fromBuffer(value),
         ($0.GetTodayLoadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyCalendarConnectionsRequest, $0.ListMyCalendarConnectionsResponse>(
+        'ListMyCalendarConnections',
+        listMyCalendarConnections_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyCalendarConnectionsRequest.fromBuffer(value),
+        ($0.ListMyCalendarConnectionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyCalendarEventsRequest, $0.ListMyCalendarEventsResponse>(
+        'ListMyCalendarEvents',
+        listMyCalendarEvents_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyCalendarEventsRequest.fromBuffer(value),
+        ($0.ListMyCalendarEventsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.LogFocusSessionResponse> logFocusSession_Pre($grpc.ServiceCall $call, $async.Future<$0.LogFocusSessionRequest> $request) async {
@@ -106,5 +137,17 @@ abstract class ZenithServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GetTodayLoadResponse> getTodayLoad($grpc.ServiceCall call, $0.GetTodayLoadRequest request);
+
+  $async.Future<$0.ListMyCalendarConnectionsResponse> listMyCalendarConnections_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyCalendarConnectionsRequest> $request) async {
+    return listMyCalendarConnections($call, await $request);
+  }
+
+  $async.Future<$0.ListMyCalendarConnectionsResponse> listMyCalendarConnections($grpc.ServiceCall call, $0.ListMyCalendarConnectionsRequest request);
+
+  $async.Future<$0.ListMyCalendarEventsResponse> listMyCalendarEvents_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyCalendarEventsRequest> $request) async {
+    return listMyCalendarEvents($call, await $request);
+  }
+
+  $async.Future<$0.ListMyCalendarEventsResponse> listMyCalendarEvents($grpc.ServiceCall call, $0.ListMyCalendarEventsRequest request);
 
 }

@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
 
 /**
  * @generated from message sttattus.zenith.v1.Session
@@ -301,6 +301,280 @@ export class GetZenithStatsResponse extends Message<GetZenithStatsResponse> {
 
   static equals(a: GetZenithStatsResponse | PlainMessage<GetZenithStatsResponse> | undefined, b: GetZenithStatsResponse | PlainMessage<GetZenithStatsResponse> | undefined): boolean {
     return proto3.util.equals(GetZenithStatsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.CalendarConnection
+ */
+export class CalendarConnection extends Message<CalendarConnection> {
+  /**
+   * 'google' | 'apple'
+   *
+   * @generated from field: string provider = 1;
+   */
+  provider = "";
+
+  /**
+   * 'needs_auth' | 'connected' | 'failed'
+   *
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int64 last_synced_unix = 3;
+   */
+  lastSyncedUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<CalendarConnection>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.CalendarConnection";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "provider", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "last_synced_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CalendarConnection {
+    return new CalendarConnection().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CalendarConnection {
+    return new CalendarConnection().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CalendarConnection {
+    return new CalendarConnection().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CalendarConnection | PlainMessage<CalendarConnection> | undefined, b: CalendarConnection | PlainMessage<CalendarConnection> | undefined): boolean {
+    return proto3.util.equals(CalendarConnection, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.CalendarEvent
+ */
+export class CalendarEvent extends Message<CalendarEvent> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string provider = 2;
+   */
+  provider = "";
+
+  /**
+   * @generated from field: string provider_event_id = 3;
+   */
+  providerEventId = "";
+
+  /**
+   * @generated from field: int64 starts_at_unix = 4;
+   */
+  startsAtUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 ends_at_unix = 5;
+   */
+  endsAtUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: string title = 6;
+   */
+  title = "";
+
+  /**
+   * @generated from field: bool is_busy = 7;
+   */
+  isBusy = false;
+
+  constructor(data?: PartialMessage<CalendarEvent>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.CalendarEvent";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "provider", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "provider_event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "starts_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "ends_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "is_busy", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CalendarEvent {
+    return new CalendarEvent().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CalendarEvent {
+    return new CalendarEvent().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CalendarEvent {
+    return new CalendarEvent().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CalendarEvent | PlainMessage<CalendarEvent> | undefined, b: CalendarEvent | PlainMessage<CalendarEvent> | undefined): boolean {
+    return proto3.util.equals(CalendarEvent, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ListMyCalendarConnectionsRequest
+ */
+export class ListMyCalendarConnectionsRequest extends Message<ListMyCalendarConnectionsRequest> {
+  constructor(data?: PartialMessage<ListMyCalendarConnectionsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ListMyCalendarConnectionsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyCalendarConnectionsRequest {
+    return new ListMyCalendarConnectionsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyCalendarConnectionsRequest {
+    return new ListMyCalendarConnectionsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyCalendarConnectionsRequest {
+    return new ListMyCalendarConnectionsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyCalendarConnectionsRequest | PlainMessage<ListMyCalendarConnectionsRequest> | undefined, b: ListMyCalendarConnectionsRequest | PlainMessage<ListMyCalendarConnectionsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyCalendarConnectionsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ListMyCalendarConnectionsResponse
+ */
+export class ListMyCalendarConnectionsResponse extends Message<ListMyCalendarConnectionsResponse> {
+  /**
+   * @generated from field: repeated sttattus.zenith.v1.CalendarConnection connections = 1;
+   */
+  connections: CalendarConnection[] = [];
+
+  constructor(data?: PartialMessage<ListMyCalendarConnectionsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ListMyCalendarConnectionsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "connections", kind: "message", T: CalendarConnection, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyCalendarConnectionsResponse {
+    return new ListMyCalendarConnectionsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyCalendarConnectionsResponse {
+    return new ListMyCalendarConnectionsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyCalendarConnectionsResponse {
+    return new ListMyCalendarConnectionsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyCalendarConnectionsResponse | PlainMessage<ListMyCalendarConnectionsResponse> | undefined, b: ListMyCalendarConnectionsResponse | PlainMessage<ListMyCalendarConnectionsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyCalendarConnectionsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ListMyCalendarEventsRequest
+ */
+export class ListMyCalendarEventsRequest extends Message<ListMyCalendarEventsRequest> {
+  /**
+   * @generated from field: int64 from_unix = 1;
+   */
+  fromUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 to_unix = 2;
+   */
+  toUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<ListMyCalendarEventsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ListMyCalendarEventsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "from_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "to_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyCalendarEventsRequest {
+    return new ListMyCalendarEventsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyCalendarEventsRequest {
+    return new ListMyCalendarEventsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyCalendarEventsRequest {
+    return new ListMyCalendarEventsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyCalendarEventsRequest | PlainMessage<ListMyCalendarEventsRequest> | undefined, b: ListMyCalendarEventsRequest | PlainMessage<ListMyCalendarEventsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyCalendarEventsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ListMyCalendarEventsResponse
+ */
+export class ListMyCalendarEventsResponse extends Message<ListMyCalendarEventsResponse> {
+  /**
+   * @generated from field: repeated sttattus.zenith.v1.CalendarEvent events = 1;
+   */
+  events: CalendarEvent[] = [];
+
+  constructor(data?: PartialMessage<ListMyCalendarEventsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ListMyCalendarEventsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "events", kind: "message", T: CalendarEvent, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyCalendarEventsResponse {
+    return new ListMyCalendarEventsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyCalendarEventsResponse {
+    return new ListMyCalendarEventsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyCalendarEventsResponse {
+    return new ListMyCalendarEventsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyCalendarEventsResponse | PlainMessage<ListMyCalendarEventsResponse> | undefined, b: ListMyCalendarEventsResponse | PlainMessage<ListMyCalendarEventsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyCalendarEventsResponse, a, b);
   }
 }
 

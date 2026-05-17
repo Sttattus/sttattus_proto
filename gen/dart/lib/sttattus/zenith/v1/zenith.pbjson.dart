@@ -108,6 +108,92 @@ final $typed_data.Uint8List getZenithStatsResponseDescriptor = $convert.base64De
     'ChZHZXRaZW5pdGhTdGF0c1Jlc3BvbnNlEjUKBXN0YXRzGAEgASgLMh8uc3R0YXR0dXMuemVuaX'
     'RoLnYxLlplbml0aFN0YXRzUgVzdGF0cw==');
 
+@$core.Deprecated('Use calendarConnectionDescriptor instead')
+const CalendarConnection$json = {
+  '1': 'CalendarConnection',
+  '2': [
+    {'1': 'provider', '3': 1, '4': 1, '5': 9, '10': 'provider'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'last_synced_unix', '3': 3, '4': 1, '5': 3, '10': 'lastSyncedUnix'},
+  ],
+};
+
+/// Descriptor for `CalendarConnection`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List calendarConnectionDescriptor = $convert.base64Decode(
+    'ChJDYWxlbmRhckNvbm5lY3Rpb24SGgoIcHJvdmlkZXIYASABKAlSCHByb3ZpZGVyEhYKBnN0YX'
+    'R1cxgCIAEoCVIGc3RhdHVzEigKEGxhc3Rfc3luY2VkX3VuaXgYAyABKANSDmxhc3RTeW5jZWRV'
+    'bml4');
+
+@$core.Deprecated('Use calendarEventDescriptor instead')
+const CalendarEvent$json = {
+  '1': 'CalendarEvent',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'provider', '3': 2, '4': 1, '5': 9, '10': 'provider'},
+    {'1': 'provider_event_id', '3': 3, '4': 1, '5': 9, '10': 'providerEventId'},
+    {'1': 'starts_at_unix', '3': 4, '4': 1, '5': 3, '10': 'startsAtUnix'},
+    {'1': 'ends_at_unix', '3': 5, '4': 1, '5': 3, '10': 'endsAtUnix'},
+    {'1': 'title', '3': 6, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'is_busy', '3': 7, '4': 1, '5': 8, '10': 'isBusy'},
+  ],
+};
+
+/// Descriptor for `CalendarEvent`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List calendarEventDescriptor = $convert.base64Decode(
+    'Cg1DYWxlbmRhckV2ZW50Eg4KAmlkGAEgASgJUgJpZBIaCghwcm92aWRlchgCIAEoCVIIcHJvdm'
+    'lkZXISKgoRcHJvdmlkZXJfZXZlbnRfaWQYAyABKAlSD3Byb3ZpZGVyRXZlbnRJZBIkCg5zdGFy'
+    'dHNfYXRfdW5peBgEIAEoA1IMc3RhcnRzQXRVbml4EiAKDGVuZHNfYXRfdW5peBgFIAEoA1IKZW'
+    '5kc0F0VW5peBIUCgV0aXRsZRgGIAEoCVIFdGl0bGUSFwoHaXNfYnVzeRgHIAEoCFIGaXNCdXN5');
+
+@$core.Deprecated('Use listMyCalendarConnectionsRequestDescriptor instead')
+const ListMyCalendarConnectionsRequest$json = {
+  '1': 'ListMyCalendarConnectionsRequest',
+};
+
+/// Descriptor for `ListMyCalendarConnectionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyCalendarConnectionsRequestDescriptor = $convert.base64Decode(
+    'CiBMaXN0TXlDYWxlbmRhckNvbm5lY3Rpb25zUmVxdWVzdA==');
+
+@$core.Deprecated('Use listMyCalendarConnectionsResponseDescriptor instead')
+const ListMyCalendarConnectionsResponse$json = {
+  '1': 'ListMyCalendarConnectionsResponse',
+  '2': [
+    {'1': 'connections', '3': 1, '4': 3, '5': 11, '6': '.sttattus.zenith.v1.CalendarConnection', '10': 'connections'},
+  ],
+};
+
+/// Descriptor for `ListMyCalendarConnectionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyCalendarConnectionsResponseDescriptor = $convert.base64Decode(
+    'CiFMaXN0TXlDYWxlbmRhckNvbm5lY3Rpb25zUmVzcG9uc2USSAoLY29ubmVjdGlvbnMYASADKA'
+    'syJi5zdHRhdHR1cy56ZW5pdGgudjEuQ2FsZW5kYXJDb25uZWN0aW9uUgtjb25uZWN0aW9ucw==');
+
+@$core.Deprecated('Use listMyCalendarEventsRequestDescriptor instead')
+const ListMyCalendarEventsRequest$json = {
+  '1': 'ListMyCalendarEventsRequest',
+  '2': [
+    {'1': 'from_unix', '3': 1, '4': 1, '5': 3, '10': 'fromUnix'},
+    {'1': 'to_unix', '3': 2, '4': 1, '5': 3, '10': 'toUnix'},
+  ],
+};
+
+/// Descriptor for `ListMyCalendarEventsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyCalendarEventsRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0TXlDYWxlbmRhckV2ZW50c1JlcXVlc3QSGwoJZnJvbV91bml4GAEgASgDUghmcm9tVW'
+    '5peBIXCgd0b191bml4GAIgASgDUgZ0b1VuaXg=');
+
+@$core.Deprecated('Use listMyCalendarEventsResponseDescriptor instead')
+const ListMyCalendarEventsResponse$json = {
+  '1': 'ListMyCalendarEventsResponse',
+  '2': [
+    {'1': 'events', '3': 1, '4': 3, '5': 11, '6': '.sttattus.zenith.v1.CalendarEvent', '10': 'events'},
+  ],
+};
+
+/// Descriptor for `ListMyCalendarEventsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyCalendarEventsResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0TXlDYWxlbmRhckV2ZW50c1Jlc3BvbnNlEjkKBmV2ZW50cxgBIAMoCzIhLnN0dGF0dH'
+    'VzLnplbml0aC52MS5DYWxlbmRhckV2ZW50UgZldmVudHM=');
+
 @$core.Deprecated('Use cognitiveLoadDescriptor instead')
 const CognitiveLoad$json = {
   '1': 'CognitiveLoad',

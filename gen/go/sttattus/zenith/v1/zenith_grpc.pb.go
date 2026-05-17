@@ -19,9 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ZenithService_LogFocusSession_FullMethodName = "/sttattus.zenith.v1.ZenithService/LogFocusSession"
-	ZenithService_GetZenithStats_FullMethodName  = "/sttattus.zenith.v1.ZenithService/GetZenithStats"
-	ZenithService_GetTodayLoad_FullMethodName    = "/sttattus.zenith.v1.ZenithService/GetTodayLoad"
+	ZenithService_LogFocusSession_FullMethodName           = "/sttattus.zenith.v1.ZenithService/LogFocusSession"
+	ZenithService_GetZenithStats_FullMethodName            = "/sttattus.zenith.v1.ZenithService/GetZenithStats"
+	ZenithService_GetTodayLoad_FullMethodName              = "/sttattus.zenith.v1.ZenithService/GetTodayLoad"
+	ZenithService_ListMyCalendarConnections_FullMethodName = "/sttattus.zenith.v1.ZenithService/ListMyCalendarConnections"
+	ZenithService_ListMyCalendarEvents_FullMethodName      = "/sttattus.zenith.v1.ZenithService/ListMyCalendarEvents"
 )
 
 // ZenithServiceClient is the client API for ZenithService service.
@@ -32,6 +34,9 @@ type ZenithServiceClient interface {
 	GetZenithStats(ctx context.Context, in *GetZenithStatsRequest, opts ...grpc.CallOption) (*GetZenithStatsResponse, error)
 	// Z16.5 — today's cognitive load.
 	GetTodayLoad(ctx context.Context, in *GetTodayLoadRequest, opts ...grpc.CallOption) (*GetTodayLoadResponse, error)
+	// Z16.6 — calendar read integration.
+	ListMyCalendarConnections(ctx context.Context, in *ListMyCalendarConnectionsRequest, opts ...grpc.CallOption) (*ListMyCalendarConnectionsResponse, error)
+	ListMyCalendarEvents(ctx context.Context, in *ListMyCalendarEventsRequest, opts ...grpc.CallOption) (*ListMyCalendarEventsResponse, error)
 }
 
 type zenithServiceClient struct {
@@ -72,6 +77,26 @@ func (c *zenithServiceClient) GetTodayLoad(ctx context.Context, in *GetTodayLoad
 	return out, nil
 }
 
+func (c *zenithServiceClient) ListMyCalendarConnections(ctx context.Context, in *ListMyCalendarConnectionsRequest, opts ...grpc.CallOption) (*ListMyCalendarConnectionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyCalendarConnectionsResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListMyCalendarConnections_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListMyCalendarEvents(ctx context.Context, in *ListMyCalendarEventsRequest, opts ...grpc.CallOption) (*ListMyCalendarEventsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyCalendarEventsResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListMyCalendarEvents_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ZenithServiceServer is the server API for ZenithService service.
 // All implementations must embed UnimplementedZenithServiceServer
 // for forward compatibility.
@@ -80,6 +105,9 @@ type ZenithServiceServer interface {
 	GetZenithStats(context.Context, *GetZenithStatsRequest) (*GetZenithStatsResponse, error)
 	// Z16.5 — today's cognitive load.
 	GetTodayLoad(context.Context, *GetTodayLoadRequest) (*GetTodayLoadResponse, error)
+	// Z16.6 — calendar read integration.
+	ListMyCalendarConnections(context.Context, *ListMyCalendarConnectionsRequest) (*ListMyCalendarConnectionsResponse, error)
+	ListMyCalendarEvents(context.Context, *ListMyCalendarEventsRequest) (*ListMyCalendarEventsResponse, error)
 	mustEmbedUnimplementedZenithServiceServer()
 }
 
@@ -98,6 +126,12 @@ func (UnimplementedZenithServiceServer) GetZenithStats(context.Context, *GetZeni
 }
 func (UnimplementedZenithServiceServer) GetTodayLoad(context.Context, *GetTodayLoadRequest) (*GetTodayLoadResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetTodayLoad not implemented")
+}
+func (UnimplementedZenithServiceServer) ListMyCalendarConnections(context.Context, *ListMyCalendarConnectionsRequest) (*ListMyCalendarConnectionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyCalendarConnections not implemented")
+}
+func (UnimplementedZenithServiceServer) ListMyCalendarEvents(context.Context, *ListMyCalendarEventsRequest) (*ListMyCalendarEventsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyCalendarEvents not implemented")
 }
 func (UnimplementedZenithServiceServer) mustEmbedUnimplementedZenithServiceServer() {}
 func (UnimplementedZenithServiceServer) testEmbeddedByValue()                       {}
@@ -174,6 +208,42 @@ func _ZenithService_GetTodayLoad_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ZenithService_ListMyCalendarConnections_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyCalendarConnectionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListMyCalendarConnections(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListMyCalendarConnections_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListMyCalendarConnections(ctx, req.(*ListMyCalendarConnectionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListMyCalendarEvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyCalendarEventsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListMyCalendarEvents(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListMyCalendarEvents_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListMyCalendarEvents(ctx, req.(*ListMyCalendarEventsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ZenithService_ServiceDesc is the grpc.ServiceDesc for ZenithService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -192,6 +262,14 @@ var ZenithService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTodayLoad",
 			Handler:    _ZenithService_GetTodayLoad_Handler,
+		},
+		{
+			MethodName: "ListMyCalendarConnections",
+			Handler:    _ZenithService_ListMyCalendarConnections_Handler,
+		},
+		{
+			MethodName: "ListMyCalendarEvents",
+			Handler:    _ZenithService_ListMyCalendarEvents_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

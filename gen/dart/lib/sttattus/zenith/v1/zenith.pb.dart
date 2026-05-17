@@ -12,6 +12,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $1;
@@ -432,6 +433,362 @@ class GetZenithStatsResponse extends $pb.GeneratedMessage {
   void clearStats() => $_clearField(1);
   @$pb.TagNumber(1)
   ZenithStats ensureStats() => $_ensure(0);
+}
+
+class CalendarConnection extends $pb.GeneratedMessage {
+  factory CalendarConnection({
+    $core.String? provider,
+    $core.String? status,
+    $fixnum.Int64? lastSyncedUnix,
+  }) {
+    final result = create();
+    if (provider != null) result.provider = provider;
+    if (status != null) result.status = status;
+    if (lastSyncedUnix != null) result.lastSyncedUnix = lastSyncedUnix;
+    return result;
+  }
+
+  CalendarConnection._();
+
+  factory CalendarConnection.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CalendarConnection.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CalendarConnection', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'provider')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aInt64(3, _omitFieldNames ? '' : 'lastSyncedUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CalendarConnection clone() => CalendarConnection()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CalendarConnection copyWith(void Function(CalendarConnection) updates) => super.copyWith((message) => updates(message as CalendarConnection)) as CalendarConnection;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CalendarConnection create() => CalendarConnection._();
+  @$core.override
+  CalendarConnection createEmptyInstance() => create();
+  static $pb.PbList<CalendarConnection> createRepeated() => $pb.PbList<CalendarConnection>();
+  @$core.pragma('dart2js:noInline')
+  static CalendarConnection getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CalendarConnection>(create);
+  static CalendarConnection? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get provider => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set provider($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProvider() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProvider() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get lastSyncedUnix => $_getI64(2);
+  @$pb.TagNumber(3)
+  set lastSyncedUnix($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLastSyncedUnix() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLastSyncedUnix() => $_clearField(3);
+}
+
+class CalendarEvent extends $pb.GeneratedMessage {
+  factory CalendarEvent({
+    $core.String? id,
+    $core.String? provider,
+    $core.String? providerEventId,
+    $fixnum.Int64? startsAtUnix,
+    $fixnum.Int64? endsAtUnix,
+    $core.String? title,
+    $core.bool? isBusy,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (provider != null) result.provider = provider;
+    if (providerEventId != null) result.providerEventId = providerEventId;
+    if (startsAtUnix != null) result.startsAtUnix = startsAtUnix;
+    if (endsAtUnix != null) result.endsAtUnix = endsAtUnix;
+    if (title != null) result.title = title;
+    if (isBusy != null) result.isBusy = isBusy;
+    return result;
+  }
+
+  CalendarEvent._();
+
+  factory CalendarEvent.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CalendarEvent.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CalendarEvent', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'provider')
+    ..aOS(3, _omitFieldNames ? '' : 'providerEventId')
+    ..aInt64(4, _omitFieldNames ? '' : 'startsAtUnix')
+    ..aInt64(5, _omitFieldNames ? '' : 'endsAtUnix')
+    ..aOS(6, _omitFieldNames ? '' : 'title')
+    ..aOB(7, _omitFieldNames ? '' : 'isBusy')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CalendarEvent clone() => CalendarEvent()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CalendarEvent copyWith(void Function(CalendarEvent) updates) => super.copyWith((message) => updates(message as CalendarEvent)) as CalendarEvent;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CalendarEvent create() => CalendarEvent._();
+  @$core.override
+  CalendarEvent createEmptyInstance() => create();
+  static $pb.PbList<CalendarEvent> createRepeated() => $pb.PbList<CalendarEvent>();
+  @$core.pragma('dart2js:noInline')
+  static CalendarEvent getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CalendarEvent>(create);
+  static CalendarEvent? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get provider => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set provider($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasProvider() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProvider() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get providerEventId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set providerEventId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProviderEventId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProviderEventId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get startsAtUnix => $_getI64(3);
+  @$pb.TagNumber(4)
+  set startsAtUnix($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStartsAtUnix() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStartsAtUnix() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get endsAtUnix => $_getI64(4);
+  @$pb.TagNumber(5)
+  set endsAtUnix($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEndsAtUnix() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEndsAtUnix() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get title => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set title($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTitle() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTitle() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get isBusy => $_getBF(6);
+  @$pb.TagNumber(7)
+  set isBusy($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasIsBusy() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIsBusy() => $_clearField(7);
+}
+
+class ListMyCalendarConnectionsRequest extends $pb.GeneratedMessage {
+  factory ListMyCalendarConnectionsRequest() => create();
+
+  ListMyCalendarConnectionsRequest._();
+
+  factory ListMyCalendarConnectionsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyCalendarConnectionsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyCalendarConnectionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCalendarConnectionsRequest clone() => ListMyCalendarConnectionsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCalendarConnectionsRequest copyWith(void Function(ListMyCalendarConnectionsRequest) updates) => super.copyWith((message) => updates(message as ListMyCalendarConnectionsRequest)) as ListMyCalendarConnectionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyCalendarConnectionsRequest create() => ListMyCalendarConnectionsRequest._();
+  @$core.override
+  ListMyCalendarConnectionsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyCalendarConnectionsRequest> createRepeated() => $pb.PbList<ListMyCalendarConnectionsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyCalendarConnectionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyCalendarConnectionsRequest>(create);
+  static ListMyCalendarConnectionsRequest? _defaultInstance;
+}
+
+class ListMyCalendarConnectionsResponse extends $pb.GeneratedMessage {
+  factory ListMyCalendarConnectionsResponse({
+    $core.Iterable<CalendarConnection>? connections,
+  }) {
+    final result = create();
+    if (connections != null) result.connections.addAll(connections);
+    return result;
+  }
+
+  ListMyCalendarConnectionsResponse._();
+
+  factory ListMyCalendarConnectionsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyCalendarConnectionsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyCalendarConnectionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..pc<CalendarConnection>(1, _omitFieldNames ? '' : 'connections', $pb.PbFieldType.PM, subBuilder: CalendarConnection.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCalendarConnectionsResponse clone() => ListMyCalendarConnectionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCalendarConnectionsResponse copyWith(void Function(ListMyCalendarConnectionsResponse) updates) => super.copyWith((message) => updates(message as ListMyCalendarConnectionsResponse)) as ListMyCalendarConnectionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyCalendarConnectionsResponse create() => ListMyCalendarConnectionsResponse._();
+  @$core.override
+  ListMyCalendarConnectionsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyCalendarConnectionsResponse> createRepeated() => $pb.PbList<ListMyCalendarConnectionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyCalendarConnectionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyCalendarConnectionsResponse>(create);
+  static ListMyCalendarConnectionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<CalendarConnection> get connections => $_getList(0);
+}
+
+class ListMyCalendarEventsRequest extends $pb.GeneratedMessage {
+  factory ListMyCalendarEventsRequest({
+    $fixnum.Int64? fromUnix,
+    $fixnum.Int64? toUnix,
+  }) {
+    final result = create();
+    if (fromUnix != null) result.fromUnix = fromUnix;
+    if (toUnix != null) result.toUnix = toUnix;
+    return result;
+  }
+
+  ListMyCalendarEventsRequest._();
+
+  factory ListMyCalendarEventsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyCalendarEventsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyCalendarEventsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'fromUnix')
+    ..aInt64(2, _omitFieldNames ? '' : 'toUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCalendarEventsRequest clone() => ListMyCalendarEventsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCalendarEventsRequest copyWith(void Function(ListMyCalendarEventsRequest) updates) => super.copyWith((message) => updates(message as ListMyCalendarEventsRequest)) as ListMyCalendarEventsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyCalendarEventsRequest create() => ListMyCalendarEventsRequest._();
+  @$core.override
+  ListMyCalendarEventsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyCalendarEventsRequest> createRepeated() => $pb.PbList<ListMyCalendarEventsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyCalendarEventsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyCalendarEventsRequest>(create);
+  static ListMyCalendarEventsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get fromUnix => $_getI64(0);
+  @$pb.TagNumber(1)
+  set fromUnix($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFromUnix() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFromUnix() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get toUnix => $_getI64(1);
+  @$pb.TagNumber(2)
+  set toUnix($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasToUnix() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearToUnix() => $_clearField(2);
+}
+
+class ListMyCalendarEventsResponse extends $pb.GeneratedMessage {
+  factory ListMyCalendarEventsResponse({
+    $core.Iterable<CalendarEvent>? events,
+  }) {
+    final result = create();
+    if (events != null) result.events.addAll(events);
+    return result;
+  }
+
+  ListMyCalendarEventsResponse._();
+
+  factory ListMyCalendarEventsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyCalendarEventsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyCalendarEventsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..pc<CalendarEvent>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: CalendarEvent.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCalendarEventsResponse clone() => ListMyCalendarEventsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCalendarEventsResponse copyWith(void Function(ListMyCalendarEventsResponse) updates) => super.copyWith((message) => updates(message as ListMyCalendarEventsResponse)) as ListMyCalendarEventsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyCalendarEventsResponse create() => ListMyCalendarEventsResponse._();
+  @$core.override
+  ListMyCalendarEventsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyCalendarEventsResponse> createRepeated() => $pb.PbList<ListMyCalendarEventsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyCalendarEventsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyCalendarEventsResponse>(create);
+  static ListMyCalendarEventsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<CalendarEvent> get events => $_getList(0);
 }
 
 /// === Z16.5 — today's cognitive load ===

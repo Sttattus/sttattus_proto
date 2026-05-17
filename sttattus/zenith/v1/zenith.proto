@@ -40,6 +40,37 @@ message GetZenithStatsResponse {
   ZenithStats stats = 1;
 }
 
+// === Z16.6 — calendar read integration ===
+
+message CalendarConnection {
+  string provider = 1; // 'google' | 'apple'
+  string status = 2; // 'needs_auth' | 'connected' | 'failed'
+  int64 last_synced_unix = 3;
+}
+
+message CalendarEvent {
+  string id = 1;
+  string provider = 2;
+  string provider_event_id = 3;
+  int64 starts_at_unix = 4;
+  int64 ends_at_unix = 5;
+  string title = 6;
+  bool is_busy = 7;
+}
+
+message ListMyCalendarConnectionsRequest {}
+message ListMyCalendarConnectionsResponse {
+  repeated CalendarConnection connections = 1;
+}
+
+message ListMyCalendarEventsRequest {
+  int64 from_unix = 1;
+  int64 to_unix = 2;
+}
+message ListMyCalendarEventsResponse {
+  repeated CalendarEvent events = 1;
+}
+
 // === Z16.5 — today's cognitive load ===
 //
 // Composite of:
@@ -72,4 +103,8 @@ service ZenithService {
 
   // Z16.5 — today's cognitive load.
   rpc GetTodayLoad(GetTodayLoadRequest) returns (GetTodayLoadResponse);
+
+  // Z16.6 — calendar read integration.
+  rpc ListMyCalendarConnections(ListMyCalendarConnectionsRequest) returns (ListMyCalendarConnectionsResponse);
+  rpc ListMyCalendarEvents(ListMyCalendarEventsRequest) returns (ListMyCalendarEventsResponse);
 }

@@ -374,6 +374,334 @@ func (x *GetZenithStatsResponse) GetStats() *ZenithStats {
 	return nil
 }
 
+type CalendarConnection struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Provider       string                 `protobuf:"bytes,1,opt,name=provider,proto3" json:"provider,omitempty"` // 'google' | 'apple'
+	Status         string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`     // 'needs_auth' | 'connected' | 'failed'
+	LastSyncedUnix int64                  `protobuf:"varint,3,opt,name=last_synced_unix,json=lastSyncedUnix,proto3" json:"last_synced_unix,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *CalendarConnection) Reset() {
+	*x = CalendarConnection{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CalendarConnection) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CalendarConnection) ProtoMessage() {}
+
+func (x *CalendarConnection) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CalendarConnection.ProtoReflect.Descriptor instead.
+func (*CalendarConnection) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *CalendarConnection) GetProvider() string {
+	if x != nil {
+		return x.Provider
+	}
+	return ""
+}
+
+func (x *CalendarConnection) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *CalendarConnection) GetLastSyncedUnix() int64 {
+	if x != nil {
+		return x.LastSyncedUnix
+	}
+	return 0
+}
+
+type CalendarEvent struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Provider        string                 `protobuf:"bytes,2,opt,name=provider,proto3" json:"provider,omitempty"`
+	ProviderEventId string                 `protobuf:"bytes,3,opt,name=provider_event_id,json=providerEventId,proto3" json:"provider_event_id,omitempty"`
+	StartsAtUnix    int64                  `protobuf:"varint,4,opt,name=starts_at_unix,json=startsAtUnix,proto3" json:"starts_at_unix,omitempty"`
+	EndsAtUnix      int64                  `protobuf:"varint,5,opt,name=ends_at_unix,json=endsAtUnix,proto3" json:"ends_at_unix,omitempty"`
+	Title           string                 `protobuf:"bytes,6,opt,name=title,proto3" json:"title,omitempty"`
+	IsBusy          bool                   `protobuf:"varint,7,opt,name=is_busy,json=isBusy,proto3" json:"is_busy,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *CalendarEvent) Reset() {
+	*x = CalendarEvent{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CalendarEvent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CalendarEvent) ProtoMessage() {}
+
+func (x *CalendarEvent) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CalendarEvent.ProtoReflect.Descriptor instead.
+func (*CalendarEvent) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *CalendarEvent) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CalendarEvent) GetProvider() string {
+	if x != nil {
+		return x.Provider
+	}
+	return ""
+}
+
+func (x *CalendarEvent) GetProviderEventId() string {
+	if x != nil {
+		return x.ProviderEventId
+	}
+	return ""
+}
+
+func (x *CalendarEvent) GetStartsAtUnix() int64 {
+	if x != nil {
+		return x.StartsAtUnix
+	}
+	return 0
+}
+
+func (x *CalendarEvent) GetEndsAtUnix() int64 {
+	if x != nil {
+		return x.EndsAtUnix
+	}
+	return 0
+}
+
+func (x *CalendarEvent) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CalendarEvent) GetIsBusy() bool {
+	if x != nil {
+		return x.IsBusy
+	}
+	return false
+}
+
+type ListMyCalendarConnectionsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyCalendarConnectionsRequest) Reset() {
+	*x = ListMyCalendarConnectionsRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyCalendarConnectionsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyCalendarConnectionsRequest) ProtoMessage() {}
+
+func (x *ListMyCalendarConnectionsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyCalendarConnectionsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyCalendarConnectionsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{8}
+}
+
+type ListMyCalendarConnectionsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Connections   []*CalendarConnection  `protobuf:"bytes,1,rep,name=connections,proto3" json:"connections,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyCalendarConnectionsResponse) Reset() {
+	*x = ListMyCalendarConnectionsResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyCalendarConnectionsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyCalendarConnectionsResponse) ProtoMessage() {}
+
+func (x *ListMyCalendarConnectionsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyCalendarConnectionsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyCalendarConnectionsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *ListMyCalendarConnectionsResponse) GetConnections() []*CalendarConnection {
+	if x != nil {
+		return x.Connections
+	}
+	return nil
+}
+
+type ListMyCalendarEventsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FromUnix      int64                  `protobuf:"varint,1,opt,name=from_unix,json=fromUnix,proto3" json:"from_unix,omitempty"`
+	ToUnix        int64                  `protobuf:"varint,2,opt,name=to_unix,json=toUnix,proto3" json:"to_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyCalendarEventsRequest) Reset() {
+	*x = ListMyCalendarEventsRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyCalendarEventsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyCalendarEventsRequest) ProtoMessage() {}
+
+func (x *ListMyCalendarEventsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyCalendarEventsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyCalendarEventsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *ListMyCalendarEventsRequest) GetFromUnix() int64 {
+	if x != nil {
+		return x.FromUnix
+	}
+	return 0
+}
+
+func (x *ListMyCalendarEventsRequest) GetToUnix() int64 {
+	if x != nil {
+		return x.ToUnix
+	}
+	return 0
+}
+
+type ListMyCalendarEventsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Events        []*CalendarEvent       `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyCalendarEventsResponse) Reset() {
+	*x = ListMyCalendarEventsResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyCalendarEventsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyCalendarEventsResponse) ProtoMessage() {}
+
+func (x *ListMyCalendarEventsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyCalendarEventsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyCalendarEventsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *ListMyCalendarEventsResponse) GetEvents() []*CalendarEvent {
+	if x != nil {
+		return x.Events
+	}
+	return nil
+}
+
 // === Z16.5 — today's cognitive load ===
 //
 // Composite of:
@@ -400,7 +728,7 @@ type CognitiveLoad struct {
 
 func (x *CognitiveLoad) Reset() {
 	*x = CognitiveLoad{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[6]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -412,7 +740,7 @@ func (x *CognitiveLoad) String() string {
 func (*CognitiveLoad) ProtoMessage() {}
 
 func (x *CognitiveLoad) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[6]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -425,7 +753,7 @@ func (x *CognitiveLoad) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CognitiveLoad.ProtoReflect.Descriptor instead.
 func (*CognitiveLoad) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{6}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *CognitiveLoad) GetCalendarDensityPresent() bool {
@@ -492,7 +820,7 @@ type GetTodayLoadRequest struct {
 
 func (x *GetTodayLoadRequest) Reset() {
 	*x = GetTodayLoadRequest{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[7]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -504,7 +832,7 @@ func (x *GetTodayLoadRequest) String() string {
 func (*GetTodayLoadRequest) ProtoMessage() {}
 
 func (x *GetTodayLoadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[7]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -517,7 +845,7 @@ func (x *GetTodayLoadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTodayLoadRequest.ProtoReflect.Descriptor instead.
 func (*GetTodayLoadRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{7}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{13}
 }
 
 type GetTodayLoadResponse struct {
@@ -529,7 +857,7 @@ type GetTodayLoadResponse struct {
 
 func (x *GetTodayLoadResponse) Reset() {
 	*x = GetTodayLoadResponse{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[8]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -541,7 +869,7 @@ func (x *GetTodayLoadResponse) String() string {
 func (*GetTodayLoadResponse) ProtoMessage() {}
 
 func (x *GetTodayLoadResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[8]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -554,7 +882,7 @@ func (x *GetTodayLoadResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTodayLoadResponse.ProtoReflect.Descriptor instead.
 func (*GetTodayLoadResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{8}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *GetTodayLoadResponse) GetLoad() *CognitiveLoad {
@@ -595,7 +923,28 @@ const file_sttattus_zenith_v1_zenith_proto_rawDesc = "" +
 	"\x15GetZenithStatsRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\"O\n" +
 	"\x16GetZenithStatsResponse\x125\n" +
-	"\x05stats\x18\x01 \x01(\v2\x1f.sttattus.zenith.v1.ZenithStatsR\x05stats\"\xff\x02\n" +
+	"\x05stats\x18\x01 \x01(\v2\x1f.sttattus.zenith.v1.ZenithStatsR\x05stats\"r\n" +
+	"\x12CalendarConnection\x12\x1a\n" +
+	"\bprovider\x18\x01 \x01(\tR\bprovider\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\x12(\n" +
+	"\x10last_synced_unix\x18\x03 \x01(\x03R\x0elastSyncedUnix\"\xde\x01\n" +
+	"\rCalendarEvent\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
+	"\bprovider\x18\x02 \x01(\tR\bprovider\x12*\n" +
+	"\x11provider_event_id\x18\x03 \x01(\tR\x0fproviderEventId\x12$\n" +
+	"\x0estarts_at_unix\x18\x04 \x01(\x03R\fstartsAtUnix\x12 \n" +
+	"\fends_at_unix\x18\x05 \x01(\x03R\n" +
+	"endsAtUnix\x12\x14\n" +
+	"\x05title\x18\x06 \x01(\tR\x05title\x12\x17\n" +
+	"\ais_busy\x18\a \x01(\bR\x06isBusy\"\"\n" +
+	" ListMyCalendarConnectionsRequest\"m\n" +
+	"!ListMyCalendarConnectionsResponse\x12H\n" +
+	"\vconnections\x18\x01 \x03(\v2&.sttattus.zenith.v1.CalendarConnectionR\vconnections\"S\n" +
+	"\x1bListMyCalendarEventsRequest\x12\x1b\n" +
+	"\tfrom_unix\x18\x01 \x01(\x03R\bfromUnix\x12\x17\n" +
+	"\ato_unix\x18\x02 \x01(\x03R\x06toUnix\"Y\n" +
+	"\x1cListMyCalendarEventsResponse\x129\n" +
+	"\x06events\x18\x01 \x03(\v2!.sttattus.zenith.v1.CalendarEventR\x06events\"\xff\x02\n" +
 	"\rCognitiveLoad\x128\n" +
 	"\x18calendar_density_present\x18\x01 \x01(\bR\x16calendarDensityPresent\x12)\n" +
 	"\x10calendar_density\x18\x02 \x01(\x01R\x0fcalendarDensity\x124\n" +
@@ -607,11 +956,13 @@ const file_sttattus_zenith_v1_zenith_proto_rawDesc = "" +
 	"\x10inputs_available\x18\b \x01(\x05R\x0finputsAvailable\"\x15\n" +
 	"\x13GetTodayLoadRequest\"M\n" +
 	"\x14GetTodayLoadResponse\x125\n" +
-	"\x04load\x18\x01 \x01(\v2!.sttattus.zenith.v1.CognitiveLoadR\x04load2\xc7\x02\n" +
+	"\x04load\x18\x01 \x01(\v2!.sttattus.zenith.v1.CognitiveLoadR\x04load2\xcd\x04\n" +
 	"\rZenithService\x12j\n" +
 	"\x0fLogFocusSession\x12*.sttattus.zenith.v1.LogFocusSessionRequest\x1a+.sttattus.zenith.v1.LogFocusSessionResponse\x12g\n" +
 	"\x0eGetZenithStats\x12).sttattus.zenith.v1.GetZenithStatsRequest\x1a*.sttattus.zenith.v1.GetZenithStatsResponse\x12a\n" +
-	"\fGetTodayLoad\x12'.sttattus.zenith.v1.GetTodayLoadRequest\x1a(.sttattus.zenith.v1.GetTodayLoadResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/zenith/v1;zenithv1b\x06proto3"
+	"\fGetTodayLoad\x12'.sttattus.zenith.v1.GetTodayLoadRequest\x1a(.sttattus.zenith.v1.GetTodayLoadResponse\x12\x88\x01\n" +
+	"\x19ListMyCalendarConnections\x124.sttattus.zenith.v1.ListMyCalendarConnectionsRequest\x1a5.sttattus.zenith.v1.ListMyCalendarConnectionsResponse\x12y\n" +
+	"\x14ListMyCalendarEvents\x12/.sttattus.zenith.v1.ListMyCalendarEventsRequest\x1a0.sttattus.zenith.v1.ListMyCalendarEventsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/zenith/v1;zenithv1b\x06proto3"
 
 var (
 	file_sttattus_zenith_v1_zenith_proto_rawDescOnce sync.Once
@@ -625,36 +976,48 @@ func file_sttattus_zenith_v1_zenith_proto_rawDescGZIP() []byte {
 	return file_sttattus_zenith_v1_zenith_proto_rawDescData
 }
 
-var file_sttattus_zenith_v1_zenith_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_sttattus_zenith_v1_zenith_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_sttattus_zenith_v1_zenith_proto_goTypes = []any{
-	(*Session)(nil),                 // 0: sttattus.zenith.v1.Session
-	(*ZenithStats)(nil),             // 1: sttattus.zenith.v1.ZenithStats
-	(*LogFocusSessionRequest)(nil),  // 2: sttattus.zenith.v1.LogFocusSessionRequest
-	(*LogFocusSessionResponse)(nil), // 3: sttattus.zenith.v1.LogFocusSessionResponse
-	(*GetZenithStatsRequest)(nil),   // 4: sttattus.zenith.v1.GetZenithStatsRequest
-	(*GetZenithStatsResponse)(nil),  // 5: sttattus.zenith.v1.GetZenithStatsResponse
-	(*CognitiveLoad)(nil),           // 6: sttattus.zenith.v1.CognitiveLoad
-	(*GetTodayLoadRequest)(nil),     // 7: sttattus.zenith.v1.GetTodayLoadRequest
-	(*GetTodayLoadResponse)(nil),    // 8: sttattus.zenith.v1.GetTodayLoadResponse
-	(*timestamppb.Timestamp)(nil),   // 9: google.protobuf.Timestamp
+	(*Session)(nil),                           // 0: sttattus.zenith.v1.Session
+	(*ZenithStats)(nil),                       // 1: sttattus.zenith.v1.ZenithStats
+	(*LogFocusSessionRequest)(nil),            // 2: sttattus.zenith.v1.LogFocusSessionRequest
+	(*LogFocusSessionResponse)(nil),           // 3: sttattus.zenith.v1.LogFocusSessionResponse
+	(*GetZenithStatsRequest)(nil),             // 4: sttattus.zenith.v1.GetZenithStatsRequest
+	(*GetZenithStatsResponse)(nil),            // 5: sttattus.zenith.v1.GetZenithStatsResponse
+	(*CalendarConnection)(nil),                // 6: sttattus.zenith.v1.CalendarConnection
+	(*CalendarEvent)(nil),                     // 7: sttattus.zenith.v1.CalendarEvent
+	(*ListMyCalendarConnectionsRequest)(nil),  // 8: sttattus.zenith.v1.ListMyCalendarConnectionsRequest
+	(*ListMyCalendarConnectionsResponse)(nil), // 9: sttattus.zenith.v1.ListMyCalendarConnectionsResponse
+	(*ListMyCalendarEventsRequest)(nil),       // 10: sttattus.zenith.v1.ListMyCalendarEventsRequest
+	(*ListMyCalendarEventsResponse)(nil),      // 11: sttattus.zenith.v1.ListMyCalendarEventsResponse
+	(*CognitiveLoad)(nil),                     // 12: sttattus.zenith.v1.CognitiveLoad
+	(*GetTodayLoadRequest)(nil),               // 13: sttattus.zenith.v1.GetTodayLoadRequest
+	(*GetTodayLoadResponse)(nil),              // 14: sttattus.zenith.v1.GetTodayLoadResponse
+	(*timestamppb.Timestamp)(nil),             // 15: google.protobuf.Timestamp
 }
 var file_sttattus_zenith_v1_zenith_proto_depIdxs = []int32{
-	9, // 0: sttattus.zenith.v1.Session.started_at:type_name -> google.protobuf.Timestamp
-	0, // 1: sttattus.zenith.v1.LogFocusSessionRequest.session:type_name -> sttattus.zenith.v1.Session
-	1, // 2: sttattus.zenith.v1.LogFocusSessionResponse.stats:type_name -> sttattus.zenith.v1.ZenithStats
-	1, // 3: sttattus.zenith.v1.GetZenithStatsResponse.stats:type_name -> sttattus.zenith.v1.ZenithStats
-	6, // 4: sttattus.zenith.v1.GetTodayLoadResponse.load:type_name -> sttattus.zenith.v1.CognitiveLoad
-	2, // 5: sttattus.zenith.v1.ZenithService.LogFocusSession:input_type -> sttattus.zenith.v1.LogFocusSessionRequest
-	4, // 6: sttattus.zenith.v1.ZenithService.GetZenithStats:input_type -> sttattus.zenith.v1.GetZenithStatsRequest
-	7, // 7: sttattus.zenith.v1.ZenithService.GetTodayLoad:input_type -> sttattus.zenith.v1.GetTodayLoadRequest
-	3, // 8: sttattus.zenith.v1.ZenithService.LogFocusSession:output_type -> sttattus.zenith.v1.LogFocusSessionResponse
-	5, // 9: sttattus.zenith.v1.ZenithService.GetZenithStats:output_type -> sttattus.zenith.v1.GetZenithStatsResponse
-	8, // 10: sttattus.zenith.v1.ZenithService.GetTodayLoad:output_type -> sttattus.zenith.v1.GetTodayLoadResponse
-	8, // [8:11] is the sub-list for method output_type
-	5, // [5:8] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	15, // 0: sttattus.zenith.v1.Session.started_at:type_name -> google.protobuf.Timestamp
+	0,  // 1: sttattus.zenith.v1.LogFocusSessionRequest.session:type_name -> sttattus.zenith.v1.Session
+	1,  // 2: sttattus.zenith.v1.LogFocusSessionResponse.stats:type_name -> sttattus.zenith.v1.ZenithStats
+	1,  // 3: sttattus.zenith.v1.GetZenithStatsResponse.stats:type_name -> sttattus.zenith.v1.ZenithStats
+	6,  // 4: sttattus.zenith.v1.ListMyCalendarConnectionsResponse.connections:type_name -> sttattus.zenith.v1.CalendarConnection
+	7,  // 5: sttattus.zenith.v1.ListMyCalendarEventsResponse.events:type_name -> sttattus.zenith.v1.CalendarEvent
+	12, // 6: sttattus.zenith.v1.GetTodayLoadResponse.load:type_name -> sttattus.zenith.v1.CognitiveLoad
+	2,  // 7: sttattus.zenith.v1.ZenithService.LogFocusSession:input_type -> sttattus.zenith.v1.LogFocusSessionRequest
+	4,  // 8: sttattus.zenith.v1.ZenithService.GetZenithStats:input_type -> sttattus.zenith.v1.GetZenithStatsRequest
+	13, // 9: sttattus.zenith.v1.ZenithService.GetTodayLoad:input_type -> sttattus.zenith.v1.GetTodayLoadRequest
+	8,  // 10: sttattus.zenith.v1.ZenithService.ListMyCalendarConnections:input_type -> sttattus.zenith.v1.ListMyCalendarConnectionsRequest
+	10, // 11: sttattus.zenith.v1.ZenithService.ListMyCalendarEvents:input_type -> sttattus.zenith.v1.ListMyCalendarEventsRequest
+	3,  // 12: sttattus.zenith.v1.ZenithService.LogFocusSession:output_type -> sttattus.zenith.v1.LogFocusSessionResponse
+	5,  // 13: sttattus.zenith.v1.ZenithService.GetZenithStats:output_type -> sttattus.zenith.v1.GetZenithStatsResponse
+	14, // 14: sttattus.zenith.v1.ZenithService.GetTodayLoad:output_type -> sttattus.zenith.v1.GetTodayLoadResponse
+	9,  // 15: sttattus.zenith.v1.ZenithService.ListMyCalendarConnections:output_type -> sttattus.zenith.v1.ListMyCalendarConnectionsResponse
+	11, // 16: sttattus.zenith.v1.ZenithService.ListMyCalendarEvents:output_type -> sttattus.zenith.v1.ListMyCalendarEventsResponse
+	12, // [12:17] is the sub-list for method output_type
+	7,  // [7:12] is the sub-list for method input_type
+	7,  // [7:7] is the sub-list for extension type_name
+	7,  // [7:7] is the sub-list for extension extendee
+	0,  // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_zenith_v1_zenith_proto_init() }
@@ -668,7 +1031,7 @@ func file_sttattus_zenith_v1_zenith_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_zenith_v1_zenith_proto_rawDesc), len(file_sttattus_zenith_v1_zenith_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   9,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
