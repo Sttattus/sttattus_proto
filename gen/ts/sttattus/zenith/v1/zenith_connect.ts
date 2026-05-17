@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetZenithStatsRequest, GetZenithStatsResponse, LogFocusSessionRequest, LogFocusSessionResponse } from "./zenith_pb.js";
+import { GetTodayLoadRequest, GetTodayLoadResponse, GetZenithStatsRequest, GetZenithStatsResponse, LogFocusSessionRequest, LogFocusSessionResponse } from "./zenith_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -28,6 +28,17 @@ export const ZenithService = {
       name: "GetZenithStats",
       I: GetZenithStatsRequest,
       O: GetZenithStatsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Z16.5 — today's cognitive load.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetTodayLoad
+     */
+    getTodayLoad: {
+      name: "GetTodayLoad",
+      I: GetTodayLoadRequest,
+      O: GetTodayLoadResponse,
       kind: MethodKind.Unary,
     },
   }

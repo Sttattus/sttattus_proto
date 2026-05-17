@@ -304,3 +304,169 @@ export class GetZenithStatsResponse extends Message<GetZenithStatsResponse> {
   }
 }
 
+/**
+ * === Z16.5 — today's cognitive load ===
+ *
+ * Composite of:
+ *   - calendar_density (Z16.6 — null until calendar wire ships)
+ *   - apex_readiness  (Z16.4 deferral — null until Apex HRV bridge)
+ *   - session_pressure (real today: how much focused work the user
+ *     already logged vs their 14-day rolling average)
+ *
+ * Per audits/zenith.md §10 Phase 1 item 5. Each input is optional;
+ * the composite is the mean of available inputs (no fabrication).
+ *
+ * @generated from message sttattus.zenith.v1.CognitiveLoad
+ */
+export class CognitiveLoad extends Message<CognitiveLoad> {
+  /**
+   * @generated from field: bool calendar_density_present = 1;
+   */
+  calendarDensityPresent = false;
+
+  /**
+   * 0..1
+   *
+   * @generated from field: double calendar_density = 2;
+   */
+  calendarDensity = 0;
+
+  /**
+   * @generated from field: bool apex_readiness_present = 3;
+   */
+  apexReadinessPresent = false;
+
+  /**
+   * 0..1 (higher = more recovered)
+   *
+   * @generated from field: double apex_readiness = 4;
+   */
+  apexReadiness = 0;
+
+  /**
+   * @generated from field: bool session_pressure_present = 5;
+   */
+  sessionPressurePresent = false;
+
+  /**
+   * 0..1 (higher = harder day)
+   *
+   * @generated from field: double session_pressure = 6;
+   */
+  sessionPressure = 0;
+
+  /**
+   * mean of available inputs, 0..1
+   *
+   * @generated from field: double composite = 7;
+   */
+  composite = 0;
+
+  /**
+   * @generated from field: int32 inputs_available = 8;
+   */
+  inputsAvailable = 0;
+
+  constructor(data?: PartialMessage<CognitiveLoad>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.CognitiveLoad";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "calendar_density_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "calendar_density", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "apex_readiness_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "apex_readiness", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "session_pressure_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "session_pressure", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "composite", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "inputs_available", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CognitiveLoad {
+    return new CognitiveLoad().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CognitiveLoad {
+    return new CognitiveLoad().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CognitiveLoad {
+    return new CognitiveLoad().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CognitiveLoad | PlainMessage<CognitiveLoad> | undefined, b: CognitiveLoad | PlainMessage<CognitiveLoad> | undefined): boolean {
+    return proto3.util.equals(CognitiveLoad, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetTodayLoadRequest
+ */
+export class GetTodayLoadRequest extends Message<GetTodayLoadRequest> {
+  constructor(data?: PartialMessage<GetTodayLoadRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetTodayLoadRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTodayLoadRequest {
+    return new GetTodayLoadRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTodayLoadRequest {
+    return new GetTodayLoadRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTodayLoadRequest {
+    return new GetTodayLoadRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTodayLoadRequest | PlainMessage<GetTodayLoadRequest> | undefined, b: GetTodayLoadRequest | PlainMessage<GetTodayLoadRequest> | undefined): boolean {
+    return proto3.util.equals(GetTodayLoadRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetTodayLoadResponse
+ */
+export class GetTodayLoadResponse extends Message<GetTodayLoadResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.CognitiveLoad load = 1;
+   */
+  load?: CognitiveLoad;
+
+  constructor(data?: PartialMessage<GetTodayLoadResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetTodayLoadResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "load", kind: "message", T: CognitiveLoad },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTodayLoadResponse {
+    return new GetTodayLoadResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTodayLoadResponse {
+    return new GetTodayLoadResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTodayLoadResponse {
+    return new GetTodayLoadResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTodayLoadResponse | PlainMessage<GetTodayLoadResponse> | undefined, b: GetTodayLoadResponse | PlainMessage<GetTodayLoadResponse> | undefined): boolean {
+    return proto3.util.equals(GetTodayLoadResponse, a, b);
+  }
+}
+

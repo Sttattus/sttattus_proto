@@ -108,3 +108,50 @@ final $typed_data.Uint8List getZenithStatsResponseDescriptor = $convert.base64De
     'ChZHZXRaZW5pdGhTdGF0c1Jlc3BvbnNlEjUKBXN0YXRzGAEgASgLMh8uc3R0YXR0dXMuemVuaX'
     'RoLnYxLlplbml0aFN0YXRzUgVzdGF0cw==');
 
+@$core.Deprecated('Use cognitiveLoadDescriptor instead')
+const CognitiveLoad$json = {
+  '1': 'CognitiveLoad',
+  '2': [
+    {'1': 'calendar_density_present', '3': 1, '4': 1, '5': 8, '10': 'calendarDensityPresent'},
+    {'1': 'calendar_density', '3': 2, '4': 1, '5': 1, '10': 'calendarDensity'},
+    {'1': 'apex_readiness_present', '3': 3, '4': 1, '5': 8, '10': 'apexReadinessPresent'},
+    {'1': 'apex_readiness', '3': 4, '4': 1, '5': 1, '10': 'apexReadiness'},
+    {'1': 'session_pressure_present', '3': 5, '4': 1, '5': 8, '10': 'sessionPressurePresent'},
+    {'1': 'session_pressure', '3': 6, '4': 1, '5': 1, '10': 'sessionPressure'},
+    {'1': 'composite', '3': 7, '4': 1, '5': 1, '10': 'composite'},
+    {'1': 'inputs_available', '3': 8, '4': 1, '5': 5, '10': 'inputsAvailable'},
+  ],
+};
+
+/// Descriptor for `CognitiveLoad`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cognitiveLoadDescriptor = $convert.base64Decode(
+    'Cg1Db2duaXRpdmVMb2FkEjgKGGNhbGVuZGFyX2RlbnNpdHlfcHJlc2VudBgBIAEoCFIWY2FsZW'
+    '5kYXJEZW5zaXR5UHJlc2VudBIpChBjYWxlbmRhcl9kZW5zaXR5GAIgASgBUg9jYWxlbmRhckRl'
+    'bnNpdHkSNAoWYXBleF9yZWFkaW5lc3NfcHJlc2VudBgDIAEoCFIUYXBleFJlYWRpbmVzc1ByZX'
+    'NlbnQSJQoOYXBleF9yZWFkaW5lc3MYBCABKAFSDWFwZXhSZWFkaW5lc3MSOAoYc2Vzc2lvbl9w'
+    'cmVzc3VyZV9wcmVzZW50GAUgASgIUhZzZXNzaW9uUHJlc3N1cmVQcmVzZW50EikKEHNlc3Npb2'
+    '5fcHJlc3N1cmUYBiABKAFSD3Nlc3Npb25QcmVzc3VyZRIcCgljb21wb3NpdGUYByABKAFSCWNv'
+    'bXBvc2l0ZRIpChBpbnB1dHNfYXZhaWxhYmxlGAggASgFUg9pbnB1dHNBdmFpbGFibGU=');
+
+@$core.Deprecated('Use getTodayLoadRequestDescriptor instead')
+const GetTodayLoadRequest$json = {
+  '1': 'GetTodayLoadRequest',
+};
+
+/// Descriptor for `GetTodayLoadRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTodayLoadRequestDescriptor = $convert.base64Decode(
+    'ChNHZXRUb2RheUxvYWRSZXF1ZXN0');
+
+@$core.Deprecated('Use getTodayLoadResponseDescriptor instead')
+const GetTodayLoadResponse$json = {
+  '1': 'GetTodayLoadResponse',
+  '2': [
+    {'1': 'load', '3': 1, '4': 1, '5': 11, '6': '.sttattus.zenith.v1.CognitiveLoad', '10': 'load'},
+  ],
+};
+
+/// Descriptor for `GetTodayLoadResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTodayLoadResponseDescriptor = $convert.base64Decode(
+    'ChRHZXRUb2RheUxvYWRSZXNwb25zZRI1CgRsb2FkGAEgASgLMiEuc3R0YXR0dXMuemVuaXRoLn'
+    'YxLkNvZ25pdGl2ZUxvYWRSBGxvYWQ=');
+

@@ -374,6 +374,196 @@ func (x *GetZenithStatsResponse) GetStats() *ZenithStats {
 	return nil
 }
 
+// === Z16.5 — today's cognitive load ===
+//
+// Composite of:
+//   - calendar_density (Z16.6 — null until calendar wire ships)
+//   - apex_readiness  (Z16.4 deferral — null until Apex HRV bridge)
+//   - session_pressure (real today: how much focused work the user
+//     already logged vs their 14-day rolling average)
+//
+// Per audits/zenith.md §10 Phase 1 item 5. Each input is optional;
+// the composite is the mean of available inputs (no fabrication).
+type CognitiveLoad struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	CalendarDensityPresent bool                   `protobuf:"varint,1,opt,name=calendar_density_present,json=calendarDensityPresent,proto3" json:"calendar_density_present,omitempty"`
+	CalendarDensity        float64                `protobuf:"fixed64,2,opt,name=calendar_density,json=calendarDensity,proto3" json:"calendar_density,omitempty"` // 0..1
+	ApexReadinessPresent   bool                   `protobuf:"varint,3,opt,name=apex_readiness_present,json=apexReadinessPresent,proto3" json:"apex_readiness_present,omitempty"`
+	ApexReadiness          float64                `protobuf:"fixed64,4,opt,name=apex_readiness,json=apexReadiness,proto3" json:"apex_readiness,omitempty"` // 0..1 (higher = more recovered)
+	SessionPressurePresent bool                   `protobuf:"varint,5,opt,name=session_pressure_present,json=sessionPressurePresent,proto3" json:"session_pressure_present,omitempty"`
+	SessionPressure        float64                `protobuf:"fixed64,6,opt,name=session_pressure,json=sessionPressure,proto3" json:"session_pressure,omitempty"` // 0..1 (higher = harder day)
+	Composite              float64                `protobuf:"fixed64,7,opt,name=composite,proto3" json:"composite,omitempty"`                                    // mean of available inputs, 0..1
+	InputsAvailable        int32                  `protobuf:"varint,8,opt,name=inputs_available,json=inputsAvailable,proto3" json:"inputs_available,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *CognitiveLoad) Reset() {
+	*x = CognitiveLoad{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CognitiveLoad) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CognitiveLoad) ProtoMessage() {}
+
+func (x *CognitiveLoad) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CognitiveLoad.ProtoReflect.Descriptor instead.
+func (*CognitiveLoad) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *CognitiveLoad) GetCalendarDensityPresent() bool {
+	if x != nil {
+		return x.CalendarDensityPresent
+	}
+	return false
+}
+
+func (x *CognitiveLoad) GetCalendarDensity() float64 {
+	if x != nil {
+		return x.CalendarDensity
+	}
+	return 0
+}
+
+func (x *CognitiveLoad) GetApexReadinessPresent() bool {
+	if x != nil {
+		return x.ApexReadinessPresent
+	}
+	return false
+}
+
+func (x *CognitiveLoad) GetApexReadiness() float64 {
+	if x != nil {
+		return x.ApexReadiness
+	}
+	return 0
+}
+
+func (x *CognitiveLoad) GetSessionPressurePresent() bool {
+	if x != nil {
+		return x.SessionPressurePresent
+	}
+	return false
+}
+
+func (x *CognitiveLoad) GetSessionPressure() float64 {
+	if x != nil {
+		return x.SessionPressure
+	}
+	return 0
+}
+
+func (x *CognitiveLoad) GetComposite() float64 {
+	if x != nil {
+		return x.Composite
+	}
+	return 0
+}
+
+func (x *CognitiveLoad) GetInputsAvailable() int32 {
+	if x != nil {
+		return x.InputsAvailable
+	}
+	return 0
+}
+
+type GetTodayLoadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTodayLoadRequest) Reset() {
+	*x = GetTodayLoadRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTodayLoadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTodayLoadRequest) ProtoMessage() {}
+
+func (x *GetTodayLoadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTodayLoadRequest.ProtoReflect.Descriptor instead.
+func (*GetTodayLoadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{7}
+}
+
+type GetTodayLoadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Load          *CognitiveLoad         `protobuf:"bytes,1,opt,name=load,proto3" json:"load,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTodayLoadResponse) Reset() {
+	*x = GetTodayLoadResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTodayLoadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTodayLoadResponse) ProtoMessage() {}
+
+func (x *GetTodayLoadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTodayLoadResponse.ProtoReflect.Descriptor instead.
+func (*GetTodayLoadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *GetTodayLoadResponse) GetLoad() *CognitiveLoad {
+	if x != nil {
+		return x.Load
+	}
+	return nil
+}
+
 var File_sttattus_zenith_v1_zenith_proto protoreflect.FileDescriptor
 
 const file_sttattus_zenith_v1_zenith_proto_rawDesc = "" +
@@ -405,10 +595,23 @@ const file_sttattus_zenith_v1_zenith_proto_rawDesc = "" +
 	"\x15GetZenithStatsRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\"O\n" +
 	"\x16GetZenithStatsResponse\x125\n" +
-	"\x05stats\x18\x01 \x01(\v2\x1f.sttattus.zenith.v1.ZenithStatsR\x05stats2\xe4\x01\n" +
+	"\x05stats\x18\x01 \x01(\v2\x1f.sttattus.zenith.v1.ZenithStatsR\x05stats\"\xff\x02\n" +
+	"\rCognitiveLoad\x128\n" +
+	"\x18calendar_density_present\x18\x01 \x01(\bR\x16calendarDensityPresent\x12)\n" +
+	"\x10calendar_density\x18\x02 \x01(\x01R\x0fcalendarDensity\x124\n" +
+	"\x16apex_readiness_present\x18\x03 \x01(\bR\x14apexReadinessPresent\x12%\n" +
+	"\x0eapex_readiness\x18\x04 \x01(\x01R\rapexReadiness\x128\n" +
+	"\x18session_pressure_present\x18\x05 \x01(\bR\x16sessionPressurePresent\x12)\n" +
+	"\x10session_pressure\x18\x06 \x01(\x01R\x0fsessionPressure\x12\x1c\n" +
+	"\tcomposite\x18\a \x01(\x01R\tcomposite\x12)\n" +
+	"\x10inputs_available\x18\b \x01(\x05R\x0finputsAvailable\"\x15\n" +
+	"\x13GetTodayLoadRequest\"M\n" +
+	"\x14GetTodayLoadResponse\x125\n" +
+	"\x04load\x18\x01 \x01(\v2!.sttattus.zenith.v1.CognitiveLoadR\x04load2\xc7\x02\n" +
 	"\rZenithService\x12j\n" +
 	"\x0fLogFocusSession\x12*.sttattus.zenith.v1.LogFocusSessionRequest\x1a+.sttattus.zenith.v1.LogFocusSessionResponse\x12g\n" +
-	"\x0eGetZenithStats\x12).sttattus.zenith.v1.GetZenithStatsRequest\x1a*.sttattus.zenith.v1.GetZenithStatsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/zenith/v1;zenithv1b\x06proto3"
+	"\x0eGetZenithStats\x12).sttattus.zenith.v1.GetZenithStatsRequest\x1a*.sttattus.zenith.v1.GetZenithStatsResponse\x12a\n" +
+	"\fGetTodayLoad\x12'.sttattus.zenith.v1.GetTodayLoadRequest\x1a(.sttattus.zenith.v1.GetTodayLoadResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/zenith/v1;zenithv1b\x06proto3"
 
 var (
 	file_sttattus_zenith_v1_zenith_proto_rawDescOnce sync.Once
@@ -422,7 +625,7 @@ func file_sttattus_zenith_v1_zenith_proto_rawDescGZIP() []byte {
 	return file_sttattus_zenith_v1_zenith_proto_rawDescData
 }
 
-var file_sttattus_zenith_v1_zenith_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_sttattus_zenith_v1_zenith_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_sttattus_zenith_v1_zenith_proto_goTypes = []any{
 	(*Session)(nil),                 // 0: sttattus.zenith.v1.Session
 	(*ZenithStats)(nil),             // 1: sttattus.zenith.v1.ZenithStats
@@ -430,22 +633,28 @@ var file_sttattus_zenith_v1_zenith_proto_goTypes = []any{
 	(*LogFocusSessionResponse)(nil), // 3: sttattus.zenith.v1.LogFocusSessionResponse
 	(*GetZenithStatsRequest)(nil),   // 4: sttattus.zenith.v1.GetZenithStatsRequest
 	(*GetZenithStatsResponse)(nil),  // 5: sttattus.zenith.v1.GetZenithStatsResponse
-	(*timestamppb.Timestamp)(nil),   // 6: google.protobuf.Timestamp
+	(*CognitiveLoad)(nil),           // 6: sttattus.zenith.v1.CognitiveLoad
+	(*GetTodayLoadRequest)(nil),     // 7: sttattus.zenith.v1.GetTodayLoadRequest
+	(*GetTodayLoadResponse)(nil),    // 8: sttattus.zenith.v1.GetTodayLoadResponse
+	(*timestamppb.Timestamp)(nil),   // 9: google.protobuf.Timestamp
 }
 var file_sttattus_zenith_v1_zenith_proto_depIdxs = []int32{
-	6, // 0: sttattus.zenith.v1.Session.started_at:type_name -> google.protobuf.Timestamp
+	9, // 0: sttattus.zenith.v1.Session.started_at:type_name -> google.protobuf.Timestamp
 	0, // 1: sttattus.zenith.v1.LogFocusSessionRequest.session:type_name -> sttattus.zenith.v1.Session
 	1, // 2: sttattus.zenith.v1.LogFocusSessionResponse.stats:type_name -> sttattus.zenith.v1.ZenithStats
 	1, // 3: sttattus.zenith.v1.GetZenithStatsResponse.stats:type_name -> sttattus.zenith.v1.ZenithStats
-	2, // 4: sttattus.zenith.v1.ZenithService.LogFocusSession:input_type -> sttattus.zenith.v1.LogFocusSessionRequest
-	4, // 5: sttattus.zenith.v1.ZenithService.GetZenithStats:input_type -> sttattus.zenith.v1.GetZenithStatsRequest
-	3, // 6: sttattus.zenith.v1.ZenithService.LogFocusSession:output_type -> sttattus.zenith.v1.LogFocusSessionResponse
-	5, // 7: sttattus.zenith.v1.ZenithService.GetZenithStats:output_type -> sttattus.zenith.v1.GetZenithStatsResponse
-	6, // [6:8] is the sub-list for method output_type
-	4, // [4:6] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	6, // 4: sttattus.zenith.v1.GetTodayLoadResponse.load:type_name -> sttattus.zenith.v1.CognitiveLoad
+	2, // 5: sttattus.zenith.v1.ZenithService.LogFocusSession:input_type -> sttattus.zenith.v1.LogFocusSessionRequest
+	4, // 6: sttattus.zenith.v1.ZenithService.GetZenithStats:input_type -> sttattus.zenith.v1.GetZenithStatsRequest
+	7, // 7: sttattus.zenith.v1.ZenithService.GetTodayLoad:input_type -> sttattus.zenith.v1.GetTodayLoadRequest
+	3, // 8: sttattus.zenith.v1.ZenithService.LogFocusSession:output_type -> sttattus.zenith.v1.LogFocusSessionResponse
+	5, // 9: sttattus.zenith.v1.ZenithService.GetZenithStats:output_type -> sttattus.zenith.v1.GetZenithStatsResponse
+	8, // 10: sttattus.zenith.v1.ZenithService.GetTodayLoad:output_type -> sttattus.zenith.v1.GetTodayLoadResponse
+	8, // [8:11] is the sub-list for method output_type
+	5, // [5:8] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_zenith_v1_zenith_proto_init() }
@@ -459,7 +668,7 @@ func file_sttattus_zenith_v1_zenith_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_zenith_v1_zenith_proto_rawDesc), len(file_sttattus_zenith_v1_zenith_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -40,7 +40,36 @@ message GetZenithStatsResponse {
   ZenithStats stats = 1;
 }
 
+// === Z16.5 — today's cognitive load ===
+//
+// Composite of:
+//   - calendar_density (Z16.6 — null until calendar wire ships)
+//   - apex_readiness  (Z16.4 deferral — null until Apex HRV bridge)
+//   - session_pressure (real today: how much focused work the user
+//     already logged vs their 14-day rolling average)
+//
+// Per audits/zenith.md §10 Phase 1 item 5. Each input is optional;
+// the composite is the mean of available inputs (no fabrication).
+message CognitiveLoad {
+  bool calendar_density_present = 1;
+  double calendar_density = 2; // 0..1
+  bool apex_readiness_present = 3;
+  double apex_readiness = 4; // 0..1 (higher = more recovered)
+  bool session_pressure_present = 5;
+  double session_pressure = 6; // 0..1 (higher = harder day)
+  double composite = 7; // mean of available inputs, 0..1
+  int32 inputs_available = 8;
+}
+
+message GetTodayLoadRequest {}
+message GetTodayLoadResponse {
+  CognitiveLoad load = 1;
+}
+
 service ZenithService {
   rpc LogFocusSession(LogFocusSessionRequest) returns (LogFocusSessionResponse);
   rpc GetZenithStats(GetZenithStatsRequest) returns (GetZenithStatsResponse);
+
+  // Z16.5 — today's cognitive load.
+  rpc GetTodayLoad(GetTodayLoadRequest) returns (GetTodayLoadResponse);
 }

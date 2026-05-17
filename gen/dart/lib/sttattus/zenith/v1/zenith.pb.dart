@@ -434,6 +434,224 @@ class GetZenithStatsResponse extends $pb.GeneratedMessage {
   ZenithStats ensureStats() => $_ensure(0);
 }
 
+/// === Z16.5 — today's cognitive load ===
+///
+/// Composite of:
+///   - calendar_density (Z16.6 — null until calendar wire ships)
+///   - apex_readiness  (Z16.4 deferral — null until Apex HRV bridge)
+///   - session_pressure (real today: how much focused work the user
+///     already logged vs their 14-day rolling average)
+///
+/// Per audits/zenith.md §10 Phase 1 item 5. Each input is optional;
+/// the composite is the mean of available inputs (no fabrication).
+class CognitiveLoad extends $pb.GeneratedMessage {
+  factory CognitiveLoad({
+    $core.bool? calendarDensityPresent,
+    $core.double? calendarDensity,
+    $core.bool? apexReadinessPresent,
+    $core.double? apexReadiness,
+    $core.bool? sessionPressurePresent,
+    $core.double? sessionPressure,
+    $core.double? composite,
+    $core.int? inputsAvailable,
+  }) {
+    final result = create();
+    if (calendarDensityPresent != null) result.calendarDensityPresent = calendarDensityPresent;
+    if (calendarDensity != null) result.calendarDensity = calendarDensity;
+    if (apexReadinessPresent != null) result.apexReadinessPresent = apexReadinessPresent;
+    if (apexReadiness != null) result.apexReadiness = apexReadiness;
+    if (sessionPressurePresent != null) result.sessionPressurePresent = sessionPressurePresent;
+    if (sessionPressure != null) result.sessionPressure = sessionPressure;
+    if (composite != null) result.composite = composite;
+    if (inputsAvailable != null) result.inputsAvailable = inputsAvailable;
+    return result;
+  }
+
+  CognitiveLoad._();
+
+  factory CognitiveLoad.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CognitiveLoad.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CognitiveLoad', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'calendarDensityPresent')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'calendarDensity', $pb.PbFieldType.OD)
+    ..aOB(3, _omitFieldNames ? '' : 'apexReadinessPresent')
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'apexReadiness', $pb.PbFieldType.OD)
+    ..aOB(5, _omitFieldNames ? '' : 'sessionPressurePresent')
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'sessionPressure', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'composite', $pb.PbFieldType.OD)
+    ..a<$core.int>(8, _omitFieldNames ? '' : 'inputsAvailable', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CognitiveLoad clone() => CognitiveLoad()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CognitiveLoad copyWith(void Function(CognitiveLoad) updates) => super.copyWith((message) => updates(message as CognitiveLoad)) as CognitiveLoad;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CognitiveLoad create() => CognitiveLoad._();
+  @$core.override
+  CognitiveLoad createEmptyInstance() => create();
+  static $pb.PbList<CognitiveLoad> createRepeated() => $pb.PbList<CognitiveLoad>();
+  @$core.pragma('dart2js:noInline')
+  static CognitiveLoad getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CognitiveLoad>(create);
+  static CognitiveLoad? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get calendarDensityPresent => $_getBF(0);
+  @$pb.TagNumber(1)
+  set calendarDensityPresent($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCalendarDensityPresent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCalendarDensityPresent() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get calendarDensity => $_getN(1);
+  @$pb.TagNumber(2)
+  set calendarDensity($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCalendarDensity() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCalendarDensity() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get apexReadinessPresent => $_getBF(2);
+  @$pb.TagNumber(3)
+  set apexReadinessPresent($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasApexReadinessPresent() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearApexReadinessPresent() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get apexReadiness => $_getN(3);
+  @$pb.TagNumber(4)
+  set apexReadiness($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasApexReadiness() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearApexReadiness() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get sessionPressurePresent => $_getBF(4);
+  @$pb.TagNumber(5)
+  set sessionPressurePresent($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSessionPressurePresent() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSessionPressurePresent() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get sessionPressure => $_getN(5);
+  @$pb.TagNumber(6)
+  set sessionPressure($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSessionPressure() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSessionPressure() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get composite => $_getN(6);
+  @$pb.TagNumber(7)
+  set composite($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasComposite() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearComposite() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get inputsAvailable => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set inputsAvailable($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasInputsAvailable() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearInputsAvailable() => $_clearField(8);
+}
+
+class GetTodayLoadRequest extends $pb.GeneratedMessage {
+  factory GetTodayLoadRequest() => create();
+
+  GetTodayLoadRequest._();
+
+  factory GetTodayLoadRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTodayLoadRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTodayLoadRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTodayLoadRequest clone() => GetTodayLoadRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTodayLoadRequest copyWith(void Function(GetTodayLoadRequest) updates) => super.copyWith((message) => updates(message as GetTodayLoadRequest)) as GetTodayLoadRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTodayLoadRequest create() => GetTodayLoadRequest._();
+  @$core.override
+  GetTodayLoadRequest createEmptyInstance() => create();
+  static $pb.PbList<GetTodayLoadRequest> createRepeated() => $pb.PbList<GetTodayLoadRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetTodayLoadRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTodayLoadRequest>(create);
+  static GetTodayLoadRequest? _defaultInstance;
+}
+
+class GetTodayLoadResponse extends $pb.GeneratedMessage {
+  factory GetTodayLoadResponse({
+    CognitiveLoad? load,
+  }) {
+    final result = create();
+    if (load != null) result.load = load;
+    return result;
+  }
+
+  GetTodayLoadResponse._();
+
+  factory GetTodayLoadResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTodayLoadResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTodayLoadResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'), createEmptyInstance: create)
+    ..aOM<CognitiveLoad>(1, _omitFieldNames ? '' : 'load', subBuilder: CognitiveLoad.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTodayLoadResponse clone() => GetTodayLoadResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTodayLoadResponse copyWith(void Function(GetTodayLoadResponse) updates) => super.copyWith((message) => updates(message as GetTodayLoadResponse)) as GetTodayLoadResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTodayLoadResponse create() => GetTodayLoadResponse._();
+  @$core.override
+  GetTodayLoadResponse createEmptyInstance() => create();
+  static $pb.PbList<GetTodayLoadResponse> createRepeated() => $pb.PbList<GetTodayLoadResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetTodayLoadResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTodayLoadResponse>(create);
+  static GetTodayLoadResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CognitiveLoad get load => $_getN(0);
+  @$pb.TagNumber(1)
+  set load(CognitiveLoad value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLoad() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLoad() => $_clearField(1);
+  @$pb.TagNumber(1)
+  CognitiveLoad ensureLoad() => $_ensure(0);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

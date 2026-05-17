@@ -40,6 +40,11 @@ class ZenithServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getZenithStats, request, options: options);
   }
 
+  /// Z16.5 — today's cognitive load.
+  $grpc.ResponseFuture<$0.GetTodayLoadResponse> getTodayLoad($0.GetTodayLoadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getTodayLoad, request, options: options);
+  }
+
     // method descriptors
 
   static final _$logFocusSession = $grpc.ClientMethod<$0.LogFocusSessionRequest, $0.LogFocusSessionResponse>(
@@ -50,6 +55,10 @@ class ZenithServiceClient extends $grpc.Client {
       '/sttattus.zenith.v1.ZenithService/GetZenithStats',
       ($0.GetZenithStatsRequest value) => value.writeToBuffer(),
       $0.GetZenithStatsResponse.fromBuffer);
+  static final _$getTodayLoad = $grpc.ClientMethod<$0.GetTodayLoadRequest, $0.GetTodayLoadResponse>(
+      '/sttattus.zenith.v1.ZenithService/GetTodayLoad',
+      ($0.GetTodayLoadRequest value) => value.writeToBuffer(),
+      $0.GetTodayLoadResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.zenith.v1.ZenithService')
@@ -71,6 +80,13 @@ abstract class ZenithServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetZenithStatsRequest.fromBuffer(value),
         ($0.GetZenithStatsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTodayLoadRequest, $0.GetTodayLoadResponse>(
+        'GetTodayLoad',
+        getTodayLoad_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetTodayLoadRequest.fromBuffer(value),
+        ($0.GetTodayLoadResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.LogFocusSessionResponse> logFocusSession_Pre($grpc.ServiceCall $call, $async.Future<$0.LogFocusSessionRequest> $request) async {
@@ -84,5 +100,11 @@ abstract class ZenithServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GetZenithStatsResponse> getZenithStats($grpc.ServiceCall call, $0.GetZenithStatsRequest request);
+
+  $async.Future<$0.GetTodayLoadResponse> getTodayLoad_Pre($grpc.ServiceCall $call, $async.Future<$0.GetTodayLoadRequest> $request) async {
+    return getTodayLoad($call, await $request);
+  }
+
+  $async.Future<$0.GetTodayLoadResponse> getTodayLoad($grpc.ServiceCall call, $0.GetTodayLoadRequest request);
 
 }
