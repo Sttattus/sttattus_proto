@@ -180,6 +180,118 @@ final $typed_data.Uint8List listAssetsResponseDescriptor = $convert.base64Decode
     'ChJMaXN0QXNzZXRzUmVzcG9uc2USNgoGYXNzZXRzGAEgAygLMh4uc3R0YXR0dXMubGVnYWN5Ln'
     'YxLkxlZ2FsQXNzZXRSBmFzc2V0cw==');
 
+@$core.Deprecated('Use legacyCategoryDescriptor instead')
+const LegacyCategory$json = {
+  '1': 'LegacyCategory',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slug', '3': 2, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'display_name', '3': 3, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'group_label', '3': 4, '4': 1, '5': 9, '10': 'groupLabel'},
+    {'1': 'description', '3': 5, '4': 1, '5': 9, '10': 'description'},
+  ],
+};
+
+/// Descriptor for `LegacyCategory`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List legacyCategoryDescriptor = $convert.base64Decode(
+    'Cg5MZWdhY3lDYXRlZ29yeRIOCgJpZBgBIAEoCVICaWQSEgoEc2x1ZxgCIAEoCVIEc2x1ZxIhCg'
+    'xkaXNwbGF5X25hbWUYAyABKAlSC2Rpc3BsYXlOYW1lEh8KC2dyb3VwX2xhYmVsGAQgASgJUgpn'
+    'cm91cExhYmVsEiAKC2Rlc2NyaXB0aW9uGAUgASgJUgtkZXNjcmlwdGlvbg==');
+
+@$core.Deprecated('Use listLegacyCategoriesRequestDescriptor instead')
+const ListLegacyCategoriesRequest$json = {
+  '1': 'ListLegacyCategoriesRequest',
+};
+
+/// Descriptor for `ListLegacyCategoriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLegacyCategoriesRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0TGVnYWN5Q2F0ZWdvcmllc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listLegacyCategoriesResponseDescriptor instead')
+const ListLegacyCategoriesResponse$json = {
+  '1': 'ListLegacyCategoriesResponse',
+  '2': [
+    {'1': 'categories', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.LegacyCategory', '10': 'categories'},
+  ],
+};
+
+/// Descriptor for `ListLegacyCategoriesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLegacyCategoriesResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0TGVnYWN5Q2F0ZWdvcmllc1Jlc3BvbnNlEkIKCmNhdGVnb3JpZXMYASADKAsyIi5zdH'
+    'RhdHR1cy5sZWdhY3kudjEuTGVnYWN5Q2F0ZWdvcnlSCmNhdGVnb3JpZXM=');
+
+@$core.Deprecated('Use assignAssetCategoryRequestDescriptor instead')
+const AssignAssetCategoryRequest$json = {
+  '1': 'AssignAssetCategoryRequest',
+  '2': [
+    {'1': 'asset_id', '3': 1, '4': 1, '5': 9, '10': 'assetId'},
+    {'1': 'category_id', '3': 2, '4': 1, '5': 9, '10': 'categoryId'},
+  ],
+};
+
+/// Descriptor for `AssignAssetCategoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List assignAssetCategoryRequestDescriptor = $convert.base64Decode(
+    'ChpBc3NpZ25Bc3NldENhdGVnb3J5UmVxdWVzdBIZCghhc3NldF9pZBgBIAEoCVIHYXNzZXRJZB'
+    'IfCgtjYXRlZ29yeV9pZBgCIAEoCVIKY2F0ZWdvcnlJZA==');
+
+@$core.Deprecated('Use assignAssetCategoryResponseDescriptor instead')
+const AssignAssetCategoryResponse$json = {
+  '1': 'AssignAssetCategoryResponse',
+};
+
+/// Descriptor for `AssignAssetCategoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List assignAssetCategoryResponseDescriptor = $convert.base64Decode(
+    'ChtBc3NpZ25Bc3NldENhdGVnb3J5UmVzcG9uc2U=');
+
+@$core.Deprecated('Use unassignAssetCategoryRequestDescriptor instead')
+const UnassignAssetCategoryRequest$json = {
+  '1': 'UnassignAssetCategoryRequest',
+  '2': [
+    {'1': 'asset_id', '3': 1, '4': 1, '5': 9, '10': 'assetId'},
+    {'1': 'category_id', '3': 2, '4': 1, '5': 9, '10': 'categoryId'},
+  ],
+};
+
+/// Descriptor for `UnassignAssetCategoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unassignAssetCategoryRequestDescriptor = $convert.base64Decode(
+    'ChxVbmFzc2lnbkFzc2V0Q2F0ZWdvcnlSZXF1ZXN0EhkKCGFzc2V0X2lkGAEgASgJUgdhc3NldE'
+    'lkEh8KC2NhdGVnb3J5X2lkGAIgASgJUgpjYXRlZ29yeUlk');
+
+@$core.Deprecated('Use unassignAssetCategoryResponseDescriptor instead')
+const UnassignAssetCategoryResponse$json = {
+  '1': 'UnassignAssetCategoryResponse',
+};
+
+/// Descriptor for `UnassignAssetCategoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unassignAssetCategoryResponseDescriptor = $convert.base64Decode(
+    'Ch1VbmFzc2lnbkFzc2V0Q2F0ZWdvcnlSZXNwb25zZQ==');
+
+@$core.Deprecated('Use listAssetCategoriesRequestDescriptor instead')
+const ListAssetCategoriesRequest$json = {
+  '1': 'ListAssetCategoriesRequest',
+  '2': [
+    {'1': 'asset_id', '3': 1, '4': 1, '5': 9, '10': 'assetId'},
+  ],
+};
+
+/// Descriptor for `ListAssetCategoriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAssetCategoriesRequestDescriptor = $convert.base64Decode(
+    'ChpMaXN0QXNzZXRDYXRlZ29yaWVzUmVxdWVzdBIZCghhc3NldF9pZBgBIAEoCVIHYXNzZXRJZA'
+    '==');
+
+@$core.Deprecated('Use listAssetCategoriesResponseDescriptor instead')
+const ListAssetCategoriesResponse$json = {
+  '1': 'ListAssetCategoriesResponse',
+  '2': [
+    {'1': 'categories', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.LegacyCategory', '10': 'categories'},
+  ],
+};
+
+/// Descriptor for `ListAssetCategoriesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAssetCategoriesResponseDescriptor = $convert.base64Decode(
+    'ChtMaXN0QXNzZXRDYXRlZ29yaWVzUmVzcG9uc2USQgoKY2F0ZWdvcmllcxgBIAMoCzIiLnN0dG'
+    'F0dHVzLmxlZ2FjeS52MS5MZWdhY3lDYXRlZ29yeVIKY2F0ZWdvcmllcw==');
+
 @$core.Deprecated('Use encryptedBlobMetadataDescriptor instead')
 const EncryptedBlobMetadata$json = {
   '1': 'EncryptedBlobMetadata',

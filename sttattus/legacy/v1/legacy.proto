@@ -70,6 +70,40 @@ message ListAssetsResponse {
   repeated LegalAsset assets = 1;
 }
 
+// === L15.5 — document taxonomy ===
+
+message LegacyCategory {
+  string id = 1;
+  string slug = 2;
+  string display_name = 3;
+  string group_label = 4; // 'wills' | 'governance' | 'ip' | 'tax' | 'personal'
+  string description = 5;
+}
+
+message ListLegacyCategoriesRequest {}
+message ListLegacyCategoriesResponse {
+  repeated LegacyCategory categories = 1;
+}
+
+message AssignAssetCategoryRequest {
+  string asset_id = 1;
+  string category_id = 2;
+}
+message AssignAssetCategoryResponse {}
+
+message UnassignAssetCategoryRequest {
+  string asset_id = 1;
+  string category_id = 2;
+}
+message UnassignAssetCategoryResponse {}
+
+message ListAssetCategoriesRequest {
+  string asset_id = 1;
+}
+message ListAssetCategoriesResponse {
+  repeated LegacyCategory categories = 1;
+}
+
 // === L15.2 — end-to-end encrypted storage ===
 //
 // The server stores the three opaque blobs verbatim. Encryption +
@@ -164,4 +198,10 @@ service LegacyService {
   rpc StoreRecoveryShare(StoreRecoveryShareRequest) returns (StoreRecoveryShareResponse);
   rpc ListMyRecoveryShares(ListMyRecoverySharesRequest) returns (ListMyRecoverySharesResponse);
   rpc DeleteRecoveryShare(DeleteRecoveryShareRequest) returns (DeleteRecoveryShareResponse);
+
+  // L15.5 — document taxonomy.
+  rpc ListLegacyCategories(ListLegacyCategoriesRequest) returns (ListLegacyCategoriesResponse);
+  rpc AssignAssetCategory(AssignAssetCategoryRequest) returns (AssignAssetCategoryResponse);
+  rpc UnassignAssetCategory(UnassignAssetCategoryRequest) returns (UnassignAssetCategoryResponse);
+  rpc ListAssetCategories(ListAssetCategoriesRequest) returns (ListAssetCategoriesResponse);
 }

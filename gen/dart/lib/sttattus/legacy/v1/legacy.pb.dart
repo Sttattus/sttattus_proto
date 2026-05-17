@@ -600,6 +600,432 @@ class ListAssetsResponse extends $pb.GeneratedMessage {
   $pb.PbList<LegalAsset> get assets => $_getList(0);
 }
 
+class LegacyCategory extends $pb.GeneratedMessage {
+  factory LegacyCategory({
+    $core.String? id,
+    $core.String? slug,
+    $core.String? displayName,
+    $core.String? groupLabel,
+    $core.String? description,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (slug != null) result.slug = slug;
+    if (displayName != null) result.displayName = displayName;
+    if (groupLabel != null) result.groupLabel = groupLabel;
+    if (description != null) result.description = description;
+    return result;
+  }
+
+  LegacyCategory._();
+
+  factory LegacyCategory.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory LegacyCategory.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LegacyCategory', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'slug')
+    ..aOS(3, _omitFieldNames ? '' : 'displayName')
+    ..aOS(4, _omitFieldNames ? '' : 'groupLabel')
+    ..aOS(5, _omitFieldNames ? '' : 'description')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyCategory clone() => LegacyCategory()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyCategory copyWith(void Function(LegacyCategory) updates) => super.copyWith((message) => updates(message as LegacyCategory)) as LegacyCategory;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LegacyCategory create() => LegacyCategory._();
+  @$core.override
+  LegacyCategory createEmptyInstance() => create();
+  static $pb.PbList<LegacyCategory> createRepeated() => $pb.PbList<LegacyCategory>();
+  @$core.pragma('dart2js:noInline')
+  static LegacyCategory getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LegacyCategory>(create);
+  static LegacyCategory? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get slug => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set slug($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSlug() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSlug() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get displayName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set displayName($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDisplayName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDisplayName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get groupLabel => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set groupLabel($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGroupLabel() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGroupLabel() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get description => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set description($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDescription() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDescription() => $_clearField(5);
+}
+
+class ListLegacyCategoriesRequest extends $pb.GeneratedMessage {
+  factory ListLegacyCategoriesRequest() => create();
+
+  ListLegacyCategoriesRequest._();
+
+  factory ListLegacyCategoriesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLegacyCategoriesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLegacyCategoriesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLegacyCategoriesRequest clone() => ListLegacyCategoriesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLegacyCategoriesRequest copyWith(void Function(ListLegacyCategoriesRequest) updates) => super.copyWith((message) => updates(message as ListLegacyCategoriesRequest)) as ListLegacyCategoriesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLegacyCategoriesRequest create() => ListLegacyCategoriesRequest._();
+  @$core.override
+  ListLegacyCategoriesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListLegacyCategoriesRequest> createRepeated() => $pb.PbList<ListLegacyCategoriesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListLegacyCategoriesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLegacyCategoriesRequest>(create);
+  static ListLegacyCategoriesRequest? _defaultInstance;
+}
+
+class ListLegacyCategoriesResponse extends $pb.GeneratedMessage {
+  factory ListLegacyCategoriesResponse({
+    $core.Iterable<LegacyCategory>? categories,
+  }) {
+    final result = create();
+    if (categories != null) result.categories.addAll(categories);
+    return result;
+  }
+
+  ListLegacyCategoriesResponse._();
+
+  factory ListLegacyCategoriesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListLegacyCategoriesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLegacyCategoriesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..pc<LegacyCategory>(1, _omitFieldNames ? '' : 'categories', $pb.PbFieldType.PM, subBuilder: LegacyCategory.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLegacyCategoriesResponse clone() => ListLegacyCategoriesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLegacyCategoriesResponse copyWith(void Function(ListLegacyCategoriesResponse) updates) => super.copyWith((message) => updates(message as ListLegacyCategoriesResponse)) as ListLegacyCategoriesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLegacyCategoriesResponse create() => ListLegacyCategoriesResponse._();
+  @$core.override
+  ListLegacyCategoriesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListLegacyCategoriesResponse> createRepeated() => $pb.PbList<ListLegacyCategoriesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListLegacyCategoriesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLegacyCategoriesResponse>(create);
+  static ListLegacyCategoriesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LegacyCategory> get categories => $_getList(0);
+}
+
+class AssignAssetCategoryRequest extends $pb.GeneratedMessage {
+  factory AssignAssetCategoryRequest({
+    $core.String? assetId,
+    $core.String? categoryId,
+  }) {
+    final result = create();
+    if (assetId != null) result.assetId = assetId;
+    if (categoryId != null) result.categoryId = categoryId;
+    return result;
+  }
+
+  AssignAssetCategoryRequest._();
+
+  factory AssignAssetCategoryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AssignAssetCategoryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AssignAssetCategoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'assetId')
+    ..aOS(2, _omitFieldNames ? '' : 'categoryId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AssignAssetCategoryRequest clone() => AssignAssetCategoryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AssignAssetCategoryRequest copyWith(void Function(AssignAssetCategoryRequest) updates) => super.copyWith((message) => updates(message as AssignAssetCategoryRequest)) as AssignAssetCategoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AssignAssetCategoryRequest create() => AssignAssetCategoryRequest._();
+  @$core.override
+  AssignAssetCategoryRequest createEmptyInstance() => create();
+  static $pb.PbList<AssignAssetCategoryRequest> createRepeated() => $pb.PbList<AssignAssetCategoryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AssignAssetCategoryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AssignAssetCategoryRequest>(create);
+  static AssignAssetCategoryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get assetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set assetId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAssetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAssetId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get categoryId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set categoryId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCategoryId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCategoryId() => $_clearField(2);
+}
+
+class AssignAssetCategoryResponse extends $pb.GeneratedMessage {
+  factory AssignAssetCategoryResponse() => create();
+
+  AssignAssetCategoryResponse._();
+
+  factory AssignAssetCategoryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AssignAssetCategoryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AssignAssetCategoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AssignAssetCategoryResponse clone() => AssignAssetCategoryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AssignAssetCategoryResponse copyWith(void Function(AssignAssetCategoryResponse) updates) => super.copyWith((message) => updates(message as AssignAssetCategoryResponse)) as AssignAssetCategoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AssignAssetCategoryResponse create() => AssignAssetCategoryResponse._();
+  @$core.override
+  AssignAssetCategoryResponse createEmptyInstance() => create();
+  static $pb.PbList<AssignAssetCategoryResponse> createRepeated() => $pb.PbList<AssignAssetCategoryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static AssignAssetCategoryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AssignAssetCategoryResponse>(create);
+  static AssignAssetCategoryResponse? _defaultInstance;
+}
+
+class UnassignAssetCategoryRequest extends $pb.GeneratedMessage {
+  factory UnassignAssetCategoryRequest({
+    $core.String? assetId,
+    $core.String? categoryId,
+  }) {
+    final result = create();
+    if (assetId != null) result.assetId = assetId;
+    if (categoryId != null) result.categoryId = categoryId;
+    return result;
+  }
+
+  UnassignAssetCategoryRequest._();
+
+  factory UnassignAssetCategoryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UnassignAssetCategoryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnassignAssetCategoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'assetId')
+    ..aOS(2, _omitFieldNames ? '' : 'categoryId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnassignAssetCategoryRequest clone() => UnassignAssetCategoryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnassignAssetCategoryRequest copyWith(void Function(UnassignAssetCategoryRequest) updates) => super.copyWith((message) => updates(message as UnassignAssetCategoryRequest)) as UnassignAssetCategoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnassignAssetCategoryRequest create() => UnassignAssetCategoryRequest._();
+  @$core.override
+  UnassignAssetCategoryRequest createEmptyInstance() => create();
+  static $pb.PbList<UnassignAssetCategoryRequest> createRepeated() => $pb.PbList<UnassignAssetCategoryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UnassignAssetCategoryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnassignAssetCategoryRequest>(create);
+  static UnassignAssetCategoryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get assetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set assetId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAssetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAssetId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get categoryId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set categoryId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCategoryId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCategoryId() => $_clearField(2);
+}
+
+class UnassignAssetCategoryResponse extends $pb.GeneratedMessage {
+  factory UnassignAssetCategoryResponse() => create();
+
+  UnassignAssetCategoryResponse._();
+
+  factory UnassignAssetCategoryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UnassignAssetCategoryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnassignAssetCategoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnassignAssetCategoryResponse clone() => UnassignAssetCategoryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnassignAssetCategoryResponse copyWith(void Function(UnassignAssetCategoryResponse) updates) => super.copyWith((message) => updates(message as UnassignAssetCategoryResponse)) as UnassignAssetCategoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnassignAssetCategoryResponse create() => UnassignAssetCategoryResponse._();
+  @$core.override
+  UnassignAssetCategoryResponse createEmptyInstance() => create();
+  static $pb.PbList<UnassignAssetCategoryResponse> createRepeated() => $pb.PbList<UnassignAssetCategoryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UnassignAssetCategoryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnassignAssetCategoryResponse>(create);
+  static UnassignAssetCategoryResponse? _defaultInstance;
+}
+
+class ListAssetCategoriesRequest extends $pb.GeneratedMessage {
+  factory ListAssetCategoriesRequest({
+    $core.String? assetId,
+  }) {
+    final result = create();
+    if (assetId != null) result.assetId = assetId;
+    return result;
+  }
+
+  ListAssetCategoriesRequest._();
+
+  factory ListAssetCategoriesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListAssetCategoriesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAssetCategoriesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'assetId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAssetCategoriesRequest clone() => ListAssetCategoriesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAssetCategoriesRequest copyWith(void Function(ListAssetCategoriesRequest) updates) => super.copyWith((message) => updates(message as ListAssetCategoriesRequest)) as ListAssetCategoriesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAssetCategoriesRequest create() => ListAssetCategoriesRequest._();
+  @$core.override
+  ListAssetCategoriesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListAssetCategoriesRequest> createRepeated() => $pb.PbList<ListAssetCategoriesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListAssetCategoriesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAssetCategoriesRequest>(create);
+  static ListAssetCategoriesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get assetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set assetId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAssetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAssetId() => $_clearField(1);
+}
+
+class ListAssetCategoriesResponse extends $pb.GeneratedMessage {
+  factory ListAssetCategoriesResponse({
+    $core.Iterable<LegacyCategory>? categories,
+  }) {
+    final result = create();
+    if (categories != null) result.categories.addAll(categories);
+    return result;
+  }
+
+  ListAssetCategoriesResponse._();
+
+  factory ListAssetCategoriesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListAssetCategoriesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAssetCategoriesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..pc<LegacyCategory>(1, _omitFieldNames ? '' : 'categories', $pb.PbFieldType.PM, subBuilder: LegacyCategory.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAssetCategoriesResponse clone() => ListAssetCategoriesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAssetCategoriesResponse copyWith(void Function(ListAssetCategoriesResponse) updates) => super.copyWith((message) => updates(message as ListAssetCategoriesResponse)) as ListAssetCategoriesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAssetCategoriesResponse create() => ListAssetCategoriesResponse._();
+  @$core.override
+  ListAssetCategoriesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListAssetCategoriesResponse> createRepeated() => $pb.PbList<ListAssetCategoriesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListAssetCategoriesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAssetCategoriesResponse>(create);
+  static ListAssetCategoriesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LegacyCategory> get categories => $_getList(0);
+}
+
 class EncryptedBlobMetadata extends $pb.GeneratedMessage {
   factory EncryptedBlobMetadata({
     $core.String? id,

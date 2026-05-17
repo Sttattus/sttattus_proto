@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { DeleteRecoveryShareRequest, DeleteRecoveryShareResponse, GetEncryptedBlobRequest, GetEncryptedBlobResponse, GetHeritageStatsRequest, GetHeritageStatsResponse, ListAssetsRequest, ListAssetsResponse, ListMyEncryptedBlobsRequest, ListMyEncryptedBlobsResponse, ListMyRecoverySharesRequest, ListMyRecoverySharesResponse, StoreDocumentRequest, StoreDocumentResponse, StoreEncryptedBlobRequest, StoreEncryptedBlobResponse, StoreRecoveryShareRequest, StoreRecoveryShareResponse } from "./legacy_pb.js";
+import { AssignAssetCategoryRequest, AssignAssetCategoryResponse, DeleteRecoveryShareRequest, DeleteRecoveryShareResponse, GetEncryptedBlobRequest, GetEncryptedBlobResponse, GetHeritageStatsRequest, GetHeritageStatsResponse, ListAssetCategoriesRequest, ListAssetCategoriesResponse, ListAssetsRequest, ListAssetsResponse, ListLegacyCategoriesRequest, ListLegacyCategoriesResponse, ListMyEncryptedBlobsRequest, ListMyEncryptedBlobsResponse, ListMyRecoverySharesRequest, ListMyRecoverySharesResponse, StoreDocumentRequest, StoreDocumentResponse, StoreEncryptedBlobRequest, StoreEncryptedBlobResponse, StoreRecoveryShareRequest, StoreRecoveryShareResponse, UnassignAssetCategoryRequest, UnassignAssetCategoryResponse } from "./legacy_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -97,6 +97,44 @@ export const LegacyService = {
       name: "DeleteRecoveryShare",
       I: DeleteRecoveryShareRequest,
       O: DeleteRecoveryShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L15.5 — document taxonomy.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListLegacyCategories
+     */
+    listLegacyCategories: {
+      name: "ListLegacyCategories",
+      I: ListLegacyCategoriesRequest,
+      O: ListLegacyCategoriesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.AssignAssetCategory
+     */
+    assignAssetCategory: {
+      name: "AssignAssetCategory",
+      I: AssignAssetCategoryRequest,
+      O: AssignAssetCategoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.UnassignAssetCategory
+     */
+    unassignAssetCategory: {
+      name: "UnassignAssetCategory",
+      I: UnassignAssetCategoryRequest,
+      O: UnassignAssetCategoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListAssetCategories
+     */
+    listAssetCategories: {
+      name: "ListAssetCategories",
+      I: ListAssetCategoriesRequest,
+      O: ListAssetCategoriesResponse,
       kind: MethodKind.Unary,
     },
   }

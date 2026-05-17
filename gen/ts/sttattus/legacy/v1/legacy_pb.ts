@@ -497,6 +497,359 @@ export class ListAssetsResponse extends Message<ListAssetsResponse> {
 }
 
 /**
+ * @generated from message sttattus.legacy.v1.LegacyCategory
+ */
+export class LegacyCategory extends Message<LegacyCategory> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string slug = 2;
+   */
+  slug = "";
+
+  /**
+   * @generated from field: string display_name = 3;
+   */
+  displayName = "";
+
+  /**
+   * 'wills' | 'governance' | 'ip' | 'tax' | 'personal'
+   *
+   * @generated from field: string group_label = 4;
+   */
+  groupLabel = "";
+
+  /**
+   * @generated from field: string description = 5;
+   */
+  description = "";
+
+  constructor(data?: PartialMessage<LegacyCategory>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LegacyCategory";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "group_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegacyCategory {
+    return new LegacyCategory().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LegacyCategory {
+    return new LegacyCategory().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LegacyCategory {
+    return new LegacyCategory().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LegacyCategory | PlainMessage<LegacyCategory> | undefined, b: LegacyCategory | PlainMessage<LegacyCategory> | undefined): boolean {
+    return proto3.util.equals(LegacyCategory, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.ListLegacyCategoriesRequest
+ */
+export class ListLegacyCategoriesRequest extends Message<ListLegacyCategoriesRequest> {
+  constructor(data?: PartialMessage<ListLegacyCategoriesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.ListLegacyCategoriesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLegacyCategoriesRequest {
+    return new ListLegacyCategoriesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLegacyCategoriesRequest {
+    return new ListLegacyCategoriesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLegacyCategoriesRequest {
+    return new ListLegacyCategoriesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLegacyCategoriesRequest | PlainMessage<ListLegacyCategoriesRequest> | undefined, b: ListLegacyCategoriesRequest | PlainMessage<ListLegacyCategoriesRequest> | undefined): boolean {
+    return proto3.util.equals(ListLegacyCategoriesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.ListLegacyCategoriesResponse
+ */
+export class ListLegacyCategoriesResponse extends Message<ListLegacyCategoriesResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegacyCategory categories = 1;
+   */
+  categories: LegacyCategory[] = [];
+
+  constructor(data?: PartialMessage<ListLegacyCategoriesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.ListLegacyCategoriesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "categories", kind: "message", T: LegacyCategory, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLegacyCategoriesResponse {
+    return new ListLegacyCategoriesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLegacyCategoriesResponse {
+    return new ListLegacyCategoriesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLegacyCategoriesResponse {
+    return new ListLegacyCategoriesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLegacyCategoriesResponse | PlainMessage<ListLegacyCategoriesResponse> | undefined, b: ListLegacyCategoriesResponse | PlainMessage<ListLegacyCategoriesResponse> | undefined): boolean {
+    return proto3.util.equals(ListLegacyCategoriesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.AssignAssetCategoryRequest
+ */
+export class AssignAssetCategoryRequest extends Message<AssignAssetCategoryRequest> {
+  /**
+   * @generated from field: string asset_id = 1;
+   */
+  assetId = "";
+
+  /**
+   * @generated from field: string category_id = 2;
+   */
+  categoryId = "";
+
+  constructor(data?: PartialMessage<AssignAssetCategoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.AssignAssetCategoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "category_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignAssetCategoryRequest {
+    return new AssignAssetCategoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignAssetCategoryRequest {
+    return new AssignAssetCategoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignAssetCategoryRequest {
+    return new AssignAssetCategoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AssignAssetCategoryRequest | PlainMessage<AssignAssetCategoryRequest> | undefined, b: AssignAssetCategoryRequest | PlainMessage<AssignAssetCategoryRequest> | undefined): boolean {
+    return proto3.util.equals(AssignAssetCategoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.AssignAssetCategoryResponse
+ */
+export class AssignAssetCategoryResponse extends Message<AssignAssetCategoryResponse> {
+  constructor(data?: PartialMessage<AssignAssetCategoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.AssignAssetCategoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignAssetCategoryResponse {
+    return new AssignAssetCategoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignAssetCategoryResponse {
+    return new AssignAssetCategoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignAssetCategoryResponse {
+    return new AssignAssetCategoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AssignAssetCategoryResponse | PlainMessage<AssignAssetCategoryResponse> | undefined, b: AssignAssetCategoryResponse | PlainMessage<AssignAssetCategoryResponse> | undefined): boolean {
+    return proto3.util.equals(AssignAssetCategoryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.UnassignAssetCategoryRequest
+ */
+export class UnassignAssetCategoryRequest extends Message<UnassignAssetCategoryRequest> {
+  /**
+   * @generated from field: string asset_id = 1;
+   */
+  assetId = "";
+
+  /**
+   * @generated from field: string category_id = 2;
+   */
+  categoryId = "";
+
+  constructor(data?: PartialMessage<UnassignAssetCategoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.UnassignAssetCategoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "category_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnassignAssetCategoryRequest {
+    return new UnassignAssetCategoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnassignAssetCategoryRequest {
+    return new UnassignAssetCategoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnassignAssetCategoryRequest {
+    return new UnassignAssetCategoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UnassignAssetCategoryRequest | PlainMessage<UnassignAssetCategoryRequest> | undefined, b: UnassignAssetCategoryRequest | PlainMessage<UnassignAssetCategoryRequest> | undefined): boolean {
+    return proto3.util.equals(UnassignAssetCategoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.UnassignAssetCategoryResponse
+ */
+export class UnassignAssetCategoryResponse extends Message<UnassignAssetCategoryResponse> {
+  constructor(data?: PartialMessage<UnassignAssetCategoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.UnassignAssetCategoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnassignAssetCategoryResponse {
+    return new UnassignAssetCategoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnassignAssetCategoryResponse {
+    return new UnassignAssetCategoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnassignAssetCategoryResponse {
+    return new UnassignAssetCategoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UnassignAssetCategoryResponse | PlainMessage<UnassignAssetCategoryResponse> | undefined, b: UnassignAssetCategoryResponse | PlainMessage<UnassignAssetCategoryResponse> | undefined): boolean {
+    return proto3.util.equals(UnassignAssetCategoryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.ListAssetCategoriesRequest
+ */
+export class ListAssetCategoriesRequest extends Message<ListAssetCategoriesRequest> {
+  /**
+   * @generated from field: string asset_id = 1;
+   */
+  assetId = "";
+
+  constructor(data?: PartialMessage<ListAssetCategoriesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.ListAssetCategoriesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAssetCategoriesRequest {
+    return new ListAssetCategoriesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAssetCategoriesRequest {
+    return new ListAssetCategoriesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAssetCategoriesRequest {
+    return new ListAssetCategoriesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAssetCategoriesRequest | PlainMessage<ListAssetCategoriesRequest> | undefined, b: ListAssetCategoriesRequest | PlainMessage<ListAssetCategoriesRequest> | undefined): boolean {
+    return proto3.util.equals(ListAssetCategoriesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.ListAssetCategoriesResponse
+ */
+export class ListAssetCategoriesResponse extends Message<ListAssetCategoriesResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegacyCategory categories = 1;
+   */
+  categories: LegacyCategory[] = [];
+
+  constructor(data?: PartialMessage<ListAssetCategoriesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.ListAssetCategoriesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "categories", kind: "message", T: LegacyCategory, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAssetCategoriesResponse {
+    return new ListAssetCategoriesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAssetCategoriesResponse {
+    return new ListAssetCategoriesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAssetCategoriesResponse {
+    return new ListAssetCategoriesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAssetCategoriesResponse | PlainMessage<ListAssetCategoriesResponse> | undefined, b: ListAssetCategoriesResponse | PlainMessage<ListAssetCategoriesResponse> | undefined): boolean {
+    return proto3.util.equals(ListAssetCategoriesResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.legacy.v1.EncryptedBlobMetadata
  */
 export class EncryptedBlobMetadata extends Message<EncryptedBlobMetadata> {

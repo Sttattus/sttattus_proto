@@ -19,15 +19,19 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	LegacyService_StoreDocument_FullMethodName        = "/sttattus.legacy.v1.LegacyService/StoreDocument"
-	LegacyService_ListAssets_FullMethodName           = "/sttattus.legacy.v1.LegacyService/ListAssets"
-	LegacyService_GetHeritageStats_FullMethodName     = "/sttattus.legacy.v1.LegacyService/GetHeritageStats"
-	LegacyService_StoreEncryptedBlob_FullMethodName   = "/sttattus.legacy.v1.LegacyService/StoreEncryptedBlob"
-	LegacyService_GetEncryptedBlob_FullMethodName     = "/sttattus.legacy.v1.LegacyService/GetEncryptedBlob"
-	LegacyService_ListMyEncryptedBlobs_FullMethodName = "/sttattus.legacy.v1.LegacyService/ListMyEncryptedBlobs"
-	LegacyService_StoreRecoveryShare_FullMethodName   = "/sttattus.legacy.v1.LegacyService/StoreRecoveryShare"
-	LegacyService_ListMyRecoveryShares_FullMethodName = "/sttattus.legacy.v1.LegacyService/ListMyRecoveryShares"
-	LegacyService_DeleteRecoveryShare_FullMethodName  = "/sttattus.legacy.v1.LegacyService/DeleteRecoveryShare"
+	LegacyService_StoreDocument_FullMethodName         = "/sttattus.legacy.v1.LegacyService/StoreDocument"
+	LegacyService_ListAssets_FullMethodName            = "/sttattus.legacy.v1.LegacyService/ListAssets"
+	LegacyService_GetHeritageStats_FullMethodName      = "/sttattus.legacy.v1.LegacyService/GetHeritageStats"
+	LegacyService_StoreEncryptedBlob_FullMethodName    = "/sttattus.legacy.v1.LegacyService/StoreEncryptedBlob"
+	LegacyService_GetEncryptedBlob_FullMethodName      = "/sttattus.legacy.v1.LegacyService/GetEncryptedBlob"
+	LegacyService_ListMyEncryptedBlobs_FullMethodName  = "/sttattus.legacy.v1.LegacyService/ListMyEncryptedBlobs"
+	LegacyService_StoreRecoveryShare_FullMethodName    = "/sttattus.legacy.v1.LegacyService/StoreRecoveryShare"
+	LegacyService_ListMyRecoveryShares_FullMethodName  = "/sttattus.legacy.v1.LegacyService/ListMyRecoveryShares"
+	LegacyService_DeleteRecoveryShare_FullMethodName   = "/sttattus.legacy.v1.LegacyService/DeleteRecoveryShare"
+	LegacyService_ListLegacyCategories_FullMethodName  = "/sttattus.legacy.v1.LegacyService/ListLegacyCategories"
+	LegacyService_AssignAssetCategory_FullMethodName   = "/sttattus.legacy.v1.LegacyService/AssignAssetCategory"
+	LegacyService_UnassignAssetCategory_FullMethodName = "/sttattus.legacy.v1.LegacyService/UnassignAssetCategory"
+	LegacyService_ListAssetCategories_FullMethodName   = "/sttattus.legacy.v1.LegacyService/ListAssetCategories"
 )
 
 // LegacyServiceClient is the client API for LegacyService service.
@@ -46,6 +50,11 @@ type LegacyServiceClient interface {
 	StoreRecoveryShare(ctx context.Context, in *StoreRecoveryShareRequest, opts ...grpc.CallOption) (*StoreRecoveryShareResponse, error)
 	ListMyRecoveryShares(ctx context.Context, in *ListMyRecoverySharesRequest, opts ...grpc.CallOption) (*ListMyRecoverySharesResponse, error)
 	DeleteRecoveryShare(ctx context.Context, in *DeleteRecoveryShareRequest, opts ...grpc.CallOption) (*DeleteRecoveryShareResponse, error)
+	// L15.5 — document taxonomy.
+	ListLegacyCategories(ctx context.Context, in *ListLegacyCategoriesRequest, opts ...grpc.CallOption) (*ListLegacyCategoriesResponse, error)
+	AssignAssetCategory(ctx context.Context, in *AssignAssetCategoryRequest, opts ...grpc.CallOption) (*AssignAssetCategoryResponse, error)
+	UnassignAssetCategory(ctx context.Context, in *UnassignAssetCategoryRequest, opts ...grpc.CallOption) (*UnassignAssetCategoryResponse, error)
+	ListAssetCategories(ctx context.Context, in *ListAssetCategoriesRequest, opts ...grpc.CallOption) (*ListAssetCategoriesResponse, error)
 }
 
 type legacyServiceClient struct {
@@ -146,6 +155,46 @@ func (c *legacyServiceClient) DeleteRecoveryShare(ctx context.Context, in *Delet
 	return out, nil
 }
 
+func (c *legacyServiceClient) ListLegacyCategories(ctx context.Context, in *ListLegacyCategoriesRequest, opts ...grpc.CallOption) (*ListLegacyCategoriesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLegacyCategoriesResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListLegacyCategories_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) AssignAssetCategory(ctx context.Context, in *AssignAssetCategoryRequest, opts ...grpc.CallOption) (*AssignAssetCategoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AssignAssetCategoryResponse)
+	err := c.cc.Invoke(ctx, LegacyService_AssignAssetCategory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) UnassignAssetCategory(ctx context.Context, in *UnassignAssetCategoryRequest, opts ...grpc.CallOption) (*UnassignAssetCategoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UnassignAssetCategoryResponse)
+	err := c.cc.Invoke(ctx, LegacyService_UnassignAssetCategory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListAssetCategories(ctx context.Context, in *ListAssetCategoriesRequest, opts ...grpc.CallOption) (*ListAssetCategoriesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAssetCategoriesResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListAssetCategories_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LegacyServiceServer is the server API for LegacyService service.
 // All implementations must embed UnimplementedLegacyServiceServer
 // for forward compatibility.
@@ -162,6 +211,11 @@ type LegacyServiceServer interface {
 	StoreRecoveryShare(context.Context, *StoreRecoveryShareRequest) (*StoreRecoveryShareResponse, error)
 	ListMyRecoveryShares(context.Context, *ListMyRecoverySharesRequest) (*ListMyRecoverySharesResponse, error)
 	DeleteRecoveryShare(context.Context, *DeleteRecoveryShareRequest) (*DeleteRecoveryShareResponse, error)
+	// L15.5 — document taxonomy.
+	ListLegacyCategories(context.Context, *ListLegacyCategoriesRequest) (*ListLegacyCategoriesResponse, error)
+	AssignAssetCategory(context.Context, *AssignAssetCategoryRequest) (*AssignAssetCategoryResponse, error)
+	UnassignAssetCategory(context.Context, *UnassignAssetCategoryRequest) (*UnassignAssetCategoryResponse, error)
+	ListAssetCategories(context.Context, *ListAssetCategoriesRequest) (*ListAssetCategoriesResponse, error)
 	mustEmbedUnimplementedLegacyServiceServer()
 }
 
@@ -198,6 +252,18 @@ func (UnimplementedLegacyServiceServer) ListMyRecoveryShares(context.Context, *L
 }
 func (UnimplementedLegacyServiceServer) DeleteRecoveryShare(context.Context, *DeleteRecoveryShareRequest) (*DeleteRecoveryShareResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method DeleteRecoveryShare not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListLegacyCategories(context.Context, *ListLegacyCategoriesRequest) (*ListLegacyCategoriesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLegacyCategories not implemented")
+}
+func (UnimplementedLegacyServiceServer) AssignAssetCategory(context.Context, *AssignAssetCategoryRequest) (*AssignAssetCategoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AssignAssetCategory not implemented")
+}
+func (UnimplementedLegacyServiceServer) UnassignAssetCategory(context.Context, *UnassignAssetCategoryRequest) (*UnassignAssetCategoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UnassignAssetCategory not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListAssetCategories(context.Context, *ListAssetCategoriesRequest) (*ListAssetCategoriesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAssetCategories not implemented")
 }
 func (UnimplementedLegacyServiceServer) mustEmbedUnimplementedLegacyServiceServer() {}
 func (UnimplementedLegacyServiceServer) testEmbeddedByValue()                       {}
@@ -382,6 +448,78 @@ func _LegacyService_DeleteRecoveryShare_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LegacyService_ListLegacyCategories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLegacyCategoriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListLegacyCategories(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListLegacyCategories_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListLegacyCategories(ctx, req.(*ListLegacyCategoriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_AssignAssetCategory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AssignAssetCategoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).AssignAssetCategory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_AssignAssetCategory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).AssignAssetCategory(ctx, req.(*AssignAssetCategoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_UnassignAssetCategory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnassignAssetCategoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).UnassignAssetCategory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_UnassignAssetCategory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).UnassignAssetCategory(ctx, req.(*UnassignAssetCategoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListAssetCategories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAssetCategoriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListAssetCategories(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListAssetCategories_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListAssetCategories(ctx, req.(*ListAssetCategoriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LegacyService_ServiceDesc is the grpc.ServiceDesc for LegacyService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -424,6 +562,22 @@ var LegacyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteRecoveryShare",
 			Handler:    _LegacyService_DeleteRecoveryShare_Handler,
+		},
+		{
+			MethodName: "ListLegacyCategories",
+			Handler:    _LegacyService_ListLegacyCategories_Handler,
+		},
+		{
+			MethodName: "AssignAssetCategory",
+			Handler:    _LegacyService_AssignAssetCategory_Handler,
+		},
+		{
+			MethodName: "UnassignAssetCategory",
+			Handler:    _LegacyService_UnassignAssetCategory_Handler,
+		},
+		{
+			MethodName: "ListAssetCategories",
+			Handler:    _LegacyService_ListAssetCategories_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -620,6 +620,426 @@ func (x *ListAssetsResponse) GetAssets() []*LegalAsset {
 	return nil
 }
 
+type LegacyCategory struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug          string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	DisplayName   string                 `protobuf:"bytes,3,opt,name=display_name,json=displayName,proto3" json:"display_name,omitempty"`
+	GroupLabel    string                 `protobuf:"bytes,4,opt,name=group_label,json=groupLabel,proto3" json:"group_label,omitempty"` // 'wills' | 'governance' | 'ip' | 'tax' | 'personal'
+	Description   string                 `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LegacyCategory) Reset() {
+	*x = LegacyCategory{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LegacyCategory) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LegacyCategory) ProtoMessage() {}
+
+func (x *LegacyCategory) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LegacyCategory.ProtoReflect.Descriptor instead.
+func (*LegacyCategory) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *LegacyCategory) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LegacyCategory) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *LegacyCategory) GetDisplayName() string {
+	if x != nil {
+		return x.DisplayName
+	}
+	return ""
+}
+
+func (x *LegacyCategory) GetGroupLabel() string {
+	if x != nil {
+		return x.GroupLabel
+	}
+	return ""
+}
+
+func (x *LegacyCategory) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+type ListLegacyCategoriesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLegacyCategoriesRequest) Reset() {
+	*x = ListLegacyCategoriesRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLegacyCategoriesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLegacyCategoriesRequest) ProtoMessage() {}
+
+func (x *ListLegacyCategoriesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLegacyCategoriesRequest.ProtoReflect.Descriptor instead.
+func (*ListLegacyCategoriesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{9}
+}
+
+type ListLegacyCategoriesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Categories    []*LegacyCategory      `protobuf:"bytes,1,rep,name=categories,proto3" json:"categories,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLegacyCategoriesResponse) Reset() {
+	*x = ListLegacyCategoriesResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLegacyCategoriesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLegacyCategoriesResponse) ProtoMessage() {}
+
+func (x *ListLegacyCategoriesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLegacyCategoriesResponse.ProtoReflect.Descriptor instead.
+func (*ListLegacyCategoriesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *ListLegacyCategoriesResponse) GetCategories() []*LegacyCategory {
+	if x != nil {
+		return x.Categories
+	}
+	return nil
+}
+
+type AssignAssetCategoryRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AssetId       string                 `protobuf:"bytes,1,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
+	CategoryId    string                 `protobuf:"bytes,2,opt,name=category_id,json=categoryId,proto3" json:"category_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AssignAssetCategoryRequest) Reset() {
+	*x = AssignAssetCategoryRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AssignAssetCategoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AssignAssetCategoryRequest) ProtoMessage() {}
+
+func (x *AssignAssetCategoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AssignAssetCategoryRequest.ProtoReflect.Descriptor instead.
+func (*AssignAssetCategoryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *AssignAssetCategoryRequest) GetAssetId() string {
+	if x != nil {
+		return x.AssetId
+	}
+	return ""
+}
+
+func (x *AssignAssetCategoryRequest) GetCategoryId() string {
+	if x != nil {
+		return x.CategoryId
+	}
+	return ""
+}
+
+type AssignAssetCategoryResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AssignAssetCategoryResponse) Reset() {
+	*x = AssignAssetCategoryResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AssignAssetCategoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AssignAssetCategoryResponse) ProtoMessage() {}
+
+func (x *AssignAssetCategoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AssignAssetCategoryResponse.ProtoReflect.Descriptor instead.
+func (*AssignAssetCategoryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{12}
+}
+
+type UnassignAssetCategoryRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AssetId       string                 `protobuf:"bytes,1,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
+	CategoryId    string                 `protobuf:"bytes,2,opt,name=category_id,json=categoryId,proto3" json:"category_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UnassignAssetCategoryRequest) Reset() {
+	*x = UnassignAssetCategoryRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UnassignAssetCategoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UnassignAssetCategoryRequest) ProtoMessage() {}
+
+func (x *UnassignAssetCategoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UnassignAssetCategoryRequest.ProtoReflect.Descriptor instead.
+func (*UnassignAssetCategoryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *UnassignAssetCategoryRequest) GetAssetId() string {
+	if x != nil {
+		return x.AssetId
+	}
+	return ""
+}
+
+func (x *UnassignAssetCategoryRequest) GetCategoryId() string {
+	if x != nil {
+		return x.CategoryId
+	}
+	return ""
+}
+
+type UnassignAssetCategoryResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UnassignAssetCategoryResponse) Reset() {
+	*x = UnassignAssetCategoryResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UnassignAssetCategoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UnassignAssetCategoryResponse) ProtoMessage() {}
+
+func (x *UnassignAssetCategoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UnassignAssetCategoryResponse.ProtoReflect.Descriptor instead.
+func (*UnassignAssetCategoryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{14}
+}
+
+type ListAssetCategoriesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AssetId       string                 `protobuf:"bytes,1,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAssetCategoriesRequest) Reset() {
+	*x = ListAssetCategoriesRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAssetCategoriesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAssetCategoriesRequest) ProtoMessage() {}
+
+func (x *ListAssetCategoriesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAssetCategoriesRequest.ProtoReflect.Descriptor instead.
+func (*ListAssetCategoriesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *ListAssetCategoriesRequest) GetAssetId() string {
+	if x != nil {
+		return x.AssetId
+	}
+	return ""
+}
+
+type ListAssetCategoriesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Categories    []*LegacyCategory      `protobuf:"bytes,1,rep,name=categories,proto3" json:"categories,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAssetCategoriesResponse) Reset() {
+	*x = ListAssetCategoriesResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAssetCategoriesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAssetCategoriesResponse) ProtoMessage() {}
+
+func (x *ListAssetCategoriesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAssetCategoriesResponse.ProtoReflect.Descriptor instead.
+func (*ListAssetCategoriesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *ListAssetCategoriesResponse) GetCategories() []*LegacyCategory {
+	if x != nil {
+		return x.Categories
+	}
+	return nil
+}
+
 type EncryptedBlobMetadata struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -633,7 +1053,7 @@ type EncryptedBlobMetadata struct {
 
 func (x *EncryptedBlobMetadata) Reset() {
 	*x = EncryptedBlobMetadata{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[8]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -645,7 +1065,7 @@ func (x *EncryptedBlobMetadata) String() string {
 func (*EncryptedBlobMetadata) ProtoMessage() {}
 
 func (x *EncryptedBlobMetadata) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[8]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -658,7 +1078,7 @@ func (x *EncryptedBlobMetadata) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EncryptedBlobMetadata.ProtoReflect.Descriptor instead.
 func (*EncryptedBlobMetadata) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{8}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *EncryptedBlobMetadata) GetId() string {
@@ -712,7 +1132,7 @@ type EncryptedBlob struct {
 
 func (x *EncryptedBlob) Reset() {
 	*x = EncryptedBlob{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[9]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -724,7 +1144,7 @@ func (x *EncryptedBlob) String() string {
 func (*EncryptedBlob) ProtoMessage() {}
 
 func (x *EncryptedBlob) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[9]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -737,7 +1157,7 @@ func (x *EncryptedBlob) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EncryptedBlob.ProtoReflect.Descriptor instead.
 func (*EncryptedBlob) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{9}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *EncryptedBlob) GetId() string {
@@ -809,7 +1229,7 @@ type StoreEncryptedBlobRequest struct {
 
 func (x *StoreEncryptedBlobRequest) Reset() {
 	*x = StoreEncryptedBlobRequest{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[10]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -821,7 +1241,7 @@ func (x *StoreEncryptedBlobRequest) String() string {
 func (*StoreEncryptedBlobRequest) ProtoMessage() {}
 
 func (x *StoreEncryptedBlobRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[10]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -834,7 +1254,7 @@ func (x *StoreEncryptedBlobRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StoreEncryptedBlobRequest.ProtoReflect.Descriptor instead.
 func (*StoreEncryptedBlobRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{10}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *StoreEncryptedBlobRequest) GetAssetId() string {
@@ -881,7 +1301,7 @@ type StoreEncryptedBlobResponse struct {
 
 func (x *StoreEncryptedBlobResponse) Reset() {
 	*x = StoreEncryptedBlobResponse{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[11]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -893,7 +1313,7 @@ func (x *StoreEncryptedBlobResponse) String() string {
 func (*StoreEncryptedBlobResponse) ProtoMessage() {}
 
 func (x *StoreEncryptedBlobResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[11]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -906,7 +1326,7 @@ func (x *StoreEncryptedBlobResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StoreEncryptedBlobResponse.ProtoReflect.Descriptor instead.
 func (*StoreEncryptedBlobResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{11}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *StoreEncryptedBlobResponse) GetBlob() *EncryptedBlobMetadata {
@@ -925,7 +1345,7 @@ type GetEncryptedBlobRequest struct {
 
 func (x *GetEncryptedBlobRequest) Reset() {
 	*x = GetEncryptedBlobRequest{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[12]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -937,7 +1357,7 @@ func (x *GetEncryptedBlobRequest) String() string {
 func (*GetEncryptedBlobRequest) ProtoMessage() {}
 
 func (x *GetEncryptedBlobRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[12]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -950,7 +1370,7 @@ func (x *GetEncryptedBlobRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEncryptedBlobRequest.ProtoReflect.Descriptor instead.
 func (*GetEncryptedBlobRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{12}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *GetEncryptedBlobRequest) GetId() string {
@@ -969,7 +1389,7 @@ type GetEncryptedBlobResponse struct {
 
 func (x *GetEncryptedBlobResponse) Reset() {
 	*x = GetEncryptedBlobResponse{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[13]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -981,7 +1401,7 @@ func (x *GetEncryptedBlobResponse) String() string {
 func (*GetEncryptedBlobResponse) ProtoMessage() {}
 
 func (x *GetEncryptedBlobResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[13]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -994,7 +1414,7 @@ func (x *GetEncryptedBlobResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEncryptedBlobResponse.ProtoReflect.Descriptor instead.
 func (*GetEncryptedBlobResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{13}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *GetEncryptedBlobResponse) GetBlob() *EncryptedBlob {
@@ -1012,7 +1432,7 @@ type ListMyEncryptedBlobsRequest struct {
 
 func (x *ListMyEncryptedBlobsRequest) Reset() {
 	*x = ListMyEncryptedBlobsRequest{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[14]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1024,7 +1444,7 @@ func (x *ListMyEncryptedBlobsRequest) String() string {
 func (*ListMyEncryptedBlobsRequest) ProtoMessage() {}
 
 func (x *ListMyEncryptedBlobsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[14]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1037,7 +1457,7 @@ func (x *ListMyEncryptedBlobsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyEncryptedBlobsRequest.ProtoReflect.Descriptor instead.
 func (*ListMyEncryptedBlobsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{14}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{23}
 }
 
 type ListMyEncryptedBlobsResponse struct {
@@ -1049,7 +1469,7 @@ type ListMyEncryptedBlobsResponse struct {
 
 func (x *ListMyEncryptedBlobsResponse) Reset() {
 	*x = ListMyEncryptedBlobsResponse{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[15]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1061,7 +1481,7 @@ func (x *ListMyEncryptedBlobsResponse) String() string {
 func (*ListMyEncryptedBlobsResponse) ProtoMessage() {}
 
 func (x *ListMyEncryptedBlobsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[15]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1074,7 +1494,7 @@ func (x *ListMyEncryptedBlobsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyEncryptedBlobsResponse.ProtoReflect.Descriptor instead.
 func (*ListMyEncryptedBlobsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{15}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *ListMyEncryptedBlobsResponse) GetBlobs() []*EncryptedBlobMetadata {
@@ -1098,7 +1518,7 @@ type RecoveryShare struct {
 
 func (x *RecoveryShare) Reset() {
 	*x = RecoveryShare{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[16]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1110,7 +1530,7 @@ func (x *RecoveryShare) String() string {
 func (*RecoveryShare) ProtoMessage() {}
 
 func (x *RecoveryShare) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[16]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1123,7 +1543,7 @@ func (x *RecoveryShare) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecoveryShare.ProtoReflect.Descriptor instead.
 func (*RecoveryShare) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{16}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *RecoveryShare) GetId() string {
@@ -1180,7 +1600,7 @@ type StoreRecoveryShareRequest struct {
 
 func (x *StoreRecoveryShareRequest) Reset() {
 	*x = StoreRecoveryShareRequest{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[17]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1192,7 +1612,7 @@ func (x *StoreRecoveryShareRequest) String() string {
 func (*StoreRecoveryShareRequest) ProtoMessage() {}
 
 func (x *StoreRecoveryShareRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[17]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1205,7 +1625,7 @@ func (x *StoreRecoveryShareRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StoreRecoveryShareRequest.ProtoReflect.Descriptor instead.
 func (*StoreRecoveryShareRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{17}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *StoreRecoveryShareRequest) GetTrusteeLabel() string {
@@ -1245,7 +1665,7 @@ type StoreRecoveryShareResponse struct {
 
 func (x *StoreRecoveryShareResponse) Reset() {
 	*x = StoreRecoveryShareResponse{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[18]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1257,7 +1677,7 @@ func (x *StoreRecoveryShareResponse) String() string {
 func (*StoreRecoveryShareResponse) ProtoMessage() {}
 
 func (x *StoreRecoveryShareResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[18]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1270,7 +1690,7 @@ func (x *StoreRecoveryShareResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StoreRecoveryShareResponse.ProtoReflect.Descriptor instead.
 func (*StoreRecoveryShareResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{18}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *StoreRecoveryShareResponse) GetShare() *RecoveryShare {
@@ -1288,7 +1708,7 @@ type ListMyRecoverySharesRequest struct {
 
 func (x *ListMyRecoverySharesRequest) Reset() {
 	*x = ListMyRecoverySharesRequest{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[19]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1300,7 +1720,7 @@ func (x *ListMyRecoverySharesRequest) String() string {
 func (*ListMyRecoverySharesRequest) ProtoMessage() {}
 
 func (x *ListMyRecoverySharesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[19]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1313,7 +1733,7 @@ func (x *ListMyRecoverySharesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyRecoverySharesRequest.ProtoReflect.Descriptor instead.
 func (*ListMyRecoverySharesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{19}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{28}
 }
 
 type ListMyRecoverySharesResponse struct {
@@ -1325,7 +1745,7 @@ type ListMyRecoverySharesResponse struct {
 
 func (x *ListMyRecoverySharesResponse) Reset() {
 	*x = ListMyRecoverySharesResponse{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[20]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1337,7 +1757,7 @@ func (x *ListMyRecoverySharesResponse) String() string {
 func (*ListMyRecoverySharesResponse) ProtoMessage() {}
 
 func (x *ListMyRecoverySharesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[20]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1350,7 +1770,7 @@ func (x *ListMyRecoverySharesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyRecoverySharesResponse.ProtoReflect.Descriptor instead.
 func (*ListMyRecoverySharesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{20}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *ListMyRecoverySharesResponse) GetShares() []*RecoveryShare {
@@ -1369,7 +1789,7 @@ type DeleteRecoveryShareRequest struct {
 
 func (x *DeleteRecoveryShareRequest) Reset() {
 	*x = DeleteRecoveryShareRequest{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[21]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1381,7 +1801,7 @@ func (x *DeleteRecoveryShareRequest) String() string {
 func (*DeleteRecoveryShareRequest) ProtoMessage() {}
 
 func (x *DeleteRecoveryShareRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[21]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1394,7 +1814,7 @@ func (x *DeleteRecoveryShareRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRecoveryShareRequest.ProtoReflect.Descriptor instead.
 func (*DeleteRecoveryShareRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{21}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *DeleteRecoveryShareRequest) GetShareId() string {
@@ -1412,7 +1832,7 @@ type DeleteRecoveryShareResponse struct {
 
 func (x *DeleteRecoveryShareResponse) Reset() {
 	*x = DeleteRecoveryShareResponse{}
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[22]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1424,7 +1844,7 @@ func (x *DeleteRecoveryShareResponse) String() string {
 func (*DeleteRecoveryShareResponse) ProtoMessage() {}
 
 func (x *DeleteRecoveryShareResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[22]
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1437,7 +1857,7 @@ func (x *DeleteRecoveryShareResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRecoveryShareResponse.ProtoReflect.Descriptor instead.
 func (*DeleteRecoveryShareResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{22}
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{31}
 }
 
 var File_sttattus_legacy_v1_legacy_proto protoreflect.FileDescriptor
@@ -1480,7 +1900,35 @@ const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
 	"\x11ListAssetsRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\"L\n" +
 	"\x12ListAssetsResponse\x126\n" +
-	"\x06assets\x18\x01 \x03(\v2\x1e.sttattus.legacy.v1.LegalAssetR\x06assets\"\xa7\x01\n" +
+	"\x06assets\x18\x01 \x03(\v2\x1e.sttattus.legacy.v1.LegalAssetR\x06assets\"\x9a\x01\n" +
+	"\x0eLegacyCategory\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12!\n" +
+	"\fdisplay_name\x18\x03 \x01(\tR\vdisplayName\x12\x1f\n" +
+	"\vgroup_label\x18\x04 \x01(\tR\n" +
+	"groupLabel\x12 \n" +
+	"\vdescription\x18\x05 \x01(\tR\vdescription\"\x1d\n" +
+	"\x1bListLegacyCategoriesRequest\"b\n" +
+	"\x1cListLegacyCategoriesResponse\x12B\n" +
+	"\n" +
+	"categories\x18\x01 \x03(\v2\".sttattus.legacy.v1.LegacyCategoryR\n" +
+	"categories\"X\n" +
+	"\x1aAssignAssetCategoryRequest\x12\x19\n" +
+	"\basset_id\x18\x01 \x01(\tR\aassetId\x12\x1f\n" +
+	"\vcategory_id\x18\x02 \x01(\tR\n" +
+	"categoryId\"\x1d\n" +
+	"\x1bAssignAssetCategoryResponse\"Z\n" +
+	"\x1cUnassignAssetCategoryRequest\x12\x19\n" +
+	"\basset_id\x18\x01 \x01(\tR\aassetId\x12\x1f\n" +
+	"\vcategory_id\x18\x02 \x01(\tR\n" +
+	"categoryId\"\x1f\n" +
+	"\x1dUnassignAssetCategoryResponse\"7\n" +
+	"\x1aListAssetCategoriesRequest\x12\x19\n" +
+	"\basset_id\x18\x01 \x01(\tR\aassetId\"a\n" +
+	"\x1bListAssetCategoriesResponse\x12B\n" +
+	"\n" +
+	"categories\x18\x01 \x03(\v2\".sttattus.legacy.v1.LegacyCategoryR\n" +
+	"categories\"\xa7\x01\n" +
 	"\x15EncryptedBlobMetadata\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\basset_id\x18\x02 \x01(\tR\aassetId\x12\x1c\n" +
@@ -1551,7 +1999,7 @@ const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\x88\b\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xf1\v\n" +
 	"\rLegacyService\x12d\n" +
 	"\rStoreDocument\x12(.sttattus.legacy.v1.StoreDocumentRequest\x1a).sttattus.legacy.v1.StoreDocumentResponse\x12[\n" +
 	"\n" +
@@ -1562,7 +2010,11 @@ const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
 	"\x14ListMyEncryptedBlobs\x12/.sttattus.legacy.v1.ListMyEncryptedBlobsRequest\x1a0.sttattus.legacy.v1.ListMyEncryptedBlobsResponse\x12s\n" +
 	"\x12StoreRecoveryShare\x12-.sttattus.legacy.v1.StoreRecoveryShareRequest\x1a..sttattus.legacy.v1.StoreRecoveryShareResponse\x12y\n" +
 	"\x14ListMyRecoveryShares\x12/.sttattus.legacy.v1.ListMyRecoverySharesRequest\x1a0.sttattus.legacy.v1.ListMyRecoverySharesResponse\x12v\n" +
-	"\x13DeleteRecoveryShare\x12..sttattus.legacy.v1.DeleteRecoveryShareRequest\x1a/.sttattus.legacy.v1.DeleteRecoveryShareResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/legacy/v1;legacyv1b\x06proto3"
+	"\x13DeleteRecoveryShare\x12..sttattus.legacy.v1.DeleteRecoveryShareRequest\x1a/.sttattus.legacy.v1.DeleteRecoveryShareResponse\x12y\n" +
+	"\x14ListLegacyCategories\x12/.sttattus.legacy.v1.ListLegacyCategoriesRequest\x1a0.sttattus.legacy.v1.ListLegacyCategoriesResponse\x12v\n" +
+	"\x13AssignAssetCategory\x12..sttattus.legacy.v1.AssignAssetCategoryRequest\x1a/.sttattus.legacy.v1.AssignAssetCategoryResponse\x12|\n" +
+	"\x15UnassignAssetCategory\x120.sttattus.legacy.v1.UnassignAssetCategoryRequest\x1a1.sttattus.legacy.v1.UnassignAssetCategoryResponse\x12v\n" +
+	"\x13ListAssetCategories\x12..sttattus.legacy.v1.ListAssetCategoriesRequest\x1a/.sttattus.legacy.v1.ListAssetCategoriesResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/legacy/v1;legacyv1b\x06proto3"
 
 var (
 	file_sttattus_legacy_v1_legacy_proto_rawDescOnce sync.Once
@@ -1577,73 +2029,92 @@ func file_sttattus_legacy_v1_legacy_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_legacy_v1_legacy_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_legacy_v1_legacy_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
+var file_sttattus_legacy_v1_legacy_proto_msgTypes = make([]protoimpl.MessageInfo, 32)
 var file_sttattus_legacy_v1_legacy_proto_goTypes = []any{
-	(AssetCategory)(0),                   // 0: sttattus.legacy.v1.AssetCategory
-	(VerificationStatus)(0),              // 1: sttattus.legacy.v1.VerificationStatus
-	(*LegalAsset)(nil),                   // 2: sttattus.legacy.v1.LegalAsset
-	(*HeritageStats)(nil),                // 3: sttattus.legacy.v1.HeritageStats
-	(*StoreDocumentRequest)(nil),         // 4: sttattus.legacy.v1.StoreDocumentRequest
-	(*StoreDocumentResponse)(nil),        // 5: sttattus.legacy.v1.StoreDocumentResponse
-	(*GetHeritageStatsRequest)(nil),      // 6: sttattus.legacy.v1.GetHeritageStatsRequest
-	(*GetHeritageStatsResponse)(nil),     // 7: sttattus.legacy.v1.GetHeritageStatsResponse
-	(*ListAssetsRequest)(nil),            // 8: sttattus.legacy.v1.ListAssetsRequest
-	(*ListAssetsResponse)(nil),           // 9: sttattus.legacy.v1.ListAssetsResponse
-	(*EncryptedBlobMetadata)(nil),        // 10: sttattus.legacy.v1.EncryptedBlobMetadata
-	(*EncryptedBlob)(nil),                // 11: sttattus.legacy.v1.EncryptedBlob
-	(*StoreEncryptedBlobRequest)(nil),    // 12: sttattus.legacy.v1.StoreEncryptedBlobRequest
-	(*StoreEncryptedBlobResponse)(nil),   // 13: sttattus.legacy.v1.StoreEncryptedBlobResponse
-	(*GetEncryptedBlobRequest)(nil),      // 14: sttattus.legacy.v1.GetEncryptedBlobRequest
-	(*GetEncryptedBlobResponse)(nil),     // 15: sttattus.legacy.v1.GetEncryptedBlobResponse
-	(*ListMyEncryptedBlobsRequest)(nil),  // 16: sttattus.legacy.v1.ListMyEncryptedBlobsRequest
-	(*ListMyEncryptedBlobsResponse)(nil), // 17: sttattus.legacy.v1.ListMyEncryptedBlobsResponse
-	(*RecoveryShare)(nil),                // 18: sttattus.legacy.v1.RecoveryShare
-	(*StoreRecoveryShareRequest)(nil),    // 19: sttattus.legacy.v1.StoreRecoveryShareRequest
-	(*StoreRecoveryShareResponse)(nil),   // 20: sttattus.legacy.v1.StoreRecoveryShareResponse
-	(*ListMyRecoverySharesRequest)(nil),  // 21: sttattus.legacy.v1.ListMyRecoverySharesRequest
-	(*ListMyRecoverySharesResponse)(nil), // 22: sttattus.legacy.v1.ListMyRecoverySharesResponse
-	(*DeleteRecoveryShareRequest)(nil),   // 23: sttattus.legacy.v1.DeleteRecoveryShareRequest
-	(*DeleteRecoveryShareResponse)(nil),  // 24: sttattus.legacy.v1.DeleteRecoveryShareResponse
-	(*timestamppb.Timestamp)(nil),        // 25: google.protobuf.Timestamp
+	(AssetCategory)(0),                    // 0: sttattus.legacy.v1.AssetCategory
+	(VerificationStatus)(0),               // 1: sttattus.legacy.v1.VerificationStatus
+	(*LegalAsset)(nil),                    // 2: sttattus.legacy.v1.LegalAsset
+	(*HeritageStats)(nil),                 // 3: sttattus.legacy.v1.HeritageStats
+	(*StoreDocumentRequest)(nil),          // 4: sttattus.legacy.v1.StoreDocumentRequest
+	(*StoreDocumentResponse)(nil),         // 5: sttattus.legacy.v1.StoreDocumentResponse
+	(*GetHeritageStatsRequest)(nil),       // 6: sttattus.legacy.v1.GetHeritageStatsRequest
+	(*GetHeritageStatsResponse)(nil),      // 7: sttattus.legacy.v1.GetHeritageStatsResponse
+	(*ListAssetsRequest)(nil),             // 8: sttattus.legacy.v1.ListAssetsRequest
+	(*ListAssetsResponse)(nil),            // 9: sttattus.legacy.v1.ListAssetsResponse
+	(*LegacyCategory)(nil),                // 10: sttattus.legacy.v1.LegacyCategory
+	(*ListLegacyCategoriesRequest)(nil),   // 11: sttattus.legacy.v1.ListLegacyCategoriesRequest
+	(*ListLegacyCategoriesResponse)(nil),  // 12: sttattus.legacy.v1.ListLegacyCategoriesResponse
+	(*AssignAssetCategoryRequest)(nil),    // 13: sttattus.legacy.v1.AssignAssetCategoryRequest
+	(*AssignAssetCategoryResponse)(nil),   // 14: sttattus.legacy.v1.AssignAssetCategoryResponse
+	(*UnassignAssetCategoryRequest)(nil),  // 15: sttattus.legacy.v1.UnassignAssetCategoryRequest
+	(*UnassignAssetCategoryResponse)(nil), // 16: sttattus.legacy.v1.UnassignAssetCategoryResponse
+	(*ListAssetCategoriesRequest)(nil),    // 17: sttattus.legacy.v1.ListAssetCategoriesRequest
+	(*ListAssetCategoriesResponse)(nil),   // 18: sttattus.legacy.v1.ListAssetCategoriesResponse
+	(*EncryptedBlobMetadata)(nil),         // 19: sttattus.legacy.v1.EncryptedBlobMetadata
+	(*EncryptedBlob)(nil),                 // 20: sttattus.legacy.v1.EncryptedBlob
+	(*StoreEncryptedBlobRequest)(nil),     // 21: sttattus.legacy.v1.StoreEncryptedBlobRequest
+	(*StoreEncryptedBlobResponse)(nil),    // 22: sttattus.legacy.v1.StoreEncryptedBlobResponse
+	(*GetEncryptedBlobRequest)(nil),       // 23: sttattus.legacy.v1.GetEncryptedBlobRequest
+	(*GetEncryptedBlobResponse)(nil),      // 24: sttattus.legacy.v1.GetEncryptedBlobResponse
+	(*ListMyEncryptedBlobsRequest)(nil),   // 25: sttattus.legacy.v1.ListMyEncryptedBlobsRequest
+	(*ListMyEncryptedBlobsResponse)(nil),  // 26: sttattus.legacy.v1.ListMyEncryptedBlobsResponse
+	(*RecoveryShare)(nil),                 // 27: sttattus.legacy.v1.RecoveryShare
+	(*StoreRecoveryShareRequest)(nil),     // 28: sttattus.legacy.v1.StoreRecoveryShareRequest
+	(*StoreRecoveryShareResponse)(nil),    // 29: sttattus.legacy.v1.StoreRecoveryShareResponse
+	(*ListMyRecoverySharesRequest)(nil),   // 30: sttattus.legacy.v1.ListMyRecoverySharesRequest
+	(*ListMyRecoverySharesResponse)(nil),  // 31: sttattus.legacy.v1.ListMyRecoverySharesResponse
+	(*DeleteRecoveryShareRequest)(nil),    // 32: sttattus.legacy.v1.DeleteRecoveryShareRequest
+	(*DeleteRecoveryShareResponse)(nil),   // 33: sttattus.legacy.v1.DeleteRecoveryShareResponse
+	(*timestamppb.Timestamp)(nil),         // 34: google.protobuf.Timestamp
 }
 var file_sttattus_legacy_v1_legacy_proto_depIdxs = []int32{
 	0,  // 0: sttattus.legacy.v1.LegalAsset.category:type_name -> sttattus.legacy.v1.AssetCategory
 	1,  // 1: sttattus.legacy.v1.LegalAsset.status:type_name -> sttattus.legacy.v1.VerificationStatus
-	25, // 2: sttattus.legacy.v1.LegalAsset.filed_at:type_name -> google.protobuf.Timestamp
-	25, // 3: sttattus.legacy.v1.LegalAsset.expires_at:type_name -> google.protobuf.Timestamp
+	34, // 2: sttattus.legacy.v1.LegalAsset.filed_at:type_name -> google.protobuf.Timestamp
+	34, // 3: sttattus.legacy.v1.LegalAsset.expires_at:type_name -> google.protobuf.Timestamp
 	0,  // 4: sttattus.legacy.v1.StoreDocumentRequest.category:type_name -> sttattus.legacy.v1.AssetCategory
 	2,  // 5: sttattus.legacy.v1.StoreDocumentResponse.asset:type_name -> sttattus.legacy.v1.LegalAsset
 	3,  // 6: sttattus.legacy.v1.StoreDocumentResponse.stats:type_name -> sttattus.legacy.v1.HeritageStats
 	3,  // 7: sttattus.legacy.v1.GetHeritageStatsResponse.stats:type_name -> sttattus.legacy.v1.HeritageStats
 	2,  // 8: sttattus.legacy.v1.ListAssetsResponse.assets:type_name -> sttattus.legacy.v1.LegalAsset
-	10, // 9: sttattus.legacy.v1.StoreEncryptedBlobResponse.blob:type_name -> sttattus.legacy.v1.EncryptedBlobMetadata
-	11, // 10: sttattus.legacy.v1.GetEncryptedBlobResponse.blob:type_name -> sttattus.legacy.v1.EncryptedBlob
-	10, // 11: sttattus.legacy.v1.ListMyEncryptedBlobsResponse.blobs:type_name -> sttattus.legacy.v1.EncryptedBlobMetadata
-	18, // 12: sttattus.legacy.v1.StoreRecoveryShareResponse.share:type_name -> sttattus.legacy.v1.RecoveryShare
-	18, // 13: sttattus.legacy.v1.ListMyRecoverySharesResponse.shares:type_name -> sttattus.legacy.v1.RecoveryShare
-	4,  // 14: sttattus.legacy.v1.LegacyService.StoreDocument:input_type -> sttattus.legacy.v1.StoreDocumentRequest
-	8,  // 15: sttattus.legacy.v1.LegacyService.ListAssets:input_type -> sttattus.legacy.v1.ListAssetsRequest
-	6,  // 16: sttattus.legacy.v1.LegacyService.GetHeritageStats:input_type -> sttattus.legacy.v1.GetHeritageStatsRequest
-	12, // 17: sttattus.legacy.v1.LegacyService.StoreEncryptedBlob:input_type -> sttattus.legacy.v1.StoreEncryptedBlobRequest
-	14, // 18: sttattus.legacy.v1.LegacyService.GetEncryptedBlob:input_type -> sttattus.legacy.v1.GetEncryptedBlobRequest
-	16, // 19: sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs:input_type -> sttattus.legacy.v1.ListMyEncryptedBlobsRequest
-	19, // 20: sttattus.legacy.v1.LegacyService.StoreRecoveryShare:input_type -> sttattus.legacy.v1.StoreRecoveryShareRequest
-	21, // 21: sttattus.legacy.v1.LegacyService.ListMyRecoveryShares:input_type -> sttattus.legacy.v1.ListMyRecoverySharesRequest
-	23, // 22: sttattus.legacy.v1.LegacyService.DeleteRecoveryShare:input_type -> sttattus.legacy.v1.DeleteRecoveryShareRequest
-	5,  // 23: sttattus.legacy.v1.LegacyService.StoreDocument:output_type -> sttattus.legacy.v1.StoreDocumentResponse
-	9,  // 24: sttattus.legacy.v1.LegacyService.ListAssets:output_type -> sttattus.legacy.v1.ListAssetsResponse
-	7,  // 25: sttattus.legacy.v1.LegacyService.GetHeritageStats:output_type -> sttattus.legacy.v1.GetHeritageStatsResponse
-	13, // 26: sttattus.legacy.v1.LegacyService.StoreEncryptedBlob:output_type -> sttattus.legacy.v1.StoreEncryptedBlobResponse
-	15, // 27: sttattus.legacy.v1.LegacyService.GetEncryptedBlob:output_type -> sttattus.legacy.v1.GetEncryptedBlobResponse
-	17, // 28: sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs:output_type -> sttattus.legacy.v1.ListMyEncryptedBlobsResponse
-	20, // 29: sttattus.legacy.v1.LegacyService.StoreRecoveryShare:output_type -> sttattus.legacy.v1.StoreRecoveryShareResponse
-	22, // 30: sttattus.legacy.v1.LegacyService.ListMyRecoveryShares:output_type -> sttattus.legacy.v1.ListMyRecoverySharesResponse
-	24, // 31: sttattus.legacy.v1.LegacyService.DeleteRecoveryShare:output_type -> sttattus.legacy.v1.DeleteRecoveryShareResponse
-	23, // [23:32] is the sub-list for method output_type
-	14, // [14:23] is the sub-list for method input_type
-	14, // [14:14] is the sub-list for extension type_name
-	14, // [14:14] is the sub-list for extension extendee
-	0,  // [0:14] is the sub-list for field type_name
+	10, // 9: sttattus.legacy.v1.ListLegacyCategoriesResponse.categories:type_name -> sttattus.legacy.v1.LegacyCategory
+	10, // 10: sttattus.legacy.v1.ListAssetCategoriesResponse.categories:type_name -> sttattus.legacy.v1.LegacyCategory
+	19, // 11: sttattus.legacy.v1.StoreEncryptedBlobResponse.blob:type_name -> sttattus.legacy.v1.EncryptedBlobMetadata
+	20, // 12: sttattus.legacy.v1.GetEncryptedBlobResponse.blob:type_name -> sttattus.legacy.v1.EncryptedBlob
+	19, // 13: sttattus.legacy.v1.ListMyEncryptedBlobsResponse.blobs:type_name -> sttattus.legacy.v1.EncryptedBlobMetadata
+	27, // 14: sttattus.legacy.v1.StoreRecoveryShareResponse.share:type_name -> sttattus.legacy.v1.RecoveryShare
+	27, // 15: sttattus.legacy.v1.ListMyRecoverySharesResponse.shares:type_name -> sttattus.legacy.v1.RecoveryShare
+	4,  // 16: sttattus.legacy.v1.LegacyService.StoreDocument:input_type -> sttattus.legacy.v1.StoreDocumentRequest
+	8,  // 17: sttattus.legacy.v1.LegacyService.ListAssets:input_type -> sttattus.legacy.v1.ListAssetsRequest
+	6,  // 18: sttattus.legacy.v1.LegacyService.GetHeritageStats:input_type -> sttattus.legacy.v1.GetHeritageStatsRequest
+	21, // 19: sttattus.legacy.v1.LegacyService.StoreEncryptedBlob:input_type -> sttattus.legacy.v1.StoreEncryptedBlobRequest
+	23, // 20: sttattus.legacy.v1.LegacyService.GetEncryptedBlob:input_type -> sttattus.legacy.v1.GetEncryptedBlobRequest
+	25, // 21: sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs:input_type -> sttattus.legacy.v1.ListMyEncryptedBlobsRequest
+	28, // 22: sttattus.legacy.v1.LegacyService.StoreRecoveryShare:input_type -> sttattus.legacy.v1.StoreRecoveryShareRequest
+	30, // 23: sttattus.legacy.v1.LegacyService.ListMyRecoveryShares:input_type -> sttattus.legacy.v1.ListMyRecoverySharesRequest
+	32, // 24: sttattus.legacy.v1.LegacyService.DeleteRecoveryShare:input_type -> sttattus.legacy.v1.DeleteRecoveryShareRequest
+	11, // 25: sttattus.legacy.v1.LegacyService.ListLegacyCategories:input_type -> sttattus.legacy.v1.ListLegacyCategoriesRequest
+	13, // 26: sttattus.legacy.v1.LegacyService.AssignAssetCategory:input_type -> sttattus.legacy.v1.AssignAssetCategoryRequest
+	15, // 27: sttattus.legacy.v1.LegacyService.UnassignAssetCategory:input_type -> sttattus.legacy.v1.UnassignAssetCategoryRequest
+	17, // 28: sttattus.legacy.v1.LegacyService.ListAssetCategories:input_type -> sttattus.legacy.v1.ListAssetCategoriesRequest
+	5,  // 29: sttattus.legacy.v1.LegacyService.StoreDocument:output_type -> sttattus.legacy.v1.StoreDocumentResponse
+	9,  // 30: sttattus.legacy.v1.LegacyService.ListAssets:output_type -> sttattus.legacy.v1.ListAssetsResponse
+	7,  // 31: sttattus.legacy.v1.LegacyService.GetHeritageStats:output_type -> sttattus.legacy.v1.GetHeritageStatsResponse
+	22, // 32: sttattus.legacy.v1.LegacyService.StoreEncryptedBlob:output_type -> sttattus.legacy.v1.StoreEncryptedBlobResponse
+	24, // 33: sttattus.legacy.v1.LegacyService.GetEncryptedBlob:output_type -> sttattus.legacy.v1.GetEncryptedBlobResponse
+	26, // 34: sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs:output_type -> sttattus.legacy.v1.ListMyEncryptedBlobsResponse
+	29, // 35: sttattus.legacy.v1.LegacyService.StoreRecoveryShare:output_type -> sttattus.legacy.v1.StoreRecoveryShareResponse
+	31, // 36: sttattus.legacy.v1.LegacyService.ListMyRecoveryShares:output_type -> sttattus.legacy.v1.ListMyRecoverySharesResponse
+	33, // 37: sttattus.legacy.v1.LegacyService.DeleteRecoveryShare:output_type -> sttattus.legacy.v1.DeleteRecoveryShareResponse
+	12, // 38: sttattus.legacy.v1.LegacyService.ListLegacyCategories:output_type -> sttattus.legacy.v1.ListLegacyCategoriesResponse
+	14, // 39: sttattus.legacy.v1.LegacyService.AssignAssetCategory:output_type -> sttattus.legacy.v1.AssignAssetCategoryResponse
+	16, // 40: sttattus.legacy.v1.LegacyService.UnassignAssetCategory:output_type -> sttattus.legacy.v1.UnassignAssetCategoryResponse
+	18, // 41: sttattus.legacy.v1.LegacyService.ListAssetCategories:output_type -> sttattus.legacy.v1.ListAssetCategoriesResponse
+	29, // [29:42] is the sub-list for method output_type
+	16, // [16:29] is the sub-list for method input_type
+	16, // [16:16] is the sub-list for extension type_name
+	16, // [16:16] is the sub-list for extension extendee
+	0,  // [0:16] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_legacy_v1_legacy_proto_init() }
@@ -1657,7 +2128,7 @@ func file_sttattus_legacy_v1_legacy_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_legacy_v1_legacy_proto_rawDesc), len(file_sttattus_legacy_v1_legacy_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   23,
+			NumMessages:   32,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

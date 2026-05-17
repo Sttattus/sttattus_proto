@@ -71,6 +71,23 @@ class LegacyServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteRecoveryShare, request, options: options);
   }
 
+  /// L15.5 — document taxonomy.
+  $grpc.ResponseFuture<$0.ListLegacyCategoriesResponse> listLegacyCategories($0.ListLegacyCategoriesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listLegacyCategories, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AssignAssetCategoryResponse> assignAssetCategory($0.AssignAssetCategoryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$assignAssetCategory, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UnassignAssetCategoryResponse> unassignAssetCategory($0.UnassignAssetCategoryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$unassignAssetCategory, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListAssetCategoriesResponse> listAssetCategories($0.ListAssetCategoriesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listAssetCategories, request, options: options);
+  }
+
     // method descriptors
 
   static final _$storeDocument = $grpc.ClientMethod<$0.StoreDocumentRequest, $0.StoreDocumentResponse>(
@@ -109,6 +126,22 @@ class LegacyServiceClient extends $grpc.Client {
       '/sttattus.legacy.v1.LegacyService/DeleteRecoveryShare',
       ($0.DeleteRecoveryShareRequest value) => value.writeToBuffer(),
       $0.DeleteRecoveryShareResponse.fromBuffer);
+  static final _$listLegacyCategories = $grpc.ClientMethod<$0.ListLegacyCategoriesRequest, $0.ListLegacyCategoriesResponse>(
+      '/sttattus.legacy.v1.LegacyService/ListLegacyCategories',
+      ($0.ListLegacyCategoriesRequest value) => value.writeToBuffer(),
+      $0.ListLegacyCategoriesResponse.fromBuffer);
+  static final _$assignAssetCategory = $grpc.ClientMethod<$0.AssignAssetCategoryRequest, $0.AssignAssetCategoryResponse>(
+      '/sttattus.legacy.v1.LegacyService/AssignAssetCategory',
+      ($0.AssignAssetCategoryRequest value) => value.writeToBuffer(),
+      $0.AssignAssetCategoryResponse.fromBuffer);
+  static final _$unassignAssetCategory = $grpc.ClientMethod<$0.UnassignAssetCategoryRequest, $0.UnassignAssetCategoryResponse>(
+      '/sttattus.legacy.v1.LegacyService/UnassignAssetCategory',
+      ($0.UnassignAssetCategoryRequest value) => value.writeToBuffer(),
+      $0.UnassignAssetCategoryResponse.fromBuffer);
+  static final _$listAssetCategories = $grpc.ClientMethod<$0.ListAssetCategoriesRequest, $0.ListAssetCategoriesResponse>(
+      '/sttattus.legacy.v1.LegacyService/ListAssetCategories',
+      ($0.ListAssetCategoriesRequest value) => value.writeToBuffer(),
+      $0.ListAssetCategoriesResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.legacy.v1.LegacyService')
@@ -179,6 +212,34 @@ abstract class LegacyServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.DeleteRecoveryShareRequest.fromBuffer(value),
         ($0.DeleteRecoveryShareResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListLegacyCategoriesRequest, $0.ListLegacyCategoriesResponse>(
+        'ListLegacyCategories',
+        listLegacyCategories_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListLegacyCategoriesRequest.fromBuffer(value),
+        ($0.ListLegacyCategoriesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AssignAssetCategoryRequest, $0.AssignAssetCategoryResponse>(
+        'AssignAssetCategory',
+        assignAssetCategory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.AssignAssetCategoryRequest.fromBuffer(value),
+        ($0.AssignAssetCategoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UnassignAssetCategoryRequest, $0.UnassignAssetCategoryResponse>(
+        'UnassignAssetCategory',
+        unassignAssetCategory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UnassignAssetCategoryRequest.fromBuffer(value),
+        ($0.UnassignAssetCategoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAssetCategoriesRequest, $0.ListAssetCategoriesResponse>(
+        'ListAssetCategories',
+        listAssetCategories_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListAssetCategoriesRequest.fromBuffer(value),
+        ($0.ListAssetCategoriesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.StoreDocumentResponse> storeDocument_Pre($grpc.ServiceCall $call, $async.Future<$0.StoreDocumentRequest> $request) async {
@@ -234,5 +295,29 @@ abstract class LegacyServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.DeleteRecoveryShareResponse> deleteRecoveryShare($grpc.ServiceCall call, $0.DeleteRecoveryShareRequest request);
+
+  $async.Future<$0.ListLegacyCategoriesResponse> listLegacyCategories_Pre($grpc.ServiceCall $call, $async.Future<$0.ListLegacyCategoriesRequest> $request) async {
+    return listLegacyCategories($call, await $request);
+  }
+
+  $async.Future<$0.ListLegacyCategoriesResponse> listLegacyCategories($grpc.ServiceCall call, $0.ListLegacyCategoriesRequest request);
+
+  $async.Future<$0.AssignAssetCategoryResponse> assignAssetCategory_Pre($grpc.ServiceCall $call, $async.Future<$0.AssignAssetCategoryRequest> $request) async {
+    return assignAssetCategory($call, await $request);
+  }
+
+  $async.Future<$0.AssignAssetCategoryResponse> assignAssetCategory($grpc.ServiceCall call, $0.AssignAssetCategoryRequest request);
+
+  $async.Future<$0.UnassignAssetCategoryResponse> unassignAssetCategory_Pre($grpc.ServiceCall $call, $async.Future<$0.UnassignAssetCategoryRequest> $request) async {
+    return unassignAssetCategory($call, await $request);
+  }
+
+  $async.Future<$0.UnassignAssetCategoryResponse> unassignAssetCategory($grpc.ServiceCall call, $0.UnassignAssetCategoryRequest request);
+
+  $async.Future<$0.ListAssetCategoriesResponse> listAssetCategories_Pre($grpc.ServiceCall $call, $async.Future<$0.ListAssetCategoriesRequest> $request) async {
+    return listAssetCategories($call, await $request);
+  }
+
+  $async.Future<$0.ListAssetCategoriesResponse> listAssetCategories($grpc.ServiceCall call, $0.ListAssetCategoriesRequest request);
 
 }
