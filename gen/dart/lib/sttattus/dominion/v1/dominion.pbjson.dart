@@ -205,6 +205,51 @@ final $typed_data.Uint8List getLoungeKeyResponseDescriptor = $convert.base64Deco
     'V5Snd0EjkKCmV4cGlyZXNfYXQYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgll'
     'eHBpcmVzQXQ=');
 
+@$core.Deprecated('Use loungeDescriptor instead')
+const Lounge$json = {
+  '1': 'Lounge',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slug', '3': 2, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'city', '3': 4, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'country_code', '3': 5, '4': 1, '5': 9, '10': 'countryCode'},
+    {'1': 'address', '3': 6, '4': 1, '5': 9, '10': 'address'},
+    {'1': 'kind', '3': 7, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'min_tier', '3': 8, '4': 1, '5': 9, '10': 'minTier'},
+    {'1': 'is_open', '3': 9, '4': 1, '5': 8, '10': 'isOpen'},
+  ],
+};
+
+/// Descriptor for `Lounge`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List loungeDescriptor = $convert.base64Decode(
+    'CgZMb3VuZ2USDgoCaWQYASABKAlSAmlkEhIKBHNsdWcYAiABKAlSBHNsdWcSEgoEbmFtZRgDIA'
+    'EoCVIEbmFtZRISCgRjaXR5GAQgASgJUgRjaXR5EiEKDGNvdW50cnlfY29kZRgFIAEoCVILY291'
+    'bnRyeUNvZGUSGAoHYWRkcmVzcxgGIAEoCVIHYWRkcmVzcxISCgRraW5kGAcgASgJUgRraW5kEh'
+    'kKCG1pbl90aWVyGAggASgJUgdtaW5UaWVyEhcKB2lzX29wZW4YCSABKAhSBmlzT3Blbg==');
+
+@$core.Deprecated('Use listLoungesRequestDescriptor instead')
+const ListLoungesRequest$json = {
+  '1': 'ListLoungesRequest',
+};
+
+/// Descriptor for `ListLoungesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLoungesRequestDescriptor = $convert.base64Decode(
+    'ChJMaXN0TG91bmdlc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listLoungesResponseDescriptor instead')
+const ListLoungesResponse$json = {
+  '1': 'ListLoungesResponse',
+  '2': [
+    {'1': 'lounges', '3': 1, '4': 3, '5': 11, '6': '.sttattus.dominion.v1.Lounge', '10': 'lounges'},
+  ],
+};
+
+/// Descriptor for `ListLoungesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLoungesResponseDescriptor = $convert.base64Decode(
+    'ChNMaXN0TG91bmdlc1Jlc3BvbnNlEjYKB2xvdW5nZXMYASADKAsyHC5zdHRhdHR1cy5kb21pbm'
+    'lvbi52MS5Mb3VuZ2VSB2xvdW5nZXM=');
+
 @$core.Deprecated('Use deedDescriptor instead')
 const Deed$json = {
   '1': 'Deed',

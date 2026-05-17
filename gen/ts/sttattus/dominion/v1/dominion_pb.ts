@@ -570,6 +570,163 @@ export class GetLoungeKeyResponse extends Message<GetLoungeKeyResponse> {
 }
 
 /**
+ * @generated from message sttattus.dominion.v1.Lounge
+ */
+export class Lounge extends Message<Lounge> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string slug = 2;
+   */
+  slug = "";
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string city = 4;
+   */
+  city = "";
+
+  /**
+   * @generated from field: string country_code = 5;
+   */
+  countryCode = "";
+
+  /**
+   * @generated from field: string address = 6;
+   */
+  address = "";
+
+  /**
+   * 'sttattus' | 'partner'
+   *
+   * @generated from field: string kind = 7;
+   */
+  kind = "";
+
+  /**
+   * 'sovereign' | 'governor' | 'open'
+   *
+   * @generated from field: string min_tier = 8;
+   */
+  minTier = "";
+
+  /**
+   * @generated from field: bool is_open = 9;
+   */
+  isOpen = false;
+
+  constructor(data?: PartialMessage<Lounge>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.Lounge";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "min_tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "is_open", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Lounge {
+    return new Lounge().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Lounge {
+    return new Lounge().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Lounge {
+    return new Lounge().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: Lounge | PlainMessage<Lounge> | undefined, b: Lounge | PlainMessage<Lounge> | undefined): boolean {
+    return proto3.util.equals(Lounge, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dominion.v1.ListLoungesRequest
+ */
+export class ListLoungesRequest extends Message<ListLoungesRequest> {
+  constructor(data?: PartialMessage<ListLoungesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.ListLoungesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLoungesRequest {
+    return new ListLoungesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLoungesRequest {
+    return new ListLoungesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLoungesRequest {
+    return new ListLoungesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLoungesRequest | PlainMessage<ListLoungesRequest> | undefined, b: ListLoungesRequest | PlainMessage<ListLoungesRequest> | undefined): boolean {
+    return proto3.util.equals(ListLoungesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dominion.v1.ListLoungesResponse
+ */
+export class ListLoungesResponse extends Message<ListLoungesResponse> {
+  /**
+   * @generated from field: repeated sttattus.dominion.v1.Lounge lounges = 1;
+   */
+  lounges: Lounge[] = [];
+
+  constructor(data?: PartialMessage<ListLoungesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.ListLoungesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "lounges", kind: "message", T: Lounge, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLoungesResponse {
+    return new ListLoungesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLoungesResponse {
+    return new ListLoungesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLoungesResponse {
+    return new ListLoungesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLoungesResponse | PlainMessage<ListLoungesResponse> | undefined, b: ListLoungesResponse | PlainMessage<ListLoungesResponse> | undefined): boolean {
+    return proto3.util.equals(ListLoungesResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.dominion.v1.Deed
  */
 export class Deed extends Message<Deed> {

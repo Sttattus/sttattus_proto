@@ -79,6 +79,25 @@ message GetLoungeKeyResponse {
   google.protobuf.Timestamp expires_at = 2;
 }
 
+// === D14.7 — lounge directory ===
+
+message Lounge {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string city = 4;
+  string country_code = 5;
+  string address = 6;
+  string kind = 7; // 'sttattus' | 'partner'
+  string min_tier = 8; // 'sovereign' | 'governor' | 'open'
+  bool is_open = 9;
+}
+
+message ListLoungesRequest {}
+message ListLoungesResponse {
+  repeated Lounge lounges = 1;
+}
+
 // === D14.4 — verification pipeline (deed upload + admin review) ===
 
 message Deed {
@@ -161,4 +180,7 @@ service DominionService {
   rpc ListMyDeeds(ListMyDeedsRequest) returns (ListMyDeedsResponse);
   rpc ListDeedsForProperty(ListDeedsForPropertyRequest) returns (ListDeedsForPropertyResponse);
   rpc AdminReviewDeed(AdminReviewDeedRequest) returns (AdminReviewDeedResponse);
+
+  // D14.7 — lounge directory.
+  rpc ListLounges(ListLoungesRequest) returns (ListLoungesResponse);
 }

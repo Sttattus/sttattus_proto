@@ -72,6 +72,11 @@ class DominionServiceClient extends $grpc.Client {
     return $createUnaryCall(_$adminReviewDeed, request, options: options);
   }
 
+  /// D14.7 — lounge directory.
+  $grpc.ResponseFuture<$0.ListLoungesResponse> listLounges($0.ListLoungesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listLounges, request, options: options);
+  }
+
     // method descriptors
 
   static final _$syncProperties = $grpc.ClientMethod<$0.SyncPropertiesRequest, $0.SyncPropertiesResponse>(
@@ -110,6 +115,10 @@ class DominionServiceClient extends $grpc.Client {
       '/sttattus.dominion.v1.DominionService/AdminReviewDeed',
       ($0.AdminReviewDeedRequest value) => value.writeToBuffer(),
       $0.AdminReviewDeedResponse.fromBuffer);
+  static final _$listLounges = $grpc.ClientMethod<$0.ListLoungesRequest, $0.ListLoungesResponse>(
+      '/sttattus.dominion.v1.DominionService/ListLounges',
+      ($0.ListLoungesRequest value) => value.writeToBuffer(),
+      $0.ListLoungesResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dominion.v1.DominionService')
@@ -180,6 +189,13 @@ abstract class DominionServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.AdminReviewDeedRequest.fromBuffer(value),
         ($0.AdminReviewDeedResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListLoungesRequest, $0.ListLoungesResponse>(
+        'ListLounges',
+        listLounges_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListLoungesRequest.fromBuffer(value),
+        ($0.ListLoungesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.SyncPropertiesResponse> syncProperties_Pre($grpc.ServiceCall $call, $async.Future<$0.SyncPropertiesRequest> $request) async {
@@ -235,5 +251,11 @@ abstract class DominionServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.AdminReviewDeedResponse> adminReviewDeed($grpc.ServiceCall call, $0.AdminReviewDeedRequest request);
+
+  $async.Future<$0.ListLoungesResponse> listLounges_Pre($grpc.ServiceCall $call, $async.Future<$0.ListLoungesRequest> $request) async {
+    return listLounges($call, await $request);
+  }
+
+  $async.Future<$0.ListLoungesResponse> listLounges($grpc.ServiceCall call, $0.ListLoungesRequest request);
 
 }

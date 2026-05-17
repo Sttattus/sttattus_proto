@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminReviewDeedRequest, AdminReviewDeedResponse, EstimatePropertyValueRequest, EstimatePropertyValueResponse, GetDominionStatsRequest, GetDominionStatsResponse, GetLoungeKeyRequest, GetLoungeKeyResponse, ListDeedsForPropertyRequest, ListDeedsForPropertyResponse, ListMyDeedsRequest, ListMyDeedsResponse, ListTerritoriesRequest, ListTerritoriesResponse, SubmitDeedRequest, SubmitDeedResponse, SyncPropertiesRequest, SyncPropertiesResponse } from "./dominion_pb.js";
+import { AdminReviewDeedRequest, AdminReviewDeedResponse, EstimatePropertyValueRequest, EstimatePropertyValueResponse, GetDominionStatsRequest, GetDominionStatsResponse, GetLoungeKeyRequest, GetLoungeKeyResponse, ListDeedsForPropertyRequest, ListDeedsForPropertyResponse, ListLoungesRequest, ListLoungesResponse, ListMyDeedsRequest, ListMyDeedsResponse, ListTerritoriesRequest, ListTerritoriesResponse, SubmitDeedRequest, SubmitDeedResponse, SyncPropertiesRequest, SyncPropertiesResponse } from "./dominion_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -99,6 +99,17 @@ export const DominionService = {
       name: "AdminReviewDeed",
       I: AdminReviewDeedRequest,
       O: AdminReviewDeedResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.7 — lounge directory.
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.ListLounges
+     */
+    listLounges: {
+      name: "ListLounges",
+      I: ListLoungesRequest,
+      O: ListLoungesResponse,
       kind: MethodKind.Unary,
     },
   }

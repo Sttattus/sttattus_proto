@@ -28,6 +28,7 @@ const (
 	DominionService_ListMyDeeds_FullMethodName           = "/sttattus.dominion.v1.DominionService/ListMyDeeds"
 	DominionService_ListDeedsForProperty_FullMethodName  = "/sttattus.dominion.v1.DominionService/ListDeedsForProperty"
 	DominionService_AdminReviewDeed_FullMethodName       = "/sttattus.dominion.v1.DominionService/AdminReviewDeed"
+	DominionService_ListLounges_FullMethodName           = "/sttattus.dominion.v1.DominionService/ListLounges"
 )
 
 // DominionServiceClient is the client API for DominionService service.
@@ -47,6 +48,8 @@ type DominionServiceClient interface {
 	ListMyDeeds(ctx context.Context, in *ListMyDeedsRequest, opts ...grpc.CallOption) (*ListMyDeedsResponse, error)
 	ListDeedsForProperty(ctx context.Context, in *ListDeedsForPropertyRequest, opts ...grpc.CallOption) (*ListDeedsForPropertyResponse, error)
 	AdminReviewDeed(ctx context.Context, in *AdminReviewDeedRequest, opts ...grpc.CallOption) (*AdminReviewDeedResponse, error)
+	// D14.7 — lounge directory.
+	ListLounges(ctx context.Context, in *ListLoungesRequest, opts ...grpc.CallOption) (*ListLoungesResponse, error)
 }
 
 type dominionServiceClient struct {
@@ -147,6 +150,16 @@ func (c *dominionServiceClient) AdminReviewDeed(ctx context.Context, in *AdminRe
 	return out, nil
 }
 
+func (c *dominionServiceClient) ListLounges(ctx context.Context, in *ListLoungesRequest, opts ...grpc.CallOption) (*ListLoungesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLoungesResponse)
+	err := c.cc.Invoke(ctx, DominionService_ListLounges_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DominionServiceServer is the server API for DominionService service.
 // All implementations must embed UnimplementedDominionServiceServer
 // for forward compatibility.
@@ -164,6 +177,8 @@ type DominionServiceServer interface {
 	ListMyDeeds(context.Context, *ListMyDeedsRequest) (*ListMyDeedsResponse, error)
 	ListDeedsForProperty(context.Context, *ListDeedsForPropertyRequest) (*ListDeedsForPropertyResponse, error)
 	AdminReviewDeed(context.Context, *AdminReviewDeedRequest) (*AdminReviewDeedResponse, error)
+	// D14.7 — lounge directory.
+	ListLounges(context.Context, *ListLoungesRequest) (*ListLoungesResponse, error)
 	mustEmbedUnimplementedDominionServiceServer()
 }
 
@@ -200,6 +215,9 @@ func (UnimplementedDominionServiceServer) ListDeedsForProperty(context.Context, 
 }
 func (UnimplementedDominionServiceServer) AdminReviewDeed(context.Context, *AdminReviewDeedRequest) (*AdminReviewDeedResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method AdminReviewDeed not implemented")
+}
+func (UnimplementedDominionServiceServer) ListLounges(context.Context, *ListLoungesRequest) (*ListLoungesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLounges not implemented")
 }
 func (UnimplementedDominionServiceServer) mustEmbedUnimplementedDominionServiceServer() {}
 func (UnimplementedDominionServiceServer) testEmbeddedByValue()                         {}
@@ -384,6 +402,24 @@ func _DominionService_AdminReviewDeed_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DominionService_ListLounges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLoungesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ListLounges(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ListLounges_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ListLounges(ctx, req.(*ListLoungesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DominionService_ServiceDesc is the grpc.ServiceDesc for DominionService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -426,6 +462,10 @@ var DominionService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AdminReviewDeed",
 			Handler:    _DominionService_AdminReviewDeed_Handler,
+		},
+		{
+			MethodName: "ListLounges",
+			Handler:    _DominionService_ListLounges_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
