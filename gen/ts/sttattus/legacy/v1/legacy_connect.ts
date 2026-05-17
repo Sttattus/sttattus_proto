@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetHeritageStatsRequest, GetHeritageStatsResponse, ListAssetsRequest, ListAssetsResponse, StoreDocumentRequest, StoreDocumentResponse } from "./legacy_pb.js";
+import { DeleteRecoveryShareRequest, DeleteRecoveryShareResponse, GetEncryptedBlobRequest, GetEncryptedBlobResponse, GetHeritageStatsRequest, GetHeritageStatsResponse, ListAssetsRequest, ListAssetsResponse, ListMyEncryptedBlobsRequest, ListMyEncryptedBlobsResponse, ListMyRecoverySharesRequest, ListMyRecoverySharesResponse, StoreDocumentRequest, StoreDocumentResponse, StoreEncryptedBlobRequest, StoreEncryptedBlobResponse, StoreRecoveryShareRequest, StoreRecoveryShareResponse } from "./legacy_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -39,6 +39,64 @@ export const LegacyService = {
       name: "GetHeritageStats",
       I: GetHeritageStatsRequest,
       O: GetHeritageStatsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L15.2 — end-to-end encrypted storage.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.StoreEncryptedBlob
+     */
+    storeEncryptedBlob: {
+      name: "StoreEncryptedBlob",
+      I: StoreEncryptedBlobRequest,
+      O: StoreEncryptedBlobResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetEncryptedBlob
+     */
+    getEncryptedBlob: {
+      name: "GetEncryptedBlob",
+      I: GetEncryptedBlobRequest,
+      O: GetEncryptedBlobResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs
+     */
+    listMyEncryptedBlobs: {
+      name: "ListMyEncryptedBlobs",
+      I: ListMyEncryptedBlobsRequest,
+      O: ListMyEncryptedBlobsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L15.2 — Shamir-shared recovery.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.StoreRecoveryShare
+     */
+    storeRecoveryShare: {
+      name: "StoreRecoveryShare",
+      I: StoreRecoveryShareRequest,
+      O: StoreRecoveryShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListMyRecoveryShares
+     */
+    listMyRecoveryShares: {
+      name: "ListMyRecoveryShares",
+      I: ListMyRecoverySharesRequest,
+      O: ListMyRecoverySharesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.DeleteRecoveryShare
+     */
+    deleteRecoveryShare: {
+      name: "DeleteRecoveryShare",
+      I: DeleteRecoveryShareRequest,
+      O: DeleteRecoveryShareResponse,
       kind: MethodKind.Unary,
     },
   }

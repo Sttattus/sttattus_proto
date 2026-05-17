@@ -12,6 +12,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $1;
@@ -597,6 +598,918 @@ class ListAssetsResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $pb.PbList<LegalAsset> get assets => $_getList(0);
+}
+
+class EncryptedBlobMetadata extends $pb.GeneratedMessage {
+  factory EncryptedBlobMetadata({
+    $core.String? id,
+    $core.String? assetId,
+    $core.String? algorithm,
+    $core.int? sizeBytes,
+    $fixnum.Int64? createdAtUnix,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (assetId != null) result.assetId = assetId;
+    if (algorithm != null) result.algorithm = algorithm;
+    if (sizeBytes != null) result.sizeBytes = sizeBytes;
+    if (createdAtUnix != null) result.createdAtUnix = createdAtUnix;
+    return result;
+  }
+
+  EncryptedBlobMetadata._();
+
+  factory EncryptedBlobMetadata.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EncryptedBlobMetadata.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EncryptedBlobMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'assetId')
+    ..aOS(3, _omitFieldNames ? '' : 'algorithm')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'sizeBytes', $pb.PbFieldType.O3)
+    ..aInt64(5, _omitFieldNames ? '' : 'createdAtUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EncryptedBlobMetadata clone() => EncryptedBlobMetadata()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EncryptedBlobMetadata copyWith(void Function(EncryptedBlobMetadata) updates) => super.copyWith((message) => updates(message as EncryptedBlobMetadata)) as EncryptedBlobMetadata;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EncryptedBlobMetadata create() => EncryptedBlobMetadata._();
+  @$core.override
+  EncryptedBlobMetadata createEmptyInstance() => create();
+  static $pb.PbList<EncryptedBlobMetadata> createRepeated() => $pb.PbList<EncryptedBlobMetadata>();
+  @$core.pragma('dart2js:noInline')
+  static EncryptedBlobMetadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EncryptedBlobMetadata>(create);
+  static EncryptedBlobMetadata? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get assetId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set assetId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAssetId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAssetId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get algorithm => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set algorithm($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAlgorithm() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAlgorithm() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get sizeBytes => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set sizeBytes($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSizeBytes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSizeBytes() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get createdAtUnix => $_getI64(4);
+  @$pb.TagNumber(5)
+  set createdAtUnix($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedAtUnix() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedAtUnix() => $_clearField(5);
+}
+
+class EncryptedBlob extends $pb.GeneratedMessage {
+  factory EncryptedBlob({
+    $core.String? id,
+    $core.String? assetId,
+    $core.String? algorithm,
+    $core.List<$core.int>? ciphertext,
+    $core.List<$core.int>? nonce,
+    $core.List<$core.int>? wrappedKey,
+    $core.int? sizeBytes,
+    $fixnum.Int64? createdAtUnix,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (assetId != null) result.assetId = assetId;
+    if (algorithm != null) result.algorithm = algorithm;
+    if (ciphertext != null) result.ciphertext = ciphertext;
+    if (nonce != null) result.nonce = nonce;
+    if (wrappedKey != null) result.wrappedKey = wrappedKey;
+    if (sizeBytes != null) result.sizeBytes = sizeBytes;
+    if (createdAtUnix != null) result.createdAtUnix = createdAtUnix;
+    return result;
+  }
+
+  EncryptedBlob._();
+
+  factory EncryptedBlob.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EncryptedBlob.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EncryptedBlob', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'assetId')
+    ..aOS(3, _omitFieldNames ? '' : 'algorithm')
+    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'ciphertext', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(5, _omitFieldNames ? '' : 'nonce', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(6, _omitFieldNames ? '' : 'wrappedKey', $pb.PbFieldType.OY)
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'sizeBytes', $pb.PbFieldType.O3)
+    ..aInt64(8, _omitFieldNames ? '' : 'createdAtUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EncryptedBlob clone() => EncryptedBlob()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EncryptedBlob copyWith(void Function(EncryptedBlob) updates) => super.copyWith((message) => updates(message as EncryptedBlob)) as EncryptedBlob;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EncryptedBlob create() => EncryptedBlob._();
+  @$core.override
+  EncryptedBlob createEmptyInstance() => create();
+  static $pb.PbList<EncryptedBlob> createRepeated() => $pb.PbList<EncryptedBlob>();
+  @$core.pragma('dart2js:noInline')
+  static EncryptedBlob getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EncryptedBlob>(create);
+  static EncryptedBlob? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get assetId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set assetId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAssetId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAssetId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get algorithm => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set algorithm($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAlgorithm() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAlgorithm() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.int> get ciphertext => $_getN(3);
+  @$pb.TagNumber(4)
+  set ciphertext($core.List<$core.int> value) => $_setBytes(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCiphertext() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCiphertext() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<$core.int> get nonce => $_getN(4);
+  @$pb.TagNumber(5)
+  set nonce($core.List<$core.int> value) => $_setBytes(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNonce() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNonce() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<$core.int> get wrappedKey => $_getN(5);
+  @$pb.TagNumber(6)
+  set wrappedKey($core.List<$core.int> value) => $_setBytes(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasWrappedKey() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWrappedKey() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get sizeBytes => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set sizeBytes($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSizeBytes() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSizeBytes() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get createdAtUnix => $_getI64(7);
+  @$pb.TagNumber(8)
+  set createdAtUnix($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCreatedAtUnix() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatedAtUnix() => $_clearField(8);
+}
+
+class StoreEncryptedBlobRequest extends $pb.GeneratedMessage {
+  factory StoreEncryptedBlobRequest({
+    $core.String? assetId,
+    $core.List<$core.int>? ciphertext,
+    $core.List<$core.int>? nonce,
+    $core.List<$core.int>? wrappedKey,
+    $core.String? algorithm,
+  }) {
+    final result = create();
+    if (assetId != null) result.assetId = assetId;
+    if (ciphertext != null) result.ciphertext = ciphertext;
+    if (nonce != null) result.nonce = nonce;
+    if (wrappedKey != null) result.wrappedKey = wrappedKey;
+    if (algorithm != null) result.algorithm = algorithm;
+    return result;
+  }
+
+  StoreEncryptedBlobRequest._();
+
+  factory StoreEncryptedBlobRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory StoreEncryptedBlobRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StoreEncryptedBlobRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'assetId')
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'ciphertext', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'nonce', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'wrappedKey', $pb.PbFieldType.OY)
+    ..aOS(5, _omitFieldNames ? '' : 'algorithm')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StoreEncryptedBlobRequest clone() => StoreEncryptedBlobRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StoreEncryptedBlobRequest copyWith(void Function(StoreEncryptedBlobRequest) updates) => super.copyWith((message) => updates(message as StoreEncryptedBlobRequest)) as StoreEncryptedBlobRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StoreEncryptedBlobRequest create() => StoreEncryptedBlobRequest._();
+  @$core.override
+  StoreEncryptedBlobRequest createEmptyInstance() => create();
+  static $pb.PbList<StoreEncryptedBlobRequest> createRepeated() => $pb.PbList<StoreEncryptedBlobRequest>();
+  @$core.pragma('dart2js:noInline')
+  static StoreEncryptedBlobRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoreEncryptedBlobRequest>(create);
+  static StoreEncryptedBlobRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get assetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set assetId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAssetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAssetId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get ciphertext => $_getN(1);
+  @$pb.TagNumber(2)
+  set ciphertext($core.List<$core.int> value) => $_setBytes(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCiphertext() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCiphertext() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get nonce => $_getN(2);
+  @$pb.TagNumber(3)
+  set nonce($core.List<$core.int> value) => $_setBytes(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNonce() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNonce() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.int> get wrappedKey => $_getN(3);
+  @$pb.TagNumber(4)
+  set wrappedKey($core.List<$core.int> value) => $_setBytes(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasWrappedKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWrappedKey() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get algorithm => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set algorithm($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAlgorithm() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAlgorithm() => $_clearField(5);
+}
+
+class StoreEncryptedBlobResponse extends $pb.GeneratedMessage {
+  factory StoreEncryptedBlobResponse({
+    EncryptedBlobMetadata? blob,
+  }) {
+    final result = create();
+    if (blob != null) result.blob = blob;
+    return result;
+  }
+
+  StoreEncryptedBlobResponse._();
+
+  factory StoreEncryptedBlobResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory StoreEncryptedBlobResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StoreEncryptedBlobResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOM<EncryptedBlobMetadata>(1, _omitFieldNames ? '' : 'blob', subBuilder: EncryptedBlobMetadata.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StoreEncryptedBlobResponse clone() => StoreEncryptedBlobResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StoreEncryptedBlobResponse copyWith(void Function(StoreEncryptedBlobResponse) updates) => super.copyWith((message) => updates(message as StoreEncryptedBlobResponse)) as StoreEncryptedBlobResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StoreEncryptedBlobResponse create() => StoreEncryptedBlobResponse._();
+  @$core.override
+  StoreEncryptedBlobResponse createEmptyInstance() => create();
+  static $pb.PbList<StoreEncryptedBlobResponse> createRepeated() => $pb.PbList<StoreEncryptedBlobResponse>();
+  @$core.pragma('dart2js:noInline')
+  static StoreEncryptedBlobResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoreEncryptedBlobResponse>(create);
+  static StoreEncryptedBlobResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EncryptedBlobMetadata get blob => $_getN(0);
+  @$pb.TagNumber(1)
+  set blob(EncryptedBlobMetadata value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBlob() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBlob() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EncryptedBlobMetadata ensureBlob() => $_ensure(0);
+}
+
+class GetEncryptedBlobRequest extends $pb.GeneratedMessage {
+  factory GetEncryptedBlobRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  GetEncryptedBlobRequest._();
+
+  factory GetEncryptedBlobRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetEncryptedBlobRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEncryptedBlobRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEncryptedBlobRequest clone() => GetEncryptedBlobRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEncryptedBlobRequest copyWith(void Function(GetEncryptedBlobRequest) updates) => super.copyWith((message) => updates(message as GetEncryptedBlobRequest)) as GetEncryptedBlobRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEncryptedBlobRequest create() => GetEncryptedBlobRequest._();
+  @$core.override
+  GetEncryptedBlobRequest createEmptyInstance() => create();
+  static $pb.PbList<GetEncryptedBlobRequest> createRepeated() => $pb.PbList<GetEncryptedBlobRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetEncryptedBlobRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetEncryptedBlobRequest>(create);
+  static GetEncryptedBlobRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class GetEncryptedBlobResponse extends $pb.GeneratedMessage {
+  factory GetEncryptedBlobResponse({
+    EncryptedBlob? blob,
+  }) {
+    final result = create();
+    if (blob != null) result.blob = blob;
+    return result;
+  }
+
+  GetEncryptedBlobResponse._();
+
+  factory GetEncryptedBlobResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetEncryptedBlobResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEncryptedBlobResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOM<EncryptedBlob>(1, _omitFieldNames ? '' : 'blob', subBuilder: EncryptedBlob.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEncryptedBlobResponse clone() => GetEncryptedBlobResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEncryptedBlobResponse copyWith(void Function(GetEncryptedBlobResponse) updates) => super.copyWith((message) => updates(message as GetEncryptedBlobResponse)) as GetEncryptedBlobResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEncryptedBlobResponse create() => GetEncryptedBlobResponse._();
+  @$core.override
+  GetEncryptedBlobResponse createEmptyInstance() => create();
+  static $pb.PbList<GetEncryptedBlobResponse> createRepeated() => $pb.PbList<GetEncryptedBlobResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetEncryptedBlobResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetEncryptedBlobResponse>(create);
+  static GetEncryptedBlobResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EncryptedBlob get blob => $_getN(0);
+  @$pb.TagNumber(1)
+  set blob(EncryptedBlob value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBlob() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBlob() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EncryptedBlob ensureBlob() => $_ensure(0);
+}
+
+class ListMyEncryptedBlobsRequest extends $pb.GeneratedMessage {
+  factory ListMyEncryptedBlobsRequest() => create();
+
+  ListMyEncryptedBlobsRequest._();
+
+  factory ListMyEncryptedBlobsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyEncryptedBlobsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyEncryptedBlobsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEncryptedBlobsRequest clone() => ListMyEncryptedBlobsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEncryptedBlobsRequest copyWith(void Function(ListMyEncryptedBlobsRequest) updates) => super.copyWith((message) => updates(message as ListMyEncryptedBlobsRequest)) as ListMyEncryptedBlobsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyEncryptedBlobsRequest create() => ListMyEncryptedBlobsRequest._();
+  @$core.override
+  ListMyEncryptedBlobsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyEncryptedBlobsRequest> createRepeated() => $pb.PbList<ListMyEncryptedBlobsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyEncryptedBlobsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyEncryptedBlobsRequest>(create);
+  static ListMyEncryptedBlobsRequest? _defaultInstance;
+}
+
+class ListMyEncryptedBlobsResponse extends $pb.GeneratedMessage {
+  factory ListMyEncryptedBlobsResponse({
+    $core.Iterable<EncryptedBlobMetadata>? blobs,
+  }) {
+    final result = create();
+    if (blobs != null) result.blobs.addAll(blobs);
+    return result;
+  }
+
+  ListMyEncryptedBlobsResponse._();
+
+  factory ListMyEncryptedBlobsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyEncryptedBlobsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyEncryptedBlobsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..pc<EncryptedBlobMetadata>(1, _omitFieldNames ? '' : 'blobs', $pb.PbFieldType.PM, subBuilder: EncryptedBlobMetadata.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEncryptedBlobsResponse clone() => ListMyEncryptedBlobsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEncryptedBlobsResponse copyWith(void Function(ListMyEncryptedBlobsResponse) updates) => super.copyWith((message) => updates(message as ListMyEncryptedBlobsResponse)) as ListMyEncryptedBlobsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyEncryptedBlobsResponse create() => ListMyEncryptedBlobsResponse._();
+  @$core.override
+  ListMyEncryptedBlobsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyEncryptedBlobsResponse> createRepeated() => $pb.PbList<ListMyEncryptedBlobsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyEncryptedBlobsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyEncryptedBlobsResponse>(create);
+  static ListMyEncryptedBlobsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EncryptedBlobMetadata> get blobs => $_getList(0);
+}
+
+class RecoveryShare extends $pb.GeneratedMessage {
+  factory RecoveryShare({
+    $core.String? id,
+    $core.String? trusteeLabel,
+    $core.String? scheme,
+    $core.int? shareIndex,
+    $core.List<$core.int>? wrappedShare,
+    $fixnum.Int64? createdAtUnix,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (trusteeLabel != null) result.trusteeLabel = trusteeLabel;
+    if (scheme != null) result.scheme = scheme;
+    if (shareIndex != null) result.shareIndex = shareIndex;
+    if (wrappedShare != null) result.wrappedShare = wrappedShare;
+    if (createdAtUnix != null) result.createdAtUnix = createdAtUnix;
+    return result;
+  }
+
+  RecoveryShare._();
+
+  factory RecoveryShare.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RecoveryShare.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecoveryShare', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'trusteeLabel')
+    ..aOS(3, _omitFieldNames ? '' : 'scheme')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'shareIndex', $pb.PbFieldType.O3)
+    ..a<$core.List<$core.int>>(5, _omitFieldNames ? '' : 'wrappedShare', $pb.PbFieldType.OY)
+    ..aInt64(6, _omitFieldNames ? '' : 'createdAtUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecoveryShare clone() => RecoveryShare()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecoveryShare copyWith(void Function(RecoveryShare) updates) => super.copyWith((message) => updates(message as RecoveryShare)) as RecoveryShare;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecoveryShare create() => RecoveryShare._();
+  @$core.override
+  RecoveryShare createEmptyInstance() => create();
+  static $pb.PbList<RecoveryShare> createRepeated() => $pb.PbList<RecoveryShare>();
+  @$core.pragma('dart2js:noInline')
+  static RecoveryShare getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecoveryShare>(create);
+  static RecoveryShare? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get trusteeLabel => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set trusteeLabel($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTrusteeLabel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTrusteeLabel() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get scheme => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set scheme($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasScheme() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearScheme() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get shareIndex => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set shareIndex($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasShareIndex() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearShareIndex() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<$core.int> get wrappedShare => $_getN(4);
+  @$pb.TagNumber(5)
+  set wrappedShare($core.List<$core.int> value) => $_setBytes(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWrappedShare() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWrappedShare() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get createdAtUnix => $_getI64(5);
+  @$pb.TagNumber(6)
+  set createdAtUnix($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedAtUnix() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedAtUnix() => $_clearField(6);
+}
+
+class StoreRecoveryShareRequest extends $pb.GeneratedMessage {
+  factory StoreRecoveryShareRequest({
+    $core.String? trusteeLabel,
+    $core.List<$core.int>? wrappedShare,
+    $core.String? scheme,
+    $core.int? shareIndex,
+  }) {
+    final result = create();
+    if (trusteeLabel != null) result.trusteeLabel = trusteeLabel;
+    if (wrappedShare != null) result.wrappedShare = wrappedShare;
+    if (scheme != null) result.scheme = scheme;
+    if (shareIndex != null) result.shareIndex = shareIndex;
+    return result;
+  }
+
+  StoreRecoveryShareRequest._();
+
+  factory StoreRecoveryShareRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory StoreRecoveryShareRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StoreRecoveryShareRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'trusteeLabel')
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'wrappedShare', $pb.PbFieldType.OY)
+    ..aOS(3, _omitFieldNames ? '' : 'scheme')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'shareIndex', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StoreRecoveryShareRequest clone() => StoreRecoveryShareRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StoreRecoveryShareRequest copyWith(void Function(StoreRecoveryShareRequest) updates) => super.copyWith((message) => updates(message as StoreRecoveryShareRequest)) as StoreRecoveryShareRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StoreRecoveryShareRequest create() => StoreRecoveryShareRequest._();
+  @$core.override
+  StoreRecoveryShareRequest createEmptyInstance() => create();
+  static $pb.PbList<StoreRecoveryShareRequest> createRepeated() => $pb.PbList<StoreRecoveryShareRequest>();
+  @$core.pragma('dart2js:noInline')
+  static StoreRecoveryShareRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoreRecoveryShareRequest>(create);
+  static StoreRecoveryShareRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get trusteeLabel => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set trusteeLabel($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTrusteeLabel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTrusteeLabel() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get wrappedShare => $_getN(1);
+  @$pb.TagNumber(2)
+  set wrappedShare($core.List<$core.int> value) => $_setBytes(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWrappedShare() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWrappedShare() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get scheme => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set scheme($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasScheme() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearScheme() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get shareIndex => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set shareIndex($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasShareIndex() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearShareIndex() => $_clearField(4);
+}
+
+class StoreRecoveryShareResponse extends $pb.GeneratedMessage {
+  factory StoreRecoveryShareResponse({
+    RecoveryShare? share,
+  }) {
+    final result = create();
+    if (share != null) result.share = share;
+    return result;
+  }
+
+  StoreRecoveryShareResponse._();
+
+  factory StoreRecoveryShareResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory StoreRecoveryShareResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StoreRecoveryShareResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOM<RecoveryShare>(1, _omitFieldNames ? '' : 'share', subBuilder: RecoveryShare.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StoreRecoveryShareResponse clone() => StoreRecoveryShareResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StoreRecoveryShareResponse copyWith(void Function(StoreRecoveryShareResponse) updates) => super.copyWith((message) => updates(message as StoreRecoveryShareResponse)) as StoreRecoveryShareResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StoreRecoveryShareResponse create() => StoreRecoveryShareResponse._();
+  @$core.override
+  StoreRecoveryShareResponse createEmptyInstance() => create();
+  static $pb.PbList<StoreRecoveryShareResponse> createRepeated() => $pb.PbList<StoreRecoveryShareResponse>();
+  @$core.pragma('dart2js:noInline')
+  static StoreRecoveryShareResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoreRecoveryShareResponse>(create);
+  static StoreRecoveryShareResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  RecoveryShare get share => $_getN(0);
+  @$pb.TagNumber(1)
+  set share(RecoveryShare value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasShare() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearShare() => $_clearField(1);
+  @$pb.TagNumber(1)
+  RecoveryShare ensureShare() => $_ensure(0);
+}
+
+class ListMyRecoverySharesRequest extends $pb.GeneratedMessage {
+  factory ListMyRecoverySharesRequest() => create();
+
+  ListMyRecoverySharesRequest._();
+
+  factory ListMyRecoverySharesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyRecoverySharesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyRecoverySharesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyRecoverySharesRequest clone() => ListMyRecoverySharesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyRecoverySharesRequest copyWith(void Function(ListMyRecoverySharesRequest) updates) => super.copyWith((message) => updates(message as ListMyRecoverySharesRequest)) as ListMyRecoverySharesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyRecoverySharesRequest create() => ListMyRecoverySharesRequest._();
+  @$core.override
+  ListMyRecoverySharesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyRecoverySharesRequest> createRepeated() => $pb.PbList<ListMyRecoverySharesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyRecoverySharesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyRecoverySharesRequest>(create);
+  static ListMyRecoverySharesRequest? _defaultInstance;
+}
+
+class ListMyRecoverySharesResponse extends $pb.GeneratedMessage {
+  factory ListMyRecoverySharesResponse({
+    $core.Iterable<RecoveryShare>? shares,
+  }) {
+    final result = create();
+    if (shares != null) result.shares.addAll(shares);
+    return result;
+  }
+
+  ListMyRecoverySharesResponse._();
+
+  factory ListMyRecoverySharesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyRecoverySharesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyRecoverySharesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..pc<RecoveryShare>(1, _omitFieldNames ? '' : 'shares', $pb.PbFieldType.PM, subBuilder: RecoveryShare.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyRecoverySharesResponse clone() => ListMyRecoverySharesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyRecoverySharesResponse copyWith(void Function(ListMyRecoverySharesResponse) updates) => super.copyWith((message) => updates(message as ListMyRecoverySharesResponse)) as ListMyRecoverySharesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyRecoverySharesResponse create() => ListMyRecoverySharesResponse._();
+  @$core.override
+  ListMyRecoverySharesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyRecoverySharesResponse> createRepeated() => $pb.PbList<ListMyRecoverySharesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyRecoverySharesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyRecoverySharesResponse>(create);
+  static ListMyRecoverySharesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<RecoveryShare> get shares => $_getList(0);
+}
+
+class DeleteRecoveryShareRequest extends $pb.GeneratedMessage {
+  factory DeleteRecoveryShareRequest({
+    $core.String? shareId,
+  }) {
+    final result = create();
+    if (shareId != null) result.shareId = shareId;
+    return result;
+  }
+
+  DeleteRecoveryShareRequest._();
+
+  factory DeleteRecoveryShareRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteRecoveryShareRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteRecoveryShareRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'shareId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteRecoveryShareRequest clone() => DeleteRecoveryShareRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteRecoveryShareRequest copyWith(void Function(DeleteRecoveryShareRequest) updates) => super.copyWith((message) => updates(message as DeleteRecoveryShareRequest)) as DeleteRecoveryShareRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteRecoveryShareRequest create() => DeleteRecoveryShareRequest._();
+  @$core.override
+  DeleteRecoveryShareRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteRecoveryShareRequest> createRepeated() => $pb.PbList<DeleteRecoveryShareRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteRecoveryShareRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteRecoveryShareRequest>(create);
+  static DeleteRecoveryShareRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get shareId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set shareId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasShareId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearShareId() => $_clearField(1);
+}
+
+class DeleteRecoveryShareResponse extends $pb.GeneratedMessage {
+  factory DeleteRecoveryShareResponse() => create();
+
+  DeleteRecoveryShareResponse._();
+
+  factory DeleteRecoveryShareResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteRecoveryShareResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteRecoveryShareResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteRecoveryShareResponse clone() => DeleteRecoveryShareResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteRecoveryShareResponse copyWith(void Function(DeleteRecoveryShareResponse) updates) => super.copyWith((message) => updates(message as DeleteRecoveryShareResponse)) as DeleteRecoveryShareResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteRecoveryShareResponse create() => DeleteRecoveryShareResponse._();
+  @$core.override
+  DeleteRecoveryShareResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteRecoveryShareResponse> createRepeated() => $pb.PbList<DeleteRecoveryShareResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteRecoveryShareResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteRecoveryShareResponse>(create);
+  static DeleteRecoveryShareResponse? _defaultInstance;
 }
 
 

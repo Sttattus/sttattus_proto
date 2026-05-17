@@ -19,9 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	LegacyService_StoreDocument_FullMethodName    = "/sttattus.legacy.v1.LegacyService/StoreDocument"
-	LegacyService_ListAssets_FullMethodName       = "/sttattus.legacy.v1.LegacyService/ListAssets"
-	LegacyService_GetHeritageStats_FullMethodName = "/sttattus.legacy.v1.LegacyService/GetHeritageStats"
+	LegacyService_StoreDocument_FullMethodName        = "/sttattus.legacy.v1.LegacyService/StoreDocument"
+	LegacyService_ListAssets_FullMethodName           = "/sttattus.legacy.v1.LegacyService/ListAssets"
+	LegacyService_GetHeritageStats_FullMethodName     = "/sttattus.legacy.v1.LegacyService/GetHeritageStats"
+	LegacyService_StoreEncryptedBlob_FullMethodName   = "/sttattus.legacy.v1.LegacyService/StoreEncryptedBlob"
+	LegacyService_GetEncryptedBlob_FullMethodName     = "/sttattus.legacy.v1.LegacyService/GetEncryptedBlob"
+	LegacyService_ListMyEncryptedBlobs_FullMethodName = "/sttattus.legacy.v1.LegacyService/ListMyEncryptedBlobs"
+	LegacyService_StoreRecoveryShare_FullMethodName   = "/sttattus.legacy.v1.LegacyService/StoreRecoveryShare"
+	LegacyService_ListMyRecoveryShares_FullMethodName = "/sttattus.legacy.v1.LegacyService/ListMyRecoveryShares"
+	LegacyService_DeleteRecoveryShare_FullMethodName  = "/sttattus.legacy.v1.LegacyService/DeleteRecoveryShare"
 )
 
 // LegacyServiceClient is the client API for LegacyService service.
@@ -32,6 +38,14 @@ type LegacyServiceClient interface {
 	StoreDocument(ctx context.Context, in *StoreDocumentRequest, opts ...grpc.CallOption) (*StoreDocumentResponse, error)
 	ListAssets(ctx context.Context, in *ListAssetsRequest, opts ...grpc.CallOption) (*ListAssetsResponse, error)
 	GetHeritageStats(ctx context.Context, in *GetHeritageStatsRequest, opts ...grpc.CallOption) (*GetHeritageStatsResponse, error)
+	// L15.2 — end-to-end encrypted storage.
+	StoreEncryptedBlob(ctx context.Context, in *StoreEncryptedBlobRequest, opts ...grpc.CallOption) (*StoreEncryptedBlobResponse, error)
+	GetEncryptedBlob(ctx context.Context, in *GetEncryptedBlobRequest, opts ...grpc.CallOption) (*GetEncryptedBlobResponse, error)
+	ListMyEncryptedBlobs(ctx context.Context, in *ListMyEncryptedBlobsRequest, opts ...grpc.CallOption) (*ListMyEncryptedBlobsResponse, error)
+	// L15.2 — Shamir-shared recovery.
+	StoreRecoveryShare(ctx context.Context, in *StoreRecoveryShareRequest, opts ...grpc.CallOption) (*StoreRecoveryShareResponse, error)
+	ListMyRecoveryShares(ctx context.Context, in *ListMyRecoverySharesRequest, opts ...grpc.CallOption) (*ListMyRecoverySharesResponse, error)
+	DeleteRecoveryShare(ctx context.Context, in *DeleteRecoveryShareRequest, opts ...grpc.CallOption) (*DeleteRecoveryShareResponse, error)
 }
 
 type legacyServiceClient struct {
@@ -72,6 +86,66 @@ func (c *legacyServiceClient) GetHeritageStats(ctx context.Context, in *GetHerit
 	return out, nil
 }
 
+func (c *legacyServiceClient) StoreEncryptedBlob(ctx context.Context, in *StoreEncryptedBlobRequest, opts ...grpc.CallOption) (*StoreEncryptedBlobResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StoreEncryptedBlobResponse)
+	err := c.cc.Invoke(ctx, LegacyService_StoreEncryptedBlob_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetEncryptedBlob(ctx context.Context, in *GetEncryptedBlobRequest, opts ...grpc.CallOption) (*GetEncryptedBlobResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetEncryptedBlobResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetEncryptedBlob_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListMyEncryptedBlobs(ctx context.Context, in *ListMyEncryptedBlobsRequest, opts ...grpc.CallOption) (*ListMyEncryptedBlobsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyEncryptedBlobsResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListMyEncryptedBlobs_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) StoreRecoveryShare(ctx context.Context, in *StoreRecoveryShareRequest, opts ...grpc.CallOption) (*StoreRecoveryShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StoreRecoveryShareResponse)
+	err := c.cc.Invoke(ctx, LegacyService_StoreRecoveryShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListMyRecoveryShares(ctx context.Context, in *ListMyRecoverySharesRequest, opts ...grpc.CallOption) (*ListMyRecoverySharesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyRecoverySharesResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListMyRecoveryShares_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) DeleteRecoveryShare(ctx context.Context, in *DeleteRecoveryShareRequest, opts ...grpc.CallOption) (*DeleteRecoveryShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteRecoveryShareResponse)
+	err := c.cc.Invoke(ctx, LegacyService_DeleteRecoveryShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LegacyServiceServer is the server API for LegacyService service.
 // All implementations must embed UnimplementedLegacyServiceServer
 // for forward compatibility.
@@ -80,6 +154,14 @@ type LegacyServiceServer interface {
 	StoreDocument(context.Context, *StoreDocumentRequest) (*StoreDocumentResponse, error)
 	ListAssets(context.Context, *ListAssetsRequest) (*ListAssetsResponse, error)
 	GetHeritageStats(context.Context, *GetHeritageStatsRequest) (*GetHeritageStatsResponse, error)
+	// L15.2 — end-to-end encrypted storage.
+	StoreEncryptedBlob(context.Context, *StoreEncryptedBlobRequest) (*StoreEncryptedBlobResponse, error)
+	GetEncryptedBlob(context.Context, *GetEncryptedBlobRequest) (*GetEncryptedBlobResponse, error)
+	ListMyEncryptedBlobs(context.Context, *ListMyEncryptedBlobsRequest) (*ListMyEncryptedBlobsResponse, error)
+	// L15.2 — Shamir-shared recovery.
+	StoreRecoveryShare(context.Context, *StoreRecoveryShareRequest) (*StoreRecoveryShareResponse, error)
+	ListMyRecoveryShares(context.Context, *ListMyRecoverySharesRequest) (*ListMyRecoverySharesResponse, error)
+	DeleteRecoveryShare(context.Context, *DeleteRecoveryShareRequest) (*DeleteRecoveryShareResponse, error)
 	mustEmbedUnimplementedLegacyServiceServer()
 }
 
@@ -98,6 +180,24 @@ func (UnimplementedLegacyServiceServer) ListAssets(context.Context, *ListAssetsR
 }
 func (UnimplementedLegacyServiceServer) GetHeritageStats(context.Context, *GetHeritageStatsRequest) (*GetHeritageStatsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetHeritageStats not implemented")
+}
+func (UnimplementedLegacyServiceServer) StoreEncryptedBlob(context.Context, *StoreEncryptedBlobRequest) (*StoreEncryptedBlobResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StoreEncryptedBlob not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetEncryptedBlob(context.Context, *GetEncryptedBlobRequest) (*GetEncryptedBlobResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetEncryptedBlob not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListMyEncryptedBlobs(context.Context, *ListMyEncryptedBlobsRequest) (*ListMyEncryptedBlobsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyEncryptedBlobs not implemented")
+}
+func (UnimplementedLegacyServiceServer) StoreRecoveryShare(context.Context, *StoreRecoveryShareRequest) (*StoreRecoveryShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StoreRecoveryShare not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListMyRecoveryShares(context.Context, *ListMyRecoverySharesRequest) (*ListMyRecoverySharesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyRecoveryShares not implemented")
+}
+func (UnimplementedLegacyServiceServer) DeleteRecoveryShare(context.Context, *DeleteRecoveryShareRequest) (*DeleteRecoveryShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteRecoveryShare not implemented")
 }
 func (UnimplementedLegacyServiceServer) mustEmbedUnimplementedLegacyServiceServer() {}
 func (UnimplementedLegacyServiceServer) testEmbeddedByValue()                       {}
@@ -174,6 +274,114 @@ func _LegacyService_GetHeritageStats_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LegacyService_StoreEncryptedBlob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StoreEncryptedBlobRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).StoreEncryptedBlob(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_StoreEncryptedBlob_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).StoreEncryptedBlob(ctx, req.(*StoreEncryptedBlobRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetEncryptedBlob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEncryptedBlobRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetEncryptedBlob(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetEncryptedBlob_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetEncryptedBlob(ctx, req.(*GetEncryptedBlobRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListMyEncryptedBlobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyEncryptedBlobsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListMyEncryptedBlobs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListMyEncryptedBlobs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListMyEncryptedBlobs(ctx, req.(*ListMyEncryptedBlobsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_StoreRecoveryShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StoreRecoveryShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).StoreRecoveryShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_StoreRecoveryShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).StoreRecoveryShare(ctx, req.(*StoreRecoveryShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListMyRecoveryShares_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyRecoverySharesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListMyRecoveryShares(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListMyRecoveryShares_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListMyRecoveryShares(ctx, req.(*ListMyRecoverySharesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_DeleteRecoveryShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteRecoveryShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).DeleteRecoveryShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_DeleteRecoveryShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).DeleteRecoveryShare(ctx, req.(*DeleteRecoveryShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LegacyService_ServiceDesc is the grpc.ServiceDesc for LegacyService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -192,6 +400,30 @@ var LegacyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetHeritageStats",
 			Handler:    _LegacyService_GetHeritageStats_Handler,
+		},
+		{
+			MethodName: "StoreEncryptedBlob",
+			Handler:    _LegacyService_StoreEncryptedBlob_Handler,
+		},
+		{
+			MethodName: "GetEncryptedBlob",
+			Handler:    _LegacyService_GetEncryptedBlob_Handler,
+		},
+		{
+			MethodName: "ListMyEncryptedBlobs",
+			Handler:    _LegacyService_ListMyEncryptedBlobs_Handler,
+		},
+		{
+			MethodName: "StoreRecoveryShare",
+			Handler:    _LegacyService_StoreRecoveryShare_Handler,
+		},
+		{
+			MethodName: "ListMyRecoveryShares",
+			Handler:    _LegacyService_ListMyRecoveryShares_Handler,
+		},
+		{
+			MethodName: "DeleteRecoveryShare",
+			Handler:    _LegacyService_DeleteRecoveryShare_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

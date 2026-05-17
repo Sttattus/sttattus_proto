@@ -620,6 +620,826 @@ func (x *ListAssetsResponse) GetAssets() []*LegalAsset {
 	return nil
 }
 
+type EncryptedBlobMetadata struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	AssetId       string                 `protobuf:"bytes,2,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
+	Algorithm     string                 `protobuf:"bytes,3,opt,name=algorithm,proto3" json:"algorithm,omitempty"`
+	SizeBytes     int32                  `protobuf:"varint,4,opt,name=size_bytes,json=sizeBytes,proto3" json:"size_bytes,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,5,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EncryptedBlobMetadata) Reset() {
+	*x = EncryptedBlobMetadata{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EncryptedBlobMetadata) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EncryptedBlobMetadata) ProtoMessage() {}
+
+func (x *EncryptedBlobMetadata) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EncryptedBlobMetadata.ProtoReflect.Descriptor instead.
+func (*EncryptedBlobMetadata) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *EncryptedBlobMetadata) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *EncryptedBlobMetadata) GetAssetId() string {
+	if x != nil {
+		return x.AssetId
+	}
+	return ""
+}
+
+func (x *EncryptedBlobMetadata) GetAlgorithm() string {
+	if x != nil {
+		return x.Algorithm
+	}
+	return ""
+}
+
+func (x *EncryptedBlobMetadata) GetSizeBytes() int32 {
+	if x != nil {
+		return x.SizeBytes
+	}
+	return 0
+}
+
+func (x *EncryptedBlobMetadata) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type EncryptedBlob struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	AssetId       string                 `protobuf:"bytes,2,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
+	Algorithm     string                 `protobuf:"bytes,3,opt,name=algorithm,proto3" json:"algorithm,omitempty"`
+	Ciphertext    []byte                 `protobuf:"bytes,4,opt,name=ciphertext,proto3" json:"ciphertext,omitempty"`
+	Nonce         []byte                 `protobuf:"bytes,5,opt,name=nonce,proto3" json:"nonce,omitempty"`
+	WrappedKey    []byte                 `protobuf:"bytes,6,opt,name=wrapped_key,json=wrappedKey,proto3" json:"wrapped_key,omitempty"`
+	SizeBytes     int32                  `protobuf:"varint,7,opt,name=size_bytes,json=sizeBytes,proto3" json:"size_bytes,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,8,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EncryptedBlob) Reset() {
+	*x = EncryptedBlob{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EncryptedBlob) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EncryptedBlob) ProtoMessage() {}
+
+func (x *EncryptedBlob) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EncryptedBlob.ProtoReflect.Descriptor instead.
+func (*EncryptedBlob) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *EncryptedBlob) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *EncryptedBlob) GetAssetId() string {
+	if x != nil {
+		return x.AssetId
+	}
+	return ""
+}
+
+func (x *EncryptedBlob) GetAlgorithm() string {
+	if x != nil {
+		return x.Algorithm
+	}
+	return ""
+}
+
+func (x *EncryptedBlob) GetCiphertext() []byte {
+	if x != nil {
+		return x.Ciphertext
+	}
+	return nil
+}
+
+func (x *EncryptedBlob) GetNonce() []byte {
+	if x != nil {
+		return x.Nonce
+	}
+	return nil
+}
+
+func (x *EncryptedBlob) GetWrappedKey() []byte {
+	if x != nil {
+		return x.WrappedKey
+	}
+	return nil
+}
+
+func (x *EncryptedBlob) GetSizeBytes() int32 {
+	if x != nil {
+		return x.SizeBytes
+	}
+	return 0
+}
+
+func (x *EncryptedBlob) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type StoreEncryptedBlobRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AssetId       string                 `protobuf:"bytes,1,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"` // optional — empty = standalone blob
+	Ciphertext    []byte                 `protobuf:"bytes,2,opt,name=ciphertext,proto3" json:"ciphertext,omitempty"`
+	Nonce         []byte                 `protobuf:"bytes,3,opt,name=nonce,proto3" json:"nonce,omitempty"`
+	WrappedKey    []byte                 `protobuf:"bytes,4,opt,name=wrapped_key,json=wrappedKey,proto3" json:"wrapped_key,omitempty"`
+	Algorithm     string                 `protobuf:"bytes,5,opt,name=algorithm,proto3" json:"algorithm,omitempty"` // e.g. 'nacl-secretbox-v1'
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StoreEncryptedBlobRequest) Reset() {
+	*x = StoreEncryptedBlobRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StoreEncryptedBlobRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StoreEncryptedBlobRequest) ProtoMessage() {}
+
+func (x *StoreEncryptedBlobRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StoreEncryptedBlobRequest.ProtoReflect.Descriptor instead.
+func (*StoreEncryptedBlobRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *StoreEncryptedBlobRequest) GetAssetId() string {
+	if x != nil {
+		return x.AssetId
+	}
+	return ""
+}
+
+func (x *StoreEncryptedBlobRequest) GetCiphertext() []byte {
+	if x != nil {
+		return x.Ciphertext
+	}
+	return nil
+}
+
+func (x *StoreEncryptedBlobRequest) GetNonce() []byte {
+	if x != nil {
+		return x.Nonce
+	}
+	return nil
+}
+
+func (x *StoreEncryptedBlobRequest) GetWrappedKey() []byte {
+	if x != nil {
+		return x.WrappedKey
+	}
+	return nil
+}
+
+func (x *StoreEncryptedBlobRequest) GetAlgorithm() string {
+	if x != nil {
+		return x.Algorithm
+	}
+	return ""
+}
+
+type StoreEncryptedBlobResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Blob          *EncryptedBlobMetadata `protobuf:"bytes,1,opt,name=blob,proto3" json:"blob,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StoreEncryptedBlobResponse) Reset() {
+	*x = StoreEncryptedBlobResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StoreEncryptedBlobResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StoreEncryptedBlobResponse) ProtoMessage() {}
+
+func (x *StoreEncryptedBlobResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StoreEncryptedBlobResponse.ProtoReflect.Descriptor instead.
+func (*StoreEncryptedBlobResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *StoreEncryptedBlobResponse) GetBlob() *EncryptedBlobMetadata {
+	if x != nil {
+		return x.Blob
+	}
+	return nil
+}
+
+type GetEncryptedBlobRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetEncryptedBlobRequest) Reset() {
+	*x = GetEncryptedBlobRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEncryptedBlobRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEncryptedBlobRequest) ProtoMessage() {}
+
+func (x *GetEncryptedBlobRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEncryptedBlobRequest.ProtoReflect.Descriptor instead.
+func (*GetEncryptedBlobRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *GetEncryptedBlobRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type GetEncryptedBlobResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Blob          *EncryptedBlob         `protobuf:"bytes,1,opt,name=blob,proto3" json:"blob,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetEncryptedBlobResponse) Reset() {
+	*x = GetEncryptedBlobResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEncryptedBlobResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEncryptedBlobResponse) ProtoMessage() {}
+
+func (x *GetEncryptedBlobResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEncryptedBlobResponse.ProtoReflect.Descriptor instead.
+func (*GetEncryptedBlobResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *GetEncryptedBlobResponse) GetBlob() *EncryptedBlob {
+	if x != nil {
+		return x.Blob
+	}
+	return nil
+}
+
+type ListMyEncryptedBlobsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyEncryptedBlobsRequest) Reset() {
+	*x = ListMyEncryptedBlobsRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyEncryptedBlobsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyEncryptedBlobsRequest) ProtoMessage() {}
+
+func (x *ListMyEncryptedBlobsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyEncryptedBlobsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyEncryptedBlobsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{14}
+}
+
+type ListMyEncryptedBlobsResponse struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Blobs         []*EncryptedBlobMetadata `protobuf:"bytes,1,rep,name=blobs,proto3" json:"blobs,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyEncryptedBlobsResponse) Reset() {
+	*x = ListMyEncryptedBlobsResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyEncryptedBlobsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyEncryptedBlobsResponse) ProtoMessage() {}
+
+func (x *ListMyEncryptedBlobsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyEncryptedBlobsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyEncryptedBlobsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *ListMyEncryptedBlobsResponse) GetBlobs() []*EncryptedBlobMetadata {
+	if x != nil {
+		return x.Blobs
+	}
+	return nil
+}
+
+type RecoveryShare struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	TrusteeLabel  string                 `protobuf:"bytes,2,opt,name=trustee_label,json=trusteeLabel,proto3" json:"trustee_label,omitempty"`
+	Scheme        string                 `protobuf:"bytes,3,opt,name=scheme,proto3" json:"scheme,omitempty"` // 'shamir-3-of-5-v1'
+	ShareIndex    int32                  `protobuf:"varint,4,opt,name=share_index,json=shareIndex,proto3" json:"share_index,omitempty"`
+	WrappedShare  []byte                 `protobuf:"bytes,5,opt,name=wrapped_share,json=wrappedShare,proto3" json:"wrapped_share,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,6,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecoveryShare) Reset() {
+	*x = RecoveryShare{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecoveryShare) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecoveryShare) ProtoMessage() {}
+
+func (x *RecoveryShare) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecoveryShare.ProtoReflect.Descriptor instead.
+func (*RecoveryShare) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *RecoveryShare) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *RecoveryShare) GetTrusteeLabel() string {
+	if x != nil {
+		return x.TrusteeLabel
+	}
+	return ""
+}
+
+func (x *RecoveryShare) GetScheme() string {
+	if x != nil {
+		return x.Scheme
+	}
+	return ""
+}
+
+func (x *RecoveryShare) GetShareIndex() int32 {
+	if x != nil {
+		return x.ShareIndex
+	}
+	return 0
+}
+
+func (x *RecoveryShare) GetWrappedShare() []byte {
+	if x != nil {
+		return x.WrappedShare
+	}
+	return nil
+}
+
+func (x *RecoveryShare) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type StoreRecoveryShareRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrusteeLabel  string                 `protobuf:"bytes,1,opt,name=trustee_label,json=trusteeLabel,proto3" json:"trustee_label,omitempty"`
+	WrappedShare  []byte                 `protobuf:"bytes,2,opt,name=wrapped_share,json=wrappedShare,proto3" json:"wrapped_share,omitempty"`
+	Scheme        string                 `protobuf:"bytes,3,opt,name=scheme,proto3" json:"scheme,omitempty"`
+	ShareIndex    int32                  `protobuf:"varint,4,opt,name=share_index,json=shareIndex,proto3" json:"share_index,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StoreRecoveryShareRequest) Reset() {
+	*x = StoreRecoveryShareRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StoreRecoveryShareRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StoreRecoveryShareRequest) ProtoMessage() {}
+
+func (x *StoreRecoveryShareRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StoreRecoveryShareRequest.ProtoReflect.Descriptor instead.
+func (*StoreRecoveryShareRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *StoreRecoveryShareRequest) GetTrusteeLabel() string {
+	if x != nil {
+		return x.TrusteeLabel
+	}
+	return ""
+}
+
+func (x *StoreRecoveryShareRequest) GetWrappedShare() []byte {
+	if x != nil {
+		return x.WrappedShare
+	}
+	return nil
+}
+
+func (x *StoreRecoveryShareRequest) GetScheme() string {
+	if x != nil {
+		return x.Scheme
+	}
+	return ""
+}
+
+func (x *StoreRecoveryShareRequest) GetShareIndex() int32 {
+	if x != nil {
+		return x.ShareIndex
+	}
+	return 0
+}
+
+type StoreRecoveryShareResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Share         *RecoveryShare         `protobuf:"bytes,1,opt,name=share,proto3" json:"share,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StoreRecoveryShareResponse) Reset() {
+	*x = StoreRecoveryShareResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StoreRecoveryShareResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StoreRecoveryShareResponse) ProtoMessage() {}
+
+func (x *StoreRecoveryShareResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StoreRecoveryShareResponse.ProtoReflect.Descriptor instead.
+func (*StoreRecoveryShareResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *StoreRecoveryShareResponse) GetShare() *RecoveryShare {
+	if x != nil {
+		return x.Share
+	}
+	return nil
+}
+
+type ListMyRecoverySharesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyRecoverySharesRequest) Reset() {
+	*x = ListMyRecoverySharesRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyRecoverySharesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyRecoverySharesRequest) ProtoMessage() {}
+
+func (x *ListMyRecoverySharesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyRecoverySharesRequest.ProtoReflect.Descriptor instead.
+func (*ListMyRecoverySharesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{19}
+}
+
+type ListMyRecoverySharesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Shares        []*RecoveryShare       `protobuf:"bytes,1,rep,name=shares,proto3" json:"shares,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyRecoverySharesResponse) Reset() {
+	*x = ListMyRecoverySharesResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyRecoverySharesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyRecoverySharesResponse) ProtoMessage() {}
+
+func (x *ListMyRecoverySharesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyRecoverySharesResponse.ProtoReflect.Descriptor instead.
+func (*ListMyRecoverySharesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *ListMyRecoverySharesResponse) GetShares() []*RecoveryShare {
+	if x != nil {
+		return x.Shares
+	}
+	return nil
+}
+
+type DeleteRecoveryShareRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ShareId       string                 `protobuf:"bytes,1,opt,name=share_id,json=shareId,proto3" json:"share_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteRecoveryShareRequest) Reset() {
+	*x = DeleteRecoveryShareRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteRecoveryShareRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteRecoveryShareRequest) ProtoMessage() {}
+
+func (x *DeleteRecoveryShareRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteRecoveryShareRequest.ProtoReflect.Descriptor instead.
+func (*DeleteRecoveryShareRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *DeleteRecoveryShareRequest) GetShareId() string {
+	if x != nil {
+		return x.ShareId
+	}
+	return ""
+}
+
+type DeleteRecoveryShareResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteRecoveryShareResponse) Reset() {
+	*x = DeleteRecoveryShareResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteRecoveryShareResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteRecoveryShareResponse) ProtoMessage() {}
+
+func (x *DeleteRecoveryShareResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteRecoveryShareResponse.ProtoReflect.Descriptor instead.
+func (*DeleteRecoveryShareResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{22}
+}
+
 var File_sttattus_legacy_v1_legacy_proto protoreflect.FileDescriptor
 
 const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
@@ -660,7 +1480,67 @@ const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
 	"\x11ListAssetsRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\"L\n" +
 	"\x12ListAssetsResponse\x126\n" +
-	"\x06assets\x18\x01 \x03(\v2\x1e.sttattus.legacy.v1.LegalAssetR\x06assets*\xd0\x01\n" +
+	"\x06assets\x18\x01 \x03(\v2\x1e.sttattus.legacy.v1.LegalAssetR\x06assets\"\xa7\x01\n" +
+	"\x15EncryptedBlobMetadata\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
+	"\basset_id\x18\x02 \x01(\tR\aassetId\x12\x1c\n" +
+	"\talgorithm\x18\x03 \x01(\tR\talgorithm\x12\x1d\n" +
+	"\n" +
+	"size_bytes\x18\x04 \x01(\x05R\tsizeBytes\x12&\n" +
+	"\x0fcreated_at_unix\x18\x05 \x01(\x03R\rcreatedAtUnix\"\xf6\x01\n" +
+	"\rEncryptedBlob\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
+	"\basset_id\x18\x02 \x01(\tR\aassetId\x12\x1c\n" +
+	"\talgorithm\x18\x03 \x01(\tR\talgorithm\x12\x1e\n" +
+	"\n" +
+	"ciphertext\x18\x04 \x01(\fR\n" +
+	"ciphertext\x12\x14\n" +
+	"\x05nonce\x18\x05 \x01(\fR\x05nonce\x12\x1f\n" +
+	"\vwrapped_key\x18\x06 \x01(\fR\n" +
+	"wrappedKey\x12\x1d\n" +
+	"\n" +
+	"size_bytes\x18\a \x01(\x05R\tsizeBytes\x12&\n" +
+	"\x0fcreated_at_unix\x18\b \x01(\x03R\rcreatedAtUnix\"\xab\x01\n" +
+	"\x19StoreEncryptedBlobRequest\x12\x19\n" +
+	"\basset_id\x18\x01 \x01(\tR\aassetId\x12\x1e\n" +
+	"\n" +
+	"ciphertext\x18\x02 \x01(\fR\n" +
+	"ciphertext\x12\x14\n" +
+	"\x05nonce\x18\x03 \x01(\fR\x05nonce\x12\x1f\n" +
+	"\vwrapped_key\x18\x04 \x01(\fR\n" +
+	"wrappedKey\x12\x1c\n" +
+	"\talgorithm\x18\x05 \x01(\tR\talgorithm\"[\n" +
+	"\x1aStoreEncryptedBlobResponse\x12=\n" +
+	"\x04blob\x18\x01 \x01(\v2).sttattus.legacy.v1.EncryptedBlobMetadataR\x04blob\")\n" +
+	"\x17GetEncryptedBlobRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"Q\n" +
+	"\x18GetEncryptedBlobResponse\x125\n" +
+	"\x04blob\x18\x01 \x01(\v2!.sttattus.legacy.v1.EncryptedBlobR\x04blob\"\x1d\n" +
+	"\x1bListMyEncryptedBlobsRequest\"_\n" +
+	"\x1cListMyEncryptedBlobsResponse\x12?\n" +
+	"\x05blobs\x18\x01 \x03(\v2).sttattus.legacy.v1.EncryptedBlobMetadataR\x05blobs\"\xca\x01\n" +
+	"\rRecoveryShare\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12#\n" +
+	"\rtrustee_label\x18\x02 \x01(\tR\ftrusteeLabel\x12\x16\n" +
+	"\x06scheme\x18\x03 \x01(\tR\x06scheme\x12\x1f\n" +
+	"\vshare_index\x18\x04 \x01(\x05R\n" +
+	"shareIndex\x12#\n" +
+	"\rwrapped_share\x18\x05 \x01(\fR\fwrappedShare\x12&\n" +
+	"\x0fcreated_at_unix\x18\x06 \x01(\x03R\rcreatedAtUnix\"\x9e\x01\n" +
+	"\x19StoreRecoveryShareRequest\x12#\n" +
+	"\rtrustee_label\x18\x01 \x01(\tR\ftrusteeLabel\x12#\n" +
+	"\rwrapped_share\x18\x02 \x01(\fR\fwrappedShare\x12\x16\n" +
+	"\x06scheme\x18\x03 \x01(\tR\x06scheme\x12\x1f\n" +
+	"\vshare_index\x18\x04 \x01(\x05R\n" +
+	"shareIndex\"U\n" +
+	"\x1aStoreRecoveryShareResponse\x127\n" +
+	"\x05share\x18\x01 \x01(\v2!.sttattus.legacy.v1.RecoveryShareR\x05share\"\x1d\n" +
+	"\x1bListMyRecoverySharesRequest\"Y\n" +
+	"\x1cListMyRecoverySharesResponse\x129\n" +
+	"\x06shares\x18\x01 \x03(\v2!.sttattus.legacy.v1.RecoveryShareR\x06shares\"7\n" +
+	"\x1aDeleteRecoveryShareRequest\x12\x19\n" +
+	"\bshare_id\x18\x01 \x01(\tR\ashareId\"\x1d\n" +
+	"\x1bDeleteRecoveryShareResponse*\xd0\x01\n" +
 	"\rAssetCategory\x12\x1e\n" +
 	"\x1aASSET_CATEGORY_UNSPECIFIED\x10\x00\x12(\n" +
 	"$ASSET_CATEGORY_INTELLECTUAL_PROPERTY\x10\x01\x12'\n" +
@@ -671,12 +1551,18 @@ const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xc1\x02\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\x88\b\n" +
 	"\rLegacyService\x12d\n" +
 	"\rStoreDocument\x12(.sttattus.legacy.v1.StoreDocumentRequest\x1a).sttattus.legacy.v1.StoreDocumentResponse\x12[\n" +
 	"\n" +
 	"ListAssets\x12%.sttattus.legacy.v1.ListAssetsRequest\x1a&.sttattus.legacy.v1.ListAssetsResponse\x12m\n" +
-	"\x10GetHeritageStats\x12+.sttattus.legacy.v1.GetHeritageStatsRequest\x1a,.sttattus.legacy.v1.GetHeritageStatsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/legacy/v1;legacyv1b\x06proto3"
+	"\x10GetHeritageStats\x12+.sttattus.legacy.v1.GetHeritageStatsRequest\x1a,.sttattus.legacy.v1.GetHeritageStatsResponse\x12s\n" +
+	"\x12StoreEncryptedBlob\x12-.sttattus.legacy.v1.StoreEncryptedBlobRequest\x1a..sttattus.legacy.v1.StoreEncryptedBlobResponse\x12m\n" +
+	"\x10GetEncryptedBlob\x12+.sttattus.legacy.v1.GetEncryptedBlobRequest\x1a,.sttattus.legacy.v1.GetEncryptedBlobResponse\x12y\n" +
+	"\x14ListMyEncryptedBlobs\x12/.sttattus.legacy.v1.ListMyEncryptedBlobsRequest\x1a0.sttattus.legacy.v1.ListMyEncryptedBlobsResponse\x12s\n" +
+	"\x12StoreRecoveryShare\x12-.sttattus.legacy.v1.StoreRecoveryShareRequest\x1a..sttattus.legacy.v1.StoreRecoveryShareResponse\x12y\n" +
+	"\x14ListMyRecoveryShares\x12/.sttattus.legacy.v1.ListMyRecoverySharesRequest\x1a0.sttattus.legacy.v1.ListMyRecoverySharesResponse\x12v\n" +
+	"\x13DeleteRecoveryShare\x12..sttattus.legacy.v1.DeleteRecoveryShareRequest\x1a/.sttattus.legacy.v1.DeleteRecoveryShareResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/legacy/v1;legacyv1b\x06proto3"
 
 var (
 	file_sttattus_legacy_v1_legacy_proto_rawDescOnce sync.Once
@@ -691,41 +1577,73 @@ func file_sttattus_legacy_v1_legacy_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_legacy_v1_legacy_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_legacy_v1_legacy_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_sttattus_legacy_v1_legacy_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
 var file_sttattus_legacy_v1_legacy_proto_goTypes = []any{
-	(AssetCategory)(0),               // 0: sttattus.legacy.v1.AssetCategory
-	(VerificationStatus)(0),          // 1: sttattus.legacy.v1.VerificationStatus
-	(*LegalAsset)(nil),               // 2: sttattus.legacy.v1.LegalAsset
-	(*HeritageStats)(nil),            // 3: sttattus.legacy.v1.HeritageStats
-	(*StoreDocumentRequest)(nil),     // 4: sttattus.legacy.v1.StoreDocumentRequest
-	(*StoreDocumentResponse)(nil),    // 5: sttattus.legacy.v1.StoreDocumentResponse
-	(*GetHeritageStatsRequest)(nil),  // 6: sttattus.legacy.v1.GetHeritageStatsRequest
-	(*GetHeritageStatsResponse)(nil), // 7: sttattus.legacy.v1.GetHeritageStatsResponse
-	(*ListAssetsRequest)(nil),        // 8: sttattus.legacy.v1.ListAssetsRequest
-	(*ListAssetsResponse)(nil),       // 9: sttattus.legacy.v1.ListAssetsResponse
-	(*timestamppb.Timestamp)(nil),    // 10: google.protobuf.Timestamp
+	(AssetCategory)(0),                   // 0: sttattus.legacy.v1.AssetCategory
+	(VerificationStatus)(0),              // 1: sttattus.legacy.v1.VerificationStatus
+	(*LegalAsset)(nil),                   // 2: sttattus.legacy.v1.LegalAsset
+	(*HeritageStats)(nil),                // 3: sttattus.legacy.v1.HeritageStats
+	(*StoreDocumentRequest)(nil),         // 4: sttattus.legacy.v1.StoreDocumentRequest
+	(*StoreDocumentResponse)(nil),        // 5: sttattus.legacy.v1.StoreDocumentResponse
+	(*GetHeritageStatsRequest)(nil),      // 6: sttattus.legacy.v1.GetHeritageStatsRequest
+	(*GetHeritageStatsResponse)(nil),     // 7: sttattus.legacy.v1.GetHeritageStatsResponse
+	(*ListAssetsRequest)(nil),            // 8: sttattus.legacy.v1.ListAssetsRequest
+	(*ListAssetsResponse)(nil),           // 9: sttattus.legacy.v1.ListAssetsResponse
+	(*EncryptedBlobMetadata)(nil),        // 10: sttattus.legacy.v1.EncryptedBlobMetadata
+	(*EncryptedBlob)(nil),                // 11: sttattus.legacy.v1.EncryptedBlob
+	(*StoreEncryptedBlobRequest)(nil),    // 12: sttattus.legacy.v1.StoreEncryptedBlobRequest
+	(*StoreEncryptedBlobResponse)(nil),   // 13: sttattus.legacy.v1.StoreEncryptedBlobResponse
+	(*GetEncryptedBlobRequest)(nil),      // 14: sttattus.legacy.v1.GetEncryptedBlobRequest
+	(*GetEncryptedBlobResponse)(nil),     // 15: sttattus.legacy.v1.GetEncryptedBlobResponse
+	(*ListMyEncryptedBlobsRequest)(nil),  // 16: sttattus.legacy.v1.ListMyEncryptedBlobsRequest
+	(*ListMyEncryptedBlobsResponse)(nil), // 17: sttattus.legacy.v1.ListMyEncryptedBlobsResponse
+	(*RecoveryShare)(nil),                // 18: sttattus.legacy.v1.RecoveryShare
+	(*StoreRecoveryShareRequest)(nil),    // 19: sttattus.legacy.v1.StoreRecoveryShareRequest
+	(*StoreRecoveryShareResponse)(nil),   // 20: sttattus.legacy.v1.StoreRecoveryShareResponse
+	(*ListMyRecoverySharesRequest)(nil),  // 21: sttattus.legacy.v1.ListMyRecoverySharesRequest
+	(*ListMyRecoverySharesResponse)(nil), // 22: sttattus.legacy.v1.ListMyRecoverySharesResponse
+	(*DeleteRecoveryShareRequest)(nil),   // 23: sttattus.legacy.v1.DeleteRecoveryShareRequest
+	(*DeleteRecoveryShareResponse)(nil),  // 24: sttattus.legacy.v1.DeleteRecoveryShareResponse
+	(*timestamppb.Timestamp)(nil),        // 25: google.protobuf.Timestamp
 }
 var file_sttattus_legacy_v1_legacy_proto_depIdxs = []int32{
 	0,  // 0: sttattus.legacy.v1.LegalAsset.category:type_name -> sttattus.legacy.v1.AssetCategory
 	1,  // 1: sttattus.legacy.v1.LegalAsset.status:type_name -> sttattus.legacy.v1.VerificationStatus
-	10, // 2: sttattus.legacy.v1.LegalAsset.filed_at:type_name -> google.protobuf.Timestamp
-	10, // 3: sttattus.legacy.v1.LegalAsset.expires_at:type_name -> google.protobuf.Timestamp
+	25, // 2: sttattus.legacy.v1.LegalAsset.filed_at:type_name -> google.protobuf.Timestamp
+	25, // 3: sttattus.legacy.v1.LegalAsset.expires_at:type_name -> google.protobuf.Timestamp
 	0,  // 4: sttattus.legacy.v1.StoreDocumentRequest.category:type_name -> sttattus.legacy.v1.AssetCategory
 	2,  // 5: sttattus.legacy.v1.StoreDocumentResponse.asset:type_name -> sttattus.legacy.v1.LegalAsset
 	3,  // 6: sttattus.legacy.v1.StoreDocumentResponse.stats:type_name -> sttattus.legacy.v1.HeritageStats
 	3,  // 7: sttattus.legacy.v1.GetHeritageStatsResponse.stats:type_name -> sttattus.legacy.v1.HeritageStats
 	2,  // 8: sttattus.legacy.v1.ListAssetsResponse.assets:type_name -> sttattus.legacy.v1.LegalAsset
-	4,  // 9: sttattus.legacy.v1.LegacyService.StoreDocument:input_type -> sttattus.legacy.v1.StoreDocumentRequest
-	8,  // 10: sttattus.legacy.v1.LegacyService.ListAssets:input_type -> sttattus.legacy.v1.ListAssetsRequest
-	6,  // 11: sttattus.legacy.v1.LegacyService.GetHeritageStats:input_type -> sttattus.legacy.v1.GetHeritageStatsRequest
-	5,  // 12: sttattus.legacy.v1.LegacyService.StoreDocument:output_type -> sttattus.legacy.v1.StoreDocumentResponse
-	9,  // 13: sttattus.legacy.v1.LegacyService.ListAssets:output_type -> sttattus.legacy.v1.ListAssetsResponse
-	7,  // 14: sttattus.legacy.v1.LegacyService.GetHeritageStats:output_type -> sttattus.legacy.v1.GetHeritageStatsResponse
-	12, // [12:15] is the sub-list for method output_type
-	9,  // [9:12] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	10, // 9: sttattus.legacy.v1.StoreEncryptedBlobResponse.blob:type_name -> sttattus.legacy.v1.EncryptedBlobMetadata
+	11, // 10: sttattus.legacy.v1.GetEncryptedBlobResponse.blob:type_name -> sttattus.legacy.v1.EncryptedBlob
+	10, // 11: sttattus.legacy.v1.ListMyEncryptedBlobsResponse.blobs:type_name -> sttattus.legacy.v1.EncryptedBlobMetadata
+	18, // 12: sttattus.legacy.v1.StoreRecoveryShareResponse.share:type_name -> sttattus.legacy.v1.RecoveryShare
+	18, // 13: sttattus.legacy.v1.ListMyRecoverySharesResponse.shares:type_name -> sttattus.legacy.v1.RecoveryShare
+	4,  // 14: sttattus.legacy.v1.LegacyService.StoreDocument:input_type -> sttattus.legacy.v1.StoreDocumentRequest
+	8,  // 15: sttattus.legacy.v1.LegacyService.ListAssets:input_type -> sttattus.legacy.v1.ListAssetsRequest
+	6,  // 16: sttattus.legacy.v1.LegacyService.GetHeritageStats:input_type -> sttattus.legacy.v1.GetHeritageStatsRequest
+	12, // 17: sttattus.legacy.v1.LegacyService.StoreEncryptedBlob:input_type -> sttattus.legacy.v1.StoreEncryptedBlobRequest
+	14, // 18: sttattus.legacy.v1.LegacyService.GetEncryptedBlob:input_type -> sttattus.legacy.v1.GetEncryptedBlobRequest
+	16, // 19: sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs:input_type -> sttattus.legacy.v1.ListMyEncryptedBlobsRequest
+	19, // 20: sttattus.legacy.v1.LegacyService.StoreRecoveryShare:input_type -> sttattus.legacy.v1.StoreRecoveryShareRequest
+	21, // 21: sttattus.legacy.v1.LegacyService.ListMyRecoveryShares:input_type -> sttattus.legacy.v1.ListMyRecoverySharesRequest
+	23, // 22: sttattus.legacy.v1.LegacyService.DeleteRecoveryShare:input_type -> sttattus.legacy.v1.DeleteRecoveryShareRequest
+	5,  // 23: sttattus.legacy.v1.LegacyService.StoreDocument:output_type -> sttattus.legacy.v1.StoreDocumentResponse
+	9,  // 24: sttattus.legacy.v1.LegacyService.ListAssets:output_type -> sttattus.legacy.v1.ListAssetsResponse
+	7,  // 25: sttattus.legacy.v1.LegacyService.GetHeritageStats:output_type -> sttattus.legacy.v1.GetHeritageStatsResponse
+	13, // 26: sttattus.legacy.v1.LegacyService.StoreEncryptedBlob:output_type -> sttattus.legacy.v1.StoreEncryptedBlobResponse
+	15, // 27: sttattus.legacy.v1.LegacyService.GetEncryptedBlob:output_type -> sttattus.legacy.v1.GetEncryptedBlobResponse
+	17, // 28: sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs:output_type -> sttattus.legacy.v1.ListMyEncryptedBlobsResponse
+	20, // 29: sttattus.legacy.v1.LegacyService.StoreRecoveryShare:output_type -> sttattus.legacy.v1.StoreRecoveryShareResponse
+	22, // 30: sttattus.legacy.v1.LegacyService.ListMyRecoveryShares:output_type -> sttattus.legacy.v1.ListMyRecoverySharesResponse
+	24, // 31: sttattus.legacy.v1.LegacyService.DeleteRecoveryShare:output_type -> sttattus.legacy.v1.DeleteRecoveryShareResponse
+	23, // [23:32] is the sub-list for method output_type
+	14, // [14:23] is the sub-list for method input_type
+	14, // [14:14] is the sub-list for extension type_name
+	14, // [14:14] is the sub-list for extension extendee
+	0,  // [0:14] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_legacy_v1_legacy_proto_init() }
@@ -739,7 +1657,7 @@ func file_sttattus_legacy_v1_legacy_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_legacy_v1_legacy_proto_rawDesc), len(file_sttattus_legacy_v1_legacy_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   8,
+			NumMessages:   23,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

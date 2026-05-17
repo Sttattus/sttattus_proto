@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
 
 /**
  * AssetCategory defines the strategic type of legal standing.
@@ -493,6 +493,687 @@ export class ListAssetsResponse extends Message<ListAssetsResponse> {
 
   static equals(a: ListAssetsResponse | PlainMessage<ListAssetsResponse> | undefined, b: ListAssetsResponse | PlainMessage<ListAssetsResponse> | undefined): boolean {
     return proto3.util.equals(ListAssetsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.EncryptedBlobMetadata
+ */
+export class EncryptedBlobMetadata extends Message<EncryptedBlobMetadata> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string asset_id = 2;
+   */
+  assetId = "";
+
+  /**
+   * @generated from field: string algorithm = 3;
+   */
+  algorithm = "";
+
+  /**
+   * @generated from field: int32 size_bytes = 4;
+   */
+  sizeBytes = 0;
+
+  /**
+   * @generated from field: int64 created_at_unix = 5;
+   */
+  createdAtUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<EncryptedBlobMetadata>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.EncryptedBlobMetadata";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "algorithm", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "size_bytes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "created_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EncryptedBlobMetadata {
+    return new EncryptedBlobMetadata().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EncryptedBlobMetadata {
+    return new EncryptedBlobMetadata().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EncryptedBlobMetadata {
+    return new EncryptedBlobMetadata().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EncryptedBlobMetadata | PlainMessage<EncryptedBlobMetadata> | undefined, b: EncryptedBlobMetadata | PlainMessage<EncryptedBlobMetadata> | undefined): boolean {
+    return proto3.util.equals(EncryptedBlobMetadata, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.EncryptedBlob
+ */
+export class EncryptedBlob extends Message<EncryptedBlob> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string asset_id = 2;
+   */
+  assetId = "";
+
+  /**
+   * @generated from field: string algorithm = 3;
+   */
+  algorithm = "";
+
+  /**
+   * @generated from field: bytes ciphertext = 4;
+   */
+  ciphertext = new Uint8Array(0);
+
+  /**
+   * @generated from field: bytes nonce = 5;
+   */
+  nonce = new Uint8Array(0);
+
+  /**
+   * @generated from field: bytes wrapped_key = 6;
+   */
+  wrappedKey = new Uint8Array(0);
+
+  /**
+   * @generated from field: int32 size_bytes = 7;
+   */
+  sizeBytes = 0;
+
+  /**
+   * @generated from field: int64 created_at_unix = 8;
+   */
+  createdAtUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<EncryptedBlob>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.EncryptedBlob";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "algorithm", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "ciphertext", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 5, name: "nonce", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 6, name: "wrapped_key", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 7, name: "size_bytes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "created_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EncryptedBlob {
+    return new EncryptedBlob().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EncryptedBlob {
+    return new EncryptedBlob().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EncryptedBlob {
+    return new EncryptedBlob().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EncryptedBlob | PlainMessage<EncryptedBlob> | undefined, b: EncryptedBlob | PlainMessage<EncryptedBlob> | undefined): boolean {
+    return proto3.util.equals(EncryptedBlob, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.StoreEncryptedBlobRequest
+ */
+export class StoreEncryptedBlobRequest extends Message<StoreEncryptedBlobRequest> {
+  /**
+   * optional — empty = standalone blob
+   *
+   * @generated from field: string asset_id = 1;
+   */
+  assetId = "";
+
+  /**
+   * @generated from field: bytes ciphertext = 2;
+   */
+  ciphertext = new Uint8Array(0);
+
+  /**
+   * @generated from field: bytes nonce = 3;
+   */
+  nonce = new Uint8Array(0);
+
+  /**
+   * @generated from field: bytes wrapped_key = 4;
+   */
+  wrappedKey = new Uint8Array(0);
+
+  /**
+   * e.g. 'nacl-secretbox-v1'
+   *
+   * @generated from field: string algorithm = 5;
+   */
+  algorithm = "";
+
+  constructor(data?: PartialMessage<StoreEncryptedBlobRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.StoreEncryptedBlobRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "ciphertext", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 3, name: "nonce", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 4, name: "wrapped_key", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 5, name: "algorithm", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StoreEncryptedBlobRequest {
+    return new StoreEncryptedBlobRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StoreEncryptedBlobRequest {
+    return new StoreEncryptedBlobRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StoreEncryptedBlobRequest {
+    return new StoreEncryptedBlobRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: StoreEncryptedBlobRequest | PlainMessage<StoreEncryptedBlobRequest> | undefined, b: StoreEncryptedBlobRequest | PlainMessage<StoreEncryptedBlobRequest> | undefined): boolean {
+    return proto3.util.equals(StoreEncryptedBlobRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.StoreEncryptedBlobResponse
+ */
+export class StoreEncryptedBlobResponse extends Message<StoreEncryptedBlobResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.EncryptedBlobMetadata blob = 1;
+   */
+  blob?: EncryptedBlobMetadata;
+
+  constructor(data?: PartialMessage<StoreEncryptedBlobResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.StoreEncryptedBlobResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "blob", kind: "message", T: EncryptedBlobMetadata },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StoreEncryptedBlobResponse {
+    return new StoreEncryptedBlobResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StoreEncryptedBlobResponse {
+    return new StoreEncryptedBlobResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StoreEncryptedBlobResponse {
+    return new StoreEncryptedBlobResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: StoreEncryptedBlobResponse | PlainMessage<StoreEncryptedBlobResponse> | undefined, b: StoreEncryptedBlobResponse | PlainMessage<StoreEncryptedBlobResponse> | undefined): boolean {
+    return proto3.util.equals(StoreEncryptedBlobResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetEncryptedBlobRequest
+ */
+export class GetEncryptedBlobRequest extends Message<GetEncryptedBlobRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  constructor(data?: PartialMessage<GetEncryptedBlobRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetEncryptedBlobRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEncryptedBlobRequest {
+    return new GetEncryptedBlobRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEncryptedBlobRequest {
+    return new GetEncryptedBlobRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEncryptedBlobRequest {
+    return new GetEncryptedBlobRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEncryptedBlobRequest | PlainMessage<GetEncryptedBlobRequest> | undefined, b: GetEncryptedBlobRequest | PlainMessage<GetEncryptedBlobRequest> | undefined): boolean {
+    return proto3.util.equals(GetEncryptedBlobRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetEncryptedBlobResponse
+ */
+export class GetEncryptedBlobResponse extends Message<GetEncryptedBlobResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.EncryptedBlob blob = 1;
+   */
+  blob?: EncryptedBlob;
+
+  constructor(data?: PartialMessage<GetEncryptedBlobResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetEncryptedBlobResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "blob", kind: "message", T: EncryptedBlob },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEncryptedBlobResponse {
+    return new GetEncryptedBlobResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEncryptedBlobResponse {
+    return new GetEncryptedBlobResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEncryptedBlobResponse {
+    return new GetEncryptedBlobResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEncryptedBlobResponse | PlainMessage<GetEncryptedBlobResponse> | undefined, b: GetEncryptedBlobResponse | PlainMessage<GetEncryptedBlobResponse> | undefined): boolean {
+    return proto3.util.equals(GetEncryptedBlobResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.ListMyEncryptedBlobsRequest
+ */
+export class ListMyEncryptedBlobsRequest extends Message<ListMyEncryptedBlobsRequest> {
+  constructor(data?: PartialMessage<ListMyEncryptedBlobsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.ListMyEncryptedBlobsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyEncryptedBlobsRequest {
+    return new ListMyEncryptedBlobsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyEncryptedBlobsRequest {
+    return new ListMyEncryptedBlobsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyEncryptedBlobsRequest {
+    return new ListMyEncryptedBlobsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyEncryptedBlobsRequest | PlainMessage<ListMyEncryptedBlobsRequest> | undefined, b: ListMyEncryptedBlobsRequest | PlainMessage<ListMyEncryptedBlobsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyEncryptedBlobsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.ListMyEncryptedBlobsResponse
+ */
+export class ListMyEncryptedBlobsResponse extends Message<ListMyEncryptedBlobsResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.EncryptedBlobMetadata blobs = 1;
+   */
+  blobs: EncryptedBlobMetadata[] = [];
+
+  constructor(data?: PartialMessage<ListMyEncryptedBlobsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.ListMyEncryptedBlobsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "blobs", kind: "message", T: EncryptedBlobMetadata, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyEncryptedBlobsResponse {
+    return new ListMyEncryptedBlobsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyEncryptedBlobsResponse {
+    return new ListMyEncryptedBlobsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyEncryptedBlobsResponse {
+    return new ListMyEncryptedBlobsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyEncryptedBlobsResponse | PlainMessage<ListMyEncryptedBlobsResponse> | undefined, b: ListMyEncryptedBlobsResponse | PlainMessage<ListMyEncryptedBlobsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyEncryptedBlobsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.RecoveryShare
+ */
+export class RecoveryShare extends Message<RecoveryShare> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string trustee_label = 2;
+   */
+  trusteeLabel = "";
+
+  /**
+   * 'shamir-3-of-5-v1'
+   *
+   * @generated from field: string scheme = 3;
+   */
+  scheme = "";
+
+  /**
+   * @generated from field: int32 share_index = 4;
+   */
+  shareIndex = 0;
+
+  /**
+   * @generated from field: bytes wrapped_share = 5;
+   */
+  wrappedShare = new Uint8Array(0);
+
+  /**
+   * @generated from field: int64 created_at_unix = 6;
+   */
+  createdAtUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<RecoveryShare>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.RecoveryShare";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "trustee_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "scheme", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "share_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "wrapped_share", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 6, name: "created_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecoveryShare {
+    return new RecoveryShare().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecoveryShare {
+    return new RecoveryShare().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecoveryShare {
+    return new RecoveryShare().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecoveryShare | PlainMessage<RecoveryShare> | undefined, b: RecoveryShare | PlainMessage<RecoveryShare> | undefined): boolean {
+    return proto3.util.equals(RecoveryShare, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.StoreRecoveryShareRequest
+ */
+export class StoreRecoveryShareRequest extends Message<StoreRecoveryShareRequest> {
+  /**
+   * @generated from field: string trustee_label = 1;
+   */
+  trusteeLabel = "";
+
+  /**
+   * @generated from field: bytes wrapped_share = 2;
+   */
+  wrappedShare = new Uint8Array(0);
+
+  /**
+   * @generated from field: string scheme = 3;
+   */
+  scheme = "";
+
+  /**
+   * @generated from field: int32 share_index = 4;
+   */
+  shareIndex = 0;
+
+  constructor(data?: PartialMessage<StoreRecoveryShareRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.StoreRecoveryShareRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "trustee_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "wrapped_share", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 3, name: "scheme", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "share_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StoreRecoveryShareRequest {
+    return new StoreRecoveryShareRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StoreRecoveryShareRequest {
+    return new StoreRecoveryShareRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StoreRecoveryShareRequest {
+    return new StoreRecoveryShareRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: StoreRecoveryShareRequest | PlainMessage<StoreRecoveryShareRequest> | undefined, b: StoreRecoveryShareRequest | PlainMessage<StoreRecoveryShareRequest> | undefined): boolean {
+    return proto3.util.equals(StoreRecoveryShareRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.StoreRecoveryShareResponse
+ */
+export class StoreRecoveryShareResponse extends Message<StoreRecoveryShareResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.RecoveryShare share = 1;
+   */
+  share?: RecoveryShare;
+
+  constructor(data?: PartialMessage<StoreRecoveryShareResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.StoreRecoveryShareResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "share", kind: "message", T: RecoveryShare },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StoreRecoveryShareResponse {
+    return new StoreRecoveryShareResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StoreRecoveryShareResponse {
+    return new StoreRecoveryShareResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StoreRecoveryShareResponse {
+    return new StoreRecoveryShareResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: StoreRecoveryShareResponse | PlainMessage<StoreRecoveryShareResponse> | undefined, b: StoreRecoveryShareResponse | PlainMessage<StoreRecoveryShareResponse> | undefined): boolean {
+    return proto3.util.equals(StoreRecoveryShareResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.ListMyRecoverySharesRequest
+ */
+export class ListMyRecoverySharesRequest extends Message<ListMyRecoverySharesRequest> {
+  constructor(data?: PartialMessage<ListMyRecoverySharesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.ListMyRecoverySharesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyRecoverySharesRequest {
+    return new ListMyRecoverySharesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyRecoverySharesRequest {
+    return new ListMyRecoverySharesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyRecoverySharesRequest {
+    return new ListMyRecoverySharesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyRecoverySharesRequest | PlainMessage<ListMyRecoverySharesRequest> | undefined, b: ListMyRecoverySharesRequest | PlainMessage<ListMyRecoverySharesRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyRecoverySharesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.ListMyRecoverySharesResponse
+ */
+export class ListMyRecoverySharesResponse extends Message<ListMyRecoverySharesResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.RecoveryShare shares = 1;
+   */
+  shares: RecoveryShare[] = [];
+
+  constructor(data?: PartialMessage<ListMyRecoverySharesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.ListMyRecoverySharesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "shares", kind: "message", T: RecoveryShare, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyRecoverySharesResponse {
+    return new ListMyRecoverySharesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyRecoverySharesResponse {
+    return new ListMyRecoverySharesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyRecoverySharesResponse {
+    return new ListMyRecoverySharesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyRecoverySharesResponse | PlainMessage<ListMyRecoverySharesResponse> | undefined, b: ListMyRecoverySharesResponse | PlainMessage<ListMyRecoverySharesResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyRecoverySharesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.DeleteRecoveryShareRequest
+ */
+export class DeleteRecoveryShareRequest extends Message<DeleteRecoveryShareRequest> {
+  /**
+   * @generated from field: string share_id = 1;
+   */
+  shareId = "";
+
+  constructor(data?: PartialMessage<DeleteRecoveryShareRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.DeleteRecoveryShareRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "share_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteRecoveryShareRequest {
+    return new DeleteRecoveryShareRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteRecoveryShareRequest {
+    return new DeleteRecoveryShareRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteRecoveryShareRequest {
+    return new DeleteRecoveryShareRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteRecoveryShareRequest | PlainMessage<DeleteRecoveryShareRequest> | undefined, b: DeleteRecoveryShareRequest | PlainMessage<DeleteRecoveryShareRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteRecoveryShareRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.DeleteRecoveryShareResponse
+ */
+export class DeleteRecoveryShareResponse extends Message<DeleteRecoveryShareResponse> {
+  constructor(data?: PartialMessage<DeleteRecoveryShareResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.DeleteRecoveryShareResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteRecoveryShareResponse {
+    return new DeleteRecoveryShareResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteRecoveryShareResponse {
+    return new DeleteRecoveryShareResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteRecoveryShareResponse {
+    return new DeleteRecoveryShareResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteRecoveryShareResponse | PlainMessage<DeleteRecoveryShareResponse> | undefined, b: DeleteRecoveryShareResponse | PlainMessage<DeleteRecoveryShareResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteRecoveryShareResponse, a, b);
   }
 }
 

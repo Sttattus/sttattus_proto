@@ -70,9 +70,98 @@ message ListAssetsResponse {
   repeated LegalAsset assets = 1;
 }
 
+// === L15.2 — end-to-end encrypted storage ===
+//
+// The server stores the three opaque blobs verbatim. Encryption +
+// key derivation happen on the client. Algorithm + nonce sizes
+// are recorded so a future client knows how to decrypt.
+
+message EncryptedBlobMetadata {
+  string id = 1;
+  string asset_id = 2;
+  string algorithm = 3;
+  int32 size_bytes = 4;
+  int64 created_at_unix = 5;
+}
+
+message EncryptedBlob {
+  string id = 1;
+  string asset_id = 2;
+  string algorithm = 3;
+  bytes ciphertext = 4;
+  bytes nonce = 5;
+  bytes wrapped_key = 6;
+  int32 size_bytes = 7;
+  int64 created_at_unix = 8;
+}
+
+message StoreEncryptedBlobRequest {
+  string asset_id = 1; // optional — empty = standalone blob
+  bytes ciphertext = 2;
+  bytes nonce = 3;
+  bytes wrapped_key = 4;
+  string algorithm = 5; // e.g. 'nacl-secretbox-v1'
+}
+message StoreEncryptedBlobResponse {
+  EncryptedBlobMetadata blob = 1;
+}
+
+message GetEncryptedBlobRequest {
+  string id = 1;
+}
+message GetEncryptedBlobResponse {
+  EncryptedBlob blob = 1;
+}
+
+message ListMyEncryptedBlobsRequest {}
+message ListMyEncryptedBlobsResponse {
+  repeated EncryptedBlobMetadata blobs = 1;
+}
+
+// === L15.2 — Shamir-shared recovery ===
+
+message RecoveryShare {
+  string id = 1;
+  string trustee_label = 2;
+  string scheme = 3; // 'shamir-3-of-5-v1'
+  int32 share_index = 4;
+  bytes wrapped_share = 5;
+  int64 created_at_unix = 6;
+}
+
+message StoreRecoveryShareRequest {
+  string trustee_label = 1;
+  bytes wrapped_share = 2;
+  string scheme = 3;
+  int32 share_index = 4;
+}
+message StoreRecoveryShareResponse {
+  RecoveryShare share = 1;
+}
+
+message ListMyRecoverySharesRequest {}
+message ListMyRecoverySharesResponse {
+  repeated RecoveryShare shares = 1;
+}
+
+message DeleteRecoveryShareRequest {
+  string share_id = 1;
+}
+message DeleteRecoveryShareResponse {}
+
 service LegacyService {
   // Heritage Protocol: Verified Legal Standing
   rpc StoreDocument(StoreDocumentRequest) returns (StoreDocumentResponse);
   rpc ListAssets(ListAssetsRequest) returns (ListAssetsResponse);
   rpc GetHeritageStats(GetHeritageStatsRequest) returns (GetHeritageStatsResponse);
+
+  // L15.2 — end-to-end encrypted storage.
+  rpc StoreEncryptedBlob(StoreEncryptedBlobRequest) returns (StoreEncryptedBlobResponse);
+  rpc GetEncryptedBlob(GetEncryptedBlobRequest) returns (GetEncryptedBlobResponse);
+  rpc ListMyEncryptedBlobs(ListMyEncryptedBlobsRequest) returns (ListMyEncryptedBlobsResponse);
+
+  // L15.2 — Shamir-shared recovery.
+  rpc StoreRecoveryShare(StoreRecoveryShareRequest) returns (StoreRecoveryShareResponse);
+  rpc ListMyRecoveryShares(ListMyRecoverySharesRequest) returns (ListMyRecoverySharesResponse);
+  rpc DeleteRecoveryShare(DeleteRecoveryShareRequest) returns (DeleteRecoveryShareResponse);
 }
