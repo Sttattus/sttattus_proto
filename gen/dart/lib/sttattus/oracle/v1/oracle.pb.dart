@@ -531,6 +531,276 @@ class GetOracleStatsResponse extends $pb.GeneratedMessage {
   OracleStats ensureStats() => $_ensure(0);
 }
 
+/// ToolDescriptor lists a runnable tool — pillar + name + a
+/// human-readable description and input hint. The future LLM (O13.2
+/// deferral) reads this catalog to pick tools; today the Flutter
+/// scope page surfaces it so users can see what Oracle can call.
+class OracleTool extends $pb.GeneratedMessage {
+  factory OracleTool({
+    $core.String? pillar,
+    $core.String? name,
+    $core.String? description,
+    $core.String? inputHint,
+  }) {
+    final result = create();
+    if (pillar != null) result.pillar = pillar;
+    if (name != null) result.name = name;
+    if (description != null) result.description = description;
+    if (inputHint != null) result.inputHint = inputHint;
+    return result;
+  }
+
+  OracleTool._();
+
+  factory OracleTool.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory OracleTool.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OracleTool', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'pillar')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOS(4, _omitFieldNames ? '' : 'inputHint')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleTool clone() => OracleTool()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleTool copyWith(void Function(OracleTool) updates) => super.copyWith((message) => updates(message as OracleTool)) as OracleTool;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleTool create() => OracleTool._();
+  @$core.override
+  OracleTool createEmptyInstance() => create();
+  static $pb.PbList<OracleTool> createRepeated() => $pb.PbList<OracleTool>();
+  @$core.pragma('dart2js:noInline')
+  static OracleTool getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OracleTool>(create);
+  static OracleTool? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get pillar => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set pillar($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPillar() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPillar() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get inputHint => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set inputHint($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasInputHint() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearInputHint() => $_clearField(4);
+}
+
+class ListAvailableToolsRequest extends $pb.GeneratedMessage {
+  factory ListAvailableToolsRequest() => create();
+
+  ListAvailableToolsRequest._();
+
+  factory ListAvailableToolsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListAvailableToolsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAvailableToolsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAvailableToolsRequest clone() => ListAvailableToolsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAvailableToolsRequest copyWith(void Function(ListAvailableToolsRequest) updates) => super.copyWith((message) => updates(message as ListAvailableToolsRequest)) as ListAvailableToolsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAvailableToolsRequest create() => ListAvailableToolsRequest._();
+  @$core.override
+  ListAvailableToolsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListAvailableToolsRequest> createRepeated() => $pb.PbList<ListAvailableToolsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListAvailableToolsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAvailableToolsRequest>(create);
+  static ListAvailableToolsRequest? _defaultInstance;
+}
+
+class ListAvailableToolsResponse extends $pb.GeneratedMessage {
+  factory ListAvailableToolsResponse({
+    $core.Iterable<OracleTool>? tools,
+  }) {
+    final result = create();
+    if (tools != null) result.tools.addAll(tools);
+    return result;
+  }
+
+  ListAvailableToolsResponse._();
+
+  factory ListAvailableToolsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListAvailableToolsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAvailableToolsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..pc<OracleTool>(1, _omitFieldNames ? '' : 'tools', $pb.PbFieldType.PM, subBuilder: OracleTool.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAvailableToolsResponse clone() => ListAvailableToolsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAvailableToolsResponse copyWith(void Function(ListAvailableToolsResponse) updates) => super.copyWith((message) => updates(message as ListAvailableToolsResponse)) as ListAvailableToolsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAvailableToolsResponse create() => ListAvailableToolsResponse._();
+  @$core.override
+  ListAvailableToolsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListAvailableToolsResponse> createRepeated() => $pb.PbList<ListAvailableToolsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListAvailableToolsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAvailableToolsResponse>(create);
+  static ListAvailableToolsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleTool> get tools => $_getList(0);
+}
+
+/// RunOracleTool — the user (or a future LLM) invokes a named tool
+/// against their own data, gated by scope grants (O13.4). Returns
+/// the tool body as a pre-serialized JSON string; the client/LLM
+/// renders it verbatim.
+class RunOracleToolRequest extends $pb.GeneratedMessage {
+  factory RunOracleToolRequest({
+    $core.String? toolName,
+    $core.Iterable<$core.MapEntry<$core.String, $core.String>>? args,
+  }) {
+    final result = create();
+    if (toolName != null) result.toolName = toolName;
+    if (args != null) result.args.addEntries(args);
+    return result;
+  }
+
+  RunOracleToolRequest._();
+
+  factory RunOracleToolRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RunOracleToolRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RunOracleToolRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'toolName')
+    ..m<$core.String, $core.String>(2, _omitFieldNames ? '' : 'args', entryClassName: 'RunOracleToolRequest.ArgsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('sttattus.oracle.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunOracleToolRequest clone() => RunOracleToolRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunOracleToolRequest copyWith(void Function(RunOracleToolRequest) updates) => super.copyWith((message) => updates(message as RunOracleToolRequest)) as RunOracleToolRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RunOracleToolRequest create() => RunOracleToolRequest._();
+  @$core.override
+  RunOracleToolRequest createEmptyInstance() => create();
+  static $pb.PbList<RunOracleToolRequest> createRepeated() => $pb.PbList<RunOracleToolRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RunOracleToolRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RunOracleToolRequest>(create);
+  static RunOracleToolRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get toolName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set toolName($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasToolName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearToolName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbMap<$core.String, $core.String> get args => $_getMap(1);
+}
+
+class RunOracleToolResponse extends $pb.GeneratedMessage {
+  factory RunOracleToolResponse({
+    $core.String? toolName,
+    $core.String? bodyJson,
+  }) {
+    final result = create();
+    if (toolName != null) result.toolName = toolName;
+    if (bodyJson != null) result.bodyJson = bodyJson;
+    return result;
+  }
+
+  RunOracleToolResponse._();
+
+  factory RunOracleToolResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RunOracleToolResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RunOracleToolResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'toolName')
+    ..aOS(2, _omitFieldNames ? '' : 'bodyJson')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunOracleToolResponse clone() => RunOracleToolResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunOracleToolResponse copyWith(void Function(RunOracleToolResponse) updates) => super.copyWith((message) => updates(message as RunOracleToolResponse)) as RunOracleToolResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RunOracleToolResponse create() => RunOracleToolResponse._();
+  @$core.override
+  RunOracleToolResponse createEmptyInstance() => create();
+  static $pb.PbList<RunOracleToolResponse> createRepeated() => $pb.PbList<RunOracleToolResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RunOracleToolResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RunOracleToolResponse>(create);
+  static RunOracleToolResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get toolName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set toolName($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasToolName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearToolName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get bodyJson => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set bodyJson($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBodyJson() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBodyJson() => $_clearField(2);
+}
+
 /// ScopeGrant records that the user has opted Oracle into reading
 /// from a given pillar. Absent rows = "not granted" (the agent
 /// layer must refuse to call the pillar's tools).

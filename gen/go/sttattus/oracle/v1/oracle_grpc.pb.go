@@ -36,6 +36,8 @@ const (
 	OracleService_ListMyScopeGrants_FullMethodName    = "/sttattus.oracle.v1.OracleService/ListMyScopeGrants"
 	OracleService_GrantScope_FullMethodName           = "/sttattus.oracle.v1.OracleService/GrantScope"
 	OracleService_RevokeScope_FullMethodName          = "/sttattus.oracle.v1.OracleService/RevokeScope"
+	OracleService_ListAvailableTools_FullMethodName   = "/sttattus.oracle.v1.OracleService/ListAvailableTools"
+	OracleService_RunOracleTool_FullMethodName        = "/sttattus.oracle.v1.OracleService/RunOracleTool"
 )
 
 // OracleServiceClient is the client API for OracleService service.
@@ -65,6 +67,9 @@ type OracleServiceClient interface {
 	ListMyScopeGrants(ctx context.Context, in *ListMyScopeGrantsRequest, opts ...grpc.CallOption) (*ListMyScopeGrantsResponse, error)
 	GrantScope(ctx context.Context, in *GrantScopeRequest, opts ...grpc.CallOption) (*GrantScopeResponse, error)
 	RevokeScope(ctx context.Context, in *RevokeScopeRequest, opts ...grpc.CallOption) (*RevokeScopeResponse, error)
+	// O13.5 — first two agents: Vault + Forge.
+	ListAvailableTools(ctx context.Context, in *ListAvailableToolsRequest, opts ...grpc.CallOption) (*ListAvailableToolsResponse, error)
+	RunOracleTool(ctx context.Context, in *RunOracleToolRequest, opts ...grpc.CallOption) (*RunOracleToolResponse, error)
 }
 
 type oracleServiceClient struct {
@@ -254,6 +259,26 @@ func (c *oracleServiceClient) RevokeScope(ctx context.Context, in *RevokeScopeRe
 	return out, nil
 }
 
+func (c *oracleServiceClient) ListAvailableTools(ctx context.Context, in *ListAvailableToolsRequest, opts ...grpc.CallOption) (*ListAvailableToolsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAvailableToolsResponse)
+	err := c.cc.Invoke(ctx, OracleService_ListAvailableTools_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) RunOracleTool(ctx context.Context, in *RunOracleToolRequest, opts ...grpc.CallOption) (*RunOracleToolResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunOracleToolResponse)
+	err := c.cc.Invoke(ctx, OracleService_RunOracleTool_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OracleServiceServer is the server API for OracleService service.
 // All implementations must embed UnimplementedOracleServiceServer
 // for forward compatibility.
@@ -281,6 +306,9 @@ type OracleServiceServer interface {
 	ListMyScopeGrants(context.Context, *ListMyScopeGrantsRequest) (*ListMyScopeGrantsResponse, error)
 	GrantScope(context.Context, *GrantScopeRequest) (*GrantScopeResponse, error)
 	RevokeScope(context.Context, *RevokeScopeRequest) (*RevokeScopeResponse, error)
+	// O13.5 — first two agents: Vault + Forge.
+	ListAvailableTools(context.Context, *ListAvailableToolsRequest) (*ListAvailableToolsResponse, error)
+	RunOracleTool(context.Context, *RunOracleToolRequest) (*RunOracleToolResponse, error)
 	mustEmbedUnimplementedOracleServiceServer()
 }
 
@@ -341,6 +369,12 @@ func (UnimplementedOracleServiceServer) GrantScope(context.Context, *GrantScopeR
 }
 func (UnimplementedOracleServiceServer) RevokeScope(context.Context, *RevokeScopeRequest) (*RevokeScopeResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RevokeScope not implemented")
+}
+func (UnimplementedOracleServiceServer) ListAvailableTools(context.Context, *ListAvailableToolsRequest) (*ListAvailableToolsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAvailableTools not implemented")
+}
+func (UnimplementedOracleServiceServer) RunOracleTool(context.Context, *RunOracleToolRequest) (*RunOracleToolResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunOracleTool not implemented")
 }
 func (UnimplementedOracleServiceServer) mustEmbedUnimplementedOracleServiceServer() {}
 func (UnimplementedOracleServiceServer) testEmbeddedByValue()                       {}
@@ -662,6 +696,42 @@ func _OracleService_RevokeScope_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OracleService_ListAvailableTools_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAvailableToolsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ListAvailableTools(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ListAvailableTools_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ListAvailableTools(ctx, req.(*ListAvailableToolsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_RunOracleTool_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunOracleToolRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).RunOracleTool(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_RunOracleTool_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).RunOracleTool(ctx, req.(*RunOracleToolRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OracleService_ServiceDesc is the grpc.ServiceDesc for OracleService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -732,6 +802,14 @@ var OracleService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RevokeScope",
 			Handler:    _OracleService_RevokeScope_Handler,
+		},
+		{
+			MethodName: "ListAvailableTools",
+			Handler:    _OracleService_ListAvailableTools_Handler,
+		},
+		{
+			MethodName: "RunOracleTool",
+			Handler:    _OracleService_RunOracleTool_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

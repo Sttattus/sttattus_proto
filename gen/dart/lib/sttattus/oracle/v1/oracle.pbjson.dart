@@ -159,6 +159,86 @@ final $typed_data.Uint8List getOracleStatsResponseDescriptor = $convert.base64De
     'ChZHZXRPcmFjbGVTdGF0c1Jlc3BvbnNlEjUKBXN0YXRzGAEgASgLMh8uc3R0YXR0dXMub3JhY2'
     'xlLnYxLk9yYWNsZVN0YXRzUgVzdGF0cw==');
 
+@$core.Deprecated('Use oracleToolDescriptor instead')
+const OracleTool$json = {
+  '1': 'OracleTool',
+  '2': [
+    {'1': 'pillar', '3': 1, '4': 1, '5': 9, '10': 'pillar'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'input_hint', '3': 4, '4': 1, '5': 9, '10': 'inputHint'},
+  ],
+};
+
+/// Descriptor for `OracleTool`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List oracleToolDescriptor = $convert.base64Decode(
+    'CgpPcmFjbGVUb29sEhYKBnBpbGxhchgBIAEoCVIGcGlsbGFyEhIKBG5hbWUYAiABKAlSBG5hbW'
+    'USIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEh0KCmlucHV0X2hpbnQYBCABKAlS'
+    'CWlucHV0SGludA==');
+
+@$core.Deprecated('Use listAvailableToolsRequestDescriptor instead')
+const ListAvailableToolsRequest$json = {
+  '1': 'ListAvailableToolsRequest',
+};
+
+/// Descriptor for `ListAvailableToolsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAvailableToolsRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0QXZhaWxhYmxlVG9vbHNSZXF1ZXN0');
+
+@$core.Deprecated('Use listAvailableToolsResponseDescriptor instead')
+const ListAvailableToolsResponse$json = {
+  '1': 'ListAvailableToolsResponse',
+  '2': [
+    {'1': 'tools', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.OracleTool', '10': 'tools'},
+  ],
+};
+
+/// Descriptor for `ListAvailableToolsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAvailableToolsResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0QXZhaWxhYmxlVG9vbHNSZXNwb25zZRI0CgV0b29scxgBIAMoCzIeLnN0dGF0dHVzLm'
+    '9yYWNsZS52MS5PcmFjbGVUb29sUgV0b29scw==');
+
+@$core.Deprecated('Use runOracleToolRequestDescriptor instead')
+const RunOracleToolRequest$json = {
+  '1': 'RunOracleToolRequest',
+  '2': [
+    {'1': 'tool_name', '3': 1, '4': 1, '5': 9, '10': 'toolName'},
+    {'1': 'args', '3': 2, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.RunOracleToolRequest.ArgsEntry', '10': 'args'},
+  ],
+  '3': [RunOracleToolRequest_ArgsEntry$json],
+};
+
+@$core.Deprecated('Use runOracleToolRequestDescriptor instead')
+const RunOracleToolRequest_ArgsEntry$json = {
+  '1': 'ArgsEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `RunOracleToolRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List runOracleToolRequestDescriptor = $convert.base64Decode(
+    'ChRSdW5PcmFjbGVUb29sUmVxdWVzdBIbCgl0b29sX25hbWUYASABKAlSCHRvb2xOYW1lEkYKBG'
+    'FyZ3MYAiADKAsyMi5zdHRhdHR1cy5vcmFjbGUudjEuUnVuT3JhY2xlVG9vbFJlcXVlc3QuQXJn'
+    'c0VudHJ5UgRhcmdzGjcKCUFyZ3NFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIA'
+    'EoCVIFdmFsdWU6AjgB');
+
+@$core.Deprecated('Use runOracleToolResponseDescriptor instead')
+const RunOracleToolResponse$json = {
+  '1': 'RunOracleToolResponse',
+  '2': [
+    {'1': 'tool_name', '3': 1, '4': 1, '5': 9, '10': 'toolName'},
+    {'1': 'body_json', '3': 2, '4': 1, '5': 9, '10': 'bodyJson'},
+  ],
+};
+
+/// Descriptor for `RunOracleToolResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List runOracleToolResponseDescriptor = $convert.base64Decode(
+    'ChVSdW5PcmFjbGVUb29sUmVzcG9uc2USGwoJdG9vbF9uYW1lGAEgASgJUgh0b29sTmFtZRIbCg'
+    'lib2R5X2pzb24YAiABKAlSCGJvZHlKc29u');
+
 @$core.Deprecated('Use scopeGrantDescriptor instead')
 const ScopeGrant$json = {
   '1': 'ScopeGrant',

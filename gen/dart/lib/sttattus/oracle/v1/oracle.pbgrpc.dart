@@ -106,6 +106,15 @@ class OracleServiceClient extends $grpc.Client {
     return $createUnaryCall(_$revokeScope, request, options: options);
   }
 
+  /// O13.5 — first two agents: Vault + Forge.
+  $grpc.ResponseFuture<$0.ListAvailableToolsResponse> listAvailableTools($0.ListAvailableToolsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listAvailableTools, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RunOracleToolResponse> runOracleTool($0.RunOracleToolRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$runOracleTool, request, options: options);
+  }
+
     // method descriptors
 
   static final _$query = $grpc.ClientMethod<$0.QueryRequest, $0.QueryResponse>(
@@ -176,6 +185,14 @@ class OracleServiceClient extends $grpc.Client {
       '/sttattus.oracle.v1.OracleService/RevokeScope',
       ($0.RevokeScopeRequest value) => value.writeToBuffer(),
       $0.RevokeScopeResponse.fromBuffer);
+  static final _$listAvailableTools = $grpc.ClientMethod<$0.ListAvailableToolsRequest, $0.ListAvailableToolsResponse>(
+      '/sttattus.oracle.v1.OracleService/ListAvailableTools',
+      ($0.ListAvailableToolsRequest value) => value.writeToBuffer(),
+      $0.ListAvailableToolsResponse.fromBuffer);
+  static final _$runOracleTool = $grpc.ClientMethod<$0.RunOracleToolRequest, $0.RunOracleToolResponse>(
+      '/sttattus.oracle.v1.OracleService/RunOracleTool',
+      ($0.RunOracleToolRequest value) => value.writeToBuffer(),
+      $0.RunOracleToolResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.oracle.v1.OracleService')
@@ -302,6 +319,20 @@ abstract class OracleServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.RevokeScopeRequest.fromBuffer(value),
         ($0.RevokeScopeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAvailableToolsRequest, $0.ListAvailableToolsResponse>(
+        'ListAvailableTools',
+        listAvailableTools_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListAvailableToolsRequest.fromBuffer(value),
+        ($0.ListAvailableToolsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RunOracleToolRequest, $0.RunOracleToolResponse>(
+        'RunOracleTool',
+        runOracleTool_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RunOracleToolRequest.fromBuffer(value),
+        ($0.RunOracleToolResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.QueryResponse> query_Pre($grpc.ServiceCall $call, $async.Future<$0.QueryRequest> $request) async {
@@ -405,5 +436,17 @@ abstract class OracleServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.RevokeScopeResponse> revokeScope($grpc.ServiceCall call, $0.RevokeScopeRequest request);
+
+  $async.Future<$0.ListAvailableToolsResponse> listAvailableTools_Pre($grpc.ServiceCall $call, $async.Future<$0.ListAvailableToolsRequest> $request) async {
+    return listAvailableTools($call, await $request);
+  }
+
+  $async.Future<$0.ListAvailableToolsResponse> listAvailableTools($grpc.ServiceCall call, $0.ListAvailableToolsRequest request);
+
+  $async.Future<$0.RunOracleToolResponse> runOracleTool_Pre($grpc.ServiceCall $call, $async.Future<$0.RunOracleToolRequest> $request) async {
+    return runOracleTool($call, await $request);
+  }
+
+  $async.Future<$0.RunOracleToolResponse> runOracleTool($grpc.ServiceCall call, $0.RunOracleToolRequest request);
 
 }

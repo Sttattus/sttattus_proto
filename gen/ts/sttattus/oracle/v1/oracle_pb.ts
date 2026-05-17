@@ -418,6 +418,225 @@ export class GetOracleStatsResponse extends Message<GetOracleStatsResponse> {
 }
 
 /**
+ * ToolDescriptor lists a runnable tool — pillar + name + a
+ * human-readable description and input hint. The future LLM (O13.2
+ * deferral) reads this catalog to pick tools; today the Flutter
+ * scope page surfaces it so users can see what Oracle can call.
+ *
+ * @generated from message sttattus.oracle.v1.OracleTool
+ */
+export class OracleTool extends Message<OracleTool> {
+  /**
+   * @generated from field: string pillar = 1;
+   */
+  pillar = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string description = 3;
+   */
+  description = "";
+
+  /**
+   * @generated from field: string input_hint = 4;
+   */
+  inputHint = "";
+
+  constructor(data?: PartialMessage<OracleTool>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleTool";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pillar", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "input_hint", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleTool {
+    return new OracleTool().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleTool {
+    return new OracleTool().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleTool {
+    return new OracleTool().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleTool | PlainMessage<OracleTool> | undefined, b: OracleTool | PlainMessage<OracleTool> | undefined): boolean {
+    return proto3.util.equals(OracleTool, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ListAvailableToolsRequest
+ */
+export class ListAvailableToolsRequest extends Message<ListAvailableToolsRequest> {
+  constructor(data?: PartialMessage<ListAvailableToolsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ListAvailableToolsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAvailableToolsRequest {
+    return new ListAvailableToolsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAvailableToolsRequest {
+    return new ListAvailableToolsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAvailableToolsRequest {
+    return new ListAvailableToolsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAvailableToolsRequest | PlainMessage<ListAvailableToolsRequest> | undefined, b: ListAvailableToolsRequest | PlainMessage<ListAvailableToolsRequest> | undefined): boolean {
+    return proto3.util.equals(ListAvailableToolsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ListAvailableToolsResponse
+ */
+export class ListAvailableToolsResponse extends Message<ListAvailableToolsResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleTool tools = 1;
+   */
+  tools: OracleTool[] = [];
+
+  constructor(data?: PartialMessage<ListAvailableToolsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ListAvailableToolsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tools", kind: "message", T: OracleTool, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAvailableToolsResponse {
+    return new ListAvailableToolsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAvailableToolsResponse {
+    return new ListAvailableToolsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAvailableToolsResponse {
+    return new ListAvailableToolsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAvailableToolsResponse | PlainMessage<ListAvailableToolsResponse> | undefined, b: ListAvailableToolsResponse | PlainMessage<ListAvailableToolsResponse> | undefined): boolean {
+    return proto3.util.equals(ListAvailableToolsResponse, a, b);
+  }
+}
+
+/**
+ * RunOracleTool — the user (or a future LLM) invokes a named tool
+ * against their own data, gated by scope grants (O13.4). Returns
+ * the tool body as a pre-serialized JSON string; the client/LLM
+ * renders it verbatim.
+ *
+ * @generated from message sttattus.oracle.v1.RunOracleToolRequest
+ */
+export class RunOracleToolRequest extends Message<RunOracleToolRequest> {
+  /**
+   * @generated from field: string tool_name = 1;
+   */
+  toolName = "";
+
+  /**
+   * @generated from field: map<string, string> args = 2;
+   */
+  args: { [key: string]: string } = {};
+
+  constructor(data?: PartialMessage<RunOracleToolRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RunOracleToolRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tool_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "args", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RunOracleToolRequest {
+    return new RunOracleToolRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RunOracleToolRequest {
+    return new RunOracleToolRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RunOracleToolRequest {
+    return new RunOracleToolRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RunOracleToolRequest | PlainMessage<RunOracleToolRequest> | undefined, b: RunOracleToolRequest | PlainMessage<RunOracleToolRequest> | undefined): boolean {
+    return proto3.util.equals(RunOracleToolRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RunOracleToolResponse
+ */
+export class RunOracleToolResponse extends Message<RunOracleToolResponse> {
+  /**
+   * @generated from field: string tool_name = 1;
+   */
+  toolName = "";
+
+  /**
+   * @generated from field: string body_json = 2;
+   */
+  bodyJson = "";
+
+  constructor(data?: PartialMessage<RunOracleToolResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RunOracleToolResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tool_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "body_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RunOracleToolResponse {
+    return new RunOracleToolResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RunOracleToolResponse {
+    return new RunOracleToolResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RunOracleToolResponse {
+    return new RunOracleToolResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RunOracleToolResponse | PlainMessage<RunOracleToolResponse> | undefined, b: RunOracleToolResponse | PlainMessage<RunOracleToolResponse> | undefined): boolean {
+    return proto3.util.equals(RunOracleToolResponse, a, b);
+  }
+}
+
+/**
  * ScopeGrant records that the user has opted Oracle into reading
  * from a given pillar. Absent rows = "not granted" (the agent
  * layer must refuse to call the pillar's tools).

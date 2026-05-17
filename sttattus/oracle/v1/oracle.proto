@@ -60,6 +60,37 @@ message GetOracleStatsResponse {
   OracleStats stats = 1;
 }
 
+// === O13.5 — first two agents: Vault + Forge ===
+
+// ToolDescriptor lists a runnable tool — pillar + name + a
+// human-readable description and input hint. The future LLM (O13.2
+// deferral) reads this catalog to pick tools; today the Flutter
+// scope page surfaces it so users can see what Oracle can call.
+message OracleTool {
+  string pillar = 1;
+  string name = 2;
+  string description = 3;
+  string input_hint = 4;
+}
+
+message ListAvailableToolsRequest {}
+message ListAvailableToolsResponse {
+  repeated OracleTool tools = 1;
+}
+
+// RunOracleTool — the user (or a future LLM) invokes a named tool
+// against their own data, gated by scope grants (O13.4). Returns
+// the tool body as a pre-serialized JSON string; the client/LLM
+// renders it verbatim.
+message RunOracleToolRequest {
+  string tool_name = 1;
+  map<string, string> args = 2;
+}
+message RunOracleToolResponse {
+  string tool_name = 1;
+  string body_json = 2;
+}
+
 // === O13.4 — per-pillar scope grants ===
 
 // ScopeGrant records that the user has opted Oracle into reading
@@ -245,4 +276,8 @@ service OracleService {
   rpc ListMyScopeGrants(ListMyScopeGrantsRequest) returns (ListMyScopeGrantsResponse);
   rpc GrantScope(GrantScopeRequest) returns (GrantScopeResponse);
   rpc RevokeScope(RevokeScopeRequest) returns (RevokeScopeResponse);
+
+  // O13.5 — first two agents: Vault + Forge.
+  rpc ListAvailableTools(ListAvailableToolsRequest) returns (ListAvailableToolsResponse);
+  rpc RunOracleTool(RunOracleToolRequest) returns (RunOracleToolResponse);
 }
