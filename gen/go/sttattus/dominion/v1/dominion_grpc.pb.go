@@ -24,6 +24,10 @@ const (
 	DominionService_GetDominionStats_FullMethodName      = "/sttattus.dominion.v1.DominionService/GetDominionStats"
 	DominionService_GetLoungeKey_FullMethodName          = "/sttattus.dominion.v1.DominionService/GetLoungeKey"
 	DominionService_EstimatePropertyValue_FullMethodName = "/sttattus.dominion.v1.DominionService/EstimatePropertyValue"
+	DominionService_SubmitDeed_FullMethodName            = "/sttattus.dominion.v1.DominionService/SubmitDeed"
+	DominionService_ListMyDeeds_FullMethodName           = "/sttattus.dominion.v1.DominionService/ListMyDeeds"
+	DominionService_ListDeedsForProperty_FullMethodName  = "/sttattus.dominion.v1.DominionService/ListDeedsForProperty"
+	DominionService_AdminReviewDeed_FullMethodName       = "/sttattus.dominion.v1.DominionService/AdminReviewDeed"
 )
 
 // DominionServiceClient is the client API for DominionService service.
@@ -38,6 +42,11 @@ type DominionServiceClient interface {
 	GetLoungeKey(ctx context.Context, in *GetLoungeKeyRequest, opts ...grpc.CallOption) (*GetLoungeKeyResponse, error)
 	// D14.3 — AVM estimate (Zillow + Rightmove pilot).
 	EstimatePropertyValue(ctx context.Context, in *EstimatePropertyValueRequest, opts ...grpc.CallOption) (*EstimatePropertyValueResponse, error)
+	// D14.4 — verification pipeline.
+	SubmitDeed(ctx context.Context, in *SubmitDeedRequest, opts ...grpc.CallOption) (*SubmitDeedResponse, error)
+	ListMyDeeds(ctx context.Context, in *ListMyDeedsRequest, opts ...grpc.CallOption) (*ListMyDeedsResponse, error)
+	ListDeedsForProperty(ctx context.Context, in *ListDeedsForPropertyRequest, opts ...grpc.CallOption) (*ListDeedsForPropertyResponse, error)
+	AdminReviewDeed(ctx context.Context, in *AdminReviewDeedRequest, opts ...grpc.CallOption) (*AdminReviewDeedResponse, error)
 }
 
 type dominionServiceClient struct {
@@ -98,6 +107,46 @@ func (c *dominionServiceClient) EstimatePropertyValue(ctx context.Context, in *E
 	return out, nil
 }
 
+func (c *dominionServiceClient) SubmitDeed(ctx context.Context, in *SubmitDeedRequest, opts ...grpc.CallOption) (*SubmitDeedResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitDeedResponse)
+	err := c.cc.Invoke(ctx, DominionService_SubmitDeed_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ListMyDeeds(ctx context.Context, in *ListMyDeedsRequest, opts ...grpc.CallOption) (*ListMyDeedsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyDeedsResponse)
+	err := c.cc.Invoke(ctx, DominionService_ListMyDeeds_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ListDeedsForProperty(ctx context.Context, in *ListDeedsForPropertyRequest, opts ...grpc.CallOption) (*ListDeedsForPropertyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDeedsForPropertyResponse)
+	err := c.cc.Invoke(ctx, DominionService_ListDeedsForProperty_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) AdminReviewDeed(ctx context.Context, in *AdminReviewDeedRequest, opts ...grpc.CallOption) (*AdminReviewDeedResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminReviewDeedResponse)
+	err := c.cc.Invoke(ctx, DominionService_AdminReviewDeed_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DominionServiceServer is the server API for DominionService service.
 // All implementations must embed UnimplementedDominionServiceServer
 // for forward compatibility.
@@ -110,6 +159,11 @@ type DominionServiceServer interface {
 	GetLoungeKey(context.Context, *GetLoungeKeyRequest) (*GetLoungeKeyResponse, error)
 	// D14.3 — AVM estimate (Zillow + Rightmove pilot).
 	EstimatePropertyValue(context.Context, *EstimatePropertyValueRequest) (*EstimatePropertyValueResponse, error)
+	// D14.4 — verification pipeline.
+	SubmitDeed(context.Context, *SubmitDeedRequest) (*SubmitDeedResponse, error)
+	ListMyDeeds(context.Context, *ListMyDeedsRequest) (*ListMyDeedsResponse, error)
+	ListDeedsForProperty(context.Context, *ListDeedsForPropertyRequest) (*ListDeedsForPropertyResponse, error)
+	AdminReviewDeed(context.Context, *AdminReviewDeedRequest) (*AdminReviewDeedResponse, error)
 	mustEmbedUnimplementedDominionServiceServer()
 }
 
@@ -134,6 +188,18 @@ func (UnimplementedDominionServiceServer) GetLoungeKey(context.Context, *GetLoun
 }
 func (UnimplementedDominionServiceServer) EstimatePropertyValue(context.Context, *EstimatePropertyValueRequest) (*EstimatePropertyValueResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method EstimatePropertyValue not implemented")
+}
+func (UnimplementedDominionServiceServer) SubmitDeed(context.Context, *SubmitDeedRequest) (*SubmitDeedResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitDeed not implemented")
+}
+func (UnimplementedDominionServiceServer) ListMyDeeds(context.Context, *ListMyDeedsRequest) (*ListMyDeedsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyDeeds not implemented")
+}
+func (UnimplementedDominionServiceServer) ListDeedsForProperty(context.Context, *ListDeedsForPropertyRequest) (*ListDeedsForPropertyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListDeedsForProperty not implemented")
+}
+func (UnimplementedDominionServiceServer) AdminReviewDeed(context.Context, *AdminReviewDeedRequest) (*AdminReviewDeedResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminReviewDeed not implemented")
 }
 func (UnimplementedDominionServiceServer) mustEmbedUnimplementedDominionServiceServer() {}
 func (UnimplementedDominionServiceServer) testEmbeddedByValue()                         {}
@@ -246,6 +312,78 @@ func _DominionService_EstimatePropertyValue_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DominionService_SubmitDeed_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitDeedRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).SubmitDeed(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_SubmitDeed_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).SubmitDeed(ctx, req.(*SubmitDeedRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ListMyDeeds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyDeedsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ListMyDeeds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ListMyDeeds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ListMyDeeds(ctx, req.(*ListMyDeedsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ListDeedsForProperty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListDeedsForPropertyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ListDeedsForProperty(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ListDeedsForProperty_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ListDeedsForProperty(ctx, req.(*ListDeedsForPropertyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_AdminReviewDeed_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminReviewDeedRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).AdminReviewDeed(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_AdminReviewDeed_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).AdminReviewDeed(ctx, req.(*AdminReviewDeedRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DominionService_ServiceDesc is the grpc.ServiceDesc for DominionService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -272,6 +410,22 @@ var DominionService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "EstimatePropertyValue",
 			Handler:    _DominionService_EstimatePropertyValue_Handler,
+		},
+		{
+			MethodName: "SubmitDeed",
+			Handler:    _DominionService_SubmitDeed_Handler,
+		},
+		{
+			MethodName: "ListMyDeeds",
+			Handler:    _DominionService_ListMyDeeds_Handler,
+		},
+		{
+			MethodName: "ListDeedsForProperty",
+			Handler:    _DominionService_ListDeedsForProperty_Handler,
+		},
+		{
+			MethodName: "AdminReviewDeed",
+			Handler:    _DominionService_AdminReviewDeed_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

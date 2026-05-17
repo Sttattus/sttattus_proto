@@ -570,6 +570,407 @@ export class GetLoungeKeyResponse extends Message<GetLoungeKeyResponse> {
 }
 
 /**
+ * @generated from message sttattus.dominion.v1.Deed
+ */
+export class Deed extends Message<Deed> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string property_id = 2;
+   */
+  propertyId = "";
+
+  /**
+   * @generated from field: string file_url = 3;
+   */
+  fileUrl = "";
+
+  /**
+   * 'deed' | 'title' | 'survey' | 'tax_record'
+   *
+   * @generated from field: string kind = 4;
+   */
+  kind = "";
+
+  /**
+   * 'pending' | 'approved' | 'rejected'
+   *
+   * @generated from field: string status = 5;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string admin_note = 6;
+   */
+  adminNote = "";
+
+  /**
+   * @generated from field: int64 submitted_at_unix = 7;
+   */
+  submittedAtUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 decided_at_unix = 8;
+   */
+  decidedAtUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<Deed>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.Deed";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "property_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "file_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "admin_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "submitted_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: "decided_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Deed {
+    return new Deed().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Deed {
+    return new Deed().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Deed {
+    return new Deed().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: Deed | PlainMessage<Deed> | undefined, b: Deed | PlainMessage<Deed> | undefined): boolean {
+    return proto3.util.equals(Deed, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dominion.v1.SubmitDeedRequest
+ */
+export class SubmitDeedRequest extends Message<SubmitDeedRequest> {
+  /**
+   * @generated from field: string property_id = 1;
+   */
+  propertyId = "";
+
+  /**
+   * @generated from field: string file_url = 2;
+   */
+  fileUrl = "";
+
+  /**
+   * @generated from field: string kind = 3;
+   */
+  kind = "";
+
+  constructor(data?: PartialMessage<SubmitDeedRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.SubmitDeedRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "property_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "file_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitDeedRequest {
+    return new SubmitDeedRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitDeedRequest {
+    return new SubmitDeedRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitDeedRequest {
+    return new SubmitDeedRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitDeedRequest | PlainMessage<SubmitDeedRequest> | undefined, b: SubmitDeedRequest | PlainMessage<SubmitDeedRequest> | undefined): boolean {
+    return proto3.util.equals(SubmitDeedRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dominion.v1.SubmitDeedResponse
+ */
+export class SubmitDeedResponse extends Message<SubmitDeedResponse> {
+  /**
+   * @generated from field: sttattus.dominion.v1.Deed deed = 1;
+   */
+  deed?: Deed;
+
+  constructor(data?: PartialMessage<SubmitDeedResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.SubmitDeedResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "deed", kind: "message", T: Deed },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitDeedResponse {
+    return new SubmitDeedResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitDeedResponse {
+    return new SubmitDeedResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitDeedResponse {
+    return new SubmitDeedResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitDeedResponse | PlainMessage<SubmitDeedResponse> | undefined, b: SubmitDeedResponse | PlainMessage<SubmitDeedResponse> | undefined): boolean {
+    return proto3.util.equals(SubmitDeedResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dominion.v1.ListMyDeedsRequest
+ */
+export class ListMyDeedsRequest extends Message<ListMyDeedsRequest> {
+  constructor(data?: PartialMessage<ListMyDeedsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.ListMyDeedsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyDeedsRequest {
+    return new ListMyDeedsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyDeedsRequest {
+    return new ListMyDeedsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyDeedsRequest {
+    return new ListMyDeedsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyDeedsRequest | PlainMessage<ListMyDeedsRequest> | undefined, b: ListMyDeedsRequest | PlainMessage<ListMyDeedsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyDeedsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dominion.v1.ListMyDeedsResponse
+ */
+export class ListMyDeedsResponse extends Message<ListMyDeedsResponse> {
+  /**
+   * @generated from field: repeated sttattus.dominion.v1.Deed deeds = 1;
+   */
+  deeds: Deed[] = [];
+
+  constructor(data?: PartialMessage<ListMyDeedsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.ListMyDeedsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "deeds", kind: "message", T: Deed, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyDeedsResponse {
+    return new ListMyDeedsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyDeedsResponse {
+    return new ListMyDeedsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyDeedsResponse {
+    return new ListMyDeedsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyDeedsResponse | PlainMessage<ListMyDeedsResponse> | undefined, b: ListMyDeedsResponse | PlainMessage<ListMyDeedsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyDeedsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dominion.v1.ListDeedsForPropertyRequest
+ */
+export class ListDeedsForPropertyRequest extends Message<ListDeedsForPropertyRequest> {
+  /**
+   * @generated from field: string property_id = 1;
+   */
+  propertyId = "";
+
+  constructor(data?: PartialMessage<ListDeedsForPropertyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.ListDeedsForPropertyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "property_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListDeedsForPropertyRequest {
+    return new ListDeedsForPropertyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListDeedsForPropertyRequest {
+    return new ListDeedsForPropertyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListDeedsForPropertyRequest {
+    return new ListDeedsForPropertyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListDeedsForPropertyRequest | PlainMessage<ListDeedsForPropertyRequest> | undefined, b: ListDeedsForPropertyRequest | PlainMessage<ListDeedsForPropertyRequest> | undefined): boolean {
+    return proto3.util.equals(ListDeedsForPropertyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dominion.v1.ListDeedsForPropertyResponse
+ */
+export class ListDeedsForPropertyResponse extends Message<ListDeedsForPropertyResponse> {
+  /**
+   * @generated from field: repeated sttattus.dominion.v1.Deed deeds = 1;
+   */
+  deeds: Deed[] = [];
+
+  constructor(data?: PartialMessage<ListDeedsForPropertyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.ListDeedsForPropertyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "deeds", kind: "message", T: Deed, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListDeedsForPropertyResponse {
+    return new ListDeedsForPropertyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListDeedsForPropertyResponse {
+    return new ListDeedsForPropertyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListDeedsForPropertyResponse {
+    return new ListDeedsForPropertyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListDeedsForPropertyResponse | PlainMessage<ListDeedsForPropertyResponse> | undefined, b: ListDeedsForPropertyResponse | PlainMessage<ListDeedsForPropertyResponse> | undefined): boolean {
+    return proto3.util.equals(ListDeedsForPropertyResponse, a, b);
+  }
+}
+
+/**
+ * Admin-only — gated by role check in the handler.
+ *
+ * @generated from message sttattus.dominion.v1.AdminReviewDeedRequest
+ */
+export class AdminReviewDeedRequest extends Message<AdminReviewDeedRequest> {
+  /**
+   * @generated from field: string deed_id = 1;
+   */
+  deedId = "";
+
+  /**
+   * 'approved' | 'rejected'
+   *
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string admin_note = 3;
+   */
+  adminNote = "";
+
+  constructor(data?: PartialMessage<AdminReviewDeedRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.AdminReviewDeedRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "deed_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "admin_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminReviewDeedRequest {
+    return new AdminReviewDeedRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminReviewDeedRequest {
+    return new AdminReviewDeedRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminReviewDeedRequest {
+    return new AdminReviewDeedRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminReviewDeedRequest | PlainMessage<AdminReviewDeedRequest> | undefined, b: AdminReviewDeedRequest | PlainMessage<AdminReviewDeedRequest> | undefined): boolean {
+    return proto3.util.equals(AdminReviewDeedRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dominion.v1.AdminReviewDeedResponse
+ */
+export class AdminReviewDeedResponse extends Message<AdminReviewDeedResponse> {
+  /**
+   * @generated from field: sttattus.dominion.v1.Deed deed = 1;
+   */
+  deed?: Deed;
+
+  constructor(data?: PartialMessage<AdminReviewDeedResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dominion.v1.AdminReviewDeedResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "deed", kind: "message", T: Deed },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminReviewDeedResponse {
+    return new AdminReviewDeedResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminReviewDeedResponse {
+    return new AdminReviewDeedResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminReviewDeedResponse {
+    return new AdminReviewDeedResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminReviewDeedResponse | PlainMessage<AdminReviewDeedResponse> | undefined, b: AdminReviewDeedResponse | PlainMessage<AdminReviewDeedResponse> | undefined): boolean {
+    return proto3.util.equals(AdminReviewDeedResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.dominion.v1.AVMResult
  */
 export class AVMResult extends Message<AVMResult> {

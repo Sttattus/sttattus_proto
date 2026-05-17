@@ -686,6 +686,529 @@ class GetLoungeKeyResponse extends $pb.GeneratedMessage {
   $1.Timestamp ensureExpiresAt() => $_ensure(1);
 }
 
+class Deed extends $pb.GeneratedMessage {
+  factory Deed({
+    $core.String? id,
+    $core.String? propertyId,
+    $core.String? fileUrl,
+    $core.String? kind,
+    $core.String? status,
+    $core.String? adminNote,
+    $fixnum.Int64? submittedAtUnix,
+    $fixnum.Int64? decidedAtUnix,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (propertyId != null) result.propertyId = propertyId;
+    if (fileUrl != null) result.fileUrl = fileUrl;
+    if (kind != null) result.kind = kind;
+    if (status != null) result.status = status;
+    if (adminNote != null) result.adminNote = adminNote;
+    if (submittedAtUnix != null) result.submittedAtUnix = submittedAtUnix;
+    if (decidedAtUnix != null) result.decidedAtUnix = decidedAtUnix;
+    return result;
+  }
+
+  Deed._();
+
+  factory Deed.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Deed.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Deed', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dominion.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'propertyId')
+    ..aOS(3, _omitFieldNames ? '' : 'fileUrl')
+    ..aOS(4, _omitFieldNames ? '' : 'kind')
+    ..aOS(5, _omitFieldNames ? '' : 'status')
+    ..aOS(6, _omitFieldNames ? '' : 'adminNote')
+    ..aInt64(7, _omitFieldNames ? '' : 'submittedAtUnix')
+    ..aInt64(8, _omitFieldNames ? '' : 'decidedAtUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Deed clone() => Deed()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Deed copyWith(void Function(Deed) updates) => super.copyWith((message) => updates(message as Deed)) as Deed;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Deed create() => Deed._();
+  @$core.override
+  Deed createEmptyInstance() => create();
+  static $pb.PbList<Deed> createRepeated() => $pb.PbList<Deed>();
+  @$core.pragma('dart2js:noInline')
+  static Deed getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Deed>(create);
+  static Deed? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get propertyId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set propertyId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPropertyId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPropertyId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get fileUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set fileUrl($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFileUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFileUrl() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get kind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set kind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get status => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set status($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get adminNote => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set adminNote($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAdminNote() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAdminNote() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get submittedAtUnix => $_getI64(6);
+  @$pb.TagNumber(7)
+  set submittedAtUnix($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSubmittedAtUnix() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSubmittedAtUnix() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get decidedAtUnix => $_getI64(7);
+  @$pb.TagNumber(8)
+  set decidedAtUnix($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasDecidedAtUnix() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDecidedAtUnix() => $_clearField(8);
+}
+
+class SubmitDeedRequest extends $pb.GeneratedMessage {
+  factory SubmitDeedRequest({
+    $core.String? propertyId,
+    $core.String? fileUrl,
+    $core.String? kind,
+  }) {
+    final result = create();
+    if (propertyId != null) result.propertyId = propertyId;
+    if (fileUrl != null) result.fileUrl = fileUrl;
+    if (kind != null) result.kind = kind;
+    return result;
+  }
+
+  SubmitDeedRequest._();
+
+  factory SubmitDeedRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SubmitDeedRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitDeedRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dominion.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'propertyId')
+    ..aOS(2, _omitFieldNames ? '' : 'fileUrl')
+    ..aOS(3, _omitFieldNames ? '' : 'kind')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitDeedRequest clone() => SubmitDeedRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitDeedRequest copyWith(void Function(SubmitDeedRequest) updates) => super.copyWith((message) => updates(message as SubmitDeedRequest)) as SubmitDeedRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitDeedRequest create() => SubmitDeedRequest._();
+  @$core.override
+  SubmitDeedRequest createEmptyInstance() => create();
+  static $pb.PbList<SubmitDeedRequest> createRepeated() => $pb.PbList<SubmitDeedRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SubmitDeedRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitDeedRequest>(create);
+  static SubmitDeedRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get propertyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set propertyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPropertyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPropertyId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get fileUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set fileUrl($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasFileUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFileUrl() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get kind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set kind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearKind() => $_clearField(3);
+}
+
+class SubmitDeedResponse extends $pb.GeneratedMessage {
+  factory SubmitDeedResponse({
+    Deed? deed,
+  }) {
+    final result = create();
+    if (deed != null) result.deed = deed;
+    return result;
+  }
+
+  SubmitDeedResponse._();
+
+  factory SubmitDeedResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SubmitDeedResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitDeedResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dominion.v1'), createEmptyInstance: create)
+    ..aOM<Deed>(1, _omitFieldNames ? '' : 'deed', subBuilder: Deed.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitDeedResponse clone() => SubmitDeedResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitDeedResponse copyWith(void Function(SubmitDeedResponse) updates) => super.copyWith((message) => updates(message as SubmitDeedResponse)) as SubmitDeedResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitDeedResponse create() => SubmitDeedResponse._();
+  @$core.override
+  SubmitDeedResponse createEmptyInstance() => create();
+  static $pb.PbList<SubmitDeedResponse> createRepeated() => $pb.PbList<SubmitDeedResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SubmitDeedResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitDeedResponse>(create);
+  static SubmitDeedResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Deed get deed => $_getN(0);
+  @$pb.TagNumber(1)
+  set deed(Deed value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeed() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeed() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Deed ensureDeed() => $_ensure(0);
+}
+
+class ListMyDeedsRequest extends $pb.GeneratedMessage {
+  factory ListMyDeedsRequest() => create();
+
+  ListMyDeedsRequest._();
+
+  factory ListMyDeedsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyDeedsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyDeedsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dominion.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyDeedsRequest clone() => ListMyDeedsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyDeedsRequest copyWith(void Function(ListMyDeedsRequest) updates) => super.copyWith((message) => updates(message as ListMyDeedsRequest)) as ListMyDeedsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyDeedsRequest create() => ListMyDeedsRequest._();
+  @$core.override
+  ListMyDeedsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyDeedsRequest> createRepeated() => $pb.PbList<ListMyDeedsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyDeedsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyDeedsRequest>(create);
+  static ListMyDeedsRequest? _defaultInstance;
+}
+
+class ListMyDeedsResponse extends $pb.GeneratedMessage {
+  factory ListMyDeedsResponse({
+    $core.Iterable<Deed>? deeds,
+  }) {
+    final result = create();
+    if (deeds != null) result.deeds.addAll(deeds);
+    return result;
+  }
+
+  ListMyDeedsResponse._();
+
+  factory ListMyDeedsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyDeedsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyDeedsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dominion.v1'), createEmptyInstance: create)
+    ..pc<Deed>(1, _omitFieldNames ? '' : 'deeds', $pb.PbFieldType.PM, subBuilder: Deed.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyDeedsResponse clone() => ListMyDeedsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyDeedsResponse copyWith(void Function(ListMyDeedsResponse) updates) => super.copyWith((message) => updates(message as ListMyDeedsResponse)) as ListMyDeedsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyDeedsResponse create() => ListMyDeedsResponse._();
+  @$core.override
+  ListMyDeedsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyDeedsResponse> createRepeated() => $pb.PbList<ListMyDeedsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyDeedsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyDeedsResponse>(create);
+  static ListMyDeedsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Deed> get deeds => $_getList(0);
+}
+
+class ListDeedsForPropertyRequest extends $pb.GeneratedMessage {
+  factory ListDeedsForPropertyRequest({
+    $core.String? propertyId,
+  }) {
+    final result = create();
+    if (propertyId != null) result.propertyId = propertyId;
+    return result;
+  }
+
+  ListDeedsForPropertyRequest._();
+
+  factory ListDeedsForPropertyRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListDeedsForPropertyRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListDeedsForPropertyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dominion.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'propertyId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDeedsForPropertyRequest clone() => ListDeedsForPropertyRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDeedsForPropertyRequest copyWith(void Function(ListDeedsForPropertyRequest) updates) => super.copyWith((message) => updates(message as ListDeedsForPropertyRequest)) as ListDeedsForPropertyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDeedsForPropertyRequest create() => ListDeedsForPropertyRequest._();
+  @$core.override
+  ListDeedsForPropertyRequest createEmptyInstance() => create();
+  static $pb.PbList<ListDeedsForPropertyRequest> createRepeated() => $pb.PbList<ListDeedsForPropertyRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListDeedsForPropertyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListDeedsForPropertyRequest>(create);
+  static ListDeedsForPropertyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get propertyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set propertyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPropertyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPropertyId() => $_clearField(1);
+}
+
+class ListDeedsForPropertyResponse extends $pb.GeneratedMessage {
+  factory ListDeedsForPropertyResponse({
+    $core.Iterable<Deed>? deeds,
+  }) {
+    final result = create();
+    if (deeds != null) result.deeds.addAll(deeds);
+    return result;
+  }
+
+  ListDeedsForPropertyResponse._();
+
+  factory ListDeedsForPropertyResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListDeedsForPropertyResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListDeedsForPropertyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dominion.v1'), createEmptyInstance: create)
+    ..pc<Deed>(1, _omitFieldNames ? '' : 'deeds', $pb.PbFieldType.PM, subBuilder: Deed.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDeedsForPropertyResponse clone() => ListDeedsForPropertyResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDeedsForPropertyResponse copyWith(void Function(ListDeedsForPropertyResponse) updates) => super.copyWith((message) => updates(message as ListDeedsForPropertyResponse)) as ListDeedsForPropertyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDeedsForPropertyResponse create() => ListDeedsForPropertyResponse._();
+  @$core.override
+  ListDeedsForPropertyResponse createEmptyInstance() => create();
+  static $pb.PbList<ListDeedsForPropertyResponse> createRepeated() => $pb.PbList<ListDeedsForPropertyResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListDeedsForPropertyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListDeedsForPropertyResponse>(create);
+  static ListDeedsForPropertyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Deed> get deeds => $_getList(0);
+}
+
+/// Admin-only — gated by role check in the handler.
+class AdminReviewDeedRequest extends $pb.GeneratedMessage {
+  factory AdminReviewDeedRequest({
+    $core.String? deedId,
+    $core.String? status,
+    $core.String? adminNote,
+  }) {
+    final result = create();
+    if (deedId != null) result.deedId = deedId;
+    if (status != null) result.status = status;
+    if (adminNote != null) result.adminNote = adminNote;
+    return result;
+  }
+
+  AdminReviewDeedRequest._();
+
+  factory AdminReviewDeedRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AdminReviewDeedRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AdminReviewDeedRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dominion.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deedId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aOS(3, _omitFieldNames ? '' : 'adminNote')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReviewDeedRequest clone() => AdminReviewDeedRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReviewDeedRequest copyWith(void Function(AdminReviewDeedRequest) updates) => super.copyWith((message) => updates(message as AdminReviewDeedRequest)) as AdminReviewDeedRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminReviewDeedRequest create() => AdminReviewDeedRequest._();
+  @$core.override
+  AdminReviewDeedRequest createEmptyInstance() => create();
+  static $pb.PbList<AdminReviewDeedRequest> createRepeated() => $pb.PbList<AdminReviewDeedRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AdminReviewDeedRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AdminReviewDeedRequest>(create);
+  static AdminReviewDeedRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deedId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deedId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeedId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeedId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get adminNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set adminNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAdminNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAdminNote() => $_clearField(3);
+}
+
+class AdminReviewDeedResponse extends $pb.GeneratedMessage {
+  factory AdminReviewDeedResponse({
+    Deed? deed,
+  }) {
+    final result = create();
+    if (deed != null) result.deed = deed;
+    return result;
+  }
+
+  AdminReviewDeedResponse._();
+
+  factory AdminReviewDeedResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AdminReviewDeedResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AdminReviewDeedResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dominion.v1'), createEmptyInstance: create)
+    ..aOM<Deed>(1, _omitFieldNames ? '' : 'deed', subBuilder: Deed.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReviewDeedResponse clone() => AdminReviewDeedResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReviewDeedResponse copyWith(void Function(AdminReviewDeedResponse) updates) => super.copyWith((message) => updates(message as AdminReviewDeedResponse)) as AdminReviewDeedResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminReviewDeedResponse create() => AdminReviewDeedResponse._();
+  @$core.override
+  AdminReviewDeedResponse createEmptyInstance() => create();
+  static $pb.PbList<AdminReviewDeedResponse> createRepeated() => $pb.PbList<AdminReviewDeedResponse>();
+  @$core.pragma('dart2js:noInline')
+  static AdminReviewDeedResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AdminReviewDeedResponse>(create);
+  static AdminReviewDeedResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Deed get deed => $_getN(0);
+  @$pb.TagNumber(1)
+  set deed(Deed value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeed() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeed() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Deed ensureDeed() => $_ensure(0);
+}
+
 class AVMResult extends $pb.GeneratedMessage {
   factory AVMResult({
     $core.String? propertyId,

@@ -79,6 +79,50 @@ message GetLoungeKeyResponse {
   google.protobuf.Timestamp expires_at = 2;
 }
 
+// === D14.4 — verification pipeline (deed upload + admin review) ===
+
+message Deed {
+  string id = 1;
+  string property_id = 2;
+  string file_url = 3;
+  string kind = 4; // 'deed' | 'title' | 'survey' | 'tax_record'
+  string status = 5; // 'pending' | 'approved' | 'rejected'
+  string admin_note = 6;
+  int64 submitted_at_unix = 7;
+  int64 decided_at_unix = 8;
+}
+
+message SubmitDeedRequest {
+  string property_id = 1;
+  string file_url = 2;
+  string kind = 3;
+}
+message SubmitDeedResponse {
+  Deed deed = 1;
+}
+
+message ListMyDeedsRequest {}
+message ListMyDeedsResponse {
+  repeated Deed deeds = 1;
+}
+
+message ListDeedsForPropertyRequest {
+  string property_id = 1;
+}
+message ListDeedsForPropertyResponse {
+  repeated Deed deeds = 1;
+}
+
+// Admin-only — gated by role check in the handler.
+message AdminReviewDeedRequest {
+  string deed_id = 1;
+  string status = 2; // 'approved' | 'rejected'
+  string admin_note = 3;
+}
+message AdminReviewDeedResponse {
+  Deed deed = 1;
+}
+
 // === D14.3 — AVM (Automated Valuation Model) ===
 
 message AVMResult {
@@ -111,4 +155,10 @@ service DominionService {
 
   // D14.3 — AVM estimate (Zillow + Rightmove pilot).
   rpc EstimatePropertyValue(EstimatePropertyValueRequest) returns (EstimatePropertyValueResponse);
+
+  // D14.4 — verification pipeline.
+  rpc SubmitDeed(SubmitDeedRequest) returns (SubmitDeedResponse);
+  rpc ListMyDeeds(ListMyDeedsRequest) returns (ListMyDeedsResponse);
+  rpc ListDeedsForProperty(ListDeedsForPropertyRequest) returns (ListDeedsForPropertyResponse);
+  rpc AdminReviewDeed(AdminReviewDeedRequest) returns (AdminReviewDeedResponse);
 }

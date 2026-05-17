@@ -205,6 +205,133 @@ final $typed_data.Uint8List getLoungeKeyResponseDescriptor = $convert.base64Deco
     'V5Snd0EjkKCmV4cGlyZXNfYXQYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgll'
     'eHBpcmVzQXQ=');
 
+@$core.Deprecated('Use deedDescriptor instead')
+const Deed$json = {
+  '1': 'Deed',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'property_id', '3': 2, '4': 1, '5': 9, '10': 'propertyId'},
+    {'1': 'file_url', '3': 3, '4': 1, '5': 9, '10': 'fileUrl'},
+    {'1': 'kind', '3': 4, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'admin_note', '3': 6, '4': 1, '5': 9, '10': 'adminNote'},
+    {'1': 'submitted_at_unix', '3': 7, '4': 1, '5': 3, '10': 'submittedAtUnix'},
+    {'1': 'decided_at_unix', '3': 8, '4': 1, '5': 3, '10': 'decidedAtUnix'},
+  ],
+};
+
+/// Descriptor for `Deed`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deedDescriptor = $convert.base64Decode(
+    'CgREZWVkEg4KAmlkGAEgASgJUgJpZBIfCgtwcm9wZXJ0eV9pZBgCIAEoCVIKcHJvcGVydHlJZB'
+    'IZCghmaWxlX3VybBgDIAEoCVIHZmlsZVVybBISCgRraW5kGAQgASgJUgRraW5kEhYKBnN0YXR1'
+    'cxgFIAEoCVIGc3RhdHVzEh0KCmFkbWluX25vdGUYBiABKAlSCWFkbWluTm90ZRIqChFzdWJtaX'
+    'R0ZWRfYXRfdW5peBgHIAEoA1IPc3VibWl0dGVkQXRVbml4EiYKD2RlY2lkZWRfYXRfdW5peBgI'
+    'IAEoA1INZGVjaWRlZEF0VW5peA==');
+
+@$core.Deprecated('Use submitDeedRequestDescriptor instead')
+const SubmitDeedRequest$json = {
+  '1': 'SubmitDeedRequest',
+  '2': [
+    {'1': 'property_id', '3': 1, '4': 1, '5': 9, '10': 'propertyId'},
+    {'1': 'file_url', '3': 2, '4': 1, '5': 9, '10': 'fileUrl'},
+    {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
+  ],
+};
+
+/// Descriptor for `SubmitDeedRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitDeedRequestDescriptor = $convert.base64Decode(
+    'ChFTdWJtaXREZWVkUmVxdWVzdBIfCgtwcm9wZXJ0eV9pZBgBIAEoCVIKcHJvcGVydHlJZBIZCg'
+    'hmaWxlX3VybBgCIAEoCVIHZmlsZVVybBISCgRraW5kGAMgASgJUgRraW5k');
+
+@$core.Deprecated('Use submitDeedResponseDescriptor instead')
+const SubmitDeedResponse$json = {
+  '1': 'SubmitDeedResponse',
+  '2': [
+    {'1': 'deed', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dominion.v1.Deed', '10': 'deed'},
+  ],
+};
+
+/// Descriptor for `SubmitDeedResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitDeedResponseDescriptor = $convert.base64Decode(
+    'ChJTdWJtaXREZWVkUmVzcG9uc2USLgoEZGVlZBgBIAEoCzIaLnN0dGF0dHVzLmRvbWluaW9uLn'
+    'YxLkRlZWRSBGRlZWQ=');
+
+@$core.Deprecated('Use listMyDeedsRequestDescriptor instead')
+const ListMyDeedsRequest$json = {
+  '1': 'ListMyDeedsRequest',
+};
+
+/// Descriptor for `ListMyDeedsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyDeedsRequestDescriptor = $convert.base64Decode(
+    'ChJMaXN0TXlEZWVkc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listMyDeedsResponseDescriptor instead')
+const ListMyDeedsResponse$json = {
+  '1': 'ListMyDeedsResponse',
+  '2': [
+    {'1': 'deeds', '3': 1, '4': 3, '5': 11, '6': '.sttattus.dominion.v1.Deed', '10': 'deeds'},
+  ],
+};
+
+/// Descriptor for `ListMyDeedsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyDeedsResponseDescriptor = $convert.base64Decode(
+    'ChNMaXN0TXlEZWVkc1Jlc3BvbnNlEjAKBWRlZWRzGAEgAygLMhouc3R0YXR0dXMuZG9taW5pb2'
+    '4udjEuRGVlZFIFZGVlZHM=');
+
+@$core.Deprecated('Use listDeedsForPropertyRequestDescriptor instead')
+const ListDeedsForPropertyRequest$json = {
+  '1': 'ListDeedsForPropertyRequest',
+  '2': [
+    {'1': 'property_id', '3': 1, '4': 1, '5': 9, '10': 'propertyId'},
+  ],
+};
+
+/// Descriptor for `ListDeedsForPropertyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listDeedsForPropertyRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0RGVlZHNGb3JQcm9wZXJ0eVJlcXVlc3QSHwoLcHJvcGVydHlfaWQYASABKAlSCnByb3'
+    'BlcnR5SWQ=');
+
+@$core.Deprecated('Use listDeedsForPropertyResponseDescriptor instead')
+const ListDeedsForPropertyResponse$json = {
+  '1': 'ListDeedsForPropertyResponse',
+  '2': [
+    {'1': 'deeds', '3': 1, '4': 3, '5': 11, '6': '.sttattus.dominion.v1.Deed', '10': 'deeds'},
+  ],
+};
+
+/// Descriptor for `ListDeedsForPropertyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listDeedsForPropertyResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0RGVlZHNGb3JQcm9wZXJ0eVJlc3BvbnNlEjAKBWRlZWRzGAEgAygLMhouc3R0YXR0dX'
+    'MuZG9taW5pb24udjEuRGVlZFIFZGVlZHM=');
+
+@$core.Deprecated('Use adminReviewDeedRequestDescriptor instead')
+const AdminReviewDeedRequest$json = {
+  '1': 'AdminReviewDeedRequest',
+  '2': [
+    {'1': 'deed_id', '3': 1, '4': 1, '5': 9, '10': 'deedId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'admin_note', '3': 3, '4': 1, '5': 9, '10': 'adminNote'},
+  ],
+};
+
+/// Descriptor for `AdminReviewDeedRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List adminReviewDeedRequestDescriptor = $convert.base64Decode(
+    'ChZBZG1pblJldmlld0RlZWRSZXF1ZXN0EhcKB2RlZWRfaWQYASABKAlSBmRlZWRJZBIWCgZzdG'
+    'F0dXMYAiABKAlSBnN0YXR1cxIdCgphZG1pbl9ub3RlGAMgASgJUglhZG1pbk5vdGU=');
+
+@$core.Deprecated('Use adminReviewDeedResponseDescriptor instead')
+const AdminReviewDeedResponse$json = {
+  '1': 'AdminReviewDeedResponse',
+  '2': [
+    {'1': 'deed', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dominion.v1.Deed', '10': 'deed'},
+  ],
+};
+
+/// Descriptor for `AdminReviewDeedResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List adminReviewDeedResponseDescriptor = $convert.base64Decode(
+    'ChdBZG1pblJldmlld0RlZWRSZXNwb25zZRIuCgRkZWVkGAEgASgLMhouc3R0YXR0dXMuZG9taW'
+    '5pb24udjEuRGVlZFIEZGVlZA==');
+
 @$core.Deprecated('Use aVMResultDescriptor instead')
 const AVMResult$json = {
   '1': 'AVMResult',

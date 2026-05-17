@@ -710,6 +710,483 @@ func (x *GetLoungeKeyResponse) GetExpiresAt() *timestamppb.Timestamp {
 	return nil
 }
 
+type Deed struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	PropertyId      string                 `protobuf:"bytes,2,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	FileUrl         string                 `protobuf:"bytes,3,opt,name=file_url,json=fileUrl,proto3" json:"file_url,omitempty"`
+	Kind            string                 `protobuf:"bytes,4,opt,name=kind,proto3" json:"kind,omitempty"`     // 'deed' | 'title' | 'survey' | 'tax_record'
+	Status          string                 `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"` // 'pending' | 'approved' | 'rejected'
+	AdminNote       string                 `protobuf:"bytes,6,opt,name=admin_note,json=adminNote,proto3" json:"admin_note,omitempty"`
+	SubmittedAtUnix int64                  `protobuf:"varint,7,opt,name=submitted_at_unix,json=submittedAtUnix,proto3" json:"submitted_at_unix,omitempty"`
+	DecidedAtUnix   int64                  `protobuf:"varint,8,opt,name=decided_at_unix,json=decidedAtUnix,proto3" json:"decided_at_unix,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *Deed) Reset() {
+	*x = Deed{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Deed) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Deed) ProtoMessage() {}
+
+func (x *Deed) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Deed.ProtoReflect.Descriptor instead.
+func (*Deed) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *Deed) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Deed) GetPropertyId() string {
+	if x != nil {
+		return x.PropertyId
+	}
+	return ""
+}
+
+func (x *Deed) GetFileUrl() string {
+	if x != nil {
+		return x.FileUrl
+	}
+	return ""
+}
+
+func (x *Deed) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *Deed) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *Deed) GetAdminNote() string {
+	if x != nil {
+		return x.AdminNote
+	}
+	return ""
+}
+
+func (x *Deed) GetSubmittedAtUnix() int64 {
+	if x != nil {
+		return x.SubmittedAtUnix
+	}
+	return 0
+}
+
+func (x *Deed) GetDecidedAtUnix() int64 {
+	if x != nil {
+		return x.DecidedAtUnix
+	}
+	return 0
+}
+
+type SubmitDeedRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	PropertyId    string                 `protobuf:"bytes,1,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	FileUrl       string                 `protobuf:"bytes,2,opt,name=file_url,json=fileUrl,proto3" json:"file_url,omitempty"`
+	Kind          string                 `protobuf:"bytes,3,opt,name=kind,proto3" json:"kind,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitDeedRequest) Reset() {
+	*x = SubmitDeedRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitDeedRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitDeedRequest) ProtoMessage() {}
+
+func (x *SubmitDeedRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitDeedRequest.ProtoReflect.Descriptor instead.
+func (*SubmitDeedRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *SubmitDeedRequest) GetPropertyId() string {
+	if x != nil {
+		return x.PropertyId
+	}
+	return ""
+}
+
+func (x *SubmitDeedRequest) GetFileUrl() string {
+	if x != nil {
+		return x.FileUrl
+	}
+	return ""
+}
+
+func (x *SubmitDeedRequest) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+type SubmitDeedResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Deed          *Deed                  `protobuf:"bytes,1,opt,name=deed,proto3" json:"deed,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitDeedResponse) Reset() {
+	*x = SubmitDeedResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitDeedResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitDeedResponse) ProtoMessage() {}
+
+func (x *SubmitDeedResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitDeedResponse.ProtoReflect.Descriptor instead.
+func (*SubmitDeedResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *SubmitDeedResponse) GetDeed() *Deed {
+	if x != nil {
+		return x.Deed
+	}
+	return nil
+}
+
+type ListMyDeedsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyDeedsRequest) Reset() {
+	*x = ListMyDeedsRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyDeedsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyDeedsRequest) ProtoMessage() {}
+
+func (x *ListMyDeedsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyDeedsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyDeedsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{13}
+}
+
+type ListMyDeedsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Deeds         []*Deed                `protobuf:"bytes,1,rep,name=deeds,proto3" json:"deeds,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyDeedsResponse) Reset() {
+	*x = ListMyDeedsResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyDeedsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyDeedsResponse) ProtoMessage() {}
+
+func (x *ListMyDeedsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyDeedsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyDeedsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *ListMyDeedsResponse) GetDeeds() []*Deed {
+	if x != nil {
+		return x.Deeds
+	}
+	return nil
+}
+
+type ListDeedsForPropertyRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	PropertyId    string                 `protobuf:"bytes,1,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListDeedsForPropertyRequest) Reset() {
+	*x = ListDeedsForPropertyRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListDeedsForPropertyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListDeedsForPropertyRequest) ProtoMessage() {}
+
+func (x *ListDeedsForPropertyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListDeedsForPropertyRequest.ProtoReflect.Descriptor instead.
+func (*ListDeedsForPropertyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *ListDeedsForPropertyRequest) GetPropertyId() string {
+	if x != nil {
+		return x.PropertyId
+	}
+	return ""
+}
+
+type ListDeedsForPropertyResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Deeds         []*Deed                `protobuf:"bytes,1,rep,name=deeds,proto3" json:"deeds,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListDeedsForPropertyResponse) Reset() {
+	*x = ListDeedsForPropertyResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListDeedsForPropertyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListDeedsForPropertyResponse) ProtoMessage() {}
+
+func (x *ListDeedsForPropertyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListDeedsForPropertyResponse.ProtoReflect.Descriptor instead.
+func (*ListDeedsForPropertyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *ListDeedsForPropertyResponse) GetDeeds() []*Deed {
+	if x != nil {
+		return x.Deeds
+	}
+	return nil
+}
+
+// Admin-only — gated by role check in the handler.
+type AdminReviewDeedRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	DeedId        string                 `protobuf:"bytes,1,opt,name=deed_id,json=deedId,proto3" json:"deed_id,omitempty"`
+	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"` // 'approved' | 'rejected'
+	AdminNote     string                 `protobuf:"bytes,3,opt,name=admin_note,json=adminNote,proto3" json:"admin_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminReviewDeedRequest) Reset() {
+	*x = AdminReviewDeedRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminReviewDeedRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminReviewDeedRequest) ProtoMessage() {}
+
+func (x *AdminReviewDeedRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminReviewDeedRequest.ProtoReflect.Descriptor instead.
+func (*AdminReviewDeedRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *AdminReviewDeedRequest) GetDeedId() string {
+	if x != nil {
+		return x.DeedId
+	}
+	return ""
+}
+
+func (x *AdminReviewDeedRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *AdminReviewDeedRequest) GetAdminNote() string {
+	if x != nil {
+		return x.AdminNote
+	}
+	return ""
+}
+
+type AdminReviewDeedResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Deed          *Deed                  `protobuf:"bytes,1,opt,name=deed,proto3" json:"deed,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminReviewDeedResponse) Reset() {
+	*x = AdminReviewDeedResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminReviewDeedResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminReviewDeedResponse) ProtoMessage() {}
+
+func (x *AdminReviewDeedResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminReviewDeedResponse.ProtoReflect.Descriptor instead.
+func (*AdminReviewDeedResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *AdminReviewDeedResponse) GetDeed() *Deed {
+	if x != nil {
+		return x.Deed
+	}
+	return nil
+}
+
 type AVMResult struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
 	PropertyId        string                 `protobuf:"bytes,1,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
@@ -725,7 +1202,7 @@ type AVMResult struct {
 
 func (x *AVMResult) Reset() {
 	*x = AVMResult{}
-	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[10]
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -737,7 +1214,7 @@ func (x *AVMResult) String() string {
 func (*AVMResult) ProtoMessage() {}
 
 func (x *AVMResult) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[10]
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -750,7 +1227,7 @@ func (x *AVMResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AVMResult.ProtoReflect.Descriptor instead.
 func (*AVMResult) Descriptor() ([]byte, []int) {
-	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{10}
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *AVMResult) GetPropertyId() string {
@@ -812,7 +1289,7 @@ type EstimatePropertyValueRequest struct {
 
 func (x *EstimatePropertyValueRequest) Reset() {
 	*x = EstimatePropertyValueRequest{}
-	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[11]
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -824,7 +1301,7 @@ func (x *EstimatePropertyValueRequest) String() string {
 func (*EstimatePropertyValueRequest) ProtoMessage() {}
 
 func (x *EstimatePropertyValueRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[11]
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -837,7 +1314,7 @@ func (x *EstimatePropertyValueRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EstimatePropertyValueRequest.ProtoReflect.Descriptor instead.
 func (*EstimatePropertyValueRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{11}
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *EstimatePropertyValueRequest) GetPropertyId() string {
@@ -864,7 +1341,7 @@ type EstimatePropertyValueResponse struct {
 
 func (x *EstimatePropertyValueResponse) Reset() {
 	*x = EstimatePropertyValueResponse{}
-	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[12]
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -876,7 +1353,7 @@ func (x *EstimatePropertyValueResponse) String() string {
 func (*EstimatePropertyValueResponse) ProtoMessage() {}
 
 func (x *EstimatePropertyValueResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[12]
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -889,7 +1366,7 @@ func (x *EstimatePropertyValueResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EstimatePropertyValueResponse.ProtoReflect.Descriptor instead.
 func (*EstimatePropertyValueResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{12}
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *EstimatePropertyValueResponse) GetResult() *AVMResult {
@@ -956,7 +1433,40 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x14GetLoungeKeyResponse\x12$\n" +
 	"\x0elounge_key_jwt\x18\x01 \x01(\tR\floungeKeyJwt\x129\n" +
 	"\n" +
-	"expires_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"\x8f\x02\n" +
+	"expires_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"\xf1\x01\n" +
+	"\x04Deed\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
+	"\vproperty_id\x18\x02 \x01(\tR\n" +
+	"propertyId\x12\x19\n" +
+	"\bfile_url\x18\x03 \x01(\tR\afileUrl\x12\x12\n" +
+	"\x04kind\x18\x04 \x01(\tR\x04kind\x12\x16\n" +
+	"\x06status\x18\x05 \x01(\tR\x06status\x12\x1d\n" +
+	"\n" +
+	"admin_note\x18\x06 \x01(\tR\tadminNote\x12*\n" +
+	"\x11submitted_at_unix\x18\a \x01(\x03R\x0fsubmittedAtUnix\x12&\n" +
+	"\x0fdecided_at_unix\x18\b \x01(\x03R\rdecidedAtUnix\"c\n" +
+	"\x11SubmitDeedRequest\x12\x1f\n" +
+	"\vproperty_id\x18\x01 \x01(\tR\n" +
+	"propertyId\x12\x19\n" +
+	"\bfile_url\x18\x02 \x01(\tR\afileUrl\x12\x12\n" +
+	"\x04kind\x18\x03 \x01(\tR\x04kind\"D\n" +
+	"\x12SubmitDeedResponse\x12.\n" +
+	"\x04deed\x18\x01 \x01(\v2\x1a.sttattus.dominion.v1.DeedR\x04deed\"\x14\n" +
+	"\x12ListMyDeedsRequest\"G\n" +
+	"\x13ListMyDeedsResponse\x120\n" +
+	"\x05deeds\x18\x01 \x03(\v2\x1a.sttattus.dominion.v1.DeedR\x05deeds\">\n" +
+	"\x1bListDeedsForPropertyRequest\x12\x1f\n" +
+	"\vproperty_id\x18\x01 \x01(\tR\n" +
+	"propertyId\"P\n" +
+	"\x1cListDeedsForPropertyResponse\x120\n" +
+	"\x05deeds\x18\x01 \x03(\v2\x1a.sttattus.dominion.v1.DeedR\x05deeds\"h\n" +
+	"\x16AdminReviewDeedRequest\x12\x17\n" +
+	"\adeed_id\x18\x01 \x01(\tR\x06deedId\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\x12\x1d\n" +
+	"\n" +
+	"admin_note\x18\x03 \x01(\tR\tadminNote\"I\n" +
+	"\x17AdminReviewDeedResponse\x12.\n" +
+	"\x04deed\x18\x01 \x01(\v2\x1a.sttattus.dominion.v1.DeedR\x04deed\"\x8f\x02\n" +
 	"\tAVMResult\x12\x1f\n" +
 	"\vproperty_id\x18\x01 \x01(\tR\n" +
 	"propertyId\x12\x1a\n" +
@@ -985,13 +1495,18 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xcb\x04\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xff\a\n" +
 	"\x0fDominionService\x12k\n" +
 	"\x0eSyncProperties\x12+.sttattus.dominion.v1.SyncPropertiesRequest\x1a,.sttattus.dominion.v1.SyncPropertiesResponse\x12n\n" +
 	"\x0fListTerritories\x12,.sttattus.dominion.v1.ListTerritoriesRequest\x1a-.sttattus.dominion.v1.ListTerritoriesResponse\x12q\n" +
 	"\x10GetDominionStats\x12-.sttattus.dominion.v1.GetDominionStatsRequest\x1a..sttattus.dominion.v1.GetDominionStatsResponse\x12e\n" +
 	"\fGetLoungeKey\x12).sttattus.dominion.v1.GetLoungeKeyRequest\x1a*.sttattus.dominion.v1.GetLoungeKeyResponse\x12\x80\x01\n" +
-	"\x15EstimatePropertyValue\x122.sttattus.dominion.v1.EstimatePropertyValueRequest\x1a3.sttattus.dominion.v1.EstimatePropertyValueResponseBBZ@github.com/sttattus/proto/gen/go/sttattus/dominion/v1;dominionv1b\x06proto3"
+	"\x15EstimatePropertyValue\x122.sttattus.dominion.v1.EstimatePropertyValueRequest\x1a3.sttattus.dominion.v1.EstimatePropertyValueResponse\x12_\n" +
+	"\n" +
+	"SubmitDeed\x12'.sttattus.dominion.v1.SubmitDeedRequest\x1a(.sttattus.dominion.v1.SubmitDeedResponse\x12b\n" +
+	"\vListMyDeeds\x12(.sttattus.dominion.v1.ListMyDeedsRequest\x1a).sttattus.dominion.v1.ListMyDeedsResponse\x12}\n" +
+	"\x14ListDeedsForProperty\x121.sttattus.dominion.v1.ListDeedsForPropertyRequest\x1a2.sttattus.dominion.v1.ListDeedsForPropertyResponse\x12n\n" +
+	"\x0fAdminReviewDeed\x12,.sttattus.dominion.v1.AdminReviewDeedRequest\x1a-.sttattus.dominion.v1.AdminReviewDeedResponseBBZ@github.com/sttattus/proto/gen/go/sttattus/dominion/v1;dominionv1b\x06proto3"
 
 var (
 	file_sttattus_dominion_v1_dominion_proto_rawDescOnce sync.Once
@@ -1006,7 +1521,7 @@ func file_sttattus_dominion_v1_dominion_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_dominion_v1_dominion_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_dominion_v1_dominion_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_sttattus_dominion_v1_dominion_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
 var file_sttattus_dominion_v1_dominion_proto_goTypes = []any{
 	(EstateCategory)(0),                   // 0: sttattus.dominion.v1.EstateCategory
 	(VerificationStatus)(0),               // 1: sttattus.dominion.v1.VerificationStatus
@@ -1020,36 +1535,57 @@ var file_sttattus_dominion_v1_dominion_proto_goTypes = []any{
 	(*GetDominionStatsResponse)(nil),      // 9: sttattus.dominion.v1.GetDominionStatsResponse
 	(*GetLoungeKeyRequest)(nil),           // 10: sttattus.dominion.v1.GetLoungeKeyRequest
 	(*GetLoungeKeyResponse)(nil),          // 11: sttattus.dominion.v1.GetLoungeKeyResponse
-	(*AVMResult)(nil),                     // 12: sttattus.dominion.v1.AVMResult
-	(*EstimatePropertyValueRequest)(nil),  // 13: sttattus.dominion.v1.EstimatePropertyValueRequest
-	(*EstimatePropertyValueResponse)(nil), // 14: sttattus.dominion.v1.EstimatePropertyValueResponse
-	(*timestamppb.Timestamp)(nil),         // 15: google.protobuf.Timestamp
+	(*Deed)(nil),                          // 12: sttattus.dominion.v1.Deed
+	(*SubmitDeedRequest)(nil),             // 13: sttattus.dominion.v1.SubmitDeedRequest
+	(*SubmitDeedResponse)(nil),            // 14: sttattus.dominion.v1.SubmitDeedResponse
+	(*ListMyDeedsRequest)(nil),            // 15: sttattus.dominion.v1.ListMyDeedsRequest
+	(*ListMyDeedsResponse)(nil),           // 16: sttattus.dominion.v1.ListMyDeedsResponse
+	(*ListDeedsForPropertyRequest)(nil),   // 17: sttattus.dominion.v1.ListDeedsForPropertyRequest
+	(*ListDeedsForPropertyResponse)(nil),  // 18: sttattus.dominion.v1.ListDeedsForPropertyResponse
+	(*AdminReviewDeedRequest)(nil),        // 19: sttattus.dominion.v1.AdminReviewDeedRequest
+	(*AdminReviewDeedResponse)(nil),       // 20: sttattus.dominion.v1.AdminReviewDeedResponse
+	(*AVMResult)(nil),                     // 21: sttattus.dominion.v1.AVMResult
+	(*EstimatePropertyValueRequest)(nil),  // 22: sttattus.dominion.v1.EstimatePropertyValueRequest
+	(*EstimatePropertyValueResponse)(nil), // 23: sttattus.dominion.v1.EstimatePropertyValueResponse
+	(*timestamppb.Timestamp)(nil),         // 24: google.protobuf.Timestamp
 }
 var file_sttattus_dominion_v1_dominion_proto_depIdxs = []int32{
 	0,  // 0: sttattus.dominion.v1.Property.category:type_name -> sttattus.dominion.v1.EstateCategory
 	1,  // 1: sttattus.dominion.v1.Property.status:type_name -> sttattus.dominion.v1.VerificationStatus
-	15, // 2: sttattus.dominion.v1.Property.acquired_at:type_name -> google.protobuf.Timestamp
+	24, // 2: sttattus.dominion.v1.Property.acquired_at:type_name -> google.protobuf.Timestamp
 	2,  // 3: sttattus.dominion.v1.SyncPropertiesRequest.properties:type_name -> sttattus.dominion.v1.Property
 	3,  // 4: sttattus.dominion.v1.SyncPropertiesResponse.stats:type_name -> sttattus.dominion.v1.DominionStats
 	2,  // 5: sttattus.dominion.v1.ListTerritoriesResponse.properties:type_name -> sttattus.dominion.v1.Property
 	3,  // 6: sttattus.dominion.v1.GetDominionStatsResponse.stats:type_name -> sttattus.dominion.v1.DominionStats
-	15, // 7: sttattus.dominion.v1.GetLoungeKeyResponse.expires_at:type_name -> google.protobuf.Timestamp
-	12, // 8: sttattus.dominion.v1.EstimatePropertyValueResponse.result:type_name -> sttattus.dominion.v1.AVMResult
-	4,  // 9: sttattus.dominion.v1.DominionService.SyncProperties:input_type -> sttattus.dominion.v1.SyncPropertiesRequest
-	6,  // 10: sttattus.dominion.v1.DominionService.ListTerritories:input_type -> sttattus.dominion.v1.ListTerritoriesRequest
-	8,  // 11: sttattus.dominion.v1.DominionService.GetDominionStats:input_type -> sttattus.dominion.v1.GetDominionStatsRequest
-	10, // 12: sttattus.dominion.v1.DominionService.GetLoungeKey:input_type -> sttattus.dominion.v1.GetLoungeKeyRequest
-	13, // 13: sttattus.dominion.v1.DominionService.EstimatePropertyValue:input_type -> sttattus.dominion.v1.EstimatePropertyValueRequest
-	5,  // 14: sttattus.dominion.v1.DominionService.SyncProperties:output_type -> sttattus.dominion.v1.SyncPropertiesResponse
-	7,  // 15: sttattus.dominion.v1.DominionService.ListTerritories:output_type -> sttattus.dominion.v1.ListTerritoriesResponse
-	9,  // 16: sttattus.dominion.v1.DominionService.GetDominionStats:output_type -> sttattus.dominion.v1.GetDominionStatsResponse
-	11, // 17: sttattus.dominion.v1.DominionService.GetLoungeKey:output_type -> sttattus.dominion.v1.GetLoungeKeyResponse
-	14, // 18: sttattus.dominion.v1.DominionService.EstimatePropertyValue:output_type -> sttattus.dominion.v1.EstimatePropertyValueResponse
-	14, // [14:19] is the sub-list for method output_type
-	9,  // [9:14] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	24, // 7: sttattus.dominion.v1.GetLoungeKeyResponse.expires_at:type_name -> google.protobuf.Timestamp
+	12, // 8: sttattus.dominion.v1.SubmitDeedResponse.deed:type_name -> sttattus.dominion.v1.Deed
+	12, // 9: sttattus.dominion.v1.ListMyDeedsResponse.deeds:type_name -> sttattus.dominion.v1.Deed
+	12, // 10: sttattus.dominion.v1.ListDeedsForPropertyResponse.deeds:type_name -> sttattus.dominion.v1.Deed
+	12, // 11: sttattus.dominion.v1.AdminReviewDeedResponse.deed:type_name -> sttattus.dominion.v1.Deed
+	21, // 12: sttattus.dominion.v1.EstimatePropertyValueResponse.result:type_name -> sttattus.dominion.v1.AVMResult
+	4,  // 13: sttattus.dominion.v1.DominionService.SyncProperties:input_type -> sttattus.dominion.v1.SyncPropertiesRequest
+	6,  // 14: sttattus.dominion.v1.DominionService.ListTerritories:input_type -> sttattus.dominion.v1.ListTerritoriesRequest
+	8,  // 15: sttattus.dominion.v1.DominionService.GetDominionStats:input_type -> sttattus.dominion.v1.GetDominionStatsRequest
+	10, // 16: sttattus.dominion.v1.DominionService.GetLoungeKey:input_type -> sttattus.dominion.v1.GetLoungeKeyRequest
+	22, // 17: sttattus.dominion.v1.DominionService.EstimatePropertyValue:input_type -> sttattus.dominion.v1.EstimatePropertyValueRequest
+	13, // 18: sttattus.dominion.v1.DominionService.SubmitDeed:input_type -> sttattus.dominion.v1.SubmitDeedRequest
+	15, // 19: sttattus.dominion.v1.DominionService.ListMyDeeds:input_type -> sttattus.dominion.v1.ListMyDeedsRequest
+	17, // 20: sttattus.dominion.v1.DominionService.ListDeedsForProperty:input_type -> sttattus.dominion.v1.ListDeedsForPropertyRequest
+	19, // 21: sttattus.dominion.v1.DominionService.AdminReviewDeed:input_type -> sttattus.dominion.v1.AdminReviewDeedRequest
+	5,  // 22: sttattus.dominion.v1.DominionService.SyncProperties:output_type -> sttattus.dominion.v1.SyncPropertiesResponse
+	7,  // 23: sttattus.dominion.v1.DominionService.ListTerritories:output_type -> sttattus.dominion.v1.ListTerritoriesResponse
+	9,  // 24: sttattus.dominion.v1.DominionService.GetDominionStats:output_type -> sttattus.dominion.v1.GetDominionStatsResponse
+	11, // 25: sttattus.dominion.v1.DominionService.GetLoungeKey:output_type -> sttattus.dominion.v1.GetLoungeKeyResponse
+	23, // 26: sttattus.dominion.v1.DominionService.EstimatePropertyValue:output_type -> sttattus.dominion.v1.EstimatePropertyValueResponse
+	14, // 27: sttattus.dominion.v1.DominionService.SubmitDeed:output_type -> sttattus.dominion.v1.SubmitDeedResponse
+	16, // 28: sttattus.dominion.v1.DominionService.ListMyDeeds:output_type -> sttattus.dominion.v1.ListMyDeedsResponse
+	18, // 29: sttattus.dominion.v1.DominionService.ListDeedsForProperty:output_type -> sttattus.dominion.v1.ListDeedsForPropertyResponse
+	20, // 30: sttattus.dominion.v1.DominionService.AdminReviewDeed:output_type -> sttattus.dominion.v1.AdminReviewDeedResponse
+	22, // [22:31] is the sub-list for method output_type
+	13, // [13:22] is the sub-list for method input_type
+	13, // [13:13] is the sub-list for extension type_name
+	13, // [13:13] is the sub-list for extension extendee
+	0,  // [0:13] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dominion_v1_dominion_proto_init() }
@@ -1063,7 +1599,7 @@ func file_sttattus_dominion_v1_dominion_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_dominion_v1_dominion_proto_rawDesc), len(file_sttattus_dominion_v1_dominion_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   13,
+			NumMessages:   22,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

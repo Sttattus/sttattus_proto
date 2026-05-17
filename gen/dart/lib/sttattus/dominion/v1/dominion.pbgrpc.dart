@@ -55,6 +55,23 @@ class DominionServiceClient extends $grpc.Client {
     return $createUnaryCall(_$estimatePropertyValue, request, options: options);
   }
 
+  /// D14.4 — verification pipeline.
+  $grpc.ResponseFuture<$0.SubmitDeedResponse> submitDeed($0.SubmitDeedRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$submitDeed, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyDeedsResponse> listMyDeeds($0.ListMyDeedsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyDeeds, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListDeedsForPropertyResponse> listDeedsForProperty($0.ListDeedsForPropertyRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listDeedsForProperty, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminReviewDeedResponse> adminReviewDeed($0.AdminReviewDeedRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$adminReviewDeed, request, options: options);
+  }
+
     // method descriptors
 
   static final _$syncProperties = $grpc.ClientMethod<$0.SyncPropertiesRequest, $0.SyncPropertiesResponse>(
@@ -77,6 +94,22 @@ class DominionServiceClient extends $grpc.Client {
       '/sttattus.dominion.v1.DominionService/EstimatePropertyValue',
       ($0.EstimatePropertyValueRequest value) => value.writeToBuffer(),
       $0.EstimatePropertyValueResponse.fromBuffer);
+  static final _$submitDeed = $grpc.ClientMethod<$0.SubmitDeedRequest, $0.SubmitDeedResponse>(
+      '/sttattus.dominion.v1.DominionService/SubmitDeed',
+      ($0.SubmitDeedRequest value) => value.writeToBuffer(),
+      $0.SubmitDeedResponse.fromBuffer);
+  static final _$listMyDeeds = $grpc.ClientMethod<$0.ListMyDeedsRequest, $0.ListMyDeedsResponse>(
+      '/sttattus.dominion.v1.DominionService/ListMyDeeds',
+      ($0.ListMyDeedsRequest value) => value.writeToBuffer(),
+      $0.ListMyDeedsResponse.fromBuffer);
+  static final _$listDeedsForProperty = $grpc.ClientMethod<$0.ListDeedsForPropertyRequest, $0.ListDeedsForPropertyResponse>(
+      '/sttattus.dominion.v1.DominionService/ListDeedsForProperty',
+      ($0.ListDeedsForPropertyRequest value) => value.writeToBuffer(),
+      $0.ListDeedsForPropertyResponse.fromBuffer);
+  static final _$adminReviewDeed = $grpc.ClientMethod<$0.AdminReviewDeedRequest, $0.AdminReviewDeedResponse>(
+      '/sttattus.dominion.v1.DominionService/AdminReviewDeed',
+      ($0.AdminReviewDeedRequest value) => value.writeToBuffer(),
+      $0.AdminReviewDeedResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dominion.v1.DominionService')
@@ -119,6 +152,34 @@ abstract class DominionServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.EstimatePropertyValueRequest.fromBuffer(value),
         ($0.EstimatePropertyValueResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitDeedRequest, $0.SubmitDeedResponse>(
+        'SubmitDeed',
+        submitDeed_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SubmitDeedRequest.fromBuffer(value),
+        ($0.SubmitDeedResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyDeedsRequest, $0.ListMyDeedsResponse>(
+        'ListMyDeeds',
+        listMyDeeds_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyDeedsRequest.fromBuffer(value),
+        ($0.ListMyDeedsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListDeedsForPropertyRequest, $0.ListDeedsForPropertyResponse>(
+        'ListDeedsForProperty',
+        listDeedsForProperty_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListDeedsForPropertyRequest.fromBuffer(value),
+        ($0.ListDeedsForPropertyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminReviewDeedRequest, $0.AdminReviewDeedResponse>(
+        'AdminReviewDeed',
+        adminReviewDeed_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.AdminReviewDeedRequest.fromBuffer(value),
+        ($0.AdminReviewDeedResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.SyncPropertiesResponse> syncProperties_Pre($grpc.ServiceCall $call, $async.Future<$0.SyncPropertiesRequest> $request) async {
@@ -150,5 +211,29 @@ abstract class DominionServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.EstimatePropertyValueResponse> estimatePropertyValue($grpc.ServiceCall call, $0.EstimatePropertyValueRequest request);
+
+  $async.Future<$0.SubmitDeedResponse> submitDeed_Pre($grpc.ServiceCall $call, $async.Future<$0.SubmitDeedRequest> $request) async {
+    return submitDeed($call, await $request);
+  }
+
+  $async.Future<$0.SubmitDeedResponse> submitDeed($grpc.ServiceCall call, $0.SubmitDeedRequest request);
+
+  $async.Future<$0.ListMyDeedsResponse> listMyDeeds_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyDeedsRequest> $request) async {
+    return listMyDeeds($call, await $request);
+  }
+
+  $async.Future<$0.ListMyDeedsResponse> listMyDeeds($grpc.ServiceCall call, $0.ListMyDeedsRequest request);
+
+  $async.Future<$0.ListDeedsForPropertyResponse> listDeedsForProperty_Pre($grpc.ServiceCall $call, $async.Future<$0.ListDeedsForPropertyRequest> $request) async {
+    return listDeedsForProperty($call, await $request);
+  }
+
+  $async.Future<$0.ListDeedsForPropertyResponse> listDeedsForProperty($grpc.ServiceCall call, $0.ListDeedsForPropertyRequest request);
+
+  $async.Future<$0.AdminReviewDeedResponse> adminReviewDeed_Pre($grpc.ServiceCall $call, $async.Future<$0.AdminReviewDeedRequest> $request) async {
+    return adminReviewDeed($call, await $request);
+  }
+
+  $async.Future<$0.AdminReviewDeedResponse> adminReviewDeed($grpc.ServiceCall call, $0.AdminReviewDeedRequest request);
 
 }

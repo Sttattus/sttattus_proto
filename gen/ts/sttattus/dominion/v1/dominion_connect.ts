@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { EstimatePropertyValueRequest, EstimatePropertyValueResponse, GetDominionStatsRequest, GetDominionStatsResponse, GetLoungeKeyRequest, GetLoungeKeyResponse, ListTerritoriesRequest, ListTerritoriesResponse, SyncPropertiesRequest, SyncPropertiesResponse } from "./dominion_pb.js";
+import { AdminReviewDeedRequest, AdminReviewDeedResponse, EstimatePropertyValueRequest, EstimatePropertyValueResponse, GetDominionStatsRequest, GetDominionStatsResponse, GetLoungeKeyRequest, GetLoungeKeyResponse, ListDeedsForPropertyRequest, ListDeedsForPropertyResponse, ListMyDeedsRequest, ListMyDeedsResponse, ListTerritoriesRequest, ListTerritoriesResponse, SubmitDeedRequest, SubmitDeedResponse, SyncPropertiesRequest, SyncPropertiesResponse } from "./dominion_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -61,6 +61,44 @@ export const DominionService = {
       name: "EstimatePropertyValue",
       I: EstimatePropertyValueRequest,
       O: EstimatePropertyValueResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.4 — verification pipeline.
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.SubmitDeed
+     */
+    submitDeed: {
+      name: "SubmitDeed",
+      I: SubmitDeedRequest,
+      O: SubmitDeedResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.ListMyDeeds
+     */
+    listMyDeeds: {
+      name: "ListMyDeeds",
+      I: ListMyDeedsRequest,
+      O: ListMyDeedsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.ListDeedsForProperty
+     */
+    listDeedsForProperty: {
+      name: "ListDeedsForProperty",
+      I: ListDeedsForPropertyRequest,
+      O: ListDeedsForPropertyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.AdminReviewDeed
+     */
+    adminReviewDeed: {
+      name: "AdminReviewDeed",
+      I: AdminReviewDeedRequest,
+      O: AdminReviewDeedResponse,
       kind: MethodKind.Unary,
     },
   }
