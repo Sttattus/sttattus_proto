@@ -1481,6 +1481,1647 @@ func (x *ListMyBiomarkerHistoryResponse) GetPoints() []*Biomarker {
 	return nil
 }
 
+// Z16.4 — Apex HRV bridge for Zenith verification.
+// Returns mean HRV inside the requested span vs the user's 30-day
+// baseline. Honest "present=false" when either the window or the
+// baseline carries zero samples — Zenith treats absence as
+// "unavailable", never as failure.
+type GetHrvWindowRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	StartUnix     int64                  `protobuf:"varint,1,opt,name=start_unix,json=startUnix,proto3" json:"start_unix,omitempty"`
+	EndUnix       int64                  `protobuf:"varint,2,opt,name=end_unix,json=endUnix,proto3" json:"end_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetHrvWindowRequest) Reset() {
+	*x = GetHrvWindowRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetHrvWindowRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetHrvWindowRequest) ProtoMessage() {}
+
+func (x *GetHrvWindowRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetHrvWindowRequest.ProtoReflect.Descriptor instead.
+func (*GetHrvWindowRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *GetHrvWindowRequest) GetStartUnix() int64 {
+	if x != nil {
+		return x.StartUnix
+	}
+	return 0
+}
+
+func (x *GetHrvWindowRequest) GetEndUnix() int64 {
+	if x != nil {
+		return x.EndUnix
+	}
+	return 0
+}
+
+type GetHrvWindowResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Present       bool                   `protobuf:"varint,1,opt,name=present,proto3" json:"present,omitempty"`                                // false when window or baseline is empty
+	WindowMean    float64                `protobuf:"fixed64,2,opt,name=window_mean,json=windowMean,proto3" json:"window_mean,omitempty"`       // mean HRV in the (start, end) span (ms)
+	BaselineMean  float64                `protobuf:"fixed64,3,opt,name=baseline_mean,json=baselineMean,proto3" json:"baseline_mean,omitempty"` // 30-day baseline mean excluding the window
+	Delta         float64                `protobuf:"fixed64,4,opt,name=delta,proto3" json:"delta,omitempty"`                                   // window_mean - baseline_mean (ms)
+	WindowCount   int32                  `protobuf:"varint,5,opt,name=window_count,json=windowCount,proto3" json:"window_count,omitempty"`
+	BaselineCount int32                  `protobuf:"varint,6,opt,name=baseline_count,json=baselineCount,proto3" json:"baseline_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetHrvWindowResponse) Reset() {
+	*x = GetHrvWindowResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetHrvWindowResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetHrvWindowResponse) ProtoMessage() {}
+
+func (x *GetHrvWindowResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetHrvWindowResponse.ProtoReflect.Descriptor instead.
+func (*GetHrvWindowResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *GetHrvWindowResponse) GetPresent() bool {
+	if x != nil {
+		return x.Present
+	}
+	return false
+}
+
+func (x *GetHrvWindowResponse) GetWindowMean() float64 {
+	if x != nil {
+		return x.WindowMean
+	}
+	return 0
+}
+
+func (x *GetHrvWindowResponse) GetBaselineMean() float64 {
+	if x != nil {
+		return x.BaselineMean
+	}
+	return 0
+}
+
+func (x *GetHrvWindowResponse) GetDelta() float64 {
+	if x != nil {
+		return x.Delta
+	}
+	return 0
+}
+
+func (x *GetHrvWindowResponse) GetWindowCount() int32 {
+	if x != nil {
+		return x.WindowCount
+	}
+	return 0
+}
+
+func (x *GetHrvWindowResponse) GetBaselineCount() int32 {
+	if x != nil {
+		return x.BaselineCount
+	}
+	return 0
+}
+
+type ApexProtocol struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug          string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Title         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Category      string                 `protobuf:"bytes,4,opt,name=category,proto3" json:"category,omitempty"`
+	Author        string                 `protobuf:"bytes,5,opt,name=author,proto3" json:"author,omitempty"`
+	Summary       string                 `protobuf:"bytes,6,opt,name=summary,proto3" json:"summary,omitempty"`
+	Description   string                 `protobuf:"bytes,7,opt,name=description,proto3" json:"description,omitempty"`
+	DurationWeeks int32                  `protobuf:"varint,8,opt,name=duration_weeks,json=durationWeeks,proto3" json:"duration_weeks,omitempty"`
+	MinutesPerDay int32                  `protobuf:"varint,9,opt,name=minutes_per_day,json=minutesPerDay,proto3" json:"minutes_per_day,omitempty"`
+	ImageUrl      string                 `protobuf:"bytes,10,opt,name=image_url,json=imageUrl,proto3" json:"image_url,omitempty"`
+	SovereignOnly bool                   `protobuf:"varint,11,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApexProtocol) Reset() {
+	*x = ApexProtocol{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApexProtocol) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApexProtocol) ProtoMessage() {}
+
+func (x *ApexProtocol) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApexProtocol.ProtoReflect.Descriptor instead.
+func (*ApexProtocol) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *ApexProtocol) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ApexProtocol) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *ApexProtocol) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ApexProtocol) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *ApexProtocol) GetAuthor() string {
+	if x != nil {
+		return x.Author
+	}
+	return ""
+}
+
+func (x *ApexProtocol) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *ApexProtocol) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *ApexProtocol) GetDurationWeeks() int32 {
+	if x != nil {
+		return x.DurationWeeks
+	}
+	return 0
+}
+
+func (x *ApexProtocol) GetMinutesPerDay() int32 {
+	if x != nil {
+		return x.MinutesPerDay
+	}
+	return 0
+}
+
+func (x *ApexProtocol) GetImageUrl() string {
+	if x != nil {
+		return x.ImageUrl
+	}
+	return ""
+}
+
+func (x *ApexProtocol) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+type ApexProtocolEnrolment struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Protocol       *ApexProtocol          `protobuf:"bytes,2,opt,name=protocol,proto3" json:"protocol,omitempty"`
+	Status         string                 `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"` // enrolled | paused | finished
+	StartedAtUnix  int64                  `protobuf:"varint,4,opt,name=started_at_unix,json=startedAtUnix,proto3" json:"started_at_unix,omitempty"`
+	FinishedAtUnix int64                  `protobuf:"varint,5,opt,name=finished_at_unix,json=finishedAtUnix,proto3" json:"finished_at_unix,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *ApexProtocolEnrolment) Reset() {
+	*x = ApexProtocolEnrolment{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApexProtocolEnrolment) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApexProtocolEnrolment) ProtoMessage() {}
+
+func (x *ApexProtocolEnrolment) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApexProtocolEnrolment.ProtoReflect.Descriptor instead.
+func (*ApexProtocolEnrolment) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *ApexProtocolEnrolment) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ApexProtocolEnrolment) GetProtocol() *ApexProtocol {
+	if x != nil {
+		return x.Protocol
+	}
+	return nil
+}
+
+func (x *ApexProtocolEnrolment) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ApexProtocolEnrolment) GetStartedAtUnix() int64 {
+	if x != nil {
+		return x.StartedAtUnix
+	}
+	return 0
+}
+
+func (x *ApexProtocolEnrolment) GetFinishedAtUnix() int64 {
+	if x != nil {
+		return x.FinishedAtUnix
+	}
+	return 0
+}
+
+type ApexProtocolAdherence struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	EnrolmentId   string                 `protobuf:"bytes,2,opt,name=enrolment_id,json=enrolmentId,proto3" json:"enrolment_id,omitempty"`
+	ForDate       string                 `protobuf:"bytes,3,opt,name=for_date,json=forDate,proto3" json:"for_date,omitempty"` // YYYY-MM-DD
+	Status        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`                  // hit | miss | partial
+	Note          string                 `protobuf:"bytes,5,opt,name=note,proto3" json:"note,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,6,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApexProtocolAdherence) Reset() {
+	*x = ApexProtocolAdherence{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApexProtocolAdherence) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApexProtocolAdherence) ProtoMessage() {}
+
+func (x *ApexProtocolAdherence) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApexProtocolAdherence.ProtoReflect.Descriptor instead.
+func (*ApexProtocolAdherence) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *ApexProtocolAdherence) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ApexProtocolAdherence) GetEnrolmentId() string {
+	if x != nil {
+		return x.EnrolmentId
+	}
+	return ""
+}
+
+func (x *ApexProtocolAdherence) GetForDate() string {
+	if x != nil {
+		return x.ForDate
+	}
+	return ""
+}
+
+func (x *ApexProtocolAdherence) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ApexProtocolAdherence) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
+}
+
+func (x *ApexProtocolAdherence) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type ListApexProtocolsRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Category         string                 `protobuf:"bytes,1,opt,name=category,proto3" json:"category,omitempty"` // optional, empty = all
+	IncludeSovereign bool                   `protobuf:"varint,2,opt,name=include_sovereign,json=includeSovereign,proto3" json:"include_sovereign,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *ListApexProtocolsRequest) Reset() {
+	*x = ListApexProtocolsRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[29]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListApexProtocolsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListApexProtocolsRequest) ProtoMessage() {}
+
+func (x *ListApexProtocolsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[29]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListApexProtocolsRequest.ProtoReflect.Descriptor instead.
+func (*ListApexProtocolsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{29}
+}
+
+func (x *ListApexProtocolsRequest) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *ListApexProtocolsRequest) GetIncludeSovereign() bool {
+	if x != nil {
+		return x.IncludeSovereign
+	}
+	return false
+}
+
+type ListApexProtocolsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Protocols     []*ApexProtocol        `protobuf:"bytes,1,rep,name=protocols,proto3" json:"protocols,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListApexProtocolsResponse) Reset() {
+	*x = ListApexProtocolsResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[30]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListApexProtocolsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListApexProtocolsResponse) ProtoMessage() {}
+
+func (x *ListApexProtocolsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[30]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListApexProtocolsResponse.ProtoReflect.Descriptor instead.
+func (*ListApexProtocolsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{30}
+}
+
+func (x *ListApexProtocolsResponse) GetProtocols() []*ApexProtocol {
+	if x != nil {
+		return x.Protocols
+	}
+	return nil
+}
+
+type GetApexProtocolRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Slug          string                 `protobuf:"bytes,1,opt,name=slug,proto3" json:"slug,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetApexProtocolRequest) Reset() {
+	*x = GetApexProtocolRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[31]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetApexProtocolRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetApexProtocolRequest) ProtoMessage() {}
+
+func (x *GetApexProtocolRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[31]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetApexProtocolRequest.ProtoReflect.Descriptor instead.
+func (*GetApexProtocolRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{31}
+}
+
+func (x *GetApexProtocolRequest) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+type GetApexProtocolResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Protocol      *ApexProtocol          `protobuf:"bytes,1,opt,name=protocol,proto3" json:"protocol,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetApexProtocolResponse) Reset() {
+	*x = GetApexProtocolResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[32]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetApexProtocolResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetApexProtocolResponse) ProtoMessage() {}
+
+func (x *GetApexProtocolResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[32]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetApexProtocolResponse.ProtoReflect.Descriptor instead.
+func (*GetApexProtocolResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{32}
+}
+
+func (x *GetApexProtocolResponse) GetProtocol() *ApexProtocol {
+	if x != nil {
+		return x.Protocol
+	}
+	return nil
+}
+
+type EnrolInApexProtocolRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ProtocolId    string                 `protobuf:"bytes,1,opt,name=protocol_id,json=protocolId,proto3" json:"protocol_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EnrolInApexProtocolRequest) Reset() {
+	*x = EnrolInApexProtocolRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[33]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EnrolInApexProtocolRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EnrolInApexProtocolRequest) ProtoMessage() {}
+
+func (x *EnrolInApexProtocolRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[33]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EnrolInApexProtocolRequest.ProtoReflect.Descriptor instead.
+func (*EnrolInApexProtocolRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *EnrolInApexProtocolRequest) GetProtocolId() string {
+	if x != nil {
+		return x.ProtocolId
+	}
+	return ""
+}
+
+type EnrolInApexProtocolResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Enrolment     *ApexProtocolEnrolment `protobuf:"bytes,1,opt,name=enrolment,proto3" json:"enrolment,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EnrolInApexProtocolResponse) Reset() {
+	*x = EnrolInApexProtocolResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[34]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EnrolInApexProtocolResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EnrolInApexProtocolResponse) ProtoMessage() {}
+
+func (x *EnrolInApexProtocolResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[34]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EnrolInApexProtocolResponse.ProtoReflect.Descriptor instead.
+func (*EnrolInApexProtocolResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *EnrolInApexProtocolResponse) GetEnrolment() *ApexProtocolEnrolment {
+	if x != nil {
+		return x.Enrolment
+	}
+	return nil
+}
+
+type ListMyApexProtocolEnrolmentsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyApexProtocolEnrolmentsRequest) Reset() {
+	*x = ListMyApexProtocolEnrolmentsRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[35]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyApexProtocolEnrolmentsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyApexProtocolEnrolmentsRequest) ProtoMessage() {}
+
+func (x *ListMyApexProtocolEnrolmentsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[35]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyApexProtocolEnrolmentsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyApexProtocolEnrolmentsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{35}
+}
+
+type ListMyApexProtocolEnrolmentsResponse struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Enrolments    []*ApexProtocolEnrolment `protobuf:"bytes,1,rep,name=enrolments,proto3" json:"enrolments,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyApexProtocolEnrolmentsResponse) Reset() {
+	*x = ListMyApexProtocolEnrolmentsResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyApexProtocolEnrolmentsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyApexProtocolEnrolmentsResponse) ProtoMessage() {}
+
+func (x *ListMyApexProtocolEnrolmentsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[36]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyApexProtocolEnrolmentsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyApexProtocolEnrolmentsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *ListMyApexProtocolEnrolmentsResponse) GetEnrolments() []*ApexProtocolEnrolment {
+	if x != nil {
+		return x.Enrolments
+	}
+	return nil
+}
+
+type UpdateApexProtocolEnrolmentRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EnrolmentId   string                 `protobuf:"bytes,1,opt,name=enrolment_id,json=enrolmentId,proto3" json:"enrolment_id,omitempty"`
+	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"` // enrolled | paused | finished
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateApexProtocolEnrolmentRequest) Reset() {
+	*x = UpdateApexProtocolEnrolmentRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[37]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateApexProtocolEnrolmentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateApexProtocolEnrolmentRequest) ProtoMessage() {}
+
+func (x *UpdateApexProtocolEnrolmentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[37]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateApexProtocolEnrolmentRequest.ProtoReflect.Descriptor instead.
+func (*UpdateApexProtocolEnrolmentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *UpdateApexProtocolEnrolmentRequest) GetEnrolmentId() string {
+	if x != nil {
+		return x.EnrolmentId
+	}
+	return ""
+}
+
+func (x *UpdateApexProtocolEnrolmentRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+type UpdateApexProtocolEnrolmentResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Enrolment     *ApexProtocolEnrolment `protobuf:"bytes,1,opt,name=enrolment,proto3" json:"enrolment,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateApexProtocolEnrolmentResponse) Reset() {
+	*x = UpdateApexProtocolEnrolmentResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[38]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateApexProtocolEnrolmentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateApexProtocolEnrolmentResponse) ProtoMessage() {}
+
+func (x *UpdateApexProtocolEnrolmentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[38]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateApexProtocolEnrolmentResponse.ProtoReflect.Descriptor instead.
+func (*UpdateApexProtocolEnrolmentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *UpdateApexProtocolEnrolmentResponse) GetEnrolment() *ApexProtocolEnrolment {
+	if x != nil {
+		return x.Enrolment
+	}
+	return nil
+}
+
+type RecordApexProtocolAdherenceRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EnrolmentId   string                 `protobuf:"bytes,1,opt,name=enrolment_id,json=enrolmentId,proto3" json:"enrolment_id,omitempty"`
+	ForDate       string                 `protobuf:"bytes,2,opt,name=for_date,json=forDate,proto3" json:"for_date,omitempty"` // YYYY-MM-DD, empty = today
+	Status        string                 `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`                  // hit | miss | partial
+	Note          string                 `protobuf:"bytes,4,opt,name=note,proto3" json:"note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordApexProtocolAdherenceRequest) Reset() {
+	*x = RecordApexProtocolAdherenceRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[39]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordApexProtocolAdherenceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordApexProtocolAdherenceRequest) ProtoMessage() {}
+
+func (x *RecordApexProtocolAdherenceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[39]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordApexProtocolAdherenceRequest.ProtoReflect.Descriptor instead.
+func (*RecordApexProtocolAdherenceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{39}
+}
+
+func (x *RecordApexProtocolAdherenceRequest) GetEnrolmentId() string {
+	if x != nil {
+		return x.EnrolmentId
+	}
+	return ""
+}
+
+func (x *RecordApexProtocolAdherenceRequest) GetForDate() string {
+	if x != nil {
+		return x.ForDate
+	}
+	return ""
+}
+
+func (x *RecordApexProtocolAdherenceRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *RecordApexProtocolAdherenceRequest) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
+}
+
+type RecordApexProtocolAdherenceResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Adherence     *ApexProtocolAdherence `protobuf:"bytes,1,opt,name=adherence,proto3" json:"adherence,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordApexProtocolAdherenceResponse) Reset() {
+	*x = RecordApexProtocolAdherenceResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[40]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordApexProtocolAdherenceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordApexProtocolAdherenceResponse) ProtoMessage() {}
+
+func (x *RecordApexProtocolAdherenceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[40]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordApexProtocolAdherenceResponse.ProtoReflect.Descriptor instead.
+func (*RecordApexProtocolAdherenceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *RecordApexProtocolAdherenceResponse) GetAdherence() *ApexProtocolAdherence {
+	if x != nil {
+		return x.Adherence
+	}
+	return nil
+}
+
+type ListMyApexProtocolAdherenceRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EnrolmentId   string                 `protobuf:"bytes,1,opt,name=enrolment_id,json=enrolmentId,proto3" json:"enrolment_id,omitempty"`
+	Days          int32                  `protobuf:"varint,2,opt,name=days,proto3" json:"days,omitempty"` // 0 = all
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyApexProtocolAdherenceRequest) Reset() {
+	*x = ListMyApexProtocolAdherenceRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[41]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyApexProtocolAdherenceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyApexProtocolAdherenceRequest) ProtoMessage() {}
+
+func (x *ListMyApexProtocolAdherenceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[41]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyApexProtocolAdherenceRequest.ProtoReflect.Descriptor instead.
+func (*ListMyApexProtocolAdherenceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *ListMyApexProtocolAdherenceRequest) GetEnrolmentId() string {
+	if x != nil {
+		return x.EnrolmentId
+	}
+	return ""
+}
+
+func (x *ListMyApexProtocolAdherenceRequest) GetDays() int32 {
+	if x != nil {
+		return x.Days
+	}
+	return 0
+}
+
+type ListMyApexProtocolAdherenceResponse struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Entries       []*ApexProtocolAdherence `protobuf:"bytes,1,rep,name=entries,proto3" json:"entries,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyApexProtocolAdherenceResponse) Reset() {
+	*x = ListMyApexProtocolAdherenceResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[42]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyApexProtocolAdherenceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyApexProtocolAdherenceResponse) ProtoMessage() {}
+
+func (x *ListMyApexProtocolAdherenceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[42]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyApexProtocolAdherenceResponse.ProtoReflect.Descriptor instead.
+func (*ListMyApexProtocolAdherenceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{42}
+}
+
+func (x *ListMyApexProtocolAdherenceResponse) GetEntries() []*ApexProtocolAdherence {
+	if x != nil {
+		return x.Entries
+	}
+	return nil
+}
+
+type ApexClinic struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug          string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	City          string                 `protobuf:"bytes,4,opt,name=city,proto3" json:"city,omitempty"`
+	Country       string                 `protobuf:"bytes,5,opt,name=country,proto3" json:"country,omitempty"`
+	Specialties   string                 `protobuf:"bytes,6,opt,name=specialties,proto3" json:"specialties,omitempty"` // comma-separated tags
+	Summary       string                 `protobuf:"bytes,7,opt,name=summary,proto3" json:"summary,omitempty"`
+	Description   string                 `protobuf:"bytes,8,opt,name=description,proto3" json:"description,omitempty"`
+	WebsiteUrl    string                 `protobuf:"bytes,9,opt,name=website_url,json=websiteUrl,proto3" json:"website_url,omitempty"`
+	ImageUrl      string                 `protobuf:"bytes,10,opt,name=image_url,json=imageUrl,proto3" json:"image_url,omitempty"`
+	SovereignOnly bool                   `protobuf:"varint,11,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApexClinic) Reset() {
+	*x = ApexClinic{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[43]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApexClinic) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApexClinic) ProtoMessage() {}
+
+func (x *ApexClinic) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[43]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApexClinic.ProtoReflect.Descriptor instead.
+func (*ApexClinic) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *ApexClinic) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ApexClinic) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *ApexClinic) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ApexClinic) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *ApexClinic) GetCountry() string {
+	if x != nil {
+		return x.Country
+	}
+	return ""
+}
+
+func (x *ApexClinic) GetSpecialties() string {
+	if x != nil {
+		return x.Specialties
+	}
+	return ""
+}
+
+func (x *ApexClinic) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *ApexClinic) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *ApexClinic) GetWebsiteUrl() string {
+	if x != nil {
+		return x.WebsiteUrl
+	}
+	return ""
+}
+
+func (x *ApexClinic) GetImageUrl() string {
+	if x != nil {
+		return x.ImageUrl
+	}
+	return ""
+}
+
+func (x *ApexClinic) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+type ApexClinicIntroRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Clinic          *ApexClinic            `protobuf:"bytes,2,opt,name=clinic,proto3" json:"clinic,omitempty"`
+	Note            string                 `protobuf:"bytes,3,opt,name=note,proto3" json:"note,omitempty"`
+	Status          string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"` // requested | acknowledged | introduced | declined
+	RequestedAtUnix int64                  `protobuf:"varint,5,opt,name=requested_at_unix,json=requestedAtUnix,proto3" json:"requested_at_unix,omitempty"`
+	DecidedAtUnix   int64                  `protobuf:"varint,6,opt,name=decided_at_unix,json=decidedAtUnix,proto3" json:"decided_at_unix,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ApexClinicIntroRequest) Reset() {
+	*x = ApexClinicIntroRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[44]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApexClinicIntroRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApexClinicIntroRequest) ProtoMessage() {}
+
+func (x *ApexClinicIntroRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[44]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApexClinicIntroRequest.ProtoReflect.Descriptor instead.
+func (*ApexClinicIntroRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{44}
+}
+
+func (x *ApexClinicIntroRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ApexClinicIntroRequest) GetClinic() *ApexClinic {
+	if x != nil {
+		return x.Clinic
+	}
+	return nil
+}
+
+func (x *ApexClinicIntroRequest) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
+}
+
+func (x *ApexClinicIntroRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ApexClinicIntroRequest) GetRequestedAtUnix() int64 {
+	if x != nil {
+		return x.RequestedAtUnix
+	}
+	return 0
+}
+
+func (x *ApexClinicIntroRequest) GetDecidedAtUnix() int64 {
+	if x != nil {
+		return x.DecidedAtUnix
+	}
+	return 0
+}
+
+type ListApexClinicsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Country       string                 `protobuf:"bytes,1,opt,name=country,proto3" json:"country,omitempty"` // optional, empty = all
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListApexClinicsRequest) Reset() {
+	*x = ListApexClinicsRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[45]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListApexClinicsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListApexClinicsRequest) ProtoMessage() {}
+
+func (x *ListApexClinicsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[45]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListApexClinicsRequest.ProtoReflect.Descriptor instead.
+func (*ListApexClinicsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{45}
+}
+
+func (x *ListApexClinicsRequest) GetCountry() string {
+	if x != nil {
+		return x.Country
+	}
+	return ""
+}
+
+type ListApexClinicsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Clinics       []*ApexClinic          `protobuf:"bytes,1,rep,name=clinics,proto3" json:"clinics,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListApexClinicsResponse) Reset() {
+	*x = ListApexClinicsResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[46]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListApexClinicsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListApexClinicsResponse) ProtoMessage() {}
+
+func (x *ListApexClinicsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[46]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListApexClinicsResponse.ProtoReflect.Descriptor instead.
+func (*ListApexClinicsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{46}
+}
+
+func (x *ListApexClinicsResponse) GetClinics() []*ApexClinic {
+	if x != nil {
+		return x.Clinics
+	}
+	return nil
+}
+
+type GetApexClinicRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Slug          string                 `protobuf:"bytes,1,opt,name=slug,proto3" json:"slug,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetApexClinicRequest) Reset() {
+	*x = GetApexClinicRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[47]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetApexClinicRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetApexClinicRequest) ProtoMessage() {}
+
+func (x *GetApexClinicRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[47]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetApexClinicRequest.ProtoReflect.Descriptor instead.
+func (*GetApexClinicRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{47}
+}
+
+func (x *GetApexClinicRequest) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+type GetApexClinicResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Clinic        *ApexClinic            `protobuf:"bytes,1,opt,name=clinic,proto3" json:"clinic,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetApexClinicResponse) Reset() {
+	*x = GetApexClinicResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[48]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetApexClinicResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetApexClinicResponse) ProtoMessage() {}
+
+func (x *GetApexClinicResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[48]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetApexClinicResponse.ProtoReflect.Descriptor instead.
+func (*GetApexClinicResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{48}
+}
+
+func (x *GetApexClinicResponse) GetClinic() *ApexClinic {
+	if x != nil {
+		return x.Clinic
+	}
+	return nil
+}
+
+type RequestApexClinicIntroRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ClinicId      string                 `protobuf:"bytes,1,opt,name=clinic_id,json=clinicId,proto3" json:"clinic_id,omitempty"`
+	Note          string                 `protobuf:"bytes,2,opt,name=note,proto3" json:"note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RequestApexClinicIntroRequest) Reset() {
+	*x = RequestApexClinicIntroRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[49]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RequestApexClinicIntroRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RequestApexClinicIntroRequest) ProtoMessage() {}
+
+func (x *RequestApexClinicIntroRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[49]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RequestApexClinicIntroRequest.ProtoReflect.Descriptor instead.
+func (*RequestApexClinicIntroRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{49}
+}
+
+func (x *RequestApexClinicIntroRequest) GetClinicId() string {
+	if x != nil {
+		return x.ClinicId
+	}
+	return ""
+}
+
+func (x *RequestApexClinicIntroRequest) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
+}
+
+type RequestApexClinicIntroResponse struct {
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	Request       *ApexClinicIntroRequest `protobuf:"bytes,1,opt,name=request,proto3" json:"request,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RequestApexClinicIntroResponse) Reset() {
+	*x = RequestApexClinicIntroResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[50]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RequestApexClinicIntroResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RequestApexClinicIntroResponse) ProtoMessage() {}
+
+func (x *RequestApexClinicIntroResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[50]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RequestApexClinicIntroResponse.ProtoReflect.Descriptor instead.
+func (*RequestApexClinicIntroResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{50}
+}
+
+func (x *RequestApexClinicIntroResponse) GetRequest() *ApexClinicIntroRequest {
+	if x != nil {
+		return x.Request
+	}
+	return nil
+}
+
+type ListMyApexClinicIntroRequestsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyApexClinicIntroRequestsRequest) Reset() {
+	*x = ListMyApexClinicIntroRequestsRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[51]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyApexClinicIntroRequestsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyApexClinicIntroRequestsRequest) ProtoMessage() {}
+
+func (x *ListMyApexClinicIntroRequestsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[51]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyApexClinicIntroRequestsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyApexClinicIntroRequestsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{51}
+}
+
+type ListMyApexClinicIntroRequestsResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Requests      []*ApexClinicIntroRequest `protobuf:"bytes,1,rep,name=requests,proto3" json:"requests,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyApexClinicIntroRequestsResponse) Reset() {
+	*x = ListMyApexClinicIntroRequestsResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[52]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyApexClinicIntroRequestsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyApexClinicIntroRequestsResponse) ProtoMessage() {}
+
+func (x *ListMyApexClinicIntroRequestsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[52]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyApexClinicIntroRequestsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyApexClinicIntroRequestsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{52}
+}
+
+func (x *ListMyApexClinicIntroRequestsResponse) GetRequests() []*ApexClinicIntroRequest {
+	if x != nil {
+		return x.Requests
+	}
+	return nil
+}
+
 var File_sttattus_apex_v1_apex_proto protoreflect.FileDescriptor
 
 const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
@@ -1586,7 +3227,119 @@ const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"\x1eListMyBiomarkerHistoryResponse\x12\x1f\n" +
 	"\vmetric_code\x18\x01 \x01(\tR\n" +
 	"metricCode\x123\n" +
-	"\x06points\x18\x02 \x03(\v2\x1b.sttattus.apex.v1.BiomarkerR\x06points*\xff\x01\n" +
+	"\x06points\x18\x02 \x03(\v2\x1b.sttattus.apex.v1.BiomarkerR\x06points\"O\n" +
+	"\x13GetHrvWindowRequest\x12\x1d\n" +
+	"\n" +
+	"start_unix\x18\x01 \x01(\x03R\tstartUnix\x12\x19\n" +
+	"\bend_unix\x18\x02 \x01(\x03R\aendUnix\"\xd6\x01\n" +
+	"\x14GetHrvWindowResponse\x12\x18\n" +
+	"\apresent\x18\x01 \x01(\bR\apresent\x12\x1f\n" +
+	"\vwindow_mean\x18\x02 \x01(\x01R\n" +
+	"windowMean\x12#\n" +
+	"\rbaseline_mean\x18\x03 \x01(\x01R\fbaselineMean\x12\x14\n" +
+	"\x05delta\x18\x04 \x01(\x01R\x05delta\x12!\n" +
+	"\fwindow_count\x18\x05 \x01(\x05R\vwindowCount\x12%\n" +
+	"\x0ebaseline_count\x18\x06 \x01(\x05R\rbaselineCount\"\xcb\x02\n" +
+	"\fApexProtocol\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x1a\n" +
+	"\bcategory\x18\x04 \x01(\tR\bcategory\x12\x16\n" +
+	"\x06author\x18\x05 \x01(\tR\x06author\x12\x18\n" +
+	"\asummary\x18\x06 \x01(\tR\asummary\x12 \n" +
+	"\vdescription\x18\a \x01(\tR\vdescription\x12%\n" +
+	"\x0eduration_weeks\x18\b \x01(\x05R\rdurationWeeks\x12&\n" +
+	"\x0fminutes_per_day\x18\t \x01(\x05R\rminutesPerDay\x12\x1b\n" +
+	"\timage_url\x18\n" +
+	" \x01(\tR\bimageUrl\x12%\n" +
+	"\x0esovereign_only\x18\v \x01(\bR\rsovereignOnly\"\xcd\x01\n" +
+	"\x15ApexProtocolEnrolment\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12:\n" +
+	"\bprotocol\x18\x02 \x01(\v2\x1e.sttattus.apex.v1.ApexProtocolR\bprotocol\x12\x16\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\x12&\n" +
+	"\x0fstarted_at_unix\x18\x04 \x01(\x03R\rstartedAtUnix\x12(\n" +
+	"\x10finished_at_unix\x18\x05 \x01(\x03R\x0efinishedAtUnix\"\xb9\x01\n" +
+	"\x15ApexProtocolAdherence\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
+	"\fenrolment_id\x18\x02 \x01(\tR\venrolmentId\x12\x19\n" +
+	"\bfor_date\x18\x03 \x01(\tR\aforDate\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12\x12\n" +
+	"\x04note\x18\x05 \x01(\tR\x04note\x12&\n" +
+	"\x0fcreated_at_unix\x18\x06 \x01(\x03R\rcreatedAtUnix\"c\n" +
+	"\x18ListApexProtocolsRequest\x12\x1a\n" +
+	"\bcategory\x18\x01 \x01(\tR\bcategory\x12+\n" +
+	"\x11include_sovereign\x18\x02 \x01(\bR\x10includeSovereign\"Y\n" +
+	"\x19ListApexProtocolsResponse\x12<\n" +
+	"\tprotocols\x18\x01 \x03(\v2\x1e.sttattus.apex.v1.ApexProtocolR\tprotocols\",\n" +
+	"\x16GetApexProtocolRequest\x12\x12\n" +
+	"\x04slug\x18\x01 \x01(\tR\x04slug\"U\n" +
+	"\x17GetApexProtocolResponse\x12:\n" +
+	"\bprotocol\x18\x01 \x01(\v2\x1e.sttattus.apex.v1.ApexProtocolR\bprotocol\"=\n" +
+	"\x1aEnrolInApexProtocolRequest\x12\x1f\n" +
+	"\vprotocol_id\x18\x01 \x01(\tR\n" +
+	"protocolId\"d\n" +
+	"\x1bEnrolInApexProtocolResponse\x12E\n" +
+	"\tenrolment\x18\x01 \x01(\v2'.sttattus.apex.v1.ApexProtocolEnrolmentR\tenrolment\"%\n" +
+	"#ListMyApexProtocolEnrolmentsRequest\"o\n" +
+	"$ListMyApexProtocolEnrolmentsResponse\x12G\n" +
+	"\n" +
+	"enrolments\x18\x01 \x03(\v2'.sttattus.apex.v1.ApexProtocolEnrolmentR\n" +
+	"enrolments\"_\n" +
+	"\"UpdateApexProtocolEnrolmentRequest\x12!\n" +
+	"\fenrolment_id\x18\x01 \x01(\tR\venrolmentId\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\"l\n" +
+	"#UpdateApexProtocolEnrolmentResponse\x12E\n" +
+	"\tenrolment\x18\x01 \x01(\v2'.sttattus.apex.v1.ApexProtocolEnrolmentR\tenrolment\"\x8e\x01\n" +
+	"\"RecordApexProtocolAdherenceRequest\x12!\n" +
+	"\fenrolment_id\x18\x01 \x01(\tR\venrolmentId\x12\x19\n" +
+	"\bfor_date\x18\x02 \x01(\tR\aforDate\x12\x16\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\x12\x12\n" +
+	"\x04note\x18\x04 \x01(\tR\x04note\"l\n" +
+	"#RecordApexProtocolAdherenceResponse\x12E\n" +
+	"\tadherence\x18\x01 \x01(\v2'.sttattus.apex.v1.ApexProtocolAdherenceR\tadherence\"[\n" +
+	"\"ListMyApexProtocolAdherenceRequest\x12!\n" +
+	"\fenrolment_id\x18\x01 \x01(\tR\venrolmentId\x12\x12\n" +
+	"\x04days\x18\x02 \x01(\x05R\x04days\"h\n" +
+	"#ListMyApexProtocolAdherenceResponse\x12A\n" +
+	"\aentries\x18\x01 \x03(\v2'.sttattus.apex.v1.ApexProtocolAdherenceR\aentries\"\xb5\x02\n" +
+	"\n" +
+	"ApexClinic\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12\x12\n" +
+	"\x04city\x18\x04 \x01(\tR\x04city\x12\x18\n" +
+	"\acountry\x18\x05 \x01(\tR\acountry\x12 \n" +
+	"\vspecialties\x18\x06 \x01(\tR\vspecialties\x12\x18\n" +
+	"\asummary\x18\a \x01(\tR\asummary\x12 \n" +
+	"\vdescription\x18\b \x01(\tR\vdescription\x12\x1f\n" +
+	"\vwebsite_url\x18\t \x01(\tR\n" +
+	"websiteUrl\x12\x1b\n" +
+	"\timage_url\x18\n" +
+	" \x01(\tR\bimageUrl\x12%\n" +
+	"\x0esovereign_only\x18\v \x01(\bR\rsovereignOnly\"\xde\x01\n" +
+	"\x16ApexClinicIntroRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x124\n" +
+	"\x06clinic\x18\x02 \x01(\v2\x1c.sttattus.apex.v1.ApexClinicR\x06clinic\x12\x12\n" +
+	"\x04note\x18\x03 \x01(\tR\x04note\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12*\n" +
+	"\x11requested_at_unix\x18\x05 \x01(\x03R\x0frequestedAtUnix\x12&\n" +
+	"\x0fdecided_at_unix\x18\x06 \x01(\x03R\rdecidedAtUnix\"2\n" +
+	"\x16ListApexClinicsRequest\x12\x18\n" +
+	"\acountry\x18\x01 \x01(\tR\acountry\"Q\n" +
+	"\x17ListApexClinicsResponse\x126\n" +
+	"\aclinics\x18\x01 \x03(\v2\x1c.sttattus.apex.v1.ApexClinicR\aclinics\"*\n" +
+	"\x14GetApexClinicRequest\x12\x12\n" +
+	"\x04slug\x18\x01 \x01(\tR\x04slug\"M\n" +
+	"\x15GetApexClinicResponse\x124\n" +
+	"\x06clinic\x18\x01 \x01(\v2\x1c.sttattus.apex.v1.ApexClinicR\x06clinic\"P\n" +
+	"\x1dRequestApexClinicIntroRequest\x12\x1b\n" +
+	"\tclinic_id\x18\x01 \x01(\tR\bclinicId\x12\x12\n" +
+	"\x04note\x18\x02 \x01(\tR\x04note\"d\n" +
+	"\x1eRequestApexClinicIntroResponse\x12B\n" +
+	"\arequest\x18\x01 \x01(\v2(.sttattus.apex.v1.ApexClinicIntroRequestR\arequest\"&\n" +
+	"$ListMyApexClinicIntroRequestsRequest\"m\n" +
+	"%ListMyApexClinicIntroRequestsResponse\x12D\n" +
+	"\brequests\x18\x01 \x03(\v2(.sttattus.apex.v1.ApexClinicIntroRequestR\brequests*\xff\x01\n" +
 	"\x11BiomarkerCategory\x12\"\n" +
 	"\x1eBIOMARKER_CATEGORY_UNSPECIFIED\x10\x00\x12\x1d\n" +
 	"\x19BIOMARKER_CATEGORY_LIPIDS\x10\x01\x12 \n" +
@@ -1599,19 +3352,31 @@ const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\x9a\b\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xd4\x13\n" +
 	"\vApexService\x12W\n" +
 	"\n" +
 	"SyncVitals\x12#.sttattus.apex.v1.SyncVitalsRequest\x1a$.sttattus.apex.v1.SyncVitalsResponse\x12f\n" +
 	"\x0fSubmitLabReport\x12(.sttattus.apex.v1.SubmitLabReportRequest\x1a).sttattus.apex.v1.SubmitLabReportResponse\x12c\n" +
 	"\x0eListLabReports\x12'.sttattus.apex.v1.ListLabReportsRequest\x1a(.sttattus.apex.v1.ListLabReportsResponse\x12]\n" +
 	"\fListMyVitals\x12%.sttattus.apex.v1.ListMyVitalsRequest\x1a&.sttattus.apex.v1.ListMyVitalsResponse\x12{\n" +
-	"\x16ListMyBiomarkerHistory\x12/.sttattus.apex.v1.ListMyBiomarkerHistoryRequest\x1a0.sttattus.apex.v1.ListMyBiomarkerHistoryResponse\x12l\n" +
+	"\x16ListMyBiomarkerHistory\x12/.sttattus.apex.v1.ListMyBiomarkerHistoryRequest\x1a0.sttattus.apex.v1.ListMyBiomarkerHistoryResponse\x12]\n" +
+	"\fGetHrvWindow\x12%.sttattus.apex.v1.GetHrvWindowRequest\x1a&.sttattus.apex.v1.GetHrvWindowResponse\x12l\n" +
 	"\x11ListBiomarkerRefs\x12*.sttattus.apex.v1.ListBiomarkerRefsRequest\x1a+.sttattus.apex.v1.ListBiomarkerRefsResponse\x12W\n" +
 	"\n" +
 	"GetApexAge\x12#.sttattus.apex.v1.GetApexAgeRequest\x1a$.sttattus.apex.v1.GetApexAgeResponse\x12i\n" +
 	"\x10GetMyApexProfile\x12).sttattus.apex.v1.GetMyApexProfileRequest\x1a*.sttattus.apex.v1.GetMyApexProfileResponse\x12r\n" +
-	"\x13UpdateMyApexProfile\x12,.sttattus.apex.v1.UpdateMyApexProfileRequest\x1a-.sttattus.apex.v1.UpdateMyApexProfileResponse\x12c\n" +
+	"\x13UpdateMyApexProfile\x12,.sttattus.apex.v1.UpdateMyApexProfileRequest\x1a-.sttattus.apex.v1.UpdateMyApexProfileResponse\x12f\n" +
+	"\x0fListApexClinics\x12(.sttattus.apex.v1.ListApexClinicsRequest\x1a).sttattus.apex.v1.ListApexClinicsResponse\x12`\n" +
+	"\rGetApexClinic\x12&.sttattus.apex.v1.GetApexClinicRequest\x1a'.sttattus.apex.v1.GetApexClinicResponse\x12{\n" +
+	"\x16RequestApexClinicIntro\x12/.sttattus.apex.v1.RequestApexClinicIntroRequest\x1a0.sttattus.apex.v1.RequestApexClinicIntroResponse\x12\x90\x01\n" +
+	"\x1dListMyApexClinicIntroRequests\x126.sttattus.apex.v1.ListMyApexClinicIntroRequestsRequest\x1a7.sttattus.apex.v1.ListMyApexClinicIntroRequestsResponse\x12l\n" +
+	"\x11ListApexProtocols\x12*.sttattus.apex.v1.ListApexProtocolsRequest\x1a+.sttattus.apex.v1.ListApexProtocolsResponse\x12f\n" +
+	"\x0fGetApexProtocol\x12(.sttattus.apex.v1.GetApexProtocolRequest\x1a).sttattus.apex.v1.GetApexProtocolResponse\x12r\n" +
+	"\x13EnrolInApexProtocol\x12,.sttattus.apex.v1.EnrolInApexProtocolRequest\x1a-.sttattus.apex.v1.EnrolInApexProtocolResponse\x12\x8d\x01\n" +
+	"\x1cListMyApexProtocolEnrolments\x125.sttattus.apex.v1.ListMyApexProtocolEnrolmentsRequest\x1a6.sttattus.apex.v1.ListMyApexProtocolEnrolmentsResponse\x12\x8a\x01\n" +
+	"\x1bUpdateApexProtocolEnrolment\x124.sttattus.apex.v1.UpdateApexProtocolEnrolmentRequest\x1a5.sttattus.apex.v1.UpdateApexProtocolEnrolmentResponse\x12\x8a\x01\n" +
+	"\x1bRecordApexProtocolAdherence\x124.sttattus.apex.v1.RecordApexProtocolAdherenceRequest\x1a5.sttattus.apex.v1.RecordApexProtocolAdherenceResponse\x12\x8a\x01\n" +
+	"\x1bListMyApexProtocolAdherence\x124.sttattus.apex.v1.ListMyApexProtocolAdherenceRequest\x1a5.sttattus.apex.v1.ListMyApexProtocolAdherenceResponse\x12c\n" +
 	"\x0eAdminVerifyLab\x12'.sttattus.apex.v1.AdminVerifyLabRequest\x1a(.sttattus.apex.v1.AdminVerifyLabResponseB:Z8github.com/sttattus/proto/gen/go/sttattus/apex/v1;apexv1b\x06proto3"
 
 var (
@@ -1627,83 +3392,149 @@ func file_sttattus_apex_v1_apex_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_apex_v1_apex_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_apex_v1_apex_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
+var file_sttattus_apex_v1_apex_proto_msgTypes = make([]protoimpl.MessageInfo, 54)
 var file_sttattus_apex_v1_apex_proto_goTypes = []any{
-	(BiomarkerCategory)(0),                 // 0: sttattus.apex.v1.BiomarkerCategory
-	(VerificationStatus)(0),                // 1: sttattus.apex.v1.VerificationStatus
-	(*Biomarker)(nil),                      // 2: sttattus.apex.v1.Biomarker
-	(*LabReport)(nil),                      // 3: sttattus.apex.v1.LabReport
-	(*SyncVitalsRequest)(nil),              // 4: sttattus.apex.v1.SyncVitalsRequest
-	(*SyncVitalsResponse)(nil),             // 5: sttattus.apex.v1.SyncVitalsResponse
-	(*SubmitLabReportRequest)(nil),         // 6: sttattus.apex.v1.SubmitLabReportRequest
-	(*SubmitLabReportResponse)(nil),        // 7: sttattus.apex.v1.SubmitLabReportResponse
-	(*ListLabReportsRequest)(nil),          // 8: sttattus.apex.v1.ListLabReportsRequest
-	(*ListLabReportsResponse)(nil),         // 9: sttattus.apex.v1.ListLabReportsResponse
-	(*AdminVerifyLabRequest)(nil),          // 10: sttattus.apex.v1.AdminVerifyLabRequest
-	(*AdminVerifyLabResponse)(nil),         // 11: sttattus.apex.v1.AdminVerifyLabResponse
-	(*ListMyVitalsRequest)(nil),            // 12: sttattus.apex.v1.ListMyVitalsRequest
-	(*ListMyVitalsResponse)(nil),           // 13: sttattus.apex.v1.ListMyVitalsResponse
-	(*GetApexAgeRequest)(nil),              // 14: sttattus.apex.v1.GetApexAgeRequest
-	(*GetApexAgeResponse)(nil),             // 15: sttattus.apex.v1.GetApexAgeResponse
-	(*ApexProfile)(nil),                    // 16: sttattus.apex.v1.ApexProfile
-	(*GetMyApexProfileRequest)(nil),        // 17: sttattus.apex.v1.GetMyApexProfileRequest
-	(*GetMyApexProfileResponse)(nil),       // 18: sttattus.apex.v1.GetMyApexProfileResponse
-	(*UpdateMyApexProfileRequest)(nil),     // 19: sttattus.apex.v1.UpdateMyApexProfileRequest
-	(*UpdateMyApexProfileResponse)(nil),    // 20: sttattus.apex.v1.UpdateMyApexProfileResponse
-	(*BiomarkerRef)(nil),                   // 21: sttattus.apex.v1.BiomarkerRef
-	(*ListBiomarkerRefsRequest)(nil),       // 22: sttattus.apex.v1.ListBiomarkerRefsRequest
-	(*ListBiomarkerRefsResponse)(nil),      // 23: sttattus.apex.v1.ListBiomarkerRefsResponse
-	(*ListMyBiomarkerHistoryRequest)(nil),  // 24: sttattus.apex.v1.ListMyBiomarkerHistoryRequest
-	(*ListMyBiomarkerHistoryResponse)(nil), // 25: sttattus.apex.v1.ListMyBiomarkerHistoryResponse
-	nil,                                    // 26: sttattus.apex.v1.GetApexAgeResponse.SystemScoresEntry
-	(*timestamppb.Timestamp)(nil),          // 27: google.protobuf.Timestamp
+	(BiomarkerCategory)(0),                        // 0: sttattus.apex.v1.BiomarkerCategory
+	(VerificationStatus)(0),                       // 1: sttattus.apex.v1.VerificationStatus
+	(*Biomarker)(nil),                             // 2: sttattus.apex.v1.Biomarker
+	(*LabReport)(nil),                             // 3: sttattus.apex.v1.LabReport
+	(*SyncVitalsRequest)(nil),                     // 4: sttattus.apex.v1.SyncVitalsRequest
+	(*SyncVitalsResponse)(nil),                    // 5: sttattus.apex.v1.SyncVitalsResponse
+	(*SubmitLabReportRequest)(nil),                // 6: sttattus.apex.v1.SubmitLabReportRequest
+	(*SubmitLabReportResponse)(nil),               // 7: sttattus.apex.v1.SubmitLabReportResponse
+	(*ListLabReportsRequest)(nil),                 // 8: sttattus.apex.v1.ListLabReportsRequest
+	(*ListLabReportsResponse)(nil),                // 9: sttattus.apex.v1.ListLabReportsResponse
+	(*AdminVerifyLabRequest)(nil),                 // 10: sttattus.apex.v1.AdminVerifyLabRequest
+	(*AdminVerifyLabResponse)(nil),                // 11: sttattus.apex.v1.AdminVerifyLabResponse
+	(*ListMyVitalsRequest)(nil),                   // 12: sttattus.apex.v1.ListMyVitalsRequest
+	(*ListMyVitalsResponse)(nil),                  // 13: sttattus.apex.v1.ListMyVitalsResponse
+	(*GetApexAgeRequest)(nil),                     // 14: sttattus.apex.v1.GetApexAgeRequest
+	(*GetApexAgeResponse)(nil),                    // 15: sttattus.apex.v1.GetApexAgeResponse
+	(*ApexProfile)(nil),                           // 16: sttattus.apex.v1.ApexProfile
+	(*GetMyApexProfileRequest)(nil),               // 17: sttattus.apex.v1.GetMyApexProfileRequest
+	(*GetMyApexProfileResponse)(nil),              // 18: sttattus.apex.v1.GetMyApexProfileResponse
+	(*UpdateMyApexProfileRequest)(nil),            // 19: sttattus.apex.v1.UpdateMyApexProfileRequest
+	(*UpdateMyApexProfileResponse)(nil),           // 20: sttattus.apex.v1.UpdateMyApexProfileResponse
+	(*BiomarkerRef)(nil),                          // 21: sttattus.apex.v1.BiomarkerRef
+	(*ListBiomarkerRefsRequest)(nil),              // 22: sttattus.apex.v1.ListBiomarkerRefsRequest
+	(*ListBiomarkerRefsResponse)(nil),             // 23: sttattus.apex.v1.ListBiomarkerRefsResponse
+	(*ListMyBiomarkerHistoryRequest)(nil),         // 24: sttattus.apex.v1.ListMyBiomarkerHistoryRequest
+	(*ListMyBiomarkerHistoryResponse)(nil),        // 25: sttattus.apex.v1.ListMyBiomarkerHistoryResponse
+	(*GetHrvWindowRequest)(nil),                   // 26: sttattus.apex.v1.GetHrvWindowRequest
+	(*GetHrvWindowResponse)(nil),                  // 27: sttattus.apex.v1.GetHrvWindowResponse
+	(*ApexProtocol)(nil),                          // 28: sttattus.apex.v1.ApexProtocol
+	(*ApexProtocolEnrolment)(nil),                 // 29: sttattus.apex.v1.ApexProtocolEnrolment
+	(*ApexProtocolAdherence)(nil),                 // 30: sttattus.apex.v1.ApexProtocolAdherence
+	(*ListApexProtocolsRequest)(nil),              // 31: sttattus.apex.v1.ListApexProtocolsRequest
+	(*ListApexProtocolsResponse)(nil),             // 32: sttattus.apex.v1.ListApexProtocolsResponse
+	(*GetApexProtocolRequest)(nil),                // 33: sttattus.apex.v1.GetApexProtocolRequest
+	(*GetApexProtocolResponse)(nil),               // 34: sttattus.apex.v1.GetApexProtocolResponse
+	(*EnrolInApexProtocolRequest)(nil),            // 35: sttattus.apex.v1.EnrolInApexProtocolRequest
+	(*EnrolInApexProtocolResponse)(nil),           // 36: sttattus.apex.v1.EnrolInApexProtocolResponse
+	(*ListMyApexProtocolEnrolmentsRequest)(nil),   // 37: sttattus.apex.v1.ListMyApexProtocolEnrolmentsRequest
+	(*ListMyApexProtocolEnrolmentsResponse)(nil),  // 38: sttattus.apex.v1.ListMyApexProtocolEnrolmentsResponse
+	(*UpdateApexProtocolEnrolmentRequest)(nil),    // 39: sttattus.apex.v1.UpdateApexProtocolEnrolmentRequest
+	(*UpdateApexProtocolEnrolmentResponse)(nil),   // 40: sttattus.apex.v1.UpdateApexProtocolEnrolmentResponse
+	(*RecordApexProtocolAdherenceRequest)(nil),    // 41: sttattus.apex.v1.RecordApexProtocolAdherenceRequest
+	(*RecordApexProtocolAdherenceResponse)(nil),   // 42: sttattus.apex.v1.RecordApexProtocolAdherenceResponse
+	(*ListMyApexProtocolAdherenceRequest)(nil),    // 43: sttattus.apex.v1.ListMyApexProtocolAdherenceRequest
+	(*ListMyApexProtocolAdherenceResponse)(nil),   // 44: sttattus.apex.v1.ListMyApexProtocolAdherenceResponse
+	(*ApexClinic)(nil),                            // 45: sttattus.apex.v1.ApexClinic
+	(*ApexClinicIntroRequest)(nil),                // 46: sttattus.apex.v1.ApexClinicIntroRequest
+	(*ListApexClinicsRequest)(nil),                // 47: sttattus.apex.v1.ListApexClinicsRequest
+	(*ListApexClinicsResponse)(nil),               // 48: sttattus.apex.v1.ListApexClinicsResponse
+	(*GetApexClinicRequest)(nil),                  // 49: sttattus.apex.v1.GetApexClinicRequest
+	(*GetApexClinicResponse)(nil),                 // 50: sttattus.apex.v1.GetApexClinicResponse
+	(*RequestApexClinicIntroRequest)(nil),         // 51: sttattus.apex.v1.RequestApexClinicIntroRequest
+	(*RequestApexClinicIntroResponse)(nil),        // 52: sttattus.apex.v1.RequestApexClinicIntroResponse
+	(*ListMyApexClinicIntroRequestsRequest)(nil),  // 53: sttattus.apex.v1.ListMyApexClinicIntroRequestsRequest
+	(*ListMyApexClinicIntroRequestsResponse)(nil), // 54: sttattus.apex.v1.ListMyApexClinicIntroRequestsResponse
+	nil,                           // 55: sttattus.apex.v1.GetApexAgeResponse.SystemScoresEntry
+	(*timestamppb.Timestamp)(nil), // 56: google.protobuf.Timestamp
 }
 var file_sttattus_apex_v1_apex_proto_depIdxs = []int32{
 	0,  // 0: sttattus.apex.v1.Biomarker.category:type_name -> sttattus.apex.v1.BiomarkerCategory
-	27, // 1: sttattus.apex.v1.Biomarker.recorded_at:type_name -> google.protobuf.Timestamp
+	56, // 1: sttattus.apex.v1.Biomarker.recorded_at:type_name -> google.protobuf.Timestamp
 	1,  // 2: sttattus.apex.v1.LabReport.status:type_name -> sttattus.apex.v1.VerificationStatus
-	27, // 3: sttattus.apex.v1.LabReport.report_date:type_name -> google.protobuf.Timestamp
-	27, // 4: sttattus.apex.v1.LabReport.submitted_at:type_name -> google.protobuf.Timestamp
+	56, // 3: sttattus.apex.v1.LabReport.report_date:type_name -> google.protobuf.Timestamp
+	56, // 4: sttattus.apex.v1.LabReport.submitted_at:type_name -> google.protobuf.Timestamp
 	2,  // 5: sttattus.apex.v1.LabReport.extracted_markers:type_name -> sttattus.apex.v1.Biomarker
 	2,  // 6: sttattus.apex.v1.SyncVitalsRequest.metrics:type_name -> sttattus.apex.v1.Biomarker
-	27, // 7: sttattus.apex.v1.SubmitLabReportRequest.report_date:type_name -> google.protobuf.Timestamp
+	56, // 7: sttattus.apex.v1.SubmitLabReportRequest.report_date:type_name -> google.protobuf.Timestamp
 	3,  // 8: sttattus.apex.v1.SubmitLabReportResponse.report:type_name -> sttattus.apex.v1.LabReport
 	3,  // 9: sttattus.apex.v1.ListLabReportsResponse.reports:type_name -> sttattus.apex.v1.LabReport
 	1,  // 10: sttattus.apex.v1.AdminVerifyLabRequest.status:type_name -> sttattus.apex.v1.VerificationStatus
 	2,  // 11: sttattus.apex.v1.AdminVerifyLabRequest.verified_markers:type_name -> sttattus.apex.v1.Biomarker
 	3,  // 12: sttattus.apex.v1.AdminVerifyLabResponse.report:type_name -> sttattus.apex.v1.LabReport
 	2,  // 13: sttattus.apex.v1.ListMyVitalsResponse.vitals:type_name -> sttattus.apex.v1.Biomarker
-	26, // 14: sttattus.apex.v1.GetApexAgeResponse.system_scores:type_name -> sttattus.apex.v1.GetApexAgeResponse.SystemScoresEntry
+	55, // 14: sttattus.apex.v1.GetApexAgeResponse.system_scores:type_name -> sttattus.apex.v1.GetApexAgeResponse.SystemScoresEntry
 	16, // 15: sttattus.apex.v1.GetMyApexProfileResponse.profile:type_name -> sttattus.apex.v1.ApexProfile
 	16, // 16: sttattus.apex.v1.UpdateMyApexProfileRequest.profile:type_name -> sttattus.apex.v1.ApexProfile
 	16, // 17: sttattus.apex.v1.UpdateMyApexProfileResponse.profile:type_name -> sttattus.apex.v1.ApexProfile
 	21, // 18: sttattus.apex.v1.ListBiomarkerRefsResponse.refs:type_name -> sttattus.apex.v1.BiomarkerRef
 	2,  // 19: sttattus.apex.v1.ListMyBiomarkerHistoryResponse.points:type_name -> sttattus.apex.v1.Biomarker
-	4,  // 20: sttattus.apex.v1.ApexService.SyncVitals:input_type -> sttattus.apex.v1.SyncVitalsRequest
-	6,  // 21: sttattus.apex.v1.ApexService.SubmitLabReport:input_type -> sttattus.apex.v1.SubmitLabReportRequest
-	8,  // 22: sttattus.apex.v1.ApexService.ListLabReports:input_type -> sttattus.apex.v1.ListLabReportsRequest
-	12, // 23: sttattus.apex.v1.ApexService.ListMyVitals:input_type -> sttattus.apex.v1.ListMyVitalsRequest
-	24, // 24: sttattus.apex.v1.ApexService.ListMyBiomarkerHistory:input_type -> sttattus.apex.v1.ListMyBiomarkerHistoryRequest
-	22, // 25: sttattus.apex.v1.ApexService.ListBiomarkerRefs:input_type -> sttattus.apex.v1.ListBiomarkerRefsRequest
-	14, // 26: sttattus.apex.v1.ApexService.GetApexAge:input_type -> sttattus.apex.v1.GetApexAgeRequest
-	17, // 27: sttattus.apex.v1.ApexService.GetMyApexProfile:input_type -> sttattus.apex.v1.GetMyApexProfileRequest
-	19, // 28: sttattus.apex.v1.ApexService.UpdateMyApexProfile:input_type -> sttattus.apex.v1.UpdateMyApexProfileRequest
-	10, // 29: sttattus.apex.v1.ApexService.AdminVerifyLab:input_type -> sttattus.apex.v1.AdminVerifyLabRequest
-	5,  // 30: sttattus.apex.v1.ApexService.SyncVitals:output_type -> sttattus.apex.v1.SyncVitalsResponse
-	7,  // 31: sttattus.apex.v1.ApexService.SubmitLabReport:output_type -> sttattus.apex.v1.SubmitLabReportResponse
-	9,  // 32: sttattus.apex.v1.ApexService.ListLabReports:output_type -> sttattus.apex.v1.ListLabReportsResponse
-	13, // 33: sttattus.apex.v1.ApexService.ListMyVitals:output_type -> sttattus.apex.v1.ListMyVitalsResponse
-	25, // 34: sttattus.apex.v1.ApexService.ListMyBiomarkerHistory:output_type -> sttattus.apex.v1.ListMyBiomarkerHistoryResponse
-	23, // 35: sttattus.apex.v1.ApexService.ListBiomarkerRefs:output_type -> sttattus.apex.v1.ListBiomarkerRefsResponse
-	15, // 36: sttattus.apex.v1.ApexService.GetApexAge:output_type -> sttattus.apex.v1.GetApexAgeResponse
-	18, // 37: sttattus.apex.v1.ApexService.GetMyApexProfile:output_type -> sttattus.apex.v1.GetMyApexProfileResponse
-	20, // 38: sttattus.apex.v1.ApexService.UpdateMyApexProfile:output_type -> sttattus.apex.v1.UpdateMyApexProfileResponse
-	11, // 39: sttattus.apex.v1.ApexService.AdminVerifyLab:output_type -> sttattus.apex.v1.AdminVerifyLabResponse
-	30, // [30:40] is the sub-list for method output_type
-	20, // [20:30] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	28, // 20: sttattus.apex.v1.ApexProtocolEnrolment.protocol:type_name -> sttattus.apex.v1.ApexProtocol
+	28, // 21: sttattus.apex.v1.ListApexProtocolsResponse.protocols:type_name -> sttattus.apex.v1.ApexProtocol
+	28, // 22: sttattus.apex.v1.GetApexProtocolResponse.protocol:type_name -> sttattus.apex.v1.ApexProtocol
+	29, // 23: sttattus.apex.v1.EnrolInApexProtocolResponse.enrolment:type_name -> sttattus.apex.v1.ApexProtocolEnrolment
+	29, // 24: sttattus.apex.v1.ListMyApexProtocolEnrolmentsResponse.enrolments:type_name -> sttattus.apex.v1.ApexProtocolEnrolment
+	29, // 25: sttattus.apex.v1.UpdateApexProtocolEnrolmentResponse.enrolment:type_name -> sttattus.apex.v1.ApexProtocolEnrolment
+	30, // 26: sttattus.apex.v1.RecordApexProtocolAdherenceResponse.adherence:type_name -> sttattus.apex.v1.ApexProtocolAdherence
+	30, // 27: sttattus.apex.v1.ListMyApexProtocolAdherenceResponse.entries:type_name -> sttattus.apex.v1.ApexProtocolAdherence
+	45, // 28: sttattus.apex.v1.ApexClinicIntroRequest.clinic:type_name -> sttattus.apex.v1.ApexClinic
+	45, // 29: sttattus.apex.v1.ListApexClinicsResponse.clinics:type_name -> sttattus.apex.v1.ApexClinic
+	45, // 30: sttattus.apex.v1.GetApexClinicResponse.clinic:type_name -> sttattus.apex.v1.ApexClinic
+	46, // 31: sttattus.apex.v1.RequestApexClinicIntroResponse.request:type_name -> sttattus.apex.v1.ApexClinicIntroRequest
+	46, // 32: sttattus.apex.v1.ListMyApexClinicIntroRequestsResponse.requests:type_name -> sttattus.apex.v1.ApexClinicIntroRequest
+	4,  // 33: sttattus.apex.v1.ApexService.SyncVitals:input_type -> sttattus.apex.v1.SyncVitalsRequest
+	6,  // 34: sttattus.apex.v1.ApexService.SubmitLabReport:input_type -> sttattus.apex.v1.SubmitLabReportRequest
+	8,  // 35: sttattus.apex.v1.ApexService.ListLabReports:input_type -> sttattus.apex.v1.ListLabReportsRequest
+	12, // 36: sttattus.apex.v1.ApexService.ListMyVitals:input_type -> sttattus.apex.v1.ListMyVitalsRequest
+	24, // 37: sttattus.apex.v1.ApexService.ListMyBiomarkerHistory:input_type -> sttattus.apex.v1.ListMyBiomarkerHistoryRequest
+	26, // 38: sttattus.apex.v1.ApexService.GetHrvWindow:input_type -> sttattus.apex.v1.GetHrvWindowRequest
+	22, // 39: sttattus.apex.v1.ApexService.ListBiomarkerRefs:input_type -> sttattus.apex.v1.ListBiomarkerRefsRequest
+	14, // 40: sttattus.apex.v1.ApexService.GetApexAge:input_type -> sttattus.apex.v1.GetApexAgeRequest
+	17, // 41: sttattus.apex.v1.ApexService.GetMyApexProfile:input_type -> sttattus.apex.v1.GetMyApexProfileRequest
+	19, // 42: sttattus.apex.v1.ApexService.UpdateMyApexProfile:input_type -> sttattus.apex.v1.UpdateMyApexProfileRequest
+	47, // 43: sttattus.apex.v1.ApexService.ListApexClinics:input_type -> sttattus.apex.v1.ListApexClinicsRequest
+	49, // 44: sttattus.apex.v1.ApexService.GetApexClinic:input_type -> sttattus.apex.v1.GetApexClinicRequest
+	51, // 45: sttattus.apex.v1.ApexService.RequestApexClinicIntro:input_type -> sttattus.apex.v1.RequestApexClinicIntroRequest
+	53, // 46: sttattus.apex.v1.ApexService.ListMyApexClinicIntroRequests:input_type -> sttattus.apex.v1.ListMyApexClinicIntroRequestsRequest
+	31, // 47: sttattus.apex.v1.ApexService.ListApexProtocols:input_type -> sttattus.apex.v1.ListApexProtocolsRequest
+	33, // 48: sttattus.apex.v1.ApexService.GetApexProtocol:input_type -> sttattus.apex.v1.GetApexProtocolRequest
+	35, // 49: sttattus.apex.v1.ApexService.EnrolInApexProtocol:input_type -> sttattus.apex.v1.EnrolInApexProtocolRequest
+	37, // 50: sttattus.apex.v1.ApexService.ListMyApexProtocolEnrolments:input_type -> sttattus.apex.v1.ListMyApexProtocolEnrolmentsRequest
+	39, // 51: sttattus.apex.v1.ApexService.UpdateApexProtocolEnrolment:input_type -> sttattus.apex.v1.UpdateApexProtocolEnrolmentRequest
+	41, // 52: sttattus.apex.v1.ApexService.RecordApexProtocolAdherence:input_type -> sttattus.apex.v1.RecordApexProtocolAdherenceRequest
+	43, // 53: sttattus.apex.v1.ApexService.ListMyApexProtocolAdherence:input_type -> sttattus.apex.v1.ListMyApexProtocolAdherenceRequest
+	10, // 54: sttattus.apex.v1.ApexService.AdminVerifyLab:input_type -> sttattus.apex.v1.AdminVerifyLabRequest
+	5,  // 55: sttattus.apex.v1.ApexService.SyncVitals:output_type -> sttattus.apex.v1.SyncVitalsResponse
+	7,  // 56: sttattus.apex.v1.ApexService.SubmitLabReport:output_type -> sttattus.apex.v1.SubmitLabReportResponse
+	9,  // 57: sttattus.apex.v1.ApexService.ListLabReports:output_type -> sttattus.apex.v1.ListLabReportsResponse
+	13, // 58: sttattus.apex.v1.ApexService.ListMyVitals:output_type -> sttattus.apex.v1.ListMyVitalsResponse
+	25, // 59: sttattus.apex.v1.ApexService.ListMyBiomarkerHistory:output_type -> sttattus.apex.v1.ListMyBiomarkerHistoryResponse
+	27, // 60: sttattus.apex.v1.ApexService.GetHrvWindow:output_type -> sttattus.apex.v1.GetHrvWindowResponse
+	23, // 61: sttattus.apex.v1.ApexService.ListBiomarkerRefs:output_type -> sttattus.apex.v1.ListBiomarkerRefsResponse
+	15, // 62: sttattus.apex.v1.ApexService.GetApexAge:output_type -> sttattus.apex.v1.GetApexAgeResponse
+	18, // 63: sttattus.apex.v1.ApexService.GetMyApexProfile:output_type -> sttattus.apex.v1.GetMyApexProfileResponse
+	20, // 64: sttattus.apex.v1.ApexService.UpdateMyApexProfile:output_type -> sttattus.apex.v1.UpdateMyApexProfileResponse
+	48, // 65: sttattus.apex.v1.ApexService.ListApexClinics:output_type -> sttattus.apex.v1.ListApexClinicsResponse
+	50, // 66: sttattus.apex.v1.ApexService.GetApexClinic:output_type -> sttattus.apex.v1.GetApexClinicResponse
+	52, // 67: sttattus.apex.v1.ApexService.RequestApexClinicIntro:output_type -> sttattus.apex.v1.RequestApexClinicIntroResponse
+	54, // 68: sttattus.apex.v1.ApexService.ListMyApexClinicIntroRequests:output_type -> sttattus.apex.v1.ListMyApexClinicIntroRequestsResponse
+	32, // 69: sttattus.apex.v1.ApexService.ListApexProtocols:output_type -> sttattus.apex.v1.ListApexProtocolsResponse
+	34, // 70: sttattus.apex.v1.ApexService.GetApexProtocol:output_type -> sttattus.apex.v1.GetApexProtocolResponse
+	36, // 71: sttattus.apex.v1.ApexService.EnrolInApexProtocol:output_type -> sttattus.apex.v1.EnrolInApexProtocolResponse
+	38, // 72: sttattus.apex.v1.ApexService.ListMyApexProtocolEnrolments:output_type -> sttattus.apex.v1.ListMyApexProtocolEnrolmentsResponse
+	40, // 73: sttattus.apex.v1.ApexService.UpdateApexProtocolEnrolment:output_type -> sttattus.apex.v1.UpdateApexProtocolEnrolmentResponse
+	42, // 74: sttattus.apex.v1.ApexService.RecordApexProtocolAdherence:output_type -> sttattus.apex.v1.RecordApexProtocolAdherenceResponse
+	44, // 75: sttattus.apex.v1.ApexService.ListMyApexProtocolAdherence:output_type -> sttattus.apex.v1.ListMyApexProtocolAdherenceResponse
+	11, // 76: sttattus.apex.v1.ApexService.AdminVerifyLab:output_type -> sttattus.apex.v1.AdminVerifyLabResponse
+	55, // [55:77] is the sub-list for method output_type
+	33, // [33:55] is the sub-list for method input_type
+	33, // [33:33] is the sub-list for extension type_name
+	33, // [33:33] is the sub-list for extension extendee
+	0,  // [0:33] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_apex_v1_apex_proto_init() }
@@ -1717,7 +3548,7 @@ func file_sttattus_apex_v1_apex_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_apex_v1_apex_proto_rawDesc), len(file_sttattus_apex_v1_apex_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   25,
+			NumMessages:   54,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

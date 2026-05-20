@@ -148,6 +148,15 @@ class WorkoutServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateEnrolment, request, options: options);
   }
 
+  /// F7P2.1 follow-on — per-week prescriptions.
+  $grpc.ResponseFuture<$0.ListProgrammeWeeksResponse> listProgrammeWeeks($0.ListProgrammeWeeksRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listProgrammeWeeks, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetProgrammeWeekResponse> getProgrammeWeek($0.GetProgrammeWeekRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getProgrammeWeek, request, options: options);
+  }
+
   /// F7P2.2 — personal records. Detection itself runs as a River
   /// worker fired on session completion; these RPCs are read-only.
   $grpc.ResponseFuture<$0.ListMyPRsResponse> listMyPRs($0.ListMyPRsRequest request, {$grpc.CallOptions? options,}) {
@@ -337,6 +346,14 @@ class WorkoutServiceClient extends $grpc.Client {
       '/sttattus.workout.v1.WorkoutService/UpdateEnrolment',
       ($0.UpdateEnrolmentRequest value) => value.writeToBuffer(),
       $0.UpdateEnrolmentResponse.fromBuffer);
+  static final _$listProgrammeWeeks = $grpc.ClientMethod<$0.ListProgrammeWeeksRequest, $0.ListProgrammeWeeksResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListProgrammeWeeks',
+      ($0.ListProgrammeWeeksRequest value) => value.writeToBuffer(),
+      $0.ListProgrammeWeeksResponse.fromBuffer);
+  static final _$getProgrammeWeek = $grpc.ClientMethod<$0.GetProgrammeWeekRequest, $0.GetProgrammeWeekResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetProgrammeWeek',
+      ($0.GetProgrammeWeekRequest value) => value.writeToBuffer(),
+      $0.GetProgrammeWeekResponse.fromBuffer);
   static final _$listMyPRs = $grpc.ClientMethod<$0.ListMyPRsRequest, $0.ListMyPRsResponse>(
       '/sttattus.workout.v1.WorkoutService/ListMyPRs',
       ($0.ListMyPRsRequest value) => value.writeToBuffer(),
@@ -598,6 +615,20 @@ abstract class WorkoutServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UpdateEnrolmentRequest.fromBuffer(value),
         ($0.UpdateEnrolmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListProgrammeWeeksRequest, $0.ListProgrammeWeeksResponse>(
+        'ListProgrammeWeeks',
+        listProgrammeWeeks_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListProgrammeWeeksRequest.fromBuffer(value),
+        ($0.ListProgrammeWeeksResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetProgrammeWeekRequest, $0.GetProgrammeWeekResponse>(
+        'GetProgrammeWeek',
+        getProgrammeWeek_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetProgrammeWeekRequest.fromBuffer(value),
+        ($0.GetProgrammeWeekResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListMyPRsRequest, $0.ListMyPRsResponse>(
         'ListMyPRs',
         listMyPRs_Pre,
@@ -881,6 +912,18 @@ abstract class WorkoutServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.UpdateEnrolmentResponse> updateEnrolment($grpc.ServiceCall call, $0.UpdateEnrolmentRequest request);
+
+  $async.Future<$0.ListProgrammeWeeksResponse> listProgrammeWeeks_Pre($grpc.ServiceCall $call, $async.Future<$0.ListProgrammeWeeksRequest> $request) async {
+    return listProgrammeWeeks($call, await $request);
+  }
+
+  $async.Future<$0.ListProgrammeWeeksResponse> listProgrammeWeeks($grpc.ServiceCall call, $0.ListProgrammeWeeksRequest request);
+
+  $async.Future<$0.GetProgrammeWeekResponse> getProgrammeWeek_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProgrammeWeekRequest> $request) async {
+    return getProgrammeWeek($call, await $request);
+  }
+
+  $async.Future<$0.GetProgrammeWeekResponse> getProgrammeWeek($grpc.ServiceCall call, $0.GetProgrammeWeekRequest request);
 
   $async.Future<$0.ListMyPRsResponse> listMyPRs_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyPRsRequest> $request) async {
     return listMyPRs($call, await $request);

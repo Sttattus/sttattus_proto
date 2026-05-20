@@ -163,6 +163,172 @@ message ListMyBiomarkerHistoryResponse {
   repeated Biomarker points = 2;
 }
 
+// Z16.4 — Apex HRV bridge for Zenith verification.
+// Returns mean HRV inside the requested span vs the user's 30-day
+// baseline. Honest "present=false" when either the window or the
+// baseline carries zero samples — Zenith treats absence as
+// "unavailable", never as failure.
+message GetHrvWindowRequest {
+  int64 start_unix = 1;
+  int64 end_unix = 2;
+}
+
+message GetHrvWindowResponse {
+  bool present = 1; // false when window or baseline is empty
+  double window_mean = 2; // mean HRV in the (start, end) span (ms)
+  double baseline_mean = 3; // 30-day baseline mean excluding the window
+  double delta = 4; // window_mean - baseline_mean (ms)
+  int32 window_count = 5;
+  int32 baseline_count = 6;
+}
+
+// A11.6 Phase 2 — Apex Protocols library.
+//
+// Editorial protocols across the audit's named categories (sleep,
+// light, breathwork, supplements, thermal, recovery). Members can
+// pin a protocol and tick daily adherence; the per-day status is
+// 'hit' | 'miss' | 'partial'.
+
+message ApexProtocol {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string category = 4;
+  string author = 5;
+  string summary = 6;
+  string description = 7;
+  int32 duration_weeks = 8;
+  int32 minutes_per_day = 9;
+  string image_url = 10;
+  bool sovereign_only = 11;
+}
+
+message ApexProtocolEnrolment {
+  string id = 1;
+  ApexProtocol protocol = 2;
+  string status = 3; // enrolled | paused | finished
+  int64 started_at_unix = 4;
+  int64 finished_at_unix = 5;
+}
+
+message ApexProtocolAdherence {
+  string id = 1;
+  string enrolment_id = 2;
+  string for_date = 3; // YYYY-MM-DD
+  string status = 4; // hit | miss | partial
+  string note = 5;
+  int64 created_at_unix = 6;
+}
+
+message ListApexProtocolsRequest {
+  string category = 1; // optional, empty = all
+  bool include_sovereign = 2;
+}
+message ListApexProtocolsResponse {
+  repeated ApexProtocol protocols = 1;
+}
+
+message GetApexProtocolRequest {
+  string slug = 1;
+}
+message GetApexProtocolResponse {
+  ApexProtocol protocol = 1;
+}
+
+message EnrolInApexProtocolRequest {
+  string protocol_id = 1;
+}
+message EnrolInApexProtocolResponse {
+  ApexProtocolEnrolment enrolment = 1;
+}
+
+message ListMyApexProtocolEnrolmentsRequest {}
+message ListMyApexProtocolEnrolmentsResponse {
+  repeated ApexProtocolEnrolment enrolments = 1;
+}
+
+message UpdateApexProtocolEnrolmentRequest {
+  string enrolment_id = 1;
+  string status = 2; // enrolled | paused | finished
+}
+message UpdateApexProtocolEnrolmentResponse {
+  ApexProtocolEnrolment enrolment = 1;
+}
+
+message RecordApexProtocolAdherenceRequest {
+  string enrolment_id = 1;
+  string for_date = 2; // YYYY-MM-DD, empty = today
+  string status = 3; // hit | miss | partial
+  string note = 4;
+}
+message RecordApexProtocolAdherenceResponse {
+  ApexProtocolAdherence adherence = 1;
+}
+
+message ListMyApexProtocolAdherenceRequest {
+  string enrolment_id = 1;
+  int32 days = 2; // 0 = all
+}
+message ListMyApexProtocolAdherenceResponse {
+  repeated ApexProtocolAdherence entries = 1;
+}
+
+// A11.6 Phase 3 — Apex Clinics directory.
+//
+// Editorial directory of partner longevity clinics by region with
+// a concierge intro-request surface. Intro requests are
+// human-routed; the desk picks them up server-side.
+
+message ApexClinic {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string city = 4;
+  string country = 5;
+  string specialties = 6; // comma-separated tags
+  string summary = 7;
+  string description = 8;
+  string website_url = 9;
+  string image_url = 10;
+  bool sovereign_only = 11;
+}
+
+message ApexClinicIntroRequest {
+  string id = 1;
+  ApexClinic clinic = 2;
+  string note = 3;
+  string status = 4; // requested | acknowledged | introduced | declined
+  int64 requested_at_unix = 5;
+  int64 decided_at_unix = 6;
+}
+
+message ListApexClinicsRequest {
+  string country = 1; // optional, empty = all
+}
+message ListApexClinicsResponse {
+  repeated ApexClinic clinics = 1;
+}
+
+message GetApexClinicRequest {
+  string slug = 1;
+}
+message GetApexClinicResponse {
+  ApexClinic clinic = 1;
+}
+
+message RequestApexClinicIntroRequest {
+  string clinic_id = 1;
+  string note = 2;
+}
+message RequestApexClinicIntroResponse {
+  ApexClinicIntroRequest request = 1;
+}
+
+message ListMyApexClinicIntroRequestsRequest {}
+message ListMyApexClinicIntroRequestsResponse {
+  repeated ApexClinicIntroRequest requests = 1;
+}
+
 service ApexService {
   // Wearable/Manual Sync
   rpc SyncVitals(SyncVitalsRequest) returns (SyncVitalsResponse);
@@ -177,6 +343,9 @@ service ApexService {
   // Per-biomarker history (A11.2).
   rpc ListMyBiomarkerHistory(ListMyBiomarkerHistoryRequest) returns (ListMyBiomarkerHistoryResponse);
 
+  // Z16.4 — HRV window summary for Zenith session verification.
+  rpc GetHrvWindow(GetHrvWindowRequest) returns (GetHrvWindowResponse);
+
   // Reference + optimal ranges (A11.4). Public-readable for any
   // authed user — the table is curated reference data.
   rpc ListBiomarkerRefs(ListBiomarkerRefsRequest) returns (ListBiomarkerRefsResponse);
@@ -185,6 +354,21 @@ service ApexService {
   rpc GetApexAge(GetApexAgeRequest) returns (GetApexAgeResponse);
   rpc GetMyApexProfile(GetMyApexProfileRequest) returns (GetMyApexProfileResponse);
   rpc UpdateMyApexProfile(UpdateMyApexProfileRequest) returns (UpdateMyApexProfileResponse);
+
+  // A11.6 Phase 3 — Clinics directory.
+  rpc ListApexClinics(ListApexClinicsRequest) returns (ListApexClinicsResponse);
+  rpc GetApexClinic(GetApexClinicRequest) returns (GetApexClinicResponse);
+  rpc RequestApexClinicIntro(RequestApexClinicIntroRequest) returns (RequestApexClinicIntroResponse);
+  rpc ListMyApexClinicIntroRequests(ListMyApexClinicIntroRequestsRequest) returns (ListMyApexClinicIntroRequestsResponse);
+
+  // A11.6 Phase 2 — Protocols library.
+  rpc ListApexProtocols(ListApexProtocolsRequest) returns (ListApexProtocolsResponse);
+  rpc GetApexProtocol(GetApexProtocolRequest) returns (GetApexProtocolResponse);
+  rpc EnrolInApexProtocol(EnrolInApexProtocolRequest) returns (EnrolInApexProtocolResponse);
+  rpc ListMyApexProtocolEnrolments(ListMyApexProtocolEnrolmentsRequest) returns (ListMyApexProtocolEnrolmentsResponse);
+  rpc UpdateApexProtocolEnrolment(UpdateApexProtocolEnrolmentRequest) returns (UpdateApexProtocolEnrolmentResponse);
+  rpc RecordApexProtocolAdherence(RecordApexProtocolAdherenceRequest) returns (RecordApexProtocolAdherenceResponse);
+  rpc ListMyApexProtocolAdherence(ListMyApexProtocolAdherenceRequest) returns (ListMyApexProtocolAdherenceResponse);
 
   // Admin Methods (Gated by Admin Middleware)
   rpc AdminVerifyLab(AdminVerifyLabRequest) returns (AdminVerifyLabResponse);

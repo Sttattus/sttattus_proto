@@ -1086,6 +1086,124 @@ final $typed_data.Uint8List updateEnrolmentResponseDescriptor = $convert.base64D
     'ChdVcGRhdGVFbnJvbG1lbnRSZXNwb25zZRJFCgllbnJvbG1lbnQYASABKAsyJy5zdHRhdHR1cy'
     '53b3Jrb3V0LnYxLlByb2dyYW1tZUVucm9sbWVudFIJZW5yb2xtZW50');
 
+@$core.Deprecated('Use programmeWeekHeaderDescriptor instead')
+const ProgrammeWeekHeader$json = {
+  '1': 'ProgrammeWeekHeader',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'week_index', '3': 2, '4': 1, '5': 5, '10': 'weekIndex'},
+    {'1': 'focus', '3': 3, '4': 1, '5': 9, '10': 'focus'},
+    {'1': 'notes', '3': 4, '4': 1, '5': 9, '10': 'notes'},
+  ],
+};
+
+/// Descriptor for `ProgrammeWeekHeader`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List programmeWeekHeaderDescriptor = $convert.base64Decode(
+    'ChNQcm9ncmFtbWVXZWVrSGVhZGVyEg4KAmlkGAEgASgJUgJpZBIdCgp3ZWVrX2luZGV4GAIgAS'
+    'gFUgl3ZWVrSW5kZXgSFAoFZm9jdXMYAyABKAlSBWZvY3VzEhQKBW5vdGVzGAQgASgJUgVub3Rl'
+    'cw==');
+
+@$core.Deprecated('Use programmeWeekExerciseDescriptor instead')
+const ProgrammeWeekExercise$json = {
+  '1': 'ProgrammeWeekExercise',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'day_index', '3': 2, '4': 1, '5': 5, '10': 'dayIndex'},
+    {'1': 'day_label', '3': 3, '4': 1, '5': 9, '10': 'dayLabel'},
+    {'1': 'order_index', '3': 4, '4': 1, '5': 5, '10': 'orderIndex'},
+    {'1': 'exercise_name', '3': 5, '4': 1, '5': 9, '10': 'exerciseName'},
+    {'1': 'exercise_id', '3': 6, '4': 1, '5': 9, '10': 'exerciseId'},
+    {'1': 'sets', '3': 7, '4': 1, '5': 5, '10': 'sets'},
+    {'1': 'rep_scheme', '3': 8, '4': 1, '5': 9, '10': 'repScheme'},
+    {'1': 'intensity_note', '3': 9, '4': 1, '5': 9, '10': 'intensityNote'},
+    {'1': 'rest_seconds', '3': 10, '4': 1, '5': 5, '10': 'restSeconds'},
+    {'1': 'cue', '3': 11, '4': 1, '5': 9, '10': 'cue'},
+  ],
+};
+
+/// Descriptor for `ProgrammeWeekExercise`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List programmeWeekExerciseDescriptor = $convert.base64Decode(
+    'ChVQcm9ncmFtbWVXZWVrRXhlcmNpc2USDgoCaWQYASABKAlSAmlkEhsKCWRheV9pbmRleBgCIA'
+    'EoBVIIZGF5SW5kZXgSGwoJZGF5X2xhYmVsGAMgASgJUghkYXlMYWJlbBIfCgtvcmRlcl9pbmRl'
+    'eBgEIAEoBVIKb3JkZXJJbmRleBIjCg1leGVyY2lzZV9uYW1lGAUgASgJUgxleGVyY2lzZU5hbW'
+    'USHwoLZXhlcmNpc2VfaWQYBiABKAlSCmV4ZXJjaXNlSWQSEgoEc2V0cxgHIAEoBVIEc2V0cxId'
+    'CgpyZXBfc2NoZW1lGAggASgJUglyZXBTY2hlbWUSJQoOaW50ZW5zaXR5X25vdGUYCSABKAlSDW'
+    'ludGVuc2l0eU5vdGUSIQoMcmVzdF9zZWNvbmRzGAogASgFUgtyZXN0U2Vjb25kcxIQCgNjdWUY'
+    'CyABKAlSA2N1ZQ==');
+
+@$core.Deprecated('Use programmeWeekDescriptor instead')
+const ProgrammeWeek$json = {
+  '1': 'ProgrammeWeek',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'programme_id', '3': 2, '4': 1, '5': 9, '10': 'programmeId'},
+    {'1': 'week_index', '3': 3, '4': 1, '5': 5, '10': 'weekIndex'},
+    {'1': 'focus', '3': 4, '4': 1, '5': 9, '10': 'focus'},
+    {'1': 'notes', '3': 5, '4': 1, '5': 9, '10': 'notes'},
+    {'1': 'exercises', '3': 6, '4': 3, '5': 11, '6': '.sttattus.workout.v1.ProgrammeWeekExercise', '10': 'exercises'},
+  ],
+};
+
+/// Descriptor for `ProgrammeWeek`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List programmeWeekDescriptor = $convert.base64Decode(
+    'Cg1Qcm9ncmFtbWVXZWVrEg4KAmlkGAEgASgJUgJpZBIhCgxwcm9ncmFtbWVfaWQYAiABKAlSC3'
+    'Byb2dyYW1tZUlkEh0KCndlZWtfaW5kZXgYAyABKAVSCXdlZWtJbmRleBIUCgVmb2N1cxgEIAEo'
+    'CVIFZm9jdXMSFAoFbm90ZXMYBSABKAlSBW5vdGVzEkgKCWV4ZXJjaXNlcxgGIAMoCzIqLnN0dG'
+    'F0dHVzLndvcmtvdXQudjEuUHJvZ3JhbW1lV2Vla0V4ZXJjaXNlUglleGVyY2lzZXM=');
+
+@$core.Deprecated('Use listProgrammeWeeksRequestDescriptor instead')
+const ListProgrammeWeeksRequest$json = {
+  '1': 'ListProgrammeWeeksRequest',
+  '2': [
+    {'1': 'programme_id', '3': 1, '4': 1, '5': 9, '10': 'programmeId'},
+  ],
+};
+
+/// Descriptor for `ListProgrammeWeeksRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listProgrammeWeeksRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0UHJvZ3JhbW1lV2Vla3NSZXF1ZXN0EiEKDHByb2dyYW1tZV9pZBgBIAEoCVILcHJvZ3'
+    'JhbW1lSWQ=');
+
+@$core.Deprecated('Use listProgrammeWeeksResponseDescriptor instead')
+const ListProgrammeWeeksResponse$json = {
+  '1': 'ListProgrammeWeeksResponse',
+  '2': [
+    {'1': 'weeks', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.ProgrammeWeekHeader', '10': 'weeks'},
+  ],
+};
+
+/// Descriptor for `ListProgrammeWeeksResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listProgrammeWeeksResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0UHJvZ3JhbW1lV2Vla3NSZXNwb25zZRI+CgV3ZWVrcxgBIAMoCzIoLnN0dGF0dHVzLn'
+    'dvcmtvdXQudjEuUHJvZ3JhbW1lV2Vla0hlYWRlclIFd2Vla3M=');
+
+@$core.Deprecated('Use getProgrammeWeekRequestDescriptor instead')
+const GetProgrammeWeekRequest$json = {
+  '1': 'GetProgrammeWeekRequest',
+  '2': [
+    {'1': 'programme_id', '3': 1, '4': 1, '5': 9, '10': 'programmeId'},
+    {'1': 'week_index', '3': 2, '4': 1, '5': 5, '10': 'weekIndex'},
+  ],
+};
+
+/// Descriptor for `GetProgrammeWeekRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getProgrammeWeekRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRQcm9ncmFtbWVXZWVrUmVxdWVzdBIhCgxwcm9ncmFtbWVfaWQYASABKAlSC3Byb2dyYW'
+    '1tZUlkEh0KCndlZWtfaW5kZXgYAiABKAVSCXdlZWtJbmRleA==');
+
+@$core.Deprecated('Use getProgrammeWeekResponseDescriptor instead')
+const GetProgrammeWeekResponse$json = {
+  '1': 'GetProgrammeWeekResponse',
+  '2': [
+    {'1': 'week', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.ProgrammeWeek', '10': 'week'},
+  ],
+};
+
+/// Descriptor for `GetProgrammeWeekResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getProgrammeWeekResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRQcm9ncmFtbWVXZWVrUmVzcG9uc2USNgoEd2VlaxgBIAEoCzIiLnN0dGF0dHVzLndvcm'
+    'tvdXQudjEuUHJvZ3JhbW1lV2Vla1IEd2Vlaw==');
+
 @$core.Deprecated('Use personalRecordDescriptor instead')
 const PersonalRecord$json = {
   '1': 'PersonalRecord',

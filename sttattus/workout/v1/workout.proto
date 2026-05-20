@@ -486,6 +486,63 @@ message UpdateEnrolmentResponse {
   ProgrammeEnrolment enrolment = 1;
 }
 
+// ===== Programme weeks (F7P2.1 follow-on) =====
+//
+// Per-week prescriptions for a programme. Each week has a header
+// (focus + notes) plus an ordered list of (day, exercise) blocks.
+// Programmes that haven't been authored yet return an empty week
+// list — the client renders an honest "prescriptions coming next"
+// affordance.
+
+message ProgrammeWeekHeader {
+  string id = 1;
+  int32 week_index = 2;
+  string focus = 3;
+  string notes = 4;
+}
+
+message ProgrammeWeekExercise {
+  string id = 1;
+  int32 day_index = 2;
+  string day_label = 3;
+  int32 order_index = 4;
+  string exercise_name = 5;
+  // Optional — empty when the prescription is free-text only.
+  string exercise_id = 6;
+  int32 sets = 7;
+  string rep_scheme = 8;
+  string intensity_note = 9;
+  int32 rest_seconds = 10;
+  string cue = 11;
+}
+
+message ProgrammeWeek {
+  string id = 1;
+  string programme_id = 2;
+  int32 week_index = 3;
+  string focus = 4;
+  string notes = 5;
+  repeated ProgrammeWeekExercise exercises = 6;
+}
+
+message ListProgrammeWeeksRequest {
+  string programme_id = 1;
+}
+message ListProgrammeWeeksResponse {
+  repeated ProgrammeWeekHeader weeks = 1;
+}
+
+message GetProgrammeWeekRequest {
+  string programme_id = 1;
+  int32 week_index = 2;
+}
+message GetProgrammeWeekResponse {
+  // week.id is empty when the (programme, week) pair hasn't been
+  // authored yet — the client surfaces an honest "not authored"
+  // placeholder.
+  ProgrammeWeek week = 1;
+}
+
 // ===== Personal records (F7P2.2) =====
 
 // PersonalRecord is one PR with the movement name + estimated 1RM
@@ -786,6 +843,10 @@ service WorkoutService {
   rpc GetActiveEnrolment(GetActiveEnrolmentRequest) returns (GetActiveEnrolmentResponse);
   rpc ListMyEnrolments(ListMyEnrolmentsRequest) returns (ListMyEnrolmentsResponse);
   rpc UpdateEnrolment(UpdateEnrolmentRequest) returns (UpdateEnrolmentResponse);
+
+  // F7P2.1 follow-on — per-week prescriptions.
+  rpc ListProgrammeWeeks(ListProgrammeWeeksRequest) returns (ListProgrammeWeeksResponse);
+  rpc GetProgrammeWeek(GetProgrammeWeekRequest) returns (GetProgrammeWeekResponse);
 
   // F7P2.2 — personal records. Detection itself runs as a River
   // worker fired on session completion; these RPCs are read-only.

@@ -3558,6 +3558,385 @@ export class UpdateEnrolmentResponse extends Message<UpdateEnrolmentResponse> {
 }
 
 /**
+ * @generated from message sttattus.workout.v1.ProgrammeWeekHeader
+ */
+export class ProgrammeWeekHeader extends Message<ProgrammeWeekHeader> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: int32 week_index = 2;
+   */
+  weekIndex = 0;
+
+  /**
+   * @generated from field: string focus = 3;
+   */
+  focus = "";
+
+  /**
+   * @generated from field: string notes = 4;
+   */
+  notes = "";
+
+  constructor(data?: PartialMessage<ProgrammeWeekHeader>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ProgrammeWeekHeader";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "week_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "focus", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProgrammeWeekHeader {
+    return new ProgrammeWeekHeader().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ProgrammeWeekHeader {
+    return new ProgrammeWeekHeader().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ProgrammeWeekHeader {
+    return new ProgrammeWeekHeader().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ProgrammeWeekHeader | PlainMessage<ProgrammeWeekHeader> | undefined, b: ProgrammeWeekHeader | PlainMessage<ProgrammeWeekHeader> | undefined): boolean {
+    return proto3.util.equals(ProgrammeWeekHeader, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ProgrammeWeekExercise
+ */
+export class ProgrammeWeekExercise extends Message<ProgrammeWeekExercise> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: int32 day_index = 2;
+   */
+  dayIndex = 0;
+
+  /**
+   * @generated from field: string day_label = 3;
+   */
+  dayLabel = "";
+
+  /**
+   * @generated from field: int32 order_index = 4;
+   */
+  orderIndex = 0;
+
+  /**
+   * @generated from field: string exercise_name = 5;
+   */
+  exerciseName = "";
+
+  /**
+   * Optional — empty when the prescription is free-text only.
+   *
+   * @generated from field: string exercise_id = 6;
+   */
+  exerciseId = "";
+
+  /**
+   * @generated from field: int32 sets = 7;
+   */
+  sets = 0;
+
+  /**
+   * @generated from field: string rep_scheme = 8;
+   */
+  repScheme = "";
+
+  /**
+   * @generated from field: string intensity_note = 9;
+   */
+  intensityNote = "";
+
+  /**
+   * @generated from field: int32 rest_seconds = 10;
+   */
+  restSeconds = 0;
+
+  /**
+   * @generated from field: string cue = 11;
+   */
+  cue = "";
+
+  constructor(data?: PartialMessage<ProgrammeWeekExercise>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ProgrammeWeekExercise";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "day_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "day_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "order_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "exercise_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "exercise_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "sets", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "rep_scheme", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "intensity_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "rest_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "cue", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProgrammeWeekExercise {
+    return new ProgrammeWeekExercise().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ProgrammeWeekExercise {
+    return new ProgrammeWeekExercise().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ProgrammeWeekExercise {
+    return new ProgrammeWeekExercise().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ProgrammeWeekExercise | PlainMessage<ProgrammeWeekExercise> | undefined, b: ProgrammeWeekExercise | PlainMessage<ProgrammeWeekExercise> | undefined): boolean {
+    return proto3.util.equals(ProgrammeWeekExercise, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ProgrammeWeek
+ */
+export class ProgrammeWeek extends Message<ProgrammeWeek> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string programme_id = 2;
+   */
+  programmeId = "";
+
+  /**
+   * @generated from field: int32 week_index = 3;
+   */
+  weekIndex = 0;
+
+  /**
+   * @generated from field: string focus = 4;
+   */
+  focus = "";
+
+  /**
+   * @generated from field: string notes = 5;
+   */
+  notes = "";
+
+  /**
+   * @generated from field: repeated sttattus.workout.v1.ProgrammeWeekExercise exercises = 6;
+   */
+  exercises: ProgrammeWeekExercise[] = [];
+
+  constructor(data?: PartialMessage<ProgrammeWeek>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ProgrammeWeek";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "programme_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "week_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "focus", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "exercises", kind: "message", T: ProgrammeWeekExercise, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProgrammeWeek {
+    return new ProgrammeWeek().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ProgrammeWeek {
+    return new ProgrammeWeek().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ProgrammeWeek {
+    return new ProgrammeWeek().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ProgrammeWeek | PlainMessage<ProgrammeWeek> | undefined, b: ProgrammeWeek | PlainMessage<ProgrammeWeek> | undefined): boolean {
+    return proto3.util.equals(ProgrammeWeek, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ListProgrammeWeeksRequest
+ */
+export class ListProgrammeWeeksRequest extends Message<ListProgrammeWeeksRequest> {
+  /**
+   * @generated from field: string programme_id = 1;
+   */
+  programmeId = "";
+
+  constructor(data?: PartialMessage<ListProgrammeWeeksRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ListProgrammeWeeksRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "programme_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListProgrammeWeeksRequest {
+    return new ListProgrammeWeeksRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListProgrammeWeeksRequest {
+    return new ListProgrammeWeeksRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListProgrammeWeeksRequest {
+    return new ListProgrammeWeeksRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListProgrammeWeeksRequest | PlainMessage<ListProgrammeWeeksRequest> | undefined, b: ListProgrammeWeeksRequest | PlainMessage<ListProgrammeWeeksRequest> | undefined): boolean {
+    return proto3.util.equals(ListProgrammeWeeksRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.ListProgrammeWeeksResponse
+ */
+export class ListProgrammeWeeksResponse extends Message<ListProgrammeWeeksResponse> {
+  /**
+   * @generated from field: repeated sttattus.workout.v1.ProgrammeWeekHeader weeks = 1;
+   */
+  weeks: ProgrammeWeekHeader[] = [];
+
+  constructor(data?: PartialMessage<ListProgrammeWeeksResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ListProgrammeWeeksResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "weeks", kind: "message", T: ProgrammeWeekHeader, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListProgrammeWeeksResponse {
+    return new ListProgrammeWeeksResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListProgrammeWeeksResponse {
+    return new ListProgrammeWeeksResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListProgrammeWeeksResponse {
+    return new ListProgrammeWeeksResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListProgrammeWeeksResponse | PlainMessage<ListProgrammeWeeksResponse> | undefined, b: ListProgrammeWeeksResponse | PlainMessage<ListProgrammeWeeksResponse> | undefined): boolean {
+    return proto3.util.equals(ListProgrammeWeeksResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.GetProgrammeWeekRequest
+ */
+export class GetProgrammeWeekRequest extends Message<GetProgrammeWeekRequest> {
+  /**
+   * @generated from field: string programme_id = 1;
+   */
+  programmeId = "";
+
+  /**
+   * @generated from field: int32 week_index = 2;
+   */
+  weekIndex = 0;
+
+  constructor(data?: PartialMessage<GetProgrammeWeekRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.GetProgrammeWeekRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "programme_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "week_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetProgrammeWeekRequest {
+    return new GetProgrammeWeekRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetProgrammeWeekRequest {
+    return new GetProgrammeWeekRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetProgrammeWeekRequest {
+    return new GetProgrammeWeekRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetProgrammeWeekRequest | PlainMessage<GetProgrammeWeekRequest> | undefined, b: GetProgrammeWeekRequest | PlainMessage<GetProgrammeWeekRequest> | undefined): boolean {
+    return proto3.util.equals(GetProgrammeWeekRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.workout.v1.GetProgrammeWeekResponse
+ */
+export class GetProgrammeWeekResponse extends Message<GetProgrammeWeekResponse> {
+  /**
+   * week.id is empty when the (programme, week) pair hasn't been
+   * authored yet — the client surfaces an honest "not authored"
+   * placeholder.
+   *
+   * @generated from field: sttattus.workout.v1.ProgrammeWeek week = 1;
+   */
+  week?: ProgrammeWeek;
+
+  constructor(data?: PartialMessage<GetProgrammeWeekResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.GetProgrammeWeekResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "week", kind: "message", T: ProgrammeWeek },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetProgrammeWeekResponse {
+    return new GetProgrammeWeekResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetProgrammeWeekResponse {
+    return new GetProgrammeWeekResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetProgrammeWeekResponse {
+    return new GetProgrammeWeekResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetProgrammeWeekResponse | PlainMessage<GetProgrammeWeekResponse> | undefined, b: GetProgrammeWeekResponse | PlainMessage<GetProgrammeWeekResponse> | undefined): boolean {
+    return proto3.util.equals(GetProgrammeWeekResponse, a, b);
+  }
+}
+
+/**
  * PersonalRecord is one PR with the movement name + estimated 1RM
  * (Epley) baked in. kind is one of: 1RM | 3RM | 5RM | AMRAP | EST1RM.
  *

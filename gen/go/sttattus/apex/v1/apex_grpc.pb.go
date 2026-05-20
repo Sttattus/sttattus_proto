@@ -19,16 +19,28 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ApexService_SyncVitals_FullMethodName             = "/sttattus.apex.v1.ApexService/SyncVitals"
-	ApexService_SubmitLabReport_FullMethodName        = "/sttattus.apex.v1.ApexService/SubmitLabReport"
-	ApexService_ListLabReports_FullMethodName         = "/sttattus.apex.v1.ApexService/ListLabReports"
-	ApexService_ListMyVitals_FullMethodName           = "/sttattus.apex.v1.ApexService/ListMyVitals"
-	ApexService_ListMyBiomarkerHistory_FullMethodName = "/sttattus.apex.v1.ApexService/ListMyBiomarkerHistory"
-	ApexService_ListBiomarkerRefs_FullMethodName      = "/sttattus.apex.v1.ApexService/ListBiomarkerRefs"
-	ApexService_GetApexAge_FullMethodName             = "/sttattus.apex.v1.ApexService/GetApexAge"
-	ApexService_GetMyApexProfile_FullMethodName       = "/sttattus.apex.v1.ApexService/GetMyApexProfile"
-	ApexService_UpdateMyApexProfile_FullMethodName    = "/sttattus.apex.v1.ApexService/UpdateMyApexProfile"
-	ApexService_AdminVerifyLab_FullMethodName         = "/sttattus.apex.v1.ApexService/AdminVerifyLab"
+	ApexService_SyncVitals_FullMethodName                    = "/sttattus.apex.v1.ApexService/SyncVitals"
+	ApexService_SubmitLabReport_FullMethodName               = "/sttattus.apex.v1.ApexService/SubmitLabReport"
+	ApexService_ListLabReports_FullMethodName                = "/sttattus.apex.v1.ApexService/ListLabReports"
+	ApexService_ListMyVitals_FullMethodName                  = "/sttattus.apex.v1.ApexService/ListMyVitals"
+	ApexService_ListMyBiomarkerHistory_FullMethodName        = "/sttattus.apex.v1.ApexService/ListMyBiomarkerHistory"
+	ApexService_GetHrvWindow_FullMethodName                  = "/sttattus.apex.v1.ApexService/GetHrvWindow"
+	ApexService_ListBiomarkerRefs_FullMethodName             = "/sttattus.apex.v1.ApexService/ListBiomarkerRefs"
+	ApexService_GetApexAge_FullMethodName                    = "/sttattus.apex.v1.ApexService/GetApexAge"
+	ApexService_GetMyApexProfile_FullMethodName              = "/sttattus.apex.v1.ApexService/GetMyApexProfile"
+	ApexService_UpdateMyApexProfile_FullMethodName           = "/sttattus.apex.v1.ApexService/UpdateMyApexProfile"
+	ApexService_ListApexClinics_FullMethodName               = "/sttattus.apex.v1.ApexService/ListApexClinics"
+	ApexService_GetApexClinic_FullMethodName                 = "/sttattus.apex.v1.ApexService/GetApexClinic"
+	ApexService_RequestApexClinicIntro_FullMethodName        = "/sttattus.apex.v1.ApexService/RequestApexClinicIntro"
+	ApexService_ListMyApexClinicIntroRequests_FullMethodName = "/sttattus.apex.v1.ApexService/ListMyApexClinicIntroRequests"
+	ApexService_ListApexProtocols_FullMethodName             = "/sttattus.apex.v1.ApexService/ListApexProtocols"
+	ApexService_GetApexProtocol_FullMethodName               = "/sttattus.apex.v1.ApexService/GetApexProtocol"
+	ApexService_EnrolInApexProtocol_FullMethodName           = "/sttattus.apex.v1.ApexService/EnrolInApexProtocol"
+	ApexService_ListMyApexProtocolEnrolments_FullMethodName  = "/sttattus.apex.v1.ApexService/ListMyApexProtocolEnrolments"
+	ApexService_UpdateApexProtocolEnrolment_FullMethodName   = "/sttattus.apex.v1.ApexService/UpdateApexProtocolEnrolment"
+	ApexService_RecordApexProtocolAdherence_FullMethodName   = "/sttattus.apex.v1.ApexService/RecordApexProtocolAdherence"
+	ApexService_ListMyApexProtocolAdherence_FullMethodName   = "/sttattus.apex.v1.ApexService/ListMyApexProtocolAdherence"
+	ApexService_AdminVerifyLab_FullMethodName                = "/sttattus.apex.v1.ApexService/AdminVerifyLab"
 )
 
 // ApexServiceClient is the client API for ApexService service.
@@ -44,6 +56,8 @@ type ApexServiceClient interface {
 	ListMyVitals(ctx context.Context, in *ListMyVitalsRequest, opts ...grpc.CallOption) (*ListMyVitalsResponse, error)
 	// Per-biomarker history (A11.2).
 	ListMyBiomarkerHistory(ctx context.Context, in *ListMyBiomarkerHistoryRequest, opts ...grpc.CallOption) (*ListMyBiomarkerHistoryResponse, error)
+	// Z16.4 — HRV window summary for Zenith session verification.
+	GetHrvWindow(ctx context.Context, in *GetHrvWindowRequest, opts ...grpc.CallOption) (*GetHrvWindowResponse, error)
 	// Reference + optimal ranges (A11.4). Public-readable for any
 	// authed user — the table is curated reference data.
 	ListBiomarkerRefs(ctx context.Context, in *ListBiomarkerRefsRequest, opts ...grpc.CallOption) (*ListBiomarkerRefsResponse, error)
@@ -51,6 +65,19 @@ type ApexServiceClient interface {
 	GetApexAge(ctx context.Context, in *GetApexAgeRequest, opts ...grpc.CallOption) (*GetApexAgeResponse, error)
 	GetMyApexProfile(ctx context.Context, in *GetMyApexProfileRequest, opts ...grpc.CallOption) (*GetMyApexProfileResponse, error)
 	UpdateMyApexProfile(ctx context.Context, in *UpdateMyApexProfileRequest, opts ...grpc.CallOption) (*UpdateMyApexProfileResponse, error)
+	// A11.6 Phase 3 — Clinics directory.
+	ListApexClinics(ctx context.Context, in *ListApexClinicsRequest, opts ...grpc.CallOption) (*ListApexClinicsResponse, error)
+	GetApexClinic(ctx context.Context, in *GetApexClinicRequest, opts ...grpc.CallOption) (*GetApexClinicResponse, error)
+	RequestApexClinicIntro(ctx context.Context, in *RequestApexClinicIntroRequest, opts ...grpc.CallOption) (*RequestApexClinicIntroResponse, error)
+	ListMyApexClinicIntroRequests(ctx context.Context, in *ListMyApexClinicIntroRequestsRequest, opts ...grpc.CallOption) (*ListMyApexClinicIntroRequestsResponse, error)
+	// A11.6 Phase 2 — Protocols library.
+	ListApexProtocols(ctx context.Context, in *ListApexProtocolsRequest, opts ...grpc.CallOption) (*ListApexProtocolsResponse, error)
+	GetApexProtocol(ctx context.Context, in *GetApexProtocolRequest, opts ...grpc.CallOption) (*GetApexProtocolResponse, error)
+	EnrolInApexProtocol(ctx context.Context, in *EnrolInApexProtocolRequest, opts ...grpc.CallOption) (*EnrolInApexProtocolResponse, error)
+	ListMyApexProtocolEnrolments(ctx context.Context, in *ListMyApexProtocolEnrolmentsRequest, opts ...grpc.CallOption) (*ListMyApexProtocolEnrolmentsResponse, error)
+	UpdateApexProtocolEnrolment(ctx context.Context, in *UpdateApexProtocolEnrolmentRequest, opts ...grpc.CallOption) (*UpdateApexProtocolEnrolmentResponse, error)
+	RecordApexProtocolAdherence(ctx context.Context, in *RecordApexProtocolAdherenceRequest, opts ...grpc.CallOption) (*RecordApexProtocolAdherenceResponse, error)
+	ListMyApexProtocolAdherence(ctx context.Context, in *ListMyApexProtocolAdherenceRequest, opts ...grpc.CallOption) (*ListMyApexProtocolAdherenceResponse, error)
 	// Admin Methods (Gated by Admin Middleware)
 	AdminVerifyLab(ctx context.Context, in *AdminVerifyLabRequest, opts ...grpc.CallOption) (*AdminVerifyLabResponse, error)
 }
@@ -113,6 +140,16 @@ func (c *apexServiceClient) ListMyBiomarkerHistory(ctx context.Context, in *List
 	return out, nil
 }
 
+func (c *apexServiceClient) GetHrvWindow(ctx context.Context, in *GetHrvWindowRequest, opts ...grpc.CallOption) (*GetHrvWindowResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetHrvWindowResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetHrvWindow_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *apexServiceClient) ListBiomarkerRefs(ctx context.Context, in *ListBiomarkerRefsRequest, opts ...grpc.CallOption) (*ListBiomarkerRefsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListBiomarkerRefsResponse)
@@ -153,6 +190,116 @@ func (c *apexServiceClient) UpdateMyApexProfile(ctx context.Context, in *UpdateM
 	return out, nil
 }
 
+func (c *apexServiceClient) ListApexClinics(ctx context.Context, in *ListApexClinicsRequest, opts ...grpc.CallOption) (*ListApexClinicsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListApexClinicsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListApexClinics_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetApexClinic(ctx context.Context, in *GetApexClinicRequest, opts ...grpc.CallOption) (*GetApexClinicResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetApexClinicResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetApexClinic_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RequestApexClinicIntro(ctx context.Context, in *RequestApexClinicIntroRequest, opts ...grpc.CallOption) (*RequestApexClinicIntroResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RequestApexClinicIntroResponse)
+	err := c.cc.Invoke(ctx, ApexService_RequestApexClinicIntro_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyApexClinicIntroRequests(ctx context.Context, in *ListMyApexClinicIntroRequestsRequest, opts ...grpc.CallOption) (*ListMyApexClinicIntroRequestsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyApexClinicIntroRequestsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyApexClinicIntroRequests_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListApexProtocols(ctx context.Context, in *ListApexProtocolsRequest, opts ...grpc.CallOption) (*ListApexProtocolsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListApexProtocolsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListApexProtocols_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetApexProtocol(ctx context.Context, in *GetApexProtocolRequest, opts ...grpc.CallOption) (*GetApexProtocolResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetApexProtocolResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetApexProtocol_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) EnrolInApexProtocol(ctx context.Context, in *EnrolInApexProtocolRequest, opts ...grpc.CallOption) (*EnrolInApexProtocolResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EnrolInApexProtocolResponse)
+	err := c.cc.Invoke(ctx, ApexService_EnrolInApexProtocol_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyApexProtocolEnrolments(ctx context.Context, in *ListMyApexProtocolEnrolmentsRequest, opts ...grpc.CallOption) (*ListMyApexProtocolEnrolmentsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyApexProtocolEnrolmentsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyApexProtocolEnrolments_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateApexProtocolEnrolment(ctx context.Context, in *UpdateApexProtocolEnrolmentRequest, opts ...grpc.CallOption) (*UpdateApexProtocolEnrolmentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateApexProtocolEnrolmentResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateApexProtocolEnrolment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RecordApexProtocolAdherence(ctx context.Context, in *RecordApexProtocolAdherenceRequest, opts ...grpc.CallOption) (*RecordApexProtocolAdherenceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordApexProtocolAdherenceResponse)
+	err := c.cc.Invoke(ctx, ApexService_RecordApexProtocolAdherence_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyApexProtocolAdherence(ctx context.Context, in *ListMyApexProtocolAdherenceRequest, opts ...grpc.CallOption) (*ListMyApexProtocolAdherenceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyApexProtocolAdherenceResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyApexProtocolAdherence_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *apexServiceClient) AdminVerifyLab(ctx context.Context, in *AdminVerifyLabRequest, opts ...grpc.CallOption) (*AdminVerifyLabResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(AdminVerifyLabResponse)
@@ -176,6 +323,8 @@ type ApexServiceServer interface {
 	ListMyVitals(context.Context, *ListMyVitalsRequest) (*ListMyVitalsResponse, error)
 	// Per-biomarker history (A11.2).
 	ListMyBiomarkerHistory(context.Context, *ListMyBiomarkerHistoryRequest) (*ListMyBiomarkerHistoryResponse, error)
+	// Z16.4 — HRV window summary for Zenith session verification.
+	GetHrvWindow(context.Context, *GetHrvWindowRequest) (*GetHrvWindowResponse, error)
 	// Reference + optimal ranges (A11.4). Public-readable for any
 	// authed user — the table is curated reference data.
 	ListBiomarkerRefs(context.Context, *ListBiomarkerRefsRequest) (*ListBiomarkerRefsResponse, error)
@@ -183,6 +332,19 @@ type ApexServiceServer interface {
 	GetApexAge(context.Context, *GetApexAgeRequest) (*GetApexAgeResponse, error)
 	GetMyApexProfile(context.Context, *GetMyApexProfileRequest) (*GetMyApexProfileResponse, error)
 	UpdateMyApexProfile(context.Context, *UpdateMyApexProfileRequest) (*UpdateMyApexProfileResponse, error)
+	// A11.6 Phase 3 — Clinics directory.
+	ListApexClinics(context.Context, *ListApexClinicsRequest) (*ListApexClinicsResponse, error)
+	GetApexClinic(context.Context, *GetApexClinicRequest) (*GetApexClinicResponse, error)
+	RequestApexClinicIntro(context.Context, *RequestApexClinicIntroRequest) (*RequestApexClinicIntroResponse, error)
+	ListMyApexClinicIntroRequests(context.Context, *ListMyApexClinicIntroRequestsRequest) (*ListMyApexClinicIntroRequestsResponse, error)
+	// A11.6 Phase 2 — Protocols library.
+	ListApexProtocols(context.Context, *ListApexProtocolsRequest) (*ListApexProtocolsResponse, error)
+	GetApexProtocol(context.Context, *GetApexProtocolRequest) (*GetApexProtocolResponse, error)
+	EnrolInApexProtocol(context.Context, *EnrolInApexProtocolRequest) (*EnrolInApexProtocolResponse, error)
+	ListMyApexProtocolEnrolments(context.Context, *ListMyApexProtocolEnrolmentsRequest) (*ListMyApexProtocolEnrolmentsResponse, error)
+	UpdateApexProtocolEnrolment(context.Context, *UpdateApexProtocolEnrolmentRequest) (*UpdateApexProtocolEnrolmentResponse, error)
+	RecordApexProtocolAdherence(context.Context, *RecordApexProtocolAdherenceRequest) (*RecordApexProtocolAdherenceResponse, error)
+	ListMyApexProtocolAdherence(context.Context, *ListMyApexProtocolAdherenceRequest) (*ListMyApexProtocolAdherenceResponse, error)
 	// Admin Methods (Gated by Admin Middleware)
 	AdminVerifyLab(context.Context, *AdminVerifyLabRequest) (*AdminVerifyLabResponse, error)
 	mustEmbedUnimplementedApexServiceServer()
@@ -210,6 +372,9 @@ func (UnimplementedApexServiceServer) ListMyVitals(context.Context, *ListMyVital
 func (UnimplementedApexServiceServer) ListMyBiomarkerHistory(context.Context, *ListMyBiomarkerHistoryRequest) (*ListMyBiomarkerHistoryResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMyBiomarkerHistory not implemented")
 }
+func (UnimplementedApexServiceServer) GetHrvWindow(context.Context, *GetHrvWindowRequest) (*GetHrvWindowResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetHrvWindow not implemented")
+}
 func (UnimplementedApexServiceServer) ListBiomarkerRefs(context.Context, *ListBiomarkerRefsRequest) (*ListBiomarkerRefsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListBiomarkerRefs not implemented")
 }
@@ -221,6 +386,39 @@ func (UnimplementedApexServiceServer) GetMyApexProfile(context.Context, *GetMyAp
 }
 func (UnimplementedApexServiceServer) UpdateMyApexProfile(context.Context, *UpdateMyApexProfileRequest) (*UpdateMyApexProfileResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method UpdateMyApexProfile not implemented")
+}
+func (UnimplementedApexServiceServer) ListApexClinics(context.Context, *ListApexClinicsRequest) (*ListApexClinicsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListApexClinics not implemented")
+}
+func (UnimplementedApexServiceServer) GetApexClinic(context.Context, *GetApexClinicRequest) (*GetApexClinicResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetApexClinic not implemented")
+}
+func (UnimplementedApexServiceServer) RequestApexClinicIntro(context.Context, *RequestApexClinicIntroRequest) (*RequestApexClinicIntroResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RequestApexClinicIntro not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyApexClinicIntroRequests(context.Context, *ListMyApexClinicIntroRequestsRequest) (*ListMyApexClinicIntroRequestsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyApexClinicIntroRequests not implemented")
+}
+func (UnimplementedApexServiceServer) ListApexProtocols(context.Context, *ListApexProtocolsRequest) (*ListApexProtocolsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListApexProtocols not implemented")
+}
+func (UnimplementedApexServiceServer) GetApexProtocol(context.Context, *GetApexProtocolRequest) (*GetApexProtocolResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetApexProtocol not implemented")
+}
+func (UnimplementedApexServiceServer) EnrolInApexProtocol(context.Context, *EnrolInApexProtocolRequest) (*EnrolInApexProtocolResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EnrolInApexProtocol not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyApexProtocolEnrolments(context.Context, *ListMyApexProtocolEnrolmentsRequest) (*ListMyApexProtocolEnrolmentsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyApexProtocolEnrolments not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateApexProtocolEnrolment(context.Context, *UpdateApexProtocolEnrolmentRequest) (*UpdateApexProtocolEnrolmentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateApexProtocolEnrolment not implemented")
+}
+func (UnimplementedApexServiceServer) RecordApexProtocolAdherence(context.Context, *RecordApexProtocolAdherenceRequest) (*RecordApexProtocolAdherenceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordApexProtocolAdherence not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyApexProtocolAdherence(context.Context, *ListMyApexProtocolAdherenceRequest) (*ListMyApexProtocolAdherenceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyApexProtocolAdherence not implemented")
 }
 func (UnimplementedApexServiceServer) AdminVerifyLab(context.Context, *AdminVerifyLabRequest) (*AdminVerifyLabResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method AdminVerifyLab not implemented")
@@ -336,6 +534,24 @@ func _ApexService_ListMyBiomarkerHistory_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ApexService_GetHrvWindow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetHrvWindowRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetHrvWindow(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetHrvWindow_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetHrvWindow(ctx, req.(*GetHrvWindowRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ApexService_ListBiomarkerRefs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListBiomarkerRefsRequest)
 	if err := dec(in); err != nil {
@@ -408,6 +624,204 @@ func _ApexService_UpdateMyApexProfile_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ApexService_ListApexClinics_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListApexClinicsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListApexClinics(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListApexClinics_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListApexClinics(ctx, req.(*ListApexClinicsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetApexClinic_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetApexClinicRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetApexClinic(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetApexClinic_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetApexClinic(ctx, req.(*GetApexClinicRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RequestApexClinicIntro_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestApexClinicIntroRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RequestApexClinicIntro(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RequestApexClinicIntro_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RequestApexClinicIntro(ctx, req.(*RequestApexClinicIntroRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyApexClinicIntroRequests_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyApexClinicIntroRequestsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyApexClinicIntroRequests(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyApexClinicIntroRequests_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyApexClinicIntroRequests(ctx, req.(*ListMyApexClinicIntroRequestsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListApexProtocols_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListApexProtocolsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListApexProtocols(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListApexProtocols_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListApexProtocols(ctx, req.(*ListApexProtocolsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetApexProtocol_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetApexProtocolRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetApexProtocol(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetApexProtocol_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetApexProtocol(ctx, req.(*GetApexProtocolRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_EnrolInApexProtocol_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EnrolInApexProtocolRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).EnrolInApexProtocol(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_EnrolInApexProtocol_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).EnrolInApexProtocol(ctx, req.(*EnrolInApexProtocolRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyApexProtocolEnrolments_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyApexProtocolEnrolmentsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyApexProtocolEnrolments(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyApexProtocolEnrolments_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyApexProtocolEnrolments(ctx, req.(*ListMyApexProtocolEnrolmentsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateApexProtocolEnrolment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateApexProtocolEnrolmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateApexProtocolEnrolment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateApexProtocolEnrolment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateApexProtocolEnrolment(ctx, req.(*UpdateApexProtocolEnrolmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RecordApexProtocolAdherence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordApexProtocolAdherenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RecordApexProtocolAdherence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RecordApexProtocolAdherence_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RecordApexProtocolAdherence(ctx, req.(*RecordApexProtocolAdherenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyApexProtocolAdherence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyApexProtocolAdherenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyApexProtocolAdherence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyApexProtocolAdherence_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyApexProtocolAdherence(ctx, req.(*ListMyApexProtocolAdherenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ApexService_AdminVerifyLab_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AdminVerifyLabRequest)
 	if err := dec(in); err != nil {
@@ -454,6 +868,10 @@ var ApexService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ApexService_ListMyBiomarkerHistory_Handler,
 		},
 		{
+			MethodName: "GetHrvWindow",
+			Handler:    _ApexService_GetHrvWindow_Handler,
+		},
+		{
 			MethodName: "ListBiomarkerRefs",
 			Handler:    _ApexService_ListBiomarkerRefs_Handler,
 		},
@@ -468,6 +886,50 @@ var ApexService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateMyApexProfile",
 			Handler:    _ApexService_UpdateMyApexProfile_Handler,
+		},
+		{
+			MethodName: "ListApexClinics",
+			Handler:    _ApexService_ListApexClinics_Handler,
+		},
+		{
+			MethodName: "GetApexClinic",
+			Handler:    _ApexService_GetApexClinic_Handler,
+		},
+		{
+			MethodName: "RequestApexClinicIntro",
+			Handler:    _ApexService_RequestApexClinicIntro_Handler,
+		},
+		{
+			MethodName: "ListMyApexClinicIntroRequests",
+			Handler:    _ApexService_ListMyApexClinicIntroRequests_Handler,
+		},
+		{
+			MethodName: "ListApexProtocols",
+			Handler:    _ApexService_ListApexProtocols_Handler,
+		},
+		{
+			MethodName: "GetApexProtocol",
+			Handler:    _ApexService_GetApexProtocol_Handler,
+		},
+		{
+			MethodName: "EnrolInApexProtocol",
+			Handler:    _ApexService_EnrolInApexProtocol_Handler,
+		},
+		{
+			MethodName: "ListMyApexProtocolEnrolments",
+			Handler:    _ApexService_ListMyApexProtocolEnrolments_Handler,
+		},
+		{
+			MethodName: "UpdateApexProtocolEnrolment",
+			Handler:    _ApexService_UpdateApexProtocolEnrolment_Handler,
+		},
+		{
+			MethodName: "RecordApexProtocolAdherence",
+			Handler:    _ApexService_RecordApexProtocolAdherence_Handler,
+		},
+		{
+			MethodName: "ListMyApexProtocolAdherence",
+			Handler:    _ApexService_ListMyApexProtocolAdherence_Handler,
 		},
 		{
 			MethodName: "AdminVerifyLab",

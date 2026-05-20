@@ -45,6 +45,8 @@ const (
 	WorkoutService_GetActiveEnrolment_FullMethodName         = "/sttattus.workout.v1.WorkoutService/GetActiveEnrolment"
 	WorkoutService_ListMyEnrolments_FullMethodName           = "/sttattus.workout.v1.WorkoutService/ListMyEnrolments"
 	WorkoutService_UpdateEnrolment_FullMethodName            = "/sttattus.workout.v1.WorkoutService/UpdateEnrolment"
+	WorkoutService_ListProgrammeWeeks_FullMethodName         = "/sttattus.workout.v1.WorkoutService/ListProgrammeWeeks"
+	WorkoutService_GetProgrammeWeek_FullMethodName           = "/sttattus.workout.v1.WorkoutService/GetProgrammeWeek"
 	WorkoutService_ListMyPRs_FullMethodName                  = "/sttattus.workout.v1.WorkoutService/ListMyPRs"
 	WorkoutService_ListRecentPRs_FullMethodName              = "/sttattus.workout.v1.WorkoutService/ListRecentPRs"
 	WorkoutService_ListBodyCompositions_FullMethodName       = "/sttattus.workout.v1.WorkoutService/ListBodyCompositions"
@@ -107,6 +109,9 @@ type WorkoutServiceClient interface {
 	GetActiveEnrolment(ctx context.Context, in *GetActiveEnrolmentRequest, opts ...grpc.CallOption) (*GetActiveEnrolmentResponse, error)
 	ListMyEnrolments(ctx context.Context, in *ListMyEnrolmentsRequest, opts ...grpc.CallOption) (*ListMyEnrolmentsResponse, error)
 	UpdateEnrolment(ctx context.Context, in *UpdateEnrolmentRequest, opts ...grpc.CallOption) (*UpdateEnrolmentResponse, error)
+	// F7P2.1 follow-on — per-week prescriptions.
+	ListProgrammeWeeks(ctx context.Context, in *ListProgrammeWeeksRequest, opts ...grpc.CallOption) (*ListProgrammeWeeksResponse, error)
+	GetProgrammeWeek(ctx context.Context, in *GetProgrammeWeekRequest, opts ...grpc.CallOption) (*GetProgrammeWeekResponse, error)
 	// F7P2.2 — personal records. Detection itself runs as a River
 	// worker fired on session completion; these RPCs are read-only.
 	ListMyPRs(ctx context.Context, in *ListMyPRsRequest, opts ...grpc.CallOption) (*ListMyPRsResponse, error)
@@ -406,6 +411,26 @@ func (c *workoutServiceClient) UpdateEnrolment(ctx context.Context, in *UpdateEn
 	return out, nil
 }
 
+func (c *workoutServiceClient) ListProgrammeWeeks(ctx context.Context, in *ListProgrammeWeeksRequest, opts ...grpc.CallOption) (*ListProgrammeWeeksResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListProgrammeWeeksResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListProgrammeWeeks_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetProgrammeWeek(ctx context.Context, in *GetProgrammeWeekRequest, opts ...grpc.CallOption) (*GetProgrammeWeekResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetProgrammeWeekResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetProgrammeWeek_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *workoutServiceClient) ListMyPRs(ctx context.Context, in *ListMyPRsRequest, opts ...grpc.CallOption) (*ListMyPRsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListMyPRsResponse)
@@ -628,6 +653,9 @@ type WorkoutServiceServer interface {
 	GetActiveEnrolment(context.Context, *GetActiveEnrolmentRequest) (*GetActiveEnrolmentResponse, error)
 	ListMyEnrolments(context.Context, *ListMyEnrolmentsRequest) (*ListMyEnrolmentsResponse, error)
 	UpdateEnrolment(context.Context, *UpdateEnrolmentRequest) (*UpdateEnrolmentResponse, error)
+	// F7P2.1 follow-on — per-week prescriptions.
+	ListProgrammeWeeks(context.Context, *ListProgrammeWeeksRequest) (*ListProgrammeWeeksResponse, error)
+	GetProgrammeWeek(context.Context, *GetProgrammeWeekRequest) (*GetProgrammeWeekResponse, error)
 	// F7P2.2 — personal records. Detection itself runs as a River
 	// worker fired on session completion; these RPCs are read-only.
 	ListMyPRs(context.Context, *ListMyPRsRequest) (*ListMyPRsResponse, error)
@@ -744,6 +772,12 @@ func (UnimplementedWorkoutServiceServer) ListMyEnrolments(context.Context, *List
 }
 func (UnimplementedWorkoutServiceServer) UpdateEnrolment(context.Context, *UpdateEnrolmentRequest) (*UpdateEnrolmentResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method UpdateEnrolment not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListProgrammeWeeks(context.Context, *ListProgrammeWeeksRequest) (*ListProgrammeWeeksResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListProgrammeWeeks not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetProgrammeWeek(context.Context, *GetProgrammeWeekRequest) (*GetProgrammeWeekResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetProgrammeWeek not implemented")
 }
 func (UnimplementedWorkoutServiceServer) ListMyPRs(context.Context, *ListMyPRsRequest) (*ListMyPRsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMyPRs not implemented")
@@ -1288,6 +1322,42 @@ func _WorkoutService_UpdateEnrolment_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WorkoutService_ListProgrammeWeeks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListProgrammeWeeksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListProgrammeWeeks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListProgrammeWeeks_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListProgrammeWeeks(ctx, req.(*ListProgrammeWeeksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetProgrammeWeek_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetProgrammeWeekRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetProgrammeWeek(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetProgrammeWeek_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetProgrammeWeek(ctx, req.(*GetProgrammeWeekRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _WorkoutService_ListMyPRs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListMyPRsRequest)
 	if err := dec(in); err != nil {
@@ -1722,6 +1792,14 @@ var WorkoutService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateEnrolment",
 			Handler:    _WorkoutService_UpdateEnrolment_Handler,
+		},
+		{
+			MethodName: "ListProgrammeWeeks",
+			Handler:    _WorkoutService_ListProgrammeWeeks_Handler,
+		},
+		{
+			MethodName: "GetProgrammeWeek",
+			Handler:    _WorkoutService_GetProgrammeWeek_Handler,
 		},
 		{
 			MethodName: "ListMyPRs",

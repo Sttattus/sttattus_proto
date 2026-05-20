@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyLabRequest, AdminVerifyLabResponse, GetApexAgeRequest, GetApexAgeResponse, GetMyApexProfileRequest, GetMyApexProfileResponse, ListBiomarkerRefsRequest, ListBiomarkerRefsResponse, ListLabReportsRequest, ListLabReportsResponse, ListMyBiomarkerHistoryRequest, ListMyBiomarkerHistoryResponse, ListMyVitalsRequest, ListMyVitalsResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncVitalsRequest, SyncVitalsResponse, UpdateMyApexProfileRequest, UpdateMyApexProfileResponse } from "./apex_pb.js";
+import { AdminVerifyLabRequest, AdminVerifyLabResponse, EnrolInApexProtocolRequest, EnrolInApexProtocolResponse, GetApexAgeRequest, GetApexAgeResponse, GetApexClinicRequest, GetApexClinicResponse, GetApexProtocolRequest, GetApexProtocolResponse, GetHrvWindowRequest, GetHrvWindowResponse, GetMyApexProfileRequest, GetMyApexProfileResponse, ListApexClinicsRequest, ListApexClinicsResponse, ListApexProtocolsRequest, ListApexProtocolsResponse, ListBiomarkerRefsRequest, ListBiomarkerRefsResponse, ListLabReportsRequest, ListLabReportsResponse, ListMyApexClinicIntroRequestsRequest, ListMyApexClinicIntroRequestsResponse, ListMyApexProtocolAdherenceRequest, ListMyApexProtocolAdherenceResponse, ListMyApexProtocolEnrolmentsRequest, ListMyApexProtocolEnrolmentsResponse, ListMyBiomarkerHistoryRequest, ListMyBiomarkerHistoryResponse, ListMyVitalsRequest, ListMyVitalsResponse, RecordApexProtocolAdherenceRequest, RecordApexProtocolAdherenceResponse, RequestApexClinicIntroRequest, RequestApexClinicIntroResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncVitalsRequest, SyncVitalsResponse, UpdateApexProtocolEnrolmentRequest, UpdateApexProtocolEnrolmentResponse, UpdateMyApexProfileRequest, UpdateMyApexProfileResponse } from "./apex_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -66,6 +66,17 @@ export const ApexService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Z16.4 — HRV window summary for Zenith session verification.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetHrvWindow
+     */
+    getHrvWindow: {
+      name: "GetHrvWindow",
+      I: GetHrvWindowRequest,
+      O: GetHrvWindowResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * Reference + optimal ranges (A11.4). Public-readable for any
      * authed user — the table is curated reference data.
      *
@@ -104,6 +115,109 @@ export const ApexService = {
       name: "UpdateMyApexProfile",
       I: UpdateMyApexProfileRequest,
       O: UpdateMyApexProfileResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A11.6 Phase 3 — Clinics directory.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.ListApexClinics
+     */
+    listApexClinics: {
+      name: "ListApexClinics",
+      I: ListApexClinicsRequest,
+      O: ListApexClinicsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.GetApexClinic
+     */
+    getApexClinic: {
+      name: "GetApexClinic",
+      I: GetApexClinicRequest,
+      O: GetApexClinicResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RequestApexClinicIntro
+     */
+    requestApexClinicIntro: {
+      name: "RequestApexClinicIntro",
+      I: RequestApexClinicIntroRequest,
+      O: RequestApexClinicIntroResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyApexClinicIntroRequests
+     */
+    listMyApexClinicIntroRequests: {
+      name: "ListMyApexClinicIntroRequests",
+      I: ListMyApexClinicIntroRequestsRequest,
+      O: ListMyApexClinicIntroRequestsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A11.6 Phase 2 — Protocols library.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.ListApexProtocols
+     */
+    listApexProtocols: {
+      name: "ListApexProtocols",
+      I: ListApexProtocolsRequest,
+      O: ListApexProtocolsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.GetApexProtocol
+     */
+    getApexProtocol: {
+      name: "GetApexProtocol",
+      I: GetApexProtocolRequest,
+      O: GetApexProtocolResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.EnrolInApexProtocol
+     */
+    enrolInApexProtocol: {
+      name: "EnrolInApexProtocol",
+      I: EnrolInApexProtocolRequest,
+      O: EnrolInApexProtocolResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyApexProtocolEnrolments
+     */
+    listMyApexProtocolEnrolments: {
+      name: "ListMyApexProtocolEnrolments",
+      I: ListMyApexProtocolEnrolmentsRequest,
+      O: ListMyApexProtocolEnrolmentsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateApexProtocolEnrolment
+     */
+    updateApexProtocolEnrolment: {
+      name: "UpdateApexProtocolEnrolment",
+      I: UpdateApexProtocolEnrolmentRequest,
+      O: UpdateApexProtocolEnrolmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RecordApexProtocolAdherence
+     */
+    recordApexProtocolAdherence: {
+      name: "RecordApexProtocolAdherence",
+      I: RecordApexProtocolAdherenceRequest,
+      O: RecordApexProtocolAdherenceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyApexProtocolAdherence
+     */
+    listMyApexProtocolAdherence: {
+      name: "ListMyApexProtocolAdherence",
+      I: ListMyApexProtocolAdherenceRequest,
+      O: ListMyApexProtocolAdherenceResponse,
       kind: MethodKind.Unary,
     },
     /**

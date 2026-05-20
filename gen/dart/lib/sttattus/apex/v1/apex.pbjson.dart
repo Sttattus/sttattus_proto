@@ -420,3 +420,433 @@ final $typed_data.Uint8List listMyBiomarkerHistoryResponseDescriptor = $convert.
     '1ldHJpY0NvZGUSMwoGcG9pbnRzGAIgAygLMhsuc3R0YXR0dXMuYXBleC52MS5CaW9tYXJrZXJS'
     'BnBvaW50cw==');
 
+@$core.Deprecated('Use getHrvWindowRequestDescriptor instead')
+const GetHrvWindowRequest$json = {
+  '1': 'GetHrvWindowRequest',
+  '2': [
+    {'1': 'start_unix', '3': 1, '4': 1, '5': 3, '10': 'startUnix'},
+    {'1': 'end_unix', '3': 2, '4': 1, '5': 3, '10': 'endUnix'},
+  ],
+};
+
+/// Descriptor for `GetHrvWindowRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getHrvWindowRequestDescriptor = $convert.base64Decode(
+    'ChNHZXRIcnZXaW5kb3dSZXF1ZXN0Eh0KCnN0YXJ0X3VuaXgYASABKANSCXN0YXJ0VW5peBIZCg'
+    'hlbmRfdW5peBgCIAEoA1IHZW5kVW5peA==');
+
+@$core.Deprecated('Use getHrvWindowResponseDescriptor instead')
+const GetHrvWindowResponse$json = {
+  '1': 'GetHrvWindowResponse',
+  '2': [
+    {'1': 'present', '3': 1, '4': 1, '5': 8, '10': 'present'},
+    {'1': 'window_mean', '3': 2, '4': 1, '5': 1, '10': 'windowMean'},
+    {'1': 'baseline_mean', '3': 3, '4': 1, '5': 1, '10': 'baselineMean'},
+    {'1': 'delta', '3': 4, '4': 1, '5': 1, '10': 'delta'},
+    {'1': 'window_count', '3': 5, '4': 1, '5': 5, '10': 'windowCount'},
+    {'1': 'baseline_count', '3': 6, '4': 1, '5': 5, '10': 'baselineCount'},
+  ],
+};
+
+/// Descriptor for `GetHrvWindowResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getHrvWindowResponseDescriptor = $convert.base64Decode(
+    'ChRHZXRIcnZXaW5kb3dSZXNwb25zZRIYCgdwcmVzZW50GAEgASgIUgdwcmVzZW50Eh8KC3dpbm'
+    'Rvd19tZWFuGAIgASgBUgp3aW5kb3dNZWFuEiMKDWJhc2VsaW5lX21lYW4YAyABKAFSDGJhc2Vs'
+    'aW5lTWVhbhIUCgVkZWx0YRgEIAEoAVIFZGVsdGESIQoMd2luZG93X2NvdW50GAUgASgFUgt3aW'
+    '5kb3dDb3VudBIlCg5iYXNlbGluZV9jb3VudBgGIAEoBVINYmFzZWxpbmVDb3VudA==');
+
+@$core.Deprecated('Use apexProtocolDescriptor instead')
+const ApexProtocol$json = {
+  '1': 'ApexProtocol',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slug', '3': 2, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'category', '3': 4, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'author', '3': 5, '4': 1, '5': 9, '10': 'author'},
+    {'1': 'summary', '3': 6, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'description', '3': 7, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'duration_weeks', '3': 8, '4': 1, '5': 5, '10': 'durationWeeks'},
+    {'1': 'minutes_per_day', '3': 9, '4': 1, '5': 5, '10': 'minutesPerDay'},
+    {'1': 'image_url', '3': 10, '4': 1, '5': 9, '10': 'imageUrl'},
+    {'1': 'sovereign_only', '3': 11, '4': 1, '5': 8, '10': 'sovereignOnly'},
+  ],
+};
+
+/// Descriptor for `ApexProtocol`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List apexProtocolDescriptor = $convert.base64Decode(
+    'CgxBcGV4UHJvdG9jb2wSDgoCaWQYASABKAlSAmlkEhIKBHNsdWcYAiABKAlSBHNsdWcSFAoFdG'
+    'l0bGUYAyABKAlSBXRpdGxlEhoKCGNhdGVnb3J5GAQgASgJUghjYXRlZ29yeRIWCgZhdXRob3IY'
+    'BSABKAlSBmF1dGhvchIYCgdzdW1tYXJ5GAYgASgJUgdzdW1tYXJ5EiAKC2Rlc2NyaXB0aW9uGA'
+    'cgASgJUgtkZXNjcmlwdGlvbhIlCg5kdXJhdGlvbl93ZWVrcxgIIAEoBVINZHVyYXRpb25XZWVr'
+    'cxImCg9taW51dGVzX3Blcl9kYXkYCSABKAVSDW1pbnV0ZXNQZXJEYXkSGwoJaW1hZ2VfdXJsGA'
+    'ogASgJUghpbWFnZVVybBIlCg5zb3ZlcmVpZ25fb25seRgLIAEoCFINc292ZXJlaWduT25seQ==');
+
+@$core.Deprecated('Use apexProtocolEnrolmentDescriptor instead')
+const ApexProtocolEnrolment$json = {
+  '1': 'ApexProtocolEnrolment',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'protocol', '3': 2, '4': 1, '5': 11, '6': '.sttattus.apex.v1.ApexProtocol', '10': 'protocol'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'started_at_unix', '3': 4, '4': 1, '5': 3, '10': 'startedAtUnix'},
+    {'1': 'finished_at_unix', '3': 5, '4': 1, '5': 3, '10': 'finishedAtUnix'},
+  ],
+};
+
+/// Descriptor for `ApexProtocolEnrolment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List apexProtocolEnrolmentDescriptor = $convert.base64Decode(
+    'ChVBcGV4UHJvdG9jb2xFbnJvbG1lbnQSDgoCaWQYASABKAlSAmlkEjoKCHByb3RvY29sGAIgAS'
+    'gLMh4uc3R0YXR0dXMuYXBleC52MS5BcGV4UHJvdG9jb2xSCHByb3RvY29sEhYKBnN0YXR1cxgD'
+    'IAEoCVIGc3RhdHVzEiYKD3N0YXJ0ZWRfYXRfdW5peBgEIAEoA1INc3RhcnRlZEF0VW5peBIoCh'
+    'BmaW5pc2hlZF9hdF91bml4GAUgASgDUg5maW5pc2hlZEF0VW5peA==');
+
+@$core.Deprecated('Use apexProtocolAdherenceDescriptor instead')
+const ApexProtocolAdherence$json = {
+  '1': 'ApexProtocolAdherence',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'enrolment_id', '3': 2, '4': 1, '5': 9, '10': 'enrolmentId'},
+    {'1': 'for_date', '3': 3, '4': 1, '5': 9, '10': 'forDate'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'note', '3': 5, '4': 1, '5': 9, '10': 'note'},
+    {'1': 'created_at_unix', '3': 6, '4': 1, '5': 3, '10': 'createdAtUnix'},
+  ],
+};
+
+/// Descriptor for `ApexProtocolAdherence`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List apexProtocolAdherenceDescriptor = $convert.base64Decode(
+    'ChVBcGV4UHJvdG9jb2xBZGhlcmVuY2USDgoCaWQYASABKAlSAmlkEiEKDGVucm9sbWVudF9pZB'
+    'gCIAEoCVILZW5yb2xtZW50SWQSGQoIZm9yX2RhdGUYAyABKAlSB2ZvckRhdGUSFgoGc3RhdHVz'
+    'GAQgASgJUgZzdGF0dXMSEgoEbm90ZRgFIAEoCVIEbm90ZRImCg9jcmVhdGVkX2F0X3VuaXgYBi'
+    'ABKANSDWNyZWF0ZWRBdFVuaXg=');
+
+@$core.Deprecated('Use listApexProtocolsRequestDescriptor instead')
+const ListApexProtocolsRequest$json = {
+  '1': 'ListApexProtocolsRequest',
+  '2': [
+    {'1': 'category', '3': 1, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'include_sovereign', '3': 2, '4': 1, '5': 8, '10': 'includeSovereign'},
+  ],
+};
+
+/// Descriptor for `ListApexProtocolsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listApexProtocolsRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0QXBleFByb3RvY29sc1JlcXVlc3QSGgoIY2F0ZWdvcnkYASABKAlSCGNhdGVnb3J5Ei'
+    'sKEWluY2x1ZGVfc292ZXJlaWduGAIgASgIUhBpbmNsdWRlU292ZXJlaWdu');
+
+@$core.Deprecated('Use listApexProtocolsResponseDescriptor instead')
+const ListApexProtocolsResponse$json = {
+  '1': 'ListApexProtocolsResponse',
+  '2': [
+    {'1': 'protocols', '3': 1, '4': 3, '5': 11, '6': '.sttattus.apex.v1.ApexProtocol', '10': 'protocols'},
+  ],
+};
+
+/// Descriptor for `ListApexProtocolsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listApexProtocolsResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0QXBleFByb3RvY29sc1Jlc3BvbnNlEjwKCXByb3RvY29scxgBIAMoCzIeLnN0dGF0dH'
+    'VzLmFwZXgudjEuQXBleFByb3RvY29sUglwcm90b2NvbHM=');
+
+@$core.Deprecated('Use getApexProtocolRequestDescriptor instead')
+const GetApexProtocolRequest$json = {
+  '1': 'GetApexProtocolRequest',
+  '2': [
+    {'1': 'slug', '3': 1, '4': 1, '5': 9, '10': 'slug'},
+  ],
+};
+
+/// Descriptor for `GetApexProtocolRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getApexProtocolRequestDescriptor = $convert.base64Decode(
+    'ChZHZXRBcGV4UHJvdG9jb2xSZXF1ZXN0EhIKBHNsdWcYASABKAlSBHNsdWc=');
+
+@$core.Deprecated('Use getApexProtocolResponseDescriptor instead')
+const GetApexProtocolResponse$json = {
+  '1': 'GetApexProtocolResponse',
+  '2': [
+    {'1': 'protocol', '3': 1, '4': 1, '5': 11, '6': '.sttattus.apex.v1.ApexProtocol', '10': 'protocol'},
+  ],
+};
+
+/// Descriptor for `GetApexProtocolResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getApexProtocolResponseDescriptor = $convert.base64Decode(
+    'ChdHZXRBcGV4UHJvdG9jb2xSZXNwb25zZRI6Cghwcm90b2NvbBgBIAEoCzIeLnN0dGF0dHVzLm'
+    'FwZXgudjEuQXBleFByb3RvY29sUghwcm90b2NvbA==');
+
+@$core.Deprecated('Use enrolInApexProtocolRequestDescriptor instead')
+const EnrolInApexProtocolRequest$json = {
+  '1': 'EnrolInApexProtocolRequest',
+  '2': [
+    {'1': 'protocol_id', '3': 1, '4': 1, '5': 9, '10': 'protocolId'},
+  ],
+};
+
+/// Descriptor for `EnrolInApexProtocolRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List enrolInApexProtocolRequestDescriptor = $convert.base64Decode(
+    'ChpFbnJvbEluQXBleFByb3RvY29sUmVxdWVzdBIfCgtwcm90b2NvbF9pZBgBIAEoCVIKcHJvdG'
+    '9jb2xJZA==');
+
+@$core.Deprecated('Use enrolInApexProtocolResponseDescriptor instead')
+const EnrolInApexProtocolResponse$json = {
+  '1': 'EnrolInApexProtocolResponse',
+  '2': [
+    {'1': 'enrolment', '3': 1, '4': 1, '5': 11, '6': '.sttattus.apex.v1.ApexProtocolEnrolment', '10': 'enrolment'},
+  ],
+};
+
+/// Descriptor for `EnrolInApexProtocolResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List enrolInApexProtocolResponseDescriptor = $convert.base64Decode(
+    'ChtFbnJvbEluQXBleFByb3RvY29sUmVzcG9uc2USRQoJZW5yb2xtZW50GAEgASgLMicuc3R0YX'
+    'R0dXMuYXBleC52MS5BcGV4UHJvdG9jb2xFbnJvbG1lbnRSCWVucm9sbWVudA==');
+
+@$core.Deprecated('Use listMyApexProtocolEnrolmentsRequestDescriptor instead')
+const ListMyApexProtocolEnrolmentsRequest$json = {
+  '1': 'ListMyApexProtocolEnrolmentsRequest',
+};
+
+/// Descriptor for `ListMyApexProtocolEnrolmentsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyApexProtocolEnrolmentsRequestDescriptor = $convert.base64Decode(
+    'CiNMaXN0TXlBcGV4UHJvdG9jb2xFbnJvbG1lbnRzUmVxdWVzdA==');
+
+@$core.Deprecated('Use listMyApexProtocolEnrolmentsResponseDescriptor instead')
+const ListMyApexProtocolEnrolmentsResponse$json = {
+  '1': 'ListMyApexProtocolEnrolmentsResponse',
+  '2': [
+    {'1': 'enrolments', '3': 1, '4': 3, '5': 11, '6': '.sttattus.apex.v1.ApexProtocolEnrolment', '10': 'enrolments'},
+  ],
+};
+
+/// Descriptor for `ListMyApexProtocolEnrolmentsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyApexProtocolEnrolmentsResponseDescriptor = $convert.base64Decode(
+    'CiRMaXN0TXlBcGV4UHJvdG9jb2xFbnJvbG1lbnRzUmVzcG9uc2USRwoKZW5yb2xtZW50cxgBIA'
+    'MoCzInLnN0dGF0dHVzLmFwZXgudjEuQXBleFByb3RvY29sRW5yb2xtZW50UgplbnJvbG1lbnRz');
+
+@$core.Deprecated('Use updateApexProtocolEnrolmentRequestDescriptor instead')
+const UpdateApexProtocolEnrolmentRequest$json = {
+  '1': 'UpdateApexProtocolEnrolmentRequest',
+  '2': [
+    {'1': 'enrolment_id', '3': 1, '4': 1, '5': 9, '10': 'enrolmentId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `UpdateApexProtocolEnrolmentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateApexProtocolEnrolmentRequestDescriptor = $convert.base64Decode(
+    'CiJVcGRhdGVBcGV4UHJvdG9jb2xFbnJvbG1lbnRSZXF1ZXN0EiEKDGVucm9sbWVudF9pZBgBIA'
+    'EoCVILZW5yb2xtZW50SWQSFgoGc3RhdHVzGAIgASgJUgZzdGF0dXM=');
+
+@$core.Deprecated('Use updateApexProtocolEnrolmentResponseDescriptor instead')
+const UpdateApexProtocolEnrolmentResponse$json = {
+  '1': 'UpdateApexProtocolEnrolmentResponse',
+  '2': [
+    {'1': 'enrolment', '3': 1, '4': 1, '5': 11, '6': '.sttattus.apex.v1.ApexProtocolEnrolment', '10': 'enrolment'},
+  ],
+};
+
+/// Descriptor for `UpdateApexProtocolEnrolmentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateApexProtocolEnrolmentResponseDescriptor = $convert.base64Decode(
+    'CiNVcGRhdGVBcGV4UHJvdG9jb2xFbnJvbG1lbnRSZXNwb25zZRJFCgllbnJvbG1lbnQYASABKA'
+    'syJy5zdHRhdHR1cy5hcGV4LnYxLkFwZXhQcm90b2NvbEVucm9sbWVudFIJZW5yb2xtZW50');
+
+@$core.Deprecated('Use recordApexProtocolAdherenceRequestDescriptor instead')
+const RecordApexProtocolAdherenceRequest$json = {
+  '1': 'RecordApexProtocolAdherenceRequest',
+  '2': [
+    {'1': 'enrolment_id', '3': 1, '4': 1, '5': 9, '10': 'enrolmentId'},
+    {'1': 'for_date', '3': 2, '4': 1, '5': 9, '10': 'forDate'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'note', '3': 4, '4': 1, '5': 9, '10': 'note'},
+  ],
+};
+
+/// Descriptor for `RecordApexProtocolAdherenceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordApexProtocolAdherenceRequestDescriptor = $convert.base64Decode(
+    'CiJSZWNvcmRBcGV4UHJvdG9jb2xBZGhlcmVuY2VSZXF1ZXN0EiEKDGVucm9sbWVudF9pZBgBIA'
+    'EoCVILZW5yb2xtZW50SWQSGQoIZm9yX2RhdGUYAiABKAlSB2ZvckRhdGUSFgoGc3RhdHVzGAMg'
+    'ASgJUgZzdGF0dXMSEgoEbm90ZRgEIAEoCVIEbm90ZQ==');
+
+@$core.Deprecated('Use recordApexProtocolAdherenceResponseDescriptor instead')
+const RecordApexProtocolAdherenceResponse$json = {
+  '1': 'RecordApexProtocolAdherenceResponse',
+  '2': [
+    {'1': 'adherence', '3': 1, '4': 1, '5': 11, '6': '.sttattus.apex.v1.ApexProtocolAdherence', '10': 'adherence'},
+  ],
+};
+
+/// Descriptor for `RecordApexProtocolAdherenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordApexProtocolAdherenceResponseDescriptor = $convert.base64Decode(
+    'CiNSZWNvcmRBcGV4UHJvdG9jb2xBZGhlcmVuY2VSZXNwb25zZRJFCglhZGhlcmVuY2UYASABKA'
+    'syJy5zdHRhdHR1cy5hcGV4LnYxLkFwZXhQcm90b2NvbEFkaGVyZW5jZVIJYWRoZXJlbmNl');
+
+@$core.Deprecated('Use listMyApexProtocolAdherenceRequestDescriptor instead')
+const ListMyApexProtocolAdherenceRequest$json = {
+  '1': 'ListMyApexProtocolAdherenceRequest',
+  '2': [
+    {'1': 'enrolment_id', '3': 1, '4': 1, '5': 9, '10': 'enrolmentId'},
+    {'1': 'days', '3': 2, '4': 1, '5': 5, '10': 'days'},
+  ],
+};
+
+/// Descriptor for `ListMyApexProtocolAdherenceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyApexProtocolAdherenceRequestDescriptor = $convert.base64Decode(
+    'CiJMaXN0TXlBcGV4UHJvdG9jb2xBZGhlcmVuY2VSZXF1ZXN0EiEKDGVucm9sbWVudF9pZBgBIA'
+    'EoCVILZW5yb2xtZW50SWQSEgoEZGF5cxgCIAEoBVIEZGF5cw==');
+
+@$core.Deprecated('Use listMyApexProtocolAdherenceResponseDescriptor instead')
+const ListMyApexProtocolAdherenceResponse$json = {
+  '1': 'ListMyApexProtocolAdherenceResponse',
+  '2': [
+    {'1': 'entries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.apex.v1.ApexProtocolAdherence', '10': 'entries'},
+  ],
+};
+
+/// Descriptor for `ListMyApexProtocolAdherenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyApexProtocolAdherenceResponseDescriptor = $convert.base64Decode(
+    'CiNMaXN0TXlBcGV4UHJvdG9jb2xBZGhlcmVuY2VSZXNwb25zZRJBCgdlbnRyaWVzGAEgAygLMi'
+    'cuc3R0YXR0dXMuYXBleC52MS5BcGV4UHJvdG9jb2xBZGhlcmVuY2VSB2VudHJpZXM=');
+
+@$core.Deprecated('Use apexClinicDescriptor instead')
+const ApexClinic$json = {
+  '1': 'ApexClinic',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slug', '3': 2, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'city', '3': 4, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'country', '3': 5, '4': 1, '5': 9, '10': 'country'},
+    {'1': 'specialties', '3': 6, '4': 1, '5': 9, '10': 'specialties'},
+    {'1': 'summary', '3': 7, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'description', '3': 8, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'website_url', '3': 9, '4': 1, '5': 9, '10': 'websiteUrl'},
+    {'1': 'image_url', '3': 10, '4': 1, '5': 9, '10': 'imageUrl'},
+    {'1': 'sovereign_only', '3': 11, '4': 1, '5': 8, '10': 'sovereignOnly'},
+  ],
+};
+
+/// Descriptor for `ApexClinic`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List apexClinicDescriptor = $convert.base64Decode(
+    'CgpBcGV4Q2xpbmljEg4KAmlkGAEgASgJUgJpZBISCgRzbHVnGAIgASgJUgRzbHVnEhIKBG5hbW'
+    'UYAyABKAlSBG5hbWUSEgoEY2l0eRgEIAEoCVIEY2l0eRIYCgdjb3VudHJ5GAUgASgJUgdjb3Vu'
+    'dHJ5EiAKC3NwZWNpYWx0aWVzGAYgASgJUgtzcGVjaWFsdGllcxIYCgdzdW1tYXJ5GAcgASgJUg'
+    'dzdW1tYXJ5EiAKC2Rlc2NyaXB0aW9uGAggASgJUgtkZXNjcmlwdGlvbhIfCgt3ZWJzaXRlX3Vy'
+    'bBgJIAEoCVIKd2Vic2l0ZVVybBIbCglpbWFnZV91cmwYCiABKAlSCGltYWdlVXJsEiUKDnNvdm'
+    'VyZWlnbl9vbmx5GAsgASgIUg1zb3ZlcmVpZ25Pbmx5');
+
+@$core.Deprecated('Use apexClinicIntroRequestDescriptor instead')
+const ApexClinicIntroRequest$json = {
+  '1': 'ApexClinicIntroRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'clinic', '3': 2, '4': 1, '5': 11, '6': '.sttattus.apex.v1.ApexClinic', '10': 'clinic'},
+    {'1': 'note', '3': 3, '4': 1, '5': 9, '10': 'note'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'requested_at_unix', '3': 5, '4': 1, '5': 3, '10': 'requestedAtUnix'},
+    {'1': 'decided_at_unix', '3': 6, '4': 1, '5': 3, '10': 'decidedAtUnix'},
+  ],
+};
+
+/// Descriptor for `ApexClinicIntroRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List apexClinicIntroRequestDescriptor = $convert.base64Decode(
+    'ChZBcGV4Q2xpbmljSW50cm9SZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBI0CgZjbGluaWMYAiABKA'
+    'syHC5zdHRhdHR1cy5hcGV4LnYxLkFwZXhDbGluaWNSBmNsaW5pYxISCgRub3RlGAMgASgJUgRu'
+    'b3RlEhYKBnN0YXR1cxgEIAEoCVIGc3RhdHVzEioKEXJlcXVlc3RlZF9hdF91bml4GAUgASgDUg'
+    '9yZXF1ZXN0ZWRBdFVuaXgSJgoPZGVjaWRlZF9hdF91bml4GAYgASgDUg1kZWNpZGVkQXRVbml4');
+
+@$core.Deprecated('Use listApexClinicsRequestDescriptor instead')
+const ListApexClinicsRequest$json = {
+  '1': 'ListApexClinicsRequest',
+  '2': [
+    {'1': 'country', '3': 1, '4': 1, '5': 9, '10': 'country'},
+  ],
+};
+
+/// Descriptor for `ListApexClinicsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listApexClinicsRequestDescriptor = $convert.base64Decode(
+    'ChZMaXN0QXBleENsaW5pY3NSZXF1ZXN0EhgKB2NvdW50cnkYASABKAlSB2NvdW50cnk=');
+
+@$core.Deprecated('Use listApexClinicsResponseDescriptor instead')
+const ListApexClinicsResponse$json = {
+  '1': 'ListApexClinicsResponse',
+  '2': [
+    {'1': 'clinics', '3': 1, '4': 3, '5': 11, '6': '.sttattus.apex.v1.ApexClinic', '10': 'clinics'},
+  ],
+};
+
+/// Descriptor for `ListApexClinicsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listApexClinicsResponseDescriptor = $convert.base64Decode(
+    'ChdMaXN0QXBleENsaW5pY3NSZXNwb25zZRI2CgdjbGluaWNzGAEgAygLMhwuc3R0YXR0dXMuYX'
+    'BleC52MS5BcGV4Q2xpbmljUgdjbGluaWNz');
+
+@$core.Deprecated('Use getApexClinicRequestDescriptor instead')
+const GetApexClinicRequest$json = {
+  '1': 'GetApexClinicRequest',
+  '2': [
+    {'1': 'slug', '3': 1, '4': 1, '5': 9, '10': 'slug'},
+  ],
+};
+
+/// Descriptor for `GetApexClinicRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getApexClinicRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRBcGV4Q2xpbmljUmVxdWVzdBISCgRzbHVnGAEgASgJUgRzbHVn');
+
+@$core.Deprecated('Use getApexClinicResponseDescriptor instead')
+const GetApexClinicResponse$json = {
+  '1': 'GetApexClinicResponse',
+  '2': [
+    {'1': 'clinic', '3': 1, '4': 1, '5': 11, '6': '.sttattus.apex.v1.ApexClinic', '10': 'clinic'},
+  ],
+};
+
+/// Descriptor for `GetApexClinicResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getApexClinicResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRBcGV4Q2xpbmljUmVzcG9uc2USNAoGY2xpbmljGAEgASgLMhwuc3R0YXR0dXMuYXBleC'
+    '52MS5BcGV4Q2xpbmljUgZjbGluaWM=');
+
+@$core.Deprecated('Use requestApexClinicIntroRequestDescriptor instead')
+const RequestApexClinicIntroRequest$json = {
+  '1': 'RequestApexClinicIntroRequest',
+  '2': [
+    {'1': 'clinic_id', '3': 1, '4': 1, '5': 9, '10': 'clinicId'},
+    {'1': 'note', '3': 2, '4': 1, '5': 9, '10': 'note'},
+  ],
+};
+
+/// Descriptor for `RequestApexClinicIntroRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestApexClinicIntroRequestDescriptor = $convert.base64Decode(
+    'Ch1SZXF1ZXN0QXBleENsaW5pY0ludHJvUmVxdWVzdBIbCgljbGluaWNfaWQYASABKAlSCGNsaW'
+    '5pY0lkEhIKBG5vdGUYAiABKAlSBG5vdGU=');
+
+@$core.Deprecated('Use requestApexClinicIntroResponseDescriptor instead')
+const RequestApexClinicIntroResponse$json = {
+  '1': 'RequestApexClinicIntroResponse',
+  '2': [
+    {'1': 'request', '3': 1, '4': 1, '5': 11, '6': '.sttattus.apex.v1.ApexClinicIntroRequest', '10': 'request'},
+  ],
+};
+
+/// Descriptor for `RequestApexClinicIntroResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestApexClinicIntroResponseDescriptor = $convert.base64Decode(
+    'Ch5SZXF1ZXN0QXBleENsaW5pY0ludHJvUmVzcG9uc2USQgoHcmVxdWVzdBgBIAEoCzIoLnN0dG'
+    'F0dHVzLmFwZXgudjEuQXBleENsaW5pY0ludHJvUmVxdWVzdFIHcmVxdWVzdA==');
+
+@$core.Deprecated('Use listMyApexClinicIntroRequestsRequestDescriptor instead')
+const ListMyApexClinicIntroRequestsRequest$json = {
+  '1': 'ListMyApexClinicIntroRequestsRequest',
+};
+
+/// Descriptor for `ListMyApexClinicIntroRequestsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyApexClinicIntroRequestsRequestDescriptor = $convert.base64Decode(
+    'CiRMaXN0TXlBcGV4Q2xpbmljSW50cm9SZXF1ZXN0c1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listMyApexClinicIntroRequestsResponseDescriptor instead')
+const ListMyApexClinicIntroRequestsResponse$json = {
+  '1': 'ListMyApexClinicIntroRequestsResponse',
+  '2': [
+    {'1': 'requests', '3': 1, '4': 3, '5': 11, '6': '.sttattus.apex.v1.ApexClinicIntroRequest', '10': 'requests'},
+  ],
+};
+
+/// Descriptor for `ListMyApexClinicIntroRequestsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyApexClinicIntroRequestsResponseDescriptor = $convert.base64Decode(
+    'CiVMaXN0TXlBcGV4Q2xpbmljSW50cm9SZXF1ZXN0c1Jlc3BvbnNlEkQKCHJlcXVlc3RzGAEgAy'
+    'gLMiguc3R0YXR0dXMuYXBleC52MS5BcGV4Q2xpbmljSW50cm9SZXF1ZXN0UghyZXF1ZXN0cw==');
+

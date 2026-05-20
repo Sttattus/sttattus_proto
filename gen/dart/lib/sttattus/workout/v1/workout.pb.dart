@@ -4893,6 +4893,550 @@ class UpdateEnrolmentResponse extends $pb.GeneratedMessage {
   ProgrammeEnrolment ensureEnrolment() => $_ensure(0);
 }
 
+class ProgrammeWeekHeader extends $pb.GeneratedMessage {
+  factory ProgrammeWeekHeader({
+    $core.String? id,
+    $core.int? weekIndex,
+    $core.String? focus,
+    $core.String? notes,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (weekIndex != null) result.weekIndex = weekIndex;
+    if (focus != null) result.focus = focus;
+    if (notes != null) result.notes = notes;
+    return result;
+  }
+
+  ProgrammeWeekHeader._();
+
+  factory ProgrammeWeekHeader.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ProgrammeWeekHeader.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProgrammeWeekHeader', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'weekIndex', $pb.PbFieldType.O3)
+    ..aOS(3, _omitFieldNames ? '' : 'focus')
+    ..aOS(4, _omitFieldNames ? '' : 'notes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ProgrammeWeekHeader clone() => ProgrammeWeekHeader()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ProgrammeWeekHeader copyWith(void Function(ProgrammeWeekHeader) updates) => super.copyWith((message) => updates(message as ProgrammeWeekHeader)) as ProgrammeWeekHeader;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ProgrammeWeekHeader create() => ProgrammeWeekHeader._();
+  @$core.override
+  ProgrammeWeekHeader createEmptyInstance() => create();
+  static $pb.PbList<ProgrammeWeekHeader> createRepeated() => $pb.PbList<ProgrammeWeekHeader>();
+  @$core.pragma('dart2js:noInline')
+  static ProgrammeWeekHeader getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProgrammeWeekHeader>(create);
+  static ProgrammeWeekHeader? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get weekIndex => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set weekIndex($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWeekIndex() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWeekIndex() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get focus => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set focus($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFocus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFocus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get notes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set notes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNotes() => $_clearField(4);
+}
+
+class ProgrammeWeekExercise extends $pb.GeneratedMessage {
+  factory ProgrammeWeekExercise({
+    $core.String? id,
+    $core.int? dayIndex,
+    $core.String? dayLabel,
+    $core.int? orderIndex,
+    $core.String? exerciseName,
+    $core.String? exerciseId,
+    $core.int? sets,
+    $core.String? repScheme,
+    $core.String? intensityNote,
+    $core.int? restSeconds,
+    $core.String? cue,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (dayIndex != null) result.dayIndex = dayIndex;
+    if (dayLabel != null) result.dayLabel = dayLabel;
+    if (orderIndex != null) result.orderIndex = orderIndex;
+    if (exerciseName != null) result.exerciseName = exerciseName;
+    if (exerciseId != null) result.exerciseId = exerciseId;
+    if (sets != null) result.sets = sets;
+    if (repScheme != null) result.repScheme = repScheme;
+    if (intensityNote != null) result.intensityNote = intensityNote;
+    if (restSeconds != null) result.restSeconds = restSeconds;
+    if (cue != null) result.cue = cue;
+    return result;
+  }
+
+  ProgrammeWeekExercise._();
+
+  factory ProgrammeWeekExercise.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ProgrammeWeekExercise.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProgrammeWeekExercise', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'dayIndex', $pb.PbFieldType.O3)
+    ..aOS(3, _omitFieldNames ? '' : 'dayLabel')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'orderIndex', $pb.PbFieldType.O3)
+    ..aOS(5, _omitFieldNames ? '' : 'exerciseName')
+    ..aOS(6, _omitFieldNames ? '' : 'exerciseId')
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'sets', $pb.PbFieldType.O3)
+    ..aOS(8, _omitFieldNames ? '' : 'repScheme')
+    ..aOS(9, _omitFieldNames ? '' : 'intensityNote')
+    ..a<$core.int>(10, _omitFieldNames ? '' : 'restSeconds', $pb.PbFieldType.O3)
+    ..aOS(11, _omitFieldNames ? '' : 'cue')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ProgrammeWeekExercise clone() => ProgrammeWeekExercise()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ProgrammeWeekExercise copyWith(void Function(ProgrammeWeekExercise) updates) => super.copyWith((message) => updates(message as ProgrammeWeekExercise)) as ProgrammeWeekExercise;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ProgrammeWeekExercise create() => ProgrammeWeekExercise._();
+  @$core.override
+  ProgrammeWeekExercise createEmptyInstance() => create();
+  static $pb.PbList<ProgrammeWeekExercise> createRepeated() => $pb.PbList<ProgrammeWeekExercise>();
+  @$core.pragma('dart2js:noInline')
+  static ProgrammeWeekExercise getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProgrammeWeekExercise>(create);
+  static ProgrammeWeekExercise? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get dayIndex => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set dayIndex($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDayIndex() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDayIndex() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get dayLabel => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set dayLabel($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDayLabel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDayLabel() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get orderIndex => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set orderIndex($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOrderIndex() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOrderIndex() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get exerciseName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set exerciseName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasExerciseName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExerciseName() => $_clearField(5);
+
+  /// Optional — empty when the prescription is free-text only.
+  @$pb.TagNumber(6)
+  $core.String get exerciseId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set exerciseId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExerciseId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExerciseId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get sets => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set sets($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSets() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSets() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get repScheme => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set repScheme($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasRepScheme() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRepScheme() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get intensityNote => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set intensityNote($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasIntensityNote() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIntensityNote() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get restSeconds => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set restSeconds($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasRestSeconds() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearRestSeconds() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get cue => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set cue($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCue() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCue() => $_clearField(11);
+}
+
+class ProgrammeWeek extends $pb.GeneratedMessage {
+  factory ProgrammeWeek({
+    $core.String? id,
+    $core.String? programmeId,
+    $core.int? weekIndex,
+    $core.String? focus,
+    $core.String? notes,
+    $core.Iterable<ProgrammeWeekExercise>? exercises,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (programmeId != null) result.programmeId = programmeId;
+    if (weekIndex != null) result.weekIndex = weekIndex;
+    if (focus != null) result.focus = focus;
+    if (notes != null) result.notes = notes;
+    if (exercises != null) result.exercises.addAll(exercises);
+    return result;
+  }
+
+  ProgrammeWeek._();
+
+  factory ProgrammeWeek.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ProgrammeWeek.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProgrammeWeek', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'programmeId')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'weekIndex', $pb.PbFieldType.O3)
+    ..aOS(4, _omitFieldNames ? '' : 'focus')
+    ..aOS(5, _omitFieldNames ? '' : 'notes')
+    ..pc<ProgrammeWeekExercise>(6, _omitFieldNames ? '' : 'exercises', $pb.PbFieldType.PM, subBuilder: ProgrammeWeekExercise.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ProgrammeWeek clone() => ProgrammeWeek()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ProgrammeWeek copyWith(void Function(ProgrammeWeek) updates) => super.copyWith((message) => updates(message as ProgrammeWeek)) as ProgrammeWeek;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ProgrammeWeek create() => ProgrammeWeek._();
+  @$core.override
+  ProgrammeWeek createEmptyInstance() => create();
+  static $pb.PbList<ProgrammeWeek> createRepeated() => $pb.PbList<ProgrammeWeek>();
+  @$core.pragma('dart2js:noInline')
+  static ProgrammeWeek getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProgrammeWeek>(create);
+  static ProgrammeWeek? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get programmeId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set programmeId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasProgrammeId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProgrammeId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get weekIndex => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set weekIndex($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWeekIndex() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWeekIndex() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get focus => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set focus($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasFocus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFocus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get notes => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set notes($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNotes() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNotes() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<ProgrammeWeekExercise> get exercises => $_getList(5);
+}
+
+class ListProgrammeWeeksRequest extends $pb.GeneratedMessage {
+  factory ListProgrammeWeeksRequest({
+    $core.String? programmeId,
+  }) {
+    final result = create();
+    if (programmeId != null) result.programmeId = programmeId;
+    return result;
+  }
+
+  ListProgrammeWeeksRequest._();
+
+  factory ListProgrammeWeeksRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListProgrammeWeeksRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListProgrammeWeeksRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'programmeId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListProgrammeWeeksRequest clone() => ListProgrammeWeeksRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListProgrammeWeeksRequest copyWith(void Function(ListProgrammeWeeksRequest) updates) => super.copyWith((message) => updates(message as ListProgrammeWeeksRequest)) as ListProgrammeWeeksRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListProgrammeWeeksRequest create() => ListProgrammeWeeksRequest._();
+  @$core.override
+  ListProgrammeWeeksRequest createEmptyInstance() => create();
+  static $pb.PbList<ListProgrammeWeeksRequest> createRepeated() => $pb.PbList<ListProgrammeWeeksRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListProgrammeWeeksRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListProgrammeWeeksRequest>(create);
+  static ListProgrammeWeeksRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get programmeId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set programmeId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProgrammeId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProgrammeId() => $_clearField(1);
+}
+
+class ListProgrammeWeeksResponse extends $pb.GeneratedMessage {
+  factory ListProgrammeWeeksResponse({
+    $core.Iterable<ProgrammeWeekHeader>? weeks,
+  }) {
+    final result = create();
+    if (weeks != null) result.weeks.addAll(weeks);
+    return result;
+  }
+
+  ListProgrammeWeeksResponse._();
+
+  factory ListProgrammeWeeksResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListProgrammeWeeksResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListProgrammeWeeksResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..pc<ProgrammeWeekHeader>(1, _omitFieldNames ? '' : 'weeks', $pb.PbFieldType.PM, subBuilder: ProgrammeWeekHeader.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListProgrammeWeeksResponse clone() => ListProgrammeWeeksResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListProgrammeWeeksResponse copyWith(void Function(ListProgrammeWeeksResponse) updates) => super.copyWith((message) => updates(message as ListProgrammeWeeksResponse)) as ListProgrammeWeeksResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListProgrammeWeeksResponse create() => ListProgrammeWeeksResponse._();
+  @$core.override
+  ListProgrammeWeeksResponse createEmptyInstance() => create();
+  static $pb.PbList<ListProgrammeWeeksResponse> createRepeated() => $pb.PbList<ListProgrammeWeeksResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListProgrammeWeeksResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListProgrammeWeeksResponse>(create);
+  static ListProgrammeWeeksResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ProgrammeWeekHeader> get weeks => $_getList(0);
+}
+
+class GetProgrammeWeekRequest extends $pb.GeneratedMessage {
+  factory GetProgrammeWeekRequest({
+    $core.String? programmeId,
+    $core.int? weekIndex,
+  }) {
+    final result = create();
+    if (programmeId != null) result.programmeId = programmeId;
+    if (weekIndex != null) result.weekIndex = weekIndex;
+    return result;
+  }
+
+  GetProgrammeWeekRequest._();
+
+  factory GetProgrammeWeekRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetProgrammeWeekRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetProgrammeWeekRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'programmeId')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'weekIndex', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProgrammeWeekRequest clone() => GetProgrammeWeekRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProgrammeWeekRequest copyWith(void Function(GetProgrammeWeekRequest) updates) => super.copyWith((message) => updates(message as GetProgrammeWeekRequest)) as GetProgrammeWeekRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetProgrammeWeekRequest create() => GetProgrammeWeekRequest._();
+  @$core.override
+  GetProgrammeWeekRequest createEmptyInstance() => create();
+  static $pb.PbList<GetProgrammeWeekRequest> createRepeated() => $pb.PbList<GetProgrammeWeekRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetProgrammeWeekRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetProgrammeWeekRequest>(create);
+  static GetProgrammeWeekRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get programmeId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set programmeId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProgrammeId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProgrammeId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get weekIndex => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set weekIndex($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWeekIndex() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWeekIndex() => $_clearField(2);
+}
+
+class GetProgrammeWeekResponse extends $pb.GeneratedMessage {
+  factory GetProgrammeWeekResponse({
+    ProgrammeWeek? week,
+  }) {
+    final result = create();
+    if (week != null) result.week = week;
+    return result;
+  }
+
+  GetProgrammeWeekResponse._();
+
+  factory GetProgrammeWeekResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetProgrammeWeekResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetProgrammeWeekResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'), createEmptyInstance: create)
+    ..aOM<ProgrammeWeek>(1, _omitFieldNames ? '' : 'week', subBuilder: ProgrammeWeek.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProgrammeWeekResponse clone() => GetProgrammeWeekResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProgrammeWeekResponse copyWith(void Function(GetProgrammeWeekResponse) updates) => super.copyWith((message) => updates(message as GetProgrammeWeekResponse)) as GetProgrammeWeekResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetProgrammeWeekResponse create() => GetProgrammeWeekResponse._();
+  @$core.override
+  GetProgrammeWeekResponse createEmptyInstance() => create();
+  static $pb.PbList<GetProgrammeWeekResponse> createRepeated() => $pb.PbList<GetProgrammeWeekResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetProgrammeWeekResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetProgrammeWeekResponse>(create);
+  static GetProgrammeWeekResponse? _defaultInstance;
+
+  /// week.id is empty when the (programme, week) pair hasn't been
+  /// authored yet — the client surfaces an honest "not authored"
+  /// placeholder.
+  @$pb.TagNumber(1)
+  ProgrammeWeek get week => $_getN(0);
+  @$pb.TagNumber(1)
+  set week(ProgrammeWeek value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWeek() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWeek() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ProgrammeWeek ensureWeek() => $_ensure(0);
+}
+
 /// PersonalRecord is one PR with the movement name + estimated 1RM
 /// (Epley) baked in. kind is one of: 1RM | 3RM | 5RM | AMRAP | EST1RM.
 class PersonalRecord extends $pb.GeneratedMessage {

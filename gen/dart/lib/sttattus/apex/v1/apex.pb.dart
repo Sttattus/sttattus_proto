@@ -12,6 +12,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $1;
@@ -1497,6 +1498,1863 @@ class ListMyBiomarkerHistoryResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $pb.PbList<Biomarker> get points => $_getList(1);
+}
+
+/// Z16.4 — Apex HRV bridge for Zenith verification.
+/// Returns mean HRV inside the requested span vs the user's 30-day
+/// baseline. Honest "present=false" when either the window or the
+/// baseline carries zero samples — Zenith treats absence as
+/// "unavailable", never as failure.
+class GetHrvWindowRequest extends $pb.GeneratedMessage {
+  factory GetHrvWindowRequest({
+    $fixnum.Int64? startUnix,
+    $fixnum.Int64? endUnix,
+  }) {
+    final result = create();
+    if (startUnix != null) result.startUnix = startUnix;
+    if (endUnix != null) result.endUnix = endUnix;
+    return result;
+  }
+
+  GetHrvWindowRequest._();
+
+  factory GetHrvWindowRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetHrvWindowRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetHrvWindowRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'startUnix')
+    ..aInt64(2, _omitFieldNames ? '' : 'endUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetHrvWindowRequest clone() => GetHrvWindowRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetHrvWindowRequest copyWith(void Function(GetHrvWindowRequest) updates) => super.copyWith((message) => updates(message as GetHrvWindowRequest)) as GetHrvWindowRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetHrvWindowRequest create() => GetHrvWindowRequest._();
+  @$core.override
+  GetHrvWindowRequest createEmptyInstance() => create();
+  static $pb.PbList<GetHrvWindowRequest> createRepeated() => $pb.PbList<GetHrvWindowRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetHrvWindowRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetHrvWindowRequest>(create);
+  static GetHrvWindowRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get startUnix => $_getI64(0);
+  @$pb.TagNumber(1)
+  set startUnix($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasStartUnix() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStartUnix() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get endUnix => $_getI64(1);
+  @$pb.TagNumber(2)
+  set endUnix($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEndUnix() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEndUnix() => $_clearField(2);
+}
+
+class GetHrvWindowResponse extends $pb.GeneratedMessage {
+  factory GetHrvWindowResponse({
+    $core.bool? present,
+    $core.double? windowMean,
+    $core.double? baselineMean,
+    $core.double? delta,
+    $core.int? windowCount,
+    $core.int? baselineCount,
+  }) {
+    final result = create();
+    if (present != null) result.present = present;
+    if (windowMean != null) result.windowMean = windowMean;
+    if (baselineMean != null) result.baselineMean = baselineMean;
+    if (delta != null) result.delta = delta;
+    if (windowCount != null) result.windowCount = windowCount;
+    if (baselineCount != null) result.baselineCount = baselineCount;
+    return result;
+  }
+
+  GetHrvWindowResponse._();
+
+  factory GetHrvWindowResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetHrvWindowResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetHrvWindowResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'present')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'windowMean', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'baselineMean', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'delta', $pb.PbFieldType.OD)
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'windowCount', $pb.PbFieldType.O3)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'baselineCount', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetHrvWindowResponse clone() => GetHrvWindowResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetHrvWindowResponse copyWith(void Function(GetHrvWindowResponse) updates) => super.copyWith((message) => updates(message as GetHrvWindowResponse)) as GetHrvWindowResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetHrvWindowResponse create() => GetHrvWindowResponse._();
+  @$core.override
+  GetHrvWindowResponse createEmptyInstance() => create();
+  static $pb.PbList<GetHrvWindowResponse> createRepeated() => $pb.PbList<GetHrvWindowResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetHrvWindowResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetHrvWindowResponse>(create);
+  static GetHrvWindowResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get present => $_getBF(0);
+  @$pb.TagNumber(1)
+  set present($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPresent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPresent() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get windowMean => $_getN(1);
+  @$pb.TagNumber(2)
+  set windowMean($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWindowMean() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWindowMean() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get baselineMean => $_getN(2);
+  @$pb.TagNumber(3)
+  set baselineMean($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBaselineMean() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBaselineMean() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get delta => $_getN(3);
+  @$pb.TagNumber(4)
+  set delta($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDelta() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDelta() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get windowCount => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set windowCount($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWindowCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWindowCount() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get baselineCount => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set baselineCount($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasBaselineCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearBaselineCount() => $_clearField(6);
+}
+
+class ApexProtocol extends $pb.GeneratedMessage {
+  factory ApexProtocol({
+    $core.String? id,
+    $core.String? slug,
+    $core.String? title,
+    $core.String? category,
+    $core.String? author,
+    $core.String? summary,
+    $core.String? description,
+    $core.int? durationWeeks,
+    $core.int? minutesPerDay,
+    $core.String? imageUrl,
+    $core.bool? sovereignOnly,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (slug != null) result.slug = slug;
+    if (title != null) result.title = title;
+    if (category != null) result.category = category;
+    if (author != null) result.author = author;
+    if (summary != null) result.summary = summary;
+    if (description != null) result.description = description;
+    if (durationWeeks != null) result.durationWeeks = durationWeeks;
+    if (minutesPerDay != null) result.minutesPerDay = minutesPerDay;
+    if (imageUrl != null) result.imageUrl = imageUrl;
+    if (sovereignOnly != null) result.sovereignOnly = sovereignOnly;
+    return result;
+  }
+
+  ApexProtocol._();
+
+  factory ApexProtocol.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ApexProtocol.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApexProtocol', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'slug')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'category')
+    ..aOS(5, _omitFieldNames ? '' : 'author')
+    ..aOS(6, _omitFieldNames ? '' : 'summary')
+    ..aOS(7, _omitFieldNames ? '' : 'description')
+    ..a<$core.int>(8, _omitFieldNames ? '' : 'durationWeeks', $pb.PbFieldType.O3)
+    ..a<$core.int>(9, _omitFieldNames ? '' : 'minutesPerDay', $pb.PbFieldType.O3)
+    ..aOS(10, _omitFieldNames ? '' : 'imageUrl')
+    ..aOB(11, _omitFieldNames ? '' : 'sovereignOnly')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApexProtocol clone() => ApexProtocol()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApexProtocol copyWith(void Function(ApexProtocol) updates) => super.copyWith((message) => updates(message as ApexProtocol)) as ApexProtocol;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApexProtocol create() => ApexProtocol._();
+  @$core.override
+  ApexProtocol createEmptyInstance() => create();
+  static $pb.PbList<ApexProtocol> createRepeated() => $pb.PbList<ApexProtocol>();
+  @$core.pragma('dart2js:noInline')
+  static ApexProtocol getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApexProtocol>(create);
+  static ApexProtocol? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get slug => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set slug($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSlug() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSlug() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get category => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set category($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCategory() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCategory() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get author => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set author($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAuthor() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAuthor() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get summary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set summary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get description => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set description($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDescription() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDescription() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get durationWeeks => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set durationWeeks($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasDurationWeeks() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDurationWeeks() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get minutesPerDay => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set minutesPerDay($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMinutesPerDay() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMinutesPerDay() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get imageUrl => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set imageUrl($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasImageUrl() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearImageUrl() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get sovereignOnly => $_getBF(10);
+  @$pb.TagNumber(11)
+  set sovereignOnly($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasSovereignOnly() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearSovereignOnly() => $_clearField(11);
+}
+
+class ApexProtocolEnrolment extends $pb.GeneratedMessage {
+  factory ApexProtocolEnrolment({
+    $core.String? id,
+    ApexProtocol? protocol,
+    $core.String? status,
+    $fixnum.Int64? startedAtUnix,
+    $fixnum.Int64? finishedAtUnix,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (protocol != null) result.protocol = protocol;
+    if (status != null) result.status = status;
+    if (startedAtUnix != null) result.startedAtUnix = startedAtUnix;
+    if (finishedAtUnix != null) result.finishedAtUnix = finishedAtUnix;
+    return result;
+  }
+
+  ApexProtocolEnrolment._();
+
+  factory ApexProtocolEnrolment.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ApexProtocolEnrolment.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApexProtocolEnrolment', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOM<ApexProtocol>(2, _omitFieldNames ? '' : 'protocol', subBuilder: ApexProtocol.create)
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aInt64(4, _omitFieldNames ? '' : 'startedAtUnix')
+    ..aInt64(5, _omitFieldNames ? '' : 'finishedAtUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApexProtocolEnrolment clone() => ApexProtocolEnrolment()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApexProtocolEnrolment copyWith(void Function(ApexProtocolEnrolment) updates) => super.copyWith((message) => updates(message as ApexProtocolEnrolment)) as ApexProtocolEnrolment;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApexProtocolEnrolment create() => ApexProtocolEnrolment._();
+  @$core.override
+  ApexProtocolEnrolment createEmptyInstance() => create();
+  static $pb.PbList<ApexProtocolEnrolment> createRepeated() => $pb.PbList<ApexProtocolEnrolment>();
+  @$core.pragma('dart2js:noInline')
+  static ApexProtocolEnrolment getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApexProtocolEnrolment>(create);
+  static ApexProtocolEnrolment? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  ApexProtocol get protocol => $_getN(1);
+  @$pb.TagNumber(2)
+  set protocol(ApexProtocol value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasProtocol() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProtocol() => $_clearField(2);
+  @$pb.TagNumber(2)
+  ApexProtocol ensureProtocol() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get startedAtUnix => $_getI64(3);
+  @$pb.TagNumber(4)
+  set startedAtUnix($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStartedAtUnix() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStartedAtUnix() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get finishedAtUnix => $_getI64(4);
+  @$pb.TagNumber(5)
+  set finishedAtUnix($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasFinishedAtUnix() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFinishedAtUnix() => $_clearField(5);
+}
+
+class ApexProtocolAdherence extends $pb.GeneratedMessage {
+  factory ApexProtocolAdherence({
+    $core.String? id,
+    $core.String? enrolmentId,
+    $core.String? forDate,
+    $core.String? status,
+    $core.String? note,
+    $fixnum.Int64? createdAtUnix,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (enrolmentId != null) result.enrolmentId = enrolmentId;
+    if (forDate != null) result.forDate = forDate;
+    if (status != null) result.status = status;
+    if (note != null) result.note = note;
+    if (createdAtUnix != null) result.createdAtUnix = createdAtUnix;
+    return result;
+  }
+
+  ApexProtocolAdherence._();
+
+  factory ApexProtocolAdherence.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ApexProtocolAdherence.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApexProtocolAdherence', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'enrolmentId')
+    ..aOS(3, _omitFieldNames ? '' : 'forDate')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'note')
+    ..aInt64(6, _omitFieldNames ? '' : 'createdAtUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApexProtocolAdherence clone() => ApexProtocolAdherence()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApexProtocolAdherence copyWith(void Function(ApexProtocolAdherence) updates) => super.copyWith((message) => updates(message as ApexProtocolAdherence)) as ApexProtocolAdherence;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApexProtocolAdherence create() => ApexProtocolAdherence._();
+  @$core.override
+  ApexProtocolAdherence createEmptyInstance() => create();
+  static $pb.PbList<ApexProtocolAdherence> createRepeated() => $pb.PbList<ApexProtocolAdherence>();
+  @$core.pragma('dart2js:noInline')
+  static ApexProtocolAdherence getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApexProtocolAdherence>(create);
+  static ApexProtocolAdherence? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get enrolmentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set enrolmentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEnrolmentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEnrolmentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get forDate => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set forDate($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasForDate() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearForDate() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get note => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set note($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNote() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNote() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get createdAtUnix => $_getI64(5);
+  @$pb.TagNumber(6)
+  set createdAtUnix($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedAtUnix() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedAtUnix() => $_clearField(6);
+}
+
+class ListApexProtocolsRequest extends $pb.GeneratedMessage {
+  factory ListApexProtocolsRequest({
+    $core.String? category,
+    $core.bool? includeSovereign,
+  }) {
+    final result = create();
+    if (category != null) result.category = category;
+    if (includeSovereign != null) result.includeSovereign = includeSovereign;
+    return result;
+  }
+
+  ListApexProtocolsRequest._();
+
+  factory ListApexProtocolsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListApexProtocolsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListApexProtocolsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'category')
+    ..aOB(2, _omitFieldNames ? '' : 'includeSovereign')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListApexProtocolsRequest clone() => ListApexProtocolsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListApexProtocolsRequest copyWith(void Function(ListApexProtocolsRequest) updates) => super.copyWith((message) => updates(message as ListApexProtocolsRequest)) as ListApexProtocolsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListApexProtocolsRequest create() => ListApexProtocolsRequest._();
+  @$core.override
+  ListApexProtocolsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListApexProtocolsRequest> createRepeated() => $pb.PbList<ListApexProtocolsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListApexProtocolsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListApexProtocolsRequest>(create);
+  static ListApexProtocolsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get category => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set category($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCategory() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCategory() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get includeSovereign => $_getBF(1);
+  @$pb.TagNumber(2)
+  set includeSovereign($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIncludeSovereign() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIncludeSovereign() => $_clearField(2);
+}
+
+class ListApexProtocolsResponse extends $pb.GeneratedMessage {
+  factory ListApexProtocolsResponse({
+    $core.Iterable<ApexProtocol>? protocols,
+  }) {
+    final result = create();
+    if (protocols != null) result.protocols.addAll(protocols);
+    return result;
+  }
+
+  ListApexProtocolsResponse._();
+
+  factory ListApexProtocolsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListApexProtocolsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListApexProtocolsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..pc<ApexProtocol>(1, _omitFieldNames ? '' : 'protocols', $pb.PbFieldType.PM, subBuilder: ApexProtocol.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListApexProtocolsResponse clone() => ListApexProtocolsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListApexProtocolsResponse copyWith(void Function(ListApexProtocolsResponse) updates) => super.copyWith((message) => updates(message as ListApexProtocolsResponse)) as ListApexProtocolsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListApexProtocolsResponse create() => ListApexProtocolsResponse._();
+  @$core.override
+  ListApexProtocolsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListApexProtocolsResponse> createRepeated() => $pb.PbList<ListApexProtocolsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListApexProtocolsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListApexProtocolsResponse>(create);
+  static ListApexProtocolsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ApexProtocol> get protocols => $_getList(0);
+}
+
+class GetApexProtocolRequest extends $pb.GeneratedMessage {
+  factory GetApexProtocolRequest({
+    $core.String? slug,
+  }) {
+    final result = create();
+    if (slug != null) result.slug = slug;
+    return result;
+  }
+
+  GetApexProtocolRequest._();
+
+  factory GetApexProtocolRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetApexProtocolRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApexProtocolRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'slug')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetApexProtocolRequest clone() => GetApexProtocolRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetApexProtocolRequest copyWith(void Function(GetApexProtocolRequest) updates) => super.copyWith((message) => updates(message as GetApexProtocolRequest)) as GetApexProtocolRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetApexProtocolRequest create() => GetApexProtocolRequest._();
+  @$core.override
+  GetApexProtocolRequest createEmptyInstance() => create();
+  static $pb.PbList<GetApexProtocolRequest> createRepeated() => $pb.PbList<GetApexProtocolRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetApexProtocolRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetApexProtocolRequest>(create);
+  static GetApexProtocolRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get slug => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set slug($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSlug() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSlug() => $_clearField(1);
+}
+
+class GetApexProtocolResponse extends $pb.GeneratedMessage {
+  factory GetApexProtocolResponse({
+    ApexProtocol? protocol,
+  }) {
+    final result = create();
+    if (protocol != null) result.protocol = protocol;
+    return result;
+  }
+
+  GetApexProtocolResponse._();
+
+  factory GetApexProtocolResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetApexProtocolResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApexProtocolResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOM<ApexProtocol>(1, _omitFieldNames ? '' : 'protocol', subBuilder: ApexProtocol.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetApexProtocolResponse clone() => GetApexProtocolResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetApexProtocolResponse copyWith(void Function(GetApexProtocolResponse) updates) => super.copyWith((message) => updates(message as GetApexProtocolResponse)) as GetApexProtocolResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetApexProtocolResponse create() => GetApexProtocolResponse._();
+  @$core.override
+  GetApexProtocolResponse createEmptyInstance() => create();
+  static $pb.PbList<GetApexProtocolResponse> createRepeated() => $pb.PbList<GetApexProtocolResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetApexProtocolResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetApexProtocolResponse>(create);
+  static GetApexProtocolResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ApexProtocol get protocol => $_getN(0);
+  @$pb.TagNumber(1)
+  set protocol(ApexProtocol value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProtocol() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProtocol() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ApexProtocol ensureProtocol() => $_ensure(0);
+}
+
+class EnrolInApexProtocolRequest extends $pb.GeneratedMessage {
+  factory EnrolInApexProtocolRequest({
+    $core.String? protocolId,
+  }) {
+    final result = create();
+    if (protocolId != null) result.protocolId = protocolId;
+    return result;
+  }
+
+  EnrolInApexProtocolRequest._();
+
+  factory EnrolInApexProtocolRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EnrolInApexProtocolRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnrolInApexProtocolRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'protocolId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EnrolInApexProtocolRequest clone() => EnrolInApexProtocolRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EnrolInApexProtocolRequest copyWith(void Function(EnrolInApexProtocolRequest) updates) => super.copyWith((message) => updates(message as EnrolInApexProtocolRequest)) as EnrolInApexProtocolRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EnrolInApexProtocolRequest create() => EnrolInApexProtocolRequest._();
+  @$core.override
+  EnrolInApexProtocolRequest createEmptyInstance() => create();
+  static $pb.PbList<EnrolInApexProtocolRequest> createRepeated() => $pb.PbList<EnrolInApexProtocolRequest>();
+  @$core.pragma('dart2js:noInline')
+  static EnrolInApexProtocolRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EnrolInApexProtocolRequest>(create);
+  static EnrolInApexProtocolRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get protocolId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set protocolId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProtocolId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProtocolId() => $_clearField(1);
+}
+
+class EnrolInApexProtocolResponse extends $pb.GeneratedMessage {
+  factory EnrolInApexProtocolResponse({
+    ApexProtocolEnrolment? enrolment,
+  }) {
+    final result = create();
+    if (enrolment != null) result.enrolment = enrolment;
+    return result;
+  }
+
+  EnrolInApexProtocolResponse._();
+
+  factory EnrolInApexProtocolResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EnrolInApexProtocolResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnrolInApexProtocolResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOM<ApexProtocolEnrolment>(1, _omitFieldNames ? '' : 'enrolment', subBuilder: ApexProtocolEnrolment.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EnrolInApexProtocolResponse clone() => EnrolInApexProtocolResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EnrolInApexProtocolResponse copyWith(void Function(EnrolInApexProtocolResponse) updates) => super.copyWith((message) => updates(message as EnrolInApexProtocolResponse)) as EnrolInApexProtocolResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EnrolInApexProtocolResponse create() => EnrolInApexProtocolResponse._();
+  @$core.override
+  EnrolInApexProtocolResponse createEmptyInstance() => create();
+  static $pb.PbList<EnrolInApexProtocolResponse> createRepeated() => $pb.PbList<EnrolInApexProtocolResponse>();
+  @$core.pragma('dart2js:noInline')
+  static EnrolInApexProtocolResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EnrolInApexProtocolResponse>(create);
+  static EnrolInApexProtocolResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ApexProtocolEnrolment get enrolment => $_getN(0);
+  @$pb.TagNumber(1)
+  set enrolment(ApexProtocolEnrolment value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEnrolment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEnrolment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ApexProtocolEnrolment ensureEnrolment() => $_ensure(0);
+}
+
+class ListMyApexProtocolEnrolmentsRequest extends $pb.GeneratedMessage {
+  factory ListMyApexProtocolEnrolmentsRequest() => create();
+
+  ListMyApexProtocolEnrolmentsRequest._();
+
+  factory ListMyApexProtocolEnrolmentsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyApexProtocolEnrolmentsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyApexProtocolEnrolmentsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyApexProtocolEnrolmentsRequest clone() => ListMyApexProtocolEnrolmentsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyApexProtocolEnrolmentsRequest copyWith(void Function(ListMyApexProtocolEnrolmentsRequest) updates) => super.copyWith((message) => updates(message as ListMyApexProtocolEnrolmentsRequest)) as ListMyApexProtocolEnrolmentsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyApexProtocolEnrolmentsRequest create() => ListMyApexProtocolEnrolmentsRequest._();
+  @$core.override
+  ListMyApexProtocolEnrolmentsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyApexProtocolEnrolmentsRequest> createRepeated() => $pb.PbList<ListMyApexProtocolEnrolmentsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyApexProtocolEnrolmentsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyApexProtocolEnrolmentsRequest>(create);
+  static ListMyApexProtocolEnrolmentsRequest? _defaultInstance;
+}
+
+class ListMyApexProtocolEnrolmentsResponse extends $pb.GeneratedMessage {
+  factory ListMyApexProtocolEnrolmentsResponse({
+    $core.Iterable<ApexProtocolEnrolment>? enrolments,
+  }) {
+    final result = create();
+    if (enrolments != null) result.enrolments.addAll(enrolments);
+    return result;
+  }
+
+  ListMyApexProtocolEnrolmentsResponse._();
+
+  factory ListMyApexProtocolEnrolmentsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyApexProtocolEnrolmentsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyApexProtocolEnrolmentsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..pc<ApexProtocolEnrolment>(1, _omitFieldNames ? '' : 'enrolments', $pb.PbFieldType.PM, subBuilder: ApexProtocolEnrolment.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyApexProtocolEnrolmentsResponse clone() => ListMyApexProtocolEnrolmentsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyApexProtocolEnrolmentsResponse copyWith(void Function(ListMyApexProtocolEnrolmentsResponse) updates) => super.copyWith((message) => updates(message as ListMyApexProtocolEnrolmentsResponse)) as ListMyApexProtocolEnrolmentsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyApexProtocolEnrolmentsResponse create() => ListMyApexProtocolEnrolmentsResponse._();
+  @$core.override
+  ListMyApexProtocolEnrolmentsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyApexProtocolEnrolmentsResponse> createRepeated() => $pb.PbList<ListMyApexProtocolEnrolmentsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyApexProtocolEnrolmentsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyApexProtocolEnrolmentsResponse>(create);
+  static ListMyApexProtocolEnrolmentsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ApexProtocolEnrolment> get enrolments => $_getList(0);
+}
+
+class UpdateApexProtocolEnrolmentRequest extends $pb.GeneratedMessage {
+  factory UpdateApexProtocolEnrolmentRequest({
+    $core.String? enrolmentId,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (enrolmentId != null) result.enrolmentId = enrolmentId;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  UpdateApexProtocolEnrolmentRequest._();
+
+  factory UpdateApexProtocolEnrolmentRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateApexProtocolEnrolmentRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateApexProtocolEnrolmentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'enrolmentId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateApexProtocolEnrolmentRequest clone() => UpdateApexProtocolEnrolmentRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateApexProtocolEnrolmentRequest copyWith(void Function(UpdateApexProtocolEnrolmentRequest) updates) => super.copyWith((message) => updates(message as UpdateApexProtocolEnrolmentRequest)) as UpdateApexProtocolEnrolmentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateApexProtocolEnrolmentRequest create() => UpdateApexProtocolEnrolmentRequest._();
+  @$core.override
+  UpdateApexProtocolEnrolmentRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateApexProtocolEnrolmentRequest> createRepeated() => $pb.PbList<UpdateApexProtocolEnrolmentRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateApexProtocolEnrolmentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateApexProtocolEnrolmentRequest>(create);
+  static UpdateApexProtocolEnrolmentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get enrolmentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set enrolmentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEnrolmentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEnrolmentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+}
+
+class UpdateApexProtocolEnrolmentResponse extends $pb.GeneratedMessage {
+  factory UpdateApexProtocolEnrolmentResponse({
+    ApexProtocolEnrolment? enrolment,
+  }) {
+    final result = create();
+    if (enrolment != null) result.enrolment = enrolment;
+    return result;
+  }
+
+  UpdateApexProtocolEnrolmentResponse._();
+
+  factory UpdateApexProtocolEnrolmentResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateApexProtocolEnrolmentResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateApexProtocolEnrolmentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOM<ApexProtocolEnrolment>(1, _omitFieldNames ? '' : 'enrolment', subBuilder: ApexProtocolEnrolment.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateApexProtocolEnrolmentResponse clone() => UpdateApexProtocolEnrolmentResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateApexProtocolEnrolmentResponse copyWith(void Function(UpdateApexProtocolEnrolmentResponse) updates) => super.copyWith((message) => updates(message as UpdateApexProtocolEnrolmentResponse)) as UpdateApexProtocolEnrolmentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateApexProtocolEnrolmentResponse create() => UpdateApexProtocolEnrolmentResponse._();
+  @$core.override
+  UpdateApexProtocolEnrolmentResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateApexProtocolEnrolmentResponse> createRepeated() => $pb.PbList<UpdateApexProtocolEnrolmentResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateApexProtocolEnrolmentResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateApexProtocolEnrolmentResponse>(create);
+  static UpdateApexProtocolEnrolmentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ApexProtocolEnrolment get enrolment => $_getN(0);
+  @$pb.TagNumber(1)
+  set enrolment(ApexProtocolEnrolment value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEnrolment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEnrolment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ApexProtocolEnrolment ensureEnrolment() => $_ensure(0);
+}
+
+class RecordApexProtocolAdherenceRequest extends $pb.GeneratedMessage {
+  factory RecordApexProtocolAdherenceRequest({
+    $core.String? enrolmentId,
+    $core.String? forDate,
+    $core.String? status,
+    $core.String? note,
+  }) {
+    final result = create();
+    if (enrolmentId != null) result.enrolmentId = enrolmentId;
+    if (forDate != null) result.forDate = forDate;
+    if (status != null) result.status = status;
+    if (note != null) result.note = note;
+    return result;
+  }
+
+  RecordApexProtocolAdherenceRequest._();
+
+  factory RecordApexProtocolAdherenceRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RecordApexProtocolAdherenceRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordApexProtocolAdherenceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'enrolmentId')
+    ..aOS(2, _omitFieldNames ? '' : 'forDate')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOS(4, _omitFieldNames ? '' : 'note')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordApexProtocolAdherenceRequest clone() => RecordApexProtocolAdherenceRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordApexProtocolAdherenceRequest copyWith(void Function(RecordApexProtocolAdherenceRequest) updates) => super.copyWith((message) => updates(message as RecordApexProtocolAdherenceRequest)) as RecordApexProtocolAdherenceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordApexProtocolAdherenceRequest create() => RecordApexProtocolAdherenceRequest._();
+  @$core.override
+  RecordApexProtocolAdherenceRequest createEmptyInstance() => create();
+  static $pb.PbList<RecordApexProtocolAdherenceRequest> createRepeated() => $pb.PbList<RecordApexProtocolAdherenceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RecordApexProtocolAdherenceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordApexProtocolAdherenceRequest>(create);
+  static RecordApexProtocolAdherenceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get enrolmentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set enrolmentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEnrolmentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEnrolmentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get forDate => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set forDate($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasForDate() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearForDate() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get note => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set note($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNote() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNote() => $_clearField(4);
+}
+
+class RecordApexProtocolAdherenceResponse extends $pb.GeneratedMessage {
+  factory RecordApexProtocolAdherenceResponse({
+    ApexProtocolAdherence? adherence,
+  }) {
+    final result = create();
+    if (adherence != null) result.adherence = adherence;
+    return result;
+  }
+
+  RecordApexProtocolAdherenceResponse._();
+
+  factory RecordApexProtocolAdherenceResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RecordApexProtocolAdherenceResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordApexProtocolAdherenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOM<ApexProtocolAdherence>(1, _omitFieldNames ? '' : 'adherence', subBuilder: ApexProtocolAdherence.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordApexProtocolAdherenceResponse clone() => RecordApexProtocolAdherenceResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordApexProtocolAdherenceResponse copyWith(void Function(RecordApexProtocolAdherenceResponse) updates) => super.copyWith((message) => updates(message as RecordApexProtocolAdherenceResponse)) as RecordApexProtocolAdherenceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordApexProtocolAdherenceResponse create() => RecordApexProtocolAdherenceResponse._();
+  @$core.override
+  RecordApexProtocolAdherenceResponse createEmptyInstance() => create();
+  static $pb.PbList<RecordApexProtocolAdherenceResponse> createRepeated() => $pb.PbList<RecordApexProtocolAdherenceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RecordApexProtocolAdherenceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordApexProtocolAdherenceResponse>(create);
+  static RecordApexProtocolAdherenceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ApexProtocolAdherence get adherence => $_getN(0);
+  @$pb.TagNumber(1)
+  set adherence(ApexProtocolAdherence value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAdherence() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAdherence() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ApexProtocolAdherence ensureAdherence() => $_ensure(0);
+}
+
+class ListMyApexProtocolAdherenceRequest extends $pb.GeneratedMessage {
+  factory ListMyApexProtocolAdherenceRequest({
+    $core.String? enrolmentId,
+    $core.int? days,
+  }) {
+    final result = create();
+    if (enrolmentId != null) result.enrolmentId = enrolmentId;
+    if (days != null) result.days = days;
+    return result;
+  }
+
+  ListMyApexProtocolAdherenceRequest._();
+
+  factory ListMyApexProtocolAdherenceRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyApexProtocolAdherenceRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyApexProtocolAdherenceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'enrolmentId')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'days', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyApexProtocolAdherenceRequest clone() => ListMyApexProtocolAdherenceRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyApexProtocolAdherenceRequest copyWith(void Function(ListMyApexProtocolAdherenceRequest) updates) => super.copyWith((message) => updates(message as ListMyApexProtocolAdherenceRequest)) as ListMyApexProtocolAdherenceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyApexProtocolAdherenceRequest create() => ListMyApexProtocolAdherenceRequest._();
+  @$core.override
+  ListMyApexProtocolAdherenceRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyApexProtocolAdherenceRequest> createRepeated() => $pb.PbList<ListMyApexProtocolAdherenceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyApexProtocolAdherenceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyApexProtocolAdherenceRequest>(create);
+  static ListMyApexProtocolAdherenceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get enrolmentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set enrolmentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEnrolmentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEnrolmentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get days => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set days($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDays() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDays() => $_clearField(2);
+}
+
+class ListMyApexProtocolAdherenceResponse extends $pb.GeneratedMessage {
+  factory ListMyApexProtocolAdherenceResponse({
+    $core.Iterable<ApexProtocolAdherence>? entries,
+  }) {
+    final result = create();
+    if (entries != null) result.entries.addAll(entries);
+    return result;
+  }
+
+  ListMyApexProtocolAdherenceResponse._();
+
+  factory ListMyApexProtocolAdherenceResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyApexProtocolAdherenceResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyApexProtocolAdherenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..pc<ApexProtocolAdherence>(1, _omitFieldNames ? '' : 'entries', $pb.PbFieldType.PM, subBuilder: ApexProtocolAdherence.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyApexProtocolAdherenceResponse clone() => ListMyApexProtocolAdherenceResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyApexProtocolAdherenceResponse copyWith(void Function(ListMyApexProtocolAdherenceResponse) updates) => super.copyWith((message) => updates(message as ListMyApexProtocolAdherenceResponse)) as ListMyApexProtocolAdherenceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyApexProtocolAdherenceResponse create() => ListMyApexProtocolAdherenceResponse._();
+  @$core.override
+  ListMyApexProtocolAdherenceResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyApexProtocolAdherenceResponse> createRepeated() => $pb.PbList<ListMyApexProtocolAdherenceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyApexProtocolAdherenceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyApexProtocolAdherenceResponse>(create);
+  static ListMyApexProtocolAdherenceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ApexProtocolAdherence> get entries => $_getList(0);
+}
+
+class ApexClinic extends $pb.GeneratedMessage {
+  factory ApexClinic({
+    $core.String? id,
+    $core.String? slug,
+    $core.String? name,
+    $core.String? city,
+    $core.String? country,
+    $core.String? specialties,
+    $core.String? summary,
+    $core.String? description,
+    $core.String? websiteUrl,
+    $core.String? imageUrl,
+    $core.bool? sovereignOnly,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (slug != null) result.slug = slug;
+    if (name != null) result.name = name;
+    if (city != null) result.city = city;
+    if (country != null) result.country = country;
+    if (specialties != null) result.specialties = specialties;
+    if (summary != null) result.summary = summary;
+    if (description != null) result.description = description;
+    if (websiteUrl != null) result.websiteUrl = websiteUrl;
+    if (imageUrl != null) result.imageUrl = imageUrl;
+    if (sovereignOnly != null) result.sovereignOnly = sovereignOnly;
+    return result;
+  }
+
+  ApexClinic._();
+
+  factory ApexClinic.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ApexClinic.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApexClinic', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'slug')
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOS(4, _omitFieldNames ? '' : 'city')
+    ..aOS(5, _omitFieldNames ? '' : 'country')
+    ..aOS(6, _omitFieldNames ? '' : 'specialties')
+    ..aOS(7, _omitFieldNames ? '' : 'summary')
+    ..aOS(8, _omitFieldNames ? '' : 'description')
+    ..aOS(9, _omitFieldNames ? '' : 'websiteUrl')
+    ..aOS(10, _omitFieldNames ? '' : 'imageUrl')
+    ..aOB(11, _omitFieldNames ? '' : 'sovereignOnly')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApexClinic clone() => ApexClinic()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApexClinic copyWith(void Function(ApexClinic) updates) => super.copyWith((message) => updates(message as ApexClinic)) as ApexClinic;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApexClinic create() => ApexClinic._();
+  @$core.override
+  ApexClinic createEmptyInstance() => create();
+  static $pb.PbList<ApexClinic> createRepeated() => $pb.PbList<ApexClinic>();
+  @$core.pragma('dart2js:noInline')
+  static ApexClinic getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApexClinic>(create);
+  static ApexClinic? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get slug => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set slug($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSlug() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSlug() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get city => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set city($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCity() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCity() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get country => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set country($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCountry() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCountry() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get specialties => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set specialties($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSpecialties() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSpecialties() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get summary => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set summary($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSummary() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSummary() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get description => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set description($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasDescription() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDescription() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get websiteUrl => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set websiteUrl($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasWebsiteUrl() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearWebsiteUrl() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get imageUrl => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set imageUrl($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasImageUrl() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearImageUrl() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get sovereignOnly => $_getBF(10);
+  @$pb.TagNumber(11)
+  set sovereignOnly($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasSovereignOnly() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearSovereignOnly() => $_clearField(11);
+}
+
+class ApexClinicIntroRequest extends $pb.GeneratedMessage {
+  factory ApexClinicIntroRequest({
+    $core.String? id,
+    ApexClinic? clinic,
+    $core.String? note,
+    $core.String? status,
+    $fixnum.Int64? requestedAtUnix,
+    $fixnum.Int64? decidedAtUnix,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (clinic != null) result.clinic = clinic;
+    if (note != null) result.note = note;
+    if (status != null) result.status = status;
+    if (requestedAtUnix != null) result.requestedAtUnix = requestedAtUnix;
+    if (decidedAtUnix != null) result.decidedAtUnix = decidedAtUnix;
+    return result;
+  }
+
+  ApexClinicIntroRequest._();
+
+  factory ApexClinicIntroRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ApexClinicIntroRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApexClinicIntroRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOM<ApexClinic>(2, _omitFieldNames ? '' : 'clinic', subBuilder: ApexClinic.create)
+    ..aOS(3, _omitFieldNames ? '' : 'note')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aInt64(5, _omitFieldNames ? '' : 'requestedAtUnix')
+    ..aInt64(6, _omitFieldNames ? '' : 'decidedAtUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApexClinicIntroRequest clone() => ApexClinicIntroRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApexClinicIntroRequest copyWith(void Function(ApexClinicIntroRequest) updates) => super.copyWith((message) => updates(message as ApexClinicIntroRequest)) as ApexClinicIntroRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApexClinicIntroRequest create() => ApexClinicIntroRequest._();
+  @$core.override
+  ApexClinicIntroRequest createEmptyInstance() => create();
+  static $pb.PbList<ApexClinicIntroRequest> createRepeated() => $pb.PbList<ApexClinicIntroRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ApexClinicIntroRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApexClinicIntroRequest>(create);
+  static ApexClinicIntroRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  ApexClinic get clinic => $_getN(1);
+  @$pb.TagNumber(2)
+  set clinic(ApexClinic value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClinic() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClinic() => $_clearField(2);
+  @$pb.TagNumber(2)
+  ApexClinic ensureClinic() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get note => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set note($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNote() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get requestedAtUnix => $_getI64(4);
+  @$pb.TagNumber(5)
+  set requestedAtUnix($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRequestedAtUnix() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRequestedAtUnix() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get decidedAtUnix => $_getI64(5);
+  @$pb.TagNumber(6)
+  set decidedAtUnix($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDecidedAtUnix() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDecidedAtUnix() => $_clearField(6);
+}
+
+class ListApexClinicsRequest extends $pb.GeneratedMessage {
+  factory ListApexClinicsRequest({
+    $core.String? country,
+  }) {
+    final result = create();
+    if (country != null) result.country = country;
+    return result;
+  }
+
+  ListApexClinicsRequest._();
+
+  factory ListApexClinicsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListApexClinicsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListApexClinicsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'country')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListApexClinicsRequest clone() => ListApexClinicsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListApexClinicsRequest copyWith(void Function(ListApexClinicsRequest) updates) => super.copyWith((message) => updates(message as ListApexClinicsRequest)) as ListApexClinicsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListApexClinicsRequest create() => ListApexClinicsRequest._();
+  @$core.override
+  ListApexClinicsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListApexClinicsRequest> createRepeated() => $pb.PbList<ListApexClinicsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListApexClinicsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListApexClinicsRequest>(create);
+  static ListApexClinicsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get country => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set country($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCountry() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCountry() => $_clearField(1);
+}
+
+class ListApexClinicsResponse extends $pb.GeneratedMessage {
+  factory ListApexClinicsResponse({
+    $core.Iterable<ApexClinic>? clinics,
+  }) {
+    final result = create();
+    if (clinics != null) result.clinics.addAll(clinics);
+    return result;
+  }
+
+  ListApexClinicsResponse._();
+
+  factory ListApexClinicsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListApexClinicsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListApexClinicsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..pc<ApexClinic>(1, _omitFieldNames ? '' : 'clinics', $pb.PbFieldType.PM, subBuilder: ApexClinic.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListApexClinicsResponse clone() => ListApexClinicsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListApexClinicsResponse copyWith(void Function(ListApexClinicsResponse) updates) => super.copyWith((message) => updates(message as ListApexClinicsResponse)) as ListApexClinicsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListApexClinicsResponse create() => ListApexClinicsResponse._();
+  @$core.override
+  ListApexClinicsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListApexClinicsResponse> createRepeated() => $pb.PbList<ListApexClinicsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListApexClinicsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListApexClinicsResponse>(create);
+  static ListApexClinicsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ApexClinic> get clinics => $_getList(0);
+}
+
+class GetApexClinicRequest extends $pb.GeneratedMessage {
+  factory GetApexClinicRequest({
+    $core.String? slug,
+  }) {
+    final result = create();
+    if (slug != null) result.slug = slug;
+    return result;
+  }
+
+  GetApexClinicRequest._();
+
+  factory GetApexClinicRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetApexClinicRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApexClinicRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'slug')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetApexClinicRequest clone() => GetApexClinicRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetApexClinicRequest copyWith(void Function(GetApexClinicRequest) updates) => super.copyWith((message) => updates(message as GetApexClinicRequest)) as GetApexClinicRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetApexClinicRequest create() => GetApexClinicRequest._();
+  @$core.override
+  GetApexClinicRequest createEmptyInstance() => create();
+  static $pb.PbList<GetApexClinicRequest> createRepeated() => $pb.PbList<GetApexClinicRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetApexClinicRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetApexClinicRequest>(create);
+  static GetApexClinicRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get slug => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set slug($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSlug() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSlug() => $_clearField(1);
+}
+
+class GetApexClinicResponse extends $pb.GeneratedMessage {
+  factory GetApexClinicResponse({
+    ApexClinic? clinic,
+  }) {
+    final result = create();
+    if (clinic != null) result.clinic = clinic;
+    return result;
+  }
+
+  GetApexClinicResponse._();
+
+  factory GetApexClinicResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetApexClinicResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApexClinicResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOM<ApexClinic>(1, _omitFieldNames ? '' : 'clinic', subBuilder: ApexClinic.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetApexClinicResponse clone() => GetApexClinicResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetApexClinicResponse copyWith(void Function(GetApexClinicResponse) updates) => super.copyWith((message) => updates(message as GetApexClinicResponse)) as GetApexClinicResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetApexClinicResponse create() => GetApexClinicResponse._();
+  @$core.override
+  GetApexClinicResponse createEmptyInstance() => create();
+  static $pb.PbList<GetApexClinicResponse> createRepeated() => $pb.PbList<GetApexClinicResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetApexClinicResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetApexClinicResponse>(create);
+  static GetApexClinicResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ApexClinic get clinic => $_getN(0);
+  @$pb.TagNumber(1)
+  set clinic(ApexClinic value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasClinic() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearClinic() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ApexClinic ensureClinic() => $_ensure(0);
+}
+
+class RequestApexClinicIntroRequest extends $pb.GeneratedMessage {
+  factory RequestApexClinicIntroRequest({
+    $core.String? clinicId,
+    $core.String? note,
+  }) {
+    final result = create();
+    if (clinicId != null) result.clinicId = clinicId;
+    if (note != null) result.note = note;
+    return result;
+  }
+
+  RequestApexClinicIntroRequest._();
+
+  factory RequestApexClinicIntroRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RequestApexClinicIntroRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RequestApexClinicIntroRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'clinicId')
+    ..aOS(2, _omitFieldNames ? '' : 'note')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestApexClinicIntroRequest clone() => RequestApexClinicIntroRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestApexClinicIntroRequest copyWith(void Function(RequestApexClinicIntroRequest) updates) => super.copyWith((message) => updates(message as RequestApexClinicIntroRequest)) as RequestApexClinicIntroRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestApexClinicIntroRequest create() => RequestApexClinicIntroRequest._();
+  @$core.override
+  RequestApexClinicIntroRequest createEmptyInstance() => create();
+  static $pb.PbList<RequestApexClinicIntroRequest> createRepeated() => $pb.PbList<RequestApexClinicIntroRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RequestApexClinicIntroRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RequestApexClinicIntroRequest>(create);
+  static RequestApexClinicIntroRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get clinicId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set clinicId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasClinicId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearClinicId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get note => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set note($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNote() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNote() => $_clearField(2);
+}
+
+class RequestApexClinicIntroResponse extends $pb.GeneratedMessage {
+  factory RequestApexClinicIntroResponse({
+    ApexClinicIntroRequest? request,
+  }) {
+    final result = create();
+    if (request != null) result.request = request;
+    return result;
+  }
+
+  RequestApexClinicIntroResponse._();
+
+  factory RequestApexClinicIntroResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RequestApexClinicIntroResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RequestApexClinicIntroResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..aOM<ApexClinicIntroRequest>(1, _omitFieldNames ? '' : 'request', subBuilder: ApexClinicIntroRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestApexClinicIntroResponse clone() => RequestApexClinicIntroResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestApexClinicIntroResponse copyWith(void Function(RequestApexClinicIntroResponse) updates) => super.copyWith((message) => updates(message as RequestApexClinicIntroResponse)) as RequestApexClinicIntroResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestApexClinicIntroResponse create() => RequestApexClinicIntroResponse._();
+  @$core.override
+  RequestApexClinicIntroResponse createEmptyInstance() => create();
+  static $pb.PbList<RequestApexClinicIntroResponse> createRepeated() => $pb.PbList<RequestApexClinicIntroResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RequestApexClinicIntroResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RequestApexClinicIntroResponse>(create);
+  static RequestApexClinicIntroResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ApexClinicIntroRequest get request => $_getN(0);
+  @$pb.TagNumber(1)
+  set request(ApexClinicIntroRequest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRequest() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ApexClinicIntroRequest ensureRequest() => $_ensure(0);
+}
+
+class ListMyApexClinicIntroRequestsRequest extends $pb.GeneratedMessage {
+  factory ListMyApexClinicIntroRequestsRequest() => create();
+
+  ListMyApexClinicIntroRequestsRequest._();
+
+  factory ListMyApexClinicIntroRequestsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyApexClinicIntroRequestsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyApexClinicIntroRequestsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyApexClinicIntroRequestsRequest clone() => ListMyApexClinicIntroRequestsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyApexClinicIntroRequestsRequest copyWith(void Function(ListMyApexClinicIntroRequestsRequest) updates) => super.copyWith((message) => updates(message as ListMyApexClinicIntroRequestsRequest)) as ListMyApexClinicIntroRequestsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyApexClinicIntroRequestsRequest create() => ListMyApexClinicIntroRequestsRequest._();
+  @$core.override
+  ListMyApexClinicIntroRequestsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyApexClinicIntroRequestsRequest> createRepeated() => $pb.PbList<ListMyApexClinicIntroRequestsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyApexClinicIntroRequestsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyApexClinicIntroRequestsRequest>(create);
+  static ListMyApexClinicIntroRequestsRequest? _defaultInstance;
+}
+
+class ListMyApexClinicIntroRequestsResponse extends $pb.GeneratedMessage {
+  factory ListMyApexClinicIntroRequestsResponse({
+    $core.Iterable<ApexClinicIntroRequest>? requests,
+  }) {
+    final result = create();
+    if (requests != null) result.requests.addAll(requests);
+    return result;
+  }
+
+  ListMyApexClinicIntroRequestsResponse._();
+
+  factory ListMyApexClinicIntroRequestsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyApexClinicIntroRequestsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyApexClinicIntroRequestsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..pc<ApexClinicIntroRequest>(1, _omitFieldNames ? '' : 'requests', $pb.PbFieldType.PM, subBuilder: ApexClinicIntroRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyApexClinicIntroRequestsResponse clone() => ListMyApexClinicIntroRequestsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyApexClinicIntroRequestsResponse copyWith(void Function(ListMyApexClinicIntroRequestsResponse) updates) => super.copyWith((message) => updates(message as ListMyApexClinicIntroRequestsResponse)) as ListMyApexClinicIntroRequestsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyApexClinicIntroRequestsResponse create() => ListMyApexClinicIntroRequestsResponse._();
+  @$core.override
+  ListMyApexClinicIntroRequestsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyApexClinicIntroRequestsResponse> createRepeated() => $pb.PbList<ListMyApexClinicIntroRequestsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyApexClinicIntroRequestsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyApexClinicIntroRequestsResponse>(create);
+  static ListMyApexClinicIntroRequestsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ApexClinicIntroRequest> get requests => $_getList(0);
 }
 
 

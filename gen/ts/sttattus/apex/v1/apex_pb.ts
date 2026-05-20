@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
 
 /**
  * BiomarkerCategory defines the biological system being measured.
@@ -1245,6 +1245,1385 @@ export class ListMyBiomarkerHistoryResponse extends Message<ListMyBiomarkerHisto
 
   static equals(a: ListMyBiomarkerHistoryResponse | PlainMessage<ListMyBiomarkerHistoryResponse> | undefined, b: ListMyBiomarkerHistoryResponse | PlainMessage<ListMyBiomarkerHistoryResponse> | undefined): boolean {
     return proto3.util.equals(ListMyBiomarkerHistoryResponse, a, b);
+  }
+}
+
+/**
+ * Z16.4 — Apex HRV bridge for Zenith verification.
+ * Returns mean HRV inside the requested span vs the user's 30-day
+ * baseline. Honest "present=false" when either the window or the
+ * baseline carries zero samples — Zenith treats absence as
+ * "unavailable", never as failure.
+ *
+ * @generated from message sttattus.apex.v1.GetHrvWindowRequest
+ */
+export class GetHrvWindowRequest extends Message<GetHrvWindowRequest> {
+  /**
+   * @generated from field: int64 start_unix = 1;
+   */
+  startUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 end_unix = 2;
+   */
+  endUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<GetHrvWindowRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.GetHrvWindowRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "start_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "end_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetHrvWindowRequest {
+    return new GetHrvWindowRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetHrvWindowRequest {
+    return new GetHrvWindowRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetHrvWindowRequest {
+    return new GetHrvWindowRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetHrvWindowRequest | PlainMessage<GetHrvWindowRequest> | undefined, b: GetHrvWindowRequest | PlainMessage<GetHrvWindowRequest> | undefined): boolean {
+    return proto3.util.equals(GetHrvWindowRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.GetHrvWindowResponse
+ */
+export class GetHrvWindowResponse extends Message<GetHrvWindowResponse> {
+  /**
+   * false when window or baseline is empty
+   *
+   * @generated from field: bool present = 1;
+   */
+  present = false;
+
+  /**
+   * mean HRV in the (start, end) span (ms)
+   *
+   * @generated from field: double window_mean = 2;
+   */
+  windowMean = 0;
+
+  /**
+   * 30-day baseline mean excluding the window
+   *
+   * @generated from field: double baseline_mean = 3;
+   */
+  baselineMean = 0;
+
+  /**
+   * window_mean - baseline_mean (ms)
+   *
+   * @generated from field: double delta = 4;
+   */
+  delta = 0;
+
+  /**
+   * @generated from field: int32 window_count = 5;
+   */
+  windowCount = 0;
+
+  /**
+   * @generated from field: int32 baseline_count = 6;
+   */
+  baselineCount = 0;
+
+  constructor(data?: PartialMessage<GetHrvWindowResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.GetHrvWindowResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "window_mean", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "baseline_mean", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "delta", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "window_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "baseline_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetHrvWindowResponse {
+    return new GetHrvWindowResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetHrvWindowResponse {
+    return new GetHrvWindowResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetHrvWindowResponse {
+    return new GetHrvWindowResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetHrvWindowResponse | PlainMessage<GetHrvWindowResponse> | undefined, b: GetHrvWindowResponse | PlainMessage<GetHrvWindowResponse> | undefined): boolean {
+    return proto3.util.equals(GetHrvWindowResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ApexProtocol
+ */
+export class ApexProtocol extends Message<ApexProtocol> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string slug = 2;
+   */
+  slug = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string category = 4;
+   */
+  category = "";
+
+  /**
+   * @generated from field: string author = 5;
+   */
+  author = "";
+
+  /**
+   * @generated from field: string summary = 6;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string description = 7;
+   */
+  description = "";
+
+  /**
+   * @generated from field: int32 duration_weeks = 8;
+   */
+  durationWeeks = 0;
+
+  /**
+   * @generated from field: int32 minutes_per_day = 9;
+   */
+  minutesPerDay = 0;
+
+  /**
+   * @generated from field: string image_url = 10;
+   */
+  imageUrl = "";
+
+  /**
+   * @generated from field: bool sovereign_only = 11;
+   */
+  sovereignOnly = false;
+
+  constructor(data?: PartialMessage<ApexProtocol>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ApexProtocol";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "author", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "duration_weeks", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "minutes_per_day", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "image_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "sovereign_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApexProtocol {
+    return new ApexProtocol().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApexProtocol {
+    return new ApexProtocol().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApexProtocol {
+    return new ApexProtocol().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApexProtocol | PlainMessage<ApexProtocol> | undefined, b: ApexProtocol | PlainMessage<ApexProtocol> | undefined): boolean {
+    return proto3.util.equals(ApexProtocol, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ApexProtocolEnrolment
+ */
+export class ApexProtocolEnrolment extends Message<ApexProtocolEnrolment> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: sttattus.apex.v1.ApexProtocol protocol = 2;
+   */
+  protocol?: ApexProtocol;
+
+  /**
+   * enrolled | paused | finished
+   *
+   * @generated from field: string status = 3;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int64 started_at_unix = 4;
+   */
+  startedAtUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 finished_at_unix = 5;
+   */
+  finishedAtUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<ApexProtocolEnrolment>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ApexProtocolEnrolment";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "protocol", kind: "message", T: ApexProtocol },
+    { no: 3, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "started_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "finished_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApexProtocolEnrolment {
+    return new ApexProtocolEnrolment().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApexProtocolEnrolment {
+    return new ApexProtocolEnrolment().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApexProtocolEnrolment {
+    return new ApexProtocolEnrolment().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApexProtocolEnrolment | PlainMessage<ApexProtocolEnrolment> | undefined, b: ApexProtocolEnrolment | PlainMessage<ApexProtocolEnrolment> | undefined): boolean {
+    return proto3.util.equals(ApexProtocolEnrolment, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ApexProtocolAdherence
+ */
+export class ApexProtocolAdherence extends Message<ApexProtocolAdherence> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string enrolment_id = 2;
+   */
+  enrolmentId = "";
+
+  /**
+   * YYYY-MM-DD
+   *
+   * @generated from field: string for_date = 3;
+   */
+  forDate = "";
+
+  /**
+   * hit | miss | partial
+   *
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string note = 5;
+   */
+  note = "";
+
+  /**
+   * @generated from field: int64 created_at_unix = 6;
+   */
+  createdAtUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<ApexProtocolAdherence>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ApexProtocolAdherence";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "enrolment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "for_date", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "created_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApexProtocolAdherence {
+    return new ApexProtocolAdherence().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApexProtocolAdherence {
+    return new ApexProtocolAdherence().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApexProtocolAdherence {
+    return new ApexProtocolAdherence().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApexProtocolAdherence | PlainMessage<ApexProtocolAdherence> | undefined, b: ApexProtocolAdherence | PlainMessage<ApexProtocolAdherence> | undefined): boolean {
+    return proto3.util.equals(ApexProtocolAdherence, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListApexProtocolsRequest
+ */
+export class ListApexProtocolsRequest extends Message<ListApexProtocolsRequest> {
+  /**
+   * optional, empty = all
+   *
+   * @generated from field: string category = 1;
+   */
+  category = "";
+
+  /**
+   * @generated from field: bool include_sovereign = 2;
+   */
+  includeSovereign = false;
+
+  constructor(data?: PartialMessage<ListApexProtocolsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListApexProtocolsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "include_sovereign", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListApexProtocolsRequest {
+    return new ListApexProtocolsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListApexProtocolsRequest {
+    return new ListApexProtocolsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListApexProtocolsRequest {
+    return new ListApexProtocolsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListApexProtocolsRequest | PlainMessage<ListApexProtocolsRequest> | undefined, b: ListApexProtocolsRequest | PlainMessage<ListApexProtocolsRequest> | undefined): boolean {
+    return proto3.util.equals(ListApexProtocolsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListApexProtocolsResponse
+ */
+export class ListApexProtocolsResponse extends Message<ListApexProtocolsResponse> {
+  /**
+   * @generated from field: repeated sttattus.apex.v1.ApexProtocol protocols = 1;
+   */
+  protocols: ApexProtocol[] = [];
+
+  constructor(data?: PartialMessage<ListApexProtocolsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListApexProtocolsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "protocols", kind: "message", T: ApexProtocol, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListApexProtocolsResponse {
+    return new ListApexProtocolsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListApexProtocolsResponse {
+    return new ListApexProtocolsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListApexProtocolsResponse {
+    return new ListApexProtocolsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListApexProtocolsResponse | PlainMessage<ListApexProtocolsResponse> | undefined, b: ListApexProtocolsResponse | PlainMessage<ListApexProtocolsResponse> | undefined): boolean {
+    return proto3.util.equals(ListApexProtocolsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.GetApexProtocolRequest
+ */
+export class GetApexProtocolRequest extends Message<GetApexProtocolRequest> {
+  /**
+   * @generated from field: string slug = 1;
+   */
+  slug = "";
+
+  constructor(data?: PartialMessage<GetApexProtocolRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.GetApexProtocolRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetApexProtocolRequest {
+    return new GetApexProtocolRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetApexProtocolRequest {
+    return new GetApexProtocolRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetApexProtocolRequest {
+    return new GetApexProtocolRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetApexProtocolRequest | PlainMessage<GetApexProtocolRequest> | undefined, b: GetApexProtocolRequest | PlainMessage<GetApexProtocolRequest> | undefined): boolean {
+    return proto3.util.equals(GetApexProtocolRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.GetApexProtocolResponse
+ */
+export class GetApexProtocolResponse extends Message<GetApexProtocolResponse> {
+  /**
+   * @generated from field: sttattus.apex.v1.ApexProtocol protocol = 1;
+   */
+  protocol?: ApexProtocol;
+
+  constructor(data?: PartialMessage<GetApexProtocolResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.GetApexProtocolResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "protocol", kind: "message", T: ApexProtocol },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetApexProtocolResponse {
+    return new GetApexProtocolResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetApexProtocolResponse {
+    return new GetApexProtocolResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetApexProtocolResponse {
+    return new GetApexProtocolResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetApexProtocolResponse | PlainMessage<GetApexProtocolResponse> | undefined, b: GetApexProtocolResponse | PlainMessage<GetApexProtocolResponse> | undefined): boolean {
+    return proto3.util.equals(GetApexProtocolResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.EnrolInApexProtocolRequest
+ */
+export class EnrolInApexProtocolRequest extends Message<EnrolInApexProtocolRequest> {
+  /**
+   * @generated from field: string protocol_id = 1;
+   */
+  protocolId = "";
+
+  constructor(data?: PartialMessage<EnrolInApexProtocolRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.EnrolInApexProtocolRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "protocol_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnrolInApexProtocolRequest {
+    return new EnrolInApexProtocolRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnrolInApexProtocolRequest {
+    return new EnrolInApexProtocolRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnrolInApexProtocolRequest {
+    return new EnrolInApexProtocolRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EnrolInApexProtocolRequest | PlainMessage<EnrolInApexProtocolRequest> | undefined, b: EnrolInApexProtocolRequest | PlainMessage<EnrolInApexProtocolRequest> | undefined): boolean {
+    return proto3.util.equals(EnrolInApexProtocolRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.EnrolInApexProtocolResponse
+ */
+export class EnrolInApexProtocolResponse extends Message<EnrolInApexProtocolResponse> {
+  /**
+   * @generated from field: sttattus.apex.v1.ApexProtocolEnrolment enrolment = 1;
+   */
+  enrolment?: ApexProtocolEnrolment;
+
+  constructor(data?: PartialMessage<EnrolInApexProtocolResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.EnrolInApexProtocolResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "enrolment", kind: "message", T: ApexProtocolEnrolment },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnrolInApexProtocolResponse {
+    return new EnrolInApexProtocolResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnrolInApexProtocolResponse {
+    return new EnrolInApexProtocolResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnrolInApexProtocolResponse {
+    return new EnrolInApexProtocolResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EnrolInApexProtocolResponse | PlainMessage<EnrolInApexProtocolResponse> | undefined, b: EnrolInApexProtocolResponse | PlainMessage<EnrolInApexProtocolResponse> | undefined): boolean {
+    return proto3.util.equals(EnrolInApexProtocolResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListMyApexProtocolEnrolmentsRequest
+ */
+export class ListMyApexProtocolEnrolmentsRequest extends Message<ListMyApexProtocolEnrolmentsRequest> {
+  constructor(data?: PartialMessage<ListMyApexProtocolEnrolmentsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListMyApexProtocolEnrolmentsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyApexProtocolEnrolmentsRequest {
+    return new ListMyApexProtocolEnrolmentsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyApexProtocolEnrolmentsRequest {
+    return new ListMyApexProtocolEnrolmentsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyApexProtocolEnrolmentsRequest {
+    return new ListMyApexProtocolEnrolmentsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyApexProtocolEnrolmentsRequest | PlainMessage<ListMyApexProtocolEnrolmentsRequest> | undefined, b: ListMyApexProtocolEnrolmentsRequest | PlainMessage<ListMyApexProtocolEnrolmentsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyApexProtocolEnrolmentsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListMyApexProtocolEnrolmentsResponse
+ */
+export class ListMyApexProtocolEnrolmentsResponse extends Message<ListMyApexProtocolEnrolmentsResponse> {
+  /**
+   * @generated from field: repeated sttattus.apex.v1.ApexProtocolEnrolment enrolments = 1;
+   */
+  enrolments: ApexProtocolEnrolment[] = [];
+
+  constructor(data?: PartialMessage<ListMyApexProtocolEnrolmentsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListMyApexProtocolEnrolmentsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "enrolments", kind: "message", T: ApexProtocolEnrolment, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyApexProtocolEnrolmentsResponse {
+    return new ListMyApexProtocolEnrolmentsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyApexProtocolEnrolmentsResponse {
+    return new ListMyApexProtocolEnrolmentsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyApexProtocolEnrolmentsResponse {
+    return new ListMyApexProtocolEnrolmentsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyApexProtocolEnrolmentsResponse | PlainMessage<ListMyApexProtocolEnrolmentsResponse> | undefined, b: ListMyApexProtocolEnrolmentsResponse | PlainMessage<ListMyApexProtocolEnrolmentsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyApexProtocolEnrolmentsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.UpdateApexProtocolEnrolmentRequest
+ */
+export class UpdateApexProtocolEnrolmentRequest extends Message<UpdateApexProtocolEnrolmentRequest> {
+  /**
+   * @generated from field: string enrolment_id = 1;
+   */
+  enrolmentId = "";
+
+  /**
+   * enrolled | paused | finished
+   *
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<UpdateApexProtocolEnrolmentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.UpdateApexProtocolEnrolmentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "enrolment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateApexProtocolEnrolmentRequest {
+    return new UpdateApexProtocolEnrolmentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateApexProtocolEnrolmentRequest {
+    return new UpdateApexProtocolEnrolmentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateApexProtocolEnrolmentRequest {
+    return new UpdateApexProtocolEnrolmentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateApexProtocolEnrolmentRequest | PlainMessage<UpdateApexProtocolEnrolmentRequest> | undefined, b: UpdateApexProtocolEnrolmentRequest | PlainMessage<UpdateApexProtocolEnrolmentRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateApexProtocolEnrolmentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.UpdateApexProtocolEnrolmentResponse
+ */
+export class UpdateApexProtocolEnrolmentResponse extends Message<UpdateApexProtocolEnrolmentResponse> {
+  /**
+   * @generated from field: sttattus.apex.v1.ApexProtocolEnrolment enrolment = 1;
+   */
+  enrolment?: ApexProtocolEnrolment;
+
+  constructor(data?: PartialMessage<UpdateApexProtocolEnrolmentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.UpdateApexProtocolEnrolmentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "enrolment", kind: "message", T: ApexProtocolEnrolment },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateApexProtocolEnrolmentResponse {
+    return new UpdateApexProtocolEnrolmentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateApexProtocolEnrolmentResponse {
+    return new UpdateApexProtocolEnrolmentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateApexProtocolEnrolmentResponse {
+    return new UpdateApexProtocolEnrolmentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateApexProtocolEnrolmentResponse | PlainMessage<UpdateApexProtocolEnrolmentResponse> | undefined, b: UpdateApexProtocolEnrolmentResponse | PlainMessage<UpdateApexProtocolEnrolmentResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateApexProtocolEnrolmentResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.RecordApexProtocolAdherenceRequest
+ */
+export class RecordApexProtocolAdherenceRequest extends Message<RecordApexProtocolAdherenceRequest> {
+  /**
+   * @generated from field: string enrolment_id = 1;
+   */
+  enrolmentId = "";
+
+  /**
+   * YYYY-MM-DD, empty = today
+   *
+   * @generated from field: string for_date = 2;
+   */
+  forDate = "";
+
+  /**
+   * hit | miss | partial
+   *
+   * @generated from field: string status = 3;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string note = 4;
+   */
+  note = "";
+
+  constructor(data?: PartialMessage<RecordApexProtocolAdherenceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.RecordApexProtocolAdherenceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "enrolment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "for_date", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordApexProtocolAdherenceRequest {
+    return new RecordApexProtocolAdherenceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordApexProtocolAdherenceRequest {
+    return new RecordApexProtocolAdherenceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordApexProtocolAdherenceRequest {
+    return new RecordApexProtocolAdherenceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordApexProtocolAdherenceRequest | PlainMessage<RecordApexProtocolAdherenceRequest> | undefined, b: RecordApexProtocolAdherenceRequest | PlainMessage<RecordApexProtocolAdherenceRequest> | undefined): boolean {
+    return proto3.util.equals(RecordApexProtocolAdherenceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.RecordApexProtocolAdherenceResponse
+ */
+export class RecordApexProtocolAdherenceResponse extends Message<RecordApexProtocolAdherenceResponse> {
+  /**
+   * @generated from field: sttattus.apex.v1.ApexProtocolAdherence adherence = 1;
+   */
+  adherence?: ApexProtocolAdherence;
+
+  constructor(data?: PartialMessage<RecordApexProtocolAdherenceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.RecordApexProtocolAdherenceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "adherence", kind: "message", T: ApexProtocolAdherence },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordApexProtocolAdherenceResponse {
+    return new RecordApexProtocolAdherenceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordApexProtocolAdherenceResponse {
+    return new RecordApexProtocolAdherenceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordApexProtocolAdherenceResponse {
+    return new RecordApexProtocolAdherenceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordApexProtocolAdherenceResponse | PlainMessage<RecordApexProtocolAdherenceResponse> | undefined, b: RecordApexProtocolAdherenceResponse | PlainMessage<RecordApexProtocolAdherenceResponse> | undefined): boolean {
+    return proto3.util.equals(RecordApexProtocolAdherenceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListMyApexProtocolAdherenceRequest
+ */
+export class ListMyApexProtocolAdherenceRequest extends Message<ListMyApexProtocolAdherenceRequest> {
+  /**
+   * @generated from field: string enrolment_id = 1;
+   */
+  enrolmentId = "";
+
+  /**
+   * 0 = all
+   *
+   * @generated from field: int32 days = 2;
+   */
+  days = 0;
+
+  constructor(data?: PartialMessage<ListMyApexProtocolAdherenceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListMyApexProtocolAdherenceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "enrolment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyApexProtocolAdherenceRequest {
+    return new ListMyApexProtocolAdherenceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyApexProtocolAdherenceRequest {
+    return new ListMyApexProtocolAdherenceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyApexProtocolAdherenceRequest {
+    return new ListMyApexProtocolAdherenceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyApexProtocolAdherenceRequest | PlainMessage<ListMyApexProtocolAdherenceRequest> | undefined, b: ListMyApexProtocolAdherenceRequest | PlainMessage<ListMyApexProtocolAdherenceRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyApexProtocolAdherenceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListMyApexProtocolAdherenceResponse
+ */
+export class ListMyApexProtocolAdherenceResponse extends Message<ListMyApexProtocolAdherenceResponse> {
+  /**
+   * @generated from field: repeated sttattus.apex.v1.ApexProtocolAdherence entries = 1;
+   */
+  entries: ApexProtocolAdherence[] = [];
+
+  constructor(data?: PartialMessage<ListMyApexProtocolAdherenceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListMyApexProtocolAdherenceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entries", kind: "message", T: ApexProtocolAdherence, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyApexProtocolAdherenceResponse {
+    return new ListMyApexProtocolAdherenceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyApexProtocolAdherenceResponse {
+    return new ListMyApexProtocolAdherenceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyApexProtocolAdherenceResponse {
+    return new ListMyApexProtocolAdherenceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyApexProtocolAdherenceResponse | PlainMessage<ListMyApexProtocolAdherenceResponse> | undefined, b: ListMyApexProtocolAdherenceResponse | PlainMessage<ListMyApexProtocolAdherenceResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyApexProtocolAdherenceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ApexClinic
+ */
+export class ApexClinic extends Message<ApexClinic> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string slug = 2;
+   */
+  slug = "";
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string city = 4;
+   */
+  city = "";
+
+  /**
+   * @generated from field: string country = 5;
+   */
+  country = "";
+
+  /**
+   * comma-separated tags
+   *
+   * @generated from field: string specialties = 6;
+   */
+  specialties = "";
+
+  /**
+   * @generated from field: string summary = 7;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string description = 8;
+   */
+  description = "";
+
+  /**
+   * @generated from field: string website_url = 9;
+   */
+  websiteUrl = "";
+
+  /**
+   * @generated from field: string image_url = 10;
+   */
+  imageUrl = "";
+
+  /**
+   * @generated from field: bool sovereign_only = 11;
+   */
+  sovereignOnly = false;
+
+  constructor(data?: PartialMessage<ApexClinic>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ApexClinic";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "country", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "specialties", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "website_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "image_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "sovereign_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApexClinic {
+    return new ApexClinic().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApexClinic {
+    return new ApexClinic().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApexClinic {
+    return new ApexClinic().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApexClinic | PlainMessage<ApexClinic> | undefined, b: ApexClinic | PlainMessage<ApexClinic> | undefined): boolean {
+    return proto3.util.equals(ApexClinic, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ApexClinicIntroRequest
+ */
+export class ApexClinicIntroRequest extends Message<ApexClinicIntroRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: sttattus.apex.v1.ApexClinic clinic = 2;
+   */
+  clinic?: ApexClinic;
+
+  /**
+   * @generated from field: string note = 3;
+   */
+  note = "";
+
+  /**
+   * requested | acknowledged | introduced | declined
+   *
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int64 requested_at_unix = 5;
+   */
+  requestedAtUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 decided_at_unix = 6;
+   */
+  decidedAtUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<ApexClinicIntroRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ApexClinicIntroRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "clinic", kind: "message", T: ApexClinic },
+    { no: 3, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "requested_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "decided_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApexClinicIntroRequest {
+    return new ApexClinicIntroRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApexClinicIntroRequest {
+    return new ApexClinicIntroRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApexClinicIntroRequest {
+    return new ApexClinicIntroRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApexClinicIntroRequest | PlainMessage<ApexClinicIntroRequest> | undefined, b: ApexClinicIntroRequest | PlainMessage<ApexClinicIntroRequest> | undefined): boolean {
+    return proto3.util.equals(ApexClinicIntroRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListApexClinicsRequest
+ */
+export class ListApexClinicsRequest extends Message<ListApexClinicsRequest> {
+  /**
+   * optional, empty = all
+   *
+   * @generated from field: string country = 1;
+   */
+  country = "";
+
+  constructor(data?: PartialMessage<ListApexClinicsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListApexClinicsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "country", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListApexClinicsRequest {
+    return new ListApexClinicsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListApexClinicsRequest {
+    return new ListApexClinicsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListApexClinicsRequest {
+    return new ListApexClinicsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListApexClinicsRequest | PlainMessage<ListApexClinicsRequest> | undefined, b: ListApexClinicsRequest | PlainMessage<ListApexClinicsRequest> | undefined): boolean {
+    return proto3.util.equals(ListApexClinicsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListApexClinicsResponse
+ */
+export class ListApexClinicsResponse extends Message<ListApexClinicsResponse> {
+  /**
+   * @generated from field: repeated sttattus.apex.v1.ApexClinic clinics = 1;
+   */
+  clinics: ApexClinic[] = [];
+
+  constructor(data?: PartialMessage<ListApexClinicsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListApexClinicsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "clinics", kind: "message", T: ApexClinic, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListApexClinicsResponse {
+    return new ListApexClinicsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListApexClinicsResponse {
+    return new ListApexClinicsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListApexClinicsResponse {
+    return new ListApexClinicsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListApexClinicsResponse | PlainMessage<ListApexClinicsResponse> | undefined, b: ListApexClinicsResponse | PlainMessage<ListApexClinicsResponse> | undefined): boolean {
+    return proto3.util.equals(ListApexClinicsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.GetApexClinicRequest
+ */
+export class GetApexClinicRequest extends Message<GetApexClinicRequest> {
+  /**
+   * @generated from field: string slug = 1;
+   */
+  slug = "";
+
+  constructor(data?: PartialMessage<GetApexClinicRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.GetApexClinicRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetApexClinicRequest {
+    return new GetApexClinicRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetApexClinicRequest {
+    return new GetApexClinicRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetApexClinicRequest {
+    return new GetApexClinicRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetApexClinicRequest | PlainMessage<GetApexClinicRequest> | undefined, b: GetApexClinicRequest | PlainMessage<GetApexClinicRequest> | undefined): boolean {
+    return proto3.util.equals(GetApexClinicRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.GetApexClinicResponse
+ */
+export class GetApexClinicResponse extends Message<GetApexClinicResponse> {
+  /**
+   * @generated from field: sttattus.apex.v1.ApexClinic clinic = 1;
+   */
+  clinic?: ApexClinic;
+
+  constructor(data?: PartialMessage<GetApexClinicResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.GetApexClinicResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "clinic", kind: "message", T: ApexClinic },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetApexClinicResponse {
+    return new GetApexClinicResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetApexClinicResponse {
+    return new GetApexClinicResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetApexClinicResponse {
+    return new GetApexClinicResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetApexClinicResponse | PlainMessage<GetApexClinicResponse> | undefined, b: GetApexClinicResponse | PlainMessage<GetApexClinicResponse> | undefined): boolean {
+    return proto3.util.equals(GetApexClinicResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.RequestApexClinicIntroRequest
+ */
+export class RequestApexClinicIntroRequest extends Message<RequestApexClinicIntroRequest> {
+  /**
+   * @generated from field: string clinic_id = 1;
+   */
+  clinicId = "";
+
+  /**
+   * @generated from field: string note = 2;
+   */
+  note = "";
+
+  constructor(data?: PartialMessage<RequestApexClinicIntroRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.RequestApexClinicIntroRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "clinic_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestApexClinicIntroRequest {
+    return new RequestApexClinicIntroRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequestApexClinicIntroRequest {
+    return new RequestApexClinicIntroRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequestApexClinicIntroRequest {
+    return new RequestApexClinicIntroRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RequestApexClinicIntroRequest | PlainMessage<RequestApexClinicIntroRequest> | undefined, b: RequestApexClinicIntroRequest | PlainMessage<RequestApexClinicIntroRequest> | undefined): boolean {
+    return proto3.util.equals(RequestApexClinicIntroRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.RequestApexClinicIntroResponse
+ */
+export class RequestApexClinicIntroResponse extends Message<RequestApexClinicIntroResponse> {
+  /**
+   * @generated from field: sttattus.apex.v1.ApexClinicIntroRequest request = 1;
+   */
+  request?: ApexClinicIntroRequest;
+
+  constructor(data?: PartialMessage<RequestApexClinicIntroResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.RequestApexClinicIntroResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "request", kind: "message", T: ApexClinicIntroRequest },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestApexClinicIntroResponse {
+    return new RequestApexClinicIntroResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequestApexClinicIntroResponse {
+    return new RequestApexClinicIntroResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequestApexClinicIntroResponse {
+    return new RequestApexClinicIntroResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RequestApexClinicIntroResponse | PlainMessage<RequestApexClinicIntroResponse> | undefined, b: RequestApexClinicIntroResponse | PlainMessage<RequestApexClinicIntroResponse> | undefined): boolean {
+    return proto3.util.equals(RequestApexClinicIntroResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListMyApexClinicIntroRequestsRequest
+ */
+export class ListMyApexClinicIntroRequestsRequest extends Message<ListMyApexClinicIntroRequestsRequest> {
+  constructor(data?: PartialMessage<ListMyApexClinicIntroRequestsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListMyApexClinicIntroRequestsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyApexClinicIntroRequestsRequest {
+    return new ListMyApexClinicIntroRequestsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyApexClinicIntroRequestsRequest {
+    return new ListMyApexClinicIntroRequestsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyApexClinicIntroRequestsRequest {
+    return new ListMyApexClinicIntroRequestsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyApexClinicIntroRequestsRequest | PlainMessage<ListMyApexClinicIntroRequestsRequest> | undefined, b: ListMyApexClinicIntroRequestsRequest | PlainMessage<ListMyApexClinicIntroRequestsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyApexClinicIntroRequestsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.apex.v1.ListMyApexClinicIntroRequestsResponse
+ */
+export class ListMyApexClinicIntroRequestsResponse extends Message<ListMyApexClinicIntroRequestsResponse> {
+  /**
+   * @generated from field: repeated sttattus.apex.v1.ApexClinicIntroRequest requests = 1;
+   */
+  requests: ApexClinicIntroRequest[] = [];
+
+  constructor(data?: PartialMessage<ListMyApexClinicIntroRequestsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.apex.v1.ListMyApexClinicIntroRequestsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "requests", kind: "message", T: ApexClinicIntroRequest, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyApexClinicIntroRequestsResponse {
+    return new ListMyApexClinicIntroRequestsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyApexClinicIntroRequestsResponse {
+    return new ListMyApexClinicIntroRequestsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyApexClinicIntroRequestsResponse {
+    return new ListMyApexClinicIntroRequestsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyApexClinicIntroRequestsResponse | PlainMessage<ListMyApexClinicIntroRequestsResponse> | undefined, b: ListMyApexClinicIntroRequestsResponse | PlainMessage<ListMyApexClinicIntroRequestsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyApexClinicIntroRequestsResponse, a, b);
   }
 }
 
