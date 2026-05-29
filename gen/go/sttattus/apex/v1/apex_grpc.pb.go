@@ -40,6 +40,45 @@ const (
 	ApexService_UpdateApexProtocolEnrolment_FullMethodName   = "/sttattus.apex.v1.ApexService/UpdateApexProtocolEnrolment"
 	ApexService_RecordApexProtocolAdherence_FullMethodName   = "/sttattus.apex.v1.ApexService/RecordApexProtocolAdherence"
 	ApexService_ListMyApexProtocolAdherence_FullMethodName   = "/sttattus.apex.v1.ApexService/ListMyApexProtocolAdherence"
+	ApexService_ListSupplements_FullMethodName               = "/sttattus.apex.v1.ApexService/ListSupplements"
+	ApexService_ListMySupplements_FullMethodName             = "/sttattus.apex.v1.ApexService/ListMySupplements"
+	ApexService_AddSupplement_FullMethodName                 = "/sttattus.apex.v1.ApexService/AddSupplement"
+	ApexService_RemoveSupplement_FullMethodName              = "/sttattus.apex.v1.ApexService/RemoveSupplement"
+	ApexService_ListSupplementInteractions_FullMethodName    = "/sttattus.apex.v1.ApexService/ListSupplementInteractions"
+	ApexService_ListMyGlucose_FullMethodName                 = "/sttattus.apex.v1.ApexService/ListMyGlucose"
+	ApexService_IngestGlucoseReading_FullMethodName          = "/sttattus.apex.v1.ApexService/IngestGlucoseReading"
+	ApexService_GetCycleStatus_FullMethodName                = "/sttattus.apex.v1.ApexService/GetCycleStatus"
+	ApexService_LogPeriod_FullMethodName                     = "/sttattus.apex.v1.ApexService/LogPeriod"
+	ApexService_LogCycleSymptom_FullMethodName               = "/sttattus.apex.v1.ApexService/LogCycleSymptom"
+	ApexService_ListMyCycleSymptoms_FullMethodName           = "/sttattus.apex.v1.ApexService/ListMyCycleSymptoms"
+	ApexService_SimulateApexAge_FullMethodName               = "/sttattus.apex.v1.ApexService/SimulateApexAge"
+	ApexService_GetReadiness_FullMethodName                  = "/sttattus.apex.v1.ApexService/GetReadiness"
+	ApexService_StartConciergeThread_FullMethodName          = "/sttattus.apex.v1.ApexService/StartConciergeThread"
+	ApexService_ListMyConciergeThreads_FullMethodName        = "/sttattus.apex.v1.ApexService/ListMyConciergeThreads"
+	ApexService_GetConciergeThread_FullMethodName            = "/sttattus.apex.v1.ApexService/GetConciergeThread"
+	ApexService_PostConciergeMessage_FullMethodName          = "/sttattus.apex.v1.ApexService/PostConciergeMessage"
+	ApexService_ListAnthologyArticles_FullMethodName         = "/sttattus.apex.v1.ApexService/ListAnthologyArticles"
+	ApexService_GetAnthologyArticle_FullMethodName           = "/sttattus.apex.v1.ApexService/GetAnthologyArticle"
+	ApexService_ListMyPharmacology_FullMethodName            = "/sttattus.apex.v1.ApexService/ListMyPharmacology"
+	ApexService_AddPharmacology_FullMethodName               = "/sttattus.apex.v1.ApexService/AddPharmacology"
+	ApexService_RemovePharmacology_FullMethodName            = "/sttattus.apex.v1.ApexService/RemovePharmacology"
+	ApexService_RegisterDnaUpload_FullMethodName             = "/sttattus.apex.v1.ApexService/RegisterDnaUpload"
+	ApexService_ListMyDnaUploads_FullMethodName              = "/sttattus.apex.v1.ApexService/ListMyDnaUploads"
+	ApexService_ListMyDnaSnps_FullMethodName                 = "/sttattus.apex.v1.ApexService/ListMyDnaSnps"
+	ApexService_ListLabPartners_FullMethodName               = "/sttattus.apex.v1.ApexService/ListLabPartners"
+	ApexService_ExtractLabMarkers_FullMethodName             = "/sttattus.apex.v1.ApexService/ExtractLabMarkers"
+	ApexService_CreateClinicianShare_FullMethodName          = "/sttattus.apex.v1.ApexService/CreateClinicianShare"
+	ApexService_ListMyClinicianShares_FullMethodName         = "/sttattus.apex.v1.ApexService/ListMyClinicianShares"
+	ApexService_RevokeClinicianShare_FullMethodName          = "/sttattus.apex.v1.ApexService/RevokeClinicianShare"
+	ApexService_GetJetLagProtocol_FullMethodName             = "/sttattus.apex.v1.ApexService/GetJetLagProtocol"
+	ApexService_GenerateHealthAlmanac_FullMethodName         = "/sttattus.apex.v1.ApexService/GenerateHealthAlmanac"
+	ApexService_SubmitImagingStudy_FullMethodName            = "/sttattus.apex.v1.ApexService/SubmitImagingStudy"
+	ApexService_ListMyImagingStudies_FullMethodName          = "/sttattus.apex.v1.ApexService/ListMyImagingStudies"
+	ApexService_ListLounges_FullMethodName                   = "/sttattus.apex.v1.ApexService/ListLounges"
+	ApexService_ListMyLoungeBookings_FullMethodName          = "/sttattus.apex.v1.ApexService/ListMyLoungeBookings"
+	ApexService_CreateLoungeBooking_FullMethodName           = "/sttattus.apex.v1.ApexService/CreateLoungeBooking"
+	ApexService_CancelLoungeBooking_FullMethodName           = "/sttattus.apex.v1.ApexService/CancelLoungeBooking"
+	ApexService_ParseLabReportText_FullMethodName            = "/sttattus.apex.v1.ApexService/ParseLabReportText"
 	ApexService_AdminVerifyLab_FullMethodName                = "/sttattus.apex.v1.ApexService/AdminVerifyLab"
 )
 
@@ -78,6 +117,68 @@ type ApexServiceClient interface {
 	UpdateApexProtocolEnrolment(ctx context.Context, in *UpdateApexProtocolEnrolmentRequest, opts ...grpc.CallOption) (*UpdateApexProtocolEnrolmentResponse, error)
 	RecordApexProtocolAdherence(ctx context.Context, in *RecordApexProtocolAdherenceRequest, opts ...grpc.CallOption) (*RecordApexProtocolAdherenceResponse, error)
 	ListMyApexProtocolAdherence(ctx context.Context, in *ListMyApexProtocolAdherenceRequest, opts ...grpc.CallOption) (*ListMyApexProtocolAdherenceResponse, error)
+	// Supplement stack manager (A11.7).
+	ListSupplements(ctx context.Context, in *ListSupplementsRequest, opts ...grpc.CallOption) (*ListSupplementsResponse, error)
+	ListMySupplements(ctx context.Context, in *ListMySupplementsRequest, opts ...grpc.CallOption) (*ListMySupplementsResponse, error)
+	AddSupplement(ctx context.Context, in *AddSupplementRequest, opts ...grpc.CallOption) (*AddSupplementResponse, error)
+	RemoveSupplement(ctx context.Context, in *RemoveSupplementRequest, opts ...grpc.CallOption) (*RemoveSupplementResponse, error)
+	ListSupplementInteractions(ctx context.Context, in *ListSupplementInteractionsRequest, opts ...grpc.CallOption) (*ListSupplementInteractionsResponse, error)
+	// CGM ingestion + glucose curve (A11.8).
+	ListMyGlucose(ctx context.Context, in *ListMyGlucoseRequest, opts ...grpc.CallOption) (*ListMyGlucoseResponse, error)
+	IngestGlucoseReading(ctx context.Context, in *IngestGlucoseReadingRequest, opts ...grpc.CallOption) (*IngestGlucoseReadingResponse, error)
+	// Cycle dashboard (A11.9 — opt-in for female users).
+	GetCycleStatus(ctx context.Context, in *GetCycleStatusRequest, opts ...grpc.CallOption) (*GetCycleStatusResponse, error)
+	LogPeriod(ctx context.Context, in *LogPeriodRequest, opts ...grpc.CallOption) (*LogPeriodResponse, error)
+	LogCycleSymptom(ctx context.Context, in *LogCycleSymptomRequest, opts ...grpc.CallOption) (*LogCycleSymptomResponse, error)
+	ListMyCycleSymptoms(ctx context.Context, in *ListMyCycleSymptomsRequest, opts ...grpc.CallOption) (*ListMyCycleSymptomsResponse, error)
+	// What-if simulator: project Apex Age under hypothetical marker overrides.
+	SimulateApexAge(ctx context.Context, in *SimulateApexAgeRequest, opts ...grpc.CallOption) (*SimulateApexAgeResponse, error)
+	// Cross-pillar readiness signal — Forge + Zenith consume this to gate
+	// session intensity / focus prescription. Pure read; no engine call.
+	GetReadiness(ctx context.Context, in *GetReadinessRequest, opts ...grpc.CallOption) (*GetReadinessResponse, error)
+	// Clinical concierge (A11.10) — Sovereign-tier white-glove desk.
+	StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error)
+	ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error)
+	GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error)
+	PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error)
+	// Editorial Anthology (A11.11) — named-author longevity articles.
+	ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error)
+	// Pharmacology log (A11.12) — encrypted prescribed + off-label items.
+	ListMyPharmacology(ctx context.Context, in *ListMyPharmacologyRequest, opts ...grpc.CallOption) (*ListMyPharmacologyResponse, error)
+	AddPharmacology(ctx context.Context, in *AddPharmacologyRequest, opts ...grpc.CallOption) (*AddPharmacologyResponse, error)
+	RemovePharmacology(ctx context.Context, in *RemovePharmacologyRequest, opts ...grpc.CallOption) (*RemovePharmacologyResponse, error)
+	// DNA ingestion (A11.13) — VCF / TXT upload → SNP report.
+	RegisterDnaUpload(ctx context.Context, in *RegisterDnaUploadRequest, opts ...grpc.CallOption) (*RegisterDnaUploadResponse, error)
+	ListMyDnaUploads(ctx context.Context, in *ListMyDnaUploadsRequest, opts ...grpc.CallOption) (*ListMyDnaUploadsResponse, error)
+	ListMyDnaSnps(ctx context.Context, in *ListMyDnaSnpsRequest, opts ...grpc.CallOption) (*ListMyDnaSnpsResponse, error)
+	// Lab partner introductions (A11.14).
+	ListLabPartners(ctx context.Context, in *ListLabPartnersRequest, opts ...grpc.CallOption) (*ListLabPartnersResponse, error)
+	// Manual lab biomarker extraction (A11.15) — until the auto-extractor
+	// ships, members or staff type marker values from an uploaded PDF and
+	// we land them as verified apex_vitals rows tied to the report.
+	ExtractLabMarkers(ctx context.Context, in *ExtractLabMarkersRequest, opts ...grpc.CallOption) (*ExtractLabMarkersResponse, error)
+	// Clinician shared view (A11.16) — generates a token-protected JSON
+	// snapshot of clinical data accessible at /share/clinician/:token.
+	CreateClinicianShare(ctx context.Context, in *CreateClinicianShareRequest, opts ...grpc.CallOption) (*CreateClinicianShareResponse, error)
+	ListMyClinicianShares(ctx context.Context, in *ListMyClinicianSharesRequest, opts ...grpc.CallOption) (*ListMyClinicianSharesResponse, error)
+	RevokeClinicianShare(ctx context.Context, in *RevokeClinicianShareRequest, opts ...grpc.CallOption) (*RevokeClinicianShareResponse, error)
+	// Apex × Nomad jet-lag protocol (A11.17) — 9-day light/melatonin/meal
+	// schedule. Pure compute, no persistence.
+	GetJetLagProtocol(ctx context.Context, in *GetJetLagProtocolRequest, opts ...grpc.CallOption) (*GetJetLagProtocolResponse, error)
+	// Annual Health Almanac (A11.18) — server-rendered PDF report.
+	GenerateHealthAlmanac(ctx context.Context, in *GenerateHealthAlmanacRequest, opts ...grpc.CallOption) (*GenerateHealthAlmanacResponse, error)
+	// Advanced imaging studies (A11.19) — coronary CTA / MRI / DEXA.
+	SubmitImagingStudy(ctx context.Context, in *SubmitImagingStudyRequest, opts ...grpc.CallOption) (*SubmitImagingStudyResponse, error)
+	ListMyImagingStudies(ctx context.Context, in *ListMyImagingStudiesRequest, opts ...grpc.CallOption) (*ListMyImagingStudiesResponse, error)
+	// Sttattus Lounges (A11.20) — recovery-room booking flow.
+	ListLounges(ctx context.Context, in *ListLoungesRequest, opts ...grpc.CallOption) (*ListLoungesResponse, error)
+	ListMyLoungeBookings(ctx context.Context, in *ListMyLoungeBookingsRequest, opts ...grpc.CallOption) (*ListMyLoungeBookingsResponse, error)
+	CreateLoungeBooking(ctx context.Context, in *CreateLoungeBookingRequest, opts ...grpc.CallOption) (*CreateLoungeBookingResponse, error)
+	CancelLoungeBooking(ctx context.Context, in *CancelLoungeBookingRequest, opts ...grpc.CallOption) (*CancelLoungeBookingResponse, error)
+	// Lab-PDF heuristic extraction (A11.21) — accepts OCR text, regex-
+	// extracts common biomarkers as a confirmation candidate set.
+	ParseLabReportText(ctx context.Context, in *ParseLabReportTextRequest, opts ...grpc.CallOption) (*ParseLabReportTextResponse, error)
 	// Admin Methods (Gated by Admin Middleware)
 	AdminVerifyLab(ctx context.Context, in *AdminVerifyLabRequest, opts ...grpc.CallOption) (*AdminVerifyLabResponse, error)
 }
@@ -300,6 +401,396 @@ func (c *apexServiceClient) ListMyApexProtocolAdherence(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *apexServiceClient) ListSupplements(ctx context.Context, in *ListSupplementsRequest, opts ...grpc.CallOption) (*ListSupplementsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListSupplementsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListSupplements_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMySupplements(ctx context.Context, in *ListMySupplementsRequest, opts ...grpc.CallOption) (*ListMySupplementsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMySupplementsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMySupplements_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) AddSupplement(ctx context.Context, in *AddSupplementRequest, opts ...grpc.CallOption) (*AddSupplementResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AddSupplementResponse)
+	err := c.cc.Invoke(ctx, ApexService_AddSupplement_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RemoveSupplement(ctx context.Context, in *RemoveSupplementRequest, opts ...grpc.CallOption) (*RemoveSupplementResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RemoveSupplementResponse)
+	err := c.cc.Invoke(ctx, ApexService_RemoveSupplement_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListSupplementInteractions(ctx context.Context, in *ListSupplementInteractionsRequest, opts ...grpc.CallOption) (*ListSupplementInteractionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListSupplementInteractionsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListSupplementInteractions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyGlucose(ctx context.Context, in *ListMyGlucoseRequest, opts ...grpc.CallOption) (*ListMyGlucoseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyGlucoseResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyGlucose_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) IngestGlucoseReading(ctx context.Context, in *IngestGlucoseReadingRequest, opts ...grpc.CallOption) (*IngestGlucoseReadingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(IngestGlucoseReadingResponse)
+	err := c.cc.Invoke(ctx, ApexService_IngestGlucoseReading_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetCycleStatus(ctx context.Context, in *GetCycleStatusRequest, opts ...grpc.CallOption) (*GetCycleStatusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCycleStatusResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetCycleStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) LogPeriod(ctx context.Context, in *LogPeriodRequest, opts ...grpc.CallOption) (*LogPeriodResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LogPeriodResponse)
+	err := c.cc.Invoke(ctx, ApexService_LogPeriod_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) LogCycleSymptom(ctx context.Context, in *LogCycleSymptomRequest, opts ...grpc.CallOption) (*LogCycleSymptomResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LogCycleSymptomResponse)
+	err := c.cc.Invoke(ctx, ApexService_LogCycleSymptom_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyCycleSymptoms(ctx context.Context, in *ListMyCycleSymptomsRequest, opts ...grpc.CallOption) (*ListMyCycleSymptomsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyCycleSymptomsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyCycleSymptoms_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) SimulateApexAge(ctx context.Context, in *SimulateApexAgeRequest, opts ...grpc.CallOption) (*SimulateApexAgeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SimulateApexAgeResponse)
+	err := c.cc.Invoke(ctx, ApexService_SimulateApexAge_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetReadiness(ctx context.Context, in *GetReadinessRequest, opts ...grpc.CallOption) (*GetReadinessResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetReadinessResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetReadiness_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StartConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, ApexService_StartConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyConciergeThreadsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyConciergeThreads_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PostConciergeMessageResponse)
+	err := c.cc.Invoke(ctx, ApexService_PostConciergeMessage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAnthologyArticlesResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListAnthologyArticles_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAnthologyArticleResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetAnthologyArticle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyPharmacology(ctx context.Context, in *ListMyPharmacologyRequest, opts ...grpc.CallOption) (*ListMyPharmacologyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyPharmacologyResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyPharmacology_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) AddPharmacology(ctx context.Context, in *AddPharmacologyRequest, opts ...grpc.CallOption) (*AddPharmacologyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AddPharmacologyResponse)
+	err := c.cc.Invoke(ctx, ApexService_AddPharmacology_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RemovePharmacology(ctx context.Context, in *RemovePharmacologyRequest, opts ...grpc.CallOption) (*RemovePharmacologyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RemovePharmacologyResponse)
+	err := c.cc.Invoke(ctx, ApexService_RemovePharmacology_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RegisterDnaUpload(ctx context.Context, in *RegisterDnaUploadRequest, opts ...grpc.CallOption) (*RegisterDnaUploadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RegisterDnaUploadResponse)
+	err := c.cc.Invoke(ctx, ApexService_RegisterDnaUpload_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyDnaUploads(ctx context.Context, in *ListMyDnaUploadsRequest, opts ...grpc.CallOption) (*ListMyDnaUploadsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyDnaUploadsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyDnaUploads_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyDnaSnps(ctx context.Context, in *ListMyDnaSnpsRequest, opts ...grpc.CallOption) (*ListMyDnaSnpsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyDnaSnpsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyDnaSnps_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListLabPartners(ctx context.Context, in *ListLabPartnersRequest, opts ...grpc.CallOption) (*ListLabPartnersResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLabPartnersResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListLabPartners_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ExtractLabMarkers(ctx context.Context, in *ExtractLabMarkersRequest, opts ...grpc.CallOption) (*ExtractLabMarkersResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExtractLabMarkersResponse)
+	err := c.cc.Invoke(ctx, ApexService_ExtractLabMarkers_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) CreateClinicianShare(ctx context.Context, in *CreateClinicianShareRequest, opts ...grpc.CallOption) (*CreateClinicianShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateClinicianShareResponse)
+	err := c.cc.Invoke(ctx, ApexService_CreateClinicianShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyClinicianShares(ctx context.Context, in *ListMyClinicianSharesRequest, opts ...grpc.CallOption) (*ListMyClinicianSharesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyClinicianSharesResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyClinicianShares_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RevokeClinicianShare(ctx context.Context, in *RevokeClinicianShareRequest, opts ...grpc.CallOption) (*RevokeClinicianShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeClinicianShareResponse)
+	err := c.cc.Invoke(ctx, ApexService_RevokeClinicianShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetJetLagProtocol(ctx context.Context, in *GetJetLagProtocolRequest, opts ...grpc.CallOption) (*GetJetLagProtocolResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetJetLagProtocolResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetJetLagProtocol_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GenerateHealthAlmanac(ctx context.Context, in *GenerateHealthAlmanacRequest, opts ...grpc.CallOption) (*GenerateHealthAlmanacResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateHealthAlmanacResponse)
+	err := c.cc.Invoke(ctx, ApexService_GenerateHealthAlmanac_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) SubmitImagingStudy(ctx context.Context, in *SubmitImagingStudyRequest, opts ...grpc.CallOption) (*SubmitImagingStudyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitImagingStudyResponse)
+	err := c.cc.Invoke(ctx, ApexService_SubmitImagingStudy_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyImagingStudies(ctx context.Context, in *ListMyImagingStudiesRequest, opts ...grpc.CallOption) (*ListMyImagingStudiesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyImagingStudiesResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyImagingStudies_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListLounges(ctx context.Context, in *ListLoungesRequest, opts ...grpc.CallOption) (*ListLoungesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLoungesResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListLounges_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyLoungeBookings(ctx context.Context, in *ListMyLoungeBookingsRequest, opts ...grpc.CallOption) (*ListMyLoungeBookingsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyLoungeBookingsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyLoungeBookings_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) CreateLoungeBooking(ctx context.Context, in *CreateLoungeBookingRequest, opts ...grpc.CallOption) (*CreateLoungeBookingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateLoungeBookingResponse)
+	err := c.cc.Invoke(ctx, ApexService_CreateLoungeBooking_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) CancelLoungeBooking(ctx context.Context, in *CancelLoungeBookingRequest, opts ...grpc.CallOption) (*CancelLoungeBookingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CancelLoungeBookingResponse)
+	err := c.cc.Invoke(ctx, ApexService_CancelLoungeBooking_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ParseLabReportText(ctx context.Context, in *ParseLabReportTextRequest, opts ...grpc.CallOption) (*ParseLabReportTextResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ParseLabReportTextResponse)
+	err := c.cc.Invoke(ctx, ApexService_ParseLabReportText_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *apexServiceClient) AdminVerifyLab(ctx context.Context, in *AdminVerifyLabRequest, opts ...grpc.CallOption) (*AdminVerifyLabResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(AdminVerifyLabResponse)
@@ -345,6 +836,68 @@ type ApexServiceServer interface {
 	UpdateApexProtocolEnrolment(context.Context, *UpdateApexProtocolEnrolmentRequest) (*UpdateApexProtocolEnrolmentResponse, error)
 	RecordApexProtocolAdherence(context.Context, *RecordApexProtocolAdherenceRequest) (*RecordApexProtocolAdherenceResponse, error)
 	ListMyApexProtocolAdherence(context.Context, *ListMyApexProtocolAdherenceRequest) (*ListMyApexProtocolAdherenceResponse, error)
+	// Supplement stack manager (A11.7).
+	ListSupplements(context.Context, *ListSupplementsRequest) (*ListSupplementsResponse, error)
+	ListMySupplements(context.Context, *ListMySupplementsRequest) (*ListMySupplementsResponse, error)
+	AddSupplement(context.Context, *AddSupplementRequest) (*AddSupplementResponse, error)
+	RemoveSupplement(context.Context, *RemoveSupplementRequest) (*RemoveSupplementResponse, error)
+	ListSupplementInteractions(context.Context, *ListSupplementInteractionsRequest) (*ListSupplementInteractionsResponse, error)
+	// CGM ingestion + glucose curve (A11.8).
+	ListMyGlucose(context.Context, *ListMyGlucoseRequest) (*ListMyGlucoseResponse, error)
+	IngestGlucoseReading(context.Context, *IngestGlucoseReadingRequest) (*IngestGlucoseReadingResponse, error)
+	// Cycle dashboard (A11.9 — opt-in for female users).
+	GetCycleStatus(context.Context, *GetCycleStatusRequest) (*GetCycleStatusResponse, error)
+	LogPeriod(context.Context, *LogPeriodRequest) (*LogPeriodResponse, error)
+	LogCycleSymptom(context.Context, *LogCycleSymptomRequest) (*LogCycleSymptomResponse, error)
+	ListMyCycleSymptoms(context.Context, *ListMyCycleSymptomsRequest) (*ListMyCycleSymptomsResponse, error)
+	// What-if simulator: project Apex Age under hypothetical marker overrides.
+	SimulateApexAge(context.Context, *SimulateApexAgeRequest) (*SimulateApexAgeResponse, error)
+	// Cross-pillar readiness signal — Forge + Zenith consume this to gate
+	// session intensity / focus prescription. Pure read; no engine call.
+	GetReadiness(context.Context, *GetReadinessRequest) (*GetReadinessResponse, error)
+	// Clinical concierge (A11.10) — Sovereign-tier white-glove desk.
+	StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error)
+	ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error)
+	GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error)
+	PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error)
+	// Editorial Anthology (A11.11) — named-author longevity articles.
+	ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error)
+	// Pharmacology log (A11.12) — encrypted prescribed + off-label items.
+	ListMyPharmacology(context.Context, *ListMyPharmacologyRequest) (*ListMyPharmacologyResponse, error)
+	AddPharmacology(context.Context, *AddPharmacologyRequest) (*AddPharmacologyResponse, error)
+	RemovePharmacology(context.Context, *RemovePharmacologyRequest) (*RemovePharmacologyResponse, error)
+	// DNA ingestion (A11.13) — VCF / TXT upload → SNP report.
+	RegisterDnaUpload(context.Context, *RegisterDnaUploadRequest) (*RegisterDnaUploadResponse, error)
+	ListMyDnaUploads(context.Context, *ListMyDnaUploadsRequest) (*ListMyDnaUploadsResponse, error)
+	ListMyDnaSnps(context.Context, *ListMyDnaSnpsRequest) (*ListMyDnaSnpsResponse, error)
+	// Lab partner introductions (A11.14).
+	ListLabPartners(context.Context, *ListLabPartnersRequest) (*ListLabPartnersResponse, error)
+	// Manual lab biomarker extraction (A11.15) — until the auto-extractor
+	// ships, members or staff type marker values from an uploaded PDF and
+	// we land them as verified apex_vitals rows tied to the report.
+	ExtractLabMarkers(context.Context, *ExtractLabMarkersRequest) (*ExtractLabMarkersResponse, error)
+	// Clinician shared view (A11.16) — generates a token-protected JSON
+	// snapshot of clinical data accessible at /share/clinician/:token.
+	CreateClinicianShare(context.Context, *CreateClinicianShareRequest) (*CreateClinicianShareResponse, error)
+	ListMyClinicianShares(context.Context, *ListMyClinicianSharesRequest) (*ListMyClinicianSharesResponse, error)
+	RevokeClinicianShare(context.Context, *RevokeClinicianShareRequest) (*RevokeClinicianShareResponse, error)
+	// Apex × Nomad jet-lag protocol (A11.17) — 9-day light/melatonin/meal
+	// schedule. Pure compute, no persistence.
+	GetJetLagProtocol(context.Context, *GetJetLagProtocolRequest) (*GetJetLagProtocolResponse, error)
+	// Annual Health Almanac (A11.18) — server-rendered PDF report.
+	GenerateHealthAlmanac(context.Context, *GenerateHealthAlmanacRequest) (*GenerateHealthAlmanacResponse, error)
+	// Advanced imaging studies (A11.19) — coronary CTA / MRI / DEXA.
+	SubmitImagingStudy(context.Context, *SubmitImagingStudyRequest) (*SubmitImagingStudyResponse, error)
+	ListMyImagingStudies(context.Context, *ListMyImagingStudiesRequest) (*ListMyImagingStudiesResponse, error)
+	// Sttattus Lounges (A11.20) — recovery-room booking flow.
+	ListLounges(context.Context, *ListLoungesRequest) (*ListLoungesResponse, error)
+	ListMyLoungeBookings(context.Context, *ListMyLoungeBookingsRequest) (*ListMyLoungeBookingsResponse, error)
+	CreateLoungeBooking(context.Context, *CreateLoungeBookingRequest) (*CreateLoungeBookingResponse, error)
+	CancelLoungeBooking(context.Context, *CancelLoungeBookingRequest) (*CancelLoungeBookingResponse, error)
+	// Lab-PDF heuristic extraction (A11.21) — accepts OCR text, regex-
+	// extracts common biomarkers as a confirmation candidate set.
+	ParseLabReportText(context.Context, *ParseLabReportTextRequest) (*ParseLabReportTextResponse, error)
 	// Admin Methods (Gated by Admin Middleware)
 	AdminVerifyLab(context.Context, *AdminVerifyLabRequest) (*AdminVerifyLabResponse, error)
 	mustEmbedUnimplementedApexServiceServer()
@@ -419,6 +972,123 @@ func (UnimplementedApexServiceServer) RecordApexProtocolAdherence(context.Contex
 }
 func (UnimplementedApexServiceServer) ListMyApexProtocolAdherence(context.Context, *ListMyApexProtocolAdherenceRequest) (*ListMyApexProtocolAdherenceResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMyApexProtocolAdherence not implemented")
+}
+func (UnimplementedApexServiceServer) ListSupplements(context.Context, *ListSupplementsRequest) (*ListSupplementsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListSupplements not implemented")
+}
+func (UnimplementedApexServiceServer) ListMySupplements(context.Context, *ListMySupplementsRequest) (*ListMySupplementsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMySupplements not implemented")
+}
+func (UnimplementedApexServiceServer) AddSupplement(context.Context, *AddSupplementRequest) (*AddSupplementResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AddSupplement not implemented")
+}
+func (UnimplementedApexServiceServer) RemoveSupplement(context.Context, *RemoveSupplementRequest) (*RemoveSupplementResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RemoveSupplement not implemented")
+}
+func (UnimplementedApexServiceServer) ListSupplementInteractions(context.Context, *ListSupplementInteractionsRequest) (*ListSupplementInteractionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListSupplementInteractions not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyGlucose(context.Context, *ListMyGlucoseRequest) (*ListMyGlucoseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyGlucose not implemented")
+}
+func (UnimplementedApexServiceServer) IngestGlucoseReading(context.Context, *IngestGlucoseReadingRequest) (*IngestGlucoseReadingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method IngestGlucoseReading not implemented")
+}
+func (UnimplementedApexServiceServer) GetCycleStatus(context.Context, *GetCycleStatusRequest) (*GetCycleStatusResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCycleStatus not implemented")
+}
+func (UnimplementedApexServiceServer) LogPeriod(context.Context, *LogPeriodRequest) (*LogPeriodResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LogPeriod not implemented")
+}
+func (UnimplementedApexServiceServer) LogCycleSymptom(context.Context, *LogCycleSymptomRequest) (*LogCycleSymptomResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LogCycleSymptom not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyCycleSymptoms(context.Context, *ListMyCycleSymptomsRequest) (*ListMyCycleSymptomsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyCycleSymptoms not implemented")
+}
+func (UnimplementedApexServiceServer) SimulateApexAge(context.Context, *SimulateApexAgeRequest) (*SimulateApexAgeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SimulateApexAge not implemented")
+}
+func (UnimplementedApexServiceServer) GetReadiness(context.Context, *GetReadinessRequest) (*GetReadinessResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetReadiness not implemented")
+}
+func (UnimplementedApexServiceServer) StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StartConciergeThread not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyConciergeThreads not implemented")
+}
+func (UnimplementedApexServiceServer) GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetConciergeThread not implemented")
+}
+func (UnimplementedApexServiceServer) PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PostConciergeMessage not implemented")
+}
+func (UnimplementedApexServiceServer) ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAnthologyArticles not implemented")
+}
+func (UnimplementedApexServiceServer) GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAnthologyArticle not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyPharmacology(context.Context, *ListMyPharmacologyRequest) (*ListMyPharmacologyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyPharmacology not implemented")
+}
+func (UnimplementedApexServiceServer) AddPharmacology(context.Context, *AddPharmacologyRequest) (*AddPharmacologyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AddPharmacology not implemented")
+}
+func (UnimplementedApexServiceServer) RemovePharmacology(context.Context, *RemovePharmacologyRequest) (*RemovePharmacologyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RemovePharmacology not implemented")
+}
+func (UnimplementedApexServiceServer) RegisterDnaUpload(context.Context, *RegisterDnaUploadRequest) (*RegisterDnaUploadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RegisterDnaUpload not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyDnaUploads(context.Context, *ListMyDnaUploadsRequest) (*ListMyDnaUploadsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyDnaUploads not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyDnaSnps(context.Context, *ListMyDnaSnpsRequest) (*ListMyDnaSnpsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyDnaSnps not implemented")
+}
+func (UnimplementedApexServiceServer) ListLabPartners(context.Context, *ListLabPartnersRequest) (*ListLabPartnersResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLabPartners not implemented")
+}
+func (UnimplementedApexServiceServer) ExtractLabMarkers(context.Context, *ExtractLabMarkersRequest) (*ExtractLabMarkersResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExtractLabMarkers not implemented")
+}
+func (UnimplementedApexServiceServer) CreateClinicianShare(context.Context, *CreateClinicianShareRequest) (*CreateClinicianShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateClinicianShare not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyClinicianShares(context.Context, *ListMyClinicianSharesRequest) (*ListMyClinicianSharesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyClinicianShares not implemented")
+}
+func (UnimplementedApexServiceServer) RevokeClinicianShare(context.Context, *RevokeClinicianShareRequest) (*RevokeClinicianShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeClinicianShare not implemented")
+}
+func (UnimplementedApexServiceServer) GetJetLagProtocol(context.Context, *GetJetLagProtocolRequest) (*GetJetLagProtocolResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetJetLagProtocol not implemented")
+}
+func (UnimplementedApexServiceServer) GenerateHealthAlmanac(context.Context, *GenerateHealthAlmanacRequest) (*GenerateHealthAlmanacResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateHealthAlmanac not implemented")
+}
+func (UnimplementedApexServiceServer) SubmitImagingStudy(context.Context, *SubmitImagingStudyRequest) (*SubmitImagingStudyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitImagingStudy not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyImagingStudies(context.Context, *ListMyImagingStudiesRequest) (*ListMyImagingStudiesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyImagingStudies not implemented")
+}
+func (UnimplementedApexServiceServer) ListLounges(context.Context, *ListLoungesRequest) (*ListLoungesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLounges not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyLoungeBookings(context.Context, *ListMyLoungeBookingsRequest) (*ListMyLoungeBookingsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyLoungeBookings not implemented")
+}
+func (UnimplementedApexServiceServer) CreateLoungeBooking(context.Context, *CreateLoungeBookingRequest) (*CreateLoungeBookingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateLoungeBooking not implemented")
+}
+func (UnimplementedApexServiceServer) CancelLoungeBooking(context.Context, *CancelLoungeBookingRequest) (*CancelLoungeBookingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CancelLoungeBooking not implemented")
+}
+func (UnimplementedApexServiceServer) ParseLabReportText(context.Context, *ParseLabReportTextRequest) (*ParseLabReportTextResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ParseLabReportText not implemented")
 }
 func (UnimplementedApexServiceServer) AdminVerifyLab(context.Context, *AdminVerifyLabRequest) (*AdminVerifyLabResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method AdminVerifyLab not implemented")
@@ -822,6 +1492,708 @@ func _ApexService_ListMyApexProtocolAdherence_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ApexService_ListSupplements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSupplementsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListSupplements(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListSupplements_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListSupplements(ctx, req.(*ListSupplementsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMySupplements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMySupplementsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMySupplements(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMySupplements_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMySupplements(ctx, req.(*ListMySupplementsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_AddSupplement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddSupplementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).AddSupplement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_AddSupplement_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).AddSupplement(ctx, req.(*AddSupplementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RemoveSupplement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveSupplementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RemoveSupplement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RemoveSupplement_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RemoveSupplement(ctx, req.(*RemoveSupplementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListSupplementInteractions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSupplementInteractionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListSupplementInteractions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListSupplementInteractions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListSupplementInteractions(ctx, req.(*ListSupplementInteractionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyGlucose_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyGlucoseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyGlucose(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyGlucose_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyGlucose(ctx, req.(*ListMyGlucoseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_IngestGlucoseReading_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IngestGlucoseReadingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).IngestGlucoseReading(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_IngestGlucoseReading_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).IngestGlucoseReading(ctx, req.(*IngestGlucoseReadingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetCycleStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCycleStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetCycleStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetCycleStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetCycleStatus(ctx, req.(*GetCycleStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_LogPeriod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LogPeriodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).LogPeriod(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_LogPeriod_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).LogPeriod(ctx, req.(*LogPeriodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_LogCycleSymptom_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LogCycleSymptomRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).LogCycleSymptom(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_LogCycleSymptom_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).LogCycleSymptom(ctx, req.(*LogCycleSymptomRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyCycleSymptoms_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyCycleSymptomsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyCycleSymptoms(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyCycleSymptoms_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyCycleSymptoms(ctx, req.(*ListMyCycleSymptomsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_SimulateApexAge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SimulateApexAgeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).SimulateApexAge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_SimulateApexAge_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).SimulateApexAge(ctx, req.(*SimulateApexAgeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetReadiness_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetReadinessRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetReadiness(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetReadiness_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetReadiness(ctx, req.(*GetReadinessRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_StartConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StartConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).StartConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_StartConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).StartConciergeThread(ctx, req.(*StartConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyConciergeThreads_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyConciergeThreadsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyConciergeThreads(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyConciergeThreads_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyConciergeThreads(ctx, req.(*ListMyConciergeThreadsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetConciergeThread(ctx, req.(*GetConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_PostConciergeMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostConciergeMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).PostConciergeMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_PostConciergeMessage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).PostConciergeMessage(ctx, req.(*PostConciergeMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListAnthologyArticles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAnthologyArticlesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListAnthologyArticles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListAnthologyArticles_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListAnthologyArticles(ctx, req.(*ListAnthologyArticlesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetAnthologyArticle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnthologyArticleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetAnthologyArticle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetAnthologyArticle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetAnthologyArticle(ctx, req.(*GetAnthologyArticleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyPharmacology_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyPharmacologyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyPharmacology(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyPharmacology_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyPharmacology(ctx, req.(*ListMyPharmacologyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_AddPharmacology_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddPharmacologyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).AddPharmacology(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_AddPharmacology_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).AddPharmacology(ctx, req.(*AddPharmacologyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RemovePharmacology_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemovePharmacologyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RemovePharmacology(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RemovePharmacology_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RemovePharmacology(ctx, req.(*RemovePharmacologyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RegisterDnaUpload_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterDnaUploadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RegisterDnaUpload(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RegisterDnaUpload_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RegisterDnaUpload(ctx, req.(*RegisterDnaUploadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyDnaUploads_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyDnaUploadsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyDnaUploads(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyDnaUploads_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyDnaUploads(ctx, req.(*ListMyDnaUploadsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyDnaSnps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyDnaSnpsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyDnaSnps(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyDnaSnps_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyDnaSnps(ctx, req.(*ListMyDnaSnpsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListLabPartners_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLabPartnersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListLabPartners(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListLabPartners_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListLabPartners(ctx, req.(*ListLabPartnersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ExtractLabMarkers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExtractLabMarkersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ExtractLabMarkers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ExtractLabMarkers_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ExtractLabMarkers(ctx, req.(*ExtractLabMarkersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_CreateClinicianShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateClinicianShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).CreateClinicianShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_CreateClinicianShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).CreateClinicianShare(ctx, req.(*CreateClinicianShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyClinicianShares_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyClinicianSharesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyClinicianShares(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyClinicianShares_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyClinicianShares(ctx, req.(*ListMyClinicianSharesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RevokeClinicianShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeClinicianShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RevokeClinicianShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RevokeClinicianShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RevokeClinicianShare(ctx, req.(*RevokeClinicianShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetJetLagProtocol_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetJetLagProtocolRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetJetLagProtocol(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetJetLagProtocol_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetJetLagProtocol(ctx, req.(*GetJetLagProtocolRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GenerateHealthAlmanac_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateHealthAlmanacRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GenerateHealthAlmanac(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GenerateHealthAlmanac_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GenerateHealthAlmanac(ctx, req.(*GenerateHealthAlmanacRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_SubmitImagingStudy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitImagingStudyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).SubmitImagingStudy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_SubmitImagingStudy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).SubmitImagingStudy(ctx, req.(*SubmitImagingStudyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyImagingStudies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyImagingStudiesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyImagingStudies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyImagingStudies_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyImagingStudies(ctx, req.(*ListMyImagingStudiesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListLounges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLoungesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListLounges(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListLounges_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListLounges(ctx, req.(*ListLoungesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyLoungeBookings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyLoungeBookingsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyLoungeBookings(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyLoungeBookings_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyLoungeBookings(ctx, req.(*ListMyLoungeBookingsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_CreateLoungeBooking_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateLoungeBookingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).CreateLoungeBooking(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_CreateLoungeBooking_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).CreateLoungeBooking(ctx, req.(*CreateLoungeBookingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_CancelLoungeBooking_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CancelLoungeBookingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).CancelLoungeBooking(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_CancelLoungeBooking_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).CancelLoungeBooking(ctx, req.(*CancelLoungeBookingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ParseLabReportText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ParseLabReportTextRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ParseLabReportText(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ParseLabReportText_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ParseLabReportText(ctx, req.(*ParseLabReportTextRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ApexService_AdminVerifyLab_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AdminVerifyLabRequest)
 	if err := dec(in); err != nil {
@@ -930,6 +2302,162 @@ var ApexService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListMyApexProtocolAdherence",
 			Handler:    _ApexService_ListMyApexProtocolAdherence_Handler,
+		},
+		{
+			MethodName: "ListSupplements",
+			Handler:    _ApexService_ListSupplements_Handler,
+		},
+		{
+			MethodName: "ListMySupplements",
+			Handler:    _ApexService_ListMySupplements_Handler,
+		},
+		{
+			MethodName: "AddSupplement",
+			Handler:    _ApexService_AddSupplement_Handler,
+		},
+		{
+			MethodName: "RemoveSupplement",
+			Handler:    _ApexService_RemoveSupplement_Handler,
+		},
+		{
+			MethodName: "ListSupplementInteractions",
+			Handler:    _ApexService_ListSupplementInteractions_Handler,
+		},
+		{
+			MethodName: "ListMyGlucose",
+			Handler:    _ApexService_ListMyGlucose_Handler,
+		},
+		{
+			MethodName: "IngestGlucoseReading",
+			Handler:    _ApexService_IngestGlucoseReading_Handler,
+		},
+		{
+			MethodName: "GetCycleStatus",
+			Handler:    _ApexService_GetCycleStatus_Handler,
+		},
+		{
+			MethodName: "LogPeriod",
+			Handler:    _ApexService_LogPeriod_Handler,
+		},
+		{
+			MethodName: "LogCycleSymptom",
+			Handler:    _ApexService_LogCycleSymptom_Handler,
+		},
+		{
+			MethodName: "ListMyCycleSymptoms",
+			Handler:    _ApexService_ListMyCycleSymptoms_Handler,
+		},
+		{
+			MethodName: "SimulateApexAge",
+			Handler:    _ApexService_SimulateApexAge_Handler,
+		},
+		{
+			MethodName: "GetReadiness",
+			Handler:    _ApexService_GetReadiness_Handler,
+		},
+		{
+			MethodName: "StartConciergeThread",
+			Handler:    _ApexService_StartConciergeThread_Handler,
+		},
+		{
+			MethodName: "ListMyConciergeThreads",
+			Handler:    _ApexService_ListMyConciergeThreads_Handler,
+		},
+		{
+			MethodName: "GetConciergeThread",
+			Handler:    _ApexService_GetConciergeThread_Handler,
+		},
+		{
+			MethodName: "PostConciergeMessage",
+			Handler:    _ApexService_PostConciergeMessage_Handler,
+		},
+		{
+			MethodName: "ListAnthologyArticles",
+			Handler:    _ApexService_ListAnthologyArticles_Handler,
+		},
+		{
+			MethodName: "GetAnthologyArticle",
+			Handler:    _ApexService_GetAnthologyArticle_Handler,
+		},
+		{
+			MethodName: "ListMyPharmacology",
+			Handler:    _ApexService_ListMyPharmacology_Handler,
+		},
+		{
+			MethodName: "AddPharmacology",
+			Handler:    _ApexService_AddPharmacology_Handler,
+		},
+		{
+			MethodName: "RemovePharmacology",
+			Handler:    _ApexService_RemovePharmacology_Handler,
+		},
+		{
+			MethodName: "RegisterDnaUpload",
+			Handler:    _ApexService_RegisterDnaUpload_Handler,
+		},
+		{
+			MethodName: "ListMyDnaUploads",
+			Handler:    _ApexService_ListMyDnaUploads_Handler,
+		},
+		{
+			MethodName: "ListMyDnaSnps",
+			Handler:    _ApexService_ListMyDnaSnps_Handler,
+		},
+		{
+			MethodName: "ListLabPartners",
+			Handler:    _ApexService_ListLabPartners_Handler,
+		},
+		{
+			MethodName: "ExtractLabMarkers",
+			Handler:    _ApexService_ExtractLabMarkers_Handler,
+		},
+		{
+			MethodName: "CreateClinicianShare",
+			Handler:    _ApexService_CreateClinicianShare_Handler,
+		},
+		{
+			MethodName: "ListMyClinicianShares",
+			Handler:    _ApexService_ListMyClinicianShares_Handler,
+		},
+		{
+			MethodName: "RevokeClinicianShare",
+			Handler:    _ApexService_RevokeClinicianShare_Handler,
+		},
+		{
+			MethodName: "GetJetLagProtocol",
+			Handler:    _ApexService_GetJetLagProtocol_Handler,
+		},
+		{
+			MethodName: "GenerateHealthAlmanac",
+			Handler:    _ApexService_GenerateHealthAlmanac_Handler,
+		},
+		{
+			MethodName: "SubmitImagingStudy",
+			Handler:    _ApexService_SubmitImagingStudy_Handler,
+		},
+		{
+			MethodName: "ListMyImagingStudies",
+			Handler:    _ApexService_ListMyImagingStudies_Handler,
+		},
+		{
+			MethodName: "ListLounges",
+			Handler:    _ApexService_ListLounges_Handler,
+		},
+		{
+			MethodName: "ListMyLoungeBookings",
+			Handler:    _ApexService_ListMyLoungeBookings_Handler,
+		},
+		{
+			MethodName: "CreateLoungeBooking",
+			Handler:    _ApexService_CreateLoungeBooking_Handler,
+		},
+		{
+			MethodName: "CancelLoungeBooking",
+			Handler:    _ApexService_CancelLoungeBooking_Handler,
+		},
+		{
+			MethodName: "ParseLabReportText",
+			Handler:    _ApexService_ParseLabReportText_Handler,
 		},
 		{
 			MethodName: "AdminVerifyLab",

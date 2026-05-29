@@ -149,6 +149,18 @@ export class RequestUploadRequest extends Message<RequestUploadRequest> {
    */
   size = protoInt64.zero;
 
+  /**
+   * Optional logical category that determines the R2 key prefix under
+   * the owner's namespace. Format: "<pillar>/<bucket>", e.g.
+   * "apex/documents" for lab-report PDFs, "vault/statements" for
+   * brokerage statements. Empty falls back to the legacy "uploads/"
+   * prefix. Validated server-side against an allow-list so clients
+   * can't write into arbitrary buckets.
+   *
+   * @generated from field: string category = 3;
+   */
+  category = "";
+
   constructor(data?: PartialMessage<RequestUploadRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -159,6 +171,7 @@ export class RequestUploadRequest extends Message<RequestUploadRequest> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "mime", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "size", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestUploadRequest {

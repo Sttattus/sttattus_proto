@@ -281,4 +281,50 @@ service TravelService {
   rpc ListCountryVisibility(ListCountryVisibilityRequest) returns (ListCountryVisibilityResponse);
   rpc UpsertCountryVisibility(UpsertCountryVisibilityRequest) returns (UpsertCountryVisibilityResponse);
   rpc SetMilestoneVisibility(SetMilestoneVisibilityRequest) returns (SetMilestoneVisibilityResponse);
+
+  // N10P3 â€” Sovereign Expansion
+  rpc GetPassportSurface(GetPassportSurfaceRequest) returns (GetPassportSurfaceResponse);
+  rpc GetLoungeConcierge(GetLoungeConciergeRequest) returns (GetLoungeConciergeResponse);
+  rpc GetTripArchive(GetTripArchiveRequest) returns (GetTripArchiveResponse);
+}
+
+message GetPassportSurfaceRequest {}
+message GetPassportSurfaceResponse {
+  repeated VisitedCountry countries = 1;
+  repeated VerificationSignals all_signals = 2;
+  int32 total_stamps = 3;
+}
+
+message LoungeDetail {
+  string id = 1;
+  string name = 2;
+  string city = 3;
+  string location_description = 4;
+  string live_capacity_status = 5; // e.g. 'Quiet', 'Busy'
+  repeated string amenities = 6;
+  string current_menu_url = 7;
+}
+
+message GetLoungeConciergeRequest {
+  double latitude = 1;
+  double longitude = 2;
+}
+message GetLoungeConciergeResponse {
+  LoungeDetail nearest_lounge = 1;
+  repeated LoungeDetail other_lounges = 2;
+}
+
+message TripArchiveEntry {
+  Trip trip = 1;
+  double avg_hrv = 2; // from Apex
+  int32 total_workouts = 3; // from Forge
+  double total_spend = 4; // from Vault
+}
+
+message GetTripArchiveRequest {
+  sttattus.common.v1.PageRequest page = 1;
+}
+message GetTripArchiveResponse {
+  repeated TripArchiveEntry entries = 1;
+  sttattus.common.v1.PageResponse page = 2;
 }

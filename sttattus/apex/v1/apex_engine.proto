@@ -14,10 +14,26 @@ service ApexEngineService {
 message CalculateBioRankRequest {
   string user_id = 1;
   repeated Biomarker biomarkers = 2;
+  // Decimal years. Required for the Levine PhenoAge formula; absence
+  // (chronological_age_present == false) forces the engine into its
+  // marker-deviation fallback and biological_age comes back zero.
+  double chronological_age = 3;
+  bool chronological_age_present = 4;
+  // 'male' | 'female' | 'intersex' | ''  — used to pick sex-specific
+  // optimal-range bands in the fallback scoring path.
+  string biological_sex = 5;
 }
 
 message CalculateBioRankResponse {
-  double bio_rank = 1; // 1-100 normalized status signal
-  double biological_age = 2; // Calculated epigenetic/phenotypic age
-  map<string, double> system_scores = 3; // e.g., "cardiovascular": 85.0, "metabolic": 92.0
+  double bio_rank = 1; // 0-100 marker-quality aggregate
+  double biological_age = 2; // PhenoAge years; 0 when not computable
+  map<string, double> system_scores = 3; // e.g., "cardiovascular": 85.0
+  // Which path produced biological_age. "phenoage" = real Levine formula
+  // (all 9 markers + age present). "deviation" = optimal-range fallback.
+  // "insufficient" = no biological_age (engine returned 0).
+  string method = 4;
+  // PhenoAge components that were filled in. Lets clients show "we used
+  // 7/9 markers" or surface which ones are still missing.
+  repeated string markers_used = 5;
+  repeated string markers_missing = 6;
 }

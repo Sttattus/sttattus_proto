@@ -2021,15 +2021,18 @@ func (x *OracleThread) GetUpdatedUnix() int64 {
 }
 
 type OracleThreadMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	ThreadId      string                 `protobuf:"bytes,2,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
-	Prompt        string                 `protobuf:"bytes,3,opt,name=prompt,proto3" json:"prompt,omitempty"`
-	Response      string                 `protobuf:"bytes,4,opt,name=response,proto3" json:"response,omitempty"`
-	Domain        string                 `protobuf:"bytes,5,opt,name=domain,proto3" json:"domain,omitempty"`
-	CreatedUnix   int64                  `protobuf:"varint,6,opt,name=created_unix,json=createdUnix,proto3" json:"created_unix,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ThreadId        string                 `protobuf:"bytes,2,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	Prompt          string                 `protobuf:"bytes,3,opt,name=prompt,proto3" json:"prompt,omitempty"`
+	Response        string                 `protobuf:"bytes,4,opt,name=response,proto3" json:"response,omitempty"`
+	Domain          StrategicDomain        `protobuf:"varint,5,opt,name=domain,proto3,enum=sttattus.oracle.v1.StrategicDomain" json:"domain,omitempty"`
+	CreatedUnix     int64                  `protobuf:"varint,6,opt,name=created_unix,json=createdUnix,proto3" json:"created_unix,omitempty"`
+	ComplexityScore float64                `protobuf:"fixed64,7,opt,name=complexity_score,json=complexityScore,proto3" json:"complexity_score,omitempty"`
+	SynthesisScore  float64                `protobuf:"fixed64,8,opt,name=synthesis_score,json=synthesisScore,proto3" json:"synthesis_score,omitempty"`
+	ForesightScore  float64                `protobuf:"fixed64,9,opt,name=foresight_score,json=foresightScore,proto3" json:"foresight_score,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *OracleThreadMessage) Reset() {
@@ -2090,16 +2093,37 @@ func (x *OracleThreadMessage) GetResponse() string {
 	return ""
 }
 
-func (x *OracleThreadMessage) GetDomain() string {
+func (x *OracleThreadMessage) GetDomain() StrategicDomain {
 	if x != nil {
 		return x.Domain
 	}
-	return ""
+	return StrategicDomain_STRATEGIC_DOMAIN_UNSPECIFIED
 }
 
 func (x *OracleThreadMessage) GetCreatedUnix() int64 {
 	if x != nil {
 		return x.CreatedUnix
+	}
+	return 0
+}
+
+func (x *OracleThreadMessage) GetComplexityScore() float64 {
+	if x != nil {
+		return x.ComplexityScore
+	}
+	return 0
+}
+
+func (x *OracleThreadMessage) GetSynthesisScore() float64 {
+	if x != nil {
+		return x.SynthesisScore
+	}
+	return 0
+}
+
+func (x *OracleThreadMessage) GetForesightScore() float64 {
+	if x != nil {
+		return x.ForesightScore
 	}
 	return 0
 }
@@ -2806,14 +2830,17 @@ const file_sttattus_oracle_v1_oracle_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12!\n" +
 	"\fcreated_unix\x18\x03 \x01(\x03R\vcreatedUnix\x12!\n" +
-	"\fupdated_unix\x18\x04 \x01(\x03R\vupdatedUnix\"\xb1\x01\n" +
+	"\fupdated_unix\x18\x04 \x01(\x03R\vupdatedUnix\"\xd3\x02\n" +
 	"\x13OracleThreadMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
 	"\tthread_id\x18\x02 \x01(\tR\bthreadId\x12\x16\n" +
 	"\x06prompt\x18\x03 \x01(\tR\x06prompt\x12\x1a\n" +
-	"\bresponse\x18\x04 \x01(\tR\bresponse\x12\x16\n" +
-	"\x06domain\x18\x05 \x01(\tR\x06domain\x12!\n" +
-	"\fcreated_unix\x18\x06 \x01(\x03R\vcreatedUnix\"\x16\n" +
+	"\bresponse\x18\x04 \x01(\tR\bresponse\x12;\n" +
+	"\x06domain\x18\x05 \x01(\x0e2#.sttattus.oracle.v1.StrategicDomainR\x06domain\x12!\n" +
+	"\fcreated_unix\x18\x06 \x01(\x03R\vcreatedUnix\x12)\n" +
+	"\x10complexity_score\x18\a \x01(\x01R\x0fcomplexityScore\x12'\n" +
+	"\x0fsynthesis_score\x18\b \x01(\x01R\x0esynthesisScore\x12'\n" +
+	"\x0fforesight_score\x18\t \x01(\x01R\x0eforesightScore\"\x16\n" +
 	"\x14ListMyThreadsRequest\"S\n" +
 	"\x15ListMyThreadsResponse\x12:\n" +
 	"\athreads\x18\x01 \x03(\v2 .sttattus.oracle.v1.OracleThreadR\athreads\"+\n" +
@@ -2963,55 +2990,56 @@ var file_sttattus_oracle_v1_oracle_proto_depIdxs = []int32{
 	23, // 15: sttattus.oracle.v1.ListMyEpisodicMemoryResponse.memories:type_name -> sttattus.oracle.v1.EpisodicMemory
 	24, // 16: sttattus.oracle.v1.UpsertSemanticMemoryResponse.memory:type_name -> sttattus.oracle.v1.SemanticMemory
 	24, // 17: sttattus.oracle.v1.ListMySemanticMemoryResponse.memories:type_name -> sttattus.oracle.v1.SemanticMemory
-	37, // 18: sttattus.oracle.v1.ListMyThreadsResponse.threads:type_name -> sttattus.oracle.v1.OracleThread
-	37, // 19: sttattus.oracle.v1.CreateThreadResponse.thread:type_name -> sttattus.oracle.v1.OracleThread
-	37, // 20: sttattus.oracle.v1.RenameThreadResponse.thread:type_name -> sttattus.oracle.v1.OracleThread
-	38, // 21: sttattus.oracle.v1.ListThreadMessagesResponse.messages:type_name -> sttattus.oracle.v1.OracleThreadMessage
-	4,  // 22: sttattus.oracle.v1.OracleService.Query:input_type -> sttattus.oracle.v1.QueryRequest
-	6,  // 23: sttattus.oracle.v1.OracleService.GetOracleStats:input_type -> sttattus.oracle.v1.GetOracleStatsRequest
-	39, // 24: sttattus.oracle.v1.OracleService.ListMyThreads:input_type -> sttattus.oracle.v1.ListMyThreadsRequest
-	41, // 25: sttattus.oracle.v1.OracleService.CreateThread:input_type -> sttattus.oracle.v1.CreateThreadRequest
-	43, // 26: sttattus.oracle.v1.OracleService.RenameThread:input_type -> sttattus.oracle.v1.RenameThreadRequest
-	45, // 27: sttattus.oracle.v1.OracleService.DeleteThread:input_type -> sttattus.oracle.v1.DeleteThreadRequest
-	47, // 28: sttattus.oracle.v1.OracleService.ListThreadMessages:input_type -> sttattus.oracle.v1.ListThreadMessagesRequest
-	49, // 29: sttattus.oracle.v1.OracleService.StreamQuery:input_type -> sttattus.oracle.v1.StreamQueryRequest
-	25, // 30: sttattus.oracle.v1.OracleService.RecordEpisodicMemory:input_type -> sttattus.oracle.v1.RecordEpisodicMemoryRequest
-	27, // 31: sttattus.oracle.v1.OracleService.ListMyEpisodicMemory:input_type -> sttattus.oracle.v1.ListMyEpisodicMemoryRequest
-	29, // 32: sttattus.oracle.v1.OracleService.DeleteEpisodicMemory:input_type -> sttattus.oracle.v1.DeleteEpisodicMemoryRequest
-	31, // 33: sttattus.oracle.v1.OracleService.UpsertSemanticMemory:input_type -> sttattus.oracle.v1.UpsertSemanticMemoryRequest
-	33, // 34: sttattus.oracle.v1.OracleService.ListMySemanticMemory:input_type -> sttattus.oracle.v1.ListMySemanticMemoryRequest
-	35, // 35: sttattus.oracle.v1.OracleService.DeleteSemanticMemory:input_type -> sttattus.oracle.v1.DeleteSemanticMemoryRequest
-	17, // 36: sttattus.oracle.v1.OracleService.ListMyScopeGrants:input_type -> sttattus.oracle.v1.ListMyScopeGrantsRequest
-	19, // 37: sttattus.oracle.v1.OracleService.GrantScope:input_type -> sttattus.oracle.v1.GrantScopeRequest
-	21, // 38: sttattus.oracle.v1.OracleService.RevokeScope:input_type -> sttattus.oracle.v1.RevokeScopeRequest
-	12, // 39: sttattus.oracle.v1.OracleService.ListAvailableTools:input_type -> sttattus.oracle.v1.ListAvailableToolsRequest
-	14, // 40: sttattus.oracle.v1.OracleService.RunOracleTool:input_type -> sttattus.oracle.v1.RunOracleToolRequest
-	9,  // 41: sttattus.oracle.v1.OracleService.GetRankExplainer:input_type -> sttattus.oracle.v1.GetRankExplainerRequest
-	5,  // 42: sttattus.oracle.v1.OracleService.Query:output_type -> sttattus.oracle.v1.QueryResponse
-	7,  // 43: sttattus.oracle.v1.OracleService.GetOracleStats:output_type -> sttattus.oracle.v1.GetOracleStatsResponse
-	40, // 44: sttattus.oracle.v1.OracleService.ListMyThreads:output_type -> sttattus.oracle.v1.ListMyThreadsResponse
-	42, // 45: sttattus.oracle.v1.OracleService.CreateThread:output_type -> sttattus.oracle.v1.CreateThreadResponse
-	44, // 46: sttattus.oracle.v1.OracleService.RenameThread:output_type -> sttattus.oracle.v1.RenameThreadResponse
-	46, // 47: sttattus.oracle.v1.OracleService.DeleteThread:output_type -> sttattus.oracle.v1.DeleteThreadResponse
-	48, // 48: sttattus.oracle.v1.OracleService.ListThreadMessages:output_type -> sttattus.oracle.v1.ListThreadMessagesResponse
-	50, // 49: sttattus.oracle.v1.OracleService.StreamQuery:output_type -> sttattus.oracle.v1.StreamQueryChunk
-	26, // 50: sttattus.oracle.v1.OracleService.RecordEpisodicMemory:output_type -> sttattus.oracle.v1.RecordEpisodicMemoryResponse
-	28, // 51: sttattus.oracle.v1.OracleService.ListMyEpisodicMemory:output_type -> sttattus.oracle.v1.ListMyEpisodicMemoryResponse
-	30, // 52: sttattus.oracle.v1.OracleService.DeleteEpisodicMemory:output_type -> sttattus.oracle.v1.DeleteEpisodicMemoryResponse
-	32, // 53: sttattus.oracle.v1.OracleService.UpsertSemanticMemory:output_type -> sttattus.oracle.v1.UpsertSemanticMemoryResponse
-	34, // 54: sttattus.oracle.v1.OracleService.ListMySemanticMemory:output_type -> sttattus.oracle.v1.ListMySemanticMemoryResponse
-	36, // 55: sttattus.oracle.v1.OracleService.DeleteSemanticMemory:output_type -> sttattus.oracle.v1.DeleteSemanticMemoryResponse
-	18, // 56: sttattus.oracle.v1.OracleService.ListMyScopeGrants:output_type -> sttattus.oracle.v1.ListMyScopeGrantsResponse
-	20, // 57: sttattus.oracle.v1.OracleService.GrantScope:output_type -> sttattus.oracle.v1.GrantScopeResponse
-	22, // 58: sttattus.oracle.v1.OracleService.RevokeScope:output_type -> sttattus.oracle.v1.RevokeScopeResponse
-	13, // 59: sttattus.oracle.v1.OracleService.ListAvailableTools:output_type -> sttattus.oracle.v1.ListAvailableToolsResponse
-	15, // 60: sttattus.oracle.v1.OracleService.RunOracleTool:output_type -> sttattus.oracle.v1.RunOracleToolResponse
-	10, // 61: sttattus.oracle.v1.OracleService.GetRankExplainer:output_type -> sttattus.oracle.v1.GetRankExplainerResponse
-	42, // [42:62] is the sub-list for method output_type
-	22, // [22:42] is the sub-list for method input_type
-	22, // [22:22] is the sub-list for extension type_name
-	22, // [22:22] is the sub-list for extension extendee
-	0,  // [0:22] is the sub-list for field type_name
+	0,  // 18: sttattus.oracle.v1.OracleThreadMessage.domain:type_name -> sttattus.oracle.v1.StrategicDomain
+	37, // 19: sttattus.oracle.v1.ListMyThreadsResponse.threads:type_name -> sttattus.oracle.v1.OracleThread
+	37, // 20: sttattus.oracle.v1.CreateThreadResponse.thread:type_name -> sttattus.oracle.v1.OracleThread
+	37, // 21: sttattus.oracle.v1.RenameThreadResponse.thread:type_name -> sttattus.oracle.v1.OracleThread
+	38, // 22: sttattus.oracle.v1.ListThreadMessagesResponse.messages:type_name -> sttattus.oracle.v1.OracleThreadMessage
+	4,  // 23: sttattus.oracle.v1.OracleService.Query:input_type -> sttattus.oracle.v1.QueryRequest
+	6,  // 24: sttattus.oracle.v1.OracleService.GetOracleStats:input_type -> sttattus.oracle.v1.GetOracleStatsRequest
+	39, // 25: sttattus.oracle.v1.OracleService.ListMyThreads:input_type -> sttattus.oracle.v1.ListMyThreadsRequest
+	41, // 26: sttattus.oracle.v1.OracleService.CreateThread:input_type -> sttattus.oracle.v1.CreateThreadRequest
+	43, // 27: sttattus.oracle.v1.OracleService.RenameThread:input_type -> sttattus.oracle.v1.RenameThreadRequest
+	45, // 28: sttattus.oracle.v1.OracleService.DeleteThread:input_type -> sttattus.oracle.v1.DeleteThreadRequest
+	47, // 29: sttattus.oracle.v1.OracleService.ListThreadMessages:input_type -> sttattus.oracle.v1.ListThreadMessagesRequest
+	49, // 30: sttattus.oracle.v1.OracleService.StreamQuery:input_type -> sttattus.oracle.v1.StreamQueryRequest
+	25, // 31: sttattus.oracle.v1.OracleService.RecordEpisodicMemory:input_type -> sttattus.oracle.v1.RecordEpisodicMemoryRequest
+	27, // 32: sttattus.oracle.v1.OracleService.ListMyEpisodicMemory:input_type -> sttattus.oracle.v1.ListMyEpisodicMemoryRequest
+	29, // 33: sttattus.oracle.v1.OracleService.DeleteEpisodicMemory:input_type -> sttattus.oracle.v1.DeleteEpisodicMemoryRequest
+	31, // 34: sttattus.oracle.v1.OracleService.UpsertSemanticMemory:input_type -> sttattus.oracle.v1.UpsertSemanticMemoryRequest
+	33, // 35: sttattus.oracle.v1.OracleService.ListMySemanticMemory:input_type -> sttattus.oracle.v1.ListMySemanticMemoryRequest
+	35, // 36: sttattus.oracle.v1.OracleService.DeleteSemanticMemory:input_type -> sttattus.oracle.v1.DeleteSemanticMemoryRequest
+	17, // 37: sttattus.oracle.v1.OracleService.ListMyScopeGrants:input_type -> sttattus.oracle.v1.ListMyScopeGrantsRequest
+	19, // 38: sttattus.oracle.v1.OracleService.GrantScope:input_type -> sttattus.oracle.v1.GrantScopeRequest
+	21, // 39: sttattus.oracle.v1.OracleService.RevokeScope:input_type -> sttattus.oracle.v1.RevokeScopeRequest
+	12, // 40: sttattus.oracle.v1.OracleService.ListAvailableTools:input_type -> sttattus.oracle.v1.ListAvailableToolsRequest
+	14, // 41: sttattus.oracle.v1.OracleService.RunOracleTool:input_type -> sttattus.oracle.v1.RunOracleToolRequest
+	9,  // 42: sttattus.oracle.v1.OracleService.GetRankExplainer:input_type -> sttattus.oracle.v1.GetRankExplainerRequest
+	5,  // 43: sttattus.oracle.v1.OracleService.Query:output_type -> sttattus.oracle.v1.QueryResponse
+	7,  // 44: sttattus.oracle.v1.OracleService.GetOracleStats:output_type -> sttattus.oracle.v1.GetOracleStatsResponse
+	40, // 45: sttattus.oracle.v1.OracleService.ListMyThreads:output_type -> sttattus.oracle.v1.ListMyThreadsResponse
+	42, // 46: sttattus.oracle.v1.OracleService.CreateThread:output_type -> sttattus.oracle.v1.CreateThreadResponse
+	44, // 47: sttattus.oracle.v1.OracleService.RenameThread:output_type -> sttattus.oracle.v1.RenameThreadResponse
+	46, // 48: sttattus.oracle.v1.OracleService.DeleteThread:output_type -> sttattus.oracle.v1.DeleteThreadResponse
+	48, // 49: sttattus.oracle.v1.OracleService.ListThreadMessages:output_type -> sttattus.oracle.v1.ListThreadMessagesResponse
+	50, // 50: sttattus.oracle.v1.OracleService.StreamQuery:output_type -> sttattus.oracle.v1.StreamQueryChunk
+	26, // 51: sttattus.oracle.v1.OracleService.RecordEpisodicMemory:output_type -> sttattus.oracle.v1.RecordEpisodicMemoryResponse
+	28, // 52: sttattus.oracle.v1.OracleService.ListMyEpisodicMemory:output_type -> sttattus.oracle.v1.ListMyEpisodicMemoryResponse
+	30, // 53: sttattus.oracle.v1.OracleService.DeleteEpisodicMemory:output_type -> sttattus.oracle.v1.DeleteEpisodicMemoryResponse
+	32, // 54: sttattus.oracle.v1.OracleService.UpsertSemanticMemory:output_type -> sttattus.oracle.v1.UpsertSemanticMemoryResponse
+	34, // 55: sttattus.oracle.v1.OracleService.ListMySemanticMemory:output_type -> sttattus.oracle.v1.ListMySemanticMemoryResponse
+	36, // 56: sttattus.oracle.v1.OracleService.DeleteSemanticMemory:output_type -> sttattus.oracle.v1.DeleteSemanticMemoryResponse
+	18, // 57: sttattus.oracle.v1.OracleService.ListMyScopeGrants:output_type -> sttattus.oracle.v1.ListMyScopeGrantsResponse
+	20, // 58: sttattus.oracle.v1.OracleService.GrantScope:output_type -> sttattus.oracle.v1.GrantScopeResponse
+	22, // 59: sttattus.oracle.v1.OracleService.RevokeScope:output_type -> sttattus.oracle.v1.RevokeScopeResponse
+	13, // 60: sttattus.oracle.v1.OracleService.ListAvailableTools:output_type -> sttattus.oracle.v1.ListAvailableToolsResponse
+	15, // 61: sttattus.oracle.v1.OracleService.RunOracleTool:output_type -> sttattus.oracle.v1.RunOracleToolResponse
+	10, // 62: sttattus.oracle.v1.OracleService.GetRankExplainer:output_type -> sttattus.oracle.v1.GetRankExplainerResponse
+	43, // [43:63] is the sub-list for method output_type
+	23, // [23:43] is the sub-list for method input_type
+	23, // [23:23] is the sub-list for extension type_name
+	23, // [23:23] is the sub-list for extension extendee
+	0,  // [0:23] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_oracle_v1_oracle_proto_init() }

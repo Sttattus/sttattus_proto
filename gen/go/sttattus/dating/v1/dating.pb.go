@@ -1213,21 +1213,17 @@ func (x *SendMessageResponse) GetMessage() *Message {
 	return nil
 }
 
-// AtlasVerification mirrors one row of atlas_verifications.
-// status: pending | approved | rejected | expired.
-// highest_check: document | selfie | liveness; empty when failed.
 type AtlasVerification struct {
-	state        protoimpl.MessageState `protogen:"open.v1"`
-	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Provider     string                 `protobuf:"bytes,2,opt,name=provider,proto3" json:"provider,omitempty"` // persona | onfido | veriff | manual
-	ExternalId   string                 `protobuf:"bytes,3,opt,name=external_id,json=externalId,proto3" json:"external_id,omitempty"`
-	Status       string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
-	HighestCheck string                 `protobuf:"bytes,5,opt,name=highest_check,json=highestCheck,proto3" json:"highest_check,omitempty"`
-	Reason       string                 `protobuf:"bytes,6,opt,name=reason,proto3" json:"reason,omitempty"`
-	CreatedAt    int64                  `protobuf:"varint,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"` // unix seconds
-	DecidedAt    int64                  `protobuf:"varint,8,opt,name=decided_at,json=decidedAt,proto3" json:"decided_at,omitempty"` // unix seconds, 0 when undecided
-	// Provider's hosted-flow URL — only populated on StartVerification.
-	HostedFlowUrl string `protobuf:"bytes,9,opt,name=hosted_flow_url,json=hostedFlowUrl,proto3" json:"hosted_flow_url,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Provider      string                 `protobuf:"bytes,2,opt,name=provider,proto3" json:"provider,omitempty"` // persona | onfido | veriff | manual
+	ExternalId    string                 `protobuf:"bytes,3,opt,name=external_id,json=externalId,proto3" json:"external_id,omitempty"`
+	Status        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	HighestCheck  string                 `protobuf:"bytes,5,opt,name=highest_check,json=highestCheck,proto3" json:"highest_check,omitempty"`
+	Reason        string                 `protobuf:"bytes,6,opt,name=reason,proto3" json:"reason,omitempty"`
+	CreatedAt     int64                  `protobuf:"varint,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"` // unix seconds
+	DecidedAt     int64                  `protobuf:"varint,8,opt,name=decided_at,json=decidedAt,proto3" json:"decided_at,omitempty"` // unix seconds, 0 when undecided
+	HostedFlowUrl string                 `protobuf:"bytes,9,opt,name=hosted_flow_url,json=hostedFlowUrl,proto3" json:"hosted_flow_url,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1442,9 +1438,8 @@ func (*GetLatestVerificationRequest) Descriptor() ([]byte, []int) {
 }
 
 type GetLatestVerificationResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Empty (id == "") = lifter has not yet started a verification.
-	Verification  *AtlasVerification `protobuf:"bytes,1,opt,name=verification,proto3" json:"verification,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Verification  *AtlasVerification     `protobuf:"bytes,1,opt,name=verification,proto3" json:"verification,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1487,16 +1482,15 @@ func (x *GetLatestVerificationResponse) GetVerification() *AtlasVerification {
 }
 
 type TensionSeat struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Slot  int32                  `protobuf:"varint,2,opt,name=slot,proto3" json:"slot,omitempty"` // 0..4
-	// 'open' | 'held' | 'shattered' | 'accepted'
-	State         string `protobuf:"bytes,3,opt,name=state,proto3" json:"state,omitempty"`
-	TargetId      string `protobuf:"bytes,4,opt,name=target_id,json=targetId,proto3" json:"target_id,omitempty"`
-	BidMessage    string `protobuf:"bytes,5,opt,name=bid_message,json=bidMessage,proto3" json:"bid_message,omitempty"`
-	ExpiresAt     int64  `protobuf:"varint,6,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
-	ShatteredAt   int64  `protobuf:"varint,7,opt,name=shattered_at,json=shatteredAt,proto3" json:"shattered_at,omitempty"`
-	AcceptedAt    int64  `protobuf:"varint,8,opt,name=accepted_at,json=acceptedAt,proto3" json:"accepted_at,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slot          int32                  `protobuf:"varint,2,opt,name=slot,proto3" json:"slot,omitempty"` // 0..4
+	State         string                 `protobuf:"bytes,3,opt,name=state,proto3" json:"state,omitempty"`
+	TargetId      string                 `protobuf:"bytes,4,opt,name=target_id,json=targetId,proto3" json:"target_id,omitempty"`
+	BidMessage    string                 `protobuf:"bytes,5,opt,name=bid_message,json=bidMessage,proto3" json:"bid_message,omitempty"`
+	ExpiresAt     int64                  `protobuf:"varint,6,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	ShatteredAt   int64                  `protobuf:"varint,7,opt,name=shattered_at,json=shatteredAt,proto3" json:"shattered_at,omitempty"`
+	AcceptedAt    int64                  `protobuf:"varint,8,opt,name=accepted_at,json=acceptedAt,proto3" json:"accepted_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1624,9 +1618,8 @@ func (*ListTensionSeatsRequest) Descriptor() ([]byte, []int) {
 }
 
 type ListTensionSeatsResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Always five seats, ordered by slot 0..4.
-	Seats         []*TensionSeat `protobuf:"bytes,1,rep,name=seats,proto3" json:"seats,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Seats         []*TensionSeat         `protobuf:"bytes,1,rep,name=seats,proto3" json:"seats,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1861,14 +1854,12 @@ func (x *ReleaseTensionSeatResponse) GetSeat() *TensionSeat {
 }
 
 type AkashicChapter struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	// One of the 12 canonical chapter keys.
-	ChapterKey string `protobuf:"bytes,2,opt,name=chapter_key,json=chapterKey,proto3" json:"chapter_key,omitempty"`
-	Title      string `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
-	Body       string `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
-	// 'public' | 'seated' | 'private'
-	Visibility    string `protobuf:"bytes,5,opt,name=visibility,proto3" json:"visibility,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ChapterKey    string                 `protobuf:"bytes,2,opt,name=chapter_key,json=chapterKey,proto3" json:"chapter_key,omitempty"`
+	Title         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Body          string                 `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
+	Visibility    string                 `protobuf:"bytes,5,opt,name=visibility,proto3" json:"visibility,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1975,10 +1966,8 @@ func (*ListAuthorAkashicRequest) Descriptor() ([]byte, []int) {
 }
 
 type ListAuthorAkashicResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// All 12 chapters in canonical order; un-authored chapters come
-	// back as empty placeholders so the editor renders the full set.
-	Chapters      []*AkashicChapter `protobuf:"bytes,1,rep,name=chapters,proto3" json:"chapters,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Chapters      []*AkashicChapter      `protobuf:"bytes,1,rep,name=chapters,proto3" json:"chapters,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2065,10 +2054,8 @@ func (x *ListVisibleAkashicRequest) GetTargetUserId() string {
 }
 
 type ListVisibleAkashicResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Server filters by visibility. Seat-gated chapters are included
-	// only when the caller holds a Tension Seat with the author.
-	Chapters      []*AkashicChapter `protobuf:"bytes,1,rep,name=chapters,proto3" json:"chapters,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Chapters      []*AkashicChapter      `protobuf:"bytes,1,rep,name=chapters,proto3" json:"chapters,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2999,9 +2986,8 @@ func (*GetPanicContactRequest) Descriptor() ([]byte, []int) {
 }
 
 type GetPanicContactResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Empty (phone == "") = no contact configured.
-	Contact       *PanicContact `protobuf:"bytes,1,opt,name=contact,proto3" json:"contact,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Contact       *PanicContact          `protobuf:"bytes,1,opt,name=contact,proto3" json:"contact,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3148,17 +3134,16 @@ func (x *UpsertPanicContactResponse) GetContact() *PanicContact {
 }
 
 type PrivacyAxes struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Per-axis visibility: 'matched' | 'seated' | 'private'.
-	VaultRank            string `protobuf:"bytes,1,opt,name=vault_rank,json=vaultRank,proto3" json:"vault_rank,omitempty"`
-	ApexRank             string `protobuf:"bytes,2,opt,name=apex_rank,json=apexRank,proto3" json:"apex_rank,omitempty"`
-	ForgeRank            string `protobuf:"bytes,3,opt,name=forge_rank,json=forgeRank,proto3" json:"forge_rank,omitempty"`
-	Luminance            string `protobuf:"bytes,4,opt,name=luminance,proto3" json:"luminance,omitempty"`
-	IntellectualPace     string `protobuf:"bytes,5,opt,name=intellectual_pace,json=intellectualPace,proto3" json:"intellectual_pace,omitempty"`
-	EmotionalGranularity string `protobuf:"bytes,6,opt,name=emotional_granularity,json=emotionalGranularity,proto3" json:"emotional_granularity,omitempty"`
-	PhysicalDrive        string `protobuf:"bytes,7,opt,name=physical_drive,json=physicalDrive,proto3" json:"physical_drive,omitempty"`
-	SocialBattery        string `protobuf:"bytes,8,opt,name=social_battery,json=socialBattery,proto3" json:"social_battery,omitempty"`
-	Tier                 string `protobuf:"bytes,9,opt,name=tier,proto3" json:"tier,omitempty"`
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	VaultRank            string                 `protobuf:"bytes,1,opt,name=vault_rank,json=vaultRank,proto3" json:"vault_rank,omitempty"`
+	ApexRank             string                 `protobuf:"bytes,2,opt,name=apex_rank,json=apexRank,proto3" json:"apex_rank,omitempty"`
+	ForgeRank            string                 `protobuf:"bytes,3,opt,name=forge_rank,json=forgeRank,proto3" json:"forge_rank,omitempty"`
+	Luminance            string                 `protobuf:"bytes,4,opt,name=luminance,proto3" json:"luminance,omitempty"`
+	IntellectualPace     string                 `protobuf:"bytes,5,opt,name=intellectual_pace,json=intellectualPace,proto3" json:"intellectual_pace,omitempty"`
+	EmotionalGranularity string                 `protobuf:"bytes,6,opt,name=emotional_granularity,json=emotionalGranularity,proto3" json:"emotional_granularity,omitempty"`
+	PhysicalDrive        string                 `protobuf:"bytes,7,opt,name=physical_drive,json=physicalDrive,proto3" json:"physical_drive,omitempty"`
+	SocialBattery        string                 `protobuf:"bytes,8,opt,name=social_battery,json=socialBattery,proto3" json:"social_battery,omitempty"`
+	Tier                 string                 `protobuf:"bytes,9,opt,name=tier,proto3" json:"tier,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -3425,14 +3410,18 @@ func (x *UpsertPrivacyAxesResponse) GetAxes() *PrivacyAxes {
 }
 
 type AtlasMapPoint struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	X             float64                `protobuf:"fixed64,3,opt,name=x,proto3" json:"x,omitempty"`
-	Y             float64                `protobuf:"fixed64,4,opt,name=y,proto3" json:"y,omitempty"`
-	Z             float64                `protobuf:"fixed64,5,opt,name=z,proto3" json:"z,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	UserId           string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Name             string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	X                float64                `protobuf:"fixed64,3,opt,name=x,proto3" json:"x,omitempty"`
+	Y                float64                `protobuf:"fixed64,4,opt,name=y,proto3" json:"y,omitempty"`
+	Z                float64                `protobuf:"fixed64,5,opt,name=z,proto3" json:"z,omitempty"`
+	Luminance        float64                `protobuf:"fixed64,6,opt,name=luminance,proto3" json:"luminance,omitempty"`
+	Tier             string                 `protobuf:"bytes,7,opt,name=tier,proto3" json:"tier,omitempty"`
+	Intent           DatingIntent           `protobuf:"varint,8,opt,name=intent,proto3,enum=sttattus.dating.v1.DatingIntent" json:"intent,omitempty"`
+	IntellectualPace int32                  `protobuf:"varint,9,opt,name=intellectual_pace,json=intellectualPace,proto3" json:"intellectual_pace,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *AtlasMapPoint) Reset() {
@@ -3500,6 +3489,34 @@ func (x *AtlasMapPoint) GetZ() float64 {
 	return 0
 }
 
+func (x *AtlasMapPoint) GetLuminance() float64 {
+	if x != nil {
+		return x.Luminance
+	}
+	return 0
+}
+
+func (x *AtlasMapPoint) GetTier() string {
+	if x != nil {
+		return x.Tier
+	}
+	return ""
+}
+
+func (x *AtlasMapPoint) GetIntent() DatingIntent {
+	if x != nil {
+		return x.Intent
+	}
+	return DatingIntent_DATING_INTENT_UNSPECIFIED
+}
+
+func (x *AtlasMapPoint) GetIntellectualPace() int32 {
+	if x != nil {
+		return x.IntellectualPace
+	}
+	return 0
+}
+
 type ListAtlasMapPointsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -3537,10 +3554,8 @@ func (*ListAtlasMapPointsRequest) Descriptor() ([]byte, []int) {
 }
 
 type ListAtlasMapPointsResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Latest projection per user. The map widget treats the caller
-	// as camera origin and renders the rest in 3-space.
-	Points        []*AtlasMapPoint `protobuf:"bytes,1,rep,name=points,proto3" json:"points,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Points        []*AtlasMapPoint       `protobuf:"bytes,1,rep,name=points,proto3" json:"points,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3583,17 +3598,18 @@ func (x *ListAtlasMapPointsResponse) GetPoints() []*AtlasMapPoint {
 }
 
 type AgoraRoom struct {
-	state     protoimpl.MessageState `protogen:"open.v1"`
-	Id        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	HostId    string                 `protobuf:"bytes,2,opt,name=host_id,json=hostId,proto3" json:"host_id,omitempty"`
-	Title     string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
-	Cluster   string                 `protobuf:"bytes,4,opt,name=cluster,proto3" json:"cluster,omitempty"`
-	MaxGuests int32                  `protobuf:"varint,5,opt,name=max_guests,json=maxGuests,proto3" json:"max_guests,omitempty"`
-	// 'live' | 'ended' | 'scheduled'
-	Status          string `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`
-	LivekitRoomName string `protobuf:"bytes,7,opt,name=livekit_room_name,json=livekitRoomName,proto3" json:"livekit_room_name,omitempty"`
-	StartedAt       int64  `protobuf:"varint,8,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`
-	EndedAt         int64  `protobuf:"varint,9,opt,name=ended_at,json=endedAt,proto3" json:"ended_at,omitempty"`
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	HostId          string                 `protobuf:"bytes,2,opt,name=host_id,json=hostId,proto3" json:"host_id,omitempty"`
+	Title           string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Cluster         string                 `protobuf:"bytes,4,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	MaxGuests       int32                  `protobuf:"varint,5,opt,name=max_guests,json=maxGuests,proto3" json:"max_guests,omitempty"`
+	Status          string                 `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`
+	LivekitRoomName string                 `protobuf:"bytes,7,opt,name=livekit_room_name,json=livekitRoomName,proto3" json:"livekit_room_name,omitempty"`
+	StartedAt       int64                  `protobuf:"varint,8,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`
+	EndedAt         int64                  `protobuf:"varint,9,opt,name=ended_at,json=endedAt,proto3" json:"ended_at,omitempty"`
+	IsVideoEnabled  bool                   `protobuf:"varint,10,opt,name=is_video_enabled,json=isVideoEnabled,proto3" json:"is_video_enabled,omitempty"`
+	IsEncrypted     bool                   `protobuf:"varint,11,opt,name=is_encrypted,json=isEncrypted,proto3" json:"is_encrypted,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -3691,10 +3707,23 @@ func (x *AgoraRoom) GetEndedAt() int64 {
 	return 0
 }
 
+func (x *AgoraRoom) GetIsVideoEnabled() bool {
+	if x != nil {
+		return x.IsVideoEnabled
+	}
+	return false
+}
+
+func (x *AgoraRoom) GetIsEncrypted() bool {
+	if x != nil {
+		return x.IsEncrypted
+	}
+	return false
+}
+
 type ListLiveRoomsRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Optional cluster filter (” = all clusters).
-	Cluster       string `protobuf:"bytes,1,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Cluster       string                 `protobuf:"bytes,1,opt,name=cluster,proto3" json:"cluster,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3785,6 +3814,7 @@ type CreateAgoraRoomRequest struct {
 	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
 	Cluster       string                 `protobuf:"bytes,2,opt,name=cluster,proto3" json:"cluster,omitempty"`
 	MaxGuests     int32                  `protobuf:"varint,3,opt,name=max_guests,json=maxGuests,proto3" json:"max_guests,omitempty"`
+	EnableVideo   bool                   `protobuf:"varint,4,opt,name=enable_video,json=enableVideo,proto3" json:"enable_video,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3838,6 +3868,13 @@ func (x *CreateAgoraRoomRequest) GetMaxGuests() int32 {
 		return x.MaxGuests
 	}
 	return 0
+}
+
+func (x *CreateAgoraRoomRequest) GetEnableVideo() bool {
+	if x != nil {
+		return x.EnableVideo
+	}
+	return false
 }
 
 type CreateAgoraRoomResponse struct {
@@ -4017,12 +4054,9 @@ func (x *MintLiveKitTokenRequest) GetRoomId() string {
 }
 
 type MintLiveKitTokenResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Empty when LiveKit credentials are not configured server-side
-	// (FailedPrecondition is returned in that case so the client can
-	// surface "joining unavailable").
-	Token         string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
-	WsUrl         string `protobuf:"bytes,2,opt,name=ws_url,json=wsUrl,proto3" json:"ws_url,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	WsUrl         string                 `protobuf:"bytes,2,opt,name=ws_url,json=wsUrl,proto3" json:"ws_url,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4071,9 +4105,6 @@ func (x *MintLiveKitTokenResponse) GetWsUrl() string {
 	return ""
 }
 
-// MessageAttachment ties a message to a media_assets row. kind:
-// 'voice' | 'video'. The clip bytes go through MediaService's
-// presigned-URL flow; this row is the join.
 type MessageAttachment struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -4351,17 +4382,16 @@ func (x *ListMessageAttachmentsResponse) GetAttachments() []*MessageAttachment {
 }
 
 type Restaurant struct {
-	state        protoimpl.MessageState `protogen:"open.v1"`
-	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name         string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	City         string                 `protobuf:"bytes,3,opt,name=city,proto3" json:"city,omitempty"`
-	Neighborhood string                 `protobuf:"bytes,4,opt,name=neighborhood,proto3" json:"neighborhood,omitempty"`
-	// 'opentable' | 'resy' | 'manual'
-	Partner           string `protobuf:"bytes,5,opt,name=partner,proto3" json:"partner,omitempty"`
-	PartnerExternalId string `protobuf:"bytes,6,opt,name=partner_external_id,json=partnerExternalId,proto3" json:"partner_external_id,omitempty"`
-	IsAtlasCurated    bool   `protobuf:"varint,7,opt,name=is_atlas_curated,json=isAtlasCurated,proto3" json:"is_atlas_curated,omitempty"`
-	Cuisine           string `protobuf:"bytes,8,opt,name=cuisine,proto3" json:"cuisine,omitempty"`
-	PriceTier         int32  `protobuf:"varint,9,opt,name=price_tier,json=priceTier,proto3" json:"price_tier,omitempty"` // 1..5
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name              string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	City              string                 `protobuf:"bytes,3,opt,name=city,proto3" json:"city,omitempty"`
+	Neighborhood      string                 `protobuf:"bytes,4,opt,name=neighborhood,proto3" json:"neighborhood,omitempty"`
+	Partner           string                 `protobuf:"bytes,5,opt,name=partner,proto3" json:"partner,omitempty"`
+	PartnerExternalId string                 `protobuf:"bytes,6,opt,name=partner_external_id,json=partnerExternalId,proto3" json:"partner_external_id,omitempty"`
+	IsAtlasCurated    bool                   `protobuf:"varint,7,opt,name=is_atlas_curated,json=isAtlasCurated,proto3" json:"is_atlas_curated,omitempty"`
+	Cuisine           string                 `protobuf:"bytes,8,opt,name=cuisine,proto3" json:"cuisine,omitempty"`
+	PriceTier         int32                  `protobuf:"varint,9,opt,name=price_tier,json=priceTier,proto3" json:"price_tier,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -4460,9 +4490,8 @@ func (x *Restaurant) GetPriceTier() int32 {
 }
 
 type ListRestaurantsRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Empty city = curated set (the Atlas Twelve).
-	City          string `protobuf:"bytes,1,opt,name=city,proto3" json:"city,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	City          string                 `protobuf:"bytes,1,opt,name=city,proto3" json:"city,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4549,18 +4578,17 @@ func (x *ListRestaurantsResponse) GetRestaurants() []*Restaurant {
 }
 
 type Reservation struct {
-	state        protoimpl.MessageState `protogen:"open.v1"`
-	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	RestaurantId string                 `protobuf:"bytes,2,opt,name=restaurant_id,json=restaurantId,proto3" json:"restaurant_id,omitempty"`
-	MatchId      string                 `protobuf:"bytes,3,opt,name=match_id,json=matchId,proto3" json:"match_id,omitempty"` // empty when unscoped
-	PartySize    int32                  `protobuf:"varint,4,opt,name=party_size,json=partySize,proto3" json:"party_size,omitempty"`
-	RequestedAt  int64                  `protobuf:"varint,5,opt,name=requested_at,json=requestedAt,proto3" json:"requested_at,omitempty"`
-	// 'requested' | 'confirmed' | 'declined' | 'cancelled'
-	Status               string `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`
-	PartnerReservationId string `protobuf:"bytes,7,opt,name=partner_reservation_id,json=partnerReservationId,proto3" json:"partner_reservation_id,omitempty"`
-	Note                 string `protobuf:"bytes,8,opt,name=note,proto3" json:"note,omitempty"`
-	CreatedAt            int64  `protobuf:"varint,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	DecidedAt            int64  `protobuf:"varint,10,opt,name=decided_at,json=decidedAt,proto3" json:"decided_at,omitempty"`
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	Id                   string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RestaurantId         string                 `protobuf:"bytes,2,opt,name=restaurant_id,json=restaurantId,proto3" json:"restaurant_id,omitempty"`
+	MatchId              string                 `protobuf:"bytes,3,opt,name=match_id,json=matchId,proto3" json:"match_id,omitempty"`
+	PartySize            int32                  `protobuf:"varint,4,opt,name=party_size,json=partySize,proto3" json:"party_size,omitempty"`
+	RequestedAt          int64                  `protobuf:"varint,5,opt,name=requested_at,json=requestedAt,proto3" json:"requested_at,omitempty"`
+	Status               string                 `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`
+	PartnerReservationId string                 `protobuf:"bytes,7,opt,name=partner_reservation_id,json=partnerReservationId,proto3" json:"partner_reservation_id,omitempty"`
+	Note                 string                 `protobuf:"bytes,8,opt,name=note,proto3" json:"note,omitempty"`
+	CreatedAt            int64                  `protobuf:"varint,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	DecidedAt            int64                  `protobuf:"varint,10,opt,name=decided_at,json=decidedAt,proto3" json:"decided_at,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -4668,7 +4696,7 @@ func (x *Reservation) GetDecidedAt() int64 {
 type CreateReservationRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	RestaurantId  string                 `protobuf:"bytes,1,opt,name=restaurant_id,json=restaurantId,proto3" json:"restaurant_id,omitempty"`
-	MatchId       string                 `protobuf:"bytes,2,opt,name=match_id,json=matchId,proto3" json:"match_id,omitempty"` // empty when solo / unscoped
+	MatchId       string                 `protobuf:"bytes,2,opt,name=match_id,json=matchId,proto3" json:"match_id,omitempty"`
 	PartySize     int32                  `protobuf:"varint,3,opt,name=party_size,json=partySize,proto3" json:"party_size,omitempty"`
 	RequestedAt   int64                  `protobuf:"varint,4,opt,name=requested_at,json=requestedAt,proto3" json:"requested_at,omitempty"`
 	Note          string                 `protobuf:"bytes,5,opt,name=note,proto3" json:"note,omitempty"`
@@ -4953,33 +4981,29 @@ func (x *CancelReservationResponse) GetReservation() *Reservation {
 	return nil
 }
 
-type CompatibilityReport struct {
-	state       protoimpl.MessageState `protogen:"open.v1"`
-	LeftUserId  string                 `protobuf:"bytes,1,opt,name=left_user_id,json=leftUserId,proto3" json:"left_user_id,omitempty"`
-	RightUserId string                 `protobuf:"bytes,2,opt,name=right_user_id,json=rightUserId,proto3" json:"right_user_id,omitempty"`
-	// -1..1 cosine similarity between the two embeddings.
-	Cosine float64 `protobuf:"fixed64,3,opt,name=cosine,proto3" json:"cosine,omitempty"`
-	// Absolute |left - right| per axis, in atlas_engine's signal
-	// order. The dashboard renders which axes pull the pair apart.
-	PerAxisDelta  []float64 `protobuf:"fixed64,4,rep,packed,name=per_axis_delta,json=perAxisDelta,proto3" json:"per_axis_delta,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+type CompatibilityFactor struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Label          string                 `protobuf:"bytes,1,opt,name=label,proto3" json:"label,omitempty"`
+	Score          float64                `protobuf:"fixed64,2,opt,name=score,proto3" json:"score,omitempty"` // 0..1
+	Interpretation string                 `protobuf:"bytes,3,opt,name=interpretation,proto3" json:"interpretation,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
-func (x *CompatibilityReport) Reset() {
-	*x = CompatibilityReport{}
+func (x *CompatibilityFactor) Reset() {
+	*x = CompatibilityFactor{}
 	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[89]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CompatibilityReport) String() string {
+func (x *CompatibilityFactor) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CompatibilityReport) ProtoMessage() {}
+func (*CompatibilityFactor) ProtoMessage() {}
 
-func (x *CompatibilityReport) ProtoReflect() protoreflect.Message {
+func (x *CompatibilityFactor) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[89]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4991,61 +5015,130 @@ func (x *CompatibilityReport) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CompatibilityReport.ProtoReflect.Descriptor instead.
-func (*CompatibilityReport) Descriptor() ([]byte, []int) {
+// Deprecated: Use CompatibilityFactor.ProtoReflect.Descriptor instead.
+func (*CompatibilityFactor) Descriptor() ([]byte, []int) {
 	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{89}
 }
 
-func (x *CompatibilityReport) GetLeftUserId() string {
+func (x *CompatibilityFactor) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *CompatibilityFactor) GetScore() float64 {
+	if x != nil {
+		return x.Score
+	}
+	return 0
+}
+
+func (x *CompatibilityFactor) GetInterpretation() string {
+	if x != nil {
+		return x.Interpretation
+	}
+	return ""
+}
+
+type CompatibilityMatrix struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	LeftUserId           string                 `protobuf:"bytes,1,opt,name=left_user_id,json=leftUserId,proto3" json:"left_user_id,omitempty"`
+	RightUserId          string                 `protobuf:"bytes,2,opt,name=right_user_id,json=rightUserId,proto3" json:"right_user_id,omitempty"`
+	AggregateScore       float64                `protobuf:"fixed64,3,opt,name=aggregate_score,json=aggregateScore,proto3" json:"aggregate_score,omitempty"`
+	Factors              []*CompatibilityFactor `protobuf:"bytes,4,rep,name=factors,proto3" json:"factors,omitempty"`
+	DynamicTensionStatus string                 `protobuf:"bytes,5,opt,name=dynamic_tension_status,json=dynamicTensionStatus,proto3" json:"dynamic_tension_status,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *CompatibilityMatrix) Reset() {
+	*x = CompatibilityMatrix{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[90]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CompatibilityMatrix) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompatibilityMatrix) ProtoMessage() {}
+
+func (x *CompatibilityMatrix) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[90]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompatibilityMatrix.ProtoReflect.Descriptor instead.
+func (*CompatibilityMatrix) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{90}
+}
+
+func (x *CompatibilityMatrix) GetLeftUserId() string {
 	if x != nil {
 		return x.LeftUserId
 	}
 	return ""
 }
 
-func (x *CompatibilityReport) GetRightUserId() string {
+func (x *CompatibilityMatrix) GetRightUserId() string {
 	if x != nil {
 		return x.RightUserId
 	}
 	return ""
 }
 
-func (x *CompatibilityReport) GetCosine() float64 {
+func (x *CompatibilityMatrix) GetAggregateScore() float64 {
 	if x != nil {
-		return x.Cosine
+		return x.AggregateScore
 	}
 	return 0
 }
 
-func (x *CompatibilityReport) GetPerAxisDelta() []float64 {
+func (x *CompatibilityMatrix) GetFactors() []*CompatibilityFactor {
 	if x != nil {
-		return x.PerAxisDelta
+		return x.Factors
 	}
 	return nil
 }
 
-type GetCompatibilityReportRequest struct {
+func (x *CompatibilityMatrix) GetDynamicTensionStatus() string {
+	if x != nil {
+		return x.DynamicTensionStatus
+	}
+	return ""
+}
+
+type GetCompatibilityMatrixRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	OtherUserId   string                 `protobuf:"bytes,1,opt,name=other_user_id,json=otherUserId,proto3" json:"other_user_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetCompatibilityReportRequest) Reset() {
-	*x = GetCompatibilityReportRequest{}
-	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[90]
+func (x *GetCompatibilityMatrixRequest) Reset() {
+	*x = GetCompatibilityMatrixRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[91]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetCompatibilityReportRequest) String() string {
+func (x *GetCompatibilityMatrixRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetCompatibilityReportRequest) ProtoMessage() {}
+func (*GetCompatibilityMatrixRequest) ProtoMessage() {}
 
-func (x *GetCompatibilityReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[90]
+func (x *GetCompatibilityMatrixRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[91]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5056,42 +5149,40 @@ func (x *GetCompatibilityReportRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetCompatibilityReportRequest.ProtoReflect.Descriptor instead.
-func (*GetCompatibilityReportRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{90}
+// Deprecated: Use GetCompatibilityMatrixRequest.ProtoReflect.Descriptor instead.
+func (*GetCompatibilityMatrixRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{91}
 }
 
-func (x *GetCompatibilityReportRequest) GetOtherUserId() string {
+func (x *GetCompatibilityMatrixRequest) GetOtherUserId() string {
 	if x != nil {
 		return x.OtherUserId
 	}
 	return ""
 }
 
-type GetCompatibilityReportResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Empty (left_user_id == "") = compatibility unavailable because
-	// either user has no embedding yet, or the engine is offline.
-	Report        *CompatibilityReport `protobuf:"bytes,1,opt,name=report,proto3" json:"report,omitempty"`
+type GetCompatibilityMatrixResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Matrix        *CompatibilityMatrix   `protobuf:"bytes,1,opt,name=matrix,proto3" json:"matrix,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetCompatibilityReportResponse) Reset() {
-	*x = GetCompatibilityReportResponse{}
-	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[91]
+func (x *GetCompatibilityMatrixResponse) Reset() {
+	*x = GetCompatibilityMatrixResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[92]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetCompatibilityReportResponse) String() string {
+func (x *GetCompatibilityMatrixResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetCompatibilityReportResponse) ProtoMessage() {}
+func (*GetCompatibilityMatrixResponse) ProtoMessage() {}
 
-func (x *GetCompatibilityReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[91]
+func (x *GetCompatibilityMatrixResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[92]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5102,14 +5193,330 @@ func (x *GetCompatibilityReportResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetCompatibilityReportResponse.ProtoReflect.Descriptor instead.
-func (*GetCompatibilityReportResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{91}
+// Deprecated: Use GetCompatibilityMatrixResponse.ProtoReflect.Descriptor instead.
+func (*GetCompatibilityMatrixResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{92}
 }
 
-func (x *GetCompatibilityReportResponse) GetReport() *CompatibilityReport {
+func (x *GetCompatibilityMatrixResponse) GetMatrix() *CompatibilityMatrix {
 	if x != nil {
-		return x.Report
+		return x.Matrix
+	}
+	return nil
+}
+
+type Gift struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	SenderId      string                 `protobuf:"bytes,2,opt,name=sender_id,json=senderId,proto3" json:"sender_id,omitempty"`
+	ReceiverId    string                 `protobuf:"bytes,3,opt,name=receiver_id,json=receiverId,proto3" json:"receiver_id,omitempty"`
+	AssetType     string                 `protobuf:"bytes,4,opt,name=asset_type,json=assetType,proto3" json:"asset_type,omitempty"` // 'currency' | 'status_booster' | 'shards'
+	Value         float64                `protobuf:"fixed64,5,opt,name=value,proto3" json:"value,omitempty"`
+	Message       string                 `protobuf:"bytes,6,opt,name=message,proto3" json:"message,omitempty"`
+	SentAt        int64                  `protobuf:"varint,7,opt,name=sent_at,json=sentAt,proto3" json:"sent_at,omitempty"`
+	IsAnonymous   bool                   `protobuf:"varint,8,opt,name=is_anonymous,json=isAnonymous,proto3" json:"is_anonymous,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Gift) Reset() {
+	*x = Gift{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[93]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Gift) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Gift) ProtoMessage() {}
+
+func (x *Gift) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[93]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Gift.ProtoReflect.Descriptor instead.
+func (*Gift) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{93}
+}
+
+func (x *Gift) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Gift) GetSenderId() string {
+	if x != nil {
+		return x.SenderId
+	}
+	return ""
+}
+
+func (x *Gift) GetReceiverId() string {
+	if x != nil {
+		return x.ReceiverId
+	}
+	return ""
+}
+
+func (x *Gift) GetAssetType() string {
+	if x != nil {
+		return x.AssetType
+	}
+	return ""
+}
+
+func (x *Gift) GetValue() float64 {
+	if x != nil {
+		return x.Value
+	}
+	return 0
+}
+
+func (x *Gift) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *Gift) GetSentAt() int64 {
+	if x != nil {
+		return x.SentAt
+	}
+	return 0
+}
+
+func (x *Gift) GetIsAnonymous() bool {
+	if x != nil {
+		return x.IsAnonymous
+	}
+	return false
+}
+
+type SendGiftRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ReceiverId    string                 `protobuf:"bytes,1,opt,name=receiver_id,json=receiverId,proto3" json:"receiver_id,omitempty"`
+	AssetType     string                 `protobuf:"bytes,2,opt,name=asset_type,json=assetType,proto3" json:"asset_type,omitempty"`
+	Value         float64                `protobuf:"fixed64,3,opt,name=value,proto3" json:"value,omitempty"`
+	Message       string                 `protobuf:"bytes,4,opt,name=message,proto3" json:"message,omitempty"`
+	Anonymous     bool                   `protobuf:"varint,5,opt,name=anonymous,proto3" json:"anonymous,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SendGiftRequest) Reset() {
+	*x = SendGiftRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[94]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SendGiftRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SendGiftRequest) ProtoMessage() {}
+
+func (x *SendGiftRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[94]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SendGiftRequest.ProtoReflect.Descriptor instead.
+func (*SendGiftRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{94}
+}
+
+func (x *SendGiftRequest) GetReceiverId() string {
+	if x != nil {
+		return x.ReceiverId
+	}
+	return ""
+}
+
+func (x *SendGiftRequest) GetAssetType() string {
+	if x != nil {
+		return x.AssetType
+	}
+	return ""
+}
+
+func (x *SendGiftRequest) GetValue() float64 {
+	if x != nil {
+		return x.Value
+	}
+	return 0
+}
+
+func (x *SendGiftRequest) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *SendGiftRequest) GetAnonymous() bool {
+	if x != nil {
+		return x.Anonymous
+	}
+	return false
+}
+
+type SendGiftResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Gift          *Gift                  `protobuf:"bytes,1,opt,name=gift,proto3" json:"gift,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SendGiftResponse) Reset() {
+	*x = SendGiftResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[95]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SendGiftResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SendGiftResponse) ProtoMessage() {}
+
+func (x *SendGiftResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[95]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SendGiftResponse.ProtoReflect.Descriptor instead.
+func (*SendGiftResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{95}
+}
+
+func (x *SendGiftResponse) GetGift() *Gift {
+	if x != nil {
+		return x.Gift
+	}
+	return nil
+}
+
+type ListGiftLedgerRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Page          *v1.PageRequest        `protobuf:"bytes,1,opt,name=page,proto3" json:"page,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListGiftLedgerRequest) Reset() {
+	*x = ListGiftLedgerRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[96]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListGiftLedgerRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListGiftLedgerRequest) ProtoMessage() {}
+
+func (x *ListGiftLedgerRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[96]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListGiftLedgerRequest.ProtoReflect.Descriptor instead.
+func (*ListGiftLedgerRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{96}
+}
+
+func (x *ListGiftLedgerRequest) GetPage() *v1.PageRequest {
+	if x != nil {
+		return x.Page
+	}
+	return nil
+}
+
+type ListGiftLedgerResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Gifts         []*Gift                `protobuf:"bytes,1,rep,name=gifts,proto3" json:"gifts,omitempty"`
+	Page          *v1.PageResponse       `protobuf:"bytes,2,opt,name=page,proto3" json:"page,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListGiftLedgerResponse) Reset() {
+	*x = ListGiftLedgerResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[97]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListGiftLedgerResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListGiftLedgerResponse) ProtoMessage() {}
+
+func (x *ListGiftLedgerResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[97]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListGiftLedgerResponse.ProtoReflect.Descriptor instead.
+func (*ListGiftLedgerResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{97}
+}
+
+func (x *ListGiftLedgerResponse) GetGifts() []*Gift {
+	if x != nil {
+		return x.Gifts
+	}
+	return nil
+}
+
+func (x *ListGiftLedgerResponse) GetPage() *v1.PageResponse {
+	if x != nil {
+		return x.Page
 	}
 	return nil
 }
@@ -5344,16 +5751,20 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x18UpsertPrivacyAxesRequest\x123\n" +
 	"\x04axes\x18\x01 \x01(\v2\x1f.sttattus.dating.v1.PrivacyAxesR\x04axes\"P\n" +
 	"\x19UpsertPrivacyAxesResponse\x123\n" +
-	"\x04axes\x18\x01 \x01(\v2\x1f.sttattus.dating.v1.PrivacyAxesR\x04axes\"f\n" +
+	"\x04axes\x18\x01 \x01(\v2\x1f.sttattus.dating.v1.PrivacyAxesR\x04axes\"\xff\x01\n" +
 	"\rAtlasMapPoint\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\f\n" +
 	"\x01x\x18\x03 \x01(\x01R\x01x\x12\f\n" +
 	"\x01y\x18\x04 \x01(\x01R\x01y\x12\f\n" +
-	"\x01z\x18\x05 \x01(\x01R\x01z\"\x1b\n" +
+	"\x01z\x18\x05 \x01(\x01R\x01z\x12\x1c\n" +
+	"\tluminance\x18\x06 \x01(\x01R\tluminance\x12\x12\n" +
+	"\x04tier\x18\a \x01(\tR\x04tier\x128\n" +
+	"\x06intent\x18\b \x01(\x0e2 .sttattus.dating.v1.DatingIntentR\x06intent\x12+\n" +
+	"\x11intellectual_pace\x18\t \x01(\x05R\x10intellectualPace\"\x1b\n" +
 	"\x19ListAtlasMapPointsRequest\"W\n" +
 	"\x1aListAtlasMapPointsResponse\x129\n" +
-	"\x06points\x18\x01 \x03(\v2!.sttattus.dating.v1.AtlasMapPointR\x06points\"\x81\x02\n" +
+	"\x06points\x18\x01 \x03(\v2!.sttattus.dating.v1.AtlasMapPointR\x06points\"\xce\x02\n" +
 	"\tAgoraRoom\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
 	"\ahost_id\x18\x02 \x01(\tR\x06hostId\x12\x14\n" +
@@ -5365,16 +5776,20 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x11livekit_room_name\x18\a \x01(\tR\x0flivekitRoomName\x12\x1d\n" +
 	"\n" +
 	"started_at\x18\b \x01(\x03R\tstartedAt\x12\x19\n" +
-	"\bended_at\x18\t \x01(\x03R\aendedAt\"0\n" +
+	"\bended_at\x18\t \x01(\x03R\aendedAt\x12(\n" +
+	"\x10is_video_enabled\x18\n" +
+	" \x01(\bR\x0eisVideoEnabled\x12!\n" +
+	"\fis_encrypted\x18\v \x01(\bR\visEncrypted\"0\n" +
 	"\x14ListLiveRoomsRequest\x12\x18\n" +
 	"\acluster\x18\x01 \x01(\tR\acluster\"L\n" +
 	"\x15ListLiveRoomsResponse\x123\n" +
-	"\x05rooms\x18\x01 \x03(\v2\x1d.sttattus.dating.v1.AgoraRoomR\x05rooms\"g\n" +
+	"\x05rooms\x18\x01 \x03(\v2\x1d.sttattus.dating.v1.AgoraRoomR\x05rooms\"\x8a\x01\n" +
 	"\x16CreateAgoraRoomRequest\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x18\n" +
 	"\acluster\x18\x02 \x01(\tR\acluster\x12\x1d\n" +
 	"\n" +
-	"max_guests\x18\x03 \x01(\x05R\tmaxGuests\"L\n" +
+	"max_guests\x18\x03 \x01(\x05R\tmaxGuests\x12!\n" +
+	"\fenable_video\x18\x04 \x01(\bR\venableVideo\"L\n" +
 	"\x17CreateAgoraRoomResponse\x121\n" +
 	"\x04room\x18\x01 \x01(\v2\x1d.sttattus.dating.v1.AgoraRoomR\x04room\".\n" +
 	"\x13EndAgoraRoomRequest\x12\x17\n" +
@@ -5454,17 +5869,48 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x18CancelReservationRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"^\n" +
 	"\x19CancelReservationResponse\x12A\n" +
-	"\vreservation\x18\x01 \x01(\v2\x1f.sttattus.dating.v1.ReservationR\vreservation\"\x99\x01\n" +
-	"\x13CompatibilityReport\x12 \n" +
+	"\vreservation\x18\x01 \x01(\v2\x1f.sttattus.dating.v1.ReservationR\vreservation\"i\n" +
+	"\x13CompatibilityFactor\x12\x14\n" +
+	"\x05label\x18\x01 \x01(\tR\x05label\x12\x14\n" +
+	"\x05score\x18\x02 \x01(\x01R\x05score\x12&\n" +
+	"\x0einterpretation\x18\x03 \x01(\tR\x0einterpretation\"\xfd\x01\n" +
+	"\x13CompatibilityMatrix\x12 \n" +
 	"\fleft_user_id\x18\x01 \x01(\tR\n" +
 	"leftUserId\x12\"\n" +
-	"\rright_user_id\x18\x02 \x01(\tR\vrightUserId\x12\x16\n" +
-	"\x06cosine\x18\x03 \x01(\x01R\x06cosine\x12$\n" +
-	"\x0eper_axis_delta\x18\x04 \x03(\x01R\fperAxisDelta\"C\n" +
-	"\x1dGetCompatibilityReportRequest\x12\"\n" +
+	"\rright_user_id\x18\x02 \x01(\tR\vrightUserId\x12'\n" +
+	"\x0faggregate_score\x18\x03 \x01(\x01R\x0eaggregateScore\x12A\n" +
+	"\afactors\x18\x04 \x03(\v2'.sttattus.dating.v1.CompatibilityFactorR\afactors\x124\n" +
+	"\x16dynamic_tension_status\x18\x05 \x01(\tR\x14dynamicTensionStatus\"C\n" +
+	"\x1dGetCompatibilityMatrixRequest\x12\"\n" +
 	"\rother_user_id\x18\x01 \x01(\tR\votherUserId\"a\n" +
-	"\x1eGetCompatibilityReportResponse\x12?\n" +
-	"\x06report\x18\x01 \x01(\v2'.sttattus.dating.v1.CompatibilityReportR\x06report*\x80\x01\n" +
+	"\x1eGetCompatibilityMatrixResponse\x12?\n" +
+	"\x06matrix\x18\x01 \x01(\v2'.sttattus.dating.v1.CompatibilityMatrixR\x06matrix\"\xdf\x01\n" +
+	"\x04Gift\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\tsender_id\x18\x02 \x01(\tR\bsenderId\x12\x1f\n" +
+	"\vreceiver_id\x18\x03 \x01(\tR\n" +
+	"receiverId\x12\x1d\n" +
+	"\n" +
+	"asset_type\x18\x04 \x01(\tR\tassetType\x12\x14\n" +
+	"\x05value\x18\x05 \x01(\x01R\x05value\x12\x18\n" +
+	"\amessage\x18\x06 \x01(\tR\amessage\x12\x17\n" +
+	"\asent_at\x18\a \x01(\x03R\x06sentAt\x12!\n" +
+	"\fis_anonymous\x18\b \x01(\bR\visAnonymous\"\x9f\x01\n" +
+	"\x0fSendGiftRequest\x12\x1f\n" +
+	"\vreceiver_id\x18\x01 \x01(\tR\n" +
+	"receiverId\x12\x1d\n" +
+	"\n" +
+	"asset_type\x18\x02 \x01(\tR\tassetType\x12\x14\n" +
+	"\x05value\x18\x03 \x01(\x01R\x05value\x12\x18\n" +
+	"\amessage\x18\x04 \x01(\tR\amessage\x12\x1c\n" +
+	"\tanonymous\x18\x05 \x01(\bR\tanonymous\"@\n" +
+	"\x10SendGiftResponse\x12,\n" +
+	"\x04gift\x18\x01 \x01(\v2\x18.sttattus.dating.v1.GiftR\x04gift\"L\n" +
+	"\x15ListGiftLedgerRequest\x123\n" +
+	"\x04page\x18\x01 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"~\n" +
+	"\x16ListGiftLedgerResponse\x12.\n" +
+	"\x05gifts\x18\x01 \x03(\v2\x18.sttattus.dating.v1.GiftR\x05gifts\x124\n" +
+	"\x04page\x18\x02 \x01(\v2 .sttattus.common.v1.PageResponseR\x04page*\x80\x01\n" +
 	"\x0eSwipeDirection\x12\x1f\n" +
 	"\x1bSWIPE_DIRECTION_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14SWIPE_DIRECTION_PASS\x10\x01\x12\x18\n" +
@@ -5475,7 +5921,7 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x14DATING_INTENT_CASUAL\x10\x01\x12\x1e\n" +
 	"\x1aDATING_INTENT_RELATIONSHIP\x10\x02\x12\x19\n" +
 	"\x15DATING_INTENT_FRIENDS\x10\x03\x12\x1c\n" +
-	"\x18DATING_INTENT_NETWORKING\x10\x042\xcd\x1f\n" +
+	"\x18DATING_INTENT_NETWORKING\x10\x042\x8d!\n" +
 	"\rDatingService\x12[\n" +
 	"\n" +
 	"GetProfile\x12%.sttattus.dating.v1.GetProfileRequest\x1a&.sttattus.dating.v1.GetProfileResponse\x12d\n" +
@@ -5515,7 +5961,9 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x11CreateReservation\x12,.sttattus.dating.v1.CreateReservationRequest\x1a-.sttattus.dating.v1.CreateReservationResponse\x12s\n" +
 	"\x12ListMyReservations\x12-.sttattus.dating.v1.ListMyReservationsRequest\x1a..sttattus.dating.v1.ListMyReservationsResponse\x12p\n" +
 	"\x11CancelReservation\x12,.sttattus.dating.v1.CancelReservationRequest\x1a-.sttattus.dating.v1.CancelReservationResponse\x12\x7f\n" +
-	"\x16GetCompatibilityReport\x121.sttattus.dating.v1.GetCompatibilityReportRequest\x1a2.sttattus.dating.v1.GetCompatibilityReportResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
+	"\x16GetCompatibilityMatrix\x121.sttattus.dating.v1.GetCompatibilityMatrixRequest\x1a2.sttattus.dating.v1.GetCompatibilityMatrixResponse\x12U\n" +
+	"\bSendGift\x12#.sttattus.dating.v1.SendGiftRequest\x1a$.sttattus.dating.v1.SendGiftResponse\x12g\n" +
+	"\x0eListGiftLedger\x12).sttattus.dating.v1.ListGiftLedgerRequest\x1a*.sttattus.dating.v1.ListGiftLedgerResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
 
 var (
 	file_sttattus_dating_v1_dating_proto_rawDescOnce sync.Once
@@ -5530,7 +5978,7 @@ func file_sttattus_dating_v1_dating_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_dating_v1_dating_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 92)
+var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 98)
 var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(SwipeDirection)(0),                    // 0: sttattus.dating.v1.SwipeDirection
 	(DatingIntent)(0),                      // 1: sttattus.dating.v1.DatingIntent
@@ -5623,135 +6071,151 @@ var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(*ListMyReservationsResponse)(nil),     // 88: sttattus.dating.v1.ListMyReservationsResponse
 	(*CancelReservationRequest)(nil),       // 89: sttattus.dating.v1.CancelReservationRequest
 	(*CancelReservationResponse)(nil),      // 90: sttattus.dating.v1.CancelReservationResponse
-	(*CompatibilityReport)(nil),            // 91: sttattus.dating.v1.CompatibilityReport
-	(*GetCompatibilityReportRequest)(nil),  // 92: sttattus.dating.v1.GetCompatibilityReportRequest
-	(*GetCompatibilityReportResponse)(nil), // 93: sttattus.dating.v1.GetCompatibilityReportResponse
-	(*v1.PageRequest)(nil),                 // 94: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),                // 95: sttattus.common.v1.PageResponse
+	(*CompatibilityFactor)(nil),            // 91: sttattus.dating.v1.CompatibilityFactor
+	(*CompatibilityMatrix)(nil),            // 92: sttattus.dating.v1.CompatibilityMatrix
+	(*GetCompatibilityMatrixRequest)(nil),  // 93: sttattus.dating.v1.GetCompatibilityMatrixRequest
+	(*GetCompatibilityMatrixResponse)(nil), // 94: sttattus.dating.v1.GetCompatibilityMatrixResponse
+	(*Gift)(nil),                           // 95: sttattus.dating.v1.Gift
+	(*SendGiftRequest)(nil),                // 96: sttattus.dating.v1.SendGiftRequest
+	(*SendGiftResponse)(nil),               // 97: sttattus.dating.v1.SendGiftResponse
+	(*ListGiftLedgerRequest)(nil),          // 98: sttattus.dating.v1.ListGiftLedgerRequest
+	(*ListGiftLedgerResponse)(nil),         // 99: sttattus.dating.v1.ListGiftLedgerResponse
+	(*v1.PageRequest)(nil),                 // 100: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),                // 101: sttattus.common.v1.PageResponse
 }
 var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
-	1,  // 0: sttattus.dating.v1.DatingProfile.intent:type_name -> sttattus.dating.v1.DatingIntent
-	2,  // 1: sttattus.dating.v1.DatingProfile.position:type_name -> sttattus.dating.v1.Vec3
-	3,  // 2: sttattus.dating.v1.Candidate.profile:type_name -> sttattus.dating.v1.DatingProfile
-	3,  // 3: sttattus.dating.v1.Match.other:type_name -> sttattus.dating.v1.DatingProfile
-	3,  // 4: sttattus.dating.v1.GetProfileResponse.profile:type_name -> sttattus.dating.v1.DatingProfile
-	3,  // 5: sttattus.dating.v1.UpdateProfileRequest.profile:type_name -> sttattus.dating.v1.DatingProfile
-	3,  // 6: sttattus.dating.v1.UpdateProfileResponse.profile:type_name -> sttattus.dating.v1.DatingProfile
-	4,  // 7: sttattus.dating.v1.StreamDiscoveryResponse.candidate:type_name -> sttattus.dating.v1.Candidate
-	0,  // 8: sttattus.dating.v1.SwipeRequest.direction:type_name -> sttattus.dating.v1.SwipeDirection
-	5,  // 9: sttattus.dating.v1.SwipeResponse.match:type_name -> sttattus.dating.v1.Match
-	94, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
-	5,  // 11: sttattus.dating.v1.ListMatchesResponse.matches:type_name -> sttattus.dating.v1.Match
-	95, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
-	6,  // 13: sttattus.dating.v1.StreamMessagesResponse.message:type_name -> sttattus.dating.v1.Message
-	6,  // 14: sttattus.dating.v1.SendMessageResponse.message:type_name -> sttattus.dating.v1.Message
-	21, // 15: sttattus.dating.v1.StartVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
-	21, // 16: sttattus.dating.v1.GetLatestVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
-	26, // 17: sttattus.dating.v1.ListTensionSeatsResponse.seats:type_name -> sttattus.dating.v1.TensionSeat
-	26, // 18: sttattus.dating.v1.PlaceTensionBidResponse.seat:type_name -> sttattus.dating.v1.TensionSeat
-	26, // 19: sttattus.dating.v1.ReleaseTensionSeatResponse.seat:type_name -> sttattus.dating.v1.TensionSeat
-	33, // 20: sttattus.dating.v1.ListAuthorAkashicResponse.chapters:type_name -> sttattus.dating.v1.AkashicChapter
-	33, // 21: sttattus.dating.v1.ListVisibleAkashicResponse.chapters:type_name -> sttattus.dating.v1.AkashicChapter
-	33, // 22: sttattus.dating.v1.UpsertAkashicChapterResponse.chapter:type_name -> sttattus.dating.v1.AkashicChapter
-	42, // 23: sttattus.dating.v1.ListMyBlocksResponse.blocks:type_name -> sttattus.dating.v1.UserBlock
-	42, // 24: sttattus.dating.v1.BlockUserResponse.block:type_name -> sttattus.dating.v1.UserBlock
-	49, // 25: sttattus.dating.v1.ListMyReportsResponse.reports:type_name -> sttattus.dating.v1.UserReport
-	49, // 26: sttattus.dating.v1.ReportUserResponse.report:type_name -> sttattus.dating.v1.UserReport
-	54, // 27: sttattus.dating.v1.GetPanicContactResponse.contact:type_name -> sttattus.dating.v1.PanicContact
-	54, // 28: sttattus.dating.v1.UpsertPanicContactResponse.contact:type_name -> sttattus.dating.v1.PanicContact
-	59, // 29: sttattus.dating.v1.GetPrivacyAxesResponse.axes:type_name -> sttattus.dating.v1.PrivacyAxes
-	59, // 30: sttattus.dating.v1.UpsertPrivacyAxesRequest.axes:type_name -> sttattus.dating.v1.PrivacyAxes
-	59, // 31: sttattus.dating.v1.UpsertPrivacyAxesResponse.axes:type_name -> sttattus.dating.v1.PrivacyAxes
-	64, // 32: sttattus.dating.v1.ListAtlasMapPointsResponse.points:type_name -> sttattus.dating.v1.AtlasMapPoint
-	67, // 33: sttattus.dating.v1.ListLiveRoomsResponse.rooms:type_name -> sttattus.dating.v1.AgoraRoom
-	67, // 34: sttattus.dating.v1.CreateAgoraRoomResponse.room:type_name -> sttattus.dating.v1.AgoraRoom
-	67, // 35: sttattus.dating.v1.EndAgoraRoomResponse.room:type_name -> sttattus.dating.v1.AgoraRoom
-	76, // 36: sttattus.dating.v1.AttachMediaToMessageResponse.attachment:type_name -> sttattus.dating.v1.MessageAttachment
-	76, // 37: sttattus.dating.v1.ListMessageAttachmentsResponse.attachments:type_name -> sttattus.dating.v1.MessageAttachment
-	81, // 38: sttattus.dating.v1.ListRestaurantsResponse.restaurants:type_name -> sttattus.dating.v1.Restaurant
-	84, // 39: sttattus.dating.v1.CreateReservationResponse.reservation:type_name -> sttattus.dating.v1.Reservation
-	84, // 40: sttattus.dating.v1.ListMyReservationsResponse.reservations:type_name -> sttattus.dating.v1.Reservation
-	84, // 41: sttattus.dating.v1.CancelReservationResponse.reservation:type_name -> sttattus.dating.v1.Reservation
-	91, // 42: sttattus.dating.v1.GetCompatibilityReportResponse.report:type_name -> sttattus.dating.v1.CompatibilityReport
-	7,  // 43: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
-	9,  // 44: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
-	11, // 45: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
-	13, // 46: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
-	15, // 47: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
-	17, // 48: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
-	19, // 49: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
-	22, // 50: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
-	24, // 51: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
-	27, // 52: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
-	29, // 53: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
-	31, // 54: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
-	34, // 55: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
-	36, // 56: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
-	38, // 57: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
-	40, // 58: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
-	43, // 59: sttattus.dating.v1.DatingService.ListMyBlocks:input_type -> sttattus.dating.v1.ListMyBlocksRequest
-	45, // 60: sttattus.dating.v1.DatingService.BlockUser:input_type -> sttattus.dating.v1.BlockUserRequest
-	47, // 61: sttattus.dating.v1.DatingService.UnblockUser:input_type -> sttattus.dating.v1.UnblockUserRequest
-	50, // 62: sttattus.dating.v1.DatingService.ListMyReports:input_type -> sttattus.dating.v1.ListMyReportsRequest
-	52, // 63: sttattus.dating.v1.DatingService.ReportUser:input_type -> sttattus.dating.v1.ReportUserRequest
-	55, // 64: sttattus.dating.v1.DatingService.GetPanicContact:input_type -> sttattus.dating.v1.GetPanicContactRequest
-	57, // 65: sttattus.dating.v1.DatingService.UpsertPanicContact:input_type -> sttattus.dating.v1.UpsertPanicContactRequest
-	60, // 66: sttattus.dating.v1.DatingService.GetPrivacyAxes:input_type -> sttattus.dating.v1.GetPrivacyAxesRequest
-	62, // 67: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:input_type -> sttattus.dating.v1.UpsertPrivacyAxesRequest
-	65, // 68: sttattus.dating.v1.DatingService.ListAtlasMapPoints:input_type -> sttattus.dating.v1.ListAtlasMapPointsRequest
-	68, // 69: sttattus.dating.v1.DatingService.ListLiveRooms:input_type -> sttattus.dating.v1.ListLiveRoomsRequest
-	70, // 70: sttattus.dating.v1.DatingService.CreateAgoraRoom:input_type -> sttattus.dating.v1.CreateAgoraRoomRequest
-	72, // 71: sttattus.dating.v1.DatingService.EndAgoraRoom:input_type -> sttattus.dating.v1.EndAgoraRoomRequest
-	74, // 72: sttattus.dating.v1.DatingService.MintLiveKitToken:input_type -> sttattus.dating.v1.MintLiveKitTokenRequest
-	77, // 73: sttattus.dating.v1.DatingService.AttachMediaToMessage:input_type -> sttattus.dating.v1.AttachMediaToMessageRequest
-	79, // 74: sttattus.dating.v1.DatingService.ListMessageAttachments:input_type -> sttattus.dating.v1.ListMessageAttachmentsRequest
-	82, // 75: sttattus.dating.v1.DatingService.ListRestaurants:input_type -> sttattus.dating.v1.ListRestaurantsRequest
-	85, // 76: sttattus.dating.v1.DatingService.CreateReservation:input_type -> sttattus.dating.v1.CreateReservationRequest
-	87, // 77: sttattus.dating.v1.DatingService.ListMyReservations:input_type -> sttattus.dating.v1.ListMyReservationsRequest
-	89, // 78: sttattus.dating.v1.DatingService.CancelReservation:input_type -> sttattus.dating.v1.CancelReservationRequest
-	92, // 79: sttattus.dating.v1.DatingService.GetCompatibilityReport:input_type -> sttattus.dating.v1.GetCompatibilityReportRequest
-	8,  // 80: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
-	10, // 81: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
-	12, // 82: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
-	14, // 83: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
-	16, // 84: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
-	18, // 85: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
-	20, // 86: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
-	23, // 87: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
-	25, // 88: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
-	28, // 89: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
-	30, // 90: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
-	32, // 91: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
-	35, // 92: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
-	37, // 93: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
-	39, // 94: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
-	41, // 95: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
-	44, // 96: sttattus.dating.v1.DatingService.ListMyBlocks:output_type -> sttattus.dating.v1.ListMyBlocksResponse
-	46, // 97: sttattus.dating.v1.DatingService.BlockUser:output_type -> sttattus.dating.v1.BlockUserResponse
-	48, // 98: sttattus.dating.v1.DatingService.UnblockUser:output_type -> sttattus.dating.v1.UnblockUserResponse
-	51, // 99: sttattus.dating.v1.DatingService.ListMyReports:output_type -> sttattus.dating.v1.ListMyReportsResponse
-	53, // 100: sttattus.dating.v1.DatingService.ReportUser:output_type -> sttattus.dating.v1.ReportUserResponse
-	56, // 101: sttattus.dating.v1.DatingService.GetPanicContact:output_type -> sttattus.dating.v1.GetPanicContactResponse
-	58, // 102: sttattus.dating.v1.DatingService.UpsertPanicContact:output_type -> sttattus.dating.v1.UpsertPanicContactResponse
-	61, // 103: sttattus.dating.v1.DatingService.GetPrivacyAxes:output_type -> sttattus.dating.v1.GetPrivacyAxesResponse
-	63, // 104: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:output_type -> sttattus.dating.v1.UpsertPrivacyAxesResponse
-	66, // 105: sttattus.dating.v1.DatingService.ListAtlasMapPoints:output_type -> sttattus.dating.v1.ListAtlasMapPointsResponse
-	69, // 106: sttattus.dating.v1.DatingService.ListLiveRooms:output_type -> sttattus.dating.v1.ListLiveRoomsResponse
-	71, // 107: sttattus.dating.v1.DatingService.CreateAgoraRoom:output_type -> sttattus.dating.v1.CreateAgoraRoomResponse
-	73, // 108: sttattus.dating.v1.DatingService.EndAgoraRoom:output_type -> sttattus.dating.v1.EndAgoraRoomResponse
-	75, // 109: sttattus.dating.v1.DatingService.MintLiveKitToken:output_type -> sttattus.dating.v1.MintLiveKitTokenResponse
-	78, // 110: sttattus.dating.v1.DatingService.AttachMediaToMessage:output_type -> sttattus.dating.v1.AttachMediaToMessageResponse
-	80, // 111: sttattus.dating.v1.DatingService.ListMessageAttachments:output_type -> sttattus.dating.v1.ListMessageAttachmentsResponse
-	83, // 112: sttattus.dating.v1.DatingService.ListRestaurants:output_type -> sttattus.dating.v1.ListRestaurantsResponse
-	86, // 113: sttattus.dating.v1.DatingService.CreateReservation:output_type -> sttattus.dating.v1.CreateReservationResponse
-	88, // 114: sttattus.dating.v1.DatingService.ListMyReservations:output_type -> sttattus.dating.v1.ListMyReservationsResponse
-	90, // 115: sttattus.dating.v1.DatingService.CancelReservation:output_type -> sttattus.dating.v1.CancelReservationResponse
-	93, // 116: sttattus.dating.v1.DatingService.GetCompatibilityReport:output_type -> sttattus.dating.v1.GetCompatibilityReportResponse
-	80, // [80:117] is the sub-list for method output_type
-	43, // [43:80] is the sub-list for method input_type
-	43, // [43:43] is the sub-list for extension type_name
-	43, // [43:43] is the sub-list for extension extendee
-	0,  // [0:43] is the sub-list for field type_name
+	1,   // 0: sttattus.dating.v1.DatingProfile.intent:type_name -> sttattus.dating.v1.DatingIntent
+	2,   // 1: sttattus.dating.v1.DatingProfile.position:type_name -> sttattus.dating.v1.Vec3
+	3,   // 2: sttattus.dating.v1.Candidate.profile:type_name -> sttattus.dating.v1.DatingProfile
+	3,   // 3: sttattus.dating.v1.Match.other:type_name -> sttattus.dating.v1.DatingProfile
+	3,   // 4: sttattus.dating.v1.GetProfileResponse.profile:type_name -> sttattus.dating.v1.DatingProfile
+	3,   // 5: sttattus.dating.v1.UpdateProfileRequest.profile:type_name -> sttattus.dating.v1.DatingProfile
+	3,   // 6: sttattus.dating.v1.UpdateProfileResponse.profile:type_name -> sttattus.dating.v1.DatingProfile
+	4,   // 7: sttattus.dating.v1.StreamDiscoveryResponse.candidate:type_name -> sttattus.dating.v1.Candidate
+	0,   // 8: sttattus.dating.v1.SwipeRequest.direction:type_name -> sttattus.dating.v1.SwipeDirection
+	5,   // 9: sttattus.dating.v1.SwipeResponse.match:type_name -> sttattus.dating.v1.Match
+	100, // 10: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	5,   // 11: sttattus.dating.v1.ListMatchesResponse.matches:type_name -> sttattus.dating.v1.Match
+	101, // 12: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	6,   // 13: sttattus.dating.v1.StreamMessagesResponse.message:type_name -> sttattus.dating.v1.Message
+	6,   // 14: sttattus.dating.v1.SendMessageResponse.message:type_name -> sttattus.dating.v1.Message
+	21,  // 15: sttattus.dating.v1.StartVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
+	21,  // 16: sttattus.dating.v1.GetLatestVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
+	26,  // 17: sttattus.dating.v1.ListTensionSeatsResponse.seats:type_name -> sttattus.dating.v1.TensionSeat
+	26,  // 18: sttattus.dating.v1.PlaceTensionBidResponse.seat:type_name -> sttattus.dating.v1.TensionSeat
+	26,  // 19: sttattus.dating.v1.ReleaseTensionSeatResponse.seat:type_name -> sttattus.dating.v1.TensionSeat
+	33,  // 20: sttattus.dating.v1.ListAuthorAkashicResponse.chapters:type_name -> sttattus.dating.v1.AkashicChapter
+	33,  // 21: sttattus.dating.v1.ListVisibleAkashicResponse.chapters:type_name -> sttattus.dating.v1.AkashicChapter
+	33,  // 22: sttattus.dating.v1.UpsertAkashicChapterResponse.chapter:type_name -> sttattus.dating.v1.AkashicChapter
+	42,  // 23: sttattus.dating.v1.ListMyBlocksResponse.blocks:type_name -> sttattus.dating.v1.UserBlock
+	42,  // 24: sttattus.dating.v1.BlockUserResponse.block:type_name -> sttattus.dating.v1.UserBlock
+	49,  // 25: sttattus.dating.v1.ListMyReportsResponse.reports:type_name -> sttattus.dating.v1.UserReport
+	49,  // 26: sttattus.dating.v1.ReportUserResponse.report:type_name -> sttattus.dating.v1.UserReport
+	54,  // 27: sttattus.dating.v1.GetPanicContactResponse.contact:type_name -> sttattus.dating.v1.PanicContact
+	54,  // 28: sttattus.dating.v1.UpsertPanicContactResponse.contact:type_name -> sttattus.dating.v1.PanicContact
+	59,  // 29: sttattus.dating.v1.GetPrivacyAxesResponse.axes:type_name -> sttattus.dating.v1.PrivacyAxes
+	59,  // 30: sttattus.dating.v1.UpsertPrivacyAxesRequest.axes:type_name -> sttattus.dating.v1.PrivacyAxes
+	59,  // 31: sttattus.dating.v1.UpsertPrivacyAxesResponse.axes:type_name -> sttattus.dating.v1.PrivacyAxes
+	1,   // 32: sttattus.dating.v1.AtlasMapPoint.intent:type_name -> sttattus.dating.v1.DatingIntent
+	64,  // 33: sttattus.dating.v1.ListAtlasMapPointsResponse.points:type_name -> sttattus.dating.v1.AtlasMapPoint
+	67,  // 34: sttattus.dating.v1.ListLiveRoomsResponse.rooms:type_name -> sttattus.dating.v1.AgoraRoom
+	67,  // 35: sttattus.dating.v1.CreateAgoraRoomResponse.room:type_name -> sttattus.dating.v1.AgoraRoom
+	67,  // 36: sttattus.dating.v1.EndAgoraRoomResponse.room:type_name -> sttattus.dating.v1.AgoraRoom
+	76,  // 37: sttattus.dating.v1.AttachMediaToMessageResponse.attachment:type_name -> sttattus.dating.v1.MessageAttachment
+	76,  // 38: sttattus.dating.v1.ListMessageAttachmentsResponse.attachments:type_name -> sttattus.dating.v1.MessageAttachment
+	81,  // 39: sttattus.dating.v1.ListRestaurantsResponse.restaurants:type_name -> sttattus.dating.v1.Restaurant
+	84,  // 40: sttattus.dating.v1.CreateReservationResponse.reservation:type_name -> sttattus.dating.v1.Reservation
+	84,  // 41: sttattus.dating.v1.ListMyReservationsResponse.reservations:type_name -> sttattus.dating.v1.Reservation
+	84,  // 42: sttattus.dating.v1.CancelReservationResponse.reservation:type_name -> sttattus.dating.v1.Reservation
+	91,  // 43: sttattus.dating.v1.CompatibilityMatrix.factors:type_name -> sttattus.dating.v1.CompatibilityFactor
+	92,  // 44: sttattus.dating.v1.GetCompatibilityMatrixResponse.matrix:type_name -> sttattus.dating.v1.CompatibilityMatrix
+	95,  // 45: sttattus.dating.v1.SendGiftResponse.gift:type_name -> sttattus.dating.v1.Gift
+	100, // 46: sttattus.dating.v1.ListGiftLedgerRequest.page:type_name -> sttattus.common.v1.PageRequest
+	95,  // 47: sttattus.dating.v1.ListGiftLedgerResponse.gifts:type_name -> sttattus.dating.v1.Gift
+	101, // 48: sttattus.dating.v1.ListGiftLedgerResponse.page:type_name -> sttattus.common.v1.PageResponse
+	7,   // 49: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
+	9,   // 50: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
+	11,  // 51: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
+	13,  // 52: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
+	15,  // 53: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
+	17,  // 54: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
+	19,  // 55: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
+	22,  // 56: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
+	24,  // 57: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
+	27,  // 58: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
+	29,  // 59: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
+	31,  // 60: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
+	34,  // 61: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
+	36,  // 62: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
+	38,  // 63: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
+	40,  // 64: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
+	43,  // 65: sttattus.dating.v1.DatingService.ListMyBlocks:input_type -> sttattus.dating.v1.ListMyBlocksRequest
+	45,  // 66: sttattus.dating.v1.DatingService.BlockUser:input_type -> sttattus.dating.v1.BlockUserRequest
+	47,  // 67: sttattus.dating.v1.DatingService.UnblockUser:input_type -> sttattus.dating.v1.UnblockUserRequest
+	50,  // 68: sttattus.dating.v1.DatingService.ListMyReports:input_type -> sttattus.dating.v1.ListMyReportsRequest
+	52,  // 69: sttattus.dating.v1.DatingService.ReportUser:input_type -> sttattus.dating.v1.ReportUserRequest
+	55,  // 70: sttattus.dating.v1.DatingService.GetPanicContact:input_type -> sttattus.dating.v1.GetPanicContactRequest
+	57,  // 71: sttattus.dating.v1.DatingService.UpsertPanicContact:input_type -> sttattus.dating.v1.UpsertPanicContactRequest
+	60,  // 72: sttattus.dating.v1.DatingService.GetPrivacyAxes:input_type -> sttattus.dating.v1.GetPrivacyAxesRequest
+	62,  // 73: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:input_type -> sttattus.dating.v1.UpsertPrivacyAxesRequest
+	65,  // 74: sttattus.dating.v1.DatingService.ListAtlasMapPoints:input_type -> sttattus.dating.v1.ListAtlasMapPointsRequest
+	68,  // 75: sttattus.dating.v1.DatingService.ListLiveRooms:input_type -> sttattus.dating.v1.ListLiveRoomsRequest
+	70,  // 76: sttattus.dating.v1.DatingService.CreateAgoraRoom:input_type -> sttattus.dating.v1.CreateAgoraRoomRequest
+	72,  // 77: sttattus.dating.v1.DatingService.EndAgoraRoom:input_type -> sttattus.dating.v1.EndAgoraRoomRequest
+	74,  // 78: sttattus.dating.v1.DatingService.MintLiveKitToken:input_type -> sttattus.dating.v1.MintLiveKitTokenRequest
+	77,  // 79: sttattus.dating.v1.DatingService.AttachMediaToMessage:input_type -> sttattus.dating.v1.AttachMediaToMessageRequest
+	79,  // 80: sttattus.dating.v1.DatingService.ListMessageAttachments:input_type -> sttattus.dating.v1.ListMessageAttachmentsRequest
+	82,  // 81: sttattus.dating.v1.DatingService.ListRestaurants:input_type -> sttattus.dating.v1.ListRestaurantsRequest
+	85,  // 82: sttattus.dating.v1.DatingService.CreateReservation:input_type -> sttattus.dating.v1.CreateReservationRequest
+	87,  // 83: sttattus.dating.v1.DatingService.ListMyReservations:input_type -> sttattus.dating.v1.ListMyReservationsRequest
+	89,  // 84: sttattus.dating.v1.DatingService.CancelReservation:input_type -> sttattus.dating.v1.CancelReservationRequest
+	93,  // 85: sttattus.dating.v1.DatingService.GetCompatibilityMatrix:input_type -> sttattus.dating.v1.GetCompatibilityMatrixRequest
+	96,  // 86: sttattus.dating.v1.DatingService.SendGift:input_type -> sttattus.dating.v1.SendGiftRequest
+	98,  // 87: sttattus.dating.v1.DatingService.ListGiftLedger:input_type -> sttattus.dating.v1.ListGiftLedgerRequest
+	8,   // 88: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
+	10,  // 89: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
+	12,  // 90: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
+	14,  // 91: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
+	16,  // 92: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
+	18,  // 93: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
+	20,  // 94: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
+	23,  // 95: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
+	25,  // 96: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
+	28,  // 97: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
+	30,  // 98: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
+	32,  // 99: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
+	35,  // 100: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
+	37,  // 101: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
+	39,  // 102: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
+	41,  // 103: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
+	44,  // 104: sttattus.dating.v1.DatingService.ListMyBlocks:output_type -> sttattus.dating.v1.ListMyBlocksResponse
+	46,  // 105: sttattus.dating.v1.DatingService.BlockUser:output_type -> sttattus.dating.v1.BlockUserResponse
+	48,  // 106: sttattus.dating.v1.DatingService.UnblockUser:output_type -> sttattus.dating.v1.UnblockUserResponse
+	51,  // 107: sttattus.dating.v1.DatingService.ListMyReports:output_type -> sttattus.dating.v1.ListMyReportsResponse
+	53,  // 108: sttattus.dating.v1.DatingService.ReportUser:output_type -> sttattus.dating.v1.ReportUserResponse
+	56,  // 109: sttattus.dating.v1.DatingService.GetPanicContact:output_type -> sttattus.dating.v1.GetPanicContactResponse
+	58,  // 110: sttattus.dating.v1.DatingService.UpsertPanicContact:output_type -> sttattus.dating.v1.UpsertPanicContactResponse
+	61,  // 111: sttattus.dating.v1.DatingService.GetPrivacyAxes:output_type -> sttattus.dating.v1.GetPrivacyAxesResponse
+	63,  // 112: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:output_type -> sttattus.dating.v1.UpsertPrivacyAxesResponse
+	66,  // 113: sttattus.dating.v1.DatingService.ListAtlasMapPoints:output_type -> sttattus.dating.v1.ListAtlasMapPointsResponse
+	69,  // 114: sttattus.dating.v1.DatingService.ListLiveRooms:output_type -> sttattus.dating.v1.ListLiveRoomsResponse
+	71,  // 115: sttattus.dating.v1.DatingService.CreateAgoraRoom:output_type -> sttattus.dating.v1.CreateAgoraRoomResponse
+	73,  // 116: sttattus.dating.v1.DatingService.EndAgoraRoom:output_type -> sttattus.dating.v1.EndAgoraRoomResponse
+	75,  // 117: sttattus.dating.v1.DatingService.MintLiveKitToken:output_type -> sttattus.dating.v1.MintLiveKitTokenResponse
+	78,  // 118: sttattus.dating.v1.DatingService.AttachMediaToMessage:output_type -> sttattus.dating.v1.AttachMediaToMessageResponse
+	80,  // 119: sttattus.dating.v1.DatingService.ListMessageAttachments:output_type -> sttattus.dating.v1.ListMessageAttachmentsResponse
+	83,  // 120: sttattus.dating.v1.DatingService.ListRestaurants:output_type -> sttattus.dating.v1.ListRestaurantsResponse
+	86,  // 121: sttattus.dating.v1.DatingService.CreateReservation:output_type -> sttattus.dating.v1.CreateReservationResponse
+	88,  // 122: sttattus.dating.v1.DatingService.ListMyReservations:output_type -> sttattus.dating.v1.ListMyReservationsResponse
+	90,  // 123: sttattus.dating.v1.DatingService.CancelReservation:output_type -> sttattus.dating.v1.CancelReservationResponse
+	94,  // 124: sttattus.dating.v1.DatingService.GetCompatibilityMatrix:output_type -> sttattus.dating.v1.GetCompatibilityMatrixResponse
+	97,  // 125: sttattus.dating.v1.DatingService.SendGift:output_type -> sttattus.dating.v1.SendGiftResponse
+	99,  // 126: sttattus.dating.v1.DatingService.ListGiftLedger:output_type -> sttattus.dating.v1.ListGiftLedgerResponse
+	88,  // [88:127] is the sub-list for method output_type
+	49,  // [49:88] is the sub-list for method input_type
+	49,  // [49:49] is the sub-list for extension type_name
+	49,  // [49:49] is the sub-list for extension extendee
+	0,   // [0:49] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dating_v1_dating_proto_init() }
@@ -5765,7 +6229,7 @@ func file_sttattus_dating_v1_dating_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_dating_v1_dating_proto_rawDesc), len(file_sttattus_dating_v1_dating_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   92,
+			NumMessages:   98,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

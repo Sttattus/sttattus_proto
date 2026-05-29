@@ -123,9 +123,6 @@ message SendMessageResponse {
 
 // === Identity verification (A9.2) ===
 
-// AtlasVerification mirrors one row of atlas_verifications.
-// status: pending | approved | rejected | expired.
-// highest_check: document | selfie | liveness; empty when failed.
 message AtlasVerification {
   string id = 1;
   string provider = 2; // persona | onfido | veriff | manual
@@ -135,7 +132,6 @@ message AtlasVerification {
   string reason = 6;
   int64 created_at = 7; // unix seconds
   int64 decided_at = 8; // unix seconds, 0 when undecided
-  // Provider's hosted-flow URL — only populated on StartVerification.
   string hosted_flow_url = 9;
 }
 
@@ -146,7 +142,6 @@ message StartVerificationResponse {
 
 message GetLatestVerificationRequest {}
 message GetLatestVerificationResponse {
-  // Empty (id == "") = lifter has not yet started a verification.
   AtlasVerification verification = 1;
 }
 
@@ -155,7 +150,6 @@ message GetLatestVerificationResponse {
 message TensionSeat {
   string id = 1;
   int32 slot = 2; // 0..4
-  // 'open' | 'held' | 'shattered' | 'accepted'
   string state = 3;
   string target_id = 4;
   string bid_message = 5;
@@ -166,7 +160,6 @@ message TensionSeat {
 
 message ListTensionSeatsRequest {}
 message ListTensionSeatsResponse {
-  // Always five seats, ordered by slot 0..4.
   repeated TensionSeat seats = 1;
 }
 
@@ -190,18 +183,14 @@ message ReleaseTensionSeatResponse {
 
 message AkashicChapter {
   string id = 1;
-  // One of the 12 canonical chapter keys.
   string chapter_key = 2;
   string title = 3;
   string body = 4;
-  // 'public' | 'seated' | 'private'
   string visibility = 5;
 }
 
 message ListAuthorAkashicRequest {}
 message ListAuthorAkashicResponse {
-  // All 12 chapters in canonical order; un-authored chapters come
-  // back as empty placeholders so the editor renders the full set.
   repeated AkashicChapter chapters = 1;
 }
 
@@ -209,8 +198,6 @@ message ListVisibleAkashicRequest {
   string target_user_id = 1;
 }
 message ListVisibleAkashicResponse {
-  // Server filters by visibility. Seat-gated chapters are included
-  // only when the caller holds a Tension Seat with the author.
   repeated AkashicChapter chapters = 1;
 }
 
@@ -288,7 +275,6 @@ message PanicContact {
 
 message GetPanicContactRequest {}
 message GetPanicContactResponse {
-  // Empty (phone == "") = no contact configured.
   PanicContact contact = 1;
 }
 
@@ -304,7 +290,6 @@ message UpsertPanicContactResponse {
 // === Privacy axes (A9.8) ===
 
 message PrivacyAxes {
-  // Per-axis visibility: 'matched' | 'seated' | 'private'.
   string vault_rank = 1;
   string apex_rank = 2;
   string forge_rank = 3;
@@ -336,16 +321,18 @@ message AtlasMapPoint {
   double x = 3;
   double y = 4;
   double z = 5;
+  double luminance = 6;
+  string tier = 7;
+  DatingIntent intent = 8;
+  int32 intellectual_pace = 9;
 }
 
 message ListAtlasMapPointsRequest {}
 message ListAtlasMapPointsResponse {
-  // Latest projection per user. The map widget treats the caller
-  // as camera origin and renders the rest in 3-space.
   repeated AtlasMapPoint points = 1;
 }
 
-// === Agora live audio rooms (A9P2.3) ===
+// === Agora V3 live rooms (A9P2.3 / A9P2.7 expansion) ===
 
 message AgoraRoom {
   string id = 1;
@@ -353,15 +340,15 @@ message AgoraRoom {
   string title = 3;
   string cluster = 4;
   int32 max_guests = 5;
-  // 'live' | 'ended' | 'scheduled'
   string status = 6;
   string livekit_room_name = 7;
   int64 started_at = 8;
   int64 ended_at = 9;
+  bool is_video_enabled = 10;
+  bool is_encrypted = 11;
 }
 
 message ListLiveRoomsRequest {
-  // Optional cluster filter ('' = all clusters).
   string cluster = 1;
 }
 message ListLiveRoomsResponse {
@@ -372,6 +359,7 @@ message CreateAgoraRoomRequest {
   string title = 1;
   string cluster = 2;
   int32 max_guests = 3;
+  bool enable_video = 4;
 }
 message CreateAgoraRoomResponse {
   AgoraRoom room = 1;
@@ -388,18 +376,12 @@ message MintLiveKitTokenRequest {
   string room_id = 1;
 }
 message MintLiveKitTokenResponse {
-  // Empty when LiveKit credentials are not configured server-side
-  // (FailedPrecondition is returned in that case so the client can
-  // surface "joining unavailable").
   string token = 1;
   string ws_url = 2;
 }
 
 // === Voice + video messages (A9P2.4) ===
 
-// MessageAttachment ties a message to a media_assets row. kind:
-// 'voice' | 'video'. The clip bytes go through MediaService's
-// presigned-URL flow; this row is the join.
 message MessageAttachment {
   string id = 1;
   string message_id = 2;
@@ -432,16 +414,14 @@ message Restaurant {
   string name = 2;
   string city = 3;
   string neighborhood = 4;
-  // 'opentable' | 'resy' | 'manual'
   string partner = 5;
   string partner_external_id = 6;
   bool is_atlas_curated = 7;
   string cuisine = 8;
-  int32 price_tier = 9; // 1..5
+  int32 price_tier = 9;
 }
 
 message ListRestaurantsRequest {
-  // Empty city = curated set (the Atlas Twelve).
   string city = 1;
 }
 message ListRestaurantsResponse {
@@ -451,10 +431,9 @@ message ListRestaurantsResponse {
 message Reservation {
   string id = 1;
   string restaurant_id = 2;
-  string match_id = 3; // empty when unscoped
+  string match_id = 3;
   int32 party_size = 4;
   int64 requested_at = 5;
-  // 'requested' | 'confirmed' | 'declined' | 'cancelled'
   string status = 6;
   string partner_reservation_id = 7;
   string note = 8;
@@ -464,7 +443,7 @@ message Reservation {
 
 message CreateReservationRequest {
   string restaurant_id = 1;
-  string match_id = 2; // empty when solo / unscoped
+  string match_id = 2;
   int32 party_size = 3;
   int64 requested_at = 4;
   string note = 5;
@@ -485,25 +464,59 @@ message CancelReservationResponse {
   Reservation reservation = 1;
 }
 
-// === Compatibility report (A9P2.6) ===
+// === Compatibility Matrix (A9P2.6 / A9P3 expansion) ===
 
-message CompatibilityReport {
+message CompatibilityFactor {
+  string label = 1;
+  double score = 2; // 0..1
+  string interpretation = 3;
+}
+
+message CompatibilityMatrix {
   string left_user_id = 1;
   string right_user_id = 2;
-  // -1..1 cosine similarity between the two embeddings.
-  double cosine = 3;
-  // Absolute |left - right| per axis, in atlas_engine's signal
-  // order. The dashboard renders which axes pull the pair apart.
-  repeated double per_axis_delta = 4;
+  double aggregate_score = 3;
+  repeated CompatibilityFactor factors = 4;
+  string dynamic_tension_status = 5;
 }
 
-message GetCompatibilityReportRequest {
+message GetCompatibilityMatrixRequest {
   string other_user_id = 1;
 }
-message GetCompatibilityReportResponse {
-  // Empty (left_user_id == "") = compatibility unavailable because
-  // either user has no embedding yet, or the engine is offline.
-  CompatibilityReport report = 1;
+message GetCompatibilityMatrixResponse {
+  CompatibilityMatrix matrix = 1;
+}
+
+// === Gift Ledger (A9P3 expansion) ===
+
+message Gift {
+  string id = 1;
+  string sender_id = 2;
+  string receiver_id = 3;
+  string asset_type = 4; // 'currency' | 'status_booster' | 'shards'
+  double value = 5;
+  string message = 6;
+  int64 sent_at = 7;
+  bool is_anonymous = 8;
+}
+
+message SendGiftRequest {
+  string receiver_id = 1;
+  string asset_type = 2;
+  double value = 3;
+  string message = 4;
+  bool anonymous = 5;
+}
+message SendGiftResponse {
+  Gift gift = 1;
+}
+
+message ListGiftLedgerRequest {
+  sttattus.common.v1.PageRequest page = 1;
+}
+message ListGiftLedgerResponse {
+  repeated Gift gifts = 1;
+  sttattus.common.v1.PageResponse page = 2;
 }
 
 service DatingService {
@@ -517,18 +530,15 @@ service DatingService {
   rpc StartVerification(StartVerificationRequest) returns (StartVerificationResponse);
   rpc GetLatestVerification(GetLatestVerificationRequest) returns (GetLatestVerificationResponse);
 
-  // A9.4 — server-authoritative Tension Seats.
   rpc ListTensionSeats(ListTensionSeatsRequest) returns (ListTensionSeatsResponse);
   rpc PlaceTensionBid(PlaceTensionBidRequest) returns (PlaceTensionBidResponse);
   rpc ReleaseTensionSeat(ReleaseTensionSeatRequest) returns (ReleaseTensionSeatResponse);
 
-  // A9.5 — Akashic Record v2.
   rpc ListAuthorAkashic(ListAuthorAkashicRequest) returns (ListAuthorAkashicResponse);
   rpc ListVisibleAkashic(ListVisibleAkashicRequest) returns (ListVisibleAkashicResponse);
   rpc UpsertAkashicChapter(UpsertAkashicChapterRequest) returns (UpsertAkashicChapterResponse);
   rpc DeleteAkashicChapter(DeleteAkashicChapterRequest) returns (DeleteAkashicChapterResponse);
 
-  // A9.6 — safety center: blocks + reports + panic contact.
   rpc ListMyBlocks(ListMyBlocksRequest) returns (ListMyBlocksResponse);
   rpc BlockUser(BlockUserRequest) returns (BlockUserResponse);
   rpc UnblockUser(UnblockUserRequest) returns (UnblockUserResponse);
@@ -537,30 +547,28 @@ service DatingService {
   rpc GetPanicContact(GetPanicContactRequest) returns (GetPanicContactResponse);
   rpc UpsertPanicContact(UpsertPanicContactRequest) returns (UpsertPanicContactResponse);
 
-  // A9.8 — per-axis visibility on the viewer surface.
   rpc GetPrivacyAxes(GetPrivacyAxesRequest) returns (GetPrivacyAxesResponse);
   rpc UpsertPrivacyAxes(UpsertPrivacyAxesRequest) returns (UpsertPrivacyAxesResponse);
 
-  // A9P2.2 — Atlas map v2: latest 3D projection per user.
   rpc ListAtlasMapPoints(ListAtlasMapPointsRequest) returns (ListAtlasMapPointsResponse);
 
-  // A9P2.3 — Agora live audio rooms.
   rpc ListLiveRooms(ListLiveRoomsRequest) returns (ListLiveRoomsResponse);
   rpc CreateAgoraRoom(CreateAgoraRoomRequest) returns (CreateAgoraRoomResponse);
   rpc EndAgoraRoom(EndAgoraRoomRequest) returns (EndAgoraRoomResponse);
   rpc MintLiveKitToken(MintLiveKitTokenRequest) returns (MintLiveKitTokenResponse);
 
-  // A9P2.4 — voice + video message attachments.
   rpc AttachMediaToMessage(AttachMediaToMessageRequest) returns (AttachMediaToMessageResponse);
   rpc ListMessageAttachments(ListMessageAttachmentsRequest) returns (ListMessageAttachmentsResponse);
 
-  // A9P2.5 — restaurant partner integration (directory +
-  // reservation ledger; partner API call is concierge-routed today).
   rpc ListRestaurants(ListRestaurantsRequest) returns (ListRestaurantsResponse);
   rpc CreateReservation(CreateReservationRequest) returns (CreateReservationResponse);
   rpc ListMyReservations(ListMyReservationsRequest) returns (ListMyReservationsResponse);
   rpc CancelReservation(CancelReservationRequest) returns (CancelReservationResponse);
 
-  // A9P2.6 — two-user compatibility report.
-  rpc GetCompatibilityReport(GetCompatibilityReportRequest) returns (GetCompatibilityReportResponse);
+  // A9P2.6 / A9P3 — deep compatibility matrix.
+  rpc GetCompatibilityMatrix(GetCompatibilityMatrixRequest) returns (GetCompatibilityMatrixResponse);
+
+  // A9P3 — Gift Ledger
+  rpc SendGift(SendGiftRequest) returns (SendGiftResponse);
+  rpc ListGiftLedger(ListGiftLedgerRequest) returns (ListGiftLedgerResponse);
 }

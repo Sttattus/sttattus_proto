@@ -19,10 +19,10 @@ const AppCode$json = {
   '1': 'AppCode',
   '2': [
     {'1': 'APP_CODE_UNSPECIFIED', '2': 0},
-    {'1': 'APP_CODE_WORKOUT', '2': 1},
-    {'1': 'APP_CODE_LANGUAGES', '2': 2},
-    {'1': 'APP_CODE_TRAVEL', '2': 3},
-    {'1': 'APP_CODE_DATING', '2': 4},
+    {'1': 'APP_CODE_FORGE', '2': 1},
+    {'1': 'APP_CODE_LEXICON', '2': 2},
+    {'1': 'APP_CODE_NOMAD', '2': 3},
+    {'1': 'APP_CODE_ATLAS', '2': 4},
     {'1': 'APP_CODE_EMPIRE', '2': 5},
     {'1': 'APP_CODE_ONYX', '2': 6},
     {'1': 'APP_CODE_APEX', '2': 7},
@@ -36,12 +36,29 @@ const AppCode$json = {
 
 /// Descriptor for `AppCode`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List appCodeDescriptor = $convert.base64Decode(
-    'CgdBcHBDb2RlEhgKFEFQUF9DT0RFX1VOU1BFQ0lGSUVEEAASFAoQQVBQX0NPREVfV09SS09VVB'
-    'ABEhYKEkFQUF9DT0RFX0xBTkdVQUdFUxACEhMKD0FQUF9DT0RFX1RSQVZFTBADEhMKD0FQUF9D'
-    'T0RFX0RBVElORxAEEhMKD0FQUF9DT0RFX0VNUElSRRAFEhEKDUFQUF9DT0RFX09OWVgQBhIRCg'
-    '1BUFBfQ09ERV9BUEVYEAcSEgoOQVBQX0NPREVfVkFVTFQQCBIVChFBUFBfQ09ERV9ET01JTklP'
-    'ThAJEhMKD0FQUF9DT0RFX09SQUNMRRAKEhMKD0FQUF9DT0RFX0xFR0FDWRALEhMKD0FQUF9DT0'
-    'RFX1pFTklUSBAM');
+    'CgdBcHBDb2RlEhgKFEFQUF9DT0RFX1VOU1BFQ0lGSUVEEAASEgoOQVBQX0NPREVfRk9SR0UQAR'
+    'IUChBBUFBfQ09ERV9MRVhJQ09OEAISEgoOQVBQX0NPREVfTk9NQUQQAxISCg5BUFBfQ09ERV9B'
+    'VExBUxAEEhMKD0FQUF9DT0RFX0VNUElSRRAFEhEKDUFQUF9DT0RFX09OWVgQBhIRCg1BUFBfQ0'
+    '9ERV9BUEVYEAcSEgoOQVBQX0NPREVfVkFVTFQQCBIVChFBUFBfQ09ERV9ET01JTklPThAJEhMK'
+    'D0FQUF9DT0RFX09SQUNMRRAKEhMKD0FQUF9DT0RFX0xFR0FDWRALEhMKD0FQUF9DT0RFX1pFTk'
+    'lUSBAM');
+
+@$core.Deprecated('Use authProviderDescriptor instead')
+const AuthProvider$json = {
+  '1': 'AuthProvider',
+  '2': [
+    {'1': 'AUTH_PROVIDER_UNSPECIFIED', '2': 0},
+    {'1': 'AUTH_PROVIDER_GOOGLE', '2': 1},
+    {'1': 'AUTH_PROVIDER_FACEBOOK', '2': 2},
+    {'1': 'AUTH_PROVIDER_GITHUB', '2': 3},
+  ],
+};
+
+/// Descriptor for `AuthProvider`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List authProviderDescriptor = $convert.base64Decode(
+    'CgxBdXRoUHJvdmlkZXISHQoZQVVUSF9QUk9WSURFUl9VTlNQRUNJRklFRBAAEhgKFEFVVEhfUF'
+    'JPVklERVJfR09PR0xFEAESGgoWQVVUSF9QUk9WSURFUl9GQUNFQk9PSxACEhgKFEFVVEhfUFJP'
+    'VklERVJfR0lUSFVCEAM=');
 
 @$core.Deprecated('Use tokenPairDescriptor instead')
 const TokenPair$json = {
@@ -70,6 +87,9 @@ const ProfileHint$json = {
     {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
     {'1': 'avatar_url', '3': 4, '4': 1, '5': 9, '10': 'avatarUrl'},
     {'1': 'linked_apps', '3': 5, '4': 3, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'linkedApps'},
+    {'1': 'has_password', '3': 6, '4': 1, '5': 8, '10': 'hasPassword'},
+    {'1': 'linked_providers', '3': 7, '4': 3, '5': 14, '6': '.sttattus.auth.v1.AuthProvider', '10': 'linkedProviders'},
+    {'1': 'locale', '3': 8, '4': 1, '5': 9, '10': 'locale'},
   ],
 };
 
@@ -78,7 +98,9 @@ final $typed_data.Uint8List profileHintDescriptor = $convert.base64Decode(
     'CgtQcm9maWxlSGludBIXCgd1c2VyX2lkGAEgASgJUgZ1c2VySWQSFAoFZW1haWwYAiABKAlSBW'
     'VtYWlsEhIKBG5hbWUYAyABKAlSBG5hbWUSHQoKYXZhdGFyX3VybBgEIAEoCVIJYXZhdGFyVXJs'
     'EjoKC2xpbmtlZF9hcHBzGAUgAygOMhkuc3R0YXR0dXMuYXV0aC52MS5BcHBDb2RlUgpsaW5rZW'
-    'RBcHBz');
+    'RBcHBzEiEKDGhhc19wYXNzd29yZBgGIAEoCFILaGFzUGFzc3dvcmQSSQoQbGlua2VkX3Byb3Zp'
+    'ZGVycxgHIAMoDjIeLnN0dGF0dHVzLmF1dGgudjEuQXV0aFByb3ZpZGVyUg9saW5rZWRQcm92aW'
+    'RlcnMSFgoGbG9jYWxlGAggASgJUgZsb2NhbGU=');
 
 @$core.Deprecated('Use registerRequestDescriptor instead')
 const RegisterRequest$json = {
@@ -103,16 +125,18 @@ const RegisterResponse$json = {
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
     {'1': 'tokens', '3': 2, '4': 1, '5': 11, '6': '.sttattus.auth.v1.TokenPair', '10': 'tokens'},
-    {'1': 'existing_profile', '3': 3, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'existingProfile'},
+    {'1': 'profile', '3': 3, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'profile'},
+    {'1': 'existing_profile', '3': 4, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'existingProfile'},
   ],
 };
 
 /// Descriptor for `RegisterResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List registerResponseDescriptor = $convert.base64Decode(
     'ChBSZWdpc3RlclJlc3BvbnNlEhcKB3VzZXJfaWQYASABKAlSBnVzZXJJZBIzCgZ0b2tlbnMYAi'
-    'ABKAsyGy5zdHRhdHR1cy5hdXRoLnYxLlRva2VuUGFpclIGdG9rZW5zEkgKEGV4aXN0aW5nX3By'
-    'b2ZpbGUYAyABKAsyHS5zdHRhdHR1cy5hdXRoLnYxLlByb2ZpbGVIaW50Ug9leGlzdGluZ1Byb2'
-    'ZpbGU=');
+    'ABKAsyGy5zdHRhdHR1cy5hdXRoLnYxLlRva2VuUGFpclIGdG9rZW5zEjcKB3Byb2ZpbGUYAyAB'
+    'KAsyHS5zdHRhdHR1cy5hdXRoLnYxLlByb2ZpbGVIaW50Ugdwcm9maWxlEkgKEGV4aXN0aW5nX3'
+    'Byb2ZpbGUYBCABKAsyHS5zdHRhdHR1cy5hdXRoLnYxLlByb2ZpbGVIaW50Ug9leGlzdGluZ1By'
+    'b2ZpbGU=');
 
 @$core.Deprecated('Use loginRequestDescriptor instead')
 const LoginRequest$json = {
@@ -136,13 +160,50 @@ const LoginResponse$json = {
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
     {'1': 'tokens', '3': 2, '4': 1, '5': 11, '6': '.sttattus.auth.v1.TokenPair', '10': 'tokens'},
+    {'1': 'profile', '3': 3, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'profile'},
   ],
 };
 
 /// Descriptor for `LoginResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List loginResponseDescriptor = $convert.base64Decode(
     'Cg1Mb2dpblJlc3BvbnNlEhcKB3VzZXJfaWQYASABKAlSBnVzZXJJZBIzCgZ0b2tlbnMYAiABKA'
-    'syGy5zdHRhdHR1cy5hdXRoLnYxLlRva2VuUGFpclIGdG9rZW5z');
+    'syGy5zdHRhdHR1cy5hdXRoLnYxLlRva2VuUGFpclIGdG9rZW5zEjcKB3Byb2ZpbGUYAyABKAsy'
+    'HS5zdHRhdHR1cy5hdXRoLnYxLlByb2ZpbGVIaW50Ugdwcm9maWxl');
+
+@$core.Deprecated('Use oAuthLoginRequestDescriptor instead')
+const OAuthLoginRequest$json = {
+  '1': 'OAuthLoginRequest',
+  '2': [
+    {'1': 'provider', '3': 1, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AuthProvider', '10': 'provider'},
+    {'1': 'id_token', '3': 2, '4': 1, '5': 9, '10': 'idToken'},
+    {'1': 'app_code', '3': 3, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'appCode'},
+  ],
+};
+
+/// Descriptor for `OAuthLoginRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List oAuthLoginRequestDescriptor = $convert.base64Decode(
+    'ChFPQXV0aExvZ2luUmVxdWVzdBI6Cghwcm92aWRlchgBIAEoDjIeLnN0dGF0dHVzLmF1dGgudj'
+    'EuQXV0aFByb3ZpZGVyUghwcm92aWRlchIZCghpZF90b2tlbhgCIAEoCVIHaWRUb2tlbhI0Cghh'
+    'cHBfY29kZRgDIAEoDjIZLnN0dGF0dHVzLmF1dGgudjEuQXBwQ29kZVIHYXBwQ29kZQ==');
+
+@$core.Deprecated('Use oAuthLoginResponseDescriptor instead')
+const OAuthLoginResponse$json = {
+  '1': 'OAuthLoginResponse',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'tokens', '3': 2, '4': 1, '5': 11, '6': '.sttattus.auth.v1.TokenPair', '10': 'tokens'},
+    {'1': 'profile', '3': 3, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'profile'},
+    {'1': 'existing_profile', '3': 4, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'existingProfile'},
+  ],
+};
+
+/// Descriptor for `OAuthLoginResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List oAuthLoginResponseDescriptor = $convert.base64Decode(
+    'ChJPQXV0aExvZ2luUmVzcG9uc2USFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklkEjMKBnRva2Vucx'
+    'gCIAEoCzIbLnN0dGF0dHVzLmF1dGgudjEuVG9rZW5QYWlyUgZ0b2tlbnMSNwoHcHJvZmlsZRgD'
+    'IAEoCzIdLnN0dGF0dHVzLmF1dGgudjEuUHJvZmlsZUhpbnRSB3Byb2ZpbGUSSAoQZXhpc3Rpbm'
+    'dfcHJvZmlsZRgEIAEoCzIdLnN0dGF0dHVzLmF1dGgudjEuUHJvZmlsZUhpbnRSD2V4aXN0aW5n'
+    'UHJvZmlsZQ==');
 
 @$core.Deprecated('Use checkEmailRequestDescriptor instead')
 const CheckEmailRequest$json = {
@@ -192,13 +253,105 @@ const LinkAppResponse$json = {
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
     {'1': 'tokens', '3': 2, '4': 1, '5': 11, '6': '.sttattus.auth.v1.TokenPair', '10': 'tokens'},
+    {'1': 'profile', '3': 3, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'profile'},
   ],
 };
 
 /// Descriptor for `LinkAppResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List linkAppResponseDescriptor = $convert.base64Decode(
     'Cg9MaW5rQXBwUmVzcG9uc2USFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklkEjMKBnRva2VucxgCIA'
-    'EoCzIbLnN0dGF0dHVzLmF1dGgudjEuVG9rZW5QYWlyUgZ0b2tlbnM=');
+    'EoCzIbLnN0dGF0dHVzLmF1dGgudjEuVG9rZW5QYWlyUgZ0b2tlbnMSNwoHcHJvZmlsZRgDIAEo'
+    'CzIdLnN0dGF0dHVzLmF1dGgudjEuUHJvZmlsZUhpbnRSB3Byb2ZpbGU=');
+
+@$core.Deprecated('Use linkProviderRequestDescriptor instead')
+const LinkProviderRequest$json = {
+  '1': 'LinkProviderRequest',
+  '2': [
+    {'1': 'provider', '3': 1, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AuthProvider', '10': 'provider'},
+    {'1': 'id_token', '3': 2, '4': 1, '5': 9, '10': 'idToken'},
+  ],
+};
+
+/// Descriptor for `LinkProviderRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List linkProviderRequestDescriptor = $convert.base64Decode(
+    'ChNMaW5rUHJvdmlkZXJSZXF1ZXN0EjoKCHByb3ZpZGVyGAEgASgOMh4uc3R0YXR0dXMuYXV0aC'
+    '52MS5BdXRoUHJvdmlkZXJSCHByb3ZpZGVyEhkKCGlkX3Rva2VuGAIgASgJUgdpZFRva2Vu');
+
+@$core.Deprecated('Use linkProviderResponseDescriptor instead')
+const LinkProviderResponse$json = {
+  '1': 'LinkProviderResponse',
+};
+
+/// Descriptor for `LinkProviderResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List linkProviderResponseDescriptor = $convert.base64Decode(
+    'ChRMaW5rUHJvdmlkZXJSZXNwb25zZQ==');
+
+@$core.Deprecated('Use setPasswordRequestDescriptor instead')
+const SetPasswordRequest$json = {
+  '1': 'SetPasswordRequest',
+  '2': [
+    {'1': 'new_password', '3': 1, '4': 1, '5': 9, '10': 'newPassword'},
+  ],
+};
+
+/// Descriptor for `SetPasswordRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setPasswordRequestDescriptor = $convert.base64Decode(
+    'ChJTZXRQYXNzd29yZFJlcXVlc3QSIQoMbmV3X3Bhc3N3b3JkGAEgASgJUgtuZXdQYXNzd29yZA'
+    '==');
+
+@$core.Deprecated('Use setPasswordResponseDescriptor instead')
+const SetPasswordResponse$json = {
+  '1': 'SetPasswordResponse',
+};
+
+/// Descriptor for `SetPasswordResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setPasswordResponseDescriptor = $convert.base64Decode(
+    'ChNTZXRQYXNzd29yZFJlc3BvbnNl');
+
+@$core.Deprecated('Use forgotPasswordRequestDescriptor instead')
+const ForgotPasswordRequest$json = {
+  '1': 'ForgotPasswordRequest',
+  '2': [
+    {'1': 'email_or_handle', '3': 1, '4': 1, '5': 9, '10': 'emailOrHandle'},
+  ],
+};
+
+/// Descriptor for `ForgotPasswordRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List forgotPasswordRequestDescriptor = $convert.base64Decode(
+    'ChVGb3Jnb3RQYXNzd29yZFJlcXVlc3QSJgoPZW1haWxfb3JfaGFuZGxlGAEgASgJUg1lbWFpbE'
+    '9ySGFuZGxl');
+
+@$core.Deprecated('Use forgotPasswordResponseDescriptor instead')
+const ForgotPasswordResponse$json = {
+  '1': 'ForgotPasswordResponse',
+};
+
+/// Descriptor for `ForgotPasswordResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List forgotPasswordResponseDescriptor = $convert.base64Decode(
+    'ChZGb3Jnb3RQYXNzd29yZFJlc3BvbnNl');
+
+@$core.Deprecated('Use resetPasswordRequestDescriptor instead')
+const ResetPasswordRequest$json = {
+  '1': 'ResetPasswordRequest',
+  '2': [
+    {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
+    {'1': 'new_password', '3': 2, '4': 1, '5': 9, '10': 'newPassword'},
+  ],
+};
+
+/// Descriptor for `ResetPasswordRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resetPasswordRequestDescriptor = $convert.base64Decode(
+    'ChRSZXNldFBhc3N3b3JkUmVxdWVzdBIUCgV0b2tlbhgBIAEoCVIFdG9rZW4SIQoMbmV3X3Bhc3'
+    'N3b3JkGAIgASgJUgtuZXdQYXNzd29yZA==');
+
+@$core.Deprecated('Use resetPasswordResponseDescriptor instead')
+const ResetPasswordResponse$json = {
+  '1': 'ResetPasswordResponse',
+};
+
+/// Descriptor for `ResetPasswordResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resetPasswordResponseDescriptor = $convert.base64Decode(
+    'ChVSZXNldFBhc3N3b3JkUmVzcG9uc2U=');
 
 @$core.Deprecated('Use refreshRequestDescriptor instead')
 const RefreshRequest$json = {

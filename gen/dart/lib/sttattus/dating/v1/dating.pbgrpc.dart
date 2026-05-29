@@ -68,7 +68,6 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getLatestVerification, request, options: options);
   }
 
-  /// A9.4 — server-authoritative Tension Seats.
   $grpc.ResponseFuture<$0.ListTensionSeatsResponse> listTensionSeats($0.ListTensionSeatsRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listTensionSeats, request, options: options);
   }
@@ -81,7 +80,6 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$releaseTensionSeat, request, options: options);
   }
 
-  /// A9.5 — Akashic Record v2.
   $grpc.ResponseFuture<$0.ListAuthorAkashicResponse> listAuthorAkashic($0.ListAuthorAkashicRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listAuthorAkashic, request, options: options);
   }
@@ -98,7 +96,6 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteAkashicChapter, request, options: options);
   }
 
-  /// A9.6 — safety center: blocks + reports + panic contact.
   $grpc.ResponseFuture<$0.ListMyBlocksResponse> listMyBlocks($0.ListMyBlocksRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listMyBlocks, request, options: options);
   }
@@ -127,7 +124,6 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$upsertPanicContact, request, options: options);
   }
 
-  /// A9.8 — per-axis visibility on the viewer surface.
   $grpc.ResponseFuture<$0.GetPrivacyAxesResponse> getPrivacyAxes($0.GetPrivacyAxesRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$getPrivacyAxes, request, options: options);
   }
@@ -136,12 +132,10 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$upsertPrivacyAxes, request, options: options);
   }
 
-  /// A9P2.2 — Atlas map v2: latest 3D projection per user.
   $grpc.ResponseFuture<$0.ListAtlasMapPointsResponse> listAtlasMapPoints($0.ListAtlasMapPointsRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listAtlasMapPoints, request, options: options);
   }
 
-  /// A9P2.3 — Agora live audio rooms.
   $grpc.ResponseFuture<$0.ListLiveRoomsResponse> listLiveRooms($0.ListLiveRoomsRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listLiveRooms, request, options: options);
   }
@@ -158,7 +152,6 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$mintLiveKitToken, request, options: options);
   }
 
-  /// A9P2.4 — voice + video message attachments.
   $grpc.ResponseFuture<$0.AttachMediaToMessageResponse> attachMediaToMessage($0.AttachMediaToMessageRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$attachMediaToMessage, request, options: options);
   }
@@ -167,8 +160,6 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listMessageAttachments, request, options: options);
   }
 
-  /// A9P2.5 — restaurant partner integration (directory +
-  /// reservation ledger; partner API call is concierge-routed today).
   $grpc.ResponseFuture<$0.ListRestaurantsResponse> listRestaurants($0.ListRestaurantsRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listRestaurants, request, options: options);
   }
@@ -185,9 +176,18 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$cancelReservation, request, options: options);
   }
 
-  /// A9P2.6 — two-user compatibility report.
-  $grpc.ResponseFuture<$0.GetCompatibilityReportResponse> getCompatibilityReport($0.GetCompatibilityReportRequest request, {$grpc.CallOptions? options,}) {
-    return $createUnaryCall(_$getCompatibilityReport, request, options: options);
+  /// A9P2.6 / A9P3 — deep compatibility matrix.
+  $grpc.ResponseFuture<$0.GetCompatibilityMatrixResponse> getCompatibilityMatrix($0.GetCompatibilityMatrixRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getCompatibilityMatrix, request, options: options);
+  }
+
+  /// A9P3 — Gift Ledger
+  $grpc.ResponseFuture<$0.SendGiftResponse> sendGift($0.SendGiftRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$sendGift, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListGiftLedgerResponse> listGiftLedger($0.ListGiftLedgerRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listGiftLedger, request, options: options);
   }
 
     // method descriptors
@@ -336,10 +336,18 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/CancelReservation',
       ($0.CancelReservationRequest value) => value.writeToBuffer(),
       $0.CancelReservationResponse.fromBuffer);
-  static final _$getCompatibilityReport = $grpc.ClientMethod<$0.GetCompatibilityReportRequest, $0.GetCompatibilityReportResponse>(
-      '/sttattus.dating.v1.DatingService/GetCompatibilityReport',
-      ($0.GetCompatibilityReportRequest value) => value.writeToBuffer(),
-      $0.GetCompatibilityReportResponse.fromBuffer);
+  static final _$getCompatibilityMatrix = $grpc.ClientMethod<$0.GetCompatibilityMatrixRequest, $0.GetCompatibilityMatrixResponse>(
+      '/sttattus.dating.v1.DatingService/GetCompatibilityMatrix',
+      ($0.GetCompatibilityMatrixRequest value) => value.writeToBuffer(),
+      $0.GetCompatibilityMatrixResponse.fromBuffer);
+  static final _$sendGift = $grpc.ClientMethod<$0.SendGiftRequest, $0.SendGiftResponse>(
+      '/sttattus.dating.v1.DatingService/SendGift',
+      ($0.SendGiftRequest value) => value.writeToBuffer(),
+      $0.SendGiftResponse.fromBuffer);
+  static final _$listGiftLedger = $grpc.ClientMethod<$0.ListGiftLedgerRequest, $0.ListGiftLedgerResponse>(
+      '/sttattus.dating.v1.DatingService/ListGiftLedger',
+      ($0.ListGiftLedgerRequest value) => value.writeToBuffer(),
+      $0.ListGiftLedgerResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dating.v1.DatingService')
@@ -599,13 +607,27 @@ abstract class DatingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.CancelReservationRequest.fromBuffer(value),
         ($0.CancelReservationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetCompatibilityReportRequest, $0.GetCompatibilityReportResponse>(
-        'GetCompatibilityReport',
-        getCompatibilityReport_Pre,
+    $addMethod($grpc.ServiceMethod<$0.GetCompatibilityMatrixRequest, $0.GetCompatibilityMatrixResponse>(
+        'GetCompatibilityMatrix',
+        getCompatibilityMatrix_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetCompatibilityReportRequest.fromBuffer(value),
-        ($0.GetCompatibilityReportResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $0.GetCompatibilityMatrixRequest.fromBuffer(value),
+        ($0.GetCompatibilityMatrixResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SendGiftRequest, $0.SendGiftResponse>(
+        'SendGift',
+        sendGift_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SendGiftRequest.fromBuffer(value),
+        ($0.SendGiftResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListGiftLedgerRequest, $0.ListGiftLedgerResponse>(
+        'ListGiftLedger',
+        listGiftLedger_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListGiftLedgerRequest.fromBuffer(value),
+        ($0.ListGiftLedgerResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProfileRequest> $request) async {
@@ -824,10 +846,22 @@ abstract class DatingServiceBase extends $grpc.Service {
 
   $async.Future<$0.CancelReservationResponse> cancelReservation($grpc.ServiceCall call, $0.CancelReservationRequest request);
 
-  $async.Future<$0.GetCompatibilityReportResponse> getCompatibilityReport_Pre($grpc.ServiceCall $call, $async.Future<$0.GetCompatibilityReportRequest> $request) async {
-    return getCompatibilityReport($call, await $request);
+  $async.Future<$0.GetCompatibilityMatrixResponse> getCompatibilityMatrix_Pre($grpc.ServiceCall $call, $async.Future<$0.GetCompatibilityMatrixRequest> $request) async {
+    return getCompatibilityMatrix($call, await $request);
   }
 
-  $async.Future<$0.GetCompatibilityReportResponse> getCompatibilityReport($grpc.ServiceCall call, $0.GetCompatibilityReportRequest request);
+  $async.Future<$0.GetCompatibilityMatrixResponse> getCompatibilityMatrix($grpc.ServiceCall call, $0.GetCompatibilityMatrixRequest request);
+
+  $async.Future<$0.SendGiftResponse> sendGift_Pre($grpc.ServiceCall $call, $async.Future<$0.SendGiftRequest> $request) async {
+    return sendGift($call, await $request);
+  }
+
+  $async.Future<$0.SendGiftResponse> sendGift($grpc.ServiceCall call, $0.SendGiftRequest request);
+
+  $async.Future<$0.ListGiftLedgerResponse> listGiftLedger_Pre($grpc.ServiceCall $call, $async.Future<$0.ListGiftLedgerRequest> $request) async {
+    return listGiftLedger($call, await $request);
+  }
+
+  $async.Future<$0.ListGiftLedgerResponse> listGiftLedger($grpc.ServiceCall call, $0.ListGiftLedgerRequest request);
 
 }

@@ -1280,9 +1280,6 @@ class SendMessageResponse extends $pb.GeneratedMessage {
   Message ensureMessage() => $_ensure(0);
 }
 
-/// AtlasVerification mirrors one row of atlas_verifications.
-/// status: pending | approved | rejected | expired.
-/// highest_check: document | selfie | liveness; empty when failed.
 class AtlasVerification extends $pb.GeneratedMessage {
   factory AtlasVerification({
     $core.String? id,
@@ -1415,7 +1412,6 @@ class AtlasVerification extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearDecidedAt() => $_clearField(8);
 
-  /// Provider's hosted-flow URL — only populated on StartVerification.
   @$pb.TagNumber(9)
   $core.String get hostedFlowUrl => $_getSZ(8);
   @$pb.TagNumber(9)
@@ -1570,7 +1566,6 @@ class GetLatestVerificationResponse extends $pb.GeneratedMessage {
   static GetLatestVerificationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestVerificationResponse>(create);
   static GetLatestVerificationResponse? _defaultInstance;
 
-  /// Empty (id == "") = lifter has not yet started a verification.
   @$pb.TagNumber(1)
   AtlasVerification get verification => $_getN(0);
   @$pb.TagNumber(1)
@@ -1658,7 +1653,6 @@ class TensionSeat extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSlot() => $_clearField(2);
 
-  /// 'open' | 'held' | 'shattered' | 'accepted'
   @$pb.TagNumber(3)
   $core.String get state => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -1780,7 +1774,6 @@ class ListTensionSeatsResponse extends $pb.GeneratedMessage {
   static ListTensionSeatsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTensionSeatsResponse>(create);
   static ListTensionSeatsResponse? _defaultInstance;
 
-  /// Always five seats, ordered by slot 0..4.
   @$pb.TagNumber(1)
   $pb.PbList<TensionSeat> get seats => $_getList(0);
 }
@@ -2054,7 +2047,6 @@ class AkashicChapter extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => $_clearField(1);
 
-  /// One of the 12 canonical chapter keys.
   @$pb.TagNumber(2)
   $core.String get chapterKey => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -2082,7 +2074,6 @@ class AkashicChapter extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearBody() => $_clearField(4);
 
-  /// 'public' | 'seated' | 'private'
   @$pb.TagNumber(5)
   $core.String get visibility => $_getSZ(4);
   @$pb.TagNumber(5)
@@ -2159,8 +2150,6 @@ class ListAuthorAkashicResponse extends $pb.GeneratedMessage {
   static ListAuthorAkashicResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAuthorAkashicResponse>(create);
   static ListAuthorAkashicResponse? _defaultInstance;
 
-  /// All 12 chapters in canonical order; un-authored chapters come
-  /// back as empty placeholders so the editor renders the full set.
   @$pb.TagNumber(1)
   $pb.PbList<AkashicChapter> get chapters => $_getList(0);
 }
@@ -2247,8 +2236,6 @@ class ListVisibleAkashicResponse extends $pb.GeneratedMessage {
   static ListVisibleAkashicResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListVisibleAkashicResponse>(create);
   static ListVisibleAkashicResponse? _defaultInstance;
 
-  /// Server filters by visibility. Seat-gated chapters are included
-  /// only when the caller holds a Tension Seat with the author.
   @$pb.TagNumber(1)
   $pb.PbList<AkashicChapter> get chapters => $_getList(0);
 }
@@ -3235,7 +3222,6 @@ class GetPanicContactResponse extends $pb.GeneratedMessage {
   static GetPanicContactResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPanicContactResponse>(create);
   static GetPanicContactResponse? _defaultInstance;
 
-  /// Empty (phone == "") = no contact configured.
   @$pb.TagNumber(1)
   PanicContact get contact => $_getN(0);
   @$pb.TagNumber(1)
@@ -3426,7 +3412,6 @@ class PrivacyAxes extends $pb.GeneratedMessage {
   static PrivacyAxes getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PrivacyAxes>(create);
   static PrivacyAxes? _defaultInstance;
 
-  /// Per-axis visibility: 'matched' | 'seated' | 'private'.
   @$pb.TagNumber(1)
   $core.String get vaultRank => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -3690,6 +3675,10 @@ class AtlasMapPoint extends $pb.GeneratedMessage {
     $core.double? x,
     $core.double? y,
     $core.double? z,
+    $core.double? luminance,
+    $core.String? tier,
+    DatingIntent? intent,
+    $core.int? intellectualPace,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
@@ -3697,6 +3686,10 @@ class AtlasMapPoint extends $pb.GeneratedMessage {
     if (x != null) result.x = x;
     if (y != null) result.y = y;
     if (z != null) result.z = z;
+    if (luminance != null) result.luminance = luminance;
+    if (tier != null) result.tier = tier;
+    if (intent != null) result.intent = intent;
+    if (intellectualPace != null) result.intellectualPace = intellectualPace;
     return result;
   }
 
@@ -3711,6 +3704,10 @@ class AtlasMapPoint extends $pb.GeneratedMessage {
     ..a<$core.double>(3, _omitFieldNames ? '' : 'x', $pb.PbFieldType.OD)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'y', $pb.PbFieldType.OD)
     ..a<$core.double>(5, _omitFieldNames ? '' : 'z', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'luminance', $pb.PbFieldType.OD)
+    ..aOS(7, _omitFieldNames ? '' : 'tier')
+    ..e<DatingIntent>(8, _omitFieldNames ? '' : 'intent', $pb.PbFieldType.OE, defaultOrMaker: DatingIntent.DATING_INTENT_UNSPECIFIED, valueOf: DatingIntent.valueOf, enumValues: DatingIntent.values)
+    ..a<$core.int>(9, _omitFieldNames ? '' : 'intellectualPace', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -3775,6 +3772,42 @@ class AtlasMapPoint extends $pb.GeneratedMessage {
   $core.bool hasZ() => $_has(4);
   @$pb.TagNumber(5)
   void clearZ() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get luminance => $_getN(5);
+  @$pb.TagNumber(6)
+  set luminance($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLuminance() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLuminance() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get tier => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set tier($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasTier() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTier() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  DatingIntent get intent => $_getN(7);
+  @$pb.TagNumber(8)
+  set intent(DatingIntent value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasIntent() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIntent() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get intellectualPace => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set intellectualPace($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasIntellectualPace() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIntellectualPace() => $_clearField(9);
 }
 
 class ListAtlasMapPointsRequest extends $pb.GeneratedMessage {
@@ -3843,8 +3876,6 @@ class ListAtlasMapPointsResponse extends $pb.GeneratedMessage {
   static ListAtlasMapPointsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAtlasMapPointsResponse>(create);
   static ListAtlasMapPointsResponse? _defaultInstance;
 
-  /// Latest projection per user. The map widget treats the caller
-  /// as camera origin and renders the rest in 3-space.
   @$pb.TagNumber(1)
   $pb.PbList<AtlasMapPoint> get points => $_getList(0);
 }
@@ -3860,6 +3891,8 @@ class AgoraRoom extends $pb.GeneratedMessage {
     $core.String? livekitRoomName,
     $fixnum.Int64? startedAt,
     $fixnum.Int64? endedAt,
+    $core.bool? isVideoEnabled,
+    $core.bool? isEncrypted,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -3871,6 +3904,8 @@ class AgoraRoom extends $pb.GeneratedMessage {
     if (livekitRoomName != null) result.livekitRoomName = livekitRoomName;
     if (startedAt != null) result.startedAt = startedAt;
     if (endedAt != null) result.endedAt = endedAt;
+    if (isVideoEnabled != null) result.isVideoEnabled = isVideoEnabled;
+    if (isEncrypted != null) result.isEncrypted = isEncrypted;
     return result;
   }
 
@@ -3889,6 +3924,8 @@ class AgoraRoom extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'livekitRoomName')
     ..aInt64(8, _omitFieldNames ? '' : 'startedAt')
     ..aInt64(9, _omitFieldNames ? '' : 'endedAt')
+    ..aOB(10, _omitFieldNames ? '' : 'isVideoEnabled')
+    ..aOB(11, _omitFieldNames ? '' : 'isEncrypted')
     ..hasRequiredFields = false
   ;
 
@@ -3954,7 +3991,6 @@ class AgoraRoom extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearMaxGuests() => $_clearField(5);
 
-  /// 'live' | 'ended' | 'scheduled'
   @$pb.TagNumber(6)
   $core.String get status => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -3990,6 +4026,24 @@ class AgoraRoom extends $pb.GeneratedMessage {
   $core.bool hasEndedAt() => $_has(8);
   @$pb.TagNumber(9)
   void clearEndedAt() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get isVideoEnabled => $_getBF(9);
+  @$pb.TagNumber(10)
+  set isVideoEnabled($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasIsVideoEnabled() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearIsVideoEnabled() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get isEncrypted => $_getBF(10);
+  @$pb.TagNumber(11)
+  set isEncrypted($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasIsEncrypted() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearIsEncrypted() => $_clearField(11);
 }
 
 class ListLiveRoomsRequest extends $pb.GeneratedMessage {
@@ -4028,7 +4082,6 @@ class ListLiveRoomsRequest extends $pb.GeneratedMessage {
   static ListLiveRoomsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLiveRoomsRequest>(create);
   static ListLiveRoomsRequest? _defaultInstance;
 
-  /// Optional cluster filter ('' = all clusters).
   @$pb.TagNumber(1)
   $core.String get cluster => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -4084,11 +4137,13 @@ class CreateAgoraRoomRequest extends $pb.GeneratedMessage {
     $core.String? title,
     $core.String? cluster,
     $core.int? maxGuests,
+    $core.bool? enableVideo,
   }) {
     final result = create();
     if (title != null) result.title = title;
     if (cluster != null) result.cluster = cluster;
     if (maxGuests != null) result.maxGuests = maxGuests;
+    if (enableVideo != null) result.enableVideo = enableVideo;
     return result;
   }
 
@@ -4101,6 +4156,7 @@ class CreateAgoraRoomRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'title')
     ..aOS(2, _omitFieldNames ? '' : 'cluster')
     ..a<$core.int>(3, _omitFieldNames ? '' : 'maxGuests', $pb.PbFieldType.O3)
+    ..aOB(4, _omitFieldNames ? '' : 'enableVideo')
     ..hasRequiredFields = false
   ;
 
@@ -4147,6 +4203,15 @@ class CreateAgoraRoomRequest extends $pb.GeneratedMessage {
   $core.bool hasMaxGuests() => $_has(2);
   @$pb.TagNumber(3)
   void clearMaxGuests() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get enableVideo => $_getBF(3);
+  @$pb.TagNumber(4)
+  set enableVideo($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEnableVideo() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEnableVideo() => $_clearField(4);
 }
 
 class CreateAgoraRoomResponse extends $pb.GeneratedMessage {
@@ -4376,9 +4441,6 @@ class MintLiveKitTokenResponse extends $pb.GeneratedMessage {
   static MintLiveKitTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MintLiveKitTokenResponse>(create);
   static MintLiveKitTokenResponse? _defaultInstance;
 
-  /// Empty when LiveKit credentials are not configured server-side
-  /// (FailedPrecondition is returned in that case so the client can
-  /// surface "joining unavailable").
   @$pb.TagNumber(1)
   $core.String get token => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -4398,9 +4460,6 @@ class MintLiveKitTokenResponse extends $pb.GeneratedMessage {
   void clearWsUrl() => $_clearField(2);
 }
 
-/// MessageAttachment ties a message to a media_assets row. kind:
-/// 'voice' | 'video'. The clip bytes go through MediaService's
-/// presigned-URL flow; this row is the join.
 class MessageAttachment extends $pb.GeneratedMessage {
   factory MessageAttachment({
     $core.String? id,
@@ -4807,7 +4866,6 @@ class Restaurant extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearNeighborhood() => $_clearField(4);
 
-  /// 'opentable' | 'resy' | 'manual'
   @$pb.TagNumber(5)
   $core.String get partner => $_getSZ(4);
   @$pb.TagNumber(5)
@@ -4890,7 +4948,6 @@ class ListRestaurantsRequest extends $pb.GeneratedMessage {
   static ListRestaurantsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRestaurantsRequest>(create);
   static ListRestaurantsRequest? _defaultInstance;
 
-  /// Empty city = curated set (the Atlas Twelve).
   @$pb.TagNumber(1)
   $core.String get city => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -5049,7 +5106,6 @@ class Reservation extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearRequestedAt() => $_clearField(5);
 
-  /// 'requested' | 'confirmed' | 'declined' | 'cancelled'
   @$pb.TagNumber(6)
   $core.String get status => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -5402,50 +5458,123 @@ class CancelReservationResponse extends $pb.GeneratedMessage {
   Reservation ensureReservation() => $_ensure(0);
 }
 
-class CompatibilityReport extends $pb.GeneratedMessage {
-  factory CompatibilityReport({
-    $core.String? leftUserId,
-    $core.String? rightUserId,
-    $core.double? cosine,
-    $core.Iterable<$core.double>? perAxisDelta,
+class CompatibilityFactor extends $pb.GeneratedMessage {
+  factory CompatibilityFactor({
+    $core.String? label,
+    $core.double? score,
+    $core.String? interpretation,
   }) {
     final result = create();
-    if (leftUserId != null) result.leftUserId = leftUserId;
-    if (rightUserId != null) result.rightUserId = rightUserId;
-    if (cosine != null) result.cosine = cosine;
-    if (perAxisDelta != null) result.perAxisDelta.addAll(perAxisDelta);
+    if (label != null) result.label = label;
+    if (score != null) result.score = score;
+    if (interpretation != null) result.interpretation = interpretation;
     return result;
   }
 
-  CompatibilityReport._();
+  CompatibilityFactor._();
 
-  factory CompatibilityReport.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory CompatibilityReport.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CompatibilityFactor.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CompatibilityFactor.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompatibilityReport', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'leftUserId')
-    ..aOS(2, _omitFieldNames ? '' : 'rightUserId')
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'cosine', $pb.PbFieldType.OD)
-    ..p<$core.double>(4, _omitFieldNames ? '' : 'perAxisDelta', $pb.PbFieldType.KD)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompatibilityFactor', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'label')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'score', $pb.PbFieldType.OD)
+    ..aOS(3, _omitFieldNames ? '' : 'interpretation')
     ..hasRequiredFields = false
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CompatibilityReport clone() => CompatibilityReport()..mergeFromMessage(this);
+  CompatibilityFactor clone() => CompatibilityFactor()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CompatibilityReport copyWith(void Function(CompatibilityReport) updates) => super.copyWith((message) => updates(message as CompatibilityReport)) as CompatibilityReport;
+  CompatibilityFactor copyWith(void Function(CompatibilityFactor) updates) => super.copyWith((message) => updates(message as CompatibilityFactor)) as CompatibilityFactor;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static CompatibilityReport create() => CompatibilityReport._();
+  static CompatibilityFactor create() => CompatibilityFactor._();
   @$core.override
-  CompatibilityReport createEmptyInstance() => create();
-  static $pb.PbList<CompatibilityReport> createRepeated() => $pb.PbList<CompatibilityReport>();
+  CompatibilityFactor createEmptyInstance() => create();
+  static $pb.PbList<CompatibilityFactor> createRepeated() => $pb.PbList<CompatibilityFactor>();
   @$core.pragma('dart2js:noInline')
-  static CompatibilityReport getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompatibilityReport>(create);
-  static CompatibilityReport? _defaultInstance;
+  static CompatibilityFactor getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompatibilityFactor>(create);
+  static CompatibilityFactor? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get label => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set label($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLabel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLabel() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get score => $_getN(1);
+  @$pb.TagNumber(2)
+  set score($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasScore() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearScore() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get interpretation => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set interpretation($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasInterpretation() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearInterpretation() => $_clearField(3);
+}
+
+class CompatibilityMatrix extends $pb.GeneratedMessage {
+  factory CompatibilityMatrix({
+    $core.String? leftUserId,
+    $core.String? rightUserId,
+    $core.double? aggregateScore,
+    $core.Iterable<CompatibilityFactor>? factors,
+    $core.String? dynamicTensionStatus,
+  }) {
+    final result = create();
+    if (leftUserId != null) result.leftUserId = leftUserId;
+    if (rightUserId != null) result.rightUserId = rightUserId;
+    if (aggregateScore != null) result.aggregateScore = aggregateScore;
+    if (factors != null) result.factors.addAll(factors);
+    if (dynamicTensionStatus != null) result.dynamicTensionStatus = dynamicTensionStatus;
+    return result;
+  }
+
+  CompatibilityMatrix._();
+
+  factory CompatibilityMatrix.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CompatibilityMatrix.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompatibilityMatrix', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'leftUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'rightUserId')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'aggregateScore', $pb.PbFieldType.OD)
+    ..pc<CompatibilityFactor>(4, _omitFieldNames ? '' : 'factors', $pb.PbFieldType.PM, subBuilder: CompatibilityFactor.create)
+    ..aOS(5, _omitFieldNames ? '' : 'dynamicTensionStatus')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompatibilityMatrix clone() => CompatibilityMatrix()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompatibilityMatrix copyWith(void Function(CompatibilityMatrix) updates) => super.copyWith((message) => updates(message as CompatibilityMatrix)) as CompatibilityMatrix;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CompatibilityMatrix create() => CompatibilityMatrix._();
+  @$core.override
+  CompatibilityMatrix createEmptyInstance() => create();
+  static $pb.PbList<CompatibilityMatrix> createRepeated() => $pb.PbList<CompatibilityMatrix>();
+  @$core.pragma('dart2js:noInline')
+  static CompatibilityMatrix getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompatibilityMatrix>(create);
+  static CompatibilityMatrix? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get leftUserId => $_getSZ(0);
@@ -5465,24 +5594,30 @@ class CompatibilityReport extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearRightUserId() => $_clearField(2);
 
-  /// -1..1 cosine similarity between the two embeddings.
   @$pb.TagNumber(3)
-  $core.double get cosine => $_getN(2);
+  $core.double get aggregateScore => $_getN(2);
   @$pb.TagNumber(3)
-  set cosine($core.double value) => $_setDouble(2, value);
+  set aggregateScore($core.double value) => $_setDouble(2, value);
   @$pb.TagNumber(3)
-  $core.bool hasCosine() => $_has(2);
+  $core.bool hasAggregateScore() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCosine() => $_clearField(3);
+  void clearAggregateScore() => $_clearField(3);
 
-  /// Absolute |left - right| per axis, in atlas_engine's signal
-  /// order. The dashboard renders which axes pull the pair apart.
   @$pb.TagNumber(4)
-  $pb.PbList<$core.double> get perAxisDelta => $_getList(3);
+  $pb.PbList<CompatibilityFactor> get factors => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.String get dynamicTensionStatus => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set dynamicTensionStatus($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDynamicTensionStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDynamicTensionStatus() => $_clearField(5);
 }
 
-class GetCompatibilityReportRequest extends $pb.GeneratedMessage {
-  factory GetCompatibilityReportRequest({
+class GetCompatibilityMatrixRequest extends $pb.GeneratedMessage {
+  factory GetCompatibilityMatrixRequest({
     $core.String? otherUserId,
   }) {
     final result = create();
@@ -5490,32 +5625,32 @@ class GetCompatibilityReportRequest extends $pb.GeneratedMessage {
     return result;
   }
 
-  GetCompatibilityReportRequest._();
+  GetCompatibilityMatrixRequest._();
 
-  factory GetCompatibilityReportRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetCompatibilityReportRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetCompatibilityMatrixRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetCompatibilityMatrixRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCompatibilityReportRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCompatibilityMatrixRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'otherUserId')
     ..hasRequiredFields = false
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetCompatibilityReportRequest clone() => GetCompatibilityReportRequest()..mergeFromMessage(this);
+  GetCompatibilityMatrixRequest clone() => GetCompatibilityMatrixRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetCompatibilityReportRequest copyWith(void Function(GetCompatibilityReportRequest) updates) => super.copyWith((message) => updates(message as GetCompatibilityReportRequest)) as GetCompatibilityReportRequest;
+  GetCompatibilityMatrixRequest copyWith(void Function(GetCompatibilityMatrixRequest) updates) => super.copyWith((message) => updates(message as GetCompatibilityMatrixRequest)) as GetCompatibilityMatrixRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetCompatibilityReportRequest create() => GetCompatibilityReportRequest._();
+  static GetCompatibilityMatrixRequest create() => GetCompatibilityMatrixRequest._();
   @$core.override
-  GetCompatibilityReportRequest createEmptyInstance() => create();
-  static $pb.PbList<GetCompatibilityReportRequest> createRepeated() => $pb.PbList<GetCompatibilityReportRequest>();
+  GetCompatibilityMatrixRequest createEmptyInstance() => create();
+  static $pb.PbList<GetCompatibilityMatrixRequest> createRepeated() => $pb.PbList<GetCompatibilityMatrixRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetCompatibilityReportRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCompatibilityReportRequest>(create);
-  static GetCompatibilityReportRequest? _defaultInstance;
+  static GetCompatibilityMatrixRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCompatibilityMatrixRequest>(create);
+  static GetCompatibilityMatrixRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get otherUserId => $_getSZ(0);
@@ -5527,54 +5662,426 @@ class GetCompatibilityReportRequest extends $pb.GeneratedMessage {
   void clearOtherUserId() => $_clearField(1);
 }
 
-class GetCompatibilityReportResponse extends $pb.GeneratedMessage {
-  factory GetCompatibilityReportResponse({
-    CompatibilityReport? report,
+class GetCompatibilityMatrixResponse extends $pb.GeneratedMessage {
+  factory GetCompatibilityMatrixResponse({
+    CompatibilityMatrix? matrix,
   }) {
     final result = create();
-    if (report != null) result.report = report;
+    if (matrix != null) result.matrix = matrix;
     return result;
   }
 
-  GetCompatibilityReportResponse._();
+  GetCompatibilityMatrixResponse._();
 
-  factory GetCompatibilityReportResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetCompatibilityReportResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetCompatibilityMatrixResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetCompatibilityMatrixResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCompatibilityReportResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
-    ..aOM<CompatibilityReport>(1, _omitFieldNames ? '' : 'report', subBuilder: CompatibilityReport.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCompatibilityMatrixResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<CompatibilityMatrix>(1, _omitFieldNames ? '' : 'matrix', subBuilder: CompatibilityMatrix.create)
     ..hasRequiredFields = false
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetCompatibilityReportResponse clone() => GetCompatibilityReportResponse()..mergeFromMessage(this);
+  GetCompatibilityMatrixResponse clone() => GetCompatibilityMatrixResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetCompatibilityReportResponse copyWith(void Function(GetCompatibilityReportResponse) updates) => super.copyWith((message) => updates(message as GetCompatibilityReportResponse)) as GetCompatibilityReportResponse;
+  GetCompatibilityMatrixResponse copyWith(void Function(GetCompatibilityMatrixResponse) updates) => super.copyWith((message) => updates(message as GetCompatibilityMatrixResponse)) as GetCompatibilityMatrixResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetCompatibilityReportResponse create() => GetCompatibilityReportResponse._();
+  static GetCompatibilityMatrixResponse create() => GetCompatibilityMatrixResponse._();
   @$core.override
-  GetCompatibilityReportResponse createEmptyInstance() => create();
-  static $pb.PbList<GetCompatibilityReportResponse> createRepeated() => $pb.PbList<GetCompatibilityReportResponse>();
+  GetCompatibilityMatrixResponse createEmptyInstance() => create();
+  static $pb.PbList<GetCompatibilityMatrixResponse> createRepeated() => $pb.PbList<GetCompatibilityMatrixResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetCompatibilityReportResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCompatibilityReportResponse>(create);
-  static GetCompatibilityReportResponse? _defaultInstance;
+  static GetCompatibilityMatrixResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCompatibilityMatrixResponse>(create);
+  static GetCompatibilityMatrixResponse? _defaultInstance;
 
-  /// Empty (left_user_id == "") = compatibility unavailable because
-  /// either user has no embedding yet, or the engine is offline.
   @$pb.TagNumber(1)
-  CompatibilityReport get report => $_getN(0);
+  CompatibilityMatrix get matrix => $_getN(0);
   @$pb.TagNumber(1)
-  set report(CompatibilityReport value) => $_setField(1, value);
+  set matrix(CompatibilityMatrix value) => $_setField(1, value);
   @$pb.TagNumber(1)
-  $core.bool hasReport() => $_has(0);
+  $core.bool hasMatrix() => $_has(0);
   @$pb.TagNumber(1)
-  void clearReport() => $_clearField(1);
+  void clearMatrix() => $_clearField(1);
   @$pb.TagNumber(1)
-  CompatibilityReport ensureReport() => $_ensure(0);
+  CompatibilityMatrix ensureMatrix() => $_ensure(0);
+}
+
+class Gift extends $pb.GeneratedMessage {
+  factory Gift({
+    $core.String? id,
+    $core.String? senderId,
+    $core.String? receiverId,
+    $core.String? assetType,
+    $core.double? value,
+    $core.String? message,
+    $fixnum.Int64? sentAt,
+    $core.bool? isAnonymous,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (senderId != null) result.senderId = senderId;
+    if (receiverId != null) result.receiverId = receiverId;
+    if (assetType != null) result.assetType = assetType;
+    if (value != null) result.value = value;
+    if (message != null) result.message = message;
+    if (sentAt != null) result.sentAt = sentAt;
+    if (isAnonymous != null) result.isAnonymous = isAnonymous;
+    return result;
+  }
+
+  Gift._();
+
+  factory Gift.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Gift.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Gift', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'senderId')
+    ..aOS(3, _omitFieldNames ? '' : 'receiverId')
+    ..aOS(4, _omitFieldNames ? '' : 'assetType')
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'value', $pb.PbFieldType.OD)
+    ..aOS(6, _omitFieldNames ? '' : 'message')
+    ..aInt64(7, _omitFieldNames ? '' : 'sentAt')
+    ..aOB(8, _omitFieldNames ? '' : 'isAnonymous')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Gift clone() => Gift()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Gift copyWith(void Function(Gift) updates) => super.copyWith((message) => updates(message as Gift)) as Gift;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Gift create() => Gift._();
+  @$core.override
+  Gift createEmptyInstance() => create();
+  static $pb.PbList<Gift> createRepeated() => $pb.PbList<Gift>();
+  @$core.pragma('dart2js:noInline')
+  static Gift getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Gift>(create);
+  static Gift? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get senderId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set senderId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSenderId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSenderId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get receiverId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set receiverId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReceiverId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReceiverId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get assetType => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set assetType($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAssetType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAssetType() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get value => $_getN(4);
+  @$pb.TagNumber(5)
+  set value($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasValue() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearValue() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get message => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set message($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMessage() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMessage() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get sentAt => $_getI64(6);
+  @$pb.TagNumber(7)
+  set sentAt($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSentAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSentAt() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get isAnonymous => $_getBF(7);
+  @$pb.TagNumber(8)
+  set isAnonymous($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasIsAnonymous() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIsAnonymous() => $_clearField(8);
+}
+
+class SendGiftRequest extends $pb.GeneratedMessage {
+  factory SendGiftRequest({
+    $core.String? receiverId,
+    $core.String? assetType,
+    $core.double? value,
+    $core.String? message,
+    $core.bool? anonymous,
+  }) {
+    final result = create();
+    if (receiverId != null) result.receiverId = receiverId;
+    if (assetType != null) result.assetType = assetType;
+    if (value != null) result.value = value;
+    if (message != null) result.message = message;
+    if (anonymous != null) result.anonymous = anonymous;
+    return result;
+  }
+
+  SendGiftRequest._();
+
+  factory SendGiftRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SendGiftRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SendGiftRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'receiverId')
+    ..aOS(2, _omitFieldNames ? '' : 'assetType')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'value', $pb.PbFieldType.OD)
+    ..aOS(4, _omitFieldNames ? '' : 'message')
+    ..aOB(5, _omitFieldNames ? '' : 'anonymous')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SendGiftRequest clone() => SendGiftRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SendGiftRequest copyWith(void Function(SendGiftRequest) updates) => super.copyWith((message) => updates(message as SendGiftRequest)) as SendGiftRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SendGiftRequest create() => SendGiftRequest._();
+  @$core.override
+  SendGiftRequest createEmptyInstance() => create();
+  static $pb.PbList<SendGiftRequest> createRepeated() => $pb.PbList<SendGiftRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SendGiftRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendGiftRequest>(create);
+  static SendGiftRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get receiverId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set receiverId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReceiverId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReceiverId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get assetType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set assetType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAssetType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAssetType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get value => $_getN(2);
+  @$pb.TagNumber(3)
+  set value($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasValue() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearValue() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get message => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set message($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMessage() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMessage() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get anonymous => $_getBF(4);
+  @$pb.TagNumber(5)
+  set anonymous($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAnonymous() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAnonymous() => $_clearField(5);
+}
+
+class SendGiftResponse extends $pb.GeneratedMessage {
+  factory SendGiftResponse({
+    Gift? gift,
+  }) {
+    final result = create();
+    if (gift != null) result.gift = gift;
+    return result;
+  }
+
+  SendGiftResponse._();
+
+  factory SendGiftResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SendGiftResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SendGiftResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<Gift>(1, _omitFieldNames ? '' : 'gift', subBuilder: Gift.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SendGiftResponse clone() => SendGiftResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SendGiftResponse copyWith(void Function(SendGiftResponse) updates) => super.copyWith((message) => updates(message as SendGiftResponse)) as SendGiftResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SendGiftResponse create() => SendGiftResponse._();
+  @$core.override
+  SendGiftResponse createEmptyInstance() => create();
+  static $pb.PbList<SendGiftResponse> createRepeated() => $pb.PbList<SendGiftResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SendGiftResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendGiftResponse>(create);
+  static SendGiftResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Gift get gift => $_getN(0);
+  @$pb.TagNumber(1)
+  set gift(Gift value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGift() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGift() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Gift ensureGift() => $_ensure(0);
+}
+
+class ListGiftLedgerRequest extends $pb.GeneratedMessage {
+  factory ListGiftLedgerRequest({
+    $1.PageRequest? page,
+  }) {
+    final result = create();
+    if (page != null) result.page = page;
+    return result;
+  }
+
+  ListGiftLedgerRequest._();
+
+  factory ListGiftLedgerRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListGiftLedgerRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListGiftLedgerRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<$1.PageRequest>(1, _omitFieldNames ? '' : 'page', subBuilder: $1.PageRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListGiftLedgerRequest clone() => ListGiftLedgerRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListGiftLedgerRequest copyWith(void Function(ListGiftLedgerRequest) updates) => super.copyWith((message) => updates(message as ListGiftLedgerRequest)) as ListGiftLedgerRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListGiftLedgerRequest create() => ListGiftLedgerRequest._();
+  @$core.override
+  ListGiftLedgerRequest createEmptyInstance() => create();
+  static $pb.PbList<ListGiftLedgerRequest> createRepeated() => $pb.PbList<ListGiftLedgerRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListGiftLedgerRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListGiftLedgerRequest>(create);
+  static ListGiftLedgerRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.PageRequest get page => $_getN(0);
+  @$pb.TagNumber(1)
+  set page($1.PageRequest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPage() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $1.PageRequest ensurePage() => $_ensure(0);
+}
+
+class ListGiftLedgerResponse extends $pb.GeneratedMessage {
+  factory ListGiftLedgerResponse({
+    $core.Iterable<Gift>? gifts,
+    $1.PageResponse? page,
+  }) {
+    final result = create();
+    if (gifts != null) result.gifts.addAll(gifts);
+    if (page != null) result.page = page;
+    return result;
+  }
+
+  ListGiftLedgerResponse._();
+
+  factory ListGiftLedgerResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListGiftLedgerResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListGiftLedgerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..pc<Gift>(1, _omitFieldNames ? '' : 'gifts', $pb.PbFieldType.PM, subBuilder: Gift.create)
+    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'page', subBuilder: $1.PageResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListGiftLedgerResponse clone() => ListGiftLedgerResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListGiftLedgerResponse copyWith(void Function(ListGiftLedgerResponse) updates) => super.copyWith((message) => updates(message as ListGiftLedgerResponse)) as ListGiftLedgerResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListGiftLedgerResponse create() => ListGiftLedgerResponse._();
+  @$core.override
+  ListGiftLedgerResponse createEmptyInstance() => create();
+  static $pb.PbList<ListGiftLedgerResponse> createRepeated() => $pb.PbList<ListGiftLedgerResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListGiftLedgerResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListGiftLedgerResponse>(create);
+  static ListGiftLedgerResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Gift> get gifts => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $1.PageResponse get page => $_getN(1);
+  @$pb.TagNumber(2)
+  set page($1.PageResponse value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPage() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $1.PageResponse ensurePage() => $_ensure(1);
 }
 
 

@@ -28,10 +28,10 @@ type AppCode int32
 
 const (
 	AppCode_APP_CODE_UNSPECIFIED AppCode = 0
-	AppCode_APP_CODE_WORKOUT     AppCode = 1
-	AppCode_APP_CODE_LANGUAGES   AppCode = 2
-	AppCode_APP_CODE_TRAVEL      AppCode = 3
-	AppCode_APP_CODE_DATING      AppCode = 4
+	AppCode_APP_CODE_FORGE       AppCode = 1
+	AppCode_APP_CODE_LEXICON     AppCode = 2
+	AppCode_APP_CODE_NOMAD       AppCode = 3
+	AppCode_APP_CODE_ATLAS       AppCode = 4
 	AppCode_APP_CODE_EMPIRE      AppCode = 5
 	AppCode_APP_CODE_ONYX        AppCode = 6
 	AppCode_APP_CODE_APEX        AppCode = 7
@@ -46,10 +46,10 @@ const (
 var (
 	AppCode_name = map[int32]string{
 		0:  "APP_CODE_UNSPECIFIED",
-		1:  "APP_CODE_WORKOUT",
-		2:  "APP_CODE_LANGUAGES",
-		3:  "APP_CODE_TRAVEL",
-		4:  "APP_CODE_DATING",
+		1:  "APP_CODE_FORGE",
+		2:  "APP_CODE_LEXICON",
+		3:  "APP_CODE_NOMAD",
+		4:  "APP_CODE_ATLAS",
 		5:  "APP_CODE_EMPIRE",
 		6:  "APP_CODE_ONYX",
 		7:  "APP_CODE_APEX",
@@ -61,10 +61,10 @@ var (
 	}
 	AppCode_value = map[string]int32{
 		"APP_CODE_UNSPECIFIED": 0,
-		"APP_CODE_WORKOUT":     1,
-		"APP_CODE_LANGUAGES":   2,
-		"APP_CODE_TRAVEL":      3,
-		"APP_CODE_DATING":      4,
+		"APP_CODE_FORGE":       1,
+		"APP_CODE_LEXICON":     2,
+		"APP_CODE_NOMAD":       3,
+		"APP_CODE_ATLAS":       4,
 		"APP_CODE_EMPIRE":      5,
 		"APP_CODE_ONYX":        6,
 		"APP_CODE_APEX":        7,
@@ -101,6 +101,58 @@ func (x AppCode) Number() protoreflect.EnumNumber {
 // Deprecated: Use AppCode.Descriptor instead.
 func (AppCode) EnumDescriptor() ([]byte, []int) {
 	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{0}
+}
+
+type AuthProvider int32
+
+const (
+	AuthProvider_AUTH_PROVIDER_UNSPECIFIED AuthProvider = 0
+	AuthProvider_AUTH_PROVIDER_GOOGLE      AuthProvider = 1
+	AuthProvider_AUTH_PROVIDER_FACEBOOK    AuthProvider = 2
+	AuthProvider_AUTH_PROVIDER_GITHUB      AuthProvider = 3
+)
+
+// Enum value maps for AuthProvider.
+var (
+	AuthProvider_name = map[int32]string{
+		0: "AUTH_PROVIDER_UNSPECIFIED",
+		1: "AUTH_PROVIDER_GOOGLE",
+		2: "AUTH_PROVIDER_FACEBOOK",
+		3: "AUTH_PROVIDER_GITHUB",
+	}
+	AuthProvider_value = map[string]int32{
+		"AUTH_PROVIDER_UNSPECIFIED": 0,
+		"AUTH_PROVIDER_GOOGLE":      1,
+		"AUTH_PROVIDER_FACEBOOK":    2,
+		"AUTH_PROVIDER_GITHUB":      3,
+	}
+)
+
+func (x AuthProvider) Enum() *AuthProvider {
+	p := new(AuthProvider)
+	*p = x
+	return p
+}
+
+func (x AuthProvider) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (AuthProvider) Descriptor() protoreflect.EnumDescriptor {
+	return file_sttattus_auth_v1_auth_proto_enumTypes[1].Descriptor()
+}
+
+func (AuthProvider) Type() protoreflect.EnumType {
+	return &file_sttattus_auth_v1_auth_proto_enumTypes[1]
+}
+
+func (x AuthProvider) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use AuthProvider.Descriptor instead.
+func (AuthProvider) EnumDescriptor() ([]byte, []int) {
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{1}
 }
 
 type TokenPair struct {
@@ -174,14 +226,17 @@ func (x *TokenPair) GetRefreshExpiresAt() int64 {
 // Lightweight profile snapshot the client renders in the "we found your
 // profile" linking UI. Never contains the password hash or anything secret.
 type ProfileHint struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Email         string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
-	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	AvatarUrl     string                 `protobuf:"bytes,4,opt,name=avatar_url,json=avatarUrl,proto3" json:"avatar_url,omitempty"`
-	LinkedApps    []AppCode              `protobuf:"varint,5,rep,packed,name=linked_apps,json=linkedApps,proto3,enum=sttattus.auth.v1.AppCode" json:"linked_apps,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	UserId          string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Email           string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+	Name            string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	AvatarUrl       string                 `protobuf:"bytes,4,opt,name=avatar_url,json=avatarUrl,proto3" json:"avatar_url,omitempty"`
+	LinkedApps      []AppCode              `protobuf:"varint,5,rep,packed,name=linked_apps,json=linkedApps,proto3,enum=sttattus.auth.v1.AppCode" json:"linked_apps,omitempty"`
+	HasPassword     bool                   `protobuf:"varint,6,opt,name=has_password,json=hasPassword,proto3" json:"has_password,omitempty"`
+	LinkedProviders []AuthProvider         `protobuf:"varint,7,rep,packed,name=linked_providers,json=linkedProviders,proto3,enum=sttattus.auth.v1.AuthProvider" json:"linked_providers,omitempty"`
+	Locale          string                 `protobuf:"bytes,8,opt,name=locale,proto3" json:"locale,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *ProfileHint) Reset() {
@@ -247,6 +302,27 @@ func (x *ProfileHint) GetLinkedApps() []AppCode {
 		return x.LinkedApps
 	}
 	return nil
+}
+
+func (x *ProfileHint) GetHasPassword() bool {
+	if x != nil {
+		return x.HasPassword
+	}
+	return false
+}
+
+func (x *ProfileHint) GetLinkedProviders() []AuthProvider {
+	if x != nil {
+		return x.LinkedProviders
+	}
+	return nil
+}
+
+func (x *ProfileHint) GetLocale() string {
+	if x != nil {
+		return x.Locale
+	}
+	return ""
 }
 
 // ===== Register =====
@@ -321,14 +397,15 @@ func (x *RegisterRequest) GetAppCode() AppCode {
 type RegisterResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Populated when registration succeeded.
-	UserId string     `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Tokens *TokenPair `protobuf:"bytes,2,opt,name=tokens,proto3" json:"tokens,omitempty"`
+	UserId  string       `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Tokens  *TokenPair   `protobuf:"bytes,2,opt,name=tokens,proto3" json:"tokens,omitempty"`
+	Profile *ProfileHint `protobuf:"bytes,3,opt,name=profile,proto3" json:"profile,omitempty"`
 	// Populated when the email already exists in the ecosystem and the client
 	// should switch into the link-app flow. When this is set, `user_id` and
 	// `tokens` are empty and the gRPC status is OK (the *call* succeeded; the
 	// outcome is "needs linking"). Allows the client to render the linking UI
 	// without crashing on an error.
-	ExistingProfile *ProfileHint `protobuf:"bytes,3,opt,name=existing_profile,json=existingProfile,proto3" json:"existing_profile,omitempty"`
+	ExistingProfile *ProfileHint `protobuf:"bytes,4,opt,name=existing_profile,json=existingProfile,proto3" json:"existing_profile,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -373,6 +450,13 @@ func (x *RegisterResponse) GetUserId() string {
 func (x *RegisterResponse) GetTokens() *TokenPair {
 	if x != nil {
 		return x.Tokens
+	}
+	return nil
+}
+
+func (x *RegisterResponse) GetProfile() *ProfileHint {
+	if x != nil {
+		return x.Profile
 	}
 	return nil
 }
@@ -449,6 +533,7 @@ type LoginResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Tokens        *TokenPair             `protobuf:"bytes,2,opt,name=tokens,proto3" json:"tokens,omitempty"`
+	Profile       *ProfileHint           `protobuf:"bytes,3,opt,name=profile,proto3" json:"profile,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -497,6 +582,142 @@ func (x *LoginResponse) GetTokens() *TokenPair {
 	return nil
 }
 
+func (x *LoginResponse) GetProfile() *ProfileHint {
+	if x != nil {
+		return x.Profile
+	}
+	return nil
+}
+
+// ===== OAuth Login =====
+type OAuthLoginRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Provider      AuthProvider           `protobuf:"varint,1,opt,name=provider,proto3,enum=sttattus.auth.v1.AuthProvider" json:"provider,omitempty"`
+	IdToken       string                 `protobuf:"bytes,2,opt,name=id_token,json=idToken,proto3" json:"id_token,omitempty"`
+	AppCode       AppCode                `protobuf:"varint,3,opt,name=app_code,json=appCode,proto3,enum=sttattus.auth.v1.AppCode" json:"app_code,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *OAuthLoginRequest) Reset() {
+	*x = OAuthLoginRequest{}
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OAuthLoginRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OAuthLoginRequest) ProtoMessage() {}
+
+func (x *OAuthLoginRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OAuthLoginRequest.ProtoReflect.Descriptor instead.
+func (*OAuthLoginRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *OAuthLoginRequest) GetProvider() AuthProvider {
+	if x != nil {
+		return x.Provider
+	}
+	return AuthProvider_AUTH_PROVIDER_UNSPECIFIED
+}
+
+func (x *OAuthLoginRequest) GetIdToken() string {
+	if x != nil {
+		return x.IdToken
+	}
+	return ""
+}
+
+func (x *OAuthLoginRequest) GetAppCode() AppCode {
+	if x != nil {
+		return x.AppCode
+	}
+	return AppCode_APP_CODE_UNSPECIFIED
+}
+
+type OAuthLoginResponse struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	UserId          string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Tokens          *TokenPair             `protobuf:"bytes,2,opt,name=tokens,proto3" json:"tokens,omitempty"`
+	Profile         *ProfileHint           `protobuf:"bytes,3,opt,name=profile,proto3" json:"profile,omitempty"`
+	ExistingProfile *ProfileHint           `protobuf:"bytes,4,opt,name=existing_profile,json=existingProfile,proto3" json:"existing_profile,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *OAuthLoginResponse) Reset() {
+	*x = OAuthLoginResponse{}
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OAuthLoginResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OAuthLoginResponse) ProtoMessage() {}
+
+func (x *OAuthLoginResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OAuthLoginResponse.ProtoReflect.Descriptor instead.
+func (*OAuthLoginResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *OAuthLoginResponse) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OAuthLoginResponse) GetTokens() *TokenPair {
+	if x != nil {
+		return x.Tokens
+	}
+	return nil
+}
+
+func (x *OAuthLoginResponse) GetProfile() *ProfileHint {
+	if x != nil {
+		return x.Profile
+	}
+	return nil
+}
+
+func (x *OAuthLoginResponse) GetExistingProfile() *ProfileHint {
+	if x != nil {
+		return x.ExistingProfile
+	}
+	return nil
+}
+
 // ===== CheckEmail =====
 // Idempotent lookup so the client can render the "we found your profile" hint
 // before the user submits the registration form.
@@ -509,7 +730,7 @@ type CheckEmailRequest struct {
 
 func (x *CheckEmailRequest) Reset() {
 	*x = CheckEmailRequest{}
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[6]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -521,7 +742,7 @@ func (x *CheckEmailRequest) String() string {
 func (*CheckEmailRequest) ProtoMessage() {}
 
 func (x *CheckEmailRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[6]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -534,7 +755,7 @@ func (x *CheckEmailRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CheckEmailRequest.ProtoReflect.Descriptor instead.
 func (*CheckEmailRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{6}
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *CheckEmailRequest) GetEmail() string {
@@ -554,7 +775,7 @@ type CheckEmailResponse struct {
 
 func (x *CheckEmailResponse) Reset() {
 	*x = CheckEmailResponse{}
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[7]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -566,7 +787,7 @@ func (x *CheckEmailResponse) String() string {
 func (*CheckEmailResponse) ProtoMessage() {}
 
 func (x *CheckEmailResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[7]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -579,7 +800,7 @@ func (x *CheckEmailResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CheckEmailResponse.ProtoReflect.Descriptor instead.
 func (*CheckEmailResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{7}
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *CheckEmailResponse) GetExists() bool {
@@ -610,7 +831,7 @@ type LinkAppRequest struct {
 
 func (x *LinkAppRequest) Reset() {
 	*x = LinkAppRequest{}
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[8]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -622,7 +843,7 @@ func (x *LinkAppRequest) String() string {
 func (*LinkAppRequest) ProtoMessage() {}
 
 func (x *LinkAppRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[8]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -635,7 +856,7 @@ func (x *LinkAppRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LinkAppRequest.ProtoReflect.Descriptor instead.
 func (*LinkAppRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{8}
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *LinkAppRequest) GetEmail() string {
@@ -663,13 +884,14 @@ type LinkAppResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Tokens        *TokenPair             `protobuf:"bytes,2,opt,name=tokens,proto3" json:"tokens,omitempty"`
+	Profile       *ProfileHint           `protobuf:"bytes,3,opt,name=profile,proto3" json:"profile,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *LinkAppResponse) Reset() {
 	*x = LinkAppResponse{}
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[9]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -681,7 +903,7 @@ func (x *LinkAppResponse) String() string {
 func (*LinkAppResponse) ProtoMessage() {}
 
 func (x *LinkAppResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[9]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -694,7 +916,7 @@ func (x *LinkAppResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LinkAppResponse.ProtoReflect.Descriptor instead.
 func (*LinkAppResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{9}
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *LinkAppResponse) GetUserId() string {
@@ -711,6 +933,353 @@ func (x *LinkAppResponse) GetTokens() *TokenPair {
 	return nil
 }
 
+func (x *LinkAppResponse) GetProfile() *ProfileHint {
+	if x != nil {
+		return x.Profile
+	}
+	return nil
+}
+
+// ===== LinkProvider =====
+type LinkProviderRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Provider      AuthProvider           `protobuf:"varint,1,opt,name=provider,proto3,enum=sttattus.auth.v1.AuthProvider" json:"provider,omitempty"`
+	IdToken       string                 `protobuf:"bytes,2,opt,name=id_token,json=idToken,proto3" json:"id_token,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LinkProviderRequest) Reset() {
+	*x = LinkProviderRequest{}
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LinkProviderRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LinkProviderRequest) ProtoMessage() {}
+
+func (x *LinkProviderRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LinkProviderRequest.ProtoReflect.Descriptor instead.
+func (*LinkProviderRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *LinkProviderRequest) GetProvider() AuthProvider {
+	if x != nil {
+		return x.Provider
+	}
+	return AuthProvider_AUTH_PROVIDER_UNSPECIFIED
+}
+
+func (x *LinkProviderRequest) GetIdToken() string {
+	if x != nil {
+		return x.IdToken
+	}
+	return ""
+}
+
+type LinkProviderResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LinkProviderResponse) Reset() {
+	*x = LinkProviderResponse{}
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LinkProviderResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LinkProviderResponse) ProtoMessage() {}
+
+func (x *LinkProviderResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LinkProviderResponse.ProtoReflect.Descriptor instead.
+func (*LinkProviderResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{13}
+}
+
+// ===== SetPassword =====
+type SetPasswordRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	NewPassword   string                 `protobuf:"bytes,1,opt,name=new_password,json=newPassword,proto3" json:"new_password,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetPasswordRequest) Reset() {
+	*x = SetPasswordRequest{}
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetPasswordRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetPasswordRequest) ProtoMessage() {}
+
+func (x *SetPasswordRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetPasswordRequest.ProtoReflect.Descriptor instead.
+func (*SetPasswordRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *SetPasswordRequest) GetNewPassword() string {
+	if x != nil {
+		return x.NewPassword
+	}
+	return ""
+}
+
+type SetPasswordResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetPasswordResponse) Reset() {
+	*x = SetPasswordResponse{}
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetPasswordResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetPasswordResponse) ProtoMessage() {}
+
+func (x *SetPasswordResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetPasswordResponse.ProtoReflect.Descriptor instead.
+func (*SetPasswordResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{15}
+}
+
+// ===== ForgotPassword =====
+type ForgotPasswordRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EmailOrHandle string                 `protobuf:"bytes,1,opt,name=email_or_handle,json=emailOrHandle,proto3" json:"email_or_handle,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ForgotPasswordRequest) Reset() {
+	*x = ForgotPasswordRequest{}
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ForgotPasswordRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ForgotPasswordRequest) ProtoMessage() {}
+
+func (x *ForgotPasswordRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ForgotPasswordRequest.ProtoReflect.Descriptor instead.
+func (*ForgotPasswordRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *ForgotPasswordRequest) GetEmailOrHandle() string {
+	if x != nil {
+		return x.EmailOrHandle
+	}
+	return ""
+}
+
+type ForgotPasswordResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ForgotPasswordResponse) Reset() {
+	*x = ForgotPasswordResponse{}
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ForgotPasswordResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ForgotPasswordResponse) ProtoMessage() {}
+
+func (x *ForgotPasswordResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ForgotPasswordResponse.ProtoReflect.Descriptor instead.
+func (*ForgotPasswordResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{17}
+}
+
+// ===== ResetPassword =====
+type ResetPasswordRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	NewPassword   string                 `protobuf:"bytes,2,opt,name=new_password,json=newPassword,proto3" json:"new_password,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ResetPasswordRequest) Reset() {
+	*x = ResetPasswordRequest{}
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResetPasswordRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResetPasswordRequest) ProtoMessage() {}
+
+func (x *ResetPasswordRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResetPasswordRequest.ProtoReflect.Descriptor instead.
+func (*ResetPasswordRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *ResetPasswordRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *ResetPasswordRequest) GetNewPassword() string {
+	if x != nil {
+		return x.NewPassword
+	}
+	return ""
+}
+
+type ResetPasswordResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ResetPasswordResponse) Reset() {
+	*x = ResetPasswordResponse{}
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResetPasswordResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResetPasswordResponse) ProtoMessage() {}
+
+func (x *ResetPasswordResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResetPasswordResponse.ProtoReflect.Descriptor instead.
+func (*ResetPasswordResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{19}
+}
+
 // ===== Refresh =====
 type RefreshRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -721,7 +1290,7 @@ type RefreshRequest struct {
 
 func (x *RefreshRequest) Reset() {
 	*x = RefreshRequest{}
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[10]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -733,7 +1302,7 @@ func (x *RefreshRequest) String() string {
 func (*RefreshRequest) ProtoMessage() {}
 
 func (x *RefreshRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[10]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -746,7 +1315,7 @@ func (x *RefreshRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RefreshRequest.ProtoReflect.Descriptor instead.
 func (*RefreshRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{10}
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *RefreshRequest) GetRefreshToken() string {
@@ -765,7 +1334,7 @@ type RefreshResponse struct {
 
 func (x *RefreshResponse) Reset() {
 	*x = RefreshResponse{}
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[11]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -777,7 +1346,7 @@ func (x *RefreshResponse) String() string {
 func (*RefreshResponse) ProtoMessage() {}
 
 func (x *RefreshResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[11]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -790,7 +1359,7 @@ func (x *RefreshResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RefreshResponse.ProtoReflect.Descriptor instead.
 func (*RefreshResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{11}
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *RefreshResponse) GetTokens() *TokenPair {
@@ -810,7 +1379,7 @@ type LogoutRequest struct {
 
 func (x *LogoutRequest) Reset() {
 	*x = LogoutRequest{}
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[12]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -822,7 +1391,7 @@ func (x *LogoutRequest) String() string {
 func (*LogoutRequest) ProtoMessage() {}
 
 func (x *LogoutRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[12]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -835,7 +1404,7 @@ func (x *LogoutRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogoutRequest.ProtoReflect.Descriptor instead.
 func (*LogoutRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{12}
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *LogoutRequest) GetRefreshToken() string {
@@ -853,7 +1422,7 @@ type LogoutResponse struct {
 
 func (x *LogoutResponse) Reset() {
 	*x = LogoutResponse{}
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[13]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -865,7 +1434,7 @@ func (x *LogoutResponse) String() string {
 func (*LogoutResponse) ProtoMessage() {}
 
 func (x *LogoutResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[13]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -878,7 +1447,7 @@ func (x *LogoutResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogoutResponse.ProtoReflect.Descriptor instead.
 func (*LogoutResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{13}
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{23}
 }
 
 var File_sttattus_auth_v1_auth_proto protoreflect.FileDescriptor
@@ -890,7 +1459,7 @@ const file_sttattus_auth_v1_auth_proto_rawDesc = "" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
 	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\x12*\n" +
 	"\x11access_expires_at\x18\x03 \x01(\x03R\x0faccessExpiresAt\x12,\n" +
-	"\x12refresh_expires_at\x18\x04 \x01(\x03R\x10refreshExpiresAt\"\xab\x01\n" +
+	"\x12refresh_expires_at\x18\x04 \x01(\x03R\x10refreshExpiresAt\"\xb1\x02\n" +
 	"\vProfileHint\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x12\n" +
@@ -898,23 +1467,37 @@ const file_sttattus_auth_v1_auth_proto_rawDesc = "" +
 	"\n" +
 	"avatar_url\x18\x04 \x01(\tR\tavatarUrl\x12:\n" +
 	"\vlinked_apps\x18\x05 \x03(\x0e2\x19.sttattus.auth.v1.AppCodeR\n" +
-	"linkedApps\"\x8d\x01\n" +
+	"linkedApps\x12!\n" +
+	"\fhas_password\x18\x06 \x01(\bR\vhasPassword\x12I\n" +
+	"\x10linked_providers\x18\a \x03(\x0e2\x1e.sttattus.auth.v1.AuthProviderR\x0flinkedProviders\x12\x16\n" +
+	"\x06locale\x18\b \x01(\tR\x06locale\"\x8d\x01\n" +
 	"\x0fRegisterRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\x12\x12\n" +
 	"\x04name\x18\x03 \x01(\tR\x04name\x124\n" +
-	"\bapp_code\x18\x04 \x01(\x0e2\x19.sttattus.auth.v1.AppCodeR\aappCode\"\xaa\x01\n" +
+	"\bapp_code\x18\x04 \x01(\x0e2\x19.sttattus.auth.v1.AppCodeR\aappCode\"\xe3\x01\n" +
 	"\x10RegisterResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x123\n" +
-	"\x06tokens\x18\x02 \x01(\v2\x1b.sttattus.auth.v1.TokenPairR\x06tokens\x12H\n" +
-	"\x10existing_profile\x18\x03 \x01(\v2\x1d.sttattus.auth.v1.ProfileHintR\x0fexistingProfile\"v\n" +
+	"\x06tokens\x18\x02 \x01(\v2\x1b.sttattus.auth.v1.TokenPairR\x06tokens\x127\n" +
+	"\aprofile\x18\x03 \x01(\v2\x1d.sttattus.auth.v1.ProfileHintR\aprofile\x12H\n" +
+	"\x10existing_profile\x18\x04 \x01(\v2\x1d.sttattus.auth.v1.ProfileHintR\x0fexistingProfile\"v\n" +
 	"\fLoginRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\x124\n" +
-	"\bapp_code\x18\x03 \x01(\x0e2\x19.sttattus.auth.v1.AppCodeR\aappCode\"]\n" +
+	"\bapp_code\x18\x03 \x01(\x0e2\x19.sttattus.auth.v1.AppCodeR\aappCode\"\x96\x01\n" +
 	"\rLoginResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x123\n" +
-	"\x06tokens\x18\x02 \x01(\v2\x1b.sttattus.auth.v1.TokenPairR\x06tokens\")\n" +
+	"\x06tokens\x18\x02 \x01(\v2\x1b.sttattus.auth.v1.TokenPairR\x06tokens\x127\n" +
+	"\aprofile\x18\x03 \x01(\v2\x1d.sttattus.auth.v1.ProfileHintR\aprofile\"\xa0\x01\n" +
+	"\x11OAuthLoginRequest\x12:\n" +
+	"\bprovider\x18\x01 \x01(\x0e2\x1e.sttattus.auth.v1.AuthProviderR\bprovider\x12\x19\n" +
+	"\bid_token\x18\x02 \x01(\tR\aidToken\x124\n" +
+	"\bapp_code\x18\x03 \x01(\x0e2\x19.sttattus.auth.v1.AppCodeR\aappCode\"\xe5\x01\n" +
+	"\x12OAuthLoginResponse\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x123\n" +
+	"\x06tokens\x18\x02 \x01(\v2\x1b.sttattus.auth.v1.TokenPairR\x06tokens\x127\n" +
+	"\aprofile\x18\x03 \x01(\v2\x1d.sttattus.auth.v1.ProfileHintR\aprofile\x12H\n" +
+	"\x10existing_profile\x18\x04 \x01(\v2\x1d.sttattus.auth.v1.ProfileHintR\x0fexistingProfile\")\n" +
 	"\x11CheckEmailRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\"_\n" +
 	"\x12CheckEmailResponse\x12\x16\n" +
@@ -923,23 +1506,38 @@ const file_sttattus_auth_v1_auth_proto_rawDesc = "" +
 	"\x0eLinkAppRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\x124\n" +
-	"\bapp_code\x18\x03 \x01(\x0e2\x19.sttattus.auth.v1.AppCodeR\aappCode\"_\n" +
+	"\bapp_code\x18\x03 \x01(\x0e2\x19.sttattus.auth.v1.AppCodeR\aappCode\"\x98\x01\n" +
 	"\x0fLinkAppResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x123\n" +
-	"\x06tokens\x18\x02 \x01(\v2\x1b.sttattus.auth.v1.TokenPairR\x06tokens\"5\n" +
+	"\x06tokens\x18\x02 \x01(\v2\x1b.sttattus.auth.v1.TokenPairR\x06tokens\x127\n" +
+	"\aprofile\x18\x03 \x01(\v2\x1d.sttattus.auth.v1.ProfileHintR\aprofile\"l\n" +
+	"\x13LinkProviderRequest\x12:\n" +
+	"\bprovider\x18\x01 \x01(\x0e2\x1e.sttattus.auth.v1.AuthProviderR\bprovider\x12\x19\n" +
+	"\bid_token\x18\x02 \x01(\tR\aidToken\"\x16\n" +
+	"\x14LinkProviderResponse\"7\n" +
+	"\x12SetPasswordRequest\x12!\n" +
+	"\fnew_password\x18\x01 \x01(\tR\vnewPassword\"\x15\n" +
+	"\x13SetPasswordResponse\"?\n" +
+	"\x15ForgotPasswordRequest\x12&\n" +
+	"\x0femail_or_handle\x18\x01 \x01(\tR\remailOrHandle\"\x18\n" +
+	"\x16ForgotPasswordResponse\"O\n" +
+	"\x14ResetPasswordRequest\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\x12!\n" +
+	"\fnew_password\x18\x02 \x01(\tR\vnewPassword\"\x17\n" +
+	"\x15ResetPasswordResponse\"5\n" +
 	"\x0eRefreshRequest\x12#\n" +
 	"\rrefresh_token\x18\x01 \x01(\tR\frefreshToken\"F\n" +
 	"\x0fRefreshResponse\x123\n" +
 	"\x06tokens\x18\x01 \x01(\v2\x1b.sttattus.auth.v1.TokenPairR\x06tokens\"4\n" +
 	"\rLogoutRequest\x12#\n" +
 	"\rrefresh_token\x18\x01 \x01(\tR\frefreshToken\"\x10\n" +
-	"\x0eLogoutResponse*\xa0\x02\n" +
+	"\x0eLogoutResponse*\x9a\x02\n" +
 	"\aAppCode\x12\x18\n" +
-	"\x14APP_CODE_UNSPECIFIED\x10\x00\x12\x14\n" +
-	"\x10APP_CODE_WORKOUT\x10\x01\x12\x16\n" +
-	"\x12APP_CODE_LANGUAGES\x10\x02\x12\x13\n" +
-	"\x0fAPP_CODE_TRAVEL\x10\x03\x12\x13\n" +
-	"\x0fAPP_CODE_DATING\x10\x04\x12\x13\n" +
+	"\x14APP_CODE_UNSPECIFIED\x10\x00\x12\x12\n" +
+	"\x0eAPP_CODE_FORGE\x10\x01\x12\x14\n" +
+	"\x10APP_CODE_LEXICON\x10\x02\x12\x12\n" +
+	"\x0eAPP_CODE_NOMAD\x10\x03\x12\x12\n" +
+	"\x0eAPP_CODE_ATLAS\x10\x04\x12\x13\n" +
 	"\x0fAPP_CODE_EMPIRE\x10\x05\x12\x11\n" +
 	"\rAPP_CODE_ONYX\x10\x06\x12\x11\n" +
 	"\rAPP_CODE_APEX\x10\a\x12\x12\n" +
@@ -948,13 +1546,24 @@ const file_sttattus_auth_v1_auth_proto_rawDesc = "" +
 	"\x0fAPP_CODE_ORACLE\x10\n" +
 	"\x12\x13\n" +
 	"\x0fAPP_CODE_LEGACY\x10\v\x12\x13\n" +
-	"\x0fAPP_CODE_ZENITH\x10\f2\xf0\x03\n" +
+	"\x0fAPP_CODE_ZENITH\x10\f*}\n" +
+	"\fAuthProvider\x12\x1d\n" +
+	"\x19AUTH_PROVIDER_UNSPECIFIED\x10\x00\x12\x18\n" +
+	"\x14AUTH_PROVIDER_GOOGLE\x10\x01\x12\x1a\n" +
+	"\x16AUTH_PROVIDER_FACEBOOK\x10\x02\x12\x18\n" +
+	"\x14AUTH_PROVIDER_GITHUB\x10\x032\xcb\a\n" +
 	"\vAuthService\x12Q\n" +
 	"\bRegister\x12!.sttattus.auth.v1.RegisterRequest\x1a\".sttattus.auth.v1.RegisterResponse\x12H\n" +
 	"\x05Login\x12\x1e.sttattus.auth.v1.LoginRequest\x1a\x1f.sttattus.auth.v1.LoginResponse\x12W\n" +
 	"\n" +
+	"OAuthLogin\x12#.sttattus.auth.v1.OAuthLoginRequest\x1a$.sttattus.auth.v1.OAuthLoginResponse\x12W\n" +
+	"\n" +
 	"CheckEmail\x12#.sttattus.auth.v1.CheckEmailRequest\x1a$.sttattus.auth.v1.CheckEmailResponse\x12N\n" +
-	"\aLinkApp\x12 .sttattus.auth.v1.LinkAppRequest\x1a!.sttattus.auth.v1.LinkAppResponse\x12N\n" +
+	"\aLinkApp\x12 .sttattus.auth.v1.LinkAppRequest\x1a!.sttattus.auth.v1.LinkAppResponse\x12]\n" +
+	"\fLinkProvider\x12%.sttattus.auth.v1.LinkProviderRequest\x1a&.sttattus.auth.v1.LinkProviderResponse\x12Z\n" +
+	"\vSetPassword\x12$.sttattus.auth.v1.SetPasswordRequest\x1a%.sttattus.auth.v1.SetPasswordResponse\x12c\n" +
+	"\x0eForgotPassword\x12'.sttattus.auth.v1.ForgotPasswordRequest\x1a(.sttattus.auth.v1.ForgotPasswordResponse\x12`\n" +
+	"\rResetPassword\x12&.sttattus.auth.v1.ResetPasswordRequest\x1a'.sttattus.auth.v1.ResetPasswordResponse\x12N\n" +
 	"\aRefresh\x12 .sttattus.auth.v1.RefreshRequest\x1a!.sttattus.auth.v1.RefreshResponse\x12K\n" +
 	"\x06Logout\x12\x1f.sttattus.auth.v1.LogoutRequest\x1a .sttattus.auth.v1.LogoutResponseB:Z8github.com/sttattus/proto/gen/go/sttattus/auth/v1;authv1b\x06proto3"
 
@@ -970,53 +1579,84 @@ func file_sttattus_auth_v1_auth_proto_rawDescGZIP() []byte {
 	return file_sttattus_auth_v1_auth_proto_rawDescData
 }
 
-var file_sttattus_auth_v1_auth_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_sttattus_auth_v1_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_sttattus_auth_v1_auth_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_sttattus_auth_v1_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
 var file_sttattus_auth_v1_auth_proto_goTypes = []any{
-	(AppCode)(0),               // 0: sttattus.auth.v1.AppCode
-	(*TokenPair)(nil),          // 1: sttattus.auth.v1.TokenPair
-	(*ProfileHint)(nil),        // 2: sttattus.auth.v1.ProfileHint
-	(*RegisterRequest)(nil),    // 3: sttattus.auth.v1.RegisterRequest
-	(*RegisterResponse)(nil),   // 4: sttattus.auth.v1.RegisterResponse
-	(*LoginRequest)(nil),       // 5: sttattus.auth.v1.LoginRequest
-	(*LoginResponse)(nil),      // 6: sttattus.auth.v1.LoginResponse
-	(*CheckEmailRequest)(nil),  // 7: sttattus.auth.v1.CheckEmailRequest
-	(*CheckEmailResponse)(nil), // 8: sttattus.auth.v1.CheckEmailResponse
-	(*LinkAppRequest)(nil),     // 9: sttattus.auth.v1.LinkAppRequest
-	(*LinkAppResponse)(nil),    // 10: sttattus.auth.v1.LinkAppResponse
-	(*RefreshRequest)(nil),     // 11: sttattus.auth.v1.RefreshRequest
-	(*RefreshResponse)(nil),    // 12: sttattus.auth.v1.RefreshResponse
-	(*LogoutRequest)(nil),      // 13: sttattus.auth.v1.LogoutRequest
-	(*LogoutResponse)(nil),     // 14: sttattus.auth.v1.LogoutResponse
+	(AppCode)(0),                   // 0: sttattus.auth.v1.AppCode
+	(AuthProvider)(0),              // 1: sttattus.auth.v1.AuthProvider
+	(*TokenPair)(nil),              // 2: sttattus.auth.v1.TokenPair
+	(*ProfileHint)(nil),            // 3: sttattus.auth.v1.ProfileHint
+	(*RegisterRequest)(nil),        // 4: sttattus.auth.v1.RegisterRequest
+	(*RegisterResponse)(nil),       // 5: sttattus.auth.v1.RegisterResponse
+	(*LoginRequest)(nil),           // 6: sttattus.auth.v1.LoginRequest
+	(*LoginResponse)(nil),          // 7: sttattus.auth.v1.LoginResponse
+	(*OAuthLoginRequest)(nil),      // 8: sttattus.auth.v1.OAuthLoginRequest
+	(*OAuthLoginResponse)(nil),     // 9: sttattus.auth.v1.OAuthLoginResponse
+	(*CheckEmailRequest)(nil),      // 10: sttattus.auth.v1.CheckEmailRequest
+	(*CheckEmailResponse)(nil),     // 11: sttattus.auth.v1.CheckEmailResponse
+	(*LinkAppRequest)(nil),         // 12: sttattus.auth.v1.LinkAppRequest
+	(*LinkAppResponse)(nil),        // 13: sttattus.auth.v1.LinkAppResponse
+	(*LinkProviderRequest)(nil),    // 14: sttattus.auth.v1.LinkProviderRequest
+	(*LinkProviderResponse)(nil),   // 15: sttattus.auth.v1.LinkProviderResponse
+	(*SetPasswordRequest)(nil),     // 16: sttattus.auth.v1.SetPasswordRequest
+	(*SetPasswordResponse)(nil),    // 17: sttattus.auth.v1.SetPasswordResponse
+	(*ForgotPasswordRequest)(nil),  // 18: sttattus.auth.v1.ForgotPasswordRequest
+	(*ForgotPasswordResponse)(nil), // 19: sttattus.auth.v1.ForgotPasswordResponse
+	(*ResetPasswordRequest)(nil),   // 20: sttattus.auth.v1.ResetPasswordRequest
+	(*ResetPasswordResponse)(nil),  // 21: sttattus.auth.v1.ResetPasswordResponse
+	(*RefreshRequest)(nil),         // 22: sttattus.auth.v1.RefreshRequest
+	(*RefreshResponse)(nil),        // 23: sttattus.auth.v1.RefreshResponse
+	(*LogoutRequest)(nil),          // 24: sttattus.auth.v1.LogoutRequest
+	(*LogoutResponse)(nil),         // 25: sttattus.auth.v1.LogoutResponse
 }
 var file_sttattus_auth_v1_auth_proto_depIdxs = []int32{
 	0,  // 0: sttattus.auth.v1.ProfileHint.linked_apps:type_name -> sttattus.auth.v1.AppCode
-	0,  // 1: sttattus.auth.v1.RegisterRequest.app_code:type_name -> sttattus.auth.v1.AppCode
-	1,  // 2: sttattus.auth.v1.RegisterResponse.tokens:type_name -> sttattus.auth.v1.TokenPair
-	2,  // 3: sttattus.auth.v1.RegisterResponse.existing_profile:type_name -> sttattus.auth.v1.ProfileHint
-	0,  // 4: sttattus.auth.v1.LoginRequest.app_code:type_name -> sttattus.auth.v1.AppCode
-	1,  // 5: sttattus.auth.v1.LoginResponse.tokens:type_name -> sttattus.auth.v1.TokenPair
-	2,  // 6: sttattus.auth.v1.CheckEmailResponse.hint:type_name -> sttattus.auth.v1.ProfileHint
-	0,  // 7: sttattus.auth.v1.LinkAppRequest.app_code:type_name -> sttattus.auth.v1.AppCode
-	1,  // 8: sttattus.auth.v1.LinkAppResponse.tokens:type_name -> sttattus.auth.v1.TokenPair
-	1,  // 9: sttattus.auth.v1.RefreshResponse.tokens:type_name -> sttattus.auth.v1.TokenPair
-	3,  // 10: sttattus.auth.v1.AuthService.Register:input_type -> sttattus.auth.v1.RegisterRequest
-	5,  // 11: sttattus.auth.v1.AuthService.Login:input_type -> sttattus.auth.v1.LoginRequest
-	7,  // 12: sttattus.auth.v1.AuthService.CheckEmail:input_type -> sttattus.auth.v1.CheckEmailRequest
-	9,  // 13: sttattus.auth.v1.AuthService.LinkApp:input_type -> sttattus.auth.v1.LinkAppRequest
-	11, // 14: sttattus.auth.v1.AuthService.Refresh:input_type -> sttattus.auth.v1.RefreshRequest
-	13, // 15: sttattus.auth.v1.AuthService.Logout:input_type -> sttattus.auth.v1.LogoutRequest
-	4,  // 16: sttattus.auth.v1.AuthService.Register:output_type -> sttattus.auth.v1.RegisterResponse
-	6,  // 17: sttattus.auth.v1.AuthService.Login:output_type -> sttattus.auth.v1.LoginResponse
-	8,  // 18: sttattus.auth.v1.AuthService.CheckEmail:output_type -> sttattus.auth.v1.CheckEmailResponse
-	10, // 19: sttattus.auth.v1.AuthService.LinkApp:output_type -> sttattus.auth.v1.LinkAppResponse
-	12, // 20: sttattus.auth.v1.AuthService.Refresh:output_type -> sttattus.auth.v1.RefreshResponse
-	14, // 21: sttattus.auth.v1.AuthService.Logout:output_type -> sttattus.auth.v1.LogoutResponse
-	16, // [16:22] is the sub-list for method output_type
-	10, // [10:16] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	1,  // 1: sttattus.auth.v1.ProfileHint.linked_providers:type_name -> sttattus.auth.v1.AuthProvider
+	0,  // 2: sttattus.auth.v1.RegisterRequest.app_code:type_name -> sttattus.auth.v1.AppCode
+	2,  // 3: sttattus.auth.v1.RegisterResponse.tokens:type_name -> sttattus.auth.v1.TokenPair
+	3,  // 4: sttattus.auth.v1.RegisterResponse.profile:type_name -> sttattus.auth.v1.ProfileHint
+	3,  // 5: sttattus.auth.v1.RegisterResponse.existing_profile:type_name -> sttattus.auth.v1.ProfileHint
+	0,  // 6: sttattus.auth.v1.LoginRequest.app_code:type_name -> sttattus.auth.v1.AppCode
+	2,  // 7: sttattus.auth.v1.LoginResponse.tokens:type_name -> sttattus.auth.v1.TokenPair
+	3,  // 8: sttattus.auth.v1.LoginResponse.profile:type_name -> sttattus.auth.v1.ProfileHint
+	1,  // 9: sttattus.auth.v1.OAuthLoginRequest.provider:type_name -> sttattus.auth.v1.AuthProvider
+	0,  // 10: sttattus.auth.v1.OAuthLoginRequest.app_code:type_name -> sttattus.auth.v1.AppCode
+	2,  // 11: sttattus.auth.v1.OAuthLoginResponse.tokens:type_name -> sttattus.auth.v1.TokenPair
+	3,  // 12: sttattus.auth.v1.OAuthLoginResponse.profile:type_name -> sttattus.auth.v1.ProfileHint
+	3,  // 13: sttattus.auth.v1.OAuthLoginResponse.existing_profile:type_name -> sttattus.auth.v1.ProfileHint
+	3,  // 14: sttattus.auth.v1.CheckEmailResponse.hint:type_name -> sttattus.auth.v1.ProfileHint
+	0,  // 15: sttattus.auth.v1.LinkAppRequest.app_code:type_name -> sttattus.auth.v1.AppCode
+	2,  // 16: sttattus.auth.v1.LinkAppResponse.tokens:type_name -> sttattus.auth.v1.TokenPair
+	3,  // 17: sttattus.auth.v1.LinkAppResponse.profile:type_name -> sttattus.auth.v1.ProfileHint
+	1,  // 18: sttattus.auth.v1.LinkProviderRequest.provider:type_name -> sttattus.auth.v1.AuthProvider
+	2,  // 19: sttattus.auth.v1.RefreshResponse.tokens:type_name -> sttattus.auth.v1.TokenPair
+	4,  // 20: sttattus.auth.v1.AuthService.Register:input_type -> sttattus.auth.v1.RegisterRequest
+	6,  // 21: sttattus.auth.v1.AuthService.Login:input_type -> sttattus.auth.v1.LoginRequest
+	8,  // 22: sttattus.auth.v1.AuthService.OAuthLogin:input_type -> sttattus.auth.v1.OAuthLoginRequest
+	10, // 23: sttattus.auth.v1.AuthService.CheckEmail:input_type -> sttattus.auth.v1.CheckEmailRequest
+	12, // 24: sttattus.auth.v1.AuthService.LinkApp:input_type -> sttattus.auth.v1.LinkAppRequest
+	14, // 25: sttattus.auth.v1.AuthService.LinkProvider:input_type -> sttattus.auth.v1.LinkProviderRequest
+	16, // 26: sttattus.auth.v1.AuthService.SetPassword:input_type -> sttattus.auth.v1.SetPasswordRequest
+	18, // 27: sttattus.auth.v1.AuthService.ForgotPassword:input_type -> sttattus.auth.v1.ForgotPasswordRequest
+	20, // 28: sttattus.auth.v1.AuthService.ResetPassword:input_type -> sttattus.auth.v1.ResetPasswordRequest
+	22, // 29: sttattus.auth.v1.AuthService.Refresh:input_type -> sttattus.auth.v1.RefreshRequest
+	24, // 30: sttattus.auth.v1.AuthService.Logout:input_type -> sttattus.auth.v1.LogoutRequest
+	5,  // 31: sttattus.auth.v1.AuthService.Register:output_type -> sttattus.auth.v1.RegisterResponse
+	7,  // 32: sttattus.auth.v1.AuthService.Login:output_type -> sttattus.auth.v1.LoginResponse
+	9,  // 33: sttattus.auth.v1.AuthService.OAuthLogin:output_type -> sttattus.auth.v1.OAuthLoginResponse
+	11, // 34: sttattus.auth.v1.AuthService.CheckEmail:output_type -> sttattus.auth.v1.CheckEmailResponse
+	13, // 35: sttattus.auth.v1.AuthService.LinkApp:output_type -> sttattus.auth.v1.LinkAppResponse
+	15, // 36: sttattus.auth.v1.AuthService.LinkProvider:output_type -> sttattus.auth.v1.LinkProviderResponse
+	17, // 37: sttattus.auth.v1.AuthService.SetPassword:output_type -> sttattus.auth.v1.SetPasswordResponse
+	19, // 38: sttattus.auth.v1.AuthService.ForgotPassword:output_type -> sttattus.auth.v1.ForgotPasswordResponse
+	21, // 39: sttattus.auth.v1.AuthService.ResetPassword:output_type -> sttattus.auth.v1.ResetPasswordResponse
+	23, // 40: sttattus.auth.v1.AuthService.Refresh:output_type -> sttattus.auth.v1.RefreshResponse
+	25, // 41: sttattus.auth.v1.AuthService.Logout:output_type -> sttattus.auth.v1.LogoutResponse
+	31, // [31:42] is the sub-list for method output_type
+	20, // [20:31] is the sub-list for method input_type
+	20, // [20:20] is the sub-list for extension type_name
+	20, // [20:20] is the sub-list for extension extendee
+	0,  // [0:20] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_auth_v1_auth_proto_init() }
@@ -1029,8 +1669,8 @@ func file_sttattus_auth_v1_auth_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_auth_v1_auth_proto_rawDesc), len(file_sttattus_auth_v1_auth_proto_rawDesc)),
-			NumEnums:      1,
-			NumMessages:   14,
+			NumEnums:      2,
+			NumMessages:   24,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

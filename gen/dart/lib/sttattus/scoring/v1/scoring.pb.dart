@@ -2289,6 +2289,434 @@ class ScoreDominionResponse extends $pb.GeneratedMessage {
   void clearDominionDelta() => $_clearField(2);
 }
 
+/// Optional heart rate data from sensors.
+class ScoreSessionAnalyticsRequest_HeartRatePoint extends $pb.GeneratedMessage {
+  factory ScoreSessionAnalyticsRequest_HeartRatePoint({
+    $core.int? timestampOffsetSeconds,
+    $core.double? bpm,
+  }) {
+    final result = create();
+    if (timestampOffsetSeconds != null) result.timestampOffsetSeconds = timestampOffsetSeconds;
+    if (bpm != null) result.bpm = bpm;
+    return result;
+  }
+
+  ScoreSessionAnalyticsRequest_HeartRatePoint._();
+
+  factory ScoreSessionAnalyticsRequest_HeartRatePoint.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ScoreSessionAnalyticsRequest_HeartRatePoint.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreSessionAnalyticsRequest.HeartRatePoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'timestampOffsetSeconds', $pb.PbFieldType.O3)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'bpm', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreSessionAnalyticsRequest_HeartRatePoint clone() => ScoreSessionAnalyticsRequest_HeartRatePoint()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreSessionAnalyticsRequest_HeartRatePoint copyWith(void Function(ScoreSessionAnalyticsRequest_HeartRatePoint) updates) => super.copyWith((message) => updates(message as ScoreSessionAnalyticsRequest_HeartRatePoint)) as ScoreSessionAnalyticsRequest_HeartRatePoint;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ScoreSessionAnalyticsRequest_HeartRatePoint create() => ScoreSessionAnalyticsRequest_HeartRatePoint._();
+  @$core.override
+  ScoreSessionAnalyticsRequest_HeartRatePoint createEmptyInstance() => create();
+  static $pb.PbList<ScoreSessionAnalyticsRequest_HeartRatePoint> createRepeated() => $pb.PbList<ScoreSessionAnalyticsRequest_HeartRatePoint>();
+  @$core.pragma('dart2js:noInline')
+  static ScoreSessionAnalyticsRequest_HeartRatePoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreSessionAnalyticsRequest_HeartRatePoint>(create);
+  static ScoreSessionAnalyticsRequest_HeartRatePoint? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get timestampOffsetSeconds => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set timestampOffsetSeconds($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTimestampOffsetSeconds() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTimestampOffsetSeconds() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get bpm => $_getN(1);
+  @$pb.TagNumber(2)
+  set bpm($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBpm() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBpm() => $_clearField(2);
+}
+
+class ScoreSessionAnalyticsRequest extends $pb.GeneratedMessage {
+  factory ScoreSessionAnalyticsRequest({
+    $core.String? sessionId,
+    $core.Iterable<WorkoutSeriesInput>? series,
+    $core.Iterable<ScoreSessionAnalyticsRequest_HeartRatePoint>? heartRateData,
+  }) {
+    final result = create();
+    if (sessionId != null) result.sessionId = sessionId;
+    if (series != null) result.series.addAll(series);
+    if (heartRateData != null) result.heartRateData.addAll(heartRateData);
+    return result;
+  }
+
+  ScoreSessionAnalyticsRequest._();
+
+  factory ScoreSessionAnalyticsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ScoreSessionAnalyticsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreSessionAnalyticsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sessionId')
+    ..pc<WorkoutSeriesInput>(2, _omitFieldNames ? '' : 'series', $pb.PbFieldType.PM, subBuilder: WorkoutSeriesInput.create)
+    ..pc<ScoreSessionAnalyticsRequest_HeartRatePoint>(3, _omitFieldNames ? '' : 'heartRateData', $pb.PbFieldType.PM, subBuilder: ScoreSessionAnalyticsRequest_HeartRatePoint.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreSessionAnalyticsRequest clone() => ScoreSessionAnalyticsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreSessionAnalyticsRequest copyWith(void Function(ScoreSessionAnalyticsRequest) updates) => super.copyWith((message) => updates(message as ScoreSessionAnalyticsRequest)) as ScoreSessionAnalyticsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ScoreSessionAnalyticsRequest create() => ScoreSessionAnalyticsRequest._();
+  @$core.override
+  ScoreSessionAnalyticsRequest createEmptyInstance() => create();
+  static $pb.PbList<ScoreSessionAnalyticsRequest> createRepeated() => $pb.PbList<ScoreSessionAnalyticsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ScoreSessionAnalyticsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreSessionAnalyticsRequest>(create);
+  static ScoreSessionAnalyticsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sessionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sessionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSessionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<WorkoutSeriesInput> get series => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<ScoreSessionAnalyticsRequest_HeartRatePoint> get heartRateData => $_getList(2);
+}
+
+class MetricPoint extends $pb.GeneratedMessage {
+  factory MetricPoint({
+    $core.int? timestampOffsetSeconds,
+    $core.double? value,
+  }) {
+    final result = create();
+    if (timestampOffsetSeconds != null) result.timestampOffsetSeconds = timestampOffsetSeconds;
+    if (value != null) result.value = value;
+    return result;
+  }
+
+  MetricPoint._();
+
+  factory MetricPoint.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory MetricPoint.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MetricPoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'timestampOffsetSeconds', $pb.PbFieldType.O3)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'value', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MetricPoint clone() => MetricPoint()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MetricPoint copyWith(void Function(MetricPoint) updates) => super.copyWith((message) => updates(message as MetricPoint)) as MetricPoint;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MetricPoint create() => MetricPoint._();
+  @$core.override
+  MetricPoint createEmptyInstance() => create();
+  static $pb.PbList<MetricPoint> createRepeated() => $pb.PbList<MetricPoint>();
+  @$core.pragma('dart2js:noInline')
+  static MetricPoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MetricPoint>(create);
+  static MetricPoint? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get timestampOffsetSeconds => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set timestampOffsetSeconds($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTimestampOffsetSeconds() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTimestampOffsetSeconds() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get value => $_getN(1);
+  @$pb.TagNumber(2)
+  set value($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasValue() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValue() => $_clearField(2);
+}
+
+class ScoreSessionAnalyticsResponse extends $pb.GeneratedMessage {
+  factory ScoreSessionAnalyticsResponse({
+    $core.Iterable<MetricPoint>? volumeCurve,
+    $core.Iterable<MetricPoint>? intensityCurve,
+    $core.Iterable<MetricPoint>? heartRateCurve,
+    $core.double? totalVolume,
+    $core.double? avgIntensity,
+    $core.int? peakHeartRate,
+  }) {
+    final result = create();
+    if (volumeCurve != null) result.volumeCurve.addAll(volumeCurve);
+    if (intensityCurve != null) result.intensityCurve.addAll(intensityCurve);
+    if (heartRateCurve != null) result.heartRateCurve.addAll(heartRateCurve);
+    if (totalVolume != null) result.totalVolume = totalVolume;
+    if (avgIntensity != null) result.avgIntensity = avgIntensity;
+    if (peakHeartRate != null) result.peakHeartRate = peakHeartRate;
+    return result;
+  }
+
+  ScoreSessionAnalyticsResponse._();
+
+  factory ScoreSessionAnalyticsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ScoreSessionAnalyticsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreSessionAnalyticsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+    ..pc<MetricPoint>(1, _omitFieldNames ? '' : 'volumeCurve', $pb.PbFieldType.PM, subBuilder: MetricPoint.create)
+    ..pc<MetricPoint>(2, _omitFieldNames ? '' : 'intensityCurve', $pb.PbFieldType.PM, subBuilder: MetricPoint.create)
+    ..pc<MetricPoint>(3, _omitFieldNames ? '' : 'heartRateCurve', $pb.PbFieldType.PM, subBuilder: MetricPoint.create)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'totalVolume', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'avgIntensity', $pb.PbFieldType.OD)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'peakHeartRate', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreSessionAnalyticsResponse clone() => ScoreSessionAnalyticsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreSessionAnalyticsResponse copyWith(void Function(ScoreSessionAnalyticsResponse) updates) => super.copyWith((message) => updates(message as ScoreSessionAnalyticsResponse)) as ScoreSessionAnalyticsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ScoreSessionAnalyticsResponse create() => ScoreSessionAnalyticsResponse._();
+  @$core.override
+  ScoreSessionAnalyticsResponse createEmptyInstance() => create();
+  static $pb.PbList<ScoreSessionAnalyticsResponse> createRepeated() => $pb.PbList<ScoreSessionAnalyticsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ScoreSessionAnalyticsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreSessionAnalyticsResponse>(create);
+  static ScoreSessionAnalyticsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<MetricPoint> get volumeCurve => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<MetricPoint> get intensityCurve => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<MetricPoint> get heartRateCurve => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.double get totalVolume => $_getN(3);
+  @$pb.TagNumber(4)
+  set totalVolume($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTotalVolume() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTotalVolume() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get avgIntensity => $_getN(4);
+  @$pb.TagNumber(5)
+  set avgIntensity($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAvgIntensity() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAvgIntensity() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get peakHeartRate => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set peakHeartRate($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPeakHeartRate() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPeakHeartRate() => $_clearField(6);
+}
+
+class ScoreRivalryRequest extends $pb.GeneratedMessage {
+  factory ScoreRivalryRequest({
+    $core.String? rivalryId,
+    $core.double? myCurrentScore,
+    $core.double? rivalCurrentScore,
+    $core.Iterable<MetricPoint>? myScoreHistory,
+    $core.Iterable<MetricPoint>? rivalScoreHistory,
+  }) {
+    final result = create();
+    if (rivalryId != null) result.rivalryId = rivalryId;
+    if (myCurrentScore != null) result.myCurrentScore = myCurrentScore;
+    if (rivalCurrentScore != null) result.rivalCurrentScore = rivalCurrentScore;
+    if (myScoreHistory != null) result.myScoreHistory.addAll(myScoreHistory);
+    if (rivalScoreHistory != null) result.rivalScoreHistory.addAll(rivalScoreHistory);
+    return result;
+  }
+
+  ScoreRivalryRequest._();
+
+  factory ScoreRivalryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ScoreRivalryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreRivalryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'rivalryId')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'myCurrentScore', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'rivalCurrentScore', $pb.PbFieldType.OD)
+    ..pc<MetricPoint>(4, _omitFieldNames ? '' : 'myScoreHistory', $pb.PbFieldType.PM, subBuilder: MetricPoint.create)
+    ..pc<MetricPoint>(5, _omitFieldNames ? '' : 'rivalScoreHistory', $pb.PbFieldType.PM, subBuilder: MetricPoint.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreRivalryRequest clone() => ScoreRivalryRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreRivalryRequest copyWith(void Function(ScoreRivalryRequest) updates) => super.copyWith((message) => updates(message as ScoreRivalryRequest)) as ScoreRivalryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ScoreRivalryRequest create() => ScoreRivalryRequest._();
+  @$core.override
+  ScoreRivalryRequest createEmptyInstance() => create();
+  static $pb.PbList<ScoreRivalryRequest> createRepeated() => $pb.PbList<ScoreRivalryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ScoreRivalryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreRivalryRequest>(create);
+  static ScoreRivalryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get rivalryId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set rivalryId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRivalryId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRivalryId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get myCurrentScore => $_getN(1);
+  @$pb.TagNumber(2)
+  set myCurrentScore($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMyCurrentScore() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMyCurrentScore() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get rivalCurrentScore => $_getN(2);
+  @$pb.TagNumber(3)
+  set rivalCurrentScore($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRivalCurrentScore() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRivalCurrentScore() => $_clearField(3);
+
+  /// History of scores for progress curves.
+  @$pb.TagNumber(4)
+  $pb.PbList<MetricPoint> get myScoreHistory => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<MetricPoint> get rivalScoreHistory => $_getList(4);
+}
+
+class ScoreRivalryResponse extends $pb.GeneratedMessage {
+  factory ScoreRivalryResponse({
+    $core.double? myProgressPct,
+    $core.double? rivalProgressPct,
+    $core.Iterable<MetricPoint>? myNormalizedCurve,
+    $core.Iterable<MetricPoint>? rivalNormalizedCurve,
+    $core.String? leadingUserId,
+  }) {
+    final result = create();
+    if (myProgressPct != null) result.myProgressPct = myProgressPct;
+    if (rivalProgressPct != null) result.rivalProgressPct = rivalProgressPct;
+    if (myNormalizedCurve != null) result.myNormalizedCurve.addAll(myNormalizedCurve);
+    if (rivalNormalizedCurve != null) result.rivalNormalizedCurve.addAll(rivalNormalizedCurve);
+    if (leadingUserId != null) result.leadingUserId = leadingUserId;
+    return result;
+  }
+
+  ScoreRivalryResponse._();
+
+  factory ScoreRivalryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ScoreRivalryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreRivalryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'myProgressPct', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'rivalProgressPct', $pb.PbFieldType.OD)
+    ..pc<MetricPoint>(3, _omitFieldNames ? '' : 'myNormalizedCurve', $pb.PbFieldType.PM, subBuilder: MetricPoint.create)
+    ..pc<MetricPoint>(4, _omitFieldNames ? '' : 'rivalNormalizedCurve', $pb.PbFieldType.PM, subBuilder: MetricPoint.create)
+    ..aOS(5, _omitFieldNames ? '' : 'leadingUserId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreRivalryResponse clone() => ScoreRivalryResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScoreRivalryResponse copyWith(void Function(ScoreRivalryResponse) updates) => super.copyWith((message) => updates(message as ScoreRivalryResponse)) as ScoreRivalryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ScoreRivalryResponse create() => ScoreRivalryResponse._();
+  @$core.override
+  ScoreRivalryResponse createEmptyInstance() => create();
+  static $pb.PbList<ScoreRivalryResponse> createRepeated() => $pb.PbList<ScoreRivalryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ScoreRivalryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreRivalryResponse>(create);
+  static ScoreRivalryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get myProgressPct => $_getN(0);
+  @$pb.TagNumber(1)
+  set myProgressPct($core.double value) => $_setDouble(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMyProgressPct() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMyProgressPct() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get rivalProgressPct => $_getN(1);
+  @$pb.TagNumber(2)
+  set rivalProgressPct($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRivalProgressPct() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRivalProgressPct() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<MetricPoint> get myNormalizedCurve => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<MetricPoint> get rivalNormalizedCurve => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.String get leadingUserId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set leadingUserId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLeadingUserId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLeadingUserId() => $_clearField(5);
+}
+
 /// ScoreAcuteChronicRequest carries daily training loads. acute is
 /// the trailing 7-day sum, chronic the trailing 28-day sum (both as
 /// session tonnage or another consistent load proxy). The ratio is

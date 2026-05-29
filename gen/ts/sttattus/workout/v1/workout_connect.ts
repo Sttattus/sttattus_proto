@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateBodyCompositionRequest, CreateBodyCompositionResponse, CreateFormVideoRequest, CreateFormVideoResponse, CreateInjuryRequest, CreateInjuryResponse, CreateSessionRequest, CreateSessionResponse, DeleteBodyCompositionRequest, DeleteBodyCompositionResponse, DeleteFormVideoRequest, DeleteFormVideoResponse, DeleteInjuryRequest, DeleteInjuryResponse, DeleteMobilityBaselineRequest, DeleteMobilityBaselineResponse, EnrolInProgrammeRequest, EnrolInProgrammeResponse, GetActiveEnrolmentRequest, GetActiveEnrolmentResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetCurrentMobilityBaselineRequest, GetCurrentMobilityBaselineResponse, GetForgeAnalyticsRequest, GetForgeAnalyticsResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetProgrammeRequest, GetProgrammeResponse, GetProgrammeWeekRequest, GetProgrammeWeekResponse, GetRankLadderRequest, GetRankLadderResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListBodyCompositionsRequest, ListBodyCompositionsResponse, ListExercisesRequest, ListExercisesResponse, ListHistoryRequest, ListHistoryResponse, ListInjuriesRequest, ListInjuriesResponse, ListMobilityBaselinesRequest, ListMobilityBaselinesResponse, ListMyEnrolmentsRequest, ListMyEnrolmentsResponse, ListMyFormVideosRequest, ListMyFormVideosResponse, ListMyPRsRequest, ListMyPRsResponse, ListProgrammesRequest, ListProgrammesResponse, ListProgrammeWeeksRequest, ListProgrammeWeeksResponse, ListRecentPRsRequest, ListRecentPRsResponse, ListSensorConnectionsRequest, ListSensorConnectionsResponse, ListSessionsRequest, ListSessionsResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, MarkSensorSyncedRequest, MarkSensorSyncedResponse, SetSensorConnectionStatusRequest, SetSensorConnectionStatusResponse, SetSensorPriorityRequest, SetSensorPriorityResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateEnrolmentRequest, UpdateEnrolmentResponse, UpdateFormVideoStatusRequest, UpdateFormVideoStatusResponse, UpdateInjuryStatusRequest, UpdateInjuryStatusResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse, UpsertMobilityBaselineRequest, UpsertMobilityBaselineResponse } from "./workout_pb.js";
+import { AddUserEquipmentRequest, AddUserEquipmentResponse, AnalyzeFormVideoRequest, AnalyzeFormVideoResponse, CancelLoungeBookingRequest, CancelLoungeBookingResponse, CreateAthleteShareRequest, CreateAthleteShareResponse, CreateBodyCompositionRequest, CreateBodyCompositionResponse, CreateFormVideoRequest, CreateFormVideoResponse, CreateInjuryRequest, CreateInjuryResponse, CreateLoungeBookingRequest, CreateLoungeBookingResponse, CreateRivalryRequest, CreateRivalryResponse, CreateSessionRequest, CreateSessionResponse, DeleteBodyCompositionRequest, DeleteBodyCompositionResponse, DeleteFormVideoRequest, DeleteFormVideoResponse, DeleteInjuryRequest, DeleteInjuryResponse, DeleteMobilityBaselineRequest, DeleteMobilityBaselineResponse, DeleteUserEquipmentRequest, DeleteUserEquipmentResponse, EnrolInProgrammeRequest, EnrolInProgrammeResponse, GenerateForgeAlmanacRequest, GenerateForgeAlmanacResponse, GetActiveEnrolmentRequest, GetActiveEnrolmentResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetCoachThreadRequest, GetCoachThreadResponse, GetCurrentMobilityBaselineRequest, GetCurrentMobilityBaselineResponse, GetForgeAnalyticsRequest, GetForgeAnalyticsResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetLeaderboardRequest, GetLeaderboardResponse, GetProgrammeRequest, GetProgrammeResponse, GetProgrammeWeekRequest, GetProgrammeWeekResponse, GetRankLadderRequest, GetRankLadderResponse, GetRecoveryScoreRequest, GetRecoveryScoreResponse, GetRivalryDetailRequest, GetRivalryDetailResponse, GetSessionAnalyticsRequest, GetSessionAnalyticsResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListBodyCompositionsRequest, ListBodyCompositionsResponse, ListCoachesRequest, ListCoachesResponse, ListExercisesRequest, ListExercisesResponse, ListForgeLoungesRequest, ListForgeLoungesResponse, ListHistoryRequest, ListHistoryResponse, ListInjuriesRequest, ListInjuriesResponse, ListMobilityBaselinesRequest, ListMobilityBaselinesResponse, ListMyAthleteSharesRequest, ListMyAthleteSharesResponse, ListMyCoachThreadsRequest, ListMyCoachThreadsResponse, ListMyEnrolmentsRequest, ListMyEnrolmentsResponse, ListMyFormVideosRequest, ListMyFormVideosResponse, ListMyLoungeBookingsRequest, ListMyLoungeBookingsResponse, ListMyPRsRequest, ListMyPRsResponse, ListProgrammesRequest, ListProgrammesResponse, ListProgrammeWeeksRequest, ListProgrammeWeeksResponse, ListRecentPRsRequest, ListRecentPRsResponse, ListSensorConnectionsRequest, ListSensorConnectionsResponse, ListSessionsRequest, ListSessionsResponse, ListUserEquipmentRequest, ListUserEquipmentResponse, ListWorkoutRivalriesRequest, ListWorkoutRivalriesResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, MarkSensorSyncedRequest, MarkSensorSyncedResponse, PostCoachMessageRequest, PostCoachMessageResponse, RequestCoachBookingRequest, RequestCoachBookingResponse, RevokeAthleteShareRequest, RevokeAthleteShareResponse, SetSensorConnectionStatusRequest, SetSensorConnectionStatusResponse, SetSensorPriorityRequest, SetSensorPriorityResponse, SimulateForgeRankRequest, SimulateForgeRankResponse, StartCoachThreadRequest, StartCoachThreadResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateEnrolmentRequest, UpdateEnrolmentResponse, UpdateFormVideoStatusRequest, UpdateFormVideoStatusResponse, UpdateInjuryStatusRequest, UpdateInjuryStatusResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse, UpsertMobilityBaselineRequest, UpsertMobilityBaselineResponse } from "./workout_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -459,6 +459,292 @@ export const WorkoutService = {
       name: "GetForgeAnalytics",
       I: GetForgeAnalyticsRequest,
       O: GetForgeAnalyticsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P2.7 — Session Replay & Analytics
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetSessionAnalytics
+     */
+    getSessionAnalytics: {
+      name: "GetSessionAnalytics",
+      I: GetSessionAnalyticsRequest,
+      O: GetSessionAnalyticsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P2.8 — Equipment Vault
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListUserEquipment
+     */
+    listUserEquipment: {
+      name: "ListUserEquipment",
+      I: ListUserEquipmentRequest,
+      O: ListUserEquipmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.AddUserEquipment
+     */
+    addUserEquipment: {
+      name: "AddUserEquipment",
+      I: AddUserEquipmentRequest,
+      O: AddUserEquipmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.DeleteUserEquipment
+     */
+    deleteUserEquipment: {
+      name: "DeleteUserEquipment",
+      I: DeleteUserEquipmentRequest,
+      O: DeleteUserEquipmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P2.9 — Workout Rivalries
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListWorkoutRivalries
+     */
+    listWorkoutRivalries: {
+      name: "ListWorkoutRivalries",
+      I: ListWorkoutRivalriesRequest,
+      O: ListWorkoutRivalriesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetRivalryDetail
+     */
+    getRivalryDetail: {
+      name: "GetRivalryDetail",
+      I: GetRivalryDetailRequest,
+      O: GetRivalryDetailResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P3.1 — What-if simulator. Project the forge-rank / Power / Agility /
+     * Grit change a hypothetical session would produce, via the Rust engine,
+     * without committing anything.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.SimulateForgeRank
+     */
+    simulateForgeRank: {
+      name: "SimulateForgeRank",
+      I: SimulateForgeRankRequest,
+      O: SimulateForgeRankResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P3.2 — Recovery score. A 0-100 readiness gate composed from the
+     * lifter's recent training load (acute:chronic), streak momentum, and —
+     * when available — the Apex cross-pillar readiness signal (HRV / RHR /
+     * sleep). Drives the Today ring and the auto-deload nudge.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetRecoveryScore
+     */
+    getRecoveryScore: {
+      name: "GetRecoveryScore",
+      I: GetRecoveryScoreRequest,
+      O: GetRecoveryScoreResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P3.3 — Coach concierge (Sovereign white-glove desk). Threaded
+     * member ↔ coach messaging with an SLA timer.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.StartCoachThread
+     */
+    startCoachThread: {
+      name: "StartCoachThread",
+      I: StartCoachThreadRequest,
+      O: StartCoachThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListMyCoachThreads
+     */
+    listMyCoachThreads: {
+      name: "ListMyCoachThreads",
+      I: ListMyCoachThreadsRequest,
+      O: ListMyCoachThreadsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetCoachThread
+     */
+    getCoachThread: {
+      name: "GetCoachThread",
+      I: GetCoachThreadRequest,
+      O: GetCoachThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.PostCoachMessage
+     */
+    postCoachMessage: {
+      name: "PostCoachMessage",
+      I: PostCoachMessageRequest,
+      O: PostCoachMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P3.4 — Forge Anthology (named-author editorial long-reads).
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListAnthologyArticles
+     */
+    listAnthologyArticles: {
+      name: "ListAnthologyArticles",
+      I: ListAnthologyArticlesRequest,
+      O: ListAnthologyArticlesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetAnthologyArticle
+     */
+    getAnthologyArticle: {
+      name: "GetAnthologyArticle",
+      I: GetAnthologyArticleRequest,
+      O: GetAnthologyArticleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P3.5 — public athlete share. Mints a time-bound token backing a
+     * read-only public profile (rank + stats + PRs) at
+     * /share/athlete/:token, content-negotiated HTML / JSON.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.CreateAthleteShare
+     */
+    createAthleteShare: {
+      name: "CreateAthleteShare",
+      I: CreateAthleteShareRequest,
+      O: CreateAthleteShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListMyAthleteShares
+     */
+    listMyAthleteShares: {
+      name: "ListMyAthleteShares",
+      I: ListMyAthleteSharesRequest,
+      O: ListMyAthleteSharesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RevokeAthleteShare
+     */
+    revokeAthleteShare: {
+      name: "RevokeAthleteShare",
+      I: RevokeAthleteShareRequest,
+      O: RevokeAthleteShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P4.1 — Annual Forge Almanac. Renders a multi-page PDF of the lifter's
+     * training year (rank + stats + PR board + tonnage) to R2 + media_assets,
+     * returns the public URL.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GenerateForgeAlmanac
+     */
+    generateForgeAlmanac: {
+      name: "GenerateForgeAlmanac",
+      I: GenerateForgeAlmanacRequest,
+      O: GenerateForgeAlmanacResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P4.2 — AI form-check. Runs a pose-heuristic pass over an uploaded form
+     * video and writes a one-line cue + verdict, flipping the clip to
+     * 'reviewed'. Heuristic until the Gemini vision pass is wired.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.AnalyzeFormVideo
+     */
+    analyzeFormVideo: {
+      name: "AnalyzeFormVideo",
+      I: AnalyzeFormVideoRequest,
+      O: AnalyzeFormVideoResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P5.1 — rivalry creation (challenge by handle, or a named rival).
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.CreateRivalry
+     */
+    createRivalry: {
+      name: "CreateRivalry",
+      I: CreateRivalryRequest,
+      O: CreateRivalryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P5.2 — leaderboard standings (ranked by forge_rank). The scheduled
+     * Sunday clout-drop publish is a separate cron job; this is the live query.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetLeaderboard
+     */
+    getLeaderboard: {
+      name: "GetLeaderboard",
+      I: GetLeaderboardRequest,
+      O: GetLeaderboardResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P5.3 — Forge Lounge: physical recovery-room directory + booking flow.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListForgeLounges
+     */
+    listForgeLounges: {
+      name: "ListForgeLounges",
+      I: ListForgeLoungesRequest,
+      O: ListForgeLoungesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListMyLoungeBookings
+     */
+    listMyLoungeBookings: {
+      name: "ListMyLoungeBookings",
+      I: ListMyLoungeBookingsRequest,
+      O: ListMyLoungeBookingsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.CreateLoungeBooking
+     */
+    createLoungeBooking: {
+      name: "CreateLoungeBooking",
+      I: CreateLoungeBookingRequest,
+      O: CreateLoungeBookingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.CancelLoungeBooking
+     */
+    cancelLoungeBooking: {
+      name: "CancelLoungeBooking",
+      I: CancelLoungeBookingRequest,
+      O: CancelLoungeBookingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P5.4 — coach directory + booking request. Payment-backed booking is
+     * deferred (Stripe); RequestCoachBooking files an interest request a coach
+     * can pick up.
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ListCoaches
+     */
+    listCoaches: {
+      name: "ListCoaches",
+      I: ListCoachesRequest,
+      O: ListCoachesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RequestCoachBooking
+     */
+    requestCoachBooking: {
+      name: "RequestCoachBooking",
+      I: RequestCoachBookingRequest,
+      O: RequestCoachBookingResponse,
       kind: MethodKind.Unary,
     },
   }

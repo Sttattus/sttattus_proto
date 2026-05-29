@@ -2146,8 +2146,11 @@ class OracleThreadMessage extends $pb.GeneratedMessage {
     $core.String? threadId,
     $core.String? prompt,
     $core.String? response,
-    $core.String? domain,
+    StrategicDomain? domain,
     $fixnum.Int64? createdUnix,
+    $core.double? complexityScore,
+    $core.double? synthesisScore,
+    $core.double? foresightScore,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -2156,6 +2159,9 @@ class OracleThreadMessage extends $pb.GeneratedMessage {
     if (response != null) result.response = response;
     if (domain != null) result.domain = domain;
     if (createdUnix != null) result.createdUnix = createdUnix;
+    if (complexityScore != null) result.complexityScore = complexityScore;
+    if (synthesisScore != null) result.synthesisScore = synthesisScore;
+    if (foresightScore != null) result.foresightScore = foresightScore;
     return result;
   }
 
@@ -2169,8 +2175,11 @@ class OracleThreadMessage extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'threadId')
     ..aOS(3, _omitFieldNames ? '' : 'prompt')
     ..aOS(4, _omitFieldNames ? '' : 'response')
-    ..aOS(5, _omitFieldNames ? '' : 'domain')
+    ..e<StrategicDomain>(5, _omitFieldNames ? '' : 'domain', $pb.PbFieldType.OE, defaultOrMaker: StrategicDomain.STRATEGIC_DOMAIN_UNSPECIFIED, valueOf: StrategicDomain.valueOf, enumValues: StrategicDomain.values)
     ..aInt64(6, _omitFieldNames ? '' : 'createdUnix')
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'complexityScore', $pb.PbFieldType.OD)
+    ..a<$core.double>(8, _omitFieldNames ? '' : 'synthesisScore', $pb.PbFieldType.OD)
+    ..a<$core.double>(9, _omitFieldNames ? '' : 'foresightScore', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -2228,9 +2237,9 @@ class OracleThreadMessage extends $pb.GeneratedMessage {
   void clearResponse() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get domain => $_getSZ(4);
+  StrategicDomain get domain => $_getN(4);
   @$pb.TagNumber(5)
-  set domain($core.String value) => $_setString(4, value);
+  set domain(StrategicDomain value) => $_setField(5, value);
   @$pb.TagNumber(5)
   $core.bool hasDomain() => $_has(4);
   @$pb.TagNumber(5)
@@ -2244,6 +2253,33 @@ class OracleThreadMessage extends $pb.GeneratedMessage {
   $core.bool hasCreatedUnix() => $_has(5);
   @$pb.TagNumber(6)
   void clearCreatedUnix() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get complexityScore => $_getN(6);
+  @$pb.TagNumber(7)
+  set complexityScore($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasComplexityScore() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearComplexityScore() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.double get synthesisScore => $_getN(7);
+  @$pb.TagNumber(8)
+  set synthesisScore($core.double value) => $_setDouble(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSynthesisScore() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSynthesisScore() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.double get foresightScore => $_getN(8);
+  @$pb.TagNumber(9)
+  set foresightScore($core.double value) => $_setDouble(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasForesightScore() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearForesightScore() => $_clearField(9);
 }
 
 class ListMyThreadsRequest extends $pb.GeneratedMessage {

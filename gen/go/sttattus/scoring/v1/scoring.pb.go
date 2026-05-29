@@ -1879,6 +1879,355 @@ func (x *ScoreDominionResponse) GetDominionDelta() float64 {
 	return 0
 }
 
+type ScoreSessionAnalyticsRequest struct {
+	state         protoimpl.MessageState                         `protogen:"open.v1"`
+	SessionId     string                                         `protobuf:"bytes,1,opt,name=session_id,json=sessionId,proto3" json:"session_id,omitempty"`
+	Series        []*WorkoutSeriesInput                          `protobuf:"bytes,2,rep,name=series,proto3" json:"series,omitempty"`
+	HeartRateData []*ScoreSessionAnalyticsRequest_HeartRatePoint `protobuf:"bytes,3,rep,name=heart_rate_data,json=heartRateData,proto3" json:"heart_rate_data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ScoreSessionAnalyticsRequest) Reset() {
+	*x = ScoreSessionAnalyticsRequest{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreSessionAnalyticsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreSessionAnalyticsRequest) ProtoMessage() {}
+
+func (x *ScoreSessionAnalyticsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreSessionAnalyticsRequest.ProtoReflect.Descriptor instead.
+func (*ScoreSessionAnalyticsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *ScoreSessionAnalyticsRequest) GetSessionId() string {
+	if x != nil {
+		return x.SessionId
+	}
+	return ""
+}
+
+func (x *ScoreSessionAnalyticsRequest) GetSeries() []*WorkoutSeriesInput {
+	if x != nil {
+		return x.Series
+	}
+	return nil
+}
+
+func (x *ScoreSessionAnalyticsRequest) GetHeartRateData() []*ScoreSessionAnalyticsRequest_HeartRatePoint {
+	if x != nil {
+		return x.HeartRateData
+	}
+	return nil
+}
+
+type MetricPoint struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	TimestampOffsetSeconds int32                  `protobuf:"varint,1,opt,name=timestamp_offset_seconds,json=timestampOffsetSeconds,proto3" json:"timestamp_offset_seconds,omitempty"`
+	Value                  float64                `protobuf:"fixed64,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *MetricPoint) Reset() {
+	*x = MetricPoint{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MetricPoint) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MetricPoint) ProtoMessage() {}
+
+func (x *MetricPoint) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MetricPoint.ProtoReflect.Descriptor instead.
+func (*MetricPoint) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *MetricPoint) GetTimestampOffsetSeconds() int32 {
+	if x != nil {
+		return x.TimestampOffsetSeconds
+	}
+	return 0
+}
+
+func (x *MetricPoint) GetValue() float64 {
+	if x != nil {
+		return x.Value
+	}
+	return 0
+}
+
+type ScoreSessionAnalyticsResponse struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	VolumeCurve    []*MetricPoint         `protobuf:"bytes,1,rep,name=volume_curve,json=volumeCurve,proto3" json:"volume_curve,omitempty"`
+	IntensityCurve []*MetricPoint         `protobuf:"bytes,2,rep,name=intensity_curve,json=intensityCurve,proto3" json:"intensity_curve,omitempty"`
+	HeartRateCurve []*MetricPoint         `protobuf:"bytes,3,rep,name=heart_rate_curve,json=heartRateCurve,proto3" json:"heart_rate_curve,omitempty"`
+	TotalVolume    float64                `protobuf:"fixed64,4,opt,name=total_volume,json=totalVolume,proto3" json:"total_volume,omitempty"`
+	AvgIntensity   float64                `protobuf:"fixed64,5,opt,name=avg_intensity,json=avgIntensity,proto3" json:"avg_intensity,omitempty"`
+	PeakHeartRate  int32                  `protobuf:"varint,6,opt,name=peak_heart_rate,json=peakHeartRate,proto3" json:"peak_heart_rate,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *ScoreSessionAnalyticsResponse) Reset() {
+	*x = ScoreSessionAnalyticsResponse{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreSessionAnalyticsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreSessionAnalyticsResponse) ProtoMessage() {}
+
+func (x *ScoreSessionAnalyticsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreSessionAnalyticsResponse.ProtoReflect.Descriptor instead.
+func (*ScoreSessionAnalyticsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *ScoreSessionAnalyticsResponse) GetVolumeCurve() []*MetricPoint {
+	if x != nil {
+		return x.VolumeCurve
+	}
+	return nil
+}
+
+func (x *ScoreSessionAnalyticsResponse) GetIntensityCurve() []*MetricPoint {
+	if x != nil {
+		return x.IntensityCurve
+	}
+	return nil
+}
+
+func (x *ScoreSessionAnalyticsResponse) GetHeartRateCurve() []*MetricPoint {
+	if x != nil {
+		return x.HeartRateCurve
+	}
+	return nil
+}
+
+func (x *ScoreSessionAnalyticsResponse) GetTotalVolume() float64 {
+	if x != nil {
+		return x.TotalVolume
+	}
+	return 0
+}
+
+func (x *ScoreSessionAnalyticsResponse) GetAvgIntensity() float64 {
+	if x != nil {
+		return x.AvgIntensity
+	}
+	return 0
+}
+
+func (x *ScoreSessionAnalyticsResponse) GetPeakHeartRate() int32 {
+	if x != nil {
+		return x.PeakHeartRate
+	}
+	return 0
+}
+
+type ScoreRivalryRequest struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	RivalryId         string                 `protobuf:"bytes,1,opt,name=rivalry_id,json=rivalryId,proto3" json:"rivalry_id,omitempty"`
+	MyCurrentScore    float64                `protobuf:"fixed64,2,opt,name=my_current_score,json=myCurrentScore,proto3" json:"my_current_score,omitempty"`
+	RivalCurrentScore float64                `protobuf:"fixed64,3,opt,name=rival_current_score,json=rivalCurrentScore,proto3" json:"rival_current_score,omitempty"`
+	// History of scores for progress curves.
+	MyScoreHistory    []*MetricPoint `protobuf:"bytes,4,rep,name=my_score_history,json=myScoreHistory,proto3" json:"my_score_history,omitempty"`
+	RivalScoreHistory []*MetricPoint `protobuf:"bytes,5,rep,name=rival_score_history,json=rivalScoreHistory,proto3" json:"rival_score_history,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *ScoreRivalryRequest) Reset() {
+	*x = ScoreRivalryRequest{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreRivalryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreRivalryRequest) ProtoMessage() {}
+
+func (x *ScoreRivalryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreRivalryRequest.ProtoReflect.Descriptor instead.
+func (*ScoreRivalryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *ScoreRivalryRequest) GetRivalryId() string {
+	if x != nil {
+		return x.RivalryId
+	}
+	return ""
+}
+
+func (x *ScoreRivalryRequest) GetMyCurrentScore() float64 {
+	if x != nil {
+		return x.MyCurrentScore
+	}
+	return 0
+}
+
+func (x *ScoreRivalryRequest) GetRivalCurrentScore() float64 {
+	if x != nil {
+		return x.RivalCurrentScore
+	}
+	return 0
+}
+
+func (x *ScoreRivalryRequest) GetMyScoreHistory() []*MetricPoint {
+	if x != nil {
+		return x.MyScoreHistory
+	}
+	return nil
+}
+
+func (x *ScoreRivalryRequest) GetRivalScoreHistory() []*MetricPoint {
+	if x != nil {
+		return x.RivalScoreHistory
+	}
+	return nil
+}
+
+type ScoreRivalryResponse struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	MyProgressPct        float64                `protobuf:"fixed64,1,opt,name=my_progress_pct,json=myProgressPct,proto3" json:"my_progress_pct,omitempty"`
+	RivalProgressPct     float64                `protobuf:"fixed64,2,opt,name=rival_progress_pct,json=rivalProgressPct,proto3" json:"rival_progress_pct,omitempty"`
+	MyNormalizedCurve    []*MetricPoint         `protobuf:"bytes,3,rep,name=my_normalized_curve,json=myNormalizedCurve,proto3" json:"my_normalized_curve,omitempty"`
+	RivalNormalizedCurve []*MetricPoint         `protobuf:"bytes,4,rep,name=rival_normalized_curve,json=rivalNormalizedCurve,proto3" json:"rival_normalized_curve,omitempty"`
+	LeadingUserId        string                 `protobuf:"bytes,5,opt,name=leading_user_id,json=leadingUserId,proto3" json:"leading_user_id,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *ScoreRivalryResponse) Reset() {
+	*x = ScoreRivalryResponse{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[29]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreRivalryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreRivalryResponse) ProtoMessage() {}
+
+func (x *ScoreRivalryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[29]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreRivalryResponse.ProtoReflect.Descriptor instead.
+func (*ScoreRivalryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{29}
+}
+
+func (x *ScoreRivalryResponse) GetMyProgressPct() float64 {
+	if x != nil {
+		return x.MyProgressPct
+	}
+	return 0
+}
+
+func (x *ScoreRivalryResponse) GetRivalProgressPct() float64 {
+	if x != nil {
+		return x.RivalProgressPct
+	}
+	return 0
+}
+
+func (x *ScoreRivalryResponse) GetMyNormalizedCurve() []*MetricPoint {
+	if x != nil {
+		return x.MyNormalizedCurve
+	}
+	return nil
+}
+
+func (x *ScoreRivalryResponse) GetRivalNormalizedCurve() []*MetricPoint {
+	if x != nil {
+		return x.RivalNormalizedCurve
+	}
+	return nil
+}
+
+func (x *ScoreRivalryResponse) GetLeadingUserId() string {
+	if x != nil {
+		return x.LeadingUserId
+	}
+	return ""
+}
+
 // ScoreAcuteChronicRequest carries daily training loads. acute is
 // the trailing 7-day sum, chronic the trailing 28-day sum (both as
 // session tonnage or another consistent load proxy). The ratio is
@@ -1894,7 +2243,7 @@ type ScoreAcuteChronicRequest struct {
 
 func (x *ScoreAcuteChronicRequest) Reset() {
 	*x = ScoreAcuteChronicRequest{}
-	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[25]
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1906,7 +2255,7 @@ func (x *ScoreAcuteChronicRequest) String() string {
 func (*ScoreAcuteChronicRequest) ProtoMessage() {}
 
 func (x *ScoreAcuteChronicRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[25]
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1919,7 +2268,7 @@ func (x *ScoreAcuteChronicRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ScoreAcuteChronicRequest.ProtoReflect.Descriptor instead.
 func (*ScoreAcuteChronicRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{25}
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *ScoreAcuteChronicRequest) GetUserId() string {
@@ -1956,7 +2305,7 @@ type ScoreAcuteChronicResponse struct {
 
 func (x *ScoreAcuteChronicResponse) Reset() {
 	*x = ScoreAcuteChronicResponse{}
-	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[26]
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1968,7 +2317,7 @@ func (x *ScoreAcuteChronicResponse) String() string {
 func (*ScoreAcuteChronicResponse) ProtoMessage() {}
 
 func (x *ScoreAcuteChronicResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[26]
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1981,7 +2330,7 @@ func (x *ScoreAcuteChronicResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ScoreAcuteChronicResponse.ProtoReflect.Descriptor instead.
 func (*ScoreAcuteChronicResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{26}
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *ScoreAcuteChronicResponse) GetRatio() float64 {
@@ -2019,7 +2368,7 @@ type EstimateOneRmRequest struct {
 
 func (x *EstimateOneRmRequest) Reset() {
 	*x = EstimateOneRmRequest{}
-	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[27]
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2031,7 +2380,7 @@ func (x *EstimateOneRmRequest) String() string {
 func (*EstimateOneRmRequest) ProtoMessage() {}
 
 func (x *EstimateOneRmRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[27]
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2044,7 +2393,7 @@ func (x *EstimateOneRmRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EstimateOneRmRequest.ProtoReflect.Descriptor instead.
 func (*EstimateOneRmRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{27}
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *EstimateOneRmRequest) GetUserId() string {
@@ -2080,7 +2429,7 @@ type EstimateOneRmResponse struct {
 
 func (x *EstimateOneRmResponse) Reset() {
 	*x = EstimateOneRmResponse{}
-	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[28]
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2092,7 +2441,7 @@ func (x *EstimateOneRmResponse) String() string {
 func (*EstimateOneRmResponse) ProtoMessage() {}
 
 func (x *EstimateOneRmResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[28]
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2105,7 +2454,7 @@ func (x *EstimateOneRmResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EstimateOneRmResponse.ProtoReflect.Descriptor instead.
 func (*EstimateOneRmResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{28}
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *EstimateOneRmResponse) GetEstimatedOneRm() float64 {
@@ -2138,7 +2487,7 @@ type ScoreVolumeIntensityFrequencyRequest struct {
 
 func (x *ScoreVolumeIntensityFrequencyRequest) Reset() {
 	*x = ScoreVolumeIntensityFrequencyRequest{}
-	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[29]
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2150,7 +2499,7 @@ func (x *ScoreVolumeIntensityFrequencyRequest) String() string {
 func (*ScoreVolumeIntensityFrequencyRequest) ProtoMessage() {}
 
 func (x *ScoreVolumeIntensityFrequencyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[29]
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2163,7 +2512,7 @@ func (x *ScoreVolumeIntensityFrequencyRequest) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use ScoreVolumeIntensityFrequencyRequest.ProtoReflect.Descriptor instead.
 func (*ScoreVolumeIntensityFrequencyRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{29}
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *ScoreVolumeIntensityFrequencyRequest) GetUserId() string {
@@ -2210,7 +2559,7 @@ type ScoreVolumeIntensityFrequencyResponse struct {
 
 func (x *ScoreVolumeIntensityFrequencyResponse) Reset() {
 	*x = ScoreVolumeIntensityFrequencyResponse{}
-	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[30]
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2222,7 +2571,7 @@ func (x *ScoreVolumeIntensityFrequencyResponse) String() string {
 func (*ScoreVolumeIntensityFrequencyResponse) ProtoMessage() {}
 
 func (x *ScoreVolumeIntensityFrequencyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[30]
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2235,7 +2584,7 @@ func (x *ScoreVolumeIntensityFrequencyResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use ScoreVolumeIntensityFrequencyResponse.ProtoReflect.Descriptor instead.
 func (*ScoreVolumeIntensityFrequencyResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{30}
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *ScoreVolumeIntensityFrequencyResponse) GetVolume() float64 {
@@ -2262,6 +2611,59 @@ func (x *ScoreVolumeIntensityFrequencyResponse) GetFrequency() float64 {
 func (x *ScoreVolumeIntensityFrequencyResponse) GetComposite() float64 {
 	if x != nil {
 		return x.Composite
+	}
+	return 0
+}
+
+// Optional heart rate data from sensors.
+type ScoreSessionAnalyticsRequest_HeartRatePoint struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	TimestampOffsetSeconds int32                  `protobuf:"varint,1,opt,name=timestamp_offset_seconds,json=timestampOffsetSeconds,proto3" json:"timestamp_offset_seconds,omitempty"`
+	Bpm                    float64                `protobuf:"fixed64,2,opt,name=bpm,proto3" json:"bpm,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *ScoreSessionAnalyticsRequest_HeartRatePoint) Reset() {
+	*x = ScoreSessionAnalyticsRequest_HeartRatePoint{}
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScoreSessionAnalyticsRequest_HeartRatePoint) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScoreSessionAnalyticsRequest_HeartRatePoint) ProtoMessage() {}
+
+func (x *ScoreSessionAnalyticsRequest_HeartRatePoint) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_scoring_v1_scoring_proto_msgTypes[36]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScoreSessionAnalyticsRequest_HeartRatePoint.ProtoReflect.Descriptor instead.
+func (*ScoreSessionAnalyticsRequest_HeartRatePoint) Descriptor() ([]byte, []int) {
+	return file_sttattus_scoring_v1_scoring_proto_rawDescGZIP(), []int{25, 0}
+}
+
+func (x *ScoreSessionAnalyticsRequest_HeartRatePoint) GetTimestampOffsetSeconds() int32 {
+	if x != nil {
+		return x.TimestampOffsetSeconds
+	}
+	return 0
+}
+
+func (x *ScoreSessionAnalyticsRequest_HeartRatePoint) GetBpm() float64 {
+	if x != nil {
+		return x.Bpm
 	}
 	return 0
 }
@@ -2428,7 +2830,38 @@ const file_sttattus_scoring_v1_scoring_proto_rawDesc = "" +
 	"\x15current_dominion_rank\x18\x05 \x01(\x01R\x13currentDominionRank\"j\n" +
 	"\x15ScoreDominionResponse\x12*\n" +
 	"\x11new_dominion_rank\x18\x01 \x01(\x01R\x0fnewDominionRank\x12%\n" +
-	"\x0edominion_delta\x18\x02 \x01(\x01R\rdominionDelta\"\x81\x01\n" +
+	"\x0edominion_delta\x18\x02 \x01(\x01R\rdominionDelta\"\xc6\x02\n" +
+	"\x1cScoreSessionAnalyticsRequest\x12\x1d\n" +
+	"\n" +
+	"session_id\x18\x01 \x01(\tR\tsessionId\x12?\n" +
+	"\x06series\x18\x02 \x03(\v2'.sttattus.scoring.v1.WorkoutSeriesInputR\x06series\x12h\n" +
+	"\x0fheart_rate_data\x18\x03 \x03(\v2@.sttattus.scoring.v1.ScoreSessionAnalyticsRequest.HeartRatePointR\rheartRateData\x1a\\\n" +
+	"\x0eHeartRatePoint\x128\n" +
+	"\x18timestamp_offset_seconds\x18\x01 \x01(\x05R\x16timestampOffsetSeconds\x12\x10\n" +
+	"\x03bpm\x18\x02 \x01(\x01R\x03bpm\"]\n" +
+	"\vMetricPoint\x128\n" +
+	"\x18timestamp_offset_seconds\x18\x01 \x01(\x05R\x16timestampOffsetSeconds\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\x01R\x05value\"\xeb\x02\n" +
+	"\x1dScoreSessionAnalyticsResponse\x12C\n" +
+	"\fvolume_curve\x18\x01 \x03(\v2 .sttattus.scoring.v1.MetricPointR\vvolumeCurve\x12I\n" +
+	"\x0fintensity_curve\x18\x02 \x03(\v2 .sttattus.scoring.v1.MetricPointR\x0eintensityCurve\x12J\n" +
+	"\x10heart_rate_curve\x18\x03 \x03(\v2 .sttattus.scoring.v1.MetricPointR\x0eheartRateCurve\x12!\n" +
+	"\ftotal_volume\x18\x04 \x01(\x01R\vtotalVolume\x12#\n" +
+	"\ravg_intensity\x18\x05 \x01(\x01R\favgIntensity\x12&\n" +
+	"\x0fpeak_heart_rate\x18\x06 \x01(\x05R\rpeakHeartRate\"\xac\x02\n" +
+	"\x13ScoreRivalryRequest\x12\x1d\n" +
+	"\n" +
+	"rivalry_id\x18\x01 \x01(\tR\trivalryId\x12(\n" +
+	"\x10my_current_score\x18\x02 \x01(\x01R\x0emyCurrentScore\x12.\n" +
+	"\x13rival_current_score\x18\x03 \x01(\x01R\x11rivalCurrentScore\x12J\n" +
+	"\x10my_score_history\x18\x04 \x03(\v2 .sttattus.scoring.v1.MetricPointR\x0emyScoreHistory\x12P\n" +
+	"\x13rival_score_history\x18\x05 \x03(\v2 .sttattus.scoring.v1.MetricPointR\x11rivalScoreHistory\"\xbe\x02\n" +
+	"\x14ScoreRivalryResponse\x12&\n" +
+	"\x0fmy_progress_pct\x18\x01 \x01(\x01R\rmyProgressPct\x12,\n" +
+	"\x12rival_progress_pct\x18\x02 \x01(\x01R\x10rivalProgressPct\x12P\n" +
+	"\x13my_normalized_curve\x18\x03 \x03(\v2 .sttattus.scoring.v1.MetricPointR\x11myNormalizedCurve\x12V\n" +
+	"\x16rival_normalized_curve\x18\x04 \x03(\v2 .sttattus.scoring.v1.MetricPointR\x14rivalNormalizedCurve\x12&\n" +
+	"\x0fleading_user_id\x18\x05 \x01(\tR\rleadingUserId\"\x81\x01\n" +
 	"\x18ScoreAcuteChronicRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\"\n" +
 	"\racute_load_7d\x18\x02 \x01(\x01R\vacuteLoad7d\x12(\n" +
@@ -2457,7 +2890,7 @@ const file_sttattus_scoring_v1_scoring_proto_rawDesc = "" +
 	"\x06volume\x18\x01 \x01(\x01R\x06volume\x12\x1c\n" +
 	"\tintensity\x18\x02 \x01(\x01R\tintensity\x12\x1c\n" +
 	"\tfrequency\x18\x03 \x01(\x01R\tfrequency\x12\x1c\n" +
-	"\tcomposite\x18\x04 \x01(\x01R\tcomposite2\xd3\f\n" +
+	"\tcomposite\x18\x04 \x01(\x01R\tcomposite2\xb8\x0e\n" +
 	"\x0eScoringService\x12c\n" +
 	"\fScoreWorkout\x12(.sttattus.scoring.v1.ScoreWorkoutRequest\x1a).sttattus.scoring.v1.ScoreWorkoutResponse\x12]\n" +
 	"\n" +
@@ -2477,7 +2910,9 @@ const file_sttattus_scoring_v1_scoring_proto_rawDesc = "" +
 	"ApplyDecay\x12&.sttattus.scoring.v1.ApplyDecayRequest\x1a'.sttattus.scoring.v1.ApplyDecayResponse\x12r\n" +
 	"\x11ScoreAcuteChronic\x12-.sttattus.scoring.v1.ScoreAcuteChronicRequest\x1a..sttattus.scoring.v1.ScoreAcuteChronicResponse\x12f\n" +
 	"\rEstimateOneRm\x12).sttattus.scoring.v1.EstimateOneRmRequest\x1a*.sttattus.scoring.v1.EstimateOneRmResponse\x12\x96\x01\n" +
-	"\x1dScoreVolumeIntensityFrequency\x129.sttattus.scoring.v1.ScoreVolumeIntensityFrequencyRequest\x1a:.sttattus.scoring.v1.ScoreVolumeIntensityFrequencyResponseB@Z>github.com/sttattus/proto/gen/go/sttattus/scoring/v1;scoringv1b\x06proto3"
+	"\x1dScoreVolumeIntensityFrequency\x129.sttattus.scoring.v1.ScoreVolumeIntensityFrequencyRequest\x1a:.sttattus.scoring.v1.ScoreVolumeIntensityFrequencyResponse\x12~\n" +
+	"\x15ScoreSessionAnalytics\x121.sttattus.scoring.v1.ScoreSessionAnalyticsRequest\x1a2.sttattus.scoring.v1.ScoreSessionAnalyticsResponse\x12c\n" +
+	"\fScoreRivalry\x12(.sttattus.scoring.v1.ScoreRivalryRequest\x1a).sttattus.scoring.v1.ScoreRivalryResponseB@Z>github.com/sttattus/proto/gen/go/sttattus/scoring/v1;scoringv1b\x06proto3"
 
 var (
 	file_sttattus_scoring_v1_scoring_proto_rawDescOnce sync.Once
@@ -2491,79 +2926,98 @@ func file_sttattus_scoring_v1_scoring_proto_rawDescGZIP() []byte {
 	return file_sttattus_scoring_v1_scoring_proto_rawDescData
 }
 
-var file_sttattus_scoring_v1_scoring_proto_msgTypes = make([]protoimpl.MessageInfo, 31)
+var file_sttattus_scoring_v1_scoring_proto_msgTypes = make([]protoimpl.MessageInfo, 37)
 var file_sttattus_scoring_v1_scoring_proto_goTypes = []any{
-	(*WorkoutSeriesInput)(nil),                    // 0: sttattus.scoring.v1.WorkoutSeriesInput
-	(*ScoreWorkoutRequest)(nil),                   // 1: sttattus.scoring.v1.ScoreWorkoutRequest
-	(*ScoreWorkoutResponse)(nil),                  // 2: sttattus.scoring.v1.ScoreWorkoutResponse
-	(*ScoreLexicalProgressRequest)(nil),           // 3: sttattus.scoring.v1.ScoreLexicalProgressRequest
-	(*ScoreLexicalProgressResponse)(nil),          // 4: sttattus.scoring.v1.ScoreLexicalProgressResponse
-	(*ScoreMatchRequest)(nil),                     // 5: sttattus.scoring.v1.ScoreMatchRequest
-	(*ScoreMatchResponse)(nil),                    // 6: sttattus.scoring.v1.ScoreMatchResponse
-	(*ScoreEmpireRequest)(nil),                    // 7: sttattus.scoring.v1.ScoreEmpireRequest
-	(*ScoreEmpireResponse)(nil),                   // 8: sttattus.scoring.v1.ScoreEmpireResponse
-	(*ApplyDecayRequest)(nil),                     // 9: sttattus.scoring.v1.ApplyDecayRequest
-	(*ApplyDecayResponse)(nil),                    // 10: sttattus.scoring.v1.ApplyDecayResponse
-	(*ScoreForgeRequest)(nil),                     // 11: sttattus.scoring.v1.ScoreForgeRequest
-	(*ScoreForgeResponse)(nil),                    // 12: sttattus.scoring.v1.ScoreForgeResponse
-	(*ScoreCognitiveMasteryRequest)(nil),          // 13: sttattus.scoring.v1.ScoreCognitiveMasteryRequest
-	(*ScoreCognitiveMasteryResponse)(nil),         // 14: sttattus.scoring.v1.ScoreCognitiveMasteryResponse
-	(*ScoreNomadRequest)(nil),                     // 15: sttattus.scoring.v1.ScoreNomadRequest
-	(*ScoreNomadResponse)(nil),                    // 16: sttattus.scoring.v1.ScoreNomadResponse
-	(*ScoreOracleRequest)(nil),                    // 17: sttattus.scoring.v1.ScoreOracleRequest
-	(*ScoreOracleResponse)(nil),                   // 18: sttattus.scoring.v1.ScoreOracleResponse
-	(*ScoreZenithRequest)(nil),                    // 19: sttattus.scoring.v1.ScoreZenithRequest
-	(*ScoreZenithResponse)(nil),                   // 20: sttattus.scoring.v1.ScoreZenithResponse
-	(*ScoreLegacyRequest)(nil),                    // 21: sttattus.scoring.v1.ScoreLegacyRequest
-	(*ScoreLegacyResponse)(nil),                   // 22: sttattus.scoring.v1.ScoreLegacyResponse
-	(*ScoreDominionRequest)(nil),                  // 23: sttattus.scoring.v1.ScoreDominionRequest
-	(*ScoreDominionResponse)(nil),                 // 24: sttattus.scoring.v1.ScoreDominionResponse
-	(*ScoreAcuteChronicRequest)(nil),              // 25: sttattus.scoring.v1.ScoreAcuteChronicRequest
-	(*ScoreAcuteChronicResponse)(nil),             // 26: sttattus.scoring.v1.ScoreAcuteChronicResponse
-	(*EstimateOneRmRequest)(nil),                  // 27: sttattus.scoring.v1.EstimateOneRmRequest
-	(*EstimateOneRmResponse)(nil),                 // 28: sttattus.scoring.v1.EstimateOneRmResponse
-	(*ScoreVolumeIntensityFrequencyRequest)(nil),  // 29: sttattus.scoring.v1.ScoreVolumeIntensityFrequencyRequest
-	(*ScoreVolumeIntensityFrequencyResponse)(nil), // 30: sttattus.scoring.v1.ScoreVolumeIntensityFrequencyResponse
+	(*WorkoutSeriesInput)(nil),                          // 0: sttattus.scoring.v1.WorkoutSeriesInput
+	(*ScoreWorkoutRequest)(nil),                         // 1: sttattus.scoring.v1.ScoreWorkoutRequest
+	(*ScoreWorkoutResponse)(nil),                        // 2: sttattus.scoring.v1.ScoreWorkoutResponse
+	(*ScoreLexicalProgressRequest)(nil),                 // 3: sttattus.scoring.v1.ScoreLexicalProgressRequest
+	(*ScoreLexicalProgressResponse)(nil),                // 4: sttattus.scoring.v1.ScoreLexicalProgressResponse
+	(*ScoreMatchRequest)(nil),                           // 5: sttattus.scoring.v1.ScoreMatchRequest
+	(*ScoreMatchResponse)(nil),                          // 6: sttattus.scoring.v1.ScoreMatchResponse
+	(*ScoreEmpireRequest)(nil),                          // 7: sttattus.scoring.v1.ScoreEmpireRequest
+	(*ScoreEmpireResponse)(nil),                         // 8: sttattus.scoring.v1.ScoreEmpireResponse
+	(*ApplyDecayRequest)(nil),                           // 9: sttattus.scoring.v1.ApplyDecayRequest
+	(*ApplyDecayResponse)(nil),                          // 10: sttattus.scoring.v1.ApplyDecayResponse
+	(*ScoreForgeRequest)(nil),                           // 11: sttattus.scoring.v1.ScoreForgeRequest
+	(*ScoreForgeResponse)(nil),                          // 12: sttattus.scoring.v1.ScoreForgeResponse
+	(*ScoreCognitiveMasteryRequest)(nil),                // 13: sttattus.scoring.v1.ScoreCognitiveMasteryRequest
+	(*ScoreCognitiveMasteryResponse)(nil),               // 14: sttattus.scoring.v1.ScoreCognitiveMasteryResponse
+	(*ScoreNomadRequest)(nil),                           // 15: sttattus.scoring.v1.ScoreNomadRequest
+	(*ScoreNomadResponse)(nil),                          // 16: sttattus.scoring.v1.ScoreNomadResponse
+	(*ScoreOracleRequest)(nil),                          // 17: sttattus.scoring.v1.ScoreOracleRequest
+	(*ScoreOracleResponse)(nil),                         // 18: sttattus.scoring.v1.ScoreOracleResponse
+	(*ScoreZenithRequest)(nil),                          // 19: sttattus.scoring.v1.ScoreZenithRequest
+	(*ScoreZenithResponse)(nil),                         // 20: sttattus.scoring.v1.ScoreZenithResponse
+	(*ScoreLegacyRequest)(nil),                          // 21: sttattus.scoring.v1.ScoreLegacyRequest
+	(*ScoreLegacyResponse)(nil),                         // 22: sttattus.scoring.v1.ScoreLegacyResponse
+	(*ScoreDominionRequest)(nil),                        // 23: sttattus.scoring.v1.ScoreDominionRequest
+	(*ScoreDominionResponse)(nil),                       // 24: sttattus.scoring.v1.ScoreDominionResponse
+	(*ScoreSessionAnalyticsRequest)(nil),                // 25: sttattus.scoring.v1.ScoreSessionAnalyticsRequest
+	(*MetricPoint)(nil),                                 // 26: sttattus.scoring.v1.MetricPoint
+	(*ScoreSessionAnalyticsResponse)(nil),               // 27: sttattus.scoring.v1.ScoreSessionAnalyticsResponse
+	(*ScoreRivalryRequest)(nil),                         // 28: sttattus.scoring.v1.ScoreRivalryRequest
+	(*ScoreRivalryResponse)(nil),                        // 29: sttattus.scoring.v1.ScoreRivalryResponse
+	(*ScoreAcuteChronicRequest)(nil),                    // 30: sttattus.scoring.v1.ScoreAcuteChronicRequest
+	(*ScoreAcuteChronicResponse)(nil),                   // 31: sttattus.scoring.v1.ScoreAcuteChronicResponse
+	(*EstimateOneRmRequest)(nil),                        // 32: sttattus.scoring.v1.EstimateOneRmRequest
+	(*EstimateOneRmResponse)(nil),                       // 33: sttattus.scoring.v1.EstimateOneRmResponse
+	(*ScoreVolumeIntensityFrequencyRequest)(nil),        // 34: sttattus.scoring.v1.ScoreVolumeIntensityFrequencyRequest
+	(*ScoreVolumeIntensityFrequencyResponse)(nil),       // 35: sttattus.scoring.v1.ScoreVolumeIntensityFrequencyResponse
+	(*ScoreSessionAnalyticsRequest_HeartRatePoint)(nil), // 36: sttattus.scoring.v1.ScoreSessionAnalyticsRequest.HeartRatePoint
 }
 var file_sttattus_scoring_v1_scoring_proto_depIdxs = []int32{
 	0,  // 0: sttattus.scoring.v1.ScoreWorkoutRequest.series:type_name -> sttattus.scoring.v1.WorkoutSeriesInput
 	0,  // 1: sttattus.scoring.v1.ScoreForgeRequest.series:type_name -> sttattus.scoring.v1.WorkoutSeriesInput
-	0,  // 2: sttattus.scoring.v1.ScoreVolumeIntensityFrequencyRequest.series:type_name -> sttattus.scoring.v1.WorkoutSeriesInput
-	1,  // 3: sttattus.scoring.v1.ScoringService.ScoreWorkout:input_type -> sttattus.scoring.v1.ScoreWorkoutRequest
-	11, // 4: sttattus.scoring.v1.ScoringService.ScoreForge:input_type -> sttattus.scoring.v1.ScoreForgeRequest
-	3,  // 5: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:input_type -> sttattus.scoring.v1.ScoreLexicalProgressRequest
-	13, // 6: sttattus.scoring.v1.ScoringService.ScoreCognitiveMastery:input_type -> sttattus.scoring.v1.ScoreCognitiveMasteryRequest
-	15, // 7: sttattus.scoring.v1.ScoringService.ScoreNomad:input_type -> sttattus.scoring.v1.ScoreNomadRequest
-	17, // 8: sttattus.scoring.v1.ScoringService.ScoreOracle:input_type -> sttattus.scoring.v1.ScoreOracleRequest
-	19, // 9: sttattus.scoring.v1.ScoringService.ScoreZenith:input_type -> sttattus.scoring.v1.ScoreZenithRequest
-	21, // 10: sttattus.scoring.v1.ScoringService.ScoreLegacy:input_type -> sttattus.scoring.v1.ScoreLegacyRequest
-	23, // 11: sttattus.scoring.v1.ScoringService.ScoreDominion:input_type -> sttattus.scoring.v1.ScoreDominionRequest
-	5,  // 12: sttattus.scoring.v1.ScoringService.ScoreMatch:input_type -> sttattus.scoring.v1.ScoreMatchRequest
-	7,  // 13: sttattus.scoring.v1.ScoringService.ScoreEmpire:input_type -> sttattus.scoring.v1.ScoreEmpireRequest
-	9,  // 14: sttattus.scoring.v1.ScoringService.ApplyDecay:input_type -> sttattus.scoring.v1.ApplyDecayRequest
-	25, // 15: sttattus.scoring.v1.ScoringService.ScoreAcuteChronic:input_type -> sttattus.scoring.v1.ScoreAcuteChronicRequest
-	27, // 16: sttattus.scoring.v1.ScoringService.EstimateOneRm:input_type -> sttattus.scoring.v1.EstimateOneRmRequest
-	29, // 17: sttattus.scoring.v1.ScoringService.ScoreVolumeIntensityFrequency:input_type -> sttattus.scoring.v1.ScoreVolumeIntensityFrequencyRequest
-	2,  // 18: sttattus.scoring.v1.ScoringService.ScoreWorkout:output_type -> sttattus.scoring.v1.ScoreWorkoutResponse
-	12, // 19: sttattus.scoring.v1.ScoringService.ScoreForge:output_type -> sttattus.scoring.v1.ScoreForgeResponse
-	4,  // 20: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:output_type -> sttattus.scoring.v1.ScoreLexicalProgressResponse
-	14, // 21: sttattus.scoring.v1.ScoringService.ScoreCognitiveMastery:output_type -> sttattus.scoring.v1.ScoreCognitiveMasteryResponse
-	16, // 22: sttattus.scoring.v1.ScoringService.ScoreNomad:output_type -> sttattus.scoring.v1.ScoreNomadResponse
-	18, // 23: sttattus.scoring.v1.ScoringService.ScoreOracle:output_type -> sttattus.scoring.v1.ScoreOracleResponse
-	20, // 24: sttattus.scoring.v1.ScoringService.ScoreZenith:output_type -> sttattus.scoring.v1.ScoreZenithResponse
-	22, // 25: sttattus.scoring.v1.ScoringService.ScoreLegacy:output_type -> sttattus.scoring.v1.ScoreLegacyResponse
-	24, // 26: sttattus.scoring.v1.ScoringService.ScoreDominion:output_type -> sttattus.scoring.v1.ScoreDominionResponse
-	6,  // 27: sttattus.scoring.v1.ScoringService.ScoreMatch:output_type -> sttattus.scoring.v1.ScoreMatchResponse
-	8,  // 28: sttattus.scoring.v1.ScoringService.ScoreEmpire:output_type -> sttattus.scoring.v1.ScoreEmpireResponse
-	10, // 29: sttattus.scoring.v1.ScoringService.ApplyDecay:output_type -> sttattus.scoring.v1.ApplyDecayResponse
-	26, // 30: sttattus.scoring.v1.ScoringService.ScoreAcuteChronic:output_type -> sttattus.scoring.v1.ScoreAcuteChronicResponse
-	28, // 31: sttattus.scoring.v1.ScoringService.EstimateOneRm:output_type -> sttattus.scoring.v1.EstimateOneRmResponse
-	30, // 32: sttattus.scoring.v1.ScoringService.ScoreVolumeIntensityFrequency:output_type -> sttattus.scoring.v1.ScoreVolumeIntensityFrequencyResponse
-	18, // [18:33] is the sub-list for method output_type
-	3,  // [3:18] is the sub-list for method input_type
-	3,  // [3:3] is the sub-list for extension type_name
-	3,  // [3:3] is the sub-list for extension extendee
-	0,  // [0:3] is the sub-list for field type_name
+	0,  // 2: sttattus.scoring.v1.ScoreSessionAnalyticsRequest.series:type_name -> sttattus.scoring.v1.WorkoutSeriesInput
+	36, // 3: sttattus.scoring.v1.ScoreSessionAnalyticsRequest.heart_rate_data:type_name -> sttattus.scoring.v1.ScoreSessionAnalyticsRequest.HeartRatePoint
+	26, // 4: sttattus.scoring.v1.ScoreSessionAnalyticsResponse.volume_curve:type_name -> sttattus.scoring.v1.MetricPoint
+	26, // 5: sttattus.scoring.v1.ScoreSessionAnalyticsResponse.intensity_curve:type_name -> sttattus.scoring.v1.MetricPoint
+	26, // 6: sttattus.scoring.v1.ScoreSessionAnalyticsResponse.heart_rate_curve:type_name -> sttattus.scoring.v1.MetricPoint
+	26, // 7: sttattus.scoring.v1.ScoreRivalryRequest.my_score_history:type_name -> sttattus.scoring.v1.MetricPoint
+	26, // 8: sttattus.scoring.v1.ScoreRivalryRequest.rival_score_history:type_name -> sttattus.scoring.v1.MetricPoint
+	26, // 9: sttattus.scoring.v1.ScoreRivalryResponse.my_normalized_curve:type_name -> sttattus.scoring.v1.MetricPoint
+	26, // 10: sttattus.scoring.v1.ScoreRivalryResponse.rival_normalized_curve:type_name -> sttattus.scoring.v1.MetricPoint
+	0,  // 11: sttattus.scoring.v1.ScoreVolumeIntensityFrequencyRequest.series:type_name -> sttattus.scoring.v1.WorkoutSeriesInput
+	1,  // 12: sttattus.scoring.v1.ScoringService.ScoreWorkout:input_type -> sttattus.scoring.v1.ScoreWorkoutRequest
+	11, // 13: sttattus.scoring.v1.ScoringService.ScoreForge:input_type -> sttattus.scoring.v1.ScoreForgeRequest
+	3,  // 14: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:input_type -> sttattus.scoring.v1.ScoreLexicalProgressRequest
+	13, // 15: sttattus.scoring.v1.ScoringService.ScoreCognitiveMastery:input_type -> sttattus.scoring.v1.ScoreCognitiveMasteryRequest
+	15, // 16: sttattus.scoring.v1.ScoringService.ScoreNomad:input_type -> sttattus.scoring.v1.ScoreNomadRequest
+	17, // 17: sttattus.scoring.v1.ScoringService.ScoreOracle:input_type -> sttattus.scoring.v1.ScoreOracleRequest
+	19, // 18: sttattus.scoring.v1.ScoringService.ScoreZenith:input_type -> sttattus.scoring.v1.ScoreZenithRequest
+	21, // 19: sttattus.scoring.v1.ScoringService.ScoreLegacy:input_type -> sttattus.scoring.v1.ScoreLegacyRequest
+	23, // 20: sttattus.scoring.v1.ScoringService.ScoreDominion:input_type -> sttattus.scoring.v1.ScoreDominionRequest
+	5,  // 21: sttattus.scoring.v1.ScoringService.ScoreMatch:input_type -> sttattus.scoring.v1.ScoreMatchRequest
+	7,  // 22: sttattus.scoring.v1.ScoringService.ScoreEmpire:input_type -> sttattus.scoring.v1.ScoreEmpireRequest
+	9,  // 23: sttattus.scoring.v1.ScoringService.ApplyDecay:input_type -> sttattus.scoring.v1.ApplyDecayRequest
+	30, // 24: sttattus.scoring.v1.ScoringService.ScoreAcuteChronic:input_type -> sttattus.scoring.v1.ScoreAcuteChronicRequest
+	32, // 25: sttattus.scoring.v1.ScoringService.EstimateOneRm:input_type -> sttattus.scoring.v1.EstimateOneRmRequest
+	34, // 26: sttattus.scoring.v1.ScoringService.ScoreVolumeIntensityFrequency:input_type -> sttattus.scoring.v1.ScoreVolumeIntensityFrequencyRequest
+	25, // 27: sttattus.scoring.v1.ScoringService.ScoreSessionAnalytics:input_type -> sttattus.scoring.v1.ScoreSessionAnalyticsRequest
+	28, // 28: sttattus.scoring.v1.ScoringService.ScoreRivalry:input_type -> sttattus.scoring.v1.ScoreRivalryRequest
+	2,  // 29: sttattus.scoring.v1.ScoringService.ScoreWorkout:output_type -> sttattus.scoring.v1.ScoreWorkoutResponse
+	12, // 30: sttattus.scoring.v1.ScoringService.ScoreForge:output_type -> sttattus.scoring.v1.ScoreForgeResponse
+	4,  // 31: sttattus.scoring.v1.ScoringService.ScoreLexicalProgress:output_type -> sttattus.scoring.v1.ScoreLexicalProgressResponse
+	14, // 32: sttattus.scoring.v1.ScoringService.ScoreCognitiveMastery:output_type -> sttattus.scoring.v1.ScoreCognitiveMasteryResponse
+	16, // 33: sttattus.scoring.v1.ScoringService.ScoreNomad:output_type -> sttattus.scoring.v1.ScoreNomadResponse
+	18, // 34: sttattus.scoring.v1.ScoringService.ScoreOracle:output_type -> sttattus.scoring.v1.ScoreOracleResponse
+	20, // 35: sttattus.scoring.v1.ScoringService.ScoreZenith:output_type -> sttattus.scoring.v1.ScoreZenithResponse
+	22, // 36: sttattus.scoring.v1.ScoringService.ScoreLegacy:output_type -> sttattus.scoring.v1.ScoreLegacyResponse
+	24, // 37: sttattus.scoring.v1.ScoringService.ScoreDominion:output_type -> sttattus.scoring.v1.ScoreDominionResponse
+	6,  // 38: sttattus.scoring.v1.ScoringService.ScoreMatch:output_type -> sttattus.scoring.v1.ScoreMatchResponse
+	8,  // 39: sttattus.scoring.v1.ScoringService.ScoreEmpire:output_type -> sttattus.scoring.v1.ScoreEmpireResponse
+	10, // 40: sttattus.scoring.v1.ScoringService.ApplyDecay:output_type -> sttattus.scoring.v1.ApplyDecayResponse
+	31, // 41: sttattus.scoring.v1.ScoringService.ScoreAcuteChronic:output_type -> sttattus.scoring.v1.ScoreAcuteChronicResponse
+	33, // 42: sttattus.scoring.v1.ScoringService.EstimateOneRm:output_type -> sttattus.scoring.v1.EstimateOneRmResponse
+	35, // 43: sttattus.scoring.v1.ScoringService.ScoreVolumeIntensityFrequency:output_type -> sttattus.scoring.v1.ScoreVolumeIntensityFrequencyResponse
+	27, // 44: sttattus.scoring.v1.ScoringService.ScoreSessionAnalytics:output_type -> sttattus.scoring.v1.ScoreSessionAnalyticsResponse
+	29, // 45: sttattus.scoring.v1.ScoringService.ScoreRivalry:output_type -> sttattus.scoring.v1.ScoreRivalryResponse
+	29, // [29:46] is the sub-list for method output_type
+	12, // [12:29] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	12, // [12:12] is the sub-list for extension extendee
+	0,  // [0:12] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_scoring_v1_scoring_proto_init() }
@@ -2577,7 +3031,7 @@ func file_sttattus_scoring_v1_scoring_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_scoring_v1_scoring_proto_rawDesc), len(file_sttattus_scoring_v1_scoring_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   31,
+			NumMessages:   37,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

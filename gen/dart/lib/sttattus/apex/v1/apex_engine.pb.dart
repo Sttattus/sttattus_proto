@@ -22,10 +22,16 @@ class CalculateBioRankRequest extends $pb.GeneratedMessage {
   factory CalculateBioRankRequest({
     $core.String? userId,
     $core.Iterable<$1.Biomarker>? biomarkers,
+    $core.double? chronologicalAge,
+    $core.bool? chronologicalAgePresent,
+    $core.String? biologicalSex,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
     if (biomarkers != null) result.biomarkers.addAll(biomarkers);
+    if (chronologicalAge != null) result.chronologicalAge = chronologicalAge;
+    if (chronologicalAgePresent != null) result.chronologicalAgePresent = chronologicalAgePresent;
+    if (biologicalSex != null) result.biologicalSex = biologicalSex;
     return result;
   }
 
@@ -37,6 +43,9 @@ class CalculateBioRankRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CalculateBioRankRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
     ..pc<$1.Biomarker>(2, _omitFieldNames ? '' : 'biomarkers', $pb.PbFieldType.PM, subBuilder: $1.Biomarker.create)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'chronologicalAge', $pb.PbFieldType.OD)
+    ..aOB(4, _omitFieldNames ? '' : 'chronologicalAgePresent')
+    ..aOS(5, _omitFieldNames ? '' : 'biologicalSex')
     ..hasRequiredFields = false
   ;
 
@@ -68,6 +77,38 @@ class CalculateBioRankRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $pb.PbList<$1.Biomarker> get biomarkers => $_getList(1);
+
+  /// Decimal years. Required for the Levine PhenoAge formula; absence
+  /// (chronological_age_present == false) forces the engine into its
+  /// marker-deviation fallback and biological_age comes back zero.
+  @$pb.TagNumber(3)
+  $core.double get chronologicalAge => $_getN(2);
+  @$pb.TagNumber(3)
+  set chronologicalAge($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasChronologicalAge() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearChronologicalAge() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get chronologicalAgePresent => $_getBF(3);
+  @$pb.TagNumber(4)
+  set chronologicalAgePresent($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasChronologicalAgePresent() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearChronologicalAgePresent() => $_clearField(4);
+
+  /// 'male' | 'female' | 'intersex' | ''  — used to pick sex-specific
+  /// optimal-range bands in the fallback scoring path.
+  @$pb.TagNumber(5)
+  $core.String get biologicalSex => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set biologicalSex($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBiologicalSex() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBiologicalSex() => $_clearField(5);
 }
 
 class CalculateBioRankResponse extends $pb.GeneratedMessage {
@@ -75,11 +116,17 @@ class CalculateBioRankResponse extends $pb.GeneratedMessage {
     $core.double? bioRank,
     $core.double? biologicalAge,
     $core.Iterable<$core.MapEntry<$core.String, $core.double>>? systemScores,
+    $core.String? method,
+    $core.Iterable<$core.String>? markersUsed,
+    $core.Iterable<$core.String>? markersMissing,
   }) {
     final result = create();
     if (bioRank != null) result.bioRank = bioRank;
     if (biologicalAge != null) result.biologicalAge = biologicalAge;
     if (systemScores != null) result.systemScores.addEntries(systemScores);
+    if (method != null) result.method = method;
+    if (markersUsed != null) result.markersUsed.addAll(markersUsed);
+    if (markersMissing != null) result.markersMissing.addAll(markersMissing);
     return result;
   }
 
@@ -92,6 +139,9 @@ class CalculateBioRankResponse extends $pb.GeneratedMessage {
     ..a<$core.double>(1, _omitFieldNames ? '' : 'bioRank', $pb.PbFieldType.OD)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'biologicalAge', $pb.PbFieldType.OD)
     ..m<$core.String, $core.double>(3, _omitFieldNames ? '' : 'systemScores', entryClassName: 'CalculateBioRankResponse.SystemScoresEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OD, packageName: const $pb.PackageName('sttattus.apex.v1'))
+    ..aOS(4, _omitFieldNames ? '' : 'method')
+    ..pPS(5, _omitFieldNames ? '' : 'markersUsed')
+    ..pPS(6, _omitFieldNames ? '' : 'markersMissing')
     ..hasRequiredFields = false
   ;
 
@@ -132,6 +182,26 @@ class CalculateBioRankResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(3)
   $pb.PbMap<$core.String, $core.double> get systemScores => $_getMap(2);
+
+  /// Which path produced biological_age. "phenoage" = real Levine formula
+  /// (all 9 markers + age present). "deviation" = optimal-range fallback.
+  /// "insufficient" = no biological_age (engine returned 0).
+  @$pb.TagNumber(4)
+  $core.String get method => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set method($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMethod() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMethod() => $_clearField(4);
+
+  /// PhenoAge components that were filled in. Lets clients show "we used
+  /// 7/9 markers" or surface which ones are still missing.
+  @$pb.TagNumber(5)
+  $pb.PbList<$core.String> get markersUsed => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<$core.String> get markersMissing => $_getList(5);
 }
 
 

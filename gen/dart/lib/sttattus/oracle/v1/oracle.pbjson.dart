@@ -593,8 +593,11 @@ const OracleThreadMessage$json = {
     {'1': 'thread_id', '3': 2, '4': 1, '5': 9, '10': 'threadId'},
     {'1': 'prompt', '3': 3, '4': 1, '5': 9, '10': 'prompt'},
     {'1': 'response', '3': 4, '4': 1, '5': 9, '10': 'response'},
-    {'1': 'domain', '3': 5, '4': 1, '5': 9, '10': 'domain'},
+    {'1': 'domain', '3': 5, '4': 1, '5': 14, '6': '.sttattus.oracle.v1.StrategicDomain', '10': 'domain'},
     {'1': 'created_unix', '3': 6, '4': 1, '5': 3, '10': 'createdUnix'},
+    {'1': 'complexity_score', '3': 7, '4': 1, '5': 1, '10': 'complexityScore'},
+    {'1': 'synthesis_score', '3': 8, '4': 1, '5': 1, '10': 'synthesisScore'},
+    {'1': 'foresight_score', '3': 9, '4': 1, '5': 1, '10': 'foresightScore'},
   ],
 };
 
@@ -602,8 +605,11 @@ const OracleThreadMessage$json = {
 final $typed_data.Uint8List oracleThreadMessageDescriptor = $convert.base64Decode(
     'ChNPcmFjbGVUaHJlYWRNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBIbCgl0aHJlYWRfaWQYAiABKA'
     'lSCHRocmVhZElkEhYKBnByb21wdBgDIAEoCVIGcHJvbXB0EhoKCHJlc3BvbnNlGAQgASgJUghy'
-    'ZXNwb25zZRIWCgZkb21haW4YBSABKAlSBmRvbWFpbhIhCgxjcmVhdGVkX3VuaXgYBiABKANSC2'
-    'NyZWF0ZWRVbml4');
+    'ZXNwb25zZRI7CgZkb21haW4YBSABKA4yIy5zdHRhdHR1cy5vcmFjbGUudjEuU3RyYXRlZ2ljRG'
+    '9tYWluUgZkb21haW4SIQoMY3JlYXRlZF91bml4GAYgASgDUgtjcmVhdGVkVW5peBIpChBjb21w'
+    'bGV4aXR5X3Njb3JlGAcgASgBUg9jb21wbGV4aXR5U2NvcmUSJwoPc3ludGhlc2lzX3Njb3JlGA'
+    'ggASgBUg5zeW50aGVzaXNTY29yZRInCg9mb3Jlc2lnaHRfc2NvcmUYCSABKAFSDmZvcmVzaWdo'
+    'dFNjb3Jl');
 
 @$core.Deprecated('Use listMyThreadsRequestDescriptor instead')
 const ListMyThreadsRequest$json = {

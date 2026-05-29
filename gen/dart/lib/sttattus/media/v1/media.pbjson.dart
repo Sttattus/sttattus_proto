@@ -65,13 +65,14 @@ const RequestUploadRequest$json = {
   '2': [
     {'1': 'mime', '3': 1, '4': 1, '5': 9, '10': 'mime'},
     {'1': 'size', '3': 2, '4': 1, '5': 3, '10': 'size'},
+    {'1': 'category', '3': 3, '4': 1, '5': 9, '10': 'category'},
   ],
 };
 
 /// Descriptor for `RequestUploadRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List requestUploadRequestDescriptor = $convert.base64Decode(
     'ChRSZXF1ZXN0VXBsb2FkUmVxdWVzdBISCgRtaW1lGAEgASgJUgRtaW1lEhIKBHNpemUYAiABKA'
-    'NSBHNpemU=');
+    'NSBHNpemUSGgoIY2F0ZWdvcnkYAyABKAlSCGNhdGVnb3J5');
 
 @$core.Deprecated('Use requestUploadResponseDescriptor instead')
 const RequestUploadResponse$json = {

@@ -495,6 +495,114 @@ final $typed_data.Uint8List scoreDominionResponseDescriptor = $convert.base64Dec
     'ChVTY29yZURvbWluaW9uUmVzcG9uc2USKgoRbmV3X2RvbWluaW9uX3JhbmsYASABKAFSD25ld0'
     'RvbWluaW9uUmFuaxIlCg5kb21pbmlvbl9kZWx0YRgCIAEoAVINZG9taW5pb25EZWx0YQ==');
 
+@$core.Deprecated('Use scoreSessionAnalyticsRequestDescriptor instead')
+const ScoreSessionAnalyticsRequest$json = {
+  '1': 'ScoreSessionAnalyticsRequest',
+  '2': [
+    {'1': 'session_id', '3': 1, '4': 1, '5': 9, '10': 'sessionId'},
+    {'1': 'series', '3': 2, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.WorkoutSeriesInput', '10': 'series'},
+    {'1': 'heart_rate_data', '3': 3, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.ScoreSessionAnalyticsRequest.HeartRatePoint', '10': 'heartRateData'},
+  ],
+  '3': [ScoreSessionAnalyticsRequest_HeartRatePoint$json],
+};
+
+@$core.Deprecated('Use scoreSessionAnalyticsRequestDescriptor instead')
+const ScoreSessionAnalyticsRequest_HeartRatePoint$json = {
+  '1': 'HeartRatePoint',
+  '2': [
+    {'1': 'timestamp_offset_seconds', '3': 1, '4': 1, '5': 5, '10': 'timestampOffsetSeconds'},
+    {'1': 'bpm', '3': 2, '4': 1, '5': 1, '10': 'bpm'},
+  ],
+};
+
+/// Descriptor for `ScoreSessionAnalyticsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List scoreSessionAnalyticsRequestDescriptor = $convert.base64Decode(
+    'ChxTY29yZVNlc3Npb25BbmFseXRpY3NSZXF1ZXN0Eh0KCnNlc3Npb25faWQYASABKAlSCXNlc3'
+    'Npb25JZBI/CgZzZXJpZXMYAiADKAsyJy5zdHRhdHR1cy5zY29yaW5nLnYxLldvcmtvdXRTZXJp'
+    'ZXNJbnB1dFIGc2VyaWVzEmgKD2hlYXJ0X3JhdGVfZGF0YRgDIAMoCzJALnN0dGF0dHVzLnNjb3'
+    'JpbmcudjEuU2NvcmVTZXNzaW9uQW5hbHl0aWNzUmVxdWVzdC5IZWFydFJhdGVQb2ludFINaGVh'
+    'cnRSYXRlRGF0YRpcCg5IZWFydFJhdGVQb2ludBI4Chh0aW1lc3RhbXBfb2Zmc2V0X3NlY29uZH'
+    'MYASABKAVSFnRpbWVzdGFtcE9mZnNldFNlY29uZHMSEAoDYnBtGAIgASgBUgNicG0=');
+
+@$core.Deprecated('Use metricPointDescriptor instead')
+const MetricPoint$json = {
+  '1': 'MetricPoint',
+  '2': [
+    {'1': 'timestamp_offset_seconds', '3': 1, '4': 1, '5': 5, '10': 'timestampOffsetSeconds'},
+    {'1': 'value', '3': 2, '4': 1, '5': 1, '10': 'value'},
+  ],
+};
+
+/// Descriptor for `MetricPoint`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List metricPointDescriptor = $convert.base64Decode(
+    'CgtNZXRyaWNQb2ludBI4Chh0aW1lc3RhbXBfb2Zmc2V0X3NlY29uZHMYASABKAVSFnRpbWVzdG'
+    'FtcE9mZnNldFNlY29uZHMSFAoFdmFsdWUYAiABKAFSBXZhbHVl');
+
+@$core.Deprecated('Use scoreSessionAnalyticsResponseDescriptor instead')
+const ScoreSessionAnalyticsResponse$json = {
+  '1': 'ScoreSessionAnalyticsResponse',
+  '2': [
+    {'1': 'volume_curve', '3': 1, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.MetricPoint', '10': 'volumeCurve'},
+    {'1': 'intensity_curve', '3': 2, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.MetricPoint', '10': 'intensityCurve'},
+    {'1': 'heart_rate_curve', '3': 3, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.MetricPoint', '10': 'heartRateCurve'},
+    {'1': 'total_volume', '3': 4, '4': 1, '5': 1, '10': 'totalVolume'},
+    {'1': 'avg_intensity', '3': 5, '4': 1, '5': 1, '10': 'avgIntensity'},
+    {'1': 'peak_heart_rate', '3': 6, '4': 1, '5': 5, '10': 'peakHeartRate'},
+  ],
+};
+
+/// Descriptor for `ScoreSessionAnalyticsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List scoreSessionAnalyticsResponseDescriptor = $convert.base64Decode(
+    'Ch1TY29yZVNlc3Npb25BbmFseXRpY3NSZXNwb25zZRJDCgx2b2x1bWVfY3VydmUYASADKAsyIC'
+    '5zdHRhdHR1cy5zY29yaW5nLnYxLk1ldHJpY1BvaW50Ugt2b2x1bWVDdXJ2ZRJJCg9pbnRlbnNp'
+    'dHlfY3VydmUYAiADKAsyIC5zdHRhdHR1cy5zY29yaW5nLnYxLk1ldHJpY1BvaW50Ug5pbnRlbn'
+    'NpdHlDdXJ2ZRJKChBoZWFydF9yYXRlX2N1cnZlGAMgAygLMiAuc3R0YXR0dXMuc2NvcmluZy52'
+    'MS5NZXRyaWNQb2ludFIOaGVhcnRSYXRlQ3VydmUSIQoMdG90YWxfdm9sdW1lGAQgASgBUgt0b3'
+    'RhbFZvbHVtZRIjCg1hdmdfaW50ZW5zaXR5GAUgASgBUgxhdmdJbnRlbnNpdHkSJgoPcGVha19o'
+    'ZWFydF9yYXRlGAYgASgFUg1wZWFrSGVhcnRSYXRl');
+
+@$core.Deprecated('Use scoreRivalryRequestDescriptor instead')
+const ScoreRivalryRequest$json = {
+  '1': 'ScoreRivalryRequest',
+  '2': [
+    {'1': 'rivalry_id', '3': 1, '4': 1, '5': 9, '10': 'rivalryId'},
+    {'1': 'my_current_score', '3': 2, '4': 1, '5': 1, '10': 'myCurrentScore'},
+    {'1': 'rival_current_score', '3': 3, '4': 1, '5': 1, '10': 'rivalCurrentScore'},
+    {'1': 'my_score_history', '3': 4, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.MetricPoint', '10': 'myScoreHistory'},
+    {'1': 'rival_score_history', '3': 5, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.MetricPoint', '10': 'rivalScoreHistory'},
+  ],
+};
+
+/// Descriptor for `ScoreRivalryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List scoreRivalryRequestDescriptor = $convert.base64Decode(
+    'ChNTY29yZVJpdmFscnlSZXF1ZXN0Eh0KCnJpdmFscnlfaWQYASABKAlSCXJpdmFscnlJZBIoCh'
+    'BteV9jdXJyZW50X3Njb3JlGAIgASgBUg5teUN1cnJlbnRTY29yZRIuChNyaXZhbF9jdXJyZW50'
+    'X3Njb3JlGAMgASgBUhFyaXZhbEN1cnJlbnRTY29yZRJKChBteV9zY29yZV9oaXN0b3J5GAQgAy'
+    'gLMiAuc3R0YXR0dXMuc2NvcmluZy52MS5NZXRyaWNQb2ludFIObXlTY29yZUhpc3RvcnkSUAoT'
+    'cml2YWxfc2NvcmVfaGlzdG9yeRgFIAMoCzIgLnN0dGF0dHVzLnNjb3JpbmcudjEuTWV0cmljUG'
+    '9pbnRSEXJpdmFsU2NvcmVIaXN0b3J5');
+
+@$core.Deprecated('Use scoreRivalryResponseDescriptor instead')
+const ScoreRivalryResponse$json = {
+  '1': 'ScoreRivalryResponse',
+  '2': [
+    {'1': 'my_progress_pct', '3': 1, '4': 1, '5': 1, '10': 'myProgressPct'},
+    {'1': 'rival_progress_pct', '3': 2, '4': 1, '5': 1, '10': 'rivalProgressPct'},
+    {'1': 'my_normalized_curve', '3': 3, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.MetricPoint', '10': 'myNormalizedCurve'},
+    {'1': 'rival_normalized_curve', '3': 4, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.MetricPoint', '10': 'rivalNormalizedCurve'},
+    {'1': 'leading_user_id', '3': 5, '4': 1, '5': 9, '10': 'leadingUserId'},
+  ],
+};
+
+/// Descriptor for `ScoreRivalryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List scoreRivalryResponseDescriptor = $convert.base64Decode(
+    'ChRTY29yZVJpdmFscnlSZXNwb25zZRImCg9teV9wcm9ncmVzc19wY3QYASABKAFSDW15UHJvZ3'
+    'Jlc3NQY3QSLAoScml2YWxfcHJvZ3Jlc3NfcGN0GAIgASgBUhByaXZhbFByb2dyZXNzUGN0ElAK'
+    'E215X25vcm1hbGl6ZWRfY3VydmUYAyADKAsyIC5zdHRhdHR1cy5zY29yaW5nLnYxLk1ldHJpY1'
+    'BvaW50UhFteU5vcm1hbGl6ZWRDdXJ2ZRJWChZyaXZhbF9ub3JtYWxpemVkX2N1cnZlGAQgAygL'
+    'MiAuc3R0YXR0dXMuc2NvcmluZy52MS5NZXRyaWNQb2ludFIUcml2YWxOb3JtYWxpemVkQ3Vydm'
+    'USJgoPbGVhZGluZ191c2VyX2lkGAUgASgJUg1sZWFkaW5nVXNlcklk');
+
 @$core.Deprecated('Use scoreAcuteChronicRequestDescriptor instead')
 const ScoreAcuteChronicRequest$json = {
   '1': 'ScoreAcuteChronicRequest',

@@ -40,12 +40,32 @@ class AuthServiceClient extends $grpc.Client {
     return $createUnaryCall(_$login, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.OAuthLoginResponse> oAuthLogin($0.OAuthLoginRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$oAuthLogin, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.CheckEmailResponse> checkEmail($0.CheckEmailRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$checkEmail, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.LinkAppResponse> linkApp($0.LinkAppRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$linkApp, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.LinkProviderResponse> linkProvider($0.LinkProviderRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$linkProvider, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetPasswordResponse> setPassword($0.SetPasswordRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$setPassword, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ForgotPasswordResponse> forgotPassword($0.ForgotPasswordRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$forgotPassword, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ResetPasswordResponse> resetPassword($0.ResetPasswordRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$resetPassword, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.RefreshResponse> refresh($0.RefreshRequest request, {$grpc.CallOptions? options,}) {
@@ -66,6 +86,10 @@ class AuthServiceClient extends $grpc.Client {
       '/sttattus.auth.v1.AuthService/Login',
       ($0.LoginRequest value) => value.writeToBuffer(),
       $0.LoginResponse.fromBuffer);
+  static final _$oAuthLogin = $grpc.ClientMethod<$0.OAuthLoginRequest, $0.OAuthLoginResponse>(
+      '/sttattus.auth.v1.AuthService/OAuthLogin',
+      ($0.OAuthLoginRequest value) => value.writeToBuffer(),
+      $0.OAuthLoginResponse.fromBuffer);
   static final _$checkEmail = $grpc.ClientMethod<$0.CheckEmailRequest, $0.CheckEmailResponse>(
       '/sttattus.auth.v1.AuthService/CheckEmail',
       ($0.CheckEmailRequest value) => value.writeToBuffer(),
@@ -74,6 +98,22 @@ class AuthServiceClient extends $grpc.Client {
       '/sttattus.auth.v1.AuthService/LinkApp',
       ($0.LinkAppRequest value) => value.writeToBuffer(),
       $0.LinkAppResponse.fromBuffer);
+  static final _$linkProvider = $grpc.ClientMethod<$0.LinkProviderRequest, $0.LinkProviderResponse>(
+      '/sttattus.auth.v1.AuthService/LinkProvider',
+      ($0.LinkProviderRequest value) => value.writeToBuffer(),
+      $0.LinkProviderResponse.fromBuffer);
+  static final _$setPassword = $grpc.ClientMethod<$0.SetPasswordRequest, $0.SetPasswordResponse>(
+      '/sttattus.auth.v1.AuthService/SetPassword',
+      ($0.SetPasswordRequest value) => value.writeToBuffer(),
+      $0.SetPasswordResponse.fromBuffer);
+  static final _$forgotPassword = $grpc.ClientMethod<$0.ForgotPasswordRequest, $0.ForgotPasswordResponse>(
+      '/sttattus.auth.v1.AuthService/ForgotPassword',
+      ($0.ForgotPasswordRequest value) => value.writeToBuffer(),
+      $0.ForgotPasswordResponse.fromBuffer);
+  static final _$resetPassword = $grpc.ClientMethod<$0.ResetPasswordRequest, $0.ResetPasswordResponse>(
+      '/sttattus.auth.v1.AuthService/ResetPassword',
+      ($0.ResetPasswordRequest value) => value.writeToBuffer(),
+      $0.ResetPasswordResponse.fromBuffer);
   static final _$refresh = $grpc.ClientMethod<$0.RefreshRequest, $0.RefreshResponse>(
       '/sttattus.auth.v1.AuthService/Refresh',
       ($0.RefreshRequest value) => value.writeToBuffer(),
@@ -103,6 +143,13 @@ abstract class AuthServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.LoginRequest.fromBuffer(value),
         ($0.LoginResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.OAuthLoginRequest, $0.OAuthLoginResponse>(
+        'OAuthLogin',
+        oAuthLogin_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.OAuthLoginRequest.fromBuffer(value),
+        ($0.OAuthLoginResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.CheckEmailRequest, $0.CheckEmailResponse>(
         'CheckEmail',
         checkEmail_Pre,
@@ -117,6 +164,34 @@ abstract class AuthServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.LinkAppRequest.fromBuffer(value),
         ($0.LinkAppResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.LinkProviderRequest, $0.LinkProviderResponse>(
+        'LinkProvider',
+        linkProvider_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.LinkProviderRequest.fromBuffer(value),
+        ($0.LinkProviderResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetPasswordRequest, $0.SetPasswordResponse>(
+        'SetPassword',
+        setPassword_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SetPasswordRequest.fromBuffer(value),
+        ($0.SetPasswordResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ForgotPasswordRequest, $0.ForgotPasswordResponse>(
+        'ForgotPassword',
+        forgotPassword_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ForgotPasswordRequest.fromBuffer(value),
+        ($0.ForgotPasswordResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ResetPasswordRequest, $0.ResetPasswordResponse>(
+        'ResetPassword',
+        resetPassword_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ResetPasswordRequest.fromBuffer(value),
+        ($0.ResetPasswordResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.RefreshRequest, $0.RefreshResponse>(
         'Refresh',
         refresh_Pre,
@@ -145,6 +220,12 @@ abstract class AuthServiceBase extends $grpc.Service {
 
   $async.Future<$0.LoginResponse> login($grpc.ServiceCall call, $0.LoginRequest request);
 
+  $async.Future<$0.OAuthLoginResponse> oAuthLogin_Pre($grpc.ServiceCall $call, $async.Future<$0.OAuthLoginRequest> $request) async {
+    return oAuthLogin($call, await $request);
+  }
+
+  $async.Future<$0.OAuthLoginResponse> oAuthLogin($grpc.ServiceCall call, $0.OAuthLoginRequest request);
+
   $async.Future<$0.CheckEmailResponse> checkEmail_Pre($grpc.ServiceCall $call, $async.Future<$0.CheckEmailRequest> $request) async {
     return checkEmail($call, await $request);
   }
@@ -156,6 +237,30 @@ abstract class AuthServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.LinkAppResponse> linkApp($grpc.ServiceCall call, $0.LinkAppRequest request);
+
+  $async.Future<$0.LinkProviderResponse> linkProvider_Pre($grpc.ServiceCall $call, $async.Future<$0.LinkProviderRequest> $request) async {
+    return linkProvider($call, await $request);
+  }
+
+  $async.Future<$0.LinkProviderResponse> linkProvider($grpc.ServiceCall call, $0.LinkProviderRequest request);
+
+  $async.Future<$0.SetPasswordResponse> setPassword_Pre($grpc.ServiceCall $call, $async.Future<$0.SetPasswordRequest> $request) async {
+    return setPassword($call, await $request);
+  }
+
+  $async.Future<$0.SetPasswordResponse> setPassword($grpc.ServiceCall call, $0.SetPasswordRequest request);
+
+  $async.Future<$0.ForgotPasswordResponse> forgotPassword_Pre($grpc.ServiceCall $call, $async.Future<$0.ForgotPasswordRequest> $request) async {
+    return forgotPassword($call, await $request);
+  }
+
+  $async.Future<$0.ForgotPasswordResponse> forgotPassword($grpc.ServiceCall call, $0.ForgotPasswordRequest request);
+
+  $async.Future<$0.ResetPasswordResponse> resetPassword_Pre($grpc.ServiceCall $call, $async.Future<$0.ResetPasswordRequest> $request) async {
+    return resetPassword($call, await $request);
+  }
+
+  $async.Future<$0.ResetPasswordResponse> resetPassword($grpc.ServiceCall call, $0.ResetPasswordRequest request);
 
   $async.Future<$0.RefreshResponse> refresh_Pre($grpc.ServiceCall $call, $async.Future<$0.RefreshRequest> $request) async {
     return refresh($call, await $request);

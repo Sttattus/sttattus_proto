@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AttachMediaToMessageRequest, AttachMediaToMessageResponse, BlockUserRequest, BlockUserResponse, CancelReservationRequest, CancelReservationResponse, CreateAgoraRoomRequest, CreateAgoraRoomResponse, CreateReservationRequest, CreateReservationResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, EndAgoraRoomRequest, EndAgoraRoomResponse, GetCompatibilityReportRequest, GetCompatibilityReportResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListLiveRoomsRequest, ListLiveRoomsResponse, ListMatchesRequest, ListMatchesResponse, ListMessageAttachmentsRequest, ListMessageAttachmentsResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyReportsRequest, ListMyReportsResponse, ListMyReservationsRequest, ListMyReservationsResponse, ListRestaurantsRequest, ListRestaurantsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, MintLiveKitTokenRequest, MintLiveKitTokenResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
+import { AttachMediaToMessageRequest, AttachMediaToMessageResponse, BlockUserRequest, BlockUserResponse, CancelReservationRequest, CancelReservationResponse, CreateAgoraRoomRequest, CreateAgoraRoomResponse, CreateReservationRequest, CreateReservationResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, EndAgoraRoomRequest, EndAgoraRoomResponse, GetCompatibilityMatrixRequest, GetCompatibilityMatrixResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListGiftLedgerRequest, ListGiftLedgerResponse, ListLiveRoomsRequest, ListLiveRoomsResponse, ListMatchesRequest, ListMatchesResponse, ListMessageAttachmentsRequest, ListMessageAttachmentsResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyReportsRequest, ListMyReportsResponse, ListMyReservationsRequest, ListMyReservationsResponse, ListRestaurantsRequest, ListRestaurantsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, MintLiveKitTokenRequest, MintLiveKitTokenResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, SendGiftRequest, SendGiftResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -94,8 +94,6 @@ export const DatingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * A9.4 — server-authoritative Tension Seats.
-     *
      * @generated from rpc sttattus.dating.v1.DatingService.ListTensionSeats
      */
     listTensionSeats: {
@@ -123,8 +121,6 @@ export const DatingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * A9.5 — Akashic Record v2.
-     *
      * @generated from rpc sttattus.dating.v1.DatingService.ListAuthorAkashic
      */
     listAuthorAkashic: {
@@ -161,8 +157,6 @@ export const DatingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * A9.6 — safety center: blocks + reports + panic contact.
-     *
      * @generated from rpc sttattus.dating.v1.DatingService.ListMyBlocks
      */
     listMyBlocks: {
@@ -226,8 +220,6 @@ export const DatingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * A9.8 — per-axis visibility on the viewer surface.
-     *
      * @generated from rpc sttattus.dating.v1.DatingService.GetPrivacyAxes
      */
     getPrivacyAxes: {
@@ -246,8 +238,6 @@ export const DatingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * A9P2.2 — Atlas map v2: latest 3D projection per user.
-     *
      * @generated from rpc sttattus.dating.v1.DatingService.ListAtlasMapPoints
      */
     listAtlasMapPoints: {
@@ -257,8 +247,6 @@ export const DatingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * A9P2.3 — Agora live audio rooms.
-     *
      * @generated from rpc sttattus.dating.v1.DatingService.ListLiveRooms
      */
     listLiveRooms: {
@@ -295,8 +283,6 @@ export const DatingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * A9P2.4 — voice + video message attachments.
-     *
      * @generated from rpc sttattus.dating.v1.DatingService.AttachMediaToMessage
      */
     attachMediaToMessage: {
@@ -315,9 +301,6 @@ export const DatingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * A9P2.5 — restaurant partner integration (directory +
-     * reservation ledger; partner API call is concierge-routed today).
-     *
      * @generated from rpc sttattus.dating.v1.DatingService.ListRestaurants
      */
     listRestaurants: {
@@ -354,14 +337,34 @@ export const DatingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * A9P2.6 — two-user compatibility report.
+     * A9P2.6 / A9P3 — deep compatibility matrix.
      *
-     * @generated from rpc sttattus.dating.v1.DatingService.GetCompatibilityReport
+     * @generated from rpc sttattus.dating.v1.DatingService.GetCompatibilityMatrix
      */
-    getCompatibilityReport: {
-      name: "GetCompatibilityReport",
-      I: GetCompatibilityReportRequest,
-      O: GetCompatibilityReportResponse,
+    getCompatibilityMatrix: {
+      name: "GetCompatibilityMatrix",
+      I: GetCompatibilityMatrixRequest,
+      O: GetCompatibilityMatrixResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9P3 — Gift Ledger
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.SendGift
+     */
+    sendGift: {
+      name: "SendGift",
+      I: SendGiftRequest,
+      O: SendGiftResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.ListGiftLedger
+     */
+    listGiftLedger: {
+      name: "ListGiftLedger",
+      I: ListGiftLedgerRequest,
+      O: ListGiftLedgerResponse,
       kind: MethodKind.Unary,
     },
   }

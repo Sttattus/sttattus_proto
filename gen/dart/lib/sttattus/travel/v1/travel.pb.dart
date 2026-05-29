@@ -2779,6 +2779,504 @@ class SetMilestoneVisibilityResponse extends $pb.GeneratedMessage {
   static SetMilestoneVisibilityResponse? _defaultInstance;
 }
 
+class GetPassportSurfaceRequest extends $pb.GeneratedMessage {
+  factory GetPassportSurfaceRequest() => create();
+
+  GetPassportSurfaceRequest._();
+
+  factory GetPassportSurfaceRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetPassportSurfaceRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPassportSurfaceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPassportSurfaceRequest clone() => GetPassportSurfaceRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPassportSurfaceRequest copyWith(void Function(GetPassportSurfaceRequest) updates) => super.copyWith((message) => updates(message as GetPassportSurfaceRequest)) as GetPassportSurfaceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPassportSurfaceRequest create() => GetPassportSurfaceRequest._();
+  @$core.override
+  GetPassportSurfaceRequest createEmptyInstance() => create();
+  static $pb.PbList<GetPassportSurfaceRequest> createRepeated() => $pb.PbList<GetPassportSurfaceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetPassportSurfaceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPassportSurfaceRequest>(create);
+  static GetPassportSurfaceRequest? _defaultInstance;
+}
+
+class GetPassportSurfaceResponse extends $pb.GeneratedMessage {
+  factory GetPassportSurfaceResponse({
+    $core.Iterable<VisitedCountry>? countries,
+    $core.Iterable<VerificationSignals>? allSignals,
+    $core.int? totalStamps,
+  }) {
+    final result = create();
+    if (countries != null) result.countries.addAll(countries);
+    if (allSignals != null) result.allSignals.addAll(allSignals);
+    if (totalStamps != null) result.totalStamps = totalStamps;
+    return result;
+  }
+
+  GetPassportSurfaceResponse._();
+
+  factory GetPassportSurfaceResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetPassportSurfaceResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPassportSurfaceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..pc<VisitedCountry>(1, _omitFieldNames ? '' : 'countries', $pb.PbFieldType.PM, subBuilder: VisitedCountry.create)
+    ..pc<VerificationSignals>(2, _omitFieldNames ? '' : 'allSignals', $pb.PbFieldType.PM, subBuilder: VerificationSignals.create)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'totalStamps', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPassportSurfaceResponse clone() => GetPassportSurfaceResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPassportSurfaceResponse copyWith(void Function(GetPassportSurfaceResponse) updates) => super.copyWith((message) => updates(message as GetPassportSurfaceResponse)) as GetPassportSurfaceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPassportSurfaceResponse create() => GetPassportSurfaceResponse._();
+  @$core.override
+  GetPassportSurfaceResponse createEmptyInstance() => create();
+  static $pb.PbList<GetPassportSurfaceResponse> createRepeated() => $pb.PbList<GetPassportSurfaceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetPassportSurfaceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPassportSurfaceResponse>(create);
+  static GetPassportSurfaceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VisitedCountry> get countries => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<VerificationSignals> get allSignals => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.int get totalStamps => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set totalStamps($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTotalStamps() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTotalStamps() => $_clearField(3);
+}
+
+class LoungeDetail extends $pb.GeneratedMessage {
+  factory LoungeDetail({
+    $core.String? id,
+    $core.String? name,
+    $core.String? city,
+    $core.String? locationDescription,
+    $core.String? liveCapacityStatus,
+    $core.Iterable<$core.String>? amenities,
+    $core.String? currentMenuUrl,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (city != null) result.city = city;
+    if (locationDescription != null) result.locationDescription = locationDescription;
+    if (liveCapacityStatus != null) result.liveCapacityStatus = liveCapacityStatus;
+    if (amenities != null) result.amenities.addAll(amenities);
+    if (currentMenuUrl != null) result.currentMenuUrl = currentMenuUrl;
+    return result;
+  }
+
+  LoungeDetail._();
+
+  factory LoungeDetail.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory LoungeDetail.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoungeDetail', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'city')
+    ..aOS(4, _omitFieldNames ? '' : 'locationDescription')
+    ..aOS(5, _omitFieldNames ? '' : 'liveCapacityStatus')
+    ..pPS(6, _omitFieldNames ? '' : 'amenities')
+    ..aOS(7, _omitFieldNames ? '' : 'currentMenuUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LoungeDetail clone() => LoungeDetail()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LoungeDetail copyWith(void Function(LoungeDetail) updates) => super.copyWith((message) => updates(message as LoungeDetail)) as LoungeDetail;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LoungeDetail create() => LoungeDetail._();
+  @$core.override
+  LoungeDetail createEmptyInstance() => create();
+  static $pb.PbList<LoungeDetail> createRepeated() => $pb.PbList<LoungeDetail>();
+  @$core.pragma('dart2js:noInline')
+  static LoungeDetail getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoungeDetail>(create);
+  static LoungeDetail? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get city => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set city($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCity() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCity() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get locationDescription => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set locationDescription($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLocationDescription() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLocationDescription() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get liveCapacityStatus => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set liveCapacityStatus($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLiveCapacityStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLiveCapacityStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<$core.String> get amenities => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.String get currentMenuUrl => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set currentMenuUrl($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCurrentMenuUrl() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCurrentMenuUrl() => $_clearField(7);
+}
+
+class GetLoungeConciergeRequest extends $pb.GeneratedMessage {
+  factory GetLoungeConciergeRequest({
+    $core.double? latitude,
+    $core.double? longitude,
+  }) {
+    final result = create();
+    if (latitude != null) result.latitude = latitude;
+    if (longitude != null) result.longitude = longitude;
+    return result;
+  }
+
+  GetLoungeConciergeRequest._();
+
+  factory GetLoungeConciergeRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetLoungeConciergeRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLoungeConciergeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'latitude', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'longitude', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLoungeConciergeRequest clone() => GetLoungeConciergeRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLoungeConciergeRequest copyWith(void Function(GetLoungeConciergeRequest) updates) => super.copyWith((message) => updates(message as GetLoungeConciergeRequest)) as GetLoungeConciergeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLoungeConciergeRequest create() => GetLoungeConciergeRequest._();
+  @$core.override
+  GetLoungeConciergeRequest createEmptyInstance() => create();
+  static $pb.PbList<GetLoungeConciergeRequest> createRepeated() => $pb.PbList<GetLoungeConciergeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetLoungeConciergeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLoungeConciergeRequest>(create);
+  static GetLoungeConciergeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get latitude => $_getN(0);
+  @$pb.TagNumber(1)
+  set latitude($core.double value) => $_setDouble(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLatitude() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLatitude() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get longitude => $_getN(1);
+  @$pb.TagNumber(2)
+  set longitude($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLongitude() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLongitude() => $_clearField(2);
+}
+
+class GetLoungeConciergeResponse extends $pb.GeneratedMessage {
+  factory GetLoungeConciergeResponse({
+    LoungeDetail? nearestLounge,
+    $core.Iterable<LoungeDetail>? otherLounges,
+  }) {
+    final result = create();
+    if (nearestLounge != null) result.nearestLounge = nearestLounge;
+    if (otherLounges != null) result.otherLounges.addAll(otherLounges);
+    return result;
+  }
+
+  GetLoungeConciergeResponse._();
+
+  factory GetLoungeConciergeResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetLoungeConciergeResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLoungeConciergeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..aOM<LoungeDetail>(1, _omitFieldNames ? '' : 'nearestLounge', subBuilder: LoungeDetail.create)
+    ..pc<LoungeDetail>(2, _omitFieldNames ? '' : 'otherLounges', $pb.PbFieldType.PM, subBuilder: LoungeDetail.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLoungeConciergeResponse clone() => GetLoungeConciergeResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLoungeConciergeResponse copyWith(void Function(GetLoungeConciergeResponse) updates) => super.copyWith((message) => updates(message as GetLoungeConciergeResponse)) as GetLoungeConciergeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLoungeConciergeResponse create() => GetLoungeConciergeResponse._();
+  @$core.override
+  GetLoungeConciergeResponse createEmptyInstance() => create();
+  static $pb.PbList<GetLoungeConciergeResponse> createRepeated() => $pb.PbList<GetLoungeConciergeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetLoungeConciergeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLoungeConciergeResponse>(create);
+  static GetLoungeConciergeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LoungeDetail get nearestLounge => $_getN(0);
+  @$pb.TagNumber(1)
+  set nearestLounge(LoungeDetail value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNearestLounge() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNearestLounge() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LoungeDetail ensureNearestLounge() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<LoungeDetail> get otherLounges => $_getList(1);
+}
+
+class TripArchiveEntry extends $pb.GeneratedMessage {
+  factory TripArchiveEntry({
+    Trip? trip,
+    $core.double? avgHrv,
+    $core.int? totalWorkouts,
+    $core.double? totalSpend,
+  }) {
+    final result = create();
+    if (trip != null) result.trip = trip;
+    if (avgHrv != null) result.avgHrv = avgHrv;
+    if (totalWorkouts != null) result.totalWorkouts = totalWorkouts;
+    if (totalSpend != null) result.totalSpend = totalSpend;
+    return result;
+  }
+
+  TripArchiveEntry._();
+
+  factory TripArchiveEntry.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory TripArchiveEntry.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TripArchiveEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..aOM<Trip>(1, _omitFieldNames ? '' : 'trip', subBuilder: Trip.create)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'avgHrv', $pb.PbFieldType.OD)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'totalWorkouts', $pb.PbFieldType.O3)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'totalSpend', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TripArchiveEntry clone() => TripArchiveEntry()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TripArchiveEntry copyWith(void Function(TripArchiveEntry) updates) => super.copyWith((message) => updates(message as TripArchiveEntry)) as TripArchiveEntry;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TripArchiveEntry create() => TripArchiveEntry._();
+  @$core.override
+  TripArchiveEntry createEmptyInstance() => create();
+  static $pb.PbList<TripArchiveEntry> createRepeated() => $pb.PbList<TripArchiveEntry>();
+  @$core.pragma('dart2js:noInline')
+  static TripArchiveEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TripArchiveEntry>(create);
+  static TripArchiveEntry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Trip get trip => $_getN(0);
+  @$pb.TagNumber(1)
+  set trip(Trip value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTrip() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTrip() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Trip ensureTrip() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.double get avgHrv => $_getN(1);
+  @$pb.TagNumber(2)
+  set avgHrv($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAvgHrv() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAvgHrv() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get totalWorkouts => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set totalWorkouts($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTotalWorkouts() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTotalWorkouts() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get totalSpend => $_getN(3);
+  @$pb.TagNumber(4)
+  set totalSpend($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTotalSpend() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTotalSpend() => $_clearField(4);
+}
+
+class GetTripArchiveRequest extends $pb.GeneratedMessage {
+  factory GetTripArchiveRequest({
+    $2.PageRequest? page,
+  }) {
+    final result = create();
+    if (page != null) result.page = page;
+    return result;
+  }
+
+  GetTripArchiveRequest._();
+
+  factory GetTripArchiveRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTripArchiveRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTripArchiveRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..aOM<$2.PageRequest>(1, _omitFieldNames ? '' : 'page', subBuilder: $2.PageRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTripArchiveRequest clone() => GetTripArchiveRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTripArchiveRequest copyWith(void Function(GetTripArchiveRequest) updates) => super.copyWith((message) => updates(message as GetTripArchiveRequest)) as GetTripArchiveRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTripArchiveRequest create() => GetTripArchiveRequest._();
+  @$core.override
+  GetTripArchiveRequest createEmptyInstance() => create();
+  static $pb.PbList<GetTripArchiveRequest> createRepeated() => $pb.PbList<GetTripArchiveRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetTripArchiveRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTripArchiveRequest>(create);
+  static GetTripArchiveRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.PageRequest get page => $_getN(0);
+  @$pb.TagNumber(1)
+  set page($2.PageRequest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPage() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $2.PageRequest ensurePage() => $_ensure(0);
+}
+
+class GetTripArchiveResponse extends $pb.GeneratedMessage {
+  factory GetTripArchiveResponse({
+    $core.Iterable<TripArchiveEntry>? entries,
+    $2.PageResponse? page,
+  }) {
+    final result = create();
+    if (entries != null) result.entries.addAll(entries);
+    if (page != null) result.page = page;
+    return result;
+  }
+
+  GetTripArchiveResponse._();
+
+  factory GetTripArchiveResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTripArchiveResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTripArchiveResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'), createEmptyInstance: create)
+    ..pc<TripArchiveEntry>(1, _omitFieldNames ? '' : 'entries', $pb.PbFieldType.PM, subBuilder: TripArchiveEntry.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'page', subBuilder: $2.PageResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTripArchiveResponse clone() => GetTripArchiveResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTripArchiveResponse copyWith(void Function(GetTripArchiveResponse) updates) => super.copyWith((message) => updates(message as GetTripArchiveResponse)) as GetTripArchiveResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTripArchiveResponse create() => GetTripArchiveResponse._();
+  @$core.override
+  GetTripArchiveResponse createEmptyInstance() => create();
+  static $pb.PbList<GetTripArchiveResponse> createRepeated() => $pb.PbList<GetTripArchiveResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetTripArchiveResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTripArchiveResponse>(create);
+  static GetTripArchiveResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<TripArchiveEntry> get entries => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $2.PageResponse get page => $_getN(1);
+  @$pb.TagNumber(2)
+  set page($2.PageResponse value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPage() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $2.PageResponse ensurePage() => $_ensure(1);
+}
+
 
 const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

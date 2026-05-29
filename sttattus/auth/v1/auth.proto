@@ -9,10 +9,10 @@ option go_package = "github.com/sttattus/proto/gen/go/sttattus/auth/v1;authv1";
 // new app the user just joined.
 enum AppCode {
   APP_CODE_UNSPECIFIED = 0;
-  APP_CODE_WORKOUT = 1;
-  APP_CODE_LANGUAGES = 2;
-  APP_CODE_TRAVEL = 3;
-  APP_CODE_DATING = 4;
+  APP_CODE_FORGE = 1;
+  APP_CODE_LEXICON = 2;
+  APP_CODE_NOMAD = 3;
+  APP_CODE_ATLAS = 4;
   APP_CODE_EMPIRE = 5;
   APP_CODE_ONYX = 6;
   APP_CODE_APEX = 7;
@@ -21,6 +21,13 @@ enum AppCode {
   APP_CODE_ORACLE = 10;
   APP_CODE_LEGACY = 11;
   APP_CODE_ZENITH = 12;
+}
+
+enum AuthProvider {
+  AUTH_PROVIDER_UNSPECIFIED = 0;
+  AUTH_PROVIDER_GOOGLE = 1;
+  AUTH_PROVIDER_FACEBOOK = 2;
+  AUTH_PROVIDER_GITHUB = 3;
 }
 
 message TokenPair {
@@ -38,6 +45,9 @@ message ProfileHint {
   string name = 3;
   string avatar_url = 4;
   repeated AppCode linked_apps = 5;
+  bool has_password = 6;
+  repeated AuthProvider linked_providers = 7;
+  string locale = 8;
 }
 
 // ===== Register =====
@@ -52,13 +62,14 @@ message RegisterResponse {
   // Populated when registration succeeded.
   string user_id = 1;
   TokenPair tokens = 2;
+  ProfileHint profile = 3;
 
   // Populated when the email already exists in the ecosystem and the client
   // should switch into the link-app flow. When this is set, `user_id` and
   // `tokens` are empty and the gRPC status is OK (the *call* succeeded; the
   // outcome is "needs linking"). Allows the client to render the linking UI
   // without crashing on an error.
-  ProfileHint existing_profile = 3;
+  ProfileHint existing_profile = 4;
 }
 
 // ===== Login =====
@@ -71,6 +82,21 @@ message LoginRequest {
 message LoginResponse {
   string user_id = 1;
   TokenPair tokens = 2;
+  ProfileHint profile = 3;
+}
+
+// ===== OAuth Login =====
+message OAuthLoginRequest {
+  AuthProvider provider = 1;
+  string id_token = 2;
+  AppCode app_code = 3;
+}
+
+message OAuthLoginResponse {
+  string user_id = 1;
+  TokenPair tokens = 2;
+  ProfileHint profile = 3;
+  ProfileHint existing_profile = 4;
 }
 
 // ===== CheckEmail =====
@@ -97,7 +123,38 @@ message LinkAppRequest {
 message LinkAppResponse {
   string user_id = 1;
   TokenPair tokens = 2;
+  ProfileHint profile = 3;
 }
+
+// ===== LinkProvider =====
+message LinkProviderRequest {
+  AuthProvider provider = 1;
+  string id_token = 2;
+}
+
+message LinkProviderResponse {}
+
+// ===== SetPassword =====
+message SetPasswordRequest {
+  string new_password = 1;
+}
+
+message SetPasswordResponse {}
+
+// ===== ForgotPassword =====
+message ForgotPasswordRequest {
+  string email_or_handle = 1;
+}
+
+message ForgotPasswordResponse {}
+
+// ===== ResetPassword =====
+message ResetPasswordRequest {
+  string token = 1;
+  string new_password = 2;
+}
+
+message ResetPasswordResponse {}
 
 // ===== Refresh =====
 message RefreshRequest {
@@ -118,8 +175,13 @@ message LogoutResponse {}
 service AuthService {
   rpc Register(RegisterRequest) returns (RegisterResponse);
   rpc Login(LoginRequest) returns (LoginResponse);
+  rpc OAuthLogin(OAuthLoginRequest) returns (OAuthLoginResponse);
   rpc CheckEmail(CheckEmailRequest) returns (CheckEmailResponse);
   rpc LinkApp(LinkAppRequest) returns (LinkAppResponse);
+  rpc LinkProvider(LinkProviderRequest) returns (LinkProviderResponse);
+  rpc SetPassword(SetPasswordRequest) returns (SetPasswordResponse);
+  rpc ForgotPassword(ForgotPasswordRequest) returns (ForgotPasswordResponse);
+  rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse);
   rpc Refresh(RefreshRequest) returns (RefreshResponse);
   rpc Logout(LogoutRequest) returns (LogoutResponse);
 }

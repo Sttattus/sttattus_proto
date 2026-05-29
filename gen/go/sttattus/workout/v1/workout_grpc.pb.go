@@ -65,6 +65,33 @@ const (
 	WorkoutService_MarkSensorSynced_FullMethodName           = "/sttattus.workout.v1.WorkoutService/MarkSensorSynced"
 	WorkoutService_SetSensorPriority_FullMethodName          = "/sttattus.workout.v1.WorkoutService/SetSensorPriority"
 	WorkoutService_GetForgeAnalytics_FullMethodName          = "/sttattus.workout.v1.WorkoutService/GetForgeAnalytics"
+	WorkoutService_GetSessionAnalytics_FullMethodName        = "/sttattus.workout.v1.WorkoutService/GetSessionAnalytics"
+	WorkoutService_ListUserEquipment_FullMethodName          = "/sttattus.workout.v1.WorkoutService/ListUserEquipment"
+	WorkoutService_AddUserEquipment_FullMethodName           = "/sttattus.workout.v1.WorkoutService/AddUserEquipment"
+	WorkoutService_DeleteUserEquipment_FullMethodName        = "/sttattus.workout.v1.WorkoutService/DeleteUserEquipment"
+	WorkoutService_ListWorkoutRivalries_FullMethodName       = "/sttattus.workout.v1.WorkoutService/ListWorkoutRivalries"
+	WorkoutService_GetRivalryDetail_FullMethodName           = "/sttattus.workout.v1.WorkoutService/GetRivalryDetail"
+	WorkoutService_SimulateForgeRank_FullMethodName          = "/sttattus.workout.v1.WorkoutService/SimulateForgeRank"
+	WorkoutService_GetRecoveryScore_FullMethodName           = "/sttattus.workout.v1.WorkoutService/GetRecoveryScore"
+	WorkoutService_StartCoachThread_FullMethodName           = "/sttattus.workout.v1.WorkoutService/StartCoachThread"
+	WorkoutService_ListMyCoachThreads_FullMethodName         = "/sttattus.workout.v1.WorkoutService/ListMyCoachThreads"
+	WorkoutService_GetCoachThread_FullMethodName             = "/sttattus.workout.v1.WorkoutService/GetCoachThread"
+	WorkoutService_PostCoachMessage_FullMethodName           = "/sttattus.workout.v1.WorkoutService/PostCoachMessage"
+	WorkoutService_ListAnthologyArticles_FullMethodName      = "/sttattus.workout.v1.WorkoutService/ListAnthologyArticles"
+	WorkoutService_GetAnthologyArticle_FullMethodName        = "/sttattus.workout.v1.WorkoutService/GetAnthologyArticle"
+	WorkoutService_CreateAthleteShare_FullMethodName         = "/sttattus.workout.v1.WorkoutService/CreateAthleteShare"
+	WorkoutService_ListMyAthleteShares_FullMethodName        = "/sttattus.workout.v1.WorkoutService/ListMyAthleteShares"
+	WorkoutService_RevokeAthleteShare_FullMethodName         = "/sttattus.workout.v1.WorkoutService/RevokeAthleteShare"
+	WorkoutService_GenerateForgeAlmanac_FullMethodName       = "/sttattus.workout.v1.WorkoutService/GenerateForgeAlmanac"
+	WorkoutService_AnalyzeFormVideo_FullMethodName           = "/sttattus.workout.v1.WorkoutService/AnalyzeFormVideo"
+	WorkoutService_CreateRivalry_FullMethodName              = "/sttattus.workout.v1.WorkoutService/CreateRivalry"
+	WorkoutService_GetLeaderboard_FullMethodName             = "/sttattus.workout.v1.WorkoutService/GetLeaderboard"
+	WorkoutService_ListForgeLounges_FullMethodName           = "/sttattus.workout.v1.WorkoutService/ListForgeLounges"
+	WorkoutService_ListMyLoungeBookings_FullMethodName       = "/sttattus.workout.v1.WorkoutService/ListMyLoungeBookings"
+	WorkoutService_CreateLoungeBooking_FullMethodName        = "/sttattus.workout.v1.WorkoutService/CreateLoungeBooking"
+	WorkoutService_CancelLoungeBooking_FullMethodName        = "/sttattus.workout.v1.WorkoutService/CancelLoungeBooking"
+	WorkoutService_ListCoaches_FullMethodName                = "/sttattus.workout.v1.WorkoutService/ListCoaches"
+	WorkoutService_RequestCoachBooking_FullMethodName        = "/sttattus.workout.v1.WorkoutService/RequestCoachBooking"
 )
 
 // WorkoutServiceClient is the client API for WorkoutService service.
@@ -141,6 +168,62 @@ type WorkoutServiceClient interface {
 	// estimated 1RM, volume/intensity/frequency). Aggregation here,
 	// math in services_rust/scoring.
 	GetForgeAnalytics(ctx context.Context, in *GetForgeAnalyticsRequest, opts ...grpc.CallOption) (*GetForgeAnalyticsResponse, error)
+	// F7P2.7 — Session Replay & Analytics
+	GetSessionAnalytics(ctx context.Context, in *GetSessionAnalyticsRequest, opts ...grpc.CallOption) (*GetSessionAnalyticsResponse, error)
+	// F7P2.8 — Equipment Vault
+	ListUserEquipment(ctx context.Context, in *ListUserEquipmentRequest, opts ...grpc.CallOption) (*ListUserEquipmentResponse, error)
+	AddUserEquipment(ctx context.Context, in *AddUserEquipmentRequest, opts ...grpc.CallOption) (*AddUserEquipmentResponse, error)
+	DeleteUserEquipment(ctx context.Context, in *DeleteUserEquipmentRequest, opts ...grpc.CallOption) (*DeleteUserEquipmentResponse, error)
+	// F7P2.9 — Workout Rivalries
+	ListWorkoutRivalries(ctx context.Context, in *ListWorkoutRivalriesRequest, opts ...grpc.CallOption) (*ListWorkoutRivalriesResponse, error)
+	GetRivalryDetail(ctx context.Context, in *GetRivalryDetailRequest, opts ...grpc.CallOption) (*GetRivalryDetailResponse, error)
+	// F7P3.1 — What-if simulator. Project the forge-rank / Power / Agility /
+	// Grit change a hypothetical session would produce, via the Rust engine,
+	// without committing anything.
+	SimulateForgeRank(ctx context.Context, in *SimulateForgeRankRequest, opts ...grpc.CallOption) (*SimulateForgeRankResponse, error)
+	// F7P3.2 — Recovery score. A 0-100 readiness gate composed from the
+	// lifter's recent training load (acute:chronic), streak momentum, and —
+	// when available — the Apex cross-pillar readiness signal (HRV / RHR /
+	// sleep). Drives the Today ring and the auto-deload nudge.
+	GetRecoveryScore(ctx context.Context, in *GetRecoveryScoreRequest, opts ...grpc.CallOption) (*GetRecoveryScoreResponse, error)
+	// F7P3.3 — Coach concierge (Sovereign white-glove desk). Threaded
+	// member ↔ coach messaging with an SLA timer.
+	StartCoachThread(ctx context.Context, in *StartCoachThreadRequest, opts ...grpc.CallOption) (*StartCoachThreadResponse, error)
+	ListMyCoachThreads(ctx context.Context, in *ListMyCoachThreadsRequest, opts ...grpc.CallOption) (*ListMyCoachThreadsResponse, error)
+	GetCoachThread(ctx context.Context, in *GetCoachThreadRequest, opts ...grpc.CallOption) (*GetCoachThreadResponse, error)
+	PostCoachMessage(ctx context.Context, in *PostCoachMessageRequest, opts ...grpc.CallOption) (*PostCoachMessageResponse, error)
+	// F7P3.4 — Forge Anthology (named-author editorial long-reads).
+	ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error)
+	// F7P3.5 — public athlete share. Mints a time-bound token backing a
+	// read-only public profile (rank + stats + PRs) at
+	// /share/athlete/:token, content-negotiated HTML / JSON.
+	CreateAthleteShare(ctx context.Context, in *CreateAthleteShareRequest, opts ...grpc.CallOption) (*CreateAthleteShareResponse, error)
+	ListMyAthleteShares(ctx context.Context, in *ListMyAthleteSharesRequest, opts ...grpc.CallOption) (*ListMyAthleteSharesResponse, error)
+	RevokeAthleteShare(ctx context.Context, in *RevokeAthleteShareRequest, opts ...grpc.CallOption) (*RevokeAthleteShareResponse, error)
+	// F7P4.1 — Annual Forge Almanac. Renders a multi-page PDF of the lifter's
+	// training year (rank + stats + PR board + tonnage) to R2 + media_assets,
+	// returns the public URL.
+	GenerateForgeAlmanac(ctx context.Context, in *GenerateForgeAlmanacRequest, opts ...grpc.CallOption) (*GenerateForgeAlmanacResponse, error)
+	// F7P4.2 — AI form-check. Runs a pose-heuristic pass over an uploaded form
+	// video and writes a one-line cue + verdict, flipping the clip to
+	// 'reviewed'. Heuristic until the Gemini vision pass is wired.
+	AnalyzeFormVideo(ctx context.Context, in *AnalyzeFormVideoRequest, opts ...grpc.CallOption) (*AnalyzeFormVideoResponse, error)
+	// F7P5.1 — rivalry creation (challenge by handle, or a named rival).
+	CreateRivalry(ctx context.Context, in *CreateRivalryRequest, opts ...grpc.CallOption) (*CreateRivalryResponse, error)
+	// F7P5.2 — leaderboard standings (ranked by forge_rank). The scheduled
+	// Sunday clout-drop publish is a separate cron job; this is the live query.
+	GetLeaderboard(ctx context.Context, in *GetLeaderboardRequest, opts ...grpc.CallOption) (*GetLeaderboardResponse, error)
+	// F7P5.3 — Forge Lounge: physical recovery-room directory + booking flow.
+	ListForgeLounges(ctx context.Context, in *ListForgeLoungesRequest, opts ...grpc.CallOption) (*ListForgeLoungesResponse, error)
+	ListMyLoungeBookings(ctx context.Context, in *ListMyLoungeBookingsRequest, opts ...grpc.CallOption) (*ListMyLoungeBookingsResponse, error)
+	CreateLoungeBooking(ctx context.Context, in *CreateLoungeBookingRequest, opts ...grpc.CallOption) (*CreateLoungeBookingResponse, error)
+	CancelLoungeBooking(ctx context.Context, in *CancelLoungeBookingRequest, opts ...grpc.CallOption) (*CancelLoungeBookingResponse, error)
+	// F7P5.4 — coach directory + booking request. Payment-backed booking is
+	// deferred (Stripe); RequestCoachBooking files an interest request a coach
+	// can pick up.
+	ListCoaches(ctx context.Context, in *ListCoachesRequest, opts ...grpc.CallOption) (*ListCoachesResponse, error)
+	RequestCoachBooking(ctx context.Context, in *RequestCoachBookingRequest, opts ...grpc.CallOption) (*RequestCoachBookingResponse, error)
 }
 
 type workoutServiceClient struct {
@@ -611,6 +694,276 @@ func (c *workoutServiceClient) GetForgeAnalytics(ctx context.Context, in *GetFor
 	return out, nil
 }
 
+func (c *workoutServiceClient) GetSessionAnalytics(ctx context.Context, in *GetSessionAnalyticsRequest, opts ...grpc.CallOption) (*GetSessionAnalyticsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSessionAnalyticsResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetSessionAnalytics_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ListUserEquipment(ctx context.Context, in *ListUserEquipmentRequest, opts ...grpc.CallOption) (*ListUserEquipmentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListUserEquipmentResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListUserEquipment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) AddUserEquipment(ctx context.Context, in *AddUserEquipmentRequest, opts ...grpc.CallOption) (*AddUserEquipmentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AddUserEquipmentResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_AddUserEquipment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) DeleteUserEquipment(ctx context.Context, in *DeleteUserEquipmentRequest, opts ...grpc.CallOption) (*DeleteUserEquipmentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteUserEquipmentResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_DeleteUserEquipment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ListWorkoutRivalries(ctx context.Context, in *ListWorkoutRivalriesRequest, opts ...grpc.CallOption) (*ListWorkoutRivalriesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListWorkoutRivalriesResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListWorkoutRivalries_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetRivalryDetail(ctx context.Context, in *GetRivalryDetailRequest, opts ...grpc.CallOption) (*GetRivalryDetailResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetRivalryDetailResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetRivalryDetail_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) SimulateForgeRank(ctx context.Context, in *SimulateForgeRankRequest, opts ...grpc.CallOption) (*SimulateForgeRankResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SimulateForgeRankResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_SimulateForgeRank_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetRecoveryScore(ctx context.Context, in *GetRecoveryScoreRequest, opts ...grpc.CallOption) (*GetRecoveryScoreResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetRecoveryScoreResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetRecoveryScore_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) StartCoachThread(ctx context.Context, in *StartCoachThreadRequest, opts ...grpc.CallOption) (*StartCoachThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StartCoachThreadResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_StartCoachThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ListMyCoachThreads(ctx context.Context, in *ListMyCoachThreadsRequest, opts ...grpc.CallOption) (*ListMyCoachThreadsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyCoachThreadsResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListMyCoachThreads_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetCoachThread(ctx context.Context, in *GetCoachThreadRequest, opts ...grpc.CallOption) (*GetCoachThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCoachThreadResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetCoachThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) PostCoachMessage(ctx context.Context, in *PostCoachMessageRequest, opts ...grpc.CallOption) (*PostCoachMessageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PostCoachMessageResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_PostCoachMessage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAnthologyArticlesResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListAnthologyArticles_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAnthologyArticleResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetAnthologyArticle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) CreateAthleteShare(ctx context.Context, in *CreateAthleteShareRequest, opts ...grpc.CallOption) (*CreateAthleteShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateAthleteShareResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_CreateAthleteShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ListMyAthleteShares(ctx context.Context, in *ListMyAthleteSharesRequest, opts ...grpc.CallOption) (*ListMyAthleteSharesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyAthleteSharesResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListMyAthleteShares_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RevokeAthleteShare(ctx context.Context, in *RevokeAthleteShareRequest, opts ...grpc.CallOption) (*RevokeAthleteShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeAthleteShareResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RevokeAthleteShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GenerateForgeAlmanac(ctx context.Context, in *GenerateForgeAlmanacRequest, opts ...grpc.CallOption) (*GenerateForgeAlmanacResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateForgeAlmanacResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GenerateForgeAlmanac_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) AnalyzeFormVideo(ctx context.Context, in *AnalyzeFormVideoRequest, opts ...grpc.CallOption) (*AnalyzeFormVideoResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AnalyzeFormVideoResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_AnalyzeFormVideo_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) CreateRivalry(ctx context.Context, in *CreateRivalryRequest, opts ...grpc.CallOption) (*CreateRivalryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateRivalryResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_CreateRivalry_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetLeaderboard(ctx context.Context, in *GetLeaderboardRequest, opts ...grpc.CallOption) (*GetLeaderboardResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLeaderboardResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetLeaderboard_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ListForgeLounges(ctx context.Context, in *ListForgeLoungesRequest, opts ...grpc.CallOption) (*ListForgeLoungesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListForgeLoungesResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListForgeLounges_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ListMyLoungeBookings(ctx context.Context, in *ListMyLoungeBookingsRequest, opts ...grpc.CallOption) (*ListMyLoungeBookingsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyLoungeBookingsResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListMyLoungeBookings_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) CreateLoungeBooking(ctx context.Context, in *CreateLoungeBookingRequest, opts ...grpc.CallOption) (*CreateLoungeBookingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateLoungeBookingResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_CreateLoungeBooking_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) CancelLoungeBooking(ctx context.Context, in *CancelLoungeBookingRequest, opts ...grpc.CallOption) (*CancelLoungeBookingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CancelLoungeBookingResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_CancelLoungeBooking_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ListCoaches(ctx context.Context, in *ListCoachesRequest, opts ...grpc.CallOption) (*ListCoachesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListCoachesResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ListCoaches_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RequestCoachBooking(ctx context.Context, in *RequestCoachBookingRequest, opts ...grpc.CallOption) (*RequestCoachBookingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RequestCoachBookingResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RequestCoachBooking_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WorkoutServiceServer is the server API for WorkoutService service.
 // All implementations must embed UnimplementedWorkoutServiceServer
 // for forward compatibility.
@@ -685,6 +1038,62 @@ type WorkoutServiceServer interface {
 	// estimated 1RM, volume/intensity/frequency). Aggregation here,
 	// math in services_rust/scoring.
 	GetForgeAnalytics(context.Context, *GetForgeAnalyticsRequest) (*GetForgeAnalyticsResponse, error)
+	// F7P2.7 — Session Replay & Analytics
+	GetSessionAnalytics(context.Context, *GetSessionAnalyticsRequest) (*GetSessionAnalyticsResponse, error)
+	// F7P2.8 — Equipment Vault
+	ListUserEquipment(context.Context, *ListUserEquipmentRequest) (*ListUserEquipmentResponse, error)
+	AddUserEquipment(context.Context, *AddUserEquipmentRequest) (*AddUserEquipmentResponse, error)
+	DeleteUserEquipment(context.Context, *DeleteUserEquipmentRequest) (*DeleteUserEquipmentResponse, error)
+	// F7P2.9 — Workout Rivalries
+	ListWorkoutRivalries(context.Context, *ListWorkoutRivalriesRequest) (*ListWorkoutRivalriesResponse, error)
+	GetRivalryDetail(context.Context, *GetRivalryDetailRequest) (*GetRivalryDetailResponse, error)
+	// F7P3.1 — What-if simulator. Project the forge-rank / Power / Agility /
+	// Grit change a hypothetical session would produce, via the Rust engine,
+	// without committing anything.
+	SimulateForgeRank(context.Context, *SimulateForgeRankRequest) (*SimulateForgeRankResponse, error)
+	// F7P3.2 — Recovery score. A 0-100 readiness gate composed from the
+	// lifter's recent training load (acute:chronic), streak momentum, and —
+	// when available — the Apex cross-pillar readiness signal (HRV / RHR /
+	// sleep). Drives the Today ring and the auto-deload nudge.
+	GetRecoveryScore(context.Context, *GetRecoveryScoreRequest) (*GetRecoveryScoreResponse, error)
+	// F7P3.3 — Coach concierge (Sovereign white-glove desk). Threaded
+	// member ↔ coach messaging with an SLA timer.
+	StartCoachThread(context.Context, *StartCoachThreadRequest) (*StartCoachThreadResponse, error)
+	ListMyCoachThreads(context.Context, *ListMyCoachThreadsRequest) (*ListMyCoachThreadsResponse, error)
+	GetCoachThread(context.Context, *GetCoachThreadRequest) (*GetCoachThreadResponse, error)
+	PostCoachMessage(context.Context, *PostCoachMessageRequest) (*PostCoachMessageResponse, error)
+	// F7P3.4 — Forge Anthology (named-author editorial long-reads).
+	ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error)
+	// F7P3.5 — public athlete share. Mints a time-bound token backing a
+	// read-only public profile (rank + stats + PRs) at
+	// /share/athlete/:token, content-negotiated HTML / JSON.
+	CreateAthleteShare(context.Context, *CreateAthleteShareRequest) (*CreateAthleteShareResponse, error)
+	ListMyAthleteShares(context.Context, *ListMyAthleteSharesRequest) (*ListMyAthleteSharesResponse, error)
+	RevokeAthleteShare(context.Context, *RevokeAthleteShareRequest) (*RevokeAthleteShareResponse, error)
+	// F7P4.1 — Annual Forge Almanac. Renders a multi-page PDF of the lifter's
+	// training year (rank + stats + PR board + tonnage) to R2 + media_assets,
+	// returns the public URL.
+	GenerateForgeAlmanac(context.Context, *GenerateForgeAlmanacRequest) (*GenerateForgeAlmanacResponse, error)
+	// F7P4.2 — AI form-check. Runs a pose-heuristic pass over an uploaded form
+	// video and writes a one-line cue + verdict, flipping the clip to
+	// 'reviewed'. Heuristic until the Gemini vision pass is wired.
+	AnalyzeFormVideo(context.Context, *AnalyzeFormVideoRequest) (*AnalyzeFormVideoResponse, error)
+	// F7P5.1 — rivalry creation (challenge by handle, or a named rival).
+	CreateRivalry(context.Context, *CreateRivalryRequest) (*CreateRivalryResponse, error)
+	// F7P5.2 — leaderboard standings (ranked by forge_rank). The scheduled
+	// Sunday clout-drop publish is a separate cron job; this is the live query.
+	GetLeaderboard(context.Context, *GetLeaderboardRequest) (*GetLeaderboardResponse, error)
+	// F7P5.3 — Forge Lounge: physical recovery-room directory + booking flow.
+	ListForgeLounges(context.Context, *ListForgeLoungesRequest) (*ListForgeLoungesResponse, error)
+	ListMyLoungeBookings(context.Context, *ListMyLoungeBookingsRequest) (*ListMyLoungeBookingsResponse, error)
+	CreateLoungeBooking(context.Context, *CreateLoungeBookingRequest) (*CreateLoungeBookingResponse, error)
+	CancelLoungeBooking(context.Context, *CancelLoungeBookingRequest) (*CancelLoungeBookingResponse, error)
+	// F7P5.4 — coach directory + booking request. Payment-backed booking is
+	// deferred (Stripe); RequestCoachBooking files an interest request a coach
+	// can pick up.
+	ListCoaches(context.Context, *ListCoachesRequest) (*ListCoachesResponse, error)
+	RequestCoachBooking(context.Context, *RequestCoachBookingRequest) (*RequestCoachBookingResponse, error)
 	mustEmbedUnimplementedWorkoutServiceServer()
 }
 
@@ -832,6 +1241,87 @@ func (UnimplementedWorkoutServiceServer) SetSensorPriority(context.Context, *Set
 }
 func (UnimplementedWorkoutServiceServer) GetForgeAnalytics(context.Context, *GetForgeAnalyticsRequest) (*GetForgeAnalyticsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetForgeAnalytics not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetSessionAnalytics(context.Context, *GetSessionAnalyticsRequest) (*GetSessionAnalyticsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSessionAnalytics not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListUserEquipment(context.Context, *ListUserEquipmentRequest) (*ListUserEquipmentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListUserEquipment not implemented")
+}
+func (UnimplementedWorkoutServiceServer) AddUserEquipment(context.Context, *AddUserEquipmentRequest) (*AddUserEquipmentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AddUserEquipment not implemented")
+}
+func (UnimplementedWorkoutServiceServer) DeleteUserEquipment(context.Context, *DeleteUserEquipmentRequest) (*DeleteUserEquipmentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteUserEquipment not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListWorkoutRivalries(context.Context, *ListWorkoutRivalriesRequest) (*ListWorkoutRivalriesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListWorkoutRivalries not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetRivalryDetail(context.Context, *GetRivalryDetailRequest) (*GetRivalryDetailResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetRivalryDetail not implemented")
+}
+func (UnimplementedWorkoutServiceServer) SimulateForgeRank(context.Context, *SimulateForgeRankRequest) (*SimulateForgeRankResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SimulateForgeRank not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetRecoveryScore(context.Context, *GetRecoveryScoreRequest) (*GetRecoveryScoreResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetRecoveryScore not implemented")
+}
+func (UnimplementedWorkoutServiceServer) StartCoachThread(context.Context, *StartCoachThreadRequest) (*StartCoachThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StartCoachThread not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListMyCoachThreads(context.Context, *ListMyCoachThreadsRequest) (*ListMyCoachThreadsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyCoachThreads not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetCoachThread(context.Context, *GetCoachThreadRequest) (*GetCoachThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCoachThread not implemented")
+}
+func (UnimplementedWorkoutServiceServer) PostCoachMessage(context.Context, *PostCoachMessageRequest) (*PostCoachMessageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PostCoachMessage not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAnthologyArticles not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAnthologyArticle not implemented")
+}
+func (UnimplementedWorkoutServiceServer) CreateAthleteShare(context.Context, *CreateAthleteShareRequest) (*CreateAthleteShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateAthleteShare not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListMyAthleteShares(context.Context, *ListMyAthleteSharesRequest) (*ListMyAthleteSharesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyAthleteShares not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RevokeAthleteShare(context.Context, *RevokeAthleteShareRequest) (*RevokeAthleteShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeAthleteShare not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GenerateForgeAlmanac(context.Context, *GenerateForgeAlmanacRequest) (*GenerateForgeAlmanacResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateForgeAlmanac not implemented")
+}
+func (UnimplementedWorkoutServiceServer) AnalyzeFormVideo(context.Context, *AnalyzeFormVideoRequest) (*AnalyzeFormVideoResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AnalyzeFormVideo not implemented")
+}
+func (UnimplementedWorkoutServiceServer) CreateRivalry(context.Context, *CreateRivalryRequest) (*CreateRivalryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateRivalry not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetLeaderboard(context.Context, *GetLeaderboardRequest) (*GetLeaderboardResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLeaderboard not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListForgeLounges(context.Context, *ListForgeLoungesRequest) (*ListForgeLoungesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListForgeLounges not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListMyLoungeBookings(context.Context, *ListMyLoungeBookingsRequest) (*ListMyLoungeBookingsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyLoungeBookings not implemented")
+}
+func (UnimplementedWorkoutServiceServer) CreateLoungeBooking(context.Context, *CreateLoungeBookingRequest) (*CreateLoungeBookingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateLoungeBooking not implemented")
+}
+func (UnimplementedWorkoutServiceServer) CancelLoungeBooking(context.Context, *CancelLoungeBookingRequest) (*CancelLoungeBookingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CancelLoungeBooking not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ListCoaches(context.Context, *ListCoachesRequest) (*ListCoachesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListCoaches not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RequestCoachBooking(context.Context, *RequestCoachBookingRequest) (*RequestCoachBookingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RequestCoachBooking not implemented")
 }
 func (UnimplementedWorkoutServiceServer) mustEmbedUnimplementedWorkoutServiceServer() {}
 func (UnimplementedWorkoutServiceServer) testEmbeddedByValue()                        {}
@@ -1682,6 +2172,492 @@ func _WorkoutService_GetForgeAnalytics_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WorkoutService_GetSessionAnalytics_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSessionAnalyticsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetSessionAnalytics(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetSessionAnalytics_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetSessionAnalytics(ctx, req.(*GetSessionAnalyticsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ListUserEquipment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListUserEquipmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListUserEquipment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListUserEquipment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListUserEquipment(ctx, req.(*ListUserEquipmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_AddUserEquipment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddUserEquipmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).AddUserEquipment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_AddUserEquipment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).AddUserEquipment(ctx, req.(*AddUserEquipmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_DeleteUserEquipment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteUserEquipmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).DeleteUserEquipment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_DeleteUserEquipment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).DeleteUserEquipment(ctx, req.(*DeleteUserEquipmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ListWorkoutRivalries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListWorkoutRivalriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListWorkoutRivalries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListWorkoutRivalries_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListWorkoutRivalries(ctx, req.(*ListWorkoutRivalriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetRivalryDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRivalryDetailRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetRivalryDetail(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetRivalryDetail_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetRivalryDetail(ctx, req.(*GetRivalryDetailRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_SimulateForgeRank_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SimulateForgeRankRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).SimulateForgeRank(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_SimulateForgeRank_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).SimulateForgeRank(ctx, req.(*SimulateForgeRankRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetRecoveryScore_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRecoveryScoreRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetRecoveryScore(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetRecoveryScore_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetRecoveryScore(ctx, req.(*GetRecoveryScoreRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_StartCoachThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StartCoachThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).StartCoachThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_StartCoachThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).StartCoachThread(ctx, req.(*StartCoachThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ListMyCoachThreads_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyCoachThreadsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListMyCoachThreads(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListMyCoachThreads_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListMyCoachThreads(ctx, req.(*ListMyCoachThreadsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetCoachThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoachThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetCoachThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetCoachThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetCoachThread(ctx, req.(*GetCoachThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_PostCoachMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostCoachMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).PostCoachMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_PostCoachMessage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).PostCoachMessage(ctx, req.(*PostCoachMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ListAnthologyArticles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAnthologyArticlesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListAnthologyArticles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListAnthologyArticles_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListAnthologyArticles(ctx, req.(*ListAnthologyArticlesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetAnthologyArticle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnthologyArticleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetAnthologyArticle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetAnthologyArticle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetAnthologyArticle(ctx, req.(*GetAnthologyArticleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_CreateAthleteShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAthleteShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).CreateAthleteShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_CreateAthleteShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).CreateAthleteShare(ctx, req.(*CreateAthleteShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ListMyAthleteShares_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyAthleteSharesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListMyAthleteShares(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListMyAthleteShares_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListMyAthleteShares(ctx, req.(*ListMyAthleteSharesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RevokeAthleteShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeAthleteShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RevokeAthleteShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RevokeAthleteShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RevokeAthleteShare(ctx, req.(*RevokeAthleteShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GenerateForgeAlmanac_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateForgeAlmanacRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GenerateForgeAlmanac(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GenerateForgeAlmanac_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GenerateForgeAlmanac(ctx, req.(*GenerateForgeAlmanacRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_AnalyzeFormVideo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AnalyzeFormVideoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).AnalyzeFormVideo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_AnalyzeFormVideo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).AnalyzeFormVideo(ctx, req.(*AnalyzeFormVideoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_CreateRivalry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateRivalryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).CreateRivalry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_CreateRivalry_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).CreateRivalry(ctx, req.(*CreateRivalryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetLeaderboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLeaderboardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetLeaderboard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetLeaderboard_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetLeaderboard(ctx, req.(*GetLeaderboardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ListForgeLounges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListForgeLoungesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListForgeLounges(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListForgeLounges_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListForgeLounges(ctx, req.(*ListForgeLoungesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ListMyLoungeBookings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyLoungeBookingsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListMyLoungeBookings(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListMyLoungeBookings_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListMyLoungeBookings(ctx, req.(*ListMyLoungeBookingsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_CreateLoungeBooking_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateLoungeBookingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).CreateLoungeBooking(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_CreateLoungeBooking_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).CreateLoungeBooking(ctx, req.(*CreateLoungeBookingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_CancelLoungeBooking_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CancelLoungeBookingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).CancelLoungeBooking(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_CancelLoungeBooking_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).CancelLoungeBooking(ctx, req.(*CancelLoungeBookingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ListCoaches_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListCoachesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ListCoaches(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ListCoaches_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ListCoaches(ctx, req.(*ListCoachesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RequestCoachBooking_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestCoachBookingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RequestCoachBooking(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RequestCoachBooking_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RequestCoachBooking(ctx, req.(*RequestCoachBookingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // WorkoutService_ServiceDesc is the grpc.ServiceDesc for WorkoutService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1872,6 +2848,114 @@ var WorkoutService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetForgeAnalytics",
 			Handler:    _WorkoutService_GetForgeAnalytics_Handler,
+		},
+		{
+			MethodName: "GetSessionAnalytics",
+			Handler:    _WorkoutService_GetSessionAnalytics_Handler,
+		},
+		{
+			MethodName: "ListUserEquipment",
+			Handler:    _WorkoutService_ListUserEquipment_Handler,
+		},
+		{
+			MethodName: "AddUserEquipment",
+			Handler:    _WorkoutService_AddUserEquipment_Handler,
+		},
+		{
+			MethodName: "DeleteUserEquipment",
+			Handler:    _WorkoutService_DeleteUserEquipment_Handler,
+		},
+		{
+			MethodName: "ListWorkoutRivalries",
+			Handler:    _WorkoutService_ListWorkoutRivalries_Handler,
+		},
+		{
+			MethodName: "GetRivalryDetail",
+			Handler:    _WorkoutService_GetRivalryDetail_Handler,
+		},
+		{
+			MethodName: "SimulateForgeRank",
+			Handler:    _WorkoutService_SimulateForgeRank_Handler,
+		},
+		{
+			MethodName: "GetRecoveryScore",
+			Handler:    _WorkoutService_GetRecoveryScore_Handler,
+		},
+		{
+			MethodName: "StartCoachThread",
+			Handler:    _WorkoutService_StartCoachThread_Handler,
+		},
+		{
+			MethodName: "ListMyCoachThreads",
+			Handler:    _WorkoutService_ListMyCoachThreads_Handler,
+		},
+		{
+			MethodName: "GetCoachThread",
+			Handler:    _WorkoutService_GetCoachThread_Handler,
+		},
+		{
+			MethodName: "PostCoachMessage",
+			Handler:    _WorkoutService_PostCoachMessage_Handler,
+		},
+		{
+			MethodName: "ListAnthologyArticles",
+			Handler:    _WorkoutService_ListAnthologyArticles_Handler,
+		},
+		{
+			MethodName: "GetAnthologyArticle",
+			Handler:    _WorkoutService_GetAnthologyArticle_Handler,
+		},
+		{
+			MethodName: "CreateAthleteShare",
+			Handler:    _WorkoutService_CreateAthleteShare_Handler,
+		},
+		{
+			MethodName: "ListMyAthleteShares",
+			Handler:    _WorkoutService_ListMyAthleteShares_Handler,
+		},
+		{
+			MethodName: "RevokeAthleteShare",
+			Handler:    _WorkoutService_RevokeAthleteShare_Handler,
+		},
+		{
+			MethodName: "GenerateForgeAlmanac",
+			Handler:    _WorkoutService_GenerateForgeAlmanac_Handler,
+		},
+		{
+			MethodName: "AnalyzeFormVideo",
+			Handler:    _WorkoutService_AnalyzeFormVideo_Handler,
+		},
+		{
+			MethodName: "CreateRivalry",
+			Handler:    _WorkoutService_CreateRivalry_Handler,
+		},
+		{
+			MethodName: "GetLeaderboard",
+			Handler:    _WorkoutService_GetLeaderboard_Handler,
+		},
+		{
+			MethodName: "ListForgeLounges",
+			Handler:    _WorkoutService_ListForgeLounges_Handler,
+		},
+		{
+			MethodName: "ListMyLoungeBookings",
+			Handler:    _WorkoutService_ListMyLoungeBookings_Handler,
+		},
+		{
+			MethodName: "CreateLoungeBooking",
+			Handler:    _WorkoutService_CreateLoungeBooking_Handler,
+		},
+		{
+			MethodName: "CancelLoungeBooking",
+			Handler:    _WorkoutService_CancelLoungeBooking_Handler,
+		},
+		{
+			MethodName: "ListCoaches",
+			Handler:    _WorkoutService_ListCoaches_Handler,
+		},
+		{
+			MethodName: "RequestCoachBooking",
+			Handler:    _WorkoutService_RequestCoachBooking_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

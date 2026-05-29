@@ -105,6 +105,19 @@ class TravelServiceClient extends $grpc.Client {
     return $createUnaryCall(_$setMilestoneVisibility, request, options: options);
   }
 
+  /// N10P3 â€” Sovereign Expansion
+  $grpc.ResponseFuture<$0.GetPassportSurfaceResponse> getPassportSurface($0.GetPassportSurfaceRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getPassportSurface, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetLoungeConciergeResponse> getLoungeConcierge($0.GetLoungeConciergeRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getLoungeConcierge, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetTripArchiveResponse> getTripArchive($0.GetTripArchiveRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getTripArchive, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listMilestones = $grpc.ClientMethod<$0.ListMilestonesRequest, $0.ListMilestonesResponse>(
@@ -175,6 +188,18 @@ class TravelServiceClient extends $grpc.Client {
       '/sttattus.travel.v1.TravelService/SetMilestoneVisibility',
       ($0.SetMilestoneVisibilityRequest value) => value.writeToBuffer(),
       $0.SetMilestoneVisibilityResponse.fromBuffer);
+  static final _$getPassportSurface = $grpc.ClientMethod<$0.GetPassportSurfaceRequest, $0.GetPassportSurfaceResponse>(
+      '/sttattus.travel.v1.TravelService/GetPassportSurface',
+      ($0.GetPassportSurfaceRequest value) => value.writeToBuffer(),
+      $0.GetPassportSurfaceResponse.fromBuffer);
+  static final _$getLoungeConcierge = $grpc.ClientMethod<$0.GetLoungeConciergeRequest, $0.GetLoungeConciergeResponse>(
+      '/sttattus.travel.v1.TravelService/GetLoungeConcierge',
+      ($0.GetLoungeConciergeRequest value) => value.writeToBuffer(),
+      $0.GetLoungeConciergeResponse.fromBuffer);
+  static final _$getTripArchive = $grpc.ClientMethod<$0.GetTripArchiveRequest, $0.GetTripArchiveResponse>(
+      '/sttattus.travel.v1.TravelService/GetTripArchive',
+      ($0.GetTripArchiveRequest value) => value.writeToBuffer(),
+      $0.GetTripArchiveResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.travel.v1.TravelService')
@@ -301,6 +326,27 @@ abstract class TravelServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SetMilestoneVisibilityRequest.fromBuffer(value),
         ($0.SetMilestoneVisibilityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetPassportSurfaceRequest, $0.GetPassportSurfaceResponse>(
+        'GetPassportSurface',
+        getPassportSurface_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetPassportSurfaceRequest.fromBuffer(value),
+        ($0.GetPassportSurfaceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetLoungeConciergeRequest, $0.GetLoungeConciergeResponse>(
+        'GetLoungeConcierge',
+        getLoungeConcierge_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetLoungeConciergeRequest.fromBuffer(value),
+        ($0.GetLoungeConciergeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTripArchiveRequest, $0.GetTripArchiveResponse>(
+        'GetTripArchive',
+        getTripArchive_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetTripArchiveRequest.fromBuffer(value),
+        ($0.GetTripArchiveResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListMilestonesResponse> listMilestones_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMilestonesRequest> $request) async {
@@ -404,5 +450,23 @@ abstract class TravelServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.SetMilestoneVisibilityResponse> setMilestoneVisibility($grpc.ServiceCall call, $0.SetMilestoneVisibilityRequest request);
+
+  $async.Future<$0.GetPassportSurfaceResponse> getPassportSurface_Pre($grpc.ServiceCall $call, $async.Future<$0.GetPassportSurfaceRequest> $request) async {
+    return getPassportSurface($call, await $request);
+  }
+
+  $async.Future<$0.GetPassportSurfaceResponse> getPassportSurface($grpc.ServiceCall call, $0.GetPassportSurfaceRequest request);
+
+  $async.Future<$0.GetLoungeConciergeResponse> getLoungeConcierge_Pre($grpc.ServiceCall $call, $async.Future<$0.GetLoungeConciergeRequest> $request) async {
+    return getLoungeConcierge($call, await $request);
+  }
+
+  $async.Future<$0.GetLoungeConciergeResponse> getLoungeConcierge($grpc.ServiceCall call, $0.GetLoungeConciergeRequest request);
+
+  $async.Future<$0.GetTripArchiveResponse> getTripArchive_Pre($grpc.ServiceCall $call, $async.Future<$0.GetTripArchiveRequest> $request) async {
+    return getTripArchive($call, await $request);
+  }
+
+  $async.Future<$0.GetTripArchiveResponse> getTripArchive($grpc.ServiceCall call, $0.GetTripArchiveRequest request);
 
 }

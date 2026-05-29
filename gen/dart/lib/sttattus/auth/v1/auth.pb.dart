@@ -112,6 +112,9 @@ class ProfileHint extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? avatarUrl,
     $core.Iterable<AppCode>? linkedApps,
+    $core.bool? hasPassword,
+    $core.Iterable<AuthProvider>? linkedProviders,
+    $core.String? locale,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
@@ -119,6 +122,9 @@ class ProfileHint extends $pb.GeneratedMessage {
     if (name != null) result.name = name;
     if (avatarUrl != null) result.avatarUrl = avatarUrl;
     if (linkedApps != null) result.linkedApps.addAll(linkedApps);
+    if (hasPassword != null) result.hasPassword = hasPassword;
+    if (linkedProviders != null) result.linkedProviders.addAll(linkedProviders);
+    if (locale != null) result.locale = locale;
     return result;
   }
 
@@ -133,6 +139,9 @@ class ProfileHint extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'avatarUrl')
     ..pc<AppCode>(5, _omitFieldNames ? '' : 'linkedApps', $pb.PbFieldType.KE, valueOf: AppCode.valueOf, enumValues: AppCode.values, defaultEnumValue: AppCode.APP_CODE_UNSPECIFIED)
+    ..aOB(6, _omitFieldNames ? '' : 'hasPassword')
+    ..pc<AuthProvider>(7, _omitFieldNames ? '' : 'linkedProviders', $pb.PbFieldType.KE, valueOf: AuthProvider.valueOf, enumValues: AuthProvider.values, defaultEnumValue: AuthProvider.AUTH_PROVIDER_UNSPECIFIED)
+    ..aOS(8, _omitFieldNames ? '' : 'locale')
     ..hasRequiredFields = false
   ;
 
@@ -191,6 +200,27 @@ class ProfileHint extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $pb.PbList<AppCode> get linkedApps => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.bool get hasPassword => $_getBF(5);
+  @$pb.TagNumber(6)
+  set hasPassword($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasHasPassword() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearHasPassword() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<AuthProvider> get linkedProviders => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.String get locale => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set locale($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLocale() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLocale() => $_clearField(8);
 }
 
 /// ===== Register =====
@@ -280,11 +310,13 @@ class RegisterResponse extends $pb.GeneratedMessage {
   factory RegisterResponse({
     $core.String? userId,
     TokenPair? tokens,
+    ProfileHint? profile,
     ProfileHint? existingProfile,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
     if (tokens != null) result.tokens = tokens;
+    if (profile != null) result.profile = profile;
     if (existingProfile != null) result.existingProfile = existingProfile;
     return result;
   }
@@ -297,7 +329,8 @@ class RegisterResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
     ..aOM<TokenPair>(2, _omitFieldNames ? '' : 'tokens', subBuilder: TokenPair.create)
-    ..aOM<ProfileHint>(3, _omitFieldNames ? '' : 'existingProfile', subBuilder: ProfileHint.create)
+    ..aOM<ProfileHint>(3, _omitFieldNames ? '' : 'profile', subBuilder: ProfileHint.create)
+    ..aOM<ProfileHint>(4, _omitFieldNames ? '' : 'existingProfile', subBuilder: ProfileHint.create)
     ..hasRequiredFields = false
   ;
 
@@ -339,21 +372,32 @@ class RegisterResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   TokenPair ensureTokens() => $_ensure(1);
 
+  @$pb.TagNumber(3)
+  ProfileHint get profile => $_getN(2);
+  @$pb.TagNumber(3)
+  set profile(ProfileHint value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProfile() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProfile() => $_clearField(3);
+  @$pb.TagNumber(3)
+  ProfileHint ensureProfile() => $_ensure(2);
+
   /// Populated when the email already exists in the ecosystem and the client
   /// should switch into the link-app flow. When this is set, `user_id` and
   /// `tokens` are empty and the gRPC status is OK (the *call* succeeded; the
   /// outcome is "needs linking"). Allows the client to render the linking UI
   /// without crashing on an error.
-  @$pb.TagNumber(3)
-  ProfileHint get existingProfile => $_getN(2);
-  @$pb.TagNumber(3)
-  set existingProfile(ProfileHint value) => $_setField(3, value);
-  @$pb.TagNumber(3)
-  $core.bool hasExistingProfile() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearExistingProfile() => $_clearField(3);
-  @$pb.TagNumber(3)
-  ProfileHint ensureExistingProfile() => $_ensure(2);
+  @$pb.TagNumber(4)
+  ProfileHint get existingProfile => $_getN(3);
+  @$pb.TagNumber(4)
+  set existingProfile(ProfileHint value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExistingProfile() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExistingProfile() => $_clearField(4);
+  @$pb.TagNumber(4)
+  ProfileHint ensureExistingProfile() => $_ensure(3);
 }
 
 /// ===== Login =====
@@ -431,10 +475,12 @@ class LoginResponse extends $pb.GeneratedMessage {
   factory LoginResponse({
     $core.String? userId,
     TokenPair? tokens,
+    ProfileHint? profile,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
     if (tokens != null) result.tokens = tokens;
+    if (profile != null) result.profile = profile;
     return result;
   }
 
@@ -446,6 +492,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
     ..aOM<TokenPair>(2, _omitFieldNames ? '' : 'tokens', subBuilder: TokenPair.create)
+    ..aOM<ProfileHint>(3, _omitFieldNames ? '' : 'profile', subBuilder: ProfileHint.create)
     ..hasRequiredFields = false
   ;
 
@@ -485,6 +532,176 @@ class LoginResponse extends $pb.GeneratedMessage {
   void clearTokens() => $_clearField(2);
   @$pb.TagNumber(2)
   TokenPair ensureTokens() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  ProfileHint get profile => $_getN(2);
+  @$pb.TagNumber(3)
+  set profile(ProfileHint value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProfile() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProfile() => $_clearField(3);
+  @$pb.TagNumber(3)
+  ProfileHint ensureProfile() => $_ensure(2);
+}
+
+/// ===== OAuth Login =====
+class OAuthLoginRequest extends $pb.GeneratedMessage {
+  factory OAuthLoginRequest({
+    AuthProvider? provider,
+    $core.String? idToken,
+    AppCode? appCode,
+  }) {
+    final result = create();
+    if (provider != null) result.provider = provider;
+    if (idToken != null) result.idToken = idToken;
+    if (appCode != null) result.appCode = appCode;
+    return result;
+  }
+
+  OAuthLoginRequest._();
+
+  factory OAuthLoginRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory OAuthLoginRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OAuthLoginRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
+    ..e<AuthProvider>(1, _omitFieldNames ? '' : 'provider', $pb.PbFieldType.OE, defaultOrMaker: AuthProvider.AUTH_PROVIDER_UNSPECIFIED, valueOf: AuthProvider.valueOf, enumValues: AuthProvider.values)
+    ..aOS(2, _omitFieldNames ? '' : 'idToken')
+    ..e<AppCode>(3, _omitFieldNames ? '' : 'appCode', $pb.PbFieldType.OE, defaultOrMaker: AppCode.APP_CODE_UNSPECIFIED, valueOf: AppCode.valueOf, enumValues: AppCode.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OAuthLoginRequest clone() => OAuthLoginRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OAuthLoginRequest copyWith(void Function(OAuthLoginRequest) updates) => super.copyWith((message) => updates(message as OAuthLoginRequest)) as OAuthLoginRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OAuthLoginRequest create() => OAuthLoginRequest._();
+  @$core.override
+  OAuthLoginRequest createEmptyInstance() => create();
+  static $pb.PbList<OAuthLoginRequest> createRepeated() => $pb.PbList<OAuthLoginRequest>();
+  @$core.pragma('dart2js:noInline')
+  static OAuthLoginRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OAuthLoginRequest>(create);
+  static OAuthLoginRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AuthProvider get provider => $_getN(0);
+  @$pb.TagNumber(1)
+  set provider(AuthProvider value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProvider() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProvider() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get idToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set idToken($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIdToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIdToken() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  AppCode get appCode => $_getN(2);
+  @$pb.TagNumber(3)
+  set appCode(AppCode value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAppCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAppCode() => $_clearField(3);
+}
+
+class OAuthLoginResponse extends $pb.GeneratedMessage {
+  factory OAuthLoginResponse({
+    $core.String? userId,
+    TokenPair? tokens,
+    ProfileHint? profile,
+    ProfileHint? existingProfile,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (tokens != null) result.tokens = tokens;
+    if (profile != null) result.profile = profile;
+    if (existingProfile != null) result.existingProfile = existingProfile;
+    return result;
+  }
+
+  OAuthLoginResponse._();
+
+  factory OAuthLoginResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory OAuthLoginResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OAuthLoginResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOM<TokenPair>(2, _omitFieldNames ? '' : 'tokens', subBuilder: TokenPair.create)
+    ..aOM<ProfileHint>(3, _omitFieldNames ? '' : 'profile', subBuilder: ProfileHint.create)
+    ..aOM<ProfileHint>(4, _omitFieldNames ? '' : 'existingProfile', subBuilder: ProfileHint.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OAuthLoginResponse clone() => OAuthLoginResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OAuthLoginResponse copyWith(void Function(OAuthLoginResponse) updates) => super.copyWith((message) => updates(message as OAuthLoginResponse)) as OAuthLoginResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OAuthLoginResponse create() => OAuthLoginResponse._();
+  @$core.override
+  OAuthLoginResponse createEmptyInstance() => create();
+  static $pb.PbList<OAuthLoginResponse> createRepeated() => $pb.PbList<OAuthLoginResponse>();
+  @$core.pragma('dart2js:noInline')
+  static OAuthLoginResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OAuthLoginResponse>(create);
+  static OAuthLoginResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  TokenPair get tokens => $_getN(1);
+  @$pb.TagNumber(2)
+  set tokens(TokenPair value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTokens() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTokens() => $_clearField(2);
+  @$pb.TagNumber(2)
+  TokenPair ensureTokens() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  ProfileHint get profile => $_getN(2);
+  @$pb.TagNumber(3)
+  set profile(ProfileHint value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProfile() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProfile() => $_clearField(3);
+  @$pb.TagNumber(3)
+  ProfileHint ensureProfile() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  ProfileHint get existingProfile => $_getN(3);
+  @$pb.TagNumber(4)
+  set existingProfile(ProfileHint value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExistingProfile() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExistingProfile() => $_clearField(4);
+  @$pb.TagNumber(4)
+  ProfileHint ensureExistingProfile() => $_ensure(3);
 }
 
 /// ===== CheckEmail =====
@@ -673,10 +890,12 @@ class LinkAppResponse extends $pb.GeneratedMessage {
   factory LinkAppResponse({
     $core.String? userId,
     TokenPair? tokens,
+    ProfileHint? profile,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
     if (tokens != null) result.tokens = tokens;
+    if (profile != null) result.profile = profile;
     return result;
   }
 
@@ -688,6 +907,7 @@ class LinkAppResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LinkAppResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
     ..aOM<TokenPair>(2, _omitFieldNames ? '' : 'tokens', subBuilder: TokenPair.create)
+    ..aOM<ProfileHint>(3, _omitFieldNames ? '' : 'profile', subBuilder: ProfileHint.create)
     ..hasRequiredFields = false
   ;
 
@@ -727,6 +947,349 @@ class LinkAppResponse extends $pb.GeneratedMessage {
   void clearTokens() => $_clearField(2);
   @$pb.TagNumber(2)
   TokenPair ensureTokens() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  ProfileHint get profile => $_getN(2);
+  @$pb.TagNumber(3)
+  set profile(ProfileHint value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProfile() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProfile() => $_clearField(3);
+  @$pb.TagNumber(3)
+  ProfileHint ensureProfile() => $_ensure(2);
+}
+
+/// ===== LinkProvider =====
+class LinkProviderRequest extends $pb.GeneratedMessage {
+  factory LinkProviderRequest({
+    AuthProvider? provider,
+    $core.String? idToken,
+  }) {
+    final result = create();
+    if (provider != null) result.provider = provider;
+    if (idToken != null) result.idToken = idToken;
+    return result;
+  }
+
+  LinkProviderRequest._();
+
+  factory LinkProviderRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory LinkProviderRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LinkProviderRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
+    ..e<AuthProvider>(1, _omitFieldNames ? '' : 'provider', $pb.PbFieldType.OE, defaultOrMaker: AuthProvider.AUTH_PROVIDER_UNSPECIFIED, valueOf: AuthProvider.valueOf, enumValues: AuthProvider.values)
+    ..aOS(2, _omitFieldNames ? '' : 'idToken')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LinkProviderRequest clone() => LinkProviderRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LinkProviderRequest copyWith(void Function(LinkProviderRequest) updates) => super.copyWith((message) => updates(message as LinkProviderRequest)) as LinkProviderRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LinkProviderRequest create() => LinkProviderRequest._();
+  @$core.override
+  LinkProviderRequest createEmptyInstance() => create();
+  static $pb.PbList<LinkProviderRequest> createRepeated() => $pb.PbList<LinkProviderRequest>();
+  @$core.pragma('dart2js:noInline')
+  static LinkProviderRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LinkProviderRequest>(create);
+  static LinkProviderRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AuthProvider get provider => $_getN(0);
+  @$pb.TagNumber(1)
+  set provider(AuthProvider value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProvider() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProvider() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get idToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set idToken($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIdToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIdToken() => $_clearField(2);
+}
+
+class LinkProviderResponse extends $pb.GeneratedMessage {
+  factory LinkProviderResponse() => create();
+
+  LinkProviderResponse._();
+
+  factory LinkProviderResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory LinkProviderResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LinkProviderResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LinkProviderResponse clone() => LinkProviderResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LinkProviderResponse copyWith(void Function(LinkProviderResponse) updates) => super.copyWith((message) => updates(message as LinkProviderResponse)) as LinkProviderResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LinkProviderResponse create() => LinkProviderResponse._();
+  @$core.override
+  LinkProviderResponse createEmptyInstance() => create();
+  static $pb.PbList<LinkProviderResponse> createRepeated() => $pb.PbList<LinkProviderResponse>();
+  @$core.pragma('dart2js:noInline')
+  static LinkProviderResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LinkProviderResponse>(create);
+  static LinkProviderResponse? _defaultInstance;
+}
+
+/// ===== SetPassword =====
+class SetPasswordRequest extends $pb.GeneratedMessage {
+  factory SetPasswordRequest({
+    $core.String? newPassword,
+  }) {
+    final result = create();
+    if (newPassword != null) result.newPassword = newPassword;
+    return result;
+  }
+
+  SetPasswordRequest._();
+
+  factory SetPasswordRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SetPasswordRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPasswordRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'newPassword')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetPasswordRequest clone() => SetPasswordRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetPasswordRequest copyWith(void Function(SetPasswordRequest) updates) => super.copyWith((message) => updates(message as SetPasswordRequest)) as SetPasswordRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetPasswordRequest create() => SetPasswordRequest._();
+  @$core.override
+  SetPasswordRequest createEmptyInstance() => create();
+  static $pb.PbList<SetPasswordRequest> createRepeated() => $pb.PbList<SetPasswordRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetPasswordRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetPasswordRequest>(create);
+  static SetPasswordRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get newPassword => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set newPassword($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNewPassword() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNewPassword() => $_clearField(1);
+}
+
+class SetPasswordResponse extends $pb.GeneratedMessage {
+  factory SetPasswordResponse() => create();
+
+  SetPasswordResponse._();
+
+  factory SetPasswordResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SetPasswordResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPasswordResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetPasswordResponse clone() => SetPasswordResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetPasswordResponse copyWith(void Function(SetPasswordResponse) updates) => super.copyWith((message) => updates(message as SetPasswordResponse)) as SetPasswordResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetPasswordResponse create() => SetPasswordResponse._();
+  @$core.override
+  SetPasswordResponse createEmptyInstance() => create();
+  static $pb.PbList<SetPasswordResponse> createRepeated() => $pb.PbList<SetPasswordResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetPasswordResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetPasswordResponse>(create);
+  static SetPasswordResponse? _defaultInstance;
+}
+
+/// ===== ForgotPassword =====
+class ForgotPasswordRequest extends $pb.GeneratedMessage {
+  factory ForgotPasswordRequest({
+    $core.String? emailOrHandle,
+  }) {
+    final result = create();
+    if (emailOrHandle != null) result.emailOrHandle = emailOrHandle;
+    return result;
+  }
+
+  ForgotPasswordRequest._();
+
+  factory ForgotPasswordRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ForgotPasswordRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ForgotPasswordRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'emailOrHandle')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ForgotPasswordRequest clone() => ForgotPasswordRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ForgotPasswordRequest copyWith(void Function(ForgotPasswordRequest) updates) => super.copyWith((message) => updates(message as ForgotPasswordRequest)) as ForgotPasswordRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ForgotPasswordRequest create() => ForgotPasswordRequest._();
+  @$core.override
+  ForgotPasswordRequest createEmptyInstance() => create();
+  static $pb.PbList<ForgotPasswordRequest> createRepeated() => $pb.PbList<ForgotPasswordRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ForgotPasswordRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ForgotPasswordRequest>(create);
+  static ForgotPasswordRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get emailOrHandle => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set emailOrHandle($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEmailOrHandle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEmailOrHandle() => $_clearField(1);
+}
+
+class ForgotPasswordResponse extends $pb.GeneratedMessage {
+  factory ForgotPasswordResponse() => create();
+
+  ForgotPasswordResponse._();
+
+  factory ForgotPasswordResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ForgotPasswordResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ForgotPasswordResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ForgotPasswordResponse clone() => ForgotPasswordResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ForgotPasswordResponse copyWith(void Function(ForgotPasswordResponse) updates) => super.copyWith((message) => updates(message as ForgotPasswordResponse)) as ForgotPasswordResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ForgotPasswordResponse create() => ForgotPasswordResponse._();
+  @$core.override
+  ForgotPasswordResponse createEmptyInstance() => create();
+  static $pb.PbList<ForgotPasswordResponse> createRepeated() => $pb.PbList<ForgotPasswordResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ForgotPasswordResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ForgotPasswordResponse>(create);
+  static ForgotPasswordResponse? _defaultInstance;
+}
+
+/// ===== ResetPassword =====
+class ResetPasswordRequest extends $pb.GeneratedMessage {
+  factory ResetPasswordRequest({
+    $core.String? token,
+    $core.String? newPassword,
+  }) {
+    final result = create();
+    if (token != null) result.token = token;
+    if (newPassword != null) result.newPassword = newPassword;
+    return result;
+  }
+
+  ResetPasswordRequest._();
+
+  factory ResetPasswordRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ResetPasswordRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResetPasswordRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'token')
+    ..aOS(2, _omitFieldNames ? '' : 'newPassword')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResetPasswordRequest clone() => ResetPasswordRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResetPasswordRequest copyWith(void Function(ResetPasswordRequest) updates) => super.copyWith((message) => updates(message as ResetPasswordRequest)) as ResetPasswordRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResetPasswordRequest create() => ResetPasswordRequest._();
+  @$core.override
+  ResetPasswordRequest createEmptyInstance() => create();
+  static $pb.PbList<ResetPasswordRequest> createRepeated() => $pb.PbList<ResetPasswordRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ResetPasswordRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResetPasswordRequest>(create);
+  static ResetPasswordRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get token => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set token($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearToken() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get newPassword => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set newPassword($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNewPassword() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNewPassword() => $_clearField(2);
+}
+
+class ResetPasswordResponse extends $pb.GeneratedMessage {
+  factory ResetPasswordResponse() => create();
+
+  ResetPasswordResponse._();
+
+  factory ResetPasswordResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ResetPasswordResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResetPasswordResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResetPasswordResponse clone() => ResetPasswordResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResetPasswordResponse copyWith(void Function(ResetPasswordResponse) updates) => super.copyWith((message) => updates(message as ResetPasswordResponse)) as ResetPasswordResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResetPasswordResponse create() => ResetPasswordResponse._();
+  @$core.override
+  ResetPasswordResponse createEmptyInstance() => create();
+  static $pb.PbList<ResetPasswordResponse> createRepeated() => $pb.PbList<ResetPasswordResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ResetPasswordResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResetPasswordResponse>(create);
+  static ResetPasswordResponse? _defaultInstance;
 }
 
 /// ===== Refresh =====

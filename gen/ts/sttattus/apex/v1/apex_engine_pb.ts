@@ -21,6 +21,28 @@ export class CalculateBioRankRequest extends Message<CalculateBioRankRequest> {
    */
   biomarkers: Biomarker[] = [];
 
+  /**
+   * Decimal years. Required for the Levine PhenoAge formula; absence
+   * (chronological_age_present == false) forces the engine into its
+   * marker-deviation fallback and biological_age comes back zero.
+   *
+   * @generated from field: double chronological_age = 3;
+   */
+  chronologicalAge = 0;
+
+  /**
+   * @generated from field: bool chronological_age_present = 4;
+   */
+  chronologicalAgePresent = false;
+
+  /**
+   * 'male' | 'female' | 'intersex' | ''  — used to pick sex-specific
+   * optimal-range bands in the fallback scoring path.
+   *
+   * @generated from field: string biological_sex = 5;
+   */
+  biologicalSex = "";
+
   constructor(data?: PartialMessage<CalculateBioRankRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -31,6 +53,9 @@ export class CalculateBioRankRequest extends Message<CalculateBioRankRequest> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "biomarkers", kind: "message", T: Biomarker, repeated: true },
+    { no: 3, name: "chronological_age", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "chronological_age_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "biological_sex", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CalculateBioRankRequest {
@@ -55,25 +80,47 @@ export class CalculateBioRankRequest extends Message<CalculateBioRankRequest> {
  */
 export class CalculateBioRankResponse extends Message<CalculateBioRankResponse> {
   /**
-   * 1-100 normalized status signal
+   * 0-100 marker-quality aggregate
    *
    * @generated from field: double bio_rank = 1;
    */
   bioRank = 0;
 
   /**
-   * Calculated epigenetic/phenotypic age
+   * PhenoAge years; 0 when not computable
    *
    * @generated from field: double biological_age = 2;
    */
   biologicalAge = 0;
 
   /**
-   * e.g., "cardiovascular": 85.0, "metabolic": 92.0
+   * e.g., "cardiovascular": 85.0
    *
    * @generated from field: map<string, double> system_scores = 3;
    */
   systemScores: { [key: string]: number } = {};
+
+  /**
+   * Which path produced biological_age. "phenoage" = real Levine formula
+   * (all 9 markers + age present). "deviation" = optimal-range fallback.
+   * "insufficient" = no biological_age (engine returned 0).
+   *
+   * @generated from field: string method = 4;
+   */
+  method = "";
+
+  /**
+   * PhenoAge components that were filled in. Lets clients show "we used
+   * 7/9 markers" or surface which ones are still missing.
+   *
+   * @generated from field: repeated string markers_used = 5;
+   */
+  markersUsed: string[] = [];
+
+  /**
+   * @generated from field: repeated string markers_missing = 6;
+   */
+  markersMissing: string[] = [];
 
   constructor(data?: PartialMessage<CalculateBioRankResponse>) {
     super();
@@ -86,6 +133,9 @@ export class CalculateBioRankResponse extends Message<CalculateBioRankResponse> 
     { no: 1, name: "bio_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 2, name: "biological_age", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 3, name: "system_scores", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 1 /* ScalarType.DOUBLE */} },
+    { no: 4, name: "method", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "markers_used", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "markers_missing", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CalculateBioRankResponse {

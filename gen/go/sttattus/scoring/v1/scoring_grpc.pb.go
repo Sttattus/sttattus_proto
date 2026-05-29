@@ -34,6 +34,8 @@ const (
 	ScoringService_ScoreAcuteChronic_FullMethodName             = "/sttattus.scoring.v1.ScoringService/ScoreAcuteChronic"
 	ScoringService_EstimateOneRm_FullMethodName                 = "/sttattus.scoring.v1.ScoringService/EstimateOneRm"
 	ScoringService_ScoreVolumeIntensityFrequency_FullMethodName = "/sttattus.scoring.v1.ScoringService/ScoreVolumeIntensityFrequency"
+	ScoringService_ScoreSessionAnalytics_FullMethodName         = "/sttattus.scoring.v1.ScoringService/ScoreSessionAnalytics"
+	ScoringService_ScoreRivalry_FullMethodName                  = "/sttattus.scoring.v1.ScoringService/ScoreRivalry"
 )
 
 // ScoringServiceClient is the client API for ScoringService service.
@@ -58,6 +60,10 @@ type ScoringServiceClient interface {
 	ScoreAcuteChronic(ctx context.Context, in *ScoreAcuteChronicRequest, opts ...grpc.CallOption) (*ScoreAcuteChronicResponse, error)
 	EstimateOneRm(ctx context.Context, in *EstimateOneRmRequest, opts ...grpc.CallOption) (*EstimateOneRmResponse, error)
 	ScoreVolumeIntensityFrequency(ctx context.Context, in *ScoreVolumeIntensityFrequencyRequest, opts ...grpc.CallOption) (*ScoreVolumeIntensityFrequencyResponse, error)
+	// F7P2.7 — Session Replay & Analytics
+	ScoreSessionAnalytics(ctx context.Context, in *ScoreSessionAnalyticsRequest, opts ...grpc.CallOption) (*ScoreSessionAnalyticsResponse, error)
+	// F7P2.9 — Performance Duels
+	ScoreRivalry(ctx context.Context, in *ScoreRivalryRequest, opts ...grpc.CallOption) (*ScoreRivalryResponse, error)
 }
 
 type scoringServiceClient struct {
@@ -218,6 +224,26 @@ func (c *scoringServiceClient) ScoreVolumeIntensityFrequency(ctx context.Context
 	return out, nil
 }
 
+func (c *scoringServiceClient) ScoreSessionAnalytics(ctx context.Context, in *ScoreSessionAnalyticsRequest, opts ...grpc.CallOption) (*ScoreSessionAnalyticsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ScoreSessionAnalyticsResponse)
+	err := c.cc.Invoke(ctx, ScoringService_ScoreSessionAnalytics_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *scoringServiceClient) ScoreRivalry(ctx context.Context, in *ScoreRivalryRequest, opts ...grpc.CallOption) (*ScoreRivalryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ScoreRivalryResponse)
+	err := c.cc.Invoke(ctx, ScoringService_ScoreRivalry_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ScoringServiceServer is the server API for ScoringService service.
 // All implementations must embed UnimplementedScoringServiceServer
 // for forward compatibility.
@@ -240,6 +266,10 @@ type ScoringServiceServer interface {
 	ScoreAcuteChronic(context.Context, *ScoreAcuteChronicRequest) (*ScoreAcuteChronicResponse, error)
 	EstimateOneRm(context.Context, *EstimateOneRmRequest) (*EstimateOneRmResponse, error)
 	ScoreVolumeIntensityFrequency(context.Context, *ScoreVolumeIntensityFrequencyRequest) (*ScoreVolumeIntensityFrequencyResponse, error)
+	// F7P2.7 — Session Replay & Analytics
+	ScoreSessionAnalytics(context.Context, *ScoreSessionAnalyticsRequest) (*ScoreSessionAnalyticsResponse, error)
+	// F7P2.9 — Performance Duels
+	ScoreRivalry(context.Context, *ScoreRivalryRequest) (*ScoreRivalryResponse, error)
 	mustEmbedUnimplementedScoringServiceServer()
 }
 
@@ -294,6 +324,12 @@ func (UnimplementedScoringServiceServer) EstimateOneRm(context.Context, *Estimat
 }
 func (UnimplementedScoringServiceServer) ScoreVolumeIntensityFrequency(context.Context, *ScoreVolumeIntensityFrequencyRequest) (*ScoreVolumeIntensityFrequencyResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ScoreVolumeIntensityFrequency not implemented")
+}
+func (UnimplementedScoringServiceServer) ScoreSessionAnalytics(context.Context, *ScoreSessionAnalyticsRequest) (*ScoreSessionAnalyticsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ScoreSessionAnalytics not implemented")
+}
+func (UnimplementedScoringServiceServer) ScoreRivalry(context.Context, *ScoreRivalryRequest) (*ScoreRivalryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ScoreRivalry not implemented")
 }
 func (UnimplementedScoringServiceServer) mustEmbedUnimplementedScoringServiceServer() {}
 func (UnimplementedScoringServiceServer) testEmbeddedByValue()                        {}
@@ -586,6 +622,42 @@ func _ScoringService_ScoreVolumeIntensityFrequency_Handler(srv interface{}, ctx 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ScoringService_ScoreSessionAnalytics_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ScoreSessionAnalyticsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScoringServiceServer).ScoreSessionAnalytics(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ScoringService_ScoreSessionAnalytics_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScoringServiceServer).ScoreSessionAnalytics(ctx, req.(*ScoreSessionAnalyticsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ScoringService_ScoreRivalry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ScoreRivalryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ScoringServiceServer).ScoreRivalry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ScoringService_ScoreRivalry_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ScoringServiceServer).ScoreRivalry(ctx, req.(*ScoreRivalryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ScoringService_ServiceDesc is the grpc.ServiceDesc for ScoringService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -652,6 +724,14 @@ var ScoringService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ScoreVolumeIntensityFrequency",
 			Handler:    _ScoringService_ScoreVolumeIntensityFrequency_Handler,
+		},
+		{
+			MethodName: "ScoreSessionAnalytics",
+			Handler:    _ScoringService_ScoreSessionAnalytics_Handler,
+		},
+		{
+			MethodName: "ScoreRivalry",
+			Handler:    _ScoringService_ScoreRivalry_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

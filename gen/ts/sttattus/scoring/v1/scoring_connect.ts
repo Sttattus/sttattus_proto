@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ApplyDecayRequest, ApplyDecayResponse, EstimateOneRmRequest, EstimateOneRmResponse, ScoreAcuteChronicRequest, ScoreAcuteChronicResponse, ScoreCognitiveMasteryRequest, ScoreCognitiveMasteryResponse, ScoreDominionRequest, ScoreDominionResponse, ScoreEmpireRequest, ScoreEmpireResponse, ScoreForgeRequest, ScoreForgeResponse, ScoreLegacyRequest, ScoreLegacyResponse, ScoreLexicalProgressRequest, ScoreLexicalProgressResponse, ScoreMatchRequest, ScoreMatchResponse, ScoreNomadRequest, ScoreNomadResponse, ScoreOracleRequest, ScoreOracleResponse, ScoreVolumeIntensityFrequencyRequest, ScoreVolumeIntensityFrequencyResponse, ScoreWorkoutRequest, ScoreWorkoutResponse, ScoreZenithRequest, ScoreZenithResponse } from "./scoring_pb.js";
+import { ApplyDecayRequest, ApplyDecayResponse, EstimateOneRmRequest, EstimateOneRmResponse, ScoreAcuteChronicRequest, ScoreAcuteChronicResponse, ScoreCognitiveMasteryRequest, ScoreCognitiveMasteryResponse, ScoreDominionRequest, ScoreDominionResponse, ScoreEmpireRequest, ScoreEmpireResponse, ScoreForgeRequest, ScoreForgeResponse, ScoreLegacyRequest, ScoreLegacyResponse, ScoreLexicalProgressRequest, ScoreLexicalProgressResponse, ScoreMatchRequest, ScoreMatchResponse, ScoreNomadRequest, ScoreNomadResponse, ScoreOracleRequest, ScoreOracleResponse, ScoreRivalryRequest, ScoreRivalryResponse, ScoreSessionAnalyticsRequest, ScoreSessionAnalyticsResponse, ScoreVolumeIntensityFrequencyRequest, ScoreVolumeIntensityFrequencyResponse, ScoreWorkoutRequest, ScoreWorkoutResponse, ScoreZenithRequest, ScoreZenithResponse } from "./scoring_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -150,6 +150,28 @@ export const ScoringService = {
       name: "ScoreVolumeIntensityFrequency",
       I: ScoreVolumeIntensityFrequencyRequest,
       O: ScoreVolumeIntensityFrequencyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P2.7 — Session Replay & Analytics
+     *
+     * @generated from rpc sttattus.scoring.v1.ScoringService.ScoreSessionAnalytics
+     */
+    scoreSessionAnalytics: {
+      name: "ScoreSessionAnalytics",
+      I: ScoreSessionAnalyticsRequest,
+      O: ScoreSessionAnalyticsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * F7P2.9 — Performance Duels
+     *
+     * @generated from rpc sttattus.scoring.v1.ScoringService.ScoreRivalry
+     */
+    scoreRivalry: {
+      name: "ScoreRivalry",
+      I: ScoreRivalryRequest,
+      O: ScoreRivalryResponse,
       kind: MethodKind.Unary,
     },
   }

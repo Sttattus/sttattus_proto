@@ -205,6 +205,50 @@ message ScoreDominionResponse {
   double dominion_delta = 2;
 }
 
+// ===== Forge Analytics follow-on (F7P2.7, F7P2.9) =====
+
+message ScoreSessionAnalyticsRequest {
+  string session_id = 1;
+  repeated WorkoutSeriesInput series = 2;
+  // Optional heart rate data from sensors.
+  message HeartRatePoint {
+    int32 timestamp_offset_seconds = 1;
+    double bpm = 2;
+  }
+  repeated HeartRatePoint heart_rate_data = 3;
+}
+
+message MetricPoint {
+  int32 timestamp_offset_seconds = 1;
+  double value = 2;
+}
+
+message ScoreSessionAnalyticsResponse {
+  repeated MetricPoint volume_curve = 1;
+  repeated MetricPoint intensity_curve = 2;
+  repeated MetricPoint heart_rate_curve = 3;
+  double total_volume = 4;
+  double avg_intensity = 5;
+  int32 peak_heart_rate = 6;
+}
+
+message ScoreRivalryRequest {
+  string rivalry_id = 1;
+  double my_current_score = 2;
+  double rival_current_score = 3;
+  // History of scores for progress curves.
+  repeated MetricPoint my_score_history = 4;
+  repeated MetricPoint rival_score_history = 5;
+}
+
+message ScoreRivalryResponse {
+  double my_progress_pct = 1;
+  double rival_progress_pct = 2;
+  repeated MetricPoint my_normalized_curve = 3;
+  repeated MetricPoint rival_normalized_curve = 4;
+  string leading_user_id = 5;
+}
+
 // ===== Forge analytics (F7P2.6). Audits/forge.md §4.4 item 31,
 // §9 "Rust-side analytics jobs", §10 Phase 2 item 6. Pure
 // sports-science math offloaded to Rust; surfaced on the Forge
@@ -287,4 +331,9 @@ service ScoringService {
   rpc ScoreAcuteChronic(ScoreAcuteChronicRequest) returns (ScoreAcuteChronicResponse);
   rpc EstimateOneRm(EstimateOneRmRequest) returns (EstimateOneRmResponse);
   rpc ScoreVolumeIntensityFrequency(ScoreVolumeIntensityFrequencyRequest) returns (ScoreVolumeIntensityFrequencyResponse);
+
+  // F7P2.7 — Session Replay & Analytics
+  rpc ScoreSessionAnalytics(ScoreSessionAnalyticsRequest) returns (ScoreSessionAnalyticsResponse);
+  // F7P2.9 — Performance Duels
+  rpc ScoreRivalry(ScoreRivalryRequest) returns (ScoreRivalryResponse);
 }

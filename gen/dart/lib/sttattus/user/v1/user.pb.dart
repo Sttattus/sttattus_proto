@@ -38,6 +38,7 @@ class UserProfile extends $pb.GeneratedMessage {
     $core.double? apexRank,
     $core.double? culturalCapital,
     $core.String? handle,
+    $core.String? locale,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -57,6 +58,7 @@ class UserProfile extends $pb.GeneratedMessage {
     if (apexRank != null) result.apexRank = apexRank;
     if (culturalCapital != null) result.culturalCapital = culturalCapital;
     if (handle != null) result.handle = handle;
+    if (locale != null) result.locale = locale;
     return result;
   }
 
@@ -83,6 +85,7 @@ class UserProfile extends $pb.GeneratedMessage {
     ..a<$core.double>(15, _omitFieldNames ? '' : 'apexRank', $pb.PbFieldType.OD)
     ..a<$core.double>(16, _omitFieldNames ? '' : 'culturalCapital', $pb.PbFieldType.OD)
     ..aOS(17, _omitFieldNames ? '' : 'handle')
+    ..aOS(18, _omitFieldNames ? '' : 'locale')
     ..hasRequiredFields = false
   ;
 
@@ -257,6 +260,15 @@ class UserProfile extends $pb.GeneratedMessage {
   $core.bool hasHandle() => $_has(16);
   @$pb.TagNumber(17)
   void clearHandle() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get locale => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set locale($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasLocale() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearLocale() => $_clearField(18);
 }
 
 class AppAccess extends $pb.GeneratedMessage {
@@ -411,10 +423,12 @@ class UpdateMeRequest extends $pb.GeneratedMessage {
   factory UpdateMeRequest({
     $core.String? name,
     $core.String? avatarUrl,
+    $core.String? locale,
   }) {
     final result = create();
     if (name != null) result.name = name;
     if (avatarUrl != null) result.avatarUrl = avatarUrl;
+    if (locale != null) result.locale = locale;
     return result;
   }
 
@@ -426,6 +440,7 @@ class UpdateMeRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.user.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'avatarUrl')
+    ..aOS(3, _omitFieldNames ? '' : 'locale')
     ..hasRequiredFields = false
   ;
 
@@ -463,6 +478,15 @@ class UpdateMeRequest extends $pb.GeneratedMessage {
   $core.bool hasAvatarUrl() => $_has(1);
   @$pb.TagNumber(2)
   void clearAvatarUrl() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get locale => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set locale($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLocale() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLocale() => $_clearField(3);
 }
 
 class UpdateMeResponse extends $pb.GeneratedMessage {

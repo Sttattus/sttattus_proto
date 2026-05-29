@@ -108,6 +108,13 @@ message GetApexAgeResponse {
   double chronological_age = 4;
   // Map of system_id (e.g. 'cardiovascular') -> score 0..100.
   map<string, double> system_scores = 5;
+  // Which scoring path produced biological_age. "phenoage" = real
+  // Levine 2018 formula (all 9 markers + DOB present). "deviation" =
+  // optimal-range fallback against apex_biomarker_refs. "insufficient"
+  // = we couldn't compute a biological age.
+  string method = 6;
+  repeated string markers_used = 7;
+  repeated string markers_missing = 8;
 }
 
 // A11.3 — clinical baseline (DOB / biological sex / chronotype).
@@ -370,6 +377,624 @@ service ApexService {
   rpc RecordApexProtocolAdherence(RecordApexProtocolAdherenceRequest) returns (RecordApexProtocolAdherenceResponse);
   rpc ListMyApexProtocolAdherence(ListMyApexProtocolAdherenceRequest) returns (ListMyApexProtocolAdherenceResponse);
 
+  // === Phase 2 additions ===
+
+  // Supplement stack manager (A11.7).
+  rpc ListSupplements(ListSupplementsRequest) returns (ListSupplementsResponse);
+  rpc ListMySupplements(ListMySupplementsRequest) returns (ListMySupplementsResponse);
+  rpc AddSupplement(AddSupplementRequest) returns (AddSupplementResponse);
+  rpc RemoveSupplement(RemoveSupplementRequest) returns (RemoveSupplementResponse);
+  rpc ListSupplementInteractions(ListSupplementInteractionsRequest) returns (ListSupplementInteractionsResponse);
+
+  // CGM ingestion + glucose curve (A11.8).
+  rpc ListMyGlucose(ListMyGlucoseRequest) returns (ListMyGlucoseResponse);
+  rpc IngestGlucoseReading(IngestGlucoseReadingRequest) returns (IngestGlucoseReadingResponse);
+
+  // Cycle dashboard (A11.9 — opt-in for female users).
+  rpc GetCycleStatus(GetCycleStatusRequest) returns (GetCycleStatusResponse);
+  rpc LogPeriod(LogPeriodRequest) returns (LogPeriodResponse);
+  rpc LogCycleSymptom(LogCycleSymptomRequest) returns (LogCycleSymptomResponse);
+  rpc ListMyCycleSymptoms(ListMyCycleSymptomsRequest) returns (ListMyCycleSymptomsResponse);
+
+  // What-if simulator: project Apex Age under hypothetical marker overrides.
+  rpc SimulateApexAge(SimulateApexAgeRequest) returns (SimulateApexAgeResponse);
+
+  // Cross-pillar readiness signal — Forge + Zenith consume this to gate
+  // session intensity / focus prescription. Pure read; no engine call.
+  rpc GetReadiness(GetReadinessRequest) returns (GetReadinessResponse);
+
+  // === Phase 3 additions ===
+
+  // Clinical concierge (A11.10) — Sovereign-tier white-glove desk.
+  rpc StartConciergeThread(StartConciergeThreadRequest) returns (StartConciergeThreadResponse);
+  rpc ListMyConciergeThreads(ListMyConciergeThreadsRequest) returns (ListMyConciergeThreadsResponse);
+  rpc GetConciergeThread(GetConciergeThreadRequest) returns (GetConciergeThreadResponse);
+  rpc PostConciergeMessage(PostConciergeMessageRequest) returns (PostConciergeMessageResponse);
+
+  // Editorial Anthology (A11.11) — named-author longevity articles.
+  rpc ListAnthologyArticles(ListAnthologyArticlesRequest) returns (ListAnthologyArticlesResponse);
+  rpc GetAnthologyArticle(GetAnthologyArticleRequest) returns (GetAnthologyArticleResponse);
+
+  // Pharmacology log (A11.12) — encrypted prescribed + off-label items.
+  rpc ListMyPharmacology(ListMyPharmacologyRequest) returns (ListMyPharmacologyResponse);
+  rpc AddPharmacology(AddPharmacologyRequest) returns (AddPharmacologyResponse);
+  rpc RemovePharmacology(RemovePharmacologyRequest) returns (RemovePharmacologyResponse);
+
+  // DNA ingestion (A11.13) — VCF / TXT upload → SNP report.
+  rpc RegisterDnaUpload(RegisterDnaUploadRequest) returns (RegisterDnaUploadResponse);
+  rpc ListMyDnaUploads(ListMyDnaUploadsRequest) returns (ListMyDnaUploadsResponse);
+  rpc ListMyDnaSnps(ListMyDnaSnpsRequest) returns (ListMyDnaSnpsResponse);
+
+  // Lab partner introductions (A11.14).
+  rpc ListLabPartners(ListLabPartnersRequest) returns (ListLabPartnersResponse);
+
+  // === Phase 3.5 additions ===
+
+  // Manual lab biomarker extraction (A11.15) — until the auto-extractor
+  // ships, members or staff type marker values from an uploaded PDF and
+  // we land them as verified apex_vitals rows tied to the report.
+  rpc ExtractLabMarkers(ExtractLabMarkersRequest) returns (ExtractLabMarkersResponse);
+
+  // Clinician shared view (A11.16) — generates a token-protected JSON
+  // snapshot of clinical data accessible at /share/clinician/:token.
+  rpc CreateClinicianShare(CreateClinicianShareRequest) returns (CreateClinicianShareResponse);
+  rpc ListMyClinicianShares(ListMyClinicianSharesRequest) returns (ListMyClinicianSharesResponse);
+  rpc RevokeClinicianShare(RevokeClinicianShareRequest) returns (RevokeClinicianShareResponse);
+
+  // Apex × Nomad jet-lag protocol (A11.17) — 9-day light/melatonin/meal
+  // schedule. Pure compute, no persistence.
+  rpc GetJetLagProtocol(GetJetLagProtocolRequest) returns (GetJetLagProtocolResponse);
+
+  // === Phase 4 additions ===
+
+  // Annual Health Almanac (A11.18) — server-rendered PDF report.
+  rpc GenerateHealthAlmanac(GenerateHealthAlmanacRequest) returns (GenerateHealthAlmanacResponse);
+
+  // Advanced imaging studies (A11.19) — coronary CTA / MRI / DEXA.
+  rpc SubmitImagingStudy(SubmitImagingStudyRequest) returns (SubmitImagingStudyResponse);
+  rpc ListMyImagingStudies(ListMyImagingStudiesRequest) returns (ListMyImagingStudiesResponse);
+
+  // Sttattus Lounges (A11.20) — recovery-room booking flow.
+  rpc ListLounges(ListLoungesRequest) returns (ListLoungesResponse);
+  rpc ListMyLoungeBookings(ListMyLoungeBookingsRequest) returns (ListMyLoungeBookingsResponse);
+  rpc CreateLoungeBooking(CreateLoungeBookingRequest) returns (CreateLoungeBookingResponse);
+  rpc CancelLoungeBooking(CancelLoungeBookingRequest) returns (CancelLoungeBookingResponse);
+
+  // Lab-PDF heuristic extraction (A11.21) — accepts OCR text, regex-
+  // extracts common biomarkers as a confirmation candidate set.
+  rpc ParseLabReportText(ParseLabReportTextRequest) returns (ParseLabReportTextResponse);
+
   // Admin Methods (Gated by Admin Middleware)
   rpc AdminVerifyLab(AdminVerifyLabRequest) returns (AdminVerifyLabResponse);
+}
+
+// === Phase 2 message types ===
+
+// --- Supplements ---
+
+message Supplement {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string category = 4; // longevity | sleep | cognitive | recovery | gut | hormones
+  string description = 5;
+  string evidence_rating = 6; // A | B | C
+  double default_dose_mg = 7;
+  bool sovereign_only = 8;
+}
+
+message UserSupplement {
+  string id = 1;
+  Supplement supplement = 2;
+  double dose_mg = 3;
+  string schedule = 4; // e.g. "morning", "evening", "with-food"
+  int64 started_at_unix = 5;
+  bool active = 6;
+}
+
+message SupplementInteraction {
+  string a_slug = 1;
+  string b_slug = 2;
+  string severity = 3; // info | caution | avoid
+  string note = 4;
+}
+
+message ListSupplementsRequest {
+  string category = 1; // optional filter
+}
+message ListSupplementsResponse {
+  repeated Supplement supplements = 1;
+}
+
+message ListMySupplementsRequest {}
+message ListMySupplementsResponse {
+  repeated UserSupplement stack = 1;
+}
+
+message AddSupplementRequest {
+  string supplement_id = 1;
+  double dose_mg = 2;
+  string schedule = 3;
+}
+message AddSupplementResponse {
+  UserSupplement entry = 1;
+  repeated SupplementInteraction warnings = 2;
+}
+
+message RemoveSupplementRequest {
+  string user_supplement_id = 1;
+}
+message RemoveSupplementResponse {}
+
+message ListSupplementInteractionsRequest {
+  string slug = 1;
+}
+message ListSupplementInteractionsResponse {
+  repeated SupplementInteraction interactions = 1;
+}
+
+// --- Glucose / CGM ---
+
+message GlucoseReading {
+  string id = 1;
+  double value_mg_dl = 2;
+  int64 recorded_at_unix = 3;
+  string source = 4; // dexcom | libre | manual
+}
+
+message ListMyGlucoseRequest {
+  int32 hours = 1; // window in hours; 0 = last 24h
+}
+message ListMyGlucoseResponse {
+  repeated GlucoseReading readings = 1;
+  double mean_mg_dl = 2;
+  double time_in_range_pct = 3; // 70-180 mg/dL
+}
+
+message IngestGlucoseReadingRequest {
+  double value_mg_dl = 1;
+  int64 recorded_at_unix = 2; // 0 = now
+  string source = 3; // defaults to "manual"
+}
+message IngestGlucoseReadingResponse {
+  GlucoseReading reading = 1;
+}
+
+// --- Cycle ---
+
+message CycleStatus {
+  bool present = 1;
+  string phase = 2; // menstrual | follicular | ovulation | luteal | unknown
+  int32 cycle_day = 3;
+  string next_period_estimate = 4; // YYYY-MM-DD or empty
+  string last_period_start = 5;
+  int32 average_cycle_days = 6;
+}
+
+message CycleSymptom {
+  string id = 1;
+  string recorded_on = 2; // YYYY-MM-DD
+  string kind = 3;
+  int32 intensity = 4; // 1-5
+}
+
+message GetCycleStatusRequest {}
+message GetCycleStatusResponse {
+  CycleStatus status = 1;
+}
+
+message LogPeriodRequest {
+  string started_on = 1; // YYYY-MM-DD
+  string ended_on = 2; // YYYY-MM-DD or empty
+  string flow = 3; // light | medium | heavy
+}
+message LogPeriodResponse {
+  CycleStatus status = 1;
+}
+
+message LogCycleSymptomRequest {
+  string recorded_on = 1; // YYYY-MM-DD or empty = today
+  string kind = 2;
+  int32 intensity = 3;
+}
+message LogCycleSymptomResponse {
+  CycleSymptom symptom = 1;
+}
+
+message ListMyCycleSymptomsRequest {
+  int32 days = 1; // window; 0 = 90 days
+}
+message ListMyCycleSymptomsResponse {
+  repeated CycleSymptom symptoms = 1;
+}
+
+// --- What-if simulator ---
+
+// MarkerOverride applies a hypothetical value for one biomarker. The
+// engine uses the latest value for any marker not overridden.
+message MarkerOverride {
+  string metric_code = 1;
+  double value = 2;
+}
+
+message SimulateApexAgeRequest {
+  repeated MarkerOverride overrides = 1;
+}
+message SimulateApexAgeResponse {
+  double current_apex_age = 1;
+  double projected_apex_age = 2;
+  double delta_years = 3; // projected - current
+  string method = 4;
+}
+
+// --- Readiness (cross-pillar contract) ---
+
+message ReadinessSnapshot {
+  double readiness_0_100 = 1; // composite 0-100
+  string verdict = 2;         // optimal | moderate | low | no-data
+  double hrv_delta_ms = 3;    // window mean minus 30d baseline
+  double rhr_delta_bpm = 4;   // window mean minus 30d baseline (negative = better)
+  double sleep_score = 5;     // 0-100
+  string recommendation = 6;  // one-line nudge for the calling pillar
+}
+
+message GetReadinessRequest {}
+message GetReadinessResponse {
+  ReadinessSnapshot snapshot = 1;
+}
+
+// === Phase 3 message types ===
+
+// --- Concierge ---
+
+message ConciergeThread {
+  string id = 1;
+  string subject = 2;
+  string status = 3; // open | resolved | waiting_member
+  int64 sla_due_at_unix = 4;
+  int64 created_at_unix = 5;
+  int64 updated_at_unix = 6;
+  int32 message_count = 7;
+}
+
+message ConciergeMessage {
+  string id = 1;
+  string thread_id = 2;
+  string sender_role = 3; // member | desk | system
+  string body = 4;
+  int64 created_at_unix = 5;
+}
+
+message StartConciergeThreadRequest {
+  string subject = 1;
+  string opening_message = 2;
+}
+message StartConciergeThreadResponse {
+  ConciergeThread thread = 1;
+}
+
+message ListMyConciergeThreadsRequest {}
+message ListMyConciergeThreadsResponse {
+  repeated ConciergeThread threads = 1;
+}
+
+message GetConciergeThreadRequest {
+  string thread_id = 1;
+}
+message GetConciergeThreadResponse {
+  ConciergeThread thread = 1;
+  repeated ConciergeMessage messages = 2;
+}
+
+message PostConciergeMessageRequest {
+  string thread_id = 1;
+  string body = 2;
+}
+message PostConciergeMessageResponse {
+  ConciergeMessage message = 1;
+}
+
+// --- Anthology ---
+
+message AnthologyAuthor {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string credentials = 4;
+  string bio_url = 5;
+  string avatar_url = 6;
+}
+
+message AnthologyArticle {
+  string id = 1;
+  string slug = 2;
+  AnthologyAuthor author = 3;
+  string title = 4;
+  string dek = 5;
+  string body = 6;
+  string hero_url = 7;
+  int64 published_at_unix = 8;
+  bool sovereign_only = 9;
+}
+
+message ListAnthologyArticlesRequest {}
+message ListAnthologyArticlesResponse {
+  repeated AnthologyArticle articles = 1;
+}
+
+message GetAnthologyArticleRequest {
+  string slug = 1;
+}
+message GetAnthologyArticleResponse {
+  AnthologyArticle article = 1;
+}
+
+// --- Pharmacology ---
+
+message PharmacologyEntry {
+  string id = 1;
+  string drug_name = 2;
+  double dose_mg = 3;
+  string schedule = 4;
+  string kind = 5; // prescribed | off_label | otc
+  string evidence_rating = 6; // A | B | C
+  string notes = 7;            // decrypted server-side, plain text on the wire
+  string started_on = 8;       // YYYY-MM-DD
+  bool active = 9;
+}
+
+message ListMyPharmacologyRequest {}
+message ListMyPharmacologyResponse {
+  repeated PharmacologyEntry entries = 1;
+}
+
+message AddPharmacologyRequest {
+  string drug_name = 1;
+  double dose_mg = 2;
+  string schedule = 3;
+  string kind = 4;
+  string evidence_rating = 5;
+  string notes = 6;
+  string started_on = 7;
+}
+message AddPharmacologyResponse {
+  PharmacologyEntry entry = 1;
+}
+
+message RemovePharmacologyRequest {
+  string entry_id = 1;
+}
+message RemovePharmacologyResponse {}
+
+// --- DNA ---
+
+message DnaUpload {
+  string id = 1;
+  string source = 2; // 23andme | ancestry | nebula | manual
+  string status = 3; // pending | parsing | ready | failed
+  string sha256 = 4;
+  int64 parsed_at_unix = 5;
+  int64 created_at_unix = 6;
+}
+
+message SnpEntry {
+  string rsid = 1;
+  string genotype = 2;
+  string interpretation = 3;
+  string evidence = 4;
+}
+
+message RegisterDnaUploadRequest {
+  string media_asset_id = 1;
+  string source = 2;
+}
+message RegisterDnaUploadResponse {
+  DnaUpload upload = 1;
+}
+
+message ListMyDnaUploadsRequest {}
+message ListMyDnaUploadsResponse {
+  repeated DnaUpload uploads = 1;
+}
+
+message ListMyDnaSnpsRequest {}
+message ListMyDnaSnpsResponse {
+  repeated SnpEntry snps = 1;
+}
+
+// --- Lab partners ---
+
+message LabPartner {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string region = 4;
+  string referral_url = 5;
+  int32 member_discount_pct = 6;
+  string panel_summary = 7;
+  string hero_url = 8;
+  bool sovereign_only = 9;
+}
+
+message ListLabPartnersRequest {
+  string region = 1; // optional filter
+}
+message ListLabPartnersResponse {
+  repeated LabPartner partners = 1;
+}
+
+// === Phase 3.5 message types ===
+
+// --- Manual lab extraction ---
+
+message LabMarkerValue {
+  string metric_code = 1;
+  double value = 2;
+  string unit = 3;
+}
+
+message ExtractLabMarkersRequest {
+  string report_id = 1;
+  repeated LabMarkerValue markers = 2;
+  int64 recorded_at_unix = 3;
+}
+message ExtractLabMarkersResponse {
+  int32 inserted = 1;
+}
+
+// --- Clinician shares ---
+
+message ClinicianShare {
+  string token = 1;
+  string share_url = 2;
+  string scope = 3;
+  int64 created_at_unix = 4;
+  int64 expires_at_unix = 5;
+  bool revoked = 6;
+}
+
+message CreateClinicianShareRequest {
+  int32 ttl_days = 1;
+  string scope = 2;
+}
+message CreateClinicianShareResponse {
+  ClinicianShare share = 1;
+}
+
+message ListMyClinicianSharesRequest {}
+message ListMyClinicianSharesResponse {
+  repeated ClinicianShare shares = 1;
+}
+
+message RevokeClinicianShareRequest {
+  string token = 1;
+}
+message RevokeClinicianShareResponse {}
+
+// --- Jet-lag protocol (Apex × Nomad) ---
+
+message JetLagStep {
+  int32 day_offset = 1;
+  string light_action = 2;
+  string melatonin_action = 3;
+  string meal_action = 4;
+  string notes = 5;
+}
+
+message GetJetLagProtocolRequest {
+  int32 origin_tz_offset_min = 1;
+  int32 dest_tz_offset_min = 2;
+  int64 travel_at_unix = 3;
+}
+message GetJetLagProtocolResponse {
+  int32 timezone_shift_hours = 1;
+  string direction = 2;
+  repeated JetLagStep steps = 3;
+  string summary = 4;
+}
+
+// === Phase 4 message types ===
+
+// --- Almanac ---
+
+message GenerateHealthAlmanacRequest {
+  string year = 1; // empty = current year
+}
+message GenerateHealthAlmanacResponse {
+  string media_asset_id = 1;
+  string public_url = 2;
+  int64 generated_at_unix = 3;
+  int32 page_count = 4;
+}
+
+// --- Imaging ---
+
+message ImagingStudy {
+  string id = 1;
+  string modality = 2;        // e.g. "Coronary CTA", "Whole-Body MRI", "DEXA"
+  string provider = 3;
+  string performed_on = 4;    // YYYY-MM-DD
+  string findings_text = 5;
+  string headline_metric = 6; // e.g. "CAC score"
+  double headline_value = 7;
+  string headline_unit = 8;
+  string media_asset_id = 9;
+  int64 created_at_unix = 10;
+}
+
+message SubmitImagingStudyRequest {
+  string modality = 1;
+  string provider = 2;
+  string performed_on = 3;
+  string findings_text = 4;
+  string headline_metric = 5;
+  double headline_value = 6;
+  string headline_unit = 7;
+  string media_asset_id = 8;
+}
+message SubmitImagingStudyResponse {
+  ImagingStudy study = 1;
+}
+
+message ListMyImagingStudiesRequest {}
+message ListMyImagingStudiesResponse {
+  repeated ImagingStudy studies = 1;
+}
+
+// --- Lounges ---
+
+message Lounge {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string city = 4;
+  string region = 5;
+  string address = 6;
+  string amenities = 7;   // comma-separated
+  string hero_url = 8;
+  bool sovereign_only = 9;
+}
+
+message LoungeBooking {
+  string id = 1;
+  Lounge lounge = 2;
+  string amenity = 3;
+  int64 scheduled_for_unix = 4;
+  string status = 5;
+}
+
+message ListLoungesRequest {
+  string region = 1;
+}
+message ListLoungesResponse {
+  repeated Lounge lounges = 1;
+}
+
+message ListMyLoungeBookingsRequest {}
+message ListMyLoungeBookingsResponse {
+  repeated LoungeBooking bookings = 1;
+}
+
+message CreateLoungeBookingRequest {
+  string lounge_id = 1;
+  string amenity = 2;
+  int64 scheduled_for_unix = 3;
+}
+message CreateLoungeBookingResponse {
+  LoungeBooking booking = 1;
+}
+
+message CancelLoungeBookingRequest {
+  string booking_id = 1;
+}
+message CancelLoungeBookingResponse {}
+
+// --- Lab text parser ---
+
+message ParseLabReportTextRequest {
+  string report_id = 1;
+  string text = 2; // OCR'd or pasted text
+}
+message ParseLabReportTextResponse {
+  repeated LabMarkerValue extracted = 1;
 }

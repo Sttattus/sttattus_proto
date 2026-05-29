@@ -214,8 +214,11 @@ message OracleThreadMessage {
   string thread_id = 2;
   string prompt = 3;
   string response = 4;
-  string domain = 5;
+  StrategicDomain domain = 5;
   int64 created_unix = 6;
+  double complexity_score = 7;
+  double synthesis_score = 8;
+  double foresight_score = 9;
 }
 
 message ListMyThreadsRequest {}

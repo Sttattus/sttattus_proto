@@ -28,6 +28,7 @@ message UserProfile {
 
   // P5.6 — public handle (empty when not yet claimed).
   string handle = 17;
+  string locale = 18;
 }
 
 message AppAccess {
@@ -44,6 +45,7 @@ message GetMeResponse {
 message UpdateMeRequest {
   string name = 1;
   string avatar_url = 2;
+  string locale = 3;
 }
 message UpdateMeResponse {
   UserProfile profile = 1;

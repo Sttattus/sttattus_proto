@@ -252,6 +252,93 @@ message LogSetResponse {
   SessionSet set = 1;
 }
 
+// ===== Session Replay & Analytics (F7P2.7) =====
+
+message SessionMetricPoint {
+  int32 timestamp_offset_seconds = 1;
+  double value = 2;
+}
+
+message SessionAnalytics {
+  string session_id = 1;
+  // Tonnage accumulated over time.
+  repeated SessionMetricPoint volume_curve = 2;
+  // Intensity (relative to 1RM) over time.
+  repeated SessionMetricPoint intensity_curve = 3;
+  // Heart rate if available.
+  repeated SessionMetricPoint heart_rate_curve = 4;
+  double total_volume = 5;
+  double avg_intensity = 6;
+  int32 duration_seconds = 7;
+  int32 total_reps = 8;
+}
+
+message GetSessionAnalyticsRequest {
+  string session_id = 1;
+}
+message GetSessionAnalyticsResponse {
+  SessionAnalytics analytics = 1;
+}
+
+// ===== Equipment Vault (F7P2.8) =====
+
+message UserEquipment {
+  string id = 1;
+  string name = 2;
+  string category = 3; // barbell | dumbbell | machine | kettlebell | sensor
+  string brand = 4;
+  double weight = 5;
+  string unit = 6;
+  bool is_verified = 7;
+}
+
+message ListUserEquipmentRequest {}
+message ListUserEquipmentResponse {
+  repeated UserEquipment equipment = 1;
+}
+
+message AddUserEquipmentRequest {
+  string name = 1;
+  string category = 2;
+  string brand = 3;
+  double weight = 4;
+  string unit = 5;
+}
+message AddUserEquipmentResponse {
+  UserEquipment equipment = 1;
+}
+
+message DeleteUserEquipmentRequest {
+  string id = 1;
+}
+message DeleteUserEquipmentResponse {}
+
+// ===== Workout Rivalries (F7P2.9) =====
+
+message WorkoutRivalry {
+  string id = 1;
+  string rival_name = 2;
+  string rival_avatar_url = 3;
+  double my_score = 4;
+  double rival_score = 5;
+  string status = 6; // active | won | lost | drawn
+  int64 ends_at = 7;
+}
+
+message ListWorkoutRivalriesRequest {}
+message ListWorkoutRivalriesResponse {
+  repeated WorkoutRivalry rivalries = 1;
+}
+
+message GetRivalryDetailRequest {
+  string rivalry_id = 1;
+}
+message GetRivalryDetailResponse {
+  WorkoutRivalry rivalry = 1;
+  repeated SessionMetricPoint my_progress_curve = 2;
+  repeated SessionMetricPoint rival_progress_curve = 3;
+}
+
 // ===== Rank ladder (F7.3) =====
 
 // RankBand is one rung of the forge rank ladder, with the metric
@@ -882,4 +969,365 @@ service WorkoutService {
   // estimated 1RM, volume/intensity/frequency). Aggregation here,
   // math in services_rust/scoring.
   rpc GetForgeAnalytics(GetForgeAnalyticsRequest) returns (GetForgeAnalyticsResponse);
+
+  // F7P2.7 — Session Replay & Analytics
+  rpc GetSessionAnalytics(GetSessionAnalyticsRequest) returns (GetSessionAnalyticsResponse);
+
+  // F7P2.8 — Equipment Vault
+  rpc ListUserEquipment(ListUserEquipmentRequest) returns (ListUserEquipmentResponse);
+  rpc AddUserEquipment(AddUserEquipmentRequest) returns (AddUserEquipmentResponse);
+  rpc DeleteUserEquipment(DeleteUserEquipmentRequest) returns (DeleteUserEquipmentResponse);
+
+  // F7P2.9 — Workout Rivalries
+  rpc ListWorkoutRivalries(ListWorkoutRivalriesRequest) returns (ListWorkoutRivalriesResponse);
+  rpc GetRivalryDetail(GetRivalryDetailRequest) returns (GetRivalryDetailResponse);
+
+  // F7P3.1 — What-if simulator. Project the forge-rank / Power / Agility /
+  // Grit change a hypothetical session would produce, via the Rust engine,
+  // without committing anything.
+  rpc SimulateForgeRank(SimulateForgeRankRequest) returns (SimulateForgeRankResponse);
+
+  // F7P3.2 — Recovery score. A 0-100 readiness gate composed from the
+  // lifter's recent training load (acute:chronic), streak momentum, and —
+  // when available — the Apex cross-pillar readiness signal (HRV / RHR /
+  // sleep). Drives the Today ring and the auto-deload nudge.
+  rpc GetRecoveryScore(GetRecoveryScoreRequest) returns (GetRecoveryScoreResponse);
+
+  // F7P3.3 — Coach concierge (Sovereign white-glove desk). Threaded
+  // member ↔ coach messaging with an SLA timer.
+  rpc StartCoachThread(StartCoachThreadRequest) returns (StartCoachThreadResponse);
+  rpc ListMyCoachThreads(ListMyCoachThreadsRequest) returns (ListMyCoachThreadsResponse);
+  rpc GetCoachThread(GetCoachThreadRequest) returns (GetCoachThreadResponse);
+  rpc PostCoachMessage(PostCoachMessageRequest) returns (PostCoachMessageResponse);
+
+  // F7P3.4 — Forge Anthology (named-author editorial long-reads).
+  rpc ListAnthologyArticles(ListAnthologyArticlesRequest) returns (ListAnthologyArticlesResponse);
+  rpc GetAnthologyArticle(GetAnthologyArticleRequest) returns (GetAnthologyArticleResponse);
+
+  // F7P3.5 — public athlete share. Mints a time-bound token backing a
+  // read-only public profile (rank + stats + PRs) at
+  // /share/athlete/:token, content-negotiated HTML / JSON.
+  rpc CreateAthleteShare(CreateAthleteShareRequest) returns (CreateAthleteShareResponse);
+  rpc ListMyAthleteShares(ListMyAthleteSharesRequest) returns (ListMyAthleteSharesResponse);
+  rpc RevokeAthleteShare(RevokeAthleteShareRequest) returns (RevokeAthleteShareResponse);
+
+  // F7P4.1 — Annual Forge Almanac. Renders a multi-page PDF of the lifter's
+  // training year (rank + stats + PR board + tonnage) to R2 + media_assets,
+  // returns the public URL.
+  rpc GenerateForgeAlmanac(GenerateForgeAlmanacRequest) returns (GenerateForgeAlmanacResponse);
+
+  // F7P4.2 — AI form-check. Runs a pose-heuristic pass over an uploaded form
+  // video and writes a one-line cue + verdict, flipping the clip to
+  // 'reviewed'. Heuristic until the Gemini vision pass is wired.
+  rpc AnalyzeFormVideo(AnalyzeFormVideoRequest) returns (AnalyzeFormVideoResponse);
+
+  // F7P5.1 — rivalry creation (challenge by handle, or a named rival).
+  rpc CreateRivalry(CreateRivalryRequest) returns (CreateRivalryResponse);
+
+  // F7P5.2 — leaderboard standings (ranked by forge_rank). The scheduled
+  // Sunday clout-drop publish is a separate cron job; this is the live query.
+  rpc GetLeaderboard(GetLeaderboardRequest) returns (GetLeaderboardResponse);
+
+  // F7P5.3 — Forge Lounge: physical recovery-room directory + booking flow.
+  rpc ListForgeLounges(ListForgeLoungesRequest) returns (ListForgeLoungesResponse);
+  rpc ListMyLoungeBookings(ListMyLoungeBookingsRequest) returns (ListMyLoungeBookingsResponse);
+  rpc CreateLoungeBooking(CreateLoungeBookingRequest) returns (CreateLoungeBookingResponse);
+  rpc CancelLoungeBooking(CancelLoungeBookingRequest) returns (CancelLoungeBookingResponse);
+
+  // F7P5.4 — coach directory + booking request. Payment-backed booking is
+  // deferred (Stripe); RequestCoachBooking files an interest request a coach
+  // can pick up.
+  rpc ListCoaches(ListCoachesRequest) returns (ListCoachesResponse);
+  rpc RequestCoachBooking(RequestCoachBookingRequest) returns (RequestCoachBookingResponse);
+}
+
+// ===== Rivalry creation (F7P5.1) =====
+
+message CreateRivalryRequest {
+  // Challenge by Empire handle when known; otherwise a free-text rival name
+  // (e.g. an off-platform training partner). One of the two must be set.
+  string rival_handle = 1;
+  string rival_name = 2;
+  // 0 = default 28-day block.
+  int32 duration_days = 3;
+}
+message CreateRivalryResponse {
+  WorkoutRivalry rivalry = 1;
+}
+
+// ===== Leaderboard (F7P5.2) =====
+
+message LeaderboardEntry {
+  int32 position = 1;
+  string name = 2;
+  string handle = 3;
+  double forge_rank = 4;
+  string rank_label = 5;
+  int32 power = 6;
+  int32 agility = 7;
+  int32 grit = 8;
+  bool is_me = 9;
+}
+
+message GetLeaderboardRequest {
+  // 0 = default (50). Clamped server-side to [1, 200].
+  int32 limit = 1;
+}
+message GetLeaderboardResponse {
+  repeated LeaderboardEntry entries = 1;
+  // The caller's own standing, even when outside the top N (position 0 if
+  // unranked). is_me is true on this entry.
+  LeaderboardEntry my_standing = 2;
+}
+
+// ===== Forge Lounge (F7P5.3) =====
+
+message ForgeLounge {
+  string id = 1;
+  string name = 2;
+  string city = 3;
+  string region = 4;
+  string description = 5;
+  repeated string amenities = 6;
+  string image_url = 7;
+  bool sovereign_only = 8;
+}
+
+message ForgeLoungeBooking {
+  string id = 1;
+  string lounge_id = 2;
+  string lounge_name = 3;
+  int64 slot_at_unix = 4;
+  string status = 5; // booked | cancelled | attended
+  int64 created_at_unix = 6;
+}
+
+message ListForgeLoungesRequest {}
+message ListForgeLoungesResponse {
+  repeated ForgeLounge lounges = 1;
+}
+
+message ListMyLoungeBookingsRequest {}
+message ListMyLoungeBookingsResponse {
+  repeated ForgeLoungeBooking bookings = 1;
+}
+
+message CreateLoungeBookingRequest {
+  string lounge_id = 1;
+  int64 slot_at_unix = 2;
+}
+message CreateLoungeBookingResponse {
+  ForgeLoungeBooking booking = 1;
+}
+
+message CancelLoungeBookingRequest {
+  string id = 1;
+}
+message CancelLoungeBookingResponse {}
+
+// ===== Coach directory (F7P5.4) =====
+
+message Coach {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string credentials = 4;
+  string specialty = 5;
+  string bio = 6;
+  string avatar_url = 7;
+  bool sovereign_only = 8;
+}
+
+message ListCoachesRequest {}
+message ListCoachesResponse {
+  repeated Coach coaches = 1;
+}
+
+message RequestCoachBookingRequest {
+  string coach_id = 1;
+  string note = 2;
+}
+message RequestCoachBookingResponse {
+  string request_id = 1;
+  // The coach-concierge desk picks this up; status starts 'requested'.
+  string status = 2;
+}
+
+// ===== Annual Forge Almanac (F7P4.1) =====
+
+message GenerateForgeAlmanacRequest {
+  // 0 = current calendar year.
+  int32 year = 1;
+}
+message GenerateForgeAlmanacResponse {
+  string media_asset_id = 1;
+  string url = 2;
+  int32 page_count = 3;
+}
+
+// ===== AI form-check (F7P4.2) =====
+
+message AnalyzeFormVideoRequest {
+  string form_video_id = 1;
+}
+message AnalyzeFormVideoResponse {
+  // The one-line coaching cue produced by the analysis.
+  string cue = 1;
+  // pass | needs_work — the headline verdict.
+  string verdict = 2;
+  // 0-100 confidence in the verdict.
+  int32 confidence = 3;
+}
+
+// ===== Public athlete share (F7P3.5) =====
+
+message AthleteShare {
+  string id = 1;
+  string token = 2;
+  string url = 3; // fully-qualified public URL
+  int64 created_at_unix = 4;
+  int64 expires_at_unix = 5;
+  bool revoked = 6;
+}
+
+message CreateAthleteShareRequest {
+  // 0 = default (14 days). Clamped server-side to [1, 90].
+  int32 ttl_days = 1;
+}
+message CreateAthleteShareResponse {
+  AthleteShare share = 1;
+}
+
+message ListMyAthleteSharesRequest {}
+message ListMyAthleteSharesResponse {
+  repeated AthleteShare shares = 1;
+}
+
+message RevokeAthleteShareRequest {
+  string id = 1;
+}
+message RevokeAthleteShareResponse {}
+
+// ===== Coach concierge (F7P3.3) — Sovereign white-glove desk =====
+
+message CoachThread {
+  string id = 1;
+  string subject = 2;
+  string status = 3; // open | resolved | waiting_member
+  int64 sla_due_at_unix = 4;
+  int64 created_at_unix = 5;
+  int64 updated_at_unix = 6;
+}
+
+message CoachMessage {
+  string id = 1;
+  string sender_role = 2; // member | coach | system
+  string body = 3;
+  int64 created_at_unix = 4;
+}
+
+message StartCoachThreadRequest {
+  string subject = 1;
+  string opening_message = 2;
+}
+message StartCoachThreadResponse {
+  CoachThread thread = 1;
+}
+
+message ListMyCoachThreadsRequest {}
+message ListMyCoachThreadsResponse {
+  repeated CoachThread threads = 1;
+}
+
+message GetCoachThreadRequest {
+  string thread_id = 1;
+}
+message GetCoachThreadResponse {
+  CoachThread thread = 1;
+  repeated CoachMessage messages = 2;
+}
+
+message PostCoachMessageRequest {
+  string thread_id = 1;
+  string body = 2;
+}
+message PostCoachMessageResponse {
+  CoachMessage message = 1;
+}
+
+// ===== Forge Anthology (F7P3.4) — named-author editorial =====
+
+message AnthologyArticle {
+  string id = 1;
+  string slug = 2;
+  string author_name = 3;
+  string author_credentials = 4;
+  string title = 5;
+  string dek = 6;
+  string body = 7;
+  string hero_url = 8;
+  int64 published_at_unix = 9;
+  bool sovereign_only = 10;
+}
+
+message ListAnthologyArticlesRequest {
+  bool include_sovereign = 1;
+}
+message ListAnthologyArticlesResponse {
+  // Bodies omitted in the list view; call GetAnthologyArticle for the full read.
+  repeated AnthologyArticle articles = 1;
+}
+
+message GetAnthologyArticleRequest {
+  string slug = 1;
+}
+message GetAnthologyArticleResponse {
+  AnthologyArticle article = 1;
+}
+
+// ===== What-if simulator (F7P3.1) =====
+
+message SimulateForgeRankRequest {
+  // The hypothetical session's working sets.
+  repeated Series series = 1;
+  // Optional strain context, mirrors LogDayWorkout.
+  StrainMetrics strain = 2;
+  bool is_verified = 3;
+}
+message SimulateForgeRankResponse {
+  // Current state (baseline the projection is measured against).
+  double current_forge_rank = 1;
+  string current_rank_label = 2;
+  // Projected state after the hypothetical session.
+  double projected_forge_rank = 3;
+  string projected_rank_label = 4;
+  // projected - current.
+  double forge_rank_delta = 5;
+  int64 experience_delta = 6;
+  int32 power_delta = 7;
+  int32 agility_delta = 8;
+  int32 grit_delta = 9;
+  // True when the projection would advance the lifter into a new band.
+  bool crosses_band = 10;
+}
+
+// ===== Recovery score (F7P3.2) =====
+
+message GetRecoveryScoreRequest {}
+message GetRecoveryScoreResponse {
+  // 0-100 composite readiness.
+  int32 score = 1;
+  // optimal | moderate | low | no-data
+  string verdict = 2;
+  // Plain-language one-liner on what drove the score.
+  string basis = 3;
+  // A training recommendation for today (e.g. "Full intensity — push the
+  // top sets." / "Deload: cut volume 30%.").
+  string recommendation = 4;
+  // Component breakdown (each 0-100, -1 when the input is unavailable).
+  int32 load_component = 5;    // from acute:chronic ratio
+  int32 streak_component = 6;  // from training-day momentum
+  int32 apex_component = 7;    // from the Apex cross-pillar readiness signal
+  // True when the Apex readiness signal fed the score.
+  bool apex_linked = 8;
 }

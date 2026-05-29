@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CheckEmailRequest, CheckEmailResponse, LinkAppRequest, LinkAppResponse, LoginRequest, LoginResponse, LogoutRequest, LogoutResponse, RefreshRequest, RefreshResponse, RegisterRequest, RegisterResponse } from "./auth_pb.js";
+import { CheckEmailRequest, CheckEmailResponse, ForgotPasswordRequest, ForgotPasswordResponse, LinkAppRequest, LinkAppResponse, LinkProviderRequest, LinkProviderResponse, LoginRequest, LoginResponse, LogoutRequest, LogoutResponse, OAuthLoginRequest, OAuthLoginResponse, RefreshRequest, RefreshResponse, RegisterRequest, RegisterResponse, ResetPasswordRequest, ResetPasswordResponse, SetPasswordRequest, SetPasswordResponse } from "./auth_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -31,6 +31,15 @@ export const AuthService = {
       kind: MethodKind.Unary,
     },
     /**
+     * @generated from rpc sttattus.auth.v1.AuthService.OAuthLogin
+     */
+    oAuthLogin: {
+      name: "OAuthLogin",
+      I: OAuthLoginRequest,
+      O: OAuthLoginResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * @generated from rpc sttattus.auth.v1.AuthService.CheckEmail
      */
     checkEmail: {
@@ -46,6 +55,42 @@ export const AuthService = {
       name: "LinkApp",
       I: LinkAppRequest,
       O: LinkAppResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.auth.v1.AuthService.LinkProvider
+     */
+    linkProvider: {
+      name: "LinkProvider",
+      I: LinkProviderRequest,
+      O: LinkProviderResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.auth.v1.AuthService.SetPassword
+     */
+    setPassword: {
+      name: "SetPassword",
+      I: SetPasswordRequest,
+      O: SetPasswordResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.auth.v1.AuthService.ForgotPassword
+     */
+    forgotPassword: {
+      name: "ForgotPassword",
+      I: ForgotPasswordRequest,
+      O: ForgotPasswordResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.auth.v1.AuthService.ResetPassword
+     */
+    resetPassword: {
+      name: "ResetPassword",
+      I: ResetPasswordRequest,
+      O: ResetPasswordResponse,
       kind: MethodKind.Unary,
     },
     /**

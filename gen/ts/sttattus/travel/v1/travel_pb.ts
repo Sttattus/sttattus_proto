@@ -2064,3 +2064,385 @@ export class SetMilestoneVisibilityResponse extends Message<SetMilestoneVisibili
   }
 }
 
+/**
+ * @generated from message sttattus.travel.v1.GetPassportSurfaceRequest
+ */
+export class GetPassportSurfaceRequest extends Message<GetPassportSurfaceRequest> {
+  constructor(data?: PartialMessage<GetPassportSurfaceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.GetPassportSurfaceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPassportSurfaceRequest {
+    return new GetPassportSurfaceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPassportSurfaceRequest {
+    return new GetPassportSurfaceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPassportSurfaceRequest {
+    return new GetPassportSurfaceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPassportSurfaceRequest | PlainMessage<GetPassportSurfaceRequest> | undefined, b: GetPassportSurfaceRequest | PlainMessage<GetPassportSurfaceRequest> | undefined): boolean {
+    return proto3.util.equals(GetPassportSurfaceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.GetPassportSurfaceResponse
+ */
+export class GetPassportSurfaceResponse extends Message<GetPassportSurfaceResponse> {
+  /**
+   * @generated from field: repeated sttattus.travel.v1.VisitedCountry countries = 1;
+   */
+  countries: VisitedCountry[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.travel.v1.VerificationSignals all_signals = 2;
+   */
+  allSignals: VerificationSignals[] = [];
+
+  /**
+   * @generated from field: int32 total_stamps = 3;
+   */
+  totalStamps = 0;
+
+  constructor(data?: PartialMessage<GetPassportSurfaceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.GetPassportSurfaceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "countries", kind: "message", T: VisitedCountry, repeated: true },
+    { no: 2, name: "all_signals", kind: "message", T: VerificationSignals, repeated: true },
+    { no: 3, name: "total_stamps", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPassportSurfaceResponse {
+    return new GetPassportSurfaceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPassportSurfaceResponse {
+    return new GetPassportSurfaceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPassportSurfaceResponse {
+    return new GetPassportSurfaceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPassportSurfaceResponse | PlainMessage<GetPassportSurfaceResponse> | undefined, b: GetPassportSurfaceResponse | PlainMessage<GetPassportSurfaceResponse> | undefined): boolean {
+    return proto3.util.equals(GetPassportSurfaceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.LoungeDetail
+ */
+export class LoungeDetail extends Message<LoungeDetail> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string city = 3;
+   */
+  city = "";
+
+  /**
+   * @generated from field: string location_description = 4;
+   */
+  locationDescription = "";
+
+  /**
+   * e.g. 'Quiet', 'Busy'
+   *
+   * @generated from field: string live_capacity_status = 5;
+   */
+  liveCapacityStatus = "";
+
+  /**
+   * @generated from field: repeated string amenities = 6;
+   */
+  amenities: string[] = [];
+
+  /**
+   * @generated from field: string current_menu_url = 7;
+   */
+  currentMenuUrl = "";
+
+  constructor(data?: PartialMessage<LoungeDetail>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.LoungeDetail";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "location_description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "live_capacity_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "amenities", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 7, name: "current_menu_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LoungeDetail {
+    return new LoungeDetail().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LoungeDetail {
+    return new LoungeDetail().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LoungeDetail {
+    return new LoungeDetail().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LoungeDetail | PlainMessage<LoungeDetail> | undefined, b: LoungeDetail | PlainMessage<LoungeDetail> | undefined): boolean {
+    return proto3.util.equals(LoungeDetail, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.GetLoungeConciergeRequest
+ */
+export class GetLoungeConciergeRequest extends Message<GetLoungeConciergeRequest> {
+  /**
+   * @generated from field: double latitude = 1;
+   */
+  latitude = 0;
+
+  /**
+   * @generated from field: double longitude = 2;
+   */
+  longitude = 0;
+
+  constructor(data?: PartialMessage<GetLoungeConciergeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.GetLoungeConciergeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "latitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "longitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLoungeConciergeRequest {
+    return new GetLoungeConciergeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLoungeConciergeRequest {
+    return new GetLoungeConciergeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLoungeConciergeRequest {
+    return new GetLoungeConciergeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLoungeConciergeRequest | PlainMessage<GetLoungeConciergeRequest> | undefined, b: GetLoungeConciergeRequest | PlainMessage<GetLoungeConciergeRequest> | undefined): boolean {
+    return proto3.util.equals(GetLoungeConciergeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.GetLoungeConciergeResponse
+ */
+export class GetLoungeConciergeResponse extends Message<GetLoungeConciergeResponse> {
+  /**
+   * @generated from field: sttattus.travel.v1.LoungeDetail nearest_lounge = 1;
+   */
+  nearestLounge?: LoungeDetail;
+
+  /**
+   * @generated from field: repeated sttattus.travel.v1.LoungeDetail other_lounges = 2;
+   */
+  otherLounges: LoungeDetail[] = [];
+
+  constructor(data?: PartialMessage<GetLoungeConciergeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.GetLoungeConciergeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "nearest_lounge", kind: "message", T: LoungeDetail },
+    { no: 2, name: "other_lounges", kind: "message", T: LoungeDetail, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLoungeConciergeResponse {
+    return new GetLoungeConciergeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLoungeConciergeResponse {
+    return new GetLoungeConciergeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLoungeConciergeResponse {
+    return new GetLoungeConciergeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLoungeConciergeResponse | PlainMessage<GetLoungeConciergeResponse> | undefined, b: GetLoungeConciergeResponse | PlainMessage<GetLoungeConciergeResponse> | undefined): boolean {
+    return proto3.util.equals(GetLoungeConciergeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.TripArchiveEntry
+ */
+export class TripArchiveEntry extends Message<TripArchiveEntry> {
+  /**
+   * @generated from field: sttattus.travel.v1.Trip trip = 1;
+   */
+  trip?: Trip;
+
+  /**
+   * from Apex
+   *
+   * @generated from field: double avg_hrv = 2;
+   */
+  avgHrv = 0;
+
+  /**
+   * from Forge
+   *
+   * @generated from field: int32 total_workouts = 3;
+   */
+  totalWorkouts = 0;
+
+  /**
+   * from Vault
+   *
+   * @generated from field: double total_spend = 4;
+   */
+  totalSpend = 0;
+
+  constructor(data?: PartialMessage<TripArchiveEntry>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.TripArchiveEntry";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "trip", kind: "message", T: Trip },
+    { no: 2, name: "avg_hrv", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "total_workouts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "total_spend", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TripArchiveEntry {
+    return new TripArchiveEntry().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TripArchiveEntry {
+    return new TripArchiveEntry().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TripArchiveEntry {
+    return new TripArchiveEntry().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TripArchiveEntry | PlainMessage<TripArchiveEntry> | undefined, b: TripArchiveEntry | PlainMessage<TripArchiveEntry> | undefined): boolean {
+    return proto3.util.equals(TripArchiveEntry, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.GetTripArchiveRequest
+ */
+export class GetTripArchiveRequest extends Message<GetTripArchiveRequest> {
+  /**
+   * @generated from field: sttattus.common.v1.PageRequest page = 1;
+   */
+  page?: PageRequest;
+
+  constructor(data?: PartialMessage<GetTripArchiveRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.GetTripArchiveRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "page", kind: "message", T: PageRequest },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTripArchiveRequest {
+    return new GetTripArchiveRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTripArchiveRequest {
+    return new GetTripArchiveRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTripArchiveRequest {
+    return new GetTripArchiveRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTripArchiveRequest | PlainMessage<GetTripArchiveRequest> | undefined, b: GetTripArchiveRequest | PlainMessage<GetTripArchiveRequest> | undefined): boolean {
+    return proto3.util.equals(GetTripArchiveRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.GetTripArchiveResponse
+ */
+export class GetTripArchiveResponse extends Message<GetTripArchiveResponse> {
+  /**
+   * @generated from field: repeated sttattus.travel.v1.TripArchiveEntry entries = 1;
+   */
+  entries: TripArchiveEntry[] = [];
+
+  /**
+   * @generated from field: sttattus.common.v1.PageResponse page = 2;
+   */
+  page?: PageResponse;
+
+  constructor(data?: PartialMessage<GetTripArchiveResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.GetTripArchiveResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entries", kind: "message", T: TripArchiveEntry, repeated: true },
+    { no: 2, name: "page", kind: "message", T: PageResponse },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTripArchiveResponse {
+    return new GetTripArchiveResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTripArchiveResponse {
+    return new GetTripArchiveResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTripArchiveResponse {
+    return new GetTripArchiveResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTripArchiveResponse | PlainMessage<GetTripArchiveResponse> | undefined, b: GetTripArchiveResponse | PlainMessage<GetTripArchiveResponse> | undefined): boolean {
+    return proto3.util.equals(GetTripArchiveResponse, a, b);
+  }
+}
+

@@ -1723,14 +1723,29 @@ export class OracleThreadMessage extends Message<OracleThreadMessage> {
   response = "";
 
   /**
-   * @generated from field: string domain = 5;
+   * @generated from field: sttattus.oracle.v1.StrategicDomain domain = 5;
    */
-  domain = "";
+  domain = StrategicDomain.UNSPECIFIED;
 
   /**
    * @generated from field: int64 created_unix = 6;
    */
   createdUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: double complexity_score = 7;
+   */
+  complexityScore = 0;
+
+  /**
+   * @generated from field: double synthesis_score = 8;
+   */
+  synthesisScore = 0;
+
+  /**
+   * @generated from field: double foresight_score = 9;
+   */
+  foresightScore = 0;
 
   constructor(data?: PartialMessage<OracleThreadMessage>) {
     super();
@@ -1744,8 +1759,11 @@ export class OracleThreadMessage extends Message<OracleThreadMessage> {
     { no: 2, name: "thread_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "response", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "domain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "domain", kind: "enum", T: proto3.getEnumType(StrategicDomain) },
     { no: 6, name: "created_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "complexity_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "synthesis_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 9, name: "foresight_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleThreadMessage {

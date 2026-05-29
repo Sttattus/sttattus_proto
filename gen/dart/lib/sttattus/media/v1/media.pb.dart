@@ -179,10 +179,12 @@ class RequestUploadRequest extends $pb.GeneratedMessage {
   factory RequestUploadRequest({
     $core.String? mime,
     $fixnum.Int64? size,
+    $core.String? category,
   }) {
     final result = create();
     if (mime != null) result.mime = mime;
     if (size != null) result.size = size;
+    if (category != null) result.category = category;
     return result;
   }
 
@@ -194,6 +196,7 @@ class RequestUploadRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RequestUploadRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.media.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'mime')
     ..aInt64(2, _omitFieldNames ? '' : 'size')
+    ..aOS(3, _omitFieldNames ? '' : 'category')
     ..hasRequiredFields = false
   ;
 
@@ -231,6 +234,21 @@ class RequestUploadRequest extends $pb.GeneratedMessage {
   $core.bool hasSize() => $_has(1);
   @$pb.TagNumber(2)
   void clearSize() => $_clearField(2);
+
+  /// Optional logical category that determines the R2 key prefix under
+  /// the owner's namespace. Format: "<pillar>/<bucket>", e.g.
+  /// "apex/documents" for lab-report PDFs, "vault/statements" for
+  /// brokerage statements. Empty falls back to the legacy "uploads/"
+  /// prefix. Validated server-side against an allow-list so clients
+  /// can't write into arbitrary buckets.
+  @$pb.TagNumber(3)
+  $core.String get category => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set category($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCategory() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCategory() => $_clearField(3);
 }
 
 class RequestUploadResponse extends $pb.GeneratedMessage {

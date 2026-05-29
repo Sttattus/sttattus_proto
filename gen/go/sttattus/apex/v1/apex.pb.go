@@ -855,9 +855,16 @@ type GetApexAgeResponse struct {
 	ChronologicalAgePresent bool    `protobuf:"varint,3,opt,name=chronological_age_present,json=chronologicalAgePresent,proto3" json:"chronological_age_present,omitempty"`
 	ChronologicalAge        float64 `protobuf:"fixed64,4,opt,name=chronological_age,json=chronologicalAge,proto3" json:"chronological_age,omitempty"`
 	// Map of system_id (e.g. 'cardiovascular') -> score 0..100.
-	SystemScores  map[string]float64 `protobuf:"bytes,5,rep,name=system_scores,json=systemScores,proto3" json:"system_scores,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed64,2,opt,name=value"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	SystemScores map[string]float64 `protobuf:"bytes,5,rep,name=system_scores,json=systemScores,proto3" json:"system_scores,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed64,2,opt,name=value"`
+	// Which scoring path produced biological_age. "phenoage" = real
+	// Levine 2018 formula (all 9 markers + DOB present). "deviation" =
+	// optimal-range fallback against apex_biomarker_refs. "insufficient"
+	// = we couldn't compute a biological age.
+	Method         string   `protobuf:"bytes,6,opt,name=method,proto3" json:"method,omitempty"`
+	MarkersUsed    []string `protobuf:"bytes,7,rep,name=markers_used,json=markersUsed,proto3" json:"markers_used,omitempty"`
+	MarkersMissing []string `protobuf:"bytes,8,rep,name=markers_missing,json=markersMissing,proto3" json:"markers_missing,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *GetApexAgeResponse) Reset() {
@@ -921,6 +928,27 @@ func (x *GetApexAgeResponse) GetChronologicalAge() float64 {
 func (x *GetApexAgeResponse) GetSystemScores() map[string]float64 {
 	if x != nil {
 		return x.SystemScores
+	}
+	return nil
+}
+
+func (x *GetApexAgeResponse) GetMethod() string {
+	if x != nil {
+		return x.Method
+	}
+	return ""
+}
+
+func (x *GetApexAgeResponse) GetMarkersUsed() []string {
+	if x != nil {
+		return x.MarkersUsed
+	}
+	return nil
+}
+
+func (x *GetApexAgeResponse) GetMarkersMissing() []string {
+	if x != nil {
+		return x.MarkersMissing
 	}
 	return nil
 }
@@ -3122,6 +3150,5536 @@ func (x *ListMyApexClinicIntroRequestsResponse) GetRequests() []*ApexClinicIntro
 	return nil
 }
 
+type Supplement struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug           string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Name           string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Category       string                 `protobuf:"bytes,4,opt,name=category,proto3" json:"category,omitempty"` // longevity | sleep | cognitive | recovery | gut | hormones
+	Description    string                 `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
+	EvidenceRating string                 `protobuf:"bytes,6,opt,name=evidence_rating,json=evidenceRating,proto3" json:"evidence_rating,omitempty"` // A | B | C
+	DefaultDoseMg  float64                `protobuf:"fixed64,7,opt,name=default_dose_mg,json=defaultDoseMg,proto3" json:"default_dose_mg,omitempty"`
+	SovereignOnly  bool                   `protobuf:"varint,8,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *Supplement) Reset() {
+	*x = Supplement{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[53]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Supplement) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Supplement) ProtoMessage() {}
+
+func (x *Supplement) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[53]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Supplement.ProtoReflect.Descriptor instead.
+func (*Supplement) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{53}
+}
+
+func (x *Supplement) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Supplement) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *Supplement) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Supplement) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *Supplement) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *Supplement) GetEvidenceRating() string {
+	if x != nil {
+		return x.EvidenceRating
+	}
+	return ""
+}
+
+func (x *Supplement) GetDefaultDoseMg() float64 {
+	if x != nil {
+		return x.DefaultDoseMg
+	}
+	return 0
+}
+
+func (x *Supplement) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+type UserSupplement struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Supplement    *Supplement            `protobuf:"bytes,2,opt,name=supplement,proto3" json:"supplement,omitempty"`
+	DoseMg        float64                `protobuf:"fixed64,3,opt,name=dose_mg,json=doseMg,proto3" json:"dose_mg,omitempty"`
+	Schedule      string                 `protobuf:"bytes,4,opt,name=schedule,proto3" json:"schedule,omitempty"` // e.g. "morning", "evening", "with-food"
+	StartedAtUnix int64                  `protobuf:"varint,5,opt,name=started_at_unix,json=startedAtUnix,proto3" json:"started_at_unix,omitempty"`
+	Active        bool                   `protobuf:"varint,6,opt,name=active,proto3" json:"active,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UserSupplement) Reset() {
+	*x = UserSupplement{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[54]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UserSupplement) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserSupplement) ProtoMessage() {}
+
+func (x *UserSupplement) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[54]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserSupplement.ProtoReflect.Descriptor instead.
+func (*UserSupplement) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{54}
+}
+
+func (x *UserSupplement) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UserSupplement) GetSupplement() *Supplement {
+	if x != nil {
+		return x.Supplement
+	}
+	return nil
+}
+
+func (x *UserSupplement) GetDoseMg() float64 {
+	if x != nil {
+		return x.DoseMg
+	}
+	return 0
+}
+
+func (x *UserSupplement) GetSchedule() string {
+	if x != nil {
+		return x.Schedule
+	}
+	return ""
+}
+
+func (x *UserSupplement) GetStartedAtUnix() int64 {
+	if x != nil {
+		return x.StartedAtUnix
+	}
+	return 0
+}
+
+func (x *UserSupplement) GetActive() bool {
+	if x != nil {
+		return x.Active
+	}
+	return false
+}
+
+type SupplementInteraction struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ASlug         string                 `protobuf:"bytes,1,opt,name=a_slug,json=aSlug,proto3" json:"a_slug,omitempty"`
+	BSlug         string                 `protobuf:"bytes,2,opt,name=b_slug,json=bSlug,proto3" json:"b_slug,omitempty"`
+	Severity      string                 `protobuf:"bytes,3,opt,name=severity,proto3" json:"severity,omitempty"` // info | caution | avoid
+	Note          string                 `protobuf:"bytes,4,opt,name=note,proto3" json:"note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SupplementInteraction) Reset() {
+	*x = SupplementInteraction{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[55]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SupplementInteraction) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SupplementInteraction) ProtoMessage() {}
+
+func (x *SupplementInteraction) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[55]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SupplementInteraction.ProtoReflect.Descriptor instead.
+func (*SupplementInteraction) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{55}
+}
+
+func (x *SupplementInteraction) GetASlug() string {
+	if x != nil {
+		return x.ASlug
+	}
+	return ""
+}
+
+func (x *SupplementInteraction) GetBSlug() string {
+	if x != nil {
+		return x.BSlug
+	}
+	return ""
+}
+
+func (x *SupplementInteraction) GetSeverity() string {
+	if x != nil {
+		return x.Severity
+	}
+	return ""
+}
+
+func (x *SupplementInteraction) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
+}
+
+type ListSupplementsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Category      string                 `protobuf:"bytes,1,opt,name=category,proto3" json:"category,omitempty"` // optional filter
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListSupplementsRequest) Reset() {
+	*x = ListSupplementsRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[56]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListSupplementsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSupplementsRequest) ProtoMessage() {}
+
+func (x *ListSupplementsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[56]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSupplementsRequest.ProtoReflect.Descriptor instead.
+func (*ListSupplementsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{56}
+}
+
+func (x *ListSupplementsRequest) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+type ListSupplementsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Supplements   []*Supplement          `protobuf:"bytes,1,rep,name=supplements,proto3" json:"supplements,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListSupplementsResponse) Reset() {
+	*x = ListSupplementsResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[57]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListSupplementsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSupplementsResponse) ProtoMessage() {}
+
+func (x *ListSupplementsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[57]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSupplementsResponse.ProtoReflect.Descriptor instead.
+func (*ListSupplementsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{57}
+}
+
+func (x *ListSupplementsResponse) GetSupplements() []*Supplement {
+	if x != nil {
+		return x.Supplements
+	}
+	return nil
+}
+
+type ListMySupplementsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMySupplementsRequest) Reset() {
+	*x = ListMySupplementsRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[58]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMySupplementsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMySupplementsRequest) ProtoMessage() {}
+
+func (x *ListMySupplementsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[58]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMySupplementsRequest.ProtoReflect.Descriptor instead.
+func (*ListMySupplementsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{58}
+}
+
+type ListMySupplementsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Stack         []*UserSupplement      `protobuf:"bytes,1,rep,name=stack,proto3" json:"stack,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMySupplementsResponse) Reset() {
+	*x = ListMySupplementsResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[59]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMySupplementsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMySupplementsResponse) ProtoMessage() {}
+
+func (x *ListMySupplementsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[59]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMySupplementsResponse.ProtoReflect.Descriptor instead.
+func (*ListMySupplementsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{59}
+}
+
+func (x *ListMySupplementsResponse) GetStack() []*UserSupplement {
+	if x != nil {
+		return x.Stack
+	}
+	return nil
+}
+
+type AddSupplementRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SupplementId  string                 `protobuf:"bytes,1,opt,name=supplement_id,json=supplementId,proto3" json:"supplement_id,omitempty"`
+	DoseMg        float64                `protobuf:"fixed64,2,opt,name=dose_mg,json=doseMg,proto3" json:"dose_mg,omitempty"`
+	Schedule      string                 `protobuf:"bytes,3,opt,name=schedule,proto3" json:"schedule,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddSupplementRequest) Reset() {
+	*x = AddSupplementRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[60]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddSupplementRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddSupplementRequest) ProtoMessage() {}
+
+func (x *AddSupplementRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[60]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddSupplementRequest.ProtoReflect.Descriptor instead.
+func (*AddSupplementRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{60}
+}
+
+func (x *AddSupplementRequest) GetSupplementId() string {
+	if x != nil {
+		return x.SupplementId
+	}
+	return ""
+}
+
+func (x *AddSupplementRequest) GetDoseMg() float64 {
+	if x != nil {
+		return x.DoseMg
+	}
+	return 0
+}
+
+func (x *AddSupplementRequest) GetSchedule() string {
+	if x != nil {
+		return x.Schedule
+	}
+	return ""
+}
+
+type AddSupplementResponse struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Entry         *UserSupplement          `protobuf:"bytes,1,opt,name=entry,proto3" json:"entry,omitempty"`
+	Warnings      []*SupplementInteraction `protobuf:"bytes,2,rep,name=warnings,proto3" json:"warnings,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddSupplementResponse) Reset() {
+	*x = AddSupplementResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[61]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddSupplementResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddSupplementResponse) ProtoMessage() {}
+
+func (x *AddSupplementResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[61]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddSupplementResponse.ProtoReflect.Descriptor instead.
+func (*AddSupplementResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{61}
+}
+
+func (x *AddSupplementResponse) GetEntry() *UserSupplement {
+	if x != nil {
+		return x.Entry
+	}
+	return nil
+}
+
+func (x *AddSupplementResponse) GetWarnings() []*SupplementInteraction {
+	if x != nil {
+		return x.Warnings
+	}
+	return nil
+}
+
+type RemoveSupplementRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	UserSupplementId string                 `protobuf:"bytes,1,opt,name=user_supplement_id,json=userSupplementId,proto3" json:"user_supplement_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *RemoveSupplementRequest) Reset() {
+	*x = RemoveSupplementRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[62]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveSupplementRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveSupplementRequest) ProtoMessage() {}
+
+func (x *RemoveSupplementRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[62]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveSupplementRequest.ProtoReflect.Descriptor instead.
+func (*RemoveSupplementRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{62}
+}
+
+func (x *RemoveSupplementRequest) GetUserSupplementId() string {
+	if x != nil {
+		return x.UserSupplementId
+	}
+	return ""
+}
+
+type RemoveSupplementResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemoveSupplementResponse) Reset() {
+	*x = RemoveSupplementResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[63]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveSupplementResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveSupplementResponse) ProtoMessage() {}
+
+func (x *RemoveSupplementResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[63]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveSupplementResponse.ProtoReflect.Descriptor instead.
+func (*RemoveSupplementResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{63}
+}
+
+type ListSupplementInteractionsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Slug          string                 `protobuf:"bytes,1,opt,name=slug,proto3" json:"slug,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListSupplementInteractionsRequest) Reset() {
+	*x = ListSupplementInteractionsRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[64]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListSupplementInteractionsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSupplementInteractionsRequest) ProtoMessage() {}
+
+func (x *ListSupplementInteractionsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[64]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSupplementInteractionsRequest.ProtoReflect.Descriptor instead.
+func (*ListSupplementInteractionsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{64}
+}
+
+func (x *ListSupplementInteractionsRequest) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+type ListSupplementInteractionsResponse struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Interactions  []*SupplementInteraction `protobuf:"bytes,1,rep,name=interactions,proto3" json:"interactions,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListSupplementInteractionsResponse) Reset() {
+	*x = ListSupplementInteractionsResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[65]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListSupplementInteractionsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSupplementInteractionsResponse) ProtoMessage() {}
+
+func (x *ListSupplementInteractionsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[65]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSupplementInteractionsResponse.ProtoReflect.Descriptor instead.
+func (*ListSupplementInteractionsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{65}
+}
+
+func (x *ListSupplementInteractionsResponse) GetInteractions() []*SupplementInteraction {
+	if x != nil {
+		return x.Interactions
+	}
+	return nil
+}
+
+type GlucoseReading struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ValueMgDl      float64                `protobuf:"fixed64,2,opt,name=value_mg_dl,json=valueMgDl,proto3" json:"value_mg_dl,omitempty"`
+	RecordedAtUnix int64                  `protobuf:"varint,3,opt,name=recorded_at_unix,json=recordedAtUnix,proto3" json:"recorded_at_unix,omitempty"`
+	Source         string                 `protobuf:"bytes,4,opt,name=source,proto3" json:"source,omitempty"` // dexcom | libre | manual
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *GlucoseReading) Reset() {
+	*x = GlucoseReading{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[66]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GlucoseReading) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GlucoseReading) ProtoMessage() {}
+
+func (x *GlucoseReading) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[66]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GlucoseReading.ProtoReflect.Descriptor instead.
+func (*GlucoseReading) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{66}
+}
+
+func (x *GlucoseReading) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *GlucoseReading) GetValueMgDl() float64 {
+	if x != nil {
+		return x.ValueMgDl
+	}
+	return 0
+}
+
+func (x *GlucoseReading) GetRecordedAtUnix() int64 {
+	if x != nil {
+		return x.RecordedAtUnix
+	}
+	return 0
+}
+
+func (x *GlucoseReading) GetSource() string {
+	if x != nil {
+		return x.Source
+	}
+	return ""
+}
+
+type ListMyGlucoseRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Hours         int32                  `protobuf:"varint,1,opt,name=hours,proto3" json:"hours,omitempty"` // window in hours; 0 = last 24h
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyGlucoseRequest) Reset() {
+	*x = ListMyGlucoseRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[67]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyGlucoseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyGlucoseRequest) ProtoMessage() {}
+
+func (x *ListMyGlucoseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[67]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyGlucoseRequest.ProtoReflect.Descriptor instead.
+func (*ListMyGlucoseRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{67}
+}
+
+func (x *ListMyGlucoseRequest) GetHours() int32 {
+	if x != nil {
+		return x.Hours
+	}
+	return 0
+}
+
+type ListMyGlucoseResponse struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Readings       []*GlucoseReading      `protobuf:"bytes,1,rep,name=readings,proto3" json:"readings,omitempty"`
+	MeanMgDl       float64                `protobuf:"fixed64,2,opt,name=mean_mg_dl,json=meanMgDl,proto3" json:"mean_mg_dl,omitempty"`
+	TimeInRangePct float64                `protobuf:"fixed64,3,opt,name=time_in_range_pct,json=timeInRangePct,proto3" json:"time_in_range_pct,omitempty"` // 70-180 mg/dL
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *ListMyGlucoseResponse) Reset() {
+	*x = ListMyGlucoseResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[68]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyGlucoseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyGlucoseResponse) ProtoMessage() {}
+
+func (x *ListMyGlucoseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[68]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyGlucoseResponse.ProtoReflect.Descriptor instead.
+func (*ListMyGlucoseResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *ListMyGlucoseResponse) GetReadings() []*GlucoseReading {
+	if x != nil {
+		return x.Readings
+	}
+	return nil
+}
+
+func (x *ListMyGlucoseResponse) GetMeanMgDl() float64 {
+	if x != nil {
+		return x.MeanMgDl
+	}
+	return 0
+}
+
+func (x *ListMyGlucoseResponse) GetTimeInRangePct() float64 {
+	if x != nil {
+		return x.TimeInRangePct
+	}
+	return 0
+}
+
+type IngestGlucoseReadingRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	ValueMgDl      float64                `protobuf:"fixed64,1,opt,name=value_mg_dl,json=valueMgDl,proto3" json:"value_mg_dl,omitempty"`
+	RecordedAtUnix int64                  `protobuf:"varint,2,opt,name=recorded_at_unix,json=recordedAtUnix,proto3" json:"recorded_at_unix,omitempty"` // 0 = now
+	Source         string                 `protobuf:"bytes,3,opt,name=source,proto3" json:"source,omitempty"`                                          // defaults to "manual"
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *IngestGlucoseReadingRequest) Reset() {
+	*x = IngestGlucoseReadingRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[69]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IngestGlucoseReadingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IngestGlucoseReadingRequest) ProtoMessage() {}
+
+func (x *IngestGlucoseReadingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[69]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IngestGlucoseReadingRequest.ProtoReflect.Descriptor instead.
+func (*IngestGlucoseReadingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{69}
+}
+
+func (x *IngestGlucoseReadingRequest) GetValueMgDl() float64 {
+	if x != nil {
+		return x.ValueMgDl
+	}
+	return 0
+}
+
+func (x *IngestGlucoseReadingRequest) GetRecordedAtUnix() int64 {
+	if x != nil {
+		return x.RecordedAtUnix
+	}
+	return 0
+}
+
+func (x *IngestGlucoseReadingRequest) GetSource() string {
+	if x != nil {
+		return x.Source
+	}
+	return ""
+}
+
+type IngestGlucoseReadingResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Reading       *GlucoseReading        `protobuf:"bytes,1,opt,name=reading,proto3" json:"reading,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *IngestGlucoseReadingResponse) Reset() {
+	*x = IngestGlucoseReadingResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[70]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IngestGlucoseReadingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IngestGlucoseReadingResponse) ProtoMessage() {}
+
+func (x *IngestGlucoseReadingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[70]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IngestGlucoseReadingResponse.ProtoReflect.Descriptor instead.
+func (*IngestGlucoseReadingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *IngestGlucoseReadingResponse) GetReading() *GlucoseReading {
+	if x != nil {
+		return x.Reading
+	}
+	return nil
+}
+
+type CycleStatus struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Present            bool                   `protobuf:"varint,1,opt,name=present,proto3" json:"present,omitempty"`
+	Phase              string                 `protobuf:"bytes,2,opt,name=phase,proto3" json:"phase,omitempty"` // menstrual | follicular | ovulation | luteal | unknown
+	CycleDay           int32                  `protobuf:"varint,3,opt,name=cycle_day,json=cycleDay,proto3" json:"cycle_day,omitempty"`
+	NextPeriodEstimate string                 `protobuf:"bytes,4,opt,name=next_period_estimate,json=nextPeriodEstimate,proto3" json:"next_period_estimate,omitempty"` // YYYY-MM-DD or empty
+	LastPeriodStart    string                 `protobuf:"bytes,5,opt,name=last_period_start,json=lastPeriodStart,proto3" json:"last_period_start,omitempty"`
+	AverageCycleDays   int32                  `protobuf:"varint,6,opt,name=average_cycle_days,json=averageCycleDays,proto3" json:"average_cycle_days,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *CycleStatus) Reset() {
+	*x = CycleStatus{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[71]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CycleStatus) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CycleStatus) ProtoMessage() {}
+
+func (x *CycleStatus) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[71]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CycleStatus.ProtoReflect.Descriptor instead.
+func (*CycleStatus) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *CycleStatus) GetPresent() bool {
+	if x != nil {
+		return x.Present
+	}
+	return false
+}
+
+func (x *CycleStatus) GetPhase() string {
+	if x != nil {
+		return x.Phase
+	}
+	return ""
+}
+
+func (x *CycleStatus) GetCycleDay() int32 {
+	if x != nil {
+		return x.CycleDay
+	}
+	return 0
+}
+
+func (x *CycleStatus) GetNextPeriodEstimate() string {
+	if x != nil {
+		return x.NextPeriodEstimate
+	}
+	return ""
+}
+
+func (x *CycleStatus) GetLastPeriodStart() string {
+	if x != nil {
+		return x.LastPeriodStart
+	}
+	return ""
+}
+
+func (x *CycleStatus) GetAverageCycleDays() int32 {
+	if x != nil {
+		return x.AverageCycleDays
+	}
+	return 0
+}
+
+type CycleSymptom struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RecordedOn    string                 `protobuf:"bytes,2,opt,name=recorded_on,json=recordedOn,proto3" json:"recorded_on,omitempty"` // YYYY-MM-DD
+	Kind          string                 `protobuf:"bytes,3,opt,name=kind,proto3" json:"kind,omitempty"`
+	Intensity     int32                  `protobuf:"varint,4,opt,name=intensity,proto3" json:"intensity,omitempty"` // 1-5
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CycleSymptom) Reset() {
+	*x = CycleSymptom{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[72]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CycleSymptom) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CycleSymptom) ProtoMessage() {}
+
+func (x *CycleSymptom) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[72]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CycleSymptom.ProtoReflect.Descriptor instead.
+func (*CycleSymptom) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{72}
+}
+
+func (x *CycleSymptom) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CycleSymptom) GetRecordedOn() string {
+	if x != nil {
+		return x.RecordedOn
+	}
+	return ""
+}
+
+func (x *CycleSymptom) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *CycleSymptom) GetIntensity() int32 {
+	if x != nil {
+		return x.Intensity
+	}
+	return 0
+}
+
+type GetCycleStatusRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCycleStatusRequest) Reset() {
+	*x = GetCycleStatusRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[73]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCycleStatusRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCycleStatusRequest) ProtoMessage() {}
+
+func (x *GetCycleStatusRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[73]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCycleStatusRequest.ProtoReflect.Descriptor instead.
+func (*GetCycleStatusRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{73}
+}
+
+type GetCycleStatusResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Status        *CycleStatus           `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCycleStatusResponse) Reset() {
+	*x = GetCycleStatusResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[74]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCycleStatusResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCycleStatusResponse) ProtoMessage() {}
+
+func (x *GetCycleStatusResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[74]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCycleStatusResponse.ProtoReflect.Descriptor instead.
+func (*GetCycleStatusResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{74}
+}
+
+func (x *GetCycleStatusResponse) GetStatus() *CycleStatus {
+	if x != nil {
+		return x.Status
+	}
+	return nil
+}
+
+type LogPeriodRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	StartedOn     string                 `protobuf:"bytes,1,opt,name=started_on,json=startedOn,proto3" json:"started_on,omitempty"` // YYYY-MM-DD
+	EndedOn       string                 `protobuf:"bytes,2,opt,name=ended_on,json=endedOn,proto3" json:"ended_on,omitempty"`       // YYYY-MM-DD or empty
+	Flow          string                 `protobuf:"bytes,3,opt,name=flow,proto3" json:"flow,omitempty"`                            // light | medium | heavy
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LogPeriodRequest) Reset() {
+	*x = LogPeriodRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[75]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogPeriodRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogPeriodRequest) ProtoMessage() {}
+
+func (x *LogPeriodRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[75]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogPeriodRequest.ProtoReflect.Descriptor instead.
+func (*LogPeriodRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{75}
+}
+
+func (x *LogPeriodRequest) GetStartedOn() string {
+	if x != nil {
+		return x.StartedOn
+	}
+	return ""
+}
+
+func (x *LogPeriodRequest) GetEndedOn() string {
+	if x != nil {
+		return x.EndedOn
+	}
+	return ""
+}
+
+func (x *LogPeriodRequest) GetFlow() string {
+	if x != nil {
+		return x.Flow
+	}
+	return ""
+}
+
+type LogPeriodResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Status        *CycleStatus           `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LogPeriodResponse) Reset() {
+	*x = LogPeriodResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[76]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogPeriodResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogPeriodResponse) ProtoMessage() {}
+
+func (x *LogPeriodResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[76]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogPeriodResponse.ProtoReflect.Descriptor instead.
+func (*LogPeriodResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{76}
+}
+
+func (x *LogPeriodResponse) GetStatus() *CycleStatus {
+	if x != nil {
+		return x.Status
+	}
+	return nil
+}
+
+type LogCycleSymptomRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RecordedOn    string                 `protobuf:"bytes,1,opt,name=recorded_on,json=recordedOn,proto3" json:"recorded_on,omitempty"` // YYYY-MM-DD or empty = today
+	Kind          string                 `protobuf:"bytes,2,opt,name=kind,proto3" json:"kind,omitempty"`
+	Intensity     int32                  `protobuf:"varint,3,opt,name=intensity,proto3" json:"intensity,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LogCycleSymptomRequest) Reset() {
+	*x = LogCycleSymptomRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[77]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogCycleSymptomRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogCycleSymptomRequest) ProtoMessage() {}
+
+func (x *LogCycleSymptomRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[77]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogCycleSymptomRequest.ProtoReflect.Descriptor instead.
+func (*LogCycleSymptomRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{77}
+}
+
+func (x *LogCycleSymptomRequest) GetRecordedOn() string {
+	if x != nil {
+		return x.RecordedOn
+	}
+	return ""
+}
+
+func (x *LogCycleSymptomRequest) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *LogCycleSymptomRequest) GetIntensity() int32 {
+	if x != nil {
+		return x.Intensity
+	}
+	return 0
+}
+
+type LogCycleSymptomResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Symptom       *CycleSymptom          `protobuf:"bytes,1,opt,name=symptom,proto3" json:"symptom,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LogCycleSymptomResponse) Reset() {
+	*x = LogCycleSymptomResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[78]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogCycleSymptomResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogCycleSymptomResponse) ProtoMessage() {}
+
+func (x *LogCycleSymptomResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[78]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogCycleSymptomResponse.ProtoReflect.Descriptor instead.
+func (*LogCycleSymptomResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{78}
+}
+
+func (x *LogCycleSymptomResponse) GetSymptom() *CycleSymptom {
+	if x != nil {
+		return x.Symptom
+	}
+	return nil
+}
+
+type ListMyCycleSymptomsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Days          int32                  `protobuf:"varint,1,opt,name=days,proto3" json:"days,omitempty"` // window; 0 = 90 days
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyCycleSymptomsRequest) Reset() {
+	*x = ListMyCycleSymptomsRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[79]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyCycleSymptomsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyCycleSymptomsRequest) ProtoMessage() {}
+
+func (x *ListMyCycleSymptomsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[79]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyCycleSymptomsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyCycleSymptomsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{79}
+}
+
+func (x *ListMyCycleSymptomsRequest) GetDays() int32 {
+	if x != nil {
+		return x.Days
+	}
+	return 0
+}
+
+type ListMyCycleSymptomsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Symptoms      []*CycleSymptom        `protobuf:"bytes,1,rep,name=symptoms,proto3" json:"symptoms,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyCycleSymptomsResponse) Reset() {
+	*x = ListMyCycleSymptomsResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[80]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyCycleSymptomsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyCycleSymptomsResponse) ProtoMessage() {}
+
+func (x *ListMyCycleSymptomsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[80]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyCycleSymptomsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyCycleSymptomsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{80}
+}
+
+func (x *ListMyCycleSymptomsResponse) GetSymptoms() []*CycleSymptom {
+	if x != nil {
+		return x.Symptoms
+	}
+	return nil
+}
+
+// MarkerOverride applies a hypothetical value for one biomarker. The
+// engine uses the latest value for any marker not overridden.
+type MarkerOverride struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	MetricCode    string                 `protobuf:"bytes,1,opt,name=metric_code,json=metricCode,proto3" json:"metric_code,omitempty"`
+	Value         float64                `protobuf:"fixed64,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MarkerOverride) Reset() {
+	*x = MarkerOverride{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[81]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MarkerOverride) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MarkerOverride) ProtoMessage() {}
+
+func (x *MarkerOverride) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[81]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MarkerOverride.ProtoReflect.Descriptor instead.
+func (*MarkerOverride) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{81}
+}
+
+func (x *MarkerOverride) GetMetricCode() string {
+	if x != nil {
+		return x.MetricCode
+	}
+	return ""
+}
+
+func (x *MarkerOverride) GetValue() float64 {
+	if x != nil {
+		return x.Value
+	}
+	return 0
+}
+
+type SimulateApexAgeRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Overrides     []*MarkerOverride      `protobuf:"bytes,1,rep,name=overrides,proto3" json:"overrides,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SimulateApexAgeRequest) Reset() {
+	*x = SimulateApexAgeRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[82]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SimulateApexAgeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SimulateApexAgeRequest) ProtoMessage() {}
+
+func (x *SimulateApexAgeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[82]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SimulateApexAgeRequest.ProtoReflect.Descriptor instead.
+func (*SimulateApexAgeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{82}
+}
+
+func (x *SimulateApexAgeRequest) GetOverrides() []*MarkerOverride {
+	if x != nil {
+		return x.Overrides
+	}
+	return nil
+}
+
+type SimulateApexAgeResponse struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	CurrentApexAge   float64                `protobuf:"fixed64,1,opt,name=current_apex_age,json=currentApexAge,proto3" json:"current_apex_age,omitempty"`
+	ProjectedApexAge float64                `protobuf:"fixed64,2,opt,name=projected_apex_age,json=projectedApexAge,proto3" json:"projected_apex_age,omitempty"`
+	DeltaYears       float64                `protobuf:"fixed64,3,opt,name=delta_years,json=deltaYears,proto3" json:"delta_years,omitempty"` // projected - current
+	Method           string                 `protobuf:"bytes,4,opt,name=method,proto3" json:"method,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *SimulateApexAgeResponse) Reset() {
+	*x = SimulateApexAgeResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[83]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SimulateApexAgeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SimulateApexAgeResponse) ProtoMessage() {}
+
+func (x *SimulateApexAgeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[83]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SimulateApexAgeResponse.ProtoReflect.Descriptor instead.
+func (*SimulateApexAgeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{83}
+}
+
+func (x *SimulateApexAgeResponse) GetCurrentApexAge() float64 {
+	if x != nil {
+		return x.CurrentApexAge
+	}
+	return 0
+}
+
+func (x *SimulateApexAgeResponse) GetProjectedApexAge() float64 {
+	if x != nil {
+		return x.ProjectedApexAge
+	}
+	return 0
+}
+
+func (x *SimulateApexAgeResponse) GetDeltaYears() float64 {
+	if x != nil {
+		return x.DeltaYears
+	}
+	return 0
+}
+
+func (x *SimulateApexAgeResponse) GetMethod() string {
+	if x != nil {
+		return x.Method
+	}
+	return ""
+}
+
+type ReadinessSnapshot struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Readiness_0_100 float64                `protobuf:"fixed64,1,opt,name=readiness_0_100,json=readiness0100,proto3" json:"readiness_0_100,omitempty"` // composite 0-100
+	Verdict         string                 `protobuf:"bytes,2,opt,name=verdict,proto3" json:"verdict,omitempty"`                                      // optimal | moderate | low | no-data
+	HrvDeltaMs      float64                `protobuf:"fixed64,3,opt,name=hrv_delta_ms,json=hrvDeltaMs,proto3" json:"hrv_delta_ms,omitempty"`          // window mean minus 30d baseline
+	RhrDeltaBpm     float64                `protobuf:"fixed64,4,opt,name=rhr_delta_bpm,json=rhrDeltaBpm,proto3" json:"rhr_delta_bpm,omitempty"`       // window mean minus 30d baseline (negative = better)
+	SleepScore      float64                `protobuf:"fixed64,5,opt,name=sleep_score,json=sleepScore,proto3" json:"sleep_score,omitempty"`            // 0-100
+	Recommendation  string                 `protobuf:"bytes,6,opt,name=recommendation,proto3" json:"recommendation,omitempty"`                        // one-line nudge for the calling pillar
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ReadinessSnapshot) Reset() {
+	*x = ReadinessSnapshot{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[84]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReadinessSnapshot) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReadinessSnapshot) ProtoMessage() {}
+
+func (x *ReadinessSnapshot) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[84]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReadinessSnapshot.ProtoReflect.Descriptor instead.
+func (*ReadinessSnapshot) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{84}
+}
+
+func (x *ReadinessSnapshot) GetReadiness_0_100() float64 {
+	if x != nil {
+		return x.Readiness_0_100
+	}
+	return 0
+}
+
+func (x *ReadinessSnapshot) GetVerdict() string {
+	if x != nil {
+		return x.Verdict
+	}
+	return ""
+}
+
+func (x *ReadinessSnapshot) GetHrvDeltaMs() float64 {
+	if x != nil {
+		return x.HrvDeltaMs
+	}
+	return 0
+}
+
+func (x *ReadinessSnapshot) GetRhrDeltaBpm() float64 {
+	if x != nil {
+		return x.RhrDeltaBpm
+	}
+	return 0
+}
+
+func (x *ReadinessSnapshot) GetSleepScore() float64 {
+	if x != nil {
+		return x.SleepScore
+	}
+	return 0
+}
+
+func (x *ReadinessSnapshot) GetRecommendation() string {
+	if x != nil {
+		return x.Recommendation
+	}
+	return ""
+}
+
+type GetReadinessRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetReadinessRequest) Reset() {
+	*x = GetReadinessRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[85]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetReadinessRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetReadinessRequest) ProtoMessage() {}
+
+func (x *GetReadinessRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[85]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetReadinessRequest.ProtoReflect.Descriptor instead.
+func (*GetReadinessRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{85}
+}
+
+type GetReadinessResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Snapshot      *ReadinessSnapshot     `protobuf:"bytes,1,opt,name=snapshot,proto3" json:"snapshot,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetReadinessResponse) Reset() {
+	*x = GetReadinessResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[86]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetReadinessResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetReadinessResponse) ProtoMessage() {}
+
+func (x *GetReadinessResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[86]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetReadinessResponse.ProtoReflect.Descriptor instead.
+func (*GetReadinessResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{86}
+}
+
+func (x *GetReadinessResponse) GetSnapshot() *ReadinessSnapshot {
+	if x != nil {
+		return x.Snapshot
+	}
+	return nil
+}
+
+type ConciergeThread struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Subject       string                 `protobuf:"bytes,2,opt,name=subject,proto3" json:"subject,omitempty"`
+	Status        string                 `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"` // open | resolved | waiting_member
+	SlaDueAtUnix  int64                  `protobuf:"varint,4,opt,name=sla_due_at_unix,json=slaDueAtUnix,proto3" json:"sla_due_at_unix,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,5,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	UpdatedAtUnix int64                  `protobuf:"varint,6,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	MessageCount  int32                  `protobuf:"varint,7,opt,name=message_count,json=messageCount,proto3" json:"message_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConciergeThread) Reset() {
+	*x = ConciergeThread{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[87]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConciergeThread) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConciergeThread) ProtoMessage() {}
+
+func (x *ConciergeThread) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[87]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConciergeThread.ProtoReflect.Descriptor instead.
+func (*ConciergeThread) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{87}
+}
+
+func (x *ConciergeThread) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetSubject() string {
+	if x != nil {
+		return x.Subject
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetSlaDueAtUnix() int64 {
+	if x != nil {
+		return x.SlaDueAtUnix
+	}
+	return 0
+}
+
+func (x *ConciergeThread) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+func (x *ConciergeThread) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+func (x *ConciergeThread) GetMessageCount() int32 {
+	if x != nil {
+		return x.MessageCount
+	}
+	return 0
+}
+
+type ConciergeMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ThreadId      string                 `protobuf:"bytes,2,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	SenderRole    string                 `protobuf:"bytes,3,opt,name=sender_role,json=senderRole,proto3" json:"sender_role,omitempty"` // member | desk | system
+	Body          string                 `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,5,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConciergeMessage) Reset() {
+	*x = ConciergeMessage{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[88]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConciergeMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConciergeMessage) ProtoMessage() {}
+
+func (x *ConciergeMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[88]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConciergeMessage.ProtoReflect.Descriptor instead.
+func (*ConciergeMessage) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{88}
+}
+
+func (x *ConciergeMessage) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetSenderRole() string {
+	if x != nil {
+		return x.SenderRole
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type StartConciergeThreadRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Subject        string                 `protobuf:"bytes,1,opt,name=subject,proto3" json:"subject,omitempty"`
+	OpeningMessage string                 `protobuf:"bytes,2,opt,name=opening_message,json=openingMessage,proto3" json:"opening_message,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *StartConciergeThreadRequest) Reset() {
+	*x = StartConciergeThreadRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[89]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StartConciergeThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartConciergeThreadRequest) ProtoMessage() {}
+
+func (x *StartConciergeThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[89]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartConciergeThreadRequest.ProtoReflect.Descriptor instead.
+func (*StartConciergeThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{89}
+}
+
+func (x *StartConciergeThreadRequest) GetSubject() string {
+	if x != nil {
+		return x.Subject
+	}
+	return ""
+}
+
+func (x *StartConciergeThreadRequest) GetOpeningMessage() string {
+	if x != nil {
+		return x.OpeningMessage
+	}
+	return ""
+}
+
+type StartConciergeThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *ConciergeThread       `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StartConciergeThreadResponse) Reset() {
+	*x = StartConciergeThreadResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[90]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StartConciergeThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartConciergeThreadResponse) ProtoMessage() {}
+
+func (x *StartConciergeThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[90]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartConciergeThreadResponse.ProtoReflect.Descriptor instead.
+func (*StartConciergeThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{90}
+}
+
+func (x *StartConciergeThreadResponse) GetThread() *ConciergeThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+type ListMyConciergeThreadsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyConciergeThreadsRequest) Reset() {
+	*x = ListMyConciergeThreadsRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[91]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyConciergeThreadsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyConciergeThreadsRequest) ProtoMessage() {}
+
+func (x *ListMyConciergeThreadsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[91]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyConciergeThreadsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyConciergeThreadsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{91}
+}
+
+type ListMyConciergeThreadsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Threads       []*ConciergeThread     `protobuf:"bytes,1,rep,name=threads,proto3" json:"threads,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyConciergeThreadsResponse) Reset() {
+	*x = ListMyConciergeThreadsResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[92]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyConciergeThreadsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyConciergeThreadsResponse) ProtoMessage() {}
+
+func (x *ListMyConciergeThreadsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[92]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyConciergeThreadsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyConciergeThreadsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{92}
+}
+
+func (x *ListMyConciergeThreadsResponse) GetThreads() []*ConciergeThread {
+	if x != nil {
+		return x.Threads
+	}
+	return nil
+}
+
+type GetConciergeThreadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetConciergeThreadRequest) Reset() {
+	*x = GetConciergeThreadRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[93]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetConciergeThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetConciergeThreadRequest) ProtoMessage() {}
+
+func (x *GetConciergeThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[93]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetConciergeThreadRequest.ProtoReflect.Descriptor instead.
+func (*GetConciergeThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{93}
+}
+
+func (x *GetConciergeThreadRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+type GetConciergeThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *ConciergeThread       `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	Messages      []*ConciergeMessage    `protobuf:"bytes,2,rep,name=messages,proto3" json:"messages,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetConciergeThreadResponse) Reset() {
+	*x = GetConciergeThreadResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[94]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetConciergeThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetConciergeThreadResponse) ProtoMessage() {}
+
+func (x *GetConciergeThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[94]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetConciergeThreadResponse.ProtoReflect.Descriptor instead.
+func (*GetConciergeThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{94}
+}
+
+func (x *GetConciergeThreadResponse) GetThread() *ConciergeThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+func (x *GetConciergeThreadResponse) GetMessages() []*ConciergeMessage {
+	if x != nil {
+		return x.Messages
+	}
+	return nil
+}
+
+type PostConciergeMessageRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	Body          string                 `protobuf:"bytes,2,opt,name=body,proto3" json:"body,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PostConciergeMessageRequest) Reset() {
+	*x = PostConciergeMessageRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[95]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PostConciergeMessageRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PostConciergeMessageRequest) ProtoMessage() {}
+
+func (x *PostConciergeMessageRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[95]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PostConciergeMessageRequest.ProtoReflect.Descriptor instead.
+func (*PostConciergeMessageRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{95}
+}
+
+func (x *PostConciergeMessageRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *PostConciergeMessageRequest) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+type PostConciergeMessageResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Message       *ConciergeMessage      `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PostConciergeMessageResponse) Reset() {
+	*x = PostConciergeMessageResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[96]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PostConciergeMessageResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PostConciergeMessageResponse) ProtoMessage() {}
+
+func (x *PostConciergeMessageResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[96]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PostConciergeMessageResponse.ProtoReflect.Descriptor instead.
+func (*PostConciergeMessageResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{96}
+}
+
+func (x *PostConciergeMessageResponse) GetMessage() *ConciergeMessage {
+	if x != nil {
+		return x.Message
+	}
+	return nil
+}
+
+type AnthologyAuthor struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug          string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Credentials   string                 `protobuf:"bytes,4,opt,name=credentials,proto3" json:"credentials,omitempty"`
+	BioUrl        string                 `protobuf:"bytes,5,opt,name=bio_url,json=bioUrl,proto3" json:"bio_url,omitempty"`
+	AvatarUrl     string                 `protobuf:"bytes,6,opt,name=avatar_url,json=avatarUrl,proto3" json:"avatar_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AnthologyAuthor) Reset() {
+	*x = AnthologyAuthor{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[97]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AnthologyAuthor) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AnthologyAuthor) ProtoMessage() {}
+
+func (x *AnthologyAuthor) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[97]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AnthologyAuthor.ProtoReflect.Descriptor instead.
+func (*AnthologyAuthor) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{97}
+}
+
+func (x *AnthologyAuthor) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AnthologyAuthor) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *AnthologyAuthor) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *AnthologyAuthor) GetCredentials() string {
+	if x != nil {
+		return x.Credentials
+	}
+	return ""
+}
+
+func (x *AnthologyAuthor) GetBioUrl() string {
+	if x != nil {
+		return x.BioUrl
+	}
+	return ""
+}
+
+func (x *AnthologyAuthor) GetAvatarUrl() string {
+	if x != nil {
+		return x.AvatarUrl
+	}
+	return ""
+}
+
+type AnthologyArticle struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug            string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Author          *AnthologyAuthor       `protobuf:"bytes,3,opt,name=author,proto3" json:"author,omitempty"`
+	Title           string                 `protobuf:"bytes,4,opt,name=title,proto3" json:"title,omitempty"`
+	Dek             string                 `protobuf:"bytes,5,opt,name=dek,proto3" json:"dek,omitempty"`
+	Body            string                 `protobuf:"bytes,6,opt,name=body,proto3" json:"body,omitempty"`
+	HeroUrl         string                 `protobuf:"bytes,7,opt,name=hero_url,json=heroUrl,proto3" json:"hero_url,omitempty"`
+	PublishedAtUnix int64                  `protobuf:"varint,8,opt,name=published_at_unix,json=publishedAtUnix,proto3" json:"published_at_unix,omitempty"`
+	SovereignOnly   bool                   `protobuf:"varint,9,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *AnthologyArticle) Reset() {
+	*x = AnthologyArticle{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[98]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AnthologyArticle) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AnthologyArticle) ProtoMessage() {}
+
+func (x *AnthologyArticle) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[98]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AnthologyArticle.ProtoReflect.Descriptor instead.
+func (*AnthologyArticle) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{98}
+}
+
+func (x *AnthologyArticle) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetAuthor() *AnthologyAuthor {
+	if x != nil {
+		return x.Author
+	}
+	return nil
+}
+
+func (x *AnthologyArticle) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetDek() string {
+	if x != nil {
+		return x.Dek
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetHeroUrl() string {
+	if x != nil {
+		return x.HeroUrl
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetPublishedAtUnix() int64 {
+	if x != nil {
+		return x.PublishedAtUnix
+	}
+	return 0
+}
+
+func (x *AnthologyArticle) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+type ListAnthologyArticlesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAnthologyArticlesRequest) Reset() {
+	*x = ListAnthologyArticlesRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[99]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAnthologyArticlesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAnthologyArticlesRequest) ProtoMessage() {}
+
+func (x *ListAnthologyArticlesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[99]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAnthologyArticlesRequest.ProtoReflect.Descriptor instead.
+func (*ListAnthologyArticlesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{99}
+}
+
+type ListAnthologyArticlesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Articles      []*AnthologyArticle    `protobuf:"bytes,1,rep,name=articles,proto3" json:"articles,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAnthologyArticlesResponse) Reset() {
+	*x = ListAnthologyArticlesResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[100]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAnthologyArticlesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAnthologyArticlesResponse) ProtoMessage() {}
+
+func (x *ListAnthologyArticlesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[100]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAnthologyArticlesResponse.ProtoReflect.Descriptor instead.
+func (*ListAnthologyArticlesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{100}
+}
+
+func (x *ListAnthologyArticlesResponse) GetArticles() []*AnthologyArticle {
+	if x != nil {
+		return x.Articles
+	}
+	return nil
+}
+
+type GetAnthologyArticleRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Slug          string                 `protobuf:"bytes,1,opt,name=slug,proto3" json:"slug,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAnthologyArticleRequest) Reset() {
+	*x = GetAnthologyArticleRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[101]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAnthologyArticleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAnthologyArticleRequest) ProtoMessage() {}
+
+func (x *GetAnthologyArticleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[101]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAnthologyArticleRequest.ProtoReflect.Descriptor instead.
+func (*GetAnthologyArticleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{101}
+}
+
+func (x *GetAnthologyArticleRequest) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+type GetAnthologyArticleResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Article       *AnthologyArticle      `protobuf:"bytes,1,opt,name=article,proto3" json:"article,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAnthologyArticleResponse) Reset() {
+	*x = GetAnthologyArticleResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[102]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAnthologyArticleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAnthologyArticleResponse) ProtoMessage() {}
+
+func (x *GetAnthologyArticleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[102]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAnthologyArticleResponse.ProtoReflect.Descriptor instead.
+func (*GetAnthologyArticleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{102}
+}
+
+func (x *GetAnthologyArticleResponse) GetArticle() *AnthologyArticle {
+	if x != nil {
+		return x.Article
+	}
+	return nil
+}
+
+type PharmacologyEntry struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	DrugName       string                 `protobuf:"bytes,2,opt,name=drug_name,json=drugName,proto3" json:"drug_name,omitempty"`
+	DoseMg         float64                `protobuf:"fixed64,3,opt,name=dose_mg,json=doseMg,proto3" json:"dose_mg,omitempty"`
+	Schedule       string                 `protobuf:"bytes,4,opt,name=schedule,proto3" json:"schedule,omitempty"`
+	Kind           string                 `protobuf:"bytes,5,opt,name=kind,proto3" json:"kind,omitempty"`                                           // prescribed | off_label | otc
+	EvidenceRating string                 `protobuf:"bytes,6,opt,name=evidence_rating,json=evidenceRating,proto3" json:"evidence_rating,omitempty"` // A | B | C
+	Notes          string                 `protobuf:"bytes,7,opt,name=notes,proto3" json:"notes,omitempty"`                                         // decrypted server-side, plain text on the wire
+	StartedOn      string                 `protobuf:"bytes,8,opt,name=started_on,json=startedOn,proto3" json:"started_on,omitempty"`                // YYYY-MM-DD
+	Active         bool                   `protobuf:"varint,9,opt,name=active,proto3" json:"active,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *PharmacologyEntry) Reset() {
+	*x = PharmacologyEntry{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[103]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PharmacologyEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PharmacologyEntry) ProtoMessage() {}
+
+func (x *PharmacologyEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[103]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PharmacologyEntry.ProtoReflect.Descriptor instead.
+func (*PharmacologyEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{103}
+}
+
+func (x *PharmacologyEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *PharmacologyEntry) GetDrugName() string {
+	if x != nil {
+		return x.DrugName
+	}
+	return ""
+}
+
+func (x *PharmacologyEntry) GetDoseMg() float64 {
+	if x != nil {
+		return x.DoseMg
+	}
+	return 0
+}
+
+func (x *PharmacologyEntry) GetSchedule() string {
+	if x != nil {
+		return x.Schedule
+	}
+	return ""
+}
+
+func (x *PharmacologyEntry) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *PharmacologyEntry) GetEvidenceRating() string {
+	if x != nil {
+		return x.EvidenceRating
+	}
+	return ""
+}
+
+func (x *PharmacologyEntry) GetNotes() string {
+	if x != nil {
+		return x.Notes
+	}
+	return ""
+}
+
+func (x *PharmacologyEntry) GetStartedOn() string {
+	if x != nil {
+		return x.StartedOn
+	}
+	return ""
+}
+
+func (x *PharmacologyEntry) GetActive() bool {
+	if x != nil {
+		return x.Active
+	}
+	return false
+}
+
+type ListMyPharmacologyRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyPharmacologyRequest) Reset() {
+	*x = ListMyPharmacologyRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[104]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyPharmacologyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyPharmacologyRequest) ProtoMessage() {}
+
+func (x *ListMyPharmacologyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[104]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyPharmacologyRequest.ProtoReflect.Descriptor instead.
+func (*ListMyPharmacologyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{104}
+}
+
+type ListMyPharmacologyResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Entries       []*PharmacologyEntry   `protobuf:"bytes,1,rep,name=entries,proto3" json:"entries,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyPharmacologyResponse) Reset() {
+	*x = ListMyPharmacologyResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[105]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyPharmacologyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyPharmacologyResponse) ProtoMessage() {}
+
+func (x *ListMyPharmacologyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[105]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyPharmacologyResponse.ProtoReflect.Descriptor instead.
+func (*ListMyPharmacologyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{105}
+}
+
+func (x *ListMyPharmacologyResponse) GetEntries() []*PharmacologyEntry {
+	if x != nil {
+		return x.Entries
+	}
+	return nil
+}
+
+type AddPharmacologyRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	DrugName       string                 `protobuf:"bytes,1,opt,name=drug_name,json=drugName,proto3" json:"drug_name,omitempty"`
+	DoseMg         float64                `protobuf:"fixed64,2,opt,name=dose_mg,json=doseMg,proto3" json:"dose_mg,omitempty"`
+	Schedule       string                 `protobuf:"bytes,3,opt,name=schedule,proto3" json:"schedule,omitempty"`
+	Kind           string                 `protobuf:"bytes,4,opt,name=kind,proto3" json:"kind,omitempty"`
+	EvidenceRating string                 `protobuf:"bytes,5,opt,name=evidence_rating,json=evidenceRating,proto3" json:"evidence_rating,omitempty"`
+	Notes          string                 `protobuf:"bytes,6,opt,name=notes,proto3" json:"notes,omitempty"`
+	StartedOn      string                 `protobuf:"bytes,7,opt,name=started_on,json=startedOn,proto3" json:"started_on,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *AddPharmacologyRequest) Reset() {
+	*x = AddPharmacologyRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[106]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddPharmacologyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddPharmacologyRequest) ProtoMessage() {}
+
+func (x *AddPharmacologyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[106]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddPharmacologyRequest.ProtoReflect.Descriptor instead.
+func (*AddPharmacologyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{106}
+}
+
+func (x *AddPharmacologyRequest) GetDrugName() string {
+	if x != nil {
+		return x.DrugName
+	}
+	return ""
+}
+
+func (x *AddPharmacologyRequest) GetDoseMg() float64 {
+	if x != nil {
+		return x.DoseMg
+	}
+	return 0
+}
+
+func (x *AddPharmacologyRequest) GetSchedule() string {
+	if x != nil {
+		return x.Schedule
+	}
+	return ""
+}
+
+func (x *AddPharmacologyRequest) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *AddPharmacologyRequest) GetEvidenceRating() string {
+	if x != nil {
+		return x.EvidenceRating
+	}
+	return ""
+}
+
+func (x *AddPharmacologyRequest) GetNotes() string {
+	if x != nil {
+		return x.Notes
+	}
+	return ""
+}
+
+func (x *AddPharmacologyRequest) GetStartedOn() string {
+	if x != nil {
+		return x.StartedOn
+	}
+	return ""
+}
+
+type AddPharmacologyResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Entry         *PharmacologyEntry     `protobuf:"bytes,1,opt,name=entry,proto3" json:"entry,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddPharmacologyResponse) Reset() {
+	*x = AddPharmacologyResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[107]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddPharmacologyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddPharmacologyResponse) ProtoMessage() {}
+
+func (x *AddPharmacologyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[107]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddPharmacologyResponse.ProtoReflect.Descriptor instead.
+func (*AddPharmacologyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{107}
+}
+
+func (x *AddPharmacologyResponse) GetEntry() *PharmacologyEntry {
+	if x != nil {
+		return x.Entry
+	}
+	return nil
+}
+
+type RemovePharmacologyRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EntryId       string                 `protobuf:"bytes,1,opt,name=entry_id,json=entryId,proto3" json:"entry_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemovePharmacologyRequest) Reset() {
+	*x = RemovePharmacologyRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[108]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemovePharmacologyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemovePharmacologyRequest) ProtoMessage() {}
+
+func (x *RemovePharmacologyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[108]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemovePharmacologyRequest.ProtoReflect.Descriptor instead.
+func (*RemovePharmacologyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{108}
+}
+
+func (x *RemovePharmacologyRequest) GetEntryId() string {
+	if x != nil {
+		return x.EntryId
+	}
+	return ""
+}
+
+type RemovePharmacologyResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemovePharmacologyResponse) Reset() {
+	*x = RemovePharmacologyResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[109]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemovePharmacologyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemovePharmacologyResponse) ProtoMessage() {}
+
+func (x *RemovePharmacologyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[109]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemovePharmacologyResponse.ProtoReflect.Descriptor instead.
+func (*RemovePharmacologyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{109}
+}
+
+type DnaUpload struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Source        string                 `protobuf:"bytes,2,opt,name=source,proto3" json:"source,omitempty"` // 23andme | ancestry | nebula | manual
+	Status        string                 `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"` // pending | parsing | ready | failed
+	Sha256        string                 `protobuf:"bytes,4,opt,name=sha256,proto3" json:"sha256,omitempty"`
+	ParsedAtUnix  int64                  `protobuf:"varint,5,opt,name=parsed_at_unix,json=parsedAtUnix,proto3" json:"parsed_at_unix,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,6,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DnaUpload) Reset() {
+	*x = DnaUpload{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[110]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DnaUpload) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DnaUpload) ProtoMessage() {}
+
+func (x *DnaUpload) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[110]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DnaUpload.ProtoReflect.Descriptor instead.
+func (*DnaUpload) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{110}
+}
+
+func (x *DnaUpload) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DnaUpload) GetSource() string {
+	if x != nil {
+		return x.Source
+	}
+	return ""
+}
+
+func (x *DnaUpload) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *DnaUpload) GetSha256() string {
+	if x != nil {
+		return x.Sha256
+	}
+	return ""
+}
+
+func (x *DnaUpload) GetParsedAtUnix() int64 {
+	if x != nil {
+		return x.ParsedAtUnix
+	}
+	return 0
+}
+
+func (x *DnaUpload) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type SnpEntry struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Rsid           string                 `protobuf:"bytes,1,opt,name=rsid,proto3" json:"rsid,omitempty"`
+	Genotype       string                 `protobuf:"bytes,2,opt,name=genotype,proto3" json:"genotype,omitempty"`
+	Interpretation string                 `protobuf:"bytes,3,opt,name=interpretation,proto3" json:"interpretation,omitempty"`
+	Evidence       string                 `protobuf:"bytes,4,opt,name=evidence,proto3" json:"evidence,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *SnpEntry) Reset() {
+	*x = SnpEntry{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[111]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SnpEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SnpEntry) ProtoMessage() {}
+
+func (x *SnpEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[111]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SnpEntry.ProtoReflect.Descriptor instead.
+func (*SnpEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{111}
+}
+
+func (x *SnpEntry) GetRsid() string {
+	if x != nil {
+		return x.Rsid
+	}
+	return ""
+}
+
+func (x *SnpEntry) GetGenotype() string {
+	if x != nil {
+		return x.Genotype
+	}
+	return ""
+}
+
+func (x *SnpEntry) GetInterpretation() string {
+	if x != nil {
+		return x.Interpretation
+	}
+	return ""
+}
+
+func (x *SnpEntry) GetEvidence() string {
+	if x != nil {
+		return x.Evidence
+	}
+	return ""
+}
+
+type RegisterDnaUploadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	MediaAssetId  string                 `protobuf:"bytes,1,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
+	Source        string                 `protobuf:"bytes,2,opt,name=source,proto3" json:"source,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RegisterDnaUploadRequest) Reset() {
+	*x = RegisterDnaUploadRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[112]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RegisterDnaUploadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegisterDnaUploadRequest) ProtoMessage() {}
+
+func (x *RegisterDnaUploadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[112]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegisterDnaUploadRequest.ProtoReflect.Descriptor instead.
+func (*RegisterDnaUploadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{112}
+}
+
+func (x *RegisterDnaUploadRequest) GetMediaAssetId() string {
+	if x != nil {
+		return x.MediaAssetId
+	}
+	return ""
+}
+
+func (x *RegisterDnaUploadRequest) GetSource() string {
+	if x != nil {
+		return x.Source
+	}
+	return ""
+}
+
+type RegisterDnaUploadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Upload        *DnaUpload             `protobuf:"bytes,1,opt,name=upload,proto3" json:"upload,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RegisterDnaUploadResponse) Reset() {
+	*x = RegisterDnaUploadResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[113]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RegisterDnaUploadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegisterDnaUploadResponse) ProtoMessage() {}
+
+func (x *RegisterDnaUploadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[113]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegisterDnaUploadResponse.ProtoReflect.Descriptor instead.
+func (*RegisterDnaUploadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{113}
+}
+
+func (x *RegisterDnaUploadResponse) GetUpload() *DnaUpload {
+	if x != nil {
+		return x.Upload
+	}
+	return nil
+}
+
+type ListMyDnaUploadsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyDnaUploadsRequest) Reset() {
+	*x = ListMyDnaUploadsRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[114]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyDnaUploadsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyDnaUploadsRequest) ProtoMessage() {}
+
+func (x *ListMyDnaUploadsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[114]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyDnaUploadsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyDnaUploadsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{114}
+}
+
+type ListMyDnaUploadsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Uploads       []*DnaUpload           `protobuf:"bytes,1,rep,name=uploads,proto3" json:"uploads,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyDnaUploadsResponse) Reset() {
+	*x = ListMyDnaUploadsResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[115]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyDnaUploadsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyDnaUploadsResponse) ProtoMessage() {}
+
+func (x *ListMyDnaUploadsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[115]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyDnaUploadsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyDnaUploadsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{115}
+}
+
+func (x *ListMyDnaUploadsResponse) GetUploads() []*DnaUpload {
+	if x != nil {
+		return x.Uploads
+	}
+	return nil
+}
+
+type ListMyDnaSnpsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyDnaSnpsRequest) Reset() {
+	*x = ListMyDnaSnpsRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[116]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyDnaSnpsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyDnaSnpsRequest) ProtoMessage() {}
+
+func (x *ListMyDnaSnpsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[116]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyDnaSnpsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyDnaSnpsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{116}
+}
+
+type ListMyDnaSnpsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Snps          []*SnpEntry            `protobuf:"bytes,1,rep,name=snps,proto3" json:"snps,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyDnaSnpsResponse) Reset() {
+	*x = ListMyDnaSnpsResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[117]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyDnaSnpsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyDnaSnpsResponse) ProtoMessage() {}
+
+func (x *ListMyDnaSnpsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[117]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyDnaSnpsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyDnaSnpsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{117}
+}
+
+func (x *ListMyDnaSnpsResponse) GetSnps() []*SnpEntry {
+	if x != nil {
+		return x.Snps
+	}
+	return nil
+}
+
+type LabPartner struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug              string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Name              string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Region            string                 `protobuf:"bytes,4,opt,name=region,proto3" json:"region,omitempty"`
+	ReferralUrl       string                 `protobuf:"bytes,5,opt,name=referral_url,json=referralUrl,proto3" json:"referral_url,omitempty"`
+	MemberDiscountPct int32                  `protobuf:"varint,6,opt,name=member_discount_pct,json=memberDiscountPct,proto3" json:"member_discount_pct,omitempty"`
+	PanelSummary      string                 `protobuf:"bytes,7,opt,name=panel_summary,json=panelSummary,proto3" json:"panel_summary,omitempty"`
+	HeroUrl           string                 `protobuf:"bytes,8,opt,name=hero_url,json=heroUrl,proto3" json:"hero_url,omitempty"`
+	SovereignOnly     bool                   `protobuf:"varint,9,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *LabPartner) Reset() {
+	*x = LabPartner{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[118]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LabPartner) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LabPartner) ProtoMessage() {}
+
+func (x *LabPartner) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[118]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LabPartner.ProtoReflect.Descriptor instead.
+func (*LabPartner) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{118}
+}
+
+func (x *LabPartner) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LabPartner) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *LabPartner) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *LabPartner) GetRegion() string {
+	if x != nil {
+		return x.Region
+	}
+	return ""
+}
+
+func (x *LabPartner) GetReferralUrl() string {
+	if x != nil {
+		return x.ReferralUrl
+	}
+	return ""
+}
+
+func (x *LabPartner) GetMemberDiscountPct() int32 {
+	if x != nil {
+		return x.MemberDiscountPct
+	}
+	return 0
+}
+
+func (x *LabPartner) GetPanelSummary() string {
+	if x != nil {
+		return x.PanelSummary
+	}
+	return ""
+}
+
+func (x *LabPartner) GetHeroUrl() string {
+	if x != nil {
+		return x.HeroUrl
+	}
+	return ""
+}
+
+func (x *LabPartner) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+type ListLabPartnersRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Region        string                 `protobuf:"bytes,1,opt,name=region,proto3" json:"region,omitempty"` // optional filter
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLabPartnersRequest) Reset() {
+	*x = ListLabPartnersRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[119]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLabPartnersRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLabPartnersRequest) ProtoMessage() {}
+
+func (x *ListLabPartnersRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[119]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLabPartnersRequest.ProtoReflect.Descriptor instead.
+func (*ListLabPartnersRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{119}
+}
+
+func (x *ListLabPartnersRequest) GetRegion() string {
+	if x != nil {
+		return x.Region
+	}
+	return ""
+}
+
+type ListLabPartnersResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Partners      []*LabPartner          `protobuf:"bytes,1,rep,name=partners,proto3" json:"partners,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLabPartnersResponse) Reset() {
+	*x = ListLabPartnersResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[120]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLabPartnersResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLabPartnersResponse) ProtoMessage() {}
+
+func (x *ListLabPartnersResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[120]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLabPartnersResponse.ProtoReflect.Descriptor instead.
+func (*ListLabPartnersResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{120}
+}
+
+func (x *ListLabPartnersResponse) GetPartners() []*LabPartner {
+	if x != nil {
+		return x.Partners
+	}
+	return nil
+}
+
+type LabMarkerValue struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	MetricCode    string                 `protobuf:"bytes,1,opt,name=metric_code,json=metricCode,proto3" json:"metric_code,omitempty"`
+	Value         float64                `protobuf:"fixed64,2,opt,name=value,proto3" json:"value,omitempty"`
+	Unit          string                 `protobuf:"bytes,3,opt,name=unit,proto3" json:"unit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LabMarkerValue) Reset() {
+	*x = LabMarkerValue{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[121]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LabMarkerValue) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LabMarkerValue) ProtoMessage() {}
+
+func (x *LabMarkerValue) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[121]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LabMarkerValue.ProtoReflect.Descriptor instead.
+func (*LabMarkerValue) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{121}
+}
+
+func (x *LabMarkerValue) GetMetricCode() string {
+	if x != nil {
+		return x.MetricCode
+	}
+	return ""
+}
+
+func (x *LabMarkerValue) GetValue() float64 {
+	if x != nil {
+		return x.Value
+	}
+	return 0
+}
+
+func (x *LabMarkerValue) GetUnit() string {
+	if x != nil {
+		return x.Unit
+	}
+	return ""
+}
+
+type ExtractLabMarkersRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	ReportId       string                 `protobuf:"bytes,1,opt,name=report_id,json=reportId,proto3" json:"report_id,omitempty"`
+	Markers        []*LabMarkerValue      `protobuf:"bytes,2,rep,name=markers,proto3" json:"markers,omitempty"`
+	RecordedAtUnix int64                  `protobuf:"varint,3,opt,name=recorded_at_unix,json=recordedAtUnix,proto3" json:"recorded_at_unix,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *ExtractLabMarkersRequest) Reset() {
+	*x = ExtractLabMarkersRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[122]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExtractLabMarkersRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExtractLabMarkersRequest) ProtoMessage() {}
+
+func (x *ExtractLabMarkersRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[122]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExtractLabMarkersRequest.ProtoReflect.Descriptor instead.
+func (*ExtractLabMarkersRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{122}
+}
+
+func (x *ExtractLabMarkersRequest) GetReportId() string {
+	if x != nil {
+		return x.ReportId
+	}
+	return ""
+}
+
+func (x *ExtractLabMarkersRequest) GetMarkers() []*LabMarkerValue {
+	if x != nil {
+		return x.Markers
+	}
+	return nil
+}
+
+func (x *ExtractLabMarkersRequest) GetRecordedAtUnix() int64 {
+	if x != nil {
+		return x.RecordedAtUnix
+	}
+	return 0
+}
+
+type ExtractLabMarkersResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Inserted      int32                  `protobuf:"varint,1,opt,name=inserted,proto3" json:"inserted,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExtractLabMarkersResponse) Reset() {
+	*x = ExtractLabMarkersResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[123]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExtractLabMarkersResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExtractLabMarkersResponse) ProtoMessage() {}
+
+func (x *ExtractLabMarkersResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[123]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExtractLabMarkersResponse.ProtoReflect.Descriptor instead.
+func (*ExtractLabMarkersResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{123}
+}
+
+func (x *ExtractLabMarkersResponse) GetInserted() int32 {
+	if x != nil {
+		return x.Inserted
+	}
+	return 0
+}
+
+type ClinicianShare struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	ShareUrl      string                 `protobuf:"bytes,2,opt,name=share_url,json=shareUrl,proto3" json:"share_url,omitempty"`
+	Scope         string                 `protobuf:"bytes,3,opt,name=scope,proto3" json:"scope,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,4,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	ExpiresAtUnix int64                  `protobuf:"varint,5,opt,name=expires_at_unix,json=expiresAtUnix,proto3" json:"expires_at_unix,omitempty"`
+	Revoked       bool                   `protobuf:"varint,6,opt,name=revoked,proto3" json:"revoked,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ClinicianShare) Reset() {
+	*x = ClinicianShare{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[124]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ClinicianShare) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ClinicianShare) ProtoMessage() {}
+
+func (x *ClinicianShare) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[124]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ClinicianShare.ProtoReflect.Descriptor instead.
+func (*ClinicianShare) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{124}
+}
+
+func (x *ClinicianShare) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *ClinicianShare) GetShareUrl() string {
+	if x != nil {
+		return x.ShareUrl
+	}
+	return ""
+}
+
+func (x *ClinicianShare) GetScope() string {
+	if x != nil {
+		return x.Scope
+	}
+	return ""
+}
+
+func (x *ClinicianShare) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+func (x *ClinicianShare) GetExpiresAtUnix() int64 {
+	if x != nil {
+		return x.ExpiresAtUnix
+	}
+	return 0
+}
+
+func (x *ClinicianShare) GetRevoked() bool {
+	if x != nil {
+		return x.Revoked
+	}
+	return false
+}
+
+type CreateClinicianShareRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TtlDays       int32                  `protobuf:"varint,1,opt,name=ttl_days,json=ttlDays,proto3" json:"ttl_days,omitempty"`
+	Scope         string                 `protobuf:"bytes,2,opt,name=scope,proto3" json:"scope,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateClinicianShareRequest) Reset() {
+	*x = CreateClinicianShareRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[125]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateClinicianShareRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateClinicianShareRequest) ProtoMessage() {}
+
+func (x *CreateClinicianShareRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[125]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateClinicianShareRequest.ProtoReflect.Descriptor instead.
+func (*CreateClinicianShareRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{125}
+}
+
+func (x *CreateClinicianShareRequest) GetTtlDays() int32 {
+	if x != nil {
+		return x.TtlDays
+	}
+	return 0
+}
+
+func (x *CreateClinicianShareRequest) GetScope() string {
+	if x != nil {
+		return x.Scope
+	}
+	return ""
+}
+
+type CreateClinicianShareResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Share         *ClinicianShare        `protobuf:"bytes,1,opt,name=share,proto3" json:"share,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateClinicianShareResponse) Reset() {
+	*x = CreateClinicianShareResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[126]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateClinicianShareResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateClinicianShareResponse) ProtoMessage() {}
+
+func (x *CreateClinicianShareResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[126]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateClinicianShareResponse.ProtoReflect.Descriptor instead.
+func (*CreateClinicianShareResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{126}
+}
+
+func (x *CreateClinicianShareResponse) GetShare() *ClinicianShare {
+	if x != nil {
+		return x.Share
+	}
+	return nil
+}
+
+type ListMyClinicianSharesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyClinicianSharesRequest) Reset() {
+	*x = ListMyClinicianSharesRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[127]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyClinicianSharesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyClinicianSharesRequest) ProtoMessage() {}
+
+func (x *ListMyClinicianSharesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[127]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyClinicianSharesRequest.ProtoReflect.Descriptor instead.
+func (*ListMyClinicianSharesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{127}
+}
+
+type ListMyClinicianSharesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Shares        []*ClinicianShare      `protobuf:"bytes,1,rep,name=shares,proto3" json:"shares,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyClinicianSharesResponse) Reset() {
+	*x = ListMyClinicianSharesResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[128]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyClinicianSharesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyClinicianSharesResponse) ProtoMessage() {}
+
+func (x *ListMyClinicianSharesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[128]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyClinicianSharesResponse.ProtoReflect.Descriptor instead.
+func (*ListMyClinicianSharesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{128}
+}
+
+func (x *ListMyClinicianSharesResponse) GetShares() []*ClinicianShare {
+	if x != nil {
+		return x.Shares
+	}
+	return nil
+}
+
+type RevokeClinicianShareRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeClinicianShareRequest) Reset() {
+	*x = RevokeClinicianShareRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[129]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeClinicianShareRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeClinicianShareRequest) ProtoMessage() {}
+
+func (x *RevokeClinicianShareRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[129]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeClinicianShareRequest.ProtoReflect.Descriptor instead.
+func (*RevokeClinicianShareRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{129}
+}
+
+func (x *RevokeClinicianShareRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+type RevokeClinicianShareResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeClinicianShareResponse) Reset() {
+	*x = RevokeClinicianShareResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[130]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeClinicianShareResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeClinicianShareResponse) ProtoMessage() {}
+
+func (x *RevokeClinicianShareResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[130]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeClinicianShareResponse.ProtoReflect.Descriptor instead.
+func (*RevokeClinicianShareResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{130}
+}
+
+type JetLagStep struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	DayOffset       int32                  `protobuf:"varint,1,opt,name=day_offset,json=dayOffset,proto3" json:"day_offset,omitempty"`
+	LightAction     string                 `protobuf:"bytes,2,opt,name=light_action,json=lightAction,proto3" json:"light_action,omitempty"`
+	MelatoninAction string                 `protobuf:"bytes,3,opt,name=melatonin_action,json=melatoninAction,proto3" json:"melatonin_action,omitempty"`
+	MealAction      string                 `protobuf:"bytes,4,opt,name=meal_action,json=mealAction,proto3" json:"meal_action,omitempty"`
+	Notes           string                 `protobuf:"bytes,5,opt,name=notes,proto3" json:"notes,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *JetLagStep) Reset() {
+	*x = JetLagStep{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[131]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *JetLagStep) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*JetLagStep) ProtoMessage() {}
+
+func (x *JetLagStep) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[131]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use JetLagStep.ProtoReflect.Descriptor instead.
+func (*JetLagStep) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{131}
+}
+
+func (x *JetLagStep) GetDayOffset() int32 {
+	if x != nil {
+		return x.DayOffset
+	}
+	return 0
+}
+
+func (x *JetLagStep) GetLightAction() string {
+	if x != nil {
+		return x.LightAction
+	}
+	return ""
+}
+
+func (x *JetLagStep) GetMelatoninAction() string {
+	if x != nil {
+		return x.MelatoninAction
+	}
+	return ""
+}
+
+func (x *JetLagStep) GetMealAction() string {
+	if x != nil {
+		return x.MealAction
+	}
+	return ""
+}
+
+func (x *JetLagStep) GetNotes() string {
+	if x != nil {
+		return x.Notes
+	}
+	return ""
+}
+
+type GetJetLagProtocolRequest struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	OriginTzOffsetMin int32                  `protobuf:"varint,1,opt,name=origin_tz_offset_min,json=originTzOffsetMin,proto3" json:"origin_tz_offset_min,omitempty"`
+	DestTzOffsetMin   int32                  `protobuf:"varint,2,opt,name=dest_tz_offset_min,json=destTzOffsetMin,proto3" json:"dest_tz_offset_min,omitempty"`
+	TravelAtUnix      int64                  `protobuf:"varint,3,opt,name=travel_at_unix,json=travelAtUnix,proto3" json:"travel_at_unix,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *GetJetLagProtocolRequest) Reset() {
+	*x = GetJetLagProtocolRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[132]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetJetLagProtocolRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetJetLagProtocolRequest) ProtoMessage() {}
+
+func (x *GetJetLagProtocolRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[132]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetJetLagProtocolRequest.ProtoReflect.Descriptor instead.
+func (*GetJetLagProtocolRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{132}
+}
+
+func (x *GetJetLagProtocolRequest) GetOriginTzOffsetMin() int32 {
+	if x != nil {
+		return x.OriginTzOffsetMin
+	}
+	return 0
+}
+
+func (x *GetJetLagProtocolRequest) GetDestTzOffsetMin() int32 {
+	if x != nil {
+		return x.DestTzOffsetMin
+	}
+	return 0
+}
+
+func (x *GetJetLagProtocolRequest) GetTravelAtUnix() int64 {
+	if x != nil {
+		return x.TravelAtUnix
+	}
+	return 0
+}
+
+type GetJetLagProtocolResponse struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	TimezoneShiftHours int32                  `protobuf:"varint,1,opt,name=timezone_shift_hours,json=timezoneShiftHours,proto3" json:"timezone_shift_hours,omitempty"`
+	Direction          string                 `protobuf:"bytes,2,opt,name=direction,proto3" json:"direction,omitempty"`
+	Steps              []*JetLagStep          `protobuf:"bytes,3,rep,name=steps,proto3" json:"steps,omitempty"`
+	Summary            string                 `protobuf:"bytes,4,opt,name=summary,proto3" json:"summary,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *GetJetLagProtocolResponse) Reset() {
+	*x = GetJetLagProtocolResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[133]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetJetLagProtocolResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetJetLagProtocolResponse) ProtoMessage() {}
+
+func (x *GetJetLagProtocolResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[133]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetJetLagProtocolResponse.ProtoReflect.Descriptor instead.
+func (*GetJetLagProtocolResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{133}
+}
+
+func (x *GetJetLagProtocolResponse) GetTimezoneShiftHours() int32 {
+	if x != nil {
+		return x.TimezoneShiftHours
+	}
+	return 0
+}
+
+func (x *GetJetLagProtocolResponse) GetDirection() string {
+	if x != nil {
+		return x.Direction
+	}
+	return ""
+}
+
+func (x *GetJetLagProtocolResponse) GetSteps() []*JetLagStep {
+	if x != nil {
+		return x.Steps
+	}
+	return nil
+}
+
+func (x *GetJetLagProtocolResponse) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+type GenerateHealthAlmanacRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Year          string                 `protobuf:"bytes,1,opt,name=year,proto3" json:"year,omitempty"` // empty = current year
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateHealthAlmanacRequest) Reset() {
+	*x = GenerateHealthAlmanacRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[134]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateHealthAlmanacRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateHealthAlmanacRequest) ProtoMessage() {}
+
+func (x *GenerateHealthAlmanacRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[134]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateHealthAlmanacRequest.ProtoReflect.Descriptor instead.
+func (*GenerateHealthAlmanacRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{134}
+}
+
+func (x *GenerateHealthAlmanacRequest) GetYear() string {
+	if x != nil {
+		return x.Year
+	}
+	return ""
+}
+
+type GenerateHealthAlmanacResponse struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	MediaAssetId    string                 `protobuf:"bytes,1,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
+	PublicUrl       string                 `protobuf:"bytes,2,opt,name=public_url,json=publicUrl,proto3" json:"public_url,omitempty"`
+	GeneratedAtUnix int64                  `protobuf:"varint,3,opt,name=generated_at_unix,json=generatedAtUnix,proto3" json:"generated_at_unix,omitempty"`
+	PageCount       int32                  `protobuf:"varint,4,opt,name=page_count,json=pageCount,proto3" json:"page_count,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *GenerateHealthAlmanacResponse) Reset() {
+	*x = GenerateHealthAlmanacResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[135]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateHealthAlmanacResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateHealthAlmanacResponse) ProtoMessage() {}
+
+func (x *GenerateHealthAlmanacResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[135]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateHealthAlmanacResponse.ProtoReflect.Descriptor instead.
+func (*GenerateHealthAlmanacResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{135}
+}
+
+func (x *GenerateHealthAlmanacResponse) GetMediaAssetId() string {
+	if x != nil {
+		return x.MediaAssetId
+	}
+	return ""
+}
+
+func (x *GenerateHealthAlmanacResponse) GetPublicUrl() string {
+	if x != nil {
+		return x.PublicUrl
+	}
+	return ""
+}
+
+func (x *GenerateHealthAlmanacResponse) GetGeneratedAtUnix() int64 {
+	if x != nil {
+		return x.GeneratedAtUnix
+	}
+	return 0
+}
+
+func (x *GenerateHealthAlmanacResponse) GetPageCount() int32 {
+	if x != nil {
+		return x.PageCount
+	}
+	return 0
+}
+
+type ImagingStudy struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Modality       string                 `protobuf:"bytes,2,opt,name=modality,proto3" json:"modality,omitempty"` // e.g. "Coronary CTA", "Whole-Body MRI", "DEXA"
+	Provider       string                 `protobuf:"bytes,3,opt,name=provider,proto3" json:"provider,omitempty"`
+	PerformedOn    string                 `protobuf:"bytes,4,opt,name=performed_on,json=performedOn,proto3" json:"performed_on,omitempty"` // YYYY-MM-DD
+	FindingsText   string                 `protobuf:"bytes,5,opt,name=findings_text,json=findingsText,proto3" json:"findings_text,omitempty"`
+	HeadlineMetric string                 `protobuf:"bytes,6,opt,name=headline_metric,json=headlineMetric,proto3" json:"headline_metric,omitempty"` // e.g. "CAC score"
+	HeadlineValue  float64                `protobuf:"fixed64,7,opt,name=headline_value,json=headlineValue,proto3" json:"headline_value,omitempty"`
+	HeadlineUnit   string                 `protobuf:"bytes,8,opt,name=headline_unit,json=headlineUnit,proto3" json:"headline_unit,omitempty"`
+	MediaAssetId   string                 `protobuf:"bytes,9,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
+	CreatedAtUnix  int64                  `protobuf:"varint,10,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *ImagingStudy) Reset() {
+	*x = ImagingStudy{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[136]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ImagingStudy) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ImagingStudy) ProtoMessage() {}
+
+func (x *ImagingStudy) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[136]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ImagingStudy.ProtoReflect.Descriptor instead.
+func (*ImagingStudy) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{136}
+}
+
+func (x *ImagingStudy) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ImagingStudy) GetModality() string {
+	if x != nil {
+		return x.Modality
+	}
+	return ""
+}
+
+func (x *ImagingStudy) GetProvider() string {
+	if x != nil {
+		return x.Provider
+	}
+	return ""
+}
+
+func (x *ImagingStudy) GetPerformedOn() string {
+	if x != nil {
+		return x.PerformedOn
+	}
+	return ""
+}
+
+func (x *ImagingStudy) GetFindingsText() string {
+	if x != nil {
+		return x.FindingsText
+	}
+	return ""
+}
+
+func (x *ImagingStudy) GetHeadlineMetric() string {
+	if x != nil {
+		return x.HeadlineMetric
+	}
+	return ""
+}
+
+func (x *ImagingStudy) GetHeadlineValue() float64 {
+	if x != nil {
+		return x.HeadlineValue
+	}
+	return 0
+}
+
+func (x *ImagingStudy) GetHeadlineUnit() string {
+	if x != nil {
+		return x.HeadlineUnit
+	}
+	return ""
+}
+
+func (x *ImagingStudy) GetMediaAssetId() string {
+	if x != nil {
+		return x.MediaAssetId
+	}
+	return ""
+}
+
+func (x *ImagingStudy) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type SubmitImagingStudyRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Modality       string                 `protobuf:"bytes,1,opt,name=modality,proto3" json:"modality,omitempty"`
+	Provider       string                 `protobuf:"bytes,2,opt,name=provider,proto3" json:"provider,omitempty"`
+	PerformedOn    string                 `protobuf:"bytes,3,opt,name=performed_on,json=performedOn,proto3" json:"performed_on,omitempty"`
+	FindingsText   string                 `protobuf:"bytes,4,opt,name=findings_text,json=findingsText,proto3" json:"findings_text,omitempty"`
+	HeadlineMetric string                 `protobuf:"bytes,5,opt,name=headline_metric,json=headlineMetric,proto3" json:"headline_metric,omitempty"`
+	HeadlineValue  float64                `protobuf:"fixed64,6,opt,name=headline_value,json=headlineValue,proto3" json:"headline_value,omitempty"`
+	HeadlineUnit   string                 `protobuf:"bytes,7,opt,name=headline_unit,json=headlineUnit,proto3" json:"headline_unit,omitempty"`
+	MediaAssetId   string                 `protobuf:"bytes,8,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *SubmitImagingStudyRequest) Reset() {
+	*x = SubmitImagingStudyRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[137]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitImagingStudyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitImagingStudyRequest) ProtoMessage() {}
+
+func (x *SubmitImagingStudyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[137]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitImagingStudyRequest.ProtoReflect.Descriptor instead.
+func (*SubmitImagingStudyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{137}
+}
+
+func (x *SubmitImagingStudyRequest) GetModality() string {
+	if x != nil {
+		return x.Modality
+	}
+	return ""
+}
+
+func (x *SubmitImagingStudyRequest) GetProvider() string {
+	if x != nil {
+		return x.Provider
+	}
+	return ""
+}
+
+func (x *SubmitImagingStudyRequest) GetPerformedOn() string {
+	if x != nil {
+		return x.PerformedOn
+	}
+	return ""
+}
+
+func (x *SubmitImagingStudyRequest) GetFindingsText() string {
+	if x != nil {
+		return x.FindingsText
+	}
+	return ""
+}
+
+func (x *SubmitImagingStudyRequest) GetHeadlineMetric() string {
+	if x != nil {
+		return x.HeadlineMetric
+	}
+	return ""
+}
+
+func (x *SubmitImagingStudyRequest) GetHeadlineValue() float64 {
+	if x != nil {
+		return x.HeadlineValue
+	}
+	return 0
+}
+
+func (x *SubmitImagingStudyRequest) GetHeadlineUnit() string {
+	if x != nil {
+		return x.HeadlineUnit
+	}
+	return ""
+}
+
+func (x *SubmitImagingStudyRequest) GetMediaAssetId() string {
+	if x != nil {
+		return x.MediaAssetId
+	}
+	return ""
+}
+
+type SubmitImagingStudyResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Study         *ImagingStudy          `protobuf:"bytes,1,opt,name=study,proto3" json:"study,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitImagingStudyResponse) Reset() {
+	*x = SubmitImagingStudyResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[138]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitImagingStudyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitImagingStudyResponse) ProtoMessage() {}
+
+func (x *SubmitImagingStudyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[138]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitImagingStudyResponse.ProtoReflect.Descriptor instead.
+func (*SubmitImagingStudyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{138}
+}
+
+func (x *SubmitImagingStudyResponse) GetStudy() *ImagingStudy {
+	if x != nil {
+		return x.Study
+	}
+	return nil
+}
+
+type ListMyImagingStudiesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyImagingStudiesRequest) Reset() {
+	*x = ListMyImagingStudiesRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[139]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyImagingStudiesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyImagingStudiesRequest) ProtoMessage() {}
+
+func (x *ListMyImagingStudiesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[139]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyImagingStudiesRequest.ProtoReflect.Descriptor instead.
+func (*ListMyImagingStudiesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{139}
+}
+
+type ListMyImagingStudiesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Studies       []*ImagingStudy        `protobuf:"bytes,1,rep,name=studies,proto3" json:"studies,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyImagingStudiesResponse) Reset() {
+	*x = ListMyImagingStudiesResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[140]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyImagingStudiesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyImagingStudiesResponse) ProtoMessage() {}
+
+func (x *ListMyImagingStudiesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[140]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyImagingStudiesResponse.ProtoReflect.Descriptor instead.
+func (*ListMyImagingStudiesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{140}
+}
+
+func (x *ListMyImagingStudiesResponse) GetStudies() []*ImagingStudy {
+	if x != nil {
+		return x.Studies
+	}
+	return nil
+}
+
+type Lounge struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug          string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	City          string                 `protobuf:"bytes,4,opt,name=city,proto3" json:"city,omitempty"`
+	Region        string                 `protobuf:"bytes,5,opt,name=region,proto3" json:"region,omitempty"`
+	Address       string                 `protobuf:"bytes,6,opt,name=address,proto3" json:"address,omitempty"`
+	Amenities     string                 `protobuf:"bytes,7,opt,name=amenities,proto3" json:"amenities,omitempty"` // comma-separated
+	HeroUrl       string                 `protobuf:"bytes,8,opt,name=hero_url,json=heroUrl,proto3" json:"hero_url,omitempty"`
+	SovereignOnly bool                   `protobuf:"varint,9,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Lounge) Reset() {
+	*x = Lounge{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[141]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Lounge) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Lounge) ProtoMessage() {}
+
+func (x *Lounge) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[141]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Lounge.ProtoReflect.Descriptor instead.
+func (*Lounge) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{141}
+}
+
+func (x *Lounge) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Lounge) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *Lounge) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Lounge) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *Lounge) GetRegion() string {
+	if x != nil {
+		return x.Region
+	}
+	return ""
+}
+
+func (x *Lounge) GetAddress() string {
+	if x != nil {
+		return x.Address
+	}
+	return ""
+}
+
+func (x *Lounge) GetAmenities() string {
+	if x != nil {
+		return x.Amenities
+	}
+	return ""
+}
+
+func (x *Lounge) GetHeroUrl() string {
+	if x != nil {
+		return x.HeroUrl
+	}
+	return ""
+}
+
+func (x *Lounge) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+type LoungeBooking struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Lounge           *Lounge                `protobuf:"bytes,2,opt,name=lounge,proto3" json:"lounge,omitempty"`
+	Amenity          string                 `protobuf:"bytes,3,opt,name=amenity,proto3" json:"amenity,omitempty"`
+	ScheduledForUnix int64                  `protobuf:"varint,4,opt,name=scheduled_for_unix,json=scheduledForUnix,proto3" json:"scheduled_for_unix,omitempty"`
+	Status           string                 `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *LoungeBooking) Reset() {
+	*x = LoungeBooking{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[142]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LoungeBooking) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LoungeBooking) ProtoMessage() {}
+
+func (x *LoungeBooking) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[142]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LoungeBooking.ProtoReflect.Descriptor instead.
+func (*LoungeBooking) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{142}
+}
+
+func (x *LoungeBooking) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LoungeBooking) GetLounge() *Lounge {
+	if x != nil {
+		return x.Lounge
+	}
+	return nil
+}
+
+func (x *LoungeBooking) GetAmenity() string {
+	if x != nil {
+		return x.Amenity
+	}
+	return ""
+}
+
+func (x *LoungeBooking) GetScheduledForUnix() int64 {
+	if x != nil {
+		return x.ScheduledForUnix
+	}
+	return 0
+}
+
+func (x *LoungeBooking) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+type ListLoungesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Region        string                 `protobuf:"bytes,1,opt,name=region,proto3" json:"region,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLoungesRequest) Reset() {
+	*x = ListLoungesRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[143]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLoungesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLoungesRequest) ProtoMessage() {}
+
+func (x *ListLoungesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[143]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLoungesRequest.ProtoReflect.Descriptor instead.
+func (*ListLoungesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{143}
+}
+
+func (x *ListLoungesRequest) GetRegion() string {
+	if x != nil {
+		return x.Region
+	}
+	return ""
+}
+
+type ListLoungesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Lounges       []*Lounge              `protobuf:"bytes,1,rep,name=lounges,proto3" json:"lounges,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLoungesResponse) Reset() {
+	*x = ListLoungesResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[144]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLoungesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLoungesResponse) ProtoMessage() {}
+
+func (x *ListLoungesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[144]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLoungesResponse.ProtoReflect.Descriptor instead.
+func (*ListLoungesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{144}
+}
+
+func (x *ListLoungesResponse) GetLounges() []*Lounge {
+	if x != nil {
+		return x.Lounges
+	}
+	return nil
+}
+
+type ListMyLoungeBookingsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyLoungeBookingsRequest) Reset() {
+	*x = ListMyLoungeBookingsRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[145]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyLoungeBookingsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyLoungeBookingsRequest) ProtoMessage() {}
+
+func (x *ListMyLoungeBookingsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[145]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyLoungeBookingsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyLoungeBookingsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{145}
+}
+
+type ListMyLoungeBookingsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Bookings      []*LoungeBooking       `protobuf:"bytes,1,rep,name=bookings,proto3" json:"bookings,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyLoungeBookingsResponse) Reset() {
+	*x = ListMyLoungeBookingsResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[146]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyLoungeBookingsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyLoungeBookingsResponse) ProtoMessage() {}
+
+func (x *ListMyLoungeBookingsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[146]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyLoungeBookingsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyLoungeBookingsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{146}
+}
+
+func (x *ListMyLoungeBookingsResponse) GetBookings() []*LoungeBooking {
+	if x != nil {
+		return x.Bookings
+	}
+	return nil
+}
+
+type CreateLoungeBookingRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	LoungeId         string                 `protobuf:"bytes,1,opt,name=lounge_id,json=loungeId,proto3" json:"lounge_id,omitempty"`
+	Amenity          string                 `protobuf:"bytes,2,opt,name=amenity,proto3" json:"amenity,omitempty"`
+	ScheduledForUnix int64                  `protobuf:"varint,3,opt,name=scheduled_for_unix,json=scheduledForUnix,proto3" json:"scheduled_for_unix,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *CreateLoungeBookingRequest) Reset() {
+	*x = CreateLoungeBookingRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[147]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateLoungeBookingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateLoungeBookingRequest) ProtoMessage() {}
+
+func (x *CreateLoungeBookingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[147]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateLoungeBookingRequest.ProtoReflect.Descriptor instead.
+func (*CreateLoungeBookingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{147}
+}
+
+func (x *CreateLoungeBookingRequest) GetLoungeId() string {
+	if x != nil {
+		return x.LoungeId
+	}
+	return ""
+}
+
+func (x *CreateLoungeBookingRequest) GetAmenity() string {
+	if x != nil {
+		return x.Amenity
+	}
+	return ""
+}
+
+func (x *CreateLoungeBookingRequest) GetScheduledForUnix() int64 {
+	if x != nil {
+		return x.ScheduledForUnix
+	}
+	return 0
+}
+
+type CreateLoungeBookingResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Booking       *LoungeBooking         `protobuf:"bytes,1,opt,name=booking,proto3" json:"booking,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateLoungeBookingResponse) Reset() {
+	*x = CreateLoungeBookingResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[148]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateLoungeBookingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateLoungeBookingResponse) ProtoMessage() {}
+
+func (x *CreateLoungeBookingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[148]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateLoungeBookingResponse.ProtoReflect.Descriptor instead.
+func (*CreateLoungeBookingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{148}
+}
+
+func (x *CreateLoungeBookingResponse) GetBooking() *LoungeBooking {
+	if x != nil {
+		return x.Booking
+	}
+	return nil
+}
+
+type CancelLoungeBookingRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	BookingId     string                 `protobuf:"bytes,1,opt,name=booking_id,json=bookingId,proto3" json:"booking_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CancelLoungeBookingRequest) Reset() {
+	*x = CancelLoungeBookingRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[149]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CancelLoungeBookingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CancelLoungeBookingRequest) ProtoMessage() {}
+
+func (x *CancelLoungeBookingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[149]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CancelLoungeBookingRequest.ProtoReflect.Descriptor instead.
+func (*CancelLoungeBookingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{149}
+}
+
+func (x *CancelLoungeBookingRequest) GetBookingId() string {
+	if x != nil {
+		return x.BookingId
+	}
+	return ""
+}
+
+type CancelLoungeBookingResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CancelLoungeBookingResponse) Reset() {
+	*x = CancelLoungeBookingResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[150]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CancelLoungeBookingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CancelLoungeBookingResponse) ProtoMessage() {}
+
+func (x *CancelLoungeBookingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[150]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CancelLoungeBookingResponse.ProtoReflect.Descriptor instead.
+func (*CancelLoungeBookingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{150}
+}
+
+type ParseLabReportTextRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ReportId      string                 `protobuf:"bytes,1,opt,name=report_id,json=reportId,proto3" json:"report_id,omitempty"`
+	Text          string                 `protobuf:"bytes,2,opt,name=text,proto3" json:"text,omitempty"` // OCR'd or pasted text
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ParseLabReportTextRequest) Reset() {
+	*x = ParseLabReportTextRequest{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[151]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ParseLabReportTextRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ParseLabReportTextRequest) ProtoMessage() {}
+
+func (x *ParseLabReportTextRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[151]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ParseLabReportTextRequest.ProtoReflect.Descriptor instead.
+func (*ParseLabReportTextRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{151}
+}
+
+func (x *ParseLabReportTextRequest) GetReportId() string {
+	if x != nil {
+		return x.ReportId
+	}
+	return ""
+}
+
+func (x *ParseLabReportTextRequest) GetText() string {
+	if x != nil {
+		return x.Text
+	}
+	return ""
+}
+
+type ParseLabReportTextResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Extracted     []*LabMarkerValue      `protobuf:"bytes,1,rep,name=extracted,proto3" json:"extracted,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ParseLabReportTextResponse) Reset() {
+	*x = ParseLabReportTextResponse{}
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[152]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ParseLabReportTextResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ParseLabReportTextResponse) ProtoMessage() {}
+
+func (x *ParseLabReportTextResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_apex_v1_apex_proto_msgTypes[152]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ParseLabReportTextResponse.ProtoReflect.Descriptor instead.
+func (*ParseLabReportTextResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_apex_v1_apex_proto_rawDescGZIP(), []int{152}
+}
+
+func (x *ParseLabReportTextResponse) GetExtracted() []*LabMarkerValue {
+	if x != nil {
+		return x.Extracted
+	}
+	return nil
+}
+
 var File_sttattus_apex_v1_apex_proto protoreflect.FileDescriptor
 
 const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
@@ -3175,13 +8733,16 @@ const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"\x13ListMyVitalsRequest\"K\n" +
 	"\x14ListMyVitalsResponse\x123\n" +
 	"\x06vitals\x18\x01 \x03(\v2\x1b.sttattus.apex.v1.BiomarkerR\x06vitals\"\x13\n" +
-	"\x11GetApexAgeRequest\"\xdd\x02\n" +
+	"\x11GetApexAgeRequest\"\xc1\x03\n" +
 	"\x12GetApexAgeResponse\x12%\n" +
 	"\x0ebiological_age\x18\x01 \x01(\x01R\rbiologicalAge\x12\x19\n" +
 	"\bbio_rank\x18\x02 \x01(\x01R\abioRank\x12:\n" +
 	"\x19chronological_age_present\x18\x03 \x01(\bR\x17chronologicalAgePresent\x12+\n" +
 	"\x11chronological_age\x18\x04 \x01(\x01R\x10chronologicalAge\x12[\n" +
-	"\rsystem_scores\x18\x05 \x03(\v26.sttattus.apex.v1.GetApexAgeResponse.SystemScoresEntryR\fsystemScores\x1a?\n" +
+	"\rsystem_scores\x18\x05 \x03(\v26.sttattus.apex.v1.GetApexAgeResponse.SystemScoresEntryR\fsystemScores\x12\x16\n" +
+	"\x06method\x18\x06 \x01(\tR\x06method\x12!\n" +
+	"\fmarkers_used\x18\a \x03(\tR\vmarkersUsed\x12'\n" +
+	"\x0fmarkers_missing\x18\b \x03(\tR\x0emarkersMissing\x1a?\n" +
 	"\x11SystemScoresEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\x01R\x05value:\x028\x01\"\xab\x01\n" +
@@ -3339,7 +8900,372 @@ const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"\arequest\x18\x01 \x01(\v2(.sttattus.apex.v1.ApexClinicIntroRequestR\arequest\"&\n" +
 	"$ListMyApexClinicIntroRequestsRequest\"m\n" +
 	"%ListMyApexClinicIntroRequestsResponse\x12D\n" +
-	"\brequests\x18\x01 \x03(\v2(.sttattus.apex.v1.ApexClinicIntroRequestR\brequests*\xff\x01\n" +
+	"\brequests\x18\x01 \x03(\v2(.sttattus.apex.v1.ApexClinicIntroRequestR\brequests\"\xfa\x01\n" +
+	"\n" +
+	"Supplement\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12\x1a\n" +
+	"\bcategory\x18\x04 \x01(\tR\bcategory\x12 \n" +
+	"\vdescription\x18\x05 \x01(\tR\vdescription\x12'\n" +
+	"\x0fevidence_rating\x18\x06 \x01(\tR\x0eevidenceRating\x12&\n" +
+	"\x0fdefault_dose_mg\x18\a \x01(\x01R\rdefaultDoseMg\x12%\n" +
+	"\x0esovereign_only\x18\b \x01(\bR\rsovereignOnly\"\xd3\x01\n" +
+	"\x0eUserSupplement\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12<\n" +
+	"\n" +
+	"supplement\x18\x02 \x01(\v2\x1c.sttattus.apex.v1.SupplementR\n" +
+	"supplement\x12\x17\n" +
+	"\adose_mg\x18\x03 \x01(\x01R\x06doseMg\x12\x1a\n" +
+	"\bschedule\x18\x04 \x01(\tR\bschedule\x12&\n" +
+	"\x0fstarted_at_unix\x18\x05 \x01(\x03R\rstartedAtUnix\x12\x16\n" +
+	"\x06active\x18\x06 \x01(\bR\x06active\"u\n" +
+	"\x15SupplementInteraction\x12\x15\n" +
+	"\x06a_slug\x18\x01 \x01(\tR\x05aSlug\x12\x15\n" +
+	"\x06b_slug\x18\x02 \x01(\tR\x05bSlug\x12\x1a\n" +
+	"\bseverity\x18\x03 \x01(\tR\bseverity\x12\x12\n" +
+	"\x04note\x18\x04 \x01(\tR\x04note\"4\n" +
+	"\x16ListSupplementsRequest\x12\x1a\n" +
+	"\bcategory\x18\x01 \x01(\tR\bcategory\"Y\n" +
+	"\x17ListSupplementsResponse\x12>\n" +
+	"\vsupplements\x18\x01 \x03(\v2\x1c.sttattus.apex.v1.SupplementR\vsupplements\"\x1a\n" +
+	"\x18ListMySupplementsRequest\"S\n" +
+	"\x19ListMySupplementsResponse\x126\n" +
+	"\x05stack\x18\x01 \x03(\v2 .sttattus.apex.v1.UserSupplementR\x05stack\"p\n" +
+	"\x14AddSupplementRequest\x12#\n" +
+	"\rsupplement_id\x18\x01 \x01(\tR\fsupplementId\x12\x17\n" +
+	"\adose_mg\x18\x02 \x01(\x01R\x06doseMg\x12\x1a\n" +
+	"\bschedule\x18\x03 \x01(\tR\bschedule\"\x94\x01\n" +
+	"\x15AddSupplementResponse\x126\n" +
+	"\x05entry\x18\x01 \x01(\v2 .sttattus.apex.v1.UserSupplementR\x05entry\x12C\n" +
+	"\bwarnings\x18\x02 \x03(\v2'.sttattus.apex.v1.SupplementInteractionR\bwarnings\"G\n" +
+	"\x17RemoveSupplementRequest\x12,\n" +
+	"\x12user_supplement_id\x18\x01 \x01(\tR\x10userSupplementId\"\x1a\n" +
+	"\x18RemoveSupplementResponse\"7\n" +
+	"!ListSupplementInteractionsRequest\x12\x12\n" +
+	"\x04slug\x18\x01 \x01(\tR\x04slug\"q\n" +
+	"\"ListSupplementInteractionsResponse\x12K\n" +
+	"\finteractions\x18\x01 \x03(\v2'.sttattus.apex.v1.SupplementInteractionR\finteractions\"\x82\x01\n" +
+	"\x0eGlucoseReading\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1e\n" +
+	"\vvalue_mg_dl\x18\x02 \x01(\x01R\tvalueMgDl\x12(\n" +
+	"\x10recorded_at_unix\x18\x03 \x01(\x03R\x0erecordedAtUnix\x12\x16\n" +
+	"\x06source\x18\x04 \x01(\tR\x06source\",\n" +
+	"\x14ListMyGlucoseRequest\x12\x14\n" +
+	"\x05hours\x18\x01 \x01(\x05R\x05hours\"\x9e\x01\n" +
+	"\x15ListMyGlucoseResponse\x12<\n" +
+	"\breadings\x18\x01 \x03(\v2 .sttattus.apex.v1.GlucoseReadingR\breadings\x12\x1c\n" +
+	"\n" +
+	"mean_mg_dl\x18\x02 \x01(\x01R\bmeanMgDl\x12)\n" +
+	"\x11time_in_range_pct\x18\x03 \x01(\x01R\x0etimeInRangePct\"\x7f\n" +
+	"\x1bIngestGlucoseReadingRequest\x12\x1e\n" +
+	"\vvalue_mg_dl\x18\x01 \x01(\x01R\tvalueMgDl\x12(\n" +
+	"\x10recorded_at_unix\x18\x02 \x01(\x03R\x0erecordedAtUnix\x12\x16\n" +
+	"\x06source\x18\x03 \x01(\tR\x06source\"Z\n" +
+	"\x1cIngestGlucoseReadingResponse\x12:\n" +
+	"\areading\x18\x01 \x01(\v2 .sttattus.apex.v1.GlucoseReadingR\areading\"\xe6\x01\n" +
+	"\vCycleStatus\x12\x18\n" +
+	"\apresent\x18\x01 \x01(\bR\apresent\x12\x14\n" +
+	"\x05phase\x18\x02 \x01(\tR\x05phase\x12\x1b\n" +
+	"\tcycle_day\x18\x03 \x01(\x05R\bcycleDay\x120\n" +
+	"\x14next_period_estimate\x18\x04 \x01(\tR\x12nextPeriodEstimate\x12*\n" +
+	"\x11last_period_start\x18\x05 \x01(\tR\x0flastPeriodStart\x12,\n" +
+	"\x12average_cycle_days\x18\x06 \x01(\x05R\x10averageCycleDays\"q\n" +
+	"\fCycleSymptom\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
+	"\vrecorded_on\x18\x02 \x01(\tR\n" +
+	"recordedOn\x12\x12\n" +
+	"\x04kind\x18\x03 \x01(\tR\x04kind\x12\x1c\n" +
+	"\tintensity\x18\x04 \x01(\x05R\tintensity\"\x17\n" +
+	"\x15GetCycleStatusRequest\"O\n" +
+	"\x16GetCycleStatusResponse\x125\n" +
+	"\x06status\x18\x01 \x01(\v2\x1d.sttattus.apex.v1.CycleStatusR\x06status\"`\n" +
+	"\x10LogPeriodRequest\x12\x1d\n" +
+	"\n" +
+	"started_on\x18\x01 \x01(\tR\tstartedOn\x12\x19\n" +
+	"\bended_on\x18\x02 \x01(\tR\aendedOn\x12\x12\n" +
+	"\x04flow\x18\x03 \x01(\tR\x04flow\"J\n" +
+	"\x11LogPeriodResponse\x125\n" +
+	"\x06status\x18\x01 \x01(\v2\x1d.sttattus.apex.v1.CycleStatusR\x06status\"k\n" +
+	"\x16LogCycleSymptomRequest\x12\x1f\n" +
+	"\vrecorded_on\x18\x01 \x01(\tR\n" +
+	"recordedOn\x12\x12\n" +
+	"\x04kind\x18\x02 \x01(\tR\x04kind\x12\x1c\n" +
+	"\tintensity\x18\x03 \x01(\x05R\tintensity\"S\n" +
+	"\x17LogCycleSymptomResponse\x128\n" +
+	"\asymptom\x18\x01 \x01(\v2\x1e.sttattus.apex.v1.CycleSymptomR\asymptom\"0\n" +
+	"\x1aListMyCycleSymptomsRequest\x12\x12\n" +
+	"\x04days\x18\x01 \x01(\x05R\x04days\"Y\n" +
+	"\x1bListMyCycleSymptomsResponse\x12:\n" +
+	"\bsymptoms\x18\x01 \x03(\v2\x1e.sttattus.apex.v1.CycleSymptomR\bsymptoms\"G\n" +
+	"\x0eMarkerOverride\x12\x1f\n" +
+	"\vmetric_code\x18\x01 \x01(\tR\n" +
+	"metricCode\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\x01R\x05value\"X\n" +
+	"\x16SimulateApexAgeRequest\x12>\n" +
+	"\toverrides\x18\x01 \x03(\v2 .sttattus.apex.v1.MarkerOverrideR\toverrides\"\xaa\x01\n" +
+	"\x17SimulateApexAgeResponse\x12(\n" +
+	"\x10current_apex_age\x18\x01 \x01(\x01R\x0ecurrentApexAge\x12,\n" +
+	"\x12projected_apex_age\x18\x02 \x01(\x01R\x10projectedApexAge\x12\x1f\n" +
+	"\vdelta_years\x18\x03 \x01(\x01R\n" +
+	"deltaYears\x12\x16\n" +
+	"\x06method\x18\x04 \x01(\tR\x06method\"\xe4\x01\n" +
+	"\x11ReadinessSnapshot\x12&\n" +
+	"\x0freadiness_0_100\x18\x01 \x01(\x01R\rreadiness0100\x12\x18\n" +
+	"\averdict\x18\x02 \x01(\tR\averdict\x12 \n" +
+	"\fhrv_delta_ms\x18\x03 \x01(\x01R\n" +
+	"hrvDeltaMs\x12\"\n" +
+	"\rrhr_delta_bpm\x18\x04 \x01(\x01R\vrhrDeltaBpm\x12\x1f\n" +
+	"\vsleep_score\x18\x05 \x01(\x01R\n" +
+	"sleepScore\x12&\n" +
+	"\x0erecommendation\x18\x06 \x01(\tR\x0erecommendation\"\x15\n" +
+	"\x13GetReadinessRequest\"W\n" +
+	"\x14GetReadinessResponse\x12?\n" +
+	"\bsnapshot\x18\x01 \x01(\v2#.sttattus.apex.v1.ReadinessSnapshotR\bsnapshot\"\xef\x01\n" +
+	"\x0fConciergeThread\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
+	"\asubject\x18\x02 \x01(\tR\asubject\x12\x16\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\x12%\n" +
+	"\x0fsla_due_at_unix\x18\x04 \x01(\x03R\fslaDueAtUnix\x12&\n" +
+	"\x0fcreated_at_unix\x18\x05 \x01(\x03R\rcreatedAtUnix\x12&\n" +
+	"\x0fupdated_at_unix\x18\x06 \x01(\x03R\rupdatedAtUnix\x12#\n" +
+	"\rmessage_count\x18\a \x01(\x05R\fmessageCount\"\x9c\x01\n" +
+	"\x10ConciergeMessage\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\tthread_id\x18\x02 \x01(\tR\bthreadId\x12\x1f\n" +
+	"\vsender_role\x18\x03 \x01(\tR\n" +
+	"senderRole\x12\x12\n" +
+	"\x04body\x18\x04 \x01(\tR\x04body\x12&\n" +
+	"\x0fcreated_at_unix\x18\x05 \x01(\x03R\rcreatedAtUnix\"`\n" +
+	"\x1bStartConciergeThreadRequest\x12\x18\n" +
+	"\asubject\x18\x01 \x01(\tR\asubject\x12'\n" +
+	"\x0fopening_message\x18\x02 \x01(\tR\x0eopeningMessage\"Y\n" +
+	"\x1cStartConciergeThreadResponse\x129\n" +
+	"\x06thread\x18\x01 \x01(\v2!.sttattus.apex.v1.ConciergeThreadR\x06thread\"\x1f\n" +
+	"\x1dListMyConciergeThreadsRequest\"]\n" +
+	"\x1eListMyConciergeThreadsResponse\x12;\n" +
+	"\athreads\x18\x01 \x03(\v2!.sttattus.apex.v1.ConciergeThreadR\athreads\"8\n" +
+	"\x19GetConciergeThreadRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\"\x97\x01\n" +
+	"\x1aGetConciergeThreadResponse\x129\n" +
+	"\x06thread\x18\x01 \x01(\v2!.sttattus.apex.v1.ConciergeThreadR\x06thread\x12>\n" +
+	"\bmessages\x18\x02 \x03(\v2\".sttattus.apex.v1.ConciergeMessageR\bmessages\"N\n" +
+	"\x1bPostConciergeMessageRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\x12\x12\n" +
+	"\x04body\x18\x02 \x01(\tR\x04body\"\\\n" +
+	"\x1cPostConciergeMessageResponse\x12<\n" +
+	"\amessage\x18\x01 \x01(\v2\".sttattus.apex.v1.ConciergeMessageR\amessage\"\xa3\x01\n" +
+	"\x0fAnthologyAuthor\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12 \n" +
+	"\vcredentials\x18\x04 \x01(\tR\vcredentials\x12\x17\n" +
+	"\abio_url\x18\x05 \x01(\tR\x06bioUrl\x12\x1d\n" +
+	"\n" +
+	"avatar_url\x18\x06 \x01(\tR\tavatarUrl\"\x9b\x02\n" +
+	"\x10AnthologyArticle\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x129\n" +
+	"\x06author\x18\x03 \x01(\v2!.sttattus.apex.v1.AnthologyAuthorR\x06author\x12\x14\n" +
+	"\x05title\x18\x04 \x01(\tR\x05title\x12\x10\n" +
+	"\x03dek\x18\x05 \x01(\tR\x03dek\x12\x12\n" +
+	"\x04body\x18\x06 \x01(\tR\x04body\x12\x19\n" +
+	"\bhero_url\x18\a \x01(\tR\aheroUrl\x12*\n" +
+	"\x11published_at_unix\x18\b \x01(\x03R\x0fpublishedAtUnix\x12%\n" +
+	"\x0esovereign_only\x18\t \x01(\bR\rsovereignOnly\"\x1e\n" +
+	"\x1cListAnthologyArticlesRequest\"_\n" +
+	"\x1dListAnthologyArticlesResponse\x12>\n" +
+	"\barticles\x18\x01 \x03(\v2\".sttattus.apex.v1.AnthologyArticleR\barticles\"0\n" +
+	"\x1aGetAnthologyArticleRequest\x12\x12\n" +
+	"\x04slug\x18\x01 \x01(\tR\x04slug\"[\n" +
+	"\x1bGetAnthologyArticleResponse\x12<\n" +
+	"\aarticle\x18\x01 \x01(\v2\".sttattus.apex.v1.AnthologyArticleR\aarticle\"\xff\x01\n" +
+	"\x11PharmacologyEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\tdrug_name\x18\x02 \x01(\tR\bdrugName\x12\x17\n" +
+	"\adose_mg\x18\x03 \x01(\x01R\x06doseMg\x12\x1a\n" +
+	"\bschedule\x18\x04 \x01(\tR\bschedule\x12\x12\n" +
+	"\x04kind\x18\x05 \x01(\tR\x04kind\x12'\n" +
+	"\x0fevidence_rating\x18\x06 \x01(\tR\x0eevidenceRating\x12\x14\n" +
+	"\x05notes\x18\a \x01(\tR\x05notes\x12\x1d\n" +
+	"\n" +
+	"started_on\x18\b \x01(\tR\tstartedOn\x12\x16\n" +
+	"\x06active\x18\t \x01(\bR\x06active\"\x1b\n" +
+	"\x19ListMyPharmacologyRequest\"[\n" +
+	"\x1aListMyPharmacologyResponse\x12=\n" +
+	"\aentries\x18\x01 \x03(\v2#.sttattus.apex.v1.PharmacologyEntryR\aentries\"\xdc\x01\n" +
+	"\x16AddPharmacologyRequest\x12\x1b\n" +
+	"\tdrug_name\x18\x01 \x01(\tR\bdrugName\x12\x17\n" +
+	"\adose_mg\x18\x02 \x01(\x01R\x06doseMg\x12\x1a\n" +
+	"\bschedule\x18\x03 \x01(\tR\bschedule\x12\x12\n" +
+	"\x04kind\x18\x04 \x01(\tR\x04kind\x12'\n" +
+	"\x0fevidence_rating\x18\x05 \x01(\tR\x0eevidenceRating\x12\x14\n" +
+	"\x05notes\x18\x06 \x01(\tR\x05notes\x12\x1d\n" +
+	"\n" +
+	"started_on\x18\a \x01(\tR\tstartedOn\"T\n" +
+	"\x17AddPharmacologyResponse\x129\n" +
+	"\x05entry\x18\x01 \x01(\v2#.sttattus.apex.v1.PharmacologyEntryR\x05entry\"6\n" +
+	"\x19RemovePharmacologyRequest\x12\x19\n" +
+	"\bentry_id\x18\x01 \x01(\tR\aentryId\"\x1c\n" +
+	"\x1aRemovePharmacologyResponse\"\xb1\x01\n" +
+	"\tDnaUpload\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
+	"\x06source\x18\x02 \x01(\tR\x06source\x12\x16\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\x12\x16\n" +
+	"\x06sha256\x18\x04 \x01(\tR\x06sha256\x12$\n" +
+	"\x0eparsed_at_unix\x18\x05 \x01(\x03R\fparsedAtUnix\x12&\n" +
+	"\x0fcreated_at_unix\x18\x06 \x01(\x03R\rcreatedAtUnix\"~\n" +
+	"\bSnpEntry\x12\x12\n" +
+	"\x04rsid\x18\x01 \x01(\tR\x04rsid\x12\x1a\n" +
+	"\bgenotype\x18\x02 \x01(\tR\bgenotype\x12&\n" +
+	"\x0einterpretation\x18\x03 \x01(\tR\x0einterpretation\x12\x1a\n" +
+	"\bevidence\x18\x04 \x01(\tR\bevidence\"X\n" +
+	"\x18RegisterDnaUploadRequest\x12$\n" +
+	"\x0emedia_asset_id\x18\x01 \x01(\tR\fmediaAssetId\x12\x16\n" +
+	"\x06source\x18\x02 \x01(\tR\x06source\"P\n" +
+	"\x19RegisterDnaUploadResponse\x123\n" +
+	"\x06upload\x18\x01 \x01(\v2\x1b.sttattus.apex.v1.DnaUploadR\x06upload\"\x19\n" +
+	"\x17ListMyDnaUploadsRequest\"Q\n" +
+	"\x18ListMyDnaUploadsResponse\x125\n" +
+	"\auploads\x18\x01 \x03(\v2\x1b.sttattus.apex.v1.DnaUploadR\auploads\"\x16\n" +
+	"\x14ListMyDnaSnpsRequest\"G\n" +
+	"\x15ListMyDnaSnpsResponse\x12.\n" +
+	"\x04snps\x18\x01 \x03(\v2\x1a.sttattus.apex.v1.SnpEntryR\x04snps\"\x96\x02\n" +
+	"\n" +
+	"LabPartner\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12\x16\n" +
+	"\x06region\x18\x04 \x01(\tR\x06region\x12!\n" +
+	"\freferral_url\x18\x05 \x01(\tR\vreferralUrl\x12.\n" +
+	"\x13member_discount_pct\x18\x06 \x01(\x05R\x11memberDiscountPct\x12#\n" +
+	"\rpanel_summary\x18\a \x01(\tR\fpanelSummary\x12\x19\n" +
+	"\bhero_url\x18\b \x01(\tR\aheroUrl\x12%\n" +
+	"\x0esovereign_only\x18\t \x01(\bR\rsovereignOnly\"0\n" +
+	"\x16ListLabPartnersRequest\x12\x16\n" +
+	"\x06region\x18\x01 \x01(\tR\x06region\"S\n" +
+	"\x17ListLabPartnersResponse\x128\n" +
+	"\bpartners\x18\x01 \x03(\v2\x1c.sttattus.apex.v1.LabPartnerR\bpartners\"[\n" +
+	"\x0eLabMarkerValue\x12\x1f\n" +
+	"\vmetric_code\x18\x01 \x01(\tR\n" +
+	"metricCode\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\x01R\x05value\x12\x12\n" +
+	"\x04unit\x18\x03 \x01(\tR\x04unit\"\x9d\x01\n" +
+	"\x18ExtractLabMarkersRequest\x12\x1b\n" +
+	"\treport_id\x18\x01 \x01(\tR\breportId\x12:\n" +
+	"\amarkers\x18\x02 \x03(\v2 .sttattus.apex.v1.LabMarkerValueR\amarkers\x12(\n" +
+	"\x10recorded_at_unix\x18\x03 \x01(\x03R\x0erecordedAtUnix\"7\n" +
+	"\x19ExtractLabMarkersResponse\x12\x1a\n" +
+	"\binserted\x18\x01 \x01(\x05R\binserted\"\xc3\x01\n" +
+	"\x0eClinicianShare\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\x12\x1b\n" +
+	"\tshare_url\x18\x02 \x01(\tR\bshareUrl\x12\x14\n" +
+	"\x05scope\x18\x03 \x01(\tR\x05scope\x12&\n" +
+	"\x0fcreated_at_unix\x18\x04 \x01(\x03R\rcreatedAtUnix\x12&\n" +
+	"\x0fexpires_at_unix\x18\x05 \x01(\x03R\rexpiresAtUnix\x12\x18\n" +
+	"\arevoked\x18\x06 \x01(\bR\arevoked\"N\n" +
+	"\x1bCreateClinicianShareRequest\x12\x19\n" +
+	"\bttl_days\x18\x01 \x01(\x05R\attlDays\x12\x14\n" +
+	"\x05scope\x18\x02 \x01(\tR\x05scope\"V\n" +
+	"\x1cCreateClinicianShareResponse\x126\n" +
+	"\x05share\x18\x01 \x01(\v2 .sttattus.apex.v1.ClinicianShareR\x05share\"\x1e\n" +
+	"\x1cListMyClinicianSharesRequest\"Y\n" +
+	"\x1dListMyClinicianSharesResponse\x128\n" +
+	"\x06shares\x18\x01 \x03(\v2 .sttattus.apex.v1.ClinicianShareR\x06shares\"3\n" +
+	"\x1bRevokeClinicianShareRequest\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\"\x1e\n" +
+	"\x1cRevokeClinicianShareResponse\"\xb0\x01\n" +
+	"\n" +
+	"JetLagStep\x12\x1d\n" +
+	"\n" +
+	"day_offset\x18\x01 \x01(\x05R\tdayOffset\x12!\n" +
+	"\flight_action\x18\x02 \x01(\tR\vlightAction\x12)\n" +
+	"\x10melatonin_action\x18\x03 \x01(\tR\x0fmelatoninAction\x12\x1f\n" +
+	"\vmeal_action\x18\x04 \x01(\tR\n" +
+	"mealAction\x12\x14\n" +
+	"\x05notes\x18\x05 \x01(\tR\x05notes\"\x9e\x01\n" +
+	"\x18GetJetLagProtocolRequest\x12/\n" +
+	"\x14origin_tz_offset_min\x18\x01 \x01(\x05R\x11originTzOffsetMin\x12+\n" +
+	"\x12dest_tz_offset_min\x18\x02 \x01(\x05R\x0fdestTzOffsetMin\x12$\n" +
+	"\x0etravel_at_unix\x18\x03 \x01(\x03R\ftravelAtUnix\"\xb9\x01\n" +
+	"\x19GetJetLagProtocolResponse\x120\n" +
+	"\x14timezone_shift_hours\x18\x01 \x01(\x05R\x12timezoneShiftHours\x12\x1c\n" +
+	"\tdirection\x18\x02 \x01(\tR\tdirection\x122\n" +
+	"\x05steps\x18\x03 \x03(\v2\x1c.sttattus.apex.v1.JetLagStepR\x05steps\x12\x18\n" +
+	"\asummary\x18\x04 \x01(\tR\asummary\"2\n" +
+	"\x1cGenerateHealthAlmanacRequest\x12\x12\n" +
+	"\x04year\x18\x01 \x01(\tR\x04year\"\xaf\x01\n" +
+	"\x1dGenerateHealthAlmanacResponse\x12$\n" +
+	"\x0emedia_asset_id\x18\x01 \x01(\tR\fmediaAssetId\x12\x1d\n" +
+	"\n" +
+	"public_url\x18\x02 \x01(\tR\tpublicUrl\x12*\n" +
+	"\x11generated_at_unix\x18\x03 \x01(\x03R\x0fgeneratedAtUnix\x12\x1d\n" +
+	"\n" +
+	"page_count\x18\x04 \x01(\x05R\tpageCount\"\xe1\x02\n" +
+	"\fImagingStudy\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
+	"\bmodality\x18\x02 \x01(\tR\bmodality\x12\x1a\n" +
+	"\bprovider\x18\x03 \x01(\tR\bprovider\x12!\n" +
+	"\fperformed_on\x18\x04 \x01(\tR\vperformedOn\x12#\n" +
+	"\rfindings_text\x18\x05 \x01(\tR\ffindingsText\x12'\n" +
+	"\x0fheadline_metric\x18\x06 \x01(\tR\x0eheadlineMetric\x12%\n" +
+	"\x0eheadline_value\x18\a \x01(\x01R\rheadlineValue\x12#\n" +
+	"\rheadline_unit\x18\b \x01(\tR\fheadlineUnit\x12$\n" +
+	"\x0emedia_asset_id\x18\t \x01(\tR\fmediaAssetId\x12&\n" +
+	"\x0fcreated_at_unix\x18\n" +
+	" \x01(\x03R\rcreatedAtUnix\"\xb6\x02\n" +
+	"\x19SubmitImagingStudyRequest\x12\x1a\n" +
+	"\bmodality\x18\x01 \x01(\tR\bmodality\x12\x1a\n" +
+	"\bprovider\x18\x02 \x01(\tR\bprovider\x12!\n" +
+	"\fperformed_on\x18\x03 \x01(\tR\vperformedOn\x12#\n" +
+	"\rfindings_text\x18\x04 \x01(\tR\ffindingsText\x12'\n" +
+	"\x0fheadline_metric\x18\x05 \x01(\tR\x0eheadlineMetric\x12%\n" +
+	"\x0eheadline_value\x18\x06 \x01(\x01R\rheadlineValue\x12#\n" +
+	"\rheadline_unit\x18\a \x01(\tR\fheadlineUnit\x12$\n" +
+	"\x0emedia_asset_id\x18\b \x01(\tR\fmediaAssetId\"R\n" +
+	"\x1aSubmitImagingStudyResponse\x124\n" +
+	"\x05study\x18\x01 \x01(\v2\x1e.sttattus.apex.v1.ImagingStudyR\x05study\"\x1d\n" +
+	"\x1bListMyImagingStudiesRequest\"X\n" +
+	"\x1cListMyImagingStudiesResponse\x128\n" +
+	"\astudies\x18\x01 \x03(\v2\x1e.sttattus.apex.v1.ImagingStudyR\astudies\"\xe6\x01\n" +
+	"\x06Lounge\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12\x12\n" +
+	"\x04city\x18\x04 \x01(\tR\x04city\x12\x16\n" +
+	"\x06region\x18\x05 \x01(\tR\x06region\x12\x18\n" +
+	"\aaddress\x18\x06 \x01(\tR\aaddress\x12\x1c\n" +
+	"\tamenities\x18\a \x01(\tR\tamenities\x12\x19\n" +
+	"\bhero_url\x18\b \x01(\tR\aheroUrl\x12%\n" +
+	"\x0esovereign_only\x18\t \x01(\bR\rsovereignOnly\"\xb1\x01\n" +
+	"\rLoungeBooking\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x120\n" +
+	"\x06lounge\x18\x02 \x01(\v2\x18.sttattus.apex.v1.LoungeR\x06lounge\x12\x18\n" +
+	"\aamenity\x18\x03 \x01(\tR\aamenity\x12,\n" +
+	"\x12scheduled_for_unix\x18\x04 \x01(\x03R\x10scheduledForUnix\x12\x16\n" +
+	"\x06status\x18\x05 \x01(\tR\x06status\",\n" +
+	"\x12ListLoungesRequest\x12\x16\n" +
+	"\x06region\x18\x01 \x01(\tR\x06region\"I\n" +
+	"\x13ListLoungesResponse\x122\n" +
+	"\alounges\x18\x01 \x03(\v2\x18.sttattus.apex.v1.LoungeR\alounges\"\x1d\n" +
+	"\x1bListMyLoungeBookingsRequest\"[\n" +
+	"\x1cListMyLoungeBookingsResponse\x12;\n" +
+	"\bbookings\x18\x01 \x03(\v2\x1f.sttattus.apex.v1.LoungeBookingR\bbookings\"\x81\x01\n" +
+	"\x1aCreateLoungeBookingRequest\x12\x1b\n" +
+	"\tlounge_id\x18\x01 \x01(\tR\bloungeId\x12\x18\n" +
+	"\aamenity\x18\x02 \x01(\tR\aamenity\x12,\n" +
+	"\x12scheduled_for_unix\x18\x03 \x01(\x03R\x10scheduledForUnix\"X\n" +
+	"\x1bCreateLoungeBookingResponse\x129\n" +
+	"\abooking\x18\x01 \x01(\v2\x1f.sttattus.apex.v1.LoungeBookingR\abooking\";\n" +
+	"\x1aCancelLoungeBookingRequest\x12\x1d\n" +
+	"\n" +
+	"booking_id\x18\x01 \x01(\tR\tbookingId\"\x1d\n" +
+	"\x1bCancelLoungeBookingResponse\"L\n" +
+	"\x19ParseLabReportTextRequest\x12\x1b\n" +
+	"\treport_id\x18\x01 \x01(\tR\breportId\x12\x12\n" +
+	"\x04text\x18\x02 \x01(\tR\x04text\"\\\n" +
+	"\x1aParseLabReportTextResponse\x12>\n" +
+	"\textracted\x18\x01 \x03(\v2 .sttattus.apex.v1.LabMarkerValueR\textracted*\xff\x01\n" +
 	"\x11BiomarkerCategory\x12\"\n" +
 	"\x1eBIOMARKER_CATEGORY_UNSPECIFIED\x10\x00\x12\x1d\n" +
 	"\x19BIOMARKER_CATEGORY_LIPIDS\x10\x01\x12 \n" +
@@ -3352,7 +9278,7 @@ const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xd4\x13\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xc15\n" +
 	"\vApexService\x12W\n" +
 	"\n" +
 	"SyncVitals\x12#.sttattus.apex.v1.SyncVitalsRequest\x1a$.sttattus.apex.v1.SyncVitalsResponse\x12f\n" +
@@ -3376,7 +9302,46 @@ const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"\x1cListMyApexProtocolEnrolments\x125.sttattus.apex.v1.ListMyApexProtocolEnrolmentsRequest\x1a6.sttattus.apex.v1.ListMyApexProtocolEnrolmentsResponse\x12\x8a\x01\n" +
 	"\x1bUpdateApexProtocolEnrolment\x124.sttattus.apex.v1.UpdateApexProtocolEnrolmentRequest\x1a5.sttattus.apex.v1.UpdateApexProtocolEnrolmentResponse\x12\x8a\x01\n" +
 	"\x1bRecordApexProtocolAdherence\x124.sttattus.apex.v1.RecordApexProtocolAdherenceRequest\x1a5.sttattus.apex.v1.RecordApexProtocolAdherenceResponse\x12\x8a\x01\n" +
-	"\x1bListMyApexProtocolAdherence\x124.sttattus.apex.v1.ListMyApexProtocolAdherenceRequest\x1a5.sttattus.apex.v1.ListMyApexProtocolAdherenceResponse\x12c\n" +
+	"\x1bListMyApexProtocolAdherence\x124.sttattus.apex.v1.ListMyApexProtocolAdherenceRequest\x1a5.sttattus.apex.v1.ListMyApexProtocolAdherenceResponse\x12f\n" +
+	"\x0fListSupplements\x12(.sttattus.apex.v1.ListSupplementsRequest\x1a).sttattus.apex.v1.ListSupplementsResponse\x12l\n" +
+	"\x11ListMySupplements\x12*.sttattus.apex.v1.ListMySupplementsRequest\x1a+.sttattus.apex.v1.ListMySupplementsResponse\x12`\n" +
+	"\rAddSupplement\x12&.sttattus.apex.v1.AddSupplementRequest\x1a'.sttattus.apex.v1.AddSupplementResponse\x12i\n" +
+	"\x10RemoveSupplement\x12).sttattus.apex.v1.RemoveSupplementRequest\x1a*.sttattus.apex.v1.RemoveSupplementResponse\x12\x87\x01\n" +
+	"\x1aListSupplementInteractions\x123.sttattus.apex.v1.ListSupplementInteractionsRequest\x1a4.sttattus.apex.v1.ListSupplementInteractionsResponse\x12`\n" +
+	"\rListMyGlucose\x12&.sttattus.apex.v1.ListMyGlucoseRequest\x1a'.sttattus.apex.v1.ListMyGlucoseResponse\x12u\n" +
+	"\x14IngestGlucoseReading\x12-.sttattus.apex.v1.IngestGlucoseReadingRequest\x1a..sttattus.apex.v1.IngestGlucoseReadingResponse\x12c\n" +
+	"\x0eGetCycleStatus\x12'.sttattus.apex.v1.GetCycleStatusRequest\x1a(.sttattus.apex.v1.GetCycleStatusResponse\x12T\n" +
+	"\tLogPeriod\x12\".sttattus.apex.v1.LogPeriodRequest\x1a#.sttattus.apex.v1.LogPeriodResponse\x12f\n" +
+	"\x0fLogCycleSymptom\x12(.sttattus.apex.v1.LogCycleSymptomRequest\x1a).sttattus.apex.v1.LogCycleSymptomResponse\x12r\n" +
+	"\x13ListMyCycleSymptoms\x12,.sttattus.apex.v1.ListMyCycleSymptomsRequest\x1a-.sttattus.apex.v1.ListMyCycleSymptomsResponse\x12f\n" +
+	"\x0fSimulateApexAge\x12(.sttattus.apex.v1.SimulateApexAgeRequest\x1a).sttattus.apex.v1.SimulateApexAgeResponse\x12]\n" +
+	"\fGetReadiness\x12%.sttattus.apex.v1.GetReadinessRequest\x1a&.sttattus.apex.v1.GetReadinessResponse\x12u\n" +
+	"\x14StartConciergeThread\x12-.sttattus.apex.v1.StartConciergeThreadRequest\x1a..sttattus.apex.v1.StartConciergeThreadResponse\x12{\n" +
+	"\x16ListMyConciergeThreads\x12/.sttattus.apex.v1.ListMyConciergeThreadsRequest\x1a0.sttattus.apex.v1.ListMyConciergeThreadsResponse\x12o\n" +
+	"\x12GetConciergeThread\x12+.sttattus.apex.v1.GetConciergeThreadRequest\x1a,.sttattus.apex.v1.GetConciergeThreadResponse\x12u\n" +
+	"\x14PostConciergeMessage\x12-.sttattus.apex.v1.PostConciergeMessageRequest\x1a..sttattus.apex.v1.PostConciergeMessageResponse\x12x\n" +
+	"\x15ListAnthologyArticles\x12..sttattus.apex.v1.ListAnthologyArticlesRequest\x1a/.sttattus.apex.v1.ListAnthologyArticlesResponse\x12r\n" +
+	"\x13GetAnthologyArticle\x12,.sttattus.apex.v1.GetAnthologyArticleRequest\x1a-.sttattus.apex.v1.GetAnthologyArticleResponse\x12o\n" +
+	"\x12ListMyPharmacology\x12+.sttattus.apex.v1.ListMyPharmacologyRequest\x1a,.sttattus.apex.v1.ListMyPharmacologyResponse\x12f\n" +
+	"\x0fAddPharmacology\x12(.sttattus.apex.v1.AddPharmacologyRequest\x1a).sttattus.apex.v1.AddPharmacologyResponse\x12o\n" +
+	"\x12RemovePharmacology\x12+.sttattus.apex.v1.RemovePharmacologyRequest\x1a,.sttattus.apex.v1.RemovePharmacologyResponse\x12l\n" +
+	"\x11RegisterDnaUpload\x12*.sttattus.apex.v1.RegisterDnaUploadRequest\x1a+.sttattus.apex.v1.RegisterDnaUploadResponse\x12i\n" +
+	"\x10ListMyDnaUploads\x12).sttattus.apex.v1.ListMyDnaUploadsRequest\x1a*.sttattus.apex.v1.ListMyDnaUploadsResponse\x12`\n" +
+	"\rListMyDnaSnps\x12&.sttattus.apex.v1.ListMyDnaSnpsRequest\x1a'.sttattus.apex.v1.ListMyDnaSnpsResponse\x12f\n" +
+	"\x0fListLabPartners\x12(.sttattus.apex.v1.ListLabPartnersRequest\x1a).sttattus.apex.v1.ListLabPartnersResponse\x12l\n" +
+	"\x11ExtractLabMarkers\x12*.sttattus.apex.v1.ExtractLabMarkersRequest\x1a+.sttattus.apex.v1.ExtractLabMarkersResponse\x12u\n" +
+	"\x14CreateClinicianShare\x12-.sttattus.apex.v1.CreateClinicianShareRequest\x1a..sttattus.apex.v1.CreateClinicianShareResponse\x12x\n" +
+	"\x15ListMyClinicianShares\x12..sttattus.apex.v1.ListMyClinicianSharesRequest\x1a/.sttattus.apex.v1.ListMyClinicianSharesResponse\x12u\n" +
+	"\x14RevokeClinicianShare\x12-.sttattus.apex.v1.RevokeClinicianShareRequest\x1a..sttattus.apex.v1.RevokeClinicianShareResponse\x12l\n" +
+	"\x11GetJetLagProtocol\x12*.sttattus.apex.v1.GetJetLagProtocolRequest\x1a+.sttattus.apex.v1.GetJetLagProtocolResponse\x12x\n" +
+	"\x15GenerateHealthAlmanac\x12..sttattus.apex.v1.GenerateHealthAlmanacRequest\x1a/.sttattus.apex.v1.GenerateHealthAlmanacResponse\x12o\n" +
+	"\x12SubmitImagingStudy\x12+.sttattus.apex.v1.SubmitImagingStudyRequest\x1a,.sttattus.apex.v1.SubmitImagingStudyResponse\x12u\n" +
+	"\x14ListMyImagingStudies\x12-.sttattus.apex.v1.ListMyImagingStudiesRequest\x1a..sttattus.apex.v1.ListMyImagingStudiesResponse\x12Z\n" +
+	"\vListLounges\x12$.sttattus.apex.v1.ListLoungesRequest\x1a%.sttattus.apex.v1.ListLoungesResponse\x12u\n" +
+	"\x14ListMyLoungeBookings\x12-.sttattus.apex.v1.ListMyLoungeBookingsRequest\x1a..sttattus.apex.v1.ListMyLoungeBookingsResponse\x12r\n" +
+	"\x13CreateLoungeBooking\x12,.sttattus.apex.v1.CreateLoungeBookingRequest\x1a-.sttattus.apex.v1.CreateLoungeBookingResponse\x12r\n" +
+	"\x13CancelLoungeBooking\x12,.sttattus.apex.v1.CancelLoungeBookingRequest\x1a-.sttattus.apex.v1.CancelLoungeBookingResponse\x12o\n" +
+	"\x12ParseLabReportText\x12+.sttattus.apex.v1.ParseLabReportTextRequest\x1a,.sttattus.apex.v1.ParseLabReportTextResponse\x12c\n" +
 	"\x0eAdminVerifyLab\x12'.sttattus.apex.v1.AdminVerifyLabRequest\x1a(.sttattus.apex.v1.AdminVerifyLabResponseB:Z8github.com/sttattus/proto/gen/go/sttattus/apex/v1;apexv1b\x06proto3"
 
 var (
@@ -3392,7 +9357,7 @@ func file_sttattus_apex_v1_apex_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_apex_v1_apex_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_apex_v1_apex_proto_msgTypes = make([]protoimpl.MessageInfo, 54)
+var file_sttattus_apex_v1_apex_proto_msgTypes = make([]protoimpl.MessageInfo, 154)
 var file_sttattus_apex_v1_apex_proto_goTypes = []any{
 	(BiomarkerCategory)(0),                        // 0: sttattus.apex.v1.BiomarkerCategory
 	(VerificationStatus)(0),                       // 1: sttattus.apex.v1.VerificationStatus
@@ -3449,92 +9414,309 @@ var file_sttattus_apex_v1_apex_proto_goTypes = []any{
 	(*RequestApexClinicIntroResponse)(nil),        // 52: sttattus.apex.v1.RequestApexClinicIntroResponse
 	(*ListMyApexClinicIntroRequestsRequest)(nil),  // 53: sttattus.apex.v1.ListMyApexClinicIntroRequestsRequest
 	(*ListMyApexClinicIntroRequestsResponse)(nil), // 54: sttattus.apex.v1.ListMyApexClinicIntroRequestsResponse
-	nil,                           // 55: sttattus.apex.v1.GetApexAgeResponse.SystemScoresEntry
-	(*timestamppb.Timestamp)(nil), // 56: google.protobuf.Timestamp
+	(*Supplement)(nil),                            // 55: sttattus.apex.v1.Supplement
+	(*UserSupplement)(nil),                        // 56: sttattus.apex.v1.UserSupplement
+	(*SupplementInteraction)(nil),                 // 57: sttattus.apex.v1.SupplementInteraction
+	(*ListSupplementsRequest)(nil),                // 58: sttattus.apex.v1.ListSupplementsRequest
+	(*ListSupplementsResponse)(nil),               // 59: sttattus.apex.v1.ListSupplementsResponse
+	(*ListMySupplementsRequest)(nil),              // 60: sttattus.apex.v1.ListMySupplementsRequest
+	(*ListMySupplementsResponse)(nil),             // 61: sttattus.apex.v1.ListMySupplementsResponse
+	(*AddSupplementRequest)(nil),                  // 62: sttattus.apex.v1.AddSupplementRequest
+	(*AddSupplementResponse)(nil),                 // 63: sttattus.apex.v1.AddSupplementResponse
+	(*RemoveSupplementRequest)(nil),               // 64: sttattus.apex.v1.RemoveSupplementRequest
+	(*RemoveSupplementResponse)(nil),              // 65: sttattus.apex.v1.RemoveSupplementResponse
+	(*ListSupplementInteractionsRequest)(nil),     // 66: sttattus.apex.v1.ListSupplementInteractionsRequest
+	(*ListSupplementInteractionsResponse)(nil),    // 67: sttattus.apex.v1.ListSupplementInteractionsResponse
+	(*GlucoseReading)(nil),                        // 68: sttattus.apex.v1.GlucoseReading
+	(*ListMyGlucoseRequest)(nil),                  // 69: sttattus.apex.v1.ListMyGlucoseRequest
+	(*ListMyGlucoseResponse)(nil),                 // 70: sttattus.apex.v1.ListMyGlucoseResponse
+	(*IngestGlucoseReadingRequest)(nil),           // 71: sttattus.apex.v1.IngestGlucoseReadingRequest
+	(*IngestGlucoseReadingResponse)(nil),          // 72: sttattus.apex.v1.IngestGlucoseReadingResponse
+	(*CycleStatus)(nil),                           // 73: sttattus.apex.v1.CycleStatus
+	(*CycleSymptom)(nil),                          // 74: sttattus.apex.v1.CycleSymptom
+	(*GetCycleStatusRequest)(nil),                 // 75: sttattus.apex.v1.GetCycleStatusRequest
+	(*GetCycleStatusResponse)(nil),                // 76: sttattus.apex.v1.GetCycleStatusResponse
+	(*LogPeriodRequest)(nil),                      // 77: sttattus.apex.v1.LogPeriodRequest
+	(*LogPeriodResponse)(nil),                     // 78: sttattus.apex.v1.LogPeriodResponse
+	(*LogCycleSymptomRequest)(nil),                // 79: sttattus.apex.v1.LogCycleSymptomRequest
+	(*LogCycleSymptomResponse)(nil),               // 80: sttattus.apex.v1.LogCycleSymptomResponse
+	(*ListMyCycleSymptomsRequest)(nil),            // 81: sttattus.apex.v1.ListMyCycleSymptomsRequest
+	(*ListMyCycleSymptomsResponse)(nil),           // 82: sttattus.apex.v1.ListMyCycleSymptomsResponse
+	(*MarkerOverride)(nil),                        // 83: sttattus.apex.v1.MarkerOverride
+	(*SimulateApexAgeRequest)(nil),                // 84: sttattus.apex.v1.SimulateApexAgeRequest
+	(*SimulateApexAgeResponse)(nil),               // 85: sttattus.apex.v1.SimulateApexAgeResponse
+	(*ReadinessSnapshot)(nil),                     // 86: sttattus.apex.v1.ReadinessSnapshot
+	(*GetReadinessRequest)(nil),                   // 87: sttattus.apex.v1.GetReadinessRequest
+	(*GetReadinessResponse)(nil),                  // 88: sttattus.apex.v1.GetReadinessResponse
+	(*ConciergeThread)(nil),                       // 89: sttattus.apex.v1.ConciergeThread
+	(*ConciergeMessage)(nil),                      // 90: sttattus.apex.v1.ConciergeMessage
+	(*StartConciergeThreadRequest)(nil),           // 91: sttattus.apex.v1.StartConciergeThreadRequest
+	(*StartConciergeThreadResponse)(nil),          // 92: sttattus.apex.v1.StartConciergeThreadResponse
+	(*ListMyConciergeThreadsRequest)(nil),         // 93: sttattus.apex.v1.ListMyConciergeThreadsRequest
+	(*ListMyConciergeThreadsResponse)(nil),        // 94: sttattus.apex.v1.ListMyConciergeThreadsResponse
+	(*GetConciergeThreadRequest)(nil),             // 95: sttattus.apex.v1.GetConciergeThreadRequest
+	(*GetConciergeThreadResponse)(nil),            // 96: sttattus.apex.v1.GetConciergeThreadResponse
+	(*PostConciergeMessageRequest)(nil),           // 97: sttattus.apex.v1.PostConciergeMessageRequest
+	(*PostConciergeMessageResponse)(nil),          // 98: sttattus.apex.v1.PostConciergeMessageResponse
+	(*AnthologyAuthor)(nil),                       // 99: sttattus.apex.v1.AnthologyAuthor
+	(*AnthologyArticle)(nil),                      // 100: sttattus.apex.v1.AnthologyArticle
+	(*ListAnthologyArticlesRequest)(nil),          // 101: sttattus.apex.v1.ListAnthologyArticlesRequest
+	(*ListAnthologyArticlesResponse)(nil),         // 102: sttattus.apex.v1.ListAnthologyArticlesResponse
+	(*GetAnthologyArticleRequest)(nil),            // 103: sttattus.apex.v1.GetAnthologyArticleRequest
+	(*GetAnthologyArticleResponse)(nil),           // 104: sttattus.apex.v1.GetAnthologyArticleResponse
+	(*PharmacologyEntry)(nil),                     // 105: sttattus.apex.v1.PharmacologyEntry
+	(*ListMyPharmacologyRequest)(nil),             // 106: sttattus.apex.v1.ListMyPharmacologyRequest
+	(*ListMyPharmacologyResponse)(nil),            // 107: sttattus.apex.v1.ListMyPharmacologyResponse
+	(*AddPharmacologyRequest)(nil),                // 108: sttattus.apex.v1.AddPharmacologyRequest
+	(*AddPharmacologyResponse)(nil),               // 109: sttattus.apex.v1.AddPharmacologyResponse
+	(*RemovePharmacologyRequest)(nil),             // 110: sttattus.apex.v1.RemovePharmacologyRequest
+	(*RemovePharmacologyResponse)(nil),            // 111: sttattus.apex.v1.RemovePharmacologyResponse
+	(*DnaUpload)(nil),                             // 112: sttattus.apex.v1.DnaUpload
+	(*SnpEntry)(nil),                              // 113: sttattus.apex.v1.SnpEntry
+	(*RegisterDnaUploadRequest)(nil),              // 114: sttattus.apex.v1.RegisterDnaUploadRequest
+	(*RegisterDnaUploadResponse)(nil),             // 115: sttattus.apex.v1.RegisterDnaUploadResponse
+	(*ListMyDnaUploadsRequest)(nil),               // 116: sttattus.apex.v1.ListMyDnaUploadsRequest
+	(*ListMyDnaUploadsResponse)(nil),              // 117: sttattus.apex.v1.ListMyDnaUploadsResponse
+	(*ListMyDnaSnpsRequest)(nil),                  // 118: sttattus.apex.v1.ListMyDnaSnpsRequest
+	(*ListMyDnaSnpsResponse)(nil),                 // 119: sttattus.apex.v1.ListMyDnaSnpsResponse
+	(*LabPartner)(nil),                            // 120: sttattus.apex.v1.LabPartner
+	(*ListLabPartnersRequest)(nil),                // 121: sttattus.apex.v1.ListLabPartnersRequest
+	(*ListLabPartnersResponse)(nil),               // 122: sttattus.apex.v1.ListLabPartnersResponse
+	(*LabMarkerValue)(nil),                        // 123: sttattus.apex.v1.LabMarkerValue
+	(*ExtractLabMarkersRequest)(nil),              // 124: sttattus.apex.v1.ExtractLabMarkersRequest
+	(*ExtractLabMarkersResponse)(nil),             // 125: sttattus.apex.v1.ExtractLabMarkersResponse
+	(*ClinicianShare)(nil),                        // 126: sttattus.apex.v1.ClinicianShare
+	(*CreateClinicianShareRequest)(nil),           // 127: sttattus.apex.v1.CreateClinicianShareRequest
+	(*CreateClinicianShareResponse)(nil),          // 128: sttattus.apex.v1.CreateClinicianShareResponse
+	(*ListMyClinicianSharesRequest)(nil),          // 129: sttattus.apex.v1.ListMyClinicianSharesRequest
+	(*ListMyClinicianSharesResponse)(nil),         // 130: sttattus.apex.v1.ListMyClinicianSharesResponse
+	(*RevokeClinicianShareRequest)(nil),           // 131: sttattus.apex.v1.RevokeClinicianShareRequest
+	(*RevokeClinicianShareResponse)(nil),          // 132: sttattus.apex.v1.RevokeClinicianShareResponse
+	(*JetLagStep)(nil),                            // 133: sttattus.apex.v1.JetLagStep
+	(*GetJetLagProtocolRequest)(nil),              // 134: sttattus.apex.v1.GetJetLagProtocolRequest
+	(*GetJetLagProtocolResponse)(nil),             // 135: sttattus.apex.v1.GetJetLagProtocolResponse
+	(*GenerateHealthAlmanacRequest)(nil),          // 136: sttattus.apex.v1.GenerateHealthAlmanacRequest
+	(*GenerateHealthAlmanacResponse)(nil),         // 137: sttattus.apex.v1.GenerateHealthAlmanacResponse
+	(*ImagingStudy)(nil),                          // 138: sttattus.apex.v1.ImagingStudy
+	(*SubmitImagingStudyRequest)(nil),             // 139: sttattus.apex.v1.SubmitImagingStudyRequest
+	(*SubmitImagingStudyResponse)(nil),            // 140: sttattus.apex.v1.SubmitImagingStudyResponse
+	(*ListMyImagingStudiesRequest)(nil),           // 141: sttattus.apex.v1.ListMyImagingStudiesRequest
+	(*ListMyImagingStudiesResponse)(nil),          // 142: sttattus.apex.v1.ListMyImagingStudiesResponse
+	(*Lounge)(nil),                                // 143: sttattus.apex.v1.Lounge
+	(*LoungeBooking)(nil),                         // 144: sttattus.apex.v1.LoungeBooking
+	(*ListLoungesRequest)(nil),                    // 145: sttattus.apex.v1.ListLoungesRequest
+	(*ListLoungesResponse)(nil),                   // 146: sttattus.apex.v1.ListLoungesResponse
+	(*ListMyLoungeBookingsRequest)(nil),           // 147: sttattus.apex.v1.ListMyLoungeBookingsRequest
+	(*ListMyLoungeBookingsResponse)(nil),          // 148: sttattus.apex.v1.ListMyLoungeBookingsResponse
+	(*CreateLoungeBookingRequest)(nil),            // 149: sttattus.apex.v1.CreateLoungeBookingRequest
+	(*CreateLoungeBookingResponse)(nil),           // 150: sttattus.apex.v1.CreateLoungeBookingResponse
+	(*CancelLoungeBookingRequest)(nil),            // 151: sttattus.apex.v1.CancelLoungeBookingRequest
+	(*CancelLoungeBookingResponse)(nil),           // 152: sttattus.apex.v1.CancelLoungeBookingResponse
+	(*ParseLabReportTextRequest)(nil),             // 153: sttattus.apex.v1.ParseLabReportTextRequest
+	(*ParseLabReportTextResponse)(nil),            // 154: sttattus.apex.v1.ParseLabReportTextResponse
+	nil,                                           // 155: sttattus.apex.v1.GetApexAgeResponse.SystemScoresEntry
+	(*timestamppb.Timestamp)(nil),                 // 156: google.protobuf.Timestamp
 }
 var file_sttattus_apex_v1_apex_proto_depIdxs = []int32{
-	0,  // 0: sttattus.apex.v1.Biomarker.category:type_name -> sttattus.apex.v1.BiomarkerCategory
-	56, // 1: sttattus.apex.v1.Biomarker.recorded_at:type_name -> google.protobuf.Timestamp
-	1,  // 2: sttattus.apex.v1.LabReport.status:type_name -> sttattus.apex.v1.VerificationStatus
-	56, // 3: sttattus.apex.v1.LabReport.report_date:type_name -> google.protobuf.Timestamp
-	56, // 4: sttattus.apex.v1.LabReport.submitted_at:type_name -> google.protobuf.Timestamp
-	2,  // 5: sttattus.apex.v1.LabReport.extracted_markers:type_name -> sttattus.apex.v1.Biomarker
-	2,  // 6: sttattus.apex.v1.SyncVitalsRequest.metrics:type_name -> sttattus.apex.v1.Biomarker
-	56, // 7: sttattus.apex.v1.SubmitLabReportRequest.report_date:type_name -> google.protobuf.Timestamp
-	3,  // 8: sttattus.apex.v1.SubmitLabReportResponse.report:type_name -> sttattus.apex.v1.LabReport
-	3,  // 9: sttattus.apex.v1.ListLabReportsResponse.reports:type_name -> sttattus.apex.v1.LabReport
-	1,  // 10: sttattus.apex.v1.AdminVerifyLabRequest.status:type_name -> sttattus.apex.v1.VerificationStatus
-	2,  // 11: sttattus.apex.v1.AdminVerifyLabRequest.verified_markers:type_name -> sttattus.apex.v1.Biomarker
-	3,  // 12: sttattus.apex.v1.AdminVerifyLabResponse.report:type_name -> sttattus.apex.v1.LabReport
-	2,  // 13: sttattus.apex.v1.ListMyVitalsResponse.vitals:type_name -> sttattus.apex.v1.Biomarker
-	55, // 14: sttattus.apex.v1.GetApexAgeResponse.system_scores:type_name -> sttattus.apex.v1.GetApexAgeResponse.SystemScoresEntry
-	16, // 15: sttattus.apex.v1.GetMyApexProfileResponse.profile:type_name -> sttattus.apex.v1.ApexProfile
-	16, // 16: sttattus.apex.v1.UpdateMyApexProfileRequest.profile:type_name -> sttattus.apex.v1.ApexProfile
-	16, // 17: sttattus.apex.v1.UpdateMyApexProfileResponse.profile:type_name -> sttattus.apex.v1.ApexProfile
-	21, // 18: sttattus.apex.v1.ListBiomarkerRefsResponse.refs:type_name -> sttattus.apex.v1.BiomarkerRef
-	2,  // 19: sttattus.apex.v1.ListMyBiomarkerHistoryResponse.points:type_name -> sttattus.apex.v1.Biomarker
-	28, // 20: sttattus.apex.v1.ApexProtocolEnrolment.protocol:type_name -> sttattus.apex.v1.ApexProtocol
-	28, // 21: sttattus.apex.v1.ListApexProtocolsResponse.protocols:type_name -> sttattus.apex.v1.ApexProtocol
-	28, // 22: sttattus.apex.v1.GetApexProtocolResponse.protocol:type_name -> sttattus.apex.v1.ApexProtocol
-	29, // 23: sttattus.apex.v1.EnrolInApexProtocolResponse.enrolment:type_name -> sttattus.apex.v1.ApexProtocolEnrolment
-	29, // 24: sttattus.apex.v1.ListMyApexProtocolEnrolmentsResponse.enrolments:type_name -> sttattus.apex.v1.ApexProtocolEnrolment
-	29, // 25: sttattus.apex.v1.UpdateApexProtocolEnrolmentResponse.enrolment:type_name -> sttattus.apex.v1.ApexProtocolEnrolment
-	30, // 26: sttattus.apex.v1.RecordApexProtocolAdherenceResponse.adherence:type_name -> sttattus.apex.v1.ApexProtocolAdherence
-	30, // 27: sttattus.apex.v1.ListMyApexProtocolAdherenceResponse.entries:type_name -> sttattus.apex.v1.ApexProtocolAdherence
-	45, // 28: sttattus.apex.v1.ApexClinicIntroRequest.clinic:type_name -> sttattus.apex.v1.ApexClinic
-	45, // 29: sttattus.apex.v1.ListApexClinicsResponse.clinics:type_name -> sttattus.apex.v1.ApexClinic
-	45, // 30: sttattus.apex.v1.GetApexClinicResponse.clinic:type_name -> sttattus.apex.v1.ApexClinic
-	46, // 31: sttattus.apex.v1.RequestApexClinicIntroResponse.request:type_name -> sttattus.apex.v1.ApexClinicIntroRequest
-	46, // 32: sttattus.apex.v1.ListMyApexClinicIntroRequestsResponse.requests:type_name -> sttattus.apex.v1.ApexClinicIntroRequest
-	4,  // 33: sttattus.apex.v1.ApexService.SyncVitals:input_type -> sttattus.apex.v1.SyncVitalsRequest
-	6,  // 34: sttattus.apex.v1.ApexService.SubmitLabReport:input_type -> sttattus.apex.v1.SubmitLabReportRequest
-	8,  // 35: sttattus.apex.v1.ApexService.ListLabReports:input_type -> sttattus.apex.v1.ListLabReportsRequest
-	12, // 36: sttattus.apex.v1.ApexService.ListMyVitals:input_type -> sttattus.apex.v1.ListMyVitalsRequest
-	24, // 37: sttattus.apex.v1.ApexService.ListMyBiomarkerHistory:input_type -> sttattus.apex.v1.ListMyBiomarkerHistoryRequest
-	26, // 38: sttattus.apex.v1.ApexService.GetHrvWindow:input_type -> sttattus.apex.v1.GetHrvWindowRequest
-	22, // 39: sttattus.apex.v1.ApexService.ListBiomarkerRefs:input_type -> sttattus.apex.v1.ListBiomarkerRefsRequest
-	14, // 40: sttattus.apex.v1.ApexService.GetApexAge:input_type -> sttattus.apex.v1.GetApexAgeRequest
-	17, // 41: sttattus.apex.v1.ApexService.GetMyApexProfile:input_type -> sttattus.apex.v1.GetMyApexProfileRequest
-	19, // 42: sttattus.apex.v1.ApexService.UpdateMyApexProfile:input_type -> sttattus.apex.v1.UpdateMyApexProfileRequest
-	47, // 43: sttattus.apex.v1.ApexService.ListApexClinics:input_type -> sttattus.apex.v1.ListApexClinicsRequest
-	49, // 44: sttattus.apex.v1.ApexService.GetApexClinic:input_type -> sttattus.apex.v1.GetApexClinicRequest
-	51, // 45: sttattus.apex.v1.ApexService.RequestApexClinicIntro:input_type -> sttattus.apex.v1.RequestApexClinicIntroRequest
-	53, // 46: sttattus.apex.v1.ApexService.ListMyApexClinicIntroRequests:input_type -> sttattus.apex.v1.ListMyApexClinicIntroRequestsRequest
-	31, // 47: sttattus.apex.v1.ApexService.ListApexProtocols:input_type -> sttattus.apex.v1.ListApexProtocolsRequest
-	33, // 48: sttattus.apex.v1.ApexService.GetApexProtocol:input_type -> sttattus.apex.v1.GetApexProtocolRequest
-	35, // 49: sttattus.apex.v1.ApexService.EnrolInApexProtocol:input_type -> sttattus.apex.v1.EnrolInApexProtocolRequest
-	37, // 50: sttattus.apex.v1.ApexService.ListMyApexProtocolEnrolments:input_type -> sttattus.apex.v1.ListMyApexProtocolEnrolmentsRequest
-	39, // 51: sttattus.apex.v1.ApexService.UpdateApexProtocolEnrolment:input_type -> sttattus.apex.v1.UpdateApexProtocolEnrolmentRequest
-	41, // 52: sttattus.apex.v1.ApexService.RecordApexProtocolAdherence:input_type -> sttattus.apex.v1.RecordApexProtocolAdherenceRequest
-	43, // 53: sttattus.apex.v1.ApexService.ListMyApexProtocolAdherence:input_type -> sttattus.apex.v1.ListMyApexProtocolAdherenceRequest
-	10, // 54: sttattus.apex.v1.ApexService.AdminVerifyLab:input_type -> sttattus.apex.v1.AdminVerifyLabRequest
-	5,  // 55: sttattus.apex.v1.ApexService.SyncVitals:output_type -> sttattus.apex.v1.SyncVitalsResponse
-	7,  // 56: sttattus.apex.v1.ApexService.SubmitLabReport:output_type -> sttattus.apex.v1.SubmitLabReportResponse
-	9,  // 57: sttattus.apex.v1.ApexService.ListLabReports:output_type -> sttattus.apex.v1.ListLabReportsResponse
-	13, // 58: sttattus.apex.v1.ApexService.ListMyVitals:output_type -> sttattus.apex.v1.ListMyVitalsResponse
-	25, // 59: sttattus.apex.v1.ApexService.ListMyBiomarkerHistory:output_type -> sttattus.apex.v1.ListMyBiomarkerHistoryResponse
-	27, // 60: sttattus.apex.v1.ApexService.GetHrvWindow:output_type -> sttattus.apex.v1.GetHrvWindowResponse
-	23, // 61: sttattus.apex.v1.ApexService.ListBiomarkerRefs:output_type -> sttattus.apex.v1.ListBiomarkerRefsResponse
-	15, // 62: sttattus.apex.v1.ApexService.GetApexAge:output_type -> sttattus.apex.v1.GetApexAgeResponse
-	18, // 63: sttattus.apex.v1.ApexService.GetMyApexProfile:output_type -> sttattus.apex.v1.GetMyApexProfileResponse
-	20, // 64: sttattus.apex.v1.ApexService.UpdateMyApexProfile:output_type -> sttattus.apex.v1.UpdateMyApexProfileResponse
-	48, // 65: sttattus.apex.v1.ApexService.ListApexClinics:output_type -> sttattus.apex.v1.ListApexClinicsResponse
-	50, // 66: sttattus.apex.v1.ApexService.GetApexClinic:output_type -> sttattus.apex.v1.GetApexClinicResponse
-	52, // 67: sttattus.apex.v1.ApexService.RequestApexClinicIntro:output_type -> sttattus.apex.v1.RequestApexClinicIntroResponse
-	54, // 68: sttattus.apex.v1.ApexService.ListMyApexClinicIntroRequests:output_type -> sttattus.apex.v1.ListMyApexClinicIntroRequestsResponse
-	32, // 69: sttattus.apex.v1.ApexService.ListApexProtocols:output_type -> sttattus.apex.v1.ListApexProtocolsResponse
-	34, // 70: sttattus.apex.v1.ApexService.GetApexProtocol:output_type -> sttattus.apex.v1.GetApexProtocolResponse
-	36, // 71: sttattus.apex.v1.ApexService.EnrolInApexProtocol:output_type -> sttattus.apex.v1.EnrolInApexProtocolResponse
-	38, // 72: sttattus.apex.v1.ApexService.ListMyApexProtocolEnrolments:output_type -> sttattus.apex.v1.ListMyApexProtocolEnrolmentsResponse
-	40, // 73: sttattus.apex.v1.ApexService.UpdateApexProtocolEnrolment:output_type -> sttattus.apex.v1.UpdateApexProtocolEnrolmentResponse
-	42, // 74: sttattus.apex.v1.ApexService.RecordApexProtocolAdherence:output_type -> sttattus.apex.v1.RecordApexProtocolAdherenceResponse
-	44, // 75: sttattus.apex.v1.ApexService.ListMyApexProtocolAdherence:output_type -> sttattus.apex.v1.ListMyApexProtocolAdherenceResponse
-	11, // 76: sttattus.apex.v1.ApexService.AdminVerifyLab:output_type -> sttattus.apex.v1.AdminVerifyLabResponse
-	55, // [55:77] is the sub-list for method output_type
-	33, // [33:55] is the sub-list for method input_type
-	33, // [33:33] is the sub-list for extension type_name
-	33, // [33:33] is the sub-list for extension extendee
-	0,  // [0:33] is the sub-list for field type_name
+	0,   // 0: sttattus.apex.v1.Biomarker.category:type_name -> sttattus.apex.v1.BiomarkerCategory
+	156, // 1: sttattus.apex.v1.Biomarker.recorded_at:type_name -> google.protobuf.Timestamp
+	1,   // 2: sttattus.apex.v1.LabReport.status:type_name -> sttattus.apex.v1.VerificationStatus
+	156, // 3: sttattus.apex.v1.LabReport.report_date:type_name -> google.protobuf.Timestamp
+	156, // 4: sttattus.apex.v1.LabReport.submitted_at:type_name -> google.protobuf.Timestamp
+	2,   // 5: sttattus.apex.v1.LabReport.extracted_markers:type_name -> sttattus.apex.v1.Biomarker
+	2,   // 6: sttattus.apex.v1.SyncVitalsRequest.metrics:type_name -> sttattus.apex.v1.Biomarker
+	156, // 7: sttattus.apex.v1.SubmitLabReportRequest.report_date:type_name -> google.protobuf.Timestamp
+	3,   // 8: sttattus.apex.v1.SubmitLabReportResponse.report:type_name -> sttattus.apex.v1.LabReport
+	3,   // 9: sttattus.apex.v1.ListLabReportsResponse.reports:type_name -> sttattus.apex.v1.LabReport
+	1,   // 10: sttattus.apex.v1.AdminVerifyLabRequest.status:type_name -> sttattus.apex.v1.VerificationStatus
+	2,   // 11: sttattus.apex.v1.AdminVerifyLabRequest.verified_markers:type_name -> sttattus.apex.v1.Biomarker
+	3,   // 12: sttattus.apex.v1.AdminVerifyLabResponse.report:type_name -> sttattus.apex.v1.LabReport
+	2,   // 13: sttattus.apex.v1.ListMyVitalsResponse.vitals:type_name -> sttattus.apex.v1.Biomarker
+	155, // 14: sttattus.apex.v1.GetApexAgeResponse.system_scores:type_name -> sttattus.apex.v1.GetApexAgeResponse.SystemScoresEntry
+	16,  // 15: sttattus.apex.v1.GetMyApexProfileResponse.profile:type_name -> sttattus.apex.v1.ApexProfile
+	16,  // 16: sttattus.apex.v1.UpdateMyApexProfileRequest.profile:type_name -> sttattus.apex.v1.ApexProfile
+	16,  // 17: sttattus.apex.v1.UpdateMyApexProfileResponse.profile:type_name -> sttattus.apex.v1.ApexProfile
+	21,  // 18: sttattus.apex.v1.ListBiomarkerRefsResponse.refs:type_name -> sttattus.apex.v1.BiomarkerRef
+	2,   // 19: sttattus.apex.v1.ListMyBiomarkerHistoryResponse.points:type_name -> sttattus.apex.v1.Biomarker
+	28,  // 20: sttattus.apex.v1.ApexProtocolEnrolment.protocol:type_name -> sttattus.apex.v1.ApexProtocol
+	28,  // 21: sttattus.apex.v1.ListApexProtocolsResponse.protocols:type_name -> sttattus.apex.v1.ApexProtocol
+	28,  // 22: sttattus.apex.v1.GetApexProtocolResponse.protocol:type_name -> sttattus.apex.v1.ApexProtocol
+	29,  // 23: sttattus.apex.v1.EnrolInApexProtocolResponse.enrolment:type_name -> sttattus.apex.v1.ApexProtocolEnrolment
+	29,  // 24: sttattus.apex.v1.ListMyApexProtocolEnrolmentsResponse.enrolments:type_name -> sttattus.apex.v1.ApexProtocolEnrolment
+	29,  // 25: sttattus.apex.v1.UpdateApexProtocolEnrolmentResponse.enrolment:type_name -> sttattus.apex.v1.ApexProtocolEnrolment
+	30,  // 26: sttattus.apex.v1.RecordApexProtocolAdherenceResponse.adherence:type_name -> sttattus.apex.v1.ApexProtocolAdherence
+	30,  // 27: sttattus.apex.v1.ListMyApexProtocolAdherenceResponse.entries:type_name -> sttattus.apex.v1.ApexProtocolAdherence
+	45,  // 28: sttattus.apex.v1.ApexClinicIntroRequest.clinic:type_name -> sttattus.apex.v1.ApexClinic
+	45,  // 29: sttattus.apex.v1.ListApexClinicsResponse.clinics:type_name -> sttattus.apex.v1.ApexClinic
+	45,  // 30: sttattus.apex.v1.GetApexClinicResponse.clinic:type_name -> sttattus.apex.v1.ApexClinic
+	46,  // 31: sttattus.apex.v1.RequestApexClinicIntroResponse.request:type_name -> sttattus.apex.v1.ApexClinicIntroRequest
+	46,  // 32: sttattus.apex.v1.ListMyApexClinicIntroRequestsResponse.requests:type_name -> sttattus.apex.v1.ApexClinicIntroRequest
+	55,  // 33: sttattus.apex.v1.UserSupplement.supplement:type_name -> sttattus.apex.v1.Supplement
+	55,  // 34: sttattus.apex.v1.ListSupplementsResponse.supplements:type_name -> sttattus.apex.v1.Supplement
+	56,  // 35: sttattus.apex.v1.ListMySupplementsResponse.stack:type_name -> sttattus.apex.v1.UserSupplement
+	56,  // 36: sttattus.apex.v1.AddSupplementResponse.entry:type_name -> sttattus.apex.v1.UserSupplement
+	57,  // 37: sttattus.apex.v1.AddSupplementResponse.warnings:type_name -> sttattus.apex.v1.SupplementInteraction
+	57,  // 38: sttattus.apex.v1.ListSupplementInteractionsResponse.interactions:type_name -> sttattus.apex.v1.SupplementInteraction
+	68,  // 39: sttattus.apex.v1.ListMyGlucoseResponse.readings:type_name -> sttattus.apex.v1.GlucoseReading
+	68,  // 40: sttattus.apex.v1.IngestGlucoseReadingResponse.reading:type_name -> sttattus.apex.v1.GlucoseReading
+	73,  // 41: sttattus.apex.v1.GetCycleStatusResponse.status:type_name -> sttattus.apex.v1.CycleStatus
+	73,  // 42: sttattus.apex.v1.LogPeriodResponse.status:type_name -> sttattus.apex.v1.CycleStatus
+	74,  // 43: sttattus.apex.v1.LogCycleSymptomResponse.symptom:type_name -> sttattus.apex.v1.CycleSymptom
+	74,  // 44: sttattus.apex.v1.ListMyCycleSymptomsResponse.symptoms:type_name -> sttattus.apex.v1.CycleSymptom
+	83,  // 45: sttattus.apex.v1.SimulateApexAgeRequest.overrides:type_name -> sttattus.apex.v1.MarkerOverride
+	86,  // 46: sttattus.apex.v1.GetReadinessResponse.snapshot:type_name -> sttattus.apex.v1.ReadinessSnapshot
+	89,  // 47: sttattus.apex.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.apex.v1.ConciergeThread
+	89,  // 48: sttattus.apex.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.apex.v1.ConciergeThread
+	89,  // 49: sttattus.apex.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.apex.v1.ConciergeThread
+	90,  // 50: sttattus.apex.v1.GetConciergeThreadResponse.messages:type_name -> sttattus.apex.v1.ConciergeMessage
+	90,  // 51: sttattus.apex.v1.PostConciergeMessageResponse.message:type_name -> sttattus.apex.v1.ConciergeMessage
+	99,  // 52: sttattus.apex.v1.AnthologyArticle.author:type_name -> sttattus.apex.v1.AnthologyAuthor
+	100, // 53: sttattus.apex.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.apex.v1.AnthologyArticle
+	100, // 54: sttattus.apex.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.apex.v1.AnthologyArticle
+	105, // 55: sttattus.apex.v1.ListMyPharmacologyResponse.entries:type_name -> sttattus.apex.v1.PharmacologyEntry
+	105, // 56: sttattus.apex.v1.AddPharmacologyResponse.entry:type_name -> sttattus.apex.v1.PharmacologyEntry
+	112, // 57: sttattus.apex.v1.RegisterDnaUploadResponse.upload:type_name -> sttattus.apex.v1.DnaUpload
+	112, // 58: sttattus.apex.v1.ListMyDnaUploadsResponse.uploads:type_name -> sttattus.apex.v1.DnaUpload
+	113, // 59: sttattus.apex.v1.ListMyDnaSnpsResponse.snps:type_name -> sttattus.apex.v1.SnpEntry
+	120, // 60: sttattus.apex.v1.ListLabPartnersResponse.partners:type_name -> sttattus.apex.v1.LabPartner
+	123, // 61: sttattus.apex.v1.ExtractLabMarkersRequest.markers:type_name -> sttattus.apex.v1.LabMarkerValue
+	126, // 62: sttattus.apex.v1.CreateClinicianShareResponse.share:type_name -> sttattus.apex.v1.ClinicianShare
+	126, // 63: sttattus.apex.v1.ListMyClinicianSharesResponse.shares:type_name -> sttattus.apex.v1.ClinicianShare
+	133, // 64: sttattus.apex.v1.GetJetLagProtocolResponse.steps:type_name -> sttattus.apex.v1.JetLagStep
+	138, // 65: sttattus.apex.v1.SubmitImagingStudyResponse.study:type_name -> sttattus.apex.v1.ImagingStudy
+	138, // 66: sttattus.apex.v1.ListMyImagingStudiesResponse.studies:type_name -> sttattus.apex.v1.ImagingStudy
+	143, // 67: sttattus.apex.v1.LoungeBooking.lounge:type_name -> sttattus.apex.v1.Lounge
+	143, // 68: sttattus.apex.v1.ListLoungesResponse.lounges:type_name -> sttattus.apex.v1.Lounge
+	144, // 69: sttattus.apex.v1.ListMyLoungeBookingsResponse.bookings:type_name -> sttattus.apex.v1.LoungeBooking
+	144, // 70: sttattus.apex.v1.CreateLoungeBookingResponse.booking:type_name -> sttattus.apex.v1.LoungeBooking
+	123, // 71: sttattus.apex.v1.ParseLabReportTextResponse.extracted:type_name -> sttattus.apex.v1.LabMarkerValue
+	4,   // 72: sttattus.apex.v1.ApexService.SyncVitals:input_type -> sttattus.apex.v1.SyncVitalsRequest
+	6,   // 73: sttattus.apex.v1.ApexService.SubmitLabReport:input_type -> sttattus.apex.v1.SubmitLabReportRequest
+	8,   // 74: sttattus.apex.v1.ApexService.ListLabReports:input_type -> sttattus.apex.v1.ListLabReportsRequest
+	12,  // 75: sttattus.apex.v1.ApexService.ListMyVitals:input_type -> sttattus.apex.v1.ListMyVitalsRequest
+	24,  // 76: sttattus.apex.v1.ApexService.ListMyBiomarkerHistory:input_type -> sttattus.apex.v1.ListMyBiomarkerHistoryRequest
+	26,  // 77: sttattus.apex.v1.ApexService.GetHrvWindow:input_type -> sttattus.apex.v1.GetHrvWindowRequest
+	22,  // 78: sttattus.apex.v1.ApexService.ListBiomarkerRefs:input_type -> sttattus.apex.v1.ListBiomarkerRefsRequest
+	14,  // 79: sttattus.apex.v1.ApexService.GetApexAge:input_type -> sttattus.apex.v1.GetApexAgeRequest
+	17,  // 80: sttattus.apex.v1.ApexService.GetMyApexProfile:input_type -> sttattus.apex.v1.GetMyApexProfileRequest
+	19,  // 81: sttattus.apex.v1.ApexService.UpdateMyApexProfile:input_type -> sttattus.apex.v1.UpdateMyApexProfileRequest
+	47,  // 82: sttattus.apex.v1.ApexService.ListApexClinics:input_type -> sttattus.apex.v1.ListApexClinicsRequest
+	49,  // 83: sttattus.apex.v1.ApexService.GetApexClinic:input_type -> sttattus.apex.v1.GetApexClinicRequest
+	51,  // 84: sttattus.apex.v1.ApexService.RequestApexClinicIntro:input_type -> sttattus.apex.v1.RequestApexClinicIntroRequest
+	53,  // 85: sttattus.apex.v1.ApexService.ListMyApexClinicIntroRequests:input_type -> sttattus.apex.v1.ListMyApexClinicIntroRequestsRequest
+	31,  // 86: sttattus.apex.v1.ApexService.ListApexProtocols:input_type -> sttattus.apex.v1.ListApexProtocolsRequest
+	33,  // 87: sttattus.apex.v1.ApexService.GetApexProtocol:input_type -> sttattus.apex.v1.GetApexProtocolRequest
+	35,  // 88: sttattus.apex.v1.ApexService.EnrolInApexProtocol:input_type -> sttattus.apex.v1.EnrolInApexProtocolRequest
+	37,  // 89: sttattus.apex.v1.ApexService.ListMyApexProtocolEnrolments:input_type -> sttattus.apex.v1.ListMyApexProtocolEnrolmentsRequest
+	39,  // 90: sttattus.apex.v1.ApexService.UpdateApexProtocolEnrolment:input_type -> sttattus.apex.v1.UpdateApexProtocolEnrolmentRequest
+	41,  // 91: sttattus.apex.v1.ApexService.RecordApexProtocolAdherence:input_type -> sttattus.apex.v1.RecordApexProtocolAdherenceRequest
+	43,  // 92: sttattus.apex.v1.ApexService.ListMyApexProtocolAdherence:input_type -> sttattus.apex.v1.ListMyApexProtocolAdherenceRequest
+	58,  // 93: sttattus.apex.v1.ApexService.ListSupplements:input_type -> sttattus.apex.v1.ListSupplementsRequest
+	60,  // 94: sttattus.apex.v1.ApexService.ListMySupplements:input_type -> sttattus.apex.v1.ListMySupplementsRequest
+	62,  // 95: sttattus.apex.v1.ApexService.AddSupplement:input_type -> sttattus.apex.v1.AddSupplementRequest
+	64,  // 96: sttattus.apex.v1.ApexService.RemoveSupplement:input_type -> sttattus.apex.v1.RemoveSupplementRequest
+	66,  // 97: sttattus.apex.v1.ApexService.ListSupplementInteractions:input_type -> sttattus.apex.v1.ListSupplementInteractionsRequest
+	69,  // 98: sttattus.apex.v1.ApexService.ListMyGlucose:input_type -> sttattus.apex.v1.ListMyGlucoseRequest
+	71,  // 99: sttattus.apex.v1.ApexService.IngestGlucoseReading:input_type -> sttattus.apex.v1.IngestGlucoseReadingRequest
+	75,  // 100: sttattus.apex.v1.ApexService.GetCycleStatus:input_type -> sttattus.apex.v1.GetCycleStatusRequest
+	77,  // 101: sttattus.apex.v1.ApexService.LogPeriod:input_type -> sttattus.apex.v1.LogPeriodRequest
+	79,  // 102: sttattus.apex.v1.ApexService.LogCycleSymptom:input_type -> sttattus.apex.v1.LogCycleSymptomRequest
+	81,  // 103: sttattus.apex.v1.ApexService.ListMyCycleSymptoms:input_type -> sttattus.apex.v1.ListMyCycleSymptomsRequest
+	84,  // 104: sttattus.apex.v1.ApexService.SimulateApexAge:input_type -> sttattus.apex.v1.SimulateApexAgeRequest
+	87,  // 105: sttattus.apex.v1.ApexService.GetReadiness:input_type -> sttattus.apex.v1.GetReadinessRequest
+	91,  // 106: sttattus.apex.v1.ApexService.StartConciergeThread:input_type -> sttattus.apex.v1.StartConciergeThreadRequest
+	93,  // 107: sttattus.apex.v1.ApexService.ListMyConciergeThreads:input_type -> sttattus.apex.v1.ListMyConciergeThreadsRequest
+	95,  // 108: sttattus.apex.v1.ApexService.GetConciergeThread:input_type -> sttattus.apex.v1.GetConciergeThreadRequest
+	97,  // 109: sttattus.apex.v1.ApexService.PostConciergeMessage:input_type -> sttattus.apex.v1.PostConciergeMessageRequest
+	101, // 110: sttattus.apex.v1.ApexService.ListAnthologyArticles:input_type -> sttattus.apex.v1.ListAnthologyArticlesRequest
+	103, // 111: sttattus.apex.v1.ApexService.GetAnthologyArticle:input_type -> sttattus.apex.v1.GetAnthologyArticleRequest
+	106, // 112: sttattus.apex.v1.ApexService.ListMyPharmacology:input_type -> sttattus.apex.v1.ListMyPharmacologyRequest
+	108, // 113: sttattus.apex.v1.ApexService.AddPharmacology:input_type -> sttattus.apex.v1.AddPharmacologyRequest
+	110, // 114: sttattus.apex.v1.ApexService.RemovePharmacology:input_type -> sttattus.apex.v1.RemovePharmacologyRequest
+	114, // 115: sttattus.apex.v1.ApexService.RegisterDnaUpload:input_type -> sttattus.apex.v1.RegisterDnaUploadRequest
+	116, // 116: sttattus.apex.v1.ApexService.ListMyDnaUploads:input_type -> sttattus.apex.v1.ListMyDnaUploadsRequest
+	118, // 117: sttattus.apex.v1.ApexService.ListMyDnaSnps:input_type -> sttattus.apex.v1.ListMyDnaSnpsRequest
+	121, // 118: sttattus.apex.v1.ApexService.ListLabPartners:input_type -> sttattus.apex.v1.ListLabPartnersRequest
+	124, // 119: sttattus.apex.v1.ApexService.ExtractLabMarkers:input_type -> sttattus.apex.v1.ExtractLabMarkersRequest
+	127, // 120: sttattus.apex.v1.ApexService.CreateClinicianShare:input_type -> sttattus.apex.v1.CreateClinicianShareRequest
+	129, // 121: sttattus.apex.v1.ApexService.ListMyClinicianShares:input_type -> sttattus.apex.v1.ListMyClinicianSharesRequest
+	131, // 122: sttattus.apex.v1.ApexService.RevokeClinicianShare:input_type -> sttattus.apex.v1.RevokeClinicianShareRequest
+	134, // 123: sttattus.apex.v1.ApexService.GetJetLagProtocol:input_type -> sttattus.apex.v1.GetJetLagProtocolRequest
+	136, // 124: sttattus.apex.v1.ApexService.GenerateHealthAlmanac:input_type -> sttattus.apex.v1.GenerateHealthAlmanacRequest
+	139, // 125: sttattus.apex.v1.ApexService.SubmitImagingStudy:input_type -> sttattus.apex.v1.SubmitImagingStudyRequest
+	141, // 126: sttattus.apex.v1.ApexService.ListMyImagingStudies:input_type -> sttattus.apex.v1.ListMyImagingStudiesRequest
+	145, // 127: sttattus.apex.v1.ApexService.ListLounges:input_type -> sttattus.apex.v1.ListLoungesRequest
+	147, // 128: sttattus.apex.v1.ApexService.ListMyLoungeBookings:input_type -> sttattus.apex.v1.ListMyLoungeBookingsRequest
+	149, // 129: sttattus.apex.v1.ApexService.CreateLoungeBooking:input_type -> sttattus.apex.v1.CreateLoungeBookingRequest
+	151, // 130: sttattus.apex.v1.ApexService.CancelLoungeBooking:input_type -> sttattus.apex.v1.CancelLoungeBookingRequest
+	153, // 131: sttattus.apex.v1.ApexService.ParseLabReportText:input_type -> sttattus.apex.v1.ParseLabReportTextRequest
+	10,  // 132: sttattus.apex.v1.ApexService.AdminVerifyLab:input_type -> sttattus.apex.v1.AdminVerifyLabRequest
+	5,   // 133: sttattus.apex.v1.ApexService.SyncVitals:output_type -> sttattus.apex.v1.SyncVitalsResponse
+	7,   // 134: sttattus.apex.v1.ApexService.SubmitLabReport:output_type -> sttattus.apex.v1.SubmitLabReportResponse
+	9,   // 135: sttattus.apex.v1.ApexService.ListLabReports:output_type -> sttattus.apex.v1.ListLabReportsResponse
+	13,  // 136: sttattus.apex.v1.ApexService.ListMyVitals:output_type -> sttattus.apex.v1.ListMyVitalsResponse
+	25,  // 137: sttattus.apex.v1.ApexService.ListMyBiomarkerHistory:output_type -> sttattus.apex.v1.ListMyBiomarkerHistoryResponse
+	27,  // 138: sttattus.apex.v1.ApexService.GetHrvWindow:output_type -> sttattus.apex.v1.GetHrvWindowResponse
+	23,  // 139: sttattus.apex.v1.ApexService.ListBiomarkerRefs:output_type -> sttattus.apex.v1.ListBiomarkerRefsResponse
+	15,  // 140: sttattus.apex.v1.ApexService.GetApexAge:output_type -> sttattus.apex.v1.GetApexAgeResponse
+	18,  // 141: sttattus.apex.v1.ApexService.GetMyApexProfile:output_type -> sttattus.apex.v1.GetMyApexProfileResponse
+	20,  // 142: sttattus.apex.v1.ApexService.UpdateMyApexProfile:output_type -> sttattus.apex.v1.UpdateMyApexProfileResponse
+	48,  // 143: sttattus.apex.v1.ApexService.ListApexClinics:output_type -> sttattus.apex.v1.ListApexClinicsResponse
+	50,  // 144: sttattus.apex.v1.ApexService.GetApexClinic:output_type -> sttattus.apex.v1.GetApexClinicResponse
+	52,  // 145: sttattus.apex.v1.ApexService.RequestApexClinicIntro:output_type -> sttattus.apex.v1.RequestApexClinicIntroResponse
+	54,  // 146: sttattus.apex.v1.ApexService.ListMyApexClinicIntroRequests:output_type -> sttattus.apex.v1.ListMyApexClinicIntroRequestsResponse
+	32,  // 147: sttattus.apex.v1.ApexService.ListApexProtocols:output_type -> sttattus.apex.v1.ListApexProtocolsResponse
+	34,  // 148: sttattus.apex.v1.ApexService.GetApexProtocol:output_type -> sttattus.apex.v1.GetApexProtocolResponse
+	36,  // 149: sttattus.apex.v1.ApexService.EnrolInApexProtocol:output_type -> sttattus.apex.v1.EnrolInApexProtocolResponse
+	38,  // 150: sttattus.apex.v1.ApexService.ListMyApexProtocolEnrolments:output_type -> sttattus.apex.v1.ListMyApexProtocolEnrolmentsResponse
+	40,  // 151: sttattus.apex.v1.ApexService.UpdateApexProtocolEnrolment:output_type -> sttattus.apex.v1.UpdateApexProtocolEnrolmentResponse
+	42,  // 152: sttattus.apex.v1.ApexService.RecordApexProtocolAdherence:output_type -> sttattus.apex.v1.RecordApexProtocolAdherenceResponse
+	44,  // 153: sttattus.apex.v1.ApexService.ListMyApexProtocolAdherence:output_type -> sttattus.apex.v1.ListMyApexProtocolAdherenceResponse
+	59,  // 154: sttattus.apex.v1.ApexService.ListSupplements:output_type -> sttattus.apex.v1.ListSupplementsResponse
+	61,  // 155: sttattus.apex.v1.ApexService.ListMySupplements:output_type -> sttattus.apex.v1.ListMySupplementsResponse
+	63,  // 156: sttattus.apex.v1.ApexService.AddSupplement:output_type -> sttattus.apex.v1.AddSupplementResponse
+	65,  // 157: sttattus.apex.v1.ApexService.RemoveSupplement:output_type -> sttattus.apex.v1.RemoveSupplementResponse
+	67,  // 158: sttattus.apex.v1.ApexService.ListSupplementInteractions:output_type -> sttattus.apex.v1.ListSupplementInteractionsResponse
+	70,  // 159: sttattus.apex.v1.ApexService.ListMyGlucose:output_type -> sttattus.apex.v1.ListMyGlucoseResponse
+	72,  // 160: sttattus.apex.v1.ApexService.IngestGlucoseReading:output_type -> sttattus.apex.v1.IngestGlucoseReadingResponse
+	76,  // 161: sttattus.apex.v1.ApexService.GetCycleStatus:output_type -> sttattus.apex.v1.GetCycleStatusResponse
+	78,  // 162: sttattus.apex.v1.ApexService.LogPeriod:output_type -> sttattus.apex.v1.LogPeriodResponse
+	80,  // 163: sttattus.apex.v1.ApexService.LogCycleSymptom:output_type -> sttattus.apex.v1.LogCycleSymptomResponse
+	82,  // 164: sttattus.apex.v1.ApexService.ListMyCycleSymptoms:output_type -> sttattus.apex.v1.ListMyCycleSymptomsResponse
+	85,  // 165: sttattus.apex.v1.ApexService.SimulateApexAge:output_type -> sttattus.apex.v1.SimulateApexAgeResponse
+	88,  // 166: sttattus.apex.v1.ApexService.GetReadiness:output_type -> sttattus.apex.v1.GetReadinessResponse
+	92,  // 167: sttattus.apex.v1.ApexService.StartConciergeThread:output_type -> sttattus.apex.v1.StartConciergeThreadResponse
+	94,  // 168: sttattus.apex.v1.ApexService.ListMyConciergeThreads:output_type -> sttattus.apex.v1.ListMyConciergeThreadsResponse
+	96,  // 169: sttattus.apex.v1.ApexService.GetConciergeThread:output_type -> sttattus.apex.v1.GetConciergeThreadResponse
+	98,  // 170: sttattus.apex.v1.ApexService.PostConciergeMessage:output_type -> sttattus.apex.v1.PostConciergeMessageResponse
+	102, // 171: sttattus.apex.v1.ApexService.ListAnthologyArticles:output_type -> sttattus.apex.v1.ListAnthologyArticlesResponse
+	104, // 172: sttattus.apex.v1.ApexService.GetAnthologyArticle:output_type -> sttattus.apex.v1.GetAnthologyArticleResponse
+	107, // 173: sttattus.apex.v1.ApexService.ListMyPharmacology:output_type -> sttattus.apex.v1.ListMyPharmacologyResponse
+	109, // 174: sttattus.apex.v1.ApexService.AddPharmacology:output_type -> sttattus.apex.v1.AddPharmacologyResponse
+	111, // 175: sttattus.apex.v1.ApexService.RemovePharmacology:output_type -> sttattus.apex.v1.RemovePharmacologyResponse
+	115, // 176: sttattus.apex.v1.ApexService.RegisterDnaUpload:output_type -> sttattus.apex.v1.RegisterDnaUploadResponse
+	117, // 177: sttattus.apex.v1.ApexService.ListMyDnaUploads:output_type -> sttattus.apex.v1.ListMyDnaUploadsResponse
+	119, // 178: sttattus.apex.v1.ApexService.ListMyDnaSnps:output_type -> sttattus.apex.v1.ListMyDnaSnpsResponse
+	122, // 179: sttattus.apex.v1.ApexService.ListLabPartners:output_type -> sttattus.apex.v1.ListLabPartnersResponse
+	125, // 180: sttattus.apex.v1.ApexService.ExtractLabMarkers:output_type -> sttattus.apex.v1.ExtractLabMarkersResponse
+	128, // 181: sttattus.apex.v1.ApexService.CreateClinicianShare:output_type -> sttattus.apex.v1.CreateClinicianShareResponse
+	130, // 182: sttattus.apex.v1.ApexService.ListMyClinicianShares:output_type -> sttattus.apex.v1.ListMyClinicianSharesResponse
+	132, // 183: sttattus.apex.v1.ApexService.RevokeClinicianShare:output_type -> sttattus.apex.v1.RevokeClinicianShareResponse
+	135, // 184: sttattus.apex.v1.ApexService.GetJetLagProtocol:output_type -> sttattus.apex.v1.GetJetLagProtocolResponse
+	137, // 185: sttattus.apex.v1.ApexService.GenerateHealthAlmanac:output_type -> sttattus.apex.v1.GenerateHealthAlmanacResponse
+	140, // 186: sttattus.apex.v1.ApexService.SubmitImagingStudy:output_type -> sttattus.apex.v1.SubmitImagingStudyResponse
+	142, // 187: sttattus.apex.v1.ApexService.ListMyImagingStudies:output_type -> sttattus.apex.v1.ListMyImagingStudiesResponse
+	146, // 188: sttattus.apex.v1.ApexService.ListLounges:output_type -> sttattus.apex.v1.ListLoungesResponse
+	148, // 189: sttattus.apex.v1.ApexService.ListMyLoungeBookings:output_type -> sttattus.apex.v1.ListMyLoungeBookingsResponse
+	150, // 190: sttattus.apex.v1.ApexService.CreateLoungeBooking:output_type -> sttattus.apex.v1.CreateLoungeBookingResponse
+	152, // 191: sttattus.apex.v1.ApexService.CancelLoungeBooking:output_type -> sttattus.apex.v1.CancelLoungeBookingResponse
+	154, // 192: sttattus.apex.v1.ApexService.ParseLabReportText:output_type -> sttattus.apex.v1.ParseLabReportTextResponse
+	11,  // 193: sttattus.apex.v1.ApexService.AdminVerifyLab:output_type -> sttattus.apex.v1.AdminVerifyLabResponse
+	133, // [133:194] is the sub-list for method output_type
+	72,  // [72:133] is the sub-list for method input_type
+	72,  // [72:72] is the sub-list for extension type_name
+	72,  // [72:72] is the sub-list for extension extendee
+	0,   // [0:72] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_apex_v1_apex_proto_init() }
@@ -3548,7 +9730,7 @@ func file_sttattus_apex_v1_apex_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_apex_v1_apex_proto_rawDesc), len(file_sttattus_apex_v1_apex_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   54,
+			NumMessages:   154,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -22,9 +22,17 @@ const (
 )
 
 type CalculateBioRankRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Biomarkers    []*Biomarker           `protobuf:"bytes,2,rep,name=biomarkers,proto3" json:"biomarkers,omitempty"`
+	state      protoimpl.MessageState `protogen:"open.v1"`
+	UserId     string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Biomarkers []*Biomarker           `protobuf:"bytes,2,rep,name=biomarkers,proto3" json:"biomarkers,omitempty"`
+	// Decimal years. Required for the Levine PhenoAge formula; absence
+	// (chronological_age_present == false) forces the engine into its
+	// marker-deviation fallback and biological_age comes back zero.
+	ChronologicalAge        float64 `protobuf:"fixed64,3,opt,name=chronological_age,json=chronologicalAge,proto3" json:"chronological_age,omitempty"`
+	ChronologicalAgePresent bool    `protobuf:"varint,4,opt,name=chronological_age_present,json=chronologicalAgePresent,proto3" json:"chronological_age_present,omitempty"`
+	// 'male' | 'female' | 'intersex' | ”  — used to pick sex-specific
+	// optimal-range bands in the fallback scoring path.
+	BiologicalSex string `protobuf:"bytes,5,opt,name=biological_sex,json=biologicalSex,proto3" json:"biological_sex,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -73,13 +81,42 @@ func (x *CalculateBioRankRequest) GetBiomarkers() []*Biomarker {
 	return nil
 }
 
+func (x *CalculateBioRankRequest) GetChronologicalAge() float64 {
+	if x != nil {
+		return x.ChronologicalAge
+	}
+	return 0
+}
+
+func (x *CalculateBioRankRequest) GetChronologicalAgePresent() bool {
+	if x != nil {
+		return x.ChronologicalAgePresent
+	}
+	return false
+}
+
+func (x *CalculateBioRankRequest) GetBiologicalSex() string {
+	if x != nil {
+		return x.BiologicalSex
+	}
+	return ""
+}
+
 type CalculateBioRankResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	BioRank       float64                `protobuf:"fixed64,1,opt,name=bio_rank,json=bioRank,proto3" json:"bio_rank,omitempty"`                                                                                          // 1-100 normalized status signal
-	BiologicalAge float64                `protobuf:"fixed64,2,opt,name=biological_age,json=biologicalAge,proto3" json:"biological_age,omitempty"`                                                                        // Calculated epigenetic/phenotypic age
-	SystemScores  map[string]float64     `protobuf:"bytes,3,rep,name=system_scores,json=systemScores,proto3" json:"system_scores,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed64,2,opt,name=value"` // e.g., "cardiovascular": 85.0, "metabolic": 92.0
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	BioRank       float64                `protobuf:"fixed64,1,opt,name=bio_rank,json=bioRank,proto3" json:"bio_rank,omitempty"`                                                                                          // 0-100 marker-quality aggregate
+	BiologicalAge float64                `protobuf:"fixed64,2,opt,name=biological_age,json=biologicalAge,proto3" json:"biological_age,omitempty"`                                                                        // PhenoAge years; 0 when not computable
+	SystemScores  map[string]float64     `protobuf:"bytes,3,rep,name=system_scores,json=systemScores,proto3" json:"system_scores,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed64,2,opt,name=value"` // e.g., "cardiovascular": 85.0
+	// Which path produced biological_age. "phenoage" = real Levine formula
+	// (all 9 markers + age present). "deviation" = optimal-range fallback.
+	// "insufficient" = no biological_age (engine returned 0).
+	Method string `protobuf:"bytes,4,opt,name=method,proto3" json:"method,omitempty"`
+	// PhenoAge components that were filled in. Lets clients show "we used
+	// 7/9 markers" or surface which ones are still missing.
+	MarkersUsed    []string `protobuf:"bytes,5,rep,name=markers_used,json=markersUsed,proto3" json:"markers_used,omitempty"`
+	MarkersMissing []string `protobuf:"bytes,6,rep,name=markers_missing,json=markersMissing,proto3" json:"markers_missing,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *CalculateBioRankResponse) Reset() {
@@ -133,20 +170,47 @@ func (x *CalculateBioRankResponse) GetSystemScores() map[string]float64 {
 	return nil
 }
 
+func (x *CalculateBioRankResponse) GetMethod() string {
+	if x != nil {
+		return x.Method
+	}
+	return ""
+}
+
+func (x *CalculateBioRankResponse) GetMarkersUsed() []string {
+	if x != nil {
+		return x.MarkersUsed
+	}
+	return nil
+}
+
+func (x *CalculateBioRankResponse) GetMarkersMissing() []string {
+	if x != nil {
+		return x.MarkersMissing
+	}
+	return nil
+}
+
 var File_sttattus_apex_v1_apex_engine_proto protoreflect.FileDescriptor
 
 const file_sttattus_apex_v1_apex_engine_proto_rawDesc = "" +
 	"\n" +
-	"\"sttattus/apex/v1/apex_engine.proto\x12\x10sttattus.apex.v1\x1a\x1bsttattus/apex/v1/apex.proto\"o\n" +
+	"\"sttattus/apex/v1/apex_engine.proto\x12\x10sttattus.apex.v1\x1a\x1bsttattus/apex/v1/apex.proto\"\xff\x01\n" +
 	"\x17CalculateBioRankRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12;\n" +
 	"\n" +
 	"biomarkers\x18\x02 \x03(\v2\x1b.sttattus.apex.v1.BiomarkerR\n" +
-	"biomarkers\"\x80\x02\n" +
+	"biomarkers\x12+\n" +
+	"\x11chronological_age\x18\x03 \x01(\x01R\x10chronologicalAge\x12:\n" +
+	"\x19chronological_age_present\x18\x04 \x01(\bR\x17chronologicalAgePresent\x12%\n" +
+	"\x0ebiological_sex\x18\x05 \x01(\tR\rbiologicalSex\"\xe4\x02\n" +
 	"\x18CalculateBioRankResponse\x12\x19\n" +
 	"\bbio_rank\x18\x01 \x01(\x01R\abioRank\x12%\n" +
 	"\x0ebiological_age\x18\x02 \x01(\x01R\rbiologicalAge\x12a\n" +
-	"\rsystem_scores\x18\x03 \x03(\v2<.sttattus.apex.v1.CalculateBioRankResponse.SystemScoresEntryR\fsystemScores\x1a?\n" +
+	"\rsystem_scores\x18\x03 \x03(\v2<.sttattus.apex.v1.CalculateBioRankResponse.SystemScoresEntryR\fsystemScores\x12\x16\n" +
+	"\x06method\x18\x04 \x01(\tR\x06method\x12!\n" +
+	"\fmarkers_used\x18\x05 \x03(\tR\vmarkersUsed\x12'\n" +
+	"\x0fmarkers_missing\x18\x06 \x03(\tR\x0emarkersMissing\x1a?\n" +
 	"\x11SystemScoresEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\x01R\x05value:\x028\x012~\n" +

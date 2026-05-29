@@ -35,6 +35,7 @@ const UserProfile$json = {
     {'1': 'apex_rank', '3': 15, '4': 1, '5': 1, '10': 'apexRank'},
     {'1': 'cultural_capital', '3': 16, '4': 1, '5': 1, '10': 'culturalCapital'},
     {'1': 'handle', '3': 17, '4': 1, '5': 9, '10': 'handle'},
+    {'1': 'locale', '3': 18, '4': 1, '5': 9, '10': 'locale'},
   ],
 };
 
@@ -49,7 +50,7 @@ final $typed_data.Uint8List userProfileDescriptor = $convert.base64Decode(
     'BHRpZXIYDCABKAlSBHRpZXISHQoKYXVyYV9jb2xvchgNIAEoCVIJYXVyYUNvbG9yEh0KCnZhdW'
     'x0X3JhbmsYDiABKAFSCXZhdWx0UmFuaxIbCglhcGV4X3JhbmsYDyABKAFSCGFwZXhSYW5rEikK'
     'EGN1bHR1cmFsX2NhcGl0YWwYECABKAFSD2N1bHR1cmFsQ2FwaXRhbBIWCgZoYW5kbGUYESABKA'
-    'lSBmhhbmRsZQ==');
+    'lSBmhhbmRsZRIWCgZsb2NhbGUYEiABKAlSBmxvY2FsZQ==');
 
 @$core.Deprecated('Use appAccessDescriptor instead')
 const AppAccess$json = {
@@ -95,13 +96,14 @@ const UpdateMeRequest$json = {
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'avatar_url', '3': 2, '4': 1, '5': 9, '10': 'avatarUrl'},
+    {'1': 'locale', '3': 3, '4': 1, '5': 9, '10': 'locale'},
   ],
 };
 
 /// Descriptor for `UpdateMeRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateMeRequestDescriptor = $convert.base64Decode(
     'Cg9VcGRhdGVNZVJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIdCgphdmF0YXJfdXJsGAIgAS'
-    'gJUglhdmF0YXJVcmw=');
+    'gJUglhdmF0YXJVcmwSFgoGbG9jYWxlGAMgASgJUgZsb2NhbGU=');
 
 @$core.Deprecated('Use updateMeResponseDescriptor instead')
 const UpdateMeResponse$json = {

@@ -973,10 +973,6 @@ export class SendMessageResponse extends Message$1<SendMessageResponse> {
 }
 
 /**
- * AtlasVerification mirrors one row of atlas_verifications.
- * status: pending | approved | rejected | expired.
- * highest_check: document | selfie | liveness; empty when failed.
- *
  * @generated from message sttattus.dating.v1.AtlasVerification
  */
 export class AtlasVerification extends Message$1<AtlasVerification> {
@@ -1027,8 +1023,6 @@ export class AtlasVerification extends Message$1<AtlasVerification> {
   decidedAt = protoInt64.zero;
 
   /**
-   * Provider's hosted-flow URL — only populated on StartVerification.
-   *
    * @generated from field: string hosted_flow_url = 9;
    */
   hostedFlowUrl = "";
@@ -1173,8 +1167,6 @@ export class GetLatestVerificationRequest extends Message$1<GetLatestVerificatio
  */
 export class GetLatestVerificationResponse extends Message$1<GetLatestVerificationResponse> {
   /**
-   * Empty (id == "") = lifter has not yet started a verification.
-   *
    * @generated from field: sttattus.dating.v1.AtlasVerification verification = 1;
    */
   verification?: AtlasVerification;
@@ -1224,8 +1216,6 @@ export class TensionSeat extends Message$1<TensionSeat> {
   slot = 0;
 
   /**
-   * 'open' | 'held' | 'shattered' | 'accepted'
-   *
    * @generated from field: string state = 3;
    */
   state = "";
@@ -1326,8 +1316,6 @@ export class ListTensionSeatsRequest extends Message$1<ListTensionSeatsRequest> 
  */
 export class ListTensionSeatsResponse extends Message$1<ListTensionSeatsResponse> {
   /**
-   * Always five seats, ordered by slot 0..4.
-   *
    * @generated from field: repeated sttattus.dating.v1.TensionSeat seats = 1;
    */
   seats: TensionSeat[] = [];
@@ -1530,8 +1518,6 @@ export class AkashicChapter extends Message$1<AkashicChapter> {
   id = "";
 
   /**
-   * One of the 12 canonical chapter keys.
-   *
    * @generated from field: string chapter_key = 2;
    */
   chapterKey = "";
@@ -1547,8 +1533,6 @@ export class AkashicChapter extends Message$1<AkashicChapter> {
   body = "";
 
   /**
-   * 'public' | 'seated' | 'private'
-   *
    * @generated from field: string visibility = 5;
    */
   visibility = "";
@@ -1621,9 +1605,6 @@ export class ListAuthorAkashicRequest extends Message$1<ListAuthorAkashicRequest
  */
 export class ListAuthorAkashicResponse extends Message$1<ListAuthorAkashicResponse> {
   /**
-   * All 12 chapters in canonical order; un-authored chapters come
-   * back as empty placeholders so the editor renders the full set.
-   *
    * @generated from field: repeated sttattus.dating.v1.AkashicChapter chapters = 1;
    */
   chapters: AkashicChapter[] = [];
@@ -1698,9 +1679,6 @@ export class ListVisibleAkashicRequest extends Message$1<ListVisibleAkashicReque
  */
 export class ListVisibleAkashicResponse extends Message$1<ListVisibleAkashicResponse> {
   /**
-   * Server filters by visibility. Seat-gated chapters are included
-   * only when the caller holds a Tension Seat with the author.
-   *
    * @generated from field: repeated sttattus.dating.v1.AkashicChapter chapters = 1;
    */
   chapters: AkashicChapter[] = [];
@@ -2476,8 +2454,6 @@ export class GetPanicContactRequest extends Message$1<GetPanicContactRequest> {
  */
 export class GetPanicContactResponse extends Message$1<GetPanicContactResponse> {
   /**
-   * Empty (phone == "") = no contact configured.
-   *
    * @generated from field: sttattus.dating.v1.PanicContact contact = 1;
    */
   contact?: PanicContact;
@@ -2601,8 +2577,6 @@ export class UpsertPanicContactResponse extends Message$1<UpsertPanicContactResp
  */
 export class PrivacyAxes extends Message$1<PrivacyAxes> {
   /**
-   * Per-axis visibility: 'matched' | 'seated' | 'private'.
-   *
    * @generated from field: string vault_rank = 1;
    */
   vaultRank = "";
@@ -2854,6 +2828,26 @@ export class AtlasMapPoint extends Message$1<AtlasMapPoint> {
    */
   z = 0;
 
+  /**
+   * @generated from field: double luminance = 6;
+   */
+  luminance = 0;
+
+  /**
+   * @generated from field: string tier = 7;
+   */
+  tier = "";
+
+  /**
+   * @generated from field: sttattus.dating.v1.DatingIntent intent = 8;
+   */
+  intent = DatingIntent.UNSPECIFIED;
+
+  /**
+   * @generated from field: int32 intellectual_pace = 9;
+   */
+  intellectualPace = 0;
+
   constructor(data?: PartialMessage<AtlasMapPoint>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2867,6 +2861,10 @@ export class AtlasMapPoint extends Message$1<AtlasMapPoint> {
     { no: 3, name: "x", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 4, name: "y", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 5, name: "z", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "luminance", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "intent", kind: "enum", T: proto3.getEnumType(DatingIntent) },
+    { no: 9, name: "intellectual_pace", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasMapPoint {
@@ -2922,9 +2920,6 @@ export class ListAtlasMapPointsRequest extends Message$1<ListAtlasMapPointsReque
  */
 export class ListAtlasMapPointsResponse extends Message$1<ListAtlasMapPointsResponse> {
   /**
-   * Latest projection per user. The map widget treats the caller
-   * as camera origin and renders the rest in 3-space.
-   *
    * @generated from field: repeated sttattus.dating.v1.AtlasMapPoint points = 1;
    */
   points: AtlasMapPoint[] = [];
@@ -2987,8 +2982,6 @@ export class AgoraRoom extends Message$1<AgoraRoom> {
   maxGuests = 0;
 
   /**
-   * 'live' | 'ended' | 'scheduled'
-   *
    * @generated from field: string status = 6;
    */
   status = "";
@@ -3008,6 +3001,16 @@ export class AgoraRoom extends Message$1<AgoraRoom> {
    */
   endedAt = protoInt64.zero;
 
+  /**
+   * @generated from field: bool is_video_enabled = 10;
+   */
+  isVideoEnabled = false;
+
+  /**
+   * @generated from field: bool is_encrypted = 11;
+   */
+  isEncrypted = false;
+
   constructor(data?: PartialMessage<AgoraRoom>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3025,6 +3028,8 @@ export class AgoraRoom extends Message$1<AgoraRoom> {
     { no: 7, name: "livekit_room_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "started_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 9, name: "ended_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: "is_video_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "is_encrypted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AgoraRoom {
@@ -3049,8 +3054,6 @@ export class AgoraRoom extends Message$1<AgoraRoom> {
  */
 export class ListLiveRoomsRequest extends Message$1<ListLiveRoomsRequest> {
   /**
-   * Optional cluster filter ('' = all clusters).
-   *
    * @generated from field: string cluster = 1;
    */
   cluster = "";
@@ -3139,6 +3142,11 @@ export class CreateAgoraRoomRequest extends Message$1<CreateAgoraRoomRequest> {
    */
   maxGuests = 0;
 
+  /**
+   * @generated from field: bool enable_video = 4;
+   */
+  enableVideo = false;
+
   constructor(data?: PartialMessage<CreateAgoraRoomRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3150,6 +3158,7 @@ export class CreateAgoraRoomRequest extends Message$1<CreateAgoraRoomRequest> {
     { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "cluster", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "max_guests", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "enable_video", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAgoraRoomRequest {
@@ -3322,10 +3331,6 @@ export class MintLiveKitTokenRequest extends Message$1<MintLiveKitTokenRequest> 
  */
 export class MintLiveKitTokenResponse extends Message$1<MintLiveKitTokenResponse> {
   /**
-   * Empty when LiveKit credentials are not configured server-side
-   * (FailedPrecondition is returned in that case so the client can
-   * surface "joining unavailable").
-   *
    * @generated from field: string token = 1;
    */
   token = "";
@@ -3365,10 +3370,6 @@ export class MintLiveKitTokenResponse extends Message$1<MintLiveKitTokenResponse
 }
 
 /**
- * MessageAttachment ties a message to a media_assets row. kind:
- * 'voice' | 'video'. The clip bytes go through MediaService's
- * presigned-URL flow; this row is the join.
- *
  * @generated from message sttattus.dating.v1.MessageAttachment
  */
 export class MessageAttachment extends Message$1<MessageAttachment> {
@@ -3620,8 +3621,6 @@ export class Restaurant extends Message$1<Restaurant> {
   neighborhood = "";
 
   /**
-   * 'opentable' | 'resy' | 'manual'
-   *
    * @generated from field: string partner = 5;
    */
   partner = "";
@@ -3642,8 +3641,6 @@ export class Restaurant extends Message$1<Restaurant> {
   cuisine = "";
 
   /**
-   * 1..5
-   *
    * @generated from field: int32 price_tier = 9;
    */
   priceTier = 0;
@@ -3689,8 +3686,6 @@ export class Restaurant extends Message$1<Restaurant> {
  */
 export class ListRestaurantsRequest extends Message$1<ListRestaurantsRequest> {
   /**
-   * Empty city = curated set (the Atlas Twelve).
-   *
    * @generated from field: string city = 1;
    */
   city = "";
@@ -3775,8 +3770,6 @@ export class Reservation extends Message$1<Reservation> {
   restaurantId = "";
 
   /**
-   * empty when unscoped
-   *
    * @generated from field: string match_id = 3;
    */
   matchId = "";
@@ -3792,8 +3785,6 @@ export class Reservation extends Message$1<Reservation> {
   requestedAt = protoInt64.zero;
 
   /**
-   * 'requested' | 'confirmed' | 'declined' | 'cancelled'
-   *
    * @generated from field: string status = 6;
    */
   status = "";
@@ -3865,8 +3856,6 @@ export class CreateReservationRequest extends Message$1<CreateReservationRequest
   restaurantId = "";
 
   /**
-   * empty when solo / unscoped
-   *
    * @generated from field: string match_id = 2;
    */
   matchId = "";
@@ -4098,9 +4087,60 @@ export class CancelReservationResponse extends Message$1<CancelReservationRespon
 }
 
 /**
- * @generated from message sttattus.dating.v1.CompatibilityReport
+ * @generated from message sttattus.dating.v1.CompatibilityFactor
  */
-export class CompatibilityReport extends Message$1<CompatibilityReport> {
+export class CompatibilityFactor extends Message$1<CompatibilityFactor> {
+  /**
+   * @generated from field: string label = 1;
+   */
+  label = "";
+
+  /**
+   * 0..1
+   *
+   * @generated from field: double score = 2;
+   */
+  score = 0;
+
+  /**
+   * @generated from field: string interpretation = 3;
+   */
+  interpretation = "";
+
+  constructor(data?: PartialMessage<CompatibilityFactor>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.CompatibilityFactor";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "interpretation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompatibilityFactor {
+    return new CompatibilityFactor().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompatibilityFactor {
+    return new CompatibilityFactor().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompatibilityFactor {
+    return new CompatibilityFactor().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CompatibilityFactor | PlainMessage<CompatibilityFactor> | undefined, b: CompatibilityFactor | PlainMessage<CompatibilityFactor> | undefined): boolean {
+    return proto3.util.equals(CompatibilityFactor, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.CompatibilityMatrix
+ */
+export class CompatibilityMatrix extends Message$1<CompatibilityMatrix> {
   /**
    * @generated from field: string left_user_id = 1;
    */
@@ -4112,125 +4152,382 @@ export class CompatibilityReport extends Message$1<CompatibilityReport> {
   rightUserId = "";
 
   /**
-   * -1..1 cosine similarity between the two embeddings.
-   *
-   * @generated from field: double cosine = 3;
+   * @generated from field: double aggregate_score = 3;
    */
-  cosine = 0;
+  aggregateScore = 0;
 
   /**
-   * Absolute |left - right| per axis, in atlas_engine's signal
-   * order. The dashboard renders which axes pull the pair apart.
-   *
-   * @generated from field: repeated double per_axis_delta = 4;
+   * @generated from field: repeated sttattus.dating.v1.CompatibilityFactor factors = 4;
    */
-  perAxisDelta: number[] = [];
+  factors: CompatibilityFactor[] = [];
 
-  constructor(data?: PartialMessage<CompatibilityReport>) {
+  /**
+   * @generated from field: string dynamic_tension_status = 5;
+   */
+  dynamicTensionStatus = "";
+
+  constructor(data?: PartialMessage<CompatibilityMatrix>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sttattus.dating.v1.CompatibilityReport";
+  static readonly typeName = "sttattus.dating.v1.CompatibilityMatrix";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "left_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "right_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "cosine", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
-    { no: 4, name: "per_axis_delta", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, repeated: true },
+    { no: 3, name: "aggregate_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "factors", kind: "message", T: CompatibilityFactor, repeated: true },
+    { no: 5, name: "dynamic_tension_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompatibilityReport {
-    return new CompatibilityReport().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompatibilityMatrix {
+    return new CompatibilityMatrix().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompatibilityReport {
-    return new CompatibilityReport().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompatibilityMatrix {
+    return new CompatibilityMatrix().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompatibilityReport {
-    return new CompatibilityReport().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompatibilityMatrix {
+    return new CompatibilityMatrix().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CompatibilityReport | PlainMessage<CompatibilityReport> | undefined, b: CompatibilityReport | PlainMessage<CompatibilityReport> | undefined): boolean {
-    return proto3.util.equals(CompatibilityReport, a, b);
+  static equals(a: CompatibilityMatrix | PlainMessage<CompatibilityMatrix> | undefined, b: CompatibilityMatrix | PlainMessage<CompatibilityMatrix> | undefined): boolean {
+    return proto3.util.equals(CompatibilityMatrix, a, b);
   }
 }
 
 /**
- * @generated from message sttattus.dating.v1.GetCompatibilityReportRequest
+ * @generated from message sttattus.dating.v1.GetCompatibilityMatrixRequest
  */
-export class GetCompatibilityReportRequest extends Message$1<GetCompatibilityReportRequest> {
+export class GetCompatibilityMatrixRequest extends Message$1<GetCompatibilityMatrixRequest> {
   /**
    * @generated from field: string other_user_id = 1;
    */
   otherUserId = "";
 
-  constructor(data?: PartialMessage<GetCompatibilityReportRequest>) {
+  constructor(data?: PartialMessage<GetCompatibilityMatrixRequest>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sttattus.dating.v1.GetCompatibilityReportRequest";
+  static readonly typeName = "sttattus.dating.v1.GetCompatibilityMatrixRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "other_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCompatibilityReportRequest {
-    return new GetCompatibilityReportRequest().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCompatibilityMatrixRequest {
+    return new GetCompatibilityMatrixRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCompatibilityReportRequest {
-    return new GetCompatibilityReportRequest().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCompatibilityMatrixRequest {
+    return new GetCompatibilityMatrixRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCompatibilityReportRequest {
-    return new GetCompatibilityReportRequest().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCompatibilityMatrixRequest {
+    return new GetCompatibilityMatrixRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetCompatibilityReportRequest | PlainMessage<GetCompatibilityReportRequest> | undefined, b: GetCompatibilityReportRequest | PlainMessage<GetCompatibilityReportRequest> | undefined): boolean {
-    return proto3.util.equals(GetCompatibilityReportRequest, a, b);
+  static equals(a: GetCompatibilityMatrixRequest | PlainMessage<GetCompatibilityMatrixRequest> | undefined, b: GetCompatibilityMatrixRequest | PlainMessage<GetCompatibilityMatrixRequest> | undefined): boolean {
+    return proto3.util.equals(GetCompatibilityMatrixRequest, a, b);
   }
 }
 
 /**
- * @generated from message sttattus.dating.v1.GetCompatibilityReportResponse
+ * @generated from message sttattus.dating.v1.GetCompatibilityMatrixResponse
  */
-export class GetCompatibilityReportResponse extends Message$1<GetCompatibilityReportResponse> {
+export class GetCompatibilityMatrixResponse extends Message$1<GetCompatibilityMatrixResponse> {
   /**
-   * Empty (left_user_id == "") = compatibility unavailable because
-   * either user has no embedding yet, or the engine is offline.
-   *
-   * @generated from field: sttattus.dating.v1.CompatibilityReport report = 1;
+   * @generated from field: sttattus.dating.v1.CompatibilityMatrix matrix = 1;
    */
-  report?: CompatibilityReport;
+  matrix?: CompatibilityMatrix;
 
-  constructor(data?: PartialMessage<GetCompatibilityReportResponse>) {
+  constructor(data?: PartialMessage<GetCompatibilityMatrixResponse>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sttattus.dating.v1.GetCompatibilityReportResponse";
+  static readonly typeName = "sttattus.dating.v1.GetCompatibilityMatrixResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "report", kind: "message", T: CompatibilityReport },
+    { no: 1, name: "matrix", kind: "message", T: CompatibilityMatrix },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCompatibilityReportResponse {
-    return new GetCompatibilityReportResponse().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCompatibilityMatrixResponse {
+    return new GetCompatibilityMatrixResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCompatibilityReportResponse {
-    return new GetCompatibilityReportResponse().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCompatibilityMatrixResponse {
+    return new GetCompatibilityMatrixResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCompatibilityReportResponse {
-    return new GetCompatibilityReportResponse().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCompatibilityMatrixResponse {
+    return new GetCompatibilityMatrixResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetCompatibilityReportResponse | PlainMessage<GetCompatibilityReportResponse> | undefined, b: GetCompatibilityReportResponse | PlainMessage<GetCompatibilityReportResponse> | undefined): boolean {
-    return proto3.util.equals(GetCompatibilityReportResponse, a, b);
+  static equals(a: GetCompatibilityMatrixResponse | PlainMessage<GetCompatibilityMatrixResponse> | undefined, b: GetCompatibilityMatrixResponse | PlainMessage<GetCompatibilityMatrixResponse> | undefined): boolean {
+    return proto3.util.equals(GetCompatibilityMatrixResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.Gift
+ */
+export class Gift extends Message$1<Gift> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string sender_id = 2;
+   */
+  senderId = "";
+
+  /**
+   * @generated from field: string receiver_id = 3;
+   */
+  receiverId = "";
+
+  /**
+   * 'currency' | 'status_booster' | 'shards'
+   *
+   * @generated from field: string asset_type = 4;
+   */
+  assetType = "";
+
+  /**
+   * @generated from field: double value = 5;
+   */
+  value = 0;
+
+  /**
+   * @generated from field: string message = 6;
+   */
+  message = "";
+
+  /**
+   * @generated from field: int64 sent_at = 7;
+   */
+  sentAt = protoInt64.zero;
+
+  /**
+   * @generated from field: bool is_anonymous = 8;
+   */
+  isAnonymous = false;
+
+  constructor(data?: PartialMessage<Gift>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.Gift";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "sender_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "receiver_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "asset_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "value", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "sent_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: "is_anonymous", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Gift {
+    return new Gift().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Gift {
+    return new Gift().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Gift {
+    return new Gift().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: Gift | PlainMessage<Gift> | undefined, b: Gift | PlainMessage<Gift> | undefined): boolean {
+    return proto3.util.equals(Gift, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.SendGiftRequest
+ */
+export class SendGiftRequest extends Message$1<SendGiftRequest> {
+  /**
+   * @generated from field: string receiver_id = 1;
+   */
+  receiverId = "";
+
+  /**
+   * @generated from field: string asset_type = 2;
+   */
+  assetType = "";
+
+  /**
+   * @generated from field: double value = 3;
+   */
+  value = 0;
+
+  /**
+   * @generated from field: string message = 4;
+   */
+  message = "";
+
+  /**
+   * @generated from field: bool anonymous = 5;
+   */
+  anonymous = false;
+
+  constructor(data?: PartialMessage<SendGiftRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.SendGiftRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "receiver_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "asset_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "value", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "anonymous", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendGiftRequest {
+    return new SendGiftRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SendGiftRequest {
+    return new SendGiftRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SendGiftRequest {
+    return new SendGiftRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SendGiftRequest | PlainMessage<SendGiftRequest> | undefined, b: SendGiftRequest | PlainMessage<SendGiftRequest> | undefined): boolean {
+    return proto3.util.equals(SendGiftRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.SendGiftResponse
+ */
+export class SendGiftResponse extends Message$1<SendGiftResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.Gift gift = 1;
+   */
+  gift?: Gift;
+
+  constructor(data?: PartialMessage<SendGiftResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.SendGiftResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "gift", kind: "message", T: Gift },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendGiftResponse {
+    return new SendGiftResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SendGiftResponse {
+    return new SendGiftResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SendGiftResponse {
+    return new SendGiftResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SendGiftResponse | PlainMessage<SendGiftResponse> | undefined, b: SendGiftResponse | PlainMessage<SendGiftResponse> | undefined): boolean {
+    return proto3.util.equals(SendGiftResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListGiftLedgerRequest
+ */
+export class ListGiftLedgerRequest extends Message$1<ListGiftLedgerRequest> {
+  /**
+   * @generated from field: sttattus.common.v1.PageRequest page = 1;
+   */
+  page?: PageRequest;
+
+  constructor(data?: PartialMessage<ListGiftLedgerRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListGiftLedgerRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "page", kind: "message", T: PageRequest },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListGiftLedgerRequest {
+    return new ListGiftLedgerRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListGiftLedgerRequest {
+    return new ListGiftLedgerRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListGiftLedgerRequest {
+    return new ListGiftLedgerRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListGiftLedgerRequest | PlainMessage<ListGiftLedgerRequest> | undefined, b: ListGiftLedgerRequest | PlainMessage<ListGiftLedgerRequest> | undefined): boolean {
+    return proto3.util.equals(ListGiftLedgerRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListGiftLedgerResponse
+ */
+export class ListGiftLedgerResponse extends Message$1<ListGiftLedgerResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.Gift gifts = 1;
+   */
+  gifts: Gift[] = [];
+
+  /**
+   * @generated from field: sttattus.common.v1.PageResponse page = 2;
+   */
+  page?: PageResponse;
+
+  constructor(data?: PartialMessage<ListGiftLedgerResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListGiftLedgerResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "gifts", kind: "message", T: Gift, repeated: true },
+    { no: 2, name: "page", kind: "message", T: PageResponse },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListGiftLedgerResponse {
+    return new ListGiftLedgerResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListGiftLedgerResponse {
+    return new ListGiftLedgerResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListGiftLedgerResponse {
+    return new ListGiftLedgerResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListGiftLedgerResponse | PlainMessage<ListGiftLedgerResponse> | undefined, b: ListGiftLedgerResponse | PlainMessage<ListGiftLedgerResponse> | undefined): boolean {
+    return proto3.util.equals(ListGiftLedgerResponse, a, b);
   }
 }
 

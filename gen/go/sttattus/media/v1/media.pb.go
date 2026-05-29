@@ -193,9 +193,16 @@ func (x *MediaAsset) GetProcessedAt() int64 {
 }
 
 type RequestUploadRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Mime          string                 `protobuf:"bytes,1,opt,name=mime,proto3" json:"mime,omitempty"`
-	Size          int64                  `protobuf:"varint,2,opt,name=size,proto3" json:"size,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Mime  string                 `protobuf:"bytes,1,opt,name=mime,proto3" json:"mime,omitempty"`
+	Size  int64                  `protobuf:"varint,2,opt,name=size,proto3" json:"size,omitempty"`
+	// Optional logical category that determines the R2 key prefix under
+	// the owner's namespace. Format: "<pillar>/<bucket>", e.g.
+	// "apex/documents" for lab-report PDFs, "vault/statements" for
+	// brokerage statements. Empty falls back to the legacy "uploads/"
+	// prefix. Validated server-side against an allow-list so clients
+	// can't write into arbitrary buckets.
+	Category      string `protobuf:"bytes,3,opt,name=category,proto3" json:"category,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -242,6 +249,13 @@ func (x *RequestUploadRequest) GetSize() int64 {
 		return x.Size
 	}
 	return 0
+}
+
+func (x *RequestUploadRequest) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
 }
 
 type RequestUploadResponse struct {
@@ -851,10 +865,11 @@ const file_sttattus_media_v1_media_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\t \x01(\x03R\tcreatedAt\x12!\n" +
 	"\fprocessed_at\x18\n" +
-	" \x01(\x03R\vprocessedAt\">\n" +
+	" \x01(\x03R\vprocessedAt\"Z\n" +
 	"\x14RequestUploadRequest\x12\x12\n" +
 	"\x04mime\x18\x01 \x01(\tR\x04mime\x12\x12\n" +
-	"\x04size\x18\x02 \x01(\x03R\x04size\"\x9a\x01\n" +
+	"\x04size\x18\x02 \x01(\x03R\x04size\x12\x1a\n" +
+	"\bcategory\x18\x03 \x01(\tR\bcategory\"\x9a\x01\n" +
 	"\x15RequestUploadResponse\x12$\n" +
 	"\x0emedia_asset_id\x18\x01 \x01(\tR\fmediaAssetId\x12\x1d\n" +
 	"\n" +

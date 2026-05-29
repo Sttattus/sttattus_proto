@@ -36,6 +36,9 @@ const (
 	TravelService_ListCountryVisibility_FullMethodName     = "/sttattus.travel.v1.TravelService/ListCountryVisibility"
 	TravelService_UpsertCountryVisibility_FullMethodName   = "/sttattus.travel.v1.TravelService/UpsertCountryVisibility"
 	TravelService_SetMilestoneVisibility_FullMethodName    = "/sttattus.travel.v1.TravelService/SetMilestoneVisibility"
+	TravelService_GetPassportSurface_FullMethodName        = "/sttattus.travel.v1.TravelService/GetPassportSurface"
+	TravelService_GetLoungeConcierge_FullMethodName        = "/sttattus.travel.v1.TravelService/GetLoungeConcierge"
+	TravelService_GetTripArchive_FullMethodName            = "/sttattus.travel.v1.TravelService/GetTripArchive"
 )
 
 // TravelServiceClient is the client API for TravelService service.
@@ -64,6 +67,10 @@ type TravelServiceClient interface {
 	ListCountryVisibility(ctx context.Context, in *ListCountryVisibilityRequest, opts ...grpc.CallOption) (*ListCountryVisibilityResponse, error)
 	UpsertCountryVisibility(ctx context.Context, in *UpsertCountryVisibilityRequest, opts ...grpc.CallOption) (*UpsertCountryVisibilityResponse, error)
 	SetMilestoneVisibility(ctx context.Context, in *SetMilestoneVisibilityRequest, opts ...grpc.CallOption) (*SetMilestoneVisibilityResponse, error)
+	// N10P3 â€” Sovereign Expansion
+	GetPassportSurface(ctx context.Context, in *GetPassportSurfaceRequest, opts ...grpc.CallOption) (*GetPassportSurfaceResponse, error)
+	GetLoungeConcierge(ctx context.Context, in *GetLoungeConciergeRequest, opts ...grpc.CallOption) (*GetLoungeConciergeResponse, error)
+	GetTripArchive(ctx context.Context, in *GetTripArchiveRequest, opts ...grpc.CallOption) (*GetTripArchiveResponse, error)
 }
 
 type travelServiceClient struct {
@@ -244,6 +251,36 @@ func (c *travelServiceClient) SetMilestoneVisibility(ctx context.Context, in *Se
 	return out, nil
 }
 
+func (c *travelServiceClient) GetPassportSurface(ctx context.Context, in *GetPassportSurfaceRequest, opts ...grpc.CallOption) (*GetPassportSurfaceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPassportSurfaceResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetPassportSurface_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetLoungeConcierge(ctx context.Context, in *GetLoungeConciergeRequest, opts ...grpc.CallOption) (*GetLoungeConciergeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLoungeConciergeResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetLoungeConcierge_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetTripArchive(ctx context.Context, in *GetTripArchiveRequest, opts ...grpc.CallOption) (*GetTripArchiveResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTripArchiveResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetTripArchive_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TravelServiceServer is the server API for TravelService service.
 // All implementations must embed UnimplementedTravelServiceServer
 // for forward compatibility.
@@ -270,6 +307,10 @@ type TravelServiceServer interface {
 	ListCountryVisibility(context.Context, *ListCountryVisibilityRequest) (*ListCountryVisibilityResponse, error)
 	UpsertCountryVisibility(context.Context, *UpsertCountryVisibilityRequest) (*UpsertCountryVisibilityResponse, error)
 	SetMilestoneVisibility(context.Context, *SetMilestoneVisibilityRequest) (*SetMilestoneVisibilityResponse, error)
+	// N10P3 â€” Sovereign Expansion
+	GetPassportSurface(context.Context, *GetPassportSurfaceRequest) (*GetPassportSurfaceResponse, error)
+	GetLoungeConcierge(context.Context, *GetLoungeConciergeRequest) (*GetLoungeConciergeResponse, error)
+	GetTripArchive(context.Context, *GetTripArchiveRequest) (*GetTripArchiveResponse, error)
 	mustEmbedUnimplementedTravelServiceServer()
 }
 
@@ -330,6 +371,15 @@ func (UnimplementedTravelServiceServer) UpsertCountryVisibility(context.Context,
 }
 func (UnimplementedTravelServiceServer) SetMilestoneVisibility(context.Context, *SetMilestoneVisibilityRequest) (*SetMilestoneVisibilityResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SetMilestoneVisibility not implemented")
+}
+func (UnimplementedTravelServiceServer) GetPassportSurface(context.Context, *GetPassportSurfaceRequest) (*GetPassportSurfaceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPassportSurface not implemented")
+}
+func (UnimplementedTravelServiceServer) GetLoungeConcierge(context.Context, *GetLoungeConciergeRequest) (*GetLoungeConciergeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLoungeConcierge not implemented")
+}
+func (UnimplementedTravelServiceServer) GetTripArchive(context.Context, *GetTripArchiveRequest) (*GetTripArchiveResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTripArchive not implemented")
 }
 func (UnimplementedTravelServiceServer) mustEmbedUnimplementedTravelServiceServer() {}
 func (UnimplementedTravelServiceServer) testEmbeddedByValue()                       {}
@@ -658,6 +708,60 @@ func _TravelService_SetMilestoneVisibility_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TravelService_GetPassportSurface_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPassportSurfaceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetPassportSurface(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetPassportSurface_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetPassportSurface(ctx, req.(*GetPassportSurfaceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetLoungeConcierge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLoungeConciergeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetLoungeConcierge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetLoungeConcierge_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetLoungeConcierge(ctx, req.(*GetLoungeConciergeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetTripArchive_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTripArchiveRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetTripArchive(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetTripArchive_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetTripArchive(ctx, req.(*GetTripArchiveRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // TravelService_ServiceDesc is the grpc.ServiceDesc for TravelService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -732,6 +836,18 @@ var TravelService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SetMilestoneVisibility",
 			Handler:    _TravelService_SetMilestoneVisibility_Handler,
+		},
+		{
+			MethodName: "GetPassportSurface",
+			Handler:    _TravelService_GetPassportSurface_Handler,
+		},
+		{
+			MethodName: "GetLoungeConcierge",
+			Handler:    _TravelService_GetLoungeConcierge_Handler,
+		},
+		{
+			MethodName: "GetTripArchive",
+			Handler:    _TravelService_GetTripArchive_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

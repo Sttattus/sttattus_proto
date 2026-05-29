@@ -240,6 +240,143 @@ class WorkoutServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getForgeAnalytics, request, options: options);
   }
 
+  /// F7P2.7 — Session Replay & Analytics
+  $grpc.ResponseFuture<$0.GetSessionAnalyticsResponse> getSessionAnalytics($0.GetSessionAnalyticsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getSessionAnalytics, request, options: options);
+  }
+
+  /// F7P2.8 — Equipment Vault
+  $grpc.ResponseFuture<$0.ListUserEquipmentResponse> listUserEquipment($0.ListUserEquipmentRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listUserEquipment, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AddUserEquipmentResponse> addUserEquipment($0.AddUserEquipmentRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$addUserEquipment, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteUserEquipmentResponse> deleteUserEquipment($0.DeleteUserEquipmentRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteUserEquipment, request, options: options);
+  }
+
+  /// F7P2.9 — Workout Rivalries
+  $grpc.ResponseFuture<$0.ListWorkoutRivalriesResponse> listWorkoutRivalries($0.ListWorkoutRivalriesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listWorkoutRivalries, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetRivalryDetailResponse> getRivalryDetail($0.GetRivalryDetailRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getRivalryDetail, request, options: options);
+  }
+
+  /// F7P3.1 — What-if simulator. Project the forge-rank / Power / Agility /
+  /// Grit change a hypothetical session would produce, via the Rust engine,
+  /// without committing anything.
+  $grpc.ResponseFuture<$0.SimulateForgeRankResponse> simulateForgeRank($0.SimulateForgeRankRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$simulateForgeRank, request, options: options);
+  }
+
+  /// F7P3.2 — Recovery score. A 0-100 readiness gate composed from the
+  /// lifter's recent training load (acute:chronic), streak momentum, and —
+  /// when available — the Apex cross-pillar readiness signal (HRV / RHR /
+  /// sleep). Drives the Today ring and the auto-deload nudge.
+  $grpc.ResponseFuture<$0.GetRecoveryScoreResponse> getRecoveryScore($0.GetRecoveryScoreRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getRecoveryScore, request, options: options);
+  }
+
+  /// F7P3.3 — Coach concierge (Sovereign white-glove desk). Threaded
+  /// member ↔ coach messaging with an SLA timer.
+  $grpc.ResponseFuture<$0.StartCoachThreadResponse> startCoachThread($0.StartCoachThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$startCoachThread, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyCoachThreadsResponse> listMyCoachThreads($0.ListMyCoachThreadsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyCoachThreads, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetCoachThreadResponse> getCoachThread($0.GetCoachThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getCoachThread, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PostCoachMessageResponse> postCoachMessage($0.PostCoachMessageRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$postCoachMessage, request, options: options);
+  }
+
+  /// F7P3.4 — Forge Anthology (named-author editorial long-reads).
+  $grpc.ResponseFuture<$0.ListAnthologyArticlesResponse> listAnthologyArticles($0.ListAnthologyArticlesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listAnthologyArticles, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetAnthologyArticleResponse> getAnthologyArticle($0.GetAnthologyArticleRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getAnthologyArticle, request, options: options);
+  }
+
+  /// F7P3.5 — public athlete share. Mints a time-bound token backing a
+  /// read-only public profile (rank + stats + PRs) at
+  /// /share/athlete/:token, content-negotiated HTML / JSON.
+  $grpc.ResponseFuture<$0.CreateAthleteShareResponse> createAthleteShare($0.CreateAthleteShareRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createAthleteShare, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyAthleteSharesResponse> listMyAthleteShares($0.ListMyAthleteSharesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyAthleteShares, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeAthleteShareResponse> revokeAthleteShare($0.RevokeAthleteShareRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$revokeAthleteShare, request, options: options);
+  }
+
+  /// F7P4.1 — Annual Forge Almanac. Renders a multi-page PDF of the lifter's
+  /// training year (rank + stats + PR board + tonnage) to R2 + media_assets,
+  /// returns the public URL.
+  $grpc.ResponseFuture<$0.GenerateForgeAlmanacResponse> generateForgeAlmanac($0.GenerateForgeAlmanacRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$generateForgeAlmanac, request, options: options);
+  }
+
+  /// F7P4.2 — AI form-check. Runs a pose-heuristic pass over an uploaded form
+  /// video and writes a one-line cue + verdict, flipping the clip to
+  /// 'reviewed'. Heuristic until the Gemini vision pass is wired.
+  $grpc.ResponseFuture<$0.AnalyzeFormVideoResponse> analyzeFormVideo($0.AnalyzeFormVideoRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$analyzeFormVideo, request, options: options);
+  }
+
+  /// F7P5.1 — rivalry creation (challenge by handle, or a named rival).
+  $grpc.ResponseFuture<$0.CreateRivalryResponse> createRivalry($0.CreateRivalryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createRivalry, request, options: options);
+  }
+
+  /// F7P5.2 — leaderboard standings (ranked by forge_rank). The scheduled
+  /// Sunday clout-drop publish is a separate cron job; this is the live query.
+  $grpc.ResponseFuture<$0.GetLeaderboardResponse> getLeaderboard($0.GetLeaderboardRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getLeaderboard, request, options: options);
+  }
+
+  /// F7P5.3 — Forge Lounge: physical recovery-room directory + booking flow.
+  $grpc.ResponseFuture<$0.ListForgeLoungesResponse> listForgeLounges($0.ListForgeLoungesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listForgeLounges, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyLoungeBookingsResponse> listMyLoungeBookings($0.ListMyLoungeBookingsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyLoungeBookings, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateLoungeBookingResponse> createLoungeBooking($0.CreateLoungeBookingRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createLoungeBooking, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CancelLoungeBookingResponse> cancelLoungeBooking($0.CancelLoungeBookingRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$cancelLoungeBooking, request, options: options);
+  }
+
+  /// F7P5.4 — coach directory + booking request. Payment-backed booking is
+  /// deferred (Stripe); RequestCoachBooking files an interest request a coach
+  /// can pick up.
+  $grpc.ResponseFuture<$0.ListCoachesResponse> listCoaches($0.ListCoachesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listCoaches, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RequestCoachBookingResponse> requestCoachBooking($0.RequestCoachBookingRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$requestCoachBooking, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listWorkouts = $grpc.ClientMethod<$0.ListWorkoutsRequest, $0.ListWorkoutsResponse>(
@@ -426,6 +563,114 @@ class WorkoutServiceClient extends $grpc.Client {
       '/sttattus.workout.v1.WorkoutService/GetForgeAnalytics',
       ($0.GetForgeAnalyticsRequest value) => value.writeToBuffer(),
       $0.GetForgeAnalyticsResponse.fromBuffer);
+  static final _$getSessionAnalytics = $grpc.ClientMethod<$0.GetSessionAnalyticsRequest, $0.GetSessionAnalyticsResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetSessionAnalytics',
+      ($0.GetSessionAnalyticsRequest value) => value.writeToBuffer(),
+      $0.GetSessionAnalyticsResponse.fromBuffer);
+  static final _$listUserEquipment = $grpc.ClientMethod<$0.ListUserEquipmentRequest, $0.ListUserEquipmentResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListUserEquipment',
+      ($0.ListUserEquipmentRequest value) => value.writeToBuffer(),
+      $0.ListUserEquipmentResponse.fromBuffer);
+  static final _$addUserEquipment = $grpc.ClientMethod<$0.AddUserEquipmentRequest, $0.AddUserEquipmentResponse>(
+      '/sttattus.workout.v1.WorkoutService/AddUserEquipment',
+      ($0.AddUserEquipmentRequest value) => value.writeToBuffer(),
+      $0.AddUserEquipmentResponse.fromBuffer);
+  static final _$deleteUserEquipment = $grpc.ClientMethod<$0.DeleteUserEquipmentRequest, $0.DeleteUserEquipmentResponse>(
+      '/sttattus.workout.v1.WorkoutService/DeleteUserEquipment',
+      ($0.DeleteUserEquipmentRequest value) => value.writeToBuffer(),
+      $0.DeleteUserEquipmentResponse.fromBuffer);
+  static final _$listWorkoutRivalries = $grpc.ClientMethod<$0.ListWorkoutRivalriesRequest, $0.ListWorkoutRivalriesResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListWorkoutRivalries',
+      ($0.ListWorkoutRivalriesRequest value) => value.writeToBuffer(),
+      $0.ListWorkoutRivalriesResponse.fromBuffer);
+  static final _$getRivalryDetail = $grpc.ClientMethod<$0.GetRivalryDetailRequest, $0.GetRivalryDetailResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetRivalryDetail',
+      ($0.GetRivalryDetailRequest value) => value.writeToBuffer(),
+      $0.GetRivalryDetailResponse.fromBuffer);
+  static final _$simulateForgeRank = $grpc.ClientMethod<$0.SimulateForgeRankRequest, $0.SimulateForgeRankResponse>(
+      '/sttattus.workout.v1.WorkoutService/SimulateForgeRank',
+      ($0.SimulateForgeRankRequest value) => value.writeToBuffer(),
+      $0.SimulateForgeRankResponse.fromBuffer);
+  static final _$getRecoveryScore = $grpc.ClientMethod<$0.GetRecoveryScoreRequest, $0.GetRecoveryScoreResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetRecoveryScore',
+      ($0.GetRecoveryScoreRequest value) => value.writeToBuffer(),
+      $0.GetRecoveryScoreResponse.fromBuffer);
+  static final _$startCoachThread = $grpc.ClientMethod<$0.StartCoachThreadRequest, $0.StartCoachThreadResponse>(
+      '/sttattus.workout.v1.WorkoutService/StartCoachThread',
+      ($0.StartCoachThreadRequest value) => value.writeToBuffer(),
+      $0.StartCoachThreadResponse.fromBuffer);
+  static final _$listMyCoachThreads = $grpc.ClientMethod<$0.ListMyCoachThreadsRequest, $0.ListMyCoachThreadsResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListMyCoachThreads',
+      ($0.ListMyCoachThreadsRequest value) => value.writeToBuffer(),
+      $0.ListMyCoachThreadsResponse.fromBuffer);
+  static final _$getCoachThread = $grpc.ClientMethod<$0.GetCoachThreadRequest, $0.GetCoachThreadResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetCoachThread',
+      ($0.GetCoachThreadRequest value) => value.writeToBuffer(),
+      $0.GetCoachThreadResponse.fromBuffer);
+  static final _$postCoachMessage = $grpc.ClientMethod<$0.PostCoachMessageRequest, $0.PostCoachMessageResponse>(
+      '/sttattus.workout.v1.WorkoutService/PostCoachMessage',
+      ($0.PostCoachMessageRequest value) => value.writeToBuffer(),
+      $0.PostCoachMessageResponse.fromBuffer);
+  static final _$listAnthologyArticles = $grpc.ClientMethod<$0.ListAnthologyArticlesRequest, $0.ListAnthologyArticlesResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListAnthologyArticles',
+      ($0.ListAnthologyArticlesRequest value) => value.writeToBuffer(),
+      $0.ListAnthologyArticlesResponse.fromBuffer);
+  static final _$getAnthologyArticle = $grpc.ClientMethod<$0.GetAnthologyArticleRequest, $0.GetAnthologyArticleResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetAnthologyArticle',
+      ($0.GetAnthologyArticleRequest value) => value.writeToBuffer(),
+      $0.GetAnthologyArticleResponse.fromBuffer);
+  static final _$createAthleteShare = $grpc.ClientMethod<$0.CreateAthleteShareRequest, $0.CreateAthleteShareResponse>(
+      '/sttattus.workout.v1.WorkoutService/CreateAthleteShare',
+      ($0.CreateAthleteShareRequest value) => value.writeToBuffer(),
+      $0.CreateAthleteShareResponse.fromBuffer);
+  static final _$listMyAthleteShares = $grpc.ClientMethod<$0.ListMyAthleteSharesRequest, $0.ListMyAthleteSharesResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListMyAthleteShares',
+      ($0.ListMyAthleteSharesRequest value) => value.writeToBuffer(),
+      $0.ListMyAthleteSharesResponse.fromBuffer);
+  static final _$revokeAthleteShare = $grpc.ClientMethod<$0.RevokeAthleteShareRequest, $0.RevokeAthleteShareResponse>(
+      '/sttattus.workout.v1.WorkoutService/RevokeAthleteShare',
+      ($0.RevokeAthleteShareRequest value) => value.writeToBuffer(),
+      $0.RevokeAthleteShareResponse.fromBuffer);
+  static final _$generateForgeAlmanac = $grpc.ClientMethod<$0.GenerateForgeAlmanacRequest, $0.GenerateForgeAlmanacResponse>(
+      '/sttattus.workout.v1.WorkoutService/GenerateForgeAlmanac',
+      ($0.GenerateForgeAlmanacRequest value) => value.writeToBuffer(),
+      $0.GenerateForgeAlmanacResponse.fromBuffer);
+  static final _$analyzeFormVideo = $grpc.ClientMethod<$0.AnalyzeFormVideoRequest, $0.AnalyzeFormVideoResponse>(
+      '/sttattus.workout.v1.WorkoutService/AnalyzeFormVideo',
+      ($0.AnalyzeFormVideoRequest value) => value.writeToBuffer(),
+      $0.AnalyzeFormVideoResponse.fromBuffer);
+  static final _$createRivalry = $grpc.ClientMethod<$0.CreateRivalryRequest, $0.CreateRivalryResponse>(
+      '/sttattus.workout.v1.WorkoutService/CreateRivalry',
+      ($0.CreateRivalryRequest value) => value.writeToBuffer(),
+      $0.CreateRivalryResponse.fromBuffer);
+  static final _$getLeaderboard = $grpc.ClientMethod<$0.GetLeaderboardRequest, $0.GetLeaderboardResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetLeaderboard',
+      ($0.GetLeaderboardRequest value) => value.writeToBuffer(),
+      $0.GetLeaderboardResponse.fromBuffer);
+  static final _$listForgeLounges = $grpc.ClientMethod<$0.ListForgeLoungesRequest, $0.ListForgeLoungesResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListForgeLounges',
+      ($0.ListForgeLoungesRequest value) => value.writeToBuffer(),
+      $0.ListForgeLoungesResponse.fromBuffer);
+  static final _$listMyLoungeBookings = $grpc.ClientMethod<$0.ListMyLoungeBookingsRequest, $0.ListMyLoungeBookingsResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListMyLoungeBookings',
+      ($0.ListMyLoungeBookingsRequest value) => value.writeToBuffer(),
+      $0.ListMyLoungeBookingsResponse.fromBuffer);
+  static final _$createLoungeBooking = $grpc.ClientMethod<$0.CreateLoungeBookingRequest, $0.CreateLoungeBookingResponse>(
+      '/sttattus.workout.v1.WorkoutService/CreateLoungeBooking',
+      ($0.CreateLoungeBookingRequest value) => value.writeToBuffer(),
+      $0.CreateLoungeBookingResponse.fromBuffer);
+  static final _$cancelLoungeBooking = $grpc.ClientMethod<$0.CancelLoungeBookingRequest, $0.CancelLoungeBookingResponse>(
+      '/sttattus.workout.v1.WorkoutService/CancelLoungeBooking',
+      ($0.CancelLoungeBookingRequest value) => value.writeToBuffer(),
+      $0.CancelLoungeBookingResponse.fromBuffer);
+  static final _$listCoaches = $grpc.ClientMethod<$0.ListCoachesRequest, $0.ListCoachesResponse>(
+      '/sttattus.workout.v1.WorkoutService/ListCoaches',
+      ($0.ListCoachesRequest value) => value.writeToBuffer(),
+      $0.ListCoachesResponse.fromBuffer);
+  static final _$requestCoachBooking = $grpc.ClientMethod<$0.RequestCoachBookingRequest, $0.RequestCoachBookingResponse>(
+      '/sttattus.workout.v1.WorkoutService/RequestCoachBooking',
+      ($0.RequestCoachBookingRequest value) => value.writeToBuffer(),
+      $0.RequestCoachBookingResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.workout.v1.WorkoutService')
@@ -755,6 +1000,195 @@ abstract class WorkoutServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetForgeAnalyticsRequest.fromBuffer(value),
         ($0.GetForgeAnalyticsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetSessionAnalyticsRequest, $0.GetSessionAnalyticsResponse>(
+        'GetSessionAnalytics',
+        getSessionAnalytics_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetSessionAnalyticsRequest.fromBuffer(value),
+        ($0.GetSessionAnalyticsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListUserEquipmentRequest, $0.ListUserEquipmentResponse>(
+        'ListUserEquipment',
+        listUserEquipment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListUserEquipmentRequest.fromBuffer(value),
+        ($0.ListUserEquipmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AddUserEquipmentRequest, $0.AddUserEquipmentResponse>(
+        'AddUserEquipment',
+        addUserEquipment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.AddUserEquipmentRequest.fromBuffer(value),
+        ($0.AddUserEquipmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteUserEquipmentRequest, $0.DeleteUserEquipmentResponse>(
+        'DeleteUserEquipment',
+        deleteUserEquipment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteUserEquipmentRequest.fromBuffer(value),
+        ($0.DeleteUserEquipmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListWorkoutRivalriesRequest, $0.ListWorkoutRivalriesResponse>(
+        'ListWorkoutRivalries',
+        listWorkoutRivalries_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListWorkoutRivalriesRequest.fromBuffer(value),
+        ($0.ListWorkoutRivalriesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetRivalryDetailRequest, $0.GetRivalryDetailResponse>(
+        'GetRivalryDetail',
+        getRivalryDetail_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetRivalryDetailRequest.fromBuffer(value),
+        ($0.GetRivalryDetailResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SimulateForgeRankRequest, $0.SimulateForgeRankResponse>(
+        'SimulateForgeRank',
+        simulateForgeRank_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SimulateForgeRankRequest.fromBuffer(value),
+        ($0.SimulateForgeRankResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetRecoveryScoreRequest, $0.GetRecoveryScoreResponse>(
+        'GetRecoveryScore',
+        getRecoveryScore_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetRecoveryScoreRequest.fromBuffer(value),
+        ($0.GetRecoveryScoreResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.StartCoachThreadRequest, $0.StartCoachThreadResponse>(
+        'StartCoachThread',
+        startCoachThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.StartCoachThreadRequest.fromBuffer(value),
+        ($0.StartCoachThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyCoachThreadsRequest, $0.ListMyCoachThreadsResponse>(
+        'ListMyCoachThreads',
+        listMyCoachThreads_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyCoachThreadsRequest.fromBuffer(value),
+        ($0.ListMyCoachThreadsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetCoachThreadRequest, $0.GetCoachThreadResponse>(
+        'GetCoachThread',
+        getCoachThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetCoachThreadRequest.fromBuffer(value),
+        ($0.GetCoachThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PostCoachMessageRequest, $0.PostCoachMessageResponse>(
+        'PostCoachMessage',
+        postCoachMessage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.PostCoachMessageRequest.fromBuffer(value),
+        ($0.PostCoachMessageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAnthologyArticlesRequest, $0.ListAnthologyArticlesResponse>(
+        'ListAnthologyArticles',
+        listAnthologyArticles_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListAnthologyArticlesRequest.fromBuffer(value),
+        ($0.ListAnthologyArticlesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAnthologyArticleRequest, $0.GetAnthologyArticleResponse>(
+        'GetAnthologyArticle',
+        getAnthologyArticle_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetAnthologyArticleRequest.fromBuffer(value),
+        ($0.GetAnthologyArticleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateAthleteShareRequest, $0.CreateAthleteShareResponse>(
+        'CreateAthleteShare',
+        createAthleteShare_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateAthleteShareRequest.fromBuffer(value),
+        ($0.CreateAthleteShareResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyAthleteSharesRequest, $0.ListMyAthleteSharesResponse>(
+        'ListMyAthleteShares',
+        listMyAthleteShares_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyAthleteSharesRequest.fromBuffer(value),
+        ($0.ListMyAthleteSharesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeAthleteShareRequest, $0.RevokeAthleteShareResponse>(
+        'RevokeAthleteShare',
+        revokeAthleteShare_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RevokeAthleteShareRequest.fromBuffer(value),
+        ($0.RevokeAthleteShareResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateForgeAlmanacRequest, $0.GenerateForgeAlmanacResponse>(
+        'GenerateForgeAlmanac',
+        generateForgeAlmanac_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GenerateForgeAlmanacRequest.fromBuffer(value),
+        ($0.GenerateForgeAlmanacResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AnalyzeFormVideoRequest, $0.AnalyzeFormVideoResponse>(
+        'AnalyzeFormVideo',
+        analyzeFormVideo_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.AnalyzeFormVideoRequest.fromBuffer(value),
+        ($0.AnalyzeFormVideoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateRivalryRequest, $0.CreateRivalryResponse>(
+        'CreateRivalry',
+        createRivalry_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateRivalryRequest.fromBuffer(value),
+        ($0.CreateRivalryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetLeaderboardRequest, $0.GetLeaderboardResponse>(
+        'GetLeaderboard',
+        getLeaderboard_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetLeaderboardRequest.fromBuffer(value),
+        ($0.GetLeaderboardResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListForgeLoungesRequest, $0.ListForgeLoungesResponse>(
+        'ListForgeLounges',
+        listForgeLounges_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListForgeLoungesRequest.fromBuffer(value),
+        ($0.ListForgeLoungesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyLoungeBookingsRequest, $0.ListMyLoungeBookingsResponse>(
+        'ListMyLoungeBookings',
+        listMyLoungeBookings_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyLoungeBookingsRequest.fromBuffer(value),
+        ($0.ListMyLoungeBookingsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateLoungeBookingRequest, $0.CreateLoungeBookingResponse>(
+        'CreateLoungeBooking',
+        createLoungeBooking_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateLoungeBookingRequest.fromBuffer(value),
+        ($0.CreateLoungeBookingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CancelLoungeBookingRequest, $0.CancelLoungeBookingResponse>(
+        'CancelLoungeBooking',
+        cancelLoungeBooking_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CancelLoungeBookingRequest.fromBuffer(value),
+        ($0.CancelLoungeBookingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListCoachesRequest, $0.ListCoachesResponse>(
+        'ListCoaches',
+        listCoaches_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListCoachesRequest.fromBuffer(value),
+        ($0.ListCoachesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RequestCoachBookingRequest, $0.RequestCoachBookingResponse>(
+        'RequestCoachBooking',
+        requestCoachBooking_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RequestCoachBookingRequest.fromBuffer(value),
+        ($0.RequestCoachBookingResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListWorkoutsResponse> listWorkouts_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWorkoutsRequest> $request) async {
@@ -1032,5 +1466,167 @@ abstract class WorkoutServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GetForgeAnalyticsResponse> getForgeAnalytics($grpc.ServiceCall call, $0.GetForgeAnalyticsRequest request);
+
+  $async.Future<$0.GetSessionAnalyticsResponse> getSessionAnalytics_Pre($grpc.ServiceCall $call, $async.Future<$0.GetSessionAnalyticsRequest> $request) async {
+    return getSessionAnalytics($call, await $request);
+  }
+
+  $async.Future<$0.GetSessionAnalyticsResponse> getSessionAnalytics($grpc.ServiceCall call, $0.GetSessionAnalyticsRequest request);
+
+  $async.Future<$0.ListUserEquipmentResponse> listUserEquipment_Pre($grpc.ServiceCall $call, $async.Future<$0.ListUserEquipmentRequest> $request) async {
+    return listUserEquipment($call, await $request);
+  }
+
+  $async.Future<$0.ListUserEquipmentResponse> listUserEquipment($grpc.ServiceCall call, $0.ListUserEquipmentRequest request);
+
+  $async.Future<$0.AddUserEquipmentResponse> addUserEquipment_Pre($grpc.ServiceCall $call, $async.Future<$0.AddUserEquipmentRequest> $request) async {
+    return addUserEquipment($call, await $request);
+  }
+
+  $async.Future<$0.AddUserEquipmentResponse> addUserEquipment($grpc.ServiceCall call, $0.AddUserEquipmentRequest request);
+
+  $async.Future<$0.DeleteUserEquipmentResponse> deleteUserEquipment_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteUserEquipmentRequest> $request) async {
+    return deleteUserEquipment($call, await $request);
+  }
+
+  $async.Future<$0.DeleteUserEquipmentResponse> deleteUserEquipment($grpc.ServiceCall call, $0.DeleteUserEquipmentRequest request);
+
+  $async.Future<$0.ListWorkoutRivalriesResponse> listWorkoutRivalries_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWorkoutRivalriesRequest> $request) async {
+    return listWorkoutRivalries($call, await $request);
+  }
+
+  $async.Future<$0.ListWorkoutRivalriesResponse> listWorkoutRivalries($grpc.ServiceCall call, $0.ListWorkoutRivalriesRequest request);
+
+  $async.Future<$0.GetRivalryDetailResponse> getRivalryDetail_Pre($grpc.ServiceCall $call, $async.Future<$0.GetRivalryDetailRequest> $request) async {
+    return getRivalryDetail($call, await $request);
+  }
+
+  $async.Future<$0.GetRivalryDetailResponse> getRivalryDetail($grpc.ServiceCall call, $0.GetRivalryDetailRequest request);
+
+  $async.Future<$0.SimulateForgeRankResponse> simulateForgeRank_Pre($grpc.ServiceCall $call, $async.Future<$0.SimulateForgeRankRequest> $request) async {
+    return simulateForgeRank($call, await $request);
+  }
+
+  $async.Future<$0.SimulateForgeRankResponse> simulateForgeRank($grpc.ServiceCall call, $0.SimulateForgeRankRequest request);
+
+  $async.Future<$0.GetRecoveryScoreResponse> getRecoveryScore_Pre($grpc.ServiceCall $call, $async.Future<$0.GetRecoveryScoreRequest> $request) async {
+    return getRecoveryScore($call, await $request);
+  }
+
+  $async.Future<$0.GetRecoveryScoreResponse> getRecoveryScore($grpc.ServiceCall call, $0.GetRecoveryScoreRequest request);
+
+  $async.Future<$0.StartCoachThreadResponse> startCoachThread_Pre($grpc.ServiceCall $call, $async.Future<$0.StartCoachThreadRequest> $request) async {
+    return startCoachThread($call, await $request);
+  }
+
+  $async.Future<$0.StartCoachThreadResponse> startCoachThread($grpc.ServiceCall call, $0.StartCoachThreadRequest request);
+
+  $async.Future<$0.ListMyCoachThreadsResponse> listMyCoachThreads_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyCoachThreadsRequest> $request) async {
+    return listMyCoachThreads($call, await $request);
+  }
+
+  $async.Future<$0.ListMyCoachThreadsResponse> listMyCoachThreads($grpc.ServiceCall call, $0.ListMyCoachThreadsRequest request);
+
+  $async.Future<$0.GetCoachThreadResponse> getCoachThread_Pre($grpc.ServiceCall $call, $async.Future<$0.GetCoachThreadRequest> $request) async {
+    return getCoachThread($call, await $request);
+  }
+
+  $async.Future<$0.GetCoachThreadResponse> getCoachThread($grpc.ServiceCall call, $0.GetCoachThreadRequest request);
+
+  $async.Future<$0.PostCoachMessageResponse> postCoachMessage_Pre($grpc.ServiceCall $call, $async.Future<$0.PostCoachMessageRequest> $request) async {
+    return postCoachMessage($call, await $request);
+  }
+
+  $async.Future<$0.PostCoachMessageResponse> postCoachMessage($grpc.ServiceCall call, $0.PostCoachMessageRequest request);
+
+  $async.Future<$0.ListAnthologyArticlesResponse> listAnthologyArticles_Pre($grpc.ServiceCall $call, $async.Future<$0.ListAnthologyArticlesRequest> $request) async {
+    return listAnthologyArticles($call, await $request);
+  }
+
+  $async.Future<$0.ListAnthologyArticlesResponse> listAnthologyArticles($grpc.ServiceCall call, $0.ListAnthologyArticlesRequest request);
+
+  $async.Future<$0.GetAnthologyArticleResponse> getAnthologyArticle_Pre($grpc.ServiceCall $call, $async.Future<$0.GetAnthologyArticleRequest> $request) async {
+    return getAnthologyArticle($call, await $request);
+  }
+
+  $async.Future<$0.GetAnthologyArticleResponse> getAnthologyArticle($grpc.ServiceCall call, $0.GetAnthologyArticleRequest request);
+
+  $async.Future<$0.CreateAthleteShareResponse> createAthleteShare_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateAthleteShareRequest> $request) async {
+    return createAthleteShare($call, await $request);
+  }
+
+  $async.Future<$0.CreateAthleteShareResponse> createAthleteShare($grpc.ServiceCall call, $0.CreateAthleteShareRequest request);
+
+  $async.Future<$0.ListMyAthleteSharesResponse> listMyAthleteShares_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyAthleteSharesRequest> $request) async {
+    return listMyAthleteShares($call, await $request);
+  }
+
+  $async.Future<$0.ListMyAthleteSharesResponse> listMyAthleteShares($grpc.ServiceCall call, $0.ListMyAthleteSharesRequest request);
+
+  $async.Future<$0.RevokeAthleteShareResponse> revokeAthleteShare_Pre($grpc.ServiceCall $call, $async.Future<$0.RevokeAthleteShareRequest> $request) async {
+    return revokeAthleteShare($call, await $request);
+  }
+
+  $async.Future<$0.RevokeAthleteShareResponse> revokeAthleteShare($grpc.ServiceCall call, $0.RevokeAthleteShareRequest request);
+
+  $async.Future<$0.GenerateForgeAlmanacResponse> generateForgeAlmanac_Pre($grpc.ServiceCall $call, $async.Future<$0.GenerateForgeAlmanacRequest> $request) async {
+    return generateForgeAlmanac($call, await $request);
+  }
+
+  $async.Future<$0.GenerateForgeAlmanacResponse> generateForgeAlmanac($grpc.ServiceCall call, $0.GenerateForgeAlmanacRequest request);
+
+  $async.Future<$0.AnalyzeFormVideoResponse> analyzeFormVideo_Pre($grpc.ServiceCall $call, $async.Future<$0.AnalyzeFormVideoRequest> $request) async {
+    return analyzeFormVideo($call, await $request);
+  }
+
+  $async.Future<$0.AnalyzeFormVideoResponse> analyzeFormVideo($grpc.ServiceCall call, $0.AnalyzeFormVideoRequest request);
+
+  $async.Future<$0.CreateRivalryResponse> createRivalry_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateRivalryRequest> $request) async {
+    return createRivalry($call, await $request);
+  }
+
+  $async.Future<$0.CreateRivalryResponse> createRivalry($grpc.ServiceCall call, $0.CreateRivalryRequest request);
+
+  $async.Future<$0.GetLeaderboardResponse> getLeaderboard_Pre($grpc.ServiceCall $call, $async.Future<$0.GetLeaderboardRequest> $request) async {
+    return getLeaderboard($call, await $request);
+  }
+
+  $async.Future<$0.GetLeaderboardResponse> getLeaderboard($grpc.ServiceCall call, $0.GetLeaderboardRequest request);
+
+  $async.Future<$0.ListForgeLoungesResponse> listForgeLounges_Pre($grpc.ServiceCall $call, $async.Future<$0.ListForgeLoungesRequest> $request) async {
+    return listForgeLounges($call, await $request);
+  }
+
+  $async.Future<$0.ListForgeLoungesResponse> listForgeLounges($grpc.ServiceCall call, $0.ListForgeLoungesRequest request);
+
+  $async.Future<$0.ListMyLoungeBookingsResponse> listMyLoungeBookings_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyLoungeBookingsRequest> $request) async {
+    return listMyLoungeBookings($call, await $request);
+  }
+
+  $async.Future<$0.ListMyLoungeBookingsResponse> listMyLoungeBookings($grpc.ServiceCall call, $0.ListMyLoungeBookingsRequest request);
+
+  $async.Future<$0.CreateLoungeBookingResponse> createLoungeBooking_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateLoungeBookingRequest> $request) async {
+    return createLoungeBooking($call, await $request);
+  }
+
+  $async.Future<$0.CreateLoungeBookingResponse> createLoungeBooking($grpc.ServiceCall call, $0.CreateLoungeBookingRequest request);
+
+  $async.Future<$0.CancelLoungeBookingResponse> cancelLoungeBooking_Pre($grpc.ServiceCall $call, $async.Future<$0.CancelLoungeBookingRequest> $request) async {
+    return cancelLoungeBooking($call, await $request);
+  }
+
+  $async.Future<$0.CancelLoungeBookingResponse> cancelLoungeBooking($grpc.ServiceCall call, $0.CancelLoungeBookingRequest request);
+
+  $async.Future<$0.ListCoachesResponse> listCoaches_Pre($grpc.ServiceCall $call, $async.Future<$0.ListCoachesRequest> $request) async {
+    return listCoaches($call, await $request);
+  }
+
+  $async.Future<$0.ListCoachesResponse> listCoaches($grpc.ServiceCall call, $0.ListCoachesRequest request);
+
+  $async.Future<$0.RequestCoachBookingResponse> requestCoachBooking_Pre($grpc.ServiceCall $call, $async.Future<$0.RequestCoachBookingRequest> $request) async {
+    return requestCoachBooking($call, await $request);
+  }
+
+  $async.Future<$0.RequestCoachBookingResponse> requestCoachBooking($grpc.ServiceCall call, $0.RequestCoachBookingRequest request);
 
 }

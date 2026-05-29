@@ -28,6 +28,13 @@ message MediaAsset {
 message RequestUploadRequest {
   string mime = 1;
   int64 size = 2;
+  // Optional logical category that determines the R2 key prefix under
+  // the owner's namespace. Format: "<pillar>/<bucket>", e.g.
+  // "apex/documents" for lab-report PDFs, "vault/statements" for
+  // brokerage statements. Empty falls back to the legacy "uploads/"
+  // prefix. Validated server-side against an allow-list so clients
+  // can't write into arbitrary buckets.
+  string category = 3;
 }
 message RequestUploadResponse {
   string media_asset_id = 1;

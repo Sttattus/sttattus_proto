@@ -95,6 +95,16 @@ class ScoringServiceClient extends $grpc.Client {
     return $createUnaryCall(_$scoreVolumeIntensityFrequency, request, options: options);
   }
 
+  /// F7P2.7 — Session Replay & Analytics
+  $grpc.ResponseFuture<$0.ScoreSessionAnalyticsResponse> scoreSessionAnalytics($0.ScoreSessionAnalyticsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$scoreSessionAnalytics, request, options: options);
+  }
+
+  /// F7P2.9 — Performance Duels
+  $grpc.ResponseFuture<$0.ScoreRivalryResponse> scoreRivalry($0.ScoreRivalryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$scoreRivalry, request, options: options);
+  }
+
     // method descriptors
 
   static final _$scoreWorkout = $grpc.ClientMethod<$0.ScoreWorkoutRequest, $0.ScoreWorkoutResponse>(
@@ -157,6 +167,14 @@ class ScoringServiceClient extends $grpc.Client {
       '/sttattus.scoring.v1.ScoringService/ScoreVolumeIntensityFrequency',
       ($0.ScoreVolumeIntensityFrequencyRequest value) => value.writeToBuffer(),
       $0.ScoreVolumeIntensityFrequencyResponse.fromBuffer);
+  static final _$scoreSessionAnalytics = $grpc.ClientMethod<$0.ScoreSessionAnalyticsRequest, $0.ScoreSessionAnalyticsResponse>(
+      '/sttattus.scoring.v1.ScoringService/ScoreSessionAnalytics',
+      ($0.ScoreSessionAnalyticsRequest value) => value.writeToBuffer(),
+      $0.ScoreSessionAnalyticsResponse.fromBuffer);
+  static final _$scoreRivalry = $grpc.ClientMethod<$0.ScoreRivalryRequest, $0.ScoreRivalryResponse>(
+      '/sttattus.scoring.v1.ScoringService/ScoreRivalry',
+      ($0.ScoreRivalryRequest value) => value.writeToBuffer(),
+      $0.ScoreRivalryResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.scoring.v1.ScoringService')
@@ -269,6 +287,20 @@ abstract class ScoringServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ScoreVolumeIntensityFrequencyRequest.fromBuffer(value),
         ($0.ScoreVolumeIntensityFrequencyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ScoreSessionAnalyticsRequest, $0.ScoreSessionAnalyticsResponse>(
+        'ScoreSessionAnalytics',
+        scoreSessionAnalytics_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ScoreSessionAnalyticsRequest.fromBuffer(value),
+        ($0.ScoreSessionAnalyticsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ScoreRivalryRequest, $0.ScoreRivalryResponse>(
+        'ScoreRivalry',
+        scoreRivalry_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ScoreRivalryRequest.fromBuffer(value),
+        ($0.ScoreRivalryResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ScoreWorkoutResponse> scoreWorkout_Pre($grpc.ServiceCall $call, $async.Future<$0.ScoreWorkoutRequest> $request) async {
@@ -360,5 +392,17 @@ abstract class ScoringServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ScoreVolumeIntensityFrequencyResponse> scoreVolumeIntensityFrequency($grpc.ServiceCall call, $0.ScoreVolumeIntensityFrequencyRequest request);
+
+  $async.Future<$0.ScoreSessionAnalyticsResponse> scoreSessionAnalytics_Pre($grpc.ServiceCall $call, $async.Future<$0.ScoreSessionAnalyticsRequest> $request) async {
+    return scoreSessionAnalytics($call, await $request);
+  }
+
+  $async.Future<$0.ScoreSessionAnalyticsResponse> scoreSessionAnalytics($grpc.ServiceCall call, $0.ScoreSessionAnalyticsRequest request);
+
+  $async.Future<$0.ScoreRivalryResponse> scoreRivalry_Pre($grpc.ServiceCall $call, $async.Future<$0.ScoreRivalryRequest> $request) async {
+    return scoreRivalry($call, await $request);
+  }
+
+  $async.Future<$0.ScoreRivalryResponse> scoreRivalry($grpc.ServiceCall call, $0.ScoreRivalryRequest request);
 
 }

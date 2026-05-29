@@ -676,3 +676,126 @@ const SetMilestoneVisibilityResponse$json = {
 final $typed_data.Uint8List setMilestoneVisibilityResponseDescriptor = $convert.base64Decode(
     'Ch5TZXRNaWxlc3RvbmVWaXNpYmlsaXR5UmVzcG9uc2U=');
 
+@$core.Deprecated('Use getPassportSurfaceRequestDescriptor instead')
+const GetPassportSurfaceRequest$json = {
+  '1': 'GetPassportSurfaceRequest',
+};
+
+/// Descriptor for `GetPassportSurfaceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPassportSurfaceRequestDescriptor = $convert.base64Decode(
+    'ChlHZXRQYXNzcG9ydFN1cmZhY2VSZXF1ZXN0');
+
+@$core.Deprecated('Use getPassportSurfaceResponseDescriptor instead')
+const GetPassportSurfaceResponse$json = {
+  '1': 'GetPassportSurfaceResponse',
+  '2': [
+    {'1': 'countries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.travel.v1.VisitedCountry', '10': 'countries'},
+    {'1': 'all_signals', '3': 2, '4': 3, '5': 11, '6': '.sttattus.travel.v1.VerificationSignals', '10': 'allSignals'},
+    {'1': 'total_stamps', '3': 3, '4': 1, '5': 5, '10': 'totalStamps'},
+  ],
+};
+
+/// Descriptor for `GetPassportSurfaceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPassportSurfaceResponseDescriptor = $convert.base64Decode(
+    'ChpHZXRQYXNzcG9ydFN1cmZhY2VSZXNwb25zZRJACgljb3VudHJpZXMYASADKAsyIi5zdHRhdH'
+    'R1cy50cmF2ZWwudjEuVmlzaXRlZENvdW50cnlSCWNvdW50cmllcxJICgthbGxfc2lnbmFscxgC'
+    'IAMoCzInLnN0dGF0dHVzLnRyYXZlbC52MS5WZXJpZmljYXRpb25TaWduYWxzUgphbGxTaWduYW'
+    'xzEiEKDHRvdGFsX3N0YW1wcxgDIAEoBVILdG90YWxTdGFtcHM=');
+
+@$core.Deprecated('Use loungeDetailDescriptor instead')
+const LoungeDetail$json = {
+  '1': 'LoungeDetail',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'city', '3': 3, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'location_description', '3': 4, '4': 1, '5': 9, '10': 'locationDescription'},
+    {'1': 'live_capacity_status', '3': 5, '4': 1, '5': 9, '10': 'liveCapacityStatus'},
+    {'1': 'amenities', '3': 6, '4': 3, '5': 9, '10': 'amenities'},
+    {'1': 'current_menu_url', '3': 7, '4': 1, '5': 9, '10': 'currentMenuUrl'},
+  ],
+};
+
+/// Descriptor for `LoungeDetail`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List loungeDetailDescriptor = $convert.base64Decode(
+    'CgxMb3VuZ2VEZXRhaWwSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEY2'
+    'l0eRgDIAEoCVIEY2l0eRIxChRsb2NhdGlvbl9kZXNjcmlwdGlvbhgEIAEoCVITbG9jYXRpb25E'
+    'ZXNjcmlwdGlvbhIwChRsaXZlX2NhcGFjaXR5X3N0YXR1cxgFIAEoCVISbGl2ZUNhcGFjaXR5U3'
+    'RhdHVzEhwKCWFtZW5pdGllcxgGIAMoCVIJYW1lbml0aWVzEigKEGN1cnJlbnRfbWVudV91cmwY'
+    'ByABKAlSDmN1cnJlbnRNZW51VXJs');
+
+@$core.Deprecated('Use getLoungeConciergeRequestDescriptor instead')
+const GetLoungeConciergeRequest$json = {
+  '1': 'GetLoungeConciergeRequest',
+  '2': [
+    {'1': 'latitude', '3': 1, '4': 1, '5': 1, '10': 'latitude'},
+    {'1': 'longitude', '3': 2, '4': 1, '5': 1, '10': 'longitude'},
+  ],
+};
+
+/// Descriptor for `GetLoungeConciergeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLoungeConciergeRequestDescriptor = $convert.base64Decode(
+    'ChlHZXRMb3VuZ2VDb25jaWVyZ2VSZXF1ZXN0EhoKCGxhdGl0dWRlGAEgASgBUghsYXRpdHVkZR'
+    'IcCglsb25naXR1ZGUYAiABKAFSCWxvbmdpdHVkZQ==');
+
+@$core.Deprecated('Use getLoungeConciergeResponseDescriptor instead')
+const GetLoungeConciergeResponse$json = {
+  '1': 'GetLoungeConciergeResponse',
+  '2': [
+    {'1': 'nearest_lounge', '3': 1, '4': 1, '5': 11, '6': '.sttattus.travel.v1.LoungeDetail', '10': 'nearestLounge'},
+    {'1': 'other_lounges', '3': 2, '4': 3, '5': 11, '6': '.sttattus.travel.v1.LoungeDetail', '10': 'otherLounges'},
+  ],
+};
+
+/// Descriptor for `GetLoungeConciergeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLoungeConciergeResponseDescriptor = $convert.base64Decode(
+    'ChpHZXRMb3VuZ2VDb25jaWVyZ2VSZXNwb25zZRJHCg5uZWFyZXN0X2xvdW5nZRgBIAEoCzIgLn'
+    'N0dGF0dHVzLnRyYXZlbC52MS5Mb3VuZ2VEZXRhaWxSDW5lYXJlc3RMb3VuZ2USRQoNb3RoZXJf'
+    'bG91bmdlcxgCIAMoCzIgLnN0dGF0dHVzLnRyYXZlbC52MS5Mb3VuZ2VEZXRhaWxSDG90aGVyTG'
+    '91bmdlcw==');
+
+@$core.Deprecated('Use tripArchiveEntryDescriptor instead')
+const TripArchiveEntry$json = {
+  '1': 'TripArchiveEntry',
+  '2': [
+    {'1': 'trip', '3': 1, '4': 1, '5': 11, '6': '.sttattus.travel.v1.Trip', '10': 'trip'},
+    {'1': 'avg_hrv', '3': 2, '4': 1, '5': 1, '10': 'avgHrv'},
+    {'1': 'total_workouts', '3': 3, '4': 1, '5': 5, '10': 'totalWorkouts'},
+    {'1': 'total_spend', '3': 4, '4': 1, '5': 1, '10': 'totalSpend'},
+  ],
+};
+
+/// Descriptor for `TripArchiveEntry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tripArchiveEntryDescriptor = $convert.base64Decode(
+    'ChBUcmlwQXJjaGl2ZUVudHJ5EiwKBHRyaXAYASABKAsyGC5zdHRhdHR1cy50cmF2ZWwudjEuVH'
+    'JpcFIEdHJpcBIXCgdhdmdfaHJ2GAIgASgBUgZhdmdIcnYSJQoOdG90YWxfd29ya291dHMYAyAB'
+    'KAVSDXRvdGFsV29ya291dHMSHwoLdG90YWxfc3BlbmQYBCABKAFSCnRvdGFsU3BlbmQ=');
+
+@$core.Deprecated('Use getTripArchiveRequestDescriptor instead')
+const GetTripArchiveRequest$json = {
+  '1': 'GetTripArchiveRequest',
+  '2': [
+    {'1': 'page', '3': 1, '4': 1, '5': 11, '6': '.sttattus.common.v1.PageRequest', '10': 'page'},
+  ],
+};
+
+/// Descriptor for `GetTripArchiveRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTripArchiveRequestDescriptor = $convert.base64Decode(
+    'ChVHZXRUcmlwQXJjaGl2ZVJlcXVlc3QSMwoEcGFnZRgBIAEoCzIfLnN0dGF0dHVzLmNvbW1vbi'
+    '52MS5QYWdlUmVxdWVzdFIEcGFnZQ==');
+
+@$core.Deprecated('Use getTripArchiveResponseDescriptor instead')
+const GetTripArchiveResponse$json = {
+  '1': 'GetTripArchiveResponse',
+  '2': [
+    {'1': 'entries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.travel.v1.TripArchiveEntry', '10': 'entries'},
+    {'1': 'page', '3': 2, '4': 1, '5': 11, '6': '.sttattus.common.v1.PageResponse', '10': 'page'},
+  ],
+};
+
+/// Descriptor for `GetTripArchiveResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTripArchiveResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRUcmlwQXJjaGl2ZVJlc3BvbnNlEj4KB2VudHJpZXMYASADKAsyJC5zdHRhdHR1cy50cm'
+    'F2ZWwudjEuVHJpcEFyY2hpdmVFbnRyeVIHZW50cmllcxI0CgRwYWdlGAIgASgLMiAuc3R0YXR0'
+    'dXMuY29tbW9uLnYxLlBhZ2VSZXNwb25zZVIEcGFnZQ==');
+

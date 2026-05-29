@@ -19,12 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AuthService_Register_FullMethodName   = "/sttattus.auth.v1.AuthService/Register"
-	AuthService_Login_FullMethodName      = "/sttattus.auth.v1.AuthService/Login"
-	AuthService_CheckEmail_FullMethodName = "/sttattus.auth.v1.AuthService/CheckEmail"
-	AuthService_LinkApp_FullMethodName    = "/sttattus.auth.v1.AuthService/LinkApp"
-	AuthService_Refresh_FullMethodName    = "/sttattus.auth.v1.AuthService/Refresh"
-	AuthService_Logout_FullMethodName     = "/sttattus.auth.v1.AuthService/Logout"
+	AuthService_Register_FullMethodName       = "/sttattus.auth.v1.AuthService/Register"
+	AuthService_Login_FullMethodName          = "/sttattus.auth.v1.AuthService/Login"
+	AuthService_OAuthLogin_FullMethodName     = "/sttattus.auth.v1.AuthService/OAuthLogin"
+	AuthService_CheckEmail_FullMethodName     = "/sttattus.auth.v1.AuthService/CheckEmail"
+	AuthService_LinkApp_FullMethodName        = "/sttattus.auth.v1.AuthService/LinkApp"
+	AuthService_LinkProvider_FullMethodName   = "/sttattus.auth.v1.AuthService/LinkProvider"
+	AuthService_SetPassword_FullMethodName    = "/sttattus.auth.v1.AuthService/SetPassword"
+	AuthService_ForgotPassword_FullMethodName = "/sttattus.auth.v1.AuthService/ForgotPassword"
+	AuthService_ResetPassword_FullMethodName  = "/sttattus.auth.v1.AuthService/ResetPassword"
+	AuthService_Refresh_FullMethodName        = "/sttattus.auth.v1.AuthService/Refresh"
+	AuthService_Logout_FullMethodName         = "/sttattus.auth.v1.AuthService/Logout"
 )
 
 // AuthServiceClient is the client API for AuthService service.
@@ -33,8 +38,13 @@ const (
 type AuthServiceClient interface {
 	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterResponse, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
+	OAuthLogin(ctx context.Context, in *OAuthLoginRequest, opts ...grpc.CallOption) (*OAuthLoginResponse, error)
 	CheckEmail(ctx context.Context, in *CheckEmailRequest, opts ...grpc.CallOption) (*CheckEmailResponse, error)
 	LinkApp(ctx context.Context, in *LinkAppRequest, opts ...grpc.CallOption) (*LinkAppResponse, error)
+	LinkProvider(ctx context.Context, in *LinkProviderRequest, opts ...grpc.CallOption) (*LinkProviderResponse, error)
+	SetPassword(ctx context.Context, in *SetPasswordRequest, opts ...grpc.CallOption) (*SetPasswordResponse, error)
+	ForgotPassword(ctx context.Context, in *ForgotPasswordRequest, opts ...grpc.CallOption) (*ForgotPasswordResponse, error)
+	ResetPassword(ctx context.Context, in *ResetPasswordRequest, opts ...grpc.CallOption) (*ResetPasswordResponse, error)
 	Refresh(ctx context.Context, in *RefreshRequest, opts ...grpc.CallOption) (*RefreshResponse, error)
 	Logout(ctx context.Context, in *LogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error)
 }
@@ -67,6 +77,16 @@ func (c *authServiceClient) Login(ctx context.Context, in *LoginRequest, opts ..
 	return out, nil
 }
 
+func (c *authServiceClient) OAuthLogin(ctx context.Context, in *OAuthLoginRequest, opts ...grpc.CallOption) (*OAuthLoginResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(OAuthLoginResponse)
+	err := c.cc.Invoke(ctx, AuthService_OAuthLogin_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *authServiceClient) CheckEmail(ctx context.Context, in *CheckEmailRequest, opts ...grpc.CallOption) (*CheckEmailResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(CheckEmailResponse)
@@ -81,6 +101,46 @@ func (c *authServiceClient) LinkApp(ctx context.Context, in *LinkAppRequest, opt
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(LinkAppResponse)
 	err := c.cc.Invoke(ctx, AuthService_LinkApp_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authServiceClient) LinkProvider(ctx context.Context, in *LinkProviderRequest, opts ...grpc.CallOption) (*LinkProviderResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LinkProviderResponse)
+	err := c.cc.Invoke(ctx, AuthService_LinkProvider_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authServiceClient) SetPassword(ctx context.Context, in *SetPasswordRequest, opts ...grpc.CallOption) (*SetPasswordResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetPasswordResponse)
+	err := c.cc.Invoke(ctx, AuthService_SetPassword_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authServiceClient) ForgotPassword(ctx context.Context, in *ForgotPasswordRequest, opts ...grpc.CallOption) (*ForgotPasswordResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ForgotPasswordResponse)
+	err := c.cc.Invoke(ctx, AuthService_ForgotPassword_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authServiceClient) ResetPassword(ctx context.Context, in *ResetPasswordRequest, opts ...grpc.CallOption) (*ResetPasswordResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ResetPasswordResponse)
+	err := c.cc.Invoke(ctx, AuthService_ResetPassword_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -113,8 +173,13 @@ func (c *authServiceClient) Logout(ctx context.Context, in *LogoutRequest, opts 
 type AuthServiceServer interface {
 	Register(context.Context, *RegisterRequest) (*RegisterResponse, error)
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
+	OAuthLogin(context.Context, *OAuthLoginRequest) (*OAuthLoginResponse, error)
 	CheckEmail(context.Context, *CheckEmailRequest) (*CheckEmailResponse, error)
 	LinkApp(context.Context, *LinkAppRequest) (*LinkAppResponse, error)
+	LinkProvider(context.Context, *LinkProviderRequest) (*LinkProviderResponse, error)
+	SetPassword(context.Context, *SetPasswordRequest) (*SetPasswordResponse, error)
+	ForgotPassword(context.Context, *ForgotPasswordRequest) (*ForgotPasswordResponse, error)
+	ResetPassword(context.Context, *ResetPasswordRequest) (*ResetPasswordResponse, error)
 	Refresh(context.Context, *RefreshRequest) (*RefreshResponse, error)
 	Logout(context.Context, *LogoutRequest) (*LogoutResponse, error)
 	mustEmbedUnimplementedAuthServiceServer()
@@ -133,11 +198,26 @@ func (UnimplementedAuthServiceServer) Register(context.Context, *RegisterRequest
 func (UnimplementedAuthServiceServer) Login(context.Context, *LoginRequest) (*LoginResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method Login not implemented")
 }
+func (UnimplementedAuthServiceServer) OAuthLogin(context.Context, *OAuthLoginRequest) (*OAuthLoginResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method OAuthLogin not implemented")
+}
 func (UnimplementedAuthServiceServer) CheckEmail(context.Context, *CheckEmailRequest) (*CheckEmailResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CheckEmail not implemented")
 }
 func (UnimplementedAuthServiceServer) LinkApp(context.Context, *LinkAppRequest) (*LinkAppResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method LinkApp not implemented")
+}
+func (UnimplementedAuthServiceServer) LinkProvider(context.Context, *LinkProviderRequest) (*LinkProviderResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LinkProvider not implemented")
+}
+func (UnimplementedAuthServiceServer) SetPassword(context.Context, *SetPasswordRequest) (*SetPasswordResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetPassword not implemented")
+}
+func (UnimplementedAuthServiceServer) ForgotPassword(context.Context, *ForgotPasswordRequest) (*ForgotPasswordResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ForgotPassword not implemented")
+}
+func (UnimplementedAuthServiceServer) ResetPassword(context.Context, *ResetPasswordRequest) (*ResetPasswordResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ResetPassword not implemented")
 }
 func (UnimplementedAuthServiceServer) Refresh(context.Context, *RefreshRequest) (*RefreshResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method Refresh not implemented")
@@ -202,6 +282,24 @@ func _AuthService_Login_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AuthService_OAuthLogin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(OAuthLoginRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).OAuthLogin(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AuthService_OAuthLogin_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).OAuthLogin(ctx, req.(*OAuthLoginRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AuthService_CheckEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CheckEmailRequest)
 	if err := dec(in); err != nil {
@@ -234,6 +332,78 @@ func _AuthService_LinkApp_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AuthServiceServer).LinkApp(ctx, req.(*LinkAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthService_LinkProvider_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LinkProviderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).LinkProvider(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AuthService_LinkProvider_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).LinkProvider(ctx, req.(*LinkProviderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthService_SetPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetPasswordRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).SetPassword(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AuthService_SetPassword_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).SetPassword(ctx, req.(*SetPasswordRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthService_ForgotPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ForgotPasswordRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).ForgotPassword(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AuthService_ForgotPassword_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).ForgotPassword(ctx, req.(*ForgotPasswordRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthService_ResetPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResetPasswordRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).ResetPassword(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AuthService_ResetPassword_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).ResetPassword(ctx, req.(*ResetPasswordRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -290,12 +460,32 @@ var AuthService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AuthService_Login_Handler,
 		},
 		{
+			MethodName: "OAuthLogin",
+			Handler:    _AuthService_OAuthLogin_Handler,
+		},
+		{
 			MethodName: "CheckEmail",
 			Handler:    _AuthService_CheckEmail_Handler,
 		},
 		{
 			MethodName: "LinkApp",
 			Handler:    _AuthService_LinkApp_Handler,
+		},
+		{
+			MethodName: "LinkProvider",
+			Handler:    _AuthService_LinkProvider_Handler,
+		},
+		{
+			MethodName: "SetPassword",
+			Handler:    _AuthService_SetPassword_Handler,
+		},
+		{
+			MethodName: "ForgotPassword",
+			Handler:    _AuthService_ForgotPassword_Handler,
+		},
+		{
+			MethodName: "ResetPassword",
+			Handler:    _AuthService_ResetPassword_Handler,
 		},
 		{
 			MethodName: "Refresh",

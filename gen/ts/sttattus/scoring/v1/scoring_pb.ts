@@ -1527,6 +1527,334 @@ export class ScoreDominionResponse extends Message<ScoreDominionResponse> {
 }
 
 /**
+ * @generated from message sttattus.scoring.v1.ScoreSessionAnalyticsRequest
+ */
+export class ScoreSessionAnalyticsRequest extends Message<ScoreSessionAnalyticsRequest> {
+  /**
+   * @generated from field: string session_id = 1;
+   */
+  sessionId = "";
+
+  /**
+   * @generated from field: repeated sttattus.scoring.v1.WorkoutSeriesInput series = 2;
+   */
+  series: WorkoutSeriesInput[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.scoring.v1.ScoreSessionAnalyticsRequest.HeartRatePoint heart_rate_data = 3;
+   */
+  heartRateData: ScoreSessionAnalyticsRequest_HeartRatePoint[] = [];
+
+  constructor(data?: PartialMessage<ScoreSessionAnalyticsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreSessionAnalyticsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "session_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "series", kind: "message", T: WorkoutSeriesInput, repeated: true },
+    { no: 3, name: "heart_rate_data", kind: "message", T: ScoreSessionAnalyticsRequest_HeartRatePoint, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreSessionAnalyticsRequest {
+    return new ScoreSessionAnalyticsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreSessionAnalyticsRequest {
+    return new ScoreSessionAnalyticsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreSessionAnalyticsRequest {
+    return new ScoreSessionAnalyticsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreSessionAnalyticsRequest | PlainMessage<ScoreSessionAnalyticsRequest> | undefined, b: ScoreSessionAnalyticsRequest | PlainMessage<ScoreSessionAnalyticsRequest> | undefined): boolean {
+    return proto3.util.equals(ScoreSessionAnalyticsRequest, a, b);
+  }
+}
+
+/**
+ * Optional heart rate data from sensors.
+ *
+ * @generated from message sttattus.scoring.v1.ScoreSessionAnalyticsRequest.HeartRatePoint
+ */
+export class ScoreSessionAnalyticsRequest_HeartRatePoint extends Message<ScoreSessionAnalyticsRequest_HeartRatePoint> {
+  /**
+   * @generated from field: int32 timestamp_offset_seconds = 1;
+   */
+  timestampOffsetSeconds = 0;
+
+  /**
+   * @generated from field: double bpm = 2;
+   */
+  bpm = 0;
+
+  constructor(data?: PartialMessage<ScoreSessionAnalyticsRequest_HeartRatePoint>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreSessionAnalyticsRequest.HeartRatePoint";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "timestamp_offset_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "bpm", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreSessionAnalyticsRequest_HeartRatePoint {
+    return new ScoreSessionAnalyticsRequest_HeartRatePoint().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreSessionAnalyticsRequest_HeartRatePoint {
+    return new ScoreSessionAnalyticsRequest_HeartRatePoint().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreSessionAnalyticsRequest_HeartRatePoint {
+    return new ScoreSessionAnalyticsRequest_HeartRatePoint().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreSessionAnalyticsRequest_HeartRatePoint | PlainMessage<ScoreSessionAnalyticsRequest_HeartRatePoint> | undefined, b: ScoreSessionAnalyticsRequest_HeartRatePoint | PlainMessage<ScoreSessionAnalyticsRequest_HeartRatePoint> | undefined): boolean {
+    return proto3.util.equals(ScoreSessionAnalyticsRequest_HeartRatePoint, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.MetricPoint
+ */
+export class MetricPoint extends Message<MetricPoint> {
+  /**
+   * @generated from field: int32 timestamp_offset_seconds = 1;
+   */
+  timestampOffsetSeconds = 0;
+
+  /**
+   * @generated from field: double value = 2;
+   */
+  value = 0;
+
+  constructor(data?: PartialMessage<MetricPoint>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.MetricPoint";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "timestamp_offset_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "value", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MetricPoint {
+    return new MetricPoint().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MetricPoint {
+    return new MetricPoint().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MetricPoint {
+    return new MetricPoint().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MetricPoint | PlainMessage<MetricPoint> | undefined, b: MetricPoint | PlainMessage<MetricPoint> | undefined): boolean {
+    return proto3.util.equals(MetricPoint, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreSessionAnalyticsResponse
+ */
+export class ScoreSessionAnalyticsResponse extends Message<ScoreSessionAnalyticsResponse> {
+  /**
+   * @generated from field: repeated sttattus.scoring.v1.MetricPoint volume_curve = 1;
+   */
+  volumeCurve: MetricPoint[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.scoring.v1.MetricPoint intensity_curve = 2;
+   */
+  intensityCurve: MetricPoint[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.scoring.v1.MetricPoint heart_rate_curve = 3;
+   */
+  heartRateCurve: MetricPoint[] = [];
+
+  /**
+   * @generated from field: double total_volume = 4;
+   */
+  totalVolume = 0;
+
+  /**
+   * @generated from field: double avg_intensity = 5;
+   */
+  avgIntensity = 0;
+
+  /**
+   * @generated from field: int32 peak_heart_rate = 6;
+   */
+  peakHeartRate = 0;
+
+  constructor(data?: PartialMessage<ScoreSessionAnalyticsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreSessionAnalyticsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "volume_curve", kind: "message", T: MetricPoint, repeated: true },
+    { no: 2, name: "intensity_curve", kind: "message", T: MetricPoint, repeated: true },
+    { no: 3, name: "heart_rate_curve", kind: "message", T: MetricPoint, repeated: true },
+    { no: 4, name: "total_volume", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "avg_intensity", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "peak_heart_rate", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreSessionAnalyticsResponse {
+    return new ScoreSessionAnalyticsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreSessionAnalyticsResponse {
+    return new ScoreSessionAnalyticsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreSessionAnalyticsResponse {
+    return new ScoreSessionAnalyticsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreSessionAnalyticsResponse | PlainMessage<ScoreSessionAnalyticsResponse> | undefined, b: ScoreSessionAnalyticsResponse | PlainMessage<ScoreSessionAnalyticsResponse> | undefined): boolean {
+    return proto3.util.equals(ScoreSessionAnalyticsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreRivalryRequest
+ */
+export class ScoreRivalryRequest extends Message<ScoreRivalryRequest> {
+  /**
+   * @generated from field: string rivalry_id = 1;
+   */
+  rivalryId = "";
+
+  /**
+   * @generated from field: double my_current_score = 2;
+   */
+  myCurrentScore = 0;
+
+  /**
+   * @generated from field: double rival_current_score = 3;
+   */
+  rivalCurrentScore = 0;
+
+  /**
+   * History of scores for progress curves.
+   *
+   * @generated from field: repeated sttattus.scoring.v1.MetricPoint my_score_history = 4;
+   */
+  myScoreHistory: MetricPoint[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.scoring.v1.MetricPoint rival_score_history = 5;
+   */
+  rivalScoreHistory: MetricPoint[] = [];
+
+  constructor(data?: PartialMessage<ScoreRivalryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreRivalryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "rivalry_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "my_current_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "rival_current_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "my_score_history", kind: "message", T: MetricPoint, repeated: true },
+    { no: 5, name: "rival_score_history", kind: "message", T: MetricPoint, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreRivalryRequest {
+    return new ScoreRivalryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreRivalryRequest {
+    return new ScoreRivalryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreRivalryRequest {
+    return new ScoreRivalryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreRivalryRequest | PlainMessage<ScoreRivalryRequest> | undefined, b: ScoreRivalryRequest | PlainMessage<ScoreRivalryRequest> | undefined): boolean {
+    return proto3.util.equals(ScoreRivalryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.scoring.v1.ScoreRivalryResponse
+ */
+export class ScoreRivalryResponse extends Message<ScoreRivalryResponse> {
+  /**
+   * @generated from field: double my_progress_pct = 1;
+   */
+  myProgressPct = 0;
+
+  /**
+   * @generated from field: double rival_progress_pct = 2;
+   */
+  rivalProgressPct = 0;
+
+  /**
+   * @generated from field: repeated sttattus.scoring.v1.MetricPoint my_normalized_curve = 3;
+   */
+  myNormalizedCurve: MetricPoint[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.scoring.v1.MetricPoint rival_normalized_curve = 4;
+   */
+  rivalNormalizedCurve: MetricPoint[] = [];
+
+  /**
+   * @generated from field: string leading_user_id = 5;
+   */
+  leadingUserId = "";
+
+  constructor(data?: PartialMessage<ScoreRivalryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.scoring.v1.ScoreRivalryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "my_progress_pct", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "rival_progress_pct", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "my_normalized_curve", kind: "message", T: MetricPoint, repeated: true },
+    { no: 4, name: "rival_normalized_curve", kind: "message", T: MetricPoint, repeated: true },
+    { no: 5, name: "leading_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreRivalryResponse {
+    return new ScoreRivalryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScoreRivalryResponse {
+    return new ScoreRivalryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScoreRivalryResponse {
+    return new ScoreRivalryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScoreRivalryResponse | PlainMessage<ScoreRivalryResponse> | undefined, b: ScoreRivalryResponse | PlainMessage<ScoreRivalryResponse> | undefined): boolean {
+    return proto3.util.equals(ScoreRivalryResponse, a, b);
+  }
+}
+
+/**
  * ScoreAcuteChronicRequest carries daily training loads. acute is
  * the trailing 7-day sum, chronic the trailing 28-day sum (both as
  * session tonnage or another consistent load proxy). The ratio is

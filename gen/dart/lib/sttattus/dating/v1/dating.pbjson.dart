@@ -931,13 +931,20 @@ const AtlasMapPoint$json = {
     {'1': 'x', '3': 3, '4': 1, '5': 1, '10': 'x'},
     {'1': 'y', '3': 4, '4': 1, '5': 1, '10': 'y'},
     {'1': 'z', '3': 5, '4': 1, '5': 1, '10': 'z'},
+    {'1': 'luminance', '3': 6, '4': 1, '5': 1, '10': 'luminance'},
+    {'1': 'tier', '3': 7, '4': 1, '5': 9, '10': 'tier'},
+    {'1': 'intent', '3': 8, '4': 1, '5': 14, '6': '.sttattus.dating.v1.DatingIntent', '10': 'intent'},
+    {'1': 'intellectual_pace', '3': 9, '4': 1, '5': 5, '10': 'intellectualPace'},
   ],
 };
 
 /// Descriptor for `AtlasMapPoint`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List atlasMapPointDescriptor = $convert.base64Decode(
     'Cg1BdGxhc01hcFBvaW50EhcKB3VzZXJfaWQYASABKAlSBnVzZXJJZBISCgRuYW1lGAIgASgJUg'
-    'RuYW1lEgwKAXgYAyABKAFSAXgSDAoBeRgEIAEoAVIBeRIMCgF6GAUgASgBUgF6');
+    'RuYW1lEgwKAXgYAyABKAFSAXgSDAoBeRgEIAEoAVIBeRIMCgF6GAUgASgBUgF6EhwKCWx1bWlu'
+    'YW5jZRgGIAEoAVIJbHVtaW5hbmNlEhIKBHRpZXIYByABKAlSBHRpZXISOAoGaW50ZW50GAggAS'
+    'gOMiAuc3R0YXR0dXMuZGF0aW5nLnYxLkRhdGluZ0ludGVudFIGaW50ZW50EisKEWludGVsbGVj'
+    'dHVhbF9wYWNlGAkgASgFUhBpbnRlbGxlY3R1YWxQYWNl');
 
 @$core.Deprecated('Use listAtlasMapPointsRequestDescriptor instead')
 const ListAtlasMapPointsRequest$json = {
@@ -974,6 +981,8 @@ const AgoraRoom$json = {
     {'1': 'livekit_room_name', '3': 7, '4': 1, '5': 9, '10': 'livekitRoomName'},
     {'1': 'started_at', '3': 8, '4': 1, '5': 3, '10': 'startedAt'},
     {'1': 'ended_at', '3': 9, '4': 1, '5': 3, '10': 'endedAt'},
+    {'1': 'is_video_enabled', '3': 10, '4': 1, '5': 8, '10': 'isVideoEnabled'},
+    {'1': 'is_encrypted', '3': 11, '4': 1, '5': 8, '10': 'isEncrypted'},
   ],
 };
 
@@ -983,7 +992,9 @@ final $typed_data.Uint8List agoraRoomDescriptor = $convert.base64Decode(
     'V0aXRsZRgDIAEoCVIFdGl0bGUSGAoHY2x1c3RlchgEIAEoCVIHY2x1c3RlchIdCgptYXhfZ3Vl'
     'c3RzGAUgASgFUgltYXhHdWVzdHMSFgoGc3RhdHVzGAYgASgJUgZzdGF0dXMSKgoRbGl2ZWtpdF'
     '9yb29tX25hbWUYByABKAlSD2xpdmVraXRSb29tTmFtZRIdCgpzdGFydGVkX2F0GAggASgDUglz'
-    'dGFydGVkQXQSGQoIZW5kZWRfYXQYCSABKANSB2VuZGVkQXQ=');
+    'dGFydGVkQXQSGQoIZW5kZWRfYXQYCSABKANSB2VuZGVkQXQSKAoQaXNfdmlkZW9fZW5hYmxlZB'
+    'gKIAEoCFIOaXNWaWRlb0VuYWJsZWQSIQoMaXNfZW5jcnlwdGVkGAsgASgIUgtpc0VuY3J5cHRl'
+    'ZA==');
 
 @$core.Deprecated('Use listLiveRoomsRequestDescriptor instead')
 const ListLiveRoomsRequest$json = {
@@ -1017,13 +1028,15 @@ const CreateAgoraRoomRequest$json = {
     {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
     {'1': 'cluster', '3': 2, '4': 1, '5': 9, '10': 'cluster'},
     {'1': 'max_guests', '3': 3, '4': 1, '5': 5, '10': 'maxGuests'},
+    {'1': 'enable_video', '3': 4, '4': 1, '5': 8, '10': 'enableVideo'},
   ],
 };
 
 /// Descriptor for `CreateAgoraRoomRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createAgoraRoomRequestDescriptor = $convert.base64Decode(
     'ChZDcmVhdGVBZ29yYVJvb21SZXF1ZXN0EhQKBXRpdGxlGAEgASgJUgV0aXRsZRIYCgdjbHVzdG'
-    'VyGAIgASgJUgdjbHVzdGVyEh0KCm1heF9ndWVzdHMYAyABKAVSCW1heEd1ZXN0cw==');
+    'VyGAIgASgJUgdjbHVzdGVyEh0KCm1heF9ndWVzdHMYAyABKAVSCW1heEd1ZXN0cxIhCgxlbmFi'
+    'bGVfdmlkZW8YBCABKAhSC2VuYWJsZVZpZGVv');
 
 @$core.Deprecated('Use createAgoraRoomResponseDescriptor instead')
 const CreateAgoraRoomResponse$json = {
@@ -1319,46 +1332,146 @@ final $typed_data.Uint8List cancelReservationResponseDescriptor = $convert.base6
     'ChlDYW5jZWxSZXNlcnZhdGlvblJlc3BvbnNlEkEKC3Jlc2VydmF0aW9uGAEgASgLMh8uc3R0YX'
     'R0dXMuZGF0aW5nLnYxLlJlc2VydmF0aW9uUgtyZXNlcnZhdGlvbg==');
 
-@$core.Deprecated('Use compatibilityReportDescriptor instead')
-const CompatibilityReport$json = {
-  '1': 'CompatibilityReport',
+@$core.Deprecated('Use compatibilityFactorDescriptor instead')
+const CompatibilityFactor$json = {
+  '1': 'CompatibilityFactor',
   '2': [
-    {'1': 'left_user_id', '3': 1, '4': 1, '5': 9, '10': 'leftUserId'},
-    {'1': 'right_user_id', '3': 2, '4': 1, '5': 9, '10': 'rightUserId'},
-    {'1': 'cosine', '3': 3, '4': 1, '5': 1, '10': 'cosine'},
-    {'1': 'per_axis_delta', '3': 4, '4': 3, '5': 1, '10': 'perAxisDelta'},
+    {'1': 'label', '3': 1, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'score', '3': 2, '4': 1, '5': 1, '10': 'score'},
+    {'1': 'interpretation', '3': 3, '4': 1, '5': 9, '10': 'interpretation'},
   ],
 };
 
-/// Descriptor for `CompatibilityReport`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List compatibilityReportDescriptor = $convert.base64Decode(
-    'ChNDb21wYXRpYmlsaXR5UmVwb3J0EiAKDGxlZnRfdXNlcl9pZBgBIAEoCVIKbGVmdFVzZXJJZB'
-    'IiCg1yaWdodF91c2VyX2lkGAIgASgJUgtyaWdodFVzZXJJZBIWCgZjb3NpbmUYAyABKAFSBmNv'
-    'c2luZRIkCg5wZXJfYXhpc19kZWx0YRgEIAMoAVIMcGVyQXhpc0RlbHRh');
+/// Descriptor for `CompatibilityFactor`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List compatibilityFactorDescriptor = $convert.base64Decode(
+    'ChNDb21wYXRpYmlsaXR5RmFjdG9yEhQKBWxhYmVsGAEgASgJUgVsYWJlbBIUCgVzY29yZRgCIA'
+    'EoAVIFc2NvcmUSJgoOaW50ZXJwcmV0YXRpb24YAyABKAlSDmludGVycHJldGF0aW9u');
 
-@$core.Deprecated('Use getCompatibilityReportRequestDescriptor instead')
-const GetCompatibilityReportRequest$json = {
-  '1': 'GetCompatibilityReportRequest',
+@$core.Deprecated('Use compatibilityMatrixDescriptor instead')
+const CompatibilityMatrix$json = {
+  '1': 'CompatibilityMatrix',
+  '2': [
+    {'1': 'left_user_id', '3': 1, '4': 1, '5': 9, '10': 'leftUserId'},
+    {'1': 'right_user_id', '3': 2, '4': 1, '5': 9, '10': 'rightUserId'},
+    {'1': 'aggregate_score', '3': 3, '4': 1, '5': 1, '10': 'aggregateScore'},
+    {'1': 'factors', '3': 4, '4': 3, '5': 11, '6': '.sttattus.dating.v1.CompatibilityFactor', '10': 'factors'},
+    {'1': 'dynamic_tension_status', '3': 5, '4': 1, '5': 9, '10': 'dynamicTensionStatus'},
+  ],
+};
+
+/// Descriptor for `CompatibilityMatrix`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List compatibilityMatrixDescriptor = $convert.base64Decode(
+    'ChNDb21wYXRpYmlsaXR5TWF0cml4EiAKDGxlZnRfdXNlcl9pZBgBIAEoCVIKbGVmdFVzZXJJZB'
+    'IiCg1yaWdodF91c2VyX2lkGAIgASgJUgtyaWdodFVzZXJJZBInCg9hZ2dyZWdhdGVfc2NvcmUY'
+    'AyABKAFSDmFnZ3JlZ2F0ZVNjb3JlEkEKB2ZhY3RvcnMYBCADKAsyJy5zdHRhdHR1cy5kYXRpbm'
+    'cudjEuQ29tcGF0aWJpbGl0eUZhY3RvclIHZmFjdG9ycxI0ChZkeW5hbWljX3RlbnNpb25fc3Rh'
+    'dHVzGAUgASgJUhRkeW5hbWljVGVuc2lvblN0YXR1cw==');
+
+@$core.Deprecated('Use getCompatibilityMatrixRequestDescriptor instead')
+const GetCompatibilityMatrixRequest$json = {
+  '1': 'GetCompatibilityMatrixRequest',
   '2': [
     {'1': 'other_user_id', '3': 1, '4': 1, '5': 9, '10': 'otherUserId'},
   ],
 };
 
-/// Descriptor for `GetCompatibilityReportRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getCompatibilityReportRequestDescriptor = $convert.base64Decode(
-    'Ch1HZXRDb21wYXRpYmlsaXR5UmVwb3J0UmVxdWVzdBIiCg1vdGhlcl91c2VyX2lkGAEgASgJUg'
+/// Descriptor for `GetCompatibilityMatrixRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCompatibilityMatrixRequestDescriptor = $convert.base64Decode(
+    'Ch1HZXRDb21wYXRpYmlsaXR5TWF0cml4UmVxdWVzdBIiCg1vdGhlcl91c2VyX2lkGAEgASgJUg'
     'tvdGhlclVzZXJJZA==');
 
-@$core.Deprecated('Use getCompatibilityReportResponseDescriptor instead')
-const GetCompatibilityReportResponse$json = {
-  '1': 'GetCompatibilityReportResponse',
+@$core.Deprecated('Use getCompatibilityMatrixResponseDescriptor instead')
+const GetCompatibilityMatrixResponse$json = {
+  '1': 'GetCompatibilityMatrixResponse',
   '2': [
-    {'1': 'report', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.CompatibilityReport', '10': 'report'},
+    {'1': 'matrix', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.CompatibilityMatrix', '10': 'matrix'},
   ],
 };
 
-/// Descriptor for `GetCompatibilityReportResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getCompatibilityReportResponseDescriptor = $convert.base64Decode(
-    'Ch5HZXRDb21wYXRpYmlsaXR5UmVwb3J0UmVzcG9uc2USPwoGcmVwb3J0GAEgASgLMicuc3R0YX'
-    'R0dXMuZGF0aW5nLnYxLkNvbXBhdGliaWxpdHlSZXBvcnRSBnJlcG9ydA==');
+/// Descriptor for `GetCompatibilityMatrixResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCompatibilityMatrixResponseDescriptor = $convert.base64Decode(
+    'Ch5HZXRDb21wYXRpYmlsaXR5TWF0cml4UmVzcG9uc2USPwoGbWF0cml4GAEgASgLMicuc3R0YX'
+    'R0dXMuZGF0aW5nLnYxLkNvbXBhdGliaWxpdHlNYXRyaXhSBm1hdHJpeA==');
+
+@$core.Deprecated('Use giftDescriptor instead')
+const Gift$json = {
+  '1': 'Gift',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'sender_id', '3': 2, '4': 1, '5': 9, '10': 'senderId'},
+    {'1': 'receiver_id', '3': 3, '4': 1, '5': 9, '10': 'receiverId'},
+    {'1': 'asset_type', '3': 4, '4': 1, '5': 9, '10': 'assetType'},
+    {'1': 'value', '3': 5, '4': 1, '5': 1, '10': 'value'},
+    {'1': 'message', '3': 6, '4': 1, '5': 9, '10': 'message'},
+    {'1': 'sent_at', '3': 7, '4': 1, '5': 3, '10': 'sentAt'},
+    {'1': 'is_anonymous', '3': 8, '4': 1, '5': 8, '10': 'isAnonymous'},
+  ],
+};
+
+/// Descriptor for `Gift`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List giftDescriptor = $convert.base64Decode(
+    'CgRHaWZ0Eg4KAmlkGAEgASgJUgJpZBIbCglzZW5kZXJfaWQYAiABKAlSCHNlbmRlcklkEh8KC3'
+    'JlY2VpdmVyX2lkGAMgASgJUgpyZWNlaXZlcklkEh0KCmFzc2V0X3R5cGUYBCABKAlSCWFzc2V0'
+    'VHlwZRIUCgV2YWx1ZRgFIAEoAVIFdmFsdWUSGAoHbWVzc2FnZRgGIAEoCVIHbWVzc2FnZRIXCg'
+    'dzZW50X2F0GAcgASgDUgZzZW50QXQSIQoMaXNfYW5vbnltb3VzGAggASgIUgtpc0Fub255bW91'
+    'cw==');
+
+@$core.Deprecated('Use sendGiftRequestDescriptor instead')
+const SendGiftRequest$json = {
+  '1': 'SendGiftRequest',
+  '2': [
+    {'1': 'receiver_id', '3': 1, '4': 1, '5': 9, '10': 'receiverId'},
+    {'1': 'asset_type', '3': 2, '4': 1, '5': 9, '10': 'assetType'},
+    {'1': 'value', '3': 3, '4': 1, '5': 1, '10': 'value'},
+    {'1': 'message', '3': 4, '4': 1, '5': 9, '10': 'message'},
+    {'1': 'anonymous', '3': 5, '4': 1, '5': 8, '10': 'anonymous'},
+  ],
+};
+
+/// Descriptor for `SendGiftRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sendGiftRequestDescriptor = $convert.base64Decode(
+    'Cg9TZW5kR2lmdFJlcXVlc3QSHwoLcmVjZWl2ZXJfaWQYASABKAlSCnJlY2VpdmVySWQSHQoKYX'
+    'NzZXRfdHlwZRgCIAEoCVIJYXNzZXRUeXBlEhQKBXZhbHVlGAMgASgBUgV2YWx1ZRIYCgdtZXNz'
+    'YWdlGAQgASgJUgdtZXNzYWdlEhwKCWFub255bW91cxgFIAEoCFIJYW5vbnltb3Vz');
+
+@$core.Deprecated('Use sendGiftResponseDescriptor instead')
+const SendGiftResponse$json = {
+  '1': 'SendGiftResponse',
+  '2': [
+    {'1': 'gift', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.Gift', '10': 'gift'},
+  ],
+};
+
+/// Descriptor for `SendGiftResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sendGiftResponseDescriptor = $convert.base64Decode(
+    'ChBTZW5kR2lmdFJlc3BvbnNlEiwKBGdpZnQYASABKAsyGC5zdHRhdHR1cy5kYXRpbmcudjEuR2'
+    'lmdFIEZ2lmdA==');
+
+@$core.Deprecated('Use listGiftLedgerRequestDescriptor instead')
+const ListGiftLedgerRequest$json = {
+  '1': 'ListGiftLedgerRequest',
+  '2': [
+    {'1': 'page', '3': 1, '4': 1, '5': 11, '6': '.sttattus.common.v1.PageRequest', '10': 'page'},
+  ],
+};
+
+/// Descriptor for `ListGiftLedgerRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listGiftLedgerRequestDescriptor = $convert.base64Decode(
+    'ChVMaXN0R2lmdExlZGdlclJlcXVlc3QSMwoEcGFnZRgBIAEoCzIfLnN0dGF0dHVzLmNvbW1vbi'
+    '52MS5QYWdlUmVxdWVzdFIEcGFnZQ==');
+
+@$core.Deprecated('Use listGiftLedgerResponseDescriptor instead')
+const ListGiftLedgerResponse$json = {
+  '1': 'ListGiftLedgerResponse',
+  '2': [
+    {'1': 'gifts', '3': 1, '4': 3, '5': 11, '6': '.sttattus.dating.v1.Gift', '10': 'gifts'},
+    {'1': 'page', '3': 2, '4': 1, '5': 11, '6': '.sttattus.common.v1.PageResponse', '10': 'page'},
+  ],
+};
+
+/// Descriptor for `ListGiftLedgerResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listGiftLedgerResponseDescriptor = $convert.base64Decode(
+    'ChZMaXN0R2lmdExlZGdlclJlc3BvbnNlEi4KBWdpZnRzGAEgAygLMhguc3R0YXR0dXMuZGF0aW'
+    '5nLnYxLkdpZnRSBWdpZnRzEjQKBHBhZ2UYAiABKAsyIC5zdHRhdHR1cy5jb21tb24udjEuUGFn'
+    'ZVJlc3BvbnNlUgRwYWdl');
 

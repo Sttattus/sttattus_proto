@@ -607,6 +607,241 @@ final $typed_data.Uint8List logSetResponseDescriptor = $convert.base64Decode(
     'Cg5Mb2dTZXRSZXNwb25zZRIxCgNzZXQYASABKAsyHy5zdHRhdHR1cy53b3Jrb3V0LnYxLlNlc3'
     'Npb25TZXRSA3NldA==');
 
+@$core.Deprecated('Use sessionMetricPointDescriptor instead')
+const SessionMetricPoint$json = {
+  '1': 'SessionMetricPoint',
+  '2': [
+    {'1': 'timestamp_offset_seconds', '3': 1, '4': 1, '5': 5, '10': 'timestampOffsetSeconds'},
+    {'1': 'value', '3': 2, '4': 1, '5': 1, '10': 'value'},
+  ],
+};
+
+/// Descriptor for `SessionMetricPoint`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sessionMetricPointDescriptor = $convert.base64Decode(
+    'ChJTZXNzaW9uTWV0cmljUG9pbnQSOAoYdGltZXN0YW1wX29mZnNldF9zZWNvbmRzGAEgASgFUh'
+    'Z0aW1lc3RhbXBPZmZzZXRTZWNvbmRzEhQKBXZhbHVlGAIgASgBUgV2YWx1ZQ==');
+
+@$core.Deprecated('Use sessionAnalyticsDescriptor instead')
+const SessionAnalytics$json = {
+  '1': 'SessionAnalytics',
+  '2': [
+    {'1': 'session_id', '3': 1, '4': 1, '5': 9, '10': 'sessionId'},
+    {'1': 'volume_curve', '3': 2, '4': 3, '5': 11, '6': '.sttattus.workout.v1.SessionMetricPoint', '10': 'volumeCurve'},
+    {'1': 'intensity_curve', '3': 3, '4': 3, '5': 11, '6': '.sttattus.workout.v1.SessionMetricPoint', '10': 'intensityCurve'},
+    {'1': 'heart_rate_curve', '3': 4, '4': 3, '5': 11, '6': '.sttattus.workout.v1.SessionMetricPoint', '10': 'heartRateCurve'},
+    {'1': 'total_volume', '3': 5, '4': 1, '5': 1, '10': 'totalVolume'},
+    {'1': 'avg_intensity', '3': 6, '4': 1, '5': 1, '10': 'avgIntensity'},
+    {'1': 'duration_seconds', '3': 7, '4': 1, '5': 5, '10': 'durationSeconds'},
+    {'1': 'total_reps', '3': 8, '4': 1, '5': 5, '10': 'totalReps'},
+  ],
+};
+
+/// Descriptor for `SessionAnalytics`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sessionAnalyticsDescriptor = $convert.base64Decode(
+    'ChBTZXNzaW9uQW5hbHl0aWNzEh0KCnNlc3Npb25faWQYASABKAlSCXNlc3Npb25JZBJKCgx2b2'
+    'x1bWVfY3VydmUYAiADKAsyJy5zdHRhdHR1cy53b3Jrb3V0LnYxLlNlc3Npb25NZXRyaWNQb2lu'
+    'dFILdm9sdW1lQ3VydmUSUAoPaW50ZW5zaXR5X2N1cnZlGAMgAygLMicuc3R0YXR0dXMud29ya2'
+    '91dC52MS5TZXNzaW9uTWV0cmljUG9pbnRSDmludGVuc2l0eUN1cnZlElEKEGhlYXJ0X3JhdGVf'
+    'Y3VydmUYBCADKAsyJy5zdHRhdHR1cy53b3Jrb3V0LnYxLlNlc3Npb25NZXRyaWNQb2ludFIOaG'
+    'VhcnRSYXRlQ3VydmUSIQoMdG90YWxfdm9sdW1lGAUgASgBUgt0b3RhbFZvbHVtZRIjCg1hdmdf'
+    'aW50ZW5zaXR5GAYgASgBUgxhdmdJbnRlbnNpdHkSKQoQZHVyYXRpb25fc2Vjb25kcxgHIAEoBV'
+    'IPZHVyYXRpb25TZWNvbmRzEh0KCnRvdGFsX3JlcHMYCCABKAVSCXRvdGFsUmVwcw==');
+
+@$core.Deprecated('Use getSessionAnalyticsRequestDescriptor instead')
+const GetSessionAnalyticsRequest$json = {
+  '1': 'GetSessionAnalyticsRequest',
+  '2': [
+    {'1': 'session_id', '3': 1, '4': 1, '5': 9, '10': 'sessionId'},
+  ],
+};
+
+/// Descriptor for `GetSessionAnalyticsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSessionAnalyticsRequestDescriptor = $convert.base64Decode(
+    'ChpHZXRTZXNzaW9uQW5hbHl0aWNzUmVxdWVzdBIdCgpzZXNzaW9uX2lkGAEgASgJUglzZXNzaW'
+    '9uSWQ=');
+
+@$core.Deprecated('Use getSessionAnalyticsResponseDescriptor instead')
+const GetSessionAnalyticsResponse$json = {
+  '1': 'GetSessionAnalyticsResponse',
+  '2': [
+    {'1': 'analytics', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.SessionAnalytics', '10': 'analytics'},
+  ],
+};
+
+/// Descriptor for `GetSessionAnalyticsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSessionAnalyticsResponseDescriptor = $convert.base64Decode(
+    'ChtHZXRTZXNzaW9uQW5hbHl0aWNzUmVzcG9uc2USQwoJYW5hbHl0aWNzGAEgASgLMiUuc3R0YX'
+    'R0dXMud29ya291dC52MS5TZXNzaW9uQW5hbHl0aWNzUglhbmFseXRpY3M=');
+
+@$core.Deprecated('Use userEquipmentDescriptor instead')
+const UserEquipment$json = {
+  '1': 'UserEquipment',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'category', '3': 3, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'brand', '3': 4, '4': 1, '5': 9, '10': 'brand'},
+    {'1': 'weight', '3': 5, '4': 1, '5': 1, '10': 'weight'},
+    {'1': 'unit', '3': 6, '4': 1, '5': 9, '10': 'unit'},
+    {'1': 'is_verified', '3': 7, '4': 1, '5': 8, '10': 'isVerified'},
+  ],
+};
+
+/// Descriptor for `UserEquipment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userEquipmentDescriptor = $convert.base64Decode(
+    'Cg1Vc2VyRXF1aXBtZW50Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhoKCG'
+    'NhdGVnb3J5GAMgASgJUghjYXRlZ29yeRIUCgVicmFuZBgEIAEoCVIFYnJhbmQSFgoGd2VpZ2h0'
+    'GAUgASgBUgZ3ZWlnaHQSEgoEdW5pdBgGIAEoCVIEdW5pdBIfCgtpc192ZXJpZmllZBgHIAEoCF'
+    'IKaXNWZXJpZmllZA==');
+
+@$core.Deprecated('Use listUserEquipmentRequestDescriptor instead')
+const ListUserEquipmentRequest$json = {
+  '1': 'ListUserEquipmentRequest',
+};
+
+/// Descriptor for `ListUserEquipmentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listUserEquipmentRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0VXNlckVxdWlwbWVudFJlcXVlc3Q=');
+
+@$core.Deprecated('Use listUserEquipmentResponseDescriptor instead')
+const ListUserEquipmentResponse$json = {
+  '1': 'ListUserEquipmentResponse',
+  '2': [
+    {'1': 'equipment', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.UserEquipment', '10': 'equipment'},
+  ],
+};
+
+/// Descriptor for `ListUserEquipmentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listUserEquipmentResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0VXNlckVxdWlwbWVudFJlc3BvbnNlEkAKCWVxdWlwbWVudBgBIAMoCzIiLnN0dGF0dH'
+    'VzLndvcmtvdXQudjEuVXNlckVxdWlwbWVudFIJZXF1aXBtZW50');
+
+@$core.Deprecated('Use addUserEquipmentRequestDescriptor instead')
+const AddUserEquipmentRequest$json = {
+  '1': 'AddUserEquipmentRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'category', '3': 2, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'brand', '3': 3, '4': 1, '5': 9, '10': 'brand'},
+    {'1': 'weight', '3': 4, '4': 1, '5': 1, '10': 'weight'},
+    {'1': 'unit', '3': 5, '4': 1, '5': 9, '10': 'unit'},
+  ],
+};
+
+/// Descriptor for `AddUserEquipmentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addUserEquipmentRequestDescriptor = $convert.base64Decode(
+    'ChdBZGRVc2VyRXF1aXBtZW50UmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEhoKCGNhdGVnb3'
+    'J5GAIgASgJUghjYXRlZ29yeRIUCgVicmFuZBgDIAEoCVIFYnJhbmQSFgoGd2VpZ2h0GAQgASgB'
+    'UgZ3ZWlnaHQSEgoEdW5pdBgFIAEoCVIEdW5pdA==');
+
+@$core.Deprecated('Use addUserEquipmentResponseDescriptor instead')
+const AddUserEquipmentResponse$json = {
+  '1': 'AddUserEquipmentResponse',
+  '2': [
+    {'1': 'equipment', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.UserEquipment', '10': 'equipment'},
+  ],
+};
+
+/// Descriptor for `AddUserEquipmentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addUserEquipmentResponseDescriptor = $convert.base64Decode(
+    'ChhBZGRVc2VyRXF1aXBtZW50UmVzcG9uc2USQAoJZXF1aXBtZW50GAEgASgLMiIuc3R0YXR0dX'
+    'Mud29ya291dC52MS5Vc2VyRXF1aXBtZW50UgllcXVpcG1lbnQ=');
+
+@$core.Deprecated('Use deleteUserEquipmentRequestDescriptor instead')
+const DeleteUserEquipmentRequest$json = {
+  '1': 'DeleteUserEquipmentRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteUserEquipmentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteUserEquipmentRequestDescriptor = $convert.base64Decode(
+    'ChpEZWxldGVVc2VyRXF1aXBtZW50UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use deleteUserEquipmentResponseDescriptor instead')
+const DeleteUserEquipmentResponse$json = {
+  '1': 'DeleteUserEquipmentResponse',
+};
+
+/// Descriptor for `DeleteUserEquipmentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteUserEquipmentResponseDescriptor = $convert.base64Decode(
+    'ChtEZWxldGVVc2VyRXF1aXBtZW50UmVzcG9uc2U=');
+
+@$core.Deprecated('Use workoutRivalryDescriptor instead')
+const WorkoutRivalry$json = {
+  '1': 'WorkoutRivalry',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'rival_name', '3': 2, '4': 1, '5': 9, '10': 'rivalName'},
+    {'1': 'rival_avatar_url', '3': 3, '4': 1, '5': 9, '10': 'rivalAvatarUrl'},
+    {'1': 'my_score', '3': 4, '4': 1, '5': 1, '10': 'myScore'},
+    {'1': 'rival_score', '3': 5, '4': 1, '5': 1, '10': 'rivalScore'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'ends_at', '3': 7, '4': 1, '5': 3, '10': 'endsAt'},
+  ],
+};
+
+/// Descriptor for `WorkoutRivalry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List workoutRivalryDescriptor = $convert.base64Decode(
+    'Cg5Xb3Jrb3V0Uml2YWxyeRIOCgJpZBgBIAEoCVICaWQSHQoKcml2YWxfbmFtZRgCIAEoCVIJcm'
+    'l2YWxOYW1lEigKEHJpdmFsX2F2YXRhcl91cmwYAyABKAlSDnJpdmFsQXZhdGFyVXJsEhkKCG15'
+    'X3Njb3JlGAQgASgBUgdteVNjb3JlEh8KC3JpdmFsX3Njb3JlGAUgASgBUgpyaXZhbFNjb3JlEh'
+    'YKBnN0YXR1cxgGIAEoCVIGc3RhdHVzEhcKB2VuZHNfYXQYByABKANSBmVuZHNBdA==');
+
+@$core.Deprecated('Use listWorkoutRivalriesRequestDescriptor instead')
+const ListWorkoutRivalriesRequest$json = {
+  '1': 'ListWorkoutRivalriesRequest',
+};
+
+/// Descriptor for `ListWorkoutRivalriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listWorkoutRivalriesRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0V29ya291dFJpdmFscmllc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listWorkoutRivalriesResponseDescriptor instead')
+const ListWorkoutRivalriesResponse$json = {
+  '1': 'ListWorkoutRivalriesResponse',
+  '2': [
+    {'1': 'rivalries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.WorkoutRivalry', '10': 'rivalries'},
+  ],
+};
+
+/// Descriptor for `ListWorkoutRivalriesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listWorkoutRivalriesResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0V29ya291dFJpdmFscmllc1Jlc3BvbnNlEkEKCXJpdmFscmllcxgBIAMoCzIjLnN0dG'
+    'F0dHVzLndvcmtvdXQudjEuV29ya291dFJpdmFscnlSCXJpdmFscmllcw==');
+
+@$core.Deprecated('Use getRivalryDetailRequestDescriptor instead')
+const GetRivalryDetailRequest$json = {
+  '1': 'GetRivalryDetailRequest',
+  '2': [
+    {'1': 'rivalry_id', '3': 1, '4': 1, '5': 9, '10': 'rivalryId'},
+  ],
+};
+
+/// Descriptor for `GetRivalryDetailRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRivalryDetailRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRSaXZhbHJ5RGV0YWlsUmVxdWVzdBIdCgpyaXZhbHJ5X2lkGAEgASgJUglyaXZhbHJ5SW'
+    'Q=');
+
+@$core.Deprecated('Use getRivalryDetailResponseDescriptor instead')
+const GetRivalryDetailResponse$json = {
+  '1': 'GetRivalryDetailResponse',
+  '2': [
+    {'1': 'rivalry', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.WorkoutRivalry', '10': 'rivalry'},
+    {'1': 'my_progress_curve', '3': 2, '4': 3, '5': 11, '6': '.sttattus.workout.v1.SessionMetricPoint', '10': 'myProgressCurve'},
+    {'1': 'rival_progress_curve', '3': 3, '4': 3, '5': 11, '6': '.sttattus.workout.v1.SessionMetricPoint', '10': 'rivalProgressCurve'},
+  ],
+};
+
+/// Descriptor for `GetRivalryDetailResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRivalryDetailResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRSaXZhbHJ5RGV0YWlsUmVzcG9uc2USPQoHcml2YWxyeRgBIAEoCzIjLnN0dGF0dHVzLn'
+    'dvcmtvdXQudjEuV29ya291dFJpdmFscnlSB3JpdmFscnkSUwoRbXlfcHJvZ3Jlc3NfY3VydmUY'
+    'AiADKAsyJy5zdHRhdHR1cy53b3Jrb3V0LnYxLlNlc3Npb25NZXRyaWNQb2ludFIPbXlQcm9ncm'
+    'Vzc0N1cnZlElkKFHJpdmFsX3Byb2dyZXNzX2N1cnZlGAMgAygLMicuc3R0YXR0dXMud29ya291'
+    'dC52MS5TZXNzaW9uTWV0cmljUG9pbnRSEnJpdmFsUHJvZ3Jlc3NDdXJ2ZQ==');
+
 @$core.Deprecated('Use rankBandDescriptor instead')
 const RankBand$json = {
   '1': 'RankBand',
@@ -1841,4 +2076,730 @@ const GetForgeAnalyticsResponse$json = {
 final $typed_data.Uint8List getForgeAnalyticsResponseDescriptor = $convert.base64Decode(
     'ChlHZXRGb3JnZUFuYWx5dGljc1Jlc3BvbnNlEkEKCWFuYWx5dGljcxgBIAEoCzIjLnN0dGF0dH'
     'VzLndvcmtvdXQudjEuRm9yZ2VBbmFseXRpY3NSCWFuYWx5dGljcw==');
+
+@$core.Deprecated('Use createRivalryRequestDescriptor instead')
+const CreateRivalryRequest$json = {
+  '1': 'CreateRivalryRequest',
+  '2': [
+    {'1': 'rival_handle', '3': 1, '4': 1, '5': 9, '10': 'rivalHandle'},
+    {'1': 'rival_name', '3': 2, '4': 1, '5': 9, '10': 'rivalName'},
+    {'1': 'duration_days', '3': 3, '4': 1, '5': 5, '10': 'durationDays'},
+  ],
+};
+
+/// Descriptor for `CreateRivalryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createRivalryRequestDescriptor = $convert.base64Decode(
+    'ChRDcmVhdGVSaXZhbHJ5UmVxdWVzdBIhCgxyaXZhbF9oYW5kbGUYASABKAlSC3JpdmFsSGFuZG'
+    'xlEh0KCnJpdmFsX25hbWUYAiABKAlSCXJpdmFsTmFtZRIjCg1kdXJhdGlvbl9kYXlzGAMgASgF'
+    'UgxkdXJhdGlvbkRheXM=');
+
+@$core.Deprecated('Use createRivalryResponseDescriptor instead')
+const CreateRivalryResponse$json = {
+  '1': 'CreateRivalryResponse',
+  '2': [
+    {'1': 'rivalry', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.WorkoutRivalry', '10': 'rivalry'},
+  ],
+};
+
+/// Descriptor for `CreateRivalryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createRivalryResponseDescriptor = $convert.base64Decode(
+    'ChVDcmVhdGVSaXZhbHJ5UmVzcG9uc2USPQoHcml2YWxyeRgBIAEoCzIjLnN0dGF0dHVzLndvcm'
+    'tvdXQudjEuV29ya291dFJpdmFscnlSB3JpdmFscnk=');
+
+@$core.Deprecated('Use leaderboardEntryDescriptor instead')
+const LeaderboardEntry$json = {
+  '1': 'LeaderboardEntry',
+  '2': [
+    {'1': 'position', '3': 1, '4': 1, '5': 5, '10': 'position'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'handle', '3': 3, '4': 1, '5': 9, '10': 'handle'},
+    {'1': 'forge_rank', '3': 4, '4': 1, '5': 1, '10': 'forgeRank'},
+    {'1': 'rank_label', '3': 5, '4': 1, '5': 9, '10': 'rankLabel'},
+    {'1': 'power', '3': 6, '4': 1, '5': 5, '10': 'power'},
+    {'1': 'agility', '3': 7, '4': 1, '5': 5, '10': 'agility'},
+    {'1': 'grit', '3': 8, '4': 1, '5': 5, '10': 'grit'},
+    {'1': 'is_me', '3': 9, '4': 1, '5': 8, '10': 'isMe'},
+  ],
+};
+
+/// Descriptor for `LeaderboardEntry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List leaderboardEntryDescriptor = $convert.base64Decode(
+    'ChBMZWFkZXJib2FyZEVudHJ5EhoKCHBvc2l0aW9uGAEgASgFUghwb3NpdGlvbhISCgRuYW1lGA'
+    'IgASgJUgRuYW1lEhYKBmhhbmRsZRgDIAEoCVIGaGFuZGxlEh0KCmZvcmdlX3JhbmsYBCABKAFS'
+    'CWZvcmdlUmFuaxIdCgpyYW5rX2xhYmVsGAUgASgJUglyYW5rTGFiZWwSFAoFcG93ZXIYBiABKA'
+    'VSBXBvd2VyEhgKB2FnaWxpdHkYByABKAVSB2FnaWxpdHkSEgoEZ3JpdBgIIAEoBVIEZ3JpdBIT'
+    'CgVpc19tZRgJIAEoCFIEaXNNZQ==');
+
+@$core.Deprecated('Use getLeaderboardRequestDescriptor instead')
+const GetLeaderboardRequest$json = {
+  '1': 'GetLeaderboardRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `GetLeaderboardRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLeaderboardRequestDescriptor = $convert.base64Decode(
+    'ChVHZXRMZWFkZXJib2FyZFJlcXVlc3QSFAoFbGltaXQYASABKAVSBWxpbWl0');
+
+@$core.Deprecated('Use getLeaderboardResponseDescriptor instead')
+const GetLeaderboardResponse$json = {
+  '1': 'GetLeaderboardResponse',
+  '2': [
+    {'1': 'entries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.LeaderboardEntry', '10': 'entries'},
+    {'1': 'my_standing', '3': 2, '4': 1, '5': 11, '6': '.sttattus.workout.v1.LeaderboardEntry', '10': 'myStanding'},
+  ],
+};
+
+/// Descriptor for `GetLeaderboardResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLeaderboardResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRMZWFkZXJib2FyZFJlc3BvbnNlEj8KB2VudHJpZXMYASADKAsyJS5zdHRhdHR1cy53b3'
+    'Jrb3V0LnYxLkxlYWRlcmJvYXJkRW50cnlSB2VudHJpZXMSRgoLbXlfc3RhbmRpbmcYAiABKAsy'
+    'JS5zdHRhdHR1cy53b3Jrb3V0LnYxLkxlYWRlcmJvYXJkRW50cnlSCm15U3RhbmRpbmc=');
+
+@$core.Deprecated('Use forgeLoungeDescriptor instead')
+const ForgeLounge$json = {
+  '1': 'ForgeLounge',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'city', '3': 3, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'region', '3': 4, '4': 1, '5': 9, '10': 'region'},
+    {'1': 'description', '3': 5, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'amenities', '3': 6, '4': 3, '5': 9, '10': 'amenities'},
+    {'1': 'image_url', '3': 7, '4': 1, '5': 9, '10': 'imageUrl'},
+    {'1': 'sovereign_only', '3': 8, '4': 1, '5': 8, '10': 'sovereignOnly'},
+  ],
+};
+
+/// Descriptor for `ForgeLounge`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List forgeLoungeDescriptor = $convert.base64Decode(
+    'CgtGb3JnZUxvdW5nZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRjaX'
+    'R5GAMgASgJUgRjaXR5EhYKBnJlZ2lvbhgEIAEoCVIGcmVnaW9uEiAKC2Rlc2NyaXB0aW9uGAUg'
+    'ASgJUgtkZXNjcmlwdGlvbhIcCglhbWVuaXRpZXMYBiADKAlSCWFtZW5pdGllcxIbCglpbWFnZV'
+    '91cmwYByABKAlSCGltYWdlVXJsEiUKDnNvdmVyZWlnbl9vbmx5GAggASgIUg1zb3ZlcmVpZ25P'
+    'bmx5');
+
+@$core.Deprecated('Use forgeLoungeBookingDescriptor instead')
+const ForgeLoungeBooking$json = {
+  '1': 'ForgeLoungeBooking',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'lounge_id', '3': 2, '4': 1, '5': 9, '10': 'loungeId'},
+    {'1': 'lounge_name', '3': 3, '4': 1, '5': 9, '10': 'loungeName'},
+    {'1': 'slot_at_unix', '3': 4, '4': 1, '5': 3, '10': 'slotAtUnix'},
+    {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'created_at_unix', '3': 6, '4': 1, '5': 3, '10': 'createdAtUnix'},
+  ],
+};
+
+/// Descriptor for `ForgeLoungeBooking`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List forgeLoungeBookingDescriptor = $convert.base64Decode(
+    'ChJGb3JnZUxvdW5nZUJvb2tpbmcSDgoCaWQYASABKAlSAmlkEhsKCWxvdW5nZV9pZBgCIAEoCV'
+    'IIbG91bmdlSWQSHwoLbG91bmdlX25hbWUYAyABKAlSCmxvdW5nZU5hbWUSIAoMc2xvdF9hdF91'
+    'bml4GAQgASgDUgpzbG90QXRVbml4EhYKBnN0YXR1cxgFIAEoCVIGc3RhdHVzEiYKD2NyZWF0ZW'
+    'RfYXRfdW5peBgGIAEoA1INY3JlYXRlZEF0VW5peA==');
+
+@$core.Deprecated('Use listForgeLoungesRequestDescriptor instead')
+const ListForgeLoungesRequest$json = {
+  '1': 'ListForgeLoungesRequest',
+};
+
+/// Descriptor for `ListForgeLoungesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listForgeLoungesRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0Rm9yZ2VMb3VuZ2VzUmVxdWVzdA==');
+
+@$core.Deprecated('Use listForgeLoungesResponseDescriptor instead')
+const ListForgeLoungesResponse$json = {
+  '1': 'ListForgeLoungesResponse',
+  '2': [
+    {'1': 'lounges', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.ForgeLounge', '10': 'lounges'},
+  ],
+};
+
+/// Descriptor for `ListForgeLoungesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listForgeLoungesResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0Rm9yZ2VMb3VuZ2VzUmVzcG9uc2USOgoHbG91bmdlcxgBIAMoCzIgLnN0dGF0dHVzLn'
+    'dvcmtvdXQudjEuRm9yZ2VMb3VuZ2VSB2xvdW5nZXM=');
+
+@$core.Deprecated('Use listMyLoungeBookingsRequestDescriptor instead')
+const ListMyLoungeBookingsRequest$json = {
+  '1': 'ListMyLoungeBookingsRequest',
+};
+
+/// Descriptor for `ListMyLoungeBookingsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyLoungeBookingsRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0TXlMb3VuZ2VCb29raW5nc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listMyLoungeBookingsResponseDescriptor instead')
+const ListMyLoungeBookingsResponse$json = {
+  '1': 'ListMyLoungeBookingsResponse',
+  '2': [
+    {'1': 'bookings', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.ForgeLoungeBooking', '10': 'bookings'},
+  ],
+};
+
+/// Descriptor for `ListMyLoungeBookingsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyLoungeBookingsResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0TXlMb3VuZ2VCb29raW5nc1Jlc3BvbnNlEkMKCGJvb2tpbmdzGAEgAygLMicuc3R0YX'
+    'R0dXMud29ya291dC52MS5Gb3JnZUxvdW5nZUJvb2tpbmdSCGJvb2tpbmdz');
+
+@$core.Deprecated('Use createLoungeBookingRequestDescriptor instead')
+const CreateLoungeBookingRequest$json = {
+  '1': 'CreateLoungeBookingRequest',
+  '2': [
+    {'1': 'lounge_id', '3': 1, '4': 1, '5': 9, '10': 'loungeId'},
+    {'1': 'slot_at_unix', '3': 2, '4': 1, '5': 3, '10': 'slotAtUnix'},
+  ],
+};
+
+/// Descriptor for `CreateLoungeBookingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createLoungeBookingRequestDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVMb3VuZ2VCb29raW5nUmVxdWVzdBIbCglsb3VuZ2VfaWQYASABKAlSCGxvdW5nZU'
+    'lkEiAKDHNsb3RfYXRfdW5peBgCIAEoA1IKc2xvdEF0VW5peA==');
+
+@$core.Deprecated('Use createLoungeBookingResponseDescriptor instead')
+const CreateLoungeBookingResponse$json = {
+  '1': 'CreateLoungeBookingResponse',
+  '2': [
+    {'1': 'booking', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.ForgeLoungeBooking', '10': 'booking'},
+  ],
+};
+
+/// Descriptor for `CreateLoungeBookingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createLoungeBookingResponseDescriptor = $convert.base64Decode(
+    'ChtDcmVhdGVMb3VuZ2VCb29raW5nUmVzcG9uc2USQQoHYm9va2luZxgBIAEoCzInLnN0dGF0dH'
+    'VzLndvcmtvdXQudjEuRm9yZ2VMb3VuZ2VCb29raW5nUgdib29raW5n');
+
+@$core.Deprecated('Use cancelLoungeBookingRequestDescriptor instead')
+const CancelLoungeBookingRequest$json = {
+  '1': 'CancelLoungeBookingRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `CancelLoungeBookingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cancelLoungeBookingRequestDescriptor = $convert.base64Decode(
+    'ChpDYW5jZWxMb3VuZ2VCb29raW5nUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use cancelLoungeBookingResponseDescriptor instead')
+const CancelLoungeBookingResponse$json = {
+  '1': 'CancelLoungeBookingResponse',
+};
+
+/// Descriptor for `CancelLoungeBookingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cancelLoungeBookingResponseDescriptor = $convert.base64Decode(
+    'ChtDYW5jZWxMb3VuZ2VCb29raW5nUmVzcG9uc2U=');
+
+@$core.Deprecated('Use coachDescriptor instead')
+const Coach$json = {
+  '1': 'Coach',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slug', '3': 2, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'credentials', '3': 4, '4': 1, '5': 9, '10': 'credentials'},
+    {'1': 'specialty', '3': 5, '4': 1, '5': 9, '10': 'specialty'},
+    {'1': 'bio', '3': 6, '4': 1, '5': 9, '10': 'bio'},
+    {'1': 'avatar_url', '3': 7, '4': 1, '5': 9, '10': 'avatarUrl'},
+    {'1': 'sovereign_only', '3': 8, '4': 1, '5': 8, '10': 'sovereignOnly'},
+  ],
+};
+
+/// Descriptor for `Coach`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List coachDescriptor = $convert.base64Decode(
+    'CgVDb2FjaBIOCgJpZBgBIAEoCVICaWQSEgoEc2x1ZxgCIAEoCVIEc2x1ZxISCgRuYW1lGAMgAS'
+    'gJUgRuYW1lEiAKC2NyZWRlbnRpYWxzGAQgASgJUgtjcmVkZW50aWFscxIcCglzcGVjaWFsdHkY'
+    'BSABKAlSCXNwZWNpYWx0eRIQCgNiaW8YBiABKAlSA2JpbxIdCgphdmF0YXJfdXJsGAcgASgJUg'
+    'lhdmF0YXJVcmwSJQoOc292ZXJlaWduX29ubHkYCCABKAhSDXNvdmVyZWlnbk9ubHk=');
+
+@$core.Deprecated('Use listCoachesRequestDescriptor instead')
+const ListCoachesRequest$json = {
+  '1': 'ListCoachesRequest',
+};
+
+/// Descriptor for `ListCoachesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listCoachesRequestDescriptor = $convert.base64Decode(
+    'ChJMaXN0Q29hY2hlc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listCoachesResponseDescriptor instead')
+const ListCoachesResponse$json = {
+  '1': 'ListCoachesResponse',
+  '2': [
+    {'1': 'coaches', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.Coach', '10': 'coaches'},
+  ],
+};
+
+/// Descriptor for `ListCoachesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listCoachesResponseDescriptor = $convert.base64Decode(
+    'ChNMaXN0Q29hY2hlc1Jlc3BvbnNlEjQKB2NvYWNoZXMYASADKAsyGi5zdHRhdHR1cy53b3Jrb3'
+    'V0LnYxLkNvYWNoUgdjb2FjaGVz');
+
+@$core.Deprecated('Use requestCoachBookingRequestDescriptor instead')
+const RequestCoachBookingRequest$json = {
+  '1': 'RequestCoachBookingRequest',
+  '2': [
+    {'1': 'coach_id', '3': 1, '4': 1, '5': 9, '10': 'coachId'},
+    {'1': 'note', '3': 2, '4': 1, '5': 9, '10': 'note'},
+  ],
+};
+
+/// Descriptor for `RequestCoachBookingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestCoachBookingRequestDescriptor = $convert.base64Decode(
+    'ChpSZXF1ZXN0Q29hY2hCb29raW5nUmVxdWVzdBIZCghjb2FjaF9pZBgBIAEoCVIHY29hY2hJZB'
+    'ISCgRub3RlGAIgASgJUgRub3Rl');
+
+@$core.Deprecated('Use requestCoachBookingResponseDescriptor instead')
+const RequestCoachBookingResponse$json = {
+  '1': 'RequestCoachBookingResponse',
+  '2': [
+    {'1': 'request_id', '3': 1, '4': 1, '5': 9, '10': 'requestId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `RequestCoachBookingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestCoachBookingResponseDescriptor = $convert.base64Decode(
+    'ChtSZXF1ZXN0Q29hY2hCb29raW5nUmVzcG9uc2USHQoKcmVxdWVzdF9pZBgBIAEoCVIJcmVxdW'
+    'VzdElkEhYKBnN0YXR1cxgCIAEoCVIGc3RhdHVz');
+
+@$core.Deprecated('Use generateForgeAlmanacRequestDescriptor instead')
+const GenerateForgeAlmanacRequest$json = {
+  '1': 'GenerateForgeAlmanacRequest',
+  '2': [
+    {'1': 'year', '3': 1, '4': 1, '5': 5, '10': 'year'},
+  ],
+};
+
+/// Descriptor for `GenerateForgeAlmanacRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateForgeAlmanacRequestDescriptor = $convert.base64Decode(
+    'ChtHZW5lcmF0ZUZvcmdlQWxtYW5hY1JlcXVlc3QSEgoEeWVhchgBIAEoBVIEeWVhcg==');
+
+@$core.Deprecated('Use generateForgeAlmanacResponseDescriptor instead')
+const GenerateForgeAlmanacResponse$json = {
+  '1': 'GenerateForgeAlmanacResponse',
+  '2': [
+    {'1': 'media_asset_id', '3': 1, '4': 1, '5': 9, '10': 'mediaAssetId'},
+    {'1': 'url', '3': 2, '4': 1, '5': 9, '10': 'url'},
+    {'1': 'page_count', '3': 3, '4': 1, '5': 5, '10': 'pageCount'},
+  ],
+};
+
+/// Descriptor for `GenerateForgeAlmanacResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateForgeAlmanacResponseDescriptor = $convert.base64Decode(
+    'ChxHZW5lcmF0ZUZvcmdlQWxtYW5hY1Jlc3BvbnNlEiQKDm1lZGlhX2Fzc2V0X2lkGAEgASgJUg'
+    'xtZWRpYUFzc2V0SWQSEAoDdXJsGAIgASgJUgN1cmwSHQoKcGFnZV9jb3VudBgDIAEoBVIJcGFn'
+    'ZUNvdW50');
+
+@$core.Deprecated('Use analyzeFormVideoRequestDescriptor instead')
+const AnalyzeFormVideoRequest$json = {
+  '1': 'AnalyzeFormVideoRequest',
+  '2': [
+    {'1': 'form_video_id', '3': 1, '4': 1, '5': 9, '10': 'formVideoId'},
+  ],
+};
+
+/// Descriptor for `AnalyzeFormVideoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List analyzeFormVideoRequestDescriptor = $convert.base64Decode(
+    'ChdBbmFseXplRm9ybVZpZGVvUmVxdWVzdBIiCg1mb3JtX3ZpZGVvX2lkGAEgASgJUgtmb3JtVm'
+    'lkZW9JZA==');
+
+@$core.Deprecated('Use analyzeFormVideoResponseDescriptor instead')
+const AnalyzeFormVideoResponse$json = {
+  '1': 'AnalyzeFormVideoResponse',
+  '2': [
+    {'1': 'cue', '3': 1, '4': 1, '5': 9, '10': 'cue'},
+    {'1': 'verdict', '3': 2, '4': 1, '5': 9, '10': 'verdict'},
+    {'1': 'confidence', '3': 3, '4': 1, '5': 5, '10': 'confidence'},
+  ],
+};
+
+/// Descriptor for `AnalyzeFormVideoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List analyzeFormVideoResponseDescriptor = $convert.base64Decode(
+    'ChhBbmFseXplRm9ybVZpZGVvUmVzcG9uc2USEAoDY3VlGAEgASgJUgNjdWUSGAoHdmVyZGljdB'
+    'gCIAEoCVIHdmVyZGljdBIeCgpjb25maWRlbmNlGAMgASgFUgpjb25maWRlbmNl');
+
+@$core.Deprecated('Use athleteShareDescriptor instead')
+const AthleteShare$json = {
+  '1': 'AthleteShare',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'token', '3': 2, '4': 1, '5': 9, '10': 'token'},
+    {'1': 'url', '3': 3, '4': 1, '5': 9, '10': 'url'},
+    {'1': 'created_at_unix', '3': 4, '4': 1, '5': 3, '10': 'createdAtUnix'},
+    {'1': 'expires_at_unix', '3': 5, '4': 1, '5': 3, '10': 'expiresAtUnix'},
+    {'1': 'revoked', '3': 6, '4': 1, '5': 8, '10': 'revoked'},
+  ],
+};
+
+/// Descriptor for `AthleteShare`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List athleteShareDescriptor = $convert.base64Decode(
+    'CgxBdGhsZXRlU2hhcmUSDgoCaWQYASABKAlSAmlkEhQKBXRva2VuGAIgASgJUgV0b2tlbhIQCg'
+    'N1cmwYAyABKAlSA3VybBImCg9jcmVhdGVkX2F0X3VuaXgYBCABKANSDWNyZWF0ZWRBdFVuaXgS'
+    'JgoPZXhwaXJlc19hdF91bml4GAUgASgDUg1leHBpcmVzQXRVbml4EhgKB3Jldm9rZWQYBiABKA'
+    'hSB3Jldm9rZWQ=');
+
+@$core.Deprecated('Use createAthleteShareRequestDescriptor instead')
+const CreateAthleteShareRequest$json = {
+  '1': 'CreateAthleteShareRequest',
+  '2': [
+    {'1': 'ttl_days', '3': 1, '4': 1, '5': 5, '10': 'ttlDays'},
+  ],
+};
+
+/// Descriptor for `CreateAthleteShareRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createAthleteShareRequestDescriptor = $convert.base64Decode(
+    'ChlDcmVhdGVBdGhsZXRlU2hhcmVSZXF1ZXN0EhkKCHR0bF9kYXlzGAEgASgFUgd0dGxEYXlz');
+
+@$core.Deprecated('Use createAthleteShareResponseDescriptor instead')
+const CreateAthleteShareResponse$json = {
+  '1': 'CreateAthleteShareResponse',
+  '2': [
+    {'1': 'share', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.AthleteShare', '10': 'share'},
+  ],
+};
+
+/// Descriptor for `CreateAthleteShareResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createAthleteShareResponseDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVBdGhsZXRlU2hhcmVSZXNwb25zZRI3CgVzaGFyZRgBIAEoCzIhLnN0dGF0dHVzLn'
+    'dvcmtvdXQudjEuQXRobGV0ZVNoYXJlUgVzaGFyZQ==');
+
+@$core.Deprecated('Use listMyAthleteSharesRequestDescriptor instead')
+const ListMyAthleteSharesRequest$json = {
+  '1': 'ListMyAthleteSharesRequest',
+};
+
+/// Descriptor for `ListMyAthleteSharesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyAthleteSharesRequestDescriptor = $convert.base64Decode(
+    'ChpMaXN0TXlBdGhsZXRlU2hhcmVzUmVxdWVzdA==');
+
+@$core.Deprecated('Use listMyAthleteSharesResponseDescriptor instead')
+const ListMyAthleteSharesResponse$json = {
+  '1': 'ListMyAthleteSharesResponse',
+  '2': [
+    {'1': 'shares', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.AthleteShare', '10': 'shares'},
+  ],
+};
+
+/// Descriptor for `ListMyAthleteSharesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyAthleteSharesResponseDescriptor = $convert.base64Decode(
+    'ChtMaXN0TXlBdGhsZXRlU2hhcmVzUmVzcG9uc2USOQoGc2hhcmVzGAEgAygLMiEuc3R0YXR0dX'
+    'Mud29ya291dC52MS5BdGhsZXRlU2hhcmVSBnNoYXJlcw==');
+
+@$core.Deprecated('Use revokeAthleteShareRequestDescriptor instead')
+const RevokeAthleteShareRequest$json = {
+  '1': 'RevokeAthleteShareRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `RevokeAthleteShareRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeAthleteShareRequestDescriptor = $convert.base64Decode(
+    'ChlSZXZva2VBdGhsZXRlU2hhcmVSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
+
+@$core.Deprecated('Use revokeAthleteShareResponseDescriptor instead')
+const RevokeAthleteShareResponse$json = {
+  '1': 'RevokeAthleteShareResponse',
+};
+
+/// Descriptor for `RevokeAthleteShareResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeAthleteShareResponseDescriptor = $convert.base64Decode(
+    'ChpSZXZva2VBdGhsZXRlU2hhcmVSZXNwb25zZQ==');
+
+@$core.Deprecated('Use coachThreadDescriptor instead')
+const CoachThread$json = {
+  '1': 'CoachThread',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'subject', '3': 2, '4': 1, '5': 9, '10': 'subject'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'sla_due_at_unix', '3': 4, '4': 1, '5': 3, '10': 'slaDueAtUnix'},
+    {'1': 'created_at_unix', '3': 5, '4': 1, '5': 3, '10': 'createdAtUnix'},
+    {'1': 'updated_at_unix', '3': 6, '4': 1, '5': 3, '10': 'updatedAtUnix'},
+  ],
+};
+
+/// Descriptor for `CoachThread`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List coachThreadDescriptor = $convert.base64Decode(
+    'CgtDb2FjaFRocmVhZBIOCgJpZBgBIAEoCVICaWQSGAoHc3ViamVjdBgCIAEoCVIHc3ViamVjdB'
+    'IWCgZzdGF0dXMYAyABKAlSBnN0YXR1cxIlCg9zbGFfZHVlX2F0X3VuaXgYBCABKANSDHNsYUR1'
+    'ZUF0VW5peBImCg9jcmVhdGVkX2F0X3VuaXgYBSABKANSDWNyZWF0ZWRBdFVuaXgSJgoPdXBkYX'
+    'RlZF9hdF91bml4GAYgASgDUg11cGRhdGVkQXRVbml4');
+
+@$core.Deprecated('Use coachMessageDescriptor instead')
+const CoachMessage$json = {
+  '1': 'CoachMessage',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'sender_role', '3': 2, '4': 1, '5': 9, '10': 'senderRole'},
+    {'1': 'body', '3': 3, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'created_at_unix', '3': 4, '4': 1, '5': 3, '10': 'createdAtUnix'},
+  ],
+};
+
+/// Descriptor for `CoachMessage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List coachMessageDescriptor = $convert.base64Decode(
+    'CgxDb2FjaE1lc3NhZ2USDgoCaWQYASABKAlSAmlkEh8KC3NlbmRlcl9yb2xlGAIgASgJUgpzZW'
+    '5kZXJSb2xlEhIKBGJvZHkYAyABKAlSBGJvZHkSJgoPY3JlYXRlZF9hdF91bml4GAQgASgDUg1j'
+    'cmVhdGVkQXRVbml4');
+
+@$core.Deprecated('Use startCoachThreadRequestDescriptor instead')
+const StartCoachThreadRequest$json = {
+  '1': 'StartCoachThreadRequest',
+  '2': [
+    {'1': 'subject', '3': 1, '4': 1, '5': 9, '10': 'subject'},
+    {'1': 'opening_message', '3': 2, '4': 1, '5': 9, '10': 'openingMessage'},
+  ],
+};
+
+/// Descriptor for `StartCoachThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startCoachThreadRequestDescriptor = $convert.base64Decode(
+    'ChdTdGFydENvYWNoVGhyZWFkUmVxdWVzdBIYCgdzdWJqZWN0GAEgASgJUgdzdWJqZWN0EicKD2'
+    '9wZW5pbmdfbWVzc2FnZRgCIAEoCVIOb3BlbmluZ01lc3NhZ2U=');
+
+@$core.Deprecated('Use startCoachThreadResponseDescriptor instead')
+const StartCoachThreadResponse$json = {
+  '1': 'StartCoachThreadResponse',
+  '2': [
+    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.CoachThread', '10': 'thread'},
+  ],
+};
+
+/// Descriptor for `StartCoachThreadResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startCoachThreadResponseDescriptor = $convert.base64Decode(
+    'ChhTdGFydENvYWNoVGhyZWFkUmVzcG9uc2USOAoGdGhyZWFkGAEgASgLMiAuc3R0YXR0dXMud2'
+    '9ya291dC52MS5Db2FjaFRocmVhZFIGdGhyZWFk');
+
+@$core.Deprecated('Use listMyCoachThreadsRequestDescriptor instead')
+const ListMyCoachThreadsRequest$json = {
+  '1': 'ListMyCoachThreadsRequest',
+};
+
+/// Descriptor for `ListMyCoachThreadsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyCoachThreadsRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0TXlDb2FjaFRocmVhZHNSZXF1ZXN0');
+
+@$core.Deprecated('Use listMyCoachThreadsResponseDescriptor instead')
+const ListMyCoachThreadsResponse$json = {
+  '1': 'ListMyCoachThreadsResponse',
+  '2': [
+    {'1': 'threads', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.CoachThread', '10': 'threads'},
+  ],
+};
+
+/// Descriptor for `ListMyCoachThreadsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyCoachThreadsResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0TXlDb2FjaFRocmVhZHNSZXNwb25zZRI6Cgd0aHJlYWRzGAEgAygLMiAuc3R0YXR0dX'
+    'Mud29ya291dC52MS5Db2FjaFRocmVhZFIHdGhyZWFkcw==');
+
+@$core.Deprecated('Use getCoachThreadRequestDescriptor instead')
+const GetCoachThreadRequest$json = {
+  '1': 'GetCoachThreadRequest',
+  '2': [
+    {'1': 'thread_id', '3': 1, '4': 1, '5': 9, '10': 'threadId'},
+  ],
+};
+
+/// Descriptor for `GetCoachThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCoachThreadRequestDescriptor = $convert.base64Decode(
+    'ChVHZXRDb2FjaFRocmVhZFJlcXVlc3QSGwoJdGhyZWFkX2lkGAEgASgJUgh0aHJlYWRJZA==');
+
+@$core.Deprecated('Use getCoachThreadResponseDescriptor instead')
+const GetCoachThreadResponse$json = {
+  '1': 'GetCoachThreadResponse',
+  '2': [
+    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.CoachThread', '10': 'thread'},
+    {'1': 'messages', '3': 2, '4': 3, '5': 11, '6': '.sttattus.workout.v1.CoachMessage', '10': 'messages'},
+  ],
+};
+
+/// Descriptor for `GetCoachThreadResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCoachThreadResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRDb2FjaFRocmVhZFJlc3BvbnNlEjgKBnRocmVhZBgBIAEoCzIgLnN0dGF0dHVzLndvcm'
+    'tvdXQudjEuQ29hY2hUaHJlYWRSBnRocmVhZBI9CghtZXNzYWdlcxgCIAMoCzIhLnN0dGF0dHVz'
+    'LndvcmtvdXQudjEuQ29hY2hNZXNzYWdlUghtZXNzYWdlcw==');
+
+@$core.Deprecated('Use postCoachMessageRequestDescriptor instead')
+const PostCoachMessageRequest$json = {
+  '1': 'PostCoachMessageRequest',
+  '2': [
+    {'1': 'thread_id', '3': 1, '4': 1, '5': 9, '10': 'threadId'},
+    {'1': 'body', '3': 2, '4': 1, '5': 9, '10': 'body'},
+  ],
+};
+
+/// Descriptor for `PostCoachMessageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List postCoachMessageRequestDescriptor = $convert.base64Decode(
+    'ChdQb3N0Q29hY2hNZXNzYWdlUmVxdWVzdBIbCgl0aHJlYWRfaWQYASABKAlSCHRocmVhZElkEh'
+    'IKBGJvZHkYAiABKAlSBGJvZHk=');
+
+@$core.Deprecated('Use postCoachMessageResponseDescriptor instead')
+const PostCoachMessageResponse$json = {
+  '1': 'PostCoachMessageResponse',
+  '2': [
+    {'1': 'message', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.CoachMessage', '10': 'message'},
+  ],
+};
+
+/// Descriptor for `PostCoachMessageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List postCoachMessageResponseDescriptor = $convert.base64Decode(
+    'ChhQb3N0Q29hY2hNZXNzYWdlUmVzcG9uc2USOwoHbWVzc2FnZRgBIAEoCzIhLnN0dGF0dHVzLn'
+    'dvcmtvdXQudjEuQ29hY2hNZXNzYWdlUgdtZXNzYWdl');
+
+@$core.Deprecated('Use anthologyArticleDescriptor instead')
+const AnthologyArticle$json = {
+  '1': 'AnthologyArticle',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slug', '3': 2, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'author_name', '3': 3, '4': 1, '5': 9, '10': 'authorName'},
+    {'1': 'author_credentials', '3': 4, '4': 1, '5': 9, '10': 'authorCredentials'},
+    {'1': 'title', '3': 5, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'dek', '3': 6, '4': 1, '5': 9, '10': 'dek'},
+    {'1': 'body', '3': 7, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'hero_url', '3': 8, '4': 1, '5': 9, '10': 'heroUrl'},
+    {'1': 'published_at_unix', '3': 9, '4': 1, '5': 3, '10': 'publishedAtUnix'},
+    {'1': 'sovereign_only', '3': 10, '4': 1, '5': 8, '10': 'sovereignOnly'},
+  ],
+};
+
+/// Descriptor for `AnthologyArticle`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List anthologyArticleDescriptor = $convert.base64Decode(
+    'ChBBbnRob2xvZ3lBcnRpY2xlEg4KAmlkGAEgASgJUgJpZBISCgRzbHVnGAIgASgJUgRzbHVnEh'
+    '8KC2F1dGhvcl9uYW1lGAMgASgJUgphdXRob3JOYW1lEi0KEmF1dGhvcl9jcmVkZW50aWFscxgE'
+    'IAEoCVIRYXV0aG9yQ3JlZGVudGlhbHMSFAoFdGl0bGUYBSABKAlSBXRpdGxlEhAKA2RlaxgGIA'
+    'EoCVIDZGVrEhIKBGJvZHkYByABKAlSBGJvZHkSGQoIaGVyb191cmwYCCABKAlSB2hlcm9VcmwS'
+    'KgoRcHVibGlzaGVkX2F0X3VuaXgYCSABKANSD3B1Ymxpc2hlZEF0VW5peBIlCg5zb3ZlcmVpZ2'
+    '5fb25seRgKIAEoCFINc292ZXJlaWduT25seQ==');
+
+@$core.Deprecated('Use listAnthologyArticlesRequestDescriptor instead')
+const ListAnthologyArticlesRequest$json = {
+  '1': 'ListAnthologyArticlesRequest',
+  '2': [
+    {'1': 'include_sovereign', '3': 1, '4': 1, '5': 8, '10': 'includeSovereign'},
+  ],
+};
+
+/// Descriptor for `ListAnthologyArticlesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAnthologyArticlesRequestDescriptor = $convert.base64Decode(
+    'ChxMaXN0QW50aG9sb2d5QXJ0aWNsZXNSZXF1ZXN0EisKEWluY2x1ZGVfc292ZXJlaWduGAEgAS'
+    'gIUhBpbmNsdWRlU292ZXJlaWdu');
+
+@$core.Deprecated('Use listAnthologyArticlesResponseDescriptor instead')
+const ListAnthologyArticlesResponse$json = {
+  '1': 'ListAnthologyArticlesResponse',
+  '2': [
+    {'1': 'articles', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.AnthologyArticle', '10': 'articles'},
+  ],
+};
+
+/// Descriptor for `ListAnthologyArticlesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAnthologyArticlesResponseDescriptor = $convert.base64Decode(
+    'Ch1MaXN0QW50aG9sb2d5QXJ0aWNsZXNSZXNwb25zZRJBCghhcnRpY2xlcxgBIAMoCzIlLnN0dG'
+    'F0dHVzLndvcmtvdXQudjEuQW50aG9sb2d5QXJ0aWNsZVIIYXJ0aWNsZXM=');
+
+@$core.Deprecated('Use getAnthologyArticleRequestDescriptor instead')
+const GetAnthologyArticleRequest$json = {
+  '1': 'GetAnthologyArticleRequest',
+  '2': [
+    {'1': 'slug', '3': 1, '4': 1, '5': 9, '10': 'slug'},
+  ],
+};
+
+/// Descriptor for `GetAnthologyArticleRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAnthologyArticleRequestDescriptor = $convert.base64Decode(
+    'ChpHZXRBbnRob2xvZ3lBcnRpY2xlUmVxdWVzdBISCgRzbHVnGAEgASgJUgRzbHVn');
+
+@$core.Deprecated('Use getAnthologyArticleResponseDescriptor instead')
+const GetAnthologyArticleResponse$json = {
+  '1': 'GetAnthologyArticleResponse',
+  '2': [
+    {'1': 'article', '3': 1, '4': 1, '5': 11, '6': '.sttattus.workout.v1.AnthologyArticle', '10': 'article'},
+  ],
+};
+
+/// Descriptor for `GetAnthologyArticleResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAnthologyArticleResponseDescriptor = $convert.base64Decode(
+    'ChtHZXRBbnRob2xvZ3lBcnRpY2xlUmVzcG9uc2USPwoHYXJ0aWNsZRgBIAEoCzIlLnN0dGF0dH'
+    'VzLndvcmtvdXQudjEuQW50aG9sb2d5QXJ0aWNsZVIHYXJ0aWNsZQ==');
+
+@$core.Deprecated('Use simulateForgeRankRequestDescriptor instead')
+const SimulateForgeRankRequest$json = {
+  '1': 'SimulateForgeRankRequest',
+  '2': [
+    {'1': 'series', '3': 1, '4': 3, '5': 11, '6': '.sttattus.workout.v1.Series', '10': 'series'},
+    {'1': 'strain', '3': 2, '4': 1, '5': 11, '6': '.sttattus.workout.v1.StrainMetrics', '10': 'strain'},
+    {'1': 'is_verified', '3': 3, '4': 1, '5': 8, '10': 'isVerified'},
+  ],
+};
+
+/// Descriptor for `SimulateForgeRankRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List simulateForgeRankRequestDescriptor = $convert.base64Decode(
+    'ChhTaW11bGF0ZUZvcmdlUmFua1JlcXVlc3QSMwoGc2VyaWVzGAEgAygLMhsuc3R0YXR0dXMud2'
+    '9ya291dC52MS5TZXJpZXNSBnNlcmllcxI6CgZzdHJhaW4YAiABKAsyIi5zdHRhdHR1cy53b3Jr'
+    'b3V0LnYxLlN0cmFpbk1ldHJpY3NSBnN0cmFpbhIfCgtpc192ZXJpZmllZBgDIAEoCFIKaXNWZX'
+    'JpZmllZA==');
+
+@$core.Deprecated('Use simulateForgeRankResponseDescriptor instead')
+const SimulateForgeRankResponse$json = {
+  '1': 'SimulateForgeRankResponse',
+  '2': [
+    {'1': 'current_forge_rank', '3': 1, '4': 1, '5': 1, '10': 'currentForgeRank'},
+    {'1': 'current_rank_label', '3': 2, '4': 1, '5': 9, '10': 'currentRankLabel'},
+    {'1': 'projected_forge_rank', '3': 3, '4': 1, '5': 1, '10': 'projectedForgeRank'},
+    {'1': 'projected_rank_label', '3': 4, '4': 1, '5': 9, '10': 'projectedRankLabel'},
+    {'1': 'forge_rank_delta', '3': 5, '4': 1, '5': 1, '10': 'forgeRankDelta'},
+    {'1': 'experience_delta', '3': 6, '4': 1, '5': 3, '10': 'experienceDelta'},
+    {'1': 'power_delta', '3': 7, '4': 1, '5': 5, '10': 'powerDelta'},
+    {'1': 'agility_delta', '3': 8, '4': 1, '5': 5, '10': 'agilityDelta'},
+    {'1': 'grit_delta', '3': 9, '4': 1, '5': 5, '10': 'gritDelta'},
+    {'1': 'crosses_band', '3': 10, '4': 1, '5': 8, '10': 'crossesBand'},
+  ],
+};
+
+/// Descriptor for `SimulateForgeRankResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List simulateForgeRankResponseDescriptor = $convert.base64Decode(
+    'ChlTaW11bGF0ZUZvcmdlUmFua1Jlc3BvbnNlEiwKEmN1cnJlbnRfZm9yZ2VfcmFuaxgBIAEoAV'
+    'IQY3VycmVudEZvcmdlUmFuaxIsChJjdXJyZW50X3JhbmtfbGFiZWwYAiABKAlSEGN1cnJlbnRS'
+    'YW5rTGFiZWwSMAoUcHJvamVjdGVkX2ZvcmdlX3JhbmsYAyABKAFSEnByb2plY3RlZEZvcmdlUm'
+    'FuaxIwChRwcm9qZWN0ZWRfcmFua19sYWJlbBgEIAEoCVIScHJvamVjdGVkUmFua0xhYmVsEigK'
+    'EGZvcmdlX3JhbmtfZGVsdGEYBSABKAFSDmZvcmdlUmFua0RlbHRhEikKEGV4cGVyaWVuY2VfZG'
+    'VsdGEYBiABKANSD2V4cGVyaWVuY2VEZWx0YRIfCgtwb3dlcl9kZWx0YRgHIAEoBVIKcG93ZXJE'
+    'ZWx0YRIjCg1hZ2lsaXR5X2RlbHRhGAggASgFUgxhZ2lsaXR5RGVsdGESHQoKZ3JpdF9kZWx0YR'
+    'gJIAEoBVIJZ3JpdERlbHRhEiEKDGNyb3NzZXNfYmFuZBgKIAEoCFILY3Jvc3Nlc0JhbmQ=');
+
+@$core.Deprecated('Use getRecoveryScoreRequestDescriptor instead')
+const GetRecoveryScoreRequest$json = {
+  '1': 'GetRecoveryScoreRequest',
+};
+
+/// Descriptor for `GetRecoveryScoreRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRecoveryScoreRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRSZWNvdmVyeVNjb3JlUmVxdWVzdA==');
+
+@$core.Deprecated('Use getRecoveryScoreResponseDescriptor instead')
+const GetRecoveryScoreResponse$json = {
+  '1': 'GetRecoveryScoreResponse',
+  '2': [
+    {'1': 'score', '3': 1, '4': 1, '5': 5, '10': 'score'},
+    {'1': 'verdict', '3': 2, '4': 1, '5': 9, '10': 'verdict'},
+    {'1': 'basis', '3': 3, '4': 1, '5': 9, '10': 'basis'},
+    {'1': 'recommendation', '3': 4, '4': 1, '5': 9, '10': 'recommendation'},
+    {'1': 'load_component', '3': 5, '4': 1, '5': 5, '10': 'loadComponent'},
+    {'1': 'streak_component', '3': 6, '4': 1, '5': 5, '10': 'streakComponent'},
+    {'1': 'apex_component', '3': 7, '4': 1, '5': 5, '10': 'apexComponent'},
+    {'1': 'apex_linked', '3': 8, '4': 1, '5': 8, '10': 'apexLinked'},
+  ],
+};
+
+/// Descriptor for `GetRecoveryScoreResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRecoveryScoreResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRSZWNvdmVyeVNjb3JlUmVzcG9uc2USFAoFc2NvcmUYASABKAVSBXNjb3JlEhgKB3Zlcm'
+    'RpY3QYAiABKAlSB3ZlcmRpY3QSFAoFYmFzaXMYAyABKAlSBWJhc2lzEiYKDnJlY29tbWVuZGF0'
+    'aW9uGAQgASgJUg5yZWNvbW1lbmRhdGlvbhIlCg5sb2FkX2NvbXBvbmVudBgFIAEoBVINbG9hZE'
+    'NvbXBvbmVudBIpChBzdHJlYWtfY29tcG9uZW50GAYgASgFUg9zdHJlYWtDb21wb25lbnQSJQoO'
+    'YXBleF9jb21wb25lbnQYByABKAVSDWFwZXhDb21wb25lbnQSHwoLYXBleF9saW5rZWQYCCABKA'
+    'hSCmFwZXhMaW5rZWQ=');
 

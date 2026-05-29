@@ -2518,6 +2518,462 @@ func (*SetMilestoneVisibilityResponse) Descriptor() ([]byte, []int) {
 	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{42}
 }
 
+type GetPassportSurfaceRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPassportSurfaceRequest) Reset() {
+	*x = GetPassportSurfaceRequest{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[43]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPassportSurfaceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPassportSurfaceRequest) ProtoMessage() {}
+
+func (x *GetPassportSurfaceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[43]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPassportSurfaceRequest.ProtoReflect.Descriptor instead.
+func (*GetPassportSurfaceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{43}
+}
+
+type GetPassportSurfaceResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Countries     []*VisitedCountry      `protobuf:"bytes,1,rep,name=countries,proto3" json:"countries,omitempty"`
+	AllSignals    []*VerificationSignals `protobuf:"bytes,2,rep,name=all_signals,json=allSignals,proto3" json:"all_signals,omitempty"`
+	TotalStamps   int32                  `protobuf:"varint,3,opt,name=total_stamps,json=totalStamps,proto3" json:"total_stamps,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPassportSurfaceResponse) Reset() {
+	*x = GetPassportSurfaceResponse{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[44]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPassportSurfaceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPassportSurfaceResponse) ProtoMessage() {}
+
+func (x *GetPassportSurfaceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[44]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPassportSurfaceResponse.ProtoReflect.Descriptor instead.
+func (*GetPassportSurfaceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{44}
+}
+
+func (x *GetPassportSurfaceResponse) GetCountries() []*VisitedCountry {
+	if x != nil {
+		return x.Countries
+	}
+	return nil
+}
+
+func (x *GetPassportSurfaceResponse) GetAllSignals() []*VerificationSignals {
+	if x != nil {
+		return x.AllSignals
+	}
+	return nil
+}
+
+func (x *GetPassportSurfaceResponse) GetTotalStamps() int32 {
+	if x != nil {
+		return x.TotalStamps
+	}
+	return 0
+}
+
+type LoungeDetail struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	City                string                 `protobuf:"bytes,3,opt,name=city,proto3" json:"city,omitempty"`
+	LocationDescription string                 `protobuf:"bytes,4,opt,name=location_description,json=locationDescription,proto3" json:"location_description,omitempty"`
+	LiveCapacityStatus  string                 `protobuf:"bytes,5,opt,name=live_capacity_status,json=liveCapacityStatus,proto3" json:"live_capacity_status,omitempty"` // e.g. 'Quiet', 'Busy'
+	Amenities           []string               `protobuf:"bytes,6,rep,name=amenities,proto3" json:"amenities,omitempty"`
+	CurrentMenuUrl      string                 `protobuf:"bytes,7,opt,name=current_menu_url,json=currentMenuUrl,proto3" json:"current_menu_url,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *LoungeDetail) Reset() {
+	*x = LoungeDetail{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[45]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LoungeDetail) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LoungeDetail) ProtoMessage() {}
+
+func (x *LoungeDetail) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[45]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LoungeDetail.ProtoReflect.Descriptor instead.
+func (*LoungeDetail) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{45}
+}
+
+func (x *LoungeDetail) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LoungeDetail) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *LoungeDetail) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *LoungeDetail) GetLocationDescription() string {
+	if x != nil {
+		return x.LocationDescription
+	}
+	return ""
+}
+
+func (x *LoungeDetail) GetLiveCapacityStatus() string {
+	if x != nil {
+		return x.LiveCapacityStatus
+	}
+	return ""
+}
+
+func (x *LoungeDetail) GetAmenities() []string {
+	if x != nil {
+		return x.Amenities
+	}
+	return nil
+}
+
+func (x *LoungeDetail) GetCurrentMenuUrl() string {
+	if x != nil {
+		return x.CurrentMenuUrl
+	}
+	return ""
+}
+
+type GetLoungeConciergeRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Latitude      float64                `protobuf:"fixed64,1,opt,name=latitude,proto3" json:"latitude,omitempty"`
+	Longitude     float64                `protobuf:"fixed64,2,opt,name=longitude,proto3" json:"longitude,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLoungeConciergeRequest) Reset() {
+	*x = GetLoungeConciergeRequest{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[46]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLoungeConciergeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLoungeConciergeRequest) ProtoMessage() {}
+
+func (x *GetLoungeConciergeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[46]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLoungeConciergeRequest.ProtoReflect.Descriptor instead.
+func (*GetLoungeConciergeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{46}
+}
+
+func (x *GetLoungeConciergeRequest) GetLatitude() float64 {
+	if x != nil {
+		return x.Latitude
+	}
+	return 0
+}
+
+func (x *GetLoungeConciergeRequest) GetLongitude() float64 {
+	if x != nil {
+		return x.Longitude
+	}
+	return 0
+}
+
+type GetLoungeConciergeResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	NearestLounge *LoungeDetail          `protobuf:"bytes,1,opt,name=nearest_lounge,json=nearestLounge,proto3" json:"nearest_lounge,omitempty"`
+	OtherLounges  []*LoungeDetail        `protobuf:"bytes,2,rep,name=other_lounges,json=otherLounges,proto3" json:"other_lounges,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLoungeConciergeResponse) Reset() {
+	*x = GetLoungeConciergeResponse{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[47]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLoungeConciergeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLoungeConciergeResponse) ProtoMessage() {}
+
+func (x *GetLoungeConciergeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[47]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLoungeConciergeResponse.ProtoReflect.Descriptor instead.
+func (*GetLoungeConciergeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{47}
+}
+
+func (x *GetLoungeConciergeResponse) GetNearestLounge() *LoungeDetail {
+	if x != nil {
+		return x.NearestLounge
+	}
+	return nil
+}
+
+func (x *GetLoungeConciergeResponse) GetOtherLounges() []*LoungeDetail {
+	if x != nil {
+		return x.OtherLounges
+	}
+	return nil
+}
+
+type TripArchiveEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Trip          *Trip                  `protobuf:"bytes,1,opt,name=trip,proto3" json:"trip,omitempty"`
+	AvgHrv        float64                `protobuf:"fixed64,2,opt,name=avg_hrv,json=avgHrv,proto3" json:"avg_hrv,omitempty"`                     // from Apex
+	TotalWorkouts int32                  `protobuf:"varint,3,opt,name=total_workouts,json=totalWorkouts,proto3" json:"total_workouts,omitempty"` // from Forge
+	TotalSpend    float64                `protobuf:"fixed64,4,opt,name=total_spend,json=totalSpend,proto3" json:"total_spend,omitempty"`         // from Vault
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TripArchiveEntry) Reset() {
+	*x = TripArchiveEntry{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[48]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TripArchiveEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TripArchiveEntry) ProtoMessage() {}
+
+func (x *TripArchiveEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[48]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TripArchiveEntry.ProtoReflect.Descriptor instead.
+func (*TripArchiveEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{48}
+}
+
+func (x *TripArchiveEntry) GetTrip() *Trip {
+	if x != nil {
+		return x.Trip
+	}
+	return nil
+}
+
+func (x *TripArchiveEntry) GetAvgHrv() float64 {
+	if x != nil {
+		return x.AvgHrv
+	}
+	return 0
+}
+
+func (x *TripArchiveEntry) GetTotalWorkouts() int32 {
+	if x != nil {
+		return x.TotalWorkouts
+	}
+	return 0
+}
+
+func (x *TripArchiveEntry) GetTotalSpend() float64 {
+	if x != nil {
+		return x.TotalSpend
+	}
+	return 0
+}
+
+type GetTripArchiveRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Page          *v1.PageRequest        `protobuf:"bytes,1,opt,name=page,proto3" json:"page,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTripArchiveRequest) Reset() {
+	*x = GetTripArchiveRequest{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[49]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTripArchiveRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTripArchiveRequest) ProtoMessage() {}
+
+func (x *GetTripArchiveRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[49]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTripArchiveRequest.ProtoReflect.Descriptor instead.
+func (*GetTripArchiveRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{49}
+}
+
+func (x *GetTripArchiveRequest) GetPage() *v1.PageRequest {
+	if x != nil {
+		return x.Page
+	}
+	return nil
+}
+
+type GetTripArchiveResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Entries       []*TripArchiveEntry    `protobuf:"bytes,1,rep,name=entries,proto3" json:"entries,omitempty"`
+	Page          *v1.PageResponse       `protobuf:"bytes,2,opt,name=page,proto3" json:"page,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTripArchiveResponse) Reset() {
+	*x = GetTripArchiveResponse{}
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[50]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTripArchiveResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTripArchiveResponse) ProtoMessage() {}
+
+func (x *GetTripArchiveResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_travel_v1_travel_proto_msgTypes[50]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTripArchiveResponse.ProtoReflect.Descriptor instead.
+func (*GetTripArchiveResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_travel_v1_travel_proto_rawDescGZIP(), []int{50}
+}
+
+func (x *GetTripArchiveResponse) GetEntries() []*TripArchiveEntry {
+	if x != nil {
+		return x.Entries
+	}
+	return nil
+}
+
+func (x *GetTripArchiveResponse) GetPage() *v1.PageResponse {
+	if x != nil {
+		return x.Page
+	}
+	return nil
+}
+
 var File_sttattus_travel_v1_travel_proto protoreflect.FileDescriptor
 
 const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
@@ -2705,14 +3161,45 @@ const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	"\fmilestone_id\x18\x01 \x01(\tR\vmilestoneId\x12)\n" +
 	"\x10visit_visibility\x18\x02 \x01(\tR\x0fvisitVisibility\x12)\n" +
 	"\x10photo_visibility\x18\x03 \x01(\tR\x0fphotoVisibility\" \n" +
-	"\x1eSetMilestoneVisibilityResponse*\x93\x01\n" +
+	"\x1eSetMilestoneVisibilityResponse\"\x1b\n" +
+	"\x19GetPassportSurfaceRequest\"\xcb\x01\n" +
+	"\x1aGetPassportSurfaceResponse\x12@\n" +
+	"\tcountries\x18\x01 \x03(\v2\".sttattus.travel.v1.VisitedCountryR\tcountries\x12H\n" +
+	"\vall_signals\x18\x02 \x03(\v2'.sttattus.travel.v1.VerificationSignalsR\n" +
+	"allSignals\x12!\n" +
+	"\ftotal_stamps\x18\x03 \x01(\x05R\vtotalStamps\"\xf3\x01\n" +
+	"\fLoungeDetail\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04city\x18\x03 \x01(\tR\x04city\x121\n" +
+	"\x14location_description\x18\x04 \x01(\tR\x13locationDescription\x120\n" +
+	"\x14live_capacity_status\x18\x05 \x01(\tR\x12liveCapacityStatus\x12\x1c\n" +
+	"\tamenities\x18\x06 \x03(\tR\tamenities\x12(\n" +
+	"\x10current_menu_url\x18\a \x01(\tR\x0ecurrentMenuUrl\"U\n" +
+	"\x19GetLoungeConciergeRequest\x12\x1a\n" +
+	"\blatitude\x18\x01 \x01(\x01R\blatitude\x12\x1c\n" +
+	"\tlongitude\x18\x02 \x01(\x01R\tlongitude\"\xac\x01\n" +
+	"\x1aGetLoungeConciergeResponse\x12G\n" +
+	"\x0enearest_lounge\x18\x01 \x01(\v2 .sttattus.travel.v1.LoungeDetailR\rnearestLounge\x12E\n" +
+	"\rother_lounges\x18\x02 \x03(\v2 .sttattus.travel.v1.LoungeDetailR\fotherLounges\"\xa1\x01\n" +
+	"\x10TripArchiveEntry\x12,\n" +
+	"\x04trip\x18\x01 \x01(\v2\x18.sttattus.travel.v1.TripR\x04trip\x12\x17\n" +
+	"\aavg_hrv\x18\x02 \x01(\x01R\x06avgHrv\x12%\n" +
+	"\x0etotal_workouts\x18\x03 \x01(\x05R\rtotalWorkouts\x12\x1f\n" +
+	"\vtotal_spend\x18\x04 \x01(\x01R\n" +
+	"totalSpend\"L\n" +
+	"\x15GetTripArchiveRequest\x123\n" +
+	"\x04page\x18\x01 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"\x8e\x01\n" +
+	"\x16GetTripArchiveResponse\x12>\n" +
+	"\aentries\x18\x01 \x03(\v2$.sttattus.travel.v1.TripArchiveEntryR\aentries\x124\n" +
+	"\x04page\x18\x02 \x01(\v2 .sttattus.common.v1.PageResponseR\x04page*\x93\x01\n" +
 	"\n" +
 	"TripStatus\x12\x1b\n" +
 	"\x17TRIP_STATUS_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13TRIP_STATUS_PLANNED\x10\x01\x12\x19\n" +
 	"\x15TRIP_STATUS_IN_FLIGHT\x10\x02\x12\x19\n" +
 	"\x15TRIP_STATUS_COMPLETED\x10\x03\x12\x19\n" +
-	"\x15TRIP_STATUS_CANCELLED\x10\x042\xe1\x0e\n" +
+	"\x15TRIP_STATUS_CANCELLED\x10\x042\xb4\x11\n" +
 	"\rTravelService\x12g\n" +
 	"\x0eListMilestones\x12).sttattus.travel.v1.ListMilestonesRequest\x1a*.sttattus.travel.v1.ListMilestonesResponse\x12j\n" +
 	"\x0fCreateMilestone\x12*.sttattus.travel.v1.CreateMilestoneRequest\x1a+.sttattus.travel.v1.CreateMilestoneResponse\x12d\n" +
@@ -2733,7 +3220,10 @@ const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	"\x19ListMyVerificationSignals\x124.sttattus.travel.v1.ListMyVerificationSignalsRequest\x1a5.sttattus.travel.v1.ListMyVerificationSignalsResponse\x12|\n" +
 	"\x15ListCountryVisibility\x120.sttattus.travel.v1.ListCountryVisibilityRequest\x1a1.sttattus.travel.v1.ListCountryVisibilityResponse\x12\x82\x01\n" +
 	"\x17UpsertCountryVisibility\x122.sttattus.travel.v1.UpsertCountryVisibilityRequest\x1a3.sttattus.travel.v1.UpsertCountryVisibilityResponse\x12\x7f\n" +
-	"\x16SetMilestoneVisibility\x121.sttattus.travel.v1.SetMilestoneVisibilityRequest\x1a2.sttattus.travel.v1.SetMilestoneVisibilityResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/travel/v1;travelv1b\x06proto3"
+	"\x16SetMilestoneVisibility\x121.sttattus.travel.v1.SetMilestoneVisibilityRequest\x1a2.sttattus.travel.v1.SetMilestoneVisibilityResponse\x12s\n" +
+	"\x12GetPassportSurface\x12-.sttattus.travel.v1.GetPassportSurfaceRequest\x1a..sttattus.travel.v1.GetPassportSurfaceResponse\x12s\n" +
+	"\x12GetLoungeConcierge\x12-.sttattus.travel.v1.GetLoungeConciergeRequest\x1a..sttattus.travel.v1.GetLoungeConciergeResponse\x12g\n" +
+	"\x0eGetTripArchive\x12).sttattus.travel.v1.GetTripArchiveRequest\x1a*.sttattus.travel.v1.GetTripArchiveResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/travel/v1;travelv1b\x06proto3"
 
 var (
 	file_sttattus_travel_v1_travel_proto_rawDescOnce sync.Once
@@ -2748,7 +3238,7 @@ func file_sttattus_travel_v1_travel_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_travel_v1_travel_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_sttattus_travel_v1_travel_proto_msgTypes = make([]protoimpl.MessageInfo, 43)
+var file_sttattus_travel_v1_travel_proto_msgTypes = make([]protoimpl.MessageInfo, 51)
 var file_sttattus_travel_v1_travel_proto_goTypes = []any{
 	(TripStatus)(0),                           // 0: sttattus.travel.v1.TripStatus
 	(*NomadStats)(nil),                        // 1: sttattus.travel.v1.NomadStats
@@ -2794,23 +3284,31 @@ var file_sttattus_travel_v1_travel_proto_goTypes = []any{
 	(*UpsertCountryVisibilityResponse)(nil),   // 41: sttattus.travel.v1.UpsertCountryVisibilityResponse
 	(*SetMilestoneVisibilityRequest)(nil),     // 42: sttattus.travel.v1.SetMilestoneVisibilityRequest
 	(*SetMilestoneVisibilityResponse)(nil),    // 43: sttattus.travel.v1.SetMilestoneVisibilityResponse
-	(*timestamppb.Timestamp)(nil),             // 44: google.protobuf.Timestamp
-	(*v1.PageRequest)(nil),                    // 45: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),                   // 46: sttattus.common.v1.PageResponse
+	(*GetPassportSurfaceRequest)(nil),         // 44: sttattus.travel.v1.GetPassportSurfaceRequest
+	(*GetPassportSurfaceResponse)(nil),        // 45: sttattus.travel.v1.GetPassportSurfaceResponse
+	(*LoungeDetail)(nil),                      // 46: sttattus.travel.v1.LoungeDetail
+	(*GetLoungeConciergeRequest)(nil),         // 47: sttattus.travel.v1.GetLoungeConciergeRequest
+	(*GetLoungeConciergeResponse)(nil),        // 48: sttattus.travel.v1.GetLoungeConciergeResponse
+	(*TripArchiveEntry)(nil),                  // 49: sttattus.travel.v1.TripArchiveEntry
+	(*GetTripArchiveRequest)(nil),             // 50: sttattus.travel.v1.GetTripArchiveRequest
+	(*GetTripArchiveResponse)(nil),            // 51: sttattus.travel.v1.GetTripArchiveResponse
+	(*timestamppb.Timestamp)(nil),             // 52: google.protobuf.Timestamp
+	(*v1.PageRequest)(nil),                    // 53: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),                   // 54: sttattus.common.v1.PageResponse
 }
 var file_sttattus_travel_v1_travel_proto_depIdxs = []int32{
 	3,  // 0: sttattus.travel.v1.Milestone.checkin:type_name -> sttattus.travel.v1.CheckIn
-	44, // 1: sttattus.travel.v1.CheckIn.verified_at:type_name -> google.protobuf.Timestamp
-	45, // 2: sttattus.travel.v1.ListMilestonesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	52, // 1: sttattus.travel.v1.CheckIn.verified_at:type_name -> google.protobuf.Timestamp
+	53, // 2: sttattus.travel.v1.ListMilestonesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	2,  // 3: sttattus.travel.v1.ListMilestonesResponse.milestones:type_name -> sttattus.travel.v1.Milestone
-	46, // 4: sttattus.travel.v1.ListMilestonesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	54, // 4: sttattus.travel.v1.ListMilestonesResponse.page:type_name -> sttattus.common.v1.PageResponse
 	3,  // 5: sttattus.travel.v1.CreateMilestoneRequest.checkin:type_name -> sttattus.travel.v1.CheckIn
 	2,  // 6: sttattus.travel.v1.CreateMilestoneResponse.milestone:type_name -> sttattus.travel.v1.Milestone
 	1,  // 7: sttattus.travel.v1.CreateMilestoneResponse.stats:type_name -> sttattus.travel.v1.NomadStats
 	1,  // 8: sttattus.travel.v1.GetNomadStatsResponse.stats:type_name -> sttattus.travel.v1.NomadStats
-	45, // 9: sttattus.travel.v1.ListFeedRequest.page:type_name -> sttattus.common.v1.PageRequest
+	53, // 9: sttattus.travel.v1.ListFeedRequest.page:type_name -> sttattus.common.v1.PageRequest
 	2,  // 10: sttattus.travel.v1.ListFeedResponse.milestones:type_name -> sttattus.travel.v1.Milestone
-	46, // 11: sttattus.travel.v1.ListFeedResponse.page:type_name -> sttattus.common.v1.PageResponse
+	54, // 11: sttattus.travel.v1.ListFeedResponse.page:type_name -> sttattus.common.v1.PageResponse
 	0,  // 12: sttattus.travel.v1.Trip.status:type_name -> sttattus.travel.v1.TripStatus
 	2,  // 13: sttattus.travel.v1.Trip.visits:type_name -> sttattus.travel.v1.Milestone
 	12, // 14: sttattus.travel.v1.CreateTripResponse.trip:type_name -> sttattus.travel.v1.Trip
@@ -2827,45 +3325,59 @@ var file_sttattus_travel_v1_travel_proto_depIdxs = []int32{
 	34, // 25: sttattus.travel.v1.ListMyVerificationSignalsResponse.signals:type_name -> sttattus.travel.v1.VerificationSignals
 	37, // 26: sttattus.travel.v1.ListCountryVisibilityResponse.entries:type_name -> sttattus.travel.v1.CountryVisibility
 	37, // 27: sttattus.travel.v1.UpsertCountryVisibilityResponse.entry:type_name -> sttattus.travel.v1.CountryVisibility
-	4,  // 28: sttattus.travel.v1.TravelService.ListMilestones:input_type -> sttattus.travel.v1.ListMilestonesRequest
-	6,  // 29: sttattus.travel.v1.TravelService.CreateMilestone:input_type -> sttattus.travel.v1.CreateMilestoneRequest
-	8,  // 30: sttattus.travel.v1.TravelService.GetNomadStats:input_type -> sttattus.travel.v1.GetNomadStatsRequest
-	10, // 31: sttattus.travel.v1.TravelService.ListFeed:input_type -> sttattus.travel.v1.ListFeedRequest
-	13, // 32: sttattus.travel.v1.TravelService.CreateTrip:input_type -> sttattus.travel.v1.CreateTripRequest
-	15, // 33: sttattus.travel.v1.TravelService.UpdateTrip:input_type -> sttattus.travel.v1.UpdateTripRequest
-	17, // 34: sttattus.travel.v1.TravelService.ListMyTrips:input_type -> sttattus.travel.v1.ListMyTripsRequest
-	19, // 35: sttattus.travel.v1.TravelService.GetTrip:input_type -> sttattus.travel.v1.GetTripRequest
-	21, // 36: sttattus.travel.v1.TravelService.AttachVisitToTrip:input_type -> sttattus.travel.v1.AttachVisitToTripRequest
-	23, // 37: sttattus.travel.v1.TravelService.DeleteTrip:input_type -> sttattus.travel.v1.DeleteTripRequest
-	27, // 38: sttattus.travel.v1.TravelService.ListVisitedCountries:input_type -> sttattus.travel.v1.ListVisitedCountriesRequest
-	30, // 39: sttattus.travel.v1.TravelService.ListConciergeMessages:input_type -> sttattus.travel.v1.ListConciergeMessagesRequest
-	32, // 40: sttattus.travel.v1.TravelService.PostConciergeMessage:input_type -> sttattus.travel.v1.PostConciergeMessageRequest
-	35, // 41: sttattus.travel.v1.TravelService.ListMyVerificationSignals:input_type -> sttattus.travel.v1.ListMyVerificationSignalsRequest
-	38, // 42: sttattus.travel.v1.TravelService.ListCountryVisibility:input_type -> sttattus.travel.v1.ListCountryVisibilityRequest
-	40, // 43: sttattus.travel.v1.TravelService.UpsertCountryVisibility:input_type -> sttattus.travel.v1.UpsertCountryVisibilityRequest
-	42, // 44: sttattus.travel.v1.TravelService.SetMilestoneVisibility:input_type -> sttattus.travel.v1.SetMilestoneVisibilityRequest
-	5,  // 45: sttattus.travel.v1.TravelService.ListMilestones:output_type -> sttattus.travel.v1.ListMilestonesResponse
-	7,  // 46: sttattus.travel.v1.TravelService.CreateMilestone:output_type -> sttattus.travel.v1.CreateMilestoneResponse
-	9,  // 47: sttattus.travel.v1.TravelService.GetNomadStats:output_type -> sttattus.travel.v1.GetNomadStatsResponse
-	11, // 48: sttattus.travel.v1.TravelService.ListFeed:output_type -> sttattus.travel.v1.ListFeedResponse
-	14, // 49: sttattus.travel.v1.TravelService.CreateTrip:output_type -> sttattus.travel.v1.CreateTripResponse
-	16, // 50: sttattus.travel.v1.TravelService.UpdateTrip:output_type -> sttattus.travel.v1.UpdateTripResponse
-	18, // 51: sttattus.travel.v1.TravelService.ListMyTrips:output_type -> sttattus.travel.v1.ListMyTripsResponse
-	20, // 52: sttattus.travel.v1.TravelService.GetTrip:output_type -> sttattus.travel.v1.GetTripResponse
-	22, // 53: sttattus.travel.v1.TravelService.AttachVisitToTrip:output_type -> sttattus.travel.v1.AttachVisitToTripResponse
-	24, // 54: sttattus.travel.v1.TravelService.DeleteTrip:output_type -> sttattus.travel.v1.DeleteTripResponse
-	28, // 55: sttattus.travel.v1.TravelService.ListVisitedCountries:output_type -> sttattus.travel.v1.ListVisitedCountriesResponse
-	31, // 56: sttattus.travel.v1.TravelService.ListConciergeMessages:output_type -> sttattus.travel.v1.ListConciergeMessagesResponse
-	33, // 57: sttattus.travel.v1.TravelService.PostConciergeMessage:output_type -> sttattus.travel.v1.PostConciergeMessageResponse
-	36, // 58: sttattus.travel.v1.TravelService.ListMyVerificationSignals:output_type -> sttattus.travel.v1.ListMyVerificationSignalsResponse
-	39, // 59: sttattus.travel.v1.TravelService.ListCountryVisibility:output_type -> sttattus.travel.v1.ListCountryVisibilityResponse
-	41, // 60: sttattus.travel.v1.TravelService.UpsertCountryVisibility:output_type -> sttattus.travel.v1.UpsertCountryVisibilityResponse
-	43, // 61: sttattus.travel.v1.TravelService.SetMilestoneVisibility:output_type -> sttattus.travel.v1.SetMilestoneVisibilityResponse
-	45, // [45:62] is the sub-list for method output_type
-	28, // [28:45] is the sub-list for method input_type
-	28, // [28:28] is the sub-list for extension type_name
-	28, // [28:28] is the sub-list for extension extendee
-	0,  // [0:28] is the sub-list for field type_name
+	25, // 28: sttattus.travel.v1.GetPassportSurfaceResponse.countries:type_name -> sttattus.travel.v1.VisitedCountry
+	34, // 29: sttattus.travel.v1.GetPassportSurfaceResponse.all_signals:type_name -> sttattus.travel.v1.VerificationSignals
+	46, // 30: sttattus.travel.v1.GetLoungeConciergeResponse.nearest_lounge:type_name -> sttattus.travel.v1.LoungeDetail
+	46, // 31: sttattus.travel.v1.GetLoungeConciergeResponse.other_lounges:type_name -> sttattus.travel.v1.LoungeDetail
+	12, // 32: sttattus.travel.v1.TripArchiveEntry.trip:type_name -> sttattus.travel.v1.Trip
+	53, // 33: sttattus.travel.v1.GetTripArchiveRequest.page:type_name -> sttattus.common.v1.PageRequest
+	49, // 34: sttattus.travel.v1.GetTripArchiveResponse.entries:type_name -> sttattus.travel.v1.TripArchiveEntry
+	54, // 35: sttattus.travel.v1.GetTripArchiveResponse.page:type_name -> sttattus.common.v1.PageResponse
+	4,  // 36: sttattus.travel.v1.TravelService.ListMilestones:input_type -> sttattus.travel.v1.ListMilestonesRequest
+	6,  // 37: sttattus.travel.v1.TravelService.CreateMilestone:input_type -> sttattus.travel.v1.CreateMilestoneRequest
+	8,  // 38: sttattus.travel.v1.TravelService.GetNomadStats:input_type -> sttattus.travel.v1.GetNomadStatsRequest
+	10, // 39: sttattus.travel.v1.TravelService.ListFeed:input_type -> sttattus.travel.v1.ListFeedRequest
+	13, // 40: sttattus.travel.v1.TravelService.CreateTrip:input_type -> sttattus.travel.v1.CreateTripRequest
+	15, // 41: sttattus.travel.v1.TravelService.UpdateTrip:input_type -> sttattus.travel.v1.UpdateTripRequest
+	17, // 42: sttattus.travel.v1.TravelService.ListMyTrips:input_type -> sttattus.travel.v1.ListMyTripsRequest
+	19, // 43: sttattus.travel.v1.TravelService.GetTrip:input_type -> sttattus.travel.v1.GetTripRequest
+	21, // 44: sttattus.travel.v1.TravelService.AttachVisitToTrip:input_type -> sttattus.travel.v1.AttachVisitToTripRequest
+	23, // 45: sttattus.travel.v1.TravelService.DeleteTrip:input_type -> sttattus.travel.v1.DeleteTripRequest
+	27, // 46: sttattus.travel.v1.TravelService.ListVisitedCountries:input_type -> sttattus.travel.v1.ListVisitedCountriesRequest
+	30, // 47: sttattus.travel.v1.TravelService.ListConciergeMessages:input_type -> sttattus.travel.v1.ListConciergeMessagesRequest
+	32, // 48: sttattus.travel.v1.TravelService.PostConciergeMessage:input_type -> sttattus.travel.v1.PostConciergeMessageRequest
+	35, // 49: sttattus.travel.v1.TravelService.ListMyVerificationSignals:input_type -> sttattus.travel.v1.ListMyVerificationSignalsRequest
+	38, // 50: sttattus.travel.v1.TravelService.ListCountryVisibility:input_type -> sttattus.travel.v1.ListCountryVisibilityRequest
+	40, // 51: sttattus.travel.v1.TravelService.UpsertCountryVisibility:input_type -> sttattus.travel.v1.UpsertCountryVisibilityRequest
+	42, // 52: sttattus.travel.v1.TravelService.SetMilestoneVisibility:input_type -> sttattus.travel.v1.SetMilestoneVisibilityRequest
+	44, // 53: sttattus.travel.v1.TravelService.GetPassportSurface:input_type -> sttattus.travel.v1.GetPassportSurfaceRequest
+	47, // 54: sttattus.travel.v1.TravelService.GetLoungeConcierge:input_type -> sttattus.travel.v1.GetLoungeConciergeRequest
+	50, // 55: sttattus.travel.v1.TravelService.GetTripArchive:input_type -> sttattus.travel.v1.GetTripArchiveRequest
+	5,  // 56: sttattus.travel.v1.TravelService.ListMilestones:output_type -> sttattus.travel.v1.ListMilestonesResponse
+	7,  // 57: sttattus.travel.v1.TravelService.CreateMilestone:output_type -> sttattus.travel.v1.CreateMilestoneResponse
+	9,  // 58: sttattus.travel.v1.TravelService.GetNomadStats:output_type -> sttattus.travel.v1.GetNomadStatsResponse
+	11, // 59: sttattus.travel.v1.TravelService.ListFeed:output_type -> sttattus.travel.v1.ListFeedResponse
+	14, // 60: sttattus.travel.v1.TravelService.CreateTrip:output_type -> sttattus.travel.v1.CreateTripResponse
+	16, // 61: sttattus.travel.v1.TravelService.UpdateTrip:output_type -> sttattus.travel.v1.UpdateTripResponse
+	18, // 62: sttattus.travel.v1.TravelService.ListMyTrips:output_type -> sttattus.travel.v1.ListMyTripsResponse
+	20, // 63: sttattus.travel.v1.TravelService.GetTrip:output_type -> sttattus.travel.v1.GetTripResponse
+	22, // 64: sttattus.travel.v1.TravelService.AttachVisitToTrip:output_type -> sttattus.travel.v1.AttachVisitToTripResponse
+	24, // 65: sttattus.travel.v1.TravelService.DeleteTrip:output_type -> sttattus.travel.v1.DeleteTripResponse
+	28, // 66: sttattus.travel.v1.TravelService.ListVisitedCountries:output_type -> sttattus.travel.v1.ListVisitedCountriesResponse
+	31, // 67: sttattus.travel.v1.TravelService.ListConciergeMessages:output_type -> sttattus.travel.v1.ListConciergeMessagesResponse
+	33, // 68: sttattus.travel.v1.TravelService.PostConciergeMessage:output_type -> sttattus.travel.v1.PostConciergeMessageResponse
+	36, // 69: sttattus.travel.v1.TravelService.ListMyVerificationSignals:output_type -> sttattus.travel.v1.ListMyVerificationSignalsResponse
+	39, // 70: sttattus.travel.v1.TravelService.ListCountryVisibility:output_type -> sttattus.travel.v1.ListCountryVisibilityResponse
+	41, // 71: sttattus.travel.v1.TravelService.UpsertCountryVisibility:output_type -> sttattus.travel.v1.UpsertCountryVisibilityResponse
+	43, // 72: sttattus.travel.v1.TravelService.SetMilestoneVisibility:output_type -> sttattus.travel.v1.SetMilestoneVisibilityResponse
+	45, // 73: sttattus.travel.v1.TravelService.GetPassportSurface:output_type -> sttattus.travel.v1.GetPassportSurfaceResponse
+	48, // 74: sttattus.travel.v1.TravelService.GetLoungeConcierge:output_type -> sttattus.travel.v1.GetLoungeConciergeResponse
+	51, // 75: sttattus.travel.v1.TravelService.GetTripArchive:output_type -> sttattus.travel.v1.GetTripArchiveResponse
+	56, // [56:76] is the sub-list for method output_type
+	36, // [36:56] is the sub-list for method input_type
+	36, // [36:36] is the sub-list for extension type_name
+	36, // [36:36] is the sub-list for extension extendee
+	0,  // [0:36] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_travel_v1_travel_proto_init() }
@@ -2879,7 +3391,7 @@ func file_sttattus_travel_v1_travel_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_travel_v1_travel_proto_rawDesc), len(file_sttattus_travel_v1_travel_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   43,
+			NumMessages:   51,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

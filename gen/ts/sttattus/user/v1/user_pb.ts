@@ -108,6 +108,11 @@ export class UserProfile extends Message<UserProfile> {
    */
   handle = "";
 
+  /**
+   * @generated from field: string locale = 18;
+   */
+  locale = "";
+
   constructor(data?: PartialMessage<UserProfile>) {
     super();
     proto3.util.initPartial(data, this);
@@ -133,6 +138,7 @@ export class UserProfile extends Message<UserProfile> {
     { no: 15, name: "apex_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 16, name: "cultural_capital", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 17, name: "handle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 18, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserProfile {
@@ -283,6 +289,11 @@ export class UpdateMeRequest extends Message<UpdateMeRequest> {
    */
   avatarUrl = "";
 
+  /**
+   * @generated from field: string locale = 3;
+   */
+  locale = "";
+
   constructor(data?: PartialMessage<UpdateMeRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -293,6 +304,7 @@ export class UpdateMeRequest extends Message<UpdateMeRequest> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "avatar_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateMeRequest {

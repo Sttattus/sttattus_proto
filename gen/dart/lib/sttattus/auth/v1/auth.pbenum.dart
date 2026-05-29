@@ -19,10 +19,10 @@ import 'package:protobuf/protobuf.dart' as $pb;
 /// new app the user just joined.
 class AppCode extends $pb.ProtobufEnum {
   static const AppCode APP_CODE_UNSPECIFIED = AppCode._(0, _omitEnumNames ? '' : 'APP_CODE_UNSPECIFIED');
-  static const AppCode APP_CODE_WORKOUT = AppCode._(1, _omitEnumNames ? '' : 'APP_CODE_WORKOUT');
-  static const AppCode APP_CODE_LANGUAGES = AppCode._(2, _omitEnumNames ? '' : 'APP_CODE_LANGUAGES');
-  static const AppCode APP_CODE_TRAVEL = AppCode._(3, _omitEnumNames ? '' : 'APP_CODE_TRAVEL');
-  static const AppCode APP_CODE_DATING = AppCode._(4, _omitEnumNames ? '' : 'APP_CODE_DATING');
+  static const AppCode APP_CODE_FORGE = AppCode._(1, _omitEnumNames ? '' : 'APP_CODE_FORGE');
+  static const AppCode APP_CODE_LEXICON = AppCode._(2, _omitEnumNames ? '' : 'APP_CODE_LEXICON');
+  static const AppCode APP_CODE_NOMAD = AppCode._(3, _omitEnumNames ? '' : 'APP_CODE_NOMAD');
+  static const AppCode APP_CODE_ATLAS = AppCode._(4, _omitEnumNames ? '' : 'APP_CODE_ATLAS');
   static const AppCode APP_CODE_EMPIRE = AppCode._(5, _omitEnumNames ? '' : 'APP_CODE_EMPIRE');
   static const AppCode APP_CODE_ONYX = AppCode._(6, _omitEnumNames ? '' : 'APP_CODE_ONYX');
   static const AppCode APP_CODE_APEX = AppCode._(7, _omitEnumNames ? '' : 'APP_CODE_APEX');
@@ -34,10 +34,10 @@ class AppCode extends $pb.ProtobufEnum {
 
   static const $core.List<AppCode> values = <AppCode> [
     APP_CODE_UNSPECIFIED,
-    APP_CODE_WORKOUT,
-    APP_CODE_LANGUAGES,
-    APP_CODE_TRAVEL,
-    APP_CODE_DATING,
+    APP_CODE_FORGE,
+    APP_CODE_LEXICON,
+    APP_CODE_NOMAD,
+    APP_CODE_ATLAS,
     APP_CODE_EMPIRE,
     APP_CODE_ONYX,
     APP_CODE_APEX,
@@ -52,6 +52,25 @@ class AppCode extends $pb.ProtobufEnum {
   static AppCode? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
   const AppCode._(super.value, super.name);
+}
+
+class AuthProvider extends $pb.ProtobufEnum {
+  static const AuthProvider AUTH_PROVIDER_UNSPECIFIED = AuthProvider._(0, _omitEnumNames ? '' : 'AUTH_PROVIDER_UNSPECIFIED');
+  static const AuthProvider AUTH_PROVIDER_GOOGLE = AuthProvider._(1, _omitEnumNames ? '' : 'AUTH_PROVIDER_GOOGLE');
+  static const AuthProvider AUTH_PROVIDER_FACEBOOK = AuthProvider._(2, _omitEnumNames ? '' : 'AUTH_PROVIDER_FACEBOOK');
+  static const AuthProvider AUTH_PROVIDER_GITHUB = AuthProvider._(3, _omitEnumNames ? '' : 'AUTH_PROVIDER_GITHUB');
+
+  static const $core.List<AuthProvider> values = <AuthProvider> [
+    AUTH_PROVIDER_UNSPECIFIED,
+    AUTH_PROVIDER_GOOGLE,
+    AUTH_PROVIDER_FACEBOOK,
+    AUTH_PROVIDER_GITHUB,
+  ];
+
+  static final $core.List<AuthProvider?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 3);
+  static AuthProvider? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
+
+  const AuthProvider._(super.value, super.name);
 }
 
 

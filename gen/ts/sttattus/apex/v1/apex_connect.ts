@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyLabRequest, AdminVerifyLabResponse, EnrolInApexProtocolRequest, EnrolInApexProtocolResponse, GetApexAgeRequest, GetApexAgeResponse, GetApexClinicRequest, GetApexClinicResponse, GetApexProtocolRequest, GetApexProtocolResponse, GetHrvWindowRequest, GetHrvWindowResponse, GetMyApexProfileRequest, GetMyApexProfileResponse, ListApexClinicsRequest, ListApexClinicsResponse, ListApexProtocolsRequest, ListApexProtocolsResponse, ListBiomarkerRefsRequest, ListBiomarkerRefsResponse, ListLabReportsRequest, ListLabReportsResponse, ListMyApexClinicIntroRequestsRequest, ListMyApexClinicIntroRequestsResponse, ListMyApexProtocolAdherenceRequest, ListMyApexProtocolAdherenceResponse, ListMyApexProtocolEnrolmentsRequest, ListMyApexProtocolEnrolmentsResponse, ListMyBiomarkerHistoryRequest, ListMyBiomarkerHistoryResponse, ListMyVitalsRequest, ListMyVitalsResponse, RecordApexProtocolAdherenceRequest, RecordApexProtocolAdherenceResponse, RequestApexClinicIntroRequest, RequestApexClinicIntroResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncVitalsRequest, SyncVitalsResponse, UpdateApexProtocolEnrolmentRequest, UpdateApexProtocolEnrolmentResponse, UpdateMyApexProfileRequest, UpdateMyApexProfileResponse } from "./apex_pb.js";
+import { AddPharmacologyRequest, AddPharmacologyResponse, AddSupplementRequest, AddSupplementResponse, AdminVerifyLabRequest, AdminVerifyLabResponse, CancelLoungeBookingRequest, CancelLoungeBookingResponse, CreateClinicianShareRequest, CreateClinicianShareResponse, CreateLoungeBookingRequest, CreateLoungeBookingResponse, EnrolInApexProtocolRequest, EnrolInApexProtocolResponse, ExtractLabMarkersRequest, ExtractLabMarkersResponse, GenerateHealthAlmanacRequest, GenerateHealthAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetApexAgeRequest, GetApexAgeResponse, GetApexClinicRequest, GetApexClinicResponse, GetApexProtocolRequest, GetApexProtocolResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetCycleStatusRequest, GetCycleStatusResponse, GetHrvWindowRequest, GetHrvWindowResponse, GetJetLagProtocolRequest, GetJetLagProtocolResponse, GetMyApexProfileRequest, GetMyApexProfileResponse, GetReadinessRequest, GetReadinessResponse, IngestGlucoseReadingRequest, IngestGlucoseReadingResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListApexClinicsRequest, ListApexClinicsResponse, ListApexProtocolsRequest, ListApexProtocolsResponse, ListBiomarkerRefsRequest, ListBiomarkerRefsResponse, ListLabPartnersRequest, ListLabPartnersResponse, ListLabReportsRequest, ListLabReportsResponse, ListLoungesRequest, ListLoungesResponse, ListMyApexClinicIntroRequestsRequest, ListMyApexClinicIntroRequestsResponse, ListMyApexProtocolAdherenceRequest, ListMyApexProtocolAdherenceResponse, ListMyApexProtocolEnrolmentsRequest, ListMyApexProtocolEnrolmentsResponse, ListMyBiomarkerHistoryRequest, ListMyBiomarkerHistoryResponse, ListMyClinicianSharesRequest, ListMyClinicianSharesResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyCycleSymptomsRequest, ListMyCycleSymptomsResponse, ListMyDnaSnpsRequest, ListMyDnaSnpsResponse, ListMyDnaUploadsRequest, ListMyDnaUploadsResponse, ListMyGlucoseRequest, ListMyGlucoseResponse, ListMyImagingStudiesRequest, ListMyImagingStudiesResponse, ListMyLoungeBookingsRequest, ListMyLoungeBookingsResponse, ListMyPharmacologyRequest, ListMyPharmacologyResponse, ListMySupplementsRequest, ListMySupplementsResponse, ListMyVitalsRequest, ListMyVitalsResponse, ListSupplementInteractionsRequest, ListSupplementInteractionsResponse, ListSupplementsRequest, ListSupplementsResponse, LogCycleSymptomRequest, LogCycleSymptomResponse, LogPeriodRequest, LogPeriodResponse, ParseLabReportTextRequest, ParseLabReportTextResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, RecordApexProtocolAdherenceRequest, RecordApexProtocolAdherenceResponse, RegisterDnaUploadRequest, RegisterDnaUploadResponse, RemovePharmacologyRequest, RemovePharmacologyResponse, RemoveSupplementRequest, RemoveSupplementResponse, RequestApexClinicIntroRequest, RequestApexClinicIntroResponse, RevokeClinicianShareRequest, RevokeClinicianShareResponse, SimulateApexAgeRequest, SimulateApexAgeResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubmitImagingStudyRequest, SubmitImagingStudyResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncVitalsRequest, SyncVitalsResponse, UpdateApexProtocolEnrolmentRequest, UpdateApexProtocolEnrolmentResponse, UpdateMyApexProfileRequest, UpdateMyApexProfileResponse } from "./apex_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -218,6 +218,397 @@ export const ApexService = {
       name: "ListMyApexProtocolAdherence",
       I: ListMyApexProtocolAdherenceRequest,
       O: ListMyApexProtocolAdherenceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Supplement stack manager (A11.7).
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.ListSupplements
+     */
+    listSupplements: {
+      name: "ListSupplements",
+      I: ListSupplementsRequest,
+      O: ListSupplementsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMySupplements
+     */
+    listMySupplements: {
+      name: "ListMySupplements",
+      I: ListMySupplementsRequest,
+      O: ListMySupplementsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.AddSupplement
+     */
+    addSupplement: {
+      name: "AddSupplement",
+      I: AddSupplementRequest,
+      O: AddSupplementResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RemoveSupplement
+     */
+    removeSupplement: {
+      name: "RemoveSupplement",
+      I: RemoveSupplementRequest,
+      O: RemoveSupplementResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListSupplementInteractions
+     */
+    listSupplementInteractions: {
+      name: "ListSupplementInteractions",
+      I: ListSupplementInteractionsRequest,
+      O: ListSupplementInteractionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * CGM ingestion + glucose curve (A11.8).
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyGlucose
+     */
+    listMyGlucose: {
+      name: "ListMyGlucose",
+      I: ListMyGlucoseRequest,
+      O: ListMyGlucoseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.IngestGlucoseReading
+     */
+    ingestGlucoseReading: {
+      name: "IngestGlucoseReading",
+      I: IngestGlucoseReadingRequest,
+      O: IngestGlucoseReadingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Cycle dashboard (A11.9 — opt-in for female users).
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetCycleStatus
+     */
+    getCycleStatus: {
+      name: "GetCycleStatus",
+      I: GetCycleStatusRequest,
+      O: GetCycleStatusResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.LogPeriod
+     */
+    logPeriod: {
+      name: "LogPeriod",
+      I: LogPeriodRequest,
+      O: LogPeriodResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.LogCycleSymptom
+     */
+    logCycleSymptom: {
+      name: "LogCycleSymptom",
+      I: LogCycleSymptomRequest,
+      O: LogCycleSymptomResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyCycleSymptoms
+     */
+    listMyCycleSymptoms: {
+      name: "ListMyCycleSymptoms",
+      I: ListMyCycleSymptomsRequest,
+      O: ListMyCycleSymptomsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * What-if simulator: project Apex Age under hypothetical marker overrides.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.SimulateApexAge
+     */
+    simulateApexAge: {
+      name: "SimulateApexAge",
+      I: SimulateApexAgeRequest,
+      O: SimulateApexAgeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Cross-pillar readiness signal — Forge + Zenith consume this to gate
+     * session intensity / focus prescription. Pure read; no engine call.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetReadiness
+     */
+    getReadiness: {
+      name: "GetReadiness",
+      I: GetReadinessRequest,
+      O: GetReadinessResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Clinical concierge (A11.10) — Sovereign-tier white-glove desk.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.StartConciergeThread
+     */
+    startConciergeThread: {
+      name: "StartConciergeThread",
+      I: StartConciergeThreadRequest,
+      O: StartConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyConciergeThreads
+     */
+    listMyConciergeThreads: {
+      name: "ListMyConciergeThreads",
+      I: ListMyConciergeThreadsRequest,
+      O: ListMyConciergeThreadsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.GetConciergeThread
+     */
+    getConciergeThread: {
+      name: "GetConciergeThread",
+      I: GetConciergeThreadRequest,
+      O: GetConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.PostConciergeMessage
+     */
+    postConciergeMessage: {
+      name: "PostConciergeMessage",
+      I: PostConciergeMessageRequest,
+      O: PostConciergeMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Editorial Anthology (A11.11) — named-author longevity articles.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.ListAnthologyArticles
+     */
+    listAnthologyArticles: {
+      name: "ListAnthologyArticles",
+      I: ListAnthologyArticlesRequest,
+      O: ListAnthologyArticlesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.GetAnthologyArticle
+     */
+    getAnthologyArticle: {
+      name: "GetAnthologyArticle",
+      I: GetAnthologyArticleRequest,
+      O: GetAnthologyArticleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Pharmacology log (A11.12) — encrypted prescribed + off-label items.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyPharmacology
+     */
+    listMyPharmacology: {
+      name: "ListMyPharmacology",
+      I: ListMyPharmacologyRequest,
+      O: ListMyPharmacologyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.AddPharmacology
+     */
+    addPharmacology: {
+      name: "AddPharmacology",
+      I: AddPharmacologyRequest,
+      O: AddPharmacologyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RemovePharmacology
+     */
+    removePharmacology: {
+      name: "RemovePharmacology",
+      I: RemovePharmacologyRequest,
+      O: RemovePharmacologyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * DNA ingestion (A11.13) — VCF / TXT upload → SNP report.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.RegisterDnaUpload
+     */
+    registerDnaUpload: {
+      name: "RegisterDnaUpload",
+      I: RegisterDnaUploadRequest,
+      O: RegisterDnaUploadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyDnaUploads
+     */
+    listMyDnaUploads: {
+      name: "ListMyDnaUploads",
+      I: ListMyDnaUploadsRequest,
+      O: ListMyDnaUploadsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyDnaSnps
+     */
+    listMyDnaSnps: {
+      name: "ListMyDnaSnps",
+      I: ListMyDnaSnpsRequest,
+      O: ListMyDnaSnpsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Lab partner introductions (A11.14).
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.ListLabPartners
+     */
+    listLabPartners: {
+      name: "ListLabPartners",
+      I: ListLabPartnersRequest,
+      O: ListLabPartnersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Manual lab biomarker extraction (A11.15) — until the auto-extractor
+     * ships, members or staff type marker values from an uploaded PDF and
+     * we land them as verified apex_vitals rows tied to the report.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.ExtractLabMarkers
+     */
+    extractLabMarkers: {
+      name: "ExtractLabMarkers",
+      I: ExtractLabMarkersRequest,
+      O: ExtractLabMarkersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Clinician shared view (A11.16) — generates a token-protected JSON
+     * snapshot of clinical data accessible at /share/clinician/:token.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.CreateClinicianShare
+     */
+    createClinicianShare: {
+      name: "CreateClinicianShare",
+      I: CreateClinicianShareRequest,
+      O: CreateClinicianShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyClinicianShares
+     */
+    listMyClinicianShares: {
+      name: "ListMyClinicianShares",
+      I: ListMyClinicianSharesRequest,
+      O: ListMyClinicianSharesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RevokeClinicianShare
+     */
+    revokeClinicianShare: {
+      name: "RevokeClinicianShare",
+      I: RevokeClinicianShareRequest,
+      O: RevokeClinicianShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Apex × Nomad jet-lag protocol (A11.17) — 9-day light/melatonin/meal
+     * schedule. Pure compute, no persistence.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetJetLagProtocol
+     */
+    getJetLagProtocol: {
+      name: "GetJetLagProtocol",
+      I: GetJetLagProtocolRequest,
+      O: GetJetLagProtocolResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Annual Health Almanac (A11.18) — server-rendered PDF report.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GenerateHealthAlmanac
+     */
+    generateHealthAlmanac: {
+      name: "GenerateHealthAlmanac",
+      I: GenerateHealthAlmanacRequest,
+      O: GenerateHealthAlmanacResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Advanced imaging studies (A11.19) — coronary CTA / MRI / DEXA.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.SubmitImagingStudy
+     */
+    submitImagingStudy: {
+      name: "SubmitImagingStudy",
+      I: SubmitImagingStudyRequest,
+      O: SubmitImagingStudyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyImagingStudies
+     */
+    listMyImagingStudies: {
+      name: "ListMyImagingStudies",
+      I: ListMyImagingStudiesRequest,
+      O: ListMyImagingStudiesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Sttattus Lounges (A11.20) — recovery-room booking flow.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.ListLounges
+     */
+    listLounges: {
+      name: "ListLounges",
+      I: ListLoungesRequest,
+      O: ListLoungesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyLoungeBookings
+     */
+    listMyLoungeBookings: {
+      name: "ListMyLoungeBookings",
+      I: ListMyLoungeBookingsRequest,
+      O: ListMyLoungeBookingsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.CreateLoungeBooking
+     */
+    createLoungeBooking: {
+      name: "CreateLoungeBooking",
+      I: CreateLoungeBookingRequest,
+      O: CreateLoungeBookingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.CancelLoungeBooking
+     */
+    cancelLoungeBooking: {
+      name: "CancelLoungeBooking",
+      I: CancelLoungeBookingRequest,
+      O: CancelLoungeBookingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Lab-PDF heuristic extraction (A11.21) — accepts OCR text, regex-
+     * extracts common biomarkers as a confirmation candidate set.
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.ParseLabReportText
+     */
+    parseLabReportText: {
+      name: "ParseLabReportText",
+      I: ParseLabReportTextRequest,
+      O: ParseLabReportTextResponse,
       kind: MethodKind.Unary,
     },
     /**

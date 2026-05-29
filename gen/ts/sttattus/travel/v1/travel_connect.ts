@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AttachVisitToTripRequest, AttachVisitToTripResponse, CreateMilestoneRequest, CreateMilestoneResponse, CreateTripRequest, CreateTripResponse, DeleteTripRequest, DeleteTripResponse, GetNomadStatsRequest, GetNomadStatsResponse, GetTripRequest, GetTripResponse, ListConciergeMessagesRequest, ListConciergeMessagesResponse, ListCountryVisibilityRequest, ListCountryVisibilityResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse, ListMyTripsRequest, ListMyTripsResponse, ListMyVerificationSignalsRequest, ListMyVerificationSignalsResponse, ListVisitedCountriesRequest, ListVisitedCountriesResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, SetMilestoneVisibilityRequest, SetMilestoneVisibilityResponse, UpdateTripRequest, UpdateTripResponse, UpsertCountryVisibilityRequest, UpsertCountryVisibilityResponse } from "./travel_pb.js";
+import { AttachVisitToTripRequest, AttachVisitToTripResponse, CreateMilestoneRequest, CreateMilestoneResponse, CreateTripRequest, CreateTripResponse, DeleteTripRequest, DeleteTripResponse, GetLoungeConciergeRequest, GetLoungeConciergeResponse, GetNomadStatsRequest, GetNomadStatsResponse, GetPassportSurfaceRequest, GetPassportSurfaceResponse, GetTripArchiveRequest, GetTripArchiveResponse, GetTripRequest, GetTripResponse, ListConciergeMessagesRequest, ListConciergeMessagesResponse, ListCountryVisibilityRequest, ListCountryVisibilityResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse, ListMyTripsRequest, ListMyTripsResponse, ListMyVerificationSignalsRequest, ListMyVerificationSignalsResponse, ListVisitedCountriesRequest, ListVisitedCountriesResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, SetMilestoneVisibilityRequest, SetMilestoneVisibilityResponse, UpdateTripRequest, UpdateTripResponse, UpsertCountryVisibilityRequest, UpsertCountryVisibilityResponse } from "./travel_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -173,6 +173,35 @@ export const TravelService = {
       name: "SetMilestoneVisibility",
       I: SetMilestoneVisibilityRequest,
       O: SetMilestoneVisibilityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * N10P3 â€” Sovereign Expansion
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetPassportSurface
+     */
+    getPassportSurface: {
+      name: "GetPassportSurface",
+      I: GetPassportSurfaceRequest,
+      O: GetPassportSurfaceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.GetLoungeConcierge
+     */
+    getLoungeConcierge: {
+      name: "GetLoungeConcierge",
+      I: GetLoungeConciergeRequest,
+      O: GetLoungeConciergeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.GetTripArchive
+     */
+    getTripArchive: {
+      name: "GetTripArchive",
+      I: GetTripArchiveRequest,
+      O: GetTripArchiveResponse,
       kind: MethodKind.Unary,
     },
   }

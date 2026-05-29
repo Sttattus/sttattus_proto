@@ -20,24 +20,24 @@ export enum AppCode {
   UNSPECIFIED = 0,
 
   /**
-   * @generated from enum value: APP_CODE_WORKOUT = 1;
+   * @generated from enum value: APP_CODE_FORGE = 1;
    */
-  WORKOUT = 1,
+  FORGE = 1,
 
   /**
-   * @generated from enum value: APP_CODE_LANGUAGES = 2;
+   * @generated from enum value: APP_CODE_LEXICON = 2;
    */
-  LANGUAGES = 2,
+  LEXICON = 2,
 
   /**
-   * @generated from enum value: APP_CODE_TRAVEL = 3;
+   * @generated from enum value: APP_CODE_NOMAD = 3;
    */
-  TRAVEL = 3,
+  NOMAD = 3,
 
   /**
-   * @generated from enum value: APP_CODE_DATING = 4;
+   * @generated from enum value: APP_CODE_ATLAS = 4;
    */
-  DATING = 4,
+  ATLAS = 4,
 
   /**
    * @generated from enum value: APP_CODE_EMPIRE = 5;
@@ -82,10 +82,10 @@ export enum AppCode {
 // Retrieve enum metadata with: proto3.getEnumType(AppCode)
 proto3.util.setEnumType(AppCode, "sttattus.auth.v1.AppCode", [
   { no: 0, name: "APP_CODE_UNSPECIFIED" },
-  { no: 1, name: "APP_CODE_WORKOUT" },
-  { no: 2, name: "APP_CODE_LANGUAGES" },
-  { no: 3, name: "APP_CODE_TRAVEL" },
-  { no: 4, name: "APP_CODE_DATING" },
+  { no: 1, name: "APP_CODE_FORGE" },
+  { no: 2, name: "APP_CODE_LEXICON" },
+  { no: 3, name: "APP_CODE_NOMAD" },
+  { no: 4, name: "APP_CODE_ATLAS" },
   { no: 5, name: "APP_CODE_EMPIRE" },
   { no: 6, name: "APP_CODE_ONYX" },
   { no: 7, name: "APP_CODE_APEX" },
@@ -94,6 +94,38 @@ proto3.util.setEnumType(AppCode, "sttattus.auth.v1.AppCode", [
   { no: 10, name: "APP_CODE_ORACLE" },
   { no: 11, name: "APP_CODE_LEGACY" },
   { no: 12, name: "APP_CODE_ZENITH" },
+]);
+
+/**
+ * @generated from enum sttattus.auth.v1.AuthProvider
+ */
+export enum AuthProvider {
+  /**
+   * @generated from enum value: AUTH_PROVIDER_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: AUTH_PROVIDER_GOOGLE = 1;
+   */
+  GOOGLE = 1,
+
+  /**
+   * @generated from enum value: AUTH_PROVIDER_FACEBOOK = 2;
+   */
+  FACEBOOK = 2,
+
+  /**
+   * @generated from enum value: AUTH_PROVIDER_GITHUB = 3;
+   */
+  GITHUB = 3,
+}
+// Retrieve enum metadata with: proto3.getEnumType(AuthProvider)
+proto3.util.setEnumType(AuthProvider, "sttattus.auth.v1.AuthProvider", [
+  { no: 0, name: "AUTH_PROVIDER_UNSPECIFIED" },
+  { no: 1, name: "AUTH_PROVIDER_GOOGLE" },
+  { no: 2, name: "AUTH_PROVIDER_FACEBOOK" },
+  { no: 3, name: "AUTH_PROVIDER_GITHUB" },
 ]);
 
 /**
@@ -187,6 +219,21 @@ export class ProfileHint extends Message<ProfileHint> {
    */
   linkedApps: AppCode[] = [];
 
+  /**
+   * @generated from field: bool has_password = 6;
+   */
+  hasPassword = false;
+
+  /**
+   * @generated from field: repeated sttattus.auth.v1.AuthProvider linked_providers = 7;
+   */
+  linkedProviders: AuthProvider[] = [];
+
+  /**
+   * @generated from field: string locale = 8;
+   */
+  locale = "";
+
   constructor(data?: PartialMessage<ProfileHint>) {
     super();
     proto3.util.initPartial(data, this);
@@ -200,6 +247,9 @@ export class ProfileHint extends Message<ProfileHint> {
     { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "avatar_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "linked_apps", kind: "enum", T: proto3.getEnumType(AppCode), repeated: true },
+    { no: 6, name: "has_password", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "linked_providers", kind: "enum", T: proto3.getEnumType(AuthProvider), repeated: true },
+    { no: 8, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProfileHint {
@@ -293,13 +343,18 @@ export class RegisterResponse extends Message<RegisterResponse> {
   tokens?: TokenPair;
 
   /**
+   * @generated from field: sttattus.auth.v1.ProfileHint profile = 3;
+   */
+  profile?: ProfileHint;
+
+  /**
    * Populated when the email already exists in the ecosystem and the client
    * should switch into the link-app flow. When this is set, `user_id` and
    * `tokens` are empty and the gRPC status is OK (the *call* succeeded; the
    * outcome is "needs linking"). Allows the client to render the linking UI
    * without crashing on an error.
    *
-   * @generated from field: sttattus.auth.v1.ProfileHint existing_profile = 3;
+   * @generated from field: sttattus.auth.v1.ProfileHint existing_profile = 4;
    */
   existingProfile?: ProfileHint;
 
@@ -313,7 +368,8 @@ export class RegisterResponse extends Message<RegisterResponse> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "tokens", kind: "message", T: TokenPair },
-    { no: 3, name: "existing_profile", kind: "message", T: ProfileHint },
+    { no: 3, name: "profile", kind: "message", T: ProfileHint },
+    { no: 4, name: "existing_profile", kind: "message", T: ProfileHint },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RegisterResponse {
@@ -398,6 +454,11 @@ export class LoginResponse extends Message<LoginResponse> {
    */
   tokens?: TokenPair;
 
+  /**
+   * @generated from field: sttattus.auth.v1.ProfileHint profile = 3;
+   */
+  profile?: ProfileHint;
+
   constructor(data?: PartialMessage<LoginResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -408,6 +469,7 @@ export class LoginResponse extends Message<LoginResponse> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "tokens", kind: "message", T: TokenPair },
+    { no: 3, name: "profile", kind: "message", T: ProfileHint },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LoginResponse {
@@ -424,6 +486,112 @@ export class LoginResponse extends Message<LoginResponse> {
 
   static equals(a: LoginResponse | PlainMessage<LoginResponse> | undefined, b: LoginResponse | PlainMessage<LoginResponse> | undefined): boolean {
     return proto3.util.equals(LoginResponse, a, b);
+  }
+}
+
+/**
+ * ===== OAuth Login =====
+ *
+ * @generated from message sttattus.auth.v1.OAuthLoginRequest
+ */
+export class OAuthLoginRequest extends Message<OAuthLoginRequest> {
+  /**
+   * @generated from field: sttattus.auth.v1.AuthProvider provider = 1;
+   */
+  provider = AuthProvider.UNSPECIFIED;
+
+  /**
+   * @generated from field: string id_token = 2;
+   */
+  idToken = "";
+
+  /**
+   * @generated from field: sttattus.auth.v1.AppCode app_code = 3;
+   */
+  appCode = AppCode.UNSPECIFIED;
+
+  constructor(data?: PartialMessage<OAuthLoginRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.auth.v1.OAuthLoginRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "provider", kind: "enum", T: proto3.getEnumType(AuthProvider) },
+    { no: 2, name: "id_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "app_code", kind: "enum", T: proto3.getEnumType(AppCode) },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OAuthLoginRequest {
+    return new OAuthLoginRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OAuthLoginRequest {
+    return new OAuthLoginRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OAuthLoginRequest {
+    return new OAuthLoginRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OAuthLoginRequest | PlainMessage<OAuthLoginRequest> | undefined, b: OAuthLoginRequest | PlainMessage<OAuthLoginRequest> | undefined): boolean {
+    return proto3.util.equals(OAuthLoginRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.auth.v1.OAuthLoginResponse
+ */
+export class OAuthLoginResponse extends Message<OAuthLoginResponse> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: sttattus.auth.v1.TokenPair tokens = 2;
+   */
+  tokens?: TokenPair;
+
+  /**
+   * @generated from field: sttattus.auth.v1.ProfileHint profile = 3;
+   */
+  profile?: ProfileHint;
+
+  /**
+   * @generated from field: sttattus.auth.v1.ProfileHint existing_profile = 4;
+   */
+  existingProfile?: ProfileHint;
+
+  constructor(data?: PartialMessage<OAuthLoginResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.auth.v1.OAuthLoginResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "tokens", kind: "message", T: TokenPair },
+    { no: 3, name: "profile", kind: "message", T: ProfileHint },
+    { no: 4, name: "existing_profile", kind: "message", T: ProfileHint },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OAuthLoginResponse {
+    return new OAuthLoginResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OAuthLoginResponse {
+    return new OAuthLoginResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OAuthLoginResponse {
+    return new OAuthLoginResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OAuthLoginResponse | PlainMessage<OAuthLoginResponse> | undefined, b: OAuthLoginResponse | PlainMessage<OAuthLoginResponse> | undefined): boolean {
+    return proto3.util.equals(OAuthLoginResponse, a, b);
   }
 }
 
@@ -578,6 +746,11 @@ export class LinkAppResponse extends Message<LinkAppResponse> {
    */
   tokens?: TokenPair;
 
+  /**
+   * @generated from field: sttattus.auth.v1.ProfileHint profile = 3;
+   */
+  profile?: ProfileHint;
+
   constructor(data?: PartialMessage<LinkAppResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -588,6 +761,7 @@ export class LinkAppResponse extends Message<LinkAppResponse> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "tokens", kind: "message", T: TokenPair },
+    { no: 3, name: "profile", kind: "message", T: ProfileHint },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LinkAppResponse {
@@ -604,6 +778,298 @@ export class LinkAppResponse extends Message<LinkAppResponse> {
 
   static equals(a: LinkAppResponse | PlainMessage<LinkAppResponse> | undefined, b: LinkAppResponse | PlainMessage<LinkAppResponse> | undefined): boolean {
     return proto3.util.equals(LinkAppResponse, a, b);
+  }
+}
+
+/**
+ * ===== LinkProvider =====
+ *
+ * @generated from message sttattus.auth.v1.LinkProviderRequest
+ */
+export class LinkProviderRequest extends Message<LinkProviderRequest> {
+  /**
+   * @generated from field: sttattus.auth.v1.AuthProvider provider = 1;
+   */
+  provider = AuthProvider.UNSPECIFIED;
+
+  /**
+   * @generated from field: string id_token = 2;
+   */
+  idToken = "";
+
+  constructor(data?: PartialMessage<LinkProviderRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.auth.v1.LinkProviderRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "provider", kind: "enum", T: proto3.getEnumType(AuthProvider) },
+    { no: 2, name: "id_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LinkProviderRequest {
+    return new LinkProviderRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LinkProviderRequest {
+    return new LinkProviderRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LinkProviderRequest {
+    return new LinkProviderRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LinkProviderRequest | PlainMessage<LinkProviderRequest> | undefined, b: LinkProviderRequest | PlainMessage<LinkProviderRequest> | undefined): boolean {
+    return proto3.util.equals(LinkProviderRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.auth.v1.LinkProviderResponse
+ */
+export class LinkProviderResponse extends Message<LinkProviderResponse> {
+  constructor(data?: PartialMessage<LinkProviderResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.auth.v1.LinkProviderResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LinkProviderResponse {
+    return new LinkProviderResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LinkProviderResponse {
+    return new LinkProviderResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LinkProviderResponse {
+    return new LinkProviderResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LinkProviderResponse | PlainMessage<LinkProviderResponse> | undefined, b: LinkProviderResponse | PlainMessage<LinkProviderResponse> | undefined): boolean {
+    return proto3.util.equals(LinkProviderResponse, a, b);
+  }
+}
+
+/**
+ * ===== SetPassword =====
+ *
+ * @generated from message sttattus.auth.v1.SetPasswordRequest
+ */
+export class SetPasswordRequest extends Message<SetPasswordRequest> {
+  /**
+   * @generated from field: string new_password = 1;
+   */
+  newPassword = "";
+
+  constructor(data?: PartialMessage<SetPasswordRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.auth.v1.SetPasswordRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "new_password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPasswordRequest {
+    return new SetPasswordRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPasswordRequest {
+    return new SetPasswordRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPasswordRequest {
+    return new SetPasswordRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetPasswordRequest | PlainMessage<SetPasswordRequest> | undefined, b: SetPasswordRequest | PlainMessage<SetPasswordRequest> | undefined): boolean {
+    return proto3.util.equals(SetPasswordRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.auth.v1.SetPasswordResponse
+ */
+export class SetPasswordResponse extends Message<SetPasswordResponse> {
+  constructor(data?: PartialMessage<SetPasswordResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.auth.v1.SetPasswordResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPasswordResponse {
+    return new SetPasswordResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPasswordResponse {
+    return new SetPasswordResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPasswordResponse {
+    return new SetPasswordResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetPasswordResponse | PlainMessage<SetPasswordResponse> | undefined, b: SetPasswordResponse | PlainMessage<SetPasswordResponse> | undefined): boolean {
+    return proto3.util.equals(SetPasswordResponse, a, b);
+  }
+}
+
+/**
+ * ===== ForgotPassword =====
+ *
+ * @generated from message sttattus.auth.v1.ForgotPasswordRequest
+ */
+export class ForgotPasswordRequest extends Message<ForgotPasswordRequest> {
+  /**
+   * @generated from field: string email_or_handle = 1;
+   */
+  emailOrHandle = "";
+
+  constructor(data?: PartialMessage<ForgotPasswordRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.auth.v1.ForgotPasswordRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "email_or_handle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ForgotPasswordRequest {
+    return new ForgotPasswordRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ForgotPasswordRequest {
+    return new ForgotPasswordRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ForgotPasswordRequest {
+    return new ForgotPasswordRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ForgotPasswordRequest | PlainMessage<ForgotPasswordRequest> | undefined, b: ForgotPasswordRequest | PlainMessage<ForgotPasswordRequest> | undefined): boolean {
+    return proto3.util.equals(ForgotPasswordRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.auth.v1.ForgotPasswordResponse
+ */
+export class ForgotPasswordResponse extends Message<ForgotPasswordResponse> {
+  constructor(data?: PartialMessage<ForgotPasswordResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.auth.v1.ForgotPasswordResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ForgotPasswordResponse {
+    return new ForgotPasswordResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ForgotPasswordResponse {
+    return new ForgotPasswordResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ForgotPasswordResponse {
+    return new ForgotPasswordResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ForgotPasswordResponse | PlainMessage<ForgotPasswordResponse> | undefined, b: ForgotPasswordResponse | PlainMessage<ForgotPasswordResponse> | undefined): boolean {
+    return proto3.util.equals(ForgotPasswordResponse, a, b);
+  }
+}
+
+/**
+ * ===== ResetPassword =====
+ *
+ * @generated from message sttattus.auth.v1.ResetPasswordRequest
+ */
+export class ResetPasswordRequest extends Message<ResetPasswordRequest> {
+  /**
+   * @generated from field: string token = 1;
+   */
+  token = "";
+
+  /**
+   * @generated from field: string new_password = 2;
+   */
+  newPassword = "";
+
+  constructor(data?: PartialMessage<ResetPasswordRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.auth.v1.ResetPasswordRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "new_password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResetPasswordRequest {
+    return new ResetPasswordRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResetPasswordRequest {
+    return new ResetPasswordRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResetPasswordRequest {
+    return new ResetPasswordRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResetPasswordRequest | PlainMessage<ResetPasswordRequest> | undefined, b: ResetPasswordRequest | PlainMessage<ResetPasswordRequest> | undefined): boolean {
+    return proto3.util.equals(ResetPasswordRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.auth.v1.ResetPasswordResponse
+ */
+export class ResetPasswordResponse extends Message<ResetPasswordResponse> {
+  constructor(data?: PartialMessage<ResetPasswordResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.auth.v1.ResetPasswordResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResetPasswordResponse {
+    return new ResetPasswordResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResetPasswordResponse {
+    return new ResetPasswordResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResetPasswordResponse {
+    return new ResetPasswordResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResetPasswordResponse | PlainMessage<ResetPasswordResponse> | undefined, b: ResetPasswordResponse | PlainMessage<ResetPasswordResponse> | undefined): boolean {
+    return proto3.util.equals(ResetPasswordResponse, a, b);
   }
 }
 

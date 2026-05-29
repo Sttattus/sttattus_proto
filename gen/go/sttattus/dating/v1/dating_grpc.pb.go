@@ -55,7 +55,9 @@ const (
 	DatingService_CreateReservation_FullMethodName      = "/sttattus.dating.v1.DatingService/CreateReservation"
 	DatingService_ListMyReservations_FullMethodName     = "/sttattus.dating.v1.DatingService/ListMyReservations"
 	DatingService_CancelReservation_FullMethodName      = "/sttattus.dating.v1.DatingService/CancelReservation"
-	DatingService_GetCompatibilityReport_FullMethodName = "/sttattus.dating.v1.DatingService/GetCompatibilityReport"
+	DatingService_GetCompatibilityMatrix_FullMethodName = "/sttattus.dating.v1.DatingService/GetCompatibilityMatrix"
+	DatingService_SendGift_FullMethodName               = "/sttattus.dating.v1.DatingService/SendGift"
+	DatingService_ListGiftLedger_FullMethodName         = "/sttattus.dating.v1.DatingService/ListGiftLedger"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -71,16 +73,13 @@ type DatingServiceClient interface {
 	SendMessage(ctx context.Context, in *SendMessageRequest, opts ...grpc.CallOption) (*SendMessageResponse, error)
 	StartVerification(ctx context.Context, in *StartVerificationRequest, opts ...grpc.CallOption) (*StartVerificationResponse, error)
 	GetLatestVerification(ctx context.Context, in *GetLatestVerificationRequest, opts ...grpc.CallOption) (*GetLatestVerificationResponse, error)
-	// A9.4 — server-authoritative Tension Seats.
 	ListTensionSeats(ctx context.Context, in *ListTensionSeatsRequest, opts ...grpc.CallOption) (*ListTensionSeatsResponse, error)
 	PlaceTensionBid(ctx context.Context, in *PlaceTensionBidRequest, opts ...grpc.CallOption) (*PlaceTensionBidResponse, error)
 	ReleaseTensionSeat(ctx context.Context, in *ReleaseTensionSeatRequest, opts ...grpc.CallOption) (*ReleaseTensionSeatResponse, error)
-	// A9.5 — Akashic Record v2.
 	ListAuthorAkashic(ctx context.Context, in *ListAuthorAkashicRequest, opts ...grpc.CallOption) (*ListAuthorAkashicResponse, error)
 	ListVisibleAkashic(ctx context.Context, in *ListVisibleAkashicRequest, opts ...grpc.CallOption) (*ListVisibleAkashicResponse, error)
 	UpsertAkashicChapter(ctx context.Context, in *UpsertAkashicChapterRequest, opts ...grpc.CallOption) (*UpsertAkashicChapterResponse, error)
 	DeleteAkashicChapter(ctx context.Context, in *DeleteAkashicChapterRequest, opts ...grpc.CallOption) (*DeleteAkashicChapterResponse, error)
-	// A9.6 — safety center: blocks + reports + panic contact.
 	ListMyBlocks(ctx context.Context, in *ListMyBlocksRequest, opts ...grpc.CallOption) (*ListMyBlocksResponse, error)
 	BlockUser(ctx context.Context, in *BlockUserRequest, opts ...grpc.CallOption) (*BlockUserResponse, error)
 	UnblockUser(ctx context.Context, in *UnblockUserRequest, opts ...grpc.CallOption) (*UnblockUserResponse, error)
@@ -88,27 +87,24 @@ type DatingServiceClient interface {
 	ReportUser(ctx context.Context, in *ReportUserRequest, opts ...grpc.CallOption) (*ReportUserResponse, error)
 	GetPanicContact(ctx context.Context, in *GetPanicContactRequest, opts ...grpc.CallOption) (*GetPanicContactResponse, error)
 	UpsertPanicContact(ctx context.Context, in *UpsertPanicContactRequest, opts ...grpc.CallOption) (*UpsertPanicContactResponse, error)
-	// A9.8 — per-axis visibility on the viewer surface.
 	GetPrivacyAxes(ctx context.Context, in *GetPrivacyAxesRequest, opts ...grpc.CallOption) (*GetPrivacyAxesResponse, error)
 	UpsertPrivacyAxes(ctx context.Context, in *UpsertPrivacyAxesRequest, opts ...grpc.CallOption) (*UpsertPrivacyAxesResponse, error)
-	// A9P2.2 — Atlas map v2: latest 3D projection per user.
 	ListAtlasMapPoints(ctx context.Context, in *ListAtlasMapPointsRequest, opts ...grpc.CallOption) (*ListAtlasMapPointsResponse, error)
-	// A9P2.3 — Agora live audio rooms.
 	ListLiveRooms(ctx context.Context, in *ListLiveRoomsRequest, opts ...grpc.CallOption) (*ListLiveRoomsResponse, error)
 	CreateAgoraRoom(ctx context.Context, in *CreateAgoraRoomRequest, opts ...grpc.CallOption) (*CreateAgoraRoomResponse, error)
 	EndAgoraRoom(ctx context.Context, in *EndAgoraRoomRequest, opts ...grpc.CallOption) (*EndAgoraRoomResponse, error)
 	MintLiveKitToken(ctx context.Context, in *MintLiveKitTokenRequest, opts ...grpc.CallOption) (*MintLiveKitTokenResponse, error)
-	// A9P2.4 — voice + video message attachments.
 	AttachMediaToMessage(ctx context.Context, in *AttachMediaToMessageRequest, opts ...grpc.CallOption) (*AttachMediaToMessageResponse, error)
 	ListMessageAttachments(ctx context.Context, in *ListMessageAttachmentsRequest, opts ...grpc.CallOption) (*ListMessageAttachmentsResponse, error)
-	// A9P2.5 — restaurant partner integration (directory +
-	// reservation ledger; partner API call is concierge-routed today).
 	ListRestaurants(ctx context.Context, in *ListRestaurantsRequest, opts ...grpc.CallOption) (*ListRestaurantsResponse, error)
 	CreateReservation(ctx context.Context, in *CreateReservationRequest, opts ...grpc.CallOption) (*CreateReservationResponse, error)
 	ListMyReservations(ctx context.Context, in *ListMyReservationsRequest, opts ...grpc.CallOption) (*ListMyReservationsResponse, error)
 	CancelReservation(ctx context.Context, in *CancelReservationRequest, opts ...grpc.CallOption) (*CancelReservationResponse, error)
-	// A9P2.6 — two-user compatibility report.
-	GetCompatibilityReport(ctx context.Context, in *GetCompatibilityReportRequest, opts ...grpc.CallOption) (*GetCompatibilityReportResponse, error)
+	// A9P2.6 / A9P3 — deep compatibility matrix.
+	GetCompatibilityMatrix(ctx context.Context, in *GetCompatibilityMatrixRequest, opts ...grpc.CallOption) (*GetCompatibilityMatrixResponse, error)
+	// A9P3 — Gift Ledger
+	SendGift(ctx context.Context, in *SendGiftRequest, opts ...grpc.CallOption) (*SendGiftResponse, error)
+	ListGiftLedger(ctx context.Context, in *ListGiftLedgerRequest, opts ...grpc.CallOption) (*ListGiftLedgerResponse, error)
 }
 
 type datingServiceClient struct {
@@ -497,10 +493,30 @@ func (c *datingServiceClient) CancelReservation(ctx context.Context, in *CancelR
 	return out, nil
 }
 
-func (c *datingServiceClient) GetCompatibilityReport(ctx context.Context, in *GetCompatibilityReportRequest, opts ...grpc.CallOption) (*GetCompatibilityReportResponse, error) {
+func (c *datingServiceClient) GetCompatibilityMatrix(ctx context.Context, in *GetCompatibilityMatrixRequest, opts ...grpc.CallOption) (*GetCompatibilityMatrixResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetCompatibilityReportResponse)
-	err := c.cc.Invoke(ctx, DatingService_GetCompatibilityReport_FullMethodName, in, out, cOpts...)
+	out := new(GetCompatibilityMatrixResponse)
+	err := c.cc.Invoke(ctx, DatingService_GetCompatibilityMatrix_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) SendGift(ctx context.Context, in *SendGiftRequest, opts ...grpc.CallOption) (*SendGiftResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SendGiftResponse)
+	err := c.cc.Invoke(ctx, DatingService_SendGift_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ListGiftLedger(ctx context.Context, in *ListGiftLedgerRequest, opts ...grpc.CallOption) (*ListGiftLedgerResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListGiftLedgerResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListGiftLedger_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -520,16 +536,13 @@ type DatingServiceServer interface {
 	SendMessage(context.Context, *SendMessageRequest) (*SendMessageResponse, error)
 	StartVerification(context.Context, *StartVerificationRequest) (*StartVerificationResponse, error)
 	GetLatestVerification(context.Context, *GetLatestVerificationRequest) (*GetLatestVerificationResponse, error)
-	// A9.4 — server-authoritative Tension Seats.
 	ListTensionSeats(context.Context, *ListTensionSeatsRequest) (*ListTensionSeatsResponse, error)
 	PlaceTensionBid(context.Context, *PlaceTensionBidRequest) (*PlaceTensionBidResponse, error)
 	ReleaseTensionSeat(context.Context, *ReleaseTensionSeatRequest) (*ReleaseTensionSeatResponse, error)
-	// A9.5 — Akashic Record v2.
 	ListAuthorAkashic(context.Context, *ListAuthorAkashicRequest) (*ListAuthorAkashicResponse, error)
 	ListVisibleAkashic(context.Context, *ListVisibleAkashicRequest) (*ListVisibleAkashicResponse, error)
 	UpsertAkashicChapter(context.Context, *UpsertAkashicChapterRequest) (*UpsertAkashicChapterResponse, error)
 	DeleteAkashicChapter(context.Context, *DeleteAkashicChapterRequest) (*DeleteAkashicChapterResponse, error)
-	// A9.6 — safety center: blocks + reports + panic contact.
 	ListMyBlocks(context.Context, *ListMyBlocksRequest) (*ListMyBlocksResponse, error)
 	BlockUser(context.Context, *BlockUserRequest) (*BlockUserResponse, error)
 	UnblockUser(context.Context, *UnblockUserRequest) (*UnblockUserResponse, error)
@@ -537,27 +550,24 @@ type DatingServiceServer interface {
 	ReportUser(context.Context, *ReportUserRequest) (*ReportUserResponse, error)
 	GetPanicContact(context.Context, *GetPanicContactRequest) (*GetPanicContactResponse, error)
 	UpsertPanicContact(context.Context, *UpsertPanicContactRequest) (*UpsertPanicContactResponse, error)
-	// A9.8 — per-axis visibility on the viewer surface.
 	GetPrivacyAxes(context.Context, *GetPrivacyAxesRequest) (*GetPrivacyAxesResponse, error)
 	UpsertPrivacyAxes(context.Context, *UpsertPrivacyAxesRequest) (*UpsertPrivacyAxesResponse, error)
-	// A9P2.2 — Atlas map v2: latest 3D projection per user.
 	ListAtlasMapPoints(context.Context, *ListAtlasMapPointsRequest) (*ListAtlasMapPointsResponse, error)
-	// A9P2.3 — Agora live audio rooms.
 	ListLiveRooms(context.Context, *ListLiveRoomsRequest) (*ListLiveRoomsResponse, error)
 	CreateAgoraRoom(context.Context, *CreateAgoraRoomRequest) (*CreateAgoraRoomResponse, error)
 	EndAgoraRoom(context.Context, *EndAgoraRoomRequest) (*EndAgoraRoomResponse, error)
 	MintLiveKitToken(context.Context, *MintLiveKitTokenRequest) (*MintLiveKitTokenResponse, error)
-	// A9P2.4 — voice + video message attachments.
 	AttachMediaToMessage(context.Context, *AttachMediaToMessageRequest) (*AttachMediaToMessageResponse, error)
 	ListMessageAttachments(context.Context, *ListMessageAttachmentsRequest) (*ListMessageAttachmentsResponse, error)
-	// A9P2.5 — restaurant partner integration (directory +
-	// reservation ledger; partner API call is concierge-routed today).
 	ListRestaurants(context.Context, *ListRestaurantsRequest) (*ListRestaurantsResponse, error)
 	CreateReservation(context.Context, *CreateReservationRequest) (*CreateReservationResponse, error)
 	ListMyReservations(context.Context, *ListMyReservationsRequest) (*ListMyReservationsResponse, error)
 	CancelReservation(context.Context, *CancelReservationRequest) (*CancelReservationResponse, error)
-	// A9P2.6 — two-user compatibility report.
-	GetCompatibilityReport(context.Context, *GetCompatibilityReportRequest) (*GetCompatibilityReportResponse, error)
+	// A9P2.6 / A9P3 — deep compatibility matrix.
+	GetCompatibilityMatrix(context.Context, *GetCompatibilityMatrixRequest) (*GetCompatibilityMatrixResponse, error)
+	// A9P3 — Gift Ledger
+	SendGift(context.Context, *SendGiftRequest) (*SendGiftResponse, error)
+	ListGiftLedger(context.Context, *ListGiftLedgerRequest) (*ListGiftLedgerResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -676,8 +686,14 @@ func (UnimplementedDatingServiceServer) ListMyReservations(context.Context, *Lis
 func (UnimplementedDatingServiceServer) CancelReservation(context.Context, *CancelReservationRequest) (*CancelReservationResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CancelReservation not implemented")
 }
-func (UnimplementedDatingServiceServer) GetCompatibilityReport(context.Context, *GetCompatibilityReportRequest) (*GetCompatibilityReportResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method GetCompatibilityReport not implemented")
+func (UnimplementedDatingServiceServer) GetCompatibilityMatrix(context.Context, *GetCompatibilityMatrixRequest) (*GetCompatibilityMatrixResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCompatibilityMatrix not implemented")
+}
+func (UnimplementedDatingServiceServer) SendGift(context.Context, *SendGiftRequest) (*SendGiftResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SendGift not implemented")
+}
+func (UnimplementedDatingServiceServer) ListGiftLedger(context.Context, *ListGiftLedgerRequest) (*ListGiftLedgerResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListGiftLedger not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -1334,20 +1350,56 @@ func _DatingService_CancelReservation_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatingService_GetCompatibilityReport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCompatibilityReportRequest)
+func _DatingService_GetCompatibilityMatrix_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCompatibilityMatrixRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DatingServiceServer).GetCompatibilityReport(ctx, in)
+		return srv.(DatingServiceServer).GetCompatibilityMatrix(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DatingService_GetCompatibilityReport_FullMethodName,
+		FullMethod: DatingService_GetCompatibilityMatrix_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatingServiceServer).GetCompatibilityReport(ctx, req.(*GetCompatibilityReportRequest))
+		return srv.(DatingServiceServer).GetCompatibilityMatrix(ctx, req.(*GetCompatibilityMatrixRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_SendGift_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SendGiftRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).SendGift(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_SendGift_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).SendGift(ctx, req.(*SendGiftRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ListGiftLedger_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListGiftLedgerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListGiftLedger(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListGiftLedger_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListGiftLedger(ctx, req.(*ListGiftLedgerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1496,8 +1548,16 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DatingService_CancelReservation_Handler,
 		},
 		{
-			MethodName: "GetCompatibilityReport",
-			Handler:    _DatingService_GetCompatibilityReport_Handler,
+			MethodName: "GetCompatibilityMatrix",
+			Handler:    _DatingService_GetCompatibilityMatrix_Handler,
+		},
+		{
+			MethodName: "SendGift",
+			Handler:    _DatingService_SendGift_Handler,
+		},
+		{
+			MethodName: "ListGiftLedger",
+			Handler:    _DatingService_ListGiftLedger_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
