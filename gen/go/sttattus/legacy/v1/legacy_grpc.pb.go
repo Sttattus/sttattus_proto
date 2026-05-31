@@ -19,21 +19,55 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	LegacyService_StoreDocument_FullMethodName         = "/sttattus.legacy.v1.LegacyService/StoreDocument"
-	LegacyService_ListAssets_FullMethodName            = "/sttattus.legacy.v1.LegacyService/ListAssets"
-	LegacyService_GetHeritageStats_FullMethodName      = "/sttattus.legacy.v1.LegacyService/GetHeritageStats"
-	LegacyService_StoreEncryptedBlob_FullMethodName    = "/sttattus.legacy.v1.LegacyService/StoreEncryptedBlob"
-	LegacyService_GetEncryptedBlob_FullMethodName      = "/sttattus.legacy.v1.LegacyService/GetEncryptedBlob"
-	LegacyService_ListMyEncryptedBlobs_FullMethodName  = "/sttattus.legacy.v1.LegacyService/ListMyEncryptedBlobs"
-	LegacyService_StoreRecoveryShare_FullMethodName    = "/sttattus.legacy.v1.LegacyService/StoreRecoveryShare"
-	LegacyService_ListMyRecoveryShares_FullMethodName  = "/sttattus.legacy.v1.LegacyService/ListMyRecoveryShares"
-	LegacyService_DeleteRecoveryShare_FullMethodName   = "/sttattus.legacy.v1.LegacyService/DeleteRecoveryShare"
-	LegacyService_ListLegacyCategories_FullMethodName  = "/sttattus.legacy.v1.LegacyService/ListLegacyCategories"
-	LegacyService_AssignAssetCategory_FullMethodName   = "/sttattus.legacy.v1.LegacyService/AssignAssetCategory"
-	LegacyService_UnassignAssetCategory_FullMethodName = "/sttattus.legacy.v1.LegacyService/UnassignAssetCategory"
-	LegacyService_ListAssetCategories_FullMethodName   = "/sttattus.legacy.v1.LegacyService/ListAssetCategories"
-	LegacyService_RecordAssetVersion_FullMethodName    = "/sttattus.legacy.v1.LegacyService/RecordAssetVersion"
-	LegacyService_ListAssetVersions_FullMethodName     = "/sttattus.legacy.v1.LegacyService/ListAssetVersions"
+	LegacyService_StoreDocument_FullMethodName            = "/sttattus.legacy.v1.LegacyService/StoreDocument"
+	LegacyService_ListAssets_FullMethodName               = "/sttattus.legacy.v1.LegacyService/ListAssets"
+	LegacyService_GetHeritageStats_FullMethodName         = "/sttattus.legacy.v1.LegacyService/GetHeritageStats"
+	LegacyService_StoreEncryptedBlob_FullMethodName       = "/sttattus.legacy.v1.LegacyService/StoreEncryptedBlob"
+	LegacyService_GetEncryptedBlob_FullMethodName         = "/sttattus.legacy.v1.LegacyService/GetEncryptedBlob"
+	LegacyService_ListMyEncryptedBlobs_FullMethodName     = "/sttattus.legacy.v1.LegacyService/ListMyEncryptedBlobs"
+	LegacyService_StoreRecoveryShare_FullMethodName       = "/sttattus.legacy.v1.LegacyService/StoreRecoveryShare"
+	LegacyService_ListMyRecoveryShares_FullMethodName     = "/sttattus.legacy.v1.LegacyService/ListMyRecoveryShares"
+	LegacyService_DeleteRecoveryShare_FullMethodName      = "/sttattus.legacy.v1.LegacyService/DeleteRecoveryShare"
+	LegacyService_ListLegacyCategories_FullMethodName     = "/sttattus.legacy.v1.LegacyService/ListLegacyCategories"
+	LegacyService_AssignAssetCategory_FullMethodName      = "/sttattus.legacy.v1.LegacyService/AssignAssetCategory"
+	LegacyService_UnassignAssetCategory_FullMethodName    = "/sttattus.legacy.v1.LegacyService/UnassignAssetCategory"
+	LegacyService_ListAssetCategories_FullMethodName      = "/sttattus.legacy.v1.LegacyService/ListAssetCategories"
+	LegacyService_RecordAssetVersion_FullMethodName       = "/sttattus.legacy.v1.LegacyService/RecordAssetVersion"
+	LegacyService_ListAssetVersions_FullMethodName        = "/sttattus.legacy.v1.LegacyService/ListAssetVersions"
+	LegacyService_GetEstateReadiness_FullMethodName       = "/sttattus.legacy.v1.LegacyService/GetEstateReadiness"
+	LegacyService_ListMyBeneficiaries_FullMethodName      = "/sttattus.legacy.v1.LegacyService/ListMyBeneficiaries"
+	LegacyService_AddBeneficiary_FullMethodName           = "/sttattus.legacy.v1.LegacyService/AddBeneficiary"
+	LegacyService_RemoveBeneficiary_FullMethodName        = "/sttattus.legacy.v1.LegacyService/RemoveBeneficiary"
+	LegacyService_GetDeadManSwitch_FullMethodName         = "/sttattus.legacy.v1.LegacyService/GetDeadManSwitch"
+	LegacyService_ConfigureDeadManSwitch_FullMethodName   = "/sttattus.legacy.v1.LegacyService/ConfigureDeadManSwitch"
+	LegacyService_CheckInDeadManSwitch_FullMethodName     = "/sttattus.legacy.v1.LegacyService/CheckInDeadManSwitch"
+	LegacyService_CreateAnchor_FullMethodName             = "/sttattus.legacy.v1.LegacyService/CreateAnchor"
+	LegacyService_ListMyAnchors_FullMethodName            = "/sttattus.legacy.v1.LegacyService/ListMyAnchors"
+	LegacyService_ListLawyers_FullMethodName              = "/sttattus.legacy.v1.LegacyService/ListLawyers"
+	LegacyService_ListNotaries_FullMethodName             = "/sttattus.legacy.v1.LegacyService/ListNotaries"
+	LegacyService_ListTemplates_FullMethodName            = "/sttattus.legacy.v1.LegacyService/ListTemplates"
+	LegacyService_GetTemplate_FullMethodName              = "/sttattus.legacy.v1.LegacyService/GetTemplate"
+	LegacyService_GenerateDocument_FullMethodName         = "/sttattus.legacy.v1.LegacyService/GenerateDocument"
+	LegacyService_ListMyGeneratedDocuments_FullMethodName = "/sttattus.legacy.v1.LegacyService/ListMyGeneratedDocuments"
+	LegacyService_ListMyHandoffs_FullMethodName           = "/sttattus.legacy.v1.LegacyService/ListMyHandoffs"
+	LegacyService_AcceptHandoff_FullMethodName            = "/sttattus.legacy.v1.LegacyService/AcceptHandoff"
+	LegacyService_DismissHandoff_FullMethodName           = "/sttattus.legacy.v1.LegacyService/DismissHandoff"
+	LegacyService_GetEstateSummary_FullMethodName         = "/sttattus.legacy.v1.LegacyService/GetEstateSummary"
+	LegacyService_StartConciergeThread_FullMethodName     = "/sttattus.legacy.v1.LegacyService/StartConciergeThread"
+	LegacyService_ListMyConciergeThreads_FullMethodName   = "/sttattus.legacy.v1.LegacyService/ListMyConciergeThreads"
+	LegacyService_GetConciergeThread_FullMethodName       = "/sttattus.legacy.v1.LegacyService/GetConciergeThread"
+	LegacyService_PostConciergeMessage_FullMethodName     = "/sttattus.legacy.v1.LegacyService/PostConciergeMessage"
+	LegacyService_ListAnthologyArticles_FullMethodName    = "/sttattus.legacy.v1.LegacyService/ListAnthologyArticles"
+	LegacyService_GetAnthologyArticle_FullMethodName      = "/sttattus.legacy.v1.LegacyService/GetAnthologyArticle"
+	LegacyService_AddLetterOfWishes_FullMethodName        = "/sttattus.legacy.v1.LegacyService/AddLetterOfWishes"
+	LegacyService_ListMyLettersOfWishes_FullMethodName    = "/sttattus.legacy.v1.LegacyService/ListMyLettersOfWishes"
+	LegacyService_RemoveLetterOfWishes_FullMethodName     = "/sttattus.legacy.v1.LegacyService/RemoveLetterOfWishes"
+	LegacyService_GenerateLegacyAlmanac_FullMethodName    = "/sttattus.legacy.v1.LegacyService/GenerateLegacyAlmanac"
+	LegacyService_ListIpPortfolio_FullMethodName          = "/sttattus.legacy.v1.LegacyService/ListIpPortfolio"
+	LegacyService_CreateLegacyShare_FullMethodName        = "/sttattus.legacy.v1.LegacyService/CreateLegacyShare"
+	LegacyService_ListMyLegacyShares_FullMethodName       = "/sttattus.legacy.v1.LegacyService/ListMyLegacyShares"
+	LegacyService_RevokeLegacyShare_FullMethodName        = "/sttattus.legacy.v1.LegacyService/RevokeLegacyShare"
+	LegacyService_ParseDocumentExpiry_FullMethodName      = "/sttattus.legacy.v1.LegacyService/ParseDocumentExpiry"
 )
 
 // LegacyServiceClient is the client API for LegacyService service.
@@ -60,6 +94,53 @@ type LegacyServiceClient interface {
 	// L15.6 — version history.
 	RecordAssetVersion(ctx context.Context, in *RecordAssetVersionRequest, opts ...grpc.CallOption) (*RecordAssetVersionResponse, error)
 	ListAssetVersions(ctx context.Context, in *ListAssetVersionsRequest, opts ...grpc.CallOption) (*ListAssetVersionsResponse, error)
+	// L15.7 — estate readiness composite.
+	GetEstateReadiness(ctx context.Context, in *GetEstateReadinessRequest, opts ...grpc.CallOption) (*GetEstateReadinessResponse, error)
+	// L16 — heir / beneficiary registry.
+	ListMyBeneficiaries(ctx context.Context, in *ListMyBeneficiariesRequest, opts ...grpc.CallOption) (*ListMyBeneficiariesResponse, error)
+	AddBeneficiary(ctx context.Context, in *AddBeneficiaryRequest, opts ...grpc.CallOption) (*AddBeneficiaryResponse, error)
+	RemoveBeneficiary(ctx context.Context, in *RemoveBeneficiaryRequest, opts ...grpc.CallOption) (*RemoveBeneficiaryResponse, error)
+	// L16 — trustee dead-man's-switch.
+	GetDeadManSwitch(ctx context.Context, in *GetDeadManSwitchRequest, opts ...grpc.CallOption) (*GetDeadManSwitchResponse, error)
+	ConfigureDeadManSwitch(ctx context.Context, in *ConfigureDeadManSwitchRequest, opts ...grpc.CallOption) (*ConfigureDeadManSwitchResponse, error)
+	CheckInDeadManSwitch(ctx context.Context, in *CheckInDeadManSwitchRequest, opts ...grpc.CallOption) (*CheckInDeadManSwitchResponse, error)
+	// L16 — document-hash anchors.
+	CreateAnchor(ctx context.Context, in *CreateAnchorRequest, opts ...grpc.CallOption) (*CreateAnchorResponse, error)
+	ListMyAnchors(ctx context.Context, in *ListMyAnchorsRequest, opts ...grpc.CallOption) (*ListMyAnchorsResponse, error)
+	// L16 — lawyer + notary directory.
+	ListLawyers(ctx context.Context, in *ListLawyersRequest, opts ...grpc.CallOption) (*ListLawyersResponse, error)
+	ListNotaries(ctx context.Context, in *ListNotariesRequest, opts ...grpc.CallOption) (*ListNotariesResponse, error)
+	// L16 — jurisdiction-aware template engine.
+	ListTemplates(ctx context.Context, in *ListTemplatesRequest, opts ...grpc.CallOption) (*ListTemplatesResponse, error)
+	GetTemplate(ctx context.Context, in *GetTemplateRequest, opts ...grpc.CallOption) (*GetTemplateResponse, error)
+	GenerateDocument(ctx context.Context, in *GenerateDocumentRequest, opts ...grpc.CallOption) (*GenerateDocumentResponse, error)
+	ListMyGeneratedDocuments(ctx context.Context, in *ListMyGeneratedDocumentsRequest, opts ...grpc.CallOption) (*ListMyGeneratedDocumentsResponse, error)
+	// L17 — cross-pillar handoff inbox.
+	ListMyHandoffs(ctx context.Context, in *ListMyHandoffsRequest, opts ...grpc.CallOption) (*ListMyHandoffsResponse, error)
+	AcceptHandoff(ctx context.Context, in *AcceptHandoffRequest, opts ...grpc.CallOption) (*AcceptHandoffResponse, error)
+	DismissHandoff(ctx context.Context, in *DismissHandoffRequest, opts ...grpc.CallOption) (*DismissHandoffResponse, error)
+	// L17 — estate summary (today card).
+	GetEstateSummary(ctx context.Context, in *GetEstateSummaryRequest, opts ...grpc.CallOption) (*GetEstateSummaryResponse, error)
+	// L18 — Sovereign lawyer concierge.
+	StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error)
+	ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error)
+	GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error)
+	PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error)
+	// L18 — editorial Anthology.
+	ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error)
+	// L18 — letters of wishes (encrypted-at-rest).
+	AddLetterOfWishes(ctx context.Context, in *AddLetterOfWishesRequest, opts ...grpc.CallOption) (*AddLetterOfWishesResponse, error)
+	ListMyLettersOfWishes(ctx context.Context, in *ListMyLettersOfWishesRequest, opts ...grpc.CallOption) (*ListMyLettersOfWishesResponse, error)
+	RemoveLetterOfWishes(ctx context.Context, in *RemoveLetterOfWishesRequest, opts ...grpc.CallOption) (*RemoveLetterOfWishesResponse, error)
+	// L19 — Annual Legacy Almanac + IP portfolio.
+	GenerateLegacyAlmanac(ctx context.Context, in *GenerateLegacyAlmanacRequest, opts ...grpc.CallOption) (*GenerateLegacyAlmanacResponse, error)
+	ListIpPortfolio(ctx context.Context, in *ListIpPortfolioRequest, opts ...grpc.CallOption) (*ListIpPortfolioResponse, error)
+	// L19.5 — token-based estate share + document expiry parser.
+	CreateLegacyShare(ctx context.Context, in *CreateLegacyShareRequest, opts ...grpc.CallOption) (*CreateLegacyShareResponse, error)
+	ListMyLegacyShares(ctx context.Context, in *ListMyLegacySharesRequest, opts ...grpc.CallOption) (*ListMyLegacySharesResponse, error)
+	RevokeLegacyShare(ctx context.Context, in *RevokeLegacyShareRequest, opts ...grpc.CallOption) (*RevokeLegacyShareResponse, error)
+	ParseDocumentExpiry(ctx context.Context, in *ParseDocumentExpiryRequest, opts ...grpc.CallOption) (*ParseDocumentExpiryResponse, error)
 }
 
 type legacyServiceClient struct {
@@ -220,6 +301,346 @@ func (c *legacyServiceClient) ListAssetVersions(ctx context.Context, in *ListAss
 	return out, nil
 }
 
+func (c *legacyServiceClient) GetEstateReadiness(ctx context.Context, in *GetEstateReadinessRequest, opts ...grpc.CallOption) (*GetEstateReadinessResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetEstateReadinessResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetEstateReadiness_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListMyBeneficiaries(ctx context.Context, in *ListMyBeneficiariesRequest, opts ...grpc.CallOption) (*ListMyBeneficiariesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyBeneficiariesResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListMyBeneficiaries_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) AddBeneficiary(ctx context.Context, in *AddBeneficiaryRequest, opts ...grpc.CallOption) (*AddBeneficiaryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AddBeneficiaryResponse)
+	err := c.cc.Invoke(ctx, LegacyService_AddBeneficiary_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) RemoveBeneficiary(ctx context.Context, in *RemoveBeneficiaryRequest, opts ...grpc.CallOption) (*RemoveBeneficiaryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RemoveBeneficiaryResponse)
+	err := c.cc.Invoke(ctx, LegacyService_RemoveBeneficiary_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetDeadManSwitch(ctx context.Context, in *GetDeadManSwitchRequest, opts ...grpc.CallOption) (*GetDeadManSwitchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDeadManSwitchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetDeadManSwitch_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ConfigureDeadManSwitch(ctx context.Context, in *ConfigureDeadManSwitchRequest, opts ...grpc.CallOption) (*ConfigureDeadManSwitchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ConfigureDeadManSwitchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ConfigureDeadManSwitch_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) CheckInDeadManSwitch(ctx context.Context, in *CheckInDeadManSwitchRequest, opts ...grpc.CallOption) (*CheckInDeadManSwitchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CheckInDeadManSwitchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_CheckInDeadManSwitch_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) CreateAnchor(ctx context.Context, in *CreateAnchorRequest, opts ...grpc.CallOption) (*CreateAnchorResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateAnchorResponse)
+	err := c.cc.Invoke(ctx, LegacyService_CreateAnchor_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListMyAnchors(ctx context.Context, in *ListMyAnchorsRequest, opts ...grpc.CallOption) (*ListMyAnchorsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyAnchorsResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListMyAnchors_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListLawyers(ctx context.Context, in *ListLawyersRequest, opts ...grpc.CallOption) (*ListLawyersResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLawyersResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListLawyers_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListNotaries(ctx context.Context, in *ListNotariesRequest, opts ...grpc.CallOption) (*ListNotariesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListNotariesResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListNotaries_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListTemplates(ctx context.Context, in *ListTemplatesRequest, opts ...grpc.CallOption) (*ListTemplatesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListTemplatesResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListTemplates_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetTemplate(ctx context.Context, in *GetTemplateRequest, opts ...grpc.CallOption) (*GetTemplateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTemplateResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetTemplate_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GenerateDocument(ctx context.Context, in *GenerateDocumentRequest, opts ...grpc.CallOption) (*GenerateDocumentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateDocumentResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GenerateDocument_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListMyGeneratedDocuments(ctx context.Context, in *ListMyGeneratedDocumentsRequest, opts ...grpc.CallOption) (*ListMyGeneratedDocumentsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyGeneratedDocumentsResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListMyGeneratedDocuments_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListMyHandoffs(ctx context.Context, in *ListMyHandoffsRequest, opts ...grpc.CallOption) (*ListMyHandoffsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyHandoffsResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListMyHandoffs_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) AcceptHandoff(ctx context.Context, in *AcceptHandoffRequest, opts ...grpc.CallOption) (*AcceptHandoffResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AcceptHandoffResponse)
+	err := c.cc.Invoke(ctx, LegacyService_AcceptHandoff_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) DismissHandoff(ctx context.Context, in *DismissHandoffRequest, opts ...grpc.CallOption) (*DismissHandoffResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DismissHandoffResponse)
+	err := c.cc.Invoke(ctx, LegacyService_DismissHandoff_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetEstateSummary(ctx context.Context, in *GetEstateSummaryRequest, opts ...grpc.CallOption) (*GetEstateSummaryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetEstateSummaryResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetEstateSummary_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StartConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, LegacyService_StartConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyConciergeThreadsResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListMyConciergeThreads_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PostConciergeMessageResponse)
+	err := c.cc.Invoke(ctx, LegacyService_PostConciergeMessage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAnthologyArticlesResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListAnthologyArticles_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAnthologyArticleResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetAnthologyArticle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) AddLetterOfWishes(ctx context.Context, in *AddLetterOfWishesRequest, opts ...grpc.CallOption) (*AddLetterOfWishesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AddLetterOfWishesResponse)
+	err := c.cc.Invoke(ctx, LegacyService_AddLetterOfWishes_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListMyLettersOfWishes(ctx context.Context, in *ListMyLettersOfWishesRequest, opts ...grpc.CallOption) (*ListMyLettersOfWishesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyLettersOfWishesResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListMyLettersOfWishes_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) RemoveLetterOfWishes(ctx context.Context, in *RemoveLetterOfWishesRequest, opts ...grpc.CallOption) (*RemoveLetterOfWishesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RemoveLetterOfWishesResponse)
+	err := c.cc.Invoke(ctx, LegacyService_RemoveLetterOfWishes_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GenerateLegacyAlmanac(ctx context.Context, in *GenerateLegacyAlmanacRequest, opts ...grpc.CallOption) (*GenerateLegacyAlmanacResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateLegacyAlmanacResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GenerateLegacyAlmanac_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListIpPortfolio(ctx context.Context, in *ListIpPortfolioRequest, opts ...grpc.CallOption) (*ListIpPortfolioResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListIpPortfolioResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListIpPortfolio_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) CreateLegacyShare(ctx context.Context, in *CreateLegacyShareRequest, opts ...grpc.CallOption) (*CreateLegacyShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateLegacyShareResponse)
+	err := c.cc.Invoke(ctx, LegacyService_CreateLegacyShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ListMyLegacyShares(ctx context.Context, in *ListMyLegacySharesRequest, opts ...grpc.CallOption) (*ListMyLegacySharesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyLegacySharesResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ListMyLegacyShares_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) RevokeLegacyShare(ctx context.Context, in *RevokeLegacyShareRequest, opts ...grpc.CallOption) (*RevokeLegacyShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeLegacyShareResponse)
+	err := c.cc.Invoke(ctx, LegacyService_RevokeLegacyShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) ParseDocumentExpiry(ctx context.Context, in *ParseDocumentExpiryRequest, opts ...grpc.CallOption) (*ParseDocumentExpiryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ParseDocumentExpiryResponse)
+	err := c.cc.Invoke(ctx, LegacyService_ParseDocumentExpiry_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LegacyServiceServer is the server API for LegacyService service.
 // All implementations must embed UnimplementedLegacyServiceServer
 // for forward compatibility.
@@ -244,6 +665,53 @@ type LegacyServiceServer interface {
 	// L15.6 — version history.
 	RecordAssetVersion(context.Context, *RecordAssetVersionRequest) (*RecordAssetVersionResponse, error)
 	ListAssetVersions(context.Context, *ListAssetVersionsRequest) (*ListAssetVersionsResponse, error)
+	// L15.7 — estate readiness composite.
+	GetEstateReadiness(context.Context, *GetEstateReadinessRequest) (*GetEstateReadinessResponse, error)
+	// L16 — heir / beneficiary registry.
+	ListMyBeneficiaries(context.Context, *ListMyBeneficiariesRequest) (*ListMyBeneficiariesResponse, error)
+	AddBeneficiary(context.Context, *AddBeneficiaryRequest) (*AddBeneficiaryResponse, error)
+	RemoveBeneficiary(context.Context, *RemoveBeneficiaryRequest) (*RemoveBeneficiaryResponse, error)
+	// L16 — trustee dead-man's-switch.
+	GetDeadManSwitch(context.Context, *GetDeadManSwitchRequest) (*GetDeadManSwitchResponse, error)
+	ConfigureDeadManSwitch(context.Context, *ConfigureDeadManSwitchRequest) (*ConfigureDeadManSwitchResponse, error)
+	CheckInDeadManSwitch(context.Context, *CheckInDeadManSwitchRequest) (*CheckInDeadManSwitchResponse, error)
+	// L16 — document-hash anchors.
+	CreateAnchor(context.Context, *CreateAnchorRequest) (*CreateAnchorResponse, error)
+	ListMyAnchors(context.Context, *ListMyAnchorsRequest) (*ListMyAnchorsResponse, error)
+	// L16 — lawyer + notary directory.
+	ListLawyers(context.Context, *ListLawyersRequest) (*ListLawyersResponse, error)
+	ListNotaries(context.Context, *ListNotariesRequest) (*ListNotariesResponse, error)
+	// L16 — jurisdiction-aware template engine.
+	ListTemplates(context.Context, *ListTemplatesRequest) (*ListTemplatesResponse, error)
+	GetTemplate(context.Context, *GetTemplateRequest) (*GetTemplateResponse, error)
+	GenerateDocument(context.Context, *GenerateDocumentRequest) (*GenerateDocumentResponse, error)
+	ListMyGeneratedDocuments(context.Context, *ListMyGeneratedDocumentsRequest) (*ListMyGeneratedDocumentsResponse, error)
+	// L17 — cross-pillar handoff inbox.
+	ListMyHandoffs(context.Context, *ListMyHandoffsRequest) (*ListMyHandoffsResponse, error)
+	AcceptHandoff(context.Context, *AcceptHandoffRequest) (*AcceptHandoffResponse, error)
+	DismissHandoff(context.Context, *DismissHandoffRequest) (*DismissHandoffResponse, error)
+	// L17 — estate summary (today card).
+	GetEstateSummary(context.Context, *GetEstateSummaryRequest) (*GetEstateSummaryResponse, error)
+	// L18 — Sovereign lawyer concierge.
+	StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error)
+	ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error)
+	GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error)
+	PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error)
+	// L18 — editorial Anthology.
+	ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error)
+	// L18 — letters of wishes (encrypted-at-rest).
+	AddLetterOfWishes(context.Context, *AddLetterOfWishesRequest) (*AddLetterOfWishesResponse, error)
+	ListMyLettersOfWishes(context.Context, *ListMyLettersOfWishesRequest) (*ListMyLettersOfWishesResponse, error)
+	RemoveLetterOfWishes(context.Context, *RemoveLetterOfWishesRequest) (*RemoveLetterOfWishesResponse, error)
+	// L19 — Annual Legacy Almanac + IP portfolio.
+	GenerateLegacyAlmanac(context.Context, *GenerateLegacyAlmanacRequest) (*GenerateLegacyAlmanacResponse, error)
+	ListIpPortfolio(context.Context, *ListIpPortfolioRequest) (*ListIpPortfolioResponse, error)
+	// L19.5 — token-based estate share + document expiry parser.
+	CreateLegacyShare(context.Context, *CreateLegacyShareRequest) (*CreateLegacyShareResponse, error)
+	ListMyLegacyShares(context.Context, *ListMyLegacySharesRequest) (*ListMyLegacySharesResponse, error)
+	RevokeLegacyShare(context.Context, *RevokeLegacyShareRequest) (*RevokeLegacyShareResponse, error)
+	ParseDocumentExpiry(context.Context, *ParseDocumentExpiryRequest) (*ParseDocumentExpiryResponse, error)
 	mustEmbedUnimplementedLegacyServiceServer()
 }
 
@@ -298,6 +766,108 @@ func (UnimplementedLegacyServiceServer) RecordAssetVersion(context.Context, *Rec
 }
 func (UnimplementedLegacyServiceServer) ListAssetVersions(context.Context, *ListAssetVersionsRequest) (*ListAssetVersionsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListAssetVersions not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetEstateReadiness(context.Context, *GetEstateReadinessRequest) (*GetEstateReadinessResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetEstateReadiness not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListMyBeneficiaries(context.Context, *ListMyBeneficiariesRequest) (*ListMyBeneficiariesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyBeneficiaries not implemented")
+}
+func (UnimplementedLegacyServiceServer) AddBeneficiary(context.Context, *AddBeneficiaryRequest) (*AddBeneficiaryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AddBeneficiary not implemented")
+}
+func (UnimplementedLegacyServiceServer) RemoveBeneficiary(context.Context, *RemoveBeneficiaryRequest) (*RemoveBeneficiaryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RemoveBeneficiary not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetDeadManSwitch(context.Context, *GetDeadManSwitchRequest) (*GetDeadManSwitchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDeadManSwitch not implemented")
+}
+func (UnimplementedLegacyServiceServer) ConfigureDeadManSwitch(context.Context, *ConfigureDeadManSwitchRequest) (*ConfigureDeadManSwitchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ConfigureDeadManSwitch not implemented")
+}
+func (UnimplementedLegacyServiceServer) CheckInDeadManSwitch(context.Context, *CheckInDeadManSwitchRequest) (*CheckInDeadManSwitchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CheckInDeadManSwitch not implemented")
+}
+func (UnimplementedLegacyServiceServer) CreateAnchor(context.Context, *CreateAnchorRequest) (*CreateAnchorResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateAnchor not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListMyAnchors(context.Context, *ListMyAnchorsRequest) (*ListMyAnchorsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyAnchors not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListLawyers(context.Context, *ListLawyersRequest) (*ListLawyersResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLawyers not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListNotaries(context.Context, *ListNotariesRequest) (*ListNotariesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListNotaries not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListTemplates(context.Context, *ListTemplatesRequest) (*ListTemplatesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListTemplates not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetTemplate(context.Context, *GetTemplateRequest) (*GetTemplateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTemplate not implemented")
+}
+func (UnimplementedLegacyServiceServer) GenerateDocument(context.Context, *GenerateDocumentRequest) (*GenerateDocumentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateDocument not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListMyGeneratedDocuments(context.Context, *ListMyGeneratedDocumentsRequest) (*ListMyGeneratedDocumentsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyGeneratedDocuments not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListMyHandoffs(context.Context, *ListMyHandoffsRequest) (*ListMyHandoffsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyHandoffs not implemented")
+}
+func (UnimplementedLegacyServiceServer) AcceptHandoff(context.Context, *AcceptHandoffRequest) (*AcceptHandoffResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AcceptHandoff not implemented")
+}
+func (UnimplementedLegacyServiceServer) DismissHandoff(context.Context, *DismissHandoffRequest) (*DismissHandoffResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DismissHandoff not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetEstateSummary(context.Context, *GetEstateSummaryRequest) (*GetEstateSummaryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetEstateSummary not implemented")
+}
+func (UnimplementedLegacyServiceServer) StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StartConciergeThread not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyConciergeThreads not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetConciergeThread not implemented")
+}
+func (UnimplementedLegacyServiceServer) PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PostConciergeMessage not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAnthologyArticles not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAnthologyArticle not implemented")
+}
+func (UnimplementedLegacyServiceServer) AddLetterOfWishes(context.Context, *AddLetterOfWishesRequest) (*AddLetterOfWishesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AddLetterOfWishes not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListMyLettersOfWishes(context.Context, *ListMyLettersOfWishesRequest) (*ListMyLettersOfWishesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyLettersOfWishes not implemented")
+}
+func (UnimplementedLegacyServiceServer) RemoveLetterOfWishes(context.Context, *RemoveLetterOfWishesRequest) (*RemoveLetterOfWishesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RemoveLetterOfWishes not implemented")
+}
+func (UnimplementedLegacyServiceServer) GenerateLegacyAlmanac(context.Context, *GenerateLegacyAlmanacRequest) (*GenerateLegacyAlmanacResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateLegacyAlmanac not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListIpPortfolio(context.Context, *ListIpPortfolioRequest) (*ListIpPortfolioResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListIpPortfolio not implemented")
+}
+func (UnimplementedLegacyServiceServer) CreateLegacyShare(context.Context, *CreateLegacyShareRequest) (*CreateLegacyShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateLegacyShare not implemented")
+}
+func (UnimplementedLegacyServiceServer) ListMyLegacyShares(context.Context, *ListMyLegacySharesRequest) (*ListMyLegacySharesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyLegacyShares not implemented")
+}
+func (UnimplementedLegacyServiceServer) RevokeLegacyShare(context.Context, *RevokeLegacyShareRequest) (*RevokeLegacyShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeLegacyShare not implemented")
+}
+func (UnimplementedLegacyServiceServer) ParseDocumentExpiry(context.Context, *ParseDocumentExpiryRequest) (*ParseDocumentExpiryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ParseDocumentExpiry not implemented")
 }
 func (UnimplementedLegacyServiceServer) mustEmbedUnimplementedLegacyServiceServer() {}
 func (UnimplementedLegacyServiceServer) testEmbeddedByValue()                       {}
@@ -590,6 +1160,618 @@ func _LegacyService_ListAssetVersions_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LegacyService_GetEstateReadiness_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEstateReadinessRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetEstateReadiness(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetEstateReadiness_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetEstateReadiness(ctx, req.(*GetEstateReadinessRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListMyBeneficiaries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyBeneficiariesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListMyBeneficiaries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListMyBeneficiaries_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListMyBeneficiaries(ctx, req.(*ListMyBeneficiariesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_AddBeneficiary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddBeneficiaryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).AddBeneficiary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_AddBeneficiary_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).AddBeneficiary(ctx, req.(*AddBeneficiaryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_RemoveBeneficiary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveBeneficiaryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).RemoveBeneficiary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_RemoveBeneficiary_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).RemoveBeneficiary(ctx, req.(*RemoveBeneficiaryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetDeadManSwitch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDeadManSwitchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetDeadManSwitch(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetDeadManSwitch_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetDeadManSwitch(ctx, req.(*GetDeadManSwitchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ConfigureDeadManSwitch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfigureDeadManSwitchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ConfigureDeadManSwitch(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ConfigureDeadManSwitch_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ConfigureDeadManSwitch(ctx, req.(*ConfigureDeadManSwitchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_CheckInDeadManSwitch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CheckInDeadManSwitchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).CheckInDeadManSwitch(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_CheckInDeadManSwitch_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).CheckInDeadManSwitch(ctx, req.(*CheckInDeadManSwitchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_CreateAnchor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAnchorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).CreateAnchor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_CreateAnchor_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).CreateAnchor(ctx, req.(*CreateAnchorRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListMyAnchors_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyAnchorsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListMyAnchors(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListMyAnchors_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListMyAnchors(ctx, req.(*ListMyAnchorsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListLawyers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLawyersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListLawyers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListLawyers_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListLawyers(ctx, req.(*ListLawyersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListNotaries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListNotariesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListNotaries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListNotaries_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListNotaries(ctx, req.(*ListNotariesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListTemplates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListTemplatesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListTemplates(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListTemplates_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListTemplates(ctx, req.(*ListTemplatesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetTemplate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetTemplate(ctx, req.(*GetTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GenerateDocument_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateDocumentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GenerateDocument(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GenerateDocument_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GenerateDocument(ctx, req.(*GenerateDocumentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListMyGeneratedDocuments_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyGeneratedDocumentsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListMyGeneratedDocuments(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListMyGeneratedDocuments_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListMyGeneratedDocuments(ctx, req.(*ListMyGeneratedDocumentsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListMyHandoffs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyHandoffsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListMyHandoffs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListMyHandoffs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListMyHandoffs(ctx, req.(*ListMyHandoffsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_AcceptHandoff_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AcceptHandoffRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).AcceptHandoff(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_AcceptHandoff_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).AcceptHandoff(ctx, req.(*AcceptHandoffRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_DismissHandoff_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DismissHandoffRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).DismissHandoff(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_DismissHandoff_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).DismissHandoff(ctx, req.(*DismissHandoffRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetEstateSummary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEstateSummaryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetEstateSummary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetEstateSummary_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetEstateSummary(ctx, req.(*GetEstateSummaryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_StartConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StartConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).StartConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_StartConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).StartConciergeThread(ctx, req.(*StartConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListMyConciergeThreads_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyConciergeThreadsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListMyConciergeThreads(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListMyConciergeThreads_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListMyConciergeThreads(ctx, req.(*ListMyConciergeThreadsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetConciergeThread(ctx, req.(*GetConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_PostConciergeMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostConciergeMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).PostConciergeMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_PostConciergeMessage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).PostConciergeMessage(ctx, req.(*PostConciergeMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListAnthologyArticles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAnthologyArticlesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListAnthologyArticles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListAnthologyArticles_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListAnthologyArticles(ctx, req.(*ListAnthologyArticlesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetAnthologyArticle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnthologyArticleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetAnthologyArticle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetAnthologyArticle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetAnthologyArticle(ctx, req.(*GetAnthologyArticleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_AddLetterOfWishes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddLetterOfWishesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).AddLetterOfWishes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_AddLetterOfWishes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).AddLetterOfWishes(ctx, req.(*AddLetterOfWishesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListMyLettersOfWishes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyLettersOfWishesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListMyLettersOfWishes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListMyLettersOfWishes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListMyLettersOfWishes(ctx, req.(*ListMyLettersOfWishesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_RemoveLetterOfWishes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveLetterOfWishesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).RemoveLetterOfWishes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_RemoveLetterOfWishes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).RemoveLetterOfWishes(ctx, req.(*RemoveLetterOfWishesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GenerateLegacyAlmanac_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateLegacyAlmanacRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GenerateLegacyAlmanac(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GenerateLegacyAlmanac_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GenerateLegacyAlmanac(ctx, req.(*GenerateLegacyAlmanacRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListIpPortfolio_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListIpPortfolioRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListIpPortfolio(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListIpPortfolio_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListIpPortfolio(ctx, req.(*ListIpPortfolioRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_CreateLegacyShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateLegacyShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).CreateLegacyShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_CreateLegacyShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).CreateLegacyShare(ctx, req.(*CreateLegacyShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ListMyLegacyShares_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyLegacySharesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ListMyLegacyShares(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ListMyLegacyShares_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ListMyLegacyShares(ctx, req.(*ListMyLegacySharesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_RevokeLegacyShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeLegacyShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).RevokeLegacyShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_RevokeLegacyShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).RevokeLegacyShare(ctx, req.(*RevokeLegacyShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_ParseDocumentExpiry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ParseDocumentExpiryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).ParseDocumentExpiry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_ParseDocumentExpiry_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).ParseDocumentExpiry(ctx, req.(*ParseDocumentExpiryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LegacyService_ServiceDesc is the grpc.ServiceDesc for LegacyService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -656,6 +1838,142 @@ var LegacyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListAssetVersions",
 			Handler:    _LegacyService_ListAssetVersions_Handler,
+		},
+		{
+			MethodName: "GetEstateReadiness",
+			Handler:    _LegacyService_GetEstateReadiness_Handler,
+		},
+		{
+			MethodName: "ListMyBeneficiaries",
+			Handler:    _LegacyService_ListMyBeneficiaries_Handler,
+		},
+		{
+			MethodName: "AddBeneficiary",
+			Handler:    _LegacyService_AddBeneficiary_Handler,
+		},
+		{
+			MethodName: "RemoveBeneficiary",
+			Handler:    _LegacyService_RemoveBeneficiary_Handler,
+		},
+		{
+			MethodName: "GetDeadManSwitch",
+			Handler:    _LegacyService_GetDeadManSwitch_Handler,
+		},
+		{
+			MethodName: "ConfigureDeadManSwitch",
+			Handler:    _LegacyService_ConfigureDeadManSwitch_Handler,
+		},
+		{
+			MethodName: "CheckInDeadManSwitch",
+			Handler:    _LegacyService_CheckInDeadManSwitch_Handler,
+		},
+		{
+			MethodName: "CreateAnchor",
+			Handler:    _LegacyService_CreateAnchor_Handler,
+		},
+		{
+			MethodName: "ListMyAnchors",
+			Handler:    _LegacyService_ListMyAnchors_Handler,
+		},
+		{
+			MethodName: "ListLawyers",
+			Handler:    _LegacyService_ListLawyers_Handler,
+		},
+		{
+			MethodName: "ListNotaries",
+			Handler:    _LegacyService_ListNotaries_Handler,
+		},
+		{
+			MethodName: "ListTemplates",
+			Handler:    _LegacyService_ListTemplates_Handler,
+		},
+		{
+			MethodName: "GetTemplate",
+			Handler:    _LegacyService_GetTemplate_Handler,
+		},
+		{
+			MethodName: "GenerateDocument",
+			Handler:    _LegacyService_GenerateDocument_Handler,
+		},
+		{
+			MethodName: "ListMyGeneratedDocuments",
+			Handler:    _LegacyService_ListMyGeneratedDocuments_Handler,
+		},
+		{
+			MethodName: "ListMyHandoffs",
+			Handler:    _LegacyService_ListMyHandoffs_Handler,
+		},
+		{
+			MethodName: "AcceptHandoff",
+			Handler:    _LegacyService_AcceptHandoff_Handler,
+		},
+		{
+			MethodName: "DismissHandoff",
+			Handler:    _LegacyService_DismissHandoff_Handler,
+		},
+		{
+			MethodName: "GetEstateSummary",
+			Handler:    _LegacyService_GetEstateSummary_Handler,
+		},
+		{
+			MethodName: "StartConciergeThread",
+			Handler:    _LegacyService_StartConciergeThread_Handler,
+		},
+		{
+			MethodName: "ListMyConciergeThreads",
+			Handler:    _LegacyService_ListMyConciergeThreads_Handler,
+		},
+		{
+			MethodName: "GetConciergeThread",
+			Handler:    _LegacyService_GetConciergeThread_Handler,
+		},
+		{
+			MethodName: "PostConciergeMessage",
+			Handler:    _LegacyService_PostConciergeMessage_Handler,
+		},
+		{
+			MethodName: "ListAnthologyArticles",
+			Handler:    _LegacyService_ListAnthologyArticles_Handler,
+		},
+		{
+			MethodName: "GetAnthologyArticle",
+			Handler:    _LegacyService_GetAnthologyArticle_Handler,
+		},
+		{
+			MethodName: "AddLetterOfWishes",
+			Handler:    _LegacyService_AddLetterOfWishes_Handler,
+		},
+		{
+			MethodName: "ListMyLettersOfWishes",
+			Handler:    _LegacyService_ListMyLettersOfWishes_Handler,
+		},
+		{
+			MethodName: "RemoveLetterOfWishes",
+			Handler:    _LegacyService_RemoveLetterOfWishes_Handler,
+		},
+		{
+			MethodName: "GenerateLegacyAlmanac",
+			Handler:    _LegacyService_GenerateLegacyAlmanac_Handler,
+		},
+		{
+			MethodName: "ListIpPortfolio",
+			Handler:    _LegacyService_ListIpPortfolio_Handler,
+		},
+		{
+			MethodName: "CreateLegacyShare",
+			Handler:    _LegacyService_CreateLegacyShare_Handler,
+		},
+		{
+			MethodName: "ListMyLegacyShares",
+			Handler:    _LegacyService_ListMyLegacyShares_Handler,
+		},
+		{
+			MethodName: "RevokeLegacyShare",
+			Handler:    _LegacyService_RevokeLegacyShare_Handler,
+		},
+		{
+			MethodName: "ParseDocumentExpiry",
+			Handler:    _LegacyService_ParseDocumentExpiry_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

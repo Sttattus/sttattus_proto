@@ -3564,6 +3564,2682 @@ class ListMyPlacementResultsResponse extends $pb.GeneratedMessage {
   $pb.PbList<PlacementResult> get results => $_getList(0);
 }
 
+class WritingPrompt extends $pb.GeneratedMessage {
+  factory WritingPrompt({
+    $core.String? id,
+    $core.String? language,
+    $core.String? cefrTarget,
+    $core.String? title,
+    $core.String? prompt,
+    $core.int? minWords,
+    $core.int? maxWords,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (language != null) result.language = language;
+    if (cefrTarget != null) result.cefrTarget = cefrTarget;
+    if (title != null) result.title = title;
+    if (prompt != null) result.prompt = prompt;
+    if (minWords != null) result.minWords = minWords;
+    if (maxWords != null) result.maxWords = maxWords;
+    return result;
+  }
+
+  WritingPrompt._();
+
+  factory WritingPrompt.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory WritingPrompt.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WritingPrompt', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'language')
+    ..aOS(3, _omitFieldNames ? '' : 'cefrTarget')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'prompt')
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'minWords', $pb.PbFieldType.O3)
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'maxWords', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  WritingPrompt clone() => WritingPrompt()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  WritingPrompt copyWith(void Function(WritingPrompt) updates) => super.copyWith((message) => updates(message as WritingPrompt)) as WritingPrompt;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static WritingPrompt create() => WritingPrompt._();
+  @$core.override
+  WritingPrompt createEmptyInstance() => create();
+  static $pb.PbList<WritingPrompt> createRepeated() => $pb.PbList<WritingPrompt>();
+  @$core.pragma('dart2js:noInline')
+  static WritingPrompt getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WritingPrompt>(create);
+  static WritingPrompt? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get language => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set language($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLanguage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguage() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get cefrTarget => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set cefrTarget($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCefrTarget() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCefrTarget() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get prompt => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set prompt($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrompt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrompt() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get minWords => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set minWords($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMinWords() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMinWords() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get maxWords => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set maxWords($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMaxWords() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMaxWords() => $_clearField(7);
+}
+
+/// RubricScore is one CEFR-aligned scoring dimension of a writing
+/// submission (task achievement / coherence / lexical range / accuracy).
+class RubricScore extends $pb.GeneratedMessage {
+  factory RubricScore({
+    $core.String? dimension,
+    $core.int? score,
+    $core.String? comment,
+  }) {
+    final result = create();
+    if (dimension != null) result.dimension = dimension;
+    if (score != null) result.score = score;
+    if (comment != null) result.comment = comment;
+    return result;
+  }
+
+  RubricScore._();
+
+  factory RubricScore.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RubricScore.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RubricScore', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'dimension')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'score', $pb.PbFieldType.O3)
+    ..aOS(3, _omitFieldNames ? '' : 'comment')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RubricScore clone() => RubricScore()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RubricScore copyWith(void Function(RubricScore) updates) => super.copyWith((message) => updates(message as RubricScore)) as RubricScore;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RubricScore create() => RubricScore._();
+  @$core.override
+  RubricScore createEmptyInstance() => create();
+  static $pb.PbList<RubricScore> createRepeated() => $pb.PbList<RubricScore>();
+  @$core.pragma('dart2js:noInline')
+  static RubricScore getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RubricScore>(create);
+  static RubricScore? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get dimension => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set dimension($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDimension() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDimension() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get score => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set score($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasScore() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearScore() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get comment => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set comment($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasComment() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearComment() => $_clearField(3);
+}
+
+/// WritingSubmission status: 'corrected' = Gemini rough correction ran,
+/// 'heuristic' = provider unavailable so a deterministic local rubric was
+/// applied, 'pending' = not yet scored.
+class WritingSubmission extends $pb.GeneratedMessage {
+  factory WritingSubmission({
+    $core.String? id,
+    $core.String? promptId,
+    $core.String? language,
+    $core.String? content,
+    $core.String? status,
+    $core.String? correctedMarkdown,
+    $core.Iterable<RubricScore>? rubric,
+    $core.int? score,
+    $fixnum.Int64? createdUnix,
+    $fixnum.Int64? updatedUnix,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (promptId != null) result.promptId = promptId;
+    if (language != null) result.language = language;
+    if (content != null) result.content = content;
+    if (status != null) result.status = status;
+    if (correctedMarkdown != null) result.correctedMarkdown = correctedMarkdown;
+    if (rubric != null) result.rubric.addAll(rubric);
+    if (score != null) result.score = score;
+    if (createdUnix != null) result.createdUnix = createdUnix;
+    if (updatedUnix != null) result.updatedUnix = updatedUnix;
+    return result;
+  }
+
+  WritingSubmission._();
+
+  factory WritingSubmission.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory WritingSubmission.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WritingSubmission', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'promptId')
+    ..aOS(3, _omitFieldNames ? '' : 'language')
+    ..aOS(4, _omitFieldNames ? '' : 'content')
+    ..aOS(5, _omitFieldNames ? '' : 'status')
+    ..aOS(6, _omitFieldNames ? '' : 'correctedMarkdown')
+    ..pc<RubricScore>(7, _omitFieldNames ? '' : 'rubric', $pb.PbFieldType.PM, subBuilder: RubricScore.create)
+    ..a<$core.int>(8, _omitFieldNames ? '' : 'score', $pb.PbFieldType.O3)
+    ..aInt64(9, _omitFieldNames ? '' : 'createdUnix')
+    ..aInt64(10, _omitFieldNames ? '' : 'updatedUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  WritingSubmission clone() => WritingSubmission()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  WritingSubmission copyWith(void Function(WritingSubmission) updates) => super.copyWith((message) => updates(message as WritingSubmission)) as WritingSubmission;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static WritingSubmission create() => WritingSubmission._();
+  @$core.override
+  WritingSubmission createEmptyInstance() => create();
+  static $pb.PbList<WritingSubmission> createRepeated() => $pb.PbList<WritingSubmission>();
+  @$core.pragma('dart2js:noInline')
+  static WritingSubmission getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WritingSubmission>(create);
+  static WritingSubmission? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get promptId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set promptId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPromptId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPromptId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get language => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set language($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLanguage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLanguage() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get content => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set content($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasContent() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearContent() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get status => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set status($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get correctedMarkdown => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set correctedMarkdown($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCorrectedMarkdown() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCorrectedMarkdown() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<RubricScore> get rubric => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.int get score => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set score($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasScore() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearScore() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get createdUnix => $_getI64(8);
+  @$pb.TagNumber(9)
+  set createdUnix($fixnum.Int64 value) => $_setInt64(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCreatedUnix() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCreatedUnix() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get updatedUnix => $_getI64(9);
+  @$pb.TagNumber(10)
+  set updatedUnix($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedUnix() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedUnix() => $_clearField(10);
+}
+
+class ListWritingPromptsRequest extends $pb.GeneratedMessage {
+  factory ListWritingPromptsRequest({
+    $core.String? language,
+    $core.String? cefrLevel,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (cefrLevel != null) result.cefrLevel = cefrLevel;
+    return result;
+  }
+
+  ListWritingPromptsRequest._();
+
+  factory ListWritingPromptsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListWritingPromptsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListWritingPromptsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOS(2, _omitFieldNames ? '' : 'cefrLevel')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWritingPromptsRequest clone() => ListWritingPromptsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWritingPromptsRequest copyWith(void Function(ListWritingPromptsRequest) updates) => super.copyWith((message) => updates(message as ListWritingPromptsRequest)) as ListWritingPromptsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListWritingPromptsRequest create() => ListWritingPromptsRequest._();
+  @$core.override
+  ListWritingPromptsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListWritingPromptsRequest> createRepeated() => $pb.PbList<ListWritingPromptsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListWritingPromptsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListWritingPromptsRequest>(create);
+  static ListWritingPromptsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get cefrLevel => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set cefrLevel($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCefrLevel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCefrLevel() => $_clearField(2);
+}
+
+class ListWritingPromptsResponse extends $pb.GeneratedMessage {
+  factory ListWritingPromptsResponse({
+    $core.Iterable<WritingPrompt>? prompts,
+  }) {
+    final result = create();
+    if (prompts != null) result.prompts.addAll(prompts);
+    return result;
+  }
+
+  ListWritingPromptsResponse._();
+
+  factory ListWritingPromptsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListWritingPromptsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListWritingPromptsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<WritingPrompt>(1, _omitFieldNames ? '' : 'prompts', $pb.PbFieldType.PM, subBuilder: WritingPrompt.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWritingPromptsResponse clone() => ListWritingPromptsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWritingPromptsResponse copyWith(void Function(ListWritingPromptsResponse) updates) => super.copyWith((message) => updates(message as ListWritingPromptsResponse)) as ListWritingPromptsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListWritingPromptsResponse create() => ListWritingPromptsResponse._();
+  @$core.override
+  ListWritingPromptsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListWritingPromptsResponse> createRepeated() => $pb.PbList<ListWritingPromptsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListWritingPromptsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListWritingPromptsResponse>(create);
+  static ListWritingPromptsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<WritingPrompt> get prompts => $_getList(0);
+}
+
+class SubmitWritingRequest extends $pb.GeneratedMessage {
+  factory SubmitWritingRequest({
+    $core.String? promptId,
+    $core.String? content,
+  }) {
+    final result = create();
+    if (promptId != null) result.promptId = promptId;
+    if (content != null) result.content = content;
+    return result;
+  }
+
+  SubmitWritingRequest._();
+
+  factory SubmitWritingRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SubmitWritingRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitWritingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'promptId')
+    ..aOS(2, _omitFieldNames ? '' : 'content')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitWritingRequest clone() => SubmitWritingRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitWritingRequest copyWith(void Function(SubmitWritingRequest) updates) => super.copyWith((message) => updates(message as SubmitWritingRequest)) as SubmitWritingRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitWritingRequest create() => SubmitWritingRequest._();
+  @$core.override
+  SubmitWritingRequest createEmptyInstance() => create();
+  static $pb.PbList<SubmitWritingRequest> createRepeated() => $pb.PbList<SubmitWritingRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SubmitWritingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitWritingRequest>(create);
+  static SubmitWritingRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get promptId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set promptId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPromptId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPromptId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get content => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set content($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContent() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContent() => $_clearField(2);
+}
+
+class SubmitWritingResponse extends $pb.GeneratedMessage {
+  factory SubmitWritingResponse({
+    WritingSubmission? submission,
+  }) {
+    final result = create();
+    if (submission != null) result.submission = submission;
+    return result;
+  }
+
+  SubmitWritingResponse._();
+
+  factory SubmitWritingResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SubmitWritingResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitWritingResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<WritingSubmission>(1, _omitFieldNames ? '' : 'submission', subBuilder: WritingSubmission.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitWritingResponse clone() => SubmitWritingResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitWritingResponse copyWith(void Function(SubmitWritingResponse) updates) => super.copyWith((message) => updates(message as SubmitWritingResponse)) as SubmitWritingResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitWritingResponse create() => SubmitWritingResponse._();
+  @$core.override
+  SubmitWritingResponse createEmptyInstance() => create();
+  static $pb.PbList<SubmitWritingResponse> createRepeated() => $pb.PbList<SubmitWritingResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SubmitWritingResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitWritingResponse>(create);
+  static SubmitWritingResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  WritingSubmission get submission => $_getN(0);
+  @$pb.TagNumber(1)
+  set submission(WritingSubmission value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSubmission() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSubmission() => $_clearField(1);
+  @$pb.TagNumber(1)
+  WritingSubmission ensureSubmission() => $_ensure(0);
+}
+
+class ListMyWritingSubmissionsRequest extends $pb.GeneratedMessage {
+  factory ListMyWritingSubmissionsRequest({
+    $core.String? language,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    return result;
+  }
+
+  ListMyWritingSubmissionsRequest._();
+
+  factory ListMyWritingSubmissionsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyWritingSubmissionsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyWritingSubmissionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyWritingSubmissionsRequest clone() => ListMyWritingSubmissionsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyWritingSubmissionsRequest copyWith(void Function(ListMyWritingSubmissionsRequest) updates) => super.copyWith((message) => updates(message as ListMyWritingSubmissionsRequest)) as ListMyWritingSubmissionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyWritingSubmissionsRequest create() => ListMyWritingSubmissionsRequest._();
+  @$core.override
+  ListMyWritingSubmissionsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyWritingSubmissionsRequest> createRepeated() => $pb.PbList<ListMyWritingSubmissionsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyWritingSubmissionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyWritingSubmissionsRequest>(create);
+  static ListMyWritingSubmissionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+}
+
+class ListMyWritingSubmissionsResponse extends $pb.GeneratedMessage {
+  factory ListMyWritingSubmissionsResponse({
+    $core.Iterable<WritingSubmission>? submissions,
+  }) {
+    final result = create();
+    if (submissions != null) result.submissions.addAll(submissions);
+    return result;
+  }
+
+  ListMyWritingSubmissionsResponse._();
+
+  factory ListMyWritingSubmissionsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyWritingSubmissionsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyWritingSubmissionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<WritingSubmission>(1, _omitFieldNames ? '' : 'submissions', $pb.PbFieldType.PM, subBuilder: WritingSubmission.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyWritingSubmissionsResponse clone() => ListMyWritingSubmissionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyWritingSubmissionsResponse copyWith(void Function(ListMyWritingSubmissionsResponse) updates) => super.copyWith((message) => updates(message as ListMyWritingSubmissionsResponse)) as ListMyWritingSubmissionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyWritingSubmissionsResponse create() => ListMyWritingSubmissionsResponse._();
+  @$core.override
+  ListMyWritingSubmissionsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyWritingSubmissionsResponse> createRepeated() => $pb.PbList<ListMyWritingSubmissionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyWritingSubmissionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyWritingSubmissionsResponse>(create);
+  static ListMyWritingSubmissionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<WritingSubmission> get submissions => $_getList(0);
+}
+
+class GetWritingSubmissionRequest extends $pb.GeneratedMessage {
+  factory GetWritingSubmissionRequest({
+    $core.String? submissionId,
+  }) {
+    final result = create();
+    if (submissionId != null) result.submissionId = submissionId;
+    return result;
+  }
+
+  GetWritingSubmissionRequest._();
+
+  factory GetWritingSubmissionRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetWritingSubmissionRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetWritingSubmissionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'submissionId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWritingSubmissionRequest clone() => GetWritingSubmissionRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWritingSubmissionRequest copyWith(void Function(GetWritingSubmissionRequest) updates) => super.copyWith((message) => updates(message as GetWritingSubmissionRequest)) as GetWritingSubmissionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetWritingSubmissionRequest create() => GetWritingSubmissionRequest._();
+  @$core.override
+  GetWritingSubmissionRequest createEmptyInstance() => create();
+  static $pb.PbList<GetWritingSubmissionRequest> createRepeated() => $pb.PbList<GetWritingSubmissionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetWritingSubmissionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetWritingSubmissionRequest>(create);
+  static GetWritingSubmissionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get submissionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set submissionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSubmissionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSubmissionId() => $_clearField(1);
+}
+
+class GetWritingSubmissionResponse extends $pb.GeneratedMessage {
+  factory GetWritingSubmissionResponse({
+    WritingSubmission? submission,
+  }) {
+    final result = create();
+    if (submission != null) result.submission = submission;
+    return result;
+  }
+
+  GetWritingSubmissionResponse._();
+
+  factory GetWritingSubmissionResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetWritingSubmissionResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetWritingSubmissionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<WritingSubmission>(1, _omitFieldNames ? '' : 'submission', subBuilder: WritingSubmission.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWritingSubmissionResponse clone() => GetWritingSubmissionResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWritingSubmissionResponse copyWith(void Function(GetWritingSubmissionResponse) updates) => super.copyWith((message) => updates(message as GetWritingSubmissionResponse)) as GetWritingSubmissionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetWritingSubmissionResponse create() => GetWritingSubmissionResponse._();
+  @$core.override
+  GetWritingSubmissionResponse createEmptyInstance() => create();
+  static $pb.PbList<GetWritingSubmissionResponse> createRepeated() => $pb.PbList<GetWritingSubmissionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetWritingSubmissionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetWritingSubmissionResponse>(create);
+  static GetWritingSubmissionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  WritingSubmission get submission => $_getN(0);
+  @$pb.TagNumber(1)
+  set submission(WritingSubmission value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSubmission() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSubmission() => $_clearField(1);
+  @$pb.TagNumber(1)
+  WritingSubmission ensureSubmission() => $_ensure(0);
+}
+
+class ReadingText extends $pb.GeneratedMessage {
+  factory ReadingText({
+    $core.String? id,
+    $core.String? language,
+    $core.String? cefrTarget,
+    $core.String? title,
+    $core.String? summary,
+    $core.String? body,
+    $core.String? translation,
+    $core.String? sourceNote,
+    $core.int? wordCount,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (language != null) result.language = language;
+    if (cefrTarget != null) result.cefrTarget = cefrTarget;
+    if (title != null) result.title = title;
+    if (summary != null) result.summary = summary;
+    if (body != null) result.body = body;
+    if (translation != null) result.translation = translation;
+    if (sourceNote != null) result.sourceNote = sourceNote;
+    if (wordCount != null) result.wordCount = wordCount;
+    return result;
+  }
+
+  ReadingText._();
+
+  factory ReadingText.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ReadingText.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReadingText', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'language')
+    ..aOS(3, _omitFieldNames ? '' : 'cefrTarget')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'summary')
+    ..aOS(6, _omitFieldNames ? '' : 'body')
+    ..aOS(7, _omitFieldNames ? '' : 'translation')
+    ..aOS(8, _omitFieldNames ? '' : 'sourceNote')
+    ..a<$core.int>(9, _omitFieldNames ? '' : 'wordCount', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReadingText clone() => ReadingText()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReadingText copyWith(void Function(ReadingText) updates) => super.copyWith((message) => updates(message as ReadingText)) as ReadingText;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReadingText create() => ReadingText._();
+  @$core.override
+  ReadingText createEmptyInstance() => create();
+  static $pb.PbList<ReadingText> createRepeated() => $pb.PbList<ReadingText>();
+  @$core.pragma('dart2js:noInline')
+  static ReadingText getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReadingText>(create);
+  static ReadingText? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get language => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set language($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLanguage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguage() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get cefrTarget => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set cefrTarget($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCefrTarget() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCefrTarget() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get summary => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set summary($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSummary() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSummary() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get body => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set body($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasBody() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearBody() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get translation => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set translation($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasTranslation() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTranslation() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get sourceNote => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set sourceNote($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSourceNote() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSourceNote() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get wordCount => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set wordCount($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasWordCount() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearWordCount() => $_clearField(9);
+}
+
+class ListReadingTextsRequest extends $pb.GeneratedMessage {
+  factory ListReadingTextsRequest({
+    $core.String? language,
+    $core.String? cefrLevel,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (cefrLevel != null) result.cefrLevel = cefrLevel;
+    return result;
+  }
+
+  ListReadingTextsRequest._();
+
+  factory ListReadingTextsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListReadingTextsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListReadingTextsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOS(2, _omitFieldNames ? '' : 'cefrLevel')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListReadingTextsRequest clone() => ListReadingTextsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListReadingTextsRequest copyWith(void Function(ListReadingTextsRequest) updates) => super.copyWith((message) => updates(message as ListReadingTextsRequest)) as ListReadingTextsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListReadingTextsRequest create() => ListReadingTextsRequest._();
+  @$core.override
+  ListReadingTextsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListReadingTextsRequest> createRepeated() => $pb.PbList<ListReadingTextsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListReadingTextsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListReadingTextsRequest>(create);
+  static ListReadingTextsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get cefrLevel => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set cefrLevel($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCefrLevel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCefrLevel() => $_clearField(2);
+}
+
+class ListReadingTextsResponse extends $pb.GeneratedMessage {
+  factory ListReadingTextsResponse({
+    $core.Iterable<ReadingText>? texts,
+  }) {
+    final result = create();
+    if (texts != null) result.texts.addAll(texts);
+    return result;
+  }
+
+  ListReadingTextsResponse._();
+
+  factory ListReadingTextsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListReadingTextsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListReadingTextsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<ReadingText>(1, _omitFieldNames ? '' : 'texts', $pb.PbFieldType.PM, subBuilder: ReadingText.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListReadingTextsResponse clone() => ListReadingTextsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListReadingTextsResponse copyWith(void Function(ListReadingTextsResponse) updates) => super.copyWith((message) => updates(message as ListReadingTextsResponse)) as ListReadingTextsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListReadingTextsResponse create() => ListReadingTextsResponse._();
+  @$core.override
+  ListReadingTextsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListReadingTextsResponse> createRepeated() => $pb.PbList<ListReadingTextsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListReadingTextsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListReadingTextsResponse>(create);
+  static ListReadingTextsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ReadingText> get texts => $_getList(0);
+}
+
+class GetReadingTextRequest extends $pb.GeneratedMessage {
+  factory GetReadingTextRequest({
+    $core.String? textId,
+  }) {
+    final result = create();
+    if (textId != null) result.textId = textId;
+    return result;
+  }
+
+  GetReadingTextRequest._();
+
+  factory GetReadingTextRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetReadingTextRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetReadingTextRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'textId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetReadingTextRequest clone() => GetReadingTextRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetReadingTextRequest copyWith(void Function(GetReadingTextRequest) updates) => super.copyWith((message) => updates(message as GetReadingTextRequest)) as GetReadingTextRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetReadingTextRequest create() => GetReadingTextRequest._();
+  @$core.override
+  GetReadingTextRequest createEmptyInstance() => create();
+  static $pb.PbList<GetReadingTextRequest> createRepeated() => $pb.PbList<GetReadingTextRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetReadingTextRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetReadingTextRequest>(create);
+  static GetReadingTextRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get textId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set textId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTextId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTextId() => $_clearField(1);
+}
+
+class GetReadingTextResponse extends $pb.GeneratedMessage {
+  factory GetReadingTextResponse({
+    ReadingText? text,
+  }) {
+    final result = create();
+    if (text != null) result.text = text;
+    return result;
+  }
+
+  GetReadingTextResponse._();
+
+  factory GetReadingTextResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetReadingTextResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetReadingTextResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<ReadingText>(1, _omitFieldNames ? '' : 'text', subBuilder: ReadingText.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetReadingTextResponse clone() => GetReadingTextResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetReadingTextResponse copyWith(void Function(GetReadingTextResponse) updates) => super.copyWith((message) => updates(message as GetReadingTextResponse)) as GetReadingTextResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetReadingTextResponse create() => GetReadingTextResponse._();
+  @$core.override
+  GetReadingTextResponse createEmptyInstance() => create();
+  static $pb.PbList<GetReadingTextResponse> createRepeated() => $pb.PbList<GetReadingTextResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetReadingTextResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetReadingTextResponse>(create);
+  static GetReadingTextResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ReadingText get text => $_getN(0);
+  @$pb.TagNumber(1)
+  set text(ReadingText value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasText() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearText() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ReadingText ensureText() => $_ensure(0);
+}
+
+class Idiom extends $pb.GeneratedMessage {
+  factory Idiom({
+    $core.String? id,
+    $core.String? language,
+    $core.String? phrase,
+    $core.String? literal,
+    $core.String? meaning,
+    $core.String? example,
+    $core.String? register,
+    $core.String? note,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (language != null) result.language = language;
+    if (phrase != null) result.phrase = phrase;
+    if (literal != null) result.literal = literal;
+    if (meaning != null) result.meaning = meaning;
+    if (example != null) result.example = example;
+    if (register != null) result.register = register;
+    if (note != null) result.note = note;
+    return result;
+  }
+
+  Idiom._();
+
+  factory Idiom.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Idiom.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Idiom', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'language')
+    ..aOS(3, _omitFieldNames ? '' : 'phrase')
+    ..aOS(4, _omitFieldNames ? '' : 'literal')
+    ..aOS(5, _omitFieldNames ? '' : 'meaning')
+    ..aOS(6, _omitFieldNames ? '' : 'example')
+    ..aOS(7, _omitFieldNames ? '' : 'register')
+    ..aOS(8, _omitFieldNames ? '' : 'note')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Idiom clone() => Idiom()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Idiom copyWith(void Function(Idiom) updates) => super.copyWith((message) => updates(message as Idiom)) as Idiom;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Idiom create() => Idiom._();
+  @$core.override
+  Idiom createEmptyInstance() => create();
+  static $pb.PbList<Idiom> createRepeated() => $pb.PbList<Idiom>();
+  @$core.pragma('dart2js:noInline')
+  static Idiom getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Idiom>(create);
+  static Idiom? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get language => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set language($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLanguage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguage() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get phrase => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set phrase($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPhrase() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPhrase() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get literal => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set literal($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLiteral() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLiteral() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get meaning => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set meaning($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMeaning() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMeaning() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get example => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set example($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExample() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExample() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get register => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set register($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRegister() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRegister() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get note => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set note($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNote() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNote() => $_clearField(8);
+}
+
+class ListIdiomsRequest extends $pb.GeneratedMessage {
+  factory ListIdiomsRequest({
+    $core.String? language,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    return result;
+  }
+
+  ListIdiomsRequest._();
+
+  factory ListIdiomsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListIdiomsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListIdiomsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIdiomsRequest clone() => ListIdiomsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIdiomsRequest copyWith(void Function(ListIdiomsRequest) updates) => super.copyWith((message) => updates(message as ListIdiomsRequest)) as ListIdiomsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListIdiomsRequest create() => ListIdiomsRequest._();
+  @$core.override
+  ListIdiomsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListIdiomsRequest> createRepeated() => $pb.PbList<ListIdiomsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListIdiomsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListIdiomsRequest>(create);
+  static ListIdiomsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+}
+
+class ListIdiomsResponse extends $pb.GeneratedMessage {
+  factory ListIdiomsResponse({
+    $core.Iterable<Idiom>? idioms,
+  }) {
+    final result = create();
+    if (idioms != null) result.idioms.addAll(idioms);
+    return result;
+  }
+
+  ListIdiomsResponse._();
+
+  factory ListIdiomsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListIdiomsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListIdiomsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<Idiom>(1, _omitFieldNames ? '' : 'idioms', $pb.PbFieldType.PM, subBuilder: Idiom.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIdiomsResponse clone() => ListIdiomsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIdiomsResponse copyWith(void Function(ListIdiomsResponse) updates) => super.copyWith((message) => updates(message as ListIdiomsResponse)) as ListIdiomsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListIdiomsResponse create() => ListIdiomsResponse._();
+  @$core.override
+  ListIdiomsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListIdiomsResponse> createRepeated() => $pb.PbList<ListIdiomsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListIdiomsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListIdiomsResponse>(create);
+  static ListIdiomsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Idiom> get idioms => $_getList(0);
+}
+
+class TutorThread extends $pb.GeneratedMessage {
+  factory TutorThread({
+    $core.String? id,
+    $core.String? language,
+    $core.String? topic,
+    $core.String? status,
+    $fixnum.Int64? createdUnix,
+    $fixnum.Int64? slaDueUnix,
+    $core.Iterable<TutorMessage>? messages,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (language != null) result.language = language;
+    if (topic != null) result.topic = topic;
+    if (status != null) result.status = status;
+    if (createdUnix != null) result.createdUnix = createdUnix;
+    if (slaDueUnix != null) result.slaDueUnix = slaDueUnix;
+    if (messages != null) result.messages.addAll(messages);
+    return result;
+  }
+
+  TutorThread._();
+
+  factory TutorThread.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory TutorThread.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TutorThread', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'language')
+    ..aOS(3, _omitFieldNames ? '' : 'topic')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aInt64(5, _omitFieldNames ? '' : 'createdUnix')
+    ..aInt64(6, _omitFieldNames ? '' : 'slaDueUnix')
+    ..pc<TutorMessage>(7, _omitFieldNames ? '' : 'messages', $pb.PbFieldType.PM, subBuilder: TutorMessage.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TutorThread clone() => TutorThread()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TutorThread copyWith(void Function(TutorThread) updates) => super.copyWith((message) => updates(message as TutorThread)) as TutorThread;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TutorThread create() => TutorThread._();
+  @$core.override
+  TutorThread createEmptyInstance() => create();
+  static $pb.PbList<TutorThread> createRepeated() => $pb.PbList<TutorThread>();
+  @$core.pragma('dart2js:noInline')
+  static TutorThread getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TutorThread>(create);
+  static TutorThread? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get language => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set language($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLanguage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguage() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get topic => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set topic($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTopic() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTopic() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get createdUnix => $_getI64(4);
+  @$pb.TagNumber(5)
+  set createdUnix($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedUnix() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedUnix() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get slaDueUnix => $_getI64(5);
+  @$pb.TagNumber(6)
+  set slaDueUnix($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSlaDueUnix() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSlaDueUnix() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<TutorMessage> get messages => $_getList(6);
+}
+
+class TutorMessage extends $pb.GeneratedMessage {
+  factory TutorMessage({
+    $core.String? id,
+    $core.String? sender,
+    $core.String? body,
+    $fixnum.Int64? createdUnix,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (sender != null) result.sender = sender;
+    if (body != null) result.body = body;
+    if (createdUnix != null) result.createdUnix = createdUnix;
+    return result;
+  }
+
+  TutorMessage._();
+
+  factory TutorMessage.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory TutorMessage.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TutorMessage', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'sender')
+    ..aOS(3, _omitFieldNames ? '' : 'body')
+    ..aInt64(4, _omitFieldNames ? '' : 'createdUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TutorMessage clone() => TutorMessage()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TutorMessage copyWith(void Function(TutorMessage) updates) => super.copyWith((message) => updates(message as TutorMessage)) as TutorMessage;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TutorMessage create() => TutorMessage._();
+  @$core.override
+  TutorMessage createEmptyInstance() => create();
+  static $pb.PbList<TutorMessage> createRepeated() => $pb.PbList<TutorMessage>();
+  @$core.pragma('dart2js:noInline')
+  static TutorMessage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TutorMessage>(create);
+  static TutorMessage? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sender => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sender($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSender() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSender() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get body => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set body($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBody() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBody() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get createdUnix => $_getI64(3);
+  @$pb.TagNumber(4)
+  set createdUnix($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCreatedUnix() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCreatedUnix() => $_clearField(4);
+}
+
+class StartTutorThreadRequest extends $pb.GeneratedMessage {
+  factory StartTutorThreadRequest({
+    $core.String? language,
+    $core.String? topic,
+    $core.String? body,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (topic != null) result.topic = topic;
+    if (body != null) result.body = body;
+    return result;
+  }
+
+  StartTutorThreadRequest._();
+
+  factory StartTutorThreadRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory StartTutorThreadRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartTutorThreadRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOS(2, _omitFieldNames ? '' : 'topic')
+    ..aOS(3, _omitFieldNames ? '' : 'body')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StartTutorThreadRequest clone() => StartTutorThreadRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StartTutorThreadRequest copyWith(void Function(StartTutorThreadRequest) updates) => super.copyWith((message) => updates(message as StartTutorThreadRequest)) as StartTutorThreadRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StartTutorThreadRequest create() => StartTutorThreadRequest._();
+  @$core.override
+  StartTutorThreadRequest createEmptyInstance() => create();
+  static $pb.PbList<StartTutorThreadRequest> createRepeated() => $pb.PbList<StartTutorThreadRequest>();
+  @$core.pragma('dart2js:noInline')
+  static StartTutorThreadRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartTutorThreadRequest>(create);
+  static StartTutorThreadRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get topic => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set topic($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTopic() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTopic() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get body => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set body($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBody() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBody() => $_clearField(3);
+}
+
+class StartTutorThreadResponse extends $pb.GeneratedMessage {
+  factory StartTutorThreadResponse({
+    TutorThread? thread,
+  }) {
+    final result = create();
+    if (thread != null) result.thread = thread;
+    return result;
+  }
+
+  StartTutorThreadResponse._();
+
+  factory StartTutorThreadResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory StartTutorThreadResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartTutorThreadResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<TutorThread>(1, _omitFieldNames ? '' : 'thread', subBuilder: TutorThread.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StartTutorThreadResponse clone() => StartTutorThreadResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StartTutorThreadResponse copyWith(void Function(StartTutorThreadResponse) updates) => super.copyWith((message) => updates(message as StartTutorThreadResponse)) as StartTutorThreadResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StartTutorThreadResponse create() => StartTutorThreadResponse._();
+  @$core.override
+  StartTutorThreadResponse createEmptyInstance() => create();
+  static $pb.PbList<StartTutorThreadResponse> createRepeated() => $pb.PbList<StartTutorThreadResponse>();
+  @$core.pragma('dart2js:noInline')
+  static StartTutorThreadResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartTutorThreadResponse>(create);
+  static StartTutorThreadResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  TutorThread get thread => $_getN(0);
+  @$pb.TagNumber(1)
+  set thread(TutorThread value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasThread() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearThread() => $_clearField(1);
+  @$pb.TagNumber(1)
+  TutorThread ensureThread() => $_ensure(0);
+}
+
+class ListMyTutorThreadsRequest extends $pb.GeneratedMessage {
+  factory ListMyTutorThreadsRequest() => create();
+
+  ListMyTutorThreadsRequest._();
+
+  factory ListMyTutorThreadsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyTutorThreadsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyTutorThreadsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyTutorThreadsRequest clone() => ListMyTutorThreadsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyTutorThreadsRequest copyWith(void Function(ListMyTutorThreadsRequest) updates) => super.copyWith((message) => updates(message as ListMyTutorThreadsRequest)) as ListMyTutorThreadsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyTutorThreadsRequest create() => ListMyTutorThreadsRequest._();
+  @$core.override
+  ListMyTutorThreadsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyTutorThreadsRequest> createRepeated() => $pb.PbList<ListMyTutorThreadsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyTutorThreadsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyTutorThreadsRequest>(create);
+  static ListMyTutorThreadsRequest? _defaultInstance;
+}
+
+class ListMyTutorThreadsResponse extends $pb.GeneratedMessage {
+  factory ListMyTutorThreadsResponse({
+    $core.Iterable<TutorThread>? threads,
+  }) {
+    final result = create();
+    if (threads != null) result.threads.addAll(threads);
+    return result;
+  }
+
+  ListMyTutorThreadsResponse._();
+
+  factory ListMyTutorThreadsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyTutorThreadsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyTutorThreadsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<TutorThread>(1, _omitFieldNames ? '' : 'threads', $pb.PbFieldType.PM, subBuilder: TutorThread.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyTutorThreadsResponse clone() => ListMyTutorThreadsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyTutorThreadsResponse copyWith(void Function(ListMyTutorThreadsResponse) updates) => super.copyWith((message) => updates(message as ListMyTutorThreadsResponse)) as ListMyTutorThreadsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyTutorThreadsResponse create() => ListMyTutorThreadsResponse._();
+  @$core.override
+  ListMyTutorThreadsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyTutorThreadsResponse> createRepeated() => $pb.PbList<ListMyTutorThreadsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyTutorThreadsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyTutorThreadsResponse>(create);
+  static ListMyTutorThreadsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<TutorThread> get threads => $_getList(0);
+}
+
+class GetTutorThreadRequest extends $pb.GeneratedMessage {
+  factory GetTutorThreadRequest({
+    $core.String? threadId,
+  }) {
+    final result = create();
+    if (threadId != null) result.threadId = threadId;
+    return result;
+  }
+
+  GetTutorThreadRequest._();
+
+  factory GetTutorThreadRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTutorThreadRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTutorThreadRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'threadId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTutorThreadRequest clone() => GetTutorThreadRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTutorThreadRequest copyWith(void Function(GetTutorThreadRequest) updates) => super.copyWith((message) => updates(message as GetTutorThreadRequest)) as GetTutorThreadRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTutorThreadRequest create() => GetTutorThreadRequest._();
+  @$core.override
+  GetTutorThreadRequest createEmptyInstance() => create();
+  static $pb.PbList<GetTutorThreadRequest> createRepeated() => $pb.PbList<GetTutorThreadRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetTutorThreadRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTutorThreadRequest>(create);
+  static GetTutorThreadRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get threadId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set threadId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasThreadId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearThreadId() => $_clearField(1);
+}
+
+class GetTutorThreadResponse extends $pb.GeneratedMessage {
+  factory GetTutorThreadResponse({
+    TutorThread? thread,
+  }) {
+    final result = create();
+    if (thread != null) result.thread = thread;
+    return result;
+  }
+
+  GetTutorThreadResponse._();
+
+  factory GetTutorThreadResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTutorThreadResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTutorThreadResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<TutorThread>(1, _omitFieldNames ? '' : 'thread', subBuilder: TutorThread.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTutorThreadResponse clone() => GetTutorThreadResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTutorThreadResponse copyWith(void Function(GetTutorThreadResponse) updates) => super.copyWith((message) => updates(message as GetTutorThreadResponse)) as GetTutorThreadResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTutorThreadResponse create() => GetTutorThreadResponse._();
+  @$core.override
+  GetTutorThreadResponse createEmptyInstance() => create();
+  static $pb.PbList<GetTutorThreadResponse> createRepeated() => $pb.PbList<GetTutorThreadResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetTutorThreadResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTutorThreadResponse>(create);
+  static GetTutorThreadResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  TutorThread get thread => $_getN(0);
+  @$pb.TagNumber(1)
+  set thread(TutorThread value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasThread() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearThread() => $_clearField(1);
+  @$pb.TagNumber(1)
+  TutorThread ensureThread() => $_ensure(0);
+}
+
+class PostTutorMessageRequest extends $pb.GeneratedMessage {
+  factory PostTutorMessageRequest({
+    $core.String? threadId,
+    $core.String? body,
+  }) {
+    final result = create();
+    if (threadId != null) result.threadId = threadId;
+    if (body != null) result.body = body;
+    return result;
+  }
+
+  PostTutorMessageRequest._();
+
+  factory PostTutorMessageRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PostTutorMessageRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PostTutorMessageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'threadId')
+    ..aOS(2, _omitFieldNames ? '' : 'body')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostTutorMessageRequest clone() => PostTutorMessageRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostTutorMessageRequest copyWith(void Function(PostTutorMessageRequest) updates) => super.copyWith((message) => updates(message as PostTutorMessageRequest)) as PostTutorMessageRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PostTutorMessageRequest create() => PostTutorMessageRequest._();
+  @$core.override
+  PostTutorMessageRequest createEmptyInstance() => create();
+  static $pb.PbList<PostTutorMessageRequest> createRepeated() => $pb.PbList<PostTutorMessageRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PostTutorMessageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PostTutorMessageRequest>(create);
+  static PostTutorMessageRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get threadId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set threadId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasThreadId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearThreadId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get body => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set body($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBody() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBody() => $_clearField(2);
+}
+
+class PostTutorMessageResponse extends $pb.GeneratedMessage {
+  factory PostTutorMessageResponse({
+    TutorThread? thread,
+  }) {
+    final result = create();
+    if (thread != null) result.thread = thread;
+    return result;
+  }
+
+  PostTutorMessageResponse._();
+
+  factory PostTutorMessageResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PostTutorMessageResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PostTutorMessageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<TutorThread>(1, _omitFieldNames ? '' : 'thread', subBuilder: TutorThread.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostTutorMessageResponse clone() => PostTutorMessageResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostTutorMessageResponse copyWith(void Function(PostTutorMessageResponse) updates) => super.copyWith((message) => updates(message as PostTutorMessageResponse)) as PostTutorMessageResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PostTutorMessageResponse create() => PostTutorMessageResponse._();
+  @$core.override
+  PostTutorMessageResponse createEmptyInstance() => create();
+  static $pb.PbList<PostTutorMessageResponse> createRepeated() => $pb.PbList<PostTutorMessageResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PostTutorMessageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PostTutorMessageResponse>(create);
+  static PostTutorMessageResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  TutorThread get thread => $_getN(0);
+  @$pb.TagNumber(1)
+  set thread(TutorThread value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasThread() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearThread() => $_clearField(1);
+  @$pb.TagNumber(1)
+  TutorThread ensureThread() => $_ensure(0);
+}
+
+class AnthologyArticle extends $pb.GeneratedMessage {
+  factory AnthologyArticle({
+    $core.String? id,
+    $core.String? slug,
+    $core.String? language,
+    $core.String? title,
+    $core.String? author,
+    $core.String? authorTitle,
+    $core.String? dek,
+    $core.String? bodyMarkdown,
+    $core.bool? sovereignOnly,
+    $fixnum.Int64? publishedUnix,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (slug != null) result.slug = slug;
+    if (language != null) result.language = language;
+    if (title != null) result.title = title;
+    if (author != null) result.author = author;
+    if (authorTitle != null) result.authorTitle = authorTitle;
+    if (dek != null) result.dek = dek;
+    if (bodyMarkdown != null) result.bodyMarkdown = bodyMarkdown;
+    if (sovereignOnly != null) result.sovereignOnly = sovereignOnly;
+    if (publishedUnix != null) result.publishedUnix = publishedUnix;
+    return result;
+  }
+
+  AnthologyArticle._();
+
+  factory AnthologyArticle.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AnthologyArticle.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnthologyArticle', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'slug')
+    ..aOS(3, _omitFieldNames ? '' : 'language')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'author')
+    ..aOS(6, _omitFieldNames ? '' : 'authorTitle')
+    ..aOS(7, _omitFieldNames ? '' : 'dek')
+    ..aOS(8, _omitFieldNames ? '' : 'bodyMarkdown')
+    ..aOB(9, _omitFieldNames ? '' : 'sovereignOnly')
+    ..aInt64(10, _omitFieldNames ? '' : 'publishedUnix')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnthologyArticle clone() => AnthologyArticle()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnthologyArticle copyWith(void Function(AnthologyArticle) updates) => super.copyWith((message) => updates(message as AnthologyArticle)) as AnthologyArticle;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AnthologyArticle create() => AnthologyArticle._();
+  @$core.override
+  AnthologyArticle createEmptyInstance() => create();
+  static $pb.PbList<AnthologyArticle> createRepeated() => $pb.PbList<AnthologyArticle>();
+  @$core.pragma('dart2js:noInline')
+  static AnthologyArticle getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AnthologyArticle>(create);
+  static AnthologyArticle? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get slug => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set slug($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSlug() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSlug() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get language => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set language($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLanguage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLanguage() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get author => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set author($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAuthor() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAuthor() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get authorTitle => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set authorTitle($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAuthorTitle() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAuthorTitle() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get dek => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set dek($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDek() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDek() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get bodyMarkdown => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set bodyMarkdown($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasBodyMarkdown() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearBodyMarkdown() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get sovereignOnly => $_getBF(8);
+  @$pb.TagNumber(9)
+  set sovereignOnly($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSovereignOnly() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSovereignOnly() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get publishedUnix => $_getI64(9);
+  @$pb.TagNumber(10)
+  set publishedUnix($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasPublishedUnix() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearPublishedUnix() => $_clearField(10);
+}
+
+class ListAnthologyArticlesRequest extends $pb.GeneratedMessage {
+  factory ListAnthologyArticlesRequest({
+    $core.String? language,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    return result;
+  }
+
+  ListAnthologyArticlesRequest._();
+
+  factory ListAnthologyArticlesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListAnthologyArticlesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAnthologyArticlesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAnthologyArticlesRequest clone() => ListAnthologyArticlesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAnthologyArticlesRequest copyWith(void Function(ListAnthologyArticlesRequest) updates) => super.copyWith((message) => updates(message as ListAnthologyArticlesRequest)) as ListAnthologyArticlesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAnthologyArticlesRequest create() => ListAnthologyArticlesRequest._();
+  @$core.override
+  ListAnthologyArticlesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListAnthologyArticlesRequest> createRepeated() => $pb.PbList<ListAnthologyArticlesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListAnthologyArticlesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAnthologyArticlesRequest>(create);
+  static ListAnthologyArticlesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+}
+
+class ListAnthologyArticlesResponse extends $pb.GeneratedMessage {
+  factory ListAnthologyArticlesResponse({
+    $core.Iterable<AnthologyArticle>? articles,
+  }) {
+    final result = create();
+    if (articles != null) result.articles.addAll(articles);
+    return result;
+  }
+
+  ListAnthologyArticlesResponse._();
+
+  factory ListAnthologyArticlesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListAnthologyArticlesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAnthologyArticlesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<AnthologyArticle>(1, _omitFieldNames ? '' : 'articles', $pb.PbFieldType.PM, subBuilder: AnthologyArticle.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAnthologyArticlesResponse clone() => ListAnthologyArticlesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAnthologyArticlesResponse copyWith(void Function(ListAnthologyArticlesResponse) updates) => super.copyWith((message) => updates(message as ListAnthologyArticlesResponse)) as ListAnthologyArticlesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAnthologyArticlesResponse create() => ListAnthologyArticlesResponse._();
+  @$core.override
+  ListAnthologyArticlesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListAnthologyArticlesResponse> createRepeated() => $pb.PbList<ListAnthologyArticlesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListAnthologyArticlesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAnthologyArticlesResponse>(create);
+  static ListAnthologyArticlesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<AnthologyArticle> get articles => $_getList(0);
+}
+
+class GetAnthologyArticleRequest extends $pb.GeneratedMessage {
+  factory GetAnthologyArticleRequest({
+    $core.String? articleId,
+  }) {
+    final result = create();
+    if (articleId != null) result.articleId = articleId;
+    return result;
+  }
+
+  GetAnthologyArticleRequest._();
+
+  factory GetAnthologyArticleRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetAnthologyArticleRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAnthologyArticleRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'articleId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAnthologyArticleRequest clone() => GetAnthologyArticleRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAnthologyArticleRequest copyWith(void Function(GetAnthologyArticleRequest) updates) => super.copyWith((message) => updates(message as GetAnthologyArticleRequest)) as GetAnthologyArticleRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAnthologyArticleRequest create() => GetAnthologyArticleRequest._();
+  @$core.override
+  GetAnthologyArticleRequest createEmptyInstance() => create();
+  static $pb.PbList<GetAnthologyArticleRequest> createRepeated() => $pb.PbList<GetAnthologyArticleRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetAnthologyArticleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAnthologyArticleRequest>(create);
+  static GetAnthologyArticleRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get articleId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set articleId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasArticleId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearArticleId() => $_clearField(1);
+}
+
+class GetAnthologyArticleResponse extends $pb.GeneratedMessage {
+  factory GetAnthologyArticleResponse({
+    AnthologyArticle? article,
+  }) {
+    final result = create();
+    if (article != null) result.article = article;
+    return result;
+  }
+
+  GetAnthologyArticleResponse._();
+
+  factory GetAnthologyArticleResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetAnthologyArticleResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAnthologyArticleResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<AnthologyArticle>(1, _omitFieldNames ? '' : 'article', subBuilder: AnthologyArticle.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAnthologyArticleResponse clone() => GetAnthologyArticleResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAnthologyArticleResponse copyWith(void Function(GetAnthologyArticleResponse) updates) => super.copyWith((message) => updates(message as GetAnthologyArticleResponse)) as GetAnthologyArticleResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAnthologyArticleResponse create() => GetAnthologyArticleResponse._();
+  @$core.override
+  GetAnthologyArticleResponse createEmptyInstance() => create();
+  static $pb.PbList<GetAnthologyArticleResponse> createRepeated() => $pb.PbList<GetAnthologyArticleResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetAnthologyArticleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAnthologyArticleResponse>(create);
+  static GetAnthologyArticleResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AnthologyArticle get article => $_getN(0);
+  @$pb.TagNumber(1)
+  set article(AnthologyArticle value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasArticle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearArticle() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AnthologyArticle ensureArticle() => $_ensure(0);
+}
+
+class Certificate extends $pb.GeneratedMessage {
+  factory Certificate({
+    $core.String? id,
+    $core.String? token,
+    $core.String? language,
+    $core.String? skill,
+    $core.String? cefrLevel,
+    $core.String? holderName,
+    $fixnum.Int64? issuedUnix,
+    $core.String? verifyUrl,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (token != null) result.token = token;
+    if (language != null) result.language = language;
+    if (skill != null) result.skill = skill;
+    if (cefrLevel != null) result.cefrLevel = cefrLevel;
+    if (holderName != null) result.holderName = holderName;
+    if (issuedUnix != null) result.issuedUnix = issuedUnix;
+    if (verifyUrl != null) result.verifyUrl = verifyUrl;
+    return result;
+  }
+
+  Certificate._();
+
+  factory Certificate.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Certificate.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Certificate', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'token')
+    ..aOS(3, _omitFieldNames ? '' : 'language')
+    ..aOS(4, _omitFieldNames ? '' : 'skill')
+    ..aOS(5, _omitFieldNames ? '' : 'cefrLevel')
+    ..aOS(6, _omitFieldNames ? '' : 'holderName')
+    ..aInt64(7, _omitFieldNames ? '' : 'issuedUnix')
+    ..aOS(8, _omitFieldNames ? '' : 'verifyUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Certificate clone() => Certificate()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Certificate copyWith(void Function(Certificate) updates) => super.copyWith((message) => updates(message as Certificate)) as Certificate;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Certificate create() => Certificate._();
+  @$core.override
+  Certificate createEmptyInstance() => create();
+  static $pb.PbList<Certificate> createRepeated() => $pb.PbList<Certificate>();
+  @$core.pragma('dart2js:noInline')
+  static Certificate getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Certificate>(create);
+  static Certificate? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get token => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set token($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearToken() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get language => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set language($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLanguage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLanguage() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get skill => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set skill($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSkill() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSkill() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get cefrLevel => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set cefrLevel($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCefrLevel() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCefrLevel() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get holderName => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set holderName($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasHolderName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearHolderName() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get issuedUnix => $_getI64(6);
+  @$pb.TagNumber(7)
+  set issuedUnix($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasIssuedUnix() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIssuedUnix() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get verifyUrl => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set verifyUrl($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasVerifyUrl() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearVerifyUrl() => $_clearField(8);
+}
+
+/// IssueCertificate mints a signed CEFR certificate from the user's best
+/// placement result for (language, skill). Rejects when no qualifying
+/// result exists.
+class IssueCertificateRequest extends $pb.GeneratedMessage {
+  factory IssueCertificateRequest({
+    $core.String? language,
+    $core.String? skill,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (skill != null) result.skill = skill;
+    return result;
+  }
+
+  IssueCertificateRequest._();
+
+  factory IssueCertificateRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory IssueCertificateRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IssueCertificateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOS(2, _omitFieldNames ? '' : 'skill')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueCertificateRequest clone() => IssueCertificateRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueCertificateRequest copyWith(void Function(IssueCertificateRequest) updates) => super.copyWith((message) => updates(message as IssueCertificateRequest)) as IssueCertificateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IssueCertificateRequest create() => IssueCertificateRequest._();
+  @$core.override
+  IssueCertificateRequest createEmptyInstance() => create();
+  static $pb.PbList<IssueCertificateRequest> createRepeated() => $pb.PbList<IssueCertificateRequest>();
+  @$core.pragma('dart2js:noInline')
+  static IssueCertificateRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IssueCertificateRequest>(create);
+  static IssueCertificateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get skill => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set skill($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSkill() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSkill() => $_clearField(2);
+}
+
+class IssueCertificateResponse extends $pb.GeneratedMessage {
+  factory IssueCertificateResponse({
+    Certificate? certificate,
+  }) {
+    final result = create();
+    if (certificate != null) result.certificate = certificate;
+    return result;
+  }
+
+  IssueCertificateResponse._();
+
+  factory IssueCertificateResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory IssueCertificateResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IssueCertificateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOM<Certificate>(1, _omitFieldNames ? '' : 'certificate', subBuilder: Certificate.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueCertificateResponse clone() => IssueCertificateResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueCertificateResponse copyWith(void Function(IssueCertificateResponse) updates) => super.copyWith((message) => updates(message as IssueCertificateResponse)) as IssueCertificateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IssueCertificateResponse create() => IssueCertificateResponse._();
+  @$core.override
+  IssueCertificateResponse createEmptyInstance() => create();
+  static $pb.PbList<IssueCertificateResponse> createRepeated() => $pb.PbList<IssueCertificateResponse>();
+  @$core.pragma('dart2js:noInline')
+  static IssueCertificateResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IssueCertificateResponse>(create);
+  static IssueCertificateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Certificate get certificate => $_getN(0);
+  @$pb.TagNumber(1)
+  set certificate(Certificate value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCertificate() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCertificate() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Certificate ensureCertificate() => $_ensure(0);
+}
+
+class ListMyCertificatesRequest extends $pb.GeneratedMessage {
+  factory ListMyCertificatesRequest() => create();
+
+  ListMyCertificatesRequest._();
+
+  factory ListMyCertificatesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyCertificatesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyCertificatesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCertificatesRequest clone() => ListMyCertificatesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCertificatesRequest copyWith(void Function(ListMyCertificatesRequest) updates) => super.copyWith((message) => updates(message as ListMyCertificatesRequest)) as ListMyCertificatesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyCertificatesRequest create() => ListMyCertificatesRequest._();
+  @$core.override
+  ListMyCertificatesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyCertificatesRequest> createRepeated() => $pb.PbList<ListMyCertificatesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyCertificatesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyCertificatesRequest>(create);
+  static ListMyCertificatesRequest? _defaultInstance;
+}
+
+class ListMyCertificatesResponse extends $pb.GeneratedMessage {
+  factory ListMyCertificatesResponse({
+    $core.Iterable<Certificate>? certificates,
+  }) {
+    final result = create();
+    if (certificates != null) result.certificates.addAll(certificates);
+    return result;
+  }
+
+  ListMyCertificatesResponse._();
+
+  factory ListMyCertificatesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyCertificatesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyCertificatesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..pc<Certificate>(1, _omitFieldNames ? '' : 'certificates', $pb.PbFieldType.PM, subBuilder: Certificate.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCertificatesResponse clone() => ListMyCertificatesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCertificatesResponse copyWith(void Function(ListMyCertificatesResponse) updates) => super.copyWith((message) => updates(message as ListMyCertificatesResponse)) as ListMyCertificatesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyCertificatesResponse create() => ListMyCertificatesResponse._();
+  @$core.override
+  ListMyCertificatesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyCertificatesResponse> createRepeated() => $pb.PbList<ListMyCertificatesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyCertificatesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyCertificatesResponse>(create);
+  static ListMyCertificatesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Certificate> get certificates => $_getList(0);
+}
+
+class GenerateLinguistAlmanacRequest extends $pb.GeneratedMessage {
+  factory GenerateLinguistAlmanacRequest() => create();
+
+  GenerateLinguistAlmanacRequest._();
+
+  factory GenerateLinguistAlmanacRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GenerateLinguistAlmanacRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateLinguistAlmanacRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateLinguistAlmanacRequest clone() => GenerateLinguistAlmanacRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateLinguistAlmanacRequest copyWith(void Function(GenerateLinguistAlmanacRequest) updates) => super.copyWith((message) => updates(message as GenerateLinguistAlmanacRequest)) as GenerateLinguistAlmanacRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateLinguistAlmanacRequest create() => GenerateLinguistAlmanacRequest._();
+  @$core.override
+  GenerateLinguistAlmanacRequest createEmptyInstance() => create();
+  static $pb.PbList<GenerateLinguistAlmanacRequest> createRepeated() => $pb.PbList<GenerateLinguistAlmanacRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GenerateLinguistAlmanacRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenerateLinguistAlmanacRequest>(create);
+  static GenerateLinguistAlmanacRequest? _defaultInstance;
+}
+
+class GenerateLinguistAlmanacResponse extends $pb.GeneratedMessage {
+  factory GenerateLinguistAlmanacResponse({
+    $core.String? url,
+    $core.int? pageCount,
+  }) {
+    final result = create();
+    if (url != null) result.url = url;
+    if (pageCount != null) result.pageCount = pageCount;
+    return result;
+  }
+
+  GenerateLinguistAlmanacResponse._();
+
+  factory GenerateLinguistAlmanacResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GenerateLinguistAlmanacResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateLinguistAlmanacResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'url')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'pageCount', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateLinguistAlmanacResponse clone() => GenerateLinguistAlmanacResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateLinguistAlmanacResponse copyWith(void Function(GenerateLinguistAlmanacResponse) updates) => super.copyWith((message) => updates(message as GenerateLinguistAlmanacResponse)) as GenerateLinguistAlmanacResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateLinguistAlmanacResponse create() => GenerateLinguistAlmanacResponse._();
+  @$core.override
+  GenerateLinguistAlmanacResponse createEmptyInstance() => create();
+  static $pb.PbList<GenerateLinguistAlmanacResponse> createRepeated() => $pb.PbList<GenerateLinguistAlmanacResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GenerateLinguistAlmanacResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenerateLinguistAlmanacResponse>(create);
+  static GenerateLinguistAlmanacResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get url => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set url($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUrl() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get pageCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set pageCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPageCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPageCount() => $_clearField(2);
+}
+
+class CreateLinguistShareRequest extends $pb.GeneratedMessage {
+  factory CreateLinguistShareRequest() => create();
+
+  CreateLinguistShareRequest._();
+
+  factory CreateLinguistShareRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateLinguistShareRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateLinguistShareRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateLinguistShareRequest clone() => CreateLinguistShareRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateLinguistShareRequest copyWith(void Function(CreateLinguistShareRequest) updates) => super.copyWith((message) => updates(message as CreateLinguistShareRequest)) as CreateLinguistShareRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateLinguistShareRequest create() => CreateLinguistShareRequest._();
+  @$core.override
+  CreateLinguistShareRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateLinguistShareRequest> createRepeated() => $pb.PbList<CreateLinguistShareRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateLinguistShareRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateLinguistShareRequest>(create);
+  static CreateLinguistShareRequest? _defaultInstance;
+}
+
+class CreateLinguistShareResponse extends $pb.GeneratedMessage {
+  factory CreateLinguistShareResponse({
+    $core.String? token,
+    $core.String? shareUrl,
+  }) {
+    final result = create();
+    if (token != null) result.token = token;
+    if (shareUrl != null) result.shareUrl = shareUrl;
+    return result;
+  }
+
+  CreateLinguistShareResponse._();
+
+  factory CreateLinguistShareResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateLinguistShareResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateLinguistShareResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.languages.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'token')
+    ..aOS(2, _omitFieldNames ? '' : 'shareUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateLinguistShareResponse clone() => CreateLinguistShareResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateLinguistShareResponse copyWith(void Function(CreateLinguistShareResponse) updates) => super.copyWith((message) => updates(message as CreateLinguistShareResponse)) as CreateLinguistShareResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateLinguistShareResponse create() => CreateLinguistShareResponse._();
+  @$core.override
+  CreateLinguistShareResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateLinguistShareResponse> createRepeated() => $pb.PbList<CreateLinguistShareResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateLinguistShareResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateLinguistShareResponse>(create);
+  static CreateLinguistShareResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get token => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set token($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearToken() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get shareUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set shareUrl($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasShareUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearShareUrl() => $_clearField(2);
+}
+
 /// Deprecated Word-based messages (for transition)
 class Word extends $pb.GeneratedMessage {
   factory Word({

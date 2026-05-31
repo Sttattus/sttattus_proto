@@ -21,11 +21,50 @@ const _ = grpc.SupportPackageIsVersion9
 const (
 	ZenithService_LogFocusSession_FullMethodName           = "/sttattus.zenith.v1.ZenithService/LogFocusSession"
 	ZenithService_GetZenithStats_FullMethodName            = "/sttattus.zenith.v1.ZenithService/GetZenithStats"
+	ZenithService_ListRecentSessions_FullMethodName        = "/sttattus.zenith.v1.ZenithService/ListRecentSessions"
 	ZenithService_GetTodayLoad_FullMethodName              = "/sttattus.zenith.v1.ZenithService/GetTodayLoad"
 	ZenithService_ListMyCalendarConnections_FullMethodName = "/sttattus.zenith.v1.ZenithService/ListMyCalendarConnections"
 	ZenithService_ListMyCalendarEvents_FullMethodName      = "/sttattus.zenith.v1.ZenithService/ListMyCalendarEvents"
 	ZenithService_RecommendBlock_FullMethodName            = "/sttattus.zenith.v1.ZenithService/RecommendBlock"
 	ZenithService_ListLibraryItems_FullMethodName          = "/sttattus.zenith.v1.ZenithService/ListLibraryItems"
+	ZenithService_ListBlockTemplates_FullMethodName        = "/sttattus.zenith.v1.ZenithService/ListBlockTemplates"
+	ZenithService_ListProgrammes_FullMethodName            = "/sttattus.zenith.v1.ZenithService/ListProgrammes"
+	ZenithService_GetProgramme_FullMethodName              = "/sttattus.zenith.v1.ZenithService/GetProgramme"
+	ZenithService_EnrollProgramme_FullMethodName           = "/sttattus.zenith.v1.ZenithService/EnrollProgramme"
+	ZenithService_ListMyProgrammes_FullMethodName          = "/sttattus.zenith.v1.ZenithService/ListMyProgrammes"
+	ZenithService_AdvanceProgrammeWeek_FullMethodName      = "/sttattus.zenith.v1.ZenithService/AdvanceProgrammeWeek"
+	ZenithService_AddJournalEntry_FullMethodName           = "/sttattus.zenith.v1.ZenithService/AddJournalEntry"
+	ZenithService_ListMyJournalEntries_FullMethodName      = "/sttattus.zenith.v1.ZenithService/ListMyJournalEntries"
+	ZenithService_GetFocusHistory_FullMethodName           = "/sttattus.zenith.v1.ZenithService/GetFocusHistory"
+	ZenithService_SimulateFortitude_FullMethodName         = "/sttattus.zenith.v1.ZenithService/SimulateFortitude"
+	ZenithService_ListAudioEnvironments_FullMethodName     = "/sttattus.zenith.v1.ZenithService/ListAudioEnvironments"
+	ZenithService_GetCognitiveLoad_FullMethodName          = "/sttattus.zenith.v1.ZenithService/GetCognitiveLoad"
+	ZenithService_GetTodaySummary_FullMethodName           = "/sttattus.zenith.v1.ZenithService/GetTodaySummary"
+	ZenithService_AcknowledgeStressPrompt_FullMethodName   = "/sttattus.zenith.v1.ZenithService/AcknowledgeStressPrompt"
+	ZenithService_StartConciergeThread_FullMethodName      = "/sttattus.zenith.v1.ZenithService/StartConciergeThread"
+	ZenithService_ListMyConciergeThreads_FullMethodName    = "/sttattus.zenith.v1.ZenithService/ListMyConciergeThreads"
+	ZenithService_GetConciergeThread_FullMethodName        = "/sttattus.zenith.v1.ZenithService/GetConciergeThread"
+	ZenithService_PostConciergeMessage_FullMethodName      = "/sttattus.zenith.v1.ZenithService/PostConciergeMessage"
+	ZenithService_ListAnthologyArticles_FullMethodName     = "/sttattus.zenith.v1.ZenithService/ListAnthologyArticles"
+	ZenithService_GetAnthologyArticle_FullMethodName       = "/sttattus.zenith.v1.ZenithService/GetAnthologyArticle"
+	ZenithService_ListTeachers_FullMethodName              = "/sttattus.zenith.v1.ZenithService/ListTeachers"
+	ZenithService_ListSovereignAudio_FullMethodName        = "/sttattus.zenith.v1.ZenithService/ListSovereignAudio"
+	ZenithService_GetSovereignAudio_FullMethodName         = "/sttattus.zenith.v1.ZenithService/GetSovereignAudio"
+	ZenithService_GetJetLagProtocol_FullMethodName         = "/sttattus.zenith.v1.ZenithService/GetJetLagProtocol"
+	ZenithService_CreateProfileShare_FullMethodName        = "/sttattus.zenith.v1.ZenithService/CreateProfileShare"
+	ZenithService_ListMyProfileShares_FullMethodName       = "/sttattus.zenith.v1.ZenithService/ListMyProfileShares"
+	ZenithService_RevokeProfileShare_FullMethodName        = "/sttattus.zenith.v1.ZenithService/RevokeProfileShare"
+	ZenithService_GetJournalInsights_FullMethodName        = "/sttattus.zenith.v1.ZenithService/GetJournalInsights"
+	ZenithService_SubmitCognitiveTest_FullMethodName       = "/sttattus.zenith.v1.ZenithService/SubmitCognitiveTest"
+	ZenithService_ListMyCognitiveTests_FullMethodName      = "/sttattus.zenith.v1.ZenithService/ListMyCognitiveTests"
+	ZenithService_GetCognitiveTestStatus_FullMethodName    = "/sttattus.zenith.v1.ZenithService/GetCognitiveTestStatus"
+	ZenithService_ListRituals_FullMethodName               = "/sttattus.zenith.v1.ZenithService/ListRituals"
+	ZenithService_GetYearInZenithRecap_FullMethodName      = "/sttattus.zenith.v1.ZenithService/GetYearInZenithRecap"
+	ZenithService_GenerateZenithAlmanac_FullMethodName     = "/sttattus.zenith.v1.ZenithService/GenerateZenithAlmanac"
+	ZenithService_ListLounges_FullMethodName               = "/sttattus.zenith.v1.ZenithService/ListLounges"
+	ZenithService_CreateLoungeBooking_FullMethodName       = "/sttattus.zenith.v1.ZenithService/CreateLoungeBooking"
+	ZenithService_ListMyLoungeBookings_FullMethodName      = "/sttattus.zenith.v1.ZenithService/ListMyLoungeBookings"
+	ZenithService_CancelLoungeBooking_FullMethodName       = "/sttattus.zenith.v1.ZenithService/CancelLoungeBooking"
 )
 
 // ZenithServiceClient is the client API for ZenithService service.
@@ -34,6 +73,8 @@ const (
 type ZenithServiceClient interface {
 	LogFocusSession(ctx context.Context, in *LogFocusSessionRequest, opts ...grpc.CallOption) (*LogFocusSessionResponse, error)
 	GetZenithStats(ctx context.Context, in *GetZenithStatsRequest, opts ...grpc.CallOption) (*GetZenithStatsResponse, error)
+	// Z16.1b — recent focus blocks (the ledger).
+	ListRecentSessions(ctx context.Context, in *ListRecentSessionsRequest, opts ...grpc.CallOption) (*ListRecentSessionsResponse, error)
 	// Z16.5 — today's cognitive load.
 	GetTodayLoad(ctx context.Context, in *GetTodayLoadRequest, opts ...grpc.CallOption) (*GetTodayLoadResponse, error)
 	// Z16.6 — calendar read integration.
@@ -43,6 +84,64 @@ type ZenithServiceClient interface {
 	RecommendBlock(ctx context.Context, in *RecommendBlockRequest, opts ...grpc.CallOption) (*RecommendBlockResponse, error)
 	// Z16.8 + Z16.9 — meditation + breathwork library.
 	ListLibraryItems(ctx context.Context, in *ListLibraryItemsRequest, opts ...grpc.CallOption) (*ListLibraryItemsResponse, error)
+	// ===== Phase 2 — core expansion =====
+	// Z16.15 — block templates.
+	ListBlockTemplates(ctx context.Context, in *ListBlockTemplatesRequest, opts ...grpc.CallOption) (*ListBlockTemplatesResponse, error)
+	// Z16.22 — coached programmes.
+	ListProgrammes(ctx context.Context, in *ListProgrammesRequest, opts ...grpc.CallOption) (*ListProgrammesResponse, error)
+	GetProgramme(ctx context.Context, in *GetProgrammeRequest, opts ...grpc.CallOption) (*GetProgrammeResponse, error)
+	EnrollProgramme(ctx context.Context, in *EnrollProgrammeRequest, opts ...grpc.CallOption) (*EnrollProgrammeResponse, error)
+	ListMyProgrammes(ctx context.Context, in *ListMyProgrammesRequest, opts ...grpc.CallOption) (*ListMyProgrammesResponse, error)
+	AdvanceProgrammeWeek(ctx context.Context, in *AdvanceProgrammeWeekRequest, opts ...grpc.CallOption) (*AdvanceProgrammeWeekResponse, error)
+	// Z16.23 — journaling.
+	AddJournalEntry(ctx context.Context, in *AddJournalEntryRequest, opts ...grpc.CallOption) (*AddJournalEntryResponse, error)
+	ListMyJournalEntries(ctx context.Context, in *ListMyJournalEntriesRequest, opts ...grpc.CallOption) (*ListMyJournalEntriesResponse, error)
+	// Z16.26 — focus history + heatmap.
+	GetFocusHistory(ctx context.Context, in *GetFocusHistoryRequest, opts ...grpc.CallOption) (*GetFocusHistoryResponse, error)
+	// Z16.27 — what-if simulator.
+	SimulateFortitude(ctx context.Context, in *SimulateFortitudeRequest, opts ...grpc.CallOption) (*SimulateFortitudeResponse, error)
+	// Z16.17 — audio environment catalog.
+	ListAudioEnvironments(ctx context.Context, in *ListAudioEnvironmentsRequest, opts ...grpc.CallOption) (*ListAudioEnvironmentsResponse, error)
+	// ===== Phase 2.5 — bridges =====
+	// Z16.4 — cross-pillar cognitive-load contract (Forge consumes).
+	GetCognitiveLoad(ctx context.Context, in *GetCognitiveLoadRequest, opts ...grpc.CallOption) (*GetCognitiveLoadResponse, error)
+	// Z16.9 — Today card.
+	GetTodaySummary(ctx context.Context, in *GetTodaySummaryRequest, opts ...grpc.CallOption) (*GetTodaySummaryResponse, error)
+	// Z16.32 — acknowledge an acute stress-response prompt.
+	AcknowledgeStressPrompt(ctx context.Context, in *AcknowledgeStressPromptRequest, opts ...grpc.CallOption) (*AcknowledgeStressPromptResponse, error)
+	// ===== Phase 3 — premium differentiation =====
+	// Coach concierge desk (Sovereign).
+	StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error)
+	ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error)
+	GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error)
+	PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error)
+	// Editorial Anthology.
+	ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error)
+	// Teacher directory.
+	ListTeachers(ctx context.Context, in *ListTeachersRequest, opts ...grpc.CallOption) (*ListTeachersResponse, error)
+	// Sovereign commissioned audio.
+	ListSovereignAudio(ctx context.Context, in *ListSovereignAudioRequest, opts ...grpc.CallOption) (*ListSovereignAudioResponse, error)
+	GetSovereignAudio(ctx context.Context, in *GetSovereignAudioRequest, opts ...grpc.CallOption) (*GetSovereignAudioResponse, error)
+	// Travel jet-lag protocol (Nomad cross-pillar).
+	GetJetLagProtocol(ctx context.Context, in *GetJetLagProtocolRequest, opts ...grpc.CallOption) (*GetJetLagProtocolResponse, error)
+	// Public profile share (fortitude band only).
+	CreateProfileShare(ctx context.Context, in *CreateProfileShareRequest, opts ...grpc.CallOption) (*CreateProfileShareResponse, error)
+	ListMyProfileShares(ctx context.Context, in *ListMyProfileSharesRequest, opts ...grpc.CallOption) (*ListMyProfileSharesResponse, error)
+	RevokeProfileShare(ctx context.Context, in *RevokeProfileShareRequest, opts ...grpc.CallOption) (*RevokeProfileShareResponse, error)
+	// ===== Phase 3.5 — real parsers + rituals =====
+	GetJournalInsights(ctx context.Context, in *GetJournalInsightsRequest, opts ...grpc.CallOption) (*GetJournalInsightsResponse, error)
+	SubmitCognitiveTest(ctx context.Context, in *SubmitCognitiveTestRequest, opts ...grpc.CallOption) (*SubmitCognitiveTestResponse, error)
+	ListMyCognitiveTests(ctx context.Context, in *ListMyCognitiveTestsRequest, opts ...grpc.CallOption) (*ListMyCognitiveTestsResponse, error)
+	GetCognitiveTestStatus(ctx context.Context, in *GetCognitiveTestStatusRequest, opts ...grpc.CallOption) (*GetCognitiveTestStatusResponse, error)
+	ListRituals(ctx context.Context, in *ListRitualsRequest, opts ...grpc.CallOption) (*ListRitualsResponse, error)
+	// ===== Phase 4 — category-leading =====
+	GetYearInZenithRecap(ctx context.Context, in *GetYearInZenithRecapRequest, opts ...grpc.CallOption) (*GetYearInZenithRecapResponse, error)
+	GenerateZenithAlmanac(ctx context.Context, in *GenerateZenithAlmanacRequest, opts ...grpc.CallOption) (*GenerateZenithAlmanacResponse, error)
+	ListLounges(ctx context.Context, in *ListLoungesRequest, opts ...grpc.CallOption) (*ListLoungesResponse, error)
+	CreateLoungeBooking(ctx context.Context, in *CreateLoungeBookingRequest, opts ...grpc.CallOption) (*CreateLoungeBookingResponse, error)
+	ListMyLoungeBookings(ctx context.Context, in *ListMyLoungeBookingsRequest, opts ...grpc.CallOption) (*ListMyLoungeBookingsResponse, error)
+	CancelLoungeBooking(ctx context.Context, in *CancelLoungeBookingRequest, opts ...grpc.CallOption) (*CancelLoungeBookingResponse, error)
 }
 
 type zenithServiceClient struct {
@@ -67,6 +166,16 @@ func (c *zenithServiceClient) GetZenithStats(ctx context.Context, in *GetZenithS
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetZenithStatsResponse)
 	err := c.cc.Invoke(ctx, ZenithService_GetZenithStats_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListRecentSessions(ctx context.Context, in *ListRecentSessionsRequest, opts ...grpc.CallOption) (*ListRecentSessionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListRecentSessionsResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListRecentSessions_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -123,12 +232,394 @@ func (c *zenithServiceClient) ListLibraryItems(ctx context.Context, in *ListLibr
 	return out, nil
 }
 
+func (c *zenithServiceClient) ListBlockTemplates(ctx context.Context, in *ListBlockTemplatesRequest, opts ...grpc.CallOption) (*ListBlockTemplatesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListBlockTemplatesResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListBlockTemplates_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListProgrammes(ctx context.Context, in *ListProgrammesRequest, opts ...grpc.CallOption) (*ListProgrammesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListProgrammesResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListProgrammes_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetProgramme(ctx context.Context, in *GetProgrammeRequest, opts ...grpc.CallOption) (*GetProgrammeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetProgrammeResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetProgramme_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) EnrollProgramme(ctx context.Context, in *EnrollProgrammeRequest, opts ...grpc.CallOption) (*EnrollProgrammeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EnrollProgrammeResponse)
+	err := c.cc.Invoke(ctx, ZenithService_EnrollProgramme_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListMyProgrammes(ctx context.Context, in *ListMyProgrammesRequest, opts ...grpc.CallOption) (*ListMyProgrammesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyProgrammesResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListMyProgrammes_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) AdvanceProgrammeWeek(ctx context.Context, in *AdvanceProgrammeWeekRequest, opts ...grpc.CallOption) (*AdvanceProgrammeWeekResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdvanceProgrammeWeekResponse)
+	err := c.cc.Invoke(ctx, ZenithService_AdvanceProgrammeWeek_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) AddJournalEntry(ctx context.Context, in *AddJournalEntryRequest, opts ...grpc.CallOption) (*AddJournalEntryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AddJournalEntryResponse)
+	err := c.cc.Invoke(ctx, ZenithService_AddJournalEntry_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListMyJournalEntries(ctx context.Context, in *ListMyJournalEntriesRequest, opts ...grpc.CallOption) (*ListMyJournalEntriesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyJournalEntriesResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListMyJournalEntries_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetFocusHistory(ctx context.Context, in *GetFocusHistoryRequest, opts ...grpc.CallOption) (*GetFocusHistoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetFocusHistoryResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetFocusHistory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) SimulateFortitude(ctx context.Context, in *SimulateFortitudeRequest, opts ...grpc.CallOption) (*SimulateFortitudeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SimulateFortitudeResponse)
+	err := c.cc.Invoke(ctx, ZenithService_SimulateFortitude_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListAudioEnvironments(ctx context.Context, in *ListAudioEnvironmentsRequest, opts ...grpc.CallOption) (*ListAudioEnvironmentsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAudioEnvironmentsResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListAudioEnvironments_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetCognitiveLoad(ctx context.Context, in *GetCognitiveLoadRequest, opts ...grpc.CallOption) (*GetCognitiveLoadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCognitiveLoadResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetCognitiveLoad_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetTodaySummary(ctx context.Context, in *GetTodaySummaryRequest, opts ...grpc.CallOption) (*GetTodaySummaryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTodaySummaryResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetTodaySummary_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) AcknowledgeStressPrompt(ctx context.Context, in *AcknowledgeStressPromptRequest, opts ...grpc.CallOption) (*AcknowledgeStressPromptResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AcknowledgeStressPromptResponse)
+	err := c.cc.Invoke(ctx, ZenithService_AcknowledgeStressPrompt_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StartConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, ZenithService_StartConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyConciergeThreadsResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListMyConciergeThreads_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PostConciergeMessageResponse)
+	err := c.cc.Invoke(ctx, ZenithService_PostConciergeMessage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAnthologyArticlesResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListAnthologyArticles_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAnthologyArticleResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetAnthologyArticle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListTeachers(ctx context.Context, in *ListTeachersRequest, opts ...grpc.CallOption) (*ListTeachersResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListTeachersResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListTeachers_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListSovereignAudio(ctx context.Context, in *ListSovereignAudioRequest, opts ...grpc.CallOption) (*ListSovereignAudioResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListSovereignAudioResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListSovereignAudio_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetSovereignAudio(ctx context.Context, in *GetSovereignAudioRequest, opts ...grpc.CallOption) (*GetSovereignAudioResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSovereignAudioResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetSovereignAudio_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetJetLagProtocol(ctx context.Context, in *GetJetLagProtocolRequest, opts ...grpc.CallOption) (*GetJetLagProtocolResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetJetLagProtocolResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetJetLagProtocol_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) CreateProfileShare(ctx context.Context, in *CreateProfileShareRequest, opts ...grpc.CallOption) (*CreateProfileShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateProfileShareResponse)
+	err := c.cc.Invoke(ctx, ZenithService_CreateProfileShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListMyProfileShares(ctx context.Context, in *ListMyProfileSharesRequest, opts ...grpc.CallOption) (*ListMyProfileSharesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyProfileSharesResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListMyProfileShares_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) RevokeProfileShare(ctx context.Context, in *RevokeProfileShareRequest, opts ...grpc.CallOption) (*RevokeProfileShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeProfileShareResponse)
+	err := c.cc.Invoke(ctx, ZenithService_RevokeProfileShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetJournalInsights(ctx context.Context, in *GetJournalInsightsRequest, opts ...grpc.CallOption) (*GetJournalInsightsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetJournalInsightsResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetJournalInsights_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) SubmitCognitiveTest(ctx context.Context, in *SubmitCognitiveTestRequest, opts ...grpc.CallOption) (*SubmitCognitiveTestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitCognitiveTestResponse)
+	err := c.cc.Invoke(ctx, ZenithService_SubmitCognitiveTest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListMyCognitiveTests(ctx context.Context, in *ListMyCognitiveTestsRequest, opts ...grpc.CallOption) (*ListMyCognitiveTestsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyCognitiveTestsResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListMyCognitiveTests_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetCognitiveTestStatus(ctx context.Context, in *GetCognitiveTestStatusRequest, opts ...grpc.CallOption) (*GetCognitiveTestStatusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCognitiveTestStatusResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetCognitiveTestStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListRituals(ctx context.Context, in *ListRitualsRequest, opts ...grpc.CallOption) (*ListRitualsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListRitualsResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListRituals_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetYearInZenithRecap(ctx context.Context, in *GetYearInZenithRecapRequest, opts ...grpc.CallOption) (*GetYearInZenithRecapResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetYearInZenithRecapResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetYearInZenithRecap_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GenerateZenithAlmanac(ctx context.Context, in *GenerateZenithAlmanacRequest, opts ...grpc.CallOption) (*GenerateZenithAlmanacResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateZenithAlmanacResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GenerateZenithAlmanac_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListLounges(ctx context.Context, in *ListLoungesRequest, opts ...grpc.CallOption) (*ListLoungesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLoungesResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListLounges_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) CreateLoungeBooking(ctx context.Context, in *CreateLoungeBookingRequest, opts ...grpc.CallOption) (*CreateLoungeBookingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateLoungeBookingResponse)
+	err := c.cc.Invoke(ctx, ZenithService_CreateLoungeBooking_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ListMyLoungeBookings(ctx context.Context, in *ListMyLoungeBookingsRequest, opts ...grpc.CallOption) (*ListMyLoungeBookingsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyLoungeBookingsResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ListMyLoungeBookings_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) CancelLoungeBooking(ctx context.Context, in *CancelLoungeBookingRequest, opts ...grpc.CallOption) (*CancelLoungeBookingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CancelLoungeBookingResponse)
+	err := c.cc.Invoke(ctx, ZenithService_CancelLoungeBooking_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ZenithServiceServer is the server API for ZenithService service.
 // All implementations must embed UnimplementedZenithServiceServer
 // for forward compatibility.
 type ZenithServiceServer interface {
 	LogFocusSession(context.Context, *LogFocusSessionRequest) (*LogFocusSessionResponse, error)
 	GetZenithStats(context.Context, *GetZenithStatsRequest) (*GetZenithStatsResponse, error)
+	// Z16.1b — recent focus blocks (the ledger).
+	ListRecentSessions(context.Context, *ListRecentSessionsRequest) (*ListRecentSessionsResponse, error)
 	// Z16.5 — today's cognitive load.
 	GetTodayLoad(context.Context, *GetTodayLoadRequest) (*GetTodayLoadResponse, error)
 	// Z16.6 — calendar read integration.
@@ -138,6 +629,64 @@ type ZenithServiceServer interface {
 	RecommendBlock(context.Context, *RecommendBlockRequest) (*RecommendBlockResponse, error)
 	// Z16.8 + Z16.9 — meditation + breathwork library.
 	ListLibraryItems(context.Context, *ListLibraryItemsRequest) (*ListLibraryItemsResponse, error)
+	// ===== Phase 2 — core expansion =====
+	// Z16.15 — block templates.
+	ListBlockTemplates(context.Context, *ListBlockTemplatesRequest) (*ListBlockTemplatesResponse, error)
+	// Z16.22 — coached programmes.
+	ListProgrammes(context.Context, *ListProgrammesRequest) (*ListProgrammesResponse, error)
+	GetProgramme(context.Context, *GetProgrammeRequest) (*GetProgrammeResponse, error)
+	EnrollProgramme(context.Context, *EnrollProgrammeRequest) (*EnrollProgrammeResponse, error)
+	ListMyProgrammes(context.Context, *ListMyProgrammesRequest) (*ListMyProgrammesResponse, error)
+	AdvanceProgrammeWeek(context.Context, *AdvanceProgrammeWeekRequest) (*AdvanceProgrammeWeekResponse, error)
+	// Z16.23 — journaling.
+	AddJournalEntry(context.Context, *AddJournalEntryRequest) (*AddJournalEntryResponse, error)
+	ListMyJournalEntries(context.Context, *ListMyJournalEntriesRequest) (*ListMyJournalEntriesResponse, error)
+	// Z16.26 — focus history + heatmap.
+	GetFocusHistory(context.Context, *GetFocusHistoryRequest) (*GetFocusHistoryResponse, error)
+	// Z16.27 — what-if simulator.
+	SimulateFortitude(context.Context, *SimulateFortitudeRequest) (*SimulateFortitudeResponse, error)
+	// Z16.17 — audio environment catalog.
+	ListAudioEnvironments(context.Context, *ListAudioEnvironmentsRequest) (*ListAudioEnvironmentsResponse, error)
+	// ===== Phase 2.5 — bridges =====
+	// Z16.4 — cross-pillar cognitive-load contract (Forge consumes).
+	GetCognitiveLoad(context.Context, *GetCognitiveLoadRequest) (*GetCognitiveLoadResponse, error)
+	// Z16.9 — Today card.
+	GetTodaySummary(context.Context, *GetTodaySummaryRequest) (*GetTodaySummaryResponse, error)
+	// Z16.32 — acknowledge an acute stress-response prompt.
+	AcknowledgeStressPrompt(context.Context, *AcknowledgeStressPromptRequest) (*AcknowledgeStressPromptResponse, error)
+	// ===== Phase 3 — premium differentiation =====
+	// Coach concierge desk (Sovereign).
+	StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error)
+	ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error)
+	GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error)
+	PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error)
+	// Editorial Anthology.
+	ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error)
+	// Teacher directory.
+	ListTeachers(context.Context, *ListTeachersRequest) (*ListTeachersResponse, error)
+	// Sovereign commissioned audio.
+	ListSovereignAudio(context.Context, *ListSovereignAudioRequest) (*ListSovereignAudioResponse, error)
+	GetSovereignAudio(context.Context, *GetSovereignAudioRequest) (*GetSovereignAudioResponse, error)
+	// Travel jet-lag protocol (Nomad cross-pillar).
+	GetJetLagProtocol(context.Context, *GetJetLagProtocolRequest) (*GetJetLagProtocolResponse, error)
+	// Public profile share (fortitude band only).
+	CreateProfileShare(context.Context, *CreateProfileShareRequest) (*CreateProfileShareResponse, error)
+	ListMyProfileShares(context.Context, *ListMyProfileSharesRequest) (*ListMyProfileSharesResponse, error)
+	RevokeProfileShare(context.Context, *RevokeProfileShareRequest) (*RevokeProfileShareResponse, error)
+	// ===== Phase 3.5 — real parsers + rituals =====
+	GetJournalInsights(context.Context, *GetJournalInsightsRequest) (*GetJournalInsightsResponse, error)
+	SubmitCognitiveTest(context.Context, *SubmitCognitiveTestRequest) (*SubmitCognitiveTestResponse, error)
+	ListMyCognitiveTests(context.Context, *ListMyCognitiveTestsRequest) (*ListMyCognitiveTestsResponse, error)
+	GetCognitiveTestStatus(context.Context, *GetCognitiveTestStatusRequest) (*GetCognitiveTestStatusResponse, error)
+	ListRituals(context.Context, *ListRitualsRequest) (*ListRitualsResponse, error)
+	// ===== Phase 4 — category-leading =====
+	GetYearInZenithRecap(context.Context, *GetYearInZenithRecapRequest) (*GetYearInZenithRecapResponse, error)
+	GenerateZenithAlmanac(context.Context, *GenerateZenithAlmanacRequest) (*GenerateZenithAlmanacResponse, error)
+	ListLounges(context.Context, *ListLoungesRequest) (*ListLoungesResponse, error)
+	CreateLoungeBooking(context.Context, *CreateLoungeBookingRequest) (*CreateLoungeBookingResponse, error)
+	ListMyLoungeBookings(context.Context, *ListMyLoungeBookingsRequest) (*ListMyLoungeBookingsResponse, error)
+	CancelLoungeBooking(context.Context, *CancelLoungeBookingRequest) (*CancelLoungeBookingResponse, error)
 	mustEmbedUnimplementedZenithServiceServer()
 }
 
@@ -154,6 +703,9 @@ func (UnimplementedZenithServiceServer) LogFocusSession(context.Context, *LogFoc
 func (UnimplementedZenithServiceServer) GetZenithStats(context.Context, *GetZenithStatsRequest) (*GetZenithStatsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetZenithStats not implemented")
 }
+func (UnimplementedZenithServiceServer) ListRecentSessions(context.Context, *ListRecentSessionsRequest) (*ListRecentSessionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListRecentSessions not implemented")
+}
 func (UnimplementedZenithServiceServer) GetTodayLoad(context.Context, *GetTodayLoadRequest) (*GetTodayLoadResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetTodayLoad not implemented")
 }
@@ -168,6 +720,120 @@ func (UnimplementedZenithServiceServer) RecommendBlock(context.Context, *Recomme
 }
 func (UnimplementedZenithServiceServer) ListLibraryItems(context.Context, *ListLibraryItemsRequest) (*ListLibraryItemsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListLibraryItems not implemented")
+}
+func (UnimplementedZenithServiceServer) ListBlockTemplates(context.Context, *ListBlockTemplatesRequest) (*ListBlockTemplatesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListBlockTemplates not implemented")
+}
+func (UnimplementedZenithServiceServer) ListProgrammes(context.Context, *ListProgrammesRequest) (*ListProgrammesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListProgrammes not implemented")
+}
+func (UnimplementedZenithServiceServer) GetProgramme(context.Context, *GetProgrammeRequest) (*GetProgrammeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetProgramme not implemented")
+}
+func (UnimplementedZenithServiceServer) EnrollProgramme(context.Context, *EnrollProgrammeRequest) (*EnrollProgrammeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EnrollProgramme not implemented")
+}
+func (UnimplementedZenithServiceServer) ListMyProgrammes(context.Context, *ListMyProgrammesRequest) (*ListMyProgrammesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyProgrammes not implemented")
+}
+func (UnimplementedZenithServiceServer) AdvanceProgrammeWeek(context.Context, *AdvanceProgrammeWeekRequest) (*AdvanceProgrammeWeekResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdvanceProgrammeWeek not implemented")
+}
+func (UnimplementedZenithServiceServer) AddJournalEntry(context.Context, *AddJournalEntryRequest) (*AddJournalEntryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AddJournalEntry not implemented")
+}
+func (UnimplementedZenithServiceServer) ListMyJournalEntries(context.Context, *ListMyJournalEntriesRequest) (*ListMyJournalEntriesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyJournalEntries not implemented")
+}
+func (UnimplementedZenithServiceServer) GetFocusHistory(context.Context, *GetFocusHistoryRequest) (*GetFocusHistoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetFocusHistory not implemented")
+}
+func (UnimplementedZenithServiceServer) SimulateFortitude(context.Context, *SimulateFortitudeRequest) (*SimulateFortitudeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SimulateFortitude not implemented")
+}
+func (UnimplementedZenithServiceServer) ListAudioEnvironments(context.Context, *ListAudioEnvironmentsRequest) (*ListAudioEnvironmentsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAudioEnvironments not implemented")
+}
+func (UnimplementedZenithServiceServer) GetCognitiveLoad(context.Context, *GetCognitiveLoadRequest) (*GetCognitiveLoadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCognitiveLoad not implemented")
+}
+func (UnimplementedZenithServiceServer) GetTodaySummary(context.Context, *GetTodaySummaryRequest) (*GetTodaySummaryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTodaySummary not implemented")
+}
+func (UnimplementedZenithServiceServer) AcknowledgeStressPrompt(context.Context, *AcknowledgeStressPromptRequest) (*AcknowledgeStressPromptResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AcknowledgeStressPrompt not implemented")
+}
+func (UnimplementedZenithServiceServer) StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StartConciergeThread not implemented")
+}
+func (UnimplementedZenithServiceServer) ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyConciergeThreads not implemented")
+}
+func (UnimplementedZenithServiceServer) GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetConciergeThread not implemented")
+}
+func (UnimplementedZenithServiceServer) PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PostConciergeMessage not implemented")
+}
+func (UnimplementedZenithServiceServer) ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAnthologyArticles not implemented")
+}
+func (UnimplementedZenithServiceServer) GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAnthologyArticle not implemented")
+}
+func (UnimplementedZenithServiceServer) ListTeachers(context.Context, *ListTeachersRequest) (*ListTeachersResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListTeachers not implemented")
+}
+func (UnimplementedZenithServiceServer) ListSovereignAudio(context.Context, *ListSovereignAudioRequest) (*ListSovereignAudioResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListSovereignAudio not implemented")
+}
+func (UnimplementedZenithServiceServer) GetSovereignAudio(context.Context, *GetSovereignAudioRequest) (*GetSovereignAudioResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSovereignAudio not implemented")
+}
+func (UnimplementedZenithServiceServer) GetJetLagProtocol(context.Context, *GetJetLagProtocolRequest) (*GetJetLagProtocolResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetJetLagProtocol not implemented")
+}
+func (UnimplementedZenithServiceServer) CreateProfileShare(context.Context, *CreateProfileShareRequest) (*CreateProfileShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateProfileShare not implemented")
+}
+func (UnimplementedZenithServiceServer) ListMyProfileShares(context.Context, *ListMyProfileSharesRequest) (*ListMyProfileSharesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyProfileShares not implemented")
+}
+func (UnimplementedZenithServiceServer) RevokeProfileShare(context.Context, *RevokeProfileShareRequest) (*RevokeProfileShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeProfileShare not implemented")
+}
+func (UnimplementedZenithServiceServer) GetJournalInsights(context.Context, *GetJournalInsightsRequest) (*GetJournalInsightsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetJournalInsights not implemented")
+}
+func (UnimplementedZenithServiceServer) SubmitCognitiveTest(context.Context, *SubmitCognitiveTestRequest) (*SubmitCognitiveTestResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitCognitiveTest not implemented")
+}
+func (UnimplementedZenithServiceServer) ListMyCognitiveTests(context.Context, *ListMyCognitiveTestsRequest) (*ListMyCognitiveTestsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyCognitiveTests not implemented")
+}
+func (UnimplementedZenithServiceServer) GetCognitiveTestStatus(context.Context, *GetCognitiveTestStatusRequest) (*GetCognitiveTestStatusResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCognitiveTestStatus not implemented")
+}
+func (UnimplementedZenithServiceServer) ListRituals(context.Context, *ListRitualsRequest) (*ListRitualsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListRituals not implemented")
+}
+func (UnimplementedZenithServiceServer) GetYearInZenithRecap(context.Context, *GetYearInZenithRecapRequest) (*GetYearInZenithRecapResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetYearInZenithRecap not implemented")
+}
+func (UnimplementedZenithServiceServer) GenerateZenithAlmanac(context.Context, *GenerateZenithAlmanacRequest) (*GenerateZenithAlmanacResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateZenithAlmanac not implemented")
+}
+func (UnimplementedZenithServiceServer) ListLounges(context.Context, *ListLoungesRequest) (*ListLoungesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLounges not implemented")
+}
+func (UnimplementedZenithServiceServer) CreateLoungeBooking(context.Context, *CreateLoungeBookingRequest) (*CreateLoungeBookingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateLoungeBooking not implemented")
+}
+func (UnimplementedZenithServiceServer) ListMyLoungeBookings(context.Context, *ListMyLoungeBookingsRequest) (*ListMyLoungeBookingsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyLoungeBookings not implemented")
+}
+func (UnimplementedZenithServiceServer) CancelLoungeBooking(context.Context, *CancelLoungeBookingRequest) (*CancelLoungeBookingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CancelLoungeBooking not implemented")
 }
 func (UnimplementedZenithServiceServer) mustEmbedUnimplementedZenithServiceServer() {}
 func (UnimplementedZenithServiceServer) testEmbeddedByValue()                       {}
@@ -222,6 +888,24 @@ func _ZenithService_GetZenithStats_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ZenithServiceServer).GetZenithStats(ctx, req.(*GetZenithStatsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListRecentSessions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRecentSessionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListRecentSessions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListRecentSessions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListRecentSessions(ctx, req.(*ListRecentSessionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -316,6 +1000,690 @@ func _ZenithService_ListLibraryItems_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ZenithService_ListBlockTemplates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListBlockTemplatesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListBlockTemplates(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListBlockTemplates_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListBlockTemplates(ctx, req.(*ListBlockTemplatesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListProgrammes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListProgrammesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListProgrammes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListProgrammes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListProgrammes(ctx, req.(*ListProgrammesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetProgramme_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetProgrammeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetProgramme(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetProgramme_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetProgramme(ctx, req.(*GetProgrammeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_EnrollProgramme_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EnrollProgrammeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).EnrollProgramme(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_EnrollProgramme_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).EnrollProgramme(ctx, req.(*EnrollProgrammeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListMyProgrammes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyProgrammesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListMyProgrammes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListMyProgrammes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListMyProgrammes(ctx, req.(*ListMyProgrammesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_AdvanceProgrammeWeek_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdvanceProgrammeWeekRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).AdvanceProgrammeWeek(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_AdvanceProgrammeWeek_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).AdvanceProgrammeWeek(ctx, req.(*AdvanceProgrammeWeekRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_AddJournalEntry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddJournalEntryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).AddJournalEntry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_AddJournalEntry_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).AddJournalEntry(ctx, req.(*AddJournalEntryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListMyJournalEntries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyJournalEntriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListMyJournalEntries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListMyJournalEntries_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListMyJournalEntries(ctx, req.(*ListMyJournalEntriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetFocusHistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFocusHistoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetFocusHistory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetFocusHistory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetFocusHistory(ctx, req.(*GetFocusHistoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_SimulateFortitude_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SimulateFortitudeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).SimulateFortitude(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_SimulateFortitude_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).SimulateFortitude(ctx, req.(*SimulateFortitudeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListAudioEnvironments_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAudioEnvironmentsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListAudioEnvironments(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListAudioEnvironments_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListAudioEnvironments(ctx, req.(*ListAudioEnvironmentsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetCognitiveLoad_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCognitiveLoadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetCognitiveLoad(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetCognitiveLoad_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetCognitiveLoad(ctx, req.(*GetCognitiveLoadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetTodaySummary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTodaySummaryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetTodaySummary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetTodaySummary_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetTodaySummary(ctx, req.(*GetTodaySummaryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_AcknowledgeStressPrompt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AcknowledgeStressPromptRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).AcknowledgeStressPrompt(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_AcknowledgeStressPrompt_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).AcknowledgeStressPrompt(ctx, req.(*AcknowledgeStressPromptRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_StartConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StartConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).StartConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_StartConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).StartConciergeThread(ctx, req.(*StartConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListMyConciergeThreads_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyConciergeThreadsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListMyConciergeThreads(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListMyConciergeThreads_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListMyConciergeThreads(ctx, req.(*ListMyConciergeThreadsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetConciergeThread(ctx, req.(*GetConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_PostConciergeMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostConciergeMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).PostConciergeMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_PostConciergeMessage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).PostConciergeMessage(ctx, req.(*PostConciergeMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListAnthologyArticles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAnthologyArticlesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListAnthologyArticles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListAnthologyArticles_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListAnthologyArticles(ctx, req.(*ListAnthologyArticlesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetAnthologyArticle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnthologyArticleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetAnthologyArticle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetAnthologyArticle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetAnthologyArticle(ctx, req.(*GetAnthologyArticleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListTeachers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListTeachersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListTeachers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListTeachers_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListTeachers(ctx, req.(*ListTeachersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListSovereignAudio_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSovereignAudioRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListSovereignAudio(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListSovereignAudio_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListSovereignAudio(ctx, req.(*ListSovereignAudioRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetSovereignAudio_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSovereignAudioRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetSovereignAudio(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetSovereignAudio_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetSovereignAudio(ctx, req.(*GetSovereignAudioRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetJetLagProtocol_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetJetLagProtocolRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetJetLagProtocol(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetJetLagProtocol_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetJetLagProtocol(ctx, req.(*GetJetLagProtocolRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_CreateProfileShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateProfileShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).CreateProfileShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_CreateProfileShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).CreateProfileShare(ctx, req.(*CreateProfileShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListMyProfileShares_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyProfileSharesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListMyProfileShares(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListMyProfileShares_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListMyProfileShares(ctx, req.(*ListMyProfileSharesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_RevokeProfileShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeProfileShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).RevokeProfileShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_RevokeProfileShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).RevokeProfileShare(ctx, req.(*RevokeProfileShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetJournalInsights_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetJournalInsightsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetJournalInsights(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetJournalInsights_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetJournalInsights(ctx, req.(*GetJournalInsightsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_SubmitCognitiveTest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitCognitiveTestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).SubmitCognitiveTest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_SubmitCognitiveTest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).SubmitCognitiveTest(ctx, req.(*SubmitCognitiveTestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListMyCognitiveTests_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyCognitiveTestsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListMyCognitiveTests(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListMyCognitiveTests_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListMyCognitiveTests(ctx, req.(*ListMyCognitiveTestsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetCognitiveTestStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCognitiveTestStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetCognitiveTestStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetCognitiveTestStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetCognitiveTestStatus(ctx, req.(*GetCognitiveTestStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListRituals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRitualsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListRituals(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListRituals_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListRituals(ctx, req.(*ListRitualsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetYearInZenithRecap_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetYearInZenithRecapRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetYearInZenithRecap(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetYearInZenithRecap_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetYearInZenithRecap(ctx, req.(*GetYearInZenithRecapRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GenerateZenithAlmanac_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateZenithAlmanacRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GenerateZenithAlmanac(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GenerateZenithAlmanac_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GenerateZenithAlmanac(ctx, req.(*GenerateZenithAlmanacRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListLounges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLoungesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListLounges(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListLounges_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListLounges(ctx, req.(*ListLoungesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_CreateLoungeBooking_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateLoungeBookingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).CreateLoungeBooking(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_CreateLoungeBooking_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).CreateLoungeBooking(ctx, req.(*CreateLoungeBookingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ListMyLoungeBookings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyLoungeBookingsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ListMyLoungeBookings(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ListMyLoungeBookings_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ListMyLoungeBookings(ctx, req.(*ListMyLoungeBookingsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_CancelLoungeBooking_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CancelLoungeBookingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).CancelLoungeBooking(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_CancelLoungeBooking_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).CancelLoungeBooking(ctx, req.(*CancelLoungeBookingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ZenithService_ServiceDesc is the grpc.ServiceDesc for ZenithService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -330,6 +1698,10 @@ var ZenithService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetZenithStats",
 			Handler:    _ZenithService_GetZenithStats_Handler,
+		},
+		{
+			MethodName: "ListRecentSessions",
+			Handler:    _ZenithService_ListRecentSessions_Handler,
 		},
 		{
 			MethodName: "GetTodayLoad",
@@ -350,6 +1722,158 @@ var ZenithService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListLibraryItems",
 			Handler:    _ZenithService_ListLibraryItems_Handler,
+		},
+		{
+			MethodName: "ListBlockTemplates",
+			Handler:    _ZenithService_ListBlockTemplates_Handler,
+		},
+		{
+			MethodName: "ListProgrammes",
+			Handler:    _ZenithService_ListProgrammes_Handler,
+		},
+		{
+			MethodName: "GetProgramme",
+			Handler:    _ZenithService_GetProgramme_Handler,
+		},
+		{
+			MethodName: "EnrollProgramme",
+			Handler:    _ZenithService_EnrollProgramme_Handler,
+		},
+		{
+			MethodName: "ListMyProgrammes",
+			Handler:    _ZenithService_ListMyProgrammes_Handler,
+		},
+		{
+			MethodName: "AdvanceProgrammeWeek",
+			Handler:    _ZenithService_AdvanceProgrammeWeek_Handler,
+		},
+		{
+			MethodName: "AddJournalEntry",
+			Handler:    _ZenithService_AddJournalEntry_Handler,
+		},
+		{
+			MethodName: "ListMyJournalEntries",
+			Handler:    _ZenithService_ListMyJournalEntries_Handler,
+		},
+		{
+			MethodName: "GetFocusHistory",
+			Handler:    _ZenithService_GetFocusHistory_Handler,
+		},
+		{
+			MethodName: "SimulateFortitude",
+			Handler:    _ZenithService_SimulateFortitude_Handler,
+		},
+		{
+			MethodName: "ListAudioEnvironments",
+			Handler:    _ZenithService_ListAudioEnvironments_Handler,
+		},
+		{
+			MethodName: "GetCognitiveLoad",
+			Handler:    _ZenithService_GetCognitiveLoad_Handler,
+		},
+		{
+			MethodName: "GetTodaySummary",
+			Handler:    _ZenithService_GetTodaySummary_Handler,
+		},
+		{
+			MethodName: "AcknowledgeStressPrompt",
+			Handler:    _ZenithService_AcknowledgeStressPrompt_Handler,
+		},
+		{
+			MethodName: "StartConciergeThread",
+			Handler:    _ZenithService_StartConciergeThread_Handler,
+		},
+		{
+			MethodName: "ListMyConciergeThreads",
+			Handler:    _ZenithService_ListMyConciergeThreads_Handler,
+		},
+		{
+			MethodName: "GetConciergeThread",
+			Handler:    _ZenithService_GetConciergeThread_Handler,
+		},
+		{
+			MethodName: "PostConciergeMessage",
+			Handler:    _ZenithService_PostConciergeMessage_Handler,
+		},
+		{
+			MethodName: "ListAnthologyArticles",
+			Handler:    _ZenithService_ListAnthologyArticles_Handler,
+		},
+		{
+			MethodName: "GetAnthologyArticle",
+			Handler:    _ZenithService_GetAnthologyArticle_Handler,
+		},
+		{
+			MethodName: "ListTeachers",
+			Handler:    _ZenithService_ListTeachers_Handler,
+		},
+		{
+			MethodName: "ListSovereignAudio",
+			Handler:    _ZenithService_ListSovereignAudio_Handler,
+		},
+		{
+			MethodName: "GetSovereignAudio",
+			Handler:    _ZenithService_GetSovereignAudio_Handler,
+		},
+		{
+			MethodName: "GetJetLagProtocol",
+			Handler:    _ZenithService_GetJetLagProtocol_Handler,
+		},
+		{
+			MethodName: "CreateProfileShare",
+			Handler:    _ZenithService_CreateProfileShare_Handler,
+		},
+		{
+			MethodName: "ListMyProfileShares",
+			Handler:    _ZenithService_ListMyProfileShares_Handler,
+		},
+		{
+			MethodName: "RevokeProfileShare",
+			Handler:    _ZenithService_RevokeProfileShare_Handler,
+		},
+		{
+			MethodName: "GetJournalInsights",
+			Handler:    _ZenithService_GetJournalInsights_Handler,
+		},
+		{
+			MethodName: "SubmitCognitiveTest",
+			Handler:    _ZenithService_SubmitCognitiveTest_Handler,
+		},
+		{
+			MethodName: "ListMyCognitiveTests",
+			Handler:    _ZenithService_ListMyCognitiveTests_Handler,
+		},
+		{
+			MethodName: "GetCognitiveTestStatus",
+			Handler:    _ZenithService_GetCognitiveTestStatus_Handler,
+		},
+		{
+			MethodName: "ListRituals",
+			Handler:    _ZenithService_ListRituals_Handler,
+		},
+		{
+			MethodName: "GetYearInZenithRecap",
+			Handler:    _ZenithService_GetYearInZenithRecap_Handler,
+		},
+		{
+			MethodName: "GenerateZenithAlmanac",
+			Handler:    _ZenithService_GenerateZenithAlmanac_Handler,
+		},
+		{
+			MethodName: "ListLounges",
+			Handler:    _ZenithService_ListLounges_Handler,
+		},
+		{
+			MethodName: "CreateLoungeBooking",
+			Handler:    _ZenithService_CreateLoungeBooking_Handler,
+		},
+		{
+			MethodName: "ListMyLoungeBookings",
+			Handler:    _ZenithService_ListMyLoungeBookings_Handler,
+		},
+		{
+			MethodName: "CancelLoungeBooking",
+			Handler:    _ZenithService_CancelLoungeBooking_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -37,6 +37,101 @@ class OracleServiceClient extends $grpc.Client {
     return $createUnaryCall(_$query, request, options: options);
   }
 
+  /// O4 (Phase 4) — Year-in-Oracle recap + hardcover PDF.
+  $grpc.ResponseFuture<$0.GetYearInOracleRecapResponse> getYearInOracleRecap($0.GetYearInOracleRecapRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getYearInOracleRecap, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateYearInOracleResponse> generateYearInOracle($0.GenerateYearInOracleRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$generateYearInOracle, request, options: options);
+  }
+
+  /// O3 (Phase 3) — Sovereign concierge desk.
+  $grpc.ResponseFuture<$0.StartConciergeThreadResponse> startConciergeThread($0.StartConciergeThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$startConciergeThread, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyConciergeThreadsResponse> listMyConciergeThreads($0.ListMyConciergeThreadsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyConciergeThreads, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetConciergeThreadResponse> getConciergeThread($0.GetConciergeThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getConciergeThread, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PostConciergeMessageResponse> postConciergeMessage($0.PostConciergeMessageRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$postConciergeMessage, request, options: options);
+  }
+
+  /// O3 (Phase 3) — editorial Anthology.
+  $grpc.ResponseFuture<$0.ListAnthologyArticlesResponse> listAnthologyArticles($0.ListAnthologyArticlesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listAnthologyArticles, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetAnthologyArticleResponse> getAnthologyArticle($0.GetAnthologyArticleRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getAnthologyArticle, request, options: options);
+  }
+
+  /// O3 (Phase 3) — shared brief.
+  $grpc.ResponseFuture<$0.CreateBriefShareResponse> createBriefShare($0.CreateBriefShareRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createBriefShare, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyBriefSharesResponse> listMyBriefShares($0.ListMyBriefSharesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyBriefShares, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeBriefShareResponse> revokeBriefShare($0.RevokeBriefShareRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$revokeBriefShare, request, options: options);
+  }
+
+  /// O1 (Phase 1) — daily synthesis briefing across granted pillar scopes.
+  $grpc.ResponseFuture<$0.GetTodayBriefingResponse> getTodayBriefing($0.GetTodayBriefingRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getTodayBriefing, request, options: options);
+  }
+
+  /// O2 (Phase 2) — proactive triggers + inbox.
+  $grpc.ResponseFuture<$0.CreateTriggerResponse> createTrigger($0.CreateTriggerRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createTrigger, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyTriggersResponse> listMyTriggers($0.ListMyTriggersRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyTriggers, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteTriggerResponse> deleteTrigger($0.DeleteTriggerRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteTrigger, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetInboxResponse> getInbox($0.GetInboxRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getInbox, request, options: options);
+  }
+
+  /// O2 (Phase 2) — long-form drafter.
+  $grpc.ResponseFuture<$0.CreateDocumentResponse> createDocument($0.CreateDocumentRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createDocument, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyDocumentsResponse> listMyDocuments($0.ListMyDocumentsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyDocuments, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetDocumentResponse> getDocument($0.GetDocumentRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getDocument, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateDocumentResponse> updateDocument($0.UpdateDocumentRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$updateDocument, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteDocumentResponse> deleteDocument($0.DeleteDocumentRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$deleteDocument, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DraftDocumentResponse> draftDocument($0.DraftDocumentRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$draftDocument, request, options: options);
+  }
+
   /// Status
   $grpc.ResponseFuture<$0.GetOracleStatsResponse> getOracleStats($0.GetOracleStatsRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$getOracleStats, request, options: options);
@@ -126,6 +221,94 @@ class OracleServiceClient extends $grpc.Client {
       '/sttattus.oracle.v1.OracleService/Query',
       ($0.QueryRequest value) => value.writeToBuffer(),
       $0.QueryResponse.fromBuffer);
+  static final _$getYearInOracleRecap = $grpc.ClientMethod<$0.GetYearInOracleRecapRequest, $0.GetYearInOracleRecapResponse>(
+      '/sttattus.oracle.v1.OracleService/GetYearInOracleRecap',
+      ($0.GetYearInOracleRecapRequest value) => value.writeToBuffer(),
+      $0.GetYearInOracleRecapResponse.fromBuffer);
+  static final _$generateYearInOracle = $grpc.ClientMethod<$0.GenerateYearInOracleRequest, $0.GenerateYearInOracleResponse>(
+      '/sttattus.oracle.v1.OracleService/GenerateYearInOracle',
+      ($0.GenerateYearInOracleRequest value) => value.writeToBuffer(),
+      $0.GenerateYearInOracleResponse.fromBuffer);
+  static final _$startConciergeThread = $grpc.ClientMethod<$0.StartConciergeThreadRequest, $0.StartConciergeThreadResponse>(
+      '/sttattus.oracle.v1.OracleService/StartConciergeThread',
+      ($0.StartConciergeThreadRequest value) => value.writeToBuffer(),
+      $0.StartConciergeThreadResponse.fromBuffer);
+  static final _$listMyConciergeThreads = $grpc.ClientMethod<$0.ListMyConciergeThreadsRequest, $0.ListMyConciergeThreadsResponse>(
+      '/sttattus.oracle.v1.OracleService/ListMyConciergeThreads',
+      ($0.ListMyConciergeThreadsRequest value) => value.writeToBuffer(),
+      $0.ListMyConciergeThreadsResponse.fromBuffer);
+  static final _$getConciergeThread = $grpc.ClientMethod<$0.GetConciergeThreadRequest, $0.GetConciergeThreadResponse>(
+      '/sttattus.oracle.v1.OracleService/GetConciergeThread',
+      ($0.GetConciergeThreadRequest value) => value.writeToBuffer(),
+      $0.GetConciergeThreadResponse.fromBuffer);
+  static final _$postConciergeMessage = $grpc.ClientMethod<$0.PostConciergeMessageRequest, $0.PostConciergeMessageResponse>(
+      '/sttattus.oracle.v1.OracleService/PostConciergeMessage',
+      ($0.PostConciergeMessageRequest value) => value.writeToBuffer(),
+      $0.PostConciergeMessageResponse.fromBuffer);
+  static final _$listAnthologyArticles = $grpc.ClientMethod<$0.ListAnthologyArticlesRequest, $0.ListAnthologyArticlesResponse>(
+      '/sttattus.oracle.v1.OracleService/ListAnthologyArticles',
+      ($0.ListAnthologyArticlesRequest value) => value.writeToBuffer(),
+      $0.ListAnthologyArticlesResponse.fromBuffer);
+  static final _$getAnthologyArticle = $grpc.ClientMethod<$0.GetAnthologyArticleRequest, $0.GetAnthologyArticleResponse>(
+      '/sttattus.oracle.v1.OracleService/GetAnthologyArticle',
+      ($0.GetAnthologyArticleRequest value) => value.writeToBuffer(),
+      $0.GetAnthologyArticleResponse.fromBuffer);
+  static final _$createBriefShare = $grpc.ClientMethod<$0.CreateBriefShareRequest, $0.CreateBriefShareResponse>(
+      '/sttattus.oracle.v1.OracleService/CreateBriefShare',
+      ($0.CreateBriefShareRequest value) => value.writeToBuffer(),
+      $0.CreateBriefShareResponse.fromBuffer);
+  static final _$listMyBriefShares = $grpc.ClientMethod<$0.ListMyBriefSharesRequest, $0.ListMyBriefSharesResponse>(
+      '/sttattus.oracle.v1.OracleService/ListMyBriefShares',
+      ($0.ListMyBriefSharesRequest value) => value.writeToBuffer(),
+      $0.ListMyBriefSharesResponse.fromBuffer);
+  static final _$revokeBriefShare = $grpc.ClientMethod<$0.RevokeBriefShareRequest, $0.RevokeBriefShareResponse>(
+      '/sttattus.oracle.v1.OracleService/RevokeBriefShare',
+      ($0.RevokeBriefShareRequest value) => value.writeToBuffer(),
+      $0.RevokeBriefShareResponse.fromBuffer);
+  static final _$getTodayBriefing = $grpc.ClientMethod<$0.GetTodayBriefingRequest, $0.GetTodayBriefingResponse>(
+      '/sttattus.oracle.v1.OracleService/GetTodayBriefing',
+      ($0.GetTodayBriefingRequest value) => value.writeToBuffer(),
+      $0.GetTodayBriefingResponse.fromBuffer);
+  static final _$createTrigger = $grpc.ClientMethod<$0.CreateTriggerRequest, $0.CreateTriggerResponse>(
+      '/sttattus.oracle.v1.OracleService/CreateTrigger',
+      ($0.CreateTriggerRequest value) => value.writeToBuffer(),
+      $0.CreateTriggerResponse.fromBuffer);
+  static final _$listMyTriggers = $grpc.ClientMethod<$0.ListMyTriggersRequest, $0.ListMyTriggersResponse>(
+      '/sttattus.oracle.v1.OracleService/ListMyTriggers',
+      ($0.ListMyTriggersRequest value) => value.writeToBuffer(),
+      $0.ListMyTriggersResponse.fromBuffer);
+  static final _$deleteTrigger = $grpc.ClientMethod<$0.DeleteTriggerRequest, $0.DeleteTriggerResponse>(
+      '/sttattus.oracle.v1.OracleService/DeleteTrigger',
+      ($0.DeleteTriggerRequest value) => value.writeToBuffer(),
+      $0.DeleteTriggerResponse.fromBuffer);
+  static final _$getInbox = $grpc.ClientMethod<$0.GetInboxRequest, $0.GetInboxResponse>(
+      '/sttattus.oracle.v1.OracleService/GetInbox',
+      ($0.GetInboxRequest value) => value.writeToBuffer(),
+      $0.GetInboxResponse.fromBuffer);
+  static final _$createDocument = $grpc.ClientMethod<$0.CreateDocumentRequest, $0.CreateDocumentResponse>(
+      '/sttattus.oracle.v1.OracleService/CreateDocument',
+      ($0.CreateDocumentRequest value) => value.writeToBuffer(),
+      $0.CreateDocumentResponse.fromBuffer);
+  static final _$listMyDocuments = $grpc.ClientMethod<$0.ListMyDocumentsRequest, $0.ListMyDocumentsResponse>(
+      '/sttattus.oracle.v1.OracleService/ListMyDocuments',
+      ($0.ListMyDocumentsRequest value) => value.writeToBuffer(),
+      $0.ListMyDocumentsResponse.fromBuffer);
+  static final _$getDocument = $grpc.ClientMethod<$0.GetDocumentRequest, $0.GetDocumentResponse>(
+      '/sttattus.oracle.v1.OracleService/GetDocument',
+      ($0.GetDocumentRequest value) => value.writeToBuffer(),
+      $0.GetDocumentResponse.fromBuffer);
+  static final _$updateDocument = $grpc.ClientMethod<$0.UpdateDocumentRequest, $0.UpdateDocumentResponse>(
+      '/sttattus.oracle.v1.OracleService/UpdateDocument',
+      ($0.UpdateDocumentRequest value) => value.writeToBuffer(),
+      $0.UpdateDocumentResponse.fromBuffer);
+  static final _$deleteDocument = $grpc.ClientMethod<$0.DeleteDocumentRequest, $0.DeleteDocumentResponse>(
+      '/sttattus.oracle.v1.OracleService/DeleteDocument',
+      ($0.DeleteDocumentRequest value) => value.writeToBuffer(),
+      $0.DeleteDocumentResponse.fromBuffer);
+  static final _$draftDocument = $grpc.ClientMethod<$0.DraftDocumentRequest, $0.DraftDocumentResponse>(
+      '/sttattus.oracle.v1.OracleService/DraftDocument',
+      ($0.DraftDocumentRequest value) => value.writeToBuffer(),
+      $0.DraftDocumentResponse.fromBuffer);
   static final _$getOracleStats = $grpc.ClientMethod<$0.GetOracleStatsRequest, $0.GetOracleStatsResponse>(
       '/sttattus.oracle.v1.OracleService/GetOracleStats',
       ($0.GetOracleStatsRequest value) => value.writeToBuffer(),
@@ -216,6 +399,160 @@ abstract class OracleServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.QueryRequest.fromBuffer(value),
         ($0.QueryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetYearInOracleRecapRequest, $0.GetYearInOracleRecapResponse>(
+        'GetYearInOracleRecap',
+        getYearInOracleRecap_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetYearInOracleRecapRequest.fromBuffer(value),
+        ($0.GetYearInOracleRecapResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateYearInOracleRequest, $0.GenerateYearInOracleResponse>(
+        'GenerateYearInOracle',
+        generateYearInOracle_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GenerateYearInOracleRequest.fromBuffer(value),
+        ($0.GenerateYearInOracleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.StartConciergeThreadRequest, $0.StartConciergeThreadResponse>(
+        'StartConciergeThread',
+        startConciergeThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.StartConciergeThreadRequest.fromBuffer(value),
+        ($0.StartConciergeThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyConciergeThreadsRequest, $0.ListMyConciergeThreadsResponse>(
+        'ListMyConciergeThreads',
+        listMyConciergeThreads_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyConciergeThreadsRequest.fromBuffer(value),
+        ($0.ListMyConciergeThreadsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetConciergeThreadRequest, $0.GetConciergeThreadResponse>(
+        'GetConciergeThread',
+        getConciergeThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetConciergeThreadRequest.fromBuffer(value),
+        ($0.GetConciergeThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PostConciergeMessageRequest, $0.PostConciergeMessageResponse>(
+        'PostConciergeMessage',
+        postConciergeMessage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.PostConciergeMessageRequest.fromBuffer(value),
+        ($0.PostConciergeMessageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAnthologyArticlesRequest, $0.ListAnthologyArticlesResponse>(
+        'ListAnthologyArticles',
+        listAnthologyArticles_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListAnthologyArticlesRequest.fromBuffer(value),
+        ($0.ListAnthologyArticlesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAnthologyArticleRequest, $0.GetAnthologyArticleResponse>(
+        'GetAnthologyArticle',
+        getAnthologyArticle_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetAnthologyArticleRequest.fromBuffer(value),
+        ($0.GetAnthologyArticleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateBriefShareRequest, $0.CreateBriefShareResponse>(
+        'CreateBriefShare',
+        createBriefShare_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateBriefShareRequest.fromBuffer(value),
+        ($0.CreateBriefShareResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyBriefSharesRequest, $0.ListMyBriefSharesResponse>(
+        'ListMyBriefShares',
+        listMyBriefShares_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyBriefSharesRequest.fromBuffer(value),
+        ($0.ListMyBriefSharesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeBriefShareRequest, $0.RevokeBriefShareResponse>(
+        'RevokeBriefShare',
+        revokeBriefShare_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RevokeBriefShareRequest.fromBuffer(value),
+        ($0.RevokeBriefShareResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTodayBriefingRequest, $0.GetTodayBriefingResponse>(
+        'GetTodayBriefing',
+        getTodayBriefing_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetTodayBriefingRequest.fromBuffer(value),
+        ($0.GetTodayBriefingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateTriggerRequest, $0.CreateTriggerResponse>(
+        'CreateTrigger',
+        createTrigger_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateTriggerRequest.fromBuffer(value),
+        ($0.CreateTriggerResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyTriggersRequest, $0.ListMyTriggersResponse>(
+        'ListMyTriggers',
+        listMyTriggers_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyTriggersRequest.fromBuffer(value),
+        ($0.ListMyTriggersResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteTriggerRequest, $0.DeleteTriggerResponse>(
+        'DeleteTrigger',
+        deleteTrigger_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteTriggerRequest.fromBuffer(value),
+        ($0.DeleteTriggerResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetInboxRequest, $0.GetInboxResponse>(
+        'GetInbox',
+        getInbox_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetInboxRequest.fromBuffer(value),
+        ($0.GetInboxResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateDocumentRequest, $0.CreateDocumentResponse>(
+        'CreateDocument',
+        createDocument_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateDocumentRequest.fromBuffer(value),
+        ($0.CreateDocumentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyDocumentsRequest, $0.ListMyDocumentsResponse>(
+        'ListMyDocuments',
+        listMyDocuments_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyDocumentsRequest.fromBuffer(value),
+        ($0.ListMyDocumentsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDocumentRequest, $0.GetDocumentResponse>(
+        'GetDocument',
+        getDocument_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetDocumentRequest.fromBuffer(value),
+        ($0.GetDocumentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateDocumentRequest, $0.UpdateDocumentResponse>(
+        'UpdateDocument',
+        updateDocument_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpdateDocumentRequest.fromBuffer(value),
+        ($0.UpdateDocumentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteDocumentRequest, $0.DeleteDocumentResponse>(
+        'DeleteDocument',
+        deleteDocument_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteDocumentRequest.fromBuffer(value),
+        ($0.DeleteDocumentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DraftDocumentRequest, $0.DraftDocumentResponse>(
+        'DraftDocument',
+        draftDocument_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DraftDocumentRequest.fromBuffer(value),
+        ($0.DraftDocumentResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetOracleStatsRequest, $0.GetOracleStatsResponse>(
         'GetOracleStats',
         getOracleStats_Pre,
@@ -356,6 +693,138 @@ abstract class OracleServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.QueryResponse> query($grpc.ServiceCall call, $0.QueryRequest request);
+
+  $async.Future<$0.GetYearInOracleRecapResponse> getYearInOracleRecap_Pre($grpc.ServiceCall $call, $async.Future<$0.GetYearInOracleRecapRequest> $request) async {
+    return getYearInOracleRecap($call, await $request);
+  }
+
+  $async.Future<$0.GetYearInOracleRecapResponse> getYearInOracleRecap($grpc.ServiceCall call, $0.GetYearInOracleRecapRequest request);
+
+  $async.Future<$0.GenerateYearInOracleResponse> generateYearInOracle_Pre($grpc.ServiceCall $call, $async.Future<$0.GenerateYearInOracleRequest> $request) async {
+    return generateYearInOracle($call, await $request);
+  }
+
+  $async.Future<$0.GenerateYearInOracleResponse> generateYearInOracle($grpc.ServiceCall call, $0.GenerateYearInOracleRequest request);
+
+  $async.Future<$0.StartConciergeThreadResponse> startConciergeThread_Pre($grpc.ServiceCall $call, $async.Future<$0.StartConciergeThreadRequest> $request) async {
+    return startConciergeThread($call, await $request);
+  }
+
+  $async.Future<$0.StartConciergeThreadResponse> startConciergeThread($grpc.ServiceCall call, $0.StartConciergeThreadRequest request);
+
+  $async.Future<$0.ListMyConciergeThreadsResponse> listMyConciergeThreads_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyConciergeThreadsRequest> $request) async {
+    return listMyConciergeThreads($call, await $request);
+  }
+
+  $async.Future<$0.ListMyConciergeThreadsResponse> listMyConciergeThreads($grpc.ServiceCall call, $0.ListMyConciergeThreadsRequest request);
+
+  $async.Future<$0.GetConciergeThreadResponse> getConciergeThread_Pre($grpc.ServiceCall $call, $async.Future<$0.GetConciergeThreadRequest> $request) async {
+    return getConciergeThread($call, await $request);
+  }
+
+  $async.Future<$0.GetConciergeThreadResponse> getConciergeThread($grpc.ServiceCall call, $0.GetConciergeThreadRequest request);
+
+  $async.Future<$0.PostConciergeMessageResponse> postConciergeMessage_Pre($grpc.ServiceCall $call, $async.Future<$0.PostConciergeMessageRequest> $request) async {
+    return postConciergeMessage($call, await $request);
+  }
+
+  $async.Future<$0.PostConciergeMessageResponse> postConciergeMessage($grpc.ServiceCall call, $0.PostConciergeMessageRequest request);
+
+  $async.Future<$0.ListAnthologyArticlesResponse> listAnthologyArticles_Pre($grpc.ServiceCall $call, $async.Future<$0.ListAnthologyArticlesRequest> $request) async {
+    return listAnthologyArticles($call, await $request);
+  }
+
+  $async.Future<$0.ListAnthologyArticlesResponse> listAnthologyArticles($grpc.ServiceCall call, $0.ListAnthologyArticlesRequest request);
+
+  $async.Future<$0.GetAnthologyArticleResponse> getAnthologyArticle_Pre($grpc.ServiceCall $call, $async.Future<$0.GetAnthologyArticleRequest> $request) async {
+    return getAnthologyArticle($call, await $request);
+  }
+
+  $async.Future<$0.GetAnthologyArticleResponse> getAnthologyArticle($grpc.ServiceCall call, $0.GetAnthologyArticleRequest request);
+
+  $async.Future<$0.CreateBriefShareResponse> createBriefShare_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateBriefShareRequest> $request) async {
+    return createBriefShare($call, await $request);
+  }
+
+  $async.Future<$0.CreateBriefShareResponse> createBriefShare($grpc.ServiceCall call, $0.CreateBriefShareRequest request);
+
+  $async.Future<$0.ListMyBriefSharesResponse> listMyBriefShares_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyBriefSharesRequest> $request) async {
+    return listMyBriefShares($call, await $request);
+  }
+
+  $async.Future<$0.ListMyBriefSharesResponse> listMyBriefShares($grpc.ServiceCall call, $0.ListMyBriefSharesRequest request);
+
+  $async.Future<$0.RevokeBriefShareResponse> revokeBriefShare_Pre($grpc.ServiceCall $call, $async.Future<$0.RevokeBriefShareRequest> $request) async {
+    return revokeBriefShare($call, await $request);
+  }
+
+  $async.Future<$0.RevokeBriefShareResponse> revokeBriefShare($grpc.ServiceCall call, $0.RevokeBriefShareRequest request);
+
+  $async.Future<$0.GetTodayBriefingResponse> getTodayBriefing_Pre($grpc.ServiceCall $call, $async.Future<$0.GetTodayBriefingRequest> $request) async {
+    return getTodayBriefing($call, await $request);
+  }
+
+  $async.Future<$0.GetTodayBriefingResponse> getTodayBriefing($grpc.ServiceCall call, $0.GetTodayBriefingRequest request);
+
+  $async.Future<$0.CreateTriggerResponse> createTrigger_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateTriggerRequest> $request) async {
+    return createTrigger($call, await $request);
+  }
+
+  $async.Future<$0.CreateTriggerResponse> createTrigger($grpc.ServiceCall call, $0.CreateTriggerRequest request);
+
+  $async.Future<$0.ListMyTriggersResponse> listMyTriggers_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyTriggersRequest> $request) async {
+    return listMyTriggers($call, await $request);
+  }
+
+  $async.Future<$0.ListMyTriggersResponse> listMyTriggers($grpc.ServiceCall call, $0.ListMyTriggersRequest request);
+
+  $async.Future<$0.DeleteTriggerResponse> deleteTrigger_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteTriggerRequest> $request) async {
+    return deleteTrigger($call, await $request);
+  }
+
+  $async.Future<$0.DeleteTriggerResponse> deleteTrigger($grpc.ServiceCall call, $0.DeleteTriggerRequest request);
+
+  $async.Future<$0.GetInboxResponse> getInbox_Pre($grpc.ServiceCall $call, $async.Future<$0.GetInboxRequest> $request) async {
+    return getInbox($call, await $request);
+  }
+
+  $async.Future<$0.GetInboxResponse> getInbox($grpc.ServiceCall call, $0.GetInboxRequest request);
+
+  $async.Future<$0.CreateDocumentResponse> createDocument_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateDocumentRequest> $request) async {
+    return createDocument($call, await $request);
+  }
+
+  $async.Future<$0.CreateDocumentResponse> createDocument($grpc.ServiceCall call, $0.CreateDocumentRequest request);
+
+  $async.Future<$0.ListMyDocumentsResponse> listMyDocuments_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyDocumentsRequest> $request) async {
+    return listMyDocuments($call, await $request);
+  }
+
+  $async.Future<$0.ListMyDocumentsResponse> listMyDocuments($grpc.ServiceCall call, $0.ListMyDocumentsRequest request);
+
+  $async.Future<$0.GetDocumentResponse> getDocument_Pre($grpc.ServiceCall $call, $async.Future<$0.GetDocumentRequest> $request) async {
+    return getDocument($call, await $request);
+  }
+
+  $async.Future<$0.GetDocumentResponse> getDocument($grpc.ServiceCall call, $0.GetDocumentRequest request);
+
+  $async.Future<$0.UpdateDocumentResponse> updateDocument_Pre($grpc.ServiceCall $call, $async.Future<$0.UpdateDocumentRequest> $request) async {
+    return updateDocument($call, await $request);
+  }
+
+  $async.Future<$0.UpdateDocumentResponse> updateDocument($grpc.ServiceCall call, $0.UpdateDocumentRequest request);
+
+  $async.Future<$0.DeleteDocumentResponse> deleteDocument_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteDocumentRequest> $request) async {
+    return deleteDocument($call, await $request);
+  }
+
+  $async.Future<$0.DeleteDocumentResponse> deleteDocument($grpc.ServiceCall call, $0.DeleteDocumentRequest request);
+
+  $async.Future<$0.DraftDocumentResponse> draftDocument_Pre($grpc.ServiceCall $call, $async.Future<$0.DraftDocumentRequest> $request) async {
+    return draftDocument($call, await $request);
+  }
+
+  $async.Future<$0.DraftDocumentResponse> draftDocument($grpc.ServiceCall call, $0.DraftDocumentRequest request);
 
   $async.Future<$0.GetOracleStatsResponse> getOracleStats_Pre($grpc.ServiceCall $call, $async.Future<$0.GetOracleStatsRequest> $request) async {
     return getOracleStats($call, await $request);

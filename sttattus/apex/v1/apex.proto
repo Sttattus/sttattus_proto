@@ -631,11 +631,11 @@ message SimulateApexAgeResponse {
 
 message ReadinessSnapshot {
   double readiness_0_100 = 1; // composite 0-100
-  string verdict = 2;         // optimal | moderate | low | no-data
-  double hrv_delta_ms = 3;    // window mean minus 30d baseline
-  double rhr_delta_bpm = 4;   // window mean minus 30d baseline (negative = better)
-  double sleep_score = 5;     // 0-100
-  string recommendation = 6;  // one-line nudge for the calling pillar
+  string verdict = 2; // optimal | moderate | low | no-data
+  double hrv_delta_ms = 3; // window mean minus 30d baseline
+  double rhr_delta_bpm = 4; // window mean minus 30d baseline (negative = better)
+  double sleep_score = 5; // 0-100
+  string recommendation = 6; // one-line nudge for the calling pillar
 }
 
 message GetReadinessRequest {}
@@ -738,8 +738,8 @@ message PharmacologyEntry {
   string schedule = 4;
   string kind = 5; // prescribed | off_label | otc
   string evidence_rating = 6; // A | B | C
-  string notes = 7;            // decrypted server-side, plain text on the wire
-  string started_on = 8;       // YYYY-MM-DD
+  string notes = 7; // decrypted server-side, plain text on the wire
+  string started_on = 8; // YYYY-MM-DD
   bool active = 9;
 }
 
@@ -911,9 +911,9 @@ message GenerateHealthAlmanacResponse {
 
 message ImagingStudy {
   string id = 1;
-  string modality = 2;        // e.g. "Coronary CTA", "Whole-Body MRI", "DEXA"
+  string modality = 2; // e.g. "Coronary CTA", "Whole-Body MRI", "DEXA"
   string provider = 3;
-  string performed_on = 4;    // YYYY-MM-DD
+  string performed_on = 4; // YYYY-MM-DD
   string findings_text = 5;
   string headline_metric = 6; // e.g. "CAC score"
   double headline_value = 7;
@@ -950,7 +950,7 @@ message Lounge {
   string city = 4;
   string region = 5;
   string address = 6;
-  string amenities = 7;   // comma-separated
+  string amenities = 7; // comma-separated
   string hero_url = 8;
   bool sovereign_only = 9;
 }

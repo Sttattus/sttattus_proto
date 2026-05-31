@@ -30,6 +30,39 @@ const (
 	OnyxService_RecordProgress_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RecordProgress"
 	OnyxService_RedeemContent_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RedeemContent"
 	OnyxService_CreateSubscriptionCheckout_FullMethodName = "/sttattus.onyx.v1.OnyxService/CreateSubscriptionCheckout"
+	OnyxService_GetCreator_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetCreator"
+	OnyxService_ListCreatorWorks_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ListCreatorWorks"
+	OnyxService_FollowCreator_FullMethodName              = "/sttattus.onyx.v1.OnyxService/FollowCreator"
+	OnyxService_SearchContent_FullMethodName              = "/sttattus.onyx.v1.OnyxService/SearchContent"
+	OnyxService_AddNote_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/AddNote"
+	OnyxService_ListMyNotes_FullMethodName                = "/sttattus.onyx.v1.OnyxService/ListMyNotes"
+	OnyxService_DeleteNote_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/DeleteNote"
+	OnyxService_ListMyUnlocks_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListMyUnlocks"
+	OnyxService_ListMySubscriptions_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ListMySubscriptions"
+	OnyxService_ListSovereignWindow_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ListSovereignWindow"
+	OnyxService_ListSeries_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListSeries"
+	OnyxService_GetSeries_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/GetSeries"
+	OnyxService_GenerateCaptions_FullMethodName           = "/sttattus.onyx.v1.OnyxService/GenerateCaptions"
+	OnyxService_GetTodaySummary_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetTodaySummary"
+	OnyxService_GetCrossPillarUnlocks_FullMethodName      = "/sttattus.onyx.v1.OnyxService/GetCrossPillarUnlocks"
+	OnyxService_StartConciergeThread_FullMethodName       = "/sttattus.onyx.v1.OnyxService/StartConciergeThread"
+	OnyxService_ListMyConciergeThreads_FullMethodName     = "/sttattus.onyx.v1.OnyxService/ListMyConciergeThreads"
+	OnyxService_GetConciergeThread_FullMethodName         = "/sttattus.onyx.v1.OnyxService/GetConciergeThread"
+	OnyxService_PostConciergeMessage_FullMethodName       = "/sttattus.onyx.v1.OnyxService/PostConciergeMessage"
+	OnyxService_ListLiveEvents_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ListLiveEvents"
+	OnyxService_GetLiveEvent_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetLiveEvent"
+	OnyxService_RsvpLiveEvent_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RsvpLiveEvent"
+	OnyxService_SetPosthumousArchive_FullMethodName       = "/sttattus.onyx.v1.OnyxService/SetPosthumousArchive"
+	OnyxService_GetPosthumousArchive_FullMethodName       = "/sttattus.onyx.v1.OnyxService/GetPosthumousArchive"
+	OnyxService_ListAnthologies_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ListAnthologies"
+	OnyxService_GetAnthology_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetAnthology"
+	OnyxService_CreateShareLink_FullMethodName            = "/sttattus.onyx.v1.OnyxService/CreateShareLink"
+	OnyxService_ListMyShareLinks_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ListMyShareLinks"
+	OnyxService_RevokeShareLink_FullMethodName            = "/sttattus.onyx.v1.OnyxService/RevokeShareLink"
+	OnyxService_GetOfflineManifest_FullMethodName         = "/sttattus.onyx.v1.OnyxService/GetOfflineManifest"
+	OnyxService_GetYearInOnyx_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GetYearInOnyx"
+	OnyxService_GenerateAnnualArchive_FullMethodName      = "/sttattus.onyx.v1.OnyxService/GenerateAnnualArchive"
+	OnyxService_ReactToContent_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ReactToContent"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -53,6 +86,52 @@ type OnyxServiceClient interface {
 	RedeemContent(ctx context.Context, in *RedeemContentRequest, opts ...grpc.CallOption) (*RedeemContentResponse, error)
 	// P6.6 — open a Stripe checkout for the Onyx network subscription.
 	CreateSubscriptionCheckout(ctx context.Context, in *CreateSubscriptionCheckoutRequest, opts ...grpc.CallOption) (*CreateSubscriptionCheckoutResponse, error)
+	// P2 — creators.
+	GetCreator(ctx context.Context, in *GetCreatorRequest, opts ...grpc.CallOption) (*GetCreatorResponse, error)
+	ListCreatorWorks(ctx context.Context, in *ListCreatorWorksRequest, opts ...grpc.CallOption) (*ListCreatorWorksResponse, error)
+	FollowCreator(ctx context.Context, in *FollowCreatorRequest, opts ...grpc.CallOption) (*FollowCreatorResponse, error)
+	// P2 — search.
+	SearchContent(ctx context.Context, in *SearchContentRequest, opts ...grpc.CallOption) (*SearchContentResponse, error)
+	// P2 — notes / highlights.
+	AddNote(ctx context.Context, in *AddNoteRequest, opts ...grpc.CallOption) (*AddNoteResponse, error)
+	ListMyNotes(ctx context.Context, in *ListMyNotesRequest, opts ...grpc.CallOption) (*ListMyNotesResponse, error)
+	DeleteNote(ctx context.Context, in *DeleteNoteRequest, opts ...grpc.CallOption) (*DeleteNoteResponse, error)
+	// P2 — personal library / account.
+	ListMyUnlocks(ctx context.Context, in *ListMyUnlocksRequest, opts ...grpc.CallOption) (*ListMyUnlocksResponse, error)
+	ListMySubscriptions(ctx context.Context, in *ListMySubscriptionsRequest, opts ...grpc.CallOption) (*ListMySubscriptionsResponse, error)
+	// P2 — sovereign window calendar.
+	ListSovereignWindow(ctx context.Context, in *ListSovereignWindowRequest, opts ...grpc.CallOption) (*ListSovereignWindowResponse, error)
+	// P2 — multi-part series.
+	ListSeries(ctx context.Context, in *ListSeriesRequest, opts ...grpc.CallOption) (*ListSeriesResponse, error)
+	GetSeries(ctx context.Context, in *GetSeriesRequest, opts ...grpc.CallOption) (*GetSeriesResponse, error)
+	// P2.5 — captions, today summary, cross-pillar unlock bus.
+	GenerateCaptions(ctx context.Context, in *GenerateCaptionsRequest, opts ...grpc.CallOption) (*GenerateCaptionsResponse, error)
+	GetTodaySummary(ctx context.Context, in *GetTodaySummaryRequest, opts ...grpc.CallOption) (*GetTodaySummaryResponse, error)
+	GetCrossPillarUnlocks(ctx context.Context, in *GetCrossPillarUnlocksRequest, opts ...grpc.CallOption) (*GetCrossPillarUnlocksResponse, error)
+	// P3 — curator concierge desk.
+	StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error)
+	ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error)
+	GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error)
+	PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error)
+	// P3 — live / the salon.
+	ListLiveEvents(ctx context.Context, in *ListLiveEventsRequest, opts ...grpc.CallOption) (*ListLiveEventsResponse, error)
+	GetLiveEvent(ctx context.Context, in *GetLiveEventRequest, opts ...grpc.CallOption) (*GetLiveEventResponse, error)
+	RsvpLiveEvent(ctx context.Context, in *RsvpLiveEventRequest, opts ...grpc.CallOption) (*RsvpLiveEventResponse, error)
+	// P3 — posthumous archive (encrypted at rest).
+	SetPosthumousArchive(ctx context.Context, in *SetPosthumousArchiveRequest, opts ...grpc.CallOption) (*SetPosthumousArchiveResponse, error)
+	GetPosthumousArchive(ctx context.Context, in *GetPosthumousArchiveRequest, opts ...grpc.CallOption) (*GetPosthumousArchiveResponse, error)
+	// P3 — editorial anthology.
+	ListAnthologies(ctx context.Context, in *ListAnthologiesRequest, opts ...grpc.CallOption) (*ListAnthologiesResponse, error)
+	GetAnthology(ctx context.Context, in *GetAnthologyRequest, opts ...grpc.CallOption) (*GetAnthologyResponse, error)
+	// P3.5 — signed share embeds + offline manifest.
+	CreateShareLink(ctx context.Context, in *CreateShareLinkRequest, opts ...grpc.CallOption) (*CreateShareLinkResponse, error)
+	ListMyShareLinks(ctx context.Context, in *ListMyShareLinksRequest, opts ...grpc.CallOption) (*ListMyShareLinksResponse, error)
+	RevokeShareLink(ctx context.Context, in *RevokeShareLinkRequest, opts ...grpc.CallOption) (*RevokeShareLinkResponse, error)
+	GetOfflineManifest(ctx context.Context, in *GetOfflineManifestRequest, opts ...grpc.CallOption) (*GetOfflineManifestResponse, error)
+	// P4 — year-in-onyx recap, annual archive PDF, silent reactions.
+	GetYearInOnyx(ctx context.Context, in *GetYearInOnyxRequest, opts ...grpc.CallOption) (*GetYearInOnyxResponse, error)
+	GenerateAnnualArchive(ctx context.Context, in *GenerateAnnualArchiveRequest, opts ...grpc.CallOption) (*GenerateAnnualArchiveResponse, error)
+	ReactToContent(ctx context.Context, in *ReactToContentRequest, opts ...grpc.CallOption) (*ReactToContentResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -173,6 +252,336 @@ func (c *onyxServiceClient) CreateSubscriptionCheckout(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetCreator(ctx context.Context, in *GetCreatorRequest, opts ...grpc.CallOption) (*GetCreatorResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCreatorResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetCreator_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListCreatorWorks(ctx context.Context, in *ListCreatorWorksRequest, opts ...grpc.CallOption) (*ListCreatorWorksResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListCreatorWorksResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListCreatorWorks_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) FollowCreator(ctx context.Context, in *FollowCreatorRequest, opts ...grpc.CallOption) (*FollowCreatorResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(FollowCreatorResponse)
+	err := c.cc.Invoke(ctx, OnyxService_FollowCreator_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SearchContent(ctx context.Context, in *SearchContentRequest, opts ...grpc.CallOption) (*SearchContentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SearchContentResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SearchContent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) AddNote(ctx context.Context, in *AddNoteRequest, opts ...grpc.CallOption) (*AddNoteResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AddNoteResponse)
+	err := c.cc.Invoke(ctx, OnyxService_AddNote_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListMyNotes(ctx context.Context, in *ListMyNotesRequest, opts ...grpc.CallOption) (*ListMyNotesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyNotesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListMyNotes_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) DeleteNote(ctx context.Context, in *DeleteNoteRequest, opts ...grpc.CallOption) (*DeleteNoteResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteNoteResponse)
+	err := c.cc.Invoke(ctx, OnyxService_DeleteNote_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListMyUnlocks(ctx context.Context, in *ListMyUnlocksRequest, opts ...grpc.CallOption) (*ListMyUnlocksResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyUnlocksResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListMyUnlocks_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListMySubscriptions(ctx context.Context, in *ListMySubscriptionsRequest, opts ...grpc.CallOption) (*ListMySubscriptionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMySubscriptionsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListMySubscriptions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListSovereignWindow(ctx context.Context, in *ListSovereignWindowRequest, opts ...grpc.CallOption) (*ListSovereignWindowResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListSovereignWindowResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListSovereignWindow_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListSeries(ctx context.Context, in *ListSeriesRequest, opts ...grpc.CallOption) (*ListSeriesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListSeriesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListSeries_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetSeries(ctx context.Context, in *GetSeriesRequest, opts ...grpc.CallOption) (*GetSeriesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSeriesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetSeries_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GenerateCaptions(ctx context.Context, in *GenerateCaptionsRequest, opts ...grpc.CallOption) (*GenerateCaptionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateCaptionsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GenerateCaptions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetTodaySummary(ctx context.Context, in *GetTodaySummaryRequest, opts ...grpc.CallOption) (*GetTodaySummaryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTodaySummaryResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetTodaySummary_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetCrossPillarUnlocks(ctx context.Context, in *GetCrossPillarUnlocksRequest, opts ...grpc.CallOption) (*GetCrossPillarUnlocksResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCrossPillarUnlocksResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetCrossPillarUnlocks_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StartConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, OnyxService_StartConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyConciergeThreadsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListMyConciergeThreads_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PostConciergeMessageResponse)
+	err := c.cc.Invoke(ctx, OnyxService_PostConciergeMessage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListLiveEvents(ctx context.Context, in *ListLiveEventsRequest, opts ...grpc.CallOption) (*ListLiveEventsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLiveEventsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListLiveEvents_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetLiveEvent(ctx context.Context, in *GetLiveEventRequest, opts ...grpc.CallOption) (*GetLiveEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLiveEventResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetLiveEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RsvpLiveEvent(ctx context.Context, in *RsvpLiveEventRequest, opts ...grpc.CallOption) (*RsvpLiveEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RsvpLiveEventResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RsvpLiveEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetPosthumousArchive(ctx context.Context, in *SetPosthumousArchiveRequest, opts ...grpc.CallOption) (*SetPosthumousArchiveResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetPosthumousArchiveResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetPosthumousArchive_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetPosthumousArchive(ctx context.Context, in *GetPosthumousArchiveRequest, opts ...grpc.CallOption) (*GetPosthumousArchiveResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPosthumousArchiveResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetPosthumousArchive_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListAnthologies(ctx context.Context, in *ListAnthologiesRequest, opts ...grpc.CallOption) (*ListAnthologiesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAnthologiesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListAnthologies_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetAnthology(ctx context.Context, in *GetAnthologyRequest, opts ...grpc.CallOption) (*GetAnthologyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAnthologyResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetAnthology_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CreateShareLink(ctx context.Context, in *CreateShareLinkRequest, opts ...grpc.CallOption) (*CreateShareLinkResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateShareLinkResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateShareLink_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListMyShareLinks(ctx context.Context, in *ListMyShareLinksRequest, opts ...grpc.CallOption) (*ListMyShareLinksResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyShareLinksResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListMyShareLinks_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RevokeShareLink(ctx context.Context, in *RevokeShareLinkRequest, opts ...grpc.CallOption) (*RevokeShareLinkResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeShareLinkResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RevokeShareLink_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetOfflineManifest(ctx context.Context, in *GetOfflineManifestRequest, opts ...grpc.CallOption) (*GetOfflineManifestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetOfflineManifestResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetOfflineManifest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetYearInOnyx(ctx context.Context, in *GetYearInOnyxRequest, opts ...grpc.CallOption) (*GetYearInOnyxResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetYearInOnyxResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetYearInOnyx_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GenerateAnnualArchive(ctx context.Context, in *GenerateAnnualArchiveRequest, opts ...grpc.CallOption) (*GenerateAnnualArchiveResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateAnnualArchiveResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GenerateAnnualArchive_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ReactToContent(ctx context.Context, in *ReactToContentRequest, opts ...grpc.CallOption) (*ReactToContentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReactToContentResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ReactToContent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -194,6 +603,52 @@ type OnyxServiceServer interface {
 	RedeemContent(context.Context, *RedeemContentRequest) (*RedeemContentResponse, error)
 	// P6.6 — open a Stripe checkout for the Onyx network subscription.
 	CreateSubscriptionCheckout(context.Context, *CreateSubscriptionCheckoutRequest) (*CreateSubscriptionCheckoutResponse, error)
+	// P2 — creators.
+	GetCreator(context.Context, *GetCreatorRequest) (*GetCreatorResponse, error)
+	ListCreatorWorks(context.Context, *ListCreatorWorksRequest) (*ListCreatorWorksResponse, error)
+	FollowCreator(context.Context, *FollowCreatorRequest) (*FollowCreatorResponse, error)
+	// P2 — search.
+	SearchContent(context.Context, *SearchContentRequest) (*SearchContentResponse, error)
+	// P2 — notes / highlights.
+	AddNote(context.Context, *AddNoteRequest) (*AddNoteResponse, error)
+	ListMyNotes(context.Context, *ListMyNotesRequest) (*ListMyNotesResponse, error)
+	DeleteNote(context.Context, *DeleteNoteRequest) (*DeleteNoteResponse, error)
+	// P2 — personal library / account.
+	ListMyUnlocks(context.Context, *ListMyUnlocksRequest) (*ListMyUnlocksResponse, error)
+	ListMySubscriptions(context.Context, *ListMySubscriptionsRequest) (*ListMySubscriptionsResponse, error)
+	// P2 — sovereign window calendar.
+	ListSovereignWindow(context.Context, *ListSovereignWindowRequest) (*ListSovereignWindowResponse, error)
+	// P2 — multi-part series.
+	ListSeries(context.Context, *ListSeriesRequest) (*ListSeriesResponse, error)
+	GetSeries(context.Context, *GetSeriesRequest) (*GetSeriesResponse, error)
+	// P2.5 — captions, today summary, cross-pillar unlock bus.
+	GenerateCaptions(context.Context, *GenerateCaptionsRequest) (*GenerateCaptionsResponse, error)
+	GetTodaySummary(context.Context, *GetTodaySummaryRequest) (*GetTodaySummaryResponse, error)
+	GetCrossPillarUnlocks(context.Context, *GetCrossPillarUnlocksRequest) (*GetCrossPillarUnlocksResponse, error)
+	// P3 — curator concierge desk.
+	StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error)
+	ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error)
+	GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error)
+	PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error)
+	// P3 — live / the salon.
+	ListLiveEvents(context.Context, *ListLiveEventsRequest) (*ListLiveEventsResponse, error)
+	GetLiveEvent(context.Context, *GetLiveEventRequest) (*GetLiveEventResponse, error)
+	RsvpLiveEvent(context.Context, *RsvpLiveEventRequest) (*RsvpLiveEventResponse, error)
+	// P3 — posthumous archive (encrypted at rest).
+	SetPosthumousArchive(context.Context, *SetPosthumousArchiveRequest) (*SetPosthumousArchiveResponse, error)
+	GetPosthumousArchive(context.Context, *GetPosthumousArchiveRequest) (*GetPosthumousArchiveResponse, error)
+	// P3 — editorial anthology.
+	ListAnthologies(context.Context, *ListAnthologiesRequest) (*ListAnthologiesResponse, error)
+	GetAnthology(context.Context, *GetAnthologyRequest) (*GetAnthologyResponse, error)
+	// P3.5 — signed share embeds + offline manifest.
+	CreateShareLink(context.Context, *CreateShareLinkRequest) (*CreateShareLinkResponse, error)
+	ListMyShareLinks(context.Context, *ListMyShareLinksRequest) (*ListMyShareLinksResponse, error)
+	RevokeShareLink(context.Context, *RevokeShareLinkRequest) (*RevokeShareLinkResponse, error)
+	GetOfflineManifest(context.Context, *GetOfflineManifestRequest) (*GetOfflineManifestResponse, error)
+	// P4 — year-in-onyx recap, annual archive PDF, silent reactions.
+	GetYearInOnyx(context.Context, *GetYearInOnyxRequest) (*GetYearInOnyxResponse, error)
+	GenerateAnnualArchive(context.Context, *GenerateAnnualArchiveRequest) (*GenerateAnnualArchiveResponse, error)
+	ReactToContent(context.Context, *ReactToContentRequest) (*ReactToContentResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -236,6 +691,105 @@ func (UnimplementedOnyxServiceServer) RedeemContent(context.Context, *RedeemCont
 }
 func (UnimplementedOnyxServiceServer) CreateSubscriptionCheckout(context.Context, *CreateSubscriptionCheckoutRequest) (*CreateSubscriptionCheckoutResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CreateSubscriptionCheckout not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetCreator(context.Context, *GetCreatorRequest) (*GetCreatorResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCreator not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListCreatorWorks(context.Context, *ListCreatorWorksRequest) (*ListCreatorWorksResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListCreatorWorks not implemented")
+}
+func (UnimplementedOnyxServiceServer) FollowCreator(context.Context, *FollowCreatorRequest) (*FollowCreatorResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method FollowCreator not implemented")
+}
+func (UnimplementedOnyxServiceServer) SearchContent(context.Context, *SearchContentRequest) (*SearchContentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SearchContent not implemented")
+}
+func (UnimplementedOnyxServiceServer) AddNote(context.Context, *AddNoteRequest) (*AddNoteResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AddNote not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListMyNotes(context.Context, *ListMyNotesRequest) (*ListMyNotesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyNotes not implemented")
+}
+func (UnimplementedOnyxServiceServer) DeleteNote(context.Context, *DeleteNoteRequest) (*DeleteNoteResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteNote not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListMyUnlocks(context.Context, *ListMyUnlocksRequest) (*ListMyUnlocksResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyUnlocks not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListMySubscriptions(context.Context, *ListMySubscriptionsRequest) (*ListMySubscriptionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMySubscriptions not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListSovereignWindow(context.Context, *ListSovereignWindowRequest) (*ListSovereignWindowResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListSovereignWindow not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListSeries(context.Context, *ListSeriesRequest) (*ListSeriesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListSeries not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetSeries(context.Context, *GetSeriesRequest) (*GetSeriesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSeries not implemented")
+}
+func (UnimplementedOnyxServiceServer) GenerateCaptions(context.Context, *GenerateCaptionsRequest) (*GenerateCaptionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateCaptions not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetTodaySummary(context.Context, *GetTodaySummaryRequest) (*GetTodaySummaryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTodaySummary not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetCrossPillarUnlocks(context.Context, *GetCrossPillarUnlocksRequest) (*GetCrossPillarUnlocksResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCrossPillarUnlocks not implemented")
+}
+func (UnimplementedOnyxServiceServer) StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StartConciergeThread not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyConciergeThreads not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetConciergeThread not implemented")
+}
+func (UnimplementedOnyxServiceServer) PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PostConciergeMessage not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListLiveEvents(context.Context, *ListLiveEventsRequest) (*ListLiveEventsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLiveEvents not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetLiveEvent(context.Context, *GetLiveEventRequest) (*GetLiveEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLiveEvent not implemented")
+}
+func (UnimplementedOnyxServiceServer) RsvpLiveEvent(context.Context, *RsvpLiveEventRequest) (*RsvpLiveEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RsvpLiveEvent not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetPosthumousArchive(context.Context, *SetPosthumousArchiveRequest) (*SetPosthumousArchiveResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetPosthumousArchive not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetPosthumousArchive(context.Context, *GetPosthumousArchiveRequest) (*GetPosthumousArchiveResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPosthumousArchive not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListAnthologies(context.Context, *ListAnthologiesRequest) (*ListAnthologiesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAnthologies not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetAnthology(context.Context, *GetAnthologyRequest) (*GetAnthologyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAnthology not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateShareLink(context.Context, *CreateShareLinkRequest) (*CreateShareLinkResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateShareLink not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListMyShareLinks(context.Context, *ListMyShareLinksRequest) (*ListMyShareLinksResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyShareLinks not implemented")
+}
+func (UnimplementedOnyxServiceServer) RevokeShareLink(context.Context, *RevokeShareLinkRequest) (*RevokeShareLinkResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeShareLink not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetOfflineManifest(context.Context, *GetOfflineManifestRequest) (*GetOfflineManifestResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetOfflineManifest not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetYearInOnyx(context.Context, *GetYearInOnyxRequest) (*GetYearInOnyxResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetYearInOnyx not implemented")
+}
+func (UnimplementedOnyxServiceServer) GenerateAnnualArchive(context.Context, *GenerateAnnualArchiveRequest) (*GenerateAnnualArchiveResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateAnnualArchive not implemented")
+}
+func (UnimplementedOnyxServiceServer) ReactToContent(context.Context, *ReactToContentRequest) (*ReactToContentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReactToContent not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -456,6 +1010,600 @@ func _OnyxService_CreateSubscriptionCheckout_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetCreator_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCreatorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetCreator(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetCreator_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetCreator(ctx, req.(*GetCreatorRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListCreatorWorks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListCreatorWorksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListCreatorWorks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListCreatorWorks_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListCreatorWorks(ctx, req.(*ListCreatorWorksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_FollowCreator_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FollowCreatorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).FollowCreator(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_FollowCreator_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).FollowCreator(ctx, req.(*FollowCreatorRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SearchContent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SearchContentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SearchContent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SearchContent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SearchContent(ctx, req.(*SearchContentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_AddNote_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddNoteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).AddNote(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_AddNote_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).AddNote(ctx, req.(*AddNoteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListMyNotes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyNotesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListMyNotes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListMyNotes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListMyNotes(ctx, req.(*ListMyNotesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_DeleteNote_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteNoteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).DeleteNote(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_DeleteNote_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).DeleteNote(ctx, req.(*DeleteNoteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListMyUnlocks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyUnlocksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListMyUnlocks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListMyUnlocks_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListMyUnlocks(ctx, req.(*ListMyUnlocksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListMySubscriptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMySubscriptionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListMySubscriptions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListMySubscriptions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListMySubscriptions(ctx, req.(*ListMySubscriptionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListSovereignWindow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSovereignWindowRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListSovereignWindow(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListSovereignWindow_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListSovereignWindow(ctx, req.(*ListSovereignWindowRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListSeries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSeriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListSeries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListSeries_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListSeries(ctx, req.(*ListSeriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetSeries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSeriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetSeries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetSeries_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetSeries(ctx, req.(*GetSeriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GenerateCaptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateCaptionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GenerateCaptions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GenerateCaptions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GenerateCaptions(ctx, req.(*GenerateCaptionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetTodaySummary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTodaySummaryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetTodaySummary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetTodaySummary_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetTodaySummary(ctx, req.(*GetTodaySummaryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetCrossPillarUnlocks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCrossPillarUnlocksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetCrossPillarUnlocks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetCrossPillarUnlocks_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetCrossPillarUnlocks(ctx, req.(*GetCrossPillarUnlocksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_StartConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StartConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).StartConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_StartConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).StartConciergeThread(ctx, req.(*StartConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListMyConciergeThreads_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyConciergeThreadsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListMyConciergeThreads(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListMyConciergeThreads_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListMyConciergeThreads(ctx, req.(*ListMyConciergeThreadsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetConciergeThread(ctx, req.(*GetConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_PostConciergeMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostConciergeMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).PostConciergeMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_PostConciergeMessage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).PostConciergeMessage(ctx, req.(*PostConciergeMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListLiveEvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLiveEventsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListLiveEvents(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListLiveEvents_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListLiveEvents(ctx, req.(*ListLiveEventsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetLiveEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLiveEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetLiveEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetLiveEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetLiveEvent(ctx, req.(*GetLiveEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RsvpLiveEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RsvpLiveEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RsvpLiveEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RsvpLiveEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RsvpLiveEvent(ctx, req.(*RsvpLiveEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetPosthumousArchive_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetPosthumousArchiveRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetPosthumousArchive(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetPosthumousArchive_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetPosthumousArchive(ctx, req.(*SetPosthumousArchiveRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetPosthumousArchive_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPosthumousArchiveRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetPosthumousArchive(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetPosthumousArchive_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetPosthumousArchive(ctx, req.(*GetPosthumousArchiveRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListAnthologies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAnthologiesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListAnthologies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListAnthologies_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListAnthologies(ctx, req.(*ListAnthologiesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetAnthology_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnthologyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetAnthology(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetAnthology_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetAnthology(ctx, req.(*GetAnthologyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CreateShareLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateShareLinkRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateShareLink(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateShareLink_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateShareLink(ctx, req.(*CreateShareLinkRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListMyShareLinks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyShareLinksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListMyShareLinks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListMyShareLinks_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListMyShareLinks(ctx, req.(*ListMyShareLinksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RevokeShareLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeShareLinkRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RevokeShareLink(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RevokeShareLink_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RevokeShareLink(ctx, req.(*RevokeShareLinkRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetOfflineManifest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOfflineManifestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetOfflineManifest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetOfflineManifest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetOfflineManifest(ctx, req.(*GetOfflineManifestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetYearInOnyx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetYearInOnyxRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetYearInOnyx(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetYearInOnyx_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetYearInOnyx(ctx, req.(*GetYearInOnyxRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GenerateAnnualArchive_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateAnnualArchiveRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GenerateAnnualArchive(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GenerateAnnualArchive_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GenerateAnnualArchive(ctx, req.(*GenerateAnnualArchiveRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ReactToContent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReactToContentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ReactToContent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ReactToContent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ReactToContent(ctx, req.(*ReactToContentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -506,6 +1654,138 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateSubscriptionCheckout",
 			Handler:    _OnyxService_CreateSubscriptionCheckout_Handler,
+		},
+		{
+			MethodName: "GetCreator",
+			Handler:    _OnyxService_GetCreator_Handler,
+		},
+		{
+			MethodName: "ListCreatorWorks",
+			Handler:    _OnyxService_ListCreatorWorks_Handler,
+		},
+		{
+			MethodName: "FollowCreator",
+			Handler:    _OnyxService_FollowCreator_Handler,
+		},
+		{
+			MethodName: "SearchContent",
+			Handler:    _OnyxService_SearchContent_Handler,
+		},
+		{
+			MethodName: "AddNote",
+			Handler:    _OnyxService_AddNote_Handler,
+		},
+		{
+			MethodName: "ListMyNotes",
+			Handler:    _OnyxService_ListMyNotes_Handler,
+		},
+		{
+			MethodName: "DeleteNote",
+			Handler:    _OnyxService_DeleteNote_Handler,
+		},
+		{
+			MethodName: "ListMyUnlocks",
+			Handler:    _OnyxService_ListMyUnlocks_Handler,
+		},
+		{
+			MethodName: "ListMySubscriptions",
+			Handler:    _OnyxService_ListMySubscriptions_Handler,
+		},
+		{
+			MethodName: "ListSovereignWindow",
+			Handler:    _OnyxService_ListSovereignWindow_Handler,
+		},
+		{
+			MethodName: "ListSeries",
+			Handler:    _OnyxService_ListSeries_Handler,
+		},
+		{
+			MethodName: "GetSeries",
+			Handler:    _OnyxService_GetSeries_Handler,
+		},
+		{
+			MethodName: "GenerateCaptions",
+			Handler:    _OnyxService_GenerateCaptions_Handler,
+		},
+		{
+			MethodName: "GetTodaySummary",
+			Handler:    _OnyxService_GetTodaySummary_Handler,
+		},
+		{
+			MethodName: "GetCrossPillarUnlocks",
+			Handler:    _OnyxService_GetCrossPillarUnlocks_Handler,
+		},
+		{
+			MethodName: "StartConciergeThread",
+			Handler:    _OnyxService_StartConciergeThread_Handler,
+		},
+		{
+			MethodName: "ListMyConciergeThreads",
+			Handler:    _OnyxService_ListMyConciergeThreads_Handler,
+		},
+		{
+			MethodName: "GetConciergeThread",
+			Handler:    _OnyxService_GetConciergeThread_Handler,
+		},
+		{
+			MethodName: "PostConciergeMessage",
+			Handler:    _OnyxService_PostConciergeMessage_Handler,
+		},
+		{
+			MethodName: "ListLiveEvents",
+			Handler:    _OnyxService_ListLiveEvents_Handler,
+		},
+		{
+			MethodName: "GetLiveEvent",
+			Handler:    _OnyxService_GetLiveEvent_Handler,
+		},
+		{
+			MethodName: "RsvpLiveEvent",
+			Handler:    _OnyxService_RsvpLiveEvent_Handler,
+		},
+		{
+			MethodName: "SetPosthumousArchive",
+			Handler:    _OnyxService_SetPosthumousArchive_Handler,
+		},
+		{
+			MethodName: "GetPosthumousArchive",
+			Handler:    _OnyxService_GetPosthumousArchive_Handler,
+		},
+		{
+			MethodName: "ListAnthologies",
+			Handler:    _OnyxService_ListAnthologies_Handler,
+		},
+		{
+			MethodName: "GetAnthology",
+			Handler:    _OnyxService_GetAnthology_Handler,
+		},
+		{
+			MethodName: "CreateShareLink",
+			Handler:    _OnyxService_CreateShareLink_Handler,
+		},
+		{
+			MethodName: "ListMyShareLinks",
+			Handler:    _OnyxService_ListMyShareLinks_Handler,
+		},
+		{
+			MethodName: "RevokeShareLink",
+			Handler:    _OnyxService_RevokeShareLink_Handler,
+		},
+		{
+			MethodName: "GetOfflineManifest",
+			Handler:    _OnyxService_GetOfflineManifest_Handler,
+		},
+		{
+			MethodName: "GetYearInOnyx",
+			Handler:    _OnyxService_GetYearInOnyx_Handler,
+		},
+		{
+			MethodName: "GenerateAnnualArchive",
+			Handler:    _OnyxService_GenerateAnnualArchive_Handler,
+		},
+		{
+			MethodName: "ReactToContent",
+			Handler:    _OnyxService_ReactToContent_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

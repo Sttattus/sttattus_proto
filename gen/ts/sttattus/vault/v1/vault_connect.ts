@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, AssignAssetToEntityRequest, AssignAssetToEntityResponse, CreateCapTableHoldingRequest, CreateCapTableHoldingResponse, CreateEntityRequest, CreateEntityResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, DeleteCapTableHoldingRequest, DeleteCapTableHoldingResponse, DeleteEntityRequest, DeleteEntityResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, DeleteWalletChainRequest, DeleteWalletChainResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, ExportUsCgtCsvRequest, ExportUsCgtCsvResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetPortfolioRequest, GetPortfolioResponse, GetTaxSnapshotRequest, GetTaxSnapshotResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, LinkWalletRequest, LinkWalletResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListCapTableConnectionsRequest, ListCapTableConnectionsResponse, ListCapTableHoldingsRequest, ListCapTableHoldingsResponse, ListEntitiesRequest, ListEntitiesResponse, ListLatestFxRatesRequest, ListLatestFxRatesResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, ListWalletChainsRequest, ListWalletChainsResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, RenameEntityRequest, RenameEntityResponse, SetCapTableConnectionStatusRequest, SetCapTableConnectionStatusResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse, UpdateCapTableHoldingRequest, UpdateCapTableHoldingResponse, UpsertWalletChainRequest, UpsertWalletChainResponse } from "./vault_pb.js";
+import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, AssignAssetToEntityRequest, AssignAssetToEntityResponse, CreateCapTableHoldingRequest, CreateCapTableHoldingResponse, CreateEntityRequest, CreateEntityResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, CreateVaultShareRequest, CreateVaultShareResponse, DeleteCapTableHoldingRequest, DeleteCapTableHoldingResponse, DeleteEntityRequest, DeleteEntityResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, DeleteWalletChainRequest, DeleteWalletChainResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, ExportUsCgtCsvRequest, ExportUsCgtCsvResponse, ExpressCircleInterestRequest, ExpressCircleInterestResponse, GenerateWealthAlmanacRequest, GenerateWealthAlmanacResponse, GetAdvisorThreadRequest, GetAdvisorThreadResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetInvestmentCircleRequest, GetInvestmentCircleResponse, GetLiquidityStressTestRequest, GetLiquidityStressTestResponse, GetPortfolioRequest, GetPortfolioResponse, GetTaxSnapshotRequest, GetTaxSnapshotResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, GetWealthArticleRequest, GetWealthArticleResponse, GetYearInVaultRequest, GetYearInVaultResponse, LinkWalletRequest, LinkWalletResponse, ListAdvisorThreadsRequest, ListAdvisorThreadsResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListCapTableConnectionsRequest, ListCapTableConnectionsResponse, ListCapTableHoldingsRequest, ListCapTableHoldingsResponse, ListEntitiesRequest, ListEntitiesResponse, ListInvestmentCirclesRequest, ListInvestmentCirclesResponse, ListLatestFxRatesRequest, ListLatestFxRatesResponse, ListMyVaultSharesRequest, ListMyVaultSharesResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPartnerBanksRequest, ListPartnerBanksResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, ListWalletChainsRequest, ListWalletChainsResponse, ListWealthAnthologyRequest, ListWealthAnthologyResponse, PostAdvisorMessageRequest, PostAdvisorMessageResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, RenameEntityRequest, RenameEntityResponse, RevokeVaultShareRequest, RevokeVaultShareResponse, SetCapTableConnectionStatusRequest, SetCapTableConnectionStatusResponse, StartAdvisorThreadRequest, StartAdvisorThreadResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse, UpdateCapTableHoldingRequest, UpdateCapTableHoldingResponse, UpsertWalletChainRequest, UpsertWalletChainResponse } from "./vault_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -360,6 +360,171 @@ export const VaultService = {
       name: "ExportUsCgtCsv",
       I: ExportUsCgtCsvRequest,
       O: ExportUsCgtCsvResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8P3.1 — Investment Circles: curated deal-flow gated server-side by the
+     * user's cross-pillar Sttattus rank. Locked circles return metadata + the
+     * required threshold but withhold the deal room.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.ListInvestmentCircles
+     */
+    listInvestmentCircles: {
+      name: "ListInvestmentCircles",
+      I: ListInvestmentCirclesRequest,
+      O: ListInvestmentCirclesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.GetInvestmentCircle
+     */
+    getInvestmentCircle: {
+      name: "GetInvestmentCircle",
+      I: GetInvestmentCircleRequest,
+      O: GetInvestmentCircleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.ExpressCircleInterest
+     */
+    expressCircleInterest: {
+      name: "ExpressCircleInterest",
+      I: ExpressCircleInterestRequest,
+      O: ExpressCircleInterestResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8P3.2 — concierge advisor desk (Sovereign). Async threads + SLA.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.StartAdvisorThread
+     */
+    startAdvisorThread: {
+      name: "StartAdvisorThread",
+      I: StartAdvisorThreadRequest,
+      O: StartAdvisorThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.ListAdvisorThreads
+     */
+    listAdvisorThreads: {
+      name: "ListAdvisorThreads",
+      I: ListAdvisorThreadsRequest,
+      O: ListAdvisorThreadsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.GetAdvisorThread
+     */
+    getAdvisorThread: {
+      name: "GetAdvisorThread",
+      I: GetAdvisorThreadRequest,
+      O: GetAdvisorThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.PostAdvisorMessage
+     */
+    postAdvisorMessage: {
+      name: "PostAdvisorMessage",
+      I: PostAdvisorMessageRequest,
+      O: PostAdvisorMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8P3.3 — Wealth Anthology: named-author editorial.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.ListWealthAnthology
+     */
+    listWealthAnthology: {
+      name: "ListWealthAnthology",
+      I: ListWealthAnthologyRequest,
+      O: ListWealthAnthologyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.GetWealthArticle
+     */
+    getWealthArticle: {
+      name: "GetWealthArticle",
+      I: GetWealthArticleRequest,
+      O: GetWealthArticleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8P3.5 — curated private-bank directory (region + tier filter).
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.ListPartnerBanks
+     */
+    listPartnerBanks: {
+      name: "ListPartnerBanks",
+      I: ListPartnerBanksRequest,
+      O: ListPartnerBanksResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8P3.6 — token-based verified-wealth share. Bands only; absolute amounts
+     * are never disclosed (discretion-first). Public read at /share/vault/:token.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.CreateVaultShare
+     */
+    createVaultShare: {
+      name: "CreateVaultShare",
+      I: CreateVaultShareRequest,
+      O: CreateVaultShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.ListMyVaultShares
+     */
+    listMyVaultShares: {
+      name: "ListMyVaultShares",
+      I: ListMyVaultSharesRequest,
+      O: ListMyVaultSharesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.RevokeVaultShare
+     */
+    revokeVaultShare: {
+      name: "RevokeVaultShare",
+      I: RevokeVaultShareRequest,
+      O: RevokeVaultShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8P4.1 — Annual Wealth Almanac: a gofpdf-rendered PDF of the year's wealth
+     * movement, written to R2/S3. Returns the media URL.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GenerateWealthAlmanac
+     */
+    generateWealthAlmanac: {
+      name: "GenerateWealthAlmanac",
+      I: GenerateWealthAlmanacRequest,
+      O: GenerateWealthAlmanacResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8P4.2 — Year-in-Vault recap (pure compute over the user's snapshots).
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetYearInVault
+     */
+    getYearInVault: {
+      name: "GetYearInVault",
+      I: GetYearInVaultRequest,
+      O: GetYearInVaultResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * V8P4.3 — liquidity stress test: given a cash need, source it across the
+     * liquidity ladder (T+0 cash → T+30 marketable → illiquid). Pure compute.
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetLiquidityStressTest
+     */
+    getLiquidityStressTest: {
+      name: "GetLiquidityStressTest",
+      I: GetLiquidityStressTestRequest,
+      O: GetLiquidityStressTestResponse,
       kind: MethodKind.Unary,
     },
   }

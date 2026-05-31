@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AttachMediaToMessageRequest, AttachMediaToMessageResponse, BlockUserRequest, BlockUserResponse, CancelReservationRequest, CancelReservationResponse, CreateAgoraRoomRequest, CreateAgoraRoomResponse, CreateReservationRequest, CreateReservationResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, EndAgoraRoomRequest, EndAgoraRoomResponse, GetCompatibilityMatrixRequest, GetCompatibilityMatrixResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListGiftLedgerRequest, ListGiftLedgerResponse, ListLiveRoomsRequest, ListLiveRoomsResponse, ListMatchesRequest, ListMatchesResponse, ListMessageAttachmentsRequest, ListMessageAttachmentsResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyReportsRequest, ListMyReportsResponse, ListMyReservationsRequest, ListMyReservationsResponse, ListRestaurantsRequest, ListRestaurantsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, MintLiveKitTokenRequest, MintLiveKitTokenResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, SendGiftRequest, SendGiftResponse, SendMessageRequest, SendMessageResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
+import { AttachMediaToMessageRequest, AttachMediaToMessageResponse, BlockUserRequest, BlockUserResponse, CancelReservationRequest, CancelReservationResponse, CheckInEventRequest, CheckInEventResponse, CompleteMissionRequest, CompleteMissionResponse, CreateAgoraRoomRequest, CreateAgoraRoomResponse, CreateProfileShareRequest, CreateProfileShareResponse, CreateReservationRequest, CreateReservationResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, EndAgoraRoomRequest, EndAgoraRoomResponse, GenerateAtlasYearbookRequest, GenerateAtlasYearbookResponse, GetAtlasLetterRequest, GetAtlasLetterResponse, GetCompatibilityMatrixRequest, GetCompatibilityMatrixResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetCrossPillarGateRequest, GetCrossPillarGateResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAtlasLettersRequest, ListAtlasLettersResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListEventsRequest, ListEventsResponse, ListGiftLedgerRequest, ListGiftLedgerResponse, ListLiveRoomsRequest, ListLiveRoomsResponse, ListMatchesRequest, ListMatchesResponse, ListMatchmakerProposalsRequest, ListMatchmakerProposalsResponse, ListMessageAttachmentsRequest, ListMessageAttachmentsResponse, ListMissionsRequest, ListMissionsResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyEventRsvpsRequest, ListMyEventRsvpsResponse, ListMyProfileSharesRequest, ListMyProfileSharesResponse, ListMyReportsRequest, ListMyReportsResponse, ListMyReservationsRequest, ListMyReservationsResponse, ListRestaurantsRequest, ListRestaurantsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, MintLiveKitTokenRequest, MintLiveKitTokenResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, RespondMatchmakerProposalRequest, RespondMatchmakerProposalResponse, RevokeProfileShareRequest, RevokeProfileShareResponse, RsvpEventRequest, RsvpEventResponse, SendGiftRequest, SendGiftResponse, SendMessageRequest, SendMessageResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -365,6 +365,193 @@ export const DatingService = {
       name: "ListGiftLedger",
       I: ListGiftLedgerRequest,
       O: ListGiftLedgerResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9P2 — Missions (server-backed; replaces the local-only ObjectBox path)
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.ListMissions
+     */
+    listMissions: {
+      name: "ListMissions",
+      I: ListMissionsRequest,
+      O: ListMissionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.CompleteMission
+     */
+    completeMission: {
+      name: "CompleteMission",
+      I: CompleteMissionRequest,
+      O: CompleteMissionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9P3 — Concierge matchmaker (Sovereign)
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.StartConciergeThread
+     */
+    startConciergeThread: {
+      name: "StartConciergeThread",
+      I: StartConciergeThreadRequest,
+      O: StartConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.ListMyConciergeThreads
+     */
+    listMyConciergeThreads: {
+      name: "ListMyConciergeThreads",
+      I: ListMyConciergeThreadsRequest,
+      O: ListMyConciergeThreadsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.GetConciergeThread
+     */
+    getConciergeThread: {
+      name: "GetConciergeThread",
+      I: GetConciergeThreadRequest,
+      O: GetConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.PostConciergeMessage
+     */
+    postConciergeMessage: {
+      name: "PostConciergeMessage",
+      I: PostConciergeMessageRequest,
+      O: PostConciergeMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9P3 — Matchmaker proposals
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.ListMatchmakerProposals
+     */
+    listMatchmakerProposals: {
+      name: "ListMatchmakerProposals",
+      I: ListMatchmakerProposalsRequest,
+      O: ListMatchmakerProposalsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.RespondMatchmakerProposal
+     */
+    respondMatchmakerProposal: {
+      name: "RespondMatchmakerProposal",
+      I: RespondMatchmakerProposalRequest,
+      O: RespondMatchmakerProposalResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9P3 — Atlas Letters editorial
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.ListAtlasLetters
+     */
+    listAtlasLetters: {
+      name: "ListAtlasLetters",
+      I: ListAtlasLettersRequest,
+      O: ListAtlasLettersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.GetAtlasLetter
+     */
+    getAtlasLetter: {
+      name: "GetAtlasLetter",
+      I: GetAtlasLetterRequest,
+      O: GetAtlasLetterResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9P3 — Events / Salons
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.ListEvents
+     */
+    listEvents: {
+      name: "ListEvents",
+      I: ListEventsRequest,
+      O: ListEventsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.RsvpEvent
+     */
+    rsvpEvent: {
+      name: "RsvpEvent",
+      I: RsvpEventRequest,
+      O: RsvpEventResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.ListMyEventRsvps
+     */
+    listMyEventRsvps: {
+      name: "ListMyEventRsvps",
+      I: ListMyEventRsvpsRequest,
+      O: ListMyEventRsvpsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9 — Cross-pillar gate explainer
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.GetCrossPillarGate
+     */
+    getCrossPillarGate: {
+      name: "GetCrossPillarGate",
+      I: GetCrossPillarGateRequest,
+      O: GetCrossPillarGateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9P3.5 — Member profile share (token-based)
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.CreateProfileShare
+     */
+    createProfileShare: {
+      name: "CreateProfileShare",
+      I: CreateProfileShareRequest,
+      O: CreateProfileShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.ListMyProfileShares
+     */
+    listMyProfileShares: {
+      name: "ListMyProfileShares",
+      I: ListMyProfileSharesRequest,
+      O: ListMyProfileSharesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.RevokeProfileShare
+     */
+    revokeProfileShare: {
+      name: "RevokeProfileShare",
+      I: RevokeProfileShareRequest,
+      O: RevokeProfileShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9P4 — Category-leading
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.GenerateAtlasYearbook
+     */
+    generateAtlasYearbook: {
+      name: "GenerateAtlasYearbook",
+      I: GenerateAtlasYearbookRequest,
+      O: GenerateAtlasYearbookResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.CheckInEvent
+     */
+    checkInEvent: {
+      name: "CheckInEvent",
+      I: CheckInEventRequest,
+      O: CheckInEventResponse,
       kind: MethodKind.Unary,
     },
   }

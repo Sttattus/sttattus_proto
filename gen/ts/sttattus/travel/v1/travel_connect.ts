@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AttachVisitToTripRequest, AttachVisitToTripResponse, CreateMilestoneRequest, CreateMilestoneResponse, CreateTripRequest, CreateTripResponse, DeleteTripRequest, DeleteTripResponse, GetLoungeConciergeRequest, GetLoungeConciergeResponse, GetNomadStatsRequest, GetNomadStatsResponse, GetPassportSurfaceRequest, GetPassportSurfaceResponse, GetTripArchiveRequest, GetTripArchiveResponse, GetTripRequest, GetTripResponse, ListConciergeMessagesRequest, ListConciergeMessagesResponse, ListCountryVisibilityRequest, ListCountryVisibilityResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse, ListMyTripsRequest, ListMyTripsResponse, ListMyVerificationSignalsRequest, ListMyVerificationSignalsResponse, ListVisitedCountriesRequest, ListVisitedCountriesResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, SetMilestoneVisibilityRequest, SetMilestoneVisibilityResponse, UpdateTripRequest, UpdateTripResponse, UpsertCountryVisibilityRequest, UpsertCountryVisibilityResponse } from "./travel_pb.js";
+import { AttachVisitToTripRequest, AttachVisitToTripResponse, ConfirmItineraryRequest, ConfirmItineraryResponse, CreateMilestoneRequest, CreateMilestoneResponse, CreatePassportShareRequest, CreatePassportShareResponse, CreateTripRequest, CreateTripResponse, DeleteTripRequest, DeleteTripResponse, GenerateNomadAtlasRequest, GenerateNomadAtlasResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetLoungeConciergeRequest, GetLoungeConciergeResponse, GetNomadStatsRequest, GetNomadStatsResponse, GetPassportSurfaceRequest, GetPassportSurfaceResponse, GetTravelPartnerRequest, GetTravelPartnerResponse, GetTripArchiveRequest, GetTripArchiveResponse, GetTripRequest, GetTripResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListConciergeMessagesRequest, ListConciergeMessagesResponse, ListCountryVisibilityRequest, ListCountryVisibilityResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse, ListMyItinerariesRequest, ListMyItinerariesResponse, ListMyPassportSharesRequest, ListMyPassportSharesResponse, ListMyTripsRequest, ListMyTripsResponse, ListMyVerificationSignalsRequest, ListMyVerificationSignalsResponse, ListTravelPartnersRequest, ListTravelPartnersResponse, ListVisitedCountriesRequest, ListVisitedCountriesResponse, ParseItineraryTextRequest, ParseItineraryTextResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, RevokePassportShareRequest, RevokePassportShareResponse, SetMilestoneVisibilityRequest, SetMilestoneVisibilityResponse, UpdateTripRequest, UpdateTripResponse, UpsertCountryVisibilityRequest, UpsertCountryVisibilityResponse } from "./travel_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -202,6 +202,115 @@ export const TravelService = {
       name: "GetTripArchive",
       I: GetTripArchiveRequest,
       O: GetTripArchiveResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * N2 — itinerary ingestion (flight-confirmation text -> trip skeleton).
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.ParseItineraryText
+     */
+    parseItineraryText: {
+      name: "ParseItineraryText",
+      I: ParseItineraryTextRequest,
+      O: ParseItineraryTextResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.ListMyItineraries
+     */
+    listMyItineraries: {
+      name: "ListMyItineraries",
+      I: ListMyItinerariesRequest,
+      O: ListMyItinerariesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.ConfirmItinerary
+     */
+    confirmItinerary: {
+      name: "ConfirmItinerary",
+      I: ConfirmItineraryRequest,
+      O: ConfirmItineraryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * N2 — partner directory (hotels / restaurants / lounges / aviation).
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.ListTravelPartners
+     */
+    listTravelPartners: {
+      name: "ListTravelPartners",
+      I: ListTravelPartnersRequest,
+      O: ListTravelPartnersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.GetTravelPartner
+     */
+    getTravelPartner: {
+      name: "GetTravelPartner",
+      I: GetTravelPartnerRequest,
+      O: GetTravelPartnerResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * N3 — Nomad Anthology (named-author insider city guides).
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.ListAnthologyArticles
+     */
+    listAnthologyArticles: {
+      name: "ListAnthologyArticles",
+      I: ListAnthologyArticlesRequest,
+      O: ListAnthologyArticlesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.GetAnthologyArticle
+     */
+    getAnthologyArticle: {
+      name: "GetAnthologyArticle",
+      I: GetAnthologyArticleRequest,
+      O: GetAnthologyArticleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * N3.5 — public passport share (read-only, time-bound token).
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.CreatePassportShare
+     */
+    createPassportShare: {
+      name: "CreatePassportShare",
+      I: CreatePassportShareRequest,
+      O: CreatePassportShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.ListMyPassportShares
+     */
+    listMyPassportShares: {
+      name: "ListMyPassportShares",
+      I: ListMyPassportSharesRequest,
+      O: ListMyPassportSharesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.RevokePassportShare
+     */
+    revokePassportShare: {
+      name: "RevokePassportShare",
+      I: RevokePassportShareRequest,
+      O: RevokePassportShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * N4 — Annual Atlas (generated hardcover-grade PDF).
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GenerateNomadAtlas
+     */
+    generateNomadAtlas: {
+      name: "GenerateNomadAtlas",
+      I: GenerateNomadAtlasRequest,
+      O: GenerateNomadAtlasResponse,
       kind: MethodKind.Unary,
     },
   }

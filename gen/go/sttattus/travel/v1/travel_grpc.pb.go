@@ -39,6 +39,17 @@ const (
 	TravelService_GetPassportSurface_FullMethodName        = "/sttattus.travel.v1.TravelService/GetPassportSurface"
 	TravelService_GetLoungeConcierge_FullMethodName        = "/sttattus.travel.v1.TravelService/GetLoungeConcierge"
 	TravelService_GetTripArchive_FullMethodName            = "/sttattus.travel.v1.TravelService/GetTripArchive"
+	TravelService_ParseItineraryText_FullMethodName        = "/sttattus.travel.v1.TravelService/ParseItineraryText"
+	TravelService_ListMyItineraries_FullMethodName         = "/sttattus.travel.v1.TravelService/ListMyItineraries"
+	TravelService_ConfirmItinerary_FullMethodName          = "/sttattus.travel.v1.TravelService/ConfirmItinerary"
+	TravelService_ListTravelPartners_FullMethodName        = "/sttattus.travel.v1.TravelService/ListTravelPartners"
+	TravelService_GetTravelPartner_FullMethodName          = "/sttattus.travel.v1.TravelService/GetTravelPartner"
+	TravelService_ListAnthologyArticles_FullMethodName     = "/sttattus.travel.v1.TravelService/ListAnthologyArticles"
+	TravelService_GetAnthologyArticle_FullMethodName       = "/sttattus.travel.v1.TravelService/GetAnthologyArticle"
+	TravelService_CreatePassportShare_FullMethodName       = "/sttattus.travel.v1.TravelService/CreatePassportShare"
+	TravelService_ListMyPassportShares_FullMethodName      = "/sttattus.travel.v1.TravelService/ListMyPassportShares"
+	TravelService_RevokePassportShare_FullMethodName       = "/sttattus.travel.v1.TravelService/RevokePassportShare"
+	TravelService_GenerateNomadAtlas_FullMethodName        = "/sttattus.travel.v1.TravelService/GenerateNomadAtlas"
 )
 
 // TravelServiceClient is the client API for TravelService service.
@@ -71,6 +82,22 @@ type TravelServiceClient interface {
 	GetPassportSurface(ctx context.Context, in *GetPassportSurfaceRequest, opts ...grpc.CallOption) (*GetPassportSurfaceResponse, error)
 	GetLoungeConcierge(ctx context.Context, in *GetLoungeConciergeRequest, opts ...grpc.CallOption) (*GetLoungeConciergeResponse, error)
 	GetTripArchive(ctx context.Context, in *GetTripArchiveRequest, opts ...grpc.CallOption) (*GetTripArchiveResponse, error)
+	// N2 — itinerary ingestion (flight-confirmation text -> trip skeleton).
+	ParseItineraryText(ctx context.Context, in *ParseItineraryTextRequest, opts ...grpc.CallOption) (*ParseItineraryTextResponse, error)
+	ListMyItineraries(ctx context.Context, in *ListMyItinerariesRequest, opts ...grpc.CallOption) (*ListMyItinerariesResponse, error)
+	ConfirmItinerary(ctx context.Context, in *ConfirmItineraryRequest, opts ...grpc.CallOption) (*ConfirmItineraryResponse, error)
+	// N2 — partner directory (hotels / restaurants / lounges / aviation).
+	ListTravelPartners(ctx context.Context, in *ListTravelPartnersRequest, opts ...grpc.CallOption) (*ListTravelPartnersResponse, error)
+	GetTravelPartner(ctx context.Context, in *GetTravelPartnerRequest, opts ...grpc.CallOption) (*GetTravelPartnerResponse, error)
+	// N3 — Nomad Anthology (named-author insider city guides).
+	ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error)
+	// N3.5 — public passport share (read-only, time-bound token).
+	CreatePassportShare(ctx context.Context, in *CreatePassportShareRequest, opts ...grpc.CallOption) (*CreatePassportShareResponse, error)
+	ListMyPassportShares(ctx context.Context, in *ListMyPassportSharesRequest, opts ...grpc.CallOption) (*ListMyPassportSharesResponse, error)
+	RevokePassportShare(ctx context.Context, in *RevokePassportShareRequest, opts ...grpc.CallOption) (*RevokePassportShareResponse, error)
+	// N4 — Annual Atlas (generated hardcover-grade PDF).
+	GenerateNomadAtlas(ctx context.Context, in *GenerateNomadAtlasRequest, opts ...grpc.CallOption) (*GenerateNomadAtlasResponse, error)
 }
 
 type travelServiceClient struct {
@@ -281,6 +308,116 @@ func (c *travelServiceClient) GetTripArchive(ctx context.Context, in *GetTripArc
 	return out, nil
 }
 
+func (c *travelServiceClient) ParseItineraryText(ctx context.Context, in *ParseItineraryTextRequest, opts ...grpc.CallOption) (*ParseItineraryTextResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ParseItineraryTextResponse)
+	err := c.cc.Invoke(ctx, TravelService_ParseItineraryText_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) ListMyItineraries(ctx context.Context, in *ListMyItinerariesRequest, opts ...grpc.CallOption) (*ListMyItinerariesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyItinerariesResponse)
+	err := c.cc.Invoke(ctx, TravelService_ListMyItineraries_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) ConfirmItinerary(ctx context.Context, in *ConfirmItineraryRequest, opts ...grpc.CallOption) (*ConfirmItineraryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ConfirmItineraryResponse)
+	err := c.cc.Invoke(ctx, TravelService_ConfirmItinerary_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) ListTravelPartners(ctx context.Context, in *ListTravelPartnersRequest, opts ...grpc.CallOption) (*ListTravelPartnersResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListTravelPartnersResponse)
+	err := c.cc.Invoke(ctx, TravelService_ListTravelPartners_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetTravelPartner(ctx context.Context, in *GetTravelPartnerRequest, opts ...grpc.CallOption) (*GetTravelPartnerResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTravelPartnerResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetTravelPartner_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAnthologyArticlesResponse)
+	err := c.cc.Invoke(ctx, TravelService_ListAnthologyArticles_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAnthologyArticleResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetAnthologyArticle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) CreatePassportShare(ctx context.Context, in *CreatePassportShareRequest, opts ...grpc.CallOption) (*CreatePassportShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreatePassportShareResponse)
+	err := c.cc.Invoke(ctx, TravelService_CreatePassportShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) ListMyPassportShares(ctx context.Context, in *ListMyPassportSharesRequest, opts ...grpc.CallOption) (*ListMyPassportSharesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyPassportSharesResponse)
+	err := c.cc.Invoke(ctx, TravelService_ListMyPassportShares_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) RevokePassportShare(ctx context.Context, in *RevokePassportShareRequest, opts ...grpc.CallOption) (*RevokePassportShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokePassportShareResponse)
+	err := c.cc.Invoke(ctx, TravelService_RevokePassportShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GenerateNomadAtlas(ctx context.Context, in *GenerateNomadAtlasRequest, opts ...grpc.CallOption) (*GenerateNomadAtlasResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateNomadAtlasResponse)
+	err := c.cc.Invoke(ctx, TravelService_GenerateNomadAtlas_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TravelServiceServer is the server API for TravelService service.
 // All implementations must embed UnimplementedTravelServiceServer
 // for forward compatibility.
@@ -311,6 +448,22 @@ type TravelServiceServer interface {
 	GetPassportSurface(context.Context, *GetPassportSurfaceRequest) (*GetPassportSurfaceResponse, error)
 	GetLoungeConcierge(context.Context, *GetLoungeConciergeRequest) (*GetLoungeConciergeResponse, error)
 	GetTripArchive(context.Context, *GetTripArchiveRequest) (*GetTripArchiveResponse, error)
+	// N2 — itinerary ingestion (flight-confirmation text -> trip skeleton).
+	ParseItineraryText(context.Context, *ParseItineraryTextRequest) (*ParseItineraryTextResponse, error)
+	ListMyItineraries(context.Context, *ListMyItinerariesRequest) (*ListMyItinerariesResponse, error)
+	ConfirmItinerary(context.Context, *ConfirmItineraryRequest) (*ConfirmItineraryResponse, error)
+	// N2 — partner directory (hotels / restaurants / lounges / aviation).
+	ListTravelPartners(context.Context, *ListTravelPartnersRequest) (*ListTravelPartnersResponse, error)
+	GetTravelPartner(context.Context, *GetTravelPartnerRequest) (*GetTravelPartnerResponse, error)
+	// N3 — Nomad Anthology (named-author insider city guides).
+	ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error)
+	// N3.5 — public passport share (read-only, time-bound token).
+	CreatePassportShare(context.Context, *CreatePassportShareRequest) (*CreatePassportShareResponse, error)
+	ListMyPassportShares(context.Context, *ListMyPassportSharesRequest) (*ListMyPassportSharesResponse, error)
+	RevokePassportShare(context.Context, *RevokePassportShareRequest) (*RevokePassportShareResponse, error)
+	// N4 — Annual Atlas (generated hardcover-grade PDF).
+	GenerateNomadAtlas(context.Context, *GenerateNomadAtlasRequest) (*GenerateNomadAtlasResponse, error)
 	mustEmbedUnimplementedTravelServiceServer()
 }
 
@@ -380,6 +533,39 @@ func (UnimplementedTravelServiceServer) GetLoungeConcierge(context.Context, *Get
 }
 func (UnimplementedTravelServiceServer) GetTripArchive(context.Context, *GetTripArchiveRequest) (*GetTripArchiveResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetTripArchive not implemented")
+}
+func (UnimplementedTravelServiceServer) ParseItineraryText(context.Context, *ParseItineraryTextRequest) (*ParseItineraryTextResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ParseItineraryText not implemented")
+}
+func (UnimplementedTravelServiceServer) ListMyItineraries(context.Context, *ListMyItinerariesRequest) (*ListMyItinerariesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyItineraries not implemented")
+}
+func (UnimplementedTravelServiceServer) ConfirmItinerary(context.Context, *ConfirmItineraryRequest) (*ConfirmItineraryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ConfirmItinerary not implemented")
+}
+func (UnimplementedTravelServiceServer) ListTravelPartners(context.Context, *ListTravelPartnersRequest) (*ListTravelPartnersResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListTravelPartners not implemented")
+}
+func (UnimplementedTravelServiceServer) GetTravelPartner(context.Context, *GetTravelPartnerRequest) (*GetTravelPartnerResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTravelPartner not implemented")
+}
+func (UnimplementedTravelServiceServer) ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAnthologyArticles not implemented")
+}
+func (UnimplementedTravelServiceServer) GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAnthologyArticle not implemented")
+}
+func (UnimplementedTravelServiceServer) CreatePassportShare(context.Context, *CreatePassportShareRequest) (*CreatePassportShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreatePassportShare not implemented")
+}
+func (UnimplementedTravelServiceServer) ListMyPassportShares(context.Context, *ListMyPassportSharesRequest) (*ListMyPassportSharesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyPassportShares not implemented")
+}
+func (UnimplementedTravelServiceServer) RevokePassportShare(context.Context, *RevokePassportShareRequest) (*RevokePassportShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokePassportShare not implemented")
+}
+func (UnimplementedTravelServiceServer) GenerateNomadAtlas(context.Context, *GenerateNomadAtlasRequest) (*GenerateNomadAtlasResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateNomadAtlas not implemented")
 }
 func (UnimplementedTravelServiceServer) mustEmbedUnimplementedTravelServiceServer() {}
 func (UnimplementedTravelServiceServer) testEmbeddedByValue()                       {}
@@ -762,6 +948,204 @@ func _TravelService_GetTripArchive_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TravelService_ParseItineraryText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ParseItineraryTextRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).ParseItineraryText(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_ParseItineraryText_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).ParseItineraryText(ctx, req.(*ParseItineraryTextRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_ListMyItineraries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyItinerariesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).ListMyItineraries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_ListMyItineraries_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).ListMyItineraries(ctx, req.(*ListMyItinerariesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_ConfirmItinerary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfirmItineraryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).ConfirmItinerary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_ConfirmItinerary_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).ConfirmItinerary(ctx, req.(*ConfirmItineraryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_ListTravelPartners_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListTravelPartnersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).ListTravelPartners(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_ListTravelPartners_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).ListTravelPartners(ctx, req.(*ListTravelPartnersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetTravelPartner_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTravelPartnerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetTravelPartner(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetTravelPartner_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetTravelPartner(ctx, req.(*GetTravelPartnerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_ListAnthologyArticles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAnthologyArticlesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).ListAnthologyArticles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_ListAnthologyArticles_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).ListAnthologyArticles(ctx, req.(*ListAnthologyArticlesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetAnthologyArticle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnthologyArticleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetAnthologyArticle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetAnthologyArticle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetAnthologyArticle(ctx, req.(*GetAnthologyArticleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_CreatePassportShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreatePassportShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).CreatePassportShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_CreatePassportShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).CreatePassportShare(ctx, req.(*CreatePassportShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_ListMyPassportShares_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyPassportSharesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).ListMyPassportShares(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_ListMyPassportShares_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).ListMyPassportShares(ctx, req.(*ListMyPassportSharesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_RevokePassportShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokePassportShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).RevokePassportShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_RevokePassportShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).RevokePassportShare(ctx, req.(*RevokePassportShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GenerateNomadAtlas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateNomadAtlasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GenerateNomadAtlas(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GenerateNomadAtlas_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GenerateNomadAtlas(ctx, req.(*GenerateNomadAtlasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // TravelService_ServiceDesc is the grpc.ServiceDesc for TravelService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -848,6 +1232,50 @@ var TravelService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTripArchive",
 			Handler:    _TravelService_GetTripArchive_Handler,
+		},
+		{
+			MethodName: "ParseItineraryText",
+			Handler:    _TravelService_ParseItineraryText_Handler,
+		},
+		{
+			MethodName: "ListMyItineraries",
+			Handler:    _TravelService_ListMyItineraries_Handler,
+		},
+		{
+			MethodName: "ConfirmItinerary",
+			Handler:    _TravelService_ConfirmItinerary_Handler,
+		},
+		{
+			MethodName: "ListTravelPartners",
+			Handler:    _TravelService_ListTravelPartners_Handler,
+		},
+		{
+			MethodName: "GetTravelPartner",
+			Handler:    _TravelService_GetTravelPartner_Handler,
+		},
+		{
+			MethodName: "ListAnthologyArticles",
+			Handler:    _TravelService_ListAnthologyArticles_Handler,
+		},
+		{
+			MethodName: "GetAnthologyArticle",
+			Handler:    _TravelService_GetAnthologyArticle_Handler,
+		},
+		{
+			MethodName: "CreatePassportShare",
+			Handler:    _TravelService_CreatePassportShare_Handler,
+		},
+		{
+			MethodName: "ListMyPassportShares",
+			Handler:    _TravelService_ListMyPassportShares_Handler,
+		},
+		{
+			MethodName: "RevokePassportShare",
+			Handler:    _TravelService_RevokePassportShare_Handler,
+		},
+		{
+			MethodName: "GenerateNomadAtlas",
+			Handler:    _TravelService_GenerateNomadAtlas_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -2065,6 +2065,1250 @@ export class SetMilestoneVisibilityResponse extends Message<SetMilestoneVisibili
 }
 
 /**
+ * @generated from message sttattus.travel.v1.AnthologyArticle
+ */
+export class AnthologyArticle extends Message<AnthologyArticle> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string slug = 2;
+   */
+  slug = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * standfirst
+   *
+   * @generated from field: string dek = 4;
+   */
+  dek = "";
+
+  /**
+   * @generated from field: string author = 5;
+   */
+  author = "";
+
+  /**
+   * @generated from field: string author_title = 6;
+   */
+  authorTitle = "";
+
+  /**
+   * @generated from field: string city = 7;
+   */
+  city = "";
+
+  /**
+   * @generated from field: string country_code = 8;
+   */
+  countryCode = "";
+
+  /**
+   * @generated from field: string hero_url = 9;
+   */
+  heroUrl = "";
+
+  /**
+   * paragraphs split on \n\n
+   *
+   * @generated from field: string body = 10;
+   */
+  body = "";
+
+  /**
+   * @generated from field: bool sovereign_only = 11;
+   */
+  sovereignOnly = false;
+
+  /**
+   * @generated from field: int64 published_at = 12;
+   */
+  publishedAt = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 read_minutes = 13;
+   */
+  readMinutes = 0;
+
+  constructor(data?: PartialMessage<AnthologyArticle>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.AnthologyArticle";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "dek", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "author", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "author_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "hero_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "sovereign_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "published_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 13, name: "read_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AnthologyArticle {
+    return new AnthologyArticle().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AnthologyArticle {
+    return new AnthologyArticle().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AnthologyArticle {
+    return new AnthologyArticle().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AnthologyArticle | PlainMessage<AnthologyArticle> | undefined, b: AnthologyArticle | PlainMessage<AnthologyArticle> | undefined): boolean {
+    return proto3.util.equals(AnthologyArticle, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ListAnthologyArticlesRequest
+ */
+export class ListAnthologyArticlesRequest extends Message<ListAnthologyArticlesRequest> {
+  /**
+   * empty = all
+   *
+   * @generated from field: string city = 1;
+   */
+  city = "";
+
+  constructor(data?: PartialMessage<ListAnthologyArticlesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ListAnthologyArticlesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAnthologyArticlesRequest {
+    return new ListAnthologyArticlesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAnthologyArticlesRequest {
+    return new ListAnthologyArticlesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAnthologyArticlesRequest {
+    return new ListAnthologyArticlesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAnthologyArticlesRequest | PlainMessage<ListAnthologyArticlesRequest> | undefined, b: ListAnthologyArticlesRequest | PlainMessage<ListAnthologyArticlesRequest> | undefined): boolean {
+    return proto3.util.equals(ListAnthologyArticlesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ListAnthologyArticlesResponse
+ */
+export class ListAnthologyArticlesResponse extends Message<ListAnthologyArticlesResponse> {
+  /**
+   * @generated from field: repeated sttattus.travel.v1.AnthologyArticle articles = 1;
+   */
+  articles: AnthologyArticle[] = [];
+
+  constructor(data?: PartialMessage<ListAnthologyArticlesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ListAnthologyArticlesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "articles", kind: "message", T: AnthologyArticle, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAnthologyArticlesResponse {
+    return new ListAnthologyArticlesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAnthologyArticlesResponse {
+    return new ListAnthologyArticlesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAnthologyArticlesResponse {
+    return new ListAnthologyArticlesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAnthologyArticlesResponse | PlainMessage<ListAnthologyArticlesResponse> | undefined, b: ListAnthologyArticlesResponse | PlainMessage<ListAnthologyArticlesResponse> | undefined): boolean {
+    return proto3.util.equals(ListAnthologyArticlesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.GetAnthologyArticleRequest
+ */
+export class GetAnthologyArticleRequest extends Message<GetAnthologyArticleRequest> {
+  /**
+   * @generated from field: string slug = 1;
+   */
+  slug = "";
+
+  constructor(data?: PartialMessage<GetAnthologyArticleRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.GetAnthologyArticleRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAnthologyArticleRequest {
+    return new GetAnthologyArticleRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAnthologyArticleRequest {
+    return new GetAnthologyArticleRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAnthologyArticleRequest {
+    return new GetAnthologyArticleRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAnthologyArticleRequest | PlainMessage<GetAnthologyArticleRequest> | undefined, b: GetAnthologyArticleRequest | PlainMessage<GetAnthologyArticleRequest> | undefined): boolean {
+    return proto3.util.equals(GetAnthologyArticleRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.GetAnthologyArticleResponse
+ */
+export class GetAnthologyArticleResponse extends Message<GetAnthologyArticleResponse> {
+  /**
+   * @generated from field: sttattus.travel.v1.AnthologyArticle article = 1;
+   */
+  article?: AnthologyArticle;
+
+  constructor(data?: PartialMessage<GetAnthologyArticleResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.GetAnthologyArticleResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "article", kind: "message", T: AnthologyArticle },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAnthologyArticleResponse {
+    return new GetAnthologyArticleResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAnthologyArticleResponse {
+    return new GetAnthologyArticleResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAnthologyArticleResponse {
+    return new GetAnthologyArticleResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAnthologyArticleResponse | PlainMessage<GetAnthologyArticleResponse> | undefined, b: GetAnthologyArticleResponse | PlainMessage<GetAnthologyArticleResponse> | undefined): boolean {
+    return proto3.util.equals(GetAnthologyArticleResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.PassportShare
+ */
+export class PassportShare extends Message<PassportShare> {
+  /**
+   * @generated from field: string token = 1;
+   */
+  token = "";
+
+  /**
+   * @generated from field: string url = 2;
+   */
+  url = "";
+
+  /**
+   * @generated from field: int64 created_at = 3;
+   */
+  createdAt = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 expires_at = 4;
+   */
+  expiresAt = protoInt64.zero;
+
+  /**
+   * @generated from field: bool revoked = 5;
+   */
+  revoked = false;
+
+  constructor(data?: PartialMessage<PassportShare>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.PassportShare";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "expires_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "revoked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PassportShare {
+    return new PassportShare().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PassportShare {
+    return new PassportShare().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PassportShare {
+    return new PassportShare().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PassportShare | PlainMessage<PassportShare> | undefined, b: PassportShare | PlainMessage<PassportShare> | undefined): boolean {
+    return proto3.util.equals(PassportShare, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.CreatePassportShareRequest
+ */
+export class CreatePassportShareRequest extends Message<CreatePassportShareRequest> {
+  /**
+   * 0 => default 14
+   *
+   * @generated from field: int32 ttl_days = 1;
+   */
+  ttlDays = 0;
+
+  constructor(data?: PartialMessage<CreatePassportShareRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.CreatePassportShareRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "ttl_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreatePassportShareRequest {
+    return new CreatePassportShareRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreatePassportShareRequest {
+    return new CreatePassportShareRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreatePassportShareRequest {
+    return new CreatePassportShareRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreatePassportShareRequest | PlainMessage<CreatePassportShareRequest> | undefined, b: CreatePassportShareRequest | PlainMessage<CreatePassportShareRequest> | undefined): boolean {
+    return proto3.util.equals(CreatePassportShareRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.CreatePassportShareResponse
+ */
+export class CreatePassportShareResponse extends Message<CreatePassportShareResponse> {
+  /**
+   * @generated from field: sttattus.travel.v1.PassportShare share = 1;
+   */
+  share?: PassportShare;
+
+  constructor(data?: PartialMessage<CreatePassportShareResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.CreatePassportShareResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "share", kind: "message", T: PassportShare },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreatePassportShareResponse {
+    return new CreatePassportShareResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreatePassportShareResponse {
+    return new CreatePassportShareResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreatePassportShareResponse {
+    return new CreatePassportShareResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreatePassportShareResponse | PlainMessage<CreatePassportShareResponse> | undefined, b: CreatePassportShareResponse | PlainMessage<CreatePassportShareResponse> | undefined): boolean {
+    return proto3.util.equals(CreatePassportShareResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ListMyPassportSharesRequest
+ */
+export class ListMyPassportSharesRequest extends Message<ListMyPassportSharesRequest> {
+  constructor(data?: PartialMessage<ListMyPassportSharesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ListMyPassportSharesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyPassportSharesRequest {
+    return new ListMyPassportSharesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyPassportSharesRequest {
+    return new ListMyPassportSharesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyPassportSharesRequest {
+    return new ListMyPassportSharesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyPassportSharesRequest | PlainMessage<ListMyPassportSharesRequest> | undefined, b: ListMyPassportSharesRequest | PlainMessage<ListMyPassportSharesRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyPassportSharesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ListMyPassportSharesResponse
+ */
+export class ListMyPassportSharesResponse extends Message<ListMyPassportSharesResponse> {
+  /**
+   * @generated from field: repeated sttattus.travel.v1.PassportShare shares = 1;
+   */
+  shares: PassportShare[] = [];
+
+  constructor(data?: PartialMessage<ListMyPassportSharesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ListMyPassportSharesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "shares", kind: "message", T: PassportShare, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyPassportSharesResponse {
+    return new ListMyPassportSharesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyPassportSharesResponse {
+    return new ListMyPassportSharesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyPassportSharesResponse {
+    return new ListMyPassportSharesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyPassportSharesResponse | PlainMessage<ListMyPassportSharesResponse> | undefined, b: ListMyPassportSharesResponse | PlainMessage<ListMyPassportSharesResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyPassportSharesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.RevokePassportShareRequest
+ */
+export class RevokePassportShareRequest extends Message<RevokePassportShareRequest> {
+  /**
+   * @generated from field: string token = 1;
+   */
+  token = "";
+
+  constructor(data?: PartialMessage<RevokePassportShareRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.RevokePassportShareRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokePassportShareRequest {
+    return new RevokePassportShareRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokePassportShareRequest {
+    return new RevokePassportShareRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokePassportShareRequest {
+    return new RevokePassportShareRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokePassportShareRequest | PlainMessage<RevokePassportShareRequest> | undefined, b: RevokePassportShareRequest | PlainMessage<RevokePassportShareRequest> | undefined): boolean {
+    return proto3.util.equals(RevokePassportShareRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.RevokePassportShareResponse
+ */
+export class RevokePassportShareResponse extends Message<RevokePassportShareResponse> {
+  constructor(data?: PartialMessage<RevokePassportShareResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.RevokePassportShareResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokePassportShareResponse {
+    return new RevokePassportShareResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokePassportShareResponse {
+    return new RevokePassportShareResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokePassportShareResponse {
+    return new RevokePassportShareResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokePassportShareResponse | PlainMessage<RevokePassportShareResponse> | undefined, b: RevokePassportShareResponse | PlainMessage<RevokePassportShareResponse> | undefined): boolean {
+    return proto3.util.equals(RevokePassportShareResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.GenerateNomadAtlasRequest
+ */
+export class GenerateNomadAtlasRequest extends Message<GenerateNomadAtlasRequest> {
+  /**
+   * 0 => current year
+   *
+   * @generated from field: int32 year = 1;
+   */
+  year = 0;
+
+  constructor(data?: PartialMessage<GenerateNomadAtlasRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.GenerateNomadAtlasRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "year", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateNomadAtlasRequest {
+    return new GenerateNomadAtlasRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateNomadAtlasRequest {
+    return new GenerateNomadAtlasRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateNomadAtlasRequest {
+    return new GenerateNomadAtlasRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GenerateNomadAtlasRequest | PlainMessage<GenerateNomadAtlasRequest> | undefined, b: GenerateNomadAtlasRequest | PlainMessage<GenerateNomadAtlasRequest> | undefined): boolean {
+    return proto3.util.equals(GenerateNomadAtlasRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.GenerateNomadAtlasResponse
+ */
+export class GenerateNomadAtlasResponse extends Message<GenerateNomadAtlasResponse> {
+  /**
+   * @generated from field: string media_url = 1;
+   */
+  mediaUrl = "";
+
+  /**
+   * @generated from field: string media_asset_id = 2;
+   */
+  mediaAssetId = "";
+
+  /**
+   * @generated from field: int32 page_count = 3;
+   */
+  pageCount = 0;
+
+  constructor(data?: PartialMessage<GenerateNomadAtlasResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.GenerateNomadAtlasResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "media_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "page_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateNomadAtlasResponse {
+    return new GenerateNomadAtlasResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateNomadAtlasResponse {
+    return new GenerateNomadAtlasResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateNomadAtlasResponse {
+    return new GenerateNomadAtlasResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GenerateNomadAtlasResponse | PlainMessage<GenerateNomadAtlasResponse> | undefined, b: GenerateNomadAtlasResponse | PlainMessage<GenerateNomadAtlasResponse> | undefined): boolean {
+    return proto3.util.equals(GenerateNomadAtlasResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ParsedItinerary
+ */
+export class ParsedItinerary extends Message<ParsedItinerary> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * empty until confirmed
+   *
+   * @generated from field: string trip_id = 2;
+   */
+  tripId = "";
+
+  /**
+   * e.g. 'United', 'Air France'
+   *
+   * @generated from field: string provider = 3;
+   */
+  provider = "";
+
+  /**
+   * PNR
+   *
+   * @generated from field: string record_locator = 4;
+   */
+  recordLocator = "";
+
+  /**
+   * @generated from field: string origin_iata = 5;
+   */
+  originIata = "";
+
+  /**
+   * @generated from field: string destination_iata = 6;
+   */
+  destinationIata = "";
+
+  /**
+   * @generated from field: int64 depart_at = 7;
+   */
+  departAt = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 arrive_at = 8;
+   */
+  arriveAt = protoInt64.zero;
+
+  /**
+   * 'pending' | 'confirmed'
+   *
+   * @generated from field: string status = 9;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string raw_excerpt = 10;
+   */
+  rawExcerpt = "";
+
+  /**
+   * @generated from field: int64 created_at = 11;
+   */
+  createdAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<ParsedItinerary>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ParsedItinerary";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "trip_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "provider", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "record_locator", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "origin_iata", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "destination_iata", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "depart_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: "arrive_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "raw_excerpt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ParsedItinerary {
+    return new ParsedItinerary().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ParsedItinerary {
+    return new ParsedItinerary().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ParsedItinerary {
+    return new ParsedItinerary().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ParsedItinerary | PlainMessage<ParsedItinerary> | undefined, b: ParsedItinerary | PlainMessage<ParsedItinerary> | undefined): boolean {
+    return proto3.util.equals(ParsedItinerary, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ParseItineraryTextRequest
+ */
+export class ParseItineraryTextRequest extends Message<ParseItineraryTextRequest> {
+  /**
+   * pasted confirmation email
+   *
+   * @generated from field: string raw_text = 1;
+   */
+  rawText = "";
+
+  constructor(data?: PartialMessage<ParseItineraryTextRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ParseItineraryTextRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "raw_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ParseItineraryTextRequest {
+    return new ParseItineraryTextRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ParseItineraryTextRequest {
+    return new ParseItineraryTextRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ParseItineraryTextRequest {
+    return new ParseItineraryTextRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ParseItineraryTextRequest | PlainMessage<ParseItineraryTextRequest> | undefined, b: ParseItineraryTextRequest | PlainMessage<ParseItineraryTextRequest> | undefined): boolean {
+    return proto3.util.equals(ParseItineraryTextRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ParseItineraryTextResponse
+ */
+export class ParseItineraryTextResponse extends Message<ParseItineraryTextResponse> {
+  /**
+   * @generated from field: sttattus.travel.v1.ParsedItinerary itinerary = 1;
+   */
+  itinerary?: ParsedItinerary;
+
+  /**
+   * false when no flight fields could be extracted
+   *
+   * @generated from field: bool parsed = 2;
+   */
+  parsed = false;
+
+  constructor(data?: PartialMessage<ParseItineraryTextResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ParseItineraryTextResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "itinerary", kind: "message", T: ParsedItinerary },
+    { no: 2, name: "parsed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ParseItineraryTextResponse {
+    return new ParseItineraryTextResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ParseItineraryTextResponse {
+    return new ParseItineraryTextResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ParseItineraryTextResponse {
+    return new ParseItineraryTextResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ParseItineraryTextResponse | PlainMessage<ParseItineraryTextResponse> | undefined, b: ParseItineraryTextResponse | PlainMessage<ParseItineraryTextResponse> | undefined): boolean {
+    return proto3.util.equals(ParseItineraryTextResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ListMyItinerariesRequest
+ */
+export class ListMyItinerariesRequest extends Message<ListMyItinerariesRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListMyItinerariesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ListMyItinerariesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyItinerariesRequest {
+    return new ListMyItinerariesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyItinerariesRequest {
+    return new ListMyItinerariesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyItinerariesRequest {
+    return new ListMyItinerariesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyItinerariesRequest | PlainMessage<ListMyItinerariesRequest> | undefined, b: ListMyItinerariesRequest | PlainMessage<ListMyItinerariesRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyItinerariesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ListMyItinerariesResponse
+ */
+export class ListMyItinerariesResponse extends Message<ListMyItinerariesResponse> {
+  /**
+   * @generated from field: repeated sttattus.travel.v1.ParsedItinerary itineraries = 1;
+   */
+  itineraries: ParsedItinerary[] = [];
+
+  constructor(data?: PartialMessage<ListMyItinerariesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ListMyItinerariesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "itineraries", kind: "message", T: ParsedItinerary, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyItinerariesResponse {
+    return new ListMyItinerariesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyItinerariesResponse {
+    return new ListMyItinerariesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyItinerariesResponse {
+    return new ListMyItinerariesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyItinerariesResponse | PlainMessage<ListMyItinerariesResponse> | undefined, b: ListMyItinerariesResponse | PlainMessage<ListMyItinerariesResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyItinerariesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ConfirmItineraryRequest
+ */
+export class ConfirmItineraryRequest extends Message<ConfirmItineraryRequest> {
+  /**
+   * @generated from field: string itinerary_id = 1;
+   */
+  itineraryId = "";
+
+  /**
+   * optional override; defaults to a route title
+   *
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  constructor(data?: PartialMessage<ConfirmItineraryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ConfirmItineraryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "itinerary_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConfirmItineraryRequest {
+    return new ConfirmItineraryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConfirmItineraryRequest {
+    return new ConfirmItineraryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConfirmItineraryRequest {
+    return new ConfirmItineraryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ConfirmItineraryRequest | PlainMessage<ConfirmItineraryRequest> | undefined, b: ConfirmItineraryRequest | PlainMessage<ConfirmItineraryRequest> | undefined): boolean {
+    return proto3.util.equals(ConfirmItineraryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ConfirmItineraryResponse
+ */
+export class ConfirmItineraryResponse extends Message<ConfirmItineraryResponse> {
+  /**
+   * @generated from field: sttattus.travel.v1.Trip trip = 1;
+   */
+  trip?: Trip;
+
+  constructor(data?: PartialMessage<ConfirmItineraryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ConfirmItineraryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "trip", kind: "message", T: Trip },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConfirmItineraryResponse {
+    return new ConfirmItineraryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConfirmItineraryResponse {
+    return new ConfirmItineraryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConfirmItineraryResponse {
+    return new ConfirmItineraryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ConfirmItineraryResponse | PlainMessage<ConfirmItineraryResponse> | undefined, b: ConfirmItineraryResponse | PlainMessage<ConfirmItineraryResponse> | undefined): boolean {
+    return proto3.util.equals(ConfirmItineraryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.TravelPartner
+ */
+export class TravelPartner extends Message<TravelPartner> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string slug = 2;
+   */
+  slug = "";
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name = "";
+
+  /**
+   * 'hotel' | 'restaurant' | 'lounge' | 'aviation' | 'driver'
+   *
+   * @generated from field: string category = 4;
+   */
+  category = "";
+
+  /**
+   * @generated from field: string city = 5;
+   */
+  city = "";
+
+  /**
+   * @generated from field: string country_code = 6;
+   */
+  countryCode = "";
+
+  /**
+   * 'Europe' | 'Asia' | ...
+   *
+   * @generated from field: string region = 7;
+   */
+  region = "";
+
+  /**
+   * @generated from field: string description = 8;
+   */
+  description = "";
+
+  /**
+   * @generated from field: string hero_url = 9;
+   */
+  heroUrl = "";
+
+  /**
+   * Sttattus Tax / member discount available
+   *
+   * @generated from field: bool member_rate = 10;
+   */
+  memberRate = false;
+
+  /**
+   * @generated from field: bool sovereign_only = 11;
+   */
+  sovereignOnly = false;
+
+  /**
+   * @generated from field: string booking_url = 12;
+   */
+  bookingUrl = "";
+
+  /**
+   * 1-4 ($-$$$$)
+   *
+   * @generated from field: int32 price_band = 13;
+   */
+  priceBand = 0;
+
+  constructor(data?: PartialMessage<TravelPartner>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.TravelPartner";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "region", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "hero_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "member_rate", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "sovereign_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "booking_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "price_band", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TravelPartner {
+    return new TravelPartner().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TravelPartner {
+    return new TravelPartner().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TravelPartner {
+    return new TravelPartner().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TravelPartner | PlainMessage<TravelPartner> | undefined, b: TravelPartner | PlainMessage<TravelPartner> | undefined): boolean {
+    return proto3.util.equals(TravelPartner, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ListTravelPartnersRequest
+ */
+export class ListTravelPartnersRequest extends Message<ListTravelPartnersRequest> {
+  /**
+   * empty = all
+   *
+   * @generated from field: string category = 1;
+   */
+  category = "";
+
+  /**
+   * empty = all
+   *
+   * @generated from field: string region = 2;
+   */
+  region = "";
+
+  constructor(data?: PartialMessage<ListTravelPartnersRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ListTravelPartnersRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "region", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTravelPartnersRequest {
+    return new ListTravelPartnersRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTravelPartnersRequest {
+    return new ListTravelPartnersRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTravelPartnersRequest {
+    return new ListTravelPartnersRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListTravelPartnersRequest | PlainMessage<ListTravelPartnersRequest> | undefined, b: ListTravelPartnersRequest | PlainMessage<ListTravelPartnersRequest> | undefined): boolean {
+    return proto3.util.equals(ListTravelPartnersRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.ListTravelPartnersResponse
+ */
+export class ListTravelPartnersResponse extends Message<ListTravelPartnersResponse> {
+  /**
+   * @generated from field: repeated sttattus.travel.v1.TravelPartner partners = 1;
+   */
+  partners: TravelPartner[] = [];
+
+  constructor(data?: PartialMessage<ListTravelPartnersResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.ListTravelPartnersResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "partners", kind: "message", T: TravelPartner, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTravelPartnersResponse {
+    return new ListTravelPartnersResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTravelPartnersResponse {
+    return new ListTravelPartnersResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTravelPartnersResponse {
+    return new ListTravelPartnersResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListTravelPartnersResponse | PlainMessage<ListTravelPartnersResponse> | undefined, b: ListTravelPartnersResponse | PlainMessage<ListTravelPartnersResponse> | undefined): boolean {
+    return proto3.util.equals(ListTravelPartnersResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.GetTravelPartnerRequest
+ */
+export class GetTravelPartnerRequest extends Message<GetTravelPartnerRequest> {
+  /**
+   * @generated from field: string slug = 1;
+   */
+  slug = "";
+
+  constructor(data?: PartialMessage<GetTravelPartnerRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.GetTravelPartnerRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTravelPartnerRequest {
+    return new GetTravelPartnerRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTravelPartnerRequest {
+    return new GetTravelPartnerRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTravelPartnerRequest {
+    return new GetTravelPartnerRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTravelPartnerRequest | PlainMessage<GetTravelPartnerRequest> | undefined, b: GetTravelPartnerRequest | PlainMessage<GetTravelPartnerRequest> | undefined): boolean {
+    return proto3.util.equals(GetTravelPartnerRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.travel.v1.GetTravelPartnerResponse
+ */
+export class GetTravelPartnerResponse extends Message<GetTravelPartnerResponse> {
+  /**
+   * @generated from field: sttattus.travel.v1.TravelPartner partner = 1;
+   */
+  partner?: TravelPartner;
+
+  constructor(data?: PartialMessage<GetTravelPartnerResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.travel.v1.GetTravelPartnerResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "partner", kind: "message", T: TravelPartner },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTravelPartnerResponse {
+    return new GetTravelPartnerResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTravelPartnerResponse {
+    return new GetTravelPartnerResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTravelPartnerResponse {
+    return new GetTravelPartnerResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTravelPartnerResponse | PlainMessage<GetTravelPartnerResponse> | undefined, b: GetTravelPartnerResponse | PlainMessage<GetTravelPartnerResponse> | undefined): boolean {
+    return proto3.util.equals(GetTravelPartnerResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.travel.v1.GetPassportSurfaceRequest
  */
 export class GetPassportSurfaceRequest extends Message<GetPassportSurfaceRequest> {

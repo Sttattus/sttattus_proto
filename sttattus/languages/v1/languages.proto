@@ -337,6 +337,243 @@ message ListMyPlacementResultsResponse {
   repeated PlacementResult results = 1;
 }
 
+// === L12.9 — writing drill + AI rough correction ===
+
+message WritingPrompt {
+  string id = 1;
+  string language = 2;
+  string cefr_target = 3;
+  string title = 4;
+  string prompt = 5;
+  int32 min_words = 6;
+  int32 max_words = 7;
+}
+
+// RubricScore is one CEFR-aligned scoring dimension of a writing
+// submission (task achievement / coherence / lexical range / accuracy).
+message RubricScore {
+  string dimension = 1;
+  int32 score = 2; // 0..100
+  string comment = 3;
+}
+
+// WritingSubmission status: 'corrected' = Gemini rough correction ran,
+// 'heuristic' = provider unavailable so a deterministic local rubric was
+// applied, 'pending' = not yet scored.
+message WritingSubmission {
+  string id = 1;
+  string prompt_id = 2;
+  string language = 3;
+  string content = 4;
+  string status = 5;
+  string corrected_markdown = 6;
+  repeated RubricScore rubric = 7;
+  int32 score = 8;
+  int64 created_unix = 9;
+  int64 updated_unix = 10;
+}
+
+message ListWritingPromptsRequest {
+  string language = 1;
+  string cefr_level = 2;
+}
+message ListWritingPromptsResponse {
+  repeated WritingPrompt prompts = 1;
+}
+
+message SubmitWritingRequest {
+  string prompt_id = 1;
+  string content = 2;
+}
+message SubmitWritingResponse {
+  WritingSubmission submission = 1;
+}
+
+message ListMyWritingSubmissionsRequest {
+  string language = 1;
+}
+message ListMyWritingSubmissionsResponse {
+  repeated WritingSubmission submissions = 1;
+}
+
+message GetWritingSubmissionRequest {
+  string submission_id = 1;
+}
+message GetWritingSubmissionResponse {
+  WritingSubmission submission = 1;
+}
+
+// === L12.10 — reading library (parallel text) ===
+
+message ReadingText {
+  string id = 1;
+  string language = 2;
+  string cefr_target = 3;
+  string title = 4;
+  string summary = 5;
+  string body = 6; // target language
+  string translation = 7; // native-language parallel
+  string source_note = 8;
+  int32 word_count = 9;
+}
+
+message ListReadingTextsRequest {
+  string language = 1;
+  string cefr_level = 2;
+}
+message ListReadingTextsResponse {
+  repeated ReadingText texts = 1;
+}
+
+message GetReadingTextRequest {
+  string text_id = 1;
+}
+message GetReadingTextResponse {
+  ReadingText text = 1;
+}
+
+// === L12.11 — idiom library ===
+
+message Idiom {
+  string id = 1;
+  string language = 2;
+  string phrase = 3;
+  string literal = 4;
+  string meaning = 5;
+  string example = 6;
+  string register = 7; // formal | informal | slang
+  string note = 8;
+}
+
+message ListIdiomsRequest {
+  string language = 1;
+}
+message ListIdiomsResponse {
+  repeated Idiom idioms = 1;
+}
+
+// === L12.12 — tutor desk / concierge (Sovereign) ===
+
+message TutorThread {
+  string id = 1;
+  string language = 2;
+  string topic = 3;
+  string status = 4; // open | answered | closed
+  int64 created_unix = 5;
+  int64 sla_due_unix = 6;
+  repeated TutorMessage messages = 7;
+}
+
+message TutorMessage {
+  string id = 1;
+  string sender = 2; // member | tutor | system
+  string body = 3;
+  int64 created_unix = 4;
+}
+
+message StartTutorThreadRequest {
+  string language = 1;
+  string topic = 2;
+  string body = 3;
+}
+message StartTutorThreadResponse {
+  TutorThread thread = 1;
+}
+
+message ListMyTutorThreadsRequest {}
+message ListMyTutorThreadsResponse {
+  repeated TutorThread threads = 1;
+}
+
+message GetTutorThreadRequest {
+  string thread_id = 1;
+}
+message GetTutorThreadResponse {
+  TutorThread thread = 1;
+}
+
+message PostTutorMessageRequest {
+  string thread_id = 1;
+  string body = 2;
+}
+message PostTutorMessageResponse {
+  TutorThread thread = 1;
+}
+
+// === L12.13 — editorial Anthology ===
+
+message AnthologyArticle {
+  string id = 1;
+  string slug = 2;
+  string language = 3;
+  string title = 4;
+  string author = 5;
+  string author_title = 6;
+  string dek = 7;
+  string body_markdown = 8;
+  bool sovereign_only = 9;
+  int64 published_unix = 10;
+}
+
+message ListAnthologyArticlesRequest {
+  string language = 1;
+}
+message ListAnthologyArticlesResponse {
+  repeated AnthologyArticle articles = 1;
+}
+
+message GetAnthologyArticleRequest {
+  string article_id = 1;
+}
+message GetAnthologyArticleResponse {
+  AnthologyArticle article = 1;
+}
+
+// === L12.14 — CEFR certificate issuance + verification ===
+
+message Certificate {
+  string id = 1;
+  string token = 2; // public verification token
+  string language = 3;
+  string skill = 4;
+  string cefr_level = 5;
+  string holder_name = 6;
+  int64 issued_unix = 7;
+  string verify_url = 8;
+}
+
+// IssueCertificate mints a signed CEFR certificate from the user's best
+// placement result for (language, skill). Rejects when no qualifying
+// result exists.
+message IssueCertificateRequest {
+  string language = 1;
+  string skill = 2;
+}
+message IssueCertificateResponse {
+  Certificate certificate = 1;
+}
+
+message ListMyCertificatesRequest {}
+message ListMyCertificatesResponse {
+  repeated Certificate certificates = 1;
+}
+
+// === L12.15 — Annual Linguist Almanac (PDF) ===
+
+message GenerateLinguistAlmanacRequest {}
+message GenerateLinguistAlmanacResponse {
+  string url = 1;
+  int32 page_count = 2;
+}
+
+// === L12.16 — public Linguist profile share ===
+
+message CreateLinguistShareRequest {}
+message CreateLinguistShareResponse {
+  string token = 1;
+  string share_url = 2;
+}
+
 service LanguagesService {
   // The Protocol: Scenario-based learning
   rpc ListScenarios(ListScenariosRequest) returns (ListScenariosResponse);
@@ -372,6 +609,39 @@ service LanguagesService {
   // L12.7 — cultural modules.
   rpc ListCulturalModules(ListCulturalModulesRequest) returns (ListCulturalModulesResponse);
   rpc MarkCulturalCompleted(MarkCulturalCompletedRequest) returns (MarkCulturalCompletedResponse);
+
+  // L12.9 — writing drill + AI rough correction.
+  rpc ListWritingPrompts(ListWritingPromptsRequest) returns (ListWritingPromptsResponse);
+  rpc SubmitWriting(SubmitWritingRequest) returns (SubmitWritingResponse);
+  rpc ListMyWritingSubmissions(ListMyWritingSubmissionsRequest) returns (ListMyWritingSubmissionsResponse);
+  rpc GetWritingSubmission(GetWritingSubmissionRequest) returns (GetWritingSubmissionResponse);
+
+  // L12.10 — reading library (parallel text).
+  rpc ListReadingTexts(ListReadingTextsRequest) returns (ListReadingTextsResponse);
+  rpc GetReadingText(GetReadingTextRequest) returns (GetReadingTextResponse);
+
+  // L12.11 — idiom library.
+  rpc ListIdioms(ListIdiomsRequest) returns (ListIdiomsResponse);
+
+  // L12.12 — tutor desk / concierge (Sovereign).
+  rpc StartTutorThread(StartTutorThreadRequest) returns (StartTutorThreadResponse);
+  rpc ListMyTutorThreads(ListMyTutorThreadsRequest) returns (ListMyTutorThreadsResponse);
+  rpc GetTutorThread(GetTutorThreadRequest) returns (GetTutorThreadResponse);
+  rpc PostTutorMessage(PostTutorMessageRequest) returns (PostTutorMessageResponse);
+
+  // L12.13 — editorial Anthology.
+  rpc ListAnthologyArticles(ListAnthologyArticlesRequest) returns (ListAnthologyArticlesResponse);
+  rpc GetAnthologyArticle(GetAnthologyArticleRequest) returns (GetAnthologyArticleResponse);
+
+  // L12.14 — CEFR certificate issuance.
+  rpc IssueCertificate(IssueCertificateRequest) returns (IssueCertificateResponse);
+  rpc ListMyCertificates(ListMyCertificatesRequest) returns (ListMyCertificatesResponse);
+
+  // L12.15 — Annual Linguist Almanac.
+  rpc GenerateLinguistAlmanac(GenerateLinguistAlmanacRequest) returns (GenerateLinguistAlmanacResponse);
+
+  // L12.16 — public Linguist profile share.
+  rpc CreateLinguistShare(CreateLinguistShareRequest) returns (CreateLinguistShareResponse);
 
   // Legacy (Deprecated but kept for bridge)
   rpc ListWords(ListWordsRequest) returns (ListWordsResponse);

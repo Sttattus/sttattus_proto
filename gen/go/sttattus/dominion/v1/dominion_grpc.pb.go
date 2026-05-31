@@ -19,16 +19,45 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	DominionService_SyncProperties_FullMethodName        = "/sttattus.dominion.v1.DominionService/SyncProperties"
-	DominionService_ListTerritories_FullMethodName       = "/sttattus.dominion.v1.DominionService/ListTerritories"
-	DominionService_GetDominionStats_FullMethodName      = "/sttattus.dominion.v1.DominionService/GetDominionStats"
-	DominionService_GetLoungeKey_FullMethodName          = "/sttattus.dominion.v1.DominionService/GetLoungeKey"
-	DominionService_EstimatePropertyValue_FullMethodName = "/sttattus.dominion.v1.DominionService/EstimatePropertyValue"
-	DominionService_SubmitDeed_FullMethodName            = "/sttattus.dominion.v1.DominionService/SubmitDeed"
-	DominionService_ListMyDeeds_FullMethodName           = "/sttattus.dominion.v1.DominionService/ListMyDeeds"
-	DominionService_ListDeedsForProperty_FullMethodName  = "/sttattus.dominion.v1.DominionService/ListDeedsForProperty"
-	DominionService_AdminReviewDeed_FullMethodName       = "/sttattus.dominion.v1.DominionService/AdminReviewDeed"
-	DominionService_ListLounges_FullMethodName           = "/sttattus.dominion.v1.DominionService/ListLounges"
+	DominionService_SyncProperties_FullMethodName           = "/sttattus.dominion.v1.DominionService/SyncProperties"
+	DominionService_ListTerritories_FullMethodName          = "/sttattus.dominion.v1.DominionService/ListTerritories"
+	DominionService_GetDominionStats_FullMethodName         = "/sttattus.dominion.v1.DominionService/GetDominionStats"
+	DominionService_GetLoungeKey_FullMethodName             = "/sttattus.dominion.v1.DominionService/GetLoungeKey"
+	DominionService_EstimatePropertyValue_FullMethodName    = "/sttattus.dominion.v1.DominionService/EstimatePropertyValue"
+	DominionService_SubmitDeed_FullMethodName               = "/sttattus.dominion.v1.DominionService/SubmitDeed"
+	DominionService_ListMyDeeds_FullMethodName              = "/sttattus.dominion.v1.DominionService/ListMyDeeds"
+	DominionService_ListDeedsForProperty_FullMethodName     = "/sttattus.dominion.v1.DominionService/ListDeedsForProperty"
+	DominionService_AdminReviewDeed_FullMethodName          = "/sttattus.dominion.v1.DominionService/AdminReviewDeed"
+	DominionService_ListLounges_FullMethodName              = "/sttattus.dominion.v1.DominionService/ListLounges"
+	DominionService_ListLoungeEvents_FullMethodName         = "/sttattus.dominion.v1.DominionService/ListLoungeEvents"
+	DominionService_RsvpLoungeEvent_FullMethodName          = "/sttattus.dominion.v1.DominionService/RsvpLoungeEvent"
+	DominionService_ListMyLoungeRsvps_FullMethodName        = "/sttattus.dominion.v1.DominionService/ListMyLoungeRsvps"
+	DominionService_ListSalons_FullMethodName               = "/sttattus.dominion.v1.DominionService/ListSalons"
+	DominionService_RsvpSalon_FullMethodName                = "/sttattus.dominion.v1.DominionService/RsvpSalon"
+	DominionService_ListMySalonRsvps_FullMethodName         = "/sttattus.dominion.v1.DominionService/ListMySalonRsvps"
+	DominionService_GetPropertyFinancials_FullMethodName    = "/sttattus.dominion.v1.DominionService/GetPropertyFinancials"
+	DominionService_UpsertPropertyFinancials_FullMethodName = "/sttattus.dominion.v1.DominionService/UpsertPropertyFinancials"
+	DominionService_GetPortfolioYield_FullMethodName        = "/sttattus.dominion.v1.DominionService/GetPortfolioYield"
+	DominionService_ListRegionIntel_FullMethodName          = "/sttattus.dominion.v1.DominionService/ListRegionIntel"
+	DominionService_GetRegionIntel_FullMethodName           = "/sttattus.dominion.v1.DominionService/GetRegionIntel"
+	DominionService_GetTerritoryAllocation_FullMethodName   = "/sttattus.dominion.v1.DominionService/GetTerritoryAllocation"
+	DominionService_GetTodaySummary_FullMethodName          = "/sttattus.dominion.v1.DominionService/GetTodaySummary"
+	DominionService_StartConciergeThread_FullMethodName     = "/sttattus.dominion.v1.DominionService/StartConciergeThread"
+	DominionService_ListMyConciergeThreads_FullMethodName   = "/sttattus.dominion.v1.DominionService/ListMyConciergeThreads"
+	DominionService_GetConciergeThread_FullMethodName       = "/sttattus.dominion.v1.DominionService/GetConciergeThread"
+	DominionService_PostConciergeMessage_FullMethodName     = "/sttattus.dominion.v1.DominionService/PostConciergeMessage"
+	DominionService_ListAnthologyArticles_FullMethodName    = "/sttattus.dominion.v1.DominionService/ListAnthologyArticles"
+	DominionService_GetAnthologyArticle_FullMethodName      = "/sttattus.dominion.v1.DominionService/GetAnthologyArticle"
+	DominionService_ListDirectory_FullMethodName            = "/sttattus.dominion.v1.DominionService/ListDirectory"
+	DominionService_ListOffMarket_FullMethodName            = "/sttattus.dominion.v1.DominionService/ListOffMarket"
+	DominionService_GetOffMarket_FullMethodName             = "/sttattus.dominion.v1.DominionService/GetOffMarket"
+	DominionService_ParseDeed_FullMethodName                = "/sttattus.dominion.v1.DominionService/ParseDeed"
+	DominionService_CreateDominionShare_FullMethodName      = "/sttattus.dominion.v1.DominionService/CreateDominionShare"
+	DominionService_ListMyDominionShares_FullMethodName     = "/sttattus.dominion.v1.DominionService/ListMyDominionShares"
+	DominionService_RevokeDominionShare_FullMethodName      = "/sttattus.dominion.v1.DominionService/RevokeDominionShare"
+	DominionService_GenerateDominionAlmanac_FullMethodName  = "/sttattus.dominion.v1.DominionService/GenerateDominionAlmanac"
+	DominionService_CreateLoungePass_FullMethodName         = "/sttattus.dominion.v1.DominionService/CreateLoungePass"
+	DominionService_ListMyLoungePasses_FullMethodName       = "/sttattus.dominion.v1.DominionService/ListMyLoungePasses"
 )
 
 // DominionServiceClient is the client API for DominionService service.
@@ -50,6 +79,48 @@ type DominionServiceClient interface {
 	AdminReviewDeed(ctx context.Context, in *AdminReviewDeedRequest, opts ...grpc.CallOption) (*AdminReviewDeedResponse, error)
 	// D14.7 — lounge directory.
 	ListLounges(ctx context.Context, in *ListLoungesRequest, opts ...grpc.CallOption) (*ListLoungesResponse, error)
+	// D14.9 — lounge events + salons.
+	ListLoungeEvents(ctx context.Context, in *ListLoungeEventsRequest, opts ...grpc.CallOption) (*ListLoungeEventsResponse, error)
+	RsvpLoungeEvent(ctx context.Context, in *RsvpLoungeEventRequest, opts ...grpc.CallOption) (*RsvpLoungeEventResponse, error)
+	ListMyLoungeRsvps(ctx context.Context, in *ListMyLoungeRsvpsRequest, opts ...grpc.CallOption) (*ListMyLoungeRsvpsResponse, error)
+	ListSalons(ctx context.Context, in *ListSalonsRequest, opts ...grpc.CallOption) (*ListSalonsResponse, error)
+	RsvpSalon(ctx context.Context, in *RsvpSalonRequest, opts ...grpc.CallOption) (*RsvpSalonResponse, error)
+	ListMySalonRsvps(ctx context.Context, in *ListMySalonRsvpsRequest, opts ...grpc.CallOption) (*ListMySalonRsvpsResponse, error)
+	// D14.10 — per-property yield / portfolio financials.
+	GetPropertyFinancials(ctx context.Context, in *GetPropertyFinancialsRequest, opts ...grpc.CallOption) (*GetPropertyFinancialsResponse, error)
+	UpsertPropertyFinancials(ctx context.Context, in *UpsertPropertyFinancialsRequest, opts ...grpc.CallOption) (*UpsertPropertyFinancialsResponse, error)
+	GetPortfolioYield(ctx context.Context, in *GetPortfolioYieldRequest, opts ...grpc.CallOption) (*GetPortfolioYieldResponse, error)
+	// D14.11 — region intelligence.
+	ListRegionIntel(ctx context.Context, in *ListRegionIntelRequest, opts ...grpc.CallOption) (*ListRegionIntelResponse, error)
+	GetRegionIntel(ctx context.Context, in *GetRegionIntelRequest, opts ...grpc.CallOption) (*GetRegionIntelResponse, error)
+	// D14.12 — cross-pillar allocation contract (Vault).
+	GetTerritoryAllocation(ctx context.Context, in *GetTerritoryAllocationRequest, opts ...grpc.CallOption) (*GetTerritoryAllocationResponse, error)
+	// D14.13 — today summary.
+	GetTodaySummary(ctx context.Context, in *GetTodaySummaryRequest, opts ...grpc.CallOption) (*GetTodaySummaryResponse, error)
+	// D14.14 — concierge property desk (Sovereign).
+	StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error)
+	ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error)
+	GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error)
+	PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error)
+	// D14.15 — editorial anthology.
+	ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error)
+	// D14.16 — architect / designer directory.
+	ListDirectory(ctx context.Context, in *ListDirectoryRequest, opts ...grpc.CallOption) (*ListDirectoryResponse, error)
+	// D14.17 — off-market opportunities (Sovereign).
+	ListOffMarket(ctx context.Context, in *ListOffMarketRequest, opts ...grpc.CallOption) (*ListOffMarketResponse, error)
+	GetOffMarket(ctx context.Context, in *GetOffMarketRequest, opts ...grpc.CallOption) (*GetOffMarketResponse, error)
+	// D14.19 — real deed parser.
+	ParseDeed(ctx context.Context, in *ParseDeedRequest, opts ...grpc.CallOption) (*ParseDeedResponse, error)
+	// D14.20 — public Dominion profile share.
+	CreateDominionShare(ctx context.Context, in *CreateDominionShareRequest, opts ...grpc.CallOption) (*CreateDominionShareResponse, error)
+	ListMyDominionShares(ctx context.Context, in *ListMyDominionSharesRequest, opts ...grpc.CallOption) (*ListMyDominionSharesResponse, error)
+	RevokeDominionShare(ctx context.Context, in *RevokeDominionShareRequest, opts ...grpc.CallOption) (*RevokeDominionShareResponse, error)
+	// D14.21 — annual Dominion Almanac.
+	GenerateDominionAlmanac(ctx context.Context, in *GenerateDominionAlmanacRequest, opts ...grpc.CallOption) (*GenerateDominionAlmanacResponse, error)
+	// D14.22 — lounge access pass.
+	CreateLoungePass(ctx context.Context, in *CreateLoungePassRequest, opts ...grpc.CallOption) (*CreateLoungePassResponse, error)
+	ListMyLoungePasses(ctx context.Context, in *ListMyLoungePassesRequest, opts ...grpc.CallOption) (*ListMyLoungePassesResponse, error)
 }
 
 type dominionServiceClient struct {
@@ -160,6 +231,296 @@ func (c *dominionServiceClient) ListLounges(ctx context.Context, in *ListLounges
 	return out, nil
 }
 
+func (c *dominionServiceClient) ListLoungeEvents(ctx context.Context, in *ListLoungeEventsRequest, opts ...grpc.CallOption) (*ListLoungeEventsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLoungeEventsResponse)
+	err := c.cc.Invoke(ctx, DominionService_ListLoungeEvents_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) RsvpLoungeEvent(ctx context.Context, in *RsvpLoungeEventRequest, opts ...grpc.CallOption) (*RsvpLoungeEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RsvpLoungeEventResponse)
+	err := c.cc.Invoke(ctx, DominionService_RsvpLoungeEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ListMyLoungeRsvps(ctx context.Context, in *ListMyLoungeRsvpsRequest, opts ...grpc.CallOption) (*ListMyLoungeRsvpsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyLoungeRsvpsResponse)
+	err := c.cc.Invoke(ctx, DominionService_ListMyLoungeRsvps_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ListSalons(ctx context.Context, in *ListSalonsRequest, opts ...grpc.CallOption) (*ListSalonsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListSalonsResponse)
+	err := c.cc.Invoke(ctx, DominionService_ListSalons_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) RsvpSalon(ctx context.Context, in *RsvpSalonRequest, opts ...grpc.CallOption) (*RsvpSalonResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RsvpSalonResponse)
+	err := c.cc.Invoke(ctx, DominionService_RsvpSalon_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ListMySalonRsvps(ctx context.Context, in *ListMySalonRsvpsRequest, opts ...grpc.CallOption) (*ListMySalonRsvpsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMySalonRsvpsResponse)
+	err := c.cc.Invoke(ctx, DominionService_ListMySalonRsvps_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetPropertyFinancials(ctx context.Context, in *GetPropertyFinancialsRequest, opts ...grpc.CallOption) (*GetPropertyFinancialsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPropertyFinancialsResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetPropertyFinancials_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) UpsertPropertyFinancials(ctx context.Context, in *UpsertPropertyFinancialsRequest, opts ...grpc.CallOption) (*UpsertPropertyFinancialsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertPropertyFinancialsResponse)
+	err := c.cc.Invoke(ctx, DominionService_UpsertPropertyFinancials_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetPortfolioYield(ctx context.Context, in *GetPortfolioYieldRequest, opts ...grpc.CallOption) (*GetPortfolioYieldResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPortfolioYieldResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetPortfolioYield_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ListRegionIntel(ctx context.Context, in *ListRegionIntelRequest, opts ...grpc.CallOption) (*ListRegionIntelResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListRegionIntelResponse)
+	err := c.cc.Invoke(ctx, DominionService_ListRegionIntel_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetRegionIntel(ctx context.Context, in *GetRegionIntelRequest, opts ...grpc.CallOption) (*GetRegionIntelResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetRegionIntelResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetRegionIntel_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetTerritoryAllocation(ctx context.Context, in *GetTerritoryAllocationRequest, opts ...grpc.CallOption) (*GetTerritoryAllocationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTerritoryAllocationResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetTerritoryAllocation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetTodaySummary(ctx context.Context, in *GetTodaySummaryRequest, opts ...grpc.CallOption) (*GetTodaySummaryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTodaySummaryResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetTodaySummary_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StartConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, DominionService_StartConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyConciergeThreadsResponse)
+	err := c.cc.Invoke(ctx, DominionService_ListMyConciergeThreads_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PostConciergeMessageResponse)
+	err := c.cc.Invoke(ctx, DominionService_PostConciergeMessage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAnthologyArticlesResponse)
+	err := c.cc.Invoke(ctx, DominionService_ListAnthologyArticles_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAnthologyArticleResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetAnthologyArticle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ListDirectory(ctx context.Context, in *ListDirectoryRequest, opts ...grpc.CallOption) (*ListDirectoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDirectoryResponse)
+	err := c.cc.Invoke(ctx, DominionService_ListDirectory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ListOffMarket(ctx context.Context, in *ListOffMarketRequest, opts ...grpc.CallOption) (*ListOffMarketResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListOffMarketResponse)
+	err := c.cc.Invoke(ctx, DominionService_ListOffMarket_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetOffMarket(ctx context.Context, in *GetOffMarketRequest, opts ...grpc.CallOption) (*GetOffMarketResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetOffMarketResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetOffMarket_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ParseDeed(ctx context.Context, in *ParseDeedRequest, opts ...grpc.CallOption) (*ParseDeedResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ParseDeedResponse)
+	err := c.cc.Invoke(ctx, DominionService_ParseDeed_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) CreateDominionShare(ctx context.Context, in *CreateDominionShareRequest, opts ...grpc.CallOption) (*CreateDominionShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateDominionShareResponse)
+	err := c.cc.Invoke(ctx, DominionService_CreateDominionShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ListMyDominionShares(ctx context.Context, in *ListMyDominionSharesRequest, opts ...grpc.CallOption) (*ListMyDominionSharesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyDominionSharesResponse)
+	err := c.cc.Invoke(ctx, DominionService_ListMyDominionShares_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) RevokeDominionShare(ctx context.Context, in *RevokeDominionShareRequest, opts ...grpc.CallOption) (*RevokeDominionShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeDominionShareResponse)
+	err := c.cc.Invoke(ctx, DominionService_RevokeDominionShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GenerateDominionAlmanac(ctx context.Context, in *GenerateDominionAlmanacRequest, opts ...grpc.CallOption) (*GenerateDominionAlmanacResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateDominionAlmanacResponse)
+	err := c.cc.Invoke(ctx, DominionService_GenerateDominionAlmanac_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) CreateLoungePass(ctx context.Context, in *CreateLoungePassRequest, opts ...grpc.CallOption) (*CreateLoungePassResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateLoungePassResponse)
+	err := c.cc.Invoke(ctx, DominionService_CreateLoungePass_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ListMyLoungePasses(ctx context.Context, in *ListMyLoungePassesRequest, opts ...grpc.CallOption) (*ListMyLoungePassesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyLoungePassesResponse)
+	err := c.cc.Invoke(ctx, DominionService_ListMyLoungePasses_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DominionServiceServer is the server API for DominionService service.
 // All implementations must embed UnimplementedDominionServiceServer
 // for forward compatibility.
@@ -179,6 +540,48 @@ type DominionServiceServer interface {
 	AdminReviewDeed(context.Context, *AdminReviewDeedRequest) (*AdminReviewDeedResponse, error)
 	// D14.7 — lounge directory.
 	ListLounges(context.Context, *ListLoungesRequest) (*ListLoungesResponse, error)
+	// D14.9 — lounge events + salons.
+	ListLoungeEvents(context.Context, *ListLoungeEventsRequest) (*ListLoungeEventsResponse, error)
+	RsvpLoungeEvent(context.Context, *RsvpLoungeEventRequest) (*RsvpLoungeEventResponse, error)
+	ListMyLoungeRsvps(context.Context, *ListMyLoungeRsvpsRequest) (*ListMyLoungeRsvpsResponse, error)
+	ListSalons(context.Context, *ListSalonsRequest) (*ListSalonsResponse, error)
+	RsvpSalon(context.Context, *RsvpSalonRequest) (*RsvpSalonResponse, error)
+	ListMySalonRsvps(context.Context, *ListMySalonRsvpsRequest) (*ListMySalonRsvpsResponse, error)
+	// D14.10 — per-property yield / portfolio financials.
+	GetPropertyFinancials(context.Context, *GetPropertyFinancialsRequest) (*GetPropertyFinancialsResponse, error)
+	UpsertPropertyFinancials(context.Context, *UpsertPropertyFinancialsRequest) (*UpsertPropertyFinancialsResponse, error)
+	GetPortfolioYield(context.Context, *GetPortfolioYieldRequest) (*GetPortfolioYieldResponse, error)
+	// D14.11 — region intelligence.
+	ListRegionIntel(context.Context, *ListRegionIntelRequest) (*ListRegionIntelResponse, error)
+	GetRegionIntel(context.Context, *GetRegionIntelRequest) (*GetRegionIntelResponse, error)
+	// D14.12 — cross-pillar allocation contract (Vault).
+	GetTerritoryAllocation(context.Context, *GetTerritoryAllocationRequest) (*GetTerritoryAllocationResponse, error)
+	// D14.13 — today summary.
+	GetTodaySummary(context.Context, *GetTodaySummaryRequest) (*GetTodaySummaryResponse, error)
+	// D14.14 — concierge property desk (Sovereign).
+	StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error)
+	ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error)
+	GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error)
+	PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error)
+	// D14.15 — editorial anthology.
+	ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error)
+	// D14.16 — architect / designer directory.
+	ListDirectory(context.Context, *ListDirectoryRequest) (*ListDirectoryResponse, error)
+	// D14.17 — off-market opportunities (Sovereign).
+	ListOffMarket(context.Context, *ListOffMarketRequest) (*ListOffMarketResponse, error)
+	GetOffMarket(context.Context, *GetOffMarketRequest) (*GetOffMarketResponse, error)
+	// D14.19 — real deed parser.
+	ParseDeed(context.Context, *ParseDeedRequest) (*ParseDeedResponse, error)
+	// D14.20 — public Dominion profile share.
+	CreateDominionShare(context.Context, *CreateDominionShareRequest) (*CreateDominionShareResponse, error)
+	ListMyDominionShares(context.Context, *ListMyDominionSharesRequest) (*ListMyDominionSharesResponse, error)
+	RevokeDominionShare(context.Context, *RevokeDominionShareRequest) (*RevokeDominionShareResponse, error)
+	// D14.21 — annual Dominion Almanac.
+	GenerateDominionAlmanac(context.Context, *GenerateDominionAlmanacRequest) (*GenerateDominionAlmanacResponse, error)
+	// D14.22 — lounge access pass.
+	CreateLoungePass(context.Context, *CreateLoungePassRequest) (*CreateLoungePassResponse, error)
+	ListMyLoungePasses(context.Context, *ListMyLoungePassesRequest) (*ListMyLoungePassesResponse, error)
 	mustEmbedUnimplementedDominionServiceServer()
 }
 
@@ -218,6 +621,93 @@ func (UnimplementedDominionServiceServer) AdminReviewDeed(context.Context, *Admi
 }
 func (UnimplementedDominionServiceServer) ListLounges(context.Context, *ListLoungesRequest) (*ListLoungesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListLounges not implemented")
+}
+func (UnimplementedDominionServiceServer) ListLoungeEvents(context.Context, *ListLoungeEventsRequest) (*ListLoungeEventsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLoungeEvents not implemented")
+}
+func (UnimplementedDominionServiceServer) RsvpLoungeEvent(context.Context, *RsvpLoungeEventRequest) (*RsvpLoungeEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RsvpLoungeEvent not implemented")
+}
+func (UnimplementedDominionServiceServer) ListMyLoungeRsvps(context.Context, *ListMyLoungeRsvpsRequest) (*ListMyLoungeRsvpsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyLoungeRsvps not implemented")
+}
+func (UnimplementedDominionServiceServer) ListSalons(context.Context, *ListSalonsRequest) (*ListSalonsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListSalons not implemented")
+}
+func (UnimplementedDominionServiceServer) RsvpSalon(context.Context, *RsvpSalonRequest) (*RsvpSalonResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RsvpSalon not implemented")
+}
+func (UnimplementedDominionServiceServer) ListMySalonRsvps(context.Context, *ListMySalonRsvpsRequest) (*ListMySalonRsvpsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMySalonRsvps not implemented")
+}
+func (UnimplementedDominionServiceServer) GetPropertyFinancials(context.Context, *GetPropertyFinancialsRequest) (*GetPropertyFinancialsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPropertyFinancials not implemented")
+}
+func (UnimplementedDominionServiceServer) UpsertPropertyFinancials(context.Context, *UpsertPropertyFinancialsRequest) (*UpsertPropertyFinancialsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertPropertyFinancials not implemented")
+}
+func (UnimplementedDominionServiceServer) GetPortfolioYield(context.Context, *GetPortfolioYieldRequest) (*GetPortfolioYieldResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPortfolioYield not implemented")
+}
+func (UnimplementedDominionServiceServer) ListRegionIntel(context.Context, *ListRegionIntelRequest) (*ListRegionIntelResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListRegionIntel not implemented")
+}
+func (UnimplementedDominionServiceServer) GetRegionIntel(context.Context, *GetRegionIntelRequest) (*GetRegionIntelResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetRegionIntel not implemented")
+}
+func (UnimplementedDominionServiceServer) GetTerritoryAllocation(context.Context, *GetTerritoryAllocationRequest) (*GetTerritoryAllocationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTerritoryAllocation not implemented")
+}
+func (UnimplementedDominionServiceServer) GetTodaySummary(context.Context, *GetTodaySummaryRequest) (*GetTodaySummaryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTodaySummary not implemented")
+}
+func (UnimplementedDominionServiceServer) StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StartConciergeThread not implemented")
+}
+func (UnimplementedDominionServiceServer) ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyConciergeThreads not implemented")
+}
+func (UnimplementedDominionServiceServer) GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetConciergeThread not implemented")
+}
+func (UnimplementedDominionServiceServer) PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PostConciergeMessage not implemented")
+}
+func (UnimplementedDominionServiceServer) ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAnthologyArticles not implemented")
+}
+func (UnimplementedDominionServiceServer) GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAnthologyArticle not implemented")
+}
+func (UnimplementedDominionServiceServer) ListDirectory(context.Context, *ListDirectoryRequest) (*ListDirectoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListDirectory not implemented")
+}
+func (UnimplementedDominionServiceServer) ListOffMarket(context.Context, *ListOffMarketRequest) (*ListOffMarketResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListOffMarket not implemented")
+}
+func (UnimplementedDominionServiceServer) GetOffMarket(context.Context, *GetOffMarketRequest) (*GetOffMarketResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetOffMarket not implemented")
+}
+func (UnimplementedDominionServiceServer) ParseDeed(context.Context, *ParseDeedRequest) (*ParseDeedResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ParseDeed not implemented")
+}
+func (UnimplementedDominionServiceServer) CreateDominionShare(context.Context, *CreateDominionShareRequest) (*CreateDominionShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateDominionShare not implemented")
+}
+func (UnimplementedDominionServiceServer) ListMyDominionShares(context.Context, *ListMyDominionSharesRequest) (*ListMyDominionSharesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyDominionShares not implemented")
+}
+func (UnimplementedDominionServiceServer) RevokeDominionShare(context.Context, *RevokeDominionShareRequest) (*RevokeDominionShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeDominionShare not implemented")
+}
+func (UnimplementedDominionServiceServer) GenerateDominionAlmanac(context.Context, *GenerateDominionAlmanacRequest) (*GenerateDominionAlmanacResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateDominionAlmanac not implemented")
+}
+func (UnimplementedDominionServiceServer) CreateLoungePass(context.Context, *CreateLoungePassRequest) (*CreateLoungePassResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateLoungePass not implemented")
+}
+func (UnimplementedDominionServiceServer) ListMyLoungePasses(context.Context, *ListMyLoungePassesRequest) (*ListMyLoungePassesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyLoungePasses not implemented")
 }
 func (UnimplementedDominionServiceServer) mustEmbedUnimplementedDominionServiceServer() {}
 func (UnimplementedDominionServiceServer) testEmbeddedByValue()                         {}
@@ -420,6 +910,528 @@ func _DominionService_ListLounges_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DominionService_ListLoungeEvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLoungeEventsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ListLoungeEvents(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ListLoungeEvents_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ListLoungeEvents(ctx, req.(*ListLoungeEventsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_RsvpLoungeEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RsvpLoungeEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).RsvpLoungeEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_RsvpLoungeEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).RsvpLoungeEvent(ctx, req.(*RsvpLoungeEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ListMyLoungeRsvps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyLoungeRsvpsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ListMyLoungeRsvps(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ListMyLoungeRsvps_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ListMyLoungeRsvps(ctx, req.(*ListMyLoungeRsvpsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ListSalons_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSalonsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ListSalons(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ListSalons_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ListSalons(ctx, req.(*ListSalonsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_RsvpSalon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RsvpSalonRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).RsvpSalon(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_RsvpSalon_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).RsvpSalon(ctx, req.(*RsvpSalonRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ListMySalonRsvps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMySalonRsvpsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ListMySalonRsvps(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ListMySalonRsvps_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ListMySalonRsvps(ctx, req.(*ListMySalonRsvpsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetPropertyFinancials_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPropertyFinancialsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetPropertyFinancials(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetPropertyFinancials_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetPropertyFinancials(ctx, req.(*GetPropertyFinancialsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_UpsertPropertyFinancials_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertPropertyFinancialsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).UpsertPropertyFinancials(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_UpsertPropertyFinancials_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).UpsertPropertyFinancials(ctx, req.(*UpsertPropertyFinancialsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetPortfolioYield_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPortfolioYieldRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetPortfolioYield(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetPortfolioYield_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetPortfolioYield(ctx, req.(*GetPortfolioYieldRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ListRegionIntel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRegionIntelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ListRegionIntel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ListRegionIntel_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ListRegionIntel(ctx, req.(*ListRegionIntelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetRegionIntel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRegionIntelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetRegionIntel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetRegionIntel_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetRegionIntel(ctx, req.(*GetRegionIntelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetTerritoryAllocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTerritoryAllocationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetTerritoryAllocation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetTerritoryAllocation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetTerritoryAllocation(ctx, req.(*GetTerritoryAllocationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetTodaySummary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTodaySummaryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetTodaySummary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetTodaySummary_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetTodaySummary(ctx, req.(*GetTodaySummaryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_StartConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StartConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).StartConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_StartConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).StartConciergeThread(ctx, req.(*StartConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ListMyConciergeThreads_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyConciergeThreadsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ListMyConciergeThreads(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ListMyConciergeThreads_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ListMyConciergeThreads(ctx, req.(*ListMyConciergeThreadsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetConciergeThread(ctx, req.(*GetConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_PostConciergeMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostConciergeMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).PostConciergeMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_PostConciergeMessage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).PostConciergeMessage(ctx, req.(*PostConciergeMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ListAnthologyArticles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAnthologyArticlesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ListAnthologyArticles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ListAnthologyArticles_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ListAnthologyArticles(ctx, req.(*ListAnthologyArticlesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetAnthologyArticle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnthologyArticleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetAnthologyArticle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetAnthologyArticle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetAnthologyArticle(ctx, req.(*GetAnthologyArticleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ListDirectory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListDirectoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ListDirectory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ListDirectory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ListDirectory(ctx, req.(*ListDirectoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ListOffMarket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListOffMarketRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ListOffMarket(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ListOffMarket_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ListOffMarket(ctx, req.(*ListOffMarketRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetOffMarket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOffMarketRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetOffMarket(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetOffMarket_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetOffMarket(ctx, req.(*GetOffMarketRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ParseDeed_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ParseDeedRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ParseDeed(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ParseDeed_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ParseDeed(ctx, req.(*ParseDeedRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_CreateDominionShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateDominionShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).CreateDominionShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_CreateDominionShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).CreateDominionShare(ctx, req.(*CreateDominionShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ListMyDominionShares_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyDominionSharesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ListMyDominionShares(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ListMyDominionShares_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ListMyDominionShares(ctx, req.(*ListMyDominionSharesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_RevokeDominionShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeDominionShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).RevokeDominionShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_RevokeDominionShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).RevokeDominionShare(ctx, req.(*RevokeDominionShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GenerateDominionAlmanac_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateDominionAlmanacRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GenerateDominionAlmanac(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GenerateDominionAlmanac_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GenerateDominionAlmanac(ctx, req.(*GenerateDominionAlmanacRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_CreateLoungePass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateLoungePassRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).CreateLoungePass(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_CreateLoungePass_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).CreateLoungePass(ctx, req.(*CreateLoungePassRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ListMyLoungePasses_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyLoungePassesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ListMyLoungePasses(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ListMyLoungePasses_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ListMyLoungePasses(ctx, req.(*ListMyLoungePassesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DominionService_ServiceDesc is the grpc.ServiceDesc for DominionService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -466,6 +1478,122 @@ var DominionService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListLounges",
 			Handler:    _DominionService_ListLounges_Handler,
+		},
+		{
+			MethodName: "ListLoungeEvents",
+			Handler:    _DominionService_ListLoungeEvents_Handler,
+		},
+		{
+			MethodName: "RsvpLoungeEvent",
+			Handler:    _DominionService_RsvpLoungeEvent_Handler,
+		},
+		{
+			MethodName: "ListMyLoungeRsvps",
+			Handler:    _DominionService_ListMyLoungeRsvps_Handler,
+		},
+		{
+			MethodName: "ListSalons",
+			Handler:    _DominionService_ListSalons_Handler,
+		},
+		{
+			MethodName: "RsvpSalon",
+			Handler:    _DominionService_RsvpSalon_Handler,
+		},
+		{
+			MethodName: "ListMySalonRsvps",
+			Handler:    _DominionService_ListMySalonRsvps_Handler,
+		},
+		{
+			MethodName: "GetPropertyFinancials",
+			Handler:    _DominionService_GetPropertyFinancials_Handler,
+		},
+		{
+			MethodName: "UpsertPropertyFinancials",
+			Handler:    _DominionService_UpsertPropertyFinancials_Handler,
+		},
+		{
+			MethodName: "GetPortfolioYield",
+			Handler:    _DominionService_GetPortfolioYield_Handler,
+		},
+		{
+			MethodName: "ListRegionIntel",
+			Handler:    _DominionService_ListRegionIntel_Handler,
+		},
+		{
+			MethodName: "GetRegionIntel",
+			Handler:    _DominionService_GetRegionIntel_Handler,
+		},
+		{
+			MethodName: "GetTerritoryAllocation",
+			Handler:    _DominionService_GetTerritoryAllocation_Handler,
+		},
+		{
+			MethodName: "GetTodaySummary",
+			Handler:    _DominionService_GetTodaySummary_Handler,
+		},
+		{
+			MethodName: "StartConciergeThread",
+			Handler:    _DominionService_StartConciergeThread_Handler,
+		},
+		{
+			MethodName: "ListMyConciergeThreads",
+			Handler:    _DominionService_ListMyConciergeThreads_Handler,
+		},
+		{
+			MethodName: "GetConciergeThread",
+			Handler:    _DominionService_GetConciergeThread_Handler,
+		},
+		{
+			MethodName: "PostConciergeMessage",
+			Handler:    _DominionService_PostConciergeMessage_Handler,
+		},
+		{
+			MethodName: "ListAnthologyArticles",
+			Handler:    _DominionService_ListAnthologyArticles_Handler,
+		},
+		{
+			MethodName: "GetAnthologyArticle",
+			Handler:    _DominionService_GetAnthologyArticle_Handler,
+		},
+		{
+			MethodName: "ListDirectory",
+			Handler:    _DominionService_ListDirectory_Handler,
+		},
+		{
+			MethodName: "ListOffMarket",
+			Handler:    _DominionService_ListOffMarket_Handler,
+		},
+		{
+			MethodName: "GetOffMarket",
+			Handler:    _DominionService_GetOffMarket_Handler,
+		},
+		{
+			MethodName: "ParseDeed",
+			Handler:    _DominionService_ParseDeed_Handler,
+		},
+		{
+			MethodName: "CreateDominionShare",
+			Handler:    _DominionService_CreateDominionShare_Handler,
+		},
+		{
+			MethodName: "ListMyDominionShares",
+			Handler:    _DominionService_ListMyDominionShares_Handler,
+		},
+		{
+			MethodName: "RevokeDominionShare",
+			Handler:    _DominionService_RevokeDominionShare_Handler,
+		},
+		{
+			MethodName: "GenerateDominionAlmanac",
+			Handler:    _DominionService_GenerateDominionAlmanac_Handler,
+		},
+		{
+			MethodName: "CreateLoungePass",
+			Handler:    _DominionService_CreateLoungePass_Handler,
+		},
+		{
+			MethodName: "ListMyLoungePasses",
+			Handler:    _DominionService_ListMyLoungePasses_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

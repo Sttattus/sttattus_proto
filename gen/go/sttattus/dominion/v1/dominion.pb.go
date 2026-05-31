@@ -908,8 +908,11 @@ type Deed struct {
 	AdminNote       string                 `protobuf:"bytes,6,opt,name=admin_note,json=adminNote,proto3" json:"admin_note,omitempty"`
 	SubmittedAtUnix int64                  `protobuf:"varint,7,opt,name=submitted_at_unix,json=submittedAtUnix,proto3" json:"submitted_at_unix,omitempty"`
 	DecidedAtUnix   int64                  `protobuf:"varint,8,opt,name=decided_at_unix,json=decidedAtUnix,proto3" json:"decided_at_unix,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	// D14.18 — private registry metadata (parcel no., registry ref).
+	// Encrypted at rest (AES-GCM); decrypted only for the owner on read.
+	Details       string `protobuf:"bytes,9,opt,name=details,proto3" json:"details,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Deed) Reset() {
@@ -998,11 +1001,19 @@ func (x *Deed) GetDecidedAtUnix() int64 {
 	return 0
 }
 
+func (x *Deed) GetDetails() string {
+	if x != nil {
+		return x.Details
+	}
+	return ""
+}
+
 type SubmitDeedRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	PropertyId    string                 `protobuf:"bytes,1,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
 	FileUrl       string                 `protobuf:"bytes,2,opt,name=file_url,json=fileUrl,proto3" json:"file_url,omitempty"`
 	Kind          string                 `protobuf:"bytes,3,opt,name=kind,proto3" json:"kind,omitempty"`
+	Details       string                 `protobuf:"bytes,4,opt,name=details,proto3" json:"details,omitempty"` // optional private registry metadata (encrypted at rest)
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1054,6 +1065,13 @@ func (x *SubmitDeedRequest) GetFileUrl() string {
 func (x *SubmitDeedRequest) GetKind() string {
 	if x != nil {
 		return x.Kind
+	}
+	return ""
+}
+
+func (x *SubmitDeedRequest) GetDetails() string {
+	if x != nil {
+		return x.Details
 	}
 	return ""
 }
@@ -1571,6 +1589,4006 @@ func (x *EstimatePropertyValueResponse) GetFromCache() bool {
 	return false
 }
 
+type LoungeEvent struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	LoungeId      string                 `protobuf:"bytes,2,opt,name=lounge_id,json=loungeId,proto3" json:"lounge_id,omitempty"`
+	LoungeName    string                 `protobuf:"bytes,3,opt,name=lounge_name,json=loungeName,proto3" json:"lounge_name,omitempty"`
+	LoungeCity    string                 `protobuf:"bytes,4,opt,name=lounge_city,json=loungeCity,proto3" json:"lounge_city,omitempty"`
+	Title         string                 `protobuf:"bytes,5,opt,name=title,proto3" json:"title,omitempty"`
+	Description   string                 `protobuf:"bytes,6,opt,name=description,proto3" json:"description,omitempty"`
+	MinTier       string                 `protobuf:"bytes,7,opt,name=min_tier,json=minTier,proto3" json:"min_tier,omitempty"`
+	StartsAtUnix  int64                  `protobuf:"varint,8,opt,name=starts_at_unix,json=startsAtUnix,proto3" json:"starts_at_unix,omitempty"`
+	EndsAtUnix    int64                  `protobuf:"varint,9,opt,name=ends_at_unix,json=endsAtUnix,proto3" json:"ends_at_unix,omitempty"`
+	Rsvped        bool                   `protobuf:"varint,10,opt,name=rsvped,proto3" json:"rsvped,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LoungeEvent) Reset() {
+	*x = LoungeEvent{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LoungeEvent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LoungeEvent) ProtoMessage() {}
+
+func (x *LoungeEvent) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LoungeEvent.ProtoReflect.Descriptor instead.
+func (*LoungeEvent) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *LoungeEvent) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LoungeEvent) GetLoungeId() string {
+	if x != nil {
+		return x.LoungeId
+	}
+	return ""
+}
+
+func (x *LoungeEvent) GetLoungeName() string {
+	if x != nil {
+		return x.LoungeName
+	}
+	return ""
+}
+
+func (x *LoungeEvent) GetLoungeCity() string {
+	if x != nil {
+		return x.LoungeCity
+	}
+	return ""
+}
+
+func (x *LoungeEvent) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *LoungeEvent) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *LoungeEvent) GetMinTier() string {
+	if x != nil {
+		return x.MinTier
+	}
+	return ""
+}
+
+func (x *LoungeEvent) GetStartsAtUnix() int64 {
+	if x != nil {
+		return x.StartsAtUnix
+	}
+	return 0
+}
+
+func (x *LoungeEvent) GetEndsAtUnix() int64 {
+	if x != nil {
+		return x.EndsAtUnix
+	}
+	return 0
+}
+
+func (x *LoungeEvent) GetRsvped() bool {
+	if x != nil {
+		return x.Rsvped
+	}
+	return false
+}
+
+type ListLoungeEventsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	LoungeId      string                 `protobuf:"bytes,1,opt,name=lounge_id,json=loungeId,proto3" json:"lounge_id,omitempty"` // empty => all upcoming events
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLoungeEventsRequest) Reset() {
+	*x = ListLoungeEventsRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLoungeEventsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLoungeEventsRequest) ProtoMessage() {}
+
+func (x *ListLoungeEventsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLoungeEventsRequest.ProtoReflect.Descriptor instead.
+func (*ListLoungeEventsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *ListLoungeEventsRequest) GetLoungeId() string {
+	if x != nil {
+		return x.LoungeId
+	}
+	return ""
+}
+
+type ListLoungeEventsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Events        []*LoungeEvent         `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLoungeEventsResponse) Reset() {
+	*x = ListLoungeEventsResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLoungeEventsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLoungeEventsResponse) ProtoMessage() {}
+
+func (x *ListLoungeEventsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLoungeEventsResponse.ProtoReflect.Descriptor instead.
+func (*ListLoungeEventsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *ListLoungeEventsResponse) GetEvents() []*LoungeEvent {
+	if x != nil {
+		return x.Events
+	}
+	return nil
+}
+
+type RsvpLoungeEventRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EventId       string                 `protobuf:"bytes,1,opt,name=event_id,json=eventId,proto3" json:"event_id,omitempty"`
+	Attending     bool                   `protobuf:"varint,2,opt,name=attending,proto3" json:"attending,omitempty"` // false => cancel
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RsvpLoungeEventRequest) Reset() {
+	*x = RsvpLoungeEventRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RsvpLoungeEventRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RsvpLoungeEventRequest) ProtoMessage() {}
+
+func (x *RsvpLoungeEventRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RsvpLoungeEventRequest.ProtoReflect.Descriptor instead.
+func (*RsvpLoungeEventRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *RsvpLoungeEventRequest) GetEventId() string {
+	if x != nil {
+		return x.EventId
+	}
+	return ""
+}
+
+func (x *RsvpLoungeEventRequest) GetAttending() bool {
+	if x != nil {
+		return x.Attending
+	}
+	return false
+}
+
+type RsvpLoungeEventResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Rsvped        bool                   `protobuf:"varint,1,opt,name=rsvped,proto3" json:"rsvped,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RsvpLoungeEventResponse) Reset() {
+	*x = RsvpLoungeEventResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[29]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RsvpLoungeEventResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RsvpLoungeEventResponse) ProtoMessage() {}
+
+func (x *RsvpLoungeEventResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[29]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RsvpLoungeEventResponse.ProtoReflect.Descriptor instead.
+func (*RsvpLoungeEventResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{29}
+}
+
+func (x *RsvpLoungeEventResponse) GetRsvped() bool {
+	if x != nil {
+		return x.Rsvped
+	}
+	return false
+}
+
+type ListMyLoungeRsvpsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyLoungeRsvpsRequest) Reset() {
+	*x = ListMyLoungeRsvpsRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[30]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyLoungeRsvpsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyLoungeRsvpsRequest) ProtoMessage() {}
+
+func (x *ListMyLoungeRsvpsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[30]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyLoungeRsvpsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyLoungeRsvpsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{30}
+}
+
+type ListMyLoungeRsvpsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Events        []*LoungeEvent         `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyLoungeRsvpsResponse) Reset() {
+	*x = ListMyLoungeRsvpsResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[31]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyLoungeRsvpsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyLoungeRsvpsResponse) ProtoMessage() {}
+
+func (x *ListMyLoungeRsvpsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[31]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyLoungeRsvpsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyLoungeRsvpsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{31}
+}
+
+func (x *ListMyLoungeRsvpsResponse) GetEvents() []*LoungeEvent {
+	if x != nil {
+		return x.Events
+	}
+	return nil
+}
+
+type Salon struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	City          string                 `protobuf:"bytes,4,opt,name=city,proto3" json:"city,omitempty"`
+	LoungeId      string                 `protobuf:"bytes,5,opt,name=lounge_id,json=loungeId,proto3" json:"lounge_id,omitempty"`
+	LoungeName    string                 `protobuf:"bytes,6,opt,name=lounge_name,json=loungeName,proto3" json:"lounge_name,omitempty"`
+	StartsAtUnix  int64                  `protobuf:"varint,7,opt,name=starts_at_unix,json=startsAtUnix,proto3" json:"starts_at_unix,omitempty"`
+	EndsAtUnix    int64                  `protobuf:"varint,8,opt,name=ends_at_unix,json=endsAtUnix,proto3" json:"ends_at_unix,omitempty"`
+	Capacity      int32                  `protobuf:"varint,9,opt,name=capacity,proto3" json:"capacity,omitempty"`
+	Reserved      int32                  `protobuf:"varint,10,opt,name=reserved,proto3" json:"reserved,omitempty"`
+	Status        string                 `protobuf:"bytes,11,opt,name=status,proto3" json:"status,omitempty"`
+	Rsvped        bool                   `protobuf:"varint,12,opt,name=rsvped,proto3" json:"rsvped,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Salon) Reset() {
+	*x = Salon{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[32]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Salon) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Salon) ProtoMessage() {}
+
+func (x *Salon) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[32]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Salon.ProtoReflect.Descriptor instead.
+func (*Salon) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{32}
+}
+
+func (x *Salon) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Salon) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *Salon) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *Salon) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *Salon) GetLoungeId() string {
+	if x != nil {
+		return x.LoungeId
+	}
+	return ""
+}
+
+func (x *Salon) GetLoungeName() string {
+	if x != nil {
+		return x.LoungeName
+	}
+	return ""
+}
+
+func (x *Salon) GetStartsAtUnix() int64 {
+	if x != nil {
+		return x.StartsAtUnix
+	}
+	return 0
+}
+
+func (x *Salon) GetEndsAtUnix() int64 {
+	if x != nil {
+		return x.EndsAtUnix
+	}
+	return 0
+}
+
+func (x *Salon) GetCapacity() int32 {
+	if x != nil {
+		return x.Capacity
+	}
+	return 0
+}
+
+func (x *Salon) GetReserved() int32 {
+	if x != nil {
+		return x.Reserved
+	}
+	return 0
+}
+
+func (x *Salon) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *Salon) GetRsvped() bool {
+	if x != nil {
+		return x.Rsvped
+	}
+	return false
+}
+
+type ListSalonsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListSalonsRequest) Reset() {
+	*x = ListSalonsRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[33]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListSalonsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSalonsRequest) ProtoMessage() {}
+
+func (x *ListSalonsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[33]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSalonsRequest.ProtoReflect.Descriptor instead.
+func (*ListSalonsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{33}
+}
+
+type ListSalonsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Salons        []*Salon               `protobuf:"bytes,1,rep,name=salons,proto3" json:"salons,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListSalonsResponse) Reset() {
+	*x = ListSalonsResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[34]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListSalonsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSalonsResponse) ProtoMessage() {}
+
+func (x *ListSalonsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[34]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSalonsResponse.ProtoReflect.Descriptor instead.
+func (*ListSalonsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *ListSalonsResponse) GetSalons() []*Salon {
+	if x != nil {
+		return x.Salons
+	}
+	return nil
+}
+
+type RsvpSalonRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SalonId       string                 `protobuf:"bytes,1,opt,name=salon_id,json=salonId,proto3" json:"salon_id,omitempty"`
+	Attending     bool                   `protobuf:"varint,2,opt,name=attending,proto3" json:"attending,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RsvpSalonRequest) Reset() {
+	*x = RsvpSalonRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[35]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RsvpSalonRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RsvpSalonRequest) ProtoMessage() {}
+
+func (x *RsvpSalonRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[35]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RsvpSalonRequest.ProtoReflect.Descriptor instead.
+func (*RsvpSalonRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *RsvpSalonRequest) GetSalonId() string {
+	if x != nil {
+		return x.SalonId
+	}
+	return ""
+}
+
+func (x *RsvpSalonRequest) GetAttending() bool {
+	if x != nil {
+		return x.Attending
+	}
+	return false
+}
+
+type RsvpSalonResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Rsvped        bool                   `protobuf:"varint,1,opt,name=rsvped,proto3" json:"rsvped,omitempty"`
+	Reserved      int32                  `protobuf:"varint,2,opt,name=reserved,proto3" json:"reserved,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RsvpSalonResponse) Reset() {
+	*x = RsvpSalonResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RsvpSalonResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RsvpSalonResponse) ProtoMessage() {}
+
+func (x *RsvpSalonResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[36]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RsvpSalonResponse.ProtoReflect.Descriptor instead.
+func (*RsvpSalonResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *RsvpSalonResponse) GetRsvped() bool {
+	if x != nil {
+		return x.Rsvped
+	}
+	return false
+}
+
+func (x *RsvpSalonResponse) GetReserved() int32 {
+	if x != nil {
+		return x.Reserved
+	}
+	return 0
+}
+
+type ListMySalonRsvpsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMySalonRsvpsRequest) Reset() {
+	*x = ListMySalonRsvpsRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[37]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMySalonRsvpsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMySalonRsvpsRequest) ProtoMessage() {}
+
+func (x *ListMySalonRsvpsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[37]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMySalonRsvpsRequest.ProtoReflect.Descriptor instead.
+func (*ListMySalonRsvpsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{37}
+}
+
+type ListMySalonRsvpsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Salons        []*Salon               `protobuf:"bytes,1,rep,name=salons,proto3" json:"salons,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMySalonRsvpsResponse) Reset() {
+	*x = ListMySalonRsvpsResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[38]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMySalonRsvpsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMySalonRsvpsResponse) ProtoMessage() {}
+
+func (x *ListMySalonRsvpsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[38]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMySalonRsvpsResponse.ProtoReflect.Descriptor instead.
+func (*ListMySalonRsvpsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *ListMySalonRsvpsResponse) GetSalons() []*Salon {
+	if x != nil {
+		return x.Salons
+	}
+	return nil
+}
+
+type PropertyFinancials struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	PropertyId         string                 `protobuf:"bytes,1,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	MonthlyRentUsd     float64                `protobuf:"fixed64,2,opt,name=monthly_rent_usd,json=monthlyRentUsd,proto3" json:"monthly_rent_usd,omitempty"`
+	MonthlyExpensesUsd float64                `protobuf:"fixed64,3,opt,name=monthly_expenses_usd,json=monthlyExpensesUsd,proto3" json:"monthly_expenses_usd,omitempty"`
+	AnnualNetIncomeUsd float64                `protobuf:"fixed64,4,opt,name=annual_net_income_usd,json=annualNetIncomeUsd,proto3" json:"annual_net_income_usd,omitempty"`
+	CapRatePct         float64                `protobuf:"fixed64,5,opt,name=cap_rate_pct,json=capRatePct,proto3" json:"cap_rate_pct,omitempty"` // net income / valuation
+	GrossYieldPct      float64                `protobuf:"fixed64,6,opt,name=gross_yield_pct,json=grossYieldPct,proto3" json:"gross_yield_pct,omitempty"`
+	OccupancyPct       float64                `protobuf:"fixed64,7,opt,name=occupancy_pct,json=occupancyPct,proto3" json:"occupancy_pct,omitempty"`
+	Currency           string                 `protobuf:"bytes,8,opt,name=currency,proto3" json:"currency,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *PropertyFinancials) Reset() {
+	*x = PropertyFinancials{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[39]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PropertyFinancials) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PropertyFinancials) ProtoMessage() {}
+
+func (x *PropertyFinancials) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[39]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PropertyFinancials.ProtoReflect.Descriptor instead.
+func (*PropertyFinancials) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{39}
+}
+
+func (x *PropertyFinancials) GetPropertyId() string {
+	if x != nil {
+		return x.PropertyId
+	}
+	return ""
+}
+
+func (x *PropertyFinancials) GetMonthlyRentUsd() float64 {
+	if x != nil {
+		return x.MonthlyRentUsd
+	}
+	return 0
+}
+
+func (x *PropertyFinancials) GetMonthlyExpensesUsd() float64 {
+	if x != nil {
+		return x.MonthlyExpensesUsd
+	}
+	return 0
+}
+
+func (x *PropertyFinancials) GetAnnualNetIncomeUsd() float64 {
+	if x != nil {
+		return x.AnnualNetIncomeUsd
+	}
+	return 0
+}
+
+func (x *PropertyFinancials) GetCapRatePct() float64 {
+	if x != nil {
+		return x.CapRatePct
+	}
+	return 0
+}
+
+func (x *PropertyFinancials) GetGrossYieldPct() float64 {
+	if x != nil {
+		return x.GrossYieldPct
+	}
+	return 0
+}
+
+func (x *PropertyFinancials) GetOccupancyPct() float64 {
+	if x != nil {
+		return x.OccupancyPct
+	}
+	return 0
+}
+
+func (x *PropertyFinancials) GetCurrency() string {
+	if x != nil {
+		return x.Currency
+	}
+	return ""
+}
+
+type GetPropertyFinancialsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	PropertyId    string                 `protobuf:"bytes,1,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPropertyFinancialsRequest) Reset() {
+	*x = GetPropertyFinancialsRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[40]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPropertyFinancialsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPropertyFinancialsRequest) ProtoMessage() {}
+
+func (x *GetPropertyFinancialsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[40]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPropertyFinancialsRequest.ProtoReflect.Descriptor instead.
+func (*GetPropertyFinancialsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *GetPropertyFinancialsRequest) GetPropertyId() string {
+	if x != nil {
+		return x.PropertyId
+	}
+	return ""
+}
+
+type GetPropertyFinancialsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Financials    *PropertyFinancials    `protobuf:"bytes,1,opt,name=financials,proto3" json:"financials,omitempty"`
+	Present       bool                   `protobuf:"varint,2,opt,name=present,proto3" json:"present,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPropertyFinancialsResponse) Reset() {
+	*x = GetPropertyFinancialsResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[41]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPropertyFinancialsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPropertyFinancialsResponse) ProtoMessage() {}
+
+func (x *GetPropertyFinancialsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[41]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPropertyFinancialsResponse.ProtoReflect.Descriptor instead.
+func (*GetPropertyFinancialsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *GetPropertyFinancialsResponse) GetFinancials() *PropertyFinancials {
+	if x != nil {
+		return x.Financials
+	}
+	return nil
+}
+
+func (x *GetPropertyFinancialsResponse) GetPresent() bool {
+	if x != nil {
+		return x.Present
+	}
+	return false
+}
+
+type UpsertPropertyFinancialsRequest struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	PropertyId         string                 `protobuf:"bytes,1,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	MonthlyRentUsd     float64                `protobuf:"fixed64,2,opt,name=monthly_rent_usd,json=monthlyRentUsd,proto3" json:"monthly_rent_usd,omitempty"`
+	MonthlyExpensesUsd float64                `protobuf:"fixed64,3,opt,name=monthly_expenses_usd,json=monthlyExpensesUsd,proto3" json:"monthly_expenses_usd,omitempty"`
+	OccupancyPct       float64                `protobuf:"fixed64,4,opt,name=occupancy_pct,json=occupancyPct,proto3" json:"occupancy_pct,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *UpsertPropertyFinancialsRequest) Reset() {
+	*x = UpsertPropertyFinancialsRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[42]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertPropertyFinancialsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertPropertyFinancialsRequest) ProtoMessage() {}
+
+func (x *UpsertPropertyFinancialsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[42]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertPropertyFinancialsRequest.ProtoReflect.Descriptor instead.
+func (*UpsertPropertyFinancialsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{42}
+}
+
+func (x *UpsertPropertyFinancialsRequest) GetPropertyId() string {
+	if x != nil {
+		return x.PropertyId
+	}
+	return ""
+}
+
+func (x *UpsertPropertyFinancialsRequest) GetMonthlyRentUsd() float64 {
+	if x != nil {
+		return x.MonthlyRentUsd
+	}
+	return 0
+}
+
+func (x *UpsertPropertyFinancialsRequest) GetMonthlyExpensesUsd() float64 {
+	if x != nil {
+		return x.MonthlyExpensesUsd
+	}
+	return 0
+}
+
+func (x *UpsertPropertyFinancialsRequest) GetOccupancyPct() float64 {
+	if x != nil {
+		return x.OccupancyPct
+	}
+	return 0
+}
+
+type UpsertPropertyFinancialsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Financials    *PropertyFinancials    `protobuf:"bytes,1,opt,name=financials,proto3" json:"financials,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertPropertyFinancialsResponse) Reset() {
+	*x = UpsertPropertyFinancialsResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[43]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertPropertyFinancialsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertPropertyFinancialsResponse) ProtoMessage() {}
+
+func (x *UpsertPropertyFinancialsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[43]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertPropertyFinancialsResponse.ProtoReflect.Descriptor instead.
+func (*UpsertPropertyFinancialsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *UpsertPropertyFinancialsResponse) GetFinancials() *PropertyFinancials {
+	if x != nil {
+		return x.Financials
+	}
+	return nil
+}
+
+type GetPortfolioYieldRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPortfolioYieldRequest) Reset() {
+	*x = GetPortfolioYieldRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[44]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPortfolioYieldRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPortfolioYieldRequest) ProtoMessage() {}
+
+func (x *GetPortfolioYieldRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[44]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPortfolioYieldRequest.ProtoReflect.Descriptor instead.
+func (*GetPortfolioYieldRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{44}
+}
+
+type GetPortfolioYieldResponse struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	TotalValueUsd      float64                `protobuf:"fixed64,1,opt,name=total_value_usd,json=totalValueUsd,proto3" json:"total_value_usd,omitempty"`
+	AnnualNetIncomeUsd float64                `protobuf:"fixed64,2,opt,name=annual_net_income_usd,json=annualNetIncomeUsd,proto3" json:"annual_net_income_usd,omitempty"`
+	BlendedCapRatePct  float64                `protobuf:"fixed64,3,opt,name=blended_cap_rate_pct,json=blendedCapRatePct,proto3" json:"blended_cap_rate_pct,omitempty"`
+	IncomeProperties   int32                  `protobuf:"varint,4,opt,name=income_properties,json=incomeProperties,proto3" json:"income_properties,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *GetPortfolioYieldResponse) Reset() {
+	*x = GetPortfolioYieldResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[45]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPortfolioYieldResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPortfolioYieldResponse) ProtoMessage() {}
+
+func (x *GetPortfolioYieldResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[45]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPortfolioYieldResponse.ProtoReflect.Descriptor instead.
+func (*GetPortfolioYieldResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{45}
+}
+
+func (x *GetPortfolioYieldResponse) GetTotalValueUsd() float64 {
+	if x != nil {
+		return x.TotalValueUsd
+	}
+	return 0
+}
+
+func (x *GetPortfolioYieldResponse) GetAnnualNetIncomeUsd() float64 {
+	if x != nil {
+		return x.AnnualNetIncomeUsd
+	}
+	return 0
+}
+
+func (x *GetPortfolioYieldResponse) GetBlendedCapRatePct() float64 {
+	if x != nil {
+		return x.BlendedCapRatePct
+	}
+	return 0
+}
+
+func (x *GetPortfolioYieldResponse) GetIncomeProperties() int32 {
+	if x != nil {
+		return x.IncomeProperties
+	}
+	return 0
+}
+
+type RegionIntel struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	RegionCode      string                 `protobuf:"bytes,1,opt,name=region_code,json=regionCode,proto3" json:"region_code,omitempty"`
+	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Headline        string                 `protobuf:"bytes,3,opt,name=headline,proto3" json:"headline,omitempty"`
+	YoyChangePct    float64                `protobuf:"fixed64,4,opt,name=yoy_change_pct,json=yoyChangePct,proto3" json:"yoy_change_pct,omitempty"`
+	AvgCapRatePct   float64                `protobuf:"fixed64,5,opt,name=avg_cap_rate_pct,json=avgCapRatePct,proto3" json:"avg_cap_rate_pct,omitempty"`
+	Trend           string                 `protobuf:"bytes,6,opt,name=trend,proto3" json:"trend,omitempty"` // 'rising' | 'cooling' | 'stable'
+	Commentary      string                 `protobuf:"bytes,7,opt,name=commentary,proto3" json:"commentary,omitempty"`
+	MyPropertyCount int32                  `protobuf:"varint,8,opt,name=my_property_count,json=myPropertyCount,proto3" json:"my_property_count,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *RegionIntel) Reset() {
+	*x = RegionIntel{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[46]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RegionIntel) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegionIntel) ProtoMessage() {}
+
+func (x *RegionIntel) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[46]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegionIntel.ProtoReflect.Descriptor instead.
+func (*RegionIntel) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{46}
+}
+
+func (x *RegionIntel) GetRegionCode() string {
+	if x != nil {
+		return x.RegionCode
+	}
+	return ""
+}
+
+func (x *RegionIntel) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *RegionIntel) GetHeadline() string {
+	if x != nil {
+		return x.Headline
+	}
+	return ""
+}
+
+func (x *RegionIntel) GetYoyChangePct() float64 {
+	if x != nil {
+		return x.YoyChangePct
+	}
+	return 0
+}
+
+func (x *RegionIntel) GetAvgCapRatePct() float64 {
+	if x != nil {
+		return x.AvgCapRatePct
+	}
+	return 0
+}
+
+func (x *RegionIntel) GetTrend() string {
+	if x != nil {
+		return x.Trend
+	}
+	return ""
+}
+
+func (x *RegionIntel) GetCommentary() string {
+	if x != nil {
+		return x.Commentary
+	}
+	return ""
+}
+
+func (x *RegionIntel) GetMyPropertyCount() int32 {
+	if x != nil {
+		return x.MyPropertyCount
+	}
+	return 0
+}
+
+type ListRegionIntelRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListRegionIntelRequest) Reset() {
+	*x = ListRegionIntelRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[47]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListRegionIntelRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListRegionIntelRequest) ProtoMessage() {}
+
+func (x *ListRegionIntelRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[47]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListRegionIntelRequest.ProtoReflect.Descriptor instead.
+func (*ListRegionIntelRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{47}
+}
+
+type ListRegionIntelResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Regions       []*RegionIntel         `protobuf:"bytes,1,rep,name=regions,proto3" json:"regions,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListRegionIntelResponse) Reset() {
+	*x = ListRegionIntelResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[48]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListRegionIntelResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListRegionIntelResponse) ProtoMessage() {}
+
+func (x *ListRegionIntelResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[48]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListRegionIntelResponse.ProtoReflect.Descriptor instead.
+func (*ListRegionIntelResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{48}
+}
+
+func (x *ListRegionIntelResponse) GetRegions() []*RegionIntel {
+	if x != nil {
+		return x.Regions
+	}
+	return nil
+}
+
+type GetRegionIntelRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RegionCode    string                 `protobuf:"bytes,1,opt,name=region_code,json=regionCode,proto3" json:"region_code,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetRegionIntelRequest) Reset() {
+	*x = GetRegionIntelRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[49]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetRegionIntelRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRegionIntelRequest) ProtoMessage() {}
+
+func (x *GetRegionIntelRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[49]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetRegionIntelRequest.ProtoReflect.Descriptor instead.
+func (*GetRegionIntelRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{49}
+}
+
+func (x *GetRegionIntelRequest) GetRegionCode() string {
+	if x != nil {
+		return x.RegionCode
+	}
+	return ""
+}
+
+type GetRegionIntelResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Region        *RegionIntel           `protobuf:"bytes,1,opt,name=region,proto3" json:"region,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetRegionIntelResponse) Reset() {
+	*x = GetRegionIntelResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[50]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetRegionIntelResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRegionIntelResponse) ProtoMessage() {}
+
+func (x *GetRegionIntelResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[50]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetRegionIntelResponse.ProtoReflect.Descriptor instead.
+func (*GetRegionIntelResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{50}
+}
+
+func (x *GetRegionIntelResponse) GetRegion() *RegionIntel {
+	if x != nil {
+		return x.Region
+	}
+	return nil
+}
+
+type RegionWeight struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RegionCode    string                 `protobuf:"bytes,1,opt,name=region_code,json=regionCode,proto3" json:"region_code,omitempty"`
+	ValueUsd      float64                `protobuf:"fixed64,2,opt,name=value_usd,json=valueUsd,proto3" json:"value_usd,omitempty"`
+	WeightPct     float64                `protobuf:"fixed64,3,opt,name=weight_pct,json=weightPct,proto3" json:"weight_pct,omitempty"`
+	Count         int32                  `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RegionWeight) Reset() {
+	*x = RegionWeight{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[51]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RegionWeight) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegionWeight) ProtoMessage() {}
+
+func (x *RegionWeight) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[51]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegionWeight.ProtoReflect.Descriptor instead.
+func (*RegionWeight) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{51}
+}
+
+func (x *RegionWeight) GetRegionCode() string {
+	if x != nil {
+		return x.RegionCode
+	}
+	return ""
+}
+
+func (x *RegionWeight) GetValueUsd() float64 {
+	if x != nil {
+		return x.ValueUsd
+	}
+	return 0
+}
+
+func (x *RegionWeight) GetWeightPct() float64 {
+	if x != nil {
+		return x.WeightPct
+	}
+	return 0
+}
+
+func (x *RegionWeight) GetCount() int32 {
+	if x != nil {
+		return x.Count
+	}
+	return 0
+}
+
+type TerritoryAllocation struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	TotalValueUsd      float64                `protobuf:"fixed64,1,opt,name=total_value_usd,json=totalValueUsd,proto3" json:"total_value_usd,omitempty"`
+	PropertyCount      int32                  `protobuf:"varint,2,opt,name=property_count,json=propertyCount,proto3" json:"property_count,omitempty"`
+	VerifiedCount      int32                  `protobuf:"varint,3,opt,name=verified_count,json=verifiedCount,proto3" json:"verified_count,omitempty"`
+	RegionCount        int32                  `protobuf:"varint,4,opt,name=region_count,json=regionCount,proto3" json:"region_count,omitempty"`
+	DominionRank       float64                `protobuf:"fixed64,5,opt,name=dominion_rank,json=dominionRank,proto3" json:"dominion_rank,omitempty"`
+	AnnualNetIncomeUsd float64                `protobuf:"fixed64,6,opt,name=annual_net_income_usd,json=annualNetIncomeUsd,proto3" json:"annual_net_income_usd,omitempty"`
+	Regions            []*RegionWeight        `protobuf:"bytes,7,rep,name=regions,proto3" json:"regions,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *TerritoryAllocation) Reset() {
+	*x = TerritoryAllocation{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[52]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TerritoryAllocation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TerritoryAllocation) ProtoMessage() {}
+
+func (x *TerritoryAllocation) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[52]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TerritoryAllocation.ProtoReflect.Descriptor instead.
+func (*TerritoryAllocation) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{52}
+}
+
+func (x *TerritoryAllocation) GetTotalValueUsd() float64 {
+	if x != nil {
+		return x.TotalValueUsd
+	}
+	return 0
+}
+
+func (x *TerritoryAllocation) GetPropertyCount() int32 {
+	if x != nil {
+		return x.PropertyCount
+	}
+	return 0
+}
+
+func (x *TerritoryAllocation) GetVerifiedCount() int32 {
+	if x != nil {
+		return x.VerifiedCount
+	}
+	return 0
+}
+
+func (x *TerritoryAllocation) GetRegionCount() int32 {
+	if x != nil {
+		return x.RegionCount
+	}
+	return 0
+}
+
+func (x *TerritoryAllocation) GetDominionRank() float64 {
+	if x != nil {
+		return x.DominionRank
+	}
+	return 0
+}
+
+func (x *TerritoryAllocation) GetAnnualNetIncomeUsd() float64 {
+	if x != nil {
+		return x.AnnualNetIncomeUsd
+	}
+	return 0
+}
+
+func (x *TerritoryAllocation) GetRegions() []*RegionWeight {
+	if x != nil {
+		return x.Regions
+	}
+	return nil
+}
+
+type GetTerritoryAllocationRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"` // empty => caller
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTerritoryAllocationRequest) Reset() {
+	*x = GetTerritoryAllocationRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[53]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTerritoryAllocationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTerritoryAllocationRequest) ProtoMessage() {}
+
+func (x *GetTerritoryAllocationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[53]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTerritoryAllocationRequest.ProtoReflect.Descriptor instead.
+func (*GetTerritoryAllocationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{53}
+}
+
+func (x *GetTerritoryAllocationRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetTerritoryAllocationResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Allocation    *TerritoryAllocation   `protobuf:"bytes,1,opt,name=allocation,proto3" json:"allocation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTerritoryAllocationResponse) Reset() {
+	*x = GetTerritoryAllocationResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[54]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTerritoryAllocationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTerritoryAllocationResponse) ProtoMessage() {}
+
+func (x *GetTerritoryAllocationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[54]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTerritoryAllocationResponse.ProtoReflect.Descriptor instead.
+func (*GetTerritoryAllocationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{54}
+}
+
+func (x *GetTerritoryAllocationResponse) GetAllocation() *TerritoryAllocation {
+	if x != nil {
+		return x.Allocation
+	}
+	return nil
+}
+
+type TodaySummary struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	TotalValueUsd       float64                `protobuf:"fixed64,1,opt,name=total_value_usd,json=totalValueUsd,proto3" json:"total_value_usd,omitempty"`
+	DominionRank        float64                `protobuf:"fixed64,2,opt,name=dominion_rank,json=dominionRank,proto3" json:"dominion_rank,omitempty"`
+	RankLabel           string                 `protobuf:"bytes,3,opt,name=rank_label,json=rankLabel,proto3" json:"rank_label,omitempty"`
+	VerifiedCount       int32                  `protobuf:"varint,4,opt,name=verified_count,json=verifiedCount,proto3" json:"verified_count,omitempty"`
+	PrimaryRegionCode   string                 `protobuf:"bytes,5,opt,name=primary_region_code,json=primaryRegionCode,proto3" json:"primary_region_code,omitempty"`
+	PrimaryRegionName   string                 `protobuf:"bytes,6,opt,name=primary_region_name,json=primaryRegionName,proto3" json:"primary_region_name,omitempty"`
+	PrimaryRegionSignal string                 `protobuf:"bytes,7,opt,name=primary_region_signal,json=primaryRegionSignal,proto3" json:"primary_region_signal,omitempty"`
+	HasNextEvent        bool                   `protobuf:"varint,8,opt,name=has_next_event,json=hasNextEvent,proto3" json:"has_next_event,omitempty"`
+	NextEventTitle      string                 `protobuf:"bytes,9,opt,name=next_event_title,json=nextEventTitle,proto3" json:"next_event_title,omitempty"`
+	NextEventLounge     string                 `protobuf:"bytes,10,opt,name=next_event_lounge,json=nextEventLounge,proto3" json:"next_event_lounge,omitempty"`
+	NextEventStartsUnix int64                  `protobuf:"varint,11,opt,name=next_event_starts_unix,json=nextEventStartsUnix,proto3" json:"next_event_starts_unix,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *TodaySummary) Reset() {
+	*x = TodaySummary{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[55]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TodaySummary) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TodaySummary) ProtoMessage() {}
+
+func (x *TodaySummary) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[55]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TodaySummary.ProtoReflect.Descriptor instead.
+func (*TodaySummary) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{55}
+}
+
+func (x *TodaySummary) GetTotalValueUsd() float64 {
+	if x != nil {
+		return x.TotalValueUsd
+	}
+	return 0
+}
+
+func (x *TodaySummary) GetDominionRank() float64 {
+	if x != nil {
+		return x.DominionRank
+	}
+	return 0
+}
+
+func (x *TodaySummary) GetRankLabel() string {
+	if x != nil {
+		return x.RankLabel
+	}
+	return ""
+}
+
+func (x *TodaySummary) GetVerifiedCount() int32 {
+	if x != nil {
+		return x.VerifiedCount
+	}
+	return 0
+}
+
+func (x *TodaySummary) GetPrimaryRegionCode() string {
+	if x != nil {
+		return x.PrimaryRegionCode
+	}
+	return ""
+}
+
+func (x *TodaySummary) GetPrimaryRegionName() string {
+	if x != nil {
+		return x.PrimaryRegionName
+	}
+	return ""
+}
+
+func (x *TodaySummary) GetPrimaryRegionSignal() string {
+	if x != nil {
+		return x.PrimaryRegionSignal
+	}
+	return ""
+}
+
+func (x *TodaySummary) GetHasNextEvent() bool {
+	if x != nil {
+		return x.HasNextEvent
+	}
+	return false
+}
+
+func (x *TodaySummary) GetNextEventTitle() string {
+	if x != nil {
+		return x.NextEventTitle
+	}
+	return ""
+}
+
+func (x *TodaySummary) GetNextEventLounge() string {
+	if x != nil {
+		return x.NextEventLounge
+	}
+	return ""
+}
+
+func (x *TodaySummary) GetNextEventStartsUnix() int64 {
+	if x != nil {
+		return x.NextEventStartsUnix
+	}
+	return 0
+}
+
+type GetTodaySummaryRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTodaySummaryRequest) Reset() {
+	*x = GetTodaySummaryRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[56]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTodaySummaryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTodaySummaryRequest) ProtoMessage() {}
+
+func (x *GetTodaySummaryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[56]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTodaySummaryRequest.ProtoReflect.Descriptor instead.
+func (*GetTodaySummaryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{56}
+}
+
+type GetTodaySummaryResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Summary       *TodaySummary          `protobuf:"bytes,1,opt,name=summary,proto3" json:"summary,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTodaySummaryResponse) Reset() {
+	*x = GetTodaySummaryResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[57]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTodaySummaryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTodaySummaryResponse) ProtoMessage() {}
+
+func (x *GetTodaySummaryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[57]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTodaySummaryResponse.ProtoReflect.Descriptor instead.
+func (*GetTodaySummaryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{57}
+}
+
+func (x *GetTodaySummaryResponse) GetSummary() *TodaySummary {
+	if x != nil {
+		return x.Summary
+	}
+	return nil
+}
+
+type ConciergeThread struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Subject       string                 `protobuf:"bytes,2,opt,name=subject,proto3" json:"subject,omitempty"`
+	Status        string                 `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"` // 'open' | 'answered' | 'closed'
+	SlaDueAtUnix  int64                  `protobuf:"varint,4,opt,name=sla_due_at_unix,json=slaDueAtUnix,proto3" json:"sla_due_at_unix,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,5,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	UpdatedAtUnix int64                  `protobuf:"varint,6,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	MessageCount  int32                  `protobuf:"varint,7,opt,name=message_count,json=messageCount,proto3" json:"message_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConciergeThread) Reset() {
+	*x = ConciergeThread{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[58]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConciergeThread) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConciergeThread) ProtoMessage() {}
+
+func (x *ConciergeThread) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[58]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConciergeThread.ProtoReflect.Descriptor instead.
+func (*ConciergeThread) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{58}
+}
+
+func (x *ConciergeThread) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetSubject() string {
+	if x != nil {
+		return x.Subject
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetSlaDueAtUnix() int64 {
+	if x != nil {
+		return x.SlaDueAtUnix
+	}
+	return 0
+}
+
+func (x *ConciergeThread) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+func (x *ConciergeThread) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+func (x *ConciergeThread) GetMessageCount() int32 {
+	if x != nil {
+		return x.MessageCount
+	}
+	return 0
+}
+
+type ConciergeMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	SenderRole    string                 `protobuf:"bytes,2,opt,name=sender_role,json=senderRole,proto3" json:"sender_role,omitempty"` // 'member' | 'concierge' | 'system'
+	Body          string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,4,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConciergeMessage) Reset() {
+	*x = ConciergeMessage{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[59]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConciergeMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConciergeMessage) ProtoMessage() {}
+
+func (x *ConciergeMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[59]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConciergeMessage.ProtoReflect.Descriptor instead.
+func (*ConciergeMessage) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{59}
+}
+
+func (x *ConciergeMessage) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetSenderRole() string {
+	if x != nil {
+		return x.SenderRole
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type StartConciergeThreadRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Subject        string                 `protobuf:"bytes,1,opt,name=subject,proto3" json:"subject,omitempty"`
+	OpeningMessage string                 `protobuf:"bytes,2,opt,name=opening_message,json=openingMessage,proto3" json:"opening_message,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *StartConciergeThreadRequest) Reset() {
+	*x = StartConciergeThreadRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[60]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StartConciergeThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartConciergeThreadRequest) ProtoMessage() {}
+
+func (x *StartConciergeThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[60]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartConciergeThreadRequest.ProtoReflect.Descriptor instead.
+func (*StartConciergeThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{60}
+}
+
+func (x *StartConciergeThreadRequest) GetSubject() string {
+	if x != nil {
+		return x.Subject
+	}
+	return ""
+}
+
+func (x *StartConciergeThreadRequest) GetOpeningMessage() string {
+	if x != nil {
+		return x.OpeningMessage
+	}
+	return ""
+}
+
+type StartConciergeThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *ConciergeThread       `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StartConciergeThreadResponse) Reset() {
+	*x = StartConciergeThreadResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[61]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StartConciergeThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartConciergeThreadResponse) ProtoMessage() {}
+
+func (x *StartConciergeThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[61]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartConciergeThreadResponse.ProtoReflect.Descriptor instead.
+func (*StartConciergeThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{61}
+}
+
+func (x *StartConciergeThreadResponse) GetThread() *ConciergeThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+type ListMyConciergeThreadsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyConciergeThreadsRequest) Reset() {
+	*x = ListMyConciergeThreadsRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[62]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyConciergeThreadsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyConciergeThreadsRequest) ProtoMessage() {}
+
+func (x *ListMyConciergeThreadsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[62]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyConciergeThreadsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyConciergeThreadsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{62}
+}
+
+type ListMyConciergeThreadsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Threads       []*ConciergeThread     `protobuf:"bytes,1,rep,name=threads,proto3" json:"threads,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyConciergeThreadsResponse) Reset() {
+	*x = ListMyConciergeThreadsResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[63]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyConciergeThreadsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyConciergeThreadsResponse) ProtoMessage() {}
+
+func (x *ListMyConciergeThreadsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[63]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyConciergeThreadsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyConciergeThreadsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{63}
+}
+
+func (x *ListMyConciergeThreadsResponse) GetThreads() []*ConciergeThread {
+	if x != nil {
+		return x.Threads
+	}
+	return nil
+}
+
+type GetConciergeThreadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetConciergeThreadRequest) Reset() {
+	*x = GetConciergeThreadRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[64]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetConciergeThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetConciergeThreadRequest) ProtoMessage() {}
+
+func (x *GetConciergeThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[64]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetConciergeThreadRequest.ProtoReflect.Descriptor instead.
+func (*GetConciergeThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{64}
+}
+
+func (x *GetConciergeThreadRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+type GetConciergeThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *ConciergeThread       `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	Messages      []*ConciergeMessage    `protobuf:"bytes,2,rep,name=messages,proto3" json:"messages,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetConciergeThreadResponse) Reset() {
+	*x = GetConciergeThreadResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[65]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetConciergeThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetConciergeThreadResponse) ProtoMessage() {}
+
+func (x *GetConciergeThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[65]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetConciergeThreadResponse.ProtoReflect.Descriptor instead.
+func (*GetConciergeThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{65}
+}
+
+func (x *GetConciergeThreadResponse) GetThread() *ConciergeThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+func (x *GetConciergeThreadResponse) GetMessages() []*ConciergeMessage {
+	if x != nil {
+		return x.Messages
+	}
+	return nil
+}
+
+type PostConciergeMessageRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	Body          string                 `protobuf:"bytes,2,opt,name=body,proto3" json:"body,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PostConciergeMessageRequest) Reset() {
+	*x = PostConciergeMessageRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[66]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PostConciergeMessageRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PostConciergeMessageRequest) ProtoMessage() {}
+
+func (x *PostConciergeMessageRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[66]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PostConciergeMessageRequest.ProtoReflect.Descriptor instead.
+func (*PostConciergeMessageRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{66}
+}
+
+func (x *PostConciergeMessageRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *PostConciergeMessageRequest) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+type PostConciergeMessageResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Message       *ConciergeMessage      `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PostConciergeMessageResponse) Reset() {
+	*x = PostConciergeMessageResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[67]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PostConciergeMessageResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PostConciergeMessageResponse) ProtoMessage() {}
+
+func (x *PostConciergeMessageResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[67]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PostConciergeMessageResponse.ProtoReflect.Descriptor instead.
+func (*PostConciergeMessageResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{67}
+}
+
+func (x *PostConciergeMessageResponse) GetMessage() *ConciergeMessage {
+	if x != nil {
+		return x.Message
+	}
+	return nil
+}
+
+type AnthologyArticle struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug              string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Title             string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Dek               string                 `protobuf:"bytes,4,opt,name=dek,proto3" json:"dek,omitempty"`
+	Body              string                 `protobuf:"bytes,5,opt,name=body,proto3" json:"body,omitempty"`
+	AuthorName        string                 `protobuf:"bytes,6,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
+	AuthorCredentials string                 `protobuf:"bytes,7,opt,name=author_credentials,json=authorCredentials,proto3" json:"author_credentials,omitempty"`
+	RegionCode        string                 `protobuf:"bytes,8,opt,name=region_code,json=regionCode,proto3" json:"region_code,omitempty"`
+	SovereignOnly     bool                   `protobuf:"varint,9,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	PublishedAtUnix   int64                  `protobuf:"varint,10,opt,name=published_at_unix,json=publishedAtUnix,proto3" json:"published_at_unix,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *AnthologyArticle) Reset() {
+	*x = AnthologyArticle{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[68]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AnthologyArticle) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AnthologyArticle) ProtoMessage() {}
+
+func (x *AnthologyArticle) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[68]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AnthologyArticle.ProtoReflect.Descriptor instead.
+func (*AnthologyArticle) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *AnthologyArticle) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetDek() string {
+	if x != nil {
+		return x.Dek
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetAuthorCredentials() string {
+	if x != nil {
+		return x.AuthorCredentials
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetRegionCode() string {
+	if x != nil {
+		return x.RegionCode
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+func (x *AnthologyArticle) GetPublishedAtUnix() int64 {
+	if x != nil {
+		return x.PublishedAtUnix
+	}
+	return 0
+}
+
+type ListAnthologyArticlesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAnthologyArticlesRequest) Reset() {
+	*x = ListAnthologyArticlesRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[69]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAnthologyArticlesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAnthologyArticlesRequest) ProtoMessage() {}
+
+func (x *ListAnthologyArticlesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[69]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAnthologyArticlesRequest.ProtoReflect.Descriptor instead.
+func (*ListAnthologyArticlesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{69}
+}
+
+type ListAnthologyArticlesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Articles      []*AnthologyArticle    `protobuf:"bytes,1,rep,name=articles,proto3" json:"articles,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAnthologyArticlesResponse) Reset() {
+	*x = ListAnthologyArticlesResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[70]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAnthologyArticlesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAnthologyArticlesResponse) ProtoMessage() {}
+
+func (x *ListAnthologyArticlesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[70]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAnthologyArticlesResponse.ProtoReflect.Descriptor instead.
+func (*ListAnthologyArticlesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *ListAnthologyArticlesResponse) GetArticles() []*AnthologyArticle {
+	if x != nil {
+		return x.Articles
+	}
+	return nil
+}
+
+type GetAnthologyArticleRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Slug          string                 `protobuf:"bytes,1,opt,name=slug,proto3" json:"slug,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAnthologyArticleRequest) Reset() {
+	*x = GetAnthologyArticleRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[71]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAnthologyArticleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAnthologyArticleRequest) ProtoMessage() {}
+
+func (x *GetAnthologyArticleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[71]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAnthologyArticleRequest.ProtoReflect.Descriptor instead.
+func (*GetAnthologyArticleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *GetAnthologyArticleRequest) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+type GetAnthologyArticleResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Article       *AnthologyArticle      `protobuf:"bytes,1,opt,name=article,proto3" json:"article,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAnthologyArticleResponse) Reset() {
+	*x = GetAnthologyArticleResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[72]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAnthologyArticleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAnthologyArticleResponse) ProtoMessage() {}
+
+func (x *GetAnthologyArticleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[72]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAnthologyArticleResponse.ProtoReflect.Descriptor instead.
+func (*GetAnthologyArticleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{72}
+}
+
+func (x *GetAnthologyArticleResponse) GetArticle() *AnthologyArticle {
+	if x != nil {
+		return x.Article
+	}
+	return nil
+}
+
+type DirectoryPartner struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug          string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Kind          string                 `protobuf:"bytes,4,opt,name=kind,proto3" json:"kind,omitempty"` // 'architect' | 'designer' | 'broker'
+	City          string                 `protobuf:"bytes,5,opt,name=city,proto3" json:"city,omitempty"`
+	CountryCode   string                 `protobuf:"bytes,6,opt,name=country_code,json=countryCode,proto3" json:"country_code,omitempty"`
+	RegionCode    string                 `protobuf:"bytes,7,opt,name=region_code,json=regionCode,proto3" json:"region_code,omitempty"`
+	Specialties   []string               `protobuf:"bytes,8,rep,name=specialties,proto3" json:"specialties,omitempty"`
+	Description   string                 `protobuf:"bytes,9,opt,name=description,proto3" json:"description,omitempty"`
+	PortfolioUrl  string                 `protobuf:"bytes,10,opt,name=portfolio_url,json=portfolioUrl,proto3" json:"portfolio_url,omitempty"`
+	SovereignOnly bool                   `protobuf:"varint,11,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DirectoryPartner) Reset() {
+	*x = DirectoryPartner{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[73]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DirectoryPartner) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DirectoryPartner) ProtoMessage() {}
+
+func (x *DirectoryPartner) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[73]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DirectoryPartner.ProtoReflect.Descriptor instead.
+func (*DirectoryPartner) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{73}
+}
+
+func (x *DirectoryPartner) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DirectoryPartner) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *DirectoryPartner) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *DirectoryPartner) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *DirectoryPartner) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *DirectoryPartner) GetCountryCode() string {
+	if x != nil {
+		return x.CountryCode
+	}
+	return ""
+}
+
+func (x *DirectoryPartner) GetRegionCode() string {
+	if x != nil {
+		return x.RegionCode
+	}
+	return ""
+}
+
+func (x *DirectoryPartner) GetSpecialties() []string {
+	if x != nil {
+		return x.Specialties
+	}
+	return nil
+}
+
+func (x *DirectoryPartner) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *DirectoryPartner) GetPortfolioUrl() string {
+	if x != nil {
+		return x.PortfolioUrl
+	}
+	return ""
+}
+
+func (x *DirectoryPartner) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+type ListDirectoryRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Kind          string                 `protobuf:"bytes,1,opt,name=kind,proto3" json:"kind,omitempty"`                               // empty => all
+	RegionCode    string                 `protobuf:"bytes,2,opt,name=region_code,json=regionCode,proto3" json:"region_code,omitempty"` // empty => all
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListDirectoryRequest) Reset() {
+	*x = ListDirectoryRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[74]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListDirectoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListDirectoryRequest) ProtoMessage() {}
+
+func (x *ListDirectoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[74]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListDirectoryRequest.ProtoReflect.Descriptor instead.
+func (*ListDirectoryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{74}
+}
+
+func (x *ListDirectoryRequest) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *ListDirectoryRequest) GetRegionCode() string {
+	if x != nil {
+		return x.RegionCode
+	}
+	return ""
+}
+
+type ListDirectoryResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Partners      []*DirectoryPartner    `protobuf:"bytes,1,rep,name=partners,proto3" json:"partners,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListDirectoryResponse) Reset() {
+	*x = ListDirectoryResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[75]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListDirectoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListDirectoryResponse) ProtoMessage() {}
+
+func (x *ListDirectoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[75]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListDirectoryResponse.ProtoReflect.Descriptor instead.
+func (*ListDirectoryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{75}
+}
+
+func (x *ListDirectoryResponse) GetPartners() []*DirectoryPartner {
+	if x != nil {
+		return x.Partners
+	}
+	return nil
+}
+
+type OffMarketListing struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug          string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Title         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	City          string                 `protobuf:"bytes,4,opt,name=city,proto3" json:"city,omitempty"`
+	CountryCode   string                 `protobuf:"bytes,5,opt,name=country_code,json=countryCode,proto3" json:"country_code,omitempty"`
+	RegionCode    string                 `protobuf:"bytes,6,opt,name=region_code,json=regionCode,proto3" json:"region_code,omitempty"`
+	PriceUsd      float64                `protobuf:"fixed64,7,opt,name=price_usd,json=priceUsd,proto3" json:"price_usd,omitempty"`
+	Summary       string                 `protobuf:"bytes,8,opt,name=summary,proto3" json:"summary,omitempty"`
+	Body          string                 `protobuf:"bytes,9,opt,name=body,proto3" json:"body,omitempty"`
+	Status        string                 `protobuf:"bytes,10,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *OffMarketListing) Reset() {
+	*x = OffMarketListing{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[76]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OffMarketListing) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OffMarketListing) ProtoMessage() {}
+
+func (x *OffMarketListing) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[76]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OffMarketListing.ProtoReflect.Descriptor instead.
+func (*OffMarketListing) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{76}
+}
+
+func (x *OffMarketListing) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OffMarketListing) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *OffMarketListing) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *OffMarketListing) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *OffMarketListing) GetCountryCode() string {
+	if x != nil {
+		return x.CountryCode
+	}
+	return ""
+}
+
+func (x *OffMarketListing) GetRegionCode() string {
+	if x != nil {
+		return x.RegionCode
+	}
+	return ""
+}
+
+func (x *OffMarketListing) GetPriceUsd() float64 {
+	if x != nil {
+		return x.PriceUsd
+	}
+	return 0
+}
+
+func (x *OffMarketListing) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *OffMarketListing) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *OffMarketListing) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+type ListOffMarketRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RegionCode    string                 `protobuf:"bytes,1,opt,name=region_code,json=regionCode,proto3" json:"region_code,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListOffMarketRequest) Reset() {
+	*x = ListOffMarketRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[77]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListOffMarketRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListOffMarketRequest) ProtoMessage() {}
+
+func (x *ListOffMarketRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[77]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListOffMarketRequest.ProtoReflect.Descriptor instead.
+func (*ListOffMarketRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{77}
+}
+
+func (x *ListOffMarketRequest) GetRegionCode() string {
+	if x != nil {
+		return x.RegionCode
+	}
+	return ""
+}
+
+type ListOffMarketResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Listings      []*OffMarketListing    `protobuf:"bytes,1,rep,name=listings,proto3" json:"listings,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListOffMarketResponse) Reset() {
+	*x = ListOffMarketResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[78]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListOffMarketResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListOffMarketResponse) ProtoMessage() {}
+
+func (x *ListOffMarketResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[78]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListOffMarketResponse.ProtoReflect.Descriptor instead.
+func (*ListOffMarketResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{78}
+}
+
+func (x *ListOffMarketResponse) GetListings() []*OffMarketListing {
+	if x != nil {
+		return x.Listings
+	}
+	return nil
+}
+
+type GetOffMarketRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Slug          string                 `protobuf:"bytes,1,opt,name=slug,proto3" json:"slug,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetOffMarketRequest) Reset() {
+	*x = GetOffMarketRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[79]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetOffMarketRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetOffMarketRequest) ProtoMessage() {}
+
+func (x *GetOffMarketRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[79]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetOffMarketRequest.ProtoReflect.Descriptor instead.
+func (*GetOffMarketRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{79}
+}
+
+func (x *GetOffMarketRequest) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+type GetOffMarketResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Listing       *OffMarketListing      `protobuf:"bytes,1,opt,name=listing,proto3" json:"listing,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetOffMarketResponse) Reset() {
+	*x = GetOffMarketResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[80]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetOffMarketResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetOffMarketResponse) ProtoMessage() {}
+
+func (x *GetOffMarketResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[80]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetOffMarketResponse.ProtoReflect.Descriptor instead.
+func (*GetOffMarketResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{80}
+}
+
+func (x *GetOffMarketResponse) GetListing() *OffMarketListing {
+	if x != nil {
+		return x.Listing
+	}
+	return nil
+}
+
+type ParseDeedRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	DeedId        string                 `protobuf:"bytes,1,opt,name=deed_id,json=deedId,proto3" json:"deed_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ParseDeedRequest) Reset() {
+	*x = ParseDeedRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[81]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ParseDeedRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ParseDeedRequest) ProtoMessage() {}
+
+func (x *ParseDeedRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[81]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ParseDeedRequest.ProtoReflect.Descriptor instead.
+func (*ParseDeedRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{81}
+}
+
+func (x *ParseDeedRequest) GetDeedId() string {
+	if x != nil {
+		return x.DeedId
+	}
+	return ""
+}
+
+type ParseDeedResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Parsed        bool                   `protobuf:"varint,1,opt,name=parsed,proto3" json:"parsed,omitempty"`
+	Extracted     string                 `protobuf:"bytes,2,opt,name=extracted,proto3" json:"extracted,omitempty"` // decrypted, owner-only
+	Note          string                 `protobuf:"bytes,3,opt,name=note,proto3" json:"note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ParseDeedResponse) Reset() {
+	*x = ParseDeedResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[82]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ParseDeedResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ParseDeedResponse) ProtoMessage() {}
+
+func (x *ParseDeedResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[82]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ParseDeedResponse.ProtoReflect.Descriptor instead.
+func (*ParseDeedResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{82}
+}
+
+func (x *ParseDeedResponse) GetParsed() bool {
+	if x != nil {
+		return x.Parsed
+	}
+	return false
+}
+
+func (x *ParseDeedResponse) GetExtracted() string {
+	if x != nil {
+		return x.Extracted
+	}
+	return ""
+}
+
+func (x *ParseDeedResponse) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
+}
+
+type DominionShareToken struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	Url           string                 `protobuf:"bytes,2,opt,name=url,proto3" json:"url,omitempty"`
+	ExpiresAtUnix int64                  `protobuf:"varint,3,opt,name=expires_at_unix,json=expiresAtUnix,proto3" json:"expires_at_unix,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,4,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DominionShareToken) Reset() {
+	*x = DominionShareToken{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[83]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DominionShareToken) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DominionShareToken) ProtoMessage() {}
+
+func (x *DominionShareToken) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[83]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DominionShareToken.ProtoReflect.Descriptor instead.
+func (*DominionShareToken) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{83}
+}
+
+func (x *DominionShareToken) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *DominionShareToken) GetUrl() string {
+	if x != nil {
+		return x.Url
+	}
+	return ""
+}
+
+func (x *DominionShareToken) GetExpiresAtUnix() int64 {
+	if x != nil {
+		return x.ExpiresAtUnix
+	}
+	return 0
+}
+
+func (x *DominionShareToken) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type CreateDominionShareRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TtlDays       int32                  `protobuf:"varint,1,opt,name=ttl_days,json=ttlDays,proto3" json:"ttl_days,omitempty"` // default 14
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateDominionShareRequest) Reset() {
+	*x = CreateDominionShareRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[84]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateDominionShareRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateDominionShareRequest) ProtoMessage() {}
+
+func (x *CreateDominionShareRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[84]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateDominionShareRequest.ProtoReflect.Descriptor instead.
+func (*CreateDominionShareRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{84}
+}
+
+func (x *CreateDominionShareRequest) GetTtlDays() int32 {
+	if x != nil {
+		return x.TtlDays
+	}
+	return 0
+}
+
+type CreateDominionShareResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         *DominionShareToken    `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateDominionShareResponse) Reset() {
+	*x = CreateDominionShareResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[85]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateDominionShareResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateDominionShareResponse) ProtoMessage() {}
+
+func (x *CreateDominionShareResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[85]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateDominionShareResponse.ProtoReflect.Descriptor instead.
+func (*CreateDominionShareResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{85}
+}
+
+func (x *CreateDominionShareResponse) GetToken() *DominionShareToken {
+	if x != nil {
+		return x.Token
+	}
+	return nil
+}
+
+type ListMyDominionSharesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyDominionSharesRequest) Reset() {
+	*x = ListMyDominionSharesRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[86]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyDominionSharesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyDominionSharesRequest) ProtoMessage() {}
+
+func (x *ListMyDominionSharesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[86]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyDominionSharesRequest.ProtoReflect.Descriptor instead.
+func (*ListMyDominionSharesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{86}
+}
+
+type ListMyDominionSharesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Tokens        []*DominionShareToken  `protobuf:"bytes,1,rep,name=tokens,proto3" json:"tokens,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyDominionSharesResponse) Reset() {
+	*x = ListMyDominionSharesResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[87]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyDominionSharesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyDominionSharesResponse) ProtoMessage() {}
+
+func (x *ListMyDominionSharesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[87]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyDominionSharesResponse.ProtoReflect.Descriptor instead.
+func (*ListMyDominionSharesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{87}
+}
+
+func (x *ListMyDominionSharesResponse) GetTokens() []*DominionShareToken {
+	if x != nil {
+		return x.Tokens
+	}
+	return nil
+}
+
+type RevokeDominionShareRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeDominionShareRequest) Reset() {
+	*x = RevokeDominionShareRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[88]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeDominionShareRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeDominionShareRequest) ProtoMessage() {}
+
+func (x *RevokeDominionShareRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[88]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeDominionShareRequest.ProtoReflect.Descriptor instead.
+func (*RevokeDominionShareRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{88}
+}
+
+func (x *RevokeDominionShareRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+type RevokeDominionShareResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Revoked       bool                   `protobuf:"varint,1,opt,name=revoked,proto3" json:"revoked,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeDominionShareResponse) Reset() {
+	*x = RevokeDominionShareResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[89]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeDominionShareResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeDominionShareResponse) ProtoMessage() {}
+
+func (x *RevokeDominionShareResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[89]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeDominionShareResponse.ProtoReflect.Descriptor instead.
+func (*RevokeDominionShareResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{89}
+}
+
+func (x *RevokeDominionShareResponse) GetRevoked() bool {
+	if x != nil {
+		return x.Revoked
+	}
+	return false
+}
+
+type GenerateDominionAlmanacRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateDominionAlmanacRequest) Reset() {
+	*x = GenerateDominionAlmanacRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[90]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateDominionAlmanacRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateDominionAlmanacRequest) ProtoMessage() {}
+
+func (x *GenerateDominionAlmanacRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[90]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateDominionAlmanacRequest.ProtoReflect.Descriptor instead.
+func (*GenerateDominionAlmanacRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{90}
+}
+
+type GenerateDominionAlmanacResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Url           string                 `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
+	PageCount     int32                  `protobuf:"varint,2,opt,name=page_count,json=pageCount,proto3" json:"page_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateDominionAlmanacResponse) Reset() {
+	*x = GenerateDominionAlmanacResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[91]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateDominionAlmanacResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateDominionAlmanacResponse) ProtoMessage() {}
+
+func (x *GenerateDominionAlmanacResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[91]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateDominionAlmanacResponse.ProtoReflect.Descriptor instead.
+func (*GenerateDominionAlmanacResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{91}
+}
+
+func (x *GenerateDominionAlmanacResponse) GetUrl() string {
+	if x != nil {
+		return x.Url
+	}
+	return ""
+}
+
+func (x *GenerateDominionAlmanacResponse) GetPageCount() int32 {
+	if x != nil {
+		return x.PageCount
+	}
+	return 0
+}
+
+type LoungePass struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	Url           string                 `protobuf:"bytes,2,opt,name=url,proto3" json:"url,omitempty"`
+	Tier          string                 `protobuf:"bytes,3,opt,name=tier,proto3" json:"tier,omitempty"`
+	MemberName    string                 `protobuf:"bytes,4,opt,name=member_name,json=memberName,proto3" json:"member_name,omitempty"`
+	LoungeSlug    string                 `protobuf:"bytes,5,opt,name=lounge_slug,json=loungeSlug,proto3" json:"lounge_slug,omitempty"`
+	ExpiresAtUnix int64                  `protobuf:"varint,6,opt,name=expires_at_unix,json=expiresAtUnix,proto3" json:"expires_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LoungePass) Reset() {
+	*x = LoungePass{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[92]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LoungePass) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LoungePass) ProtoMessage() {}
+
+func (x *LoungePass) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[92]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LoungePass.ProtoReflect.Descriptor instead.
+func (*LoungePass) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{92}
+}
+
+func (x *LoungePass) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *LoungePass) GetUrl() string {
+	if x != nil {
+		return x.Url
+	}
+	return ""
+}
+
+func (x *LoungePass) GetTier() string {
+	if x != nil {
+		return x.Tier
+	}
+	return ""
+}
+
+func (x *LoungePass) GetMemberName() string {
+	if x != nil {
+		return x.MemberName
+	}
+	return ""
+}
+
+func (x *LoungePass) GetLoungeSlug() string {
+	if x != nil {
+		return x.LoungeSlug
+	}
+	return ""
+}
+
+func (x *LoungePass) GetExpiresAtUnix() int64 {
+	if x != nil {
+		return x.ExpiresAtUnix
+	}
+	return 0
+}
+
+type CreateLoungePassRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	LoungeSlug    string                 `protobuf:"bytes,1,opt,name=lounge_slug,json=loungeSlug,proto3" json:"lounge_slug,omitempty"` // empty => network-wide pass
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateLoungePassRequest) Reset() {
+	*x = CreateLoungePassRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[93]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateLoungePassRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateLoungePassRequest) ProtoMessage() {}
+
+func (x *CreateLoungePassRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[93]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateLoungePassRequest.ProtoReflect.Descriptor instead.
+func (*CreateLoungePassRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{93}
+}
+
+func (x *CreateLoungePassRequest) GetLoungeSlug() string {
+	if x != nil {
+		return x.LoungeSlug
+	}
+	return ""
+}
+
+type CreateLoungePassResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Pass          *LoungePass            `protobuf:"bytes,1,opt,name=pass,proto3" json:"pass,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateLoungePassResponse) Reset() {
+	*x = CreateLoungePassResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[94]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateLoungePassResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateLoungePassResponse) ProtoMessage() {}
+
+func (x *CreateLoungePassResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[94]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateLoungePassResponse.ProtoReflect.Descriptor instead.
+func (*CreateLoungePassResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{94}
+}
+
+func (x *CreateLoungePassResponse) GetPass() *LoungePass {
+	if x != nil {
+		return x.Pass
+	}
+	return nil
+}
+
+type ListMyLoungePassesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyLoungePassesRequest) Reset() {
+	*x = ListMyLoungePassesRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[95]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyLoungePassesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyLoungePassesRequest) ProtoMessage() {}
+
+func (x *ListMyLoungePassesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[95]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyLoungePassesRequest.ProtoReflect.Descriptor instead.
+func (*ListMyLoungePassesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{95}
+}
+
+type ListMyLoungePassesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Passes        []*LoungePass          `protobuf:"bytes,1,rep,name=passes,proto3" json:"passes,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyLoungePassesResponse) Reset() {
+	*x = ListMyLoungePassesResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[96]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyLoungePassesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyLoungePassesResponse) ProtoMessage() {}
+
+func (x *ListMyLoungePassesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[96]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyLoungePassesResponse.ProtoReflect.Descriptor instead.
+func (*ListMyLoungePassesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{96}
+}
+
+func (x *ListMyLoungePassesResponse) GetPasses() []*LoungePass {
+	if x != nil {
+		return x.Passes
+	}
+	return nil
+}
+
 var File_sttattus_dominion_v1_dominion_proto protoreflect.FileDescriptor
 
 const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
@@ -1634,7 +5652,7 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\ais_open\x18\t \x01(\bR\x06isOpen\"\x14\n" +
 	"\x12ListLoungesRequest\"M\n" +
 	"\x13ListLoungesResponse\x126\n" +
-	"\alounges\x18\x01 \x03(\v2\x1c.sttattus.dominion.v1.LoungeR\alounges\"\xf1\x01\n" +
+	"\alounges\x18\x01 \x03(\v2\x1c.sttattus.dominion.v1.LoungeR\alounges\"\x8b\x02\n" +
 	"\x04Deed\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
 	"\vproperty_id\x18\x02 \x01(\tR\n" +
@@ -1645,12 +5663,14 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\n" +
 	"admin_note\x18\x06 \x01(\tR\tadminNote\x12*\n" +
 	"\x11submitted_at_unix\x18\a \x01(\x03R\x0fsubmittedAtUnix\x12&\n" +
-	"\x0fdecided_at_unix\x18\b \x01(\x03R\rdecidedAtUnix\"c\n" +
+	"\x0fdecided_at_unix\x18\b \x01(\x03R\rdecidedAtUnix\x12\x18\n" +
+	"\adetails\x18\t \x01(\tR\adetails\"}\n" +
 	"\x11SubmitDeedRequest\x12\x1f\n" +
 	"\vproperty_id\x18\x01 \x01(\tR\n" +
 	"propertyId\x12\x19\n" +
 	"\bfile_url\x18\x02 \x01(\tR\afileUrl\x12\x12\n" +
-	"\x04kind\x18\x03 \x01(\tR\x04kind\"D\n" +
+	"\x04kind\x18\x03 \x01(\tR\x04kind\x12\x18\n" +
+	"\adetails\x18\x04 \x01(\tR\adetails\"D\n" +
 	"\x12SubmitDeedResponse\x12.\n" +
 	"\x04deed\x18\x01 \x01(\v2\x1a.sttattus.dominion.v1.DeedR\x04deed\"\x14\n" +
 	"\x12ListMyDeedsRequest\"G\n" +
@@ -1685,7 +5705,295 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x1dEstimatePropertyValueResponse\x127\n" +
 	"\x06result\x18\x01 \x01(\v2\x1f.sttattus.dominion.v1.AVMResultR\x06result\x12\x1d\n" +
 	"\n" +
-	"from_cache\x18\x02 \x01(\bR\tfromCache*\xc5\x01\n" +
+	"from_cache\x18\x02 \x01(\bR\tfromCache\"\xaf\x02\n" +
+	"\vLoungeEvent\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\tlounge_id\x18\x02 \x01(\tR\bloungeId\x12\x1f\n" +
+	"\vlounge_name\x18\x03 \x01(\tR\n" +
+	"loungeName\x12\x1f\n" +
+	"\vlounge_city\x18\x04 \x01(\tR\n" +
+	"loungeCity\x12\x14\n" +
+	"\x05title\x18\x05 \x01(\tR\x05title\x12 \n" +
+	"\vdescription\x18\x06 \x01(\tR\vdescription\x12\x19\n" +
+	"\bmin_tier\x18\a \x01(\tR\aminTier\x12$\n" +
+	"\x0estarts_at_unix\x18\b \x01(\x03R\fstartsAtUnix\x12 \n" +
+	"\fends_at_unix\x18\t \x01(\x03R\n" +
+	"endsAtUnix\x12\x16\n" +
+	"\x06rsvped\x18\n" +
+	" \x01(\bR\x06rsvped\"6\n" +
+	"\x17ListLoungeEventsRequest\x12\x1b\n" +
+	"\tlounge_id\x18\x01 \x01(\tR\bloungeId\"U\n" +
+	"\x18ListLoungeEventsResponse\x129\n" +
+	"\x06events\x18\x01 \x03(\v2!.sttattus.dominion.v1.LoungeEventR\x06events\"Q\n" +
+	"\x16RsvpLoungeEventRequest\x12\x19\n" +
+	"\bevent_id\x18\x01 \x01(\tR\aeventId\x12\x1c\n" +
+	"\tattending\x18\x02 \x01(\bR\tattending\"1\n" +
+	"\x17RsvpLoungeEventResponse\x12\x16\n" +
+	"\x06rsvped\x18\x01 \x01(\bR\x06rsvped\"\x1a\n" +
+	"\x18ListMyLoungeRsvpsRequest\"V\n" +
+	"\x19ListMyLoungeRsvpsResponse\x129\n" +
+	"\x06events\x18\x01 \x03(\v2!.sttattus.dominion.v1.LoungeEventR\x06events\"\xd1\x02\n" +
+	"\x05Salon\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12 \n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
+	"\x04city\x18\x04 \x01(\tR\x04city\x12\x1b\n" +
+	"\tlounge_id\x18\x05 \x01(\tR\bloungeId\x12\x1f\n" +
+	"\vlounge_name\x18\x06 \x01(\tR\n" +
+	"loungeName\x12$\n" +
+	"\x0estarts_at_unix\x18\a \x01(\x03R\fstartsAtUnix\x12 \n" +
+	"\fends_at_unix\x18\b \x01(\x03R\n" +
+	"endsAtUnix\x12\x1a\n" +
+	"\bcapacity\x18\t \x01(\x05R\bcapacity\x12\x1a\n" +
+	"\breserved\x18\n" +
+	" \x01(\x05R\breserved\x12\x16\n" +
+	"\x06status\x18\v \x01(\tR\x06status\x12\x16\n" +
+	"\x06rsvped\x18\f \x01(\bR\x06rsvped\"\x13\n" +
+	"\x11ListSalonsRequest\"I\n" +
+	"\x12ListSalonsResponse\x123\n" +
+	"\x06salons\x18\x01 \x03(\v2\x1b.sttattus.dominion.v1.SalonR\x06salons\"K\n" +
+	"\x10RsvpSalonRequest\x12\x19\n" +
+	"\bsalon_id\x18\x01 \x01(\tR\asalonId\x12\x1c\n" +
+	"\tattending\x18\x02 \x01(\bR\tattending\"G\n" +
+	"\x11RsvpSalonResponse\x12\x16\n" +
+	"\x06rsvped\x18\x01 \x01(\bR\x06rsvped\x12\x1a\n" +
+	"\breserved\x18\x02 \x01(\x05R\breserved\"\x19\n" +
+	"\x17ListMySalonRsvpsRequest\"O\n" +
+	"\x18ListMySalonRsvpsResponse\x123\n" +
+	"\x06salons\x18\x01 \x03(\v2\x1b.sttattus.dominion.v1.SalonR\x06salons\"\xcf\x02\n" +
+	"\x12PropertyFinancials\x12\x1f\n" +
+	"\vproperty_id\x18\x01 \x01(\tR\n" +
+	"propertyId\x12(\n" +
+	"\x10monthly_rent_usd\x18\x02 \x01(\x01R\x0emonthlyRentUsd\x120\n" +
+	"\x14monthly_expenses_usd\x18\x03 \x01(\x01R\x12monthlyExpensesUsd\x121\n" +
+	"\x15annual_net_income_usd\x18\x04 \x01(\x01R\x12annualNetIncomeUsd\x12 \n" +
+	"\fcap_rate_pct\x18\x05 \x01(\x01R\n" +
+	"capRatePct\x12&\n" +
+	"\x0fgross_yield_pct\x18\x06 \x01(\x01R\rgrossYieldPct\x12#\n" +
+	"\roccupancy_pct\x18\a \x01(\x01R\foccupancyPct\x12\x1a\n" +
+	"\bcurrency\x18\b \x01(\tR\bcurrency\"?\n" +
+	"\x1cGetPropertyFinancialsRequest\x12\x1f\n" +
+	"\vproperty_id\x18\x01 \x01(\tR\n" +
+	"propertyId\"\x83\x01\n" +
+	"\x1dGetPropertyFinancialsResponse\x12H\n" +
+	"\n" +
+	"financials\x18\x01 \x01(\v2(.sttattus.dominion.v1.PropertyFinancialsR\n" +
+	"financials\x12\x18\n" +
+	"\apresent\x18\x02 \x01(\bR\apresent\"\xc3\x01\n" +
+	"\x1fUpsertPropertyFinancialsRequest\x12\x1f\n" +
+	"\vproperty_id\x18\x01 \x01(\tR\n" +
+	"propertyId\x12(\n" +
+	"\x10monthly_rent_usd\x18\x02 \x01(\x01R\x0emonthlyRentUsd\x120\n" +
+	"\x14monthly_expenses_usd\x18\x03 \x01(\x01R\x12monthlyExpensesUsd\x12#\n" +
+	"\roccupancy_pct\x18\x04 \x01(\x01R\foccupancyPct\"l\n" +
+	" UpsertPropertyFinancialsResponse\x12H\n" +
+	"\n" +
+	"financials\x18\x01 \x01(\v2(.sttattus.dominion.v1.PropertyFinancialsR\n" +
+	"financials\"\x1a\n" +
+	"\x18GetPortfolioYieldRequest\"\xd4\x01\n" +
+	"\x19GetPortfolioYieldResponse\x12&\n" +
+	"\x0ftotal_value_usd\x18\x01 \x01(\x01R\rtotalValueUsd\x121\n" +
+	"\x15annual_net_income_usd\x18\x02 \x01(\x01R\x12annualNetIncomeUsd\x12/\n" +
+	"\x14blended_cap_rate_pct\x18\x03 \x01(\x01R\x11blendedCapRatePct\x12+\n" +
+	"\x11income_properties\x18\x04 \x01(\x05R\x10incomeProperties\"\x8f\x02\n" +
+	"\vRegionIntel\x12\x1f\n" +
+	"\vregion_code\x18\x01 \x01(\tR\n" +
+	"regionCode\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1a\n" +
+	"\bheadline\x18\x03 \x01(\tR\bheadline\x12$\n" +
+	"\x0eyoy_change_pct\x18\x04 \x01(\x01R\fyoyChangePct\x12'\n" +
+	"\x10avg_cap_rate_pct\x18\x05 \x01(\x01R\ravgCapRatePct\x12\x14\n" +
+	"\x05trend\x18\x06 \x01(\tR\x05trend\x12\x1e\n" +
+	"\n" +
+	"commentary\x18\a \x01(\tR\n" +
+	"commentary\x12*\n" +
+	"\x11my_property_count\x18\b \x01(\x05R\x0fmyPropertyCount\"\x18\n" +
+	"\x16ListRegionIntelRequest\"V\n" +
+	"\x17ListRegionIntelResponse\x12;\n" +
+	"\aregions\x18\x01 \x03(\v2!.sttattus.dominion.v1.RegionIntelR\aregions\"8\n" +
+	"\x15GetRegionIntelRequest\x12\x1f\n" +
+	"\vregion_code\x18\x01 \x01(\tR\n" +
+	"regionCode\"S\n" +
+	"\x16GetRegionIntelResponse\x129\n" +
+	"\x06region\x18\x01 \x01(\v2!.sttattus.dominion.v1.RegionIntelR\x06region\"\x81\x01\n" +
+	"\fRegionWeight\x12\x1f\n" +
+	"\vregion_code\x18\x01 \x01(\tR\n" +
+	"regionCode\x12\x1b\n" +
+	"\tvalue_usd\x18\x02 \x01(\x01R\bvalueUsd\x12\x1d\n" +
+	"\n" +
+	"weight_pct\x18\x03 \x01(\x01R\tweightPct\x12\x14\n" +
+	"\x05count\x18\x04 \x01(\x05R\x05count\"\xc4\x02\n" +
+	"\x13TerritoryAllocation\x12&\n" +
+	"\x0ftotal_value_usd\x18\x01 \x01(\x01R\rtotalValueUsd\x12%\n" +
+	"\x0eproperty_count\x18\x02 \x01(\x05R\rpropertyCount\x12%\n" +
+	"\x0everified_count\x18\x03 \x01(\x05R\rverifiedCount\x12!\n" +
+	"\fregion_count\x18\x04 \x01(\x05R\vregionCount\x12#\n" +
+	"\rdominion_rank\x18\x05 \x01(\x01R\fdominionRank\x121\n" +
+	"\x15annual_net_income_usd\x18\x06 \x01(\x01R\x12annualNetIncomeUsd\x12<\n" +
+	"\aregions\x18\a \x03(\v2\".sttattus.dominion.v1.RegionWeightR\aregions\"8\n" +
+	"\x1dGetTerritoryAllocationRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"k\n" +
+	"\x1eGetTerritoryAllocationResponse\x12I\n" +
+	"\n" +
+	"allocation\x18\x01 \x01(\v2).sttattus.dominion.v1.TerritoryAllocationR\n" +
+	"allocation\"\xe6\x03\n" +
+	"\fTodaySummary\x12&\n" +
+	"\x0ftotal_value_usd\x18\x01 \x01(\x01R\rtotalValueUsd\x12#\n" +
+	"\rdominion_rank\x18\x02 \x01(\x01R\fdominionRank\x12\x1d\n" +
+	"\n" +
+	"rank_label\x18\x03 \x01(\tR\trankLabel\x12%\n" +
+	"\x0everified_count\x18\x04 \x01(\x05R\rverifiedCount\x12.\n" +
+	"\x13primary_region_code\x18\x05 \x01(\tR\x11primaryRegionCode\x12.\n" +
+	"\x13primary_region_name\x18\x06 \x01(\tR\x11primaryRegionName\x122\n" +
+	"\x15primary_region_signal\x18\a \x01(\tR\x13primaryRegionSignal\x12$\n" +
+	"\x0ehas_next_event\x18\b \x01(\bR\fhasNextEvent\x12(\n" +
+	"\x10next_event_title\x18\t \x01(\tR\x0enextEventTitle\x12*\n" +
+	"\x11next_event_lounge\x18\n" +
+	" \x01(\tR\x0fnextEventLounge\x123\n" +
+	"\x16next_event_starts_unix\x18\v \x01(\x03R\x13nextEventStartsUnix\"\x18\n" +
+	"\x16GetTodaySummaryRequest\"W\n" +
+	"\x17GetTodaySummaryResponse\x12<\n" +
+	"\asummary\x18\x01 \x01(\v2\".sttattus.dominion.v1.TodaySummaryR\asummary\"\xef\x01\n" +
+	"\x0fConciergeThread\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
+	"\asubject\x18\x02 \x01(\tR\asubject\x12\x16\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\x12%\n" +
+	"\x0fsla_due_at_unix\x18\x04 \x01(\x03R\fslaDueAtUnix\x12&\n" +
+	"\x0fcreated_at_unix\x18\x05 \x01(\x03R\rcreatedAtUnix\x12&\n" +
+	"\x0fupdated_at_unix\x18\x06 \x01(\x03R\rupdatedAtUnix\x12#\n" +
+	"\rmessage_count\x18\a \x01(\x05R\fmessageCount\"\x7f\n" +
+	"\x10ConciergeMessage\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
+	"\vsender_role\x18\x02 \x01(\tR\n" +
+	"senderRole\x12\x12\n" +
+	"\x04body\x18\x03 \x01(\tR\x04body\x12&\n" +
+	"\x0fcreated_at_unix\x18\x04 \x01(\x03R\rcreatedAtUnix\"`\n" +
+	"\x1bStartConciergeThreadRequest\x12\x18\n" +
+	"\asubject\x18\x01 \x01(\tR\asubject\x12'\n" +
+	"\x0fopening_message\x18\x02 \x01(\tR\x0eopeningMessage\"]\n" +
+	"\x1cStartConciergeThreadResponse\x12=\n" +
+	"\x06thread\x18\x01 \x01(\v2%.sttattus.dominion.v1.ConciergeThreadR\x06thread\"\x1f\n" +
+	"\x1dListMyConciergeThreadsRequest\"a\n" +
+	"\x1eListMyConciergeThreadsResponse\x12?\n" +
+	"\athreads\x18\x01 \x03(\v2%.sttattus.dominion.v1.ConciergeThreadR\athreads\"8\n" +
+	"\x19GetConciergeThreadRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\"\x9f\x01\n" +
+	"\x1aGetConciergeThreadResponse\x12=\n" +
+	"\x06thread\x18\x01 \x01(\v2%.sttattus.dominion.v1.ConciergeThreadR\x06thread\x12B\n" +
+	"\bmessages\x18\x02 \x03(\v2&.sttattus.dominion.v1.ConciergeMessageR\bmessages\"N\n" +
+	"\x1bPostConciergeMessageRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\x12\x12\n" +
+	"\x04body\x18\x02 \x01(\tR\x04body\"`\n" +
+	"\x1cPostConciergeMessageResponse\x12@\n" +
+	"\amessage\x18\x01 \x01(\v2&.sttattus.dominion.v1.ConciergeMessageR\amessage\"\xb6\x02\n" +
+	"\x10AnthologyArticle\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x10\n" +
+	"\x03dek\x18\x04 \x01(\tR\x03dek\x12\x12\n" +
+	"\x04body\x18\x05 \x01(\tR\x04body\x12\x1f\n" +
+	"\vauthor_name\x18\x06 \x01(\tR\n" +
+	"authorName\x12-\n" +
+	"\x12author_credentials\x18\a \x01(\tR\x11authorCredentials\x12\x1f\n" +
+	"\vregion_code\x18\b \x01(\tR\n" +
+	"regionCode\x12%\n" +
+	"\x0esovereign_only\x18\t \x01(\bR\rsovereignOnly\x12*\n" +
+	"\x11published_at_unix\x18\n" +
+	" \x01(\x03R\x0fpublishedAtUnix\"\x1e\n" +
+	"\x1cListAnthologyArticlesRequest\"c\n" +
+	"\x1dListAnthologyArticlesResponse\x12B\n" +
+	"\barticles\x18\x01 \x03(\v2&.sttattus.dominion.v1.AnthologyArticleR\barticles\"0\n" +
+	"\x1aGetAnthologyArticleRequest\x12\x12\n" +
+	"\x04slug\x18\x01 \x01(\tR\x04slug\"_\n" +
+	"\x1bGetAnthologyArticleResponse\x12@\n" +
+	"\aarticle\x18\x01 \x01(\v2&.sttattus.dominion.v1.AnthologyArticleR\aarticle\"\xc6\x02\n" +
+	"\x10DirectoryPartner\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12\x12\n" +
+	"\x04kind\x18\x04 \x01(\tR\x04kind\x12\x12\n" +
+	"\x04city\x18\x05 \x01(\tR\x04city\x12!\n" +
+	"\fcountry_code\x18\x06 \x01(\tR\vcountryCode\x12\x1f\n" +
+	"\vregion_code\x18\a \x01(\tR\n" +
+	"regionCode\x12 \n" +
+	"\vspecialties\x18\b \x03(\tR\vspecialties\x12 \n" +
+	"\vdescription\x18\t \x01(\tR\vdescription\x12#\n" +
+	"\rportfolio_url\x18\n" +
+	" \x01(\tR\fportfolioUrl\x12%\n" +
+	"\x0esovereign_only\x18\v \x01(\bR\rsovereignOnly\"K\n" +
+	"\x14ListDirectoryRequest\x12\x12\n" +
+	"\x04kind\x18\x01 \x01(\tR\x04kind\x12\x1f\n" +
+	"\vregion_code\x18\x02 \x01(\tR\n" +
+	"regionCode\"[\n" +
+	"\x15ListDirectoryResponse\x12B\n" +
+	"\bpartners\x18\x01 \x03(\v2&.sttattus.dominion.v1.DirectoryPartnerR\bpartners\"\x87\x02\n" +
+	"\x10OffMarketListing\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x12\n" +
+	"\x04city\x18\x04 \x01(\tR\x04city\x12!\n" +
+	"\fcountry_code\x18\x05 \x01(\tR\vcountryCode\x12\x1f\n" +
+	"\vregion_code\x18\x06 \x01(\tR\n" +
+	"regionCode\x12\x1b\n" +
+	"\tprice_usd\x18\a \x01(\x01R\bpriceUsd\x12\x18\n" +
+	"\asummary\x18\b \x01(\tR\asummary\x12\x12\n" +
+	"\x04body\x18\t \x01(\tR\x04body\x12\x16\n" +
+	"\x06status\x18\n" +
+	" \x01(\tR\x06status\"7\n" +
+	"\x14ListOffMarketRequest\x12\x1f\n" +
+	"\vregion_code\x18\x01 \x01(\tR\n" +
+	"regionCode\"[\n" +
+	"\x15ListOffMarketResponse\x12B\n" +
+	"\blistings\x18\x01 \x03(\v2&.sttattus.dominion.v1.OffMarketListingR\blistings\")\n" +
+	"\x13GetOffMarketRequest\x12\x12\n" +
+	"\x04slug\x18\x01 \x01(\tR\x04slug\"X\n" +
+	"\x14GetOffMarketResponse\x12@\n" +
+	"\alisting\x18\x01 \x01(\v2&.sttattus.dominion.v1.OffMarketListingR\alisting\"+\n" +
+	"\x10ParseDeedRequest\x12\x17\n" +
+	"\adeed_id\x18\x01 \x01(\tR\x06deedId\"]\n" +
+	"\x11ParseDeedResponse\x12\x16\n" +
+	"\x06parsed\x18\x01 \x01(\bR\x06parsed\x12\x1c\n" +
+	"\textracted\x18\x02 \x01(\tR\textracted\x12\x12\n" +
+	"\x04note\x18\x03 \x01(\tR\x04note\"\x8c\x01\n" +
+	"\x12DominionShareToken\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\x12\x10\n" +
+	"\x03url\x18\x02 \x01(\tR\x03url\x12&\n" +
+	"\x0fexpires_at_unix\x18\x03 \x01(\x03R\rexpiresAtUnix\x12&\n" +
+	"\x0fcreated_at_unix\x18\x04 \x01(\x03R\rcreatedAtUnix\"7\n" +
+	"\x1aCreateDominionShareRequest\x12\x19\n" +
+	"\bttl_days\x18\x01 \x01(\x05R\attlDays\"]\n" +
+	"\x1bCreateDominionShareResponse\x12>\n" +
+	"\x05token\x18\x01 \x01(\v2(.sttattus.dominion.v1.DominionShareTokenR\x05token\"\x1d\n" +
+	"\x1bListMyDominionSharesRequest\"`\n" +
+	"\x1cListMyDominionSharesResponse\x12@\n" +
+	"\x06tokens\x18\x01 \x03(\v2(.sttattus.dominion.v1.DominionShareTokenR\x06tokens\"2\n" +
+	"\x1aRevokeDominionShareRequest\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\"7\n" +
+	"\x1bRevokeDominionShareResponse\x12\x18\n" +
+	"\arevoked\x18\x01 \x01(\bR\arevoked\" \n" +
+	"\x1eGenerateDominionAlmanacRequest\"R\n" +
+	"\x1fGenerateDominionAlmanacResponse\x12\x10\n" +
+	"\x03url\x18\x01 \x01(\tR\x03url\x12\x1d\n" +
+	"\n" +
+	"page_count\x18\x02 \x01(\x05R\tpageCount\"\xb2\x01\n" +
+	"\n" +
+	"LoungePass\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\x12\x10\n" +
+	"\x03url\x18\x02 \x01(\tR\x03url\x12\x12\n" +
+	"\x04tier\x18\x03 \x01(\tR\x04tier\x12\x1f\n" +
+	"\vmember_name\x18\x04 \x01(\tR\n" +
+	"memberName\x12\x1f\n" +
+	"\vlounge_slug\x18\x05 \x01(\tR\n" +
+	"loungeSlug\x12&\n" +
+	"\x0fexpires_at_unix\x18\x06 \x01(\x03R\rexpiresAtUnix\":\n" +
+	"\x17CreateLoungePassRequest\x12\x1f\n" +
+	"\vlounge_slug\x18\x01 \x01(\tR\n" +
+	"loungeSlug\"P\n" +
+	"\x18CreateLoungePassResponse\x124\n" +
+	"\x04pass\x18\x01 \x01(\v2 .sttattus.dominion.v1.LoungePassR\x04pass\"\x1b\n" +
+	"\x19ListMyLoungePassesRequest\"V\n" +
+	"\x1aListMyLoungePassesResponse\x128\n" +
+	"\x06passes\x18\x01 \x03(\v2 .sttattus.dominion.v1.LoungePassR\x06passes*\xc5\x01\n" +
 	"\x0eEstateCategory\x12\x1f\n" +
 	"\x1bESTATE_CATEGORY_UNSPECIFIED\x10\x00\x12%\n" +
 	"!ESTATE_CATEGORY_PRIMARY_RESIDENCE\x10\x01\x12#\n" +
@@ -1696,7 +6004,7 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xe3\b\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xc7#\n" +
 	"\x0fDominionService\x12k\n" +
 	"\x0eSyncProperties\x12+.sttattus.dominion.v1.SyncPropertiesRequest\x1a,.sttattus.dominion.v1.SyncPropertiesResponse\x12n\n" +
 	"\x0fListTerritories\x12,.sttattus.dominion.v1.ListTerritoriesRequest\x1a-.sttattus.dominion.v1.ListTerritoriesResponse\x12q\n" +
@@ -1708,7 +6016,37 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\vListMyDeeds\x12(.sttattus.dominion.v1.ListMyDeedsRequest\x1a).sttattus.dominion.v1.ListMyDeedsResponse\x12}\n" +
 	"\x14ListDeedsForProperty\x121.sttattus.dominion.v1.ListDeedsForPropertyRequest\x1a2.sttattus.dominion.v1.ListDeedsForPropertyResponse\x12n\n" +
 	"\x0fAdminReviewDeed\x12,.sttattus.dominion.v1.AdminReviewDeedRequest\x1a-.sttattus.dominion.v1.AdminReviewDeedResponse\x12b\n" +
-	"\vListLounges\x12(.sttattus.dominion.v1.ListLoungesRequest\x1a).sttattus.dominion.v1.ListLoungesResponseBBZ@github.com/sttattus/proto/gen/go/sttattus/dominion/v1;dominionv1b\x06proto3"
+	"\vListLounges\x12(.sttattus.dominion.v1.ListLoungesRequest\x1a).sttattus.dominion.v1.ListLoungesResponse\x12q\n" +
+	"\x10ListLoungeEvents\x12-.sttattus.dominion.v1.ListLoungeEventsRequest\x1a..sttattus.dominion.v1.ListLoungeEventsResponse\x12n\n" +
+	"\x0fRsvpLoungeEvent\x12,.sttattus.dominion.v1.RsvpLoungeEventRequest\x1a-.sttattus.dominion.v1.RsvpLoungeEventResponse\x12t\n" +
+	"\x11ListMyLoungeRsvps\x12..sttattus.dominion.v1.ListMyLoungeRsvpsRequest\x1a/.sttattus.dominion.v1.ListMyLoungeRsvpsResponse\x12_\n" +
+	"\n" +
+	"ListSalons\x12'.sttattus.dominion.v1.ListSalonsRequest\x1a(.sttattus.dominion.v1.ListSalonsResponse\x12\\\n" +
+	"\tRsvpSalon\x12&.sttattus.dominion.v1.RsvpSalonRequest\x1a'.sttattus.dominion.v1.RsvpSalonResponse\x12q\n" +
+	"\x10ListMySalonRsvps\x12-.sttattus.dominion.v1.ListMySalonRsvpsRequest\x1a..sttattus.dominion.v1.ListMySalonRsvpsResponse\x12\x80\x01\n" +
+	"\x15GetPropertyFinancials\x122.sttattus.dominion.v1.GetPropertyFinancialsRequest\x1a3.sttattus.dominion.v1.GetPropertyFinancialsResponse\x12\x89\x01\n" +
+	"\x18UpsertPropertyFinancials\x125.sttattus.dominion.v1.UpsertPropertyFinancialsRequest\x1a6.sttattus.dominion.v1.UpsertPropertyFinancialsResponse\x12t\n" +
+	"\x11GetPortfolioYield\x12..sttattus.dominion.v1.GetPortfolioYieldRequest\x1a/.sttattus.dominion.v1.GetPortfolioYieldResponse\x12n\n" +
+	"\x0fListRegionIntel\x12,.sttattus.dominion.v1.ListRegionIntelRequest\x1a-.sttattus.dominion.v1.ListRegionIntelResponse\x12k\n" +
+	"\x0eGetRegionIntel\x12+.sttattus.dominion.v1.GetRegionIntelRequest\x1a,.sttattus.dominion.v1.GetRegionIntelResponse\x12\x83\x01\n" +
+	"\x16GetTerritoryAllocation\x123.sttattus.dominion.v1.GetTerritoryAllocationRequest\x1a4.sttattus.dominion.v1.GetTerritoryAllocationResponse\x12n\n" +
+	"\x0fGetTodaySummary\x12,.sttattus.dominion.v1.GetTodaySummaryRequest\x1a-.sttattus.dominion.v1.GetTodaySummaryResponse\x12}\n" +
+	"\x14StartConciergeThread\x121.sttattus.dominion.v1.StartConciergeThreadRequest\x1a2.sttattus.dominion.v1.StartConciergeThreadResponse\x12\x83\x01\n" +
+	"\x16ListMyConciergeThreads\x123.sttattus.dominion.v1.ListMyConciergeThreadsRequest\x1a4.sttattus.dominion.v1.ListMyConciergeThreadsResponse\x12w\n" +
+	"\x12GetConciergeThread\x12/.sttattus.dominion.v1.GetConciergeThreadRequest\x1a0.sttattus.dominion.v1.GetConciergeThreadResponse\x12}\n" +
+	"\x14PostConciergeMessage\x121.sttattus.dominion.v1.PostConciergeMessageRequest\x1a2.sttattus.dominion.v1.PostConciergeMessageResponse\x12\x80\x01\n" +
+	"\x15ListAnthologyArticles\x122.sttattus.dominion.v1.ListAnthologyArticlesRequest\x1a3.sttattus.dominion.v1.ListAnthologyArticlesResponse\x12z\n" +
+	"\x13GetAnthologyArticle\x120.sttattus.dominion.v1.GetAnthologyArticleRequest\x1a1.sttattus.dominion.v1.GetAnthologyArticleResponse\x12h\n" +
+	"\rListDirectory\x12*.sttattus.dominion.v1.ListDirectoryRequest\x1a+.sttattus.dominion.v1.ListDirectoryResponse\x12h\n" +
+	"\rListOffMarket\x12*.sttattus.dominion.v1.ListOffMarketRequest\x1a+.sttattus.dominion.v1.ListOffMarketResponse\x12e\n" +
+	"\fGetOffMarket\x12).sttattus.dominion.v1.GetOffMarketRequest\x1a*.sttattus.dominion.v1.GetOffMarketResponse\x12\\\n" +
+	"\tParseDeed\x12&.sttattus.dominion.v1.ParseDeedRequest\x1a'.sttattus.dominion.v1.ParseDeedResponse\x12z\n" +
+	"\x13CreateDominionShare\x120.sttattus.dominion.v1.CreateDominionShareRequest\x1a1.sttattus.dominion.v1.CreateDominionShareResponse\x12}\n" +
+	"\x14ListMyDominionShares\x121.sttattus.dominion.v1.ListMyDominionSharesRequest\x1a2.sttattus.dominion.v1.ListMyDominionSharesResponse\x12z\n" +
+	"\x13RevokeDominionShare\x120.sttattus.dominion.v1.RevokeDominionShareRequest\x1a1.sttattus.dominion.v1.RevokeDominionShareResponse\x12\x86\x01\n" +
+	"\x17GenerateDominionAlmanac\x124.sttattus.dominion.v1.GenerateDominionAlmanacRequest\x1a5.sttattus.dominion.v1.GenerateDominionAlmanacResponse\x12q\n" +
+	"\x10CreateLoungePass\x12-.sttattus.dominion.v1.CreateLoungePassRequest\x1a..sttattus.dominion.v1.CreateLoungePassResponse\x12w\n" +
+	"\x12ListMyLoungePasses\x12/.sttattus.dominion.v1.ListMyLoungePassesRequest\x1a0.sttattus.dominion.v1.ListMyLoungePassesResponseBBZ@github.com/sttattus/proto/gen/go/sttattus/dominion/v1;dominionv1b\x06proto3"
 
 var (
 	file_sttattus_dominion_v1_dominion_proto_rawDescOnce sync.Once
@@ -1723,77 +6061,232 @@ func file_sttattus_dominion_v1_dominion_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_dominion_v1_dominion_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_dominion_v1_dominion_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
+var file_sttattus_dominion_v1_dominion_proto_msgTypes = make([]protoimpl.MessageInfo, 97)
 var file_sttattus_dominion_v1_dominion_proto_goTypes = []any{
-	(EstateCategory)(0),                   // 0: sttattus.dominion.v1.EstateCategory
-	(VerificationStatus)(0),               // 1: sttattus.dominion.v1.VerificationStatus
-	(*Property)(nil),                      // 2: sttattus.dominion.v1.Property
-	(*DominionStats)(nil),                 // 3: sttattus.dominion.v1.DominionStats
-	(*SyncPropertiesRequest)(nil),         // 4: sttattus.dominion.v1.SyncPropertiesRequest
-	(*SyncPropertiesResponse)(nil),        // 5: sttattus.dominion.v1.SyncPropertiesResponse
-	(*ListTerritoriesRequest)(nil),        // 6: sttattus.dominion.v1.ListTerritoriesRequest
-	(*ListTerritoriesResponse)(nil),       // 7: sttattus.dominion.v1.ListTerritoriesResponse
-	(*GetDominionStatsRequest)(nil),       // 8: sttattus.dominion.v1.GetDominionStatsRequest
-	(*GetDominionStatsResponse)(nil),      // 9: sttattus.dominion.v1.GetDominionStatsResponse
-	(*GetLoungeKeyRequest)(nil),           // 10: sttattus.dominion.v1.GetLoungeKeyRequest
-	(*GetLoungeKeyResponse)(nil),          // 11: sttattus.dominion.v1.GetLoungeKeyResponse
-	(*Lounge)(nil),                        // 12: sttattus.dominion.v1.Lounge
-	(*ListLoungesRequest)(nil),            // 13: sttattus.dominion.v1.ListLoungesRequest
-	(*ListLoungesResponse)(nil),           // 14: sttattus.dominion.v1.ListLoungesResponse
-	(*Deed)(nil),                          // 15: sttattus.dominion.v1.Deed
-	(*SubmitDeedRequest)(nil),             // 16: sttattus.dominion.v1.SubmitDeedRequest
-	(*SubmitDeedResponse)(nil),            // 17: sttattus.dominion.v1.SubmitDeedResponse
-	(*ListMyDeedsRequest)(nil),            // 18: sttattus.dominion.v1.ListMyDeedsRequest
-	(*ListMyDeedsResponse)(nil),           // 19: sttattus.dominion.v1.ListMyDeedsResponse
-	(*ListDeedsForPropertyRequest)(nil),   // 20: sttattus.dominion.v1.ListDeedsForPropertyRequest
-	(*ListDeedsForPropertyResponse)(nil),  // 21: sttattus.dominion.v1.ListDeedsForPropertyResponse
-	(*AdminReviewDeedRequest)(nil),        // 22: sttattus.dominion.v1.AdminReviewDeedRequest
-	(*AdminReviewDeedResponse)(nil),       // 23: sttattus.dominion.v1.AdminReviewDeedResponse
-	(*AVMResult)(nil),                     // 24: sttattus.dominion.v1.AVMResult
-	(*EstimatePropertyValueRequest)(nil),  // 25: sttattus.dominion.v1.EstimatePropertyValueRequest
-	(*EstimatePropertyValueResponse)(nil), // 26: sttattus.dominion.v1.EstimatePropertyValueResponse
-	(*timestamppb.Timestamp)(nil),         // 27: google.protobuf.Timestamp
+	(EstateCategory)(0),                      // 0: sttattus.dominion.v1.EstateCategory
+	(VerificationStatus)(0),                  // 1: sttattus.dominion.v1.VerificationStatus
+	(*Property)(nil),                         // 2: sttattus.dominion.v1.Property
+	(*DominionStats)(nil),                    // 3: sttattus.dominion.v1.DominionStats
+	(*SyncPropertiesRequest)(nil),            // 4: sttattus.dominion.v1.SyncPropertiesRequest
+	(*SyncPropertiesResponse)(nil),           // 5: sttattus.dominion.v1.SyncPropertiesResponse
+	(*ListTerritoriesRequest)(nil),           // 6: sttattus.dominion.v1.ListTerritoriesRequest
+	(*ListTerritoriesResponse)(nil),          // 7: sttattus.dominion.v1.ListTerritoriesResponse
+	(*GetDominionStatsRequest)(nil),          // 8: sttattus.dominion.v1.GetDominionStatsRequest
+	(*GetDominionStatsResponse)(nil),         // 9: sttattus.dominion.v1.GetDominionStatsResponse
+	(*GetLoungeKeyRequest)(nil),              // 10: sttattus.dominion.v1.GetLoungeKeyRequest
+	(*GetLoungeKeyResponse)(nil),             // 11: sttattus.dominion.v1.GetLoungeKeyResponse
+	(*Lounge)(nil),                           // 12: sttattus.dominion.v1.Lounge
+	(*ListLoungesRequest)(nil),               // 13: sttattus.dominion.v1.ListLoungesRequest
+	(*ListLoungesResponse)(nil),              // 14: sttattus.dominion.v1.ListLoungesResponse
+	(*Deed)(nil),                             // 15: sttattus.dominion.v1.Deed
+	(*SubmitDeedRequest)(nil),                // 16: sttattus.dominion.v1.SubmitDeedRequest
+	(*SubmitDeedResponse)(nil),               // 17: sttattus.dominion.v1.SubmitDeedResponse
+	(*ListMyDeedsRequest)(nil),               // 18: sttattus.dominion.v1.ListMyDeedsRequest
+	(*ListMyDeedsResponse)(nil),              // 19: sttattus.dominion.v1.ListMyDeedsResponse
+	(*ListDeedsForPropertyRequest)(nil),      // 20: sttattus.dominion.v1.ListDeedsForPropertyRequest
+	(*ListDeedsForPropertyResponse)(nil),     // 21: sttattus.dominion.v1.ListDeedsForPropertyResponse
+	(*AdminReviewDeedRequest)(nil),           // 22: sttattus.dominion.v1.AdminReviewDeedRequest
+	(*AdminReviewDeedResponse)(nil),          // 23: sttattus.dominion.v1.AdminReviewDeedResponse
+	(*AVMResult)(nil),                        // 24: sttattus.dominion.v1.AVMResult
+	(*EstimatePropertyValueRequest)(nil),     // 25: sttattus.dominion.v1.EstimatePropertyValueRequest
+	(*EstimatePropertyValueResponse)(nil),    // 26: sttattus.dominion.v1.EstimatePropertyValueResponse
+	(*LoungeEvent)(nil),                      // 27: sttattus.dominion.v1.LoungeEvent
+	(*ListLoungeEventsRequest)(nil),          // 28: sttattus.dominion.v1.ListLoungeEventsRequest
+	(*ListLoungeEventsResponse)(nil),         // 29: sttattus.dominion.v1.ListLoungeEventsResponse
+	(*RsvpLoungeEventRequest)(nil),           // 30: sttattus.dominion.v1.RsvpLoungeEventRequest
+	(*RsvpLoungeEventResponse)(nil),          // 31: sttattus.dominion.v1.RsvpLoungeEventResponse
+	(*ListMyLoungeRsvpsRequest)(nil),         // 32: sttattus.dominion.v1.ListMyLoungeRsvpsRequest
+	(*ListMyLoungeRsvpsResponse)(nil),        // 33: sttattus.dominion.v1.ListMyLoungeRsvpsResponse
+	(*Salon)(nil),                            // 34: sttattus.dominion.v1.Salon
+	(*ListSalonsRequest)(nil),                // 35: sttattus.dominion.v1.ListSalonsRequest
+	(*ListSalonsResponse)(nil),               // 36: sttattus.dominion.v1.ListSalonsResponse
+	(*RsvpSalonRequest)(nil),                 // 37: sttattus.dominion.v1.RsvpSalonRequest
+	(*RsvpSalonResponse)(nil),                // 38: sttattus.dominion.v1.RsvpSalonResponse
+	(*ListMySalonRsvpsRequest)(nil),          // 39: sttattus.dominion.v1.ListMySalonRsvpsRequest
+	(*ListMySalonRsvpsResponse)(nil),         // 40: sttattus.dominion.v1.ListMySalonRsvpsResponse
+	(*PropertyFinancials)(nil),               // 41: sttattus.dominion.v1.PropertyFinancials
+	(*GetPropertyFinancialsRequest)(nil),     // 42: sttattus.dominion.v1.GetPropertyFinancialsRequest
+	(*GetPropertyFinancialsResponse)(nil),    // 43: sttattus.dominion.v1.GetPropertyFinancialsResponse
+	(*UpsertPropertyFinancialsRequest)(nil),  // 44: sttattus.dominion.v1.UpsertPropertyFinancialsRequest
+	(*UpsertPropertyFinancialsResponse)(nil), // 45: sttattus.dominion.v1.UpsertPropertyFinancialsResponse
+	(*GetPortfolioYieldRequest)(nil),         // 46: sttattus.dominion.v1.GetPortfolioYieldRequest
+	(*GetPortfolioYieldResponse)(nil),        // 47: sttattus.dominion.v1.GetPortfolioYieldResponse
+	(*RegionIntel)(nil),                      // 48: sttattus.dominion.v1.RegionIntel
+	(*ListRegionIntelRequest)(nil),           // 49: sttattus.dominion.v1.ListRegionIntelRequest
+	(*ListRegionIntelResponse)(nil),          // 50: sttattus.dominion.v1.ListRegionIntelResponse
+	(*GetRegionIntelRequest)(nil),            // 51: sttattus.dominion.v1.GetRegionIntelRequest
+	(*GetRegionIntelResponse)(nil),           // 52: sttattus.dominion.v1.GetRegionIntelResponse
+	(*RegionWeight)(nil),                     // 53: sttattus.dominion.v1.RegionWeight
+	(*TerritoryAllocation)(nil),              // 54: sttattus.dominion.v1.TerritoryAllocation
+	(*GetTerritoryAllocationRequest)(nil),    // 55: sttattus.dominion.v1.GetTerritoryAllocationRequest
+	(*GetTerritoryAllocationResponse)(nil),   // 56: sttattus.dominion.v1.GetTerritoryAllocationResponse
+	(*TodaySummary)(nil),                     // 57: sttattus.dominion.v1.TodaySummary
+	(*GetTodaySummaryRequest)(nil),           // 58: sttattus.dominion.v1.GetTodaySummaryRequest
+	(*GetTodaySummaryResponse)(nil),          // 59: sttattus.dominion.v1.GetTodaySummaryResponse
+	(*ConciergeThread)(nil),                  // 60: sttattus.dominion.v1.ConciergeThread
+	(*ConciergeMessage)(nil),                 // 61: sttattus.dominion.v1.ConciergeMessage
+	(*StartConciergeThreadRequest)(nil),      // 62: sttattus.dominion.v1.StartConciergeThreadRequest
+	(*StartConciergeThreadResponse)(nil),     // 63: sttattus.dominion.v1.StartConciergeThreadResponse
+	(*ListMyConciergeThreadsRequest)(nil),    // 64: sttattus.dominion.v1.ListMyConciergeThreadsRequest
+	(*ListMyConciergeThreadsResponse)(nil),   // 65: sttattus.dominion.v1.ListMyConciergeThreadsResponse
+	(*GetConciergeThreadRequest)(nil),        // 66: sttattus.dominion.v1.GetConciergeThreadRequest
+	(*GetConciergeThreadResponse)(nil),       // 67: sttattus.dominion.v1.GetConciergeThreadResponse
+	(*PostConciergeMessageRequest)(nil),      // 68: sttattus.dominion.v1.PostConciergeMessageRequest
+	(*PostConciergeMessageResponse)(nil),     // 69: sttattus.dominion.v1.PostConciergeMessageResponse
+	(*AnthologyArticle)(nil),                 // 70: sttattus.dominion.v1.AnthologyArticle
+	(*ListAnthologyArticlesRequest)(nil),     // 71: sttattus.dominion.v1.ListAnthologyArticlesRequest
+	(*ListAnthologyArticlesResponse)(nil),    // 72: sttattus.dominion.v1.ListAnthologyArticlesResponse
+	(*GetAnthologyArticleRequest)(nil),       // 73: sttattus.dominion.v1.GetAnthologyArticleRequest
+	(*GetAnthologyArticleResponse)(nil),      // 74: sttattus.dominion.v1.GetAnthologyArticleResponse
+	(*DirectoryPartner)(nil),                 // 75: sttattus.dominion.v1.DirectoryPartner
+	(*ListDirectoryRequest)(nil),             // 76: sttattus.dominion.v1.ListDirectoryRequest
+	(*ListDirectoryResponse)(nil),            // 77: sttattus.dominion.v1.ListDirectoryResponse
+	(*OffMarketListing)(nil),                 // 78: sttattus.dominion.v1.OffMarketListing
+	(*ListOffMarketRequest)(nil),             // 79: sttattus.dominion.v1.ListOffMarketRequest
+	(*ListOffMarketResponse)(nil),            // 80: sttattus.dominion.v1.ListOffMarketResponse
+	(*GetOffMarketRequest)(nil),              // 81: sttattus.dominion.v1.GetOffMarketRequest
+	(*GetOffMarketResponse)(nil),             // 82: sttattus.dominion.v1.GetOffMarketResponse
+	(*ParseDeedRequest)(nil),                 // 83: sttattus.dominion.v1.ParseDeedRequest
+	(*ParseDeedResponse)(nil),                // 84: sttattus.dominion.v1.ParseDeedResponse
+	(*DominionShareToken)(nil),               // 85: sttattus.dominion.v1.DominionShareToken
+	(*CreateDominionShareRequest)(nil),       // 86: sttattus.dominion.v1.CreateDominionShareRequest
+	(*CreateDominionShareResponse)(nil),      // 87: sttattus.dominion.v1.CreateDominionShareResponse
+	(*ListMyDominionSharesRequest)(nil),      // 88: sttattus.dominion.v1.ListMyDominionSharesRequest
+	(*ListMyDominionSharesResponse)(nil),     // 89: sttattus.dominion.v1.ListMyDominionSharesResponse
+	(*RevokeDominionShareRequest)(nil),       // 90: sttattus.dominion.v1.RevokeDominionShareRequest
+	(*RevokeDominionShareResponse)(nil),      // 91: sttattus.dominion.v1.RevokeDominionShareResponse
+	(*GenerateDominionAlmanacRequest)(nil),   // 92: sttattus.dominion.v1.GenerateDominionAlmanacRequest
+	(*GenerateDominionAlmanacResponse)(nil),  // 93: sttattus.dominion.v1.GenerateDominionAlmanacResponse
+	(*LoungePass)(nil),                       // 94: sttattus.dominion.v1.LoungePass
+	(*CreateLoungePassRequest)(nil),          // 95: sttattus.dominion.v1.CreateLoungePassRequest
+	(*CreateLoungePassResponse)(nil),         // 96: sttattus.dominion.v1.CreateLoungePassResponse
+	(*ListMyLoungePassesRequest)(nil),        // 97: sttattus.dominion.v1.ListMyLoungePassesRequest
+	(*ListMyLoungePassesResponse)(nil),       // 98: sttattus.dominion.v1.ListMyLoungePassesResponse
+	(*timestamppb.Timestamp)(nil),            // 99: google.protobuf.Timestamp
 }
 var file_sttattus_dominion_v1_dominion_proto_depIdxs = []int32{
 	0,  // 0: sttattus.dominion.v1.Property.category:type_name -> sttattus.dominion.v1.EstateCategory
 	1,  // 1: sttattus.dominion.v1.Property.status:type_name -> sttattus.dominion.v1.VerificationStatus
-	27, // 2: sttattus.dominion.v1.Property.acquired_at:type_name -> google.protobuf.Timestamp
+	99, // 2: sttattus.dominion.v1.Property.acquired_at:type_name -> google.protobuf.Timestamp
 	2,  // 3: sttattus.dominion.v1.SyncPropertiesRequest.properties:type_name -> sttattus.dominion.v1.Property
 	3,  // 4: sttattus.dominion.v1.SyncPropertiesResponse.stats:type_name -> sttattus.dominion.v1.DominionStats
 	2,  // 5: sttattus.dominion.v1.ListTerritoriesResponse.properties:type_name -> sttattus.dominion.v1.Property
 	3,  // 6: sttattus.dominion.v1.GetDominionStatsResponse.stats:type_name -> sttattus.dominion.v1.DominionStats
-	27, // 7: sttattus.dominion.v1.GetLoungeKeyResponse.expires_at:type_name -> google.protobuf.Timestamp
+	99, // 7: sttattus.dominion.v1.GetLoungeKeyResponse.expires_at:type_name -> google.protobuf.Timestamp
 	12, // 8: sttattus.dominion.v1.ListLoungesResponse.lounges:type_name -> sttattus.dominion.v1.Lounge
 	15, // 9: sttattus.dominion.v1.SubmitDeedResponse.deed:type_name -> sttattus.dominion.v1.Deed
 	15, // 10: sttattus.dominion.v1.ListMyDeedsResponse.deeds:type_name -> sttattus.dominion.v1.Deed
 	15, // 11: sttattus.dominion.v1.ListDeedsForPropertyResponse.deeds:type_name -> sttattus.dominion.v1.Deed
 	15, // 12: sttattus.dominion.v1.AdminReviewDeedResponse.deed:type_name -> sttattus.dominion.v1.Deed
 	24, // 13: sttattus.dominion.v1.EstimatePropertyValueResponse.result:type_name -> sttattus.dominion.v1.AVMResult
-	4,  // 14: sttattus.dominion.v1.DominionService.SyncProperties:input_type -> sttattus.dominion.v1.SyncPropertiesRequest
-	6,  // 15: sttattus.dominion.v1.DominionService.ListTerritories:input_type -> sttattus.dominion.v1.ListTerritoriesRequest
-	8,  // 16: sttattus.dominion.v1.DominionService.GetDominionStats:input_type -> sttattus.dominion.v1.GetDominionStatsRequest
-	10, // 17: sttattus.dominion.v1.DominionService.GetLoungeKey:input_type -> sttattus.dominion.v1.GetLoungeKeyRequest
-	25, // 18: sttattus.dominion.v1.DominionService.EstimatePropertyValue:input_type -> sttattus.dominion.v1.EstimatePropertyValueRequest
-	16, // 19: sttattus.dominion.v1.DominionService.SubmitDeed:input_type -> sttattus.dominion.v1.SubmitDeedRequest
-	18, // 20: sttattus.dominion.v1.DominionService.ListMyDeeds:input_type -> sttattus.dominion.v1.ListMyDeedsRequest
-	20, // 21: sttattus.dominion.v1.DominionService.ListDeedsForProperty:input_type -> sttattus.dominion.v1.ListDeedsForPropertyRequest
-	22, // 22: sttattus.dominion.v1.DominionService.AdminReviewDeed:input_type -> sttattus.dominion.v1.AdminReviewDeedRequest
-	13, // 23: sttattus.dominion.v1.DominionService.ListLounges:input_type -> sttattus.dominion.v1.ListLoungesRequest
-	5,  // 24: sttattus.dominion.v1.DominionService.SyncProperties:output_type -> sttattus.dominion.v1.SyncPropertiesResponse
-	7,  // 25: sttattus.dominion.v1.DominionService.ListTerritories:output_type -> sttattus.dominion.v1.ListTerritoriesResponse
-	9,  // 26: sttattus.dominion.v1.DominionService.GetDominionStats:output_type -> sttattus.dominion.v1.GetDominionStatsResponse
-	11, // 27: sttattus.dominion.v1.DominionService.GetLoungeKey:output_type -> sttattus.dominion.v1.GetLoungeKeyResponse
-	26, // 28: sttattus.dominion.v1.DominionService.EstimatePropertyValue:output_type -> sttattus.dominion.v1.EstimatePropertyValueResponse
-	17, // 29: sttattus.dominion.v1.DominionService.SubmitDeed:output_type -> sttattus.dominion.v1.SubmitDeedResponse
-	19, // 30: sttattus.dominion.v1.DominionService.ListMyDeeds:output_type -> sttattus.dominion.v1.ListMyDeedsResponse
-	21, // 31: sttattus.dominion.v1.DominionService.ListDeedsForProperty:output_type -> sttattus.dominion.v1.ListDeedsForPropertyResponse
-	23, // 32: sttattus.dominion.v1.DominionService.AdminReviewDeed:output_type -> sttattus.dominion.v1.AdminReviewDeedResponse
-	14, // 33: sttattus.dominion.v1.DominionService.ListLounges:output_type -> sttattus.dominion.v1.ListLoungesResponse
-	24, // [24:34] is the sub-list for method output_type
-	14, // [14:24] is the sub-list for method input_type
-	14, // [14:14] is the sub-list for extension type_name
-	14, // [14:14] is the sub-list for extension extendee
-	0,  // [0:14] is the sub-list for field type_name
+	27, // 14: sttattus.dominion.v1.ListLoungeEventsResponse.events:type_name -> sttattus.dominion.v1.LoungeEvent
+	27, // 15: sttattus.dominion.v1.ListMyLoungeRsvpsResponse.events:type_name -> sttattus.dominion.v1.LoungeEvent
+	34, // 16: sttattus.dominion.v1.ListSalonsResponse.salons:type_name -> sttattus.dominion.v1.Salon
+	34, // 17: sttattus.dominion.v1.ListMySalonRsvpsResponse.salons:type_name -> sttattus.dominion.v1.Salon
+	41, // 18: sttattus.dominion.v1.GetPropertyFinancialsResponse.financials:type_name -> sttattus.dominion.v1.PropertyFinancials
+	41, // 19: sttattus.dominion.v1.UpsertPropertyFinancialsResponse.financials:type_name -> sttattus.dominion.v1.PropertyFinancials
+	48, // 20: sttattus.dominion.v1.ListRegionIntelResponse.regions:type_name -> sttattus.dominion.v1.RegionIntel
+	48, // 21: sttattus.dominion.v1.GetRegionIntelResponse.region:type_name -> sttattus.dominion.v1.RegionIntel
+	53, // 22: sttattus.dominion.v1.TerritoryAllocation.regions:type_name -> sttattus.dominion.v1.RegionWeight
+	54, // 23: sttattus.dominion.v1.GetTerritoryAllocationResponse.allocation:type_name -> sttattus.dominion.v1.TerritoryAllocation
+	57, // 24: sttattus.dominion.v1.GetTodaySummaryResponse.summary:type_name -> sttattus.dominion.v1.TodaySummary
+	60, // 25: sttattus.dominion.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.dominion.v1.ConciergeThread
+	60, // 26: sttattus.dominion.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.dominion.v1.ConciergeThread
+	60, // 27: sttattus.dominion.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.dominion.v1.ConciergeThread
+	61, // 28: sttattus.dominion.v1.GetConciergeThreadResponse.messages:type_name -> sttattus.dominion.v1.ConciergeMessage
+	61, // 29: sttattus.dominion.v1.PostConciergeMessageResponse.message:type_name -> sttattus.dominion.v1.ConciergeMessage
+	70, // 30: sttattus.dominion.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.dominion.v1.AnthologyArticle
+	70, // 31: sttattus.dominion.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.dominion.v1.AnthologyArticle
+	75, // 32: sttattus.dominion.v1.ListDirectoryResponse.partners:type_name -> sttattus.dominion.v1.DirectoryPartner
+	78, // 33: sttattus.dominion.v1.ListOffMarketResponse.listings:type_name -> sttattus.dominion.v1.OffMarketListing
+	78, // 34: sttattus.dominion.v1.GetOffMarketResponse.listing:type_name -> sttattus.dominion.v1.OffMarketListing
+	85, // 35: sttattus.dominion.v1.CreateDominionShareResponse.token:type_name -> sttattus.dominion.v1.DominionShareToken
+	85, // 36: sttattus.dominion.v1.ListMyDominionSharesResponse.tokens:type_name -> sttattus.dominion.v1.DominionShareToken
+	94, // 37: sttattus.dominion.v1.CreateLoungePassResponse.pass:type_name -> sttattus.dominion.v1.LoungePass
+	94, // 38: sttattus.dominion.v1.ListMyLoungePassesResponse.passes:type_name -> sttattus.dominion.v1.LoungePass
+	4,  // 39: sttattus.dominion.v1.DominionService.SyncProperties:input_type -> sttattus.dominion.v1.SyncPropertiesRequest
+	6,  // 40: sttattus.dominion.v1.DominionService.ListTerritories:input_type -> sttattus.dominion.v1.ListTerritoriesRequest
+	8,  // 41: sttattus.dominion.v1.DominionService.GetDominionStats:input_type -> sttattus.dominion.v1.GetDominionStatsRequest
+	10, // 42: sttattus.dominion.v1.DominionService.GetLoungeKey:input_type -> sttattus.dominion.v1.GetLoungeKeyRequest
+	25, // 43: sttattus.dominion.v1.DominionService.EstimatePropertyValue:input_type -> sttattus.dominion.v1.EstimatePropertyValueRequest
+	16, // 44: sttattus.dominion.v1.DominionService.SubmitDeed:input_type -> sttattus.dominion.v1.SubmitDeedRequest
+	18, // 45: sttattus.dominion.v1.DominionService.ListMyDeeds:input_type -> sttattus.dominion.v1.ListMyDeedsRequest
+	20, // 46: sttattus.dominion.v1.DominionService.ListDeedsForProperty:input_type -> sttattus.dominion.v1.ListDeedsForPropertyRequest
+	22, // 47: sttattus.dominion.v1.DominionService.AdminReviewDeed:input_type -> sttattus.dominion.v1.AdminReviewDeedRequest
+	13, // 48: sttattus.dominion.v1.DominionService.ListLounges:input_type -> sttattus.dominion.v1.ListLoungesRequest
+	28, // 49: sttattus.dominion.v1.DominionService.ListLoungeEvents:input_type -> sttattus.dominion.v1.ListLoungeEventsRequest
+	30, // 50: sttattus.dominion.v1.DominionService.RsvpLoungeEvent:input_type -> sttattus.dominion.v1.RsvpLoungeEventRequest
+	32, // 51: sttattus.dominion.v1.DominionService.ListMyLoungeRsvps:input_type -> sttattus.dominion.v1.ListMyLoungeRsvpsRequest
+	35, // 52: sttattus.dominion.v1.DominionService.ListSalons:input_type -> sttattus.dominion.v1.ListSalonsRequest
+	37, // 53: sttattus.dominion.v1.DominionService.RsvpSalon:input_type -> sttattus.dominion.v1.RsvpSalonRequest
+	39, // 54: sttattus.dominion.v1.DominionService.ListMySalonRsvps:input_type -> sttattus.dominion.v1.ListMySalonRsvpsRequest
+	42, // 55: sttattus.dominion.v1.DominionService.GetPropertyFinancials:input_type -> sttattus.dominion.v1.GetPropertyFinancialsRequest
+	44, // 56: sttattus.dominion.v1.DominionService.UpsertPropertyFinancials:input_type -> sttattus.dominion.v1.UpsertPropertyFinancialsRequest
+	46, // 57: sttattus.dominion.v1.DominionService.GetPortfolioYield:input_type -> sttattus.dominion.v1.GetPortfolioYieldRequest
+	49, // 58: sttattus.dominion.v1.DominionService.ListRegionIntel:input_type -> sttattus.dominion.v1.ListRegionIntelRequest
+	51, // 59: sttattus.dominion.v1.DominionService.GetRegionIntel:input_type -> sttattus.dominion.v1.GetRegionIntelRequest
+	55, // 60: sttattus.dominion.v1.DominionService.GetTerritoryAllocation:input_type -> sttattus.dominion.v1.GetTerritoryAllocationRequest
+	58, // 61: sttattus.dominion.v1.DominionService.GetTodaySummary:input_type -> sttattus.dominion.v1.GetTodaySummaryRequest
+	62, // 62: sttattus.dominion.v1.DominionService.StartConciergeThread:input_type -> sttattus.dominion.v1.StartConciergeThreadRequest
+	64, // 63: sttattus.dominion.v1.DominionService.ListMyConciergeThreads:input_type -> sttattus.dominion.v1.ListMyConciergeThreadsRequest
+	66, // 64: sttattus.dominion.v1.DominionService.GetConciergeThread:input_type -> sttattus.dominion.v1.GetConciergeThreadRequest
+	68, // 65: sttattus.dominion.v1.DominionService.PostConciergeMessage:input_type -> sttattus.dominion.v1.PostConciergeMessageRequest
+	71, // 66: sttattus.dominion.v1.DominionService.ListAnthologyArticles:input_type -> sttattus.dominion.v1.ListAnthologyArticlesRequest
+	73, // 67: sttattus.dominion.v1.DominionService.GetAnthologyArticle:input_type -> sttattus.dominion.v1.GetAnthologyArticleRequest
+	76, // 68: sttattus.dominion.v1.DominionService.ListDirectory:input_type -> sttattus.dominion.v1.ListDirectoryRequest
+	79, // 69: sttattus.dominion.v1.DominionService.ListOffMarket:input_type -> sttattus.dominion.v1.ListOffMarketRequest
+	81, // 70: sttattus.dominion.v1.DominionService.GetOffMarket:input_type -> sttattus.dominion.v1.GetOffMarketRequest
+	83, // 71: sttattus.dominion.v1.DominionService.ParseDeed:input_type -> sttattus.dominion.v1.ParseDeedRequest
+	86, // 72: sttattus.dominion.v1.DominionService.CreateDominionShare:input_type -> sttattus.dominion.v1.CreateDominionShareRequest
+	88, // 73: sttattus.dominion.v1.DominionService.ListMyDominionShares:input_type -> sttattus.dominion.v1.ListMyDominionSharesRequest
+	90, // 74: sttattus.dominion.v1.DominionService.RevokeDominionShare:input_type -> sttattus.dominion.v1.RevokeDominionShareRequest
+	92, // 75: sttattus.dominion.v1.DominionService.GenerateDominionAlmanac:input_type -> sttattus.dominion.v1.GenerateDominionAlmanacRequest
+	95, // 76: sttattus.dominion.v1.DominionService.CreateLoungePass:input_type -> sttattus.dominion.v1.CreateLoungePassRequest
+	97, // 77: sttattus.dominion.v1.DominionService.ListMyLoungePasses:input_type -> sttattus.dominion.v1.ListMyLoungePassesRequest
+	5,  // 78: sttattus.dominion.v1.DominionService.SyncProperties:output_type -> sttattus.dominion.v1.SyncPropertiesResponse
+	7,  // 79: sttattus.dominion.v1.DominionService.ListTerritories:output_type -> sttattus.dominion.v1.ListTerritoriesResponse
+	9,  // 80: sttattus.dominion.v1.DominionService.GetDominionStats:output_type -> sttattus.dominion.v1.GetDominionStatsResponse
+	11, // 81: sttattus.dominion.v1.DominionService.GetLoungeKey:output_type -> sttattus.dominion.v1.GetLoungeKeyResponse
+	26, // 82: sttattus.dominion.v1.DominionService.EstimatePropertyValue:output_type -> sttattus.dominion.v1.EstimatePropertyValueResponse
+	17, // 83: sttattus.dominion.v1.DominionService.SubmitDeed:output_type -> sttattus.dominion.v1.SubmitDeedResponse
+	19, // 84: sttattus.dominion.v1.DominionService.ListMyDeeds:output_type -> sttattus.dominion.v1.ListMyDeedsResponse
+	21, // 85: sttattus.dominion.v1.DominionService.ListDeedsForProperty:output_type -> sttattus.dominion.v1.ListDeedsForPropertyResponse
+	23, // 86: sttattus.dominion.v1.DominionService.AdminReviewDeed:output_type -> sttattus.dominion.v1.AdminReviewDeedResponse
+	14, // 87: sttattus.dominion.v1.DominionService.ListLounges:output_type -> sttattus.dominion.v1.ListLoungesResponse
+	29, // 88: sttattus.dominion.v1.DominionService.ListLoungeEvents:output_type -> sttattus.dominion.v1.ListLoungeEventsResponse
+	31, // 89: sttattus.dominion.v1.DominionService.RsvpLoungeEvent:output_type -> sttattus.dominion.v1.RsvpLoungeEventResponse
+	33, // 90: sttattus.dominion.v1.DominionService.ListMyLoungeRsvps:output_type -> sttattus.dominion.v1.ListMyLoungeRsvpsResponse
+	36, // 91: sttattus.dominion.v1.DominionService.ListSalons:output_type -> sttattus.dominion.v1.ListSalonsResponse
+	38, // 92: sttattus.dominion.v1.DominionService.RsvpSalon:output_type -> sttattus.dominion.v1.RsvpSalonResponse
+	40, // 93: sttattus.dominion.v1.DominionService.ListMySalonRsvps:output_type -> sttattus.dominion.v1.ListMySalonRsvpsResponse
+	43, // 94: sttattus.dominion.v1.DominionService.GetPropertyFinancials:output_type -> sttattus.dominion.v1.GetPropertyFinancialsResponse
+	45, // 95: sttattus.dominion.v1.DominionService.UpsertPropertyFinancials:output_type -> sttattus.dominion.v1.UpsertPropertyFinancialsResponse
+	47, // 96: sttattus.dominion.v1.DominionService.GetPortfolioYield:output_type -> sttattus.dominion.v1.GetPortfolioYieldResponse
+	50, // 97: sttattus.dominion.v1.DominionService.ListRegionIntel:output_type -> sttattus.dominion.v1.ListRegionIntelResponse
+	52, // 98: sttattus.dominion.v1.DominionService.GetRegionIntel:output_type -> sttattus.dominion.v1.GetRegionIntelResponse
+	56, // 99: sttattus.dominion.v1.DominionService.GetTerritoryAllocation:output_type -> sttattus.dominion.v1.GetTerritoryAllocationResponse
+	59, // 100: sttattus.dominion.v1.DominionService.GetTodaySummary:output_type -> sttattus.dominion.v1.GetTodaySummaryResponse
+	63, // 101: sttattus.dominion.v1.DominionService.StartConciergeThread:output_type -> sttattus.dominion.v1.StartConciergeThreadResponse
+	65, // 102: sttattus.dominion.v1.DominionService.ListMyConciergeThreads:output_type -> sttattus.dominion.v1.ListMyConciergeThreadsResponse
+	67, // 103: sttattus.dominion.v1.DominionService.GetConciergeThread:output_type -> sttattus.dominion.v1.GetConciergeThreadResponse
+	69, // 104: sttattus.dominion.v1.DominionService.PostConciergeMessage:output_type -> sttattus.dominion.v1.PostConciergeMessageResponse
+	72, // 105: sttattus.dominion.v1.DominionService.ListAnthologyArticles:output_type -> sttattus.dominion.v1.ListAnthologyArticlesResponse
+	74, // 106: sttattus.dominion.v1.DominionService.GetAnthologyArticle:output_type -> sttattus.dominion.v1.GetAnthologyArticleResponse
+	77, // 107: sttattus.dominion.v1.DominionService.ListDirectory:output_type -> sttattus.dominion.v1.ListDirectoryResponse
+	80, // 108: sttattus.dominion.v1.DominionService.ListOffMarket:output_type -> sttattus.dominion.v1.ListOffMarketResponse
+	82, // 109: sttattus.dominion.v1.DominionService.GetOffMarket:output_type -> sttattus.dominion.v1.GetOffMarketResponse
+	84, // 110: sttattus.dominion.v1.DominionService.ParseDeed:output_type -> sttattus.dominion.v1.ParseDeedResponse
+	87, // 111: sttattus.dominion.v1.DominionService.CreateDominionShare:output_type -> sttattus.dominion.v1.CreateDominionShareResponse
+	89, // 112: sttattus.dominion.v1.DominionService.ListMyDominionShares:output_type -> sttattus.dominion.v1.ListMyDominionSharesResponse
+	91, // 113: sttattus.dominion.v1.DominionService.RevokeDominionShare:output_type -> sttattus.dominion.v1.RevokeDominionShareResponse
+	93, // 114: sttattus.dominion.v1.DominionService.GenerateDominionAlmanac:output_type -> sttattus.dominion.v1.GenerateDominionAlmanacResponse
+	96, // 115: sttattus.dominion.v1.DominionService.CreateLoungePass:output_type -> sttattus.dominion.v1.CreateLoungePassResponse
+	98, // 116: sttattus.dominion.v1.DominionService.ListMyLoungePasses:output_type -> sttattus.dominion.v1.ListMyLoungePassesResponse
+	78, // [78:117] is the sub-list for method output_type
+	39, // [39:78] is the sub-list for method input_type
+	39, // [39:39] is the sub-list for extension type_name
+	39, // [39:39] is the sub-list for extension extendee
+	0,  // [0:39] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dominion_v1_dominion_proto_init() }
@@ -1807,7 +6300,7 @@ func file_sttattus_dominion_v1_dominion_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_dominion_v1_dominion_proto_rawDesc), len(file_sttattus_dominion_v1_dominion_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   25,
+			NumMessages:   97,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -118,6 +118,55 @@ class TravelServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getTripArchive, request, options: options);
   }
 
+  /// N2 — itinerary ingestion (flight-confirmation text -> trip skeleton).
+  $grpc.ResponseFuture<$0.ParseItineraryTextResponse> parseItineraryText($0.ParseItineraryTextRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$parseItineraryText, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyItinerariesResponse> listMyItineraries($0.ListMyItinerariesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyItineraries, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ConfirmItineraryResponse> confirmItinerary($0.ConfirmItineraryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$confirmItinerary, request, options: options);
+  }
+
+  /// N2 — partner directory (hotels / restaurants / lounges / aviation).
+  $grpc.ResponseFuture<$0.ListTravelPartnersResponse> listTravelPartners($0.ListTravelPartnersRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listTravelPartners, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetTravelPartnerResponse> getTravelPartner($0.GetTravelPartnerRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getTravelPartner, request, options: options);
+  }
+
+  /// N3 — Nomad Anthology (named-author insider city guides).
+  $grpc.ResponseFuture<$0.ListAnthologyArticlesResponse> listAnthologyArticles($0.ListAnthologyArticlesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listAnthologyArticles, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetAnthologyArticleResponse> getAnthologyArticle($0.GetAnthologyArticleRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getAnthologyArticle, request, options: options);
+  }
+
+  /// N3.5 — public passport share (read-only, time-bound token).
+  $grpc.ResponseFuture<$0.CreatePassportShareResponse> createPassportShare($0.CreatePassportShareRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createPassportShare, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyPassportSharesResponse> listMyPassportShares($0.ListMyPassportSharesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyPassportShares, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokePassportShareResponse> revokePassportShare($0.RevokePassportShareRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$revokePassportShare, request, options: options);
+  }
+
+  /// N4 — Annual Atlas (generated hardcover-grade PDF).
+  $grpc.ResponseFuture<$0.GenerateNomadAtlasResponse> generateNomadAtlas($0.GenerateNomadAtlasRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$generateNomadAtlas, request, options: options);
+  }
+
     // method descriptors
 
   static final _$listMilestones = $grpc.ClientMethod<$0.ListMilestonesRequest, $0.ListMilestonesResponse>(
@@ -200,6 +249,50 @@ class TravelServiceClient extends $grpc.Client {
       '/sttattus.travel.v1.TravelService/GetTripArchive',
       ($0.GetTripArchiveRequest value) => value.writeToBuffer(),
       $0.GetTripArchiveResponse.fromBuffer);
+  static final _$parseItineraryText = $grpc.ClientMethod<$0.ParseItineraryTextRequest, $0.ParseItineraryTextResponse>(
+      '/sttattus.travel.v1.TravelService/ParseItineraryText',
+      ($0.ParseItineraryTextRequest value) => value.writeToBuffer(),
+      $0.ParseItineraryTextResponse.fromBuffer);
+  static final _$listMyItineraries = $grpc.ClientMethod<$0.ListMyItinerariesRequest, $0.ListMyItinerariesResponse>(
+      '/sttattus.travel.v1.TravelService/ListMyItineraries',
+      ($0.ListMyItinerariesRequest value) => value.writeToBuffer(),
+      $0.ListMyItinerariesResponse.fromBuffer);
+  static final _$confirmItinerary = $grpc.ClientMethod<$0.ConfirmItineraryRequest, $0.ConfirmItineraryResponse>(
+      '/sttattus.travel.v1.TravelService/ConfirmItinerary',
+      ($0.ConfirmItineraryRequest value) => value.writeToBuffer(),
+      $0.ConfirmItineraryResponse.fromBuffer);
+  static final _$listTravelPartners = $grpc.ClientMethod<$0.ListTravelPartnersRequest, $0.ListTravelPartnersResponse>(
+      '/sttattus.travel.v1.TravelService/ListTravelPartners',
+      ($0.ListTravelPartnersRequest value) => value.writeToBuffer(),
+      $0.ListTravelPartnersResponse.fromBuffer);
+  static final _$getTravelPartner = $grpc.ClientMethod<$0.GetTravelPartnerRequest, $0.GetTravelPartnerResponse>(
+      '/sttattus.travel.v1.TravelService/GetTravelPartner',
+      ($0.GetTravelPartnerRequest value) => value.writeToBuffer(),
+      $0.GetTravelPartnerResponse.fromBuffer);
+  static final _$listAnthologyArticles = $grpc.ClientMethod<$0.ListAnthologyArticlesRequest, $0.ListAnthologyArticlesResponse>(
+      '/sttattus.travel.v1.TravelService/ListAnthologyArticles',
+      ($0.ListAnthologyArticlesRequest value) => value.writeToBuffer(),
+      $0.ListAnthologyArticlesResponse.fromBuffer);
+  static final _$getAnthologyArticle = $grpc.ClientMethod<$0.GetAnthologyArticleRequest, $0.GetAnthologyArticleResponse>(
+      '/sttattus.travel.v1.TravelService/GetAnthologyArticle',
+      ($0.GetAnthologyArticleRequest value) => value.writeToBuffer(),
+      $0.GetAnthologyArticleResponse.fromBuffer);
+  static final _$createPassportShare = $grpc.ClientMethod<$0.CreatePassportShareRequest, $0.CreatePassportShareResponse>(
+      '/sttattus.travel.v1.TravelService/CreatePassportShare',
+      ($0.CreatePassportShareRequest value) => value.writeToBuffer(),
+      $0.CreatePassportShareResponse.fromBuffer);
+  static final _$listMyPassportShares = $grpc.ClientMethod<$0.ListMyPassportSharesRequest, $0.ListMyPassportSharesResponse>(
+      '/sttattus.travel.v1.TravelService/ListMyPassportShares',
+      ($0.ListMyPassportSharesRequest value) => value.writeToBuffer(),
+      $0.ListMyPassportSharesResponse.fromBuffer);
+  static final _$revokePassportShare = $grpc.ClientMethod<$0.RevokePassportShareRequest, $0.RevokePassportShareResponse>(
+      '/sttattus.travel.v1.TravelService/RevokePassportShare',
+      ($0.RevokePassportShareRequest value) => value.writeToBuffer(),
+      $0.RevokePassportShareResponse.fromBuffer);
+  static final _$generateNomadAtlas = $grpc.ClientMethod<$0.GenerateNomadAtlasRequest, $0.GenerateNomadAtlasResponse>(
+      '/sttattus.travel.v1.TravelService/GenerateNomadAtlas',
+      ($0.GenerateNomadAtlasRequest value) => value.writeToBuffer(),
+      $0.GenerateNomadAtlasResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.travel.v1.TravelService')
@@ -347,6 +440,83 @@ abstract class TravelServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetTripArchiveRequest.fromBuffer(value),
         ($0.GetTripArchiveResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ParseItineraryTextRequest, $0.ParseItineraryTextResponse>(
+        'ParseItineraryText',
+        parseItineraryText_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ParseItineraryTextRequest.fromBuffer(value),
+        ($0.ParseItineraryTextResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyItinerariesRequest, $0.ListMyItinerariesResponse>(
+        'ListMyItineraries',
+        listMyItineraries_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyItinerariesRequest.fromBuffer(value),
+        ($0.ListMyItinerariesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ConfirmItineraryRequest, $0.ConfirmItineraryResponse>(
+        'ConfirmItinerary',
+        confirmItinerary_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ConfirmItineraryRequest.fromBuffer(value),
+        ($0.ConfirmItineraryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListTravelPartnersRequest, $0.ListTravelPartnersResponse>(
+        'ListTravelPartners',
+        listTravelPartners_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListTravelPartnersRequest.fromBuffer(value),
+        ($0.ListTravelPartnersResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTravelPartnerRequest, $0.GetTravelPartnerResponse>(
+        'GetTravelPartner',
+        getTravelPartner_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetTravelPartnerRequest.fromBuffer(value),
+        ($0.GetTravelPartnerResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAnthologyArticlesRequest, $0.ListAnthologyArticlesResponse>(
+        'ListAnthologyArticles',
+        listAnthologyArticles_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListAnthologyArticlesRequest.fromBuffer(value),
+        ($0.ListAnthologyArticlesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAnthologyArticleRequest, $0.GetAnthologyArticleResponse>(
+        'GetAnthologyArticle',
+        getAnthologyArticle_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetAnthologyArticleRequest.fromBuffer(value),
+        ($0.GetAnthologyArticleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreatePassportShareRequest, $0.CreatePassportShareResponse>(
+        'CreatePassportShare',
+        createPassportShare_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreatePassportShareRequest.fromBuffer(value),
+        ($0.CreatePassportShareResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyPassportSharesRequest, $0.ListMyPassportSharesResponse>(
+        'ListMyPassportShares',
+        listMyPassportShares_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyPassportSharesRequest.fromBuffer(value),
+        ($0.ListMyPassportSharesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokePassportShareRequest, $0.RevokePassportShareResponse>(
+        'RevokePassportShare',
+        revokePassportShare_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RevokePassportShareRequest.fromBuffer(value),
+        ($0.RevokePassportShareResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateNomadAtlasRequest, $0.GenerateNomadAtlasResponse>(
+        'GenerateNomadAtlas',
+        generateNomadAtlas_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GenerateNomadAtlasRequest.fromBuffer(value),
+        ($0.GenerateNomadAtlasResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListMilestonesResponse> listMilestones_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMilestonesRequest> $request) async {
@@ -468,5 +638,71 @@ abstract class TravelServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GetTripArchiveResponse> getTripArchive($grpc.ServiceCall call, $0.GetTripArchiveRequest request);
+
+  $async.Future<$0.ParseItineraryTextResponse> parseItineraryText_Pre($grpc.ServiceCall $call, $async.Future<$0.ParseItineraryTextRequest> $request) async {
+    return parseItineraryText($call, await $request);
+  }
+
+  $async.Future<$0.ParseItineraryTextResponse> parseItineraryText($grpc.ServiceCall call, $0.ParseItineraryTextRequest request);
+
+  $async.Future<$0.ListMyItinerariesResponse> listMyItineraries_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyItinerariesRequest> $request) async {
+    return listMyItineraries($call, await $request);
+  }
+
+  $async.Future<$0.ListMyItinerariesResponse> listMyItineraries($grpc.ServiceCall call, $0.ListMyItinerariesRequest request);
+
+  $async.Future<$0.ConfirmItineraryResponse> confirmItinerary_Pre($grpc.ServiceCall $call, $async.Future<$0.ConfirmItineraryRequest> $request) async {
+    return confirmItinerary($call, await $request);
+  }
+
+  $async.Future<$0.ConfirmItineraryResponse> confirmItinerary($grpc.ServiceCall call, $0.ConfirmItineraryRequest request);
+
+  $async.Future<$0.ListTravelPartnersResponse> listTravelPartners_Pre($grpc.ServiceCall $call, $async.Future<$0.ListTravelPartnersRequest> $request) async {
+    return listTravelPartners($call, await $request);
+  }
+
+  $async.Future<$0.ListTravelPartnersResponse> listTravelPartners($grpc.ServiceCall call, $0.ListTravelPartnersRequest request);
+
+  $async.Future<$0.GetTravelPartnerResponse> getTravelPartner_Pre($grpc.ServiceCall $call, $async.Future<$0.GetTravelPartnerRequest> $request) async {
+    return getTravelPartner($call, await $request);
+  }
+
+  $async.Future<$0.GetTravelPartnerResponse> getTravelPartner($grpc.ServiceCall call, $0.GetTravelPartnerRequest request);
+
+  $async.Future<$0.ListAnthologyArticlesResponse> listAnthologyArticles_Pre($grpc.ServiceCall $call, $async.Future<$0.ListAnthologyArticlesRequest> $request) async {
+    return listAnthologyArticles($call, await $request);
+  }
+
+  $async.Future<$0.ListAnthologyArticlesResponse> listAnthologyArticles($grpc.ServiceCall call, $0.ListAnthologyArticlesRequest request);
+
+  $async.Future<$0.GetAnthologyArticleResponse> getAnthologyArticle_Pre($grpc.ServiceCall $call, $async.Future<$0.GetAnthologyArticleRequest> $request) async {
+    return getAnthologyArticle($call, await $request);
+  }
+
+  $async.Future<$0.GetAnthologyArticleResponse> getAnthologyArticle($grpc.ServiceCall call, $0.GetAnthologyArticleRequest request);
+
+  $async.Future<$0.CreatePassportShareResponse> createPassportShare_Pre($grpc.ServiceCall $call, $async.Future<$0.CreatePassportShareRequest> $request) async {
+    return createPassportShare($call, await $request);
+  }
+
+  $async.Future<$0.CreatePassportShareResponse> createPassportShare($grpc.ServiceCall call, $0.CreatePassportShareRequest request);
+
+  $async.Future<$0.ListMyPassportSharesResponse> listMyPassportShares_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyPassportSharesRequest> $request) async {
+    return listMyPassportShares($call, await $request);
+  }
+
+  $async.Future<$0.ListMyPassportSharesResponse> listMyPassportShares($grpc.ServiceCall call, $0.ListMyPassportSharesRequest request);
+
+  $async.Future<$0.RevokePassportShareResponse> revokePassportShare_Pre($grpc.ServiceCall $call, $async.Future<$0.RevokePassportShareRequest> $request) async {
+    return revokePassportShare($call, await $request);
+  }
+
+  $async.Future<$0.RevokePassportShareResponse> revokePassportShare($grpc.ServiceCall call, $0.RevokePassportShareRequest request);
+
+  $async.Future<$0.GenerateNomadAtlasResponse> generateNomadAtlas_Pre($grpc.ServiceCall $call, $async.Future<$0.GenerateNomadAtlasRequest> $request) async {
+    return generateNomadAtlas($call, await $request);
+  }
+
+  $async.Future<$0.GenerateNomadAtlasResponse> generateNomadAtlas($grpc.ServiceCall call, $0.GenerateNomadAtlasRequest request);
 
 }

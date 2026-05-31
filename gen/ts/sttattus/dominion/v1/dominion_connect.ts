@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminReviewDeedRequest, AdminReviewDeedResponse, EstimatePropertyValueRequest, EstimatePropertyValueResponse, GetDominionStatsRequest, GetDominionStatsResponse, GetLoungeKeyRequest, GetLoungeKeyResponse, ListDeedsForPropertyRequest, ListDeedsForPropertyResponse, ListLoungesRequest, ListLoungesResponse, ListMyDeedsRequest, ListMyDeedsResponse, ListTerritoriesRequest, ListTerritoriesResponse, SubmitDeedRequest, SubmitDeedResponse, SyncPropertiesRequest, SyncPropertiesResponse } from "./dominion_pb.js";
+import { AdminReviewDeedRequest, AdminReviewDeedResponse, CreateDominionShareRequest, CreateDominionShareResponse, CreateLoungePassRequest, CreateLoungePassResponse, EstimatePropertyValueRequest, EstimatePropertyValueResponse, GenerateDominionAlmanacRequest, GenerateDominionAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetDominionStatsRequest, GetDominionStatsResponse, GetLoungeKeyRequest, GetLoungeKeyResponse, GetOffMarketRequest, GetOffMarketResponse, GetPortfolioYieldRequest, GetPortfolioYieldResponse, GetPropertyFinancialsRequest, GetPropertyFinancialsResponse, GetRegionIntelRequest, GetRegionIntelResponse, GetTerritoryAllocationRequest, GetTerritoryAllocationResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListDeedsForPropertyRequest, ListDeedsForPropertyResponse, ListDirectoryRequest, ListDirectoryResponse, ListLoungeEventsRequest, ListLoungeEventsResponse, ListLoungesRequest, ListLoungesResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyDeedsRequest, ListMyDeedsResponse, ListMyDominionSharesRequest, ListMyDominionSharesResponse, ListMyLoungePassesRequest, ListMyLoungePassesResponse, ListMyLoungeRsvpsRequest, ListMyLoungeRsvpsResponse, ListMySalonRsvpsRequest, ListMySalonRsvpsResponse, ListOffMarketRequest, ListOffMarketResponse, ListRegionIntelRequest, ListRegionIntelResponse, ListSalonsRequest, ListSalonsResponse, ListTerritoriesRequest, ListTerritoriesResponse, ParseDeedRequest, ParseDeedResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, RevokeDominionShareRequest, RevokeDominionShareResponse, RsvpLoungeEventRequest, RsvpLoungeEventResponse, RsvpSalonRequest, RsvpSalonResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubmitDeedRequest, SubmitDeedResponse, SyncPropertiesRequest, SyncPropertiesResponse, UpsertPropertyFinancialsRequest, UpsertPropertyFinancialsResponse } from "./dominion_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -110,6 +110,293 @@ export const DominionService = {
       name: "ListLounges",
       I: ListLoungesRequest,
       O: ListLoungesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.9 — lounge events + salons.
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.ListLoungeEvents
+     */
+    listLoungeEvents: {
+      name: "ListLoungeEvents",
+      I: ListLoungeEventsRequest,
+      O: ListLoungeEventsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.RsvpLoungeEvent
+     */
+    rsvpLoungeEvent: {
+      name: "RsvpLoungeEvent",
+      I: RsvpLoungeEventRequest,
+      O: RsvpLoungeEventResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.ListMyLoungeRsvps
+     */
+    listMyLoungeRsvps: {
+      name: "ListMyLoungeRsvps",
+      I: ListMyLoungeRsvpsRequest,
+      O: ListMyLoungeRsvpsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.ListSalons
+     */
+    listSalons: {
+      name: "ListSalons",
+      I: ListSalonsRequest,
+      O: ListSalonsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.RsvpSalon
+     */
+    rsvpSalon: {
+      name: "RsvpSalon",
+      I: RsvpSalonRequest,
+      O: RsvpSalonResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.ListMySalonRsvps
+     */
+    listMySalonRsvps: {
+      name: "ListMySalonRsvps",
+      I: ListMySalonRsvpsRequest,
+      O: ListMySalonRsvpsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.10 — per-property yield / portfolio financials.
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetPropertyFinancials
+     */
+    getPropertyFinancials: {
+      name: "GetPropertyFinancials",
+      I: GetPropertyFinancialsRequest,
+      O: GetPropertyFinancialsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.UpsertPropertyFinancials
+     */
+    upsertPropertyFinancials: {
+      name: "UpsertPropertyFinancials",
+      I: UpsertPropertyFinancialsRequest,
+      O: UpsertPropertyFinancialsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetPortfolioYield
+     */
+    getPortfolioYield: {
+      name: "GetPortfolioYield",
+      I: GetPortfolioYieldRequest,
+      O: GetPortfolioYieldResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.11 — region intelligence.
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.ListRegionIntel
+     */
+    listRegionIntel: {
+      name: "ListRegionIntel",
+      I: ListRegionIntelRequest,
+      O: ListRegionIntelResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetRegionIntel
+     */
+    getRegionIntel: {
+      name: "GetRegionIntel",
+      I: GetRegionIntelRequest,
+      O: GetRegionIntelResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.12 — cross-pillar allocation contract (Vault).
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetTerritoryAllocation
+     */
+    getTerritoryAllocation: {
+      name: "GetTerritoryAllocation",
+      I: GetTerritoryAllocationRequest,
+      O: GetTerritoryAllocationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.13 — today summary.
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetTodaySummary
+     */
+    getTodaySummary: {
+      name: "GetTodaySummary",
+      I: GetTodaySummaryRequest,
+      O: GetTodaySummaryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.14 — concierge property desk (Sovereign).
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.StartConciergeThread
+     */
+    startConciergeThread: {
+      name: "StartConciergeThread",
+      I: StartConciergeThreadRequest,
+      O: StartConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.ListMyConciergeThreads
+     */
+    listMyConciergeThreads: {
+      name: "ListMyConciergeThreads",
+      I: ListMyConciergeThreadsRequest,
+      O: ListMyConciergeThreadsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetConciergeThread
+     */
+    getConciergeThread: {
+      name: "GetConciergeThread",
+      I: GetConciergeThreadRequest,
+      O: GetConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.PostConciergeMessage
+     */
+    postConciergeMessage: {
+      name: "PostConciergeMessage",
+      I: PostConciergeMessageRequest,
+      O: PostConciergeMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.15 — editorial anthology.
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.ListAnthologyArticles
+     */
+    listAnthologyArticles: {
+      name: "ListAnthologyArticles",
+      I: ListAnthologyArticlesRequest,
+      O: ListAnthologyArticlesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetAnthologyArticle
+     */
+    getAnthologyArticle: {
+      name: "GetAnthologyArticle",
+      I: GetAnthologyArticleRequest,
+      O: GetAnthologyArticleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.16 — architect / designer directory.
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.ListDirectory
+     */
+    listDirectory: {
+      name: "ListDirectory",
+      I: ListDirectoryRequest,
+      O: ListDirectoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.17 — off-market opportunities (Sovereign).
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.ListOffMarket
+     */
+    listOffMarket: {
+      name: "ListOffMarket",
+      I: ListOffMarketRequest,
+      O: ListOffMarketResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetOffMarket
+     */
+    getOffMarket: {
+      name: "GetOffMarket",
+      I: GetOffMarketRequest,
+      O: GetOffMarketResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.19 — real deed parser.
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.ParseDeed
+     */
+    parseDeed: {
+      name: "ParseDeed",
+      I: ParseDeedRequest,
+      O: ParseDeedResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.20 — public Dominion profile share.
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.CreateDominionShare
+     */
+    createDominionShare: {
+      name: "CreateDominionShare",
+      I: CreateDominionShareRequest,
+      O: CreateDominionShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.ListMyDominionShares
+     */
+    listMyDominionShares: {
+      name: "ListMyDominionShares",
+      I: ListMyDominionSharesRequest,
+      O: ListMyDominionSharesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.RevokeDominionShare
+     */
+    revokeDominionShare: {
+      name: "RevokeDominionShare",
+      I: RevokeDominionShareRequest,
+      O: RevokeDominionShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.21 — annual Dominion Almanac.
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GenerateDominionAlmanac
+     */
+    generateDominionAlmanac: {
+      name: "GenerateDominionAlmanac",
+      I: GenerateDominionAlmanacRequest,
+      O: GenerateDominionAlmanacResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * D14.22 — lounge access pass.
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.CreateLoungePass
+     */
+    createLoungePass: {
+      name: "CreateLoungePass",
+      I: CreateLoungePassRequest,
+      O: CreateLoungePassResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.ListMyLoungePasses
+     */
+    listMyLoungePasses: {
+      name: "ListMyLoungePasses",
+      I: ListMyLoungePassesRequest,
+      O: ListMyLoungePassesResponse,
       kind: MethodKind.Unary,
     },
   }

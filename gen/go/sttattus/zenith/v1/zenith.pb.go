@@ -374,6 +374,96 @@ func (x *GetZenithStatsResponse) GetStats() *ZenithStats {
 	return nil
 }
 
+// Z16.1b — the focus ledger. Recent verified + unverified blocks so the
+// app can show session history beyond the bare count.
+type ListRecentSessionsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"` // default 20, max 100
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListRecentSessionsRequest) Reset() {
+	*x = ListRecentSessionsRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListRecentSessionsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListRecentSessionsRequest) ProtoMessage() {}
+
+func (x *ListRecentSessionsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListRecentSessionsRequest.ProtoReflect.Descriptor instead.
+func (*ListRecentSessionsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *ListRecentSessionsRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ListRecentSessionsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Sessions      []*Session             `protobuf:"bytes,1,rep,name=sessions,proto3" json:"sessions,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListRecentSessionsResponse) Reset() {
+	*x = ListRecentSessionsResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListRecentSessionsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListRecentSessionsResponse) ProtoMessage() {}
+
+func (x *ListRecentSessionsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListRecentSessionsResponse.ProtoReflect.Descriptor instead.
+func (*ListRecentSessionsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *ListRecentSessionsResponse) GetSessions() []*Session {
+	if x != nil {
+		return x.Sessions
+	}
+	return nil
+}
+
 type LibraryItem struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -390,7 +480,7 @@ type LibraryItem struct {
 
 func (x *LibraryItem) Reset() {
 	*x = LibraryItem{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[6]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -402,7 +492,7 @@ func (x *LibraryItem) String() string {
 func (*LibraryItem) ProtoMessage() {}
 
 func (x *LibraryItem) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[6]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -415,7 +505,7 @@ func (x *LibraryItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LibraryItem.ProtoReflect.Descriptor instead.
 func (*LibraryItem) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{6}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *LibraryItem) GetId() string {
@@ -483,7 +573,7 @@ type ListLibraryItemsRequest struct {
 
 func (x *ListLibraryItemsRequest) Reset() {
 	*x = ListLibraryItemsRequest{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[7]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -495,7 +585,7 @@ func (x *ListLibraryItemsRequest) String() string {
 func (*ListLibraryItemsRequest) ProtoMessage() {}
 
 func (x *ListLibraryItemsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[7]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -508,7 +598,7 @@ func (x *ListLibraryItemsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLibraryItemsRequest.ProtoReflect.Descriptor instead.
 func (*ListLibraryItemsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{7}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ListLibraryItemsRequest) GetKind() string {
@@ -527,7 +617,7 @@ type ListLibraryItemsResponse struct {
 
 func (x *ListLibraryItemsResponse) Reset() {
 	*x = ListLibraryItemsResponse{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[8]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -539,7 +629,7 @@ func (x *ListLibraryItemsResponse) String() string {
 func (*ListLibraryItemsResponse) ProtoMessage() {}
 
 func (x *ListLibraryItemsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[8]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -552,7 +642,7 @@ func (x *ListLibraryItemsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLibraryItemsResponse.ProtoReflect.Descriptor instead.
 func (*ListLibraryItemsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{8}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ListLibraryItemsResponse) GetItems() []*LibraryItem {
@@ -574,7 +664,7 @@ type BlockRecommendation struct {
 
 func (x *BlockRecommendation) Reset() {
 	*x = BlockRecommendation{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[9]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -586,7 +676,7 @@ func (x *BlockRecommendation) String() string {
 func (*BlockRecommendation) ProtoMessage() {}
 
 func (x *BlockRecommendation) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[9]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -599,7 +689,7 @@ func (x *BlockRecommendation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BlockRecommendation.ProtoReflect.Descriptor instead.
 func (*BlockRecommendation) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{9}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *BlockRecommendation) GetStartsAtUnix() int64 {
@@ -638,7 +728,7 @@ type RecommendBlockRequest struct {
 
 func (x *RecommendBlockRequest) Reset() {
 	*x = RecommendBlockRequest{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[10]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -650,7 +740,7 @@ func (x *RecommendBlockRequest) String() string {
 func (*RecommendBlockRequest) ProtoMessage() {}
 
 func (x *RecommendBlockRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[10]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -663,7 +753,7 @@ func (x *RecommendBlockRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecommendBlockRequest.ProtoReflect.Descriptor instead.
 func (*RecommendBlockRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{10}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{12}
 }
 
 type RecommendBlockResponse struct {
@@ -678,7 +768,7 @@ type RecommendBlockResponse struct {
 
 func (x *RecommendBlockResponse) Reset() {
 	*x = RecommendBlockResponse{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[11]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -690,7 +780,7 @@ func (x *RecommendBlockResponse) String() string {
 func (*RecommendBlockResponse) ProtoMessage() {}
 
 func (x *RecommendBlockResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[11]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -703,7 +793,7 @@ func (x *RecommendBlockResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecommendBlockResponse.ProtoReflect.Descriptor instead.
 func (*RecommendBlockResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{11}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *RecommendBlockResponse) GetRecommendationPresent() bool {
@@ -738,7 +828,7 @@ type CalendarConnection struct {
 
 func (x *CalendarConnection) Reset() {
 	*x = CalendarConnection{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[12]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -750,7 +840,7 @@ func (x *CalendarConnection) String() string {
 func (*CalendarConnection) ProtoMessage() {}
 
 func (x *CalendarConnection) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[12]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -763,7 +853,7 @@ func (x *CalendarConnection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CalendarConnection.ProtoReflect.Descriptor instead.
 func (*CalendarConnection) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{12}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *CalendarConnection) GetProvider() string {
@@ -802,7 +892,7 @@ type CalendarEvent struct {
 
 func (x *CalendarEvent) Reset() {
 	*x = CalendarEvent{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[13]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -814,7 +904,7 @@ func (x *CalendarEvent) String() string {
 func (*CalendarEvent) ProtoMessage() {}
 
 func (x *CalendarEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[13]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -827,7 +917,7 @@ func (x *CalendarEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CalendarEvent.ProtoReflect.Descriptor instead.
 func (*CalendarEvent) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{13}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *CalendarEvent) GetId() string {
@@ -887,7 +977,7 @@ type ListMyCalendarConnectionsRequest struct {
 
 func (x *ListMyCalendarConnectionsRequest) Reset() {
 	*x = ListMyCalendarConnectionsRequest{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[14]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -899,7 +989,7 @@ func (x *ListMyCalendarConnectionsRequest) String() string {
 func (*ListMyCalendarConnectionsRequest) ProtoMessage() {}
 
 func (x *ListMyCalendarConnectionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[14]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -912,7 +1002,7 @@ func (x *ListMyCalendarConnectionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyCalendarConnectionsRequest.ProtoReflect.Descriptor instead.
 func (*ListMyCalendarConnectionsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{14}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{16}
 }
 
 type ListMyCalendarConnectionsResponse struct {
@@ -924,7 +1014,7 @@ type ListMyCalendarConnectionsResponse struct {
 
 func (x *ListMyCalendarConnectionsResponse) Reset() {
 	*x = ListMyCalendarConnectionsResponse{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[15]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -936,7 +1026,7 @@ func (x *ListMyCalendarConnectionsResponse) String() string {
 func (*ListMyCalendarConnectionsResponse) ProtoMessage() {}
 
 func (x *ListMyCalendarConnectionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[15]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -949,7 +1039,7 @@ func (x *ListMyCalendarConnectionsResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use ListMyCalendarConnectionsResponse.ProtoReflect.Descriptor instead.
 func (*ListMyCalendarConnectionsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{15}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ListMyCalendarConnectionsResponse) GetConnections() []*CalendarConnection {
@@ -969,7 +1059,7 @@ type ListMyCalendarEventsRequest struct {
 
 func (x *ListMyCalendarEventsRequest) Reset() {
 	*x = ListMyCalendarEventsRequest{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[16]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -981,7 +1071,7 @@ func (x *ListMyCalendarEventsRequest) String() string {
 func (*ListMyCalendarEventsRequest) ProtoMessage() {}
 
 func (x *ListMyCalendarEventsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[16]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -994,7 +1084,7 @@ func (x *ListMyCalendarEventsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyCalendarEventsRequest.ProtoReflect.Descriptor instead.
 func (*ListMyCalendarEventsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{16}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ListMyCalendarEventsRequest) GetFromUnix() int64 {
@@ -1020,7 +1110,7 @@ type ListMyCalendarEventsResponse struct {
 
 func (x *ListMyCalendarEventsResponse) Reset() {
 	*x = ListMyCalendarEventsResponse{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[17]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1032,7 +1122,7 @@ func (x *ListMyCalendarEventsResponse) String() string {
 func (*ListMyCalendarEventsResponse) ProtoMessage() {}
 
 func (x *ListMyCalendarEventsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[17]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1045,7 +1135,7 @@ func (x *ListMyCalendarEventsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyCalendarEventsResponse.ProtoReflect.Descriptor instead.
 func (*ListMyCalendarEventsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{17}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *ListMyCalendarEventsResponse) GetEvents() []*CalendarEvent {
@@ -1081,7 +1171,7 @@ type CognitiveLoad struct {
 
 func (x *CognitiveLoad) Reset() {
 	*x = CognitiveLoad{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[18]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1093,7 +1183,7 @@ func (x *CognitiveLoad) String() string {
 func (*CognitiveLoad) ProtoMessage() {}
 
 func (x *CognitiveLoad) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[18]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1106,7 +1196,7 @@ func (x *CognitiveLoad) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CognitiveLoad.ProtoReflect.Descriptor instead.
 func (*CognitiveLoad) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{18}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *CognitiveLoad) GetCalendarDensityPresent() bool {
@@ -1173,7 +1263,7 @@ type GetTodayLoadRequest struct {
 
 func (x *GetTodayLoadRequest) Reset() {
 	*x = GetTodayLoadRequest{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[19]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1185,7 +1275,7 @@ func (x *GetTodayLoadRequest) String() string {
 func (*GetTodayLoadRequest) ProtoMessage() {}
 
 func (x *GetTodayLoadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[19]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1198,7 +1288,7 @@ func (x *GetTodayLoadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTodayLoadRequest.ProtoReflect.Descriptor instead.
 func (*GetTodayLoadRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{19}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{21}
 }
 
 type GetTodayLoadResponse struct {
@@ -1210,7 +1300,7 @@ type GetTodayLoadResponse struct {
 
 func (x *GetTodayLoadResponse) Reset() {
 	*x = GetTodayLoadResponse{}
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[20]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1222,7 +1312,7 @@ func (x *GetTodayLoadResponse) String() string {
 func (*GetTodayLoadResponse) ProtoMessage() {}
 
 func (x *GetTodayLoadResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[20]
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1235,7 +1325,7 @@ func (x *GetTodayLoadResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTodayLoadResponse.ProtoReflect.Descriptor instead.
 func (*GetTodayLoadResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{20}
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *GetTodayLoadResponse) GetLoad() *CognitiveLoad {
@@ -1243,6 +1333,5492 @@ func (x *GetTodayLoadResponse) GetLoad() *CognitiveLoad {
 		return x.Load
 	}
 	return nil
+}
+
+// === Z16.15 — deep-work block templates ===
+type BlockTemplate struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug          string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Title         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	PreMinutes    int32                  `protobuf:"varint,4,opt,name=pre_minutes,json=preMinutes,proto3" json:"pre_minutes,omitempty"`
+	MainMinutes   int32                  `protobuf:"varint,5,opt,name=main_minutes,json=mainMinutes,proto3" json:"main_minutes,omitempty"`
+	ResetMinutes  int32                  `protobuf:"varint,6,opt,name=reset_minutes,json=resetMinutes,proto3" json:"reset_minutes,omitempty"`
+	Summary       string                 `protobuf:"bytes,7,opt,name=summary,proto3" json:"summary,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *BlockTemplate) Reset() {
+	*x = BlockTemplate{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *BlockTemplate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BlockTemplate) ProtoMessage() {}
+
+func (x *BlockTemplate) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BlockTemplate.ProtoReflect.Descriptor instead.
+func (*BlockTemplate) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *BlockTemplate) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *BlockTemplate) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *BlockTemplate) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *BlockTemplate) GetPreMinutes() int32 {
+	if x != nil {
+		return x.PreMinutes
+	}
+	return 0
+}
+
+func (x *BlockTemplate) GetMainMinutes() int32 {
+	if x != nil {
+		return x.MainMinutes
+	}
+	return 0
+}
+
+func (x *BlockTemplate) GetResetMinutes() int32 {
+	if x != nil {
+		return x.ResetMinutes
+	}
+	return 0
+}
+
+func (x *BlockTemplate) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+type ListBlockTemplatesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListBlockTemplatesRequest) Reset() {
+	*x = ListBlockTemplatesRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListBlockTemplatesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListBlockTemplatesRequest) ProtoMessage() {}
+
+func (x *ListBlockTemplatesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListBlockTemplatesRequest.ProtoReflect.Descriptor instead.
+func (*ListBlockTemplatesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{24}
+}
+
+type ListBlockTemplatesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Templates     []*BlockTemplate       `protobuf:"bytes,1,rep,name=templates,proto3" json:"templates,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListBlockTemplatesResponse) Reset() {
+	*x = ListBlockTemplatesResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListBlockTemplatesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListBlockTemplatesResponse) ProtoMessage() {}
+
+func (x *ListBlockTemplatesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListBlockTemplatesResponse.ProtoReflect.Descriptor instead.
+func (*ListBlockTemplatesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *ListBlockTemplatesResponse) GetTemplates() []*BlockTemplate {
+	if x != nil {
+		return x.Templates
+	}
+	return nil
+}
+
+// === Z16.22 — multi-week coached programmes ===
+type Programme struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug          string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Title         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Teacher       string                 `protobuf:"bytes,4,opt,name=teacher,proto3" json:"teacher,omitempty"`
+	FocusArea     string                 `protobuf:"bytes,5,opt,name=focus_area,json=focusArea,proto3" json:"focus_area,omitempty"`
+	Summary       string                 `protobuf:"bytes,6,opt,name=summary,proto3" json:"summary,omitempty"`
+	Weeks         int32                  `protobuf:"varint,7,opt,name=weeks,proto3" json:"weeks,omitempty"`
+	SovereignOnly bool                   `protobuf:"varint,8,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	// Populated on enrolled lists:
+	Enrolled      bool   `protobuf:"varint,9,opt,name=enrolled,proto3" json:"enrolled,omitempty"`
+	CurrentWeek   int32  `protobuf:"varint,10,opt,name=current_week,json=currentWeek,proto3" json:"current_week,omitempty"`
+	Status        string `protobuf:"bytes,11,opt,name=status,proto3" json:"status,omitempty"` // '' | 'active' | 'completed' | 'abandoned'
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Programme) Reset() {
+	*x = Programme{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Programme) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Programme) ProtoMessage() {}
+
+func (x *Programme) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Programme.ProtoReflect.Descriptor instead.
+func (*Programme) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *Programme) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Programme) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *Programme) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *Programme) GetTeacher() string {
+	if x != nil {
+		return x.Teacher
+	}
+	return ""
+}
+
+func (x *Programme) GetFocusArea() string {
+	if x != nil {
+		return x.FocusArea
+	}
+	return ""
+}
+
+func (x *Programme) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *Programme) GetWeeks() int32 {
+	if x != nil {
+		return x.Weeks
+	}
+	return 0
+}
+
+func (x *Programme) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+func (x *Programme) GetEnrolled() bool {
+	if x != nil {
+		return x.Enrolled
+	}
+	return false
+}
+
+func (x *Programme) GetCurrentWeek() int32 {
+	if x != nil {
+		return x.CurrentWeek
+	}
+	return 0
+}
+
+func (x *Programme) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+type ProgrammeWeek struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	WeekNumber     int32                  `protobuf:"varint,1,opt,name=week_number,json=weekNumber,proto3" json:"week_number,omitempty"`
+	Title          string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Guidance       string                 `protobuf:"bytes,3,opt,name=guidance,proto3" json:"guidance,omitempty"`
+	TargetSessions int32                  `protobuf:"varint,4,opt,name=target_sessions,json=targetSessions,proto3" json:"target_sessions,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *ProgrammeWeek) Reset() {
+	*x = ProgrammeWeek{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProgrammeWeek) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProgrammeWeek) ProtoMessage() {}
+
+func (x *ProgrammeWeek) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProgrammeWeek.ProtoReflect.Descriptor instead.
+func (*ProgrammeWeek) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *ProgrammeWeek) GetWeekNumber() int32 {
+	if x != nil {
+		return x.WeekNumber
+	}
+	return 0
+}
+
+func (x *ProgrammeWeek) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ProgrammeWeek) GetGuidance() string {
+	if x != nil {
+		return x.Guidance
+	}
+	return ""
+}
+
+func (x *ProgrammeWeek) GetTargetSessions() int32 {
+	if x != nil {
+		return x.TargetSessions
+	}
+	return 0
+}
+
+type ListProgrammesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListProgrammesRequest) Reset() {
+	*x = ListProgrammesRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListProgrammesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListProgrammesRequest) ProtoMessage() {}
+
+func (x *ListProgrammesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListProgrammesRequest.ProtoReflect.Descriptor instead.
+func (*ListProgrammesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{28}
+}
+
+type ListProgrammesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Programmes    []*Programme           `protobuf:"bytes,1,rep,name=programmes,proto3" json:"programmes,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListProgrammesResponse) Reset() {
+	*x = ListProgrammesResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[29]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListProgrammesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListProgrammesResponse) ProtoMessage() {}
+
+func (x *ListProgrammesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[29]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListProgrammesResponse.ProtoReflect.Descriptor instead.
+func (*ListProgrammesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{29}
+}
+
+func (x *ListProgrammesResponse) GetProgrammes() []*Programme {
+	if x != nil {
+		return x.Programmes
+	}
+	return nil
+}
+
+type GetProgrammeRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ProgrammeId   string                 `protobuf:"bytes,1,opt,name=programme_id,json=programmeId,proto3" json:"programme_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetProgrammeRequest) Reset() {
+	*x = GetProgrammeRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[30]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetProgrammeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetProgrammeRequest) ProtoMessage() {}
+
+func (x *GetProgrammeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[30]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetProgrammeRequest.ProtoReflect.Descriptor instead.
+func (*GetProgrammeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{30}
+}
+
+func (x *GetProgrammeRequest) GetProgrammeId() string {
+	if x != nil {
+		return x.ProgrammeId
+	}
+	return ""
+}
+
+type GetProgrammeResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Programme     *Programme             `protobuf:"bytes,1,opt,name=programme,proto3" json:"programme,omitempty"`
+	Weeks         []*ProgrammeWeek       `protobuf:"bytes,2,rep,name=weeks,proto3" json:"weeks,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetProgrammeResponse) Reset() {
+	*x = GetProgrammeResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[31]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetProgrammeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetProgrammeResponse) ProtoMessage() {}
+
+func (x *GetProgrammeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[31]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetProgrammeResponse.ProtoReflect.Descriptor instead.
+func (*GetProgrammeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{31}
+}
+
+func (x *GetProgrammeResponse) GetProgramme() *Programme {
+	if x != nil {
+		return x.Programme
+	}
+	return nil
+}
+
+func (x *GetProgrammeResponse) GetWeeks() []*ProgrammeWeek {
+	if x != nil {
+		return x.Weeks
+	}
+	return nil
+}
+
+type EnrollProgrammeRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ProgrammeId   string                 `protobuf:"bytes,1,opt,name=programme_id,json=programmeId,proto3" json:"programme_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EnrollProgrammeRequest) Reset() {
+	*x = EnrollProgrammeRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[32]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EnrollProgrammeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EnrollProgrammeRequest) ProtoMessage() {}
+
+func (x *EnrollProgrammeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[32]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EnrollProgrammeRequest.ProtoReflect.Descriptor instead.
+func (*EnrollProgrammeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{32}
+}
+
+func (x *EnrollProgrammeRequest) GetProgrammeId() string {
+	if x != nil {
+		return x.ProgrammeId
+	}
+	return ""
+}
+
+type EnrollProgrammeResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Programme     *Programme             `protobuf:"bytes,1,opt,name=programme,proto3" json:"programme,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EnrollProgrammeResponse) Reset() {
+	*x = EnrollProgrammeResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[33]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EnrollProgrammeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EnrollProgrammeResponse) ProtoMessage() {}
+
+func (x *EnrollProgrammeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[33]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EnrollProgrammeResponse.ProtoReflect.Descriptor instead.
+func (*EnrollProgrammeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *EnrollProgrammeResponse) GetProgramme() *Programme {
+	if x != nil {
+		return x.Programme
+	}
+	return nil
+}
+
+type ListMyProgrammesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyProgrammesRequest) Reset() {
+	*x = ListMyProgrammesRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[34]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyProgrammesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyProgrammesRequest) ProtoMessage() {}
+
+func (x *ListMyProgrammesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[34]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyProgrammesRequest.ProtoReflect.Descriptor instead.
+func (*ListMyProgrammesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{34}
+}
+
+type ListMyProgrammesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Programmes    []*Programme           `protobuf:"bytes,1,rep,name=programmes,proto3" json:"programmes,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyProgrammesResponse) Reset() {
+	*x = ListMyProgrammesResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[35]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyProgrammesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyProgrammesResponse) ProtoMessage() {}
+
+func (x *ListMyProgrammesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[35]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyProgrammesResponse.ProtoReflect.Descriptor instead.
+func (*ListMyProgrammesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *ListMyProgrammesResponse) GetProgrammes() []*Programme {
+	if x != nil {
+		return x.Programmes
+	}
+	return nil
+}
+
+type AdvanceProgrammeWeekRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ProgrammeId   string                 `protobuf:"bytes,1,opt,name=programme_id,json=programmeId,proto3" json:"programme_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdvanceProgrammeWeekRequest) Reset() {
+	*x = AdvanceProgrammeWeekRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdvanceProgrammeWeekRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdvanceProgrammeWeekRequest) ProtoMessage() {}
+
+func (x *AdvanceProgrammeWeekRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[36]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdvanceProgrammeWeekRequest.ProtoReflect.Descriptor instead.
+func (*AdvanceProgrammeWeekRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *AdvanceProgrammeWeekRequest) GetProgrammeId() string {
+	if x != nil {
+		return x.ProgrammeId
+	}
+	return ""
+}
+
+type AdvanceProgrammeWeekResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Programme     *Programme             `protobuf:"bytes,1,opt,name=programme,proto3" json:"programme,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdvanceProgrammeWeekResponse) Reset() {
+	*x = AdvanceProgrammeWeekResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[37]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdvanceProgrammeWeekResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdvanceProgrammeWeekResponse) ProtoMessage() {}
+
+func (x *AdvanceProgrammeWeekResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[37]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdvanceProgrammeWeekResponse.ProtoReflect.Descriptor instead.
+func (*AdvanceProgrammeWeekResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *AdvanceProgrammeWeekResponse) GetProgramme() *Programme {
+	if x != nil {
+		return x.Programme
+	}
+	return nil
+}
+
+// === Z16.23 — journaling (AES-GCM at rest) ===
+type JournalEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Kind          string                 `protobuf:"bytes,2,opt,name=kind,proto3" json:"kind,omitempty"` // 'block' | 'day' | 'week'
+	Prompt        string                 `protobuf:"bytes,3,opt,name=prompt,proto3" json:"prompt,omitempty"`
+	Body          string                 `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"` // decrypted for the owner only
+	CreatedAtUnix int64                  `protobuf:"varint,5,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *JournalEntry) Reset() {
+	*x = JournalEntry{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[38]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *JournalEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*JournalEntry) ProtoMessage() {}
+
+func (x *JournalEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[38]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use JournalEntry.ProtoReflect.Descriptor instead.
+func (*JournalEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *JournalEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *JournalEntry) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *JournalEntry) GetPrompt() string {
+	if x != nil {
+		return x.Prompt
+	}
+	return ""
+}
+
+func (x *JournalEntry) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *JournalEntry) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type AddJournalEntryRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Kind          string                 `protobuf:"bytes,1,opt,name=kind,proto3" json:"kind,omitempty"`
+	Prompt        string                 `protobuf:"bytes,2,opt,name=prompt,proto3" json:"prompt,omitempty"`
+	Body          string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddJournalEntryRequest) Reset() {
+	*x = AddJournalEntryRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[39]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddJournalEntryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddJournalEntryRequest) ProtoMessage() {}
+
+func (x *AddJournalEntryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[39]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddJournalEntryRequest.ProtoReflect.Descriptor instead.
+func (*AddJournalEntryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{39}
+}
+
+func (x *AddJournalEntryRequest) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *AddJournalEntryRequest) GetPrompt() string {
+	if x != nil {
+		return x.Prompt
+	}
+	return ""
+}
+
+func (x *AddJournalEntryRequest) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+type AddJournalEntryResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Entry         *JournalEntry          `protobuf:"bytes,1,opt,name=entry,proto3" json:"entry,omitempty"` // body omitted in response
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddJournalEntryResponse) Reset() {
+	*x = AddJournalEntryResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[40]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddJournalEntryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddJournalEntryResponse) ProtoMessage() {}
+
+func (x *AddJournalEntryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[40]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddJournalEntryResponse.ProtoReflect.Descriptor instead.
+func (*AddJournalEntryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *AddJournalEntryResponse) GetEntry() *JournalEntry {
+	if x != nil {
+		return x.Entry
+	}
+	return nil
+}
+
+type ListMyJournalEntriesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Kind          string                 `protobuf:"bytes,1,opt,name=kind,proto3" json:"kind,omitempty"`    // '' for all
+	Limit         int32                  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"` // default 50
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyJournalEntriesRequest) Reset() {
+	*x = ListMyJournalEntriesRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[41]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyJournalEntriesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyJournalEntriesRequest) ProtoMessage() {}
+
+func (x *ListMyJournalEntriesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[41]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyJournalEntriesRequest.ProtoReflect.Descriptor instead.
+func (*ListMyJournalEntriesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *ListMyJournalEntriesRequest) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *ListMyJournalEntriesRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ListMyJournalEntriesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Entries       []*JournalEntry        `protobuf:"bytes,1,rep,name=entries,proto3" json:"entries,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyJournalEntriesResponse) Reset() {
+	*x = ListMyJournalEntriesResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[42]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyJournalEntriesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyJournalEntriesResponse) ProtoMessage() {}
+
+func (x *ListMyJournalEntriesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[42]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyJournalEntriesResponse.ProtoReflect.Descriptor instead.
+func (*ListMyJournalEntriesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{42}
+}
+
+func (x *ListMyJournalEntriesResponse) GetEntries() []*JournalEntry {
+	if x != nil {
+		return x.Entries
+	}
+	return nil
+}
+
+// === Z16.26 — focus history + heatmap ===
+type HourBucket struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Hour          int32                  `protobuf:"varint,1,opt,name=hour,proto3" json:"hour,omitempty"` // 0..23 UTC
+	Sessions      int32                  `protobuf:"varint,2,opt,name=sessions,proto3" json:"sessions,omitempty"`
+	Minutes       int32                  `protobuf:"varint,3,opt,name=minutes,proto3" json:"minutes,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *HourBucket) Reset() {
+	*x = HourBucket{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[43]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *HourBucket) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HourBucket) ProtoMessage() {}
+
+func (x *HourBucket) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[43]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HourBucket.ProtoReflect.Descriptor instead.
+func (*HourBucket) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *HourBucket) GetHour() int32 {
+	if x != nil {
+		return x.Hour
+	}
+	return 0
+}
+
+func (x *HourBucket) GetSessions() int32 {
+	if x != nil {
+		return x.Sessions
+	}
+	return 0
+}
+
+func (x *HourBucket) GetMinutes() int32 {
+	if x != nil {
+		return x.Minutes
+	}
+	return 0
+}
+
+type DayBucket struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	DateUnix      int64                  `protobuf:"varint,1,opt,name=date_unix,json=dateUnix,proto3" json:"date_unix,omitempty"` // midnight UTC of the day
+	Sessions      int32                  `protobuf:"varint,2,opt,name=sessions,proto3" json:"sessions,omitempty"`
+	Minutes       int32                  `protobuf:"varint,3,opt,name=minutes,proto3" json:"minutes,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DayBucket) Reset() {
+	*x = DayBucket{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[44]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DayBucket) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DayBucket) ProtoMessage() {}
+
+func (x *DayBucket) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[44]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DayBucket.ProtoReflect.Descriptor instead.
+func (*DayBucket) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{44}
+}
+
+func (x *DayBucket) GetDateUnix() int64 {
+	if x != nil {
+		return x.DateUnix
+	}
+	return 0
+}
+
+func (x *DayBucket) GetSessions() int32 {
+	if x != nil {
+		return x.Sessions
+	}
+	return 0
+}
+
+func (x *DayBucket) GetMinutes() int32 {
+	if x != nil {
+		return x.Minutes
+	}
+	return 0
+}
+
+type GetFocusHistoryRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Days          int32                  `protobuf:"varint,1,opt,name=days,proto3" json:"days,omitempty"` // window, default 30
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetFocusHistoryRequest) Reset() {
+	*x = GetFocusHistoryRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[45]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetFocusHistoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetFocusHistoryRequest) ProtoMessage() {}
+
+func (x *GetFocusHistoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[45]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetFocusHistoryRequest.ProtoReflect.Descriptor instead.
+func (*GetFocusHistoryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{45}
+}
+
+func (x *GetFocusHistoryRequest) GetDays() int32 {
+	if x != nil {
+		return x.Days
+	}
+	return 0
+}
+
+type GetFocusHistoryResponse struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Hours             []*HourBucket          `protobuf:"bytes,1,rep,name=hours,proto3" json:"hours,omitempty"`
+	Days              []*DayBucket           `protobuf:"bytes,2,rep,name=days,proto3" json:"days,omitempty"`
+	CurrentStreakDays int32                  `protobuf:"varint,3,opt,name=current_streak_days,json=currentStreakDays,proto3" json:"current_streak_days,omitempty"`
+	TotalMinutes      int32                  `protobuf:"varint,4,opt,name=total_minutes,json=totalMinutes,proto3" json:"total_minutes,omitempty"`
+	TotalSessions     int32                  `protobuf:"varint,5,opt,name=total_sessions,json=totalSessions,proto3" json:"total_sessions,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *GetFocusHistoryResponse) Reset() {
+	*x = GetFocusHistoryResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[46]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetFocusHistoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetFocusHistoryResponse) ProtoMessage() {}
+
+func (x *GetFocusHistoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[46]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetFocusHistoryResponse.ProtoReflect.Descriptor instead.
+func (*GetFocusHistoryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{46}
+}
+
+func (x *GetFocusHistoryResponse) GetHours() []*HourBucket {
+	if x != nil {
+		return x.Hours
+	}
+	return nil
+}
+
+func (x *GetFocusHistoryResponse) GetDays() []*DayBucket {
+	if x != nil {
+		return x.Days
+	}
+	return nil
+}
+
+func (x *GetFocusHistoryResponse) GetCurrentStreakDays() int32 {
+	if x != nil {
+		return x.CurrentStreakDays
+	}
+	return 0
+}
+
+func (x *GetFocusHistoryResponse) GetTotalMinutes() int32 {
+	if x != nil {
+		return x.TotalMinutes
+	}
+	return 0
+}
+
+func (x *GetFocusHistoryResponse) GetTotalSessions() int32 {
+	if x != nil {
+		return x.TotalSessions
+	}
+	return 0
+}
+
+// === Z16.27 — what-if fortitude simulator ===
+type SimulateFortitudeRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	BlocksPerDay    int32                  `protobuf:"varint,1,opt,name=blocks_per_day,json=blocksPerDay,proto3" json:"blocks_per_day,omitempty"`
+	MinutesPerBlock int32                  `protobuf:"varint,2,opt,name=minutes_per_block,json=minutesPerBlock,proto3" json:"minutes_per_block,omitempty"`
+	Days            int32                  `protobuf:"varint,3,opt,name=days,proto3" json:"days,omitempty"`
+	AssumeVerified  bool                   `protobuf:"varint,4,opt,name=assume_verified,json=assumeVerified,proto3" json:"assume_verified,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *SimulateFortitudeRequest) Reset() {
+	*x = SimulateFortitudeRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[47]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SimulateFortitudeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SimulateFortitudeRequest) ProtoMessage() {}
+
+func (x *SimulateFortitudeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[47]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SimulateFortitudeRequest.ProtoReflect.Descriptor instead.
+func (*SimulateFortitudeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{47}
+}
+
+func (x *SimulateFortitudeRequest) GetBlocksPerDay() int32 {
+	if x != nil {
+		return x.BlocksPerDay
+	}
+	return 0
+}
+
+func (x *SimulateFortitudeRequest) GetMinutesPerBlock() int32 {
+	if x != nil {
+		return x.MinutesPerBlock
+	}
+	return 0
+}
+
+func (x *SimulateFortitudeRequest) GetDays() int32 {
+	if x != nil {
+		return x.Days
+	}
+	return 0
+}
+
+func (x *SimulateFortitudeRequest) GetAssumeVerified() bool {
+	if x != nil {
+		return x.AssumeVerified
+	}
+	return false
+}
+
+type SimulateFortitudeResponse struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	CurrentRank    float64                `protobuf:"fixed64,1,opt,name=current_rank,json=currentRank,proto3" json:"current_rank,omitempty"`
+	ProjectedRank  float64                `protobuf:"fixed64,2,opt,name=projected_rank,json=projectedRank,proto3" json:"projected_rank,omitempty"`
+	Delta          float64                `protobuf:"fixed64,3,opt,name=delta,proto3" json:"delta,omitempty"`
+	ProjectedLabel string                 `protobuf:"bytes,4,opt,name=projected_label,json=projectedLabel,proto3" json:"projected_label,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *SimulateFortitudeResponse) Reset() {
+	*x = SimulateFortitudeResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[48]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SimulateFortitudeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SimulateFortitudeResponse) ProtoMessage() {}
+
+func (x *SimulateFortitudeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[48]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SimulateFortitudeResponse.ProtoReflect.Descriptor instead.
+func (*SimulateFortitudeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{48}
+}
+
+func (x *SimulateFortitudeResponse) GetCurrentRank() float64 {
+	if x != nil {
+		return x.CurrentRank
+	}
+	return 0
+}
+
+func (x *SimulateFortitudeResponse) GetProjectedRank() float64 {
+	if x != nil {
+		return x.ProjectedRank
+	}
+	return 0
+}
+
+func (x *SimulateFortitudeResponse) GetDelta() float64 {
+	if x != nil {
+		return x.Delta
+	}
+	return 0
+}
+
+func (x *SimulateFortitudeResponse) GetProjectedLabel() string {
+	if x != nil {
+		return x.ProjectedLabel
+	}
+	return ""
+}
+
+// === Z16.17 — audio environment catalog ===
+type AudioEnvironment struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug          string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Title         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Category      string                 `protobuf:"bytes,4,opt,name=category,proto3" json:"category,omitempty"` // functional | ambient | noise | binaural
+	Summary       string                 `protobuf:"bytes,5,opt,name=summary,proto3" json:"summary,omitempty"`
+	Claim         string                 `protobuf:"bytes,6,opt,name=claim,proto3" json:"claim,omitempty"` // honest claim labelling
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AudioEnvironment) Reset() {
+	*x = AudioEnvironment{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[49]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AudioEnvironment) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AudioEnvironment) ProtoMessage() {}
+
+func (x *AudioEnvironment) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[49]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AudioEnvironment.ProtoReflect.Descriptor instead.
+func (*AudioEnvironment) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{49}
+}
+
+func (x *AudioEnvironment) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AudioEnvironment) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *AudioEnvironment) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AudioEnvironment) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *AudioEnvironment) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *AudioEnvironment) GetClaim() string {
+	if x != nil {
+		return x.Claim
+	}
+	return ""
+}
+
+type ListAudioEnvironmentsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAudioEnvironmentsRequest) Reset() {
+	*x = ListAudioEnvironmentsRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[50]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAudioEnvironmentsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAudioEnvironmentsRequest) ProtoMessage() {}
+
+func (x *ListAudioEnvironmentsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[50]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAudioEnvironmentsRequest.ProtoReflect.Descriptor instead.
+func (*ListAudioEnvironmentsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{50}
+}
+
+type ListAudioEnvironmentsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Environments  []*AudioEnvironment    `protobuf:"bytes,1,rep,name=environments,proto3" json:"environments,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAudioEnvironmentsResponse) Reset() {
+	*x = ListAudioEnvironmentsResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[51]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAudioEnvironmentsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAudioEnvironmentsResponse) ProtoMessage() {}
+
+func (x *ListAudioEnvironmentsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[51]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAudioEnvironmentsResponse.ProtoReflect.Descriptor instead.
+func (*ListAudioEnvironmentsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{51}
+}
+
+func (x *ListAudioEnvironmentsResponse) GetEnvironments() []*AudioEnvironment {
+	if x != nil {
+		return x.Environments
+	}
+	return nil
+}
+
+// Z16.4 bridge — cross-pillar cognitive-load contract. Forge imports this
+// to gate training intensity (avoid same-day max lift + max focus).
+type CognitiveLoadSummary struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Load_0_100      float64                `protobuf:"fixed64,1,opt,name=load_0_100,json=load0100,proto3" json:"load_0_100,omitempty"`
+	Verdict         string                 `protobuf:"bytes,2,opt,name=verdict,proto3" json:"verdict,omitempty"` // 'clear' | 'moderate' | 'high' | 'no-data'
+	Recommendation  string                 `protobuf:"bytes,3,opt,name=recommendation,proto3" json:"recommendation,omitempty"`
+	InputsAvailable int32                  `protobuf:"varint,4,opt,name=inputs_available,json=inputsAvailable,proto3" json:"inputs_available,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *CognitiveLoadSummary) Reset() {
+	*x = CognitiveLoadSummary{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[52]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CognitiveLoadSummary) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CognitiveLoadSummary) ProtoMessage() {}
+
+func (x *CognitiveLoadSummary) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[52]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CognitiveLoadSummary.ProtoReflect.Descriptor instead.
+func (*CognitiveLoadSummary) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{52}
+}
+
+func (x *CognitiveLoadSummary) GetLoad_0_100() float64 {
+	if x != nil {
+		return x.Load_0_100
+	}
+	return 0
+}
+
+func (x *CognitiveLoadSummary) GetVerdict() string {
+	if x != nil {
+		return x.Verdict
+	}
+	return ""
+}
+
+func (x *CognitiveLoadSummary) GetRecommendation() string {
+	if x != nil {
+		return x.Recommendation
+	}
+	return ""
+}
+
+func (x *CognitiveLoadSummary) GetInputsAvailable() int32 {
+	if x != nil {
+		return x.InputsAvailable
+	}
+	return 0
+}
+
+type GetCognitiveLoadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCognitiveLoadRequest) Reset() {
+	*x = GetCognitiveLoadRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[53]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCognitiveLoadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCognitiveLoadRequest) ProtoMessage() {}
+
+func (x *GetCognitiveLoadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[53]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCognitiveLoadRequest.ProtoReflect.Descriptor instead.
+func (*GetCognitiveLoadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{53}
+}
+
+type GetCognitiveLoadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Summary       *CognitiveLoadSummary  `protobuf:"bytes,1,opt,name=summary,proto3" json:"summary,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCognitiveLoadResponse) Reset() {
+	*x = GetCognitiveLoadResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[54]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCognitiveLoadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCognitiveLoadResponse) ProtoMessage() {}
+
+func (x *GetCognitiveLoadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[54]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCognitiveLoadResponse.ProtoReflect.Descriptor instead.
+func (*GetCognitiveLoadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{54}
+}
+
+func (x *GetCognitiveLoadResponse) GetSummary() *CognitiveLoadSummary {
+	if x != nil {
+		return x.Summary
+	}
+	return nil
+}
+
+// Z16.32 — acute stress-response prompt (Apex HRV crash → reset).
+type StressPrompt struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Source        string                 `protobuf:"bytes,2,opt,name=source,proto3" json:"source,omitempty"`
+	HrvDrop       float64                `protobuf:"fixed64,3,opt,name=hrv_drop,json=hrvDrop,proto3" json:"hrv_drop,omitempty"`
+	Message       string                 `protobuf:"bytes,4,opt,name=message,proto3" json:"message,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,5,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StressPrompt) Reset() {
+	*x = StressPrompt{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[55]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StressPrompt) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StressPrompt) ProtoMessage() {}
+
+func (x *StressPrompt) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[55]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StressPrompt.ProtoReflect.Descriptor instead.
+func (*StressPrompt) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{55}
+}
+
+func (x *StressPrompt) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *StressPrompt) GetSource() string {
+	if x != nil {
+		return x.Source
+	}
+	return ""
+}
+
+func (x *StressPrompt) GetHrvDrop() float64 {
+	if x != nil {
+		return x.HrvDrop
+	}
+	return 0
+}
+
+func (x *StressPrompt) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *StressPrompt) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type AcknowledgeStressPromptRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AcknowledgeStressPromptRequest) Reset() {
+	*x = AcknowledgeStressPromptRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[56]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AcknowledgeStressPromptRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AcknowledgeStressPromptRequest) ProtoMessage() {}
+
+func (x *AcknowledgeStressPromptRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[56]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AcknowledgeStressPromptRequest.ProtoReflect.Descriptor instead.
+func (*AcknowledgeStressPromptRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{56}
+}
+
+func (x *AcknowledgeStressPromptRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type AcknowledgeStressPromptResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Ok            bool                   `protobuf:"varint,1,opt,name=ok,proto3" json:"ok,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AcknowledgeStressPromptResponse) Reset() {
+	*x = AcknowledgeStressPromptResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[57]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AcknowledgeStressPromptResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AcknowledgeStressPromptResponse) ProtoMessage() {}
+
+func (x *AcknowledgeStressPromptResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[57]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AcknowledgeStressPromptResponse.ProtoReflect.Descriptor instead.
+func (*AcknowledgeStressPromptResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{57}
+}
+
+func (x *AcknowledgeStressPromptResponse) GetOk() bool {
+	if x != nil {
+		return x.Ok
+	}
+	return false
+}
+
+// Z16.9 dashboard — Today card: load + next block + active programme +
+// any pending stress prompt, in one round-trip.
+type TodaySummary struct {
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Load_0_100  float64                `protobuf:"fixed64,1,opt,name=load_0_100,json=load0100,proto3" json:"load_0_100,omitempty"`
+	LoadVerdict string                 `protobuf:"bytes,2,opt,name=load_verdict,json=loadVerdict,proto3" json:"load_verdict,omitempty"`
+	// Optional message fields use proto3 presence (has*() accessors) —
+	// no redundant has_* bools (they collide with the generated presence
+	// method names in some codegens).
+	RecommendedBlock *BlockRecommendation `protobuf:"bytes,4,opt,name=recommended_block,json=recommendedBlock,proto3" json:"recommended_block,omitempty"`
+	ActiveProgramme  *Programme           `protobuf:"bytes,6,opt,name=active_programme,json=activeProgramme,proto3" json:"active_programme,omitempty"`
+	ActiveWeekTitle  string               `protobuf:"bytes,7,opt,name=active_week_title,json=activeWeekTitle,proto3" json:"active_week_title,omitempty"`
+	StressPrompt     *StressPrompt        `protobuf:"bytes,9,opt,name=stress_prompt,json=stressPrompt,proto3" json:"stress_prompt,omitempty"`
+	FortitudeRank    float64              `protobuf:"fixed64,10,opt,name=fortitude_rank,json=fortitudeRank,proto3" json:"fortitude_rank,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *TodaySummary) Reset() {
+	*x = TodaySummary{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[58]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TodaySummary) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TodaySummary) ProtoMessage() {}
+
+func (x *TodaySummary) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[58]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TodaySummary.ProtoReflect.Descriptor instead.
+func (*TodaySummary) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{58}
+}
+
+func (x *TodaySummary) GetLoad_0_100() float64 {
+	if x != nil {
+		return x.Load_0_100
+	}
+	return 0
+}
+
+func (x *TodaySummary) GetLoadVerdict() string {
+	if x != nil {
+		return x.LoadVerdict
+	}
+	return ""
+}
+
+func (x *TodaySummary) GetRecommendedBlock() *BlockRecommendation {
+	if x != nil {
+		return x.RecommendedBlock
+	}
+	return nil
+}
+
+func (x *TodaySummary) GetActiveProgramme() *Programme {
+	if x != nil {
+		return x.ActiveProgramme
+	}
+	return nil
+}
+
+func (x *TodaySummary) GetActiveWeekTitle() string {
+	if x != nil {
+		return x.ActiveWeekTitle
+	}
+	return ""
+}
+
+func (x *TodaySummary) GetStressPrompt() *StressPrompt {
+	if x != nil {
+		return x.StressPrompt
+	}
+	return nil
+}
+
+func (x *TodaySummary) GetFortitudeRank() float64 {
+	if x != nil {
+		return x.FortitudeRank
+	}
+	return 0
+}
+
+type GetTodaySummaryRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTodaySummaryRequest) Reset() {
+	*x = GetTodaySummaryRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[59]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTodaySummaryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTodaySummaryRequest) ProtoMessage() {}
+
+func (x *GetTodaySummaryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[59]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTodaySummaryRequest.ProtoReflect.Descriptor instead.
+func (*GetTodaySummaryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{59}
+}
+
+type GetTodaySummaryResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Summary       *TodaySummary          `protobuf:"bytes,1,opt,name=summary,proto3" json:"summary,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTodaySummaryResponse) Reset() {
+	*x = GetTodaySummaryResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[60]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTodaySummaryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTodaySummaryResponse) ProtoMessage() {}
+
+func (x *GetTodaySummaryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[60]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTodaySummaryResponse.ProtoReflect.Descriptor instead.
+func (*GetTodaySummaryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{60}
+}
+
+func (x *GetTodaySummaryResponse) GetSummary() *TodaySummary {
+	if x != nil {
+		return x.Summary
+	}
+	return nil
+}
+
+// === Coach concierge desk (Sovereign) ===
+type ConciergeThread struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Subject       string                 `protobuf:"bytes,2,opt,name=subject,proto3" json:"subject,omitempty"`
+	Status        string                 `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
+	SlaDueUnix    int64                  `protobuf:"varint,4,opt,name=sla_due_unix,json=slaDueUnix,proto3" json:"sla_due_unix,omitempty"`
+	CreatedUnix   int64                  `protobuf:"varint,5,opt,name=created_unix,json=createdUnix,proto3" json:"created_unix,omitempty"`
+	UpdatedUnix   int64                  `protobuf:"varint,6,opt,name=updated_unix,json=updatedUnix,proto3" json:"updated_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConciergeThread) Reset() {
+	*x = ConciergeThread{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[61]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConciergeThread) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConciergeThread) ProtoMessage() {}
+
+func (x *ConciergeThread) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[61]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConciergeThread.ProtoReflect.Descriptor instead.
+func (*ConciergeThread) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{61}
+}
+
+func (x *ConciergeThread) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetSubject() string {
+	if x != nil {
+		return x.Subject
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetSlaDueUnix() int64 {
+	if x != nil {
+		return x.SlaDueUnix
+	}
+	return 0
+}
+
+func (x *ConciergeThread) GetCreatedUnix() int64 {
+	if x != nil {
+		return x.CreatedUnix
+	}
+	return 0
+}
+
+func (x *ConciergeThread) GetUpdatedUnix() int64 {
+	if x != nil {
+		return x.UpdatedUnix
+	}
+	return 0
+}
+
+type ConciergeMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Sender        string                 `protobuf:"bytes,2,opt,name=sender,proto3" json:"sender,omitempty"` // 'member' | 'coach' | 'system'
+	Body          string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
+	CreatedUnix   int64                  `protobuf:"varint,4,opt,name=created_unix,json=createdUnix,proto3" json:"created_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConciergeMessage) Reset() {
+	*x = ConciergeMessage{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[62]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConciergeMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConciergeMessage) ProtoMessage() {}
+
+func (x *ConciergeMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[62]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConciergeMessage.ProtoReflect.Descriptor instead.
+func (*ConciergeMessage) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{62}
+}
+
+func (x *ConciergeMessage) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetSender() string {
+	if x != nil {
+		return x.Sender
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetCreatedUnix() int64 {
+	if x != nil {
+		return x.CreatedUnix
+	}
+	return 0
+}
+
+type StartConciergeThreadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Subject       string                 `protobuf:"bytes,1,opt,name=subject,proto3" json:"subject,omitempty"`
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StartConciergeThreadRequest) Reset() {
+	*x = StartConciergeThreadRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[63]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StartConciergeThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartConciergeThreadRequest) ProtoMessage() {}
+
+func (x *StartConciergeThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[63]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartConciergeThreadRequest.ProtoReflect.Descriptor instead.
+func (*StartConciergeThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{63}
+}
+
+func (x *StartConciergeThreadRequest) GetSubject() string {
+	if x != nil {
+		return x.Subject
+	}
+	return ""
+}
+
+func (x *StartConciergeThreadRequest) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+type StartConciergeThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *ConciergeThread       `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StartConciergeThreadResponse) Reset() {
+	*x = StartConciergeThreadResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[64]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StartConciergeThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartConciergeThreadResponse) ProtoMessage() {}
+
+func (x *StartConciergeThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[64]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartConciergeThreadResponse.ProtoReflect.Descriptor instead.
+func (*StartConciergeThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{64}
+}
+
+func (x *StartConciergeThreadResponse) GetThread() *ConciergeThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+type ListMyConciergeThreadsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyConciergeThreadsRequest) Reset() {
+	*x = ListMyConciergeThreadsRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[65]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyConciergeThreadsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyConciergeThreadsRequest) ProtoMessage() {}
+
+func (x *ListMyConciergeThreadsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[65]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyConciergeThreadsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyConciergeThreadsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{65}
+}
+
+type ListMyConciergeThreadsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Threads       []*ConciergeThread     `protobuf:"bytes,1,rep,name=threads,proto3" json:"threads,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyConciergeThreadsResponse) Reset() {
+	*x = ListMyConciergeThreadsResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[66]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyConciergeThreadsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyConciergeThreadsResponse) ProtoMessage() {}
+
+func (x *ListMyConciergeThreadsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[66]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyConciergeThreadsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyConciergeThreadsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{66}
+}
+
+func (x *ListMyConciergeThreadsResponse) GetThreads() []*ConciergeThread {
+	if x != nil {
+		return x.Threads
+	}
+	return nil
+}
+
+type GetConciergeThreadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetConciergeThreadRequest) Reset() {
+	*x = GetConciergeThreadRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[67]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetConciergeThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetConciergeThreadRequest) ProtoMessage() {}
+
+func (x *GetConciergeThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[67]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetConciergeThreadRequest.ProtoReflect.Descriptor instead.
+func (*GetConciergeThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{67}
+}
+
+func (x *GetConciergeThreadRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+type GetConciergeThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *ConciergeThread       `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	Messages      []*ConciergeMessage    `protobuf:"bytes,2,rep,name=messages,proto3" json:"messages,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetConciergeThreadResponse) Reset() {
+	*x = GetConciergeThreadResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[68]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetConciergeThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetConciergeThreadResponse) ProtoMessage() {}
+
+func (x *GetConciergeThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[68]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetConciergeThreadResponse.ProtoReflect.Descriptor instead.
+func (*GetConciergeThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *GetConciergeThreadResponse) GetThread() *ConciergeThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+func (x *GetConciergeThreadResponse) GetMessages() []*ConciergeMessage {
+	if x != nil {
+		return x.Messages
+	}
+	return nil
+}
+
+type PostConciergeMessageRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	Body          string                 `protobuf:"bytes,2,opt,name=body,proto3" json:"body,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PostConciergeMessageRequest) Reset() {
+	*x = PostConciergeMessageRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[69]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PostConciergeMessageRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PostConciergeMessageRequest) ProtoMessage() {}
+
+func (x *PostConciergeMessageRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[69]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PostConciergeMessageRequest.ProtoReflect.Descriptor instead.
+func (*PostConciergeMessageRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{69}
+}
+
+func (x *PostConciergeMessageRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *PostConciergeMessageRequest) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+type PostConciergeMessageResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Message       *ConciergeMessage      `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PostConciergeMessageResponse) Reset() {
+	*x = PostConciergeMessageResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[70]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PostConciergeMessageResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PostConciergeMessageResponse) ProtoMessage() {}
+
+func (x *PostConciergeMessageResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[70]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PostConciergeMessageResponse.ProtoReflect.Descriptor instead.
+func (*PostConciergeMessageResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *PostConciergeMessageResponse) GetMessage() *ConciergeMessage {
+	if x != nil {
+		return x.Message
+	}
+	return nil
+}
+
+// === Editorial Anthology ===
+type AnthologyArticle struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug             string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Title            string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Dek              string                 `protobuf:"bytes,4,opt,name=dek,proto3" json:"dek,omitempty"`
+	Body             string                 `protobuf:"bytes,5,opt,name=body,proto3" json:"body,omitempty"` // withheld in list + when locked
+	AuthorName       string                 `protobuf:"bytes,6,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
+	AuthorCredential string                 `protobuf:"bytes,7,opt,name=author_credential,json=authorCredential,proto3" json:"author_credential,omitempty"`
+	ReadMinutes      int32                  `protobuf:"varint,8,opt,name=read_minutes,json=readMinutes,proto3" json:"read_minutes,omitempty"`
+	SovereignOnly    bool                   `protobuf:"varint,9,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	Locked           bool                   `protobuf:"varint,10,opt,name=locked,proto3" json:"locked,omitempty"`
+	PublishedUnix    int64                  `protobuf:"varint,11,opt,name=published_unix,json=publishedUnix,proto3" json:"published_unix,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *AnthologyArticle) Reset() {
+	*x = AnthologyArticle{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[71]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AnthologyArticle) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AnthologyArticle) ProtoMessage() {}
+
+func (x *AnthologyArticle) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[71]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AnthologyArticle.ProtoReflect.Descriptor instead.
+func (*AnthologyArticle) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *AnthologyArticle) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetDek() string {
+	if x != nil {
+		return x.Dek
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetAuthorCredential() string {
+	if x != nil {
+		return x.AuthorCredential
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetReadMinutes() int32 {
+	if x != nil {
+		return x.ReadMinutes
+	}
+	return 0
+}
+
+func (x *AnthologyArticle) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+func (x *AnthologyArticle) GetLocked() bool {
+	if x != nil {
+		return x.Locked
+	}
+	return false
+}
+
+func (x *AnthologyArticle) GetPublishedUnix() int64 {
+	if x != nil {
+		return x.PublishedUnix
+	}
+	return 0
+}
+
+type ListAnthologyArticlesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAnthologyArticlesRequest) Reset() {
+	*x = ListAnthologyArticlesRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[72]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAnthologyArticlesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAnthologyArticlesRequest) ProtoMessage() {}
+
+func (x *ListAnthologyArticlesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[72]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAnthologyArticlesRequest.ProtoReflect.Descriptor instead.
+func (*ListAnthologyArticlesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{72}
+}
+
+type ListAnthologyArticlesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Articles      []*AnthologyArticle    `protobuf:"bytes,1,rep,name=articles,proto3" json:"articles,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAnthologyArticlesResponse) Reset() {
+	*x = ListAnthologyArticlesResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[73]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAnthologyArticlesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAnthologyArticlesResponse) ProtoMessage() {}
+
+func (x *ListAnthologyArticlesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[73]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAnthologyArticlesResponse.ProtoReflect.Descriptor instead.
+func (*ListAnthologyArticlesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{73}
+}
+
+func (x *ListAnthologyArticlesResponse) GetArticles() []*AnthologyArticle {
+	if x != nil {
+		return x.Articles
+	}
+	return nil
+}
+
+type GetAnthologyArticleRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAnthologyArticleRequest) Reset() {
+	*x = GetAnthologyArticleRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[74]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAnthologyArticleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAnthologyArticleRequest) ProtoMessage() {}
+
+func (x *GetAnthologyArticleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[74]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAnthologyArticleRequest.ProtoReflect.Descriptor instead.
+func (*GetAnthologyArticleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{74}
+}
+
+func (x *GetAnthologyArticleRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type GetAnthologyArticleResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Article       *AnthologyArticle      `protobuf:"bytes,1,opt,name=article,proto3" json:"article,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAnthologyArticleResponse) Reset() {
+	*x = GetAnthologyArticleResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[75]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAnthologyArticleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAnthologyArticleResponse) ProtoMessage() {}
+
+func (x *GetAnthologyArticleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[75]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAnthologyArticleResponse.ProtoReflect.Descriptor instead.
+func (*GetAnthologyArticleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{75}
+}
+
+func (x *GetAnthologyArticleResponse) GetArticle() *AnthologyArticle {
+	if x != nil {
+		return x.Article
+	}
+	return nil
+}
+
+// === Teacher directory ===
+type Teacher struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug          string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Discipline    string                 `protobuf:"bytes,4,opt,name=discipline,proto3" json:"discipline,omitempty"`
+	Region        string                 `protobuf:"bytes,5,opt,name=region,proto3" json:"region,omitempty"`
+	Bio           string                 `protobuf:"bytes,6,opt,name=bio,proto3" json:"bio,omitempty"`
+	SovereignOnly bool                   `protobuf:"varint,7,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Teacher) Reset() {
+	*x = Teacher{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[76]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Teacher) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Teacher) ProtoMessage() {}
+
+func (x *Teacher) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[76]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Teacher.ProtoReflect.Descriptor instead.
+func (*Teacher) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{76}
+}
+
+func (x *Teacher) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Teacher) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *Teacher) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Teacher) GetDiscipline() string {
+	if x != nil {
+		return x.Discipline
+	}
+	return ""
+}
+
+func (x *Teacher) GetRegion() string {
+	if x != nil {
+		return x.Region
+	}
+	return ""
+}
+
+func (x *Teacher) GetBio() string {
+	if x != nil {
+		return x.Bio
+	}
+	return ""
+}
+
+func (x *Teacher) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+type ListTeachersRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListTeachersRequest) Reset() {
+	*x = ListTeachersRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[77]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListTeachersRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListTeachersRequest) ProtoMessage() {}
+
+func (x *ListTeachersRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[77]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListTeachersRequest.ProtoReflect.Descriptor instead.
+func (*ListTeachersRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{77}
+}
+
+type ListTeachersResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Teachers      []*Teacher             `protobuf:"bytes,1,rep,name=teachers,proto3" json:"teachers,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListTeachersResponse) Reset() {
+	*x = ListTeachersResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[78]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListTeachersResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListTeachersResponse) ProtoMessage() {}
+
+func (x *ListTeachersResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[78]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListTeachersResponse.ProtoReflect.Descriptor instead.
+func (*ListTeachersResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{78}
+}
+
+func (x *ListTeachersResponse) GetTeachers() []*Teacher {
+	if x != nil {
+		return x.Teachers
+	}
+	return nil
+}
+
+// === Sovereign commissioned audio (tier + window gated) ===
+type SovereignAudio struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug            string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Title           string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Summary         string                 `protobuf:"bytes,4,opt,name=summary,proto3" json:"summary,omitempty"`
+	GuidedText      string                 `protobuf:"bytes,5,opt,name=guided_text,json=guidedText,proto3" json:"guided_text,omitempty"` // withheld when locked
+	DurationMinutes int32                  `protobuf:"varint,6,opt,name=duration_minutes,json=durationMinutes,proto3" json:"duration_minutes,omitempty"`
+	TeacherName     string                 `protobuf:"bytes,7,opt,name=teacher_name,json=teacherName,proto3" json:"teacher_name,omitempty"`
+	AudioUrl        string                 `protobuf:"bytes,8,opt,name=audio_url,json=audioUrl,proto3" json:"audio_url,omitempty"` // withheld when locked
+	Locked          bool                   `protobuf:"varint,9,opt,name=locked,proto3" json:"locked,omitempty"`
+	PublishedUnix   int64                  `protobuf:"varint,10,opt,name=published_unix,json=publishedUnix,proto3" json:"published_unix,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *SovereignAudio) Reset() {
+	*x = SovereignAudio{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[79]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SovereignAudio) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SovereignAudio) ProtoMessage() {}
+
+func (x *SovereignAudio) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[79]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SovereignAudio.ProtoReflect.Descriptor instead.
+func (*SovereignAudio) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{79}
+}
+
+func (x *SovereignAudio) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SovereignAudio) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *SovereignAudio) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *SovereignAudio) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *SovereignAudio) GetGuidedText() string {
+	if x != nil {
+		return x.GuidedText
+	}
+	return ""
+}
+
+func (x *SovereignAudio) GetDurationMinutes() int32 {
+	if x != nil {
+		return x.DurationMinutes
+	}
+	return 0
+}
+
+func (x *SovereignAudio) GetTeacherName() string {
+	if x != nil {
+		return x.TeacherName
+	}
+	return ""
+}
+
+func (x *SovereignAudio) GetAudioUrl() string {
+	if x != nil {
+		return x.AudioUrl
+	}
+	return ""
+}
+
+func (x *SovereignAudio) GetLocked() bool {
+	if x != nil {
+		return x.Locked
+	}
+	return false
+}
+
+func (x *SovereignAudio) GetPublishedUnix() int64 {
+	if x != nil {
+		return x.PublishedUnix
+	}
+	return 0
+}
+
+type ListSovereignAudioRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListSovereignAudioRequest) Reset() {
+	*x = ListSovereignAudioRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[80]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListSovereignAudioRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSovereignAudioRequest) ProtoMessage() {}
+
+func (x *ListSovereignAudioRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[80]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSovereignAudioRequest.ProtoReflect.Descriptor instead.
+func (*ListSovereignAudioRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{80}
+}
+
+type ListSovereignAudioResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*SovereignAudio      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Unlocked      bool                   `protobuf:"varint,2,opt,name=unlocked,proto3" json:"unlocked,omitempty"` // caller meets the Sovereign gate
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListSovereignAudioResponse) Reset() {
+	*x = ListSovereignAudioResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[81]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListSovereignAudioResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSovereignAudioResponse) ProtoMessage() {}
+
+func (x *ListSovereignAudioResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[81]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSovereignAudioResponse.ProtoReflect.Descriptor instead.
+func (*ListSovereignAudioResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{81}
+}
+
+func (x *ListSovereignAudioResponse) GetItems() []*SovereignAudio {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *ListSovereignAudioResponse) GetUnlocked() bool {
+	if x != nil {
+		return x.Unlocked
+	}
+	return false
+}
+
+type GetSovereignAudioRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetSovereignAudioRequest) Reset() {
+	*x = GetSovereignAudioRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[82]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSovereignAudioRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSovereignAudioRequest) ProtoMessage() {}
+
+func (x *GetSovereignAudioRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[82]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSovereignAudioRequest.ProtoReflect.Descriptor instead.
+func (*GetSovereignAudioRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{82}
+}
+
+func (x *GetSovereignAudioRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type GetSovereignAudioResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *SovereignAudio        `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetSovereignAudioResponse) Reset() {
+	*x = GetSovereignAudioResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[83]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSovereignAudioResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSovereignAudioResponse) ProtoMessage() {}
+
+func (x *GetSovereignAudioResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[83]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSovereignAudioResponse.ProtoReflect.Descriptor instead.
+func (*GetSovereignAudioResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{83}
+}
+
+func (x *GetSovereignAudioResponse) GetItem() *SovereignAudio {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+// === Travel jet-lag protocol (Nomad cross-pillar, pure compute) ===
+type JetLagDay struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	DayOffset     int32                  `protobuf:"varint,1,opt,name=day_offset,json=dayOffset,proto3" json:"day_offset,omitempty"` // -4..+4 relative to travel day (0)
+	Label         string                 `protobuf:"bytes,2,opt,name=label,proto3" json:"label,omitempty"`
+	Light         string                 `protobuf:"bytes,3,opt,name=light,proto3" json:"light,omitempty"`
+	Melatonin     string                 `protobuf:"bytes,4,opt,name=melatonin,proto3" json:"melatonin,omitempty"`
+	Meal          string                 `protobuf:"bytes,5,opt,name=meal,proto3" json:"meal,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *JetLagDay) Reset() {
+	*x = JetLagDay{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[84]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *JetLagDay) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*JetLagDay) ProtoMessage() {}
+
+func (x *JetLagDay) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[84]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use JetLagDay.ProtoReflect.Descriptor instead.
+func (*JetLagDay) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{84}
+}
+
+func (x *JetLagDay) GetDayOffset() int32 {
+	if x != nil {
+		return x.DayOffset
+	}
+	return 0
+}
+
+func (x *JetLagDay) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *JetLagDay) GetLight() string {
+	if x != nil {
+		return x.Light
+	}
+	return ""
+}
+
+func (x *JetLagDay) GetMelatonin() string {
+	if x != nil {
+		return x.Melatonin
+	}
+	return ""
+}
+
+func (x *JetLagDay) GetMeal() string {
+	if x != nil {
+		return x.Meal
+	}
+	return ""
+}
+
+type GetJetLagProtocolRequest struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	OriginCity             string                 `protobuf:"bytes,1,opt,name=origin_city,json=originCity,proto3" json:"origin_city,omitempty"`
+	DestCity               string                 `protobuf:"bytes,2,opt,name=dest_city,json=destCity,proto3" json:"dest_city,omitempty"`
+	OriginUtcOffsetMinutes int32                  `protobuf:"varint,3,opt,name=origin_utc_offset_minutes,json=originUtcOffsetMinutes,proto3" json:"origin_utc_offset_minutes,omitempty"`
+	DestUtcOffsetMinutes   int32                  `protobuf:"varint,4,opt,name=dest_utc_offset_minutes,json=destUtcOffsetMinutes,proto3" json:"dest_utc_offset_minutes,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *GetJetLagProtocolRequest) Reset() {
+	*x = GetJetLagProtocolRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[85]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetJetLagProtocolRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetJetLagProtocolRequest) ProtoMessage() {}
+
+func (x *GetJetLagProtocolRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[85]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetJetLagProtocolRequest.ProtoReflect.Descriptor instead.
+func (*GetJetLagProtocolRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{85}
+}
+
+func (x *GetJetLagProtocolRequest) GetOriginCity() string {
+	if x != nil {
+		return x.OriginCity
+	}
+	return ""
+}
+
+func (x *GetJetLagProtocolRequest) GetDestCity() string {
+	if x != nil {
+		return x.DestCity
+	}
+	return ""
+}
+
+func (x *GetJetLagProtocolRequest) GetOriginUtcOffsetMinutes() int32 {
+	if x != nil {
+		return x.OriginUtcOffsetMinutes
+	}
+	return 0
+}
+
+func (x *GetJetLagProtocolRequest) GetDestUtcOffsetMinutes() int32 {
+	if x != nil {
+		return x.DestUtcOffsetMinutes
+	}
+	return 0
+}
+
+type GetJetLagProtocolResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Direction     string                 `protobuf:"bytes,1,opt,name=direction,proto3" json:"direction,omitempty"` // 'east' | 'west' | 'none'
+	ShiftHours    int32                  `protobuf:"varint,2,opt,name=shift_hours,json=shiftHours,proto3" json:"shift_hours,omitempty"`
+	Days          []*JetLagDay           `protobuf:"bytes,3,rep,name=days,proto3" json:"days,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetJetLagProtocolResponse) Reset() {
+	*x = GetJetLagProtocolResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[86]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetJetLagProtocolResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetJetLagProtocolResponse) ProtoMessage() {}
+
+func (x *GetJetLagProtocolResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[86]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetJetLagProtocolResponse.ProtoReflect.Descriptor instead.
+func (*GetJetLagProtocolResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{86}
+}
+
+func (x *GetJetLagProtocolResponse) GetDirection() string {
+	if x != nil {
+		return x.Direction
+	}
+	return ""
+}
+
+func (x *GetJetLagProtocolResponse) GetShiftHours() int32 {
+	if x != nil {
+		return x.ShiftHours
+	}
+	return 0
+}
+
+func (x *GetJetLagProtocolResponse) GetDays() []*JetLagDay {
+	if x != nil {
+		return x.Days
+	}
+	return nil
+}
+
+// === Public profile share (fortitude band only) ===
+type CreateProfileShareRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TtlDays       int32                  `protobuf:"varint,1,opt,name=ttl_days,json=ttlDays,proto3" json:"ttl_days,omitempty"` // default 14
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateProfileShareRequest) Reset() {
+	*x = CreateProfileShareRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[87]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateProfileShareRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateProfileShareRequest) ProtoMessage() {}
+
+func (x *CreateProfileShareRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[87]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateProfileShareRequest.ProtoReflect.Descriptor instead.
+func (*CreateProfileShareRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{87}
+}
+
+func (x *CreateProfileShareRequest) GetTtlDays() int32 {
+	if x != nil {
+		return x.TtlDays
+	}
+	return 0
+}
+
+type CreateProfileShareResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	Url           string                 `protobuf:"bytes,2,opt,name=url,proto3" json:"url,omitempty"`
+	ExpiresUnix   int64                  `protobuf:"varint,3,opt,name=expires_unix,json=expiresUnix,proto3" json:"expires_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateProfileShareResponse) Reset() {
+	*x = CreateProfileShareResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[88]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateProfileShareResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateProfileShareResponse) ProtoMessage() {}
+
+func (x *CreateProfileShareResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[88]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateProfileShareResponse.ProtoReflect.Descriptor instead.
+func (*CreateProfileShareResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{88}
+}
+
+func (x *CreateProfileShareResponse) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *CreateProfileShareResponse) GetUrl() string {
+	if x != nil {
+		return x.Url
+	}
+	return ""
+}
+
+func (x *CreateProfileShareResponse) GetExpiresUnix() int64 {
+	if x != nil {
+		return x.ExpiresUnix
+	}
+	return 0
+}
+
+type ProfileShareToken struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	ExpiresUnix   int64                  `protobuf:"varint,2,opt,name=expires_unix,json=expiresUnix,proto3" json:"expires_unix,omitempty"`
+	CreatedUnix   int64                  `protobuf:"varint,3,opt,name=created_unix,json=createdUnix,proto3" json:"created_unix,omitempty"`
+	Revoked       bool                   `protobuf:"varint,4,opt,name=revoked,proto3" json:"revoked,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ProfileShareToken) Reset() {
+	*x = ProfileShareToken{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[89]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProfileShareToken) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProfileShareToken) ProtoMessage() {}
+
+func (x *ProfileShareToken) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[89]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProfileShareToken.ProtoReflect.Descriptor instead.
+func (*ProfileShareToken) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{89}
+}
+
+func (x *ProfileShareToken) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *ProfileShareToken) GetExpiresUnix() int64 {
+	if x != nil {
+		return x.ExpiresUnix
+	}
+	return 0
+}
+
+func (x *ProfileShareToken) GetCreatedUnix() int64 {
+	if x != nil {
+		return x.CreatedUnix
+	}
+	return 0
+}
+
+func (x *ProfileShareToken) GetRevoked() bool {
+	if x != nil {
+		return x.Revoked
+	}
+	return false
+}
+
+type ListMyProfileSharesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyProfileSharesRequest) Reset() {
+	*x = ListMyProfileSharesRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[90]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyProfileSharesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyProfileSharesRequest) ProtoMessage() {}
+
+func (x *ListMyProfileSharesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[90]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyProfileSharesRequest.ProtoReflect.Descriptor instead.
+func (*ListMyProfileSharesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{90}
+}
+
+type ListMyProfileSharesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Tokens        []*ProfileShareToken   `protobuf:"bytes,1,rep,name=tokens,proto3" json:"tokens,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyProfileSharesResponse) Reset() {
+	*x = ListMyProfileSharesResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[91]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyProfileSharesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyProfileSharesResponse) ProtoMessage() {}
+
+func (x *ListMyProfileSharesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[91]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyProfileSharesResponse.ProtoReflect.Descriptor instead.
+func (*ListMyProfileSharesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{91}
+}
+
+func (x *ListMyProfileSharesResponse) GetTokens() []*ProfileShareToken {
+	if x != nil {
+		return x.Tokens
+	}
+	return nil
+}
+
+type RevokeProfileShareRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeProfileShareRequest) Reset() {
+	*x = RevokeProfileShareRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[92]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeProfileShareRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeProfileShareRequest) ProtoMessage() {}
+
+func (x *RevokeProfileShareRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[92]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeProfileShareRequest.ProtoReflect.Descriptor instead.
+func (*RevokeProfileShareRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{92}
+}
+
+func (x *RevokeProfileShareRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+type RevokeProfileShareResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Ok            bool                   `protobuf:"varint,1,opt,name=ok,proto3" json:"ok,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeProfileShareResponse) Reset() {
+	*x = RevokeProfileShareResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[93]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeProfileShareResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeProfileShareResponse) ProtoMessage() {}
+
+func (x *RevokeProfileShareResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[93]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeProfileShareResponse.ProtoReflect.Descriptor instead.
+func (*RevokeProfileShareResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{93}
+}
+
+func (x *RevokeProfileShareResponse) GetOk() bool {
+	if x != nil {
+		return x.Ok
+	}
+	return false
+}
+
+// Z16.61 — journal NLP themes (Gemini, heuristic fallback).
+type JournalTheme struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Label         string                 `protobuf:"bytes,1,opt,name=label,proto3" json:"label,omitempty"`
+	Mentions      int32                  `protobuf:"varint,2,opt,name=mentions,proto3" json:"mentions,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *JournalTheme) Reset() {
+	*x = JournalTheme{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[94]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *JournalTheme) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*JournalTheme) ProtoMessage() {}
+
+func (x *JournalTheme) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[94]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use JournalTheme.ProtoReflect.Descriptor instead.
+func (*JournalTheme) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{94}
+}
+
+func (x *JournalTheme) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *JournalTheme) GetMentions() int32 {
+	if x != nil {
+		return x.Mentions
+	}
+	return 0
+}
+
+type GetJournalInsightsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetJournalInsightsRequest) Reset() {
+	*x = GetJournalInsightsRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[95]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetJournalInsightsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetJournalInsightsRequest) ProtoMessage() {}
+
+func (x *GetJournalInsightsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[95]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetJournalInsightsRequest.ProtoReflect.Descriptor instead.
+func (*GetJournalInsightsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{95}
+}
+
+type GetJournalInsightsResponse struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Themes          []*JournalTheme        `protobuf:"bytes,1,rep,name=themes,proto3" json:"themes,omitempty"`
+	Summary         string                 `protobuf:"bytes,2,opt,name=summary,proto3" json:"summary,omitempty"`
+	MoodTrend       string                 `protobuf:"bytes,3,opt,name=mood_trend,json=moodTrend,proto3" json:"mood_trend,omitempty"`        // 'improving' | 'steady' | 'declining' | 'unknown'
+	AiGenerated     bool                   `protobuf:"varint,4,opt,name=ai_generated,json=aiGenerated,proto3" json:"ai_generated,omitempty"` // false = deterministic heuristic fallback
+	EntriesAnalyzed int32                  `protobuf:"varint,5,opt,name=entries_analyzed,json=entriesAnalyzed,proto3" json:"entries_analyzed,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *GetJournalInsightsResponse) Reset() {
+	*x = GetJournalInsightsResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[96]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetJournalInsightsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetJournalInsightsResponse) ProtoMessage() {}
+
+func (x *GetJournalInsightsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[96]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetJournalInsightsResponse.ProtoReflect.Descriptor instead.
+func (*GetJournalInsightsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{96}
+}
+
+func (x *GetJournalInsightsResponse) GetThemes() []*JournalTheme {
+	if x != nil {
+		return x.Themes
+	}
+	return nil
+}
+
+func (x *GetJournalInsightsResponse) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *GetJournalInsightsResponse) GetMoodTrend() string {
+	if x != nil {
+		return x.MoodTrend
+	}
+	return ""
+}
+
+func (x *GetJournalInsightsResponse) GetAiGenerated() bool {
+	if x != nil {
+		return x.AiGenerated
+	}
+	return false
+}
+
+func (x *GetJournalInsightsResponse) GetEntriesAnalyzed() int32 {
+	if x != nil {
+		return x.EntriesAnalyzed
+	}
+	return 0
+}
+
+// Z16.35 — quarterly cognitive test cadence.
+type CognitiveTest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	AttentionScore float64                `protobuf:"fixed64,2,opt,name=attention_score,json=attentionScore,proto3" json:"attention_score,omitempty"`
+	MemoryScore    float64                `protobuf:"fixed64,3,opt,name=memory_score,json=memoryScore,proto3" json:"memory_score,omitempty"`
+	ReactionMs     float64                `protobuf:"fixed64,4,opt,name=reaction_ms,json=reactionMs,proto3" json:"reaction_ms,omitempty"`
+	Composite      float64                `protobuf:"fixed64,5,opt,name=composite,proto3" json:"composite,omitempty"`
+	TakenAtUnix    int64                  `protobuf:"varint,6,opt,name=taken_at_unix,json=takenAtUnix,proto3" json:"taken_at_unix,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *CognitiveTest) Reset() {
+	*x = CognitiveTest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[97]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CognitiveTest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CognitiveTest) ProtoMessage() {}
+
+func (x *CognitiveTest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[97]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CognitiveTest.ProtoReflect.Descriptor instead.
+func (*CognitiveTest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{97}
+}
+
+func (x *CognitiveTest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CognitiveTest) GetAttentionScore() float64 {
+	if x != nil {
+		return x.AttentionScore
+	}
+	return 0
+}
+
+func (x *CognitiveTest) GetMemoryScore() float64 {
+	if x != nil {
+		return x.MemoryScore
+	}
+	return 0
+}
+
+func (x *CognitiveTest) GetReactionMs() float64 {
+	if x != nil {
+		return x.ReactionMs
+	}
+	return 0
+}
+
+func (x *CognitiveTest) GetComposite() float64 {
+	if x != nil {
+		return x.Composite
+	}
+	return 0
+}
+
+func (x *CognitiveTest) GetTakenAtUnix() int64 {
+	if x != nil {
+		return x.TakenAtUnix
+	}
+	return 0
+}
+
+type SubmitCognitiveTestRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	AttentionScore float64                `protobuf:"fixed64,1,opt,name=attention_score,json=attentionScore,proto3" json:"attention_score,omitempty"` // 0..100
+	MemoryScore    float64                `protobuf:"fixed64,2,opt,name=memory_score,json=memoryScore,proto3" json:"memory_score,omitempty"`          // 0..100
+	ReactionMs     float64                `protobuf:"fixed64,3,opt,name=reaction_ms,json=reactionMs,proto3" json:"reaction_ms,omitempty"`             // lower = better
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *SubmitCognitiveTestRequest) Reset() {
+	*x = SubmitCognitiveTestRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[98]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitCognitiveTestRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitCognitiveTestRequest) ProtoMessage() {}
+
+func (x *SubmitCognitiveTestRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[98]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitCognitiveTestRequest.ProtoReflect.Descriptor instead.
+func (*SubmitCognitiveTestRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{98}
+}
+
+func (x *SubmitCognitiveTestRequest) GetAttentionScore() float64 {
+	if x != nil {
+		return x.AttentionScore
+	}
+	return 0
+}
+
+func (x *SubmitCognitiveTestRequest) GetMemoryScore() float64 {
+	if x != nil {
+		return x.MemoryScore
+	}
+	return 0
+}
+
+func (x *SubmitCognitiveTestRequest) GetReactionMs() float64 {
+	if x != nil {
+		return x.ReactionMs
+	}
+	return 0
+}
+
+type SubmitCognitiveTestResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Test          *CognitiveTest         `protobuf:"bytes,1,opt,name=test,proto3" json:"test,omitempty"`
+	DeltaVsLast   float64                `protobuf:"fixed64,2,opt,name=delta_vs_last,json=deltaVsLast,proto3" json:"delta_vs_last,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitCognitiveTestResponse) Reset() {
+	*x = SubmitCognitiveTestResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[99]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitCognitiveTestResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitCognitiveTestResponse) ProtoMessage() {}
+
+func (x *SubmitCognitiveTestResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[99]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitCognitiveTestResponse.ProtoReflect.Descriptor instead.
+func (*SubmitCognitiveTestResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{99}
+}
+
+func (x *SubmitCognitiveTestResponse) GetTest() *CognitiveTest {
+	if x != nil {
+		return x.Test
+	}
+	return nil
+}
+
+func (x *SubmitCognitiveTestResponse) GetDeltaVsLast() float64 {
+	if x != nil {
+		return x.DeltaVsLast
+	}
+	return 0
+}
+
+type ListMyCognitiveTestsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyCognitiveTestsRequest) Reset() {
+	*x = ListMyCognitiveTestsRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[100]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyCognitiveTestsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyCognitiveTestsRequest) ProtoMessage() {}
+
+func (x *ListMyCognitiveTestsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[100]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyCognitiveTestsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyCognitiveTestsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{100}
+}
+
+type ListMyCognitiveTestsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Tests         []*CognitiveTest       `protobuf:"bytes,1,rep,name=tests,proto3" json:"tests,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyCognitiveTestsResponse) Reset() {
+	*x = ListMyCognitiveTestsResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[101]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyCognitiveTestsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyCognitiveTestsResponse) ProtoMessage() {}
+
+func (x *ListMyCognitiveTestsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[101]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyCognitiveTestsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyCognitiveTestsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{101}
+}
+
+func (x *ListMyCognitiveTestsResponse) GetTests() []*CognitiveTest {
+	if x != nil {
+		return x.Tests
+	}
+	return nil
+}
+
+type GetCognitiveTestStatusRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCognitiveTestStatusRequest) Reset() {
+	*x = GetCognitiveTestStatusRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[102]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCognitiveTestStatusRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCognitiveTestStatusRequest) ProtoMessage() {}
+
+func (x *GetCognitiveTestStatusRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[102]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCognitiveTestStatusRequest.ProtoReflect.Descriptor instead.
+func (*GetCognitiveTestStatusRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{102}
+}
+
+type GetCognitiveTestStatusResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Due           bool                   `protobuf:"varint,1,opt,name=due,proto3" json:"due,omitempty"`
+	NextDueUnix   int64                  `protobuf:"varint,2,opt,name=next_due_unix,json=nextDueUnix,proto3" json:"next_due_unix,omitempty"`
+	HasBaseline   bool                   `protobuf:"varint,3,opt,name=has_baseline,json=hasBaseline,proto3" json:"has_baseline,omitempty"`
+	Latest        *CognitiveTest         `protobuf:"bytes,4,opt,name=latest,proto3" json:"latest,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCognitiveTestStatusResponse) Reset() {
+	*x = GetCognitiveTestStatusResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[103]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCognitiveTestStatusResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCognitiveTestStatusResponse) ProtoMessage() {}
+
+func (x *GetCognitiveTestStatusResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[103]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCognitiveTestStatusResponse.ProtoReflect.Descriptor instead.
+func (*GetCognitiveTestStatusResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{103}
+}
+
+func (x *GetCognitiveTestStatusResponse) GetDue() bool {
+	if x != nil {
+		return x.Due
+	}
+	return false
+}
+
+func (x *GetCognitiveTestStatusResponse) GetNextDueUnix() int64 {
+	if x != nil {
+		return x.NextDueUnix
+	}
+	return 0
+}
+
+func (x *GetCognitiveTestStatusResponse) GetHasBaseline() bool {
+	if x != nil {
+		return x.HasBaseline
+	}
+	return false
+}
+
+func (x *GetCognitiveTestStatusResponse) GetLatest() *CognitiveTest {
+	if x != nil {
+		return x.Latest
+	}
+	return nil
+}
+
+// Z16.29/30 — pre/post-meeting + standalone micro-rituals.
+type Ritual struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug            string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Title           string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Trigger         string                 `protobuf:"bytes,4,opt,name=trigger,proto3" json:"trigger,omitempty"` // pre_meeting | post_meeting | stress | pre_sleep | standalone
+	DurationSeconds int32                  `protobuf:"varint,5,opt,name=duration_seconds,json=durationSeconds,proto3" json:"duration_seconds,omitempty"`
+	Steps           string                 `protobuf:"bytes,6,opt,name=steps,proto3" json:"steps,omitempty"` // newline-separated
+	Summary         string                 `protobuf:"bytes,7,opt,name=summary,proto3" json:"summary,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *Ritual) Reset() {
+	*x = Ritual{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[104]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Ritual) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Ritual) ProtoMessage() {}
+
+func (x *Ritual) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[104]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Ritual.ProtoReflect.Descriptor instead.
+func (*Ritual) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{104}
+}
+
+func (x *Ritual) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Ritual) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *Ritual) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *Ritual) GetTrigger() string {
+	if x != nil {
+		return x.Trigger
+	}
+	return ""
+}
+
+func (x *Ritual) GetDurationSeconds() int32 {
+	if x != nil {
+		return x.DurationSeconds
+	}
+	return 0
+}
+
+func (x *Ritual) GetSteps() string {
+	if x != nil {
+		return x.Steps
+	}
+	return ""
+}
+
+func (x *Ritual) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+type ListRitualsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Trigger       string                 `protobuf:"bytes,1,opt,name=trigger,proto3" json:"trigger,omitempty"` // '' for all
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListRitualsRequest) Reset() {
+	*x = ListRitualsRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[105]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListRitualsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListRitualsRequest) ProtoMessage() {}
+
+func (x *ListRitualsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[105]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListRitualsRequest.ProtoReflect.Descriptor instead.
+func (*ListRitualsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{105}
+}
+
+func (x *ListRitualsRequest) GetTrigger() string {
+	if x != nil {
+		return x.Trigger
+	}
+	return ""
+}
+
+type ListRitualsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Rituals       []*Ritual              `protobuf:"bytes,1,rep,name=rituals,proto3" json:"rituals,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListRitualsResponse) Reset() {
+	*x = ListRitualsResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[106]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListRitualsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListRitualsResponse) ProtoMessage() {}
+
+func (x *ListRitualsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[106]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListRitualsResponse.ProtoReflect.Descriptor instead.
+func (*ListRitualsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{106}
+}
+
+func (x *ListRitualsResponse) GetRituals() []*Ritual {
+	if x != nil {
+		return x.Rituals
+	}
+	return nil
+}
+
+// Annual Year-in-Zenith recap + hardcover Almanac PDF.
+type YearInZenithRecap struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	Year                string                 `protobuf:"bytes,1,opt,name=year,proto3" json:"year,omitempty"`
+	FortitudeRank       float64                `protobuf:"fixed64,2,opt,name=fortitude_rank,json=fortitudeRank,proto3" json:"fortitude_rank,omitempty"`
+	RankLabel           string                 `protobuf:"bytes,3,opt,name=rank_label,json=rankLabel,proto3" json:"rank_label,omitempty"`
+	TotalFocusHours     int32                  `protobuf:"varint,4,opt,name=total_focus_hours,json=totalFocusHours,proto3" json:"total_focus_hours,omitempty"`
+	VerifiedBlocks      int32                  `protobuf:"varint,5,opt,name=verified_blocks,json=verifiedBlocks,proto3" json:"verified_blocks,omitempty"`
+	TotalBlocks         int32                  `protobuf:"varint,6,opt,name=total_blocks,json=totalBlocks,proto3" json:"total_blocks,omitempty"`
+	LongestStreakDays   int32                  `protobuf:"varint,7,opt,name=longest_streak_days,json=longestStreakDays,proto3" json:"longest_streak_days,omitempty"`
+	ProgrammesCompleted int32                  `protobuf:"varint,8,opt,name=programmes_completed,json=programmesCompleted,proto3" json:"programmes_completed,omitempty"`
+	TopHourUtc          int32                  `protobuf:"varint,9,opt,name=top_hour_utc,json=topHourUtc,proto3" json:"top_hour_utc,omitempty"`
+	HasTopHour          bool                   `protobuf:"varint,10,opt,name=has_top_hour,json=hasTopHour,proto3" json:"has_top_hour,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *YearInZenithRecap) Reset() {
+	*x = YearInZenithRecap{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[107]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *YearInZenithRecap) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*YearInZenithRecap) ProtoMessage() {}
+
+func (x *YearInZenithRecap) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[107]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use YearInZenithRecap.ProtoReflect.Descriptor instead.
+func (*YearInZenithRecap) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{107}
+}
+
+func (x *YearInZenithRecap) GetYear() string {
+	if x != nil {
+		return x.Year
+	}
+	return ""
+}
+
+func (x *YearInZenithRecap) GetFortitudeRank() float64 {
+	if x != nil {
+		return x.FortitudeRank
+	}
+	return 0
+}
+
+func (x *YearInZenithRecap) GetRankLabel() string {
+	if x != nil {
+		return x.RankLabel
+	}
+	return ""
+}
+
+func (x *YearInZenithRecap) GetTotalFocusHours() int32 {
+	if x != nil {
+		return x.TotalFocusHours
+	}
+	return 0
+}
+
+func (x *YearInZenithRecap) GetVerifiedBlocks() int32 {
+	if x != nil {
+		return x.VerifiedBlocks
+	}
+	return 0
+}
+
+func (x *YearInZenithRecap) GetTotalBlocks() int32 {
+	if x != nil {
+		return x.TotalBlocks
+	}
+	return 0
+}
+
+func (x *YearInZenithRecap) GetLongestStreakDays() int32 {
+	if x != nil {
+		return x.LongestStreakDays
+	}
+	return 0
+}
+
+func (x *YearInZenithRecap) GetProgrammesCompleted() int32 {
+	if x != nil {
+		return x.ProgrammesCompleted
+	}
+	return 0
+}
+
+func (x *YearInZenithRecap) GetTopHourUtc() int32 {
+	if x != nil {
+		return x.TopHourUtc
+	}
+	return 0
+}
+
+func (x *YearInZenithRecap) GetHasTopHour() bool {
+	if x != nil {
+		return x.HasTopHour
+	}
+	return false
+}
+
+type GetYearInZenithRecapRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetYearInZenithRecapRequest) Reset() {
+	*x = GetYearInZenithRecapRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[108]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetYearInZenithRecapRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetYearInZenithRecapRequest) ProtoMessage() {}
+
+func (x *GetYearInZenithRecapRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[108]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetYearInZenithRecapRequest.ProtoReflect.Descriptor instead.
+func (*GetYearInZenithRecapRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{108}
+}
+
+type GetYearInZenithRecapResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Recap         *YearInZenithRecap     `protobuf:"bytes,1,opt,name=recap,proto3" json:"recap,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetYearInZenithRecapResponse) Reset() {
+	*x = GetYearInZenithRecapResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[109]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetYearInZenithRecapResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetYearInZenithRecapResponse) ProtoMessage() {}
+
+func (x *GetYearInZenithRecapResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[109]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetYearInZenithRecapResponse.ProtoReflect.Descriptor instead.
+func (*GetYearInZenithRecapResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{109}
+}
+
+func (x *GetYearInZenithRecapResponse) GetRecap() *YearInZenithRecap {
+	if x != nil {
+		return x.Recap
+	}
+	return nil
+}
+
+type GenerateZenithAlmanacRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateZenithAlmanacRequest) Reset() {
+	*x = GenerateZenithAlmanacRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[110]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateZenithAlmanacRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateZenithAlmanacRequest) ProtoMessage() {}
+
+func (x *GenerateZenithAlmanacRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[110]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateZenithAlmanacRequest.ProtoReflect.Descriptor instead.
+func (*GenerateZenithAlmanacRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{110}
+}
+
+type GenerateZenithAlmanacResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Url           string                 `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
+	PageCount     int32                  `protobuf:"varint,2,opt,name=page_count,json=pageCount,proto3" json:"page_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateZenithAlmanacResponse) Reset() {
+	*x = GenerateZenithAlmanacResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[111]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateZenithAlmanacResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateZenithAlmanacResponse) ProtoMessage() {}
+
+func (x *GenerateZenithAlmanacResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[111]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateZenithAlmanacResponse.ProtoReflect.Descriptor instead.
+func (*GenerateZenithAlmanacResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{111}
+}
+
+func (x *GenerateZenithAlmanacResponse) GetUrl() string {
+	if x != nil {
+		return x.Url
+	}
+	return ""
+}
+
+func (x *GenerateZenithAlmanacResponse) GetPageCount() int32 {
+	if x != nil {
+		return x.PageCount
+	}
+	return 0
+}
+
+// Sttattus Lounge quiet rooms (meditation pods).
+type Lounge struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug          string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	City          string                 `protobuf:"bytes,4,opt,name=city,proto3" json:"city,omitempty"`
+	RoomType      string                 `protobuf:"bytes,5,opt,name=room_type,json=roomType,proto3" json:"room_type,omitempty"`
+	Summary       string                 `protobuf:"bytes,6,opt,name=summary,proto3" json:"summary,omitempty"`
+	SovereignOnly bool                   `protobuf:"varint,7,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	Locked        bool                   `protobuf:"varint,8,opt,name=locked,proto3" json:"locked,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Lounge) Reset() {
+	*x = Lounge{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[112]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Lounge) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Lounge) ProtoMessage() {}
+
+func (x *Lounge) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[112]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Lounge.ProtoReflect.Descriptor instead.
+func (*Lounge) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{112}
+}
+
+func (x *Lounge) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Lounge) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *Lounge) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Lounge) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *Lounge) GetRoomType() string {
+	if x != nil {
+		return x.RoomType
+	}
+	return ""
+}
+
+func (x *Lounge) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *Lounge) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+func (x *Lounge) GetLocked() bool {
+	if x != nil {
+		return x.Locked
+	}
+	return false
+}
+
+type LoungeBooking struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	LoungeId        string                 `protobuf:"bytes,2,opt,name=lounge_id,json=loungeId,proto3" json:"lounge_id,omitempty"`
+	LoungeName      string                 `protobuf:"bytes,3,opt,name=lounge_name,json=loungeName,proto3" json:"lounge_name,omitempty"`
+	StartsAtUnix    int64                  `protobuf:"varint,4,opt,name=starts_at_unix,json=startsAtUnix,proto3" json:"starts_at_unix,omitempty"`
+	DurationMinutes int32                  `protobuf:"varint,5,opt,name=duration_minutes,json=durationMinutes,proto3" json:"duration_minutes,omitempty"`
+	Status          string                 `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *LoungeBooking) Reset() {
+	*x = LoungeBooking{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[113]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LoungeBooking) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LoungeBooking) ProtoMessage() {}
+
+func (x *LoungeBooking) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[113]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LoungeBooking.ProtoReflect.Descriptor instead.
+func (*LoungeBooking) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{113}
+}
+
+func (x *LoungeBooking) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LoungeBooking) GetLoungeId() string {
+	if x != nil {
+		return x.LoungeId
+	}
+	return ""
+}
+
+func (x *LoungeBooking) GetLoungeName() string {
+	if x != nil {
+		return x.LoungeName
+	}
+	return ""
+}
+
+func (x *LoungeBooking) GetStartsAtUnix() int64 {
+	if x != nil {
+		return x.StartsAtUnix
+	}
+	return 0
+}
+
+func (x *LoungeBooking) GetDurationMinutes() int32 {
+	if x != nil {
+		return x.DurationMinutes
+	}
+	return 0
+}
+
+func (x *LoungeBooking) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+type ListLoungesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLoungesRequest) Reset() {
+	*x = ListLoungesRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[114]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLoungesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLoungesRequest) ProtoMessage() {}
+
+func (x *ListLoungesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[114]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLoungesRequest.ProtoReflect.Descriptor instead.
+func (*ListLoungesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{114}
+}
+
+type ListLoungesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Lounges       []*Lounge              `protobuf:"bytes,1,rep,name=lounges,proto3" json:"lounges,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLoungesResponse) Reset() {
+	*x = ListLoungesResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[115]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLoungesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLoungesResponse) ProtoMessage() {}
+
+func (x *ListLoungesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[115]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLoungesResponse.ProtoReflect.Descriptor instead.
+func (*ListLoungesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{115}
+}
+
+func (x *ListLoungesResponse) GetLounges() []*Lounge {
+	if x != nil {
+		return x.Lounges
+	}
+	return nil
+}
+
+type CreateLoungeBookingRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	LoungeId        string                 `protobuf:"bytes,1,opt,name=lounge_id,json=loungeId,proto3" json:"lounge_id,omitempty"`
+	StartsAtUnix    int64                  `protobuf:"varint,2,opt,name=starts_at_unix,json=startsAtUnix,proto3" json:"starts_at_unix,omitempty"`
+	DurationMinutes int32                  `protobuf:"varint,3,opt,name=duration_minutes,json=durationMinutes,proto3" json:"duration_minutes,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *CreateLoungeBookingRequest) Reset() {
+	*x = CreateLoungeBookingRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[116]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateLoungeBookingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateLoungeBookingRequest) ProtoMessage() {}
+
+func (x *CreateLoungeBookingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[116]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateLoungeBookingRequest.ProtoReflect.Descriptor instead.
+func (*CreateLoungeBookingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{116}
+}
+
+func (x *CreateLoungeBookingRequest) GetLoungeId() string {
+	if x != nil {
+		return x.LoungeId
+	}
+	return ""
+}
+
+func (x *CreateLoungeBookingRequest) GetStartsAtUnix() int64 {
+	if x != nil {
+		return x.StartsAtUnix
+	}
+	return 0
+}
+
+func (x *CreateLoungeBookingRequest) GetDurationMinutes() int32 {
+	if x != nil {
+		return x.DurationMinutes
+	}
+	return 0
+}
+
+type CreateLoungeBookingResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Booking       *LoungeBooking         `protobuf:"bytes,1,opt,name=booking,proto3" json:"booking,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateLoungeBookingResponse) Reset() {
+	*x = CreateLoungeBookingResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[117]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateLoungeBookingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateLoungeBookingResponse) ProtoMessage() {}
+
+func (x *CreateLoungeBookingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[117]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateLoungeBookingResponse.ProtoReflect.Descriptor instead.
+func (*CreateLoungeBookingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{117}
+}
+
+func (x *CreateLoungeBookingResponse) GetBooking() *LoungeBooking {
+	if x != nil {
+		return x.Booking
+	}
+	return nil
+}
+
+type ListMyLoungeBookingsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyLoungeBookingsRequest) Reset() {
+	*x = ListMyLoungeBookingsRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[118]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyLoungeBookingsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyLoungeBookingsRequest) ProtoMessage() {}
+
+func (x *ListMyLoungeBookingsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[118]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyLoungeBookingsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyLoungeBookingsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{118}
+}
+
+type ListMyLoungeBookingsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Bookings      []*LoungeBooking       `protobuf:"bytes,1,rep,name=bookings,proto3" json:"bookings,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyLoungeBookingsResponse) Reset() {
+	*x = ListMyLoungeBookingsResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[119]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyLoungeBookingsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyLoungeBookingsResponse) ProtoMessage() {}
+
+func (x *ListMyLoungeBookingsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[119]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyLoungeBookingsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyLoungeBookingsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{119}
+}
+
+func (x *ListMyLoungeBookingsResponse) GetBookings() []*LoungeBooking {
+	if x != nil {
+		return x.Bookings
+	}
+	return nil
+}
+
+type CancelLoungeBookingRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CancelLoungeBookingRequest) Reset() {
+	*x = CancelLoungeBookingRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[120]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CancelLoungeBookingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CancelLoungeBookingRequest) ProtoMessage() {}
+
+func (x *CancelLoungeBookingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[120]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CancelLoungeBookingRequest.ProtoReflect.Descriptor instead.
+func (*CancelLoungeBookingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{120}
+}
+
+func (x *CancelLoungeBookingRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type CancelLoungeBookingResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Ok            bool                   `protobuf:"varint,1,opt,name=ok,proto3" json:"ok,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CancelLoungeBookingResponse) Reset() {
+	*x = CancelLoungeBookingResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[121]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CancelLoungeBookingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CancelLoungeBookingResponse) ProtoMessage() {}
+
+func (x *CancelLoungeBookingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[121]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CancelLoungeBookingResponse.ProtoReflect.Descriptor instead.
+func (*CancelLoungeBookingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{121}
+}
+
+func (x *CancelLoungeBookingResponse) GetOk() bool {
+	if x != nil {
+		return x.Ok
+	}
+	return false
 }
 
 var File_sttattus_zenith_v1_zenith_proto protoreflect.FileDescriptor
@@ -1276,7 +6852,11 @@ const file_sttattus_zenith_v1_zenith_proto_rawDesc = "" +
 	"\x15GetZenithStatsRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\"O\n" +
 	"\x16GetZenithStatsResponse\x125\n" +
-	"\x05stats\x18\x01 \x01(\v2\x1f.sttattus.zenith.v1.ZenithStatsR\x05stats\"\xe1\x01\n" +
+	"\x05stats\x18\x01 \x01(\v2\x1f.sttattus.zenith.v1.ZenithStatsR\x05stats\"1\n" +
+	"\x19ListRecentSessionsRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"U\n" +
+	"\x1aListRecentSessionsResponse\x127\n" +
+	"\bsessions\x18\x01 \x03(\v2\x1b.sttattus.zenith.v1.SessionR\bsessions\"\xe1\x01\n" +
 	"\vLibraryItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x12\n" +
@@ -1335,15 +6915,421 @@ const file_sttattus_zenith_v1_zenith_proto_rawDesc = "" +
 	"\x10inputs_available\x18\b \x01(\x05R\x0finputsAvailable\"\x15\n" +
 	"\x13GetTodayLoadRequest\"M\n" +
 	"\x14GetTodayLoadResponse\x125\n" +
-	"\x04load\x18\x01 \x01(\v2!.sttattus.zenith.v1.CognitiveLoadR\x04load2\xa5\x06\n" +
+	"\x04load\x18\x01 \x01(\v2!.sttattus.zenith.v1.CognitiveLoadR\x04load\"\xcc\x01\n" +
+	"\rBlockTemplate\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x1f\n" +
+	"\vpre_minutes\x18\x04 \x01(\x05R\n" +
+	"preMinutes\x12!\n" +
+	"\fmain_minutes\x18\x05 \x01(\x05R\vmainMinutes\x12#\n" +
+	"\rreset_minutes\x18\x06 \x01(\x05R\fresetMinutes\x12\x18\n" +
+	"\asummary\x18\a \x01(\tR\asummary\"\x1b\n" +
+	"\x19ListBlockTemplatesRequest\"]\n" +
+	"\x1aListBlockTemplatesResponse\x12?\n" +
+	"\ttemplates\x18\x01 \x03(\v2!.sttattus.zenith.v1.BlockTemplateR\ttemplates\"\xac\x02\n" +
+	"\tProgramme\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x18\n" +
+	"\ateacher\x18\x04 \x01(\tR\ateacher\x12\x1d\n" +
+	"\n" +
+	"focus_area\x18\x05 \x01(\tR\tfocusArea\x12\x18\n" +
+	"\asummary\x18\x06 \x01(\tR\asummary\x12\x14\n" +
+	"\x05weeks\x18\a \x01(\x05R\x05weeks\x12%\n" +
+	"\x0esovereign_only\x18\b \x01(\bR\rsovereignOnly\x12\x1a\n" +
+	"\benrolled\x18\t \x01(\bR\benrolled\x12!\n" +
+	"\fcurrent_week\x18\n" +
+	" \x01(\x05R\vcurrentWeek\x12\x16\n" +
+	"\x06status\x18\v \x01(\tR\x06status\"\x8b\x01\n" +
+	"\rProgrammeWeek\x12\x1f\n" +
+	"\vweek_number\x18\x01 \x01(\x05R\n" +
+	"weekNumber\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x1a\n" +
+	"\bguidance\x18\x03 \x01(\tR\bguidance\x12'\n" +
+	"\x0ftarget_sessions\x18\x04 \x01(\x05R\x0etargetSessions\"\x17\n" +
+	"\x15ListProgrammesRequest\"W\n" +
+	"\x16ListProgrammesResponse\x12=\n" +
+	"\n" +
+	"programmes\x18\x01 \x03(\v2\x1d.sttattus.zenith.v1.ProgrammeR\n" +
+	"programmes\"8\n" +
+	"\x13GetProgrammeRequest\x12!\n" +
+	"\fprogramme_id\x18\x01 \x01(\tR\vprogrammeId\"\x8c\x01\n" +
+	"\x14GetProgrammeResponse\x12;\n" +
+	"\tprogramme\x18\x01 \x01(\v2\x1d.sttattus.zenith.v1.ProgrammeR\tprogramme\x127\n" +
+	"\x05weeks\x18\x02 \x03(\v2!.sttattus.zenith.v1.ProgrammeWeekR\x05weeks\";\n" +
+	"\x16EnrollProgrammeRequest\x12!\n" +
+	"\fprogramme_id\x18\x01 \x01(\tR\vprogrammeId\"V\n" +
+	"\x17EnrollProgrammeResponse\x12;\n" +
+	"\tprogramme\x18\x01 \x01(\v2\x1d.sttattus.zenith.v1.ProgrammeR\tprogramme\"\x19\n" +
+	"\x17ListMyProgrammesRequest\"Y\n" +
+	"\x18ListMyProgrammesResponse\x12=\n" +
+	"\n" +
+	"programmes\x18\x01 \x03(\v2\x1d.sttattus.zenith.v1.ProgrammeR\n" +
+	"programmes\"@\n" +
+	"\x1bAdvanceProgrammeWeekRequest\x12!\n" +
+	"\fprogramme_id\x18\x01 \x01(\tR\vprogrammeId\"[\n" +
+	"\x1cAdvanceProgrammeWeekResponse\x12;\n" +
+	"\tprogramme\x18\x01 \x01(\v2\x1d.sttattus.zenith.v1.ProgrammeR\tprogramme\"\x86\x01\n" +
+	"\fJournalEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04kind\x18\x02 \x01(\tR\x04kind\x12\x16\n" +
+	"\x06prompt\x18\x03 \x01(\tR\x06prompt\x12\x12\n" +
+	"\x04body\x18\x04 \x01(\tR\x04body\x12&\n" +
+	"\x0fcreated_at_unix\x18\x05 \x01(\x03R\rcreatedAtUnix\"X\n" +
+	"\x16AddJournalEntryRequest\x12\x12\n" +
+	"\x04kind\x18\x01 \x01(\tR\x04kind\x12\x16\n" +
+	"\x06prompt\x18\x02 \x01(\tR\x06prompt\x12\x12\n" +
+	"\x04body\x18\x03 \x01(\tR\x04body\"Q\n" +
+	"\x17AddJournalEntryResponse\x126\n" +
+	"\x05entry\x18\x01 \x01(\v2 .sttattus.zenith.v1.JournalEntryR\x05entry\"G\n" +
+	"\x1bListMyJournalEntriesRequest\x12\x12\n" +
+	"\x04kind\x18\x01 \x01(\tR\x04kind\x12\x14\n" +
+	"\x05limit\x18\x02 \x01(\x05R\x05limit\"Z\n" +
+	"\x1cListMyJournalEntriesResponse\x12:\n" +
+	"\aentries\x18\x01 \x03(\v2 .sttattus.zenith.v1.JournalEntryR\aentries\"V\n" +
+	"\n" +
+	"HourBucket\x12\x12\n" +
+	"\x04hour\x18\x01 \x01(\x05R\x04hour\x12\x1a\n" +
+	"\bsessions\x18\x02 \x01(\x05R\bsessions\x12\x18\n" +
+	"\aminutes\x18\x03 \x01(\x05R\aminutes\"^\n" +
+	"\tDayBucket\x12\x1b\n" +
+	"\tdate_unix\x18\x01 \x01(\x03R\bdateUnix\x12\x1a\n" +
+	"\bsessions\x18\x02 \x01(\x05R\bsessions\x12\x18\n" +
+	"\aminutes\x18\x03 \x01(\x05R\aminutes\",\n" +
+	"\x16GetFocusHistoryRequest\x12\x12\n" +
+	"\x04days\x18\x01 \x01(\x05R\x04days\"\xfe\x01\n" +
+	"\x17GetFocusHistoryResponse\x124\n" +
+	"\x05hours\x18\x01 \x03(\v2\x1e.sttattus.zenith.v1.HourBucketR\x05hours\x121\n" +
+	"\x04days\x18\x02 \x03(\v2\x1d.sttattus.zenith.v1.DayBucketR\x04days\x12.\n" +
+	"\x13current_streak_days\x18\x03 \x01(\x05R\x11currentStreakDays\x12#\n" +
+	"\rtotal_minutes\x18\x04 \x01(\x05R\ftotalMinutes\x12%\n" +
+	"\x0etotal_sessions\x18\x05 \x01(\x05R\rtotalSessions\"\xa9\x01\n" +
+	"\x18SimulateFortitudeRequest\x12$\n" +
+	"\x0eblocks_per_day\x18\x01 \x01(\x05R\fblocksPerDay\x12*\n" +
+	"\x11minutes_per_block\x18\x02 \x01(\x05R\x0fminutesPerBlock\x12\x12\n" +
+	"\x04days\x18\x03 \x01(\x05R\x04days\x12'\n" +
+	"\x0fassume_verified\x18\x04 \x01(\bR\x0eassumeVerified\"\xa4\x01\n" +
+	"\x19SimulateFortitudeResponse\x12!\n" +
+	"\fcurrent_rank\x18\x01 \x01(\x01R\vcurrentRank\x12%\n" +
+	"\x0eprojected_rank\x18\x02 \x01(\x01R\rprojectedRank\x12\x14\n" +
+	"\x05delta\x18\x03 \x01(\x01R\x05delta\x12'\n" +
+	"\x0fprojected_label\x18\x04 \x01(\tR\x0eprojectedLabel\"\x98\x01\n" +
+	"\x10AudioEnvironment\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x1a\n" +
+	"\bcategory\x18\x04 \x01(\tR\bcategory\x12\x18\n" +
+	"\asummary\x18\x05 \x01(\tR\asummary\x12\x14\n" +
+	"\x05claim\x18\x06 \x01(\tR\x05claim\"\x1e\n" +
+	"\x1cListAudioEnvironmentsRequest\"i\n" +
+	"\x1dListAudioEnvironmentsResponse\x12H\n" +
+	"\fenvironments\x18\x01 \x03(\v2$.sttattus.zenith.v1.AudioEnvironmentR\fenvironments\"\xa1\x01\n" +
+	"\x14CognitiveLoadSummary\x12\x1c\n" +
+	"\n" +
+	"load_0_100\x18\x01 \x01(\x01R\bload0100\x12\x18\n" +
+	"\averdict\x18\x02 \x01(\tR\averdict\x12&\n" +
+	"\x0erecommendation\x18\x03 \x01(\tR\x0erecommendation\x12)\n" +
+	"\x10inputs_available\x18\x04 \x01(\x05R\x0finputsAvailable\"\x19\n" +
+	"\x17GetCognitiveLoadRequest\"^\n" +
+	"\x18GetCognitiveLoadResponse\x12B\n" +
+	"\asummary\x18\x01 \x01(\v2(.sttattus.zenith.v1.CognitiveLoadSummaryR\asummary\"\x93\x01\n" +
+	"\fStressPrompt\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
+	"\x06source\x18\x02 \x01(\tR\x06source\x12\x19\n" +
+	"\bhrv_drop\x18\x03 \x01(\x01R\ahrvDrop\x12\x18\n" +
+	"\amessage\x18\x04 \x01(\tR\amessage\x12&\n" +
+	"\x0fcreated_at_unix\x18\x05 \x01(\x03R\rcreatedAtUnix\"0\n" +
+	"\x1eAcknowledgeStressPromptRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"1\n" +
+	"\x1fAcknowledgeStressPromptResponse\x12\x0e\n" +
+	"\x02ok\x18\x01 \x01(\bR\x02ok\"\x89\x03\n" +
+	"\fTodaySummary\x12\x1c\n" +
+	"\n" +
+	"load_0_100\x18\x01 \x01(\x01R\bload0100\x12!\n" +
+	"\fload_verdict\x18\x02 \x01(\tR\vloadVerdict\x12T\n" +
+	"\x11recommended_block\x18\x04 \x01(\v2'.sttattus.zenith.v1.BlockRecommendationR\x10recommendedBlock\x12H\n" +
+	"\x10active_programme\x18\x06 \x01(\v2\x1d.sttattus.zenith.v1.ProgrammeR\x0factiveProgramme\x12*\n" +
+	"\x11active_week_title\x18\a \x01(\tR\x0factiveWeekTitle\x12E\n" +
+	"\rstress_prompt\x18\t \x01(\v2 .sttattus.zenith.v1.StressPromptR\fstressPrompt\x12%\n" +
+	"\x0efortitude_rank\x18\n" +
+	" \x01(\x01R\rfortitudeRank\"\x18\n" +
+	"\x16GetTodaySummaryRequest\"U\n" +
+	"\x17GetTodaySummaryResponse\x12:\n" +
+	"\asummary\x18\x01 \x01(\v2 .sttattus.zenith.v1.TodaySummaryR\asummary\"\xbb\x01\n" +
+	"\x0fConciergeThread\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
+	"\asubject\x18\x02 \x01(\tR\asubject\x12\x16\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\x12 \n" +
+	"\fsla_due_unix\x18\x04 \x01(\x03R\n" +
+	"slaDueUnix\x12!\n" +
+	"\fcreated_unix\x18\x05 \x01(\x03R\vcreatedUnix\x12!\n" +
+	"\fupdated_unix\x18\x06 \x01(\x03R\vupdatedUnix\"q\n" +
+	"\x10ConciergeMessage\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
+	"\x06sender\x18\x02 \x01(\tR\x06sender\x12\x12\n" +
+	"\x04body\x18\x03 \x01(\tR\x04body\x12!\n" +
+	"\fcreated_unix\x18\x04 \x01(\x03R\vcreatedUnix\"Q\n" +
+	"\x1bStartConciergeThreadRequest\x12\x18\n" +
+	"\asubject\x18\x01 \x01(\tR\asubject\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\"[\n" +
+	"\x1cStartConciergeThreadResponse\x12;\n" +
+	"\x06thread\x18\x01 \x01(\v2#.sttattus.zenith.v1.ConciergeThreadR\x06thread\"\x1f\n" +
+	"\x1dListMyConciergeThreadsRequest\"_\n" +
+	"\x1eListMyConciergeThreadsResponse\x12=\n" +
+	"\athreads\x18\x01 \x03(\v2#.sttattus.zenith.v1.ConciergeThreadR\athreads\"8\n" +
+	"\x19GetConciergeThreadRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\"\x9b\x01\n" +
+	"\x1aGetConciergeThreadResponse\x12;\n" +
+	"\x06thread\x18\x01 \x01(\v2#.sttattus.zenith.v1.ConciergeThreadR\x06thread\x12@\n" +
+	"\bmessages\x18\x02 \x03(\v2$.sttattus.zenith.v1.ConciergeMessageR\bmessages\"N\n" +
+	"\x1bPostConciergeMessageRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\x12\x12\n" +
+	"\x04body\x18\x02 \x01(\tR\x04body\"^\n" +
+	"\x1cPostConciergeMessageResponse\x12>\n" +
+	"\amessage\x18\x01 \x01(\v2$.sttattus.zenith.v1.ConciergeMessageR\amessage\"\xc9\x02\n" +
+	"\x10AnthologyArticle\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x10\n" +
+	"\x03dek\x18\x04 \x01(\tR\x03dek\x12\x12\n" +
+	"\x04body\x18\x05 \x01(\tR\x04body\x12\x1f\n" +
+	"\vauthor_name\x18\x06 \x01(\tR\n" +
+	"authorName\x12+\n" +
+	"\x11author_credential\x18\a \x01(\tR\x10authorCredential\x12!\n" +
+	"\fread_minutes\x18\b \x01(\x05R\vreadMinutes\x12%\n" +
+	"\x0esovereign_only\x18\t \x01(\bR\rsovereignOnly\x12\x16\n" +
+	"\x06locked\x18\n" +
+	" \x01(\bR\x06locked\x12%\n" +
+	"\x0epublished_unix\x18\v \x01(\x03R\rpublishedUnix\"\x1e\n" +
+	"\x1cListAnthologyArticlesRequest\"a\n" +
+	"\x1dListAnthologyArticlesResponse\x12@\n" +
+	"\barticles\x18\x01 \x03(\v2$.sttattus.zenith.v1.AnthologyArticleR\barticles\",\n" +
+	"\x1aGetAnthologyArticleRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"]\n" +
+	"\x1bGetAnthologyArticleResponse\x12>\n" +
+	"\aarticle\x18\x01 \x01(\v2$.sttattus.zenith.v1.AnthologyArticleR\aarticle\"\xb2\x01\n" +
+	"\aTeacher\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12\x1e\n" +
+	"\n" +
+	"discipline\x18\x04 \x01(\tR\n" +
+	"discipline\x12\x16\n" +
+	"\x06region\x18\x05 \x01(\tR\x06region\x12\x10\n" +
+	"\x03bio\x18\x06 \x01(\tR\x03bio\x12%\n" +
+	"\x0esovereign_only\x18\a \x01(\bR\rsovereignOnly\"\x15\n" +
+	"\x13ListTeachersRequest\"O\n" +
+	"\x14ListTeachersResponse\x127\n" +
+	"\bteachers\x18\x01 \x03(\v2\x1b.sttattus.zenith.v1.TeacherR\bteachers\"\xaf\x02\n" +
+	"\x0eSovereignAudio\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x18\n" +
+	"\asummary\x18\x04 \x01(\tR\asummary\x12\x1f\n" +
+	"\vguided_text\x18\x05 \x01(\tR\n" +
+	"guidedText\x12)\n" +
+	"\x10duration_minutes\x18\x06 \x01(\x05R\x0fdurationMinutes\x12!\n" +
+	"\fteacher_name\x18\a \x01(\tR\vteacherName\x12\x1b\n" +
+	"\taudio_url\x18\b \x01(\tR\baudioUrl\x12\x16\n" +
+	"\x06locked\x18\t \x01(\bR\x06locked\x12%\n" +
+	"\x0epublished_unix\x18\n" +
+	" \x01(\x03R\rpublishedUnix\"\x1b\n" +
+	"\x19ListSovereignAudioRequest\"r\n" +
+	"\x1aListSovereignAudioResponse\x128\n" +
+	"\x05items\x18\x01 \x03(\v2\".sttattus.zenith.v1.SovereignAudioR\x05items\x12\x1a\n" +
+	"\bunlocked\x18\x02 \x01(\bR\bunlocked\"*\n" +
+	"\x18GetSovereignAudioRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"S\n" +
+	"\x19GetSovereignAudioResponse\x126\n" +
+	"\x04item\x18\x01 \x01(\v2\".sttattus.zenith.v1.SovereignAudioR\x04item\"\x88\x01\n" +
+	"\tJetLagDay\x12\x1d\n" +
+	"\n" +
+	"day_offset\x18\x01 \x01(\x05R\tdayOffset\x12\x14\n" +
+	"\x05label\x18\x02 \x01(\tR\x05label\x12\x14\n" +
+	"\x05light\x18\x03 \x01(\tR\x05light\x12\x1c\n" +
+	"\tmelatonin\x18\x04 \x01(\tR\tmelatonin\x12\x12\n" +
+	"\x04meal\x18\x05 \x01(\tR\x04meal\"\xca\x01\n" +
+	"\x18GetJetLagProtocolRequest\x12\x1f\n" +
+	"\vorigin_city\x18\x01 \x01(\tR\n" +
+	"originCity\x12\x1b\n" +
+	"\tdest_city\x18\x02 \x01(\tR\bdestCity\x129\n" +
+	"\x19origin_utc_offset_minutes\x18\x03 \x01(\x05R\x16originUtcOffsetMinutes\x125\n" +
+	"\x17dest_utc_offset_minutes\x18\x04 \x01(\x05R\x14destUtcOffsetMinutes\"\x8d\x01\n" +
+	"\x19GetJetLagProtocolResponse\x12\x1c\n" +
+	"\tdirection\x18\x01 \x01(\tR\tdirection\x12\x1f\n" +
+	"\vshift_hours\x18\x02 \x01(\x05R\n" +
+	"shiftHours\x121\n" +
+	"\x04days\x18\x03 \x03(\v2\x1d.sttattus.zenith.v1.JetLagDayR\x04days\"6\n" +
+	"\x19CreateProfileShareRequest\x12\x19\n" +
+	"\bttl_days\x18\x01 \x01(\x05R\attlDays\"g\n" +
+	"\x1aCreateProfileShareResponse\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\x12\x10\n" +
+	"\x03url\x18\x02 \x01(\tR\x03url\x12!\n" +
+	"\fexpires_unix\x18\x03 \x01(\x03R\vexpiresUnix\"\x89\x01\n" +
+	"\x11ProfileShareToken\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\x12!\n" +
+	"\fexpires_unix\x18\x02 \x01(\x03R\vexpiresUnix\x12!\n" +
+	"\fcreated_unix\x18\x03 \x01(\x03R\vcreatedUnix\x12\x18\n" +
+	"\arevoked\x18\x04 \x01(\bR\arevoked\"\x1c\n" +
+	"\x1aListMyProfileSharesRequest\"\\\n" +
+	"\x1bListMyProfileSharesResponse\x12=\n" +
+	"\x06tokens\x18\x01 \x03(\v2%.sttattus.zenith.v1.ProfileShareTokenR\x06tokens\"1\n" +
+	"\x19RevokeProfileShareRequest\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\",\n" +
+	"\x1aRevokeProfileShareResponse\x12\x0e\n" +
+	"\x02ok\x18\x01 \x01(\bR\x02ok\"@\n" +
+	"\fJournalTheme\x12\x14\n" +
+	"\x05label\x18\x01 \x01(\tR\x05label\x12\x1a\n" +
+	"\bmentions\x18\x02 \x01(\x05R\bmentions\"\x1b\n" +
+	"\x19GetJournalInsightsRequest\"\xdd\x01\n" +
+	"\x1aGetJournalInsightsResponse\x128\n" +
+	"\x06themes\x18\x01 \x03(\v2 .sttattus.zenith.v1.JournalThemeR\x06themes\x12\x18\n" +
+	"\asummary\x18\x02 \x01(\tR\asummary\x12\x1d\n" +
+	"\n" +
+	"mood_trend\x18\x03 \x01(\tR\tmoodTrend\x12!\n" +
+	"\fai_generated\x18\x04 \x01(\bR\vaiGenerated\x12)\n" +
+	"\x10entries_analyzed\x18\x05 \x01(\x05R\x0fentriesAnalyzed\"\xce\x01\n" +
+	"\rCognitiveTest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12'\n" +
+	"\x0fattention_score\x18\x02 \x01(\x01R\x0eattentionScore\x12!\n" +
+	"\fmemory_score\x18\x03 \x01(\x01R\vmemoryScore\x12\x1f\n" +
+	"\vreaction_ms\x18\x04 \x01(\x01R\n" +
+	"reactionMs\x12\x1c\n" +
+	"\tcomposite\x18\x05 \x01(\x01R\tcomposite\x12\"\n" +
+	"\rtaken_at_unix\x18\x06 \x01(\x03R\vtakenAtUnix\"\x89\x01\n" +
+	"\x1aSubmitCognitiveTestRequest\x12'\n" +
+	"\x0fattention_score\x18\x01 \x01(\x01R\x0eattentionScore\x12!\n" +
+	"\fmemory_score\x18\x02 \x01(\x01R\vmemoryScore\x12\x1f\n" +
+	"\vreaction_ms\x18\x03 \x01(\x01R\n" +
+	"reactionMs\"x\n" +
+	"\x1bSubmitCognitiveTestResponse\x125\n" +
+	"\x04test\x18\x01 \x01(\v2!.sttattus.zenith.v1.CognitiveTestR\x04test\x12\"\n" +
+	"\rdelta_vs_last\x18\x02 \x01(\x01R\vdeltaVsLast\"\x1d\n" +
+	"\x1bListMyCognitiveTestsRequest\"W\n" +
+	"\x1cListMyCognitiveTestsResponse\x127\n" +
+	"\x05tests\x18\x01 \x03(\v2!.sttattus.zenith.v1.CognitiveTestR\x05tests\"\x1f\n" +
+	"\x1dGetCognitiveTestStatusRequest\"\xb4\x01\n" +
+	"\x1eGetCognitiveTestStatusResponse\x12\x10\n" +
+	"\x03due\x18\x01 \x01(\bR\x03due\x12\"\n" +
+	"\rnext_due_unix\x18\x02 \x01(\x03R\vnextDueUnix\x12!\n" +
+	"\fhas_baseline\x18\x03 \x01(\bR\vhasBaseline\x129\n" +
+	"\x06latest\x18\x04 \x01(\v2!.sttattus.zenith.v1.CognitiveTestR\x06latest\"\xb7\x01\n" +
+	"\x06Ritual\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x18\n" +
+	"\atrigger\x18\x04 \x01(\tR\atrigger\x12)\n" +
+	"\x10duration_seconds\x18\x05 \x01(\x05R\x0fdurationSeconds\x12\x14\n" +
+	"\x05steps\x18\x06 \x01(\tR\x05steps\x12\x18\n" +
+	"\asummary\x18\a \x01(\tR\asummary\".\n" +
+	"\x12ListRitualsRequest\x12\x18\n" +
+	"\atrigger\x18\x01 \x01(\tR\atrigger\"K\n" +
+	"\x13ListRitualsResponse\x124\n" +
+	"\arituals\x18\x01 \x03(\v2\x1a.sttattus.zenith.v1.RitualR\arituals\"\x8c\x03\n" +
+	"\x11YearInZenithRecap\x12\x12\n" +
+	"\x04year\x18\x01 \x01(\tR\x04year\x12%\n" +
+	"\x0efortitude_rank\x18\x02 \x01(\x01R\rfortitudeRank\x12\x1d\n" +
+	"\n" +
+	"rank_label\x18\x03 \x01(\tR\trankLabel\x12*\n" +
+	"\x11total_focus_hours\x18\x04 \x01(\x05R\x0ftotalFocusHours\x12'\n" +
+	"\x0fverified_blocks\x18\x05 \x01(\x05R\x0everifiedBlocks\x12!\n" +
+	"\ftotal_blocks\x18\x06 \x01(\x05R\vtotalBlocks\x12.\n" +
+	"\x13longest_streak_days\x18\a \x01(\x05R\x11longestStreakDays\x121\n" +
+	"\x14programmes_completed\x18\b \x01(\x05R\x13programmesCompleted\x12 \n" +
+	"\ftop_hour_utc\x18\t \x01(\x05R\n" +
+	"topHourUtc\x12 \n" +
+	"\fhas_top_hour\x18\n" +
+	" \x01(\bR\n" +
+	"hasTopHour\"\x1d\n" +
+	"\x1bGetYearInZenithRecapRequest\"[\n" +
+	"\x1cGetYearInZenithRecapResponse\x12;\n" +
+	"\x05recap\x18\x01 \x01(\v2%.sttattus.zenith.v1.YearInZenithRecapR\x05recap\"\x1e\n" +
+	"\x1cGenerateZenithAlmanacRequest\"P\n" +
+	"\x1dGenerateZenithAlmanacResponse\x12\x10\n" +
+	"\x03url\x18\x01 \x01(\tR\x03url\x12\x1d\n" +
+	"\n" +
+	"page_count\x18\x02 \x01(\x05R\tpageCount\"\xca\x01\n" +
+	"\x06Lounge\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12\x12\n" +
+	"\x04city\x18\x04 \x01(\tR\x04city\x12\x1b\n" +
+	"\troom_type\x18\x05 \x01(\tR\broomType\x12\x18\n" +
+	"\asummary\x18\x06 \x01(\tR\asummary\x12%\n" +
+	"\x0esovereign_only\x18\a \x01(\bR\rsovereignOnly\x12\x16\n" +
+	"\x06locked\x18\b \x01(\bR\x06locked\"\xc6\x01\n" +
+	"\rLoungeBooking\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\tlounge_id\x18\x02 \x01(\tR\bloungeId\x12\x1f\n" +
+	"\vlounge_name\x18\x03 \x01(\tR\n" +
+	"loungeName\x12$\n" +
+	"\x0estarts_at_unix\x18\x04 \x01(\x03R\fstartsAtUnix\x12)\n" +
+	"\x10duration_minutes\x18\x05 \x01(\x05R\x0fdurationMinutes\x12\x16\n" +
+	"\x06status\x18\x06 \x01(\tR\x06status\"\x14\n" +
+	"\x12ListLoungesRequest\"K\n" +
+	"\x13ListLoungesResponse\x124\n" +
+	"\alounges\x18\x01 \x03(\v2\x1a.sttattus.zenith.v1.LoungeR\alounges\"\x8a\x01\n" +
+	"\x1aCreateLoungeBookingRequest\x12\x1b\n" +
+	"\tlounge_id\x18\x01 \x01(\tR\bloungeId\x12$\n" +
+	"\x0estarts_at_unix\x18\x02 \x01(\x03R\fstartsAtUnix\x12)\n" +
+	"\x10duration_minutes\x18\x03 \x01(\x05R\x0fdurationMinutes\"Z\n" +
+	"\x1bCreateLoungeBookingResponse\x12;\n" +
+	"\abooking\x18\x01 \x01(\v2!.sttattus.zenith.v1.LoungeBookingR\abooking\"\x1d\n" +
+	"\x1bListMyLoungeBookingsRequest\"]\n" +
+	"\x1cListMyLoungeBookingsResponse\x12=\n" +
+	"\bbookings\x18\x01 \x03(\v2!.sttattus.zenith.v1.LoungeBookingR\bbookings\",\n" +
+	"\x1aCancelLoungeBookingRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"-\n" +
+	"\x1bCancelLoungeBookingResponse\x12\x0e\n" +
+	"\x02ok\x18\x01 \x01(\bR\x02ok2\xe1)\n" +
 	"\rZenithService\x12j\n" +
 	"\x0fLogFocusSession\x12*.sttattus.zenith.v1.LogFocusSessionRequest\x1a+.sttattus.zenith.v1.LogFocusSessionResponse\x12g\n" +
-	"\x0eGetZenithStats\x12).sttattus.zenith.v1.GetZenithStatsRequest\x1a*.sttattus.zenith.v1.GetZenithStatsResponse\x12a\n" +
+	"\x0eGetZenithStats\x12).sttattus.zenith.v1.GetZenithStatsRequest\x1a*.sttattus.zenith.v1.GetZenithStatsResponse\x12s\n" +
+	"\x12ListRecentSessions\x12-.sttattus.zenith.v1.ListRecentSessionsRequest\x1a..sttattus.zenith.v1.ListRecentSessionsResponse\x12a\n" +
 	"\fGetTodayLoad\x12'.sttattus.zenith.v1.GetTodayLoadRequest\x1a(.sttattus.zenith.v1.GetTodayLoadResponse\x12\x88\x01\n" +
 	"\x19ListMyCalendarConnections\x124.sttattus.zenith.v1.ListMyCalendarConnectionsRequest\x1a5.sttattus.zenith.v1.ListMyCalendarConnectionsResponse\x12y\n" +
 	"\x14ListMyCalendarEvents\x12/.sttattus.zenith.v1.ListMyCalendarEventsRequest\x1a0.sttattus.zenith.v1.ListMyCalendarEventsResponse\x12g\n" +
 	"\x0eRecommendBlock\x12).sttattus.zenith.v1.RecommendBlockRequest\x1a*.sttattus.zenith.v1.RecommendBlockResponse\x12m\n" +
-	"\x10ListLibraryItems\x12+.sttattus.zenith.v1.ListLibraryItemsRequest\x1a,.sttattus.zenith.v1.ListLibraryItemsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/zenith/v1;zenithv1b\x06proto3"
+	"\x10ListLibraryItems\x12+.sttattus.zenith.v1.ListLibraryItemsRequest\x1a,.sttattus.zenith.v1.ListLibraryItemsResponse\x12s\n" +
+	"\x12ListBlockTemplates\x12-.sttattus.zenith.v1.ListBlockTemplatesRequest\x1a..sttattus.zenith.v1.ListBlockTemplatesResponse\x12g\n" +
+	"\x0eListProgrammes\x12).sttattus.zenith.v1.ListProgrammesRequest\x1a*.sttattus.zenith.v1.ListProgrammesResponse\x12a\n" +
+	"\fGetProgramme\x12'.sttattus.zenith.v1.GetProgrammeRequest\x1a(.sttattus.zenith.v1.GetProgrammeResponse\x12j\n" +
+	"\x0fEnrollProgramme\x12*.sttattus.zenith.v1.EnrollProgrammeRequest\x1a+.sttattus.zenith.v1.EnrollProgrammeResponse\x12m\n" +
+	"\x10ListMyProgrammes\x12+.sttattus.zenith.v1.ListMyProgrammesRequest\x1a,.sttattus.zenith.v1.ListMyProgrammesResponse\x12y\n" +
+	"\x14AdvanceProgrammeWeek\x12/.sttattus.zenith.v1.AdvanceProgrammeWeekRequest\x1a0.sttattus.zenith.v1.AdvanceProgrammeWeekResponse\x12j\n" +
+	"\x0fAddJournalEntry\x12*.sttattus.zenith.v1.AddJournalEntryRequest\x1a+.sttattus.zenith.v1.AddJournalEntryResponse\x12y\n" +
+	"\x14ListMyJournalEntries\x12/.sttattus.zenith.v1.ListMyJournalEntriesRequest\x1a0.sttattus.zenith.v1.ListMyJournalEntriesResponse\x12j\n" +
+	"\x0fGetFocusHistory\x12*.sttattus.zenith.v1.GetFocusHistoryRequest\x1a+.sttattus.zenith.v1.GetFocusHistoryResponse\x12p\n" +
+	"\x11SimulateFortitude\x12,.sttattus.zenith.v1.SimulateFortitudeRequest\x1a-.sttattus.zenith.v1.SimulateFortitudeResponse\x12|\n" +
+	"\x15ListAudioEnvironments\x120.sttattus.zenith.v1.ListAudioEnvironmentsRequest\x1a1.sttattus.zenith.v1.ListAudioEnvironmentsResponse\x12m\n" +
+	"\x10GetCognitiveLoad\x12+.sttattus.zenith.v1.GetCognitiveLoadRequest\x1a,.sttattus.zenith.v1.GetCognitiveLoadResponse\x12j\n" +
+	"\x0fGetTodaySummary\x12*.sttattus.zenith.v1.GetTodaySummaryRequest\x1a+.sttattus.zenith.v1.GetTodaySummaryResponse\x12\x82\x01\n" +
+	"\x17AcknowledgeStressPrompt\x122.sttattus.zenith.v1.AcknowledgeStressPromptRequest\x1a3.sttattus.zenith.v1.AcknowledgeStressPromptResponse\x12y\n" +
+	"\x14StartConciergeThread\x12/.sttattus.zenith.v1.StartConciergeThreadRequest\x1a0.sttattus.zenith.v1.StartConciergeThreadResponse\x12\x7f\n" +
+	"\x16ListMyConciergeThreads\x121.sttattus.zenith.v1.ListMyConciergeThreadsRequest\x1a2.sttattus.zenith.v1.ListMyConciergeThreadsResponse\x12s\n" +
+	"\x12GetConciergeThread\x12-.sttattus.zenith.v1.GetConciergeThreadRequest\x1a..sttattus.zenith.v1.GetConciergeThreadResponse\x12y\n" +
+	"\x14PostConciergeMessage\x12/.sttattus.zenith.v1.PostConciergeMessageRequest\x1a0.sttattus.zenith.v1.PostConciergeMessageResponse\x12|\n" +
+	"\x15ListAnthologyArticles\x120.sttattus.zenith.v1.ListAnthologyArticlesRequest\x1a1.sttattus.zenith.v1.ListAnthologyArticlesResponse\x12v\n" +
+	"\x13GetAnthologyArticle\x12..sttattus.zenith.v1.GetAnthologyArticleRequest\x1a/.sttattus.zenith.v1.GetAnthologyArticleResponse\x12a\n" +
+	"\fListTeachers\x12'.sttattus.zenith.v1.ListTeachersRequest\x1a(.sttattus.zenith.v1.ListTeachersResponse\x12s\n" +
+	"\x12ListSovereignAudio\x12-.sttattus.zenith.v1.ListSovereignAudioRequest\x1a..sttattus.zenith.v1.ListSovereignAudioResponse\x12p\n" +
+	"\x11GetSovereignAudio\x12,.sttattus.zenith.v1.GetSovereignAudioRequest\x1a-.sttattus.zenith.v1.GetSovereignAudioResponse\x12p\n" +
+	"\x11GetJetLagProtocol\x12,.sttattus.zenith.v1.GetJetLagProtocolRequest\x1a-.sttattus.zenith.v1.GetJetLagProtocolResponse\x12s\n" +
+	"\x12CreateProfileShare\x12-.sttattus.zenith.v1.CreateProfileShareRequest\x1a..sttattus.zenith.v1.CreateProfileShareResponse\x12v\n" +
+	"\x13ListMyProfileShares\x12..sttattus.zenith.v1.ListMyProfileSharesRequest\x1a/.sttattus.zenith.v1.ListMyProfileSharesResponse\x12s\n" +
+	"\x12RevokeProfileShare\x12-.sttattus.zenith.v1.RevokeProfileShareRequest\x1a..sttattus.zenith.v1.RevokeProfileShareResponse\x12s\n" +
+	"\x12GetJournalInsights\x12-.sttattus.zenith.v1.GetJournalInsightsRequest\x1a..sttattus.zenith.v1.GetJournalInsightsResponse\x12v\n" +
+	"\x13SubmitCognitiveTest\x12..sttattus.zenith.v1.SubmitCognitiveTestRequest\x1a/.sttattus.zenith.v1.SubmitCognitiveTestResponse\x12y\n" +
+	"\x14ListMyCognitiveTests\x12/.sttattus.zenith.v1.ListMyCognitiveTestsRequest\x1a0.sttattus.zenith.v1.ListMyCognitiveTestsResponse\x12\x7f\n" +
+	"\x16GetCognitiveTestStatus\x121.sttattus.zenith.v1.GetCognitiveTestStatusRequest\x1a2.sttattus.zenith.v1.GetCognitiveTestStatusResponse\x12^\n" +
+	"\vListRituals\x12&.sttattus.zenith.v1.ListRitualsRequest\x1a'.sttattus.zenith.v1.ListRitualsResponse\x12y\n" +
+	"\x14GetYearInZenithRecap\x12/.sttattus.zenith.v1.GetYearInZenithRecapRequest\x1a0.sttattus.zenith.v1.GetYearInZenithRecapResponse\x12|\n" +
+	"\x15GenerateZenithAlmanac\x120.sttattus.zenith.v1.GenerateZenithAlmanacRequest\x1a1.sttattus.zenith.v1.GenerateZenithAlmanacResponse\x12^\n" +
+	"\vListLounges\x12&.sttattus.zenith.v1.ListLoungesRequest\x1a'.sttattus.zenith.v1.ListLoungesResponse\x12v\n" +
+	"\x13CreateLoungeBooking\x12..sttattus.zenith.v1.CreateLoungeBookingRequest\x1a/.sttattus.zenith.v1.CreateLoungeBookingResponse\x12y\n" +
+	"\x14ListMyLoungeBookings\x12/.sttattus.zenith.v1.ListMyLoungeBookingsRequest\x1a0.sttattus.zenith.v1.ListMyLoungeBookingsResponse\x12v\n" +
+	"\x13CancelLoungeBooking\x12..sttattus.zenith.v1.CancelLoungeBookingRequest\x1a/.sttattus.zenith.v1.CancelLoungeBookingResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/zenith/v1;zenithv1b\x06proto3"
 
 var (
 	file_sttattus_zenith_v1_zenith_proto_rawDescOnce sync.Once
@@ -1357,7 +7343,7 @@ func file_sttattus_zenith_v1_zenith_proto_rawDescGZIP() []byte {
 	return file_sttattus_zenith_v1_zenith_proto_rawDescData
 }
 
-var file_sttattus_zenith_v1_zenith_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
+var file_sttattus_zenith_v1_zenith_proto_msgTypes = make([]protoimpl.MessageInfo, 122)
 var file_sttattus_zenith_v1_zenith_proto_goTypes = []any{
 	(*Session)(nil),                           // 0: sttattus.zenith.v1.Session
 	(*ZenithStats)(nil),                       // 1: sttattus.zenith.v1.ZenithStats
@@ -1365,52 +7351,270 @@ var file_sttattus_zenith_v1_zenith_proto_goTypes = []any{
 	(*LogFocusSessionResponse)(nil),           // 3: sttattus.zenith.v1.LogFocusSessionResponse
 	(*GetZenithStatsRequest)(nil),             // 4: sttattus.zenith.v1.GetZenithStatsRequest
 	(*GetZenithStatsResponse)(nil),            // 5: sttattus.zenith.v1.GetZenithStatsResponse
-	(*LibraryItem)(nil),                       // 6: sttattus.zenith.v1.LibraryItem
-	(*ListLibraryItemsRequest)(nil),           // 7: sttattus.zenith.v1.ListLibraryItemsRequest
-	(*ListLibraryItemsResponse)(nil),          // 8: sttattus.zenith.v1.ListLibraryItemsResponse
-	(*BlockRecommendation)(nil),               // 9: sttattus.zenith.v1.BlockRecommendation
-	(*RecommendBlockRequest)(nil),             // 10: sttattus.zenith.v1.RecommendBlockRequest
-	(*RecommendBlockResponse)(nil),            // 11: sttattus.zenith.v1.RecommendBlockResponse
-	(*CalendarConnection)(nil),                // 12: sttattus.zenith.v1.CalendarConnection
-	(*CalendarEvent)(nil),                     // 13: sttattus.zenith.v1.CalendarEvent
-	(*ListMyCalendarConnectionsRequest)(nil),  // 14: sttattus.zenith.v1.ListMyCalendarConnectionsRequest
-	(*ListMyCalendarConnectionsResponse)(nil), // 15: sttattus.zenith.v1.ListMyCalendarConnectionsResponse
-	(*ListMyCalendarEventsRequest)(nil),       // 16: sttattus.zenith.v1.ListMyCalendarEventsRequest
-	(*ListMyCalendarEventsResponse)(nil),      // 17: sttattus.zenith.v1.ListMyCalendarEventsResponse
-	(*CognitiveLoad)(nil),                     // 18: sttattus.zenith.v1.CognitiveLoad
-	(*GetTodayLoadRequest)(nil),               // 19: sttattus.zenith.v1.GetTodayLoadRequest
-	(*GetTodayLoadResponse)(nil),              // 20: sttattus.zenith.v1.GetTodayLoadResponse
-	(*timestamppb.Timestamp)(nil),             // 21: google.protobuf.Timestamp
+	(*ListRecentSessionsRequest)(nil),         // 6: sttattus.zenith.v1.ListRecentSessionsRequest
+	(*ListRecentSessionsResponse)(nil),        // 7: sttattus.zenith.v1.ListRecentSessionsResponse
+	(*LibraryItem)(nil),                       // 8: sttattus.zenith.v1.LibraryItem
+	(*ListLibraryItemsRequest)(nil),           // 9: sttattus.zenith.v1.ListLibraryItemsRequest
+	(*ListLibraryItemsResponse)(nil),          // 10: sttattus.zenith.v1.ListLibraryItemsResponse
+	(*BlockRecommendation)(nil),               // 11: sttattus.zenith.v1.BlockRecommendation
+	(*RecommendBlockRequest)(nil),             // 12: sttattus.zenith.v1.RecommendBlockRequest
+	(*RecommendBlockResponse)(nil),            // 13: sttattus.zenith.v1.RecommendBlockResponse
+	(*CalendarConnection)(nil),                // 14: sttattus.zenith.v1.CalendarConnection
+	(*CalendarEvent)(nil),                     // 15: sttattus.zenith.v1.CalendarEvent
+	(*ListMyCalendarConnectionsRequest)(nil),  // 16: sttattus.zenith.v1.ListMyCalendarConnectionsRequest
+	(*ListMyCalendarConnectionsResponse)(nil), // 17: sttattus.zenith.v1.ListMyCalendarConnectionsResponse
+	(*ListMyCalendarEventsRequest)(nil),       // 18: sttattus.zenith.v1.ListMyCalendarEventsRequest
+	(*ListMyCalendarEventsResponse)(nil),      // 19: sttattus.zenith.v1.ListMyCalendarEventsResponse
+	(*CognitiveLoad)(nil),                     // 20: sttattus.zenith.v1.CognitiveLoad
+	(*GetTodayLoadRequest)(nil),               // 21: sttattus.zenith.v1.GetTodayLoadRequest
+	(*GetTodayLoadResponse)(nil),              // 22: sttattus.zenith.v1.GetTodayLoadResponse
+	(*BlockTemplate)(nil),                     // 23: sttattus.zenith.v1.BlockTemplate
+	(*ListBlockTemplatesRequest)(nil),         // 24: sttattus.zenith.v1.ListBlockTemplatesRequest
+	(*ListBlockTemplatesResponse)(nil),        // 25: sttattus.zenith.v1.ListBlockTemplatesResponse
+	(*Programme)(nil),                         // 26: sttattus.zenith.v1.Programme
+	(*ProgrammeWeek)(nil),                     // 27: sttattus.zenith.v1.ProgrammeWeek
+	(*ListProgrammesRequest)(nil),             // 28: sttattus.zenith.v1.ListProgrammesRequest
+	(*ListProgrammesResponse)(nil),            // 29: sttattus.zenith.v1.ListProgrammesResponse
+	(*GetProgrammeRequest)(nil),               // 30: sttattus.zenith.v1.GetProgrammeRequest
+	(*GetProgrammeResponse)(nil),              // 31: sttattus.zenith.v1.GetProgrammeResponse
+	(*EnrollProgrammeRequest)(nil),            // 32: sttattus.zenith.v1.EnrollProgrammeRequest
+	(*EnrollProgrammeResponse)(nil),           // 33: sttattus.zenith.v1.EnrollProgrammeResponse
+	(*ListMyProgrammesRequest)(nil),           // 34: sttattus.zenith.v1.ListMyProgrammesRequest
+	(*ListMyProgrammesResponse)(nil),          // 35: sttattus.zenith.v1.ListMyProgrammesResponse
+	(*AdvanceProgrammeWeekRequest)(nil),       // 36: sttattus.zenith.v1.AdvanceProgrammeWeekRequest
+	(*AdvanceProgrammeWeekResponse)(nil),      // 37: sttattus.zenith.v1.AdvanceProgrammeWeekResponse
+	(*JournalEntry)(nil),                      // 38: sttattus.zenith.v1.JournalEntry
+	(*AddJournalEntryRequest)(nil),            // 39: sttattus.zenith.v1.AddJournalEntryRequest
+	(*AddJournalEntryResponse)(nil),           // 40: sttattus.zenith.v1.AddJournalEntryResponse
+	(*ListMyJournalEntriesRequest)(nil),       // 41: sttattus.zenith.v1.ListMyJournalEntriesRequest
+	(*ListMyJournalEntriesResponse)(nil),      // 42: sttattus.zenith.v1.ListMyJournalEntriesResponse
+	(*HourBucket)(nil),                        // 43: sttattus.zenith.v1.HourBucket
+	(*DayBucket)(nil),                         // 44: sttattus.zenith.v1.DayBucket
+	(*GetFocusHistoryRequest)(nil),            // 45: sttattus.zenith.v1.GetFocusHistoryRequest
+	(*GetFocusHistoryResponse)(nil),           // 46: sttattus.zenith.v1.GetFocusHistoryResponse
+	(*SimulateFortitudeRequest)(nil),          // 47: sttattus.zenith.v1.SimulateFortitudeRequest
+	(*SimulateFortitudeResponse)(nil),         // 48: sttattus.zenith.v1.SimulateFortitudeResponse
+	(*AudioEnvironment)(nil),                  // 49: sttattus.zenith.v1.AudioEnvironment
+	(*ListAudioEnvironmentsRequest)(nil),      // 50: sttattus.zenith.v1.ListAudioEnvironmentsRequest
+	(*ListAudioEnvironmentsResponse)(nil),     // 51: sttattus.zenith.v1.ListAudioEnvironmentsResponse
+	(*CognitiveLoadSummary)(nil),              // 52: sttattus.zenith.v1.CognitiveLoadSummary
+	(*GetCognitiveLoadRequest)(nil),           // 53: sttattus.zenith.v1.GetCognitiveLoadRequest
+	(*GetCognitiveLoadResponse)(nil),          // 54: sttattus.zenith.v1.GetCognitiveLoadResponse
+	(*StressPrompt)(nil),                      // 55: sttattus.zenith.v1.StressPrompt
+	(*AcknowledgeStressPromptRequest)(nil),    // 56: sttattus.zenith.v1.AcknowledgeStressPromptRequest
+	(*AcknowledgeStressPromptResponse)(nil),   // 57: sttattus.zenith.v1.AcknowledgeStressPromptResponse
+	(*TodaySummary)(nil),                      // 58: sttattus.zenith.v1.TodaySummary
+	(*GetTodaySummaryRequest)(nil),            // 59: sttattus.zenith.v1.GetTodaySummaryRequest
+	(*GetTodaySummaryResponse)(nil),           // 60: sttattus.zenith.v1.GetTodaySummaryResponse
+	(*ConciergeThread)(nil),                   // 61: sttattus.zenith.v1.ConciergeThread
+	(*ConciergeMessage)(nil),                  // 62: sttattus.zenith.v1.ConciergeMessage
+	(*StartConciergeThreadRequest)(nil),       // 63: sttattus.zenith.v1.StartConciergeThreadRequest
+	(*StartConciergeThreadResponse)(nil),      // 64: sttattus.zenith.v1.StartConciergeThreadResponse
+	(*ListMyConciergeThreadsRequest)(nil),     // 65: sttattus.zenith.v1.ListMyConciergeThreadsRequest
+	(*ListMyConciergeThreadsResponse)(nil),    // 66: sttattus.zenith.v1.ListMyConciergeThreadsResponse
+	(*GetConciergeThreadRequest)(nil),         // 67: sttattus.zenith.v1.GetConciergeThreadRequest
+	(*GetConciergeThreadResponse)(nil),        // 68: sttattus.zenith.v1.GetConciergeThreadResponse
+	(*PostConciergeMessageRequest)(nil),       // 69: sttattus.zenith.v1.PostConciergeMessageRequest
+	(*PostConciergeMessageResponse)(nil),      // 70: sttattus.zenith.v1.PostConciergeMessageResponse
+	(*AnthologyArticle)(nil),                  // 71: sttattus.zenith.v1.AnthologyArticle
+	(*ListAnthologyArticlesRequest)(nil),      // 72: sttattus.zenith.v1.ListAnthologyArticlesRequest
+	(*ListAnthologyArticlesResponse)(nil),     // 73: sttattus.zenith.v1.ListAnthologyArticlesResponse
+	(*GetAnthologyArticleRequest)(nil),        // 74: sttattus.zenith.v1.GetAnthologyArticleRequest
+	(*GetAnthologyArticleResponse)(nil),       // 75: sttattus.zenith.v1.GetAnthologyArticleResponse
+	(*Teacher)(nil),                           // 76: sttattus.zenith.v1.Teacher
+	(*ListTeachersRequest)(nil),               // 77: sttattus.zenith.v1.ListTeachersRequest
+	(*ListTeachersResponse)(nil),              // 78: sttattus.zenith.v1.ListTeachersResponse
+	(*SovereignAudio)(nil),                    // 79: sttattus.zenith.v1.SovereignAudio
+	(*ListSovereignAudioRequest)(nil),         // 80: sttattus.zenith.v1.ListSovereignAudioRequest
+	(*ListSovereignAudioResponse)(nil),        // 81: sttattus.zenith.v1.ListSovereignAudioResponse
+	(*GetSovereignAudioRequest)(nil),          // 82: sttattus.zenith.v1.GetSovereignAudioRequest
+	(*GetSovereignAudioResponse)(nil),         // 83: sttattus.zenith.v1.GetSovereignAudioResponse
+	(*JetLagDay)(nil),                         // 84: sttattus.zenith.v1.JetLagDay
+	(*GetJetLagProtocolRequest)(nil),          // 85: sttattus.zenith.v1.GetJetLagProtocolRequest
+	(*GetJetLagProtocolResponse)(nil),         // 86: sttattus.zenith.v1.GetJetLagProtocolResponse
+	(*CreateProfileShareRequest)(nil),         // 87: sttattus.zenith.v1.CreateProfileShareRequest
+	(*CreateProfileShareResponse)(nil),        // 88: sttattus.zenith.v1.CreateProfileShareResponse
+	(*ProfileShareToken)(nil),                 // 89: sttattus.zenith.v1.ProfileShareToken
+	(*ListMyProfileSharesRequest)(nil),        // 90: sttattus.zenith.v1.ListMyProfileSharesRequest
+	(*ListMyProfileSharesResponse)(nil),       // 91: sttattus.zenith.v1.ListMyProfileSharesResponse
+	(*RevokeProfileShareRequest)(nil),         // 92: sttattus.zenith.v1.RevokeProfileShareRequest
+	(*RevokeProfileShareResponse)(nil),        // 93: sttattus.zenith.v1.RevokeProfileShareResponse
+	(*JournalTheme)(nil),                      // 94: sttattus.zenith.v1.JournalTheme
+	(*GetJournalInsightsRequest)(nil),         // 95: sttattus.zenith.v1.GetJournalInsightsRequest
+	(*GetJournalInsightsResponse)(nil),        // 96: sttattus.zenith.v1.GetJournalInsightsResponse
+	(*CognitiveTest)(nil),                     // 97: sttattus.zenith.v1.CognitiveTest
+	(*SubmitCognitiveTestRequest)(nil),        // 98: sttattus.zenith.v1.SubmitCognitiveTestRequest
+	(*SubmitCognitiveTestResponse)(nil),       // 99: sttattus.zenith.v1.SubmitCognitiveTestResponse
+	(*ListMyCognitiveTestsRequest)(nil),       // 100: sttattus.zenith.v1.ListMyCognitiveTestsRequest
+	(*ListMyCognitiveTestsResponse)(nil),      // 101: sttattus.zenith.v1.ListMyCognitiveTestsResponse
+	(*GetCognitiveTestStatusRequest)(nil),     // 102: sttattus.zenith.v1.GetCognitiveTestStatusRequest
+	(*GetCognitiveTestStatusResponse)(nil),    // 103: sttattus.zenith.v1.GetCognitiveTestStatusResponse
+	(*Ritual)(nil),                            // 104: sttattus.zenith.v1.Ritual
+	(*ListRitualsRequest)(nil),                // 105: sttattus.zenith.v1.ListRitualsRequest
+	(*ListRitualsResponse)(nil),               // 106: sttattus.zenith.v1.ListRitualsResponse
+	(*YearInZenithRecap)(nil),                 // 107: sttattus.zenith.v1.YearInZenithRecap
+	(*GetYearInZenithRecapRequest)(nil),       // 108: sttattus.zenith.v1.GetYearInZenithRecapRequest
+	(*GetYearInZenithRecapResponse)(nil),      // 109: sttattus.zenith.v1.GetYearInZenithRecapResponse
+	(*GenerateZenithAlmanacRequest)(nil),      // 110: sttattus.zenith.v1.GenerateZenithAlmanacRequest
+	(*GenerateZenithAlmanacResponse)(nil),     // 111: sttattus.zenith.v1.GenerateZenithAlmanacResponse
+	(*Lounge)(nil),                            // 112: sttattus.zenith.v1.Lounge
+	(*LoungeBooking)(nil),                     // 113: sttattus.zenith.v1.LoungeBooking
+	(*ListLoungesRequest)(nil),                // 114: sttattus.zenith.v1.ListLoungesRequest
+	(*ListLoungesResponse)(nil),               // 115: sttattus.zenith.v1.ListLoungesResponse
+	(*CreateLoungeBookingRequest)(nil),        // 116: sttattus.zenith.v1.CreateLoungeBookingRequest
+	(*CreateLoungeBookingResponse)(nil),       // 117: sttattus.zenith.v1.CreateLoungeBookingResponse
+	(*ListMyLoungeBookingsRequest)(nil),       // 118: sttattus.zenith.v1.ListMyLoungeBookingsRequest
+	(*ListMyLoungeBookingsResponse)(nil),      // 119: sttattus.zenith.v1.ListMyLoungeBookingsResponse
+	(*CancelLoungeBookingRequest)(nil),        // 120: sttattus.zenith.v1.CancelLoungeBookingRequest
+	(*CancelLoungeBookingResponse)(nil),       // 121: sttattus.zenith.v1.CancelLoungeBookingResponse
+	(*timestamppb.Timestamp)(nil),             // 122: google.protobuf.Timestamp
 }
 var file_sttattus_zenith_v1_zenith_proto_depIdxs = []int32{
-	21, // 0: sttattus.zenith.v1.Session.started_at:type_name -> google.protobuf.Timestamp
-	0,  // 1: sttattus.zenith.v1.LogFocusSessionRequest.session:type_name -> sttattus.zenith.v1.Session
-	1,  // 2: sttattus.zenith.v1.LogFocusSessionResponse.stats:type_name -> sttattus.zenith.v1.ZenithStats
-	1,  // 3: sttattus.zenith.v1.GetZenithStatsResponse.stats:type_name -> sttattus.zenith.v1.ZenithStats
-	6,  // 4: sttattus.zenith.v1.ListLibraryItemsResponse.items:type_name -> sttattus.zenith.v1.LibraryItem
-	9,  // 5: sttattus.zenith.v1.RecommendBlockResponse.block:type_name -> sttattus.zenith.v1.BlockRecommendation
-	12, // 6: sttattus.zenith.v1.ListMyCalendarConnectionsResponse.connections:type_name -> sttattus.zenith.v1.CalendarConnection
-	13, // 7: sttattus.zenith.v1.ListMyCalendarEventsResponse.events:type_name -> sttattus.zenith.v1.CalendarEvent
-	18, // 8: sttattus.zenith.v1.GetTodayLoadResponse.load:type_name -> sttattus.zenith.v1.CognitiveLoad
-	2,  // 9: sttattus.zenith.v1.ZenithService.LogFocusSession:input_type -> sttattus.zenith.v1.LogFocusSessionRequest
-	4,  // 10: sttattus.zenith.v1.ZenithService.GetZenithStats:input_type -> sttattus.zenith.v1.GetZenithStatsRequest
-	19, // 11: sttattus.zenith.v1.ZenithService.GetTodayLoad:input_type -> sttattus.zenith.v1.GetTodayLoadRequest
-	14, // 12: sttattus.zenith.v1.ZenithService.ListMyCalendarConnections:input_type -> sttattus.zenith.v1.ListMyCalendarConnectionsRequest
-	16, // 13: sttattus.zenith.v1.ZenithService.ListMyCalendarEvents:input_type -> sttattus.zenith.v1.ListMyCalendarEventsRequest
-	10, // 14: sttattus.zenith.v1.ZenithService.RecommendBlock:input_type -> sttattus.zenith.v1.RecommendBlockRequest
-	7,  // 15: sttattus.zenith.v1.ZenithService.ListLibraryItems:input_type -> sttattus.zenith.v1.ListLibraryItemsRequest
-	3,  // 16: sttattus.zenith.v1.ZenithService.LogFocusSession:output_type -> sttattus.zenith.v1.LogFocusSessionResponse
-	5,  // 17: sttattus.zenith.v1.ZenithService.GetZenithStats:output_type -> sttattus.zenith.v1.GetZenithStatsResponse
-	20, // 18: sttattus.zenith.v1.ZenithService.GetTodayLoad:output_type -> sttattus.zenith.v1.GetTodayLoadResponse
-	15, // 19: sttattus.zenith.v1.ZenithService.ListMyCalendarConnections:output_type -> sttattus.zenith.v1.ListMyCalendarConnectionsResponse
-	17, // 20: sttattus.zenith.v1.ZenithService.ListMyCalendarEvents:output_type -> sttattus.zenith.v1.ListMyCalendarEventsResponse
-	11, // 21: sttattus.zenith.v1.ZenithService.RecommendBlock:output_type -> sttattus.zenith.v1.RecommendBlockResponse
-	8,  // 22: sttattus.zenith.v1.ZenithService.ListLibraryItems:output_type -> sttattus.zenith.v1.ListLibraryItemsResponse
-	16, // [16:23] is the sub-list for method output_type
-	9,  // [9:16] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	122, // 0: sttattus.zenith.v1.Session.started_at:type_name -> google.protobuf.Timestamp
+	0,   // 1: sttattus.zenith.v1.LogFocusSessionRequest.session:type_name -> sttattus.zenith.v1.Session
+	1,   // 2: sttattus.zenith.v1.LogFocusSessionResponse.stats:type_name -> sttattus.zenith.v1.ZenithStats
+	1,   // 3: sttattus.zenith.v1.GetZenithStatsResponse.stats:type_name -> sttattus.zenith.v1.ZenithStats
+	0,   // 4: sttattus.zenith.v1.ListRecentSessionsResponse.sessions:type_name -> sttattus.zenith.v1.Session
+	8,   // 5: sttattus.zenith.v1.ListLibraryItemsResponse.items:type_name -> sttattus.zenith.v1.LibraryItem
+	11,  // 6: sttattus.zenith.v1.RecommendBlockResponse.block:type_name -> sttattus.zenith.v1.BlockRecommendation
+	14,  // 7: sttattus.zenith.v1.ListMyCalendarConnectionsResponse.connections:type_name -> sttattus.zenith.v1.CalendarConnection
+	15,  // 8: sttattus.zenith.v1.ListMyCalendarEventsResponse.events:type_name -> sttattus.zenith.v1.CalendarEvent
+	20,  // 9: sttattus.zenith.v1.GetTodayLoadResponse.load:type_name -> sttattus.zenith.v1.CognitiveLoad
+	23,  // 10: sttattus.zenith.v1.ListBlockTemplatesResponse.templates:type_name -> sttattus.zenith.v1.BlockTemplate
+	26,  // 11: sttattus.zenith.v1.ListProgrammesResponse.programmes:type_name -> sttattus.zenith.v1.Programme
+	26,  // 12: sttattus.zenith.v1.GetProgrammeResponse.programme:type_name -> sttattus.zenith.v1.Programme
+	27,  // 13: sttattus.zenith.v1.GetProgrammeResponse.weeks:type_name -> sttattus.zenith.v1.ProgrammeWeek
+	26,  // 14: sttattus.zenith.v1.EnrollProgrammeResponse.programme:type_name -> sttattus.zenith.v1.Programme
+	26,  // 15: sttattus.zenith.v1.ListMyProgrammesResponse.programmes:type_name -> sttattus.zenith.v1.Programme
+	26,  // 16: sttattus.zenith.v1.AdvanceProgrammeWeekResponse.programme:type_name -> sttattus.zenith.v1.Programme
+	38,  // 17: sttattus.zenith.v1.AddJournalEntryResponse.entry:type_name -> sttattus.zenith.v1.JournalEntry
+	38,  // 18: sttattus.zenith.v1.ListMyJournalEntriesResponse.entries:type_name -> sttattus.zenith.v1.JournalEntry
+	43,  // 19: sttattus.zenith.v1.GetFocusHistoryResponse.hours:type_name -> sttattus.zenith.v1.HourBucket
+	44,  // 20: sttattus.zenith.v1.GetFocusHistoryResponse.days:type_name -> sttattus.zenith.v1.DayBucket
+	49,  // 21: sttattus.zenith.v1.ListAudioEnvironmentsResponse.environments:type_name -> sttattus.zenith.v1.AudioEnvironment
+	52,  // 22: sttattus.zenith.v1.GetCognitiveLoadResponse.summary:type_name -> sttattus.zenith.v1.CognitiveLoadSummary
+	11,  // 23: sttattus.zenith.v1.TodaySummary.recommended_block:type_name -> sttattus.zenith.v1.BlockRecommendation
+	26,  // 24: sttattus.zenith.v1.TodaySummary.active_programme:type_name -> sttattus.zenith.v1.Programme
+	55,  // 25: sttattus.zenith.v1.TodaySummary.stress_prompt:type_name -> sttattus.zenith.v1.StressPrompt
+	58,  // 26: sttattus.zenith.v1.GetTodaySummaryResponse.summary:type_name -> sttattus.zenith.v1.TodaySummary
+	61,  // 27: sttattus.zenith.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.zenith.v1.ConciergeThread
+	61,  // 28: sttattus.zenith.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.zenith.v1.ConciergeThread
+	61,  // 29: sttattus.zenith.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.zenith.v1.ConciergeThread
+	62,  // 30: sttattus.zenith.v1.GetConciergeThreadResponse.messages:type_name -> sttattus.zenith.v1.ConciergeMessage
+	62,  // 31: sttattus.zenith.v1.PostConciergeMessageResponse.message:type_name -> sttattus.zenith.v1.ConciergeMessage
+	71,  // 32: sttattus.zenith.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.zenith.v1.AnthologyArticle
+	71,  // 33: sttattus.zenith.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.zenith.v1.AnthologyArticle
+	76,  // 34: sttattus.zenith.v1.ListTeachersResponse.teachers:type_name -> sttattus.zenith.v1.Teacher
+	79,  // 35: sttattus.zenith.v1.ListSovereignAudioResponse.items:type_name -> sttattus.zenith.v1.SovereignAudio
+	79,  // 36: sttattus.zenith.v1.GetSovereignAudioResponse.item:type_name -> sttattus.zenith.v1.SovereignAudio
+	84,  // 37: sttattus.zenith.v1.GetJetLagProtocolResponse.days:type_name -> sttattus.zenith.v1.JetLagDay
+	89,  // 38: sttattus.zenith.v1.ListMyProfileSharesResponse.tokens:type_name -> sttattus.zenith.v1.ProfileShareToken
+	94,  // 39: sttattus.zenith.v1.GetJournalInsightsResponse.themes:type_name -> sttattus.zenith.v1.JournalTheme
+	97,  // 40: sttattus.zenith.v1.SubmitCognitiveTestResponse.test:type_name -> sttattus.zenith.v1.CognitiveTest
+	97,  // 41: sttattus.zenith.v1.ListMyCognitiveTestsResponse.tests:type_name -> sttattus.zenith.v1.CognitiveTest
+	97,  // 42: sttattus.zenith.v1.GetCognitiveTestStatusResponse.latest:type_name -> sttattus.zenith.v1.CognitiveTest
+	104, // 43: sttattus.zenith.v1.ListRitualsResponse.rituals:type_name -> sttattus.zenith.v1.Ritual
+	107, // 44: sttattus.zenith.v1.GetYearInZenithRecapResponse.recap:type_name -> sttattus.zenith.v1.YearInZenithRecap
+	112, // 45: sttattus.zenith.v1.ListLoungesResponse.lounges:type_name -> sttattus.zenith.v1.Lounge
+	113, // 46: sttattus.zenith.v1.CreateLoungeBookingResponse.booking:type_name -> sttattus.zenith.v1.LoungeBooking
+	113, // 47: sttattus.zenith.v1.ListMyLoungeBookingsResponse.bookings:type_name -> sttattus.zenith.v1.LoungeBooking
+	2,   // 48: sttattus.zenith.v1.ZenithService.LogFocusSession:input_type -> sttattus.zenith.v1.LogFocusSessionRequest
+	4,   // 49: sttattus.zenith.v1.ZenithService.GetZenithStats:input_type -> sttattus.zenith.v1.GetZenithStatsRequest
+	6,   // 50: sttattus.zenith.v1.ZenithService.ListRecentSessions:input_type -> sttattus.zenith.v1.ListRecentSessionsRequest
+	21,  // 51: sttattus.zenith.v1.ZenithService.GetTodayLoad:input_type -> sttattus.zenith.v1.GetTodayLoadRequest
+	16,  // 52: sttattus.zenith.v1.ZenithService.ListMyCalendarConnections:input_type -> sttattus.zenith.v1.ListMyCalendarConnectionsRequest
+	18,  // 53: sttattus.zenith.v1.ZenithService.ListMyCalendarEvents:input_type -> sttattus.zenith.v1.ListMyCalendarEventsRequest
+	12,  // 54: sttattus.zenith.v1.ZenithService.RecommendBlock:input_type -> sttattus.zenith.v1.RecommendBlockRequest
+	9,   // 55: sttattus.zenith.v1.ZenithService.ListLibraryItems:input_type -> sttattus.zenith.v1.ListLibraryItemsRequest
+	24,  // 56: sttattus.zenith.v1.ZenithService.ListBlockTemplates:input_type -> sttattus.zenith.v1.ListBlockTemplatesRequest
+	28,  // 57: sttattus.zenith.v1.ZenithService.ListProgrammes:input_type -> sttattus.zenith.v1.ListProgrammesRequest
+	30,  // 58: sttattus.zenith.v1.ZenithService.GetProgramme:input_type -> sttattus.zenith.v1.GetProgrammeRequest
+	32,  // 59: sttattus.zenith.v1.ZenithService.EnrollProgramme:input_type -> sttattus.zenith.v1.EnrollProgrammeRequest
+	34,  // 60: sttattus.zenith.v1.ZenithService.ListMyProgrammes:input_type -> sttattus.zenith.v1.ListMyProgrammesRequest
+	36,  // 61: sttattus.zenith.v1.ZenithService.AdvanceProgrammeWeek:input_type -> sttattus.zenith.v1.AdvanceProgrammeWeekRequest
+	39,  // 62: sttattus.zenith.v1.ZenithService.AddJournalEntry:input_type -> sttattus.zenith.v1.AddJournalEntryRequest
+	41,  // 63: sttattus.zenith.v1.ZenithService.ListMyJournalEntries:input_type -> sttattus.zenith.v1.ListMyJournalEntriesRequest
+	45,  // 64: sttattus.zenith.v1.ZenithService.GetFocusHistory:input_type -> sttattus.zenith.v1.GetFocusHistoryRequest
+	47,  // 65: sttattus.zenith.v1.ZenithService.SimulateFortitude:input_type -> sttattus.zenith.v1.SimulateFortitudeRequest
+	50,  // 66: sttattus.zenith.v1.ZenithService.ListAudioEnvironments:input_type -> sttattus.zenith.v1.ListAudioEnvironmentsRequest
+	53,  // 67: sttattus.zenith.v1.ZenithService.GetCognitiveLoad:input_type -> sttattus.zenith.v1.GetCognitiveLoadRequest
+	59,  // 68: sttattus.zenith.v1.ZenithService.GetTodaySummary:input_type -> sttattus.zenith.v1.GetTodaySummaryRequest
+	56,  // 69: sttattus.zenith.v1.ZenithService.AcknowledgeStressPrompt:input_type -> sttattus.zenith.v1.AcknowledgeStressPromptRequest
+	63,  // 70: sttattus.zenith.v1.ZenithService.StartConciergeThread:input_type -> sttattus.zenith.v1.StartConciergeThreadRequest
+	65,  // 71: sttattus.zenith.v1.ZenithService.ListMyConciergeThreads:input_type -> sttattus.zenith.v1.ListMyConciergeThreadsRequest
+	67,  // 72: sttattus.zenith.v1.ZenithService.GetConciergeThread:input_type -> sttattus.zenith.v1.GetConciergeThreadRequest
+	69,  // 73: sttattus.zenith.v1.ZenithService.PostConciergeMessage:input_type -> sttattus.zenith.v1.PostConciergeMessageRequest
+	72,  // 74: sttattus.zenith.v1.ZenithService.ListAnthologyArticles:input_type -> sttattus.zenith.v1.ListAnthologyArticlesRequest
+	74,  // 75: sttattus.zenith.v1.ZenithService.GetAnthologyArticle:input_type -> sttattus.zenith.v1.GetAnthologyArticleRequest
+	77,  // 76: sttattus.zenith.v1.ZenithService.ListTeachers:input_type -> sttattus.zenith.v1.ListTeachersRequest
+	80,  // 77: sttattus.zenith.v1.ZenithService.ListSovereignAudio:input_type -> sttattus.zenith.v1.ListSovereignAudioRequest
+	82,  // 78: sttattus.zenith.v1.ZenithService.GetSovereignAudio:input_type -> sttattus.zenith.v1.GetSovereignAudioRequest
+	85,  // 79: sttattus.zenith.v1.ZenithService.GetJetLagProtocol:input_type -> sttattus.zenith.v1.GetJetLagProtocolRequest
+	87,  // 80: sttattus.zenith.v1.ZenithService.CreateProfileShare:input_type -> sttattus.zenith.v1.CreateProfileShareRequest
+	90,  // 81: sttattus.zenith.v1.ZenithService.ListMyProfileShares:input_type -> sttattus.zenith.v1.ListMyProfileSharesRequest
+	92,  // 82: sttattus.zenith.v1.ZenithService.RevokeProfileShare:input_type -> sttattus.zenith.v1.RevokeProfileShareRequest
+	95,  // 83: sttattus.zenith.v1.ZenithService.GetJournalInsights:input_type -> sttattus.zenith.v1.GetJournalInsightsRequest
+	98,  // 84: sttattus.zenith.v1.ZenithService.SubmitCognitiveTest:input_type -> sttattus.zenith.v1.SubmitCognitiveTestRequest
+	100, // 85: sttattus.zenith.v1.ZenithService.ListMyCognitiveTests:input_type -> sttattus.zenith.v1.ListMyCognitiveTestsRequest
+	102, // 86: sttattus.zenith.v1.ZenithService.GetCognitiveTestStatus:input_type -> sttattus.zenith.v1.GetCognitiveTestStatusRequest
+	105, // 87: sttattus.zenith.v1.ZenithService.ListRituals:input_type -> sttattus.zenith.v1.ListRitualsRequest
+	108, // 88: sttattus.zenith.v1.ZenithService.GetYearInZenithRecap:input_type -> sttattus.zenith.v1.GetYearInZenithRecapRequest
+	110, // 89: sttattus.zenith.v1.ZenithService.GenerateZenithAlmanac:input_type -> sttattus.zenith.v1.GenerateZenithAlmanacRequest
+	114, // 90: sttattus.zenith.v1.ZenithService.ListLounges:input_type -> sttattus.zenith.v1.ListLoungesRequest
+	116, // 91: sttattus.zenith.v1.ZenithService.CreateLoungeBooking:input_type -> sttattus.zenith.v1.CreateLoungeBookingRequest
+	118, // 92: sttattus.zenith.v1.ZenithService.ListMyLoungeBookings:input_type -> sttattus.zenith.v1.ListMyLoungeBookingsRequest
+	120, // 93: sttattus.zenith.v1.ZenithService.CancelLoungeBooking:input_type -> sttattus.zenith.v1.CancelLoungeBookingRequest
+	3,   // 94: sttattus.zenith.v1.ZenithService.LogFocusSession:output_type -> sttattus.zenith.v1.LogFocusSessionResponse
+	5,   // 95: sttattus.zenith.v1.ZenithService.GetZenithStats:output_type -> sttattus.zenith.v1.GetZenithStatsResponse
+	7,   // 96: sttattus.zenith.v1.ZenithService.ListRecentSessions:output_type -> sttattus.zenith.v1.ListRecentSessionsResponse
+	22,  // 97: sttattus.zenith.v1.ZenithService.GetTodayLoad:output_type -> sttattus.zenith.v1.GetTodayLoadResponse
+	17,  // 98: sttattus.zenith.v1.ZenithService.ListMyCalendarConnections:output_type -> sttattus.zenith.v1.ListMyCalendarConnectionsResponse
+	19,  // 99: sttattus.zenith.v1.ZenithService.ListMyCalendarEvents:output_type -> sttattus.zenith.v1.ListMyCalendarEventsResponse
+	13,  // 100: sttattus.zenith.v1.ZenithService.RecommendBlock:output_type -> sttattus.zenith.v1.RecommendBlockResponse
+	10,  // 101: sttattus.zenith.v1.ZenithService.ListLibraryItems:output_type -> sttattus.zenith.v1.ListLibraryItemsResponse
+	25,  // 102: sttattus.zenith.v1.ZenithService.ListBlockTemplates:output_type -> sttattus.zenith.v1.ListBlockTemplatesResponse
+	29,  // 103: sttattus.zenith.v1.ZenithService.ListProgrammes:output_type -> sttattus.zenith.v1.ListProgrammesResponse
+	31,  // 104: sttattus.zenith.v1.ZenithService.GetProgramme:output_type -> sttattus.zenith.v1.GetProgrammeResponse
+	33,  // 105: sttattus.zenith.v1.ZenithService.EnrollProgramme:output_type -> sttattus.zenith.v1.EnrollProgrammeResponse
+	35,  // 106: sttattus.zenith.v1.ZenithService.ListMyProgrammes:output_type -> sttattus.zenith.v1.ListMyProgrammesResponse
+	37,  // 107: sttattus.zenith.v1.ZenithService.AdvanceProgrammeWeek:output_type -> sttattus.zenith.v1.AdvanceProgrammeWeekResponse
+	40,  // 108: sttattus.zenith.v1.ZenithService.AddJournalEntry:output_type -> sttattus.zenith.v1.AddJournalEntryResponse
+	42,  // 109: sttattus.zenith.v1.ZenithService.ListMyJournalEntries:output_type -> sttattus.zenith.v1.ListMyJournalEntriesResponse
+	46,  // 110: sttattus.zenith.v1.ZenithService.GetFocusHistory:output_type -> sttattus.zenith.v1.GetFocusHistoryResponse
+	48,  // 111: sttattus.zenith.v1.ZenithService.SimulateFortitude:output_type -> sttattus.zenith.v1.SimulateFortitudeResponse
+	51,  // 112: sttattus.zenith.v1.ZenithService.ListAudioEnvironments:output_type -> sttattus.zenith.v1.ListAudioEnvironmentsResponse
+	54,  // 113: sttattus.zenith.v1.ZenithService.GetCognitiveLoad:output_type -> sttattus.zenith.v1.GetCognitiveLoadResponse
+	60,  // 114: sttattus.zenith.v1.ZenithService.GetTodaySummary:output_type -> sttattus.zenith.v1.GetTodaySummaryResponse
+	57,  // 115: sttattus.zenith.v1.ZenithService.AcknowledgeStressPrompt:output_type -> sttattus.zenith.v1.AcknowledgeStressPromptResponse
+	64,  // 116: sttattus.zenith.v1.ZenithService.StartConciergeThread:output_type -> sttattus.zenith.v1.StartConciergeThreadResponse
+	66,  // 117: sttattus.zenith.v1.ZenithService.ListMyConciergeThreads:output_type -> sttattus.zenith.v1.ListMyConciergeThreadsResponse
+	68,  // 118: sttattus.zenith.v1.ZenithService.GetConciergeThread:output_type -> sttattus.zenith.v1.GetConciergeThreadResponse
+	70,  // 119: sttattus.zenith.v1.ZenithService.PostConciergeMessage:output_type -> sttattus.zenith.v1.PostConciergeMessageResponse
+	73,  // 120: sttattus.zenith.v1.ZenithService.ListAnthologyArticles:output_type -> sttattus.zenith.v1.ListAnthologyArticlesResponse
+	75,  // 121: sttattus.zenith.v1.ZenithService.GetAnthologyArticle:output_type -> sttattus.zenith.v1.GetAnthologyArticleResponse
+	78,  // 122: sttattus.zenith.v1.ZenithService.ListTeachers:output_type -> sttattus.zenith.v1.ListTeachersResponse
+	81,  // 123: sttattus.zenith.v1.ZenithService.ListSovereignAudio:output_type -> sttattus.zenith.v1.ListSovereignAudioResponse
+	83,  // 124: sttattus.zenith.v1.ZenithService.GetSovereignAudio:output_type -> sttattus.zenith.v1.GetSovereignAudioResponse
+	86,  // 125: sttattus.zenith.v1.ZenithService.GetJetLagProtocol:output_type -> sttattus.zenith.v1.GetJetLagProtocolResponse
+	88,  // 126: sttattus.zenith.v1.ZenithService.CreateProfileShare:output_type -> sttattus.zenith.v1.CreateProfileShareResponse
+	91,  // 127: sttattus.zenith.v1.ZenithService.ListMyProfileShares:output_type -> sttattus.zenith.v1.ListMyProfileSharesResponse
+	93,  // 128: sttattus.zenith.v1.ZenithService.RevokeProfileShare:output_type -> sttattus.zenith.v1.RevokeProfileShareResponse
+	96,  // 129: sttattus.zenith.v1.ZenithService.GetJournalInsights:output_type -> sttattus.zenith.v1.GetJournalInsightsResponse
+	99,  // 130: sttattus.zenith.v1.ZenithService.SubmitCognitiveTest:output_type -> sttattus.zenith.v1.SubmitCognitiveTestResponse
+	101, // 131: sttattus.zenith.v1.ZenithService.ListMyCognitiveTests:output_type -> sttattus.zenith.v1.ListMyCognitiveTestsResponse
+	103, // 132: sttattus.zenith.v1.ZenithService.GetCognitiveTestStatus:output_type -> sttattus.zenith.v1.GetCognitiveTestStatusResponse
+	106, // 133: sttattus.zenith.v1.ZenithService.ListRituals:output_type -> sttattus.zenith.v1.ListRitualsResponse
+	109, // 134: sttattus.zenith.v1.ZenithService.GetYearInZenithRecap:output_type -> sttattus.zenith.v1.GetYearInZenithRecapResponse
+	111, // 135: sttattus.zenith.v1.ZenithService.GenerateZenithAlmanac:output_type -> sttattus.zenith.v1.GenerateZenithAlmanacResponse
+	115, // 136: sttattus.zenith.v1.ZenithService.ListLounges:output_type -> sttattus.zenith.v1.ListLoungesResponse
+	117, // 137: sttattus.zenith.v1.ZenithService.CreateLoungeBooking:output_type -> sttattus.zenith.v1.CreateLoungeBookingResponse
+	119, // 138: sttattus.zenith.v1.ZenithService.ListMyLoungeBookings:output_type -> sttattus.zenith.v1.ListMyLoungeBookingsResponse
+	121, // 139: sttattus.zenith.v1.ZenithService.CancelLoungeBooking:output_type -> sttattus.zenith.v1.CancelLoungeBookingResponse
+	94,  // [94:140] is the sub-list for method output_type
+	48,  // [48:94] is the sub-list for method input_type
+	48,  // [48:48] is the sub-list for extension type_name
+	48,  // [48:48] is the sub-list for extension extendee
+	0,   // [0:48] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_zenith_v1_zenith_proto_init() }
@@ -1424,7 +7628,7 @@ func file_sttattus_zenith_v1_zenith_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_zenith_v1_zenith_proto_rawDesc), len(file_sttattus_zenith_v1_zenith_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   21,
+			NumMessages:   122,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

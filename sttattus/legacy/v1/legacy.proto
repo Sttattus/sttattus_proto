@@ -210,6 +210,420 @@ message DeleteRecoveryShareRequest {
 }
 message DeleteRecoveryShareResponse {}
 
+// === L15.7 — estate readiness ===
+//
+// A single composite 0-100 of how complete the user's estate plan is, built
+// from signals derivable today: a stored will / trust, a medical directive, a
+// power of attorney, a deed or verified asset, an armed trustee-recovery group,
+// and at least one client-encrypted blob.
+
+message ReadinessComponent {
+  string key = 1; // 'will' | 'directive' | 'poa' | 'deeds' | 'recovery' | 'encryption'
+  string label = 2;
+  bool complete = 3;
+  int32 weight = 4; // points contributed when complete
+  string detail = 5; // short human hint
+}
+
+message EstateReadiness {
+  int32 score = 1; // 0-100
+  string band = 2; // 'Exposed' | 'Forming' | 'Protected' | 'Sovereign'
+  repeated ReadinessComponent components = 3;
+  string next_action = 4; // highest-value incomplete step
+}
+
+message GetEstateReadinessRequest {}
+message GetEstateReadinessResponse {
+  EstateReadiness readiness = 1;
+}
+
+// === L16 — heir / beneficiary registry ===
+
+message Beneficiary {
+  string id = 1;
+  string full_name = 2;
+  string relationship = 3;
+  string email = 4;
+  double share_pct = 5;
+  string notes = 6;
+  int64 created_at_unix = 7;
+}
+message ListMyBeneficiariesRequest {}
+message ListMyBeneficiariesResponse {
+  repeated Beneficiary beneficiaries = 1;
+}
+message AddBeneficiaryRequest {
+  string full_name = 1;
+  string relationship = 2;
+  string email = 3;
+  double share_pct = 4;
+  string notes = 5;
+}
+message AddBeneficiaryResponse {
+  Beneficiary beneficiary = 1;
+}
+message RemoveBeneficiaryRequest {
+  string beneficiary_id = 1;
+}
+message RemoveBeneficiaryResponse {}
+
+// === L16 — trustee dead-man's-switch ===
+
+message DeadManSwitch {
+  bool enabled = 1;
+  int32 cadence_days = 2;
+  int32 threshold_m = 3; // m-of-n unlock threshold
+  int32 shares_n = 4;
+  string status = 5; // 'disarmed' | 'armed' | 'overdue' | 'triggered'
+  int64 last_checkin_unix = 6;
+  int64 next_checkin_unix = 7;
+  int32 trustees_configured = 8; // count of stored recovery shares
+}
+message GetDeadManSwitchRequest {}
+message GetDeadManSwitchResponse {
+  DeadManSwitch state = 1;
+}
+message ConfigureDeadManSwitchRequest {
+  bool enabled = 1;
+  int32 cadence_days = 2;
+}
+message ConfigureDeadManSwitchResponse {
+  DeadManSwitch state = 1;
+}
+message CheckInDeadManSwitchRequest {}
+message CheckInDeadManSwitchResponse {
+  DeadManSwitch state = 1;
+}
+
+// === L16 — document-hash anchors (proof of existence) ===
+
+message Anchor {
+  string id = 1;
+  string asset_id = 2;
+  string label = 3;
+  string content_hash = 4;
+  string algorithm = 5;
+  string chain = 6;
+  string proof = 7;
+  string status = 8;
+  int64 anchored_at_unix = 9;
+}
+message CreateAnchorRequest {
+  string asset_id = 1; // optional
+  string label = 2;
+  string content_hash = 3; // hex sha256 from the client (preferred)
+  bytes content = 4; // OR raw bytes — server hashes when content_hash empty
+}
+message CreateAnchorResponse {
+  Anchor anchor = 1;
+}
+message ListMyAnchorsRequest {}
+message ListMyAnchorsResponse {
+  repeated Anchor anchors = 1;
+}
+
+// === L16 — lawyer + notary directory ===
+
+message Lawyer {
+  string id = 1;
+  string name = 2;
+  string firm = 3;
+  string jurisdiction = 4;
+  repeated string specialties = 5;
+  string bio = 6;
+  string photo_url = 7;
+  bool sovereign_only = 8;
+  string member_rate_note = 9;
+}
+message ListLawyersRequest {
+  string jurisdiction = 1; // optional filter
+  string specialty = 2; // optional filter
+}
+message ListLawyersResponse {
+  repeated Lawyer lawyers = 1;
+}
+
+message Notary {
+  string id = 1;
+  string name = 2;
+  string jurisdiction = 3;
+  string mode = 4; // 'online' | 'in_person'
+  string address = 5;
+  string bio = 6;
+  string photo_url = 7;
+}
+message ListNotariesRequest {
+  string jurisdiction = 1;
+}
+message ListNotariesResponse {
+  repeated Notary notaries = 1;
+}
+
+// === L16 — jurisdiction-aware template engine ===
+
+message TemplateField {
+  string key = 1;
+  string label = 2;
+  string kind = 3; // 'text' | 'multiline' | 'date' | 'number'
+  bool required = 4;
+  string placeholder = 5;
+}
+message DocumentTemplate {
+  string id = 1;
+  string slug = 2;
+  string doc_type = 3; // 'will' | 'trust' | 'directive' | 'poa'
+  string jurisdiction = 4;
+  string title = 5;
+  string summary = 6;
+  repeated TemplateField fields = 7;
+  bool sovereign_only = 8;
+}
+message ListTemplatesRequest {
+  string doc_type = 1; // optional
+  string jurisdiction = 2; // optional
+}
+message ListTemplatesResponse {
+  repeated DocumentTemplate templates = 1;
+}
+message GetTemplateRequest {
+  string template_id = 1;
+}
+message GetTemplateResponse {
+  DocumentTemplate template = 1;
+  string body_template = 2; // raw with {{placeholders}}
+}
+message GeneratedDocument {
+  string id = 1;
+  string template_id = 2;
+  string doc_type = 3;
+  string jurisdiction = 4;
+  string title = 5;
+  string rendered_text = 6;
+  int64 created_at_unix = 7;
+}
+message GenerateDocumentRequest {
+  string template_id = 1;
+  string title = 2;
+  map<string, string> values = 3;
+}
+message GenerateDocumentResponse {
+  GeneratedDocument document = 1;
+}
+message ListMyGeneratedDocumentsRequest {}
+message ListMyGeneratedDocumentsResponse {
+  repeated GeneratedDocument documents = 1;
+}
+
+// === L17 — cross-pillar handoff inbox ===
+
+message Handoff {
+  string id = 1;
+  string source_pillar = 2; // 'vault' | 'dominion' | 'apex'
+  string source_ref = 3;
+  string title = 4;
+  AssetCategory category = 5;
+  string jurisdiction = 6;
+  double valuation_usd = 7;
+  string summary = 8;
+  string status = 9; // 'pending' | 'accepted' | 'dismissed'
+  int64 created_at_unix = 10;
+}
+message ListMyHandoffsRequest {}
+message ListMyHandoffsResponse {
+  repeated Handoff handoffs = 1;
+}
+message AcceptHandoffRequest {
+  string handoff_id = 1;
+}
+message AcceptHandoffResponse {
+  LegalAsset asset = 1; // the materialised document
+}
+message DismissHandoffRequest {
+  string handoff_id = 1;
+}
+message DismissHandoffResponse {}
+
+// === L17 — estate summary (today card) ===
+
+message EstateSummary {
+  EstateReadiness readiness = 1;
+  int32 document_count = 2;
+  int32 beneficiary_count = 3;
+  int32 anchor_count = 4;
+  int32 pending_handoffs = 5;
+  string switch_status = 6;
+  double influence_rank = 7;
+  string rank_label = 8;
+}
+message GetEstateSummaryRequest {}
+message GetEstateSummaryResponse {
+  EstateSummary summary = 1;
+}
+
+// === L18 — Sovereign lawyer concierge ===
+
+message ConciergeMessage {
+  string id = 1;
+  string sender = 2; // 'member' | 'concierge' | 'system'
+  string body = 3;
+  int64 created_at_unix = 4;
+}
+message ConciergeThread {
+  string id = 1;
+  string subject = 2;
+  string topic = 3;
+  string status = 4; // 'open' | 'in_progress' | 'resolved'
+  int64 sla_due_at_unix = 5;
+  int64 created_at_unix = 6;
+  repeated ConciergeMessage messages = 7;
+}
+message StartConciergeThreadRequest {
+  string subject = 1;
+  string topic = 2;
+  string first_message = 3;
+}
+message StartConciergeThreadResponse {
+  ConciergeThread thread = 1;
+}
+message ListMyConciergeThreadsRequest {}
+message ListMyConciergeThreadsResponse {
+  repeated ConciergeThread threads = 1; // without message bodies
+}
+message GetConciergeThreadRequest {
+  string thread_id = 1;
+}
+message GetConciergeThreadResponse {
+  ConciergeThread thread = 1;
+}
+message PostConciergeMessageRequest {
+  string thread_id = 1;
+  string body = 2;
+}
+message PostConciergeMessageResponse {
+  ConciergeMessage message = 1;
+}
+
+// === L18 — editorial Anthology ===
+
+message AnthologyArticle {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string dek = 4;
+  string body = 5; // empty in list responses
+  string topic = 6;
+  bool sovereign_only = 7;
+  string author_name = 8;
+  string author_title = 9;
+  string author_photo_url = 10;
+  int64 published_at_unix = 11;
+}
+message ListAnthologyArticlesRequest {
+  string topic = 1; // optional
+}
+message ListAnthologyArticlesResponse {
+  repeated AnthologyArticle articles = 1; // dek + meta, no body
+}
+message GetAnthologyArticleRequest {
+  string article_id = 1;
+}
+message GetAnthologyArticleResponse {
+  AnthologyArticle article = 1; // full body
+}
+
+// === L18 — letters of wishes (encrypted-at-rest) ===
+
+message LetterOfWishes {
+  string id = 1;
+  string recipient = 2;
+  string title = 3;
+  string body = 4; // decrypted on read
+  string deliver_on_event = 5;
+  int64 created_at_unix = 6;
+}
+message AddLetterOfWishesRequest {
+  string recipient = 1;
+  string title = 2;
+  string body = 3;
+  string deliver_on_event = 4;
+}
+message AddLetterOfWishesResponse {
+  LetterOfWishes letter = 1;
+}
+message ListMyLettersOfWishesRequest {}
+message ListMyLettersOfWishesResponse {
+  repeated LetterOfWishes letters = 1;
+}
+message RemoveLetterOfWishesRequest {
+  string letter_id = 1;
+}
+message RemoveLetterOfWishesResponse {}
+
+// === L19 — Annual Legacy Almanac (printable PDF) ===
+
+message GenerateLegacyAlmanacRequest {}
+message GenerateLegacyAlmanacResponse {
+  string url = 1;
+  int32 page_count = 2;
+}
+
+// === L19 — IP portfolio ===
+
+message IpAsset {
+  string id = 1;
+  string title = 2;
+  string jurisdiction = 3;
+  double valuation_usd = 4;
+  string status = 5;
+  int64 expires_at_unix = 6;
+  bool needs_review = 7; // expiring within 180 days or unverified
+}
+message ListIpPortfolioRequest {}
+message ListIpPortfolioResponse {
+  repeated IpAsset assets = 1;
+  int32 needs_review_count = 2;
+}
+
+// === L19.5 — token-based estate share (lawyer / executor) ===
+
+message LegacyShare {
+  string id = 1;
+  string token = 2;
+  string url = 3;
+  string audience = 4;
+  bool include_valuations = 5;
+  int64 expires_at_unix = 6;
+  int64 created_at_unix = 7;
+}
+message CreateLegacyShareRequest {
+  string audience = 1; // 'lawyer' | 'executor'
+  bool include_valuations = 2;
+  int32 ttl_days = 3; // default 14
+}
+message CreateLegacyShareResponse {
+  LegacyShare share = 1;
+}
+message ListMyLegacySharesRequest {}
+message ListMyLegacySharesResponse {
+  repeated LegacyShare shares = 1;
+}
+message RevokeLegacyShareRequest {
+  string share_id = 1;
+}
+message RevokeLegacyShareResponse {}
+
+// === L19.5 — document expiry parser ===
+
+message ParseDocumentExpiryRequest {
+  string asset_id = 1;
+  string document_text = 2; // pasted text the client extracted from the file
+}
+message ParseDocumentExpiryResponse {
+  bool found = 1;
+  int64 expires_at_unix = 2;
+  string detected_text = 3;
+}
+
 service LegacyService {
   // Heritage Protocol: Verified Legal Standing
   rpc StoreDocument(StoreDocumentRequest) returns (StoreDocumentResponse);
@@ -235,4 +649,64 @@ service LegacyService {
   // L15.6 — version history.
   rpc RecordAssetVersion(RecordAssetVersionRequest) returns (RecordAssetVersionResponse);
   rpc ListAssetVersions(ListAssetVersionsRequest) returns (ListAssetVersionsResponse);
+
+  // L15.7 — estate readiness composite.
+  rpc GetEstateReadiness(GetEstateReadinessRequest) returns (GetEstateReadinessResponse);
+
+  // L16 — heir / beneficiary registry.
+  rpc ListMyBeneficiaries(ListMyBeneficiariesRequest) returns (ListMyBeneficiariesResponse);
+  rpc AddBeneficiary(AddBeneficiaryRequest) returns (AddBeneficiaryResponse);
+  rpc RemoveBeneficiary(RemoveBeneficiaryRequest) returns (RemoveBeneficiaryResponse);
+
+  // L16 — trustee dead-man's-switch.
+  rpc GetDeadManSwitch(GetDeadManSwitchRequest) returns (GetDeadManSwitchResponse);
+  rpc ConfigureDeadManSwitch(ConfigureDeadManSwitchRequest) returns (ConfigureDeadManSwitchResponse);
+  rpc CheckInDeadManSwitch(CheckInDeadManSwitchRequest) returns (CheckInDeadManSwitchResponse);
+
+  // L16 — document-hash anchors.
+  rpc CreateAnchor(CreateAnchorRequest) returns (CreateAnchorResponse);
+  rpc ListMyAnchors(ListMyAnchorsRequest) returns (ListMyAnchorsResponse);
+
+  // L16 — lawyer + notary directory.
+  rpc ListLawyers(ListLawyersRequest) returns (ListLawyersResponse);
+  rpc ListNotaries(ListNotariesRequest) returns (ListNotariesResponse);
+
+  // L16 — jurisdiction-aware template engine.
+  rpc ListTemplates(ListTemplatesRequest) returns (ListTemplatesResponse);
+  rpc GetTemplate(GetTemplateRequest) returns (GetTemplateResponse);
+  rpc GenerateDocument(GenerateDocumentRequest) returns (GenerateDocumentResponse);
+  rpc ListMyGeneratedDocuments(ListMyGeneratedDocumentsRequest) returns (ListMyGeneratedDocumentsResponse);
+
+  // L17 — cross-pillar handoff inbox.
+  rpc ListMyHandoffs(ListMyHandoffsRequest) returns (ListMyHandoffsResponse);
+  rpc AcceptHandoff(AcceptHandoffRequest) returns (AcceptHandoffResponse);
+  rpc DismissHandoff(DismissHandoffRequest) returns (DismissHandoffResponse);
+
+  // L17 — estate summary (today card).
+  rpc GetEstateSummary(GetEstateSummaryRequest) returns (GetEstateSummaryResponse);
+
+  // L18 — Sovereign lawyer concierge.
+  rpc StartConciergeThread(StartConciergeThreadRequest) returns (StartConciergeThreadResponse);
+  rpc ListMyConciergeThreads(ListMyConciergeThreadsRequest) returns (ListMyConciergeThreadsResponse);
+  rpc GetConciergeThread(GetConciergeThreadRequest) returns (GetConciergeThreadResponse);
+  rpc PostConciergeMessage(PostConciergeMessageRequest) returns (PostConciergeMessageResponse);
+
+  // L18 — editorial Anthology.
+  rpc ListAnthologyArticles(ListAnthologyArticlesRequest) returns (ListAnthologyArticlesResponse);
+  rpc GetAnthologyArticle(GetAnthologyArticleRequest) returns (GetAnthologyArticleResponse);
+
+  // L18 — letters of wishes (encrypted-at-rest).
+  rpc AddLetterOfWishes(AddLetterOfWishesRequest) returns (AddLetterOfWishesResponse);
+  rpc ListMyLettersOfWishes(ListMyLettersOfWishesRequest) returns (ListMyLettersOfWishesResponse);
+  rpc RemoveLetterOfWishes(RemoveLetterOfWishesRequest) returns (RemoveLetterOfWishesResponse);
+
+  // L19 — Annual Legacy Almanac + IP portfolio.
+  rpc GenerateLegacyAlmanac(GenerateLegacyAlmanacRequest) returns (GenerateLegacyAlmanacResponse);
+  rpc ListIpPortfolio(ListIpPortfolioRequest) returns (ListIpPortfolioResponse);
+
+  // L19.5 — token-based estate share + document expiry parser.
+  rpc CreateLegacyShare(CreateLegacyShareRequest) returns (CreateLegacyShareResponse);
+  rpc ListMyLegacyShares(ListMyLegacySharesRequest) returns (ListMyLegacySharesResponse);
+  rpc RevokeLegacyShare(RevokeLegacyShareRequest) returns (RevokeLegacyShareResponse);
+  rpc ParseDocumentExpiry(ParseDocumentExpiryRequest) returns (ParseDocumentExpiryResponse);
 }

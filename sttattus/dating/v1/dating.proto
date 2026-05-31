@@ -519,6 +519,234 @@ message ListGiftLedgerResponse {
   sttattus.common.v1.PageResponse page = 2;
 }
 
+// === Missions (A9P2 / retention) ===
+
+message Mission {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string requirement_type = 4;
+  int32 requirement_value = 5;
+  int32 experience_reward = 6;
+  bool completed = 7;
+  int64 completed_at = 8; // unix seconds, 0 when not completed
+}
+
+message ListMissionsRequest {}
+message ListMissionsResponse {
+  repeated Mission missions = 1;
+}
+
+message CompleteMissionRequest {
+  string mission_id = 1;
+}
+message CompleteMissionResponse {
+  int32 experience_reward = 1;
+  int64 completed_at = 2;
+}
+
+// === Concierge matchmaker (A9P3 §4.4.30, Sovereign) ===
+
+message ConciergeThread {
+  string id = 1;
+  string matchmaker_name = 2;
+  string subject = 3;
+  string status = 4;
+  int64 sla_due_at = 5;
+  int64 created_at = 6;
+}
+
+message ConciergeMessage {
+  string id = 1;
+  string thread_id = 2;
+  string sender_role = 3; // user | matchmaker | system
+  string body = 4;
+  int64 created_at = 5;
+}
+
+message StartConciergeThreadRequest {
+  string subject = 1;
+  string opening_message = 2;
+}
+message StartConciergeThreadResponse {
+  ConciergeThread thread = 1;
+}
+
+message ListMyConciergeThreadsRequest {}
+message ListMyConciergeThreadsResponse {
+  repeated ConciergeThread threads = 1;
+}
+
+message GetConciergeThreadRequest {
+  string thread_id = 1;
+}
+message GetConciergeThreadResponse {
+  ConciergeThread thread = 1;
+  repeated ConciergeMessage messages = 2;
+}
+
+message PostConciergeMessageRequest {
+  string thread_id = 1;
+  string body = 2;
+}
+message PostConciergeMessageResponse {
+  ConciergeMessage message = 1;
+}
+
+// === Matchmaker proposals (A9P3 §4.4.30) ===
+
+message MatchmakerProposal {
+  string id = 1;
+  string candidate_user_id = 2;
+  string candidate_name = 3;
+  string rationale = 4;
+  string status = 5; // proposed | accepted | declined
+  int64 created_at = 6;
+}
+
+message ListMatchmakerProposalsRequest {}
+message ListMatchmakerProposalsResponse {
+  repeated MatchmakerProposal proposals = 1;
+}
+
+message RespondMatchmakerProposalRequest {
+  string proposal_id = 1;
+  bool accept = 2;
+}
+message RespondMatchmakerProposalResponse {
+  MatchmakerProposal proposal = 1;
+}
+
+// === Atlas Letters (A9P3 §4.14.96) ===
+
+message AtlasLetter {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string dek = 4;
+  string body = 5;
+  string hero_url = 6;
+  string author_name = 7;
+  string author_credentials = 8;
+  bool sovereign_only = 9;
+  int64 published_at = 10;
+}
+
+message ListAtlasLettersRequest {}
+message ListAtlasLettersResponse {
+  repeated AtlasLetter letters = 1;
+}
+
+message GetAtlasLetterRequest {
+  string slug = 1;
+}
+message GetAtlasLetterResponse {
+  AtlasLetter letter = 1;
+}
+
+// === Events / Salons (A9P3 §4.3.33) ===
+
+message AtlasEvent {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string city = 4;
+  string venue = 5;
+  string kind = 6;
+  string dress_code = 7;
+  string description = 8;
+  int32 capacity = 9;
+  bool sovereign_only = 10;
+  int64 starts_at = 11;
+  string my_rsvp_status = 12; // '' when not RSVP'd
+  int32 going_count = 13;
+}
+
+message ListEventsRequest {
+  string city = 1;
+}
+message ListEventsResponse {
+  repeated AtlasEvent events = 1;
+}
+
+message RsvpEventRequest {
+  string event_id = 1;
+  bool cancel = 2;
+}
+message RsvpEventResponse {
+  string status = 1;
+}
+
+message ListMyEventRsvpsRequest {}
+message ListMyEventRsvpsResponse {
+  repeated AtlasEvent events = 1;
+}
+
+// === Member profile share (A9P3.5 — token-based read-only snapshot) ===
+
+message ProfileShareToken {
+  string id = 1;
+  string token = 2;
+  string url = 3;
+  int64 created_at = 4;
+  int64 expires_at = 5;
+  bool revoked = 6;
+}
+
+message CreateProfileShareRequest {
+  int32 ttl_days = 1; // 0 => default 14
+}
+message CreateProfileShareResponse {
+  ProfileShareToken share = 1;
+}
+
+message ListMyProfileSharesRequest {}
+message ListMyProfileSharesResponse {
+  repeated ProfileShareToken shares = 1;
+}
+
+message RevokeProfileShareRequest {
+  string id = 1;
+}
+message RevokeProfileShareResponse {}
+
+// === Atlas Year in Review (A9P4 — annual recap PDF) ===
+
+message GenerateAtlasYearbookRequest {
+  string year = 1; // empty => current year
+}
+message GenerateAtlasYearbookResponse {
+  string media_asset_id = 1;
+  string public_url = 2;
+  int32 page_count = 3;
+  int64 generated_at = 4;
+}
+
+// === Event check-in (A9P4 — salons NFC-at-the-door analogue) ===
+
+message CheckInEventRequest {
+  string event_id = 1;
+}
+message CheckInEventResponse {
+  string status = 1; // attended
+}
+
+// === Cross-pillar gate explainer (A9 §3 honest gating) ===
+
+message CrossPillarGate {
+  string pillar = 1;       // vault | apex | forge
+  double current_score = 2;
+  double required_score = 3;
+  bool met = 4;
+}
+
+message GetCrossPillarGateRequest {}
+message GetCrossPillarGateResponse {
+  repeated CrossPillarGate gates = 1;
+  bool all_met = 2;
+  string headline = 3;
+}
+
 service DatingService {
   rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
   rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
@@ -571,4 +799,39 @@ service DatingService {
   // A9P3 — Gift Ledger
   rpc SendGift(SendGiftRequest) returns (SendGiftResponse);
   rpc ListGiftLedger(ListGiftLedgerRequest) returns (ListGiftLedgerResponse);
+
+  // A9P2 — Missions (server-backed; replaces the local-only ObjectBox path)
+  rpc ListMissions(ListMissionsRequest) returns (ListMissionsResponse);
+  rpc CompleteMission(CompleteMissionRequest) returns (CompleteMissionResponse);
+
+  // A9P3 — Concierge matchmaker (Sovereign)
+  rpc StartConciergeThread(StartConciergeThreadRequest) returns (StartConciergeThreadResponse);
+  rpc ListMyConciergeThreads(ListMyConciergeThreadsRequest) returns (ListMyConciergeThreadsResponse);
+  rpc GetConciergeThread(GetConciergeThreadRequest) returns (GetConciergeThreadResponse);
+  rpc PostConciergeMessage(PostConciergeMessageRequest) returns (PostConciergeMessageResponse);
+
+  // A9P3 — Matchmaker proposals
+  rpc ListMatchmakerProposals(ListMatchmakerProposalsRequest) returns (ListMatchmakerProposalsResponse);
+  rpc RespondMatchmakerProposal(RespondMatchmakerProposalRequest) returns (RespondMatchmakerProposalResponse);
+
+  // A9P3 — Atlas Letters editorial
+  rpc ListAtlasLetters(ListAtlasLettersRequest) returns (ListAtlasLettersResponse);
+  rpc GetAtlasLetter(GetAtlasLetterRequest) returns (GetAtlasLetterResponse);
+
+  // A9P3 — Events / Salons
+  rpc ListEvents(ListEventsRequest) returns (ListEventsResponse);
+  rpc RsvpEvent(RsvpEventRequest) returns (RsvpEventResponse);
+  rpc ListMyEventRsvps(ListMyEventRsvpsRequest) returns (ListMyEventRsvpsResponse);
+
+  // A9 — Cross-pillar gate explainer
+  rpc GetCrossPillarGate(GetCrossPillarGateRequest) returns (GetCrossPillarGateResponse);
+
+  // A9P3.5 — Member profile share (token-based)
+  rpc CreateProfileShare(CreateProfileShareRequest) returns (CreateProfileShareResponse);
+  rpc ListMyProfileShares(ListMyProfileSharesRequest) returns (ListMyProfileSharesResponse);
+  rpc RevokeProfileShare(RevokeProfileShareRequest) returns (RevokeProfileShareResponse);
+
+  // A9P4 — Category-leading
+  rpc GenerateAtlasYearbook(GenerateAtlasYearbookRequest) returns (GenerateAtlasYearbookResponse);
+  rpc CheckInEvent(CheckInEventRequest) returns (CheckInEventResponse);
 }

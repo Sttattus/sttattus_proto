@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateOnyxProfileRequest, CreateOnyxProfileResponse, CreateSubscriptionCheckoutRequest, CreateSubscriptionCheckoutResponse, GetContentRequest, GetContentResponse, GetOnyxProfileRequest, GetOnyxProfileResponse, GetShelvesRequest, GetShelvesResponse, ListContentRequest, ListContentResponse, ListContinueRequest, ListContinueResponse, ListShelfRequest, ListShelfResponse, RecordProgressRequest, RecordProgressResponse, RedeemContentRequest, RedeemContentResponse, SubscribeRequest, SubscribeResponse } from "./onyx_pb.js";
+import { AddNoteRequest, AddNoteResponse, CreateOnyxProfileRequest, CreateOnyxProfileResponse, CreateShareLinkRequest, CreateShareLinkResponse, CreateSubscriptionCheckoutRequest, CreateSubscriptionCheckoutResponse, DeleteNoteRequest, DeleteNoteResponse, FollowCreatorRequest, FollowCreatorResponse, GenerateAnnualArchiveRequest, GenerateAnnualArchiveResponse, GenerateCaptionsRequest, GenerateCaptionsResponse, GetAnthologyRequest, GetAnthologyResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetContentRequest, GetContentResponse, GetCreatorRequest, GetCreatorResponse, GetCrossPillarUnlocksRequest, GetCrossPillarUnlocksResponse, GetLiveEventRequest, GetLiveEventResponse, GetOfflineManifestRequest, GetOfflineManifestResponse, GetOnyxProfileRequest, GetOnyxProfileResponse, GetPosthumousArchiveRequest, GetPosthumousArchiveResponse, GetSeriesRequest, GetSeriesResponse, GetShelvesRequest, GetShelvesResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, GetYearInOnyxRequest, GetYearInOnyxResponse, ListAnthologiesRequest, ListAnthologiesResponse, ListContentRequest, ListContentResponse, ListContinueRequest, ListContinueResponse, ListCreatorWorksRequest, ListCreatorWorksResponse, ListLiveEventsRequest, ListLiveEventsResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyNotesRequest, ListMyNotesResponse, ListMyShareLinksRequest, ListMyShareLinksResponse, ListMySubscriptionsRequest, ListMySubscriptionsResponse, ListMyUnlocksRequest, ListMyUnlocksResponse, ListSeriesRequest, ListSeriesResponse, ListShelfRequest, ListShelfResponse, ListSovereignWindowRequest, ListSovereignWindowResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ReactToContentRequest, ReactToContentResponse, RecordProgressRequest, RecordProgressResponse, RedeemContentRequest, RedeemContentResponse, RevokeShareLinkRequest, RevokeShareLinkResponse, RsvpLiveEventRequest, RsvpLiveEventResponse, SearchContentRequest, SearchContentResponse, SetPosthumousArchiveRequest, SetPosthumousArchiveResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubscribeRequest, SubscribeResponse } from "./onyx_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -121,6 +121,329 @@ export const OnyxService = {
       name: "CreateSubscriptionCheckout",
       I: CreateSubscriptionCheckoutRequest,
       O: CreateSubscriptionCheckoutResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P2 — creators.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetCreator
+     */
+    getCreator: {
+      name: "GetCreator",
+      I: GetCreatorRequest,
+      O: GetCreatorResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListCreatorWorks
+     */
+    listCreatorWorks: {
+      name: "ListCreatorWorks",
+      I: ListCreatorWorksRequest,
+      O: ListCreatorWorksResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.FollowCreator
+     */
+    followCreator: {
+      name: "FollowCreator",
+      I: FollowCreatorRequest,
+      O: FollowCreatorResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P2 — search.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.SearchContent
+     */
+    searchContent: {
+      name: "SearchContent",
+      I: SearchContentRequest,
+      O: SearchContentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P2 — notes / highlights.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.AddNote
+     */
+    addNote: {
+      name: "AddNote",
+      I: AddNoteRequest,
+      O: AddNoteResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListMyNotes
+     */
+    listMyNotes: {
+      name: "ListMyNotes",
+      I: ListMyNotesRequest,
+      O: ListMyNotesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.DeleteNote
+     */
+    deleteNote: {
+      name: "DeleteNote",
+      I: DeleteNoteRequest,
+      O: DeleteNoteResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P2 — personal library / account.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListMyUnlocks
+     */
+    listMyUnlocks: {
+      name: "ListMyUnlocks",
+      I: ListMyUnlocksRequest,
+      O: ListMyUnlocksResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListMySubscriptions
+     */
+    listMySubscriptions: {
+      name: "ListMySubscriptions",
+      I: ListMySubscriptionsRequest,
+      O: ListMySubscriptionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P2 — sovereign window calendar.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListSovereignWindow
+     */
+    listSovereignWindow: {
+      name: "ListSovereignWindow",
+      I: ListSovereignWindowRequest,
+      O: ListSovereignWindowResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P2 — multi-part series.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListSeries
+     */
+    listSeries: {
+      name: "ListSeries",
+      I: ListSeriesRequest,
+      O: ListSeriesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetSeries
+     */
+    getSeries: {
+      name: "GetSeries",
+      I: GetSeriesRequest,
+      O: GetSeriesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P2.5 — captions, today summary, cross-pillar unlock bus.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GenerateCaptions
+     */
+    generateCaptions: {
+      name: "GenerateCaptions",
+      I: GenerateCaptionsRequest,
+      O: GenerateCaptionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetTodaySummary
+     */
+    getTodaySummary: {
+      name: "GetTodaySummary",
+      I: GetTodaySummaryRequest,
+      O: GetTodaySummaryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks
+     */
+    getCrossPillarUnlocks: {
+      name: "GetCrossPillarUnlocks",
+      I: GetCrossPillarUnlocksRequest,
+      O: GetCrossPillarUnlocksResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P3 — curator concierge desk.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.StartConciergeThread
+     */
+    startConciergeThread: {
+      name: "StartConciergeThread",
+      I: StartConciergeThreadRequest,
+      O: StartConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListMyConciergeThreads
+     */
+    listMyConciergeThreads: {
+      name: "ListMyConciergeThreads",
+      I: ListMyConciergeThreadsRequest,
+      O: ListMyConciergeThreadsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetConciergeThread
+     */
+    getConciergeThread: {
+      name: "GetConciergeThread",
+      I: GetConciergeThreadRequest,
+      O: GetConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.PostConciergeMessage
+     */
+    postConciergeMessage: {
+      name: "PostConciergeMessage",
+      I: PostConciergeMessageRequest,
+      O: PostConciergeMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P3 — live / the salon.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListLiveEvents
+     */
+    listLiveEvents: {
+      name: "ListLiveEvents",
+      I: ListLiveEventsRequest,
+      O: ListLiveEventsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetLiveEvent
+     */
+    getLiveEvent: {
+      name: "GetLiveEvent",
+      I: GetLiveEventRequest,
+      O: GetLiveEventResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.RsvpLiveEvent
+     */
+    rsvpLiveEvent: {
+      name: "RsvpLiveEvent",
+      I: RsvpLiveEventRequest,
+      O: RsvpLiveEventResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P3 — posthumous archive (encrypted at rest).
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.SetPosthumousArchive
+     */
+    setPosthumousArchive: {
+      name: "SetPosthumousArchive",
+      I: SetPosthumousArchiveRequest,
+      O: SetPosthumousArchiveResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetPosthumousArchive
+     */
+    getPosthumousArchive: {
+      name: "GetPosthumousArchive",
+      I: GetPosthumousArchiveRequest,
+      O: GetPosthumousArchiveResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P3 — editorial anthology.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListAnthologies
+     */
+    listAnthologies: {
+      name: "ListAnthologies",
+      I: ListAnthologiesRequest,
+      O: ListAnthologiesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetAnthology
+     */
+    getAnthology: {
+      name: "GetAnthology",
+      I: GetAnthologyRequest,
+      O: GetAnthologyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P3.5 — signed share embeds + offline manifest.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.CreateShareLink
+     */
+    createShareLink: {
+      name: "CreateShareLink",
+      I: CreateShareLinkRequest,
+      O: CreateShareLinkResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListMyShareLinks
+     */
+    listMyShareLinks: {
+      name: "ListMyShareLinks",
+      I: ListMyShareLinksRequest,
+      O: ListMyShareLinksResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.RevokeShareLink
+     */
+    revokeShareLink: {
+      name: "RevokeShareLink",
+      I: RevokeShareLinkRequest,
+      O: RevokeShareLinkResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetOfflineManifest
+     */
+    getOfflineManifest: {
+      name: "GetOfflineManifest",
+      I: GetOfflineManifestRequest,
+      O: GetOfflineManifestResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * P4 — year-in-onyx recap, annual archive PDF, silent reactions.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetYearInOnyx
+     */
+    getYearInOnyx: {
+      name: "GetYearInOnyx",
+      I: GetYearInOnyxRequest,
+      O: GetYearInOnyxResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GenerateAnnualArchive
+     */
+    generateAnnualArchive: {
+      name: "GenerateAnnualArchive",
+      I: GenerateAnnualArchiveRequest,
+      O: GenerateAnnualArchiveResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ReactToContent
+     */
+    reactToContent: {
+      name: "ReactToContent",
+      I: ReactToContentRequest,
+      O: ReactToContentResponse,
       kind: MethodKind.Unary,
     },
   }

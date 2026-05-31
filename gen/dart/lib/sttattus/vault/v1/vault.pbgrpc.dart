@@ -193,6 +193,83 @@ class VaultServiceClient extends $grpc.Client {
     return $createUnaryCall(_$exportUsCgtCsv, request, options: options);
   }
 
+  /// V8P3.1 — Investment Circles: curated deal-flow gated server-side by the
+  /// user's cross-pillar Sttattus rank. Locked circles return metadata + the
+  /// required threshold but withhold the deal room.
+  $grpc.ResponseFuture<$0.ListInvestmentCirclesResponse> listInvestmentCircles($0.ListInvestmentCirclesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listInvestmentCircles, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetInvestmentCircleResponse> getInvestmentCircle($0.GetInvestmentCircleRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getInvestmentCircle, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ExpressCircleInterestResponse> expressCircleInterest($0.ExpressCircleInterestRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$expressCircleInterest, request, options: options);
+  }
+
+  /// V8P3.2 — concierge advisor desk (Sovereign). Async threads + SLA.
+  $grpc.ResponseFuture<$0.StartAdvisorThreadResponse> startAdvisorThread($0.StartAdvisorThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$startAdvisorThread, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListAdvisorThreadsResponse> listAdvisorThreads($0.ListAdvisorThreadsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listAdvisorThreads, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetAdvisorThreadResponse> getAdvisorThread($0.GetAdvisorThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getAdvisorThread, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PostAdvisorMessageResponse> postAdvisorMessage($0.PostAdvisorMessageRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$postAdvisorMessage, request, options: options);
+  }
+
+  /// V8P3.3 — Wealth Anthology: named-author editorial.
+  $grpc.ResponseFuture<$0.ListWealthAnthologyResponse> listWealthAnthology($0.ListWealthAnthologyRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listWealthAnthology, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetWealthArticleResponse> getWealthArticle($0.GetWealthArticleRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getWealthArticle, request, options: options);
+  }
+
+  /// V8P3.5 — curated private-bank directory (region + tier filter).
+  $grpc.ResponseFuture<$0.ListPartnerBanksResponse> listPartnerBanks($0.ListPartnerBanksRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listPartnerBanks, request, options: options);
+  }
+
+  /// V8P3.6 — token-based verified-wealth share. Bands only; absolute amounts
+  /// are never disclosed (discretion-first). Public read at /share/vault/:token.
+  $grpc.ResponseFuture<$0.CreateVaultShareResponse> createVaultShare($0.CreateVaultShareRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createVaultShare, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyVaultSharesResponse> listMyVaultShares($0.ListMyVaultSharesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyVaultShares, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeVaultShareResponse> revokeVaultShare($0.RevokeVaultShareRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$revokeVaultShare, request, options: options);
+  }
+
+  /// V8P4.1 — Annual Wealth Almanac: a gofpdf-rendered PDF of the year's wealth
+  /// movement, written to R2/S3. Returns the media URL.
+  $grpc.ResponseFuture<$0.GenerateWealthAlmanacResponse> generateWealthAlmanac($0.GenerateWealthAlmanacRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$generateWealthAlmanac, request, options: options);
+  }
+
+  /// V8P4.2 — Year-in-Vault recap (pure compute over the user's snapshots).
+  $grpc.ResponseFuture<$0.GetYearInVaultResponse> getYearInVault($0.GetYearInVaultRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getYearInVault, request, options: options);
+  }
+
+  /// V8P4.3 — liquidity stress test: given a cash need, source it across the
+  /// liquidity ladder (T+0 cash → T+30 marketable → illiquid). Pure compute.
+  $grpc.ResponseFuture<$0.GetLiquidityStressTestResponse> getLiquidityStressTest($0.GetLiquidityStressTestRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getLiquidityStressTest, request, options: options);
+  }
+
     // method descriptors
 
   static final _$submitAsset = $grpc.ClientMethod<$0.SubmitAssetRequest, $0.SubmitAssetResponse>(
@@ -335,6 +412,70 @@ class VaultServiceClient extends $grpc.Client {
       '/sttattus.vault.v1.VaultService/ExportUsCgtCsv',
       ($0.ExportUsCgtCsvRequest value) => value.writeToBuffer(),
       $0.ExportUsCgtCsvResponse.fromBuffer);
+  static final _$listInvestmentCircles = $grpc.ClientMethod<$0.ListInvestmentCirclesRequest, $0.ListInvestmentCirclesResponse>(
+      '/sttattus.vault.v1.VaultService/ListInvestmentCircles',
+      ($0.ListInvestmentCirclesRequest value) => value.writeToBuffer(),
+      $0.ListInvestmentCirclesResponse.fromBuffer);
+  static final _$getInvestmentCircle = $grpc.ClientMethod<$0.GetInvestmentCircleRequest, $0.GetInvestmentCircleResponse>(
+      '/sttattus.vault.v1.VaultService/GetInvestmentCircle',
+      ($0.GetInvestmentCircleRequest value) => value.writeToBuffer(),
+      $0.GetInvestmentCircleResponse.fromBuffer);
+  static final _$expressCircleInterest = $grpc.ClientMethod<$0.ExpressCircleInterestRequest, $0.ExpressCircleInterestResponse>(
+      '/sttattus.vault.v1.VaultService/ExpressCircleInterest',
+      ($0.ExpressCircleInterestRequest value) => value.writeToBuffer(),
+      $0.ExpressCircleInterestResponse.fromBuffer);
+  static final _$startAdvisorThread = $grpc.ClientMethod<$0.StartAdvisorThreadRequest, $0.StartAdvisorThreadResponse>(
+      '/sttattus.vault.v1.VaultService/StartAdvisorThread',
+      ($0.StartAdvisorThreadRequest value) => value.writeToBuffer(),
+      $0.StartAdvisorThreadResponse.fromBuffer);
+  static final _$listAdvisorThreads = $grpc.ClientMethod<$0.ListAdvisorThreadsRequest, $0.ListAdvisorThreadsResponse>(
+      '/sttattus.vault.v1.VaultService/ListAdvisorThreads',
+      ($0.ListAdvisorThreadsRequest value) => value.writeToBuffer(),
+      $0.ListAdvisorThreadsResponse.fromBuffer);
+  static final _$getAdvisorThread = $grpc.ClientMethod<$0.GetAdvisorThreadRequest, $0.GetAdvisorThreadResponse>(
+      '/sttattus.vault.v1.VaultService/GetAdvisorThread',
+      ($0.GetAdvisorThreadRequest value) => value.writeToBuffer(),
+      $0.GetAdvisorThreadResponse.fromBuffer);
+  static final _$postAdvisorMessage = $grpc.ClientMethod<$0.PostAdvisorMessageRequest, $0.PostAdvisorMessageResponse>(
+      '/sttattus.vault.v1.VaultService/PostAdvisorMessage',
+      ($0.PostAdvisorMessageRequest value) => value.writeToBuffer(),
+      $0.PostAdvisorMessageResponse.fromBuffer);
+  static final _$listWealthAnthology = $grpc.ClientMethod<$0.ListWealthAnthologyRequest, $0.ListWealthAnthologyResponse>(
+      '/sttattus.vault.v1.VaultService/ListWealthAnthology',
+      ($0.ListWealthAnthologyRequest value) => value.writeToBuffer(),
+      $0.ListWealthAnthologyResponse.fromBuffer);
+  static final _$getWealthArticle = $grpc.ClientMethod<$0.GetWealthArticleRequest, $0.GetWealthArticleResponse>(
+      '/sttattus.vault.v1.VaultService/GetWealthArticle',
+      ($0.GetWealthArticleRequest value) => value.writeToBuffer(),
+      $0.GetWealthArticleResponse.fromBuffer);
+  static final _$listPartnerBanks = $grpc.ClientMethod<$0.ListPartnerBanksRequest, $0.ListPartnerBanksResponse>(
+      '/sttattus.vault.v1.VaultService/ListPartnerBanks',
+      ($0.ListPartnerBanksRequest value) => value.writeToBuffer(),
+      $0.ListPartnerBanksResponse.fromBuffer);
+  static final _$createVaultShare = $grpc.ClientMethod<$0.CreateVaultShareRequest, $0.CreateVaultShareResponse>(
+      '/sttattus.vault.v1.VaultService/CreateVaultShare',
+      ($0.CreateVaultShareRequest value) => value.writeToBuffer(),
+      $0.CreateVaultShareResponse.fromBuffer);
+  static final _$listMyVaultShares = $grpc.ClientMethod<$0.ListMyVaultSharesRequest, $0.ListMyVaultSharesResponse>(
+      '/sttattus.vault.v1.VaultService/ListMyVaultShares',
+      ($0.ListMyVaultSharesRequest value) => value.writeToBuffer(),
+      $0.ListMyVaultSharesResponse.fromBuffer);
+  static final _$revokeVaultShare = $grpc.ClientMethod<$0.RevokeVaultShareRequest, $0.RevokeVaultShareResponse>(
+      '/sttattus.vault.v1.VaultService/RevokeVaultShare',
+      ($0.RevokeVaultShareRequest value) => value.writeToBuffer(),
+      $0.RevokeVaultShareResponse.fromBuffer);
+  static final _$generateWealthAlmanac = $grpc.ClientMethod<$0.GenerateWealthAlmanacRequest, $0.GenerateWealthAlmanacResponse>(
+      '/sttattus.vault.v1.VaultService/GenerateWealthAlmanac',
+      ($0.GenerateWealthAlmanacRequest value) => value.writeToBuffer(),
+      $0.GenerateWealthAlmanacResponse.fromBuffer);
+  static final _$getYearInVault = $grpc.ClientMethod<$0.GetYearInVaultRequest, $0.GetYearInVaultResponse>(
+      '/sttattus.vault.v1.VaultService/GetYearInVault',
+      ($0.GetYearInVaultRequest value) => value.writeToBuffer(),
+      $0.GetYearInVaultResponse.fromBuffer);
+  static final _$getLiquidityStressTest = $grpc.ClientMethod<$0.GetLiquidityStressTestRequest, $0.GetLiquidityStressTestResponse>(
+      '/sttattus.vault.v1.VaultService/GetLiquidityStressTest',
+      ($0.GetLiquidityStressTestRequest value) => value.writeToBuffer(),
+      $0.GetLiquidityStressTestResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.vault.v1.VaultService')
@@ -587,6 +728,118 @@ abstract class VaultServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ExportUsCgtCsvRequest.fromBuffer(value),
         ($0.ExportUsCgtCsvResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListInvestmentCirclesRequest, $0.ListInvestmentCirclesResponse>(
+        'ListInvestmentCircles',
+        listInvestmentCircles_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListInvestmentCirclesRequest.fromBuffer(value),
+        ($0.ListInvestmentCirclesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetInvestmentCircleRequest, $0.GetInvestmentCircleResponse>(
+        'GetInvestmentCircle',
+        getInvestmentCircle_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetInvestmentCircleRequest.fromBuffer(value),
+        ($0.GetInvestmentCircleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ExpressCircleInterestRequest, $0.ExpressCircleInterestResponse>(
+        'ExpressCircleInterest',
+        expressCircleInterest_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ExpressCircleInterestRequest.fromBuffer(value),
+        ($0.ExpressCircleInterestResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.StartAdvisorThreadRequest, $0.StartAdvisorThreadResponse>(
+        'StartAdvisorThread',
+        startAdvisorThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.StartAdvisorThreadRequest.fromBuffer(value),
+        ($0.StartAdvisorThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAdvisorThreadsRequest, $0.ListAdvisorThreadsResponse>(
+        'ListAdvisorThreads',
+        listAdvisorThreads_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListAdvisorThreadsRequest.fromBuffer(value),
+        ($0.ListAdvisorThreadsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAdvisorThreadRequest, $0.GetAdvisorThreadResponse>(
+        'GetAdvisorThread',
+        getAdvisorThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetAdvisorThreadRequest.fromBuffer(value),
+        ($0.GetAdvisorThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PostAdvisorMessageRequest, $0.PostAdvisorMessageResponse>(
+        'PostAdvisorMessage',
+        postAdvisorMessage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.PostAdvisorMessageRequest.fromBuffer(value),
+        ($0.PostAdvisorMessageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListWealthAnthologyRequest, $0.ListWealthAnthologyResponse>(
+        'ListWealthAnthology',
+        listWealthAnthology_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListWealthAnthologyRequest.fromBuffer(value),
+        ($0.ListWealthAnthologyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetWealthArticleRequest, $0.GetWealthArticleResponse>(
+        'GetWealthArticle',
+        getWealthArticle_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetWealthArticleRequest.fromBuffer(value),
+        ($0.GetWealthArticleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListPartnerBanksRequest, $0.ListPartnerBanksResponse>(
+        'ListPartnerBanks',
+        listPartnerBanks_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListPartnerBanksRequest.fromBuffer(value),
+        ($0.ListPartnerBanksResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateVaultShareRequest, $0.CreateVaultShareResponse>(
+        'CreateVaultShare',
+        createVaultShare_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateVaultShareRequest.fromBuffer(value),
+        ($0.CreateVaultShareResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyVaultSharesRequest, $0.ListMyVaultSharesResponse>(
+        'ListMyVaultShares',
+        listMyVaultShares_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyVaultSharesRequest.fromBuffer(value),
+        ($0.ListMyVaultSharesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeVaultShareRequest, $0.RevokeVaultShareResponse>(
+        'RevokeVaultShare',
+        revokeVaultShare_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RevokeVaultShareRequest.fromBuffer(value),
+        ($0.RevokeVaultShareResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateWealthAlmanacRequest, $0.GenerateWealthAlmanacResponse>(
+        'GenerateWealthAlmanac',
+        generateWealthAlmanac_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GenerateWealthAlmanacRequest.fromBuffer(value),
+        ($0.GenerateWealthAlmanacResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetYearInVaultRequest, $0.GetYearInVaultResponse>(
+        'GetYearInVault',
+        getYearInVault_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetYearInVaultRequest.fromBuffer(value),
+        ($0.GetYearInVaultResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetLiquidityStressTestRequest, $0.GetLiquidityStressTestResponse>(
+        'GetLiquidityStressTest',
+        getLiquidityStressTest_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetLiquidityStressTestRequest.fromBuffer(value),
+        ($0.GetLiquidityStressTestResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.SubmitAssetResponse> submitAsset_Pre($grpc.ServiceCall $call, $async.Future<$0.SubmitAssetRequest> $request) async {
@@ -798,5 +1051,101 @@ abstract class VaultServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ExportUsCgtCsvResponse> exportUsCgtCsv($grpc.ServiceCall call, $0.ExportUsCgtCsvRequest request);
+
+  $async.Future<$0.ListInvestmentCirclesResponse> listInvestmentCircles_Pre($grpc.ServiceCall $call, $async.Future<$0.ListInvestmentCirclesRequest> $request) async {
+    return listInvestmentCircles($call, await $request);
+  }
+
+  $async.Future<$0.ListInvestmentCirclesResponse> listInvestmentCircles($grpc.ServiceCall call, $0.ListInvestmentCirclesRequest request);
+
+  $async.Future<$0.GetInvestmentCircleResponse> getInvestmentCircle_Pre($grpc.ServiceCall $call, $async.Future<$0.GetInvestmentCircleRequest> $request) async {
+    return getInvestmentCircle($call, await $request);
+  }
+
+  $async.Future<$0.GetInvestmentCircleResponse> getInvestmentCircle($grpc.ServiceCall call, $0.GetInvestmentCircleRequest request);
+
+  $async.Future<$0.ExpressCircleInterestResponse> expressCircleInterest_Pre($grpc.ServiceCall $call, $async.Future<$0.ExpressCircleInterestRequest> $request) async {
+    return expressCircleInterest($call, await $request);
+  }
+
+  $async.Future<$0.ExpressCircleInterestResponse> expressCircleInterest($grpc.ServiceCall call, $0.ExpressCircleInterestRequest request);
+
+  $async.Future<$0.StartAdvisorThreadResponse> startAdvisorThread_Pre($grpc.ServiceCall $call, $async.Future<$0.StartAdvisorThreadRequest> $request) async {
+    return startAdvisorThread($call, await $request);
+  }
+
+  $async.Future<$0.StartAdvisorThreadResponse> startAdvisorThread($grpc.ServiceCall call, $0.StartAdvisorThreadRequest request);
+
+  $async.Future<$0.ListAdvisorThreadsResponse> listAdvisorThreads_Pre($grpc.ServiceCall $call, $async.Future<$0.ListAdvisorThreadsRequest> $request) async {
+    return listAdvisorThreads($call, await $request);
+  }
+
+  $async.Future<$0.ListAdvisorThreadsResponse> listAdvisorThreads($grpc.ServiceCall call, $0.ListAdvisorThreadsRequest request);
+
+  $async.Future<$0.GetAdvisorThreadResponse> getAdvisorThread_Pre($grpc.ServiceCall $call, $async.Future<$0.GetAdvisorThreadRequest> $request) async {
+    return getAdvisorThread($call, await $request);
+  }
+
+  $async.Future<$0.GetAdvisorThreadResponse> getAdvisorThread($grpc.ServiceCall call, $0.GetAdvisorThreadRequest request);
+
+  $async.Future<$0.PostAdvisorMessageResponse> postAdvisorMessage_Pre($grpc.ServiceCall $call, $async.Future<$0.PostAdvisorMessageRequest> $request) async {
+    return postAdvisorMessage($call, await $request);
+  }
+
+  $async.Future<$0.PostAdvisorMessageResponse> postAdvisorMessage($grpc.ServiceCall call, $0.PostAdvisorMessageRequest request);
+
+  $async.Future<$0.ListWealthAnthologyResponse> listWealthAnthology_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWealthAnthologyRequest> $request) async {
+    return listWealthAnthology($call, await $request);
+  }
+
+  $async.Future<$0.ListWealthAnthologyResponse> listWealthAnthology($grpc.ServiceCall call, $0.ListWealthAnthologyRequest request);
+
+  $async.Future<$0.GetWealthArticleResponse> getWealthArticle_Pre($grpc.ServiceCall $call, $async.Future<$0.GetWealthArticleRequest> $request) async {
+    return getWealthArticle($call, await $request);
+  }
+
+  $async.Future<$0.GetWealthArticleResponse> getWealthArticle($grpc.ServiceCall call, $0.GetWealthArticleRequest request);
+
+  $async.Future<$0.ListPartnerBanksResponse> listPartnerBanks_Pre($grpc.ServiceCall $call, $async.Future<$0.ListPartnerBanksRequest> $request) async {
+    return listPartnerBanks($call, await $request);
+  }
+
+  $async.Future<$0.ListPartnerBanksResponse> listPartnerBanks($grpc.ServiceCall call, $0.ListPartnerBanksRequest request);
+
+  $async.Future<$0.CreateVaultShareResponse> createVaultShare_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateVaultShareRequest> $request) async {
+    return createVaultShare($call, await $request);
+  }
+
+  $async.Future<$0.CreateVaultShareResponse> createVaultShare($grpc.ServiceCall call, $0.CreateVaultShareRequest request);
+
+  $async.Future<$0.ListMyVaultSharesResponse> listMyVaultShares_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyVaultSharesRequest> $request) async {
+    return listMyVaultShares($call, await $request);
+  }
+
+  $async.Future<$0.ListMyVaultSharesResponse> listMyVaultShares($grpc.ServiceCall call, $0.ListMyVaultSharesRequest request);
+
+  $async.Future<$0.RevokeVaultShareResponse> revokeVaultShare_Pre($grpc.ServiceCall $call, $async.Future<$0.RevokeVaultShareRequest> $request) async {
+    return revokeVaultShare($call, await $request);
+  }
+
+  $async.Future<$0.RevokeVaultShareResponse> revokeVaultShare($grpc.ServiceCall call, $0.RevokeVaultShareRequest request);
+
+  $async.Future<$0.GenerateWealthAlmanacResponse> generateWealthAlmanac_Pre($grpc.ServiceCall $call, $async.Future<$0.GenerateWealthAlmanacRequest> $request) async {
+    return generateWealthAlmanac($call, await $request);
+  }
+
+  $async.Future<$0.GenerateWealthAlmanacResponse> generateWealthAlmanac($grpc.ServiceCall call, $0.GenerateWealthAlmanacRequest request);
+
+  $async.Future<$0.GetYearInVaultResponse> getYearInVault_Pre($grpc.ServiceCall $call, $async.Future<$0.GetYearInVaultRequest> $request) async {
+    return getYearInVault($call, await $request);
+  }
+
+  $async.Future<$0.GetYearInVaultResponse> getYearInVault($grpc.ServiceCall call, $0.GetYearInVaultRequest request);
+
+  $async.Future<$0.GetLiquidityStressTestResponse> getLiquidityStressTest_Pre($grpc.ServiceCall $call, $async.Future<$0.GetLiquidityStressTestRequest> $request) async {
+    return getLiquidityStressTest($call, await $request);
+  }
+
+  $async.Future<$0.GetLiquidityStressTestResponse> getLiquidityStressTest($grpc.ServiceCall call, $0.GetLiquidityStressTestRequest request);
 
 }

@@ -46,6 +46,21 @@ const (
 	EmpireService_ListRedemptionItems_FullMethodName          = "/sttattus.empire.v1.EmpireService/ListRedemptionItems"
 	EmpireService_RedeemItem_FullMethodName                   = "/sttattus.empire.v1.EmpireService/RedeemItem"
 	EmpireService_ListMyRedemptions_FullMethodName            = "/sttattus.empire.v1.EmpireService/ListMyRedemptions"
+	EmpireService_StartConciergeThread_FullMethodName         = "/sttattus.empire.v1.EmpireService/StartConciergeThread"
+	EmpireService_ListMyConciergeThreads_FullMethodName       = "/sttattus.empire.v1.EmpireService/ListMyConciergeThreads"
+	EmpireService_GetConciergeThread_FullMethodName           = "/sttattus.empire.v1.EmpireService/GetConciergeThread"
+	EmpireService_PostConciergeMessage_FullMethodName         = "/sttattus.empire.v1.EmpireService/PostConciergeMessage"
+	EmpireService_ListAnthologyArticles_FullMethodName        = "/sttattus.empire.v1.EmpireService/ListAnthologyArticles"
+	EmpireService_GetAnthologyArticle_FullMethodName          = "/sttattus.empire.v1.EmpireService/GetAnthologyArticle"
+	EmpireService_ListMemberDirectory_FullMethodName          = "/sttattus.empire.v1.EmpireService/ListMemberDirectory"
+	EmpireService_SetDirectoryVisibility_FullMethodName       = "/sttattus.empire.v1.EmpireService/SetDirectoryVisibility"
+	EmpireService_GenerateEmpireAlmanac_FullMethodName        = "/sttattus.empire.v1.EmpireService/GenerateEmpireAlmanac"
+	EmpireService_CreateScoreBadge_FullMethodName             = "/sttattus.empire.v1.EmpireService/CreateScoreBadge"
+	EmpireService_GetTierCard_FullMethodName                  = "/sttattus.empire.v1.EmpireService/GetTierCard"
+	EmpireService_CreateLoungePass_FullMethodName             = "/sttattus.empire.v1.EmpireService/CreateLoungePass"
+	EmpireService_OrderAlmanacPrint_FullMethodName            = "/sttattus.empire.v1.EmpireService/OrderAlmanacPrint"
+	EmpireService_ListMyAlmanacOrders_FullMethodName          = "/sttattus.empire.v1.EmpireService/ListMyAlmanacOrders"
+	EmpireService_GetYearInEmpire_FullMethodName              = "/sttattus.empire.v1.EmpireService/GetYearInEmpire"
 )
 
 // EmpireServiceClient is the client API for EmpireService service.
@@ -137,6 +152,48 @@ type EmpireServiceClient interface {
 	RedeemItem(ctx context.Context, in *RedeemItemRequest, opts ...grpc.CallOption) (*RedeemItemResponse, error)
 	// ListMyRedemptions returns the caller's redemption history.
 	ListMyRedemptions(ctx context.Context, in *ListMyRedemptionsRequest, opts ...grpc.CallOption) (*ListMyRedemptionsResponse, error)
+	// StartConciergeThread opens a Sovereign concierge thread with a subject
+	// and an opening message; the desk auto-acknowledges with a system reply.
+	StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error)
+	// ListMyConciergeThreads returns the caller's concierge threads, newest
+	// activity first.
+	ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error)
+	// GetConciergeThread returns one thread + its message stream.
+	GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error)
+	// PostConciergeMessage appends a member message to a thread and flips it
+	// to awaiting.
+	PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error)
+	// ListAnthologyArticles returns the Empire Anthology, newest first
+	// (bodies omitted).
+	ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error)
+	// GetAnthologyArticle returns one article in full by slug.
+	GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error)
+	// ListMemberDirectory returns opted-in members, ranked, optionally
+	// filtered by tier + city.
+	ListMemberDirectory(ctx context.Context, in *ListMemberDirectoryRequest, opts ...grpc.CallOption) (*ListMemberDirectoryResponse, error)
+	// SetDirectoryVisibility opts the caller into / out of the public member
+	// directory and sets their surfaced city.
+	SetDirectoryVisibility(ctx context.Context, in *SetDirectoryVisibilityRequest, opts ...grpc.CallOption) (*SetDirectoryVisibilityResponse, error)
+	// GenerateEmpireAlmanac renders the caller's year-across-twelve-pillars
+	// hardcover PDF, stores it, and returns the URL.
+	GenerateEmpireAlmanac(ctx context.Context, in *GenerateEmpireAlmanacRequest, opts ...grpc.CallOption) (*GenerateEmpireAlmanacResponse, error)
+	// CreateScoreBadge mints a signed, time-bound token for the caller's
+	// public score badge (served at GET /badge/:token as SVG).
+	CreateScoreBadge(ctx context.Context, in *CreateScoreBadgeRequest, opts ...grpc.CallOption) (*CreateScoreBadgeResponse, error)
+	// GetTierCard returns the caller's hand-numbered digital tier card,
+	// assigning a permanent card number on first request.
+	GetTierCard(ctx context.Context, in *GetTierCardRequest, opts ...grpc.CallOption) (*GetTierCardResponse, error)
+	// CreateLoungePass mints a short-TTL, tier-stamped access pass the
+	// physical lounge/salon door verifies at GET /pass/:token.
+	CreateLoungePass(ctx context.Context, in *CreateLoungePassRequest, opts ...grpc.CallOption) (*CreateLoungePassResponse, error)
+	// OrderAlmanacPrint captures a print-and-ship request for a generated
+	// Almanac PDF. Fulfilment is handled out-of-band by ops.
+	OrderAlmanacPrint(ctx context.Context, in *OrderAlmanacPrintRequest, opts ...grpc.CallOption) (*OrderAlmanacPrintResponse, error)
+	// ListMyAlmanacOrders returns the caller's print orders, newest first.
+	ListMyAlmanacOrders(ctx context.Context, in *ListMyAlmanacOrdersRequest, opts ...grpc.CallOption) (*ListMyAlmanacOrdersResponse, error)
+	// GetYearInEmpire returns the caller's annual recap — score, tier, points,
+	// salons, top pillar — computed across the requested year.
+	GetYearInEmpire(ctx context.Context, in *GetYearInEmpireRequest, opts ...grpc.CallOption) (*GetYearInEmpireResponse, error)
 }
 
 type empireServiceClient struct {
@@ -417,6 +474,156 @@ func (c *empireServiceClient) ListMyRedemptions(ctx context.Context, in *ListMyR
 	return out, nil
 }
 
+func (c *empireServiceClient) StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StartConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, EmpireService_StartConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyConciergeThreadsResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ListMyConciergeThreads_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PostConciergeMessageResponse)
+	err := c.cc.Invoke(ctx, EmpireService_PostConciergeMessage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAnthologyArticlesResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ListAnthologyArticles_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAnthologyArticleResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetAnthologyArticle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ListMemberDirectory(ctx context.Context, in *ListMemberDirectoryRequest, opts ...grpc.CallOption) (*ListMemberDirectoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMemberDirectoryResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ListMemberDirectory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) SetDirectoryVisibility(ctx context.Context, in *SetDirectoryVisibilityRequest, opts ...grpc.CallOption) (*SetDirectoryVisibilityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetDirectoryVisibilityResponse)
+	err := c.cc.Invoke(ctx, EmpireService_SetDirectoryVisibility_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GenerateEmpireAlmanac(ctx context.Context, in *GenerateEmpireAlmanacRequest, opts ...grpc.CallOption) (*GenerateEmpireAlmanacResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateEmpireAlmanacResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GenerateEmpireAlmanac_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) CreateScoreBadge(ctx context.Context, in *CreateScoreBadgeRequest, opts ...grpc.CallOption) (*CreateScoreBadgeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateScoreBadgeResponse)
+	err := c.cc.Invoke(ctx, EmpireService_CreateScoreBadge_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetTierCard(ctx context.Context, in *GetTierCardRequest, opts ...grpc.CallOption) (*GetTierCardResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTierCardResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetTierCard_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) CreateLoungePass(ctx context.Context, in *CreateLoungePassRequest, opts ...grpc.CallOption) (*CreateLoungePassResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateLoungePassResponse)
+	err := c.cc.Invoke(ctx, EmpireService_CreateLoungePass_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) OrderAlmanacPrint(ctx context.Context, in *OrderAlmanacPrintRequest, opts ...grpc.CallOption) (*OrderAlmanacPrintResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(OrderAlmanacPrintResponse)
+	err := c.cc.Invoke(ctx, EmpireService_OrderAlmanacPrint_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ListMyAlmanacOrders(ctx context.Context, in *ListMyAlmanacOrdersRequest, opts ...grpc.CallOption) (*ListMyAlmanacOrdersResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyAlmanacOrdersResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ListMyAlmanacOrders_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetYearInEmpire(ctx context.Context, in *GetYearInEmpireRequest, opts ...grpc.CallOption) (*GetYearInEmpireResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetYearInEmpireResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetYearInEmpire_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmpireServiceServer is the server API for EmpireService service.
 // All implementations must embed UnimplementedEmpireServiceServer
 // for forward compatibility.
@@ -506,6 +713,48 @@ type EmpireServiceServer interface {
 	RedeemItem(context.Context, *RedeemItemRequest) (*RedeemItemResponse, error)
 	// ListMyRedemptions returns the caller's redemption history.
 	ListMyRedemptions(context.Context, *ListMyRedemptionsRequest) (*ListMyRedemptionsResponse, error)
+	// StartConciergeThread opens a Sovereign concierge thread with a subject
+	// and an opening message; the desk auto-acknowledges with a system reply.
+	StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error)
+	// ListMyConciergeThreads returns the caller's concierge threads, newest
+	// activity first.
+	ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error)
+	// GetConciergeThread returns one thread + its message stream.
+	GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error)
+	// PostConciergeMessage appends a member message to a thread and flips it
+	// to awaiting.
+	PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error)
+	// ListAnthologyArticles returns the Empire Anthology, newest first
+	// (bodies omitted).
+	ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error)
+	// GetAnthologyArticle returns one article in full by slug.
+	GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error)
+	// ListMemberDirectory returns opted-in members, ranked, optionally
+	// filtered by tier + city.
+	ListMemberDirectory(context.Context, *ListMemberDirectoryRequest) (*ListMemberDirectoryResponse, error)
+	// SetDirectoryVisibility opts the caller into / out of the public member
+	// directory and sets their surfaced city.
+	SetDirectoryVisibility(context.Context, *SetDirectoryVisibilityRequest) (*SetDirectoryVisibilityResponse, error)
+	// GenerateEmpireAlmanac renders the caller's year-across-twelve-pillars
+	// hardcover PDF, stores it, and returns the URL.
+	GenerateEmpireAlmanac(context.Context, *GenerateEmpireAlmanacRequest) (*GenerateEmpireAlmanacResponse, error)
+	// CreateScoreBadge mints a signed, time-bound token for the caller's
+	// public score badge (served at GET /badge/:token as SVG).
+	CreateScoreBadge(context.Context, *CreateScoreBadgeRequest) (*CreateScoreBadgeResponse, error)
+	// GetTierCard returns the caller's hand-numbered digital tier card,
+	// assigning a permanent card number on first request.
+	GetTierCard(context.Context, *GetTierCardRequest) (*GetTierCardResponse, error)
+	// CreateLoungePass mints a short-TTL, tier-stamped access pass the
+	// physical lounge/salon door verifies at GET /pass/:token.
+	CreateLoungePass(context.Context, *CreateLoungePassRequest) (*CreateLoungePassResponse, error)
+	// OrderAlmanacPrint captures a print-and-ship request for a generated
+	// Almanac PDF. Fulfilment is handled out-of-band by ops.
+	OrderAlmanacPrint(context.Context, *OrderAlmanacPrintRequest) (*OrderAlmanacPrintResponse, error)
+	// ListMyAlmanacOrders returns the caller's print orders, newest first.
+	ListMyAlmanacOrders(context.Context, *ListMyAlmanacOrdersRequest) (*ListMyAlmanacOrdersResponse, error)
+	// GetYearInEmpire returns the caller's annual recap — score, tier, points,
+	// salons, top pillar — computed across the requested year.
+	GetYearInEmpire(context.Context, *GetYearInEmpireRequest) (*GetYearInEmpireResponse, error)
 	mustEmbedUnimplementedEmpireServiceServer()
 }
 
@@ -596,6 +845,51 @@ func (UnimplementedEmpireServiceServer) RedeemItem(context.Context, *RedeemItemR
 }
 func (UnimplementedEmpireServiceServer) ListMyRedemptions(context.Context, *ListMyRedemptionsRequest) (*ListMyRedemptionsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMyRedemptions not implemented")
+}
+func (UnimplementedEmpireServiceServer) StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StartConciergeThread not implemented")
+}
+func (UnimplementedEmpireServiceServer) ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyConciergeThreads not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetConciergeThread not implemented")
+}
+func (UnimplementedEmpireServiceServer) PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PostConciergeMessage not implemented")
+}
+func (UnimplementedEmpireServiceServer) ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAnthologyArticles not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAnthologyArticle not implemented")
+}
+func (UnimplementedEmpireServiceServer) ListMemberDirectory(context.Context, *ListMemberDirectoryRequest) (*ListMemberDirectoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMemberDirectory not implemented")
+}
+func (UnimplementedEmpireServiceServer) SetDirectoryVisibility(context.Context, *SetDirectoryVisibilityRequest) (*SetDirectoryVisibilityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetDirectoryVisibility not implemented")
+}
+func (UnimplementedEmpireServiceServer) GenerateEmpireAlmanac(context.Context, *GenerateEmpireAlmanacRequest) (*GenerateEmpireAlmanacResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateEmpireAlmanac not implemented")
+}
+func (UnimplementedEmpireServiceServer) CreateScoreBadge(context.Context, *CreateScoreBadgeRequest) (*CreateScoreBadgeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateScoreBadge not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetTierCard(context.Context, *GetTierCardRequest) (*GetTierCardResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTierCard not implemented")
+}
+func (UnimplementedEmpireServiceServer) CreateLoungePass(context.Context, *CreateLoungePassRequest) (*CreateLoungePassResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateLoungePass not implemented")
+}
+func (UnimplementedEmpireServiceServer) OrderAlmanacPrint(context.Context, *OrderAlmanacPrintRequest) (*OrderAlmanacPrintResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method OrderAlmanacPrint not implemented")
+}
+func (UnimplementedEmpireServiceServer) ListMyAlmanacOrders(context.Context, *ListMyAlmanacOrdersRequest) (*ListMyAlmanacOrdersResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyAlmanacOrders not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetYearInEmpire(context.Context, *GetYearInEmpireRequest) (*GetYearInEmpireResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetYearInEmpire not implemented")
 }
 func (UnimplementedEmpireServiceServer) mustEmbedUnimplementedEmpireServiceServer() {}
 func (UnimplementedEmpireServiceServer) testEmbeddedByValue()                       {}
@@ -1104,6 +1398,276 @@ func _EmpireService_ListMyRedemptions_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmpireService_StartConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StartConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).StartConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_StartConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).StartConciergeThread(ctx, req.(*StartConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ListMyConciergeThreads_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyConciergeThreadsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ListMyConciergeThreads(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ListMyConciergeThreads_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ListMyConciergeThreads(ctx, req.(*ListMyConciergeThreadsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetConciergeThread(ctx, req.(*GetConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_PostConciergeMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostConciergeMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).PostConciergeMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_PostConciergeMessage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).PostConciergeMessage(ctx, req.(*PostConciergeMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ListAnthologyArticles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAnthologyArticlesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ListAnthologyArticles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ListAnthologyArticles_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ListAnthologyArticles(ctx, req.(*ListAnthologyArticlesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetAnthologyArticle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnthologyArticleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetAnthologyArticle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetAnthologyArticle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetAnthologyArticle(ctx, req.(*GetAnthologyArticleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ListMemberDirectory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMemberDirectoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ListMemberDirectory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ListMemberDirectory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ListMemberDirectory(ctx, req.(*ListMemberDirectoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_SetDirectoryVisibility_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetDirectoryVisibilityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).SetDirectoryVisibility(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_SetDirectoryVisibility_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).SetDirectoryVisibility(ctx, req.(*SetDirectoryVisibilityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GenerateEmpireAlmanac_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateEmpireAlmanacRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GenerateEmpireAlmanac(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GenerateEmpireAlmanac_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GenerateEmpireAlmanac(ctx, req.(*GenerateEmpireAlmanacRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_CreateScoreBadge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateScoreBadgeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).CreateScoreBadge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_CreateScoreBadge_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).CreateScoreBadge(ctx, req.(*CreateScoreBadgeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetTierCard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTierCardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetTierCard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetTierCard_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetTierCard(ctx, req.(*GetTierCardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_CreateLoungePass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateLoungePassRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).CreateLoungePass(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_CreateLoungePass_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).CreateLoungePass(ctx, req.(*CreateLoungePassRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_OrderAlmanacPrint_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(OrderAlmanacPrintRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).OrderAlmanacPrint(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_OrderAlmanacPrint_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).OrderAlmanacPrint(ctx, req.(*OrderAlmanacPrintRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ListMyAlmanacOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyAlmanacOrdersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ListMyAlmanacOrders(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ListMyAlmanacOrders_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ListMyAlmanacOrders(ctx, req.(*ListMyAlmanacOrdersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetYearInEmpire_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetYearInEmpireRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetYearInEmpire(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetYearInEmpire_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetYearInEmpire(ctx, req.(*GetYearInEmpireRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EmpireService_ServiceDesc is the grpc.ServiceDesc for EmpireService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1218,6 +1782,66 @@ var EmpireService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListMyRedemptions",
 			Handler:    _EmpireService_ListMyRedemptions_Handler,
+		},
+		{
+			MethodName: "StartConciergeThread",
+			Handler:    _EmpireService_StartConciergeThread_Handler,
+		},
+		{
+			MethodName: "ListMyConciergeThreads",
+			Handler:    _EmpireService_ListMyConciergeThreads_Handler,
+		},
+		{
+			MethodName: "GetConciergeThread",
+			Handler:    _EmpireService_GetConciergeThread_Handler,
+		},
+		{
+			MethodName: "PostConciergeMessage",
+			Handler:    _EmpireService_PostConciergeMessage_Handler,
+		},
+		{
+			MethodName: "ListAnthologyArticles",
+			Handler:    _EmpireService_ListAnthologyArticles_Handler,
+		},
+		{
+			MethodName: "GetAnthologyArticle",
+			Handler:    _EmpireService_GetAnthologyArticle_Handler,
+		},
+		{
+			MethodName: "ListMemberDirectory",
+			Handler:    _EmpireService_ListMemberDirectory_Handler,
+		},
+		{
+			MethodName: "SetDirectoryVisibility",
+			Handler:    _EmpireService_SetDirectoryVisibility_Handler,
+		},
+		{
+			MethodName: "GenerateEmpireAlmanac",
+			Handler:    _EmpireService_GenerateEmpireAlmanac_Handler,
+		},
+		{
+			MethodName: "CreateScoreBadge",
+			Handler:    _EmpireService_CreateScoreBadge_Handler,
+		},
+		{
+			MethodName: "GetTierCard",
+			Handler:    _EmpireService_GetTierCard_Handler,
+		},
+		{
+			MethodName: "CreateLoungePass",
+			Handler:    _EmpireService_CreateLoungePass_Handler,
+		},
+		{
+			MethodName: "OrderAlmanacPrint",
+			Handler:    _EmpireService_OrderAlmanacPrint_Handler,
+		},
+		{
+			MethodName: "ListMyAlmanacOrders",
+			Handler:    _EmpireService_ListMyAlmanacOrders_Handler,
+		},
+		{
+			MethodName: "GetYearInEmpire",
+			Handler:    _EmpireService_GetYearInEmpire_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

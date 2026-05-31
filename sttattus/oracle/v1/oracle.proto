@@ -272,9 +272,300 @@ message StreamQueryChunk {
   string err = 5;
 }
 
+// === O1 (Phase 1) — daily synthesis briefing ===
+
+// BriefingLine is one pillar's contribution to the morning briefing —
+// only granted scopes appear. The score is read straight off the
+// cross-pillar standings table (hub_user_sttattus.<pillar>_score).
+message BriefingLine {
+  string pillar = 1;
+  string headline = 2;
+  double score = 3;
+}
+
+message GetTodayBriefingRequest {}
+message GetTodayBriefingResponse {
+  string briefing = 1; // the synthesized prose (Gemini, or deterministic fallback)
+  repeated BriefingLine lines = 2; // per-granted-pillar standing
+  int32 granted_count = 3; // how many pillar scopes are granted
+  int64 generated_unix = 4;
+  bool ai_generated = 5; // true when the prose came from the model, false for the deterministic path
+}
+
+// === O2 (Phase 2) — proactive triggers + inbox ===
+
+// OracleTrigger is a user-defined threshold over a pillar score. When the
+// score crosses it, the trigger fires into the inbox. comparator is
+// 'below' | 'above'.
+message OracleTrigger {
+  string id = 1;
+  string pillar = 2;
+  string comparator = 3;
+  double threshold = 4;
+  string label = 5;
+  bool active = 6;
+  int64 created_unix = 7;
+}
+
+message CreateTriggerRequest {
+  string pillar = 1;
+  string comparator = 2; // below | above
+  double threshold = 3;
+  string label = 4;
+}
+message CreateTriggerResponse {
+  OracleTrigger trigger = 1;
+}
+
+message ListMyTriggersRequest {}
+message ListMyTriggersResponse {
+  repeated OracleTrigger triggers = 1;
+}
+
+message DeleteTriggerRequest {
+  string trigger_id = 1;
+}
+message DeleteTriggerResponse {}
+
+// InboxItem is a currently-firing trigger — evaluated live against the
+// pillar score at read time (no background job; the inbox is a query).
+message InboxItem {
+  string trigger_id = 1;
+  string pillar = 2;
+  string label = 3;
+  string message = 4;
+  double current_score = 5;
+  double threshold = 6;
+  string comparator = 7;
+}
+
+message GetInboxRequest {}
+message GetInboxResponse {
+  repeated InboxItem items = 1;
+}
+
+// === O2 (Phase 2) — long-form drafter (outputs that persist beyond chat) ===
+
+message OracleDocument {
+  string id = 1;
+  string title = 2;
+  string body = 3;
+  string kind = 4; // brief | memo | plan
+  int64 created_unix = 5;
+  int64 updated_unix = 6;
+}
+
+message CreateDocumentRequest {
+  string title = 1;
+  string body = 2;
+  string kind = 3;
+}
+message CreateDocumentResponse {
+  OracleDocument document = 1;
+}
+
+message ListMyDocumentsRequest {}
+message ListMyDocumentsResponse {
+  repeated OracleDocument documents = 1; // body omitted in list (preview only)
+}
+
+message GetDocumentRequest {
+  string document_id = 1;
+}
+message GetDocumentResponse {
+  OracleDocument document = 1;
+}
+
+message UpdateDocumentRequest {
+  string document_id = 1;
+  string title = 2;
+  string body = 3;
+}
+message UpdateDocumentResponse {
+  OracleDocument document = 1;
+}
+
+message DeleteDocumentRequest {
+  string document_id = 1;
+}
+message DeleteDocumentResponse {}
+
+// DraftDocument asks Oracle to draft a long-form document from a prompt and
+// persists it. AI-backed (Gemini) with an honest 'unavailable' err when the
+// key is absent — a drafter is only honest when it actually drafts.
+message DraftDocumentRequest {
+  string prompt = 1;
+  string kind = 2; // brief | memo | plan
+}
+message DraftDocumentResponse {
+  OracleDocument document = 1;
+  string err = 2; // 'unavailable' when the model is not configured
+}
+
+// === O3 (Phase 3) — Sovereign concierge desk ===
+
+message ConciergeThread {
+  string id = 1;
+  string subject = 2;
+  string status = 3; // open | answered | closed
+  int64 sla_due_unix = 4;
+  int64 created_unix = 5;
+  int64 updated_unix = 6;
+}
+
+message ConciergeMessage {
+  string id = 1;
+  string sender = 2; // user | concierge | system
+  string body = 3;
+  int64 created_unix = 4;
+}
+
+message StartConciergeThreadRequest {
+  string subject = 1;
+  string opening_message = 2;
+}
+message StartConciergeThreadResponse {
+  ConciergeThread thread = 1;
+}
+
+message ListMyConciergeThreadsRequest {}
+message ListMyConciergeThreadsResponse {
+  repeated ConciergeThread threads = 1;
+}
+
+message GetConciergeThreadRequest {
+  string thread_id = 1;
+}
+message GetConciergeThreadResponse {
+  ConciergeThread thread = 1;
+  repeated ConciergeMessage messages = 2;
+}
+
+message PostConciergeMessageRequest {
+  string thread_id = 1;
+  string body = 2;
+}
+message PostConciergeMessageResponse {
+  ConciergeMessage message = 1;
+}
+
+// === O3 (Phase 3) — editorial Anthology ===
+
+message AnthologyArticle {
+  string id = 1;
+  string title = 2;
+  string dek = 3;
+  string body = 4;
+  string author_name = 5;
+  string author_title = 6;
+  bool sovereign_only = 7;
+  int64 published_unix = 8;
+}
+
+message ListAnthologyArticlesRequest {}
+message ListAnthologyArticlesResponse {
+  repeated AnthologyArticle articles = 1; // body omitted in list
+}
+
+message GetAnthologyArticleRequest {
+  string article_id = 1;
+}
+message GetAnthologyArticleResponse {
+  AnthologyArticle article = 1;
+}
+
+// === O3 (Phase 3) — shared brief (token, time-bound, revocable) ===
+
+message BriefShare {
+  string token = 1;
+  string document_id = 2;
+  string url = 3;
+  int64 expires_unix = 4;
+  bool revoked = 5;
+}
+
+message CreateBriefShareRequest {
+  string document_id = 1;
+  int32 ttl_days = 2; // 0 == default 14
+}
+message CreateBriefShareResponse {
+  BriefShare share = 1;
+}
+
+message ListMyBriefSharesRequest {}
+message ListMyBriefSharesResponse {
+  repeated BriefShare shares = 1;
+}
+
+message RevokeBriefShareRequest {
+  string token = 1;
+}
+message RevokeBriefShareResponse {}
+
+// === O4 (Phase 4) — Year-in-Oracle (recap + hardcover PDF) ===
+
+message YearInOracleRecap {
+  string year = 1;
+  double intellectual_rank = 2;
+  string rank_label = 3;
+  int32 total_inquiries = 4;
+  int32 unique_domains = 5;
+  string top_domain = 6;
+  int32 document_count = 7;
+  int32 memory_count = 8;
+  int32 thread_count = 9;
+}
+
+message GetYearInOracleRecapRequest {}
+message GetYearInOracleRecapResponse {
+  YearInOracleRecap recap = 1;
+}
+
+message GenerateYearInOracleRequest {}
+message GenerateYearInOracleResponse {
+  string url = 1;
+  int32 page_count = 2;
+}
+
 service OracleService {
   // Query handles strategic inquiry and rewards verified depth.
   rpc Query(QueryRequest) returns (QueryResponse);
+
+  // O4 (Phase 4) — Year-in-Oracle recap + hardcover PDF.
+  rpc GetYearInOracleRecap(GetYearInOracleRecapRequest) returns (GetYearInOracleRecapResponse);
+  rpc GenerateYearInOracle(GenerateYearInOracleRequest) returns (GenerateYearInOracleResponse);
+
+  // O3 (Phase 3) — Sovereign concierge desk.
+  rpc StartConciergeThread(StartConciergeThreadRequest) returns (StartConciergeThreadResponse);
+  rpc ListMyConciergeThreads(ListMyConciergeThreadsRequest) returns (ListMyConciergeThreadsResponse);
+  rpc GetConciergeThread(GetConciergeThreadRequest) returns (GetConciergeThreadResponse);
+  rpc PostConciergeMessage(PostConciergeMessageRequest) returns (PostConciergeMessageResponse);
+
+  // O3 (Phase 3) — editorial Anthology.
+  rpc ListAnthologyArticles(ListAnthologyArticlesRequest) returns (ListAnthologyArticlesResponse);
+  rpc GetAnthologyArticle(GetAnthologyArticleRequest) returns (GetAnthologyArticleResponse);
+
+  // O3 (Phase 3) — shared brief.
+  rpc CreateBriefShare(CreateBriefShareRequest) returns (CreateBriefShareResponse);
+  rpc ListMyBriefShares(ListMyBriefSharesRequest) returns (ListMyBriefSharesResponse);
+  rpc RevokeBriefShare(RevokeBriefShareRequest) returns (RevokeBriefShareResponse);
+
+  // O1 (Phase 1) — daily synthesis briefing across granted pillar scopes.
+  rpc GetTodayBriefing(GetTodayBriefingRequest) returns (GetTodayBriefingResponse);
+
+  // O2 (Phase 2) — proactive triggers + inbox.
+  rpc CreateTrigger(CreateTriggerRequest) returns (CreateTriggerResponse);
+  rpc ListMyTriggers(ListMyTriggersRequest) returns (ListMyTriggersResponse);
+  rpc DeleteTrigger(DeleteTriggerRequest) returns (DeleteTriggerResponse);
+  rpc GetInbox(GetInboxRequest) returns (GetInboxResponse);
+
+  // O2 (Phase 2) — long-form drafter.
+  rpc CreateDocument(CreateDocumentRequest) returns (CreateDocumentResponse);
+  rpc ListMyDocuments(ListMyDocumentsRequest) returns (ListMyDocumentsResponse);
+  rpc GetDocument(GetDocumentRequest) returns (GetDocumentResponse);
+  rpc UpdateDocument(UpdateDocumentRequest) returns (UpdateDocumentResponse);
+  rpc DeleteDocument(DeleteDocumentRequest) returns (DeleteDocumentResponse);
+  rpc DraftDocument(DraftDocumentRequest) returns (DraftDocumentResponse);
 
   // Status
   rpc GetOracleStats(GetOracleStatsRequest) returns (GetOracleStatsResponse);

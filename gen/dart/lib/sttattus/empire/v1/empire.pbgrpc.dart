@@ -198,6 +198,93 @@ class EmpireServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listMyRedemptions, request, options: options);
   }
 
+  /// StartConciergeThread opens a Sovereign concierge thread with a subject
+  /// and an opening message; the desk auto-acknowledges with a system reply.
+  $grpc.ResponseFuture<$0.StartConciergeThreadResponse> startConciergeThread($0.StartConciergeThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$startConciergeThread, request, options: options);
+  }
+
+  /// ListMyConciergeThreads returns the caller's concierge threads, newest
+  /// activity first.
+  $grpc.ResponseFuture<$0.ListMyConciergeThreadsResponse> listMyConciergeThreads($0.ListMyConciergeThreadsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyConciergeThreads, request, options: options);
+  }
+
+  /// GetConciergeThread returns one thread + its message stream.
+  $grpc.ResponseFuture<$0.GetConciergeThreadResponse> getConciergeThread($0.GetConciergeThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getConciergeThread, request, options: options);
+  }
+
+  /// PostConciergeMessage appends a member message to a thread and flips it
+  /// to awaiting.
+  $grpc.ResponseFuture<$0.PostConciergeMessageResponse> postConciergeMessage($0.PostConciergeMessageRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$postConciergeMessage, request, options: options);
+  }
+
+  /// ListAnthologyArticles returns the Empire Anthology, newest first
+  /// (bodies omitted).
+  $grpc.ResponseFuture<$0.ListAnthologyArticlesResponse> listAnthologyArticles($0.ListAnthologyArticlesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listAnthologyArticles, request, options: options);
+  }
+
+  /// GetAnthologyArticle returns one article in full by slug.
+  $grpc.ResponseFuture<$0.GetAnthologyArticleResponse> getAnthologyArticle($0.GetAnthologyArticleRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getAnthologyArticle, request, options: options);
+  }
+
+  /// ListMemberDirectory returns opted-in members, ranked, optionally
+  /// filtered by tier + city.
+  $grpc.ResponseFuture<$0.ListMemberDirectoryResponse> listMemberDirectory($0.ListMemberDirectoryRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMemberDirectory, request, options: options);
+  }
+
+  /// SetDirectoryVisibility opts the caller into / out of the public member
+  /// directory and sets their surfaced city.
+  $grpc.ResponseFuture<$0.SetDirectoryVisibilityResponse> setDirectoryVisibility($0.SetDirectoryVisibilityRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$setDirectoryVisibility, request, options: options);
+  }
+
+  /// GenerateEmpireAlmanac renders the caller's year-across-twelve-pillars
+  /// hardcover PDF, stores it, and returns the URL.
+  $grpc.ResponseFuture<$0.GenerateEmpireAlmanacResponse> generateEmpireAlmanac($0.GenerateEmpireAlmanacRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$generateEmpireAlmanac, request, options: options);
+  }
+
+  /// CreateScoreBadge mints a signed, time-bound token for the caller's
+  /// public score badge (served at GET /badge/:token as SVG).
+  $grpc.ResponseFuture<$0.CreateScoreBadgeResponse> createScoreBadge($0.CreateScoreBadgeRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createScoreBadge, request, options: options);
+  }
+
+  /// GetTierCard returns the caller's hand-numbered digital tier card,
+  /// assigning a permanent card number on first request.
+  $grpc.ResponseFuture<$0.GetTierCardResponse> getTierCard($0.GetTierCardRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getTierCard, request, options: options);
+  }
+
+  /// CreateLoungePass mints a short-TTL, tier-stamped access pass the
+  /// physical lounge/salon door verifies at GET /pass/:token.
+  $grpc.ResponseFuture<$0.CreateLoungePassResponse> createLoungePass($0.CreateLoungePassRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createLoungePass, request, options: options);
+  }
+
+  /// OrderAlmanacPrint captures a print-and-ship request for a generated
+  /// Almanac PDF. Fulfilment is handled out-of-band by ops.
+  $grpc.ResponseFuture<$0.OrderAlmanacPrintResponse> orderAlmanacPrint($0.OrderAlmanacPrintRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$orderAlmanacPrint, request, options: options);
+  }
+
+  /// ListMyAlmanacOrders returns the caller's print orders, newest first.
+  $grpc.ResponseFuture<$0.ListMyAlmanacOrdersResponse> listMyAlmanacOrders($0.ListMyAlmanacOrdersRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyAlmanacOrders, request, options: options);
+  }
+
+  /// GetYearInEmpire returns the caller's annual recap — score, tier, points,
+  /// salons, top pillar — computed across the requested year.
+  $grpc.ResponseFuture<$0.GetYearInEmpireResponse> getYearInEmpire($0.GetYearInEmpireRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getYearInEmpire, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getScoreBreakdown = $grpc.ClientMethod<$0.GetScoreBreakdownRequest, $0.GetScoreBreakdownResponse>(
@@ -308,6 +395,66 @@ class EmpireServiceClient extends $grpc.Client {
       '/sttattus.empire.v1.EmpireService/ListMyRedemptions',
       ($0.ListMyRedemptionsRequest value) => value.writeToBuffer(),
       $0.ListMyRedemptionsResponse.fromBuffer);
+  static final _$startConciergeThread = $grpc.ClientMethod<$0.StartConciergeThreadRequest, $0.StartConciergeThreadResponse>(
+      '/sttattus.empire.v1.EmpireService/StartConciergeThread',
+      ($0.StartConciergeThreadRequest value) => value.writeToBuffer(),
+      $0.StartConciergeThreadResponse.fromBuffer);
+  static final _$listMyConciergeThreads = $grpc.ClientMethod<$0.ListMyConciergeThreadsRequest, $0.ListMyConciergeThreadsResponse>(
+      '/sttattus.empire.v1.EmpireService/ListMyConciergeThreads',
+      ($0.ListMyConciergeThreadsRequest value) => value.writeToBuffer(),
+      $0.ListMyConciergeThreadsResponse.fromBuffer);
+  static final _$getConciergeThread = $grpc.ClientMethod<$0.GetConciergeThreadRequest, $0.GetConciergeThreadResponse>(
+      '/sttattus.empire.v1.EmpireService/GetConciergeThread',
+      ($0.GetConciergeThreadRequest value) => value.writeToBuffer(),
+      $0.GetConciergeThreadResponse.fromBuffer);
+  static final _$postConciergeMessage = $grpc.ClientMethod<$0.PostConciergeMessageRequest, $0.PostConciergeMessageResponse>(
+      '/sttattus.empire.v1.EmpireService/PostConciergeMessage',
+      ($0.PostConciergeMessageRequest value) => value.writeToBuffer(),
+      $0.PostConciergeMessageResponse.fromBuffer);
+  static final _$listAnthologyArticles = $grpc.ClientMethod<$0.ListAnthologyArticlesRequest, $0.ListAnthologyArticlesResponse>(
+      '/sttattus.empire.v1.EmpireService/ListAnthologyArticles',
+      ($0.ListAnthologyArticlesRequest value) => value.writeToBuffer(),
+      $0.ListAnthologyArticlesResponse.fromBuffer);
+  static final _$getAnthologyArticle = $grpc.ClientMethod<$0.GetAnthologyArticleRequest, $0.GetAnthologyArticleResponse>(
+      '/sttattus.empire.v1.EmpireService/GetAnthologyArticle',
+      ($0.GetAnthologyArticleRequest value) => value.writeToBuffer(),
+      $0.GetAnthologyArticleResponse.fromBuffer);
+  static final _$listMemberDirectory = $grpc.ClientMethod<$0.ListMemberDirectoryRequest, $0.ListMemberDirectoryResponse>(
+      '/sttattus.empire.v1.EmpireService/ListMemberDirectory',
+      ($0.ListMemberDirectoryRequest value) => value.writeToBuffer(),
+      $0.ListMemberDirectoryResponse.fromBuffer);
+  static final _$setDirectoryVisibility = $grpc.ClientMethod<$0.SetDirectoryVisibilityRequest, $0.SetDirectoryVisibilityResponse>(
+      '/sttattus.empire.v1.EmpireService/SetDirectoryVisibility',
+      ($0.SetDirectoryVisibilityRequest value) => value.writeToBuffer(),
+      $0.SetDirectoryVisibilityResponse.fromBuffer);
+  static final _$generateEmpireAlmanac = $grpc.ClientMethod<$0.GenerateEmpireAlmanacRequest, $0.GenerateEmpireAlmanacResponse>(
+      '/sttattus.empire.v1.EmpireService/GenerateEmpireAlmanac',
+      ($0.GenerateEmpireAlmanacRequest value) => value.writeToBuffer(),
+      $0.GenerateEmpireAlmanacResponse.fromBuffer);
+  static final _$createScoreBadge = $grpc.ClientMethod<$0.CreateScoreBadgeRequest, $0.CreateScoreBadgeResponse>(
+      '/sttattus.empire.v1.EmpireService/CreateScoreBadge',
+      ($0.CreateScoreBadgeRequest value) => value.writeToBuffer(),
+      $0.CreateScoreBadgeResponse.fromBuffer);
+  static final _$getTierCard = $grpc.ClientMethod<$0.GetTierCardRequest, $0.GetTierCardResponse>(
+      '/sttattus.empire.v1.EmpireService/GetTierCard',
+      ($0.GetTierCardRequest value) => value.writeToBuffer(),
+      $0.GetTierCardResponse.fromBuffer);
+  static final _$createLoungePass = $grpc.ClientMethod<$0.CreateLoungePassRequest, $0.CreateLoungePassResponse>(
+      '/sttattus.empire.v1.EmpireService/CreateLoungePass',
+      ($0.CreateLoungePassRequest value) => value.writeToBuffer(),
+      $0.CreateLoungePassResponse.fromBuffer);
+  static final _$orderAlmanacPrint = $grpc.ClientMethod<$0.OrderAlmanacPrintRequest, $0.OrderAlmanacPrintResponse>(
+      '/sttattus.empire.v1.EmpireService/OrderAlmanacPrint',
+      ($0.OrderAlmanacPrintRequest value) => value.writeToBuffer(),
+      $0.OrderAlmanacPrintResponse.fromBuffer);
+  static final _$listMyAlmanacOrders = $grpc.ClientMethod<$0.ListMyAlmanacOrdersRequest, $0.ListMyAlmanacOrdersResponse>(
+      '/sttattus.empire.v1.EmpireService/ListMyAlmanacOrders',
+      ($0.ListMyAlmanacOrdersRequest value) => value.writeToBuffer(),
+      $0.ListMyAlmanacOrdersResponse.fromBuffer);
+  static final _$getYearInEmpire = $grpc.ClientMethod<$0.GetYearInEmpireRequest, $0.GetYearInEmpireResponse>(
+      '/sttattus.empire.v1.EmpireService/GetYearInEmpire',
+      ($0.GetYearInEmpireRequest value) => value.writeToBuffer(),
+      $0.GetYearInEmpireResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.empire.v1.EmpireService')
@@ -504,6 +651,111 @@ abstract class EmpireServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListMyRedemptionsRequest.fromBuffer(value),
         ($0.ListMyRedemptionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.StartConciergeThreadRequest, $0.StartConciergeThreadResponse>(
+        'StartConciergeThread',
+        startConciergeThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.StartConciergeThreadRequest.fromBuffer(value),
+        ($0.StartConciergeThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyConciergeThreadsRequest, $0.ListMyConciergeThreadsResponse>(
+        'ListMyConciergeThreads',
+        listMyConciergeThreads_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyConciergeThreadsRequest.fromBuffer(value),
+        ($0.ListMyConciergeThreadsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetConciergeThreadRequest, $0.GetConciergeThreadResponse>(
+        'GetConciergeThread',
+        getConciergeThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetConciergeThreadRequest.fromBuffer(value),
+        ($0.GetConciergeThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PostConciergeMessageRequest, $0.PostConciergeMessageResponse>(
+        'PostConciergeMessage',
+        postConciergeMessage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.PostConciergeMessageRequest.fromBuffer(value),
+        ($0.PostConciergeMessageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAnthologyArticlesRequest, $0.ListAnthologyArticlesResponse>(
+        'ListAnthologyArticles',
+        listAnthologyArticles_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListAnthologyArticlesRequest.fromBuffer(value),
+        ($0.ListAnthologyArticlesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAnthologyArticleRequest, $0.GetAnthologyArticleResponse>(
+        'GetAnthologyArticle',
+        getAnthologyArticle_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetAnthologyArticleRequest.fromBuffer(value),
+        ($0.GetAnthologyArticleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMemberDirectoryRequest, $0.ListMemberDirectoryResponse>(
+        'ListMemberDirectory',
+        listMemberDirectory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMemberDirectoryRequest.fromBuffer(value),
+        ($0.ListMemberDirectoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetDirectoryVisibilityRequest, $0.SetDirectoryVisibilityResponse>(
+        'SetDirectoryVisibility',
+        setDirectoryVisibility_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SetDirectoryVisibilityRequest.fromBuffer(value),
+        ($0.SetDirectoryVisibilityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateEmpireAlmanacRequest, $0.GenerateEmpireAlmanacResponse>(
+        'GenerateEmpireAlmanac',
+        generateEmpireAlmanac_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GenerateEmpireAlmanacRequest.fromBuffer(value),
+        ($0.GenerateEmpireAlmanacResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateScoreBadgeRequest, $0.CreateScoreBadgeResponse>(
+        'CreateScoreBadge',
+        createScoreBadge_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateScoreBadgeRequest.fromBuffer(value),
+        ($0.CreateScoreBadgeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTierCardRequest, $0.GetTierCardResponse>(
+        'GetTierCard',
+        getTierCard_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetTierCardRequest.fromBuffer(value),
+        ($0.GetTierCardResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateLoungePassRequest, $0.CreateLoungePassResponse>(
+        'CreateLoungePass',
+        createLoungePass_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateLoungePassRequest.fromBuffer(value),
+        ($0.CreateLoungePassResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.OrderAlmanacPrintRequest, $0.OrderAlmanacPrintResponse>(
+        'OrderAlmanacPrint',
+        orderAlmanacPrint_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.OrderAlmanacPrintRequest.fromBuffer(value),
+        ($0.OrderAlmanacPrintResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyAlmanacOrdersRequest, $0.ListMyAlmanacOrdersResponse>(
+        'ListMyAlmanacOrders',
+        listMyAlmanacOrders_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyAlmanacOrdersRequest.fromBuffer(value),
+        ($0.ListMyAlmanacOrdersResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetYearInEmpireRequest, $0.GetYearInEmpireResponse>(
+        'GetYearInEmpire',
+        getYearInEmpire_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetYearInEmpireRequest.fromBuffer(value),
+        ($0.GetYearInEmpireResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetScoreBreakdownResponse> getScoreBreakdown_Pre($grpc.ServiceCall $call, $async.Future<$0.GetScoreBreakdownRequest> $request) async {
@@ -667,5 +919,95 @@ abstract class EmpireServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListMyRedemptionsResponse> listMyRedemptions($grpc.ServiceCall call, $0.ListMyRedemptionsRequest request);
+
+  $async.Future<$0.StartConciergeThreadResponse> startConciergeThread_Pre($grpc.ServiceCall $call, $async.Future<$0.StartConciergeThreadRequest> $request) async {
+    return startConciergeThread($call, await $request);
+  }
+
+  $async.Future<$0.StartConciergeThreadResponse> startConciergeThread($grpc.ServiceCall call, $0.StartConciergeThreadRequest request);
+
+  $async.Future<$0.ListMyConciergeThreadsResponse> listMyConciergeThreads_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyConciergeThreadsRequest> $request) async {
+    return listMyConciergeThreads($call, await $request);
+  }
+
+  $async.Future<$0.ListMyConciergeThreadsResponse> listMyConciergeThreads($grpc.ServiceCall call, $0.ListMyConciergeThreadsRequest request);
+
+  $async.Future<$0.GetConciergeThreadResponse> getConciergeThread_Pre($grpc.ServiceCall $call, $async.Future<$0.GetConciergeThreadRequest> $request) async {
+    return getConciergeThread($call, await $request);
+  }
+
+  $async.Future<$0.GetConciergeThreadResponse> getConciergeThread($grpc.ServiceCall call, $0.GetConciergeThreadRequest request);
+
+  $async.Future<$0.PostConciergeMessageResponse> postConciergeMessage_Pre($grpc.ServiceCall $call, $async.Future<$0.PostConciergeMessageRequest> $request) async {
+    return postConciergeMessage($call, await $request);
+  }
+
+  $async.Future<$0.PostConciergeMessageResponse> postConciergeMessage($grpc.ServiceCall call, $0.PostConciergeMessageRequest request);
+
+  $async.Future<$0.ListAnthologyArticlesResponse> listAnthologyArticles_Pre($grpc.ServiceCall $call, $async.Future<$0.ListAnthologyArticlesRequest> $request) async {
+    return listAnthologyArticles($call, await $request);
+  }
+
+  $async.Future<$0.ListAnthologyArticlesResponse> listAnthologyArticles($grpc.ServiceCall call, $0.ListAnthologyArticlesRequest request);
+
+  $async.Future<$0.GetAnthologyArticleResponse> getAnthologyArticle_Pre($grpc.ServiceCall $call, $async.Future<$0.GetAnthologyArticleRequest> $request) async {
+    return getAnthologyArticle($call, await $request);
+  }
+
+  $async.Future<$0.GetAnthologyArticleResponse> getAnthologyArticle($grpc.ServiceCall call, $0.GetAnthologyArticleRequest request);
+
+  $async.Future<$0.ListMemberDirectoryResponse> listMemberDirectory_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMemberDirectoryRequest> $request) async {
+    return listMemberDirectory($call, await $request);
+  }
+
+  $async.Future<$0.ListMemberDirectoryResponse> listMemberDirectory($grpc.ServiceCall call, $0.ListMemberDirectoryRequest request);
+
+  $async.Future<$0.SetDirectoryVisibilityResponse> setDirectoryVisibility_Pre($grpc.ServiceCall $call, $async.Future<$0.SetDirectoryVisibilityRequest> $request) async {
+    return setDirectoryVisibility($call, await $request);
+  }
+
+  $async.Future<$0.SetDirectoryVisibilityResponse> setDirectoryVisibility($grpc.ServiceCall call, $0.SetDirectoryVisibilityRequest request);
+
+  $async.Future<$0.GenerateEmpireAlmanacResponse> generateEmpireAlmanac_Pre($grpc.ServiceCall $call, $async.Future<$0.GenerateEmpireAlmanacRequest> $request) async {
+    return generateEmpireAlmanac($call, await $request);
+  }
+
+  $async.Future<$0.GenerateEmpireAlmanacResponse> generateEmpireAlmanac($grpc.ServiceCall call, $0.GenerateEmpireAlmanacRequest request);
+
+  $async.Future<$0.CreateScoreBadgeResponse> createScoreBadge_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateScoreBadgeRequest> $request) async {
+    return createScoreBadge($call, await $request);
+  }
+
+  $async.Future<$0.CreateScoreBadgeResponse> createScoreBadge($grpc.ServiceCall call, $0.CreateScoreBadgeRequest request);
+
+  $async.Future<$0.GetTierCardResponse> getTierCard_Pre($grpc.ServiceCall $call, $async.Future<$0.GetTierCardRequest> $request) async {
+    return getTierCard($call, await $request);
+  }
+
+  $async.Future<$0.GetTierCardResponse> getTierCard($grpc.ServiceCall call, $0.GetTierCardRequest request);
+
+  $async.Future<$0.CreateLoungePassResponse> createLoungePass_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateLoungePassRequest> $request) async {
+    return createLoungePass($call, await $request);
+  }
+
+  $async.Future<$0.CreateLoungePassResponse> createLoungePass($grpc.ServiceCall call, $0.CreateLoungePassRequest request);
+
+  $async.Future<$0.OrderAlmanacPrintResponse> orderAlmanacPrint_Pre($grpc.ServiceCall $call, $async.Future<$0.OrderAlmanacPrintRequest> $request) async {
+    return orderAlmanacPrint($call, await $request);
+  }
+
+  $async.Future<$0.OrderAlmanacPrintResponse> orderAlmanacPrint($grpc.ServiceCall call, $0.OrderAlmanacPrintRequest request);
+
+  $async.Future<$0.ListMyAlmanacOrdersResponse> listMyAlmanacOrders_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyAlmanacOrdersRequest> $request) async {
+    return listMyAlmanacOrders($call, await $request);
+  }
+
+  $async.Future<$0.ListMyAlmanacOrdersResponse> listMyAlmanacOrders($grpc.ServiceCall call, $0.ListMyAlmanacOrdersRequest request);
+
+  $async.Future<$0.GetYearInEmpireResponse> getYearInEmpire_Pre($grpc.ServiceCall $call, $async.Future<$0.GetYearInEmpireRequest> $request) async {
+    return getYearInEmpire($call, await $request);
+  }
+
+  $async.Future<$0.GetYearInEmpireResponse> getYearInEmpire($grpc.ServiceCall call, $0.GetYearInEmpireRequest request);
 
 }

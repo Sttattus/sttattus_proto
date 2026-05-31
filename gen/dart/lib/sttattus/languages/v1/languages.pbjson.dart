@@ -856,6 +856,634 @@ final $typed_data.Uint8List listMyPlacementResultsResponseDescriptor = $convert.
     'Ch5MaXN0TXlQbGFjZW1lbnRSZXN1bHRzUmVzcG9uc2USQAoHcmVzdWx0cxgBIAMoCzImLnN0dG'
     'F0dHVzLmxhbmd1YWdlcy52MS5QbGFjZW1lbnRSZXN1bHRSB3Jlc3VsdHM=');
 
+@$core.Deprecated('Use writingPromptDescriptor instead')
+const WritingPrompt$json = {
+  '1': 'WritingPrompt',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'language', '3': 2, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'cefr_target', '3': 3, '4': 1, '5': 9, '10': 'cefrTarget'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'prompt', '3': 5, '4': 1, '5': 9, '10': 'prompt'},
+    {'1': 'min_words', '3': 6, '4': 1, '5': 5, '10': 'minWords'},
+    {'1': 'max_words', '3': 7, '4': 1, '5': 5, '10': 'maxWords'},
+  ],
+};
+
+/// Descriptor for `WritingPrompt`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List writingPromptDescriptor = $convert.base64Decode(
+    'Cg1Xcml0aW5nUHJvbXB0Eg4KAmlkGAEgASgJUgJpZBIaCghsYW5ndWFnZRgCIAEoCVIIbGFuZ3'
+    'VhZ2USHwoLY2Vmcl90YXJnZXQYAyABKAlSCmNlZnJUYXJnZXQSFAoFdGl0bGUYBCABKAlSBXRp'
+    'dGxlEhYKBnByb21wdBgFIAEoCVIGcHJvbXB0EhsKCW1pbl93b3JkcxgGIAEoBVIIbWluV29yZH'
+    'MSGwoJbWF4X3dvcmRzGAcgASgFUghtYXhXb3Jkcw==');
+
+@$core.Deprecated('Use rubricScoreDescriptor instead')
+const RubricScore$json = {
+  '1': 'RubricScore',
+  '2': [
+    {'1': 'dimension', '3': 1, '4': 1, '5': 9, '10': 'dimension'},
+    {'1': 'score', '3': 2, '4': 1, '5': 5, '10': 'score'},
+    {'1': 'comment', '3': 3, '4': 1, '5': 9, '10': 'comment'},
+  ],
+};
+
+/// Descriptor for `RubricScore`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List rubricScoreDescriptor = $convert.base64Decode(
+    'CgtSdWJyaWNTY29yZRIcCglkaW1lbnNpb24YASABKAlSCWRpbWVuc2lvbhIUCgVzY29yZRgCIA'
+    'EoBVIFc2NvcmUSGAoHY29tbWVudBgDIAEoCVIHY29tbWVudA==');
+
+@$core.Deprecated('Use writingSubmissionDescriptor instead')
+const WritingSubmission$json = {
+  '1': 'WritingSubmission',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'prompt_id', '3': 2, '4': 1, '5': 9, '10': 'promptId'},
+    {'1': 'language', '3': 3, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'content', '3': 4, '4': 1, '5': 9, '10': 'content'},
+    {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'corrected_markdown', '3': 6, '4': 1, '5': 9, '10': 'correctedMarkdown'},
+    {'1': 'rubric', '3': 7, '4': 3, '5': 11, '6': '.sttattus.languages.v1.RubricScore', '10': 'rubric'},
+    {'1': 'score', '3': 8, '4': 1, '5': 5, '10': 'score'},
+    {'1': 'created_unix', '3': 9, '4': 1, '5': 3, '10': 'createdUnix'},
+    {'1': 'updated_unix', '3': 10, '4': 1, '5': 3, '10': 'updatedUnix'},
+  ],
+};
+
+/// Descriptor for `WritingSubmission`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List writingSubmissionDescriptor = $convert.base64Decode(
+    'ChFXcml0aW5nU3VibWlzc2lvbhIOCgJpZBgBIAEoCVICaWQSGwoJcHJvbXB0X2lkGAIgASgJUg'
+    'hwcm9tcHRJZBIaCghsYW5ndWFnZRgDIAEoCVIIbGFuZ3VhZ2USGAoHY29udGVudBgEIAEoCVIH'
+    'Y29udGVudBIWCgZzdGF0dXMYBSABKAlSBnN0YXR1cxItChJjb3JyZWN0ZWRfbWFya2Rvd24YBi'
+    'ABKAlSEWNvcnJlY3RlZE1hcmtkb3duEjoKBnJ1YnJpYxgHIAMoCzIiLnN0dGF0dHVzLmxhbmd1'
+    'YWdlcy52MS5SdWJyaWNTY29yZVIGcnVicmljEhQKBXNjb3JlGAggASgFUgVzY29yZRIhCgxjcm'
+    'VhdGVkX3VuaXgYCSABKANSC2NyZWF0ZWRVbml4EiEKDHVwZGF0ZWRfdW5peBgKIAEoA1ILdXBk'
+    'YXRlZFVuaXg=');
+
+@$core.Deprecated('Use listWritingPromptsRequestDescriptor instead')
+const ListWritingPromptsRequest$json = {
+  '1': 'ListWritingPromptsRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'cefr_level', '3': 2, '4': 1, '5': 9, '10': 'cefrLevel'},
+  ],
+};
+
+/// Descriptor for `ListWritingPromptsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listWritingPromptsRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0V3JpdGluZ1Byb21wdHNSZXF1ZXN0EhoKCGxhbmd1YWdlGAEgASgJUghsYW5ndWFnZR'
+    'IdCgpjZWZyX2xldmVsGAIgASgJUgljZWZyTGV2ZWw=');
+
+@$core.Deprecated('Use listWritingPromptsResponseDescriptor instead')
+const ListWritingPromptsResponse$json = {
+  '1': 'ListWritingPromptsResponse',
+  '2': [
+    {'1': 'prompts', '3': 1, '4': 3, '5': 11, '6': '.sttattus.languages.v1.WritingPrompt', '10': 'prompts'},
+  ],
+};
+
+/// Descriptor for `ListWritingPromptsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listWritingPromptsResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0V3JpdGluZ1Byb21wdHNSZXNwb25zZRI+Cgdwcm9tcHRzGAEgAygLMiQuc3R0YXR0dX'
+    'MubGFuZ3VhZ2VzLnYxLldyaXRpbmdQcm9tcHRSB3Byb21wdHM=');
+
+@$core.Deprecated('Use submitWritingRequestDescriptor instead')
+const SubmitWritingRequest$json = {
+  '1': 'SubmitWritingRequest',
+  '2': [
+    {'1': 'prompt_id', '3': 1, '4': 1, '5': 9, '10': 'promptId'},
+    {'1': 'content', '3': 2, '4': 1, '5': 9, '10': 'content'},
+  ],
+};
+
+/// Descriptor for `SubmitWritingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitWritingRequestDescriptor = $convert.base64Decode(
+    'ChRTdWJtaXRXcml0aW5nUmVxdWVzdBIbCglwcm9tcHRfaWQYASABKAlSCHByb21wdElkEhgKB2'
+    'NvbnRlbnQYAiABKAlSB2NvbnRlbnQ=');
+
+@$core.Deprecated('Use submitWritingResponseDescriptor instead')
+const SubmitWritingResponse$json = {
+  '1': 'SubmitWritingResponse',
+  '2': [
+    {'1': 'submission', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.WritingSubmission', '10': 'submission'},
+  ],
+};
+
+/// Descriptor for `SubmitWritingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitWritingResponseDescriptor = $convert.base64Decode(
+    'ChVTdWJtaXRXcml0aW5nUmVzcG9uc2USSAoKc3VibWlzc2lvbhgBIAEoCzIoLnN0dGF0dHVzLm'
+    'xhbmd1YWdlcy52MS5Xcml0aW5nU3VibWlzc2lvblIKc3VibWlzc2lvbg==');
+
+@$core.Deprecated('Use listMyWritingSubmissionsRequestDescriptor instead')
+const ListMyWritingSubmissionsRequest$json = {
+  '1': 'ListMyWritingSubmissionsRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+  ],
+};
+
+/// Descriptor for `ListMyWritingSubmissionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyWritingSubmissionsRequestDescriptor = $convert.base64Decode(
+    'Ch9MaXN0TXlXcml0aW5nU3VibWlzc2lvbnNSZXF1ZXN0EhoKCGxhbmd1YWdlGAEgASgJUghsYW'
+    '5ndWFnZQ==');
+
+@$core.Deprecated('Use listMyWritingSubmissionsResponseDescriptor instead')
+const ListMyWritingSubmissionsResponse$json = {
+  '1': 'ListMyWritingSubmissionsResponse',
+  '2': [
+    {'1': 'submissions', '3': 1, '4': 3, '5': 11, '6': '.sttattus.languages.v1.WritingSubmission', '10': 'submissions'},
+  ],
+};
+
+/// Descriptor for `ListMyWritingSubmissionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyWritingSubmissionsResponseDescriptor = $convert.base64Decode(
+    'CiBMaXN0TXlXcml0aW5nU3VibWlzc2lvbnNSZXNwb25zZRJKCgtzdWJtaXNzaW9ucxgBIAMoCz'
+    'IoLnN0dGF0dHVzLmxhbmd1YWdlcy52MS5Xcml0aW5nU3VibWlzc2lvblILc3VibWlzc2lvbnM=');
+
+@$core.Deprecated('Use getWritingSubmissionRequestDescriptor instead')
+const GetWritingSubmissionRequest$json = {
+  '1': 'GetWritingSubmissionRequest',
+  '2': [
+    {'1': 'submission_id', '3': 1, '4': 1, '5': 9, '10': 'submissionId'},
+  ],
+};
+
+/// Descriptor for `GetWritingSubmissionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getWritingSubmissionRequestDescriptor = $convert.base64Decode(
+    'ChtHZXRXcml0aW5nU3VibWlzc2lvblJlcXVlc3QSIwoNc3VibWlzc2lvbl9pZBgBIAEoCVIMc3'
+    'VibWlzc2lvbklk');
+
+@$core.Deprecated('Use getWritingSubmissionResponseDescriptor instead')
+const GetWritingSubmissionResponse$json = {
+  '1': 'GetWritingSubmissionResponse',
+  '2': [
+    {'1': 'submission', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.WritingSubmission', '10': 'submission'},
+  ],
+};
+
+/// Descriptor for `GetWritingSubmissionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getWritingSubmissionResponseDescriptor = $convert.base64Decode(
+    'ChxHZXRXcml0aW5nU3VibWlzc2lvblJlc3BvbnNlEkgKCnN1Ym1pc3Npb24YASABKAsyKC5zdH'
+    'RhdHR1cy5sYW5ndWFnZXMudjEuV3JpdGluZ1N1Ym1pc3Npb25SCnN1Ym1pc3Npb24=');
+
+@$core.Deprecated('Use readingTextDescriptor instead')
+const ReadingText$json = {
+  '1': 'ReadingText',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'language', '3': 2, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'cefr_target', '3': 3, '4': 1, '5': 9, '10': 'cefrTarget'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'summary', '3': 5, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'body', '3': 6, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'translation', '3': 7, '4': 1, '5': 9, '10': 'translation'},
+    {'1': 'source_note', '3': 8, '4': 1, '5': 9, '10': 'sourceNote'},
+    {'1': 'word_count', '3': 9, '4': 1, '5': 5, '10': 'wordCount'},
+  ],
+};
+
+/// Descriptor for `ReadingText`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List readingTextDescriptor = $convert.base64Decode(
+    'CgtSZWFkaW5nVGV4dBIOCgJpZBgBIAEoCVICaWQSGgoIbGFuZ3VhZ2UYAiABKAlSCGxhbmd1YW'
+    'dlEh8KC2NlZnJfdGFyZ2V0GAMgASgJUgpjZWZyVGFyZ2V0EhQKBXRpdGxlGAQgASgJUgV0aXRs'
+    'ZRIYCgdzdW1tYXJ5GAUgASgJUgdzdW1tYXJ5EhIKBGJvZHkYBiABKAlSBGJvZHkSIAoLdHJhbn'
+    'NsYXRpb24YByABKAlSC3RyYW5zbGF0aW9uEh8KC3NvdXJjZV9ub3RlGAggASgJUgpzb3VyY2VO'
+    'b3RlEh0KCndvcmRfY291bnQYCSABKAVSCXdvcmRDb3VudA==');
+
+@$core.Deprecated('Use listReadingTextsRequestDescriptor instead')
+const ListReadingTextsRequest$json = {
+  '1': 'ListReadingTextsRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'cefr_level', '3': 2, '4': 1, '5': 9, '10': 'cefrLevel'},
+  ],
+};
+
+/// Descriptor for `ListReadingTextsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listReadingTextsRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0UmVhZGluZ1RleHRzUmVxdWVzdBIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3VhZ2USHQ'
+    'oKY2Vmcl9sZXZlbBgCIAEoCVIJY2VmckxldmVs');
+
+@$core.Deprecated('Use listReadingTextsResponseDescriptor instead')
+const ListReadingTextsResponse$json = {
+  '1': 'ListReadingTextsResponse',
+  '2': [
+    {'1': 'texts', '3': 1, '4': 3, '5': 11, '6': '.sttattus.languages.v1.ReadingText', '10': 'texts'},
+  ],
+};
+
+/// Descriptor for `ListReadingTextsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listReadingTextsResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0UmVhZGluZ1RleHRzUmVzcG9uc2USOAoFdGV4dHMYASADKAsyIi5zdHRhdHR1cy5sYW'
+    '5ndWFnZXMudjEuUmVhZGluZ1RleHRSBXRleHRz');
+
+@$core.Deprecated('Use getReadingTextRequestDescriptor instead')
+const GetReadingTextRequest$json = {
+  '1': 'GetReadingTextRequest',
+  '2': [
+    {'1': 'text_id', '3': 1, '4': 1, '5': 9, '10': 'textId'},
+  ],
+};
+
+/// Descriptor for `GetReadingTextRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getReadingTextRequestDescriptor = $convert.base64Decode(
+    'ChVHZXRSZWFkaW5nVGV4dFJlcXVlc3QSFwoHdGV4dF9pZBgBIAEoCVIGdGV4dElk');
+
+@$core.Deprecated('Use getReadingTextResponseDescriptor instead')
+const GetReadingTextResponse$json = {
+  '1': 'GetReadingTextResponse',
+  '2': [
+    {'1': 'text', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.ReadingText', '10': 'text'},
+  ],
+};
+
+/// Descriptor for `GetReadingTextResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getReadingTextResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRSZWFkaW5nVGV4dFJlc3BvbnNlEjYKBHRleHQYASABKAsyIi5zdHRhdHR1cy5sYW5ndW'
+    'FnZXMudjEuUmVhZGluZ1RleHRSBHRleHQ=');
+
+@$core.Deprecated('Use idiomDescriptor instead')
+const Idiom$json = {
+  '1': 'Idiom',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'language', '3': 2, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'phrase', '3': 3, '4': 1, '5': 9, '10': 'phrase'},
+    {'1': 'literal', '3': 4, '4': 1, '5': 9, '10': 'literal'},
+    {'1': 'meaning', '3': 5, '4': 1, '5': 9, '10': 'meaning'},
+    {'1': 'example', '3': 6, '4': 1, '5': 9, '10': 'example'},
+    {'1': 'register', '3': 7, '4': 1, '5': 9, '10': 'register'},
+    {'1': 'note', '3': 8, '4': 1, '5': 9, '10': 'note'},
+  ],
+};
+
+/// Descriptor for `Idiom`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List idiomDescriptor = $convert.base64Decode(
+    'CgVJZGlvbRIOCgJpZBgBIAEoCVICaWQSGgoIbGFuZ3VhZ2UYAiABKAlSCGxhbmd1YWdlEhYKBn'
+    'BocmFzZRgDIAEoCVIGcGhyYXNlEhgKB2xpdGVyYWwYBCABKAlSB2xpdGVyYWwSGAoHbWVhbmlu'
+    'ZxgFIAEoCVIHbWVhbmluZxIYCgdleGFtcGxlGAYgASgJUgdleGFtcGxlEhoKCHJlZ2lzdGVyGA'
+    'cgASgJUghyZWdpc3RlchISCgRub3RlGAggASgJUgRub3Rl');
+
+@$core.Deprecated('Use listIdiomsRequestDescriptor instead')
+const ListIdiomsRequest$json = {
+  '1': 'ListIdiomsRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+  ],
+};
+
+/// Descriptor for `ListIdiomsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listIdiomsRequestDescriptor = $convert.base64Decode(
+    'ChFMaXN0SWRpb21zUmVxdWVzdBIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3VhZ2U=');
+
+@$core.Deprecated('Use listIdiomsResponseDescriptor instead')
+const ListIdiomsResponse$json = {
+  '1': 'ListIdiomsResponse',
+  '2': [
+    {'1': 'idioms', '3': 1, '4': 3, '5': 11, '6': '.sttattus.languages.v1.Idiom', '10': 'idioms'},
+  ],
+};
+
+/// Descriptor for `ListIdiomsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listIdiomsResponseDescriptor = $convert.base64Decode(
+    'ChJMaXN0SWRpb21zUmVzcG9uc2USNAoGaWRpb21zGAEgAygLMhwuc3R0YXR0dXMubGFuZ3VhZ2'
+    'VzLnYxLklkaW9tUgZpZGlvbXM=');
+
+@$core.Deprecated('Use tutorThreadDescriptor instead')
+const TutorThread$json = {
+  '1': 'TutorThread',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'language', '3': 2, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'topic', '3': 3, '4': 1, '5': 9, '10': 'topic'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'created_unix', '3': 5, '4': 1, '5': 3, '10': 'createdUnix'},
+    {'1': 'sla_due_unix', '3': 6, '4': 1, '5': 3, '10': 'slaDueUnix'},
+    {'1': 'messages', '3': 7, '4': 3, '5': 11, '6': '.sttattus.languages.v1.TutorMessage', '10': 'messages'},
+  ],
+};
+
+/// Descriptor for `TutorThread`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tutorThreadDescriptor = $convert.base64Decode(
+    'CgtUdXRvclRocmVhZBIOCgJpZBgBIAEoCVICaWQSGgoIbGFuZ3VhZ2UYAiABKAlSCGxhbmd1YW'
+    'dlEhQKBXRvcGljGAMgASgJUgV0b3BpYxIWCgZzdGF0dXMYBCABKAlSBnN0YXR1cxIhCgxjcmVh'
+    'dGVkX3VuaXgYBSABKANSC2NyZWF0ZWRVbml4EiAKDHNsYV9kdWVfdW5peBgGIAEoA1IKc2xhRH'
+    'VlVW5peBI/CghtZXNzYWdlcxgHIAMoCzIjLnN0dGF0dHVzLmxhbmd1YWdlcy52MS5UdXRvck1l'
+    'c3NhZ2VSCG1lc3NhZ2Vz');
+
+@$core.Deprecated('Use tutorMessageDescriptor instead')
+const TutorMessage$json = {
+  '1': 'TutorMessage',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'sender', '3': 2, '4': 1, '5': 9, '10': 'sender'},
+    {'1': 'body', '3': 3, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'created_unix', '3': 4, '4': 1, '5': 3, '10': 'createdUnix'},
+  ],
+};
+
+/// Descriptor for `TutorMessage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tutorMessageDescriptor = $convert.base64Decode(
+    'CgxUdXRvck1lc3NhZ2USDgoCaWQYASABKAlSAmlkEhYKBnNlbmRlchgCIAEoCVIGc2VuZGVyEh'
+    'IKBGJvZHkYAyABKAlSBGJvZHkSIQoMY3JlYXRlZF91bml4GAQgASgDUgtjcmVhdGVkVW5peA==');
+
+@$core.Deprecated('Use startTutorThreadRequestDescriptor instead')
+const StartTutorThreadRequest$json = {
+  '1': 'StartTutorThreadRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'topic', '3': 2, '4': 1, '5': 9, '10': 'topic'},
+    {'1': 'body', '3': 3, '4': 1, '5': 9, '10': 'body'},
+  ],
+};
+
+/// Descriptor for `StartTutorThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startTutorThreadRequestDescriptor = $convert.base64Decode(
+    'ChdTdGFydFR1dG9yVGhyZWFkUmVxdWVzdBIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3VhZ2USFA'
+    'oFdG9waWMYAiABKAlSBXRvcGljEhIKBGJvZHkYAyABKAlSBGJvZHk=');
+
+@$core.Deprecated('Use startTutorThreadResponseDescriptor instead')
+const StartTutorThreadResponse$json = {
+  '1': 'StartTutorThreadResponse',
+  '2': [
+    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.TutorThread', '10': 'thread'},
+  ],
+};
+
+/// Descriptor for `StartTutorThreadResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startTutorThreadResponseDescriptor = $convert.base64Decode(
+    'ChhTdGFydFR1dG9yVGhyZWFkUmVzcG9uc2USOgoGdGhyZWFkGAEgASgLMiIuc3R0YXR0dXMubG'
+    'FuZ3VhZ2VzLnYxLlR1dG9yVGhyZWFkUgZ0aHJlYWQ=');
+
+@$core.Deprecated('Use listMyTutorThreadsRequestDescriptor instead')
+const ListMyTutorThreadsRequest$json = {
+  '1': 'ListMyTutorThreadsRequest',
+};
+
+/// Descriptor for `ListMyTutorThreadsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyTutorThreadsRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0TXlUdXRvclRocmVhZHNSZXF1ZXN0');
+
+@$core.Deprecated('Use listMyTutorThreadsResponseDescriptor instead')
+const ListMyTutorThreadsResponse$json = {
+  '1': 'ListMyTutorThreadsResponse',
+  '2': [
+    {'1': 'threads', '3': 1, '4': 3, '5': 11, '6': '.sttattus.languages.v1.TutorThread', '10': 'threads'},
+  ],
+};
+
+/// Descriptor for `ListMyTutorThreadsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyTutorThreadsResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0TXlUdXRvclRocmVhZHNSZXNwb25zZRI8Cgd0aHJlYWRzGAEgAygLMiIuc3R0YXR0dX'
+    'MubGFuZ3VhZ2VzLnYxLlR1dG9yVGhyZWFkUgd0aHJlYWRz');
+
+@$core.Deprecated('Use getTutorThreadRequestDescriptor instead')
+const GetTutorThreadRequest$json = {
+  '1': 'GetTutorThreadRequest',
+  '2': [
+    {'1': 'thread_id', '3': 1, '4': 1, '5': 9, '10': 'threadId'},
+  ],
+};
+
+/// Descriptor for `GetTutorThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTutorThreadRequestDescriptor = $convert.base64Decode(
+    'ChVHZXRUdXRvclRocmVhZFJlcXVlc3QSGwoJdGhyZWFkX2lkGAEgASgJUgh0aHJlYWRJZA==');
+
+@$core.Deprecated('Use getTutorThreadResponseDescriptor instead')
+const GetTutorThreadResponse$json = {
+  '1': 'GetTutorThreadResponse',
+  '2': [
+    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.TutorThread', '10': 'thread'},
+  ],
+};
+
+/// Descriptor for `GetTutorThreadResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTutorThreadResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRUdXRvclRocmVhZFJlc3BvbnNlEjoKBnRocmVhZBgBIAEoCzIiLnN0dGF0dHVzLmxhbm'
+    'd1YWdlcy52MS5UdXRvclRocmVhZFIGdGhyZWFk');
+
+@$core.Deprecated('Use postTutorMessageRequestDescriptor instead')
+const PostTutorMessageRequest$json = {
+  '1': 'PostTutorMessageRequest',
+  '2': [
+    {'1': 'thread_id', '3': 1, '4': 1, '5': 9, '10': 'threadId'},
+    {'1': 'body', '3': 2, '4': 1, '5': 9, '10': 'body'},
+  ],
+};
+
+/// Descriptor for `PostTutorMessageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List postTutorMessageRequestDescriptor = $convert.base64Decode(
+    'ChdQb3N0VHV0b3JNZXNzYWdlUmVxdWVzdBIbCgl0aHJlYWRfaWQYASABKAlSCHRocmVhZElkEh'
+    'IKBGJvZHkYAiABKAlSBGJvZHk=');
+
+@$core.Deprecated('Use postTutorMessageResponseDescriptor instead')
+const PostTutorMessageResponse$json = {
+  '1': 'PostTutorMessageResponse',
+  '2': [
+    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.TutorThread', '10': 'thread'},
+  ],
+};
+
+/// Descriptor for `PostTutorMessageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List postTutorMessageResponseDescriptor = $convert.base64Decode(
+    'ChhQb3N0VHV0b3JNZXNzYWdlUmVzcG9uc2USOgoGdGhyZWFkGAEgASgLMiIuc3R0YXR0dXMubG'
+    'FuZ3VhZ2VzLnYxLlR1dG9yVGhyZWFkUgZ0aHJlYWQ=');
+
+@$core.Deprecated('Use anthologyArticleDescriptor instead')
+const AnthologyArticle$json = {
+  '1': 'AnthologyArticle',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slug', '3': 2, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'language', '3': 3, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'author', '3': 5, '4': 1, '5': 9, '10': 'author'},
+    {'1': 'author_title', '3': 6, '4': 1, '5': 9, '10': 'authorTitle'},
+    {'1': 'dek', '3': 7, '4': 1, '5': 9, '10': 'dek'},
+    {'1': 'body_markdown', '3': 8, '4': 1, '5': 9, '10': 'bodyMarkdown'},
+    {'1': 'sovereign_only', '3': 9, '4': 1, '5': 8, '10': 'sovereignOnly'},
+    {'1': 'published_unix', '3': 10, '4': 1, '5': 3, '10': 'publishedUnix'},
+  ],
+};
+
+/// Descriptor for `AnthologyArticle`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List anthologyArticleDescriptor = $convert.base64Decode(
+    'ChBBbnRob2xvZ3lBcnRpY2xlEg4KAmlkGAEgASgJUgJpZBISCgRzbHVnGAIgASgJUgRzbHVnEh'
+    'oKCGxhbmd1YWdlGAMgASgJUghsYW5ndWFnZRIUCgV0aXRsZRgEIAEoCVIFdGl0bGUSFgoGYXV0'
+    'aG9yGAUgASgJUgZhdXRob3ISIQoMYXV0aG9yX3RpdGxlGAYgASgJUgthdXRob3JUaXRsZRIQCg'
+    'NkZWsYByABKAlSA2RlaxIjCg1ib2R5X21hcmtkb3duGAggASgJUgxib2R5TWFya2Rvd24SJQoO'
+    'c292ZXJlaWduX29ubHkYCSABKAhSDXNvdmVyZWlnbk9ubHkSJQoOcHVibGlzaGVkX3VuaXgYCi'
+    'ABKANSDXB1Ymxpc2hlZFVuaXg=');
+
+@$core.Deprecated('Use listAnthologyArticlesRequestDescriptor instead')
+const ListAnthologyArticlesRequest$json = {
+  '1': 'ListAnthologyArticlesRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+  ],
+};
+
+/// Descriptor for `ListAnthologyArticlesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAnthologyArticlesRequestDescriptor = $convert.base64Decode(
+    'ChxMaXN0QW50aG9sb2d5QXJ0aWNsZXNSZXF1ZXN0EhoKCGxhbmd1YWdlGAEgASgJUghsYW5ndW'
+    'FnZQ==');
+
+@$core.Deprecated('Use listAnthologyArticlesResponseDescriptor instead')
+const ListAnthologyArticlesResponse$json = {
+  '1': 'ListAnthologyArticlesResponse',
+  '2': [
+    {'1': 'articles', '3': 1, '4': 3, '5': 11, '6': '.sttattus.languages.v1.AnthologyArticle', '10': 'articles'},
+  ],
+};
+
+/// Descriptor for `ListAnthologyArticlesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAnthologyArticlesResponseDescriptor = $convert.base64Decode(
+    'Ch1MaXN0QW50aG9sb2d5QXJ0aWNsZXNSZXNwb25zZRJDCghhcnRpY2xlcxgBIAMoCzInLnN0dG'
+    'F0dHVzLmxhbmd1YWdlcy52MS5BbnRob2xvZ3lBcnRpY2xlUghhcnRpY2xlcw==');
+
+@$core.Deprecated('Use getAnthologyArticleRequestDescriptor instead')
+const GetAnthologyArticleRequest$json = {
+  '1': 'GetAnthologyArticleRequest',
+  '2': [
+    {'1': 'article_id', '3': 1, '4': 1, '5': 9, '10': 'articleId'},
+  ],
+};
+
+/// Descriptor for `GetAnthologyArticleRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAnthologyArticleRequestDescriptor = $convert.base64Decode(
+    'ChpHZXRBbnRob2xvZ3lBcnRpY2xlUmVxdWVzdBIdCgphcnRpY2xlX2lkGAEgASgJUglhcnRpY2'
+    'xlSWQ=');
+
+@$core.Deprecated('Use getAnthologyArticleResponseDescriptor instead')
+const GetAnthologyArticleResponse$json = {
+  '1': 'GetAnthologyArticleResponse',
+  '2': [
+    {'1': 'article', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.AnthologyArticle', '10': 'article'},
+  ],
+};
+
+/// Descriptor for `GetAnthologyArticleResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAnthologyArticleResponseDescriptor = $convert.base64Decode(
+    'ChtHZXRBbnRob2xvZ3lBcnRpY2xlUmVzcG9uc2USQQoHYXJ0aWNsZRgBIAEoCzInLnN0dGF0dH'
+    'VzLmxhbmd1YWdlcy52MS5BbnRob2xvZ3lBcnRpY2xlUgdhcnRpY2xl');
+
+@$core.Deprecated('Use certificateDescriptor instead')
+const Certificate$json = {
+  '1': 'Certificate',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'token', '3': 2, '4': 1, '5': 9, '10': 'token'},
+    {'1': 'language', '3': 3, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'skill', '3': 4, '4': 1, '5': 9, '10': 'skill'},
+    {'1': 'cefr_level', '3': 5, '4': 1, '5': 9, '10': 'cefrLevel'},
+    {'1': 'holder_name', '3': 6, '4': 1, '5': 9, '10': 'holderName'},
+    {'1': 'issued_unix', '3': 7, '4': 1, '5': 3, '10': 'issuedUnix'},
+    {'1': 'verify_url', '3': 8, '4': 1, '5': 9, '10': 'verifyUrl'},
+  ],
+};
+
+/// Descriptor for `Certificate`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List certificateDescriptor = $convert.base64Decode(
+    'CgtDZXJ0aWZpY2F0ZRIOCgJpZBgBIAEoCVICaWQSFAoFdG9rZW4YAiABKAlSBXRva2VuEhoKCG'
+    'xhbmd1YWdlGAMgASgJUghsYW5ndWFnZRIUCgVza2lsbBgEIAEoCVIFc2tpbGwSHQoKY2Vmcl9s'
+    'ZXZlbBgFIAEoCVIJY2VmckxldmVsEh8KC2hvbGRlcl9uYW1lGAYgASgJUgpob2xkZXJOYW1lEh'
+    '8KC2lzc3VlZF91bml4GAcgASgDUgppc3N1ZWRVbml4Eh0KCnZlcmlmeV91cmwYCCABKAlSCXZl'
+    'cmlmeVVybA==');
+
+@$core.Deprecated('Use issueCertificateRequestDescriptor instead')
+const IssueCertificateRequest$json = {
+  '1': 'IssueCertificateRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'skill', '3': 2, '4': 1, '5': 9, '10': 'skill'},
+  ],
+};
+
+/// Descriptor for `IssueCertificateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List issueCertificateRequestDescriptor = $convert.base64Decode(
+    'ChdJc3N1ZUNlcnRpZmljYXRlUmVxdWVzdBIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3VhZ2USFA'
+    'oFc2tpbGwYAiABKAlSBXNraWxs');
+
+@$core.Deprecated('Use issueCertificateResponseDescriptor instead')
+const IssueCertificateResponse$json = {
+  '1': 'IssueCertificateResponse',
+  '2': [
+    {'1': 'certificate', '3': 1, '4': 1, '5': 11, '6': '.sttattus.languages.v1.Certificate', '10': 'certificate'},
+  ],
+};
+
+/// Descriptor for `IssueCertificateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List issueCertificateResponseDescriptor = $convert.base64Decode(
+    'ChhJc3N1ZUNlcnRpZmljYXRlUmVzcG9uc2USRAoLY2VydGlmaWNhdGUYASABKAsyIi5zdHRhdH'
+    'R1cy5sYW5ndWFnZXMudjEuQ2VydGlmaWNhdGVSC2NlcnRpZmljYXRl');
+
+@$core.Deprecated('Use listMyCertificatesRequestDescriptor instead')
+const ListMyCertificatesRequest$json = {
+  '1': 'ListMyCertificatesRequest',
+};
+
+/// Descriptor for `ListMyCertificatesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyCertificatesRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0TXlDZXJ0aWZpY2F0ZXNSZXF1ZXN0');
+
+@$core.Deprecated('Use listMyCertificatesResponseDescriptor instead')
+const ListMyCertificatesResponse$json = {
+  '1': 'ListMyCertificatesResponse',
+  '2': [
+    {'1': 'certificates', '3': 1, '4': 3, '5': 11, '6': '.sttattus.languages.v1.Certificate', '10': 'certificates'},
+  ],
+};
+
+/// Descriptor for `ListMyCertificatesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyCertificatesResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0TXlDZXJ0aWZpY2F0ZXNSZXNwb25zZRJGCgxjZXJ0aWZpY2F0ZXMYASADKAsyIi5zdH'
+    'RhdHR1cy5sYW5ndWFnZXMudjEuQ2VydGlmaWNhdGVSDGNlcnRpZmljYXRlcw==');
+
+@$core.Deprecated('Use generateLinguistAlmanacRequestDescriptor instead')
+const GenerateLinguistAlmanacRequest$json = {
+  '1': 'GenerateLinguistAlmanacRequest',
+};
+
+/// Descriptor for `GenerateLinguistAlmanacRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateLinguistAlmanacRequestDescriptor = $convert.base64Decode(
+    'Ch5HZW5lcmF0ZUxpbmd1aXN0QWxtYW5hY1JlcXVlc3Q=');
+
+@$core.Deprecated('Use generateLinguistAlmanacResponseDescriptor instead')
+const GenerateLinguistAlmanacResponse$json = {
+  '1': 'GenerateLinguistAlmanacResponse',
+  '2': [
+    {'1': 'url', '3': 1, '4': 1, '5': 9, '10': 'url'},
+    {'1': 'page_count', '3': 2, '4': 1, '5': 5, '10': 'pageCount'},
+  ],
+};
+
+/// Descriptor for `GenerateLinguistAlmanacResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateLinguistAlmanacResponseDescriptor = $convert.base64Decode(
+    'Ch9HZW5lcmF0ZUxpbmd1aXN0QWxtYW5hY1Jlc3BvbnNlEhAKA3VybBgBIAEoCVIDdXJsEh0KCn'
+    'BhZ2VfY291bnQYAiABKAVSCXBhZ2VDb3VudA==');
+
+@$core.Deprecated('Use createLinguistShareRequestDescriptor instead')
+const CreateLinguistShareRequest$json = {
+  '1': 'CreateLinguistShareRequest',
+};
+
+/// Descriptor for `CreateLinguistShareRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createLinguistShareRequestDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVMaW5ndWlzdFNoYXJlUmVxdWVzdA==');
+
+@$core.Deprecated('Use createLinguistShareResponseDescriptor instead')
+const CreateLinguistShareResponse$json = {
+  '1': 'CreateLinguistShareResponse',
+  '2': [
+    {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
+    {'1': 'share_url', '3': 2, '4': 1, '5': 9, '10': 'shareUrl'},
+  ],
+};
+
+/// Descriptor for `CreateLinguistShareResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createLinguistShareResponseDescriptor = $convert.base64Decode(
+    'ChtDcmVhdGVMaW5ndWlzdFNoYXJlUmVzcG9uc2USFAoFdG9rZW4YASABKAlSBXRva2VuEhsKCX'
+    'NoYXJlX3VybBgCIAEoCVIIc2hhcmVVcmw=');
+
 @$core.Deprecated('Use wordDescriptor instead')
 const Word$json = {
   '1': 'Word',

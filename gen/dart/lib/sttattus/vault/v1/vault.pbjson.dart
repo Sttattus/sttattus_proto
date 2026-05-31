@@ -204,6 +204,602 @@ final $typed_data.Uint8List adminVerifyAssetResponseDescriptor = $convert.base64
     'ChhBZG1pblZlcmlmeUFzc2V0UmVzcG9uc2USLgoFYXNzZXQYASABKAsyGC5zdHRhdHR1cy52YX'
     'VsdC52MS5Bc3NldFIFYXNzZXQ=');
 
+@$core.Deprecated('Use generateWealthAlmanacRequestDescriptor instead')
+const GenerateWealthAlmanacRequest$json = {
+  '1': 'GenerateWealthAlmanacRequest',
+};
+
+/// Descriptor for `GenerateWealthAlmanacRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateWealthAlmanacRequestDescriptor = $convert.base64Decode(
+    'ChxHZW5lcmF0ZVdlYWx0aEFsbWFuYWNSZXF1ZXN0');
+
+@$core.Deprecated('Use generateWealthAlmanacResponseDescriptor instead')
+const GenerateWealthAlmanacResponse$json = {
+  '1': 'GenerateWealthAlmanacResponse',
+  '2': [
+    {'1': 'media_url', '3': 1, '4': 1, '5': 9, '10': 'mediaUrl'},
+    {'1': 'page_count', '3': 2, '4': 1, '5': 5, '10': 'pageCount'},
+  ],
+};
+
+/// Descriptor for `GenerateWealthAlmanacResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateWealthAlmanacResponseDescriptor = $convert.base64Decode(
+    'Ch1HZW5lcmF0ZVdlYWx0aEFsbWFuYWNSZXNwb25zZRIbCgltZWRpYV91cmwYASABKAlSCG1lZG'
+    'lhVXJsEh0KCnBhZ2VfY291bnQYAiABKAVSCXBhZ2VDb3VudA==');
+
+@$core.Deprecated('Use yearMoverDescriptor instead')
+const YearMover$json = {
+  '1': 'YearMover',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'category', '3': 2, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'change_usd', '3': 3, '4': 1, '5': 1, '10': 'changeUsd'},
+  ],
+};
+
+/// Descriptor for `YearMover`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List yearMoverDescriptor = $convert.base64Decode(
+    'CglZZWFyTW92ZXISEgoEbmFtZRgBIAEoCVIEbmFtZRIaCghjYXRlZ29yeRgCIAEoCVIIY2F0ZW'
+    'dvcnkSHQoKY2hhbmdlX3VzZBgDIAEoAVIJY2hhbmdlVXNk');
+
+@$core.Deprecated('Use getYearInVaultRequestDescriptor instead')
+const GetYearInVaultRequest$json = {
+  '1': 'GetYearInVaultRequest',
+};
+
+/// Descriptor for `GetYearInVaultRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getYearInVaultRequestDescriptor = $convert.base64Decode(
+    'ChVHZXRZZWFySW5WYXVsdFJlcXVlc3Q=');
+
+@$core.Deprecated('Use getYearInVaultResponseDescriptor instead')
+const GetYearInVaultResponse$json = {
+  '1': 'GetYearInVaultResponse',
+  '2': [
+    {'1': 'starting_net_worth_usd', '3': 1, '4': 1, '5': 1, '10': 'startingNetWorthUsd'},
+    {'1': 'ending_net_worth_usd', '3': 2, '4': 1, '5': 1, '10': 'endingNetWorthUsd'},
+    {'1': 'change_usd', '3': 3, '4': 1, '5': 1, '10': 'changeUsd'},
+    {'1': 'change_pct', '3': 4, '4': 1, '5': 1, '10': 'changePct'},
+    {'1': 'starting_rank', '3': 5, '4': 1, '5': 1, '10': 'startingRank'},
+    {'1': 'ending_rank', '3': 6, '4': 1, '5': 1, '10': 'endingRank'},
+    {'1': 'top_movers', '3': 7, '4': 3, '5': 11, '6': '.sttattus.vault.v1.YearMover', '10': 'topMovers'},
+    {'1': 'allocation_shift', '3': 8, '4': 3, '5': 11, '6': '.sttattus.vault.v1.GetYearInVaultResponse.AllocationShiftEntry', '10': 'allocationShift'},
+    {'1': 'snapshot_count', '3': 9, '4': 1, '5': 5, '10': 'snapshotCount'},
+  ],
+  '3': [GetYearInVaultResponse_AllocationShiftEntry$json],
+};
+
+@$core.Deprecated('Use getYearInVaultResponseDescriptor instead')
+const GetYearInVaultResponse_AllocationShiftEntry$json = {
+  '1': 'AllocationShiftEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 1, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `GetYearInVaultResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getYearInVaultResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRZZWFySW5WYXVsdFJlc3BvbnNlEjMKFnN0YXJ0aW5nX25ldF93b3J0aF91c2QYASABKA'
+    'FSE3N0YXJ0aW5nTmV0V29ydGhVc2QSLwoUZW5kaW5nX25ldF93b3J0aF91c2QYAiABKAFSEWVu'
+    'ZGluZ05ldFdvcnRoVXNkEh0KCmNoYW5nZV91c2QYAyABKAFSCWNoYW5nZVVzZBIdCgpjaGFuZ2'
+    'VfcGN0GAQgASgBUgljaGFuZ2VQY3QSIwoNc3RhcnRpbmdfcmFuaxgFIAEoAVIMc3RhcnRpbmdS'
+    'YW5rEh8KC2VuZGluZ19yYW5rGAYgASgBUgplbmRpbmdSYW5rEjsKCnRvcF9tb3ZlcnMYByADKA'
+    'syHC5zdHRhdHR1cy52YXVsdC52MS5ZZWFyTW92ZXJSCXRvcE1vdmVycxJpChBhbGxvY2F0aW9u'
+    'X3NoaWZ0GAggAygLMj4uc3R0YXR0dXMudmF1bHQudjEuR2V0WWVhckluVmF1bHRSZXNwb25zZS'
+    '5BbGxvY2F0aW9uU2hpZnRFbnRyeVIPYWxsb2NhdGlvblNoaWZ0EiUKDnNuYXBzaG90X2NvdW50'
+    'GAkgASgFUg1zbmFwc2hvdENvdW50GkIKFEFsbG9jYXRpb25TaGlmdEVudHJ5EhAKA2tleRgBIA'
+    'EoCVIDa2V5EhQKBXZhbHVlGAIgASgBUgV2YWx1ZToCOAE=');
+
+@$core.Deprecated('Use liquiditySourceDescriptor instead')
+const LiquiditySource$json = {
+  '1': 'LiquiditySource',
+  '2': [
+    {'1': 'band', '3': 1, '4': 1, '5': 9, '10': 'band'},
+    {'1': 'label', '3': 2, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'available_usd', '3': 3, '4': 1, '5': 1, '10': 'availableUsd'},
+    {'1': 'drawn_usd', '3': 4, '4': 1, '5': 1, '10': 'drawnUsd'},
+  ],
+};
+
+/// Descriptor for `LiquiditySource`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liquiditySourceDescriptor = $convert.base64Decode(
+    'Cg9MaXF1aWRpdHlTb3VyY2USEgoEYmFuZBgBIAEoCVIEYmFuZBIUCgVsYWJlbBgCIAEoCVIFbG'
+    'FiZWwSIwoNYXZhaWxhYmxlX3VzZBgDIAEoAVIMYXZhaWxhYmxlVXNkEhsKCWRyYXduX3VzZBgE'
+    'IAEoAVIIZHJhd25Vc2Q=');
+
+@$core.Deprecated('Use getLiquidityStressTestRequestDescriptor instead')
+const GetLiquidityStressTestRequest$json = {
+  '1': 'GetLiquidityStressTestRequest',
+  '2': [
+    {'1': 'target_usd', '3': 1, '4': 1, '5': 1, '10': 'targetUsd'},
+  ],
+};
+
+/// Descriptor for `GetLiquidityStressTestRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLiquidityStressTestRequestDescriptor = $convert.base64Decode(
+    'Ch1HZXRMaXF1aWRpdHlTdHJlc3NUZXN0UmVxdWVzdBIdCgp0YXJnZXRfdXNkGAEgASgBUgl0YX'
+    'JnZXRVc2Q=');
+
+@$core.Deprecated('Use getLiquidityStressTestResponseDescriptor instead')
+const GetLiquidityStressTestResponse$json = {
+  '1': 'GetLiquidityStressTestResponse',
+  '2': [
+    {'1': 'target_usd', '3': 1, '4': 1, '5': 1, '10': 'targetUsd'},
+    {'1': 'total_raised_usd', '3': 2, '4': 1, '5': 1, '10': 'totalRaisedUsd'},
+    {'1': 'fully_covered', '3': 3, '4': 1, '5': 8, '10': 'fullyCovered'},
+    {'1': 'sources', '3': 4, '4': 3, '5': 11, '6': '.sttattus.vault.v1.LiquiditySource', '10': 'sources'},
+  ],
+};
+
+/// Descriptor for `GetLiquidityStressTestResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLiquidityStressTestResponseDescriptor = $convert.base64Decode(
+    'Ch5HZXRMaXF1aWRpdHlTdHJlc3NUZXN0UmVzcG9uc2USHQoKdGFyZ2V0X3VzZBgBIAEoAVIJdG'
+    'FyZ2V0VXNkEigKEHRvdGFsX3JhaXNlZF91c2QYAiABKAFSDnRvdGFsUmFpc2VkVXNkEiMKDWZ1'
+    'bGx5X2NvdmVyZWQYAyABKAhSDGZ1bGx5Q292ZXJlZBI8Cgdzb3VyY2VzGAQgAygLMiIuc3R0YX'
+    'R0dXMudmF1bHQudjEuTGlxdWlkaXR5U291cmNlUgdzb3VyY2Vz');
+
+@$core.Deprecated('Use investmentCircleDescriptor instead')
+const InvestmentCircle$json = {
+  '1': 'InvestmentCircle',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slug', '3': 2, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'sector', '3': 4, '4': 1, '5': 9, '10': 'sector'},
+    {'1': 'stage', '3': 5, '4': 1, '5': 9, '10': 'stage'},
+    {'1': 'thesis', '3': 6, '4': 1, '5': 9, '10': 'thesis'},
+    {'1': 'partner', '3': 7, '4': 1, '5': 9, '10': 'partner'},
+    {'1': 'min_ticket_usd', '3': 8, '4': 1, '5': 1, '10': 'minTicketUsd'},
+    {'1': 'required_sttattus_score', '3': 9, '4': 1, '5': 1, '10': 'requiredSttattusScore'},
+    {'1': 'required_tier', '3': 10, '4': 1, '5': 9, '10': 'requiredTier'},
+    {'1': 'unlocked', '3': 11, '4': 1, '5': 8, '10': 'unlocked'},
+    {'1': 'locked_reason', '3': 12, '4': 1, '5': 9, '10': 'lockedReason'},
+    {'1': 'deal_room_markdown', '3': 13, '4': 1, '5': 9, '10': 'dealRoomMarkdown'},
+    {'1': 'hero_image_url', '3': 14, '4': 1, '5': 9, '10': 'heroImageUrl'},
+  ],
+};
+
+/// Descriptor for `InvestmentCircle`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List investmentCircleDescriptor = $convert.base64Decode(
+    'ChBJbnZlc3RtZW50Q2lyY2xlEg4KAmlkGAEgASgJUgJpZBISCgRzbHVnGAIgASgJUgRzbHVnEh'
+    'IKBG5hbWUYAyABKAlSBG5hbWUSFgoGc2VjdG9yGAQgASgJUgZzZWN0b3ISFAoFc3RhZ2UYBSAB'
+    'KAlSBXN0YWdlEhYKBnRoZXNpcxgGIAEoCVIGdGhlc2lzEhgKB3BhcnRuZXIYByABKAlSB3Bhcn'
+    'RuZXISJAoObWluX3RpY2tldF91c2QYCCABKAFSDG1pblRpY2tldFVzZBI2ChdyZXF1aXJlZF9z'
+    'dHRhdHR1c19zY29yZRgJIAEoAVIVcmVxdWlyZWRTdHRhdHR1c1Njb3JlEiMKDXJlcXVpcmVkX3'
+    'RpZXIYCiABKAlSDHJlcXVpcmVkVGllchIaCgh1bmxvY2tlZBgLIAEoCFIIdW5sb2NrZWQSIwoN'
+    'bG9ja2VkX3JlYXNvbhgMIAEoCVIMbG9ja2VkUmVhc29uEiwKEmRlYWxfcm9vbV9tYXJrZG93bh'
+    'gNIAEoCVIQZGVhbFJvb21NYXJrZG93bhIkCg5oZXJvX2ltYWdlX3VybBgOIAEoCVIMaGVyb0lt'
+    'YWdlVXJs');
+
+@$core.Deprecated('Use listInvestmentCirclesRequestDescriptor instead')
+const ListInvestmentCirclesRequest$json = {
+  '1': 'ListInvestmentCirclesRequest',
+};
+
+/// Descriptor for `ListInvestmentCirclesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listInvestmentCirclesRequestDescriptor = $convert.base64Decode(
+    'ChxMaXN0SW52ZXN0bWVudENpcmNsZXNSZXF1ZXN0');
+
+@$core.Deprecated('Use listInvestmentCirclesResponseDescriptor instead')
+const ListInvestmentCirclesResponse$json = {
+  '1': 'ListInvestmentCirclesResponse',
+  '2': [
+    {'1': 'circles', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.InvestmentCircle', '10': 'circles'},
+    {'1': 'current_sttattus_score', '3': 2, '4': 1, '5': 1, '10': 'currentSttattusScore'},
+    {'1': 'current_tier', '3': 3, '4': 1, '5': 9, '10': 'currentTier'},
+  ],
+};
+
+/// Descriptor for `ListInvestmentCirclesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listInvestmentCirclesResponseDescriptor = $convert.base64Decode(
+    'Ch1MaXN0SW52ZXN0bWVudENpcmNsZXNSZXNwb25zZRI9CgdjaXJjbGVzGAEgAygLMiMuc3R0YX'
+    'R0dXMudmF1bHQudjEuSW52ZXN0bWVudENpcmNsZVIHY2lyY2xlcxI0ChZjdXJyZW50X3N0dGF0'
+    'dHVzX3Njb3JlGAIgASgBUhRjdXJyZW50U3R0YXR0dXNTY29yZRIhCgxjdXJyZW50X3RpZXIYAy'
+    'ABKAlSC2N1cnJlbnRUaWVy');
+
+@$core.Deprecated('Use getInvestmentCircleRequestDescriptor instead')
+const GetInvestmentCircleRequest$json = {
+  '1': 'GetInvestmentCircleRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetInvestmentCircleRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getInvestmentCircleRequestDescriptor = $convert.base64Decode(
+    'ChpHZXRJbnZlc3RtZW50Q2lyY2xlUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use getInvestmentCircleResponseDescriptor instead')
+const GetInvestmentCircleResponse$json = {
+  '1': 'GetInvestmentCircleResponse',
+  '2': [
+    {'1': 'circle', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.InvestmentCircle', '10': 'circle'},
+  ],
+};
+
+/// Descriptor for `GetInvestmentCircleResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getInvestmentCircleResponseDescriptor = $convert.base64Decode(
+    'ChtHZXRJbnZlc3RtZW50Q2lyY2xlUmVzcG9uc2USOwoGY2lyY2xlGAEgASgLMiMuc3R0YXR0dX'
+    'MudmF1bHQudjEuSW52ZXN0bWVudENpcmNsZVIGY2lyY2xl');
+
+@$core.Deprecated('Use expressCircleInterestRequestDescriptor instead')
+const ExpressCircleInterestRequest$json = {
+  '1': 'ExpressCircleInterestRequest',
+  '2': [
+    {'1': 'circle_id', '3': 1, '4': 1, '5': 9, '10': 'circleId'},
+    {'1': 'note', '3': 2, '4': 1, '5': 9, '10': 'note'},
+  ],
+};
+
+/// Descriptor for `ExpressCircleInterestRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List expressCircleInterestRequestDescriptor = $convert.base64Decode(
+    'ChxFeHByZXNzQ2lyY2xlSW50ZXJlc3RSZXF1ZXN0EhsKCWNpcmNsZV9pZBgBIAEoCVIIY2lyY2'
+    'xlSWQSEgoEbm90ZRgCIAEoCVIEbm90ZQ==');
+
+@$core.Deprecated('Use expressCircleInterestResponseDescriptor instead')
+const ExpressCircleInterestResponse$json = {
+  '1': 'ExpressCircleInterestResponse',
+  '2': [
+    {'1': 'accepted', '3': 1, '4': 1, '5': 8, '10': 'accepted'},
+    {'1': 'handoff_url', '3': 2, '4': 1, '5': 9, '10': 'handoffUrl'},
+  ],
+};
+
+/// Descriptor for `ExpressCircleInterestResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List expressCircleInterestResponseDescriptor = $convert.base64Decode(
+    'Ch1FeHByZXNzQ2lyY2xlSW50ZXJlc3RSZXNwb25zZRIaCghhY2NlcHRlZBgBIAEoCFIIYWNjZX'
+    'B0ZWQSHwoLaGFuZG9mZl91cmwYAiABKAlSCmhhbmRvZmZVcmw=');
+
+@$core.Deprecated('Use advisorMessageDescriptor instead')
+const AdvisorMessage$json = {
+  '1': 'AdvisorMessage',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'sender', '3': 2, '4': 1, '5': 9, '10': 'sender'},
+    {'1': 'body', '3': 3, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'created_at', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `AdvisorMessage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List advisorMessageDescriptor = $convert.base64Decode(
+    'Cg5BZHZpc29yTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSFgoGc2VuZGVyGAIgASgJUgZzZW5kZX'
+    'ISEgoEYm9keRgDIAEoCVIEYm9keRI5CgpjcmVhdGVkX2F0GAQgASgLMhouZ29vZ2xlLnByb3Rv'
+    'YnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0');
+
+@$core.Deprecated('Use advisorThreadDescriptor instead')
+const AdvisorThread$json = {
+  '1': 'AdvisorThread',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'subject', '3': 2, '4': 1, '5': 9, '10': 'subject'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'created_at', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    {'1': 'sla_due_at', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'slaDueAt'},
+    {'1': 'messages', '3': 6, '4': 3, '5': 11, '6': '.sttattus.vault.v1.AdvisorMessage', '10': 'messages'},
+  ],
+};
+
+/// Descriptor for `AdvisorThread`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List advisorThreadDescriptor = $convert.base64Decode(
+    'Cg1BZHZpc29yVGhyZWFkEg4KAmlkGAEgASgJUgJpZBIYCgdzdWJqZWN0GAIgASgJUgdzdWJqZW'
+    'N0EhYKBnN0YXR1cxgDIAEoCVIGc3RhdHVzEjkKCmNyZWF0ZWRfYXQYBCABKAsyGi5nb29nbGUu'
+    'cHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOAoKc2xhX2R1ZV9hdBgFIAEoCzIaLmdvb2'
+    'dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCHNsYUR1ZUF0Ej0KCG1lc3NhZ2VzGAYgAygLMiEuc3R0'
+    'YXR0dXMudmF1bHQudjEuQWR2aXNvck1lc3NhZ2VSCG1lc3NhZ2Vz');
+
+@$core.Deprecated('Use startAdvisorThreadRequestDescriptor instead')
+const StartAdvisorThreadRequest$json = {
+  '1': 'StartAdvisorThreadRequest',
+  '2': [
+    {'1': 'subject', '3': 1, '4': 1, '5': 9, '10': 'subject'},
+    {'1': 'opening_message', '3': 2, '4': 1, '5': 9, '10': 'openingMessage'},
+  ],
+};
+
+/// Descriptor for `StartAdvisorThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startAdvisorThreadRequestDescriptor = $convert.base64Decode(
+    'ChlTdGFydEFkdmlzb3JUaHJlYWRSZXF1ZXN0EhgKB3N1YmplY3QYASABKAlSB3N1YmplY3QSJw'
+    'oPb3BlbmluZ19tZXNzYWdlGAIgASgJUg5vcGVuaW5nTWVzc2FnZQ==');
+
+@$core.Deprecated('Use startAdvisorThreadResponseDescriptor instead')
+const StartAdvisorThreadResponse$json = {
+  '1': 'StartAdvisorThreadResponse',
+  '2': [
+    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.AdvisorThread', '10': 'thread'},
+  ],
+};
+
+/// Descriptor for `StartAdvisorThreadResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startAdvisorThreadResponseDescriptor = $convert.base64Decode(
+    'ChpTdGFydEFkdmlzb3JUaHJlYWRSZXNwb25zZRI4CgZ0aHJlYWQYASABKAsyIC5zdHRhdHR1cy'
+    '52YXVsdC52MS5BZHZpc29yVGhyZWFkUgZ0aHJlYWQ=');
+
+@$core.Deprecated('Use listAdvisorThreadsRequestDescriptor instead')
+const ListAdvisorThreadsRequest$json = {
+  '1': 'ListAdvisorThreadsRequest',
+};
+
+/// Descriptor for `ListAdvisorThreadsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAdvisorThreadsRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0QWR2aXNvclRocmVhZHNSZXF1ZXN0');
+
+@$core.Deprecated('Use listAdvisorThreadsResponseDescriptor instead')
+const ListAdvisorThreadsResponse$json = {
+  '1': 'ListAdvisorThreadsResponse',
+  '2': [
+    {'1': 'threads', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.AdvisorThread', '10': 'threads'},
+  ],
+};
+
+/// Descriptor for `ListAdvisorThreadsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAdvisorThreadsResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0QWR2aXNvclRocmVhZHNSZXNwb25zZRI6Cgd0aHJlYWRzGAEgAygLMiAuc3R0YXR0dX'
+    'MudmF1bHQudjEuQWR2aXNvclRocmVhZFIHdGhyZWFkcw==');
+
+@$core.Deprecated('Use getAdvisorThreadRequestDescriptor instead')
+const GetAdvisorThreadRequest$json = {
+  '1': 'GetAdvisorThreadRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetAdvisorThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAdvisorThreadRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRBZHZpc29yVGhyZWFkUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use getAdvisorThreadResponseDescriptor instead')
+const GetAdvisorThreadResponse$json = {
+  '1': 'GetAdvisorThreadResponse',
+  '2': [
+    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.AdvisorThread', '10': 'thread'},
+  ],
+};
+
+/// Descriptor for `GetAdvisorThreadResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAdvisorThreadResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRBZHZpc29yVGhyZWFkUmVzcG9uc2USOAoGdGhyZWFkGAEgASgLMiAuc3R0YXR0dXMudm'
+    'F1bHQudjEuQWR2aXNvclRocmVhZFIGdGhyZWFk');
+
+@$core.Deprecated('Use postAdvisorMessageRequestDescriptor instead')
+const PostAdvisorMessageRequest$json = {
+  '1': 'PostAdvisorMessageRequest',
+  '2': [
+    {'1': 'thread_id', '3': 1, '4': 1, '5': 9, '10': 'threadId'},
+    {'1': 'body', '3': 2, '4': 1, '5': 9, '10': 'body'},
+  ],
+};
+
+/// Descriptor for `PostAdvisorMessageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List postAdvisorMessageRequestDescriptor = $convert.base64Decode(
+    'ChlQb3N0QWR2aXNvck1lc3NhZ2VSZXF1ZXN0EhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSW'
+    'QSEgoEYm9keRgCIAEoCVIEYm9keQ==');
+
+@$core.Deprecated('Use postAdvisorMessageResponseDescriptor instead')
+const PostAdvisorMessageResponse$json = {
+  '1': 'PostAdvisorMessageResponse',
+  '2': [
+    {'1': 'message', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.AdvisorMessage', '10': 'message'},
+  ],
+};
+
+/// Descriptor for `PostAdvisorMessageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List postAdvisorMessageResponseDescriptor = $convert.base64Decode(
+    'ChpQb3N0QWR2aXNvck1lc3NhZ2VSZXNwb25zZRI7CgdtZXNzYWdlGAEgASgLMiEuc3R0YXR0dX'
+    'MudmF1bHQudjEuQWR2aXNvck1lc3NhZ2VSB21lc3NhZ2U=');
+
+@$core.Deprecated('Use wealthArticleDescriptor instead')
+const WealthArticle$json = {
+  '1': 'WealthArticle',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slug', '3': 2, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'dek', '3': 4, '4': 1, '5': 9, '10': 'dek'},
+    {'1': 'author_name', '3': 5, '4': 1, '5': 9, '10': 'authorName'},
+    {'1': 'author_title', '3': 6, '4': 1, '5': 9, '10': 'authorTitle'},
+    {'1': 'author_avatar_url', '3': 7, '4': 1, '5': 9, '10': 'authorAvatarUrl'},
+    {'1': 'hero_image_url', '3': 8, '4': 1, '5': 9, '10': 'heroImageUrl'},
+    {'1': 'body_markdown', '3': 9, '4': 1, '5': 9, '10': 'bodyMarkdown'},
+    {'1': 'sovereign_only', '3': 10, '4': 1, '5': 8, '10': 'sovereignOnly'},
+    {'1': 'published_at', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'publishedAt'},
+  ],
+};
+
+/// Descriptor for `WealthArticle`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List wealthArticleDescriptor = $convert.base64Decode(
+    'Cg1XZWFsdGhBcnRpY2xlEg4KAmlkGAEgASgJUgJpZBISCgRzbHVnGAIgASgJUgRzbHVnEhQKBX'
+    'RpdGxlGAMgASgJUgV0aXRsZRIQCgNkZWsYBCABKAlSA2RlaxIfCgthdXRob3JfbmFtZRgFIAEo'
+    'CVIKYXV0aG9yTmFtZRIhCgxhdXRob3JfdGl0bGUYBiABKAlSC2F1dGhvclRpdGxlEioKEWF1dG'
+    'hvcl9hdmF0YXJfdXJsGAcgASgJUg9hdXRob3JBdmF0YXJVcmwSJAoOaGVyb19pbWFnZV91cmwY'
+    'CCABKAlSDGhlcm9JbWFnZVVybBIjCg1ib2R5X21hcmtkb3duGAkgASgJUgxib2R5TWFya2Rvd2'
+    '4SJQoOc292ZXJlaWduX29ubHkYCiABKAhSDXNvdmVyZWlnbk9ubHkSPQoMcHVibGlzaGVkX2F0'
+    'GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILcHVibGlzaGVkQXQ=');
+
+@$core.Deprecated('Use listWealthAnthologyRequestDescriptor instead')
+const ListWealthAnthologyRequest$json = {
+  '1': 'ListWealthAnthologyRequest',
+};
+
+/// Descriptor for `ListWealthAnthologyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listWealthAnthologyRequestDescriptor = $convert.base64Decode(
+    'ChpMaXN0V2VhbHRoQW50aG9sb2d5UmVxdWVzdA==');
+
+@$core.Deprecated('Use listWealthAnthologyResponseDescriptor instead')
+const ListWealthAnthologyResponse$json = {
+  '1': 'ListWealthAnthologyResponse',
+  '2': [
+    {'1': 'articles', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.WealthArticle', '10': 'articles'},
+  ],
+};
+
+/// Descriptor for `ListWealthAnthologyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listWealthAnthologyResponseDescriptor = $convert.base64Decode(
+    'ChtMaXN0V2VhbHRoQW50aG9sb2d5UmVzcG9uc2USPAoIYXJ0aWNsZXMYASADKAsyIC5zdHRhdH'
+    'R1cy52YXVsdC52MS5XZWFsdGhBcnRpY2xlUghhcnRpY2xlcw==');
+
+@$core.Deprecated('Use getWealthArticleRequestDescriptor instead')
+const GetWealthArticleRequest$json = {
+  '1': 'GetWealthArticleRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetWealthArticleRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getWealthArticleRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRXZWFsdGhBcnRpY2xlUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use getWealthArticleResponseDescriptor instead')
+const GetWealthArticleResponse$json = {
+  '1': 'GetWealthArticleResponse',
+  '2': [
+    {'1': 'article', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.WealthArticle', '10': 'article'},
+  ],
+};
+
+/// Descriptor for `GetWealthArticleResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getWealthArticleResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRXZWFsdGhBcnRpY2xlUmVzcG9uc2USOgoHYXJ0aWNsZRgBIAEoCzIgLnN0dGF0dHVzLn'
+    'ZhdWx0LnYxLldlYWx0aEFydGljbGVSB2FydGljbGU=');
+
+@$core.Deprecated('Use partnerBankDescriptor instead')
+const PartnerBank$json = {
+  '1': 'PartnerBank',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'region', '3': 3, '4': 1, '5': 9, '10': 'region'},
+    {'1': 'specialty', '3': 4, '4': 1, '5': 9, '10': 'specialty'},
+    {'1': 'min_relationship_usd', '3': 5, '4': 1, '5': 1, '10': 'minRelationshipUsd'},
+    {'1': 'sovereign_only', '3': 6, '4': 1, '5': 8, '10': 'sovereignOnly'},
+    {'1': 'intro_note', '3': 7, '4': 1, '5': 9, '10': 'introNote'},
+    {'1': 'logo_url', '3': 8, '4': 1, '5': 9, '10': 'logoUrl'},
+  ],
+};
+
+/// Descriptor for `PartnerBank`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List partnerBankDescriptor = $convert.base64Decode(
+    'CgtQYXJ0bmVyQmFuaxIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIWCgZyZW'
+    'dpb24YAyABKAlSBnJlZ2lvbhIcCglzcGVjaWFsdHkYBCABKAlSCXNwZWNpYWx0eRIwChRtaW5f'
+    'cmVsYXRpb25zaGlwX3VzZBgFIAEoAVISbWluUmVsYXRpb25zaGlwVXNkEiUKDnNvdmVyZWlnbl'
+    '9vbmx5GAYgASgIUg1zb3ZlcmVpZ25Pbmx5Eh0KCmludHJvX25vdGUYByABKAlSCWludHJvTm90'
+    'ZRIZCghsb2dvX3VybBgIIAEoCVIHbG9nb1VybA==');
+
+@$core.Deprecated('Use listPartnerBanksRequestDescriptor instead')
+const ListPartnerBanksRequest$json = {
+  '1': 'ListPartnerBanksRequest',
+  '2': [
+    {'1': 'region', '3': 1, '4': 1, '5': 9, '10': 'region'},
+  ],
+};
+
+/// Descriptor for `ListPartnerBanksRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPartnerBanksRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0UGFydG5lckJhbmtzUmVxdWVzdBIWCgZyZWdpb24YASABKAlSBnJlZ2lvbg==');
+
+@$core.Deprecated('Use listPartnerBanksResponseDescriptor instead')
+const ListPartnerBanksResponse$json = {
+  '1': 'ListPartnerBanksResponse',
+  '2': [
+    {'1': 'banks', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.PartnerBank', '10': 'banks'},
+  ],
+};
+
+/// Descriptor for `ListPartnerBanksResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPartnerBanksResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0UGFydG5lckJhbmtzUmVzcG9uc2USNAoFYmFua3MYASADKAsyHi5zdHRhdHR1cy52YX'
+    'VsdC52MS5QYXJ0bmVyQmFua1IFYmFua3M=');
+
+@$core.Deprecated('Use vaultShareDescriptor instead')
+const VaultShare$json = {
+  '1': 'VaultShare',
+  '2': [
+    {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
+    {'1': 'created_at', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    {'1': 'expires_at', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expiresAt'},
+    {'1': 'revoked', '3': 4, '4': 1, '5': 8, '10': 'revoked'},
+    {'1': 'url', '3': 5, '4': 1, '5': 9, '10': 'url'},
+  ],
+};
+
+/// Descriptor for `VaultShare`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List vaultShareDescriptor = $convert.base64Decode(
+    'CgpWYXVsdFNoYXJlEhQKBXRva2VuGAEgASgJUgV0b2tlbhI5CgpjcmVhdGVkX2F0GAIgASgLMh'
+    'ouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCmV4cGlyZXNfYXQYAyAB'
+    'KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglleHBpcmVzQXQSGAoHcmV2b2tlZBgEIA'
+    'EoCFIHcmV2b2tlZBIQCgN1cmwYBSABKAlSA3VybA==');
+
+@$core.Deprecated('Use createVaultShareRequestDescriptor instead')
+const CreateVaultShareRequest$json = {
+  '1': 'CreateVaultShareRequest',
+  '2': [
+    {'1': 'ttl_days', '3': 1, '4': 1, '5': 5, '10': 'ttlDays'},
+  ],
+};
+
+/// Descriptor for `CreateVaultShareRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createVaultShareRequestDescriptor = $convert.base64Decode(
+    'ChdDcmVhdGVWYXVsdFNoYXJlUmVxdWVzdBIZCgh0dGxfZGF5cxgBIAEoBVIHdHRsRGF5cw==');
+
+@$core.Deprecated('Use createVaultShareResponseDescriptor instead')
+const CreateVaultShareResponse$json = {
+  '1': 'CreateVaultShareResponse',
+  '2': [
+    {'1': 'share', '3': 1, '4': 1, '5': 11, '6': '.sttattus.vault.v1.VaultShare', '10': 'share'},
+  ],
+};
+
+/// Descriptor for `CreateVaultShareResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createVaultShareResponseDescriptor = $convert.base64Decode(
+    'ChhDcmVhdGVWYXVsdFNoYXJlUmVzcG9uc2USMwoFc2hhcmUYASABKAsyHS5zdHRhdHR1cy52YX'
+    'VsdC52MS5WYXVsdFNoYXJlUgVzaGFyZQ==');
+
+@$core.Deprecated('Use listMyVaultSharesRequestDescriptor instead')
+const ListMyVaultSharesRequest$json = {
+  '1': 'ListMyVaultSharesRequest',
+};
+
+/// Descriptor for `ListMyVaultSharesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyVaultSharesRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0TXlWYXVsdFNoYXJlc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listMyVaultSharesResponseDescriptor instead')
+const ListMyVaultSharesResponse$json = {
+  '1': 'ListMyVaultSharesResponse',
+  '2': [
+    {'1': 'shares', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.VaultShare', '10': 'shares'},
+  ],
+};
+
+/// Descriptor for `ListMyVaultSharesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyVaultSharesResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0TXlWYXVsdFNoYXJlc1Jlc3BvbnNlEjUKBnNoYXJlcxgBIAMoCzIdLnN0dGF0dHVzLn'
+    'ZhdWx0LnYxLlZhdWx0U2hhcmVSBnNoYXJlcw==');
+
+@$core.Deprecated('Use revokeVaultShareRequestDescriptor instead')
+const RevokeVaultShareRequest$json = {
+  '1': 'RevokeVaultShareRequest',
+  '2': [
+    {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
+  ],
+};
+
+/// Descriptor for `RevokeVaultShareRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeVaultShareRequestDescriptor = $convert.base64Decode(
+    'ChdSZXZva2VWYXVsdFNoYXJlUmVxdWVzdBIUCgV0b2tlbhgBIAEoCVIFdG9rZW4=');
+
+@$core.Deprecated('Use revokeVaultShareResponseDescriptor instead')
+const RevokeVaultShareResponse$json = {
+  '1': 'RevokeVaultShareResponse',
+};
+
+/// Descriptor for `RevokeVaultShareResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeVaultShareResponseDescriptor = $convert.base64Decode(
+    'ChhSZXZva2VWYXVsdFNoYXJlUmVzcG9uc2U=');
+
 @$core.Deprecated('Use syncWealthRequestDescriptor instead')
 const SyncWealthRequest$json = {
   '1': 'SyncWealthRequest',

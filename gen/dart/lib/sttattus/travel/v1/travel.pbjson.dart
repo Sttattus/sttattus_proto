@@ -676,6 +676,390 @@ const SetMilestoneVisibilityResponse$json = {
 final $typed_data.Uint8List setMilestoneVisibilityResponseDescriptor = $convert.base64Decode(
     'Ch5TZXRNaWxlc3RvbmVWaXNpYmlsaXR5UmVzcG9uc2U=');
 
+@$core.Deprecated('Use anthologyArticleDescriptor instead')
+const AnthologyArticle$json = {
+  '1': 'AnthologyArticle',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slug', '3': 2, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'dek', '3': 4, '4': 1, '5': 9, '10': 'dek'},
+    {'1': 'author', '3': 5, '4': 1, '5': 9, '10': 'author'},
+    {'1': 'author_title', '3': 6, '4': 1, '5': 9, '10': 'authorTitle'},
+    {'1': 'city', '3': 7, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'country_code', '3': 8, '4': 1, '5': 9, '10': 'countryCode'},
+    {'1': 'hero_url', '3': 9, '4': 1, '5': 9, '10': 'heroUrl'},
+    {'1': 'body', '3': 10, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'sovereign_only', '3': 11, '4': 1, '5': 8, '10': 'sovereignOnly'},
+    {'1': 'published_at', '3': 12, '4': 1, '5': 3, '10': 'publishedAt'},
+    {'1': 'read_minutes', '3': 13, '4': 1, '5': 5, '10': 'readMinutes'},
+  ],
+};
+
+/// Descriptor for `AnthologyArticle`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List anthologyArticleDescriptor = $convert.base64Decode(
+    'ChBBbnRob2xvZ3lBcnRpY2xlEg4KAmlkGAEgASgJUgJpZBISCgRzbHVnGAIgASgJUgRzbHVnEh'
+    'QKBXRpdGxlGAMgASgJUgV0aXRsZRIQCgNkZWsYBCABKAlSA2RlaxIWCgZhdXRob3IYBSABKAlS'
+    'BmF1dGhvchIhCgxhdXRob3JfdGl0bGUYBiABKAlSC2F1dGhvclRpdGxlEhIKBGNpdHkYByABKA'
+    'lSBGNpdHkSIQoMY291bnRyeV9jb2RlGAggASgJUgtjb3VudHJ5Q29kZRIZCghoZXJvX3VybBgJ'
+    'IAEoCVIHaGVyb1VybBISCgRib2R5GAogASgJUgRib2R5EiUKDnNvdmVyZWlnbl9vbmx5GAsgAS'
+    'gIUg1zb3ZlcmVpZ25Pbmx5EiEKDHB1Ymxpc2hlZF9hdBgMIAEoA1ILcHVibGlzaGVkQXQSIQoM'
+    'cmVhZF9taW51dGVzGA0gASgFUgtyZWFkTWludXRlcw==');
+
+@$core.Deprecated('Use listAnthologyArticlesRequestDescriptor instead')
+const ListAnthologyArticlesRequest$json = {
+  '1': 'ListAnthologyArticlesRequest',
+  '2': [
+    {'1': 'city', '3': 1, '4': 1, '5': 9, '10': 'city'},
+  ],
+};
+
+/// Descriptor for `ListAnthologyArticlesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAnthologyArticlesRequestDescriptor = $convert.base64Decode(
+    'ChxMaXN0QW50aG9sb2d5QXJ0aWNsZXNSZXF1ZXN0EhIKBGNpdHkYASABKAlSBGNpdHk=');
+
+@$core.Deprecated('Use listAnthologyArticlesResponseDescriptor instead')
+const ListAnthologyArticlesResponse$json = {
+  '1': 'ListAnthologyArticlesResponse',
+  '2': [
+    {'1': 'articles', '3': 1, '4': 3, '5': 11, '6': '.sttattus.travel.v1.AnthologyArticle', '10': 'articles'},
+  ],
+};
+
+/// Descriptor for `ListAnthologyArticlesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAnthologyArticlesResponseDescriptor = $convert.base64Decode(
+    'Ch1MaXN0QW50aG9sb2d5QXJ0aWNsZXNSZXNwb25zZRJACghhcnRpY2xlcxgBIAMoCzIkLnN0dG'
+    'F0dHVzLnRyYXZlbC52MS5BbnRob2xvZ3lBcnRpY2xlUghhcnRpY2xlcw==');
+
+@$core.Deprecated('Use getAnthologyArticleRequestDescriptor instead')
+const GetAnthologyArticleRequest$json = {
+  '1': 'GetAnthologyArticleRequest',
+  '2': [
+    {'1': 'slug', '3': 1, '4': 1, '5': 9, '10': 'slug'},
+  ],
+};
+
+/// Descriptor for `GetAnthologyArticleRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAnthologyArticleRequestDescriptor = $convert.base64Decode(
+    'ChpHZXRBbnRob2xvZ3lBcnRpY2xlUmVxdWVzdBISCgRzbHVnGAEgASgJUgRzbHVn');
+
+@$core.Deprecated('Use getAnthologyArticleResponseDescriptor instead')
+const GetAnthologyArticleResponse$json = {
+  '1': 'GetAnthologyArticleResponse',
+  '2': [
+    {'1': 'article', '3': 1, '4': 1, '5': 11, '6': '.sttattus.travel.v1.AnthologyArticle', '10': 'article'},
+  ],
+};
+
+/// Descriptor for `GetAnthologyArticleResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAnthologyArticleResponseDescriptor = $convert.base64Decode(
+    'ChtHZXRBbnRob2xvZ3lBcnRpY2xlUmVzcG9uc2USPgoHYXJ0aWNsZRgBIAEoCzIkLnN0dGF0dH'
+    'VzLnRyYXZlbC52MS5BbnRob2xvZ3lBcnRpY2xlUgdhcnRpY2xl');
+
+@$core.Deprecated('Use passportShareDescriptor instead')
+const PassportShare$json = {
+  '1': 'PassportShare',
+  '2': [
+    {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
+    {'1': 'url', '3': 2, '4': 1, '5': 9, '10': 'url'},
+    {'1': 'created_at', '3': 3, '4': 1, '5': 3, '10': 'createdAt'},
+    {'1': 'expires_at', '3': 4, '4': 1, '5': 3, '10': 'expiresAt'},
+    {'1': 'revoked', '3': 5, '4': 1, '5': 8, '10': 'revoked'},
+  ],
+};
+
+/// Descriptor for `PassportShare`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List passportShareDescriptor = $convert.base64Decode(
+    'Cg1QYXNzcG9ydFNoYXJlEhQKBXRva2VuGAEgASgJUgV0b2tlbhIQCgN1cmwYAiABKAlSA3VybB'
+    'IdCgpjcmVhdGVkX2F0GAMgASgDUgljcmVhdGVkQXQSHQoKZXhwaXJlc19hdBgEIAEoA1IJZXhw'
+    'aXJlc0F0EhgKB3Jldm9rZWQYBSABKAhSB3Jldm9rZWQ=');
+
+@$core.Deprecated('Use createPassportShareRequestDescriptor instead')
+const CreatePassportShareRequest$json = {
+  '1': 'CreatePassportShareRequest',
+  '2': [
+    {'1': 'ttl_days', '3': 1, '4': 1, '5': 5, '10': 'ttlDays'},
+  ],
+};
+
+/// Descriptor for `CreatePassportShareRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createPassportShareRequestDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVQYXNzcG9ydFNoYXJlUmVxdWVzdBIZCgh0dGxfZGF5cxgBIAEoBVIHdHRsRGF5cw'
+    '==');
+
+@$core.Deprecated('Use createPassportShareResponseDescriptor instead')
+const CreatePassportShareResponse$json = {
+  '1': 'CreatePassportShareResponse',
+  '2': [
+    {'1': 'share', '3': 1, '4': 1, '5': 11, '6': '.sttattus.travel.v1.PassportShare', '10': 'share'},
+  ],
+};
+
+/// Descriptor for `CreatePassportShareResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createPassportShareResponseDescriptor = $convert.base64Decode(
+    'ChtDcmVhdGVQYXNzcG9ydFNoYXJlUmVzcG9uc2USNwoFc2hhcmUYASABKAsyIS5zdHRhdHR1cy'
+    '50cmF2ZWwudjEuUGFzc3BvcnRTaGFyZVIFc2hhcmU=');
+
+@$core.Deprecated('Use listMyPassportSharesRequestDescriptor instead')
+const ListMyPassportSharesRequest$json = {
+  '1': 'ListMyPassportSharesRequest',
+};
+
+/// Descriptor for `ListMyPassportSharesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyPassportSharesRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0TXlQYXNzcG9ydFNoYXJlc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listMyPassportSharesResponseDescriptor instead')
+const ListMyPassportSharesResponse$json = {
+  '1': 'ListMyPassportSharesResponse',
+  '2': [
+    {'1': 'shares', '3': 1, '4': 3, '5': 11, '6': '.sttattus.travel.v1.PassportShare', '10': 'shares'},
+  ],
+};
+
+/// Descriptor for `ListMyPassportSharesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyPassportSharesResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0TXlQYXNzcG9ydFNoYXJlc1Jlc3BvbnNlEjkKBnNoYXJlcxgBIAMoCzIhLnN0dGF0dH'
+    'VzLnRyYXZlbC52MS5QYXNzcG9ydFNoYXJlUgZzaGFyZXM=');
+
+@$core.Deprecated('Use revokePassportShareRequestDescriptor instead')
+const RevokePassportShareRequest$json = {
+  '1': 'RevokePassportShareRequest',
+  '2': [
+    {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
+  ],
+};
+
+/// Descriptor for `RevokePassportShareRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokePassportShareRequestDescriptor = $convert.base64Decode(
+    'ChpSZXZva2VQYXNzcG9ydFNoYXJlUmVxdWVzdBIUCgV0b2tlbhgBIAEoCVIFdG9rZW4=');
+
+@$core.Deprecated('Use revokePassportShareResponseDescriptor instead')
+const RevokePassportShareResponse$json = {
+  '1': 'RevokePassportShareResponse',
+};
+
+/// Descriptor for `RevokePassportShareResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokePassportShareResponseDescriptor = $convert.base64Decode(
+    'ChtSZXZva2VQYXNzcG9ydFNoYXJlUmVzcG9uc2U=');
+
+@$core.Deprecated('Use generateNomadAtlasRequestDescriptor instead')
+const GenerateNomadAtlasRequest$json = {
+  '1': 'GenerateNomadAtlasRequest',
+  '2': [
+    {'1': 'year', '3': 1, '4': 1, '5': 5, '10': 'year'},
+  ],
+};
+
+/// Descriptor for `GenerateNomadAtlasRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateNomadAtlasRequestDescriptor = $convert.base64Decode(
+    'ChlHZW5lcmF0ZU5vbWFkQXRsYXNSZXF1ZXN0EhIKBHllYXIYASABKAVSBHllYXI=');
+
+@$core.Deprecated('Use generateNomadAtlasResponseDescriptor instead')
+const GenerateNomadAtlasResponse$json = {
+  '1': 'GenerateNomadAtlasResponse',
+  '2': [
+    {'1': 'media_url', '3': 1, '4': 1, '5': 9, '10': 'mediaUrl'},
+    {'1': 'media_asset_id', '3': 2, '4': 1, '5': 9, '10': 'mediaAssetId'},
+    {'1': 'page_count', '3': 3, '4': 1, '5': 5, '10': 'pageCount'},
+  ],
+};
+
+/// Descriptor for `GenerateNomadAtlasResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateNomadAtlasResponseDescriptor = $convert.base64Decode(
+    'ChpHZW5lcmF0ZU5vbWFkQXRsYXNSZXNwb25zZRIbCgltZWRpYV91cmwYASABKAlSCG1lZGlhVX'
+    'JsEiQKDm1lZGlhX2Fzc2V0X2lkGAIgASgJUgxtZWRpYUFzc2V0SWQSHQoKcGFnZV9jb3VudBgD'
+    'IAEoBVIJcGFnZUNvdW50');
+
+@$core.Deprecated('Use parsedItineraryDescriptor instead')
+const ParsedItinerary$json = {
+  '1': 'ParsedItinerary',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'trip_id', '3': 2, '4': 1, '5': 9, '10': 'tripId'},
+    {'1': 'provider', '3': 3, '4': 1, '5': 9, '10': 'provider'},
+    {'1': 'record_locator', '3': 4, '4': 1, '5': 9, '10': 'recordLocator'},
+    {'1': 'origin_iata', '3': 5, '4': 1, '5': 9, '10': 'originIata'},
+    {'1': 'destination_iata', '3': 6, '4': 1, '5': 9, '10': 'destinationIata'},
+    {'1': 'depart_at', '3': 7, '4': 1, '5': 3, '10': 'departAt'},
+    {'1': 'arrive_at', '3': 8, '4': 1, '5': 3, '10': 'arriveAt'},
+    {'1': 'status', '3': 9, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'raw_excerpt', '3': 10, '4': 1, '5': 9, '10': 'rawExcerpt'},
+    {'1': 'created_at', '3': 11, '4': 1, '5': 3, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `ParsedItinerary`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List parsedItineraryDescriptor = $convert.base64Decode(
+    'Cg9QYXJzZWRJdGluZXJhcnkSDgoCaWQYASABKAlSAmlkEhcKB3RyaXBfaWQYAiABKAlSBnRyaX'
+    'BJZBIaCghwcm92aWRlchgDIAEoCVIIcHJvdmlkZXISJQoOcmVjb3JkX2xvY2F0b3IYBCABKAlS'
+    'DXJlY29yZExvY2F0b3ISHwoLb3JpZ2luX2lhdGEYBSABKAlSCm9yaWdpbklhdGESKQoQZGVzdG'
+    'luYXRpb25faWF0YRgGIAEoCVIPZGVzdGluYXRpb25JYXRhEhsKCWRlcGFydF9hdBgHIAEoA1II'
+    'ZGVwYXJ0QXQSGwoJYXJyaXZlX2F0GAggASgDUghhcnJpdmVBdBIWCgZzdGF0dXMYCSABKAlSBn'
+    'N0YXR1cxIfCgtyYXdfZXhjZXJwdBgKIAEoCVIKcmF3RXhjZXJwdBIdCgpjcmVhdGVkX2F0GAsg'
+    'ASgDUgljcmVhdGVkQXQ=');
+
+@$core.Deprecated('Use parseItineraryTextRequestDescriptor instead')
+const ParseItineraryTextRequest$json = {
+  '1': 'ParseItineraryTextRequest',
+  '2': [
+    {'1': 'raw_text', '3': 1, '4': 1, '5': 9, '10': 'rawText'},
+  ],
+};
+
+/// Descriptor for `ParseItineraryTextRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List parseItineraryTextRequestDescriptor = $convert.base64Decode(
+    'ChlQYXJzZUl0aW5lcmFyeVRleHRSZXF1ZXN0EhkKCHJhd190ZXh0GAEgASgJUgdyYXdUZXh0');
+
+@$core.Deprecated('Use parseItineraryTextResponseDescriptor instead')
+const ParseItineraryTextResponse$json = {
+  '1': 'ParseItineraryTextResponse',
+  '2': [
+    {'1': 'itinerary', '3': 1, '4': 1, '5': 11, '6': '.sttattus.travel.v1.ParsedItinerary', '10': 'itinerary'},
+    {'1': 'parsed', '3': 2, '4': 1, '5': 8, '10': 'parsed'},
+  ],
+};
+
+/// Descriptor for `ParseItineraryTextResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List parseItineraryTextResponseDescriptor = $convert.base64Decode(
+    'ChpQYXJzZUl0aW5lcmFyeVRleHRSZXNwb25zZRJBCglpdGluZXJhcnkYASABKAsyIy5zdHRhdH'
+    'R1cy50cmF2ZWwudjEuUGFyc2VkSXRpbmVyYXJ5UglpdGluZXJhcnkSFgoGcGFyc2VkGAIgASgI'
+    'UgZwYXJzZWQ=');
+
+@$core.Deprecated('Use listMyItinerariesRequestDescriptor instead')
+const ListMyItinerariesRequest$json = {
+  '1': 'ListMyItinerariesRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListMyItinerariesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyItinerariesRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0TXlJdGluZXJhcmllc1JlcXVlc3QSFAoFbGltaXQYASABKAVSBWxpbWl0');
+
+@$core.Deprecated('Use listMyItinerariesResponseDescriptor instead')
+const ListMyItinerariesResponse$json = {
+  '1': 'ListMyItinerariesResponse',
+  '2': [
+    {'1': 'itineraries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.travel.v1.ParsedItinerary', '10': 'itineraries'},
+  ],
+};
+
+/// Descriptor for `ListMyItinerariesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyItinerariesResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0TXlJdGluZXJhcmllc1Jlc3BvbnNlEkUKC2l0aW5lcmFyaWVzGAEgAygLMiMuc3R0YX'
+    'R0dXMudHJhdmVsLnYxLlBhcnNlZEl0aW5lcmFyeVILaXRpbmVyYXJpZXM=');
+
+@$core.Deprecated('Use confirmItineraryRequestDescriptor instead')
+const ConfirmItineraryRequest$json = {
+  '1': 'ConfirmItineraryRequest',
+  '2': [
+    {'1': 'itinerary_id', '3': 1, '4': 1, '5': 9, '10': 'itineraryId'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+  ],
+};
+
+/// Descriptor for `ConfirmItineraryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List confirmItineraryRequestDescriptor = $convert.base64Decode(
+    'ChdDb25maXJtSXRpbmVyYXJ5UmVxdWVzdBIhCgxpdGluZXJhcnlfaWQYASABKAlSC2l0aW5lcm'
+    'FyeUlkEhQKBXRpdGxlGAIgASgJUgV0aXRsZQ==');
+
+@$core.Deprecated('Use confirmItineraryResponseDescriptor instead')
+const ConfirmItineraryResponse$json = {
+  '1': 'ConfirmItineraryResponse',
+  '2': [
+    {'1': 'trip', '3': 1, '4': 1, '5': 11, '6': '.sttattus.travel.v1.Trip', '10': 'trip'},
+  ],
+};
+
+/// Descriptor for `ConfirmItineraryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List confirmItineraryResponseDescriptor = $convert.base64Decode(
+    'ChhDb25maXJtSXRpbmVyYXJ5UmVzcG9uc2USLAoEdHJpcBgBIAEoCzIYLnN0dGF0dHVzLnRyYX'
+    'ZlbC52MS5UcmlwUgR0cmlw');
+
+@$core.Deprecated('Use travelPartnerDescriptor instead')
+const TravelPartner$json = {
+  '1': 'TravelPartner',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slug', '3': 2, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'category', '3': 4, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'city', '3': 5, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'country_code', '3': 6, '4': 1, '5': 9, '10': 'countryCode'},
+    {'1': 'region', '3': 7, '4': 1, '5': 9, '10': 'region'},
+    {'1': 'description', '3': 8, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'hero_url', '3': 9, '4': 1, '5': 9, '10': 'heroUrl'},
+    {'1': 'member_rate', '3': 10, '4': 1, '5': 8, '10': 'memberRate'},
+    {'1': 'sovereign_only', '3': 11, '4': 1, '5': 8, '10': 'sovereignOnly'},
+    {'1': 'booking_url', '3': 12, '4': 1, '5': 9, '10': 'bookingUrl'},
+    {'1': 'price_band', '3': 13, '4': 1, '5': 5, '10': 'priceBand'},
+  ],
+};
+
+/// Descriptor for `TravelPartner`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List travelPartnerDescriptor = $convert.base64Decode(
+    'Cg1UcmF2ZWxQYXJ0bmVyEg4KAmlkGAEgASgJUgJpZBISCgRzbHVnGAIgASgJUgRzbHVnEhIKBG'
+    '5hbWUYAyABKAlSBG5hbWUSGgoIY2F0ZWdvcnkYBCABKAlSCGNhdGVnb3J5EhIKBGNpdHkYBSAB'
+    'KAlSBGNpdHkSIQoMY291bnRyeV9jb2RlGAYgASgJUgtjb3VudHJ5Q29kZRIWCgZyZWdpb24YBy'
+    'ABKAlSBnJlZ2lvbhIgCgtkZXNjcmlwdGlvbhgIIAEoCVILZGVzY3JpcHRpb24SGQoIaGVyb191'
+    'cmwYCSABKAlSB2hlcm9VcmwSHwoLbWVtYmVyX3JhdGUYCiABKAhSCm1lbWJlclJhdGUSJQoOc2'
+    '92ZXJlaWduX29ubHkYCyABKAhSDXNvdmVyZWlnbk9ubHkSHwoLYm9va2luZ191cmwYDCABKAlS'
+    'CmJvb2tpbmdVcmwSHQoKcHJpY2VfYmFuZBgNIAEoBVIJcHJpY2VCYW5k');
+
+@$core.Deprecated('Use listTravelPartnersRequestDescriptor instead')
+const ListTravelPartnersRequest$json = {
+  '1': 'ListTravelPartnersRequest',
+  '2': [
+    {'1': 'category', '3': 1, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'region', '3': 2, '4': 1, '5': 9, '10': 'region'},
+  ],
+};
+
+/// Descriptor for `ListTravelPartnersRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTravelPartnersRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0VHJhdmVsUGFydG5lcnNSZXF1ZXN0EhoKCGNhdGVnb3J5GAEgASgJUghjYXRlZ29yeR'
+    'IWCgZyZWdpb24YAiABKAlSBnJlZ2lvbg==');
+
+@$core.Deprecated('Use listTravelPartnersResponseDescriptor instead')
+const ListTravelPartnersResponse$json = {
+  '1': 'ListTravelPartnersResponse',
+  '2': [
+    {'1': 'partners', '3': 1, '4': 3, '5': 11, '6': '.sttattus.travel.v1.TravelPartner', '10': 'partners'},
+  ],
+};
+
+/// Descriptor for `ListTravelPartnersResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTravelPartnersResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0VHJhdmVsUGFydG5lcnNSZXNwb25zZRI9CghwYXJ0bmVycxgBIAMoCzIhLnN0dGF0dH'
+    'VzLnRyYXZlbC52MS5UcmF2ZWxQYXJ0bmVyUghwYXJ0bmVycw==');
+
+@$core.Deprecated('Use getTravelPartnerRequestDescriptor instead')
+const GetTravelPartnerRequest$json = {
+  '1': 'GetTravelPartnerRequest',
+  '2': [
+    {'1': 'slug', '3': 1, '4': 1, '5': 9, '10': 'slug'},
+  ],
+};
+
+/// Descriptor for `GetTravelPartnerRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTravelPartnerRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRUcmF2ZWxQYXJ0bmVyUmVxdWVzdBISCgRzbHVnGAEgASgJUgRzbHVn');
+
+@$core.Deprecated('Use getTravelPartnerResponseDescriptor instead')
+const GetTravelPartnerResponse$json = {
+  '1': 'GetTravelPartnerResponse',
+  '2': [
+    {'1': 'partner', '3': 1, '4': 1, '5': 11, '6': '.sttattus.travel.v1.TravelPartner', '10': 'partner'},
+  ],
+};
+
+/// Descriptor for `GetTravelPartnerResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTravelPartnerResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRUcmF2ZWxQYXJ0bmVyUmVzcG9uc2USOwoHcGFydG5lchgBIAEoCzIhLnN0dGF0dHVzLn'
+    'RyYXZlbC52MS5UcmF2ZWxQYXJ0bmVyUgdwYXJ0bmVy');
+
 @$core.Deprecated('Use getPassportSurfaceRequestDescriptor instead')
 const GetPassportSurfaceRequest$json = {
   '1': 'GetPassportSurfaceRequest',

@@ -143,7 +143,235 @@ service VaultService {
   // holdings + cap-table line items and a US-CGT (Form 8949) CSV.
   rpc GetTaxSnapshot(GetTaxSnapshotRequest) returns (GetTaxSnapshotResponse);
   rpc ExportUsCgtCsv(ExportUsCgtCsvRequest) returns (ExportUsCgtCsvResponse);
+
+  // === Phase 3 — premium differentiation ===
+
+  // V8P3.1 — Investment Circles: curated deal-flow gated server-side by the
+  // user's cross-pillar Sttattus rank. Locked circles return metadata + the
+  // required threshold but withhold the deal room.
+  rpc ListInvestmentCircles(ListInvestmentCirclesRequest) returns (ListInvestmentCirclesResponse);
+  rpc GetInvestmentCircle(GetInvestmentCircleRequest) returns (GetInvestmentCircleResponse);
+  rpc ExpressCircleInterest(ExpressCircleInterestRequest) returns (ExpressCircleInterestResponse);
+
+  // V8P3.2 — concierge advisor desk (Sovereign). Async threads + SLA.
+  rpc StartAdvisorThread(StartAdvisorThreadRequest) returns (StartAdvisorThreadResponse);
+  rpc ListAdvisorThreads(ListAdvisorThreadsRequest) returns (ListAdvisorThreadsResponse);
+  rpc GetAdvisorThread(GetAdvisorThreadRequest) returns (GetAdvisorThreadResponse);
+  rpc PostAdvisorMessage(PostAdvisorMessageRequest) returns (PostAdvisorMessageResponse);
+
+  // V8P3.3 — Wealth Anthology: named-author editorial.
+  rpc ListWealthAnthology(ListWealthAnthologyRequest) returns (ListWealthAnthologyResponse);
+  rpc GetWealthArticle(GetWealthArticleRequest) returns (GetWealthArticleResponse);
+
+  // V8P3.5 — curated private-bank directory (region + tier filter).
+  rpc ListPartnerBanks(ListPartnerBanksRequest) returns (ListPartnerBanksResponse);
+
+  // V8P3.6 — token-based verified-wealth share. Bands only; absolute amounts
+  // are never disclosed (discretion-first). Public read at /share/vault/:token.
+  rpc CreateVaultShare(CreateVaultShareRequest) returns (CreateVaultShareResponse);
+  rpc ListMyVaultShares(ListMyVaultSharesRequest) returns (ListMyVaultSharesResponse);
+  rpc RevokeVaultShare(RevokeVaultShareRequest) returns (RevokeVaultShareResponse);
+
+  // === Phase 4 — category-leading ===
+
+  // V8P4.1 — Annual Wealth Almanac: a gofpdf-rendered PDF of the year's wealth
+  // movement, written to R2/S3. Returns the media URL.
+  rpc GenerateWealthAlmanac(GenerateWealthAlmanacRequest) returns (GenerateWealthAlmanacResponse);
+
+  // V8P4.2 — Year-in-Vault recap (pure compute over the user's snapshots).
+  rpc GetYearInVault(GetYearInVaultRequest) returns (GetYearInVaultResponse);
+
+  // V8P4.3 — liquidity stress test: given a cash need, source it across the
+  // liquidity ladder (T+0 cash → T+30 marketable → illiquid). Pure compute.
+  rpc GetLiquidityStressTest(GetLiquidityStressTestRequest) returns (GetLiquidityStressTestResponse);
 }
+
+// === Annual Wealth Almanac (V8P4.1) ===
+
+message GenerateWealthAlmanacRequest {}
+message GenerateWealthAlmanacResponse {
+  string media_url = 1;
+  int32 page_count = 2;
+}
+
+// === Year-in-Vault (V8P4.2) ===
+
+message YearMover {
+  string name = 1;
+  string category = 2;
+  double change_usd = 3; // signed
+}
+
+message GetYearInVaultRequest {}
+message GetYearInVaultResponse {
+  double starting_net_worth_usd = 1;
+  double ending_net_worth_usd = 2;
+  double change_usd = 3;          // signed
+  double change_pct = 4;          // signed
+  double starting_rank = 5;
+  double ending_rank = 6;
+  repeated YearMover top_movers = 7;
+  // 'fiat' | 'crypto' | 'rare_asset' | 'metal' → ending allocation share 0..1
+  map<string, double> allocation_shift = 8;
+  int32 snapshot_count = 9;
+}
+
+// === Liquidity stress test (V8P4.3) ===
+
+message LiquiditySource {
+  string band = 1;        // 'T+0' | 'T+30' | 'illiquid'
+  string label = 2;       // human description
+  double available_usd = 3;
+  double drawn_usd = 4;   // how much this test pulls from the band
+}
+
+message GetLiquidityStressTestRequest {
+  double target_usd = 1; // how much cash is needed
+}
+message GetLiquidityStressTestResponse {
+  double target_usd = 1;
+  double total_raised_usd = 2;
+  bool fully_covered = 3;
+  repeated LiquiditySource sources = 4;
+}
+
+// === Investment Circles (V8P3.1) ===
+
+message InvestmentCircle {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string sector = 4;          // 'venture' | 'real_estate' | 'art' | 'private_credit' | ...
+  string stage = 5;           // 'seed' | 'growth' | 'pre_ipo' | ...
+  string thesis = 6;          // short editorial rationale
+  string partner = 7;         // partner platform name
+  double min_ticket_usd = 8;
+  // Cross-pillar gate, evaluated server-side.
+  double required_sttattus_score = 9;
+  string required_tier = 10;  // '' | 'gold' | 'platinum' | 'sovereign'
+  bool unlocked = 11;         // true when the caller meets the gate
+  string locked_reason = 12;  // human copy when locked
+  // Full deal room — only populated when unlocked.
+  string deal_room_markdown = 13;
+  string hero_image_url = 14;
+}
+
+message ListInvestmentCirclesRequest {}
+message ListInvestmentCirclesResponse {
+  repeated InvestmentCircle circles = 1;
+  double current_sttattus_score = 2;
+  string current_tier = 3;
+}
+
+message GetInvestmentCircleRequest { string id = 1; }
+message GetInvestmentCircleResponse { InvestmentCircle circle = 1; }
+
+message ExpressCircleInterestRequest {
+  string circle_id = 1;
+  string note = 2;
+}
+message ExpressCircleInterestResponse {
+  bool accepted = 1;
+  // Signed partner-platform handoff URL (empty when locked).
+  string handoff_url = 2;
+}
+
+// === Concierge advisor desk (V8P3.2) ===
+
+message AdvisorMessage {
+  string id = 1;
+  string sender = 2; // 'member' | 'advisor' | 'system'
+  string body = 3;
+  google.protobuf.Timestamp created_at = 4;
+}
+
+message AdvisorThread {
+  string id = 1;
+  string subject = 2;
+  string status = 3; // 'open' | 'awaiting_member' | 'closed'
+  google.protobuf.Timestamp created_at = 4;
+  google.protobuf.Timestamp sla_due_at = 5;
+  repeated AdvisorMessage messages = 6;
+}
+
+message StartAdvisorThreadRequest {
+  string subject = 1;
+  string opening_message = 2;
+}
+message StartAdvisorThreadResponse { AdvisorThread thread = 1; }
+
+message ListAdvisorThreadsRequest {}
+message ListAdvisorThreadsResponse { repeated AdvisorThread threads = 1; }
+
+message GetAdvisorThreadRequest { string id = 1; }
+message GetAdvisorThreadResponse { AdvisorThread thread = 1; }
+
+message PostAdvisorMessageRequest {
+  string thread_id = 1;
+  string body = 2;
+}
+message PostAdvisorMessageResponse { AdvisorMessage message = 1; }
+
+// === Wealth Anthology (V8P3.3) ===
+
+message WealthArticle {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string dek = 4;
+  string author_name = 5;
+  string author_title = 6;
+  string author_avatar_url = 7;
+  string hero_image_url = 8;
+  string body_markdown = 9;  // empty in list responses
+  bool sovereign_only = 10;
+  google.protobuf.Timestamp published_at = 11;
+}
+
+message ListWealthAnthologyRequest {}
+message ListWealthAnthologyResponse { repeated WealthArticle articles = 1; }
+
+message GetWealthArticleRequest { string id = 1; }
+message GetWealthArticleResponse { WealthArticle article = 1; }
+
+// === Partner banks (V8P3.5) ===
+
+message PartnerBank {
+  string id = 1;
+  string name = 2;
+  string region = 3;       // ISO-3166 alpha-2 or region code
+  string specialty = 4;
+  double min_relationship_usd = 5;
+  bool sovereign_only = 6;
+  string intro_note = 7;
+  string logo_url = 8;
+}
+
+message ListPartnerBanksRequest {
+  string region = 1; // empty = all
+}
+message ListPartnerBanksResponse { repeated PartnerBank banks = 1; }
+
+// === Verified-wealth share (V8P3.6) ===
+
+message VaultShare {
+  string token = 1;
+  google.protobuf.Timestamp created_at = 2;
+  google.protobuf.Timestamp expires_at = 3;
+  bool revoked = 4;
+  string url = 5;
+}
+
+message CreateVaultShareRequest {
+  int32 ttl_days = 1; // 0 = default 14
+}
+message CreateVaultShareResponse { VaultShare share = 1; }
+
+message ListMyVaultSharesRequest {}
+message ListMyVaultSharesResponse { repeated VaultShare shares = 1; }
+
+message RevokeVaultShareRequest { string token = 1; }
+message RevokeVaultShareResponse {}
 
 message SyncWealthRequest {
   repeated Asset assets = 1;

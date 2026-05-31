@@ -504,6 +504,249 @@ message RemoveFriendResponse {
   string friendship_id = 1;
 }
 
+// === Concierge desk (P5.15, Sovereign cross-pillar) ===
+
+message ConciergeThread {
+  string id = 1;
+  string subject = 2;
+  // open | awaiting | closed.
+  string status = 3;
+  string created_at = 4;
+  string last_message_at = 5;
+  int32 message_count = 6;
+}
+
+message ConciergeMessage {
+  string id = 1;
+  string thread_id = 2;
+  // member | concierge | system.
+  string sender = 3;
+  string body = 4;
+  string created_at = 5;
+}
+
+message StartConciergeThreadRequest {
+  string subject = 1;
+  string body = 2;
+}
+
+message StartConciergeThreadResponse {
+  string thread_id = 1;
+}
+
+message ListMyConciergeThreadsRequest {}
+
+message ListMyConciergeThreadsResponse {
+  repeated ConciergeThread threads = 1;
+}
+
+message GetConciergeThreadRequest {
+  string thread_id = 1;
+}
+
+message GetConciergeThreadResponse {
+  ConciergeThread thread = 1;
+  repeated ConciergeMessage messages = 2;
+}
+
+message PostConciergeMessageRequest {
+  string thread_id = 1;
+  string body = 2;
+}
+
+message PostConciergeMessageResponse {
+  ConciergeMessage message = 1;
+}
+
+// === Empire Anthology (P5.16, named-author editorial) ===
+
+message AnthologyArticle {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string dek = 4;
+  string author_name = 5;
+  string author_title = 6;
+  // Markdown / plain body; paragraphs split on \n\n.
+  string body = 7;
+  string hero_url = 8;
+  bool sovereign_only = 9;
+  string published_at = 10;
+}
+
+message ListAnthologyArticlesRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+}
+
+message ListAnthologyArticlesResponse {
+  // Bodies are omitted in the list view; fetch the full article by slug.
+  repeated AnthologyArticle articles = 1;
+}
+
+message GetAnthologyArticleRequest {
+  string slug = 1;
+}
+
+message GetAnthologyArticleResponse {
+  AnthologyArticle article = 1;
+}
+
+// === Member directory (P5.17, Sovereign opt-in) ===
+
+message DirectoryMember {
+  string user_id = 1;
+  string handle = 2;
+  string name = 3;
+  string avatar_url = 4;
+  string city = 5;
+  string tier = 6;
+  double sttattus_score = 7;
+  int32 global_rank = 8;
+}
+
+message ListMemberDirectoryRequest {
+  // Optional filters. Empty = no filter.
+  string tier = 1;
+  string city = 2;
+  int32 limit = 3;
+  int32 offset = 4;
+}
+
+message ListMemberDirectoryResponse {
+  repeated DirectoryMember members = 1;
+}
+
+message SetDirectoryVisibilityRequest {
+  bool visible = 1;
+  // Optional city the member wants surfaced in the directory.
+  string city = 2;
+}
+
+message SetDirectoryVisibilityResponse {
+  bool visible = 1;
+  string city = 2;
+}
+
+// === Annual Empire Almanac (P5.18) ===
+
+message GenerateEmpireAlmanacRequest {
+  // Defaults to the current year.
+  string year = 1;
+}
+
+message GenerateEmpireAlmanacResponse {
+  string media_asset_id = 1;
+  string public_url = 2;
+  int64 generated_at_unix = 3;
+  int32 page_count = 4;
+}
+
+// === Signed shareable score badge (P5.19) ===
+
+message CreateScoreBadgeRequest {}
+
+message CreateScoreBadgeResponse {
+  // Opaque token; the badge is served at GET /badge/:token as SVG.
+  string token = 1;
+  // Absolute URL of the badge (when the public base is configured) or the
+  // relative path otherwise.
+  string url = 2;
+  string expires_at = 3;
+}
+
+// === Digital tier card (P5.20, hand-numbered) ===
+
+message GetTierCardRequest {}
+
+message GetTierCardResponse {
+  string member_name = 1;
+  string handle = 2;
+  // bronze | silver | gold | platinum | sovereign.
+  string tier = 3;
+  double sttattus_score = 4;
+  // Permanent hand-number, assigned on first request, zero-padded (e.g.
+  // "0042").
+  string card_number = 5;
+  // RFC-3339 UTC of when the member joined.
+  string member_since = 6;
+}
+
+// === Lounge / salon access pass (P5.21, the NFC-at-door analogue) ===
+
+message CreateLoungePassRequest {
+  // Optional lounge/venue the pass is scoped to. Empty = any open venue.
+  string lounge_id = 1;
+}
+
+message CreateLoungePassResponse {
+  // Opaque short-TTL token; the door verifies it at GET /pass/:token.
+  string token = 1;
+  string url = 2;
+  string expires_at = 3;
+  // The tier the door reads off the pass.
+  string tier = 4;
+}
+
+// === Annual Almanac print order (P5.22) ===
+
+message OrderAlmanacPrintRequest {
+  // The generated Almanac PDF (from GenerateEmpireAlmanac).
+  string media_asset_id = 1;
+  string recipient = 2;
+  string address_line1 = 3;
+  string address_line2 = 4;
+  string city = 5;
+  string postal_code = 6;
+  string country = 7;
+}
+
+message OrderAlmanacPrintResponse {
+  string order_id = 1;
+  // requested | in_production | shipped — set by fulfilment ops.
+  string status = 2;
+}
+
+message AlmanacPrintOrder {
+  string id = 1;
+  string status = 2;
+  string recipient = 3;
+  string city = 4;
+  string country = 5;
+  string created_at = 6;
+}
+
+message ListMyAlmanacOrdersRequest {}
+
+message ListMyAlmanacOrdersResponse {
+  repeated AlmanacPrintOrder orders = 1;
+}
+
+// === Year in Empire (P5.23, the annual recap) ===
+
+message GetYearInEmpireRequest {
+  // Defaults to the current year.
+  string year = 1;
+}
+
+message GetYearInEmpireResponse {
+  string year = 1;
+  double current_score = 2;
+  string tier = 3;
+  int32 global_rank = 4;
+  bool has_rank = 5;
+  // Points earned / spent inside the requested year.
+  int64 points_earned = 6;
+  int64 points_spent = 7;
+  // Salons the member RSVP'd "going" to.
+  int32 salons_attended = 8;
+  // Highest-scoring pillar + its score.
+  string top_pillar = 9;
+  double top_pillar_score = 10;
+  // Pillars with a non-zero score.
+  int32 pillars_active = 11;
+}
+
 service EmpireService {
   // GetScoreBreakdown returns the caller's Sttattus Score with the
   // four weighted-bucket components — the glass-box the audit asks for.
@@ -616,4 +859,65 @@ service EmpireService {
 
   // ListMyRedemptions returns the caller's redemption history.
   rpc ListMyRedemptions(ListMyRedemptionsRequest) returns (ListMyRedemptionsResponse);
+
+  // --- Phase 3 — premium differentiation ---
+
+  // StartConciergeThread opens a Sovereign concierge thread with a subject
+  // and an opening message; the desk auto-acknowledges with a system reply.
+  rpc StartConciergeThread(StartConciergeThreadRequest) returns (StartConciergeThreadResponse);
+
+  // ListMyConciergeThreads returns the caller's concierge threads, newest
+  // activity first.
+  rpc ListMyConciergeThreads(ListMyConciergeThreadsRequest) returns (ListMyConciergeThreadsResponse);
+
+  // GetConciergeThread returns one thread + its message stream.
+  rpc GetConciergeThread(GetConciergeThreadRequest) returns (GetConciergeThreadResponse);
+
+  // PostConciergeMessage appends a member message to a thread and flips it
+  // to awaiting.
+  rpc PostConciergeMessage(PostConciergeMessageRequest) returns (PostConciergeMessageResponse);
+
+  // ListAnthologyArticles returns the Empire Anthology, newest first
+  // (bodies omitted).
+  rpc ListAnthologyArticles(ListAnthologyArticlesRequest) returns (ListAnthologyArticlesResponse);
+
+  // GetAnthologyArticle returns one article in full by slug.
+  rpc GetAnthologyArticle(GetAnthologyArticleRequest) returns (GetAnthologyArticleResponse);
+
+  // ListMemberDirectory returns opted-in members, ranked, optionally
+  // filtered by tier + city.
+  rpc ListMemberDirectory(ListMemberDirectoryRequest) returns (ListMemberDirectoryResponse);
+
+  // SetDirectoryVisibility opts the caller into / out of the public member
+  // directory and sets their surfaced city.
+  rpc SetDirectoryVisibility(SetDirectoryVisibilityRequest) returns (SetDirectoryVisibilityResponse);
+
+  // GenerateEmpireAlmanac renders the caller's year-across-twelve-pillars
+  // hardcover PDF, stores it, and returns the URL.
+  rpc GenerateEmpireAlmanac(GenerateEmpireAlmanacRequest) returns (GenerateEmpireAlmanacResponse);
+
+  // CreateScoreBadge mints a signed, time-bound token for the caller's
+  // public score badge (served at GET /badge/:token as SVG).
+  rpc CreateScoreBadge(CreateScoreBadgeRequest) returns (CreateScoreBadgeResponse);
+
+  // --- Phase 4 — category-leading ---
+
+  // GetTierCard returns the caller's hand-numbered digital tier card,
+  // assigning a permanent card number on first request.
+  rpc GetTierCard(GetTierCardRequest) returns (GetTierCardResponse);
+
+  // CreateLoungePass mints a short-TTL, tier-stamped access pass the
+  // physical lounge/salon door verifies at GET /pass/:token.
+  rpc CreateLoungePass(CreateLoungePassRequest) returns (CreateLoungePassResponse);
+
+  // OrderAlmanacPrint captures a print-and-ship request for a generated
+  // Almanac PDF. Fulfilment is handled out-of-band by ops.
+  rpc OrderAlmanacPrint(OrderAlmanacPrintRequest) returns (OrderAlmanacPrintResponse);
+
+  // ListMyAlmanacOrders returns the caller's print orders, newest first.
+  rpc ListMyAlmanacOrders(ListMyAlmanacOrdersRequest) returns (ListMyAlmanacOrdersResponse);
+
+  // GetYearInEmpire returns the caller's annual recap — score, tier, points,
+  // salons, top pillar — computed across the requested year.
+  rpc GetYearInEmpire(GetYearInEmpireRequest) returns (GetYearInEmpireResponse);
 }

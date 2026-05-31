@@ -116,6 +116,82 @@ class LanguagesServiceClient extends $grpc.Client {
     return $createUnaryCall(_$markCulturalCompleted, request, options: options);
   }
 
+  /// L12.9 — writing drill + AI rough correction.
+  $grpc.ResponseFuture<$0.ListWritingPromptsResponse> listWritingPrompts($0.ListWritingPromptsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listWritingPrompts, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitWritingResponse> submitWriting($0.SubmitWritingRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$submitWriting, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyWritingSubmissionsResponse> listMyWritingSubmissions($0.ListMyWritingSubmissionsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyWritingSubmissions, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetWritingSubmissionResponse> getWritingSubmission($0.GetWritingSubmissionRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getWritingSubmission, request, options: options);
+  }
+
+  /// L12.10 — reading library (parallel text).
+  $grpc.ResponseFuture<$0.ListReadingTextsResponse> listReadingTexts($0.ListReadingTextsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listReadingTexts, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetReadingTextResponse> getReadingText($0.GetReadingTextRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getReadingText, request, options: options);
+  }
+
+  /// L12.11 — idiom library.
+  $grpc.ResponseFuture<$0.ListIdiomsResponse> listIdioms($0.ListIdiomsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listIdioms, request, options: options);
+  }
+
+  /// L12.12 — tutor desk / concierge (Sovereign).
+  $grpc.ResponseFuture<$0.StartTutorThreadResponse> startTutorThread($0.StartTutorThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$startTutorThread, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyTutorThreadsResponse> listMyTutorThreads($0.ListMyTutorThreadsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyTutorThreads, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetTutorThreadResponse> getTutorThread($0.GetTutorThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getTutorThread, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PostTutorMessageResponse> postTutorMessage($0.PostTutorMessageRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$postTutorMessage, request, options: options);
+  }
+
+  /// L12.13 — editorial Anthology.
+  $grpc.ResponseFuture<$0.ListAnthologyArticlesResponse> listAnthologyArticles($0.ListAnthologyArticlesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listAnthologyArticles, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetAnthologyArticleResponse> getAnthologyArticle($0.GetAnthologyArticleRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getAnthologyArticle, request, options: options);
+  }
+
+  /// L12.14 — CEFR certificate issuance.
+  $grpc.ResponseFuture<$0.IssueCertificateResponse> issueCertificate($0.IssueCertificateRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$issueCertificate, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyCertificatesResponse> listMyCertificates($0.ListMyCertificatesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyCertificates, request, options: options);
+  }
+
+  /// L12.15 — Annual Linguist Almanac.
+  $grpc.ResponseFuture<$0.GenerateLinguistAlmanacResponse> generateLinguistAlmanac($0.GenerateLinguistAlmanacRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$generateLinguistAlmanac, request, options: options);
+  }
+
+  /// L12.16 — public Linguist profile share.
+  $grpc.ResponseFuture<$0.CreateLinguistShareResponse> createLinguistShare($0.CreateLinguistShareRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createLinguistShare, request, options: options);
+  }
+
   /// Legacy (Deprecated but kept for bridge)
   $grpc.ResponseFuture<$0.ListWordsResponse> listWords($0.ListWordsRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listWords, request, options: options);
@@ -199,6 +275,74 @@ class LanguagesServiceClient extends $grpc.Client {
       '/sttattus.languages.v1.LanguagesService/MarkCulturalCompleted',
       ($0.MarkCulturalCompletedRequest value) => value.writeToBuffer(),
       $0.MarkCulturalCompletedResponse.fromBuffer);
+  static final _$listWritingPrompts = $grpc.ClientMethod<$0.ListWritingPromptsRequest, $0.ListWritingPromptsResponse>(
+      '/sttattus.languages.v1.LanguagesService/ListWritingPrompts',
+      ($0.ListWritingPromptsRequest value) => value.writeToBuffer(),
+      $0.ListWritingPromptsResponse.fromBuffer);
+  static final _$submitWriting = $grpc.ClientMethod<$0.SubmitWritingRequest, $0.SubmitWritingResponse>(
+      '/sttattus.languages.v1.LanguagesService/SubmitWriting',
+      ($0.SubmitWritingRequest value) => value.writeToBuffer(),
+      $0.SubmitWritingResponse.fromBuffer);
+  static final _$listMyWritingSubmissions = $grpc.ClientMethod<$0.ListMyWritingSubmissionsRequest, $0.ListMyWritingSubmissionsResponse>(
+      '/sttattus.languages.v1.LanguagesService/ListMyWritingSubmissions',
+      ($0.ListMyWritingSubmissionsRequest value) => value.writeToBuffer(),
+      $0.ListMyWritingSubmissionsResponse.fromBuffer);
+  static final _$getWritingSubmission = $grpc.ClientMethod<$0.GetWritingSubmissionRequest, $0.GetWritingSubmissionResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetWritingSubmission',
+      ($0.GetWritingSubmissionRequest value) => value.writeToBuffer(),
+      $0.GetWritingSubmissionResponse.fromBuffer);
+  static final _$listReadingTexts = $grpc.ClientMethod<$0.ListReadingTextsRequest, $0.ListReadingTextsResponse>(
+      '/sttattus.languages.v1.LanguagesService/ListReadingTexts',
+      ($0.ListReadingTextsRequest value) => value.writeToBuffer(),
+      $0.ListReadingTextsResponse.fromBuffer);
+  static final _$getReadingText = $grpc.ClientMethod<$0.GetReadingTextRequest, $0.GetReadingTextResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetReadingText',
+      ($0.GetReadingTextRequest value) => value.writeToBuffer(),
+      $0.GetReadingTextResponse.fromBuffer);
+  static final _$listIdioms = $grpc.ClientMethod<$0.ListIdiomsRequest, $0.ListIdiomsResponse>(
+      '/sttattus.languages.v1.LanguagesService/ListIdioms',
+      ($0.ListIdiomsRequest value) => value.writeToBuffer(),
+      $0.ListIdiomsResponse.fromBuffer);
+  static final _$startTutorThread = $grpc.ClientMethod<$0.StartTutorThreadRequest, $0.StartTutorThreadResponse>(
+      '/sttattus.languages.v1.LanguagesService/StartTutorThread',
+      ($0.StartTutorThreadRequest value) => value.writeToBuffer(),
+      $0.StartTutorThreadResponse.fromBuffer);
+  static final _$listMyTutorThreads = $grpc.ClientMethod<$0.ListMyTutorThreadsRequest, $0.ListMyTutorThreadsResponse>(
+      '/sttattus.languages.v1.LanguagesService/ListMyTutorThreads',
+      ($0.ListMyTutorThreadsRequest value) => value.writeToBuffer(),
+      $0.ListMyTutorThreadsResponse.fromBuffer);
+  static final _$getTutorThread = $grpc.ClientMethod<$0.GetTutorThreadRequest, $0.GetTutorThreadResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetTutorThread',
+      ($0.GetTutorThreadRequest value) => value.writeToBuffer(),
+      $0.GetTutorThreadResponse.fromBuffer);
+  static final _$postTutorMessage = $grpc.ClientMethod<$0.PostTutorMessageRequest, $0.PostTutorMessageResponse>(
+      '/sttattus.languages.v1.LanguagesService/PostTutorMessage',
+      ($0.PostTutorMessageRequest value) => value.writeToBuffer(),
+      $0.PostTutorMessageResponse.fromBuffer);
+  static final _$listAnthologyArticles = $grpc.ClientMethod<$0.ListAnthologyArticlesRequest, $0.ListAnthologyArticlesResponse>(
+      '/sttattus.languages.v1.LanguagesService/ListAnthologyArticles',
+      ($0.ListAnthologyArticlesRequest value) => value.writeToBuffer(),
+      $0.ListAnthologyArticlesResponse.fromBuffer);
+  static final _$getAnthologyArticle = $grpc.ClientMethod<$0.GetAnthologyArticleRequest, $0.GetAnthologyArticleResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetAnthologyArticle',
+      ($0.GetAnthologyArticleRequest value) => value.writeToBuffer(),
+      $0.GetAnthologyArticleResponse.fromBuffer);
+  static final _$issueCertificate = $grpc.ClientMethod<$0.IssueCertificateRequest, $0.IssueCertificateResponse>(
+      '/sttattus.languages.v1.LanguagesService/IssueCertificate',
+      ($0.IssueCertificateRequest value) => value.writeToBuffer(),
+      $0.IssueCertificateResponse.fromBuffer);
+  static final _$listMyCertificates = $grpc.ClientMethod<$0.ListMyCertificatesRequest, $0.ListMyCertificatesResponse>(
+      '/sttattus.languages.v1.LanguagesService/ListMyCertificates',
+      ($0.ListMyCertificatesRequest value) => value.writeToBuffer(),
+      $0.ListMyCertificatesResponse.fromBuffer);
+  static final _$generateLinguistAlmanac = $grpc.ClientMethod<$0.GenerateLinguistAlmanacRequest, $0.GenerateLinguistAlmanacResponse>(
+      '/sttattus.languages.v1.LanguagesService/GenerateLinguistAlmanac',
+      ($0.GenerateLinguistAlmanacRequest value) => value.writeToBuffer(),
+      $0.GenerateLinguistAlmanacResponse.fromBuffer);
+  static final _$createLinguistShare = $grpc.ClientMethod<$0.CreateLinguistShareRequest, $0.CreateLinguistShareResponse>(
+      '/sttattus.languages.v1.LanguagesService/CreateLinguistShare',
+      ($0.CreateLinguistShareRequest value) => value.writeToBuffer(),
+      $0.CreateLinguistShareResponse.fromBuffer);
   static final _$listWords = $grpc.ClientMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
       '/sttattus.languages.v1.LanguagesService/ListWords',
       ($0.ListWordsRequest value) => value.writeToBuffer(),
@@ -343,6 +487,125 @@ abstract class LanguagesServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.MarkCulturalCompletedRequest.fromBuffer(value),
         ($0.MarkCulturalCompletedResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListWritingPromptsRequest, $0.ListWritingPromptsResponse>(
+        'ListWritingPrompts',
+        listWritingPrompts_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListWritingPromptsRequest.fromBuffer(value),
+        ($0.ListWritingPromptsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitWritingRequest, $0.SubmitWritingResponse>(
+        'SubmitWriting',
+        submitWriting_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SubmitWritingRequest.fromBuffer(value),
+        ($0.SubmitWritingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyWritingSubmissionsRequest, $0.ListMyWritingSubmissionsResponse>(
+        'ListMyWritingSubmissions',
+        listMyWritingSubmissions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyWritingSubmissionsRequest.fromBuffer(value),
+        ($0.ListMyWritingSubmissionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetWritingSubmissionRequest, $0.GetWritingSubmissionResponse>(
+        'GetWritingSubmission',
+        getWritingSubmission_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetWritingSubmissionRequest.fromBuffer(value),
+        ($0.GetWritingSubmissionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListReadingTextsRequest, $0.ListReadingTextsResponse>(
+        'ListReadingTexts',
+        listReadingTexts_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListReadingTextsRequest.fromBuffer(value),
+        ($0.ListReadingTextsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetReadingTextRequest, $0.GetReadingTextResponse>(
+        'GetReadingText',
+        getReadingText_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetReadingTextRequest.fromBuffer(value),
+        ($0.GetReadingTextResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListIdiomsRequest, $0.ListIdiomsResponse>(
+        'ListIdioms',
+        listIdioms_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListIdiomsRequest.fromBuffer(value),
+        ($0.ListIdiomsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.StartTutorThreadRequest, $0.StartTutorThreadResponse>(
+        'StartTutorThread',
+        startTutorThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.StartTutorThreadRequest.fromBuffer(value),
+        ($0.StartTutorThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyTutorThreadsRequest, $0.ListMyTutorThreadsResponse>(
+        'ListMyTutorThreads',
+        listMyTutorThreads_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyTutorThreadsRequest.fromBuffer(value),
+        ($0.ListMyTutorThreadsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTutorThreadRequest, $0.GetTutorThreadResponse>(
+        'GetTutorThread',
+        getTutorThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetTutorThreadRequest.fromBuffer(value),
+        ($0.GetTutorThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PostTutorMessageRequest, $0.PostTutorMessageResponse>(
+        'PostTutorMessage',
+        postTutorMessage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.PostTutorMessageRequest.fromBuffer(value),
+        ($0.PostTutorMessageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAnthologyArticlesRequest, $0.ListAnthologyArticlesResponse>(
+        'ListAnthologyArticles',
+        listAnthologyArticles_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListAnthologyArticlesRequest.fromBuffer(value),
+        ($0.ListAnthologyArticlesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAnthologyArticleRequest, $0.GetAnthologyArticleResponse>(
+        'GetAnthologyArticle',
+        getAnthologyArticle_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetAnthologyArticleRequest.fromBuffer(value),
+        ($0.GetAnthologyArticleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.IssueCertificateRequest, $0.IssueCertificateResponse>(
+        'IssueCertificate',
+        issueCertificate_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.IssueCertificateRequest.fromBuffer(value),
+        ($0.IssueCertificateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyCertificatesRequest, $0.ListMyCertificatesResponse>(
+        'ListMyCertificates',
+        listMyCertificates_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyCertificatesRequest.fromBuffer(value),
+        ($0.ListMyCertificatesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateLinguistAlmanacRequest, $0.GenerateLinguistAlmanacResponse>(
+        'GenerateLinguistAlmanac',
+        generateLinguistAlmanac_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GenerateLinguistAlmanacRequest.fromBuffer(value),
+        ($0.GenerateLinguistAlmanacResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateLinguistShareRequest, $0.CreateLinguistShareResponse>(
+        'CreateLinguistShare',
+        createLinguistShare_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateLinguistShareRequest.fromBuffer(value),
+        ($0.CreateLinguistShareResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
         'ListWords',
         listWords_Pre,
@@ -465,6 +728,108 @@ abstract class LanguagesServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.MarkCulturalCompletedResponse> markCulturalCompleted($grpc.ServiceCall call, $0.MarkCulturalCompletedRequest request);
+
+  $async.Future<$0.ListWritingPromptsResponse> listWritingPrompts_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWritingPromptsRequest> $request) async {
+    return listWritingPrompts($call, await $request);
+  }
+
+  $async.Future<$0.ListWritingPromptsResponse> listWritingPrompts($grpc.ServiceCall call, $0.ListWritingPromptsRequest request);
+
+  $async.Future<$0.SubmitWritingResponse> submitWriting_Pre($grpc.ServiceCall $call, $async.Future<$0.SubmitWritingRequest> $request) async {
+    return submitWriting($call, await $request);
+  }
+
+  $async.Future<$0.SubmitWritingResponse> submitWriting($grpc.ServiceCall call, $0.SubmitWritingRequest request);
+
+  $async.Future<$0.ListMyWritingSubmissionsResponse> listMyWritingSubmissions_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyWritingSubmissionsRequest> $request) async {
+    return listMyWritingSubmissions($call, await $request);
+  }
+
+  $async.Future<$0.ListMyWritingSubmissionsResponse> listMyWritingSubmissions($grpc.ServiceCall call, $0.ListMyWritingSubmissionsRequest request);
+
+  $async.Future<$0.GetWritingSubmissionResponse> getWritingSubmission_Pre($grpc.ServiceCall $call, $async.Future<$0.GetWritingSubmissionRequest> $request) async {
+    return getWritingSubmission($call, await $request);
+  }
+
+  $async.Future<$0.GetWritingSubmissionResponse> getWritingSubmission($grpc.ServiceCall call, $0.GetWritingSubmissionRequest request);
+
+  $async.Future<$0.ListReadingTextsResponse> listReadingTexts_Pre($grpc.ServiceCall $call, $async.Future<$0.ListReadingTextsRequest> $request) async {
+    return listReadingTexts($call, await $request);
+  }
+
+  $async.Future<$0.ListReadingTextsResponse> listReadingTexts($grpc.ServiceCall call, $0.ListReadingTextsRequest request);
+
+  $async.Future<$0.GetReadingTextResponse> getReadingText_Pre($grpc.ServiceCall $call, $async.Future<$0.GetReadingTextRequest> $request) async {
+    return getReadingText($call, await $request);
+  }
+
+  $async.Future<$0.GetReadingTextResponse> getReadingText($grpc.ServiceCall call, $0.GetReadingTextRequest request);
+
+  $async.Future<$0.ListIdiomsResponse> listIdioms_Pre($grpc.ServiceCall $call, $async.Future<$0.ListIdiomsRequest> $request) async {
+    return listIdioms($call, await $request);
+  }
+
+  $async.Future<$0.ListIdiomsResponse> listIdioms($grpc.ServiceCall call, $0.ListIdiomsRequest request);
+
+  $async.Future<$0.StartTutorThreadResponse> startTutorThread_Pre($grpc.ServiceCall $call, $async.Future<$0.StartTutorThreadRequest> $request) async {
+    return startTutorThread($call, await $request);
+  }
+
+  $async.Future<$0.StartTutorThreadResponse> startTutorThread($grpc.ServiceCall call, $0.StartTutorThreadRequest request);
+
+  $async.Future<$0.ListMyTutorThreadsResponse> listMyTutorThreads_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyTutorThreadsRequest> $request) async {
+    return listMyTutorThreads($call, await $request);
+  }
+
+  $async.Future<$0.ListMyTutorThreadsResponse> listMyTutorThreads($grpc.ServiceCall call, $0.ListMyTutorThreadsRequest request);
+
+  $async.Future<$0.GetTutorThreadResponse> getTutorThread_Pre($grpc.ServiceCall $call, $async.Future<$0.GetTutorThreadRequest> $request) async {
+    return getTutorThread($call, await $request);
+  }
+
+  $async.Future<$0.GetTutorThreadResponse> getTutorThread($grpc.ServiceCall call, $0.GetTutorThreadRequest request);
+
+  $async.Future<$0.PostTutorMessageResponse> postTutorMessage_Pre($grpc.ServiceCall $call, $async.Future<$0.PostTutorMessageRequest> $request) async {
+    return postTutorMessage($call, await $request);
+  }
+
+  $async.Future<$0.PostTutorMessageResponse> postTutorMessage($grpc.ServiceCall call, $0.PostTutorMessageRequest request);
+
+  $async.Future<$0.ListAnthologyArticlesResponse> listAnthologyArticles_Pre($grpc.ServiceCall $call, $async.Future<$0.ListAnthologyArticlesRequest> $request) async {
+    return listAnthologyArticles($call, await $request);
+  }
+
+  $async.Future<$0.ListAnthologyArticlesResponse> listAnthologyArticles($grpc.ServiceCall call, $0.ListAnthologyArticlesRequest request);
+
+  $async.Future<$0.GetAnthologyArticleResponse> getAnthologyArticle_Pre($grpc.ServiceCall $call, $async.Future<$0.GetAnthologyArticleRequest> $request) async {
+    return getAnthologyArticle($call, await $request);
+  }
+
+  $async.Future<$0.GetAnthologyArticleResponse> getAnthologyArticle($grpc.ServiceCall call, $0.GetAnthologyArticleRequest request);
+
+  $async.Future<$0.IssueCertificateResponse> issueCertificate_Pre($grpc.ServiceCall $call, $async.Future<$0.IssueCertificateRequest> $request) async {
+    return issueCertificate($call, await $request);
+  }
+
+  $async.Future<$0.IssueCertificateResponse> issueCertificate($grpc.ServiceCall call, $0.IssueCertificateRequest request);
+
+  $async.Future<$0.ListMyCertificatesResponse> listMyCertificates_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyCertificatesRequest> $request) async {
+    return listMyCertificates($call, await $request);
+  }
+
+  $async.Future<$0.ListMyCertificatesResponse> listMyCertificates($grpc.ServiceCall call, $0.ListMyCertificatesRequest request);
+
+  $async.Future<$0.GenerateLinguistAlmanacResponse> generateLinguistAlmanac_Pre($grpc.ServiceCall $call, $async.Future<$0.GenerateLinguistAlmanacRequest> $request) async {
+    return generateLinguistAlmanac($call, await $request);
+  }
+
+  $async.Future<$0.GenerateLinguistAlmanacResponse> generateLinguistAlmanac($grpc.ServiceCall call, $0.GenerateLinguistAlmanacRequest request);
+
+  $async.Future<$0.CreateLinguistShareResponse> createLinguistShare_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateLinguistShareRequest> $request) async {
+    return createLinguistShare($call, await $request);
+  }
+
+  $async.Future<$0.CreateLinguistShareResponse> createLinguistShare($grpc.ServiceCall call, $0.CreateLinguistShareRequest request);
 
   $async.Future<$0.ListWordsResponse> listWords_Pre($grpc.ServiceCall $call, $async.Future<$0.ListWordsRequest> $request) async {
     return listWords($call, await $request);

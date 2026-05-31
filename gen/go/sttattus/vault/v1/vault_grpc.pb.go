@@ -54,6 +54,22 @@ const (
 	VaultService_DeleteWalletChain_FullMethodName           = "/sttattus.vault.v1.VaultService/DeleteWalletChain"
 	VaultService_GetTaxSnapshot_FullMethodName              = "/sttattus.vault.v1.VaultService/GetTaxSnapshot"
 	VaultService_ExportUsCgtCsv_FullMethodName              = "/sttattus.vault.v1.VaultService/ExportUsCgtCsv"
+	VaultService_ListInvestmentCircles_FullMethodName       = "/sttattus.vault.v1.VaultService/ListInvestmentCircles"
+	VaultService_GetInvestmentCircle_FullMethodName         = "/sttattus.vault.v1.VaultService/GetInvestmentCircle"
+	VaultService_ExpressCircleInterest_FullMethodName       = "/sttattus.vault.v1.VaultService/ExpressCircleInterest"
+	VaultService_StartAdvisorThread_FullMethodName          = "/sttattus.vault.v1.VaultService/StartAdvisorThread"
+	VaultService_ListAdvisorThreads_FullMethodName          = "/sttattus.vault.v1.VaultService/ListAdvisorThreads"
+	VaultService_GetAdvisorThread_FullMethodName            = "/sttattus.vault.v1.VaultService/GetAdvisorThread"
+	VaultService_PostAdvisorMessage_FullMethodName          = "/sttattus.vault.v1.VaultService/PostAdvisorMessage"
+	VaultService_ListWealthAnthology_FullMethodName         = "/sttattus.vault.v1.VaultService/ListWealthAnthology"
+	VaultService_GetWealthArticle_FullMethodName            = "/sttattus.vault.v1.VaultService/GetWealthArticle"
+	VaultService_ListPartnerBanks_FullMethodName            = "/sttattus.vault.v1.VaultService/ListPartnerBanks"
+	VaultService_CreateVaultShare_FullMethodName            = "/sttattus.vault.v1.VaultService/CreateVaultShare"
+	VaultService_ListMyVaultShares_FullMethodName           = "/sttattus.vault.v1.VaultService/ListMyVaultShares"
+	VaultService_RevokeVaultShare_FullMethodName            = "/sttattus.vault.v1.VaultService/RevokeVaultShare"
+	VaultService_GenerateWealthAlmanac_FullMethodName       = "/sttattus.vault.v1.VaultService/GenerateWealthAlmanac"
+	VaultService_GetYearInVault_FullMethodName              = "/sttattus.vault.v1.VaultService/GetYearInVault"
+	VaultService_GetLiquidityStressTest_FullMethodName      = "/sttattus.vault.v1.VaultService/GetLiquidityStressTest"
 )
 
 // VaultServiceClient is the client API for VaultService service.
@@ -116,6 +132,35 @@ type VaultServiceClient interface {
 	// holdings + cap-table line items and a US-CGT (Form 8949) CSV.
 	GetTaxSnapshot(ctx context.Context, in *GetTaxSnapshotRequest, opts ...grpc.CallOption) (*GetTaxSnapshotResponse, error)
 	ExportUsCgtCsv(ctx context.Context, in *ExportUsCgtCsvRequest, opts ...grpc.CallOption) (*ExportUsCgtCsvResponse, error)
+	// V8P3.1 — Investment Circles: curated deal-flow gated server-side by the
+	// user's cross-pillar Sttattus rank. Locked circles return metadata + the
+	// required threshold but withhold the deal room.
+	ListInvestmentCircles(ctx context.Context, in *ListInvestmentCirclesRequest, opts ...grpc.CallOption) (*ListInvestmentCirclesResponse, error)
+	GetInvestmentCircle(ctx context.Context, in *GetInvestmentCircleRequest, opts ...grpc.CallOption) (*GetInvestmentCircleResponse, error)
+	ExpressCircleInterest(ctx context.Context, in *ExpressCircleInterestRequest, opts ...grpc.CallOption) (*ExpressCircleInterestResponse, error)
+	// V8P3.2 — concierge advisor desk (Sovereign). Async threads + SLA.
+	StartAdvisorThread(ctx context.Context, in *StartAdvisorThreadRequest, opts ...grpc.CallOption) (*StartAdvisorThreadResponse, error)
+	ListAdvisorThreads(ctx context.Context, in *ListAdvisorThreadsRequest, opts ...grpc.CallOption) (*ListAdvisorThreadsResponse, error)
+	GetAdvisorThread(ctx context.Context, in *GetAdvisorThreadRequest, opts ...grpc.CallOption) (*GetAdvisorThreadResponse, error)
+	PostAdvisorMessage(ctx context.Context, in *PostAdvisorMessageRequest, opts ...grpc.CallOption) (*PostAdvisorMessageResponse, error)
+	// V8P3.3 — Wealth Anthology: named-author editorial.
+	ListWealthAnthology(ctx context.Context, in *ListWealthAnthologyRequest, opts ...grpc.CallOption) (*ListWealthAnthologyResponse, error)
+	GetWealthArticle(ctx context.Context, in *GetWealthArticleRequest, opts ...grpc.CallOption) (*GetWealthArticleResponse, error)
+	// V8P3.5 — curated private-bank directory (region + tier filter).
+	ListPartnerBanks(ctx context.Context, in *ListPartnerBanksRequest, opts ...grpc.CallOption) (*ListPartnerBanksResponse, error)
+	// V8P3.6 — token-based verified-wealth share. Bands only; absolute amounts
+	// are never disclosed (discretion-first). Public read at /share/vault/:token.
+	CreateVaultShare(ctx context.Context, in *CreateVaultShareRequest, opts ...grpc.CallOption) (*CreateVaultShareResponse, error)
+	ListMyVaultShares(ctx context.Context, in *ListMyVaultSharesRequest, opts ...grpc.CallOption) (*ListMyVaultSharesResponse, error)
+	RevokeVaultShare(ctx context.Context, in *RevokeVaultShareRequest, opts ...grpc.CallOption) (*RevokeVaultShareResponse, error)
+	// V8P4.1 — Annual Wealth Almanac: a gofpdf-rendered PDF of the year's wealth
+	// movement, written to R2/S3. Returns the media URL.
+	GenerateWealthAlmanac(ctx context.Context, in *GenerateWealthAlmanacRequest, opts ...grpc.CallOption) (*GenerateWealthAlmanacResponse, error)
+	// V8P4.2 — Year-in-Vault recap (pure compute over the user's snapshots).
+	GetYearInVault(ctx context.Context, in *GetYearInVaultRequest, opts ...grpc.CallOption) (*GetYearInVaultResponse, error)
+	// V8P4.3 — liquidity stress test: given a cash need, source it across the
+	// liquidity ladder (T+0 cash → T+30 marketable → illiquid). Pure compute.
+	GetLiquidityStressTest(ctx context.Context, in *GetLiquidityStressTestRequest, opts ...grpc.CallOption) (*GetLiquidityStressTestResponse, error)
 }
 
 type vaultServiceClient struct {
@@ -476,6 +521,166 @@ func (c *vaultServiceClient) ExportUsCgtCsv(ctx context.Context, in *ExportUsCgt
 	return out, nil
 }
 
+func (c *vaultServiceClient) ListInvestmentCircles(ctx context.Context, in *ListInvestmentCirclesRequest, opts ...grpc.CallOption) (*ListInvestmentCirclesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListInvestmentCirclesResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListInvestmentCircles_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetInvestmentCircle(ctx context.Context, in *GetInvestmentCircleRequest, opts ...grpc.CallOption) (*GetInvestmentCircleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetInvestmentCircleResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetInvestmentCircle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) ExpressCircleInterest(ctx context.Context, in *ExpressCircleInterestRequest, opts ...grpc.CallOption) (*ExpressCircleInterestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExpressCircleInterestResponse)
+	err := c.cc.Invoke(ctx, VaultService_ExpressCircleInterest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) StartAdvisorThread(ctx context.Context, in *StartAdvisorThreadRequest, opts ...grpc.CallOption) (*StartAdvisorThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StartAdvisorThreadResponse)
+	err := c.cc.Invoke(ctx, VaultService_StartAdvisorThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) ListAdvisorThreads(ctx context.Context, in *ListAdvisorThreadsRequest, opts ...grpc.CallOption) (*ListAdvisorThreadsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAdvisorThreadsResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListAdvisorThreads_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetAdvisorThread(ctx context.Context, in *GetAdvisorThreadRequest, opts ...grpc.CallOption) (*GetAdvisorThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAdvisorThreadResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetAdvisorThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) PostAdvisorMessage(ctx context.Context, in *PostAdvisorMessageRequest, opts ...grpc.CallOption) (*PostAdvisorMessageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PostAdvisorMessageResponse)
+	err := c.cc.Invoke(ctx, VaultService_PostAdvisorMessage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) ListWealthAnthology(ctx context.Context, in *ListWealthAnthologyRequest, opts ...grpc.CallOption) (*ListWealthAnthologyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListWealthAnthologyResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListWealthAnthology_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetWealthArticle(ctx context.Context, in *GetWealthArticleRequest, opts ...grpc.CallOption) (*GetWealthArticleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetWealthArticleResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetWealthArticle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) ListPartnerBanks(ctx context.Context, in *ListPartnerBanksRequest, opts ...grpc.CallOption) (*ListPartnerBanksResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListPartnerBanksResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListPartnerBanks_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) CreateVaultShare(ctx context.Context, in *CreateVaultShareRequest, opts ...grpc.CallOption) (*CreateVaultShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateVaultShareResponse)
+	err := c.cc.Invoke(ctx, VaultService_CreateVaultShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) ListMyVaultShares(ctx context.Context, in *ListMyVaultSharesRequest, opts ...grpc.CallOption) (*ListMyVaultSharesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyVaultSharesResponse)
+	err := c.cc.Invoke(ctx, VaultService_ListMyVaultShares_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) RevokeVaultShare(ctx context.Context, in *RevokeVaultShareRequest, opts ...grpc.CallOption) (*RevokeVaultShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeVaultShareResponse)
+	err := c.cc.Invoke(ctx, VaultService_RevokeVaultShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GenerateWealthAlmanac(ctx context.Context, in *GenerateWealthAlmanacRequest, opts ...grpc.CallOption) (*GenerateWealthAlmanacResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateWealthAlmanacResponse)
+	err := c.cc.Invoke(ctx, VaultService_GenerateWealthAlmanac_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetYearInVault(ctx context.Context, in *GetYearInVaultRequest, opts ...grpc.CallOption) (*GetYearInVaultResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetYearInVaultResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetYearInVault_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetLiquidityStressTest(ctx context.Context, in *GetLiquidityStressTestRequest, opts ...grpc.CallOption) (*GetLiquidityStressTestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLiquidityStressTestResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetLiquidityStressTest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultServiceServer is the server API for VaultService service.
 // All implementations must embed UnimplementedVaultServiceServer
 // for forward compatibility.
@@ -536,6 +741,35 @@ type VaultServiceServer interface {
 	// holdings + cap-table line items and a US-CGT (Form 8949) CSV.
 	GetTaxSnapshot(context.Context, *GetTaxSnapshotRequest) (*GetTaxSnapshotResponse, error)
 	ExportUsCgtCsv(context.Context, *ExportUsCgtCsvRequest) (*ExportUsCgtCsvResponse, error)
+	// V8P3.1 — Investment Circles: curated deal-flow gated server-side by the
+	// user's cross-pillar Sttattus rank. Locked circles return metadata + the
+	// required threshold but withhold the deal room.
+	ListInvestmentCircles(context.Context, *ListInvestmentCirclesRequest) (*ListInvestmentCirclesResponse, error)
+	GetInvestmentCircle(context.Context, *GetInvestmentCircleRequest) (*GetInvestmentCircleResponse, error)
+	ExpressCircleInterest(context.Context, *ExpressCircleInterestRequest) (*ExpressCircleInterestResponse, error)
+	// V8P3.2 — concierge advisor desk (Sovereign). Async threads + SLA.
+	StartAdvisorThread(context.Context, *StartAdvisorThreadRequest) (*StartAdvisorThreadResponse, error)
+	ListAdvisorThreads(context.Context, *ListAdvisorThreadsRequest) (*ListAdvisorThreadsResponse, error)
+	GetAdvisorThread(context.Context, *GetAdvisorThreadRequest) (*GetAdvisorThreadResponse, error)
+	PostAdvisorMessage(context.Context, *PostAdvisorMessageRequest) (*PostAdvisorMessageResponse, error)
+	// V8P3.3 — Wealth Anthology: named-author editorial.
+	ListWealthAnthology(context.Context, *ListWealthAnthologyRequest) (*ListWealthAnthologyResponse, error)
+	GetWealthArticle(context.Context, *GetWealthArticleRequest) (*GetWealthArticleResponse, error)
+	// V8P3.5 — curated private-bank directory (region + tier filter).
+	ListPartnerBanks(context.Context, *ListPartnerBanksRequest) (*ListPartnerBanksResponse, error)
+	// V8P3.6 — token-based verified-wealth share. Bands only; absolute amounts
+	// are never disclosed (discretion-first). Public read at /share/vault/:token.
+	CreateVaultShare(context.Context, *CreateVaultShareRequest) (*CreateVaultShareResponse, error)
+	ListMyVaultShares(context.Context, *ListMyVaultSharesRequest) (*ListMyVaultSharesResponse, error)
+	RevokeVaultShare(context.Context, *RevokeVaultShareRequest) (*RevokeVaultShareResponse, error)
+	// V8P4.1 — Annual Wealth Almanac: a gofpdf-rendered PDF of the year's wealth
+	// movement, written to R2/S3. Returns the media URL.
+	GenerateWealthAlmanac(context.Context, *GenerateWealthAlmanacRequest) (*GenerateWealthAlmanacResponse, error)
+	// V8P4.2 — Year-in-Vault recap (pure compute over the user's snapshots).
+	GetYearInVault(context.Context, *GetYearInVaultRequest) (*GetYearInVaultResponse, error)
+	// V8P4.3 — liquidity stress test: given a cash need, source it across the
+	// liquidity ladder (T+0 cash → T+30 marketable → illiquid). Pure compute.
+	GetLiquidityStressTest(context.Context, *GetLiquidityStressTestRequest) (*GetLiquidityStressTestResponse, error)
 	mustEmbedUnimplementedVaultServiceServer()
 }
 
@@ -650,6 +884,54 @@ func (UnimplementedVaultServiceServer) GetTaxSnapshot(context.Context, *GetTaxSn
 }
 func (UnimplementedVaultServiceServer) ExportUsCgtCsv(context.Context, *ExportUsCgtCsvRequest) (*ExportUsCgtCsvResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ExportUsCgtCsv not implemented")
+}
+func (UnimplementedVaultServiceServer) ListInvestmentCircles(context.Context, *ListInvestmentCirclesRequest) (*ListInvestmentCirclesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListInvestmentCircles not implemented")
+}
+func (UnimplementedVaultServiceServer) GetInvestmentCircle(context.Context, *GetInvestmentCircleRequest) (*GetInvestmentCircleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetInvestmentCircle not implemented")
+}
+func (UnimplementedVaultServiceServer) ExpressCircleInterest(context.Context, *ExpressCircleInterestRequest) (*ExpressCircleInterestResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExpressCircleInterest not implemented")
+}
+func (UnimplementedVaultServiceServer) StartAdvisorThread(context.Context, *StartAdvisorThreadRequest) (*StartAdvisorThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StartAdvisorThread not implemented")
+}
+func (UnimplementedVaultServiceServer) ListAdvisorThreads(context.Context, *ListAdvisorThreadsRequest) (*ListAdvisorThreadsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAdvisorThreads not implemented")
+}
+func (UnimplementedVaultServiceServer) GetAdvisorThread(context.Context, *GetAdvisorThreadRequest) (*GetAdvisorThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAdvisorThread not implemented")
+}
+func (UnimplementedVaultServiceServer) PostAdvisorMessage(context.Context, *PostAdvisorMessageRequest) (*PostAdvisorMessageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PostAdvisorMessage not implemented")
+}
+func (UnimplementedVaultServiceServer) ListWealthAnthology(context.Context, *ListWealthAnthologyRequest) (*ListWealthAnthologyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListWealthAnthology not implemented")
+}
+func (UnimplementedVaultServiceServer) GetWealthArticle(context.Context, *GetWealthArticleRequest) (*GetWealthArticleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetWealthArticle not implemented")
+}
+func (UnimplementedVaultServiceServer) ListPartnerBanks(context.Context, *ListPartnerBanksRequest) (*ListPartnerBanksResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListPartnerBanks not implemented")
+}
+func (UnimplementedVaultServiceServer) CreateVaultShare(context.Context, *CreateVaultShareRequest) (*CreateVaultShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateVaultShare not implemented")
+}
+func (UnimplementedVaultServiceServer) ListMyVaultShares(context.Context, *ListMyVaultSharesRequest) (*ListMyVaultSharesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyVaultShares not implemented")
+}
+func (UnimplementedVaultServiceServer) RevokeVaultShare(context.Context, *RevokeVaultShareRequest) (*RevokeVaultShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeVaultShare not implemented")
+}
+func (UnimplementedVaultServiceServer) GenerateWealthAlmanac(context.Context, *GenerateWealthAlmanacRequest) (*GenerateWealthAlmanacResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateWealthAlmanac not implemented")
+}
+func (UnimplementedVaultServiceServer) GetYearInVault(context.Context, *GetYearInVaultRequest) (*GetYearInVaultResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetYearInVault not implemented")
+}
+func (UnimplementedVaultServiceServer) GetLiquidityStressTest(context.Context, *GetLiquidityStressTestRequest) (*GetLiquidityStressTestResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLiquidityStressTest not implemented")
 }
 func (UnimplementedVaultServiceServer) mustEmbedUnimplementedVaultServiceServer() {}
 func (UnimplementedVaultServiceServer) testEmbeddedByValue()                      {}
@@ -1302,6 +1584,294 @@ func _VaultService_ExportUsCgtCsv_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultService_ListInvestmentCircles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListInvestmentCirclesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListInvestmentCircles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListInvestmentCircles_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListInvestmentCircles(ctx, req.(*ListInvestmentCirclesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetInvestmentCircle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetInvestmentCircleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetInvestmentCircle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetInvestmentCircle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetInvestmentCircle(ctx, req.(*GetInvestmentCircleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_ExpressCircleInterest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExpressCircleInterestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ExpressCircleInterest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ExpressCircleInterest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ExpressCircleInterest(ctx, req.(*ExpressCircleInterestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_StartAdvisorThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StartAdvisorThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).StartAdvisorThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_StartAdvisorThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).StartAdvisorThread(ctx, req.(*StartAdvisorThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_ListAdvisorThreads_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAdvisorThreadsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListAdvisorThreads(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListAdvisorThreads_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListAdvisorThreads(ctx, req.(*ListAdvisorThreadsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetAdvisorThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAdvisorThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetAdvisorThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetAdvisorThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetAdvisorThread(ctx, req.(*GetAdvisorThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_PostAdvisorMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostAdvisorMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).PostAdvisorMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_PostAdvisorMessage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).PostAdvisorMessage(ctx, req.(*PostAdvisorMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_ListWealthAnthology_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListWealthAnthologyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListWealthAnthology(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListWealthAnthology_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListWealthAnthology(ctx, req.(*ListWealthAnthologyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetWealthArticle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWealthArticleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetWealthArticle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetWealthArticle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetWealthArticle(ctx, req.(*GetWealthArticleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_ListPartnerBanks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListPartnerBanksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListPartnerBanks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListPartnerBanks_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListPartnerBanks(ctx, req.(*ListPartnerBanksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_CreateVaultShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateVaultShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).CreateVaultShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_CreateVaultShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).CreateVaultShare(ctx, req.(*CreateVaultShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_ListMyVaultShares_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyVaultSharesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListMyVaultShares(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ListMyVaultShares_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListMyVaultShares(ctx, req.(*ListMyVaultSharesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_RevokeVaultShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeVaultShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).RevokeVaultShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_RevokeVaultShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).RevokeVaultShare(ctx, req.(*RevokeVaultShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GenerateWealthAlmanac_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateWealthAlmanacRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GenerateWealthAlmanac(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GenerateWealthAlmanac_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GenerateWealthAlmanac(ctx, req.(*GenerateWealthAlmanacRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetYearInVault_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetYearInVaultRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetYearInVault(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetYearInVault_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetYearInVault(ctx, req.(*GetYearInVaultRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetLiquidityStressTest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLiquidityStressTestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetLiquidityStressTest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetLiquidityStressTest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetLiquidityStressTest(ctx, req.(*GetLiquidityStressTestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultService_ServiceDesc is the grpc.ServiceDesc for VaultService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1448,6 +2018,70 @@ var VaultService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExportUsCgtCsv",
 			Handler:    _VaultService_ExportUsCgtCsv_Handler,
+		},
+		{
+			MethodName: "ListInvestmentCircles",
+			Handler:    _VaultService_ListInvestmentCircles_Handler,
+		},
+		{
+			MethodName: "GetInvestmentCircle",
+			Handler:    _VaultService_GetInvestmentCircle_Handler,
+		},
+		{
+			MethodName: "ExpressCircleInterest",
+			Handler:    _VaultService_ExpressCircleInterest_Handler,
+		},
+		{
+			MethodName: "StartAdvisorThread",
+			Handler:    _VaultService_StartAdvisorThread_Handler,
+		},
+		{
+			MethodName: "ListAdvisorThreads",
+			Handler:    _VaultService_ListAdvisorThreads_Handler,
+		},
+		{
+			MethodName: "GetAdvisorThread",
+			Handler:    _VaultService_GetAdvisorThread_Handler,
+		},
+		{
+			MethodName: "PostAdvisorMessage",
+			Handler:    _VaultService_PostAdvisorMessage_Handler,
+		},
+		{
+			MethodName: "ListWealthAnthology",
+			Handler:    _VaultService_ListWealthAnthology_Handler,
+		},
+		{
+			MethodName: "GetWealthArticle",
+			Handler:    _VaultService_GetWealthArticle_Handler,
+		},
+		{
+			MethodName: "ListPartnerBanks",
+			Handler:    _VaultService_ListPartnerBanks_Handler,
+		},
+		{
+			MethodName: "CreateVaultShare",
+			Handler:    _VaultService_CreateVaultShare_Handler,
+		},
+		{
+			MethodName: "ListMyVaultShares",
+			Handler:    _VaultService_ListMyVaultShares_Handler,
+		},
+		{
+			MethodName: "RevokeVaultShare",
+			Handler:    _VaultService_RevokeVaultShare_Handler,
+		},
+		{
+			MethodName: "GenerateWealthAlmanac",
+			Handler:    _VaultService_GenerateWealthAlmanac_Handler,
+		},
+		{
+			MethodName: "GetYearInVault",
+			Handler:    _VaultService_GetYearInVault_Handler,
+		},
+		{
+			MethodName: "GetLiquidityStressTest",
+			Handler:    _VaultService_GetLiquidityStressTest_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

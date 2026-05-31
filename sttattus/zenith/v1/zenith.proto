@@ -40,6 +40,15 @@ message GetZenithStatsResponse {
   ZenithStats stats = 1;
 }
 
+// Z16.1b — the focus ledger. Recent verified + unverified blocks so the
+// app can show session history beyond the bare count.
+message ListRecentSessionsRequest {
+  int32 limit = 1; // default 20, max 100
+}
+message ListRecentSessionsResponse {
+  repeated Session sessions = 1;
+}
+
 // === Z16.8 + Z16.9 — meditation + breathwork library ===
 
 message LibraryItem {
@@ -134,9 +143,485 @@ message GetTodayLoadResponse {
   CognitiveLoad load = 1;
 }
 
+// ============ Phase 2 — core expansion ============
+
+// === Z16.15 — deep-work block templates ===
+message BlockTemplate {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  int32 pre_minutes = 4;
+  int32 main_minutes = 5;
+  int32 reset_minutes = 6;
+  string summary = 7;
+}
+message ListBlockTemplatesRequest {}
+message ListBlockTemplatesResponse {
+  repeated BlockTemplate templates = 1;
+}
+
+// === Z16.22 — multi-week coached programmes ===
+message Programme {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string teacher = 4;
+  string focus_area = 5;
+  string summary = 6;
+  int32 weeks = 7;
+  bool sovereign_only = 8;
+  // Populated on enrolled lists:
+  bool enrolled = 9;
+  int32 current_week = 10;
+  string status = 11; // '' | 'active' | 'completed' | 'abandoned'
+}
+message ProgrammeWeek {
+  int32 week_number = 1;
+  string title = 2;
+  string guidance = 3;
+  int32 target_sessions = 4;
+}
+message ListProgrammesRequest {}
+message ListProgrammesResponse {
+  repeated Programme programmes = 1;
+}
+message GetProgrammeRequest {
+  string programme_id = 1;
+}
+message GetProgrammeResponse {
+  Programme programme = 1;
+  repeated ProgrammeWeek weeks = 2;
+}
+message EnrollProgrammeRequest {
+  string programme_id = 1;
+}
+message EnrollProgrammeResponse {
+  Programme programme = 1;
+}
+message ListMyProgrammesRequest {}
+message ListMyProgrammesResponse {
+  repeated Programme programmes = 1;
+}
+message AdvanceProgrammeWeekRequest {
+  string programme_id = 1;
+}
+message AdvanceProgrammeWeekResponse {
+  Programme programme = 1;
+}
+
+// === Z16.23 — journaling (AES-GCM at rest) ===
+message JournalEntry {
+  string id = 1;
+  string kind = 2; // 'block' | 'day' | 'week'
+  string prompt = 3;
+  string body = 4; // decrypted for the owner only
+  int64 created_at_unix = 5;
+}
+message AddJournalEntryRequest {
+  string kind = 1;
+  string prompt = 2;
+  string body = 3;
+}
+message AddJournalEntryResponse {
+  JournalEntry entry = 1; // body omitted in response
+}
+message ListMyJournalEntriesRequest {
+  string kind = 1; // '' for all
+  int32 limit = 2; // default 50
+}
+message ListMyJournalEntriesResponse {
+  repeated JournalEntry entries = 1;
+}
+
+// === Z16.26 — focus history + heatmap ===
+message HourBucket {
+  int32 hour = 1; // 0..23 UTC
+  int32 sessions = 2;
+  int32 minutes = 3;
+}
+message DayBucket {
+  int64 date_unix = 1; // midnight UTC of the day
+  int32 sessions = 2;
+  int32 minutes = 3;
+}
+message GetFocusHistoryRequest {
+  int32 days = 1; // window, default 30
+}
+message GetFocusHistoryResponse {
+  repeated HourBucket hours = 1;
+  repeated DayBucket days = 2;
+  int32 current_streak_days = 3;
+  int32 total_minutes = 4;
+  int32 total_sessions = 5;
+}
+
+// === Z16.27 — what-if fortitude simulator ===
+message SimulateFortitudeRequest {
+  int32 blocks_per_day = 1;
+  int32 minutes_per_block = 2;
+  int32 days = 3;
+  bool assume_verified = 4;
+}
+message SimulateFortitudeResponse {
+  double current_rank = 1;
+  double projected_rank = 2;
+  double delta = 3;
+  string projected_label = 4;
+}
+
+// === Z16.17 — audio environment catalog ===
+message AudioEnvironment {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string category = 4; // functional | ambient | noise | binaural
+  string summary = 5;
+  string claim = 6; // honest claim labelling
+}
+message ListAudioEnvironmentsRequest {}
+message ListAudioEnvironmentsResponse {
+  repeated AudioEnvironment environments = 1;
+}
+
+// ============ Phase 2.5 — bridges ============
+
+// Z16.4 bridge — cross-pillar cognitive-load contract. Forge imports this
+// to gate training intensity (avoid same-day max lift + max focus).
+message CognitiveLoadSummary {
+  double load_0_100 = 1;
+  string verdict = 2; // 'clear' | 'moderate' | 'high' | 'no-data'
+  string recommendation = 3;
+  int32 inputs_available = 4;
+}
+message GetCognitiveLoadRequest {}
+message GetCognitiveLoadResponse {
+  CognitiveLoadSummary summary = 1;
+}
+
+// Z16.32 — acute stress-response prompt (Apex HRV crash → reset).
+message StressPrompt {
+  string id = 1;
+  string source = 2;
+  double hrv_drop = 3;
+  string message = 4;
+  int64 created_at_unix = 5;
+}
+message AcknowledgeStressPromptRequest {
+  string id = 1;
+}
+message AcknowledgeStressPromptResponse {
+  bool ok = 1;
+}
+
+// Z16.9 dashboard — Today card: load + next block + active programme +
+// any pending stress prompt, in one round-trip.
+message TodaySummary {
+  double load_0_100 = 1;
+  string load_verdict = 2;
+  // Optional message fields use proto3 presence (has*() accessors) —
+  // no redundant has_* bools (they collide with the generated presence
+  // method names in some codegens).
+  BlockRecommendation recommended_block = 4;
+  Programme active_programme = 6;
+  string active_week_title = 7;
+  StressPrompt stress_prompt = 9;
+  double fortitude_rank = 10;
+}
+message GetTodaySummaryRequest {}
+message GetTodaySummaryResponse {
+  TodaySummary summary = 1;
+}
+
+// ============ Phase 3 — premium differentiation ============
+
+// === Coach concierge desk (Sovereign) ===
+message ConciergeThread {
+  string id = 1;
+  string subject = 2;
+  string status = 3;
+  int64 sla_due_unix = 4;
+  int64 created_unix = 5;
+  int64 updated_unix = 6;
+}
+message ConciergeMessage {
+  string id = 1;
+  string sender = 2; // 'member' | 'coach' | 'system'
+  string body = 3;
+  int64 created_unix = 4;
+}
+message StartConciergeThreadRequest {
+  string subject = 1;
+  string message = 2;
+}
+message StartConciergeThreadResponse {
+  ConciergeThread thread = 1;
+}
+message ListMyConciergeThreadsRequest {}
+message ListMyConciergeThreadsResponse {
+  repeated ConciergeThread threads = 1;
+}
+message GetConciergeThreadRequest {
+  string thread_id = 1;
+}
+message GetConciergeThreadResponse {
+  ConciergeThread thread = 1;
+  repeated ConciergeMessage messages = 2;
+}
+message PostConciergeMessageRequest {
+  string thread_id = 1;
+  string body = 2;
+}
+message PostConciergeMessageResponse {
+  ConciergeMessage message = 1;
+}
+
+// === Editorial Anthology ===
+message AnthologyArticle {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string dek = 4;
+  string body = 5; // withheld in list + when locked
+  string author_name = 6;
+  string author_credential = 7;
+  int32 read_minutes = 8;
+  bool sovereign_only = 9;
+  bool locked = 10;
+  int64 published_unix = 11;
+}
+message ListAnthologyArticlesRequest {}
+message ListAnthologyArticlesResponse {
+  repeated AnthologyArticle articles = 1;
+}
+message GetAnthologyArticleRequest {
+  string id = 1;
+}
+message GetAnthologyArticleResponse {
+  AnthologyArticle article = 1;
+}
+
+// === Teacher directory ===
+message Teacher {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string discipline = 4;
+  string region = 5;
+  string bio = 6;
+  bool sovereign_only = 7;
+}
+message ListTeachersRequest {}
+message ListTeachersResponse {
+  repeated Teacher teachers = 1;
+}
+
+// === Sovereign commissioned audio (tier + window gated) ===
+message SovereignAudio {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string summary = 4;
+  string guided_text = 5; // withheld when locked
+  int32 duration_minutes = 6;
+  string teacher_name = 7;
+  string audio_url = 8; // withheld when locked
+  bool locked = 9;
+  int64 published_unix = 10;
+}
+message ListSovereignAudioRequest {}
+message ListSovereignAudioResponse {
+  repeated SovereignAudio items = 1;
+  bool unlocked = 2; // caller meets the Sovereign gate
+}
+message GetSovereignAudioRequest {
+  string id = 1;
+}
+message GetSovereignAudioResponse {
+  SovereignAudio item = 1;
+}
+
+// === Travel jet-lag protocol (Nomad cross-pillar, pure compute) ===
+message JetLagDay {
+  int32 day_offset = 1; // -4..+4 relative to travel day (0)
+  string label = 2;
+  string light = 3;
+  string melatonin = 4;
+  string meal = 5;
+}
+message GetJetLagProtocolRequest {
+  string origin_city = 1;
+  string dest_city = 2;
+  int32 origin_utc_offset_minutes = 3;
+  int32 dest_utc_offset_minutes = 4;
+}
+message GetJetLagProtocolResponse {
+  string direction = 1; // 'east' | 'west' | 'none'
+  int32 shift_hours = 2;
+  repeated JetLagDay days = 3;
+}
+
+// === Public profile share (fortitude band only) ===
+message CreateProfileShareRequest {
+  int32 ttl_days = 1; // default 14
+}
+message CreateProfileShareResponse {
+  string token = 1;
+  string url = 2;
+  int64 expires_unix = 3;
+}
+message ProfileShareToken {
+  string token = 1;
+  int64 expires_unix = 2;
+  int64 created_unix = 3;
+  bool revoked = 4;
+}
+message ListMyProfileSharesRequest {}
+message ListMyProfileSharesResponse {
+  repeated ProfileShareToken tokens = 1;
+}
+message RevokeProfileShareRequest {
+  string token = 1;
+}
+message RevokeProfileShareResponse {
+  bool ok = 1;
+}
+
+// ============ Phase 3.5 — real parsers + rituals ============
+
+// Z16.61 — journal NLP themes (Gemini, heuristic fallback).
+message JournalTheme {
+  string label = 1;
+  int32 mentions = 2;
+}
+message GetJournalInsightsRequest {}
+message GetJournalInsightsResponse {
+  repeated JournalTheme themes = 1;
+  string summary = 2;
+  string mood_trend = 3; // 'improving' | 'steady' | 'declining' | 'unknown'
+  bool ai_generated = 4; // false = deterministic heuristic fallback
+  int32 entries_analyzed = 5;
+}
+
+// Z16.35 — quarterly cognitive test cadence.
+message CognitiveTest {
+  string id = 1;
+  double attention_score = 2;
+  double memory_score = 3;
+  double reaction_ms = 4;
+  double composite = 5;
+  int64 taken_at_unix = 6;
+}
+message SubmitCognitiveTestRequest {
+  double attention_score = 1; // 0..100
+  double memory_score = 2;    // 0..100
+  double reaction_ms = 3;     // lower = better
+}
+message SubmitCognitiveTestResponse {
+  CognitiveTest test = 1;
+  double delta_vs_last = 2;
+}
+message ListMyCognitiveTestsRequest {}
+message ListMyCognitiveTestsResponse {
+  repeated CognitiveTest tests = 1;
+}
+message GetCognitiveTestStatusRequest {}
+message GetCognitiveTestStatusResponse {
+  bool due = 1;
+  int64 next_due_unix = 2;
+  bool has_baseline = 3;
+  CognitiveTest latest = 4;
+}
+
+// Z16.29/30 — pre/post-meeting + standalone micro-rituals.
+message Ritual {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string trigger = 4; // pre_meeting | post_meeting | stress | pre_sleep | standalone
+  int32 duration_seconds = 5;
+  string steps = 6;   // newline-separated
+  string summary = 7;
+}
+message ListRitualsRequest {
+  string trigger = 1; // '' for all
+}
+message ListRitualsResponse {
+  repeated Ritual rituals = 1;
+}
+
+// ============ Phase 4 — category-leading ============
+
+// Annual Year-in-Zenith recap + hardcover Almanac PDF.
+message YearInZenithRecap {
+  string year = 1;
+  double fortitude_rank = 2;
+  string rank_label = 3;
+  int32 total_focus_hours = 4;
+  int32 verified_blocks = 5;
+  int32 total_blocks = 6;
+  int32 longest_streak_days = 7;
+  int32 programmes_completed = 8;
+  int32 top_hour_utc = 9;
+  bool has_top_hour = 10;
+}
+message GetYearInZenithRecapRequest {}
+message GetYearInZenithRecapResponse {
+  YearInZenithRecap recap = 1;
+}
+message GenerateZenithAlmanacRequest {}
+message GenerateZenithAlmanacResponse {
+  string url = 1;
+  int32 page_count = 2;
+}
+
+// Sttattus Lounge quiet rooms (meditation pods).
+message Lounge {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string city = 4;
+  string room_type = 5;
+  string summary = 6;
+  bool sovereign_only = 7;
+  bool locked = 8;
+}
+message LoungeBooking {
+  string id = 1;
+  string lounge_id = 2;
+  string lounge_name = 3;
+  int64 starts_at_unix = 4;
+  int32 duration_minutes = 5;
+  string status = 6;
+}
+message ListLoungesRequest {}
+message ListLoungesResponse {
+  repeated Lounge lounges = 1;
+}
+message CreateLoungeBookingRequest {
+  string lounge_id = 1;
+  int64 starts_at_unix = 2;
+  int32 duration_minutes = 3;
+}
+message CreateLoungeBookingResponse {
+  LoungeBooking booking = 1;
+}
+message ListMyLoungeBookingsRequest {}
+message ListMyLoungeBookingsResponse {
+  repeated LoungeBooking bookings = 1;
+}
+message CancelLoungeBookingRequest {
+  string id = 1;
+}
+message CancelLoungeBookingResponse {
+  bool ok = 1;
+}
+
 service ZenithService {
   rpc LogFocusSession(LogFocusSessionRequest) returns (LogFocusSessionResponse);
   rpc GetZenithStats(GetZenithStatsRequest) returns (GetZenithStatsResponse);
+
+  // Z16.1b — recent focus blocks (the ledger).
+  rpc ListRecentSessions(ListRecentSessionsRequest) returns (ListRecentSessionsResponse);
 
   // Z16.5 — today's cognitive load.
   rpc GetTodayLoad(GetTodayLoadRequest) returns (GetTodayLoadResponse);
@@ -150,4 +635,67 @@ service ZenithService {
 
   // Z16.8 + Z16.9 — meditation + breathwork library.
   rpc ListLibraryItems(ListLibraryItemsRequest) returns (ListLibraryItemsResponse);
+
+  // ===== Phase 2 — core expansion =====
+  // Z16.15 — block templates.
+  rpc ListBlockTemplates(ListBlockTemplatesRequest) returns (ListBlockTemplatesResponse);
+  // Z16.22 — coached programmes.
+  rpc ListProgrammes(ListProgrammesRequest) returns (ListProgrammesResponse);
+  rpc GetProgramme(GetProgrammeRequest) returns (GetProgrammeResponse);
+  rpc EnrollProgramme(EnrollProgrammeRequest) returns (EnrollProgrammeResponse);
+  rpc ListMyProgrammes(ListMyProgrammesRequest) returns (ListMyProgrammesResponse);
+  rpc AdvanceProgrammeWeek(AdvanceProgrammeWeekRequest) returns (AdvanceProgrammeWeekResponse);
+  // Z16.23 — journaling.
+  rpc AddJournalEntry(AddJournalEntryRequest) returns (AddJournalEntryResponse);
+  rpc ListMyJournalEntries(ListMyJournalEntriesRequest) returns (ListMyJournalEntriesResponse);
+  // Z16.26 — focus history + heatmap.
+  rpc GetFocusHistory(GetFocusHistoryRequest) returns (GetFocusHistoryResponse);
+  // Z16.27 — what-if simulator.
+  rpc SimulateFortitude(SimulateFortitudeRequest) returns (SimulateFortitudeResponse);
+  // Z16.17 — audio environment catalog.
+  rpc ListAudioEnvironments(ListAudioEnvironmentsRequest) returns (ListAudioEnvironmentsResponse);
+
+  // ===== Phase 2.5 — bridges =====
+  // Z16.4 — cross-pillar cognitive-load contract (Forge consumes).
+  rpc GetCognitiveLoad(GetCognitiveLoadRequest) returns (GetCognitiveLoadResponse);
+  // Z16.9 — Today card.
+  rpc GetTodaySummary(GetTodaySummaryRequest) returns (GetTodaySummaryResponse);
+  // Z16.32 — acknowledge an acute stress-response prompt.
+  rpc AcknowledgeStressPrompt(AcknowledgeStressPromptRequest) returns (AcknowledgeStressPromptResponse);
+
+  // ===== Phase 3 — premium differentiation =====
+  // Coach concierge desk (Sovereign).
+  rpc StartConciergeThread(StartConciergeThreadRequest) returns (StartConciergeThreadResponse);
+  rpc ListMyConciergeThreads(ListMyConciergeThreadsRequest) returns (ListMyConciergeThreadsResponse);
+  rpc GetConciergeThread(GetConciergeThreadRequest) returns (GetConciergeThreadResponse);
+  rpc PostConciergeMessage(PostConciergeMessageRequest) returns (PostConciergeMessageResponse);
+  // Editorial Anthology.
+  rpc ListAnthologyArticles(ListAnthologyArticlesRequest) returns (ListAnthologyArticlesResponse);
+  rpc GetAnthologyArticle(GetAnthologyArticleRequest) returns (GetAnthologyArticleResponse);
+  // Teacher directory.
+  rpc ListTeachers(ListTeachersRequest) returns (ListTeachersResponse);
+  // Sovereign commissioned audio.
+  rpc ListSovereignAudio(ListSovereignAudioRequest) returns (ListSovereignAudioResponse);
+  rpc GetSovereignAudio(GetSovereignAudioRequest) returns (GetSovereignAudioResponse);
+  // Travel jet-lag protocol (Nomad cross-pillar).
+  rpc GetJetLagProtocol(GetJetLagProtocolRequest) returns (GetJetLagProtocolResponse);
+  // Public profile share (fortitude band only).
+  rpc CreateProfileShare(CreateProfileShareRequest) returns (CreateProfileShareResponse);
+  rpc ListMyProfileShares(ListMyProfileSharesRequest) returns (ListMyProfileSharesResponse);
+  rpc RevokeProfileShare(RevokeProfileShareRequest) returns (RevokeProfileShareResponse);
+
+  // ===== Phase 3.5 — real parsers + rituals =====
+  rpc GetJournalInsights(GetJournalInsightsRequest) returns (GetJournalInsightsResponse);
+  rpc SubmitCognitiveTest(SubmitCognitiveTestRequest) returns (SubmitCognitiveTestResponse);
+  rpc ListMyCognitiveTests(ListMyCognitiveTestsRequest) returns (ListMyCognitiveTestsResponse);
+  rpc GetCognitiveTestStatus(GetCognitiveTestStatusRequest) returns (GetCognitiveTestStatusResponse);
+  rpc ListRituals(ListRitualsRequest) returns (ListRitualsResponse);
+
+  // ===== Phase 4 — category-leading =====
+  rpc GetYearInZenithRecap(GetYearInZenithRecapRequest) returns (GetYearInZenithRecapResponse);
+  rpc GenerateZenithAlmanac(GenerateZenithAlmanacRequest) returns (GenerateZenithAlmanacResponse);
+  rpc ListLounges(ListLoungesRequest) returns (ListLoungesResponse);
+  rpc CreateLoungeBooking(CreateLoungeBookingRequest) returns (CreateLoungeBookingResponse);
+  rpc ListMyLoungeBookings(ListMyLoungeBookingsRequest) returns (ListMyLoungeBookingsResponse);
+  rpc CancelLoungeBooking(CancelLoungeBookingRequest) returns (CancelLoungeBookingResponse);
 }

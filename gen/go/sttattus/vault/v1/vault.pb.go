@@ -621,6 +621,2234 @@ func (x *AdminVerifyAssetResponse) GetAsset() *Asset {
 	return nil
 }
 
+type GenerateWealthAlmanacRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateWealthAlmanacRequest) Reset() {
+	*x = GenerateWealthAlmanacRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateWealthAlmanacRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateWealthAlmanacRequest) ProtoMessage() {}
+
+func (x *GenerateWealthAlmanacRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateWealthAlmanacRequest.ProtoReflect.Descriptor instead.
+func (*GenerateWealthAlmanacRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{8}
+}
+
+type GenerateWealthAlmanacResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	MediaUrl      string                 `protobuf:"bytes,1,opt,name=media_url,json=mediaUrl,proto3" json:"media_url,omitempty"`
+	PageCount     int32                  `protobuf:"varint,2,opt,name=page_count,json=pageCount,proto3" json:"page_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateWealthAlmanacResponse) Reset() {
+	*x = GenerateWealthAlmanacResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateWealthAlmanacResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateWealthAlmanacResponse) ProtoMessage() {}
+
+func (x *GenerateWealthAlmanacResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateWealthAlmanacResponse.ProtoReflect.Descriptor instead.
+func (*GenerateWealthAlmanacResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *GenerateWealthAlmanacResponse) GetMediaUrl() string {
+	if x != nil {
+		return x.MediaUrl
+	}
+	return ""
+}
+
+func (x *GenerateWealthAlmanacResponse) GetPageCount() int32 {
+	if x != nil {
+		return x.PageCount
+	}
+	return 0
+}
+
+type YearMover struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Category      string                 `protobuf:"bytes,2,opt,name=category,proto3" json:"category,omitempty"`
+	ChangeUsd     float64                `protobuf:"fixed64,3,opt,name=change_usd,json=changeUsd,proto3" json:"change_usd,omitempty"` // signed
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *YearMover) Reset() {
+	*x = YearMover{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *YearMover) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*YearMover) ProtoMessage() {}
+
+func (x *YearMover) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use YearMover.ProtoReflect.Descriptor instead.
+func (*YearMover) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *YearMover) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *YearMover) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *YearMover) GetChangeUsd() float64 {
+	if x != nil {
+		return x.ChangeUsd
+	}
+	return 0
+}
+
+type GetYearInVaultRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetYearInVaultRequest) Reset() {
+	*x = GetYearInVaultRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetYearInVaultRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetYearInVaultRequest) ProtoMessage() {}
+
+func (x *GetYearInVaultRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetYearInVaultRequest.ProtoReflect.Descriptor instead.
+func (*GetYearInVaultRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{11}
+}
+
+type GetYearInVaultResponse struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	StartingNetWorthUsd float64                `protobuf:"fixed64,1,opt,name=starting_net_worth_usd,json=startingNetWorthUsd,proto3" json:"starting_net_worth_usd,omitempty"`
+	EndingNetWorthUsd   float64                `protobuf:"fixed64,2,opt,name=ending_net_worth_usd,json=endingNetWorthUsd,proto3" json:"ending_net_worth_usd,omitempty"`
+	ChangeUsd           float64                `protobuf:"fixed64,3,opt,name=change_usd,json=changeUsd,proto3" json:"change_usd,omitempty"` // signed
+	ChangePct           float64                `protobuf:"fixed64,4,opt,name=change_pct,json=changePct,proto3" json:"change_pct,omitempty"` // signed
+	StartingRank        float64                `protobuf:"fixed64,5,opt,name=starting_rank,json=startingRank,proto3" json:"starting_rank,omitempty"`
+	EndingRank          float64                `protobuf:"fixed64,6,opt,name=ending_rank,json=endingRank,proto3" json:"ending_rank,omitempty"`
+	TopMovers           []*YearMover           `protobuf:"bytes,7,rep,name=top_movers,json=topMovers,proto3" json:"top_movers,omitempty"`
+	// 'fiat' | 'crypto' | 'rare_asset' | 'metal' → ending allocation share 0..1
+	AllocationShift map[string]float64 `protobuf:"bytes,8,rep,name=allocation_shift,json=allocationShift,proto3" json:"allocation_shift,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed64,2,opt,name=value"`
+	SnapshotCount   int32              `protobuf:"varint,9,opt,name=snapshot_count,json=snapshotCount,proto3" json:"snapshot_count,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *GetYearInVaultResponse) Reset() {
+	*x = GetYearInVaultResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetYearInVaultResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetYearInVaultResponse) ProtoMessage() {}
+
+func (x *GetYearInVaultResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetYearInVaultResponse.ProtoReflect.Descriptor instead.
+func (*GetYearInVaultResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *GetYearInVaultResponse) GetStartingNetWorthUsd() float64 {
+	if x != nil {
+		return x.StartingNetWorthUsd
+	}
+	return 0
+}
+
+func (x *GetYearInVaultResponse) GetEndingNetWorthUsd() float64 {
+	if x != nil {
+		return x.EndingNetWorthUsd
+	}
+	return 0
+}
+
+func (x *GetYearInVaultResponse) GetChangeUsd() float64 {
+	if x != nil {
+		return x.ChangeUsd
+	}
+	return 0
+}
+
+func (x *GetYearInVaultResponse) GetChangePct() float64 {
+	if x != nil {
+		return x.ChangePct
+	}
+	return 0
+}
+
+func (x *GetYearInVaultResponse) GetStartingRank() float64 {
+	if x != nil {
+		return x.StartingRank
+	}
+	return 0
+}
+
+func (x *GetYearInVaultResponse) GetEndingRank() float64 {
+	if x != nil {
+		return x.EndingRank
+	}
+	return 0
+}
+
+func (x *GetYearInVaultResponse) GetTopMovers() []*YearMover {
+	if x != nil {
+		return x.TopMovers
+	}
+	return nil
+}
+
+func (x *GetYearInVaultResponse) GetAllocationShift() map[string]float64 {
+	if x != nil {
+		return x.AllocationShift
+	}
+	return nil
+}
+
+func (x *GetYearInVaultResponse) GetSnapshotCount() int32 {
+	if x != nil {
+		return x.SnapshotCount
+	}
+	return 0
+}
+
+type LiquiditySource struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Band          string                 `protobuf:"bytes,1,opt,name=band,proto3" json:"band,omitempty"`   // 'T+0' | 'T+30' | 'illiquid'
+	Label         string                 `protobuf:"bytes,2,opt,name=label,proto3" json:"label,omitempty"` // human description
+	AvailableUsd  float64                `protobuf:"fixed64,3,opt,name=available_usd,json=availableUsd,proto3" json:"available_usd,omitempty"`
+	DrawnUsd      float64                `protobuf:"fixed64,4,opt,name=drawn_usd,json=drawnUsd,proto3" json:"drawn_usd,omitempty"` // how much this test pulls from the band
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LiquiditySource) Reset() {
+	*x = LiquiditySource{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LiquiditySource) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LiquiditySource) ProtoMessage() {}
+
+func (x *LiquiditySource) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LiquiditySource.ProtoReflect.Descriptor instead.
+func (*LiquiditySource) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *LiquiditySource) GetBand() string {
+	if x != nil {
+		return x.Band
+	}
+	return ""
+}
+
+func (x *LiquiditySource) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *LiquiditySource) GetAvailableUsd() float64 {
+	if x != nil {
+		return x.AvailableUsd
+	}
+	return 0
+}
+
+func (x *LiquiditySource) GetDrawnUsd() float64 {
+	if x != nil {
+		return x.DrawnUsd
+	}
+	return 0
+}
+
+type GetLiquidityStressTestRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TargetUsd     float64                `protobuf:"fixed64,1,opt,name=target_usd,json=targetUsd,proto3" json:"target_usd,omitempty"` // how much cash is needed
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLiquidityStressTestRequest) Reset() {
+	*x = GetLiquidityStressTestRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLiquidityStressTestRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLiquidityStressTestRequest) ProtoMessage() {}
+
+func (x *GetLiquidityStressTestRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLiquidityStressTestRequest.ProtoReflect.Descriptor instead.
+func (*GetLiquidityStressTestRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *GetLiquidityStressTestRequest) GetTargetUsd() float64 {
+	if x != nil {
+		return x.TargetUsd
+	}
+	return 0
+}
+
+type GetLiquidityStressTestResponse struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	TargetUsd      float64                `protobuf:"fixed64,1,opt,name=target_usd,json=targetUsd,proto3" json:"target_usd,omitempty"`
+	TotalRaisedUsd float64                `protobuf:"fixed64,2,opt,name=total_raised_usd,json=totalRaisedUsd,proto3" json:"total_raised_usd,omitempty"`
+	FullyCovered   bool                   `protobuf:"varint,3,opt,name=fully_covered,json=fullyCovered,proto3" json:"fully_covered,omitempty"`
+	Sources        []*LiquiditySource     `protobuf:"bytes,4,rep,name=sources,proto3" json:"sources,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *GetLiquidityStressTestResponse) Reset() {
+	*x = GetLiquidityStressTestResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLiquidityStressTestResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLiquidityStressTestResponse) ProtoMessage() {}
+
+func (x *GetLiquidityStressTestResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLiquidityStressTestResponse.ProtoReflect.Descriptor instead.
+func (*GetLiquidityStressTestResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *GetLiquidityStressTestResponse) GetTargetUsd() float64 {
+	if x != nil {
+		return x.TargetUsd
+	}
+	return 0
+}
+
+func (x *GetLiquidityStressTestResponse) GetTotalRaisedUsd() float64 {
+	if x != nil {
+		return x.TotalRaisedUsd
+	}
+	return 0
+}
+
+func (x *GetLiquidityStressTestResponse) GetFullyCovered() bool {
+	if x != nil {
+		return x.FullyCovered
+	}
+	return false
+}
+
+func (x *GetLiquidityStressTestResponse) GetSources() []*LiquiditySource {
+	if x != nil {
+		return x.Sources
+	}
+	return nil
+}
+
+type InvestmentCircle struct {
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug         string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Name         string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Sector       string                 `protobuf:"bytes,4,opt,name=sector,proto3" json:"sector,omitempty"`   // 'venture' | 'real_estate' | 'art' | 'private_credit' | ...
+	Stage        string                 `protobuf:"bytes,5,opt,name=stage,proto3" json:"stage,omitempty"`     // 'seed' | 'growth' | 'pre_ipo' | ...
+	Thesis       string                 `protobuf:"bytes,6,opt,name=thesis,proto3" json:"thesis,omitempty"`   // short editorial rationale
+	Partner      string                 `protobuf:"bytes,7,opt,name=partner,proto3" json:"partner,omitempty"` // partner platform name
+	MinTicketUsd float64                `protobuf:"fixed64,8,opt,name=min_ticket_usd,json=minTicketUsd,proto3" json:"min_ticket_usd,omitempty"`
+	// Cross-pillar gate, evaluated server-side.
+	RequiredSttattusScore float64 `protobuf:"fixed64,9,opt,name=required_sttattus_score,json=requiredSttattusScore,proto3" json:"required_sttattus_score,omitempty"`
+	RequiredTier          string  `protobuf:"bytes,10,opt,name=required_tier,json=requiredTier,proto3" json:"required_tier,omitempty"` // '' | 'gold' | 'platinum' | 'sovereign'
+	Unlocked              bool    `protobuf:"varint,11,opt,name=unlocked,proto3" json:"unlocked,omitempty"`                            // true when the caller meets the gate
+	LockedReason          string  `protobuf:"bytes,12,opt,name=locked_reason,json=lockedReason,proto3" json:"locked_reason,omitempty"` // human copy when locked
+	// Full deal room — only populated when unlocked.
+	DealRoomMarkdown string `protobuf:"bytes,13,opt,name=deal_room_markdown,json=dealRoomMarkdown,proto3" json:"deal_room_markdown,omitempty"`
+	HeroImageUrl     string `protobuf:"bytes,14,opt,name=hero_image_url,json=heroImageUrl,proto3" json:"hero_image_url,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *InvestmentCircle) Reset() {
+	*x = InvestmentCircle{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *InvestmentCircle) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InvestmentCircle) ProtoMessage() {}
+
+func (x *InvestmentCircle) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InvestmentCircle.ProtoReflect.Descriptor instead.
+func (*InvestmentCircle) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *InvestmentCircle) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *InvestmentCircle) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *InvestmentCircle) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *InvestmentCircle) GetSector() string {
+	if x != nil {
+		return x.Sector
+	}
+	return ""
+}
+
+func (x *InvestmentCircle) GetStage() string {
+	if x != nil {
+		return x.Stage
+	}
+	return ""
+}
+
+func (x *InvestmentCircle) GetThesis() string {
+	if x != nil {
+		return x.Thesis
+	}
+	return ""
+}
+
+func (x *InvestmentCircle) GetPartner() string {
+	if x != nil {
+		return x.Partner
+	}
+	return ""
+}
+
+func (x *InvestmentCircle) GetMinTicketUsd() float64 {
+	if x != nil {
+		return x.MinTicketUsd
+	}
+	return 0
+}
+
+func (x *InvestmentCircle) GetRequiredSttattusScore() float64 {
+	if x != nil {
+		return x.RequiredSttattusScore
+	}
+	return 0
+}
+
+func (x *InvestmentCircle) GetRequiredTier() string {
+	if x != nil {
+		return x.RequiredTier
+	}
+	return ""
+}
+
+func (x *InvestmentCircle) GetUnlocked() bool {
+	if x != nil {
+		return x.Unlocked
+	}
+	return false
+}
+
+func (x *InvestmentCircle) GetLockedReason() string {
+	if x != nil {
+		return x.LockedReason
+	}
+	return ""
+}
+
+func (x *InvestmentCircle) GetDealRoomMarkdown() string {
+	if x != nil {
+		return x.DealRoomMarkdown
+	}
+	return ""
+}
+
+func (x *InvestmentCircle) GetHeroImageUrl() string {
+	if x != nil {
+		return x.HeroImageUrl
+	}
+	return ""
+}
+
+type ListInvestmentCirclesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListInvestmentCirclesRequest) Reset() {
+	*x = ListInvestmentCirclesRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListInvestmentCirclesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListInvestmentCirclesRequest) ProtoMessage() {}
+
+func (x *ListInvestmentCirclesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListInvestmentCirclesRequest.ProtoReflect.Descriptor instead.
+func (*ListInvestmentCirclesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{17}
+}
+
+type ListInvestmentCirclesResponse struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	Circles              []*InvestmentCircle    `protobuf:"bytes,1,rep,name=circles,proto3" json:"circles,omitempty"`
+	CurrentSttattusScore float64                `protobuf:"fixed64,2,opt,name=current_sttattus_score,json=currentSttattusScore,proto3" json:"current_sttattus_score,omitempty"`
+	CurrentTier          string                 `protobuf:"bytes,3,opt,name=current_tier,json=currentTier,proto3" json:"current_tier,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *ListInvestmentCirclesResponse) Reset() {
+	*x = ListInvestmentCirclesResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListInvestmentCirclesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListInvestmentCirclesResponse) ProtoMessage() {}
+
+func (x *ListInvestmentCirclesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListInvestmentCirclesResponse.ProtoReflect.Descriptor instead.
+func (*ListInvestmentCirclesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *ListInvestmentCirclesResponse) GetCircles() []*InvestmentCircle {
+	if x != nil {
+		return x.Circles
+	}
+	return nil
+}
+
+func (x *ListInvestmentCirclesResponse) GetCurrentSttattusScore() float64 {
+	if x != nil {
+		return x.CurrentSttattusScore
+	}
+	return 0
+}
+
+func (x *ListInvestmentCirclesResponse) GetCurrentTier() string {
+	if x != nil {
+		return x.CurrentTier
+	}
+	return ""
+}
+
+type GetInvestmentCircleRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetInvestmentCircleRequest) Reset() {
+	*x = GetInvestmentCircleRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetInvestmentCircleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetInvestmentCircleRequest) ProtoMessage() {}
+
+func (x *GetInvestmentCircleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetInvestmentCircleRequest.ProtoReflect.Descriptor instead.
+func (*GetInvestmentCircleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *GetInvestmentCircleRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type GetInvestmentCircleResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Circle        *InvestmentCircle      `protobuf:"bytes,1,opt,name=circle,proto3" json:"circle,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetInvestmentCircleResponse) Reset() {
+	*x = GetInvestmentCircleResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetInvestmentCircleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetInvestmentCircleResponse) ProtoMessage() {}
+
+func (x *GetInvestmentCircleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetInvestmentCircleResponse.ProtoReflect.Descriptor instead.
+func (*GetInvestmentCircleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *GetInvestmentCircleResponse) GetCircle() *InvestmentCircle {
+	if x != nil {
+		return x.Circle
+	}
+	return nil
+}
+
+type ExpressCircleInterestRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	CircleId      string                 `protobuf:"bytes,1,opt,name=circle_id,json=circleId,proto3" json:"circle_id,omitempty"`
+	Note          string                 `protobuf:"bytes,2,opt,name=note,proto3" json:"note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExpressCircleInterestRequest) Reset() {
+	*x = ExpressCircleInterestRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExpressCircleInterestRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExpressCircleInterestRequest) ProtoMessage() {}
+
+func (x *ExpressCircleInterestRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExpressCircleInterestRequest.ProtoReflect.Descriptor instead.
+func (*ExpressCircleInterestRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *ExpressCircleInterestRequest) GetCircleId() string {
+	if x != nil {
+		return x.CircleId
+	}
+	return ""
+}
+
+func (x *ExpressCircleInterestRequest) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
+}
+
+type ExpressCircleInterestResponse struct {
+	state    protoimpl.MessageState `protogen:"open.v1"`
+	Accepted bool                   `protobuf:"varint,1,opt,name=accepted,proto3" json:"accepted,omitempty"`
+	// Signed partner-platform handoff URL (empty when locked).
+	HandoffUrl    string `protobuf:"bytes,2,opt,name=handoff_url,json=handoffUrl,proto3" json:"handoff_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExpressCircleInterestResponse) Reset() {
+	*x = ExpressCircleInterestResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExpressCircleInterestResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExpressCircleInterestResponse) ProtoMessage() {}
+
+func (x *ExpressCircleInterestResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExpressCircleInterestResponse.ProtoReflect.Descriptor instead.
+func (*ExpressCircleInterestResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *ExpressCircleInterestResponse) GetAccepted() bool {
+	if x != nil {
+		return x.Accepted
+	}
+	return false
+}
+
+func (x *ExpressCircleInterestResponse) GetHandoffUrl() string {
+	if x != nil {
+		return x.HandoffUrl
+	}
+	return ""
+}
+
+type AdvisorMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Sender        string                 `protobuf:"bytes,2,opt,name=sender,proto3" json:"sender,omitempty"` // 'member' | 'advisor' | 'system'
+	Body          string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
+	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdvisorMessage) Reset() {
+	*x = AdvisorMessage{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdvisorMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdvisorMessage) ProtoMessage() {}
+
+func (x *AdvisorMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdvisorMessage.ProtoReflect.Descriptor instead.
+func (*AdvisorMessage) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *AdvisorMessage) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AdvisorMessage) GetSender() string {
+	if x != nil {
+		return x.Sender
+	}
+	return ""
+}
+
+func (x *AdvisorMessage) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *AdvisorMessage) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+type AdvisorThread struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Subject       string                 `protobuf:"bytes,2,opt,name=subject,proto3" json:"subject,omitempty"`
+	Status        string                 `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"` // 'open' | 'awaiting_member' | 'closed'
+	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	SlaDueAt      *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=sla_due_at,json=slaDueAt,proto3" json:"sla_due_at,omitempty"`
+	Messages      []*AdvisorMessage      `protobuf:"bytes,6,rep,name=messages,proto3" json:"messages,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdvisorThread) Reset() {
+	*x = AdvisorThread{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdvisorThread) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdvisorThread) ProtoMessage() {}
+
+func (x *AdvisorThread) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdvisorThread.ProtoReflect.Descriptor instead.
+func (*AdvisorThread) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *AdvisorThread) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AdvisorThread) GetSubject() string {
+	if x != nil {
+		return x.Subject
+	}
+	return ""
+}
+
+func (x *AdvisorThread) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *AdvisorThread) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *AdvisorThread) GetSlaDueAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.SlaDueAt
+	}
+	return nil
+}
+
+func (x *AdvisorThread) GetMessages() []*AdvisorMessage {
+	if x != nil {
+		return x.Messages
+	}
+	return nil
+}
+
+type StartAdvisorThreadRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Subject        string                 `protobuf:"bytes,1,opt,name=subject,proto3" json:"subject,omitempty"`
+	OpeningMessage string                 `protobuf:"bytes,2,opt,name=opening_message,json=openingMessage,proto3" json:"opening_message,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *StartAdvisorThreadRequest) Reset() {
+	*x = StartAdvisorThreadRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StartAdvisorThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartAdvisorThreadRequest) ProtoMessage() {}
+
+func (x *StartAdvisorThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartAdvisorThreadRequest.ProtoReflect.Descriptor instead.
+func (*StartAdvisorThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *StartAdvisorThreadRequest) GetSubject() string {
+	if x != nil {
+		return x.Subject
+	}
+	return ""
+}
+
+func (x *StartAdvisorThreadRequest) GetOpeningMessage() string {
+	if x != nil {
+		return x.OpeningMessage
+	}
+	return ""
+}
+
+type StartAdvisorThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *AdvisorThread         `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StartAdvisorThreadResponse) Reset() {
+	*x = StartAdvisorThreadResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StartAdvisorThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartAdvisorThreadResponse) ProtoMessage() {}
+
+func (x *StartAdvisorThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartAdvisorThreadResponse.ProtoReflect.Descriptor instead.
+func (*StartAdvisorThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *StartAdvisorThreadResponse) GetThread() *AdvisorThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+type ListAdvisorThreadsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAdvisorThreadsRequest) Reset() {
+	*x = ListAdvisorThreadsRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAdvisorThreadsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAdvisorThreadsRequest) ProtoMessage() {}
+
+func (x *ListAdvisorThreadsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAdvisorThreadsRequest.ProtoReflect.Descriptor instead.
+func (*ListAdvisorThreadsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{27}
+}
+
+type ListAdvisorThreadsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Threads       []*AdvisorThread       `protobuf:"bytes,1,rep,name=threads,proto3" json:"threads,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAdvisorThreadsResponse) Reset() {
+	*x = ListAdvisorThreadsResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAdvisorThreadsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAdvisorThreadsResponse) ProtoMessage() {}
+
+func (x *ListAdvisorThreadsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAdvisorThreadsResponse.ProtoReflect.Descriptor instead.
+func (*ListAdvisorThreadsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *ListAdvisorThreadsResponse) GetThreads() []*AdvisorThread {
+	if x != nil {
+		return x.Threads
+	}
+	return nil
+}
+
+type GetAdvisorThreadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAdvisorThreadRequest) Reset() {
+	*x = GetAdvisorThreadRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[29]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAdvisorThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAdvisorThreadRequest) ProtoMessage() {}
+
+func (x *GetAdvisorThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[29]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAdvisorThreadRequest.ProtoReflect.Descriptor instead.
+func (*GetAdvisorThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{29}
+}
+
+func (x *GetAdvisorThreadRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type GetAdvisorThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *AdvisorThread         `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAdvisorThreadResponse) Reset() {
+	*x = GetAdvisorThreadResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[30]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAdvisorThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAdvisorThreadResponse) ProtoMessage() {}
+
+func (x *GetAdvisorThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[30]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAdvisorThreadResponse.ProtoReflect.Descriptor instead.
+func (*GetAdvisorThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{30}
+}
+
+func (x *GetAdvisorThreadResponse) GetThread() *AdvisorThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+type PostAdvisorMessageRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	Body          string                 `protobuf:"bytes,2,opt,name=body,proto3" json:"body,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PostAdvisorMessageRequest) Reset() {
+	*x = PostAdvisorMessageRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[31]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PostAdvisorMessageRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PostAdvisorMessageRequest) ProtoMessage() {}
+
+func (x *PostAdvisorMessageRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[31]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PostAdvisorMessageRequest.ProtoReflect.Descriptor instead.
+func (*PostAdvisorMessageRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{31}
+}
+
+func (x *PostAdvisorMessageRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *PostAdvisorMessageRequest) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+type PostAdvisorMessageResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Message       *AdvisorMessage        `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PostAdvisorMessageResponse) Reset() {
+	*x = PostAdvisorMessageResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[32]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PostAdvisorMessageResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PostAdvisorMessageResponse) ProtoMessage() {}
+
+func (x *PostAdvisorMessageResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[32]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PostAdvisorMessageResponse.ProtoReflect.Descriptor instead.
+func (*PostAdvisorMessageResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{32}
+}
+
+func (x *PostAdvisorMessageResponse) GetMessage() *AdvisorMessage {
+	if x != nil {
+		return x.Message
+	}
+	return nil
+}
+
+type WealthArticle struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug            string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Title           string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Dek             string                 `protobuf:"bytes,4,opt,name=dek,proto3" json:"dek,omitempty"`
+	AuthorName      string                 `protobuf:"bytes,5,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
+	AuthorTitle     string                 `protobuf:"bytes,6,opt,name=author_title,json=authorTitle,proto3" json:"author_title,omitempty"`
+	AuthorAvatarUrl string                 `protobuf:"bytes,7,opt,name=author_avatar_url,json=authorAvatarUrl,proto3" json:"author_avatar_url,omitempty"`
+	HeroImageUrl    string                 `protobuf:"bytes,8,opt,name=hero_image_url,json=heroImageUrl,proto3" json:"hero_image_url,omitempty"`
+	BodyMarkdown    string                 `protobuf:"bytes,9,opt,name=body_markdown,json=bodyMarkdown,proto3" json:"body_markdown,omitempty"` // empty in list responses
+	SovereignOnly   bool                   `protobuf:"varint,10,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	PublishedAt     *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=published_at,json=publishedAt,proto3" json:"published_at,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *WealthArticle) Reset() {
+	*x = WealthArticle{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[33]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *WealthArticle) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WealthArticle) ProtoMessage() {}
+
+func (x *WealthArticle) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[33]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WealthArticle.ProtoReflect.Descriptor instead.
+func (*WealthArticle) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *WealthArticle) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *WealthArticle) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *WealthArticle) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *WealthArticle) GetDek() string {
+	if x != nil {
+		return x.Dek
+	}
+	return ""
+}
+
+func (x *WealthArticle) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
+	}
+	return ""
+}
+
+func (x *WealthArticle) GetAuthorTitle() string {
+	if x != nil {
+		return x.AuthorTitle
+	}
+	return ""
+}
+
+func (x *WealthArticle) GetAuthorAvatarUrl() string {
+	if x != nil {
+		return x.AuthorAvatarUrl
+	}
+	return ""
+}
+
+func (x *WealthArticle) GetHeroImageUrl() string {
+	if x != nil {
+		return x.HeroImageUrl
+	}
+	return ""
+}
+
+func (x *WealthArticle) GetBodyMarkdown() string {
+	if x != nil {
+		return x.BodyMarkdown
+	}
+	return ""
+}
+
+func (x *WealthArticle) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+func (x *WealthArticle) GetPublishedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.PublishedAt
+	}
+	return nil
+}
+
+type ListWealthAnthologyRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListWealthAnthologyRequest) Reset() {
+	*x = ListWealthAnthologyRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[34]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListWealthAnthologyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListWealthAnthologyRequest) ProtoMessage() {}
+
+func (x *ListWealthAnthologyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[34]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListWealthAnthologyRequest.ProtoReflect.Descriptor instead.
+func (*ListWealthAnthologyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{34}
+}
+
+type ListWealthAnthologyResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Articles      []*WealthArticle       `protobuf:"bytes,1,rep,name=articles,proto3" json:"articles,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListWealthAnthologyResponse) Reset() {
+	*x = ListWealthAnthologyResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[35]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListWealthAnthologyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListWealthAnthologyResponse) ProtoMessage() {}
+
+func (x *ListWealthAnthologyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[35]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListWealthAnthologyResponse.ProtoReflect.Descriptor instead.
+func (*ListWealthAnthologyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *ListWealthAnthologyResponse) GetArticles() []*WealthArticle {
+	if x != nil {
+		return x.Articles
+	}
+	return nil
+}
+
+type GetWealthArticleRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetWealthArticleRequest) Reset() {
+	*x = GetWealthArticleRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetWealthArticleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetWealthArticleRequest) ProtoMessage() {}
+
+func (x *GetWealthArticleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[36]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetWealthArticleRequest.ProtoReflect.Descriptor instead.
+func (*GetWealthArticleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *GetWealthArticleRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type GetWealthArticleResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Article       *WealthArticle         `protobuf:"bytes,1,opt,name=article,proto3" json:"article,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetWealthArticleResponse) Reset() {
+	*x = GetWealthArticleResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[37]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetWealthArticleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetWealthArticleResponse) ProtoMessage() {}
+
+func (x *GetWealthArticleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[37]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetWealthArticleResponse.ProtoReflect.Descriptor instead.
+func (*GetWealthArticleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *GetWealthArticleResponse) GetArticle() *WealthArticle {
+	if x != nil {
+		return x.Article
+	}
+	return nil
+}
+
+type PartnerBank struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Region             string                 `protobuf:"bytes,3,opt,name=region,proto3" json:"region,omitempty"` // ISO-3166 alpha-2 or region code
+	Specialty          string                 `protobuf:"bytes,4,opt,name=specialty,proto3" json:"specialty,omitempty"`
+	MinRelationshipUsd float64                `protobuf:"fixed64,5,opt,name=min_relationship_usd,json=minRelationshipUsd,proto3" json:"min_relationship_usd,omitempty"`
+	SovereignOnly      bool                   `protobuf:"varint,6,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	IntroNote          string                 `protobuf:"bytes,7,opt,name=intro_note,json=introNote,proto3" json:"intro_note,omitempty"`
+	LogoUrl            string                 `protobuf:"bytes,8,opt,name=logo_url,json=logoUrl,proto3" json:"logo_url,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *PartnerBank) Reset() {
+	*x = PartnerBank{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[38]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PartnerBank) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PartnerBank) ProtoMessage() {}
+
+func (x *PartnerBank) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[38]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PartnerBank.ProtoReflect.Descriptor instead.
+func (*PartnerBank) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *PartnerBank) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *PartnerBank) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *PartnerBank) GetRegion() string {
+	if x != nil {
+		return x.Region
+	}
+	return ""
+}
+
+func (x *PartnerBank) GetSpecialty() string {
+	if x != nil {
+		return x.Specialty
+	}
+	return ""
+}
+
+func (x *PartnerBank) GetMinRelationshipUsd() float64 {
+	if x != nil {
+		return x.MinRelationshipUsd
+	}
+	return 0
+}
+
+func (x *PartnerBank) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+func (x *PartnerBank) GetIntroNote() string {
+	if x != nil {
+		return x.IntroNote
+	}
+	return ""
+}
+
+func (x *PartnerBank) GetLogoUrl() string {
+	if x != nil {
+		return x.LogoUrl
+	}
+	return ""
+}
+
+type ListPartnerBanksRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Region        string                 `protobuf:"bytes,1,opt,name=region,proto3" json:"region,omitempty"` // empty = all
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListPartnerBanksRequest) Reset() {
+	*x = ListPartnerBanksRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[39]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListPartnerBanksRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListPartnerBanksRequest) ProtoMessage() {}
+
+func (x *ListPartnerBanksRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[39]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListPartnerBanksRequest.ProtoReflect.Descriptor instead.
+func (*ListPartnerBanksRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{39}
+}
+
+func (x *ListPartnerBanksRequest) GetRegion() string {
+	if x != nil {
+		return x.Region
+	}
+	return ""
+}
+
+type ListPartnerBanksResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Banks         []*PartnerBank         `protobuf:"bytes,1,rep,name=banks,proto3" json:"banks,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListPartnerBanksResponse) Reset() {
+	*x = ListPartnerBanksResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[40]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListPartnerBanksResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListPartnerBanksResponse) ProtoMessage() {}
+
+func (x *ListPartnerBanksResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[40]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListPartnerBanksResponse.ProtoReflect.Descriptor instead.
+func (*ListPartnerBanksResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *ListPartnerBanksResponse) GetBanks() []*PartnerBank {
+	if x != nil {
+		return x.Banks
+	}
+	return nil
+}
+
+type VaultShare struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	ExpiresAt     *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	Revoked       bool                   `protobuf:"varint,4,opt,name=revoked,proto3" json:"revoked,omitempty"`
+	Url           string                 `protobuf:"bytes,5,opt,name=url,proto3" json:"url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VaultShare) Reset() {
+	*x = VaultShare{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[41]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VaultShare) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VaultShare) ProtoMessage() {}
+
+func (x *VaultShare) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[41]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VaultShare.ProtoReflect.Descriptor instead.
+func (*VaultShare) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *VaultShare) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *VaultShare) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *VaultShare) GetExpiresAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ExpiresAt
+	}
+	return nil
+}
+
+func (x *VaultShare) GetRevoked() bool {
+	if x != nil {
+		return x.Revoked
+	}
+	return false
+}
+
+func (x *VaultShare) GetUrl() string {
+	if x != nil {
+		return x.Url
+	}
+	return ""
+}
+
+type CreateVaultShareRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TtlDays       int32                  `protobuf:"varint,1,opt,name=ttl_days,json=ttlDays,proto3" json:"ttl_days,omitempty"` // 0 = default 14
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateVaultShareRequest) Reset() {
+	*x = CreateVaultShareRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[42]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateVaultShareRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateVaultShareRequest) ProtoMessage() {}
+
+func (x *CreateVaultShareRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[42]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateVaultShareRequest.ProtoReflect.Descriptor instead.
+func (*CreateVaultShareRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{42}
+}
+
+func (x *CreateVaultShareRequest) GetTtlDays() int32 {
+	if x != nil {
+		return x.TtlDays
+	}
+	return 0
+}
+
+type CreateVaultShareResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Share         *VaultShare            `protobuf:"bytes,1,opt,name=share,proto3" json:"share,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateVaultShareResponse) Reset() {
+	*x = CreateVaultShareResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[43]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateVaultShareResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateVaultShareResponse) ProtoMessage() {}
+
+func (x *CreateVaultShareResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[43]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateVaultShareResponse.ProtoReflect.Descriptor instead.
+func (*CreateVaultShareResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *CreateVaultShareResponse) GetShare() *VaultShare {
+	if x != nil {
+		return x.Share
+	}
+	return nil
+}
+
+type ListMyVaultSharesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyVaultSharesRequest) Reset() {
+	*x = ListMyVaultSharesRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[44]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyVaultSharesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyVaultSharesRequest) ProtoMessage() {}
+
+func (x *ListMyVaultSharesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[44]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyVaultSharesRequest.ProtoReflect.Descriptor instead.
+func (*ListMyVaultSharesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{44}
+}
+
+type ListMyVaultSharesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Shares        []*VaultShare          `protobuf:"bytes,1,rep,name=shares,proto3" json:"shares,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyVaultSharesResponse) Reset() {
+	*x = ListMyVaultSharesResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[45]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyVaultSharesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyVaultSharesResponse) ProtoMessage() {}
+
+func (x *ListMyVaultSharesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[45]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyVaultSharesResponse.ProtoReflect.Descriptor instead.
+func (*ListMyVaultSharesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{45}
+}
+
+func (x *ListMyVaultSharesResponse) GetShares() []*VaultShare {
+	if x != nil {
+		return x.Shares
+	}
+	return nil
+}
+
+type RevokeVaultShareRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeVaultShareRequest) Reset() {
+	*x = RevokeVaultShareRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[46]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeVaultShareRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeVaultShareRequest) ProtoMessage() {}
+
+func (x *RevokeVaultShareRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[46]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeVaultShareRequest.ProtoReflect.Descriptor instead.
+func (*RevokeVaultShareRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{46}
+}
+
+func (x *RevokeVaultShareRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+type RevokeVaultShareResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeVaultShareResponse) Reset() {
+	*x = RevokeVaultShareResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[47]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeVaultShareResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeVaultShareResponse) ProtoMessage() {}
+
+func (x *RevokeVaultShareResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[47]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeVaultShareResponse.ProtoReflect.Descriptor instead.
+func (*RevokeVaultShareResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{47}
+}
+
 type SyncWealthRequest struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	Assets           []*Asset               `protobuf:"bytes,1,rep,name=assets,proto3" json:"assets,omitempty"`
@@ -631,7 +2859,7 @@ type SyncWealthRequest struct {
 
 func (x *SyncWealthRequest) Reset() {
 	*x = SyncWealthRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[8]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -643,7 +2871,7 @@ func (x *SyncWealthRequest) String() string {
 func (*SyncWealthRequest) ProtoMessage() {}
 
 func (x *SyncWealthRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[8]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -656,7 +2884,7 @@ func (x *SyncWealthRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SyncWealthRequest.ProtoReflect.Descriptor instead.
 func (*SyncWealthRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{8}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *SyncWealthRequest) GetAssets() []*Asset {
@@ -683,7 +2911,7 @@ type SyncWealthResponse struct {
 
 func (x *SyncWealthResponse) Reset() {
 	*x = SyncWealthResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[9]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -695,7 +2923,7 @@ func (x *SyncWealthResponse) String() string {
 func (*SyncWealthResponse) ProtoMessage() {}
 
 func (x *SyncWealthResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[9]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -708,7 +2936,7 @@ func (x *SyncWealthResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SyncWealthResponse.ProtoReflect.Descriptor instead.
 func (*SyncWealthResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{9}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *SyncWealthResponse) GetCurrentVaultScore() float64 {
@@ -734,7 +2962,7 @@ type GetWalletChallengeRequest struct {
 
 func (x *GetWalletChallengeRequest) Reset() {
 	*x = GetWalletChallengeRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[10]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[50]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -746,7 +2974,7 @@ func (x *GetWalletChallengeRequest) String() string {
 func (*GetWalletChallengeRequest) ProtoMessage() {}
 
 func (x *GetWalletChallengeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[10]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[50]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -759,7 +2987,7 @@ func (x *GetWalletChallengeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetWalletChallengeRequest.ProtoReflect.Descriptor instead.
 func (*GetWalletChallengeRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{10}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *GetWalletChallengeRequest) GetAddress() string {
@@ -778,7 +3006,7 @@ type GetWalletChallengeResponse struct {
 
 func (x *GetWalletChallengeResponse) Reset() {
 	*x = GetWalletChallengeResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[11]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[51]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -790,7 +3018,7 @@ func (x *GetWalletChallengeResponse) String() string {
 func (*GetWalletChallengeResponse) ProtoMessage() {}
 
 func (x *GetWalletChallengeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[11]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[51]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -803,7 +3031,7 @@ func (x *GetWalletChallengeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetWalletChallengeResponse.ProtoReflect.Descriptor instead.
 func (*GetWalletChallengeResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{11}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *GetWalletChallengeResponse) GetChallenge() string {
@@ -824,7 +3052,7 @@ type LinkWalletRequest struct {
 
 func (x *LinkWalletRequest) Reset() {
 	*x = LinkWalletRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[12]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[52]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -836,7 +3064,7 @@ func (x *LinkWalletRequest) String() string {
 func (*LinkWalletRequest) ProtoMessage() {}
 
 func (x *LinkWalletRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[12]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[52]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -849,7 +3077,7 @@ func (x *LinkWalletRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LinkWalletRequest.ProtoReflect.Descriptor instead.
 func (*LinkWalletRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{12}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{52}
 }
 
 func (x *LinkWalletRequest) GetAddress() string {
@@ -883,7 +3111,7 @@ type LinkWalletResponse struct {
 
 func (x *LinkWalletResponse) Reset() {
 	*x = LinkWalletResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[13]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[53]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -895,7 +3123,7 @@ func (x *LinkWalletResponse) String() string {
 func (*LinkWalletResponse) ProtoMessage() {}
 
 func (x *LinkWalletResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[13]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[53]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -908,7 +3136,7 @@ func (x *LinkWalletResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LinkWalletResponse.ProtoReflect.Descriptor instead.
 func (*LinkWalletResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{13}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *LinkWalletResponse) GetSuccess() bool {
@@ -933,7 +3161,7 @@ type CreatePlaidLinkTokenRequest struct {
 
 func (x *CreatePlaidLinkTokenRequest) Reset() {
 	*x = CreatePlaidLinkTokenRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[14]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[54]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -945,7 +3173,7 @@ func (x *CreatePlaidLinkTokenRequest) String() string {
 func (*CreatePlaidLinkTokenRequest) ProtoMessage() {}
 
 func (x *CreatePlaidLinkTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[14]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[54]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -958,7 +3186,7 @@ func (x *CreatePlaidLinkTokenRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePlaidLinkTokenRequest.ProtoReflect.Descriptor instead.
 func (*CreatePlaidLinkTokenRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{14}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{54}
 }
 
 type CreatePlaidLinkTokenResponse struct {
@@ -970,7 +3198,7 @@ type CreatePlaidLinkTokenResponse struct {
 
 func (x *CreatePlaidLinkTokenResponse) Reset() {
 	*x = CreatePlaidLinkTokenResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[15]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[55]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -982,7 +3210,7 @@ func (x *CreatePlaidLinkTokenResponse) String() string {
 func (*CreatePlaidLinkTokenResponse) ProtoMessage() {}
 
 func (x *CreatePlaidLinkTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[15]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[55]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -995,7 +3223,7 @@ func (x *CreatePlaidLinkTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePlaidLinkTokenResponse.ProtoReflect.Descriptor instead.
 func (*CreatePlaidLinkTokenResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{15}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *CreatePlaidLinkTokenResponse) GetLinkToken() string {
@@ -1014,7 +3242,7 @@ type ExchangePlaidPublicTokenRequest struct {
 
 func (x *ExchangePlaidPublicTokenRequest) Reset() {
 	*x = ExchangePlaidPublicTokenRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[16]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[56]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1026,7 +3254,7 @@ func (x *ExchangePlaidPublicTokenRequest) String() string {
 func (*ExchangePlaidPublicTokenRequest) ProtoMessage() {}
 
 func (x *ExchangePlaidPublicTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[16]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[56]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1039,7 +3267,7 @@ func (x *ExchangePlaidPublicTokenRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExchangePlaidPublicTokenRequest.ProtoReflect.Descriptor instead.
 func (*ExchangePlaidPublicTokenRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{16}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *ExchangePlaidPublicTokenRequest) GetPublicToken() string {
@@ -1058,7 +3286,7 @@ type ExchangePlaidPublicTokenResponse struct {
 
 func (x *ExchangePlaidPublicTokenResponse) Reset() {
 	*x = ExchangePlaidPublicTokenResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[17]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[57]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1070,7 +3298,7 @@ func (x *ExchangePlaidPublicTokenResponse) String() string {
 func (*ExchangePlaidPublicTokenResponse) ProtoMessage() {}
 
 func (x *ExchangePlaidPublicTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[17]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[57]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1083,7 +3311,7 @@ func (x *ExchangePlaidPublicTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExchangePlaidPublicTokenResponse.ProtoReflect.Descriptor instead.
 func (*ExchangePlaidPublicTokenResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{17}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *ExchangePlaidPublicTokenResponse) GetSuccess() bool {
@@ -1106,7 +3334,7 @@ type NetWorthPoint struct {
 
 func (x *NetWorthPoint) Reset() {
 	*x = NetWorthPoint{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[18]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[58]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1118,7 +3346,7 @@ func (x *NetWorthPoint) String() string {
 func (*NetWorthPoint) ProtoMessage() {}
 
 func (x *NetWorthPoint) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[18]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[58]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1131,7 +3359,7 @@ func (x *NetWorthPoint) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NetWorthPoint.ProtoReflect.Descriptor instead.
 func (*NetWorthPoint) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{18}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *NetWorthPoint) GetDateIso() string {
@@ -1165,7 +3393,7 @@ type ListNetWorthHistoryRequest struct {
 
 func (x *ListNetWorthHistoryRequest) Reset() {
 	*x = ListNetWorthHistoryRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[19]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1177,7 +3405,7 @@ func (x *ListNetWorthHistoryRequest) String() string {
 func (*ListNetWorthHistoryRequest) ProtoMessage() {}
 
 func (x *ListNetWorthHistoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[19]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1190,7 +3418,7 @@ func (x *ListNetWorthHistoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListNetWorthHistoryRequest.ProtoReflect.Descriptor instead.
 func (*ListNetWorthHistoryRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{19}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *ListNetWorthHistoryRequest) GetDays() int32 {
@@ -1209,7 +3437,7 @@ type ListNetWorthHistoryResponse struct {
 
 func (x *ListNetWorthHistoryResponse) Reset() {
 	*x = ListNetWorthHistoryResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[20]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[60]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1221,7 +3449,7 @@ func (x *ListNetWorthHistoryResponse) String() string {
 func (*ListNetWorthHistoryResponse) ProtoMessage() {}
 
 func (x *ListNetWorthHistoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[20]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[60]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1234,7 +3462,7 @@ func (x *ListNetWorthHistoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListNetWorthHistoryResponse.ProtoReflect.Descriptor instead.
 func (*ListNetWorthHistoryResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{20}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{60}
 }
 
 func (x *ListNetWorthHistoryResponse) GetPoints() []*NetWorthPoint {
@@ -1265,7 +3493,7 @@ type PlaidTransaction struct {
 
 func (x *PlaidTransaction) Reset() {
 	*x = PlaidTransaction{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[21]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[61]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1277,7 +3505,7 @@ func (x *PlaidTransaction) String() string {
 func (*PlaidTransaction) ProtoMessage() {}
 
 func (x *PlaidTransaction) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[21]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[61]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1290,7 +3518,7 @@ func (x *PlaidTransaction) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlaidTransaction.ProtoReflect.Descriptor instead.
 func (*PlaidTransaction) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{21}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{61}
 }
 
 func (x *PlaidTransaction) GetId() string {
@@ -1373,7 +3601,7 @@ type ListPlaidTransactionsRequest struct {
 
 func (x *ListPlaidTransactionsRequest) Reset() {
 	*x = ListPlaidTransactionsRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[22]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[62]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1385,7 +3613,7 @@ func (x *ListPlaidTransactionsRequest) String() string {
 func (*ListPlaidTransactionsRequest) ProtoMessage() {}
 
 func (x *ListPlaidTransactionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[22]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[62]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1398,7 +3626,7 @@ func (x *ListPlaidTransactionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPlaidTransactionsRequest.ProtoReflect.Descriptor instead.
 func (*ListPlaidTransactionsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{22}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{62}
 }
 
 func (x *ListPlaidTransactionsRequest) GetLimit() int32 {
@@ -1424,7 +3652,7 @@ type ListPlaidTransactionsResponse struct {
 
 func (x *ListPlaidTransactionsResponse) Reset() {
 	*x = ListPlaidTransactionsResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[23]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[63]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1436,7 +3664,7 @@ func (x *ListPlaidTransactionsResponse) String() string {
 func (*ListPlaidTransactionsResponse) ProtoMessage() {}
 
 func (x *ListPlaidTransactionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[23]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[63]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1449,7 +3677,7 @@ func (x *ListPlaidTransactionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPlaidTransactionsResponse.ProtoReflect.Descriptor instead.
 func (*ListPlaidTransactionsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{23}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{63}
 }
 
 func (x *ListPlaidTransactionsResponse) GetTransactions() []*PlaidTransaction {
@@ -1481,7 +3709,7 @@ type PlaidHolding struct {
 
 func (x *PlaidHolding) Reset() {
 	*x = PlaidHolding{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[24]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[64]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1493,7 +3721,7 @@ func (x *PlaidHolding) String() string {
 func (*PlaidHolding) ProtoMessage() {}
 
 func (x *PlaidHolding) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[24]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[64]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1506,7 +3734,7 @@ func (x *PlaidHolding) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlaidHolding.ProtoReflect.Descriptor instead.
 func (*PlaidHolding) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{24}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{64}
 }
 
 func (x *PlaidHolding) GetId() string {
@@ -1594,7 +3822,7 @@ type ListPlaidHoldingsRequest struct {
 
 func (x *ListPlaidHoldingsRequest) Reset() {
 	*x = ListPlaidHoldingsRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[25]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[65]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1606,7 +3834,7 @@ func (x *ListPlaidHoldingsRequest) String() string {
 func (*ListPlaidHoldingsRequest) ProtoMessage() {}
 
 func (x *ListPlaidHoldingsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[25]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[65]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1619,7 +3847,7 @@ func (x *ListPlaidHoldingsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPlaidHoldingsRequest.ProtoReflect.Descriptor instead.
 func (*ListPlaidHoldingsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{25}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{65}
 }
 
 type ListPlaidHoldingsResponse struct {
@@ -1631,7 +3859,7 @@ type ListPlaidHoldingsResponse struct {
 
 func (x *ListPlaidHoldingsResponse) Reset() {
 	*x = ListPlaidHoldingsResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[26]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[66]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1643,7 +3871,7 @@ func (x *ListPlaidHoldingsResponse) String() string {
 func (*ListPlaidHoldingsResponse) ProtoMessage() {}
 
 func (x *ListPlaidHoldingsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[26]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[66]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1656,7 +3884,7 @@ func (x *ListPlaidHoldingsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPlaidHoldingsResponse.ProtoReflect.Descriptor instead.
 func (*ListPlaidHoldingsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{26}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{66}
 }
 
 func (x *ListPlaidHoldingsResponse) GetHoldings() []*PlaidHolding {
@@ -1677,7 +3905,7 @@ type AllocationSlice struct {
 
 func (x *AllocationSlice) Reset() {
 	*x = AllocationSlice{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[27]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[67]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1689,7 +3917,7 @@ func (x *AllocationSlice) String() string {
 func (*AllocationSlice) ProtoMessage() {}
 
 func (x *AllocationSlice) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[27]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[67]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1702,7 +3930,7 @@ func (x *AllocationSlice) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AllocationSlice.ProtoReflect.Descriptor instead.
 func (*AllocationSlice) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{27}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{67}
 }
 
 func (x *AllocationSlice) GetCategory() string {
@@ -1727,7 +3955,7 @@ type GetCurrentAllocationRequest struct {
 
 func (x *GetCurrentAllocationRequest) Reset() {
 	*x = GetCurrentAllocationRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[28]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[68]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1739,7 +3967,7 @@ func (x *GetCurrentAllocationRequest) String() string {
 func (*GetCurrentAllocationRequest) ProtoMessage() {}
 
 func (x *GetCurrentAllocationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[28]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[68]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1752,7 +3980,7 @@ func (x *GetCurrentAllocationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCurrentAllocationRequest.ProtoReflect.Descriptor instead.
 func (*GetCurrentAllocationRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{28}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{68}
 }
 
 type GetCurrentAllocationResponse struct {
@@ -1765,7 +3993,7 @@ type GetCurrentAllocationResponse struct {
 
 func (x *GetCurrentAllocationResponse) Reset() {
 	*x = GetCurrentAllocationResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[29]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[69]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1777,7 +4005,7 @@ func (x *GetCurrentAllocationResponse) String() string {
 func (*GetCurrentAllocationResponse) ProtoMessage() {}
 
 func (x *GetCurrentAllocationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[29]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[69]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1790,7 +4018,7 @@ func (x *GetCurrentAllocationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCurrentAllocationResponse.ProtoReflect.Descriptor instead.
 func (*GetCurrentAllocationResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{29}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{69}
 }
 
 func (x *GetCurrentAllocationResponse) GetSlices() []*AllocationSlice {
@@ -1811,7 +4039,7 @@ type AllocationHistoryPoint struct {
 
 func (x *AllocationHistoryPoint) Reset() {
 	*x = AllocationHistoryPoint{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[30]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[70]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1823,7 +4051,7 @@ func (x *AllocationHistoryPoint) String() string {
 func (*AllocationHistoryPoint) ProtoMessage() {}
 
 func (x *AllocationHistoryPoint) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[30]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[70]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1836,7 +4064,7 @@ func (x *AllocationHistoryPoint) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AllocationHistoryPoint.ProtoReflect.Descriptor instead.
 func (*AllocationHistoryPoint) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{30}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{70}
 }
 
 func (x *AllocationHistoryPoint) GetDateIso() string {
@@ -1870,7 +4098,7 @@ type ListAllocationHistoryRequest struct {
 
 func (x *ListAllocationHistoryRequest) Reset() {
 	*x = ListAllocationHistoryRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[31]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[71]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1882,7 +4110,7 @@ func (x *ListAllocationHistoryRequest) String() string {
 func (*ListAllocationHistoryRequest) ProtoMessage() {}
 
 func (x *ListAllocationHistoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[31]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[71]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1895,7 +4123,7 @@ func (x *ListAllocationHistoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAllocationHistoryRequest.ProtoReflect.Descriptor instead.
 func (*ListAllocationHistoryRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{31}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{71}
 }
 
 func (x *ListAllocationHistoryRequest) GetDays() int32 {
@@ -1915,7 +4143,7 @@ type ListAllocationHistoryResponse struct {
 
 func (x *ListAllocationHistoryResponse) Reset() {
 	*x = ListAllocationHistoryResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[32]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[72]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1927,7 +4155,7 @@ func (x *ListAllocationHistoryResponse) String() string {
 func (*ListAllocationHistoryResponse) ProtoMessage() {}
 
 func (x *ListAllocationHistoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[32]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[72]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1940,7 +4168,7 @@ func (x *ListAllocationHistoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAllocationHistoryResponse.ProtoReflect.Descriptor instead.
 func (*ListAllocationHistoryResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{32}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{72}
 }
 
 func (x *ListAllocationHistoryResponse) GetPoints() []*AllocationHistoryPoint {
@@ -1967,7 +4195,7 @@ type RealEstateProperty struct {
 
 func (x *RealEstateProperty) Reset() {
 	*x = RealEstateProperty{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[33]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[73]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1979,7 +4207,7 @@ func (x *RealEstateProperty) String() string {
 func (*RealEstateProperty) ProtoMessage() {}
 
 func (x *RealEstateProperty) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[33]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[73]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1992,7 +4220,7 @@ func (x *RealEstateProperty) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RealEstateProperty.ProtoReflect.Descriptor instead.
 func (*RealEstateProperty) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{33}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{73}
 }
 
 func (x *RealEstateProperty) GetId() string {
@@ -2059,7 +4287,7 @@ type ListRealEstatePropertiesRequest struct {
 
 func (x *ListRealEstatePropertiesRequest) Reset() {
 	*x = ListRealEstatePropertiesRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[34]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[74]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2071,7 +4299,7 @@ func (x *ListRealEstatePropertiesRequest) String() string {
 func (*ListRealEstatePropertiesRequest) ProtoMessage() {}
 
 func (x *ListRealEstatePropertiesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[34]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[74]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2084,7 +4312,7 @@ func (x *ListRealEstatePropertiesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRealEstatePropertiesRequest.ProtoReflect.Descriptor instead.
 func (*ListRealEstatePropertiesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{34}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{74}
 }
 
 type ListRealEstatePropertiesResponse struct {
@@ -2096,7 +4324,7 @@ type ListRealEstatePropertiesResponse struct {
 
 func (x *ListRealEstatePropertiesResponse) Reset() {
 	*x = ListRealEstatePropertiesResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[35]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[75]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2108,7 +4336,7 @@ func (x *ListRealEstatePropertiesResponse) String() string {
 func (*ListRealEstatePropertiesResponse) ProtoMessage() {}
 
 func (x *ListRealEstatePropertiesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[35]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[75]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2121,7 +4349,7 @@ func (x *ListRealEstatePropertiesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRealEstatePropertiesResponse.ProtoReflect.Descriptor instead.
 func (*ListRealEstatePropertiesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{35}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{75}
 }
 
 func (x *ListRealEstatePropertiesResponse) GetProperties() []*RealEstateProperty {
@@ -2146,7 +4374,7 @@ type CreateRealEstatePropertyRequest struct {
 
 func (x *CreateRealEstatePropertyRequest) Reset() {
 	*x = CreateRealEstatePropertyRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[36]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[76]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2158,7 +4386,7 @@ func (x *CreateRealEstatePropertyRequest) String() string {
 func (*CreateRealEstatePropertyRequest) ProtoMessage() {}
 
 func (x *CreateRealEstatePropertyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[36]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[76]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2171,7 +4399,7 @@ func (x *CreateRealEstatePropertyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateRealEstatePropertyRequest.ProtoReflect.Descriptor instead.
 func (*CreateRealEstatePropertyRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{36}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{76}
 }
 
 func (x *CreateRealEstatePropertyRequest) GetLabel() string {
@@ -2211,7 +4439,7 @@ type CreateRealEstatePropertyResponse struct {
 
 func (x *CreateRealEstatePropertyResponse) Reset() {
 	*x = CreateRealEstatePropertyResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[37]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[77]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2223,7 +4451,7 @@ func (x *CreateRealEstatePropertyResponse) String() string {
 func (*CreateRealEstatePropertyResponse) ProtoMessage() {}
 
 func (x *CreateRealEstatePropertyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[37]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[77]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2236,7 +4464,7 @@ func (x *CreateRealEstatePropertyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateRealEstatePropertyResponse.ProtoReflect.Descriptor instead.
 func (*CreateRealEstatePropertyResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{37}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{77}
 }
 
 func (x *CreateRealEstatePropertyResponse) GetProperty() *RealEstateProperty {
@@ -2258,7 +4486,7 @@ type RecordManualValuationRequest struct {
 
 func (x *RecordManualValuationRequest) Reset() {
 	*x = RecordManualValuationRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[38]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[78]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2270,7 +4498,7 @@ func (x *RecordManualValuationRequest) String() string {
 func (*RecordManualValuationRequest) ProtoMessage() {}
 
 func (x *RecordManualValuationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[38]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[78]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2283,7 +4511,7 @@ func (x *RecordManualValuationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecordManualValuationRequest.ProtoReflect.Descriptor instead.
 func (*RecordManualValuationRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{38}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{78}
 }
 
 func (x *RecordManualValuationRequest) GetPropertyId() string {
@@ -2316,7 +4544,7 @@ type RecordManualValuationResponse struct {
 
 func (x *RecordManualValuationResponse) Reset() {
 	*x = RecordManualValuationResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[39]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[79]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2328,7 +4556,7 @@ func (x *RecordManualValuationResponse) String() string {
 func (*RecordManualValuationResponse) ProtoMessage() {}
 
 func (x *RecordManualValuationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[39]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[79]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2341,7 +4569,7 @@ func (x *RecordManualValuationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecordManualValuationResponse.ProtoReflect.Descriptor instead.
 func (*RecordManualValuationResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{39}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{79}
 }
 
 func (x *RecordManualValuationResponse) GetProperty() *RealEstateProperty {
@@ -2360,7 +4588,7 @@ type RefreshAvmValuationRequest struct {
 
 func (x *RefreshAvmValuationRequest) Reset() {
 	*x = RefreshAvmValuationRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[40]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[80]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2372,7 +4600,7 @@ func (x *RefreshAvmValuationRequest) String() string {
 func (*RefreshAvmValuationRequest) ProtoMessage() {}
 
 func (x *RefreshAvmValuationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[40]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[80]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2385,7 +4613,7 @@ func (x *RefreshAvmValuationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RefreshAvmValuationRequest.ProtoReflect.Descriptor instead.
 func (*RefreshAvmValuationRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{40}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{80}
 }
 
 func (x *RefreshAvmValuationRequest) GetPropertyId() string {
@@ -2404,7 +4632,7 @@ type RefreshAvmValuationResponse struct {
 
 func (x *RefreshAvmValuationResponse) Reset() {
 	*x = RefreshAvmValuationResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[41]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[81]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2416,7 +4644,7 @@ func (x *RefreshAvmValuationResponse) String() string {
 func (*RefreshAvmValuationResponse) ProtoMessage() {}
 
 func (x *RefreshAvmValuationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[41]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[81]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2429,7 +4657,7 @@ func (x *RefreshAvmValuationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RefreshAvmValuationResponse.ProtoReflect.Descriptor instead.
 func (*RefreshAvmValuationResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{41}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{81}
 }
 
 func (x *RefreshAvmValuationResponse) GetProperty() *RealEstateProperty {
@@ -2448,7 +4676,7 @@ type DeleteRealEstatePropertyRequest struct {
 
 func (x *DeleteRealEstatePropertyRequest) Reset() {
 	*x = DeleteRealEstatePropertyRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[42]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[82]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2460,7 +4688,7 @@ func (x *DeleteRealEstatePropertyRequest) String() string {
 func (*DeleteRealEstatePropertyRequest) ProtoMessage() {}
 
 func (x *DeleteRealEstatePropertyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[42]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[82]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2473,7 +4701,7 @@ func (x *DeleteRealEstatePropertyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRealEstatePropertyRequest.ProtoReflect.Descriptor instead.
 func (*DeleteRealEstatePropertyRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{42}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{82}
 }
 
 func (x *DeleteRealEstatePropertyRequest) GetPropertyId() string {
@@ -2491,7 +4719,7 @@ type DeleteRealEstatePropertyResponse struct {
 
 func (x *DeleteRealEstatePropertyResponse) Reset() {
 	*x = DeleteRealEstatePropertyResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[43]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[83]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2503,7 +4731,7 @@ func (x *DeleteRealEstatePropertyResponse) String() string {
 func (*DeleteRealEstatePropertyResponse) ProtoMessage() {}
 
 func (x *DeleteRealEstatePropertyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[43]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[83]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2516,7 +4744,7 @@ func (x *DeleteRealEstatePropertyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRealEstatePropertyResponse.ProtoReflect.Descriptor instead.
 func (*DeleteRealEstatePropertyResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{43}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{83}
 }
 
 type Entity struct {
@@ -2534,7 +4762,7 @@ type Entity struct {
 
 func (x *Entity) Reset() {
 	*x = Entity{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[44]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[84]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2546,7 +4774,7 @@ func (x *Entity) String() string {
 func (*Entity) ProtoMessage() {}
 
 func (x *Entity) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[44]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[84]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2559,7 +4787,7 @@ func (x *Entity) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Entity.ProtoReflect.Descriptor instead.
 func (*Entity) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{44}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{84}
 }
 
 func (x *Entity) GetId() string {
@@ -2605,7 +4833,7 @@ type ListEntitiesRequest struct {
 
 func (x *ListEntitiesRequest) Reset() {
 	*x = ListEntitiesRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[45]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[85]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2617,7 +4845,7 @@ func (x *ListEntitiesRequest) String() string {
 func (*ListEntitiesRequest) ProtoMessage() {}
 
 func (x *ListEntitiesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[45]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[85]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2630,7 +4858,7 @@ func (x *ListEntitiesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListEntitiesRequest.ProtoReflect.Descriptor instead.
 func (*ListEntitiesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{45}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{85}
 }
 
 type ListEntitiesResponse struct {
@@ -2642,7 +4870,7 @@ type ListEntitiesResponse struct {
 
 func (x *ListEntitiesResponse) Reset() {
 	*x = ListEntitiesResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[46]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[86]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2654,7 +4882,7 @@ func (x *ListEntitiesResponse) String() string {
 func (*ListEntitiesResponse) ProtoMessage() {}
 
 func (x *ListEntitiesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[46]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[86]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2667,7 +4895,7 @@ func (x *ListEntitiesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListEntitiesResponse.ProtoReflect.Descriptor instead.
 func (*ListEntitiesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{46}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{86}
 }
 
 func (x *ListEntitiesResponse) GetEntities() []*Entity {
@@ -2689,7 +4917,7 @@ type CreateEntityRequest struct {
 
 func (x *CreateEntityRequest) Reset() {
 	*x = CreateEntityRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[47]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[87]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2701,7 +4929,7 @@ func (x *CreateEntityRequest) String() string {
 func (*CreateEntityRequest) ProtoMessage() {}
 
 func (x *CreateEntityRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[47]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[87]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2714,7 +4942,7 @@ func (x *CreateEntityRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateEntityRequest.ProtoReflect.Descriptor instead.
 func (*CreateEntityRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{47}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{87}
 }
 
 func (x *CreateEntityRequest) GetName() string {
@@ -2740,7 +4968,7 @@ type CreateEntityResponse struct {
 
 func (x *CreateEntityResponse) Reset() {
 	*x = CreateEntityResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[48]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[88]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2752,7 +4980,7 @@ func (x *CreateEntityResponse) String() string {
 func (*CreateEntityResponse) ProtoMessage() {}
 
 func (x *CreateEntityResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[48]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[88]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2765,7 +4993,7 @@ func (x *CreateEntityResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateEntityResponse.ProtoReflect.Descriptor instead.
 func (*CreateEntityResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{48}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{88}
 }
 
 func (x *CreateEntityResponse) GetEntity() *Entity {
@@ -2785,7 +5013,7 @@ type RenameEntityRequest struct {
 
 func (x *RenameEntityRequest) Reset() {
 	*x = RenameEntityRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[49]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[89]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2797,7 +5025,7 @@ func (x *RenameEntityRequest) String() string {
 func (*RenameEntityRequest) ProtoMessage() {}
 
 func (x *RenameEntityRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[49]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[89]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2810,7 +5038,7 @@ func (x *RenameEntityRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RenameEntityRequest.ProtoReflect.Descriptor instead.
 func (*RenameEntityRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{49}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{89}
 }
 
 func (x *RenameEntityRequest) GetId() string {
@@ -2836,7 +5064,7 @@ type RenameEntityResponse struct {
 
 func (x *RenameEntityResponse) Reset() {
 	*x = RenameEntityResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[50]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[90]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2848,7 +5076,7 @@ func (x *RenameEntityResponse) String() string {
 func (*RenameEntityResponse) ProtoMessage() {}
 
 func (x *RenameEntityResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[50]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[90]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2861,7 +5089,7 @@ func (x *RenameEntityResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RenameEntityResponse.ProtoReflect.Descriptor instead.
 func (*RenameEntityResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{50}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{90}
 }
 
 func (x *RenameEntityResponse) GetEntity() *Entity {
@@ -2880,7 +5108,7 @@ type DeleteEntityRequest struct {
 
 func (x *DeleteEntityRequest) Reset() {
 	*x = DeleteEntityRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[51]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[91]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2892,7 +5120,7 @@ func (x *DeleteEntityRequest) String() string {
 func (*DeleteEntityRequest) ProtoMessage() {}
 
 func (x *DeleteEntityRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[51]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[91]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2905,7 +5133,7 @@ func (x *DeleteEntityRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteEntityRequest.ProtoReflect.Descriptor instead.
 func (*DeleteEntityRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{51}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{91}
 }
 
 func (x *DeleteEntityRequest) GetId() string {
@@ -2923,7 +5151,7 @@ type DeleteEntityResponse struct {
 
 func (x *DeleteEntityResponse) Reset() {
 	*x = DeleteEntityResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[52]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[92]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2935,7 +5163,7 @@ func (x *DeleteEntityResponse) String() string {
 func (*DeleteEntityResponse) ProtoMessage() {}
 
 func (x *DeleteEntityResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[52]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[92]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2948,7 +5176,7 @@ func (x *DeleteEntityResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteEntityResponse.ProtoReflect.Descriptor instead.
 func (*DeleteEntityResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{52}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{92}
 }
 
 type AssignAssetToEntityRequest struct {
@@ -2962,7 +5190,7 @@ type AssignAssetToEntityRequest struct {
 
 func (x *AssignAssetToEntityRequest) Reset() {
 	*x = AssignAssetToEntityRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[53]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[93]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2974,7 +5202,7 @@ func (x *AssignAssetToEntityRequest) String() string {
 func (*AssignAssetToEntityRequest) ProtoMessage() {}
 
 func (x *AssignAssetToEntityRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[53]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[93]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2987,7 +5215,7 @@ func (x *AssignAssetToEntityRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AssignAssetToEntityRequest.ProtoReflect.Descriptor instead.
 func (*AssignAssetToEntityRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{53}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{93}
 }
 
 func (x *AssignAssetToEntityRequest) GetAssetId() string {
@@ -3012,7 +5240,7 @@ type AssignAssetToEntityResponse struct {
 
 func (x *AssignAssetToEntityResponse) Reset() {
 	*x = AssignAssetToEntityResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[54]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[94]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3024,7 +5252,7 @@ func (x *AssignAssetToEntityResponse) String() string {
 func (*AssignAssetToEntityResponse) ProtoMessage() {}
 
 func (x *AssignAssetToEntityResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[54]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[94]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3037,7 +5265,7 @@ func (x *AssignAssetToEntityResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AssignAssetToEntityResponse.ProtoReflect.Descriptor instead.
 func (*AssignAssetToEntityResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{54}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{94}
 }
 
 type FxRate struct {
@@ -3052,7 +5280,7 @@ type FxRate struct {
 
 func (x *FxRate) Reset() {
 	*x = FxRate{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[55]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[95]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3064,7 +5292,7 @@ func (x *FxRate) String() string {
 func (*FxRate) ProtoMessage() {}
 
 func (x *FxRate) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[55]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[95]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3077,7 +5305,7 @@ func (x *FxRate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FxRate.ProtoReflect.Descriptor instead.
 func (*FxRate) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{55}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{95}
 }
 
 func (x *FxRate) GetCurrency() string {
@@ -3109,7 +5337,7 @@ type ListLatestFxRatesRequest struct {
 
 func (x *ListLatestFxRatesRequest) Reset() {
 	*x = ListLatestFxRatesRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[56]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[96]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3121,7 +5349,7 @@ func (x *ListLatestFxRatesRequest) String() string {
 func (*ListLatestFxRatesRequest) ProtoMessage() {}
 
 func (x *ListLatestFxRatesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[56]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[96]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3134,7 +5362,7 @@ func (x *ListLatestFxRatesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLatestFxRatesRequest.ProtoReflect.Descriptor instead.
 func (*ListLatestFxRatesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{56}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{96}
 }
 
 type ListLatestFxRatesResponse struct {
@@ -3148,7 +5376,7 @@ type ListLatestFxRatesResponse struct {
 
 func (x *ListLatestFxRatesResponse) Reset() {
 	*x = ListLatestFxRatesResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[57]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[97]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3160,7 +5388,7 @@ func (x *ListLatestFxRatesResponse) String() string {
 func (*ListLatestFxRatesResponse) ProtoMessage() {}
 
 func (x *ListLatestFxRatesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[57]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[97]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3173,7 +5401,7 @@ func (x *ListLatestFxRatesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLatestFxRatesResponse.ProtoReflect.Descriptor instead.
 func (*ListLatestFxRatesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{57}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{97}
 }
 
 func (x *ListLatestFxRatesResponse) GetRates() []*FxRate {
@@ -3206,7 +5434,7 @@ type CapTableHolding struct {
 
 func (x *CapTableHolding) Reset() {
 	*x = CapTableHolding{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[58]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[98]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3218,7 +5446,7 @@ func (x *CapTableHolding) String() string {
 func (*CapTableHolding) ProtoMessage() {}
 
 func (x *CapTableHolding) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[58]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[98]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3231,7 +5459,7 @@ func (x *CapTableHolding) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CapTableHolding.ProtoReflect.Descriptor instead.
 func (*CapTableHolding) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{58}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{98}
 }
 
 func (x *CapTableHolding) GetId() string {
@@ -3326,7 +5554,7 @@ type ListCapTableHoldingsRequest struct {
 
 func (x *ListCapTableHoldingsRequest) Reset() {
 	*x = ListCapTableHoldingsRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[59]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[99]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3338,7 +5566,7 @@ func (x *ListCapTableHoldingsRequest) String() string {
 func (*ListCapTableHoldingsRequest) ProtoMessage() {}
 
 func (x *ListCapTableHoldingsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[59]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[99]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3351,7 +5579,7 @@ func (x *ListCapTableHoldingsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCapTableHoldingsRequest.ProtoReflect.Descriptor instead.
 func (*ListCapTableHoldingsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{59}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{99}
 }
 
 type ListCapTableHoldingsResponse struct {
@@ -3365,7 +5593,7 @@ type ListCapTableHoldingsResponse struct {
 
 func (x *ListCapTableHoldingsResponse) Reset() {
 	*x = ListCapTableHoldingsResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[60]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[100]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3377,7 +5605,7 @@ func (x *ListCapTableHoldingsResponse) String() string {
 func (*ListCapTableHoldingsResponse) ProtoMessage() {}
 
 func (x *ListCapTableHoldingsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[60]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[100]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3390,7 +5618,7 @@ func (x *ListCapTableHoldingsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCapTableHoldingsResponse.ProtoReflect.Descriptor instead.
 func (*ListCapTableHoldingsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{60}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{100}
 }
 
 func (x *ListCapTableHoldingsResponse) GetHoldings() []*CapTableHolding {
@@ -3423,7 +5651,7 @@ type CapTableHoldingInput struct {
 
 func (x *CapTableHoldingInput) Reset() {
 	*x = CapTableHoldingInput{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[61]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[101]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3435,7 +5663,7 @@ func (x *CapTableHoldingInput) String() string {
 func (*CapTableHoldingInput) ProtoMessage() {}
 
 func (x *CapTableHoldingInput) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[61]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[101]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3448,7 +5676,7 @@ func (x *CapTableHoldingInput) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CapTableHoldingInput.ProtoReflect.Descriptor instead.
 func (*CapTableHoldingInput) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{61}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{101}
 }
 
 func (x *CapTableHoldingInput) GetEntityId() string {
@@ -3516,7 +5744,7 @@ type CreateCapTableHoldingRequest struct {
 
 func (x *CreateCapTableHoldingRequest) Reset() {
 	*x = CreateCapTableHoldingRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[62]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[102]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3528,7 +5756,7 @@ func (x *CreateCapTableHoldingRequest) String() string {
 func (*CreateCapTableHoldingRequest) ProtoMessage() {}
 
 func (x *CreateCapTableHoldingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[62]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[102]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3541,7 +5769,7 @@ func (x *CreateCapTableHoldingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCapTableHoldingRequest.ProtoReflect.Descriptor instead.
 func (*CreateCapTableHoldingRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{62}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{102}
 }
 
 func (x *CreateCapTableHoldingRequest) GetInput() *CapTableHoldingInput {
@@ -3560,7 +5788,7 @@ type CreateCapTableHoldingResponse struct {
 
 func (x *CreateCapTableHoldingResponse) Reset() {
 	*x = CreateCapTableHoldingResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[63]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[103]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3572,7 +5800,7 @@ func (x *CreateCapTableHoldingResponse) String() string {
 func (*CreateCapTableHoldingResponse) ProtoMessage() {}
 
 func (x *CreateCapTableHoldingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[63]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[103]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3585,7 +5813,7 @@ func (x *CreateCapTableHoldingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCapTableHoldingResponse.ProtoReflect.Descriptor instead.
 func (*CreateCapTableHoldingResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{63}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{103}
 }
 
 func (x *CreateCapTableHoldingResponse) GetHolding() *CapTableHolding {
@@ -3605,7 +5833,7 @@ type UpdateCapTableHoldingRequest struct {
 
 func (x *UpdateCapTableHoldingRequest) Reset() {
 	*x = UpdateCapTableHoldingRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[64]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[104]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3617,7 +5845,7 @@ func (x *UpdateCapTableHoldingRequest) String() string {
 func (*UpdateCapTableHoldingRequest) ProtoMessage() {}
 
 func (x *UpdateCapTableHoldingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[64]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[104]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3630,7 +5858,7 @@ func (x *UpdateCapTableHoldingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCapTableHoldingRequest.ProtoReflect.Descriptor instead.
 func (*UpdateCapTableHoldingRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{64}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{104}
 }
 
 func (x *UpdateCapTableHoldingRequest) GetId() string {
@@ -3656,7 +5884,7 @@ type UpdateCapTableHoldingResponse struct {
 
 func (x *UpdateCapTableHoldingResponse) Reset() {
 	*x = UpdateCapTableHoldingResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[65]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[105]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3668,7 +5896,7 @@ func (x *UpdateCapTableHoldingResponse) String() string {
 func (*UpdateCapTableHoldingResponse) ProtoMessage() {}
 
 func (x *UpdateCapTableHoldingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[65]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[105]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3681,7 +5909,7 @@ func (x *UpdateCapTableHoldingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCapTableHoldingResponse.ProtoReflect.Descriptor instead.
 func (*UpdateCapTableHoldingResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{65}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{105}
 }
 
 func (x *UpdateCapTableHoldingResponse) GetHolding() *CapTableHolding {
@@ -3700,7 +5928,7 @@ type DeleteCapTableHoldingRequest struct {
 
 func (x *DeleteCapTableHoldingRequest) Reset() {
 	*x = DeleteCapTableHoldingRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[66]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[106]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3712,7 +5940,7 @@ func (x *DeleteCapTableHoldingRequest) String() string {
 func (*DeleteCapTableHoldingRequest) ProtoMessage() {}
 
 func (x *DeleteCapTableHoldingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[66]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[106]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3725,7 +5953,7 @@ func (x *DeleteCapTableHoldingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteCapTableHoldingRequest.ProtoReflect.Descriptor instead.
 func (*DeleteCapTableHoldingRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{66}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{106}
 }
 
 func (x *DeleteCapTableHoldingRequest) GetId() string {
@@ -3743,7 +5971,7 @@ type DeleteCapTableHoldingResponse struct {
 
 func (x *DeleteCapTableHoldingResponse) Reset() {
 	*x = DeleteCapTableHoldingResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[67]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[107]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3755,7 +5983,7 @@ func (x *DeleteCapTableHoldingResponse) String() string {
 func (*DeleteCapTableHoldingResponse) ProtoMessage() {}
 
 func (x *DeleteCapTableHoldingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[67]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[107]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3768,7 +5996,7 @@ func (x *DeleteCapTableHoldingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteCapTableHoldingResponse.ProtoReflect.Descriptor instead.
 func (*DeleteCapTableHoldingResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{67}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{107}
 }
 
 // One (user, provider) OAuth connection — Carta / Pulley / AngelList.
@@ -3784,7 +6012,7 @@ type CapTableConnection struct {
 
 func (x *CapTableConnection) Reset() {
 	*x = CapTableConnection{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[68]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[108]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3796,7 +6024,7 @@ func (x *CapTableConnection) String() string {
 func (*CapTableConnection) ProtoMessage() {}
 
 func (x *CapTableConnection) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[68]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[108]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3809,7 +6037,7 @@ func (x *CapTableConnection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CapTableConnection.ProtoReflect.Descriptor instead.
 func (*CapTableConnection) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{68}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{108}
 }
 
 func (x *CapTableConnection) GetProvider() string {
@@ -3841,7 +6069,7 @@ type ListCapTableConnectionsRequest struct {
 
 func (x *ListCapTableConnectionsRequest) Reset() {
 	*x = ListCapTableConnectionsRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[69]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[109]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3853,7 +6081,7 @@ func (x *ListCapTableConnectionsRequest) String() string {
 func (*ListCapTableConnectionsRequest) ProtoMessage() {}
 
 func (x *ListCapTableConnectionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[69]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[109]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3866,7 +6094,7 @@ func (x *ListCapTableConnectionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCapTableConnectionsRequest.ProtoReflect.Descriptor instead.
 func (*ListCapTableConnectionsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{69}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{109}
 }
 
 type ListCapTableConnectionsResponse struct {
@@ -3878,7 +6106,7 @@ type ListCapTableConnectionsResponse struct {
 
 func (x *ListCapTableConnectionsResponse) Reset() {
 	*x = ListCapTableConnectionsResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[70]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[110]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3890,7 +6118,7 @@ func (x *ListCapTableConnectionsResponse) String() string {
 func (*ListCapTableConnectionsResponse) ProtoMessage() {}
 
 func (x *ListCapTableConnectionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[70]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[110]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3903,7 +6131,7 @@ func (x *ListCapTableConnectionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCapTableConnectionsResponse.ProtoReflect.Descriptor instead.
 func (*ListCapTableConnectionsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{70}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{110}
 }
 
 func (x *ListCapTableConnectionsResponse) GetConnections() []*CapTableConnection {
@@ -3923,7 +6151,7 @@ type SetCapTableConnectionStatusRequest struct {
 
 func (x *SetCapTableConnectionStatusRequest) Reset() {
 	*x = SetCapTableConnectionStatusRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[71]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[111]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3935,7 +6163,7 @@ func (x *SetCapTableConnectionStatusRequest) String() string {
 func (*SetCapTableConnectionStatusRequest) ProtoMessage() {}
 
 func (x *SetCapTableConnectionStatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[71]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[111]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3948,7 +6176,7 @@ func (x *SetCapTableConnectionStatusRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use SetCapTableConnectionStatusRequest.ProtoReflect.Descriptor instead.
 func (*SetCapTableConnectionStatusRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{71}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{111}
 }
 
 func (x *SetCapTableConnectionStatusRequest) GetProvider() string {
@@ -3974,7 +6202,7 @@ type SetCapTableConnectionStatusResponse struct {
 
 func (x *SetCapTableConnectionStatusResponse) Reset() {
 	*x = SetCapTableConnectionStatusResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[72]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[112]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3986,7 +6214,7 @@ func (x *SetCapTableConnectionStatusResponse) String() string {
 func (*SetCapTableConnectionStatusResponse) ProtoMessage() {}
 
 func (x *SetCapTableConnectionStatusResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[72]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[112]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3999,7 +6227,7 @@ func (x *SetCapTableConnectionStatusResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use SetCapTableConnectionStatusResponse.ProtoReflect.Descriptor instead.
 func (*SetCapTableConnectionStatusResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{72}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{112}
 }
 
 func (x *SetCapTableConnectionStatusResponse) GetConnection() *CapTableConnection {
@@ -4027,7 +6255,7 @@ type WalletChain struct {
 
 func (x *WalletChain) Reset() {
 	*x = WalletChain{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[73]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[113]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4039,7 +6267,7 @@ func (x *WalletChain) String() string {
 func (*WalletChain) ProtoMessage() {}
 
 func (x *WalletChain) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[73]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[113]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4052,7 +6280,7 @@ func (x *WalletChain) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WalletChain.ProtoReflect.Descriptor instead.
 func (*WalletChain) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{73}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{113}
 }
 
 func (x *WalletChain) GetId() string {
@@ -4112,7 +6340,7 @@ type ListWalletChainsRequest struct {
 
 func (x *ListWalletChainsRequest) Reset() {
 	*x = ListWalletChainsRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[74]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[114]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4124,7 +6352,7 @@ func (x *ListWalletChainsRequest) String() string {
 func (*ListWalletChainsRequest) ProtoMessage() {}
 
 func (x *ListWalletChainsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[74]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[114]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4137,7 +6365,7 @@ func (x *ListWalletChainsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListWalletChainsRequest.ProtoReflect.Descriptor instead.
 func (*ListWalletChainsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{74}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{114}
 }
 
 type ListWalletChainsResponse struct {
@@ -4149,7 +6377,7 @@ type ListWalletChainsResponse struct {
 
 func (x *ListWalletChainsResponse) Reset() {
 	*x = ListWalletChainsResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[75]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[115]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4161,7 +6389,7 @@ func (x *ListWalletChainsResponse) String() string {
 func (*ListWalletChainsResponse) ProtoMessage() {}
 
 func (x *ListWalletChainsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[75]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[115]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4174,7 +6402,7 @@ func (x *ListWalletChainsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListWalletChainsResponse.ProtoReflect.Descriptor instead.
 func (*ListWalletChainsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{75}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{115}
 }
 
 func (x *ListWalletChainsResponse) GetWallets() []*WalletChain {
@@ -4195,7 +6423,7 @@ type UpsertWalletChainRequest struct {
 
 func (x *UpsertWalletChainRequest) Reset() {
 	*x = UpsertWalletChainRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[76]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[116]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4207,7 +6435,7 @@ func (x *UpsertWalletChainRequest) String() string {
 func (*UpsertWalletChainRequest) ProtoMessage() {}
 
 func (x *UpsertWalletChainRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[76]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[116]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4220,7 +6448,7 @@ func (x *UpsertWalletChainRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertWalletChainRequest.ProtoReflect.Descriptor instead.
 func (*UpsertWalletChainRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{76}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{116}
 }
 
 func (x *UpsertWalletChainRequest) GetChain() string {
@@ -4253,7 +6481,7 @@ type UpsertWalletChainResponse struct {
 
 func (x *UpsertWalletChainResponse) Reset() {
 	*x = UpsertWalletChainResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[77]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[117]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4265,7 +6493,7 @@ func (x *UpsertWalletChainResponse) String() string {
 func (*UpsertWalletChainResponse) ProtoMessage() {}
 
 func (x *UpsertWalletChainResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[77]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[117]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4278,7 +6506,7 @@ func (x *UpsertWalletChainResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertWalletChainResponse.ProtoReflect.Descriptor instead.
 func (*UpsertWalletChainResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{77}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{117}
 }
 
 func (x *UpsertWalletChainResponse) GetWallet() *WalletChain {
@@ -4297,7 +6525,7 @@ type DeleteWalletChainRequest struct {
 
 func (x *DeleteWalletChainRequest) Reset() {
 	*x = DeleteWalletChainRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[78]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[118]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4309,7 +6537,7 @@ func (x *DeleteWalletChainRequest) String() string {
 func (*DeleteWalletChainRequest) ProtoMessage() {}
 
 func (x *DeleteWalletChainRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[78]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[118]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4322,7 +6550,7 @@ func (x *DeleteWalletChainRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteWalletChainRequest.ProtoReflect.Descriptor instead.
 func (*DeleteWalletChainRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{78}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{118}
 }
 
 func (x *DeleteWalletChainRequest) GetId() string {
@@ -4340,7 +6568,7 @@ type DeleteWalletChainResponse struct {
 
 func (x *DeleteWalletChainResponse) Reset() {
 	*x = DeleteWalletChainResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[79]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[119]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4352,7 +6580,7 @@ func (x *DeleteWalletChainResponse) String() string {
 func (*DeleteWalletChainResponse) ProtoMessage() {}
 
 func (x *DeleteWalletChainResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[79]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[119]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4365,7 +6593,7 @@ func (x *DeleteWalletChainResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteWalletChainResponse.ProtoReflect.Descriptor instead.
 func (*DeleteWalletChainResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{79}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{119}
 }
 
 type TaxLot struct {
@@ -4381,7 +6609,7 @@ type TaxLot struct {
 
 func (x *TaxLot) Reset() {
 	*x = TaxLot{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[80]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[120]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4393,7 +6621,7 @@ func (x *TaxLot) String() string {
 func (*TaxLot) ProtoMessage() {}
 
 func (x *TaxLot) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[80]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[120]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4406,7 +6634,7 @@ func (x *TaxLot) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaxLot.ProtoReflect.Descriptor instead.
 func (*TaxLot) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{80}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{120}
 }
 
 func (x *TaxLot) GetSymbol() string {
@@ -4452,7 +6680,7 @@ type GetTaxSnapshotRequest struct {
 
 func (x *GetTaxSnapshotRequest) Reset() {
 	*x = GetTaxSnapshotRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[81]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[121]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4464,7 +6692,7 @@ func (x *GetTaxSnapshotRequest) String() string {
 func (*GetTaxSnapshotRequest) ProtoMessage() {}
 
 func (x *GetTaxSnapshotRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[81]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[121]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4477,7 +6705,7 @@ func (x *GetTaxSnapshotRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTaxSnapshotRequest.ProtoReflect.Descriptor instead.
 func (*GetTaxSnapshotRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{81}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{121}
 }
 
 type GetTaxSnapshotResponse struct {
@@ -4492,7 +6720,7 @@ type GetTaxSnapshotResponse struct {
 
 func (x *GetTaxSnapshotResponse) Reset() {
 	*x = GetTaxSnapshotResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[82]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[122]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4504,7 +6732,7 @@ func (x *GetTaxSnapshotResponse) String() string {
 func (*GetTaxSnapshotResponse) ProtoMessage() {}
 
 func (x *GetTaxSnapshotResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[82]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[122]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4517,7 +6745,7 @@ func (x *GetTaxSnapshotResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTaxSnapshotResponse.ProtoReflect.Descriptor instead.
 func (*GetTaxSnapshotResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{82}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{122}
 }
 
 func (x *GetTaxSnapshotResponse) GetTotalUnrealisedGainUsd() float64 {
@@ -4556,7 +6784,7 @@ type ExportUsCgtCsvRequest struct {
 
 func (x *ExportUsCgtCsvRequest) Reset() {
 	*x = ExportUsCgtCsvRequest{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[83]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[123]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4568,7 +6796,7 @@ func (x *ExportUsCgtCsvRequest) String() string {
 func (*ExportUsCgtCsvRequest) ProtoMessage() {}
 
 func (x *ExportUsCgtCsvRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[83]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[123]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4581,7 +6809,7 @@ func (x *ExportUsCgtCsvRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExportUsCgtCsvRequest.ProtoReflect.Descriptor instead.
 func (*ExportUsCgtCsvRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{83}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{123}
 }
 
 type ExportUsCgtCsvResponse struct {
@@ -4594,7 +6822,7 @@ type ExportUsCgtCsvResponse struct {
 
 func (x *ExportUsCgtCsvResponse) Reset() {
 	*x = ExportUsCgtCsvResponse{}
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[84]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[124]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4606,7 +6834,7 @@ func (x *ExportUsCgtCsvResponse) String() string {
 func (*ExportUsCgtCsvResponse) ProtoMessage() {}
 
 func (x *ExportUsCgtCsvResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[84]
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[124]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4619,7 +6847,7 @@ func (x *ExportUsCgtCsvResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExportUsCgtCsvResponse.ProtoReflect.Descriptor instead.
 func (*ExportUsCgtCsvResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{84}
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{124}
 }
 
 func (x *ExportUsCgtCsvResponse) GetCsv() []byte {
@@ -4674,7 +6902,167 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\n" +
 	"admin_note\x18\x04 \x01(\tR\tadminNote\"J\n" +
 	"\x18AdminVerifyAssetResponse\x12.\n" +
-	"\x05asset\x18\x01 \x01(\v2\x18.sttattus.vault.v1.AssetR\x05asset\"s\n" +
+	"\x05asset\x18\x01 \x01(\v2\x18.sttattus.vault.v1.AssetR\x05asset\"\x1e\n" +
+	"\x1cGenerateWealthAlmanacRequest\"[\n" +
+	"\x1dGenerateWealthAlmanacResponse\x12\x1b\n" +
+	"\tmedia_url\x18\x01 \x01(\tR\bmediaUrl\x12\x1d\n" +
+	"\n" +
+	"page_count\x18\x02 \x01(\x05R\tpageCount\"Z\n" +
+	"\tYearMover\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12\x1a\n" +
+	"\bcategory\x18\x02 \x01(\tR\bcategory\x12\x1d\n" +
+	"\n" +
+	"change_usd\x18\x03 \x01(\x01R\tchangeUsd\"\x17\n" +
+	"\x15GetYearInVaultRequest\"\x95\x04\n" +
+	"\x16GetYearInVaultResponse\x123\n" +
+	"\x16starting_net_worth_usd\x18\x01 \x01(\x01R\x13startingNetWorthUsd\x12/\n" +
+	"\x14ending_net_worth_usd\x18\x02 \x01(\x01R\x11endingNetWorthUsd\x12\x1d\n" +
+	"\n" +
+	"change_usd\x18\x03 \x01(\x01R\tchangeUsd\x12\x1d\n" +
+	"\n" +
+	"change_pct\x18\x04 \x01(\x01R\tchangePct\x12#\n" +
+	"\rstarting_rank\x18\x05 \x01(\x01R\fstartingRank\x12\x1f\n" +
+	"\vending_rank\x18\x06 \x01(\x01R\n" +
+	"endingRank\x12;\n" +
+	"\n" +
+	"top_movers\x18\a \x03(\v2\x1c.sttattus.vault.v1.YearMoverR\ttopMovers\x12i\n" +
+	"\x10allocation_shift\x18\b \x03(\v2>.sttattus.vault.v1.GetYearInVaultResponse.AllocationShiftEntryR\x0fallocationShift\x12%\n" +
+	"\x0esnapshot_count\x18\t \x01(\x05R\rsnapshotCount\x1aB\n" +
+	"\x14AllocationShiftEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\x01R\x05value:\x028\x01\"}\n" +
+	"\x0fLiquiditySource\x12\x12\n" +
+	"\x04band\x18\x01 \x01(\tR\x04band\x12\x14\n" +
+	"\x05label\x18\x02 \x01(\tR\x05label\x12#\n" +
+	"\ravailable_usd\x18\x03 \x01(\x01R\favailableUsd\x12\x1b\n" +
+	"\tdrawn_usd\x18\x04 \x01(\x01R\bdrawnUsd\">\n" +
+	"\x1dGetLiquidityStressTestRequest\x12\x1d\n" +
+	"\n" +
+	"target_usd\x18\x01 \x01(\x01R\ttargetUsd\"\xcc\x01\n" +
+	"\x1eGetLiquidityStressTestResponse\x12\x1d\n" +
+	"\n" +
+	"target_usd\x18\x01 \x01(\x01R\ttargetUsd\x12(\n" +
+	"\x10total_raised_usd\x18\x02 \x01(\x01R\x0etotalRaisedUsd\x12#\n" +
+	"\rfully_covered\x18\x03 \x01(\bR\ffullyCovered\x12<\n" +
+	"\asources\x18\x04 \x03(\v2\".sttattus.vault.v1.LiquiditySourceR\asources\"\xc2\x03\n" +
+	"\x10InvestmentCircle\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12\x16\n" +
+	"\x06sector\x18\x04 \x01(\tR\x06sector\x12\x14\n" +
+	"\x05stage\x18\x05 \x01(\tR\x05stage\x12\x16\n" +
+	"\x06thesis\x18\x06 \x01(\tR\x06thesis\x12\x18\n" +
+	"\apartner\x18\a \x01(\tR\apartner\x12$\n" +
+	"\x0emin_ticket_usd\x18\b \x01(\x01R\fminTicketUsd\x126\n" +
+	"\x17required_sttattus_score\x18\t \x01(\x01R\x15requiredSttattusScore\x12#\n" +
+	"\rrequired_tier\x18\n" +
+	" \x01(\tR\frequiredTier\x12\x1a\n" +
+	"\bunlocked\x18\v \x01(\bR\bunlocked\x12#\n" +
+	"\rlocked_reason\x18\f \x01(\tR\flockedReason\x12,\n" +
+	"\x12deal_room_markdown\x18\r \x01(\tR\x10dealRoomMarkdown\x12$\n" +
+	"\x0ehero_image_url\x18\x0e \x01(\tR\fheroImageUrl\"\x1e\n" +
+	"\x1cListInvestmentCirclesRequest\"\xb7\x01\n" +
+	"\x1dListInvestmentCirclesResponse\x12=\n" +
+	"\acircles\x18\x01 \x03(\v2#.sttattus.vault.v1.InvestmentCircleR\acircles\x124\n" +
+	"\x16current_sttattus_score\x18\x02 \x01(\x01R\x14currentSttattusScore\x12!\n" +
+	"\fcurrent_tier\x18\x03 \x01(\tR\vcurrentTier\",\n" +
+	"\x1aGetInvestmentCircleRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"Z\n" +
+	"\x1bGetInvestmentCircleResponse\x12;\n" +
+	"\x06circle\x18\x01 \x01(\v2#.sttattus.vault.v1.InvestmentCircleR\x06circle\"O\n" +
+	"\x1cExpressCircleInterestRequest\x12\x1b\n" +
+	"\tcircle_id\x18\x01 \x01(\tR\bcircleId\x12\x12\n" +
+	"\x04note\x18\x02 \x01(\tR\x04note\"\\\n" +
+	"\x1dExpressCircleInterestResponse\x12\x1a\n" +
+	"\baccepted\x18\x01 \x01(\bR\baccepted\x12\x1f\n" +
+	"\vhandoff_url\x18\x02 \x01(\tR\n" +
+	"handoffUrl\"\x87\x01\n" +
+	"\x0eAdvisorMessage\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
+	"\x06sender\x18\x02 \x01(\tR\x06sender\x12\x12\n" +
+	"\x04body\x18\x03 \x01(\tR\x04body\x129\n" +
+	"\n" +
+	"created_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\"\x85\x02\n" +
+	"\rAdvisorThread\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
+	"\asubject\x18\x02 \x01(\tR\asubject\x12\x16\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\x129\n" +
+	"\n" +
+	"created_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x128\n" +
+	"\n" +
+	"sla_due_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\bslaDueAt\x12=\n" +
+	"\bmessages\x18\x06 \x03(\v2!.sttattus.vault.v1.AdvisorMessageR\bmessages\"^\n" +
+	"\x19StartAdvisorThreadRequest\x12\x18\n" +
+	"\asubject\x18\x01 \x01(\tR\asubject\x12'\n" +
+	"\x0fopening_message\x18\x02 \x01(\tR\x0eopeningMessage\"V\n" +
+	"\x1aStartAdvisorThreadResponse\x128\n" +
+	"\x06thread\x18\x01 \x01(\v2 .sttattus.vault.v1.AdvisorThreadR\x06thread\"\x1b\n" +
+	"\x19ListAdvisorThreadsRequest\"X\n" +
+	"\x1aListAdvisorThreadsResponse\x12:\n" +
+	"\athreads\x18\x01 \x03(\v2 .sttattus.vault.v1.AdvisorThreadR\athreads\")\n" +
+	"\x17GetAdvisorThreadRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"T\n" +
+	"\x18GetAdvisorThreadResponse\x128\n" +
+	"\x06thread\x18\x01 \x01(\v2 .sttattus.vault.v1.AdvisorThreadR\x06thread\"L\n" +
+	"\x19PostAdvisorMessageRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\x12\x12\n" +
+	"\x04body\x18\x02 \x01(\tR\x04body\"Y\n" +
+	"\x1aPostAdvisorMessageResponse\x12;\n" +
+	"\amessage\x18\x01 \x01(\v2!.sttattus.vault.v1.AdvisorMessageR\amessage\"\xfc\x02\n" +
+	"\rWealthArticle\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x10\n" +
+	"\x03dek\x18\x04 \x01(\tR\x03dek\x12\x1f\n" +
+	"\vauthor_name\x18\x05 \x01(\tR\n" +
+	"authorName\x12!\n" +
+	"\fauthor_title\x18\x06 \x01(\tR\vauthorTitle\x12*\n" +
+	"\x11author_avatar_url\x18\a \x01(\tR\x0fauthorAvatarUrl\x12$\n" +
+	"\x0ehero_image_url\x18\b \x01(\tR\fheroImageUrl\x12#\n" +
+	"\rbody_markdown\x18\t \x01(\tR\fbodyMarkdown\x12%\n" +
+	"\x0esovereign_only\x18\n" +
+	" \x01(\bR\rsovereignOnly\x12=\n" +
+	"\fpublished_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\vpublishedAt\"\x1c\n" +
+	"\x1aListWealthAnthologyRequest\"[\n" +
+	"\x1bListWealthAnthologyResponse\x12<\n" +
+	"\barticles\x18\x01 \x03(\v2 .sttattus.vault.v1.WealthArticleR\barticles\")\n" +
+	"\x17GetWealthArticleRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"V\n" +
+	"\x18GetWealthArticleResponse\x12:\n" +
+	"\aarticle\x18\x01 \x01(\v2 .sttattus.vault.v1.WealthArticleR\aarticle\"\xfa\x01\n" +
+	"\vPartnerBank\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n" +
+	"\x06region\x18\x03 \x01(\tR\x06region\x12\x1c\n" +
+	"\tspecialty\x18\x04 \x01(\tR\tspecialty\x120\n" +
+	"\x14min_relationship_usd\x18\x05 \x01(\x01R\x12minRelationshipUsd\x12%\n" +
+	"\x0esovereign_only\x18\x06 \x01(\bR\rsovereignOnly\x12\x1d\n" +
+	"\n" +
+	"intro_note\x18\a \x01(\tR\tintroNote\x12\x19\n" +
+	"\blogo_url\x18\b \x01(\tR\alogoUrl\"1\n" +
+	"\x17ListPartnerBanksRequest\x12\x16\n" +
+	"\x06region\x18\x01 \x01(\tR\x06region\"P\n" +
+	"\x18ListPartnerBanksResponse\x124\n" +
+	"\x05banks\x18\x01 \x03(\v2\x1e.sttattus.vault.v1.PartnerBankR\x05banks\"\xc4\x01\n" +
+	"\n" +
+	"VaultShare\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\x129\n" +
+	"\n" +
+	"created_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"expires_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x12\x18\n" +
+	"\arevoked\x18\x04 \x01(\bR\arevoked\x12\x10\n" +
+	"\x03url\x18\x05 \x01(\tR\x03url\"4\n" +
+	"\x17CreateVaultShareRequest\x12\x19\n" +
+	"\bttl_days\x18\x01 \x01(\x05R\attlDays\"O\n" +
+	"\x18CreateVaultShareResponse\x123\n" +
+	"\x05share\x18\x01 \x01(\v2\x1d.sttattus.vault.v1.VaultShareR\x05share\"\x1a\n" +
+	"\x18ListMyVaultSharesRequest\"R\n" +
+	"\x19ListMyVaultSharesResponse\x125\n" +
+	"\x06shares\x18\x01 \x03(\v2\x1d.sttattus.vault.v1.VaultShareR\x06shares\"/\n" +
+	"\x17RevokeVaultShareRequest\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\"\x1a\n" +
+	"\x18RevokeVaultShareResponse\"s\n" +
 	"\x11SyncWealthRequest\x120\n" +
 	"\x06assets\x18\x01 \x03(\v2\x18.sttattus.vault.v1.AssetR\x06assets\x12,\n" +
 	"\x12net_worth_override\x18\x02 \x01(\x01R\x10netWorthOverride\"q\n" +
@@ -4930,7 +7318,7 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xc1\x1f\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xf1-\n" +
 	"\fVaultService\x12\\\n" +
 	"\vSubmitAsset\x12%.sttattus.vault.v1.SubmitAssetRequest\x1a&.sttattus.vault.v1.SubmitAssetResponse\x12_\n" +
 	"\fGetPortfolio\x12&.sttattus.vault.v1.GetPortfolioRequest\x1a'.sttattus.vault.v1.GetPortfolioResponse\x12q\n" +
@@ -4968,7 +7356,23 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x11UpsertWalletChain\x12+.sttattus.vault.v1.UpsertWalletChainRequest\x1a,.sttattus.vault.v1.UpsertWalletChainResponse\x12n\n" +
 	"\x11DeleteWalletChain\x12+.sttattus.vault.v1.DeleteWalletChainRequest\x1a,.sttattus.vault.v1.DeleteWalletChainResponse\x12e\n" +
 	"\x0eGetTaxSnapshot\x12(.sttattus.vault.v1.GetTaxSnapshotRequest\x1a).sttattus.vault.v1.GetTaxSnapshotResponse\x12e\n" +
-	"\x0eExportUsCgtCsv\x12(.sttattus.vault.v1.ExportUsCgtCsvRequest\x1a).sttattus.vault.v1.ExportUsCgtCsvResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
+	"\x0eExportUsCgtCsv\x12(.sttattus.vault.v1.ExportUsCgtCsvRequest\x1a).sttattus.vault.v1.ExportUsCgtCsvResponse\x12z\n" +
+	"\x15ListInvestmentCircles\x12/.sttattus.vault.v1.ListInvestmentCirclesRequest\x1a0.sttattus.vault.v1.ListInvestmentCirclesResponse\x12t\n" +
+	"\x13GetInvestmentCircle\x12-.sttattus.vault.v1.GetInvestmentCircleRequest\x1a..sttattus.vault.v1.GetInvestmentCircleResponse\x12z\n" +
+	"\x15ExpressCircleInterest\x12/.sttattus.vault.v1.ExpressCircleInterestRequest\x1a0.sttattus.vault.v1.ExpressCircleInterestResponse\x12q\n" +
+	"\x12StartAdvisorThread\x12,.sttattus.vault.v1.StartAdvisorThreadRequest\x1a-.sttattus.vault.v1.StartAdvisorThreadResponse\x12q\n" +
+	"\x12ListAdvisorThreads\x12,.sttattus.vault.v1.ListAdvisorThreadsRequest\x1a-.sttattus.vault.v1.ListAdvisorThreadsResponse\x12k\n" +
+	"\x10GetAdvisorThread\x12*.sttattus.vault.v1.GetAdvisorThreadRequest\x1a+.sttattus.vault.v1.GetAdvisorThreadResponse\x12q\n" +
+	"\x12PostAdvisorMessage\x12,.sttattus.vault.v1.PostAdvisorMessageRequest\x1a-.sttattus.vault.v1.PostAdvisorMessageResponse\x12t\n" +
+	"\x13ListWealthAnthology\x12-.sttattus.vault.v1.ListWealthAnthologyRequest\x1a..sttattus.vault.v1.ListWealthAnthologyResponse\x12k\n" +
+	"\x10GetWealthArticle\x12*.sttattus.vault.v1.GetWealthArticleRequest\x1a+.sttattus.vault.v1.GetWealthArticleResponse\x12k\n" +
+	"\x10ListPartnerBanks\x12*.sttattus.vault.v1.ListPartnerBanksRequest\x1a+.sttattus.vault.v1.ListPartnerBanksResponse\x12k\n" +
+	"\x10CreateVaultShare\x12*.sttattus.vault.v1.CreateVaultShareRequest\x1a+.sttattus.vault.v1.CreateVaultShareResponse\x12n\n" +
+	"\x11ListMyVaultShares\x12+.sttattus.vault.v1.ListMyVaultSharesRequest\x1a,.sttattus.vault.v1.ListMyVaultSharesResponse\x12k\n" +
+	"\x10RevokeVaultShare\x12*.sttattus.vault.v1.RevokeVaultShareRequest\x1a+.sttattus.vault.v1.RevokeVaultShareResponse\x12z\n" +
+	"\x15GenerateWealthAlmanac\x12/.sttattus.vault.v1.GenerateWealthAlmanacRequest\x1a0.sttattus.vault.v1.GenerateWealthAlmanacResponse\x12e\n" +
+	"\x0eGetYearInVault\x12(.sttattus.vault.v1.GetYearInVaultRequest\x1a).sttattus.vault.v1.GetYearInVaultResponse\x12}\n" +
+	"\x16GetLiquidityStressTest\x120.sttattus.vault.v1.GetLiquidityStressTestRequest\x1a1.sttattus.vault.v1.GetLiquidityStressTestResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
 
 var (
 	file_sttattus_vault_v1_vault_proto_rawDescOnce sync.Once
@@ -4983,7 +7387,7 @@ func file_sttattus_vault_v1_vault_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_vault_v1_vault_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_vault_v1_vault_proto_msgTypes = make([]protoimpl.MessageInfo, 87)
+var file_sttattus_vault_v1_vault_proto_msgTypes = make([]protoimpl.MessageInfo, 128)
 var file_sttattus_vault_v1_vault_proto_goTypes = []any{
 	(AssetCategory)(0),                          // 0: sttattus.vault.v1.AssetCategory
 	(VerificationStatus)(0),                     // 1: sttattus.vault.v1.VerificationStatus
@@ -4995,200 +7399,294 @@ var file_sttattus_vault_v1_vault_proto_goTypes = []any{
 	(*GetPortfolioResponse)(nil),                // 7: sttattus.vault.v1.GetPortfolioResponse
 	(*AdminVerifyAssetRequest)(nil),             // 8: sttattus.vault.v1.AdminVerifyAssetRequest
 	(*AdminVerifyAssetResponse)(nil),            // 9: sttattus.vault.v1.AdminVerifyAssetResponse
-	(*SyncWealthRequest)(nil),                   // 10: sttattus.vault.v1.SyncWealthRequest
-	(*SyncWealthResponse)(nil),                  // 11: sttattus.vault.v1.SyncWealthResponse
-	(*GetWalletChallengeRequest)(nil),           // 12: sttattus.vault.v1.GetWalletChallengeRequest
-	(*GetWalletChallengeResponse)(nil),          // 13: sttattus.vault.v1.GetWalletChallengeResponse
-	(*LinkWalletRequest)(nil),                   // 14: sttattus.vault.v1.LinkWalletRequest
-	(*LinkWalletResponse)(nil),                  // 15: sttattus.vault.v1.LinkWalletResponse
-	(*CreatePlaidLinkTokenRequest)(nil),         // 16: sttattus.vault.v1.CreatePlaidLinkTokenRequest
-	(*CreatePlaidLinkTokenResponse)(nil),        // 17: sttattus.vault.v1.CreatePlaidLinkTokenResponse
-	(*ExchangePlaidPublicTokenRequest)(nil),     // 18: sttattus.vault.v1.ExchangePlaidPublicTokenRequest
-	(*ExchangePlaidPublicTokenResponse)(nil),    // 19: sttattus.vault.v1.ExchangePlaidPublicTokenResponse
-	(*NetWorthPoint)(nil),                       // 20: sttattus.vault.v1.NetWorthPoint
-	(*ListNetWorthHistoryRequest)(nil),          // 21: sttattus.vault.v1.ListNetWorthHistoryRequest
-	(*ListNetWorthHistoryResponse)(nil),         // 22: sttattus.vault.v1.ListNetWorthHistoryResponse
-	(*PlaidTransaction)(nil),                    // 23: sttattus.vault.v1.PlaidTransaction
-	(*ListPlaidTransactionsRequest)(nil),        // 24: sttattus.vault.v1.ListPlaidTransactionsRequest
-	(*ListPlaidTransactionsResponse)(nil),       // 25: sttattus.vault.v1.ListPlaidTransactionsResponse
-	(*PlaidHolding)(nil),                        // 26: sttattus.vault.v1.PlaidHolding
-	(*ListPlaidHoldingsRequest)(nil),            // 27: sttattus.vault.v1.ListPlaidHoldingsRequest
-	(*ListPlaidHoldingsResponse)(nil),           // 28: sttattus.vault.v1.ListPlaidHoldingsResponse
-	(*AllocationSlice)(nil),                     // 29: sttattus.vault.v1.AllocationSlice
-	(*GetCurrentAllocationRequest)(nil),         // 30: sttattus.vault.v1.GetCurrentAllocationRequest
-	(*GetCurrentAllocationResponse)(nil),        // 31: sttattus.vault.v1.GetCurrentAllocationResponse
-	(*AllocationHistoryPoint)(nil),              // 32: sttattus.vault.v1.AllocationHistoryPoint
-	(*ListAllocationHistoryRequest)(nil),        // 33: sttattus.vault.v1.ListAllocationHistoryRequest
-	(*ListAllocationHistoryResponse)(nil),       // 34: sttattus.vault.v1.ListAllocationHistoryResponse
-	(*RealEstateProperty)(nil),                  // 35: sttattus.vault.v1.RealEstateProperty
-	(*ListRealEstatePropertiesRequest)(nil),     // 36: sttattus.vault.v1.ListRealEstatePropertiesRequest
-	(*ListRealEstatePropertiesResponse)(nil),    // 37: sttattus.vault.v1.ListRealEstatePropertiesResponse
-	(*CreateRealEstatePropertyRequest)(nil),     // 38: sttattus.vault.v1.CreateRealEstatePropertyRequest
-	(*CreateRealEstatePropertyResponse)(nil),    // 39: sttattus.vault.v1.CreateRealEstatePropertyResponse
-	(*RecordManualValuationRequest)(nil),        // 40: sttattus.vault.v1.RecordManualValuationRequest
-	(*RecordManualValuationResponse)(nil),       // 41: sttattus.vault.v1.RecordManualValuationResponse
-	(*RefreshAvmValuationRequest)(nil),          // 42: sttattus.vault.v1.RefreshAvmValuationRequest
-	(*RefreshAvmValuationResponse)(nil),         // 43: sttattus.vault.v1.RefreshAvmValuationResponse
-	(*DeleteRealEstatePropertyRequest)(nil),     // 44: sttattus.vault.v1.DeleteRealEstatePropertyRequest
-	(*DeleteRealEstatePropertyResponse)(nil),    // 45: sttattus.vault.v1.DeleteRealEstatePropertyResponse
-	(*Entity)(nil),                              // 46: sttattus.vault.v1.Entity
-	(*ListEntitiesRequest)(nil),                 // 47: sttattus.vault.v1.ListEntitiesRequest
-	(*ListEntitiesResponse)(nil),                // 48: sttattus.vault.v1.ListEntitiesResponse
-	(*CreateEntityRequest)(nil),                 // 49: sttattus.vault.v1.CreateEntityRequest
-	(*CreateEntityResponse)(nil),                // 50: sttattus.vault.v1.CreateEntityResponse
-	(*RenameEntityRequest)(nil),                 // 51: sttattus.vault.v1.RenameEntityRequest
-	(*RenameEntityResponse)(nil),                // 52: sttattus.vault.v1.RenameEntityResponse
-	(*DeleteEntityRequest)(nil),                 // 53: sttattus.vault.v1.DeleteEntityRequest
-	(*DeleteEntityResponse)(nil),                // 54: sttattus.vault.v1.DeleteEntityResponse
-	(*AssignAssetToEntityRequest)(nil),          // 55: sttattus.vault.v1.AssignAssetToEntityRequest
-	(*AssignAssetToEntityResponse)(nil),         // 56: sttattus.vault.v1.AssignAssetToEntityResponse
-	(*FxRate)(nil),                              // 57: sttattus.vault.v1.FxRate
-	(*ListLatestFxRatesRequest)(nil),            // 58: sttattus.vault.v1.ListLatestFxRatesRequest
-	(*ListLatestFxRatesResponse)(nil),           // 59: sttattus.vault.v1.ListLatestFxRatesResponse
-	(*CapTableHolding)(nil),                     // 60: sttattus.vault.v1.CapTableHolding
-	(*ListCapTableHoldingsRequest)(nil),         // 61: sttattus.vault.v1.ListCapTableHoldingsRequest
-	(*ListCapTableHoldingsResponse)(nil),        // 62: sttattus.vault.v1.ListCapTableHoldingsResponse
-	(*CapTableHoldingInput)(nil),                // 63: sttattus.vault.v1.CapTableHoldingInput
-	(*CreateCapTableHoldingRequest)(nil),        // 64: sttattus.vault.v1.CreateCapTableHoldingRequest
-	(*CreateCapTableHoldingResponse)(nil),       // 65: sttattus.vault.v1.CreateCapTableHoldingResponse
-	(*UpdateCapTableHoldingRequest)(nil),        // 66: sttattus.vault.v1.UpdateCapTableHoldingRequest
-	(*UpdateCapTableHoldingResponse)(nil),       // 67: sttattus.vault.v1.UpdateCapTableHoldingResponse
-	(*DeleteCapTableHoldingRequest)(nil),        // 68: sttattus.vault.v1.DeleteCapTableHoldingRequest
-	(*DeleteCapTableHoldingResponse)(nil),       // 69: sttattus.vault.v1.DeleteCapTableHoldingResponse
-	(*CapTableConnection)(nil),                  // 70: sttattus.vault.v1.CapTableConnection
-	(*ListCapTableConnectionsRequest)(nil),      // 71: sttattus.vault.v1.ListCapTableConnectionsRequest
-	(*ListCapTableConnectionsResponse)(nil),     // 72: sttattus.vault.v1.ListCapTableConnectionsResponse
-	(*SetCapTableConnectionStatusRequest)(nil),  // 73: sttattus.vault.v1.SetCapTableConnectionStatusRequest
-	(*SetCapTableConnectionStatusResponse)(nil), // 74: sttattus.vault.v1.SetCapTableConnectionStatusResponse
-	(*WalletChain)(nil),                         // 75: sttattus.vault.v1.WalletChain
-	(*ListWalletChainsRequest)(nil),             // 76: sttattus.vault.v1.ListWalletChainsRequest
-	(*ListWalletChainsResponse)(nil),            // 77: sttattus.vault.v1.ListWalletChainsResponse
-	(*UpsertWalletChainRequest)(nil),            // 78: sttattus.vault.v1.UpsertWalletChainRequest
-	(*UpsertWalletChainResponse)(nil),           // 79: sttattus.vault.v1.UpsertWalletChainResponse
-	(*DeleteWalletChainRequest)(nil),            // 80: sttattus.vault.v1.DeleteWalletChainRequest
-	(*DeleteWalletChainResponse)(nil),           // 81: sttattus.vault.v1.DeleteWalletChainResponse
-	(*TaxLot)(nil),                              // 82: sttattus.vault.v1.TaxLot
-	(*GetTaxSnapshotRequest)(nil),               // 83: sttattus.vault.v1.GetTaxSnapshotRequest
-	(*GetTaxSnapshotResponse)(nil),              // 84: sttattus.vault.v1.GetTaxSnapshotResponse
-	(*ExportUsCgtCsvRequest)(nil),               // 85: sttattus.vault.v1.ExportUsCgtCsvRequest
-	(*ExportUsCgtCsvResponse)(nil),              // 86: sttattus.vault.v1.ExportUsCgtCsvResponse
-	nil,                                         // 87: sttattus.vault.v1.Asset.MetadataEntry
-	nil,                                         // 88: sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
-	(*timestamppb.Timestamp)(nil),               // 89: google.protobuf.Timestamp
+	(*GenerateWealthAlmanacRequest)(nil),        // 10: sttattus.vault.v1.GenerateWealthAlmanacRequest
+	(*GenerateWealthAlmanacResponse)(nil),       // 11: sttattus.vault.v1.GenerateWealthAlmanacResponse
+	(*YearMover)(nil),                           // 12: sttattus.vault.v1.YearMover
+	(*GetYearInVaultRequest)(nil),               // 13: sttattus.vault.v1.GetYearInVaultRequest
+	(*GetYearInVaultResponse)(nil),              // 14: sttattus.vault.v1.GetYearInVaultResponse
+	(*LiquiditySource)(nil),                     // 15: sttattus.vault.v1.LiquiditySource
+	(*GetLiquidityStressTestRequest)(nil),       // 16: sttattus.vault.v1.GetLiquidityStressTestRequest
+	(*GetLiquidityStressTestResponse)(nil),      // 17: sttattus.vault.v1.GetLiquidityStressTestResponse
+	(*InvestmentCircle)(nil),                    // 18: sttattus.vault.v1.InvestmentCircle
+	(*ListInvestmentCirclesRequest)(nil),        // 19: sttattus.vault.v1.ListInvestmentCirclesRequest
+	(*ListInvestmentCirclesResponse)(nil),       // 20: sttattus.vault.v1.ListInvestmentCirclesResponse
+	(*GetInvestmentCircleRequest)(nil),          // 21: sttattus.vault.v1.GetInvestmentCircleRequest
+	(*GetInvestmentCircleResponse)(nil),         // 22: sttattus.vault.v1.GetInvestmentCircleResponse
+	(*ExpressCircleInterestRequest)(nil),        // 23: sttattus.vault.v1.ExpressCircleInterestRequest
+	(*ExpressCircleInterestResponse)(nil),       // 24: sttattus.vault.v1.ExpressCircleInterestResponse
+	(*AdvisorMessage)(nil),                      // 25: sttattus.vault.v1.AdvisorMessage
+	(*AdvisorThread)(nil),                       // 26: sttattus.vault.v1.AdvisorThread
+	(*StartAdvisorThreadRequest)(nil),           // 27: sttattus.vault.v1.StartAdvisorThreadRequest
+	(*StartAdvisorThreadResponse)(nil),          // 28: sttattus.vault.v1.StartAdvisorThreadResponse
+	(*ListAdvisorThreadsRequest)(nil),           // 29: sttattus.vault.v1.ListAdvisorThreadsRequest
+	(*ListAdvisorThreadsResponse)(nil),          // 30: sttattus.vault.v1.ListAdvisorThreadsResponse
+	(*GetAdvisorThreadRequest)(nil),             // 31: sttattus.vault.v1.GetAdvisorThreadRequest
+	(*GetAdvisorThreadResponse)(nil),            // 32: sttattus.vault.v1.GetAdvisorThreadResponse
+	(*PostAdvisorMessageRequest)(nil),           // 33: sttattus.vault.v1.PostAdvisorMessageRequest
+	(*PostAdvisorMessageResponse)(nil),          // 34: sttattus.vault.v1.PostAdvisorMessageResponse
+	(*WealthArticle)(nil),                       // 35: sttattus.vault.v1.WealthArticle
+	(*ListWealthAnthologyRequest)(nil),          // 36: sttattus.vault.v1.ListWealthAnthologyRequest
+	(*ListWealthAnthologyResponse)(nil),         // 37: sttattus.vault.v1.ListWealthAnthologyResponse
+	(*GetWealthArticleRequest)(nil),             // 38: sttattus.vault.v1.GetWealthArticleRequest
+	(*GetWealthArticleResponse)(nil),            // 39: sttattus.vault.v1.GetWealthArticleResponse
+	(*PartnerBank)(nil),                         // 40: sttattus.vault.v1.PartnerBank
+	(*ListPartnerBanksRequest)(nil),             // 41: sttattus.vault.v1.ListPartnerBanksRequest
+	(*ListPartnerBanksResponse)(nil),            // 42: sttattus.vault.v1.ListPartnerBanksResponse
+	(*VaultShare)(nil),                          // 43: sttattus.vault.v1.VaultShare
+	(*CreateVaultShareRequest)(nil),             // 44: sttattus.vault.v1.CreateVaultShareRequest
+	(*CreateVaultShareResponse)(nil),            // 45: sttattus.vault.v1.CreateVaultShareResponse
+	(*ListMyVaultSharesRequest)(nil),            // 46: sttattus.vault.v1.ListMyVaultSharesRequest
+	(*ListMyVaultSharesResponse)(nil),           // 47: sttattus.vault.v1.ListMyVaultSharesResponse
+	(*RevokeVaultShareRequest)(nil),             // 48: sttattus.vault.v1.RevokeVaultShareRequest
+	(*RevokeVaultShareResponse)(nil),            // 49: sttattus.vault.v1.RevokeVaultShareResponse
+	(*SyncWealthRequest)(nil),                   // 50: sttattus.vault.v1.SyncWealthRequest
+	(*SyncWealthResponse)(nil),                  // 51: sttattus.vault.v1.SyncWealthResponse
+	(*GetWalletChallengeRequest)(nil),           // 52: sttattus.vault.v1.GetWalletChallengeRequest
+	(*GetWalletChallengeResponse)(nil),          // 53: sttattus.vault.v1.GetWalletChallengeResponse
+	(*LinkWalletRequest)(nil),                   // 54: sttattus.vault.v1.LinkWalletRequest
+	(*LinkWalletResponse)(nil),                  // 55: sttattus.vault.v1.LinkWalletResponse
+	(*CreatePlaidLinkTokenRequest)(nil),         // 56: sttattus.vault.v1.CreatePlaidLinkTokenRequest
+	(*CreatePlaidLinkTokenResponse)(nil),        // 57: sttattus.vault.v1.CreatePlaidLinkTokenResponse
+	(*ExchangePlaidPublicTokenRequest)(nil),     // 58: sttattus.vault.v1.ExchangePlaidPublicTokenRequest
+	(*ExchangePlaidPublicTokenResponse)(nil),    // 59: sttattus.vault.v1.ExchangePlaidPublicTokenResponse
+	(*NetWorthPoint)(nil),                       // 60: sttattus.vault.v1.NetWorthPoint
+	(*ListNetWorthHistoryRequest)(nil),          // 61: sttattus.vault.v1.ListNetWorthHistoryRequest
+	(*ListNetWorthHistoryResponse)(nil),         // 62: sttattus.vault.v1.ListNetWorthHistoryResponse
+	(*PlaidTransaction)(nil),                    // 63: sttattus.vault.v1.PlaidTransaction
+	(*ListPlaidTransactionsRequest)(nil),        // 64: sttattus.vault.v1.ListPlaidTransactionsRequest
+	(*ListPlaidTransactionsResponse)(nil),       // 65: sttattus.vault.v1.ListPlaidTransactionsResponse
+	(*PlaidHolding)(nil),                        // 66: sttattus.vault.v1.PlaidHolding
+	(*ListPlaidHoldingsRequest)(nil),            // 67: sttattus.vault.v1.ListPlaidHoldingsRequest
+	(*ListPlaidHoldingsResponse)(nil),           // 68: sttattus.vault.v1.ListPlaidHoldingsResponse
+	(*AllocationSlice)(nil),                     // 69: sttattus.vault.v1.AllocationSlice
+	(*GetCurrentAllocationRequest)(nil),         // 70: sttattus.vault.v1.GetCurrentAllocationRequest
+	(*GetCurrentAllocationResponse)(nil),        // 71: sttattus.vault.v1.GetCurrentAllocationResponse
+	(*AllocationHistoryPoint)(nil),              // 72: sttattus.vault.v1.AllocationHistoryPoint
+	(*ListAllocationHistoryRequest)(nil),        // 73: sttattus.vault.v1.ListAllocationHistoryRequest
+	(*ListAllocationHistoryResponse)(nil),       // 74: sttattus.vault.v1.ListAllocationHistoryResponse
+	(*RealEstateProperty)(nil),                  // 75: sttattus.vault.v1.RealEstateProperty
+	(*ListRealEstatePropertiesRequest)(nil),     // 76: sttattus.vault.v1.ListRealEstatePropertiesRequest
+	(*ListRealEstatePropertiesResponse)(nil),    // 77: sttattus.vault.v1.ListRealEstatePropertiesResponse
+	(*CreateRealEstatePropertyRequest)(nil),     // 78: sttattus.vault.v1.CreateRealEstatePropertyRequest
+	(*CreateRealEstatePropertyResponse)(nil),    // 79: sttattus.vault.v1.CreateRealEstatePropertyResponse
+	(*RecordManualValuationRequest)(nil),        // 80: sttattus.vault.v1.RecordManualValuationRequest
+	(*RecordManualValuationResponse)(nil),       // 81: sttattus.vault.v1.RecordManualValuationResponse
+	(*RefreshAvmValuationRequest)(nil),          // 82: sttattus.vault.v1.RefreshAvmValuationRequest
+	(*RefreshAvmValuationResponse)(nil),         // 83: sttattus.vault.v1.RefreshAvmValuationResponse
+	(*DeleteRealEstatePropertyRequest)(nil),     // 84: sttattus.vault.v1.DeleteRealEstatePropertyRequest
+	(*DeleteRealEstatePropertyResponse)(nil),    // 85: sttattus.vault.v1.DeleteRealEstatePropertyResponse
+	(*Entity)(nil),                              // 86: sttattus.vault.v1.Entity
+	(*ListEntitiesRequest)(nil),                 // 87: sttattus.vault.v1.ListEntitiesRequest
+	(*ListEntitiesResponse)(nil),                // 88: sttattus.vault.v1.ListEntitiesResponse
+	(*CreateEntityRequest)(nil),                 // 89: sttattus.vault.v1.CreateEntityRequest
+	(*CreateEntityResponse)(nil),                // 90: sttattus.vault.v1.CreateEntityResponse
+	(*RenameEntityRequest)(nil),                 // 91: sttattus.vault.v1.RenameEntityRequest
+	(*RenameEntityResponse)(nil),                // 92: sttattus.vault.v1.RenameEntityResponse
+	(*DeleteEntityRequest)(nil),                 // 93: sttattus.vault.v1.DeleteEntityRequest
+	(*DeleteEntityResponse)(nil),                // 94: sttattus.vault.v1.DeleteEntityResponse
+	(*AssignAssetToEntityRequest)(nil),          // 95: sttattus.vault.v1.AssignAssetToEntityRequest
+	(*AssignAssetToEntityResponse)(nil),         // 96: sttattus.vault.v1.AssignAssetToEntityResponse
+	(*FxRate)(nil),                              // 97: sttattus.vault.v1.FxRate
+	(*ListLatestFxRatesRequest)(nil),            // 98: sttattus.vault.v1.ListLatestFxRatesRequest
+	(*ListLatestFxRatesResponse)(nil),           // 99: sttattus.vault.v1.ListLatestFxRatesResponse
+	(*CapTableHolding)(nil),                     // 100: sttattus.vault.v1.CapTableHolding
+	(*ListCapTableHoldingsRequest)(nil),         // 101: sttattus.vault.v1.ListCapTableHoldingsRequest
+	(*ListCapTableHoldingsResponse)(nil),        // 102: sttattus.vault.v1.ListCapTableHoldingsResponse
+	(*CapTableHoldingInput)(nil),                // 103: sttattus.vault.v1.CapTableHoldingInput
+	(*CreateCapTableHoldingRequest)(nil),        // 104: sttattus.vault.v1.CreateCapTableHoldingRequest
+	(*CreateCapTableHoldingResponse)(nil),       // 105: sttattus.vault.v1.CreateCapTableHoldingResponse
+	(*UpdateCapTableHoldingRequest)(nil),        // 106: sttattus.vault.v1.UpdateCapTableHoldingRequest
+	(*UpdateCapTableHoldingResponse)(nil),       // 107: sttattus.vault.v1.UpdateCapTableHoldingResponse
+	(*DeleteCapTableHoldingRequest)(nil),        // 108: sttattus.vault.v1.DeleteCapTableHoldingRequest
+	(*DeleteCapTableHoldingResponse)(nil),       // 109: sttattus.vault.v1.DeleteCapTableHoldingResponse
+	(*CapTableConnection)(nil),                  // 110: sttattus.vault.v1.CapTableConnection
+	(*ListCapTableConnectionsRequest)(nil),      // 111: sttattus.vault.v1.ListCapTableConnectionsRequest
+	(*ListCapTableConnectionsResponse)(nil),     // 112: sttattus.vault.v1.ListCapTableConnectionsResponse
+	(*SetCapTableConnectionStatusRequest)(nil),  // 113: sttattus.vault.v1.SetCapTableConnectionStatusRequest
+	(*SetCapTableConnectionStatusResponse)(nil), // 114: sttattus.vault.v1.SetCapTableConnectionStatusResponse
+	(*WalletChain)(nil),                         // 115: sttattus.vault.v1.WalletChain
+	(*ListWalletChainsRequest)(nil),             // 116: sttattus.vault.v1.ListWalletChainsRequest
+	(*ListWalletChainsResponse)(nil),            // 117: sttattus.vault.v1.ListWalletChainsResponse
+	(*UpsertWalletChainRequest)(nil),            // 118: sttattus.vault.v1.UpsertWalletChainRequest
+	(*UpsertWalletChainResponse)(nil),           // 119: sttattus.vault.v1.UpsertWalletChainResponse
+	(*DeleteWalletChainRequest)(nil),            // 120: sttattus.vault.v1.DeleteWalletChainRequest
+	(*DeleteWalletChainResponse)(nil),           // 121: sttattus.vault.v1.DeleteWalletChainResponse
+	(*TaxLot)(nil),                              // 122: sttattus.vault.v1.TaxLot
+	(*GetTaxSnapshotRequest)(nil),               // 123: sttattus.vault.v1.GetTaxSnapshotRequest
+	(*GetTaxSnapshotResponse)(nil),              // 124: sttattus.vault.v1.GetTaxSnapshotResponse
+	(*ExportUsCgtCsvRequest)(nil),               // 125: sttattus.vault.v1.ExportUsCgtCsvRequest
+	(*ExportUsCgtCsvResponse)(nil),              // 126: sttattus.vault.v1.ExportUsCgtCsvResponse
+	nil,                                         // 127: sttattus.vault.v1.Asset.MetadataEntry
+	nil,                                         // 128: sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
+	nil,                                         // 129: sttattus.vault.v1.GetYearInVaultResponse.AllocationShiftEntry
+	(*timestamppb.Timestamp)(nil),               // 130: google.protobuf.Timestamp
 }
 var file_sttattus_vault_v1_vault_proto_depIdxs = []int32{
-	0,  // 0: sttattus.vault.v1.Asset.category:type_name -> sttattus.vault.v1.AssetCategory
-	1,  // 1: sttattus.vault.v1.Asset.status:type_name -> sttattus.vault.v1.VerificationStatus
-	89, // 2: sttattus.vault.v1.Asset.last_updated:type_name -> google.protobuf.Timestamp
-	87, // 3: sttattus.vault.v1.Asset.metadata:type_name -> sttattus.vault.v1.Asset.MetadataEntry
-	2,  // 4: sttattus.vault.v1.Portfolio.assets:type_name -> sttattus.vault.v1.Asset
-	89, // 5: sttattus.vault.v1.Portfolio.calculated_at:type_name -> google.protobuf.Timestamp
-	0,  // 6: sttattus.vault.v1.SubmitAssetRequest.category:type_name -> sttattus.vault.v1.AssetCategory
-	88, // 7: sttattus.vault.v1.SubmitAssetRequest.metadata:type_name -> sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
-	2,  // 8: sttattus.vault.v1.SubmitAssetResponse.asset:type_name -> sttattus.vault.v1.Asset
-	3,  // 9: sttattus.vault.v1.GetPortfolioResponse.portfolio:type_name -> sttattus.vault.v1.Portfolio
-	1,  // 10: sttattus.vault.v1.AdminVerifyAssetRequest.status:type_name -> sttattus.vault.v1.VerificationStatus
-	2,  // 11: sttattus.vault.v1.AdminVerifyAssetResponse.asset:type_name -> sttattus.vault.v1.Asset
-	2,  // 12: sttattus.vault.v1.SyncWealthRequest.assets:type_name -> sttattus.vault.v1.Asset
-	2,  // 13: sttattus.vault.v1.LinkWalletResponse.asset:type_name -> sttattus.vault.v1.Asset
-	20, // 14: sttattus.vault.v1.ListNetWorthHistoryResponse.points:type_name -> sttattus.vault.v1.NetWorthPoint
-	23, // 15: sttattus.vault.v1.ListPlaidTransactionsResponse.transactions:type_name -> sttattus.vault.v1.PlaidTransaction
-	26, // 16: sttattus.vault.v1.ListPlaidHoldingsResponse.holdings:type_name -> sttattus.vault.v1.PlaidHolding
-	29, // 17: sttattus.vault.v1.GetCurrentAllocationResponse.slices:type_name -> sttattus.vault.v1.AllocationSlice
-	32, // 18: sttattus.vault.v1.ListAllocationHistoryResponse.points:type_name -> sttattus.vault.v1.AllocationHistoryPoint
-	35, // 19: sttattus.vault.v1.ListRealEstatePropertiesResponse.properties:type_name -> sttattus.vault.v1.RealEstateProperty
-	35, // 20: sttattus.vault.v1.CreateRealEstatePropertyResponse.property:type_name -> sttattus.vault.v1.RealEstateProperty
-	35, // 21: sttattus.vault.v1.RecordManualValuationResponse.property:type_name -> sttattus.vault.v1.RealEstateProperty
-	35, // 22: sttattus.vault.v1.RefreshAvmValuationResponse.property:type_name -> sttattus.vault.v1.RealEstateProperty
-	46, // 23: sttattus.vault.v1.ListEntitiesResponse.entities:type_name -> sttattus.vault.v1.Entity
-	46, // 24: sttattus.vault.v1.CreateEntityResponse.entity:type_name -> sttattus.vault.v1.Entity
-	46, // 25: sttattus.vault.v1.RenameEntityResponse.entity:type_name -> sttattus.vault.v1.Entity
-	57, // 26: sttattus.vault.v1.ListLatestFxRatesResponse.rates:type_name -> sttattus.vault.v1.FxRate
-	60, // 27: sttattus.vault.v1.ListCapTableHoldingsResponse.holdings:type_name -> sttattus.vault.v1.CapTableHolding
-	63, // 28: sttattus.vault.v1.CreateCapTableHoldingRequest.input:type_name -> sttattus.vault.v1.CapTableHoldingInput
-	60, // 29: sttattus.vault.v1.CreateCapTableHoldingResponse.holding:type_name -> sttattus.vault.v1.CapTableHolding
-	63, // 30: sttattus.vault.v1.UpdateCapTableHoldingRequest.input:type_name -> sttattus.vault.v1.CapTableHoldingInput
-	60, // 31: sttattus.vault.v1.UpdateCapTableHoldingResponse.holding:type_name -> sttattus.vault.v1.CapTableHolding
-	70, // 32: sttattus.vault.v1.ListCapTableConnectionsResponse.connections:type_name -> sttattus.vault.v1.CapTableConnection
-	70, // 33: sttattus.vault.v1.SetCapTableConnectionStatusResponse.connection:type_name -> sttattus.vault.v1.CapTableConnection
-	75, // 34: sttattus.vault.v1.ListWalletChainsResponse.wallets:type_name -> sttattus.vault.v1.WalletChain
-	75, // 35: sttattus.vault.v1.UpsertWalletChainResponse.wallet:type_name -> sttattus.vault.v1.WalletChain
-	82, // 36: sttattus.vault.v1.GetTaxSnapshotResponse.lots:type_name -> sttattus.vault.v1.TaxLot
-	4,  // 37: sttattus.vault.v1.VaultService.SubmitAsset:input_type -> sttattus.vault.v1.SubmitAssetRequest
-	6,  // 38: sttattus.vault.v1.VaultService.GetPortfolio:input_type -> sttattus.vault.v1.GetPortfolioRequest
-	12, // 39: sttattus.vault.v1.VaultService.GetWalletChallenge:input_type -> sttattus.vault.v1.GetWalletChallengeRequest
-	14, // 40: sttattus.vault.v1.VaultService.LinkWallet:input_type -> sttattus.vault.v1.LinkWalletRequest
-	16, // 41: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:input_type -> sttattus.vault.v1.CreatePlaidLinkTokenRequest
-	18, // 42: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:input_type -> sttattus.vault.v1.ExchangePlaidPublicTokenRequest
-	10, // 43: sttattus.vault.v1.VaultService.SyncWealth:input_type -> sttattus.vault.v1.SyncWealthRequest
-	8,  // 44: sttattus.vault.v1.VaultService.AdminVerifyAsset:input_type -> sttattus.vault.v1.AdminVerifyAssetRequest
-	21, // 45: sttattus.vault.v1.VaultService.ListNetWorthHistory:input_type -> sttattus.vault.v1.ListNetWorthHistoryRequest
-	24, // 46: sttattus.vault.v1.VaultService.ListPlaidTransactions:input_type -> sttattus.vault.v1.ListPlaidTransactionsRequest
-	27, // 47: sttattus.vault.v1.VaultService.ListPlaidHoldings:input_type -> sttattus.vault.v1.ListPlaidHoldingsRequest
-	30, // 48: sttattus.vault.v1.VaultService.GetCurrentAllocation:input_type -> sttattus.vault.v1.GetCurrentAllocationRequest
-	33, // 49: sttattus.vault.v1.VaultService.ListAllocationHistory:input_type -> sttattus.vault.v1.ListAllocationHistoryRequest
-	36, // 50: sttattus.vault.v1.VaultService.ListRealEstateProperties:input_type -> sttattus.vault.v1.ListRealEstatePropertiesRequest
-	38, // 51: sttattus.vault.v1.VaultService.CreateRealEstateProperty:input_type -> sttattus.vault.v1.CreateRealEstatePropertyRequest
-	40, // 52: sttattus.vault.v1.VaultService.RecordManualValuation:input_type -> sttattus.vault.v1.RecordManualValuationRequest
-	42, // 53: sttattus.vault.v1.VaultService.RefreshAvmValuation:input_type -> sttattus.vault.v1.RefreshAvmValuationRequest
-	44, // 54: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:input_type -> sttattus.vault.v1.DeleteRealEstatePropertyRequest
-	47, // 55: sttattus.vault.v1.VaultService.ListEntities:input_type -> sttattus.vault.v1.ListEntitiesRequest
-	49, // 56: sttattus.vault.v1.VaultService.CreateEntity:input_type -> sttattus.vault.v1.CreateEntityRequest
-	51, // 57: sttattus.vault.v1.VaultService.RenameEntity:input_type -> sttattus.vault.v1.RenameEntityRequest
-	53, // 58: sttattus.vault.v1.VaultService.DeleteEntity:input_type -> sttattus.vault.v1.DeleteEntityRequest
-	55, // 59: sttattus.vault.v1.VaultService.AssignAssetToEntity:input_type -> sttattus.vault.v1.AssignAssetToEntityRequest
-	58, // 60: sttattus.vault.v1.VaultService.ListLatestFxRates:input_type -> sttattus.vault.v1.ListLatestFxRatesRequest
-	61, // 61: sttattus.vault.v1.VaultService.ListCapTableHoldings:input_type -> sttattus.vault.v1.ListCapTableHoldingsRequest
-	64, // 62: sttattus.vault.v1.VaultService.CreateCapTableHolding:input_type -> sttattus.vault.v1.CreateCapTableHoldingRequest
-	66, // 63: sttattus.vault.v1.VaultService.UpdateCapTableHolding:input_type -> sttattus.vault.v1.UpdateCapTableHoldingRequest
-	68, // 64: sttattus.vault.v1.VaultService.DeleteCapTableHolding:input_type -> sttattus.vault.v1.DeleteCapTableHoldingRequest
-	71, // 65: sttattus.vault.v1.VaultService.ListCapTableConnections:input_type -> sttattus.vault.v1.ListCapTableConnectionsRequest
-	73, // 66: sttattus.vault.v1.VaultService.SetCapTableConnectionStatus:input_type -> sttattus.vault.v1.SetCapTableConnectionStatusRequest
-	76, // 67: sttattus.vault.v1.VaultService.ListWalletChains:input_type -> sttattus.vault.v1.ListWalletChainsRequest
-	78, // 68: sttattus.vault.v1.VaultService.UpsertWalletChain:input_type -> sttattus.vault.v1.UpsertWalletChainRequest
-	80, // 69: sttattus.vault.v1.VaultService.DeleteWalletChain:input_type -> sttattus.vault.v1.DeleteWalletChainRequest
-	83, // 70: sttattus.vault.v1.VaultService.GetTaxSnapshot:input_type -> sttattus.vault.v1.GetTaxSnapshotRequest
-	85, // 71: sttattus.vault.v1.VaultService.ExportUsCgtCsv:input_type -> sttattus.vault.v1.ExportUsCgtCsvRequest
-	5,  // 72: sttattus.vault.v1.VaultService.SubmitAsset:output_type -> sttattus.vault.v1.SubmitAssetResponse
-	7,  // 73: sttattus.vault.v1.VaultService.GetPortfolio:output_type -> sttattus.vault.v1.GetPortfolioResponse
-	13, // 74: sttattus.vault.v1.VaultService.GetWalletChallenge:output_type -> sttattus.vault.v1.GetWalletChallengeResponse
-	15, // 75: sttattus.vault.v1.VaultService.LinkWallet:output_type -> sttattus.vault.v1.LinkWalletResponse
-	17, // 76: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:output_type -> sttattus.vault.v1.CreatePlaidLinkTokenResponse
-	19, // 77: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:output_type -> sttattus.vault.v1.ExchangePlaidPublicTokenResponse
-	11, // 78: sttattus.vault.v1.VaultService.SyncWealth:output_type -> sttattus.vault.v1.SyncWealthResponse
-	9,  // 79: sttattus.vault.v1.VaultService.AdminVerifyAsset:output_type -> sttattus.vault.v1.AdminVerifyAssetResponse
-	22, // 80: sttattus.vault.v1.VaultService.ListNetWorthHistory:output_type -> sttattus.vault.v1.ListNetWorthHistoryResponse
-	25, // 81: sttattus.vault.v1.VaultService.ListPlaidTransactions:output_type -> sttattus.vault.v1.ListPlaidTransactionsResponse
-	28, // 82: sttattus.vault.v1.VaultService.ListPlaidHoldings:output_type -> sttattus.vault.v1.ListPlaidHoldingsResponse
-	31, // 83: sttattus.vault.v1.VaultService.GetCurrentAllocation:output_type -> sttattus.vault.v1.GetCurrentAllocationResponse
-	34, // 84: sttattus.vault.v1.VaultService.ListAllocationHistory:output_type -> sttattus.vault.v1.ListAllocationHistoryResponse
-	37, // 85: sttattus.vault.v1.VaultService.ListRealEstateProperties:output_type -> sttattus.vault.v1.ListRealEstatePropertiesResponse
-	39, // 86: sttattus.vault.v1.VaultService.CreateRealEstateProperty:output_type -> sttattus.vault.v1.CreateRealEstatePropertyResponse
-	41, // 87: sttattus.vault.v1.VaultService.RecordManualValuation:output_type -> sttattus.vault.v1.RecordManualValuationResponse
-	43, // 88: sttattus.vault.v1.VaultService.RefreshAvmValuation:output_type -> sttattus.vault.v1.RefreshAvmValuationResponse
-	45, // 89: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:output_type -> sttattus.vault.v1.DeleteRealEstatePropertyResponse
-	48, // 90: sttattus.vault.v1.VaultService.ListEntities:output_type -> sttattus.vault.v1.ListEntitiesResponse
-	50, // 91: sttattus.vault.v1.VaultService.CreateEntity:output_type -> sttattus.vault.v1.CreateEntityResponse
-	52, // 92: sttattus.vault.v1.VaultService.RenameEntity:output_type -> sttattus.vault.v1.RenameEntityResponse
-	54, // 93: sttattus.vault.v1.VaultService.DeleteEntity:output_type -> sttattus.vault.v1.DeleteEntityResponse
-	56, // 94: sttattus.vault.v1.VaultService.AssignAssetToEntity:output_type -> sttattus.vault.v1.AssignAssetToEntityResponse
-	59, // 95: sttattus.vault.v1.VaultService.ListLatestFxRates:output_type -> sttattus.vault.v1.ListLatestFxRatesResponse
-	62, // 96: sttattus.vault.v1.VaultService.ListCapTableHoldings:output_type -> sttattus.vault.v1.ListCapTableHoldingsResponse
-	65, // 97: sttattus.vault.v1.VaultService.CreateCapTableHolding:output_type -> sttattus.vault.v1.CreateCapTableHoldingResponse
-	67, // 98: sttattus.vault.v1.VaultService.UpdateCapTableHolding:output_type -> sttattus.vault.v1.UpdateCapTableHoldingResponse
-	69, // 99: sttattus.vault.v1.VaultService.DeleteCapTableHolding:output_type -> sttattus.vault.v1.DeleteCapTableHoldingResponse
-	72, // 100: sttattus.vault.v1.VaultService.ListCapTableConnections:output_type -> sttattus.vault.v1.ListCapTableConnectionsResponse
-	74, // 101: sttattus.vault.v1.VaultService.SetCapTableConnectionStatus:output_type -> sttattus.vault.v1.SetCapTableConnectionStatusResponse
-	77, // 102: sttattus.vault.v1.VaultService.ListWalletChains:output_type -> sttattus.vault.v1.ListWalletChainsResponse
-	79, // 103: sttattus.vault.v1.VaultService.UpsertWalletChain:output_type -> sttattus.vault.v1.UpsertWalletChainResponse
-	81, // 104: sttattus.vault.v1.VaultService.DeleteWalletChain:output_type -> sttattus.vault.v1.DeleteWalletChainResponse
-	84, // 105: sttattus.vault.v1.VaultService.GetTaxSnapshot:output_type -> sttattus.vault.v1.GetTaxSnapshotResponse
-	86, // 106: sttattus.vault.v1.VaultService.ExportUsCgtCsv:output_type -> sttattus.vault.v1.ExportUsCgtCsvResponse
-	72, // [72:107] is the sub-list for method output_type
-	37, // [37:72] is the sub-list for method input_type
-	37, // [37:37] is the sub-list for extension type_name
-	37, // [37:37] is the sub-list for extension extendee
-	0,  // [0:37] is the sub-list for field type_name
+	0,   // 0: sttattus.vault.v1.Asset.category:type_name -> sttattus.vault.v1.AssetCategory
+	1,   // 1: sttattus.vault.v1.Asset.status:type_name -> sttattus.vault.v1.VerificationStatus
+	130, // 2: sttattus.vault.v1.Asset.last_updated:type_name -> google.protobuf.Timestamp
+	127, // 3: sttattus.vault.v1.Asset.metadata:type_name -> sttattus.vault.v1.Asset.MetadataEntry
+	2,   // 4: sttattus.vault.v1.Portfolio.assets:type_name -> sttattus.vault.v1.Asset
+	130, // 5: sttattus.vault.v1.Portfolio.calculated_at:type_name -> google.protobuf.Timestamp
+	0,   // 6: sttattus.vault.v1.SubmitAssetRequest.category:type_name -> sttattus.vault.v1.AssetCategory
+	128, // 7: sttattus.vault.v1.SubmitAssetRequest.metadata:type_name -> sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
+	2,   // 8: sttattus.vault.v1.SubmitAssetResponse.asset:type_name -> sttattus.vault.v1.Asset
+	3,   // 9: sttattus.vault.v1.GetPortfolioResponse.portfolio:type_name -> sttattus.vault.v1.Portfolio
+	1,   // 10: sttattus.vault.v1.AdminVerifyAssetRequest.status:type_name -> sttattus.vault.v1.VerificationStatus
+	2,   // 11: sttattus.vault.v1.AdminVerifyAssetResponse.asset:type_name -> sttattus.vault.v1.Asset
+	12,  // 12: sttattus.vault.v1.GetYearInVaultResponse.top_movers:type_name -> sttattus.vault.v1.YearMover
+	129, // 13: sttattus.vault.v1.GetYearInVaultResponse.allocation_shift:type_name -> sttattus.vault.v1.GetYearInVaultResponse.AllocationShiftEntry
+	15,  // 14: sttattus.vault.v1.GetLiquidityStressTestResponse.sources:type_name -> sttattus.vault.v1.LiquiditySource
+	18,  // 15: sttattus.vault.v1.ListInvestmentCirclesResponse.circles:type_name -> sttattus.vault.v1.InvestmentCircle
+	18,  // 16: sttattus.vault.v1.GetInvestmentCircleResponse.circle:type_name -> sttattus.vault.v1.InvestmentCircle
+	130, // 17: sttattus.vault.v1.AdvisorMessage.created_at:type_name -> google.protobuf.Timestamp
+	130, // 18: sttattus.vault.v1.AdvisorThread.created_at:type_name -> google.protobuf.Timestamp
+	130, // 19: sttattus.vault.v1.AdvisorThread.sla_due_at:type_name -> google.protobuf.Timestamp
+	25,  // 20: sttattus.vault.v1.AdvisorThread.messages:type_name -> sttattus.vault.v1.AdvisorMessage
+	26,  // 21: sttattus.vault.v1.StartAdvisorThreadResponse.thread:type_name -> sttattus.vault.v1.AdvisorThread
+	26,  // 22: sttattus.vault.v1.ListAdvisorThreadsResponse.threads:type_name -> sttattus.vault.v1.AdvisorThread
+	26,  // 23: sttattus.vault.v1.GetAdvisorThreadResponse.thread:type_name -> sttattus.vault.v1.AdvisorThread
+	25,  // 24: sttattus.vault.v1.PostAdvisorMessageResponse.message:type_name -> sttattus.vault.v1.AdvisorMessage
+	130, // 25: sttattus.vault.v1.WealthArticle.published_at:type_name -> google.protobuf.Timestamp
+	35,  // 26: sttattus.vault.v1.ListWealthAnthologyResponse.articles:type_name -> sttattus.vault.v1.WealthArticle
+	35,  // 27: sttattus.vault.v1.GetWealthArticleResponse.article:type_name -> sttattus.vault.v1.WealthArticle
+	40,  // 28: sttattus.vault.v1.ListPartnerBanksResponse.banks:type_name -> sttattus.vault.v1.PartnerBank
+	130, // 29: sttattus.vault.v1.VaultShare.created_at:type_name -> google.protobuf.Timestamp
+	130, // 30: sttattus.vault.v1.VaultShare.expires_at:type_name -> google.protobuf.Timestamp
+	43,  // 31: sttattus.vault.v1.CreateVaultShareResponse.share:type_name -> sttattus.vault.v1.VaultShare
+	43,  // 32: sttattus.vault.v1.ListMyVaultSharesResponse.shares:type_name -> sttattus.vault.v1.VaultShare
+	2,   // 33: sttattus.vault.v1.SyncWealthRequest.assets:type_name -> sttattus.vault.v1.Asset
+	2,   // 34: sttattus.vault.v1.LinkWalletResponse.asset:type_name -> sttattus.vault.v1.Asset
+	60,  // 35: sttattus.vault.v1.ListNetWorthHistoryResponse.points:type_name -> sttattus.vault.v1.NetWorthPoint
+	63,  // 36: sttattus.vault.v1.ListPlaidTransactionsResponse.transactions:type_name -> sttattus.vault.v1.PlaidTransaction
+	66,  // 37: sttattus.vault.v1.ListPlaidHoldingsResponse.holdings:type_name -> sttattus.vault.v1.PlaidHolding
+	69,  // 38: sttattus.vault.v1.GetCurrentAllocationResponse.slices:type_name -> sttattus.vault.v1.AllocationSlice
+	72,  // 39: sttattus.vault.v1.ListAllocationHistoryResponse.points:type_name -> sttattus.vault.v1.AllocationHistoryPoint
+	75,  // 40: sttattus.vault.v1.ListRealEstatePropertiesResponse.properties:type_name -> sttattus.vault.v1.RealEstateProperty
+	75,  // 41: sttattus.vault.v1.CreateRealEstatePropertyResponse.property:type_name -> sttattus.vault.v1.RealEstateProperty
+	75,  // 42: sttattus.vault.v1.RecordManualValuationResponse.property:type_name -> sttattus.vault.v1.RealEstateProperty
+	75,  // 43: sttattus.vault.v1.RefreshAvmValuationResponse.property:type_name -> sttattus.vault.v1.RealEstateProperty
+	86,  // 44: sttattus.vault.v1.ListEntitiesResponse.entities:type_name -> sttattus.vault.v1.Entity
+	86,  // 45: sttattus.vault.v1.CreateEntityResponse.entity:type_name -> sttattus.vault.v1.Entity
+	86,  // 46: sttattus.vault.v1.RenameEntityResponse.entity:type_name -> sttattus.vault.v1.Entity
+	97,  // 47: sttattus.vault.v1.ListLatestFxRatesResponse.rates:type_name -> sttattus.vault.v1.FxRate
+	100, // 48: sttattus.vault.v1.ListCapTableHoldingsResponse.holdings:type_name -> sttattus.vault.v1.CapTableHolding
+	103, // 49: sttattus.vault.v1.CreateCapTableHoldingRequest.input:type_name -> sttattus.vault.v1.CapTableHoldingInput
+	100, // 50: sttattus.vault.v1.CreateCapTableHoldingResponse.holding:type_name -> sttattus.vault.v1.CapTableHolding
+	103, // 51: sttattus.vault.v1.UpdateCapTableHoldingRequest.input:type_name -> sttattus.vault.v1.CapTableHoldingInput
+	100, // 52: sttattus.vault.v1.UpdateCapTableHoldingResponse.holding:type_name -> sttattus.vault.v1.CapTableHolding
+	110, // 53: sttattus.vault.v1.ListCapTableConnectionsResponse.connections:type_name -> sttattus.vault.v1.CapTableConnection
+	110, // 54: sttattus.vault.v1.SetCapTableConnectionStatusResponse.connection:type_name -> sttattus.vault.v1.CapTableConnection
+	115, // 55: sttattus.vault.v1.ListWalletChainsResponse.wallets:type_name -> sttattus.vault.v1.WalletChain
+	115, // 56: sttattus.vault.v1.UpsertWalletChainResponse.wallet:type_name -> sttattus.vault.v1.WalletChain
+	122, // 57: sttattus.vault.v1.GetTaxSnapshotResponse.lots:type_name -> sttattus.vault.v1.TaxLot
+	4,   // 58: sttattus.vault.v1.VaultService.SubmitAsset:input_type -> sttattus.vault.v1.SubmitAssetRequest
+	6,   // 59: sttattus.vault.v1.VaultService.GetPortfolio:input_type -> sttattus.vault.v1.GetPortfolioRequest
+	52,  // 60: sttattus.vault.v1.VaultService.GetWalletChallenge:input_type -> sttattus.vault.v1.GetWalletChallengeRequest
+	54,  // 61: sttattus.vault.v1.VaultService.LinkWallet:input_type -> sttattus.vault.v1.LinkWalletRequest
+	56,  // 62: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:input_type -> sttattus.vault.v1.CreatePlaidLinkTokenRequest
+	58,  // 63: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:input_type -> sttattus.vault.v1.ExchangePlaidPublicTokenRequest
+	50,  // 64: sttattus.vault.v1.VaultService.SyncWealth:input_type -> sttattus.vault.v1.SyncWealthRequest
+	8,   // 65: sttattus.vault.v1.VaultService.AdminVerifyAsset:input_type -> sttattus.vault.v1.AdminVerifyAssetRequest
+	61,  // 66: sttattus.vault.v1.VaultService.ListNetWorthHistory:input_type -> sttattus.vault.v1.ListNetWorthHistoryRequest
+	64,  // 67: sttattus.vault.v1.VaultService.ListPlaidTransactions:input_type -> sttattus.vault.v1.ListPlaidTransactionsRequest
+	67,  // 68: sttattus.vault.v1.VaultService.ListPlaidHoldings:input_type -> sttattus.vault.v1.ListPlaidHoldingsRequest
+	70,  // 69: sttattus.vault.v1.VaultService.GetCurrentAllocation:input_type -> sttattus.vault.v1.GetCurrentAllocationRequest
+	73,  // 70: sttattus.vault.v1.VaultService.ListAllocationHistory:input_type -> sttattus.vault.v1.ListAllocationHistoryRequest
+	76,  // 71: sttattus.vault.v1.VaultService.ListRealEstateProperties:input_type -> sttattus.vault.v1.ListRealEstatePropertiesRequest
+	78,  // 72: sttattus.vault.v1.VaultService.CreateRealEstateProperty:input_type -> sttattus.vault.v1.CreateRealEstatePropertyRequest
+	80,  // 73: sttattus.vault.v1.VaultService.RecordManualValuation:input_type -> sttattus.vault.v1.RecordManualValuationRequest
+	82,  // 74: sttattus.vault.v1.VaultService.RefreshAvmValuation:input_type -> sttattus.vault.v1.RefreshAvmValuationRequest
+	84,  // 75: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:input_type -> sttattus.vault.v1.DeleteRealEstatePropertyRequest
+	87,  // 76: sttattus.vault.v1.VaultService.ListEntities:input_type -> sttattus.vault.v1.ListEntitiesRequest
+	89,  // 77: sttattus.vault.v1.VaultService.CreateEntity:input_type -> sttattus.vault.v1.CreateEntityRequest
+	91,  // 78: sttattus.vault.v1.VaultService.RenameEntity:input_type -> sttattus.vault.v1.RenameEntityRequest
+	93,  // 79: sttattus.vault.v1.VaultService.DeleteEntity:input_type -> sttattus.vault.v1.DeleteEntityRequest
+	95,  // 80: sttattus.vault.v1.VaultService.AssignAssetToEntity:input_type -> sttattus.vault.v1.AssignAssetToEntityRequest
+	98,  // 81: sttattus.vault.v1.VaultService.ListLatestFxRates:input_type -> sttattus.vault.v1.ListLatestFxRatesRequest
+	101, // 82: sttattus.vault.v1.VaultService.ListCapTableHoldings:input_type -> sttattus.vault.v1.ListCapTableHoldingsRequest
+	104, // 83: sttattus.vault.v1.VaultService.CreateCapTableHolding:input_type -> sttattus.vault.v1.CreateCapTableHoldingRequest
+	106, // 84: sttattus.vault.v1.VaultService.UpdateCapTableHolding:input_type -> sttattus.vault.v1.UpdateCapTableHoldingRequest
+	108, // 85: sttattus.vault.v1.VaultService.DeleteCapTableHolding:input_type -> sttattus.vault.v1.DeleteCapTableHoldingRequest
+	111, // 86: sttattus.vault.v1.VaultService.ListCapTableConnections:input_type -> sttattus.vault.v1.ListCapTableConnectionsRequest
+	113, // 87: sttattus.vault.v1.VaultService.SetCapTableConnectionStatus:input_type -> sttattus.vault.v1.SetCapTableConnectionStatusRequest
+	116, // 88: sttattus.vault.v1.VaultService.ListWalletChains:input_type -> sttattus.vault.v1.ListWalletChainsRequest
+	118, // 89: sttattus.vault.v1.VaultService.UpsertWalletChain:input_type -> sttattus.vault.v1.UpsertWalletChainRequest
+	120, // 90: sttattus.vault.v1.VaultService.DeleteWalletChain:input_type -> sttattus.vault.v1.DeleteWalletChainRequest
+	123, // 91: sttattus.vault.v1.VaultService.GetTaxSnapshot:input_type -> sttattus.vault.v1.GetTaxSnapshotRequest
+	125, // 92: sttattus.vault.v1.VaultService.ExportUsCgtCsv:input_type -> sttattus.vault.v1.ExportUsCgtCsvRequest
+	19,  // 93: sttattus.vault.v1.VaultService.ListInvestmentCircles:input_type -> sttattus.vault.v1.ListInvestmentCirclesRequest
+	21,  // 94: sttattus.vault.v1.VaultService.GetInvestmentCircle:input_type -> sttattus.vault.v1.GetInvestmentCircleRequest
+	23,  // 95: sttattus.vault.v1.VaultService.ExpressCircleInterest:input_type -> sttattus.vault.v1.ExpressCircleInterestRequest
+	27,  // 96: sttattus.vault.v1.VaultService.StartAdvisorThread:input_type -> sttattus.vault.v1.StartAdvisorThreadRequest
+	29,  // 97: sttattus.vault.v1.VaultService.ListAdvisorThreads:input_type -> sttattus.vault.v1.ListAdvisorThreadsRequest
+	31,  // 98: sttattus.vault.v1.VaultService.GetAdvisorThread:input_type -> sttattus.vault.v1.GetAdvisorThreadRequest
+	33,  // 99: sttattus.vault.v1.VaultService.PostAdvisorMessage:input_type -> sttattus.vault.v1.PostAdvisorMessageRequest
+	36,  // 100: sttattus.vault.v1.VaultService.ListWealthAnthology:input_type -> sttattus.vault.v1.ListWealthAnthologyRequest
+	38,  // 101: sttattus.vault.v1.VaultService.GetWealthArticle:input_type -> sttattus.vault.v1.GetWealthArticleRequest
+	41,  // 102: sttattus.vault.v1.VaultService.ListPartnerBanks:input_type -> sttattus.vault.v1.ListPartnerBanksRequest
+	44,  // 103: sttattus.vault.v1.VaultService.CreateVaultShare:input_type -> sttattus.vault.v1.CreateVaultShareRequest
+	46,  // 104: sttattus.vault.v1.VaultService.ListMyVaultShares:input_type -> sttattus.vault.v1.ListMyVaultSharesRequest
+	48,  // 105: sttattus.vault.v1.VaultService.RevokeVaultShare:input_type -> sttattus.vault.v1.RevokeVaultShareRequest
+	10,  // 106: sttattus.vault.v1.VaultService.GenerateWealthAlmanac:input_type -> sttattus.vault.v1.GenerateWealthAlmanacRequest
+	13,  // 107: sttattus.vault.v1.VaultService.GetYearInVault:input_type -> sttattus.vault.v1.GetYearInVaultRequest
+	16,  // 108: sttattus.vault.v1.VaultService.GetLiquidityStressTest:input_type -> sttattus.vault.v1.GetLiquidityStressTestRequest
+	5,   // 109: sttattus.vault.v1.VaultService.SubmitAsset:output_type -> sttattus.vault.v1.SubmitAssetResponse
+	7,   // 110: sttattus.vault.v1.VaultService.GetPortfolio:output_type -> sttattus.vault.v1.GetPortfolioResponse
+	53,  // 111: sttattus.vault.v1.VaultService.GetWalletChallenge:output_type -> sttattus.vault.v1.GetWalletChallengeResponse
+	55,  // 112: sttattus.vault.v1.VaultService.LinkWallet:output_type -> sttattus.vault.v1.LinkWalletResponse
+	57,  // 113: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:output_type -> sttattus.vault.v1.CreatePlaidLinkTokenResponse
+	59,  // 114: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:output_type -> sttattus.vault.v1.ExchangePlaidPublicTokenResponse
+	51,  // 115: sttattus.vault.v1.VaultService.SyncWealth:output_type -> sttattus.vault.v1.SyncWealthResponse
+	9,   // 116: sttattus.vault.v1.VaultService.AdminVerifyAsset:output_type -> sttattus.vault.v1.AdminVerifyAssetResponse
+	62,  // 117: sttattus.vault.v1.VaultService.ListNetWorthHistory:output_type -> sttattus.vault.v1.ListNetWorthHistoryResponse
+	65,  // 118: sttattus.vault.v1.VaultService.ListPlaidTransactions:output_type -> sttattus.vault.v1.ListPlaidTransactionsResponse
+	68,  // 119: sttattus.vault.v1.VaultService.ListPlaidHoldings:output_type -> sttattus.vault.v1.ListPlaidHoldingsResponse
+	71,  // 120: sttattus.vault.v1.VaultService.GetCurrentAllocation:output_type -> sttattus.vault.v1.GetCurrentAllocationResponse
+	74,  // 121: sttattus.vault.v1.VaultService.ListAllocationHistory:output_type -> sttattus.vault.v1.ListAllocationHistoryResponse
+	77,  // 122: sttattus.vault.v1.VaultService.ListRealEstateProperties:output_type -> sttattus.vault.v1.ListRealEstatePropertiesResponse
+	79,  // 123: sttattus.vault.v1.VaultService.CreateRealEstateProperty:output_type -> sttattus.vault.v1.CreateRealEstatePropertyResponse
+	81,  // 124: sttattus.vault.v1.VaultService.RecordManualValuation:output_type -> sttattus.vault.v1.RecordManualValuationResponse
+	83,  // 125: sttattus.vault.v1.VaultService.RefreshAvmValuation:output_type -> sttattus.vault.v1.RefreshAvmValuationResponse
+	85,  // 126: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:output_type -> sttattus.vault.v1.DeleteRealEstatePropertyResponse
+	88,  // 127: sttattus.vault.v1.VaultService.ListEntities:output_type -> sttattus.vault.v1.ListEntitiesResponse
+	90,  // 128: sttattus.vault.v1.VaultService.CreateEntity:output_type -> sttattus.vault.v1.CreateEntityResponse
+	92,  // 129: sttattus.vault.v1.VaultService.RenameEntity:output_type -> sttattus.vault.v1.RenameEntityResponse
+	94,  // 130: sttattus.vault.v1.VaultService.DeleteEntity:output_type -> sttattus.vault.v1.DeleteEntityResponse
+	96,  // 131: sttattus.vault.v1.VaultService.AssignAssetToEntity:output_type -> sttattus.vault.v1.AssignAssetToEntityResponse
+	99,  // 132: sttattus.vault.v1.VaultService.ListLatestFxRates:output_type -> sttattus.vault.v1.ListLatestFxRatesResponse
+	102, // 133: sttattus.vault.v1.VaultService.ListCapTableHoldings:output_type -> sttattus.vault.v1.ListCapTableHoldingsResponse
+	105, // 134: sttattus.vault.v1.VaultService.CreateCapTableHolding:output_type -> sttattus.vault.v1.CreateCapTableHoldingResponse
+	107, // 135: sttattus.vault.v1.VaultService.UpdateCapTableHolding:output_type -> sttattus.vault.v1.UpdateCapTableHoldingResponse
+	109, // 136: sttattus.vault.v1.VaultService.DeleteCapTableHolding:output_type -> sttattus.vault.v1.DeleteCapTableHoldingResponse
+	112, // 137: sttattus.vault.v1.VaultService.ListCapTableConnections:output_type -> sttattus.vault.v1.ListCapTableConnectionsResponse
+	114, // 138: sttattus.vault.v1.VaultService.SetCapTableConnectionStatus:output_type -> sttattus.vault.v1.SetCapTableConnectionStatusResponse
+	117, // 139: sttattus.vault.v1.VaultService.ListWalletChains:output_type -> sttattus.vault.v1.ListWalletChainsResponse
+	119, // 140: sttattus.vault.v1.VaultService.UpsertWalletChain:output_type -> sttattus.vault.v1.UpsertWalletChainResponse
+	121, // 141: sttattus.vault.v1.VaultService.DeleteWalletChain:output_type -> sttattus.vault.v1.DeleteWalletChainResponse
+	124, // 142: sttattus.vault.v1.VaultService.GetTaxSnapshot:output_type -> sttattus.vault.v1.GetTaxSnapshotResponse
+	126, // 143: sttattus.vault.v1.VaultService.ExportUsCgtCsv:output_type -> sttattus.vault.v1.ExportUsCgtCsvResponse
+	20,  // 144: sttattus.vault.v1.VaultService.ListInvestmentCircles:output_type -> sttattus.vault.v1.ListInvestmentCirclesResponse
+	22,  // 145: sttattus.vault.v1.VaultService.GetInvestmentCircle:output_type -> sttattus.vault.v1.GetInvestmentCircleResponse
+	24,  // 146: sttattus.vault.v1.VaultService.ExpressCircleInterest:output_type -> sttattus.vault.v1.ExpressCircleInterestResponse
+	28,  // 147: sttattus.vault.v1.VaultService.StartAdvisorThread:output_type -> sttattus.vault.v1.StartAdvisorThreadResponse
+	30,  // 148: sttattus.vault.v1.VaultService.ListAdvisorThreads:output_type -> sttattus.vault.v1.ListAdvisorThreadsResponse
+	32,  // 149: sttattus.vault.v1.VaultService.GetAdvisorThread:output_type -> sttattus.vault.v1.GetAdvisorThreadResponse
+	34,  // 150: sttattus.vault.v1.VaultService.PostAdvisorMessage:output_type -> sttattus.vault.v1.PostAdvisorMessageResponse
+	37,  // 151: sttattus.vault.v1.VaultService.ListWealthAnthology:output_type -> sttattus.vault.v1.ListWealthAnthologyResponse
+	39,  // 152: sttattus.vault.v1.VaultService.GetWealthArticle:output_type -> sttattus.vault.v1.GetWealthArticleResponse
+	42,  // 153: sttattus.vault.v1.VaultService.ListPartnerBanks:output_type -> sttattus.vault.v1.ListPartnerBanksResponse
+	45,  // 154: sttattus.vault.v1.VaultService.CreateVaultShare:output_type -> sttattus.vault.v1.CreateVaultShareResponse
+	47,  // 155: sttattus.vault.v1.VaultService.ListMyVaultShares:output_type -> sttattus.vault.v1.ListMyVaultSharesResponse
+	49,  // 156: sttattus.vault.v1.VaultService.RevokeVaultShare:output_type -> sttattus.vault.v1.RevokeVaultShareResponse
+	11,  // 157: sttattus.vault.v1.VaultService.GenerateWealthAlmanac:output_type -> sttattus.vault.v1.GenerateWealthAlmanacResponse
+	14,  // 158: sttattus.vault.v1.VaultService.GetYearInVault:output_type -> sttattus.vault.v1.GetYearInVaultResponse
+	17,  // 159: sttattus.vault.v1.VaultService.GetLiquidityStressTest:output_type -> sttattus.vault.v1.GetLiquidityStressTestResponse
+	109, // [109:160] is the sub-list for method output_type
+	58,  // [58:109] is the sub-list for method input_type
+	58,  // [58:58] is the sub-list for extension type_name
+	58,  // [58:58] is the sub-list for extension extendee
+	0,   // [0:58] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_vault_v1_vault_proto_init() }
@@ -5202,7 +7700,7 @@ func file_sttattus_vault_v1_vault_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_vault_v1_vault_proto_rawDesc), len(file_sttattus_vault_v1_vault_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   87,
+			NumMessages:   128,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

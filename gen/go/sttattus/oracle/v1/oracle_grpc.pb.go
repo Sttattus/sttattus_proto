@@ -19,26 +19,48 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	OracleService_Query_FullMethodName                = "/sttattus.oracle.v1.OracleService/Query"
-	OracleService_GetOracleStats_FullMethodName       = "/sttattus.oracle.v1.OracleService/GetOracleStats"
-	OracleService_ListMyThreads_FullMethodName        = "/sttattus.oracle.v1.OracleService/ListMyThreads"
-	OracleService_CreateThread_FullMethodName         = "/sttattus.oracle.v1.OracleService/CreateThread"
-	OracleService_RenameThread_FullMethodName         = "/sttattus.oracle.v1.OracleService/RenameThread"
-	OracleService_DeleteThread_FullMethodName         = "/sttattus.oracle.v1.OracleService/DeleteThread"
-	OracleService_ListThreadMessages_FullMethodName   = "/sttattus.oracle.v1.OracleService/ListThreadMessages"
-	OracleService_StreamQuery_FullMethodName          = "/sttattus.oracle.v1.OracleService/StreamQuery"
-	OracleService_RecordEpisodicMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/RecordEpisodicMemory"
-	OracleService_ListMyEpisodicMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/ListMyEpisodicMemory"
-	OracleService_DeleteEpisodicMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/DeleteEpisodicMemory"
-	OracleService_UpsertSemanticMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/UpsertSemanticMemory"
-	OracleService_ListMySemanticMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/ListMySemanticMemory"
-	OracleService_DeleteSemanticMemory_FullMethodName = "/sttattus.oracle.v1.OracleService/DeleteSemanticMemory"
-	OracleService_ListMyScopeGrants_FullMethodName    = "/sttattus.oracle.v1.OracleService/ListMyScopeGrants"
-	OracleService_GrantScope_FullMethodName           = "/sttattus.oracle.v1.OracleService/GrantScope"
-	OracleService_RevokeScope_FullMethodName          = "/sttattus.oracle.v1.OracleService/RevokeScope"
-	OracleService_ListAvailableTools_FullMethodName   = "/sttattus.oracle.v1.OracleService/ListAvailableTools"
-	OracleService_RunOracleTool_FullMethodName        = "/sttattus.oracle.v1.OracleService/RunOracleTool"
-	OracleService_GetRankExplainer_FullMethodName     = "/sttattus.oracle.v1.OracleService/GetRankExplainer"
+	OracleService_Query_FullMethodName                  = "/sttattus.oracle.v1.OracleService/Query"
+	OracleService_GetYearInOracleRecap_FullMethodName   = "/sttattus.oracle.v1.OracleService/GetYearInOracleRecap"
+	OracleService_GenerateYearInOracle_FullMethodName   = "/sttattus.oracle.v1.OracleService/GenerateYearInOracle"
+	OracleService_StartConciergeThread_FullMethodName   = "/sttattus.oracle.v1.OracleService/StartConciergeThread"
+	OracleService_ListMyConciergeThreads_FullMethodName = "/sttattus.oracle.v1.OracleService/ListMyConciergeThreads"
+	OracleService_GetConciergeThread_FullMethodName     = "/sttattus.oracle.v1.OracleService/GetConciergeThread"
+	OracleService_PostConciergeMessage_FullMethodName   = "/sttattus.oracle.v1.OracleService/PostConciergeMessage"
+	OracleService_ListAnthologyArticles_FullMethodName  = "/sttattus.oracle.v1.OracleService/ListAnthologyArticles"
+	OracleService_GetAnthologyArticle_FullMethodName    = "/sttattus.oracle.v1.OracleService/GetAnthologyArticle"
+	OracleService_CreateBriefShare_FullMethodName       = "/sttattus.oracle.v1.OracleService/CreateBriefShare"
+	OracleService_ListMyBriefShares_FullMethodName      = "/sttattus.oracle.v1.OracleService/ListMyBriefShares"
+	OracleService_RevokeBriefShare_FullMethodName       = "/sttattus.oracle.v1.OracleService/RevokeBriefShare"
+	OracleService_GetTodayBriefing_FullMethodName       = "/sttattus.oracle.v1.OracleService/GetTodayBriefing"
+	OracleService_CreateTrigger_FullMethodName          = "/sttattus.oracle.v1.OracleService/CreateTrigger"
+	OracleService_ListMyTriggers_FullMethodName         = "/sttattus.oracle.v1.OracleService/ListMyTriggers"
+	OracleService_DeleteTrigger_FullMethodName          = "/sttattus.oracle.v1.OracleService/DeleteTrigger"
+	OracleService_GetInbox_FullMethodName               = "/sttattus.oracle.v1.OracleService/GetInbox"
+	OracleService_CreateDocument_FullMethodName         = "/sttattus.oracle.v1.OracleService/CreateDocument"
+	OracleService_ListMyDocuments_FullMethodName        = "/sttattus.oracle.v1.OracleService/ListMyDocuments"
+	OracleService_GetDocument_FullMethodName            = "/sttattus.oracle.v1.OracleService/GetDocument"
+	OracleService_UpdateDocument_FullMethodName         = "/sttattus.oracle.v1.OracleService/UpdateDocument"
+	OracleService_DeleteDocument_FullMethodName         = "/sttattus.oracle.v1.OracleService/DeleteDocument"
+	OracleService_DraftDocument_FullMethodName          = "/sttattus.oracle.v1.OracleService/DraftDocument"
+	OracleService_GetOracleStats_FullMethodName         = "/sttattus.oracle.v1.OracleService/GetOracleStats"
+	OracleService_ListMyThreads_FullMethodName          = "/sttattus.oracle.v1.OracleService/ListMyThreads"
+	OracleService_CreateThread_FullMethodName           = "/sttattus.oracle.v1.OracleService/CreateThread"
+	OracleService_RenameThread_FullMethodName           = "/sttattus.oracle.v1.OracleService/RenameThread"
+	OracleService_DeleteThread_FullMethodName           = "/sttattus.oracle.v1.OracleService/DeleteThread"
+	OracleService_ListThreadMessages_FullMethodName     = "/sttattus.oracle.v1.OracleService/ListThreadMessages"
+	OracleService_StreamQuery_FullMethodName            = "/sttattus.oracle.v1.OracleService/StreamQuery"
+	OracleService_RecordEpisodicMemory_FullMethodName   = "/sttattus.oracle.v1.OracleService/RecordEpisodicMemory"
+	OracleService_ListMyEpisodicMemory_FullMethodName   = "/sttattus.oracle.v1.OracleService/ListMyEpisodicMemory"
+	OracleService_DeleteEpisodicMemory_FullMethodName   = "/sttattus.oracle.v1.OracleService/DeleteEpisodicMemory"
+	OracleService_UpsertSemanticMemory_FullMethodName   = "/sttattus.oracle.v1.OracleService/UpsertSemanticMemory"
+	OracleService_ListMySemanticMemory_FullMethodName   = "/sttattus.oracle.v1.OracleService/ListMySemanticMemory"
+	OracleService_DeleteSemanticMemory_FullMethodName   = "/sttattus.oracle.v1.OracleService/DeleteSemanticMemory"
+	OracleService_ListMyScopeGrants_FullMethodName      = "/sttattus.oracle.v1.OracleService/ListMyScopeGrants"
+	OracleService_GrantScope_FullMethodName             = "/sttattus.oracle.v1.OracleService/GrantScope"
+	OracleService_RevokeScope_FullMethodName            = "/sttattus.oracle.v1.OracleService/RevokeScope"
+	OracleService_ListAvailableTools_FullMethodName     = "/sttattus.oracle.v1.OracleService/ListAvailableTools"
+	OracleService_RunOracleTool_FullMethodName          = "/sttattus.oracle.v1.OracleService/RunOracleTool"
+	OracleService_GetRankExplainer_FullMethodName       = "/sttattus.oracle.v1.OracleService/GetRankExplainer"
 )
 
 // OracleServiceClient is the client API for OracleService service.
@@ -47,6 +69,35 @@ const (
 type OracleServiceClient interface {
 	// Query handles strategic inquiry and rewards verified depth.
 	Query(ctx context.Context, in *QueryRequest, opts ...grpc.CallOption) (*QueryResponse, error)
+	// O4 (Phase 4) — Year-in-Oracle recap + hardcover PDF.
+	GetYearInOracleRecap(ctx context.Context, in *GetYearInOracleRecapRequest, opts ...grpc.CallOption) (*GetYearInOracleRecapResponse, error)
+	GenerateYearInOracle(ctx context.Context, in *GenerateYearInOracleRequest, opts ...grpc.CallOption) (*GenerateYearInOracleResponse, error)
+	// O3 (Phase 3) — Sovereign concierge desk.
+	StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error)
+	ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error)
+	GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error)
+	PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error)
+	// O3 (Phase 3) — editorial Anthology.
+	ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error)
+	// O3 (Phase 3) — shared brief.
+	CreateBriefShare(ctx context.Context, in *CreateBriefShareRequest, opts ...grpc.CallOption) (*CreateBriefShareResponse, error)
+	ListMyBriefShares(ctx context.Context, in *ListMyBriefSharesRequest, opts ...grpc.CallOption) (*ListMyBriefSharesResponse, error)
+	RevokeBriefShare(ctx context.Context, in *RevokeBriefShareRequest, opts ...grpc.CallOption) (*RevokeBriefShareResponse, error)
+	// O1 (Phase 1) — daily synthesis briefing across granted pillar scopes.
+	GetTodayBriefing(ctx context.Context, in *GetTodayBriefingRequest, opts ...grpc.CallOption) (*GetTodayBriefingResponse, error)
+	// O2 (Phase 2) — proactive triggers + inbox.
+	CreateTrigger(ctx context.Context, in *CreateTriggerRequest, opts ...grpc.CallOption) (*CreateTriggerResponse, error)
+	ListMyTriggers(ctx context.Context, in *ListMyTriggersRequest, opts ...grpc.CallOption) (*ListMyTriggersResponse, error)
+	DeleteTrigger(ctx context.Context, in *DeleteTriggerRequest, opts ...grpc.CallOption) (*DeleteTriggerResponse, error)
+	GetInbox(ctx context.Context, in *GetInboxRequest, opts ...grpc.CallOption) (*GetInboxResponse, error)
+	// O2 (Phase 2) — long-form drafter.
+	CreateDocument(ctx context.Context, in *CreateDocumentRequest, opts ...grpc.CallOption) (*CreateDocumentResponse, error)
+	ListMyDocuments(ctx context.Context, in *ListMyDocumentsRequest, opts ...grpc.CallOption) (*ListMyDocumentsResponse, error)
+	GetDocument(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*GetDocumentResponse, error)
+	UpdateDocument(ctx context.Context, in *UpdateDocumentRequest, opts ...grpc.CallOption) (*UpdateDocumentResponse, error)
+	DeleteDocument(ctx context.Context, in *DeleteDocumentRequest, opts ...grpc.CallOption) (*DeleteDocumentResponse, error)
+	DraftDocument(ctx context.Context, in *DraftDocumentRequest, opts ...grpc.CallOption) (*DraftDocumentResponse, error)
 	// Status
 	GetOracleStats(ctx context.Context, in *GetOracleStatsRequest, opts ...grpc.CallOption) (*GetOracleStatsResponse, error)
 	// O13.2 — multi-thread chat.
@@ -87,6 +138,226 @@ func (c *oracleServiceClient) Query(ctx context.Context, in *QueryRequest, opts 
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(QueryResponse)
 	err := c.cc.Invoke(ctx, OracleService_Query_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetYearInOracleRecap(ctx context.Context, in *GetYearInOracleRecapRequest, opts ...grpc.CallOption) (*GetYearInOracleRecapResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetYearInOracleRecapResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetYearInOracleRecap_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GenerateYearInOracle(ctx context.Context, in *GenerateYearInOracleRequest, opts ...grpc.CallOption) (*GenerateYearInOracleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateYearInOracleResponse)
+	err := c.cc.Invoke(ctx, OracleService_GenerateYearInOracle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StartConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, OracleService_StartConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyConciergeThreadsResponse)
+	err := c.cc.Invoke(ctx, OracleService_ListMyConciergeThreads_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PostConciergeMessageResponse)
+	err := c.cc.Invoke(ctx, OracleService_PostConciergeMessage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAnthologyArticlesResponse)
+	err := c.cc.Invoke(ctx, OracleService_ListAnthologyArticles_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAnthologyArticleResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetAnthologyArticle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) CreateBriefShare(ctx context.Context, in *CreateBriefShareRequest, opts ...grpc.CallOption) (*CreateBriefShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateBriefShareResponse)
+	err := c.cc.Invoke(ctx, OracleService_CreateBriefShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) ListMyBriefShares(ctx context.Context, in *ListMyBriefSharesRequest, opts ...grpc.CallOption) (*ListMyBriefSharesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyBriefSharesResponse)
+	err := c.cc.Invoke(ctx, OracleService_ListMyBriefShares_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) RevokeBriefShare(ctx context.Context, in *RevokeBriefShareRequest, opts ...grpc.CallOption) (*RevokeBriefShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeBriefShareResponse)
+	err := c.cc.Invoke(ctx, OracleService_RevokeBriefShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetTodayBriefing(ctx context.Context, in *GetTodayBriefingRequest, opts ...grpc.CallOption) (*GetTodayBriefingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTodayBriefingResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetTodayBriefing_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) CreateTrigger(ctx context.Context, in *CreateTriggerRequest, opts ...grpc.CallOption) (*CreateTriggerResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateTriggerResponse)
+	err := c.cc.Invoke(ctx, OracleService_CreateTrigger_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) ListMyTriggers(ctx context.Context, in *ListMyTriggersRequest, opts ...grpc.CallOption) (*ListMyTriggersResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyTriggersResponse)
+	err := c.cc.Invoke(ctx, OracleService_ListMyTriggers_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) DeleteTrigger(ctx context.Context, in *DeleteTriggerRequest, opts ...grpc.CallOption) (*DeleteTriggerResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteTriggerResponse)
+	err := c.cc.Invoke(ctx, OracleService_DeleteTrigger_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetInbox(ctx context.Context, in *GetInboxRequest, opts ...grpc.CallOption) (*GetInboxResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetInboxResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetInbox_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) CreateDocument(ctx context.Context, in *CreateDocumentRequest, opts ...grpc.CallOption) (*CreateDocumentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateDocumentResponse)
+	err := c.cc.Invoke(ctx, OracleService_CreateDocument_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) ListMyDocuments(ctx context.Context, in *ListMyDocumentsRequest, opts ...grpc.CallOption) (*ListMyDocumentsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyDocumentsResponse)
+	err := c.cc.Invoke(ctx, OracleService_ListMyDocuments_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetDocument(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*GetDocumentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDocumentResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetDocument_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) UpdateDocument(ctx context.Context, in *UpdateDocumentRequest, opts ...grpc.CallOption) (*UpdateDocumentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateDocumentResponse)
+	err := c.cc.Invoke(ctx, OracleService_UpdateDocument_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) DeleteDocument(ctx context.Context, in *DeleteDocumentRequest, opts ...grpc.CallOption) (*DeleteDocumentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteDocumentResponse)
+	err := c.cc.Invoke(ctx, OracleService_DeleteDocument_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) DraftDocument(ctx context.Context, in *DraftDocumentRequest, opts ...grpc.CallOption) (*DraftDocumentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DraftDocumentResponse)
+	err := c.cc.Invoke(ctx, OracleService_DraftDocument_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -298,6 +569,35 @@ func (c *oracleServiceClient) GetRankExplainer(ctx context.Context, in *GetRankE
 type OracleServiceServer interface {
 	// Query handles strategic inquiry and rewards verified depth.
 	Query(context.Context, *QueryRequest) (*QueryResponse, error)
+	// O4 (Phase 4) — Year-in-Oracle recap + hardcover PDF.
+	GetYearInOracleRecap(context.Context, *GetYearInOracleRecapRequest) (*GetYearInOracleRecapResponse, error)
+	GenerateYearInOracle(context.Context, *GenerateYearInOracleRequest) (*GenerateYearInOracleResponse, error)
+	// O3 (Phase 3) — Sovereign concierge desk.
+	StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error)
+	ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error)
+	GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error)
+	PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error)
+	// O3 (Phase 3) — editorial Anthology.
+	ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error)
+	// O3 (Phase 3) — shared brief.
+	CreateBriefShare(context.Context, *CreateBriefShareRequest) (*CreateBriefShareResponse, error)
+	ListMyBriefShares(context.Context, *ListMyBriefSharesRequest) (*ListMyBriefSharesResponse, error)
+	RevokeBriefShare(context.Context, *RevokeBriefShareRequest) (*RevokeBriefShareResponse, error)
+	// O1 (Phase 1) — daily synthesis briefing across granted pillar scopes.
+	GetTodayBriefing(context.Context, *GetTodayBriefingRequest) (*GetTodayBriefingResponse, error)
+	// O2 (Phase 2) — proactive triggers + inbox.
+	CreateTrigger(context.Context, *CreateTriggerRequest) (*CreateTriggerResponse, error)
+	ListMyTriggers(context.Context, *ListMyTriggersRequest) (*ListMyTriggersResponse, error)
+	DeleteTrigger(context.Context, *DeleteTriggerRequest) (*DeleteTriggerResponse, error)
+	GetInbox(context.Context, *GetInboxRequest) (*GetInboxResponse, error)
+	// O2 (Phase 2) — long-form drafter.
+	CreateDocument(context.Context, *CreateDocumentRequest) (*CreateDocumentResponse, error)
+	ListMyDocuments(context.Context, *ListMyDocumentsRequest) (*ListMyDocumentsResponse, error)
+	GetDocument(context.Context, *GetDocumentRequest) (*GetDocumentResponse, error)
+	UpdateDocument(context.Context, *UpdateDocumentRequest) (*UpdateDocumentResponse, error)
+	DeleteDocument(context.Context, *DeleteDocumentRequest) (*DeleteDocumentResponse, error)
+	DraftDocument(context.Context, *DraftDocumentRequest) (*DraftDocumentResponse, error)
 	// Status
 	GetOracleStats(context.Context, *GetOracleStatsRequest) (*GetOracleStatsResponse, error)
 	// O13.2 — multi-thread chat.
@@ -336,6 +636,72 @@ type UnimplementedOracleServiceServer struct{}
 
 func (UnimplementedOracleServiceServer) Query(context.Context, *QueryRequest) (*QueryResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method Query not implemented")
+}
+func (UnimplementedOracleServiceServer) GetYearInOracleRecap(context.Context, *GetYearInOracleRecapRequest) (*GetYearInOracleRecapResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetYearInOracleRecap not implemented")
+}
+func (UnimplementedOracleServiceServer) GenerateYearInOracle(context.Context, *GenerateYearInOracleRequest) (*GenerateYearInOracleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateYearInOracle not implemented")
+}
+func (UnimplementedOracleServiceServer) StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StartConciergeThread not implemented")
+}
+func (UnimplementedOracleServiceServer) ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyConciergeThreads not implemented")
+}
+func (UnimplementedOracleServiceServer) GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetConciergeThread not implemented")
+}
+func (UnimplementedOracleServiceServer) PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PostConciergeMessage not implemented")
+}
+func (UnimplementedOracleServiceServer) ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAnthologyArticles not implemented")
+}
+func (UnimplementedOracleServiceServer) GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAnthologyArticle not implemented")
+}
+func (UnimplementedOracleServiceServer) CreateBriefShare(context.Context, *CreateBriefShareRequest) (*CreateBriefShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateBriefShare not implemented")
+}
+func (UnimplementedOracleServiceServer) ListMyBriefShares(context.Context, *ListMyBriefSharesRequest) (*ListMyBriefSharesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyBriefShares not implemented")
+}
+func (UnimplementedOracleServiceServer) RevokeBriefShare(context.Context, *RevokeBriefShareRequest) (*RevokeBriefShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeBriefShare not implemented")
+}
+func (UnimplementedOracleServiceServer) GetTodayBriefing(context.Context, *GetTodayBriefingRequest) (*GetTodayBriefingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTodayBriefing not implemented")
+}
+func (UnimplementedOracleServiceServer) CreateTrigger(context.Context, *CreateTriggerRequest) (*CreateTriggerResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateTrigger not implemented")
+}
+func (UnimplementedOracleServiceServer) ListMyTriggers(context.Context, *ListMyTriggersRequest) (*ListMyTriggersResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyTriggers not implemented")
+}
+func (UnimplementedOracleServiceServer) DeleteTrigger(context.Context, *DeleteTriggerRequest) (*DeleteTriggerResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteTrigger not implemented")
+}
+func (UnimplementedOracleServiceServer) GetInbox(context.Context, *GetInboxRequest) (*GetInboxResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetInbox not implemented")
+}
+func (UnimplementedOracleServiceServer) CreateDocument(context.Context, *CreateDocumentRequest) (*CreateDocumentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateDocument not implemented")
+}
+func (UnimplementedOracleServiceServer) ListMyDocuments(context.Context, *ListMyDocumentsRequest) (*ListMyDocumentsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyDocuments not implemented")
+}
+func (UnimplementedOracleServiceServer) GetDocument(context.Context, *GetDocumentRequest) (*GetDocumentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDocument not implemented")
+}
+func (UnimplementedOracleServiceServer) UpdateDocument(context.Context, *UpdateDocumentRequest) (*UpdateDocumentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateDocument not implemented")
+}
+func (UnimplementedOracleServiceServer) DeleteDocument(context.Context, *DeleteDocumentRequest) (*DeleteDocumentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteDocument not implemented")
+}
+func (UnimplementedOracleServiceServer) DraftDocument(context.Context, *DraftDocumentRequest) (*DraftDocumentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DraftDocument not implemented")
 }
 func (UnimplementedOracleServiceServer) GetOracleStats(context.Context, *GetOracleStatsRequest) (*GetOracleStatsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetOracleStats not implemented")
@@ -429,6 +795,402 @@ func _OracleService_Query_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OracleServiceServer).Query(ctx, req.(*QueryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetYearInOracleRecap_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetYearInOracleRecapRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetYearInOracleRecap(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetYearInOracleRecap_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetYearInOracleRecap(ctx, req.(*GetYearInOracleRecapRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GenerateYearInOracle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateYearInOracleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GenerateYearInOracle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GenerateYearInOracle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GenerateYearInOracle(ctx, req.(*GenerateYearInOracleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_StartConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StartConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).StartConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_StartConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).StartConciergeThread(ctx, req.(*StartConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_ListMyConciergeThreads_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyConciergeThreadsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ListMyConciergeThreads(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ListMyConciergeThreads_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ListMyConciergeThreads(ctx, req.(*ListMyConciergeThreadsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetConciergeThread(ctx, req.(*GetConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_PostConciergeMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostConciergeMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).PostConciergeMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_PostConciergeMessage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).PostConciergeMessage(ctx, req.(*PostConciergeMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_ListAnthologyArticles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAnthologyArticlesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ListAnthologyArticles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ListAnthologyArticles_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ListAnthologyArticles(ctx, req.(*ListAnthologyArticlesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetAnthologyArticle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnthologyArticleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetAnthologyArticle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetAnthologyArticle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetAnthologyArticle(ctx, req.(*GetAnthologyArticleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_CreateBriefShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateBriefShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).CreateBriefShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_CreateBriefShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).CreateBriefShare(ctx, req.(*CreateBriefShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_ListMyBriefShares_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyBriefSharesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ListMyBriefShares(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ListMyBriefShares_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ListMyBriefShares(ctx, req.(*ListMyBriefSharesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_RevokeBriefShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeBriefShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).RevokeBriefShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_RevokeBriefShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).RevokeBriefShare(ctx, req.(*RevokeBriefShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetTodayBriefing_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTodayBriefingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetTodayBriefing(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetTodayBriefing_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetTodayBriefing(ctx, req.(*GetTodayBriefingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_CreateTrigger_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTriggerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).CreateTrigger(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_CreateTrigger_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).CreateTrigger(ctx, req.(*CreateTriggerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_ListMyTriggers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyTriggersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ListMyTriggers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ListMyTriggers_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ListMyTriggers(ctx, req.(*ListMyTriggersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_DeleteTrigger_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteTriggerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).DeleteTrigger(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_DeleteTrigger_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).DeleteTrigger(ctx, req.(*DeleteTriggerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetInbox_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetInboxRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetInbox(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetInbox_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetInbox(ctx, req.(*GetInboxRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_CreateDocument_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateDocumentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).CreateDocument(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_CreateDocument_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).CreateDocument(ctx, req.(*CreateDocumentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_ListMyDocuments_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyDocumentsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ListMyDocuments(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ListMyDocuments_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ListMyDocuments(ctx, req.(*ListMyDocumentsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetDocument_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDocumentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetDocument(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetDocument_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetDocument(ctx, req.(*GetDocumentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_UpdateDocument_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateDocumentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).UpdateDocument(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_UpdateDocument_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).UpdateDocument(ctx, req.(*UpdateDocumentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_DeleteDocument_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteDocumentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).DeleteDocument(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_DeleteDocument_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).DeleteDocument(ctx, req.(*DeleteDocumentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_DraftDocument_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DraftDocumentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).DraftDocument(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_DraftDocument_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).DraftDocument(ctx, req.(*DraftDocumentRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -778,6 +1540,94 @@ var OracleService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Query",
 			Handler:    _OracleService_Query_Handler,
+		},
+		{
+			MethodName: "GetYearInOracleRecap",
+			Handler:    _OracleService_GetYearInOracleRecap_Handler,
+		},
+		{
+			MethodName: "GenerateYearInOracle",
+			Handler:    _OracleService_GenerateYearInOracle_Handler,
+		},
+		{
+			MethodName: "StartConciergeThread",
+			Handler:    _OracleService_StartConciergeThread_Handler,
+		},
+		{
+			MethodName: "ListMyConciergeThreads",
+			Handler:    _OracleService_ListMyConciergeThreads_Handler,
+		},
+		{
+			MethodName: "GetConciergeThread",
+			Handler:    _OracleService_GetConciergeThread_Handler,
+		},
+		{
+			MethodName: "PostConciergeMessage",
+			Handler:    _OracleService_PostConciergeMessage_Handler,
+		},
+		{
+			MethodName: "ListAnthologyArticles",
+			Handler:    _OracleService_ListAnthologyArticles_Handler,
+		},
+		{
+			MethodName: "GetAnthologyArticle",
+			Handler:    _OracleService_GetAnthologyArticle_Handler,
+		},
+		{
+			MethodName: "CreateBriefShare",
+			Handler:    _OracleService_CreateBriefShare_Handler,
+		},
+		{
+			MethodName: "ListMyBriefShares",
+			Handler:    _OracleService_ListMyBriefShares_Handler,
+		},
+		{
+			MethodName: "RevokeBriefShare",
+			Handler:    _OracleService_RevokeBriefShare_Handler,
+		},
+		{
+			MethodName: "GetTodayBriefing",
+			Handler:    _OracleService_GetTodayBriefing_Handler,
+		},
+		{
+			MethodName: "CreateTrigger",
+			Handler:    _OracleService_CreateTrigger_Handler,
+		},
+		{
+			MethodName: "ListMyTriggers",
+			Handler:    _OracleService_ListMyTriggers_Handler,
+		},
+		{
+			MethodName: "DeleteTrigger",
+			Handler:    _OracleService_DeleteTrigger_Handler,
+		},
+		{
+			MethodName: "GetInbox",
+			Handler:    _OracleService_GetInbox_Handler,
+		},
+		{
+			MethodName: "CreateDocument",
+			Handler:    _OracleService_CreateDocument_Handler,
+		},
+		{
+			MethodName: "ListMyDocuments",
+			Handler:    _OracleService_ListMyDocuments_Handler,
+		},
+		{
+			MethodName: "GetDocument",
+			Handler:    _OracleService_GetDocument_Handler,
+		},
+		{
+			MethodName: "UpdateDocument",
+			Handler:    _OracleService_UpdateDocument_Handler,
+		},
+		{
+			MethodName: "DeleteDocument",
+			Handler:    _OracleService_DeleteDocument_Handler,
+		},
+		{
+			MethodName: "DraftDocument",
+			Handler:    _OracleService_DraftDocument_Handler,
 		},
 		{
 			MethodName: "GetOracleStats",

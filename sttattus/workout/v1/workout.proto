@@ -1325,9 +1325,9 @@ message GetRecoveryScoreResponse {
   // top sets." / "Deload: cut volume 30%.").
   string recommendation = 4;
   // Component breakdown (each 0-100, -1 when the input is unavailable).
-  int32 load_component = 5;    // from acute:chronic ratio
-  int32 streak_component = 6;  // from training-day momentum
-  int32 apex_component = 7;    // from the Apex cross-pillar readiness signal
+  int32 load_component = 5; // from acute:chronic ratio
+  int32 streak_component = 6; // from training-day momentum
+  int32 apex_component = 7; // from the Apex cross-pillar readiness signal
   // True when the Apex readiness signal fed the score.
   bool apex_linked = 8;
 }

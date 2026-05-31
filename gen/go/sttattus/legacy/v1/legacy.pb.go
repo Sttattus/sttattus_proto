@@ -2136,6 +2136,4750 @@ func (*DeleteRecoveryShareResponse) Descriptor() ([]byte, []int) {
 	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{36}
 }
 
+type ReadinessComponent struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"` // 'will' | 'directive' | 'poa' | 'deeds' | 'recovery' | 'encryption'
+	Label         string                 `protobuf:"bytes,2,opt,name=label,proto3" json:"label,omitempty"`
+	Complete      bool                   `protobuf:"varint,3,opt,name=complete,proto3" json:"complete,omitempty"`
+	Weight        int32                  `protobuf:"varint,4,opt,name=weight,proto3" json:"weight,omitempty"` // points contributed when complete
+	Detail        string                 `protobuf:"bytes,5,opt,name=detail,proto3" json:"detail,omitempty"`  // short human hint
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReadinessComponent) Reset() {
+	*x = ReadinessComponent{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[37]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReadinessComponent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReadinessComponent) ProtoMessage() {}
+
+func (x *ReadinessComponent) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[37]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReadinessComponent.ProtoReflect.Descriptor instead.
+func (*ReadinessComponent) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *ReadinessComponent) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *ReadinessComponent) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *ReadinessComponent) GetComplete() bool {
+	if x != nil {
+		return x.Complete
+	}
+	return false
+}
+
+func (x *ReadinessComponent) GetWeight() int32 {
+	if x != nil {
+		return x.Weight
+	}
+	return 0
+}
+
+func (x *ReadinessComponent) GetDetail() string {
+	if x != nil {
+		return x.Detail
+	}
+	return ""
+}
+
+type EstateReadiness struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Score         int32                  `protobuf:"varint,1,opt,name=score,proto3" json:"score,omitempty"` // 0-100
+	Band          string                 `protobuf:"bytes,2,opt,name=band,proto3" json:"band,omitempty"`    // 'Exposed' | 'Forming' | 'Protected' | 'Sovereign'
+	Components    []*ReadinessComponent  `protobuf:"bytes,3,rep,name=components,proto3" json:"components,omitempty"`
+	NextAction    string                 `protobuf:"bytes,4,opt,name=next_action,json=nextAction,proto3" json:"next_action,omitempty"` // highest-value incomplete step
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EstateReadiness) Reset() {
+	*x = EstateReadiness{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[38]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EstateReadiness) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EstateReadiness) ProtoMessage() {}
+
+func (x *EstateReadiness) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[38]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EstateReadiness.ProtoReflect.Descriptor instead.
+func (*EstateReadiness) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *EstateReadiness) GetScore() int32 {
+	if x != nil {
+		return x.Score
+	}
+	return 0
+}
+
+func (x *EstateReadiness) GetBand() string {
+	if x != nil {
+		return x.Band
+	}
+	return ""
+}
+
+func (x *EstateReadiness) GetComponents() []*ReadinessComponent {
+	if x != nil {
+		return x.Components
+	}
+	return nil
+}
+
+func (x *EstateReadiness) GetNextAction() string {
+	if x != nil {
+		return x.NextAction
+	}
+	return ""
+}
+
+type GetEstateReadinessRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetEstateReadinessRequest) Reset() {
+	*x = GetEstateReadinessRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[39]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEstateReadinessRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEstateReadinessRequest) ProtoMessage() {}
+
+func (x *GetEstateReadinessRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[39]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEstateReadinessRequest.ProtoReflect.Descriptor instead.
+func (*GetEstateReadinessRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{39}
+}
+
+type GetEstateReadinessResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Readiness     *EstateReadiness       `protobuf:"bytes,1,opt,name=readiness,proto3" json:"readiness,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetEstateReadinessResponse) Reset() {
+	*x = GetEstateReadinessResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[40]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEstateReadinessResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEstateReadinessResponse) ProtoMessage() {}
+
+func (x *GetEstateReadinessResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[40]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEstateReadinessResponse.ProtoReflect.Descriptor instead.
+func (*GetEstateReadinessResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *GetEstateReadinessResponse) GetReadiness() *EstateReadiness {
+	if x != nil {
+		return x.Readiness
+	}
+	return nil
+}
+
+type Beneficiary struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	FullName      string                 `protobuf:"bytes,2,opt,name=full_name,json=fullName,proto3" json:"full_name,omitempty"`
+	Relationship  string                 `protobuf:"bytes,3,opt,name=relationship,proto3" json:"relationship,omitempty"`
+	Email         string                 `protobuf:"bytes,4,opt,name=email,proto3" json:"email,omitempty"`
+	SharePct      float64                `protobuf:"fixed64,5,opt,name=share_pct,json=sharePct,proto3" json:"share_pct,omitempty"`
+	Notes         string                 `protobuf:"bytes,6,opt,name=notes,proto3" json:"notes,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,7,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Beneficiary) Reset() {
+	*x = Beneficiary{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[41]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Beneficiary) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Beneficiary) ProtoMessage() {}
+
+func (x *Beneficiary) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[41]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Beneficiary.ProtoReflect.Descriptor instead.
+func (*Beneficiary) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *Beneficiary) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Beneficiary) GetFullName() string {
+	if x != nil {
+		return x.FullName
+	}
+	return ""
+}
+
+func (x *Beneficiary) GetRelationship() string {
+	if x != nil {
+		return x.Relationship
+	}
+	return ""
+}
+
+func (x *Beneficiary) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+func (x *Beneficiary) GetSharePct() float64 {
+	if x != nil {
+		return x.SharePct
+	}
+	return 0
+}
+
+func (x *Beneficiary) GetNotes() string {
+	if x != nil {
+		return x.Notes
+	}
+	return ""
+}
+
+func (x *Beneficiary) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type ListMyBeneficiariesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyBeneficiariesRequest) Reset() {
+	*x = ListMyBeneficiariesRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[42]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyBeneficiariesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyBeneficiariesRequest) ProtoMessage() {}
+
+func (x *ListMyBeneficiariesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[42]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyBeneficiariesRequest.ProtoReflect.Descriptor instead.
+func (*ListMyBeneficiariesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{42}
+}
+
+type ListMyBeneficiariesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Beneficiaries []*Beneficiary         `protobuf:"bytes,1,rep,name=beneficiaries,proto3" json:"beneficiaries,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyBeneficiariesResponse) Reset() {
+	*x = ListMyBeneficiariesResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[43]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyBeneficiariesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyBeneficiariesResponse) ProtoMessage() {}
+
+func (x *ListMyBeneficiariesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[43]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyBeneficiariesResponse.ProtoReflect.Descriptor instead.
+func (*ListMyBeneficiariesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *ListMyBeneficiariesResponse) GetBeneficiaries() []*Beneficiary {
+	if x != nil {
+		return x.Beneficiaries
+	}
+	return nil
+}
+
+type AddBeneficiaryRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FullName      string                 `protobuf:"bytes,1,opt,name=full_name,json=fullName,proto3" json:"full_name,omitempty"`
+	Relationship  string                 `protobuf:"bytes,2,opt,name=relationship,proto3" json:"relationship,omitempty"`
+	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	SharePct      float64                `protobuf:"fixed64,4,opt,name=share_pct,json=sharePct,proto3" json:"share_pct,omitempty"`
+	Notes         string                 `protobuf:"bytes,5,opt,name=notes,proto3" json:"notes,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddBeneficiaryRequest) Reset() {
+	*x = AddBeneficiaryRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[44]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddBeneficiaryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddBeneficiaryRequest) ProtoMessage() {}
+
+func (x *AddBeneficiaryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[44]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddBeneficiaryRequest.ProtoReflect.Descriptor instead.
+func (*AddBeneficiaryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{44}
+}
+
+func (x *AddBeneficiaryRequest) GetFullName() string {
+	if x != nil {
+		return x.FullName
+	}
+	return ""
+}
+
+func (x *AddBeneficiaryRequest) GetRelationship() string {
+	if x != nil {
+		return x.Relationship
+	}
+	return ""
+}
+
+func (x *AddBeneficiaryRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+func (x *AddBeneficiaryRequest) GetSharePct() float64 {
+	if x != nil {
+		return x.SharePct
+	}
+	return 0
+}
+
+func (x *AddBeneficiaryRequest) GetNotes() string {
+	if x != nil {
+		return x.Notes
+	}
+	return ""
+}
+
+type AddBeneficiaryResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Beneficiary   *Beneficiary           `protobuf:"bytes,1,opt,name=beneficiary,proto3" json:"beneficiary,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddBeneficiaryResponse) Reset() {
+	*x = AddBeneficiaryResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[45]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddBeneficiaryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddBeneficiaryResponse) ProtoMessage() {}
+
+func (x *AddBeneficiaryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[45]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddBeneficiaryResponse.ProtoReflect.Descriptor instead.
+func (*AddBeneficiaryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{45}
+}
+
+func (x *AddBeneficiaryResponse) GetBeneficiary() *Beneficiary {
+	if x != nil {
+		return x.Beneficiary
+	}
+	return nil
+}
+
+type RemoveBeneficiaryRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	BeneficiaryId string                 `protobuf:"bytes,1,opt,name=beneficiary_id,json=beneficiaryId,proto3" json:"beneficiary_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemoveBeneficiaryRequest) Reset() {
+	*x = RemoveBeneficiaryRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[46]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveBeneficiaryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveBeneficiaryRequest) ProtoMessage() {}
+
+func (x *RemoveBeneficiaryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[46]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveBeneficiaryRequest.ProtoReflect.Descriptor instead.
+func (*RemoveBeneficiaryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{46}
+}
+
+func (x *RemoveBeneficiaryRequest) GetBeneficiaryId() string {
+	if x != nil {
+		return x.BeneficiaryId
+	}
+	return ""
+}
+
+type RemoveBeneficiaryResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemoveBeneficiaryResponse) Reset() {
+	*x = RemoveBeneficiaryResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[47]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveBeneficiaryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveBeneficiaryResponse) ProtoMessage() {}
+
+func (x *RemoveBeneficiaryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[47]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveBeneficiaryResponse.ProtoReflect.Descriptor instead.
+func (*RemoveBeneficiaryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{47}
+}
+
+type DeadManSwitch struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Enabled            bool                   `protobuf:"varint,1,opt,name=enabled,proto3" json:"enabled,omitempty"`
+	CadenceDays        int32                  `protobuf:"varint,2,opt,name=cadence_days,json=cadenceDays,proto3" json:"cadence_days,omitempty"`
+	ThresholdM         int32                  `protobuf:"varint,3,opt,name=threshold_m,json=thresholdM,proto3" json:"threshold_m,omitempty"` // m-of-n unlock threshold
+	SharesN            int32                  `protobuf:"varint,4,opt,name=shares_n,json=sharesN,proto3" json:"shares_n,omitempty"`
+	Status             string                 `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"` // 'disarmed' | 'armed' | 'overdue' | 'triggered'
+	LastCheckinUnix    int64                  `protobuf:"varint,6,opt,name=last_checkin_unix,json=lastCheckinUnix,proto3" json:"last_checkin_unix,omitempty"`
+	NextCheckinUnix    int64                  `protobuf:"varint,7,opt,name=next_checkin_unix,json=nextCheckinUnix,proto3" json:"next_checkin_unix,omitempty"`
+	TrusteesConfigured int32                  `protobuf:"varint,8,opt,name=trustees_configured,json=trusteesConfigured,proto3" json:"trustees_configured,omitempty"` // count of stored recovery shares
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *DeadManSwitch) Reset() {
+	*x = DeadManSwitch{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[48]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeadManSwitch) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeadManSwitch) ProtoMessage() {}
+
+func (x *DeadManSwitch) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[48]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeadManSwitch.ProtoReflect.Descriptor instead.
+func (*DeadManSwitch) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{48}
+}
+
+func (x *DeadManSwitch) GetEnabled() bool {
+	if x != nil {
+		return x.Enabled
+	}
+	return false
+}
+
+func (x *DeadManSwitch) GetCadenceDays() int32 {
+	if x != nil {
+		return x.CadenceDays
+	}
+	return 0
+}
+
+func (x *DeadManSwitch) GetThresholdM() int32 {
+	if x != nil {
+		return x.ThresholdM
+	}
+	return 0
+}
+
+func (x *DeadManSwitch) GetSharesN() int32 {
+	if x != nil {
+		return x.SharesN
+	}
+	return 0
+}
+
+func (x *DeadManSwitch) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *DeadManSwitch) GetLastCheckinUnix() int64 {
+	if x != nil {
+		return x.LastCheckinUnix
+	}
+	return 0
+}
+
+func (x *DeadManSwitch) GetNextCheckinUnix() int64 {
+	if x != nil {
+		return x.NextCheckinUnix
+	}
+	return 0
+}
+
+func (x *DeadManSwitch) GetTrusteesConfigured() int32 {
+	if x != nil {
+		return x.TrusteesConfigured
+	}
+	return 0
+}
+
+type GetDeadManSwitchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDeadManSwitchRequest) Reset() {
+	*x = GetDeadManSwitchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[49]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDeadManSwitchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDeadManSwitchRequest) ProtoMessage() {}
+
+func (x *GetDeadManSwitchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[49]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDeadManSwitchRequest.ProtoReflect.Descriptor instead.
+func (*GetDeadManSwitchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{49}
+}
+
+type GetDeadManSwitchResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	State         *DeadManSwitch         `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDeadManSwitchResponse) Reset() {
+	*x = GetDeadManSwitchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[50]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDeadManSwitchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDeadManSwitchResponse) ProtoMessage() {}
+
+func (x *GetDeadManSwitchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[50]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDeadManSwitchResponse.ProtoReflect.Descriptor instead.
+func (*GetDeadManSwitchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{50}
+}
+
+func (x *GetDeadManSwitchResponse) GetState() *DeadManSwitch {
+	if x != nil {
+		return x.State
+	}
+	return nil
+}
+
+type ConfigureDeadManSwitchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Enabled       bool                   `protobuf:"varint,1,opt,name=enabled,proto3" json:"enabled,omitempty"`
+	CadenceDays   int32                  `protobuf:"varint,2,opt,name=cadence_days,json=cadenceDays,proto3" json:"cadence_days,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfigureDeadManSwitchRequest) Reset() {
+	*x = ConfigureDeadManSwitchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[51]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigureDeadManSwitchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigureDeadManSwitchRequest) ProtoMessage() {}
+
+func (x *ConfigureDeadManSwitchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[51]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigureDeadManSwitchRequest.ProtoReflect.Descriptor instead.
+func (*ConfigureDeadManSwitchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{51}
+}
+
+func (x *ConfigureDeadManSwitchRequest) GetEnabled() bool {
+	if x != nil {
+		return x.Enabled
+	}
+	return false
+}
+
+func (x *ConfigureDeadManSwitchRequest) GetCadenceDays() int32 {
+	if x != nil {
+		return x.CadenceDays
+	}
+	return 0
+}
+
+type ConfigureDeadManSwitchResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	State         *DeadManSwitch         `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfigureDeadManSwitchResponse) Reset() {
+	*x = ConfigureDeadManSwitchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[52]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigureDeadManSwitchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigureDeadManSwitchResponse) ProtoMessage() {}
+
+func (x *ConfigureDeadManSwitchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[52]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigureDeadManSwitchResponse.ProtoReflect.Descriptor instead.
+func (*ConfigureDeadManSwitchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{52}
+}
+
+func (x *ConfigureDeadManSwitchResponse) GetState() *DeadManSwitch {
+	if x != nil {
+		return x.State
+	}
+	return nil
+}
+
+type CheckInDeadManSwitchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CheckInDeadManSwitchRequest) Reset() {
+	*x = CheckInDeadManSwitchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[53]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CheckInDeadManSwitchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CheckInDeadManSwitchRequest) ProtoMessage() {}
+
+func (x *CheckInDeadManSwitchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[53]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CheckInDeadManSwitchRequest.ProtoReflect.Descriptor instead.
+func (*CheckInDeadManSwitchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{53}
+}
+
+type CheckInDeadManSwitchResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	State         *DeadManSwitch         `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CheckInDeadManSwitchResponse) Reset() {
+	*x = CheckInDeadManSwitchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[54]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CheckInDeadManSwitchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CheckInDeadManSwitchResponse) ProtoMessage() {}
+
+func (x *CheckInDeadManSwitchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[54]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CheckInDeadManSwitchResponse.ProtoReflect.Descriptor instead.
+func (*CheckInDeadManSwitchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{54}
+}
+
+func (x *CheckInDeadManSwitchResponse) GetState() *DeadManSwitch {
+	if x != nil {
+		return x.State
+	}
+	return nil
+}
+
+type Anchor struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	AssetId        string                 `protobuf:"bytes,2,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
+	Label          string                 `protobuf:"bytes,3,opt,name=label,proto3" json:"label,omitempty"`
+	ContentHash    string                 `protobuf:"bytes,4,opt,name=content_hash,json=contentHash,proto3" json:"content_hash,omitempty"`
+	Algorithm      string                 `protobuf:"bytes,5,opt,name=algorithm,proto3" json:"algorithm,omitempty"`
+	Chain          string                 `protobuf:"bytes,6,opt,name=chain,proto3" json:"chain,omitempty"`
+	Proof          string                 `protobuf:"bytes,7,opt,name=proof,proto3" json:"proof,omitempty"`
+	Status         string                 `protobuf:"bytes,8,opt,name=status,proto3" json:"status,omitempty"`
+	AnchoredAtUnix int64                  `protobuf:"varint,9,opt,name=anchored_at_unix,json=anchoredAtUnix,proto3" json:"anchored_at_unix,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *Anchor) Reset() {
+	*x = Anchor{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[55]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Anchor) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Anchor) ProtoMessage() {}
+
+func (x *Anchor) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[55]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Anchor.ProtoReflect.Descriptor instead.
+func (*Anchor) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{55}
+}
+
+func (x *Anchor) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Anchor) GetAssetId() string {
+	if x != nil {
+		return x.AssetId
+	}
+	return ""
+}
+
+func (x *Anchor) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *Anchor) GetContentHash() string {
+	if x != nil {
+		return x.ContentHash
+	}
+	return ""
+}
+
+func (x *Anchor) GetAlgorithm() string {
+	if x != nil {
+		return x.Algorithm
+	}
+	return ""
+}
+
+func (x *Anchor) GetChain() string {
+	if x != nil {
+		return x.Chain
+	}
+	return ""
+}
+
+func (x *Anchor) GetProof() string {
+	if x != nil {
+		return x.Proof
+	}
+	return ""
+}
+
+func (x *Anchor) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *Anchor) GetAnchoredAtUnix() int64 {
+	if x != nil {
+		return x.AnchoredAtUnix
+	}
+	return 0
+}
+
+type CreateAnchorRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AssetId       string                 `protobuf:"bytes,1,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"` // optional
+	Label         string                 `protobuf:"bytes,2,opt,name=label,proto3" json:"label,omitempty"`
+	ContentHash   string                 `protobuf:"bytes,3,opt,name=content_hash,json=contentHash,proto3" json:"content_hash,omitempty"` // hex sha256 from the client (preferred)
+	Content       []byte                 `protobuf:"bytes,4,opt,name=content,proto3" json:"content,omitempty"`                            // OR raw bytes — server hashes when content_hash empty
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateAnchorRequest) Reset() {
+	*x = CreateAnchorRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[56]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateAnchorRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateAnchorRequest) ProtoMessage() {}
+
+func (x *CreateAnchorRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[56]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateAnchorRequest.ProtoReflect.Descriptor instead.
+func (*CreateAnchorRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{56}
+}
+
+func (x *CreateAnchorRequest) GetAssetId() string {
+	if x != nil {
+		return x.AssetId
+	}
+	return ""
+}
+
+func (x *CreateAnchorRequest) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *CreateAnchorRequest) GetContentHash() string {
+	if x != nil {
+		return x.ContentHash
+	}
+	return ""
+}
+
+func (x *CreateAnchorRequest) GetContent() []byte {
+	if x != nil {
+		return x.Content
+	}
+	return nil
+}
+
+type CreateAnchorResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Anchor        *Anchor                `protobuf:"bytes,1,opt,name=anchor,proto3" json:"anchor,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateAnchorResponse) Reset() {
+	*x = CreateAnchorResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[57]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateAnchorResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateAnchorResponse) ProtoMessage() {}
+
+func (x *CreateAnchorResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[57]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateAnchorResponse.ProtoReflect.Descriptor instead.
+func (*CreateAnchorResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{57}
+}
+
+func (x *CreateAnchorResponse) GetAnchor() *Anchor {
+	if x != nil {
+		return x.Anchor
+	}
+	return nil
+}
+
+type ListMyAnchorsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyAnchorsRequest) Reset() {
+	*x = ListMyAnchorsRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[58]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyAnchorsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyAnchorsRequest) ProtoMessage() {}
+
+func (x *ListMyAnchorsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[58]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyAnchorsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyAnchorsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{58}
+}
+
+type ListMyAnchorsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Anchors       []*Anchor              `protobuf:"bytes,1,rep,name=anchors,proto3" json:"anchors,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyAnchorsResponse) Reset() {
+	*x = ListMyAnchorsResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[59]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyAnchorsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyAnchorsResponse) ProtoMessage() {}
+
+func (x *ListMyAnchorsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[59]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyAnchorsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyAnchorsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{59}
+}
+
+func (x *ListMyAnchorsResponse) GetAnchors() []*Anchor {
+	if x != nil {
+		return x.Anchors
+	}
+	return nil
+}
+
+type Lawyer struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name           string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Firm           string                 `protobuf:"bytes,3,opt,name=firm,proto3" json:"firm,omitempty"`
+	Jurisdiction   string                 `protobuf:"bytes,4,opt,name=jurisdiction,proto3" json:"jurisdiction,omitempty"`
+	Specialties    []string               `protobuf:"bytes,5,rep,name=specialties,proto3" json:"specialties,omitempty"`
+	Bio            string                 `protobuf:"bytes,6,opt,name=bio,proto3" json:"bio,omitempty"`
+	PhotoUrl       string                 `protobuf:"bytes,7,opt,name=photo_url,json=photoUrl,proto3" json:"photo_url,omitempty"`
+	SovereignOnly  bool                   `protobuf:"varint,8,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	MemberRateNote string                 `protobuf:"bytes,9,opt,name=member_rate_note,json=memberRateNote,proto3" json:"member_rate_note,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *Lawyer) Reset() {
+	*x = Lawyer{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[60]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Lawyer) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Lawyer) ProtoMessage() {}
+
+func (x *Lawyer) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[60]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Lawyer.ProtoReflect.Descriptor instead.
+func (*Lawyer) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{60}
+}
+
+func (x *Lawyer) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Lawyer) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Lawyer) GetFirm() string {
+	if x != nil {
+		return x.Firm
+	}
+	return ""
+}
+
+func (x *Lawyer) GetJurisdiction() string {
+	if x != nil {
+		return x.Jurisdiction
+	}
+	return ""
+}
+
+func (x *Lawyer) GetSpecialties() []string {
+	if x != nil {
+		return x.Specialties
+	}
+	return nil
+}
+
+func (x *Lawyer) GetBio() string {
+	if x != nil {
+		return x.Bio
+	}
+	return ""
+}
+
+func (x *Lawyer) GetPhotoUrl() string {
+	if x != nil {
+		return x.PhotoUrl
+	}
+	return ""
+}
+
+func (x *Lawyer) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+func (x *Lawyer) GetMemberRateNote() string {
+	if x != nil {
+		return x.MemberRateNote
+	}
+	return ""
+}
+
+type ListLawyersRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Jurisdiction  string                 `protobuf:"bytes,1,opt,name=jurisdiction,proto3" json:"jurisdiction,omitempty"` // optional filter
+	Specialty     string                 `protobuf:"bytes,2,opt,name=specialty,proto3" json:"specialty,omitempty"`       // optional filter
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLawyersRequest) Reset() {
+	*x = ListLawyersRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[61]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLawyersRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLawyersRequest) ProtoMessage() {}
+
+func (x *ListLawyersRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[61]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLawyersRequest.ProtoReflect.Descriptor instead.
+func (*ListLawyersRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{61}
+}
+
+func (x *ListLawyersRequest) GetJurisdiction() string {
+	if x != nil {
+		return x.Jurisdiction
+	}
+	return ""
+}
+
+func (x *ListLawyersRequest) GetSpecialty() string {
+	if x != nil {
+		return x.Specialty
+	}
+	return ""
+}
+
+type ListLawyersResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Lawyers       []*Lawyer              `protobuf:"bytes,1,rep,name=lawyers,proto3" json:"lawyers,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListLawyersResponse) Reset() {
+	*x = ListLawyersResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[62]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListLawyersResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListLawyersResponse) ProtoMessage() {}
+
+func (x *ListLawyersResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[62]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListLawyersResponse.ProtoReflect.Descriptor instead.
+func (*ListLawyersResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{62}
+}
+
+func (x *ListLawyersResponse) GetLawyers() []*Lawyer {
+	if x != nil {
+		return x.Lawyers
+	}
+	return nil
+}
+
+type Notary struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Jurisdiction  string                 `protobuf:"bytes,3,opt,name=jurisdiction,proto3" json:"jurisdiction,omitempty"`
+	Mode          string                 `protobuf:"bytes,4,opt,name=mode,proto3" json:"mode,omitempty"` // 'online' | 'in_person'
+	Address       string                 `protobuf:"bytes,5,opt,name=address,proto3" json:"address,omitempty"`
+	Bio           string                 `protobuf:"bytes,6,opt,name=bio,proto3" json:"bio,omitempty"`
+	PhotoUrl      string                 `protobuf:"bytes,7,opt,name=photo_url,json=photoUrl,proto3" json:"photo_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Notary) Reset() {
+	*x = Notary{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[63]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Notary) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Notary) ProtoMessage() {}
+
+func (x *Notary) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[63]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Notary.ProtoReflect.Descriptor instead.
+func (*Notary) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{63}
+}
+
+func (x *Notary) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Notary) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Notary) GetJurisdiction() string {
+	if x != nil {
+		return x.Jurisdiction
+	}
+	return ""
+}
+
+func (x *Notary) GetMode() string {
+	if x != nil {
+		return x.Mode
+	}
+	return ""
+}
+
+func (x *Notary) GetAddress() string {
+	if x != nil {
+		return x.Address
+	}
+	return ""
+}
+
+func (x *Notary) GetBio() string {
+	if x != nil {
+		return x.Bio
+	}
+	return ""
+}
+
+func (x *Notary) GetPhotoUrl() string {
+	if x != nil {
+		return x.PhotoUrl
+	}
+	return ""
+}
+
+type ListNotariesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Jurisdiction  string                 `protobuf:"bytes,1,opt,name=jurisdiction,proto3" json:"jurisdiction,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListNotariesRequest) Reset() {
+	*x = ListNotariesRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[64]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListNotariesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListNotariesRequest) ProtoMessage() {}
+
+func (x *ListNotariesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[64]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListNotariesRequest.ProtoReflect.Descriptor instead.
+func (*ListNotariesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{64}
+}
+
+func (x *ListNotariesRequest) GetJurisdiction() string {
+	if x != nil {
+		return x.Jurisdiction
+	}
+	return ""
+}
+
+type ListNotariesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Notaries      []*Notary              `protobuf:"bytes,1,rep,name=notaries,proto3" json:"notaries,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListNotariesResponse) Reset() {
+	*x = ListNotariesResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[65]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListNotariesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListNotariesResponse) ProtoMessage() {}
+
+func (x *ListNotariesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[65]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListNotariesResponse.ProtoReflect.Descriptor instead.
+func (*ListNotariesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{65}
+}
+
+func (x *ListNotariesResponse) GetNotaries() []*Notary {
+	if x != nil {
+		return x.Notaries
+	}
+	return nil
+}
+
+type TemplateField struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Label         string                 `protobuf:"bytes,2,opt,name=label,proto3" json:"label,omitempty"`
+	Kind          string                 `protobuf:"bytes,3,opt,name=kind,proto3" json:"kind,omitempty"` // 'text' | 'multiline' | 'date' | 'number'
+	Required      bool                   `protobuf:"varint,4,opt,name=required,proto3" json:"required,omitempty"`
+	Placeholder   string                 `protobuf:"bytes,5,opt,name=placeholder,proto3" json:"placeholder,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TemplateField) Reset() {
+	*x = TemplateField{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[66]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TemplateField) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TemplateField) ProtoMessage() {}
+
+func (x *TemplateField) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[66]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TemplateField.ProtoReflect.Descriptor instead.
+func (*TemplateField) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{66}
+}
+
+func (x *TemplateField) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TemplateField) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *TemplateField) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *TemplateField) GetRequired() bool {
+	if x != nil {
+		return x.Required
+	}
+	return false
+}
+
+func (x *TemplateField) GetPlaceholder() string {
+	if x != nil {
+		return x.Placeholder
+	}
+	return ""
+}
+
+type DocumentTemplate struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug          string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	DocType       string                 `protobuf:"bytes,3,opt,name=doc_type,json=docType,proto3" json:"doc_type,omitempty"` // 'will' | 'trust' | 'directive' | 'poa'
+	Jurisdiction  string                 `protobuf:"bytes,4,opt,name=jurisdiction,proto3" json:"jurisdiction,omitempty"`
+	Title         string                 `protobuf:"bytes,5,opt,name=title,proto3" json:"title,omitempty"`
+	Summary       string                 `protobuf:"bytes,6,opt,name=summary,proto3" json:"summary,omitempty"`
+	Fields        []*TemplateField       `protobuf:"bytes,7,rep,name=fields,proto3" json:"fields,omitempty"`
+	SovereignOnly bool                   `protobuf:"varint,8,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DocumentTemplate) Reset() {
+	*x = DocumentTemplate{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[67]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DocumentTemplate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DocumentTemplate) ProtoMessage() {}
+
+func (x *DocumentTemplate) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[67]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DocumentTemplate.ProtoReflect.Descriptor instead.
+func (*DocumentTemplate) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{67}
+}
+
+func (x *DocumentTemplate) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DocumentTemplate) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *DocumentTemplate) GetDocType() string {
+	if x != nil {
+		return x.DocType
+	}
+	return ""
+}
+
+func (x *DocumentTemplate) GetJurisdiction() string {
+	if x != nil {
+		return x.Jurisdiction
+	}
+	return ""
+}
+
+func (x *DocumentTemplate) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *DocumentTemplate) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *DocumentTemplate) GetFields() []*TemplateField {
+	if x != nil {
+		return x.Fields
+	}
+	return nil
+}
+
+func (x *DocumentTemplate) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+type ListTemplatesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	DocType       string                 `protobuf:"bytes,1,opt,name=doc_type,json=docType,proto3" json:"doc_type,omitempty"` // optional
+	Jurisdiction  string                 `protobuf:"bytes,2,opt,name=jurisdiction,proto3" json:"jurisdiction,omitempty"`      // optional
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListTemplatesRequest) Reset() {
+	*x = ListTemplatesRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[68]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListTemplatesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListTemplatesRequest) ProtoMessage() {}
+
+func (x *ListTemplatesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[68]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListTemplatesRequest.ProtoReflect.Descriptor instead.
+func (*ListTemplatesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *ListTemplatesRequest) GetDocType() string {
+	if x != nil {
+		return x.DocType
+	}
+	return ""
+}
+
+func (x *ListTemplatesRequest) GetJurisdiction() string {
+	if x != nil {
+		return x.Jurisdiction
+	}
+	return ""
+}
+
+type ListTemplatesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Templates     []*DocumentTemplate    `protobuf:"bytes,1,rep,name=templates,proto3" json:"templates,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListTemplatesResponse) Reset() {
+	*x = ListTemplatesResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[69]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListTemplatesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListTemplatesResponse) ProtoMessage() {}
+
+func (x *ListTemplatesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[69]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListTemplatesResponse.ProtoReflect.Descriptor instead.
+func (*ListTemplatesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{69}
+}
+
+func (x *ListTemplatesResponse) GetTemplates() []*DocumentTemplate {
+	if x != nil {
+		return x.Templates
+	}
+	return nil
+}
+
+type GetTemplateRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TemplateId    string                 `protobuf:"bytes,1,opt,name=template_id,json=templateId,proto3" json:"template_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTemplateRequest) Reset() {
+	*x = GetTemplateRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[70]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTemplateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTemplateRequest) ProtoMessage() {}
+
+func (x *GetTemplateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[70]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTemplateRequest.ProtoReflect.Descriptor instead.
+func (*GetTemplateRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *GetTemplateRequest) GetTemplateId() string {
+	if x != nil {
+		return x.TemplateId
+	}
+	return ""
+}
+
+type GetTemplateResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Template      *DocumentTemplate      `protobuf:"bytes,1,opt,name=template,proto3" json:"template,omitempty"`
+	BodyTemplate  string                 `protobuf:"bytes,2,opt,name=body_template,json=bodyTemplate,proto3" json:"body_template,omitempty"` // raw with {{placeholders}}
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTemplateResponse) Reset() {
+	*x = GetTemplateResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[71]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTemplateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTemplateResponse) ProtoMessage() {}
+
+func (x *GetTemplateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[71]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTemplateResponse.ProtoReflect.Descriptor instead.
+func (*GetTemplateResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *GetTemplateResponse) GetTemplate() *DocumentTemplate {
+	if x != nil {
+		return x.Template
+	}
+	return nil
+}
+
+func (x *GetTemplateResponse) GetBodyTemplate() string {
+	if x != nil {
+		return x.BodyTemplate
+	}
+	return ""
+}
+
+type GeneratedDocument struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	TemplateId    string                 `protobuf:"bytes,2,opt,name=template_id,json=templateId,proto3" json:"template_id,omitempty"`
+	DocType       string                 `protobuf:"bytes,3,opt,name=doc_type,json=docType,proto3" json:"doc_type,omitempty"`
+	Jurisdiction  string                 `protobuf:"bytes,4,opt,name=jurisdiction,proto3" json:"jurisdiction,omitempty"`
+	Title         string                 `protobuf:"bytes,5,opt,name=title,proto3" json:"title,omitempty"`
+	RenderedText  string                 `protobuf:"bytes,6,opt,name=rendered_text,json=renderedText,proto3" json:"rendered_text,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,7,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GeneratedDocument) Reset() {
+	*x = GeneratedDocument{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[72]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GeneratedDocument) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GeneratedDocument) ProtoMessage() {}
+
+func (x *GeneratedDocument) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[72]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GeneratedDocument.ProtoReflect.Descriptor instead.
+func (*GeneratedDocument) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{72}
+}
+
+func (x *GeneratedDocument) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *GeneratedDocument) GetTemplateId() string {
+	if x != nil {
+		return x.TemplateId
+	}
+	return ""
+}
+
+func (x *GeneratedDocument) GetDocType() string {
+	if x != nil {
+		return x.DocType
+	}
+	return ""
+}
+
+func (x *GeneratedDocument) GetJurisdiction() string {
+	if x != nil {
+		return x.Jurisdiction
+	}
+	return ""
+}
+
+func (x *GeneratedDocument) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *GeneratedDocument) GetRenderedText() string {
+	if x != nil {
+		return x.RenderedText
+	}
+	return ""
+}
+
+func (x *GeneratedDocument) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type GenerateDocumentRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TemplateId    string                 `protobuf:"bytes,1,opt,name=template_id,json=templateId,proto3" json:"template_id,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Values        map[string]string      `protobuf:"bytes,3,rep,name=values,proto3" json:"values,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateDocumentRequest) Reset() {
+	*x = GenerateDocumentRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[73]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateDocumentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateDocumentRequest) ProtoMessage() {}
+
+func (x *GenerateDocumentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[73]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateDocumentRequest.ProtoReflect.Descriptor instead.
+func (*GenerateDocumentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{73}
+}
+
+func (x *GenerateDocumentRequest) GetTemplateId() string {
+	if x != nil {
+		return x.TemplateId
+	}
+	return ""
+}
+
+func (x *GenerateDocumentRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *GenerateDocumentRequest) GetValues() map[string]string {
+	if x != nil {
+		return x.Values
+	}
+	return nil
+}
+
+type GenerateDocumentResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Document      *GeneratedDocument     `protobuf:"bytes,1,opt,name=document,proto3" json:"document,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateDocumentResponse) Reset() {
+	*x = GenerateDocumentResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[74]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateDocumentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateDocumentResponse) ProtoMessage() {}
+
+func (x *GenerateDocumentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[74]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateDocumentResponse.ProtoReflect.Descriptor instead.
+func (*GenerateDocumentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{74}
+}
+
+func (x *GenerateDocumentResponse) GetDocument() *GeneratedDocument {
+	if x != nil {
+		return x.Document
+	}
+	return nil
+}
+
+type ListMyGeneratedDocumentsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyGeneratedDocumentsRequest) Reset() {
+	*x = ListMyGeneratedDocumentsRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[75]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyGeneratedDocumentsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyGeneratedDocumentsRequest) ProtoMessage() {}
+
+func (x *ListMyGeneratedDocumentsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[75]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyGeneratedDocumentsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyGeneratedDocumentsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{75}
+}
+
+type ListMyGeneratedDocumentsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Documents     []*GeneratedDocument   `protobuf:"bytes,1,rep,name=documents,proto3" json:"documents,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyGeneratedDocumentsResponse) Reset() {
+	*x = ListMyGeneratedDocumentsResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[76]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyGeneratedDocumentsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyGeneratedDocumentsResponse) ProtoMessage() {}
+
+func (x *ListMyGeneratedDocumentsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[76]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyGeneratedDocumentsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyGeneratedDocumentsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{76}
+}
+
+func (x *ListMyGeneratedDocumentsResponse) GetDocuments() []*GeneratedDocument {
+	if x != nil {
+		return x.Documents
+	}
+	return nil
+}
+
+type Handoff struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	SourcePillar  string                 `protobuf:"bytes,2,opt,name=source_pillar,json=sourcePillar,proto3" json:"source_pillar,omitempty"` // 'vault' | 'dominion' | 'apex'
+	SourceRef     string                 `protobuf:"bytes,3,opt,name=source_ref,json=sourceRef,proto3" json:"source_ref,omitempty"`
+	Title         string                 `protobuf:"bytes,4,opt,name=title,proto3" json:"title,omitempty"`
+	Category      AssetCategory          `protobuf:"varint,5,opt,name=category,proto3,enum=sttattus.legacy.v1.AssetCategory" json:"category,omitempty"`
+	Jurisdiction  string                 `protobuf:"bytes,6,opt,name=jurisdiction,proto3" json:"jurisdiction,omitempty"`
+	ValuationUsd  float64                `protobuf:"fixed64,7,opt,name=valuation_usd,json=valuationUsd,proto3" json:"valuation_usd,omitempty"`
+	Summary       string                 `protobuf:"bytes,8,opt,name=summary,proto3" json:"summary,omitempty"`
+	Status        string                 `protobuf:"bytes,9,opt,name=status,proto3" json:"status,omitempty"` // 'pending' | 'accepted' | 'dismissed'
+	CreatedAtUnix int64                  `protobuf:"varint,10,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Handoff) Reset() {
+	*x = Handoff{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[77]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Handoff) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Handoff) ProtoMessage() {}
+
+func (x *Handoff) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[77]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Handoff.ProtoReflect.Descriptor instead.
+func (*Handoff) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{77}
+}
+
+func (x *Handoff) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Handoff) GetSourcePillar() string {
+	if x != nil {
+		return x.SourcePillar
+	}
+	return ""
+}
+
+func (x *Handoff) GetSourceRef() string {
+	if x != nil {
+		return x.SourceRef
+	}
+	return ""
+}
+
+func (x *Handoff) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *Handoff) GetCategory() AssetCategory {
+	if x != nil {
+		return x.Category
+	}
+	return AssetCategory_ASSET_CATEGORY_UNSPECIFIED
+}
+
+func (x *Handoff) GetJurisdiction() string {
+	if x != nil {
+		return x.Jurisdiction
+	}
+	return ""
+}
+
+func (x *Handoff) GetValuationUsd() float64 {
+	if x != nil {
+		return x.ValuationUsd
+	}
+	return 0
+}
+
+func (x *Handoff) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *Handoff) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *Handoff) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type ListMyHandoffsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyHandoffsRequest) Reset() {
+	*x = ListMyHandoffsRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[78]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyHandoffsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyHandoffsRequest) ProtoMessage() {}
+
+func (x *ListMyHandoffsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[78]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyHandoffsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyHandoffsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{78}
+}
+
+type ListMyHandoffsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Handoffs      []*Handoff             `protobuf:"bytes,1,rep,name=handoffs,proto3" json:"handoffs,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyHandoffsResponse) Reset() {
+	*x = ListMyHandoffsResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[79]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyHandoffsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyHandoffsResponse) ProtoMessage() {}
+
+func (x *ListMyHandoffsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[79]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyHandoffsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyHandoffsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{79}
+}
+
+func (x *ListMyHandoffsResponse) GetHandoffs() []*Handoff {
+	if x != nil {
+		return x.Handoffs
+	}
+	return nil
+}
+
+type AcceptHandoffRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	HandoffId     string                 `protobuf:"bytes,1,opt,name=handoff_id,json=handoffId,proto3" json:"handoff_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AcceptHandoffRequest) Reset() {
+	*x = AcceptHandoffRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[80]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AcceptHandoffRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AcceptHandoffRequest) ProtoMessage() {}
+
+func (x *AcceptHandoffRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[80]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AcceptHandoffRequest.ProtoReflect.Descriptor instead.
+func (*AcceptHandoffRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{80}
+}
+
+func (x *AcceptHandoffRequest) GetHandoffId() string {
+	if x != nil {
+		return x.HandoffId
+	}
+	return ""
+}
+
+type AcceptHandoffResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Asset         *LegalAsset            `protobuf:"bytes,1,opt,name=asset,proto3" json:"asset,omitempty"` // the materialised document
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AcceptHandoffResponse) Reset() {
+	*x = AcceptHandoffResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[81]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AcceptHandoffResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AcceptHandoffResponse) ProtoMessage() {}
+
+func (x *AcceptHandoffResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[81]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AcceptHandoffResponse.ProtoReflect.Descriptor instead.
+func (*AcceptHandoffResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{81}
+}
+
+func (x *AcceptHandoffResponse) GetAsset() *LegalAsset {
+	if x != nil {
+		return x.Asset
+	}
+	return nil
+}
+
+type DismissHandoffRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	HandoffId     string                 `protobuf:"bytes,1,opt,name=handoff_id,json=handoffId,proto3" json:"handoff_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DismissHandoffRequest) Reset() {
+	*x = DismissHandoffRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[82]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DismissHandoffRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DismissHandoffRequest) ProtoMessage() {}
+
+func (x *DismissHandoffRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[82]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DismissHandoffRequest.ProtoReflect.Descriptor instead.
+func (*DismissHandoffRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{82}
+}
+
+func (x *DismissHandoffRequest) GetHandoffId() string {
+	if x != nil {
+		return x.HandoffId
+	}
+	return ""
+}
+
+type DismissHandoffResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DismissHandoffResponse) Reset() {
+	*x = DismissHandoffResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[83]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DismissHandoffResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DismissHandoffResponse) ProtoMessage() {}
+
+func (x *DismissHandoffResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[83]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DismissHandoffResponse.ProtoReflect.Descriptor instead.
+func (*DismissHandoffResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{83}
+}
+
+type EstateSummary struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Readiness        *EstateReadiness       `protobuf:"bytes,1,opt,name=readiness,proto3" json:"readiness,omitempty"`
+	DocumentCount    int32                  `protobuf:"varint,2,opt,name=document_count,json=documentCount,proto3" json:"document_count,omitempty"`
+	BeneficiaryCount int32                  `protobuf:"varint,3,opt,name=beneficiary_count,json=beneficiaryCount,proto3" json:"beneficiary_count,omitempty"`
+	AnchorCount      int32                  `protobuf:"varint,4,opt,name=anchor_count,json=anchorCount,proto3" json:"anchor_count,omitempty"`
+	PendingHandoffs  int32                  `protobuf:"varint,5,opt,name=pending_handoffs,json=pendingHandoffs,proto3" json:"pending_handoffs,omitempty"`
+	SwitchStatus     string                 `protobuf:"bytes,6,opt,name=switch_status,json=switchStatus,proto3" json:"switch_status,omitempty"`
+	InfluenceRank    float64                `protobuf:"fixed64,7,opt,name=influence_rank,json=influenceRank,proto3" json:"influence_rank,omitempty"`
+	RankLabel        string                 `protobuf:"bytes,8,opt,name=rank_label,json=rankLabel,proto3" json:"rank_label,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *EstateSummary) Reset() {
+	*x = EstateSummary{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[84]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EstateSummary) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EstateSummary) ProtoMessage() {}
+
+func (x *EstateSummary) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[84]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EstateSummary.ProtoReflect.Descriptor instead.
+func (*EstateSummary) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{84}
+}
+
+func (x *EstateSummary) GetReadiness() *EstateReadiness {
+	if x != nil {
+		return x.Readiness
+	}
+	return nil
+}
+
+func (x *EstateSummary) GetDocumentCount() int32 {
+	if x != nil {
+		return x.DocumentCount
+	}
+	return 0
+}
+
+func (x *EstateSummary) GetBeneficiaryCount() int32 {
+	if x != nil {
+		return x.BeneficiaryCount
+	}
+	return 0
+}
+
+func (x *EstateSummary) GetAnchorCount() int32 {
+	if x != nil {
+		return x.AnchorCount
+	}
+	return 0
+}
+
+func (x *EstateSummary) GetPendingHandoffs() int32 {
+	if x != nil {
+		return x.PendingHandoffs
+	}
+	return 0
+}
+
+func (x *EstateSummary) GetSwitchStatus() string {
+	if x != nil {
+		return x.SwitchStatus
+	}
+	return ""
+}
+
+func (x *EstateSummary) GetInfluenceRank() float64 {
+	if x != nil {
+		return x.InfluenceRank
+	}
+	return 0
+}
+
+func (x *EstateSummary) GetRankLabel() string {
+	if x != nil {
+		return x.RankLabel
+	}
+	return ""
+}
+
+type GetEstateSummaryRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetEstateSummaryRequest) Reset() {
+	*x = GetEstateSummaryRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[85]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEstateSummaryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEstateSummaryRequest) ProtoMessage() {}
+
+func (x *GetEstateSummaryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[85]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEstateSummaryRequest.ProtoReflect.Descriptor instead.
+func (*GetEstateSummaryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{85}
+}
+
+type GetEstateSummaryResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Summary       *EstateSummary         `protobuf:"bytes,1,opt,name=summary,proto3" json:"summary,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetEstateSummaryResponse) Reset() {
+	*x = GetEstateSummaryResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[86]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEstateSummaryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEstateSummaryResponse) ProtoMessage() {}
+
+func (x *GetEstateSummaryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[86]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEstateSummaryResponse.ProtoReflect.Descriptor instead.
+func (*GetEstateSummaryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{86}
+}
+
+func (x *GetEstateSummaryResponse) GetSummary() *EstateSummary {
+	if x != nil {
+		return x.Summary
+	}
+	return nil
+}
+
+type ConciergeMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Sender        string                 `protobuf:"bytes,2,opt,name=sender,proto3" json:"sender,omitempty"` // 'member' | 'concierge' | 'system'
+	Body          string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,4,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConciergeMessage) Reset() {
+	*x = ConciergeMessage{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[87]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConciergeMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConciergeMessage) ProtoMessage() {}
+
+func (x *ConciergeMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[87]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConciergeMessage.ProtoReflect.Descriptor instead.
+func (*ConciergeMessage) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{87}
+}
+
+func (x *ConciergeMessage) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetSender() string {
+	if x != nil {
+		return x.Sender
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type ConciergeThread struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Subject       string                 `protobuf:"bytes,2,opt,name=subject,proto3" json:"subject,omitempty"`
+	Topic         string                 `protobuf:"bytes,3,opt,name=topic,proto3" json:"topic,omitempty"`
+	Status        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"` // 'open' | 'in_progress' | 'resolved'
+	SlaDueAtUnix  int64                  `protobuf:"varint,5,opt,name=sla_due_at_unix,json=slaDueAtUnix,proto3" json:"sla_due_at_unix,omitempty"`
+	CreatedAtUnix int64                  `protobuf:"varint,6,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	Messages      []*ConciergeMessage    `protobuf:"bytes,7,rep,name=messages,proto3" json:"messages,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConciergeThread) Reset() {
+	*x = ConciergeThread{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[88]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConciergeThread) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConciergeThread) ProtoMessage() {}
+
+func (x *ConciergeThread) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[88]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConciergeThread.ProtoReflect.Descriptor instead.
+func (*ConciergeThread) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{88}
+}
+
+func (x *ConciergeThread) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetSubject() string {
+	if x != nil {
+		return x.Subject
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetTopic() string {
+	if x != nil {
+		return x.Topic
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetSlaDueAtUnix() int64 {
+	if x != nil {
+		return x.SlaDueAtUnix
+	}
+	return 0
+}
+
+func (x *ConciergeThread) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+func (x *ConciergeThread) GetMessages() []*ConciergeMessage {
+	if x != nil {
+		return x.Messages
+	}
+	return nil
+}
+
+type StartConciergeThreadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Subject       string                 `protobuf:"bytes,1,opt,name=subject,proto3" json:"subject,omitempty"`
+	Topic         string                 `protobuf:"bytes,2,opt,name=topic,proto3" json:"topic,omitempty"`
+	FirstMessage  string                 `protobuf:"bytes,3,opt,name=first_message,json=firstMessage,proto3" json:"first_message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StartConciergeThreadRequest) Reset() {
+	*x = StartConciergeThreadRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[89]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StartConciergeThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartConciergeThreadRequest) ProtoMessage() {}
+
+func (x *StartConciergeThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[89]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartConciergeThreadRequest.ProtoReflect.Descriptor instead.
+func (*StartConciergeThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{89}
+}
+
+func (x *StartConciergeThreadRequest) GetSubject() string {
+	if x != nil {
+		return x.Subject
+	}
+	return ""
+}
+
+func (x *StartConciergeThreadRequest) GetTopic() string {
+	if x != nil {
+		return x.Topic
+	}
+	return ""
+}
+
+func (x *StartConciergeThreadRequest) GetFirstMessage() string {
+	if x != nil {
+		return x.FirstMessage
+	}
+	return ""
+}
+
+type StartConciergeThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *ConciergeThread       `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StartConciergeThreadResponse) Reset() {
+	*x = StartConciergeThreadResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[90]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StartConciergeThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartConciergeThreadResponse) ProtoMessage() {}
+
+func (x *StartConciergeThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[90]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartConciergeThreadResponse.ProtoReflect.Descriptor instead.
+func (*StartConciergeThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{90}
+}
+
+func (x *StartConciergeThreadResponse) GetThread() *ConciergeThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+type ListMyConciergeThreadsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyConciergeThreadsRequest) Reset() {
+	*x = ListMyConciergeThreadsRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[91]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyConciergeThreadsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyConciergeThreadsRequest) ProtoMessage() {}
+
+func (x *ListMyConciergeThreadsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[91]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyConciergeThreadsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyConciergeThreadsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{91}
+}
+
+type ListMyConciergeThreadsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Threads       []*ConciergeThread     `protobuf:"bytes,1,rep,name=threads,proto3" json:"threads,omitempty"` // without message bodies
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyConciergeThreadsResponse) Reset() {
+	*x = ListMyConciergeThreadsResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[92]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyConciergeThreadsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyConciergeThreadsResponse) ProtoMessage() {}
+
+func (x *ListMyConciergeThreadsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[92]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyConciergeThreadsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyConciergeThreadsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{92}
+}
+
+func (x *ListMyConciergeThreadsResponse) GetThreads() []*ConciergeThread {
+	if x != nil {
+		return x.Threads
+	}
+	return nil
+}
+
+type GetConciergeThreadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetConciergeThreadRequest) Reset() {
+	*x = GetConciergeThreadRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[93]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetConciergeThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetConciergeThreadRequest) ProtoMessage() {}
+
+func (x *GetConciergeThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[93]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetConciergeThreadRequest.ProtoReflect.Descriptor instead.
+func (*GetConciergeThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{93}
+}
+
+func (x *GetConciergeThreadRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+type GetConciergeThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *ConciergeThread       `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetConciergeThreadResponse) Reset() {
+	*x = GetConciergeThreadResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[94]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetConciergeThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetConciergeThreadResponse) ProtoMessage() {}
+
+func (x *GetConciergeThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[94]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetConciergeThreadResponse.ProtoReflect.Descriptor instead.
+func (*GetConciergeThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{94}
+}
+
+func (x *GetConciergeThreadResponse) GetThread() *ConciergeThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+type PostConciergeMessageRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	Body          string                 `protobuf:"bytes,2,opt,name=body,proto3" json:"body,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PostConciergeMessageRequest) Reset() {
+	*x = PostConciergeMessageRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[95]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PostConciergeMessageRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PostConciergeMessageRequest) ProtoMessage() {}
+
+func (x *PostConciergeMessageRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[95]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PostConciergeMessageRequest.ProtoReflect.Descriptor instead.
+func (*PostConciergeMessageRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{95}
+}
+
+func (x *PostConciergeMessageRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *PostConciergeMessageRequest) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+type PostConciergeMessageResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Message       *ConciergeMessage      `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PostConciergeMessageResponse) Reset() {
+	*x = PostConciergeMessageResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[96]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PostConciergeMessageResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PostConciergeMessageResponse) ProtoMessage() {}
+
+func (x *PostConciergeMessageResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[96]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PostConciergeMessageResponse.ProtoReflect.Descriptor instead.
+func (*PostConciergeMessageResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{96}
+}
+
+func (x *PostConciergeMessageResponse) GetMessage() *ConciergeMessage {
+	if x != nil {
+		return x.Message
+	}
+	return nil
+}
+
+type AnthologyArticle struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug            string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Title           string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Dek             string                 `protobuf:"bytes,4,opt,name=dek,proto3" json:"dek,omitempty"`
+	Body            string                 `protobuf:"bytes,5,opt,name=body,proto3" json:"body,omitempty"` // empty in list responses
+	Topic           string                 `protobuf:"bytes,6,opt,name=topic,proto3" json:"topic,omitempty"`
+	SovereignOnly   bool                   `protobuf:"varint,7,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	AuthorName      string                 `protobuf:"bytes,8,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
+	AuthorTitle     string                 `protobuf:"bytes,9,opt,name=author_title,json=authorTitle,proto3" json:"author_title,omitempty"`
+	AuthorPhotoUrl  string                 `protobuf:"bytes,10,opt,name=author_photo_url,json=authorPhotoUrl,proto3" json:"author_photo_url,omitempty"`
+	PublishedAtUnix int64                  `protobuf:"varint,11,opt,name=published_at_unix,json=publishedAtUnix,proto3" json:"published_at_unix,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *AnthologyArticle) Reset() {
+	*x = AnthologyArticle{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[97]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AnthologyArticle) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AnthologyArticle) ProtoMessage() {}
+
+func (x *AnthologyArticle) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[97]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AnthologyArticle.ProtoReflect.Descriptor instead.
+func (*AnthologyArticle) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{97}
+}
+
+func (x *AnthologyArticle) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetDek() string {
+	if x != nil {
+		return x.Dek
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetTopic() string {
+	if x != nil {
+		return x.Topic
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+func (x *AnthologyArticle) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetAuthorTitle() string {
+	if x != nil {
+		return x.AuthorTitle
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetAuthorPhotoUrl() string {
+	if x != nil {
+		return x.AuthorPhotoUrl
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetPublishedAtUnix() int64 {
+	if x != nil {
+		return x.PublishedAtUnix
+	}
+	return 0
+}
+
+type ListAnthologyArticlesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Topic         string                 `protobuf:"bytes,1,opt,name=topic,proto3" json:"topic,omitempty"` // optional
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAnthologyArticlesRequest) Reset() {
+	*x = ListAnthologyArticlesRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[98]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAnthologyArticlesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAnthologyArticlesRequest) ProtoMessage() {}
+
+func (x *ListAnthologyArticlesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[98]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAnthologyArticlesRequest.ProtoReflect.Descriptor instead.
+func (*ListAnthologyArticlesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{98}
+}
+
+func (x *ListAnthologyArticlesRequest) GetTopic() string {
+	if x != nil {
+		return x.Topic
+	}
+	return ""
+}
+
+type ListAnthologyArticlesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Articles      []*AnthologyArticle    `protobuf:"bytes,1,rep,name=articles,proto3" json:"articles,omitempty"` // dek + meta, no body
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAnthologyArticlesResponse) Reset() {
+	*x = ListAnthologyArticlesResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[99]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAnthologyArticlesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAnthologyArticlesResponse) ProtoMessage() {}
+
+func (x *ListAnthologyArticlesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[99]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAnthologyArticlesResponse.ProtoReflect.Descriptor instead.
+func (*ListAnthologyArticlesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{99}
+}
+
+func (x *ListAnthologyArticlesResponse) GetArticles() []*AnthologyArticle {
+	if x != nil {
+		return x.Articles
+	}
+	return nil
+}
+
+type GetAnthologyArticleRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ArticleId     string                 `protobuf:"bytes,1,opt,name=article_id,json=articleId,proto3" json:"article_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAnthologyArticleRequest) Reset() {
+	*x = GetAnthologyArticleRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[100]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAnthologyArticleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAnthologyArticleRequest) ProtoMessage() {}
+
+func (x *GetAnthologyArticleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[100]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAnthologyArticleRequest.ProtoReflect.Descriptor instead.
+func (*GetAnthologyArticleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{100}
+}
+
+func (x *GetAnthologyArticleRequest) GetArticleId() string {
+	if x != nil {
+		return x.ArticleId
+	}
+	return ""
+}
+
+type GetAnthologyArticleResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Article       *AnthologyArticle      `protobuf:"bytes,1,opt,name=article,proto3" json:"article,omitempty"` // full body
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAnthologyArticleResponse) Reset() {
+	*x = GetAnthologyArticleResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[101]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAnthologyArticleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAnthologyArticleResponse) ProtoMessage() {}
+
+func (x *GetAnthologyArticleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[101]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAnthologyArticleResponse.ProtoReflect.Descriptor instead.
+func (*GetAnthologyArticleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{101}
+}
+
+func (x *GetAnthologyArticleResponse) GetArticle() *AnthologyArticle {
+	if x != nil {
+		return x.Article
+	}
+	return nil
+}
+
+type LetterOfWishes struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Recipient      string                 `protobuf:"bytes,2,opt,name=recipient,proto3" json:"recipient,omitempty"`
+	Title          string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Body           string                 `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"` // decrypted on read
+	DeliverOnEvent string                 `protobuf:"bytes,5,opt,name=deliver_on_event,json=deliverOnEvent,proto3" json:"deliver_on_event,omitempty"`
+	CreatedAtUnix  int64                  `protobuf:"varint,6,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *LetterOfWishes) Reset() {
+	*x = LetterOfWishes{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[102]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LetterOfWishes) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LetterOfWishes) ProtoMessage() {}
+
+func (x *LetterOfWishes) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[102]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LetterOfWishes.ProtoReflect.Descriptor instead.
+func (*LetterOfWishes) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{102}
+}
+
+func (x *LetterOfWishes) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LetterOfWishes) GetRecipient() string {
+	if x != nil {
+		return x.Recipient
+	}
+	return ""
+}
+
+func (x *LetterOfWishes) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *LetterOfWishes) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *LetterOfWishes) GetDeliverOnEvent() string {
+	if x != nil {
+		return x.DeliverOnEvent
+	}
+	return ""
+}
+
+func (x *LetterOfWishes) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type AddLetterOfWishesRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Recipient      string                 `protobuf:"bytes,1,opt,name=recipient,proto3" json:"recipient,omitempty"`
+	Title          string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Body           string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
+	DeliverOnEvent string                 `protobuf:"bytes,4,opt,name=deliver_on_event,json=deliverOnEvent,proto3" json:"deliver_on_event,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *AddLetterOfWishesRequest) Reset() {
+	*x = AddLetterOfWishesRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[103]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddLetterOfWishesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddLetterOfWishesRequest) ProtoMessage() {}
+
+func (x *AddLetterOfWishesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[103]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddLetterOfWishesRequest.ProtoReflect.Descriptor instead.
+func (*AddLetterOfWishesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{103}
+}
+
+func (x *AddLetterOfWishesRequest) GetRecipient() string {
+	if x != nil {
+		return x.Recipient
+	}
+	return ""
+}
+
+func (x *AddLetterOfWishesRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AddLetterOfWishesRequest) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *AddLetterOfWishesRequest) GetDeliverOnEvent() string {
+	if x != nil {
+		return x.DeliverOnEvent
+	}
+	return ""
+}
+
+type AddLetterOfWishesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Letter        *LetterOfWishes        `protobuf:"bytes,1,opt,name=letter,proto3" json:"letter,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddLetterOfWishesResponse) Reset() {
+	*x = AddLetterOfWishesResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[104]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddLetterOfWishesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddLetterOfWishesResponse) ProtoMessage() {}
+
+func (x *AddLetterOfWishesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[104]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddLetterOfWishesResponse.ProtoReflect.Descriptor instead.
+func (*AddLetterOfWishesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{104}
+}
+
+func (x *AddLetterOfWishesResponse) GetLetter() *LetterOfWishes {
+	if x != nil {
+		return x.Letter
+	}
+	return nil
+}
+
+type ListMyLettersOfWishesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyLettersOfWishesRequest) Reset() {
+	*x = ListMyLettersOfWishesRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[105]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyLettersOfWishesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyLettersOfWishesRequest) ProtoMessage() {}
+
+func (x *ListMyLettersOfWishesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[105]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyLettersOfWishesRequest.ProtoReflect.Descriptor instead.
+func (*ListMyLettersOfWishesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{105}
+}
+
+type ListMyLettersOfWishesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Letters       []*LetterOfWishes      `protobuf:"bytes,1,rep,name=letters,proto3" json:"letters,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyLettersOfWishesResponse) Reset() {
+	*x = ListMyLettersOfWishesResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[106]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyLettersOfWishesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyLettersOfWishesResponse) ProtoMessage() {}
+
+func (x *ListMyLettersOfWishesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[106]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyLettersOfWishesResponse.ProtoReflect.Descriptor instead.
+func (*ListMyLettersOfWishesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{106}
+}
+
+func (x *ListMyLettersOfWishesResponse) GetLetters() []*LetterOfWishes {
+	if x != nil {
+		return x.Letters
+	}
+	return nil
+}
+
+type RemoveLetterOfWishesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	LetterId      string                 `protobuf:"bytes,1,opt,name=letter_id,json=letterId,proto3" json:"letter_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemoveLetterOfWishesRequest) Reset() {
+	*x = RemoveLetterOfWishesRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[107]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveLetterOfWishesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveLetterOfWishesRequest) ProtoMessage() {}
+
+func (x *RemoveLetterOfWishesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[107]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveLetterOfWishesRequest.ProtoReflect.Descriptor instead.
+func (*RemoveLetterOfWishesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{107}
+}
+
+func (x *RemoveLetterOfWishesRequest) GetLetterId() string {
+	if x != nil {
+		return x.LetterId
+	}
+	return ""
+}
+
+type RemoveLetterOfWishesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemoveLetterOfWishesResponse) Reset() {
+	*x = RemoveLetterOfWishesResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[108]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveLetterOfWishesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveLetterOfWishesResponse) ProtoMessage() {}
+
+func (x *RemoveLetterOfWishesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[108]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveLetterOfWishesResponse.ProtoReflect.Descriptor instead.
+func (*RemoveLetterOfWishesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{108}
+}
+
+type GenerateLegacyAlmanacRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateLegacyAlmanacRequest) Reset() {
+	*x = GenerateLegacyAlmanacRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[109]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateLegacyAlmanacRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateLegacyAlmanacRequest) ProtoMessage() {}
+
+func (x *GenerateLegacyAlmanacRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[109]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateLegacyAlmanacRequest.ProtoReflect.Descriptor instead.
+func (*GenerateLegacyAlmanacRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{109}
+}
+
+type GenerateLegacyAlmanacResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Url           string                 `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
+	PageCount     int32                  `protobuf:"varint,2,opt,name=page_count,json=pageCount,proto3" json:"page_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateLegacyAlmanacResponse) Reset() {
+	*x = GenerateLegacyAlmanacResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[110]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateLegacyAlmanacResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateLegacyAlmanacResponse) ProtoMessage() {}
+
+func (x *GenerateLegacyAlmanacResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[110]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateLegacyAlmanacResponse.ProtoReflect.Descriptor instead.
+func (*GenerateLegacyAlmanacResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{110}
+}
+
+func (x *GenerateLegacyAlmanacResponse) GetUrl() string {
+	if x != nil {
+		return x.Url
+	}
+	return ""
+}
+
+func (x *GenerateLegacyAlmanacResponse) GetPageCount() int32 {
+	if x != nil {
+		return x.PageCount
+	}
+	return 0
+}
+
+type IpAsset struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Jurisdiction  string                 `protobuf:"bytes,3,opt,name=jurisdiction,proto3" json:"jurisdiction,omitempty"`
+	ValuationUsd  float64                `protobuf:"fixed64,4,opt,name=valuation_usd,json=valuationUsd,proto3" json:"valuation_usd,omitempty"`
+	Status        string                 `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"`
+	ExpiresAtUnix int64                  `protobuf:"varint,6,opt,name=expires_at_unix,json=expiresAtUnix,proto3" json:"expires_at_unix,omitempty"`
+	NeedsReview   bool                   `protobuf:"varint,7,opt,name=needs_review,json=needsReview,proto3" json:"needs_review,omitempty"` // expiring within 180 days or unverified
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *IpAsset) Reset() {
+	*x = IpAsset{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[111]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IpAsset) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IpAsset) ProtoMessage() {}
+
+func (x *IpAsset) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[111]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IpAsset.ProtoReflect.Descriptor instead.
+func (*IpAsset) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{111}
+}
+
+func (x *IpAsset) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *IpAsset) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *IpAsset) GetJurisdiction() string {
+	if x != nil {
+		return x.Jurisdiction
+	}
+	return ""
+}
+
+func (x *IpAsset) GetValuationUsd() float64 {
+	if x != nil {
+		return x.ValuationUsd
+	}
+	return 0
+}
+
+func (x *IpAsset) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *IpAsset) GetExpiresAtUnix() int64 {
+	if x != nil {
+		return x.ExpiresAtUnix
+	}
+	return 0
+}
+
+func (x *IpAsset) GetNeedsReview() bool {
+	if x != nil {
+		return x.NeedsReview
+	}
+	return false
+}
+
+type ListIpPortfolioRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListIpPortfolioRequest) Reset() {
+	*x = ListIpPortfolioRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[112]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListIpPortfolioRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListIpPortfolioRequest) ProtoMessage() {}
+
+func (x *ListIpPortfolioRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[112]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListIpPortfolioRequest.ProtoReflect.Descriptor instead.
+func (*ListIpPortfolioRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{112}
+}
+
+type ListIpPortfolioResponse struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Assets           []*IpAsset             `protobuf:"bytes,1,rep,name=assets,proto3" json:"assets,omitempty"`
+	NeedsReviewCount int32                  `protobuf:"varint,2,opt,name=needs_review_count,json=needsReviewCount,proto3" json:"needs_review_count,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *ListIpPortfolioResponse) Reset() {
+	*x = ListIpPortfolioResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[113]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListIpPortfolioResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListIpPortfolioResponse) ProtoMessage() {}
+
+func (x *ListIpPortfolioResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[113]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListIpPortfolioResponse.ProtoReflect.Descriptor instead.
+func (*ListIpPortfolioResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{113}
+}
+
+func (x *ListIpPortfolioResponse) GetAssets() []*IpAsset {
+	if x != nil {
+		return x.Assets
+	}
+	return nil
+}
+
+func (x *ListIpPortfolioResponse) GetNeedsReviewCount() int32 {
+	if x != nil {
+		return x.NeedsReviewCount
+	}
+	return 0
+}
+
+type LegacyShare struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Token             string                 `protobuf:"bytes,2,opt,name=token,proto3" json:"token,omitempty"`
+	Url               string                 `protobuf:"bytes,3,opt,name=url,proto3" json:"url,omitempty"`
+	Audience          string                 `protobuf:"bytes,4,opt,name=audience,proto3" json:"audience,omitempty"`
+	IncludeValuations bool                   `protobuf:"varint,5,opt,name=include_valuations,json=includeValuations,proto3" json:"include_valuations,omitempty"`
+	ExpiresAtUnix     int64                  `protobuf:"varint,6,opt,name=expires_at_unix,json=expiresAtUnix,proto3" json:"expires_at_unix,omitempty"`
+	CreatedAtUnix     int64                  `protobuf:"varint,7,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *LegacyShare) Reset() {
+	*x = LegacyShare{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[114]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LegacyShare) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LegacyShare) ProtoMessage() {}
+
+func (x *LegacyShare) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[114]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LegacyShare.ProtoReflect.Descriptor instead.
+func (*LegacyShare) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{114}
+}
+
+func (x *LegacyShare) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LegacyShare) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *LegacyShare) GetUrl() string {
+	if x != nil {
+		return x.Url
+	}
+	return ""
+}
+
+func (x *LegacyShare) GetAudience() string {
+	if x != nil {
+		return x.Audience
+	}
+	return ""
+}
+
+func (x *LegacyShare) GetIncludeValuations() bool {
+	if x != nil {
+		return x.IncludeValuations
+	}
+	return false
+}
+
+func (x *LegacyShare) GetExpiresAtUnix() int64 {
+	if x != nil {
+		return x.ExpiresAtUnix
+	}
+	return 0
+}
+
+func (x *LegacyShare) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type CreateLegacyShareRequest struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Audience          string                 `protobuf:"bytes,1,opt,name=audience,proto3" json:"audience,omitempty"` // 'lawyer' | 'executor'
+	IncludeValuations bool                   `protobuf:"varint,2,opt,name=include_valuations,json=includeValuations,proto3" json:"include_valuations,omitempty"`
+	TtlDays           int32                  `protobuf:"varint,3,opt,name=ttl_days,json=ttlDays,proto3" json:"ttl_days,omitempty"` // default 14
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *CreateLegacyShareRequest) Reset() {
+	*x = CreateLegacyShareRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[115]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateLegacyShareRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateLegacyShareRequest) ProtoMessage() {}
+
+func (x *CreateLegacyShareRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[115]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateLegacyShareRequest.ProtoReflect.Descriptor instead.
+func (*CreateLegacyShareRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{115}
+}
+
+func (x *CreateLegacyShareRequest) GetAudience() string {
+	if x != nil {
+		return x.Audience
+	}
+	return ""
+}
+
+func (x *CreateLegacyShareRequest) GetIncludeValuations() bool {
+	if x != nil {
+		return x.IncludeValuations
+	}
+	return false
+}
+
+func (x *CreateLegacyShareRequest) GetTtlDays() int32 {
+	if x != nil {
+		return x.TtlDays
+	}
+	return 0
+}
+
+type CreateLegacyShareResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Share         *LegacyShare           `protobuf:"bytes,1,opt,name=share,proto3" json:"share,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateLegacyShareResponse) Reset() {
+	*x = CreateLegacyShareResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[116]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateLegacyShareResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateLegacyShareResponse) ProtoMessage() {}
+
+func (x *CreateLegacyShareResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[116]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateLegacyShareResponse.ProtoReflect.Descriptor instead.
+func (*CreateLegacyShareResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{116}
+}
+
+func (x *CreateLegacyShareResponse) GetShare() *LegacyShare {
+	if x != nil {
+		return x.Share
+	}
+	return nil
+}
+
+type ListMyLegacySharesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyLegacySharesRequest) Reset() {
+	*x = ListMyLegacySharesRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[117]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyLegacySharesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyLegacySharesRequest) ProtoMessage() {}
+
+func (x *ListMyLegacySharesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[117]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyLegacySharesRequest.ProtoReflect.Descriptor instead.
+func (*ListMyLegacySharesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{117}
+}
+
+type ListMyLegacySharesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Shares        []*LegacyShare         `protobuf:"bytes,1,rep,name=shares,proto3" json:"shares,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyLegacySharesResponse) Reset() {
+	*x = ListMyLegacySharesResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[118]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyLegacySharesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyLegacySharesResponse) ProtoMessage() {}
+
+func (x *ListMyLegacySharesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[118]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyLegacySharesResponse.ProtoReflect.Descriptor instead.
+func (*ListMyLegacySharesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{118}
+}
+
+func (x *ListMyLegacySharesResponse) GetShares() []*LegacyShare {
+	if x != nil {
+		return x.Shares
+	}
+	return nil
+}
+
+type RevokeLegacyShareRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ShareId       string                 `protobuf:"bytes,1,opt,name=share_id,json=shareId,proto3" json:"share_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeLegacyShareRequest) Reset() {
+	*x = RevokeLegacyShareRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[119]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeLegacyShareRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeLegacyShareRequest) ProtoMessage() {}
+
+func (x *RevokeLegacyShareRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[119]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeLegacyShareRequest.ProtoReflect.Descriptor instead.
+func (*RevokeLegacyShareRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{119}
+}
+
+func (x *RevokeLegacyShareRequest) GetShareId() string {
+	if x != nil {
+		return x.ShareId
+	}
+	return ""
+}
+
+type RevokeLegacyShareResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeLegacyShareResponse) Reset() {
+	*x = RevokeLegacyShareResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[120]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeLegacyShareResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeLegacyShareResponse) ProtoMessage() {}
+
+func (x *RevokeLegacyShareResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[120]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeLegacyShareResponse.ProtoReflect.Descriptor instead.
+func (*RevokeLegacyShareResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{120}
+}
+
+type ParseDocumentExpiryRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AssetId       string                 `protobuf:"bytes,1,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
+	DocumentText  string                 `protobuf:"bytes,2,opt,name=document_text,json=documentText,proto3" json:"document_text,omitempty"` // pasted text the client extracted from the file
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ParseDocumentExpiryRequest) Reset() {
+	*x = ParseDocumentExpiryRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[121]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ParseDocumentExpiryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ParseDocumentExpiryRequest) ProtoMessage() {}
+
+func (x *ParseDocumentExpiryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[121]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ParseDocumentExpiryRequest.ProtoReflect.Descriptor instead.
+func (*ParseDocumentExpiryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{121}
+}
+
+func (x *ParseDocumentExpiryRequest) GetAssetId() string {
+	if x != nil {
+		return x.AssetId
+	}
+	return ""
+}
+
+func (x *ParseDocumentExpiryRequest) GetDocumentText() string {
+	if x != nil {
+		return x.DocumentText
+	}
+	return ""
+}
+
+type ParseDocumentExpiryResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Found         bool                   `protobuf:"varint,1,opt,name=found,proto3" json:"found,omitempty"`
+	ExpiresAtUnix int64                  `protobuf:"varint,2,opt,name=expires_at_unix,json=expiresAtUnix,proto3" json:"expires_at_unix,omitempty"`
+	DetectedText  string                 `protobuf:"bytes,3,opt,name=detected_text,json=detectedText,proto3" json:"detected_text,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ParseDocumentExpiryResponse) Reset() {
+	*x = ParseDocumentExpiryResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[122]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ParseDocumentExpiryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ParseDocumentExpiryResponse) ProtoMessage() {}
+
+func (x *ParseDocumentExpiryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[122]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ParseDocumentExpiryResponse.ProtoReflect.Descriptor instead.
+func (*ParseDocumentExpiryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{122}
+}
+
+func (x *ParseDocumentExpiryResponse) GetFound() bool {
+	if x != nil {
+		return x.Found
+	}
+	return false
+}
+
+func (x *ParseDocumentExpiryResponse) GetExpiresAtUnix() int64 {
+	if x != nil {
+		return x.ExpiresAtUnix
+	}
+	return 0
+}
+
+func (x *ParseDocumentExpiryResponse) GetDetectedText() string {
+	if x != nil {
+		return x.DetectedText
+	}
+	return ""
+}
+
 var File_sttattus_legacy_v1_legacy_proto protoreflect.FileDescriptor
 
 const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
@@ -2284,7 +7028,318 @@ const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
 	"\x06shares\x18\x01 \x03(\v2!.sttattus.legacy.v1.RecoveryShareR\x06shares\"7\n" +
 	"\x1aDeleteRecoveryShareRequest\x12\x19\n" +
 	"\bshare_id\x18\x01 \x01(\tR\ashareId\"\x1d\n" +
-	"\x1bDeleteRecoveryShareResponse*\xd0\x01\n" +
+	"\x1bDeleteRecoveryShareResponse\"\x88\x01\n" +
+	"\x12ReadinessComponent\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05label\x18\x02 \x01(\tR\x05label\x12\x1a\n" +
+	"\bcomplete\x18\x03 \x01(\bR\bcomplete\x12\x16\n" +
+	"\x06weight\x18\x04 \x01(\x05R\x06weight\x12\x16\n" +
+	"\x06detail\x18\x05 \x01(\tR\x06detail\"\xa4\x01\n" +
+	"\x0fEstateReadiness\x12\x14\n" +
+	"\x05score\x18\x01 \x01(\x05R\x05score\x12\x12\n" +
+	"\x04band\x18\x02 \x01(\tR\x04band\x12F\n" +
+	"\n" +
+	"components\x18\x03 \x03(\v2&.sttattus.legacy.v1.ReadinessComponentR\n" +
+	"components\x12\x1f\n" +
+	"\vnext_action\x18\x04 \x01(\tR\n" +
+	"nextAction\"\x1b\n" +
+	"\x19GetEstateReadinessRequest\"_\n" +
+	"\x1aGetEstateReadinessResponse\x12A\n" +
+	"\treadiness\x18\x01 \x01(\v2#.sttattus.legacy.v1.EstateReadinessR\treadiness\"\xcf\x01\n" +
+	"\vBeneficiary\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\tfull_name\x18\x02 \x01(\tR\bfullName\x12\"\n" +
+	"\frelationship\x18\x03 \x01(\tR\frelationship\x12\x14\n" +
+	"\x05email\x18\x04 \x01(\tR\x05email\x12\x1b\n" +
+	"\tshare_pct\x18\x05 \x01(\x01R\bsharePct\x12\x14\n" +
+	"\x05notes\x18\x06 \x01(\tR\x05notes\x12&\n" +
+	"\x0fcreated_at_unix\x18\a \x01(\x03R\rcreatedAtUnix\"\x1c\n" +
+	"\x1aListMyBeneficiariesRequest\"d\n" +
+	"\x1bListMyBeneficiariesResponse\x12E\n" +
+	"\rbeneficiaries\x18\x01 \x03(\v2\x1f.sttattus.legacy.v1.BeneficiaryR\rbeneficiaries\"\xa1\x01\n" +
+	"\x15AddBeneficiaryRequest\x12\x1b\n" +
+	"\tfull_name\x18\x01 \x01(\tR\bfullName\x12\"\n" +
+	"\frelationship\x18\x02 \x01(\tR\frelationship\x12\x14\n" +
+	"\x05email\x18\x03 \x01(\tR\x05email\x12\x1b\n" +
+	"\tshare_pct\x18\x04 \x01(\x01R\bsharePct\x12\x14\n" +
+	"\x05notes\x18\x05 \x01(\tR\x05notes\"[\n" +
+	"\x16AddBeneficiaryResponse\x12A\n" +
+	"\vbeneficiary\x18\x01 \x01(\v2\x1f.sttattus.legacy.v1.BeneficiaryR\vbeneficiary\"A\n" +
+	"\x18RemoveBeneficiaryRequest\x12%\n" +
+	"\x0ebeneficiary_id\x18\x01 \x01(\tR\rbeneficiaryId\"\x1b\n" +
+	"\x19RemoveBeneficiaryResponse\"\xa9\x02\n" +
+	"\rDeadManSwitch\x12\x18\n" +
+	"\aenabled\x18\x01 \x01(\bR\aenabled\x12!\n" +
+	"\fcadence_days\x18\x02 \x01(\x05R\vcadenceDays\x12\x1f\n" +
+	"\vthreshold_m\x18\x03 \x01(\x05R\n" +
+	"thresholdM\x12\x19\n" +
+	"\bshares_n\x18\x04 \x01(\x05R\asharesN\x12\x16\n" +
+	"\x06status\x18\x05 \x01(\tR\x06status\x12*\n" +
+	"\x11last_checkin_unix\x18\x06 \x01(\x03R\x0flastCheckinUnix\x12*\n" +
+	"\x11next_checkin_unix\x18\a \x01(\x03R\x0fnextCheckinUnix\x12/\n" +
+	"\x13trustees_configured\x18\b \x01(\x05R\x12trusteesConfigured\"\x19\n" +
+	"\x17GetDeadManSwitchRequest\"S\n" +
+	"\x18GetDeadManSwitchResponse\x127\n" +
+	"\x05state\x18\x01 \x01(\v2!.sttattus.legacy.v1.DeadManSwitchR\x05state\"\\\n" +
+	"\x1dConfigureDeadManSwitchRequest\x12\x18\n" +
+	"\aenabled\x18\x01 \x01(\bR\aenabled\x12!\n" +
+	"\fcadence_days\x18\x02 \x01(\x05R\vcadenceDays\"Y\n" +
+	"\x1eConfigureDeadManSwitchResponse\x127\n" +
+	"\x05state\x18\x01 \x01(\v2!.sttattus.legacy.v1.DeadManSwitchR\x05state\"\x1d\n" +
+	"\x1bCheckInDeadManSwitchRequest\"W\n" +
+	"\x1cCheckInDeadManSwitchResponse\x127\n" +
+	"\x05state\x18\x01 \x01(\v2!.sttattus.legacy.v1.DeadManSwitchR\x05state\"\xf8\x01\n" +
+	"\x06Anchor\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
+	"\basset_id\x18\x02 \x01(\tR\aassetId\x12\x14\n" +
+	"\x05label\x18\x03 \x01(\tR\x05label\x12!\n" +
+	"\fcontent_hash\x18\x04 \x01(\tR\vcontentHash\x12\x1c\n" +
+	"\talgorithm\x18\x05 \x01(\tR\talgorithm\x12\x14\n" +
+	"\x05chain\x18\x06 \x01(\tR\x05chain\x12\x14\n" +
+	"\x05proof\x18\a \x01(\tR\x05proof\x12\x16\n" +
+	"\x06status\x18\b \x01(\tR\x06status\x12(\n" +
+	"\x10anchored_at_unix\x18\t \x01(\x03R\x0eanchoredAtUnix\"\x83\x01\n" +
+	"\x13CreateAnchorRequest\x12\x19\n" +
+	"\basset_id\x18\x01 \x01(\tR\aassetId\x12\x14\n" +
+	"\x05label\x18\x02 \x01(\tR\x05label\x12!\n" +
+	"\fcontent_hash\x18\x03 \x01(\tR\vcontentHash\x12\x18\n" +
+	"\acontent\x18\x04 \x01(\fR\acontent\"J\n" +
+	"\x14CreateAnchorResponse\x122\n" +
+	"\x06anchor\x18\x01 \x01(\v2\x1a.sttattus.legacy.v1.AnchorR\x06anchor\"\x16\n" +
+	"\x14ListMyAnchorsRequest\"M\n" +
+	"\x15ListMyAnchorsResponse\x124\n" +
+	"\aanchors\x18\x01 \x03(\v2\x1a.sttattus.legacy.v1.AnchorR\aanchors\"\x86\x02\n" +
+	"\x06Lawyer\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04firm\x18\x03 \x01(\tR\x04firm\x12\"\n" +
+	"\fjurisdiction\x18\x04 \x01(\tR\fjurisdiction\x12 \n" +
+	"\vspecialties\x18\x05 \x03(\tR\vspecialties\x12\x10\n" +
+	"\x03bio\x18\x06 \x01(\tR\x03bio\x12\x1b\n" +
+	"\tphoto_url\x18\a \x01(\tR\bphotoUrl\x12%\n" +
+	"\x0esovereign_only\x18\b \x01(\bR\rsovereignOnly\x12(\n" +
+	"\x10member_rate_note\x18\t \x01(\tR\x0ememberRateNote\"V\n" +
+	"\x12ListLawyersRequest\x12\"\n" +
+	"\fjurisdiction\x18\x01 \x01(\tR\fjurisdiction\x12\x1c\n" +
+	"\tspecialty\x18\x02 \x01(\tR\tspecialty\"K\n" +
+	"\x13ListLawyersResponse\x124\n" +
+	"\alawyers\x18\x01 \x03(\v2\x1a.sttattus.legacy.v1.LawyerR\alawyers\"\xad\x01\n" +
+	"\x06Notary\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\"\n" +
+	"\fjurisdiction\x18\x03 \x01(\tR\fjurisdiction\x12\x12\n" +
+	"\x04mode\x18\x04 \x01(\tR\x04mode\x12\x18\n" +
+	"\aaddress\x18\x05 \x01(\tR\aaddress\x12\x10\n" +
+	"\x03bio\x18\x06 \x01(\tR\x03bio\x12\x1b\n" +
+	"\tphoto_url\x18\a \x01(\tR\bphotoUrl\"9\n" +
+	"\x13ListNotariesRequest\x12\"\n" +
+	"\fjurisdiction\x18\x01 \x01(\tR\fjurisdiction\"N\n" +
+	"\x14ListNotariesResponse\x126\n" +
+	"\bnotaries\x18\x01 \x03(\v2\x1a.sttattus.legacy.v1.NotaryR\bnotaries\"\x89\x01\n" +
+	"\rTemplateField\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05label\x18\x02 \x01(\tR\x05label\x12\x12\n" +
+	"\x04kind\x18\x03 \x01(\tR\x04kind\x12\x1a\n" +
+	"\brequired\x18\x04 \x01(\bR\brequired\x12 \n" +
+	"\vplaceholder\x18\x05 \x01(\tR\vplaceholder\"\x87\x02\n" +
+	"\x10DocumentTemplate\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x19\n" +
+	"\bdoc_type\x18\x03 \x01(\tR\adocType\x12\"\n" +
+	"\fjurisdiction\x18\x04 \x01(\tR\fjurisdiction\x12\x14\n" +
+	"\x05title\x18\x05 \x01(\tR\x05title\x12\x18\n" +
+	"\asummary\x18\x06 \x01(\tR\asummary\x129\n" +
+	"\x06fields\x18\a \x03(\v2!.sttattus.legacy.v1.TemplateFieldR\x06fields\x12%\n" +
+	"\x0esovereign_only\x18\b \x01(\bR\rsovereignOnly\"U\n" +
+	"\x14ListTemplatesRequest\x12\x19\n" +
+	"\bdoc_type\x18\x01 \x01(\tR\adocType\x12\"\n" +
+	"\fjurisdiction\x18\x02 \x01(\tR\fjurisdiction\"[\n" +
+	"\x15ListTemplatesResponse\x12B\n" +
+	"\ttemplates\x18\x01 \x03(\v2$.sttattus.legacy.v1.DocumentTemplateR\ttemplates\"5\n" +
+	"\x12GetTemplateRequest\x12\x1f\n" +
+	"\vtemplate_id\x18\x01 \x01(\tR\n" +
+	"templateId\"|\n" +
+	"\x13GetTemplateResponse\x12@\n" +
+	"\btemplate\x18\x01 \x01(\v2$.sttattus.legacy.v1.DocumentTemplateR\btemplate\x12#\n" +
+	"\rbody_template\x18\x02 \x01(\tR\fbodyTemplate\"\xe6\x01\n" +
+	"\x11GeneratedDocument\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
+	"\vtemplate_id\x18\x02 \x01(\tR\n" +
+	"templateId\x12\x19\n" +
+	"\bdoc_type\x18\x03 \x01(\tR\adocType\x12\"\n" +
+	"\fjurisdiction\x18\x04 \x01(\tR\fjurisdiction\x12\x14\n" +
+	"\x05title\x18\x05 \x01(\tR\x05title\x12#\n" +
+	"\rrendered_text\x18\x06 \x01(\tR\frenderedText\x12&\n" +
+	"\x0fcreated_at_unix\x18\a \x01(\x03R\rcreatedAtUnix\"\xdc\x01\n" +
+	"\x17GenerateDocumentRequest\x12\x1f\n" +
+	"\vtemplate_id\x18\x01 \x01(\tR\n" +
+	"templateId\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12O\n" +
+	"\x06values\x18\x03 \x03(\v27.sttattus.legacy.v1.GenerateDocumentRequest.ValuesEntryR\x06values\x1a9\n" +
+	"\vValuesEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"]\n" +
+	"\x18GenerateDocumentResponse\x12A\n" +
+	"\bdocument\x18\x01 \x01(\v2%.sttattus.legacy.v1.GeneratedDocumentR\bdocument\"!\n" +
+	"\x1fListMyGeneratedDocumentsRequest\"g\n" +
+	" ListMyGeneratedDocumentsResponse\x12C\n" +
+	"\tdocuments\x18\x01 \x03(\v2%.sttattus.legacy.v1.GeneratedDocumentR\tdocuments\"\xd5\x02\n" +
+	"\aHandoff\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12#\n" +
+	"\rsource_pillar\x18\x02 \x01(\tR\fsourcePillar\x12\x1d\n" +
+	"\n" +
+	"source_ref\x18\x03 \x01(\tR\tsourceRef\x12\x14\n" +
+	"\x05title\x18\x04 \x01(\tR\x05title\x12=\n" +
+	"\bcategory\x18\x05 \x01(\x0e2!.sttattus.legacy.v1.AssetCategoryR\bcategory\x12\"\n" +
+	"\fjurisdiction\x18\x06 \x01(\tR\fjurisdiction\x12#\n" +
+	"\rvaluation_usd\x18\a \x01(\x01R\fvaluationUsd\x12\x18\n" +
+	"\asummary\x18\b \x01(\tR\asummary\x12\x16\n" +
+	"\x06status\x18\t \x01(\tR\x06status\x12&\n" +
+	"\x0fcreated_at_unix\x18\n" +
+	" \x01(\x03R\rcreatedAtUnix\"\x17\n" +
+	"\x15ListMyHandoffsRequest\"Q\n" +
+	"\x16ListMyHandoffsResponse\x127\n" +
+	"\bhandoffs\x18\x01 \x03(\v2\x1b.sttattus.legacy.v1.HandoffR\bhandoffs\"5\n" +
+	"\x14AcceptHandoffRequest\x12\x1d\n" +
+	"\n" +
+	"handoff_id\x18\x01 \x01(\tR\thandoffId\"M\n" +
+	"\x15AcceptHandoffResponse\x124\n" +
+	"\x05asset\x18\x01 \x01(\v2\x1e.sttattus.legacy.v1.LegalAssetR\x05asset\"6\n" +
+	"\x15DismissHandoffRequest\x12\x1d\n" +
+	"\n" +
+	"handoff_id\x18\x01 \x01(\tR\thandoffId\"\x18\n" +
+	"\x16DismissHandoffResponse\"\xdf\x02\n" +
+	"\rEstateSummary\x12A\n" +
+	"\treadiness\x18\x01 \x01(\v2#.sttattus.legacy.v1.EstateReadinessR\treadiness\x12%\n" +
+	"\x0edocument_count\x18\x02 \x01(\x05R\rdocumentCount\x12+\n" +
+	"\x11beneficiary_count\x18\x03 \x01(\x05R\x10beneficiaryCount\x12!\n" +
+	"\fanchor_count\x18\x04 \x01(\x05R\vanchorCount\x12)\n" +
+	"\x10pending_handoffs\x18\x05 \x01(\x05R\x0fpendingHandoffs\x12#\n" +
+	"\rswitch_status\x18\x06 \x01(\tR\fswitchStatus\x12%\n" +
+	"\x0einfluence_rank\x18\a \x01(\x01R\rinfluenceRank\x12\x1d\n" +
+	"\n" +
+	"rank_label\x18\b \x01(\tR\trankLabel\"\x19\n" +
+	"\x17GetEstateSummaryRequest\"W\n" +
+	"\x18GetEstateSummaryResponse\x12;\n" +
+	"\asummary\x18\x01 \x01(\v2!.sttattus.legacy.v1.EstateSummaryR\asummary\"v\n" +
+	"\x10ConciergeMessage\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
+	"\x06sender\x18\x02 \x01(\tR\x06sender\x12\x12\n" +
+	"\x04body\x18\x03 \x01(\tR\x04body\x12&\n" +
+	"\x0fcreated_at_unix\x18\x04 \x01(\x03R\rcreatedAtUnix\"\xfa\x01\n" +
+	"\x0fConciergeThread\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
+	"\asubject\x18\x02 \x01(\tR\asubject\x12\x14\n" +
+	"\x05topic\x18\x03 \x01(\tR\x05topic\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0fsla_due_at_unix\x18\x05 \x01(\x03R\fslaDueAtUnix\x12&\n" +
+	"\x0fcreated_at_unix\x18\x06 \x01(\x03R\rcreatedAtUnix\x12@\n" +
+	"\bmessages\x18\a \x03(\v2$.sttattus.legacy.v1.ConciergeMessageR\bmessages\"r\n" +
+	"\x1bStartConciergeThreadRequest\x12\x18\n" +
+	"\asubject\x18\x01 \x01(\tR\asubject\x12\x14\n" +
+	"\x05topic\x18\x02 \x01(\tR\x05topic\x12#\n" +
+	"\rfirst_message\x18\x03 \x01(\tR\ffirstMessage\"[\n" +
+	"\x1cStartConciergeThreadResponse\x12;\n" +
+	"\x06thread\x18\x01 \x01(\v2#.sttattus.legacy.v1.ConciergeThreadR\x06thread\"\x1f\n" +
+	"\x1dListMyConciergeThreadsRequest\"_\n" +
+	"\x1eListMyConciergeThreadsResponse\x12=\n" +
+	"\athreads\x18\x01 \x03(\v2#.sttattus.legacy.v1.ConciergeThreadR\athreads\"8\n" +
+	"\x19GetConciergeThreadRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\"Y\n" +
+	"\x1aGetConciergeThreadResponse\x12;\n" +
+	"\x06thread\x18\x01 \x01(\v2#.sttattus.legacy.v1.ConciergeThreadR\x06thread\"N\n" +
+	"\x1bPostConciergeMessageRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\x12\x12\n" +
+	"\x04body\x18\x02 \x01(\tR\x04body\"^\n" +
+	"\x1cPostConciergeMessageResponse\x12>\n" +
+	"\amessage\x18\x01 \x01(\v2$.sttattus.legacy.v1.ConciergeMessageR\amessage\"\xc9\x02\n" +
+	"\x10AnthologyArticle\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x10\n" +
+	"\x03dek\x18\x04 \x01(\tR\x03dek\x12\x12\n" +
+	"\x04body\x18\x05 \x01(\tR\x04body\x12\x14\n" +
+	"\x05topic\x18\x06 \x01(\tR\x05topic\x12%\n" +
+	"\x0esovereign_only\x18\a \x01(\bR\rsovereignOnly\x12\x1f\n" +
+	"\vauthor_name\x18\b \x01(\tR\n" +
+	"authorName\x12!\n" +
+	"\fauthor_title\x18\t \x01(\tR\vauthorTitle\x12(\n" +
+	"\x10author_photo_url\x18\n" +
+	" \x01(\tR\x0eauthorPhotoUrl\x12*\n" +
+	"\x11published_at_unix\x18\v \x01(\x03R\x0fpublishedAtUnix\"4\n" +
+	"\x1cListAnthologyArticlesRequest\x12\x14\n" +
+	"\x05topic\x18\x01 \x01(\tR\x05topic\"a\n" +
+	"\x1dListAnthologyArticlesResponse\x12@\n" +
+	"\barticles\x18\x01 \x03(\v2$.sttattus.legacy.v1.AnthologyArticleR\barticles\";\n" +
+	"\x1aGetAnthologyArticleRequest\x12\x1d\n" +
+	"\n" +
+	"article_id\x18\x01 \x01(\tR\tarticleId\"]\n" +
+	"\x1bGetAnthologyArticleResponse\x12>\n" +
+	"\aarticle\x18\x01 \x01(\v2$.sttattus.legacy.v1.AnthologyArticleR\aarticle\"\xba\x01\n" +
+	"\x0eLetterOfWishes\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1c\n" +
+	"\trecipient\x18\x02 \x01(\tR\trecipient\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x12\n" +
+	"\x04body\x18\x04 \x01(\tR\x04body\x12(\n" +
+	"\x10deliver_on_event\x18\x05 \x01(\tR\x0edeliverOnEvent\x12&\n" +
+	"\x0fcreated_at_unix\x18\x06 \x01(\x03R\rcreatedAtUnix\"\x8c\x01\n" +
+	"\x18AddLetterOfWishesRequest\x12\x1c\n" +
+	"\trecipient\x18\x01 \x01(\tR\trecipient\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x12\n" +
+	"\x04body\x18\x03 \x01(\tR\x04body\x12(\n" +
+	"\x10deliver_on_event\x18\x04 \x01(\tR\x0edeliverOnEvent\"W\n" +
+	"\x19AddLetterOfWishesResponse\x12:\n" +
+	"\x06letter\x18\x01 \x01(\v2\".sttattus.legacy.v1.LetterOfWishesR\x06letter\"\x1e\n" +
+	"\x1cListMyLettersOfWishesRequest\"]\n" +
+	"\x1dListMyLettersOfWishesResponse\x12<\n" +
+	"\aletters\x18\x01 \x03(\v2\".sttattus.legacy.v1.LetterOfWishesR\aletters\":\n" +
+	"\x1bRemoveLetterOfWishesRequest\x12\x1b\n" +
+	"\tletter_id\x18\x01 \x01(\tR\bletterId\"\x1e\n" +
+	"\x1cRemoveLetterOfWishesResponse\"\x1e\n" +
+	"\x1cGenerateLegacyAlmanacRequest\"P\n" +
+	"\x1dGenerateLegacyAlmanacResponse\x12\x10\n" +
+	"\x03url\x18\x01 \x01(\tR\x03url\x12\x1d\n" +
+	"\n" +
+	"page_count\x18\x02 \x01(\x05R\tpageCount\"\xdb\x01\n" +
+	"\aIpAsset\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\"\n" +
+	"\fjurisdiction\x18\x03 \x01(\tR\fjurisdiction\x12#\n" +
+	"\rvaluation_usd\x18\x04 \x01(\x01R\fvaluationUsd\x12\x16\n" +
+	"\x06status\x18\x05 \x01(\tR\x06status\x12&\n" +
+	"\x0fexpires_at_unix\x18\x06 \x01(\x03R\rexpiresAtUnix\x12!\n" +
+	"\fneeds_review\x18\a \x01(\bR\vneedsReview\"\x18\n" +
+	"\x16ListIpPortfolioRequest\"|\n" +
+	"\x17ListIpPortfolioResponse\x123\n" +
+	"\x06assets\x18\x01 \x03(\v2\x1b.sttattus.legacy.v1.IpAssetR\x06assets\x12,\n" +
+	"\x12needs_review_count\x18\x02 \x01(\x05R\x10needsReviewCount\"\xe0\x01\n" +
+	"\vLegacyShare\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05token\x18\x02 \x01(\tR\x05token\x12\x10\n" +
+	"\x03url\x18\x03 \x01(\tR\x03url\x12\x1a\n" +
+	"\baudience\x18\x04 \x01(\tR\baudience\x12-\n" +
+	"\x12include_valuations\x18\x05 \x01(\bR\x11includeValuations\x12&\n" +
+	"\x0fexpires_at_unix\x18\x06 \x01(\x03R\rexpiresAtUnix\x12&\n" +
+	"\x0fcreated_at_unix\x18\a \x01(\x03R\rcreatedAtUnix\"\x80\x01\n" +
+	"\x18CreateLegacyShareRequest\x12\x1a\n" +
+	"\baudience\x18\x01 \x01(\tR\baudience\x12-\n" +
+	"\x12include_valuations\x18\x02 \x01(\bR\x11includeValuations\x12\x19\n" +
+	"\bttl_days\x18\x03 \x01(\x05R\attlDays\"R\n" +
+	"\x19CreateLegacyShareResponse\x125\n" +
+	"\x05share\x18\x01 \x01(\v2\x1f.sttattus.legacy.v1.LegacyShareR\x05share\"\x1b\n" +
+	"\x19ListMyLegacySharesRequest\"U\n" +
+	"\x1aListMyLegacySharesResponse\x127\n" +
+	"\x06shares\x18\x01 \x03(\v2\x1f.sttattus.legacy.v1.LegacyShareR\x06shares\"5\n" +
+	"\x18RevokeLegacyShareRequest\x12\x19\n" +
+	"\bshare_id\x18\x01 \x01(\tR\ashareId\"\x1b\n" +
+	"\x19RevokeLegacyShareResponse\"\\\n" +
+	"\x1aParseDocumentExpiryRequest\x12\x19\n" +
+	"\basset_id\x18\x01 \x01(\tR\aassetId\x12#\n" +
+	"\rdocument_text\x18\x02 \x01(\tR\fdocumentText\"\x80\x01\n" +
+	"\x1bParseDocumentExpiryResponse\x12\x14\n" +
+	"\x05found\x18\x01 \x01(\bR\x05found\x12&\n" +
+	"\x0fexpires_at_unix\x18\x02 \x01(\x03R\rexpiresAtUnix\x12#\n" +
+	"\rdetected_text\x18\x03 \x01(\tR\fdetectedText*\xd0\x01\n" +
 	"\rAssetCategory\x12\x1e\n" +
 	"\x1aASSET_CATEGORY_UNSPECIFIED\x10\x00\x12(\n" +
 	"$ASSET_CATEGORY_INTELLECTUAL_PROPERTY\x10\x01\x12'\n" +
@@ -2295,7 +7350,7 @@ const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xd8\r\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\x83,\n" +
 	"\rLegacyService\x12d\n" +
 	"\rStoreDocument\x12(.sttattus.legacy.v1.StoreDocumentRequest\x1a).sttattus.legacy.v1.StoreDocumentResponse\x12[\n" +
 	"\n" +
@@ -2312,7 +7367,41 @@ const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
 	"\x15UnassignAssetCategory\x120.sttattus.legacy.v1.UnassignAssetCategoryRequest\x1a1.sttattus.legacy.v1.UnassignAssetCategoryResponse\x12v\n" +
 	"\x13ListAssetCategories\x12..sttattus.legacy.v1.ListAssetCategoriesRequest\x1a/.sttattus.legacy.v1.ListAssetCategoriesResponse\x12s\n" +
 	"\x12RecordAssetVersion\x12-.sttattus.legacy.v1.RecordAssetVersionRequest\x1a..sttattus.legacy.v1.RecordAssetVersionResponse\x12p\n" +
-	"\x11ListAssetVersions\x12,.sttattus.legacy.v1.ListAssetVersionsRequest\x1a-.sttattus.legacy.v1.ListAssetVersionsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/legacy/v1;legacyv1b\x06proto3"
+	"\x11ListAssetVersions\x12,.sttattus.legacy.v1.ListAssetVersionsRequest\x1a-.sttattus.legacy.v1.ListAssetVersionsResponse\x12s\n" +
+	"\x12GetEstateReadiness\x12-.sttattus.legacy.v1.GetEstateReadinessRequest\x1a..sttattus.legacy.v1.GetEstateReadinessResponse\x12v\n" +
+	"\x13ListMyBeneficiaries\x12..sttattus.legacy.v1.ListMyBeneficiariesRequest\x1a/.sttattus.legacy.v1.ListMyBeneficiariesResponse\x12g\n" +
+	"\x0eAddBeneficiary\x12).sttattus.legacy.v1.AddBeneficiaryRequest\x1a*.sttattus.legacy.v1.AddBeneficiaryResponse\x12p\n" +
+	"\x11RemoveBeneficiary\x12,.sttattus.legacy.v1.RemoveBeneficiaryRequest\x1a-.sttattus.legacy.v1.RemoveBeneficiaryResponse\x12m\n" +
+	"\x10GetDeadManSwitch\x12+.sttattus.legacy.v1.GetDeadManSwitchRequest\x1a,.sttattus.legacy.v1.GetDeadManSwitchResponse\x12\x7f\n" +
+	"\x16ConfigureDeadManSwitch\x121.sttattus.legacy.v1.ConfigureDeadManSwitchRequest\x1a2.sttattus.legacy.v1.ConfigureDeadManSwitchResponse\x12y\n" +
+	"\x14CheckInDeadManSwitch\x12/.sttattus.legacy.v1.CheckInDeadManSwitchRequest\x1a0.sttattus.legacy.v1.CheckInDeadManSwitchResponse\x12a\n" +
+	"\fCreateAnchor\x12'.sttattus.legacy.v1.CreateAnchorRequest\x1a(.sttattus.legacy.v1.CreateAnchorResponse\x12d\n" +
+	"\rListMyAnchors\x12(.sttattus.legacy.v1.ListMyAnchorsRequest\x1a).sttattus.legacy.v1.ListMyAnchorsResponse\x12^\n" +
+	"\vListLawyers\x12&.sttattus.legacy.v1.ListLawyersRequest\x1a'.sttattus.legacy.v1.ListLawyersResponse\x12a\n" +
+	"\fListNotaries\x12'.sttattus.legacy.v1.ListNotariesRequest\x1a(.sttattus.legacy.v1.ListNotariesResponse\x12d\n" +
+	"\rListTemplates\x12(.sttattus.legacy.v1.ListTemplatesRequest\x1a).sttattus.legacy.v1.ListTemplatesResponse\x12^\n" +
+	"\vGetTemplate\x12&.sttattus.legacy.v1.GetTemplateRequest\x1a'.sttattus.legacy.v1.GetTemplateResponse\x12m\n" +
+	"\x10GenerateDocument\x12+.sttattus.legacy.v1.GenerateDocumentRequest\x1a,.sttattus.legacy.v1.GenerateDocumentResponse\x12\x85\x01\n" +
+	"\x18ListMyGeneratedDocuments\x123.sttattus.legacy.v1.ListMyGeneratedDocumentsRequest\x1a4.sttattus.legacy.v1.ListMyGeneratedDocumentsResponse\x12g\n" +
+	"\x0eListMyHandoffs\x12).sttattus.legacy.v1.ListMyHandoffsRequest\x1a*.sttattus.legacy.v1.ListMyHandoffsResponse\x12d\n" +
+	"\rAcceptHandoff\x12(.sttattus.legacy.v1.AcceptHandoffRequest\x1a).sttattus.legacy.v1.AcceptHandoffResponse\x12g\n" +
+	"\x0eDismissHandoff\x12).sttattus.legacy.v1.DismissHandoffRequest\x1a*.sttattus.legacy.v1.DismissHandoffResponse\x12m\n" +
+	"\x10GetEstateSummary\x12+.sttattus.legacy.v1.GetEstateSummaryRequest\x1a,.sttattus.legacy.v1.GetEstateSummaryResponse\x12y\n" +
+	"\x14StartConciergeThread\x12/.sttattus.legacy.v1.StartConciergeThreadRequest\x1a0.sttattus.legacy.v1.StartConciergeThreadResponse\x12\x7f\n" +
+	"\x16ListMyConciergeThreads\x121.sttattus.legacy.v1.ListMyConciergeThreadsRequest\x1a2.sttattus.legacy.v1.ListMyConciergeThreadsResponse\x12s\n" +
+	"\x12GetConciergeThread\x12-.sttattus.legacy.v1.GetConciergeThreadRequest\x1a..sttattus.legacy.v1.GetConciergeThreadResponse\x12y\n" +
+	"\x14PostConciergeMessage\x12/.sttattus.legacy.v1.PostConciergeMessageRequest\x1a0.sttattus.legacy.v1.PostConciergeMessageResponse\x12|\n" +
+	"\x15ListAnthologyArticles\x120.sttattus.legacy.v1.ListAnthologyArticlesRequest\x1a1.sttattus.legacy.v1.ListAnthologyArticlesResponse\x12v\n" +
+	"\x13GetAnthologyArticle\x12..sttattus.legacy.v1.GetAnthologyArticleRequest\x1a/.sttattus.legacy.v1.GetAnthologyArticleResponse\x12p\n" +
+	"\x11AddLetterOfWishes\x12,.sttattus.legacy.v1.AddLetterOfWishesRequest\x1a-.sttattus.legacy.v1.AddLetterOfWishesResponse\x12|\n" +
+	"\x15ListMyLettersOfWishes\x120.sttattus.legacy.v1.ListMyLettersOfWishesRequest\x1a1.sttattus.legacy.v1.ListMyLettersOfWishesResponse\x12y\n" +
+	"\x14RemoveLetterOfWishes\x12/.sttattus.legacy.v1.RemoveLetterOfWishesRequest\x1a0.sttattus.legacy.v1.RemoveLetterOfWishesResponse\x12|\n" +
+	"\x15GenerateLegacyAlmanac\x120.sttattus.legacy.v1.GenerateLegacyAlmanacRequest\x1a1.sttattus.legacy.v1.GenerateLegacyAlmanacResponse\x12j\n" +
+	"\x0fListIpPortfolio\x12*.sttattus.legacy.v1.ListIpPortfolioRequest\x1a+.sttattus.legacy.v1.ListIpPortfolioResponse\x12p\n" +
+	"\x11CreateLegacyShare\x12,.sttattus.legacy.v1.CreateLegacyShareRequest\x1a-.sttattus.legacy.v1.CreateLegacyShareResponse\x12s\n" +
+	"\x12ListMyLegacyShares\x12-.sttattus.legacy.v1.ListMyLegacySharesRequest\x1a..sttattus.legacy.v1.ListMyLegacySharesResponse\x12p\n" +
+	"\x11RevokeLegacyShare\x12,.sttattus.legacy.v1.RevokeLegacyShareRequest\x1a-.sttattus.legacy.v1.RevokeLegacyShareResponse\x12v\n" +
+	"\x13ParseDocumentExpiry\x12..sttattus.legacy.v1.ParseDocumentExpiryRequest\x1a/.sttattus.legacy.v1.ParseDocumentExpiryResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/legacy/v1;legacyv1b\x06proto3"
 
 var (
 	file_sttattus_legacy_v1_legacy_proto_rawDescOnce sync.Once
@@ -2327,103 +7416,292 @@ func file_sttattus_legacy_v1_legacy_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_legacy_v1_legacy_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_legacy_v1_legacy_proto_msgTypes = make([]protoimpl.MessageInfo, 37)
+var file_sttattus_legacy_v1_legacy_proto_msgTypes = make([]protoimpl.MessageInfo, 124)
 var file_sttattus_legacy_v1_legacy_proto_goTypes = []any{
-	(AssetCategory)(0),                    // 0: sttattus.legacy.v1.AssetCategory
-	(VerificationStatus)(0),               // 1: sttattus.legacy.v1.VerificationStatus
-	(*LegalAsset)(nil),                    // 2: sttattus.legacy.v1.LegalAsset
-	(*HeritageStats)(nil),                 // 3: sttattus.legacy.v1.HeritageStats
-	(*StoreDocumentRequest)(nil),          // 4: sttattus.legacy.v1.StoreDocumentRequest
-	(*StoreDocumentResponse)(nil),         // 5: sttattus.legacy.v1.StoreDocumentResponse
-	(*GetHeritageStatsRequest)(nil),       // 6: sttattus.legacy.v1.GetHeritageStatsRequest
-	(*GetHeritageStatsResponse)(nil),      // 7: sttattus.legacy.v1.GetHeritageStatsResponse
-	(*ListAssetsRequest)(nil),             // 8: sttattus.legacy.v1.ListAssetsRequest
-	(*ListAssetsResponse)(nil),            // 9: sttattus.legacy.v1.ListAssetsResponse
-	(*AssetVersion)(nil),                  // 10: sttattus.legacy.v1.AssetVersion
-	(*RecordAssetVersionRequest)(nil),     // 11: sttattus.legacy.v1.RecordAssetVersionRequest
-	(*RecordAssetVersionResponse)(nil),    // 12: sttattus.legacy.v1.RecordAssetVersionResponse
-	(*ListAssetVersionsRequest)(nil),      // 13: sttattus.legacy.v1.ListAssetVersionsRequest
-	(*ListAssetVersionsResponse)(nil),     // 14: sttattus.legacy.v1.ListAssetVersionsResponse
-	(*LegacyCategory)(nil),                // 15: sttattus.legacy.v1.LegacyCategory
-	(*ListLegacyCategoriesRequest)(nil),   // 16: sttattus.legacy.v1.ListLegacyCategoriesRequest
-	(*ListLegacyCategoriesResponse)(nil),  // 17: sttattus.legacy.v1.ListLegacyCategoriesResponse
-	(*AssignAssetCategoryRequest)(nil),    // 18: sttattus.legacy.v1.AssignAssetCategoryRequest
-	(*AssignAssetCategoryResponse)(nil),   // 19: sttattus.legacy.v1.AssignAssetCategoryResponse
-	(*UnassignAssetCategoryRequest)(nil),  // 20: sttattus.legacy.v1.UnassignAssetCategoryRequest
-	(*UnassignAssetCategoryResponse)(nil), // 21: sttattus.legacy.v1.UnassignAssetCategoryResponse
-	(*ListAssetCategoriesRequest)(nil),    // 22: sttattus.legacy.v1.ListAssetCategoriesRequest
-	(*ListAssetCategoriesResponse)(nil),   // 23: sttattus.legacy.v1.ListAssetCategoriesResponse
-	(*EncryptedBlobMetadata)(nil),         // 24: sttattus.legacy.v1.EncryptedBlobMetadata
-	(*EncryptedBlob)(nil),                 // 25: sttattus.legacy.v1.EncryptedBlob
-	(*StoreEncryptedBlobRequest)(nil),     // 26: sttattus.legacy.v1.StoreEncryptedBlobRequest
-	(*StoreEncryptedBlobResponse)(nil),    // 27: sttattus.legacy.v1.StoreEncryptedBlobResponse
-	(*GetEncryptedBlobRequest)(nil),       // 28: sttattus.legacy.v1.GetEncryptedBlobRequest
-	(*GetEncryptedBlobResponse)(nil),      // 29: sttattus.legacy.v1.GetEncryptedBlobResponse
-	(*ListMyEncryptedBlobsRequest)(nil),   // 30: sttattus.legacy.v1.ListMyEncryptedBlobsRequest
-	(*ListMyEncryptedBlobsResponse)(nil),  // 31: sttattus.legacy.v1.ListMyEncryptedBlobsResponse
-	(*RecoveryShare)(nil),                 // 32: sttattus.legacy.v1.RecoveryShare
-	(*StoreRecoveryShareRequest)(nil),     // 33: sttattus.legacy.v1.StoreRecoveryShareRequest
-	(*StoreRecoveryShareResponse)(nil),    // 34: sttattus.legacy.v1.StoreRecoveryShareResponse
-	(*ListMyRecoverySharesRequest)(nil),   // 35: sttattus.legacy.v1.ListMyRecoverySharesRequest
-	(*ListMyRecoverySharesResponse)(nil),  // 36: sttattus.legacy.v1.ListMyRecoverySharesResponse
-	(*DeleteRecoveryShareRequest)(nil),    // 37: sttattus.legacy.v1.DeleteRecoveryShareRequest
-	(*DeleteRecoveryShareResponse)(nil),   // 38: sttattus.legacy.v1.DeleteRecoveryShareResponse
-	(*timestamppb.Timestamp)(nil),         // 39: google.protobuf.Timestamp
+	(AssetCategory)(0),                       // 0: sttattus.legacy.v1.AssetCategory
+	(VerificationStatus)(0),                  // 1: sttattus.legacy.v1.VerificationStatus
+	(*LegalAsset)(nil),                       // 2: sttattus.legacy.v1.LegalAsset
+	(*HeritageStats)(nil),                    // 3: sttattus.legacy.v1.HeritageStats
+	(*StoreDocumentRequest)(nil),             // 4: sttattus.legacy.v1.StoreDocumentRequest
+	(*StoreDocumentResponse)(nil),            // 5: sttattus.legacy.v1.StoreDocumentResponse
+	(*GetHeritageStatsRequest)(nil),          // 6: sttattus.legacy.v1.GetHeritageStatsRequest
+	(*GetHeritageStatsResponse)(nil),         // 7: sttattus.legacy.v1.GetHeritageStatsResponse
+	(*ListAssetsRequest)(nil),                // 8: sttattus.legacy.v1.ListAssetsRequest
+	(*ListAssetsResponse)(nil),               // 9: sttattus.legacy.v1.ListAssetsResponse
+	(*AssetVersion)(nil),                     // 10: sttattus.legacy.v1.AssetVersion
+	(*RecordAssetVersionRequest)(nil),        // 11: sttattus.legacy.v1.RecordAssetVersionRequest
+	(*RecordAssetVersionResponse)(nil),       // 12: sttattus.legacy.v1.RecordAssetVersionResponse
+	(*ListAssetVersionsRequest)(nil),         // 13: sttattus.legacy.v1.ListAssetVersionsRequest
+	(*ListAssetVersionsResponse)(nil),        // 14: sttattus.legacy.v1.ListAssetVersionsResponse
+	(*LegacyCategory)(nil),                   // 15: sttattus.legacy.v1.LegacyCategory
+	(*ListLegacyCategoriesRequest)(nil),      // 16: sttattus.legacy.v1.ListLegacyCategoriesRequest
+	(*ListLegacyCategoriesResponse)(nil),     // 17: sttattus.legacy.v1.ListLegacyCategoriesResponse
+	(*AssignAssetCategoryRequest)(nil),       // 18: sttattus.legacy.v1.AssignAssetCategoryRequest
+	(*AssignAssetCategoryResponse)(nil),      // 19: sttattus.legacy.v1.AssignAssetCategoryResponse
+	(*UnassignAssetCategoryRequest)(nil),     // 20: sttattus.legacy.v1.UnassignAssetCategoryRequest
+	(*UnassignAssetCategoryResponse)(nil),    // 21: sttattus.legacy.v1.UnassignAssetCategoryResponse
+	(*ListAssetCategoriesRequest)(nil),       // 22: sttattus.legacy.v1.ListAssetCategoriesRequest
+	(*ListAssetCategoriesResponse)(nil),      // 23: sttattus.legacy.v1.ListAssetCategoriesResponse
+	(*EncryptedBlobMetadata)(nil),            // 24: sttattus.legacy.v1.EncryptedBlobMetadata
+	(*EncryptedBlob)(nil),                    // 25: sttattus.legacy.v1.EncryptedBlob
+	(*StoreEncryptedBlobRequest)(nil),        // 26: sttattus.legacy.v1.StoreEncryptedBlobRequest
+	(*StoreEncryptedBlobResponse)(nil),       // 27: sttattus.legacy.v1.StoreEncryptedBlobResponse
+	(*GetEncryptedBlobRequest)(nil),          // 28: sttattus.legacy.v1.GetEncryptedBlobRequest
+	(*GetEncryptedBlobResponse)(nil),         // 29: sttattus.legacy.v1.GetEncryptedBlobResponse
+	(*ListMyEncryptedBlobsRequest)(nil),      // 30: sttattus.legacy.v1.ListMyEncryptedBlobsRequest
+	(*ListMyEncryptedBlobsResponse)(nil),     // 31: sttattus.legacy.v1.ListMyEncryptedBlobsResponse
+	(*RecoveryShare)(nil),                    // 32: sttattus.legacy.v1.RecoveryShare
+	(*StoreRecoveryShareRequest)(nil),        // 33: sttattus.legacy.v1.StoreRecoveryShareRequest
+	(*StoreRecoveryShareResponse)(nil),       // 34: sttattus.legacy.v1.StoreRecoveryShareResponse
+	(*ListMyRecoverySharesRequest)(nil),      // 35: sttattus.legacy.v1.ListMyRecoverySharesRequest
+	(*ListMyRecoverySharesResponse)(nil),     // 36: sttattus.legacy.v1.ListMyRecoverySharesResponse
+	(*DeleteRecoveryShareRequest)(nil),       // 37: sttattus.legacy.v1.DeleteRecoveryShareRequest
+	(*DeleteRecoveryShareResponse)(nil),      // 38: sttattus.legacy.v1.DeleteRecoveryShareResponse
+	(*ReadinessComponent)(nil),               // 39: sttattus.legacy.v1.ReadinessComponent
+	(*EstateReadiness)(nil),                  // 40: sttattus.legacy.v1.EstateReadiness
+	(*GetEstateReadinessRequest)(nil),        // 41: sttattus.legacy.v1.GetEstateReadinessRequest
+	(*GetEstateReadinessResponse)(nil),       // 42: sttattus.legacy.v1.GetEstateReadinessResponse
+	(*Beneficiary)(nil),                      // 43: sttattus.legacy.v1.Beneficiary
+	(*ListMyBeneficiariesRequest)(nil),       // 44: sttattus.legacy.v1.ListMyBeneficiariesRequest
+	(*ListMyBeneficiariesResponse)(nil),      // 45: sttattus.legacy.v1.ListMyBeneficiariesResponse
+	(*AddBeneficiaryRequest)(nil),            // 46: sttattus.legacy.v1.AddBeneficiaryRequest
+	(*AddBeneficiaryResponse)(nil),           // 47: sttattus.legacy.v1.AddBeneficiaryResponse
+	(*RemoveBeneficiaryRequest)(nil),         // 48: sttattus.legacy.v1.RemoveBeneficiaryRequest
+	(*RemoveBeneficiaryResponse)(nil),        // 49: sttattus.legacy.v1.RemoveBeneficiaryResponse
+	(*DeadManSwitch)(nil),                    // 50: sttattus.legacy.v1.DeadManSwitch
+	(*GetDeadManSwitchRequest)(nil),          // 51: sttattus.legacy.v1.GetDeadManSwitchRequest
+	(*GetDeadManSwitchResponse)(nil),         // 52: sttattus.legacy.v1.GetDeadManSwitchResponse
+	(*ConfigureDeadManSwitchRequest)(nil),    // 53: sttattus.legacy.v1.ConfigureDeadManSwitchRequest
+	(*ConfigureDeadManSwitchResponse)(nil),   // 54: sttattus.legacy.v1.ConfigureDeadManSwitchResponse
+	(*CheckInDeadManSwitchRequest)(nil),      // 55: sttattus.legacy.v1.CheckInDeadManSwitchRequest
+	(*CheckInDeadManSwitchResponse)(nil),     // 56: sttattus.legacy.v1.CheckInDeadManSwitchResponse
+	(*Anchor)(nil),                           // 57: sttattus.legacy.v1.Anchor
+	(*CreateAnchorRequest)(nil),              // 58: sttattus.legacy.v1.CreateAnchorRequest
+	(*CreateAnchorResponse)(nil),             // 59: sttattus.legacy.v1.CreateAnchorResponse
+	(*ListMyAnchorsRequest)(nil),             // 60: sttattus.legacy.v1.ListMyAnchorsRequest
+	(*ListMyAnchorsResponse)(nil),            // 61: sttattus.legacy.v1.ListMyAnchorsResponse
+	(*Lawyer)(nil),                           // 62: sttattus.legacy.v1.Lawyer
+	(*ListLawyersRequest)(nil),               // 63: sttattus.legacy.v1.ListLawyersRequest
+	(*ListLawyersResponse)(nil),              // 64: sttattus.legacy.v1.ListLawyersResponse
+	(*Notary)(nil),                           // 65: sttattus.legacy.v1.Notary
+	(*ListNotariesRequest)(nil),              // 66: sttattus.legacy.v1.ListNotariesRequest
+	(*ListNotariesResponse)(nil),             // 67: sttattus.legacy.v1.ListNotariesResponse
+	(*TemplateField)(nil),                    // 68: sttattus.legacy.v1.TemplateField
+	(*DocumentTemplate)(nil),                 // 69: sttattus.legacy.v1.DocumentTemplate
+	(*ListTemplatesRequest)(nil),             // 70: sttattus.legacy.v1.ListTemplatesRequest
+	(*ListTemplatesResponse)(nil),            // 71: sttattus.legacy.v1.ListTemplatesResponse
+	(*GetTemplateRequest)(nil),               // 72: sttattus.legacy.v1.GetTemplateRequest
+	(*GetTemplateResponse)(nil),              // 73: sttattus.legacy.v1.GetTemplateResponse
+	(*GeneratedDocument)(nil),                // 74: sttattus.legacy.v1.GeneratedDocument
+	(*GenerateDocumentRequest)(nil),          // 75: sttattus.legacy.v1.GenerateDocumentRequest
+	(*GenerateDocumentResponse)(nil),         // 76: sttattus.legacy.v1.GenerateDocumentResponse
+	(*ListMyGeneratedDocumentsRequest)(nil),  // 77: sttattus.legacy.v1.ListMyGeneratedDocumentsRequest
+	(*ListMyGeneratedDocumentsResponse)(nil), // 78: sttattus.legacy.v1.ListMyGeneratedDocumentsResponse
+	(*Handoff)(nil),                          // 79: sttattus.legacy.v1.Handoff
+	(*ListMyHandoffsRequest)(nil),            // 80: sttattus.legacy.v1.ListMyHandoffsRequest
+	(*ListMyHandoffsResponse)(nil),           // 81: sttattus.legacy.v1.ListMyHandoffsResponse
+	(*AcceptHandoffRequest)(nil),             // 82: sttattus.legacy.v1.AcceptHandoffRequest
+	(*AcceptHandoffResponse)(nil),            // 83: sttattus.legacy.v1.AcceptHandoffResponse
+	(*DismissHandoffRequest)(nil),            // 84: sttattus.legacy.v1.DismissHandoffRequest
+	(*DismissHandoffResponse)(nil),           // 85: sttattus.legacy.v1.DismissHandoffResponse
+	(*EstateSummary)(nil),                    // 86: sttattus.legacy.v1.EstateSummary
+	(*GetEstateSummaryRequest)(nil),          // 87: sttattus.legacy.v1.GetEstateSummaryRequest
+	(*GetEstateSummaryResponse)(nil),         // 88: sttattus.legacy.v1.GetEstateSummaryResponse
+	(*ConciergeMessage)(nil),                 // 89: sttattus.legacy.v1.ConciergeMessage
+	(*ConciergeThread)(nil),                  // 90: sttattus.legacy.v1.ConciergeThread
+	(*StartConciergeThreadRequest)(nil),      // 91: sttattus.legacy.v1.StartConciergeThreadRequest
+	(*StartConciergeThreadResponse)(nil),     // 92: sttattus.legacy.v1.StartConciergeThreadResponse
+	(*ListMyConciergeThreadsRequest)(nil),    // 93: sttattus.legacy.v1.ListMyConciergeThreadsRequest
+	(*ListMyConciergeThreadsResponse)(nil),   // 94: sttattus.legacy.v1.ListMyConciergeThreadsResponse
+	(*GetConciergeThreadRequest)(nil),        // 95: sttattus.legacy.v1.GetConciergeThreadRequest
+	(*GetConciergeThreadResponse)(nil),       // 96: sttattus.legacy.v1.GetConciergeThreadResponse
+	(*PostConciergeMessageRequest)(nil),      // 97: sttattus.legacy.v1.PostConciergeMessageRequest
+	(*PostConciergeMessageResponse)(nil),     // 98: sttattus.legacy.v1.PostConciergeMessageResponse
+	(*AnthologyArticle)(nil),                 // 99: sttattus.legacy.v1.AnthologyArticle
+	(*ListAnthologyArticlesRequest)(nil),     // 100: sttattus.legacy.v1.ListAnthologyArticlesRequest
+	(*ListAnthologyArticlesResponse)(nil),    // 101: sttattus.legacy.v1.ListAnthologyArticlesResponse
+	(*GetAnthologyArticleRequest)(nil),       // 102: sttattus.legacy.v1.GetAnthologyArticleRequest
+	(*GetAnthologyArticleResponse)(nil),      // 103: sttattus.legacy.v1.GetAnthologyArticleResponse
+	(*LetterOfWishes)(nil),                   // 104: sttattus.legacy.v1.LetterOfWishes
+	(*AddLetterOfWishesRequest)(nil),         // 105: sttattus.legacy.v1.AddLetterOfWishesRequest
+	(*AddLetterOfWishesResponse)(nil),        // 106: sttattus.legacy.v1.AddLetterOfWishesResponse
+	(*ListMyLettersOfWishesRequest)(nil),     // 107: sttattus.legacy.v1.ListMyLettersOfWishesRequest
+	(*ListMyLettersOfWishesResponse)(nil),    // 108: sttattus.legacy.v1.ListMyLettersOfWishesResponse
+	(*RemoveLetterOfWishesRequest)(nil),      // 109: sttattus.legacy.v1.RemoveLetterOfWishesRequest
+	(*RemoveLetterOfWishesResponse)(nil),     // 110: sttattus.legacy.v1.RemoveLetterOfWishesResponse
+	(*GenerateLegacyAlmanacRequest)(nil),     // 111: sttattus.legacy.v1.GenerateLegacyAlmanacRequest
+	(*GenerateLegacyAlmanacResponse)(nil),    // 112: sttattus.legacy.v1.GenerateLegacyAlmanacResponse
+	(*IpAsset)(nil),                          // 113: sttattus.legacy.v1.IpAsset
+	(*ListIpPortfolioRequest)(nil),           // 114: sttattus.legacy.v1.ListIpPortfolioRequest
+	(*ListIpPortfolioResponse)(nil),          // 115: sttattus.legacy.v1.ListIpPortfolioResponse
+	(*LegacyShare)(nil),                      // 116: sttattus.legacy.v1.LegacyShare
+	(*CreateLegacyShareRequest)(nil),         // 117: sttattus.legacy.v1.CreateLegacyShareRequest
+	(*CreateLegacyShareResponse)(nil),        // 118: sttattus.legacy.v1.CreateLegacyShareResponse
+	(*ListMyLegacySharesRequest)(nil),        // 119: sttattus.legacy.v1.ListMyLegacySharesRequest
+	(*ListMyLegacySharesResponse)(nil),       // 120: sttattus.legacy.v1.ListMyLegacySharesResponse
+	(*RevokeLegacyShareRequest)(nil),         // 121: sttattus.legacy.v1.RevokeLegacyShareRequest
+	(*RevokeLegacyShareResponse)(nil),        // 122: sttattus.legacy.v1.RevokeLegacyShareResponse
+	(*ParseDocumentExpiryRequest)(nil),       // 123: sttattus.legacy.v1.ParseDocumentExpiryRequest
+	(*ParseDocumentExpiryResponse)(nil),      // 124: sttattus.legacy.v1.ParseDocumentExpiryResponse
+	nil,                                      // 125: sttattus.legacy.v1.GenerateDocumentRequest.ValuesEntry
+	(*timestamppb.Timestamp)(nil),            // 126: google.protobuf.Timestamp
 }
 var file_sttattus_legacy_v1_legacy_proto_depIdxs = []int32{
-	0,  // 0: sttattus.legacy.v1.LegalAsset.category:type_name -> sttattus.legacy.v1.AssetCategory
-	1,  // 1: sttattus.legacy.v1.LegalAsset.status:type_name -> sttattus.legacy.v1.VerificationStatus
-	39, // 2: sttattus.legacy.v1.LegalAsset.filed_at:type_name -> google.protobuf.Timestamp
-	39, // 3: sttattus.legacy.v1.LegalAsset.expires_at:type_name -> google.protobuf.Timestamp
-	0,  // 4: sttattus.legacy.v1.StoreDocumentRequest.category:type_name -> sttattus.legacy.v1.AssetCategory
-	2,  // 5: sttattus.legacy.v1.StoreDocumentResponse.asset:type_name -> sttattus.legacy.v1.LegalAsset
-	3,  // 6: sttattus.legacy.v1.StoreDocumentResponse.stats:type_name -> sttattus.legacy.v1.HeritageStats
-	3,  // 7: sttattus.legacy.v1.GetHeritageStatsResponse.stats:type_name -> sttattus.legacy.v1.HeritageStats
-	2,  // 8: sttattus.legacy.v1.ListAssetsResponse.assets:type_name -> sttattus.legacy.v1.LegalAsset
-	10, // 9: sttattus.legacy.v1.RecordAssetVersionResponse.version:type_name -> sttattus.legacy.v1.AssetVersion
-	10, // 10: sttattus.legacy.v1.ListAssetVersionsResponse.versions:type_name -> sttattus.legacy.v1.AssetVersion
-	15, // 11: sttattus.legacy.v1.ListLegacyCategoriesResponse.categories:type_name -> sttattus.legacy.v1.LegacyCategory
-	15, // 12: sttattus.legacy.v1.ListAssetCategoriesResponse.categories:type_name -> sttattus.legacy.v1.LegacyCategory
-	24, // 13: sttattus.legacy.v1.StoreEncryptedBlobResponse.blob:type_name -> sttattus.legacy.v1.EncryptedBlobMetadata
-	25, // 14: sttattus.legacy.v1.GetEncryptedBlobResponse.blob:type_name -> sttattus.legacy.v1.EncryptedBlob
-	24, // 15: sttattus.legacy.v1.ListMyEncryptedBlobsResponse.blobs:type_name -> sttattus.legacy.v1.EncryptedBlobMetadata
-	32, // 16: sttattus.legacy.v1.StoreRecoveryShareResponse.share:type_name -> sttattus.legacy.v1.RecoveryShare
-	32, // 17: sttattus.legacy.v1.ListMyRecoverySharesResponse.shares:type_name -> sttattus.legacy.v1.RecoveryShare
-	4,  // 18: sttattus.legacy.v1.LegacyService.StoreDocument:input_type -> sttattus.legacy.v1.StoreDocumentRequest
-	8,  // 19: sttattus.legacy.v1.LegacyService.ListAssets:input_type -> sttattus.legacy.v1.ListAssetsRequest
-	6,  // 20: sttattus.legacy.v1.LegacyService.GetHeritageStats:input_type -> sttattus.legacy.v1.GetHeritageStatsRequest
-	26, // 21: sttattus.legacy.v1.LegacyService.StoreEncryptedBlob:input_type -> sttattus.legacy.v1.StoreEncryptedBlobRequest
-	28, // 22: sttattus.legacy.v1.LegacyService.GetEncryptedBlob:input_type -> sttattus.legacy.v1.GetEncryptedBlobRequest
-	30, // 23: sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs:input_type -> sttattus.legacy.v1.ListMyEncryptedBlobsRequest
-	33, // 24: sttattus.legacy.v1.LegacyService.StoreRecoveryShare:input_type -> sttattus.legacy.v1.StoreRecoveryShareRequest
-	35, // 25: sttattus.legacy.v1.LegacyService.ListMyRecoveryShares:input_type -> sttattus.legacy.v1.ListMyRecoverySharesRequest
-	37, // 26: sttattus.legacy.v1.LegacyService.DeleteRecoveryShare:input_type -> sttattus.legacy.v1.DeleteRecoveryShareRequest
-	16, // 27: sttattus.legacy.v1.LegacyService.ListLegacyCategories:input_type -> sttattus.legacy.v1.ListLegacyCategoriesRequest
-	18, // 28: sttattus.legacy.v1.LegacyService.AssignAssetCategory:input_type -> sttattus.legacy.v1.AssignAssetCategoryRequest
-	20, // 29: sttattus.legacy.v1.LegacyService.UnassignAssetCategory:input_type -> sttattus.legacy.v1.UnassignAssetCategoryRequest
-	22, // 30: sttattus.legacy.v1.LegacyService.ListAssetCategories:input_type -> sttattus.legacy.v1.ListAssetCategoriesRequest
-	11, // 31: sttattus.legacy.v1.LegacyService.RecordAssetVersion:input_type -> sttattus.legacy.v1.RecordAssetVersionRequest
-	13, // 32: sttattus.legacy.v1.LegacyService.ListAssetVersions:input_type -> sttattus.legacy.v1.ListAssetVersionsRequest
-	5,  // 33: sttattus.legacy.v1.LegacyService.StoreDocument:output_type -> sttattus.legacy.v1.StoreDocumentResponse
-	9,  // 34: sttattus.legacy.v1.LegacyService.ListAssets:output_type -> sttattus.legacy.v1.ListAssetsResponse
-	7,  // 35: sttattus.legacy.v1.LegacyService.GetHeritageStats:output_type -> sttattus.legacy.v1.GetHeritageStatsResponse
-	27, // 36: sttattus.legacy.v1.LegacyService.StoreEncryptedBlob:output_type -> sttattus.legacy.v1.StoreEncryptedBlobResponse
-	29, // 37: sttattus.legacy.v1.LegacyService.GetEncryptedBlob:output_type -> sttattus.legacy.v1.GetEncryptedBlobResponse
-	31, // 38: sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs:output_type -> sttattus.legacy.v1.ListMyEncryptedBlobsResponse
-	34, // 39: sttattus.legacy.v1.LegacyService.StoreRecoveryShare:output_type -> sttattus.legacy.v1.StoreRecoveryShareResponse
-	36, // 40: sttattus.legacy.v1.LegacyService.ListMyRecoveryShares:output_type -> sttattus.legacy.v1.ListMyRecoverySharesResponse
-	38, // 41: sttattus.legacy.v1.LegacyService.DeleteRecoveryShare:output_type -> sttattus.legacy.v1.DeleteRecoveryShareResponse
-	17, // 42: sttattus.legacy.v1.LegacyService.ListLegacyCategories:output_type -> sttattus.legacy.v1.ListLegacyCategoriesResponse
-	19, // 43: sttattus.legacy.v1.LegacyService.AssignAssetCategory:output_type -> sttattus.legacy.v1.AssignAssetCategoryResponse
-	21, // 44: sttattus.legacy.v1.LegacyService.UnassignAssetCategory:output_type -> sttattus.legacy.v1.UnassignAssetCategoryResponse
-	23, // 45: sttattus.legacy.v1.LegacyService.ListAssetCategories:output_type -> sttattus.legacy.v1.ListAssetCategoriesResponse
-	12, // 46: sttattus.legacy.v1.LegacyService.RecordAssetVersion:output_type -> sttattus.legacy.v1.RecordAssetVersionResponse
-	14, // 47: sttattus.legacy.v1.LegacyService.ListAssetVersions:output_type -> sttattus.legacy.v1.ListAssetVersionsResponse
-	33, // [33:48] is the sub-list for method output_type
-	18, // [18:33] is the sub-list for method input_type
-	18, // [18:18] is the sub-list for extension type_name
-	18, // [18:18] is the sub-list for extension extendee
-	0,  // [0:18] is the sub-list for field type_name
+	0,   // 0: sttattus.legacy.v1.LegalAsset.category:type_name -> sttattus.legacy.v1.AssetCategory
+	1,   // 1: sttattus.legacy.v1.LegalAsset.status:type_name -> sttattus.legacy.v1.VerificationStatus
+	126, // 2: sttattus.legacy.v1.LegalAsset.filed_at:type_name -> google.protobuf.Timestamp
+	126, // 3: sttattus.legacy.v1.LegalAsset.expires_at:type_name -> google.protobuf.Timestamp
+	0,   // 4: sttattus.legacy.v1.StoreDocumentRequest.category:type_name -> sttattus.legacy.v1.AssetCategory
+	2,   // 5: sttattus.legacy.v1.StoreDocumentResponse.asset:type_name -> sttattus.legacy.v1.LegalAsset
+	3,   // 6: sttattus.legacy.v1.StoreDocumentResponse.stats:type_name -> sttattus.legacy.v1.HeritageStats
+	3,   // 7: sttattus.legacy.v1.GetHeritageStatsResponse.stats:type_name -> sttattus.legacy.v1.HeritageStats
+	2,   // 8: sttattus.legacy.v1.ListAssetsResponse.assets:type_name -> sttattus.legacy.v1.LegalAsset
+	10,  // 9: sttattus.legacy.v1.RecordAssetVersionResponse.version:type_name -> sttattus.legacy.v1.AssetVersion
+	10,  // 10: sttattus.legacy.v1.ListAssetVersionsResponse.versions:type_name -> sttattus.legacy.v1.AssetVersion
+	15,  // 11: sttattus.legacy.v1.ListLegacyCategoriesResponse.categories:type_name -> sttattus.legacy.v1.LegacyCategory
+	15,  // 12: sttattus.legacy.v1.ListAssetCategoriesResponse.categories:type_name -> sttattus.legacy.v1.LegacyCategory
+	24,  // 13: sttattus.legacy.v1.StoreEncryptedBlobResponse.blob:type_name -> sttattus.legacy.v1.EncryptedBlobMetadata
+	25,  // 14: sttattus.legacy.v1.GetEncryptedBlobResponse.blob:type_name -> sttattus.legacy.v1.EncryptedBlob
+	24,  // 15: sttattus.legacy.v1.ListMyEncryptedBlobsResponse.blobs:type_name -> sttattus.legacy.v1.EncryptedBlobMetadata
+	32,  // 16: sttattus.legacy.v1.StoreRecoveryShareResponse.share:type_name -> sttattus.legacy.v1.RecoveryShare
+	32,  // 17: sttattus.legacy.v1.ListMyRecoverySharesResponse.shares:type_name -> sttattus.legacy.v1.RecoveryShare
+	39,  // 18: sttattus.legacy.v1.EstateReadiness.components:type_name -> sttattus.legacy.v1.ReadinessComponent
+	40,  // 19: sttattus.legacy.v1.GetEstateReadinessResponse.readiness:type_name -> sttattus.legacy.v1.EstateReadiness
+	43,  // 20: sttattus.legacy.v1.ListMyBeneficiariesResponse.beneficiaries:type_name -> sttattus.legacy.v1.Beneficiary
+	43,  // 21: sttattus.legacy.v1.AddBeneficiaryResponse.beneficiary:type_name -> sttattus.legacy.v1.Beneficiary
+	50,  // 22: sttattus.legacy.v1.GetDeadManSwitchResponse.state:type_name -> sttattus.legacy.v1.DeadManSwitch
+	50,  // 23: sttattus.legacy.v1.ConfigureDeadManSwitchResponse.state:type_name -> sttattus.legacy.v1.DeadManSwitch
+	50,  // 24: sttattus.legacy.v1.CheckInDeadManSwitchResponse.state:type_name -> sttattus.legacy.v1.DeadManSwitch
+	57,  // 25: sttattus.legacy.v1.CreateAnchorResponse.anchor:type_name -> sttattus.legacy.v1.Anchor
+	57,  // 26: sttattus.legacy.v1.ListMyAnchorsResponse.anchors:type_name -> sttattus.legacy.v1.Anchor
+	62,  // 27: sttattus.legacy.v1.ListLawyersResponse.lawyers:type_name -> sttattus.legacy.v1.Lawyer
+	65,  // 28: sttattus.legacy.v1.ListNotariesResponse.notaries:type_name -> sttattus.legacy.v1.Notary
+	68,  // 29: sttattus.legacy.v1.DocumentTemplate.fields:type_name -> sttattus.legacy.v1.TemplateField
+	69,  // 30: sttattus.legacy.v1.ListTemplatesResponse.templates:type_name -> sttattus.legacy.v1.DocumentTemplate
+	69,  // 31: sttattus.legacy.v1.GetTemplateResponse.template:type_name -> sttattus.legacy.v1.DocumentTemplate
+	125, // 32: sttattus.legacy.v1.GenerateDocumentRequest.values:type_name -> sttattus.legacy.v1.GenerateDocumentRequest.ValuesEntry
+	74,  // 33: sttattus.legacy.v1.GenerateDocumentResponse.document:type_name -> sttattus.legacy.v1.GeneratedDocument
+	74,  // 34: sttattus.legacy.v1.ListMyGeneratedDocumentsResponse.documents:type_name -> sttattus.legacy.v1.GeneratedDocument
+	0,   // 35: sttattus.legacy.v1.Handoff.category:type_name -> sttattus.legacy.v1.AssetCategory
+	79,  // 36: sttattus.legacy.v1.ListMyHandoffsResponse.handoffs:type_name -> sttattus.legacy.v1.Handoff
+	2,   // 37: sttattus.legacy.v1.AcceptHandoffResponse.asset:type_name -> sttattus.legacy.v1.LegalAsset
+	40,  // 38: sttattus.legacy.v1.EstateSummary.readiness:type_name -> sttattus.legacy.v1.EstateReadiness
+	86,  // 39: sttattus.legacy.v1.GetEstateSummaryResponse.summary:type_name -> sttattus.legacy.v1.EstateSummary
+	89,  // 40: sttattus.legacy.v1.ConciergeThread.messages:type_name -> sttattus.legacy.v1.ConciergeMessage
+	90,  // 41: sttattus.legacy.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.legacy.v1.ConciergeThread
+	90,  // 42: sttattus.legacy.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.legacy.v1.ConciergeThread
+	90,  // 43: sttattus.legacy.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.legacy.v1.ConciergeThread
+	89,  // 44: sttattus.legacy.v1.PostConciergeMessageResponse.message:type_name -> sttattus.legacy.v1.ConciergeMessage
+	99,  // 45: sttattus.legacy.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.legacy.v1.AnthologyArticle
+	99,  // 46: sttattus.legacy.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.legacy.v1.AnthologyArticle
+	104, // 47: sttattus.legacy.v1.AddLetterOfWishesResponse.letter:type_name -> sttattus.legacy.v1.LetterOfWishes
+	104, // 48: sttattus.legacy.v1.ListMyLettersOfWishesResponse.letters:type_name -> sttattus.legacy.v1.LetterOfWishes
+	113, // 49: sttattus.legacy.v1.ListIpPortfolioResponse.assets:type_name -> sttattus.legacy.v1.IpAsset
+	116, // 50: sttattus.legacy.v1.CreateLegacyShareResponse.share:type_name -> sttattus.legacy.v1.LegacyShare
+	116, // 51: sttattus.legacy.v1.ListMyLegacySharesResponse.shares:type_name -> sttattus.legacy.v1.LegacyShare
+	4,   // 52: sttattus.legacy.v1.LegacyService.StoreDocument:input_type -> sttattus.legacy.v1.StoreDocumentRequest
+	8,   // 53: sttattus.legacy.v1.LegacyService.ListAssets:input_type -> sttattus.legacy.v1.ListAssetsRequest
+	6,   // 54: sttattus.legacy.v1.LegacyService.GetHeritageStats:input_type -> sttattus.legacy.v1.GetHeritageStatsRequest
+	26,  // 55: sttattus.legacy.v1.LegacyService.StoreEncryptedBlob:input_type -> sttattus.legacy.v1.StoreEncryptedBlobRequest
+	28,  // 56: sttattus.legacy.v1.LegacyService.GetEncryptedBlob:input_type -> sttattus.legacy.v1.GetEncryptedBlobRequest
+	30,  // 57: sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs:input_type -> sttattus.legacy.v1.ListMyEncryptedBlobsRequest
+	33,  // 58: sttattus.legacy.v1.LegacyService.StoreRecoveryShare:input_type -> sttattus.legacy.v1.StoreRecoveryShareRequest
+	35,  // 59: sttattus.legacy.v1.LegacyService.ListMyRecoveryShares:input_type -> sttattus.legacy.v1.ListMyRecoverySharesRequest
+	37,  // 60: sttattus.legacy.v1.LegacyService.DeleteRecoveryShare:input_type -> sttattus.legacy.v1.DeleteRecoveryShareRequest
+	16,  // 61: sttattus.legacy.v1.LegacyService.ListLegacyCategories:input_type -> sttattus.legacy.v1.ListLegacyCategoriesRequest
+	18,  // 62: sttattus.legacy.v1.LegacyService.AssignAssetCategory:input_type -> sttattus.legacy.v1.AssignAssetCategoryRequest
+	20,  // 63: sttattus.legacy.v1.LegacyService.UnassignAssetCategory:input_type -> sttattus.legacy.v1.UnassignAssetCategoryRequest
+	22,  // 64: sttattus.legacy.v1.LegacyService.ListAssetCategories:input_type -> sttattus.legacy.v1.ListAssetCategoriesRequest
+	11,  // 65: sttattus.legacy.v1.LegacyService.RecordAssetVersion:input_type -> sttattus.legacy.v1.RecordAssetVersionRequest
+	13,  // 66: sttattus.legacy.v1.LegacyService.ListAssetVersions:input_type -> sttattus.legacy.v1.ListAssetVersionsRequest
+	41,  // 67: sttattus.legacy.v1.LegacyService.GetEstateReadiness:input_type -> sttattus.legacy.v1.GetEstateReadinessRequest
+	44,  // 68: sttattus.legacy.v1.LegacyService.ListMyBeneficiaries:input_type -> sttattus.legacy.v1.ListMyBeneficiariesRequest
+	46,  // 69: sttattus.legacy.v1.LegacyService.AddBeneficiary:input_type -> sttattus.legacy.v1.AddBeneficiaryRequest
+	48,  // 70: sttattus.legacy.v1.LegacyService.RemoveBeneficiary:input_type -> sttattus.legacy.v1.RemoveBeneficiaryRequest
+	51,  // 71: sttattus.legacy.v1.LegacyService.GetDeadManSwitch:input_type -> sttattus.legacy.v1.GetDeadManSwitchRequest
+	53,  // 72: sttattus.legacy.v1.LegacyService.ConfigureDeadManSwitch:input_type -> sttattus.legacy.v1.ConfigureDeadManSwitchRequest
+	55,  // 73: sttattus.legacy.v1.LegacyService.CheckInDeadManSwitch:input_type -> sttattus.legacy.v1.CheckInDeadManSwitchRequest
+	58,  // 74: sttattus.legacy.v1.LegacyService.CreateAnchor:input_type -> sttattus.legacy.v1.CreateAnchorRequest
+	60,  // 75: sttattus.legacy.v1.LegacyService.ListMyAnchors:input_type -> sttattus.legacy.v1.ListMyAnchorsRequest
+	63,  // 76: sttattus.legacy.v1.LegacyService.ListLawyers:input_type -> sttattus.legacy.v1.ListLawyersRequest
+	66,  // 77: sttattus.legacy.v1.LegacyService.ListNotaries:input_type -> sttattus.legacy.v1.ListNotariesRequest
+	70,  // 78: sttattus.legacy.v1.LegacyService.ListTemplates:input_type -> sttattus.legacy.v1.ListTemplatesRequest
+	72,  // 79: sttattus.legacy.v1.LegacyService.GetTemplate:input_type -> sttattus.legacy.v1.GetTemplateRequest
+	75,  // 80: sttattus.legacy.v1.LegacyService.GenerateDocument:input_type -> sttattus.legacy.v1.GenerateDocumentRequest
+	77,  // 81: sttattus.legacy.v1.LegacyService.ListMyGeneratedDocuments:input_type -> sttattus.legacy.v1.ListMyGeneratedDocumentsRequest
+	80,  // 82: sttattus.legacy.v1.LegacyService.ListMyHandoffs:input_type -> sttattus.legacy.v1.ListMyHandoffsRequest
+	82,  // 83: sttattus.legacy.v1.LegacyService.AcceptHandoff:input_type -> sttattus.legacy.v1.AcceptHandoffRequest
+	84,  // 84: sttattus.legacy.v1.LegacyService.DismissHandoff:input_type -> sttattus.legacy.v1.DismissHandoffRequest
+	87,  // 85: sttattus.legacy.v1.LegacyService.GetEstateSummary:input_type -> sttattus.legacy.v1.GetEstateSummaryRequest
+	91,  // 86: sttattus.legacy.v1.LegacyService.StartConciergeThread:input_type -> sttattus.legacy.v1.StartConciergeThreadRequest
+	93,  // 87: sttattus.legacy.v1.LegacyService.ListMyConciergeThreads:input_type -> sttattus.legacy.v1.ListMyConciergeThreadsRequest
+	95,  // 88: sttattus.legacy.v1.LegacyService.GetConciergeThread:input_type -> sttattus.legacy.v1.GetConciergeThreadRequest
+	97,  // 89: sttattus.legacy.v1.LegacyService.PostConciergeMessage:input_type -> sttattus.legacy.v1.PostConciergeMessageRequest
+	100, // 90: sttattus.legacy.v1.LegacyService.ListAnthologyArticles:input_type -> sttattus.legacy.v1.ListAnthologyArticlesRequest
+	102, // 91: sttattus.legacy.v1.LegacyService.GetAnthologyArticle:input_type -> sttattus.legacy.v1.GetAnthologyArticleRequest
+	105, // 92: sttattus.legacy.v1.LegacyService.AddLetterOfWishes:input_type -> sttattus.legacy.v1.AddLetterOfWishesRequest
+	107, // 93: sttattus.legacy.v1.LegacyService.ListMyLettersOfWishes:input_type -> sttattus.legacy.v1.ListMyLettersOfWishesRequest
+	109, // 94: sttattus.legacy.v1.LegacyService.RemoveLetterOfWishes:input_type -> sttattus.legacy.v1.RemoveLetterOfWishesRequest
+	111, // 95: sttattus.legacy.v1.LegacyService.GenerateLegacyAlmanac:input_type -> sttattus.legacy.v1.GenerateLegacyAlmanacRequest
+	114, // 96: sttattus.legacy.v1.LegacyService.ListIpPortfolio:input_type -> sttattus.legacy.v1.ListIpPortfolioRequest
+	117, // 97: sttattus.legacy.v1.LegacyService.CreateLegacyShare:input_type -> sttattus.legacy.v1.CreateLegacyShareRequest
+	119, // 98: sttattus.legacy.v1.LegacyService.ListMyLegacyShares:input_type -> sttattus.legacy.v1.ListMyLegacySharesRequest
+	121, // 99: sttattus.legacy.v1.LegacyService.RevokeLegacyShare:input_type -> sttattus.legacy.v1.RevokeLegacyShareRequest
+	123, // 100: sttattus.legacy.v1.LegacyService.ParseDocumentExpiry:input_type -> sttattus.legacy.v1.ParseDocumentExpiryRequest
+	5,   // 101: sttattus.legacy.v1.LegacyService.StoreDocument:output_type -> sttattus.legacy.v1.StoreDocumentResponse
+	9,   // 102: sttattus.legacy.v1.LegacyService.ListAssets:output_type -> sttattus.legacy.v1.ListAssetsResponse
+	7,   // 103: sttattus.legacy.v1.LegacyService.GetHeritageStats:output_type -> sttattus.legacy.v1.GetHeritageStatsResponse
+	27,  // 104: sttattus.legacy.v1.LegacyService.StoreEncryptedBlob:output_type -> sttattus.legacy.v1.StoreEncryptedBlobResponse
+	29,  // 105: sttattus.legacy.v1.LegacyService.GetEncryptedBlob:output_type -> sttattus.legacy.v1.GetEncryptedBlobResponse
+	31,  // 106: sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs:output_type -> sttattus.legacy.v1.ListMyEncryptedBlobsResponse
+	34,  // 107: sttattus.legacy.v1.LegacyService.StoreRecoveryShare:output_type -> sttattus.legacy.v1.StoreRecoveryShareResponse
+	36,  // 108: sttattus.legacy.v1.LegacyService.ListMyRecoveryShares:output_type -> sttattus.legacy.v1.ListMyRecoverySharesResponse
+	38,  // 109: sttattus.legacy.v1.LegacyService.DeleteRecoveryShare:output_type -> sttattus.legacy.v1.DeleteRecoveryShareResponse
+	17,  // 110: sttattus.legacy.v1.LegacyService.ListLegacyCategories:output_type -> sttattus.legacy.v1.ListLegacyCategoriesResponse
+	19,  // 111: sttattus.legacy.v1.LegacyService.AssignAssetCategory:output_type -> sttattus.legacy.v1.AssignAssetCategoryResponse
+	21,  // 112: sttattus.legacy.v1.LegacyService.UnassignAssetCategory:output_type -> sttattus.legacy.v1.UnassignAssetCategoryResponse
+	23,  // 113: sttattus.legacy.v1.LegacyService.ListAssetCategories:output_type -> sttattus.legacy.v1.ListAssetCategoriesResponse
+	12,  // 114: sttattus.legacy.v1.LegacyService.RecordAssetVersion:output_type -> sttattus.legacy.v1.RecordAssetVersionResponse
+	14,  // 115: sttattus.legacy.v1.LegacyService.ListAssetVersions:output_type -> sttattus.legacy.v1.ListAssetVersionsResponse
+	42,  // 116: sttattus.legacy.v1.LegacyService.GetEstateReadiness:output_type -> sttattus.legacy.v1.GetEstateReadinessResponse
+	45,  // 117: sttattus.legacy.v1.LegacyService.ListMyBeneficiaries:output_type -> sttattus.legacy.v1.ListMyBeneficiariesResponse
+	47,  // 118: sttattus.legacy.v1.LegacyService.AddBeneficiary:output_type -> sttattus.legacy.v1.AddBeneficiaryResponse
+	49,  // 119: sttattus.legacy.v1.LegacyService.RemoveBeneficiary:output_type -> sttattus.legacy.v1.RemoveBeneficiaryResponse
+	52,  // 120: sttattus.legacy.v1.LegacyService.GetDeadManSwitch:output_type -> sttattus.legacy.v1.GetDeadManSwitchResponse
+	54,  // 121: sttattus.legacy.v1.LegacyService.ConfigureDeadManSwitch:output_type -> sttattus.legacy.v1.ConfigureDeadManSwitchResponse
+	56,  // 122: sttattus.legacy.v1.LegacyService.CheckInDeadManSwitch:output_type -> sttattus.legacy.v1.CheckInDeadManSwitchResponse
+	59,  // 123: sttattus.legacy.v1.LegacyService.CreateAnchor:output_type -> sttattus.legacy.v1.CreateAnchorResponse
+	61,  // 124: sttattus.legacy.v1.LegacyService.ListMyAnchors:output_type -> sttattus.legacy.v1.ListMyAnchorsResponse
+	64,  // 125: sttattus.legacy.v1.LegacyService.ListLawyers:output_type -> sttattus.legacy.v1.ListLawyersResponse
+	67,  // 126: sttattus.legacy.v1.LegacyService.ListNotaries:output_type -> sttattus.legacy.v1.ListNotariesResponse
+	71,  // 127: sttattus.legacy.v1.LegacyService.ListTemplates:output_type -> sttattus.legacy.v1.ListTemplatesResponse
+	73,  // 128: sttattus.legacy.v1.LegacyService.GetTemplate:output_type -> sttattus.legacy.v1.GetTemplateResponse
+	76,  // 129: sttattus.legacy.v1.LegacyService.GenerateDocument:output_type -> sttattus.legacy.v1.GenerateDocumentResponse
+	78,  // 130: sttattus.legacy.v1.LegacyService.ListMyGeneratedDocuments:output_type -> sttattus.legacy.v1.ListMyGeneratedDocumentsResponse
+	81,  // 131: sttattus.legacy.v1.LegacyService.ListMyHandoffs:output_type -> sttattus.legacy.v1.ListMyHandoffsResponse
+	83,  // 132: sttattus.legacy.v1.LegacyService.AcceptHandoff:output_type -> sttattus.legacy.v1.AcceptHandoffResponse
+	85,  // 133: sttattus.legacy.v1.LegacyService.DismissHandoff:output_type -> sttattus.legacy.v1.DismissHandoffResponse
+	88,  // 134: sttattus.legacy.v1.LegacyService.GetEstateSummary:output_type -> sttattus.legacy.v1.GetEstateSummaryResponse
+	92,  // 135: sttattus.legacy.v1.LegacyService.StartConciergeThread:output_type -> sttattus.legacy.v1.StartConciergeThreadResponse
+	94,  // 136: sttattus.legacy.v1.LegacyService.ListMyConciergeThreads:output_type -> sttattus.legacy.v1.ListMyConciergeThreadsResponse
+	96,  // 137: sttattus.legacy.v1.LegacyService.GetConciergeThread:output_type -> sttattus.legacy.v1.GetConciergeThreadResponse
+	98,  // 138: sttattus.legacy.v1.LegacyService.PostConciergeMessage:output_type -> sttattus.legacy.v1.PostConciergeMessageResponse
+	101, // 139: sttattus.legacy.v1.LegacyService.ListAnthologyArticles:output_type -> sttattus.legacy.v1.ListAnthologyArticlesResponse
+	103, // 140: sttattus.legacy.v1.LegacyService.GetAnthologyArticle:output_type -> sttattus.legacy.v1.GetAnthologyArticleResponse
+	106, // 141: sttattus.legacy.v1.LegacyService.AddLetterOfWishes:output_type -> sttattus.legacy.v1.AddLetterOfWishesResponse
+	108, // 142: sttattus.legacy.v1.LegacyService.ListMyLettersOfWishes:output_type -> sttattus.legacy.v1.ListMyLettersOfWishesResponse
+	110, // 143: sttattus.legacy.v1.LegacyService.RemoveLetterOfWishes:output_type -> sttattus.legacy.v1.RemoveLetterOfWishesResponse
+	112, // 144: sttattus.legacy.v1.LegacyService.GenerateLegacyAlmanac:output_type -> sttattus.legacy.v1.GenerateLegacyAlmanacResponse
+	115, // 145: sttattus.legacy.v1.LegacyService.ListIpPortfolio:output_type -> sttattus.legacy.v1.ListIpPortfolioResponse
+	118, // 146: sttattus.legacy.v1.LegacyService.CreateLegacyShare:output_type -> sttattus.legacy.v1.CreateLegacyShareResponse
+	120, // 147: sttattus.legacy.v1.LegacyService.ListMyLegacyShares:output_type -> sttattus.legacy.v1.ListMyLegacySharesResponse
+	122, // 148: sttattus.legacy.v1.LegacyService.RevokeLegacyShare:output_type -> sttattus.legacy.v1.RevokeLegacyShareResponse
+	124, // 149: sttattus.legacy.v1.LegacyService.ParseDocumentExpiry:output_type -> sttattus.legacy.v1.ParseDocumentExpiryResponse
+	101, // [101:150] is the sub-list for method output_type
+	52,  // [52:101] is the sub-list for method input_type
+	52,  // [52:52] is the sub-list for extension type_name
+	52,  // [52:52] is the sub-list for extension extendee
+	0,   // [0:52] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_legacy_v1_legacy_proto_init() }
@@ -2437,7 +7715,7 @@ func file_sttattus_legacy_v1_legacy_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_legacy_v1_legacy_proto_rawDesc), len(file_sttattus_legacy_v1_legacy_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   37,
+			NumMessages:   124,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

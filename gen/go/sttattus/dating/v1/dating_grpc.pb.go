@@ -19,45 +19,64 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	DatingService_GetProfile_FullMethodName             = "/sttattus.dating.v1.DatingService/GetProfile"
-	DatingService_UpdateProfile_FullMethodName          = "/sttattus.dating.v1.DatingService/UpdateProfile"
-	DatingService_StreamDiscovery_FullMethodName        = "/sttattus.dating.v1.DatingService/StreamDiscovery"
-	DatingService_Swipe_FullMethodName                  = "/sttattus.dating.v1.DatingService/Swipe"
-	DatingService_ListMatches_FullMethodName            = "/sttattus.dating.v1.DatingService/ListMatches"
-	DatingService_StreamMessages_FullMethodName         = "/sttattus.dating.v1.DatingService/StreamMessages"
-	DatingService_SendMessage_FullMethodName            = "/sttattus.dating.v1.DatingService/SendMessage"
-	DatingService_StartVerification_FullMethodName      = "/sttattus.dating.v1.DatingService/StartVerification"
-	DatingService_GetLatestVerification_FullMethodName  = "/sttattus.dating.v1.DatingService/GetLatestVerification"
-	DatingService_ListTensionSeats_FullMethodName       = "/sttattus.dating.v1.DatingService/ListTensionSeats"
-	DatingService_PlaceTensionBid_FullMethodName        = "/sttattus.dating.v1.DatingService/PlaceTensionBid"
-	DatingService_ReleaseTensionSeat_FullMethodName     = "/sttattus.dating.v1.DatingService/ReleaseTensionSeat"
-	DatingService_ListAuthorAkashic_FullMethodName      = "/sttattus.dating.v1.DatingService/ListAuthorAkashic"
-	DatingService_ListVisibleAkashic_FullMethodName     = "/sttattus.dating.v1.DatingService/ListVisibleAkashic"
-	DatingService_UpsertAkashicChapter_FullMethodName   = "/sttattus.dating.v1.DatingService/UpsertAkashicChapter"
-	DatingService_DeleteAkashicChapter_FullMethodName   = "/sttattus.dating.v1.DatingService/DeleteAkashicChapter"
-	DatingService_ListMyBlocks_FullMethodName           = "/sttattus.dating.v1.DatingService/ListMyBlocks"
-	DatingService_BlockUser_FullMethodName              = "/sttattus.dating.v1.DatingService/BlockUser"
-	DatingService_UnblockUser_FullMethodName            = "/sttattus.dating.v1.DatingService/UnblockUser"
-	DatingService_ListMyReports_FullMethodName          = "/sttattus.dating.v1.DatingService/ListMyReports"
-	DatingService_ReportUser_FullMethodName             = "/sttattus.dating.v1.DatingService/ReportUser"
-	DatingService_GetPanicContact_FullMethodName        = "/sttattus.dating.v1.DatingService/GetPanicContact"
-	DatingService_UpsertPanicContact_FullMethodName     = "/sttattus.dating.v1.DatingService/UpsertPanicContact"
-	DatingService_GetPrivacyAxes_FullMethodName         = "/sttattus.dating.v1.DatingService/GetPrivacyAxes"
-	DatingService_UpsertPrivacyAxes_FullMethodName      = "/sttattus.dating.v1.DatingService/UpsertPrivacyAxes"
-	DatingService_ListAtlasMapPoints_FullMethodName     = "/sttattus.dating.v1.DatingService/ListAtlasMapPoints"
-	DatingService_ListLiveRooms_FullMethodName          = "/sttattus.dating.v1.DatingService/ListLiveRooms"
-	DatingService_CreateAgoraRoom_FullMethodName        = "/sttattus.dating.v1.DatingService/CreateAgoraRoom"
-	DatingService_EndAgoraRoom_FullMethodName           = "/sttattus.dating.v1.DatingService/EndAgoraRoom"
-	DatingService_MintLiveKitToken_FullMethodName       = "/sttattus.dating.v1.DatingService/MintLiveKitToken"
-	DatingService_AttachMediaToMessage_FullMethodName   = "/sttattus.dating.v1.DatingService/AttachMediaToMessage"
-	DatingService_ListMessageAttachments_FullMethodName = "/sttattus.dating.v1.DatingService/ListMessageAttachments"
-	DatingService_ListRestaurants_FullMethodName        = "/sttattus.dating.v1.DatingService/ListRestaurants"
-	DatingService_CreateReservation_FullMethodName      = "/sttattus.dating.v1.DatingService/CreateReservation"
-	DatingService_ListMyReservations_FullMethodName     = "/sttattus.dating.v1.DatingService/ListMyReservations"
-	DatingService_CancelReservation_FullMethodName      = "/sttattus.dating.v1.DatingService/CancelReservation"
-	DatingService_GetCompatibilityMatrix_FullMethodName = "/sttattus.dating.v1.DatingService/GetCompatibilityMatrix"
-	DatingService_SendGift_FullMethodName               = "/sttattus.dating.v1.DatingService/SendGift"
-	DatingService_ListGiftLedger_FullMethodName         = "/sttattus.dating.v1.DatingService/ListGiftLedger"
+	DatingService_GetProfile_FullMethodName                = "/sttattus.dating.v1.DatingService/GetProfile"
+	DatingService_UpdateProfile_FullMethodName             = "/sttattus.dating.v1.DatingService/UpdateProfile"
+	DatingService_StreamDiscovery_FullMethodName           = "/sttattus.dating.v1.DatingService/StreamDiscovery"
+	DatingService_Swipe_FullMethodName                     = "/sttattus.dating.v1.DatingService/Swipe"
+	DatingService_ListMatches_FullMethodName               = "/sttattus.dating.v1.DatingService/ListMatches"
+	DatingService_StreamMessages_FullMethodName            = "/sttattus.dating.v1.DatingService/StreamMessages"
+	DatingService_SendMessage_FullMethodName               = "/sttattus.dating.v1.DatingService/SendMessage"
+	DatingService_StartVerification_FullMethodName         = "/sttattus.dating.v1.DatingService/StartVerification"
+	DatingService_GetLatestVerification_FullMethodName     = "/sttattus.dating.v1.DatingService/GetLatestVerification"
+	DatingService_ListTensionSeats_FullMethodName          = "/sttattus.dating.v1.DatingService/ListTensionSeats"
+	DatingService_PlaceTensionBid_FullMethodName           = "/sttattus.dating.v1.DatingService/PlaceTensionBid"
+	DatingService_ReleaseTensionSeat_FullMethodName        = "/sttattus.dating.v1.DatingService/ReleaseTensionSeat"
+	DatingService_ListAuthorAkashic_FullMethodName         = "/sttattus.dating.v1.DatingService/ListAuthorAkashic"
+	DatingService_ListVisibleAkashic_FullMethodName        = "/sttattus.dating.v1.DatingService/ListVisibleAkashic"
+	DatingService_UpsertAkashicChapter_FullMethodName      = "/sttattus.dating.v1.DatingService/UpsertAkashicChapter"
+	DatingService_DeleteAkashicChapter_FullMethodName      = "/sttattus.dating.v1.DatingService/DeleteAkashicChapter"
+	DatingService_ListMyBlocks_FullMethodName              = "/sttattus.dating.v1.DatingService/ListMyBlocks"
+	DatingService_BlockUser_FullMethodName                 = "/sttattus.dating.v1.DatingService/BlockUser"
+	DatingService_UnblockUser_FullMethodName               = "/sttattus.dating.v1.DatingService/UnblockUser"
+	DatingService_ListMyReports_FullMethodName             = "/sttattus.dating.v1.DatingService/ListMyReports"
+	DatingService_ReportUser_FullMethodName                = "/sttattus.dating.v1.DatingService/ReportUser"
+	DatingService_GetPanicContact_FullMethodName           = "/sttattus.dating.v1.DatingService/GetPanicContact"
+	DatingService_UpsertPanicContact_FullMethodName        = "/sttattus.dating.v1.DatingService/UpsertPanicContact"
+	DatingService_GetPrivacyAxes_FullMethodName            = "/sttattus.dating.v1.DatingService/GetPrivacyAxes"
+	DatingService_UpsertPrivacyAxes_FullMethodName         = "/sttattus.dating.v1.DatingService/UpsertPrivacyAxes"
+	DatingService_ListAtlasMapPoints_FullMethodName        = "/sttattus.dating.v1.DatingService/ListAtlasMapPoints"
+	DatingService_ListLiveRooms_FullMethodName             = "/sttattus.dating.v1.DatingService/ListLiveRooms"
+	DatingService_CreateAgoraRoom_FullMethodName           = "/sttattus.dating.v1.DatingService/CreateAgoraRoom"
+	DatingService_EndAgoraRoom_FullMethodName              = "/sttattus.dating.v1.DatingService/EndAgoraRoom"
+	DatingService_MintLiveKitToken_FullMethodName          = "/sttattus.dating.v1.DatingService/MintLiveKitToken"
+	DatingService_AttachMediaToMessage_FullMethodName      = "/sttattus.dating.v1.DatingService/AttachMediaToMessage"
+	DatingService_ListMessageAttachments_FullMethodName    = "/sttattus.dating.v1.DatingService/ListMessageAttachments"
+	DatingService_ListRestaurants_FullMethodName           = "/sttattus.dating.v1.DatingService/ListRestaurants"
+	DatingService_CreateReservation_FullMethodName         = "/sttattus.dating.v1.DatingService/CreateReservation"
+	DatingService_ListMyReservations_FullMethodName        = "/sttattus.dating.v1.DatingService/ListMyReservations"
+	DatingService_CancelReservation_FullMethodName         = "/sttattus.dating.v1.DatingService/CancelReservation"
+	DatingService_GetCompatibilityMatrix_FullMethodName    = "/sttattus.dating.v1.DatingService/GetCompatibilityMatrix"
+	DatingService_SendGift_FullMethodName                  = "/sttattus.dating.v1.DatingService/SendGift"
+	DatingService_ListGiftLedger_FullMethodName            = "/sttattus.dating.v1.DatingService/ListGiftLedger"
+	DatingService_ListMissions_FullMethodName              = "/sttattus.dating.v1.DatingService/ListMissions"
+	DatingService_CompleteMission_FullMethodName           = "/sttattus.dating.v1.DatingService/CompleteMission"
+	DatingService_StartConciergeThread_FullMethodName      = "/sttattus.dating.v1.DatingService/StartConciergeThread"
+	DatingService_ListMyConciergeThreads_FullMethodName    = "/sttattus.dating.v1.DatingService/ListMyConciergeThreads"
+	DatingService_GetConciergeThread_FullMethodName        = "/sttattus.dating.v1.DatingService/GetConciergeThread"
+	DatingService_PostConciergeMessage_FullMethodName      = "/sttattus.dating.v1.DatingService/PostConciergeMessage"
+	DatingService_ListMatchmakerProposals_FullMethodName   = "/sttattus.dating.v1.DatingService/ListMatchmakerProposals"
+	DatingService_RespondMatchmakerProposal_FullMethodName = "/sttattus.dating.v1.DatingService/RespondMatchmakerProposal"
+	DatingService_ListAtlasLetters_FullMethodName          = "/sttattus.dating.v1.DatingService/ListAtlasLetters"
+	DatingService_GetAtlasLetter_FullMethodName            = "/sttattus.dating.v1.DatingService/GetAtlasLetter"
+	DatingService_ListEvents_FullMethodName                = "/sttattus.dating.v1.DatingService/ListEvents"
+	DatingService_RsvpEvent_FullMethodName                 = "/sttattus.dating.v1.DatingService/RsvpEvent"
+	DatingService_ListMyEventRsvps_FullMethodName          = "/sttattus.dating.v1.DatingService/ListMyEventRsvps"
+	DatingService_GetCrossPillarGate_FullMethodName        = "/sttattus.dating.v1.DatingService/GetCrossPillarGate"
+	DatingService_CreateProfileShare_FullMethodName        = "/sttattus.dating.v1.DatingService/CreateProfileShare"
+	DatingService_ListMyProfileShares_FullMethodName       = "/sttattus.dating.v1.DatingService/ListMyProfileShares"
+	DatingService_RevokeProfileShare_FullMethodName        = "/sttattus.dating.v1.DatingService/RevokeProfileShare"
+	DatingService_GenerateAtlasYearbook_FullMethodName     = "/sttattus.dating.v1.DatingService/GenerateAtlasYearbook"
+	DatingService_CheckInEvent_FullMethodName              = "/sttattus.dating.v1.DatingService/CheckInEvent"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -105,6 +124,33 @@ type DatingServiceClient interface {
 	// A9P3 — Gift Ledger
 	SendGift(ctx context.Context, in *SendGiftRequest, opts ...grpc.CallOption) (*SendGiftResponse, error)
 	ListGiftLedger(ctx context.Context, in *ListGiftLedgerRequest, opts ...grpc.CallOption) (*ListGiftLedgerResponse, error)
+	// A9P2 — Missions (server-backed; replaces the local-only ObjectBox path)
+	ListMissions(ctx context.Context, in *ListMissionsRequest, opts ...grpc.CallOption) (*ListMissionsResponse, error)
+	CompleteMission(ctx context.Context, in *CompleteMissionRequest, opts ...grpc.CallOption) (*CompleteMissionResponse, error)
+	// A9P3 — Concierge matchmaker (Sovereign)
+	StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error)
+	ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error)
+	GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error)
+	PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error)
+	// A9P3 — Matchmaker proposals
+	ListMatchmakerProposals(ctx context.Context, in *ListMatchmakerProposalsRequest, opts ...grpc.CallOption) (*ListMatchmakerProposalsResponse, error)
+	RespondMatchmakerProposal(ctx context.Context, in *RespondMatchmakerProposalRequest, opts ...grpc.CallOption) (*RespondMatchmakerProposalResponse, error)
+	// A9P3 — Atlas Letters editorial
+	ListAtlasLetters(ctx context.Context, in *ListAtlasLettersRequest, opts ...grpc.CallOption) (*ListAtlasLettersResponse, error)
+	GetAtlasLetter(ctx context.Context, in *GetAtlasLetterRequest, opts ...grpc.CallOption) (*GetAtlasLetterResponse, error)
+	// A9P3 — Events / Salons
+	ListEvents(ctx context.Context, in *ListEventsRequest, opts ...grpc.CallOption) (*ListEventsResponse, error)
+	RsvpEvent(ctx context.Context, in *RsvpEventRequest, opts ...grpc.CallOption) (*RsvpEventResponse, error)
+	ListMyEventRsvps(ctx context.Context, in *ListMyEventRsvpsRequest, opts ...grpc.CallOption) (*ListMyEventRsvpsResponse, error)
+	// A9 — Cross-pillar gate explainer
+	GetCrossPillarGate(ctx context.Context, in *GetCrossPillarGateRequest, opts ...grpc.CallOption) (*GetCrossPillarGateResponse, error)
+	// A9P3.5 — Member profile share (token-based)
+	CreateProfileShare(ctx context.Context, in *CreateProfileShareRequest, opts ...grpc.CallOption) (*CreateProfileShareResponse, error)
+	ListMyProfileShares(ctx context.Context, in *ListMyProfileSharesRequest, opts ...grpc.CallOption) (*ListMyProfileSharesResponse, error)
+	RevokeProfileShare(ctx context.Context, in *RevokeProfileShareRequest, opts ...grpc.CallOption) (*RevokeProfileShareResponse, error)
+	// A9P4 — Category-leading
+	GenerateAtlasYearbook(ctx context.Context, in *GenerateAtlasYearbookRequest, opts ...grpc.CallOption) (*GenerateAtlasYearbookResponse, error)
+	CheckInEvent(ctx context.Context, in *CheckInEventRequest, opts ...grpc.CallOption) (*CheckInEventResponse, error)
 }
 
 type datingServiceClient struct {
@@ -523,6 +569,196 @@ func (c *datingServiceClient) ListGiftLedger(ctx context.Context, in *ListGiftLe
 	return out, nil
 }
 
+func (c *datingServiceClient) ListMissions(ctx context.Context, in *ListMissionsRequest, opts ...grpc.CallOption) (*ListMissionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMissionsResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListMissions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) CompleteMission(ctx context.Context, in *CompleteMissionRequest, opts ...grpc.CallOption) (*CompleteMissionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CompleteMissionResponse)
+	err := c.cc.Invoke(ctx, DatingService_CompleteMission_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) StartConciergeThread(ctx context.Context, in *StartConciergeThreadRequest, opts ...grpc.CallOption) (*StartConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StartConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, DatingService_StartConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ListMyConciergeThreads(ctx context.Context, in *ListMyConciergeThreadsRequest, opts ...grpc.CallOption) (*ListMyConciergeThreadsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyConciergeThreadsResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListMyConciergeThreads_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) GetConciergeThread(ctx context.Context, in *GetConciergeThreadRequest, opts ...grpc.CallOption) (*GetConciergeThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetConciergeThreadResponse)
+	err := c.cc.Invoke(ctx, DatingService_GetConciergeThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) PostConciergeMessage(ctx context.Context, in *PostConciergeMessageRequest, opts ...grpc.CallOption) (*PostConciergeMessageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PostConciergeMessageResponse)
+	err := c.cc.Invoke(ctx, DatingService_PostConciergeMessage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ListMatchmakerProposals(ctx context.Context, in *ListMatchmakerProposalsRequest, opts ...grpc.CallOption) (*ListMatchmakerProposalsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMatchmakerProposalsResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListMatchmakerProposals_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) RespondMatchmakerProposal(ctx context.Context, in *RespondMatchmakerProposalRequest, opts ...grpc.CallOption) (*RespondMatchmakerProposalResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RespondMatchmakerProposalResponse)
+	err := c.cc.Invoke(ctx, DatingService_RespondMatchmakerProposal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ListAtlasLetters(ctx context.Context, in *ListAtlasLettersRequest, opts ...grpc.CallOption) (*ListAtlasLettersResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAtlasLettersResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListAtlasLetters_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) GetAtlasLetter(ctx context.Context, in *GetAtlasLetterRequest, opts ...grpc.CallOption) (*GetAtlasLetterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAtlasLetterResponse)
+	err := c.cc.Invoke(ctx, DatingService_GetAtlasLetter_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ListEvents(ctx context.Context, in *ListEventsRequest, opts ...grpc.CallOption) (*ListEventsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListEventsResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListEvents_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) RsvpEvent(ctx context.Context, in *RsvpEventRequest, opts ...grpc.CallOption) (*RsvpEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RsvpEventResponse)
+	err := c.cc.Invoke(ctx, DatingService_RsvpEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ListMyEventRsvps(ctx context.Context, in *ListMyEventRsvpsRequest, opts ...grpc.CallOption) (*ListMyEventRsvpsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyEventRsvpsResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListMyEventRsvps_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) GetCrossPillarGate(ctx context.Context, in *GetCrossPillarGateRequest, opts ...grpc.CallOption) (*GetCrossPillarGateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCrossPillarGateResponse)
+	err := c.cc.Invoke(ctx, DatingService_GetCrossPillarGate_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) CreateProfileShare(ctx context.Context, in *CreateProfileShareRequest, opts ...grpc.CallOption) (*CreateProfileShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateProfileShareResponse)
+	err := c.cc.Invoke(ctx, DatingService_CreateProfileShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ListMyProfileShares(ctx context.Context, in *ListMyProfileSharesRequest, opts ...grpc.CallOption) (*ListMyProfileSharesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyProfileSharesResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListMyProfileShares_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) RevokeProfileShare(ctx context.Context, in *RevokeProfileShareRequest, opts ...grpc.CallOption) (*RevokeProfileShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeProfileShareResponse)
+	err := c.cc.Invoke(ctx, DatingService_RevokeProfileShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) GenerateAtlasYearbook(ctx context.Context, in *GenerateAtlasYearbookRequest, opts ...grpc.CallOption) (*GenerateAtlasYearbookResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateAtlasYearbookResponse)
+	err := c.cc.Invoke(ctx, DatingService_GenerateAtlasYearbook_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) CheckInEvent(ctx context.Context, in *CheckInEventRequest, opts ...grpc.CallOption) (*CheckInEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CheckInEventResponse)
+	err := c.cc.Invoke(ctx, DatingService_CheckInEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatingServiceServer is the server API for DatingService service.
 // All implementations must embed UnimplementedDatingServiceServer
 // for forward compatibility.
@@ -568,6 +804,33 @@ type DatingServiceServer interface {
 	// A9P3 — Gift Ledger
 	SendGift(context.Context, *SendGiftRequest) (*SendGiftResponse, error)
 	ListGiftLedger(context.Context, *ListGiftLedgerRequest) (*ListGiftLedgerResponse, error)
+	// A9P2 — Missions (server-backed; replaces the local-only ObjectBox path)
+	ListMissions(context.Context, *ListMissionsRequest) (*ListMissionsResponse, error)
+	CompleteMission(context.Context, *CompleteMissionRequest) (*CompleteMissionResponse, error)
+	// A9P3 — Concierge matchmaker (Sovereign)
+	StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error)
+	ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error)
+	GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error)
+	PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error)
+	// A9P3 — Matchmaker proposals
+	ListMatchmakerProposals(context.Context, *ListMatchmakerProposalsRequest) (*ListMatchmakerProposalsResponse, error)
+	RespondMatchmakerProposal(context.Context, *RespondMatchmakerProposalRequest) (*RespondMatchmakerProposalResponse, error)
+	// A9P3 — Atlas Letters editorial
+	ListAtlasLetters(context.Context, *ListAtlasLettersRequest) (*ListAtlasLettersResponse, error)
+	GetAtlasLetter(context.Context, *GetAtlasLetterRequest) (*GetAtlasLetterResponse, error)
+	// A9P3 — Events / Salons
+	ListEvents(context.Context, *ListEventsRequest) (*ListEventsResponse, error)
+	RsvpEvent(context.Context, *RsvpEventRequest) (*RsvpEventResponse, error)
+	ListMyEventRsvps(context.Context, *ListMyEventRsvpsRequest) (*ListMyEventRsvpsResponse, error)
+	// A9 — Cross-pillar gate explainer
+	GetCrossPillarGate(context.Context, *GetCrossPillarGateRequest) (*GetCrossPillarGateResponse, error)
+	// A9P3.5 — Member profile share (token-based)
+	CreateProfileShare(context.Context, *CreateProfileShareRequest) (*CreateProfileShareResponse, error)
+	ListMyProfileShares(context.Context, *ListMyProfileSharesRequest) (*ListMyProfileSharesResponse, error)
+	RevokeProfileShare(context.Context, *RevokeProfileShareRequest) (*RevokeProfileShareResponse, error)
+	// A9P4 — Category-leading
+	GenerateAtlasYearbook(context.Context, *GenerateAtlasYearbookRequest) (*GenerateAtlasYearbookResponse, error)
+	CheckInEvent(context.Context, *CheckInEventRequest) (*CheckInEventResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -694,6 +957,63 @@ func (UnimplementedDatingServiceServer) SendGift(context.Context, *SendGiftReque
 }
 func (UnimplementedDatingServiceServer) ListGiftLedger(context.Context, *ListGiftLedgerRequest) (*ListGiftLedgerResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListGiftLedger not implemented")
+}
+func (UnimplementedDatingServiceServer) ListMissions(context.Context, *ListMissionsRequest) (*ListMissionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMissions not implemented")
+}
+func (UnimplementedDatingServiceServer) CompleteMission(context.Context, *CompleteMissionRequest) (*CompleteMissionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CompleteMission not implemented")
+}
+func (UnimplementedDatingServiceServer) StartConciergeThread(context.Context, *StartConciergeThreadRequest) (*StartConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StartConciergeThread not implemented")
+}
+func (UnimplementedDatingServiceServer) ListMyConciergeThreads(context.Context, *ListMyConciergeThreadsRequest) (*ListMyConciergeThreadsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyConciergeThreads not implemented")
+}
+func (UnimplementedDatingServiceServer) GetConciergeThread(context.Context, *GetConciergeThreadRequest) (*GetConciergeThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetConciergeThread not implemented")
+}
+func (UnimplementedDatingServiceServer) PostConciergeMessage(context.Context, *PostConciergeMessageRequest) (*PostConciergeMessageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PostConciergeMessage not implemented")
+}
+func (UnimplementedDatingServiceServer) ListMatchmakerProposals(context.Context, *ListMatchmakerProposalsRequest) (*ListMatchmakerProposalsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMatchmakerProposals not implemented")
+}
+func (UnimplementedDatingServiceServer) RespondMatchmakerProposal(context.Context, *RespondMatchmakerProposalRequest) (*RespondMatchmakerProposalResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RespondMatchmakerProposal not implemented")
+}
+func (UnimplementedDatingServiceServer) ListAtlasLetters(context.Context, *ListAtlasLettersRequest) (*ListAtlasLettersResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAtlasLetters not implemented")
+}
+func (UnimplementedDatingServiceServer) GetAtlasLetter(context.Context, *GetAtlasLetterRequest) (*GetAtlasLetterResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAtlasLetter not implemented")
+}
+func (UnimplementedDatingServiceServer) ListEvents(context.Context, *ListEventsRequest) (*ListEventsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListEvents not implemented")
+}
+func (UnimplementedDatingServiceServer) RsvpEvent(context.Context, *RsvpEventRequest) (*RsvpEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RsvpEvent not implemented")
+}
+func (UnimplementedDatingServiceServer) ListMyEventRsvps(context.Context, *ListMyEventRsvpsRequest) (*ListMyEventRsvpsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyEventRsvps not implemented")
+}
+func (UnimplementedDatingServiceServer) GetCrossPillarGate(context.Context, *GetCrossPillarGateRequest) (*GetCrossPillarGateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCrossPillarGate not implemented")
+}
+func (UnimplementedDatingServiceServer) CreateProfileShare(context.Context, *CreateProfileShareRequest) (*CreateProfileShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateProfileShare not implemented")
+}
+func (UnimplementedDatingServiceServer) ListMyProfileShares(context.Context, *ListMyProfileSharesRequest) (*ListMyProfileSharesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyProfileShares not implemented")
+}
+func (UnimplementedDatingServiceServer) RevokeProfileShare(context.Context, *RevokeProfileShareRequest) (*RevokeProfileShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeProfileShare not implemented")
+}
+func (UnimplementedDatingServiceServer) GenerateAtlasYearbook(context.Context, *GenerateAtlasYearbookRequest) (*GenerateAtlasYearbookResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateAtlasYearbook not implemented")
+}
+func (UnimplementedDatingServiceServer) CheckInEvent(context.Context, *CheckInEventRequest) (*CheckInEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CheckInEvent not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -1404,6 +1724,348 @@ func _DatingService_ListGiftLedger_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_ListMissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMissionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListMissions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListMissions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListMissions(ctx, req.(*ListMissionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_CompleteMission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompleteMissionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).CompleteMission(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_CompleteMission_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).CompleteMission(ctx, req.(*CompleteMissionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_StartConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StartConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).StartConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_StartConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).StartConciergeThread(ctx, req.(*StartConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ListMyConciergeThreads_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyConciergeThreadsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListMyConciergeThreads(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListMyConciergeThreads_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListMyConciergeThreads(ctx, req.(*ListMyConciergeThreadsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_GetConciergeThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetConciergeThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).GetConciergeThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_GetConciergeThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).GetConciergeThread(ctx, req.(*GetConciergeThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_PostConciergeMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostConciergeMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).PostConciergeMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_PostConciergeMessage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).PostConciergeMessage(ctx, req.(*PostConciergeMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ListMatchmakerProposals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMatchmakerProposalsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListMatchmakerProposals(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListMatchmakerProposals_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListMatchmakerProposals(ctx, req.(*ListMatchmakerProposalsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_RespondMatchmakerProposal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RespondMatchmakerProposalRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).RespondMatchmakerProposal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_RespondMatchmakerProposal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).RespondMatchmakerProposal(ctx, req.(*RespondMatchmakerProposalRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ListAtlasLetters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAtlasLettersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListAtlasLetters(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListAtlasLetters_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListAtlasLetters(ctx, req.(*ListAtlasLettersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_GetAtlasLetter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAtlasLetterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).GetAtlasLetter(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_GetAtlasLetter_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).GetAtlasLetter(ctx, req.(*GetAtlasLetterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ListEvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListEventsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListEvents(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListEvents_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListEvents(ctx, req.(*ListEventsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_RsvpEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RsvpEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).RsvpEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_RsvpEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).RsvpEvent(ctx, req.(*RsvpEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ListMyEventRsvps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyEventRsvpsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListMyEventRsvps(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListMyEventRsvps_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListMyEventRsvps(ctx, req.(*ListMyEventRsvpsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_GetCrossPillarGate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCrossPillarGateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).GetCrossPillarGate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_GetCrossPillarGate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).GetCrossPillarGate(ctx, req.(*GetCrossPillarGateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_CreateProfileShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateProfileShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).CreateProfileShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_CreateProfileShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).CreateProfileShare(ctx, req.(*CreateProfileShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ListMyProfileShares_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyProfileSharesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListMyProfileShares(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListMyProfileShares_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListMyProfileShares(ctx, req.(*ListMyProfileSharesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_RevokeProfileShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeProfileShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).RevokeProfileShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_RevokeProfileShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).RevokeProfileShare(ctx, req.(*RevokeProfileShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_GenerateAtlasYearbook_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateAtlasYearbookRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).GenerateAtlasYearbook(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_GenerateAtlasYearbook_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).GenerateAtlasYearbook(ctx, req.(*GenerateAtlasYearbookRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_CheckInEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CheckInEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).CheckInEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_CheckInEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).CheckInEvent(ctx, req.(*CheckInEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatingService_ServiceDesc is the grpc.ServiceDesc for DatingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1558,6 +2220,82 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListGiftLedger",
 			Handler:    _DatingService_ListGiftLedger_Handler,
+		},
+		{
+			MethodName: "ListMissions",
+			Handler:    _DatingService_ListMissions_Handler,
+		},
+		{
+			MethodName: "CompleteMission",
+			Handler:    _DatingService_CompleteMission_Handler,
+		},
+		{
+			MethodName: "StartConciergeThread",
+			Handler:    _DatingService_StartConciergeThread_Handler,
+		},
+		{
+			MethodName: "ListMyConciergeThreads",
+			Handler:    _DatingService_ListMyConciergeThreads_Handler,
+		},
+		{
+			MethodName: "GetConciergeThread",
+			Handler:    _DatingService_GetConciergeThread_Handler,
+		},
+		{
+			MethodName: "PostConciergeMessage",
+			Handler:    _DatingService_PostConciergeMessage_Handler,
+		},
+		{
+			MethodName: "ListMatchmakerProposals",
+			Handler:    _DatingService_ListMatchmakerProposals_Handler,
+		},
+		{
+			MethodName: "RespondMatchmakerProposal",
+			Handler:    _DatingService_RespondMatchmakerProposal_Handler,
+		},
+		{
+			MethodName: "ListAtlasLetters",
+			Handler:    _DatingService_ListAtlasLetters_Handler,
+		},
+		{
+			MethodName: "GetAtlasLetter",
+			Handler:    _DatingService_GetAtlasLetter_Handler,
+		},
+		{
+			MethodName: "ListEvents",
+			Handler:    _DatingService_ListEvents_Handler,
+		},
+		{
+			MethodName: "RsvpEvent",
+			Handler:    _DatingService_RsvpEvent_Handler,
+		},
+		{
+			MethodName: "ListMyEventRsvps",
+			Handler:    _DatingService_ListMyEventRsvps_Handler,
+		},
+		{
+			MethodName: "GetCrossPillarGate",
+			Handler:    _DatingService_GetCrossPillarGate_Handler,
+		},
+		{
+			MethodName: "CreateProfileShare",
+			Handler:    _DatingService_CreateProfileShare_Handler,
+		},
+		{
+			MethodName: "ListMyProfileShares",
+			Handler:    _DatingService_ListMyProfileShares_Handler,
+		},
+		{
+			MethodName: "RevokeProfileShare",
+			Handler:    _DatingService_RevokeProfileShare_Handler,
+		},
+		{
+			MethodName: "GenerateAtlasYearbook",
+			Handler:    _DatingService_GenerateAtlasYearbook_Handler,
+		},
+		{
+			MethodName: "CheckInEvent",
+			Handler:    _DatingService_CheckInEvent_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

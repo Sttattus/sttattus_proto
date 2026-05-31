@@ -190,6 +190,90 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listGiftLedger, request, options: options);
   }
 
+  /// A9P2 — Missions (server-backed; replaces the local-only ObjectBox path)
+  $grpc.ResponseFuture<$0.ListMissionsResponse> listMissions($0.ListMissionsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMissions, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CompleteMissionResponse> completeMission($0.CompleteMissionRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$completeMission, request, options: options);
+  }
+
+  /// A9P3 — Concierge matchmaker (Sovereign)
+  $grpc.ResponseFuture<$0.StartConciergeThreadResponse> startConciergeThread($0.StartConciergeThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$startConciergeThread, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyConciergeThreadsResponse> listMyConciergeThreads($0.ListMyConciergeThreadsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyConciergeThreads, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetConciergeThreadResponse> getConciergeThread($0.GetConciergeThreadRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getConciergeThread, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PostConciergeMessageResponse> postConciergeMessage($0.PostConciergeMessageRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$postConciergeMessage, request, options: options);
+  }
+
+  /// A9P3 — Matchmaker proposals
+  $grpc.ResponseFuture<$0.ListMatchmakerProposalsResponse> listMatchmakerProposals($0.ListMatchmakerProposalsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMatchmakerProposals, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RespondMatchmakerProposalResponse> respondMatchmakerProposal($0.RespondMatchmakerProposalRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$respondMatchmakerProposal, request, options: options);
+  }
+
+  /// A9P3 — Atlas Letters editorial
+  $grpc.ResponseFuture<$0.ListAtlasLettersResponse> listAtlasLetters($0.ListAtlasLettersRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listAtlasLetters, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetAtlasLetterResponse> getAtlasLetter($0.GetAtlasLetterRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getAtlasLetter, request, options: options);
+  }
+
+  /// A9P3 — Events / Salons
+  $grpc.ResponseFuture<$0.ListEventsResponse> listEvents($0.ListEventsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listEvents, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RsvpEventResponse> rsvpEvent($0.RsvpEventRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$rsvpEvent, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyEventRsvpsResponse> listMyEventRsvps($0.ListMyEventRsvpsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyEventRsvps, request, options: options);
+  }
+
+  /// A9 — Cross-pillar gate explainer
+  $grpc.ResponseFuture<$0.GetCrossPillarGateResponse> getCrossPillarGate($0.GetCrossPillarGateRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getCrossPillarGate, request, options: options);
+  }
+
+  /// A9P3.5 — Member profile share (token-based)
+  $grpc.ResponseFuture<$0.CreateProfileShareResponse> createProfileShare($0.CreateProfileShareRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$createProfileShare, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyProfileSharesResponse> listMyProfileShares($0.ListMyProfileSharesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyProfileShares, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeProfileShareResponse> revokeProfileShare($0.RevokeProfileShareRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$revokeProfileShare, request, options: options);
+  }
+
+  /// A9P4 — Category-leading
+  $grpc.ResponseFuture<$0.GenerateAtlasYearbookResponse> generateAtlasYearbook($0.GenerateAtlasYearbookRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$generateAtlasYearbook, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CheckInEventResponse> checkInEvent($0.CheckInEventRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$checkInEvent, request, options: options);
+  }
+
     // method descriptors
 
   static final _$getProfile = $grpc.ClientMethod<$0.GetProfileRequest, $0.GetProfileResponse>(
@@ -348,6 +432,82 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/ListGiftLedger',
       ($0.ListGiftLedgerRequest value) => value.writeToBuffer(),
       $0.ListGiftLedgerResponse.fromBuffer);
+  static final _$listMissions = $grpc.ClientMethod<$0.ListMissionsRequest, $0.ListMissionsResponse>(
+      '/sttattus.dating.v1.DatingService/ListMissions',
+      ($0.ListMissionsRequest value) => value.writeToBuffer(),
+      $0.ListMissionsResponse.fromBuffer);
+  static final _$completeMission = $grpc.ClientMethod<$0.CompleteMissionRequest, $0.CompleteMissionResponse>(
+      '/sttattus.dating.v1.DatingService/CompleteMission',
+      ($0.CompleteMissionRequest value) => value.writeToBuffer(),
+      $0.CompleteMissionResponse.fromBuffer);
+  static final _$startConciergeThread = $grpc.ClientMethod<$0.StartConciergeThreadRequest, $0.StartConciergeThreadResponse>(
+      '/sttattus.dating.v1.DatingService/StartConciergeThread',
+      ($0.StartConciergeThreadRequest value) => value.writeToBuffer(),
+      $0.StartConciergeThreadResponse.fromBuffer);
+  static final _$listMyConciergeThreads = $grpc.ClientMethod<$0.ListMyConciergeThreadsRequest, $0.ListMyConciergeThreadsResponse>(
+      '/sttattus.dating.v1.DatingService/ListMyConciergeThreads',
+      ($0.ListMyConciergeThreadsRequest value) => value.writeToBuffer(),
+      $0.ListMyConciergeThreadsResponse.fromBuffer);
+  static final _$getConciergeThread = $grpc.ClientMethod<$0.GetConciergeThreadRequest, $0.GetConciergeThreadResponse>(
+      '/sttattus.dating.v1.DatingService/GetConciergeThread',
+      ($0.GetConciergeThreadRequest value) => value.writeToBuffer(),
+      $0.GetConciergeThreadResponse.fromBuffer);
+  static final _$postConciergeMessage = $grpc.ClientMethod<$0.PostConciergeMessageRequest, $0.PostConciergeMessageResponse>(
+      '/sttattus.dating.v1.DatingService/PostConciergeMessage',
+      ($0.PostConciergeMessageRequest value) => value.writeToBuffer(),
+      $0.PostConciergeMessageResponse.fromBuffer);
+  static final _$listMatchmakerProposals = $grpc.ClientMethod<$0.ListMatchmakerProposalsRequest, $0.ListMatchmakerProposalsResponse>(
+      '/sttattus.dating.v1.DatingService/ListMatchmakerProposals',
+      ($0.ListMatchmakerProposalsRequest value) => value.writeToBuffer(),
+      $0.ListMatchmakerProposalsResponse.fromBuffer);
+  static final _$respondMatchmakerProposal = $grpc.ClientMethod<$0.RespondMatchmakerProposalRequest, $0.RespondMatchmakerProposalResponse>(
+      '/sttattus.dating.v1.DatingService/RespondMatchmakerProposal',
+      ($0.RespondMatchmakerProposalRequest value) => value.writeToBuffer(),
+      $0.RespondMatchmakerProposalResponse.fromBuffer);
+  static final _$listAtlasLetters = $grpc.ClientMethod<$0.ListAtlasLettersRequest, $0.ListAtlasLettersResponse>(
+      '/sttattus.dating.v1.DatingService/ListAtlasLetters',
+      ($0.ListAtlasLettersRequest value) => value.writeToBuffer(),
+      $0.ListAtlasLettersResponse.fromBuffer);
+  static final _$getAtlasLetter = $grpc.ClientMethod<$0.GetAtlasLetterRequest, $0.GetAtlasLetterResponse>(
+      '/sttattus.dating.v1.DatingService/GetAtlasLetter',
+      ($0.GetAtlasLetterRequest value) => value.writeToBuffer(),
+      $0.GetAtlasLetterResponse.fromBuffer);
+  static final _$listEvents = $grpc.ClientMethod<$0.ListEventsRequest, $0.ListEventsResponse>(
+      '/sttattus.dating.v1.DatingService/ListEvents',
+      ($0.ListEventsRequest value) => value.writeToBuffer(),
+      $0.ListEventsResponse.fromBuffer);
+  static final _$rsvpEvent = $grpc.ClientMethod<$0.RsvpEventRequest, $0.RsvpEventResponse>(
+      '/sttattus.dating.v1.DatingService/RsvpEvent',
+      ($0.RsvpEventRequest value) => value.writeToBuffer(),
+      $0.RsvpEventResponse.fromBuffer);
+  static final _$listMyEventRsvps = $grpc.ClientMethod<$0.ListMyEventRsvpsRequest, $0.ListMyEventRsvpsResponse>(
+      '/sttattus.dating.v1.DatingService/ListMyEventRsvps',
+      ($0.ListMyEventRsvpsRequest value) => value.writeToBuffer(),
+      $0.ListMyEventRsvpsResponse.fromBuffer);
+  static final _$getCrossPillarGate = $grpc.ClientMethod<$0.GetCrossPillarGateRequest, $0.GetCrossPillarGateResponse>(
+      '/sttattus.dating.v1.DatingService/GetCrossPillarGate',
+      ($0.GetCrossPillarGateRequest value) => value.writeToBuffer(),
+      $0.GetCrossPillarGateResponse.fromBuffer);
+  static final _$createProfileShare = $grpc.ClientMethod<$0.CreateProfileShareRequest, $0.CreateProfileShareResponse>(
+      '/sttattus.dating.v1.DatingService/CreateProfileShare',
+      ($0.CreateProfileShareRequest value) => value.writeToBuffer(),
+      $0.CreateProfileShareResponse.fromBuffer);
+  static final _$listMyProfileShares = $grpc.ClientMethod<$0.ListMyProfileSharesRequest, $0.ListMyProfileSharesResponse>(
+      '/sttattus.dating.v1.DatingService/ListMyProfileShares',
+      ($0.ListMyProfileSharesRequest value) => value.writeToBuffer(),
+      $0.ListMyProfileSharesResponse.fromBuffer);
+  static final _$revokeProfileShare = $grpc.ClientMethod<$0.RevokeProfileShareRequest, $0.RevokeProfileShareResponse>(
+      '/sttattus.dating.v1.DatingService/RevokeProfileShare',
+      ($0.RevokeProfileShareRequest value) => value.writeToBuffer(),
+      $0.RevokeProfileShareResponse.fromBuffer);
+  static final _$generateAtlasYearbook = $grpc.ClientMethod<$0.GenerateAtlasYearbookRequest, $0.GenerateAtlasYearbookResponse>(
+      '/sttattus.dating.v1.DatingService/GenerateAtlasYearbook',
+      ($0.GenerateAtlasYearbookRequest value) => value.writeToBuffer(),
+      $0.GenerateAtlasYearbookResponse.fromBuffer);
+  static final _$checkInEvent = $grpc.ClientMethod<$0.CheckInEventRequest, $0.CheckInEventResponse>(
+      '/sttattus.dating.v1.DatingService/CheckInEvent',
+      ($0.CheckInEventRequest value) => value.writeToBuffer(),
+      $0.CheckInEventResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dating.v1.DatingService')
@@ -628,6 +788,139 @@ abstract class DatingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListGiftLedgerRequest.fromBuffer(value),
         ($0.ListGiftLedgerResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMissionsRequest, $0.ListMissionsResponse>(
+        'ListMissions',
+        listMissions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMissionsRequest.fromBuffer(value),
+        ($0.ListMissionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CompleteMissionRequest, $0.CompleteMissionResponse>(
+        'CompleteMission',
+        completeMission_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CompleteMissionRequest.fromBuffer(value),
+        ($0.CompleteMissionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.StartConciergeThreadRequest, $0.StartConciergeThreadResponse>(
+        'StartConciergeThread',
+        startConciergeThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.StartConciergeThreadRequest.fromBuffer(value),
+        ($0.StartConciergeThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyConciergeThreadsRequest, $0.ListMyConciergeThreadsResponse>(
+        'ListMyConciergeThreads',
+        listMyConciergeThreads_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyConciergeThreadsRequest.fromBuffer(value),
+        ($0.ListMyConciergeThreadsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetConciergeThreadRequest, $0.GetConciergeThreadResponse>(
+        'GetConciergeThread',
+        getConciergeThread_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetConciergeThreadRequest.fromBuffer(value),
+        ($0.GetConciergeThreadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PostConciergeMessageRequest, $0.PostConciergeMessageResponse>(
+        'PostConciergeMessage',
+        postConciergeMessage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.PostConciergeMessageRequest.fromBuffer(value),
+        ($0.PostConciergeMessageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMatchmakerProposalsRequest, $0.ListMatchmakerProposalsResponse>(
+        'ListMatchmakerProposals',
+        listMatchmakerProposals_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMatchmakerProposalsRequest.fromBuffer(value),
+        ($0.ListMatchmakerProposalsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RespondMatchmakerProposalRequest, $0.RespondMatchmakerProposalResponse>(
+        'RespondMatchmakerProposal',
+        respondMatchmakerProposal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RespondMatchmakerProposalRequest.fromBuffer(value),
+        ($0.RespondMatchmakerProposalResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAtlasLettersRequest, $0.ListAtlasLettersResponse>(
+        'ListAtlasLetters',
+        listAtlasLetters_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListAtlasLettersRequest.fromBuffer(value),
+        ($0.ListAtlasLettersResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAtlasLetterRequest, $0.GetAtlasLetterResponse>(
+        'GetAtlasLetter',
+        getAtlasLetter_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetAtlasLetterRequest.fromBuffer(value),
+        ($0.GetAtlasLetterResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListEventsRequest, $0.ListEventsResponse>(
+        'ListEvents',
+        listEvents_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListEventsRequest.fromBuffer(value),
+        ($0.ListEventsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RsvpEventRequest, $0.RsvpEventResponse>(
+        'RsvpEvent',
+        rsvpEvent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RsvpEventRequest.fromBuffer(value),
+        ($0.RsvpEventResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyEventRsvpsRequest, $0.ListMyEventRsvpsResponse>(
+        'ListMyEventRsvps',
+        listMyEventRsvps_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyEventRsvpsRequest.fromBuffer(value),
+        ($0.ListMyEventRsvpsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetCrossPillarGateRequest, $0.GetCrossPillarGateResponse>(
+        'GetCrossPillarGate',
+        getCrossPillarGate_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetCrossPillarGateRequest.fromBuffer(value),
+        ($0.GetCrossPillarGateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateProfileShareRequest, $0.CreateProfileShareResponse>(
+        'CreateProfileShare',
+        createProfileShare_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateProfileShareRequest.fromBuffer(value),
+        ($0.CreateProfileShareResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyProfileSharesRequest, $0.ListMyProfileSharesResponse>(
+        'ListMyProfileShares',
+        listMyProfileShares_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyProfileSharesRequest.fromBuffer(value),
+        ($0.ListMyProfileSharesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeProfileShareRequest, $0.RevokeProfileShareResponse>(
+        'RevokeProfileShare',
+        revokeProfileShare_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RevokeProfileShareRequest.fromBuffer(value),
+        ($0.RevokeProfileShareResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateAtlasYearbookRequest, $0.GenerateAtlasYearbookResponse>(
+        'GenerateAtlasYearbook',
+        generateAtlasYearbook_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GenerateAtlasYearbookRequest.fromBuffer(value),
+        ($0.GenerateAtlasYearbookResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CheckInEventRequest, $0.CheckInEventResponse>(
+        'CheckInEvent',
+        checkInEvent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CheckInEventRequest.fromBuffer(value),
+        ($0.CheckInEventResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProfileRequest> $request) async {
@@ -863,5 +1156,119 @@ abstract class DatingServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListGiftLedgerResponse> listGiftLedger($grpc.ServiceCall call, $0.ListGiftLedgerRequest request);
+
+  $async.Future<$0.ListMissionsResponse> listMissions_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMissionsRequest> $request) async {
+    return listMissions($call, await $request);
+  }
+
+  $async.Future<$0.ListMissionsResponse> listMissions($grpc.ServiceCall call, $0.ListMissionsRequest request);
+
+  $async.Future<$0.CompleteMissionResponse> completeMission_Pre($grpc.ServiceCall $call, $async.Future<$0.CompleteMissionRequest> $request) async {
+    return completeMission($call, await $request);
+  }
+
+  $async.Future<$0.CompleteMissionResponse> completeMission($grpc.ServiceCall call, $0.CompleteMissionRequest request);
+
+  $async.Future<$0.StartConciergeThreadResponse> startConciergeThread_Pre($grpc.ServiceCall $call, $async.Future<$0.StartConciergeThreadRequest> $request) async {
+    return startConciergeThread($call, await $request);
+  }
+
+  $async.Future<$0.StartConciergeThreadResponse> startConciergeThread($grpc.ServiceCall call, $0.StartConciergeThreadRequest request);
+
+  $async.Future<$0.ListMyConciergeThreadsResponse> listMyConciergeThreads_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyConciergeThreadsRequest> $request) async {
+    return listMyConciergeThreads($call, await $request);
+  }
+
+  $async.Future<$0.ListMyConciergeThreadsResponse> listMyConciergeThreads($grpc.ServiceCall call, $0.ListMyConciergeThreadsRequest request);
+
+  $async.Future<$0.GetConciergeThreadResponse> getConciergeThread_Pre($grpc.ServiceCall $call, $async.Future<$0.GetConciergeThreadRequest> $request) async {
+    return getConciergeThread($call, await $request);
+  }
+
+  $async.Future<$0.GetConciergeThreadResponse> getConciergeThread($grpc.ServiceCall call, $0.GetConciergeThreadRequest request);
+
+  $async.Future<$0.PostConciergeMessageResponse> postConciergeMessage_Pre($grpc.ServiceCall $call, $async.Future<$0.PostConciergeMessageRequest> $request) async {
+    return postConciergeMessage($call, await $request);
+  }
+
+  $async.Future<$0.PostConciergeMessageResponse> postConciergeMessage($grpc.ServiceCall call, $0.PostConciergeMessageRequest request);
+
+  $async.Future<$0.ListMatchmakerProposalsResponse> listMatchmakerProposals_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMatchmakerProposalsRequest> $request) async {
+    return listMatchmakerProposals($call, await $request);
+  }
+
+  $async.Future<$0.ListMatchmakerProposalsResponse> listMatchmakerProposals($grpc.ServiceCall call, $0.ListMatchmakerProposalsRequest request);
+
+  $async.Future<$0.RespondMatchmakerProposalResponse> respondMatchmakerProposal_Pre($grpc.ServiceCall $call, $async.Future<$0.RespondMatchmakerProposalRequest> $request) async {
+    return respondMatchmakerProposal($call, await $request);
+  }
+
+  $async.Future<$0.RespondMatchmakerProposalResponse> respondMatchmakerProposal($grpc.ServiceCall call, $0.RespondMatchmakerProposalRequest request);
+
+  $async.Future<$0.ListAtlasLettersResponse> listAtlasLetters_Pre($grpc.ServiceCall $call, $async.Future<$0.ListAtlasLettersRequest> $request) async {
+    return listAtlasLetters($call, await $request);
+  }
+
+  $async.Future<$0.ListAtlasLettersResponse> listAtlasLetters($grpc.ServiceCall call, $0.ListAtlasLettersRequest request);
+
+  $async.Future<$0.GetAtlasLetterResponse> getAtlasLetter_Pre($grpc.ServiceCall $call, $async.Future<$0.GetAtlasLetterRequest> $request) async {
+    return getAtlasLetter($call, await $request);
+  }
+
+  $async.Future<$0.GetAtlasLetterResponse> getAtlasLetter($grpc.ServiceCall call, $0.GetAtlasLetterRequest request);
+
+  $async.Future<$0.ListEventsResponse> listEvents_Pre($grpc.ServiceCall $call, $async.Future<$0.ListEventsRequest> $request) async {
+    return listEvents($call, await $request);
+  }
+
+  $async.Future<$0.ListEventsResponse> listEvents($grpc.ServiceCall call, $0.ListEventsRequest request);
+
+  $async.Future<$0.RsvpEventResponse> rsvpEvent_Pre($grpc.ServiceCall $call, $async.Future<$0.RsvpEventRequest> $request) async {
+    return rsvpEvent($call, await $request);
+  }
+
+  $async.Future<$0.RsvpEventResponse> rsvpEvent($grpc.ServiceCall call, $0.RsvpEventRequest request);
+
+  $async.Future<$0.ListMyEventRsvpsResponse> listMyEventRsvps_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyEventRsvpsRequest> $request) async {
+    return listMyEventRsvps($call, await $request);
+  }
+
+  $async.Future<$0.ListMyEventRsvpsResponse> listMyEventRsvps($grpc.ServiceCall call, $0.ListMyEventRsvpsRequest request);
+
+  $async.Future<$0.GetCrossPillarGateResponse> getCrossPillarGate_Pre($grpc.ServiceCall $call, $async.Future<$0.GetCrossPillarGateRequest> $request) async {
+    return getCrossPillarGate($call, await $request);
+  }
+
+  $async.Future<$0.GetCrossPillarGateResponse> getCrossPillarGate($grpc.ServiceCall call, $0.GetCrossPillarGateRequest request);
+
+  $async.Future<$0.CreateProfileShareResponse> createProfileShare_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateProfileShareRequest> $request) async {
+    return createProfileShare($call, await $request);
+  }
+
+  $async.Future<$0.CreateProfileShareResponse> createProfileShare($grpc.ServiceCall call, $0.CreateProfileShareRequest request);
+
+  $async.Future<$0.ListMyProfileSharesResponse> listMyProfileShares_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyProfileSharesRequest> $request) async {
+    return listMyProfileShares($call, await $request);
+  }
+
+  $async.Future<$0.ListMyProfileSharesResponse> listMyProfileShares($grpc.ServiceCall call, $0.ListMyProfileSharesRequest request);
+
+  $async.Future<$0.RevokeProfileShareResponse> revokeProfileShare_Pre($grpc.ServiceCall $call, $async.Future<$0.RevokeProfileShareRequest> $request) async {
+    return revokeProfileShare($call, await $request);
+  }
+
+  $async.Future<$0.RevokeProfileShareResponse> revokeProfileShare($grpc.ServiceCall call, $0.RevokeProfileShareRequest request);
+
+  $async.Future<$0.GenerateAtlasYearbookResponse> generateAtlasYearbook_Pre($grpc.ServiceCall $call, $async.Future<$0.GenerateAtlasYearbookRequest> $request) async {
+    return generateAtlasYearbook($call, await $request);
+  }
+
+  $async.Future<$0.GenerateAtlasYearbookResponse> generateAtlasYearbook($grpc.ServiceCall call, $0.GenerateAtlasYearbookRequest request);
+
+  $async.Future<$0.CheckInEventResponse> checkInEvent_Pre($grpc.ServiceCall $call, $async.Future<$0.CheckInEventRequest> $request) async {
+    return checkInEvent($call, await $request);
+  }
+
+  $async.Future<$0.CheckInEventResponse> checkInEvent($grpc.ServiceCall call, $0.CheckInEventRequest request);
 
 }

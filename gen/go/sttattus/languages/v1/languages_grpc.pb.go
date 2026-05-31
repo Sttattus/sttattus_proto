@@ -19,26 +19,43 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	LanguagesService_ListScenarios_FullMethodName          = "/sttattus.languages.v1.LanguagesService/ListScenarios"
-	LanguagesService_CompleteInteraction_FullMethodName    = "/sttattus.languages.v1.LanguagesService/CompleteInteraction"
-	LanguagesService_GetLinguistStats_FullMethodName       = "/sttattus.languages.v1.LanguagesService/GetLinguistStats"
-	LanguagesService_ListPlacementQuestions_FullMethodName = "/sttattus.languages.v1.LanguagesService/ListPlacementQuestions"
-	LanguagesService_SubmitPlacementResult_FullMethodName  = "/sttattus.languages.v1.LanguagesService/SubmitPlacementResult"
-	LanguagesService_ListMyPlacementResults_FullMethodName = "/sttattus.languages.v1.LanguagesService/ListMyPlacementResults"
-	LanguagesService_GetTodayPlan_FullMethodName           = "/sttattus.languages.v1.LanguagesService/GetTodayPlan"
-	LanguagesService_MarkPlanBlock_FullMethodName          = "/sttattus.languages.v1.LanguagesService/MarkPlanBlock"
-	LanguagesService_ListTodayImmersion_FullMethodName     = "/sttattus.languages.v1.LanguagesService/ListTodayImmersion"
-	LanguagesService_MarkImmersionCompleted_FullMethodName = "/sttattus.languages.v1.LanguagesService/MarkImmersionCompleted"
-	LanguagesService_ListSpeakingPrompts_FullMethodName    = "/sttattus.languages.v1.LanguagesService/ListSpeakingPrompts"
-	LanguagesService_CreateSpeakingAttempt_FullMethodName  = "/sttattus.languages.v1.LanguagesService/CreateSpeakingAttempt"
-	LanguagesService_GetSpeakingAttempt_FullMethodName     = "/sttattus.languages.v1.LanguagesService/GetSpeakingAttempt"
-	LanguagesService_ListMyLanguages_FullMethodName        = "/sttattus.languages.v1.LanguagesService/ListMyLanguages"
-	LanguagesService_AddMyLanguage_FullMethodName          = "/sttattus.languages.v1.LanguagesService/AddMyLanguage"
-	LanguagesService_RemoveMyLanguage_FullMethodName       = "/sttattus.languages.v1.LanguagesService/RemoveMyLanguage"
-	LanguagesService_SetMyPrimaryLanguage_FullMethodName   = "/sttattus.languages.v1.LanguagesService/SetMyPrimaryLanguage"
-	LanguagesService_ListCulturalModules_FullMethodName    = "/sttattus.languages.v1.LanguagesService/ListCulturalModules"
-	LanguagesService_MarkCulturalCompleted_FullMethodName  = "/sttattus.languages.v1.LanguagesService/MarkCulturalCompleted"
-	LanguagesService_ListWords_FullMethodName              = "/sttattus.languages.v1.LanguagesService/ListWords"
+	LanguagesService_ListScenarios_FullMethodName            = "/sttattus.languages.v1.LanguagesService/ListScenarios"
+	LanguagesService_CompleteInteraction_FullMethodName      = "/sttattus.languages.v1.LanguagesService/CompleteInteraction"
+	LanguagesService_GetLinguistStats_FullMethodName         = "/sttattus.languages.v1.LanguagesService/GetLinguistStats"
+	LanguagesService_ListPlacementQuestions_FullMethodName   = "/sttattus.languages.v1.LanguagesService/ListPlacementQuestions"
+	LanguagesService_SubmitPlacementResult_FullMethodName    = "/sttattus.languages.v1.LanguagesService/SubmitPlacementResult"
+	LanguagesService_ListMyPlacementResults_FullMethodName   = "/sttattus.languages.v1.LanguagesService/ListMyPlacementResults"
+	LanguagesService_GetTodayPlan_FullMethodName             = "/sttattus.languages.v1.LanguagesService/GetTodayPlan"
+	LanguagesService_MarkPlanBlock_FullMethodName            = "/sttattus.languages.v1.LanguagesService/MarkPlanBlock"
+	LanguagesService_ListTodayImmersion_FullMethodName       = "/sttattus.languages.v1.LanguagesService/ListTodayImmersion"
+	LanguagesService_MarkImmersionCompleted_FullMethodName   = "/sttattus.languages.v1.LanguagesService/MarkImmersionCompleted"
+	LanguagesService_ListSpeakingPrompts_FullMethodName      = "/sttattus.languages.v1.LanguagesService/ListSpeakingPrompts"
+	LanguagesService_CreateSpeakingAttempt_FullMethodName    = "/sttattus.languages.v1.LanguagesService/CreateSpeakingAttempt"
+	LanguagesService_GetSpeakingAttempt_FullMethodName       = "/sttattus.languages.v1.LanguagesService/GetSpeakingAttempt"
+	LanguagesService_ListMyLanguages_FullMethodName          = "/sttattus.languages.v1.LanguagesService/ListMyLanguages"
+	LanguagesService_AddMyLanguage_FullMethodName            = "/sttattus.languages.v1.LanguagesService/AddMyLanguage"
+	LanguagesService_RemoveMyLanguage_FullMethodName         = "/sttattus.languages.v1.LanguagesService/RemoveMyLanguage"
+	LanguagesService_SetMyPrimaryLanguage_FullMethodName     = "/sttattus.languages.v1.LanguagesService/SetMyPrimaryLanguage"
+	LanguagesService_ListCulturalModules_FullMethodName      = "/sttattus.languages.v1.LanguagesService/ListCulturalModules"
+	LanguagesService_MarkCulturalCompleted_FullMethodName    = "/sttattus.languages.v1.LanguagesService/MarkCulturalCompleted"
+	LanguagesService_ListWritingPrompts_FullMethodName       = "/sttattus.languages.v1.LanguagesService/ListWritingPrompts"
+	LanguagesService_SubmitWriting_FullMethodName            = "/sttattus.languages.v1.LanguagesService/SubmitWriting"
+	LanguagesService_ListMyWritingSubmissions_FullMethodName = "/sttattus.languages.v1.LanguagesService/ListMyWritingSubmissions"
+	LanguagesService_GetWritingSubmission_FullMethodName     = "/sttattus.languages.v1.LanguagesService/GetWritingSubmission"
+	LanguagesService_ListReadingTexts_FullMethodName         = "/sttattus.languages.v1.LanguagesService/ListReadingTexts"
+	LanguagesService_GetReadingText_FullMethodName           = "/sttattus.languages.v1.LanguagesService/GetReadingText"
+	LanguagesService_ListIdioms_FullMethodName               = "/sttattus.languages.v1.LanguagesService/ListIdioms"
+	LanguagesService_StartTutorThread_FullMethodName         = "/sttattus.languages.v1.LanguagesService/StartTutorThread"
+	LanguagesService_ListMyTutorThreads_FullMethodName       = "/sttattus.languages.v1.LanguagesService/ListMyTutorThreads"
+	LanguagesService_GetTutorThread_FullMethodName           = "/sttattus.languages.v1.LanguagesService/GetTutorThread"
+	LanguagesService_PostTutorMessage_FullMethodName         = "/sttattus.languages.v1.LanguagesService/PostTutorMessage"
+	LanguagesService_ListAnthologyArticles_FullMethodName    = "/sttattus.languages.v1.LanguagesService/ListAnthologyArticles"
+	LanguagesService_GetAnthologyArticle_FullMethodName      = "/sttattus.languages.v1.LanguagesService/GetAnthologyArticle"
+	LanguagesService_IssueCertificate_FullMethodName         = "/sttattus.languages.v1.LanguagesService/IssueCertificate"
+	LanguagesService_ListMyCertificates_FullMethodName       = "/sttattus.languages.v1.LanguagesService/ListMyCertificates"
+	LanguagesService_GenerateLinguistAlmanac_FullMethodName  = "/sttattus.languages.v1.LanguagesService/GenerateLinguistAlmanac"
+	LanguagesService_CreateLinguistShare_FullMethodName      = "/sttattus.languages.v1.LanguagesService/CreateLinguistShare"
+	LanguagesService_ListWords_FullMethodName                = "/sttattus.languages.v1.LanguagesService/ListWords"
 )
 
 // LanguagesServiceClient is the client API for LanguagesService service.
@@ -72,6 +89,31 @@ type LanguagesServiceClient interface {
 	// L12.7 — cultural modules.
 	ListCulturalModules(ctx context.Context, in *ListCulturalModulesRequest, opts ...grpc.CallOption) (*ListCulturalModulesResponse, error)
 	MarkCulturalCompleted(ctx context.Context, in *MarkCulturalCompletedRequest, opts ...grpc.CallOption) (*MarkCulturalCompletedResponse, error)
+	// L12.9 — writing drill + AI rough correction.
+	ListWritingPrompts(ctx context.Context, in *ListWritingPromptsRequest, opts ...grpc.CallOption) (*ListWritingPromptsResponse, error)
+	SubmitWriting(ctx context.Context, in *SubmitWritingRequest, opts ...grpc.CallOption) (*SubmitWritingResponse, error)
+	ListMyWritingSubmissions(ctx context.Context, in *ListMyWritingSubmissionsRequest, opts ...grpc.CallOption) (*ListMyWritingSubmissionsResponse, error)
+	GetWritingSubmission(ctx context.Context, in *GetWritingSubmissionRequest, opts ...grpc.CallOption) (*GetWritingSubmissionResponse, error)
+	// L12.10 — reading library (parallel text).
+	ListReadingTexts(ctx context.Context, in *ListReadingTextsRequest, opts ...grpc.CallOption) (*ListReadingTextsResponse, error)
+	GetReadingText(ctx context.Context, in *GetReadingTextRequest, opts ...grpc.CallOption) (*GetReadingTextResponse, error)
+	// L12.11 — idiom library.
+	ListIdioms(ctx context.Context, in *ListIdiomsRequest, opts ...grpc.CallOption) (*ListIdiomsResponse, error)
+	// L12.12 — tutor desk / concierge (Sovereign).
+	StartTutorThread(ctx context.Context, in *StartTutorThreadRequest, opts ...grpc.CallOption) (*StartTutorThreadResponse, error)
+	ListMyTutorThreads(ctx context.Context, in *ListMyTutorThreadsRequest, opts ...grpc.CallOption) (*ListMyTutorThreadsResponse, error)
+	GetTutorThread(ctx context.Context, in *GetTutorThreadRequest, opts ...grpc.CallOption) (*GetTutorThreadResponse, error)
+	PostTutorMessage(ctx context.Context, in *PostTutorMessageRequest, opts ...grpc.CallOption) (*PostTutorMessageResponse, error)
+	// L12.13 — editorial Anthology.
+	ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error)
+	// L12.14 — CEFR certificate issuance.
+	IssueCertificate(ctx context.Context, in *IssueCertificateRequest, opts ...grpc.CallOption) (*IssueCertificateResponse, error)
+	ListMyCertificates(ctx context.Context, in *ListMyCertificatesRequest, opts ...grpc.CallOption) (*ListMyCertificatesResponse, error)
+	// L12.15 — Annual Linguist Almanac.
+	GenerateLinguistAlmanac(ctx context.Context, in *GenerateLinguistAlmanacRequest, opts ...grpc.CallOption) (*GenerateLinguistAlmanacResponse, error)
+	// L12.16 — public Linguist profile share.
+	CreateLinguistShare(ctx context.Context, in *CreateLinguistShareRequest, opts ...grpc.CallOption) (*CreateLinguistShareResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error)
 }
@@ -274,6 +316,176 @@ func (c *languagesServiceClient) MarkCulturalCompleted(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *languagesServiceClient) ListWritingPrompts(ctx context.Context, in *ListWritingPromptsRequest, opts ...grpc.CallOption) (*ListWritingPromptsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListWritingPromptsResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListWritingPrompts_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) SubmitWriting(ctx context.Context, in *SubmitWritingRequest, opts ...grpc.CallOption) (*SubmitWritingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitWritingResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_SubmitWriting_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) ListMyWritingSubmissions(ctx context.Context, in *ListMyWritingSubmissionsRequest, opts ...grpc.CallOption) (*ListMyWritingSubmissionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyWritingSubmissionsResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListMyWritingSubmissions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetWritingSubmission(ctx context.Context, in *GetWritingSubmissionRequest, opts ...grpc.CallOption) (*GetWritingSubmissionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetWritingSubmissionResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetWritingSubmission_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) ListReadingTexts(ctx context.Context, in *ListReadingTextsRequest, opts ...grpc.CallOption) (*ListReadingTextsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListReadingTextsResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListReadingTexts_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetReadingText(ctx context.Context, in *GetReadingTextRequest, opts ...grpc.CallOption) (*GetReadingTextResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetReadingTextResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetReadingText_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) ListIdioms(ctx context.Context, in *ListIdiomsRequest, opts ...grpc.CallOption) (*ListIdiomsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListIdiomsResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListIdioms_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) StartTutorThread(ctx context.Context, in *StartTutorThreadRequest, opts ...grpc.CallOption) (*StartTutorThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StartTutorThreadResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_StartTutorThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) ListMyTutorThreads(ctx context.Context, in *ListMyTutorThreadsRequest, opts ...grpc.CallOption) (*ListMyTutorThreadsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyTutorThreadsResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListMyTutorThreads_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetTutorThread(ctx context.Context, in *GetTutorThreadRequest, opts ...grpc.CallOption) (*GetTutorThreadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTutorThreadResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetTutorThread_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) PostTutorMessage(ctx context.Context, in *PostTutorMessageRequest, opts ...grpc.CallOption) (*PostTutorMessageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PostTutorMessageResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_PostTutorMessage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) ListAnthologyArticles(ctx context.Context, in *ListAnthologyArticlesRequest, opts ...grpc.CallOption) (*ListAnthologyArticlesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAnthologyArticlesResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListAnthologyArticles_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetAnthologyArticle(ctx context.Context, in *GetAnthologyArticleRequest, opts ...grpc.CallOption) (*GetAnthologyArticleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAnthologyArticleResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetAnthologyArticle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) IssueCertificate(ctx context.Context, in *IssueCertificateRequest, opts ...grpc.CallOption) (*IssueCertificateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(IssueCertificateResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_IssueCertificate_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) ListMyCertificates(ctx context.Context, in *ListMyCertificatesRequest, opts ...grpc.CallOption) (*ListMyCertificatesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyCertificatesResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ListMyCertificates_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GenerateLinguistAlmanac(ctx context.Context, in *GenerateLinguistAlmanacRequest, opts ...grpc.CallOption) (*GenerateLinguistAlmanacResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateLinguistAlmanacResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GenerateLinguistAlmanac_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) CreateLinguistShare(ctx context.Context, in *CreateLinguistShareRequest, opts ...grpc.CallOption) (*CreateLinguistShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateLinguistShareResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_CreateLinguistShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *languagesServiceClient) ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListWordsResponse)
@@ -315,6 +527,31 @@ type LanguagesServiceServer interface {
 	// L12.7 — cultural modules.
 	ListCulturalModules(context.Context, *ListCulturalModulesRequest) (*ListCulturalModulesResponse, error)
 	MarkCulturalCompleted(context.Context, *MarkCulturalCompletedRequest) (*MarkCulturalCompletedResponse, error)
+	// L12.9 — writing drill + AI rough correction.
+	ListWritingPrompts(context.Context, *ListWritingPromptsRequest) (*ListWritingPromptsResponse, error)
+	SubmitWriting(context.Context, *SubmitWritingRequest) (*SubmitWritingResponse, error)
+	ListMyWritingSubmissions(context.Context, *ListMyWritingSubmissionsRequest) (*ListMyWritingSubmissionsResponse, error)
+	GetWritingSubmission(context.Context, *GetWritingSubmissionRequest) (*GetWritingSubmissionResponse, error)
+	// L12.10 — reading library (parallel text).
+	ListReadingTexts(context.Context, *ListReadingTextsRequest) (*ListReadingTextsResponse, error)
+	GetReadingText(context.Context, *GetReadingTextRequest) (*GetReadingTextResponse, error)
+	// L12.11 — idiom library.
+	ListIdioms(context.Context, *ListIdiomsRequest) (*ListIdiomsResponse, error)
+	// L12.12 — tutor desk / concierge (Sovereign).
+	StartTutorThread(context.Context, *StartTutorThreadRequest) (*StartTutorThreadResponse, error)
+	ListMyTutorThreads(context.Context, *ListMyTutorThreadsRequest) (*ListMyTutorThreadsResponse, error)
+	GetTutorThread(context.Context, *GetTutorThreadRequest) (*GetTutorThreadResponse, error)
+	PostTutorMessage(context.Context, *PostTutorMessageRequest) (*PostTutorMessageResponse, error)
+	// L12.13 — editorial Anthology.
+	ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error)
+	GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error)
+	// L12.14 — CEFR certificate issuance.
+	IssueCertificate(context.Context, *IssueCertificateRequest) (*IssueCertificateResponse, error)
+	ListMyCertificates(context.Context, *ListMyCertificatesRequest) (*ListMyCertificatesResponse, error)
+	// L12.15 — Annual Linguist Almanac.
+	GenerateLinguistAlmanac(context.Context, *GenerateLinguistAlmanacRequest) (*GenerateLinguistAlmanacResponse, error)
+	// L12.16 — public Linguist profile share.
+	CreateLinguistShare(context.Context, *CreateLinguistShareRequest) (*CreateLinguistShareResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error)
 	mustEmbedUnimplementedLanguagesServiceServer()
@@ -383,6 +620,57 @@ func (UnimplementedLanguagesServiceServer) ListCulturalModules(context.Context, 
 }
 func (UnimplementedLanguagesServiceServer) MarkCulturalCompleted(context.Context, *MarkCulturalCompletedRequest) (*MarkCulturalCompletedResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method MarkCulturalCompleted not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ListWritingPrompts(context.Context, *ListWritingPromptsRequest) (*ListWritingPromptsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListWritingPrompts not implemented")
+}
+func (UnimplementedLanguagesServiceServer) SubmitWriting(context.Context, *SubmitWritingRequest) (*SubmitWritingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitWriting not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ListMyWritingSubmissions(context.Context, *ListMyWritingSubmissionsRequest) (*ListMyWritingSubmissionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyWritingSubmissions not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetWritingSubmission(context.Context, *GetWritingSubmissionRequest) (*GetWritingSubmissionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetWritingSubmission not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ListReadingTexts(context.Context, *ListReadingTextsRequest) (*ListReadingTextsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListReadingTexts not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetReadingText(context.Context, *GetReadingTextRequest) (*GetReadingTextResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetReadingText not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ListIdioms(context.Context, *ListIdiomsRequest) (*ListIdiomsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListIdioms not implemented")
+}
+func (UnimplementedLanguagesServiceServer) StartTutorThread(context.Context, *StartTutorThreadRequest) (*StartTutorThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StartTutorThread not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ListMyTutorThreads(context.Context, *ListMyTutorThreadsRequest) (*ListMyTutorThreadsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyTutorThreads not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetTutorThread(context.Context, *GetTutorThreadRequest) (*GetTutorThreadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTutorThread not implemented")
+}
+func (UnimplementedLanguagesServiceServer) PostTutorMessage(context.Context, *PostTutorMessageRequest) (*PostTutorMessageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PostTutorMessage not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ListAnthologyArticles(context.Context, *ListAnthologyArticlesRequest) (*ListAnthologyArticlesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAnthologyArticles not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetAnthologyArticle(context.Context, *GetAnthologyArticleRequest) (*GetAnthologyArticleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAnthologyArticle not implemented")
+}
+func (UnimplementedLanguagesServiceServer) IssueCertificate(context.Context, *IssueCertificateRequest) (*IssueCertificateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method IssueCertificate not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ListMyCertificates(context.Context, *ListMyCertificatesRequest) (*ListMyCertificatesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyCertificates not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GenerateLinguistAlmanac(context.Context, *GenerateLinguistAlmanacRequest) (*GenerateLinguistAlmanacResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateLinguistAlmanac not implemented")
+}
+func (UnimplementedLanguagesServiceServer) CreateLinguistShare(context.Context, *CreateLinguistShareRequest) (*CreateLinguistShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateLinguistShare not implemented")
 }
 func (UnimplementedLanguagesServiceServer) ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListWords not implemented")
@@ -750,6 +1038,312 @@ func _LanguagesService_MarkCulturalCompleted_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LanguagesService_ListWritingPrompts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListWritingPromptsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ListWritingPrompts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ListWritingPrompts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ListWritingPrompts(ctx, req.(*ListWritingPromptsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_SubmitWriting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitWritingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).SubmitWriting(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_SubmitWriting_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).SubmitWriting(ctx, req.(*SubmitWritingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_ListMyWritingSubmissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyWritingSubmissionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ListMyWritingSubmissions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ListMyWritingSubmissions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ListMyWritingSubmissions(ctx, req.(*ListMyWritingSubmissionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetWritingSubmission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWritingSubmissionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetWritingSubmission(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetWritingSubmission_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetWritingSubmission(ctx, req.(*GetWritingSubmissionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_ListReadingTexts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListReadingTextsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ListReadingTexts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ListReadingTexts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ListReadingTexts(ctx, req.(*ListReadingTextsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetReadingText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetReadingTextRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetReadingText(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetReadingText_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetReadingText(ctx, req.(*GetReadingTextRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_ListIdioms_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListIdiomsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ListIdioms(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ListIdioms_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ListIdioms(ctx, req.(*ListIdiomsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_StartTutorThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StartTutorThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).StartTutorThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_StartTutorThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).StartTutorThread(ctx, req.(*StartTutorThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_ListMyTutorThreads_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyTutorThreadsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ListMyTutorThreads(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ListMyTutorThreads_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ListMyTutorThreads(ctx, req.(*ListMyTutorThreadsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetTutorThread_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTutorThreadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetTutorThread(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetTutorThread_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetTutorThread(ctx, req.(*GetTutorThreadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_PostTutorMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostTutorMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).PostTutorMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_PostTutorMessage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).PostTutorMessage(ctx, req.(*PostTutorMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_ListAnthologyArticles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAnthologyArticlesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ListAnthologyArticles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ListAnthologyArticles_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ListAnthologyArticles(ctx, req.(*ListAnthologyArticlesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetAnthologyArticle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnthologyArticleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetAnthologyArticle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetAnthologyArticle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetAnthologyArticle(ctx, req.(*GetAnthologyArticleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_IssueCertificate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IssueCertificateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).IssueCertificate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_IssueCertificate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).IssueCertificate(ctx, req.(*IssueCertificateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_ListMyCertificates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyCertificatesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ListMyCertificates(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ListMyCertificates_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ListMyCertificates(ctx, req.(*ListMyCertificatesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GenerateLinguistAlmanac_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateLinguistAlmanacRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GenerateLinguistAlmanac(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GenerateLinguistAlmanac_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GenerateLinguistAlmanac(ctx, req.(*GenerateLinguistAlmanacRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_CreateLinguistShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateLinguistShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).CreateLinguistShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_CreateLinguistShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).CreateLinguistShare(ctx, req.(*CreateLinguistShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LanguagesService_ListWords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListWordsRequest)
 	if err := dec(in); err != nil {
@@ -850,6 +1444,74 @@ var LanguagesService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "MarkCulturalCompleted",
 			Handler:    _LanguagesService_MarkCulturalCompleted_Handler,
+		},
+		{
+			MethodName: "ListWritingPrompts",
+			Handler:    _LanguagesService_ListWritingPrompts_Handler,
+		},
+		{
+			MethodName: "SubmitWriting",
+			Handler:    _LanguagesService_SubmitWriting_Handler,
+		},
+		{
+			MethodName: "ListMyWritingSubmissions",
+			Handler:    _LanguagesService_ListMyWritingSubmissions_Handler,
+		},
+		{
+			MethodName: "GetWritingSubmission",
+			Handler:    _LanguagesService_GetWritingSubmission_Handler,
+		},
+		{
+			MethodName: "ListReadingTexts",
+			Handler:    _LanguagesService_ListReadingTexts_Handler,
+		},
+		{
+			MethodName: "GetReadingText",
+			Handler:    _LanguagesService_GetReadingText_Handler,
+		},
+		{
+			MethodName: "ListIdioms",
+			Handler:    _LanguagesService_ListIdioms_Handler,
+		},
+		{
+			MethodName: "StartTutorThread",
+			Handler:    _LanguagesService_StartTutorThread_Handler,
+		},
+		{
+			MethodName: "ListMyTutorThreads",
+			Handler:    _LanguagesService_ListMyTutorThreads_Handler,
+		},
+		{
+			MethodName: "GetTutorThread",
+			Handler:    _LanguagesService_GetTutorThread_Handler,
+		},
+		{
+			MethodName: "PostTutorMessage",
+			Handler:    _LanguagesService_PostTutorMessage_Handler,
+		},
+		{
+			MethodName: "ListAnthologyArticles",
+			Handler:    _LanguagesService_ListAnthologyArticles_Handler,
+		},
+		{
+			MethodName: "GetAnthologyArticle",
+			Handler:    _LanguagesService_GetAnthologyArticle_Handler,
+		},
+		{
+			MethodName: "IssueCertificate",
+			Handler:    _LanguagesService_IssueCertificate_Handler,
+		},
+		{
+			MethodName: "ListMyCertificates",
+			Handler:    _LanguagesService_ListMyCertificates_Handler,
+		},
+		{
+			MethodName: "GenerateLinguistAlmanac",
+			Handler:    _LanguagesService_GenerateLinguistAlmanac_Handler,
+		},
+		{
+			MethodName: "CreateLinguistShare",
+			Handler:    _LanguagesService_CreateLinguistShare_Handler,
 		},
 		{
 			MethodName: "ListWords",

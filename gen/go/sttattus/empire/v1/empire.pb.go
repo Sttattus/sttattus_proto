@@ -4034,6 +4034,2090 @@ func (x *RemoveFriendResponse) GetFriendshipId() string {
 	return ""
 }
 
+type ConciergeThread struct {
+	state   protoimpl.MessageState `protogen:"open.v1"`
+	Id      string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Subject string                 `protobuf:"bytes,2,opt,name=subject,proto3" json:"subject,omitempty"`
+	// open | awaiting | closed.
+	Status        string `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
+	CreatedAt     string `protobuf:"bytes,4,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	LastMessageAt string `protobuf:"bytes,5,opt,name=last_message_at,json=lastMessageAt,proto3" json:"last_message_at,omitempty"`
+	MessageCount  int32  `protobuf:"varint,6,opt,name=message_count,json=messageCount,proto3" json:"message_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConciergeThread) Reset() {
+	*x = ConciergeThread{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[68]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConciergeThread) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConciergeThread) ProtoMessage() {}
+
+func (x *ConciergeThread) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[68]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConciergeThread.ProtoReflect.Descriptor instead.
+func (*ConciergeThread) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *ConciergeThread) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetSubject() string {
+	if x != nil {
+		return x.Subject
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetCreatedAt() string {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetLastMessageAt() string {
+	if x != nil {
+		return x.LastMessageAt
+	}
+	return ""
+}
+
+func (x *ConciergeThread) GetMessageCount() int32 {
+	if x != nil {
+		return x.MessageCount
+	}
+	return 0
+}
+
+type ConciergeMessage struct {
+	state    protoimpl.MessageState `protogen:"open.v1"`
+	Id       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ThreadId string                 `protobuf:"bytes,2,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	// member | concierge | system.
+	Sender        string `protobuf:"bytes,3,opt,name=sender,proto3" json:"sender,omitempty"`
+	Body          string `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
+	CreatedAt     string `protobuf:"bytes,5,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConciergeMessage) Reset() {
+	*x = ConciergeMessage{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[69]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConciergeMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConciergeMessage) ProtoMessage() {}
+
+func (x *ConciergeMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[69]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConciergeMessage.ProtoReflect.Descriptor instead.
+func (*ConciergeMessage) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{69}
+}
+
+func (x *ConciergeMessage) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetSender() string {
+	if x != nil {
+		return x.Sender
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetCreatedAt() string {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return ""
+}
+
+type StartConciergeThreadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Subject       string                 `protobuf:"bytes,1,opt,name=subject,proto3" json:"subject,omitempty"`
+	Body          string                 `protobuf:"bytes,2,opt,name=body,proto3" json:"body,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StartConciergeThreadRequest) Reset() {
+	*x = StartConciergeThreadRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[70]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StartConciergeThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartConciergeThreadRequest) ProtoMessage() {}
+
+func (x *StartConciergeThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[70]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartConciergeThreadRequest.ProtoReflect.Descriptor instead.
+func (*StartConciergeThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *StartConciergeThreadRequest) GetSubject() string {
+	if x != nil {
+		return x.Subject
+	}
+	return ""
+}
+
+func (x *StartConciergeThreadRequest) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+type StartConciergeThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StartConciergeThreadResponse) Reset() {
+	*x = StartConciergeThreadResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[71]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StartConciergeThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartConciergeThreadResponse) ProtoMessage() {}
+
+func (x *StartConciergeThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[71]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartConciergeThreadResponse.ProtoReflect.Descriptor instead.
+func (*StartConciergeThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *StartConciergeThreadResponse) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+type ListMyConciergeThreadsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyConciergeThreadsRequest) Reset() {
+	*x = ListMyConciergeThreadsRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[72]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyConciergeThreadsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyConciergeThreadsRequest) ProtoMessage() {}
+
+func (x *ListMyConciergeThreadsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[72]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyConciergeThreadsRequest.ProtoReflect.Descriptor instead.
+func (*ListMyConciergeThreadsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{72}
+}
+
+type ListMyConciergeThreadsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Threads       []*ConciergeThread     `protobuf:"bytes,1,rep,name=threads,proto3" json:"threads,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyConciergeThreadsResponse) Reset() {
+	*x = ListMyConciergeThreadsResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[73]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyConciergeThreadsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyConciergeThreadsResponse) ProtoMessage() {}
+
+func (x *ListMyConciergeThreadsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[73]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyConciergeThreadsResponse.ProtoReflect.Descriptor instead.
+func (*ListMyConciergeThreadsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{73}
+}
+
+func (x *ListMyConciergeThreadsResponse) GetThreads() []*ConciergeThread {
+	if x != nil {
+		return x.Threads
+	}
+	return nil
+}
+
+type GetConciergeThreadRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetConciergeThreadRequest) Reset() {
+	*x = GetConciergeThreadRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[74]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetConciergeThreadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetConciergeThreadRequest) ProtoMessage() {}
+
+func (x *GetConciergeThreadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[74]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetConciergeThreadRequest.ProtoReflect.Descriptor instead.
+func (*GetConciergeThreadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{74}
+}
+
+func (x *GetConciergeThreadRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+type GetConciergeThreadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *ConciergeThread       `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	Messages      []*ConciergeMessage    `protobuf:"bytes,2,rep,name=messages,proto3" json:"messages,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetConciergeThreadResponse) Reset() {
+	*x = GetConciergeThreadResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[75]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetConciergeThreadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetConciergeThreadResponse) ProtoMessage() {}
+
+func (x *GetConciergeThreadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[75]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetConciergeThreadResponse.ProtoReflect.Descriptor instead.
+func (*GetConciergeThreadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{75}
+}
+
+func (x *GetConciergeThreadResponse) GetThread() *ConciergeThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+func (x *GetConciergeThreadResponse) GetMessages() []*ConciergeMessage {
+	if x != nil {
+		return x.Messages
+	}
+	return nil
+}
+
+type PostConciergeMessageRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	Body          string                 `protobuf:"bytes,2,opt,name=body,proto3" json:"body,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PostConciergeMessageRequest) Reset() {
+	*x = PostConciergeMessageRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[76]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PostConciergeMessageRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PostConciergeMessageRequest) ProtoMessage() {}
+
+func (x *PostConciergeMessageRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[76]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PostConciergeMessageRequest.ProtoReflect.Descriptor instead.
+func (*PostConciergeMessageRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{76}
+}
+
+func (x *PostConciergeMessageRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *PostConciergeMessageRequest) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+type PostConciergeMessageResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Message       *ConciergeMessage      `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PostConciergeMessageResponse) Reset() {
+	*x = PostConciergeMessageResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[77]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PostConciergeMessageResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PostConciergeMessageResponse) ProtoMessage() {}
+
+func (x *PostConciergeMessageResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[77]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PostConciergeMessageResponse.ProtoReflect.Descriptor instead.
+func (*PostConciergeMessageResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{77}
+}
+
+func (x *PostConciergeMessageResponse) GetMessage() *ConciergeMessage {
+	if x != nil {
+		return x.Message
+	}
+	return nil
+}
+
+type AnthologyArticle struct {
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug        string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Title       string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Dek         string                 `protobuf:"bytes,4,opt,name=dek,proto3" json:"dek,omitempty"`
+	AuthorName  string                 `protobuf:"bytes,5,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
+	AuthorTitle string                 `protobuf:"bytes,6,opt,name=author_title,json=authorTitle,proto3" json:"author_title,omitempty"`
+	// Markdown / plain body; paragraphs split on \n\n.
+	Body          string `protobuf:"bytes,7,opt,name=body,proto3" json:"body,omitempty"`
+	HeroUrl       string `protobuf:"bytes,8,opt,name=hero_url,json=heroUrl,proto3" json:"hero_url,omitempty"`
+	SovereignOnly bool   `protobuf:"varint,9,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	PublishedAt   string `protobuf:"bytes,10,opt,name=published_at,json=publishedAt,proto3" json:"published_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AnthologyArticle) Reset() {
+	*x = AnthologyArticle{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[78]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AnthologyArticle) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AnthologyArticle) ProtoMessage() {}
+
+func (x *AnthologyArticle) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[78]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AnthologyArticle.ProtoReflect.Descriptor instead.
+func (*AnthologyArticle) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{78}
+}
+
+func (x *AnthologyArticle) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetDek() string {
+	if x != nil {
+		return x.Dek
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetAuthorTitle() string {
+	if x != nil {
+		return x.AuthorTitle
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetHeroUrl() string {
+	if x != nil {
+		return x.HeroUrl
+	}
+	return ""
+}
+
+func (x *AnthologyArticle) GetSovereignOnly() bool {
+	if x != nil {
+		return x.SovereignOnly
+	}
+	return false
+}
+
+func (x *AnthologyArticle) GetPublishedAt() string {
+	if x != nil {
+		return x.PublishedAt
+	}
+	return ""
+}
+
+type ListAnthologyArticlesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAnthologyArticlesRequest) Reset() {
+	*x = ListAnthologyArticlesRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[79]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAnthologyArticlesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAnthologyArticlesRequest) ProtoMessage() {}
+
+func (x *ListAnthologyArticlesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[79]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAnthologyArticlesRequest.ProtoReflect.Descriptor instead.
+func (*ListAnthologyArticlesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{79}
+}
+
+func (x *ListAnthologyArticlesRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListAnthologyArticlesRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+type ListAnthologyArticlesResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Bodies are omitted in the list view; fetch the full article by slug.
+	Articles      []*AnthologyArticle `protobuf:"bytes,1,rep,name=articles,proto3" json:"articles,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListAnthologyArticlesResponse) Reset() {
+	*x = ListAnthologyArticlesResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[80]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListAnthologyArticlesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListAnthologyArticlesResponse) ProtoMessage() {}
+
+func (x *ListAnthologyArticlesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[80]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListAnthologyArticlesResponse.ProtoReflect.Descriptor instead.
+func (*ListAnthologyArticlesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{80}
+}
+
+func (x *ListAnthologyArticlesResponse) GetArticles() []*AnthologyArticle {
+	if x != nil {
+		return x.Articles
+	}
+	return nil
+}
+
+type GetAnthologyArticleRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Slug          string                 `protobuf:"bytes,1,opt,name=slug,proto3" json:"slug,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAnthologyArticleRequest) Reset() {
+	*x = GetAnthologyArticleRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[81]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAnthologyArticleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAnthologyArticleRequest) ProtoMessage() {}
+
+func (x *GetAnthologyArticleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[81]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAnthologyArticleRequest.ProtoReflect.Descriptor instead.
+func (*GetAnthologyArticleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{81}
+}
+
+func (x *GetAnthologyArticleRequest) GetSlug() string {
+	if x != nil {
+		return x.Slug
+	}
+	return ""
+}
+
+type GetAnthologyArticleResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Article       *AnthologyArticle      `protobuf:"bytes,1,opt,name=article,proto3" json:"article,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAnthologyArticleResponse) Reset() {
+	*x = GetAnthologyArticleResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[82]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAnthologyArticleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAnthologyArticleResponse) ProtoMessage() {}
+
+func (x *GetAnthologyArticleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[82]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAnthologyArticleResponse.ProtoReflect.Descriptor instead.
+func (*GetAnthologyArticleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{82}
+}
+
+func (x *GetAnthologyArticleResponse) GetArticle() *AnthologyArticle {
+	if x != nil {
+		return x.Article
+	}
+	return nil
+}
+
+type DirectoryMember struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Handle        string                 `protobuf:"bytes,2,opt,name=handle,proto3" json:"handle,omitempty"`
+	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	AvatarUrl     string                 `protobuf:"bytes,4,opt,name=avatar_url,json=avatarUrl,proto3" json:"avatar_url,omitempty"`
+	City          string                 `protobuf:"bytes,5,opt,name=city,proto3" json:"city,omitempty"`
+	Tier          string                 `protobuf:"bytes,6,opt,name=tier,proto3" json:"tier,omitempty"`
+	SttattusScore float64                `protobuf:"fixed64,7,opt,name=sttattus_score,json=sttattusScore,proto3" json:"sttattus_score,omitempty"`
+	GlobalRank    int32                  `protobuf:"varint,8,opt,name=global_rank,json=globalRank,proto3" json:"global_rank,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DirectoryMember) Reset() {
+	*x = DirectoryMember{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[83]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DirectoryMember) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DirectoryMember) ProtoMessage() {}
+
+func (x *DirectoryMember) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[83]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DirectoryMember.ProtoReflect.Descriptor instead.
+func (*DirectoryMember) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{83}
+}
+
+func (x *DirectoryMember) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DirectoryMember) GetHandle() string {
+	if x != nil {
+		return x.Handle
+	}
+	return ""
+}
+
+func (x *DirectoryMember) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *DirectoryMember) GetAvatarUrl() string {
+	if x != nil {
+		return x.AvatarUrl
+	}
+	return ""
+}
+
+func (x *DirectoryMember) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *DirectoryMember) GetTier() string {
+	if x != nil {
+		return x.Tier
+	}
+	return ""
+}
+
+func (x *DirectoryMember) GetSttattusScore() float64 {
+	if x != nil {
+		return x.SttattusScore
+	}
+	return 0
+}
+
+func (x *DirectoryMember) GetGlobalRank() int32 {
+	if x != nil {
+		return x.GlobalRank
+	}
+	return 0
+}
+
+type ListMemberDirectoryRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Optional filters. Empty = no filter.
+	Tier          string `protobuf:"bytes,1,opt,name=tier,proto3" json:"tier,omitempty"`
+	City          string `protobuf:"bytes,2,opt,name=city,proto3" json:"city,omitempty"`
+	Limit         int32  `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset        int32  `protobuf:"varint,4,opt,name=offset,proto3" json:"offset,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMemberDirectoryRequest) Reset() {
+	*x = ListMemberDirectoryRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[84]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMemberDirectoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMemberDirectoryRequest) ProtoMessage() {}
+
+func (x *ListMemberDirectoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[84]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMemberDirectoryRequest.ProtoReflect.Descriptor instead.
+func (*ListMemberDirectoryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{84}
+}
+
+func (x *ListMemberDirectoryRequest) GetTier() string {
+	if x != nil {
+		return x.Tier
+	}
+	return ""
+}
+
+func (x *ListMemberDirectoryRequest) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *ListMemberDirectoryRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListMemberDirectoryRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+type ListMemberDirectoryResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Members       []*DirectoryMember     `protobuf:"bytes,1,rep,name=members,proto3" json:"members,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMemberDirectoryResponse) Reset() {
+	*x = ListMemberDirectoryResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[85]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMemberDirectoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMemberDirectoryResponse) ProtoMessage() {}
+
+func (x *ListMemberDirectoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[85]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMemberDirectoryResponse.ProtoReflect.Descriptor instead.
+func (*ListMemberDirectoryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{85}
+}
+
+func (x *ListMemberDirectoryResponse) GetMembers() []*DirectoryMember {
+	if x != nil {
+		return x.Members
+	}
+	return nil
+}
+
+type SetDirectoryVisibilityRequest struct {
+	state   protoimpl.MessageState `protogen:"open.v1"`
+	Visible bool                   `protobuf:"varint,1,opt,name=visible,proto3" json:"visible,omitempty"`
+	// Optional city the member wants surfaced in the directory.
+	City          string `protobuf:"bytes,2,opt,name=city,proto3" json:"city,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetDirectoryVisibilityRequest) Reset() {
+	*x = SetDirectoryVisibilityRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[86]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetDirectoryVisibilityRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetDirectoryVisibilityRequest) ProtoMessage() {}
+
+func (x *SetDirectoryVisibilityRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[86]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetDirectoryVisibilityRequest.ProtoReflect.Descriptor instead.
+func (*SetDirectoryVisibilityRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{86}
+}
+
+func (x *SetDirectoryVisibilityRequest) GetVisible() bool {
+	if x != nil {
+		return x.Visible
+	}
+	return false
+}
+
+func (x *SetDirectoryVisibilityRequest) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+type SetDirectoryVisibilityResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Visible       bool                   `protobuf:"varint,1,opt,name=visible,proto3" json:"visible,omitempty"`
+	City          string                 `protobuf:"bytes,2,opt,name=city,proto3" json:"city,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetDirectoryVisibilityResponse) Reset() {
+	*x = SetDirectoryVisibilityResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[87]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetDirectoryVisibilityResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetDirectoryVisibilityResponse) ProtoMessage() {}
+
+func (x *SetDirectoryVisibilityResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[87]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetDirectoryVisibilityResponse.ProtoReflect.Descriptor instead.
+func (*SetDirectoryVisibilityResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{87}
+}
+
+func (x *SetDirectoryVisibilityResponse) GetVisible() bool {
+	if x != nil {
+		return x.Visible
+	}
+	return false
+}
+
+func (x *SetDirectoryVisibilityResponse) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+type GenerateEmpireAlmanacRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Defaults to the current year.
+	Year          string `protobuf:"bytes,1,opt,name=year,proto3" json:"year,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateEmpireAlmanacRequest) Reset() {
+	*x = GenerateEmpireAlmanacRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[88]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateEmpireAlmanacRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateEmpireAlmanacRequest) ProtoMessage() {}
+
+func (x *GenerateEmpireAlmanacRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[88]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateEmpireAlmanacRequest.ProtoReflect.Descriptor instead.
+func (*GenerateEmpireAlmanacRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{88}
+}
+
+func (x *GenerateEmpireAlmanacRequest) GetYear() string {
+	if x != nil {
+		return x.Year
+	}
+	return ""
+}
+
+type GenerateEmpireAlmanacResponse struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	MediaAssetId    string                 `protobuf:"bytes,1,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
+	PublicUrl       string                 `protobuf:"bytes,2,opt,name=public_url,json=publicUrl,proto3" json:"public_url,omitempty"`
+	GeneratedAtUnix int64                  `protobuf:"varint,3,opt,name=generated_at_unix,json=generatedAtUnix,proto3" json:"generated_at_unix,omitempty"`
+	PageCount       int32                  `protobuf:"varint,4,opt,name=page_count,json=pageCount,proto3" json:"page_count,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *GenerateEmpireAlmanacResponse) Reset() {
+	*x = GenerateEmpireAlmanacResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[89]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateEmpireAlmanacResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateEmpireAlmanacResponse) ProtoMessage() {}
+
+func (x *GenerateEmpireAlmanacResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[89]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateEmpireAlmanacResponse.ProtoReflect.Descriptor instead.
+func (*GenerateEmpireAlmanacResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{89}
+}
+
+func (x *GenerateEmpireAlmanacResponse) GetMediaAssetId() string {
+	if x != nil {
+		return x.MediaAssetId
+	}
+	return ""
+}
+
+func (x *GenerateEmpireAlmanacResponse) GetPublicUrl() string {
+	if x != nil {
+		return x.PublicUrl
+	}
+	return ""
+}
+
+func (x *GenerateEmpireAlmanacResponse) GetGeneratedAtUnix() int64 {
+	if x != nil {
+		return x.GeneratedAtUnix
+	}
+	return 0
+}
+
+func (x *GenerateEmpireAlmanacResponse) GetPageCount() int32 {
+	if x != nil {
+		return x.PageCount
+	}
+	return 0
+}
+
+type CreateScoreBadgeRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateScoreBadgeRequest) Reset() {
+	*x = CreateScoreBadgeRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[90]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateScoreBadgeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateScoreBadgeRequest) ProtoMessage() {}
+
+func (x *CreateScoreBadgeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[90]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateScoreBadgeRequest.ProtoReflect.Descriptor instead.
+func (*CreateScoreBadgeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{90}
+}
+
+type CreateScoreBadgeResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Opaque token; the badge is served at GET /badge/:token as SVG.
+	Token string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	// Absolute URL of the badge (when the public base is configured) or the
+	// relative path otherwise.
+	Url           string `protobuf:"bytes,2,opt,name=url,proto3" json:"url,omitempty"`
+	ExpiresAt     string `protobuf:"bytes,3,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateScoreBadgeResponse) Reset() {
+	*x = CreateScoreBadgeResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[91]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateScoreBadgeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateScoreBadgeResponse) ProtoMessage() {}
+
+func (x *CreateScoreBadgeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[91]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateScoreBadgeResponse.ProtoReflect.Descriptor instead.
+func (*CreateScoreBadgeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{91}
+}
+
+func (x *CreateScoreBadgeResponse) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *CreateScoreBadgeResponse) GetUrl() string {
+	if x != nil {
+		return x.Url
+	}
+	return ""
+}
+
+func (x *CreateScoreBadgeResponse) GetExpiresAt() string {
+	if x != nil {
+		return x.ExpiresAt
+	}
+	return ""
+}
+
+type GetTierCardRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTierCardRequest) Reset() {
+	*x = GetTierCardRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[92]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTierCardRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTierCardRequest) ProtoMessage() {}
+
+func (x *GetTierCardRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[92]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTierCardRequest.ProtoReflect.Descriptor instead.
+func (*GetTierCardRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{92}
+}
+
+type GetTierCardResponse struct {
+	state      protoimpl.MessageState `protogen:"open.v1"`
+	MemberName string                 `protobuf:"bytes,1,opt,name=member_name,json=memberName,proto3" json:"member_name,omitempty"`
+	Handle     string                 `protobuf:"bytes,2,opt,name=handle,proto3" json:"handle,omitempty"`
+	// bronze | silver | gold | platinum | sovereign.
+	Tier          string  `protobuf:"bytes,3,opt,name=tier,proto3" json:"tier,omitempty"`
+	SttattusScore float64 `protobuf:"fixed64,4,opt,name=sttattus_score,json=sttattusScore,proto3" json:"sttattus_score,omitempty"`
+	// Permanent hand-number, assigned on first request, zero-padded (e.g.
+	// "0042").
+	CardNumber string `protobuf:"bytes,5,opt,name=card_number,json=cardNumber,proto3" json:"card_number,omitempty"`
+	// RFC-3339 UTC of when the member joined.
+	MemberSince   string `protobuf:"bytes,6,opt,name=member_since,json=memberSince,proto3" json:"member_since,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTierCardResponse) Reset() {
+	*x = GetTierCardResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[93]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTierCardResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTierCardResponse) ProtoMessage() {}
+
+func (x *GetTierCardResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[93]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTierCardResponse.ProtoReflect.Descriptor instead.
+func (*GetTierCardResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{93}
+}
+
+func (x *GetTierCardResponse) GetMemberName() string {
+	if x != nil {
+		return x.MemberName
+	}
+	return ""
+}
+
+func (x *GetTierCardResponse) GetHandle() string {
+	if x != nil {
+		return x.Handle
+	}
+	return ""
+}
+
+func (x *GetTierCardResponse) GetTier() string {
+	if x != nil {
+		return x.Tier
+	}
+	return ""
+}
+
+func (x *GetTierCardResponse) GetSttattusScore() float64 {
+	if x != nil {
+		return x.SttattusScore
+	}
+	return 0
+}
+
+func (x *GetTierCardResponse) GetCardNumber() string {
+	if x != nil {
+		return x.CardNumber
+	}
+	return ""
+}
+
+func (x *GetTierCardResponse) GetMemberSince() string {
+	if x != nil {
+		return x.MemberSince
+	}
+	return ""
+}
+
+type CreateLoungePassRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Optional lounge/venue the pass is scoped to. Empty = any open venue.
+	LoungeId      string `protobuf:"bytes,1,opt,name=lounge_id,json=loungeId,proto3" json:"lounge_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateLoungePassRequest) Reset() {
+	*x = CreateLoungePassRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[94]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateLoungePassRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateLoungePassRequest) ProtoMessage() {}
+
+func (x *CreateLoungePassRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[94]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateLoungePassRequest.ProtoReflect.Descriptor instead.
+func (*CreateLoungePassRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{94}
+}
+
+func (x *CreateLoungePassRequest) GetLoungeId() string {
+	if x != nil {
+		return x.LoungeId
+	}
+	return ""
+}
+
+type CreateLoungePassResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Opaque short-TTL token; the door verifies it at GET /pass/:token.
+	Token     string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	Url       string `protobuf:"bytes,2,opt,name=url,proto3" json:"url,omitempty"`
+	ExpiresAt string `protobuf:"bytes,3,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	// The tier the door reads off the pass.
+	Tier          string `protobuf:"bytes,4,opt,name=tier,proto3" json:"tier,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateLoungePassResponse) Reset() {
+	*x = CreateLoungePassResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[95]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateLoungePassResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateLoungePassResponse) ProtoMessage() {}
+
+func (x *CreateLoungePassResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[95]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateLoungePassResponse.ProtoReflect.Descriptor instead.
+func (*CreateLoungePassResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{95}
+}
+
+func (x *CreateLoungePassResponse) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *CreateLoungePassResponse) GetUrl() string {
+	if x != nil {
+		return x.Url
+	}
+	return ""
+}
+
+func (x *CreateLoungePassResponse) GetExpiresAt() string {
+	if x != nil {
+		return x.ExpiresAt
+	}
+	return ""
+}
+
+func (x *CreateLoungePassResponse) GetTier() string {
+	if x != nil {
+		return x.Tier
+	}
+	return ""
+}
+
+type OrderAlmanacPrintRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// The generated Almanac PDF (from GenerateEmpireAlmanac).
+	MediaAssetId  string `protobuf:"bytes,1,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
+	Recipient     string `protobuf:"bytes,2,opt,name=recipient,proto3" json:"recipient,omitempty"`
+	AddressLine1  string `protobuf:"bytes,3,opt,name=address_line1,json=addressLine1,proto3" json:"address_line1,omitempty"`
+	AddressLine2  string `protobuf:"bytes,4,opt,name=address_line2,json=addressLine2,proto3" json:"address_line2,omitempty"`
+	City          string `protobuf:"bytes,5,opt,name=city,proto3" json:"city,omitempty"`
+	PostalCode    string `protobuf:"bytes,6,opt,name=postal_code,json=postalCode,proto3" json:"postal_code,omitempty"`
+	Country       string `protobuf:"bytes,7,opt,name=country,proto3" json:"country,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *OrderAlmanacPrintRequest) Reset() {
+	*x = OrderAlmanacPrintRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[96]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OrderAlmanacPrintRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OrderAlmanacPrintRequest) ProtoMessage() {}
+
+func (x *OrderAlmanacPrintRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[96]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OrderAlmanacPrintRequest.ProtoReflect.Descriptor instead.
+func (*OrderAlmanacPrintRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{96}
+}
+
+func (x *OrderAlmanacPrintRequest) GetMediaAssetId() string {
+	if x != nil {
+		return x.MediaAssetId
+	}
+	return ""
+}
+
+func (x *OrderAlmanacPrintRequest) GetRecipient() string {
+	if x != nil {
+		return x.Recipient
+	}
+	return ""
+}
+
+func (x *OrderAlmanacPrintRequest) GetAddressLine1() string {
+	if x != nil {
+		return x.AddressLine1
+	}
+	return ""
+}
+
+func (x *OrderAlmanacPrintRequest) GetAddressLine2() string {
+	if x != nil {
+		return x.AddressLine2
+	}
+	return ""
+}
+
+func (x *OrderAlmanacPrintRequest) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *OrderAlmanacPrintRequest) GetPostalCode() string {
+	if x != nil {
+		return x.PostalCode
+	}
+	return ""
+}
+
+func (x *OrderAlmanacPrintRequest) GetCountry() string {
+	if x != nil {
+		return x.Country
+	}
+	return ""
+}
+
+type OrderAlmanacPrintResponse struct {
+	state   protoimpl.MessageState `protogen:"open.v1"`
+	OrderId string                 `protobuf:"bytes,1,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
+	// requested | in_production | shipped — set by fulfilment ops.
+	Status        string `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *OrderAlmanacPrintResponse) Reset() {
+	*x = OrderAlmanacPrintResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[97]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OrderAlmanacPrintResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OrderAlmanacPrintResponse) ProtoMessage() {}
+
+func (x *OrderAlmanacPrintResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[97]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OrderAlmanacPrintResponse.ProtoReflect.Descriptor instead.
+func (*OrderAlmanacPrintResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{97}
+}
+
+func (x *OrderAlmanacPrintResponse) GetOrderId() string {
+	if x != nil {
+		return x.OrderId
+	}
+	return ""
+}
+
+func (x *OrderAlmanacPrintResponse) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+type AlmanacPrintOrder struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	Recipient     string                 `protobuf:"bytes,3,opt,name=recipient,proto3" json:"recipient,omitempty"`
+	City          string                 `protobuf:"bytes,4,opt,name=city,proto3" json:"city,omitempty"`
+	Country       string                 `protobuf:"bytes,5,opt,name=country,proto3" json:"country,omitempty"`
+	CreatedAt     string                 `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AlmanacPrintOrder) Reset() {
+	*x = AlmanacPrintOrder{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[98]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AlmanacPrintOrder) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AlmanacPrintOrder) ProtoMessage() {}
+
+func (x *AlmanacPrintOrder) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[98]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AlmanacPrintOrder.ProtoReflect.Descriptor instead.
+func (*AlmanacPrintOrder) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{98}
+}
+
+func (x *AlmanacPrintOrder) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AlmanacPrintOrder) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *AlmanacPrintOrder) GetRecipient() string {
+	if x != nil {
+		return x.Recipient
+	}
+	return ""
+}
+
+func (x *AlmanacPrintOrder) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *AlmanacPrintOrder) GetCountry() string {
+	if x != nil {
+		return x.Country
+	}
+	return ""
+}
+
+func (x *AlmanacPrintOrder) GetCreatedAt() string {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return ""
+}
+
+type ListMyAlmanacOrdersRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyAlmanacOrdersRequest) Reset() {
+	*x = ListMyAlmanacOrdersRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[99]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyAlmanacOrdersRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyAlmanacOrdersRequest) ProtoMessage() {}
+
+func (x *ListMyAlmanacOrdersRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[99]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyAlmanacOrdersRequest.ProtoReflect.Descriptor instead.
+func (*ListMyAlmanacOrdersRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{99}
+}
+
+type ListMyAlmanacOrdersResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Orders        []*AlmanacPrintOrder   `protobuf:"bytes,1,rep,name=orders,proto3" json:"orders,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMyAlmanacOrdersResponse) Reset() {
+	*x = ListMyAlmanacOrdersResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[100]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMyAlmanacOrdersResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMyAlmanacOrdersResponse) ProtoMessage() {}
+
+func (x *ListMyAlmanacOrdersResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[100]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMyAlmanacOrdersResponse.ProtoReflect.Descriptor instead.
+func (*ListMyAlmanacOrdersResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{100}
+}
+
+func (x *ListMyAlmanacOrdersResponse) GetOrders() []*AlmanacPrintOrder {
+	if x != nil {
+		return x.Orders
+	}
+	return nil
+}
+
+type GetYearInEmpireRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Defaults to the current year.
+	Year          string `protobuf:"bytes,1,opt,name=year,proto3" json:"year,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetYearInEmpireRequest) Reset() {
+	*x = GetYearInEmpireRequest{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[101]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetYearInEmpireRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetYearInEmpireRequest) ProtoMessage() {}
+
+func (x *GetYearInEmpireRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[101]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetYearInEmpireRequest.ProtoReflect.Descriptor instead.
+func (*GetYearInEmpireRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{101}
+}
+
+func (x *GetYearInEmpireRequest) GetYear() string {
+	if x != nil {
+		return x.Year
+	}
+	return ""
+}
+
+type GetYearInEmpireResponse struct {
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	Year         string                 `protobuf:"bytes,1,opt,name=year,proto3" json:"year,omitempty"`
+	CurrentScore float64                `protobuf:"fixed64,2,opt,name=current_score,json=currentScore,proto3" json:"current_score,omitempty"`
+	Tier         string                 `protobuf:"bytes,3,opt,name=tier,proto3" json:"tier,omitempty"`
+	GlobalRank   int32                  `protobuf:"varint,4,opt,name=global_rank,json=globalRank,proto3" json:"global_rank,omitempty"`
+	HasRank      bool                   `protobuf:"varint,5,opt,name=has_rank,json=hasRank,proto3" json:"has_rank,omitempty"`
+	// Points earned / spent inside the requested year.
+	PointsEarned int64 `protobuf:"varint,6,opt,name=points_earned,json=pointsEarned,proto3" json:"points_earned,omitempty"`
+	PointsSpent  int64 `protobuf:"varint,7,opt,name=points_spent,json=pointsSpent,proto3" json:"points_spent,omitempty"`
+	// Salons the member RSVP'd "going" to.
+	SalonsAttended int32 `protobuf:"varint,8,opt,name=salons_attended,json=salonsAttended,proto3" json:"salons_attended,omitempty"`
+	// Highest-scoring pillar + its score.
+	TopPillar      string  `protobuf:"bytes,9,opt,name=top_pillar,json=topPillar,proto3" json:"top_pillar,omitempty"`
+	TopPillarScore float64 `protobuf:"fixed64,10,opt,name=top_pillar_score,json=topPillarScore,proto3" json:"top_pillar_score,omitempty"`
+	// Pillars with a non-zero score.
+	PillarsActive int32 `protobuf:"varint,11,opt,name=pillars_active,json=pillarsActive,proto3" json:"pillars_active,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetYearInEmpireResponse) Reset() {
+	*x = GetYearInEmpireResponse{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[102]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetYearInEmpireResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetYearInEmpireResponse) ProtoMessage() {}
+
+func (x *GetYearInEmpireResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[102]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetYearInEmpireResponse.ProtoReflect.Descriptor instead.
+func (*GetYearInEmpireResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{102}
+}
+
+func (x *GetYearInEmpireResponse) GetYear() string {
+	if x != nil {
+		return x.Year
+	}
+	return ""
+}
+
+func (x *GetYearInEmpireResponse) GetCurrentScore() float64 {
+	if x != nil {
+		return x.CurrentScore
+	}
+	return 0
+}
+
+func (x *GetYearInEmpireResponse) GetTier() string {
+	if x != nil {
+		return x.Tier
+	}
+	return ""
+}
+
+func (x *GetYearInEmpireResponse) GetGlobalRank() int32 {
+	if x != nil {
+		return x.GlobalRank
+	}
+	return 0
+}
+
+func (x *GetYearInEmpireResponse) GetHasRank() bool {
+	if x != nil {
+		return x.HasRank
+	}
+	return false
+}
+
+func (x *GetYearInEmpireResponse) GetPointsEarned() int64 {
+	if x != nil {
+		return x.PointsEarned
+	}
+	return 0
+}
+
+func (x *GetYearInEmpireResponse) GetPointsSpent() int64 {
+	if x != nil {
+		return x.PointsSpent
+	}
+	return 0
+}
+
+func (x *GetYearInEmpireResponse) GetSalonsAttended() int32 {
+	if x != nil {
+		return x.SalonsAttended
+	}
+	return 0
+}
+
+func (x *GetYearInEmpireResponse) GetTopPillar() string {
+	if x != nil {
+		return x.TopPillar
+	}
+	return ""
+}
+
+func (x *GetYearInEmpireResponse) GetTopPillarScore() float64 {
+	if x != nil {
+		return x.TopPillarScore
+	}
+	return 0
+}
+
+func (x *GetYearInEmpireResponse) GetPillarsActive() int32 {
+	if x != nil {
+		return x.PillarsActive
+	}
+	return 0
+}
+
 var File_sttattus_empire_v1_empire_proto protoreflect.FileDescriptor
 
 const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
@@ -4313,7 +6397,159 @@ const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\x13RemoveFriendRequest\x12#\n" +
 	"\rfriendship_id\x18\x01 \x01(\tR\ffriendshipId\";\n" +
 	"\x14RemoveFriendResponse\x12#\n" +
-	"\rfriendship_id\x18\x01 \x01(\tR\ffriendshipId2\xf8\x17\n" +
+	"\rfriendship_id\x18\x01 \x01(\tR\ffriendshipId\"\xbf\x01\n" +
+	"\x0fConciergeThread\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
+	"\asubject\x18\x02 \x01(\tR\asubject\x12\x16\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\x04 \x01(\tR\tcreatedAt\x12&\n" +
+	"\x0flast_message_at\x18\x05 \x01(\tR\rlastMessageAt\x12#\n" +
+	"\rmessage_count\x18\x06 \x01(\x05R\fmessageCount\"\x8a\x01\n" +
+	"\x10ConciergeMessage\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\tthread_id\x18\x02 \x01(\tR\bthreadId\x12\x16\n" +
+	"\x06sender\x18\x03 \x01(\tR\x06sender\x12\x12\n" +
+	"\x04body\x18\x04 \x01(\tR\x04body\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\x05 \x01(\tR\tcreatedAt\"K\n" +
+	"\x1bStartConciergeThreadRequest\x12\x18\n" +
+	"\asubject\x18\x01 \x01(\tR\asubject\x12\x12\n" +
+	"\x04body\x18\x02 \x01(\tR\x04body\";\n" +
+	"\x1cStartConciergeThreadResponse\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\"\x1f\n" +
+	"\x1dListMyConciergeThreadsRequest\"_\n" +
+	"\x1eListMyConciergeThreadsResponse\x12=\n" +
+	"\athreads\x18\x01 \x03(\v2#.sttattus.empire.v1.ConciergeThreadR\athreads\"8\n" +
+	"\x19GetConciergeThreadRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\"\x9b\x01\n" +
+	"\x1aGetConciergeThreadResponse\x12;\n" +
+	"\x06thread\x18\x01 \x01(\v2#.sttattus.empire.v1.ConciergeThreadR\x06thread\x12@\n" +
+	"\bmessages\x18\x02 \x03(\v2$.sttattus.empire.v1.ConciergeMessageR\bmessages\"N\n" +
+	"\x1bPostConciergeMessageRequest\x12\x1b\n" +
+	"\tthread_id\x18\x01 \x01(\tR\bthreadId\x12\x12\n" +
+	"\x04body\x18\x02 \x01(\tR\x04body\"^\n" +
+	"\x1cPostConciergeMessageResponse\x12>\n" +
+	"\amessage\x18\x01 \x01(\v2$.sttattus.empire.v1.ConciergeMessageR\amessage\"\x9b\x02\n" +
+	"\x10AnthologyArticle\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x10\n" +
+	"\x03dek\x18\x04 \x01(\tR\x03dek\x12\x1f\n" +
+	"\vauthor_name\x18\x05 \x01(\tR\n" +
+	"authorName\x12!\n" +
+	"\fauthor_title\x18\x06 \x01(\tR\vauthorTitle\x12\x12\n" +
+	"\x04body\x18\a \x01(\tR\x04body\x12\x19\n" +
+	"\bhero_url\x18\b \x01(\tR\aheroUrl\x12%\n" +
+	"\x0esovereign_only\x18\t \x01(\bR\rsovereignOnly\x12!\n" +
+	"\fpublished_at\x18\n" +
+	" \x01(\tR\vpublishedAt\"L\n" +
+	"\x1cListAnthologyArticlesRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\"a\n" +
+	"\x1dListAnthologyArticlesResponse\x12@\n" +
+	"\barticles\x18\x01 \x03(\v2$.sttattus.empire.v1.AnthologyArticleR\barticles\"0\n" +
+	"\x1aGetAnthologyArticleRequest\x12\x12\n" +
+	"\x04slug\x18\x01 \x01(\tR\x04slug\"]\n" +
+	"\x1bGetAnthologyArticleResponse\x12>\n" +
+	"\aarticle\x18\x01 \x01(\v2$.sttattus.empire.v1.AnthologyArticleR\aarticle\"\xe5\x01\n" +
+	"\x0fDirectoryMember\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x16\n" +
+	"\x06handle\x18\x02 \x01(\tR\x06handle\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12\x1d\n" +
+	"\n" +
+	"avatar_url\x18\x04 \x01(\tR\tavatarUrl\x12\x12\n" +
+	"\x04city\x18\x05 \x01(\tR\x04city\x12\x12\n" +
+	"\x04tier\x18\x06 \x01(\tR\x04tier\x12%\n" +
+	"\x0esttattus_score\x18\a \x01(\x01R\rsttattusScore\x12\x1f\n" +
+	"\vglobal_rank\x18\b \x01(\x05R\n" +
+	"globalRank\"r\n" +
+	"\x1aListMemberDirectoryRequest\x12\x12\n" +
+	"\x04tier\x18\x01 \x01(\tR\x04tier\x12\x12\n" +
+	"\x04city\x18\x02 \x01(\tR\x04city\x12\x14\n" +
+	"\x05limit\x18\x03 \x01(\x05R\x05limit\x12\x16\n" +
+	"\x06offset\x18\x04 \x01(\x05R\x06offset\"\\\n" +
+	"\x1bListMemberDirectoryResponse\x12=\n" +
+	"\amembers\x18\x01 \x03(\v2#.sttattus.empire.v1.DirectoryMemberR\amembers\"M\n" +
+	"\x1dSetDirectoryVisibilityRequest\x12\x18\n" +
+	"\avisible\x18\x01 \x01(\bR\avisible\x12\x12\n" +
+	"\x04city\x18\x02 \x01(\tR\x04city\"N\n" +
+	"\x1eSetDirectoryVisibilityResponse\x12\x18\n" +
+	"\avisible\x18\x01 \x01(\bR\avisible\x12\x12\n" +
+	"\x04city\x18\x02 \x01(\tR\x04city\"2\n" +
+	"\x1cGenerateEmpireAlmanacRequest\x12\x12\n" +
+	"\x04year\x18\x01 \x01(\tR\x04year\"\xaf\x01\n" +
+	"\x1dGenerateEmpireAlmanacResponse\x12$\n" +
+	"\x0emedia_asset_id\x18\x01 \x01(\tR\fmediaAssetId\x12\x1d\n" +
+	"\n" +
+	"public_url\x18\x02 \x01(\tR\tpublicUrl\x12*\n" +
+	"\x11generated_at_unix\x18\x03 \x01(\x03R\x0fgeneratedAtUnix\x12\x1d\n" +
+	"\n" +
+	"page_count\x18\x04 \x01(\x05R\tpageCount\"\x19\n" +
+	"\x17CreateScoreBadgeRequest\"a\n" +
+	"\x18CreateScoreBadgeResponse\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\x12\x10\n" +
+	"\x03url\x18\x02 \x01(\tR\x03url\x12\x1d\n" +
+	"\n" +
+	"expires_at\x18\x03 \x01(\tR\texpiresAt\"\x14\n" +
+	"\x12GetTierCardRequest\"\xcd\x01\n" +
+	"\x13GetTierCardResponse\x12\x1f\n" +
+	"\vmember_name\x18\x01 \x01(\tR\n" +
+	"memberName\x12\x16\n" +
+	"\x06handle\x18\x02 \x01(\tR\x06handle\x12\x12\n" +
+	"\x04tier\x18\x03 \x01(\tR\x04tier\x12%\n" +
+	"\x0esttattus_score\x18\x04 \x01(\x01R\rsttattusScore\x12\x1f\n" +
+	"\vcard_number\x18\x05 \x01(\tR\n" +
+	"cardNumber\x12!\n" +
+	"\fmember_since\x18\x06 \x01(\tR\vmemberSince\"6\n" +
+	"\x17CreateLoungePassRequest\x12\x1b\n" +
+	"\tlounge_id\x18\x01 \x01(\tR\bloungeId\"u\n" +
+	"\x18CreateLoungePassResponse\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\x12\x10\n" +
+	"\x03url\x18\x02 \x01(\tR\x03url\x12\x1d\n" +
+	"\n" +
+	"expires_at\x18\x03 \x01(\tR\texpiresAt\x12\x12\n" +
+	"\x04tier\x18\x04 \x01(\tR\x04tier\"\xf7\x01\n" +
+	"\x18OrderAlmanacPrintRequest\x12$\n" +
+	"\x0emedia_asset_id\x18\x01 \x01(\tR\fmediaAssetId\x12\x1c\n" +
+	"\trecipient\x18\x02 \x01(\tR\trecipient\x12#\n" +
+	"\raddress_line1\x18\x03 \x01(\tR\faddressLine1\x12#\n" +
+	"\raddress_line2\x18\x04 \x01(\tR\faddressLine2\x12\x12\n" +
+	"\x04city\x18\x05 \x01(\tR\x04city\x12\x1f\n" +
+	"\vpostal_code\x18\x06 \x01(\tR\n" +
+	"postalCode\x12\x18\n" +
+	"\acountry\x18\a \x01(\tR\acountry\"N\n" +
+	"\x19OrderAlmanacPrintResponse\x12\x19\n" +
+	"\border_id\x18\x01 \x01(\tR\aorderId\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\"\xa6\x01\n" +
+	"\x11AlmanacPrintOrder\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\x12\x1c\n" +
+	"\trecipient\x18\x03 \x01(\tR\trecipient\x12\x12\n" +
+	"\x04city\x18\x04 \x01(\tR\x04city\x12\x18\n" +
+	"\acountry\x18\x05 \x01(\tR\acountry\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\x06 \x01(\tR\tcreatedAt\"\x1c\n" +
+	"\x1aListMyAlmanacOrdersRequest\"\\\n" +
+	"\x1bListMyAlmanacOrdersResponse\x12=\n" +
+	"\x06orders\x18\x01 \x03(\v2%.sttattus.empire.v1.AlmanacPrintOrderR\x06orders\",\n" +
+	"\x16GetYearInEmpireRequest\x12\x12\n" +
+	"\x04year\x18\x01 \x01(\tR\x04year\"\x83\x03\n" +
+	"\x17GetYearInEmpireResponse\x12\x12\n" +
+	"\x04year\x18\x01 \x01(\tR\x04year\x12#\n" +
+	"\rcurrent_score\x18\x02 \x01(\x01R\fcurrentScore\x12\x12\n" +
+	"\x04tier\x18\x03 \x01(\tR\x04tier\x12\x1f\n" +
+	"\vglobal_rank\x18\x04 \x01(\x05R\n" +
+	"globalRank\x12\x19\n" +
+	"\bhas_rank\x18\x05 \x01(\bR\ahasRank\x12#\n" +
+	"\rpoints_earned\x18\x06 \x01(\x03R\fpointsEarned\x12!\n" +
+	"\fpoints_spent\x18\a \x01(\x03R\vpointsSpent\x12'\n" +
+	"\x0fsalons_attended\x18\b \x01(\x05R\x0esalonsAttended\x12\x1d\n" +
+	"\n" +
+	"top_pillar\x18\t \x01(\tR\ttopPillar\x12(\n" +
+	"\x10top_pillar_score\x18\n" +
+	" \x01(\x01R\x0etopPillarScore\x12%\n" +
+	"\x0epillars_active\x18\v \x01(\x05R\rpillarsActive2\xe5%\n" +
 	"\rEmpireService\x12p\n" +
 	"\x11GetScoreBreakdown\x12,.sttattus.empire.v1.GetScoreBreakdownRequest\x1a-.sttattus.empire.v1.GetScoreBreakdownResponse\x12d\n" +
 	"\rGetTierLadder\x12(.sttattus.empire.v1.GetTierLadderRequest\x1a).sttattus.empire.v1.GetTierLadderResponse\x12X\n" +
@@ -4343,7 +6579,22 @@ const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\x13ListRedemptionItems\x12..sttattus.empire.v1.ListRedemptionItemsRequest\x1a/.sttattus.empire.v1.ListRedemptionItemsResponse\x12[\n" +
 	"\n" +
 	"RedeemItem\x12%.sttattus.empire.v1.RedeemItemRequest\x1a&.sttattus.empire.v1.RedeemItemResponse\x12p\n" +
-	"\x11ListMyRedemptions\x12,.sttattus.empire.v1.ListMyRedemptionsRequest\x1a-.sttattus.empire.v1.ListMyRedemptionsResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1b\x06proto3"
+	"\x11ListMyRedemptions\x12,.sttattus.empire.v1.ListMyRedemptionsRequest\x1a-.sttattus.empire.v1.ListMyRedemptionsResponse\x12y\n" +
+	"\x14StartConciergeThread\x12/.sttattus.empire.v1.StartConciergeThreadRequest\x1a0.sttattus.empire.v1.StartConciergeThreadResponse\x12\x7f\n" +
+	"\x16ListMyConciergeThreads\x121.sttattus.empire.v1.ListMyConciergeThreadsRequest\x1a2.sttattus.empire.v1.ListMyConciergeThreadsResponse\x12s\n" +
+	"\x12GetConciergeThread\x12-.sttattus.empire.v1.GetConciergeThreadRequest\x1a..sttattus.empire.v1.GetConciergeThreadResponse\x12y\n" +
+	"\x14PostConciergeMessage\x12/.sttattus.empire.v1.PostConciergeMessageRequest\x1a0.sttattus.empire.v1.PostConciergeMessageResponse\x12|\n" +
+	"\x15ListAnthologyArticles\x120.sttattus.empire.v1.ListAnthologyArticlesRequest\x1a1.sttattus.empire.v1.ListAnthologyArticlesResponse\x12v\n" +
+	"\x13GetAnthologyArticle\x12..sttattus.empire.v1.GetAnthologyArticleRequest\x1a/.sttattus.empire.v1.GetAnthologyArticleResponse\x12v\n" +
+	"\x13ListMemberDirectory\x12..sttattus.empire.v1.ListMemberDirectoryRequest\x1a/.sttattus.empire.v1.ListMemberDirectoryResponse\x12\x7f\n" +
+	"\x16SetDirectoryVisibility\x121.sttattus.empire.v1.SetDirectoryVisibilityRequest\x1a2.sttattus.empire.v1.SetDirectoryVisibilityResponse\x12|\n" +
+	"\x15GenerateEmpireAlmanac\x120.sttattus.empire.v1.GenerateEmpireAlmanacRequest\x1a1.sttattus.empire.v1.GenerateEmpireAlmanacResponse\x12m\n" +
+	"\x10CreateScoreBadge\x12+.sttattus.empire.v1.CreateScoreBadgeRequest\x1a,.sttattus.empire.v1.CreateScoreBadgeResponse\x12^\n" +
+	"\vGetTierCard\x12&.sttattus.empire.v1.GetTierCardRequest\x1a'.sttattus.empire.v1.GetTierCardResponse\x12m\n" +
+	"\x10CreateLoungePass\x12+.sttattus.empire.v1.CreateLoungePassRequest\x1a,.sttattus.empire.v1.CreateLoungePassResponse\x12p\n" +
+	"\x11OrderAlmanacPrint\x12,.sttattus.empire.v1.OrderAlmanacPrintRequest\x1a-.sttattus.empire.v1.OrderAlmanacPrintResponse\x12v\n" +
+	"\x13ListMyAlmanacOrders\x12..sttattus.empire.v1.ListMyAlmanacOrdersRequest\x1a/.sttattus.empire.v1.ListMyAlmanacOrdersResponse\x12j\n" +
+	"\x0fGetYearInEmpire\x12*.sttattus.empire.v1.GetYearInEmpireRequest\x1a+.sttattus.empire.v1.GetYearInEmpireResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/empire/v1;empirev1b\x06proto3"
 
 var (
 	file_sttattus_empire_v1_empire_proto_rawDescOnce sync.Once
@@ -4357,7 +6608,7 @@ func file_sttattus_empire_v1_empire_proto_rawDescGZIP() []byte {
 	return file_sttattus_empire_v1_empire_proto_rawDescData
 }
 
-var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 68)
+var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 103)
 var file_sttattus_empire_v1_empire_proto_goTypes = []any{
 	(*GetScoreBreakdownRequest)(nil),             // 0: sttattus.empire.v1.GetScoreBreakdownRequest
 	(*GetScoreBreakdownResponse)(nil),            // 1: sttattus.empire.v1.GetScoreBreakdownResponse
@@ -4427,85 +6678,158 @@ var file_sttattus_empire_v1_empire_proto_goTypes = []any{
 	(*RespondInviteResponse)(nil),                // 65: sttattus.empire.v1.RespondInviteResponse
 	(*RemoveFriendRequest)(nil),                  // 66: sttattus.empire.v1.RemoveFriendRequest
 	(*RemoveFriendResponse)(nil),                 // 67: sttattus.empire.v1.RemoveFriendResponse
+	(*ConciergeThread)(nil),                      // 68: sttattus.empire.v1.ConciergeThread
+	(*ConciergeMessage)(nil),                     // 69: sttattus.empire.v1.ConciergeMessage
+	(*StartConciergeThreadRequest)(nil),          // 70: sttattus.empire.v1.StartConciergeThreadRequest
+	(*StartConciergeThreadResponse)(nil),         // 71: sttattus.empire.v1.StartConciergeThreadResponse
+	(*ListMyConciergeThreadsRequest)(nil),        // 72: sttattus.empire.v1.ListMyConciergeThreadsRequest
+	(*ListMyConciergeThreadsResponse)(nil),       // 73: sttattus.empire.v1.ListMyConciergeThreadsResponse
+	(*GetConciergeThreadRequest)(nil),            // 74: sttattus.empire.v1.GetConciergeThreadRequest
+	(*GetConciergeThreadResponse)(nil),           // 75: sttattus.empire.v1.GetConciergeThreadResponse
+	(*PostConciergeMessageRequest)(nil),          // 76: sttattus.empire.v1.PostConciergeMessageRequest
+	(*PostConciergeMessageResponse)(nil),         // 77: sttattus.empire.v1.PostConciergeMessageResponse
+	(*AnthologyArticle)(nil),                     // 78: sttattus.empire.v1.AnthologyArticle
+	(*ListAnthologyArticlesRequest)(nil),         // 79: sttattus.empire.v1.ListAnthologyArticlesRequest
+	(*ListAnthologyArticlesResponse)(nil),        // 80: sttattus.empire.v1.ListAnthologyArticlesResponse
+	(*GetAnthologyArticleRequest)(nil),           // 81: sttattus.empire.v1.GetAnthologyArticleRequest
+	(*GetAnthologyArticleResponse)(nil),          // 82: sttattus.empire.v1.GetAnthologyArticleResponse
+	(*DirectoryMember)(nil),                      // 83: sttattus.empire.v1.DirectoryMember
+	(*ListMemberDirectoryRequest)(nil),           // 84: sttattus.empire.v1.ListMemberDirectoryRequest
+	(*ListMemberDirectoryResponse)(nil),          // 85: sttattus.empire.v1.ListMemberDirectoryResponse
+	(*SetDirectoryVisibilityRequest)(nil),        // 86: sttattus.empire.v1.SetDirectoryVisibilityRequest
+	(*SetDirectoryVisibilityResponse)(nil),       // 87: sttattus.empire.v1.SetDirectoryVisibilityResponse
+	(*GenerateEmpireAlmanacRequest)(nil),         // 88: sttattus.empire.v1.GenerateEmpireAlmanacRequest
+	(*GenerateEmpireAlmanacResponse)(nil),        // 89: sttattus.empire.v1.GenerateEmpireAlmanacResponse
+	(*CreateScoreBadgeRequest)(nil),              // 90: sttattus.empire.v1.CreateScoreBadgeRequest
+	(*CreateScoreBadgeResponse)(nil),             // 91: sttattus.empire.v1.CreateScoreBadgeResponse
+	(*GetTierCardRequest)(nil),                   // 92: sttattus.empire.v1.GetTierCardRequest
+	(*GetTierCardResponse)(nil),                  // 93: sttattus.empire.v1.GetTierCardResponse
+	(*CreateLoungePassRequest)(nil),              // 94: sttattus.empire.v1.CreateLoungePassRequest
+	(*CreateLoungePassResponse)(nil),             // 95: sttattus.empire.v1.CreateLoungePassResponse
+	(*OrderAlmanacPrintRequest)(nil),             // 96: sttattus.empire.v1.OrderAlmanacPrintRequest
+	(*OrderAlmanacPrintResponse)(nil),            // 97: sttattus.empire.v1.OrderAlmanacPrintResponse
+	(*AlmanacPrintOrder)(nil),                    // 98: sttattus.empire.v1.AlmanacPrintOrder
+	(*ListMyAlmanacOrdersRequest)(nil),           // 99: sttattus.empire.v1.ListMyAlmanacOrdersRequest
+	(*ListMyAlmanacOrdersResponse)(nil),          // 100: sttattus.empire.v1.ListMyAlmanacOrdersResponse
+	(*GetYearInEmpireRequest)(nil),               // 101: sttattus.empire.v1.GetYearInEmpireRequest
+	(*GetYearInEmpireResponse)(nil),              // 102: sttattus.empire.v1.GetYearInEmpireResponse
 }
 var file_sttattus_empire_v1_empire_proto_depIdxs = []int32{
-	3,  // 0: sttattus.empire.v1.GetTierLadderResponse.bands:type_name -> sttattus.empire.v1.TierBand
-	6,  // 1: sttattus.empire.v1.GetWalletResponse.by_pillar:type_name -> sttattus.empire.v1.PillarPoints
-	9,  // 2: sttattus.empire.v1.ListLedgerEntriesResponse.entries:type_name -> sttattus.empire.v1.LedgerEntry
-	12, // 3: sttattus.empire.v1.GetTaxStatementResponse.active_rules:type_name -> sttattus.empire.v1.TaxRuleSummary
-	20, // 4: sttattus.empire.v1.ListRedemptionItemsResponse.items:type_name -> sttattus.empire.v1.RedemptionItem
-	25, // 5: sttattus.empire.v1.ListMyRedemptionsResponse.orders:type_name -> sttattus.empire.v1.RedemptionOrderSummary
-	32, // 6: sttattus.empire.v1.ListNotificationPreferencesResponse.preferences:type_name -> sttattus.empire.v1.NotificationPreference
-	32, // 7: sttattus.empire.v1.UpdateNotificationPreferenceResponse.preference:type_name -> sttattus.empire.v1.NotificationPreference
-	37, // 8: sttattus.empire.v1.ListUpcomingSalonsResponse.salons:type_name -> sttattus.empire.v1.SalonSummary
-	42, // 9: sttattus.empire.v1.ListLoungesResponse.lounges:type_name -> sttattus.empire.v1.Lounge
-	45, // 10: sttattus.empire.v1.ListUpcomingLoungeEventsResponse.events:type_name -> sttattus.empire.v1.LoungeEvent
-	48, // 11: sttattus.empire.v1.GetLatestEditorialDigestResponse.digest:type_name -> sttattus.empire.v1.EditorialDigest
-	48, // 12: sttattus.empire.v1.ListEditorialDigestsResponse.digests:type_name -> sttattus.empire.v1.EditorialDigest
-	54, // 13: sttattus.empire.v1.GetLatestCloutDropResponse.entries:type_name -> sttattus.empire.v1.CloutDropEntry
-	57, // 14: sttattus.empire.v1.ListMyAuditLogResponse.entries:type_name -> sttattus.empire.v1.MyAuditEntry
-	59, // 15: sttattus.empire.v1.ListFriendsResponse.friends:type_name -> sttattus.empire.v1.FriendSummary
-	59, // 16: sttattus.empire.v1.ListFriendsResponse.incoming:type_name -> sttattus.empire.v1.FriendSummary
-	59, // 17: sttattus.empire.v1.ListFriendsResponse.outgoing:type_name -> sttattus.empire.v1.FriendSummary
-	0,  // 18: sttattus.empire.v1.EmpireService.GetScoreBreakdown:input_type -> sttattus.empire.v1.GetScoreBreakdownRequest
-	2,  // 19: sttattus.empire.v1.EmpireService.GetTierLadder:input_type -> sttattus.empire.v1.GetTierLadderRequest
-	5,  // 20: sttattus.empire.v1.EmpireService.GetWallet:input_type -> sttattus.empire.v1.GetWalletRequest
-	8,  // 21: sttattus.empire.v1.EmpireService.ListLedgerEntries:input_type -> sttattus.empire.v1.ListLedgerEntriesRequest
-	11, // 22: sttattus.empire.v1.EmpireService.GetTaxStatement:input_type -> sttattus.empire.v1.GetTaxStatementRequest
-	14, // 23: sttattus.empire.v1.EmpireService.GetPublicProfile:input_type -> sttattus.empire.v1.GetPublicProfileRequest
-	16, // 24: sttattus.empire.v1.EmpireService.ClaimHandle:input_type -> sttattus.empire.v1.ClaimHandleRequest
-	18, // 25: sttattus.empire.v1.EmpireService.UpdatePublicProfile:input_type -> sttattus.empire.v1.UpdatePublicProfileRequest
-	60, // 26: sttattus.empire.v1.EmpireService.ListFriends:input_type -> sttattus.empire.v1.ListFriendsRequest
-	62, // 27: sttattus.empire.v1.EmpireService.SendInvite:input_type -> sttattus.empire.v1.SendInviteRequest
-	64, // 28: sttattus.empire.v1.EmpireService.RespondInvite:input_type -> sttattus.empire.v1.RespondInviteRequest
-	66, // 29: sttattus.empire.v1.EmpireService.RemoveFriend:input_type -> sttattus.empire.v1.RemoveFriendRequest
-	56, // 30: sttattus.empire.v1.EmpireService.ListMyAuditLog:input_type -> sttattus.empire.v1.ListMyAuditLogRequest
-	53, // 31: sttattus.empire.v1.EmpireService.GetLatestCloutDrop:input_type -> sttattus.empire.v1.GetLatestCloutDropRequest
-	49, // 32: sttattus.empire.v1.EmpireService.GetLatestEditorialDigest:input_type -> sttattus.empire.v1.GetLatestEditorialDigestRequest
-	51, // 33: sttattus.empire.v1.EmpireService.ListEditorialDigests:input_type -> sttattus.empire.v1.ListEditorialDigestsRequest
-	43, // 34: sttattus.empire.v1.EmpireService.ListLounges:input_type -> sttattus.empire.v1.ListLoungesRequest
-	46, // 35: sttattus.empire.v1.EmpireService.ListUpcomingLoungeEvents:input_type -> sttattus.empire.v1.ListUpcomingLoungeEventsRequest
-	38, // 36: sttattus.empire.v1.EmpireService.ListUpcomingSalons:input_type -> sttattus.empire.v1.ListUpcomingSalonsRequest
-	40, // 37: sttattus.empire.v1.EmpireService.UpdateSalonRsvp:input_type -> sttattus.empire.v1.UpdateSalonRsvpRequest
-	28, // 38: sttattus.empire.v1.EmpireService.RegisterDeviceToken:input_type -> sttattus.empire.v1.RegisterDeviceTokenRequest
-	30, // 39: sttattus.empire.v1.EmpireService.UnregisterDeviceToken:input_type -> sttattus.empire.v1.UnregisterDeviceTokenRequest
-	33, // 40: sttattus.empire.v1.EmpireService.ListNotificationPreferences:input_type -> sttattus.empire.v1.ListNotificationPreferencesRequest
-	35, // 41: sttattus.empire.v1.EmpireService.UpdateNotificationPreference:input_type -> sttattus.empire.v1.UpdateNotificationPreferenceRequest
-	21, // 42: sttattus.empire.v1.EmpireService.ListRedemptionItems:input_type -> sttattus.empire.v1.ListRedemptionItemsRequest
-	23, // 43: sttattus.empire.v1.EmpireService.RedeemItem:input_type -> sttattus.empire.v1.RedeemItemRequest
-	26, // 44: sttattus.empire.v1.EmpireService.ListMyRedemptions:input_type -> sttattus.empire.v1.ListMyRedemptionsRequest
-	1,  // 45: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
-	4,  // 46: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
-	7,  // 47: sttattus.empire.v1.EmpireService.GetWallet:output_type -> sttattus.empire.v1.GetWalletResponse
-	10, // 48: sttattus.empire.v1.EmpireService.ListLedgerEntries:output_type -> sttattus.empire.v1.ListLedgerEntriesResponse
-	13, // 49: sttattus.empire.v1.EmpireService.GetTaxStatement:output_type -> sttattus.empire.v1.GetTaxStatementResponse
-	15, // 50: sttattus.empire.v1.EmpireService.GetPublicProfile:output_type -> sttattus.empire.v1.GetPublicProfileResponse
-	17, // 51: sttattus.empire.v1.EmpireService.ClaimHandle:output_type -> sttattus.empire.v1.ClaimHandleResponse
-	19, // 52: sttattus.empire.v1.EmpireService.UpdatePublicProfile:output_type -> sttattus.empire.v1.UpdatePublicProfileResponse
-	61, // 53: sttattus.empire.v1.EmpireService.ListFriends:output_type -> sttattus.empire.v1.ListFriendsResponse
-	63, // 54: sttattus.empire.v1.EmpireService.SendInvite:output_type -> sttattus.empire.v1.SendInviteResponse
-	65, // 55: sttattus.empire.v1.EmpireService.RespondInvite:output_type -> sttattus.empire.v1.RespondInviteResponse
-	67, // 56: sttattus.empire.v1.EmpireService.RemoveFriend:output_type -> sttattus.empire.v1.RemoveFriendResponse
-	58, // 57: sttattus.empire.v1.EmpireService.ListMyAuditLog:output_type -> sttattus.empire.v1.ListMyAuditLogResponse
-	55, // 58: sttattus.empire.v1.EmpireService.GetLatestCloutDrop:output_type -> sttattus.empire.v1.GetLatestCloutDropResponse
-	50, // 59: sttattus.empire.v1.EmpireService.GetLatestEditorialDigest:output_type -> sttattus.empire.v1.GetLatestEditorialDigestResponse
-	52, // 60: sttattus.empire.v1.EmpireService.ListEditorialDigests:output_type -> sttattus.empire.v1.ListEditorialDigestsResponse
-	44, // 61: sttattus.empire.v1.EmpireService.ListLounges:output_type -> sttattus.empire.v1.ListLoungesResponse
-	47, // 62: sttattus.empire.v1.EmpireService.ListUpcomingLoungeEvents:output_type -> sttattus.empire.v1.ListUpcomingLoungeEventsResponse
-	39, // 63: sttattus.empire.v1.EmpireService.ListUpcomingSalons:output_type -> sttattus.empire.v1.ListUpcomingSalonsResponse
-	41, // 64: sttattus.empire.v1.EmpireService.UpdateSalonRsvp:output_type -> sttattus.empire.v1.UpdateSalonRsvpResponse
-	29, // 65: sttattus.empire.v1.EmpireService.RegisterDeviceToken:output_type -> sttattus.empire.v1.RegisterDeviceTokenResponse
-	31, // 66: sttattus.empire.v1.EmpireService.UnregisterDeviceToken:output_type -> sttattus.empire.v1.UnregisterDeviceTokenResponse
-	34, // 67: sttattus.empire.v1.EmpireService.ListNotificationPreferences:output_type -> sttattus.empire.v1.ListNotificationPreferencesResponse
-	36, // 68: sttattus.empire.v1.EmpireService.UpdateNotificationPreference:output_type -> sttattus.empire.v1.UpdateNotificationPreferenceResponse
-	22, // 69: sttattus.empire.v1.EmpireService.ListRedemptionItems:output_type -> sttattus.empire.v1.ListRedemptionItemsResponse
-	24, // 70: sttattus.empire.v1.EmpireService.RedeemItem:output_type -> sttattus.empire.v1.RedeemItemResponse
-	27, // 71: sttattus.empire.v1.EmpireService.ListMyRedemptions:output_type -> sttattus.empire.v1.ListMyRedemptionsResponse
-	45, // [45:72] is the sub-list for method output_type
-	18, // [18:45] is the sub-list for method input_type
-	18, // [18:18] is the sub-list for extension type_name
-	18, // [18:18] is the sub-list for extension extendee
-	0,  // [0:18] is the sub-list for field type_name
+	3,   // 0: sttattus.empire.v1.GetTierLadderResponse.bands:type_name -> sttattus.empire.v1.TierBand
+	6,   // 1: sttattus.empire.v1.GetWalletResponse.by_pillar:type_name -> sttattus.empire.v1.PillarPoints
+	9,   // 2: sttattus.empire.v1.ListLedgerEntriesResponse.entries:type_name -> sttattus.empire.v1.LedgerEntry
+	12,  // 3: sttattus.empire.v1.GetTaxStatementResponse.active_rules:type_name -> sttattus.empire.v1.TaxRuleSummary
+	20,  // 4: sttattus.empire.v1.ListRedemptionItemsResponse.items:type_name -> sttattus.empire.v1.RedemptionItem
+	25,  // 5: sttattus.empire.v1.ListMyRedemptionsResponse.orders:type_name -> sttattus.empire.v1.RedemptionOrderSummary
+	32,  // 6: sttattus.empire.v1.ListNotificationPreferencesResponse.preferences:type_name -> sttattus.empire.v1.NotificationPreference
+	32,  // 7: sttattus.empire.v1.UpdateNotificationPreferenceResponse.preference:type_name -> sttattus.empire.v1.NotificationPreference
+	37,  // 8: sttattus.empire.v1.ListUpcomingSalonsResponse.salons:type_name -> sttattus.empire.v1.SalonSummary
+	42,  // 9: sttattus.empire.v1.ListLoungesResponse.lounges:type_name -> sttattus.empire.v1.Lounge
+	45,  // 10: sttattus.empire.v1.ListUpcomingLoungeEventsResponse.events:type_name -> sttattus.empire.v1.LoungeEvent
+	48,  // 11: sttattus.empire.v1.GetLatestEditorialDigestResponse.digest:type_name -> sttattus.empire.v1.EditorialDigest
+	48,  // 12: sttattus.empire.v1.ListEditorialDigestsResponse.digests:type_name -> sttattus.empire.v1.EditorialDigest
+	54,  // 13: sttattus.empire.v1.GetLatestCloutDropResponse.entries:type_name -> sttattus.empire.v1.CloutDropEntry
+	57,  // 14: sttattus.empire.v1.ListMyAuditLogResponse.entries:type_name -> sttattus.empire.v1.MyAuditEntry
+	59,  // 15: sttattus.empire.v1.ListFriendsResponse.friends:type_name -> sttattus.empire.v1.FriendSummary
+	59,  // 16: sttattus.empire.v1.ListFriendsResponse.incoming:type_name -> sttattus.empire.v1.FriendSummary
+	59,  // 17: sttattus.empire.v1.ListFriendsResponse.outgoing:type_name -> sttattus.empire.v1.FriendSummary
+	68,  // 18: sttattus.empire.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.empire.v1.ConciergeThread
+	68,  // 19: sttattus.empire.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.empire.v1.ConciergeThread
+	69,  // 20: sttattus.empire.v1.GetConciergeThreadResponse.messages:type_name -> sttattus.empire.v1.ConciergeMessage
+	69,  // 21: sttattus.empire.v1.PostConciergeMessageResponse.message:type_name -> sttattus.empire.v1.ConciergeMessage
+	78,  // 22: sttattus.empire.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.empire.v1.AnthologyArticle
+	78,  // 23: sttattus.empire.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.empire.v1.AnthologyArticle
+	83,  // 24: sttattus.empire.v1.ListMemberDirectoryResponse.members:type_name -> sttattus.empire.v1.DirectoryMember
+	98,  // 25: sttattus.empire.v1.ListMyAlmanacOrdersResponse.orders:type_name -> sttattus.empire.v1.AlmanacPrintOrder
+	0,   // 26: sttattus.empire.v1.EmpireService.GetScoreBreakdown:input_type -> sttattus.empire.v1.GetScoreBreakdownRequest
+	2,   // 27: sttattus.empire.v1.EmpireService.GetTierLadder:input_type -> sttattus.empire.v1.GetTierLadderRequest
+	5,   // 28: sttattus.empire.v1.EmpireService.GetWallet:input_type -> sttattus.empire.v1.GetWalletRequest
+	8,   // 29: sttattus.empire.v1.EmpireService.ListLedgerEntries:input_type -> sttattus.empire.v1.ListLedgerEntriesRequest
+	11,  // 30: sttattus.empire.v1.EmpireService.GetTaxStatement:input_type -> sttattus.empire.v1.GetTaxStatementRequest
+	14,  // 31: sttattus.empire.v1.EmpireService.GetPublicProfile:input_type -> sttattus.empire.v1.GetPublicProfileRequest
+	16,  // 32: sttattus.empire.v1.EmpireService.ClaimHandle:input_type -> sttattus.empire.v1.ClaimHandleRequest
+	18,  // 33: sttattus.empire.v1.EmpireService.UpdatePublicProfile:input_type -> sttattus.empire.v1.UpdatePublicProfileRequest
+	60,  // 34: sttattus.empire.v1.EmpireService.ListFriends:input_type -> sttattus.empire.v1.ListFriendsRequest
+	62,  // 35: sttattus.empire.v1.EmpireService.SendInvite:input_type -> sttattus.empire.v1.SendInviteRequest
+	64,  // 36: sttattus.empire.v1.EmpireService.RespondInvite:input_type -> sttattus.empire.v1.RespondInviteRequest
+	66,  // 37: sttattus.empire.v1.EmpireService.RemoveFriend:input_type -> sttattus.empire.v1.RemoveFriendRequest
+	56,  // 38: sttattus.empire.v1.EmpireService.ListMyAuditLog:input_type -> sttattus.empire.v1.ListMyAuditLogRequest
+	53,  // 39: sttattus.empire.v1.EmpireService.GetLatestCloutDrop:input_type -> sttattus.empire.v1.GetLatestCloutDropRequest
+	49,  // 40: sttattus.empire.v1.EmpireService.GetLatestEditorialDigest:input_type -> sttattus.empire.v1.GetLatestEditorialDigestRequest
+	51,  // 41: sttattus.empire.v1.EmpireService.ListEditorialDigests:input_type -> sttattus.empire.v1.ListEditorialDigestsRequest
+	43,  // 42: sttattus.empire.v1.EmpireService.ListLounges:input_type -> sttattus.empire.v1.ListLoungesRequest
+	46,  // 43: sttattus.empire.v1.EmpireService.ListUpcomingLoungeEvents:input_type -> sttattus.empire.v1.ListUpcomingLoungeEventsRequest
+	38,  // 44: sttattus.empire.v1.EmpireService.ListUpcomingSalons:input_type -> sttattus.empire.v1.ListUpcomingSalonsRequest
+	40,  // 45: sttattus.empire.v1.EmpireService.UpdateSalonRsvp:input_type -> sttattus.empire.v1.UpdateSalonRsvpRequest
+	28,  // 46: sttattus.empire.v1.EmpireService.RegisterDeviceToken:input_type -> sttattus.empire.v1.RegisterDeviceTokenRequest
+	30,  // 47: sttattus.empire.v1.EmpireService.UnregisterDeviceToken:input_type -> sttattus.empire.v1.UnregisterDeviceTokenRequest
+	33,  // 48: sttattus.empire.v1.EmpireService.ListNotificationPreferences:input_type -> sttattus.empire.v1.ListNotificationPreferencesRequest
+	35,  // 49: sttattus.empire.v1.EmpireService.UpdateNotificationPreference:input_type -> sttattus.empire.v1.UpdateNotificationPreferenceRequest
+	21,  // 50: sttattus.empire.v1.EmpireService.ListRedemptionItems:input_type -> sttattus.empire.v1.ListRedemptionItemsRequest
+	23,  // 51: sttattus.empire.v1.EmpireService.RedeemItem:input_type -> sttattus.empire.v1.RedeemItemRequest
+	26,  // 52: sttattus.empire.v1.EmpireService.ListMyRedemptions:input_type -> sttattus.empire.v1.ListMyRedemptionsRequest
+	70,  // 53: sttattus.empire.v1.EmpireService.StartConciergeThread:input_type -> sttattus.empire.v1.StartConciergeThreadRequest
+	72,  // 54: sttattus.empire.v1.EmpireService.ListMyConciergeThreads:input_type -> sttattus.empire.v1.ListMyConciergeThreadsRequest
+	74,  // 55: sttattus.empire.v1.EmpireService.GetConciergeThread:input_type -> sttattus.empire.v1.GetConciergeThreadRequest
+	76,  // 56: sttattus.empire.v1.EmpireService.PostConciergeMessage:input_type -> sttattus.empire.v1.PostConciergeMessageRequest
+	79,  // 57: sttattus.empire.v1.EmpireService.ListAnthologyArticles:input_type -> sttattus.empire.v1.ListAnthologyArticlesRequest
+	81,  // 58: sttattus.empire.v1.EmpireService.GetAnthologyArticle:input_type -> sttattus.empire.v1.GetAnthologyArticleRequest
+	84,  // 59: sttattus.empire.v1.EmpireService.ListMemberDirectory:input_type -> sttattus.empire.v1.ListMemberDirectoryRequest
+	86,  // 60: sttattus.empire.v1.EmpireService.SetDirectoryVisibility:input_type -> sttattus.empire.v1.SetDirectoryVisibilityRequest
+	88,  // 61: sttattus.empire.v1.EmpireService.GenerateEmpireAlmanac:input_type -> sttattus.empire.v1.GenerateEmpireAlmanacRequest
+	90,  // 62: sttattus.empire.v1.EmpireService.CreateScoreBadge:input_type -> sttattus.empire.v1.CreateScoreBadgeRequest
+	92,  // 63: sttattus.empire.v1.EmpireService.GetTierCard:input_type -> sttattus.empire.v1.GetTierCardRequest
+	94,  // 64: sttattus.empire.v1.EmpireService.CreateLoungePass:input_type -> sttattus.empire.v1.CreateLoungePassRequest
+	96,  // 65: sttattus.empire.v1.EmpireService.OrderAlmanacPrint:input_type -> sttattus.empire.v1.OrderAlmanacPrintRequest
+	99,  // 66: sttattus.empire.v1.EmpireService.ListMyAlmanacOrders:input_type -> sttattus.empire.v1.ListMyAlmanacOrdersRequest
+	101, // 67: sttattus.empire.v1.EmpireService.GetYearInEmpire:input_type -> sttattus.empire.v1.GetYearInEmpireRequest
+	1,   // 68: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
+	4,   // 69: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
+	7,   // 70: sttattus.empire.v1.EmpireService.GetWallet:output_type -> sttattus.empire.v1.GetWalletResponse
+	10,  // 71: sttattus.empire.v1.EmpireService.ListLedgerEntries:output_type -> sttattus.empire.v1.ListLedgerEntriesResponse
+	13,  // 72: sttattus.empire.v1.EmpireService.GetTaxStatement:output_type -> sttattus.empire.v1.GetTaxStatementResponse
+	15,  // 73: sttattus.empire.v1.EmpireService.GetPublicProfile:output_type -> sttattus.empire.v1.GetPublicProfileResponse
+	17,  // 74: sttattus.empire.v1.EmpireService.ClaimHandle:output_type -> sttattus.empire.v1.ClaimHandleResponse
+	19,  // 75: sttattus.empire.v1.EmpireService.UpdatePublicProfile:output_type -> sttattus.empire.v1.UpdatePublicProfileResponse
+	61,  // 76: sttattus.empire.v1.EmpireService.ListFriends:output_type -> sttattus.empire.v1.ListFriendsResponse
+	63,  // 77: sttattus.empire.v1.EmpireService.SendInvite:output_type -> sttattus.empire.v1.SendInviteResponse
+	65,  // 78: sttattus.empire.v1.EmpireService.RespondInvite:output_type -> sttattus.empire.v1.RespondInviteResponse
+	67,  // 79: sttattus.empire.v1.EmpireService.RemoveFriend:output_type -> sttattus.empire.v1.RemoveFriendResponse
+	58,  // 80: sttattus.empire.v1.EmpireService.ListMyAuditLog:output_type -> sttattus.empire.v1.ListMyAuditLogResponse
+	55,  // 81: sttattus.empire.v1.EmpireService.GetLatestCloutDrop:output_type -> sttattus.empire.v1.GetLatestCloutDropResponse
+	50,  // 82: sttattus.empire.v1.EmpireService.GetLatestEditorialDigest:output_type -> sttattus.empire.v1.GetLatestEditorialDigestResponse
+	52,  // 83: sttattus.empire.v1.EmpireService.ListEditorialDigests:output_type -> sttattus.empire.v1.ListEditorialDigestsResponse
+	44,  // 84: sttattus.empire.v1.EmpireService.ListLounges:output_type -> sttattus.empire.v1.ListLoungesResponse
+	47,  // 85: sttattus.empire.v1.EmpireService.ListUpcomingLoungeEvents:output_type -> sttattus.empire.v1.ListUpcomingLoungeEventsResponse
+	39,  // 86: sttattus.empire.v1.EmpireService.ListUpcomingSalons:output_type -> sttattus.empire.v1.ListUpcomingSalonsResponse
+	41,  // 87: sttattus.empire.v1.EmpireService.UpdateSalonRsvp:output_type -> sttattus.empire.v1.UpdateSalonRsvpResponse
+	29,  // 88: sttattus.empire.v1.EmpireService.RegisterDeviceToken:output_type -> sttattus.empire.v1.RegisterDeviceTokenResponse
+	31,  // 89: sttattus.empire.v1.EmpireService.UnregisterDeviceToken:output_type -> sttattus.empire.v1.UnregisterDeviceTokenResponse
+	34,  // 90: sttattus.empire.v1.EmpireService.ListNotificationPreferences:output_type -> sttattus.empire.v1.ListNotificationPreferencesResponse
+	36,  // 91: sttattus.empire.v1.EmpireService.UpdateNotificationPreference:output_type -> sttattus.empire.v1.UpdateNotificationPreferenceResponse
+	22,  // 92: sttattus.empire.v1.EmpireService.ListRedemptionItems:output_type -> sttattus.empire.v1.ListRedemptionItemsResponse
+	24,  // 93: sttattus.empire.v1.EmpireService.RedeemItem:output_type -> sttattus.empire.v1.RedeemItemResponse
+	27,  // 94: sttattus.empire.v1.EmpireService.ListMyRedemptions:output_type -> sttattus.empire.v1.ListMyRedemptionsResponse
+	71,  // 95: sttattus.empire.v1.EmpireService.StartConciergeThread:output_type -> sttattus.empire.v1.StartConciergeThreadResponse
+	73,  // 96: sttattus.empire.v1.EmpireService.ListMyConciergeThreads:output_type -> sttattus.empire.v1.ListMyConciergeThreadsResponse
+	75,  // 97: sttattus.empire.v1.EmpireService.GetConciergeThread:output_type -> sttattus.empire.v1.GetConciergeThreadResponse
+	77,  // 98: sttattus.empire.v1.EmpireService.PostConciergeMessage:output_type -> sttattus.empire.v1.PostConciergeMessageResponse
+	80,  // 99: sttattus.empire.v1.EmpireService.ListAnthologyArticles:output_type -> sttattus.empire.v1.ListAnthologyArticlesResponse
+	82,  // 100: sttattus.empire.v1.EmpireService.GetAnthologyArticle:output_type -> sttattus.empire.v1.GetAnthologyArticleResponse
+	85,  // 101: sttattus.empire.v1.EmpireService.ListMemberDirectory:output_type -> sttattus.empire.v1.ListMemberDirectoryResponse
+	87,  // 102: sttattus.empire.v1.EmpireService.SetDirectoryVisibility:output_type -> sttattus.empire.v1.SetDirectoryVisibilityResponse
+	89,  // 103: sttattus.empire.v1.EmpireService.GenerateEmpireAlmanac:output_type -> sttattus.empire.v1.GenerateEmpireAlmanacResponse
+	91,  // 104: sttattus.empire.v1.EmpireService.CreateScoreBadge:output_type -> sttattus.empire.v1.CreateScoreBadgeResponse
+	93,  // 105: sttattus.empire.v1.EmpireService.GetTierCard:output_type -> sttattus.empire.v1.GetTierCardResponse
+	95,  // 106: sttattus.empire.v1.EmpireService.CreateLoungePass:output_type -> sttattus.empire.v1.CreateLoungePassResponse
+	97,  // 107: sttattus.empire.v1.EmpireService.OrderAlmanacPrint:output_type -> sttattus.empire.v1.OrderAlmanacPrintResponse
+	100, // 108: sttattus.empire.v1.EmpireService.ListMyAlmanacOrders:output_type -> sttattus.empire.v1.ListMyAlmanacOrdersResponse
+	102, // 109: sttattus.empire.v1.EmpireService.GetYearInEmpire:output_type -> sttattus.empire.v1.GetYearInEmpireResponse
+	68,  // [68:110] is the sub-list for method output_type
+	26,  // [26:68] is the sub-list for method input_type
+	26,  // [26:26] is the sub-list for extension type_name
+	26,  // [26:26] is the sub-list for extension extendee
+	0,   // [0:26] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_empire_v1_empire_proto_init() }
@@ -4519,7 +6843,7 @@ func file_sttattus_empire_v1_empire_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_empire_v1_empire_proto_rawDesc), len(file_sttattus_empire_v1_empire_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   68,
+			NumMessages:   103,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -109,12 +109,16 @@ message Deed {
   string admin_note = 6;
   int64 submitted_at_unix = 7;
   int64 decided_at_unix = 8;
+  // D14.18 — private registry metadata (parcel no., registry ref).
+  // Encrypted at rest (AES-GCM); decrypted only for the owner on read.
+  string details = 9;
 }
 
 message SubmitDeedRequest {
   string property_id = 1;
   string file_url = 2;
   string kind = 3;
+  string details = 4; // optional private registry metadata (encrypted at rest)
 }
 message SubmitDeedResponse {
   Deed deed = 1;
@@ -163,6 +167,355 @@ message EstimatePropertyValueResponse {
   bool from_cache = 2;
 }
 
+// === D14.9 — lounge events + salons (Phase 2) ===
+
+message LoungeEvent {
+  string id = 1;
+  string lounge_id = 2;
+  string lounge_name = 3;
+  string lounge_city = 4;
+  string title = 5;
+  string description = 6;
+  string min_tier = 7;
+  int64 starts_at_unix = 8;
+  int64 ends_at_unix = 9;
+  bool rsvped = 10;
+}
+message ListLoungeEventsRequest {
+  string lounge_id = 1; // empty => all upcoming events
+}
+message ListLoungeEventsResponse {
+  repeated LoungeEvent events = 1;
+}
+message RsvpLoungeEventRequest {
+  string event_id = 1;
+  bool attending = 2; // false => cancel
+}
+message RsvpLoungeEventResponse {
+  bool rsvped = 1;
+}
+message ListMyLoungeRsvpsRequest {}
+message ListMyLoungeRsvpsResponse {
+  repeated LoungeEvent events = 1;
+}
+
+message Salon {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string city = 4;
+  string lounge_id = 5;
+  string lounge_name = 6;
+  int64 starts_at_unix = 7;
+  int64 ends_at_unix = 8;
+  int32 capacity = 9;
+  int32 reserved = 10;
+  string status = 11;
+  bool rsvped = 12;
+}
+message ListSalonsRequest {}
+message ListSalonsResponse {
+  repeated Salon salons = 1;
+}
+message RsvpSalonRequest {
+  string salon_id = 1;
+  bool attending = 2;
+}
+message RsvpSalonResponse {
+  bool rsvped = 1;
+  int32 reserved = 2;
+}
+message ListMySalonRsvpsRequest {}
+message ListMySalonRsvpsResponse {
+  repeated Salon salons = 1;
+}
+
+// === D14.10 — per-property yield / financials (Phase 2) ===
+
+message PropertyFinancials {
+  string property_id = 1;
+  double monthly_rent_usd = 2;
+  double monthly_expenses_usd = 3;
+  double annual_net_income_usd = 4;
+  double cap_rate_pct = 5; // net income / valuation
+  double gross_yield_pct = 6;
+  double occupancy_pct = 7;
+  string currency = 8;
+}
+message GetPropertyFinancialsRequest {
+  string property_id = 1;
+}
+message GetPropertyFinancialsResponse {
+  PropertyFinancials financials = 1;
+  bool present = 2;
+}
+message UpsertPropertyFinancialsRequest {
+  string property_id = 1;
+  double monthly_rent_usd = 2;
+  double monthly_expenses_usd = 3;
+  double occupancy_pct = 4;
+}
+message UpsertPropertyFinancialsResponse {
+  PropertyFinancials financials = 1;
+}
+message GetPortfolioYieldRequest {}
+message GetPortfolioYieldResponse {
+  double total_value_usd = 1;
+  double annual_net_income_usd = 2;
+  double blended_cap_rate_pct = 3;
+  int32 income_properties = 4;
+}
+
+// === D14.11 — region intelligence (Phase 2) ===
+
+message RegionIntel {
+  string region_code = 1;
+  string name = 2;
+  string headline = 3;
+  double yoy_change_pct = 4;
+  double avg_cap_rate_pct = 5;
+  string trend = 6; // 'rising' | 'cooling' | 'stable'
+  string commentary = 7;
+  int32 my_property_count = 8;
+}
+message ListRegionIntelRequest {}
+message ListRegionIntelResponse {
+  repeated RegionIntel regions = 1;
+}
+message GetRegionIntelRequest {
+  string region_code = 1;
+}
+message GetRegionIntelResponse {
+  RegionIntel region = 1;
+}
+
+// === D14.12 — cross-pillar allocation contract (Vault consumes this) ===
+
+message RegionWeight {
+  string region_code = 1;
+  double value_usd = 2;
+  double weight_pct = 3;
+  int32 count = 4;
+}
+message TerritoryAllocation {
+  double total_value_usd = 1;
+  int32 property_count = 2;
+  int32 verified_count = 3;
+  int32 region_count = 4;
+  double dominion_rank = 5;
+  double annual_net_income_usd = 6;
+  repeated RegionWeight regions = 7;
+}
+message GetTerritoryAllocationRequest {
+  string user_id = 1; // empty => caller
+}
+message GetTerritoryAllocationResponse {
+  TerritoryAllocation allocation = 1;
+}
+
+// === D14.13 — today summary surface ===
+
+message TodaySummary {
+  double total_value_usd = 1;
+  double dominion_rank = 2;
+  string rank_label = 3;
+  int32 verified_count = 4;
+  string primary_region_code = 5;
+  string primary_region_name = 6;
+  string primary_region_signal = 7;
+  bool has_next_event = 8;
+  string next_event_title = 9;
+  string next_event_lounge = 10;
+  int64 next_event_starts_unix = 11;
+}
+message GetTodaySummaryRequest {}
+message GetTodaySummaryResponse {
+  TodaySummary summary = 1;
+}
+
+// === D14.14 — concierge property desk (Sovereign) ===
+
+message ConciergeThread {
+  string id = 1;
+  string subject = 2;
+  string status = 3; // 'open' | 'answered' | 'closed'
+  int64 sla_due_at_unix = 4;
+  int64 created_at_unix = 5;
+  int64 updated_at_unix = 6;
+  int32 message_count = 7;
+}
+message ConciergeMessage {
+  string id = 1;
+  string sender_role = 2; // 'member' | 'concierge' | 'system'
+  string body = 3;
+  int64 created_at_unix = 4;
+}
+message StartConciergeThreadRequest {
+  string subject = 1;
+  string opening_message = 2;
+}
+message StartConciergeThreadResponse {
+  ConciergeThread thread = 1;
+}
+message ListMyConciergeThreadsRequest {}
+message ListMyConciergeThreadsResponse {
+  repeated ConciergeThread threads = 1;
+}
+message GetConciergeThreadRequest {
+  string thread_id = 1;
+}
+message GetConciergeThreadResponse {
+  ConciergeThread thread = 1;
+  repeated ConciergeMessage messages = 2;
+}
+message PostConciergeMessageRequest {
+  string thread_id = 1;
+  string body = 2;
+}
+message PostConciergeMessageResponse {
+  ConciergeMessage message = 1;
+}
+
+// === D14.15 — editorial anthology (named architects + neighborhoods) ===
+
+message AnthologyArticle {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string dek = 4;
+  string body = 5;
+  string author_name = 6;
+  string author_credentials = 7;
+  string region_code = 8;
+  bool sovereign_only = 9;
+  int64 published_at_unix = 10;
+}
+message ListAnthologyArticlesRequest {}
+message ListAnthologyArticlesResponse {
+  repeated AnthologyArticle articles = 1;
+}
+message GetAnthologyArticleRequest {
+  string slug = 1;
+}
+message GetAnthologyArticleResponse {
+  AnthologyArticle article = 1;
+}
+
+// === D14.16 — architect / designer / broker directory ===
+
+message DirectoryPartner {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string kind = 4; // 'architect' | 'designer' | 'broker'
+  string city = 5;
+  string country_code = 6;
+  string region_code = 7;
+  repeated string specialties = 8;
+  string description = 9;
+  string portfolio_url = 10;
+  bool sovereign_only = 11;
+}
+message ListDirectoryRequest {
+  string kind = 1;        // empty => all
+  string region_code = 2; // empty => all
+}
+message ListDirectoryResponse {
+  repeated DirectoryPartner partners = 1;
+}
+
+// === D14.17 — off-market opportunities (Sovereign) ===
+
+message OffMarketListing {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string city = 4;
+  string country_code = 5;
+  string region_code = 6;
+  double price_usd = 7;
+  string summary = 8;
+  string body = 9;
+  string status = 10;
+}
+message ListOffMarketRequest {
+  string region_code = 1;
+}
+message ListOffMarketResponse {
+  repeated OffMarketListing listings = 1;
+}
+message GetOffMarketRequest {
+  string slug = 1;
+}
+message GetOffMarketResponse {
+  OffMarketListing listing = 1;
+}
+
+// === D14.19 — real deed parser (Phase 3.5) ===
+
+message ParseDeedRequest {
+  string deed_id = 1;
+}
+message ParseDeedResponse {
+  bool parsed = 1;
+  string extracted = 2; // decrypted, owner-only
+  string note = 3;
+}
+
+// === D14.20 — public Dominion profile share (Phase 3.5) ===
+
+message DominionShareToken {
+  string token = 1;
+  string url = 2;
+  int64 expires_at_unix = 3;
+  int64 created_at_unix = 4;
+}
+message CreateDominionShareRequest {
+  int32 ttl_days = 1; // default 14
+}
+message CreateDominionShareResponse {
+  DominionShareToken token = 1;
+}
+message ListMyDominionSharesRequest {}
+message ListMyDominionSharesResponse {
+  repeated DominionShareToken tokens = 1;
+}
+message RevokeDominionShareRequest {
+  string token = 1;
+}
+message RevokeDominionShareResponse {
+  bool revoked = 1;
+}
+
+// === D14.21 — annual Dominion Almanac (Phase 4) ===
+
+message GenerateDominionAlmanacRequest {}
+message GenerateDominionAlmanacResponse {
+  string url = 1;
+  int32 page_count = 2;
+}
+
+// === D14.22 — lounge access pass / NFC-at-door (Phase 4) ===
+
+message LoungePass {
+  string token = 1;
+  string url = 2;
+  string tier = 3;
+  string member_name = 4;
+  string lounge_slug = 5;
+  int64 expires_at_unix = 6;
+}
+message CreateLoungePassRequest {
+  string lounge_slug = 1; // empty => network-wide pass
+}
+message CreateLoungePassResponse {
+  LoungePass pass = 1;
+}
+message ListMyLoungePassesRequest {}
+message ListMyLoungePassesResponse {
+  repeated LoungePass passes = 1;
+}
+
 service DominionService {
   // Sovereignty Protocol: Verified Territorial Control
   rpc SyncProperties(SyncPropertiesRequest) returns (SyncPropertiesResponse);
@@ -183,4 +536,59 @@ service DominionService {
 
   // D14.7 — lounge directory.
   rpc ListLounges(ListLoungesRequest) returns (ListLoungesResponse);
+
+  // D14.9 — lounge events + salons.
+  rpc ListLoungeEvents(ListLoungeEventsRequest) returns (ListLoungeEventsResponse);
+  rpc RsvpLoungeEvent(RsvpLoungeEventRequest) returns (RsvpLoungeEventResponse);
+  rpc ListMyLoungeRsvps(ListMyLoungeRsvpsRequest) returns (ListMyLoungeRsvpsResponse);
+  rpc ListSalons(ListSalonsRequest) returns (ListSalonsResponse);
+  rpc RsvpSalon(RsvpSalonRequest) returns (RsvpSalonResponse);
+  rpc ListMySalonRsvps(ListMySalonRsvpsRequest) returns (ListMySalonRsvpsResponse);
+
+  // D14.10 — per-property yield / portfolio financials.
+  rpc GetPropertyFinancials(GetPropertyFinancialsRequest) returns (GetPropertyFinancialsResponse);
+  rpc UpsertPropertyFinancials(UpsertPropertyFinancialsRequest) returns (UpsertPropertyFinancialsResponse);
+  rpc GetPortfolioYield(GetPortfolioYieldRequest) returns (GetPortfolioYieldResponse);
+
+  // D14.11 — region intelligence.
+  rpc ListRegionIntel(ListRegionIntelRequest) returns (ListRegionIntelResponse);
+  rpc GetRegionIntel(GetRegionIntelRequest) returns (GetRegionIntelResponse);
+
+  // D14.12 — cross-pillar allocation contract (Vault).
+  rpc GetTerritoryAllocation(GetTerritoryAllocationRequest) returns (GetTerritoryAllocationResponse);
+
+  // D14.13 — today summary.
+  rpc GetTodaySummary(GetTodaySummaryRequest) returns (GetTodaySummaryResponse);
+
+  // D14.14 — concierge property desk (Sovereign).
+  rpc StartConciergeThread(StartConciergeThreadRequest) returns (StartConciergeThreadResponse);
+  rpc ListMyConciergeThreads(ListMyConciergeThreadsRequest) returns (ListMyConciergeThreadsResponse);
+  rpc GetConciergeThread(GetConciergeThreadRequest) returns (GetConciergeThreadResponse);
+  rpc PostConciergeMessage(PostConciergeMessageRequest) returns (PostConciergeMessageResponse);
+
+  // D14.15 — editorial anthology.
+  rpc ListAnthologyArticles(ListAnthologyArticlesRequest) returns (ListAnthologyArticlesResponse);
+  rpc GetAnthologyArticle(GetAnthologyArticleRequest) returns (GetAnthologyArticleResponse);
+
+  // D14.16 — architect / designer directory.
+  rpc ListDirectory(ListDirectoryRequest) returns (ListDirectoryResponse);
+
+  // D14.17 — off-market opportunities (Sovereign).
+  rpc ListOffMarket(ListOffMarketRequest) returns (ListOffMarketResponse);
+  rpc GetOffMarket(GetOffMarketRequest) returns (GetOffMarketResponse);
+
+  // D14.19 — real deed parser.
+  rpc ParseDeed(ParseDeedRequest) returns (ParseDeedResponse);
+
+  // D14.20 — public Dominion profile share.
+  rpc CreateDominionShare(CreateDominionShareRequest) returns (CreateDominionShareResponse);
+  rpc ListMyDominionShares(ListMyDominionSharesRequest) returns (ListMyDominionSharesResponse);
+  rpc RevokeDominionShare(RevokeDominionShareRequest) returns (RevokeDominionShareResponse);
+
+  // D14.21 — annual Dominion Almanac.
+  rpc GenerateDominionAlmanac(GenerateDominionAlmanacRequest) returns (GenerateDominionAlmanacResponse);
+
+  // D14.22 — lounge access pass.
+  rpc CreateLoungePass(CreateLoungePassRequest) returns (CreateLoungePassResponse);
+  rpc ListMyLoungePasses(ListMyLoungePassesRequest) returns (ListMyLoungePassesResponse);
 }

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ClaimHandleRequest, ClaimHandleResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetLatestEditorialDigestRequest, GetLatestEditorialDigestResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, ListEditorialDigestsRequest, ListEditorialDigestsResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListLoungesRequest, ListLoungesResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, ListMyRedemptionsRequest, ListMyRedemptionsResponse, ListNotificationPreferencesRequest, ListNotificationPreferencesResponse, ListRedemptionItemsRequest, ListRedemptionItemsResponse, ListUpcomingLoungeEventsRequest, ListUpcomingLoungeEventsResponse, ListUpcomingSalonsRequest, ListUpcomingSalonsResponse, RedeemItemRequest, RedeemItemResponse, RegisterDeviceTokenRequest, RegisterDeviceTokenResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, UnregisterDeviceTokenRequest, UnregisterDeviceTokenResponse, UpdateNotificationPreferenceRequest, UpdateNotificationPreferenceResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse, UpdateSalonRsvpRequest, UpdateSalonRsvpResponse } from "./empire_pb.js";
+import { ClaimHandleRequest, ClaimHandleResponse, CreateLoungePassRequest, CreateLoungePassResponse, CreateScoreBadgeRequest, CreateScoreBadgeResponse, GenerateEmpireAlmanacRequest, GenerateEmpireAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetLatestEditorialDigestRequest, GetLatestEditorialDigestResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierCardRequest, GetTierCardResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, GetYearInEmpireRequest, GetYearInEmpireResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListEditorialDigestsRequest, ListEditorialDigestsResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListLoungesRequest, ListLoungesResponse, ListMemberDirectoryRequest, ListMemberDirectoryResponse, ListMyAlmanacOrdersRequest, ListMyAlmanacOrdersResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyRedemptionsRequest, ListMyRedemptionsResponse, ListNotificationPreferencesRequest, ListNotificationPreferencesResponse, ListRedemptionItemsRequest, ListRedemptionItemsResponse, ListUpcomingLoungeEventsRequest, ListUpcomingLoungeEventsResponse, ListUpcomingSalonsRequest, ListUpcomingSalonsResponse, OrderAlmanacPrintRequest, OrderAlmanacPrintResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, RedeemItemRequest, RedeemItemResponse, RegisterDeviceTokenRequest, RegisterDeviceTokenResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, SetDirectoryVisibilityRequest, SetDirectoryVisibilityResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, UnregisterDeviceTokenRequest, UnregisterDeviceTokenResponse, UpdateNotificationPreferenceRequest, UpdateNotificationPreferenceResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse, UpdateSalonRsvpRequest, UpdateSalonRsvpResponse } from "./empire_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -338,6 +338,183 @@ export const EmpireService = {
       name: "ListMyRedemptions",
       I: ListMyRedemptionsRequest,
       O: ListMyRedemptionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * StartConciergeThread opens a Sovereign concierge thread with a subject
+     * and an opening message; the desk auto-acknowledges with a system reply.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.StartConciergeThread
+     */
+    startConciergeThread: {
+      name: "StartConciergeThread",
+      I: StartConciergeThreadRequest,
+      O: StartConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListMyConciergeThreads returns the caller's concierge threads, newest
+     * activity first.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ListMyConciergeThreads
+     */
+    listMyConciergeThreads: {
+      name: "ListMyConciergeThreads",
+      I: ListMyConciergeThreadsRequest,
+      O: ListMyConciergeThreadsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetConciergeThread returns one thread + its message stream.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetConciergeThread
+     */
+    getConciergeThread: {
+      name: "GetConciergeThread",
+      I: GetConciergeThreadRequest,
+      O: GetConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * PostConciergeMessage appends a member message to a thread and flips it
+     * to awaiting.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.PostConciergeMessage
+     */
+    postConciergeMessage: {
+      name: "PostConciergeMessage",
+      I: PostConciergeMessageRequest,
+      O: PostConciergeMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListAnthologyArticles returns the Empire Anthology, newest first
+     * (bodies omitted).
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ListAnthologyArticles
+     */
+    listAnthologyArticles: {
+      name: "ListAnthologyArticles",
+      I: ListAnthologyArticlesRequest,
+      O: ListAnthologyArticlesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetAnthologyArticle returns one article in full by slug.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetAnthologyArticle
+     */
+    getAnthologyArticle: {
+      name: "GetAnthologyArticle",
+      I: GetAnthologyArticleRequest,
+      O: GetAnthologyArticleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListMemberDirectory returns opted-in members, ranked, optionally
+     * filtered by tier + city.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ListMemberDirectory
+     */
+    listMemberDirectory: {
+      name: "ListMemberDirectory",
+      I: ListMemberDirectoryRequest,
+      O: ListMemberDirectoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * SetDirectoryVisibility opts the caller into / out of the public member
+     * directory and sets their surfaced city.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.SetDirectoryVisibility
+     */
+    setDirectoryVisibility: {
+      name: "SetDirectoryVisibility",
+      I: SetDirectoryVisibilityRequest,
+      O: SetDirectoryVisibilityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GenerateEmpireAlmanac renders the caller's year-across-twelve-pillars
+     * hardcover PDF, stores it, and returns the URL.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GenerateEmpireAlmanac
+     */
+    generateEmpireAlmanac: {
+      name: "GenerateEmpireAlmanac",
+      I: GenerateEmpireAlmanacRequest,
+      O: GenerateEmpireAlmanacResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * CreateScoreBadge mints a signed, time-bound token for the caller's
+     * public score badge (served at GET /badge/:token as SVG).
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.CreateScoreBadge
+     */
+    createScoreBadge: {
+      name: "CreateScoreBadge",
+      I: CreateScoreBadgeRequest,
+      O: CreateScoreBadgeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetTierCard returns the caller's hand-numbered digital tier card,
+     * assigning a permanent card number on first request.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetTierCard
+     */
+    getTierCard: {
+      name: "GetTierCard",
+      I: GetTierCardRequest,
+      O: GetTierCardResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * CreateLoungePass mints a short-TTL, tier-stamped access pass the
+     * physical lounge/salon door verifies at GET /pass/:token.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.CreateLoungePass
+     */
+    createLoungePass: {
+      name: "CreateLoungePass",
+      I: CreateLoungePassRequest,
+      O: CreateLoungePassResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * OrderAlmanacPrint captures a print-and-ship request for a generated
+     * Almanac PDF. Fulfilment is handled out-of-band by ops.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.OrderAlmanacPrint
+     */
+    orderAlmanacPrint: {
+      name: "OrderAlmanacPrint",
+      I: OrderAlmanacPrintRequest,
+      O: OrderAlmanacPrintResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListMyAlmanacOrders returns the caller's print orders, newest first.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.ListMyAlmanacOrders
+     */
+    listMyAlmanacOrders: {
+      name: "ListMyAlmanacOrders",
+      I: ListMyAlmanacOrdersRequest,
+      O: ListMyAlmanacOrdersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetYearInEmpire returns the caller's annual recap — score, tier, points,
+     * salons, top pillar — computed across the requested year.
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetYearInEmpire
+     */
+    getYearInEmpire: {
+      name: "GetYearInEmpire",
+      I: GetYearInEmpireRequest,
+      O: GetYearInEmpireResponse,
       kind: MethodKind.Unary,
     },
   }

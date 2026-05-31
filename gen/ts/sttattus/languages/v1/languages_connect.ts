@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddMyLanguageRequest, AddMyLanguageResponse, CompleteInteractionRequest, CompleteInteractionResponse, CreateSpeakingAttemptRequest, CreateSpeakingAttemptResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetSpeakingAttemptRequest, GetSpeakingAttemptResponse, GetTodayPlanRequest, GetTodayPlanResponse, ListCulturalModulesRequest, ListCulturalModulesResponse, ListMyLanguagesRequest, ListMyLanguagesResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListScenariosRequest, ListScenariosResponse, ListSpeakingPromptsRequest, ListSpeakingPromptsResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, MarkCulturalCompletedRequest, MarkCulturalCompletedResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, RemoveMyLanguageRequest, RemoveMyLanguageResponse, SetMyPrimaryLanguageRequest, SetMyPrimaryLanguageResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse } from "./languages_pb.js";
+import { AddMyLanguageRequest, AddMyLanguageResponse, CompleteInteractionRequest, CompleteInteractionResponse, CreateLinguistShareRequest, CreateLinguistShareResponse, CreateSpeakingAttemptRequest, CreateSpeakingAttemptResponse, GenerateLinguistAlmanacRequest, GenerateLinguistAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetReadingTextRequest, GetReadingTextResponse, GetSpeakingAttemptRequest, GetSpeakingAttemptResponse, GetTodayPlanRequest, GetTodayPlanResponse, GetTutorThreadRequest, GetTutorThreadResponse, GetWritingSubmissionRequest, GetWritingSubmissionResponse, IssueCertificateRequest, IssueCertificateResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListCulturalModulesRequest, ListCulturalModulesResponse, ListIdiomsRequest, ListIdiomsResponse, ListMyCertificatesRequest, ListMyCertificatesResponse, ListMyLanguagesRequest, ListMyLanguagesResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListMyTutorThreadsRequest, ListMyTutorThreadsResponse, ListMyWritingSubmissionsRequest, ListMyWritingSubmissionsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListReadingTextsRequest, ListReadingTextsResponse, ListScenariosRequest, ListScenariosResponse, ListSpeakingPromptsRequest, ListSpeakingPromptsResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, ListWritingPromptsRequest, ListWritingPromptsResponse, MarkCulturalCompletedRequest, MarkCulturalCompletedResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, PostTutorMessageRequest, PostTutorMessageResponse, RemoveMyLanguageRequest, RemoveMyLanguageResponse, SetMyPrimaryLanguageRequest, SetMyPrimaryLanguageResponse, StartTutorThreadRequest, StartTutorThreadResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse, SubmitWritingRequest, SubmitWritingResponse } from "./languages_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -197,6 +197,175 @@ export const LanguagesService = {
       name: "MarkCulturalCompleted",
       I: MarkCulturalCompletedRequest,
       O: MarkCulturalCompletedResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L12.9 — writing drill + AI rough correction.
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListWritingPrompts
+     */
+    listWritingPrompts: {
+      name: "ListWritingPrompts",
+      I: ListWritingPromptsRequest,
+      O: ListWritingPromptsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.SubmitWriting
+     */
+    submitWriting: {
+      name: "SubmitWriting",
+      I: SubmitWritingRequest,
+      O: SubmitWritingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListMyWritingSubmissions
+     */
+    listMyWritingSubmissions: {
+      name: "ListMyWritingSubmissions",
+      I: ListMyWritingSubmissionsRequest,
+      O: ListMyWritingSubmissionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetWritingSubmission
+     */
+    getWritingSubmission: {
+      name: "GetWritingSubmission",
+      I: GetWritingSubmissionRequest,
+      O: GetWritingSubmissionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L12.10 — reading library (parallel text).
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListReadingTexts
+     */
+    listReadingTexts: {
+      name: "ListReadingTexts",
+      I: ListReadingTextsRequest,
+      O: ListReadingTextsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetReadingText
+     */
+    getReadingText: {
+      name: "GetReadingText",
+      I: GetReadingTextRequest,
+      O: GetReadingTextResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L12.11 — idiom library.
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListIdioms
+     */
+    listIdioms: {
+      name: "ListIdioms",
+      I: ListIdiomsRequest,
+      O: ListIdiomsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L12.12 — tutor desk / concierge (Sovereign).
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.StartTutorThread
+     */
+    startTutorThread: {
+      name: "StartTutorThread",
+      I: StartTutorThreadRequest,
+      O: StartTutorThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListMyTutorThreads
+     */
+    listMyTutorThreads: {
+      name: "ListMyTutorThreads",
+      I: ListMyTutorThreadsRequest,
+      O: ListMyTutorThreadsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetTutorThread
+     */
+    getTutorThread: {
+      name: "GetTutorThread",
+      I: GetTutorThreadRequest,
+      O: GetTutorThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.PostTutorMessage
+     */
+    postTutorMessage: {
+      name: "PostTutorMessage",
+      I: PostTutorMessageRequest,
+      O: PostTutorMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L12.13 — editorial Anthology.
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListAnthologyArticles
+     */
+    listAnthologyArticles: {
+      name: "ListAnthologyArticles",
+      I: ListAnthologyArticlesRequest,
+      O: ListAnthologyArticlesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetAnthologyArticle
+     */
+    getAnthologyArticle: {
+      name: "GetAnthologyArticle",
+      I: GetAnthologyArticleRequest,
+      O: GetAnthologyArticleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L12.14 — CEFR certificate issuance.
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.IssueCertificate
+     */
+    issueCertificate: {
+      name: "IssueCertificate",
+      I: IssueCertificateRequest,
+      O: IssueCertificateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ListMyCertificates
+     */
+    listMyCertificates: {
+      name: "ListMyCertificates",
+      I: ListMyCertificatesRequest,
+      O: ListMyCertificatesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L12.15 — Annual Linguist Almanac.
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GenerateLinguistAlmanac
+     */
+    generateLinguistAlmanac: {
+      name: "GenerateLinguistAlmanac",
+      I: GenerateLinguistAlmanacRequest,
+      O: GenerateLinguistAlmanacResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L12.16 — public Linguist profile share.
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.CreateLinguistShare
+     */
+    createLinguistShare: {
+      name: "CreateLinguistShare",
+      I: CreateLinguistShareRequest,
+      O: CreateLinguistShareResponse,
       kind: MethodKind.Unary,
     },
     /**

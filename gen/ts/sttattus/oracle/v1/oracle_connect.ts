@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateThreadRequest, CreateThreadResponse, DeleteEpisodicMemoryRequest, DeleteEpisodicMemoryResponse, DeleteSemanticMemoryRequest, DeleteSemanticMemoryResponse, DeleteThreadRequest, DeleteThreadResponse, GetOracleStatsRequest, GetOracleStatsResponse, GetRankExplainerRequest, GetRankExplainerResponse, GrantScopeRequest, GrantScopeResponse, ListAvailableToolsRequest, ListAvailableToolsResponse, ListMyEpisodicMemoryRequest, ListMyEpisodicMemoryResponse, ListMyScopeGrantsRequest, ListMyScopeGrantsResponse, ListMySemanticMemoryRequest, ListMySemanticMemoryResponse, ListMyThreadsRequest, ListMyThreadsResponse, ListThreadMessagesRequest, ListThreadMessagesResponse, QueryRequest, QueryResponse, RecordEpisodicMemoryRequest, RecordEpisodicMemoryResponse, RenameThreadRequest, RenameThreadResponse, RevokeScopeRequest, RevokeScopeResponse, RunOracleToolRequest, RunOracleToolResponse, StreamQueryChunk, StreamQueryRequest, UpsertSemanticMemoryRequest, UpsertSemanticMemoryResponse } from "./oracle_pb.js";
+import { CreateBriefShareRequest, CreateBriefShareResponse, CreateDocumentRequest, CreateDocumentResponse, CreateThreadRequest, CreateThreadResponse, CreateTriggerRequest, CreateTriggerResponse, DeleteDocumentRequest, DeleteDocumentResponse, DeleteEpisodicMemoryRequest, DeleteEpisodicMemoryResponse, DeleteSemanticMemoryRequest, DeleteSemanticMemoryResponse, DeleteThreadRequest, DeleteThreadResponse, DeleteTriggerRequest, DeleteTriggerResponse, DraftDocumentRequest, DraftDocumentResponse, GenerateYearInOracleRequest, GenerateYearInOracleResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetDocumentRequest, GetDocumentResponse, GetInboxRequest, GetInboxResponse, GetOracleStatsRequest, GetOracleStatsResponse, GetRankExplainerRequest, GetRankExplainerResponse, GetTodayBriefingRequest, GetTodayBriefingResponse, GetYearInOracleRecapRequest, GetYearInOracleRecapResponse, GrantScopeRequest, GrantScopeResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListAvailableToolsRequest, ListAvailableToolsResponse, ListMyBriefSharesRequest, ListMyBriefSharesResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyDocumentsRequest, ListMyDocumentsResponse, ListMyEpisodicMemoryRequest, ListMyEpisodicMemoryResponse, ListMyScopeGrantsRequest, ListMyScopeGrantsResponse, ListMySemanticMemoryRequest, ListMySemanticMemoryResponse, ListMyThreadsRequest, ListMyThreadsResponse, ListMyTriggersRequest, ListMyTriggersResponse, ListThreadMessagesRequest, ListThreadMessagesResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, QueryRequest, QueryResponse, RecordEpisodicMemoryRequest, RecordEpisodicMemoryResponse, RenameThreadRequest, RenameThreadResponse, RevokeBriefShareRequest, RevokeBriefShareResponse, RevokeScopeRequest, RevokeScopeResponse, RunOracleToolRequest, RunOracleToolResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, StreamQueryChunk, StreamQueryRequest, UpdateDocumentRequest, UpdateDocumentResponse, UpsertSemanticMemoryRequest, UpsertSemanticMemoryResponse } from "./oracle_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -21,6 +21,218 @@ export const OracleService = {
       name: "Query",
       I: QueryRequest,
       O: QueryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * O4 (Phase 4) — Year-in-Oracle recap + hardcover PDF.
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetYearInOracleRecap
+     */
+    getYearInOracleRecap: {
+      name: "GetYearInOracleRecap",
+      I: GetYearInOracleRecapRequest,
+      O: GetYearInOracleRecapResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.GenerateYearInOracle
+     */
+    generateYearInOracle: {
+      name: "GenerateYearInOracle",
+      I: GenerateYearInOracleRequest,
+      O: GenerateYearInOracleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * O3 (Phase 3) — Sovereign concierge desk.
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.StartConciergeThread
+     */
+    startConciergeThread: {
+      name: "StartConciergeThread",
+      I: StartConciergeThreadRequest,
+      O: StartConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.ListMyConciergeThreads
+     */
+    listMyConciergeThreads: {
+      name: "ListMyConciergeThreads",
+      I: ListMyConciergeThreadsRequest,
+      O: ListMyConciergeThreadsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetConciergeThread
+     */
+    getConciergeThread: {
+      name: "GetConciergeThread",
+      I: GetConciergeThreadRequest,
+      O: GetConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.PostConciergeMessage
+     */
+    postConciergeMessage: {
+      name: "PostConciergeMessage",
+      I: PostConciergeMessageRequest,
+      O: PostConciergeMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * O3 (Phase 3) — editorial Anthology.
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.ListAnthologyArticles
+     */
+    listAnthologyArticles: {
+      name: "ListAnthologyArticles",
+      I: ListAnthologyArticlesRequest,
+      O: ListAnthologyArticlesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetAnthologyArticle
+     */
+    getAnthologyArticle: {
+      name: "GetAnthologyArticle",
+      I: GetAnthologyArticleRequest,
+      O: GetAnthologyArticleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * O3 (Phase 3) — shared brief.
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.CreateBriefShare
+     */
+    createBriefShare: {
+      name: "CreateBriefShare",
+      I: CreateBriefShareRequest,
+      O: CreateBriefShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.ListMyBriefShares
+     */
+    listMyBriefShares: {
+      name: "ListMyBriefShares",
+      I: ListMyBriefSharesRequest,
+      O: ListMyBriefSharesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.RevokeBriefShare
+     */
+    revokeBriefShare: {
+      name: "RevokeBriefShare",
+      I: RevokeBriefShareRequest,
+      O: RevokeBriefShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * O1 (Phase 1) — daily synthesis briefing across granted pillar scopes.
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetTodayBriefing
+     */
+    getTodayBriefing: {
+      name: "GetTodayBriefing",
+      I: GetTodayBriefingRequest,
+      O: GetTodayBriefingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * O2 (Phase 2) — proactive triggers + inbox.
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.CreateTrigger
+     */
+    createTrigger: {
+      name: "CreateTrigger",
+      I: CreateTriggerRequest,
+      O: CreateTriggerResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.ListMyTriggers
+     */
+    listMyTriggers: {
+      name: "ListMyTriggers",
+      I: ListMyTriggersRequest,
+      O: ListMyTriggersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.DeleteTrigger
+     */
+    deleteTrigger: {
+      name: "DeleteTrigger",
+      I: DeleteTriggerRequest,
+      O: DeleteTriggerResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetInbox
+     */
+    getInbox: {
+      name: "GetInbox",
+      I: GetInboxRequest,
+      O: GetInboxResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * O2 (Phase 2) — long-form drafter.
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.CreateDocument
+     */
+    createDocument: {
+      name: "CreateDocument",
+      I: CreateDocumentRequest,
+      O: CreateDocumentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.ListMyDocuments
+     */
+    listMyDocuments: {
+      name: "ListMyDocuments",
+      I: ListMyDocumentsRequest,
+      O: ListMyDocumentsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetDocument
+     */
+    getDocument: {
+      name: "GetDocument",
+      I: GetDocumentRequest,
+      O: GetDocumentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.UpdateDocument
+     */
+    updateDocument: {
+      name: "UpdateDocument",
+      I: UpdateDocumentRequest,
+      O: UpdateDocumentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.DeleteDocument
+     */
+    deleteDocument: {
+      name: "DeleteDocument",
+      I: DeleteDocumentRequest,
+      O: DeleteDocumentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.DraftDocument
+     */
+    draftDocument: {
+      name: "DraftDocument",
+      I: DraftDocumentRequest,
+      O: DraftDocumentResponse,
       kind: MethodKind.Unary,
     },
     /**

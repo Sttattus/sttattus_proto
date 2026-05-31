@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetTodayLoadRequest, GetTodayLoadResponse, GetZenithStatsRequest, GetZenithStatsResponse, ListLibraryItemsRequest, ListLibraryItemsResponse, ListMyCalendarConnectionsRequest, ListMyCalendarConnectionsResponse, ListMyCalendarEventsRequest, ListMyCalendarEventsResponse, LogFocusSessionRequest, LogFocusSessionResponse, RecommendBlockRequest, RecommendBlockResponse } from "./zenith_pb.js";
+import { AcknowledgeStressPromptRequest, AcknowledgeStressPromptResponse, AddJournalEntryRequest, AddJournalEntryResponse, AdvanceProgrammeWeekRequest, AdvanceProgrammeWeekResponse, CancelLoungeBookingRequest, CancelLoungeBookingResponse, CreateLoungeBookingRequest, CreateLoungeBookingResponse, CreateProfileShareRequest, CreateProfileShareResponse, EnrollProgrammeRequest, EnrollProgrammeResponse, GenerateZenithAlmanacRequest, GenerateZenithAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetCognitiveLoadRequest, GetCognitiveLoadResponse, GetCognitiveTestStatusRequest, GetCognitiveTestStatusResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetFocusHistoryRequest, GetFocusHistoryResponse, GetJetLagProtocolRequest, GetJetLagProtocolResponse, GetJournalInsightsRequest, GetJournalInsightsResponse, GetProgrammeRequest, GetProgrammeResponse, GetSovereignAudioRequest, GetSovereignAudioResponse, GetTodayLoadRequest, GetTodayLoadResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, GetYearInZenithRecapRequest, GetYearInZenithRecapResponse, GetZenithStatsRequest, GetZenithStatsResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListAudioEnvironmentsRequest, ListAudioEnvironmentsResponse, ListBlockTemplatesRequest, ListBlockTemplatesResponse, ListLibraryItemsRequest, ListLibraryItemsResponse, ListLoungesRequest, ListLoungesResponse, ListMyCalendarConnectionsRequest, ListMyCalendarConnectionsResponse, ListMyCalendarEventsRequest, ListMyCalendarEventsResponse, ListMyCognitiveTestsRequest, ListMyCognitiveTestsResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyJournalEntriesRequest, ListMyJournalEntriesResponse, ListMyLoungeBookingsRequest, ListMyLoungeBookingsResponse, ListMyProfileSharesRequest, ListMyProfileSharesResponse, ListMyProgrammesRequest, ListMyProgrammesResponse, ListProgrammesRequest, ListProgrammesResponse, ListRecentSessionsRequest, ListRecentSessionsResponse, ListRitualsRequest, ListRitualsResponse, ListSovereignAudioRequest, ListSovereignAudioResponse, ListTeachersRequest, ListTeachersResponse, LogFocusSessionRequest, LogFocusSessionResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, RecommendBlockRequest, RecommendBlockResponse, RevokeProfileShareRequest, RevokeProfileShareResponse, SimulateFortitudeRequest, SimulateFortitudeResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubmitCognitiveTestRequest, SubmitCognitiveTestResponse } from "./zenith_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -28,6 +28,17 @@ export const ZenithService = {
       name: "GetZenithStats",
       I: GetZenithStatsRequest,
       O: GetZenithStatsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Z16.1b — recent focus blocks (the ledger).
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListRecentSessions
+     */
+    listRecentSessions: {
+      name: "ListRecentSessions",
+      I: ListRecentSessionsRequest,
+      O: ListRecentSessionsResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -81,6 +92,385 @@ export const ZenithService = {
       name: "ListLibraryItems",
       I: ListLibraryItemsRequest,
       O: ListLibraryItemsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Phase 2 — core expansion =====
+     * Z16.15 — block templates.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListBlockTemplates
+     */
+    listBlockTemplates: {
+      name: "ListBlockTemplates",
+      I: ListBlockTemplatesRequest,
+      O: ListBlockTemplatesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Z16.22 — coached programmes.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListProgrammes
+     */
+    listProgrammes: {
+      name: "ListProgrammes",
+      I: ListProgrammesRequest,
+      O: ListProgrammesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetProgramme
+     */
+    getProgramme: {
+      name: "GetProgramme",
+      I: GetProgrammeRequest,
+      O: GetProgrammeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.EnrollProgramme
+     */
+    enrollProgramme: {
+      name: "EnrollProgramme",
+      I: EnrollProgrammeRequest,
+      O: EnrollProgrammeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListMyProgrammes
+     */
+    listMyProgrammes: {
+      name: "ListMyProgrammes",
+      I: ListMyProgrammesRequest,
+      O: ListMyProgrammesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.AdvanceProgrammeWeek
+     */
+    advanceProgrammeWeek: {
+      name: "AdvanceProgrammeWeek",
+      I: AdvanceProgrammeWeekRequest,
+      O: AdvanceProgrammeWeekResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Z16.23 — journaling.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.AddJournalEntry
+     */
+    addJournalEntry: {
+      name: "AddJournalEntry",
+      I: AddJournalEntryRequest,
+      O: AddJournalEntryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListMyJournalEntries
+     */
+    listMyJournalEntries: {
+      name: "ListMyJournalEntries",
+      I: ListMyJournalEntriesRequest,
+      O: ListMyJournalEntriesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Z16.26 — focus history + heatmap.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetFocusHistory
+     */
+    getFocusHistory: {
+      name: "GetFocusHistory",
+      I: GetFocusHistoryRequest,
+      O: GetFocusHistoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Z16.27 — what-if simulator.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.SimulateFortitude
+     */
+    simulateFortitude: {
+      name: "SimulateFortitude",
+      I: SimulateFortitudeRequest,
+      O: SimulateFortitudeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Z16.17 — audio environment catalog.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListAudioEnvironments
+     */
+    listAudioEnvironments: {
+      name: "ListAudioEnvironments",
+      I: ListAudioEnvironmentsRequest,
+      O: ListAudioEnvironmentsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Phase 2.5 — bridges =====
+     * Z16.4 — cross-pillar cognitive-load contract (Forge consumes).
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetCognitiveLoad
+     */
+    getCognitiveLoad: {
+      name: "GetCognitiveLoad",
+      I: GetCognitiveLoadRequest,
+      O: GetCognitiveLoadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Z16.9 — Today card.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetTodaySummary
+     */
+    getTodaySummary: {
+      name: "GetTodaySummary",
+      I: GetTodaySummaryRequest,
+      O: GetTodaySummaryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Z16.32 — acknowledge an acute stress-response prompt.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.AcknowledgeStressPrompt
+     */
+    acknowledgeStressPrompt: {
+      name: "AcknowledgeStressPrompt",
+      I: AcknowledgeStressPromptRequest,
+      O: AcknowledgeStressPromptResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Phase 3 — premium differentiation =====
+     * Coach concierge desk (Sovereign).
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.StartConciergeThread
+     */
+    startConciergeThread: {
+      name: "StartConciergeThread",
+      I: StartConciergeThreadRequest,
+      O: StartConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListMyConciergeThreads
+     */
+    listMyConciergeThreads: {
+      name: "ListMyConciergeThreads",
+      I: ListMyConciergeThreadsRequest,
+      O: ListMyConciergeThreadsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetConciergeThread
+     */
+    getConciergeThread: {
+      name: "GetConciergeThread",
+      I: GetConciergeThreadRequest,
+      O: GetConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.PostConciergeMessage
+     */
+    postConciergeMessage: {
+      name: "PostConciergeMessage",
+      I: PostConciergeMessageRequest,
+      O: PostConciergeMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Editorial Anthology.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListAnthologyArticles
+     */
+    listAnthologyArticles: {
+      name: "ListAnthologyArticles",
+      I: ListAnthologyArticlesRequest,
+      O: ListAnthologyArticlesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetAnthologyArticle
+     */
+    getAnthologyArticle: {
+      name: "GetAnthologyArticle",
+      I: GetAnthologyArticleRequest,
+      O: GetAnthologyArticleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Teacher directory.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListTeachers
+     */
+    listTeachers: {
+      name: "ListTeachers",
+      I: ListTeachersRequest,
+      O: ListTeachersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Sovereign commissioned audio.
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListSovereignAudio
+     */
+    listSovereignAudio: {
+      name: "ListSovereignAudio",
+      I: ListSovereignAudioRequest,
+      O: ListSovereignAudioResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetSovereignAudio
+     */
+    getSovereignAudio: {
+      name: "GetSovereignAudio",
+      I: GetSovereignAudioRequest,
+      O: GetSovereignAudioResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Travel jet-lag protocol (Nomad cross-pillar).
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetJetLagProtocol
+     */
+    getJetLagProtocol: {
+      name: "GetJetLagProtocol",
+      I: GetJetLagProtocolRequest,
+      O: GetJetLagProtocolResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Public profile share (fortitude band only).
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.CreateProfileShare
+     */
+    createProfileShare: {
+      name: "CreateProfileShare",
+      I: CreateProfileShareRequest,
+      O: CreateProfileShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListMyProfileShares
+     */
+    listMyProfileShares: {
+      name: "ListMyProfileShares",
+      I: ListMyProfileSharesRequest,
+      O: ListMyProfileSharesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.RevokeProfileShare
+     */
+    revokeProfileShare: {
+      name: "RevokeProfileShare",
+      I: RevokeProfileShareRequest,
+      O: RevokeProfileShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Phase 3.5 — real parsers + rituals =====
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetJournalInsights
+     */
+    getJournalInsights: {
+      name: "GetJournalInsights",
+      I: GetJournalInsightsRequest,
+      O: GetJournalInsightsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.SubmitCognitiveTest
+     */
+    submitCognitiveTest: {
+      name: "SubmitCognitiveTest",
+      I: SubmitCognitiveTestRequest,
+      O: SubmitCognitiveTestResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListMyCognitiveTests
+     */
+    listMyCognitiveTests: {
+      name: "ListMyCognitiveTests",
+      I: ListMyCognitiveTestsRequest,
+      O: ListMyCognitiveTestsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetCognitiveTestStatus
+     */
+    getCognitiveTestStatus: {
+      name: "GetCognitiveTestStatus",
+      I: GetCognitiveTestStatusRequest,
+      O: GetCognitiveTestStatusResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListRituals
+     */
+    listRituals: {
+      name: "ListRituals",
+      I: ListRitualsRequest,
+      O: ListRitualsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Phase 4 — category-leading =====
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetYearInZenithRecap
+     */
+    getYearInZenithRecap: {
+      name: "GetYearInZenithRecap",
+      I: GetYearInZenithRecapRequest,
+      O: GetYearInZenithRecapResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GenerateZenithAlmanac
+     */
+    generateZenithAlmanac: {
+      name: "GenerateZenithAlmanac",
+      I: GenerateZenithAlmanacRequest,
+      O: GenerateZenithAlmanacResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListLounges
+     */
+    listLounges: {
+      name: "ListLounges",
+      I: ListLoungesRequest,
+      O: ListLoungesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.CreateLoungeBooking
+     */
+    createLoungeBooking: {
+      name: "CreateLoungeBooking",
+      I: CreateLoungeBookingRequest,
+      O: CreateLoungeBookingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ListMyLoungeBookings
+     */
+    listMyLoungeBookings: {
+      name: "ListMyLoungeBookings",
+      I: ListMyLoungeBookingsRequest,
+      O: ListMyLoungeBookingsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.CancelLoungeBooking
+     */
+    cancelLoungeBooking: {
+      name: "CancelLoungeBooking",
+      I: CancelLoungeBookingRequest,
+      O: CancelLoungeBookingResponse,
       kind: MethodKind.Unary,
     },
   }

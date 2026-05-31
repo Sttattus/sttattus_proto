@@ -286,6 +286,173 @@ service TravelService {
   rpc GetPassportSurface(GetPassportSurfaceRequest) returns (GetPassportSurfaceResponse);
   rpc GetLoungeConcierge(GetLoungeConciergeRequest) returns (GetLoungeConciergeResponse);
   rpc GetTripArchive(GetTripArchiveRequest) returns (GetTripArchiveResponse);
+
+  // N2 — itinerary ingestion (flight-confirmation text -> trip skeleton).
+  rpc ParseItineraryText(ParseItineraryTextRequest) returns (ParseItineraryTextResponse);
+  rpc ListMyItineraries(ListMyItinerariesRequest) returns (ListMyItinerariesResponse);
+  rpc ConfirmItinerary(ConfirmItineraryRequest) returns (ConfirmItineraryResponse);
+
+  // N2 — partner directory (hotels / restaurants / lounges / aviation).
+  rpc ListTravelPartners(ListTravelPartnersRequest) returns (ListTravelPartnersResponse);
+  rpc GetTravelPartner(GetTravelPartnerRequest) returns (GetTravelPartnerResponse);
+
+  // N3 — Nomad Anthology (named-author insider city guides).
+  rpc ListAnthologyArticles(ListAnthologyArticlesRequest) returns (ListAnthologyArticlesResponse);
+  rpc GetAnthologyArticle(GetAnthologyArticleRequest) returns (GetAnthologyArticleResponse);
+
+  // N3.5 — public passport share (read-only, time-bound token).
+  rpc CreatePassportShare(CreatePassportShareRequest) returns (CreatePassportShareResponse);
+  rpc ListMyPassportShares(ListMyPassportSharesRequest) returns (ListMyPassportSharesResponse);
+  rpc RevokePassportShare(RevokePassportShareRequest) returns (RevokePassportShareResponse);
+
+  // N4 — Annual Atlas (generated hardcover-grade PDF).
+  rpc GenerateNomadAtlas(GenerateNomadAtlasRequest) returns (GenerateNomadAtlasResponse);
+}
+
+// === Nomad Anthology (N3) ===
+
+message AnthologyArticle {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string dek = 4; // standfirst
+  string author = 5;
+  string author_title = 6;
+  string city = 7;
+  string country_code = 8;
+  string hero_url = 9;
+  string body = 10; // paragraphs split on \n\n
+  bool sovereign_only = 11;
+  int64 published_at = 12;
+  int32 read_minutes = 13;
+}
+
+message ListAnthologyArticlesRequest {
+  string city = 1; // empty = all
+}
+message ListAnthologyArticlesResponse {
+  repeated AnthologyArticle articles = 1;
+}
+
+message GetAnthologyArticleRequest {
+  string slug = 1;
+}
+message GetAnthologyArticleResponse {
+  AnthologyArticle article = 1;
+}
+
+// === Passport share (N3.5) ===
+
+message PassportShare {
+  string token = 1;
+  string url = 2;
+  int64 created_at = 3;
+  int64 expires_at = 4;
+  bool revoked = 5;
+}
+
+message CreatePassportShareRequest {
+  int32 ttl_days = 1; // 0 => default 14
+}
+message CreatePassportShareResponse {
+  PassportShare share = 1;
+}
+
+message ListMyPassportSharesRequest {}
+message ListMyPassportSharesResponse {
+  repeated PassportShare shares = 1;
+}
+
+message RevokePassportShareRequest {
+  string token = 1;
+}
+message RevokePassportShareResponse {}
+
+// === Annual Atlas (N4) ===
+
+message GenerateNomadAtlasRequest {
+  int32 year = 1; // 0 => current year
+}
+message GenerateNomadAtlasResponse {
+  string media_url = 1;
+  string media_asset_id = 2;
+  int32 page_count = 3;
+}
+
+// === Itinerary ingestion (N2) ===
+//
+// A ParsedItinerary is the structured result of running a flight
+// confirmation (pasted email text / boarding-pass scan) through the
+// parser. It is a *proposal*: the member confirms it into a real Trip.
+
+message ParsedItinerary {
+  string id = 1;
+  string trip_id = 2; // empty until confirmed
+  string provider = 3; // e.g. 'United', 'Air France'
+  string record_locator = 4; // PNR
+  string origin_iata = 5;
+  string destination_iata = 6;
+  int64 depart_at = 7;
+  int64 arrive_at = 8;
+  string status = 9; // 'pending' | 'confirmed'
+  string raw_excerpt = 10;
+  int64 created_at = 11;
+}
+
+message ParseItineraryTextRequest {
+  string raw_text = 1; // pasted confirmation email
+}
+message ParseItineraryTextResponse {
+  ParsedItinerary itinerary = 1;
+  bool parsed = 2; // false when no flight fields could be extracted
+}
+
+message ListMyItinerariesRequest {
+  int32 limit = 1;
+}
+message ListMyItinerariesResponse {
+  repeated ParsedItinerary itineraries = 1;
+}
+
+message ConfirmItineraryRequest {
+  string itinerary_id = 1;
+  string title = 2; // optional override; defaults to a route title
+}
+message ConfirmItineraryResponse {
+  Trip trip = 1;
+}
+
+// === Partner directory (N2) ===
+
+message TravelPartner {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string category = 4; // 'hotel' | 'restaurant' | 'lounge' | 'aviation' | 'driver'
+  string city = 5;
+  string country_code = 6;
+  string region = 7; // 'Europe' | 'Asia' | ...
+  string description = 8;
+  string hero_url = 9;
+  bool member_rate = 10; // Sttattus Tax / member discount available
+  bool sovereign_only = 11;
+  string booking_url = 12;
+  int32 price_band = 13; // 1-4 ($-$$$$)
+}
+
+message ListTravelPartnersRequest {
+  string category = 1; // empty = all
+  string region = 2; // empty = all
+}
+message ListTravelPartnersResponse {
+  repeated TravelPartner partners = 1;
+}
+
+message GetTravelPartnerRequest {
+  string slug = 1;
+}
+message GetTravelPartnerResponse {
+  TravelPartner partner = 1;
 }
 
 message GetPassportSurfaceRequest {}

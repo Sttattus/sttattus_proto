@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignAssetCategoryRequest, AssignAssetCategoryResponse, DeleteRecoveryShareRequest, DeleteRecoveryShareResponse, GetEncryptedBlobRequest, GetEncryptedBlobResponse, GetHeritageStatsRequest, GetHeritageStatsResponse, ListAssetCategoriesRequest, ListAssetCategoriesResponse, ListAssetsRequest, ListAssetsResponse, ListAssetVersionsRequest, ListAssetVersionsResponse, ListLegacyCategoriesRequest, ListLegacyCategoriesResponse, ListMyEncryptedBlobsRequest, ListMyEncryptedBlobsResponse, ListMyRecoverySharesRequest, ListMyRecoverySharesResponse, RecordAssetVersionRequest, RecordAssetVersionResponse, StoreDocumentRequest, StoreDocumentResponse, StoreEncryptedBlobRequest, StoreEncryptedBlobResponse, StoreRecoveryShareRequest, StoreRecoveryShareResponse, UnassignAssetCategoryRequest, UnassignAssetCategoryResponse } from "./legacy_pb.js";
+import { AcceptHandoffRequest, AcceptHandoffResponse, AddBeneficiaryRequest, AddBeneficiaryResponse, AddLetterOfWishesRequest, AddLetterOfWishesResponse, AssignAssetCategoryRequest, AssignAssetCategoryResponse, CheckInDeadManSwitchRequest, CheckInDeadManSwitchResponse, ConfigureDeadManSwitchRequest, ConfigureDeadManSwitchResponse, CreateAnchorRequest, CreateAnchorResponse, CreateLegacyShareRequest, CreateLegacyShareResponse, DeleteRecoveryShareRequest, DeleteRecoveryShareResponse, DismissHandoffRequest, DismissHandoffResponse, GenerateDocumentRequest, GenerateDocumentResponse, GenerateLegacyAlmanacRequest, GenerateLegacyAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetDeadManSwitchRequest, GetDeadManSwitchResponse, GetEncryptedBlobRequest, GetEncryptedBlobResponse, GetEstateReadinessRequest, GetEstateReadinessResponse, GetEstateSummaryRequest, GetEstateSummaryResponse, GetHeritageStatsRequest, GetHeritageStatsResponse, GetTemplateRequest, GetTemplateResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListAssetCategoriesRequest, ListAssetCategoriesResponse, ListAssetsRequest, ListAssetsResponse, ListAssetVersionsRequest, ListAssetVersionsResponse, ListIpPortfolioRequest, ListIpPortfolioResponse, ListLawyersRequest, ListLawyersResponse, ListLegacyCategoriesRequest, ListLegacyCategoriesResponse, ListMyAnchorsRequest, ListMyAnchorsResponse, ListMyBeneficiariesRequest, ListMyBeneficiariesResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyEncryptedBlobsRequest, ListMyEncryptedBlobsResponse, ListMyGeneratedDocumentsRequest, ListMyGeneratedDocumentsResponse, ListMyHandoffsRequest, ListMyHandoffsResponse, ListMyLegacySharesRequest, ListMyLegacySharesResponse, ListMyLettersOfWishesRequest, ListMyLettersOfWishesResponse, ListMyRecoverySharesRequest, ListMyRecoverySharesResponse, ListNotariesRequest, ListNotariesResponse, ListTemplatesRequest, ListTemplatesResponse, ParseDocumentExpiryRequest, ParseDocumentExpiryResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, RecordAssetVersionRequest, RecordAssetVersionResponse, RemoveBeneficiaryRequest, RemoveBeneficiaryResponse, RemoveLetterOfWishesRequest, RemoveLetterOfWishesResponse, RevokeLegacyShareRequest, RevokeLegacyShareResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, StoreDocumentRequest, StoreDocumentResponse, StoreEncryptedBlobRequest, StoreEncryptedBlobResponse, StoreRecoveryShareRequest, StoreRecoveryShareResponse, UnassignAssetCategoryRequest, UnassignAssetCategoryResponse } from "./legacy_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -155,6 +155,338 @@ export const LegacyService = {
       name: "ListAssetVersions",
       I: ListAssetVersionsRequest,
       O: ListAssetVersionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L15.7 — estate readiness composite.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetEstateReadiness
+     */
+    getEstateReadiness: {
+      name: "GetEstateReadiness",
+      I: GetEstateReadinessRequest,
+      O: GetEstateReadinessResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L16 — heir / beneficiary registry.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListMyBeneficiaries
+     */
+    listMyBeneficiaries: {
+      name: "ListMyBeneficiaries",
+      I: ListMyBeneficiariesRequest,
+      O: ListMyBeneficiariesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.AddBeneficiary
+     */
+    addBeneficiary: {
+      name: "AddBeneficiary",
+      I: AddBeneficiaryRequest,
+      O: AddBeneficiaryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.RemoveBeneficiary
+     */
+    removeBeneficiary: {
+      name: "RemoveBeneficiary",
+      I: RemoveBeneficiaryRequest,
+      O: RemoveBeneficiaryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L16 — trustee dead-man's-switch.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetDeadManSwitch
+     */
+    getDeadManSwitch: {
+      name: "GetDeadManSwitch",
+      I: GetDeadManSwitchRequest,
+      O: GetDeadManSwitchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ConfigureDeadManSwitch
+     */
+    configureDeadManSwitch: {
+      name: "ConfigureDeadManSwitch",
+      I: ConfigureDeadManSwitchRequest,
+      O: ConfigureDeadManSwitchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.CheckInDeadManSwitch
+     */
+    checkInDeadManSwitch: {
+      name: "CheckInDeadManSwitch",
+      I: CheckInDeadManSwitchRequest,
+      O: CheckInDeadManSwitchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L16 — document-hash anchors.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.CreateAnchor
+     */
+    createAnchor: {
+      name: "CreateAnchor",
+      I: CreateAnchorRequest,
+      O: CreateAnchorResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListMyAnchors
+     */
+    listMyAnchors: {
+      name: "ListMyAnchors",
+      I: ListMyAnchorsRequest,
+      O: ListMyAnchorsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L16 — lawyer + notary directory.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListLawyers
+     */
+    listLawyers: {
+      name: "ListLawyers",
+      I: ListLawyersRequest,
+      O: ListLawyersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListNotaries
+     */
+    listNotaries: {
+      name: "ListNotaries",
+      I: ListNotariesRequest,
+      O: ListNotariesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L16 — jurisdiction-aware template engine.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListTemplates
+     */
+    listTemplates: {
+      name: "ListTemplates",
+      I: ListTemplatesRequest,
+      O: ListTemplatesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetTemplate
+     */
+    getTemplate: {
+      name: "GetTemplate",
+      I: GetTemplateRequest,
+      O: GetTemplateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GenerateDocument
+     */
+    generateDocument: {
+      name: "GenerateDocument",
+      I: GenerateDocumentRequest,
+      O: GenerateDocumentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListMyGeneratedDocuments
+     */
+    listMyGeneratedDocuments: {
+      name: "ListMyGeneratedDocuments",
+      I: ListMyGeneratedDocumentsRequest,
+      O: ListMyGeneratedDocumentsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L17 — cross-pillar handoff inbox.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListMyHandoffs
+     */
+    listMyHandoffs: {
+      name: "ListMyHandoffs",
+      I: ListMyHandoffsRequest,
+      O: ListMyHandoffsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.AcceptHandoff
+     */
+    acceptHandoff: {
+      name: "AcceptHandoff",
+      I: AcceptHandoffRequest,
+      O: AcceptHandoffResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.DismissHandoff
+     */
+    dismissHandoff: {
+      name: "DismissHandoff",
+      I: DismissHandoffRequest,
+      O: DismissHandoffResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L17 — estate summary (today card).
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetEstateSummary
+     */
+    getEstateSummary: {
+      name: "GetEstateSummary",
+      I: GetEstateSummaryRequest,
+      O: GetEstateSummaryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L18 — Sovereign lawyer concierge.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.StartConciergeThread
+     */
+    startConciergeThread: {
+      name: "StartConciergeThread",
+      I: StartConciergeThreadRequest,
+      O: StartConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListMyConciergeThreads
+     */
+    listMyConciergeThreads: {
+      name: "ListMyConciergeThreads",
+      I: ListMyConciergeThreadsRequest,
+      O: ListMyConciergeThreadsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetConciergeThread
+     */
+    getConciergeThread: {
+      name: "GetConciergeThread",
+      I: GetConciergeThreadRequest,
+      O: GetConciergeThreadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.PostConciergeMessage
+     */
+    postConciergeMessage: {
+      name: "PostConciergeMessage",
+      I: PostConciergeMessageRequest,
+      O: PostConciergeMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L18 — editorial Anthology.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListAnthologyArticles
+     */
+    listAnthologyArticles: {
+      name: "ListAnthologyArticles",
+      I: ListAnthologyArticlesRequest,
+      O: ListAnthologyArticlesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetAnthologyArticle
+     */
+    getAnthologyArticle: {
+      name: "GetAnthologyArticle",
+      I: GetAnthologyArticleRequest,
+      O: GetAnthologyArticleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L18 — letters of wishes (encrypted-at-rest).
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.AddLetterOfWishes
+     */
+    addLetterOfWishes: {
+      name: "AddLetterOfWishes",
+      I: AddLetterOfWishesRequest,
+      O: AddLetterOfWishesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListMyLettersOfWishes
+     */
+    listMyLettersOfWishes: {
+      name: "ListMyLettersOfWishes",
+      I: ListMyLettersOfWishesRequest,
+      O: ListMyLettersOfWishesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.RemoveLetterOfWishes
+     */
+    removeLetterOfWishes: {
+      name: "RemoveLetterOfWishes",
+      I: RemoveLetterOfWishesRequest,
+      O: RemoveLetterOfWishesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L19 — Annual Legacy Almanac + IP portfolio.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GenerateLegacyAlmanac
+     */
+    generateLegacyAlmanac: {
+      name: "GenerateLegacyAlmanac",
+      I: GenerateLegacyAlmanacRequest,
+      O: GenerateLegacyAlmanacResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListIpPortfolio
+     */
+    listIpPortfolio: {
+      name: "ListIpPortfolio",
+      I: ListIpPortfolioRequest,
+      O: ListIpPortfolioResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L19.5 — token-based estate share + document expiry parser.
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.CreateLegacyShare
+     */
+    createLegacyShare: {
+      name: "CreateLegacyShare",
+      I: CreateLegacyShareRequest,
+      O: CreateLegacyShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ListMyLegacyShares
+     */
+    listMyLegacyShares: {
+      name: "ListMyLegacyShares",
+      I: ListMyLegacySharesRequest,
+      O: ListMyLegacySharesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.RevokeLegacyShare
+     */
+    revokeLegacyShare: {
+      name: "RevokeLegacyShare",
+      I: RevokeLegacyShareRequest,
+      O: RevokeLegacyShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.ParseDocumentExpiry
+     */
+    parseDocumentExpiry: {
+      name: "ParseDocumentExpiry",
+      I: ParseDocumentExpiryRequest,
+      O: ParseDocumentExpiryResponse,
       kind: MethodKind.Unary,
     },
   }

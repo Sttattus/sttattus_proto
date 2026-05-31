@@ -55,6 +55,11 @@ message OnyxContent {
   // progress row exists.
   double progress_completion = 20;
   int32 progress_position_seconds = 21;
+
+  // P4 — member-only silent reactions. Populated on GetContent; 0 in list
+  // responses (avoids an N+1 across rails).
+  int32 reaction_count = 22;
+  bool i_reacted = 23;
 }
 
 // Subscription represents an exclusive link between user and creator.
@@ -175,6 +180,362 @@ message CreateSubscriptionCheckoutResponse {
   string checkout_url = 1;
 }
 
+// === P2 — creators, search, notes, library, series, sovereign window ===
+
+// CreatorProfile is the public surface for a named editor / filmmaker /
+// writer / teacher.
+message CreatorProfile {
+  string user_id = 1;
+  string stage_name = 2;
+  string bio = 3;
+  string portrait_url = 4;
+  int32 works_count = 5;
+  int32 follower_count = 6;
+  bool is_following = 7; // by the caller
+  bool is_subscribed = 8; // by the caller
+}
+
+message GetCreatorRequest {
+  string user_id = 1;
+}
+message GetCreatorResponse {
+  CreatorProfile creator = 1;
+}
+
+message ListCreatorWorksRequest {
+  string user_id = 1;
+  int32 limit = 2;
+}
+message ListCreatorWorksResponse {
+  repeated OnyxContent items = 1;
+}
+
+message FollowCreatorRequest {
+  string user_id = 1;
+  bool follow = 2; // true = follow, false = unfollow
+}
+message FollowCreatorResponse {
+  bool following = 1;
+}
+
+message SearchContentRequest {
+  string query = 1;
+  string kind = 2; // optional filter: article | audio | video | ""
+  string shelf_code = 3; // optional filter
+  int32 limit = 4;
+}
+message SearchContentResponse {
+  repeated OnyxContent items = 1;
+}
+
+// Note is a member's private annotation on a piece.
+message Note {
+  string id = 1;
+  string content_id = 2;
+  string body = 3;
+  string anchor = 4; // optional quoted locator the note attaches to
+  google.protobuf.Timestamp created_at = 5;
+  string content_title = 6; // hydrated for the all-notes list
+}
+message AddNoteRequest {
+  string content_id = 1;
+  string body = 2;
+  string anchor = 3;
+}
+message AddNoteResponse {
+  Note note = 1;
+}
+message ListMyNotesRequest {
+  string content_id = 1; // empty = every note across the library
+}
+message ListMyNotesResponse {
+  repeated Note notes = 1;
+}
+message DeleteNoteRequest {
+  string note_id = 1;
+}
+message DeleteNoteResponse {}
+
+message ListMyUnlocksRequest {
+  int32 limit = 1;
+}
+message ListMyUnlocksResponse {
+  repeated OnyxContent items = 1;
+}
+
+message ListMySubscriptionsRequest {}
+message ListMySubscriptionsResponse {
+  repeated CreatorProfile creators = 1;
+}
+
+// WindowEntry is a piece on its way from the Sovereign window to public.
+message WindowEntry {
+  OnyxContent content = 1;
+  int32 days_until_public = 2; // days until public_at (>= 0)
+  bool in_sovereign_window = 3; // public_at is still in the future
+}
+message ListSovereignWindowRequest {
+  int32 limit = 1;
+}
+message ListSovereignWindowResponse {
+  repeated WindowEntry entries = 1;
+}
+
+// Series is a multi-part curated arc.
+message Series {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string blurb = 4;
+  string creator_id = 5;
+  string creator_name = 6;
+  string hero_image_url = 7;
+  repeated OnyxContent parts = 8;
+}
+message ListSeriesRequest {
+  int32 limit = 1;
+}
+message ListSeriesResponse {
+  repeated Series series = 1;
+}
+message GetSeriesRequest {
+  string id = 1;
+}
+message GetSeriesResponse {
+  Series series = 1;
+}
+
+// === P2.5 — captions, today summary, cross-pillar unlock bus ===
+
+// CaptionJob is the state of a caption/transcript generation request.
+message CaptionJob {
+  string content_id = 1;
+  string status = 2; // queued | running | done | unavailable | failed
+  string captions_url = 3; // populated when status == done
+  string error = 4; // honest reason when status == unavailable / failed
+}
+message GenerateCaptionsRequest {
+  string content_id = 1;
+}
+message GenerateCaptionsResponse {
+  CaptionJob job = 1;
+}
+
+message GetTodaySummaryRequest {}
+message GetTodaySummaryResponse {
+  // The single most-recent published piece — today's editorial drop.
+  OnyxContent todays_drop = 1;
+  int32 in_progress_count = 2;
+  int32 window_count = 3; // pieces currently in the Sovereign window
+  int32 unlock_count = 4; // pieces the caller has redeemed
+  double onyx_score = 5;
+}
+
+// CrossPillarUnlock is a piece the caller can open because of a specific
+// pillar standing — the inverse of the LockedGate.
+message CrossPillarUnlock {
+  OnyxContent content = 1;
+  // tier | score | vault | apex — which requirement the caller clears.
+  string unlocked_by = 2;
+  string detail = 3; // e.g. "Vault 60 — you have 76"
+}
+message GetCrossPillarUnlocksRequest {
+  int32 limit = 1;
+}
+message GetCrossPillarUnlocksResponse {
+  repeated CrossPillarUnlock unlocks = 1;
+}
+
+// === P3 — concierge, live events, posthumous archive, anthology ===
+
+message ConciergeMessage {
+  string id = 1;
+  string sender = 2; // member | system | editor
+  string body = 3;
+  google.protobuf.Timestamp created_at = 4;
+}
+message ConciergeThread {
+  string id = 1;
+  string subject = 2;
+  string topic = 3; // request | creator | commission | general
+  string status = 4; // open | answered | closed
+  google.protobuf.Timestamp sla_due_at = 5;
+  google.protobuf.Timestamp created_at = 6;
+  repeated ConciergeMessage messages = 7;
+}
+message StartConciergeThreadRequest {
+  string subject = 1;
+  string topic = 2;
+  string first_message = 3;
+}
+message StartConciergeThreadResponse {
+  ConciergeThread thread = 1;
+}
+message ListMyConciergeThreadsRequest {}
+message ListMyConciergeThreadsResponse {
+  repeated ConciergeThread threads = 1;
+}
+message GetConciergeThreadRequest {
+  string thread_id = 1;
+}
+message GetConciergeThreadResponse {
+  ConciergeThread thread = 1;
+}
+message PostConciergeMessageRequest {
+  string thread_id = 1;
+  string body = 2;
+}
+message PostConciergeMessageResponse {
+  ConciergeMessage message = 1;
+}
+
+message LiveEvent {
+  string id = 1;
+  string title = 2;
+  string blurb = 3;
+  string host_name = 4;
+  string required_tier = 5;
+  google.protobuf.Timestamp starts_at = 6;
+  int32 capacity = 7;
+  int32 rsvp_count = 8;
+  bool is_rsvped = 9; // by the caller
+  string status = 10; // scheduled | live | recorded
+  // When recorded, the onyx_content id of the archived recording ("" if none).
+  string recording_content_id = 11;
+  string hero_image_url = 12;
+}
+message ListLiveEventsRequest {
+  int32 limit = 1;
+}
+message ListLiveEventsResponse {
+  repeated LiveEvent events = 1;
+}
+message GetLiveEventRequest {
+  string id = 1;
+}
+message GetLiveEventResponse {
+  LiveEvent event = 1;
+}
+message RsvpLiveEventRequest {
+  string id = 1;
+  bool rsvp = 2; // true = reserve, false = cancel
+}
+message RsvpLiveEventResponse {
+  bool rsvped = 1;
+  int32 rsvp_count = 2;
+}
+
+message PosthumousArchive {
+  // The pieces designated to drop to heirs on the Legacy trigger.
+  repeated string content_ids = 1;
+  // Free-text instruction to the heirs (stored AES-GCM-encrypted at rest).
+  string instructions = 2;
+  bool armed = 3;
+  google.protobuf.Timestamp updated_at = 4;
+}
+message SetPosthumousArchiveRequest {
+  repeated string content_ids = 1;
+  string instructions = 2;
+  bool armed = 3;
+}
+message SetPosthumousArchiveResponse {
+  PosthumousArchive archive = 1;
+}
+message GetPosthumousArchiveRequest {}
+message GetPosthumousArchiveResponse {
+  PosthumousArchive archive = 1;
+}
+
+message Anthology {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string editor_note = 4; // the editor's introduction
+  string editor_name = 5;
+  string hero_image_url = 6;
+  repeated OnyxContent pieces = 7;
+}
+message ListAnthologiesRequest {
+  int32 limit = 1;
+}
+message ListAnthologiesResponse {
+  repeated Anthology anthologies = 1;
+}
+message GetAnthologyRequest {
+  string id = 1;
+}
+message GetAnthologyResponse {
+  Anthology anthology = 1;
+}
+
+// === P3.5 — signed share embeds + offline manifest ===
+
+message ShareLink {
+  string token = 1;
+  string content_id = 2;
+  string url = 3; // public /share/onyx/:token URL
+  string watermark = 4; // the sharer's name, stamped on the shared view
+  google.protobuf.Timestamp expires_at = 5;
+  bool revoked = 6;
+}
+message CreateShareLinkRequest {
+  string content_id = 1;
+}
+message CreateShareLinkResponse {
+  ShareLink link = 1;
+}
+message ListMyShareLinksRequest {}
+message ListMyShareLinksResponse {
+  repeated ShareLink links = 1;
+}
+message RevokeShareLinkRequest {
+  string token = 1;
+}
+message RevokeShareLinkResponse {}
+
+message GetOfflineManifestRequest {}
+message GetOfflineManifestResponse {
+  // The pieces the caller may keep offline (unlocked + ungated).
+  repeated OnyxContent items = 1;
+  // The watermark / anti-piracy policy shown on the downloads surface.
+  string watermark_policy = 2;
+}
+
+// === P4 — year-in-onyx recap, annual archive, silent reactions ===
+
+message GetYearInOnyxRequest {
+  string year = 1; // optional; defaults to the current year
+}
+message GetYearInOnyxResponse {
+  string year = 1;
+  int32 pieces_started = 2;
+  int32 pieces_finished = 3;
+  int32 salons_attended = 4;
+  int32 unlocks = 5;
+  double onyx_score = 6;
+  repeated string top_creators = 7; // names, by consumption
+  repeated string notable_titles = 8; // finished pieces worth recalling
+}
+
+message GenerateAnnualArchiveRequest {
+  string year = 1;
+}
+message GenerateAnnualArchiveResponse {
+  string media_asset_id = 1;
+  string public_url = 2;
+  int32 page_count = 3;
+  google.protobuf.Timestamp generated_at = 4;
+}
+
+message ReactToContentRequest {
+  string content_id = 1;
+  bool react = 2; // true = react, false = remove
+}
+message ReactToContentResponse {
+  int32 reaction_count = 1;
+  bool reacted = 2;
+}
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateOnyxProfileRequest) returns (CreateOnyxProfileResponse);
@@ -197,4 +558,63 @@ service OnyxService {
   rpc RedeemContent(RedeemContentRequest) returns (RedeemContentResponse);
   // P6.6 — open a Stripe checkout for the Onyx network subscription.
   rpc CreateSubscriptionCheckout(CreateSubscriptionCheckoutRequest) returns (CreateSubscriptionCheckoutResponse);
+
+  // P2 — creators.
+  rpc GetCreator(GetCreatorRequest) returns (GetCreatorResponse);
+  rpc ListCreatorWorks(ListCreatorWorksRequest) returns (ListCreatorWorksResponse);
+  rpc FollowCreator(FollowCreatorRequest) returns (FollowCreatorResponse);
+
+  // P2 — search.
+  rpc SearchContent(SearchContentRequest) returns (SearchContentResponse);
+
+  // P2 — notes / highlights.
+  rpc AddNote(AddNoteRequest) returns (AddNoteResponse);
+  rpc ListMyNotes(ListMyNotesRequest) returns (ListMyNotesResponse);
+  rpc DeleteNote(DeleteNoteRequest) returns (DeleteNoteResponse);
+
+  // P2 — personal library / account.
+  rpc ListMyUnlocks(ListMyUnlocksRequest) returns (ListMyUnlocksResponse);
+  rpc ListMySubscriptions(ListMySubscriptionsRequest) returns (ListMySubscriptionsResponse);
+
+  // P2 — sovereign window calendar.
+  rpc ListSovereignWindow(ListSovereignWindowRequest) returns (ListSovereignWindowResponse);
+
+  // P2 — multi-part series.
+  rpc ListSeries(ListSeriesRequest) returns (ListSeriesResponse);
+  rpc GetSeries(GetSeriesRequest) returns (GetSeriesResponse);
+
+  // P2.5 — captions, today summary, cross-pillar unlock bus.
+  rpc GenerateCaptions(GenerateCaptionsRequest) returns (GenerateCaptionsResponse);
+  rpc GetTodaySummary(GetTodaySummaryRequest) returns (GetTodaySummaryResponse);
+  rpc GetCrossPillarUnlocks(GetCrossPillarUnlocksRequest) returns (GetCrossPillarUnlocksResponse);
+
+  // P3 — curator concierge desk.
+  rpc StartConciergeThread(StartConciergeThreadRequest) returns (StartConciergeThreadResponse);
+  rpc ListMyConciergeThreads(ListMyConciergeThreadsRequest) returns (ListMyConciergeThreadsResponse);
+  rpc GetConciergeThread(GetConciergeThreadRequest) returns (GetConciergeThreadResponse);
+  rpc PostConciergeMessage(PostConciergeMessageRequest) returns (PostConciergeMessageResponse);
+
+  // P3 — live / the salon.
+  rpc ListLiveEvents(ListLiveEventsRequest) returns (ListLiveEventsResponse);
+  rpc GetLiveEvent(GetLiveEventRequest) returns (GetLiveEventResponse);
+  rpc RsvpLiveEvent(RsvpLiveEventRequest) returns (RsvpLiveEventResponse);
+
+  // P3 — posthumous archive (encrypted at rest).
+  rpc SetPosthumousArchive(SetPosthumousArchiveRequest) returns (SetPosthumousArchiveResponse);
+  rpc GetPosthumousArchive(GetPosthumousArchiveRequest) returns (GetPosthumousArchiveResponse);
+
+  // P3 — editorial anthology.
+  rpc ListAnthologies(ListAnthologiesRequest) returns (ListAnthologiesResponse);
+  rpc GetAnthology(GetAnthologyRequest) returns (GetAnthologyResponse);
+
+  // P3.5 — signed share embeds + offline manifest.
+  rpc CreateShareLink(CreateShareLinkRequest) returns (CreateShareLinkResponse);
+  rpc ListMyShareLinks(ListMyShareLinksRequest) returns (ListMyShareLinksResponse);
+  rpc RevokeShareLink(RevokeShareLinkRequest) returns (RevokeShareLinkResponse);
+  rpc GetOfflineManifest(GetOfflineManifestRequest) returns (GetOfflineManifestResponse);
+
+  // P4 — year-in-onyx recap, annual archive PDF, silent reactions.
+  rpc GetYearInOnyx(GetYearInOnyxRequest) returns (GetYearInOnyxResponse);
+  rpc GenerateAnnualArchive(GenerateAnnualArchiveRequest) returns (GenerateAnnualArchiveResponse);
+  rpc ReactToContent(ReactToContentRequest) returns (ReactToContentResponse);
 }
