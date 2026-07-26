@@ -26,11 +26,13 @@ const (
 type AssetCategory int32
 
 const (
-	AssetCategory_ASSET_CATEGORY_UNSPECIFIED AssetCategory = 0
-	AssetCategory_ASSET_CATEGORY_FIAT        AssetCategory = 1 // Cash, Bank Accounts
-	AssetCategory_ASSET_CATEGORY_CRYPTO      AssetCategory = 2 // BTC, ETH, Tokens
-	AssetCategory_ASSET_CATEGORY_RARE_ASSET  AssetCategory = 3 // Watches, Cars, Art (The Concierge)
-	AssetCategory_ASSET_CATEGORY_METAL       AssetCategory = 4 // Gold, Silver
+	AssetCategory_ASSET_CATEGORY_UNSPECIFIED    AssetCategory = 0
+	AssetCategory_ASSET_CATEGORY_FIAT           AssetCategory = 1 // Cash, Bank Accounts
+	AssetCategory_ASSET_CATEGORY_CRYPTO         AssetCategory = 2 // BTC, ETH, Tokens
+	AssetCategory_ASSET_CATEGORY_RARE_ASSET     AssetCategory = 3 // Watches, Cars, Art (The Concierge)
+	AssetCategory_ASSET_CATEGORY_METAL          AssetCategory = 4 // Gold, Silver
+	AssetCategory_ASSET_CATEGORY_REAL_ESTATE    AssetCategory = 5 // Direct property holdings
+	AssetCategory_ASSET_CATEGORY_PRIVATE_EQUITY AssetCategory = 6 // Private companies, funds, SAFEs
 )
 
 // Enum value maps for AssetCategory.
@@ -41,13 +43,17 @@ var (
 		2: "ASSET_CATEGORY_CRYPTO",
 		3: "ASSET_CATEGORY_RARE_ASSET",
 		4: "ASSET_CATEGORY_METAL",
+		5: "ASSET_CATEGORY_REAL_ESTATE",
+		6: "ASSET_CATEGORY_PRIVATE_EQUITY",
 	}
 	AssetCategory_value = map[string]int32{
-		"ASSET_CATEGORY_UNSPECIFIED": 0,
-		"ASSET_CATEGORY_FIAT":        1,
-		"ASSET_CATEGORY_CRYPTO":      2,
-		"ASSET_CATEGORY_RARE_ASSET":  3,
-		"ASSET_CATEGORY_METAL":       4,
+		"ASSET_CATEGORY_UNSPECIFIED":    0,
+		"ASSET_CATEGORY_FIAT":           1,
+		"ASSET_CATEGORY_CRYPTO":         2,
+		"ASSET_CATEGORY_RARE_ASSET":     3,
+		"ASSET_CATEGORY_METAL":          4,
+		"ASSET_CATEGORY_REAL_ESTATE":    5,
+		"ASSET_CATEGORY_PRIVATE_EQUITY": 6,
 	}
 )
 
@@ -7307,13 +7313,15 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x04lots\x18\x04 \x03(\v2\x19.sttattus.vault.v1.TaxLotR\x04lots\"\x17\n" +
 	"\x15ExportUsCgtCsvRequest\"*\n" +
 	"\x16ExportUsCgtCsvResponse\x12\x10\n" +
-	"\x03csv\x18\x01 \x01(\fR\x03csv*\x9c\x01\n" +
+	"\x03csv\x18\x01 \x01(\fR\x03csv*\xdf\x01\n" +
 	"\rAssetCategory\x12\x1e\n" +
 	"\x1aASSET_CATEGORY_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13ASSET_CATEGORY_FIAT\x10\x01\x12\x19\n" +
 	"\x15ASSET_CATEGORY_CRYPTO\x10\x02\x12\x1d\n" +
 	"\x19ASSET_CATEGORY_RARE_ASSET\x10\x03\x12\x18\n" +
-	"\x14ASSET_CATEGORY_METAL\x10\x04*\x9e\x01\n" +
+	"\x14ASSET_CATEGORY_METAL\x10\x04\x12\x1e\n" +
+	"\x1aASSET_CATEGORY_REAL_ESTATE\x10\x05\x12!\n" +
+	"\x1dASSET_CATEGORY_PRIVATE_EQUITY\x10\x06*\x9e\x01\n" +
 	"\x12VerificationStatus\x12#\n" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +

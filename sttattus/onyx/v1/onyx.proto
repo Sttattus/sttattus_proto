@@ -71,20 +71,20 @@ message Subscription {
 }
 
 // REQ/RES
-message CreateOnyxProfileRequest {
+message CreateProfileRequest {
   string stage_name = 1;
   string bio = 2;
 }
 
-message CreateOnyxProfileResponse {
+message CreateProfileResponse {
   OnyxProfile profile = 1;
 }
 
-message GetOnyxProfileRequest {
+message GetProfileRequest {
   string user_id = 1;
 }
 
-message GetOnyxProfileResponse {
+message GetProfileResponse {
   OnyxProfile profile = 1;
 }
 
@@ -538,8 +538,8 @@ message ReactToContentResponse {
 
 service OnyxService {
   // Profile Management
-  rpc CreateProfile(CreateOnyxProfileRequest) returns (CreateOnyxProfileResponse);
-  rpc GetProfile(GetOnyxProfileRequest) returns (GetOnyxProfileResponse);
+  rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
+  rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
 
   // Content Delivery (Server-Side Gated)
   rpc ListContent(ListContentRequest) returns (ListContentResponse);

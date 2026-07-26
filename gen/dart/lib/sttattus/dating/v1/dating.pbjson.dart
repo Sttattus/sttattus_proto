@@ -83,6 +83,12 @@ const DatingProfile$json = {
     {'1': 'vault_rank', '3': 14, '4': 1, '5': 1, '10': 'vaultRank'},
     {'1': 'apex_rank', '3': 15, '4': 1, '5': 1, '10': 'apexRank'},
     {'1': 'forge_rank', '3': 16, '4': 1, '5': 1, '10': 'forgeRank'},
+    {'1': 'age', '3': 17, '4': 1, '5': 5, '10': 'age'},
+    {'1': 'gender', '3': 18, '4': 1, '5': 9, '10': 'gender'},
+    {'1': 'city', '3': 19, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'country_code', '3': 20, '4': 1, '5': 9, '10': 'countryCode'},
+    {'1': 'interests', '3': 21, '4': 3, '5': 9, '10': 'interests'},
+    {'1': 'birth_date', '3': 22, '4': 1, '5': 9, '10': 'birthDate'},
   ],
 };
 
@@ -98,7 +104,76 @@ final $typed_data.Uint8List datingProfileDescriptor = $convert.base64Decode(
     'NpY2FsX2RyaXZlGAsgASgFUg1waHlzaWNhbERyaXZlEiUKDnNvY2lhbF9iYXR0ZXJ5GAwgASgF'
     'Ug1zb2NpYWxCYXR0ZXJ5Eh0KCnBob3RvX3VybHMYDSADKAlSCXBob3RvVXJscxIdCgp2YXVsdF'
     '9yYW5rGA4gASgBUgl2YXVsdFJhbmsSGwoJYXBleF9yYW5rGA8gASgBUghhcGV4UmFuaxIdCgpm'
-    'b3JnZV9yYW5rGBAgASgBUglmb3JnZVJhbms=');
+    'b3JnZV9yYW5rGBAgASgBUglmb3JnZVJhbmsSEAoDYWdlGBEgASgFUgNhZ2USFgoGZ2VuZGVyGB'
+    'IgASgJUgZnZW5kZXISEgoEY2l0eRgTIAEoCVIEY2l0eRIhCgxjb3VudHJ5X2NvZGUYFCABKAlS'
+    'C2NvdW50cnlDb2RlEhwKCWludGVyZXN0cxgVIAMoCVIJaW50ZXJlc3RzEh0KCmJpcnRoX2RhdG'
+    'UYFiABKAlSCWJpcnRoRGF0ZQ==');
+
+@$core.Deprecated('Use discoveryPreferencesDescriptor instead')
+const DiscoveryPreferences$json = {
+  '1': 'DiscoveryPreferences',
+  '2': [
+    {'1': 'max_distance_miles', '3': 1, '4': 1, '5': 5, '10': 'maxDistanceMiles'},
+    {'1': 'min_age', '3': 2, '4': 1, '5': 5, '10': 'minAge'},
+    {'1': 'max_age', '3': 3, '4': 1, '5': 5, '10': 'maxAge'},
+    {'1': 'show_me', '3': 4, '4': 1, '5': 9, '10': 'showMe'},
+  ],
+};
+
+/// Descriptor for `DiscoveryPreferences`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List discoveryPreferencesDescriptor = $convert.base64Decode(
+    'ChREaXNjb3ZlcnlQcmVmZXJlbmNlcxIsChJtYXhfZGlzdGFuY2VfbWlsZXMYASABKAVSEG1heE'
+    'Rpc3RhbmNlTWlsZXMSFwoHbWluX2FnZRgCIAEoBVIGbWluQWdlEhcKB21heF9hZ2UYAyABKAVS'
+    'Bm1heEFnZRIXCgdzaG93X21lGAQgASgJUgZzaG93TWU=');
+
+@$core.Deprecated('Use getDiscoveryPreferencesRequestDescriptor instead')
+const GetDiscoveryPreferencesRequest$json = {
+  '1': 'GetDiscoveryPreferencesRequest',
+};
+
+/// Descriptor for `GetDiscoveryPreferencesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDiscoveryPreferencesRequestDescriptor = $convert.base64Decode(
+    'Ch5HZXREaXNjb3ZlcnlQcmVmZXJlbmNlc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use getDiscoveryPreferencesResponseDescriptor instead')
+const GetDiscoveryPreferencesResponse$json = {
+  '1': 'GetDiscoveryPreferencesResponse',
+  '2': [
+    {'1': 'preferences', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.DiscoveryPreferences', '10': 'preferences'},
+  ],
+};
+
+/// Descriptor for `GetDiscoveryPreferencesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDiscoveryPreferencesResponseDescriptor = $convert.base64Decode(
+    'Ch9HZXREaXNjb3ZlcnlQcmVmZXJlbmNlc1Jlc3BvbnNlEkoKC3ByZWZlcmVuY2VzGAEgASgLMi'
+    'guc3R0YXR0dXMuZGF0aW5nLnYxLkRpc2NvdmVyeVByZWZlcmVuY2VzUgtwcmVmZXJlbmNlcw==');
+
+@$core.Deprecated('Use updateDiscoveryPreferencesRequestDescriptor instead')
+const UpdateDiscoveryPreferencesRequest$json = {
+  '1': 'UpdateDiscoveryPreferencesRequest',
+  '2': [
+    {'1': 'preferences', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.DiscoveryPreferences', '10': 'preferences'},
+  ],
+};
+
+/// Descriptor for `UpdateDiscoveryPreferencesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateDiscoveryPreferencesRequestDescriptor = $convert.base64Decode(
+    'CiFVcGRhdGVEaXNjb3ZlcnlQcmVmZXJlbmNlc1JlcXVlc3QSSgoLcHJlZmVyZW5jZXMYASABKA'
+    'syKC5zdHRhdHR1cy5kYXRpbmcudjEuRGlzY292ZXJ5UHJlZmVyZW5jZXNSC3ByZWZlcmVuY2Vz');
+
+@$core.Deprecated('Use updateDiscoveryPreferencesResponseDescriptor instead')
+const UpdateDiscoveryPreferencesResponse$json = {
+  '1': 'UpdateDiscoveryPreferencesResponse',
+  '2': [
+    {'1': 'preferences', '3': 1, '4': 1, '5': 11, '6': '.sttattus.dating.v1.DiscoveryPreferences', '10': 'preferences'},
+  ],
+};
+
+/// Descriptor for `UpdateDiscoveryPreferencesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateDiscoveryPreferencesResponseDescriptor = $convert.base64Decode(
+    'CiJVcGRhdGVEaXNjb3ZlcnlQcmVmZXJlbmNlc1Jlc3BvbnNlEkoKC3ByZWZlcmVuY2VzGAEgAS'
+    'gLMiguc3R0YXR0dXMuZGF0aW5nLnYxLkRpc2NvdmVyeVByZWZlcmVuY2VzUgtwcmVmZXJlbmNl'
+    'cw==');
 
 @$core.Deprecated('Use candidateDescriptor instead')
 const Candidate$json = {
@@ -285,6 +360,27 @@ final $typed_data.Uint8List listMatchesResponseDescriptor = $convert.base64Decod
     'ChNMaXN0TWF0Y2hlc1Jlc3BvbnNlEjMKB21hdGNoZXMYASADKAsyGS5zdHRhdHR1cy5kYXRpbm'
     'cudjEuTWF0Y2hSB21hdGNoZXMSNAoEcGFnZRgCIAEoCzIgLnN0dGF0dHVzLmNvbW1vbi52MS5Q'
     'YWdlUmVzcG9uc2VSBHBhZ2U=');
+
+@$core.Deprecated('Use unmatchRequestDescriptor instead')
+const UnmatchRequest$json = {
+  '1': 'UnmatchRequest',
+  '2': [
+    {'1': 'match_id', '3': 1, '4': 1, '5': 9, '10': 'matchId'},
+  ],
+};
+
+/// Descriptor for `UnmatchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unmatchRequestDescriptor = $convert.base64Decode(
+    'Cg5Vbm1hdGNoUmVxdWVzdBIZCghtYXRjaF9pZBgBIAEoCVIHbWF0Y2hJZA==');
+
+@$core.Deprecated('Use unmatchResponseDescriptor instead')
+const UnmatchResponse$json = {
+  '1': 'UnmatchResponse',
+};
+
+/// Descriptor for `UnmatchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unmatchResponseDescriptor = $convert.base64Decode(
+    'Cg9Vbm1hdGNoUmVzcG9uc2U=');
 
 @$core.Deprecated('Use streamMessagesRequestDescriptor instead')
 const StreamMessagesRequest$json = {

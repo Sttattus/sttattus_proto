@@ -2789,8 +2789,8 @@ class StreamQueryRequest extends $pb.GeneratedMessage {
   void clearEnableSynthesis() => $_clearField(3);
 }
 
-class StreamQueryChunk extends $pb.GeneratedMessage {
-  factory StreamQueryChunk({
+class StreamQueryResponse extends $pb.GeneratedMessage {
+  factory StreamQueryResponse({
     $core.String? threadId,
     $core.String? delta,
     $core.bool? done,
@@ -2806,12 +2806,12 @@ class StreamQueryChunk extends $pb.GeneratedMessage {
     return result;
   }
 
-  StreamQueryChunk._();
+  StreamQueryResponse._();
 
-  factory StreamQueryChunk.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory StreamQueryChunk.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory StreamQueryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory StreamQueryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamQueryChunk', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamQueryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'threadId')
     ..aOS(2, _omitFieldNames ? '' : 'delta')
     ..aOB(3, _omitFieldNames ? '' : 'done')
@@ -2821,21 +2821,21 @@ class StreamQueryChunk extends $pb.GeneratedMessage {
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StreamQueryChunk clone() => StreamQueryChunk()..mergeFromMessage(this);
+  StreamQueryResponse clone() => StreamQueryResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StreamQueryChunk copyWith(void Function(StreamQueryChunk) updates) => super.copyWith((message) => updates(message as StreamQueryChunk)) as StreamQueryChunk;
+  StreamQueryResponse copyWith(void Function(StreamQueryResponse) updates) => super.copyWith((message) => updates(message as StreamQueryResponse)) as StreamQueryResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static StreamQueryChunk create() => StreamQueryChunk._();
+  static StreamQueryResponse create() => StreamQueryResponse._();
   @$core.override
-  StreamQueryChunk createEmptyInstance() => create();
-  static $pb.PbList<StreamQueryChunk> createRepeated() => $pb.PbList<StreamQueryChunk>();
+  StreamQueryResponse createEmptyInstance() => create();
+  static $pb.PbList<StreamQueryResponse> createRepeated() => $pb.PbList<StreamQueryResponse>();
   @$core.pragma('dart2js:noInline')
-  static StreamQueryChunk getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamQueryChunk>(create);
-  static StreamQueryChunk? _defaultInstance;
+  static StreamQueryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamQueryResponse>(create);
+  static StreamQueryResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get threadId => $_getSZ(0);

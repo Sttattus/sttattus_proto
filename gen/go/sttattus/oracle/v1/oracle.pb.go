@@ -2625,7 +2625,7 @@ func (x *StreamQueryRequest) GetEnableSynthesis() bool {
 	return false
 }
 
-type StreamQueryChunk struct {
+type StreamQueryResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ThreadId      string                 `protobuf:"bytes,1,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
 	Delta         string                 `protobuf:"bytes,2,opt,name=delta,proto3" json:"delta,omitempty"`
@@ -2636,20 +2636,20 @@ type StreamQueryChunk struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *StreamQueryChunk) Reset() {
-	*x = StreamQueryChunk{}
+func (x *StreamQueryResponse) Reset() {
+	*x = StreamQueryResponse{}
 	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *StreamQueryChunk) String() string {
+func (x *StreamQueryResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*StreamQueryChunk) ProtoMessage() {}
+func (*StreamQueryResponse) ProtoMessage() {}
 
-func (x *StreamQueryChunk) ProtoReflect() protoreflect.Message {
+func (x *StreamQueryResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2661,40 +2661,40 @@ func (x *StreamQueryChunk) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use StreamQueryChunk.ProtoReflect.Descriptor instead.
-func (*StreamQueryChunk) Descriptor() ([]byte, []int) {
+// Deprecated: Use StreamQueryResponse.ProtoReflect.Descriptor instead.
+func (*StreamQueryResponse) Descriptor() ([]byte, []int) {
 	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{49}
 }
 
-func (x *StreamQueryChunk) GetThreadId() string {
+func (x *StreamQueryResponse) GetThreadId() string {
 	if x != nil {
 		return x.ThreadId
 	}
 	return ""
 }
 
-func (x *StreamQueryChunk) GetDelta() string {
+func (x *StreamQueryResponse) GetDelta() string {
 	if x != nil {
 		return x.Delta
 	}
 	return ""
 }
 
-func (x *StreamQueryChunk) GetDone() bool {
+func (x *StreamQueryResponse) GetDone() bool {
 	if x != nil {
 		return x.Done
 	}
 	return false
 }
 
-func (x *StreamQueryChunk) GetMessageId() string {
+func (x *StreamQueryResponse) GetMessageId() string {
 	if x != nil {
 		return x.MessageId
 	}
 	return ""
 }
 
-func (x *StreamQueryChunk) GetErr() string {
+func (x *StreamQueryResponse) GetErr() string {
 	if x != nil {
 		return x.Err
 	}
@@ -5622,8 +5622,8 @@ const file_sttattus_oracle_v1_oracle_proto_rawDesc = "" +
 	"\x12StreamQueryRequest\x12\x1b\n" +
 	"\tthread_id\x18\x01 \x01(\tR\bthreadId\x12\x16\n" +
 	"\x06prompt\x18\x02 \x01(\tR\x06prompt\x12)\n" +
-	"\x10enable_synthesis\x18\x03 \x01(\bR\x0fenableSynthesis\"\x8a\x01\n" +
-	"\x10StreamQueryChunk\x12\x1b\n" +
+	"\x10enable_synthesis\x18\x03 \x01(\bR\x0fenableSynthesis\"\x8d\x01\n" +
+	"\x13StreamQueryResponse\x12\x1b\n" +
 	"\tthread_id\x18\x01 \x01(\tR\bthreadId\x12\x14\n" +
 	"\x05delta\x18\x02 \x01(\tR\x05delta\x12\x12\n" +
 	"\x04done\x18\x03 \x01(\bR\x04done\x12\x1d\n" +
@@ -5813,7 +5813,7 @@ const file_sttattus_oracle_v1_oracle_proto_rawDesc = "" +
 	"\x1cSTRATEGIC_DOMAIN_GEOPOLITICS\x10\x01\x12$\n" +
 	" STRATEGIC_DOMAIN_MACRO_ECONOMICS\x10\x02\x12\x1f\n" +
 	"\x1bSTRATEGIC_DOMAIN_BIO_ETHICS\x10\x03\x12(\n" +
-	"$STRATEGIC_DOMAIN_VENTURE_ENGINEERING\x10\x042\x94$\n" +
+	"$STRATEGIC_DOMAIN_VENTURE_ENGINEERING\x10\x042\x97$\n" +
 	"\rOracleService\x12L\n" +
 	"\x05Query\x12 .sttattus.oracle.v1.QueryRequest\x1a!.sttattus.oracle.v1.QueryResponse\x12y\n" +
 	"\x14GetYearInOracleRecap\x12/.sttattus.oracle.v1.GetYearInOracleRecapRequest\x1a0.sttattus.oracle.v1.GetYearInOracleRecapResponse\x12y\n" +
@@ -5843,8 +5843,8 @@ const file_sttattus_oracle_v1_oracle_proto_rawDesc = "" +
 	"\fCreateThread\x12'.sttattus.oracle.v1.CreateThreadRequest\x1a(.sttattus.oracle.v1.CreateThreadResponse\x12a\n" +
 	"\fRenameThread\x12'.sttattus.oracle.v1.RenameThreadRequest\x1a(.sttattus.oracle.v1.RenameThreadResponse\x12a\n" +
 	"\fDeleteThread\x12'.sttattus.oracle.v1.DeleteThreadRequest\x1a(.sttattus.oracle.v1.DeleteThreadResponse\x12s\n" +
-	"\x12ListThreadMessages\x12-.sttattus.oracle.v1.ListThreadMessagesRequest\x1a..sttattus.oracle.v1.ListThreadMessagesResponse\x12]\n" +
-	"\vStreamQuery\x12&.sttattus.oracle.v1.StreamQueryRequest\x1a$.sttattus.oracle.v1.StreamQueryChunk0\x01\x12y\n" +
+	"\x12ListThreadMessages\x12-.sttattus.oracle.v1.ListThreadMessagesRequest\x1a..sttattus.oracle.v1.ListThreadMessagesResponse\x12`\n" +
+	"\vStreamQuery\x12&.sttattus.oracle.v1.StreamQueryRequest\x1a'.sttattus.oracle.v1.StreamQueryResponse0\x01\x12y\n" +
 	"\x14RecordEpisodicMemory\x12/.sttattus.oracle.v1.RecordEpisodicMemoryRequest\x1a0.sttattus.oracle.v1.RecordEpisodicMemoryResponse\x12y\n" +
 	"\x14ListMyEpisodicMemory\x12/.sttattus.oracle.v1.ListMyEpisodicMemoryRequest\x1a0.sttattus.oracle.v1.ListMyEpisodicMemoryResponse\x12y\n" +
 	"\x14DeleteEpisodicMemory\x12/.sttattus.oracle.v1.DeleteEpisodicMemoryRequest\x1a0.sttattus.oracle.v1.DeleteEpisodicMemoryResponse\x12y\n" +
@@ -5924,7 +5924,7 @@ var file_sttattus_oracle_v1_oracle_proto_goTypes = []any{
 	(*ListThreadMessagesRequest)(nil),      // 47: sttattus.oracle.v1.ListThreadMessagesRequest
 	(*ListThreadMessagesResponse)(nil),     // 48: sttattus.oracle.v1.ListThreadMessagesResponse
 	(*StreamQueryRequest)(nil),             // 49: sttattus.oracle.v1.StreamQueryRequest
-	(*StreamQueryChunk)(nil),               // 50: sttattus.oracle.v1.StreamQueryChunk
+	(*StreamQueryResponse)(nil),            // 50: sttattus.oracle.v1.StreamQueryResponse
 	(*BriefingLine)(nil),                   // 51: sttattus.oracle.v1.BriefingLine
 	(*GetTodayBriefingRequest)(nil),        // 52: sttattus.oracle.v1.GetTodayBriefingRequest
 	(*GetTodayBriefingResponse)(nil),       // 53: sttattus.oracle.v1.GetTodayBriefingResponse
@@ -6097,7 +6097,7 @@ var file_sttattus_oracle_v1_oracle_proto_depIdxs = []int32{
 	44,  // 110: sttattus.oracle.v1.OracleService.RenameThread:output_type -> sttattus.oracle.v1.RenameThreadResponse
 	46,  // 111: sttattus.oracle.v1.OracleService.DeleteThread:output_type -> sttattus.oracle.v1.DeleteThreadResponse
 	48,  // 112: sttattus.oracle.v1.OracleService.ListThreadMessages:output_type -> sttattus.oracle.v1.ListThreadMessagesResponse
-	50,  // 113: sttattus.oracle.v1.OracleService.StreamQuery:output_type -> sttattus.oracle.v1.StreamQueryChunk
+	50,  // 113: sttattus.oracle.v1.OracleService.StreamQuery:output_type -> sttattus.oracle.v1.StreamQueryResponse
 	26,  // 114: sttattus.oracle.v1.OracleService.RecordEpisodicMemory:output_type -> sttattus.oracle.v1.RecordEpisodicMemoryResponse
 	28,  // 115: sttattus.oracle.v1.OracleService.ListMyEpisodicMemory:output_type -> sttattus.oracle.v1.ListMyEpisodicMemoryResponse
 	30,  // 116: sttattus.oracle.v1.OracleService.DeleteEpisodicMemory:output_type -> sttattus.oracle.v1.DeleteEpisodicMemoryResponse

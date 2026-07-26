@@ -748,9 +748,9 @@ final $typed_data.Uint8List streamQueryRequestDescriptor = $convert.base64Decode
     '9tcHQYAiABKAlSBnByb21wdBIpChBlbmFibGVfc3ludGhlc2lzGAMgASgIUg9lbmFibGVTeW50'
     'aGVzaXM=');
 
-@$core.Deprecated('Use streamQueryChunkDescriptor instead')
-const StreamQueryChunk$json = {
-  '1': 'StreamQueryChunk',
+@$core.Deprecated('Use streamQueryResponseDescriptor instead')
+const StreamQueryResponse$json = {
+  '1': 'StreamQueryResponse',
   '2': [
     {'1': 'thread_id', '3': 1, '4': 1, '5': 9, '10': 'threadId'},
     {'1': 'delta', '3': 2, '4': 1, '5': 9, '10': 'delta'},
@@ -760,11 +760,11 @@ const StreamQueryChunk$json = {
   ],
 };
 
-/// Descriptor for `StreamQueryChunk`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List streamQueryChunkDescriptor = $convert.base64Decode(
-    'ChBTdHJlYW1RdWVyeUNodW5rEhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSWQSFAoFZGVsdG'
-    'EYAiABKAlSBWRlbHRhEhIKBGRvbmUYAyABKAhSBGRvbmUSHQoKbWVzc2FnZV9pZBgEIAEoCVIJ'
-    'bWVzc2FnZUlkEhAKA2VychgFIAEoCVIDZXJy');
+/// Descriptor for `StreamQueryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List streamQueryResponseDescriptor = $convert.base64Decode(
+    'ChNTdHJlYW1RdWVyeVJlc3BvbnNlEhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSWQSFAoFZG'
+    'VsdGEYAiABKAlSBWRlbHRhEhIKBGRvbmUYAyABKAhSBGRvbmUSHQoKbWVzc2FnZV9pZBgEIAEo'
+    'CVIJbWVzc2FnZUlkEhAKA2VychgFIAEoCVIDZXJy');
 
 @$core.Deprecated('Use briefingLineDescriptor instead')
 const BriefingLine$json = {

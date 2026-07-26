@@ -392,9 +392,9 @@ export class Subscription extends Message<Subscription> {
 /**
  * REQ/RES
  *
- * @generated from message sttattus.onyx.v1.CreateOnyxProfileRequest
+ * @generated from message sttattus.onyx.v1.CreateProfileRequest
  */
-export class CreateOnyxProfileRequest extends Message<CreateOnyxProfileRequest> {
+export class CreateProfileRequest extends Message<CreateProfileRequest> {
   /**
    * @generated from field: string stage_name = 1;
    */
@@ -405,143 +405,143 @@ export class CreateOnyxProfileRequest extends Message<CreateOnyxProfileRequest> 
    */
   bio = "";
 
-  constructor(data?: PartialMessage<CreateOnyxProfileRequest>) {
+  constructor(data?: PartialMessage<CreateProfileRequest>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sttattus.onyx.v1.CreateOnyxProfileRequest";
+  static readonly typeName = "sttattus.onyx.v1.CreateProfileRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "stage_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "bio", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateOnyxProfileRequest {
-    return new CreateOnyxProfileRequest().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateProfileRequest {
+    return new CreateProfileRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateOnyxProfileRequest {
-    return new CreateOnyxProfileRequest().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateProfileRequest {
+    return new CreateProfileRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateOnyxProfileRequest {
-    return new CreateOnyxProfileRequest().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateProfileRequest {
+    return new CreateProfileRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CreateOnyxProfileRequest | PlainMessage<CreateOnyxProfileRequest> | undefined, b: CreateOnyxProfileRequest | PlainMessage<CreateOnyxProfileRequest> | undefined): boolean {
-    return proto3.util.equals(CreateOnyxProfileRequest, a, b);
+  static equals(a: CreateProfileRequest | PlainMessage<CreateProfileRequest> | undefined, b: CreateProfileRequest | PlainMessage<CreateProfileRequest> | undefined): boolean {
+    return proto3.util.equals(CreateProfileRequest, a, b);
   }
 }
 
 /**
- * @generated from message sttattus.onyx.v1.CreateOnyxProfileResponse
+ * @generated from message sttattus.onyx.v1.CreateProfileResponse
  */
-export class CreateOnyxProfileResponse extends Message<CreateOnyxProfileResponse> {
+export class CreateProfileResponse extends Message<CreateProfileResponse> {
   /**
    * @generated from field: sttattus.onyx.v1.OnyxProfile profile = 1;
    */
   profile?: OnyxProfile;
 
-  constructor(data?: PartialMessage<CreateOnyxProfileResponse>) {
+  constructor(data?: PartialMessage<CreateProfileResponse>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sttattus.onyx.v1.CreateOnyxProfileResponse";
+  static readonly typeName = "sttattus.onyx.v1.CreateProfileResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "profile", kind: "message", T: OnyxProfile },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateOnyxProfileResponse {
-    return new CreateOnyxProfileResponse().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateProfileResponse {
+    return new CreateProfileResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateOnyxProfileResponse {
-    return new CreateOnyxProfileResponse().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateProfileResponse {
+    return new CreateProfileResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateOnyxProfileResponse {
-    return new CreateOnyxProfileResponse().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateProfileResponse {
+    return new CreateProfileResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CreateOnyxProfileResponse | PlainMessage<CreateOnyxProfileResponse> | undefined, b: CreateOnyxProfileResponse | PlainMessage<CreateOnyxProfileResponse> | undefined): boolean {
-    return proto3.util.equals(CreateOnyxProfileResponse, a, b);
+  static equals(a: CreateProfileResponse | PlainMessage<CreateProfileResponse> | undefined, b: CreateProfileResponse | PlainMessage<CreateProfileResponse> | undefined): boolean {
+    return proto3.util.equals(CreateProfileResponse, a, b);
   }
 }
 
 /**
- * @generated from message sttattus.onyx.v1.GetOnyxProfileRequest
+ * @generated from message sttattus.onyx.v1.GetProfileRequest
  */
-export class GetOnyxProfileRequest extends Message<GetOnyxProfileRequest> {
+export class GetProfileRequest extends Message<GetProfileRequest> {
   /**
    * @generated from field: string user_id = 1;
    */
   userId = "";
 
-  constructor(data?: PartialMessage<GetOnyxProfileRequest>) {
+  constructor(data?: PartialMessage<GetProfileRequest>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sttattus.onyx.v1.GetOnyxProfileRequest";
+  static readonly typeName = "sttattus.onyx.v1.GetProfileRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOnyxProfileRequest {
-    return new GetOnyxProfileRequest().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetProfileRequest {
+    return new GetProfileRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOnyxProfileRequest {
-    return new GetOnyxProfileRequest().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetProfileRequest {
+    return new GetProfileRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOnyxProfileRequest {
-    return new GetOnyxProfileRequest().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetProfileRequest {
+    return new GetProfileRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetOnyxProfileRequest | PlainMessage<GetOnyxProfileRequest> | undefined, b: GetOnyxProfileRequest | PlainMessage<GetOnyxProfileRequest> | undefined): boolean {
-    return proto3.util.equals(GetOnyxProfileRequest, a, b);
+  static equals(a: GetProfileRequest | PlainMessage<GetProfileRequest> | undefined, b: GetProfileRequest | PlainMessage<GetProfileRequest> | undefined): boolean {
+    return proto3.util.equals(GetProfileRequest, a, b);
   }
 }
 
 /**
- * @generated from message sttattus.onyx.v1.GetOnyxProfileResponse
+ * @generated from message sttattus.onyx.v1.GetProfileResponse
  */
-export class GetOnyxProfileResponse extends Message<GetOnyxProfileResponse> {
+export class GetProfileResponse extends Message<GetProfileResponse> {
   /**
    * @generated from field: sttattus.onyx.v1.OnyxProfile profile = 1;
    */
   profile?: OnyxProfile;
 
-  constructor(data?: PartialMessage<GetOnyxProfileResponse>) {
+  constructor(data?: PartialMessage<GetProfileResponse>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sttattus.onyx.v1.GetOnyxProfileResponse";
+  static readonly typeName = "sttattus.onyx.v1.GetProfileResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "profile", kind: "message", T: OnyxProfile },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOnyxProfileResponse {
-    return new GetOnyxProfileResponse().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetProfileResponse {
+    return new GetProfileResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOnyxProfileResponse {
-    return new GetOnyxProfileResponse().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetProfileResponse {
+    return new GetProfileResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOnyxProfileResponse {
-    return new GetOnyxProfileResponse().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetProfileResponse {
+    return new GetProfileResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetOnyxProfileResponse | PlainMessage<GetOnyxProfileResponse> | undefined, b: GetOnyxProfileResponse | PlainMessage<GetOnyxProfileResponse> | undefined): boolean {
-    return proto3.util.equals(GetOnyxProfileResponse, a, b);
+  static equals(a: GetProfileResponse | PlainMessage<GetProfileResponse> | undefined, b: GetProfileResponse | PlainMessage<GetProfileResponse> | undefined): boolean {
+    return proto3.util.equals(GetProfileResponse, a, b);
   }
 }
 

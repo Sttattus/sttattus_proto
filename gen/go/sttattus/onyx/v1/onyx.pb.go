@@ -475,7 +475,7 @@ func (x *Subscription) GetExpiresAt() *timestamppb.Timestamp {
 }
 
 // REQ/RES
-type CreateOnyxProfileRequest struct {
+type CreateProfileRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	StageName     string                 `protobuf:"bytes,1,opt,name=stage_name,json=stageName,proto3" json:"stage_name,omitempty"`
 	Bio           string                 `protobuf:"bytes,2,opt,name=bio,proto3" json:"bio,omitempty"`
@@ -483,20 +483,20 @@ type CreateOnyxProfileRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CreateOnyxProfileRequest) Reset() {
-	*x = CreateOnyxProfileRequest{}
+func (x *CreateProfileRequest) Reset() {
+	*x = CreateProfileRequest{}
 	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CreateOnyxProfileRequest) String() string {
+func (x *CreateProfileRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateOnyxProfileRequest) ProtoMessage() {}
+func (*CreateProfileRequest) ProtoMessage() {}
 
-func (x *CreateOnyxProfileRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateProfileRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -508,46 +508,46 @@ func (x *CreateOnyxProfileRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateOnyxProfileRequest.ProtoReflect.Descriptor instead.
-func (*CreateOnyxProfileRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateProfileRequest.ProtoReflect.Descriptor instead.
+func (*CreateProfileRequest) Descriptor() ([]byte, []int) {
 	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *CreateOnyxProfileRequest) GetStageName() string {
+func (x *CreateProfileRequest) GetStageName() string {
 	if x != nil {
 		return x.StageName
 	}
 	return ""
 }
 
-func (x *CreateOnyxProfileRequest) GetBio() string {
+func (x *CreateProfileRequest) GetBio() string {
 	if x != nil {
 		return x.Bio
 	}
 	return ""
 }
 
-type CreateOnyxProfileResponse struct {
+type CreateProfileResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Profile       *OnyxProfile           `protobuf:"bytes,1,opt,name=profile,proto3" json:"profile,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CreateOnyxProfileResponse) Reset() {
-	*x = CreateOnyxProfileResponse{}
+func (x *CreateProfileResponse) Reset() {
+	*x = CreateProfileResponse{}
 	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CreateOnyxProfileResponse) String() string {
+func (x *CreateProfileResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateOnyxProfileResponse) ProtoMessage() {}
+func (*CreateProfileResponse) ProtoMessage() {}
 
-func (x *CreateOnyxProfileResponse) ProtoReflect() protoreflect.Message {
+func (x *CreateProfileResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -559,39 +559,39 @@ func (x *CreateOnyxProfileResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateOnyxProfileResponse.ProtoReflect.Descriptor instead.
-func (*CreateOnyxProfileResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateProfileResponse.ProtoReflect.Descriptor instead.
+func (*CreateProfileResponse) Descriptor() ([]byte, []int) {
 	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *CreateOnyxProfileResponse) GetProfile() *OnyxProfile {
+func (x *CreateProfileResponse) GetProfile() *OnyxProfile {
 	if x != nil {
 		return x.Profile
 	}
 	return nil
 }
 
-type GetOnyxProfileRequest struct {
+type GetProfileRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetOnyxProfileRequest) Reset() {
-	*x = GetOnyxProfileRequest{}
+func (x *GetProfileRequest) Reset() {
+	*x = GetProfileRequest{}
 	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetOnyxProfileRequest) String() string {
+func (x *GetProfileRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetOnyxProfileRequest) ProtoMessage() {}
+func (*GetProfileRequest) ProtoMessage() {}
 
-func (x *GetOnyxProfileRequest) ProtoReflect() protoreflect.Message {
+func (x *GetProfileRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -603,39 +603,39 @@ func (x *GetOnyxProfileRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetOnyxProfileRequest.ProtoReflect.Descriptor instead.
-func (*GetOnyxProfileRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetProfileRequest.ProtoReflect.Descriptor instead.
+func (*GetProfileRequest) Descriptor() ([]byte, []int) {
 	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *GetOnyxProfileRequest) GetUserId() string {
+func (x *GetProfileRequest) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
 }
 
-type GetOnyxProfileResponse struct {
+type GetProfileResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Profile       *OnyxProfile           `protobuf:"bytes,1,opt,name=profile,proto3" json:"profile,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetOnyxProfileResponse) Reset() {
-	*x = GetOnyxProfileResponse{}
+func (x *GetProfileResponse) Reset() {
+	*x = GetProfileResponse{}
 	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetOnyxProfileResponse) String() string {
+func (x *GetProfileResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetOnyxProfileResponse) ProtoMessage() {}
+func (*GetProfileResponse) ProtoMessage() {}
 
-func (x *GetOnyxProfileResponse) ProtoReflect() protoreflect.Message {
+func (x *GetProfileResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -647,12 +647,12 @@ func (x *GetOnyxProfileResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetOnyxProfileResponse.ProtoReflect.Descriptor instead.
-func (*GetOnyxProfileResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetProfileResponse.ProtoReflect.Descriptor instead.
+func (*GetProfileResponse) Descriptor() ([]byte, []int) {
 	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *GetOnyxProfileResponse) GetProfile() *OnyxProfile {
+func (x *GetProfileResponse) GetProfile() *OnyxProfile {
 	if x != nil {
 		return x.Profile
 	}
@@ -5732,16 +5732,16 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\n" +
 	"granted_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tgrantedAt\x129\n" +
 	"\n" +
-	"expires_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"K\n" +
-	"\x18CreateOnyxProfileRequest\x12\x1d\n" +
+	"expires_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"G\n" +
+	"\x14CreateProfileRequest\x12\x1d\n" +
 	"\n" +
 	"stage_name\x18\x01 \x01(\tR\tstageName\x12\x10\n" +
-	"\x03bio\x18\x02 \x01(\tR\x03bio\"T\n" +
-	"\x19CreateOnyxProfileResponse\x127\n" +
-	"\aprofile\x18\x01 \x01(\v2\x1d.sttattus.onyx.v1.OnyxProfileR\aprofile\"0\n" +
-	"\x15GetOnyxProfileRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\"Q\n" +
-	"\x16GetOnyxProfileResponse\x127\n" +
+	"\x03bio\x18\x02 \x01(\tR\x03bio\"P\n" +
+	"\x15CreateProfileResponse\x127\n" +
+	"\aprofile\x18\x01 \x01(\v2\x1d.sttattus.onyx.v1.OnyxProfileR\aprofile\",\n" +
+	"\x11GetProfileRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"M\n" +
+	"\x12GetProfileResponse\x127\n" +
 	"\aprofile\x18\x01 \x01(\v2\x1d.sttattus.onyx.v1.OnyxProfileR\aprofile\"3\n" +
 	"\x12ListContentRequest\x12\x1d\n" +
 	"\n" +
@@ -6071,11 +6071,11 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x05react\x18\x02 \x01(\bR\x05react\"Y\n" +
 	"\x16ReactToContentResponse\x12%\n" +
 	"\x0ereaction_count\x18\x01 \x01(\x05R\rreactionCount\x12\x18\n" +
-	"\areacted\x18\x02 \x01(\bR\areacted2\xb9#\n" +
-	"\vOnyxService\x12h\n" +
-	"\rCreateProfile\x12*.sttattus.onyx.v1.CreateOnyxProfileRequest\x1a+.sttattus.onyx.v1.CreateOnyxProfileResponse\x12_\n" +
+	"\areacted\x18\x02 \x01(\bR\areacted2\xa9#\n" +
+	"\vOnyxService\x12`\n" +
+	"\rCreateProfile\x12&.sttattus.onyx.v1.CreateProfileRequest\x1a'.sttattus.onyx.v1.CreateProfileResponse\x12W\n" +
 	"\n" +
-	"GetProfile\x12'.sttattus.onyx.v1.GetOnyxProfileRequest\x1a(.sttattus.onyx.v1.GetOnyxProfileResponse\x12Z\n" +
+	"GetProfile\x12#.sttattus.onyx.v1.GetProfileRequest\x1a$.sttattus.onyx.v1.GetProfileResponse\x12Z\n" +
 	"\vListContent\x12$.sttattus.onyx.v1.ListContentRequest\x1a%.sttattus.onyx.v1.ListContentResponse\x12T\n" +
 	"\tSubscribe\x12\".sttattus.onyx.v1.SubscribeRequest\x1a#.sttattus.onyx.v1.SubscribeResponse\x12W\n" +
 	"\n" +
@@ -6142,10 +6142,10 @@ var file_sttattus_onyx_v1_onyx_proto_goTypes = []any{
 	(*OnyxProfile)(nil),                        // 1: sttattus.onyx.v1.OnyxProfile
 	(*OnyxContent)(nil),                        // 2: sttattus.onyx.v1.OnyxContent
 	(*Subscription)(nil),                       // 3: sttattus.onyx.v1.Subscription
-	(*CreateOnyxProfileRequest)(nil),           // 4: sttattus.onyx.v1.CreateOnyxProfileRequest
-	(*CreateOnyxProfileResponse)(nil),          // 5: sttattus.onyx.v1.CreateOnyxProfileResponse
-	(*GetOnyxProfileRequest)(nil),              // 6: sttattus.onyx.v1.GetOnyxProfileRequest
-	(*GetOnyxProfileResponse)(nil),             // 7: sttattus.onyx.v1.GetOnyxProfileResponse
+	(*CreateProfileRequest)(nil),               // 4: sttattus.onyx.v1.CreateProfileRequest
+	(*CreateProfileResponse)(nil),              // 5: sttattus.onyx.v1.CreateProfileResponse
+	(*GetProfileRequest)(nil),                  // 6: sttattus.onyx.v1.GetProfileRequest
+	(*GetProfileResponse)(nil),                 // 7: sttattus.onyx.v1.GetProfileResponse
 	(*ListContentRequest)(nil),                 // 8: sttattus.onyx.v1.ListContentRequest
 	(*ListContentResponse)(nil),                // 9: sttattus.onyx.v1.ListContentResponse
 	(*SubscribeRequest)(nil),                   // 10: sttattus.onyx.v1.SubscribeRequest
@@ -6252,8 +6252,8 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	105, // 3: sttattus.onyx.v1.OnyxContent.expires_at:type_name -> google.protobuf.Timestamp
 	105, // 4: sttattus.onyx.v1.Subscription.granted_at:type_name -> google.protobuf.Timestamp
 	105, // 5: sttattus.onyx.v1.Subscription.expires_at:type_name -> google.protobuf.Timestamp
-	1,   // 6: sttattus.onyx.v1.CreateOnyxProfileResponse.profile:type_name -> sttattus.onyx.v1.OnyxProfile
-	1,   // 7: sttattus.onyx.v1.GetOnyxProfileResponse.profile:type_name -> sttattus.onyx.v1.OnyxProfile
+	1,   // 6: sttattus.onyx.v1.CreateProfileResponse.profile:type_name -> sttattus.onyx.v1.OnyxProfile
+	1,   // 7: sttattus.onyx.v1.GetProfileResponse.profile:type_name -> sttattus.onyx.v1.OnyxProfile
 	2,   // 8: sttattus.onyx.v1.ListContentResponse.content:type_name -> sttattus.onyx.v1.OnyxContent
 	3,   // 9: sttattus.onyx.v1.SubscribeResponse.subscription:type_name -> sttattus.onyx.v1.Subscription
 	2,   // 10: sttattus.onyx.v1.GetContentResponse.content:type_name -> sttattus.onyx.v1.OnyxContent
@@ -6300,8 +6300,8 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	90,  // 51: sttattus.onyx.v1.ListMyShareLinksResponse.links:type_name -> sttattus.onyx.v1.ShareLink
 	2,   // 52: sttattus.onyx.v1.GetOfflineManifestResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	105, // 53: sttattus.onyx.v1.GenerateAnnualArchiveResponse.generated_at:type_name -> google.protobuf.Timestamp
-	4,   // 54: sttattus.onyx.v1.OnyxService.CreateProfile:input_type -> sttattus.onyx.v1.CreateOnyxProfileRequest
-	6,   // 55: sttattus.onyx.v1.OnyxService.GetProfile:input_type -> sttattus.onyx.v1.GetOnyxProfileRequest
+	4,   // 54: sttattus.onyx.v1.OnyxService.CreateProfile:input_type -> sttattus.onyx.v1.CreateProfileRequest
+	6,   // 55: sttattus.onyx.v1.OnyxService.GetProfile:input_type -> sttattus.onyx.v1.GetProfileRequest
 	8,   // 56: sttattus.onyx.v1.OnyxService.ListContent:input_type -> sttattus.onyx.v1.ListContentRequest
 	10,  // 57: sttattus.onyx.v1.OnyxService.Subscribe:input_type -> sttattus.onyx.v1.SubscribeRequest
 	12,  // 58: sttattus.onyx.v1.OnyxService.GetContent:input_type -> sttattus.onyx.v1.GetContentRequest
@@ -6344,8 +6344,8 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	99,  // 95: sttattus.onyx.v1.OnyxService.GetYearInOnyx:input_type -> sttattus.onyx.v1.GetYearInOnyxRequest
 	101, // 96: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:input_type -> sttattus.onyx.v1.GenerateAnnualArchiveRequest
 	103, // 97: sttattus.onyx.v1.OnyxService.ReactToContent:input_type -> sttattus.onyx.v1.ReactToContentRequest
-	5,   // 98: sttattus.onyx.v1.OnyxService.CreateProfile:output_type -> sttattus.onyx.v1.CreateOnyxProfileResponse
-	7,   // 99: sttattus.onyx.v1.OnyxService.GetProfile:output_type -> sttattus.onyx.v1.GetOnyxProfileResponse
+	5,   // 98: sttattus.onyx.v1.OnyxService.CreateProfile:output_type -> sttattus.onyx.v1.CreateProfileResponse
+	7,   // 99: sttattus.onyx.v1.OnyxService.GetProfile:output_type -> sttattus.onyx.v1.GetProfileResponse
 	9,   // 100: sttattus.onyx.v1.OnyxService.ListContent:output_type -> sttattus.onyx.v1.ListContentResponse
 	11,  // 101: sttattus.onyx.v1.OnyxService.Subscribe:output_type -> sttattus.onyx.v1.SubscribeResponse
 	13,  // 102: sttattus.onyx.v1.OnyxService.GetContent:output_type -> sttattus.onyx.v1.GetContentResponse

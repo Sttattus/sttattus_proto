@@ -52,6 +52,11 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listMatches, request, options: options);
   }
 
+  /// A9 — leave a match ("Exit Bridge"). Shatters it for both parties.
+  $grpc.ResponseFuture<$0.UnmatchResponse> unmatch($0.UnmatchRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$unmatch, request, options: options);
+  }
+
   $grpc.ResponseStream<$0.StreamMessagesResponse> streamMessages($0.StreamMessagesRequest request, {$grpc.CallOptions? options,}) {
     return $createStreamingCall(_$streamMessages, $async.Stream.fromIterable([request]), options: options);
   }
@@ -190,6 +195,15 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listGiftLedger, request, options: options);
   }
 
+  /// A9P5 — Discovery preferences (distance / age range / show-me)
+  $grpc.ResponseFuture<$0.GetDiscoveryPreferencesResponse> getDiscoveryPreferences($0.GetDiscoveryPreferencesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getDiscoveryPreferences, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateDiscoveryPreferencesResponse> updateDiscoveryPreferences($0.UpdateDiscoveryPreferencesRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$updateDiscoveryPreferences, request, options: options);
+  }
+
   /// A9P2 — Missions (server-backed; replaces the local-only ObjectBox path)
   $grpc.ResponseFuture<$0.ListMissionsResponse> listMissions($0.ListMissionsRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listMissions, request, options: options);
@@ -296,6 +310,10 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/ListMatches',
       ($0.ListMatchesRequest value) => value.writeToBuffer(),
       $0.ListMatchesResponse.fromBuffer);
+  static final _$unmatch = $grpc.ClientMethod<$0.UnmatchRequest, $0.UnmatchResponse>(
+      '/sttattus.dating.v1.DatingService/Unmatch',
+      ($0.UnmatchRequest value) => value.writeToBuffer(),
+      $0.UnmatchResponse.fromBuffer);
   static final _$streamMessages = $grpc.ClientMethod<$0.StreamMessagesRequest, $0.StreamMessagesResponse>(
       '/sttattus.dating.v1.DatingService/StreamMessages',
       ($0.StreamMessagesRequest value) => value.writeToBuffer(),
@@ -432,6 +450,14 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/ListGiftLedger',
       ($0.ListGiftLedgerRequest value) => value.writeToBuffer(),
       $0.ListGiftLedgerResponse.fromBuffer);
+  static final _$getDiscoveryPreferences = $grpc.ClientMethod<$0.GetDiscoveryPreferencesRequest, $0.GetDiscoveryPreferencesResponse>(
+      '/sttattus.dating.v1.DatingService/GetDiscoveryPreferences',
+      ($0.GetDiscoveryPreferencesRequest value) => value.writeToBuffer(),
+      $0.GetDiscoveryPreferencesResponse.fromBuffer);
+  static final _$updateDiscoveryPreferences = $grpc.ClientMethod<$0.UpdateDiscoveryPreferencesRequest, $0.UpdateDiscoveryPreferencesResponse>(
+      '/sttattus.dating.v1.DatingService/UpdateDiscoveryPreferences',
+      ($0.UpdateDiscoveryPreferencesRequest value) => value.writeToBuffer(),
+      $0.UpdateDiscoveryPreferencesResponse.fromBuffer);
   static final _$listMissions = $grpc.ClientMethod<$0.ListMissionsRequest, $0.ListMissionsResponse>(
       '/sttattus.dating.v1.DatingService/ListMissions',
       ($0.ListMissionsRequest value) => value.writeToBuffer(),
@@ -550,6 +576,13 @@ abstract class DatingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListMatchesRequest.fromBuffer(value),
         ($0.ListMatchesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UnmatchRequest, $0.UnmatchResponse>(
+        'Unmatch',
+        unmatch_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UnmatchRequest.fromBuffer(value),
+        ($0.UnmatchResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.StreamMessagesRequest, $0.StreamMessagesResponse>(
         'StreamMessages',
         streamMessages_Pre,
@@ -788,6 +821,20 @@ abstract class DatingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListGiftLedgerRequest.fromBuffer(value),
         ($0.ListGiftLedgerResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDiscoveryPreferencesRequest, $0.GetDiscoveryPreferencesResponse>(
+        'GetDiscoveryPreferences',
+        getDiscoveryPreferences_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetDiscoveryPreferencesRequest.fromBuffer(value),
+        ($0.GetDiscoveryPreferencesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateDiscoveryPreferencesRequest, $0.UpdateDiscoveryPreferencesResponse>(
+        'UpdateDiscoveryPreferences',
+        updateDiscoveryPreferences_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpdateDiscoveryPreferencesRequest.fromBuffer(value),
+        ($0.UpdateDiscoveryPreferencesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListMissionsRequest, $0.ListMissionsResponse>(
         'ListMissions',
         listMissions_Pre,
@@ -952,6 +999,12 @@ abstract class DatingServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListMatchesResponse> listMatches($grpc.ServiceCall call, $0.ListMatchesRequest request);
+
+  $async.Future<$0.UnmatchResponse> unmatch_Pre($grpc.ServiceCall $call, $async.Future<$0.UnmatchRequest> $request) async {
+    return unmatch($call, await $request);
+  }
+
+  $async.Future<$0.UnmatchResponse> unmatch($grpc.ServiceCall call, $0.UnmatchRequest request);
 
   $async.Stream<$0.StreamMessagesResponse> streamMessages_Pre($grpc.ServiceCall $call, $async.Future<$0.StreamMessagesRequest> $request) async* {
     yield* streamMessages($call, await $request);
@@ -1156,6 +1209,18 @@ abstract class DatingServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListGiftLedgerResponse> listGiftLedger($grpc.ServiceCall call, $0.ListGiftLedgerRequest request);
+
+  $async.Future<$0.GetDiscoveryPreferencesResponse> getDiscoveryPreferences_Pre($grpc.ServiceCall $call, $async.Future<$0.GetDiscoveryPreferencesRequest> $request) async {
+    return getDiscoveryPreferences($call, await $request);
+  }
+
+  $async.Future<$0.GetDiscoveryPreferencesResponse> getDiscoveryPreferences($grpc.ServiceCall call, $0.GetDiscoveryPreferencesRequest request);
+
+  $async.Future<$0.UpdateDiscoveryPreferencesResponse> updateDiscoveryPreferences_Pre($grpc.ServiceCall $call, $async.Future<$0.UpdateDiscoveryPreferencesRequest> $request) async {
+    return updateDiscoveryPreferences($call, await $request);
+  }
+
+  $async.Future<$0.UpdateDiscoveryPreferencesResponse> updateDiscoveryPreferences($grpc.ServiceCall call, $0.UpdateDiscoveryPreferencesRequest request);
 
   $async.Future<$0.ListMissionsResponse> listMissions_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMissionsRequest> $request) async {
     return listMissions($call, await $request);

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AttachMediaToMessageRequest, AttachMediaToMessageResponse, BlockUserRequest, BlockUserResponse, CancelReservationRequest, CancelReservationResponse, CheckInEventRequest, CheckInEventResponse, CompleteMissionRequest, CompleteMissionResponse, CreateAgoraRoomRequest, CreateAgoraRoomResponse, CreateProfileShareRequest, CreateProfileShareResponse, CreateReservationRequest, CreateReservationResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, EndAgoraRoomRequest, EndAgoraRoomResponse, GenerateAtlasYearbookRequest, GenerateAtlasYearbookResponse, GetAtlasLetterRequest, GetAtlasLetterResponse, GetCompatibilityMatrixRequest, GetCompatibilityMatrixResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetCrossPillarGateRequest, GetCrossPillarGateResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAtlasLettersRequest, ListAtlasLettersResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListEventsRequest, ListEventsResponse, ListGiftLedgerRequest, ListGiftLedgerResponse, ListLiveRoomsRequest, ListLiveRoomsResponse, ListMatchesRequest, ListMatchesResponse, ListMatchmakerProposalsRequest, ListMatchmakerProposalsResponse, ListMessageAttachmentsRequest, ListMessageAttachmentsResponse, ListMissionsRequest, ListMissionsResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyEventRsvpsRequest, ListMyEventRsvpsResponse, ListMyProfileSharesRequest, ListMyProfileSharesResponse, ListMyReportsRequest, ListMyReportsResponse, ListMyReservationsRequest, ListMyReservationsResponse, ListRestaurantsRequest, ListRestaurantsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, MintLiveKitTokenRequest, MintLiveKitTokenResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, RespondMatchmakerProposalRequest, RespondMatchmakerProposalResponse, RevokeProfileShareRequest, RevokeProfileShareResponse, RsvpEventRequest, RsvpEventResponse, SendGiftRequest, SendGiftResponse, SendMessageRequest, SendMessageResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
+import { AttachMediaToMessageRequest, AttachMediaToMessageResponse, BlockUserRequest, BlockUserResponse, CancelReservationRequest, CancelReservationResponse, CheckInEventRequest, CheckInEventResponse, CompleteMissionRequest, CompleteMissionResponse, CreateAgoraRoomRequest, CreateAgoraRoomResponse, CreateProfileShareRequest, CreateProfileShareResponse, CreateReservationRequest, CreateReservationResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, EndAgoraRoomRequest, EndAgoraRoomResponse, GenerateAtlasYearbookRequest, GenerateAtlasYearbookResponse, GetAtlasLetterRequest, GetAtlasLetterResponse, GetCompatibilityMatrixRequest, GetCompatibilityMatrixResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetCrossPillarGateRequest, GetCrossPillarGateResponse, GetDiscoveryPreferencesRequest, GetDiscoveryPreferencesResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAtlasLettersRequest, ListAtlasLettersResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListEventsRequest, ListEventsResponse, ListGiftLedgerRequest, ListGiftLedgerResponse, ListLiveRoomsRequest, ListLiveRoomsResponse, ListMatchesRequest, ListMatchesResponse, ListMatchmakerProposalsRequest, ListMatchmakerProposalsResponse, ListMessageAttachmentsRequest, ListMessageAttachmentsResponse, ListMissionsRequest, ListMissionsResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyEventRsvpsRequest, ListMyEventRsvpsResponse, ListMyProfileSharesRequest, ListMyProfileSharesResponse, ListMyReportsRequest, ListMyReportsResponse, ListMyReservationsRequest, ListMyReservationsResponse, ListRestaurantsRequest, ListRestaurantsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, MintLiveKitTokenRequest, MintLiveKitTokenResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, ReportUserRequest, ReportUserResponse, RespondMatchmakerProposalRequest, RespondMatchmakerProposalResponse, RevokeProfileShareRequest, RevokeProfileShareResponse, RsvpEventRequest, RsvpEventResponse, SendGiftRequest, SendGiftResponse, SendMessageRequest, SendMessageResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UnmatchRequest, UnmatchResponse, UpdateDiscoveryPreferencesRequest, UpdateDiscoveryPreferencesResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -55,6 +55,17 @@ export const DatingService = {
       name: "ListMatches",
       I: ListMatchesRequest,
       O: ListMatchesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9 — leave a match ("Exit Bridge"). Shatters it for both parties.
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.Unmatch
+     */
+    unmatch: {
+      name: "Unmatch",
+      I: UnmatchRequest,
+      O: UnmatchResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -365,6 +376,26 @@ export const DatingService = {
       name: "ListGiftLedger",
       I: ListGiftLedgerRequest,
       O: ListGiftLedgerResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * A9P5 — Discovery preferences (distance / age range / show-me)
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.GetDiscoveryPreferences
+     */
+    getDiscoveryPreferences: {
+      name: "GetDiscoveryPreferences",
+      I: GetDiscoveryPreferencesRequest,
+      O: GetDiscoveryPreferencesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.UpdateDiscoveryPreferences
+     */
+    updateDiscoveryPreferences: {
+      name: "UpdateDiscoveryPreferences",
+      I: UpdateDiscoveryPreferencesRequest,
+      O: UpdateDiscoveryPreferencesResponse,
       kind: MethodKind.Unary,
     },
     /**

@@ -513,8 +513,8 @@ message CognitiveTest {
 }
 message SubmitCognitiveTestRequest {
   double attention_score = 1; // 0..100
-  double memory_score = 2;    // 0..100
-  double reaction_ms = 3;     // lower = better
+  double memory_score = 2; // 0..100
+  double reaction_ms = 3; // lower = better
 }
 message SubmitCognitiveTestResponse {
   CognitiveTest test = 1;
@@ -539,7 +539,7 @@ message Ritual {
   string title = 3;
   string trigger = 4; // pre_meeting | post_meeting | stress | pre_sleep | standalone
   int32 duration_seconds = 5;
-  string steps = 6;   // newline-separated
+  string steps = 6; // newline-separated
   string summary = 7;
 }
 message ListRitualsRequest {

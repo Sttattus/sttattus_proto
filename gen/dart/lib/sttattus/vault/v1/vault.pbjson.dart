@@ -23,6 +23,8 @@ const AssetCategory$json = {
     {'1': 'ASSET_CATEGORY_CRYPTO', '2': 2},
     {'1': 'ASSET_CATEGORY_RARE_ASSET', '2': 3},
     {'1': 'ASSET_CATEGORY_METAL', '2': 4},
+    {'1': 'ASSET_CATEGORY_REAL_ESTATE', '2': 5},
+    {'1': 'ASSET_CATEGORY_PRIVATE_EQUITY', '2': 6},
   ],
 };
 
@@ -30,7 +32,9 @@ const AssetCategory$json = {
 final $typed_data.Uint8List assetCategoryDescriptor = $convert.base64Decode(
     'Cg1Bc3NldENhdGVnb3J5Eh4KGkFTU0VUX0NBVEVHT1JZX1VOU1BFQ0lGSUVEEAASFwoTQVNTRV'
     'RfQ0FURUdPUllfRklBVBABEhkKFUFTU0VUX0NBVEVHT1JZX0NSWVBUTxACEh0KGUFTU0VUX0NB'
-    'VEVHT1JZX1JBUkVfQVNTRVQQAxIYChRBU1NFVF9DQVRFR09SWV9NRVRBTBAE');
+    'VEVHT1JZX1JBUkVfQVNTRVQQAxIYChRBU1NFVF9DQVRFR09SWV9NRVRBTBAEEh4KGkFTU0VUX0'
+    'NBVEVHT1JZX1JFQUxfRVNUQVRFEAUSIQodQVNTRVRfQ0FURUdPUllfUFJJVkFURV9FUVVJVFkQ'
+    'Bg==');
 
 @$core.Deprecated('Use verificationStatusDescriptor instead')
 const VerificationStatus$json = {

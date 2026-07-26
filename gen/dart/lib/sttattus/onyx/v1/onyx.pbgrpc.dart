@@ -33,11 +33,11 @@ class OnyxServiceClient extends $grpc.Client {
   OnyxServiceClient(super.channel, {super.options, super.interceptors});
 
   /// Profile Management
-  $grpc.ResponseFuture<$0.CreateOnyxProfileResponse> createProfile($0.CreateOnyxProfileRequest request, {$grpc.CallOptions? options,}) {
+  $grpc.ResponseFuture<$0.CreateProfileResponse> createProfile($0.CreateProfileRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$createProfile, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GetOnyxProfileResponse> getProfile($0.GetOnyxProfileRequest request, {$grpc.CallOptions? options,}) {
+  $grpc.ResponseFuture<$0.GetProfileResponse> getProfile($0.GetProfileRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$getProfile, request, options: options);
   }
 
@@ -229,14 +229,14 @@ class OnyxServiceClient extends $grpc.Client {
 
     // method descriptors
 
-  static final _$createProfile = $grpc.ClientMethod<$0.CreateOnyxProfileRequest, $0.CreateOnyxProfileResponse>(
+  static final _$createProfile = $grpc.ClientMethod<$0.CreateProfileRequest, $0.CreateProfileResponse>(
       '/sttattus.onyx.v1.OnyxService/CreateProfile',
-      ($0.CreateOnyxProfileRequest value) => value.writeToBuffer(),
-      $0.CreateOnyxProfileResponse.fromBuffer);
-  static final _$getProfile = $grpc.ClientMethod<$0.GetOnyxProfileRequest, $0.GetOnyxProfileResponse>(
+      ($0.CreateProfileRequest value) => value.writeToBuffer(),
+      $0.CreateProfileResponse.fromBuffer);
+  static final _$getProfile = $grpc.ClientMethod<$0.GetProfileRequest, $0.GetProfileResponse>(
       '/sttattus.onyx.v1.OnyxService/GetProfile',
-      ($0.GetOnyxProfileRequest value) => value.writeToBuffer(),
-      $0.GetOnyxProfileResponse.fromBuffer);
+      ($0.GetProfileRequest value) => value.writeToBuffer(),
+      $0.GetProfileResponse.fromBuffer);
   static final _$listContent = $grpc.ClientMethod<$0.ListContentRequest, $0.ListContentResponse>(
       '/sttattus.onyx.v1.OnyxService/ListContent',
       ($0.ListContentRequest value) => value.writeToBuffer(),
@@ -412,20 +412,20 @@ abstract class OnyxServiceBase extends $grpc.Service {
   $core.String get $name => 'sttattus.onyx.v1.OnyxService';
 
   OnyxServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.CreateOnyxProfileRequest, $0.CreateOnyxProfileResponse>(
+    $addMethod($grpc.ServiceMethod<$0.CreateProfileRequest, $0.CreateProfileResponse>(
         'CreateProfile',
         createProfile_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.CreateOnyxProfileRequest.fromBuffer(value),
-        ($0.CreateOnyxProfileResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetOnyxProfileRequest, $0.GetOnyxProfileResponse>(
+        ($core.List<$core.int> value) => $0.CreateProfileRequest.fromBuffer(value),
+        ($0.CreateProfileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetProfileRequest, $0.GetProfileResponse>(
         'GetProfile',
         getProfile_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetOnyxProfileRequest.fromBuffer(value),
-        ($0.GetOnyxProfileResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $0.GetProfileRequest.fromBuffer(value),
+        ($0.GetProfileResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListContentRequest, $0.ListContentResponse>(
         'ListContent',
         listContent_Pre,
@@ -722,17 +722,17 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($0.ReactToContentResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.CreateOnyxProfileResponse> createProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateOnyxProfileRequest> $request) async {
+  $async.Future<$0.CreateProfileResponse> createProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateProfileRequest> $request) async {
     return createProfile($call, await $request);
   }
 
-  $async.Future<$0.CreateOnyxProfileResponse> createProfile($grpc.ServiceCall call, $0.CreateOnyxProfileRequest request);
+  $async.Future<$0.CreateProfileResponse> createProfile($grpc.ServiceCall call, $0.CreateProfileRequest request);
 
-  $async.Future<$0.GetOnyxProfileResponse> getProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetOnyxProfileRequest> $request) async {
+  $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call, $async.Future<$0.GetProfileRequest> $request) async {
     return getProfile($call, await $request);
   }
 
-  $async.Future<$0.GetOnyxProfileResponse> getProfile($grpc.ServiceCall call, $0.GetOnyxProfileRequest request);
+  $async.Future<$0.GetProfileResponse> getProfile($grpc.ServiceCall call, $0.GetProfileRequest request);
 
   $async.Future<$0.ListContentResponse> listContent_Pre($grpc.ServiceCall $call, $async.Future<$0.ListContentRequest> $request) async {
     return listContent($call, await $request);

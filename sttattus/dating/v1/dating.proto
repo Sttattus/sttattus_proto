@@ -44,6 +44,39 @@ message DatingProfile {
   double vault_rank = 14;
   double apex_rank = 15;
   double forge_rank = 16;
+
+  // --- Demographics (A9P5) ---
+  // Derived from birth_date server-side; ignored on UpdateProfile.
+  int32 age = 17;
+  // 'man' | 'woman' | 'nonbinary' | 'other'. Empty when unset.
+  string gender = 18;
+  string city = 19;
+  string country_code = 20;
+  repeated string interests = 21;
+  // ISO-8601 date (YYYY-MM-DD). Writable; `age` is computed from it.
+  string birth_date = 22;
+}
+
+// Discovery preferences (A9P5). Backs the Settings distance/age/show-me
+// controls and filters StreamDiscovery candidates.
+message DiscoveryPreferences {
+  int32 max_distance_miles = 1;
+  int32 min_age = 2;
+  int32 max_age = 3;
+  // 'everyone' | 'men' | 'women' | 'nonbinary'
+  string show_me = 4;
+}
+
+message GetDiscoveryPreferencesRequest {}
+message GetDiscoveryPreferencesResponse {
+  DiscoveryPreferences preferences = 1;
+}
+
+message UpdateDiscoveryPreferencesRequest {
+  DiscoveryPreferences preferences = 1;
+}
+message UpdateDiscoveryPreferencesResponse {
+  DiscoveryPreferences preferences = 1;
 }
 
 message Candidate {
@@ -105,6 +138,11 @@ message ListMatchesResponse {
   repeated Match matches = 1;
   sttattus.common.v1.PageResponse page = 2;
 }
+
+message UnmatchRequest {
+  string match_id = 1;
+}
+message UnmatchResponse {}
 
 message StreamMessagesRequest {
   string match_id = 1;
@@ -734,7 +772,7 @@ message CheckInEventResponse {
 // === Cross-pillar gate explainer (A9 §3 honest gating) ===
 
 message CrossPillarGate {
-  string pillar = 1;       // vault | apex | forge
+  string pillar = 1; // vault | apex | forge
   double current_score = 2;
   double required_score = 3;
   bool met = 4;
@@ -753,6 +791,8 @@ service DatingService {
   rpc StreamDiscovery(StreamDiscoveryRequest) returns (stream StreamDiscoveryResponse);
   rpc Swipe(SwipeRequest) returns (SwipeResponse);
   rpc ListMatches(ListMatchesRequest) returns (ListMatchesResponse);
+  // A9 — leave a match ("Exit Bridge"). Shatters it for both parties.
+  rpc Unmatch(UnmatchRequest) returns (UnmatchResponse);
   rpc StreamMessages(StreamMessagesRequest) returns (stream StreamMessagesResponse);
   rpc SendMessage(SendMessageRequest) returns (SendMessageResponse);
   rpc StartVerification(StartVerificationRequest) returns (StartVerificationResponse);
@@ -799,6 +839,10 @@ service DatingService {
   // A9P3 — Gift Ledger
   rpc SendGift(SendGiftRequest) returns (SendGiftResponse);
   rpc ListGiftLedger(ListGiftLedgerRequest) returns (ListGiftLedgerResponse);
+
+  // A9P5 — Discovery preferences (distance / age range / show-me)
+  rpc GetDiscoveryPreferences(GetDiscoveryPreferencesRequest) returns (GetDiscoveryPreferencesResponse);
+  rpc UpdateDiscoveryPreferences(UpdateDiscoveryPreferencesRequest) returns (UpdateDiscoveryPreferencesResponse);
 
   // A9P2 — Missions (server-backed; replaces the local-only ObjectBox path)
   rpc ListMissions(ListMissionsRequest) returns (ListMissionsResponse);

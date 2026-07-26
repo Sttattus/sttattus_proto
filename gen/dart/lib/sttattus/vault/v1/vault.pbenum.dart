@@ -21,6 +21,8 @@ class AssetCategory extends $pb.ProtobufEnum {
   static const AssetCategory ASSET_CATEGORY_CRYPTO = AssetCategory._(2, _omitEnumNames ? '' : 'ASSET_CATEGORY_CRYPTO');
   static const AssetCategory ASSET_CATEGORY_RARE_ASSET = AssetCategory._(3, _omitEnumNames ? '' : 'ASSET_CATEGORY_RARE_ASSET');
   static const AssetCategory ASSET_CATEGORY_METAL = AssetCategory._(4, _omitEnumNames ? '' : 'ASSET_CATEGORY_METAL');
+  static const AssetCategory ASSET_CATEGORY_REAL_ESTATE = AssetCategory._(5, _omitEnumNames ? '' : 'ASSET_CATEGORY_REAL_ESTATE');
+  static const AssetCategory ASSET_CATEGORY_PRIVATE_EQUITY = AssetCategory._(6, _omitEnumNames ? '' : 'ASSET_CATEGORY_PRIVATE_EQUITY');
 
   static const $core.List<AssetCategory> values = <AssetCategory> [
     ASSET_CATEGORY_UNSPECIFIED,
@@ -28,9 +30,11 @@ class AssetCategory extends $pb.ProtobufEnum {
     ASSET_CATEGORY_CRYPTO,
     ASSET_CATEGORY_RARE_ASSET,
     ASSET_CATEGORY_METAL,
+    ASSET_CATEGORY_REAL_ESTATE,
+    ASSET_CATEGORY_PRIVATE_EQUITY,
   ];
 
-  static final $core.List<AssetCategory?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 4);
+  static final $core.List<AssetCategory?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 6);
   static AssetCategory? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
   const AssetCategory._(super.value, super.name);

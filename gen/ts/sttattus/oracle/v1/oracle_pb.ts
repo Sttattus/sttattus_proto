@@ -2205,9 +2205,9 @@ export class StreamQueryRequest extends Message<StreamQueryRequest> {
 }
 
 /**
- * @generated from message sttattus.oracle.v1.StreamQueryChunk
+ * @generated from message sttattus.oracle.v1.StreamQueryResponse
  */
-export class StreamQueryChunk extends Message<StreamQueryChunk> {
+export class StreamQueryResponse extends Message<StreamQueryResponse> {
   /**
    * @generated from field: string thread_id = 1;
    */
@@ -2233,13 +2233,13 @@ export class StreamQueryChunk extends Message<StreamQueryChunk> {
    */
   err = "";
 
-  constructor(data?: PartialMessage<StreamQueryChunk>) {
+  constructor(data?: PartialMessage<StreamQueryResponse>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "sttattus.oracle.v1.StreamQueryChunk";
+  static readonly typeName = "sttattus.oracle.v1.StreamQueryResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "thread_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "delta", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -2248,20 +2248,20 @@ export class StreamQueryChunk extends Message<StreamQueryChunk> {
     { no: 5, name: "err", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StreamQueryChunk {
-    return new StreamQueryChunk().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StreamQueryResponse {
+    return new StreamQueryResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StreamQueryChunk {
-    return new StreamQueryChunk().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StreamQueryResponse {
+    return new StreamQueryResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StreamQueryChunk {
-    return new StreamQueryChunk().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StreamQueryResponse {
+    return new StreamQueryResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: StreamQueryChunk | PlainMessage<StreamQueryChunk> | undefined, b: StreamQueryChunk | PlainMessage<StreamQueryChunk> | undefined): boolean {
-    return proto3.util.equals(StreamQueryChunk, a, b);
+  static equals(a: StreamQueryResponse | PlainMessage<StreamQueryResponse> | undefined, b: StreamQueryResponse | PlainMessage<StreamQueryResponse> | undefined): boolean {
+    return proto3.util.equals(StreamQueryResponse, a, b);
   }
 }
 

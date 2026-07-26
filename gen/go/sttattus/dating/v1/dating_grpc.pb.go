@@ -19,64 +19,67 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	DatingService_GetProfile_FullMethodName                = "/sttattus.dating.v1.DatingService/GetProfile"
-	DatingService_UpdateProfile_FullMethodName             = "/sttattus.dating.v1.DatingService/UpdateProfile"
-	DatingService_StreamDiscovery_FullMethodName           = "/sttattus.dating.v1.DatingService/StreamDiscovery"
-	DatingService_Swipe_FullMethodName                     = "/sttattus.dating.v1.DatingService/Swipe"
-	DatingService_ListMatches_FullMethodName               = "/sttattus.dating.v1.DatingService/ListMatches"
-	DatingService_StreamMessages_FullMethodName            = "/sttattus.dating.v1.DatingService/StreamMessages"
-	DatingService_SendMessage_FullMethodName               = "/sttattus.dating.v1.DatingService/SendMessage"
-	DatingService_StartVerification_FullMethodName         = "/sttattus.dating.v1.DatingService/StartVerification"
-	DatingService_GetLatestVerification_FullMethodName     = "/sttattus.dating.v1.DatingService/GetLatestVerification"
-	DatingService_ListTensionSeats_FullMethodName          = "/sttattus.dating.v1.DatingService/ListTensionSeats"
-	DatingService_PlaceTensionBid_FullMethodName           = "/sttattus.dating.v1.DatingService/PlaceTensionBid"
-	DatingService_ReleaseTensionSeat_FullMethodName        = "/sttattus.dating.v1.DatingService/ReleaseTensionSeat"
-	DatingService_ListAuthorAkashic_FullMethodName         = "/sttattus.dating.v1.DatingService/ListAuthorAkashic"
-	DatingService_ListVisibleAkashic_FullMethodName        = "/sttattus.dating.v1.DatingService/ListVisibleAkashic"
-	DatingService_UpsertAkashicChapter_FullMethodName      = "/sttattus.dating.v1.DatingService/UpsertAkashicChapter"
-	DatingService_DeleteAkashicChapter_FullMethodName      = "/sttattus.dating.v1.DatingService/DeleteAkashicChapter"
-	DatingService_ListMyBlocks_FullMethodName              = "/sttattus.dating.v1.DatingService/ListMyBlocks"
-	DatingService_BlockUser_FullMethodName                 = "/sttattus.dating.v1.DatingService/BlockUser"
-	DatingService_UnblockUser_FullMethodName               = "/sttattus.dating.v1.DatingService/UnblockUser"
-	DatingService_ListMyReports_FullMethodName             = "/sttattus.dating.v1.DatingService/ListMyReports"
-	DatingService_ReportUser_FullMethodName                = "/sttattus.dating.v1.DatingService/ReportUser"
-	DatingService_GetPanicContact_FullMethodName           = "/sttattus.dating.v1.DatingService/GetPanicContact"
-	DatingService_UpsertPanicContact_FullMethodName        = "/sttattus.dating.v1.DatingService/UpsertPanicContact"
-	DatingService_GetPrivacyAxes_FullMethodName            = "/sttattus.dating.v1.DatingService/GetPrivacyAxes"
-	DatingService_UpsertPrivacyAxes_FullMethodName         = "/sttattus.dating.v1.DatingService/UpsertPrivacyAxes"
-	DatingService_ListAtlasMapPoints_FullMethodName        = "/sttattus.dating.v1.DatingService/ListAtlasMapPoints"
-	DatingService_ListLiveRooms_FullMethodName             = "/sttattus.dating.v1.DatingService/ListLiveRooms"
-	DatingService_CreateAgoraRoom_FullMethodName           = "/sttattus.dating.v1.DatingService/CreateAgoraRoom"
-	DatingService_EndAgoraRoom_FullMethodName              = "/sttattus.dating.v1.DatingService/EndAgoraRoom"
-	DatingService_MintLiveKitToken_FullMethodName          = "/sttattus.dating.v1.DatingService/MintLiveKitToken"
-	DatingService_AttachMediaToMessage_FullMethodName      = "/sttattus.dating.v1.DatingService/AttachMediaToMessage"
-	DatingService_ListMessageAttachments_FullMethodName    = "/sttattus.dating.v1.DatingService/ListMessageAttachments"
-	DatingService_ListRestaurants_FullMethodName           = "/sttattus.dating.v1.DatingService/ListRestaurants"
-	DatingService_CreateReservation_FullMethodName         = "/sttattus.dating.v1.DatingService/CreateReservation"
-	DatingService_ListMyReservations_FullMethodName        = "/sttattus.dating.v1.DatingService/ListMyReservations"
-	DatingService_CancelReservation_FullMethodName         = "/sttattus.dating.v1.DatingService/CancelReservation"
-	DatingService_GetCompatibilityMatrix_FullMethodName    = "/sttattus.dating.v1.DatingService/GetCompatibilityMatrix"
-	DatingService_SendGift_FullMethodName                  = "/sttattus.dating.v1.DatingService/SendGift"
-	DatingService_ListGiftLedger_FullMethodName            = "/sttattus.dating.v1.DatingService/ListGiftLedger"
-	DatingService_ListMissions_FullMethodName              = "/sttattus.dating.v1.DatingService/ListMissions"
-	DatingService_CompleteMission_FullMethodName           = "/sttattus.dating.v1.DatingService/CompleteMission"
-	DatingService_StartConciergeThread_FullMethodName      = "/sttattus.dating.v1.DatingService/StartConciergeThread"
-	DatingService_ListMyConciergeThreads_FullMethodName    = "/sttattus.dating.v1.DatingService/ListMyConciergeThreads"
-	DatingService_GetConciergeThread_FullMethodName        = "/sttattus.dating.v1.DatingService/GetConciergeThread"
-	DatingService_PostConciergeMessage_FullMethodName      = "/sttattus.dating.v1.DatingService/PostConciergeMessage"
-	DatingService_ListMatchmakerProposals_FullMethodName   = "/sttattus.dating.v1.DatingService/ListMatchmakerProposals"
-	DatingService_RespondMatchmakerProposal_FullMethodName = "/sttattus.dating.v1.DatingService/RespondMatchmakerProposal"
-	DatingService_ListAtlasLetters_FullMethodName          = "/sttattus.dating.v1.DatingService/ListAtlasLetters"
-	DatingService_GetAtlasLetter_FullMethodName            = "/sttattus.dating.v1.DatingService/GetAtlasLetter"
-	DatingService_ListEvents_FullMethodName                = "/sttattus.dating.v1.DatingService/ListEvents"
-	DatingService_RsvpEvent_FullMethodName                 = "/sttattus.dating.v1.DatingService/RsvpEvent"
-	DatingService_ListMyEventRsvps_FullMethodName          = "/sttattus.dating.v1.DatingService/ListMyEventRsvps"
-	DatingService_GetCrossPillarGate_FullMethodName        = "/sttattus.dating.v1.DatingService/GetCrossPillarGate"
-	DatingService_CreateProfileShare_FullMethodName        = "/sttattus.dating.v1.DatingService/CreateProfileShare"
-	DatingService_ListMyProfileShares_FullMethodName       = "/sttattus.dating.v1.DatingService/ListMyProfileShares"
-	DatingService_RevokeProfileShare_FullMethodName        = "/sttattus.dating.v1.DatingService/RevokeProfileShare"
-	DatingService_GenerateAtlasYearbook_FullMethodName     = "/sttattus.dating.v1.DatingService/GenerateAtlasYearbook"
-	DatingService_CheckInEvent_FullMethodName              = "/sttattus.dating.v1.DatingService/CheckInEvent"
+	DatingService_GetProfile_FullMethodName                 = "/sttattus.dating.v1.DatingService/GetProfile"
+	DatingService_UpdateProfile_FullMethodName              = "/sttattus.dating.v1.DatingService/UpdateProfile"
+	DatingService_StreamDiscovery_FullMethodName            = "/sttattus.dating.v1.DatingService/StreamDiscovery"
+	DatingService_Swipe_FullMethodName                      = "/sttattus.dating.v1.DatingService/Swipe"
+	DatingService_ListMatches_FullMethodName                = "/sttattus.dating.v1.DatingService/ListMatches"
+	DatingService_Unmatch_FullMethodName                    = "/sttattus.dating.v1.DatingService/Unmatch"
+	DatingService_StreamMessages_FullMethodName             = "/sttattus.dating.v1.DatingService/StreamMessages"
+	DatingService_SendMessage_FullMethodName                = "/sttattus.dating.v1.DatingService/SendMessage"
+	DatingService_StartVerification_FullMethodName          = "/sttattus.dating.v1.DatingService/StartVerification"
+	DatingService_GetLatestVerification_FullMethodName      = "/sttattus.dating.v1.DatingService/GetLatestVerification"
+	DatingService_ListTensionSeats_FullMethodName           = "/sttattus.dating.v1.DatingService/ListTensionSeats"
+	DatingService_PlaceTensionBid_FullMethodName            = "/sttattus.dating.v1.DatingService/PlaceTensionBid"
+	DatingService_ReleaseTensionSeat_FullMethodName         = "/sttattus.dating.v1.DatingService/ReleaseTensionSeat"
+	DatingService_ListAuthorAkashic_FullMethodName          = "/sttattus.dating.v1.DatingService/ListAuthorAkashic"
+	DatingService_ListVisibleAkashic_FullMethodName         = "/sttattus.dating.v1.DatingService/ListVisibleAkashic"
+	DatingService_UpsertAkashicChapter_FullMethodName       = "/sttattus.dating.v1.DatingService/UpsertAkashicChapter"
+	DatingService_DeleteAkashicChapter_FullMethodName       = "/sttattus.dating.v1.DatingService/DeleteAkashicChapter"
+	DatingService_ListMyBlocks_FullMethodName               = "/sttattus.dating.v1.DatingService/ListMyBlocks"
+	DatingService_BlockUser_FullMethodName                  = "/sttattus.dating.v1.DatingService/BlockUser"
+	DatingService_UnblockUser_FullMethodName                = "/sttattus.dating.v1.DatingService/UnblockUser"
+	DatingService_ListMyReports_FullMethodName              = "/sttattus.dating.v1.DatingService/ListMyReports"
+	DatingService_ReportUser_FullMethodName                 = "/sttattus.dating.v1.DatingService/ReportUser"
+	DatingService_GetPanicContact_FullMethodName            = "/sttattus.dating.v1.DatingService/GetPanicContact"
+	DatingService_UpsertPanicContact_FullMethodName         = "/sttattus.dating.v1.DatingService/UpsertPanicContact"
+	DatingService_GetPrivacyAxes_FullMethodName             = "/sttattus.dating.v1.DatingService/GetPrivacyAxes"
+	DatingService_UpsertPrivacyAxes_FullMethodName          = "/sttattus.dating.v1.DatingService/UpsertPrivacyAxes"
+	DatingService_ListAtlasMapPoints_FullMethodName         = "/sttattus.dating.v1.DatingService/ListAtlasMapPoints"
+	DatingService_ListLiveRooms_FullMethodName              = "/sttattus.dating.v1.DatingService/ListLiveRooms"
+	DatingService_CreateAgoraRoom_FullMethodName            = "/sttattus.dating.v1.DatingService/CreateAgoraRoom"
+	DatingService_EndAgoraRoom_FullMethodName               = "/sttattus.dating.v1.DatingService/EndAgoraRoom"
+	DatingService_MintLiveKitToken_FullMethodName           = "/sttattus.dating.v1.DatingService/MintLiveKitToken"
+	DatingService_AttachMediaToMessage_FullMethodName       = "/sttattus.dating.v1.DatingService/AttachMediaToMessage"
+	DatingService_ListMessageAttachments_FullMethodName     = "/sttattus.dating.v1.DatingService/ListMessageAttachments"
+	DatingService_ListRestaurants_FullMethodName            = "/sttattus.dating.v1.DatingService/ListRestaurants"
+	DatingService_CreateReservation_FullMethodName          = "/sttattus.dating.v1.DatingService/CreateReservation"
+	DatingService_ListMyReservations_FullMethodName         = "/sttattus.dating.v1.DatingService/ListMyReservations"
+	DatingService_CancelReservation_FullMethodName          = "/sttattus.dating.v1.DatingService/CancelReservation"
+	DatingService_GetCompatibilityMatrix_FullMethodName     = "/sttattus.dating.v1.DatingService/GetCompatibilityMatrix"
+	DatingService_SendGift_FullMethodName                   = "/sttattus.dating.v1.DatingService/SendGift"
+	DatingService_ListGiftLedger_FullMethodName             = "/sttattus.dating.v1.DatingService/ListGiftLedger"
+	DatingService_GetDiscoveryPreferences_FullMethodName    = "/sttattus.dating.v1.DatingService/GetDiscoveryPreferences"
+	DatingService_UpdateDiscoveryPreferences_FullMethodName = "/sttattus.dating.v1.DatingService/UpdateDiscoveryPreferences"
+	DatingService_ListMissions_FullMethodName               = "/sttattus.dating.v1.DatingService/ListMissions"
+	DatingService_CompleteMission_FullMethodName            = "/sttattus.dating.v1.DatingService/CompleteMission"
+	DatingService_StartConciergeThread_FullMethodName       = "/sttattus.dating.v1.DatingService/StartConciergeThread"
+	DatingService_ListMyConciergeThreads_FullMethodName     = "/sttattus.dating.v1.DatingService/ListMyConciergeThreads"
+	DatingService_GetConciergeThread_FullMethodName         = "/sttattus.dating.v1.DatingService/GetConciergeThread"
+	DatingService_PostConciergeMessage_FullMethodName       = "/sttattus.dating.v1.DatingService/PostConciergeMessage"
+	DatingService_ListMatchmakerProposals_FullMethodName    = "/sttattus.dating.v1.DatingService/ListMatchmakerProposals"
+	DatingService_RespondMatchmakerProposal_FullMethodName  = "/sttattus.dating.v1.DatingService/RespondMatchmakerProposal"
+	DatingService_ListAtlasLetters_FullMethodName           = "/sttattus.dating.v1.DatingService/ListAtlasLetters"
+	DatingService_GetAtlasLetter_FullMethodName             = "/sttattus.dating.v1.DatingService/GetAtlasLetter"
+	DatingService_ListEvents_FullMethodName                 = "/sttattus.dating.v1.DatingService/ListEvents"
+	DatingService_RsvpEvent_FullMethodName                  = "/sttattus.dating.v1.DatingService/RsvpEvent"
+	DatingService_ListMyEventRsvps_FullMethodName           = "/sttattus.dating.v1.DatingService/ListMyEventRsvps"
+	DatingService_GetCrossPillarGate_FullMethodName         = "/sttattus.dating.v1.DatingService/GetCrossPillarGate"
+	DatingService_CreateProfileShare_FullMethodName         = "/sttattus.dating.v1.DatingService/CreateProfileShare"
+	DatingService_ListMyProfileShares_FullMethodName        = "/sttattus.dating.v1.DatingService/ListMyProfileShares"
+	DatingService_RevokeProfileShare_FullMethodName         = "/sttattus.dating.v1.DatingService/RevokeProfileShare"
+	DatingService_GenerateAtlasYearbook_FullMethodName      = "/sttattus.dating.v1.DatingService/GenerateAtlasYearbook"
+	DatingService_CheckInEvent_FullMethodName               = "/sttattus.dating.v1.DatingService/CheckInEvent"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -88,6 +91,8 @@ type DatingServiceClient interface {
 	StreamDiscovery(ctx context.Context, in *StreamDiscoveryRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamDiscoveryResponse], error)
 	Swipe(ctx context.Context, in *SwipeRequest, opts ...grpc.CallOption) (*SwipeResponse, error)
 	ListMatches(ctx context.Context, in *ListMatchesRequest, opts ...grpc.CallOption) (*ListMatchesResponse, error)
+	// A9 — leave a match ("Exit Bridge"). Shatters it for both parties.
+	Unmatch(ctx context.Context, in *UnmatchRequest, opts ...grpc.CallOption) (*UnmatchResponse, error)
 	StreamMessages(ctx context.Context, in *StreamMessagesRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamMessagesResponse], error)
 	SendMessage(ctx context.Context, in *SendMessageRequest, opts ...grpc.CallOption) (*SendMessageResponse, error)
 	StartVerification(ctx context.Context, in *StartVerificationRequest, opts ...grpc.CallOption) (*StartVerificationResponse, error)
@@ -124,6 +129,9 @@ type DatingServiceClient interface {
 	// A9P3 — Gift Ledger
 	SendGift(ctx context.Context, in *SendGiftRequest, opts ...grpc.CallOption) (*SendGiftResponse, error)
 	ListGiftLedger(ctx context.Context, in *ListGiftLedgerRequest, opts ...grpc.CallOption) (*ListGiftLedgerResponse, error)
+	// A9P5 — Discovery preferences (distance / age range / show-me)
+	GetDiscoveryPreferences(ctx context.Context, in *GetDiscoveryPreferencesRequest, opts ...grpc.CallOption) (*GetDiscoveryPreferencesResponse, error)
+	UpdateDiscoveryPreferences(ctx context.Context, in *UpdateDiscoveryPreferencesRequest, opts ...grpc.CallOption) (*UpdateDiscoveryPreferencesResponse, error)
 	// A9P2 — Missions (server-backed; replaces the local-only ObjectBox path)
 	ListMissions(ctx context.Context, in *ListMissionsRequest, opts ...grpc.CallOption) (*ListMissionsResponse, error)
 	CompleteMission(ctx context.Context, in *CompleteMissionRequest, opts ...grpc.CallOption) (*CompleteMissionResponse, error)
@@ -214,6 +222,16 @@ func (c *datingServiceClient) ListMatches(ctx context.Context, in *ListMatchesRe
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListMatchesResponse)
 	err := c.cc.Invoke(ctx, DatingService_ListMatches_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) Unmatch(ctx context.Context, in *UnmatchRequest, opts ...grpc.CallOption) (*UnmatchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UnmatchResponse)
+	err := c.cc.Invoke(ctx, DatingService_Unmatch_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -569,6 +587,26 @@ func (c *datingServiceClient) ListGiftLedger(ctx context.Context, in *ListGiftLe
 	return out, nil
 }
 
+func (c *datingServiceClient) GetDiscoveryPreferences(ctx context.Context, in *GetDiscoveryPreferencesRequest, opts ...grpc.CallOption) (*GetDiscoveryPreferencesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDiscoveryPreferencesResponse)
+	err := c.cc.Invoke(ctx, DatingService_GetDiscoveryPreferences_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) UpdateDiscoveryPreferences(ctx context.Context, in *UpdateDiscoveryPreferencesRequest, opts ...grpc.CallOption) (*UpdateDiscoveryPreferencesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateDiscoveryPreferencesResponse)
+	err := c.cc.Invoke(ctx, DatingService_UpdateDiscoveryPreferences_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *datingServiceClient) ListMissions(ctx context.Context, in *ListMissionsRequest, opts ...grpc.CallOption) (*ListMissionsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListMissionsResponse)
@@ -768,6 +806,8 @@ type DatingServiceServer interface {
 	StreamDiscovery(*StreamDiscoveryRequest, grpc.ServerStreamingServer[StreamDiscoveryResponse]) error
 	Swipe(context.Context, *SwipeRequest) (*SwipeResponse, error)
 	ListMatches(context.Context, *ListMatchesRequest) (*ListMatchesResponse, error)
+	// A9 — leave a match ("Exit Bridge"). Shatters it for both parties.
+	Unmatch(context.Context, *UnmatchRequest) (*UnmatchResponse, error)
 	StreamMessages(*StreamMessagesRequest, grpc.ServerStreamingServer[StreamMessagesResponse]) error
 	SendMessage(context.Context, *SendMessageRequest) (*SendMessageResponse, error)
 	StartVerification(context.Context, *StartVerificationRequest) (*StartVerificationResponse, error)
@@ -804,6 +844,9 @@ type DatingServiceServer interface {
 	// A9P3 — Gift Ledger
 	SendGift(context.Context, *SendGiftRequest) (*SendGiftResponse, error)
 	ListGiftLedger(context.Context, *ListGiftLedgerRequest) (*ListGiftLedgerResponse, error)
+	// A9P5 — Discovery preferences (distance / age range / show-me)
+	GetDiscoveryPreferences(context.Context, *GetDiscoveryPreferencesRequest) (*GetDiscoveryPreferencesResponse, error)
+	UpdateDiscoveryPreferences(context.Context, *UpdateDiscoveryPreferencesRequest) (*UpdateDiscoveryPreferencesResponse, error)
 	// A9P2 — Missions (server-backed; replaces the local-only ObjectBox path)
 	ListMissions(context.Context, *ListMissionsRequest) (*ListMissionsResponse, error)
 	CompleteMission(context.Context, *CompleteMissionRequest) (*CompleteMissionResponse, error)
@@ -855,6 +898,9 @@ func (UnimplementedDatingServiceServer) Swipe(context.Context, *SwipeRequest) (*
 }
 func (UnimplementedDatingServiceServer) ListMatches(context.Context, *ListMatchesRequest) (*ListMatchesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMatches not implemented")
+}
+func (UnimplementedDatingServiceServer) Unmatch(context.Context, *UnmatchRequest) (*UnmatchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method Unmatch not implemented")
 }
 func (UnimplementedDatingServiceServer) StreamMessages(*StreamMessagesRequest, grpc.ServerStreamingServer[StreamMessagesResponse]) error {
 	return status.Error(codes.Unimplemented, "method StreamMessages not implemented")
@@ -957,6 +1003,12 @@ func (UnimplementedDatingServiceServer) SendGift(context.Context, *SendGiftReque
 }
 func (UnimplementedDatingServiceServer) ListGiftLedger(context.Context, *ListGiftLedgerRequest) (*ListGiftLedgerResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListGiftLedger not implemented")
+}
+func (UnimplementedDatingServiceServer) GetDiscoveryPreferences(context.Context, *GetDiscoveryPreferencesRequest) (*GetDiscoveryPreferencesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDiscoveryPreferences not implemented")
+}
+func (UnimplementedDatingServiceServer) UpdateDiscoveryPreferences(context.Context, *UpdateDiscoveryPreferencesRequest) (*UpdateDiscoveryPreferencesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateDiscoveryPreferences not implemented")
 }
 func (UnimplementedDatingServiceServer) ListMissions(context.Context, *ListMissionsRequest) (*ListMissionsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMissions not implemented")
@@ -1115,6 +1167,24 @@ func _DatingService_ListMatches_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DatingServiceServer).ListMatches(ctx, req.(*ListMatchesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_Unmatch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnmatchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).Unmatch(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_Unmatch_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).Unmatch(ctx, req.(*UnmatchRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1724,6 +1794,42 @@ func _DatingService_ListGiftLedger_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_GetDiscoveryPreferences_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDiscoveryPreferencesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).GetDiscoveryPreferences(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_GetDiscoveryPreferences_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).GetDiscoveryPreferences(ctx, req.(*GetDiscoveryPreferencesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_UpdateDiscoveryPreferences_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateDiscoveryPreferencesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).UpdateDiscoveryPreferences(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_UpdateDiscoveryPreferences_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).UpdateDiscoveryPreferences(ctx, req.(*UpdateDiscoveryPreferencesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _DatingService_ListMissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListMissionsRequest)
 	if err := dec(in); err != nil {
@@ -2090,6 +2196,10 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DatingService_ListMatches_Handler,
 		},
 		{
+			MethodName: "Unmatch",
+			Handler:    _DatingService_Unmatch_Handler,
+		},
+		{
 			MethodName: "SendMessage",
 			Handler:    _DatingService_SendMessage_Handler,
 		},
@@ -2220,6 +2330,14 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListGiftLedger",
 			Handler:    _DatingService_ListGiftLedger_Handler,
+		},
+		{
+			MethodName: "GetDiscoveryPreferences",
+			Handler:    _DatingService_GetDiscoveryPreferences_Handler,
+		},
+		{
+			MethodName: "UpdateDiscoveryPreferences",
+			Handler:    _DatingService_UpdateDiscoveryPreferences_Handler,
 		},
 		{
 			MethodName: "ListMissions",

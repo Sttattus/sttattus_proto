@@ -13,6 +13,8 @@ enum AssetCategory {
   ASSET_CATEGORY_CRYPTO = 2; // BTC, ETH, Tokens
   ASSET_CATEGORY_RARE_ASSET = 3; // Watches, Cars, Art (The Concierge)
   ASSET_CATEGORY_METAL = 4; // Gold, Silver
+  ASSET_CATEGORY_REAL_ESTATE = 5; // Direct property holdings
+  ASSET_CATEGORY_PRIVATE_EQUITY = 6; // Private companies, funds, SAFEs
 }
 
 // VerificationStatus tracks the manual verification lifecycle for Rare Assets.
@@ -206,8 +208,8 @@ message GetYearInVaultRequest {}
 message GetYearInVaultResponse {
   double starting_net_worth_usd = 1;
   double ending_net_worth_usd = 2;
-  double change_usd = 3;          // signed
-  double change_pct = 4;          // signed
+  double change_usd = 3; // signed
+  double change_pct = 4; // signed
   double starting_rank = 5;
   double ending_rank = 6;
   repeated YearMover top_movers = 7;
@@ -219,10 +221,10 @@ message GetYearInVaultResponse {
 // === Liquidity stress test (V8P4.3) ===
 
 message LiquiditySource {
-  string band = 1;        // 'T+0' | 'T+30' | 'illiquid'
-  string label = 2;       // human description
+  string band = 1; // 'T+0' | 'T+30' | 'illiquid'
+  string label = 2; // human description
   double available_usd = 3;
-  double drawn_usd = 4;   // how much this test pulls from the band
+  double drawn_usd = 4; // how much this test pulls from the band
 }
 
 message GetLiquidityStressTestRequest {
@@ -241,16 +243,16 @@ message InvestmentCircle {
   string id = 1;
   string slug = 2;
   string name = 3;
-  string sector = 4;          // 'venture' | 'real_estate' | 'art' | 'private_credit' | ...
-  string stage = 5;           // 'seed' | 'growth' | 'pre_ipo' | ...
-  string thesis = 6;          // short editorial rationale
-  string partner = 7;         // partner platform name
+  string sector = 4; // 'venture' | 'real_estate' | 'art' | 'private_credit' | ...
+  string stage = 5; // 'seed' | 'growth' | 'pre_ipo' | ...
+  string thesis = 6; // short editorial rationale
+  string partner = 7; // partner platform name
   double min_ticket_usd = 8;
   // Cross-pillar gate, evaluated server-side.
   double required_sttattus_score = 9;
-  string required_tier = 10;  // '' | 'gold' | 'platinum' | 'sovereign'
-  bool unlocked = 11;         // true when the caller meets the gate
-  string locked_reason = 12;  // human copy when locked
+  string required_tier = 10; // '' | 'gold' | 'platinum' | 'sovereign'
+  bool unlocked = 11; // true when the caller meets the gate
+  string locked_reason = 12; // human copy when locked
   // Full deal room — only populated when unlocked.
   string deal_room_markdown = 13;
   string hero_image_url = 14;
@@ -263,8 +265,12 @@ message ListInvestmentCirclesResponse {
   string current_tier = 3;
 }
 
-message GetInvestmentCircleRequest { string id = 1; }
-message GetInvestmentCircleResponse { InvestmentCircle circle = 1; }
+message GetInvestmentCircleRequest {
+  string id = 1;
+}
+message GetInvestmentCircleResponse {
+  InvestmentCircle circle = 1;
+}
 
 message ExpressCircleInterestRequest {
   string circle_id = 1;
@@ -298,19 +304,29 @@ message StartAdvisorThreadRequest {
   string subject = 1;
   string opening_message = 2;
 }
-message StartAdvisorThreadResponse { AdvisorThread thread = 1; }
+message StartAdvisorThreadResponse {
+  AdvisorThread thread = 1;
+}
 
 message ListAdvisorThreadsRequest {}
-message ListAdvisorThreadsResponse { repeated AdvisorThread threads = 1; }
+message ListAdvisorThreadsResponse {
+  repeated AdvisorThread threads = 1;
+}
 
-message GetAdvisorThreadRequest { string id = 1; }
-message GetAdvisorThreadResponse { AdvisorThread thread = 1; }
+message GetAdvisorThreadRequest {
+  string id = 1;
+}
+message GetAdvisorThreadResponse {
+  AdvisorThread thread = 1;
+}
 
 message PostAdvisorMessageRequest {
   string thread_id = 1;
   string body = 2;
 }
-message PostAdvisorMessageResponse { AdvisorMessage message = 1; }
+message PostAdvisorMessageResponse {
+  AdvisorMessage message = 1;
+}
 
 // === Wealth Anthology (V8P3.3) ===
 
@@ -323,23 +339,29 @@ message WealthArticle {
   string author_title = 6;
   string author_avatar_url = 7;
   string hero_image_url = 8;
-  string body_markdown = 9;  // empty in list responses
+  string body_markdown = 9; // empty in list responses
   bool sovereign_only = 10;
   google.protobuf.Timestamp published_at = 11;
 }
 
 message ListWealthAnthologyRequest {}
-message ListWealthAnthologyResponse { repeated WealthArticle articles = 1; }
+message ListWealthAnthologyResponse {
+  repeated WealthArticle articles = 1;
+}
 
-message GetWealthArticleRequest { string id = 1; }
-message GetWealthArticleResponse { WealthArticle article = 1; }
+message GetWealthArticleRequest {
+  string id = 1;
+}
+message GetWealthArticleResponse {
+  WealthArticle article = 1;
+}
 
 // === Partner banks (V8P3.5) ===
 
 message PartnerBank {
   string id = 1;
   string name = 2;
-  string region = 3;       // ISO-3166 alpha-2 or region code
+  string region = 3; // ISO-3166 alpha-2 or region code
   string specialty = 4;
   double min_relationship_usd = 5;
   bool sovereign_only = 6;
@@ -350,7 +372,9 @@ message PartnerBank {
 message ListPartnerBanksRequest {
   string region = 1; // empty = all
 }
-message ListPartnerBanksResponse { repeated PartnerBank banks = 1; }
+message ListPartnerBanksResponse {
+  repeated PartnerBank banks = 1;
+}
 
 // === Verified-wealth share (V8P3.6) ===
 
@@ -365,12 +389,18 @@ message VaultShare {
 message CreateVaultShareRequest {
   int32 ttl_days = 1; // 0 = default 14
 }
-message CreateVaultShareResponse { VaultShare share = 1; }
+message CreateVaultShareResponse {
+  VaultShare share = 1;
+}
 
 message ListMyVaultSharesRequest {}
-message ListMyVaultSharesResponse { repeated VaultShare shares = 1; }
+message ListMyVaultSharesResponse {
+  repeated VaultShare shares = 1;
+}
 
-message RevokeVaultShareRequest { string token = 1; }
+message RevokeVaultShareRequest {
+  string token = 1;
+}
 message RevokeVaultShareResponse {}
 
 message SyncWealthRequest {

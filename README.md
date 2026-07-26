@@ -36,7 +36,7 @@ proto/
 | Language   | Consumer       | Mechanism                                                                |
 | ---------- | -------------- | ------------------------------------------------------------------------ |
 | Go         | `backend_go/`  | `replace github.com/sttattus/proto => ../proto` in `go.mod`              |
-| TypeScript | `admin/`, `website/` | `"@sttattus/proto-ts": "file:../proto/gen/ts"` in `package.json`   |
+| TypeScript | `admin/` | `"@sttattus/proto-ts": "file:../proto/gen/ts"` in `package.json`   |
 | Dart       | `apps/*/`      | `sttattus_proto: { path: ../../proto/gen/dart }` in each `pubspec.yaml`  |
 
 ## Prerequisites

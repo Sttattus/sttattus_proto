@@ -417,7 +417,7 @@ message DirectoryPartner {
   bool sovereign_only = 11;
 }
 message ListDirectoryRequest {
-  string kind = 1;        // empty => all
+  string kind = 1; // empty => all
   string region_code = 2; // empty => all
 }
 message ListDirectoryResponse {

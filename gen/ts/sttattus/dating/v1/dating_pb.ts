@@ -210,6 +210,43 @@ export class DatingProfile extends Message$1<DatingProfile> {
    */
   forgeRank = 0;
 
+  /**
+   * --- Demographics (A9P5) ---
+   * Derived from birth_date server-side; ignored on UpdateProfile.
+   *
+   * @generated from field: int32 age = 17;
+   */
+  age = 0;
+
+  /**
+   * 'man' | 'woman' | 'nonbinary' | 'other'. Empty when unset.
+   *
+   * @generated from field: string gender = 18;
+   */
+  gender = "";
+
+  /**
+   * @generated from field: string city = 19;
+   */
+  city = "";
+
+  /**
+   * @generated from field: string country_code = 20;
+   */
+  countryCode = "";
+
+  /**
+   * @generated from field: repeated string interests = 21;
+   */
+  interests: string[] = [];
+
+  /**
+   * ISO-8601 date (YYYY-MM-DD). Writable; `age` is computed from it.
+   *
+   * @generated from field: string birth_date = 22;
+   */
+  birthDate = "";
+
   constructor(data?: PartialMessage<DatingProfile>) {
     super();
     proto3.util.initPartial(data, this);
@@ -234,6 +271,12 @@ export class DatingProfile extends Message$1<DatingProfile> {
     { no: 14, name: "vault_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 15, name: "apex_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 16, name: "forge_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 17, name: "age", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 18, name: "gender", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 20, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 21, name: "interests", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 22, name: "birth_date", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DatingProfile {
@@ -250,6 +293,208 @@ export class DatingProfile extends Message$1<DatingProfile> {
 
   static equals(a: DatingProfile | PlainMessage<DatingProfile> | undefined, b: DatingProfile | PlainMessage<DatingProfile> | undefined): boolean {
     return proto3.util.equals(DatingProfile, a, b);
+  }
+}
+
+/**
+ * Discovery preferences (A9P5). Backs the Settings distance/age/show-me
+ * controls and filters StreamDiscovery candidates.
+ *
+ * @generated from message sttattus.dating.v1.DiscoveryPreferences
+ */
+export class DiscoveryPreferences extends Message$1<DiscoveryPreferences> {
+  /**
+   * @generated from field: int32 max_distance_miles = 1;
+   */
+  maxDistanceMiles = 0;
+
+  /**
+   * @generated from field: int32 min_age = 2;
+   */
+  minAge = 0;
+
+  /**
+   * @generated from field: int32 max_age = 3;
+   */
+  maxAge = 0;
+
+  /**
+   * 'everyone' | 'men' | 'women' | 'nonbinary'
+   *
+   * @generated from field: string show_me = 4;
+   */
+  showMe = "";
+
+  constructor(data?: PartialMessage<DiscoveryPreferences>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.DiscoveryPreferences";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "max_distance_miles", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "min_age", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "max_age", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "show_me", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DiscoveryPreferences {
+    return new DiscoveryPreferences().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DiscoveryPreferences {
+    return new DiscoveryPreferences().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DiscoveryPreferences {
+    return new DiscoveryPreferences().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DiscoveryPreferences | PlainMessage<DiscoveryPreferences> | undefined, b: DiscoveryPreferences | PlainMessage<DiscoveryPreferences> | undefined): boolean {
+    return proto3.util.equals(DiscoveryPreferences, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetDiscoveryPreferencesRequest
+ */
+export class GetDiscoveryPreferencesRequest extends Message$1<GetDiscoveryPreferencesRequest> {
+  constructor(data?: PartialMessage<GetDiscoveryPreferencesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetDiscoveryPreferencesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDiscoveryPreferencesRequest {
+    return new GetDiscoveryPreferencesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDiscoveryPreferencesRequest {
+    return new GetDiscoveryPreferencesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDiscoveryPreferencesRequest {
+    return new GetDiscoveryPreferencesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDiscoveryPreferencesRequest | PlainMessage<GetDiscoveryPreferencesRequest> | undefined, b: GetDiscoveryPreferencesRequest | PlainMessage<GetDiscoveryPreferencesRequest> | undefined): boolean {
+    return proto3.util.equals(GetDiscoveryPreferencesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetDiscoveryPreferencesResponse
+ */
+export class GetDiscoveryPreferencesResponse extends Message$1<GetDiscoveryPreferencesResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.DiscoveryPreferences preferences = 1;
+   */
+  preferences?: DiscoveryPreferences;
+
+  constructor(data?: PartialMessage<GetDiscoveryPreferencesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetDiscoveryPreferencesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preferences", kind: "message", T: DiscoveryPreferences },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDiscoveryPreferencesResponse {
+    return new GetDiscoveryPreferencesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDiscoveryPreferencesResponse {
+    return new GetDiscoveryPreferencesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDiscoveryPreferencesResponse {
+    return new GetDiscoveryPreferencesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDiscoveryPreferencesResponse | PlainMessage<GetDiscoveryPreferencesResponse> | undefined, b: GetDiscoveryPreferencesResponse | PlainMessage<GetDiscoveryPreferencesResponse> | undefined): boolean {
+    return proto3.util.equals(GetDiscoveryPreferencesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.UpdateDiscoveryPreferencesRequest
+ */
+export class UpdateDiscoveryPreferencesRequest extends Message$1<UpdateDiscoveryPreferencesRequest> {
+  /**
+   * @generated from field: sttattus.dating.v1.DiscoveryPreferences preferences = 1;
+   */
+  preferences?: DiscoveryPreferences;
+
+  constructor(data?: PartialMessage<UpdateDiscoveryPreferencesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.UpdateDiscoveryPreferencesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preferences", kind: "message", T: DiscoveryPreferences },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateDiscoveryPreferencesRequest {
+    return new UpdateDiscoveryPreferencesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateDiscoveryPreferencesRequest {
+    return new UpdateDiscoveryPreferencesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateDiscoveryPreferencesRequest {
+    return new UpdateDiscoveryPreferencesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateDiscoveryPreferencesRequest | PlainMessage<UpdateDiscoveryPreferencesRequest> | undefined, b: UpdateDiscoveryPreferencesRequest | PlainMessage<UpdateDiscoveryPreferencesRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateDiscoveryPreferencesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.UpdateDiscoveryPreferencesResponse
+ */
+export class UpdateDiscoveryPreferencesResponse extends Message$1<UpdateDiscoveryPreferencesResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.DiscoveryPreferences preferences = 1;
+   */
+  preferences?: DiscoveryPreferences;
+
+  constructor(data?: PartialMessage<UpdateDiscoveryPreferencesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.UpdateDiscoveryPreferencesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preferences", kind: "message", T: DiscoveryPreferences },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateDiscoveryPreferencesResponse {
+    return new UpdateDiscoveryPreferencesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateDiscoveryPreferencesResponse {
+    return new UpdateDiscoveryPreferencesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateDiscoveryPreferencesResponse {
+    return new UpdateDiscoveryPreferencesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateDiscoveryPreferencesResponse | PlainMessage<UpdateDiscoveryPreferencesResponse> | undefined, b: UpdateDiscoveryPreferencesResponse | PlainMessage<UpdateDiscoveryPreferencesResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateDiscoveryPreferencesResponse, a, b);
   }
 }
 
@@ -815,6 +1060,74 @@ export class ListMatchesResponse extends Message$1<ListMatchesResponse> {
 
   static equals(a: ListMatchesResponse | PlainMessage<ListMatchesResponse> | undefined, b: ListMatchesResponse | PlainMessage<ListMatchesResponse> | undefined): boolean {
     return proto3.util.equals(ListMatchesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.UnmatchRequest
+ */
+export class UnmatchRequest extends Message$1<UnmatchRequest> {
+  /**
+   * @generated from field: string match_id = 1;
+   */
+  matchId = "";
+
+  constructor(data?: PartialMessage<UnmatchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.UnmatchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "match_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnmatchRequest {
+    return new UnmatchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnmatchRequest {
+    return new UnmatchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnmatchRequest {
+    return new UnmatchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UnmatchRequest | PlainMessage<UnmatchRequest> | undefined, b: UnmatchRequest | PlainMessage<UnmatchRequest> | undefined): boolean {
+    return proto3.util.equals(UnmatchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.UnmatchResponse
+ */
+export class UnmatchResponse extends Message$1<UnmatchResponse> {
+  constructor(data?: PartialMessage<UnmatchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.UnmatchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnmatchResponse {
+    return new UnmatchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnmatchResponse {
+    return new UnmatchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnmatchResponse {
+    return new UnmatchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UnmatchResponse | PlainMessage<UnmatchResponse> | undefined, b: UnmatchResponse | PlainMessage<UnmatchResponse> | undefined): boolean {
+    return proto3.util.equals(UnmatchResponse, a, b);
   }
 }
 

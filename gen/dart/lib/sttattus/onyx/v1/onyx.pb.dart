@@ -623,8 +623,8 @@ class Subscription extends $pb.GeneratedMessage {
 }
 
 /// REQ/RES
-class CreateOnyxProfileRequest extends $pb.GeneratedMessage {
-  factory CreateOnyxProfileRequest({
+class CreateProfileRequest extends $pb.GeneratedMessage {
+  factory CreateProfileRequest({
     $core.String? stageName,
     $core.String? bio,
   }) {
@@ -634,33 +634,33 @@ class CreateOnyxProfileRequest extends $pb.GeneratedMessage {
     return result;
   }
 
-  CreateOnyxProfileRequest._();
+  CreateProfileRequest._();
 
-  factory CreateOnyxProfileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory CreateOnyxProfileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CreateProfileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateProfileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateOnyxProfileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateProfileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'stageName')
     ..aOS(2, _omitFieldNames ? '' : 'bio')
     ..hasRequiredFields = false
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateOnyxProfileRequest clone() => CreateOnyxProfileRequest()..mergeFromMessage(this);
+  CreateProfileRequest clone() => CreateProfileRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateOnyxProfileRequest copyWith(void Function(CreateOnyxProfileRequest) updates) => super.copyWith((message) => updates(message as CreateOnyxProfileRequest)) as CreateOnyxProfileRequest;
+  CreateProfileRequest copyWith(void Function(CreateProfileRequest) updates) => super.copyWith((message) => updates(message as CreateProfileRequest)) as CreateProfileRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static CreateOnyxProfileRequest create() => CreateOnyxProfileRequest._();
+  static CreateProfileRequest create() => CreateProfileRequest._();
   @$core.override
-  CreateOnyxProfileRequest createEmptyInstance() => create();
-  static $pb.PbList<CreateOnyxProfileRequest> createRepeated() => $pb.PbList<CreateOnyxProfileRequest>();
+  CreateProfileRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateProfileRequest> createRepeated() => $pb.PbList<CreateProfileRequest>();
   @$core.pragma('dart2js:noInline')
-  static CreateOnyxProfileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateOnyxProfileRequest>(create);
-  static CreateOnyxProfileRequest? _defaultInstance;
+  static CreateProfileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateProfileRequest>(create);
+  static CreateProfileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get stageName => $_getSZ(0);
@@ -681,8 +681,8 @@ class CreateOnyxProfileRequest extends $pb.GeneratedMessage {
   void clearBio() => $_clearField(2);
 }
 
-class CreateOnyxProfileResponse extends $pb.GeneratedMessage {
-  factory CreateOnyxProfileResponse({
+class CreateProfileResponse extends $pb.GeneratedMessage {
+  factory CreateProfileResponse({
     OnyxProfile? profile,
   }) {
     final result = create();
@@ -690,32 +690,32 @@ class CreateOnyxProfileResponse extends $pb.GeneratedMessage {
     return result;
   }
 
-  CreateOnyxProfileResponse._();
+  CreateProfileResponse._();
 
-  factory CreateOnyxProfileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory CreateOnyxProfileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CreateProfileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateProfileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateOnyxProfileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateProfileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
     ..aOM<OnyxProfile>(1, _omitFieldNames ? '' : 'profile', subBuilder: OnyxProfile.create)
     ..hasRequiredFields = false
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateOnyxProfileResponse clone() => CreateOnyxProfileResponse()..mergeFromMessage(this);
+  CreateProfileResponse clone() => CreateProfileResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateOnyxProfileResponse copyWith(void Function(CreateOnyxProfileResponse) updates) => super.copyWith((message) => updates(message as CreateOnyxProfileResponse)) as CreateOnyxProfileResponse;
+  CreateProfileResponse copyWith(void Function(CreateProfileResponse) updates) => super.copyWith((message) => updates(message as CreateProfileResponse)) as CreateProfileResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static CreateOnyxProfileResponse create() => CreateOnyxProfileResponse._();
+  static CreateProfileResponse create() => CreateProfileResponse._();
   @$core.override
-  CreateOnyxProfileResponse createEmptyInstance() => create();
-  static $pb.PbList<CreateOnyxProfileResponse> createRepeated() => $pb.PbList<CreateOnyxProfileResponse>();
+  CreateProfileResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateProfileResponse> createRepeated() => $pb.PbList<CreateProfileResponse>();
   @$core.pragma('dart2js:noInline')
-  static CreateOnyxProfileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateOnyxProfileResponse>(create);
-  static CreateOnyxProfileResponse? _defaultInstance;
+  static CreateProfileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateProfileResponse>(create);
+  static CreateProfileResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   OnyxProfile get profile => $_getN(0);
@@ -729,8 +729,8 @@ class CreateOnyxProfileResponse extends $pb.GeneratedMessage {
   OnyxProfile ensureProfile() => $_ensure(0);
 }
 
-class GetOnyxProfileRequest extends $pb.GeneratedMessage {
-  factory GetOnyxProfileRequest({
+class GetProfileRequest extends $pb.GeneratedMessage {
+  factory GetProfileRequest({
     $core.String? userId,
   }) {
     final result = create();
@@ -738,32 +738,32 @@ class GetOnyxProfileRequest extends $pb.GeneratedMessage {
     return result;
   }
 
-  GetOnyxProfileRequest._();
+  GetProfileRequest._();
 
-  factory GetOnyxProfileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetOnyxProfileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetProfileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetProfileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOnyxProfileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetProfileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
     ..hasRequiredFields = false
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetOnyxProfileRequest clone() => GetOnyxProfileRequest()..mergeFromMessage(this);
+  GetProfileRequest clone() => GetProfileRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetOnyxProfileRequest copyWith(void Function(GetOnyxProfileRequest) updates) => super.copyWith((message) => updates(message as GetOnyxProfileRequest)) as GetOnyxProfileRequest;
+  GetProfileRequest copyWith(void Function(GetProfileRequest) updates) => super.copyWith((message) => updates(message as GetProfileRequest)) as GetProfileRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetOnyxProfileRequest create() => GetOnyxProfileRequest._();
+  static GetProfileRequest create() => GetProfileRequest._();
   @$core.override
-  GetOnyxProfileRequest createEmptyInstance() => create();
-  static $pb.PbList<GetOnyxProfileRequest> createRepeated() => $pb.PbList<GetOnyxProfileRequest>();
+  GetProfileRequest createEmptyInstance() => create();
+  static $pb.PbList<GetProfileRequest> createRepeated() => $pb.PbList<GetProfileRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetOnyxProfileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetOnyxProfileRequest>(create);
-  static GetOnyxProfileRequest? _defaultInstance;
+  static GetProfileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetProfileRequest>(create);
+  static GetProfileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get userId => $_getSZ(0);
@@ -775,8 +775,8 @@ class GetOnyxProfileRequest extends $pb.GeneratedMessage {
   void clearUserId() => $_clearField(1);
 }
 
-class GetOnyxProfileResponse extends $pb.GeneratedMessage {
-  factory GetOnyxProfileResponse({
+class GetProfileResponse extends $pb.GeneratedMessage {
+  factory GetProfileResponse({
     OnyxProfile? profile,
   }) {
     final result = create();
@@ -784,32 +784,32 @@ class GetOnyxProfileResponse extends $pb.GeneratedMessage {
     return result;
   }
 
-  GetOnyxProfileResponse._();
+  GetProfileResponse._();
 
-  factory GetOnyxProfileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetOnyxProfileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetProfileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetProfileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOnyxProfileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetProfileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
     ..aOM<OnyxProfile>(1, _omitFieldNames ? '' : 'profile', subBuilder: OnyxProfile.create)
     ..hasRequiredFields = false
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetOnyxProfileResponse clone() => GetOnyxProfileResponse()..mergeFromMessage(this);
+  GetProfileResponse clone() => GetProfileResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetOnyxProfileResponse copyWith(void Function(GetOnyxProfileResponse) updates) => super.copyWith((message) => updates(message as GetOnyxProfileResponse)) as GetOnyxProfileResponse;
+  GetProfileResponse copyWith(void Function(GetProfileResponse) updates) => super.copyWith((message) => updates(message as GetProfileResponse)) as GetProfileResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetOnyxProfileResponse create() => GetOnyxProfileResponse._();
+  static GetProfileResponse create() => GetProfileResponse._();
   @$core.override
-  GetOnyxProfileResponse createEmptyInstance() => create();
-  static $pb.PbList<GetOnyxProfileResponse> createRepeated() => $pb.PbList<GetOnyxProfileResponse>();
+  GetProfileResponse createEmptyInstance() => create();
+  static $pb.PbList<GetProfileResponse> createRepeated() => $pb.PbList<GetProfileResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetOnyxProfileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetOnyxProfileResponse>(create);
-  static GetOnyxProfileResponse? _defaultInstance;
+  static GetProfileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetProfileResponse>(create);
+  static GetProfileResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   OnyxProfile get profile => $_getN(0);

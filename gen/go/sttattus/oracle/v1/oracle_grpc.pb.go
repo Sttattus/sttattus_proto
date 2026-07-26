@@ -107,7 +107,7 @@ type OracleServiceClient interface {
 	DeleteThread(ctx context.Context, in *DeleteThreadRequest, opts ...grpc.CallOption) (*DeleteThreadResponse, error)
 	ListThreadMessages(ctx context.Context, in *ListThreadMessagesRequest, opts ...grpc.CallOption) (*ListThreadMessagesResponse, error)
 	// O13.2 — streaming response.
-	StreamQuery(ctx context.Context, in *StreamQueryRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamQueryChunk], error)
+	StreamQuery(ctx context.Context, in *StreamQueryRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamQueryResponse], error)
 	// O13.3 — memory store.
 	RecordEpisodicMemory(ctx context.Context, in *RecordEpisodicMemoryRequest, opts ...grpc.CallOption) (*RecordEpisodicMemoryResponse, error)
 	ListMyEpisodicMemory(ctx context.Context, in *ListMyEpisodicMemoryRequest, opts ...grpc.CallOption) (*ListMyEpisodicMemoryResponse, error)
@@ -424,13 +424,13 @@ func (c *oracleServiceClient) ListThreadMessages(ctx context.Context, in *ListTh
 	return out, nil
 }
 
-func (c *oracleServiceClient) StreamQuery(ctx context.Context, in *StreamQueryRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamQueryChunk], error) {
+func (c *oracleServiceClient) StreamQuery(ctx context.Context, in *StreamQueryRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamQueryResponse], error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	stream, err := c.cc.NewStream(ctx, &OracleService_ServiceDesc.Streams[0], OracleService_StreamQuery_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &grpc.GenericClientStream[StreamQueryRequest, StreamQueryChunk]{ClientStream: stream}
+	x := &grpc.GenericClientStream[StreamQueryRequest, StreamQueryResponse]{ClientStream: stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -441,7 +441,7 @@ func (c *oracleServiceClient) StreamQuery(ctx context.Context, in *StreamQueryRe
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type OracleService_StreamQueryClient = grpc.ServerStreamingClient[StreamQueryChunk]
+type OracleService_StreamQueryClient = grpc.ServerStreamingClient[StreamQueryResponse]
 
 func (c *oracleServiceClient) RecordEpisodicMemory(ctx context.Context, in *RecordEpisodicMemoryRequest, opts ...grpc.CallOption) (*RecordEpisodicMemoryResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
@@ -607,7 +607,7 @@ type OracleServiceServer interface {
 	DeleteThread(context.Context, *DeleteThreadRequest) (*DeleteThreadResponse, error)
 	ListThreadMessages(context.Context, *ListThreadMessagesRequest) (*ListThreadMessagesResponse, error)
 	// O13.2 — streaming response.
-	StreamQuery(*StreamQueryRequest, grpc.ServerStreamingServer[StreamQueryChunk]) error
+	StreamQuery(*StreamQueryRequest, grpc.ServerStreamingServer[StreamQueryResponse]) error
 	// O13.3 — memory store.
 	RecordEpisodicMemory(context.Context, *RecordEpisodicMemoryRequest) (*RecordEpisodicMemoryResponse, error)
 	ListMyEpisodicMemory(context.Context, *ListMyEpisodicMemoryRequest) (*ListMyEpisodicMemoryResponse, error)
@@ -721,7 +721,7 @@ func (UnimplementedOracleServiceServer) DeleteThread(context.Context, *DeleteThr
 func (UnimplementedOracleServiceServer) ListThreadMessages(context.Context, *ListThreadMessagesRequest) (*ListThreadMessagesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListThreadMessages not implemented")
 }
-func (UnimplementedOracleServiceServer) StreamQuery(*StreamQueryRequest, grpc.ServerStreamingServer[StreamQueryChunk]) error {
+func (UnimplementedOracleServiceServer) StreamQuery(*StreamQueryRequest, grpc.ServerStreamingServer[StreamQueryResponse]) error {
 	return status.Error(codes.Unimplemented, "method StreamQuery not implemented")
 }
 func (UnimplementedOracleServiceServer) RecordEpisodicMemory(context.Context, *RecordEpisodicMemoryRequest) (*RecordEpisodicMemoryResponse, error) {
@@ -1308,11 +1308,11 @@ func _OracleService_StreamQuery_Handler(srv interface{}, stream grpc.ServerStrea
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(OracleServiceServer).StreamQuery(m, &grpc.GenericServerStream[StreamQueryRequest, StreamQueryChunk]{ServerStream: stream})
+	return srv.(OracleServiceServer).StreamQuery(m, &grpc.GenericServerStream[StreamQueryRequest, StreamQueryResponse]{ServerStream: stream})
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type OracleService_StreamQueryServer = grpc.ServerStreamingServer[StreamQueryChunk]
+type OracleService_StreamQueryServer = grpc.ServerStreamingServer[StreamQueryResponse]
 
 func _OracleService_RecordEpisodicMemory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RecordEpisodicMemoryRequest)

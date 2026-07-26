@@ -110,6 +110,12 @@ class DatingProfile extends $pb.GeneratedMessage {
     $core.double? vaultRank,
     $core.double? apexRank,
     $core.double? forgeRank,
+    $core.int? age,
+    $core.String? gender,
+    $core.String? city,
+    $core.String? countryCode,
+    $core.Iterable<$core.String>? interests,
+    $core.String? birthDate,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
@@ -128,6 +134,12 @@ class DatingProfile extends $pb.GeneratedMessage {
     if (vaultRank != null) result.vaultRank = vaultRank;
     if (apexRank != null) result.apexRank = apexRank;
     if (forgeRank != null) result.forgeRank = forgeRank;
+    if (age != null) result.age = age;
+    if (gender != null) result.gender = gender;
+    if (city != null) result.city = city;
+    if (countryCode != null) result.countryCode = countryCode;
+    if (interests != null) result.interests.addAll(interests);
+    if (birthDate != null) result.birthDate = birthDate;
     return result;
   }
 
@@ -153,6 +165,12 @@ class DatingProfile extends $pb.GeneratedMessage {
     ..a<$core.double>(14, _omitFieldNames ? '' : 'vaultRank', $pb.PbFieldType.OD)
     ..a<$core.double>(15, _omitFieldNames ? '' : 'apexRank', $pb.PbFieldType.OD)
     ..a<$core.double>(16, _omitFieldNames ? '' : 'forgeRank', $pb.PbFieldType.OD)
+    ..a<$core.int>(17, _omitFieldNames ? '' : 'age', $pb.PbFieldType.O3)
+    ..aOS(18, _omitFieldNames ? '' : 'gender')
+    ..aOS(19, _omitFieldNames ? '' : 'city')
+    ..aOS(20, _omitFieldNames ? '' : 'countryCode')
+    ..pPS(21, _omitFieldNames ? '' : 'interests')
+    ..aOS(22, _omitFieldNames ? '' : 'birthDate')
     ..hasRequiredFields = false
   ;
 
@@ -312,6 +330,317 @@ class DatingProfile extends $pb.GeneratedMessage {
   $core.bool hasForgeRank() => $_has(15);
   @$pb.TagNumber(16)
   void clearForgeRank() => $_clearField(16);
+
+  /// --- Demographics (A9P5) ---
+  /// Derived from birth_date server-side; ignored on UpdateProfile.
+  @$pb.TagNumber(17)
+  $core.int get age => $_getIZ(16);
+  @$pb.TagNumber(17)
+  set age($core.int value) => $_setSignedInt32(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasAge() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearAge() => $_clearField(17);
+
+  /// 'man' | 'woman' | 'nonbinary' | 'other'. Empty when unset.
+  @$pb.TagNumber(18)
+  $core.String get gender => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set gender($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasGender() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearGender() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get city => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set city($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasCity() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearCity() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.String get countryCode => $_getSZ(19);
+  @$pb.TagNumber(20)
+  set countryCode($core.String value) => $_setString(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasCountryCode() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearCountryCode() => $_clearField(20);
+
+  @$pb.TagNumber(21)
+  $pb.PbList<$core.String> get interests => $_getList(20);
+
+  /// ISO-8601 date (YYYY-MM-DD). Writable; `age` is computed from it.
+  @$pb.TagNumber(22)
+  $core.String get birthDate => $_getSZ(21);
+  @$pb.TagNumber(22)
+  set birthDate($core.String value) => $_setString(21, value);
+  @$pb.TagNumber(22)
+  $core.bool hasBirthDate() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearBirthDate() => $_clearField(22);
+}
+
+/// Discovery preferences (A9P5). Backs the Settings distance/age/show-me
+/// controls and filters StreamDiscovery candidates.
+class DiscoveryPreferences extends $pb.GeneratedMessage {
+  factory DiscoveryPreferences({
+    $core.int? maxDistanceMiles,
+    $core.int? minAge,
+    $core.int? maxAge,
+    $core.String? showMe,
+  }) {
+    final result = create();
+    if (maxDistanceMiles != null) result.maxDistanceMiles = maxDistanceMiles;
+    if (minAge != null) result.minAge = minAge;
+    if (maxAge != null) result.maxAge = maxAge;
+    if (showMe != null) result.showMe = showMe;
+    return result;
+  }
+
+  DiscoveryPreferences._();
+
+  factory DiscoveryPreferences.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DiscoveryPreferences.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DiscoveryPreferences', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'maxDistanceMiles', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'minAge', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'maxAge', $pb.PbFieldType.O3)
+    ..aOS(4, _omitFieldNames ? '' : 'showMe')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DiscoveryPreferences clone() => DiscoveryPreferences()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DiscoveryPreferences copyWith(void Function(DiscoveryPreferences) updates) => super.copyWith((message) => updates(message as DiscoveryPreferences)) as DiscoveryPreferences;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DiscoveryPreferences create() => DiscoveryPreferences._();
+  @$core.override
+  DiscoveryPreferences createEmptyInstance() => create();
+  static $pb.PbList<DiscoveryPreferences> createRepeated() => $pb.PbList<DiscoveryPreferences>();
+  @$core.pragma('dart2js:noInline')
+  static DiscoveryPreferences getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DiscoveryPreferences>(create);
+  static DiscoveryPreferences? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get maxDistanceMiles => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set maxDistanceMiles($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMaxDistanceMiles() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMaxDistanceMiles() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get minAge => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set minAge($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMinAge() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMinAge() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get maxAge => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set maxAge($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMaxAge() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMaxAge() => $_clearField(3);
+
+  /// 'everyone' | 'men' | 'women' | 'nonbinary'
+  @$pb.TagNumber(4)
+  $core.String get showMe => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set showMe($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasShowMe() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearShowMe() => $_clearField(4);
+}
+
+class GetDiscoveryPreferencesRequest extends $pb.GeneratedMessage {
+  factory GetDiscoveryPreferencesRequest() => create();
+
+  GetDiscoveryPreferencesRequest._();
+
+  factory GetDiscoveryPreferencesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetDiscoveryPreferencesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDiscoveryPreferencesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDiscoveryPreferencesRequest clone() => GetDiscoveryPreferencesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDiscoveryPreferencesRequest copyWith(void Function(GetDiscoveryPreferencesRequest) updates) => super.copyWith((message) => updates(message as GetDiscoveryPreferencesRequest)) as GetDiscoveryPreferencesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDiscoveryPreferencesRequest create() => GetDiscoveryPreferencesRequest._();
+  @$core.override
+  GetDiscoveryPreferencesRequest createEmptyInstance() => create();
+  static $pb.PbList<GetDiscoveryPreferencesRequest> createRepeated() => $pb.PbList<GetDiscoveryPreferencesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetDiscoveryPreferencesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDiscoveryPreferencesRequest>(create);
+  static GetDiscoveryPreferencesRequest? _defaultInstance;
+}
+
+class GetDiscoveryPreferencesResponse extends $pb.GeneratedMessage {
+  factory GetDiscoveryPreferencesResponse({
+    DiscoveryPreferences? preferences,
+  }) {
+    final result = create();
+    if (preferences != null) result.preferences = preferences;
+    return result;
+  }
+
+  GetDiscoveryPreferencesResponse._();
+
+  factory GetDiscoveryPreferencesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetDiscoveryPreferencesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDiscoveryPreferencesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<DiscoveryPreferences>(1, _omitFieldNames ? '' : 'preferences', subBuilder: DiscoveryPreferences.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDiscoveryPreferencesResponse clone() => GetDiscoveryPreferencesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDiscoveryPreferencesResponse copyWith(void Function(GetDiscoveryPreferencesResponse) updates) => super.copyWith((message) => updates(message as GetDiscoveryPreferencesResponse)) as GetDiscoveryPreferencesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDiscoveryPreferencesResponse create() => GetDiscoveryPreferencesResponse._();
+  @$core.override
+  GetDiscoveryPreferencesResponse createEmptyInstance() => create();
+  static $pb.PbList<GetDiscoveryPreferencesResponse> createRepeated() => $pb.PbList<GetDiscoveryPreferencesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetDiscoveryPreferencesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDiscoveryPreferencesResponse>(create);
+  static GetDiscoveryPreferencesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DiscoveryPreferences get preferences => $_getN(0);
+  @$pb.TagNumber(1)
+  set preferences(DiscoveryPreferences value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreferences() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreferences() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DiscoveryPreferences ensurePreferences() => $_ensure(0);
+}
+
+class UpdateDiscoveryPreferencesRequest extends $pb.GeneratedMessage {
+  factory UpdateDiscoveryPreferencesRequest({
+    DiscoveryPreferences? preferences,
+  }) {
+    final result = create();
+    if (preferences != null) result.preferences = preferences;
+    return result;
+  }
+
+  UpdateDiscoveryPreferencesRequest._();
+
+  factory UpdateDiscoveryPreferencesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateDiscoveryPreferencesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateDiscoveryPreferencesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<DiscoveryPreferences>(1, _omitFieldNames ? '' : 'preferences', subBuilder: DiscoveryPreferences.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateDiscoveryPreferencesRequest clone() => UpdateDiscoveryPreferencesRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateDiscoveryPreferencesRequest copyWith(void Function(UpdateDiscoveryPreferencesRequest) updates) => super.copyWith((message) => updates(message as UpdateDiscoveryPreferencesRequest)) as UpdateDiscoveryPreferencesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateDiscoveryPreferencesRequest create() => UpdateDiscoveryPreferencesRequest._();
+  @$core.override
+  UpdateDiscoveryPreferencesRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateDiscoveryPreferencesRequest> createRepeated() => $pb.PbList<UpdateDiscoveryPreferencesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateDiscoveryPreferencesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateDiscoveryPreferencesRequest>(create);
+  static UpdateDiscoveryPreferencesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DiscoveryPreferences get preferences => $_getN(0);
+  @$pb.TagNumber(1)
+  set preferences(DiscoveryPreferences value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreferences() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreferences() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DiscoveryPreferences ensurePreferences() => $_ensure(0);
+}
+
+class UpdateDiscoveryPreferencesResponse extends $pb.GeneratedMessage {
+  factory UpdateDiscoveryPreferencesResponse({
+    DiscoveryPreferences? preferences,
+  }) {
+    final result = create();
+    if (preferences != null) result.preferences = preferences;
+    return result;
+  }
+
+  UpdateDiscoveryPreferencesResponse._();
+
+  factory UpdateDiscoveryPreferencesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateDiscoveryPreferencesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateDiscoveryPreferencesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOM<DiscoveryPreferences>(1, _omitFieldNames ? '' : 'preferences', subBuilder: DiscoveryPreferences.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateDiscoveryPreferencesResponse clone() => UpdateDiscoveryPreferencesResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateDiscoveryPreferencesResponse copyWith(void Function(UpdateDiscoveryPreferencesResponse) updates) => super.copyWith((message) => updates(message as UpdateDiscoveryPreferencesResponse)) as UpdateDiscoveryPreferencesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateDiscoveryPreferencesResponse create() => UpdateDiscoveryPreferencesResponse._();
+  @$core.override
+  UpdateDiscoveryPreferencesResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateDiscoveryPreferencesResponse> createRepeated() => $pb.PbList<UpdateDiscoveryPreferencesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateDiscoveryPreferencesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateDiscoveryPreferencesResponse>(create);
+  static UpdateDiscoveryPreferencesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DiscoveryPreferences get preferences => $_getN(0);
+  @$pb.TagNumber(1)
+  set preferences(DiscoveryPreferences value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreferences() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreferences() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DiscoveryPreferences ensurePreferences() => $_ensure(0);
 }
 
 class Candidate extends $pb.GeneratedMessage {
@@ -1078,6 +1407,82 @@ class ListMatchesResponse extends $pb.GeneratedMessage {
   void clearPage() => $_clearField(2);
   @$pb.TagNumber(2)
   $1.PageResponse ensurePage() => $_ensure(1);
+}
+
+class UnmatchRequest extends $pb.GeneratedMessage {
+  factory UnmatchRequest({
+    $core.String? matchId,
+  }) {
+    final result = create();
+    if (matchId != null) result.matchId = matchId;
+    return result;
+  }
+
+  UnmatchRequest._();
+
+  factory UnmatchRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UnmatchRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnmatchRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'matchId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnmatchRequest clone() => UnmatchRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnmatchRequest copyWith(void Function(UnmatchRequest) updates) => super.copyWith((message) => updates(message as UnmatchRequest)) as UnmatchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnmatchRequest create() => UnmatchRequest._();
+  @$core.override
+  UnmatchRequest createEmptyInstance() => create();
+  static $pb.PbList<UnmatchRequest> createRepeated() => $pb.PbList<UnmatchRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UnmatchRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnmatchRequest>(create);
+  static UnmatchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get matchId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set matchId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMatchId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMatchId() => $_clearField(1);
+}
+
+class UnmatchResponse extends $pb.GeneratedMessage {
+  factory UnmatchResponse() => create();
+
+  UnmatchResponse._();
+
+  factory UnmatchResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UnmatchResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnmatchResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnmatchResponse clone() => UnmatchResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnmatchResponse copyWith(void Function(UnmatchResponse) updates) => super.copyWith((message) => updates(message as UnmatchResponse)) as UnmatchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnmatchResponse create() => UnmatchResponse._();
+  @$core.override
+  UnmatchResponse createEmptyInstance() => create();
+  static $pb.PbList<UnmatchResponse> createRepeated() => $pb.PbList<UnmatchResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UnmatchResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnmatchResponse>(create);
+  static UnmatchResponse? _defaultInstance;
 }
 
 class StreamMessagesRequest extends $pb.GeneratedMessage {

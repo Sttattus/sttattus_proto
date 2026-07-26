@@ -264,7 +264,7 @@ message StreamQueryRequest {
   bool enable_synthesis = 3;
 }
 
-message StreamQueryChunk {
+message StreamQueryResponse {
   string thread_id = 1;
   string delta = 2;
   bool done = 3;
@@ -578,7 +578,7 @@ service OracleService {
   rpc ListThreadMessages(ListThreadMessagesRequest) returns (ListThreadMessagesResponse);
 
   // O13.2 — streaming response.
-  rpc StreamQuery(StreamQueryRequest) returns (stream StreamQueryChunk);
+  rpc StreamQuery(StreamQueryRequest) returns (stream StreamQueryResponse);
 
   // O13.3 — memory store.
   rpc RecordEpisodicMemory(RecordEpisodicMemoryRequest) returns (RecordEpisodicMemoryResponse);

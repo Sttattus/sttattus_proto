@@ -44,6 +44,20 @@ export enum AssetCategory {
    * @generated from enum value: ASSET_CATEGORY_METAL = 4;
    */
   METAL = 4,
+
+  /**
+   * Direct property holdings
+   *
+   * @generated from enum value: ASSET_CATEGORY_REAL_ESTATE = 5;
+   */
+  REAL_ESTATE = 5,
+
+  /**
+   * Private companies, funds, SAFEs
+   *
+   * @generated from enum value: ASSET_CATEGORY_PRIVATE_EQUITY = 6;
+   */
+  PRIVATE_EQUITY = 6,
 }
 // Retrieve enum metadata with: proto3.getEnumType(AssetCategory)
 proto3.util.setEnumType(AssetCategory, "sttattus.vault.v1.AssetCategory", [
@@ -52,6 +66,8 @@ proto3.util.setEnumType(AssetCategory, "sttattus.vault.v1.AssetCategory", [
   { no: 2, name: "ASSET_CATEGORY_CRYPTO" },
   { no: 3, name: "ASSET_CATEGORY_RARE_ASSET" },
   { no: 4, name: "ASSET_CATEGORY_METAL" },
+  { no: 5, name: "ASSET_CATEGORY_REAL_ESTATE" },
+  { no: 6, name: "ASSET_CATEGORY_PRIVATE_EQUITY" },
 ]);
 
 /**

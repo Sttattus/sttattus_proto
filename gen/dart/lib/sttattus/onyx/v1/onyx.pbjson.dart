@@ -119,57 +119,57 @@ final $typed_data.Uint8List subscriptionDescriptor = $convert.base64Decode(
     'ZXN0YW1wUglncmFudGVkQXQSOQoKZXhwaXJlc19hdBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi'
     '5UaW1lc3RhbXBSCWV4cGlyZXNBdA==');
 
-@$core.Deprecated('Use createOnyxProfileRequestDescriptor instead')
-const CreateOnyxProfileRequest$json = {
-  '1': 'CreateOnyxProfileRequest',
+@$core.Deprecated('Use createProfileRequestDescriptor instead')
+const CreateProfileRequest$json = {
+  '1': 'CreateProfileRequest',
   '2': [
     {'1': 'stage_name', '3': 1, '4': 1, '5': 9, '10': 'stageName'},
     {'1': 'bio', '3': 2, '4': 1, '5': 9, '10': 'bio'},
   ],
 };
 
-/// Descriptor for `CreateOnyxProfileRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createOnyxProfileRequestDescriptor = $convert.base64Decode(
-    'ChhDcmVhdGVPbnl4UHJvZmlsZVJlcXVlc3QSHQoKc3RhZ2VfbmFtZRgBIAEoCVIJc3RhZ2VOYW'
-    '1lEhAKA2JpbxgCIAEoCVIDYmlv');
+/// Descriptor for `CreateProfileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createProfileRequestDescriptor = $convert.base64Decode(
+    'ChRDcmVhdGVQcm9maWxlUmVxdWVzdBIdCgpzdGFnZV9uYW1lGAEgASgJUglzdGFnZU5hbWUSEA'
+    'oDYmlvGAIgASgJUgNiaW8=');
 
-@$core.Deprecated('Use createOnyxProfileResponseDescriptor instead')
-const CreateOnyxProfileResponse$json = {
-  '1': 'CreateOnyxProfileResponse',
+@$core.Deprecated('Use createProfileResponseDescriptor instead')
+const CreateProfileResponse$json = {
+  '1': 'CreateProfileResponse',
   '2': [
     {'1': 'profile', '3': 1, '4': 1, '5': 11, '6': '.sttattus.onyx.v1.OnyxProfile', '10': 'profile'},
   ],
 };
 
-/// Descriptor for `CreateOnyxProfileResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createOnyxProfileResponseDescriptor = $convert.base64Decode(
-    'ChlDcmVhdGVPbnl4UHJvZmlsZVJlc3BvbnNlEjcKB3Byb2ZpbGUYASABKAsyHS5zdHRhdHR1cy'
-    '5vbnl4LnYxLk9ueXhQcm9maWxlUgdwcm9maWxl');
+/// Descriptor for `CreateProfileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createProfileResponseDescriptor = $convert.base64Decode(
+    'ChVDcmVhdGVQcm9maWxlUmVzcG9uc2USNwoHcHJvZmlsZRgBIAEoCzIdLnN0dGF0dHVzLm9ueX'
+    'gudjEuT255eFByb2ZpbGVSB3Byb2ZpbGU=');
 
-@$core.Deprecated('Use getOnyxProfileRequestDescriptor instead')
-const GetOnyxProfileRequest$json = {
-  '1': 'GetOnyxProfileRequest',
+@$core.Deprecated('Use getProfileRequestDescriptor instead')
+const GetProfileRequest$json = {
+  '1': 'GetProfileRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
   ],
 };
 
-/// Descriptor for `GetOnyxProfileRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getOnyxProfileRequestDescriptor = $convert.base64Decode(
-    'ChVHZXRPbnl4UHJvZmlsZVJlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklk');
+/// Descriptor for `GetProfileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getProfileRequestDescriptor = $convert.base64Decode(
+    'ChFHZXRQcm9maWxlUmVxdWVzdBIXCgd1c2VyX2lkGAEgASgJUgZ1c2VySWQ=');
 
-@$core.Deprecated('Use getOnyxProfileResponseDescriptor instead')
-const GetOnyxProfileResponse$json = {
-  '1': 'GetOnyxProfileResponse',
+@$core.Deprecated('Use getProfileResponseDescriptor instead')
+const GetProfileResponse$json = {
+  '1': 'GetProfileResponse',
   '2': [
     {'1': 'profile', '3': 1, '4': 1, '5': 11, '6': '.sttattus.onyx.v1.OnyxProfile', '10': 'profile'},
   ],
 };
 
-/// Descriptor for `GetOnyxProfileResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getOnyxProfileResponseDescriptor = $convert.base64Decode(
-    'ChZHZXRPbnl4UHJvZmlsZVJlc3BvbnNlEjcKB3Byb2ZpbGUYASABKAsyHS5zdHRhdHR1cy5vbn'
-    'l4LnYxLk9ueXhQcm9maWxlUgdwcm9maWxl');
+/// Descriptor for `GetProfileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getProfileResponseDescriptor = $convert.base64Decode(
+    'ChJHZXRQcm9maWxlUmVzcG9uc2USNwoHcHJvZmlsZRgBIAEoCzIdLnN0dGF0dHVzLm9ueXgudj'
+    'EuT255eFByb2ZpbGVSB3Byb2ZpbGU=');
 
 @$core.Deprecated('Use listContentRequestDescriptor instead')
 const ListContentRequest$json = {

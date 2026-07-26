@@ -159,7 +159,7 @@ class OracleServiceClient extends $grpc.Client {
   }
 
   /// O13.2 — streaming response.
-  $grpc.ResponseStream<$0.StreamQueryChunk> streamQuery($0.StreamQueryRequest request, {$grpc.CallOptions? options,}) {
+  $grpc.ResponseStream<$0.StreamQueryResponse> streamQuery($0.StreamQueryRequest request, {$grpc.CallOptions? options,}) {
     return $createStreamingCall(_$streamQuery, $async.Stream.fromIterable([request]), options: options);
   }
 
@@ -333,10 +333,10 @@ class OracleServiceClient extends $grpc.Client {
       '/sttattus.oracle.v1.OracleService/ListThreadMessages',
       ($0.ListThreadMessagesRequest value) => value.writeToBuffer(),
       $0.ListThreadMessagesResponse.fromBuffer);
-  static final _$streamQuery = $grpc.ClientMethod<$0.StreamQueryRequest, $0.StreamQueryChunk>(
+  static final _$streamQuery = $grpc.ClientMethod<$0.StreamQueryRequest, $0.StreamQueryResponse>(
       '/sttattus.oracle.v1.OracleService/StreamQuery',
       ($0.StreamQueryRequest value) => value.writeToBuffer(),
-      $0.StreamQueryChunk.fromBuffer);
+      $0.StreamQueryResponse.fromBuffer);
   static final _$recordEpisodicMemory = $grpc.ClientMethod<$0.RecordEpisodicMemoryRequest, $0.RecordEpisodicMemoryResponse>(
       '/sttattus.oracle.v1.OracleService/RecordEpisodicMemory',
       ($0.RecordEpisodicMemoryRequest value) => value.writeToBuffer(),
@@ -595,13 +595,13 @@ abstract class OracleServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListThreadMessagesRequest.fromBuffer(value),
         ($0.ListThreadMessagesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.StreamQueryRequest, $0.StreamQueryChunk>(
+    $addMethod($grpc.ServiceMethod<$0.StreamQueryRequest, $0.StreamQueryResponse>(
         'StreamQuery',
         streamQuery_Pre,
         false,
         true,
         ($core.List<$core.int> value) => $0.StreamQueryRequest.fromBuffer(value),
-        ($0.StreamQueryChunk value) => value.writeToBuffer()));
+        ($0.StreamQueryResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.RecordEpisodicMemoryRequest, $0.RecordEpisodicMemoryResponse>(
         'RecordEpisodicMemory',
         recordEpisodicMemory_Pre,
@@ -862,11 +862,11 @@ abstract class OracleServiceBase extends $grpc.Service {
 
   $async.Future<$0.ListThreadMessagesResponse> listThreadMessages($grpc.ServiceCall call, $0.ListThreadMessagesRequest request);
 
-  $async.Stream<$0.StreamQueryChunk> streamQuery_Pre($grpc.ServiceCall $call, $async.Future<$0.StreamQueryRequest> $request) async* {
+  $async.Stream<$0.StreamQueryResponse> streamQuery_Pre($grpc.ServiceCall $call, $async.Future<$0.StreamQueryRequest> $request) async* {
     yield* streamQuery($call, await $request);
   }
 
-  $async.Stream<$0.StreamQueryChunk> streamQuery($grpc.ServiceCall call, $0.StreamQueryRequest request);
+  $async.Stream<$0.StreamQueryResponse> streamQuery($grpc.ServiceCall call, $0.StreamQueryRequest request);
 
   $async.Future<$0.RecordEpisodicMemoryResponse> recordEpisodicMemory_Pre($grpc.ServiceCall $call, $async.Future<$0.RecordEpisodicMemoryRequest> $request) async {
     return recordEpisodicMemory($call, await $request);
