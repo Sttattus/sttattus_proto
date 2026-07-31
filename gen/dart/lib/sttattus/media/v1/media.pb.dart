@@ -33,6 +33,7 @@ class MediaAsset extends $pb.GeneratedMessage {
     ProcessingStatus? status,
     $fixnum.Int64? createdAt,
     $fixnum.Int64? processedAt,
+    $core.bool? isPrivate,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -45,6 +46,7 @@ class MediaAsset extends $pb.GeneratedMessage {
     if (status != null) result.status = status;
     if (createdAt != null) result.createdAt = createdAt;
     if (processedAt != null) result.processedAt = processedAt;
+    if (isPrivate != null) result.isPrivate = isPrivate;
     return result;
   }
 
@@ -64,6 +66,7 @@ class MediaAsset extends $pb.GeneratedMessage {
     ..e<ProcessingStatus>(8, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ProcessingStatus.PROCESSING_STATUS_UNSPECIFIED, valueOf: ProcessingStatus.valueOf, enumValues: ProcessingStatus.values)
     ..aInt64(9, _omitFieldNames ? '' : 'createdAt')
     ..aInt64(10, _omitFieldNames ? '' : 'processedAt')
+    ..aOB(11, _omitFieldNames ? '' : 'isPrivate')
     ..hasRequiredFields = false
   ;
 
@@ -173,6 +176,17 @@ class MediaAsset extends $pb.GeneratedMessage {
   $core.bool hasProcessedAt() => $_has(9);
   @$pb.TagNumber(10)
   void clearProcessedAt() => $_clearField(10);
+
+  /// True when the URL is a short-lived signed read URL. Clients must not
+  /// persist it and should call GetDownloadURL when it expires.
+  @$pb.TagNumber(11)
+  $core.bool get isPrivate => $_getBF(10);
+  @$pb.TagNumber(11)
+  set isPrivate($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasIsPrivate() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearIsPrivate() => $_clearField(11);
 }
 
 class RequestUploadRequest extends $pb.GeneratedMessage {
@@ -257,12 +271,14 @@ class RequestUploadResponse extends $pb.GeneratedMessage {
     $core.String? uploadUrl,
     $core.String? publicUrl,
     $fixnum.Int64? expiresAt,
+    $core.bool? isPrivate,
   }) {
     final result = create();
     if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
     if (uploadUrl != null) result.uploadUrl = uploadUrl;
     if (publicUrl != null) result.publicUrl = publicUrl;
     if (expiresAt != null) result.expiresAt = expiresAt;
+    if (isPrivate != null) result.isPrivate = isPrivate;
     return result;
   }
 
@@ -276,6 +292,7 @@ class RequestUploadResponse extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'uploadUrl')
     ..aOS(3, _omitFieldNames ? '' : 'publicUrl')
     ..aInt64(4, _omitFieldNames ? '' : 'expiresAt')
+    ..aOB(5, _omitFieldNames ? '' : 'isPrivate')
     ..hasRequiredFields = false
   ;
 
@@ -314,6 +331,7 @@ class RequestUploadResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearUploadUrl() => $_clearField(2);
 
+  /// Stable URL for public media; short-lived signed read URL for private media.
   @$pb.TagNumber(3)
   $core.String get publicUrl => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -331,6 +349,15 @@ class RequestUploadResponse extends $pb.GeneratedMessage {
   $core.bool hasExpiresAt() => $_has(3);
   @$pb.TagNumber(4)
   void clearExpiresAt() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get isPrivate => $_getBF(4);
+  @$pb.TagNumber(5)
+  set isPrivate($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasIsPrivate() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIsPrivate() => $_clearField(5);
 }
 
 class MarkProcessedRequest extends $pb.GeneratedMessage {
@@ -449,6 +476,122 @@ class MarkProcessedResponse extends $pb.GeneratedMessage {
   void clearAsset() => $_clearField(1);
   @$pb.TagNumber(1)
   MediaAsset ensureAsset() => $_ensure(0);
+}
+
+class GetDownloadURLRequest extends $pb.GeneratedMessage {
+  factory GetDownloadURLRequest({
+    $core.String? mediaAssetId,
+  }) {
+    final result = create();
+    if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
+    return result;
+  }
+
+  GetDownloadURLRequest._();
+
+  factory GetDownloadURLRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetDownloadURLRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDownloadURLRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.media.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'mediaAssetId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDownloadURLRequest clone() => GetDownloadURLRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDownloadURLRequest copyWith(void Function(GetDownloadURLRequest) updates) => super.copyWith((message) => updates(message as GetDownloadURLRequest)) as GetDownloadURLRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDownloadURLRequest create() => GetDownloadURLRequest._();
+  @$core.override
+  GetDownloadURLRequest createEmptyInstance() => create();
+  static $pb.PbList<GetDownloadURLRequest> createRepeated() => $pb.PbList<GetDownloadURLRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetDownloadURLRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDownloadURLRequest>(create);
+  static GetDownloadURLRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get mediaAssetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set mediaAssetId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMediaAssetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMediaAssetId() => $_clearField(1);
+}
+
+class GetDownloadURLResponse extends $pb.GeneratedMessage {
+  factory GetDownloadURLResponse({
+    $core.String? downloadUrl,
+    $fixnum.Int64? expiresAt,
+    $core.bool? isPrivate,
+  }) {
+    final result = create();
+    if (downloadUrl != null) result.downloadUrl = downloadUrl;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (isPrivate != null) result.isPrivate = isPrivate;
+    return result;
+  }
+
+  GetDownloadURLResponse._();
+
+  factory GetDownloadURLResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetDownloadURLResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDownloadURLResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.media.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'downloadUrl')
+    ..aInt64(2, _omitFieldNames ? '' : 'expiresAt')
+    ..aOB(3, _omitFieldNames ? '' : 'isPrivate')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDownloadURLResponse clone() => GetDownloadURLResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDownloadURLResponse copyWith(void Function(GetDownloadURLResponse) updates) => super.copyWith((message) => updates(message as GetDownloadURLResponse)) as GetDownloadURLResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDownloadURLResponse create() => GetDownloadURLResponse._();
+  @$core.override
+  GetDownloadURLResponse createEmptyInstance() => create();
+  static $pb.PbList<GetDownloadURLResponse> createRepeated() => $pb.PbList<GetDownloadURLResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetDownloadURLResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDownloadURLResponse>(create);
+  static GetDownloadURLResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get downloadUrl => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set downloadUrl($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDownloadUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDownloadUrl() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expiresAt => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expiresAt($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpiresAt() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpiresAt() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get isPrivate => $_getBF(2);
+  @$pb.TagNumber(3)
+  set isPrivate($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasIsPrivate() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIsPrivate() => $_clearField(3);
 }
 
 class ResizeRequest extends $pb.GeneratedMessage {

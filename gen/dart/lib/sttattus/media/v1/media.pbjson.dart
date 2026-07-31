@@ -47,6 +47,7 @@ const MediaAsset$json = {
     {'1': 'status', '3': 8, '4': 1, '5': 14, '6': '.sttattus.media.v1.ProcessingStatus', '10': 'status'},
     {'1': 'created_at', '3': 9, '4': 1, '5': 3, '10': 'createdAt'},
     {'1': 'processed_at', '3': 10, '4': 1, '5': 3, '10': 'processedAt'},
+    {'1': 'is_private', '3': 11, '4': 1, '5': 8, '10': 'isPrivate'},
   ],
 };
 
@@ -57,7 +58,7 @@ final $typed_data.Uint8List mediaAssetDescriptor = $convert.base64Decode(
     'emUSFAoFd2lkdGgYBiABKAVSBXdpZHRoEhYKBmhlaWdodBgHIAEoBVIGaGVpZ2h0EjsKBnN0YX'
     'R1cxgIIAEoDjIjLnN0dGF0dHVzLm1lZGlhLnYxLlByb2Nlc3NpbmdTdGF0dXNSBnN0YXR1cxId'
     'CgpjcmVhdGVkX2F0GAkgASgDUgljcmVhdGVkQXQSIQoMcHJvY2Vzc2VkX2F0GAogASgDUgtwcm'
-    '9jZXNzZWRBdA==');
+    '9jZXNzZWRBdBIdCgppc19wcml2YXRlGAsgASgIUglpc1ByaXZhdGU=');
 
 @$core.Deprecated('Use requestUploadRequestDescriptor instead')
 const RequestUploadRequest$json = {
@@ -82,6 +83,7 @@ const RequestUploadResponse$json = {
     {'1': 'upload_url', '3': 2, '4': 1, '5': 9, '10': 'uploadUrl'},
     {'1': 'public_url', '3': 3, '4': 1, '5': 9, '10': 'publicUrl'},
     {'1': 'expires_at', '3': 4, '4': 1, '5': 3, '10': 'expiresAt'},
+    {'1': 'is_private', '3': 5, '4': 1, '5': 8, '10': 'isPrivate'},
   ],
 };
 
@@ -89,7 +91,8 @@ const RequestUploadResponse$json = {
 final $typed_data.Uint8List requestUploadResponseDescriptor = $convert.base64Decode(
     'ChVSZXF1ZXN0VXBsb2FkUmVzcG9uc2USJAoObWVkaWFfYXNzZXRfaWQYASABKAlSDG1lZGlhQX'
     'NzZXRJZBIdCgp1cGxvYWRfdXJsGAIgASgJUgl1cGxvYWRVcmwSHQoKcHVibGljX3VybBgDIAEo'
-    'CVIJcHVibGljVXJsEh0KCmV4cGlyZXNfYXQYBCABKANSCWV4cGlyZXNBdA==');
+    'CVIJcHVibGljVXJsEh0KCmV4cGlyZXNfYXQYBCABKANSCWV4cGlyZXNBdBIdCgppc19wcml2YX'
+    'RlGAUgASgIUglpc1ByaXZhdGU=');
 
 @$core.Deprecated('Use markProcessedRequestDescriptor instead')
 const MarkProcessedRequest$json = {
@@ -118,6 +121,35 @@ const MarkProcessedResponse$json = {
 final $typed_data.Uint8List markProcessedResponseDescriptor = $convert.base64Decode(
     'ChVNYXJrUHJvY2Vzc2VkUmVzcG9uc2USMwoFYXNzZXQYASABKAsyHS5zdHRhdHR1cy5tZWRpYS'
     '52MS5NZWRpYUFzc2V0UgVhc3NldA==');
+
+@$core.Deprecated('Use getDownloadURLRequestDescriptor instead')
+const GetDownloadURLRequest$json = {
+  '1': 'GetDownloadURLRequest',
+  '2': [
+    {'1': 'media_asset_id', '3': 1, '4': 1, '5': 9, '10': 'mediaAssetId'},
+  ],
+};
+
+/// Descriptor for `GetDownloadURLRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDownloadURLRequestDescriptor = $convert.base64Decode(
+    'ChVHZXREb3dubG9hZFVSTFJlcXVlc3QSJAoObWVkaWFfYXNzZXRfaWQYASABKAlSDG1lZGlhQX'
+    'NzZXRJZA==');
+
+@$core.Deprecated('Use getDownloadURLResponseDescriptor instead')
+const GetDownloadURLResponse$json = {
+  '1': 'GetDownloadURLResponse',
+  '2': [
+    {'1': 'download_url', '3': 1, '4': 1, '5': 9, '10': 'downloadUrl'},
+    {'1': 'expires_at', '3': 2, '4': 1, '5': 3, '10': 'expiresAt'},
+    {'1': 'is_private', '3': 3, '4': 1, '5': 8, '10': 'isPrivate'},
+  ],
+};
+
+/// Descriptor for `GetDownloadURLResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDownloadURLResponseDescriptor = $convert.base64Decode(
+    'ChZHZXREb3dubG9hZFVSTFJlc3BvbnNlEiEKDGRvd25sb2FkX3VybBgBIAEoCVILZG93bmxvYW'
+    'RVcmwSHQoKZXhwaXJlc19hdBgCIAEoA1IJZXhwaXJlc0F0Eh0KCmlzX3ByaXZhdGUYAyABKAhS'
+    'CWlzUHJpdmF0ZQ==');
 
 @$core.Deprecated('Use resizeRequestDescriptor instead')
 const ResizeRequest$json = {

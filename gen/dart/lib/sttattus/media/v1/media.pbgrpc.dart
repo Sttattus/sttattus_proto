@@ -40,6 +40,14 @@ class MediaServiceClient extends $grpc.Client {
     return $createUnaryCall(_$markProcessed, request, options: options);
   }
 
+  /// Returns a fresh readable URL after verifying that the caller owns the
+  /// media row or is a participant in the Atlas message it is attached to.
+  /// Public assets return a stable URL; private assets return a short-lived
+  /// signed GET URL.
+  $grpc.ResponseFuture<$0.GetDownloadURLResponse> getDownloadURL($0.GetDownloadURLRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$getDownloadURL, request, options: options);
+  }
+
     // method descriptors
 
   static final _$requestUpload = $grpc.ClientMethod<$0.RequestUploadRequest, $0.RequestUploadResponse>(
@@ -50,6 +58,10 @@ class MediaServiceClient extends $grpc.Client {
       '/sttattus.media.v1.MediaService/MarkProcessed',
       ($0.MarkProcessedRequest value) => value.writeToBuffer(),
       $0.MarkProcessedResponse.fromBuffer);
+  static final _$getDownloadURL = $grpc.ClientMethod<$0.GetDownloadURLRequest, $0.GetDownloadURLResponse>(
+      '/sttattus.media.v1.MediaService/GetDownloadURL',
+      ($0.GetDownloadURLRequest value) => value.writeToBuffer(),
+      $0.GetDownloadURLResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.media.v1.MediaService')
@@ -71,6 +83,13 @@ abstract class MediaServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.MarkProcessedRequest.fromBuffer(value),
         ($0.MarkProcessedResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDownloadURLRequest, $0.GetDownloadURLResponse>(
+        'GetDownloadURL',
+        getDownloadURL_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetDownloadURLRequest.fromBuffer(value),
+        ($0.GetDownloadURLResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.RequestUploadResponse> requestUpload_Pre($grpc.ServiceCall $call, $async.Future<$0.RequestUploadRequest> $request) async {
@@ -84,6 +103,12 @@ abstract class MediaServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.MarkProcessedResponse> markProcessed($grpc.ServiceCall call, $0.MarkProcessedRequest request);
+
+  $async.Future<$0.GetDownloadURLResponse> getDownloadURL_Pre($grpc.ServiceCall $call, $async.Future<$0.GetDownloadURLRequest> $request) async {
+    return getDownloadURL($call, await $request);
+  }
+
+  $async.Future<$0.GetDownloadURLResponse> getDownloadURL($grpc.ServiceCall call, $0.GetDownloadURLRequest request);
 
 }
 @$pb.GrpcServiceName('sttattus.media.v1.ImageProcService')

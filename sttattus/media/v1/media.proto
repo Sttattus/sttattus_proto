@@ -23,6 +23,9 @@ message MediaAsset {
   ProcessingStatus status = 8;
   int64 created_at = 9;
   int64 processed_at = 10;
+  // True when the URL is a short-lived signed read URL. Clients must not
+  // persist it and should call GetDownloadURL when it expires.
+  bool is_private = 11;
 }
 
 message RequestUploadRequest {
@@ -39,8 +42,10 @@ message RequestUploadRequest {
 message RequestUploadResponse {
   string media_asset_id = 1;
   string upload_url = 2; // presigned PUT URL
-  string public_url = 3; // final URL after upload completes
+  // Stable URL for public media; short-lived signed read URL for private media.
+  string public_url = 3;
   int64 expires_at = 4;
+  bool is_private = 5;
 }
 
 message MarkProcessedRequest {
@@ -52,9 +57,24 @@ message MarkProcessedResponse {
   MediaAsset asset = 1;
 }
 
+message GetDownloadURLRequest {
+  string media_asset_id = 1;
+}
+
+message GetDownloadURLResponse {
+  string download_url = 1;
+  int64 expires_at = 2;
+  bool is_private = 3;
+}
+
 service MediaService {
   rpc RequestUpload(RequestUploadRequest) returns (RequestUploadResponse);
   rpc MarkProcessed(MarkProcessedRequest) returns (MarkProcessedResponse);
+  // Returns a fresh readable URL after verifying that the caller owns the
+  // media row or is a participant in the Atlas message it is attached to.
+  // Public assets return a stable URL; private assets return a short-lived
+  // signed GET URL.
+  rpc GetDownloadURL(GetDownloadURLRequest) returns (GetDownloadURLResponse);
 }
 
 // === Rust imageproc service (called by Go, never by clients directly) ===

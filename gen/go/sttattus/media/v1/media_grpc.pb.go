@@ -19,8 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	MediaService_RequestUpload_FullMethodName = "/sttattus.media.v1.MediaService/RequestUpload"
-	MediaService_MarkProcessed_FullMethodName = "/sttattus.media.v1.MediaService/MarkProcessed"
+	MediaService_RequestUpload_FullMethodName  = "/sttattus.media.v1.MediaService/RequestUpload"
+	MediaService_MarkProcessed_FullMethodName  = "/sttattus.media.v1.MediaService/MarkProcessed"
+	MediaService_GetDownloadURL_FullMethodName = "/sttattus.media.v1.MediaService/GetDownloadURL"
 )
 
 // MediaServiceClient is the client API for MediaService service.
@@ -29,6 +30,11 @@ const (
 type MediaServiceClient interface {
 	RequestUpload(ctx context.Context, in *RequestUploadRequest, opts ...grpc.CallOption) (*RequestUploadResponse, error)
 	MarkProcessed(ctx context.Context, in *MarkProcessedRequest, opts ...grpc.CallOption) (*MarkProcessedResponse, error)
+	// Returns a fresh readable URL after verifying that the caller owns the
+	// media row or is a participant in the Atlas message it is attached to.
+	// Public assets return a stable URL; private assets return a short-lived
+	// signed GET URL.
+	GetDownloadURL(ctx context.Context, in *GetDownloadURLRequest, opts ...grpc.CallOption) (*GetDownloadURLResponse, error)
 }
 
 type mediaServiceClient struct {
@@ -59,12 +65,27 @@ func (c *mediaServiceClient) MarkProcessed(ctx context.Context, in *MarkProcesse
 	return out, nil
 }
 
+func (c *mediaServiceClient) GetDownloadURL(ctx context.Context, in *GetDownloadURLRequest, opts ...grpc.CallOption) (*GetDownloadURLResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDownloadURLResponse)
+	err := c.cc.Invoke(ctx, MediaService_GetDownloadURL_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MediaServiceServer is the server API for MediaService service.
 // All implementations must embed UnimplementedMediaServiceServer
 // for forward compatibility.
 type MediaServiceServer interface {
 	RequestUpload(context.Context, *RequestUploadRequest) (*RequestUploadResponse, error)
 	MarkProcessed(context.Context, *MarkProcessedRequest) (*MarkProcessedResponse, error)
+	// Returns a fresh readable URL after verifying that the caller owns the
+	// media row or is a participant in the Atlas message it is attached to.
+	// Public assets return a stable URL; private assets return a short-lived
+	// signed GET URL.
+	GetDownloadURL(context.Context, *GetDownloadURLRequest) (*GetDownloadURLResponse, error)
 	mustEmbedUnimplementedMediaServiceServer()
 }
 
@@ -80,6 +101,9 @@ func (UnimplementedMediaServiceServer) RequestUpload(context.Context, *RequestUp
 }
 func (UnimplementedMediaServiceServer) MarkProcessed(context.Context, *MarkProcessedRequest) (*MarkProcessedResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method MarkProcessed not implemented")
+}
+func (UnimplementedMediaServiceServer) GetDownloadURL(context.Context, *GetDownloadURLRequest) (*GetDownloadURLResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDownloadURL not implemented")
 }
 func (UnimplementedMediaServiceServer) mustEmbedUnimplementedMediaServiceServer() {}
 func (UnimplementedMediaServiceServer) testEmbeddedByValue()                      {}
@@ -138,6 +162,24 @@ func _MediaService_MarkProcessed_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _MediaService_GetDownloadURL_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDownloadURLRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MediaServiceServer).GetDownloadURL(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: MediaService_GetDownloadURL_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MediaServiceServer).GetDownloadURL(ctx, req.(*GetDownloadURLRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // MediaService_ServiceDesc is the grpc.ServiceDesc for MediaService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -152,6 +194,10 @@ var MediaService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "MarkProcessed",
 			Handler:    _MediaService_MarkProcessed_Handler,
+		},
+		{
+			MethodName: "GetDownloadURL",
+			Handler:    _MediaService_GetDownloadURL_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

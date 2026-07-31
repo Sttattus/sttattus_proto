@@ -98,6 +98,14 @@ export class MediaAsset extends Message<MediaAsset> {
    */
   processedAt = protoInt64.zero;
 
+  /**
+   * True when the URL is a short-lived signed read URL. Clients must not
+   * persist it and should call GetDownloadURL when it expires.
+   *
+   * @generated from field: bool is_private = 11;
+   */
+  isPrivate = false;
+
   constructor(data?: PartialMessage<MediaAsset>) {
     super();
     proto3.util.initPartial(data, this);
@@ -116,6 +124,7 @@ export class MediaAsset extends Message<MediaAsset> {
     { no: 8, name: "status", kind: "enum", T: proto3.getEnumType(ProcessingStatus) },
     { no: 9, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 10, name: "processed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "is_private", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MediaAsset {
@@ -208,7 +217,7 @@ export class RequestUploadResponse extends Message<RequestUploadResponse> {
   uploadUrl = "";
 
   /**
-   * final URL after upload completes
+   * Stable URL for public media; short-lived signed read URL for private media.
    *
    * @generated from field: string public_url = 3;
    */
@@ -218,6 +227,11 @@ export class RequestUploadResponse extends Message<RequestUploadResponse> {
    * @generated from field: int64 expires_at = 4;
    */
   expiresAt = protoInt64.zero;
+
+  /**
+   * @generated from field: bool is_private = 5;
+   */
+  isPrivate = false;
 
   constructor(data?: PartialMessage<RequestUploadResponse>) {
     super();
@@ -231,6 +245,7 @@ export class RequestUploadResponse extends Message<RequestUploadResponse> {
     { no: 2, name: "upload_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "public_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "expires_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "is_private", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestUploadResponse {
@@ -333,6 +348,92 @@ export class MarkProcessedResponse extends Message<MarkProcessedResponse> {
 
   static equals(a: MarkProcessedResponse | PlainMessage<MarkProcessedResponse> | undefined, b: MarkProcessedResponse | PlainMessage<MarkProcessedResponse> | undefined): boolean {
     return proto3.util.equals(MarkProcessedResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.media.v1.GetDownloadURLRequest
+ */
+export class GetDownloadURLRequest extends Message<GetDownloadURLRequest> {
+  /**
+   * @generated from field: string media_asset_id = 1;
+   */
+  mediaAssetId = "";
+
+  constructor(data?: PartialMessage<GetDownloadURLRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.media.v1.GetDownloadURLRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDownloadURLRequest {
+    return new GetDownloadURLRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDownloadURLRequest {
+    return new GetDownloadURLRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDownloadURLRequest {
+    return new GetDownloadURLRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDownloadURLRequest | PlainMessage<GetDownloadURLRequest> | undefined, b: GetDownloadURLRequest | PlainMessage<GetDownloadURLRequest> | undefined): boolean {
+    return proto3.util.equals(GetDownloadURLRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.media.v1.GetDownloadURLResponse
+ */
+export class GetDownloadURLResponse extends Message<GetDownloadURLResponse> {
+  /**
+   * @generated from field: string download_url = 1;
+   */
+  downloadUrl = "";
+
+  /**
+   * @generated from field: int64 expires_at = 2;
+   */
+  expiresAt = protoInt64.zero;
+
+  /**
+   * @generated from field: bool is_private = 3;
+   */
+  isPrivate = false;
+
+  constructor(data?: PartialMessage<GetDownloadURLResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.media.v1.GetDownloadURLResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expires_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "is_private", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDownloadURLResponse {
+    return new GetDownloadURLResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDownloadURLResponse {
+    return new GetDownloadURLResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDownloadURLResponse {
+    return new GetDownloadURLResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDownloadURLResponse | PlainMessage<GetDownloadURLResponse> | undefined, b: GetDownloadURLResponse | PlainMessage<GetDownloadURLResponse> | undefined): boolean {
+    return proto3.util.equals(GetDownloadURLResponse, a, b);
   }
 }
 

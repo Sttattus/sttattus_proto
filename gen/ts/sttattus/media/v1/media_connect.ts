@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ExtractDominantColorsRequest, ExtractDominantColorsResponse, ExtractExifRequest, ExtractExifResponse, MarkProcessedRequest, MarkProcessedResponse, RequestUploadRequest, RequestUploadResponse, ResizeRequest, ResizeResponse } from "./media_pb.js";
+import { ExtractDominantColorsRequest, ExtractDominantColorsResponse, ExtractExifRequest, ExtractExifResponse, GetDownloadURLRequest, GetDownloadURLResponse, MarkProcessedRequest, MarkProcessedResponse, RequestUploadRequest, RequestUploadResponse, ResizeRequest, ResizeResponse } from "./media_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -28,6 +28,20 @@ export const MediaService = {
       name: "MarkProcessed",
       I: MarkProcessedRequest,
       O: MarkProcessedResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Returns a fresh readable URL after verifying that the caller owns the
+     * media row or is a participant in the Atlas message it is attached to.
+     * Public assets return a stable URL; private assets return a short-lived
+     * signed GET URL.
+     *
+     * @generated from rpc sttattus.media.v1.MediaService.GetDownloadURL
+     */
+    getDownloadURL: {
+      name: "GetDownloadURL",
+      I: GetDownloadURLRequest,
+      O: GetDownloadURLResponse,
       kind: MethodKind.Unary,
     },
   }

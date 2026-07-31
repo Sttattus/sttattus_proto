@@ -77,17 +77,20 @@ func (ProcessingStatus) EnumDescriptor() ([]byte, []int) {
 }
 
 type MediaAsset struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	OwnerId       string                 `protobuf:"bytes,2,opt,name=owner_id,json=ownerId,proto3" json:"owner_id,omitempty"`
-	Url           string                 `protobuf:"bytes,3,opt,name=url,proto3" json:"url,omitempty"`
-	Mime          string                 `protobuf:"bytes,4,opt,name=mime,proto3" json:"mime,omitempty"`
-	Size          int64                  `protobuf:"varint,5,opt,name=size,proto3" json:"size,omitempty"`
-	Width         int32                  `protobuf:"varint,6,opt,name=width,proto3" json:"width,omitempty"`
-	Height        int32                  `protobuf:"varint,7,opt,name=height,proto3" json:"height,omitempty"`
-	Status        ProcessingStatus       `protobuf:"varint,8,opt,name=status,proto3,enum=sttattus.media.v1.ProcessingStatus" json:"status,omitempty"`
-	CreatedAt     int64                  `protobuf:"varint,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	ProcessedAt   int64                  `protobuf:"varint,10,opt,name=processed_at,json=processedAt,proto3" json:"processed_at,omitempty"`
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	OwnerId     string                 `protobuf:"bytes,2,opt,name=owner_id,json=ownerId,proto3" json:"owner_id,omitempty"`
+	Url         string                 `protobuf:"bytes,3,opt,name=url,proto3" json:"url,omitempty"`
+	Mime        string                 `protobuf:"bytes,4,opt,name=mime,proto3" json:"mime,omitempty"`
+	Size        int64                  `protobuf:"varint,5,opt,name=size,proto3" json:"size,omitempty"`
+	Width       int32                  `protobuf:"varint,6,opt,name=width,proto3" json:"width,omitempty"`
+	Height      int32                  `protobuf:"varint,7,opt,name=height,proto3" json:"height,omitempty"`
+	Status      ProcessingStatus       `protobuf:"varint,8,opt,name=status,proto3,enum=sttattus.media.v1.ProcessingStatus" json:"status,omitempty"`
+	CreatedAt   int64                  `protobuf:"varint,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	ProcessedAt int64                  `protobuf:"varint,10,opt,name=processed_at,json=processedAt,proto3" json:"processed_at,omitempty"`
+	// True when the URL is a short-lived signed read URL. Clients must not
+	// persist it and should call GetDownloadURL when it expires.
+	IsPrivate     bool `protobuf:"varint,11,opt,name=is_private,json=isPrivate,proto3" json:"is_private,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -192,6 +195,13 @@ func (x *MediaAsset) GetProcessedAt() int64 {
 	return 0
 }
 
+func (x *MediaAsset) GetIsPrivate() bool {
+	if x != nil {
+		return x.IsPrivate
+	}
+	return false
+}
+
 type RequestUploadRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	Mime  string                 `protobuf:"bytes,1,opt,name=mime,proto3" json:"mime,omitempty"`
@@ -259,11 +269,13 @@ func (x *RequestUploadRequest) GetCategory() string {
 }
 
 type RequestUploadResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	MediaAssetId  string                 `protobuf:"bytes,1,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
-	UploadUrl     string                 `protobuf:"bytes,2,opt,name=upload_url,json=uploadUrl,proto3" json:"upload_url,omitempty"` // presigned PUT URL
-	PublicUrl     string                 `protobuf:"bytes,3,opt,name=public_url,json=publicUrl,proto3" json:"public_url,omitempty"` // final URL after upload completes
-	ExpiresAt     int64                  `protobuf:"varint,4,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	MediaAssetId string                 `protobuf:"bytes,1,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
+	UploadUrl    string                 `protobuf:"bytes,2,opt,name=upload_url,json=uploadUrl,proto3" json:"upload_url,omitempty"` // presigned PUT URL
+	// Stable URL for public media; short-lived signed read URL for private media.
+	PublicUrl     string `protobuf:"bytes,3,opt,name=public_url,json=publicUrl,proto3" json:"public_url,omitempty"`
+	ExpiresAt     int64  `protobuf:"varint,4,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	IsPrivate     bool   `protobuf:"varint,5,opt,name=is_private,json=isPrivate,proto3" json:"is_private,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -324,6 +336,13 @@ func (x *RequestUploadResponse) GetExpiresAt() int64 {
 		return x.ExpiresAt
 	}
 	return 0
+}
+
+func (x *RequestUploadResponse) GetIsPrivate() bool {
+	if x != nil {
+		return x.IsPrivate
+	}
+	return false
 }
 
 type MarkProcessedRequest struct {
@@ -430,6 +449,110 @@ func (x *MarkProcessedResponse) GetAsset() *MediaAsset {
 	return nil
 }
 
+type GetDownloadURLRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	MediaAssetId  string                 `protobuf:"bytes,1,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDownloadURLRequest) Reset() {
+	*x = GetDownloadURLRequest{}
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDownloadURLRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDownloadURLRequest) ProtoMessage() {}
+
+func (x *GetDownloadURLRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDownloadURLRequest.ProtoReflect.Descriptor instead.
+func (*GetDownloadURLRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *GetDownloadURLRequest) GetMediaAssetId() string {
+	if x != nil {
+		return x.MediaAssetId
+	}
+	return ""
+}
+
+type GetDownloadURLResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	DownloadUrl   string                 `protobuf:"bytes,1,opt,name=download_url,json=downloadUrl,proto3" json:"download_url,omitempty"`
+	ExpiresAt     int64                  `protobuf:"varint,2,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	IsPrivate     bool                   `protobuf:"varint,3,opt,name=is_private,json=isPrivate,proto3" json:"is_private,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDownloadURLResponse) Reset() {
+	*x = GetDownloadURLResponse{}
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDownloadURLResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDownloadURLResponse) ProtoMessage() {}
+
+func (x *GetDownloadURLResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDownloadURLResponse.ProtoReflect.Descriptor instead.
+func (*GetDownloadURLResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *GetDownloadURLResponse) GetDownloadUrl() string {
+	if x != nil {
+		return x.DownloadUrl
+	}
+	return ""
+}
+
+func (x *GetDownloadURLResponse) GetExpiresAt() int64 {
+	if x != nil {
+		return x.ExpiresAt
+	}
+	return 0
+}
+
+func (x *GetDownloadURLResponse) GetIsPrivate() bool {
+	if x != nil {
+		return x.IsPrivate
+	}
+	return false
+}
+
 type ResizeRequest struct {
 	state        protoimpl.MessageState `protogen:"open.v1"`
 	MediaAssetId string                 `protobuf:"bytes,1,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
@@ -450,7 +573,7 @@ type ResizeRequest struct {
 
 func (x *ResizeRequest) Reset() {
 	*x = ResizeRequest{}
-	mi := &file_sttattus_media_v1_media_proto_msgTypes[5]
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -462,7 +585,7 @@ func (x *ResizeRequest) String() string {
 func (*ResizeRequest) ProtoMessage() {}
 
 func (x *ResizeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_media_v1_media_proto_msgTypes[5]
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -475,7 +598,7 @@ func (x *ResizeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResizeRequest.ProtoReflect.Descriptor instead.
 func (*ResizeRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{5}
+	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ResizeRequest) GetMediaAssetId() string {
@@ -532,7 +655,7 @@ type ResizeResponse struct {
 
 func (x *ResizeResponse) Reset() {
 	*x = ResizeResponse{}
-	mi := &file_sttattus_media_v1_media_proto_msgTypes[6]
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -544,7 +667,7 @@ func (x *ResizeResponse) String() string {
 func (*ResizeResponse) ProtoMessage() {}
 
 func (x *ResizeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_media_v1_media_proto_msgTypes[6]
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -557,7 +680,7 @@ func (x *ResizeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResizeResponse.ProtoReflect.Descriptor instead.
 func (*ResizeResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{6}
+	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ResizeResponse) GetThumbnailUrl() string {
@@ -598,7 +721,7 @@ type ExtractDominantColorsRequest struct {
 
 func (x *ExtractDominantColorsRequest) Reset() {
 	*x = ExtractDominantColorsRequest{}
-	mi := &file_sttattus_media_v1_media_proto_msgTypes[7]
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -610,7 +733,7 @@ func (x *ExtractDominantColorsRequest) String() string {
 func (*ExtractDominantColorsRequest) ProtoMessage() {}
 
 func (x *ExtractDominantColorsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_media_v1_media_proto_msgTypes[7]
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -623,7 +746,7 @@ func (x *ExtractDominantColorsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExtractDominantColorsRequest.ProtoReflect.Descriptor instead.
 func (*ExtractDominantColorsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{7}
+	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ExtractDominantColorsRequest) GetSourceUrl() string {
@@ -649,7 +772,7 @@ type ExtractDominantColorsResponse struct {
 
 func (x *ExtractDominantColorsResponse) Reset() {
 	*x = ExtractDominantColorsResponse{}
-	mi := &file_sttattus_media_v1_media_proto_msgTypes[8]
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -661,7 +784,7 @@ func (x *ExtractDominantColorsResponse) String() string {
 func (*ExtractDominantColorsResponse) ProtoMessage() {}
 
 func (x *ExtractDominantColorsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_media_v1_media_proto_msgTypes[8]
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -674,7 +797,7 @@ func (x *ExtractDominantColorsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExtractDominantColorsResponse.ProtoReflect.Descriptor instead.
 func (*ExtractDominantColorsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{8}
+	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ExtractDominantColorsResponse) GetHexColors() []string {
@@ -693,7 +816,7 @@ type ExtractExifRequest struct {
 
 func (x *ExtractExifRequest) Reset() {
 	*x = ExtractExifRequest{}
-	mi := &file_sttattus_media_v1_media_proto_msgTypes[9]
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -705,7 +828,7 @@ func (x *ExtractExifRequest) String() string {
 func (*ExtractExifRequest) ProtoMessage() {}
 
 func (x *ExtractExifRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_media_v1_media_proto_msgTypes[9]
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -718,7 +841,7 @@ func (x *ExtractExifRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExtractExifRequest.ProtoReflect.Descriptor instead.
 func (*ExtractExifRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{9}
+	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ExtractExifRequest) GetSourceUrl() string {
@@ -749,7 +872,7 @@ type ExtractExifResponse struct {
 
 func (x *ExtractExifResponse) Reset() {
 	*x = ExtractExifResponse{}
-	mi := &file_sttattus_media_v1_media_proto_msgTypes[10]
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -761,7 +884,7 @@ func (x *ExtractExifResponse) String() string {
 func (*ExtractExifResponse) ProtoMessage() {}
 
 func (x *ExtractExifResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_media_v1_media_proto_msgTypes[10]
+	mi := &file_sttattus_media_v1_media_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -774,7 +897,7 @@ func (x *ExtractExifResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExtractExifResponse.ProtoReflect.Descriptor instead.
 func (*ExtractExifResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{10}
+	return file_sttattus_media_v1_media_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *ExtractExifResponse) GetGpsPresent() bool {
@@ -851,7 +974,7 @@ var File_sttattus_media_v1_media_proto protoreflect.FileDescriptor
 
 const file_sttattus_media_v1_media_proto_rawDesc = "" +
 	"\n" +
-	"\x1dsttattus/media/v1/media.proto\x12\x11sttattus.media.v1\"\x9e\x02\n" +
+	"\x1dsttattus/media/v1/media.proto\x12\x11sttattus.media.v1\"\xbd\x02\n" +
 	"\n" +
 	"MediaAsset\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
@@ -865,11 +988,13 @@ const file_sttattus_media_v1_media_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\t \x01(\x03R\tcreatedAt\x12!\n" +
 	"\fprocessed_at\x18\n" +
-	" \x01(\x03R\vprocessedAt\"Z\n" +
+	" \x01(\x03R\vprocessedAt\x12\x1d\n" +
+	"\n" +
+	"is_private\x18\v \x01(\bR\tisPrivate\"Z\n" +
 	"\x14RequestUploadRequest\x12\x12\n" +
 	"\x04mime\x18\x01 \x01(\tR\x04mime\x12\x12\n" +
 	"\x04size\x18\x02 \x01(\x03R\x04size\x12\x1a\n" +
-	"\bcategory\x18\x03 \x01(\tR\bcategory\"\x9a\x01\n" +
+	"\bcategory\x18\x03 \x01(\tR\bcategory\"\xb9\x01\n" +
 	"\x15RequestUploadResponse\x12$\n" +
 	"\x0emedia_asset_id\x18\x01 \x01(\tR\fmediaAssetId\x12\x1d\n" +
 	"\n" +
@@ -877,13 +1002,23 @@ const file_sttattus_media_v1_media_proto_rawDesc = "" +
 	"\n" +
 	"public_url\x18\x03 \x01(\tR\tpublicUrl\x12\x1d\n" +
 	"\n" +
-	"expires_at\x18\x04 \x01(\x03R\texpiresAt\"j\n" +
+	"expires_at\x18\x04 \x01(\x03R\texpiresAt\x12\x1d\n" +
+	"\n" +
+	"is_private\x18\x05 \x01(\bR\tisPrivate\"j\n" +
 	"\x14MarkProcessedRequest\x12$\n" +
 	"\x0emedia_asset_id\x18\x01 \x01(\tR\fmediaAssetId\x12\x14\n" +
 	"\x05width\x18\x02 \x01(\x05R\x05width\x12\x16\n" +
 	"\x06height\x18\x03 \x01(\x05R\x06height\"L\n" +
 	"\x15MarkProcessedResponse\x123\n" +
-	"\x05asset\x18\x01 \x01(\v2\x1d.sttattus.media.v1.MediaAssetR\x05asset\"\xce\x01\n" +
+	"\x05asset\x18\x01 \x01(\v2\x1d.sttattus.media.v1.MediaAssetR\x05asset\"=\n" +
+	"\x15GetDownloadURLRequest\x12$\n" +
+	"\x0emedia_asset_id\x18\x01 \x01(\tR\fmediaAssetId\"y\n" +
+	"\x16GetDownloadURLResponse\x12!\n" +
+	"\fdownload_url\x18\x01 \x01(\tR\vdownloadUrl\x12\x1d\n" +
+	"\n" +
+	"expires_at\x18\x02 \x01(\x03R\texpiresAt\x12\x1d\n" +
+	"\n" +
+	"is_private\x18\x03 \x01(\bR\tisPrivate\"\xce\x01\n" +
 	"\rResizeRequest\x12$\n" +
 	"\x0emedia_asset_id\x18\x01 \x01(\tR\fmediaAssetId\x12\x1d\n" +
 	"\n" +
@@ -930,10 +1065,11 @@ const file_sttattus_media_v1_media_proto_rawDesc = "" +
 	"\x19PROCESSING_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cPROCESSING_STATUS_PROCESSING\x10\x02\x12\x1b\n" +
 	"\x17PROCESSING_STATUS_READY\x10\x03\x12\x1c\n" +
-	"\x18PROCESSING_STATUS_FAILED\x10\x042\xd6\x01\n" +
+	"\x18PROCESSING_STATUS_FAILED\x10\x042\xbd\x02\n" +
 	"\fMediaService\x12b\n" +
 	"\rRequestUpload\x12'.sttattus.media.v1.RequestUploadRequest\x1a(.sttattus.media.v1.RequestUploadResponse\x12b\n" +
-	"\rMarkProcessed\x12'.sttattus.media.v1.MarkProcessedRequest\x1a(.sttattus.media.v1.MarkProcessedResponse2\xbb\x02\n" +
+	"\rMarkProcessed\x12'.sttattus.media.v1.MarkProcessedRequest\x1a(.sttattus.media.v1.MarkProcessedResponse\x12e\n" +
+	"\x0eGetDownloadURL\x12(.sttattus.media.v1.GetDownloadURLRequest\x1a).sttattus.media.v1.GetDownloadURLResponse2\xbb\x02\n" +
 	"\x10ImageProcService\x12M\n" +
 	"\x06Resize\x12 .sttattus.media.v1.ResizeRequest\x1a!.sttattus.media.v1.ResizeResponse\x12z\n" +
 	"\x15ExtractDominantColors\x12/.sttattus.media.v1.ExtractDominantColorsRequest\x1a0.sttattus.media.v1.ExtractDominantColorsResponse\x12\\\n" +
@@ -952,7 +1088,7 @@ func file_sttattus_media_v1_media_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_media_v1_media_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_sttattus_media_v1_media_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_sttattus_media_v1_media_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_sttattus_media_v1_media_proto_goTypes = []any{
 	(ProcessingStatus)(0),                 // 0: sttattus.media.v1.ProcessingStatus
 	(*MediaAsset)(nil),                    // 1: sttattus.media.v1.MediaAsset
@@ -960,28 +1096,32 @@ var file_sttattus_media_v1_media_proto_goTypes = []any{
 	(*RequestUploadResponse)(nil),         // 3: sttattus.media.v1.RequestUploadResponse
 	(*MarkProcessedRequest)(nil),          // 4: sttattus.media.v1.MarkProcessedRequest
 	(*MarkProcessedResponse)(nil),         // 5: sttattus.media.v1.MarkProcessedResponse
-	(*ResizeRequest)(nil),                 // 6: sttattus.media.v1.ResizeRequest
-	(*ResizeResponse)(nil),                // 7: sttattus.media.v1.ResizeResponse
-	(*ExtractDominantColorsRequest)(nil),  // 8: sttattus.media.v1.ExtractDominantColorsRequest
-	(*ExtractDominantColorsResponse)(nil), // 9: sttattus.media.v1.ExtractDominantColorsResponse
-	(*ExtractExifRequest)(nil),            // 10: sttattus.media.v1.ExtractExifRequest
-	(*ExtractExifResponse)(nil),           // 11: sttattus.media.v1.ExtractExifResponse
+	(*GetDownloadURLRequest)(nil),         // 6: sttattus.media.v1.GetDownloadURLRequest
+	(*GetDownloadURLResponse)(nil),        // 7: sttattus.media.v1.GetDownloadURLResponse
+	(*ResizeRequest)(nil),                 // 8: sttattus.media.v1.ResizeRequest
+	(*ResizeResponse)(nil),                // 9: sttattus.media.v1.ResizeResponse
+	(*ExtractDominantColorsRequest)(nil),  // 10: sttattus.media.v1.ExtractDominantColorsRequest
+	(*ExtractDominantColorsResponse)(nil), // 11: sttattus.media.v1.ExtractDominantColorsResponse
+	(*ExtractExifRequest)(nil),            // 12: sttattus.media.v1.ExtractExifRequest
+	(*ExtractExifResponse)(nil),           // 13: sttattus.media.v1.ExtractExifResponse
 }
 var file_sttattus_media_v1_media_proto_depIdxs = []int32{
 	0,  // 0: sttattus.media.v1.MediaAsset.status:type_name -> sttattus.media.v1.ProcessingStatus
 	1,  // 1: sttattus.media.v1.MarkProcessedResponse.asset:type_name -> sttattus.media.v1.MediaAsset
 	2,  // 2: sttattus.media.v1.MediaService.RequestUpload:input_type -> sttattus.media.v1.RequestUploadRequest
 	4,  // 3: sttattus.media.v1.MediaService.MarkProcessed:input_type -> sttattus.media.v1.MarkProcessedRequest
-	6,  // 4: sttattus.media.v1.ImageProcService.Resize:input_type -> sttattus.media.v1.ResizeRequest
-	8,  // 5: sttattus.media.v1.ImageProcService.ExtractDominantColors:input_type -> sttattus.media.v1.ExtractDominantColorsRequest
-	10, // 6: sttattus.media.v1.ImageProcService.ExtractExif:input_type -> sttattus.media.v1.ExtractExifRequest
-	3,  // 7: sttattus.media.v1.MediaService.RequestUpload:output_type -> sttattus.media.v1.RequestUploadResponse
-	5,  // 8: sttattus.media.v1.MediaService.MarkProcessed:output_type -> sttattus.media.v1.MarkProcessedResponse
-	7,  // 9: sttattus.media.v1.ImageProcService.Resize:output_type -> sttattus.media.v1.ResizeResponse
-	9,  // 10: sttattus.media.v1.ImageProcService.ExtractDominantColors:output_type -> sttattus.media.v1.ExtractDominantColorsResponse
-	11, // 11: sttattus.media.v1.ImageProcService.ExtractExif:output_type -> sttattus.media.v1.ExtractExifResponse
-	7,  // [7:12] is the sub-list for method output_type
-	2,  // [2:7] is the sub-list for method input_type
+	6,  // 4: sttattus.media.v1.MediaService.GetDownloadURL:input_type -> sttattus.media.v1.GetDownloadURLRequest
+	8,  // 5: sttattus.media.v1.ImageProcService.Resize:input_type -> sttattus.media.v1.ResizeRequest
+	10, // 6: sttattus.media.v1.ImageProcService.ExtractDominantColors:input_type -> sttattus.media.v1.ExtractDominantColorsRequest
+	12, // 7: sttattus.media.v1.ImageProcService.ExtractExif:input_type -> sttattus.media.v1.ExtractExifRequest
+	3,  // 8: sttattus.media.v1.MediaService.RequestUpload:output_type -> sttattus.media.v1.RequestUploadResponse
+	5,  // 9: sttattus.media.v1.MediaService.MarkProcessed:output_type -> sttattus.media.v1.MarkProcessedResponse
+	7,  // 10: sttattus.media.v1.MediaService.GetDownloadURL:output_type -> sttattus.media.v1.GetDownloadURLResponse
+	9,  // 11: sttattus.media.v1.ImageProcService.Resize:output_type -> sttattus.media.v1.ResizeResponse
+	11, // 12: sttattus.media.v1.ImageProcService.ExtractDominantColors:output_type -> sttattus.media.v1.ExtractDominantColorsResponse
+	13, // 13: sttattus.media.v1.ImageProcService.ExtractExif:output_type -> sttattus.media.v1.ExtractExifResponse
+	8,  // [8:14] is the sub-list for method output_type
+	2,  // [2:8] is the sub-list for method input_type
 	2,  // [2:2] is the sub-list for extension type_name
 	2,  // [2:2] is the sub-list for extension extendee
 	0,  // [0:2] is the sub-list for field type_name
@@ -998,7 +1138,7 @@ func file_sttattus_media_v1_media_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_media_v1_media_proto_rawDesc), len(file_sttattus_media_v1_media_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   11,
+			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   2,
 		},
