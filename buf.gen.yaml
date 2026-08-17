@@ -4,12 +4,19 @@ version: v2
 # Per-language subdirs are still recreated by each plugin run.
 clean: false
 plugins:
-  # Go — for backend_go
-  - remote: buf.build/protocolbuffers/go
+  # Go — for backend_go.
+  # Pinned for the same reason as the TS plugins below, and because the Dart
+  # path proved the cost of not doing it: an unpinned generator silently moved
+  # to a major that targeted a newer runtime than the consumers had, and every
+  # app stopped compiling. These versions are the ones that produced the code
+  # currently in gen/go, so pinning them is a no-op today. Bump deliberately,
+  # and run `go build ./...` in backend_go afterwards — generated Go breaks at
+  # compile time, not at `buf generate`.
+  - remote: buf.build/protocolbuffers/go:v1.36.12
     out: gen/go
     opt:
       - paths=source_relative
-  - remote: buf.build/grpc/go
+  - remote: buf.build/grpc/go:v1.6.2
     out: gen/go
     opt:
       - paths=source_relative
