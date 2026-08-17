@@ -8,8 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
-// ignore_for_file: unused_import
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -37,14 +36,7 @@ const ScoreWorkoutRequest$json = {
   '1': 'ScoreWorkoutRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {
-      '1': 'series',
-      '3': 2,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.scoring.v1.WorkoutSeriesInput',
-      '10': 'series'
-    },
+    {'1': 'series', '3': 2, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.WorkoutSeriesInput', '10': 'series'},
     {'1': 'current_power', '3': 3, '4': 1, '5': 5, '10': 'currentPower'},
     {'1': 'current_agility', '3': 4, '4': 1, '5': 5, '10': 'currentAgility'},
     {'1': 'current_grit', '3': 5, '4': 1, '5': 5, '10': 'currentGrit'},
@@ -85,20 +77,8 @@ const ScoreLexicalProgressRequest$json = {
     {'1': 'word_id', '3': 2, '4': 1, '5': 9, '10': 'wordId'},
     {'1': 'score_delta', '3': 3, '4': 1, '5': 5, '10': 'scoreDelta'},
     {'1': 'mastered', '3': 4, '4': 1, '5': 8, '10': 'mastered'},
-    {
-      '1': 'current_eloquence',
-      '3': 5,
-      '4': 1,
-      '5': 5,
-      '10': 'currentEloquence'
-    },
-    {
-      '1': 'current_lexical_depth',
-      '3': 6,
-      '4': 1,
-      '5': 5,
-      '10': 'currentLexicalDepth'
-    },
+    {'1': 'current_eloquence', '3': 5, '4': 1, '5': 5, '10': 'currentEloquence'},
+    {'1': 'current_lexical_depth', '3': 6, '4': 1, '5': 5, '10': 'currentLexicalDepth'},
   ],
 };
 
@@ -115,22 +95,15 @@ const ScoreLexicalProgressResponse$json = {
   '1': 'ScoreLexicalProgressResponse',
   '2': [
     {'1': 'eloquence_delta', '3': 1, '4': 1, '5': 5, '10': 'eloquenceDelta'},
-    {
-      '1': 'lexical_depth_delta',
-      '3': 2,
-      '4': 1,
-      '5': 5,
-      '10': 'lexicalDepthDelta'
-    },
+    {'1': 'lexical_depth_delta', '3': 2, '4': 1, '5': 5, '10': 'lexicalDepthDelta'},
   ],
 };
 
 /// Descriptor for `ScoreLexicalProgressResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List scoreLexicalProgressResponseDescriptor =
-    $convert.base64Decode(
-        'ChxTY29yZUxleGljYWxQcm9ncmVzc1Jlc3BvbnNlEicKD2Vsb3F1ZW5jZV9kZWx0YRgBIAEoBV'
-        'IOZWxvcXVlbmNlRGVsdGESLgoTbGV4aWNhbF9kZXB0aF9kZWx0YRgCIAEoBVIRbGV4aWNhbERl'
-        'cHRoRGVsdGE=');
+final $typed_data.Uint8List scoreLexicalProgressResponseDescriptor = $convert.base64Decode(
+    'ChxTY29yZUxleGljYWxQcm9ncmVzc1Jlc3BvbnNlEicKD2Vsb3F1ZW5jZV9kZWx0YRgBIAEoBV'
+    'IOZWxvcXVlbmNlRGVsdGESLgoTbGV4aWNhbF9kZXB0aF9kZWx0YRgCIAEoBVIRbGV4aWNhbERl'
+    'cHRoRGVsdGE=');
 
 @$core.Deprecated('Use scoreMatchRequestDescriptor instead')
 const ScoreMatchRequest$json = {
@@ -141,77 +114,17 @@ const ScoreMatchRequest$json = {
     {'1': 'swiper_vault_rank', '3': 3, '4': 1, '5': 1, '10': 'swiperVaultRank'},
     {'1': 'swiper_apex_rank', '3': 4, '4': 1, '5': 1, '10': 'swiperApexRank'},
     {'1': 'swiper_forge_rank', '3': 5, '4': 1, '5': 1, '10': 'swiperForgeRank'},
-    {
-      '1': 'swiper_intellectual_pace',
-      '3': 6,
-      '4': 1,
-      '5': 5,
-      '10': 'swiperIntellectualPace'
-    },
-    {
-      '1': 'swiper_emotional_granularity',
-      '3': 7,
-      '4': 1,
-      '5': 5,
-      '10': 'swiperEmotionalGranularity'
-    },
-    {
-      '1': 'swiper_physical_drive',
-      '3': 8,
-      '4': 1,
-      '5': 5,
-      '10': 'swiperPhysicalDrive'
-    },
-    {
-      '1': 'swiper_social_battery',
-      '3': 9,
-      '4': 1,
-      '5': 5,
-      '10': 'swiperSocialBattery'
-    },
-    {
-      '1': 'target_vault_rank',
-      '3': 10,
-      '4': 1,
-      '5': 1,
-      '10': 'targetVaultRank'
-    },
+    {'1': 'swiper_intellectual_pace', '3': 6, '4': 1, '5': 5, '10': 'swiperIntellectualPace'},
+    {'1': 'swiper_emotional_granularity', '3': 7, '4': 1, '5': 5, '10': 'swiperEmotionalGranularity'},
+    {'1': 'swiper_physical_drive', '3': 8, '4': 1, '5': 5, '10': 'swiperPhysicalDrive'},
+    {'1': 'swiper_social_battery', '3': 9, '4': 1, '5': 5, '10': 'swiperSocialBattery'},
+    {'1': 'target_vault_rank', '3': 10, '4': 1, '5': 1, '10': 'targetVaultRank'},
     {'1': 'target_apex_rank', '3': 11, '4': 1, '5': 1, '10': 'targetApexRank'},
-    {
-      '1': 'target_forge_rank',
-      '3': 12,
-      '4': 1,
-      '5': 1,
-      '10': 'targetForgeRank'
-    },
-    {
-      '1': 'target_intellectual_pace',
-      '3': 13,
-      '4': 1,
-      '5': 5,
-      '10': 'targetIntellectualPace'
-    },
-    {
-      '1': 'target_emotional_granularity',
-      '3': 14,
-      '4': 1,
-      '5': 5,
-      '10': 'targetEmotionalGranularity'
-    },
-    {
-      '1': 'target_physical_drive',
-      '3': 15,
-      '4': 1,
-      '5': 5,
-      '10': 'targetPhysicalDrive'
-    },
-    {
-      '1': 'target_social_battery',
-      '3': 16,
-      '4': 1,
-      '5': 5,
-      '10': 'targetSocialBattery'
-    },
+    {'1': 'target_forge_rank', '3': 12, '4': 1, '5': 1, '10': 'targetForgeRank'},
+    {'1': 'target_intellectual_pace', '3': 13, '4': 1, '5': 5, '10': 'targetIntellectualPace'},
+    {'1': 'target_emotional_granularity', '3': 14, '4': 1, '5': 5, '10': 'targetEmotionalGranularity'},
+    {'1': 'target_physical_drive', '3': 15, '4': 1, '5': 5, '10': 'targetPhysicalDrive'},
+    {'1': 'target_social_battery', '3': 16, '4': 1, '5': 5, '10': 'targetSocialBattery'},
   ],
 };
 
@@ -253,41 +166,17 @@ const ScoreEmpireRequest$json = {
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
     {'1': 'forge_exp', '3': 2, '4': 1, '5': 1, '10': 'forgeExp'},
-    {
-      '1': 'lexicon_eloquence',
-      '3': 3,
-      '4': 1,
-      '5': 1,
-      '10': 'lexiconEloquence'
-    },
-    {
-      '1': 'nomad_exploration',
-      '3': 4,
-      '4': 1,
-      '5': 1,
-      '10': 'nomadExploration'
-    },
+    {'1': 'lexicon_eloquence', '3': 3, '4': 1, '5': 1, '10': 'lexiconEloquence'},
+    {'1': 'nomad_exploration', '3': 4, '4': 1, '5': 1, '10': 'nomadExploration'},
     {'1': 'atlas_behavioral', '3': 5, '4': 1, '5': 1, '10': 'atlasBehavioral'},
     {'1': 'vault_wealth', '3': 6, '4': 1, '5': 1, '10': 'vaultWealth'},
     {'1': 'apex_biomarkers', '3': 7, '4': 1, '5': 1, '10': 'apexBiomarkers'},
-    {
-      '1': 'oracle_intelligence',
-      '3': 8,
-      '4': 1,
-      '5': 1,
-      '10': 'oracleIntelligence'
-    },
+    {'1': 'oracle_intelligence', '3': 8, '4': 1, '5': 1, '10': 'oracleIntelligence'},
     {'1': 'dominion_estate', '3': 9, '4': 1, '5': 1, '10': 'dominionEstate'},
     {'1': 'legacy_heritage', '3': 10, '4': 1, '5': 1, '10': 'legacyHeritage'},
     {'1': 'zenith_focus', '3': 11, '4': 1, '5': 1, '10': 'zenithFocus'},
     {'1': 'onyx_exclusivity', '3': 12, '4': 1, '5': 1, '10': 'onyxExclusivity'},
-    {
-      '1': 'empire_reputation',
-      '3': 13,
-      '4': 1,
-      '5': 1,
-      '10': 'empireReputation'
-    },
+    {'1': 'empire_reputation', '3': 13, '4': 1, '5': 1, '10': 'empireReputation'},
   ],
 };
 
@@ -352,39 +241,14 @@ const ScoreForgeRequest$json = {
   '1': 'ScoreForgeRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {
-      '1': 'series',
-      '3': 2,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.scoring.v1.WorkoutSeriesInput',
-      '10': 'series'
-    },
+    {'1': 'series', '3': 2, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.WorkoutSeriesInput', '10': 'series'},
     {'1': 'avg_heart_rate', '3': 3, '4': 1, '5': 1, '10': 'avgHeartRate'},
     {'1': 'max_heart_rate', '3': 4, '4': 1, '5': 1, '10': 'maxHeartRate'},
-    {
-      '1': 'active_energy_kcal',
-      '3': 5,
-      '4': 1,
-      '5': 1,
-      '10': 'activeEnergyKcal'
-    },
+    {'1': 'active_energy_kcal', '3': 5, '4': 1, '5': 1, '10': 'activeEnergyKcal'},
     {'1': 'recovery_impact', '3': 6, '4': 1, '5': 1, '10': 'recoveryImpact'},
     {'1': 'is_verified', '3': 7, '4': 1, '5': 8, '10': 'isVerified'},
-    {
-      '1': 'current_experience',
-      '3': 8,
-      '4': 1,
-      '5': 3,
-      '10': 'currentExperience'
-    },
-    {
-      '1': 'current_forge_rank',
-      '3': 9,
-      '4': 1,
-      '5': 1,
-      '10': 'currentForgeRank'
-    },
+    {'1': 'current_experience', '3': 8, '4': 1, '5': 3, '10': 'currentExperience'},
+    {'1': 'current_forge_rank', '3': 9, '4': 1, '5': 1, '10': 'currentForgeRank'},
   ],
 };
 
@@ -426,20 +290,8 @@ const ScoreCognitiveMasteryRequest$json = {
     {'1': 'scenario_id', '3': 2, '4': 1, '5': 9, '10': 'scenarioId'},
     {'1': 'response_time_ms', '3': 3, '4': 1, '5': 5, '10': 'responseTimeMs'},
     {'1': 'was_optimal', '3': 4, '4': 1, '5': 8, '10': 'wasOptimal'},
-    {
-      '1': 'session_duration_sec',
-      '3': 5,
-      '4': 1,
-      '5': 5,
-      '10': 'sessionDurationSec'
-    },
-    {
-      '1': 'current_eloquence',
-      '3': 6,
-      '4': 1,
-      '5': 1,
-      '10': 'currentEloquence'
-    },
+    {'1': 'session_duration_sec', '3': 5, '4': 1, '5': 5, '10': 'sessionDurationSec'},
+    {'1': 'current_eloquence', '3': 6, '4': 1, '5': 1, '10': 'currentEloquence'},
   ],
 };
 
@@ -455,13 +307,7 @@ final $typed_data.Uint8List scoreCognitiveMasteryRequestDescriptor = $convert.ba
 const ScoreCognitiveMasteryResponse$json = {
   '1': 'ScoreCognitiveMasteryResponse',
   '2': [
-    {
-      '1': 'cognitive_load_index',
-      '3': 1,
-      '4': 1,
-      '5': 5,
-      '10': 'cognitiveLoadIndex'
-    },
+    {'1': 'cognitive_load_index', '3': 1, '4': 1, '5': 5, '10': 'cognitiveLoadIndex'},
     {'1': 'next_review_days', '3': 2, '4': 1, '5': 5, '10': 'nextReviewDays'},
     {'1': 'eloquence_delta', '3': 3, '4': 1, '5': 1, '10': 'eloquenceDelta'},
   ],
@@ -478,34 +324,10 @@ const ScoreNomadRequest$json = {
   '1': 'ScoreNomadRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {
-      '1': 'countries_visited',
-      '3': 2,
-      '4': 1,
-      '5': 5,
-      '10': 'countriesVisited'
-    },
-    {
-      '1': 'verified_checkins',
-      '3': 3,
-      '4': 1,
-      '5': 5,
-      '10': 'verifiedCheckins'
-    },
-    {
-      '1': 'elite_hubs_visited',
-      '3': 4,
-      '4': 1,
-      '5': 5,
-      '10': 'eliteHubsVisited'
-    },
-    {
-      '1': 'current_nomad_rank',
-      '3': 5,
-      '4': 1,
-      '5': 1,
-      '10': 'currentNomadRank'
-    },
+    {'1': 'countries_visited', '3': 2, '4': 1, '5': 5, '10': 'countriesVisited'},
+    {'1': 'verified_checkins', '3': 3, '4': 1, '5': 5, '10': 'verifiedCheckins'},
+    {'1': 'elite_hubs_visited', '3': 4, '4': 1, '5': 5, '10': 'eliteHubsVisited'},
+    {'1': 'current_nomad_rank', '3': 5, '4': 1, '5': 1, '10': 'currentNomadRank'},
   ],
 };
 
@@ -522,13 +344,7 @@ const ScoreNomadResponse$json = {
   '1': 'ScoreNomadResponse',
   '2': [
     {'1': 'new_nomad_rank', '3': 1, '4': 1, '5': 1, '10': 'newNomadRank'},
-    {
-      '1': 'exploration_delta',
-      '3': 2,
-      '4': 1,
-      '5': 5,
-      '10': 'explorationDelta'
-    },
+    {'1': 'exploration_delta', '3': 2, '4': 1, '5': 5, '10': 'explorationDelta'},
   ],
 };
 
@@ -542,41 +358,11 @@ const ScoreOracleRequest$json = {
   '1': 'ScoreOracleRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {
-      '1': 'average_complexity',
-      '3': 2,
-      '4': 1,
-      '5': 1,
-      '10': 'averageComplexity'
-    },
-    {
-      '1': 'average_synthesis',
-      '3': 3,
-      '4': 1,
-      '5': 1,
-      '10': 'averageSynthesis'
-    },
-    {
-      '1': 'average_foresight',
-      '3': 4,
-      '4': 1,
-      '5': 1,
-      '10': 'averageForesight'
-    },
-    {
-      '1': 'unique_domains_visited',
-      '3': 5,
-      '4': 1,
-      '5': 5,
-      '10': 'uniqueDomainsVisited'
-    },
-    {
-      '1': 'current_intellectual_rank',
-      '3': 6,
-      '4': 1,
-      '5': 1,
-      '10': 'currentIntellectualRank'
-    },
+    {'1': 'average_complexity', '3': 2, '4': 1, '5': 1, '10': 'averageComplexity'},
+    {'1': 'average_synthesis', '3': 3, '4': 1, '5': 1, '10': 'averageSynthesis'},
+    {'1': 'average_foresight', '3': 4, '4': 1, '5': 1, '10': 'averageForesight'},
+    {'1': 'unique_domains_visited', '3': 5, '4': 1, '5': 5, '10': 'uniqueDomainsVisited'},
+    {'1': 'current_intellectual_rank', '3': 6, '4': 1, '5': 1, '10': 'currentIntellectualRank'},
   ],
 };
 
@@ -593,13 +379,7 @@ final $typed_data.Uint8List scoreOracleRequestDescriptor = $convert.base64Decode
 const ScoreOracleResponse$json = {
   '1': 'ScoreOracleResponse',
   '2': [
-    {
-      '1': 'new_intellectual_rank',
-      '3': 1,
-      '4': 1,
-      '5': 1,
-      '10': 'newIntellectualRank'
-    },
+    {'1': 'new_intellectual_rank', '3': 1, '4': 1, '5': 1, '10': 'newIntellectualRank'},
     {'1': 'clout_delta', '3': 2, '4': 1, '5': 1, '10': 'cloutDelta'},
   ],
 };
@@ -614,24 +394,12 @@ const ScoreZenithRequest$json = {
   '1': 'ScoreZenithRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {
-      '1': 'session_duration_mins',
-      '3': 2,
-      '4': 1,
-      '5': 5,
-      '10': 'sessionDurationMins'
-    },
+    {'1': 'session_duration_mins', '3': 2, '4': 1, '5': 5, '10': 'sessionDurationMins'},
     {'1': 'focus_score', '3': 3, '4': 1, '5': 1, '10': 'focusScore'},
     {'1': 'is_verified', '3': 4, '4': 1, '5': 8, '10': 'isVerified'},
     {'1': 'avg_heart_rate', '3': 5, '4': 1, '5': 1, '10': 'avgHeartRate'},
     {'1': 'hrv_delta', '3': 6, '4': 1, '5': 1, '10': 'hrvDelta'},
-    {
-      '1': 'current_fortitude_rank',
-      '3': 7,
-      '4': 1,
-      '5': 1,
-      '10': 'currentFortitudeRank'
-    },
+    {'1': 'current_fortitude_rank', '3': 7, '4': 1, '5': 1, '10': 'currentFortitudeRank'},
   ],
 };
 
@@ -648,20 +416,8 @@ final $typed_data.Uint8List scoreZenithRequestDescriptor = $convert.base64Decode
 const ScoreZenithResponse$json = {
   '1': 'ScoreZenithResponse',
   '2': [
-    {
-      '1': 'new_fortitude_rank',
-      '3': 1,
-      '4': 1,
-      '5': 1,
-      '10': 'newFortitudeRank'
-    },
-    {
-      '1': 'focus_minutes_delta',
-      '3': 2,
-      '4': 1,
-      '5': 5,
-      '10': 'focusMinutesDelta'
-    },
+    {'1': 'new_fortitude_rank', '3': 1, '4': 1, '5': 1, '10': 'newFortitudeRank'},
+    {'1': 'focus_minutes_delta', '3': 2, '4': 1, '5': 5, '10': 'focusMinutesDelta'},
   ],
 };
 
@@ -676,34 +432,10 @@ const ScoreLegacyRequest$json = {
   '1': 'ScoreLegacyRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {
-      '1': 'verified_assets_count',
-      '3': 2,
-      '4': 1,
-      '5': 5,
-      '10': 'verifiedAssetsCount'
-    },
-    {
-      '1': 'total_ip_valuation',
-      '3': 3,
-      '4': 1,
-      '5': 1,
-      '10': 'totalIpValuation'
-    },
-    {
-      '1': 'unique_jurisdictions',
-      '3': 4,
-      '4': 1,
-      '5': 5,
-      '10': 'uniqueJurisdictions'
-    },
-    {
-      '1': 'current_influence_rank',
-      '3': 5,
-      '4': 1,
-      '5': 1,
-      '10': 'currentInfluenceRank'
-    },
+    {'1': 'verified_assets_count', '3': 2, '4': 1, '5': 5, '10': 'verifiedAssetsCount'},
+    {'1': 'total_ip_valuation', '3': 3, '4': 1, '5': 1, '10': 'totalIpValuation'},
+    {'1': 'unique_jurisdictions', '3': 4, '4': 1, '5': 5, '10': 'uniqueJurisdictions'},
+    {'1': 'current_influence_rank', '3': 5, '4': 1, '5': 1, '10': 'currentInfluenceRank'},
   ],
 };
 
@@ -719,13 +451,7 @@ final $typed_data.Uint8List scoreLegacyRequestDescriptor = $convert.base64Decode
 const ScoreLegacyResponse$json = {
   '1': 'ScoreLegacyResponse',
   '2': [
-    {
-      '1': 'new_influence_rank',
-      '3': 1,
-      '4': 1,
-      '5': 1,
-      '10': 'newInfluenceRank'
-    },
+    {'1': 'new_influence_rank', '3': 1, '4': 1, '5': 1, '10': 'newInfluenceRank'},
     {'1': 'influence_delta', '3': 2, '4': 1, '5': 1, '10': 'influenceDelta'},
   ],
 };
@@ -740,34 +466,10 @@ const ScoreDominionRequest$json = {
   '1': 'ScoreDominionRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {
-      '1': 'verified_properties_count',
-      '3': 2,
-      '4': 1,
-      '5': 5,
-      '10': 'verifiedPropertiesCount'
-    },
-    {
-      '1': 'total_portfolio_valuation',
-      '3': 3,
-      '4': 1,
-      '5': 1,
-      '10': 'totalPortfolioValuation'
-    },
-    {
-      '1': 'unique_regions_count',
-      '3': 4,
-      '4': 1,
-      '5': 5,
-      '10': 'uniqueRegionsCount'
-    },
-    {
-      '1': 'current_dominion_rank',
-      '3': 5,
-      '4': 1,
-      '5': 1,
-      '10': 'currentDominionRank'
-    },
+    {'1': 'verified_properties_count', '3': 2, '4': 1, '5': 5, '10': 'verifiedPropertiesCount'},
+    {'1': 'total_portfolio_valuation', '3': 3, '4': 1, '5': 1, '10': 'totalPortfolioValuation'},
+    {'1': 'unique_regions_count', '3': 4, '4': 1, '5': 5, '10': 'uniqueRegionsCount'},
+    {'1': 'current_dominion_rank', '3': 5, '4': 1, '5': 1, '10': 'currentDominionRank'},
   ],
 };
 
@@ -798,22 +500,8 @@ const ScoreSessionAnalyticsRequest$json = {
   '1': 'ScoreSessionAnalyticsRequest',
   '2': [
     {'1': 'session_id', '3': 1, '4': 1, '5': 9, '10': 'sessionId'},
-    {
-      '1': 'series',
-      '3': 2,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.scoring.v1.WorkoutSeriesInput',
-      '10': 'series'
-    },
-    {
-      '1': 'heart_rate_data',
-      '3': 3,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.scoring.v1.ScoreSessionAnalyticsRequest.HeartRatePoint',
-      '10': 'heartRateData'
-    },
+    {'1': 'series', '3': 2, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.WorkoutSeriesInput', '10': 'series'},
+    {'1': 'heart_rate_data', '3': 3, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.ScoreSessionAnalyticsRequest.HeartRatePoint', '10': 'heartRateData'},
   ],
   '3': [ScoreSessionAnalyticsRequest_HeartRatePoint$json],
 };
@@ -822,13 +510,7 @@ const ScoreSessionAnalyticsRequest$json = {
 const ScoreSessionAnalyticsRequest_HeartRatePoint$json = {
   '1': 'HeartRatePoint',
   '2': [
-    {
-      '1': 'timestamp_offset_seconds',
-      '3': 1,
-      '4': 1,
-      '5': 5,
-      '10': 'timestampOffsetSeconds'
-    },
+    {'1': 'timestamp_offset_seconds', '3': 1, '4': 1, '5': 5, '10': 'timestampOffsetSeconds'},
     {'1': 'bpm', '3': 2, '4': 1, '5': 1, '10': 'bpm'},
   ],
 };
@@ -846,13 +528,7 @@ final $typed_data.Uint8List scoreSessionAnalyticsRequestDescriptor = $convert.ba
 const MetricPoint$json = {
   '1': 'MetricPoint',
   '2': [
-    {
-      '1': 'timestamp_offset_seconds',
-      '3': 1,
-      '4': 1,
-      '5': 5,
-      '10': 'timestampOffsetSeconds'
-    },
+    {'1': 'timestamp_offset_seconds', '3': 1, '4': 1, '5': 5, '10': 'timestampOffsetSeconds'},
     {'1': 'value', '3': 2, '4': 1, '5': 1, '10': 'value'},
   ],
 };
@@ -866,30 +542,9 @@ final $typed_data.Uint8List metricPointDescriptor = $convert.base64Decode(
 const ScoreSessionAnalyticsResponse$json = {
   '1': 'ScoreSessionAnalyticsResponse',
   '2': [
-    {
-      '1': 'volume_curve',
-      '3': 1,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.scoring.v1.MetricPoint',
-      '10': 'volumeCurve'
-    },
-    {
-      '1': 'intensity_curve',
-      '3': 2,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.scoring.v1.MetricPoint',
-      '10': 'intensityCurve'
-    },
-    {
-      '1': 'heart_rate_curve',
-      '3': 3,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.scoring.v1.MetricPoint',
-      '10': 'heartRateCurve'
-    },
+    {'1': 'volume_curve', '3': 1, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.MetricPoint', '10': 'volumeCurve'},
+    {'1': 'intensity_curve', '3': 2, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.MetricPoint', '10': 'intensityCurve'},
+    {'1': 'heart_rate_curve', '3': 3, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.MetricPoint', '10': 'heartRateCurve'},
     {'1': 'total_volume', '3': 4, '4': 1, '5': 1, '10': 'totalVolume'},
     {'1': 'avg_intensity', '3': 5, '4': 1, '5': 1, '10': 'avgIntensity'},
     {'1': 'peak_heart_rate', '3': 6, '4': 1, '5': 5, '10': 'peakHeartRate'},
@@ -912,29 +567,9 @@ const ScoreRivalryRequest$json = {
   '2': [
     {'1': 'rivalry_id', '3': 1, '4': 1, '5': 9, '10': 'rivalryId'},
     {'1': 'my_current_score', '3': 2, '4': 1, '5': 1, '10': 'myCurrentScore'},
-    {
-      '1': 'rival_current_score',
-      '3': 3,
-      '4': 1,
-      '5': 1,
-      '10': 'rivalCurrentScore'
-    },
-    {
-      '1': 'my_score_history',
-      '3': 4,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.scoring.v1.MetricPoint',
-      '10': 'myScoreHistory'
-    },
-    {
-      '1': 'rival_score_history',
-      '3': 5,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.scoring.v1.MetricPoint',
-      '10': 'rivalScoreHistory'
-    },
+    {'1': 'rival_current_score', '3': 3, '4': 1, '5': 1, '10': 'rivalCurrentScore'},
+    {'1': 'my_score_history', '3': 4, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.MetricPoint', '10': 'myScoreHistory'},
+    {'1': 'rival_score_history', '3': 5, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.MetricPoint', '10': 'rivalScoreHistory'},
   ],
 };
 
@@ -952,29 +587,9 @@ const ScoreRivalryResponse$json = {
   '1': 'ScoreRivalryResponse',
   '2': [
     {'1': 'my_progress_pct', '3': 1, '4': 1, '5': 1, '10': 'myProgressPct'},
-    {
-      '1': 'rival_progress_pct',
-      '3': 2,
-      '4': 1,
-      '5': 1,
-      '10': 'rivalProgressPct'
-    },
-    {
-      '1': 'my_normalized_curve',
-      '3': 3,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.scoring.v1.MetricPoint',
-      '10': 'myNormalizedCurve'
-    },
-    {
-      '1': 'rival_normalized_curve',
-      '3': 4,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.scoring.v1.MetricPoint',
-      '10': 'rivalNormalizedCurve'
-    },
+    {'1': 'rival_progress_pct', '3': 2, '4': 1, '5': 1, '10': 'rivalProgressPct'},
+    {'1': 'my_normalized_curve', '3': 3, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.MetricPoint', '10': 'myNormalizedCurve'},
+    {'1': 'rival_normalized_curve', '3': 4, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.MetricPoint', '10': 'rivalNormalizedCurve'},
     {'1': 'leading_user_id', '3': 5, '4': 1, '5': 9, '10': 'leadingUserId'},
   ],
 };
@@ -1015,10 +630,9 @@ const ScoreAcuteChronicResponse$json = {
 };
 
 /// Descriptor for `ScoreAcuteChronicResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List scoreAcuteChronicResponseDescriptor =
-    $convert.base64Decode(
-        'ChlTY29yZUFjdXRlQ2hyb25pY1Jlc3BvbnNlEhQKBXJhdGlvGAEgASgBUgVyYXRpbxISCgR6b2'
-        '5lGAIgASgJUgR6b25lEh8KC2luanVyeV9yaXNrGAMgASgIUgppbmp1cnlSaXNr');
+final $typed_data.Uint8List scoreAcuteChronicResponseDescriptor = $convert.base64Decode(
+    'ChlTY29yZUFjdXRlQ2hyb25pY1Jlc3BvbnNlEhQKBXJhdGlvGAEgASgBUgVyYXRpbxISCgR6b2'
+    '5lGAIgASgJUgR6b25lEh8KC2luanVyeV9yaXNrGAMgASgIUgppbmp1cnlSaXNr');
 
 @$core.Deprecated('Use estimateOneRmRequestDescriptor instead')
 const EstimateOneRmRequest$json = {
@@ -1054,26 +668,18 @@ const ScoreVolumeIntensityFrequencyRequest$json = {
   '1': 'ScoreVolumeIntensityFrequencyRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {
-      '1': 'series',
-      '3': 2,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.scoring.v1.WorkoutSeriesInput',
-      '10': 'series'
-    },
+    {'1': 'series', '3': 2, '4': 3, '5': 11, '6': '.sttattus.scoring.v1.WorkoutSeriesInput', '10': 'series'},
     {'1': 'session_days', '3': 3, '4': 1, '5': 5, '10': 'sessionDays'},
     {'1': 'window_days', '3': 4, '4': 1, '5': 5, '10': 'windowDays'},
   ],
 };
 
 /// Descriptor for `ScoreVolumeIntensityFrequencyRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List scoreVolumeIntensityFrequencyRequestDescriptor =
-    $convert.base64Decode(
-        'CiRTY29yZVZvbHVtZUludGVuc2l0eUZyZXF1ZW5jeVJlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCV'
-        'IGdXNlcklkEj8KBnNlcmllcxgCIAMoCzInLnN0dGF0dHVzLnNjb3JpbmcudjEuV29ya291dFNl'
-        'cmllc0lucHV0UgZzZXJpZXMSIQoMc2Vzc2lvbl9kYXlzGAMgASgFUgtzZXNzaW9uRGF5cxIfCg'
-        't3aW5kb3dfZGF5cxgEIAEoBVIKd2luZG93RGF5cw==');
+final $typed_data.Uint8List scoreVolumeIntensityFrequencyRequestDescriptor = $convert.base64Decode(
+    'CiRTY29yZVZvbHVtZUludGVuc2l0eUZyZXF1ZW5jeVJlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCV'
+    'IGdXNlcklkEj8KBnNlcmllcxgCIAMoCzInLnN0dGF0dHVzLnNjb3JpbmcudjEuV29ya291dFNl'
+    'cmllc0lucHV0UgZzZXJpZXMSIQoMc2Vzc2lvbl9kYXlzGAMgASgFUgtzZXNzaW9uRGF5cxIfCg'
+    't3aW5kb3dfZGF5cxgEIAEoBVIKd2luZG93RGF5cw==');
 
 @$core.Deprecated('Use scoreVolumeIntensityFrequencyResponseDescriptor instead')
 const ScoreVolumeIntensityFrequencyResponse$json = {
@@ -1087,8 +693,8 @@ const ScoreVolumeIntensityFrequencyResponse$json = {
 };
 
 /// Descriptor for `ScoreVolumeIntensityFrequencyResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List scoreVolumeIntensityFrequencyResponseDescriptor =
-    $convert.base64Decode(
-        'CiVTY29yZVZvbHVtZUludGVuc2l0eUZyZXF1ZW5jeVJlc3BvbnNlEhYKBnZvbHVtZRgBIAEoAV'
-        'IGdm9sdW1lEhwKCWludGVuc2l0eRgCIAEoAVIJaW50ZW5zaXR5EhwKCWZyZXF1ZW5jeRgDIAEo'
-        'AVIJZnJlcXVlbmN5EhwKCWNvbXBvc2l0ZRgEIAEoAVIJY29tcG9zaXRl');
+final $typed_data.Uint8List scoreVolumeIntensityFrequencyResponseDescriptor = $convert.base64Decode(
+    'CiVTY29yZVZvbHVtZUludGVuc2l0eUZyZXF1ZW5jeVJlc3BvbnNlEhYKBnZvbHVtZRgBIAEoAV'
+    'IGdm9sdW1lEhwKCWludGVuc2l0eRgCIAEoAVIJaW50ZW5zaXR5EhwKCWZyZXF1ZW5jeRgDIAEo'
+    'AVIJZnJlcXVlbmN5EhwKCWNvbXBvc2l0ZRgEIAEoAVIJY29tcG9zaXRl');
+

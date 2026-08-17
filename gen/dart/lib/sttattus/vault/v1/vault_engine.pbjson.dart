@@ -8,8 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
-// ignore_for_file: unused_import
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -34,14 +33,7 @@ const ComputeIrrRequest$json = {
   '1': 'ComputeIrrRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {
-      '1': 'cash_flows',
-      '3': 2,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.vault.v1.CashFlowPoint',
-      '10': 'cashFlows'
-    },
+    {'1': 'cash_flows', '3': 2, '4': 3, '5': 11, '6': '.sttattus.vault.v1.CashFlowPoint', '10': 'cashFlows'},
   ],
 };
 
@@ -84,14 +76,7 @@ const ComputeTwrRequest$json = {
   '1': 'ComputeTwrRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {
-      '1': 'periods',
-      '3': 2,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.vault.v1.SubPeriodReturn',
-      '10': 'periods'
-    },
+    {'1': 'periods', '3': 2, '4': 3, '5': 11, '6': '.sttattus.vault.v1.SubPeriodReturn', '10': 'periods'},
   ],
 };
 
@@ -109,8 +94,8 @@ const ComputeTwrResponse$json = {
 };
 
 /// Descriptor for `ComputeTwrResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List computeTwrResponseDescriptor = $convert
-    .base64Decode('ChJDb21wdXRlVHdyUmVzcG9uc2USEAoDdHdyGAEgASgBUgN0d3I=');
+final $typed_data.Uint8List computeTwrResponseDescriptor = $convert.base64Decode(
+    'ChJDb21wdXRlVHdyUmVzcG9uc2USEAoDdHdyGAEgASgBUgN0d3I=');
 
 @$core.Deprecated('Use liquidAssetDescriptor instead')
 const LiquidAsset$json = {
@@ -131,22 +116,14 @@ const ComputeLiquidityBandsRequest$json = {
   '1': 'ComputeLiquidityBandsRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {
-      '1': 'assets',
-      '3': 2,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.vault.v1.LiquidAsset',
-      '10': 'assets'
-    },
+    {'1': 'assets', '3': 2, '4': 3, '5': 11, '6': '.sttattus.vault.v1.LiquidAsset', '10': 'assets'},
   ],
 };
 
 /// Descriptor for `ComputeLiquidityBandsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List computeLiquidityBandsRequestDescriptor =
-    $convert.base64Decode(
-        'ChxDb21wdXRlTGlxdWlkaXR5QmFuZHNSZXF1ZXN0EhcKB3VzZXJfaWQYASABKAlSBnVzZXJJZB'
-        'I2CgZhc3NldHMYAiADKAsyHi5zdHRhdHR1cy52YXVsdC52MS5MaXF1aWRBc3NldFIGYXNzZXRz');
+final $typed_data.Uint8List computeLiquidityBandsRequestDescriptor = $convert.base64Decode(
+    'ChxDb21wdXRlTGlxdWlkaXR5QmFuZHNSZXF1ZXN0EhcKB3VzZXJfaWQYASABKAlSBnVzZXJJZB'
+    'I2CgZhc3NldHMYAiADKAsyHi5zdHRhdHR1cy52YXVsdC52MS5MaXF1aWRBc3NldFIGYXNzZXRz');
 
 @$core.Deprecated('Use liquidityBandSliceDescriptor instead')
 const LiquidityBandSlice$json = {
@@ -167,24 +144,16 @@ final $typed_data.Uint8List liquidityBandSliceDescriptor = $convert.base64Decode
 const ComputeLiquidityBandsResponse$json = {
   '1': 'ComputeLiquidityBandsResponse',
   '2': [
-    {
-      '1': 'slices',
-      '3': 1,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.vault.v1.LiquidityBandSlice',
-      '10': 'slices'
-    },
+    {'1': 'slices', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.LiquidityBandSlice', '10': 'slices'},
     {'1': 'accessible_t1', '3': 2, '4': 1, '5': 1, '10': 'accessibleT1'},
   ],
 };
 
 /// Descriptor for `ComputeLiquidityBandsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List computeLiquidityBandsResponseDescriptor =
-    $convert.base64Decode(
-        'Ch1Db21wdXRlTGlxdWlkaXR5QmFuZHNSZXNwb25zZRI9CgZzbGljZXMYASADKAsyJS5zdHRhdH'
-        'R1cy52YXVsdC52MS5MaXF1aWRpdHlCYW5kU2xpY2VSBnNsaWNlcxIjCg1hY2Nlc3NpYmxlX3Qx'
-        'GAIgASgBUgxhY2Nlc3NpYmxlVDE=');
+final $typed_data.Uint8List computeLiquidityBandsResponseDescriptor = $convert.base64Decode(
+    'Ch1Db21wdXRlTGlxdWlkaXR5QmFuZHNSZXNwb25zZRI9CgZzbGljZXMYASADKAsyJS5zdHRhdH'
+    'R1cy52YXVsdC52MS5MaXF1aWRpdHlCYW5kU2xpY2VSBnNsaWNlcxIjCg1hY2Nlc3NpYmxlX3Qx'
+    'GAIgASgBUgxhY2Nlc3NpYmxlVDE=');
 
 @$core.Deprecated('Use harvestLotDescriptor instead')
 const HarvestLot$json = {
@@ -208,37 +177,23 @@ const DetectHarvestOpportunitiesRequest$json = {
   '1': 'DetectHarvestOpportunitiesRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {
-      '1': 'lots',
-      '3': 2,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.vault.v1.HarvestLot',
-      '10': 'lots'
-    },
+    {'1': 'lots', '3': 2, '4': 3, '5': 11, '6': '.sttattus.vault.v1.HarvestLot', '10': 'lots'},
     {'1': 'min_loss_usd', '3': 3, '4': 1, '5': 1, '10': 'minLossUsd'},
   ],
 };
 
 /// Descriptor for `DetectHarvestOpportunitiesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List detectHarvestOpportunitiesRequestDescriptor =
-    $convert.base64Decode(
-        'CiFEZXRlY3RIYXJ2ZXN0T3Bwb3J0dW5pdGllc1JlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdX'
-        'NlcklkEjEKBGxvdHMYAiADKAsyHS5zdHRhdHR1cy52YXVsdC52MS5IYXJ2ZXN0TG90UgRsb3Rz'
-        'EiAKDG1pbl9sb3NzX3VzZBgDIAEoAVIKbWluTG9zc1VzZA==');
+final $typed_data.Uint8List detectHarvestOpportunitiesRequestDescriptor = $convert.base64Decode(
+    'CiFEZXRlY3RIYXJ2ZXN0T3Bwb3J0dW5pdGllc1JlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdX'
+    'NlcklkEjEKBGxvdHMYAiADKAsyHS5zdHRhdHR1cy52YXVsdC52MS5IYXJ2ZXN0TG90UgRsb3Rz'
+    'EiAKDG1pbl9sb3NzX3VzZBgDIAEoAVIKbWluTG9zc1VzZA==');
 
 @$core.Deprecated('Use harvestOpportunityDescriptor instead')
 const HarvestOpportunity$json = {
   '1': 'HarvestOpportunity',
   '2': [
     {'1': 'symbol', '3': 1, '4': 1, '5': 9, '10': 'symbol'},
-    {
-      '1': 'unrealised_loss_usd',
-      '3': 2,
-      '4': 1,
-      '5': 1,
-      '10': 'unrealisedLossUsd'
-    },
+    {'1': 'unrealised_loss_usd', '3': 2, '4': 1, '5': 1, '10': 'unrealisedLossUsd'},
     {'1': 'term', '3': 3, '4': 1, '5': 9, '10': 'term'},
     {'1': 'holding_days', '3': 4, '4': 1, '5': 5, '10': 'holdingDays'},
   ],
@@ -254,31 +209,17 @@ final $typed_data.Uint8List harvestOpportunityDescriptor = $convert.base64Decode
 const DetectHarvestOpportunitiesResponse$json = {
   '1': 'DetectHarvestOpportunitiesResponse',
   '2': [
-    {
-      '1': 'opportunities',
-      '3': 1,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.vault.v1.HarvestOpportunity',
-      '10': 'opportunities'
-    },
-    {
-      '1': 'total_harvestable_loss_usd',
-      '3': 2,
-      '4': 1,
-      '5': 1,
-      '10': 'totalHarvestableLossUsd'
-    },
+    {'1': 'opportunities', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.HarvestOpportunity', '10': 'opportunities'},
+    {'1': 'total_harvestable_loss_usd', '3': 2, '4': 1, '5': 1, '10': 'totalHarvestableLossUsd'},
   ],
 };
 
 /// Descriptor for `DetectHarvestOpportunitiesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List detectHarvestOpportunitiesResponseDescriptor =
-    $convert.base64Decode(
-        'CiJEZXRlY3RIYXJ2ZXN0T3Bwb3J0dW5pdGllc1Jlc3BvbnNlEksKDW9wcG9ydHVuaXRpZXMYAS'
-        'ADKAsyJS5zdHRhdHR1cy52YXVsdC52MS5IYXJ2ZXN0T3Bwb3J0dW5pdHlSDW9wcG9ydHVuaXRp'
-        'ZXMSOwoadG90YWxfaGFydmVzdGFibGVfbG9zc191c2QYAiABKAFSF3RvdGFsSGFydmVzdGFibG'
-        'VMb3NzVXNk');
+final $typed_data.Uint8List detectHarvestOpportunitiesResponseDescriptor = $convert.base64Decode(
+    'CiJEZXRlY3RIYXJ2ZXN0T3Bwb3J0dW5pdGllc1Jlc3BvbnNlEksKDW9wcG9ydHVuaXRpZXMYAS'
+    'ADKAsyJS5zdHRhdHR1cy52YXVsdC52MS5IYXJ2ZXN0T3Bwb3J0dW5pdHlSDW9wcG9ydHVuaXRp'
+    'ZXMSOwoadG90YWxfaGFydmVzdGFibGVfbG9zc191c2QYAiABKAFSF3RvdGFsSGFydmVzdGFibG'
+    'VMb3NzVXNk');
 
 @$core.Deprecated('Use transactionPointDescriptor instead')
 const TransactionPoint$json = {
@@ -302,24 +243,16 @@ const DetectTransactionAnomaliesRequest$json = {
   '1': 'DetectTransactionAnomaliesRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {
-      '1': 'points',
-      '3': 2,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.vault.v1.TransactionPoint',
-      '10': 'points'
-    },
+    {'1': 'points', '3': 2, '4': 3, '5': 11, '6': '.sttattus.vault.v1.TransactionPoint', '10': 'points'},
     {'1': 'z_threshold', '3': 3, '4': 1, '5': 1, '10': 'zThreshold'},
   ],
 };
 
 /// Descriptor for `DetectTransactionAnomaliesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List detectTransactionAnomaliesRequestDescriptor =
-    $convert.base64Decode(
-        'CiFEZXRlY3RUcmFuc2FjdGlvbkFub21hbGllc1JlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdX'
-        'NlcklkEjsKBnBvaW50cxgCIAMoCzIjLnN0dGF0dHVzLnZhdWx0LnYxLlRyYW5zYWN0aW9uUG9p'
-        'bnRSBnBvaW50cxIfCgt6X3RocmVzaG9sZBgDIAEoAVIKelRocmVzaG9sZA==');
+final $typed_data.Uint8List detectTransactionAnomaliesRequestDescriptor = $convert.base64Decode(
+    'CiFEZXRlY3RUcmFuc2FjdGlvbkFub21hbGllc1JlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdX'
+    'NlcklkEjsKBnBvaW50cxgCIAMoCzIjLnN0dGF0dHVzLnZhdWx0LnYxLlRyYW5zYWN0aW9uUG9p'
+    'bnRSBnBvaW50cxIfCgt6X3RocmVzaG9sZBgDIAEoAVIKelRocmVzaG9sZA==');
 
 @$core.Deprecated('Use anomalyHitDescriptor instead')
 const AnomalyHit$json = {
@@ -345,22 +278,15 @@ final $typed_data.Uint8List anomalyHitDescriptor = $convert.base64Decode(
 const DetectTransactionAnomaliesResponse$json = {
   '1': 'DetectTransactionAnomaliesResponse',
   '2': [
-    {
-      '1': 'hits',
-      '3': 1,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.vault.v1.AnomalyHit',
-      '10': 'hits'
-    },
+    {'1': 'hits', '3': 1, '4': 3, '5': 11, '6': '.sttattus.vault.v1.AnomalyHit', '10': 'hits'},
     {'1': 'mean_amount', '3': 2, '4': 1, '5': 1, '10': 'meanAmount'},
     {'1': 'std_amount', '3': 3, '4': 1, '5': 1, '10': 'stdAmount'},
   ],
 };
 
 /// Descriptor for `DetectTransactionAnomaliesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List detectTransactionAnomaliesResponseDescriptor =
-    $convert.base64Decode(
-        'CiJEZXRlY3RUcmFuc2FjdGlvbkFub21hbGllc1Jlc3BvbnNlEjEKBGhpdHMYASADKAsyHS5zdH'
-        'RhdHR1cy52YXVsdC52MS5Bbm9tYWx5SGl0UgRoaXRzEh8KC21lYW5fYW1vdW50GAIgASgBUgpt'
-        'ZWFuQW1vdW50Eh0KCnN0ZF9hbW91bnQYAyABKAFSCXN0ZEFtb3VudA==');
+final $typed_data.Uint8List detectTransactionAnomaliesResponseDescriptor = $convert.base64Decode(
+    'CiJEZXRlY3RUcmFuc2FjdGlvbkFub21hbGllc1Jlc3BvbnNlEjEKBGhpdHMYASADKAsyHS5zdH'
+    'RhdHR1cy52YXVsdC52MS5Bbm9tYWx5SGl0UgRoaXRzEh8KC21lYW5fYW1vdW50GAIgASgBUgpt'
+    'ZWFuQW1vdW50Eh0KCnN0ZF9hbW91bnQYAyABKAFSCXN0ZEFtb3VudA==');
+

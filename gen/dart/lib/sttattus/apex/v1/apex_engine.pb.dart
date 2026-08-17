@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -30,41 +30,29 @@ class CalculateBioRankRequest extends $pb.GeneratedMessage {
     if (userId != null) result.userId = userId;
     if (biomarkers != null) result.biomarkers.addAll(biomarkers);
     if (chronologicalAge != null) result.chronologicalAge = chronologicalAge;
-    if (chronologicalAgePresent != null)
-      result.chronologicalAgePresent = chronologicalAgePresent;
+    if (chronologicalAgePresent != null) result.chronologicalAgePresent = chronologicalAgePresent;
     if (biologicalSex != null) result.biologicalSex = biologicalSex;
     return result;
   }
 
   CalculateBioRankRequest._();
 
-  factory CalculateBioRankRequest.fromBuffer($core.List<$core.int> data,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
-  factory CalculateBioRankRequest.fromJson($core.String json,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+  factory CalculateBioRankRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CalculateBioRankRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'CalculateBioRankRequest',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
-      createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CalculateBioRankRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..pPM<$1.Biomarker>(2, _omitFieldNames ? '' : 'biomarkers',
-        subBuilder: $1.Biomarker.create)
-    ..aD(3, _omitFieldNames ? '' : 'chronologicalAge')
+    ..pc<$1.Biomarker>(2, _omitFieldNames ? '' : 'biomarkers', $pb.PbFieldType.PM, subBuilder: $1.Biomarker.create)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'chronologicalAge', $pb.PbFieldType.OD)
     ..aOB(4, _omitFieldNames ? '' : 'chronologicalAgePresent')
     ..aOS(5, _omitFieldNames ? '' : 'biologicalSex')
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CalculateBioRankRequest clone() => deepCopy();
+  CalculateBioRankRequest clone() => CalculateBioRankRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CalculateBioRankRequest copyWith(
-          void Function(CalculateBioRankRequest) updates) =>
-      super.copyWith((message) => updates(message as CalculateBioRankRequest))
-          as CalculateBioRankRequest;
+  CalculateBioRankRequest copyWith(void Function(CalculateBioRankRequest) updates) => super.copyWith((message) => updates(message as CalculateBioRankRequest)) as CalculateBioRankRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -73,9 +61,9 @@ class CalculateBioRankRequest extends $pb.GeneratedMessage {
   static CalculateBioRankRequest create() => CalculateBioRankRequest._();
   @$core.override
   CalculateBioRankRequest createEmptyInstance() => create();
+  static $pb.PbList<CalculateBioRankRequest> createRepeated() => $pb.PbList<CalculateBioRankRequest>();
   @$core.pragma('dart2js:noInline')
-  static CalculateBioRankRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<CalculateBioRankRequest>(create);
+  static CalculateBioRankRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CalculateBioRankRequest>(create);
   static CalculateBioRankRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -144,37 +132,23 @@ class CalculateBioRankResponse extends $pb.GeneratedMessage {
 
   CalculateBioRankResponse._();
 
-  factory CalculateBioRankResponse.fromBuffer($core.List<$core.int> data,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
-  factory CalculateBioRankResponse.fromJson($core.String json,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+  factory CalculateBioRankResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CalculateBioRankResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'CalculateBioRankResponse',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
-      createEmptyInstance: create)
-    ..aD(1, _omitFieldNames ? '' : 'bioRank')
-    ..aD(2, _omitFieldNames ? '' : 'biologicalAge')
-    ..m<$core.String, $core.double>(3, _omitFieldNames ? '' : 'systemScores',
-        entryClassName: 'CalculateBioRankResponse.SystemScoresEntry',
-        keyFieldType: $pb.PbFieldType.OS,
-        valueFieldType: $pb.PbFieldType.OD,
-        packageName: const $pb.PackageName('sttattus.apex.v1'))
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CalculateBioRankResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'bioRank', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'biologicalAge', $pb.PbFieldType.OD)
+    ..m<$core.String, $core.double>(3, _omitFieldNames ? '' : 'systemScores', entryClassName: 'CalculateBioRankResponse.SystemScoresEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OD, packageName: const $pb.PackageName('sttattus.apex.v1'))
     ..aOS(4, _omitFieldNames ? '' : 'method')
     ..pPS(5, _omitFieldNames ? '' : 'markersUsed')
     ..pPS(6, _omitFieldNames ? '' : 'markersMissing')
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CalculateBioRankResponse clone() => deepCopy();
+  CalculateBioRankResponse clone() => CalculateBioRankResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CalculateBioRankResponse copyWith(
-          void Function(CalculateBioRankResponse) updates) =>
-      super.copyWith((message) => updates(message as CalculateBioRankResponse))
-          as CalculateBioRankResponse;
+  CalculateBioRankResponse copyWith(void Function(CalculateBioRankResponse) updates) => super.copyWith((message) => updates(message as CalculateBioRankResponse)) as CalculateBioRankResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -183,9 +157,9 @@ class CalculateBioRankResponse extends $pb.GeneratedMessage {
   static CalculateBioRankResponse create() => CalculateBioRankResponse._();
   @$core.override
   CalculateBioRankResponse createEmptyInstance() => create();
+  static $pb.PbList<CalculateBioRankResponse> createRepeated() => $pb.PbList<CalculateBioRankResponse>();
   @$core.pragma('dart2js:noInline')
-  static CalculateBioRankResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<CalculateBioRankResponse>(create);
+  static CalculateBioRankResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CalculateBioRankResponse>(create);
   static CalculateBioRankResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -230,7 +204,6 @@ class CalculateBioRankResponse extends $pb.GeneratedMessage {
   $pb.PbList<$core.String> get markersMissing => $_getList(5);
 }
 
-const $core.bool _omitFieldNames =
-    $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames =
-    $core.bool.fromEnvironment('protobuf.omit_message_names');
+
+const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

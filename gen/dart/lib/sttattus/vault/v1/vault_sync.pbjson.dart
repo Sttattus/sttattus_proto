@@ -8,8 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
-// ignore_for_file: unused_import
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -41,9 +40,8 @@ const VerifySignatureResponse$json = {
 };
 
 /// Descriptor for `VerifySignatureResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List verifySignatureResponseDescriptor =
-    $convert.base64Decode(
-        'ChdWZXJpZnlTaWduYXR1cmVSZXNwb25zZRIUCgV2YWxpZBgBIAEoCFIFdmFsaWQ=');
+final $typed_data.Uint8List verifySignatureResponseDescriptor = $convert.base64Decode(
+    'ChdWZXJpZnlTaWduYXR1cmVSZXNwb25zZRIUCgV2YWxpZBgBIAEoCFIFdmFsaWQ=');
 
 @$core.Deprecated('Use getWalletValueRequestDescriptor instead')
 const GetWalletValueRequest$json = {
@@ -64,14 +62,7 @@ const GetWalletValueResponse$json = {
   '1': 'GetWalletValueResponse',
   '2': [
     {'1': 'total_value_usd', '3': 1, '4': 1, '5': 1, '10': 'totalValueUsd'},
-    {
-      '1': 'metadata',
-      '3': 2,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.vault.v1.GetWalletValueResponse.MetadataEntry',
-      '10': 'metadata'
-    },
+    {'1': 'metadata', '3': 2, '4': 3, '5': 11, '6': '.sttattus.vault.v1.GetWalletValueResponse.MetadataEntry', '10': 'metadata'},
   ],
   '3': [GetWalletValueResponse_MetadataEntry$json],
 };
@@ -92,3 +83,4 @@ final $typed_data.Uint8List getWalletValueResponseDescriptor = $convert.base64De
     'xWYWx1ZVVzZBJTCghtZXRhZGF0YRgCIAMoCzI3LnN0dGF0dHVzLnZhdWx0LnYxLkdldFdhbGxl'
     'dFZhbHVlUmVzcG9uc2UuTWV0YWRhdGFFbnRyeVIIbWV0YWRhdGEaOwoNTWV0YWRhdGFFbnRyeR'
     'IQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgB');
+

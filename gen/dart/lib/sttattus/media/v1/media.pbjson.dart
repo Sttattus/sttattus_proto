@@ -8,8 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
-// ignore_for_file: unused_import
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -45,14 +44,7 @@ const MediaAsset$json = {
     {'1': 'size', '3': 5, '4': 1, '5': 3, '10': 'size'},
     {'1': 'width', '3': 6, '4': 1, '5': 5, '10': 'width'},
     {'1': 'height', '3': 7, '4': 1, '5': 5, '10': 'height'},
-    {
-      '1': 'status',
-      '3': 8,
-      '4': 1,
-      '5': 14,
-      '6': '.sttattus.media.v1.ProcessingStatus',
-      '10': 'status'
-    },
+    {'1': 'status', '3': 8, '4': 1, '5': 14, '6': '.sttattus.media.v1.ProcessingStatus', '10': 'status'},
     {'1': 'created_at', '3': 9, '4': 1, '5': 3, '10': 'createdAt'},
     {'1': 'processed_at', '3': 10, '4': 1, '5': 3, '10': 'processedAt'},
     {'1': 'is_private', '3': 11, '4': 1, '5': 8, '10': 'isPrivate'},
@@ -121,14 +113,7 @@ final $typed_data.Uint8List markProcessedRequestDescriptor = $convert.base64Deco
 const MarkProcessedResponse$json = {
   '1': 'MarkProcessedResponse',
   '2': [
-    {
-      '1': 'asset',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.sttattus.media.v1.MediaAsset',
-      '10': 'asset'
-    },
+    {'1': 'asset', '3': 1, '4': 1, '5': 11, '6': '.sttattus.media.v1.MediaAsset', '10': 'asset'},
   ],
 };
 
@@ -213,10 +198,9 @@ const ExtractDominantColorsRequest$json = {
 };
 
 /// Descriptor for `ExtractDominantColorsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List extractDominantColorsRequestDescriptor =
-    $convert.base64Decode(
-        'ChxFeHRyYWN0RG9taW5hbnRDb2xvcnNSZXF1ZXN0Eh0KCnNvdXJjZV91cmwYASABKAlSCXNvdX'
-        'JjZVVybBIhCgxzYW1wbGVfY291bnQYAiABKAVSC3NhbXBsZUNvdW50');
+final $typed_data.Uint8List extractDominantColorsRequestDescriptor = $convert.base64Decode(
+    'ChxFeHRyYWN0RG9taW5hbnRDb2xvcnNSZXF1ZXN0Eh0KCnNvdXJjZV91cmwYASABKAlSCXNvdX'
+    'JjZVVybBIhCgxzYW1wbGVfY291bnQYAiABKAVSC3NhbXBsZUNvdW50');
 
 @$core.Deprecated('Use extractDominantColorsResponseDescriptor instead')
 const ExtractDominantColorsResponse$json = {
@@ -227,10 +211,9 @@ const ExtractDominantColorsResponse$json = {
 };
 
 /// Descriptor for `ExtractDominantColorsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List extractDominantColorsResponseDescriptor =
-    $convert.base64Decode(
-        'Ch1FeHRyYWN0RG9taW5hbnRDb2xvcnNSZXNwb25zZRIdCgpoZXhfY29sb3JzGAEgAygJUgloZX'
-        'hDb2xvcnM=');
+final $typed_data.Uint8List extractDominantColorsResponseDescriptor = $convert.base64Decode(
+    'Ch1FeHRyYWN0RG9taW5hbnRDb2xvcnNSZXNwb25zZRIdCgpoZXhfY29sb3JzGAEgAygJUgloZX'
+    'hDb2xvcnM=');
 
 @$core.Deprecated('Use extractExifRequestDescriptor instead')
 const ExtractExifRequest$json = {
@@ -241,9 +224,8 @@ const ExtractExifRequest$json = {
 };
 
 /// Descriptor for `ExtractExifRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List extractExifRequestDescriptor =
-    $convert.base64Decode(
-        'ChJFeHRyYWN0RXhpZlJlcXVlc3QSHQoKc291cmNlX3VybBgBIAEoCVIJc291cmNlVXJs');
+final $typed_data.Uint8List extractExifRequestDescriptor = $convert.base64Decode(
+    'ChJFeHRyYWN0RXhpZlJlcXVlc3QSHQoKc291cmNlX3VybBgBIAEoCVIJc291cmNlVXJs');
 
 @$core.Deprecated('Use extractExifResponseDescriptor instead')
 const ExtractExifResponse$json = {
@@ -270,3 +252,4 @@ final $typed_data.Uint8List extractExifResponseDescriptor = $convert.base64Decod
     'gFIAEoA1IHdGFrZW5BdBIfCgtjYW1lcmFfbWFrZRgGIAEoCVIKY2FtZXJhTWFrZRIhCgxjYW1l'
     'cmFfbW9kZWwYByABKAlSC2NhbWVyYU1vZGVsEiAKC29yaWVudGF0aW9uGAggASgFUgtvcmllbn'
     'RhdGlvbhIUCgV3aWR0aBgJIAEoBVIFd2lkdGgSFgoGaGVpZ2h0GAogASgFUgZoZWlnaHQ=');
+

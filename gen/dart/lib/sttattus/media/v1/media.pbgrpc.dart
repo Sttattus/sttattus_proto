@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:async' as $async;
 import 'dart:core' as $core;
@@ -32,17 +32,11 @@ class MediaServiceClient extends $grpc.Client {
 
   MediaServiceClient(super.channel, {super.options, super.interceptors});
 
-  $grpc.ResponseFuture<$0.RequestUploadResponse> requestUpload(
-    $0.RequestUploadRequest request, {
-    $grpc.CallOptions? options,
-  }) {
+  $grpc.ResponseFuture<$0.RequestUploadResponse> requestUpload($0.RequestUploadRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$requestUpload, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.MarkProcessedResponse> markProcessed(
-    $0.MarkProcessedRequest request, {
-    $grpc.CallOptions? options,
-  }) {
+  $grpc.ResponseFuture<$0.MarkProcessedResponse> markProcessed($0.MarkProcessedRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$markProcessed, request, options: options);
   }
 
@@ -50,30 +44,24 @@ class MediaServiceClient extends $grpc.Client {
   /// media row or is a participant in the Atlas message it is attached to.
   /// Public assets return a stable URL; private assets return a short-lived
   /// signed GET URL.
-  $grpc.ResponseFuture<$0.GetDownloadURLResponse> getDownloadURL(
-    $0.GetDownloadURLRequest request, {
-    $grpc.CallOptions? options,
-  }) {
+  $grpc.ResponseFuture<$0.GetDownloadURLResponse> getDownloadURL($0.GetDownloadURLRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$getDownloadURL, request, options: options);
   }
 
-  // method descriptors
+    // method descriptors
 
-  static final _$requestUpload =
-      $grpc.ClientMethod<$0.RequestUploadRequest, $0.RequestUploadResponse>(
-          '/sttattus.media.v1.MediaService/RequestUpload',
-          ($0.RequestUploadRequest value) => value.writeToBuffer(),
-          $0.RequestUploadResponse.fromBuffer);
-  static final _$markProcessed =
-      $grpc.ClientMethod<$0.MarkProcessedRequest, $0.MarkProcessedResponse>(
-          '/sttattus.media.v1.MediaService/MarkProcessed',
-          ($0.MarkProcessedRequest value) => value.writeToBuffer(),
-          $0.MarkProcessedResponse.fromBuffer);
-  static final _$getDownloadURL =
-      $grpc.ClientMethod<$0.GetDownloadURLRequest, $0.GetDownloadURLResponse>(
-          '/sttattus.media.v1.MediaService/GetDownloadURL',
-          ($0.GetDownloadURLRequest value) => value.writeToBuffer(),
-          $0.GetDownloadURLResponse.fromBuffer);
+  static final _$requestUpload = $grpc.ClientMethod<$0.RequestUploadRequest, $0.RequestUploadResponse>(
+      '/sttattus.media.v1.MediaService/RequestUpload',
+      ($0.RequestUploadRequest value) => value.writeToBuffer(),
+      $0.RequestUploadResponse.fromBuffer);
+  static final _$markProcessed = $grpc.ClientMethod<$0.MarkProcessedRequest, $0.MarkProcessedResponse>(
+      '/sttattus.media.v1.MediaService/MarkProcessed',
+      ($0.MarkProcessedRequest value) => value.writeToBuffer(),
+      $0.MarkProcessedResponse.fromBuffer);
+  static final _$getDownloadURL = $grpc.ClientMethod<$0.GetDownloadURLRequest, $0.GetDownloadURLResponse>(
+      '/sttattus.media.v1.MediaService/GetDownloadURL',
+      ($0.GetDownloadURLRequest value) => value.writeToBuffer(),
+      $0.GetDownloadURLResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.media.v1.MediaService')
@@ -81,63 +69,48 @@ abstract class MediaServiceBase extends $grpc.Service {
   $core.String get $name => 'sttattus.media.v1.MediaService';
 
   MediaServiceBase() {
-    $addMethod(
-        $grpc.ServiceMethod<$0.RequestUploadRequest, $0.RequestUploadResponse>(
-            'RequestUpload',
-            requestUpload_Pre,
-            false,
-            false,
-            ($core.List<$core.int> value) =>
-                $0.RequestUploadRequest.fromBuffer(value),
-            ($0.RequestUploadResponse value) => value.writeToBuffer()));
-    $addMethod(
-        $grpc.ServiceMethod<$0.MarkProcessedRequest, $0.MarkProcessedResponse>(
-            'MarkProcessed',
-            markProcessed_Pre,
-            false,
-            false,
-            ($core.List<$core.int> value) =>
-                $0.MarkProcessedRequest.fromBuffer(value),
-            ($0.MarkProcessedResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetDownloadURLRequest,
-            $0.GetDownloadURLResponse>(
+    $addMethod($grpc.ServiceMethod<$0.RequestUploadRequest, $0.RequestUploadResponse>(
+        'RequestUpload',
+        requestUpload_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RequestUploadRequest.fromBuffer(value),
+        ($0.RequestUploadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MarkProcessedRequest, $0.MarkProcessedResponse>(
+        'MarkProcessed',
+        markProcessed_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.MarkProcessedRequest.fromBuffer(value),
+        ($0.MarkProcessedResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDownloadURLRequest, $0.GetDownloadURLResponse>(
         'GetDownloadURL',
         getDownloadURL_Pre,
         false,
         false,
-        ($core.List<$core.int> value) =>
-            $0.GetDownloadURLRequest.fromBuffer(value),
+        ($core.List<$core.int> value) => $0.GetDownloadURLRequest.fromBuffer(value),
         ($0.GetDownloadURLResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.RequestUploadResponse> requestUpload_Pre(
-      $grpc.ServiceCall $call,
-      $async.Future<$0.RequestUploadRequest> $request) async {
+  $async.Future<$0.RequestUploadResponse> requestUpload_Pre($grpc.ServiceCall $call, $async.Future<$0.RequestUploadRequest> $request) async {
     return requestUpload($call, await $request);
   }
 
-  $async.Future<$0.RequestUploadResponse> requestUpload(
-      $grpc.ServiceCall call, $0.RequestUploadRequest request);
+  $async.Future<$0.RequestUploadResponse> requestUpload($grpc.ServiceCall call, $0.RequestUploadRequest request);
 
-  $async.Future<$0.MarkProcessedResponse> markProcessed_Pre(
-      $grpc.ServiceCall $call,
-      $async.Future<$0.MarkProcessedRequest> $request) async {
+  $async.Future<$0.MarkProcessedResponse> markProcessed_Pre($grpc.ServiceCall $call, $async.Future<$0.MarkProcessedRequest> $request) async {
     return markProcessed($call, await $request);
   }
 
-  $async.Future<$0.MarkProcessedResponse> markProcessed(
-      $grpc.ServiceCall call, $0.MarkProcessedRequest request);
+  $async.Future<$0.MarkProcessedResponse> markProcessed($grpc.ServiceCall call, $0.MarkProcessedRequest request);
 
-  $async.Future<$0.GetDownloadURLResponse> getDownloadURL_Pre(
-      $grpc.ServiceCall $call,
-      $async.Future<$0.GetDownloadURLRequest> $request) async {
+  $async.Future<$0.GetDownloadURLResponse> getDownloadURL_Pre($grpc.ServiceCall $call, $async.Future<$0.GetDownloadURLRequest> $request) async {
     return getDownloadURL($call, await $request);
   }
 
-  $async.Future<$0.GetDownloadURLResponse> getDownloadURL(
-      $grpc.ServiceCall call, $0.GetDownloadURLRequest request);
-}
+  $async.Future<$0.GetDownloadURLResponse> getDownloadURL($grpc.ServiceCall call, $0.GetDownloadURLRequest request);
 
+}
 @$pb.GrpcServiceName('sttattus.media.v1.ImageProcService')
 class ImageProcServiceClient extends $grpc.Client {
   /// The hostname for this service.
@@ -150,47 +123,35 @@ class ImageProcServiceClient extends $grpc.Client {
 
   ImageProcServiceClient(super.channel, {super.options, super.interceptors});
 
-  $grpc.ResponseFuture<$0.ResizeResponse> resize(
-    $0.ResizeRequest request, {
-    $grpc.CallOptions? options,
-  }) {
+  $grpc.ResponseFuture<$0.ResizeResponse> resize($0.ResizeRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$resize, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ExtractDominantColorsResponse> extractDominantColors(
-    $0.ExtractDominantColorsRequest request, {
-    $grpc.CallOptions? options,
-  }) {
+  $grpc.ResponseFuture<$0.ExtractDominantColorsResponse> extractDominantColors($0.ExtractDominantColorsRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$extractDominantColors, request, options: options);
   }
 
   /// N10.3 — EXIF + GPS extraction. Nomad calls this after every
   /// milestone-photo upload to bind the visit's verified location to
   /// EXIF rather than to client-supplied coordinates.
-  $grpc.ResponseFuture<$0.ExtractExifResponse> extractExif(
-    $0.ExtractExifRequest request, {
-    $grpc.CallOptions? options,
-  }) {
+  $grpc.ResponseFuture<$0.ExtractExifResponse> extractExif($0.ExtractExifRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$extractExif, request, options: options);
   }
 
-  // method descriptors
+    // method descriptors
 
-  static final _$resize =
-      $grpc.ClientMethod<$0.ResizeRequest, $0.ResizeResponse>(
-          '/sttattus.media.v1.ImageProcService/Resize',
-          ($0.ResizeRequest value) => value.writeToBuffer(),
-          $0.ResizeResponse.fromBuffer);
-  static final _$extractDominantColors = $grpc.ClientMethod<
-          $0.ExtractDominantColorsRequest, $0.ExtractDominantColorsResponse>(
+  static final _$resize = $grpc.ClientMethod<$0.ResizeRequest, $0.ResizeResponse>(
+      '/sttattus.media.v1.ImageProcService/Resize',
+      ($0.ResizeRequest value) => value.writeToBuffer(),
+      $0.ResizeResponse.fromBuffer);
+  static final _$extractDominantColors = $grpc.ClientMethod<$0.ExtractDominantColorsRequest, $0.ExtractDominantColorsResponse>(
       '/sttattus.media.v1.ImageProcService/ExtractDominantColors',
       ($0.ExtractDominantColorsRequest value) => value.writeToBuffer(),
       $0.ExtractDominantColorsResponse.fromBuffer);
-  static final _$extractExif =
-      $grpc.ClientMethod<$0.ExtractExifRequest, $0.ExtractExifResponse>(
-          '/sttattus.media.v1.ImageProcService/ExtractExif',
-          ($0.ExtractExifRequest value) => value.writeToBuffer(),
-          $0.ExtractExifResponse.fromBuffer);
+  static final _$extractExif = $grpc.ClientMethod<$0.ExtractExifRequest, $0.ExtractExifResponse>(
+      '/sttattus.media.v1.ImageProcService/ExtractExif',
+      ($0.ExtractExifRequest value) => value.writeToBuffer(),
+      $0.ExtractExifResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.media.v1.ImageProcService')
@@ -205,48 +166,38 @@ abstract class ImageProcServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ResizeRequest.fromBuffer(value),
         ($0.ResizeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.ExtractDominantColorsRequest,
-            $0.ExtractDominantColorsResponse>(
+    $addMethod($grpc.ServiceMethod<$0.ExtractDominantColorsRequest, $0.ExtractDominantColorsResponse>(
         'ExtractDominantColors',
         extractDominantColors_Pre,
         false,
         false,
-        ($core.List<$core.int> value) =>
-            $0.ExtractDominantColorsRequest.fromBuffer(value),
+        ($core.List<$core.int> value) => $0.ExtractDominantColorsRequest.fromBuffer(value),
         ($0.ExtractDominantColorsResponse value) => value.writeToBuffer()));
-    $addMethod(
-        $grpc.ServiceMethod<$0.ExtractExifRequest, $0.ExtractExifResponse>(
-            'ExtractExif',
-            extractExif_Pre,
-            false,
-            false,
-            ($core.List<$core.int> value) =>
-                $0.ExtractExifRequest.fromBuffer(value),
-            ($0.ExtractExifResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ExtractExifRequest, $0.ExtractExifResponse>(
+        'ExtractExif',
+        extractExif_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ExtractExifRequest.fromBuffer(value),
+        ($0.ExtractExifResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.ResizeResponse> resize_Pre(
-      $grpc.ServiceCall $call, $async.Future<$0.ResizeRequest> $request) async {
+  $async.Future<$0.ResizeResponse> resize_Pre($grpc.ServiceCall $call, $async.Future<$0.ResizeRequest> $request) async {
     return resize($call, await $request);
   }
 
-  $async.Future<$0.ResizeResponse> resize(
-      $grpc.ServiceCall call, $0.ResizeRequest request);
+  $async.Future<$0.ResizeResponse> resize($grpc.ServiceCall call, $0.ResizeRequest request);
 
-  $async.Future<$0.ExtractDominantColorsResponse> extractDominantColors_Pre(
-      $grpc.ServiceCall $call,
-      $async.Future<$0.ExtractDominantColorsRequest> $request) async {
+  $async.Future<$0.ExtractDominantColorsResponse> extractDominantColors_Pre($grpc.ServiceCall $call, $async.Future<$0.ExtractDominantColorsRequest> $request) async {
     return extractDominantColors($call, await $request);
   }
 
-  $async.Future<$0.ExtractDominantColorsResponse> extractDominantColors(
-      $grpc.ServiceCall call, $0.ExtractDominantColorsRequest request);
+  $async.Future<$0.ExtractDominantColorsResponse> extractDominantColors($grpc.ServiceCall call, $0.ExtractDominantColorsRequest request);
 
-  $async.Future<$0.ExtractExifResponse> extractExif_Pre($grpc.ServiceCall $call,
-      $async.Future<$0.ExtractExifRequest> $request) async {
+  $async.Future<$0.ExtractExifResponse> extractExif_Pre($grpc.ServiceCall $call, $async.Future<$0.ExtractExifRequest> $request) async {
     return extractExif($call, await $request);
   }
 
-  $async.Future<$0.ExtractExifResponse> extractExif(
-      $grpc.ServiceCall call, $0.ExtractExifRequest request);
+  $async.Future<$0.ExtractExifResponse> extractExif($grpc.ServiceCall call, $0.ExtractExifRequest request);
+
 }

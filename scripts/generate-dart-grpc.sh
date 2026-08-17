@@ -9,10 +9,21 @@
 #
 # Prerequisites:
 #   - protoc on PATH
-#   - dart pub global activate protoc_plugin
 #   - C:\Users\victor\AppData\Local\Pub\Cache\bin on PATH (for protoc-gen-dart)
+#
+# The plugin version is pinned below and activated automatically, for the same
+# reason buf.gen.yaml pins the TS plugins: generator and runtime move together.
+# protoc_plugin 25 emits `..aI(...)` on BuilderInfo, which only exists in
+# protobuf >= 5. Every app pins protobuf ^4.x, so generating with an unpinned
+# plugin produced stubs that analyze clean and fail at compile time in all
+# twelve apps at once — "The method 'aI' isn't defined for the type
+# 'BuilderInfo'". Bump PROTOC_PLUGIN_VERSION only alongside the protobuf and
+# grpc constraints in apps/*/pubspec.yaml and gen/dart/pubspec.yaml.
 
 set -euo pipefail
+
+# Pairs with protobuf ^4.1.0 — matches the apps. See the note above.
+PROTOC_PLUGIN_VERSION="22.4.0"
 
 cd "$(dirname "$0")/.."
 
@@ -24,6 +35,14 @@ PROTOS=$(find sttattus -name "*.proto" -type f | tr '\\' '/')
 
 # Add Pub Cache bin to PATH so protoc finds protoc-gen-dart
 export PATH="/c/Users/victor/AppData/Local/Pub/Cache/bin:$PATH"
+
+# Activate the pinned plugin unless it is already the active one. Whatever a
+# previous `dart pub global activate protoc_plugin` left behind must not decide
+# which protobuf API these stubs target.
+if ! dart pub global list 2>/dev/null | grep -q "^protoc_plugin ${PROTOC_PLUGIN_VERSION}\b"; then
+  echo "Activating protoc_plugin ${PROTOC_PLUGIN_VERSION} (was: $(dart pub global list 2>/dev/null | grep '^protoc_plugin' || echo none))"
+  dart pub global activate protoc_plugin "${PROTOC_PLUGIN_VERSION}" >/dev/null
+fi
 
 echo "Regenerating Dart bindings (messages + gRPC clients) for:"
 echo "$PROTOS" | sed 's/^/  /'

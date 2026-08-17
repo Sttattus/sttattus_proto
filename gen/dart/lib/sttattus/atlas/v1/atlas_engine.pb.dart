@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -34,8 +34,7 @@ class EmbeddingInput extends $pb.GeneratedMessage {
     final result = create();
     if (userId != null) result.userId = userId;
     if (intellectualPace != null) result.intellectualPace = intellectualPace;
-    if (emotionalGranularity != null)
-      result.emotionalGranularity = emotionalGranularity;
+    if (emotionalGranularity != null) result.emotionalGranularity = emotionalGranularity;
     if (physicalDrive != null) result.physicalDrive = physicalDrive;
     if (socialBattery != null) result.socialBattery = socialBattery;
     if (vaultRank != null) result.vaultRank = vaultRank;
@@ -47,35 +46,26 @@ class EmbeddingInput extends $pb.GeneratedMessage {
 
   EmbeddingInput._();
 
-  factory EmbeddingInput.fromBuffer($core.List<$core.int> data,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
-  factory EmbeddingInput.fromJson($core.String json,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+  factory EmbeddingInput.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory EmbeddingInput.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'EmbeddingInput',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'),
-      createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EmbeddingInput', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..aI(2, _omitFieldNames ? '' : 'intellectualPace')
-    ..aI(3, _omitFieldNames ? '' : 'emotionalGranularity')
-    ..aI(4, _omitFieldNames ? '' : 'physicalDrive')
-    ..aI(5, _omitFieldNames ? '' : 'socialBattery')
-    ..aD(6, _omitFieldNames ? '' : 'vaultRank')
-    ..aD(7, _omitFieldNames ? '' : 'apexRank')
-    ..aD(8, _omitFieldNames ? '' : 'forgeRank')
-    ..aD(9, _omitFieldNames ? '' : 'luminance')
-    ..hasRequiredFields = false;
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'intellectualPace', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'emotionalGranularity', $pb.PbFieldType.O3)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'physicalDrive', $pb.PbFieldType.O3)
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'socialBattery', $pb.PbFieldType.O3)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'vaultRank', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'apexRank', $pb.PbFieldType.OD)
+    ..a<$core.double>(8, _omitFieldNames ? '' : 'forgeRank', $pb.PbFieldType.OD)
+    ..a<$core.double>(9, _omitFieldNames ? '' : 'luminance', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  EmbeddingInput clone() => deepCopy();
+  EmbeddingInput clone() => EmbeddingInput()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  EmbeddingInput copyWith(void Function(EmbeddingInput) updates) =>
-      super.copyWith((message) => updates(message as EmbeddingInput))
-          as EmbeddingInput;
+  EmbeddingInput copyWith(void Function(EmbeddingInput) updates) => super.copyWith((message) => updates(message as EmbeddingInput)) as EmbeddingInput;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -84,9 +74,9 @@ class EmbeddingInput extends $pb.GeneratedMessage {
   static EmbeddingInput create() => EmbeddingInput._();
   @$core.override
   EmbeddingInput createEmptyInstance() => create();
+  static $pb.PbList<EmbeddingInput> createRepeated() => $pb.PbList<EmbeddingInput>();
   @$core.pragma('dart2js:noInline')
-  static EmbeddingInput getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<EmbeddingInput>(create);
+  static EmbeddingInput getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EmbeddingInput>(create);
   static EmbeddingInput? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -184,30 +174,19 @@ class ComputeEmbeddingRequest extends $pb.GeneratedMessage {
 
   ComputeEmbeddingRequest._();
 
-  factory ComputeEmbeddingRequest.fromBuffer($core.List<$core.int> data,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
-  factory ComputeEmbeddingRequest.fromJson($core.String json,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+  factory ComputeEmbeddingRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ComputeEmbeddingRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'ComputeEmbeddingRequest',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'),
-      createEmptyInstance: create)
-    ..aOM<EmbeddingInput>(1, _omitFieldNames ? '' : 'input',
-        subBuilder: EmbeddingInput.create)
-    ..aI(2, _omitFieldNames ? '' : 'engineVersion')
-    ..hasRequiredFields = false;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ComputeEmbeddingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'), createEmptyInstance: create)
+    ..aOM<EmbeddingInput>(1, _omitFieldNames ? '' : 'input', subBuilder: EmbeddingInput.create)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'engineVersion', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ComputeEmbeddingRequest clone() => deepCopy();
+  ComputeEmbeddingRequest clone() => ComputeEmbeddingRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ComputeEmbeddingRequest copyWith(
-          void Function(ComputeEmbeddingRequest) updates) =>
-      super.copyWith((message) => updates(message as ComputeEmbeddingRequest))
-          as ComputeEmbeddingRequest;
+  ComputeEmbeddingRequest copyWith(void Function(ComputeEmbeddingRequest) updates) => super.copyWith((message) => updates(message as ComputeEmbeddingRequest)) as ComputeEmbeddingRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -216,9 +195,9 @@ class ComputeEmbeddingRequest extends $pb.GeneratedMessage {
   static ComputeEmbeddingRequest create() => ComputeEmbeddingRequest._();
   @$core.override
   ComputeEmbeddingRequest createEmptyInstance() => create();
+  static $pb.PbList<ComputeEmbeddingRequest> createRepeated() => $pb.PbList<ComputeEmbeddingRequest>();
   @$core.pragma('dart2js:noInline')
-  static ComputeEmbeddingRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<ComputeEmbeddingRequest>(create);
+  static ComputeEmbeddingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ComputeEmbeddingRequest>(create);
   static ComputeEmbeddingRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -256,29 +235,19 @@ class ComputeEmbeddingResponse extends $pb.GeneratedMessage {
 
   ComputeEmbeddingResponse._();
 
-  factory ComputeEmbeddingResponse.fromBuffer($core.List<$core.int> data,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
-  factory ComputeEmbeddingResponse.fromJson($core.String json,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+  factory ComputeEmbeddingResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ComputeEmbeddingResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'ComputeEmbeddingResponse',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'),
-      createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ComputeEmbeddingResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'), createEmptyInstance: create)
     ..p<$core.double>(1, _omitFieldNames ? '' : 'embedding', $pb.PbFieldType.KD)
-    ..aI(2, _omitFieldNames ? '' : 'engineVersion')
-    ..hasRequiredFields = false;
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'engineVersion', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ComputeEmbeddingResponse clone() => deepCopy();
+  ComputeEmbeddingResponse clone() => ComputeEmbeddingResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ComputeEmbeddingResponse copyWith(
-          void Function(ComputeEmbeddingResponse) updates) =>
-      super.copyWith((message) => updates(message as ComputeEmbeddingResponse))
-          as ComputeEmbeddingResponse;
+  ComputeEmbeddingResponse copyWith(void Function(ComputeEmbeddingResponse) updates) => super.copyWith((message) => updates(message as ComputeEmbeddingResponse)) as ComputeEmbeddingResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -287,9 +256,9 @@ class ComputeEmbeddingResponse extends $pb.GeneratedMessage {
   static ComputeEmbeddingResponse create() => ComputeEmbeddingResponse._();
   @$core.override
   ComputeEmbeddingResponse createEmptyInstance() => create();
+  static $pb.PbList<ComputeEmbeddingResponse> createRepeated() => $pb.PbList<ComputeEmbeddingResponse>();
   @$core.pragma('dart2js:noInline')
-  static ComputeEmbeddingResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<ComputeEmbeddingResponse>(create);
+  static ComputeEmbeddingResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ComputeEmbeddingResponse>(create);
   static ComputeEmbeddingResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -320,28 +289,19 @@ class ProjectionPoint extends $pb.GeneratedMessage {
 
   ProjectionPoint._();
 
-  factory ProjectionPoint.fromBuffer($core.List<$core.int> data,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
-  factory ProjectionPoint.fromJson($core.String json,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+  factory ProjectionPoint.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ProjectionPoint.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'ProjectionPoint',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'),
-      createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProjectionPoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
     ..p<$core.double>(2, _omitFieldNames ? '' : 'embedding', $pb.PbFieldType.KD)
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ProjectionPoint clone() => deepCopy();
+  ProjectionPoint clone() => ProjectionPoint()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ProjectionPoint copyWith(void Function(ProjectionPoint) updates) =>
-      super.copyWith((message) => updates(message as ProjectionPoint))
-          as ProjectionPoint;
+  ProjectionPoint copyWith(void Function(ProjectionPoint) updates) => super.copyWith((message) => updates(message as ProjectionPoint)) as ProjectionPoint;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -350,9 +310,9 @@ class ProjectionPoint extends $pb.GeneratedMessage {
   static ProjectionPoint create() => ProjectionPoint._();
   @$core.override
   ProjectionPoint createEmptyInstance() => create();
+  static $pb.PbList<ProjectionPoint> createRepeated() => $pb.PbList<ProjectionPoint>();
   @$core.pragma('dart2js:noInline')
-  static ProjectionPoint getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<ProjectionPoint>(create);
+  static ProjectionPoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProjectionPoint>(create);
   static ProjectionPoint? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -379,28 +339,18 @@ class ProjectUmapRequest extends $pb.GeneratedMessage {
 
   ProjectUmapRequest._();
 
-  factory ProjectUmapRequest.fromBuffer($core.List<$core.int> data,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
-  factory ProjectUmapRequest.fromJson($core.String json,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+  factory ProjectUmapRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ProjectUmapRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'ProjectUmapRequest',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'),
-      createEmptyInstance: create)
-    ..pPM<ProjectionPoint>(1, _omitFieldNames ? '' : 'points',
-        subBuilder: ProjectionPoint.create)
-    ..hasRequiredFields = false;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProjectUmapRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'), createEmptyInstance: create)
+    ..pc<ProjectionPoint>(1, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: ProjectionPoint.create)
+    ..hasRequiredFields = false
+  ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ProjectUmapRequest clone() => deepCopy();
+  ProjectUmapRequest clone() => ProjectUmapRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ProjectUmapRequest copyWith(void Function(ProjectUmapRequest) updates) =>
-      super.copyWith((message) => updates(message as ProjectUmapRequest))
-          as ProjectUmapRequest;
+  ProjectUmapRequest copyWith(void Function(ProjectUmapRequest) updates) => super.copyWith((message) => updates(message as ProjectUmapRequest)) as ProjectUmapRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -409,9 +359,9 @@ class ProjectUmapRequest extends $pb.GeneratedMessage {
   static ProjectUmapRequest create() => ProjectUmapRequest._();
   @$core.override
   ProjectUmapRequest createEmptyInstance() => create();
+  static $pb.PbList<ProjectUmapRequest> createRepeated() => $pb.PbList<ProjectUmapRequest>();
   @$core.pragma('dart2js:noInline')
-  static ProjectUmapRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<ProjectUmapRequest>(create);
+  static ProjectUmapRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProjectUmapRequest>(create);
   static ProjectUmapRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -435,30 +385,21 @@ class Projected3D extends $pb.GeneratedMessage {
 
   Projected3D._();
 
-  factory Projected3D.fromBuffer($core.List<$core.int> data,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
-  factory Projected3D.fromJson($core.String json,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+  factory Projected3D.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Projected3D.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'Projected3D',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'),
-      createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Projected3D', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..aD(2, _omitFieldNames ? '' : 'x')
-    ..aD(3, _omitFieldNames ? '' : 'y')
-    ..aD(4, _omitFieldNames ? '' : 'z')
-    ..hasRequiredFields = false;
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'x', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'y', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'z', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Projected3D clone() => deepCopy();
+  Projected3D clone() => Projected3D()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Projected3D copyWith(void Function(Projected3D) updates) =>
-      super.copyWith((message) => updates(message as Projected3D))
-          as Projected3D;
+  Projected3D copyWith(void Function(Projected3D) updates) => super.copyWith((message) => updates(message as Projected3D)) as Projected3D;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -467,9 +408,9 @@ class Projected3D extends $pb.GeneratedMessage {
   static Projected3D create() => Projected3D._();
   @$core.override
   Projected3D createEmptyInstance() => create();
+  static $pb.PbList<Projected3D> createRepeated() => $pb.PbList<Projected3D>();
   @$core.pragma('dart2js:noInline')
-  static Projected3D getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<Projected3D>(create);
+  static Projected3D getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Projected3D>(create);
   static Projected3D? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -520,28 +461,18 @@ class ProjectUmapResponse extends $pb.GeneratedMessage {
 
   ProjectUmapResponse._();
 
-  factory ProjectUmapResponse.fromBuffer($core.List<$core.int> data,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
-  factory ProjectUmapResponse.fromJson($core.String json,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+  factory ProjectUmapResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ProjectUmapResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'ProjectUmapResponse',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'),
-      createEmptyInstance: create)
-    ..pPM<Projected3D>(1, _omitFieldNames ? '' : 'points',
-        subBuilder: Projected3D.create)
-    ..hasRequiredFields = false;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProjectUmapResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'), createEmptyInstance: create)
+    ..pc<Projected3D>(1, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: Projected3D.create)
+    ..hasRequiredFields = false
+  ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ProjectUmapResponse clone() => deepCopy();
+  ProjectUmapResponse clone() => ProjectUmapResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ProjectUmapResponse copyWith(void Function(ProjectUmapResponse) updates) =>
-      super.copyWith((message) => updates(message as ProjectUmapResponse))
-          as ProjectUmapResponse;
+  ProjectUmapResponse copyWith(void Function(ProjectUmapResponse) updates) => super.copyWith((message) => updates(message as ProjectUmapResponse)) as ProjectUmapResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -550,9 +481,9 @@ class ProjectUmapResponse extends $pb.GeneratedMessage {
   static ProjectUmapResponse create() => ProjectUmapResponse._();
   @$core.override
   ProjectUmapResponse createEmptyInstance() => create();
+  static $pb.PbList<ProjectUmapResponse> createRepeated() => $pb.PbList<ProjectUmapResponse>();
   @$core.pragma('dart2js:noInline')
-  static ProjectUmapResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<ProjectUmapResponse>(create);
+  static ProjectUmapResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProjectUmapResponse>(create);
   static ProjectUmapResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -579,31 +510,21 @@ class CompareEmbeddingsRequest extends $pb.GeneratedMessage {
 
   CompareEmbeddingsRequest._();
 
-  factory CompareEmbeddingsRequest.fromBuffer($core.List<$core.int> data,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
-  factory CompareEmbeddingsRequest.fromJson($core.String json,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+  factory CompareEmbeddingsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CompareEmbeddingsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'CompareEmbeddingsRequest',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'),
-      createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompareEmbeddingsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'leftUserId')
     ..p<$core.double>(2, _omitFieldNames ? '' : 'left', $pb.PbFieldType.KD)
     ..aOS(3, _omitFieldNames ? '' : 'rightUserId')
     ..p<$core.double>(4, _omitFieldNames ? '' : 'right', $pb.PbFieldType.KD)
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CompareEmbeddingsRequest clone() => deepCopy();
+  CompareEmbeddingsRequest clone() => CompareEmbeddingsRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CompareEmbeddingsRequest copyWith(
-          void Function(CompareEmbeddingsRequest) updates) =>
-      super.copyWith((message) => updates(message as CompareEmbeddingsRequest))
-          as CompareEmbeddingsRequest;
+  CompareEmbeddingsRequest copyWith(void Function(CompareEmbeddingsRequest) updates) => super.copyWith((message) => updates(message as CompareEmbeddingsRequest)) as CompareEmbeddingsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -612,9 +533,9 @@ class CompareEmbeddingsRequest extends $pb.GeneratedMessage {
   static CompareEmbeddingsRequest create() => CompareEmbeddingsRequest._();
   @$core.override
   CompareEmbeddingsRequest createEmptyInstance() => create();
+  static $pb.PbList<CompareEmbeddingsRequest> createRepeated() => $pb.PbList<CompareEmbeddingsRequest>();
   @$core.pragma('dart2js:noInline')
-  static CompareEmbeddingsRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<CompareEmbeddingsRequest>(create);
+  static CompareEmbeddingsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompareEmbeddingsRequest>(create);
   static CompareEmbeddingsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -655,30 +576,19 @@ class CompareEmbeddingsResponse extends $pb.GeneratedMessage {
 
   CompareEmbeddingsResponse._();
 
-  factory CompareEmbeddingsResponse.fromBuffer($core.List<$core.int> data,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
-  factory CompareEmbeddingsResponse.fromJson($core.String json,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+  factory CompareEmbeddingsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CompareEmbeddingsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'CompareEmbeddingsResponse',
-      package:
-          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'),
-      createEmptyInstance: create)
-    ..aD(1, _omitFieldNames ? '' : 'cosineSimilarity')
-    ..p<$core.double>(
-        2, _omitFieldNames ? '' : 'perAxisDelta', $pb.PbFieldType.KD)
-    ..hasRequiredFields = false;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompareEmbeddingsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.atlas.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'cosineSimilarity', $pb.PbFieldType.OD)
+    ..p<$core.double>(2, _omitFieldNames ? '' : 'perAxisDelta', $pb.PbFieldType.KD)
+    ..hasRequiredFields = false
+  ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CompareEmbeddingsResponse clone() => deepCopy();
+  CompareEmbeddingsResponse clone() => CompareEmbeddingsResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CompareEmbeddingsResponse copyWith(
-          void Function(CompareEmbeddingsResponse) updates) =>
-      super.copyWith((message) => updates(message as CompareEmbeddingsResponse))
-          as CompareEmbeddingsResponse;
+  CompareEmbeddingsResponse copyWith(void Function(CompareEmbeddingsResponse) updates) => super.copyWith((message) => updates(message as CompareEmbeddingsResponse)) as CompareEmbeddingsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -687,9 +597,9 @@ class CompareEmbeddingsResponse extends $pb.GeneratedMessage {
   static CompareEmbeddingsResponse create() => CompareEmbeddingsResponse._();
   @$core.override
   CompareEmbeddingsResponse createEmptyInstance() => create();
+  static $pb.PbList<CompareEmbeddingsResponse> createRepeated() => $pb.PbList<CompareEmbeddingsResponse>();
   @$core.pragma('dart2js:noInline')
-  static CompareEmbeddingsResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<CompareEmbeddingsResponse>(create);
+  static CompareEmbeddingsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompareEmbeddingsResponse>(create);
   static CompareEmbeddingsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -707,7 +617,6 @@ class CompareEmbeddingsResponse extends $pb.GeneratedMessage {
   $pb.PbList<$core.double> get perAxisDelta => $_getList(1);
 }
 
-const $core.bool _omitFieldNames =
-    $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames =
-    $core.bool.fromEnvironment('protobuf.omit_message_names');
+
+const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

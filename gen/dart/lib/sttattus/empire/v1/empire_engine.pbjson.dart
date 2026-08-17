@@ -8,8 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
-// ignore_for_file: unused_import
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -20,41 +19,17 @@ const PillarScores$json = {
   '1': 'PillarScores',
   '2': [
     {'1': 'forge_exp', '3': 1, '4': 1, '5': 1, '10': 'forgeExp'},
-    {
-      '1': 'lexicon_eloquence',
-      '3': 2,
-      '4': 1,
-      '5': 1,
-      '10': 'lexiconEloquence'
-    },
-    {
-      '1': 'nomad_exploration',
-      '3': 3,
-      '4': 1,
-      '5': 1,
-      '10': 'nomadExploration'
-    },
+    {'1': 'lexicon_eloquence', '3': 2, '4': 1, '5': 1, '10': 'lexiconEloquence'},
+    {'1': 'nomad_exploration', '3': 3, '4': 1, '5': 1, '10': 'nomadExploration'},
     {'1': 'atlas_behavioral', '3': 4, '4': 1, '5': 1, '10': 'atlasBehavioral'},
     {'1': 'vault_wealth', '3': 5, '4': 1, '5': 1, '10': 'vaultWealth'},
     {'1': 'apex_biomarkers', '3': 6, '4': 1, '5': 1, '10': 'apexBiomarkers'},
-    {
-      '1': 'oracle_intelligence',
-      '3': 7,
-      '4': 1,
-      '5': 1,
-      '10': 'oracleIntelligence'
-    },
+    {'1': 'oracle_intelligence', '3': 7, '4': 1, '5': 1, '10': 'oracleIntelligence'},
     {'1': 'dominion_estate', '3': 8, '4': 1, '5': 1, '10': 'dominionEstate'},
     {'1': 'legacy_heritage', '3': 9, '4': 1, '5': 1, '10': 'legacyHeritage'},
     {'1': 'zenith_focus', '3': 10, '4': 1, '5': 1, '10': 'zenithFocus'},
     {'1': 'onyx_exclusivity', '3': 11, '4': 1, '5': 1, '10': 'onyxExclusivity'},
-    {
-      '1': 'empire_reputation',
-      '3': 12,
-      '4': 1,
-      '5': 1,
-      '10': 'empireReputation'
-    },
+    {'1': 'empire_reputation', '3': 12, '4': 1, '5': 1, '10': 'empireReputation'},
   ],
 };
 
@@ -76,23 +51,15 @@ const ComputeSttattusScoreRequest$json = {
   '1': 'ComputeSttattusScoreRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {
-      '1': 'pillars',
-      '3': 2,
-      '4': 1,
-      '5': 11,
-      '6': '.sttattus.empire.v1.PillarScores',
-      '10': 'pillars'
-    },
+    {'1': 'pillars', '3': 2, '4': 1, '5': 11, '6': '.sttattus.empire.v1.PillarScores', '10': 'pillars'},
   ],
 };
 
 /// Descriptor for `ComputeSttattusScoreRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List computeSttattusScoreRequestDescriptor =
-    $convert.base64Decode(
-        'ChtDb21wdXRlU3R0YXR0dXNTY29yZVJlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklkEj'
-        'oKB3BpbGxhcnMYAiABKAsyIC5zdHRhdHR1cy5lbXBpcmUudjEuUGlsbGFyU2NvcmVzUgdwaWxs'
-        'YXJz');
+final $typed_data.Uint8List computeSttattusScoreRequestDescriptor = $convert.base64Decode(
+    'ChtDb21wdXRlU3R0YXR0dXNTY29yZVJlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklkEj'
+    'oKB3BpbGxhcnMYAiABKAsyIC5zdHRhdHR1cy5lbXBpcmUudjEuUGlsbGFyU2NvcmVzUgdwaWxs'
+    'YXJz');
 
 @$core.Deprecated('Use computeSttattusScoreResponseDescriptor instead')
 const ComputeSttattusScoreResponse$json = {
@@ -103,13 +70,7 @@ const ComputeSttattusScoreResponse$json = {
     {'1': 'wealth_component', '3': 3, '4': 1, '5': 1, '10': 'wealthComponent'},
     {'1': 'bio_component', '3': 4, '4': 1, '5': 1, '10': 'bioComponent'},
     {'1': 'social_component', '3': 5, '4': 1, '5': 1, '10': 'socialComponent'},
-    {
-      '1': 'operational_component',
-      '3': 6,
-      '4': 1,
-      '5': 1,
-      '10': 'operationalComponent'
-    },
+    {'1': 'operational_component', '3': 6, '4': 1, '5': 1, '10': 'operationalComponent'},
   ],
 };
 
@@ -156,13 +117,7 @@ const TaxRule$json = {
   '1': 'TaxRule',
   '2': [
     {'1': 'rule_id', '3': 1, '4': 1, '5': 9, '10': 'ruleId'},
-    {
-      '1': 'discount_basis_points',
-      '3': 2,
-      '4': 1,
-      '5': 5,
-      '10': 'discountBasisPoints'
-    },
+    {'1': 'discount_basis_points', '3': 2, '4': 1, '5': 5, '10': 'discountBasisPoints'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     {'1': 'partner_id', '3': 4, '4': 1, '5': 9, '10': 'partnerId'},
   ],
@@ -183,14 +138,7 @@ const ComputeTaxRequest$json = {
     {'1': 'subtotal', '3': 3, '4': 1, '5': 3, '10': 'subtotal'},
     {'1': 'currency', '3': 4, '4': 1, '5': 9, '10': 'currency'},
     {'1': 'partner_id', '3': 5, '4': 1, '5': 9, '10': 'partnerId'},
-    {
-      '1': 'rules',
-      '3': 6,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.empire.v1.TaxRule',
-      '10': 'rules'
-    },
+    {'1': 'rules', '3': 6, '4': 3, '5': 11, '6': '.sttattus.empire.v1.TaxRule', '10': 'rules'},
   ],
 };
 
@@ -206,13 +154,7 @@ const AppliedRule$json = {
   '1': 'AppliedRule',
   '2': [
     {'1': 'rule_id', '3': 1, '4': 1, '5': 9, '10': 'ruleId'},
-    {
-      '1': 'discount_basis_points',
-      '3': 2,
-      '4': 1,
-      '5': 5,
-      '10': 'discountBasisPoints'
-    },
+    {'1': 'discount_basis_points', '3': 2, '4': 1, '5': 5, '10': 'discountBasisPoints'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
   ],
 };
@@ -232,14 +174,7 @@ const ComputeTaxResponse$json = {
     {'1': 'total', '3': 3, '4': 1, '5': 3, '10': 'total'},
     {'1': 'currency', '3': 4, '4': 1, '5': 9, '10': 'currency'},
     {'1': 'applied_tier', '3': 5, '4': 1, '5': 9, '10': 'appliedTier'},
-    {
-      '1': 'applied_rules',
-      '3': 6,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.empire.v1.AppliedRule',
-      '10': 'appliedRules'
-    },
+    {'1': 'applied_rules', '3': 6, '4': 3, '5': 11, '6': '.sttattus.empire.v1.AppliedRule', '10': 'appliedRules'},
   ],
 };
 
@@ -281,8 +216,8 @@ const RecordPointsLedgerResponse$json = {
 };
 
 /// Descriptor for `RecordPointsLedgerResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List recordPointsLedgerResponseDescriptor =
-    $convert.base64Decode(
-        'ChpSZWNvcmRQb2ludHNMZWRnZXJSZXNwb25zZRIfCgtuZXdfYmFsYW5jZRgBIAEoA1IKbmV3Qm'
-        'FsYW5jZRIjCg1hcHBsaWVkX2RlbHRhGAIgASgDUgxhcHBsaWVkRGVsdGESGAoHY2xhbXBlZBgD'
-        'IAEoCFIHY2xhbXBlZA==');
+final $typed_data.Uint8List recordPointsLedgerResponseDescriptor = $convert.base64Decode(
+    'ChpSZWNvcmRQb2ludHNMZWRnZXJSZXNwb25zZRIfCgtuZXdfYmFsYW5jZRgBIAEoA1IKbmV3Qm'
+    'FsYW5jZRIjCg1hcHBsaWVkX2RlbHRhGAIgASgDUgxhcHBsaWVkRGVsdGESGAoHY2xhbXBlZBgD'
+    'IAEoCFIHY2xhbXBlZA==');
+

@@ -8,8 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
-// ignore_for_file: unused_import
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -50,3 +49,4 @@ final $typed_data.Uint8List errorReasonDescriptor = $convert.base64Decode(
     'VElPTl9GQUlMRUQQyAESIAobRVJST1JfUkVBU09OX1FVT1RBX0VYQ0VFREVEEKwCEiUKIEVSUk'
     '9SX1JFQVNPTl9BRE1JTl9ST0xFX1JFUVVJUkVEEJADEiAKG0VSUk9SX1JFQVNPTl9BQ0NPVU5U'
     'X0JBTk5FRBCRAw==');
+

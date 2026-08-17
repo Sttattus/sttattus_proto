@@ -8,8 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
-// ignore_for_file: unused_import
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -36,22 +35,8 @@ final $typed_data.Uint8List bulkActionDescriptor = $convert.base64Decode(
 const AdminUserRow$json = {
   '1': 'AdminUserRow',
   '2': [
-    {
-      '1': 'profile',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.sttattus.user.v1.UserProfile',
-      '10': 'profile'
-    },
-    {
-      '1': 'apps',
-      '3': 2,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.user.v1.AppAccess',
-      '10': 'apps'
-    },
+    {'1': 'profile', '3': 1, '4': 1, '5': 11, '6': '.sttattus.user.v1.UserProfile', '10': 'profile'},
+    {'1': 'apps', '3': 2, '4': 3, '5': 11, '6': '.sttattus.user.v1.AppAccess', '10': 'apps'},
   ],
 };
 
@@ -65,23 +50,9 @@ final $typed_data.Uint8List adminUserRowDescriptor = $convert.base64Decode(
 const ListUsersRequest$json = {
   '1': 'ListUsersRequest',
   '2': [
-    {
-      '1': 'page',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.sttattus.common.v1.PageRequest',
-      '10': 'page'
-    },
+    {'1': 'page', '3': 1, '4': 1, '5': 11, '6': '.sttattus.common.v1.PageRequest', '10': 'page'},
     {'1': 'search', '3': 2, '4': 1, '5': 9, '10': 'search'},
-    {
-      '1': 'filter_by_app',
-      '3': 3,
-      '4': 1,
-      '5': 14,
-      '6': '.sttattus.auth.v1.AppCode',
-      '10': 'filterByApp'
-    },
+    {'1': 'filter_by_app', '3': 3, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'filterByApp'},
     {'1': 'only_banned', '3': 4, '4': 1, '5': 8, '10': 'onlyBanned'},
     {'1': 'only_admins', '3': 5, '4': 1, '5': 8, '10': 'onlyAdmins'},
   ],
@@ -99,22 +70,8 @@ final $typed_data.Uint8List listUsersRequestDescriptor = $convert.base64Decode(
 const ListUsersResponse$json = {
   '1': 'ListUsersResponse',
   '2': [
-    {
-      '1': 'rows',
-      '3': 1,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.admin.v1.AdminUserRow',
-      '10': 'rows'
-    },
-    {
-      '1': 'page',
-      '3': 2,
-      '4': 1,
-      '5': 11,
-      '6': '.sttattus.common.v1.PageResponse',
-      '10': 'page'
-    },
+    {'1': 'rows', '3': 1, '4': 3, '5': 11, '6': '.sttattus.admin.v1.AdminUserRow', '10': 'rows'},
+    {'1': 'page', '3': 2, '4': 1, '5': 11, '6': '.sttattus.common.v1.PageResponse', '10': 'page'},
   ],
 };
 
@@ -133,21 +90,14 @@ const GetUserRequest$json = {
 };
 
 /// Descriptor for `GetUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getUserRequestDescriptor = $convert
-    .base64Decode('Cg5HZXRVc2VyUmVxdWVzdBIXCgd1c2VyX2lkGAEgASgJUgZ1c2VySWQ=');
+final $typed_data.Uint8List getUserRequestDescriptor = $convert.base64Decode(
+    'Cg5HZXRVc2VyUmVxdWVzdBIXCgd1c2VyX2lkGAEgASgJUgZ1c2VySWQ=');
 
 @$core.Deprecated('Use getUserResponseDescriptor instead')
 const GetUserResponse$json = {
   '1': 'GetUserResponse',
   '2': [
-    {
-      '1': 'row',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.sttattus.admin.v1.AdminUserRow',
-      '10': 'row'
-    },
+    {'1': 'row', '3': 1, '4': 1, '5': 11, '6': '.sttattus.admin.v1.AdminUserRow', '10': 'row'},
   ],
 };
 
@@ -175,14 +125,7 @@ final $typed_data.Uint8List banUserRequestDescriptor = $convert.base64Decode(
 const BanUserResponse$json = {
   '1': 'BanUserResponse',
   '2': [
-    {
-      '1': 'row',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.sttattus.admin.v1.AdminUserRow',
-      '10': 'row'
-    },
+    {'1': 'row', '3': 1, '4': 1, '5': 11, '6': '.sttattus.admin.v1.AdminUserRow', '10': 'row'},
   ],
 };
 
@@ -196,22 +139,8 @@ const BulkActionRequest$json = {
   '1': 'BulkActionRequest',
   '2': [
     {'1': 'user_ids', '3': 1, '4': 3, '5': 9, '10': 'userIds'},
-    {
-      '1': 'action',
-      '3': 2,
-      '4': 1,
-      '5': 14,
-      '6': '.sttattus.admin.v1.BulkAction',
-      '10': 'action'
-    },
-    {
-      '1': 'app_code',
-      '3': 3,
-      '4': 1,
-      '5': 14,
-      '6': '.sttattus.auth.v1.AppCode',
-      '10': 'appCode'
-    },
+    {'1': 'action', '3': 2, '4': 1, '5': 14, '6': '.sttattus.admin.v1.BulkAction', '10': 'action'},
+    {'1': 'app_code', '3': 3, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'appCode'},
     {'1': 'reason', '3': 4, '4': 1, '5': 9, '10': 'reason'},
   ],
 };
@@ -232,9 +161,8 @@ const BulkActionResponse$json = {
 };
 
 /// Descriptor for `BulkActionResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List bulkActionResponseDescriptor =
-    $convert.base64Decode(
-        'ChJCdWxrQWN0aW9uUmVzcG9uc2USGgoIYWZmZWN0ZWQYASABKAVSCGFmZmVjdGVk');
+final $typed_data.Uint8List bulkActionResponseDescriptor = $convert.base64Decode(
+    'ChJCdWxrQWN0aW9uUmVzcG9uc2USGgoIYWZmZWN0ZWQYASABKAVSCGFmZmVjdGVk');
 
 @$core.Deprecated('Use auditLogEntryDescriptor instead')
 const AuditLogEntry$json = {
@@ -263,14 +191,7 @@ final $typed_data.Uint8List auditLogEntryDescriptor = $convert.base64Decode(
 const ListAuditLogsRequest$json = {
   '1': 'ListAuditLogsRequest',
   '2': [
-    {
-      '1': 'page',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.sttattus.common.v1.PageRequest',
-      '10': 'page'
-    },
+    {'1': 'page', '3': 1, '4': 1, '5': 11, '6': '.sttattus.common.v1.PageRequest', '10': 'page'},
     {'1': 'actor_id', '3': 2, '4': 1, '5': 9, '10': 'actorId'},
     {'1': 'target_user_id', '3': 3, '4': 1, '5': 9, '10': 'targetUserId'},
     {'1': 'action', '3': 4, '4': 1, '5': 9, '10': 'action'},
@@ -287,22 +208,8 @@ final $typed_data.Uint8List listAuditLogsRequestDescriptor = $convert.base64Deco
 const ListAuditLogsResponse$json = {
   '1': 'ListAuditLogsResponse',
   '2': [
-    {
-      '1': 'entries',
-      '3': 1,
-      '4': 3,
-      '5': 11,
-      '6': '.sttattus.admin.v1.AuditLogEntry',
-      '10': 'entries'
-    },
-    {
-      '1': 'page',
-      '3': 2,
-      '4': 1,
-      '5': 11,
-      '6': '.sttattus.common.v1.PageResponse',
-      '10': 'page'
-    },
+    {'1': 'entries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.admin.v1.AuditLogEntry', '10': 'entries'},
+    {'1': 'page', '3': 2, '4': 1, '5': 11, '6': '.sttattus.common.v1.PageResponse', '10': 'page'},
   ],
 };
 
@@ -311,3 +218,4 @@ final $typed_data.Uint8List listAuditLogsResponseDescriptor = $convert.base64Dec
     'ChVMaXN0QXVkaXRMb2dzUmVzcG9uc2USOgoHZW50cmllcxgBIAMoCzIgLnN0dGF0dHVzLmFkbW'
     'luLnYxLkF1ZGl0TG9nRW50cnlSB2VudHJpZXMSNAoEcGFnZRgCIAEoCzIgLnN0dGF0dHVzLmNv'
     'bW1vbi52MS5QYWdlUmVzcG9uc2VSBHBhZ2U=');
+
