@@ -2856,6 +2856,36 @@ final $typed_data.Uint8List datingPhotoDescriptor = $convert.base64Decode(
     'CgtEYXRpbmdQaG90bxIOCgJpZBgBIAEoCVICaWQSEAoDdXJsGAIgASgJUgN1cmwSHwoLb3JkZX'
     'JfaW5kZXgYAyABKAVSCm9yZGVySW5kZXgSHQoKaXNfcHJpbWFyeRgEIAEoCFIJaXNQcmltYXJ5');
 
+@$core.Deprecated('Use listDatingPhotosRequestDescriptor instead')
+const ListDatingPhotosRequest$json = {
+  '1': 'ListDatingPhotosRequest',
+};
+
+/// Descriptor for `ListDatingPhotosRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listDatingPhotosRequestDescriptor =
+    $convert.base64Decode('ChdMaXN0RGF0aW5nUGhvdG9zUmVxdWVzdA==');
+
+@$core.Deprecated('Use listDatingPhotosResponseDescriptor instead')
+const ListDatingPhotosResponse$json = {
+  '1': 'ListDatingPhotosResponse',
+  '2': [
+    {
+      '1': 'photos',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.DatingPhoto',
+      '10': 'photos'
+    },
+  ],
+};
+
+/// Descriptor for `ListDatingPhotosResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listDatingPhotosResponseDescriptor =
+    $convert.base64Decode(
+        'ChhMaXN0RGF0aW5nUGhvdG9zUmVzcG9uc2USNwoGcGhvdG9zGAEgAygLMh8uc3R0YXR0dXMuZG'
+        'F0aW5nLnYxLkRhdGluZ1Bob3RvUgZwaG90b3M=');
+
 @$core.Deprecated('Use addDatingPhotoRequestDescriptor instead')
 const AddDatingPhotoRequest$json = {
   '1': 'AddDatingPhotoRequest',

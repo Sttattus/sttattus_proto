@@ -499,6 +499,13 @@ class DatingServiceClient extends $grpc.Client {
   /// else, so an uploaded photo is screened by the Gemini image classifier
   /// before AddDatingPhoto ever sees it. These RPCs carry the media_asset_id,
   /// never the image.
+  $grpc.ResponseFuture<$0.ListDatingPhotosResponse> listDatingPhotos(
+    $0.ListDatingPhotosRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listDatingPhotos, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.AddDatingPhotoResponse> addDatingPhoto(
     $0.AddDatingPhotoRequest request, {
     $grpc.CallOptions? options,
@@ -837,6 +844,11 @@ class DatingServiceClient extends $grpc.Client {
           '/sttattus.dating.v1.DatingService/CheckInEvent',
           ($0.CheckInEventRequest value) => value.writeToBuffer(),
           $0.CheckInEventResponse.fromBuffer);
+  static final _$listDatingPhotos = $grpc.ClientMethod<
+          $0.ListDatingPhotosRequest, $0.ListDatingPhotosResponse>(
+      '/sttattus.dating.v1.DatingService/ListDatingPhotos',
+      ($0.ListDatingPhotosRequest value) => value.writeToBuffer(),
+      $0.ListDatingPhotosResponse.fromBuffer);
   static final _$addDatingPhoto =
       $grpc.ClientMethod<$0.AddDatingPhotoRequest, $0.AddDatingPhotoResponse>(
           '/sttattus.dating.v1.DatingService/AddDatingPhoto',
@@ -1398,6 +1410,15 @@ abstract class DatingServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.CheckInEventRequest.fromBuffer(value),
             ($0.CheckInEventResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListDatingPhotosRequest,
+            $0.ListDatingPhotosResponse>(
+        'ListDatingPhotos',
+        listDatingPhotos_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListDatingPhotosRequest.fromBuffer(value),
+        ($0.ListDatingPhotosResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.AddDatingPhotoRequest,
             $0.AddDatingPhotoResponse>(
         'AddDatingPhoto',
@@ -1974,6 +1995,15 @@ abstract class DatingServiceBase extends $grpc.Service {
 
   $async.Future<$0.CheckInEventResponse> checkInEvent(
       $grpc.ServiceCall call, $0.CheckInEventRequest request);
+
+  $async.Future<$0.ListDatingPhotosResponse> listDatingPhotos_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListDatingPhotosRequest> $request) async {
+    return listDatingPhotos($call, await $request);
+  }
+
+  $async.Future<$0.ListDatingPhotosResponse> listDatingPhotos(
+      $grpc.ServiceCall call, $0.ListDatingPhotosRequest request);
 
   $async.Future<$0.AddDatingPhotoResponse> addDatingPhoto_Pre(
       $grpc.ServiceCall $call,

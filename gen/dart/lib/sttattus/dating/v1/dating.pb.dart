@@ -10839,6 +10839,100 @@ class DatingPhoto extends $pb.GeneratedMessage {
   void clearIsPrimary() => $_clearField(4);
 }
 
+class ListDatingPhotosRequest extends $pb.GeneratedMessage {
+  factory ListDatingPhotosRequest() => create();
+
+  ListDatingPhotosRequest._();
+
+  factory ListDatingPhotosRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListDatingPhotosRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListDatingPhotosRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDatingPhotosRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDatingPhotosRequest copyWith(
+          void Function(ListDatingPhotosRequest) updates) =>
+      super.copyWith((message) => updates(message as ListDatingPhotosRequest))
+          as ListDatingPhotosRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDatingPhotosRequest create() => ListDatingPhotosRequest._();
+  @$core.override
+  ListDatingPhotosRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListDatingPhotosRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListDatingPhotosRequest>(create);
+  static ListDatingPhotosRequest? _defaultInstance;
+}
+
+class ListDatingPhotosResponse extends $pb.GeneratedMessage {
+  factory ListDatingPhotosResponse({
+    $core.Iterable<DatingPhoto>? photos,
+  }) {
+    final result = create();
+    if (photos != null) result.photos.addAll(photos);
+    return result;
+  }
+
+  ListDatingPhotosResponse._();
+
+  factory ListDatingPhotosResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListDatingPhotosResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListDatingPhotosResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..pPM<DatingPhoto>(1, _omitFieldNames ? '' : 'photos',
+        subBuilder: DatingPhoto.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDatingPhotosResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDatingPhotosResponse copyWith(
+          void Function(ListDatingPhotosResponse) updates) =>
+      super.copyWith((message) => updates(message as ListDatingPhotosResponse))
+          as ListDatingPhotosResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDatingPhotosResponse create() => ListDatingPhotosResponse._();
+  @$core.override
+  ListDatingPhotosResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListDatingPhotosResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListDatingPhotosResponse>(create);
+  static ListDatingPhotosResponse? _defaultInstance;
+
+  /// DatingProfile.photo_urls carries only the URLs, which is enough to render
+  /// a profile but not to reorder or remove one — those need the row id. This
+  /// is the manageable view of the same gallery.
+  @$pb.TagNumber(1)
+  $pb.PbList<DatingPhoto> get photos => $_getList(0);
+}
+
 class AddDatingPhotoRequest extends $pb.GeneratedMessage {
   factory AddDatingPhotoRequest({
     $core.String? mediaAssetId,

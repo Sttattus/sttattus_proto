@@ -80,6 +80,7 @@ const (
 	DatingService_RevokeProfileShare_FullMethodName         = "/sttattus.dating.v1.DatingService/RevokeProfileShare"
 	DatingService_GenerateAtlasYearbook_FullMethodName      = "/sttattus.dating.v1.DatingService/GenerateAtlasYearbook"
 	DatingService_CheckInEvent_FullMethodName               = "/sttattus.dating.v1.DatingService/CheckInEvent"
+	DatingService_ListDatingPhotos_FullMethodName           = "/sttattus.dating.v1.DatingService/ListDatingPhotos"
 	DatingService_AddDatingPhoto_FullMethodName             = "/sttattus.dating.v1.DatingService/AddDatingPhoto"
 	DatingService_RemoveDatingPhoto_FullMethodName          = "/sttattus.dating.v1.DatingService/RemoveDatingPhoto"
 	DatingService_ReorderDatingPhotos_FullMethodName        = "/sttattus.dating.v1.DatingService/ReorderDatingPhotos"
@@ -173,6 +174,7 @@ type DatingServiceClient interface {
 	// else, so an uploaded photo is screened by the Gemini image classifier
 	// before AddDatingPhoto ever sees it. These RPCs carry the media_asset_id,
 	// never the image.
+	ListDatingPhotos(ctx context.Context, in *ListDatingPhotosRequest, opts ...grpc.CallOption) (*ListDatingPhotosResponse, error)
 	AddDatingPhoto(ctx context.Context, in *AddDatingPhotoRequest, opts ...grpc.CallOption) (*AddDatingPhotoResponse, error)
 	RemoveDatingPhoto(ctx context.Context, in *RemoveDatingPhotoRequest, opts ...grpc.CallOption) (*RemoveDatingPhotoResponse, error)
 	ReorderDatingPhotos(ctx context.Context, in *ReorderDatingPhotosRequest, opts ...grpc.CallOption) (*ReorderDatingPhotosResponse, error)
@@ -815,6 +817,16 @@ func (c *datingServiceClient) CheckInEvent(ctx context.Context, in *CheckInEvent
 	return out, nil
 }
 
+func (c *datingServiceClient) ListDatingPhotos(ctx context.Context, in *ListDatingPhotosRequest, opts ...grpc.CallOption) (*ListDatingPhotosResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDatingPhotosResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListDatingPhotos_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *datingServiceClient) AddDatingPhoto(ctx context.Context, in *AddDatingPhotoRequest, opts ...grpc.CallOption) (*AddDatingPhotoResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(AddDatingPhotoResponse)
@@ -942,6 +954,7 @@ type DatingServiceServer interface {
 	// else, so an uploaded photo is screened by the Gemini image classifier
 	// before AddDatingPhoto ever sees it. These RPCs carry the media_asset_id,
 	// never the image.
+	ListDatingPhotos(context.Context, *ListDatingPhotosRequest) (*ListDatingPhotosResponse, error)
 	AddDatingPhoto(context.Context, *AddDatingPhotoRequest) (*AddDatingPhotoResponse, error)
 	RemoveDatingPhoto(context.Context, *RemoveDatingPhotoRequest) (*RemoveDatingPhotoResponse, error)
 	ReorderDatingPhotos(context.Context, *ReorderDatingPhotosRequest) (*ReorderDatingPhotosResponse, error)
@@ -1138,6 +1151,9 @@ func (UnimplementedDatingServiceServer) GenerateAtlasYearbook(context.Context, *
 }
 func (UnimplementedDatingServiceServer) CheckInEvent(context.Context, *CheckInEventRequest) (*CheckInEventResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CheckInEvent not implemented")
+}
+func (UnimplementedDatingServiceServer) ListDatingPhotos(context.Context, *ListDatingPhotosRequest) (*ListDatingPhotosResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListDatingPhotos not implemented")
 }
 func (UnimplementedDatingServiceServer) AddDatingPhoto(context.Context, *AddDatingPhotoRequest) (*AddDatingPhotoResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method AddDatingPhoto not implemented")
@@ -2256,6 +2272,24 @@ func _DatingService_CheckInEvent_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_ListDatingPhotos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListDatingPhotosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListDatingPhotos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListDatingPhotos_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListDatingPhotos(ctx, req.(*ListDatingPhotosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _DatingService_AddDatingPhoto_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AddDatingPhotoRequest)
 	if err := dec(in); err != nil {
@@ -2570,6 +2604,10 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CheckInEvent",
 			Handler:    _DatingService_CheckInEvent_Handler,
+		},
+		{
+			MethodName: "ListDatingPhotos",
+			Handler:    _DatingService_ListDatingPhotos_Handler,
 		},
 		{
 			MethodName: "AddDatingPhoto",

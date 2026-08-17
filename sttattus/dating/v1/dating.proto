@@ -889,6 +889,7 @@ service DatingService {
   // else, so an uploaded photo is screened by the Gemini image classifier
   // before AddDatingPhoto ever sees it. These RPCs carry the media_asset_id,
   // never the image.
+  rpc ListDatingPhotos(ListDatingPhotosRequest) returns (ListDatingPhotosResponse);
   rpc AddDatingPhoto(AddDatingPhotoRequest) returns (AddDatingPhotoResponse);
   rpc RemoveDatingPhoto(RemoveDatingPhotoRequest) returns (RemoveDatingPhotoResponse);
   rpc ReorderDatingPhotos(ReorderDatingPhotosRequest) returns (ReorderDatingPhotosResponse);
@@ -902,6 +903,14 @@ message DatingPhoto {
   string url = 2;
   int32 order_index = 3;
   bool is_primary = 4;
+}
+
+message ListDatingPhotosRequest {}
+message ListDatingPhotosResponse {
+  // DatingProfile.photo_urls carries only the URLs, which is enough to render
+  // a profile but not to reorder or remove one — those need the row id. This
+  // is the manageable view of the same gallery.
+  repeated DatingPhoto photos = 1;
 }
 
 message AddDatingPhotoRequest {

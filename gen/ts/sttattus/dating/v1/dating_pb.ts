@@ -6936,6 +6936,78 @@ export class DatingPhoto extends Message$1<DatingPhoto> {
 }
 
 /**
+ * @generated from message sttattus.dating.v1.ListDatingPhotosRequest
+ */
+export class ListDatingPhotosRequest extends Message$1<ListDatingPhotosRequest> {
+  constructor(data?: PartialMessage<ListDatingPhotosRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListDatingPhotosRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListDatingPhotosRequest {
+    return new ListDatingPhotosRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListDatingPhotosRequest {
+    return new ListDatingPhotosRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListDatingPhotosRequest {
+    return new ListDatingPhotosRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListDatingPhotosRequest | PlainMessage<ListDatingPhotosRequest> | undefined, b: ListDatingPhotosRequest | PlainMessage<ListDatingPhotosRequest> | undefined): boolean {
+    return proto3.util.equals(ListDatingPhotosRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListDatingPhotosResponse
+ */
+export class ListDatingPhotosResponse extends Message$1<ListDatingPhotosResponse> {
+  /**
+   * DatingProfile.photo_urls carries only the URLs, which is enough to render
+   * a profile but not to reorder or remove one — those need the row id. This
+   * is the manageable view of the same gallery.
+   *
+   * @generated from field: repeated sttattus.dating.v1.DatingPhoto photos = 1;
+   */
+  photos: DatingPhoto[] = [];
+
+  constructor(data?: PartialMessage<ListDatingPhotosResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListDatingPhotosResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "photos", kind: "message", T: DatingPhoto, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListDatingPhotosResponse {
+    return new ListDatingPhotosResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListDatingPhotosResponse {
+    return new ListDatingPhotosResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListDatingPhotosResponse {
+    return new ListDatingPhotosResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListDatingPhotosResponse | PlainMessage<ListDatingPhotosResponse> | undefined, b: ListDatingPhotosResponse | PlainMessage<ListDatingPhotosResponse> | undefined): boolean {
+    return proto3.util.equals(ListDatingPhotosResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.dating.v1.AddDatingPhotoRequest
  */
 export class AddDatingPhotoRequest extends Message$1<AddDatingPhotoRequest> {
