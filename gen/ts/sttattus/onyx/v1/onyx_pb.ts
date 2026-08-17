@@ -2172,6 +2172,78 @@ export class ListMySubscriptionsResponse extends Message<ListMySubscriptionsResp
 }
 
 /**
+ * Follows are distinct from subscriptions: FollowCreator is free and costs no
+ * points, while a subscription is redeemed. Without this the follow written by
+ * FollowCreator can never be read back by anyone.
+ *
+ * @generated from message sttattus.onyx.v1.ListMyFollowsRequest
+ */
+export class ListMyFollowsRequest extends Message<ListMyFollowsRequest> {
+  constructor(data?: PartialMessage<ListMyFollowsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListMyFollowsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyFollowsRequest {
+    return new ListMyFollowsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyFollowsRequest {
+    return new ListMyFollowsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyFollowsRequest {
+    return new ListMyFollowsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyFollowsRequest | PlainMessage<ListMyFollowsRequest> | undefined, b: ListMyFollowsRequest | PlainMessage<ListMyFollowsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyFollowsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListMyFollowsResponse
+ */
+export class ListMyFollowsResponse extends Message<ListMyFollowsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.CreatorProfile creators = 1;
+   */
+  creators: CreatorProfile[] = [];
+
+  constructor(data?: PartialMessage<ListMyFollowsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListMyFollowsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "creators", kind: "message", T: CreatorProfile, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyFollowsResponse {
+    return new ListMyFollowsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyFollowsResponse {
+    return new ListMyFollowsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyFollowsResponse {
+    return new ListMyFollowsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyFollowsResponse | PlainMessage<ListMyFollowsResponse> | undefined, b: ListMyFollowsResponse | PlainMessage<ListMyFollowsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyFollowsResponse, a, b);
+  }
+}
+
+/**
  * WindowEntry is a piece on its way from the Sovereign window to public.
  *
  * @generated from message sttattus.onyx.v1.WindowEntry

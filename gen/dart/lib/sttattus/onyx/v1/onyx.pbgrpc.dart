@@ -122,6 +122,10 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listMySubscriptions, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.ListMyFollowsResponse> listMyFollows($0.ListMyFollowsRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$listMyFollows, request, options: options);
+  }
+
   /// P2 — sovereign window calendar.
   $grpc.ResponseFuture<$0.ListSovereignWindowResponse> listSovereignWindow($0.ListSovereignWindowRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$listSovereignWindow, request, options: options);
@@ -309,6 +313,10 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/ListMySubscriptions',
       ($0.ListMySubscriptionsRequest value) => value.writeToBuffer(),
       $0.ListMySubscriptionsResponse.fromBuffer);
+  static final _$listMyFollows = $grpc.ClientMethod<$0.ListMyFollowsRequest, $0.ListMyFollowsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListMyFollows',
+      ($0.ListMyFollowsRequest value) => value.writeToBuffer(),
+      $0.ListMyFollowsResponse.fromBuffer);
   static final _$listSovereignWindow = $grpc.ClientMethod<$0.ListSovereignWindowRequest, $0.ListSovereignWindowResponse>(
       '/sttattus.onyx.v1.OnyxService/ListSovereignWindow',
       ($0.ListSovereignWindowRequest value) => value.writeToBuffer(),
@@ -552,6 +560,13 @@ abstract class OnyxServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListMySubscriptionsRequest.fromBuffer(value),
         ($0.ListMySubscriptionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyFollowsRequest, $0.ListMyFollowsResponse>(
+        'ListMyFollows',
+        listMyFollows_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListMyFollowsRequest.fromBuffer(value),
+        ($0.ListMyFollowsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListSovereignWindowRequest, $0.ListSovereignWindowResponse>(
         'ListSovereignWindow',
         listSovereignWindow_Pre,
@@ -841,6 +856,12 @@ abstract class OnyxServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.ListMySubscriptionsResponse> listMySubscriptions($grpc.ServiceCall call, $0.ListMySubscriptionsRequest request);
+
+  $async.Future<$0.ListMyFollowsResponse> listMyFollows_Pre($grpc.ServiceCall $call, $async.Future<$0.ListMyFollowsRequest> $request) async {
+    return listMyFollows($call, await $request);
+  }
+
+  $async.Future<$0.ListMyFollowsResponse> listMyFollows($grpc.ServiceCall call, $0.ListMyFollowsRequest request);
 
   $async.Future<$0.ListSovereignWindowResponse> listSovereignWindow_Pre($grpc.ServiceCall $call, $async.Future<$0.ListSovereignWindowRequest> $request) async {
     return listSovereignWindow($call, await $request);

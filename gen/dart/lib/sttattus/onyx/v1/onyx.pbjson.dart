@@ -692,6 +692,28 @@ final $typed_data.Uint8List listMySubscriptionsResponseDescriptor = $convert.bas
     'ChtMaXN0TXlTdWJzY3JpcHRpb25zUmVzcG9uc2USPAoIY3JlYXRvcnMYASADKAsyIC5zdHRhdH'
     'R1cy5vbnl4LnYxLkNyZWF0b3JQcm9maWxlUghjcmVhdG9ycw==');
 
+@$core.Deprecated('Use listMyFollowsRequestDescriptor instead')
+const ListMyFollowsRequest$json = {
+  '1': 'ListMyFollowsRequest',
+};
+
+/// Descriptor for `ListMyFollowsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyFollowsRequestDescriptor = $convert.base64Decode(
+    'ChRMaXN0TXlGb2xsb3dzUmVxdWVzdA==');
+
+@$core.Deprecated('Use listMyFollowsResponseDescriptor instead')
+const ListMyFollowsResponse$json = {
+  '1': 'ListMyFollowsResponse',
+  '2': [
+    {'1': 'creators', '3': 1, '4': 3, '5': 11, '6': '.sttattus.onyx.v1.CreatorProfile', '10': 'creators'},
+  ],
+};
+
+/// Descriptor for `ListMyFollowsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyFollowsResponseDescriptor = $convert.base64Decode(
+    'ChVMaXN0TXlGb2xsb3dzUmVzcG9uc2USPAoIY3JlYXRvcnMYASADKAsyIC5zdHRhdHR1cy5vbn'
+    'l4LnYxLkNyZWF0b3JQcm9maWxlUghjcmVhdG9ycw==');
+
 @$core.Deprecated('Use windowEntryDescriptor instead')
 const WindowEntry$json = {
   '1': 'WindowEntry',

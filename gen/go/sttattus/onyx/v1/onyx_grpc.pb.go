@@ -39,6 +39,7 @@ const (
 	OnyxService_DeleteNote_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/DeleteNote"
 	OnyxService_ListMyUnlocks_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListMyUnlocks"
 	OnyxService_ListMySubscriptions_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ListMySubscriptions"
+	OnyxService_ListMyFollows_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListMyFollows"
 	OnyxService_ListSovereignWindow_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ListSovereignWindow"
 	OnyxService_ListSeries_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListSeries"
 	OnyxService_GetSeries_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/GetSeries"
@@ -99,6 +100,7 @@ type OnyxServiceClient interface {
 	// P2 — personal library / account.
 	ListMyUnlocks(ctx context.Context, in *ListMyUnlocksRequest, opts ...grpc.CallOption) (*ListMyUnlocksResponse, error)
 	ListMySubscriptions(ctx context.Context, in *ListMySubscriptionsRequest, opts ...grpc.CallOption) (*ListMySubscriptionsResponse, error)
+	ListMyFollows(ctx context.Context, in *ListMyFollowsRequest, opts ...grpc.CallOption) (*ListMyFollowsResponse, error)
 	// P2 — sovereign window calendar.
 	ListSovereignWindow(ctx context.Context, in *ListSovereignWindowRequest, opts ...grpc.CallOption) (*ListSovereignWindowResponse, error)
 	// P2 — multi-part series.
@@ -336,6 +338,16 @@ func (c *onyxServiceClient) ListMySubscriptions(ctx context.Context, in *ListMyS
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListMySubscriptionsResponse)
 	err := c.cc.Invoke(ctx, OnyxService_ListMySubscriptions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListMyFollows(ctx context.Context, in *ListMyFollowsRequest, opts ...grpc.CallOption) (*ListMyFollowsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyFollowsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListMyFollows_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -616,6 +628,7 @@ type OnyxServiceServer interface {
 	// P2 — personal library / account.
 	ListMyUnlocks(context.Context, *ListMyUnlocksRequest) (*ListMyUnlocksResponse, error)
 	ListMySubscriptions(context.Context, *ListMySubscriptionsRequest) (*ListMySubscriptionsResponse, error)
+	ListMyFollows(context.Context, *ListMyFollowsRequest) (*ListMyFollowsResponse, error)
 	// P2 — sovereign window calendar.
 	ListSovereignWindow(context.Context, *ListSovereignWindowRequest) (*ListSovereignWindowResponse, error)
 	// P2 — multi-part series.
@@ -718,6 +731,9 @@ func (UnimplementedOnyxServiceServer) ListMyUnlocks(context.Context, *ListMyUnlo
 }
 func (UnimplementedOnyxServiceServer) ListMySubscriptions(context.Context, *ListMySubscriptionsRequest) (*ListMySubscriptionsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMySubscriptions not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListMyFollows(context.Context, *ListMyFollowsRequest) (*ListMyFollowsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyFollows not implemented")
 }
 func (UnimplementedOnyxServiceServer) ListSovereignWindow(context.Context, *ListSovereignWindowRequest) (*ListSovereignWindowResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListSovereignWindow not implemented")
@@ -1168,6 +1184,24 @@ func _OnyxService_ListMySubscriptions_Handler(srv interface{}, ctx context.Conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnyxServiceServer).ListMySubscriptions(ctx, req.(*ListMySubscriptionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListMyFollows_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyFollowsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListMyFollows(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListMyFollows_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListMyFollows(ctx, req.(*ListMyFollowsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1690,6 +1724,10 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListMySubscriptions",
 			Handler:    _OnyxService_ListMySubscriptions_Handler,
+		},
+		{
+			MethodName: "ListMyFollows",
+			Handler:    _OnyxService_ListMyFollows_Handler,
 		},
 		{
 			MethodName: "ListSovereignWindow",

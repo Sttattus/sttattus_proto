@@ -268,6 +268,14 @@ message ListMySubscriptionsResponse {
   repeated CreatorProfile creators = 1;
 }
 
+// Follows are distinct from subscriptions: FollowCreator is free and costs no
+// points, while a subscription is redeemed. Without this the follow written by
+// FollowCreator can never be read back by anyone.
+message ListMyFollowsRequest {}
+message ListMyFollowsResponse {
+  repeated CreatorProfile creators = 1;
+}
+
 // WindowEntry is a piece on its way from the Sovereign window to public.
 message WindowEntry {
   OnyxContent content = 1;
@@ -575,6 +583,7 @@ service OnyxService {
   // P2 — personal library / account.
   rpc ListMyUnlocks(ListMyUnlocksRequest) returns (ListMyUnlocksResponse);
   rpc ListMySubscriptions(ListMySubscriptionsRequest) returns (ListMySubscriptionsResponse);
+  rpc ListMyFollows(ListMyFollowsRequest) returns (ListMyFollowsResponse);
 
   // P2 — sovereign window calendar.
   rpc ListSovereignWindow(ListSovereignWindowRequest) returns (ListSovereignWindowResponse);

@@ -2863,6 +2863,79 @@ class ListMySubscriptionsResponse extends $pb.GeneratedMessage {
   $pb.PbList<CreatorProfile> get creators => $_getList(0);
 }
 
+/// Follows are distinct from subscriptions: FollowCreator is free and costs no
+/// points, while a subscription is redeemed. Without this the follow written by
+/// FollowCreator can never be read back by anyone.
+class ListMyFollowsRequest extends $pb.GeneratedMessage {
+  factory ListMyFollowsRequest() => create();
+
+  ListMyFollowsRequest._();
+
+  factory ListMyFollowsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyFollowsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyFollowsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyFollowsRequest clone() => ListMyFollowsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyFollowsRequest copyWith(void Function(ListMyFollowsRequest) updates) => super.copyWith((message) => updates(message as ListMyFollowsRequest)) as ListMyFollowsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyFollowsRequest create() => ListMyFollowsRequest._();
+  @$core.override
+  ListMyFollowsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyFollowsRequest> createRepeated() => $pb.PbList<ListMyFollowsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyFollowsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyFollowsRequest>(create);
+  static ListMyFollowsRequest? _defaultInstance;
+}
+
+class ListMyFollowsResponse extends $pb.GeneratedMessage {
+  factory ListMyFollowsResponse({
+    $core.Iterable<CreatorProfile>? creators,
+  }) {
+    final result = create();
+    if (creators != null) result.creators.addAll(creators);
+    return result;
+  }
+
+  ListMyFollowsResponse._();
+
+  factory ListMyFollowsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListMyFollowsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyFollowsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..pc<CreatorProfile>(1, _omitFieldNames ? '' : 'creators', $pb.PbFieldType.PM, subBuilder: CreatorProfile.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyFollowsResponse clone() => ListMyFollowsResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyFollowsResponse copyWith(void Function(ListMyFollowsResponse) updates) => super.copyWith((message) => updates(message as ListMyFollowsResponse)) as ListMyFollowsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyFollowsResponse create() => ListMyFollowsResponse._();
+  @$core.override
+  ListMyFollowsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyFollowsResponse> createRepeated() => $pb.PbList<ListMyFollowsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyFollowsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyFollowsResponse>(create);
+  static ListMyFollowsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<CreatorProfile> get creators => $_getList(0);
+}
+
 /// WindowEntry is a piece on its way from the Sovereign window to public.
 class WindowEntry extends $pb.GeneratedMessage {
   factory WindowEntry({
